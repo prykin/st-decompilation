@@ -1,4 +1,4 @@
-FUN_004c5350:
+STGameObjC::sub_004C5350:
 004C5350  55                        PUSH EBP
 004C5351  8B EC                     MOV EBP,ESP
 004C5353  83 EC 1C                  SUB ESP,0x1c
@@ -80,7 +80,7 @@ LAB_004c542f:
 004C5432  8B 13                     MOV EDX,dword ptr [EBX]
 004C5434  50                        PUSH EAX
 004C5435  8B CB                     MOV ECX,EBX
-004C5437  FF 92 F4 00 00 00         CALL dword ptr [EDX + 0xf4]
+004C5437  FF 92 F4 00 00 00         CALL dword ptr [EDX + 0xf4]  ; [STIndirectCallsiteApplier] exact slot 0xF4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 004C543D  85 C0                     TEST EAX,EAX
 004C543F  0F 84 A9 01 00 00         JZ 0x004c55ee
 004C5445  8B 45 20                  MOV EAX,dword ptr [EBP + 0x20]

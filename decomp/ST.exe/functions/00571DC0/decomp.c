@@ -6,9 +6,9 @@ uint FUN_00571dc0(void)
 {
   UINT UVar1;
   int iVar2;
-  undefined4 local_14;
-  undefined4 local_10;
-  undefined2 local_c;
+  uint local_14;
+  uint local_10;
+  ushort local_c;
   uint local_8;
 
   /* ST_CALLSITE[00571DC8]: CALL dword ptr [0x0085bc48] */

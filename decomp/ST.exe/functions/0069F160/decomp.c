@@ -44,8 +44,7 @@ int __thiscall FUN_0069f160(void *this,int param_1,int param_2,int param_3,int p
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d828;
   puStack_10 = &LAB_0072d964;

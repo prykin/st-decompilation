@@ -6,20 +6,20 @@
    Diagnostic line evidence: 176 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-undefined4 __fastcall FUN_004d95a0(int param_1)
+undefined4 __fastcall FUN_004d95a0(RecoveredRecord_004D95A0_E0EC0EDA *param_1)
 
 {
   int iVar2;
   uint uVar3;
   uVar3 = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(param_1 + 0x4d0)) {
+  switch(param_1->field_04D0) {
   case 0:
   case 1:
   case 4:
     uVar3 = 1;
     break;
   case 2:
+
     iVar2 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_glsat.cpp",0xb0,0,0,"%s",
                                "Please Fill this case !");
     if (iVar2 != 0) {

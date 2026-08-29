@@ -10,7 +10,7 @@ FUN_00423320:
 00423333  8B 11                     MOV EDX,dword ptr [ECX]
 00423335  8D 45 E0                  LEA EAX,[EBP + -0x20]
 00423338  50                        PUSH EAX
-00423339  FF 12                     CALL dword ptr [EDX]
+00423339  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 LAB_0042333b:
 0042333B  8B E5                     MOV ESP,EBP
 0042333D  5D                        POP EBP

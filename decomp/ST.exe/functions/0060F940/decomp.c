@@ -1,10 +1,13 @@
-#include "../../pseudocode_runtime.h"
 
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=0060EF40 @ 0060F544 -> read as EAX on
+   every CFG path | 0060EF40 @ 0060F604 -> read as EAX on every CFG path | 00614C80 @ 00614D06 ->
+   read as EAX on every CFG path */
 
-undefined4
-FUN_0060f940(int param_1,int param_2,AnonShape_0060F940_1CCED7C8 *param_3,int param_4,int param_5,
-            int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,int param_12,
-            int param_13,int *param_14,int *param_15)
+int FUN_0060f940(int param_1,int param_2,RecoveredRecordView_0060F940_8057A92D *param_3,int param_4,
+                int param_5,int param_6,int param_7,int param_8,int param_9,int param_10,
+                int param_11,int param_12,int param_13,int *param_14,int *param_15)
 
 {
   short *psVar1;
@@ -19,12 +22,14 @@ FUN_0060f940(int param_1,int param_2,AnonShape_0060F940_1CCED7C8 *param_3,int pa
   int iVar8;
   int iVar9;
   int iVar10;
-  undefined4 local_8;
+  int local_8;
 
-  local_8 = 0xffffffff;
+  local_8 = -1;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_4 == 0) {
+
     iVar6 = FUN_006acf0d(param_5,param_6,param_7,param_8,param_9,param_10);
+
     iVar7 = FUN_006acf0d(param_8,param_9,param_10,param_11,param_12,param_13);
     if ((iVar6 != 0) && (iVar7 != 0)) {
       iVar8 = (param_13 - param_10) * (param_10 - param_7) +
@@ -48,6 +53,7 @@ FUN_0060f940(int param_1,int param_2,AnonShape_0060F940_1CCED7C8 *param_3,int pa
         param_3->field_0014 =
              (param_10 - param_7) * 10 - ((param_13 - param_10) * iVar8 * 10) / iVar7;
       }
+
       local_EAX_1611 =
            FUN_006acf0d(param_3->field_000C,param_3->field_0010,param_3->field_0014,0,0,0);
       if (local_EAX_1611 != 0) {
@@ -58,7 +64,7 @@ FUN_0060f940(int param_1,int param_2,AnonShape_0060F940_1CCED7C8 *param_3,int pa
       }
       return local_8;
     }
-    return 0xffffffff;
+    return -1;
   }
   if (param_1 == param_2) {
     return 0;
@@ -72,7 +78,7 @@ FUN_0060f940(int param_1,int param_2,AnonShape_0060F940_1CCED7C8 *param_3,int pa
              (int)*psVar3 * (int)(&SHORT_007ed570)[param_2 * 4]) * 1000000) / iVar8) * 10000) /
           *(int *)(&DAT_007cfe74 + param_2 * 4);
   if ((iVar5 < 0) && (iVar5 < -0xdac)) {
-    return 0xffffffff;
+    return -1;
   }
   iVar4 = iVar5 >> 0x1f;
   iVar9 = iVar5 / 10 + iVar4;
@@ -96,6 +102,7 @@ FUN_0060f940(int param_1,int param_2,AnonShape_0060F940_1CCED7C8 *param_3,int pa
                 ((&SHORT_007ed574)[param_2 * 4] * iVar5 * 1000) /
                 *(int *)(&DAT_007cfe74 + param_2 * 4);
         param_3->field_0014 = iVar8;
+
         iVar5 = FUN_006acf0d(param_3->field_000C,param_3->field_0010,iVar8,0,0,0);
         param_3->field_000C = (param_3->field_000C * -10000) / iVar5;
         param_3->field_0010 = (param_3->field_0010 * -10000) / iVar5;
@@ -108,6 +115,7 @@ FUN_0060f940(int param_1,int param_2,AnonShape_0060F940_1CCED7C8 *param_3,int pa
         param_3->field_0010 = (&SHORT_007ed572)[param_2 * 4] * -10000;
         iVar8 = (&SHORT_007ed574)[param_2 * 4] * -10000;
         param_3->field_0014 = iVar8;
+
         local_EAX_433 = FUN_006acf0d(param_3->field_000C,param_3->field_0010,iVar8,0,0,0);
         param_3->field_000C = (param_3->field_000C * 10000) / local_EAX_433;
         param_3->field_0010 = (param_3->field_0010 * 10000) / local_EAX_433;
@@ -115,7 +123,7 @@ FUN_0060f940(int param_1,int param_2,AnonShape_0060F940_1CCED7C8 *param_3,int pa
         return 6;
       }
       if (iVar10 != 0x14d) {
-        return 0xffffffff;
+        return -1;
       }
       local_8 = 5;
     }
@@ -128,7 +136,7 @@ FUN_0060f940(int param_1,int param_2,AnonShape_0060F940_1CCED7C8 *param_3,int pa
   }
   else {
     if (iVar10 != 0x330) {
-      return 0xffffffff;
+      return -1;
     }
     local_8 = 1;
   }
@@ -143,6 +151,7 @@ FUN_0060f940(int param_1,int param_2,AnonShape_0060F940_1CCED7C8 *param_3,int pa
   iVar8 = *psVar1 * 1000 -
           ((&SHORT_007ed574)[param_2 * 4] * iVar5 * 1000) / *(int *)(&DAT_007cfe74 + param_2 * 4);
   param_3->field_0014 = iVar8;
+
   iVar5 = FUN_006acf0d(param_3->field_000C,param_3->field_0010,iVar8,0,0,0);
   param_3->field_000C = (param_3->field_000C * 10000) / iVar5;
   param_3->field_0010 = (param_3->field_0010 * 10000) / iVar5;

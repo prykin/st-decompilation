@@ -194,7 +194,7 @@ LAB_005542f0:
 005542FE  52                        PUSH EDX
 005542FF  6A 01                     PUSH 0x1
 00554301  68 E8 8E 7C 00            PUSH 0x7c8ee8
-00554306  E8 F5 E8 19 00            CALL 0x006f2c00
+00554306  E8 F5 E8 19 00            CALL 0x006f2c00  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 0055430B  83 C4 0C                  ADD ESP,0xc
 0055430E  50                        PUSH EAX
 0055430F  A1 80 67 80 00            MOV EAX,[0x00806780]

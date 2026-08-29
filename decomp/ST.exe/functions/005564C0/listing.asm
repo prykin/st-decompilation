@@ -43,7 +43,7 @@ TraksClassTy::GetMessage:
 0055654A  50                        PUSH EAX
 0055654B  52                        PUSH EDX
 0055654C  51                        PUSH ECX
-0055654D  E8 3E C8 19 00            CALL 0x006f2d90
+0055654D  E8 3E C8 19 00            CALL 0x006f2d90  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/TraksClassTy; source view only; no Ghidra override
 00556552  83 C4 10                  ADD ESP,0x10
 00556555  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
 LAB_00556558:
@@ -61,7 +61,7 @@ LAB_0055656d:
 0055656F  6A 3C                     PUSH 0x3c
 00556571  6A 32                     PUSH 0x32
 00556573  6A 00                     PUSH 0x0
-00556575  E8 16 7D 15 00            CALL 0x006ae290
+00556575  E8 16 7D 15 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/TraksClassTy_field_0024DArray; source view only; no Ghidra override
 0055657A  89 46 24                  MOV dword ptr [ESI + 0x24],EAX
 0055657D  A1 54 87 80 00            MOV EAX,[0x00808754]
 00556582  8D 04 80                  LEA EAX,[EAX + EAX*0x4]
@@ -118,7 +118,7 @@ LAB_00556608:
 00556612  8B CE                     MOV ECX,ESI
 00556614  50                        PUSH EAX
 00556615  C7 45 F8 00 00 00 00      MOV dword ptr [EBP + -0x8],0x0
-0055661C  E8 24 E2 EA FF            CALL 0x00404845
+0055661C  E8 24 E2 EA FF            CALL 0x00404845  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 00556621  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
 00556624  8B 15 BC AE 79 00         MOV EDX,dword ptr [0x0079aebc]
 0055662A  6A 0C                     PUSH 0xc

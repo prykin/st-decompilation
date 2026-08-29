@@ -29,7 +29,8 @@ void __thiscall FUN_0060ca40(void *this,int param_1)
     iVar3 = STBiasedDiv16(iVar3, 0xc9); /* exact signed 16-bit grid-index division */
     iVar2 = STField<int>(this,0x1e9);
     iVar2 = STBiasedDiv16(iVar2, 0xc9); /* exact signed 16-bit grid-index division */
-    thunk_FUN_00496e40(iVar2,iVar3,iVar4,STField<int>(this,0x18));
+    /* ST_CALLSITE[0060CB0F]: CALL 0x00402554; direct=00402554 DumpClassC::sub_00496E40 */
+    DumpClassC::sub_00496E40(g_dumpClass_007FB284,iVar2,iVar3,iVar4,STField<int>(this,0x18));
   }
   return;
 }

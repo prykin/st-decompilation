@@ -1,7 +1,8 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __thiscall FUN_004ea460(void *this,int param_1,AnonShape_004EA460_7CF77153 *param_2)
+undefined4 __thiscall
+FUN_004ea460(void *this,int param_1,RecoveredRecordView_004EA460_01FB090B *param_2)
 
 {
   uint uVar1;
@@ -11,9 +12,10 @@ undefined4 __thiscall FUN_004ea460(void *this,int param_1,AnonShape_004EA460_7CF
 
   if (((STField<int>(this,0x245) == 4) && (STField<int>(this,0x46c) == 0)) &&
      ((param_2 != nullptr ||
+
       (iVar3_mg0 = STPlaySystemC::sub_006E62D0
-                             (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1,
-                              (int *)&param_2), iVar3_mg0 == 0)))) {
+                             (g_playSystem_00802A38,(RecoveredRecordView_005EFAE0_855D930D *)param_1
+                              ,(int *)&param_2), iVar3_mg0 == 0)))) {
     STField<undefined4>(this,0x46c) = 1;
     STField<int>(this,0x470) = param_1;
     STField<undefined4>(this,0x48c) = 0;

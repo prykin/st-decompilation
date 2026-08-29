@@ -33,10 +33,11 @@ int __thiscall FUN_00614ee0(void *this,int param_1,int param_2,int param_3,int p
        ((this_00 = (STFishC *)
                    STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0], this_00 == nullptr ||
         (this_00->field_0018 != STField<int>(this,0x2d1))))))) &&
+
      (iVar4_mg0 = STPlaySystemC::sub_006E62D0
                             (g_playSystem_00802A38,
-                             STField<AnonShape_005EFAE0_B406B78B *>(this,0x2d1),(int *)&local_1c),
-     this_00 = local_1c, iVar4_mg0 == -4)) {
+                             STField<RecoveredRecordView_005EFAE0_855D930D *>(this,0x2d1),
+                             (int *)&local_1c), this_00 = local_1c, iVar4_mg0 == -4)) {
     return -1;
   }
   thunk_FUN_00416270(this_00,&local_10,local_18 + 2,local_18);

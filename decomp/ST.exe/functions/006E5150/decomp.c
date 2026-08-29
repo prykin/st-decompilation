@@ -23,15 +23,20 @@
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1->id == 4 uses
    /SubmarineTitans/Recovered/DiscriminatedPayloads/AppClassTy_sub_006E5150_006E5150_MessagePayload_Case_4.
-   The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage. */
+   The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage.
 
-undefined4 __thiscall AppClassTy::sub_006E5150(AppClassTy *this,STMessage *param_1)
+   [STDiscriminatedPayloadApplier] Case-local payload view: param_1->id == 4 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/AppClassTy_vfunc_18_006E5150_MessagePayload_Case_4.
+   carrier=param_1; The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage. */
+
+undefined4 __thiscall AppClassTy::vfunc_18(AppClassTy *this,STMessage *param_1)
 
 {
   if (param_1->id == 4) {
     DAT_00856d74 = (param_1->arg0).u32;
     if ((DAT_00856d74 != 0) && (this->field_0024 != 0)) {
-      FUN_006e4290(0xf,5,0xf,0);
+
+      FUN_006e4290(this,0xf,5,0xf,0);
       return 0;
     }
     FUN_006e4340(this,(int *)0xf,5,0xf,0);

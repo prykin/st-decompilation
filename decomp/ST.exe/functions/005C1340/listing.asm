@@ -116,7 +116,7 @@ LAB_005c1494:
 005C149B  50                        PUSH EAX
 005C149C  6A 00                     PUSH 0x0
 005C149E  51                        PUSH ECX
-005C149F  E8 01 2E E4 FF            CALL 0x004042a5
+005C149F  E8 01 2E E4 FF            CALL 0x004042a5  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 005C14A4  89 86 83 00 00 00         MOV dword ptr [ESI + 0x83],EAX
 005C14AA  C7 40 58 01 00 00 00      MOV dword ptr [EAX + 0x58],0x1
 005C14B1  C7 40 5C 00 00 00 00      MOV dword ptr [EAX + 0x5c],0x0

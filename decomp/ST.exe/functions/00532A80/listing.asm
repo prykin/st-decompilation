@@ -27,7 +27,7 @@ LAB_00532ac7:
 00532AC7  6A 0A                     PUSH 0xa
 00532AC9  6A 0A                     PUSH 0xa
 00532ACB  6A 00                     PUSH 0x0
-00532ACD  E8 1E 2A 18 00            CALL 0x006b54f0
+00532ACD  E8 1E 2A 18 00            CALL 0x006b54f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 00532AD2  89 86 F9 02 00 00         MOV dword ptr [ESI + 0x2f9],EAX
 00532AD8  8B 0D CB C4 80 00         MOV ECX,dword ptr [0x0080c4cb]
 00532ADE  33 FF                     XOR EDI,EDI
@@ -79,7 +79,7 @@ LAB_00532b53:
 00532B5D  6A 0A                     PUSH 0xa
 00532B5F  6A 0A                     PUSH 0xa
 00532B61  57                        PUSH EDI
-00532B62  E8 89 29 18 00            CALL 0x006b54f0
+00532B62  E8 89 29 18 00            CALL 0x006b54f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 00532B67  89 86 F9 02 00 00         MOV dword ptr [ESI + 0x2f9],EAX
 LAB_00532b6d:
 00532B6D  8B 86 F9 02 00 00         MOV EAX,dword ptr [ESI + 0x2f9]

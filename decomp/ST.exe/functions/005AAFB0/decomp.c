@@ -21,6 +21,7 @@ void __thiscall HoloTy::Done(HoloTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pHVar2 = local_8;
   if (errorCode == 0) {
@@ -38,6 +39,7 @@ void __thiscall HoloTy::Done(HoloTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Start\\hologram.cpp",0xaa,0,errorCode,
                              "%s","HoloTy::Done");
   if (iVar3 != 0) {

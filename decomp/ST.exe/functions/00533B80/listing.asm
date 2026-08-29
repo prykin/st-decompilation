@@ -70,7 +70,7 @@ LAB_00533c4b:
 00533C58  6A FE                     PUSH -0x2
 00533C5A  52                        PUSH EDX
 00533C5B  51                        PUSH ECX
-00533C5C  E8 DF C4 17 00            CALL 0x006b0140
+00533C5C  E8 DF C4 17 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 00533C61  8B 8E 80 01 00 00         MOV ECX,dword ptr [ESI + 0x180]
 00533C67  50                        PUSH EAX
 00533C68  E8 03 DF 1D 00            CALL 0x00711b70

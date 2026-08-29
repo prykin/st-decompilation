@@ -25,7 +25,8 @@ void __thiscall TLOBaseTy::sub_004DA340(TLOBaseTy *this,byte *param_1)
   param_1[8] = 0xff;
   *param_1 = 0;
   if ((this->field_05AC == CASE_3C) || (this->field_05AC == CASE_53)) {
-    thunk_FUN_004da390(g_allPlayers_007FA174,(uint)this->field_0024,param_1,1);
+    /* ST_CALLSITE[004DA374]: CALL 0x00404048; direct=00404048 STAllPlayersC::sub_004DA390 */
+    STAllPlayersC::sub_004DA390(g_allPlayers_007FA174,(uint)this->field_0024,param_1,1);
   }
   return;
 }

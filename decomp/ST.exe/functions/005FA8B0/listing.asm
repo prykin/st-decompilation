@@ -40,7 +40,7 @@ STColl3C::sub_005FA8B0:
 005FA931  75 3F                     JNZ 0x005fa972
 005FA933  8B 06                     MOV EAX,dword ptr [ESI]
 005FA935  8B CE                     MOV ECX,ESI
-005FA937  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+005FA937  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STFishC
 005FA93A  83 F8 6E                  CMP EAX,0x6e
 005FA93D  75 33                     JNZ 0x005fa972
 005FA93F  BF 01 00 00 00            MOV EDI,0x1

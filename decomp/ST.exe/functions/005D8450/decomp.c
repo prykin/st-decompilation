@@ -22,67 +22,67 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   ccFntTy **ppcVar12;
   ccFntTy *local_db0 [8];
   DArrayTy *local_d90;
-  undefined4 local_d64;
-  undefined4 local_d60;
-  undefined4 local_d5c;
-  undefined4 local_d24;
-  undefined4 local_d20;
-  undefined4 local_d1c;
-  undefined4 local_554;
-  undefined4 local_550;
-  undefined4 local_524 [10];
-  undefined4 local_4fc;
-  undefined4 local_4f8;
-  undefined4 local_4f4;
-  undefined4 local_4dc;
-  undefined4 local_4d8;
-  undefined4 local_4d4;
-  undefined4 local_4bc;
-  undefined4 local_4b8;
-  undefined4 local_4b4;
-  undefined4 local_49c;
-  undefined4 local_498;
-  undefined4 local_494;
-  undefined4 local_3f8;
-  undefined4 local_3f4;
-  undefined4 local_3f0;
-  undefined4 local_3ec;
-  undefined4 local_3e8;
-  undefined4 local_3e4;
-  undefined4 local_3e0;
-  undefined4 local_394;
-  undefined4 local_390;
-  undefined4 local_38c;
-  undefined4 local_2ec;
-  undefined4 local_2e8;
-  undefined4 local_2e4;
-  undefined4 local_2e0;
-  undefined4 local_278;
-  undefined4 local_274;
-  undefined4 local_270;
-  undefined4 local_26c;
-  undefined4 local_268;
-  undefined4 local_264;
-  undefined4 local_260;
-  undefined4 local_214;
-  undefined4 local_210;
-  undefined4 local_20c;
-  undefined4 local_16c;
-  undefined4 local_168;
-  undefined4 local_164;
-  undefined4 local_160;
-  undefined4 local_f8;
-  undefined4 local_f4;
-  undefined4 local_ec;
-  undefined4 local_e8;
-  undefined4 local_e4;
-  undefined4 local_e0;
-  undefined4 local_dc;
-  undefined4 local_d8;
-  undefined4 local_a4;
-  undefined4 local_a0;
-  undefined4 local_9c;
-  undefined4 local_54;
+  uint local_d64;
+  uint local_d60;
+  uint local_d5c;
+  uint local_d24;
+  uint local_d20;
+  uint local_d1c;
+  uint local_554;
+  uint local_550;
+  uint local_524 [10];
+  uint local_4fc;
+  uint local_4f8;
+  uint local_4f4;
+  uint local_4dc;
+  uint local_4d8;
+  uint local_4d4;
+  uint local_4bc;
+  uint local_4b8;
+  uint local_4b4;
+  uint local_49c;
+  uint local_498;
+  uint local_494;
+  uint local_3f8;
+  uint local_3f4;
+  uint local_3f0;
+  uint local_3ec;
+  uint local_3e8;
+  uint local_3e4;
+  uint local_3e0;
+  uint local_394;
+  uint local_390;
+  uint local_38c;
+  uint local_2ec;
+  uint local_2e8;
+  uint local_2e4;
+  uint local_2e0;
+  uint local_278;
+  uint local_274;
+  uint local_270;
+  uint local_26c;
+  uint local_268;
+  uint local_264;
+  uint local_260;
+  uint local_214;
+  uint local_210;
+  uint local_20c;
+  uint local_16c;
+  uint local_168;
+  uint local_164;
+  uint local_160;
+  uint local_f8;
+  uint local_f4;
+  uint local_ec;
+  uint local_e8;
+  uint local_e4;
+  uint local_e0;
+  uint local_dc;
+  uint local_d8;
+  uint local_a4;
+  uint local_a0;
+  uint local_9c;
+  uint local_54;
   InternalExceptionFrame local_50;
   SIDTy *local_8;
   char *pcVar8_mg2;
@@ -90,10 +90,12 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\Start\\sid_obj.cpp",0x104,0,iVar3,"%s",
                                "SIDTy::CreateCtrls");
     if (iVar6 != 0) {
@@ -253,18 +255,22 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   this_00->field_1AF9[1] = uVar4;
   /* ST_CALLSITE[005D8865]: CALL 0x0040392c; direct=0040392C SIDTy::PrepFiles */
   PrepFiles(this_00);
+
   Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_00->field_1CB4);
   if (this_00->field_1B05 != 0xffffffff) {
+
     Library::DKW::DDX::FUN_006b34d0
               ((uint *)this_00->field_1B49,this_00->field_1B05,0xfffffffe,this_00->field_1B1D,
                this_00->field_1B21);
   }
   if (this_00->field_1B96 != 0xffffffff) {
+
     Library::DKW::DDX::FUN_006b34d0
               ((uint *)this_00->field_1BDA,this_00->field_1B96,0xfffffffe,this_00->field_1BAE,
                this_00->field_1BB2);
   }
   if (this_00->field_1C27 != 0xffffffff) {
+
     Library::DKW::DDX::FUN_006b34d0
               ((uint *)this_00->field_1C6B,this_00->field_1C27,0xfffffffe,this_00->field_1C3F,
                this_00->field_1C43);

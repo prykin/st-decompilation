@@ -69,7 +69,7 @@ LAB_0060509e:
 006050A4  85 F6                     TEST ESI,ESI
 006050A6  74 21                     JZ 0x006050c9
 006050A8  56                        PUSH ESI
-006050A9  E8 C2 5B 0A 00            CALL 0x006aac70
+006050A9  E8 C2 5B 0A 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 006050AE  8B CE                     MOV ECX,ESI
 006050B0  8B 75 08                  MOV ESI,dword ptr [EBP + 0x8]
 006050B3  89 83 B3 02 00 00         MOV dword ptr [EBX + 0x2b3],EAX

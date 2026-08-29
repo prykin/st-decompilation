@@ -20,8 +20,7 @@ FUN_00624140(void *this,int param_1,int param_2,Global_sub_0061BDB0_param_1Enum 
   short sVar8;
   short sVar9;
   short sVar10;
-  undefined4 local_8;
-
+  uint local_8;
   pGVar3 = param_3;
   local_8 = 0;
   *param_7 = param_6;

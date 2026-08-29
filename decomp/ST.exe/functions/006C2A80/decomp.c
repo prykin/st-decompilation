@@ -16,6 +16,7 @@ uint FUN_006c2a80(int *param_1,DDXContext *param_2)
   void *pvVar1;
 
   *param_1 = 0;
+
   pvVar1 = Library::DKW::LIB::MemAllocClear(0xb8);
   if (pvVar1 == nullptr) {
     return 0xfffffffe;

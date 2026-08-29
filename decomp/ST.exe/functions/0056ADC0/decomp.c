@@ -63,9 +63,9 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
   WNDCLASSA *pWVar19;
   char *pcVar20;
   uint *puVar21;
-  AnonShape_00683C70_22193481 **ppAVar22;
+  RecoveredRecordView_00683C70_9F6EAF4E **ppRVar22;
   UINT UVar23;
-  AnonShape_00683C70_22193481 *local_560;
+  RecoveredRecordView_00683C70_9F6EAF4E *local_560;
   InternalExceptionFrame local_248;
   InternalExceptionFrame local_204;
   InternalExceptionFrame local_1c0;
@@ -80,10 +80,10 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
   int local_38;
   undefined4 *local_34;
   int local_30;
-  undefined4 local_2c [4];
+  uint local_2c [4];
   int local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
+  uint local_18;
+  uint local_14;
   STAppC *local_c;
   byte *local_8;
   char *pcVar12;
@@ -96,6 +96,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
   local_b0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b0;
   local_c = this;
+
   local_EAX_47 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0);
   local_30 = local_EAX_47;
   if (local_EAX_47 != 0) {
@@ -109,11 +110,13 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
     case -0x5001fff6:
       UVar23 = 0;
       local_EAX_4860 = LoadResourceString(0x2648,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[0056C0CE]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] readability_validated; exact direct-call result=/winnt.h/LPCSTR; signature=__stdcall;/winnt.h/LPCSTR;/WinDef.h/UINT;/WinDef.h/HINSTANCE */
       local_EAX_4878 = LoadResourceString(0x264b,g_hINSTANCE_00807618);
       /* ST_CALLSITE[0056C0D6]: CALL dword ptr [0x0085bdec] */
       MessageBoxA((HWND)0x0,local_EAX_4878,local_EAX_4860,UVar23);
       break;
     default:
+
       iVar15 = ReportDebugMessage("E:\\__titans\\tapp.cpp",0x2c9,0,local_EAX_47,"%s"
                                   ,"STAppC::InitApp");
       if (iVar15 != 0) {
@@ -123,6 +126,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
     case -0x5001fff3:
       UVar23 = 0;
       local_EAX_4813 = LoadResourceString(0x2648,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[0056C09F]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] readability_validated; exact direct-call result=/winnt.h/LPCSTR; signature=__stdcall;/winnt.h/LPCSTR;/WinDef.h/UINT;/WinDef.h/HINSTANCE */
       local_EAX_4831 = LoadResourceString(0x264c,g_hINSTANCE_00807618);
       /* ST_CALLSITE[0056C0A7]: CALL dword ptr [0x0085bdec] */
       MessageBoxA((HWND)0x0,local_EAX_4831,local_EAX_4813,UVar23);
@@ -130,6 +134,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
     RaiseInternalException(local_EAX_47,0,"E:\\__titans\\tapp.cpp",0x2cc);
     return 0;
   }
+
   iVar7 = thunk_FUN_0056a5c0();
   if (iVar7 != 0) {
     /* ST_CALLSITE[0056AE12]: CALL dword ptr [0x0085bc70] */
@@ -145,6 +150,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
     RaiseInternalException
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\tapp.cpp",0x13e);
   }
+
   AppClassTy::InitApp((AppClassTy *)local_c,hInstance);
   pWVar19 = &local_6c;
   for (iVar13 = 10; iVar13 != 0; iVar13 = iVar13 + -1) {
@@ -183,10 +189,12 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
   local_40 = g_hWnd_00806748;
   local_138.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_138;
+
   local_EAX_458 = Library::MSVCRT::__setjmp3(local_138.jumpBuffer,0);
   puVar21 = local_34;
   if (local_EAX_458 == 0) {
     *local_34 = 1;
+
     iVar13 = Library::DKW::SND::FUN_006b7920(local_34 + 1,(DWORD_PTR)local_40);
     if (iVar13 != 0) {
       *puVar21 = 0;
@@ -197,6 +205,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
     g_currentExceptionFrame = local_138.previous;
     *local_34 = 0;
   }
+
   iVar13 = thunk_FUN_00571e40(&local_c->field_0038,(LPDWORD)0x1);
   if (iVar13 == 0) {
     RaiseInternalException
@@ -204,6 +213,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
   }
   local_248.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_248;
+
   local_EAX_613 = Library::MSVCRT::__setjmp3(local_248.jumpBuffer,0);
   pSVar16 = local_c;
   if (local_EAX_613 == 0) {
@@ -211,14 +221,17 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
     puVar2 = (byte *)&local_c->field_7D1A;
     /* ST_CALLSITE[0056B053]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)puVar2,"%s%s%s",puVar1,PTR_s_SYSTEM__0079b030,"INTER");
-    g_cMf32_00806780 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar2,0,0,0);
+    /* ST_CALLSITE[0056B065]: CALL 0x006f0ec0; direct=006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint */
+    g_cMf32_00806780 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar2,0,0,0);
     PTR_00806784 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)g_cMf32_00806780);
     /* ST_CALLSITE[0056B08E]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)puVar2,"%s%s",&pSVar16->field_0x470,PTR_s_TASKS_0079b048);
-    g_cMf32_00806798 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar2,0,0,0);
+    /* ST_CALLSITE[0056B0A0]: CALL 0x006f0ec0; direct=006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint */
+    g_cMf32_00806798 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar2,0,0,0);
     /* ST_CALLSITE[0056B0C1]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)puVar2,"%s%s%s",puVar1,PTR_s_SYSTEM__0079b030,PTR_s_STRATEGS_0079b04c);
-    g_cMf32_0080675C = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar2,0,0,0);
+    /* ST_CALLSITE[0056B0D3]: CALL 0x006f0ec0; direct=006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint */
+    g_cMf32_0080675C = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar2,0,0,0);
     /* ST_CALLSITE[0056B0E0]: CALL 0x00403387; direct=00403387 CreateArbList */
     puVar7 = CreateArbList(g_cMf32_0080675C,0);
     pSVar16->field_4EE2 = puVar7;
@@ -247,19 +260,26 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
   _DAT_0080758c = 0x1e;
   _DAT_00807590 = 0x4d8;
   _DAT_00807594 = 0x3c2;
+
   FUN_006b9b20(&g_dDXContext_0080759C,g_hWnd_00806748,(int *)&pSVar16->field_115A);
+
   Library::DKW::DDX::FUN_006b9b40
             (g_dDXContext_0080759C,0x10000001,g_nWidth_00806730,DAT_00806734,DAT_00806738,
              g_nWidth_00806730,DAT_00806734,0,0,0x100);
+
   Library::DKW::DDX::FUN_006b1300((int *)&g_ddxContext_008075A8,g_dDXContext_0080759C);
+
   FUN_006bbb20(g_dDXContext_0080759C,1);
   FUN_006ba780(g_dDXContext_0080759C,1);
+
   Library::DKW::DV::FUN_006c3800
-            (&g_anonShape_006C3FC0_72DDFA27_008075A0,g_dDXContext_0080759C,HWND_00856d78,0x2660);
+            (&g_recoveredSourceFamily_dvideo_008075A0,g_dDXContext_0080759C,HWND_00856d78,0x2660);
   local_1c0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_1c0;
+
   local_EAX_1207 = Library::MSVCRT::__setjmp3(local_1c0.jumpBuffer,0);
   if (local_EAX_1207 == 0) {
+
     FUN_006c2a80((int *)&g_int_008075A4,g_dDXContext_0080759C);
   }
   g_currentExceptionFrame = local_1c0.previous;
@@ -276,9 +296,11 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
   thunk_FUN_005672a0(&local_c->field_0038,HWND_00856d78);
   local_f4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_f4;
+
   local_EAX_1470 = Library::MSVCRT::__setjmp3(local_f4.jumpBuffer,0);
   pSVar16 = local_c;
   if ((local_EAX_1470 == 0) &&
+
      (local_EAX_1496 = Library::DKW::DDX::FUN_006b6d50((int *)&g_int_00811764,0x20),
      local_EAX_1496 == 0)) {
     DAT_00811768 = '\x01';
@@ -319,8 +341,9 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
     }
   }
   g_currentExceptionFrame = local_f4.previous;
-  thunk_FUN_00572510((AnonShape_00572510_F06DC155 *)&pSVar16->field_0038);
+  thunk_FUN_00572510((RecoveredRecordView_00572510_EB02076B *)&pSVar16->field_0038);
   if (((DAT_00811768 != '\0') && (pSVar16->field_0E26 == '\0')) &&
+
      (iVar13 = thunk_FUN_005738d0((AnonShape_005738D0_F693E267 *)&pSVar16->field_0038), iVar13 == 0)
      ) {
     DAT_00811768 = '\0';
@@ -341,16 +364,17 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
   pcVar17 = (char *)PTR_00857168->field_0004;
   if (pcVar17 == nullptr) {
     if ((DAT_00807330 & 1) != 0) {
-      ppAVar22 = &local_560;
+      ppRVar22 = &local_560;
       for (iVar13 = 0xc6; iVar13 != 0; iVar13 = iVar13 + -1) {
-        *ppAVar22 = nullptr;
-        ppAVar22 = ppAVar22 + 1;
+        *ppRVar22 = nullptr;
+        ppRVar22 = ppRVar22 + 1;
       }
       /* ST_CALLSITE[0056BFEE]: CALL dword ptr [0x0085bde8] */
       wsprintfA(&pSVar16->field_7D1A,"%s%s",&pSVar16->field_0x164,PTR_s_STARTUP_VPS_0079b040);
-      pDVar11 = (DArrayTy *)
-                thunk_FUN_00683c70(&pSVar16->field_7D1A,(AnonShape_00683C70_22193481 *)&local_560,
-                                   &local_38,nullptr,nullptr);
+      /* ST_CALLSITE[0056C004]: CALL 0x00404403; direct=00404403 thunk_FUN_00683c70; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArrayTy;/winnt.h/LPCSTR;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_00683C70_9F6EAF4E;pointer:/undefined4;pointer:/int;pointer:/undefined */
+      pDVar11 = thunk_FUN_00683c70(&pSVar16->field_7D1A,
+                                   (RecoveredRecordView_00683C70_9F6EAF4E *)&local_560,&local_38,
+                                   nullptr,nullptr);
       if ((local_38 == 0x40) && (pDVar11 != nullptr)) {
         local_1c = 0x7101;
         local_18 = 1;
@@ -661,7 +685,8 @@ STAppC::InitApp(STAppC *this,HINSTANCE hInstance,undefined4 param_2,undefined4 p
           memmove(pcVar18, pcVar17, uVar14); /* compiler REP MOVS byte copy */
           pcVar17 = (char *)((byte *)pcVar17 + uVar14);
           uVar15 = 0;
-          pSVar10 = (StartSystemTy *)Library::MSVCRT::FUN_0072e530(0x6b6);
+          /* ST_CALLSITE[0056B8F6]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/StartSystemTy; signature=__cdecl;pointer:/StartSystemTy;/uint */
+          pSVar10 = Library::MSVCRT::FUN_0072e530(0x6b6);
           if (pSVar10 != nullptr) {
             /* ST_CALLSITE[0056B905]: CALL 0x00405cd6; direct=00405CD6 StartSystemTy::StartSystemTy */
             StartSystemTy::StartSystemTy(pSVar10,(AppClassTy *)pSVar16);
@@ -783,11 +808,13 @@ switchD_0056b4ce_caseD_47:
           pSVar16->field_1163 = 2;
           local_204.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &local_204;
+
           local_EAX_3793 = Library::MSVCRT::__setjmp3(local_204.jumpBuffer,0);
           pSVar16 = local_c;
           if (local_EAX_3793 == 0) {
-            pcVar9 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
-                                        (0x345,(byte *)&local_c->field_76F6,0,0,0);
+            /* ST_CALLSITE[0056BCB2]: CALL 0x006f0ec0; direct=006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint */
+            pcVar9 = Library::Ourlib::MF32INT::FUN_006f0ec0
+                               (0x345,(byte *)&local_c->field_76F6,0,0,0);
             local_3c = &pSVar16->field_0x1196;
             cMf32::RecGet(pcVar9,0,PTR_s_DESCRIPTOR_0079b080,(int *)&local_3c,0);
             cMf32::delete(pcVar9);
@@ -822,7 +849,8 @@ switchD_0056b4ce_caseD_47:
         memset(&pSVar16->field_4F02, 0, 0x27f0); /* compiler bulk-zero initialization */
         cVar2 = *(char *)(PTR_00857168->field_0004 + 1);
         if (((cVar2 == 'G') || (cVar2 == 'D')) || (cVar2 == 'W')) {
-          pSVar10 = (StartSystemTy *)Library::MSVCRT::FUN_0072e530(0x6b6);
+          /* ST_CALLSITE[0056BDB9]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/StartSystemTy; signature=__cdecl;pointer:/StartSystemTy;/uint */
+          pSVar10 = Library::MSVCRT::FUN_0072e530(0x6b6);
           if (pSVar10 != nullptr) {
             /* ST_CALLSITE[0056BDC8]: CALL 0x00405cd6; direct=00405CD6 StartSystemTy::StartSystemTy */
             StartSystemTy::StartSystemTy(pSVar10,(AppClassTy *)pSVar16);
@@ -1100,14 +1128,16 @@ switchD_0056b4ce_caseD_57:
       wsprintfA(&pSVar16->field_76F6,"%s%s",&pSVar16->field_0x60,PTR_00857168->field_0008);
       local_17c.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_17c;
+
       local_EAX_2043 = Library::MSVCRT::__setjmp3(local_17c.jumpBuffer,0);
       pSVar16 = local_c;
       if (local_EAX_2043 == 0) {
-        pcVar9 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
-                                    (0x345,(byte *)&local_c->field_76F6,2,0,0);
+        /* ST_CALLSITE[0056B5DC]: CALL 0x006f0ec0; direct=006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint */
+        pcVar9 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&local_c->field_76F6,2,0,0);
         local_8 = &pSVar16->field_0x1196;
         cMf32::RecGet(pcVar9,0,PTR_s_DESCRIPTOR_0079b080,(int *)&local_8,0);
         pSVar16->field_119A = 0x8f000805;
+
         cMf32::RecPut(pcVar9,0,PTR_s_DESCRIPTOR_0079b080,&pSVar16->field_0x1196,0x1999,
                       nullptr,'\0',nullptr);
         cMf32::delete(pcVar9);
@@ -1121,7 +1151,7 @@ switchD_0056b4ce_caseD_57:
     local_1c = 0x6123;
   }
 cf_common_exit_0056C034:
-  local_560 = (AnonShape_00683C70_22193481 *)0x56c03f;
+  local_560 = (RecoveredRecordView_00683C70_9F6EAF4E *)0x56c03f;
   /* ST_CALLSITE[0056C03C]: CALL dword ptr [EDX + 0x18] */
   pSVar16->GetMessage((int)local_2c);
   g_currentExceptionFrame = local_b0.previous;

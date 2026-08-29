@@ -17,12 +17,14 @@ TLOBaseTy::FUN_004cf4e0
   if (this->field_03D8 <= this->field_03D4 + 1) {
     iVar1 = this->field_03D8 + 0x14;
     this->field_03D8 = iVar1;
+    /* ST_CALLSITE[004CF51F]: CALL 0x006acf50; direct=006ACF50 Library::DKW::LIB::MemRealloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607; source view only; no Ghidra override */
     pAVar2 = Library::DKW::LIB::MemRealloc(this->field_0607,iVar1 * 0x27);
     this->field_0607 = pAVar2;
   }
+
   Library::MSVCRT::FUN_0072da70
-            ((undefined4 *)((int)&this->field_0607[1].field_000C + 3),this->field_0607,
-             this->field_03D4 * 0x27);
+            ((RecoveredRecord_006BFE70_3123BCE8 *)((int)&this->field_0607[1].field_000C + 3),
+             this->field_0607,this->field_03D4 * 0x27);
   this->field_0607->field_0000 = 1;
   this->field_0607->field_0004 = param_1;
   this->field_0607->field_0008 = param_2;

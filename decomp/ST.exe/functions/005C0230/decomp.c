@@ -4,27 +4,25 @@
 void __fastcall FUN_005c0230(MReportTy *param_1)
 
 {
-  uint uVar1;
-  int *piVar2;
-  byte bVar3;
-  int iVar4;
-  int iVar6;
-  bool bVar7;
+  int *piVar1;
+  byte bVar2;
+  int iVar3;
+  int iVar5;
+  bool bVar6;
   int local_4bc [280];
-  undefined4 local_5c [4];
-  undefined4 local_4c;
-  undefined4 local_48;
-  undefined4 local_44;
-  undefined4 local_2c;
-  undefined4 local_28;
-  undefined4 local_24;
+  uint local_5c [4];
+  uint local_4c;
+  uint local_48;
+  uint local_44;
+  uint local_2c;
+  uint local_28;
+  uint local_24;
   int *local_14;
-  undefined4 local_10;
-
+  uint local_10;
   memset(local_5c, 0, 0x58); /* compiler bulk-zero initialization */
-  iVar4 = 0;
+  iVar3 = 0;
   memset(local_4bc, 0, 0x460); /* compiler bulk-zero initialization */
-  iVar4 = 0;
+  iVar3 = 0;
   param_1->field_0353 = 0x7d;
   param_1->field_0357 = 0x7e;
   param_1->field_035B = 0x93;
@@ -74,37 +72,38 @@ void __fastcall FUN_005c0230(MReportTy *param_1)
   param_1->field_002D = 0x13;
   param_1->field_0031 = param_1->field_0008;
   param_1->field_0033 = param_1->field_000A;
+
   FUN_006e6000(param_1,3,1,(undefined4 *)&param_1->field_0x1d);
   if (param_1->field_0066 == '\x01') {
     /* ST_CALLSITE[005C041E]: CALL 0x00405ecf; direct=00405ECF MReportTy::CreateBut */
-    uVar1 = MReportTy::CreateBut(param_1,1,1,0x2d,0x226,0x91,0x28,0x6201,0x6213);
-    param_1->field_0093 = uVar1;
+    iVar3 = MReportTy::CreateBut(param_1,1,1,0x2d,0x226,0x91,0x28,0x6201,0x6213);
+    param_1->field_0093 = iVar3;
     /* ST_CALLSITE[005C0447]: CALL 0x00405ecf; direct=00405ECF MReportTy::CreateBut */
-    uVar1 = MReportTy::CreateBut(param_1,1,1,0x1e,0x1bd,300,0x1e,0x6202,0x6214);
-    param_1->field_0097 = uVar1;
+    iVar3 = MReportTy::CreateBut(param_1,1,1,0x1e,0x1bd,300,0x1e,0x6202,0x6214);
+    param_1->field_0097 = iVar3;
   }
   else {
     /* ST_CALLSITE[005C0475]: CALL 0x00405ecf; direct=00405ECF MReportTy::CreateBut */
-    uVar1 = MReportTy::CreateBut(param_1,1,1,0x262,0x226,0x91,0x28,0x6200,0x6212);
-    param_1->field_008F = uVar1;
+    iVar3 = MReportTy::CreateBut(param_1,1,1,0x262,0x226,0x91,0x28,0x6200,0x6212);
+    param_1->field_008F = iVar3;
   }
-  bVar3 = 0;
-  iVar6 = 1;
-  iVar4 = 0x4b;
-  piVar2 = local_4bc + 1;
+  bVar2 = 0;
+  iVar5 = 1;
+  iVar3 = 0x4b;
+  piVar1 = local_4bc + 1;
   do {
-    piVar2[-1] = iVar6;
-    bVar7 = bVar3 != 0;
-    bVar3 = bVar3 + 1;
-    *piVar2 = bVar7 + 1;
-    piVar2[2] = 0x1a;
-    piVar2[4] = 0x2e;
-    piVar2[3] = iVar4;
-    piVar2[5] = 0x24;
-    iVar6 = iVar6 + 1;
-    iVar4 = iVar4 + 0x26;
-    piVar2 = piVar2 + 0x1c;
-  } while (bVar3 < 9);
+    piVar1[-1] = iVar5;
+    bVar6 = bVar2 != 0;
+    bVar2 = bVar2 + 1;
+    *piVar1 = bVar6 + 1;
+    piVar1[2] = 0x1a;
+    piVar1[4] = 0x2e;
+    piVar1[3] = iVar3;
+    piVar1[5] = 0x24;
+    iVar5 = iVar5 + 1;
+    iVar3 = iVar3 + 0x26;
+    piVar1 = piVar1 + 0x1c;
+  } while (bVar2 < 9);
   local_14 = local_4bc;
   local_5c[0] = 1;
   local_10 = 1;

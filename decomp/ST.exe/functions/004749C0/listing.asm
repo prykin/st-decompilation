@@ -102,7 +102,8 @@ switchD_00474a47::caseD_0:
 00474B17  50                        PUSH EAX
 00474B18  51                        PUSH ECX
 00474B19  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
-00474B1F  E8 D5 11 F9 FF            CALL 0x00405cf9
+STBoatC::WaitLoad::override::prt_474b1f_50e894cc:
+00474B1F  E8 D5 11 F9 FF            CALL 0x00405cf9  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__stdcall;pointer:/STBoatC;/char;/ushort
 00474B24  8B 96 BC 05 00 00         MOV EDX,dword ptr [ESI + 0x5bc]
 00474B2A  89 45 08                  MOV dword ptr [EBP + 0x8],EAX
 00474B2D  0F BF 4E 5D               MOVSX ECX,word ptr [ESI + 0x5d]
@@ -204,7 +205,7 @@ LAB_00474c4f:
 00474C5A  66 8B 96 C8 05 00 00      MOV DX,word ptr [ESI + 0x5c8]
 00474C61  8B CE                     MOV ECX,ESI
 00474C63  52                        PUSH EDX
-00474C64  E8 49 E4 F8 FF            CALL 0x004030b2
+00474C64  E8 49 E4 F8 FF            CALL 0x004030b2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override
 00474C69  50                        PUSH EAX
 00474C6A  8B CE                     MOV ECX,ESI
 00474C6C  E8 8B D6 F8 FF            CALL 0x004022fc
@@ -449,7 +450,7 @@ LAB_00474f49:
 00474F4E  66 8B 8E B0 05 00 00      MOV CX,word ptr [ESI + 0x5b0]
 00474F55  51                        PUSH ECX
 00474F56  8B CE                     MOV ECX,ESI
-00474F58  E8 55 E1 F8 FF            CALL 0x004030b2
+00474F58  E8 55 E1 F8 FF            CALL 0x004030b2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override
 00474F5D  50                        PUSH EAX
 00474F5E  8B CE                     MOV ECX,ESI
 00474F60  E8 97 D3 F8 FF            CALL 0x004022fc

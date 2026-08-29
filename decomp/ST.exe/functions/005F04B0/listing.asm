@@ -16,7 +16,7 @@ FUN_005f04b0:
 005F04D4  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]
 005F04D7  8B F9                     MOV EDI,ECX
 005F04D9  8B 11                     MOV EDX,dword ptr [ECX]
-005F04DB  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+005F04DB  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 005F04DE  83 F8 1B                  CMP EAX,0x1b
 005F04E1  74 0A                     JZ 0x005f04ed
 005F04E3  83 F8 07                  CMP EAX,0x7

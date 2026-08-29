@@ -44,7 +44,7 @@ int __fastcall FUN_0060c320(void *param_1)
   int local_5c;
   int local_58;
   short local_54 [4];
-  undefined4 local_4c;
+  uint local_4c;
   int local_44;
   int local_40;
   int local_3c;
@@ -55,8 +55,7 @@ int __fastcall FUN_0060c320(void *param_1)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   puStack_c = &DAT_0079cd68;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;

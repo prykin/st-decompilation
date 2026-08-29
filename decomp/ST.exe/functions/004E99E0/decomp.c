@@ -7,27 +7,26 @@ FUN_004e99e0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
 {
   uint uVar1;
   uint *puVar3;
-  undefined4 local_74;
-  undefined4 local_70;
-  undefined4 local_6c;
-  undefined4 local_68;
-  undefined4 local_64;
-  undefined4 local_60;
-  undefined4 local_5c;
-  undefined4 local_58;
-  undefined4 local_54;
-  undefined4 local_50;
-  undefined4 local_4c;
-  undefined4 local_48;
-  undefined4 local_44;
-  undefined4 local_40;
+  uint local_74;
+  uint local_70;
+  uint local_6c;
+  uint local_68;
+  uint local_64;
+  uint local_60;
+  uint local_5c;
+  uint local_58;
+  uint local_54;
+  uint local_50;
+  uint local_4c;
+  uint local_48;
+  uint local_44;
+  uint local_40;
   uint local_3c;
-  undefined4 local_38;
-  undefined4 local_25;
-  undefined4 local_21;
-  undefined4 local_1d;
-  undefined4 local_9;
-
+  uint local_38;
+  uint local_25;
+  uint local_21;
+  uint local_1d;
+  uint local_9;
   if (STField<int>(this,0x4f8) == 0) {
     puVar3 = &local_74;
     memset(puVar3, 0, 0x6f); /* compiler bulk-zero initialization */

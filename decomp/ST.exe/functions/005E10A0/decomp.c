@@ -9,17 +9,19 @@
    Evidence: all observed direct callers ignore the return register (ignored=7, used=0), and
    decompilation contains no value return */
 
-void __thiscall MTaskTy::TTaskItemClose(MTaskTy *this,AnonShape_005E10A0_819783CC *param_1)
+void __thiscall
+MTaskTy::TTaskItemClose(MTaskTy *this,RecoveredRecordView_005E10A0_0590A448 *param_1)
 
 {
   int iVar2;
   int iVar3;
   int iVar4;
-  AnonShape_005E10A0_819783CC *slotStorage;
+  RecoveredRecordView_005E10A0_0590A448 *slotStorage;
   InternalExceptionFrame local_48;
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar2 == 0) {
     if (param_1 != nullptr) {
@@ -30,7 +32,7 @@ void __thiscall MTaskTy::TTaskItemClose(MTaskTy *this,AnonShape_005E10A0_819783C
       iVar4 = 3;
       slotStorage = param_1;
       do {
-        slotStorage = (AnonShape_005E10A0_819783CC *)&slotStorage->field_0x4;
+        slotStorage = (RecoveredRecordView_005E10A0_0590A448 *)&slotStorage->field_0x4;
         if (*(int *)slotStorage != 0) {
           FreeAndNull(slotStorage);
         }
@@ -49,6 +51,7 @@ void __thiscall MTaskTy::TTaskItemClose(MTaskTy *this,AnonShape_005E10A0_819783C
     return;
   }
   g_currentExceptionFrame = local_48.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",0x1ab,0,iVar2,"%s",
                              "MTaskTy::TTaskItemClose");
   if (iVar3 != 0) {

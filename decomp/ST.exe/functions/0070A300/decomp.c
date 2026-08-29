@@ -10,7 +10,7 @@ void __cdecl FUN_0070a300(int *param_1)
 {
   int iVar2;
   int iVar1;
-  undefined4 local_34 [10];
+  uint local_34 [10];
   uint local_b;
 
   if (*param_1 != 0) {

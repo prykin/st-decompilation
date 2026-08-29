@@ -32,27 +32,29 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,ch
   int iVar9;
   uint uVar10;
   InternalExceptionFrame local_9c;
-  undefined4 local_58;
-  undefined1 local_3c [16];
-  undefined4 local_2c;
+  uint local_58;
+  byte local_3c [16];
+  uint local_2c;
   uint local_28;
   StartSystemTy *local_1c;
   byte *local_18;
   DArrayTy *local_14;
-  undefined1 local_10;
-  undefined1 local_f;
-  undefined1 local_e;
-  undefined4 local_d;
+  byte local_10;
+  byte local_f;
+  byte local_e;
+  uint local_d;
   char *local_8;
   char *puVar5;
 
   local_9c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_9c;
   local_1c = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_9c.jumpBuffer,0);
   this_01 = local_1c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_9c.previous;
+
     iVar8 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0x231,0,iVar3,"%s"
                                ,"StartSystemTy::LoadMapData");
     if (iVar8 != 0) {
@@ -75,16 +77,16 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,ch
     if (g_dArray_0080C4C7 != nullptr) {
       FUN_006b5570(g_dArray_0080C4C7);
     }
-    g_dArray_0080C4C7 =
-         (DArrayTy *)Library::Ourlib::MFSARR::mfSarLoad(param_1,PTR_s_DESCRIPTION_0079c1d0,0);
+    /* ST_CALLSITE[005DC119]: CALL 0x0071aa10; direct=0071AA10 Library::Ourlib::MFSARR::mfSarLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__cdecl;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/cMf32;pointer:/char;/int */
+    g_dArray_0080C4C7 = Library::Ourlib::MFSARR::mfSarLoad(param_1,PTR_s_DESCRIPTION_0079c1d0,0);
     if (g_dArray_0080C4C7 == nullptr) {
       g_dArray_0080C4C7 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     }
     if (g_dArray_0080C4CB != nullptr) {
       FUN_006b5570(g_dArray_0080C4CB);
     }
-    g_dArray_0080C4CB =
-         (DArrayTy *)Library::Ourlib::MFSARR::mfSarLoad(param_1,PTR_s_OBJECTIVES_0079c1d4,0);
+    /* ST_CALLSITE[005DC151]: CALL 0x0071aa10; direct=0071AA10 Library::Ourlib::MFSARR::mfSarLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__cdecl;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/cMf32;pointer:/char;/int */
+    g_dArray_0080C4CB = Library::Ourlib::MFSARR::mfSarLoad(param_1,PTR_s_OBJECTIVES_0079c1d4,0);
     if (g_dArray_0080C4CB == nullptr) {
       g_dArray_0080C4CB = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     }
@@ -139,28 +141,35 @@ LAB_005dc22d:
       if ((DArrayTy *)this_01->field_0548 != nullptr) {
         FUN_006b5570((DArrayTy *)this_01->field_0548);
       }
-      pDVar5_mg0 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
-      this_01->field_0548 = &pDVar5_mg0->flags;
+      /* ST_CALLSITE[005DC2B3]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint */
+      pDVar5_mg0 = (DArrayTy *)Library::DKW::TBL::SArrayCreate(nullptr,10,10);
+      this_01->field_0548 = (uint *)pDVar5_mg0;
       puVar5 = &this_01->field_003C;
       pcVar6_mg1 = LoadResourceString(0x2347,g_hINSTANCE_00807618);
       /* ST_CALLSITE[005DC2DF]: CALL EBX */
       wsprintfA(puVar5,"&2 %s:",pcVar6_mg1);
+
       Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_01->field_0548,puVar5);
       /* ST_CALLSITE[005DC2FC]: CALL EBX */
       wsprintfA(puVar5,"&0 %s",&CHAR_00h_0080c3c3);
+
       Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_01->field_0548,puVar5);
+
       Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_01->field_0548,&CHAR___007c3b5c);
       uVar7 = _DAT_008087c4 & 0xffff;
       uVar10 = (uint)DAT_008087c2;
       pcVar6_mg2 = LoadResourceString(0x2344,g_hINSTANCE_00807618);
       /* ST_CALLSITE[005DC34C]: CALL EBX */
       wsprintfA(puVar5,"&2 %s: &0%d&2x&0%d",pcVar6_mg2,uVar10,uVar7);
+
       Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_01->field_0548,puVar5);
       uVar7 = _DAT_008087c4 >> 0x10 & 0xff;
       pcVar6_mg3 = LoadResourceString(0x2345,g_hINSTANCE_00807618);
       /* ST_CALLSITE[005DC37F]: CALL EBX */
       wsprintfA(puVar5,"&2 %s: &0%d",pcVar6_mg3,uVar7);
+
       Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_01->field_0548,puVar5);
+
       Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_01->field_0548,&CHAR___007c3b5c);
       switch(param_2) {
       case '\x01':
@@ -179,7 +188,9 @@ LAB_005dc22d:
         pcVar6_mg4 = LoadResourceString(0x2346,g_hINSTANCE_00807618);
         /* ST_CALLSITE[005DC3DB]: CALL EBX */
         wsprintfA(puVar5,"&2 %s:",pcVar6_mg4);
+
         Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_01->field_0548,puVar5);
+
         Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_01->field_0548,&CHAR___007c3b5c);
       }
       pDVar3 = local_14;
@@ -196,6 +207,7 @@ LAB_005dc22d:
           do {
             pcVar8 = *(char **)(pDVar3->growCapacity + iVar9 * 4);
 LAB_005dc430:
+
             Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_01->field_0548,pcVar8);
             iVar9 = iVar9 + 1;
           } while (iVar9 < (int)pDVar3->elementSize);
@@ -213,16 +225,19 @@ LAB_005dc430:
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_28 = CONCAT22((short)this_01->field_0548[2],1);
       if (this_01->field_0389 != 0) {
+
         SystemClassTy::SendMessage((SystemClassTy *)this_01,2,this_01->field_0389,(int)local_3c);
       }
       local_2c = 0x22;
       local_28 = 0;
       if (this_01->field_0389 != 0) {
+
         SystemClassTy::SendMessage((SystemClassTy *)this_01,2,this_01->field_0389,(int)local_3c);
       }
       local_2c = 0x20;
       local_28 = 1;
       if (this_01->field_0389 != 0) {
+
         SystemClassTy::SendMessage((SystemClassTy *)this_01,2,this_01->field_0389,(int)local_3c);
       }
     }

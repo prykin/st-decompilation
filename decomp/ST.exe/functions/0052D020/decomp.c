@@ -15,8 +15,10 @@ PopUpTy * __cdecl CreatePopUp(void)
   uint *puVar1;
   int iVar2;
 
-  this = (PopUpTy *)FUN_006b04d0(0xa1);
+
+  this = STPointerBoundaryCast<PopUpTy *>(FUN_006b04d0(0xa1));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->vtable = &PopUpTyVTable;
     this->field_0090 = nullptr;

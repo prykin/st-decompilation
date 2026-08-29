@@ -21,7 +21,8 @@ AiTactClassTy::InitDistrObj:
 0068F817  8B 7D F8                  MOV EDI,dword ptr [EBP + -0x8]
 0068F81A  8B 47 24                  MOV EAX,dword ptr [EDI + 0x24]
 0068F81D  50                        PUSH EAX
-0068F81E  E8 86 55 D7 FF            CALL 0x00404da9
+AiTactClassTy::InitDistrObj::override::prt_68f81e_207e6c26:
+0068F81E  E8 86 55 D7 FF            CALL 0x00404da9  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiTactClassTy; signature=__cdecl;pointer:/AiTactClassTy;/undefined4
 0068F823  83 C4 04                  ADD ESP,0x4
 0068F826  8B F0                     MOV ESI,EAX
 0068F828  8B CF                     MOV ECX,EDI

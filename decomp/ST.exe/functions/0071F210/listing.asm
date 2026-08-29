@@ -1,6 +1,7 @@
 CreateViewer:
 0071F210  68 F8 01 00 00            PUSH 0x1f8
-0071F215  E8 B6 12 F9 FF            CALL 0x006b04d0
+CreateViewer::override::prt_71f215_811da7b1:
+0071F215  E8 B6 12 F9 FF            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ViewerClassTy; signature=__stdcall;pointer:/ViewerClassTy;/uint
 0071F21A  85 C0                     TEST EAX,EAX
 0071F21C  74 07                     JZ 0x0071f225
 0071F21E  8B C8                     MOV ECX,EAX

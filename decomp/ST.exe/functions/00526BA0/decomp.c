@@ -12,9 +12,26 @@
    0050A839 | 0050A340 -> 00526BA0 @ 0050ADF8 | 0050A340 -> 00526BA0 @ 0050B0AC | 0050A340 ->
    00526BA0 @ 0050BC20 | 0050C620 -> 00526BA0 @ 0050DE09 | 00517A50 -> 00526BA0 @ 00517D6A |
    00517A50 -> 00526BA0 @ 00517FB4 | 00517A50 -> 00526BA0 @ 00518165 | 00517A50 -> 00526BA0 @
-   005185BB | 00517A50 -> 00526BA0 @ 00518785 */
+   005185BB | 00517A50 -> 00526BA0 @ 00518785
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (27), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=004EF320 @ 004EF3C0 -> read as EAX on
+   every CFG path | 004EFFE0 @ 004F005D -> read as EAX on every CFG path | 004F0E60 @ 004F0EFD ->
+   read as EAX on every CFG path | 004FE960 @ 004FEB5A -> read as EAX on every CFG path | 004FF380 @
+   004FFA72 -> read as EAX on every CFG path | 005061C0 @ 005066E2 -> read as EAX on every CFG path
+   | 005061C0 @ 00506A4C -> read as EAX on every CFG path | 005061C0 @ 00506E6C -> read as EAX on
+   every CFG path | 0050A340 @ 0050A839 -> read as EAX on every CFG path | 0050A340 @ 0050ADF8 ->
+   read as EAX on every CFG path | 0050A340 @ 0050B0AC -> read as EAX on every CFG path | 0050A340 @
+   0050BC20 -> read as EAX on every CFG path | 0050C620 @ 0050DE09 -> read as EAX on every CFG path
+   | 00515650 @ 0051578E -> read as EAX on every CFG path | 00516A40 @ 00517490 -> read as EAX on
+   every CFG path | 00516A40 @ 005175EF -> read as EAX on every CFG path | 00517A50 @ 00517D6A ->
+   read as EAX on every CFG path | 00517A50 @ 00517FB4 -> read as EAX on every CFG path | 00517A50 @
+   00518165 -> read as EAX on every CFG path | 00517A50 @ 005185BB -> read as EAX on every CFG path
+   | 00517A50 @ 00518785 -> read as EAX on every CFG path | 0051B5A0 @ 0051BF10 -> read as EAX on
+   every CFG path | 0051B5A0 @ 0051C0D8 -> read as EAX on every CFG path | 0051B5A0 @ 0051C278 ->
+   read as EAX on every CFG path */
 
-uint __cdecl FUN_00526ba0(Global_sub_00526BA0_param_1Enum param_1,char param_2)
+int __cdecl FUN_00526ba0(Global_sub_00526BA0_param_1Enum param_1,char param_2)
 
 {
   switch(param_1) {

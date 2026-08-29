@@ -29,15 +29,19 @@ undefined4 __thiscall STPlaySystemC::InitSystem(STPlaySystemC *this)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pSVar3 = local_8;
   if (errorCode == 0) {
+
     SystemClassTy::InitSystem((SystemClassTy *)local_8);
     pSVar3->field_0039 = nullptr;
     pSVar3->field_0045 = 7;
+    /* ST_CALLSITE[0054D016]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STPlaySystemC_003D; source view only; no Ghidra override */
     pAVar4 = Library::DKW::LIB::MemAlloc(7);
     pSVar3->field_003D = pAVar4;
     pSVar3->field_0053 = 0x1400;
+
     pvVar5 = Library::DKW::LIB::MemAlloc(0x1400);
     pSVar3->field_004F = pvVar5;
     pSVar3->field_0041 = 0;
@@ -75,6 +79,7 @@ undefined4 __thiscall STPlaySystemC::InitSystem(STPlaySystemC *this)
     return 0;
   }
   g_currentExceptionFrame = local_54.previous;
+
   iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x18c,0,errorCode,
                              "%s","STPlaySystemC::InitSystem");
   if (iVar6 != 0) {

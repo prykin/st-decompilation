@@ -14,7 +14,7 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
   STMessage *pSVar6;
   uint local_cc [20];
   STMessage local_7c;
-  undefined4 local_5c [5];
+  uint local_5c [5];
   uint local_48;
   int local_44;
   uint local_3c;
@@ -23,10 +23,10 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
   int local_30;
   uint local_2c;
   int local_28;
-  undefined4 local_24;
+  uint local_24;
   uint local_20;
-  undefined1 local_1c;
-  undefined1 local_1b;
+  byte local_1c;
+  byte local_1b;
   int local_1a;
   uint local_14;
   uint local_10;

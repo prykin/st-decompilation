@@ -5,7 +5,7 @@ STVolcanoC::sub_00646D40:
 00646D44  57                        PUSH EDI
 00646D45  8B F1                     MOV ESI,ECX
 00646D47  68 95 00 00 00            PUSH 0x95
-00646D4C  E8 1F 3F 06 00            CALL 0x006aac70
+00646D4C  E8 1F 3F 06 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/byte; source view only; no Ghidra override
 00646D51  8B 8E B1 00 00 00         MOV ECX,dword ptr [ESI + 0xb1]
 00646D57  C7 46 28 02 00 00 00      MOV dword ptr [ESI + 0x28],0x2
 00646D5E  85 F6                     TEST ESI,ESI

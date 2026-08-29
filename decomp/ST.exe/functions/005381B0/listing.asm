@@ -34,7 +34,8 @@ PanelTy::InitPanel:
 00538209  8B 56 40                  MOV EDX,dword ptr [ESI + 0x40]
 0053820C  51                        PUSH ECX
 0053820D  52                        PUSH EDX
-0053820E  E8 AD CE 17 00            CALL 0x006b50c0
+PanelTy::InitPanel::override::prt_53820e_14f2e6ea:
+0053820E  E8 AD CE 17 00            CALL 0x006b50c0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006B4FA0_DAC3A217; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006B4FA0_DAC3A217;/int;/int;/int;/uint;pointer:/undefined4;/int
 00538213  89 46 68                  MOV dword ptr [ESI + 0x68],EAX
 00538216  8B 58 14                  MOV EBX,dword ptr [EAX + 0x14]
 00538219  85 DB                     TEST EBX,EBX

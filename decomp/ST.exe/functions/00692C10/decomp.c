@@ -59,8 +59,10 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
         _DAT_00853ce4 = 0;
         _DAT_00853ce8 = 0;
         _DAT_00853cf0 = 0;
+
         uVar3 = thunk_FUN_006938c0(param_2);
         if (DAT_00853d84 <= uVar3) {
+
           iVar7 = ReportDebugMessage("E:\\__titans\\Maps\\DefObj.cpp",0x1ba,0,uVar3,
                                      "%s","Out of Range Entourage Group Index ");
           if (iVar7 != 0) {
@@ -70,6 +72,7 @@ FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *par
         }
         iVar8 = uVar3 * 0x218;
         if (*(uint *)(iVar8 + 0x20c + DAT_00853d80) <= param_5) {
+
           iVar5 = ReportDebugMessage("E:\\__titans\\Maps\\DefObj.cpp",0x1c0,0,param_5,
                                      "%s","Out of Range Entourage Index ");
           if (iVar5 != 0) {

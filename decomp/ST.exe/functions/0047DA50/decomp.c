@@ -43,11 +43,11 @@ int __thiscall STBoatC::BackAnnih(STBoatC *this,int *param_1)
   int iVar20;
   short sVar21;
   byte bVar22;
-  undefined4 local_2c [2];
+  uint local_2c [2];
   uint local_24;
   short local_20;
   int local_1c;
-  undefined4 local_18;
+  uint local_18;
   int local_14;
   int local_10;
   int local_c;
@@ -78,11 +78,12 @@ int __thiscall STBoatC::BackAnnih(STBoatC *this,int *param_1)
     this->field_06A5 = CASE_4;
   }
   if (this->field_06A5 == CASE_4) {
-    /* ST_CALLSITE[0047DB09]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+    /* ST_CALLSITE[0047DB09]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
     uVar6 = sub_004176C0(this,this->field_069B);
     /* ST_CALLSITE[0047DB11]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
     uVar6 = sub_00417910(this,(short)uVar6);
     if (uVar6 == 0xffffffff) {
+
       local_EAX_269 =
            ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3925,0,0,"%s",
                               "STBoatC::BackAnnih 1");
@@ -122,6 +123,7 @@ LAB_0047ddc3:
          (local_10 = 0, this->field_02BF != '\0')) {
         local_8 = (undefined4 *)&this->field_0x2b3;
         do {
+
           puVar7 = thunk_FUN_0041dc40(local_2c,(short)*local_8,*(ushort *)(local_8 + 1),
                                       this->field_006C);
           uVar3 = *puVar7;
@@ -166,6 +168,7 @@ LAB_0047ddc3:
         } while (local_10 < (int)(uint)(byte)this->field_02BF);
       }
       if (local_1c == -1) {
+
         local_EAX_865 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x394c,0,0,"%s",
                                 "STBoatC::BackAnnih 2");

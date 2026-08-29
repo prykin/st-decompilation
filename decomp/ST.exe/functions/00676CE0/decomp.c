@@ -41,7 +41,8 @@ void __cdecl FUN_00676ce0(DArrayTy *param_1,undefined *param_2)
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         iVar5 = (*(code *)param_2)(pvVar4,pvVar6);
         if (iVar5 < 0) {
-          FUN_006b0cd0((AnonShape_00413AF0_B6B4EE9A *)param_1,uVar7,uVar1);
+
+          FUN_006b0cd0((RecoveredRecordView_00413AF0_B98DB3AE *)param_1,uVar7,uVar1);
           bVar2 = true;
         }
         uVar3 = param_1->count;

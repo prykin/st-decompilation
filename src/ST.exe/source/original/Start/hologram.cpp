@@ -33,6 +33,7 @@ void __thiscall st::fn_005AA6A0(HoloTy *this,uint param_1)
   {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
+
     iVar3 = st::fn_0072D7F0(local_50.jumpBuffer,0);
     if (iVar3 == 0) {
       uVar6 = 0;
@@ -51,7 +52,7 @@ void __thiscall st::fn_005AA6A0(HoloTy *this,uint param_1)
               pBVar7 = local_8->field_0007;
               iVar5 = 0;
               iVar3 = ((-(uint)(cVar1 != '\x01') & 0xfffffffe) + 1) * local_c + local_8->field_0027;
-              iVar4 = st::machine_word_boundary_cast<int>(local_8->field_0023 + iVar8);
+              iVar4 = local_8->field_0023 + iVar8;
               break;
             case '\x02':
             case '\x04':
@@ -60,12 +61,13 @@ void __thiscall st::fn_005AA6A0(HoloTy *this,uint param_1)
               DVar9 = local_8->field_002B;
               pBVar7 = local_8->field_0007;
               iVar8 = 0;
-              iVar3 = st::machine_word_boundary_cast<int>(local_8->field_0027 + iVar5);
+              iVar3 = local_8->field_0027 + iVar5;
               iVar4 = ((-(uint)(cVar1 != '\x02') & 0xfffffffe) + 1) * local_c + local_8->field_0023;
               break;
             default:
               goto switchD_005aa738_default;
             }
+
             st::fn_006B42D0
                       ((DDXContext *)param_1,iVar4,iVar3,pBVar7,nullptr,iVar8,iVar5,DVar9,DVar10
                       );
@@ -78,6 +80,7 @@ switchD_005aa738_default:
       return;
     }
     g_currentExceptionFrame = local_50.previous;
+
     iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\hologram.cpp"),0x1e,0,iVar3,st::mutable_c_string("%s"),
                                "HoloTy::OutHoloProc");
     if (iVar4 != 0) {
@@ -153,7 +156,7 @@ st::fn_005AA880
   }
   local_34 = uVar7;
   local_2c = uVar6;
-  local_1c = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC10(uVar6 * uVar2 * 4));
+  local_1c = (undefined4 *)st::fn_006AAC10(uVar6 * uVar2 * 4);
   local_c = local_1c;
   if ((local_1c != nullptr) && (local_14 = 0, uVar7 != 0)) {
     local_30 = (uint)param_6;
@@ -166,7 +169,7 @@ st::fn_005AA880
       iVar5 = -1;
       if (local_30 == 0) {
         local_8 = 0;
-        if (uVar7 != 0 && -1 < (int)(uVar7 * 2)) {
+        if (uVar7 != 0 && -1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar7 * 2))) {
           local_24 = 0;
           do {
             iVar3 = (local_24 / 2) / (int)uVar7;
@@ -181,18 +184,18 @@ st::fn_005AA880
             }
             local_24 = local_24 + uVar6;
             local_8 = local_8 + 1;
-          } while (local_8 < (int)(uVar7 * 2));
+          } while (local_8 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar7 * 2)));
         }
       }
       else if (local_30 == 1) {
-        if (0 < (int)(uVar7 * 2)) {
+        if (0 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar7 * 2))) {
           local_24 = 0;
           local_8 = iVar5;
           do {
             iVar5 = (local_24 / 2) / (int)uVar7;
             if (iVar5 != local_8) {
               local_28 = iVar3 - local_18;
-              if ((iVar3 < (int)local_18) || ((int)(uVar7 + local_18) <= iVar3)) {
+              if ((iVar3 < (int)local_18) || (st::storage_bit_cast<int>(static_cast<uint32_t>(uVar7 + local_18)) <= iVar3)) {
                 local_28 = (iVar3 < (int)local_18) - 1 & param_2;
               }
               else {
@@ -204,7 +207,7 @@ st::fn_005AA880
             }
             iVar3 = iVar3 + 1;
             local_24 = local_24 + uVar6;
-          } while (iVar3 < (int)(uVar7 * 2));
+          } while (iVar3 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar7 * 2)));
         }
       }
       else if (local_30 == 2) {
@@ -239,7 +242,7 @@ LAB_005aab34:
       }
       else {
         uVar9 = uVar6;
-        if (local_14 < (int)(uVar7 - 1)) {
+        if (local_14 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar7 - 1))) {
           iVar5 = (uVar2 - local_20) + -2;
           goto LAB_005aab34;
         }
@@ -274,8 +277,9 @@ LAB_005aab34:
    first-use mask */
 
 uint __thiscall
-st::fn_005AACB0(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_3,int param_4,
-            int param_5,byte param_6,char param_7,uint param_8)
+st::fn_005AACB0(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_3,
+            RecoveredRecord_005AACB0_2533FD69 *param_4,int param_5,byte param_6,char param_7,
+            uint param_8)
 
 {
   byte *puVar1;
@@ -294,10 +298,12 @@ st::fn_005AACB0(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int par
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
+
   iVar3 = st::fn_0072D7F0(local_58.jumpBuffer,0);
   this_00 = local_14;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
+
     iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\hologram.cpp"),0x9a,0,iVar3,st::mutable_c_string("%s"),
                                "HoloTy::Init");
     if (iVar3 == 0) {
@@ -306,13 +312,13 @@ st::fn_005AACB0(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int par
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  local_14->field_0007 = (void *)param_4;
-  if (param_4 != 0) {
+  local_14->field_0007 = param_4;
+  if (param_4 != nullptr) {
     local_14->field_0023 = param_2;
     local_14->field_0027 = param_3;
     local_14->field_0001 = param_1;
-    local_14->field_002B = *(undefined4 *)(param_4 + 4);
-    uVar5 = *(uint *)(param_4 + 8);
+    local_14->field_002B = param_4->field_0004;
+    uVar5 = param_4->field_0008;
     local_14->field_002F = uVar5;
     switch(param_1) {
     case CASE_1:
@@ -328,7 +334,7 @@ st::fn_005AACB0(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int par
       local_c = local_14->field_002B;
       break;
     case CASE_4:
-      local_8 = st::machine_word_boundary_cast<uint>(local_14->field_002B + param_2);
+      local_8 = local_14->field_002B + param_2;
       local_c = uVar5;
     }
     local_14->field_0013 = (uint)param_6;
@@ -339,7 +345,8 @@ st::fn_005AACB0(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int par
     this_00->field_000B = puVar4;
     if (puVar4 != nullptr) {
       puVar1 = &this_00->field_0x3;
-      st::fn_006B2330(g_ddxContext_008075A8,(uint *)puVar1,10,0x402842,0,0,(ushort *)this_00);
+
+      st::fn_006B2330(g_ddxContext_008075A8,reinterpret_cast<uint *>(puVar1),10,0x402842,0,0,reinterpret_cast<ushort *>(this_00));
       uVar5 = *(uint *)puVar1;
       if (-1 < (int)uVar5) {
         switch(this_00->field_0001) {
@@ -358,10 +365,11 @@ st::fn_005AACB0(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int par
         default:
           goto switchD_005aadcd_default;
         }
+
         st::fn_006B3640
-                  ((int *)g_ddxContext_008075A8,*(uint *)puVar1,0xffffffff,uVar5,uVar6);
+                  (reinterpret_cast<int *>(g_ddxContext_008075A8),*(uint *)puVar1,0xffffffff,uVar5,uVar6);
 switchD_005aadcd_default:
-        st::fn_006B3AF0((int *)g_ddxContext_008075A8,*(uint *)puVar1);
+        st::fn_006B3AF0(reinterpret_cast<int *>(g_ddxContext_008075A8),*(uint *)puVar1);
         this_00->field_0002 = param_7;
         if (param_7 == '\0') {
           this_00->field_0017 = -1;
@@ -405,11 +413,12 @@ void __thiscall st::fn_005AAFB0(HoloTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   pHVar2 = local_8;
   if (errorCode == 0) {
     if (-1 < (int)*(uint *)&local_8->field_0x3) {
-      st::fn_006B3BB0((int *)g_ddxContext_008075A8,*(uint *)&local_8->field_0x3);
+      st::fn_006B3BB0(reinterpret_cast<int *>(g_ddxContext_008075A8),*(uint *)&local_8->field_0x3);
     }
     *(undefined4 *)&pHVar2->field_0x3 = 0xffffffff;
     if (pHVar2->field_000B != nullptr) {
@@ -422,6 +431,7 @@ void __thiscall st::fn_005AAFB0(HoloTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\hologram.cpp"),0xaa,0,errorCode,
                              st::mutable_c_string("%s"),"HoloTy::Done");
   if (iVar3 != 0) {
@@ -435,26 +445,43 @@ void __thiscall st::fn_005AAFB0(HoloTy *this)
 #line 4 "decomp/ST.exe/functions/005AB0A0/decomp.c"
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\hologram.cpp
-   HoloTy::NextFas */
+   HoloTy::NextFas
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (41), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00597120 @ 00597198 -> read as EAX on
+   every CFG path | 00597120 @ 005971C9 -> read as EAX on every CFG path | 00597120 @ 005971FB ->
+   read as EAX on every CFG path | 00597120 @ 0059722D -> read as EAX on every CFG path | 00597120 @
+   005975A8 -> read as EAX on every CFG path | 00597120 @ 005975BE -> read as EAX on every CFG path
+   | 00597120 @ 005975D4 -> read as EAX on every CFG path | 00597120 @ 005975EA -> read as EAX on
+   every CFG path | 00597E70 @ 00598175 -> killed on every CFG path | 00597E70 @ 005983A7 -> killed
+   on every CFG path | 00597E70 @ 005985F2 -> killed on every CFG path | 00597E70 @ 00598761 ->
+   killed on every CFG path | 00597E70 @ 00598B66 -> killed on every CFG path | 00597E70 @ 00598DE8
+   -> killed on every CFG path | 00597E70 @ 00598FBE -> killed on every CFG path | 00597E70 @
+   005991EF -> killed on every CFG path | 0059F670 @ 0059F7FD -> killed on every CFG path | 0059F670
+   @ 0059F94D -> killed on every CFG path | 0059F670 @ 0059FA8C -> killed on every CFG path |
+   0059F670 @ 0059FBC4 -> killed on every CFG path | 0059F670 @ 0059FD35 -> killed on every CFG path
+   | 0059F670 @ 0059FE98 -> killed on every CFG path | 0059F670 @ 005A0017 -> killed on every CFG
+   path | 0059F670 @ 005A0134 -> killed on every CFG path */
 
-undefined4 __thiscall st::fn_005AB0A0(HoloTy *this)
+int __thiscall st::fn_005AB0A0(HoloTy *this)
 
 {
   uint uVar1;
   int iVar3;
   int iVar4;
-  uint uVar5;
   InternalExceptionFrame local_50;
   HoloTy *local_c;
-  undefined4 local_8;
+  int local_8;
 
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar3 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\hologram.cpp"),0xc1,0,iVar3,st::mutable_c_string("%s"),
                                "HoloTy::NextFas");
     if (iVar4 != 0) {
@@ -470,13 +497,15 @@ undefined4 __thiscall st::fn_005AB0A0(HoloTy *this)
       if (iVar3 < local_c->field_0013 + -2) {
         local_c->field_0017 = iVar3 + 1;
         local_8 = 1;
-        st::fn_006B35D0((int *)g_ddxContext_008075A8,uVar1);
+
+        st::fn_006B35D0(reinterpret_cast<int *>(g_ddxContext_008075A8),uVar1);
       }
     }
     else if (0 < iVar3) {
       local_c->field_0017 = iVar3 + -1;
       local_8 = 1;
-      st::fn_006B35D0((int *)g_ddxContext_008075A8,uVar1);
+
+      st::fn_006B35D0(reinterpret_cast<int *>(g_ddxContext_008075A8),uVar1);
       g_currentExceptionFrame = local_50.previous;
       return local_8;
     }
@@ -484,4 +513,3 @@ undefined4 __thiscall st::fn_005AB0A0(HoloTy *this)
   g_currentExceptionFrame = local_50.previous;
   return local_8;
 }
-

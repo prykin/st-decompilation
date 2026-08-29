@@ -38,7 +38,8 @@ byte * __thiscall st::fn_00646D40(STVolcanoC *this,undefined4 *param_1)
   byte *pbVar3;
   byte *pbVar4;
 
-  pbVar1 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(0x95));
+  /* ST_CALLSITE[00646D4C]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/byte; source view only; no Ghidra override */
+  pbVar1 = (byte *)st::fn_006AAC70(0x95);
   this->field_0028 = 2;
   this->field_00AD = this->field_00B1;
   if (this == nullptr) {
@@ -69,7 +70,7 @@ undefined4 __thiscall st::fn_00646DB0(STVolcanoC *this,undefined4 *param_1)
     puVar2 = nullptr;
   }
   else {
-    puVar2 = (byte *)&this->field_0x1c;
+    puVar2 = reinterpret_cast<byte *>(&this->field_0x1c);
   }
   memmove(puVar2, param_1, 0x95); /* compiler REP MOVS byte copy */
   this->field_0061 = nullptr;
@@ -93,18 +94,18 @@ undefined4 __thiscall st::fn_006472B0(STVolcanoC *this)
   int iVar2;
 
   uVar1 = 0;
-  iVar2 = st::machine_word_boundary_cast<int>(this->field_0050 + 1);
+  iVar2 = this->field_0050 + 1;
   this->field_0050 = iVar2;
   if ((iVar2 == 0) || (iVar2 == 1)) {
     this->field_003C = (this->field_0030 + 2) * 0xc9;
     this->field_0040 = (this->field_0034 + 2) * 0xc9;
-    this->field_0044 = st::machine_word_boundary_cast<undefined4>(this->field_0038 * 200 + 0x78);
+    this->field_0044 = this->field_0038 * 200 + 0x78;
     uVar1 = 1;
   }
   else if (iVar2 == 2) {
     this->field_003C = (this->field_0030 + 2) * 0xc9;
     this->field_0040 = (this->field_0034 + 2) * 0xc9;
-    this->field_0044 = st::machine_word_boundary_cast<undefined4>(this->field_0038 * 200 + 0xde);
+    this->field_0044 = this->field_0038 * 200 + 0xde;
     return 1;
   }
   return uVar1;
@@ -138,4 +139,3 @@ void __thiscall st::fn_006479E0(STVolcanoC *this)
   }
   return;
 }
-

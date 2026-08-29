@@ -47,10 +47,12 @@ int __thiscall TLOBaseTy::RotateSpr(TLOBaseTy *this,int param_1)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bspr.cpp",0x1a7,0,iVar4,"%s"
                                ,"TLOBaseTy::RotateSpr error");
     if (iVar5 == 0) {
@@ -60,6 +62,7 @@ int __thiscall TLOBaseTy::RotateSpr(TLOBaseTy *this,int param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (((local_8->field_0245 == CASE_1) && (local_8->field_05DF != 5)) &&
+
      (iVar6 = thunk_FUN_004ac910(&local_8->field_01D5,'\x04'),
      *(int *)(&DAT_007cdf52 + *(int *)(&DAT_0079125c + this_00->field_0235 * 4) * 0x32) < iVar6)) {
     g_currentExceptionFrame = local_50.previous;
@@ -78,6 +81,7 @@ int __thiscall TLOBaseTy::RotateSpr(TLOBaseTy *this,int param_1)
       /* ST_CALLSITE[004CAC79]: CALL 0x0040384b; direct=0040384B TLOBaseTy::sub_004CA7B0 */
       sub_004CA7B0(this_00,7,param_1);
       if (this_00->field_04D0 == CASE_1) {
+
         thunk_FUN_004ac660(&this_00->field_01D5,'\a');
       }
       else {
@@ -89,6 +93,7 @@ int __thiscall TLOBaseTy::RotateSpr(TLOBaseTy *this,int param_1)
       /* ST_CALLSITE[004CACAA]: CALL 0x0040384b; direct=0040384B TLOBaseTy::sub_004CA7B0 */
       sub_004CA7B0(this_00,7,param_1);
       if (this_00->field_04D0 == CASE_1) {
+
         thunk_FUN_004ac660(&this_00->field_01D5,'\a');
       }
       else {
@@ -100,6 +105,7 @@ int __thiscall TLOBaseTy::RotateSpr(TLOBaseTy *this,int param_1)
       /* ST_CALLSITE[004CACDB]: CALL 0x0040384b; direct=0040384B TLOBaseTy::sub_004CA7B0 */
       sub_004CA7B0(this_00,7,param_1);
       if (this_00->field_04D0 == CASE_1) {
+
         thunk_FUN_004ac660(&this_00->field_01D5,'\a');
       }
       else {
@@ -116,6 +122,7 @@ int __thiscall TLOBaseTy::RotateSpr(TLOBaseTy *this,int param_1)
     iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
     /* ST_CALLSITE[004CAD2E]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
     if (((iVar7 < iVar6) && (iVar6 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r'), 1 < iVar6))
+
        && (iVar6 = thunk_FUN_004cba10(), iVar6 == 2)) {
       pAVar2 = this_00->field_01F5;
       iVar6 = pAVar2->field_0208;
@@ -141,26 +148,35 @@ LAB_004cadb1:
     sub_004CA7B0(this_00,0xc,param_1);
   }
   if (this_00->field_05FF != nullptr) {
+
     thunk_FUN_004cbfb0((int)this_00);
   }
   switch(this_00->field_05AC) {
   case CASE_40:
   case CASE_49:
     if (this_00->field_04D0 == CASE_1) {
+
       thunk_FUN_004ac6b0(&this_00->field_01D5,'\x0e');
+
       thunk_FUN_004ac6b0(&this_00->field_01D5,'\t');
       break;
     }
   default:
+
     thunk_FUN_004ac660(&this_00->field_01D5,'\x0e');
+
     thunk_FUN_004ac660(&this_00->field_01D5,'\t');
     break;
   case CASE_52:
   case CASE_5F:
     puVar1 = &this_00->field_01D5;
+
     thunk_FUN_004ac6b0(puVar1,'\x0e');
+
     thunk_FUN_004ac6b0(puVar1,'\r');
+
     thunk_FUN_004ac6b0(puVar1,'\t');
+
     thunk_FUN_004ac6b0(puVar1,'\b');
   }
   /* ST_CALLSITE[004CAE5B]: CALL 0x0040197e; direct=0040197E TLOBaseTy::sub_004CBA30 */

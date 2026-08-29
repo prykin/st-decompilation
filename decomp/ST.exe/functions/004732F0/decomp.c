@@ -20,7 +20,7 @@
    /SubmarineTitans/Recovered/Enums/STBoatC_field_059AState. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_9=9 */
 
-int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param_1)
+int __thiscall STBoatC::LoadObj(STBoatC *this,RecoveredRecordView_005EFAE0_855D930D *param_1)
 
 {
   short *psVar1;
@@ -96,7 +96,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
   int iVar22;
   short sVar23;
   byte bVar24;
-  undefined4 local_40 [2];
+  uint local_40 [2];
   uint local_38;
   short local_34;
   uint local_30;
@@ -115,7 +115,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
   uVar4 = 0;
   local_c = nullptr;
   if ((param_1 == nullptr) ||
-     (pSVar12 = this, param_1 == (AnonShape_005EFAE0_B406B78B *)0x1)) {
+     (pSVar12 = this, param_1 == (RecoveredRecordView_005EFAE0_855D930D *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
     if (this->field_07CA != nullptr) {
@@ -124,12 +124,12 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
     sVar16 = this->field_03BA;
     sVar17 = this->field_03BC;
     sVar18 = *(short *)&this->field_0x3be;
-    param_1 = *(AnonShape_005EFAE0_B406B78B **)&this->field_0x3c0;
+    param_1 = *(RecoveredRecordView_005EFAE0_855D930D **)&this->field_0x3c0;
     psVar1 = &this->field_0588;
     this->field_058A = sVar17;
     *psVar1 = sVar16;
     this->field_058C = sVar18;
-    *(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e = param_1;
+    *(RecoveredRecordView_005EFAE0_855D930D **)&this->field_0x58e = param_1;
     if (((((sVar16 < 0) || (g_worldGrid.sizeX <= sVar16)) || (sVar17 < 0)) ||
         ((g_worldGrid.sizeY <= sVar17 || (sVar18 < 0)))) || (g_worldGrid.sizeZ <= sVar18)) {
       local_c = nullptr;
@@ -139,7 +139,8 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
                 STGridAt3D(g_worldGrid, sVar16, sVar17, sVar18).objects[0];
     }
     if ((local_c == nullptr) ||
-       ((AnonShape_005EFAE0_B406B78B *)local_c->field_0018 != param_1)) {
+       ((RecoveredRecordView_005EFAE0_855D930D *)local_c->field_0018 != param_1)) {
+
       iVar11_mg1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,param_1,(int *)&local_c);
       if (iVar11_mg1 == -4) {
         return 0;
@@ -147,12 +148,12 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
       /* ST_CALLSITE[00473404]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
       STFishC::sub_004162F0(local_c,psVar1,&this->field_058A,&this->field_058C);
     }
-    /* ST_CALLSITE[00473410]: CALL dword ptr [EDX + 0xf8] */
+    /* ST_CALLSITE[00473410]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STFishC */
     iVar11 = local_c->vfunc_F8();
     if (iVar11 == 0) {
       return 0;
     }
-    /* ST_CALLSITE[00473423]: CALL dword ptr [EAX + 0xa4] */
+    /* ST_CALLSITE[00473423]: CALL dword ptr [EAX + 0xa4]; [STIndirectCallsiteApplier] exact slot 0xA4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STFishC */
     iVar11 = local_c->vfunc_A4();
     if (iVar11 == 1) {
       return 0;
@@ -215,13 +216,14 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
                   STGridAt3D(g_worldGrid, sVar16, sVar18, sVar17).objects[0];
       }
       if ((((local_c == nullptr) || (local_c->field_0018 != *(int *)&this->field_0x58e)) &&
+
           (iVar11_mg5 = STPlaySystemC::sub_006E62D0
                                   (g_playSystem_00802A38,
-                                   *(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e,
+                                   *(RecoveredRecordView_005EFAE0_855D930D **)&this->field_0x58e,
                                    (int *)&local_c), iVar11_mg5 == -4)) ||
-         /* ST_CALLSITE[004735E4]: CALL dword ptr [EDX + 0xa4] */
+         /* ST_CALLSITE[004735E4]: CALL dword ptr [EDX + 0xa4]; [STIndirectCallsiteApplier] exact slot 0xA4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STFishC */
          ((iVar11 = local_c->vfunc_A4(), iVar11 == 1 ||
-          /* ST_CALLSITE[004735F8]: CALL dword ptr [EAX + 0xc0] */
+          /* ST_CALLSITE[004735F8]: CALL dword ptr [EAX + 0xc0]; [STIndirectCallsiteApplier] exact slot 0xC0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STFishC */
           (iVar11 = local_c->vfunc_C0(), iVar11 == 1))))
       goto cf_common_exit_004743A5;
       /* ST_CALLSITE[00473619]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
@@ -256,6 +258,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
     case 2:
       goto switchD_004734db_caseD_2;
     case -1:
+
       local_EAX_522 =
            ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2e03,0,0,"%s",
                               "STBoatC::LoadObj, LOADOBJ_MOVE");
@@ -289,15 +292,16 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,AnonShape_005EFAE0_B406B78B *param
                   STGridAt3D(g_worldGrid, sVar16, sVar18, sVar17).objects[0];
       }
       if (((local_c == nullptr) || (local_c->field_0018 != *(int *)&this->field_0x58e)) &&
+
          (iVar11_mgD = STPlaySystemC::sub_006E62D0
                                  (g_playSystem_00802A38,
-                                  *(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e,
+                                  *(RecoveredRecordView_005EFAE0_855D930D **)&this->field_0x58e,
                                   (int *)&local_c), iVar11_mgD == -4)) {
         return 0;
       }
-      /* ST_CALLSITE[004737C3]: CALL dword ptr [EDX + 0xa4] */
+      /* ST_CALLSITE[004737C3]: CALL dword ptr [EDX + 0xa4]; [STIndirectCallsiteApplier] exact slot 0xA4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STFishC */
       iVar11 = local_c->vfunc_A4();
-      /* ST_CALLSITE[004737D7]: CALL dword ptr [EAX + 0xc0] */
+      /* ST_CALLSITE[004737D7]: CALL dword ptr [EAX + 0xc0]; [STIndirectCallsiteApplier] exact slot 0xC0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STFishC */
       if ((iVar11 == 1) || (iVar11 = local_c->vfunc_C0(), iVar11 == 1)) {
 cf_common_exit_004743A5:
         /* ST_CALLSITE[004743A7]: CALL 0x004027ca; direct=004027CA STBoatC::sub_00492420 */
@@ -375,15 +379,16 @@ LAB_004736e2:
                 STGridAt3D(g_worldGrid, sVar16, sVar18, sVar17).objects[0];
     }
     if (((local_c == nullptr) || (local_c->field_0018 != *(int *)&this->field_0x58e)) &&
+
        (iVar11_mg1F = STPlaySystemC::sub_006E62D0
                                 (g_playSystem_00802A38,
-                                 *(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e,(int *)&local_c
-                                ), iVar11_mg1F == -4)) {
+                                 *(RecoveredRecordView_005EFAE0_855D930D **)&this->field_0x58e,
+                                 (int *)&local_c), iVar11_mg1F == -4)) {
       return 0;
     }
-    /* ST_CALLSITE[00473A09]: CALL dword ptr [EDX + 0xa4] */
+    /* ST_CALLSITE[00473A09]: CALL dword ptr [EDX + 0xa4]; [STIndirectCallsiteApplier] exact slot 0xA4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STFishC */
     iVar11 = local_c->vfunc_A4();
-    /* ST_CALLSITE[00473A19]: CALL dword ptr [EAX + 0xc0] */
+    /* ST_CALLSITE[00473A19]: CALL dword ptr [EAX + 0xc0]; [STIndirectCallsiteApplier] exact slot 0xC0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STFishC */
     if ((iVar11 == 1) || (iVar11 = local_c->vfunc_C0(), iVar11 == 1)) {
       /* ST_CALLSITE[00473A2A]: CALL 0x004027ca; direct=004027CA STBoatC::sub_00492420 */
       sub_00492420(this);
@@ -428,11 +433,12 @@ cf_common_exit_0047405D:
       uVar14 = extraout_var_06;
     }
     if (this->field_059A == CASE_1) {
-      /* ST_CALLSITE[00473B4C]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+      /* ST_CALLSITE[00473B4C]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
       uVar8 = sub_004176C0(this,this->field_059E);
       /* ST_CALLSITE[00473B54]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       uVar8 = sub_00417910(this,(short)uVar8);
       if (uVar8 == 0xffffffff) {
+
         local_EAX_2224 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2e7d,0,0,"%s",
                                 "STBoatC::LoadObj LOADOBJ_LOAD sloi.regime2=1");
@@ -472,6 +478,7 @@ cf_common_exit_0047405D:
       if (this->field_02BF != '\0') {
         local_20 = (undefined4 *)&this->field_0x2b3;
         do {
+
           puVar9 = thunk_FUN_0041dc40(local_40,(short)*local_20,*(ushort *)(local_20 + 1),
                                       this->field_006C);
           local_38 = *puVar9;
@@ -533,6 +540,7 @@ cf_common_exit_0047405D:
       }
       uVar14 = (undefined2)(uVar8 >> 0x10);
       if (local_24 == -1) {
+
         local_EAX_3016 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2ea3,0,0,"%s",
                                 "STBoatC::LoadObj LOADOBJ_LOAD sloi.regime2=3");
@@ -559,18 +567,19 @@ cf_common_exit_0047405D:
                   STGridAt3D(g_worldGrid, sVar16, sVar18, sVar17).objects[0];
       }
       if (((local_c != nullptr) && (local_c->field_0018 == *(int *)&this->field_0x58e)) &&
-         /* ST_CALLSITE[00473EF1]: CALL dword ptr [EDX + 0xa4] */
+         /* ST_CALLSITE[00473EF1]: CALL dword ptr [EDX + 0xa4]; [STIndirectCallsiteApplier] exact slot 0xA4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STFishC */
          ((iVar11 = local_c->vfunc_A4(), iVar11 != 1 &&
-          /* ST_CALLSITE[00473F05]: CALL dword ptr [EAX + 0xc0] */
+          /* ST_CALLSITE[00473F05]: CALL dword ptr [EAX + 0xc0]; [STIndirectCallsiteApplier] exact slot 0xC0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STFishC */
           (iVar11 = local_c->vfunc_C0(), iVar11 != 1)))) {
-        /* ST_CALLSITE[00473F19]: CALL dword ptr [EDX + 0xb4] */
+        /* ST_CALLSITE[00473F19]: CALL dword ptr [EDX + 0xb4]; [STIndirectCallsiteApplier] exact slot 0xB4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STFishC */
         local_c->vfunc_B4();
-        this->field_07CA = *(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e;
+        this->field_07CA = *(RecoveredRecordView_005EFAE0_855D930D **)&this->field_0x58e;
         this->field_07CE = 0;
         /* ST_CALLSITE[00473F37]: CALL 0x0040464c; direct=0040464C sub_0041C5A0 */
         sub_0041C5A0(this);
+
         thunk_FUN_00495ff0(this->field_005B,this->field_005D,this->field_005F,0,
-                           (AnonShape_00495FF0_59081BDD *)this);
+                           (RecoveredRecordView_00495FF0_A2A90B23 *)this);
         /* ST_CALLSITE[00473F82]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
         DumpClassC::WritePtr
                   (this->field_0588,this->field_058A,this->field_058C,0,
@@ -603,11 +612,12 @@ switchD_004734db_caseD_2:
       this->field_059A = CASE_6;
     }
     if (this->field_059A == CASE_6) {
-      /* ST_CALLSITE[0047403D]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+      /* ST_CALLSITE[0047403D]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
       uVar8 = sub_004176C0(this,this->field_059E);
       /* ST_CALLSITE[00474045]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       uVar8 = sub_00417910(this,(short)uVar8);
       if (uVar8 == 0xffffffff) {
+
         local_EAX_3489 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2ed4,0,0,"%s",
                                 "STBoatC::LoadObj LOADOBJ_LOAD sloi.regime2=6");
@@ -635,6 +645,7 @@ switchD_004734db_caseD_2:
       if (this->field_02BF != '\0') {
         local_20 = (undefined4 *)&this->field_0x2b3;
         do {
+
           puVar9 = thunk_FUN_0041dc40(local_40,(short)*local_20,*(ushort *)(local_20 + 1),
                                       this->field_006C);
           local_38 = *puVar9;
@@ -692,6 +703,7 @@ switchD_004734db_caseD_2:
         } while (local_1c < (int)(uint)(byte)this->field_02BF);
       }
       if (local_24 == -1) {
+
         local_EAX_4152 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2efa,0,0,"%s",
                                 "STBoatC::LoadObj LOADOBJ_LOAD sloi.regime2=8");

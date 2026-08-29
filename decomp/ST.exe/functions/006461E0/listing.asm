@@ -609,7 +609,7 @@ LAB_0064698a:
 00646994  8D 55 F8                  LEA EDX,[EBP + -0x8]
 00646997  52                        PUSH EDX
 00646998  8B CE                     MOV ECX,ESI
-0064699A  E8 96 D5 DB FF            CALL 0x00403f35
+0064699A  E8 96 D5 DB FF            CALL 0x00403f35  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 0064699F  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
 006469A2  8B 56 18                  MOV EDX,dword ptr [ESI + 0x18]
 006469A5  51                        PUSH ECX

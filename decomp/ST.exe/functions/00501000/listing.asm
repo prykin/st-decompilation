@@ -40,7 +40,7 @@ CPanelTy::PaintBEnergy:
 0050106D  83 E0 06                  AND EAX,0x6
 00501070  50                        PUSH EAX
 00501071  51                        PUSH ECX
-00501072  E8 29 A3 20 00            CALL 0x0070b3a0
+00501072  E8 29 A3 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 00501077  8B 96 8C 01 00 00         MOV EDX,dword ptr [ESI + 0x18c]
 0050107D  50                        PUSH EAX
 0050107E  6A 01                     PUSH 0x1
@@ -65,7 +65,7 @@ LAB_005010b0:
 005010B0  8B 86 B6 02 00 00         MOV EAX,dword ptr [ESI + 0x2b6]
 005010B6  6A 03                     PUSH 0x3
 005010B8  50                        PUSH EAX
-005010B9  E8 E2 A2 20 00            CALL 0x0070b3a0
+005010B9  E8 E2 A2 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 005010BE  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 005010C1  50                        PUSH EAX
 005010C2  8B 86 8C 01 00 00         MOV EAX,dword ptr [ESI + 0x18c]

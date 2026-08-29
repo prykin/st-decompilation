@@ -52,10 +52,12 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_c = this;
+
   local_EAX_42 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_01 = local_c;
   if (local_EAX_42 != 0) {
     g_currentExceptionFrame = local_58.previous;
+
     iVar9 = ReportDebugMessage("E:\\__titans\\Start\\sid_obj.cpp",0x167,0,local_EAX_42,
                                "%s","SIDTy::PrepFiles");
     if (iVar9 == 0) {
@@ -77,6 +79,7 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
   this_01->field_0031 = 0x19;
   FUN_006e6080(this_01,2,this_01->field_1AF5,(undefined4 *)&this_01->field_0x1d);
   FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_01->field_1CB8,0,3,0x15,0x142,0x62,0xff);
+
   FUN_006b35d0((int *)g_ddxContext_008075A8,this_01->field_1CB4);
   /* ST_CALLSITE[005D8CDA]: CALL dword ptr [0x0085bde8] */
   wsprintfA(&this_01->field_1CD4,"%s%s",&CHAR_00h_00807680,PTR_s_SAVEGAME__0079c19c);
@@ -165,14 +168,18 @@ LAB_005d8dbf:
                         PTR_s_SAVEGAME__0079c19c,local_21c.cFileName,PTR_s_PL_LOG_0079c1a0);
               local_9c.previous = g_currentExceptionFrame;
               g_currentExceptionFrame = &local_9c;
+
               iVar4 = Library::MSVCRT::__setjmp3(local_9c.jumpBuffer,0);
               this_01 = local_c;
               if (iVar4 == 0) {
-                this_00 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
-                                             (0x345,(byte *)&local_c->field_1CD4,0,0,0);
+                /* ST_CALLSITE[005D8E49]: CALL 0x006f0ec0; direct=006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint */
+                this_00 = Library::Ourlib::MF32INT::FUN_006f0ec0
+                                    (0x345,(byte *)&local_c->field_1CD4,0,0,0);
                 if (this_00 != nullptr) {
+
                   local_EAX_626 = cMf32::RecChk(this_00,0xc,PTR_s_OPTIONS_PLAYER_0079c1a4);
                   if (local_EAX_626 == 0) {
+
                     Library::DKW::TBL::FUN_006b5aa0(this_01->field_1CCC,local_21c.cFileName);
                   }
                   cMf32::delete(this_00);
@@ -251,8 +258,10 @@ LAB_005d8dbf:
             else {
               pcVar6 = nullptr;
             }
+
             local_EAX_880 = Library::MSVCRT::__strcmpi(pcVar6,pcVar14);
             if (0 < local_EAX_880) {
+
               FUN_006b8200((AnonShape_006B8200_800652FF *)this_01->field_1CCC,uVar8,uVar11);
               local_8 = 1;
             }
@@ -307,6 +316,7 @@ LAB_005d9011:
   this_01->field_002D = 0x29;
   this_01->field_0031 = 9;
   FUN_006e6080(this_01,2,this_01->field_1AF5,(undefined4 *)&this_01->field_0x1d);
+
   FUN_006b35d0((int *)g_ddxContext_008075A8,this_01->field_1CB4);
   g_currentExceptionFrame = local_58.previous;
   return;

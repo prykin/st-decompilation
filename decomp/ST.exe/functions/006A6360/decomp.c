@@ -1,5 +1,13 @@
 
-uint FUN_006a6360(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (6), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=006A7D50 @ 006A7DCE -> read as EAX on
+   every CFG path | 006A7D50 @ 006A7EB3 -> read as EAX on every CFG path | 006A88F0 @ 006A8B82 ->
+   read as EAX on every CFG path | 006A88F0 @ 006A8D6C -> read as EAX on every CFG path | 006AE3B0 @
+   006AE411 -> read as EAX on every CFG path | 006AE3B0 @ 006AE48F -> read as EAX on every CFG path
+    */
+
+int FUN_006a6360(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
 
 {
   ushort uVar1;
@@ -13,6 +21,7 @@ switchD_006a63e5_caseD_1:
   do {
     while( true ) {
       if ((((param_1 == param_4) && (param_2 == param_5)) && (iVar3 == param_6)) ||
+
          (local_8 = FUN_006a5f20(param_1,param_2,iVar3,param_4,param_5,param_6,&param_3),
          0x19 < (int)local_8)) {
         return local_8;

@@ -35,7 +35,7 @@ LAB_0064752f:
 0064753E  68 B0 26 7D 00            PUSH 0x7d26b0
 00647543  6A 1D                     PUSH 0x1d
 00647545  50                        PUSH EAX
-00647546  E8 A5 25 0C 00            CALL 0x00709af0
+00647546  E8 A5 25 0C 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 0064754B  83 C4 20                  ADD ESP,0x20
 0064754E  8B F8                     MOV EDI,EAX
 00647550  8D 45 FC                  LEA EAX,[EBP + -0x4]
@@ -110,7 +110,7 @@ LAB_0064752f:
 0064762C  68 C8 26 7D 00            PUSH 0x7d26c8
 00647631  6A 1D                     PUSH 0x1d
 00647633  51                        PUSH ECX
-00647634  E8 B7 24 0C 00            CALL 0x00709af0
+00647634  E8 B7 24 0C 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 00647639  83 C4 20                  ADD ESP,0x20
 0064763C  8B F8                     MOV EDI,EAX
 0064763E  8D 4D F8                  LEA ECX,[EBP + -0x8]
@@ -191,7 +191,7 @@ LAB_0064770c:
 0064772E  68 BC 26 7D 00            PUSH 0x7d26bc
 00647733  6A 1D                     PUSH 0x1d
 00647735  50                        PUSH EAX
-00647736  E8 B5 23 0C 00            CALL 0x00709af0
+00647736  E8 B5 23 0C 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 0064773B  83 C4 20                  ADD ESP,0x20
 0064773E  8B F8                     MOV EDI,EAX
 00647740  8D 45 F4                  LEA EAX,[EBP + -0xc]

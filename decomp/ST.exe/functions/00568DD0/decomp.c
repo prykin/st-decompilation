@@ -66,6 +66,7 @@ SoundClassTy::PlaySound
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_8 = this;
+
   local_EAX_49 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   pSVar14 = local_8;
   if (local_EAX_49 != 0) {
@@ -77,6 +78,7 @@ SoundClassTy::PlaySound
     if (((STPiece<1,1>(DAT_00807300) & 4) != 0) &&
        (local_EAX_3338 = FUN_0071a990(local_8->field_0DF3,soundId,-1,nullptr),
        local_EAX_3338 != nullptr)) {
+
       FUN_006c1390(local_EAX_3338,0,1,DAT_0080730e,0,2,3);
       g_currentExceptionFrame = local_64.previous;
       return;
@@ -124,6 +126,7 @@ SoundClassTy::PlaySound
       iVar9 = 10;
       iVar6 = 4;
 LAB_0056959b:
+
       local_EAX_508 = FUN_006c1390(local_EAX_332,0,0,DAT_0080730e,0,iVar6,iVar9);
     }
     else if (DAT_00807363 == '\0') {
@@ -199,6 +202,7 @@ LAB_0056959b:
       else {
         bVar3 = 0xff;
       }
+
       local_EAX_508 = FUN_006c1390(local_EAX_332,bVar3,4,uVar10,local_14 * local_10,4,10);
     }
     else {
@@ -217,6 +221,7 @@ LAB_0056959b:
       else {
         bVar3 = 0xff;
       }
+
       local_EAX_508 =
            FUN_006c21e0(local_EAX_332,bVar3,4,DAT_0080730e,(uint)(float)(int)local_14,
                         (uint)(float)local_10,0,(uint)(float)(int)local_c,
@@ -336,6 +341,7 @@ LAB_0056959b:
       else {
         bVar3 = 0xff;
       }
+
       local_EAX_508 = FUN_006c1390(local_EAX_332,bVar3,4,uVar10,local_10 * local_c,0xb,0x11);
     }
     else {
@@ -354,6 +360,7 @@ LAB_0056959b:
       else {
         bVar3 = 0xff;
       }
+
       local_EAX_508 =
            FUN_006c21e0(local_EAX_332,bVar3,4,DAT_0080730e,(uint)(float)(int)local_14,
                         (uint)(float)local_10,0,(uint)(float)(int)local_c,
@@ -370,6 +377,7 @@ LAB_005695ae:
     break;
   case SOUND_MODE_4:
     if (((STPiece<1,1>(DAT_00807300) & 1) != 0) &&
+
        (iVar6 = thunk_FUN_00568780(local_8,0x12,0x14), iVar6 != 0)) {
       uVar10 = local_c >> 8;
       local_c = local_c & 0xffffff00;
@@ -401,6 +409,7 @@ LAB_005695ae:
       if (local_1c_mg0 != nullptr) {
         local_14 = position->x;
         if (((int)local_14 < 0) || (local_10 = position->y, local_10 < 0)) {
+
           local_EAX_2404 = FUN_006c1390(local_1c_mg0,0,2,DAT_0080730e,0,0x12,0x14);
         }
         else if (DAT_00807363 == '\0') {
@@ -460,6 +469,7 @@ LAB_005695ae:
             uVar10 = (int)(*(int *)(&DAT_007c9794 + iVar12) * (DAT_0080730e + 4000)) / 100 - 4000;
           }
           local_c = iVar6;
+
           local_EAX_2404 = FUN_006c1390(local_1c_mg0,0,6,uVar10,local_18 * local_14,0x12,0x14);
         }
         else {
@@ -478,6 +488,7 @@ LAB_005695ae:
           else {
             bVar3 = 0xff;
           }
+
           local_EAX_2404 =
                FUN_006c21e0(local_1c_mg0,bVar3,6,DAT_0080730e,(uint)(float)(int)local_14,
                             (uint)(float)local_10,0,(uint)(float)(int)local_c,
@@ -497,6 +508,7 @@ LAB_005695ae:
     if (((STPiece<1,1>(DAT_00807300) & 8) != 0) &&
        (local_EAX_3150 = FUN_0071a990(local_8->field_0DF3,soundId,-1,nullptr),
        local_EAX_3150 != nullptr)) {
+
       FUN_006c1390(local_EAX_3150,0,(-(uint)(flags != 0) & 0xfffffffe) + 2,DAT_0080730e,0,0x15,0x19);
       g_currentExceptionFrame = local_64.previous;
       return;
@@ -506,6 +518,7 @@ LAB_005695ae:
     if (((STPiece<1,1>(DAT_00807300) & 1) != 0) &&
        (local_EAX_3062 = FUN_0071a990(local_8->field_0DF3,soundId,-1,nullptr),
        local_EAX_3062 != nullptr)) {
+
       FUN_006c1390(local_EAX_3062,0,2,DAT_0080730e,0,0x1b,0x1d);
       g_currentExceptionFrame = local_64.previous;
       return;
@@ -515,6 +528,7 @@ LAB_005695ae:
     if (((STPiece<1,1>(DAT_00807300) & 4) != 0) &&
        (local_EAX_3250 = FUN_0071a990(local_8->field_0DF3,soundId,-1,nullptr),
        local_EAX_3250 != nullptr)) {
+
       FUN_006c1390(local_EAX_3250,0,2,DAT_0080730e,0,0x1e,0x1f);
       g_currentExceptionFrame = local_64.previous;
       return;
@@ -531,6 +545,7 @@ LAB_005695ae:
     }
     local_EAX_3431 = FUN_0071a990(pAVar15,temp_3f2752d387,-1,nullptr);
     if (local_EAX_3431 != nullptr) {
+
       FUN_006c1390(local_EAX_3431,0,(-(uint)(soundId != 0) & 0xfffffff7) + 9,DAT_0080730e,0,0,0);
       g_currentExceptionFrame = local_64.previous;
       return;
@@ -547,6 +562,7 @@ LAB_005695ae:
     }
     local_EAX_3533 = FUN_0071a990(pAVar15,temp_3fa1c25070,-1,nullptr);
     if (local_EAX_3533 != nullptr) {
+
       FUN_006c1390(local_EAX_3533,0,(-(uint)(soundId != 0) & 0xfffffff7) + 9,DAT_0080730e,0,0,0);
       g_currentExceptionFrame = local_64.previous;
       return;
@@ -563,16 +579,18 @@ LAB_005695ae:
     }
     puVar11 = FUN_0071a990(pAVar15,temp_3f1879c533,-1,nullptr);
     if (puVar11 != nullptr) {
+
       FUN_006c1390(puVar11,0,(-(uint)(soundId != 0) & 0xfffffff7) + 9,DAT_0080730e,0,0,0);
       g_currentExceptionFrame = local_64.previous;
       return;
     }
     break;
   case SOUND_MODE_11:
-    puVar4 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
-                               (local_8->field_0DEF,soundName,0,nullptr);
+    /* ST_CALLSITE[00568E3C]: CALL 0x00719d00; direct=00719D00 Library::Ourlib::MFWAV::mfWavLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__cdecl;pointer:/uint;pointer:/cMf32;pointer:/char;/byte;pointer:/ushort */
+    puVar4 = Library::Ourlib::MFWAV::mfWavLoad(local_8->field_0DEF,soundName,0,nullptr);
     if (puVar4 != nullptr) {
       pSVar14->field_0E03 = pSVar14->field_0E07;
+
       iVar4 = FUN_006c1390(puVar4,0,1,DAT_0080730a,0,0,1);
       pSVar14->field_0E07 = iVar4;
       /* ST_CALLSITE[00568E75]: CALL dword ptr [0x0085bedc] */
@@ -617,6 +635,7 @@ LAB_00569cc6:
     }
     bVar3 = DAT_008033f4;
     DAT_008033f4 = DAT_008033f4 + 1;
+
     FUN_006c1390(puVar12_mg0,bVar3,2,DAT_0080730e,0,0x1a,0x1a);
   }
   g_currentExceptionFrame = local_64.previous;

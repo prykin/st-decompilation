@@ -51,8 +51,9 @@ void __thiscall CGenerate::sub_00696810(CGenerate *this)
         uVar7 = 0;
         uVar6 = 0;
         iVar5 = 0;
+
         uVar4 = Library::MSVCRT::FUN_0072e6c0();
-        /* ST_CALLSITE[006968C4]: CALL 0x00401a7d; direct=00401A7D CGenerate::sub_00695C10 */
+        /* ST_CALLSITE[006968C4]: CALL 0x00401a7d; direct=00401A7D CGenerate::sub_00695C10; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/CGenerate; source view only; no Ghidra override */
         uVar4 = sub_00695C10(this,local_10,(int)uVar4 % this->field_5847 + 1,iVar5,uVar6,uVar7);
         if (-1 < (int)uVar4) goto LAB_006968cf;
       }

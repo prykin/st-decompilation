@@ -23,7 +23,7 @@ void __thiscall HelpPanelTy::PutToSHlp(HelpPanelTy *this)
   InternalExceptionFrame local_58;
   HelpPanelTy_field_01A1State local_14;
   void *local_13;
-  undefined4 local_f;
+  uint local_f;
   HelpPanelTy *local_8;
 
   local_14 = this->field_01A1;

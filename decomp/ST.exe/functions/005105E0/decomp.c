@@ -6,7 +6,7 @@
    FrmPanelTy::PaintBut */
 
 void __thiscall
-FrmPanelTy::PaintBut(FrmPanelTy *this,AnonShape_005105E0_BBFE3E3B *param_1,char *param_2)
+FrmPanelTy::PaintBut(FrmPanelTy *this,RecoveredRecordView_005105E0_C0011880 *param_1,char *param_2)
 
 {
   FrmPanelTy *pFVar2;
@@ -18,7 +18,7 @@ FrmPanelTy::PaintBut(FrmPanelTy *this,AnonShape_005105E0_BBFE3E3B *param_1,char 
   int local_18;
   FrmPanelTy *local_14;
   int local_10;
-  ushort *local_c;
+  RecoveredRecordView_006B84D0_87AF9D9B *local_c;
   uint local_8;
 
   local_c = nullptr;
@@ -34,10 +34,12 @@ FrmPanelTy::PaintBut(FrmPanelTy *this,AnonShape_005105E0_BBFE3E3B *param_1,char 
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_14 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   pFVar2 = local_14;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_5c.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\frmpanel.cpp",0x8f,0,iVar3,"%s"
                                ,"FrmPanelTy::PaintBut");
     if (iVar4 == 0) {
@@ -61,11 +63,12 @@ FrmPanelTy::PaintBut(FrmPanelTy *this,AnonShape_005105E0_BBFE3E3B *param_1,char 
   iVar3 = 1;
   piVar5 = nullptr;
   text = FUN_006f2c00(param_2,1,local_8);
+  /* ST_CALLSITE[005106AD]: CALL 0x006f1ce0; direct=006F1CE0 cMf32::RecGet; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int */
   local_c = cMf32::RecGet(g_cMf32_00806790,1,text,piVar5,iVar3);
   /* ST_CALLSITE[005106C4]: CALL 0x00403229; direct=00403229 DibPut */
-  DibPut((RecoveredSourceFamily_dibcopy *)pFVar2->field_0068,local_18,local_10,'\x01',
-         (byte *)local_c);
+  DibPut((RecoveredSourceFamily_dibcopy *)pFVar2->field_0068,local_18,local_10,'\x01',local_c);
   cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
+
   Library::DKW::DDX::FUN_006b3640
             ((int *)g_ddxContext_008075A8,pFVar2->field_0060,0xffffffff,pFVar2->field_003C,
              pFVar2->field_0044);

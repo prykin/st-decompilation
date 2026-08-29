@@ -1,4 +1,4 @@
-FUN_0052d320:
+PopUpTy::sub_0052D320:
 0052D320  55                        PUSH EBP
 0052D321  8B EC                     MOV EBP,ESP
 0052D323  56                        PUSH ESI

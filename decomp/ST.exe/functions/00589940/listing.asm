@@ -1,6 +1,7 @@
 FUN_00589940:
 00589940  68 A6 02 00 00            PUSH 0x2a6
-00589945  E8 86 6B 12 00            CALL 0x006b04d0
+FUN_00589940::override::prt_589945_5c46533b:
+00589945  E8 86 6B 12 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STMBombC; signature=__stdcall;pointer:/STMBombC;/uint
 0058994A  85 C0                     TEST EAX,EAX
 0058994C  74 07                     JZ 0x00589955
 0058994E  8B C8                     MOV ECX,EAX

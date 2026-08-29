@@ -23,4 +23,3 @@ int __thiscall st::fn_005B6430(MMObjTy *this,STMessage *message)
   iVar1 = st::fn_006E5FD0(this,message);
   return iVar1;
 }
-

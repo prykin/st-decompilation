@@ -6,15 +6,12 @@ undefined4 __fastcall FUN_004e46f0(int *param_1)
 {
   int iVar1;
   byte bVar2;
+  AiFltClassTy *this;
   int iVar3;
   STGroupBoatC *pSVar4;
   uint uVar5;
   int iVar6;
-  undefined1 local_28 [16];
-  undefined4 local_18;
-  undefined2 local_14;
-  undefined2 local_12;
-  int local_10;
+  STMessage local_28;
   int local_8;
 
   if (param_1[0x135] + 0x19U <= g_playSystem_00802A38->field_00E4) {
@@ -38,7 +35,8 @@ undefined4 __fastcall FUN_004e46f0(int *param_1)
           local_8 = local_8 + uVar5;
           param_1[0x134] = iVar1 + uVar5;
           if (99 < (int)(iVar1 + uVar5)) {
-            thunk_FUN_004e4670((int)param_1);
+
+            thunk_FUN_004e4670(param_1);
           }
         }
       }
@@ -55,18 +53,16 @@ undefined4 __fastcall FUN_004e46f0(int *param_1)
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         pSVar4 = thunk_FUN_0042b760((char)param_1[9],*(ushort *)(param_1 + 0xc));
         if ((pSVar4 != nullptr) &&
-           ((undefined4 *)pSVar4->field_001C != nullptr)) {
-          local_10 = param_1[6];
-          local_12 = STField<undefined2>(param_1,0x32);
-          local_18 = 0x5d99;
-          local_14 = 1;
-          /* ST_CALLSITE[004E4854]: CALL dword ptr [EDX] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          (*(code *)**(undefined4 **)pSVar4->field_001C)(local_28);
+           (this = pSVar4->field_001C, this != nullptr)) {
+          local_28.arg1 = *(STMessageArg *)(param_1 + 6);
+          local_28.arg0.words.high = STField<word>(param_1,0x32);
+          local_28.id = MESS_AIFLTCLASSTY_5D99;
+          local_28.arg0.words.low = 1;
+          /* ST_CALLSITE[004E4854]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/int;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
+          this->GetMessage(&local_28);
         }
-        /* ST_CALLSITE[004E4861]: CALL dword ptr [EDX + 0x90] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(*param_1 + 0x90))(4,0x3cf);
+        /* ST_CALLSITE[004E4861]: CALL dword ptr [EDX + 0x90]; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4 */
+        STStructuralVirtualCall<undefined4>(param_1, 0x90, 4, 0x3cf);
       }
     }
   }

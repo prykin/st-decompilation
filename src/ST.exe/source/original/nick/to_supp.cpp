@@ -89,7 +89,7 @@ void __thiscall st::fn_00632A00(STTeamLissagC *this)
     }
     if (pSVar6->field_0000 != nullptr) {
       local_20 = pSVar6->field_0019;
-      local_24 = pSVar6->field_0000->count;
+      local_24 = st::storage_bit_cast<dword>(pSVar6->field_0000->count);
       local_1c = 0;
       if (0 < (int)local_24) {
         do {
@@ -125,7 +125,7 @@ void __thiscall st::fn_00632A00(STTeamLissagC *this)
               local_8 = local_14;
             }
             st::fn_006E8660
-                      (g_sT3DSMAPContext_00807598,(int *)&local_c,1,0,STField<uint>(puVar4,9),
+                      (g_sT3DSMAPContext_00807598,reinterpret_cast<int *>(&local_c),1,0,STField<uint>(puVar4,9),
                        STField<uint>(puVar4,0xd),(int)STField<uint>(puVar4,9) / 2,
                        (int)STField<uint>(puVar4,0xd) / 2 - 0xe,0);
             st::fn_006E98E0
@@ -162,4 +162,3 @@ void __thiscall st::fn_00632A00(STTeamLissagC *this)
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */
 }
-

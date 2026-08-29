@@ -73,7 +73,7 @@ LAB_004fe420:
 004FE42B  E8 54 52 F0 FF            CALL 0x00403684
 004FE430  83 C4 0C                  ADD ESP,0xc
 004FE433  50                        PUSH EAX
-004FE434  E8 07 1D 1B 00            CALL 0x006b0140
+004FE434  E8 07 1D 1B 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 LAB_004fe439:
 004FE439  8B 8E B8 01 00 00         MOV ECX,dword ptr [ESI + 0x1b8]
 004FE43F  6A FF                     PUSH -0x1

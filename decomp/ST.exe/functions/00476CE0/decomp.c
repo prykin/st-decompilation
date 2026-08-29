@@ -54,7 +54,7 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
   byte bVar24;
   STMessage local_64;
   STMessage local_44;
-  undefined4 local_24 [2];
+  uint local_24 [2];
   uint local_1c;
   short local_18;
   uint local_14;
@@ -71,6 +71,7 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
     this->field_0x5ff = this->field_0x3ef;
     *(undefined2 *)&this->field_0x600 = this->field_03F0;
     this->field_0x602 = this->field_03F2;
+
     iVar7 = thunk_FUN_00492b20(this);
     if (iVar7 != 1) {
       return 0;
@@ -87,6 +88,7 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
     local_EAX_51 = sub_00460260(this,2);
     switch(local_EAX_51) {
     case 0:
+
       iVar7 = thunk_FUN_00492b20(this);
       if (iVar7 != 0) {
         if (((this->field_0603 == this->field_0047) && (this->field_0605 == this->field_0049)) &&
@@ -111,7 +113,7 @@ cf_common_exit_00476DBA:
                          (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
       if (((pSVar8 != nullptr) && (pSVar8->field_0018 == *(int *)&this->field_0x5ff)) &&
          /* ST_CALLSITE[00476E10]: CALL dword ptr [EDX + 0x108]; [STIndirectCallsiteApplier] exact slot 0x108; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4 */
-         (iVar7 = (*pSVar8->vtable[1].vfunc_34)(pSVar8,this->field_0024), iVar7 != 0)) {
+         (iVar7 = pSVar8->vfunc_108(this->field_0024), iVar7 != 0)) {
         return 2;
       }
       /* ST_CALLSITE[00476E20]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
@@ -120,6 +122,7 @@ cf_common_exit_00476DBA:
     default:
       return 2;
     case 3:
+
       iVar7 = thunk_FUN_00492b20(this);
       if (iVar7 == 1) {
         iVar13 = (int)this->field_0607;
@@ -129,6 +132,7 @@ cf_common_exit_00476DBA:
       }
       break;
     case -1:
+
       local_EAX_97 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x31d2,0,0,
                                         "%s","STBoatC::Capture, CAPTURE_MOVE error");
       if (local_EAX_97 != 0) {
@@ -154,9 +158,10 @@ cf_common_exit_00476DBA:
       return 0;
     }
     /* ST_CALLSITE[00476EB4]: CALL dword ptr [EAX + 0x108]; [STIndirectCallsiteApplier] exact slot 0x108; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4 */
-    iVar7 = (*pSVar8->vtable[1].vfunc_34)(pSVar8,this->field_0024);
+    iVar7 = pSVar8->vfunc_108(this->field_0024);
     if (iVar7 != 0) {
       if (pSVar8->field_002C == 0) {
+
         thunk_FUN_004cd3e0(pSVar8,this->field_0018,this->field_0024);
         SVar3 = this->field_06F7;
         this->field_0611 = CASE_3;
@@ -234,11 +239,12 @@ cf_common_exit_00476DBA:
       this->field_0615 = 1;
     }
     if (this->field_0615 == 1) {
-      /* ST_CALLSITE[0047710C]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+      /* ST_CALLSITE[0047710C]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
       uVar9 = sub_004176C0(this,this->field_060F);
       /* ST_CALLSITE[00477114]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       uVar9 = sub_00417910(this,(short)uVar9);
       if (uVar9 == 0xffffffff) {
+
         local_EAX_1129 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3237,0,0,"%s",
                                 "STBoatC::Capture, CAPTURE_PMOVE");
@@ -265,6 +271,7 @@ cf_common_exit_00476DBA:
       param_1 = 0;
       if (this->field_02BF != '\0') {
         do {
+
           puVar10 = thunk_FUN_0041dc40(local_24,(short)*(undefined4 *)
                                                         (&this->field_0x2b3 + (short)param_1 * 6),
                                        *(ushort *)(&this->field_0x2b7 + (short)param_1 * 6),
@@ -320,6 +327,7 @@ cf_common_exit_00476DBA:
         } while ((short)param_1 < (short)(ushort)(byte)this->field_02BF);
       }
       if (local_8 == -1) {
+
         local_EAX_2033 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x325c,0,0,"%s",
                                 "STBoatC::Capture, CAPTURE_PMOVE 2");
@@ -334,11 +342,12 @@ cf_common_exit_00476DBA:
                            (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
         if (((pSVar8 == nullptr) || (pSVar8->field_0018 != *(int *)&this->field_0x5ff)) ||
            /* ST_CALLSITE[00477422]: CALL dword ptr [EDX + 0x108]; [STIndirectCallsiteApplier] exact slot 0x108; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4 */
-           (iVar7 = (*pSVar8->vtable[1].vfunc_34)(pSVar8,this->field_0024), iVar7 == 0)) {
+           (iVar7 = pSVar8->vfunc_108(this->field_0024), iVar7 == 0)) {
           this->field_0611 = CASE_4;
           this->field_0615 = CASE_0;
         }
         else {
+
           thunk_FUN_004cd3e0(pSVar8,this->field_0018,this->field_0024);
           SVar3 = this->field_06F7;
           this->field_0611 = CASE_3;
@@ -366,6 +375,7 @@ cf_common_exit_00476DBA:
     if (SVar1 != CASE_3) {
       if (SVar1 != CASE_4) {
         if (SVar1 != CASE_5) {
+
           iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x330e,0,0,
                                      "%s","STBoatC::Capture - incorrect entry");
           if (iVar6 != 0) {
@@ -376,6 +386,7 @@ cf_common_exit_00476DBA:
         /* ST_CALLSITE[00477AED]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
         iVar7 = sub_0045FF50(this,2);
         if (iVar7 == -1) {
+
           local_EAX_3737 =
                ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x32fc,0,0,"%s",
                                   "STBoatC::Capture, CAPTURE_ESCMOVE error");
@@ -414,11 +425,12 @@ cf_common_exit_00477B2E:
         this->field_0615 = 1;
       }
       if (this->field_0615 == 1) {
-        /* ST_CALLSITE[0047778A]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+        /* ST_CALLSITE[0047778A]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
         uVar9 = sub_004176C0(this,this->field_060F);
         /* ST_CALLSITE[00477792]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
         uVar9 = sub_00417910(this,(short)uVar9);
         if (uVar9 == 0xffffffff) {
+
           local_EAX_2791 =
                ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x32c1,0,0,"%s",
                                   "STBoatC::Capture, CAPTURE_OMOVE");
@@ -447,6 +459,7 @@ cf_common_exit_00477B2E:
         param_1 = 0;
         if (this->field_02BF != '\0') {
           do {
+
             puVar10 = thunk_FUN_0041dc40(local_24,(short)*(undefined4 *)
                                                           (&this->field_0x2b3 + (short)param_1 * 6),
                                          *(ushort *)(&this->field_0x2b7 + (short)param_1 * 6),
@@ -507,6 +520,7 @@ cf_common_exit_00477B2E:
           } while ((short)param_1 < (short)(ushort)(byte)this->field_02BF);
         }
         if (local_8 == -1) {
+
           local_EAX_3531 =
                ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x32e6,0,0,"%s",
                                   "STBoatC::Capture, CAPTURE_OMOVE 2");
@@ -536,7 +550,7 @@ cf_common_exit_00477B2E:
                        (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
     if (((pSVar8 == nullptr) || (pSVar8->field_0018 != *(int *)&this->field_0x5ff)) ||
        /* ST_CALLSITE[00477535]: CALL dword ptr [EAX + 0x108]; [STIndirectCallsiteApplier] exact slot 0x108; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4 */
-       (iVar7 = (*pSVar8->vtable[1].vfunc_34)(pSVar8,this->field_0024), iVar7 == 0)) {
+       (iVar7 = pSVar8->vfunc_108(this->field_0024), iVar7 == 0)) {
       if (((int)this->field_0041 == (this->field_0609 + 1) * 0xc9) &&
          ((int)this->field_0043 == (this->field_060B + 1) * 0xc9)) {
         this->field_0611 = CASE_4;
@@ -549,7 +563,8 @@ cf_common_exit_00477B2E:
       iVar7 = this->vfunc_D8();
       return -(uint)(iVar7 != 0);
     }
-    iVar7 = thunk_FUN_004cd480((AnonShape_004CC900_31EE9CAA *)pSVar8);
+
+    iVar7 = thunk_FUN_004cd480((RecoveredRecordView_004CC900_A43E8B7C *)pSVar8);
     if (iVar7 == 1) {
       if (g_aiBossClass_008117BC != nullptr) {
         local_44.arg0.words.high = pSVar8->field_0032;

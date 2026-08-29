@@ -24,25 +24,25 @@ HelpPanelTy::InitHelpPanel:
 00510E6C  68 2C 01 00 00            PUSH 0x12c
 00510E71  50                        PUSH EAX
 00510E72  89 35 90 16 80 00         MOV dword ptr [0x00801690],ESI
-00510E78  E8 13 D4 19 00            CALL 0x006ae290
+00510E78  E8 13 D4 19 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_01B3; source view only; no Ghidra override
 00510E7D  6A 32                     PUSH 0x32
 00510E7F  6A 14                     PUSH 0x14
 00510E81  68 C8 00 00 00            PUSH 0xc8
 00510E86  6A 00                     PUSH 0x0
 00510E88  89 86 B3 01 00 00         MOV dword ptr [ESI + 0x1b3],EAX
-00510E8E  E8 FD D3 19 00            CALL 0x006ae290
+00510E8E  E8 FD D3 19 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/HelpPanelTy_field_01BBDArray; source view only; no Ghidra override
 00510E93  6A 32                     PUSH 0x32
 00510E95  6A 09                     PUSH 0x9
 00510E97  6A 64                     PUSH 0x64
 00510E99  6A 00                     PUSH 0x0
 00510E9B  89 86 BB 01 00 00         MOV dword ptr [ESI + 0x1bb],EAX
-00510EA1  E8 EA D3 19 00            CALL 0x006ae290
+00510EA1  E8 EA D3 19 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/HelpPanelTy_field_01CBDArray; source view only; no Ghidra override
 00510EA6  6A 14                     PUSH 0x14
 00510EA8  6A 19                     PUSH 0x19
 00510EAA  6A 14                     PUSH 0x14
 00510EAC  6A 00                     PUSH 0x0
 00510EAE  89 86 CB 01 00 00         MOV dword ptr [ESI + 0x1cb],EAX
-00510EB4  E8 D7 D3 19 00            CALL 0x006ae290
+00510EB4  E8 D7 D3 19 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/HelpPanelTy_field_01D7DArray; source view only; no Ghidra override
 00510EB9  89 86 D7 01 00 00         MOV dword ptr [ESI + 0x1d7],EAX
 00510EBF  C6 86 53 02 00 00 00      MOV byte ptr [ESI + 0x253],0x0
 00510EC6  C6 86 52 02 00 00 00      MOV byte ptr [ESI + 0x252],0x0
@@ -268,7 +268,8 @@ LAB_005110ad:
 00511123  8B 48 28                  MOV ECX,dword ptr [EAX + 0x28]
 00511126  51                        PUSH ECX
 00511127  68 9D 01 00 00            PUSH 0x19d
-0051112C  E8 CF CD 1F 00            CALL 0x0070df00
+HelpPanelTy::InitHelpPanel::override::prt_51112c_bb1a54ff:
+0051112C  E8 CF CD 1F 00            CALL 0x0070df00  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/ccFntTy
 00511131  89 86 E0 01 00 00         MOV dword ptr [ESI + 0x1e0],EAX
 00511137  89 78 58                  MOV dword ptr [EAX + 0x58],EDI
 0051113A  89 78 5C                  MOV dword ptr [EAX + 0x5c],EDI
@@ -276,7 +277,8 @@ LAB_005110ad:
 00511143  8B 42 2C                  MOV EAX,dword ptr [EDX + 0x2c]
 00511146  50                        PUSH EAX
 00511147  68 9D 01 00 00            PUSH 0x19d
-0051114C  E8 AF CD 1F 00            CALL 0x0070df00
+HelpPanelTy::InitHelpPanel::override::prt_51114c_bb1a54ff:
+0051114C  E8 AF CD 1F 00            CALL 0x0070df00  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/ccFntTy
 00511151  89 86 E4 01 00 00         MOV dword ptr [ESI + 0x1e4],EAX
 00511157  89 58 58                  MOV dword ptr [EAX + 0x58],EBX
 0051115A  89 78 5C                  MOV dword ptr [EAX + 0x5c],EDI
@@ -285,7 +287,8 @@ LAB_005110ad:
 00511164  68 1C 21 7C 00            PUSH 0x7c211c
 00511169  51                        PUSH ECX
 0051116A  68 9D 01 00 00            PUSH 0x19d
-0051116F  E8 3C BD 1F 00            CALL 0x0070ceb0
+HelpPanelTy::InitHelpPanel::override::prt_51116f_bcd42e10:
+0051116F  E8 3C BD 1F 00            CALL 0x0070ceb0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/cMf32;pointer:/char;/byte
 00511174  83 C4 20                  ADD ESP,0x20
 00511177  89 86 E8 01 00 00         MOV dword ptr [ESI + 0x1e8],EAX
 0051117D  89 58 58                  MOV dword ptr [EAX + 0x58],EBX
@@ -297,7 +300,7 @@ LAB_005110ad:
 00511187  6A FF                     PUSH -0x1
 00511189  57                        PUSH EDI
 0051118A  68 E0 38 7C 00            PUSH 0x7c38e0
-0051118F  E8 E8 45 EF FF            CALL 0x0040577c
+0051118F  E8 E8 45 EF FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 00511194  8B 15 94 67 80 00         MOV EDX,dword ptr [0x00806794]
 0051119A  83 C4 08                  ADD ESP,0x8
 0051119D  50                        PUSH EAX
@@ -444,7 +447,8 @@ LAB_00511309:
 0051132E  50                        PUSH EAX
 0051132F  57                        PUSH EDI
 00511330  68 9C 01 00 00            PUSH 0x19c
-00511335  E8 86 3D 1A 00            CALL 0x006b50c0
+HelpPanelTy::InitHelpPanel::override::prt_511335_899bc419:
+00511335  E8 86 3D 1A 00            CALL 0x006b50c0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ushort; signature=__stdcall;pointer:/ushort;/int;/int;/int;/uint;pointer:/undefined4;/int
 0051133A  89 86 EC 01 00 00         MOV dword ptr [ESI + 0x1ec],EAX
 00511340  8B 86 DC 01 00 00         MOV EAX,dword ptr [ESI + 0x1dc]
 00511346  53                        PUSH EBX
@@ -459,7 +463,8 @@ LAB_00511309:
 0051135E  50                        PUSH EAX
 0051135F  68 58 02 00 00            PUSH 0x258
 00511364  68 9C 01 00 00            PUSH 0x19c
-00511369  E8 52 3D 1A 00            CALL 0x006b50c0
+HelpPanelTy::InitHelpPanel::override::prt_511369_2883b69f:
+00511369  E8 52 3D 1A 00            CALL 0x006b50c0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_0218; signature=__stdcall;pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_0218;/int;/int;/int;/uint;pointer:/undefined4;/int
 0051136E  89 86 18 02 00 00         MOV dword ptr [ESI + 0x218],EAX
 00511374  8B 46 68                  MOV EAX,dword ptr [ESI + 0x68]
 00511377  8B 58 14                  MOV EBX,dword ptr [EAX + 0x14]
@@ -507,7 +512,7 @@ LAB_00511396:
 005113EF  6A FE                     PUSH -0x2
 005113F1  50                        PUSH EAX
 005113F2  68 34 27 00 00            PUSH 0x2734
-005113F7  E8 44 ED 19 00            CALL 0x006b0140
+005113F7  E8 44 ED 19 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 005113FC  8B 8E E0 01 00 00         MOV ECX,dword ptr [ESI + 0x1e0]
 00511402  50                        PUSH EAX
 00511403  E8 B8 05 20 00            CALL 0x007119c0

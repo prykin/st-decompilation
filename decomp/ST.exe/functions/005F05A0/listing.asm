@@ -13,7 +13,7 @@ FUN_005f05a0:
 005F05BC  F3 AB                     STOSD.REP ES:EDI
 005F05BE  8B 02                     MOV EAX,dword ptr [EDX]
 005F05C0  8B CA                     MOV ECX,EDX
-005F05C2  FF 90 44 01 00 00         CALL dword ptr [EAX + 0x144]
+005F05C2  FF 90 44 01 00 00         CALL dword ptr [EAX + 0x144]  ; [STIndirectCallsiteApplier] exact slot 0x144; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 005F05C8  66 8B 4D 08               MOV CX,word ptr [EBP + 0x8]
 005F05CC  66 8B 55 0C               MOV DX,word ptr [EBP + 0xc]
 005F05D0  66 89 4D F8               MOV word ptr [EBP + -0x8],CX

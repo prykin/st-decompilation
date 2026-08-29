@@ -1,6 +1,7 @@
 FUN_00639450:
 00639450  68 D8 02 00 00            PUSH 0x2d8
-00639455  E8 76 70 07 00            CALL 0x006b04d0
+FUN_00639450::override::prt_639455_da8be410:
+00639455  E8 76 70 07 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00639480_B53D0B0F; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00639480_B53D0B0F;/uint
 0063945A  85 C0                     TEST EAX,EAX
 0063945C  74 07                     JZ 0x00639465
 0063945E  8B C8                     MOV ECX,EAX

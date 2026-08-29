@@ -3,30 +3,32 @@
 
 /* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
    full EAX (1), none consume AL/AX, and every RET path defines full EAX; sites=00652810 @ 00654066
-   -> TEST TEST EAX,EAX */
+   -> TEST TEST EAX,EAX
+   [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:0: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=1,
+   pointer_dereferences=3, scalar_uses=0; sites=0064F16A dereference: CMP byte ptr [ECX + EAX*0x1 +
+   0xd0],DL | 0064F180 dereference: CMP byte ptr [ECX + EAX*0x1 + 0xd0],DL | 0064F18F dereference:
+   MOV EDX,dword ptr [ECX + 0x14] */
 
-int __cdecl FUN_0064f160(int param_1)
+int __cdecl FUN_0064f160(RecoveredRecord_0064F160_1D0EC978 *param_1)
 
 {
   int iVar1;
 
   iVar1 = 0;
   do {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(char *)(param_1 + 0xd0 + iVar1) != '\b') {
+    if ((&param_1[8].field_0x10)[iVar1] != '\b') {
       return 0;
     }
     iVar1 = iVar1 + 1;
   } while (iVar1 < 3);
   iVar1 = 3;
   do {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(char *)(param_1 + 0xd0 + iVar1) != '\n') {
+    if ((&param_1[8].field_0x10)[iVar1] != '\n') {
       return 0;
     }
     iVar1 = iVar1 + 1;
   } while (iVar1 < 4);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return (uint)(*(int *)(param_1 + 0x14) != 0);
+  return (uint)(param_1->field_0014 != 0);
 }
 

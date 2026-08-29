@@ -8,7 +8,7 @@
    incoming_edx_uses=0; incoming_stack_parameter_uses=234; direct_non_thunk_callers=0;
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
-uint __fastcall CGenerate::sub_0069CB50(int *param_1)
+uint __fastcall CGenerate::sub_0069CB50(CGenerate *param_1)
 
 {
   int iVar1;
@@ -72,7 +72,7 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
   uint uVar21;
   bool bVar22;
   int aiStackY_1b0 [4];
-  undefined4 uStackY_1a0;
+  uint uStackY_1a0;
   int local_17c;
   uint local_178;
   int local_174;
@@ -108,7 +108,7 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
   int aiStack_a8 [9];
   int local_84;
   int local_7c;
-  void *local_78;
+  AnonShape_0069CB50_791EEE4D *local_78;
   byte *local_74;
   byte *local_70;
   int local_6c;
@@ -124,8 +124,7 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d818;
   puStack_10 = &LAB_0072d964;
@@ -135,18 +134,20 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
   local_13c = 0;
   local_40 = 0;
   ExceptionList = &local_14;
-  thunk_FUN_006a0a70(param_1);
-  iVar9 = *(int *)param_1[2] << 1;
-  STField<int>(param_1,0x5833) = iVar9;
-  STField<int>(param_1,0x5837) = ((int *)param_1[2])[1] << 1;
+  thunk_FUN_006a0a70((int *)param_1);
+  iVar9 = *param_1->field_0008 << 1;
+  param_1->field_5833 = iVar9;
+  param_1->field_5837 = param_1->field_0008[1] << 1;
   uStackY_1a0 = 0x69cbb3;
   /* ST_CALLSITE[0069CBAE]: CALL 0x0040564b; direct=0040564B CGenerate::sub_006948E0 */
-  sub_006948E0((CGenerate *)param_1,iVar9);
-  iVar19 = ((int *)param_1[2])[1] * *(int *)param_1[2];
+  sub_006948E0(param_1,iVar9);
+  iVar19 = param_1->field_0008[1] * *param_1->field_0008;
   uStackY_1a0 = 0x69cbd6;
   local_d8 = iVar19 * 4;
+  /* ST_CALLSITE[0069CBD1]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_0069CB50_791EEE4D; source view only; no Ghidra override */
   local_78 = Library::DKW::LIB::MemAlloc(iVar19 * 0x38);
   uStackY_1a0 = 0x69cbdf;
+
   local_c0 = Library::DKW::LIB::MemAlloc(iVar19 * 4);
   iVar9 = iVar19 * -0x10;
   local_16c = &stack0xfffffe68 + iVar9;
@@ -156,14 +157,15 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
   local_1c = &stack0xfffffe68 + iVar19 * -0x30;
   local_70 = &stack0xfffffe68 + iVar19 * -0x30;
   local_8 = 0xffffffff;
-  piVar5 = (int *)param_1[2];
+  piVar5 = param_1->field_0008;
   *(int *)(&stack0xfffffe64 + iVar19 * -0x30) = piVar5[1] << 1;
   aiStackY_1b0[iVar19 * -0xc + 4] = *piVar5 << 1;
   aiStackY_1b0[iVar19 * -0xc + 3] = (int)local_78;
   aiStackY_1b0[iVar19 * -0xc + 2] = 0x69cc4a;
+
   thunk_FUN_0069c360(param_1,aiStackY_1b0[iVar19 * -0xc + 3],(int *)aiStackY_1b0[iVar19 * -0xc + 4],
                      *(int *)(&stack0xfffffe64 + iVar19 * -0x30));
-  piVar5 = (int *)param_1[2];
+  piVar5 = param_1->field_0008;
   *(int *)(&stack0xfffffe64 + iVar19 * -0x30) = piVar5[1] << 1;
   aiStackY_1b0[iVar19 * -0xc + 4] = *piVar5 << 1;
   aiStackY_1b0[iVar19 * -0xc + 3] = (int)local_78;
@@ -173,6 +175,7 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
   local_138 = puVar5_mg0;
   if (puVar5_mg0 == nullptr) {
     *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69ded7;
+
     uVar14 = Library::MSVCRT::FUN_0072e6c0();
     *(uint *)(&stack0xfffffe64 + iVar19 * -0x30) = uVar14 % DAT_007d88d4;
     aiStackY_1b0[iVar19 * -0xc + 4] = 0x3e9;
@@ -212,12 +215,13 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
         } while ((int)uVar10 < (int)uVar16);
       }
       if ((0 < iVar17) && (0 < iVar14)) {
-        iVar14 = STField<int>(param_1,0x5833);
+        iVar14 = param_1->field_5833;
         local_140 = iVar14 * 8;
         local_6c = 0;
         local_7c = STSignedDiv4(iVar14);
         while ((0 < local_140 && (local_6c < local_7c))) {
           *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69cd41;
+
           local_EAX_492 = Library::MSVCRT::FUN_0072e6c0();
           iVar15 = (int)local_EAX_492 % local_ac;
           iVar6 = 0;
@@ -251,6 +255,7 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
             do {
               dVar3 = pAVar20->field_000C->count;
               *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69cda9;
+
               local_EAX_596 = Library::MSVCRT::FUN_0072e6c0();
               uVar16 = (int)local_EAX_596 % (int)dVar3;
               pDVar12 = pAVar20->field_000C;
@@ -261,10 +266,11 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
                 piVar5 = nullptr;
               }
               local_dc = *piVar5;
-              if (((-1 < local_dc) && (*(int *)((int)local_78 + local_dc * 0xe + 6) < 0)) &&
-                 ((*(byte *)((int)local_78 + local_dc * 0xe + 1) & 4) != 0)) {
-                iVar14 = local_dc / (*(int *)param_1[2] << 1);
-                iVar6 = local_dc % (*(int *)param_1[2] << 1);
+              if (((-1 < local_dc) && (local_78[local_dc].field_0006 < 0)) &&
+                 ((local_78[local_dc].field_0001 & 4) != 0)) {
+                iVar6 = *param_1->field_0008 << 1;
+                iVar14 = local_dc / iVar6;
+                iVar6 = local_dc % iVar6;
                 local_c4 = 1;
                 iVar17 = 0;
                 if (0 < local_40) {
@@ -275,6 +281,7 @@ uint __fastcall CGenerate::sub_0069CB50(int *param_1)
                     aiStackY_1b0[iVar19 * -0xc + 3] = (int)*(short *)(local_16c + iVar17 * 4 + 2);
                     aiStackY_1b0[iVar19 * -0xc + 2] = (int)*(short *)(puVar4 + iVar17 * 4);
                     aiStackY_1b0[iVar19 * -0xc + 1] = 0x69ce41;
+
                     iVar10 = FUN_006acf90(aiStackY_1b0[iVar19 * -0xc + 2],
                                           aiStackY_1b0[iVar19 * -0xc + 3],
                                           aiStackY_1b0[iVar19 * -0xc + 4],
@@ -290,6 +297,7 @@ LAB_0069ce71:
                     aiStackY_1b0[iVar19 * -0xc + 3] = (int)*(short *)(local_16c + iVar17 * 4 + 2);
                     aiStackY_1b0[iVar19 * -0xc + 2] = (int)*(short *)(puVar4 + iVar17 * 4);
                     aiStackY_1b0[iVar19 * -0xc + 1] = 0x69ce64;
+
                     local_EAX_783 =
                          FUN_006acf90(aiStackY_1b0[iVar19 * -0xc + 2],
                                       aiStackY_1b0[iVar19 * -0xc + 3],
@@ -307,6 +315,7 @@ LAB_0069ce71:
                   *(short *)(local_16c + local_40 * 4 + 2) = (short)iVar14;
                   local_6c = local_6c + 1;
                   *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69cec3;
+
                   local_EAX_878 = Library::MSVCRT::FUN_0072e6c0();
                   *(uint *)(&stack0xfffffe64 + iVar19 * -0x30) = local_EAX_878 % DAT_007d9134;
                   aiStackY_1b0[iVar19 * -0xc + 4] = 0x3ee;
@@ -318,15 +327,16 @@ LAB_0069ce71:
                                      aiStackY_1b0[iVar19 * -0xc + 2],aiStackY_1b0[iVar19 * -0xc + 3]
                                      ,aiStackY_1b0[iVar19 * -0xc + 4],
                                      *(uint *)(&stack0xfffffe64 + iVar19 * -0x30));
-                  *(undefined4 *)((int)local_78 + local_dc * 0xe + 6) = 0x3ee;
-                  piVar5 = (int *)param_1[2];
+                  local_78[local_dc].field_0006 = 0x3ee;
+                  piVar5 = param_1->field_0008;
                   *(int *)(&stack0xfffffe64 + iVar19 * -0x30) = piVar5[1] << 1;
                   aiStackY_1b0[iVar19 * -0xc + 4] = *piVar5 << 1;
                   aiStackY_1b0[iVar19 * -0xc + 3] = iVar14 * 100;
                   aiStackY_1b0[iVar19 * -0xc + 2] = iVar6 * 100;
                   aiStackY_1b0[iVar19 * -0xc + 1] = (int)local_78;
                   aiStackY_1b0[iVar19 * -0xc] = 0x69cf35;
-                  thunk_FUN_0069e4d0(param_1,aiStackY_1b0[iVar19 * -0xc + 1],
+                  thunk_FUN_0069e4d0(param_1,(RecoveredRecordView_0069E4D0_513816DF *)
+                                             aiStackY_1b0[iVar19 * -0xc + 1],
                                      aiStackY_1b0[iVar19 * -0xc + 2],aiStackY_1b0[iVar19 * -0xc + 3]
                                      ,aiStackY_1b0[iVar19 * -0xc + 4],
                                      *(int *)(&stack0xfffffe64 + iVar19 * -0x30));
@@ -376,6 +386,7 @@ LAB_0069ce71:
           local_b4 = nullptr;
           local_28 = nullptr;
           *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d02c;
+
           local_EAX_1239 = Library::MSVCRT::FUN_0072e6c0();
           local_148 = (int)local_EAX_1239 % local_ac;
           iVar17 = 0;
@@ -423,9 +434,10 @@ LAB_0069ce71:
                 uVar2 = *puVar7;
                 *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0;
                 aiStackY_1b0[iVar19 * -0xc + 4] = (int)local_68;
-                aiStackY_1b0[iVar19 * -0xc + 3] = *(int *)param_1[2] << 1;
+                aiStackY_1b0[iVar19 * -0xc + 3] = *param_1->field_0008 << 1;
                 aiStackY_1b0[iVar19 * -0xc + 2] = uVar2;
                 aiStackY_1b0[iVar19 * -0xc + 1] = 0x69d10d;
+
                 iVar17 = thunk_FUN_00696310(param_1,aiStackY_1b0[iVar19 * -0xc + 2],
                                             aiStackY_1b0[iVar19 * -0xc + 3],
                                             (int *)aiStackY_1b0[iVar19 * -0xc + 4],
@@ -433,12 +445,12 @@ LAB_0069ce71:
                 iVar14 = 0;
                 if (0 < iVar17) {
                   do {
-                    if ((*(int *)((int)local_78 + local_68[iVar14] * 0xe + 2) == 0) &&
+                    if ((local_78[local_68[iVar14]].field_0002 == 0) &&
                        (*(char *)(iVar6 + (int)local_c0) == '\0')) {
                       *(short *)(local_16c + iVar6 * 4 + 2) =
-                           (short)(local_68[iVar14] / (*(int *)param_1[2] << 1));
+                           (short)(local_68[iVar14] / (*param_1->field_0008 << 1));
                       *(short *)(local_16c + iVar6 * 4) =
-                           (short)(local_68[iVar14] % (*(int *)param_1[2] << 1));
+                           (short)(local_68[iVar14] % (*param_1->field_0008 << 1));
                       *(undefined1 *)(local_68[iVar14] + (int)local_c0) = 1;
                       iVar6 = iVar6 + 1;
                       local_164 = iVar6;
@@ -454,11 +466,13 @@ LAB_0069ce71:
             }
             *(int *)(&stack0xfffffe64 + iVar19 * -0x20 + iVar9 + -0x198 + 0x198) = iVar6 * 8;
             aiStackY_1b0[iVar19 * -0xc + 4] = 0x69d1b2;
+
             local_b4 = Library::DKW::LIB::MemAlloc
                                  (*(uint *)(&stack0xfffffe64 +
                                            iVar19 * -0x20 + iVar9 + -0x198 + 0x198));
             *(int *)(&stack0xfffffe64 + iVar19 * -0x20 + iVar9 + -0x198 + 0x198) = iVar6 * 4;
             aiStackY_1b0[iVar19 * -0xc + 4] = 0x69d1c5;
+
             local_28 = Library::DKW::LIB::MemAlloc
                                  (*(uint *)(&stack0xfffffe64 +
                                            iVar19 * -0x20 + iVar9 + -0x198 + 0x198));
@@ -473,7 +487,8 @@ LAB_0069ce71:
 LAB_0069d203:
               if (local_24 < 0) {
                 local_dc = (int)*(short *)(local_16c + local_178 * 4) +
-                           (int)*(short *)(local_16c + local_178 * 4 + 2) * *(int *)param_1[2] * 2;
+                           (int)*(short *)(local_16c + local_178 * 4 + 2) * *param_1->field_0008 * 2
+                ;
               }
               else {
                 local_dc = local_24;
@@ -486,7 +501,7 @@ LAB_0069d203:
                     uVar16 = 0;
                   }
                   local_dc = (int)*(short *)(local_16c + uVar16 * 4) +
-                             (int)*(short *)(local_16c + uVar16 * 4 + 2) * *(int *)param_1[2] * 2;
+                             (int)*(short *)(local_16c + uVar16 * 4 + 2) * *param_1->field_0008 * 2;
                 } while ((1 < *(byte *)(local_dc + (int)local_c0)) &&
                         (local_154 = local_154 + 1, (int)local_154 < local_164));
               }
@@ -494,9 +509,10 @@ LAB_0069d203:
               if (*(byte *)(local_dc + (int)local_c0) < 2) {
                 *(int **)(&stack0xfffffe64 + iVar19 * -0x30) = &local_174;
                 aiStackY_1b0[iVar19 * -0xc + 4] = (int)local_68;
-                aiStackY_1b0[iVar19 * -0xc + 3] = *(int *)param_1[2] << 1;
+                aiStackY_1b0[iVar19 * -0xc + 3] = *param_1->field_0008 << 1;
                 aiStackY_1b0[iVar19 * -0xc + 2] = iVar17;
                 aiStackY_1b0[iVar19 * -0xc + 1] = 0x69d2d2;
+
                 iVar14 = thunk_FUN_00696310(param_1,aiStackY_1b0[iVar19 * -0xc + 2],
                                             aiStackY_1b0[iVar19 * -0xc + 3],
                                             (int *)aiStackY_1b0[iVar19 * -0xc + 4],
@@ -512,8 +528,7 @@ LAB_0069d203:
                       aiStack_130[uVar16] = 0;
                       aiStack_a8[uVar16] = 0;
                       iVar17 = local_68[uVar16];
-                      if (*(int *)((int)local_78 + iVar17 * 0xe + 10) ==
-                          *(int *)(local_74 + local_148 * 4)) {
+                      if (local_78[iVar17].field_000A == *(int *)(local_74 + local_148 * 4)) {
                         aiStack_a8[uVar16] = iVar17 + 1;
                         local_38 = local_38 + 1;
                         if (!bVar22) {
@@ -623,6 +638,7 @@ LAB_0069d626:
                   }
                   else {
                     *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d678;
+
                     uVar8 = Library::MSVCRT::FUN_0072e6c0();
                     iVar17 = ((int)uVar8 % 3) * 2 + 3;
 LAB_0069d684:
@@ -639,131 +655,145 @@ LAB_0069d684:
 LAB_0069d7b2:
                         iVar17 = *(int *)((int)local_b4 + local_154 * 8);
                         iVar14 = *(int *)((int)local_b4 + local_154 * 8 + 4);
-                        if (-1 < iVar17) {
-                          iVar11 = iVar17 * 0xe;
-                          iVar6 = *(int *)(iVar11 + 6 + (int)local_78);
-                          if ((iVar6 < 0) || (iVar6 != 0x3ed)) {
-                            iVar13 = *(int *)param_1[2] << 1;
-                            iVar6 = (iVar17 / iVar13) * 100;
-                            iVar15 = iVar6 + 0x32;
-                            iVar17 = (iVar17 % iVar13) * 100;
-                            iVar1 = iVar17 + 0x32;
-                            if (iVar14 < 0) {
-                              *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d960;
-                              local_EAX_3595 = Library::MSVCRT::FUN_0072e6c0();
-                              if ((int)local_EAX_3595 % 6 == 0) {
-                                *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d971;
-                                local_EAX_3612 = Library::MSVCRT::FUN_0072e6c0();
+                        if ((-1 < iVar17) &&
+                           ((local_78[iVar17].field_0006 < 0 ||
+                            (local_78[iVar17].field_0006 != 0x3ed)))) {
+                          iVar13 = *param_1->field_0008 << 1;
+                          iVar6 = (iVar17 / iVar13) * 100;
+                          iVar15 = iVar6 + 0x32;
+                          iVar11 = (iVar17 % iVar13) * 100;
+                          iVar1 = iVar11 + 0x32;
+                          if (iVar14 < 0) {
+                            *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d960;
+
+                            local_EAX_3595 = Library::MSVCRT::FUN_0072e6c0();
+                            if ((int)local_EAX_3595 % 6 == 0) {
+                              *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d971;
+
+                              local_EAX_3612 = Library::MSVCRT::FUN_0072e6c0();
+                              *(uint *)(&stack0xfffffe64 + iVar19 * -0x30) =
+                                   local_EAX_3612 % DAT_007d9564;
+                              aiStackY_1b0[iVar19 * -0xc + 4] = 0x3f0;
+                              aiStackY_1b0[iVar19 * -0xc + 3] = 0;
+                              aiStackY_1b0[iVar19 * -0xc + 2] = 0x69d986;
+
+                              local_EAX_3633 = Library::MSVCRT::FUN_0072e6c0();
+                              aiStackY_1b0[iVar19 * -0xc + 2] =
+                                   (int)local_EAX_3633 % 0x51 + -0x28 + iVar15;
+                              aiStackY_1b0[iVar19 * -0xc + 1] = 0x69d998;
+
+                              local_EAX_3651 = Library::MSVCRT::FUN_0072e6c0();
+                              aiStackY_1b0[iVar19 * -0xc + 1] =
+                                   (int)local_EAX_3651 % 0x51 + -0x28 + iVar1;
+                              aiStackY_1b0[iVar19 * -0xc] = 0x69d9b0;
+                              thunk_FUN_006a0ae0(param_1,aiStackY_1b0[iVar19 * -0xc + 1],
+                                                 aiStackY_1b0[iVar19 * -0xc + 2],
+                                                 aiStackY_1b0[iVar19 * -0xc + 3],
+                                                 aiStackY_1b0[iVar19 * -0xc + 4],
+                                                 *(uint *)(&stack0xfffffe64 + iVar19 * -0x30));
+                              local_78[iVar17].field_0006 = 0x3f0;
+                            }
+                            else {
+                              *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d9c8;
+
+                              local_EAX_3699 = Library::MSVCRT::FUN_0072e6c0();
+                              if ((int)local_EAX_3699 % 9 == 0) {
+                                *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d9d9;
+
+                                local_EAX_3716 = Library::MSVCRT::FUN_0072e6c0();
                                 *(uint *)(&stack0xfffffe64 + iVar19 * -0x30) =
-                                     local_EAX_3612 % DAT_007d9564;
-                                aiStackY_1b0[iVar19 * -0xc + 4] = 0x3f0;
+                                     local_EAX_3716 % DAT_007d977c;
+                                aiStackY_1b0[iVar19 * -0xc + 4] = 0x3f1;
                                 aiStackY_1b0[iVar19 * -0xc + 3] = 0;
-                                aiStackY_1b0[iVar19 * -0xc + 2] = 0x69d986;
-                                local_EAX_3633 = Library::MSVCRT::FUN_0072e6c0();
-                                aiStackY_1b0[iVar19 * -0xc + 2] =
-                                     (int)local_EAX_3633 % 0x51 + -0x28 + iVar15;
-                                aiStackY_1b0[iVar19 * -0xc + 1] = 0x69d998;
-                                local_EAX_3651 = Library::MSVCRT::FUN_0072e6c0();
+                                aiStackY_1b0[iVar19 * -0xc + 2] = 0x69d9ee;
+
+                                uVar9 = Library::MSVCRT::FUN_0072e6c0();
+                                aiStackY_1b0[iVar19 * -0xc + 2] = (int)uVar9 % 0x51 + -0x28 + iVar15
+                                ;
+                                aiStackY_1b0[iVar19 * -0xc + 1] = 0x69da00;
+
+                                local_EAX_3755 = Library::MSVCRT::FUN_0072e6c0();
                                 aiStackY_1b0[iVar19 * -0xc + 1] =
-                                     (int)local_EAX_3651 % 0x51 + -0x28 + iVar1;
-                                aiStackY_1b0[iVar19 * -0xc] = 0x69d9b0;
+                                     (int)local_EAX_3755 % 0x51 + -0x28 + iVar1;
+                                aiStackY_1b0[iVar19 * -0xc] = 0x69da18;
                                 thunk_FUN_006a0ae0(param_1,aiStackY_1b0[iVar19 * -0xc + 1],
                                                    aiStackY_1b0[iVar19 * -0xc + 2],
                                                    aiStackY_1b0[iVar19 * -0xc + 3],
                                                    aiStackY_1b0[iVar19 * -0xc + 4],
                                                    *(uint *)(&stack0xfffffe64 + iVar19 * -0x30));
-                                *(undefined4 *)(iVar11 + 6 + (int)local_78) = 0x3f0;
+                                local_78[iVar17].field_0006 = 0x3f1;
                               }
-                              else {
-                                *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d9c8;
-                                local_EAX_3699 = Library::MSVCRT::FUN_0072e6c0();
-                                if ((int)local_EAX_3699 % 9 == 0) {
-                                  *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d9d9;
-                                  local_EAX_3716 = Library::MSVCRT::FUN_0072e6c0();
-                                  *(uint *)(&stack0xfffffe64 + iVar19 * -0x30) =
-                                       local_EAX_3716 % DAT_007d977c;
-                                  aiStackY_1b0[iVar19 * -0xc + 4] = 0x3f1;
-                                  aiStackY_1b0[iVar19 * -0xc + 3] = 0;
-                                  aiStackY_1b0[iVar19 * -0xc + 2] = 0x69d9ee;
-                                  uVar9 = Library::MSVCRT::FUN_0072e6c0();
-                                  aiStackY_1b0[iVar19 * -0xc + 2] =
-                                       (int)uVar9 % 0x51 + -0x28 + iVar15;
-                                  aiStackY_1b0[iVar19 * -0xc + 1] = 0x69da00;
-                                  local_EAX_3755 = Library::MSVCRT::FUN_0072e6c0();
-                                  aiStackY_1b0[iVar19 * -0xc + 1] =
-                                       (int)local_EAX_3755 % 0x51 + -0x28 + iVar1;
-                                  aiStackY_1b0[iVar19 * -0xc] = 0x69da18;
-                                  thunk_FUN_006a0ae0(param_1,aiStackY_1b0[iVar19 * -0xc + 1],
-                                                     aiStackY_1b0[iVar19 * -0xc + 2],
-                                                     aiStackY_1b0[iVar19 * -0xc + 3],
-                                                     aiStackY_1b0[iVar19 * -0xc + 4],
-                                                     *(uint *)(&stack0xfffffe64 + iVar19 * -0x30));
-                                  *(undefined4 *)(iVar11 + 6 + (int)local_78) = 0x3f1;
-                                }
-                              }
+                            }
+                          }
+                          else {
+                            local_150 = (iVar14 / iVar13) * 100 + 0x32;
+                            local_cc = (iVar14 % iVar13) * 100 + 0x32;
+                            iVar14 = local_150 - iVar15;
+                            if ((iVar14 == 0) && (local_cc == iVar1)) {
+                              *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d870;
+
+                              local_EAX_3355 = Library::MSVCRT::FUN_0072e6c0();
+                              iVar11 = iVar11 + 0x24 + (int)local_EAX_3355 % 0x1d;
+                              *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d881;
+
+                              local_EAX_3372 = Library::MSVCRT::FUN_0072e6c0();
+                              iVar14 = iVar6 + 0x24 + (int)local_EAX_3372 % 0x1d;
                             }
                             else {
-                              local_150 = (iVar14 / iVar13) * 100 + 0x32;
-                              local_cc = (iVar14 % iVar13) * 100 + 0x32;
-                              iVar14 = local_150 - iVar15;
-                              if ((iVar14 == 0) && (local_cc == iVar1)) {
-                                *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d870;
-                                local_EAX_3355 = Library::MSVCRT::FUN_0072e6c0();
-                                iVar17 = iVar17 + 0x24 + (int)local_EAX_3355 % 0x1d;
-                                *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d881;
-                                local_EAX_3372 = Library::MSVCRT::FUN_0072e6c0();
-                                iVar14 = iVar6 + 0x24 + (int)local_EAX_3372 % 0x1d;
-                              }
-                              else {
-                                *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d894;
-                                local_EAX_3391 = Library::MSVCRT::FUN_0072e6c0();
-                                iVar17 = (local_cc - iVar1) / 2 + iVar1 + -0xe +
-                                         (int)local_EAX_3391 % 0x1d;
-                                *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d8b6;
-                                local_EAX_3425 = Library::MSVCRT::FUN_0072e6c0();
-                                iVar14 = iVar14 / 2 + iVar15 + -0xe + (int)local_EAX_3425 % 0x1d;
-                              }
-                              if (local_c8 == 1) {
-                                *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d918;
-                                local_EAX_3523 = Library::MSVCRT::FUN_0072e6c0();
-                                uVar16 = (int)local_EAX_3523 % 7 + 9;
-                              }
-                              else if (local_c8 == 2) {
-                                *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d902;
-                                local_EAX_3501 = Library::MSVCRT::FUN_0072e6c0();
-                                uVar16 = local_EAX_3501 & 0x80000003;
-                                if ((int)uVar16 < 0) {
-                                  uVar16 = (uVar16 - 1 | 0xfffffffc) + 1;
-                                }
-                              }
-                              else if (local_c8 == 3) {
-                                *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d8f0;
-                                local_EAX_3483 = Library::MSVCRT::FUN_0072e6c0();
-                                uVar16 = (int)local_EAX_3483 % 5 + 4;
-                              }
-                              else {
-                                *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d8e1;
-                                local_EAX_3468 = Library::MSVCRT::FUN_0072e6c0();
-                                uVar16 = local_EAX_3468 % DAT_007d8f1c;
-                              }
-                              if (local_84 != 0) {
-                                local_d4 = local_d4 + 1;
-                              }
-                              *(uint *)(&stack0xfffffe64 + iVar19 * -0x20 + iVar9 + -0x198 + 0x198)
-                                   = uVar16;
-                              aiStackY_1b0[iVar19 * -0xc + 4] = 0x3ed;
-                              aiStackY_1b0[iVar19 * -0xc + 3] = 0;
-                              aiStackY_1b0[iVar19 * -0xc + 2] = iVar14;
-                              aiStackY_1b0[iVar19 * -0xc + 1] = iVar17;
-                              aiStackY_1b0[iVar19 * -0xc] = 0x69d945;
-                              thunk_FUN_006a0ae0(param_1,aiStackY_1b0[iVar19 * -0xc + 1],
-                                                 aiStackY_1b0[iVar19 * -0xc + 2],
-                                                 aiStackY_1b0[iVar19 * -0xc + 3],
-                                                 aiStackY_1b0[iVar19 * -0xc + 4],
-                                                 *(uint *)(&stack0xfffffe64 +
-                                                          iVar19 * -0x20 + iVar9 + -0x198 + 0x198));
-                              *(undefined4 *)(iVar11 + 6 + (int)local_78) = 0x3ed;
+                              *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d894;
+
+                              local_EAX_3391 = Library::MSVCRT::FUN_0072e6c0();
+                              iVar11 = (local_cc - iVar1) / 2 + iVar1 + -0xe +
+                                       (int)local_EAX_3391 % 0x1d;
+                              *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d8b6;
+
+                              local_EAX_3425 = Library::MSVCRT::FUN_0072e6c0();
+                              iVar14 = iVar14 / 2 + iVar15 + -0xe + (int)local_EAX_3425 % 0x1d;
                             }
+                            if (local_c8 == 1) {
+                              *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d918;
+
+                              local_EAX_3523 = Library::MSVCRT::FUN_0072e6c0();
+                              uVar16 = (int)local_EAX_3523 % 7 + 9;
+                            }
+                            else if (local_c8 == 2) {
+                              *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d902;
+
+                              local_EAX_3501 = Library::MSVCRT::FUN_0072e6c0();
+                              uVar16 = local_EAX_3501 & 0x80000003;
+                              if ((int)uVar16 < 0) {
+                                uVar16 = (uVar16 - 1 | 0xfffffffc) + 1;
+                              }
+                            }
+                            else if (local_c8 == 3) {
+                              *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d8f0;
+
+                              local_EAX_3483 = Library::MSVCRT::FUN_0072e6c0();
+                              uVar16 = (int)local_EAX_3483 % 5 + 4;
+                            }
+                            else {
+                              *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d8e1;
+
+                              local_EAX_3468 = Library::MSVCRT::FUN_0072e6c0();
+                              uVar16 = local_EAX_3468 % DAT_007d8f1c;
+                            }
+                            if (local_84 != 0) {
+                              local_d4 = local_d4 + 1;
+                            }
+                            *(uint *)(&stack0xfffffe64 + iVar19 * -0x20 + iVar9 + -0x198 + 0x198) =
+                                 uVar16;
+                            aiStackY_1b0[iVar19 * -0xc + 4] = 0x3ed;
+                            aiStackY_1b0[iVar19 * -0xc + 3] = 0;
+                            aiStackY_1b0[iVar19 * -0xc + 2] = iVar14;
+                            aiStackY_1b0[iVar19 * -0xc + 1] = iVar11;
+                            aiStackY_1b0[iVar19 * -0xc] = 0x69d945;
+                            thunk_FUN_006a0ae0(param_1,aiStackY_1b0[iVar19 * -0xc + 1],
+                                               aiStackY_1b0[iVar19 * -0xc + 2],
+                                               aiStackY_1b0[iVar19 * -0xc + 3],
+                                               aiStackY_1b0[iVar19 * -0xc + 4],
+                                               *(uint *)(&stack0xfffffe64 +
+                                                        iVar19 * -0x20 + iVar9 + -0x198 + 0x198));
+                            local_78[iVar17].field_0006 = 0x3ed;
                           }
                         }
                       }
@@ -775,6 +805,7 @@ LAB_0069d7b2:
                       }
                       else {
                         *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d6f8;
+
                         local_EAX_2979 = Library::MSVCRT::FUN_0072e6c0();
                         if ((int)local_EAX_2979 % 3 != 0) {
                           if (local_d4 < local_34) {
@@ -788,10 +819,12 @@ LAB_0069d7b2:
                           }
                           if (local_bc <= local_d4) {
                             *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d76a;
+
                             local_EAX_3093 = Library::MSVCRT::FUN_0072e6c0();
                             local_178 = (int)local_EAX_3093 % 10 + 5 + local_154;
                             local_84 = 2;
                             *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69d78e;
+
                             local_EAX_3129 = Library::MSVCRT::FUN_0072e6c0();
                             local_bc = ((int)local_EAX_3129 % 3) * 2 + 3;
                             local_34 = local_bc / 2;
@@ -849,12 +882,13 @@ LAB_0069d7b2:
         } while ((int)uVar16 < (int)local_13c);
       }
       if ((0 < iVar17) && (0 < iVar14)) {
-        local_140 = STField<int>(param_1,0x5833) * 8;
+        local_140 = param_1->field_5833 * 8;
         local_b0 = 0;
-        local_170 = (STField<int>(param_1,0x5833) * 3) / 2;
+        local_170 = (param_1->field_5833 * 3) / 2;
         puVar18 = local_138;
         while ((0 < local_140 && (local_b0 < local_170))) {
           *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69db81;
+
           local_EAX_4140 = Library::MSVCRT::FUN_0072e6c0();
           iVar15 = (int)local_EAX_4140 % iVar14;
           iVar6 = 0;
@@ -889,6 +923,7 @@ LAB_0069d7b2:
             do {
               dVar3 = pAVar20->field_000C->count;
               *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69dbf4;
+
               local_EAX_4255 = Library::MSVCRT::FUN_0072e6c0();
               uVar16 = (int)local_EAX_4255 % (int)dVar3;
               pDVar12 = pAVar20->field_000C;
@@ -899,10 +934,11 @@ LAB_0069d7b2:
                 piVar5 = nullptr;
               }
               local_dc = *piVar5;
-              if (((-1 < local_dc) && (*(int *)((int)local_78 + local_dc * 0xe + 6) < 0)) &&
-                 ((*(byte *)((int)local_78 + local_dc * 0xe + 1) & 0xc) != 0)) {
-                iVar17 = local_dc / (*(int *)param_1[2] << 1);
-                iVar14 = local_dc % (*(int *)param_1[2] << 1);
+              if (((-1 < local_dc) && (local_78[local_dc].field_0006 < 0)) &&
+                 ((local_78[local_dc].field_0001 & 0xc) != 0)) {
+                iVar14 = *param_1->field_0008 << 1;
+                iVar17 = local_dc / iVar14;
+                iVar14 = local_dc % iVar14;
                 local_c4 = 1;
                 iVar6 = 0;
                 if (0 < local_40) {
@@ -913,6 +949,7 @@ LAB_0069d7b2:
                     aiStackY_1b0[iVar19 * -0xc + 3] = (int)*(short *)(local_16c + iVar6 * 4 + 2);
                     aiStackY_1b0[iVar19 * -0xc + 2] = (int)*(short *)(puVar4 + iVar6 * 4);
                     aiStackY_1b0[iVar19 * -0xc + 1] = 0x69dc8c;
+
                     local_EAX_4407 =
                          FUN_006acf90(aiStackY_1b0[iVar19 * -0xc + 2],
                                       aiStackY_1b0[iVar19 * -0xc + 3],
@@ -929,6 +966,7 @@ LAB_0069dcbc:
                     aiStackY_1b0[iVar19 * -0xc + 3] = (int)*(short *)(local_16c + iVar6 * 4 + 2);
                     aiStackY_1b0[iVar19 * -0xc + 2] = (int)*(short *)(puVar4 + iVar6 * 4);
                     aiStackY_1b0[iVar19 * -0xc + 1] = 0x69dcaf;
+
                     local_EAX_4442 =
                          FUN_006acf90(aiStackY_1b0[iVar19 * -0xc + 2],
                                       aiStackY_1b0[iVar19 * -0xc + 3],
@@ -944,6 +982,7 @@ LAB_0069dcbc:
                   *(short *)(local_16c + local_40 * 4 + 2) = (short)iVar17;
                   local_b0 = local_b0 + 1;
                   *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69dd0b;
+
                   local_EAX_4534 = Library::MSVCRT::FUN_0072e6c0();
                   uVar16 = local_EAX_4534 & 0x80000001;
                   bVar22 = uVar16 == 0;
@@ -952,6 +991,7 @@ LAB_0069dcbc:
                   }
                   if (bVar22) {
                     *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69de40;
+
                     local_EAX_4843 = Library::MSVCRT::FUN_0072e6c0();
                     *(uint *)(&stack0xfffffe64 + iVar19 * -0x30) = local_EAX_4843 % DAT_007d9994;
                     aiStackY_1b0[iVar19 * -0xc + 4] = 0x3f2;
@@ -964,10 +1004,11 @@ LAB_0069dcbc:
                                        aiStackY_1b0[iVar19 * -0xc + 3],
                                        aiStackY_1b0[iVar19 * -0xc + 4],
                                        *(uint *)(&stack0xfffffe64 + iVar19 * -0x30));
-                    *(undefined4 *)((int)local_78 + local_dc * 0xe + 6) = 0x3f2;
+                    local_78[local_dc].field_0006 = 0x3f2;
                   }
                   else {
                     *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69dd22;
+
                     local_EAX_4557 = Library::MSVCRT::FUN_0072e6c0();
                     uVar16 = local_EAX_4557 & 0x8000000f;
                     bVar22 = uVar16 == 0;
@@ -976,9 +1017,10 @@ LAB_0069dcbc:
                     }
                     if (bVar22) {
                       *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69dd39;
+
                       local_EAX_4580 = Library::MSVCRT::FUN_0072e6c0();
-                      if (((iVar14 < 1) || (*(int *)param_1[2] * 2 + -2 <= iVar14)) ||
-                         ((iVar17 < 1 || (iVar17 <= ((int *)param_1[2])[1] * 2 + -2)))) {
+                      if (((iVar14 < 1) || (*param_1->field_0008 * 2 + -2 <= iVar14)) ||
+                         ((iVar17 < 1 || (iVar17 <= param_1->field_0008[1] * 2 + -2)))) {
                         *(uint *)(&stack0xfffffe64 + iVar19 * -0x30) = local_EAX_4580 % DAT_007d977c
                         ;
                         aiStackY_1b0[iVar19 * -0xc + 4] = 0x3f1;
@@ -992,10 +1034,12 @@ LAB_0069dcbc:
                         aiStackY_1b0[iVar19 * -0xc + 4] = 0x3f1;
                         aiStackY_1b0[iVar19 * -0xc + 3] = 0;
                         aiStackY_1b0[iVar19 * -0xc + 2] = 0x69dd74;
+
                         local_EAX_4639 = Library::MSVCRT::FUN_0072e6c0();
                         aiStackY_1b0[iVar19 * -0xc + 2] =
                              (int)local_EAX_4639 % 0x51 + -0x28 + iVar17 * 100;
                         aiStackY_1b0[iVar19 * -0xc + 1] = 0x69dd8c;
+
                         local_EAX_4663 = Library::MSVCRT::FUN_0072e6c0();
                         aiStackY_1b0[iVar19 * -0xc + 1] =
                              (int)local_EAX_4663 % 0x51 + -0x28 + iVar14 * 100;
@@ -1006,10 +1050,11 @@ LAB_0069dcbc:
                                          aiStackY_1b0[iVar19 * -0xc + 3],
                                          aiStackY_1b0[iVar19 * -0xc + 4],
                                          *(uint *)(&stack0xfffffe64 + iVar19 * -0x30));
-                      *(undefined4 *)((int)local_78 + local_dc * 0xe + 6) = 0x3f1;
+                      local_78[local_dc].field_0006 = 0x3f1;
                     }
                     else {
                       *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69dde8;
+
                       local_EAX_4755 = Library::MSVCRT::FUN_0072e6c0();
                       *(uint *)(&stack0xfffffe64 + iVar19 * -0x30) = local_EAX_4755 % DAT_007d88d4;
                       aiStackY_1b0[iVar19 * -0xc + 4] = 0x3e9;
@@ -1022,7 +1067,7 @@ LAB_0069dcbc:
                                          aiStackY_1b0[iVar19 * -0xc + 3],
                                          aiStackY_1b0[iVar19 * -0xc + 4],
                                          *(uint *)(&stack0xfffffe64 + iVar19 * -0x30));
-                      *(undefined4 *)((int)local_78 + local_dc * 0xe + 6) = 0x3e9;
+                      local_78[local_dc].field_0006 = 0x3e9;
                     }
                   }
                   local_40 = local_40 + 1;
@@ -1071,14 +1116,15 @@ LAB_0069dcbc:
     aiStackY_1b0[iVar19 * -0xc + 4] = 0x69df34;
     DArrayDestroy(*(DArrayTy **)(&stack0xfffffe64 + iVar19 * -0x20 + iVar9 + -0x198 + 0x198));
   }
-  *(void ***)(&stack0xfffffe64 + iVar19 * -0x20 + iVar9 + -0x198 + 0x198) = &local_78;
+  *(AnonShape_0069CB50_791EEE4D ***)(&stack0xfffffe64 + iVar19 * -0x20 + iVar9 + -0x198 + 0x198) =
+       &local_78;
   aiStackY_1b0[iVar19 * -0xc + 4] = 0x69df3d;
   FreeAndNull(*(void **)(&stack0xfffffe64 + iVar19 * -0x20 + iVar9 + -0x198 + 0x198));
   *(undefined4 ***)(&stack0xfffffe64 + iVar19 * -0x20 + iVar9 + -0x198 + 0x198) = &local_c0;
   aiStackY_1b0[iVar19 * -0xc + 4] = 0x69df49;
   FreeAndNull(*(void **)(&stack0xfffffe64 + iVar19 * -0x20 + iVar9 + -0x198 + 0x198));
   *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69df54;
-  thunk_FUN_006a0c00(param_1);
+  thunk_FUN_006a0c00((int *)param_1);
   ExceptionList = local_14;
   return local_13c;
 LAB_0069d43d:
@@ -1095,9 +1141,10 @@ LAB_0069d454:
   }
   *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0;
   aiStackY_1b0[iVar19 * -0xc + 4] = (int)local_10c;
-  aiStackY_1b0[iVar19 * -0xc + 3] = *(int *)param_1[2] << 1;
+  aiStackY_1b0[iVar19 * -0xc + 3] = *param_1->field_0008 << 1;
   aiStackY_1b0[iVar19 * -0xc + 2] = local_68[uVar16];
   aiStackY_1b0[iVar19 * -0xc + 1] = 0x69d494;
+
   iVar6 = thunk_FUN_00696310(param_1,aiStackY_1b0[iVar19 * -0xc + 2],aiStackY_1b0[iVar19 * -0xc + 3]
                              ,(int *)aiStackY_1b0[iVar19 * -0xc + 4],
                              *(int **)(&stack0xfffffe64 + iVar19 * -0x30));

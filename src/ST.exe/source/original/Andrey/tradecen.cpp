@@ -35,36 +35,36 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
   uint *puVar23;
   uint local_5e0 [84];
   int local_490 [6];
-  undefined4 local_478;
-  undefined4 local_474;
-  undefined4 local_428;
-  undefined4 local_424;
-  undefined4 local_420;
-  undefined4 local_380;
-  undefined4 local_37c;
-  undefined4 local_378;
-  undefined4 local_374;
-  undefined4 local_30c;
+  uint local_478;
+  uint local_474;
+  uint local_428;
+  uint local_424;
+  uint local_420;
+  uint local_380;
+  uint local_37c;
+  uint local_378;
+  uint local_374;
+  uint local_30c;
   int local_308 [26];
-  undefined4 local_2a0;
-  undefined4 local_e8;
-  undefined4 local_e4;
-  undefined4 local_e0;
-  undefined4 local_c4;
-  undefined4 local_c0;
-  undefined4 local_bc;
+  uint local_2a0;
+  uint local_e8;
+  uint local_e4;
+  uint local_e0;
+  uint local_c4;
+  uint local_c0;
+  uint local_bc;
   InternalExceptionFrame local_b8;
-  undefined4 local_74 [4];
-  undefined4 local_64;
-  undefined4 local_60;
-  undefined4 local_5c;
-  undefined4 local_44;
-  undefined4 local_40;
-  undefined4 local_3c;
+  uint local_74 [4];
+  uint local_64;
+  uint local_60;
+  uint local_5c;
+  uint local_44;
+  uint local_40;
+  uint local_3c;
   uint *local_2c;
-  undefined4 local_28;
-  undefined4 local_24;
-  undefined4 local_20;
+  uint local_28;
+  uint local_24;
+  uint local_20;
   int local_1c;
   ushort *local_18;
   TradePanelTy *local_14;
@@ -83,7 +83,8 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
   memset(local_490, 0, 0x3d8); /* compiler bulk-zero initialization */
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
-  puVar3 = (undefined4 *)st::fn_0072D7F0(local_b8.jumpBuffer,0);
+
+  puVar3 = STPointerBoundaryCast<undefined4 *>(st::fn_0072D7F0(local_b8.jumpBuffer,0));
   this_00 = local_14;
   if (puVar3 == nullptr) {
     uVar22 = 0x77;
@@ -94,29 +95,31 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
     iVar16 = 0xbf;
     uVar15 = 3;
     iVar14 = 0x40;
+    /* ST_CALLSITE[00550E4B]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SpecPanelTy; source view only; no Ghidra override */
     pCVar4 = st::fn_0040577C(st::mutable_c_string("BKG_TRADECENTERW"),0);
     /* ST_CALLSITE[00550E56]: CALL 0x00403800; direct=00403800 SpecPanelTy::InitPanel */
     st::fn_00403800
-              ((SpecPanelTy *)this_00,pCVar4,iVar14,uVar15,iVar16,iVar18,UVar19,iVar9,uVar22);
-    /* ST_CALLSITE[00550E6D]: CALL 0x0070ceb0; direct=0070CEB0 ccFntTy::operator_new */
-    pcVar5 = (ccFntTy *)st::fn_0070CEB0(0x19d,g_cMf32_00806790,st::mutable_c_string("MONEY_FONT"),0);
+              (reinterpret_cast<SpecPanelTy *>(this_00),reinterpret_cast<char *>(pCVar4),iVar14,uVar15,iVar16,iVar18,UVar19,iVar9,uVar22);
+    /* ST_CALLSITE[00550E6D]: CALL 0x0070ceb0; direct=0070CEB0 ccFntTy::operator_new; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/cMf32;pointer:/char;/byte */
+    pcVar5 = st::pointer_boundary_cast<ccFntTy *>(st::fn_0070CEB0(0x19d,g_cMf32_00806790,st::mutable_c_string("MONEY_FONT"),0));
     uVar11 = 1;
     this_00->field_01DD = pcVar5;
     pcVar5->field_0058 = 1;
     pcVar5->field_005C = 0;
     puVar6 = st::fn_00709AF0
-                       (PTR_00806794,CASE_B,(char *)&DAT_007c204c,0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,reinterpret_cast<char *>(&DAT_007c204c),0xffffffff,0,1,0,nullptr);
     this_00->field_01D1 = puVar6;
     puVar6 = st::fn_00709AF0
-                       (PTR_00806794,CASE_B,(char *)&DAT_007c2048,0xffffffff,0,1,0,nullptr);
+                       (PTR_00806794,CASE_B,reinterpret_cast<char *>(&DAT_007c2048),0xffffffff,0,1,0,nullptr);
     this_00->field_01D5 = puVar6;
     iVar9 = 1;
     uVar17 = 0xffffffff;
     puVar20 = puVar3;
     puVar23 = puVar3;
+    /* ST_CALLSITE[00550ECF]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
     pCVar4 = st::fn_0040577C(st::mutable_c_string("TRADE_RATE"),0);
     puVar6 = st::fn_00709AF0
-                       (PTR_00806794,CASE_B,pCVar4,uVar17,(byte)puVar3,iVar9,(int)puVar20,puVar23);
+                       (PTR_00806794,CASE_B,reinterpret_cast<char *>(pCVar4),uVar17,(byte)puVar3,iVar9,(int)puVar20,puVar23);
     local_5 = this_00->field_01D0;
     this_00->field_01D9 = puVar6;
     local_1c = this_00->field_005C;
@@ -157,7 +160,7 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
     local_44 = local_64;
     /* ST_CALLSITE[00550FCC]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,5,&this_00->field_01C4,nullptr,st::machine_word_boundary_cast<undefined4>(local_74),0);
+              (reinterpret_cast<SystemClassTy *>(this_00->field_000C),5,&this_00->field_01C4,nullptr,st::machine_word_boundary_cast<undefined4>(local_74),0);
     local_e8 = this_00->field_0008;
     iVar14 = 1;
     piVar21 = nullptr;
@@ -172,14 +175,15 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
     local_380 = 1;
     local_490[2] = 0;
     local_490[3] = 2;
+    /* ST_CALLSITE[0055101E]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
     pCVar4 = st::fn_0040577C(st::mutable_c_string("BUT_TBUP"),0);
-    pCVar4 = st::fn_006F2C00(pCVar4,iVar9,uVar15);
-    local_18 = st::fn_006F1CE0(g_cMf32_00806790,1,pCVar4,piVar21,iVar14);
+    pCVar4 = st::fn_006F2C00(reinterpret_cast<char *>(pCVar4),iVar9,uVar15);
+    local_18 = st::fn_006F1CE0(g_cMf32_00806790,1,reinterpret_cast<char *>(pCVar4),piVar21,iVar14);
     local_478 = *(undefined4 *)(local_18 + 2);
     local_474 = *(undefined4 *)(local_18 + 4);
-    st::fn_006F20E0(g_cMf32_00806790,(uint *)&local_18);
+    st::fn_006F20E0(g_cMf32_00806790,reinterpret_cast<uint *>(&local_18));
     iVar9 = this_00->field_005C;
-    local_490[4] = st::machine_word_boundary_cast<int>(this_00->field_003C + 0x69);
+    local_490[4] = this_00->field_003C + 0x69;
     iVar14 = DAT_00806734;
     if (iVar9 != 0) {
       iVar14 = this_00->field_0044;
@@ -197,7 +201,7 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
     if (iVar9 != 0) {
       local_308[3] = this_00->field_0044;
     }
-    local_308[3] = st::machine_word_boundary_cast<int>(local_308[3] + 0x57);
+    local_308[3] = local_308[3] + 0x57;
     puVar3 = &this_00->field_01C0;
     local_2a0 = 0xc006;
     local_c4 = 1;
@@ -205,21 +209,22 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
     local_bc = 10;
     /* ST_CALLSITE[0055111A]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,4,puVar3,nullptr,st::machine_word_boundary_cast<undefined4>(local_490),0);
+              (reinterpret_cast<SystemClassTy *>(this_00->field_000C),4,puVar3,nullptr,st::machine_word_boundary_cast<undefined4>(local_490),0);
     puVar1 = &this_00->field_0x18;
     this_00->field_0028 = 0x28;
     *(undefined4 *)&this_00->field_0x2c = 0x186a1;
-    st::fn_006E6080(this_00,2,*puVar3,(undefined4 *)puVar1);
+    st::fn_006E6080(this_00,2,*puVar3,reinterpret_cast<undefined4 *>(puVar1));
     this_00->field_0028 = 0x22;
     *(uint *)&this_00->field_0x2c = (uint)(ushort)(&this_00->field_01BC)[(byte)this_00->field_01D0];
-    st::fn_006E6080(this_00,2,*puVar3,(undefined4 *)puVar1);
+    st::fn_006E6080(this_00,2,*puVar3,reinterpret_cast<undefined4 *>(puVar1));
     this_00->field_0028 = 0x20;
     *(undefined4 *)&this_00->field_0x2c = 1;
-    st::fn_006E6080(this_00,2,*puVar3,(undefined4 *)puVar1);
+    st::fn_006E6080(this_00,2,*puVar3,reinterpret_cast<undefined4 *>(puVar1));
     g_currentExceptionFrame = local_b8.previous;
     return;
   }
   g_currentExceptionFrame = local_b8.previous;
+
   iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0x53,0,(int)puVar3,
                              st::mutable_c_string("%s"),"TradePanelTy::InitTradePanel");
   if (iVar8 != 0) {
@@ -247,6 +252,7 @@ void __thiscall st::fn_005512F0(TradePanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   pTVar2 = local_8;
   if (errorCode == 0) {
@@ -267,7 +273,7 @@ void __thiscall st::fn_005512F0(TradePanelTy *this)
     }
     pTVar2->field_01CC = 0;
     if (pTVar2->field_01DD != nullptr) {
-      st::fn_00710560((uint *)pTVar2->field_01DD);
+      st::fn_00710560(reinterpret_cast<uint *>(pTVar2->field_01DD));
       pTVar2->field_01DD = nullptr;
     }
     pTVar2->field_01D9 = nullptr;
@@ -278,6 +284,7 @@ void __thiscall st::fn_005512F0(TradePanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0x67,0,errorCode,
                              st::mutable_c_string("%s"),"TradePanelTy::DoneTradePanel");
   if (iVar3 != 0) {
@@ -317,9 +324,11 @@ void __thiscall st::fn_00551460(TradePanelTy *this,char param_1)
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
+
     errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
     this_00 = local_8;
     if (errorCode == 0) {
+
       st::fn_006B55F0
                 ((RecoveredSourceFamily_dibcopy *)local_8->field_0068,0,0xa6,0x31,
                  local_8->field_0185,0,0xa6,0x31,0x77,0x39);
@@ -354,7 +363,7 @@ void __thiscall st::fn_00551460(TradePanelTy *this,char param_1)
         uVar7 = 0xb201;
         this_00->field_01C8 = uVar6;
         pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
-        /* ST_CALLSITE[005515B9]: CALL dword ptr [EDI + 0x4] */
+        /* ST_CALLSITE[005515B9]: CALL dword ptr [EDI + 0x4]; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
         uVar6 = (*STField<code *>(pAVar1,0x4))
                           (0,1,0xe5,0x57,0,1,1,pCVar3,uVar7,uVar8,uVar9,uVar10,uVar11,uVar12,uVar5);
         this_00->field_01CC = uVar6;
@@ -371,6 +380,7 @@ void __thiscall st::fn_00551460(TradePanelTy *this,char param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
+
     iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0x81,0,errorCode,
                                st::mutable_c_string("%s"),"TradePanelTy::SetModeControls");
     if (iVar4 != 0) {
@@ -400,7 +410,7 @@ void __thiscall st::fn_00551690(TradePanelTy *this,int param_1)
   if (param_1 != this->field_005C) {
     local_8 = this;
     /* ST_CALLSITE[005516AC]: CALL 0x00404d36; direct=00404D36 SpecPanelTy::ShiftControls */
-    st::fn_00404D36((SpecPanelTy *)this,param_1);
+    st::fn_00404D36(reinterpret_cast<SpecPanelTy *>(this),param_1);
     sVar2 = (short)this->field_0174;
     this->field_0028 = 0x24;
     if (param_1 != 0) {
@@ -413,16 +423,16 @@ void __thiscall st::fn_00551690(TradePanelTy *this,int param_1)
     this_00 = local_8;
     if (errorCode == 0) {
       if (local_8->field_01C4 != 0) {
-        st::fn_006E6080(local_8,2,local_8->field_01C4,(undefined4 *)&local_8->field_0x18);
+        st::fn_006E6080(local_8,2,local_8->field_01C4,reinterpret_cast<undefined4 *>(&local_8->field_0x18));
       }
       if (this_00->field_01C0 != 0) {
-        st::fn_006E6080(this_00,2,this_00->field_01C0,(undefined4 *)&this_00->field_0x18);
+        st::fn_006E6080(this_00,2,this_00->field_01C0,reinterpret_cast<undefined4 *>(&this_00->field_0x18));
       }
       if (this_00->field_01C8 != 0) {
-        st::fn_006E6080(this_00,2,this_00->field_01C8,(undefined4 *)&this_00->field_0x18);
+        st::fn_006E6080(this_00,2,this_00->field_01C8,reinterpret_cast<undefined4 *>(&this_00->field_0x18));
       }
       if (this_00->field_01CC != 0) {
-        st::fn_006E6080(this_00,2,this_00->field_01CC,(undefined4 *)&this_00->field_0x18);
+        st::fn_006E6080(this_00,2,this_00->field_01CC,reinterpret_cast<undefined4 *>(&this_00->field_0x18));
       }
       g_currentExceptionFrame = local_4c.previous;
       return;
@@ -466,26 +476,31 @@ void __thiscall st::fn_00551BA0(TradePanelTy *this)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
+
   iVar2 = st::fn_0072D7F0(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar2 == 0) {
+
     st::fn_006B55F0
               ((RecoveredSourceFamily_dibcopy *)local_10->field_0068,0,0x1f,0x31,
                local_10->field_0185,0,0x1f,0x31,0x44,0x39);
     bVar8 = 0x3a;
     iVar6 = 0;
-    pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01D1,
+    /* ST_CALLSITE[00551C0B]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override */
+    pBVar2 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(this_00->field_01D1),
                           (uint)(byte)this_00->field_01D0);
-    st::fn_006B5440((ushort *)this_00->field_0068,0,0x22,0x38,pBVar2,iVar6,bVar8);
+    st::fn_006B5440((ushort *)this_00->field_0068,0,0x22,0x38,reinterpret_cast<tagBITMAPINFO *>(pBVar2),iVar6,bVar8);
+
     st::fn_006B55F0
               ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0xa6,0x31,this_00->field_0185,
                0,0xa6,0x31,0x77,0x26);
     if (this_00->field_01BB == '\0') {
       bVar8 = 0x3a;
       iVar6 = 0;
-      pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01D5,
+      /* ST_CALLSITE[00551CCB]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override */
+      pBVar2 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(this_00->field_01D5),
                             (-(uint)(DAT_0080874e != '\x03') & 0xfffffffe) + 4);
-      st::fn_006B5440((ushort *)this_00->field_0068,0,0xd9,0x34,pBVar2,iVar6,bVar8);
+      st::fn_006B5440((ushort *)this_00->field_0068,0,0xd9,0x34,reinterpret_cast<tagBITMAPINFO *>(pBVar2),iVar6,bVar8);
       if (DAT_0080874e != '\x03') {
         iVar4 = 0;
         iVar6 = 0xb5;
@@ -494,20 +509,23 @@ void __thiscall st::fn_00551BA0(TradePanelTy *this)
         do {
           if (*(ushort *)(&this_00->field_0x1ab + (iVar4 + (uint)(byte)this_00->field_01D0 * 2) * 4)
               != 0) {
-            pBVar2 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01D9,
+            /* ST_CALLSITE[00551D2E]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+            pBVar2 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(this_00->field_01D9),
                                   *(ushort *)
                                    (&this_00->field_0x1ab +
                                    (iVar4 + (uint)(byte)this_00->field_01D0 * 2) * 4) - 1);
             /* ST_CALLSITE[00551D40]: CALL 0x00403229; direct=00403229 DibPut */
             st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,0x39,'\x01',
-                   (byte *)pBVar2);
+                   reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(pBVar2));
           }
           /* ST_CALLSITE[00551D6A]: CALL dword ptr [0x0085bde8] */
-          st::external_00000080(st::pointer_boundary_cast<LPSTR>(&this_00->field_018D),st::mutable_c_string("%d:1"),
+          st::external_00000080(reinterpret_cast<LPSTR>(&this_00->field_018D),st::mutable_c_string("%d:1"),
                     (uint)*(ushort *)
                            (&this_00->field_0x1ad +
                            (iVar4 + (uint)(byte)this_00->field_01D0 * 2) * 4));
+
           st::fn_00710A90(this_00->field_0189,this_00->field_0068,0,iVar6,0x36,0x22,0xc);
+
           st::fn_007119C0(this_00->field_0189,&this_00->field_018D,-1,-1,1);
           iVar4 = iVar4 + 1;
           local_8 = local_8 + 0x68;
@@ -517,13 +535,16 @@ void __thiscall st::fn_00551BA0(TradePanelTy *this)
       }
     }
     else {
+
       st::fn_00710A90(this_00->field_0189,this_00->field_0068,0,0xa6,0x31,0x77,0x26);
       iVar9 = -1;
       iVar7 = -1;
       uVar3 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 5;
       iVar4 = -1;
       iVar6 = -2;
+      /* ST_CALLSITE[00551C96]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
       resourceString = st::fn_006B0140(0x4e5b,g_hINSTANCE_00807618);
+
       st::fn_00711B70(this_00->field_0189,resourceString,iVar6,iVar4,uVar3,iVar7,iVar9);
     }
     /* ST_CALLSITE[00551DBF]: CALL 0x004048f4; direct=004048F4 TradePanelTy::PaintIndicators */
@@ -532,6 +553,7 @@ void __thiscall st::fn_00551BA0(TradePanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
+
   iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0xf5,0,iVar2,st::mutable_c_string("%s"),
                              "TradePanelTy::PaintPanel");
   if (iVar5 != 0) {
@@ -555,7 +577,7 @@ void __thiscall st::fn_00551EC0(TradePanelTy *this)
   TradePanelTy *pTVar3;
   int iVar4;
   LPSTR text;
-  ushort *puVar5;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar5;
   int iVar8;
   uint uVar6;
   byte bVar7;
@@ -570,14 +592,17 @@ void __thiscall st::fn_00551EC0(TradePanelTy *this)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
+
   iVar4 = st::fn_0072D7F0(local_54.jumpBuffer,0);
   pTVar3 = local_10;
   if (iVar4 == 0) {
     resourceString = &local_10->field_018D;
     /* ST_CALLSITE[00551F15]: CALL dword ptr [0x0085bde8] */
-    st::external_00000080(resourceString,st::mutable_c_string("%6d"),
+    st::external_00000080(reinterpret_cast<LPSTR>(resourceString),st::mutable_c_string("%6d"),
               (uint)(ushort)(&local_10->field_01BC)[(byte)local_10->field_01D0]);
+
     st::fn_00710A90(pTVar3->field_01DD,pTVar3->field_0068,0,0x67,0x36,0x23,0xc);
+
     st::fn_007119C0(pTVar3->field_01DD,resourceString,-1,-1,-(uint)(pTVar3->field_01D0 != '\0') & 2);
     if (pTVar3->field_01BB == '\0') {
       local_8 = 0;
@@ -589,12 +614,13 @@ void __thiscall st::fn_00551EC0(TradePanelTy *this)
         iVar9 = 1;
         bVar7 = 0;
         uVar6 = 0xffffffff;
+        /* ST_CALLSITE[00551F87]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
         text = st::fn_0040577C(st::mutable_c_string("BKG_AMOUNTRC"),0);
-        puVar5 = st::fn_00709AF0
-                           (PTR_00806794,CASE_1,text,uVar6,bVar7,iVar9,iVar10,puVar11);
+        /* ST_CALLSITE[00551F99]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/int;/SubmarineTitans/Recovered/Enums/Global_mfRLoad_param_2Enum;pointer:/char;/uint;/byte;/int;/int;pointer:/undefined4 */
+        pRVar5 = st::pointer_boundary_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(st::fn_00709AF0
+                           (PTR_00806794,CASE_1,reinterpret_cast<char *>(text),uVar6,bVar7,iVar9,iVar10,puVar11));
         /* ST_CALLSITE[00551FAB]: CALL 0x00403229; direct=00403229 DibPut */
-        st::fn_00403229((RecoveredSourceFamily_dibcopy *)pTVar3->field_0068,iVar4 + -3,0x45,'\x01',
-               (byte *)puVar5);
+        st::fn_00403229((RecoveredSourceFamily_dibcopy *)pTVar3->field_0068,iVar4 + -3,0x45,'\x01',pRVar5);
         bVar7 = pTVar3->field_01D0;
         uVar1 = *(ushort *)(&pTVar3->field_0x1ad + (local_8 + (uint)bVar7 * 2) * 4);
         if (uVar1 == 0) {
@@ -608,8 +634,10 @@ void __thiscall st::fn_00551EC0(TradePanelTy *this)
                        (ulonglong)(longlong)(int)(uint)uVar1);
         }
         /* ST_CALLSITE[00552017]: CALL dword ptr [0x0085bde8] */
-        st::external_00000080(resourceString,st::mutable_c_string("%6d"),iVar9);
+        st::external_00000080(reinterpret_cast<LPSTR>(resourceString),st::mutable_c_string("%6d"),iVar9);
+
         st::fn_00710A90(pTVar3->field_01DD,pTVar3->field_0068,0,iVar4,0x48,0x23,0xc);
+
         st::fn_007119C0(pTVar3->field_01DD,resourceString,-1,-1,
                        (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 5);
         local_8 = local_8 + 1;
@@ -621,6 +649,7 @@ void __thiscall st::fn_00551EC0(TradePanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
+
   iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0x111,0,iVar4,st::mutable_c_string("%s"),
                              "TradePanelTy::PaintIndicators");
   if (iVar8 != 0) {
@@ -643,15 +672,16 @@ void __thiscall st::fn_005521B0(TradePanelTy *this)
   int errorCode;
   int iVar2;
   InternalExceptionFrame local_5c;
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-  undefined4 local_c;
+  uint local_18;
+  uint local_14;
+  uint local_10;
+  uint local_c;
   TradePanelTy *local_8;
 
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_8 = this;
+
   errorCode = st::fn_0072D7F0(local_5c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
@@ -661,7 +691,8 @@ void __thiscall st::fn_005521B0(TradePanelTy *this)
     local_c = local_8->field_01B7;
     /* ST_CALLSITE[0055220A]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
     st::fn_004035BC
-              (g_allPlayers_007FA174,10,(AnonShape_0043BEB0_1C00EC12 *)&local_8->field_0x1ab);
+              (g_allPlayers_007FA174,10,
+               reinterpret_cast<RecoveredRecordView_0043BEB0_8330D129 *>(&local_8->field_0x1ab));
     /* ST_CALLSITE[00552211]: CALL 0x00404f9d; direct=00404F9D TradePanelTy::sub_00551B10 */
     st::fn_00404F9D(this_00);
     /* ST_CALLSITE[00552218]: CALL 0x0040391d; direct=0040391D TradePanelTy::PaintPanel */
@@ -670,6 +701,7 @@ void __thiscall st::fn_005521B0(TradePanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_5c.previous;
+
   iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),300,0,errorCode,
                              st::mutable_c_string("%s"),"TradePanelTy::Update");
   if (iVar2 != 0) {
@@ -698,7 +730,7 @@ int __thiscall st::fn_005522A0(TradePanelTy *this,STMessage *message)
   int iVar3;
   LPSTR pCVar3;
   int iVar4;
-  ushort *puVar5;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar5;
   int iVar6;
   int iVar7;
   AnonPointee_TradePanelTy_0000 *pAVar8;
@@ -713,7 +745,7 @@ int __thiscall st::fn_005522A0(TradePanelTy *this,STMessage *message)
   uint *puVar16;
   uint uVar17;
   InternalExceptionFrame local_68;
-  undefined1 local_24;
+  byte local_24;
   short sStack_23;
   uint uStack_21;
   undefined1 uStack_1d;
@@ -729,10 +761,12 @@ int __thiscall st::fn_005522A0(TradePanelTy *this,STMessage *message)
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_c = this;
+
   iVar3 = st::fn_0072D7F0(local_68.jumpBuffer,0);
   this_00 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
+
     iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0x175,0,iVar3,
                                st::mutable_c_string("%s"),"TradePanelTy::GetMessage");
     if (iVar6 == 0) {
@@ -742,7 +776,7 @@ int __thiscall st::fn_005522A0(TradePanelTy *this,STMessage *message)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   /* ST_CALLSITE[005522DE]: CALL 0x00401401; direct=00401401 SpecPanelTy::GetMessage */
-  st::fn_00401401((SpecPanelTy *)local_c,message);
+  st::fn_00401401(reinterpret_cast<SpecPanelTy *>(local_c),message);
   SVar2 = message->id;
   if (SVar2 < 0xb203) {
     if (SVar2 == MESS_SHARED_B202) {
@@ -770,10 +804,12 @@ LAB_00552481:
           uStack_10 = (undefined1)
                       ((ushort)*(undefined2 *)(&this_00->field_0x1ad + (uint)bVar11 * 8) >> 8);
         }
-        st::fn_00403C33((undefined4 *)0x20,(uint *)&local_18,0,0xffffffff);
+        /* ST_CALLSITE[005523A9]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+        st::fn_00403C33
+                  (g_playSystem_00802A38,(undefined4 *)0x20,reinterpret_cast<uint *>(&local_18),0,0xffffffff);
         if (this_00->field_01BB != '\0') {
           this_00->field_0028 = 0xbfff;
-          /* ST_CALLSITE[005523CB]: CALL dword ptr [EDX] */
+          /* ST_CALLSITE[005523CB]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
           (*STField<code *>(this_00->field_0000,0x0000))(&this_00->field_0x18);
           g_currentExceptionFrame = local_68.previous;
           return 0;
@@ -808,7 +844,9 @@ LAB_00552481:
         uVar1 = *(undefined2 *)((int)&this_00->field_01AF + (uint)bVar11 * 8 + 2);
         uStack_1d = (undefined1)uVar1;
         uStack_1c = (undefined1)((ushort)uVar1 >> 8);
-        st::fn_00403C33((undefined4 *)0x20,(uint *)&local_24,0,0xffffffff);
+        /* ST_CALLSITE[00552441]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+        st::fn_00403C33
+                  (g_playSystem_00802A38,(undefined4 *)0x20,reinterpret_cast<uint *>(&local_24),0,0xffffffff);
         g_currentExceptionFrame = local_68.previous;
         return 0;
       }
@@ -847,30 +885,35 @@ LAB_00552481:
       uVar10 = 0xffffffff;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar7 = *(int *)((message->arg0).u32 + 0x10) - iVar7;
-      iVar4 = st::fn_00401BA4((AnonShape_0052A7B0_DD603BF4 *)message);
+
+      iVar4 = st::fn_00401BA4(reinterpret_cast<AnonShape_0052A7B0_DD603BF4 *>(message));
       iVar9 = 2;
+      /* ST_CALLSITE[0055250D]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_RCTTYPE"),0);
-      pCVar3 = st::fn_006F2C00(pCVar3,iVar9,iVar4);
-      puVar5 = st::fn_00709AF0
-                         (PTR_00806794,CASE_1,pCVar3,uVar10,bVar11,iVar12,iVar14,puVar16);
+      /* ST_CALLSITE[00552516]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
+      pCVar3 = st::fn_006F2C00(reinterpret_cast<char *>(pCVar3),iVar9,iVar4);
+      /* ST_CALLSITE[00552528]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/int;/SubmarineTitans/Recovered/Enums/Global_mfRLoad_param_2Enum;pointer:/char;/uint;/byte;/int;/int;pointer:/undefined4 */
+      pRVar5 = st::pointer_boundary_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(st::fn_00709AF0
+                         (PTR_00806794,CASE_1,reinterpret_cast<char *>(pCVar3),uVar10,bVar11,iVar12,iVar14,puVar16));
       /* ST_CALLSITE[00552539]: CALL 0x00403229; direct=00403229 DibPut */
-      st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,iVar7,'\x01',
-             (byte *)puVar5);
+      st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,iVar7,'\x01',pRVar5);
       if (*(int *)((message->arg0).u32 + 4) == 3) {
         puVar16 = nullptr;
         iVar9 = 0;
         iVar4 = 1;
         bVar11 = 0;
         uVar10 = 0xffffffff;
+        /* ST_CALLSITE[0055255B]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
         pCVar3 = st::fn_0040577C(st::mutable_c_string("BUT_RCTFTYPE"),0);
-        puVar5 = st::fn_00709AF0
-                           (PTR_00806794,CASE_6,pCVar3,uVar10,bVar11,iVar4,iVar9,puVar16);
+        /* ST_CALLSITE[0055256C]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/int;/SubmarineTitans/Recovered/Enums/Global_mfRLoad_param_2Enum;pointer:/char;/uint;/byte;/int;/int;pointer:/undefined4 */
+        pRVar5 = st::pointer_boundary_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(st::fn_00709AF0
+                           (PTR_00806794,CASE_6,reinterpret_cast<char *>(pCVar3),uVar10,bVar11,iVar4,iVar9,puVar16));
         /* ST_CALLSITE[0055257D]: CALL 0x00403229; direct=00403229 DibPut */
-        st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,iVar7,'\x06',
-               (byte *)puVar5);
+        st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,iVar7,'\x06',pRVar5);
       }
+
       st::fn_006B3640
-                ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                (reinterpret_cast<int *>(g_ddxContext_008075A8),this_00->field_0060,0xffffffff,this_00->field_003C,
                  this_00->field_0044);
       g_currentExceptionFrame = local_68.previous;
       return 0;
@@ -879,7 +922,7 @@ LAB_00552481:
   else {
     if (SVar2 == MESS_SHARED_C005) {
       pAVar8 = this_00->field_0000;
-      text = "BUT_TBUP";
+      text = st::mutable_c_string("BUT_TBUP");
     }
     else {
       if (SVar2 != MESS_OPTPANELTY_C006) {
@@ -887,7 +930,7 @@ LAB_00552481:
         return 0;
       }
       pAVar8 = this_00->field_0000;
-      text = "BUT_TBDN";
+      text = st::mutable_c_string("BUT_TBDN");
     }
     uVar17 = 1;
     uVar15 = 0;
@@ -899,4 +942,3 @@ LAB_00552481:
   g_currentExceptionFrame = local_68.previous;
   return 0;
 }
-

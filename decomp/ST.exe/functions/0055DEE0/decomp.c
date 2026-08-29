@@ -43,7 +43,9 @@ void FUN_0055dee0(byte *param_1)
   local_18 = nullptr;
   local_24 = 0;
   local_20 = 0;
+
   local_14 = Library::DKW::LIB::MemAllocClear(DAT_008033a8 * DAT_008033a4 * 2);
+
   iVar4 = FUN_0055ee70(param_1,DAT_00803390,1);
   iVar9 = DAT_00803324 * DAT_00803358;
   iVar5 = DAT_008033a4;
@@ -74,7 +76,8 @@ void FUN_0055dee0(byte *param_1)
       }
       else {
 LAB_0055e02a:
-        local_3c = (ushort *)FUN_006ad0b0((int)puVar15,(int)pbVar17,DAT_00803304,DAT_00803308);
+
+        local_3c = STPointerBoundaryCast<ushort *>(FUN_006ad0b0((int)puVar15,(int)pbVar17,DAT_00803304,DAT_00803308));
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_1 = pbVar17;
         local_1c = puVar15;

@@ -1,11 +1,9 @@
-#include "../../pseudocode_runtime.h"
-
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
    decompilation contains no value return */
 
-void FUN_0075efe0(int *param_1,int *param_2)
+void FUN_0075efe0(RecoveredRecord_0075EFE0_EBB05E23 *param_1,int *param_2)
 
 {
   short sVar1;
@@ -22,17 +20,17 @@ void FUN_0075efe0(int *param_1,int *param_2)
   int local_1c;
   int local_18;
   int local_14;
-  int *local_10;
-  int *local_c;
+  RecoveredRecord_0075EFE0_EBB05E23 *local_10;
+  RecoveredRecord_0075EFE0_EBB05E23 *local_c;
   int local_8;
 
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar5 = *(int *)(STField<int>(param_1,0x1ba) + 0x18);
-  local_c = (int *)*param_2;
+  iVar5 = *(int *)(param_1->field_01BA + 0x18);
+  local_c = (RecoveredRecord_0075EFE0_EBB05E23 *)*param_2;
   local_8 = param_2[2];
   local_20 = param_2[3];
   local_14 = param_2[4];
-  local_10 = (int *)param_2[1];
+  local_10 = (RecoveredRecord_0075EFE0_EBB05E23 *)param_2[1];
   local_18 = param_2[5];
   if ((int)local_c < (int)local_10) {
     if ((int)local_c <= (int)local_10) {
@@ -61,7 +59,7 @@ void FUN_0075efe0(int *param_1,int *param_2)
             psVar3 = psVar2;
           } while (local_1c <= local_20);
         }
-        param_1 = (int *)((int)param_1 + 1);
+        param_1 = (RecoveredRecord_0075EFE0_EBB05E23 *)&param_1->field_0x1;
         local_28 = local_28 + 1;
       } while ((int)param_1 <= (int)local_10);
     }
@@ -91,7 +89,7 @@ LAB_0075f0a7:
             psVar3 = psVar2;
           } while (iVar7 <= local_20);
         }
-        param_1 = (int *)((int)param_1 + -1);
+        param_1 = (RecoveredRecord_0075EFE0_EBB05E23 *)((int)&param_1[-1].field_01BA + 3);
         local_28 = local_28 + -1;
       } while ((int)local_c <= (int)param_1);
     }
@@ -116,7 +114,7 @@ LAB_0075f125:
                 goto LAB_0075f1aa;
               }
             }
-            param_1 = (int *)((int)param_1 + 1);
+            param_1 = (RecoveredRecord_0075EFE0_EBB05E23 *)&param_1->field_0x1;
             piVar6 = piVar6 + 1;
           } while ((int)param_1 <= (int)local_10);
         }
@@ -143,7 +141,7 @@ LAB_0075f1aa:
                 goto LAB_0075f229;
               }
             }
-            param_1 = (int *)((int)param_1 + 1);
+            param_1 = (RecoveredRecord_0075EFE0_EBB05E23 *)&param_1->field_0x1;
             piVar6 = piVar6 + 1;
           } while ((int)param_1 <= (int)local_10);
         }
@@ -169,7 +167,7 @@ LAB_0075f229:
             }
             psVar2 = psVar2 + 0x20;
           }
-          param_1 = (int *)((int)param_1 + 1);
+          param_1 = (RecoveredRecord_0075EFE0_EBB05E23 *)&param_1->field_0x1;
           piVar6 = piVar6 + 1;
         } while ((int)param_1 <= (int)local_10);
       }
@@ -191,7 +189,7 @@ LAB_0075f2a7:
               }
               psVar2 = psVar2 + 0x20;
             }
-            param_1 = (int *)((int)param_1 + 1);
+            param_1 = (RecoveredRecord_0075EFE0_EBB05E23 *)&param_1->field_0x1;
             piVar6 = piVar6 + 1;
           } while ((int)param_1 <= (int)local_10);
         }
@@ -207,10 +205,10 @@ LAB_0075f317:
   iVar8 = 0;
   if ((int)local_c <= (int)local_10) {
     local_24 = ((int)local_10 - (int)local_c) + 1;
-    param_1 = (int *)(iVar5 + (int)local_c * 4);
+    param_1 = (RecoveredRecord_0075EFE0_EBB05E23 *)(iVar5 + (int)local_c * 4);
     do {
       if (local_8 <= local_20) {
-        psVar2 = (short *)(*param_1 + (local_8 * 0x20 + local_14) * 2);
+        psVar2 = (short *)(*(int *)param_1 + (local_8 * 0x20 + local_14) * 2);
         local_28 = (int *)((local_20 - local_8) + 1);
         do {
           if (local_14 <= local_18) {
@@ -228,7 +226,7 @@ LAB_0075f317:
           local_28 = (int *)((int)local_28 + -1);
         } while (local_28 != nullptr);
       }
-      param_1 = param_1 + 1;
+      param_1 = (RecoveredRecord_0075EFE0_EBB05E23 *)&param_1->field_0x4;
       local_24 = local_24 + -1;
     } while (local_24 != 0);
     param_2[7] = iVar8;

@@ -41,7 +41,7 @@ LAB_00493162:
 00493194  8B 06                     MOV EAX,dword ptr [ESI]
 00493196  89 96 A2 05 00 00         MOV dword ptr [ESI + 0x5a2],EDX
 0049319C  C7 86 C4 05 00 00 07 00 00 00  MOV dword ptr [ESI + 0x5c4],0x7
-004931A6  FF 90 B4 00 00 00         CALL dword ptr [EAX + 0xb4]
+004931A6  FF 90 B4 00 00 00         CALL dword ptr [EAX + 0xb4]  ; [STIndirectCallsiteApplier] exact slot 0xB4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004931AC  5E                        POP ESI
 004931AD  5D                        POP EBP
 004931AE  C2 04 00                  RET 0x4

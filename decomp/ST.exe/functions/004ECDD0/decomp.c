@@ -1,11 +1,11 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_004ecdd0(int param_1)
+void __fastcall FUN_004ecdd0(RecoveredRecord_004ECDD0_65DE505A *param_1)
 
 {
-  *(undefined4 *)(param_1 + 0x4d0) = 0;
-  *(undefined4 *)(param_1 + 0x261) = 0;
+  param_1->field_04D0 = 0;
+  param_1->field_0261 = 0;
   return;
 }
 

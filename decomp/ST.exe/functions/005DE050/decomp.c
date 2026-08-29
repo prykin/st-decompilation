@@ -10,7 +10,7 @@
    and decompilation contains no value return */
 
 void __thiscall
-StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *param_1)
+StartSystemTy::PaintBinDesc(StartSystemTy *this,RecoveredRecordView_005DE050_1F13B900 *param_1)
 
 {
   ccFntTy *pcVar1;
@@ -33,11 +33,12 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
     pcVar1 = this->field_0034;
     local_10 = this;
     if (pcVar1->field_00A0 != 0) {
-      FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar1);
+      FUN_00710790((RecoveredRecordView_00710790_7768A573 *)pcVar1);
     }
     local_8 = *(int *)&pcVar1->field_0x8a;
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
+
     errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
     pSVar4 = local_10;
     if (errorCode == 0) {
@@ -54,19 +55,23 @@ StartSystemTy::PaintBinDesc(StartSystemTy *this,AnonShape_005DE050_5BD86458 *par
             resourceString = nullptr;
           }
           if (resourceString != nullptr) {
+
             ccFntTy::SetSurf(pSVar4->field_0034,(int)pSVar4->field_0544,0,0,
                              (uVar7 - uVar5) * local_8,pSVar4->field_0544->field_0004,local_8);
+
             ccFntTy::WrStr(pSVar4->field_0034,resourceString,0,-1,0);
           }
           uVar7 = uVar7 + 1;
           uVar5 = (uint)param_1->field_0016;
         } while ((int)uVar7 < (int)(STField<int>(local_c,0x1E0) + uVar5));
       }
+
       FUN_006b35d0((int *)g_ddxContext_008075A8,pSVar4->field_0540);
       g_currentExceptionFrame = local_54.previous;
       return;
     }
     g_currentExceptionFrame = local_54.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0x3cb,0,errorCode,
                                "%s","StartSystemTy::PaintBinDesc");
     if (iVar6 != 0) {

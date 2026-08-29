@@ -1,4 +1,4 @@
-FUN_0040bc90:
+STGroupBoatC::sub_0040BC90:
 0040BC90  55                        PUSH EBP
 0040BC91  8B EC                     MOV EBP,ESP
 0040BC93  83 EC 28                  SUB ESP,0x28
@@ -8,7 +8,7 @@ FUN_0040bc90:
 0040BC9B  57                        PUSH EDI
 0040BC9C  50                        PUSH EAX
 0040BC9D  89 4D DC                  MOV dword ptr [EBP + -0x24],ECX
-0040BCA0  E8 CA 6B FF FF            CALL 0x0040286f
+0040BCA0  E8 CA 6B FF FF            CALL 0x0040286f  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_STBoatC_0040AE40; source view only; no Ghidra override
 0040BCA5  8B D8                     MOV EBX,EAX
 0040BCA7  85 DB                     TEST EBX,EBX
 0040BCA9  0F 84 ED 02 00 00         JZ 0x0040bf9c

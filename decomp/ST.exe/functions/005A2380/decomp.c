@@ -22,8 +22,8 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
   bool bVar10;
   byte local_b0 [48];
   InternalExceptionFrame local_80;
-  undefined4 local_3c [11];
-  undefined1 local_f;
+  uint local_3c [11];
+  byte local_f;
   FSGSTy *local_c;
   char *local_8;
   FSGSTy_field_1EA6Element *element_1ea6;
@@ -32,6 +32,7 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
     local_80.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_80;
     local_c = this;
+
     iVar3 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
     this_00 = local_c;
     if (iVar3 == 0) {
@@ -53,6 +54,7 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
       puVar8 = (byte *)(local_3c);
       memmove(puVar8, param_1, 0x2d); /* compiler REP MOVS byte copy */
       local_f = 0;
+
       Library::DKW::TBL::DArrayAppend((DArrayTy *)array,local_3c);
       FUN_006b5f80((int *)g_ddxContext_008075A8,0x1e9,0x5e,0x124,0xf3);
       /* ST_CALLSITE[005A2485]: CALL 0x00402298; direct=00402298 PutDDXClip */
@@ -124,6 +126,7 @@ LAB_005a2562:
       return;
     }
     g_currentExceptionFrame = local_80.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xa12,0,iVar3,"%s"
                                ,"FSGSTy::AddPlayer");
     if (iVar4 != 0) {

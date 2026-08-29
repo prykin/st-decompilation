@@ -19,7 +19,7 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
   uint uVar8;
   ST3DSMAPContext **ppSVar9;
   InternalExceptionFrame local_58;
-  undefined4 local_14;
+  uint local_14;
   STTmMineC *local_10;
   STTmMineC_field_0336Element *element_0336;
   uint local_8;
@@ -42,10 +42,12 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_10 = this;
+
     errorCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     pcVar5 = element_0336;
     if (errorCode != 0) {
       g_currentExceptionFrame = local_58.previous;
+
       iVar7 = ReportDebugMessage("E:\\__titans\\nick\\to_TmMin.cpp",0x603,0,errorCode,
                                  "%s","STTmMineC::LoadImagSpr");
       if (iVar7 != 0) {
@@ -54,12 +56,14 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
       RaiseInternalException(errorCode,0,"E:\\__titans\\nick\\to_TmMin.cpp",0x605);
       return 0xffff;
     }
+    /* ST_CALLSITE[0063E203]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
     puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
                        (PTR_00806764,CASE_1D,(&PTR_s_blast_p_007d1f68)[*(int *)element_0336],0xffffffff
                         ,0,1,0,nullptr);
     pSVar4 = local_10;
     uVar2 = *(uint *)(pcVar5 + 0x38);
     if ((int)uVar2 < 0) {
+
       ST3DSMAPContext::sub_006E8660
                 (local_10->field_0211,(int *)&local_8,1,0,STField<uint>(puVar6,9),
                  STField<uint>(puVar6,0xd),STField<int>(puVar6,9) / 2,
@@ -72,6 +76,7 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
                  STField<int>(puVar6,0xd) / 2 - 0xe);
     }
     ppSVar9 = &pSVar4->field_0211;
+
     ST3DSMAPContext::sub_006E98E0(*ppSVar9,local_8,0,*(int *)puVar6,STField<int>(puVar6,0x21),1);
     ST3DSMAPContext::sub_006EA270(*ppSVar9,local_8,0,*(uint *)(pcVar5 + 0x20));
     ST3DSMAPContext::sub_006EA5E0(*ppSVar9,local_8,0,0);
@@ -79,6 +84,7 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
               (*ppSVar9,local_8,(float)*(int *)(pcVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
                (float)*(int *)(pcVar5 + 0xc) * _DAT_007904f8 * _DAT_007904f0,
                *(float *)(pcVar5 + 0x10) + _DAT_007904fc);
+
     Library::Ourlib::ST3DSMAP::SprShow(*ppSVar9,local_8,0);
     if (*(int *)(pcVar5 + 4) != 0) {
       Library::Ourlib::ST3DSMAP::SprHide(*ppSVar9,local_8);

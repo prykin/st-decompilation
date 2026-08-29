@@ -28,6 +28,7 @@ int __thiscall FUN_006010a0(void *this,undefined4 *param_1)
   }
   *(undefined1 *)puVar4 = *(undefined1 *)puVar10;
   local_8 = 0;
+
   if (((STField<int>(this,0x233) != 0) && (iVar5 = thunk_FUN_005fd850(this), -1 < iVar5)) &&
      (local_10 = 0, 0 < STField<int>(this,0x226))) {
     local_c = 0;
@@ -58,6 +59,7 @@ int __thiscall FUN_006010a0(void *this,undefined4 *param_1)
       else {
         iVar7 = STField<int>(iVar7,0x46);
         if (iVar7 != 0) {
+
           pvVar3 = Library::DKW::LIB::MemAlloc(iVar7 * 6);
           *(void **)(local_c + 0x4e + STField<int>(this,0x233)) = pvVar3;
           iVar7 = STField<int>(this,0x233) + local_c;
@@ -76,6 +78,7 @@ int __thiscall FUN_006010a0(void *this,undefined4 *param_1)
     return local_8 + 0x41;
   }
   uVar9 = STField<int>(this,0x237) * 0x18;
+
   puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(uVar9));
   STField<undefined4 *>(this,0x23b) = puVar4;
   puVar10 = (byte *)(local_8 + 0x41 + (int)param_1);
@@ -91,6 +94,7 @@ int __thiscall FUN_006010a0(void *this,undefined4 *param_1)
     puVar4 = (byte *)((int)puVar4 + 1);
   }
   uVar8 = STField<int>(this,0x237) * 4;
+
   pvVar3 = Library::DKW::LIB::MemAlloc(uVar8);
   STField<void *>(this,0x23f) = pvVar3;
   return local_8 + 0x41 + uVar9 + uVar8;

@@ -17,10 +17,12 @@ FUN_00693b20(void *param_1,int param_2,undefined1 param_3,undefined4 param_4,und
   char *pcVar10;
   char *pcVar8_mg0;
 
+
   iVar3 = thunk_FUN_00693e60(param_1,param_2);
   if (iVar3 != 0) {
     return nullptr;
   }
+
   uVar4 = thunk_FUN_006941c0(param_1);
   puVar1 = (undefined4 *)((int)param_1 + param_2 * 0x51 + 0x11);
   puVar7 = (byte *)(&DAT_007d6268);

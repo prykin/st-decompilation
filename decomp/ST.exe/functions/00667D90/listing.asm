@@ -157,7 +157,7 @@ LAB_00667f9c:
 00667FA6  8B CE                     MOV ECX,ESI
 00667FA8  50                        PUSH EAX
 00667FA9  C7 45 FC 00 00 00 00      MOV dword ptr [EBP + -0x4],0x0
-00667FB0  E8 84 AC D9 FF            CALL 0x00402c39
+00667FB0  E8 84 AC D9 FF            CALL 0x00402c39  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 00667FB5  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 00667FB8  8B 56 18                  MOV EDX,dword ptr [ESI + 0x18]
 00667FBB  51                        PUSH ECX

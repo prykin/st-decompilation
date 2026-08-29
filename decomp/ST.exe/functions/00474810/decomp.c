@@ -39,17 +39,18 @@ int __thiscall STBoatC::BackLoadObj(STBoatC *this,int *param_1)
     return -(uint)(iVar4 != 0);
   }
   if (SVar1 == CASE_2) {
+
     STPlaySystemC::sub_006E62D0
-              (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e,
+              (g_playSystem_00802A38,*(RecoveredRecordView_005EFAE0_855D930D **)&this->field_0x58e,
                (int *)&param_1);
     if ((param_1 != nullptr) && (param_1[6] == *(int *)&this->field_0x58e)) {
-      /* ST_CALLSITE[00474889]: CALL dword ptr [EDX + 0xac] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(*param_1 + 0xac))(this->field_0018);
+      /* ST_CALLSITE[00474889]: CALL dword ptr [EDX + 0xac]; [STIndirectCallsiteApplier] exact slot 0xAC; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4 */
+      STStructuralVirtualCall<void>(param_1, 0xAC, this->field_0018);
       /* ST_CALLSITE[00474893]: CALL dword ptr [EDX + 0xd8] */
       iVar4 = this->vfunc_D8();
       return -(uint)(iVar4 != 0);
     }
+
     local_EAX_171 =
          ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2f2d,0,0,"%s",
                             "STBoatC::BackLoadObj LOADOBJ_WAITOBJ");
@@ -65,7 +66,7 @@ int __thiscall STBoatC::BackLoadObj(STBoatC *this,int *param_1)
   if (((SVar2 != CASE_0) && (SVar2 != CASE_1)) && (SVar2 != CASE_2)) {
     if ((SVar2 != CASE_3) && (SVar2 != CASE_4)) {
       /* ST_CALLSITE[004748F8]: CALL 0x00404e1c; direct=00404E1C STBoatC::LoadObj */
-      iVar2 = LoadObj(this,(AnonShape_005EFAE0_B406B78B *)0x2);
+      iVar2 = LoadObj(this,(RecoveredRecordView_005EFAE0_855D930D *)0x2);
       return iVar2;
     }
     this->field_059A = CASE_5;

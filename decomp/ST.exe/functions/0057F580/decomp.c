@@ -23,9 +23,10 @@ undefined4 * __thiscall STDcResourcC::Init(STDcResourcC *this)
   HoloTy *pHVar10;
   HoloTy *pHVar11;
 
+  /* ST_CALLSITE[0057F58C]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STT3DSprC; source view only; no Ghidra override */
   pSVar5 = (STT3DSprC *)Library::MSVCRT::FUN_0072e530(0x40);
   if (pSVar5 != nullptr) {
-    /* ST_CALLSITE[0057F59A]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
+    /* ST_CALLSITE[0057F59A]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/HoloTy; source view only; no Ghidra override */
     pSVar5 = STT3DSprC::STT3DSprC(pSVar5);
     if (pSVar5 != nullptr) {
       pHVar6 = (HoloTy *)Library::MSVCRT::FUN_0072e530(this->field_0265 * 4 + 4);
@@ -56,6 +57,7 @@ undefined4 * __thiscall STDcResourcC::Init(STDcResourcC *this)
       /* ST_CALLSITE[0057F632]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
       iVar9 = STT3DSprC::Init(pSVar5,PTR_008073cc,0x5a,0x45,this,0xb4,0x8c,0x11);
       if (iVar9 != 0) {
+
         iVar8 = ReportDebugMessage("E:\\__titans\\Igor\\To_gold.cpp",0x203,0,0,"%s",
                                    "STDcResourcC::Init Sprite Error");
         if (iVar8 != 0) {

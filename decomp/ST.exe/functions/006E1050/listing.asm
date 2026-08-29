@@ -47,7 +47,7 @@ ST3DSMAPContext::sub_006E1050:
 006E10FC  03 C0                     ADD EAX,EAX
 006E10FE  50                        PUSH EAX
 006E10FF  51                        PUSH ECX
-006E1100  E8 4B BE FC FF            CALL 0x006acf50
+006E1100  E8 4B BE FC FF            CALL 0x006acf50  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 006E1105  89 86 B0 02 00 00         MOV dword ptr [ESI + 0x2b0],EAX
 LAB_006e110b:
 006E110B  DD 86 98 00 00 00         FLD double ptr [ESI + 0x98]

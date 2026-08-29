@@ -6,7 +6,8 @@
    AiTactClassTy::PrepareToSave */
 
 int __thiscall
-AiTactClassTy::PrepareToSave(AiTactClassTy *this,AnonShape_0068EB30_4F4B480A *param_1,short param_2)
+AiTactClassTy::PrepareToSave
+          (AiTactClassTy *this,RecoveredRecordView_0068EB30_46CFB8C2 *param_1,short param_2)
 
 {
   short sVar1;
@@ -21,6 +22,7 @@ AiTactClassTy::PrepareToSave(AiTactClassTy *this,AnonShape_0068EB30_4F4B480A *pa
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pAVar3 = local_8;
   if (iVar4 == 0) {
@@ -29,6 +31,7 @@ AiTactClassTy::PrepareToSave(AiTactClassTy *this,AnonShape_0068EB30_4F4B480A *pa
       uVar4 = 0xffffffff;
     }
     else {
+
       uVar4 = thunk_FUN_0068e220(local_8,*(short *)&param_1->field_0xc);
     }
     *(uint *)&param_1->field_0x30 = uVar4;
@@ -36,12 +39,14 @@ AiTactClassTy::PrepareToSave(AiTactClassTy *this,AnonShape_0068EB30_4F4B480A *pa
     *(undefined4 *)&param_1->field_0x34 = 0xffffffff;
     param_1->field_0006 = param_1->field_0006 + (param_2 + (sVar1 + 1) * 0x14) * 0x32;
     param_1->field_003A = pAVar3->field_012C;
+
     Library::DKW::TBL::DArrayAppend((DArrayTy *)pAVar3->field_00BD,param_1);
     thunk_FUN_00676c40((DArrayTy *)pAVar3->field_00BD,thunk_FUN_0068e7d0);
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x1a2,0,iVar4,"%s",
                              "AiTactClassTy::PrepareToSave");
   if (iVar5 != 0) {

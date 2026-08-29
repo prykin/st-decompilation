@@ -21,10 +21,12 @@ void __thiscall CPanelTy::PaintInfoObj(CPanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0xb5,0,iVar3,"%s",
                                "CPanelTy::PaintInfoObj");
     if (iVar4 != 0) {
@@ -34,36 +36,38 @@ void __thiscall CPanelTy::PaintInfoObj(CPanelTy *this)
     return;
   }
   /* ST_CALLSITE[004FEE5B]: CALL 0x00403229; direct=00403229 DibPut */
-  DibPut((RecoveredSourceFamily_dibcopy *)local_8->field_01A0,0,0,'\x01',(byte *)local_8->field_0B43
-        );
+  DibPut((RecoveredSourceFamily_dibcopy *)local_8->field_01A0,0,0,'\x01',
+         (RecoveredRecordView_006B84D0_87AF9D9B *)local_8->field_0B43);
   /* ST_CALLSITE[004FEE74]: CALL 0x00403229; direct=00403229 DibPut */
-  DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_019C,0,0,'\x01',(byte *)this_00->field_0B47
-        );
+  DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_019C,0,0,'\x01',
+         (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0B47);
   if (this_00->field_02E6 != nullptr) {
-    thunk_FUN_004f1890(this_00,1);
+    /* ST_CALLSITE[004FEE8A]: CALL 0x00402ccf; direct=00402CCF CPanelTy::sub_004F1890 */
+    sub_004F1890(this_00,1);
   }
   if (this_00->field_0C51 == '\0') {
     if (DAT_0080874e == '\x03') {
       /* ST_CALLSITE[004FEEB8]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x73,0,'\x06',
-             (byte *)this_00->field_09D9[8]);
+             (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_09D9[8]);
       goto LAB_004fef26;
     }
-    pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_029E,1);
+    pBVar4 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_029E,1);
     pRVar5 = (RecoveredSourceFamily_dibcopy *)this_00->field_0198;
   }
   else {
     if (DAT_0080874e == '\x03') {
       /* ST_CALLSITE[004FEEF8]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x73,0,'\x06',
-             (byte *)this_00->field_09D9[10]);
+             (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_09D9[10]);
       goto LAB_004fef26;
     }
-    pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_029E,0);
+    /* ST_CALLSITE[004FEF0B]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+    pBVar4 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_029E,0);
     pRVar5 = (RecoveredSourceFamily_dibcopy *)this_00->field_0198;
   }
   /* ST_CALLSITE[004FEF1E]: CALL 0x00403229; direct=00403229 DibPut */
-  DibPut(pRVar5,0,0,'\x01',(byte *)pBVar4);
+  DibPut(pRVar5,0,0,'\x01',(RecoveredRecordView_006B84D0_87AF9D9B *)pBVar4);
 LAB_004fef26:
   /* ST_CALLSITE[004FEF2A]: CALL 0x00403977; direct=00403977 CPanelTy::PaintDeep */
   PaintDeep(this_00,0);
@@ -87,16 +91,19 @@ LAB_004fef26:
     }
   }
   if (-1 < (int)this_00->field_0148[8]) {
+
     Library::DKW::DDX::FUN_006b3640
               ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[8],0xffffffff,
                this_00->field_005C,this_00->field_00B4);
   }
   if (-1 < (int)this_00->field_0148[7]) {
+
     Library::DKW::DDX::FUN_006b3640
               ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[7],0xffffffff,
                this_00->field_0058,this_00->field_00B0);
   }
   if ((DAT_0080874e != '\x03') && (-1 < (int)this_00->field_0148[6])) {
+
     Library::DKW::DDX::FUN_006b3640
               ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[6],0xffffffff,
                this_00->field_0054,this_00->field_00AC);

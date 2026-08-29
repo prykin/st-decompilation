@@ -37,7 +37,8 @@ FUN_006a34e0:
 006A3553  51                        PUSH ECX
 006A3554  52                        PUSH EDX
 006A3555  50                        PUSH EAX
-006A3556  E8 AB 1F D6 FF            CALL 0x00405506
+FUN_006a34e0::override::prt_6a3556_49a5a471:
+006A3556  E8 AB 1F D6 FF            CALL 0x00405506  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ushort; signature=__cdecl;pointer:/ushort;/int;/int;/int;/int
 006A355B  8B 5D 20                  MOV EBX,dword ptr [EBP + 0x20]
 006A355E  50                        PUSH EAX
 006A355F  53                        PUSH EBX

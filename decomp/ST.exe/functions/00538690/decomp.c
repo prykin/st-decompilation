@@ -10,9 +10,14 @@
 
    [STPrototypeApplier] Propagated parameter 12.
    Evidence: 00539280 -> 00538690 @ 005393BB; literal 0 at 00539398 | 0053EF20 -> 00538690 @
-   0053F07B; literal 0 at 0053F05B | 0053EF20 -> 00538690 @ 0053F0F2; literal 0 at 0053F0D7 */
+   0053F07B; literal 0 at 0053F05B | 0053EF20 -> 00538690 @ 0053F0F2; literal 0 at 0053F0D7
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00539280 @ 005393BB -> read as EAX on
+   every CFG path | 0053EF20 @ 0053F07B -> read as EAX on every CFG path | 0053EF20 @ 0053F0F2 ->
+   read as EAX on every CFG path */
 
-undefined4 __thiscall
+int __thiscall
 PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int param_4,int param_5,
                   int param_6,byte param_7,LPSTR param_8,undefined4 param_9,undefined4 param_10,
                   short param_11,ushort param_12,undefined4 param_13,char *param_14,
@@ -22,49 +27,50 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
   PanelTy *pPVar2;
   int iVar3;
   int iVar4;
-  uint uVar3;
+  int iVar5;
   InternalExceptionFrame local_1d0;
   int local_18c [4];
-  undefined4 local_17c;
-  undefined4 local_178;
-  undefined4 local_16c;
-  undefined4 local_168;
-  undefined4 local_164;
-  undefined4 local_15c;
-  undefined4 local_14c;
-  undefined4 local_148;
-  undefined4 local_144;
-  undefined4 local_13c;
-  undefined4 local_12c;
-  undefined4 local_128;
-  undefined4 local_124;
-  undefined4 local_10c;
-  undefined4 local_108;
-  undefined4 local_104;
+  uint local_17c;
+  uint local_178;
+  uint local_16c;
+  uint local_168;
+  uint local_164;
+  uint local_15c;
+  uint local_14c;
+  uint local_148;
+  uint local_144;
+  uint local_13c;
+  uint local_12c;
+  uint local_128;
+  uint local_124;
+  uint local_10c;
+  uint local_108;
+  uint local_104;
   ushort local_100;
   short local_fe;
-  undefined4 local_fc;
-  undefined4 local_f4;
-  undefined4 local_e8;
-  undefined4 local_e4;
-  undefined4 local_e0;
+  uint local_fc;
+  uint local_f4;
+  uint local_e8;
+  uint local_e4;
+  uint local_e0;
   ushort local_dc;
   short local_da;
-  undefined4 local_d8;
-  undefined4 local_d0;
-  undefined4 local_84;
-  undefined4 local_80;
+  uint local_d8;
+  uint local_d0;
+  uint local_84;
+  uint local_80;
   ushort *local_68;
   int local_64;
   PanelTy *local_10;
   ushort *local_c;
-  undefined4 local_8;
+  int local_8;
 
   local_c = nullptr;
   local_8 = 0;
   local_1d0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_1d0;
   local_10 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_1d0.jumpBuffer,0);
   pPVar2 = local_10;
   if (iVar3 == 0) {
@@ -116,15 +122,16 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
     local_12c = local_16c;
     if (param_14 != nullptr) {
       local_68 = FUN_0070aa70(g_cMf32_00806790,param_14,0,1);
+
       local_64 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,param_14,1);
     }
-    /* ST_CALLSITE[005388C5]: CALL dword ptr [EDX + 0x8] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*STField<int *>(pPVar2,0xC) + 8))(2,&local_8,0,local_18c,0);
+    /* ST_CALLSITE[005388C5]: CALL dword ptr [EDX + 0x8]; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
+    STStructuralVirtualCall<void>(STField<int *>(pPVar2,0xC), 0x8, 2, &local_8, 0, local_18c, 0);
     g_currentExceptionFrame = local_1d0.previous;
     return local_8;
   }
   g_currentExceptionFrame = local_1d0.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\panel.cpp",0x97,0,iVar3,"%s",
                              "PanelTy::CreateBut");
   if (iVar4 != 0) {

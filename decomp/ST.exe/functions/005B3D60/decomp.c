@@ -32,16 +32,16 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
   int iVar15;
   int iVar16;
   int iVar17;
-  byte uVar18;
+  SpriteClassTy_SetImagesPtr_param_2Enum SVar18;
   ccFntTy *pcVar19;
   uint uVar20;
   uint uVar21;
-  undefined4 local_24c;
-  undefined4 local_162;
-  undefined4 local_155;
-  undefined4 local_151;
-  undefined4 local_14d;
-  undefined1 local_13d;
+  uint local_24c;
+  uint local_162;
+  uint local_155;
+  uint local_151;
+  uint local_14d;
+  byte local_13d;
   InternalExceptionFrame local_50;
   MainMenuTy *local_c;
   uint local_8;
@@ -62,10 +62,12 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar9 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_01 = local_c;
   if (iVar9 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",0x16a,0,iVar9,"%s"
                                ,"MainMenuTy::SetMode");
     if (iVar6 == 0) {
@@ -77,7 +79,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
   local_c->field_1EE3 = param_1;
   if (param_1 == '\0') {
     uVar20 = 0xffffffff;
-    uVar18 = 7;
+    SVar18 = CASE_7;
     iVar17 = -1;
     iVar16 = -1;
     iVar15 = 1;
@@ -89,14 +91,16 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     iVar7 = 0x28;
     pMVar3 = local_c->field_00BB;
     iVar11 = 0x8c;
+    /* ST_CALLSITE[005B4121]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     pcVar4 = LoadResourceString(0x2334,g_hINSTANCE_00807618);
-    psVar5 = (short *)ccFntTy::CreateTypeSSpr
+
+    psVar5 = STPointerBoundaryCast<short *>(ccFntTy::CreateTypeSSpr
                                 ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar11,iVar7,
-                                 cVar13,uVar14,iVar15,iVar16,iVar17);
+                                 cVar13,uVar14,iVar15,iVar16,iVar17));
     /* ST_CALLSITE[005B4138]: CALL dword ptr [EBX + 0x8] */
-    (*pSVar1->SetImagesPtr)(&pMVar3->field_00B9,psVar5,uVar18,uVar20);
+    (*pSVar1->SetImagesPtr)(&pMVar3->field_00B9,psVar5,SVar18,uVar20);
     uVar20 = 0xffffffff;
-    uVar18 = 7;
+    SVar18 = CASE_7;
     iVar17 = -1;
     iVar16 = -1;
     iVar15 = 1;
@@ -106,14 +110,16 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar13 = CASE_FFFFFFFE;
     iVar7 = 0x28;
     iVar11 = 0x8c;
+    /* ST_CALLSITE[005B4171]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     pcVar4 = LoadResourceString(0x2335,g_hINSTANCE_00807618);
-    psVar5 = (short *)ccFntTy::CreateTypeSSpr
+
+    psVar5 = STPointerBoundaryCast<short *>(ccFntTy::CreateTypeSSpr
                                 ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar11,iVar7,
-                                 cVar13,uVar14,iVar15,iVar16,iVar17);
+                                 cVar13,uVar14,iVar15,iVar16,iVar17));
     /* ST_CALLSITE[005B4188]: CALL dword ptr [EBX + 0x8] */
-    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[1].field_00B9,psVar5,uVar18,uVar20);
+    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[1].field_00B9,psVar5,SVar18,uVar20);
     uVar20 = 0xffffffff;
-    uVar18 = 7;
+    SVar18 = CASE_7;
     iVar17 = -1;
     pSVar1 = this_01->field_00BB[2].field_00B9.vtable;
     iVar16 = -1;
@@ -123,15 +129,17 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar13 = CASE_FFFFFFFE;
     iVar7 = 0x28;
     iVar11 = 0x8c;
+    /* ST_CALLSITE[005B41C2]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     pcVar4 = LoadResourceString(0x2332,g_hINSTANCE_00807618);
-    psVar5 = (short *)ccFntTy::CreateTypeSSpr
+
+    psVar5 = STPointerBoundaryCast<short *>(ccFntTy::CreateTypeSSpr
                                 ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar11,iVar7,
-                                 cVar13,uVar14,iVar15,iVar16,iVar17);
+                                 cVar13,uVar14,iVar15,iVar16,iVar17));
     /* ST_CALLSITE[005B41D8]: CALL dword ptr [EBX + 0x8] */
-    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[2].field_00B9,psVar5,uVar18,uVar20);
+    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[2].field_00B9,psVar5,SVar18,uVar20);
     pSVar1 = this_01->field_00BB[3].field_00B9.vtable;
     uVar20 = 0xffffffff;
-    uVar18 = 7;
+    SVar18 = CASE_7;
     iVar17 = -1;
     iVar16 = -1;
     iVar15 = 1;
@@ -140,14 +148,16 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     this_01->field_00BB[3].field_0001 = 0x2333;
     iVar7 = 0x28;
     iVar11 = 0x8c;
+    /* ST_CALLSITE[005B4212]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     pcVar4 = LoadResourceString(0x2333,g_hINSTANCE_00807618);
-    psVar5 = (short *)ccFntTy::CreateTypeSSpr
+
+    psVar5 = STPointerBoundaryCast<short *>(ccFntTy::CreateTypeSSpr
                                 ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar11,iVar7,
-                                 cVar13,uVar14,iVar15,iVar16,iVar17);
+                                 cVar13,uVar14,iVar15,iVar16,iVar17));
     /* ST_CALLSITE[005B4229]: CALL dword ptr [EBX + 0x8] */
-    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[3].field_00B9,psVar5,uVar18,uVar20);
+    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[3].field_00B9,psVar5,SVar18,uVar20);
     uVar20 = 0xffffffff;
-    uVar18 = 7;
+    SVar18 = CASE_7;
     iVar17 = -1;
     pSVar1 = this_01->field_00BB[4].field_00B9.vtable;
     iVar16 = -1;
@@ -157,12 +167,14 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar13 = CASE_FFFFFFFE;
     iVar7 = 0x28;
     iVar11 = 0x8c;
+    /* ST_CALLSITE[005B4262]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     pcVar4 = LoadResourceString(0x2336,g_hINSTANCE_00807618);
-    psVar5 = (short *)ccFntTy::CreateTypeSSpr
+
+    psVar5 = STPointerBoundaryCast<short *>(ccFntTy::CreateTypeSSpr
                                 ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar11,iVar7,
-                                 cVar13,uVar14,iVar15,iVar16,iVar17);
+                                 cVar13,uVar14,iVar15,iVar16,iVar17));
     /* ST_CALLSITE[005B4279]: CALL dword ptr [EBX + 0x8] */
-    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[4].field_00B9,psVar5,uVar18,uVar20);
+    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[4].field_00B9,psVar5,SVar18,uVar20);
     this_01->field_00BB[0].field_000E = this_01->field_0008;
     this_01->field_00BB[0].field_0012 = 2;
     this_01->field_00BB[0].field_0016 = 0x6944;
@@ -178,6 +190,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     this_01->field_00BB[3].field_0016 = 0;
     this_01->field_00BB[4].field_0012 = 1;
     this_01->field_00BB[4].field_0016 = 0x7102;
+
     Library::DKW::DDX::FUN_006ba9e0(g_dDXContext_0080759C,0xe9,0x14,0x14c,0x18,0);
     uVar21 = 0;
     pcVar19 = (ccFntTy *)g_startSystem_0081176C->field_0030;
@@ -200,7 +213,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
   }
   else if (param_1 == '\x01') {
     uVar20 = 0xffffffff;
-    uVar18 = 7;
+    SVar18 = CASE_7;
     iVar17 = -1;
     iVar16 = -1;
     iVar15 = 1;
@@ -212,14 +225,16 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     iVar7 = 0x28;
     pMVar3 = local_c->field_00BB;
     iVar11 = 0x8c;
+    /* ST_CALLSITE[005B3E29]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     pcVar4 = LoadResourceString(0x233c,g_hINSTANCE_00807618);
-    psVar5 = (short *)ccFntTy::CreateTypeSSpr
+
+    psVar5 = STPointerBoundaryCast<short *>(ccFntTy::CreateTypeSSpr
                                 ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar11,iVar7,
-                                 cVar13,uVar14,iVar15,iVar16,iVar17);
+                                 cVar13,uVar14,iVar15,iVar16,iVar17));
     /* ST_CALLSITE[005B3E40]: CALL dword ptr [EBX + 0x8] */
-    (*pSVar1->SetImagesPtr)(&pMVar3->field_00B9,psVar5,uVar18,uVar20);
+    (*pSVar1->SetImagesPtr)(&pMVar3->field_00B9,psVar5,SVar18,uVar20);
     uVar20 = 0xffffffff;
-    uVar18 = 7;
+    SVar18 = CASE_7;
     iVar17 = -1;
     iVar16 = -1;
     iVar15 = 1;
@@ -229,14 +244,16 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar13 = CASE_FFFFFFFE;
     iVar7 = 0x28;
     iVar11 = 0x8c;
+    /* ST_CALLSITE[005B3E7A]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     pcVar4 = LoadResourceString(0x233d,g_hINSTANCE_00807618);
-    psVar5 = (short *)ccFntTy::CreateTypeSSpr
+
+    psVar5 = STPointerBoundaryCast<short *>(ccFntTy::CreateTypeSSpr
                                 ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar11,iVar7,
-                                 cVar13,uVar14,iVar15,iVar16,iVar17);
+                                 cVar13,uVar14,iVar15,iVar16,iVar17));
     /* ST_CALLSITE[005B3E90]: CALL dword ptr [EBX + 0x8] */
-    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[1].field_00B9,psVar5,uVar18,uVar20);
+    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[1].field_00B9,psVar5,SVar18,uVar20);
     uVar20 = 0xffffffff;
-    uVar18 = 7;
+    SVar18 = CASE_7;
     iVar17 = -1;
     pSVar1 = this_01->field_00BB[2].field_00B9.vtable;
     iVar16 = -1;
@@ -246,15 +263,17 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar13 = CASE_FFFFFFFE;
     iVar7 = 0x28;
     iVar11 = 0x8c;
+    /* ST_CALLSITE[005B3ECA]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     pcVar4 = LoadResourceString(0x233e,g_hINSTANCE_00807618);
-    psVar5 = (short *)ccFntTy::CreateTypeSSpr
+
+    psVar5 = STPointerBoundaryCast<short *>(ccFntTy::CreateTypeSSpr
                                 ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar11,iVar7,
-                                 cVar13,uVar14,iVar15,iVar16,iVar17);
+                                 cVar13,uVar14,iVar15,iVar16,iVar17));
     /* ST_CALLSITE[005B3EE1]: CALL dword ptr [EBX + 0x8] */
-    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[2].field_00B9,psVar5,uVar18,uVar20);
+    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[2].field_00B9,psVar5,SVar18,uVar20);
     pSVar1 = this_01->field_00BB[3].field_00B9.vtable;
     uVar20 = 0xffffffff;
-    uVar18 = 7;
+    SVar18 = CASE_7;
     iVar17 = -1;
     iVar16 = -1;
     iVar15 = 1;
@@ -263,14 +282,16 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     this_01->field_00BB[3].field_0001 = 0x233f;
     iVar7 = 0x28;
     iVar11 = 0x8c;
+    /* ST_CALLSITE[005B3F1A]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     pcVar4 = LoadResourceString(0x233f,g_hINSTANCE_00807618);
-    psVar5 = (short *)ccFntTy::CreateTypeSSpr
+
+    psVar5 = STPointerBoundaryCast<short *>(ccFntTy::CreateTypeSSpr
                                 ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar11,iVar7,
-                                 cVar13,uVar14,iVar15,iVar16,iVar17);
+                                 cVar13,uVar14,iVar15,iVar16,iVar17));
     /* ST_CALLSITE[005B3F31]: CALL dword ptr [EBX + 0x8] */
-    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[3].field_00B9,psVar5,uVar18,uVar20);
+    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[3].field_00B9,psVar5,SVar18,uVar20);
     uVar20 = 0xffffffff;
-    uVar18 = 7;
+    SVar18 = CASE_7;
     iVar17 = -1;
     pSVar1 = this_01->field_00BB[4].field_00B9.vtable;
     iVar16 = -1;
@@ -280,12 +301,14 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     cVar13 = CASE_FFFFFFFE;
     iVar7 = 0x28;
     iVar11 = 0x8c;
+    /* ST_CALLSITE[005B3F6B]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     pcVar4 = LoadResourceString(0x2359,g_hINSTANCE_00807618);
-    psVar5 = (short *)ccFntTy::CreateTypeSSpr
+
+    psVar5 = STPointerBoundaryCast<short *>(ccFntTy::CreateTypeSSpr
                                 ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar11,iVar7,
-                                 cVar13,uVar14,iVar15,iVar16,iVar17);
+                                 cVar13,uVar14,iVar15,iVar16,iVar17));
     /* ST_CALLSITE[005B3F81]: CALL dword ptr [EBX + 0x8] */
-    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[4].field_00B9,psVar5,uVar18,uVar20);
+    (*pSVar1->SetImagesPtr)(&this_01->field_00BB[4].field_00B9,psVar5,SVar18,uVar20);
     bVar9 = 0;
     local_8 = local_8 & 0xffffff00;
     if (this_01->field_009A != 0) {
@@ -321,6 +344,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
       /* ST_CALLSITE[005B4085]: CALL 0x00401717; direct=00401717 MMsgTy::SetPanel */
       MMsgTy::SetPanel(this_00,0,(int)&local_24c,0,0);
     }
+
     Library::DKW::DDX::FUN_006ba9e0(g_dDXContext_0080759C,0xe9,0x14,0x14c,0x18,0);
     uVar21 = 0;
     pcVar19 = (ccFntTy *)g_startSystem_0081176C->field_0030;
@@ -339,6 +363,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     goto LAB_005b44f1;
   }
   FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
+
   Library::DKW::DDX::FUN_006ba9e0(g_dDXContext_0080759C,0xe9,0x14,0x14c,0x18,0);
   if (this_01->field_1EE3 == '\0') {
     pcVar19 = (ccFntTy *)g_startSystem_0081176C->field_0030;

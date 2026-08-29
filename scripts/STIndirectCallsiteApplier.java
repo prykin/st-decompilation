@@ -13,8 +13,13 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.HashSet;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+import ghidra.app.decompiler.DecompInterface;
+import ghidra.app.decompiler.DecompileResults;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
@@ -32,6 +37,7 @@ import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.VoidDataType;
 import ghidra.program.model.listing.CommentType;
 import ghidra.program.model.listing.Function;
+import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.pcode.DataTypeSymbol;
 import ghidra.program.model.pcode.HighFunction;
 import ghidra.program.model.pcode.HighFunctionDBUtil;
@@ -40,11 +46,27 @@ import ghidra.program.model.symbol.Symbol;
 
 public class STIndirectCallsiteApplier extends GhidraScript {
     private static final String MARKER = "[STIndirectCallsiteApplier]";
+    private static final int DECOMPILE_TIMEOUT = 600;
+    private static final Pattern UNRESOLVED_REGISTER = Pattern.compile(
+        "\\b(?:unaff|in|extraout)_[A-Za-z0-9_]+\\b");
+    private static final Pattern UNDEFINED_DECLARATION = Pattern.compile(
+        "(?m)^\\s*undefined(?:[1248])?\\s*\\*{0,8}\\s*[A-Za-z_][A-Za-z0-9_]*");
+    private static final Pattern RAW_INDIRECT_CALL = Pattern.compile(
+        "\\(\\s*\\*\\*?\\s*\\(\\s*code\\s*\\*\\*?\\s*\\)");
+    private static final Pattern VOID_MEMBER_CALL = Pattern.compile(
+        "\\(\\s*\\*\\s*[A-Za-z_][A-Za-z0-9_]*" +
+        "(?:->(?:vtable|slot_[0-9A-Fa-f]+|vfunc_[0-9A-Fa-f]+))+" +
+        "\\s*\\)\\s*\\(");
+    private static final Pattern POINTER_TOWER = Pattern.compile(
+        "\\bundefined(?:[1248])?\\s*\\*{3,}");
+    private static final Pattern ANONYMOUS_TYPE = Pattern.compile(
+        "\\b(?:AnonShape|AnonReceiver|AnonNested|AnonPointee)_[A-Za-z0-9_]+\\b");
     private static final CategoryPath FUNCTIONS =
         new CategoryPath("/SubmarineTitans/Recovered/IndirectCallFunctions");
     private final List<Report> report = new ArrayList<>();
     private DataTypeManager dataTypes;
     private int pointerSize;
+    private DecompInterface decompiler;
 
     @Override
     protected void run() throws Exception {
@@ -63,31 +85,245 @@ public class STIndirectCallsiteApplier extends GhidraScript {
             "signature_function_address", "signature_function", "confidence", "evidence");
         dataTypes = currentProgram.getDataTypeManager();
         pointerSize = currentProgram.getDefaultPointerSize();
-        int transaction = currentProgram.startTransaction("Apply indirect call-site ABIs");
-        boolean commit = false;
+        boolean presentationOnly = java.util.Arrays.stream(getScriptArgs())
+            .skip(1).anyMatch("presentation-only"::equalsIgnoreCase);
+        Set<String> selectedFunctions = selectedFunctions();
+        decompiler = new DecompInterface();
+        decompiler.toggleCCode(true);
+        decompiler.toggleSyntaxTree(true);
+        if (!decompiler.openProgram(currentProgram))
+            throw new IllegalStateException("Decompiler could not open the current program");
         try {
+            Map<String, List<Map<String, String>>> guarded = new LinkedHashMap<>();
             for (Map<String, String> row : input.rows) {
                 monitor.checkCancelled();
-                apply(row);
+                if (!selectedFunctions.isEmpty() &&
+                        !selectedFunctions.contains(row.get("function_address"))) {
+                    report.add(new Report(target(row), row.get("action"), "disabled",
+                        "outside requested function selection"));
+                    continue;
+                }
+                if (presentationOnly && !"present".equals(row.get("action"))) {
+                    report.add(new Report(target(row), row.get("action"), "disabled",
+                        "presentation-only run"));
+                    continue;
+                }
+                if (enabled(row.get("apply")) && "apply".equals(row.get("action")) &&
+                        !row.get("call_address").isBlank())
+                    guarded.computeIfAbsent(row.get("function_address"),
+                        ignored -> new ArrayList<>()).add(row);
+                else
+                    applyOneTransaction(row);
             }
-            commit = true;
+            for (List<Map<String, String>> rows : guarded.values()) {
+                monitor.checkCancelled();
+                applyFunctionTransaction(rows);
+            }
         }
-        finally { currentProgram.endTransaction(transaction, commit); }
+        finally { decompiler.dispose(); }
         Path output = file.toPath().toAbsolutePath().getParent()
             .resolve("indirect_callsite_apply_report.tsv");
         writeReport(output);
         println("Indirect call sites: applied=" + count("applied") +
+            ", presented=" + count("presented") +
             ", removed=" + count("removed") + ", unchanged=" + count("unchanged") +
             ", preserved=" + count("preserved") + ", conflicts=" + count("conflict") +
             ", disabled=" + count("disabled"));
         println("Apply report: " + output);
     }
 
-    private void apply(Map<String, String> row) {
-        String action = row.get("action");
-        String target = action.startsWith("vtable_slot_") ?
+    /**
+     * Optional reusable safety boundary for address-local repair.  Every argument after
+     * the proposal path of the form function=AAAAAAAA selects one containing function.
+     * The ordinary pre/post readability transaction still guards all selected rows as a
+     * single function batch; this option never changes proposal evidence or apply flags.
+     */
+    private Set<String> selectedFunctions() {
+        Set<String> result = new HashSet<>();
+        String[] arguments = getScriptArgs();
+        for (int index = 1; index < arguments.length; index++) {
+            String value = text(arguments[index]).trim();
+            if (!value.regionMatches(true, 0, "function=", 0, 9)) continue;
+            String address = value.substring(9).trim().toUpperCase(Locale.ROOT);
+            if (!address.matches("[0-9A-F]{8}"))
+                throw new IllegalArgumentException(
+                    "Invalid function selection: " + value);
+            result.add(address);
+        }
+        return result;
+    }
+
+    /**
+     * A use-site override is accepted only when a fresh decompile proves that the complete
+     * containing function became more readable.  Exact machine ABI is necessary but not
+     * sufficient: an ownerless void-this override can otherwise replace an already readable
+     * physical member call with code** arithmetic, or manufacture unresolved High variables.
+     * Batch all sites in one function so a dense family costs two decompiles rather than two
+     * per call, and roll the complete batch back on any address-local regression.
+     */
+    private void applyFunctionTransaction(List<Map<String, String>> rows) throws Exception {
+        boolean mutating = false;
+        for (Map<String, String> row : rows)
+            if (requiresUseSiteMutation(row)) { mutating = true; break; }
+        if (!mutating) {
+            int transaction = currentProgram.startTransaction(
+                "Confirm indirect call-site ABIs in " +
+                    rows.get(0).get("function_address"));
+            boolean commit = false;
+            try {
+                for (Map<String, String> row : rows) apply(row);
+                commit = true;
+            }
+            finally { currentProgram.endTransaction(transaction, commit); }
+            return;
+        }
+        Function function = currentProgram.getFunctionManager().getFunctionAt(
+            address(rows.get(0).get("function_address")));
+        Readability before = readability(decompile(function));
+        if (before == null) {
+            for (Map<String, String> row : rows)
+                report.add(new Report(target(row), row.get("action"), "preserved",
+                    "fresh pre-apply decompile unavailable; readability cannot be proven"));
+            return;
+        }
+        int reportStart = report.size();
+        List<Map<String, String>> presentationRows = new ArrayList<>();
+        List<Integer> presentationReportIndices = new ArrayList<>();
+        int transaction = currentProgram.startTransaction(
+            "Apply indirect call-site ABIs in " + rows.get(0).get("function_address"));
+        boolean commit = false;
+        try {
+            for (Map<String, String> row : rows) apply(row);
+            commit = true;
+            List<Integer> applied = new ArrayList<>();
+            for (int index = reportStart; index < report.size(); index++)
+                if ("applied".equals(report.get(index).status)) applied.add(index);
+            if (!applied.isEmpty()) {
+                decompiler.flushCache();
+                Readability after = readability(decompile(function));
+                String regression = before.regression(after);
+                boolean presentationFallback =
+                    "no measured readability improvement".equals(regression) &&
+                    applied.stream().allMatch(index ->
+                        "none".equals(rows.get(index - reportStart).get(
+                            "expected_override")));
+                if (presentationFallback) {
+                    commit = false;
+                    for (int index : applied) {
+                        presentationRows.add(rows.get(index - reportStart));
+                        presentationReportIndices.add(index);
+                        Report old = report.get(index);
+                        report.set(index, new Report(old.target, old.action,
+                            "presented", "Ghidra retained raw syntax; use-site override " +
+                                "rolled back and exact address-stable structural " +
+                                "presentation retained"));
+                    }
+                }
+                else if (after == null || !regression.isBlank()) {
+                    commit = false;
+                    String detail = "rolled back with containing-function indirect-call batch" +
+                        (regression.isBlank() ? ": post-apply decompile unavailable" :
+                            ": " + regression);
+                    for (int index : applied) {
+                        Report old = report.get(index);
+                        report.set(index, new Report(old.target, old.action,
+                            "preserved", detail));
+                    }
+                }
+            }
+        }
+        finally {
+            currentProgram.endTransaction(transaction, commit);
+            decompiler.flushCache();
+        }
+        if (!presentationRows.isEmpty()) {
+            int presentationTransaction = currentProgram.startTransaction(
+                "Record structural indirect-call presentation in " +
+                    rows.get(0).get("function_address"));
+            boolean presentationCommit = false;
+            try {
+                for (int ordinal = 0; ordinal < presentationRows.size(); ordinal++) {
+                    Map<String, String> row = presentationRows.get(ordinal);
+                    Address call = address(row.get("call_address"));
+                    if (call == null || existingOverride(function, call) != null) {
+                        int index = presentationReportIndices.get(ordinal);
+                        Report old = report.get(index);
+                        report.set(index, new Report(old.target, old.action,
+                            "conflict", "rolled-back override left a non-empty callsite"));
+                        continue;
+                    }
+                    setPresentationMarker(call, row);
+                }
+                presentationCommit = true;
+            }
+            finally {
+                currentProgram.endTransaction(presentationTransaction,
+                    presentationCommit);
+            }
+        }
+    }
+
+    private boolean requiresUseSiteMutation(Map<String, String> row) {
+        try {
+            Address entry = address(row.get("function_address"));
+            Address call = address(row.get("call_address"));
+            Function function = entry == null ? null :
+                currentProgram.getFunctionManager().getFunctionAt(entry);
+            if (function == null || call == null || !function.getBody().contains(call))
+                return false;
+            FunctionDefinition existing = existingOverride(function, call);
+            FunctionDefinitionDataType wanted = desired(row);
+            return existing == null || !fingerprint(existing).equals(fingerprint(wanted));
+        }
+        catch (Exception exception) {
+            // Let the ordinary guarded path produce the exact conflict report.
+            return true;
+        }
+    }
+
+    private void applyOneTransaction(Map<String, String> row) {
+        int transaction = currentProgram.startTransaction(
+            "Apply indirect call-site ABI " + target(row));
+        boolean commit = false;
+        try { apply(row); commit = true; }
+        finally { currentProgram.endTransaction(transaction, commit); }
+    }
+
+    private String target(Map<String, String> row) {
+        return row.get("action").startsWith("vtable_slot_") ?
             row.get("function_address") + "@" + row.get("slot_offset") :
             row.get("function_address") + "@" + row.get("call_address");
+    }
+
+    private String decompile(Function function) {
+        if (function == null) return null;
+        DecompileResults result = decompiler.decompileFunction(function,
+            DECOMPILE_TIMEOUT, monitor);
+        return result != null && result.decompileCompleted() &&
+            result.getDecompiledFunction() != null ?
+                result.getDecompiledFunction().getC() : null;
+    }
+
+    private Readability readability(String code) {
+        return code == null ? null : new Readability(
+            matches(UNRESOLVED_REGISTER, code),
+            matches(UNDEFINED_DECLARATION, code),
+            matches(RAW_INDIRECT_CALL, code),
+            matches(VOID_MEMBER_CALL, code),
+            matches(POINTER_TOWER, code),
+            matches(ANONYMOUS_TYPE, code));
+    }
+
+    private int matches(Pattern pattern, String text) {
+        int count = 0;
+        Matcher matcher = pattern.matcher(text);
+        while (matcher.find()) count++;
+        return count;
+    }
+
+    private void apply(Map<String, String> row) {
+        String action = row.get("action");
+        String target = target(row);
         if (!enabled(row.get("apply"))) {
             report.add(new Report(target, action, "disabled", "apply=0"));
             return;
@@ -135,6 +371,32 @@ public class STIndirectCallsiteApplier extends GhidraScript {
                 removeMarker(call);
                 report.add(new Report(target, "cleanup", "removed",
                     "stale script-owned call-site override removed"));
+                return;
+            }
+            if ("present".equals(action)) {
+                Instruction instruction = currentProgram.getListing().getInstructionAt(call);
+                if (instruction == null || !instruction.getFlowType().isComputed()) {
+                    conflict(target, row, "structural presentation requires an indirect CALL");
+                    return;
+                }
+                if (existing != null) {
+                    preserve(target, row,
+                        "structural presentation never layers over a call override");
+                    return;
+                }
+                if (marker && !hasMarkerMode(call, "structural-presentation")) {
+                    preserve(target, row,
+                        "another script-owned callsite mode is already present");
+                    return;
+                }
+                if (hasMarkerMode(call, "structural-presentation")) {
+                    report.add(new Report(target, action, "unchanged",
+                        "exact structural dispatch presentation already present"));
+                    return;
+                }
+                setPresentationMarker(call, row);
+                report.add(new Report(target, action, "presented",
+                    "address-local machine receiver/slot/arity presentation recorded"));
                 return;
             }
             if (!"apply".equals(action)) {
@@ -314,7 +576,8 @@ public class STIndirectCallsiteApplier extends GhidraScript {
             throw new IllegalArgumentException("stack parameter count mismatch");
         boolean thiscall = "__thiscall".equals(convention);
         boolean stdcall = "__stdcall".equals(convention);
-        if (!thiscall && !stdcall)
+        boolean cdecl = "__cdecl".equals(convention);
+        if (!thiscall && !stdcall && !cdecl)
             throw new IllegalArgumentException("unsupported convention " + convention);
         FunctionDefinitionDataType desired = new FunctionDefinitionDataType(
             "callsite_" + row.get("call_address"), dataTypes);
@@ -361,13 +624,16 @@ public class STIndirectCallsiteApplier extends GhidraScript {
     private void deleteOverrides(Function function, Address call) {
         Namespace root = HighFunction.findOverrideSpace(function);
         if (root == null) return;
-        List<Symbol> remove = new ArrayList<>();
+        List<DataTypeSymbol> remove = new ArrayList<>();
         Symbol[] symbols = currentProgram.getSymbolTable().getSymbols(call);
         for (Symbol symbol : symbols) {
-            if (root.equals(symbol.getParentNamespace()) &&
-                    HighFunctionDBUtil.readOverride(symbol) != null) remove.add(symbol);
+            if (!root.equals(symbol.getParentNamespace())) continue;
+            DataTypeSymbol value = HighFunctionDBUtil.readOverride(symbol);
+            if (value != null) remove.add(value);
         }
-        for (Symbol symbol : remove) symbol.delete();
+        for (DataTypeSymbol value : remove) {
+            if (value.getSymbol().delete()) value.cleanupUnusedOverride();
+        }
     }
 
     private void setMarker(Address address, Map<String, String> row, String signature) {
@@ -386,6 +652,26 @@ public class STIndirectCallsiteApplier extends GhidraScript {
                 "; signature=" + signature);
         currentProgram.getListing().setComment(address, CommentType.EOL,
             String.join("\n", lines));
+    }
+
+    private void setPresentationMarker(Address address, Map<String, String> row) {
+        String old = currentProgram.getListing().getComment(CommentType.EOL, address);
+        List<String> lines = keptLines(old);
+        String signature = row.get("proposed_calling_convention") + ";" +
+            row.get("proposed_return_type") + ";" + row.get("receiver_type") +
+            (row.get("proposed_parameter_types").isBlank() ? "" :
+                ";" + row.get("proposed_parameter_types"));
+        lines.add(MARKER + " exact slot 0x" +
+            Integer.toHexString(Integer.parseInt(row.get("slot_offset")))
+                .toUpperCase(Locale.ROOT) +
+            "; mode=structural-presentation; signature=" + signature);
+        currentProgram.getListing().setComment(address, CommentType.EOL,
+            String.join("\n", lines));
+    }
+
+    private boolean hasMarkerMode(Address address, String mode) {
+        String comment = text(currentProgram.getListing().getComment(CommentType.EOL, address));
+        return comment.contains(MARKER) && comment.contains("mode=" + mode + ";");
     }
 
     private void removeMarker(Address address) {
@@ -496,4 +782,47 @@ public class STIndirectCallsiteApplier extends GhidraScript {
 
     private record Tsv(List<String> header, List<Map<String, String>> rows) { }
     private record Report(String target, String action, String status, String detail) { }
+    private record Readability(int unresolvedRegisters, int undefinedDeclarations,
+        int rawIndirectCalls, int voidMemberCalls, int pointerTowers,
+        int anonymousTypes) {
+        boolean rawImproved(Readability after) {
+            return after != null && after.rawIndirectCalls < rawIndirectCalls;
+        }
+
+        String nonRawRegression(Readability after) {
+            if (after == null) return "post-apply decompile unavailable";
+            List<String> problems = new ArrayList<>();
+            if (after.unresolvedRegisters > unresolvedRegisters)
+                problems.add("unresolved registers " + unresolvedRegisters + "->" +
+                    after.unresolvedRegisters);
+            if (after.undefinedDeclarations > undefinedDeclarations)
+                problems.add("undefined declarations " + undefinedDeclarations + "->" +
+                    after.undefinedDeclarations);
+            if (after.pointerTowers > pointerTowers)
+                problems.add("pointer towers " + pointerTowers + "->" + after.pointerTowers);
+            if (after.anonymousTypes > anonymousTypes)
+                problems.add("anonymous types " + anonymousTypes + "->" +
+                    after.anonymousTypes);
+            return String.join("; ", problems);
+        }
+
+        String regression(Readability after) {
+            if (after == null) return "post-apply decompile unavailable";
+            String worsened = nonRawRegression(after);
+            if (!worsened.isBlank()) return worsened;
+            if (after.rawIndirectCalls > rawIndirectCalls)
+                return "raw indirect calls " + rawIndirectCalls + "->" +
+                    after.rawIndirectCalls;
+            if (after.voidMemberCalls > voidMemberCalls)
+                return "void member calls " + voidMemberCalls + "->" +
+                    after.voidMemberCalls;
+            boolean improved = after.rawIndirectCalls < rawIndirectCalls ||
+                after.voidMemberCalls < voidMemberCalls ||
+                after.unresolvedRegisters < unresolvedRegisters ||
+                after.undefinedDeclarations < undefinedDeclarations ||
+                after.pointerTowers < pointerTowers ||
+                after.anonymousTypes < anonymousTypes;
+            return improved ? "" : "no measured readability improvement";
+        }
+    }
 }

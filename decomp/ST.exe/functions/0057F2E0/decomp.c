@@ -10,21 +10,17 @@ undefined4 * __thiscall STDcResourcC::sub_0057F2E0(STDcResourcC *this,int param_
 
 {
   char cVar1;
-  byte uVar2;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined3 extraout_var;
-  uint uVar3;
-  int iVar4;
+  uint uVar2;
+  int iVar3;
+  char *pcVar5;
   char *pcVar6;
   char *pcVar7;
-  char *pcVar8;
   char *pcVar6_mg0;
 
   pcVar6_mg0 = PTR_s_rc276__d_007cb090;
   if (param_1 == -1) {
-    uVar2 = thunk_FUN_0057f240(0xdd,this->field_0259);
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    param_1 = CONCAT31(extraout_var,uVar2);
+
+    param_1 = thunk_FUN_0057f240(0xdd,this->field_0259);
     pcVar6_mg0 = PTR_s_rc276_c_d_007cb08c;
   }
   /* ST_CALLSITE[0057F313]: CALL dword ptr [0x0085bde8] */
@@ -32,30 +28,30 @@ undefined4 * __thiscall STDcResourcC::sub_0057F2E0(STDcResourcC *this,int param_
   if (param_2 == 0) {
     return (undefined4 *)&CHAR_00h_00811670;
   }
-  uVar3 = 0xffffffff;
-  pcVar6 = &CHAR_m_007cb260;
+  uVar2 = 0xffffffff;
+  pcVar5 = &CHAR_m_007cb260;
   do {
-    pcVar8 = pcVar6;
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    pcVar8 = pcVar6 + 1;
-    cVar1 = *pcVar6;
-    pcVar6 = pcVar8;
+    pcVar7 = pcVar5;
+    if (uVar2 == 0) break;
+    uVar2 = uVar2 - 1;
+    pcVar7 = pcVar5 + 1;
+    cVar1 = *pcVar5;
+    pcVar5 = pcVar7;
   } while (cVar1 != '\0');
-  uVar3 = ~uVar3;
-  iVar4 = -1;
-  pcVar6 = &CHAR_00h_00811670;
+  uVar2 = ~uVar2;
+  iVar3 = -1;
+  pcVar5 = &CHAR_00h_00811670;
   do {
-    pcVar7 = pcVar6;
-    if (iVar4 == 0) break;
-    iVar4 = iVar4 + -1;
-    pcVar7 = pcVar6 + 1;
-    cVar1 = *pcVar6;
-    pcVar6 = pcVar7;
+    pcVar6 = pcVar5;
+    if (iVar3 == 0) break;
+    iVar3 = iVar3 + -1;
+    pcVar6 = pcVar5 + 1;
+    cVar1 = *pcVar5;
+    pcVar5 = pcVar6;
   } while (cVar1 != '\0');
-  pcVar6 = pcVar8 + -uVar3;
-  pcVar8 = pcVar7 + -1;
-  memmove(pcVar8, pcVar6, uVar3); /* compiler REP MOVS byte copy */
+  pcVar5 = pcVar7 + -uVar2;
+  pcVar7 = pcVar6 + -1;
+  memmove(pcVar7, pcVar5, uVar2); /* compiler REP MOVS byte copy */
   return (undefined4 *)&CHAR_00h_00811670;
 }
 

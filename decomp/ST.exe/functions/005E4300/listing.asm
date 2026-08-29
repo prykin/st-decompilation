@@ -157,7 +157,7 @@ LAB_005e446d:
 005E4476  6A FF                     PUSH -0x1
 005E4478  51                        PUSH ECX
 005E4479  57                        PUSH EDI
-005E447A  E8 C1 BC 0C 00            CALL 0x006b0140
+005E447A  E8 C1 BC 0C 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 005E447F  8B 8B 89 00 00 00         MOV ECX,dword ptr [EBX + 0x89]
 005E4485  50                        PUSH EAX
 005E4486  E8 35 D5 12 00            CALL 0x007119c0

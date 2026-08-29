@@ -35,7 +35,7 @@ void __thiscall SettMapMTy::CheckPlList(SettMapMTy *this)
   uint uVar13;
   char *pcVar14;
   InternalExceptionFrame local_5c;
-  AnonShape_00413AF0_B6B4EE9A *local_18;
+  RecoveredRecordView_00413AF0_B98DB3AE *local_18;
   uint local_14;
   uint local_10;
   SettMapMTy *local_c;
@@ -46,6 +46,7 @@ void __thiscall SettMapMTy::CheckPlList(SettMapMTy *this)
     local_5c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_5c;
     local_c = this;
+
     iVar6 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
     pSVar3 = local_c;
     if (iVar6 == 0) {
@@ -70,6 +71,7 @@ LAB_005d01c2:
               if (*(DArrayTy **)(pcVar8 + 0x50) != nullptr) {
                 DArrayDestroy(*(DArrayTy **)(pcVar8 + 0x50));
               }
+
               DArrayRemoveAt((DArrayTy *)pSVar3->field_1F84,uVar12);
               uVar12 = uVar12 - 1;
             }
@@ -102,6 +104,7 @@ LAB_005d021c:
                   if (*(DArrayTy **)(pcVar8 + 0x50) != nullptr) {
                     DArrayDestroy(*(DArrayTy **)(pcVar8 + 0x50));
                   }
+
                   DArrayRemoveAt((DArrayTy *)pSVar3->field_1F84,uVar13);
                   bVar2 = true;
                   goto LAB_005d0277;
@@ -150,7 +153,8 @@ LAB_005d02c3:
               else {
                 element_1f84 = nullptr;
               }
-              if (((pcVar8 != nullptr) && (element_1f84 != nullptr)) &&
+              if (((pcVar8 != nullptr) &&
+                  (element_1f84 != nullptr)) &&
                  ((*pcVar8 != '\0' &&
                   (((element_1f84->field_0x0 == '\0' && (element_1f84->field_0x4 != '\x01')) && (uVar12 < 0x18))
                   )))) {
@@ -174,8 +178,8 @@ LAB_005d02c3:
           else {
             element_1f84 = nullptr;
           }
-          if (((element_1f84 != nullptr) && (element_1f84->field_0x0 == '\0')) &&
-             ((element_1f84->field_0x4 != '\x01' && (uVar12 < 0x18)))) {
+          if (((element_1f84 != nullptr) &&
+              (element_1f84->field_0x0 == '\0')) && ((element_1f84->field_0x4 != '\x01' && (uVar12 < 0x18)))) {
             /* ST_CALLSITE[005D0360]: CALL 0x004017d0; direct=004017D0 SettMapMTy::sub_005D00B0 */
             sub_005D00B0(local_c,element_1f84,uVar12);
           }
@@ -206,6 +210,7 @@ LAB_005d0391:
               if (element_1f84_2->handle != nullptr) {
                 DArrayDestroy(element_1f84_2->handle);
               }
+
               DArrayRemoveAt((DArrayTy *)local_c->field_1F84,uVar13 - 1);
               local_5 = '\x01';
               break;
@@ -216,7 +221,7 @@ LAB_005d0391:
       } while (local_5 != '\0');
       local_5 = '\0';
       local_10 = 0;
-      local_18 = (AnonShape_00413AF0_B6B4EE9A *)local_c->field_1F84;
+      local_18 = (RecoveredRecordView_00413AF0_B98DB3AE *)local_c->field_1F84;
       uVar12 = ((SettMapMTy_field_1F84DArray *)local_18)->count;
       if (uVar12 != 0) {
         do {
@@ -249,6 +254,7 @@ LAB_005d045a:
                 memmove(pcVar14, pcVar7, 0x60); /* compiler REP MOVS byte copy */
                 pcVar8[1] = '\0';
                 *pcVar8 = '\x01';
+
                 DArrayRemoveAt((DArrayTy *)local_c->field_1F84,local_14);
                 local_5 = '\x01';
               }
@@ -268,12 +274,13 @@ LAB_005d048e:
                 if (element_1f84_3->handle != nullptr) {
                   DArrayDestroy(element_1f84_3->handle);
                 }
+
                 DArrayRemoveAt((DArrayTy *)local_c->field_1F84,uVar12);
               }
             }
           }
           local_10 = local_10 + 1;
-          local_18 = (AnonShape_00413AF0_B6B4EE9A *)local_c->field_1F84;
+          local_18 = (RecoveredRecordView_00413AF0_B98DB3AE *)local_c->field_1F84;
           uVar12 = ((SettMapMTy_field_1F84DArray *)local_18)->count;
         } while (local_10 < uVar12);
       }
@@ -281,6 +288,7 @@ LAB_005d048e:
       return;
     }
     g_currentExceptionFrame = local_5c.previous;
+
     iVar10 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x563,0,iVar6,
                                 "%s","SettMapMTy::CheckPlList");
     if (iVar10 != 0) {

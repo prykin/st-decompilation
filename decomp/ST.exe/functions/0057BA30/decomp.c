@@ -60,7 +60,8 @@ int __cdecl FUN_0057ba30(void *param_1,int param_2)
              (STGridAt3D(g_worldGrid, sVar7, sVar6, sVar5).objects[0] != nullptr)))))) {
           local_24 = local_24 + 1;
           thunk_FUN_0057b990(STField<undefined4>(pvVar3,0x24),DAT_007e6620,
-                             (int)STGridAt3D(g_worldGrid, sVar7, sVar6, sVar5).objects[0],
+                             (RecoveredRecord_0057B990_72164111 *)
+                             STGridAt3D(g_worldGrid, sVar7, sVar6, sVar5).objects[0],
                              (ushort)STField<undefined4>(pvVar3,0x25e),
                              STField<undefined2>(pvVar3,0x262),0xac,0x110);
         }

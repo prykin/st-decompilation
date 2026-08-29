@@ -40,19 +40,23 @@ void FUN_006c7430(AnonShape_006C7430_D1D36538 *param_1)
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   ExceptionList = &local_14;
+
   local_8 = Library::MSVCRT::__setjmp3
                       (local_70.jumpBuffer,2,Library::MSVCRT::__seh_longjmp_unwind_4,0xffffffff);
   local_1c = &stack0xffffff7c;
   if (local_8 == 0) {
-    if (param_1->field_0072 == nullptr) {
+    if ((RecoveredRecordView_006B84D0_87AF9D9B *)param_1->field_0072 ==
+        nullptr) {
       FUN_006b4170((RecoveredSourceFamily_dibcopy *)param_1->field_003A,param_1->field_003E,local_20
                    ,local_24,local_28,local_2c,param_1->field_0011);
     }
     else {
       local_1c = &stack0xffffff7c;
+
       Library::DKW::WGR::FUN_006b55f0
                 ((RecoveredSourceFamily_dibcopy *)param_1->field_003A,param_1->field_003E,local_20,
-                 local_24,param_1->field_0072,0,0,0,local_28,local_2c);
+                 local_24,(RecoveredRecordView_006B84D0_87AF9D9B *)param_1->field_0072,0,0,0,
+                 local_28,local_2c);
     }
     g_currentExceptionFrame = local_70.previous;
     ExceptionList = local_14;

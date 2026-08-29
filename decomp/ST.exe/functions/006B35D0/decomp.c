@@ -14,12 +14,12 @@ undefined4 FUN_006b35d0(int *param_1,uint param_2)
       if ((uVar2 & 0x80000) != 0) {
         /* ST_CALLSITE[006B360C]: CALL dword ptr [0x0085bb8c] */
         EnterCriticalSection((LPCRITICAL_SECTION)(*param_1 + 0x4f0));
-        FUN_006b23e0((int)param_1,puVar1);
+        FUN_006b23e0((RecoveredRecord_006B23E0_5A2050A1 *)param_1,puVar1);
         /* ST_CALLSITE[006B3622]: CALL dword ptr [0x0085bb90] */
         LeaveCriticalSection((LPCRITICAL_SECTION)(*param_1 + 0x4f0));
         return 0;
       }
-      FUN_006b23e0((int)param_1,puVar1);
+      FUN_006b23e0((RecoveredRecord_006B23E0_5A2050A1 *)param_1,puVar1);
     }
   }
   return 0;

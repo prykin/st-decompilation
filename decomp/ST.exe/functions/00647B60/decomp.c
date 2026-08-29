@@ -1,9 +1,9 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 FUN_00647b60(int param_1)
+undefined4 FUN_00647b60(RecoveredRecord_00647B60_9DCC946A *param_1)
 
 {
-  return *(undefined4 *)(param_1 + 1);
+  return param_1->field_0001;
 }
 

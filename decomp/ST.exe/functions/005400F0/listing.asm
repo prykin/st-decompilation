@@ -115,7 +115,7 @@ LAB_0054021f:
 00540228  8B CE                     MOV ECX,ESI
 0054022A  89 46 44                  MOV dword ptr [ESI + 0x44],EAX
 0054022D  66 C7 86 72 01 00 00 01 00  MOV word ptr [ESI + 0x172],0x1
-00540236  FF 52 18                  CALL dword ptr [EDX + 0x18]
+00540236  FF 52 18                  CALL dword ptr [EDX + 0x18]  ; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 LAB_00540239:
 00540239  8B 46 44                  MOV EAX,dword ptr [ESI + 0x44]
 0054023C  8B 4E 3C                  MOV ECX,dword ptr [ESI + 0x3c]
@@ -138,7 +138,7 @@ LAB_00540239:
 LAB_00540265:
 00540265  6A 00                     PUSH 0x0
 00540267  68 94 38 7C 00            PUSH 0x7c3894
-0054026C  E8 0B 55 EC FF            CALL 0x0040577c
+0054026C  E8 0B 55 EC FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00538DB0_574DDCD0; source view only; no Ghidra override
 00540271  83 C4 08                  ADD ESP,0x8
 00540274  8B CE                     MOV ECX,ESI
 00540276  6A 01                     PUSH 0x1

@@ -17,7 +17,7 @@ FUN_0064a630:
 0064A65F  85 F6                     TEST ESI,ESI
 0064A661  75 28                     JNZ 0x0064a68b
 0064A663  6A 10                     PUSH 0x10
-0064A665  E8 A6 05 06 00            CALL 0x006aac10
+0064A665  E8 A6 05 06 00            CALL 0x006aac10  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 0064A66A  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]
 0064A66D  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
 0064A670  51                        PUSH ECX

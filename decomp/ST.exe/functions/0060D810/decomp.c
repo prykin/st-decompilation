@@ -14,6 +14,7 @@ void __thiscall FUN_0060d810(void *this,undefined4 param_1,undefined4 param_2)
     iVar2 = 0;
     *STField<undefined4 *>(this,0x244) = 0;
     *(undefined4 *)(STField<int>(this,0x244) + 4) = 0x33;
+
     pvVar1 = Library::DKW::LIB::MemAlloc(0xcc);
     *(void **)(STField<int>(this,0x244) + 8) = pvVar1;
     puVar3 = (byte *)(&DAT_007cf730);

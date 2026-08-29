@@ -23,7 +23,8 @@ FUN_005545c0:
 005545F8  A1 18 76 80 00            MOV EAX,[0x00807618]
 005545FD  50                        PUSH EAX
 005545FE  68 7A 26 00 00            PUSH 0x267a
-00554603  E8 38 BB 15 00            CALL 0x006b0140
+FUN_005545c0::override::prt_554603_3f216396:
+00554603  E8 38 BB 15 00            CALL 0x006b0140  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_007111C0_C04D120D; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_007111C0_C04D120D;/WinDef.h/UINT;/WinDef.h/HINSTANCE
 00554608  8B 4E 08                  MOV ECX,dword ptr [ESI + 0x8]
 0055460B  50                        PUSH EAX
 0055460C  E8 AF CB 1B 00            CALL 0x007111c0

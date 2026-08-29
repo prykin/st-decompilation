@@ -70,7 +70,8 @@ switchD_005e6017::caseD_62:
 005E6096  89 1D 78 17 81 00         MOV dword ptr [0x00811778],EBX
 LAB_005e609c:
 005E609C  6A 33                     PUSH 0x33
-005E609E  E8 8D 84 14 00            CALL 0x0072e530
+MTestTy::GetMessage::override::prt_5e609e_d0016b22:
+005E609E  E8 8D 84 14 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/HoloTy; signature=__cdecl;pointer:/HoloTy;/uint
 005E60A3  83 C4 04                  ADD ESP,0x4
 005E60A6  3B C3                     CMP EAX,EBX
 005E60A8  74 3A                     JZ 0x005e60e4
@@ -128,7 +129,8 @@ LAB_005e60f0:
 005E6154  68 B4 00 00 00            PUSH 0xb4
 005E6159  6A 0A                     PUSH 0xa
 005E615B  50                        PUSH EAX
-005E615C  E8 8F 98 0D 00            CALL 0x006bf9f0
+MTestTy::GetMessage::override::prt_5e615c_84f22ef4:
+005E615C  E8 8F 98 0D 00            CALL 0x006bf9f0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69;pointer:/int;/undefined4;/undefined4;/undefined4;/undefined4
 005E6161  8B 0D 78 17 81 00         MOV ECX,dword ptr [0x00811778]
 005E6167  50                        PUSH EAX
 005E6168  68 B4 00 00 00            PUSH 0xb4
@@ -203,7 +205,8 @@ LAB_005e621d:
 005E625F  50                        PUSH EAX
 005E6260  E8 DB D3 0C 00            CALL 0x006b3640
 005E6265  6A 33                     PUSH 0x33
-005E6267  E8 C4 82 14 00            CALL 0x0072e530
+MTestTy::GetMessage::override::prt_5e6267_d0016b22:
+005E6267  E8 C4 82 14 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/HoloTy; signature=__cdecl;pointer:/HoloTy;/uint
 005E626C  83 C4 04                  ADD ESP,0x4
 005E626F  3B C3                     CMP EAX,EBX
 005E6271  74 37                     JZ 0x005e62aa
@@ -241,7 +244,8 @@ LAB_005e62b6:
 005E62CF  68 B4 00 00 00            PUSH 0xb4
 005E62D4  6A 0A                     PUSH 0xa
 005E62D6  51                        PUSH ECX
-005E62D7  E8 14 97 0D 00            CALL 0x006bf9f0
+MTestTy::GetMessage::override::prt_5e62d7_84f22ef4:
+005E62D7  E8 14 97 0D 00            CALL 0x006bf9f0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69;pointer:/int;/undefined4;/undefined4;/undefined4;/undefined4
 005E62DC  8B 0D 78 17 81 00         MOV ECX,dword ptr [0x00811778]
 005E62E2  50                        PUSH EAX
 005E62E3  68 B4 00 00 00            PUSH 0xb4

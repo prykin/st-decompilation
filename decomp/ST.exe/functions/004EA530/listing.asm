@@ -37,12 +37,12 @@ FUN_004ea530:
 004EA5A3  74 3A                     JZ 0x004ea5df
 004EA5A5  8B 16                     MOV EDX,dword ptr [ESI]
 004EA5A7  8B CE                     MOV ECX,ESI
-004EA5A9  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+004EA5A9  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004EA5AC  83 F8 37                  CMP EAX,0x37
 004EA5AF  74 0C                     JZ 0x004ea5bd
 004EA5B1  8B 06                     MOV EAX,dword ptr [ESI]
 004EA5B3  8B CE                     MOV ECX,ESI
-004EA5B5  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+004EA5B5  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004EA5B8  83 F8 6C                  CMP EAX,0x6c
 004EA5BB  75 22                     JNZ 0x004ea5df
 LAB_004ea5bd:

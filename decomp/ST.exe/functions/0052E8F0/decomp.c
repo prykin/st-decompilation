@@ -20,6 +20,7 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pOVar2 = local_8;
   if (iVar3 == 0) {
@@ -94,6 +95,7 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0x79,0,iVar3,"%s",
                              "OptPanelTy::DoneOptPanel");
   if (iVar4 != 0) {

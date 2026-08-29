@@ -1,4 +1,4 @@
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410:
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00644410::FUN_00644410:
 00644410  55                        PUSH EBP
 00644411  8B EC                     MOV EBP,ESP
 00644413  83 EC 44                  SUB ESP,0x44
@@ -263,7 +263,7 @@ LAB_0064468b:
 006446EE  74 25                     JZ 0x00644715
 006446F0  8B 16                     MOV EDX,dword ptr [ESI]
 006446F2  8B CE                     MOV ECX,ESI
-006446F4  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+006446F4  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 006446F7  3D A6 00 00 00            CMP EAX,0xa6
 006446FC  74 17                     JZ 0x00644715
 006446FE  3D A7 00 00 00            CMP EAX,0xa7
@@ -332,7 +332,7 @@ LAB_0064478a:
 006447BE  50                        PUSH EAX
 006447BF  51                        PUSH ECX
 006447C0  8B CE                     MOV ECX,ESI
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410::override::prt_6447c2_6c7b7428:
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00644410::FUN_00644410::override::prt_6447c2_6c7b7428:
 006447C2  FF 92 DC 00 00 00         CALL dword ptr [EDX + 0xdc]  ; [STIndirectCallsiteApplier] exact slot 0xDC; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 006447C8  8B F8                     MOV EDI,EAX
 006447CA  85 FF                     TEST EDI,EDI
@@ -876,7 +876,7 @@ LAB_00644cee:
 00644D31  52                        PUSH EDX
 00644D32  57                        PUSH EDI
 00644D33  8B CE                     MOV ECX,ESI
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410::override::prt_644d35_577d6eca:
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00644410::FUN_00644410::override::prt_644d35_577d6eca:
 00644D35  FF 90 E0 00 00 00         CALL dword ptr [EAX + 0xe0]  ; [STIndirectCallsiteApplier] exact slot 0xE0; mode=machine-void; signature=__thiscall;/void;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00644D3B  0F BF 45 FE               MOVSX EAX,word ptr [EBP + -0x2]
 00644D3F  8B 4D 0C                  MOV ECX,dword ptr [EBP + 0xc]

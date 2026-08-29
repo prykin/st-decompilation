@@ -28,7 +28,7 @@ STManRub3C::GetMessage:
 0062CCF7  8D 4D F4                  LEA ECX,[EBP + -0xc]
 0062CCFA  51                        PUSH ECX
 0062CCFB  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
-0062CCFE  E8 F5 4F DD FF            CALL 0x00401cf8
+0062CCFE  E8 F5 4F DD FF            CALL 0x00401cf8  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 0062CD03  8B 55 F4                  MOV EDX,dword ptr [EBP + -0xc]
 0062CD06  8B 0D 38 2A 80 00         MOV ECX,dword ptr [0x00802a38]
 0062CD0C  6A 0C                     PUSH 0xc

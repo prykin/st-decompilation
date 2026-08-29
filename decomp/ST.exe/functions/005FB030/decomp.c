@@ -4,7 +4,7 @@
 /* [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 0062E3A0 -> 005FB030 @ 0062E405 */
 
-void __fastcall FUN_005fb030(AnonShape_005FB030_9C7404C6 *param_1)
+void __fastcall FUN_005fb030(RecoveredRecordView_005FB030_E5A27901 *param_1)
 
 {
   switch(param_1->field_02DD) {

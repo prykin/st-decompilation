@@ -13,7 +13,8 @@ STManBasisC * __cdecl CreateSTManBasis(void)
 {
   STManBasisC *this;
 
-  this = (STManBasisC *)FUN_006b04d0(0x48);
+  /* ST_CALLSITE[005F1322]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STManBasisC; signature=__stdcall;pointer:/STManBasisC;/uint */
+  this = FUN_006b04d0(0x48);
   if (this != nullptr) {
     /* ST_CALLSITE[005F132D]: CALL 0x00405ae2; direct=00405AE2 STManBasisC::STManBasisC */
     g_manBasis_00811784 = STManBasisC::STManBasisC(this);

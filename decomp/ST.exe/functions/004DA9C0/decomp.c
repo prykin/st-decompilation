@@ -31,7 +31,7 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
   int local_24;
   uint *local_20;
   int *local_1c;
-  undefined4 local_18;
+  uint local_18;
   uint local_14;
   int *local_10;
   byte *local_c;
@@ -61,6 +61,7 @@ undefined4 __fastcall FUN_004da9c0(undefined4 param_1)
       else {
         iVar3 = 0;
       }
+
       iVar4 = thunk_FUN_004e60d0(uVar8,iVar3);
       iVar3 = DAT_00798f74;
       if ((uint)(*(int *)(&DAT_00798f6c + iVar4 * 4) + piVar11[3]) <=
@@ -152,6 +153,7 @@ LAB_004dabff:
                      g_bulkInitializedRecords_008087C7[bVar1].field_0023;
           }
           if (bVar12) {
+
             iVar3 = thunk_FUN_004e60d0((int)local_8,iVar3);
             uVar7 = (&DAT_00798f74)[iVar3];
             if ((g_playSystem_00802A38->field_00E4 < piVar11[3] + uVar7) &&
@@ -216,8 +218,10 @@ LAB_004dad15:
                  (((int)pbVar9 < 0x808a71 &&
                   (((g_playSystem_00802A38 == nullptr || (*pbVar9 < 8)) &&
                    (g_playSystem_00802A38->field_00E4 <= *local_20)))))) {
+
                 local_30 = thunk_FUN_004e60d0(local_14,iVar3);
                 local_30 = local_30 + 1;
+
                 iVar4 = thunk_FUN_004e60d0(uVar8,iVar3);
                 iVar3 = local_24;
                 if (local_30 <= iVar4) {
@@ -253,6 +257,7 @@ LAB_004dad15:
             if ((*(char *)(*(int *)(&DAT_007bfc00 + local_EAX_1149 * 4) + iVar3) == '\0') &&
                (*piVar11 == 0)) {
               local_50.arg1.words.low = (word)iVar3;
+
               uVar5 = thunk_FUN_004e60d0(uVar7,iVar3);
               local_50.arg1.words.high = (short)uVar5 + 1;
               /* ST_CALLSITE[004DAE78]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */

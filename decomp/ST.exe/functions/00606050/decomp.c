@@ -28,8 +28,8 @@ STExplosion::sub_00606050
   STMessage local_b0;
   int local_90 [6];
   int local_78;
-  undefined4 local_74;
-  undefined4 local_70 [5];
+  uint local_74;
+  uint local_70 [5];
   uint local_5c;
   int local_58;
   int local_54;
@@ -39,9 +39,9 @@ STExplosion::sub_00606050
   uint local_44;
   uint local_40;
   uint local_3c;
-  undefined4 local_38;
+  uint local_38;
   uint local_34;
-  undefined1 local_30;
+  byte local_30;
   byte local_2f;
   uint *local_2e;
   int local_28;
@@ -62,7 +62,9 @@ STExplosion::sub_00606050
   if (param_4 == 0x21) {
     this->field_02B7 = param_7;
   }
+
   local_74 = thunk_FUN_00606a50((Global_sub_00606A50_param_1Enum)param_5);
+
   local_14 = thunk_FUN_00607ee0(param_4,&local_10,&local_78,&local_28,&local_1c,&local_24);
   if (0 < local_24) {
     local_18 = local_24;
@@ -302,7 +304,9 @@ LAB_006065f8:
       }
       iVar6 = iVar6 - uVar3;
 switchD_00606490_default:
+
       uVar3_mg10 = FUN_006aff50(local_40);
+
       uVar2 = FUN_006aff5b(local_40);
       local_4c = (int)(uVar2 * iVar6) / 10000 + param_2;
       local_50 = (int)(uVar3_mg10 * iVar6) / 10000 + param_1;

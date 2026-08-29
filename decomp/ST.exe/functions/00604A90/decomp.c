@@ -23,11 +23,11 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
   uint uVar11;
   uint *puVar12;
   uint *puVar13;
-  AnonShape_00604A90_035626E6 *pAVar14;
+  RecoveredRecordView_00604A90_D1F27465 *pRVar14;
   uint *puVar15;
   HoloTy **local_b4;
   InternalExceptionFrame local_8c;
-  AnonShape_00604A90_035626E6 *local_48;
+  RecoveredRecordView_00604A90_D1F27465 *local_48;
   uint *local_44;
   uint *local_3c [3];
   int local_30;
@@ -38,8 +38,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079cc18;
   puStack_10 = &LAB_0072d964;
@@ -49,17 +48,19 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
   ExceptionList = &local_14;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,2);
   local_1c = &stack0xffffff40;
   if (iVar3 == 0) {
     *param_1 = 0;
     local_1c = &stack0xffffff40;
+
     local_48 = Library::DKW::LIB::MemAlloc(0xe2);
     *param_1 = 0xe2;
     this->field_01E1 = 1;
     puVar8 = (byte *)&this->field_0x1d5;
-    pAVar14 = local_48;
-    memmove(pAVar14, puVar8, 0x40); /* compiler REP MOVS byte copy */
+    pRVar14 = local_48;
+    memmove(pRVar14, puVar8, 0x40); /* compiler REP MOVS byte copy */
     iVar9 = 0;
     *(undefined4 *)&local_48->field_0x40 = this->field_0215;
     ppHVar6 = &this->field_0219;
@@ -75,9 +76,11 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
     local_48->field_00A9 = this->field_027E;
     if ((uint *)this->field_0215 != nullptr) {
       local_3c[0] = nullptr;
+
       local_3c[0] = FUN_006b0020((uint *)this->field_0215,(int *)&local_20);
       uVar11 = *param_1 + local_20 + 4;
       *param_1 = uVar11;
+
       local_48 = Library::DKW::LIB::MemRealloc(local_48,uVar11);
       *(uint *)((*param_1 - local_20) + -4 + (int)local_48) = local_20;
       puVar12 = local_3c[0];
@@ -101,8 +104,9 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
           if (this_00 != nullptr) {
             *(int **)(&stack0xffffff3c + iVar4) = local_2c;
             *(undefined4 *)(&stack0xffffff38 + iVar4) = 0x604c70;
-            local_3c[0] = (uint *)thunk_FUN_0062af40(this_00,*(undefined4 **)
-                                                              (&stack0xffffff3c + iVar4));
+
+            local_3c[0] = STPointerBoundaryCast<uint *>(thunk_FUN_0062af40(this_00,*(undefined4 **)
+                                                              (&stack0xffffff3c + iVar4)));
             iVar9 = iVar9 + 4 + local_2c[0];
             puVar8[1] = local_2c[0];
             *puVar8 = local_3c[0];
@@ -115,8 +119,9 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
       uVar11 = *param_1;
       *param_1 = uVar11 + iVar9;
       *(uint *)(&stack0xffffff3c + iVar4) = uVar11 + iVar9;
-      *(AnonShape_00604A90_035626E6 **)(&stack0xffffff38 + iVar4) = local_48;
+      *(RecoveredRecordView_00604A90_D1F27465 **)(&stack0xffffff38 + iVar4) = local_48;
       *(undefined4 *)(&stack0xffffff34 + iVar4) = 0x604cbb;
+
       local_48 = Library::DKW::LIB::MemRealloc
                            (*(void **)(&stack0xffffff38 + iVar4),*(uint *)(&stack0xffffff3c + iVar4)
                            );
@@ -155,6 +160,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
       puVar5 = local_1c;
     }
     local_1c = puVar5;
+
     iVar7 = ReportDebugMessage("E:\\__titans\\nick\\to_Expl.cpp",0x2df,0,iVar3,"%s");
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */

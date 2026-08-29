@@ -35,6 +35,7 @@ void __thiscall CPanelTy::sub_004FAE90(CPanelTy *this,uint *param_1,ushort param
     if (((((iVar4 <= (int)uVar3) && ((int)uVar3 < this->field_0078 + iVar4)) &&
          (iVar1 <= (int)uVar2)) && (((int)uVar2 < this->field_00D0 + iVar1 && (DAT_00808784 == 0))))
        && ((DAT_00808788 == 0 && ((DAT_0080878c == 0 && (DAT_00808790 == 0)))))) {
+
       iVar4 = ST3DSMAPContext::sub_006E68C0
                         (g_sT3DSMAPContext_00807598,(uVar3 - iVar4) + -5,(uVar2 - iVar1) + -7,
                          (int *)&param_1,&local_8);
@@ -50,7 +51,9 @@ void __thiscall CPanelTy::sub_004FAE90(CPanelTy *this,uint *param_1,ushort param
           if (local_c < 0) {
             local_c = 2;
           }
-          thunk_FUN_0054edf0((undefined4 *)0x14,(uint *)&local_14,0,0xffffffff);
+          /* ST_CALLSITE[004FAF86]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+          STPlaySystemC::sub_0054EDF0
+                    (g_playSystem_00802A38,(undefined4 *)0x14,(uint *)&local_14,0,0xffffffff);
         }
       }
     }

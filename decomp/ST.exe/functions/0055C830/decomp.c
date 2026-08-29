@@ -28,13 +28,11 @@ FUN_0055c830(void *this,Global_sub_0055C830_param_1Enum param_1,byte *param_2,un
   bool bVar10;
   CHAR local_688 [512];
   char local_488 [63];
-  undefined1 local_449;
+  byte local_449;
   char local_448 [259];
-  undefined1 local_345;
-  byte local_34 [15];
-  undefined1 local_25;
-  byte *local_f;
-  undefined4 local_b;
+  byte local_345;
+  RecoveredRecord_005A2A60_B7FE2E93 local_34;
+  uint local_b;
   byte *pbVar9_mg0;
   byte *pbVar8_mg0;
   byte *pbVar8_mg1;
@@ -46,13 +44,14 @@ FUN_0055c830(void *this,Global_sub_0055C830_param_1Enum param_1,byte *param_2,un
     case CASE_1:
     case CASE_2:
       if ((STField<char>(this,9) == '\0') && (g_fSGS_0081174C != nullptr)) {
-        Library::MSVCRT::_strncpy((char *)local_34,(char *)param_4,0x10);
-        local_25 = 0;
+        Library::MSVCRT::_strncpy((char *)&local_34,(char *)param_4,0x10);
+        local_34.field_000F = 0;
+
         Library::MSVCRT::FUN_0072ee80(param_5,(byte *)"%4s%d%d%d%d");
-        local_f = param_2;
+        local_34.field_0025 = param_2;
         local_b = param_3;
         /* ST_CALLSITE[0055CE81]: CALL 0x00404269; direct=00404269 FSGSTy::AddPlayer */
-        FSGSTy::AddPlayer(g_fSGS_0081174C,(undefined4 *)local_34);
+        FSGSTy::AddPlayer(g_fSGS_0081174C,(undefined4 *)&local_34);
         uVar4 = 0xffffffff;
         pbVar6 = pbVar8_mg0;
         do {
@@ -74,10 +73,10 @@ LAB_0055cf74:
       break;
     case CASE_3:
       if ((STField<char>(this,9) == '\0') && (g_fSGS_0081174C != nullptr)) {
-        Library::MSVCRT::_strncpy((char *)local_34,(char *)param_4,0x10);
-        local_25 = 0;
+        Library::MSVCRT::_strncpy((char *)&local_34,(char *)param_4,0x10);
+        local_34.field_000F = 0;
         /* ST_CALLSITE[0055CF1E]: CALL 0x00403ae4; direct=00403AE4 FSGSTy::DelPlayer */
-        FSGSTy::DelPlayer(g_fSGS_0081174C,local_34);
+        FSGSTy::DelPlayer(g_fSGS_0081174C,(byte *)&local_34);
         uVar4 = 0xffffffff;
         pbVar6 = pbVar8_mg0;
         do {
@@ -114,6 +113,7 @@ LAB_0055cf74:
         bVar1 = *pbVar6_mg1;
         pbVar6_mg1 = pbVar6_mg1 + 1;
       } while (bVar1 != 0);
+      /* ST_CALLSITE[0055C8A6]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=/winnt.h/LPSTR; source view only; no Ghidra override */
       param_2 = Library::DKW::LIB::MemAlloc(~uVar4 + ~uVar5 + 4);
       if (param_2 != nullptr) {
         /* ST_CALLSITE[0055C8C1]: CALL dword ptr [0x0085bde8] */
@@ -199,6 +199,7 @@ LAB_0055c9c5:
         bVar1 = *pbVar9_mg0;
         pbVar9_mg0 = pbVar9_mg0 + 1;
       } while (bVar1 != 0);
+
       param_2 = Library::DKW::LIB::MemAlloc(~uVar4 + ~uVar5 + 4);
       if (param_2 != nullptr) {
         pcVar4_mg6 = LoadResourceString(0x2576,g_hINSTANCE_00807618);
@@ -247,12 +248,12 @@ LAB_0055c9c5:
       break;
     case CASE_9:
       if ((STField<char>(this,9) == '\0') && (g_fSGS_0081174C != nullptr)) {
-        Library::MSVCRT::_strncpy((char *)local_34,(char *)param_4,0x10);
-        local_25 = 0;
-        local_f = param_2;
+        Library::MSVCRT::_strncpy((char *)&local_34,(char *)param_4,0x10);
+        local_34.field_000F = 0;
+        local_34.field_0025 = param_2;
         local_b = param_3;
         /* ST_CALLSITE[0055CFCB]: CALL 0x00404a75; direct=00404A75 FSGSTy::ChangePlayer */
-        FSGSTy::ChangePlayer(g_fSGS_0081174C,local_34);
+        FSGSTy::ChangePlayer(g_fSGS_0081174C,&local_34);
         return;
       }
       break;

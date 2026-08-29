@@ -18,7 +18,7 @@
    post-CALL EAX reads alone do not prove a source-level return value; machine CFG audit: used=1,
    ignored=2, unknown=0 */
 
-void __cdecl StartStrateg(AnonShape_00648C10_30A1BBFD *strategData,uint param_2)
+void __cdecl StartStrateg(RecoveredRecordView_00648C10_4BE0A791 *strategData,uint param_2)
 
 {
   int errorCode;
@@ -26,12 +26,13 @@ void __cdecl StartStrateg(AnonShape_00648C10_30A1BBFD *strategData,uint param_2)
   int iVar3;
   InternalExceptionFrame local_50;
   int local_c;
-  AnonShape_00648C10_30A1BBFD *local_8;
+  RecoveredRecordView_00648C10_4BE0A791 *local_8;
 
   local_8 = nullptr;
   local_c = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
+
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (errorCode == 0) {
     if ((((g_playSystem_00802A38 == nullptr) ||
@@ -49,6 +50,7 @@ void __cdecl StartStrateg(AnonShape_00648C10_30A1BBFD *strategData,uint param_2)
     strategData->field_0067 = (short)g_bulkInitializedRecords_008087C7[param_2].field_0024;
     strategData->field_0069 = (short)g_bulkInitializedRecords_008087C7[param_2].field_0028;
     strategData->field_006B = (short)g_bulkInitializedRecords_008087C7[param_2].field_002C;
+
     Library::Ourlib::SAPP::FUN_006e6200
               (g_playSystem_00802A38,0x402,(undefined4 *)(param_2 + 0x29),nullptr,
                nullptr,strategData,0);
@@ -59,6 +61,7 @@ void __cdecl StartStrateg(AnonShape_00648C10_30A1BBFD *strategData,uint param_2)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_creat.cpp",0x5f,0,errorCode,"%s",
                              "StartStrateg");
   if (iVar3 != 0) {

@@ -35,7 +35,7 @@ LAB_004409cf:
 LAB_004409ed:
 004409ED  8B 10                     MOV EDX,dword ptr [EAX]
 004409EF  8B C8                     MOV ECX,EAX
-004409F1  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+004409F1  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004409F4  83 F8 33                  CMP EAX,0x33
 004409F7  75 59                     JNZ 0x00440a52
 004409F9  8D 04 B6                  LEA EAX,[ESI + ESI*0x4]
@@ -62,7 +62,7 @@ LAB_00440a1f:
 00440A2F  85 C9                     TEST ECX,ECX
 00440A31  74 1A                     JZ 0x00440a4d
 00440A33  8B 11                     MOV EDX,dword ptr [ECX]
-00440A35  FF 52 0C                  CALL dword ptr [EDX + 0xc]
+00440A35  FF 52 0C                  CALL dword ptr [EDX + 0xc]  ; [STIndirectCallsiteApplier] exact slot 0xC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 00440A38  83 F8 04                  CMP EAX,0x4
 00440A3B  75 10                     JNZ 0x00440a4d
 00440A3D  8B 55 10                  MOV EDX,dword ptr [EBP + 0x10]

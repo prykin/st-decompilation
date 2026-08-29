@@ -51,7 +51,7 @@ void __thiscall st::fn_00568C50(SoundClassTy *this)
       }
       st::fn_006C1CE0
                 (pSVar2->field_0E03,
-                 DAT_0080730a - (int)((DAT_0080730a + 4000) * uVar5) / (int)pSVar2->field_0DFB);
+                 DAT_0080730a - st::storage_bit_cast<int>(static_cast<uint32_t>((DAT_0080730a + 4000) * uVar5)) / (int)pSVar2->field_0DFB);
       g_currentExceptionFrame = local_50.previous;
       return;
     }
@@ -60,4 +60,3 @@ void __thiscall st::fn_00568C50(SoundClassTy *this)
   g_currentExceptionFrame = local_50.previous;
   return;
 }
-

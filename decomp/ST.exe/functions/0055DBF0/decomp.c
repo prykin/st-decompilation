@@ -28,19 +28,23 @@ void __cdecl DarkScreen(DDXContext *param_1,int param_2,int param_3)
 {
   int errorCode;
   int iVar2;
-  undefined4 local_448 [256];
+  uint local_448 [256];
   InternalExceptionFrame local_48;
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
+
   errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (errorCode == 0) {
+
     FUN_006b0ba0(param_1,local_448,0,0x100);
+
     Library::Ourlib::PALETTE::FUN_007192d0((undefined4 *)param_1,local_448,0,0x100,param_2,param_3);
     g_currentExceptionFrame = local_48.previous;
     return;
   }
   g_currentExceptionFrame = local_48.previous;
+
   iVar2 = ReportDebugMessage("E:\\__titans\\paltool.cpp",0x1d,0,errorCode,"%s",
                              "DarkScreen");
   if (iVar2 != 0) {

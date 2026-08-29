@@ -18,6 +18,7 @@ int FUN_006b4640(DDXContext *param_1,int param_2,int param_3,BITMAPINFO *param_4
 
   uVar1 = (param_4->bmiHeader).biHeight;
   uVar3 = (int)uVar1 >> 0x1f;
+
   iVar2 = Library::DKW::DDX::FUN_006b42d0
                     (param_1,param_2,param_3,param_4,param_5,0,0,(param_4->bmiHeader).biWidth,
                      (uVar1 ^ uVar3) - uVar3);

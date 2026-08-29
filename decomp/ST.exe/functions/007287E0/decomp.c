@@ -1,7 +1,10 @@
-#include "../../pseudocode_runtime.h"
 
+/* [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=12,
+   ignored=0, unknown=0 */
 
-undefined4 FUN_007287e0(int *param_1,int param_2)
+int FUN_007287e0(int *param_1,int param_2)
 
 {
   int iVar1;

@@ -31,14 +31,13 @@ FUN_006d0cf0(AnonShape_006D0CF0_F5F86399 *param_1,int param_2,int param_3,
   int local_30;
   int local_2c;
   int local_28;
-  undefined4 local_24;
+  uint local_24;
   uint local_20;
   byte *local_1c;
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079daa0;
   puStack_10 = &LAB_0072d964;
@@ -55,7 +54,8 @@ FUN_006d0cf0(AnonShape_006D0CF0_F5F86399 *param_1,int param_2,int param_3,
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_5 == nullptr) {
     ExceptionList = &local_14;
-    param_5 = (char *)FUN_006b4fa0((int *)param_4);
+
+    param_5 = STPointerBoundaryCast<char *>(FUN_006b4fa0((RecoveredRecord_006B4FA0_DAC3A217 *)param_4));
     puVar1 = local_1c;
   }
   local_1c = puVar1;
@@ -66,6 +66,7 @@ FUN_006d0cf0(AnonShape_006D0CF0_F5F86399 *param_1,int param_2,int param_3,
   local_28 = param_9;
   local_34 = iVar5;
   local_30 = iVar4;
+
   iVar2 = FUN_006cfeb0(&local_34,&local_34,(int *)&param_1->field_0x484);
   if (iVar2 != 0) {
     param_1->field_0050 =
@@ -75,6 +76,7 @@ FUN_006d0cf0(AnonShape_006D0CF0_F5F86399 *param_1,int param_2,int param_3,
     local_48 = param_7 + (local_30 - iVar4);
     local_44 = local_2c;
     local_40 = local_28;
+
     iVar2 = FUN_006d0680((RecoveredSourceFamily_dibcopy *)&param_1->field_0x4c,&local_34,&local_20,
                          param_4,&local_4c,local_3c);
     if (iVar2 != 0) {
@@ -95,7 +97,7 @@ FUN_006d0cf0(AnonShape_006D0CF0_F5F86399 *param_1,int param_2,int param_3,
         return local_24;
       }
       FUN_006d13c0(puVar3,local_20,(byte *)(param_5 + local_4c + iVar2),local_3c[0],local_2c,
-                   local_28,param_1->field_04C0,param_10);
+                   local_28,(void *)param_1->field_04C0,param_10);
       ExceptionList = local_14;
       return local_24;
     }

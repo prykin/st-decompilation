@@ -17,18 +17,20 @@ FUN_004de820:
 004DE84E  68 73 02 00 00            PUSH 0x273
 004DE853  6A 03                     PUSH 0x3
 004DE855  8B CF                     MOV ECX,EDI
-004DE857  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]
+004DE857  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]  ; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4
 004DE85D  66 8B 47 30               MOV AX,word ptr [EDI + 0x30]
 004DE861  8A 4F 24                  MOV CL,byte ptr [EDI + 0x24]
 004DE864  50                        PUSH EAX
 004DE865  51                        PUSH ECX
 004DE866  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 004DE86C  33 DB                     XOR EBX,EBX
-004DE86E  E8 86 74 F2 FF            CALL 0x00405cf9
+FUN_004de820::override::prt_4de86e_e820036f:
+004DE86E  E8 86 74 F2 FF            CALL 0x00405cf9  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STGroupC; signature=__stdcall;pointer:/STGroupC;/char;/ushort
 004DE873  85 C0                     TEST EAX,EAX
 004DE875  0F 84 0B 01 00 00         JZ 0x004de986
 004DE87B  8B C8                     MOV ECX,EAX
-004DE87D  E8 33 45 F2 FF            CALL 0x00402db5
+FUN_004de820::override::prt_4de87d_66359455:
+004DE87D  E8 33 45 F2 FF            CALL 0x00402db5  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__thiscall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/STGroupC
 004DE882  8B F0                     MOV ESI,EAX
 004DE884  85 F6                     TEST ESI,ESI
 004DE886  89 75 F8                  MOV dword ptr [EBP + -0x8],ESI
@@ -39,7 +41,8 @@ FUN_004de820:
 004DE89A  8D 55 FC                  LEA EDX,[EBP + -0x4]
 004DE89D  8B CE                     MOV ECX,ESI
 004DE89F  89 5E 04                  MOV dword ptr [ESI + 0x4],EBX
-004DE8A2  E8 E9 28 1D 00            CALL 0x006b1190
+FUN_004de820::override::prt_4de8a2_43b7677c:
+004DE8A2  E8 E9 28 1D 00            CALL 0x006b1190  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STAllPlayersC; signature=__fastcall;pointer:/STAllPlayersC;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/byte
 004DE8A7  85 C0                     TEST EAX,EAX
 004DE8A9  0F 8C CD 00 00 00         JL 0x004de97c
 LAB_004de8af:

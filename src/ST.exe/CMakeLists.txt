@@ -202,7 +202,6 @@ add_library(st_recovered OBJECT
     source/recovered/by_address/0070.cpp
     source/recovered/by_address/0071.cpp
     source/recovered/by_address/0072.cpp
-    source/recovered/by_address/0074.cpp
     source/recovered/by_address/0075.cpp
     source/recovered/by_address/0076.cpp
     source/recovered/by_owner/AiBossClassTy.cpp
@@ -215,7 +214,6 @@ add_library(st_recovered OBJECT
     source/recovered/by_owner/BldBoatPanelTy.cpp
     source/recovered/by_owner/BldLabPanelTy.cpp
     source/recovered/by_owner/BldObjPanelTy.cpp
-    source/recovered/by_owner/CBaseRenderer.cpp
     source/recovered/by_owner/CGenerate.cpp
     source/recovered/by_owner/CPanelTy.cpp
     source/recovered/by_owner/CampaignTy.cpp
@@ -231,6 +229,7 @@ add_library(st_recovered OBJECT
     source/recovered/by_owner/HelpStringTy.cpp
     source/recovered/by_owner/InterSystemC.cpp
     source/recovered/by_owner/JumpManagC.cpp
+    source/recovered/by_owner/ListClassTy.cpp
     source/recovered/by_owner/MAdvTy.cpp
     source/recovered/by_owner/MMObjTy.cpp
     source/recovered/by_owner/MMsgTy.cpp
@@ -241,14 +240,9 @@ add_library(st_recovered OBJECT
     source/recovered/by_owner/OptPanelTy.cpp
     source/recovered/by_owner/OpticClassC.cpp
     source/recovered/by_owner/PlayPanelTy.cpp
+    source/recovered/by_owner/PopUpTy.cpp
     source/recovered/by_owner/PrividerTy.cpp
     source/recovered/by_owner/RadioClassTy.cpp
-    source/recovered/by_owner/RecoveredClass_0074756B.cpp
-    source/recovered/by_owner/RecoveredClass_00747874.cpp
-    source/recovered/by_owner/RecoveredClass_00748A83.cpp
-    source/recovered/by_owner/RecoveredClass_0074A95F.cpp
-    source/recovered/by_owner/RecoveredClass_0074CDC5.cpp
-    source/recovered/by_owner/RecoveredClass_0074CFC0.cpp
     source/recovered/by_owner/ResearchPanelTy.cpp
     source/recovered/by_owner/ST3DSMAPContext.cpp
     source/recovered/by_owner/STAllPlayersC.cpp
@@ -296,34 +290,34 @@ add_library(st_recovered OBJECT
     source/recovered/by_owner/SoundManagerTy.cpp
     source/recovered/by_owner/SpriteClassTy.cpp
     source/recovered/by_owner/StartSystemTy.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00416270.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_004167A0.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_004248D0.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_004603B0.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00493610.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0054A9B0.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0055C320.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00567510.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00568010.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00568940.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0056A130.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00573260.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00601500.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00636260.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00644410.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0064A970.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0065DA50.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0065ED90.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00664540.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00678E00.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00693D00.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_006CEC40.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_006F31D0.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00702510.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00714CE0.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00727C80.cpp
-    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00728640.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00416270.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_004167A0.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_004248D0.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00493610.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_0053F510.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_0054A9B0.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_0055C320.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00567510.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00568010.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00568940.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_0056A130.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00573260.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00601500.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_0060EF40.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00636260.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00644410.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_0064A970.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_0065DA50.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_0065ED90.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00664540.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00678E00.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00693B20.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_006CEC40.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_006F31D0.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00702510.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00714CE0.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00727C80.cpp
+    source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00728640.cpp
     source/recovered/by_owner/SystemClassTy.cpp
     source/recovered/by_owner/SystemWithNamedObjClassTy.cpp
     source/recovered/by_owner/TLOBaseTy.cpp

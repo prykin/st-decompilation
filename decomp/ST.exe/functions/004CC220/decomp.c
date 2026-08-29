@@ -6,7 +6,7 @@
    Diagnostic line evidence: 853 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-undefined4 __fastcall FUN_004cc220(AnonShape_004CC220_7DEF08C7 *param_1)
+undefined4 __fastcall FUN_004cc220(RecoveredRecordView_004CC220_46678B9C *param_1)
 
 {
   uint uVar1;
@@ -19,7 +19,8 @@ undefined4 __fastcall FUN_004cc220(AnonShape_004CC220_7DEF08C7 *param_1)
   uVar1 = param_1->field_001C * 0x41c64e6d + 0x3039;
   param_1->field_001C = uVar1;
   param_1->field_0450 = (uVar1 >> 0x10) % 0x33 + g_playSystem_00802A38->field_00E4;
-  pSVar2 = (STT3DSprC *)Library::MSVCRT::FUN_0072e530(0x40);
+  /* ST_CALLSITE[004CC26C]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint */
+  pSVar2 = Library::MSVCRT::FUN_0072e530(0x40);
   if (pSVar2 == nullptr) {
     pSVar2 = nullptr;
   }

@@ -127,7 +127,7 @@ LAB_004ef44e:
 LAB_004ef467:
 004EF467  8B 86 90 01 00 00         MOV EAX,dword ptr [ESI + 0x190]
 004EF46D  50                        PUSH EAX
-004EF46E  E8 2D BF 21 00            CALL 0x0070b3a0
+004EF46E  E8 2D BF 21 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 004EF473  8B 4E 68                  MOV ECX,dword ptr [ESI + 0x68]
 004EF476  50                        PUSH EAX
 004EF477  6A 06                     PUSH 0x6

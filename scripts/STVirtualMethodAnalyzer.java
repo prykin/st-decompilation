@@ -47,6 +47,7 @@ import ghidra.program.model.symbol.Symbol;
 
 public class STVirtualMethodAnalyzer extends GhidraScript {
     private static final String TABLE_MARKER = "[STVTableApplier]";
+    private static final String METHOD_OWNER_TAG = "RECOVERED_METHOD_OWNER";
     private static final String[] LIBRARY_TAG_PREFIXES = { "LIBRARY", "LIBRARY_" };
     private static final String VTABLE_ROOT = "/SubmarineTitans/Recovered/VTables/";
     private static final Pattern MEMORY_OPERAND = Pattern.compile(
@@ -296,6 +297,17 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
         MethodName currentMethod = methodName(function);
         String owner = currentMethod == null ? "" : currentMethod.owner;
         String method = currentMethod == null ? "" : currentMethod.method;
+        String protectedOwner = protectedMethodOwner(function);
+        boolean protectedOwnerConflict = !protectedOwner.isBlank() &&
+            (tableOwners.size() != 1 ||
+                !tableOwners.iterator().next().equals(protectedOwner));
+        if (currentMethod == null && !protectedOwner.isBlank()) {
+            owner = protectedOwner;
+            method = function.getName();
+        }
+        if (protectedOwnerConflict)
+            reasons.add("protected_method_owner_conflicts_with_physical_table_owner=" +
+                protectedOwner + " vs " + join(tableOwners));
         Family family = familyKeys.size() == 1 ? families.get(familyKeys.iterator().next()) : null;
         if (familyKeys.size() > 1) reasons.add("target_used_by_multiple_slot_families");
 
@@ -316,6 +328,11 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
         CallFamilyEvidence callEvidence = family == null ? null : callFamilies.get(family.key);
         ReceiverExtent receiverExtent = incomingReceiverExtent(function);
         Structure ownerStructure = structure(ownerTypePath);
+        boolean structuralVtableOwnership = currentMethod == null &&
+            tableOwners.size() == 1 && slotOffsets.size() == 1 &&
+            !owner.isBlank() && ownerStructure != null &&
+            "__thiscall".equals(function.getCallingConventionName()) &&
+            receiverExtent.extent <= ownerStructure.getLength();
         boolean callableOwnership = currentMethod == null && familyKeys.size() == 1 &&
             tableOwners.size() == 1 && callEvidence != null &&
             callEvidence.calls.size() >= 3 && callEvidence.callerOwners.size() >= 2 &&
@@ -327,6 +344,9 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
                 " caller_families=" + callEvidence.callerOwners.size() +
                 " receiver_extent=" + receiverExtent.extent + "/" +
                 ownerStructure.getLength());
+        if (structuralVtableOwnership)
+            reasons.add("unique_physical_vtable_owner_and_slot; receiver_extent=" +
+                receiverExtent.extent + "/" + ownerStructure.getLength());
 
         if (currentMethod == null) {
             if (tableOwners.size() == 1) {
@@ -347,9 +367,12 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
 
         boolean placeholder = method.startsWith("vfunc_") || method.isBlank() || owner.isBlank();
         String proposedName = owner.isBlank() || method.isBlank() ? "" : owner + "::" + method;
-        boolean nameApply = currentMethod == null && !placeholder && family != null &&
+        boolean nameApply = currentMethod == null &&
+            !protectedOwnerConflict &&
+            (!placeholder || structuralVtableOwnership) &&
             tableOwners.size() == 1 && safeAutomaticName(function) &&
-            (family.namedMethods.size() == 1 || callableOwnership);
+            (structuralVtableOwnership || family != null &&
+                (family.namedMethods.size() == 1 || callableOwnership));
 
         AnchorChoice anchorChoice = chooseAnchor(family, familyMethod, function);
         if (anchorChoice.anchor != null)
@@ -360,26 +383,50 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
         // A structural fallback is deliberately weaker than a family anchor.
         // Do not use it to bypass evidence that the same slot family has
         // competing, incompatible prototypes.
-        StructuralSignature structural = anchorChoice.anchor == null &&
-            !anchorChoice.conflict.startsWith("competing_") && callableOwnership ?
-                physicalSlotSignature(candidate, function, ownerTypePath,
-                    callEvidence) : null;
+        // A slot-family ABI is not evidence for an otherwise anonymous method merely
+        // because all related tables use the same slot number.  Structural ownership
+        // proves only the namespace and the automatic this pointee.  Preserve the
+        // target's current return and explicit parameters before considering any of
+        // the generic leaf/family fallbacks; otherwise a neighbouring implementation
+        // can silently replace an already accepted physical-slot ABI.
+        boolean structuralPlaceholder = structuralVtableOwnership && placeholder;
+        Anchor effectiveAnchor = structuralPlaceholder ? null : anchorChoice.anchor;
+        if (structuralPlaceholder && anchorChoice.anchor != null)
+            reasons.add("slot_family_signature_anchor_ignored_for_structural_placeholder");
+        StructuralSignature structural = structuralPlaceholder ?
+            retainedStructuralSignature(function,
+                "unique physical vtable owner and slot type only the existing " +
+                    "__thiscall receiver; explicit parameters and return are retained") :
+            anchorChoice.anchor == null &&
+                !anchorChoice.conflict.startsWith("competing_") && callableOwnership ?
+                    physicalSlotSignature(candidate, function, ownerTypePath,
+                        callEvidence) : null;
         if (structural == null && anchorChoice.anchor == null &&
                 !anchorChoice.conflict.startsWith("competing_"))
             structural = receiverOnlyLeafSignature(function);
         if (structural == null && anchorChoice.anchor == null &&
                 !anchorChoice.conflict.startsWith("competing_"))
             structural = stackCleanupLeafSignature(function, family);
-        boolean anchoredSignatureApply = family != null && anchorChoice.anchor != null &&
+        if (structural == null && anchorChoice.anchor == null &&
+                !anchorChoice.conflict.startsWith("competing_") &&
+                structuralVtableOwnership)
+            structural = retainedStructuralSignature(function,
+                "unique physical vtable owner and slot type only the existing " +
+                    "__thiscall receiver; explicit parameters and return are retained");
+        boolean anchoredSignatureApply = family != null && effectiveAnchor != null &&
+            !protectedOwnerConflict &&
             !signatureManual && !owner.isBlank() && !ownerTypePath.isBlank() &&
-            !signatureMatches(function, anchorChoice.anchor.function);
-        boolean structuralSignatureApply = family != null && structural != null &&
+            !signatureMatches(function, effectiveAnchor.function);
+        boolean structuralSignatureApply = (family != null || structuralVtableOwnership) &&
+            !protectedOwnerConflict &&
+            structural != null &&
             tableOwners.size() == 1 && !signatureManual && !owner.isBlank() &&
             !ownerTypePath.isBlank() && !structuralSignatureMatches(function, structural);
         boolean signatureApply = anchoredSignatureApply || structuralSignatureApply;
         if (structuralSignatureApply)
             reasons.add(structural.evidence);
         boolean conventionApply = family != null && family.namedMethods.size() == 1 &&
+            !protectedOwnerConflict &&
             family.hasNamedThiscallAnchor && !signatureManual && !owner.isBlank() &&
             !ownerTypePath.isBlank() &&
             !"__thiscall".equals(function.getCallingConventionName()) &&
@@ -392,7 +439,7 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
 
         String confidence = nameApply || anchoredSignatureApply ? "high" :
             signatureApply || conventionApply ? "medium" : "low";
-        Anchor anchor = anchorChoice.anchor;
+        Anchor anchor = effectiveAnchor;
         String returnType = anchor != null ? anchor.function.getReturnType().getPathName() :
             structural != null ? structural.returnTypePath : "";
         String parameters = anchor != null ? parameterSpecification(anchor.function) :
@@ -524,6 +571,29 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
                 "; current target parameter and return types retained when arity agrees; " +
                     "physical-slot geometry proves receiver/stack ABI only",
             returned.getDisplayName());
+    }
+
+    /**
+     * Moving a synthetic target under the sole physical-vtable owner must not
+     * manufacture a new source ABI.  Preserve every existing explicit
+     * parameter, return, varargs and noreturn property; rebuilding the dynamic
+     * __thiscall signature changes only Ghidra's auto-this pointee from void to
+     * the independently proven owner type.
+     */
+    private StructuralSignature retainedStructuralSignature(Function function,
+            String evidence) {
+        List<String> parameters = new ArrayList<>();
+        int ordinal = 1;
+        for (Parameter parameter : explicitParameters(function)) {
+            String name = parameter.getName();
+            if (name == null || name.isBlank()) name = "param_" + ordinal;
+            parameters.add(name + "=" + parameter.getFormalDataType().getPathName());
+            ordinal++;
+        }
+        DataType returned = function.getReturnType();
+        return new StructuralSignature(returned.getPathName(),
+            String.join(";", parameters), function.hasVarArgs(), function.hasNoReturn(),
+            evidence, returned.getDisplayName());
     }
 
     private String physicalSignatureShape(FunctionDefinition definition) {
@@ -922,6 +992,26 @@ public class STVirtualMethodAnalyzer extends GhidraScript {
         if (owner.equals("Global") || owner.startsWith("Library::") ||
                 upper.endsWith(".DLL") || upper.contains(".DLL::") || synthetic(method)) return null;
         return new MethodName(owner, method);
+    }
+
+    /**
+     * A direct-call owner recovered by STMethodOwnerApplier is independent
+     * evidence about the unadjusted receiver.  A sole physical-table label is
+     * not allowed to move that function into another class: heterogeneous or
+     * secondary table families commonly contain implementations whose source
+     * owner differs from the table's convenient display owner.
+     */
+    private String protectedMethodOwner(Function function) {
+        boolean protectedOwner = false;
+        for (FunctionTag tag : function.getTags())
+            if (METHOD_OWNER_TAG.equals(tag.getName())) {
+                protectedOwner = true;
+                break;
+            }
+        if (!protectedOwner) return "";
+        String qualified = function.getName(true);
+        int separator = qualified.lastIndexOf("::");
+        return separator <= 0 ? "" : qualified.substring(0, separator);
     }
 
     private boolean safeAutomaticName(Function function) {

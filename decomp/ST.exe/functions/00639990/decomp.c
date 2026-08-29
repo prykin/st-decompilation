@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_00639990(AnonShape_00639990_2135AB0A *param_1)
+undefined4 __fastcall FUN_00639990(RecoveredRecordView_00639990_E6B3A3B8 *param_1)
 
 {
   byte *puVar1;
@@ -20,12 +20,14 @@ undefined4 __fastcall FUN_00639990(AnonShape_00639990_2135AB0A *param_1)
     if (iVar2 != 0) {
       return 0xffff;
     }
+
     thunk_FUN_004ac700(puVar1,'\x0f');
     /* ST_CALLSITE[00639B1F]: CALL 0x00403107; direct=00403107 sub_00416240 */
     sub_00416240(param_1,param_1->field_027A,param_1->field_027E,param_1->field_0282);
     /* ST_CALLSITE[00639B28]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
     uVar3 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
     param_1->field_0296 = uVar3;
+
     thunk_FUN_004ac660(puVar1,'\r');
     /* ST_CALLSITE[00639B4D]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     STT3DSprC::StartShow((STT3DSprC *)puVar1,0xd,g_playSystem_00802A38->field_00E4);

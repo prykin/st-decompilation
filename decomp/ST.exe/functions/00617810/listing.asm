@@ -1,6 +1,7 @@
 FUN_00617810:
 00617810  6A 6E                     PUSH 0x6e
-00617812  E8 B9 8C 09 00            CALL 0x006b04d0
+FUN_00617810::override::prt_617812_38008f9e:
+00617812  E8 B9 8C 09 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/JumpManagC; signature=__stdcall;pointer:/JumpManagC;/uint
 00617817  85 C0                     TEST EAX,EAX
 00617819  74 07                     JZ 0x00617822
 0061781B  8B C8                     MOV ECX,EAX

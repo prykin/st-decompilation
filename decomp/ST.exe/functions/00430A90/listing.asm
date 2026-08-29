@@ -47,42 +47,48 @@ LAB_00430b04:
 00430B1F  6A 04                     PUSH 0x4
 00430B21  6A 00                     PUSH 0x0
 00430B23  6A 00                     PUSH 0x0
-00430B25  E8 E6 D7 27 00            CALL 0x006ae310
+STAllPlayersC::GetMessage::override::prt_430b25_b7feeec8:
+00430B25  E8 E6 D7 27 00            CALL 0x006ae310  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint;/uint;/uint
 00430B2A  68 7B 30 40 00            PUSH 0x40307b
 00430B2F  6A 01                     PUSH 0x1
 00430B31  6A 04                     PUSH 0x4
 00430B33  6A 00                     PUSH 0x0
 00430B35  6A 00                     PUSH 0x0
 00430B37  A3 54 A1 7F 00            MOV [0x007fa154],EAX
-00430B3C  E8 CF D7 27 00            CALL 0x006ae310
+STAllPlayersC::GetMessage::override::prt_430b3c_b7feeec8:
+00430B3C  E8 CF D7 27 00            CALL 0x006ae310  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint;/uint;/uint
 00430B41  68 7B 30 40 00            PUSH 0x40307b
 00430B46  6A 01                     PUSH 0x1
 00430B48  6A 04                     PUSH 0x4
 00430B4A  6A 00                     PUSH 0x0
 00430B4C  6A 00                     PUSH 0x0
 00430B4E  A3 58 A1 7F 00            MOV [0x007fa158],EAX
-00430B53  E8 B8 D7 27 00            CALL 0x006ae310
+STAllPlayersC::GetMessage::override::prt_430b53_b7feeec8:
+00430B53  E8 B8 D7 27 00            CALL 0x006ae310  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint;/uint;/uint
 00430B58  68 7B 30 40 00            PUSH 0x40307b
 00430B5D  6A 01                     PUSH 0x1
 00430B5F  6A 04                     PUSH 0x4
 00430B61  6A 00                     PUSH 0x0
 00430B63  6A 00                     PUSH 0x0
 00430B65  A3 5C A1 7F 00            MOV [0x007fa15c],EAX
-00430B6A  E8 A1 D7 27 00            CALL 0x006ae310
+STAllPlayersC::GetMessage::override::prt_430b6a_b7feeec8:
+00430B6A  E8 A1 D7 27 00            CALL 0x006ae310  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint;/uint;/uint
 00430B6F  68 7B 30 40 00            PUSH 0x40307b
 00430B74  6A 01                     PUSH 0x1
 00430B76  6A 04                     PUSH 0x4
 00430B78  6A 00                     PUSH 0x0
 00430B7A  6A 00                     PUSH 0x0
 00430B7C  A3 60 A1 7F 00            MOV [0x007fa160],EAX
-00430B81  E8 8A D7 27 00            CALL 0x006ae310
+STAllPlayersC::GetMessage::override::prt_430b81_b7feeec8:
+00430B81  E8 8A D7 27 00            CALL 0x006ae310  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint;/uint;/uint
 00430B86  68 7B 30 40 00            PUSH 0x40307b
 00430B8B  6A 01                     PUSH 0x1
 00430B8D  6A 04                     PUSH 0x4
 00430B8F  6A 00                     PUSH 0x0
 00430B91  6A 00                     PUSH 0x0
 00430B93  A3 64 A1 7F 00            MOV [0x007fa164],EAX
-00430B98  E8 73 D7 27 00            CALL 0x006ae310
+STAllPlayersC::GetMessage::override::prt_430b98_53a56e69:
+00430B98  E8 73 D7 27 00            CALL 0x006ae310  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STTorpCPtr; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STTorpCPtr;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint;/uint;/uint
 00430B9D  A3 30 A1 7F 00            MOV [0x007fa130],EAX
 00430BA2  A1 54 67 80 00            MOV EAX,[0x00806754]
 00430BA7  85 C0                     TEST EAX,EAX
@@ -107,7 +113,8 @@ LAB_00430bd8:
 00430BDF  6A 04                     PUSH 0x4
 00430BE1  6A 0F                     PUSH 0xf
 00430BE3  6A 00                     PUSH 0x0
-00430BE5  E8 26 D7 27 00            CALL 0x006ae310
+STAllPlayersC::GetMessage::override::prt_430be5_b7feeec8:
+00430BE5  E8 26 D7 27 00            CALL 0x006ae310  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint;/uint;/uint
 00430BEA  68 7B 30 40 00            PUSH 0x40307b
 00430BEF  6A 05                     PUSH 0x5
 00430BF1  6A 04                     PUSH 0x4
@@ -150,7 +157,8 @@ LAB_00430c52:
 00430C59  6A 04                     PUSH 0x4
 00430C5B  6A 0F                     PUSH 0xf
 00430C5D  6A 00                     PUSH 0x0
-00430C5F  E8 AC D6 27 00            CALL 0x006ae310
+STAllPlayersC::GetMessage::override::prt_430c5f_b7feeec8:
+00430C5F  E8 AC D6 27 00            CALL 0x006ae310  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint;/uint;/uint
 00430C64  68 7B 30 40 00            PUSH 0x40307b
 00430C69  6A 05                     PUSH 0x5
 00430C6B  6A 04                     PUSH 0x4
@@ -661,7 +669,8 @@ LAB_004311fc:
 LAB_004311fe:
 004311FE  56                        PUSH ESI
 004311FF  8B CB                     MOV ECX,EBX
-00431201  E8 BC 4A FD FF            CALL 0x00405cc2
+STAllPlayersC::GetMessage::override::prt_431201_281e1bc7:
+00431201  E8 BC 4A FD FF            CALL 0x00405cc2  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STAllPlayersC; signature=__thiscall;pointer:/STAllPlayersC;pointer:/STAllPlayersC;/char
 00431206  46                        INC ESI
 00431207  83 FE 08                  CMP ESI,0x8
 0043120A  7C F2                     JL 0x004311fe
@@ -692,7 +701,8 @@ LAB_00431241:
 00431241  8D 4D E8                  LEA ECX,[EBP + -0x18]
 00431244  51                        PUSH ECX
 00431245  8B CB                     MOV ECX,EBX
-00431247  E8 61 46 FD FF            CALL 0x004058ad
+STAllPlayersC::GetMessage::override::prt_431247_5b8de8a0:
+00431247  E8 61 46 FD FF            CALL 0x004058ad  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__thiscall;pointer:/char;pointer:/STAllPlayersC;pointer:/int
 0043124C  8B 55 E8                  MOV EDX,dword ptr [EBP + -0x18]
 0043124F  8B 0D 38 2A 80 00         MOV ECX,dword ptr [0x00802a38]
 00431255  6A 0C                     PUSH 0xc

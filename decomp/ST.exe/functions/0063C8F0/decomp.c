@@ -37,6 +37,7 @@ int __thiscall FUN_0063c8f0(void *this,int param_1)
       STField<int>(this,0x26e) = STField<int>(this,0x282);
     }
   }
+
   iVar2 = thunk_FUN_0063cb30(this);
   if (((iVar2 == 0) && (STField<int>(this,0x26e) < (int)STField<short>(this,599))) &&
      (STField<char>(this,0x29e) == '\x01')) {

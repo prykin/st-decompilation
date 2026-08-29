@@ -48,9 +48,11 @@ FSGSTy::AddMessage(FSGSTy *this,byte param_1,byte *param_2,char *param_3,byte pa
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_14 = this;
+
   iVar6 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_5c.previous;
+
     iVar10 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x9ec,0,iVar6,
                                 "%s","FSGSTy::AddMessage");
     if (iVar10 == 0) {
@@ -76,6 +78,7 @@ FSGSTy::AddMessage(FSGSTy *this,byte param_1,byte *param_2,char *param_3,byte pa
       cVar2 = *pcVar13_mg0;
       pcVar13_mg0 = pcVar13_mg0 + 1;
     } while (cVar2 != '\0');
+    /* ST_CALLSITE[005A2036]: CALL 0x006aac10; direct=006AAC10 Library::DKW::LIB::MemAllocClear; [STCallResultViewApplier] presentation_only; exact direct-call result=/winnt.h/LPSTR; source view only; no Ghidra override */
     local_c = Library::DKW::LIB::MemAllocClear(~uVar10 + 4);
     if (local_c == nullptr) {
       g_currentExceptionFrame = local_5c.previous;
@@ -101,6 +104,7 @@ FSGSTy::AddMessage(FSGSTy *this,byte param_1,byte *param_2,char *param_3,byte pa
       cVar2 = *pcVar13_mg1;
       pcVar13_mg1 = pcVar13_mg1 + 1;
     } while (cVar2 != '\0');
+
     local_c = Library::DKW::LIB::MemAllocClear(~uVar10 + ~uVar11 + 0xc);
     if (local_c == nullptr) {
       g_currentExceptionFrame = local_5c.previous;
@@ -146,9 +150,11 @@ LAB_005a1fc3:
     if (pDVar7 != nullptr) {
       local_10 = 0;
       local_5 = '\0';
+
       Library::DKW::TBL::FUN_006b5aa0(pDVar7,(char *)local_c);
       this_00 = local_14;
       pDVar8 = (DArrayTy *)
+               /* ST_CALLSITE[005A20E3]: CALL 0x007121f0; direct=007121F0 ccFntTy::FormSarr; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; source view only; no Ghidra override */
                ccFntTy::FormSarr(local_14->array_00BC[0xc].field_01F7,&pDVar7->flags,
                                  " ,.;:!?/\\()[]{}",0x1a6 - local_14->field_1B4C,0,0xffffffff
                                  ,1);
@@ -166,6 +172,7 @@ LAB_005a1fc3:
         pAVar3 = (AnonShape_006B7830_769CA2DF *)this_00->field_1E9E;
         iVar9 = pAVar3->field_0008 + pDVar8->elementSize;
         while (499 < iVar9) {
+
           FUN_006b7830(pAVar3,0);
           pAVar3 = (AnonShape_006B7830_769CA2DF *)this_00->field_1E9E;
           iVar9 = pAVar3->field_0008 + pDVar8->elementSize;
@@ -179,6 +186,7 @@ LAB_005a1fc3:
           do {
             pcVar13 = *(char **)(pDVar8->growCapacity + iVar9 * 4);
 LAB_005a2188:
+
             Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_1E9E,pcVar13);
             iVar9 = iVar9 + 1;
           } while (iVar9 < (int)pDVar8->elementSize);

@@ -21,6 +21,7 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar3 == 0) {
     if ((param_1 != nullptr) && (index = param_1->count, index != 0)) {
@@ -49,11 +50,12 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
             bVar2 = true;
           }
           if ((bVar2) &&
-             /* ST_CALLSITE[0068F719]: CALL 0x00405b23; direct=00405B23 AiTactClassTy::sub_0068E290 */
-             (this_01 = (AiFltClassTy *)sub_0068E290(local_8,this_00->field_081C),
-             this_01 != nullptr)) {
+             /* ST_CALLSITE[0068F719]: CALL 0x00405b23; direct=00405B23 AiTactClassTy::sub_0068E290; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__thiscall;pointer:/AiFltClassTy;pointer:/AiTactClassTy;/short */
+             (this_01 = sub_0068E290(local_8,this_00->field_081C), this_01 != nullptr))
+          {
             /* ST_CALLSITE[0068F727]: CALL 0x00404200; direct=00404200 AiFltClassTy::_AddObjFlt */
-            AiFltClassTy::_AddObjFlt(this_01,(uint)this_00,0);
+            AiFltClassTy::_AddObjFlt(this_01,(RecoveredRecord_0065D760_A4BF8285 *)this_00,0);
+
             DArrayRemoveAt(param_1,index);
           }
         }
@@ -63,6 +65,7 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,DArrayTy *par
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x292,0,iVar3,"%s",
                              "AiTactClassTy::GiveObjByGrpNum");
   if (iVar5 != 0) {

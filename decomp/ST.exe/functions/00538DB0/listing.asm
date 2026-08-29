@@ -73,13 +73,15 @@ LAB_00538e1a:
 00538E5A  50                        PUSH EAX
 00538E5B  6A 01                     PUSH 0x1
 00538E5D  51                        PUSH ECX
-00538E5E  E8 9D 9D 1B 00            CALL 0x006f2c00
+PanelTy::PaintIBut::override::prt_538e5e_c67451d8:
+00538E5E  E8 9D 9D 1B 00            CALL 0x006f2c00  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;pointer:/char;/int;/undefined4
 00538E63  8B 15 94 67 80 00         MOV EDX,dword ptr [0x00806794]
 00538E69  83 C4 10                  ADD ESP,0x10
 00538E6C  50                        PUSH EAX
 00538E6D  6A 01                     PUSH 0x1
 00538E6F  52                        PUSH EDX
-00538E70  E8 7B 0C 1D 00            CALL 0x00709af0
+PanelTy::PaintIBut::override::prt_538e70_46f798ab:
+00538E70  E8 7B 0C 1D 00            CALL 0x00709af0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/int;/SubmarineTitans/Recovered/Enums/Global_mfRLoad_param_2Enum;pointer:/char;/uint;/byte;/int;/int;pointer:/undefined4
 00538E75  8B 5D F8                  MOV EBX,dword ptr [EBP + -0x8]
 00538E78  8B 4E 68                  MOV ECX,dword ptr [ESI + 0x68]
 00538E7B  50                        PUSH EAX
@@ -114,7 +116,8 @@ LAB_00538e1a:
 00538EC4  6A FE                     PUSH -0x2
 00538EC6  51                        PUSH ECX
 00538EC7  52                        PUSH EDX
-00538EC8  E8 73 72 17 00            CALL 0x006b0140
+PanelTy::PaintIBut::override::prt_538ec8_b09bf718:
+00538EC8  E8 73 72 17 00            CALL 0x006b0140  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__stdcall;pointer:/ccFntTy;/WinDef.h/UINT;/WinDef.h/HINSTANCE
 00538ECD  50                        PUSH EAX
 00538ECE  A1 28 2A 80 00            MOV EAX,[0x00802a28]
 00538ED3  8B 48 24                  MOV ECX,dword ptr [EAX + 0x24]

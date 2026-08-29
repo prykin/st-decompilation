@@ -77,7 +77,7 @@ LAB_005cd4fb:
 005CD4FD  6A 60                     PUSH 0x60
 005CD4FF  6A 08                     PUSH 0x8
 005CD501  6A 00                     PUSH 0x0
-005CD503  E8 88 0D 0E 00            CALL 0x006ae290
+005CD503  E8 88 0D 0E 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/SettMapMTy_field_1F84DArray; source view only; no Ghidra override
 005CD508  89 83 84 1F 00 00         MOV dword ptr [EBX + 0x1f84],EAX
 005CD50E  8A 83 26 1E 00 00         MOV AL,byte ptr [EBX + 0x1e26]
 005CD514  3C 0C                     CMP AL,0xc

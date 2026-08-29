@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
+int __thiscall FUN_0062fa80(void *this,RecoveredRecordView_0062FA80_9D6D3E8C *param_1)
 
 {
   short sVar1;
@@ -9,7 +9,7 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
   short sVar3;
   uint uVar4;
   uint uVar5;
-  AnonShape_0062FA80_0B91B2B9 *pAVar6;
+  RecoveredRecordView_0062FA80_9D6D3E8C *pRVar6;
   int local_EAX_76;
   int iVar8;
   int iVar7;
@@ -20,7 +20,7 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
   int local_c;
   int local_8;
 
-  pAVar6 = param_1;
+  pRVar6 = param_1;
   local_c = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == nullptr) {
@@ -31,6 +31,7 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
   STField<undefined4>(this,0x1d9) = uVar4;
   uVar5 = param_1->field_001C;
   STField<undefined4>(this,0x1dd) = uVar5;
+
   local_EAX_76 = thunk_FUN_004961b0(STField<short>(this,0x1d5),(short)uVar4,(short)uVar5);
   if (local_EAX_76 != 0) {
     sVar1 = STField<short>(this,0x1d5);
@@ -57,12 +58,12 @@ int __thiscall FUN_0062fa80(void *this,AnonShape_0062FA80_0B91B2B9 *param_1)
         piVar9 = piVar9 + 1;
         param_1_after_write = param_1_after_write - 1;
       } while (param_1_after_write != 0);
-      STField<undefined4>(this,0x1fa) = *(undefined4 *)&pAVar6->field_0x39;
+      STField<undefined4>(this,0x1fa) = *(undefined4 *)&pRVar6->field_0x39;
       if (local_c == 0) {
         return 0;
       }
       local_8 = 0x3d;
-      puVar10 = (undefined4 *)&pAVar6[1].field_0x1;
+      puVar10 = (undefined4 *)&pRVar6[1].field_0x1;
       piVar9 = (int *)((int)this + 0x1e5);
       param_1_after_write = 0x5;
       do {

@@ -8,10 +8,11 @@ undefined4 FUN_006eb570(int *param_1,AnonShape_006EB570_80B255F3 *param_2)
   uint uVar2;
   char *pcVar3;
   int iVar4;
-  byte *pbVar5;
-  int iVar6;
+  void *pvVar5;
+  byte *pbVar6;
   int iVar7;
   int iVar8;
+  int iVar9;
   int rowCount;
   int local_9c;
   int local_94;
@@ -45,30 +46,29 @@ undefined4 FUN_006eb570(int *param_1,AnonShape_006EB570_80B255F3 *param_2)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   puStack_c = &DAT_0079e1d8;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff44;
   iVar1 = *(int *)param_2;
-  iVar8 = *(int *)&param_2->field_0x4;
+  iVar9 = *(int *)&param_2->field_0x4;
   local_8 = 0;
   if ((*(int *)&param_2->field_0x18 == 0) || (param_2->field_0466 == 0)) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     if (param_1 == nullptr) {
       ExceptionList = &local_14;
-      CopyRows((byte *)param_2->field_04EA,param_2->field_04EE,*(byte **)(iVar8 + 0x474),
-               STField<int>(iVar8,0x478),STField<uint>(iVar1,0xC),STField<int>(iVar1,0x10));
+      CopyRows((byte *)param_2->field_04EA,param_2->field_04EE,*(byte **)(iVar9 + 0x474),
+               STField<int>(iVar9,0x478),STField<uint>(iVar1,0xC),STField<int>(iVar1,0x10));
       ExceptionList = local_14;
       return 0;
     }
-    iVar1 = STField<int>(iVar8,0x478);
-    iVar7 = param_1[1];
-    iVar6 = *param_1;
+    iVar1 = STField<int>(iVar9,0x478);
+    iVar8 = param_1[1];
+    iVar7 = *param_1;
     rowCount = param_1[3];
     uVar2 = param_1[2];
-    pbVar5 = (byte *)(iVar7 * iVar1 + STField<int>(iVar8,0x474) + iVar6);
+    pbVar6 = (byte *)(iVar8 * iVar1 + STField<int>(iVar9,0x474) + iVar7);
     ExceptionList = &local_14;
     local_1c = &stack0xffffff44;
   }
@@ -88,18 +88,19 @@ undefined4 FUN_006eb570(int *param_1,AnonShape_006EB570_80B255F3 *param_2)
     }
     ExceptionList = &local_14;
     local_1c = &stack0xffffff44;
+
     iVar1 = FUN_006b0460(&local_70,&local_34,&param_2->field_048E);
     if (iVar1 != 0) {
-      iVar6 = (local_70 - param_2->field_0476) - param_2->field_048E;
+      iVar7 = (local_70 - param_2->field_0476) - param_2->field_048E;
       iVar1 = param_2->field_04E2;
-      local_84 = iVar6 - iVar1 * (iVar6 / iVar1);
-      iVar7 = (local_6c - param_2->field_0492) - param_2->field_047A;
+      local_84 = iVar7 - iVar1 * (iVar7 / iVar1);
+      iVar8 = (local_6c - param_2->field_0492) - param_2->field_047A;
       local_9c = param_2->field_04E6;
-      local_5c = iVar7 - local_9c * (iVar7 / local_9c);
-      local_4c = iVar6 / iVar1 + param_2->field_047E;
-      local_58 = (int)((local_68 - 1) + iVar6) / iVar1 + param_2->field_047E;
-      local_7c = iVar7 / local_9c + param_2->field_0482;
-      local_90 = (local_64 + -1 + iVar7) / local_9c + param_2->field_0482;
+      local_5c = iVar8 - local_9c * (iVar8 / local_9c);
+      local_4c = iVar7 / iVar1 + param_2->field_047E;
+      local_58 = (int)((local_68 - 1) + iVar7) / iVar1 + param_2->field_047E;
+      local_7c = iVar8 / local_9c + param_2->field_0482;
+      local_90 = (local_64 + -1 + iVar8) / local_9c + param_2->field_0482;
       local_94 = param_2->field_04B2 * local_7c + *(int *)&param_2->field_0x18;
       if ((*(char *)(local_94 + local_4c) != -1) || (*(char *)(local_94 + local_58) != -1)) {
 LAB_006eb7d3:
@@ -109,11 +110,11 @@ LAB_006eb7d3:
           iVar1 = ((local_3c - (local_90 - param_2->field_0482) * param_2->field_04E6) -
                   param_2->field_0492) - param_2->field_047A;
           local_38 = pcVar3;
-          for (local_48 = local_90; iVar6 = local_4c, local_7c < local_48; local_48 = local_48 + -1)
+          for (local_48 = local_90; iVar7 = local_4c, local_7c < local_48; local_48 = local_48 + -1)
           {
-            for (; local_44 = iVar6, iVar6 <= local_58; iVar6 = iVar6 + 1) {
-              if (local_38[iVar6] != -1) {
-                if (iVar6 <= local_58) goto LAB_006eb87f;
+            for (; local_44 = iVar7, iVar7 <= local_58; iVar7 = iVar7 + 1) {
+              if (local_38[iVar7] != -1) {
+                if (iVar7 <= local_58) goto LAB_006eb87f;
                 break;
               }
             }
@@ -171,29 +172,29 @@ LAB_006eb87f:
         if (local_30 < local_6c) {
           CopyRows((byte *)(param_2->field_04EE * local_30 + param_2->field_04EA + local_34),
                    param_2->field_04EE,
-                   (byte *)(STField<int>(iVar8,0x478) * local_30 + STField<int>(iVar8,0x474) + local_34)
-                   ,STField<int>(iVar8,0x478),local_2c,local_6c - local_30);
+                   (byte *)(STField<int>(iVar9,0x478) * local_30 + STField<int>(iVar9,0x474) + local_34)
+                   ,STField<int>(iVar9,0x478),local_2c,local_6c - local_30);
         }
         iVar1 = ((local_28 - local_64) - local_6c) + local_30;
         if (0 < iVar1) {
           CopyRows((byte *)((local_64 + local_6c) * param_2->field_04EE + param_2->field_04EA +
                            local_34),param_2->field_04EE,
-                   (byte *)((local_64 + local_6c) * STField<int>(iVar8,0x478) +
-                            STField<int>(iVar8,0x474) + local_34),STField<int>(iVar8,0x478),local_2c,
+                   (byte *)((local_64 + local_6c) * STField<int>(iVar9,0x478) +
+                            STField<int>(iVar9,0x474) + local_34),STField<int>(iVar9,0x478),local_2c,
                    iVar1);
         }
         if (local_34 < local_70) {
           CopyRows((byte *)(param_2->field_04EE * local_6c + param_2->field_04EA + local_34),
                    param_2->field_04EE,
-                   (byte *)(STField<int>(iVar8,0x478) * local_6c + STField<int>(iVar8,0x474) + local_34)
-                   ,STField<int>(iVar8,0x478),local_70 - local_34,local_64);
+                   (byte *)(STField<int>(iVar9,0x478) * local_6c + STField<int>(iVar9,0x474) + local_34)
+                   ,STField<int>(iVar9,0x478),local_70 - local_34,local_64);
         }
         uVar2 = ((local_2c - local_68) - local_70) + local_34;
         if (0 < (int)uVar2) {
           CopyRows((byte *)(param_2->field_04EE * local_6c + param_2->field_04EA + local_68 +
                            local_70),param_2->field_04EE,
-                   (byte *)(STField<int>(iVar8,0x478) * local_6c + STField<int>(iVar8,0x474) + local_68
-                           + local_70),STField<int>(iVar8,0x478),uVar2,local_64);
+                   (byte *)(STField<int>(iVar9,0x478) * local_6c + STField<int>(iVar9,0x474) + local_68
+                           + local_70),STField<int>(iVar9,0x478),uVar2,local_64);
         }
         local_9c = param_2->field_04E6 - local_5c;
         local_3c = local_6c;
@@ -207,8 +208,8 @@ LAB_006eb87f:
           local_74 = local_4c;
           local_24 = local_70;
           while( true ) {
-            pbVar5 = (byte *)(param_2->field_04EE * local_3c + param_2->field_04EA + local_24);
-            local_54 = (byte *)(STField<int>(iVar8,0x478) * local_3c + STField<int>(iVar8,0x474) +
+            pbVar6 = (byte *)(param_2->field_04EE * local_3c + param_2->field_04EA + local_24);
+            local_54 = (byte *)(STField<int>(iVar9,0x478) * local_3c + STField<int>(iVar9,0x474) +
                                local_24);
             local_8c = param_2->field_04E2 - local_50;
             uVar2 = (uint)*(byte *)(local_74 + local_94);
@@ -221,18 +222,18 @@ LAB_006eb87f:
                 local_8c = local_40;
               }
               if (uVar2 == 0xff) {
-                CopyRows(pbVar5,param_2->field_04EE,local_54,STField<int>(iVar8,0x478),local_8c,
+                CopyRows(pbVar6,param_2->field_04EE,local_54,STField<int>(iVar9,0x478),local_8c,
                          local_9c);
               }
               else {
                 if (uVar2 == 0x20) {
-                  iVar1 = *(int *)&param_2->field_0x154 + 0x1000;
+                  pvVar5 = (void *)(*(int *)&param_2->field_0x154 + 0x1000);
                 }
                 else {
-                  iVar1 = *(int *)&param_2->field_0x154 + 0x1800;
+                  pvVar5 = (void *)(*(int *)&param_2->field_0x154 + 0x1800);
                 }
-                FUN_00750590(pbVar5,param_2->field_04EE,local_54,STField<int>(iVar8,0x478),local_8c,
-                             local_9c,iVar1);
+                FUN_00750590(pbVar6,param_2->field_04EE,local_54,STField<int>(iVar9,0x478),local_8c,
+                             local_9c,pvVar5);
               }
             }
             else {
@@ -242,7 +243,7 @@ LAB_006eb87f:
               local_60 = (undefined1 *)
                          (*(int *)(param_2->field_0472 + uVar2 * 4) + param_2->field_04E2 * local_5c
                          + local_50);
-              FUN_00750660(pbVar5,param_2->field_04EE,local_54,STField<int>(iVar8,0x478),local_60,
+              FUN_00750660(pbVar6,param_2->field_04EE,local_54,STField<int>(iVar9,0x478),local_60,
                            param_2->field_04E2,local_8c,local_9c,*(int *)&param_2->field_0x154);
             }
             local_74 = local_74 + 1;
@@ -283,27 +284,27 @@ LAB_006eb763:
         }
         goto LAB_006eb7d3;
       }
-      iVar1 = STField<int>(iVar8,0x478);
+      iVar1 = STField<int>(iVar9,0x478);
       iVar4 = param_1[1];
-      iVar6 = *param_1;
-      iVar7 = param_2->field_04EE;
+      iVar7 = *param_1;
+      iVar8 = param_2->field_04EE;
       rowCount = param_1[3];
       uVar2 = param_1[2];
-      pbVar5 = (byte *)(iVar4 * iVar1 + STField<int>(iVar8,0x474) + iVar6);
-      iVar8 = iVar7;
+      pbVar6 = (byte *)(iVar4 * iVar1 + STField<int>(iVar9,0x474) + iVar7);
+      iVar9 = iVar8;
       goto LAB_006ebde1;
     }
-    iVar1 = STField<int>(iVar8,0x478);
-    iVar7 = param_1[1];
-    iVar6 = *param_1;
+    iVar1 = STField<int>(iVar9,0x478);
+    iVar8 = param_1[1];
+    iVar7 = *param_1;
     rowCount = param_1[3];
     uVar2 = param_1[2];
-    pbVar5 = (byte *)(iVar7 * iVar1 + STField<int>(iVar8,0x474) + iVar6);
+    pbVar6 = (byte *)(iVar8 * iVar1 + STField<int>(iVar9,0x474) + iVar7);
   }
   iVar4 = param_2->field_04EE;
-  iVar8 = iVar4;
+  iVar9 = iVar4;
 LAB_006ebde1:
-  CopyRows((byte *)(iVar7 * iVar4 + param_2->field_04EA + iVar6),iVar8,pbVar5,iVar1,uVar2,rowCount);
+  CopyRows((byte *)(iVar8 * iVar4 + param_2->field_04EA + iVar7),iVar9,pbVar6,iVar1,uVar2,rowCount);
   ExceptionList = local_14;
   return 0;
 }

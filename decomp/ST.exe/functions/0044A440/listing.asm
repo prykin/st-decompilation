@@ -34,7 +34,7 @@ STAllPlayersC::UnRegisterDeposit:
 0044A49F  68 04 60 7A 00            PUSH 0x7a6004
 0044A4A4  50                        PUSH EAX
 0044A4A5  68 07 00 FE AF            PUSH 0xaffe0007
-0044A4AA  E8 91 B9 25 00            CALL 0x006a5e40
+0044A4AA  E8 91 B9 25 00            CALL 0x006a5e40  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 LAB_0044a4af:
 0044A4AF  8A 4F 24                  MOV CL,byte ptr [EDI + 0x24]
 0044A4B2  8B 57 20                  MOV EDX,dword ptr [EDI + 0x20]

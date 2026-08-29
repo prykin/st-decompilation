@@ -21,6 +21,7 @@ void __thiscall STAppC::DoneApp(STAppC *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pSVar3 = local_8;
   if (iVar4 == 0) {
@@ -32,8 +33,10 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       DArrayDestroy(PTR_00806740);
     }
     PTR_00806740 = nullptr;
-    thunk_FUN_005711d0(pSVar3,(int *)&g_parentSystem_0081163C);
-    thunk_FUN_005711d0(pSVar3,(int *)&g_startSystem_0081176C);
+    /* ST_CALLSITE[0056C7C3]: CALL 0x00401d3e; direct=00401D3E STAppC::sub_005711D0 */
+    sub_005711D0(pSVar3,(int *)&g_parentSystem_0081163C);
+    /* ST_CALLSITE[0056C7CF]: CALL 0x00401d3e; direct=00401D3E STAppC::sub_005711D0 */
+    sub_005711D0(pSVar3,(int *)&g_startSystem_0081176C);
     /* ST_CALLSITE[0056C7D6]: CALL 0x00403562; direct=00403562 STAppC::CloseGameDBs */
     CloseGameDBs(pSVar3);
     /* ST_CALLSITE[0056C7DB]: CALL 0x0040444e; direct=0040444E DestroyBaseSystem */
@@ -46,9 +49,9 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       DArrayDestroy((DArrayTy *)pSVar3->field_4EE6);
     }
     pSVar3->field_4EE6 = nullptr;
-    if (g_anonShape_006C3FC0_72DDFA27_008075A0 != nullptr) {
-      FUN_006c3aa0((int *)g_anonShape_006C3FC0_72DDFA27_008075A0);
-      g_anonShape_006C3FC0_72DDFA27_008075A0 = nullptr;
+    if (g_recoveredSourceFamily_dvideo_008075A0 != nullptr) {
+      FUN_006c3aa0((int *)g_recoveredSourceFamily_dvideo_008075A0);
+      g_recoveredSourceFamily_dvideo_008075A0 = nullptr;
     }
     if (g_int_008075A4 != nullptr) {
       FUN_006c2ac0(g_int_008075A4);
@@ -114,11 +117,13 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     }
     thunk_FUN_005713b0((int)pSVar3);
     this_00 = &pSVar3->field_0038;
+
     thunk_FUN_00572920(this_00,1);
-    thunk_FUN_005672e0((AnonShape_005672E0_9A0A2ED1 *)this_00);
+    thunk_FUN_005672e0((RecoveredRecordView_005672E0_6B6F72F8 *)this_00);
     local_94.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_94;
     local_c = this_00;
+
     iVar4 = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0);
     piVar2 = local_c;
     if ((iVar4 == 0) && (*local_c != 0)) {
@@ -148,6 +153,7 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar5 = ReportDebugMessage("E:\\__titans\\tapp.cpp",0x31c,0,iVar4,"%s",
                              "STAppC::DoneApp");
   if (iVar5 == 0) {

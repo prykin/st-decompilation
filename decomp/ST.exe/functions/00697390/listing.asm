@@ -170,7 +170,7 @@ LAB_00697505:
 0069752D  50                        PUSH EAX
 0069752E  53                        PUSH EBX
 0069752F  8B CE                     MOV ECX,ESI
-00697531  E8 47 A5 D6 FF            CALL 0x00401a7d
+00697531  E8 47 A5 D6 FF            CALL 0x00401a7d  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/CGenerate; source view only; no Ghidra override
 00697536  53                        PUSH EBX
 00697537  57                        PUSH EDI
 00697538  50                        PUSH EAX

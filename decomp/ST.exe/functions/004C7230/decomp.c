@@ -1,12 +1,11 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_004c7230(int param_1)
+void __fastcall FUN_004c7230(RecoveredRecord_004C7230_5217D923 *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int *)(param_1 + 0x607) != 0) {
-    FreeAndNull((void *)(param_1 + 0x607));
+  if (param_1->field_0607 != 0) {
+    FreeAndNull(&param_1->field_0607);
   }
   return;
 }

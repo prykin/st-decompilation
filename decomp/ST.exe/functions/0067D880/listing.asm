@@ -36,7 +36,8 @@ LAB_0067d8e0:
 0067D8E2  6A 01                     PUSH 0x1
 0067D8E4  57                        PUSH EDI
 0067D8E5  56                        PUSH ESI
-0067D8E6  E8 A5 54 07 00            CALL 0x006f2d90
+LoadPlrEdit::override::prt_67d8e6_5616a156:
+0067D8E6  E8 A5 54 07 00            CALL 0x006f2d90  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D1D0; signature=__cdecl;pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D1D0;pointer:/cMf32;pointer:/char;/byte;/int
 0067D8EB  83 C4 10                  ADD ESP,0x10
 0067D8EE  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
 0067D8F1  85 C0                     TEST EAX,EAX

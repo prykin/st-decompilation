@@ -145,9 +145,9 @@ physical-vtable disagreement as review-only.
    `functions.json`, imports, and `call_relations.jsonl`.
 2. **Implemented:** emit address-stable `st::fn_ADDRESS` free functions,
    including explicit receiver ABI for ownerless `__thiscall`.
-3. Recover the remaining 1,318 raw indirect calls from stored targets, physical
-   vtable slots, and exact use-site ABI families; unresolved `code *` remains an
-   explicit portability boundary.
+3. Continue semantic recovery of the 459 residual raw indirect calls from
+   stored targets, physical vtable slots, and exact use-site ABI families;
+   unresolved `code *` remains an explicit portability boundary.
 4. Split undefined debt by role (signature, field, local, return, pointer target)
    before ranking it. The raw 15,733 count is not 15,733 independent problems.
 5. Finish whole-CFG return/high-register recovery for the 103 affected bodies.

@@ -19,11 +19,11 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
   short *psVar8;
   bool bVar9;
   InternalExceptionFrame local_6c;
-  undefined4 local_28;
-  undefined4 local_24;
-  undefined4 local_20;
-  undefined4 local_1c;
-  undefined2 local_18;
+  uint local_28;
+  uint local_24;
+  uint local_20;
+  uint local_1c;
+  ushort local_18;
   byte local_16;
   int local_14;
   BehPanelTy *local_10;
@@ -33,10 +33,12 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
   local_10 = this;
+
   local_EAX_35 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   this_00 = local_10;
   if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_6c.previous;
+
     iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\behpanel.cpp",0xb2,0,local_EAX_35,
                                "%s","BehPanelTy::Update");
     if (iVar3 == 0) {
@@ -57,7 +59,8 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
   local_16 = local_10->field_01BD;
   /* ST_CALLSITE[004EE10E]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
   STAllPlayersC::GetPanelInfo
-            (g_allPlayers_007FA174,0xb,(AnonShape_0043BEB0_1C00EC12 *)&local_10->field_01AB);
+            (g_allPlayers_007FA174,0xb,
+             (RecoveredRecordView_0043BEB0_8330D129 *)&local_10->field_01AB);
   local_8 = (Global_sub_005272B0_param_1Enum *)&local_24;
   local_14 = -0x1af - (int)this_00;
   pGVar7 = &this_00->field_01AF;
@@ -70,8 +73,10 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
     FUN_006e6080(this_00,2,this_00->field_01BE,(undefined4 *)&this_00->field_0x18);
     if (*pGVar7 != *local_8) {
       *(undefined1 *)((int)piVar5 + -1) = 1;
+
       iVar2 = thunk_FUN_00525390(*pGVar7,this_00->field_01AB);
       *piVar5 = iVar2;
+
       iVar4 = thunk_FUN_005272b0(*pGVar7);
       piVar5[2] = iVar4;
       ((undefined1 *)piVar5)[3] = 3;

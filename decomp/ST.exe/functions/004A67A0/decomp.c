@@ -29,10 +29,12 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   puVar3 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x158b,0,iVar3,"%s",
                                "STGroupBoatC::RestoreGrpBData");
     if (iVar6 == 0) {
@@ -126,7 +128,7 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   local_8->field_0172 = STField<undefined2>(local_c,0x14d);
   local_8->field_0174 = STField<undefined2>(local_c,0x14f);
   local_8->field_0176 = STField<undefined2>(local_c,0x151);
-  local_8->field_0178 = STField<AnonShape_005EFAE0_B406B78B *>(local_c,0x153);
+  local_8->field_0178 = STField<RecoveredRecordView_005EFAE0_855D930D *>(local_c,0x153);
   local_8->field_017C = STField<undefined2>(local_c,0x157);
   local_8->field_017E = STField<undefined2>(local_c,0x159);
   local_8->field_0180 = STField<undefined2>(local_c,0x15b);
@@ -171,7 +173,7 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   local_8->field_01BF = (short)uVar1;
   local_8->field_01C1 = (short)((uint)uVar1 >> 0x10);
   local_8->field_01C3 = STField<undefined2>(local_c,0x19e);
-  local_8->field_01C5 = (AnonShape_005EFAE0_B406B78B *)local_c[0x68];
+  local_8->field_01C5 = (RecoveredRecordView_005EFAE0_855D930D *)local_c[0x68];
   puVar11 = (byte *)((int)local_c + 0x1d5);
   puVar4 = (byte *)&local_8->field_0x1e2;
   for (iVar7 = 10; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -286,6 +288,7 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
     local_8->field_0059 = nullptr;
   }
   else {
+
     puVar4 = (byte *)(Library::DKW::LIB::MemAlloc(local_c[8]));
     local_8->field_0059 = puVar4;
     uVar9 = puVar3[8];
@@ -383,6 +386,7 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
     local_8->field_021E = nullptr;
   }
   else {
+    /* ST_CALLSITE[004A7064]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
     puVar6 = Library::DKW::LIB::MemAlloc(uVar9);
     local_8->field_021E = puVar6;
     puVar11 = (byte *)((int)puVar3 + STField<int>(puVar3,0x211));

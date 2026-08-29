@@ -22,7 +22,7 @@ CPanelTy::PaintBioSonar:
 00505E28  6A 01                     PUSH 0x1
 00505E2A  8B 86 B2 02 00 00         MOV EAX,dword ptr [ESI + 0x2b2]
 00505E30  50                        PUSH EAX
-00505E31  E8 6A 55 20 00            CALL 0x0070b3a0
+00505E31  E8 6A 55 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 00505E36  8B 8E 94 01 00 00         MOV ECX,dword ptr [ESI + 0x194]
 00505E3C  50                        PUSH EAX
 00505E3D  6A 01                     PUSH 0x1
@@ -79,7 +79,7 @@ LAB_00505ee5:
 00505EE5  8B 96 B6 02 00 00         MOV EDX,dword ptr [ESI + 0x2b6]
 00505EEB  6A 01                     PUSH 0x1
 00505EED  52                        PUSH EDX
-00505EEE  E8 AD 54 20 00            CALL 0x0070b3a0
+00505EEE  E8 AD 54 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 00505EF3  8B 96 94 01 00 00         MOV EDX,dword ptr [ESI + 0x194]
 00505EF9  50                        PUSH EAX
 00505EFA  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
@@ -108,7 +108,7 @@ LAB_00505f41:
 00505F41  8B 86 B6 02 00 00         MOV EAX,dword ptr [ESI + 0x2b6]
 00505F47  6A 00                     PUSH 0x0
 00505F49  50                        PUSH EAX
-00505F4A  E8 51 54 20 00            CALL 0x0070b3a0
+00505F4A  E8 51 54 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 00505F4F  8B 8E 94 01 00 00         MOV ECX,dword ptr [ESI + 0x194]
 00505F55  50                        PUSH EAX
 00505F56  6A 01                     PUSH 0x1

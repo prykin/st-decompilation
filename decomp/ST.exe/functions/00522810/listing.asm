@@ -201,7 +201,7 @@ LAB_00522ad4:
 00522AD4  6A 03                     PUSH 0x3
 00522AD6  68 44 41 7C 00            PUSH 0x7c4144
 00522ADB  53                        PUSH EBX
-00522ADC  E8 0F BC 20 00            CALL 0x0072e6f0
+00522ADC  E8 0F BC 20 00            CALL 0x0072e6f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 00522AE1  83 C4 0C                  ADD ESP,0xc
 00522AE4  85 C0                     TEST EAX,EAX
 00522AE6  75 29                     JNZ 0x00522b11
@@ -234,7 +234,7 @@ LAB_00522b1a:
 00522B3A  6A 64                     PUSH 0x64
 00522B3C  8A 15 4D 87 80 00         MOV DL,byte ptr [0x0080874d]
 00522B42  52                        PUSH EDX
-00522B43  E8 AB 28 EE FF            CALL 0x004053f3
+00522B43  E8 AB 28 EE FF            CALL 0x004053f3  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 00522B48  A0 4D 87 80 00            MOV AL,[0x0080874d]
 00522B4D  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 00522B53  50                        PUSH EAX

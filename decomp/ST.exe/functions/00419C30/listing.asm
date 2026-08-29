@@ -1,4 +1,4 @@
-FUN_00419c30:
+STGameObjC::sub_00419C30:
 00419C30  55                        PUSH EBP
 00419C31  8B EC                     MOV EBP,ESP
 00419C33  66 8B 45 08               MOV AX,word ptr [EBP + 0x8]

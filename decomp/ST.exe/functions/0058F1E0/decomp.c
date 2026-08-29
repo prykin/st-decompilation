@@ -24,6 +24,7 @@ STSharkC_field_0257State __thiscall FUN_0058f1e0(void *this,int param_1)
     {
       if ((((sVar5 == STField<short>(this,0x231)) && (sVar1 == STField<short>(this,0x233))) &&
           (STField<short>(this,0x4b) == STField<short>(this,0x235))) || (param_1 != 0)) {
+
         SVar2 = thunk_FUN_0058f680(this,(undefined2 *)((int)this + 0x231),
                                    (undefined2 *)((int)this + 0x233),
                                    (undefined2 *)((int)this + 0x235),(short *)((int)this + 0x237));
@@ -67,6 +68,7 @@ STSharkC_field_0257State __thiscall FUN_0058f1e0(void *this,int param_1)
        STField<short>(this,0x283);
 LAB_0058f34a:
   switch(SVar2) {
+
   case CASE_1:
   case CASE_2:
   case CASE_3:
@@ -76,6 +78,7 @@ LAB_0058f34a:
     }
     break;
   case CASE_6:
+
     iVar6 = thunk_FUN_00417740(this,STField<short>(this,0x6c),STField<short>(this,0x237));
     if (iVar6 != 0) {
       SVar2 = CASE_0;

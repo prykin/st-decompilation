@@ -20,10 +20,12 @@ SettMapMTy * __cdecl st::fn_005D4B40(void)
   uint *puVar5;
   int local_8;
 
-  this = (SettMapMTy *)st::fn_006B04D0(0x2245);
+
+  this = STPointerBoundaryCast<SettMapMTy *>(st::fn_006B04D0(0x2245));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
-    this->vtable = (SettMapMTyVTable *)&st_global_0079C018;
+    this->vtable = reinterpret_cast<SettMapMTyVTable *>(&st_global_0079C018);
     this->field_0018 = 0;
     this->field_005D = 0;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -37,10 +39,10 @@ SettMapMTy * __cdecl st::fn_005D4B40(void)
       st::fn_00715820(this_00 + -1);
       st::fn_00715820(this_00);
       st::fn_00715820(this_00 + 1);
-      this_00 = (SpriteClassTy *)&this_00[3].field_0048;
+      this_00 = reinterpret_cast<SpriteClassTy *>(&this_00[3].field_0048);
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    this->vtable = (SettMapMTyVTable *)&st_global_0079C008;
+    this->vtable = reinterpret_cast<SettMapMTyVTable *>(&st_global_0079C008);
     this->field_0065 = 2;
     this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
@@ -51,16 +53,16 @@ SettMapMTy * __cdecl st::fn_005D4B40(void)
       pSVar3 = pSVar2;
       for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
         *(undefined4 *)pSVar3 = 0;
-        pSVar3 = (SettMapMTy_Record_00BC_01FB *)&pSVar3->field_0x4;
+        pSVar3 = reinterpret_cast<SettMapMTy_Record_00BC_01FB *>(reinterpret_cast<byte *>(pSVar3) + 0x4);
       }
       *(undefined2 *)pSVar3 = 0;
       pSVar3->field_0x2 = 0;
       local_8 = local_8 + -1;
       pSVar2 = pSVar2 + 1;
     } while (local_8 != 0);
-    st::fn_00715820((SpriteClassTy *)&this->field_1C6B);
-    st::fn_00715820((SpriteClassTy *)&this->field_1CFC);
-    st::fn_00715820((SpriteClassTy *)&this->field_1D8D);
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_1C6B));
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_1CFC));
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_1D8D));
     this->field_1C5F = 0;
     this->field_1C63 = 0;
     this->field_1E27 = 0;
@@ -161,10 +163,12 @@ SettMapTy * __cdecl st::fn_005D77A0(void)
   uint *puVar6;
   int local_8;
 
-  this = (SettMapTy *)st::fn_006B04D0(0x21fc);
+
+  this = STPointerBoundaryCast<SettMapTy *>(st::fn_006B04D0(0x21fc));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
-    this->vtable = (SettMapTyVTable *)&st_global_0079C018;
+    this->vtable = reinterpret_cast<SettMapTyVTable *>(&st_global_0079C018);
     this->field_0018 = 0;
     this->field_005D = 0;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -178,10 +182,10 @@ SettMapTy * __cdecl st::fn_005D77A0(void)
       st::fn_00715820(this_00 + -1);
       st::fn_00715820(this_00);
       st::fn_00715820(this_00 + 1);
-      this_00 = (SpriteClassTy *)&this_00[3].field_0048;
+      this_00 = reinterpret_cast<SpriteClassTy *>(&this_00[3].field_0048);
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    this->vtable = (SettMapTyVTable *)&st_global_0079C008;
+    this->vtable = reinterpret_cast<SettMapTyVTable *>(&st_global_0079C008);
     this->field_0065 = 2;
     this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
@@ -192,16 +196,16 @@ SettMapTy * __cdecl st::fn_005D77A0(void)
       pSVar3 = pSVar2;
       for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
         *(undefined4 *)pSVar3 = 0;
-        pSVar3 = (SettMapTy_Record_00BC_01FB *)&pSVar3->field_0x4;
+        pSVar3 = reinterpret_cast<SettMapTy_Record_00BC_01FB *>(reinterpret_cast<byte *>(pSVar3) + 0x4);
       }
       *(undefined2 *)pSVar3 = 0;
       pSVar3->field_0x2 = 0;
       local_8 = local_8 + -1;
       pSVar2 = pSVar2 + 1;
     } while (local_8 != 0);
-    st::fn_00715820((SpriteClassTy *)&this->field_0x1c6b);
-    st::fn_00715820((SpriteClassTy *)&this->field_0x1cfc);
-    st::fn_00715820((SpriteClassTy *)&this->field_0x1d8d);
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_0x1c6b));
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_0x1cfc));
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_0x1d8d));
     this->field_1C5F = 0;
     this->field_1C63 = 0;
     this->field_1E27 = 0;
@@ -281,10 +285,12 @@ SIDTy * __cdecl st::fn_005D9F80(void)
   SpriteClassTy *this_00;
   SIDTy_Record_00BC_01FB *pSVar5;
 
-  this = (SIDTy *)st::fn_006B04D0(0x1dd8);
+
+  this = STPointerBoundaryCast<SIDTy *>(st::fn_006B04D0(0x1dd8));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
-    this->vtable = (SIDTyVTable *)&st_global_0079C018;
+    this->vtable = reinterpret_cast<SIDTyVTable *>(&st_global_0079C018);
     this->field_0018 = 0;
     this->field_005D = 0;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -297,10 +303,10 @@ SIDTy * __cdecl st::fn_005D9F80(void)
       st::fn_00715820(this_00 + -1);
       st::fn_00715820(this_00);
       st::fn_00715820(this_00 + 1);
-      this_00 = (SpriteClassTy *)&this_00[3].field_0048;
+      this_00 = reinterpret_cast<SpriteClassTy *>(&this_00[3].field_0048);
       iVar1 = iVar1 + -1;
     } while (iVar1 != 0);
-    this->vtable = (SIDTyVTable *)&st_global_0079C008;
+    this->vtable = reinterpret_cast<SIDTyVTable *>(&st_global_0079C008);
     this->field_0065 = 2;
     this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
@@ -310,17 +316,17 @@ SIDTy * __cdecl st::fn_005D9F80(void)
       pSVar5 = pSVar3;
       for (iVar2 = 9; iVar2 != 0; iVar2 = iVar2 + -1) {
         *(undefined4 *)pSVar5 = 0;
-        pSVar5 = (SIDTy_Record_00BC_01FB *)&pSVar5->field_0x4;
+        pSVar5 = reinterpret_cast<SIDTy_Record_00BC_01FB *>(reinterpret_cast<byte *>(pSVar5) + 0x4);
       }
       *(undefined2 *)pSVar5 = 0;
       iVar1 = iVar1 + -1;
       pSVar5->field_0x2 = 0;
       pSVar3 = pSVar3 + 1;
     } while (iVar1 != 0);
-    st::fn_00715820((SpriteClassTy *)&this->array_00BC[0xc].field_01E0);
-    st::fn_00715820((SpriteClassTy *)&this->field_1B01);
-    st::fn_00715820((SpriteClassTy *)&this->field_1B92);
-    st::fn_00715820((SpriteClassTy *)&this->field_1C23);
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->array_00BC[0xc].field_01E0));
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_1B01));
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_1B92));
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_1C23));
     this->vtable = &st_global_0079C1AC;
     this->array_00BC[0xc].field_01DF = 0;
     this->field_1AF1 = 0;
@@ -368,11 +374,11 @@ HDC __cdecl st::fn_005DA130(ushort *param_1,undefined *param_2,BYTE param_3)
   pLVar7 = &local_78;
   for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
     pLVar7->lfHeight = 0;
-    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
+    pLVar7 = reinterpret_cast<LOGFONTA *>(&pLVar7->lfWidth);
   }
   local_78.lfCharSet = param_3;
   uVar4 = 0xffffffff;
-  pcVar6 = "Verdana";
+  pcVar6 = st::mutable_c_string("Verdana");
   do {
     pcVar8 = pcVar6;
     if (uVar4 == 0) break;
@@ -493,11 +499,11 @@ HDC __cdecl st::fn_005DA310(int param_1,undefined *param_2,BYTE param_3)
   pLVar7 = &local_a4;
   for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
     pLVar7->lfHeight = 0;
-    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
+    pLVar7 = reinterpret_cast<LOGFONTA *>(&pLVar7->lfWidth);
   }
   local_a4.lfCharSet = param_3;
   uVar4 = 0xffffffff;
-  pcVar6 = "Verdana";
+  pcVar6 = st::mutable_c_string("Verdana");
   do {
     pcVar8 = pcVar6;
     if (uVar4 == 0) break;
@@ -651,10 +657,12 @@ undefined4 st::fn_005DA7A0(void)
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   iVar3 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar3 == 0) {
     puVar1 = &local_8->field_068A;
     if (local_8->field_068A == 0) {
+
       st::fn_006B62D0(puVar1);
       piVar2 = (int *)*puVar1;
       bVar5 = true;
@@ -673,9 +681,10 @@ undefined4 st::fn_005DA7A0(void)
         pcVar6 = st::fn_006C8170(pcVar6);
         if (pcVar6 != nullptr) {
           iVar4 = *puVar1;
+
           st::fn_0072DA70
-                    ((undefined4 *)(iVar4 + 0x1c),(AnonPointee_TLOBaseTy_0607 *)(iVar4 + 8),
-                     STField<int>(iVar4,0x4) * 0x14);
+                    ((RecoveredRecord_006BFE70_3123BCE8 *)(iVar4 + 0x1c),
+                     (AnonPointee_TLOBaseTy_0607 *)(iVar4 + 8),STField<int>(iVar4,0x4) * 0x14);
           iVar4 = *puVar1;
           STField<undefined4>(iVar4,0xC) = DAT_007cd700;
           STField<undefined4>(iVar4,0x10) = DAT_007cd704;
@@ -716,8 +725,8 @@ int st::fn_005DA980(int param_1)
     st::fn_004034F4();
     st::fn_006B6150((uint)DAT_00807362);
     st::fn_006B6350
-              ((int *)&g_int_00811764,(char *)(STField<int>(local_8,0x68A) + 0xc + param_1 * 0x14),
-               (int *)&DAT_007cd6f0);
+              (reinterpret_cast<int *>(&g_int_00811764),(char *)(STField<int>(local_8,0x68A) + 0xc + param_1 * 0x14),
+               reinterpret_cast<int *>(&DAT_007cd6f0));
     st::fn_006B6500(g_int_00811764,DAT_0080733c);
     g_currentExceptionFrame = local_4c.previous;
     return 0;
@@ -744,71 +753,49 @@ void st::fn_005DAA60(void)
   return;
 }
 
-// 005DAA90 FUN_005daa90
-#line 1 "decomp/ST.exe/functions/005DAA90/decomp.c"
-
-/* [STReturnSemanticsApplier] machine_scalar_return.
-   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
-   returns establish signed int while zero is a signedness-neutral member of that same domain;
-   machine CFG audit: used=3, ignored=0, unknown=0 */
-
-int st::fn_005DAA90(void)
-
-{
-  int iVar1;
-  InternalExceptionFrame local_4c;
-  StartSystemTy *local_8;
-
-  if (g_int_00811764 != nullptr) {
-    local_4c.previous = g_currentExceptionFrame;
-    g_currentExceptionFrame = &local_4c;
-    iVar1 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
-    if (iVar1 == 0) {
-      /* ST_CALLSITE[005DAACB]: CALL 0x00402b30; direct=00402B30 StartSystemTy::sub_005DAB30 */
-      st::fn_00402B30(local_8);
-      st::fn_006B65F0(g_int_00811764,&local_8->field_068E);
-      g_currentExceptionFrame = local_4c.previous;
-      return 0;
-    }
-    g_currentExceptionFrame = local_4c.previous;
-    /* ST_CALLSITE[005DAAFE]: CALL 0x00402b30; direct=00402B30 StartSystemTy::sub_005DAB30 */
-    st::fn_00402B30(local_8);
-  }
-  return -6;
-}
-
 // 005DAB70 FUN_005dab70
 #line 4 "decomp/ST.exe/functions/005DAB70/decomp.c"
 /* [STReturnSemanticsApplier] machine_scalar_return.
    Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
    returns establish signed int while zero is a signedness-neutral member of that same domain;
-   machine CFG audit: used=2, ignored=0, unknown=0 */
+   machine CFG audit: used=2, ignored=0, unknown=0
+   [STAbiConsistencyApplier] ecx_context_register target=function:-1: prototype=int __stdcall
+   FUN_005dab70(StartSystemTy * context, int param_2, undefined4 param_3) previous_return_type=/int
+   Evidence: incoming ECX reaches only unadjusted __thiscall receivers of /StartSystemTy;
+   receiver_calls=1; exact RET purge=8 matches declared stack bytes=8; sites=005DABFF ->
+   StartSystemTy::GetIP receiver=/StartSystemTy */
 
-int st::fn_005DAB70(int param_1,undefined4 param_2)
+int st::fn_005DAB70(StartSystemTy *context,int param_2,undefined4 param_3)
 
 {
+  StartSystemTy *this;
   int iVar1;
   InternalExceptionFrame local_4c;
   StartSystemTy *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+  local_8 = context;
+
   iVar1 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
     if (g_int_00811764 != nullptr) {
       st::fn_006B76D0(g_int_00811764);
+      this = local_8;
       if (DAT_0080877e == '\0') {
         if (local_8->field_068E != 0) {
+
           st::fn_006B68E0
-                    (g_int_00811764,(undefined4 *)(local_8->field_068E + 0xc + param_1 * 0x14));
+                    (g_int_00811764,(undefined4 *)(local_8->field_068E + 0xc + param_2 * 0x14));
         }
       }
       else {
-        st::fn_006B6750(g_int_00811764,0,param_2,0x20);
+
+        st::fn_006B6750(g_int_00811764,0,param_3,0x20);
       }
       DAT_0080877f = g_int_00811764[0xe];
       /* ST_CALLSITE[005DABFF]: CALL 0x0040330a; direct=0040330A StartSystemTy::GetIP */
-      st::fn_0040330A(local_8);
+      st::fn_0040330A(this);
     }
     g_currentExceptionFrame = local_4c.previous;
     return 0;
@@ -871,7 +858,7 @@ undefined4 __cdecl st::fn_005DB030(byte *param_1,undefined4 param_2,char param_3
   byte local_274 [260];
   byte local_170 [260];
   InternalExceptionFrame local_6c;
-  undefined1 local_28 [3];
+  byte local_28 [3];
   int local_25;
   byte *local_20;
   int *local_1c;
@@ -879,8 +866,7 @@ undefined4 __cdecl st::fn_005DB030(byte *param_1,undefined4 param_2,char param_3
   int local_14;
   int local_10;
   int local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0;
   if (param_3 != '\0') {
     return 0;
@@ -894,19 +880,21 @@ undefined4 __cdecl st::fn_005DB030(byte *param_1,undefined4 param_2,char param_3
   local_10 = -0x70fff7fb;
   st::fn_0072E730(param_1,local_378,local_274,local_47c,nullptr);
   st::fn_0072F110
-            ((char *)local_170,(char *)local_378,(char *)local_274,(char *)local_47c,nullptr);
+            (reinterpret_cast<char *>(local_170),reinterpret_cast<char *>(local_378),reinterpret_cast<char *>(local_274),reinterpret_cast<char *>(local_47c),nullptr);
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
+
   iVar3 = st::fn_0072D7F0(local_6c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_6c.previous;
     return local_8;
   }
-  this = (cMf32 *)st::fn_006F0EC0(0x345,local_170,0,0,0);
-  puVar5 = st::fn_006F1CE0(this,0,PTR_s_DESCRIPTOR_0079c1d8,(int *)&local_1c,0);
+  /* ST_CALLSITE[005DB0F3]: CALL 0x006f0ec0; direct=006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint */
+  this = st::pointer_boundary_cast<cMf32 *>(st::fn_006F0EC0(0x345,local_170,0,0,0));
+  puVar5 = st::fn_006F1CE0(this,0,PTR_s_DESCRIPTOR_0079c1d8,reinterpret_cast<int *>(&local_1c),0);
   if ((puVar5 == nullptr) ||
      ((*local_18 == '\x05' &&
-      (puVar5 = st::fn_006F1CE0(this,0x80,PTR_s_SAVE_PLAYER_0079c1c8,(int *)&local_20,0),
+      (puVar5 = st::fn_006F1CE0(this,0x80,PTR_s_SAVE_PLAYER_0079c1c8,reinterpret_cast<int *>(&local_20),0),
       puVar5 == nullptr)))) goto cf_common_exit_005DB1E1;
   bVar2 = false;
   if ((local_1e18 == 0) || (local_1e10 != *(int *)(local_18 + 1))) goto switchD_005db168_default;
@@ -943,7 +931,7 @@ switchD_005db168_default:
     } while (bVar1 != 0);
     uVar6 = ~uVar6;
     pbVar8 = pbVar9 + -uVar6;
-    pbVar9 = (byte *)&CHAR_00h_0080ed16;
+    pbVar9 = reinterpret_cast<byte *>(&CHAR_00h_0080ed16);
     memmove(pbVar9, pbVar8, uVar6); /* compiler REP MOVS byte copy */
   }
 cf_common_exit_005DB1E1:
@@ -954,7 +942,12 @@ cf_common_exit_005DB1E1:
 
 // 005DDB40 FUN_005ddb40
 #line 4 "decomp/ST.exe/functions/005DDB40/decomp.c"
-undefined4 __fastcall st::fn_005DDB40(int param_1)
+/* [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=3, ignored=0,
+   unknown=0 */
+
+int __fastcall st::fn_005DDB40(RecoveredRecordView_005DDB40_9DCD82E5 *param_1)
 
 {
   char cVar1;
@@ -973,22 +966,19 @@ undefined4 __fastcall st::fn_005DDB40(int param_1)
   char *local_c;
   StartSystemTy *local_8;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int *)(*(int *)(param_1 + 0x686) + 8) < 1) {
+  if (param_1->field_0686->field_0008 < 1) {
     pcVar8 = nullptr;
   }
   else {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    pcVar8 = (char *)**(undefined4 **)(*(int *)(param_1 + 0x686) + 0x14);
+    pcVar8 = (char *)*param_1->field_0686->field_0014;
   }
-  local_8 = (StartSystemTy *)param_1;
+  local_8 = reinterpret_cast<StartSystemTy *>(param_1);
   bVar3 = st::fn_0040224D(pcVar8);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   if (CONCAT31(extraout_var,bVar3) == 0) {
     return 0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  pDVar7 = *(DArrayTy **)(param_1 + 0x696);
+  pDVar7 = param_1->field_0696;
   pcVar8 = local_460;
   for (iVar4 = 0x114; iVar4 != 0; iVar4 = iVar4 + -1) {
     pcVar8[0] = '\0';
@@ -1066,17 +1056,18 @@ void __cdecl st::fn_005DE5B0(UINT param_1,int param_2)
   if (param_2 < 0) {
     pcVar1 = st::fn_006B0140(param_1,g_hINSTANCE_00807618);
     /* ST_CALLSITE[005DE604]: CALL dword ptr [0x0085bde8] */
-    st::external_00000080(local_108,st::mutable_c_string("%s"),pcVar1);
+    st::external_00000080(reinterpret_cast<LPSTR>(local_108),st::mutable_c_string("%s"),pcVar1);
   }
   else {
     pcVar1 = st::fn_006B0140(param_1,g_hINSTANCE_00807618);
     /* ST_CALLSITE[005DE5DD]: CALL dword ptr [0x0085bde8] */
-    st::external_00000080(local_108,st::mutable_c_string("%s\n%d"),pcVar1,param_2);
+    st::external_00000080(reinterpret_cast<LPSTR>(local_108),st::mutable_c_string("%s\n%d"),pcVar1,param_2);
   }
   uType = 0x10;
+  /* ST_CALLSITE[005DE61A]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=/winnt.h/LPCSTR; source view only; no Ghidra override */
   pcVar1 = st::fn_006B0140(0x2648,g_hINSTANCE_00807618);
   /* ST_CALLSITE[005DE62E]: CALL dword ptr [0x0085bdec] */
-  st::external_00000081(HWND_00856d78,local_108,pcVar1,uType);
+  st::external_00000081(HWND_00856d78,reinterpret_cast<LPCSTR>(local_108),reinterpret_cast<LPCSTR>(pcVar1),uType);
   return;
 }
 
@@ -1106,11 +1097,11 @@ HDC __cdecl st::fn_005DEFE0(int param_1,undefined *param_2,BYTE param_3)
   pLVar7 = &local_98;
   for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
     pLVar7->lfHeight = 0;
-    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
+    pLVar7 = reinterpret_cast<LOGFONTA *>(&pLVar7->lfWidth);
   }
   local_98.lfCharSet = param_3;
   uVar4 = 0xffffffff;
-  pcVar6 = "Verdana";
+  pcVar6 = st::mutable_c_string("Verdana");
   do {
     pcVar8 = pcVar6;
     if (uVar4 == 0) break;
@@ -1261,11 +1252,11 @@ HDC __cdecl st::fn_005DF290(int param_1,undefined *param_2,BYTE param_3)
   pLVar7 = &local_98;
   for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
     pLVar7->lfHeight = 0;
-    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
+    pLVar7 = reinterpret_cast<LOGFONTA *>(&pLVar7->lfWidth);
   }
   local_98.lfCharSet = param_3;
   uVar4 = 0xffffffff;
-  pcVar6 = "Verdana";
+  pcVar6 = st::mutable_c_string("Verdana");
   do {
     pcVar8 = pcVar6;
     if (uVar4 == 0) break;
@@ -1450,4 +1441,3 @@ void st::fn_005DF9B0(int param_1,uint param_2,int param_3)
   }
   return;
 }
-

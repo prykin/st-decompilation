@@ -15,15 +15,18 @@ void __thiscall STBoatC::sub_00492420(STBoatC *this)
   int iVar1;
   STBoatC *local_8;
 
-  if ((this->field_07C6 == 1) && (this->field_07CA == nullptr)) {
+  if ((this->field_07C6 == 1) && (this->field_07CA == nullptr))
+  {
     this->field_07C6 = 0;
     local_8 = this;
+
     iVar1 = STPlaySystemC::sub_006E62D0
-                      (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e,
-                       (int *)&local_8);
+                      (g_playSystem_00802A38,
+                       *(RecoveredRecordView_005EFAE0_855D930D **)&this->field_0x58e,(int *)&local_8
+                      );
     if (iVar1 != -4) {
       /* ST_CALLSITE[00492468]: CALL dword ptr [EDX + 0xa0] */
-      local_8->ReleaseLoad(this->field_0018);
+      local_8->ReleaseLoad((uint *)this->field_0018);
     }
   }
   return;

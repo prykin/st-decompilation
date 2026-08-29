@@ -14,7 +14,7 @@ void __thiscall MoneyTy::sub_0052BDA0(MoneyTy *this,char param_1,int param_2)
 
 {
   byte uVar1;
-  ushort *puVar2;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar2;
   byte bVar3;
   uint *puVar4;
   uint uVar5;
@@ -38,14 +38,15 @@ void __thiscall MoneyTy::sub_0052BDA0(MoneyTy *this,char param_1,int param_2)
     if (DAT_0080874e == '\x03') {
       bVar3 = bVar3 + 1;
     }
-    puVar2 = this->field_007E;
-    uVar5 = *(uint *)(puVar2 + 10);
+    pRVar2 = (RecoveredRecord_006B4FA0_DAC3A217 *)this->field_007E;
+    uVar5 = *(uint *)&pRVar2[1].field_0x4;
     if (uVar5 == 0) {
-      uVar5 = ((uint)puVar2[7] * *(int *)(puVar2 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-              *(int *)(puVar2 + 4);
+      uVar5 = ((uint)pRVar2->field_000E * *(int *)&pRVar2->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+              *(int *)&pRVar2->field_0x8;
     }
     uVar1 = this->field_0069;
-    puVar4 = (undefined4 *)FUN_006b4fa0((int *)puVar2);
+
+    puVar4 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0(pRVar2));
     for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
       *puVar4 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
       puVar4 = puVar4 + 1;
@@ -54,7 +55,9 @@ void __thiscall MoneyTy::sub_0052BDA0(MoneyTy *this,char param_1,int param_2)
       *(undefined1 *)puVar4 = uVar1;
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
+
     ccFntTy::SetSurf(this->field_006E,(int)this->field_007E,0,0,0,this->field_0060,this->field_0064);
+
     ccFntTy::WrStr(this->field_006E,local_c,-1,-1,(uint)bVar3);
     /* ST_CALLSITE[0052BE9D]: CALL 0x004033cd; direct=004033CD MoneyTy::sub_0052BBE0 */
     sub_0052BBE0(this);

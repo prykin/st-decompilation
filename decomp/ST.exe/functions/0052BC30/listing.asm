@@ -100,7 +100,7 @@ LAB_0052bd28:
 0052BD33  66 83 B9 72 01 00 00 01   CMP word ptr [ECX + 0x172],0x1
 0052BD3B  75 05                     JNZ 0x0052bd42
 0052BD3D  8B 01                     MOV EAX,dword ptr [ECX]
-0052BD3F  FF 50 20                  CALL dword ptr [EAX + 0x20]
+0052BD3F  FF 50 20                  CALL dword ptr [EAX + 0x20]  ; [STIndirectCallsiteApplier] exact slot 0x20; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 LAB_0052bd42:
 0052BD42  5D                        POP EBP
 0052BD43  C2 18 00                  RET 0x18

@@ -7,7 +7,7 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
 
 {
   int iVar1;
-  AnonShape_006BB8B0_D6DE56CA *pAVar2;
+  RecoveredRecordView_006BB8B0_05970482 *pRVar2;
   int iVar3;
   int iVar4;
   undefined4 **ppuVar5;
@@ -15,7 +15,7 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
   byte *puVar7;
   undefined4 *local_58 [18];
   void *local_10;
-  AnonShape_006BB8B0_D6DE56CA *local_c;
+  RecoveredRecordView_006BB8B0_05970482 *local_c;
   _RTL_CRITICAL_SECTION *local_8;
 
   local_58[1] = nullptr;
@@ -27,7 +27,7 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
   local_58[6] = nullptr;
   local_58[0xc] = nullptr;
   local_58[7] = nullptr;
-  local_c = *(AnonShape_006BB8B0_D6DE56CA **)(iVar1 + 0x28);
+  local_c = *(RecoveredRecordView_006BB8B0_05970482 **)(iVar1 + 0x28);
   local_58[0xd] = nullptr;
   local_58[0] = nullptr;
   local_58[4] = nullptr;
@@ -42,7 +42,7 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
   local_10 = this;
   /* ST_CALLSITE[006D5930]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection(local_8);
-  pAVar2 = local_c;
+  pRVar2 = local_c;
   if (((STField<int>(iVar1,0x90) == 0) || (STField<int>(iVar1,0x94) == 0)) ||
      (*(int *)(STField<int>(this,0xe0) + 0x30c) == 0)) {
     /* ST_CALLSITE[006D5CAF]: CALL dword ptr [0x0085bb90] */
@@ -89,22 +89,25 @@ undefined4 __thiscall FUN_006d58c0(void *this,int param_1,undefined4 *param_2)
   _DAT_00856940 = 0;
   _DAT_00856950 = 0;
   if (((byte)STField<undefined4>(iVar1,0x4) & 0xf) == 2) {
+
     iVar3 = FUN_006bb8b0(local_c);
     if (iVar3 == 0) {
-      _DAT_00856934 = *(int *)(pAVar2 + 1) / *(int *)&pAVar2->field_0x28;
-      _DAT_00856938 = -*(int *)&pAVar2->field_0x1c;
-      FUN_006bb980((AnonShape_006BB980_E41494A1 *)pAVar2);
+      _DAT_00856934 = *(int *)(pRVar2 + 1) / *(int *)&pRVar2->field_0x28;
+      _DAT_00856938 = -*(int *)&pRVar2->field_0x1c;
+      FUN_006bb980((AnonShape_006BB980_E41494A1 *)pRVar2);
       *(undefined4 *)(STField<int>(local_10,0xe0) + 0x310) = 1;
     }
   }
-  _DAT_00856944 = FUN_00749841((RecoveredSourceFamily_dibcopy *)&DAT_00856930);
+
+  _DAT_00856944 =
+       Library::Win32::COMSupport::FUN_00749841((RecoveredSourceFamily_dibcopy *)&DAT_00856930);
   if (DAT_0085693e == 0x10) {
-    if (((*(int *)&pAVar2[1].field_0x4c != 0x7c00) && (*(int *)&pAVar2[1].field_0x50 != 0x3e00)) &&
-       (*(int *)&pAVar2[1].field_0x54 != 0x1f)) {
-      DAT_0085695c = *(undefined4 *)&pAVar2[1].field_0x50;
-      _DAT_00856960 = *(undefined4 *)&pAVar2[1].field_0x54;
+    if (((*(int *)&pRVar2[1].field_0x4c != 0x7c00) && (*(int *)&pRVar2[1].field_0x50 != 0x3e00)) &&
+       (*(int *)&pRVar2[1].field_0x54 != 0x1f)) {
+      DAT_0085695c = *(undefined4 *)&pRVar2[1].field_0x50;
+      _DAT_00856960 = *(undefined4 *)&pRVar2[1].field_0x54;
       _DAT_00856940 = 3;
-      DAT_00856958 = *(int *)&pAVar2[1].field_0x4c;
+      DAT_00856958 = *(int *)&pRVar2[1].field_0x4c;
       param_2[0x10] = param_2[0x10] + 0xc;
       param_2[4] = DAT_007a1700;
       param_2[5] = DAT_007a1704;

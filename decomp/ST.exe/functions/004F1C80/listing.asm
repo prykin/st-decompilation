@@ -1,4 +1,4 @@
-FUN_004f1c80:
+CPanelTy::sub_004F1C80:
 004F1C80  55                        PUSH EBP
 004F1C81  8B EC                     MOV EBP,ESP
 004F1C83  53                        PUSH EBX
@@ -26,7 +26,8 @@ FUN_004f1c80:
 004F1CBE  8B 94 87 0B 0D 00 00      MOV EDX,dword ptr [EDI + EAX*0x4 + 0xd0b]
 004F1CC5  51                        PUSH ECX
 004F1CC6  52                        PUSH EDX
-004F1CC7  E8 84 99 21 00            CALL 0x0070b650
+CPanelTy::sub_004F1C80::override::prt_4f1cc7_92e7e0d4:
+004F1CC7  E8 84 99 21 00            CALL 0x0070b650  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/short;/int
 004F1CCC  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]
 004F1CCF  BA 6A 00 00 00            MOV EDX,0x6a
 004F1CD4  50                        PUSH EAX

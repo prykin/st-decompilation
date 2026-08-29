@@ -10,15 +10,20 @@ int __cdecl FUN_0067ef60(byte *param_1,int *param_2)
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
+
   iVar1 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar1 == 0) {
     pcVar2 = thunk_FUN_0067eea0(param_1);
     if (pcVar2 == nullptr) {
+
       Library::DKW::TBL::FUN_006b5aa0(g_dArray_00848A1C,(char *)param_1);
+
       iVar1 = Library::DKW::TBL::FUN_006b5aa0(g_dArray_00848A18,&CHAR_00h_008016a0);
-      pcVar2 = (char *)thunk_FUN_0067ee40(iVar1);
+
+      pcVar2 = STPointerBoundaryCast<char *>(thunk_FUN_0067ee40(iVar1));
     }
     else {
+
       iVar1 = thunk_FUN_0067ed20(param_1);
     }
     if (param_2 != nullptr) {

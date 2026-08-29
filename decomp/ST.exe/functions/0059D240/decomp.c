@@ -23,40 +23,40 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
   ushort *puVar12;
   int local_8c4 [5];
   int local_8b0;
-  undefined4 local_8ac;
-  undefined4 local_8a8;
-  undefined4 local_8a4;
-  undefined4 local_8a0;
-  undefined4 local_88c;
-  undefined4 local_888;
-  undefined4 local_884;
-  undefined4 local_814;
-  undefined4 local_810;
-  undefined4 local_80c;
-  undefined4 local_808 [4];
-  undefined4 local_7f8;
-  undefined4 local_7f4;
-  undefined4 local_7a8;
-  undefined4 local_7a4;
-  undefined4 local_7a0;
-  undefined4 local_6f8;
-  undefined4 local_6f4;
-  undefined4 local_68c;
-  undefined4 local_688 [4];
-  undefined4 local_678;
-  undefined4 local_674;
-  undefined4 local_620;
-  undefined4 local_50c;
-  undefined4 local_508;
-  undefined4 local_500;
-  undefined4 local_4fc;
-  undefined4 local_4f8;
-  undefined4 local_4f4;
-  undefined4 local_4f0;
-  undefined4 local_4ec;
-  undefined4 local_4b8;
-  undefined4 local_4b4;
-  undefined4 local_4b0;
+  uint local_8ac;
+  uint local_8a8;
+  uint local_8a4;
+  uint local_8a0;
+  uint local_88c;
+  uint local_888;
+  uint local_884;
+  uint local_814;
+  uint local_810;
+  uint local_80c;
+  uint local_808 [4];
+  uint local_7f8;
+  uint local_7f4;
+  uint local_7a8;
+  uint local_7a4;
+  uint local_7a0;
+  uint local_6f8;
+  uint local_6f4;
+  uint local_68c;
+  uint local_688 [4];
+  uint local_678;
+  uint local_674;
+  uint local_620;
+  uint local_50c;
+  uint local_508;
+  uint local_500;
+  uint local_4fc;
+  uint local_4f8;
+  uint local_4f4;
+  uint local_4f0;
+  uint local_4ec;
+  uint local_4b8;
+  uint local_4b4;
+  uint local_4b0;
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
 
@@ -68,6 +68,7 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   iVar7 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar7 == 0) {
@@ -80,11 +81,14 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
     }
     iVar8 = 1;
     puVar12 = this_00->field_005D + 0x14;
+
     uVar4 = FUN_006b4fe0(this_00->field_005D);
+
     local_EAX_163 =
          FUN_006b50c0(0x2c8 - this_00->field_1B4C,0x149,(uint)this_00->field_005D[7],uVar4,
                       (undefined4 *)puVar12,iVar8);
     *puVar9 = local_EAX_163;
+    /* ST_CALLSITE[0059D301]: CALL 0x006c4880; direct=006C4880 Library::DKW::DDX::FUN_006c4880; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override */
     ptVar5 = Library::DKW::DDX::FUN_006c4880(g_dDXContext_0080759C,0x22,0x72,0x2e1,0x14c,8);
     iVar8 = *puVar9;
     this_00->field_1E92 = ptVar5;
@@ -98,7 +102,7 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
       local_8a0 = 0x73;
       local_8c4[2] = 1;
       if (pcVar1->field_00A0 != 0) {
-        FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar1);
+        FUN_00710790((RecoveredRecordView_00710790_7768A573 *)pcVar1);
       }
       local_8b0 = *(int *)&pcVar1->field_0x8a;
       local_8a8 = (undefined4)(0x149 / (longlong)local_8b0);
@@ -147,16 +151,19 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
       this_00->field_002D = 5;
       FUN_006e6080(this_00,2,this_00->field_1B14,(undefined4 *)&this_00->field_0x1d);
       if (this_00->field_1B2C != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)this_00->field_1B70,this_00->field_1B2C,0xfffffffe,this_00->field_1B44,
                    this_00->field_1B48);
       }
       if (this_00->field_1BBD != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)this_00->field_1C01,this_00->field_1BBD,0xfffffffe,this_00->field_1BD5,
                    this_00->field_1BD9);
       }
       if (this_00->field_1C4E != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)this_00->field_1C92,this_00->field_1C4E,0xfffffffe,this_00->field_1C66,
                    this_00->field_1C6A);
@@ -170,6 +177,7 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar6 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x666,0,iVar7,"%s",
                              "FSGSTy::LicCtrls");
   if (iVar6 != 0) {

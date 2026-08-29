@@ -5,7 +5,7 @@
    Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
    decompilation contains no value return */
 
-void FUN_007561d0(AnonShape_00753C80_4C8E695D *param_1,int param_2)
+void FUN_007561d0(RecoveredRecordView_00753C80_637B4E8C *param_1,int param_2)
 
 {
   if (param_2 < 1) {
@@ -13,6 +13,7 @@ void FUN_007561d0(AnonShape_00753C80_4C8E695D *param_1,int param_2)
          0xffffffff;
     return;
   }
+
   FUN_00753c80(param_1,param_2);
   return;
 }

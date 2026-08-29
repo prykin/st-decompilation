@@ -2303,7 +2303,7 @@ switchD_005c9cc0::caseD_6985:
 005CA942  6A FF                     PUSH -0x1
 005CA944  52                        PUSH EDX
 005CA945  68 4A 23 00 00            PUSH 0x234a
-005CA94A  E8 F1 57 0E 00            CALL 0x006b0140
+005CA94A  E8 F1 57 0E 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 005CA94F  50                        PUSH EAX
 005CA950  A1 6C 17 81 00            MOV EAX,[0x0081176c]
 005CA955  8B 48 30                  MOV ECX,dword ptr [EAX + 0x30]
@@ -2524,7 +2524,7 @@ LAB_005cab8a:
 005CAB96  6A FF                     PUSH -0x1
 005CAB98  52                        PUSH EDX
 005CAB99  50                        PUSH EAX
-005CAB9A  E8 A1 55 0E 00            CALL 0x006b0140
+005CAB9A  E8 A1 55 0E 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 005CAB9F  8B 0D 6C 17 81 00         MOV ECX,dword ptr [0x0081176c]
 005CABA5  50                        PUSH EAX
 005CABA6  8B 49 34                  MOV ECX,dword ptr [ECX + 0x34]
@@ -2731,7 +2731,7 @@ LAB_005cadd5:
 005CADD5  8B 93 4F 1F 00 00         MOV EDX,dword ptr [EBX + 0x1f4f]
 005CADDB  6A 00                     PUSH 0x0
 005CADDD  52                        PUSH EDX
-005CADDE  E8 BD 05 14 00            CALL 0x0070b3a0
+005CADDE  E8 BD 05 14 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 005CADE3  50                        PUSH EAX
 005CADE4  8B 45 F4                  MOV EAX,dword ptr [EBP + -0xc]
 005CADE7  83 C0 F0                  ADD EAX,-0x10

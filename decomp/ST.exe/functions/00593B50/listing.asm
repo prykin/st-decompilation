@@ -97,7 +97,8 @@ LAB_00593c3a:
 00593C93  50                        PUSH EAX
 00593C94  51                        PUSH ECX
 00593C95  52                        PUSH EDX
-00593C96  E8 25 14 12 00            CALL 0x006b50c0
+ComboTy::InitCombo::override::prt_593c96_14f2e6ea:
+00593C96  E8 25 14 12 00            CALL 0x006b50c0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006B4FA0_DAC3A217; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006B4FA0_DAC3A217;/int;/int;/int;/uint;pointer:/undefined4;/int
 00593C9B  89 83 00 01 00 00         MOV dword ptr [EBX + 0x100],EAX
 00593CA1  8B 70 14                  MOV ESI,dword ptr [EAX + 0x14]
 00593CA4  85 F6                     TEST ESI,ESI

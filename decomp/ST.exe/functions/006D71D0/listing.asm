@@ -14,7 +14,8 @@ FUN_006d71d0:
 LAB_006d71f1:
 006D71F1  56                        PUSH ESI
 006D71F2  68 E8 00 00 00            PUSH 0xe8
-006D71F7  E8 34 73 05 00            CALL 0x0072e530
+FUN_006d71d0::override::prt_6d71f7_d0c5e58d:
+006D71F7  E8 34 73 05 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/Classes/RecoveredClass_0074CDC5; signature=__cdecl;pointer:/SubmarineTitans/Recovered/Classes/RecoveredClass_0074CDC5;/uint
 006D71FC  8B F0                     MOV ESI,EAX
 006D71FE  83 C4 04                  ADD ESP,0x4
 006D7201  3B F3                     CMP ESI,EBX
@@ -43,7 +44,8 @@ LAB_006d723b:
 006D724D  3B CB                     CMP ECX,EBX
 006D724F  0F 84 A1 00 00 00         JZ 0x006d72f6
 006D7255  68 B0 00 00 00            PUSH 0xb0
-006D725A  E8 D1 72 05 00            CALL 0x0072e530
+FUN_006d71d0::override::prt_6d725a_79b01f63:
+006D725A  E8 D1 72 05 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/Classes/RecoveredClass_0074CFC0; signature=__cdecl;pointer:/SubmarineTitans/Recovered/Classes/RecoveredClass_0074CFC0;/uint
 006D725F  83 C4 04                  ADD ESP,0x4
 006D7262  3B C3                     CMP EAX,EBX
 006D7264  74 14                     JZ 0x006d727a
@@ -97,7 +99,7 @@ LAB_006d72c4:
 006D72D2  74 07                     JZ 0x006d72db
 006D72D4  8B 01                     MOV EAX,dword ptr [ECX]
 006D72D6  6A 01                     PUSH 0x1
-006D72D8  FF 50 0C                  CALL dword ptr [EAX + 0xc]
+006D72D8  FF 50 0C                  CALL dword ptr [EAX + 0xc]  ; [STIndirectCallsiteApplier] exact slot 0xC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 LAB_006d72db:
 006D72DB  89 9F 90 00 00 00         MOV dword ptr [EDI + 0x90],EBX
 006D72E1  5F                        POP EDI

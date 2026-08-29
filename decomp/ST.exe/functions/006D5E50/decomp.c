@@ -24,10 +24,13 @@ int FUN_006d5e50(int param_1,undefined4 *param_2,undefined4 *param_3)
   /* ST_CALLSITE[006D5E85]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection(lpCriticalSection);
   local_14 = (PRTL_CRITICAL_SECTION_DEBUG)0x1;
-  iVar1 = FUN_006d5df0(param_1 + -0xc,(AnonShape_006D5DF0_C24DE923 *)&local_14);
+
+  iVar1 = FUN_006d5df0((RecoveredRecord_006D5DF0_C161F94B *)(param_1 + -0xc),
+                       (AnonShape_006D5DF0_C24DE923 *)&local_14);
   if (-1 < iVar1) {
-    iVar1 = FUN_00749106((AnonShape_00749106_79800343 *)param_1,(LPCRITICAL_SECTION)&local_14,
-                         param_3);
+
+    iVar1 = Library::Win32::COMSupport::FUN_00749106
+                      ((AnonShape_00749106_79800343 *)param_1,(LPCRITICAL_SECTION)&local_14,param_3);
   }
   /* ST_CALLSITE[006D5EB6]: CALL dword ptr [0x0085bb90] */
   LeaveCriticalSection(lpCriticalSection);

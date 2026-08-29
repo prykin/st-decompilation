@@ -26,7 +26,7 @@ CGenerate::sub_0069B190:
 0069B1D6  E8 85 FE 00 00            CALL 0x006ab060
 0069B1DB  03 F6                     ADD ESI,ESI
 0069B1DD  56                        PUSH ESI
-0069B1DE  E8 8D FA 00 00            CALL 0x006aac70
+0069B1DE  E8 8D FA 00 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 0069B1E3  8B D0                     MOV EDX,EAX
 0069B1E5  8B CE                     MOV ECX,ESI
 0069B1E7  89 17                     MOV dword ptr [EDI],EDX

@@ -2,7 +2,8 @@ FUN_00423e00:
 00423E00  56                        PUSH ESI
 00423E01  57                        PUSH EDI
 00423E02  8B F1                     MOV ESI,ECX
-00423E04  E8 AC EF FD FF            CALL 0x00402db5
+FUN_00423e00::override::prt_423e04_66359455:
+00423E04  E8 AC EF FD FF            CALL 0x00402db5  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__thiscall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/STGroupC
 00423E09  8B F8                     MOV EDI,EAX
 00423E0B  8B CE                     MOV ECX,ESI
 00423E0D  57                        PUSH EDI

@@ -28,6 +28,7 @@ void __thiscall FUN_0058c560(void *this,int param_1,int param_2)
     STField<int>(this,0x239) = PTR_00806724->entryCount + -1;
     STField<undefined4>(this,0x235) = 1;
     STField<undefined4>(this,0x23d) = 0x4b6;
+
     iVar2 = FUN_006aced8(STField<int>(this,0x251) << 7,STField<int>(this,0x255) << 7,
                          param_1 << 7,param_2 << 7);
     if (iVar2 != 0) {
@@ -52,6 +53,7 @@ void __thiscall FUN_0058c560(void *this,int param_1,int param_2)
       return;
     }
     if (iVar3 == 2) {
+
       local_EAX_74 = ReportDebugMessage("E:\\__titans\\Igor\\to_sat.cpp",0x11b,0,0,
                                         "%s","For Artem : already has athe target");
       if (local_EAX_74 != 0) {

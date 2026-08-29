@@ -4,9 +4,16 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as STAppC.
    Evidence: this_call_owners=[STAppC]; agreed_this_calls=1; incoming_this_accesses=9;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (5), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00533D10 @ 00534940 -> killed on
+   every CFG path | 0056ADC0 @ 0056BC2E -> read as EAX on every CFG path | 0056FA60 @ 0056FE13 ->
+   read as EAX on every CFG path | 00593040 @ 005934B8 -> read as EAX on every CFG path | 005B0BA0 @
+   005B19CC -> read as EAX on every CFG path | 005C1A90 @ 005C1CD3 -> read as EAX on every CFG path
+    */
 
-undefined4 __thiscall STAppC::sub_0056E9E0(STAppC *this,int param_1)
+int __thiscall STAppC::sub_0056E9E0(STAppC *this,int param_1)
 
 {
   byte bVar1;
@@ -24,7 +31,7 @@ undefined4 __thiscall STAppC::sub_0056E9E0(STAppC *this,int param_1)
   InternalExceptionFrame local_5c;
   STAppC *local_18;
   char *local_14;
-  undefined4 local_10;
+  int local_10;
   char *local_c;
   cMf32 *local_8;
 
@@ -36,6 +43,7 @@ undefined4 __thiscall STAppC::sub_0056E9E0(STAppC *this,int param_1)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_18 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   pSVar2 = local_18;
   if (iVar3 != 0) {
@@ -43,7 +51,8 @@ undefined4 __thiscall STAppC::sub_0056E9E0(STAppC *this,int param_1)
     return 0;
   }
   local_c = &local_18->field_76F6;
-  pcVar3 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)local_c,0,0,0);
+
+  pcVar3 = STPointerBoundaryCast<cMf32 *>(Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)local_c,0,0,0));
   local_8 = pcVar3;
   if ((DArrayTy *)pSVar2->field_4EA7 != nullptr) {
     FUN_006b5570((DArrayTy *)pSVar2->field_4EA7);
@@ -51,6 +60,7 @@ undefined4 __thiscall STAppC::sub_0056E9E0(STAppC *this,int param_1)
   puVar4 = Library::Ourlib::MFSARR::mfSarLoad(pcVar3,PTR_s_DESCRIPTION_0079b074,0);
   pSVar2->field_4EA7 = puVar4;
   if (puVar4 == nullptr) {
+    /* ST_CALLSITE[0056EA86]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
     pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     pSVar2->field_4EA7 = &pDVar5->flags;
   }
@@ -60,6 +70,7 @@ undefined4 __thiscall STAppC::sub_0056E9E0(STAppC *this,int param_1)
   puVar4 = Library::Ourlib::MFSARR::mfSarLoad(pcVar3,PTR_s_OBJECTIVES_0079b078,0);
   pSVar2->field_4EAB = puVar4;
   if (puVar4 == nullptr) {
+    /* ST_CALLSITE[0056EAC2]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
     pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     pSVar2->field_4EAB = &pDVar5->flags;
   }

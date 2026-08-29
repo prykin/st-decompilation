@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 void FUN_005782d0(void)
 
@@ -6,7 +8,8 @@ void FUN_005782d0(void)
   int iVar2;
   int iVar1;
 
-  this = (DebugSystemC *)Library::MSVCRT::FUN_0072e530(0x24);
+  /* ST_CALLSITE[005782D2]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/DebugSystemC; signature=__cdecl;pointer:/DebugSystemC;/uint */
+  this = Library::MSVCRT::FUN_0072e530(0x24);
   if (this == nullptr) {
     g_debugSystem_00811644 = nullptr;
   }

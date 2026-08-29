@@ -13,7 +13,8 @@ STSharkC * __cdecl CreateSTShark(void)
 {
   STSharkC *pSVar1;
 
-  pSVar1 = (STSharkC *)FUN_006b04d0(0x28f);
+  /* ST_CALLSITE[0058E415]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STSharkC; signature=__stdcall;pointer:/STSharkC;/uint */
+  pSVar1 = FUN_006b04d0(0x28f);
   if (pSVar1 != nullptr) {
     pSVar1 = STSharkC::STSharkC(pSVar1);
     return pSVar1;

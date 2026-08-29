@@ -18,7 +18,7 @@
    Evidence: 00596CC0 -> 00594EB0 @ 00596EDD */
 
 void __thiscall
-FSGSTy::OutTRGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMMObjTy *param_2,
+FSGSTy::OutTRGlProc(FSGSTy *this,RecoveredGlobalRecordView_00854EB8 *param_1,MMMObjTy *param_2,
                    MMMObjTy *param_3,StartServTy *param_4,int param_5,int param_6,int param_7,
                    int param_8)
 
@@ -39,6 +39,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMM
   if (param_8 != 0) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
+
     errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (errorCode == 0) {
       /* ST_CALLSITE[00594F17]: CALL 0x00403099; direct=00403099 MMMObjTy::OutRGlProc */
@@ -46,8 +47,10 @@ FSGSTy::OutTRGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMM
                 (param_3,(int)param_1,param_2,param_3,(int)param_4,param_5,param_6,param_7 + -0x5f,
                  &g_startSystem_0081176C->field_0140);
       local_8 = param_4 + param_6 + -0x15;
+
       Library::DKW::DDX::FUN_006c6660
                 ((DDXContext *)param_1,(int)local_8,param_5 + 0x26,7,param_7 - 0xab,3,0);
+
       Library::DKW::DDX::FUN_006c6470
                 ((int)param_1,(int)local_8,param_5 + 0x26,(undefined4 *)0x7,param_7 + -0xab,3,
                  g_startSystem_0081176C->field_0140);
@@ -60,9 +63,11 @@ FSGSTy::OutTRGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMM
       StartServTy::WrTextDDX
                 (this_01,0,(int)(param_4 + 10),param_5 + 0xf8,0xe6,0x19,pcVar2,uVar4,uVar5,pcVar6,
                  uVar7);
+
       Library::DKW::DDX::FUN_006c6470
                 ((int)param_1,(int)(param_4 + 10),param_5 + 0xf8,(undefined4 *)0xe6,0x19,4,
                  g_startSystem_0081176C->field_0140);
+
       Library::DKW::DDX::FUN_006c6470
                 ((int)param_1,(int)(param_4 + 0xc),param_5 + 0xfa,(undefined4 *)0xe2,0x15,4,
                  g_startSystem_0081176C->field_0140);
@@ -103,9 +108,11 @@ FSGSTy::OutTRGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMM
       StartServTy::WrTextDDX
                 (this_02,0,(int)(param_4 + 0x78),param_5 + 0x155,0xa0,0x19,pcVar2,uVar4,uVar5,pcVar6
                  ,uVar7);
+
       Library::DKW::DDX::FUN_006c6470
                 ((int)param_1,(int)(param_4 + 0x78),param_5 + 0x155,(undefined4 *)0xa0,0x19,4,
                  g_startSystem_0081176C->field_0140);
+
       Library::DKW::DDX::FUN_006c6470
                 ((int)param_1,(int)(param_4 + 0x7a),param_5 + 0x157,(undefined4 *)0x9c,0x15,4,
                  g_startSystem_0081176C->field_0140);
@@ -113,6 +120,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,MMM
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
+
     iVar3 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x8c,0,errorCode,
                                "%s","FSGSTy::OutTRGlProc");
     if (iVar3 != 0) {

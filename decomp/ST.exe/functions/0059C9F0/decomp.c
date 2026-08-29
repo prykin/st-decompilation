@@ -16,15 +16,15 @@ void __thiscall FSGSTy::NewIDCtrls(FSGSTy *this)
   ccFntTy **ppcVar6;
   ccFntTy *local_8d8 [8];
   DArrayTy *local_8b8;
-  undefined4 local_8ac;
-  undefined4 local_8a8;
-  undefined4 local_8a4;
-  undefined4 local_88c;
-  undefined4 local_888;
-  undefined4 local_884;
-  undefined4 local_68;
-  undefined4 local_64;
-  undefined4 local_60;
+  uint local_8ac;
+  uint local_8a8;
+  uint local_8a4;
+  uint local_88c;
+  uint local_888;
+  uint local_884;
+  uint local_68;
+  uint local_64;
+  uint local_60;
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
 
@@ -36,29 +36,38 @@ void __thiscall FSGSTy::NewIDCtrls(FSGSTy *this)
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar4 == 0) {
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00 = local_8;
     local_8->field_1AE8 = pDVar2;
+
     Library::DKW::TBL::FUN_006b5aa0(pDVar2,&CHAR_00h_00807e1d);
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AEC = pDVar2;
+
     Library::DKW::TBL::FUN_006b5aa0(pDVar2,&CHAR_00h_008016a0);
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AF0 = pDVar2;
+
     Library::DKW::TBL::FUN_006b5aa0(pDVar2,&CHAR_00h_008016a0);
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AF8 = pDVar2;
+
     Library::DKW::TBL::FUN_006b5aa0(pDVar2,&CHAR_00h_008016a0);
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AFC = pDVar2;
+
     Library::DKW::TBL::FUN_006b5aa0(pDVar2,&CHAR_00h_008016a0);
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1B00 = pDVar2;
+
     Library::DKW::TBL::FUN_006b5aa0(pDVar2,&CHAR_00h_008016a0);
+    /* ST_CALLSITE[0059CAE6]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1B04 = &pDVar2->flags;
+
     Library::DKW::TBL::FUN_006b5aa0(pDVar2,&CHAR_00h_008016a0);
     ppcVar6 = local_8d8;
     for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -137,6 +146,7 @@ void __thiscall FSGSTy::NewIDCtrls(FSGSTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x5f4,0,iVar4,"%s",
                              "FSGSTy::NewIDCtrls");
   if (iVar3 != 0) {

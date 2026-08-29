@@ -126,7 +126,8 @@ LAB_005bd86b:
 005BD924  51                        PUSH ECX
 005BD925  57                        PUSH EDI
 005BD926  52                        PUSH EDX
-005BD927  E8 79 69 E4 FF            CALL 0x004042a5
+MReportTy::InitMReport::override::prt_5bd927_cdce5103:
+005BD927  E8 79 69 E4 FF            CALL 0x004042a5  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/int;pointer:/undefined;/WinDef.h/BYTE
 005BD92C  89 83 83 00 00 00         MOV dword ptr [EBX + 0x83],EAX
 005BD932  89 70 58                  MOV dword ptr [EAX + 0x58],ESI
 005BD935  89 78 5C                  MOV dword ptr [EAX + 0x5c],EDI
@@ -144,7 +145,8 @@ LAB_005bd86b:
 005BD95D  A1 80 67 80 00            MOV EAX,[0x00806780]
 005BD962  50                        PUSH EAX
 005BD963  68 9D 01 00 00            PUSH 0x19d
-005BD968  E8 43 F5 14 00            CALL 0x0070ceb0
+MReportTy::InitMReport::override::prt_5bd968_bcd42e10:
+005BD968  E8 43 F5 14 00            CALL 0x0070ceb0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/cMf32;pointer:/char;/byte
 005BD96D  83 C4 28                  ADD ESP,0x28
 005BD970  89 83 8B 00 00 00         MOV dword ptr [EBX + 0x8b],EAX
 005BD976  89 70 58                  MOV dword ptr [EAX + 0x58],ESI
@@ -162,7 +164,8 @@ LAB_005bd86b:
 005BD994  50                        PUSH EAX
 005BD995  6A 28                     PUSH 0x28
 005BD997  68 91 00 00 00            PUSH 0x91
-005BD99C  E8 1F 77 0F 00            CALL 0x006b50c0
+MReportTy::InitMReport::override::prt_5bd99c_1410434f:
+005BD99C  E8 1F 77 0F 00            CALL 0x006b50c0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_MReportTy_0077; signature=__stdcall;pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_MReportTy_0077;/int;/int;/int;/uint;pointer:/undefined4;/int
 005BD9A1  89 43 77                  MOV dword ptr [EBX + 0x77],EAX
 005BD9A4  8B 43 5D                  MOV EAX,dword ptr [EBX + 0x5d]
 005BD9A7  56                        PUSH ESI
@@ -556,7 +559,8 @@ LAB_005bde12:
 005BDE31  6A 46                     PUSH 0x46
 005BDE33  6A 47                     PUSH 0x47
 005BDE35  52                        PUSH EDX
-005BDE36  E8 B5 1B 10 00            CALL 0x006bf9f0
+MReportTy::InitMReport::override::prt_5bde36_84f22ef4:
+005BDE36  E8 B5 1B 10 00            CALL 0x006bf9f0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69;pointer:/int;/undefined4;/undefined4;/undefined4;/undefined4
 005BDE3B  8B 8B 53 04 00 00         MOV ECX,dword ptr [EBX + 0x453]
 005BDE41  50                        PUSH EAX
 005BDE42  6A 46                     PUSH 0x46
@@ -642,7 +646,8 @@ LAB_005bdf04:
 005BDF20  6A 0A                     PUSH 0xa
 005BDF22  6A 1A                     PUSH 0x1a
 005BDF24  52                        PUSH EDX
-005BDF25  E8 C6 1A 10 00            CALL 0x006bf9f0
+MReportTy::InitMReport::override::prt_5bdf25_84f22ef4:
+005BDF25  E8 C6 1A 10 00            CALL 0x006bf9f0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69;pointer:/int;/undefined4;/undefined4;/undefined4;/undefined4
 005BDF2A  8B 8B 57 04 00 00         MOV ECX,dword ptr [EBX + 0x457]
 005BDF30  50                        PUSH EAX
 005BDF31  6A 0A                     PUSH 0xa

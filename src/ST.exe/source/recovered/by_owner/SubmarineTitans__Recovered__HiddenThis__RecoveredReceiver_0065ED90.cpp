@@ -1,0 +1,73 @@
+#include "st/generated.hpp"
+// Generated translation unit: source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_0065ED90.cpp
+
+// 0065ED90 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0065ED90::FUN_0065ed90
+#line 4 "decomp/ST.exe/functions/0065ED90/decomp.c"
+/* [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_0065ED90.
+   Evidence: incoming_receiver_captures=1; receiver_accesses=4; incoming_edx_uses=0; calls=7;
+   ecx_pointer_setup=7; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
+   expected_stack=12; receiver_family_members=1; adopt_untyped_existing_thiscall */
+
+int __thiscall
+st::fn_0065ED90
+          (RecoveredReceiver_0065ED90 *this,short *param_1,short *param_2,int param_3)
+
+{
+  short *psVar1;
+  short sVar2;
+  int iVar4;
+  int iVar3;
+  uint uVar5;
+  int iVar6;
+  int iVar7;
+  int local_1c;
+  int local_18;
+  int local_14;
+  RecoveredReceiver_0065ED90 *local_10;
+  int local_c;
+  int local_8;
+
+  psVar1 = param_2;
+  local_10 = this;
+  iVar4 = st::fn_00402A8B(this,st::machine_word_boundary_cast<undefined4>(&local_c),&local_8,&local_c,&local_1c);
+  if (iVar4 != 0) {
+    return -4;
+  }
+  iVar7 = (int)param_1[3] / 2 + (int)*param_1;
+  iVar4 = (int)param_1[4] / 2 + (int)param_1[1];
+  local_18 = iVar4;
+  iVar3 = st::fn_006ACED8(local_8,local_c,iVar7,iVar4);
+  if (iVar3 < 8) {
+    return -4;
+  }
+  local_14 = iVar7 - local_8;
+  param_2[2] = 0;
+  param_2[3] = 3;
+  param_2[4] = 3;
+  param_2[5] = 5;
+  uVar5 = local_10->field_001C * 0x41c64e6d + 0x3039;
+  local_10->field_001C = uVar5;
+  /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
+  param_2 = (short *)param_3;
+  iVar6 = (uVar5 >> 0x10) % 6 + 0x14;
+  if (param_3 != 0x200) {
+    if (param_3 != 0x400) {
+      uVar5 = local_10->field_001C * 0x41c64e6d + 0x3039;
+      local_10->field_001C = uVar5;
+      param_3 = (-(uint)((uVar5 & 0x10000) != 0) & 0x200) + 0x200;
+    }
+    param_2 = (short *)param_3;
+    if (st::machine_word_boundary_cast<uint>((short *)param_3) != st::machine_word_boundary_cast<uint>((short *)0x200)) {
+      *psVar1 = ((short)iVar7 - (short)((iVar6 * (local_c - iVar4)) / iVar3)) + -1;
+      sVar2 = ((short)local_18 - (short)((iVar6 * local_14) / iVar3)) + -1;
+      goto LAB_0065eedf;
+    }
+  }
+  *psVar1 = (short)((iVar6 * (local_c - iVar4)) / iVar3) + -1 + (short)iVar7;
+  sVar2 = (short)((iVar6 * local_14) / iVar3) + -1 + (short)local_18;
+LAB_0065eedf:
+  psVar1[1] = sVar2;
+  st::fn_00401906(psVar1,psVar1 + 1,psVar1 + 3,psVar1 + 4);
+  return (int)param_2;
+}

@@ -574,7 +574,8 @@ LAB_004e0fda:
 004E0FED  51                        PUSH ECX
 004E0FEE  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 004E0FF4  52                        PUSH EDX
-004E0FF5  E8 4E 4E F2 FF            CALL 0x00405e48
+FUN_004e0830::override::prt_4e0ff5_6dc22275:
+004E0FF5  E8 4E 4E F2 FF            CALL 0x00405e48  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STResourceC; signature=__stdcall;pointer:/STResourceC;/int;/int;/int
 004E0FFA  85 C0                     TEST EAX,EAX
 004E0FFC  74 10                     JZ 0x004e100e
 004E0FFE  8B 8E E0 04 00 00         MOV ECX,dword ptr [ESI + 0x4e0]

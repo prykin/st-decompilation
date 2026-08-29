@@ -199,7 +199,7 @@ LAB_005216ad:
 005216B1  8B 86 C4 03 00 00         MOV EAX,dword ptr [ESI + 0x3c4]
 005216B7  51                        PUSH ECX
 005216B8  50                        PUSH EAX
-005216B9  E8 E2 9C 1E 00            CALL 0x0070b3a0
+005216B9  E8 E2 9C 1E 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 005216BE  8B 4E 68                  MOV ECX,dword ptr [ESI + 0x68]
 005216C1  50                        PUSH EAX
 005216C2  6A 01                     PUSH 0x1

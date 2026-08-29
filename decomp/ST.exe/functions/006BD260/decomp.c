@@ -10,8 +10,7 @@ void FUN_006bd260(void)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d940;
   puStack_10 = &LAB_0072d964;
@@ -65,7 +64,7 @@ void FUN_006bd260(void)
   DAT_00854f60 = 0;
   if (0 < DAT_00854fc8) {
     do {
-      PTR_00854f44 = (AnonShape_GLOBAL_00854F44_D3146D26 *)PTR_00854fdc[DAT_00854f60];
+      PTR_00854f44 = (RecoveredGlobalRecordView_00854F44 *)PTR_00854fdc[DAT_00854f60];
       *(uint *)PTR_00854f44 = *(uint *)PTR_00854f44 | 2;
       PTR_00854f44->field_0068 = 5;
       DAT_00854f60 = DAT_00854f60 + 1;

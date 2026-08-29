@@ -13,7 +13,7 @@ FUN_0063f340:
 0063F359  68 50 1F 7D 00            PUSH 0x7d1f50
 0063F35E  6A 1D                     PUSH 0x1d
 0063F360  50                        PUSH EAX
-0063F361  E8 8A A7 0C 00            CALL 0x00709af0
+0063F361  E8 8A A7 0C 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 0063F366  89 86 47 03 00 00         MOV dword ptr [ESI + 0x347],EAX
 0063F36C  8B 08                     MOV ECX,dword ptr [EAX]
 0063F36E  83 C4 20                  ADD ESP,0x20

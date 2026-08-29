@@ -41,13 +41,14 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
   if (local_EAX_16 != 0xffff) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
+
     iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
     this_00 = local_8;
     if (iVar3 == 0) {
       SVar1 = message->id;
       if (SVar1 < MESS_TORPHIT) {
         if (SVar1 == MESS_SHARED_010F) {
-          /* ST_CALLSITE[006021CB]: CALL 0x00404d77; direct=00404D77 STDestC::sub_006025D0 */
+          /* ST_CALLSITE[006021CB]: CALL 0x00404d77; direct=00404D77 STDestC::sub_006025D0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
           local_10 = sub_006025D0(local_8,&local_c);
           /* ST_CALLSITE[006021E2]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
           STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
@@ -75,6 +76,7 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
             /* ST_CALLSITE[0060205D]: CALL 0x00403049; direct=00403049 STDestC::sub_006024B0 */
             iVar5 = sub_006024B0(local_8);
             if (iVar5 != 0) {
+
               if ((this_00->field_03A7 != 0) && (iVar5 = thunk_FUN_006029c0(), iVar5 == 0)) {
                 /* ST_CALLSITE[0060207D]: CALL 0x00401bf4; direct=00401BF4 STDestC::sub_00602440 */
                 sub_00602440(this_00);
@@ -111,7 +113,7 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
               }
             }
             else if ((this_00->field_03A7 != 0) && (this_00->field_036E != CASE_0)) {
-              /* ST_CALLSITE[0060212E]: CALL 0x00402cf2; direct=00402CF2 STDestC::sub_00602BE0 */
+              /* ST_CALLSITE[0060212E]: CALL 0x00402cf2; direct=00402CF2 STDestC::sub_00602BE0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
               sub_00602BE0(this_00);
             }
             if (((g_allPlayers_007FA174 != nullptr) && (this_00->field_03A5 != '\0'))
@@ -133,7 +135,7 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           STAllPlayersC::UnRegisterBlot
                     (g_allPlayers_007FA174,CONCAT22(extraout_var,this_00->field_0032),
-                     (AnonShape_0044AA20_1EE9340C *)this_00);
+                     (RecoveredRecordView_0044AA20_60F0F4F3 *)this_00);
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
@@ -153,7 +155,8 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
         }
       }
       else if (SVar1 == MESS_HITKILL) {
-        thunk_FUN_004ad430((STT3DSprC *)&local_8->field_01D5);
+        /* ST_CALLSITE[0060221B]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+        STT3DSprC::sub_004AD430((STT3DSprC *)&local_8->field_01D5);
         /* ST_CALLSITE[00602222]: CALL 0x00401bf4; direct=00401BF4 STDestC::sub_00602440 */
         sub_00602440(this_00);
         g_currentExceptionFrame = local_54.previous;
@@ -163,6 +166,7 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
       return 0;
     }
     g_currentExceptionFrame = local_54.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\nick\\to_dest.cpp",0x95,0,iVar3,"%s",
                                "STDestC::GetMessage");
     if (iVar4 != 0) {

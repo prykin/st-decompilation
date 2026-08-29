@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_004cd480(AnonShape_004CC900_31EE9CAA *param_1)
+undefined4 __fastcall FUN_004cd480(RecoveredRecordView_004CC900_A43E8B7C *param_1)
 
 {
   int local_EAX_19;
@@ -18,6 +18,7 @@ undefined4 __fastcall FUN_004cd480(AnonShape_004CC900_31EE9CAA *param_1)
   local_EAX_19 = LookupRecordByte(param_1->field_0x464);
   local_EAX_19 = (int)(byte)local_EAX_19;
   if (local_EAX_19 == 1) {
+
     iVar1 = thunk_FUN_004e60d0(*(int *)&param_1->field_0x464,0x98);
 joined_r0x004cd4ea:
     if (iVar1 != 0) {
@@ -29,6 +30,7 @@ joined_r0x004cd4ea:
       iVar1 = *(int *)&param_1->field_0x464;
       iVar5 = 0x94;
 LAB_004cd4c0:
+
       iVar1 = thunk_FUN_004e60d0(iVar1,iVar5);
       goto joined_r0x004cd4ea;
     }
@@ -57,9 +59,9 @@ LAB_004cd4c0:
     }
     else {
       if (local_EAX_235 == 2) {
-        /* ST_CALLSITE[004CD593]: CALL dword ptr [EAX + 0x90] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(param_1->field_0000 + 0x90))(6,0x7b);
+        /* ST_CALLSITE[004CD593]: CALL dword ptr [EAX + 0x90]; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4 */
+        STStructuralVirtualCall<void>(param_1, 0x90, 6, 0x7b);
+
         thunk_FUN_004cd450(param_1);
         return 1;
       }
@@ -81,9 +83,9 @@ LAB_004cd4c0:
     }
     else {
       if (uVar1 == 2) {
-        /* ST_CALLSITE[004CD604]: CALL dword ptr [EAX + 0x90] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(param_1->field_0000 + 0x90))(6,0x7e);
+        /* ST_CALLSITE[004CD604]: CALL dword ptr [EAX + 0x90]; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4 */
+        STStructuralVirtualCall<void>(param_1, 0x90, 6, 0x7e);
+
         thunk_FUN_004cd450(param_1);
         return 2;
       }
@@ -92,10 +94,11 @@ LAB_004cd4c0:
       uVar6 = 0x7f;
     }
   }
-  /* ST_CALLSITE[004CD61E]: CALL dword ptr [EDX + 0x90] */
+  /* ST_CALLSITE[004CD61E]: CALL dword ptr [EDX + 0x90]; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4 */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   (**(code **)(iVar3 + 0x90))(6,uVar6);
 cf_common_exit_004CD624:
+
   thunk_FUN_004cd450(param_1);
   return uVar4;
 }

@@ -69,11 +69,13 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
     if (iVar6 == 0) {
       return 0;
     }
+
     local_EAX_2277 = thunk_FUN_004c7c20(param_1);
     if (local_EAX_2277 == 0) {
       return 0;
     }
     pAVar14 = param_1->field_0607;
+
     TLOBaseTy::thunk_FUN_004c7cc0
               (param_1,pAVar14->field_0000,pAVar14->field_0004,pAVar14->field_0008,0,
                pAVar14->field_000C,pAVar14->field_0010,pAVar14->field_0014,(char *)(pAVar14 + 1));
@@ -111,6 +113,7 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
       /* ST_CALLSITE[004C85C7]: CALL 0x00404b6a; direct=00404B6A TLOBaseTy::sub_004C90C0 */
       local_EAX_263 = TLOBaseTy::sub_004C90C0(param_1);
       if ((local_EAX_263 == 0) &&
+
          (local_EAX_294 =
                ReportDebugMessage("E:\\__titans\\Artem\\TLO_bproc.cpp",0x19f,0,0,"%s"
                                   ,"What's that ?"), local_EAX_294 != 0)) {
@@ -137,6 +140,7 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
     case CASE_40:
     case CASE_49:
     case CASE_5C:
+
       thunk_FUN_004ce7a0(param_1);
       /* ST_CALLSITE[004C85A4]: CALL 0x004058da; direct=004058DA TLOBaseTy::sub_004CE860 */
       TLOBaseTy::sub_004CE860(param_1);
@@ -164,17 +168,20 @@ undefined4 __fastcall FUN_004c84c0(TLOBaseTy *param_1)
       if (iVar7 == 0) {
         iVar7 = 1;
       }
+
       iVar9 = thunk_FUN_004d7b90(*(char *)&param_1->field_0024,DAT_00794d84);
       if (iVar9 < iVar7) {
         param_1->field_03BC = 1;
         goto LAB_004c8806;
       }
+
       thunk_FUN_004d7e50(*(char *)&param_1->field_0024,
                          *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4),
                          (int)param_1->field_0018,iVar7);
     }
     if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
-      thunk_FUN_004d8b70((char)param_1->field_0024);
+      /* ST_CALLSITE[004C870E]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+      STAllPlayersC::sub_004D8B70(g_allPlayers_007FA174,(char)param_1->field_0024);
     }
     /* ST_CALLSITE[004C8720]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     uVar10 = LookupRecordByte((char)param_1->field_023D);
@@ -210,11 +217,14 @@ LAB_004c8806:
     uVar12 = 1;
   }
   /* ST_CALLSITE[004C885D]: CALL dword ptr [EDX + 0x2c] */
-  dVar10 = param_1->slot_2C();
+  dVar10 = param_1->vfunc_2C();
+
   iVar7 = thunk_FUN_004b72e0(*(char *)&param_1->field_0024,dVar10);
   if ((iVar7 == 0) ||
-     (iVar7 = thunk_FUN_004b79c0(*(char *)&param_1->field_0024,(int)param_1->field_0018), iVar7 != 0
-     )) {
+     /* ST_CALLSITE[004C8882]: CALL 0x00402c98; direct=00402C98 STAllPlayersC::sub_004B79C0 */
+     (iVar7 = STAllPlayersC::sub_004B79C0
+                        (g_allPlayers_007FA174,*(char *)&param_1->field_0024,
+                         (int)param_1->field_0018), iVar7 != 0)) {
     iVar7 = 0;
   }
   else {
@@ -252,25 +262,30 @@ LAB_004c8bf2:
       bVar5 = LookupRecordByte(*(char *)&param_1->field_0024);
       if (bVar5 == 3) {
         if (iVar7 != 0) {
+
           thunk_FUN_004e4330((int)param_1->field_0024,iVar7);
         }
       }
       else if (iVar7 != 0) {
+
         thunk_FUN_004d7c10(*(char *)&param_1->field_0024,
                            *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4),
                            (int)param_1->field_0018,iVar7);
       }
       if (local_10 != 0) {
+
         thunk_FUN_004d7d30(*(char *)&param_1->field_0024,
                            *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4),
                            (int)param_1->field_0018,local_10);
       }
       if (local_8 != 0) {
+
         thunk_FUN_004d7e50(*(char *)&param_1->field_0024,
                            *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4),
                            (int)param_1->field_0018,local_8);
       }
       if (local_c != 0) {
+
         thunk_FUN_004d7f70(*(char *)&param_1->field_0024,
                            *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4),
                            (int)param_1->field_0018,local_c);
@@ -280,7 +295,8 @@ LAB_004c8bf2:
       param_1->field_0394 = 100;
     }
     if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
-      thunk_FUN_004d8b70((char)param_1->field_0024);
+      /* ST_CALLSITE[004C8D51]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+      STAllPlayersC::sub_004D8B70(g_allPlayers_007FA174,(char)param_1->field_0024);
       return 0;
     }
   }
@@ -329,12 +345,14 @@ LAB_004c8bf2:
     bVar5 = LookupRecordByte(*(char *)&param_1->field_0024);
     if (bVar5 == 3) {
       if ((local_14 != 0) &&
-         (uVar12 = thunk_FUN_004e41c0((int)param_1->field_0024), (int)uVar12 < local_14)) {
+
+         (iVar7 = thunk_FUN_004e41c0((int)param_1->field_0024), iVar7 < local_14)) {
         bVar4 = false;
         param_1->field_03C8 = 1;
       }
     }
     else if ((local_14 != 0) &&
+
             (iVar7 = thunk_FUN_004d7b10(*(char *)&param_1->field_0024,
                                         *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4))
             , iVar7 < local_14)) {
@@ -342,6 +360,7 @@ LAB_004c8bf2:
       param_1->field_03C8 = 1;
     }
     if ((local_10 != 0) &&
+
        (iVar7 = thunk_FUN_004d7b50(*(char *)&param_1->field_0024,
                                    *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4)),
        iVar7 < local_10)) {
@@ -349,6 +368,7 @@ LAB_004c8bf2:
       param_1->field_03C4 = 1;
     }
     if ((local_8 != 0) &&
+
        (iVar7 = thunk_FUN_004d7b90(*(char *)&param_1->field_0024,
                                    *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4)),
        iVar7 < local_8)) {
@@ -356,6 +376,7 @@ LAB_004c8bf2:
       param_1->field_03BC = 1;
     }
     if ((local_c == 0) ||
+
        (iVar7 = thunk_FUN_004d7bd0(*(char *)&param_1->field_0024,
                                    *(int *)(&DAT_00794d70 + *(int *)&param_1->field_0x361 * 4)),
        local_c <= iVar7)) {
@@ -363,7 +384,7 @@ LAB_004c8bf2:
       if (bVar4) goto LAB_004c8bf2;
     }
     else {
-      param_1->field_03C0 = (AnonShape_005EFAE0_B406B78B *)0x1;
+      param_1->field_03C0 = (RecoveredRecordView_005EFAE0_855D930D *)0x1;
     }
     if (g_sndUnderAttMeneg_00811798 != nullptr) {
       if (param_1->field_03BC != 0) {

@@ -1,4 +1,4 @@
-FUN_004b7750:
+STAllPlayersC::sub_004B7750:
 004B7750  55                        PUSH EBP
 004B7751  8B EC                     MOV EBP,ESP
 004B7753  83 EC 24                  SUB ESP,0x24
@@ -46,7 +46,7 @@ LAB_004b77c4:
 004B77D3  85 C9                     TEST ECX,ECX
 004B77D5  0F 84 CC 00 00 00         JZ 0x004b78a7
 004B77DB  8B 01                     MOV EAX,dword ptr [ECX]
-004B77DD  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+004B77DD  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004B77E0  83 F8 78                  CMP EAX,0x78
 004B77E3  75 1D                     JNZ 0x004b7802
 004B77E5  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
@@ -61,7 +61,7 @@ LAB_004b77c4:
 LAB_004b7802:
 004B7802  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
 004B7805  8B 01                     MOV EAX,dword ptr [ECX]
-004B7807  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+004B7807  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004B780A  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]
 004B780D  50                        PUSH EAX
 004B780E  51                        PUSH ECX
@@ -74,7 +74,7 @@ LAB_004b7802:
 004B7824  8B 51 18                  MOV EDX,dword ptr [ECX + 0x18]
 004B7827  89 55 E8                  MOV dword ptr [EBP + -0x18],EDX
 004B782A  8B 01                     MOV EAX,dword ptr [ECX]
-004B782C  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+004B782C  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004B782F  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]
 004B7832  50                        PUSH EAX
 004B7833  51                        PUSH ECX
@@ -118,7 +118,7 @@ LAB_004b787c:
 004B78A1  03 7D F0                  ADD EDI,dword ptr [EBP + -0x10]
 LAB_004b78a4:
 004B78A4  8B 5D FC                  MOV EBX,dword ptr [EBP + -0x4]
-FUN_004b7750::cf_continue_loop_004B78A7:
+STAllPlayersC::sub_004B7750::cf_continue_loop_004B78A7:
 004B78A7  8B 8E 29 4E 7F 00         MOV ECX,dword ptr [ESI + 0x7f4e29]
 004B78AD  8B 45 F4                  MOV EAX,dword ptr [EBP + -0xc]
 004B78B0  40                        INC EAX

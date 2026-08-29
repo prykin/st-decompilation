@@ -14,8 +14,7 @@ undefined4 __thiscall BaseSystemC::CreateSystemObjects(BaseSystemC *this)
   uint uVar3;
   InternalExceptionFrame local_50;
   BaseSystemC *local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;

@@ -48,11 +48,13 @@ int FUN_006734c0(void)
           uVar4 = (DAT_00857558 - iVar2) + uVar5;
           if (0x400 < (int)uVar4) {
             iVar6 = (int)puVar3 - (int)PTR_0085755c;
+
             PTR_0085755c = Library::DKW::LIB::MemRealloc(PTR_0085755c,uVar4);
             puVar3 = (uint *)(PTR_0085755c + iVar6);
           }
+
           Library::MSVCRT::FUN_0072da70
-                    ((undefined4 *)(uVar5 + (int)puVar3),
+                    ((RecoveredRecord_006BFE70_3123BCE8 *)(uVar5 + (int)puVar3),
                      (AnonPointee_TLOBaseTy_0607 *)(iVar2 + (int)puVar3),
                      (uint)(PTR_0085755c + ((DAT_00857558 - iVar2) - (int)puVar3) + 1));
           puVar7 = (uint *)local_8[2];

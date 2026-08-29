@@ -2,15 +2,15 @@
 
 
 /* [STMethodOwnerApplier] Structural method owner recovered as
-   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260.
-   Evidence: this_call_owners=[SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260];
+   SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00636260.
+   Evidence: this_call_owners=[SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00636260];
    agreed_this_calls=1; incoming_this_accesses=3; incoming_edx_uses=0;
    incoming_stack_parameter_uses=0; direct_non_thunk_callers=0; incoming_ecx_receiver_callers=0;
    attributed_named_callers=1; owner_evidence_coverage=adequate */
 
 int __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0
-          (AnonReceiver_00636260 *this)
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00636260::sub_00636FC0
+          (RecoveredReceiver_00636260 *this)
 
 {
   int iVar1;
@@ -23,11 +23,11 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::sub_00636FC0
   int local_c;
   int local_8;
 
-  iVar4 = *(int *)&this->field_0xc;
+  iVar4 = this->field_000C;
   iVar4 = STBiasedDiv16(iVar4, 0xc9); /* exact signed 16-bit grid-index division */
-  iVar5 = *(int *)&this->field_0x10;
+  iVar5 = this->field_0010;
   iVar5 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
-  iVar1 = *(int *)&this->field_0x14;
+  iVar1 = this->field_0014;
   local_c = STBiasedDiv16(iVar1, 200); /* exact signed 16-bit grid-index division */
   if ((((g_sT3DSMAPContext_00807598->field_0048 <= iVar4) &&
        (iVar4 <= g_sT3DSMAPContext_00807598->field_0058)) &&

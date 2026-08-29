@@ -1,0 +1,15 @@
+target	status	detail
+global:007FA130	unchanged	descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STTorpCPtr; target=global already specialized
+global:007FA130	unchanged	descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STTorpCPtr; target=global already specialized
+global:007FA130	unchanged	descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STTorpCPtr; target=global already specialized
+global:007FA130	unchanged	descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STTorpCPtr; target=global already specialized
+global:007FA130	unchanged	descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STTorpCPtr; target=global already specialized
+global:007FA130	unchanged	descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STTorpCPtr; target=global already specialized
+global:007FA130	unchanged	descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STTorpCPtr; target=global already specialized
+global:007FA154	unchanged	descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr; target=global already specialized
+global:007FA158	unchanged	descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr; target=global already specialized
+global:007FA15C	unchanged	descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr; target=global already specialized
+global:007FA160	unchanged	descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr; target=global already specialized
+global:007FA164	unchanged	descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr; target=global already specialized
+global:007FA16C	unchanged	descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STFishCPtr; target=global already specialized
+record_field:007F4E20+0x9	unchanged	descriptor=unchanged /SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr; target=record field already specialized

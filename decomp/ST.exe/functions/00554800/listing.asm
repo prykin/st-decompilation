@@ -86,7 +86,8 @@ LAB_00554890:
 005548E2  A1 18 76 80 00            MOV EAX,[0x00807618]
 005548E7  50                        PUSH EAX
 005548E8  68 7A 26 00 00            PUSH 0x267a
-005548ED  E8 4E B8 15 00            CALL 0x006b0140
+cLoadingTy::InitParam::override::prt_5548ed_3f216396:
+005548ED  E8 4E B8 15 00            CALL 0x006b0140  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_007111C0_C04D120D; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_007111C0_C04D120D;/WinDef.h/UINT;/WinDef.h/HINSTANCE
 005548F2  8B 4E 08                  MOV ECX,dword ptr [ESI + 0x8]
 005548F5  50                        PUSH EAX
 005548F6  E8 C5 C8 1B 00            CALL 0x007111c0

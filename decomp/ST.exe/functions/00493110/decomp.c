@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __thiscall FUN_00493110(void *this,AnonShape_00493110_B173055C *param_1)
+void __thiscall FUN_00493110(void *this,RecoveredRecordView_00493110_4613DF4C *param_1)
 
 {
   int iVar1;
@@ -9,8 +9,9 @@ void __thiscall FUN_00493110(void *this,AnonShape_00493110_B173055C *param_1)
   int iVar2_mg0;
   int iVar3;
 
+
   iVar2_mg0 = STPlaySystemC::sub_006E62D0
-                        (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1,
+                        (g_playSystem_00802A38,(RecoveredRecordView_005EFAE0_855D930D *)param_1,
                          (int *)&param_1);
   if (iVar2_mg0 != -4) {
     /* ST_CALLSITE[00493137]: CALL dword ptr [EDX + 0x2c] */
@@ -36,9 +37,8 @@ void __thiscall FUN_00493110(void *this,AnonShape_00493110_B173055C *param_1)
       STField<undefined4>(this,0x76) = 0;
       STField<undefined4>(this,0x5a2) = uVar2;
       STField<undefined4>(this,0x5c4) = 7;
-      /* ST_CALLSITE[004931A6]: CALL dword ptr [EAX + 0xb4] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(*(int *)this + 0xb4))();
+      /* ST_CALLSITE[004931A6]: CALL dword ptr [EAX + 0xb4]; [STIndirectCallsiteApplier] exact slot 0xB4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+      STStructuralVirtualCall<undefined4>(this, 0xB4);
       return;
     }
   }

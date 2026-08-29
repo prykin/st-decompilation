@@ -3,20 +3,23 @@
 
 /* [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00719410_param_2Enum. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00566E70 @ 00566EB5 -> read as EAX on
+   every CFG path | 00566F30 @ 00566F75 -> read as EAX on every CFG path */
 
-undefined4 __cdecl
+int __cdecl
 FUN_00719410(undefined4 param_1,Global_sub_00719410_param_2Enum param_2,undefined4 param_3)
 
 {
   MCIERROR mcierr;
   DWORD_PTR dwParam1;
-  undefined4 local_18;
+  uint local_18;
   MCIDEVICEID local_14;
   char *local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_c;
+  uint local_8;
   local_18 = 0;
   dwParam1 = 0;
   local_14 = 0;

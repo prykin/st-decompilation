@@ -23,7 +23,8 @@ GameSystemC::InitSystem:
 00576F36  83 C4 08                  ADD ESP,0x8
 00576F39  A3 50 67 80 00            MOV [0x00806750],EAX
 00576F3E  68 F2 04 00 00            PUSH 0x4f2
-00576F43  E8 88 95 13 00            CALL 0x006b04d0
+GameSystemC::InitSystem::override::prt_576f43_c759b330:
+00576F43  E8 88 95 13 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F;/uint
 00576F48  85 C0                     TEST EAX,EAX
 00576F4A  74 09                     JZ 0x00576f55
 00576F4C  8B C8                     MOV ECX,EAX
@@ -57,7 +58,8 @@ LAB_00576f57:
 00576FA8  6A 00                     PUSH 0x0
 00576FAA  68 10 AC 7C 00            PUSH 0x7cac10
 00576FAF  51                        PUSH ECX
-00576FB0  E8 AB 3E 19 00            CALL 0x0070ae60
+GameSystemC::InitSystem::override::prt_576fb0_fbbcf727:
+00576FB0  E8 AB 3E 19 00            CALL 0x0070ae60  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_00806724; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_00806724;pointer:/cMf32;pointer:/char;/byte;/int;pointer:/undefined4;/int
 00576FB5  8B 15 F8 8D 85 00         MOV EDX,dword ptr [0x00858df8]
 00576FBB  A3 24 67 80 00            MOV [0x00806724],EAX
 00576FC0  8D 8D 78 FF FF FF         LEA ECX,[EBP + 0xffffff78]

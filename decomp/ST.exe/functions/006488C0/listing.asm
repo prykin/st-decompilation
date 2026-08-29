@@ -41,7 +41,7 @@ LAB_00648927:
 0064892A  8D 4D F0                  LEA ECX,[EBP + -0x10]
 0064892D  51                        PUSH ECX
 0064892E  52                        PUSH EDX
-0064892F  E8 8B 95 DB FF            CALL 0x00401ebf
+0064892F  E8 8B 95 DB FF            CALL 0x00401ebf  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override
 00648934  8B 55 F0                  MOV EDX,dword ptr [EBP + -0x10]
 00648937  8D 4D F4                  LEA ECX,[EBP + -0xc]
 0064893A  51                        PUSH ECX

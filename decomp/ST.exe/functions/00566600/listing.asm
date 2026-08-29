@@ -68,7 +68,8 @@ FUN_00566600:
 005666C1  50                        PUSH EAX
 005666C2  F3 A4                     MOVSB.REP ES:EDI,ESI
 005666C4  68 45 03 00 00            PUSH 0x345
-005666C9  E8 F2 A7 18 00            CALL 0x006f0ec0
+FUN_00566600::override::prt_5666c9_9d92389d:
+005666C9  E8 F2 A7 18 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 005666CE  8B D0                     MOV EDX,EAX
 005666D0  83 C9 FF                  OR ECX,0xffffffff
 005666D3  89 53 18                  MOV dword ptr [EBX + 0x18],EDX
@@ -145,7 +146,8 @@ LAB_00566787:
 00566794  50                        PUSH EAX
 00566795  6A 01                     PUSH 0x1
 00566797  51                        PUSH ECX
-00566798  E8 63 C4 18 00            CALL 0x006f2c00
+FUN_00566600::override::prt_566798_c67451d8:
+00566798  E8 63 C4 18 00            CALL 0x006f2c00  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;pointer:/char;/int;/undefined4
 0056679D  8B 53 18                  MOV EDX,dword ptr [EBX + 0x18]
 005667A0  83 C4 0C                  ADD ESP,0xc
 005667A3  50                        PUSH EAX
@@ -177,7 +179,8 @@ LAB_005667cb:
 005667E4  50                        PUSH EAX
 005667E5  6A 01                     PUSH 0x1
 005667E7  52                        PUSH EDX
-005667E8  E8 13 C4 18 00            CALL 0x006f2c00
+FUN_00566600::override::prt_5667e8_c67451d8:
+005667E8  E8 13 C4 18 00            CALL 0x006f2c00  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;pointer:/char;/int;/undefined4
 005667ED  83 C4 0C                  ADD ESP,0xc
 005667F0  50                        PUSH EAX
 005667F1  8B 43 18                  MOV EAX,dword ptr [EBX + 0x18]

@@ -17,8 +17,9 @@ CampaignTy * __cdecl CreateCampaign(void)
   uint *puVar3;
   SpriteClassTy *this_00;
   uint *puVar5;
-  this = (CampaignTy *)FUN_006b04d0(0x2000);
+  this = STPointerBoundaryCast<CampaignTy *>(FUN_006b04d0(0x2000));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->vtable = (CampaignTyVTable *)&VTable_0079C018;
     this->field_0018 = 0;

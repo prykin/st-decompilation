@@ -1,4 +1,4 @@
-FUN_0040ae40:
+STGroupBoatC::sub_0040AE40:
 0040AE40  55                        PUSH EBP
 0040AE41  8B EC                     MOV EBP,ESP
 0040AE43  81 EC 8C 00 00 00         SUB ESP,0x8c
@@ -103,7 +103,7 @@ FUN_0040ae40:
 0040AFDD  66 83 3C 47 00            CMP word ptr [EDI + EAX*0x2],0x0
 0040AFE2  0F 8D 8A 00 00 00         JGE 0x0040b072
 0040AFE8  68 90 00 00 00            PUSH 0x90
-0040AFED  E8 7E FC 29 00            CALL 0x006aac70
+0040AFED  E8 7E FC 29 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/short; source view only; no Ghidra override
 0040AFF2  8B F8                     MOV EDI,EAX
 0040AFF4  B9 24 00 00 00            MOV ECX,0x24
 0040AFF9  83 C8 FF                  OR EAX,0xffffffff
@@ -418,7 +418,7 @@ LAB_0040b481:
 0040B481  85 FF                     TEST EDI,EDI
 0040B483  0F 84 E1 00 00 00         JZ 0x0040b56a
 0040B489  68 90 00 00 00            PUSH 0x90
-0040B48E  E8 DD F7 29 00            CALL 0x006aac70
+0040B48E  E8 DD F7 29 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/short; source view only; no Ghidra override
 0040B493  8B F8                     MOV EDI,EAX
 0040B495  B9 24 00 00 00            MOV ECX,0x24
 0040B49A  83 C8 FF                  OR EAX,0xffffffff

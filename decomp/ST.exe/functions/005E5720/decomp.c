@@ -16,8 +16,10 @@ MTaskTy * __cdecl CreateMTask(void)
   uint *puVar1;
   int iVar2;
 
-  this = (MTaskTy *)FUN_006b04d0(0x6d7);
+
+  this = STPointerBoundaryCast<MTaskTy *>(FUN_006b04d0(0x6d7));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->vtable = (MTaskTyVTable *)&VTable_0079C018;
     this->field_0018 = 0;

@@ -49,7 +49,7 @@ LAB_0042118a:
 0042118D  8D 45 FC                  LEA EAX,[EBP + -0x4]
 00421190  50                        PUSH EAX
 00421191  51                        PUSH ECX
-00421192  E8 89 EE 28 00            CALL 0x006b0020
+00421192  E8 89 EE 28 00            CALL 0x006b0020  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_004210E0_306A4C8B; source view only; no Ghidra override
 00421197  8D 55 F8                  LEA EDX,[EBP + -0x8]
 0042119A  89 45 F8                  MOV dword ptr [EBP + -0x8],EAX
 0042119D  52                        PUSH EDX
@@ -83,7 +83,7 @@ LAB_004211e6:
 004211E9  8D 55 FC                  LEA EDX,[EBP + -0x4]
 004211EC  52                        PUSH EDX
 004211ED  50                        PUSH EAX
-004211EE  E8 2D EE 28 00            CALL 0x006b0020
+004211EE  E8 2D EE 28 00            CALL 0x006b0020  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_004210E0_306A4C8B; source view only; no Ghidra override
 004211F3  8D 4D F8                  LEA ECX,[EBP + -0x8]
 004211F6  89 45 F8                  MOV dword ptr [EBP + -0x8],EAX
 004211F9  51                        PUSH ECX
@@ -117,7 +117,7 @@ LAB_004211e6:
 00421241  8B 93 9D 01 00 00         MOV EDX,dword ptr [EBX + 0x19d]
 00421247  51                        PUSH ECX
 00421248  52                        PUSH EDX
-00421249  E8 D2 ED 28 00            CALL 0x006b0020
+00421249  E8 D2 ED 28 00            CALL 0x006b0020  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_004210E0_306A4C8B; source view only; no Ghidra override
 0042124E  89 45 F8                  MOV dword ptr [EBP + -0x8],EAX
 00421251  8D 45 F8                  LEA EAX,[EBP + -0x8]
 00421254  50                        PUSH EAX
@@ -151,7 +151,7 @@ LAB_0042129d:
 004212A0  8D 45 FC                  LEA EAX,[EBP + -0x4]
 004212A3  50                        PUSH EAX
 004212A4  51                        PUSH ECX
-004212A5  E8 76 ED 28 00            CALL 0x006b0020
+004212A5  E8 76 ED 28 00            CALL 0x006b0020  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_004210E0_306A4C8B; source view only; no Ghidra override
 004212AA  8D 55 F8                  LEA EDX,[EBP + -0x8]
 004212AD  89 45 F8                  MOV dword ptr [EBP + -0x8],EAX
 004212B0  52                        PUSH EDX

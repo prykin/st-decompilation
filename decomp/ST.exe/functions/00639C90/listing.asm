@@ -2187,7 +2187,7 @@ LAB_0063b611:
 0063B680  E8 82 7A DC FF            CALL 0x00403107
 0063B685  8B 03                     MOV EAX,dword ptr [EBX]
 0063B687  8B CB                     MOV ECX,EBX
-0063B689  FF 90 D8 00 00 00         CALL dword ptr [EAX + 0xd8]
+0063B689  FF 90 D8 00 00 00         CALL dword ptr [EAX + 0xd8]  ; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0063B68F  5F                        POP EDI
 0063B690  5E                        POP ESI
 0063B691  33 C0                     XOR EAX,EAX
@@ -2237,7 +2237,7 @@ LAB_0063b6e6:
 LAB_0063b706:
 0063B706  8B 03                     MOV EAX,dword ptr [EBX]
 0063B708  8B CB                     MOV ECX,EBX
-0063B70A  FF 90 D8 00 00 00         CALL dword ptr [EAX + 0xd8]
+0063B70A  FF 90 D8 00 00 00         CALL dword ptr [EAX + 0xd8]  ; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0063B710  5F                        POP EDI
 0063B711  5E                        POP ESI
 0063B712  33 C0                     XOR EAX,EAX

@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __thiscall FUN_00568850(void *this,int param_1)
+void __thiscall FUN_00568850(void *this,RecoveredRecord_00568850_A20B8306 *param_1)
 
 {
   int iVar1;
@@ -14,15 +14,17 @@ void __thiscall FUN_00568850(void *this,int param_1)
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_8 = this;
+
     iVar1 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     if (iVar1 == 0) {
       iVar1 = 2;
       piVar2 = (int *)((int)local_8 + 0xe2b);
       do {
+
         FUN_006c1f00(iVar1,&local_c,nullptr);
         if (((local_c == 1) &&
             ((((3 < iVar1 && (iVar1 < 0xb)) || ((0x11 < iVar1 && (iVar1 < 0x15)))) ||
-             ((10 < iVar1 && (iVar1 < 0x12)))))) && (*piVar2 == *(int *)(param_1 + 8))) {
+             ((10 < iVar1 && (iVar1 < 0x12)))))) && (*piVar2 == param_1->field_0008)) {
           FUN_006c1ba0(iVar1);
         }
         iVar1 = iVar1 + 1;

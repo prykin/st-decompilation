@@ -50,7 +50,7 @@ LAB_00474854:
 00474883  8B 46 18                  MOV EAX,dword ptr [ESI + 0x18]
 00474886  8B 11                     MOV EDX,dword ptr [ECX]
 00474888  50                        PUSH EAX
-00474889  FF 92 AC 00 00 00         CALL dword ptr [EDX + 0xac]
+00474889  FF 92 AC 00 00 00         CALL dword ptr [EDX + 0xac]  ; [STIndirectCallsiteApplier] exact slot 0xAC; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 0047488F  8B 16                     MOV EDX,dword ptr [ESI]
 00474891  8B CE                     MOV ECX,ESI
 00474893  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]

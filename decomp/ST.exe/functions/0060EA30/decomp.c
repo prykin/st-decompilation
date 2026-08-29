@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __thiscall FUN_0060ea30(void *this,AnonShape_0060EA30_DCEB68AD *param_1)
+undefined4 __thiscall FUN_0060ea30(void *this,RecoveredRecordView_0060EA30_C6688588 *param_1)
 
 {
   uint uVar1;
@@ -20,8 +20,10 @@ undefined4 __thiscall FUN_0060ea30(void *this,AnonShape_0060EA30_DCEB68AD *param
       return 0;
     }
     if (uVar1 == 0) {
+
       iVar3 = thunk_FUN_006101b0(this);
       if (iVar3 != 0) {
+
         thunk_FUN_0060ec00(this);
         STField<undefined4>(this,0x20c) = 9;
         return 0;
@@ -34,12 +36,14 @@ undefined4 __thiscall FUN_0060ea30(void *this,AnonShape_0060EA30_DCEB68AD *param
         memmove(puVar6, puVar5, 0x14); /* compiler REP MOVS byte copy */
         STField<undefined4>(this,0x1d5) = 0x15e;
         STField<undefined4>(this,0x24) = STField<undefined4>(this,0x1d9);
-        thunk_FUN_00614400(this,(AnonShape_00614400_1B90EA7E *)param_1->field_0014);
+        thunk_FUN_00614400(this,(RecoveredRecordView_00614400_14E15A9C *)param_1->field_0014);
         thunk_FUN_00615390(this);
+
         uVar2 = thunk_FUN_0060ecc0();
         STField<char>(this,0x2e9) = (char)uVar2;
         return 0;
       }
+
       thunk_FUN_00614a90(this,puVar5);
       memset((void *)((int)this + 0x2eb), 0, 0x2d); /* compiler bulk-zero initialization */
       iVar4 = 0;
@@ -48,13 +52,15 @@ undefined4 __thiscall FUN_0060ea30(void *this,AnonShape_0060EA30_DCEB68AD *param
          (iVar4 = STGenBombC::LoadImagSpr(this,1,0), iVar4 != 0)) {
         return 0;
       }
+
       thunk_FUN_0060ec00(this);
       STField<undefined4>(this,0x20c) = 9;
       return 0;
     }
   }
   else if ((uVar1 == 0x10f) &&
-          (local_8 = (byte *)thunk_FUN_00614950(this,(int *)&param_1), local_8 != nullptr)) {
+          /* ST_CALLSITE[0060EB66]: CALL 0x00402275; direct=00402275 thunk_FUN_00614950; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
+          (local_8 = STPointerBoundaryCast<byte *>(thunk_FUN_00614950(this,(int *)&param_1)), local_8 != nullptr)) {
     /* ST_CALLSITE[0060EB81]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     STPlaySystemC::SaveObjData
               (g_playSystem_00802A38,STField<int *>(this,0x18),local_8,(uint)param_1);

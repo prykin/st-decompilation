@@ -1,6 +1,7 @@
 CreateTLOFake:
 004D0ED0  68 51 02 00 00            PUSH 0x251
-004D0ED5  E8 F6 F5 1D 00            CALL 0x006b04d0
+CreateTLOFake::override::prt_4d0ed5_6b6229ae:
+004D0ED5  E8 F6 F5 1D 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/TLOFakeTy; signature=__stdcall;pointer:/TLOFakeTy;/uint
 004D0EDA  85 C0                     TEST EAX,EAX
 004D0EDC  74 07                     JZ 0x004d0ee5
 004D0EDE  8B C8                     MOV ECX,EAX

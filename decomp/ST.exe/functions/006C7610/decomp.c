@@ -25,7 +25,8 @@ void FUN_006c7610(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3
 
   if (((param_7 != 0) && (param_7 * 2 <= (int)param_5)) && (param_7 * 2 <= (int)param_6)) {
     if (param_2 == 0) {
-      param_2 = FUN_006b4fa0((int *)param_1);
+
+      param_2 = FUN_006b4fa0((RecoveredRecord_006B4FA0_DAC3A217 *)param_1);
     }
     uVar1 = (uint)param_1->field_000E * param_1->field_0004 + 0x1f >> 3 & 0x1ffffffc;
     FUN_006d7a30(((param_1->field_0008 - param_4) + -1) * uVar1 + param_2 + param_3,-uVar1,param_5,

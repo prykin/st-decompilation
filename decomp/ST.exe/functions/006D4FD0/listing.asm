@@ -6,7 +6,7 @@ FUN_006d4fd0:
 006D4FD8  74 07                     JZ 0x006d4fe1
 006D4FDA  8B 01                     MOV EAX,dword ptr [ECX]
 006D4FDC  6A 01                     PUSH 0x1
-006D4FDE  FF 50 0C                  CALL dword ptr [EAX + 0xc]
+006D4FDE  FF 50 0C                  CALL dword ptr [EAX + 0xc]  ; [STIndirectCallsiteApplier] exact slot 0xC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 LAB_006d4fe1:
 006D4FE1  5D                        POP EBP
 006D4FE2  C2 04 00                  RET 0x4

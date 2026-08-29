@@ -13,12 +13,12 @@
    [STDiscriminatedPayloadApplier] Case-local payload view: message->id == MESS_GAMESYSTEMC_43FF
    uses
    /SubmarineTitans/Recovered/DiscriminatedPayloads/GameSystemC_GetMessage_005776D0_MessagePayload_Case_MESS_GAMESYSTEMC_43FF.
-   The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage.
+   carrier=message; The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: message->id == MESS_GAMESYSTEMC_4400
    uses
    /SubmarineTitans/Recovered/DiscriminatedPayloads/GameSystemC_GetMessage_005776D0_MessagePayload_Case_MESS_GAMESYSTEMC_4400.
-   The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage. */
+   carrier=message; The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage. */
 
 int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
 
@@ -52,17 +52,17 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
   char local_2b4 [260];
   InternalExceptionFrame local_1b0;
   char local_16c [64];
-  undefined4 local_12c;
+  uint local_12c;
   byte local_128;
-  undefined1 local_127;
-  undefined1 local_126;
-  undefined1 local_125;
+  byte local_127;
+  byte local_126;
+  byte local_125;
   DWORD local_124;
   InternalExceptionFrame local_d0;
   InternalExceptionFrame local_8c;
   STMessage local_48;
   GameSystemC *local_28;
-  AnonShape_00648C10_30A1BBFD *local_24;
+  RecoveredRecordView_00648C10_4BE0A791 *local_24;
   char **local_20;
   cMf32 *local_1c;
   DArrayTy *local_18;
@@ -76,10 +76,12 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
   local_28 = this;
+
   local_EAX_51 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
   pGVar4 = local_28;
   if (local_EAX_51 != 0) {
     g_currentExceptionFrame = local_8c.previous;
+
     iVar19 = ReportDebugMessage("E:\\__titans\\tsystem.cpp",0x1c6,0,local_EAX_51,
                                 "%s","GameSystemC::GetMessage");
     if (iVar19 == 0) {
@@ -88,6 +90,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+
   SystemClassTy::GetMessage((SystemClassTy *)local_28,message);
   if (message->id == MESS_GAMESYSTEMC_43FF) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -99,6 +102,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
         if (piVar13[2] != 0) {
           DAT_00808784 = piVar13[1];
           pGVar4->field_042C = DAT_00808784;
+
           Library::Ourlib::ST3DPAUS::FUN_00725760
                     (g_sT3DSMAPContext_00807598,DAT_00808784,
                      -(uint)(DAT_00808784 != 0) & (uint)PTR_008032b4);
@@ -113,6 +117,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
       else if (piVar13[2] == 0) {
         if (pGVar4->field_042C == 0) {
           DAT_00808784 = piVar13[1];
+
           Library::Ourlib::ST3DPAUS::FUN_00725760
                     (g_sT3DSMAPContext_00807598,DAT_00808784,
                      -(uint)(DAT_00808784 != 0) & (uint)PTR_008032b4);
@@ -123,6 +128,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
       else {
         if ((DAT_0080878c == 0) && (DAT_00808790 == 0)) {
           DAT_00808784 = piVar13[1];
+
           Library::Ourlib::ST3DPAUS::FUN_00725760
                     (g_sT3DSMAPContext_00807598,DAT_00808784,
                      -(uint)(DAT_00808784 != 0) & (uint)PTR_008032b4);
@@ -213,7 +219,8 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
         /* ST_CALLSITE[00577CCA]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)&DAT_0080f33a,local_EAX_1519,pcVar8,pcVar15);
         if (g_popUp_008016D8 != nullptr) {
-          thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
+          /* ST_CALLSITE[00577CE8]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
+          PopUpTy::sub_0052D320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
@@ -222,12 +229,14 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
     case 8:
       local_1b0.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_1b0;
+
       iVar5 = Library::MSVCRT::__setjmp3(local_1b0.jumpBuffer,0);
       if (iVar5 == 0) {
         /* ST_CALLSITE[00577D50]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,PTR_s_SYSTEM__0079b190,
                   PTR_s_STRATEGS_0079b198);
-        pcVar6 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
+        /* ST_CALLSITE[00577D66]: CALL 0x006f0ec0; direct=006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint */
+        pcVar6 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
         local_1c = pcVar6;
         /* ST_CALLSITE[00577D7F]: CALL 0x00403f44; direct=00403F44 CreateOpponentList */
         array = (DArrayTy *)CreateOpponentList(pcVar6,local_8[1],DAT_0080995c);
@@ -242,7 +251,7 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
             pcVar15 = nullptr;
           }
           if ((pcVar15 + 0x4c != nullptr) &&
-             (local_24 = (AnonShape_00648C10_30A1BBFD *)
+             (local_24 = (RecoveredRecordView_00648C10_4BE0A791 *)
                          /* ST_CALLSITE[00577DBF]: CALL 0x004012ad; direct=004012AD LoadStrategData */
                          LoadStrategData((int)pcVar6,pcVar15 + 0x4c,nullptr), piVar13 = local_8,
              local_24 != nullptr)) {
@@ -370,11 +379,12 @@ int __thiscall GameSystemC::GetMessage(GameSystemC *this,STMessage *message)
           local_10 = nullptr;
           local_d0.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &local_d0;
+
           iVar6_mg1 = Library::MSVCRT::__setjmp3(local_d0.jumpBuffer,0);
           piVar13 = local_8;
           if (iVar6_mg1 == 0) {
-            pcVar6 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
-                                        (0x345,(byte *)&CHAR_00h_0080f022,0,0,0);
+            /* ST_CALLSITE[0057788A]: CALL 0x006f0ec0; direct=006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint */
+            pcVar6 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&CHAR_00h_0080f022,0,0,0);
             if (pcVar6 == nullptr) {
               local_8 = nullptr;
               piVar13 = (int *)0;
@@ -413,7 +423,7 @@ LAB_00577956:
       }
       thunk_FUN_00648dd0((uint)bVar2);
       /* ST_CALLSITE[0057799C]: CALL 0x004018a7; direct=004018A7 StartStrateg */
-      StartStrateg((AnonShape_00648C10_30A1BBFD *)(pcVar15 + 2),(uint)bVar2);
+      StartStrateg((RecoveredRecordView_00648C10_4BE0A791 *)(pcVar15 + 2),(uint)bVar2);
     }
     if (g_optPanel_008016DC != nullptr) {
       /* ST_CALLSITE[005779B2]: CALL 0x00401cbc; direct=00401CBC OptPanelTy::sub_00532CE0 */

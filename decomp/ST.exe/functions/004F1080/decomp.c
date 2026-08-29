@@ -25,10 +25,12 @@ int __thiscall BldObjPanelTy::GetMessage(BldObjPanelTy *this,STMessage *message)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\bldobj.cpp",0xca,0,iVar3,"%s",
                                "BldObjPanelTy::GetMessage");
     if (iVar5 != 0) {
@@ -59,7 +61,7 @@ int __thiscall BldObjPanelTy::GetMessage(BldObjPanelTy *this,STMessage *message)
       return 0;
     }
     if (SVar1 == MESS_SHARED_0003) {
-      thunk_FUN_004f0a60((AnonShape_004F0A60_A5DE070F *)this_00);
+      thunk_FUN_004f0a60((RecoveredRecordView_004F0A60_ACA1737C *)this_00);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
@@ -111,7 +113,7 @@ int __thiscall BldObjPanelTy::GetMessage(BldObjPanelTy *this,STMessage *message)
     case 0xc0b2:
     case MESS_BLDLABPANELTY_C0B3:
       /* ST_CALLSITE[004F125B]: CALL 0x0040431d; direct=0040431D BldObjPanelTy::PaintBldBut */
-      PaintBldBut(this_00,(AnonShape_004EF320_444F9AB1 *)message);
+      PaintBldBut(this_00,(RecoveredRecordView_004EF320_A54422CD *)message);
     }
   }
   g_currentExceptionFrame = local_4c.previous;

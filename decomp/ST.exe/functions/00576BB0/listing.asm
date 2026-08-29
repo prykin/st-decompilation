@@ -16,7 +16,8 @@ CreateBaseSystem:
 00576BD8  85 F6                     TEST ESI,ESI
 00576BDA  0F 85 81 00 00 00         JNZ 0x00576c61
 00576BE0  6A 24                     PUSH 0x24
-00576BE2  E8 49 79 1B 00            CALL 0x0072e530
+CreateBaseSystem::override::prt_576be2_b2210f81:
+00576BE2  E8 49 79 1B 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/BaseSystemC; signature=__cdecl;pointer:/BaseSystemC;/uint
 00576BE7  83 C4 04                  ADD ESP,0x4
 00576BEA  85 C0                     TEST EAX,EAX
 00576BEC  74 10                     JZ 0x00576bfe

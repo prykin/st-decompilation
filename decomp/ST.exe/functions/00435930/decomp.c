@@ -17,7 +17,7 @@
 short __thiscall
 STAllPlayersC::GetCursorType
           (STAllPlayersC *this,Global_sub_00435B90_param_3Enum param_1,
-          AnonShape_00435930_AC276C8C *param_2,undefined4 param_3,int *param_4)
+          RecoveredRecordView_00435930_B686CBAB *param_2,undefined4 param_3,int *param_4)
 
 {
   DArrayTy *array;
@@ -34,12 +34,11 @@ STAllPlayersC::GetCursorType
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
   uint index;
-  undefined1 local_8 [4];
-
+  byte local_8 [4];
   if ((param_2 != nullptr) &&
      ((((iVar8 = param_2->field_0020, iVar8 == 0x14 || (iVar8 == 1000)) || (iVar8 == 0x3e9)) ||
       ((iVar8 == 0x172 || (iVar8 == 0x1a4)))))) {
-    thunk_FUN_0041f390((int)param_2);
+    thunk_FUN_0041f390((RecoveredRecord_0041F390_BF8EDA78 *)param_2);
     /* ST_PSEUDO[unresolved_register_input,call_clobber_piece]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; candidate volatile-register merge after CALL: split the partial-register lifetime */
     in_EDX = extraout_EDX;
   }
@@ -77,6 +76,7 @@ STAllPlayersC::GetCursorType
         return 0;
       }
       do {
+
         DArrayGetElement(array,index,local_8);
         if (STPiece<0,2>(local_8) != 0xffff) {
           /* ST_CALLSITE[00435A3B]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -91,24 +91,23 @@ STAllPlayersC::GetCursorType
     }
   }
   else {
+
     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x11ea,0,0,"%s",
                                "STAllPlayersC::GetCursorType invalid active panel");
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
-  if ((param_2 != nullptr) && (param_2->field_0024 == (uint)DAT_0080874d)
-     ) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
+  if ((param_2 != nullptr) &&
+     (param_2->field_0024 == (uint)DAT_0080874d)) {
     if ((param_2->field_0020 == 0x14) &&
-       /* ST_CALLSITE[00435A87]: CALL dword ptr [EAX + 0xec] */
-       (iVar8 = (**(code **)(*(int *)param_2 + 0xec))(), iVar8 == 1)) {
+       /* ST_CALLSITE[00435A87]: CALL dword ptr [EAX + 0xec]; [STIndirectCallsiteApplier] exact slot 0xEC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+       (iVar8 = STStructuralVirtualCall<undefined4>(param_2, 0xEC), iVar8 == 1)) {
       return 3;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if (((param_2->field_0020 == 1000) || (param_2->field_0020 == 0x3e9)) &&
-       /* ST_CALLSITE[00435AB8]: CALL dword ptr [EDX + 0xec] */
-       (iVar8 = (**(code **)(*(int *)param_2 + 0xec))(), iVar8 == 1)) {
+       /* ST_CALLSITE[00435AB8]: CALL dword ptr [EDX + 0xec]; [STIndirectCallsiteApplier] exact slot 0xEC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+       (iVar8 = STStructuralVirtualCall<undefined4>(param_2, 0xEC), iVar8 == 1)) {
       return 4;
     }
   }

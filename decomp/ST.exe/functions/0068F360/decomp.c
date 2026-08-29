@@ -36,10 +36,12 @@ void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,uint *param_
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_8 = this;
+
   iVar6 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   pAVar5 = local_8;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_5c.previous;
+
     iVar9 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x276,0,iVar6,"%s",
                                "AiTactClassTy::GiveObjByFltType");
     if (iVar9 != 0) {
@@ -108,6 +110,7 @@ joined_r0x0068f3e2:
       if (iVar7 == 0x78) {
         this_00->field_0269 = (uint)uVar1;
       }
+
       DArrayRemoveAt((DArrayTy *)param_1,index);
       pAVar5 = local_8;
     }
@@ -171,7 +174,8 @@ LAB_0068f516:
       }
     }
     /* ST_CALLSITE[0068F551]: CALL 0x00404200; direct=00404200 AiFltClassTy::_AddObjFlt */
-    AiFltClassTy::_AddObjFlt(pAVar8,(uint)this_00,0);
+    AiFltClassTy::_AddObjFlt(pAVar8,(RecoveredRecord_0065D760_A4BF8285 *)this_00,0);
+
     DArrayRemoveAt((DArrayTy *)param_1,index);
     pAVar5 = local_8;
   }

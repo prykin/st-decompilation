@@ -41,10 +41,12 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_10 = this;
+
     iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
     pCVar3 = local_10;
     if (iVar4 != 0) {
       g_currentExceptionFrame = local_54.previous;
+
       iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0x4a,0,iVar4,
                                  "%s","CPanelTy::PaintEnergy");
       if (iVar8 == 0) {
@@ -54,10 +56,11 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     if (param_1 == 0) {
-      pBVar5 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_02DA,2);
+      /* ST_CALLSITE[004FE7D7]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override */
+      pBVar5 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)local_10->field_02DA,2);
       pRVar4 = local_8;
       FUN_006b5440((ushort *)local_8,0,199,6,pBVar5,0,0xff);
-      pBVar5 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar3->field_02DA,3);
+      pBVar5 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)pCVar3->field_02DA,3);
       iVar9 = (pBVar5->bmiHeader).biHeight;
       iVar2 = (int)((local_c & 0xff) * iVar9) / 100;
       iVar9 = iVar9 - iVar2;
@@ -73,10 +76,11 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
       uVar10 = pCVar3->field_0050;
     }
     else {
-      pBVar5 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_02DA,0);
+      /* ST_CALLSITE[004FE741]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override */
+      pBVar5 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)local_10->field_02DA,0);
       pRVar4 = local_8;
       FUN_006b5440((ushort *)local_8,0,2,6,pBVar5,0,0xff);
-      pBVar5 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar3->field_02DA,1);
+      pBVar5 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)pCVar3->field_02DA,1);
       iVar9 = (pBVar5->bmiHeader).biHeight;
       iVar2 = (int)((local_c & 0xff) * iVar9) / 100;
       iVar9 = iVar9 - iVar2;
@@ -90,6 +94,7 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
       uVar11 = pCVar3->field_00A0;
       uVar10 = pCVar3->field_0048;
     }
+
     Library::DKW::DDX::FUN_006b3640
               ((int *)g_ddxContext_008075A8,(uint)puVar6,0xffffffff,uVar10,uVar11);
     g_currentExceptionFrame = local_54.previous;

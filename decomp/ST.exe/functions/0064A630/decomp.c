@@ -16,9 +16,12 @@ int * __cdecl FUN_0064a630(int param_1)
   local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   exceptionCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
+    /* ST_CALLSITE[0064A665]: CALL 0x006aac10; direct=006AAC10 Library::DKW::LIB::MemAllocClear; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
     local_8 = Library::DKW::LIB::MemAllocClear(0x10);
+
     thunk_FUN_0064a6f0(local_8,param_1);
     g_currentExceptionFrame = local_4c.previous;
     return local_8;

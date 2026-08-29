@@ -21,6 +21,7 @@ void __thiscall CPanelTy::PaintBRLife(CPanelTy *this,int param_1)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pCVar3 = local_c;
   if (iVar4 == 0) {
@@ -38,13 +39,17 @@ void __thiscall CPanelTy::PaintBRLife(CPanelTy *this,int param_1)
       iVar4 = 0;
     }
     uVar5 = local_8 & 0xff;
+
     Library::DKW::WGR::FUN_006b55f0
-              (pCVar3->field_018C,0,param_1 + 0x36,0x91 - uVar5,(byte *)pCVar3->field_028A,0,iVar4,
-               *(int *)(pCVar3->field_028A + 4) - uVar5,5,uVar5);
+              (pCVar3->field_018C,0,param_1 + 0x36,0x91 - uVar5,
+               (RecoveredRecordView_006B84D0_87AF9D9B *)pCVar3->field_028A,0,iVar4,
+               *(int *)&((RecoveredRecordView_006B84D0_87AF9D9B *)pCVar3->field_028A)->field_0x8 -
+               uVar5,5,uVar5);
     g_currentExceptionFrame = local_50.previous;
     return;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel2.cpp",0x40,0,iVar4,"%s",
                              "CPanelTy::PaintBRLife");
   if (iVar6 != 0) {

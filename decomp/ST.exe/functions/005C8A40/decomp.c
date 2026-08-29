@@ -78,16 +78,16 @@ int __thiscall SettMapTy::GetMessage(SettMapTy *this,STMessage *message)
   uint uVar23;
   InternalExceptionFrame local_dc;
   CHAR local_98 [52];
-  undefined4 local_64;
-  undefined4 local_60;
-  undefined4 local_58;
-  undefined4 local_54;
-  undefined4 local_50;
-  undefined1 local_4c;
-  undefined4 local_48;
-  undefined4 local_44;
-  undefined4 local_40;
-  undefined1 local_3c;
+  uint local_64;
+  uint local_60;
+  uint local_58;
+  uint local_54;
+  uint local_50;
+  byte local_4c;
+  uint local_48;
+  uint local_44;
+  uint local_40;
+  byte local_3c;
   SettMapTy *local_38;
   int local_34;
   int local_30;
@@ -109,14 +109,17 @@ int __thiscall SettMapTy::GetMessage(SettMapTy *this,STMessage *message)
   DArrayTy *pDVar12;
 
   local_38 = this;
+
   DVar11 = STAppC::sub_006E51B0(this->field_0010);
   this->field_0061 = DVar11;
   local_dc.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_dc;
+
   local_EAX_61 = Library::MSVCRT::__setjmp3(local_dc.jumpBuffer,0);
   this_00 = local_38;
   if (local_EAX_61 != 0) {
     g_currentExceptionFrame = local_dc.previous;
+
     iVar17 = ReportDebugMessage("E:\\__titans\\Start\\sett_obj.cpp",0x758,0,local_EAX_61,
                                 "%s","SettMapTy::GetMessage");
     if (iVar17 != 0) {
@@ -140,7 +143,8 @@ int __thiscall SettMapTy::GetMessage(SettMapTy *this,STMessage *message)
     if (SVar3 < MESS_WAITTY_6333) {
       if (SVar3 == MESS_SHARED_6332) {
         /* ST_CALLSITE[005C8C65]: CALL 0x00404d72; direct=00404D72 StartSystemTy::PaintBinDesc */
-        StartSystemTy::PaintBinDesc(g_startSystem_0081176C,(AnonShape_005DE050_5BD86458 *)message);
+        StartSystemTy::PaintBinDesc
+                  (g_startSystem_0081176C,(RecoveredRecordView_005DE050_1F13B900 *)message);
       }
       else if (SVar3 < 0x610b) {
         if (SVar3 == MESS_SHARED_610A) {
@@ -148,6 +152,7 @@ int __thiscall SettMapTy::GetMessage(SettMapTy *this,STMessage *message)
           this_00->field_0049 = 0;
           this_00->field_004D = message->id;
           this_00->field_0051 = 6;
+
           thunk_FUN_005b66e0((MTaskTy *)this_00);
         }
         else if (SVar3 < 6) {
@@ -177,6 +182,7 @@ int __thiscall SettMapTy::GetMessage(SettMapTy *this,STMessage *message)
           this_00->field_004D = message->id;
           this_00->field_0051 = message->arg0;
           this_00->field_0055 = message->arg1;
+
           thunk_FUN_005b66e0((MTaskTy *)this_00);
         }
         else if (SVar3 == MESS_SHARED_6109) goto switchD_005c8bd0_caseD_611f;
@@ -190,6 +196,7 @@ switchD_005c8bd0_caseD_611f:
           this_00->field_004D = message->id;
           this_00->field_0051 = message->arg0;
           this_00->field_0055 = message->arg1;
+
           thunk_FUN_005b66e0((MTaskTy *)this_00);
           break;
         case MESS_SHARED_6200:
@@ -201,18 +208,19 @@ switchD_005c8bd0_caseD_611f:
           /* ST_CALLSITE[005C8BF8]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
           MMMObjTy::PaintSlBut
                     ((MMMObjTy *)this_00,(RecoveredRecord_MMMObjTy_005B6560 *)&this_00->field_0x1c6b
-                     ,(int)message,0);
+                     ,(RecoveredRecord_005B6560_90DC7408 *)message,0);
           break;
         case MESS_PLAYPANELTY_6202:
           /* ST_CALLSITE[005C8C0E]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
           MMMObjTy::PaintSlBut
                     ((MMMObjTy *)this_00,(RecoveredRecord_MMMObjTy_005B6560 *)&this_00->field_0x1cfc
-                     ,(int)message,0);
+                     ,(RecoveredRecord_005B6560_90DC7408 *)message,0);
           break;
         case MESS_SETTMAPTY_6203:
           uVar18 = *(int *)((message->arg1).u32 + 4) + (uint)(message->arg0).words.high;
           this_00->field_1DAD = uVar18;
           if (this_00->field_1D91 != 0xffffffff) {
+
             Library::DKW::DDX::FUN_006b3730
                       ((uint *)this_00->field_1DD5,this_00->field_1D91,this_00->field_1D95,
                        this_00->field_1DA9,uVar18);
@@ -275,6 +283,7 @@ switchD_005c8bd0_caseD_611f:
           g_startSystem_0081176C->field_04CF =
                *(int *)((message->arg1).u32 + 4) + (uint)(message->arg0).words.high;
           if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
+
             Library::DKW::DDX::FUN_006b3730
                       ((uint *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3
                        ,g_startSystem_0081176C->field_04B7,g_startSystem_0081176C->field_04CB,
@@ -286,14 +295,14 @@ switchD_005c8bd0_caseD_611f:
           MMMObjTy::PaintSlBut
                     ((MMMObjTy *)this_00,
                      (RecoveredRecord_MMMObjTy_005B6560 *)&g_startSystem_0081176C->field_038D,
-                     (int)message,0);
+                     (RecoveredRecord_005B6560_90DC7408 *)message,0);
         }
         else if (SVar3 == MESS_SHARED_6334) {
           /* ST_CALLSITE[005C8CAD]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
           MMMObjTy::PaintSlBut
                     ((MMMObjTy *)this_00,
                      (RecoveredRecord_MMMObjTy_005B6560 *)&g_startSystem_0081176C->field_041E,
-                     (int)message,0);
+                     (RecoveredRecord_005B6560_90DC7408 *)message,0);
         }
       }
       else if (SVar3 == MESS_SHARED_64FF) {
@@ -308,6 +317,7 @@ switchD_005c8bd0_caseD_611f:
                 this_00->field_1F5C = 3;
                 this_00->field_002D = 5;
                 FUN_006e6080(this_00,2,uVar18,(undefined4 *)&this_00->field_0x1d);
+
                 FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1F80);
               }
             }
@@ -316,6 +326,7 @@ switchD_005c8bd0_caseD_611f:
               this_00->field_1F5C = 4;
               this_00->field_002D = 5;
               FUN_006e6080(this_00,2,uVar18,(undefined4 *)&this_00->field_0x1d);
+
               FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1F80);
             }
 cf_common_join_005C8ECC:
@@ -355,9 +366,11 @@ cf_common_join_005C8ECC:
         this_00->field_002D = 5;
         FUN_006e6080(this_00,2,this_00->field_1F60[(message->arg1).u32],
                      (undefined4 *)&this_00->field_0x1d);
+
         FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1F80);
       }
       else if (SVar3 == MESS_SETTMAPTY_6500) {
+
         ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(message->arg1).i32,0,0,0,0,0);
         pDVar4 = this_00->field_1E2F;
         uVar18 = (uint)(message->arg0).words.low;
@@ -367,6 +380,7 @@ cf_common_join_005C8ECC:
         else {
           pcVar17 = nullptr;
         }
+
         ccFntTy::WrStr(g_startSystem_0081176C->field_0034,pcVar17,-1,-1,
                        3 - ((message->arg0).words.high != 1));
         if ((message->arg0).words.high == 1) {
@@ -550,6 +564,7 @@ cf_common_join_005C8ECC:
               pcVar21 = &this_00->field_1E33;
               memmove(pcVar21, pcVar17, uVar18); /* compiler REP MOVS byte copy */
               uVar19 = 0;
+
               Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_1E33);
               pDVar21 = local_c;
             }
@@ -589,6 +604,7 @@ cf_common_join_005C8ECC:
       memmove(pcVar21, pcVar17, uVar18); /* compiler REP MOVS byte copy */
       uVar19 = 0;
       this_00->field_1F37 = 0;
+
       Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_1E33);
       local_EAX_2734 = LoadResourceString(0x234c,g_hINSTANCE_00807618);
       uVar18 = 0xffffffff;
@@ -606,6 +622,7 @@ cf_common_join_005C8ECC:
       memmove(pcVar21, pcVar17, uVar18); /* compiler REP MOVS byte copy */
       uVar19 = 0;
       this_00->field_1F37 = 1;
+
       Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_1E33);
       local_EAX_2811 = LoadResourceString(0x234f,g_hINSTANCE_00807618);
       uVar18 = 0xffffffff;
@@ -623,6 +640,7 @@ cf_common_join_005C8ECC:
       memmove(pcVar21, pcVar17, uVar18); /* compiler REP MOVS byte copy */
       uVar19 = 0;
       this_00->field_1F37 = 2;
+
       Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_1E33);
       this_00->field_21A9 = this_00->field_1E2F->count;
       switch(this_00->field_2179) {
@@ -663,7 +681,7 @@ LAB_005c95d4:
       iVar15 = pcVar5->field_00A0;
 joined_r0x005c964b:
       if (iVar15 != 0) {
-        FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar5);
+        FUN_00710790((RecoveredRecordView_00710790_7768A573 *)pcVar5);
       }
       this_00->field_21A5 = *(undefined4 *)&pcVar5->field_0x8a;
       /* ST_CALLSITE[005C9679]: CALL dword ptr [EAX + 0x8] */
@@ -682,14 +700,17 @@ joined_r0x005c964b:
         this_00->field_1F37 = 100;
         /* ST_CALLSITE[005C96DB]: CALL EDI */
         wsprintfA(pcVar17,"%d",100);
+
         Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,pcVar17);
         this_00->field_1F37 = 0x96;
         /* ST_CALLSITE[005C9702]: CALL EDI */
         wsprintfA(pcVar17,"%d",0x96);
+
         Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,pcVar17);
         this_00->field_1F37 = 200;
         /* ST_CALLSITE[005C9729]: CALL EDI */
         wsprintfA(pcVar17,"%d",200);
+
         Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,pcVar17);
         this_00->field_1F37 = 0xffffffff;
         pcVar16 = LoadResourceString(0x1f55,g_hINSTANCE_00807618);
@@ -707,6 +728,7 @@ joined_r0x005c964b:
         pcVar21 = &this_00->field_1E33;
         memmove(pcVar21, pcVar17, uVar18); /* compiler REP MOVS byte copy */
         uVar19 = 0;
+
         Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_1E33);
         this_00->field_21A9 = this_00->field_1E2F->count;
         if (DAT_00808a97 == 0x96) {
@@ -723,7 +745,7 @@ joined_r0x005c964b:
         this_00->field_21C9 = 400;
         pcVar5 = g_startSystem_0081176C->field_0034;
         if (pcVar5->field_00A0 != 0) {
-          FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar5);
+          FUN_00710790((RecoveredRecordView_00710790_7768A573 *)pcVar5);
         }
         this_00->field_21A5 = *(undefined4 *)&pcVar5->field_0x8a;
         /* ST_CALLSITE[005C982D]: CALL dword ptr [EDX + 0x8] */
@@ -745,18 +767,21 @@ joined_r0x005c964b:
         pcVar11_mg0 = LoadResourceString(0x1f57,g_hINSTANCE_00807618);
         /* ST_CALLSITE[005C9897]: CALL dword ptr [0x0085bde8] */
         wsprintfA(pcVar17,"%s %d",pcVar11_mg0,uVar23);
+
         Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,pcVar17);
         this_00->field_1F37 = 1;
         uVar23 = 2;
         pcVar11_mg1 = LoadResourceString(0x1f57,g_hINSTANCE_00807618);
         /* ST_CALLSITE[005C98D1]: CALL dword ptr [0x0085bde8] */
         wsprintfA(pcVar17,"%s %d",pcVar11_mg1,uVar23);
+
         Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,pcVar17);
         this_00->field_1F37 = 2;
         uVar23 = 3;
         pcVar11_mg2 = LoadResourceString(0x1f57,g_hINSTANCE_00807618);
         /* ST_CALLSITE[005C990A]: CALL dword ptr [0x0085bde8] */
         wsprintfA(pcVar17,"%s %d",pcVar11_mg2,uVar23);
+
         Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,pcVar17);
         this_00->field_21A9 = this_00->field_1E2F->count;
         this_00->field_21A1 = (uint)DAT_00808a9b;
@@ -793,6 +818,7 @@ joined_r0x005c964b:
         memmove(pcVar21, pcVar17, uVar18); /* compiler REP MOVS byte copy */
         uVar19 = 0;
         this_00->field_1F37 = 0;
+
         Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_1E33);
         local_EAX_4461 = LoadResourceString(0x234c,g_hINSTANCE_00807618);
         uVar18 = 0xffffffff;
@@ -810,6 +836,7 @@ joined_r0x005c964b:
         memmove(pcVar21, pcVar17, uVar18); /* compiler REP MOVS byte copy */
         uVar19 = 0;
         this_00->field_1F37 = 1;
+
         Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_1E33);
         if ((DAT_00807dd1 & 0xffff0000) != 0xd0dd0000) {
           local_EAX_4558 = LoadResourceString(0x234d,g_hINSTANCE_00807618);
@@ -828,6 +855,7 @@ joined_r0x005c964b:
           memmove(pcVar21, pcVar17, uVar18); /* compiler REP MOVS byte copy */
           uVar19 = 0;
           this_00->field_1F37 = 2;
+
           Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_1E33);
         }
         this_00->field_21A9 = this_00->field_1E2F->count;
@@ -911,6 +939,7 @@ joined_r0x005c964b:
           /* ST_CALLSITE[005C9F84]: CALL dword ptr [0x0085bde8] */
           wsprintfA(&this_00->field_1E33,"%d %s",iVar15,local_EAX_5425);
           this_00->field_1F37 = iVar15;
+
           Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_1E33);
           iVar14 = iVar15 + -1;
           iVar15 = iVar15 + 1;
@@ -926,7 +955,7 @@ LAB_005c9fef:
       iVar15 = pcVar5->field_00A0;
 joined_r0x005c996c:
       if (iVar15 != 0) {
-        FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar5);
+        FUN_00710790((RecoveredRecordView_00710790_7768A573 *)pcVar5);
       }
       this_00->field_21A5 = *(undefined4 *)&pcVar5->field_0x8a;
       /* ST_CALLSITE[005C999A]: CALL dword ptr [EDX + 0x8] */
@@ -973,6 +1002,7 @@ joined_r0x005c996c:
           memmove(pcVar21, pcVar17, uVar18); /* compiler REP MOVS byte copy */
           uVar19 = 0;
           this_00->field_1F37 = local_8;
+
           Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_1E33);
           local_8 = (DArrayTy *)((int)&local_8->flags + 1);
         } while (local_8 < local_c);
@@ -987,7 +1017,7 @@ joined_r0x005c996c:
       }
       pcVar5 = g_startSystem_0081176C->field_0034;
       if (pcVar5->field_00A0 != 0) {
-        FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar5);
+        FUN_00710790((RecoveredRecordView_00710790_7768A573 *)pcVar5);
       }
       this_00->field_21A5 = *(undefined4 *)&pcVar5->field_0x8a;
       /* ST_CALLSITE[005CA171]: CALL dword ptr [EAX + 0x8] */
@@ -1018,6 +1048,7 @@ joined_r0x005c996c:
     memmove(pcVar21, pcVar17, uVar18); /* compiler REP MOVS byte copy */
     uVar19 = 0;
     this_00->field_1F37 = 0;
+
     Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_1E33);
     local_EAX_6094 = LoadResourceString(0x234c,g_hINSTANCE_00807618);
     uVar18 = 0xffffffff;
@@ -1035,6 +1066,7 @@ joined_r0x005c996c:
     memmove(pcVar21, pcVar17, uVar18); /* compiler REP MOVS byte copy */
     uVar19 = 0;
     this_00->field_1F37 = 1;
+
     Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_1E33);
     local_EAX_6171 = LoadResourceString(0x2356,g_hINSTANCE_00807618);
     uVar18 = 0xffffffff;
@@ -1052,6 +1084,7 @@ joined_r0x005c996c:
     memmove(pcVar21, pcVar17, uVar18); /* compiler REP MOVS byte copy */
     uVar19 = 0;
     this_00->field_1F37 = 2;
+
     Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_1E33);
     this_00->field_21A9 = this_00->field_1E2F->count;
     this_00->field_21A1 = (uint)(byte)this_00->field_1F5F;
@@ -1084,6 +1117,7 @@ LAB_005c9c8a:
       memmove(pcVar21, pcVar17, uVar18); /* compiler REP MOVS byte copy */
       uVar19 = 0;
       this_00->field_1F37 = 0;
+
       Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_1E33);
       local_EAX_6449 = LoadResourceString(0x234c,g_hINSTANCE_00807618);
       uVar18 = 0xffffffff;
@@ -1101,6 +1135,7 @@ LAB_005c9c8a:
       memmove(pcVar21, pcVar17, uVar18); /* compiler REP MOVS byte copy */
       uVar19 = 0;
       this_00->field_1F37 = 1;
+
       Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_1E33);
       local_EAX_6526 = LoadResourceString(0x234f,g_hINSTANCE_00807618);
       uVar18 = 0xffffffff;
@@ -1118,6 +1153,7 @@ LAB_005c9c8a:
       memmove(pcVar21, pcVar17, uVar18); /* compiler REP MOVS byte copy */
       uVar19 = 0;
       this_00->field_1F37 = 2;
+
       Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_1E33);
       this_00->field_21A9 = this_00->field_1E2F->count;
       this_00->field_21A1 = (uint)(byte)this_00->field_1F5D;
@@ -1149,6 +1185,7 @@ LAB_005c9c8a:
       memmove(pcVar21, pcVar17, uVar18); /* compiler REP MOVS byte copy */
       uVar19 = 0;
       this_00->field_1F37 = 0;
+
       Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_1E33);
       local_EAX_6804 = LoadResourceString(0x234c,g_hINSTANCE_00807618);
       uVar18 = 0xffffffff;
@@ -1166,6 +1203,7 @@ LAB_005c9c8a:
       memmove(pcVar21, pcVar17, uVar18); /* compiler REP MOVS byte copy */
       uVar19 = 0;
       this_00->field_1F37 = 1;
+
       Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_1E33);
       local_EAX_6881 = LoadResourceString(0x234f,g_hINSTANCE_00807618);
       uVar18 = 0xffffffff;
@@ -1183,6 +1221,7 @@ LAB_005c9c8a:
       memmove(pcVar21, pcVar17, uVar18); /* compiler REP MOVS byte copy */
       uVar19 = 0;
       this_00->field_1F37 = 2;
+
       Library::DKW::TBL::DArrayAppend(this_00->field_1E2F,&this_00->field_1E33);
       this_00->field_21A9 = this_00->field_1E2F->count;
       this_00->field_21A1 = (uint)(byte)this_00->field_1F5E;
@@ -1197,7 +1236,8 @@ LAB_005c9c8a:
       /* ST_CALLSITE[005CA5AC]: CALL dword ptr [0x0085bedc] */
       DVar12 = timeGetTime();
       this_00->field_1F53 = DVar12;
-      thunk_FUN_005c7800();
+      SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0053F510::thunk_FUN_005c7800
+                ((RecoveredReceiver_0053F510 *)this_00);
     }
     break;
   case MESS_PRIVIDERTY_693F:
@@ -1213,6 +1253,7 @@ LAB_005c9c8a:
     this_00->field_0049 = 0;
     this_00->field_004D = 0x6102;
     this_00->field_0051 = 0;
+
     thunk_FUN_005b66e0((MTaskTy *)this_00);
     break;
   case MESS_WAITTY_6943:
@@ -1275,6 +1316,7 @@ LAB_005c9c8a:
     }
     this_00->field_0049 = 1;
     this_00->field_004D = 0x60ff;
+
     thunk_FUN_005b66e0((MTaskTy *)this_00);
     break;
   case MESS_WAITTY_694D:
@@ -1414,7 +1456,8 @@ LAB_005ca73b:
     /* ST_CALLSITE[005CA7B6]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_1C67,
            (local_28 - (int)local_c) + -8 + local_30,(int)(local_24 - local_34) / 2 + local_2c,
-           '\x06',(byte *)this_00->field_1E2B);
+           '\x06',(RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_1E2B);
+
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,this_00->field_1C67,0,pDVar4->flags - 10,
                      pDVar4->iteratorIndex - 0xb4,(pDVar4->elementSize - (int)local_c) + -8,
                      pDVar4->count);
@@ -1425,7 +1468,9 @@ LAB_005ca73b:
     else {
       uVar18 = (-(uint)(wVar2 != 0) & 2) + 1;
     }
+
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,local_98,-1,-1,uVar18);
+
     FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1F80);
     if ((message->arg0).words.low == 3) goto LAB_005ca964;
     break;
@@ -1439,12 +1484,15 @@ LAB_005ca73b:
     FUN_006c7570((RecoveredSourceFamily_dibcopy *)this_00->field_1C67,0,*piVar7 + -10,
                  piVar7[1] + -0xb4,(undefined4 *)piVar7[2],piVar7[3],piVar7[3] / 2,
                  (-((message->arg0).words.low != 0) & 0xfcU) + 0x23);
+
     ccFntTy::SetSurf((ccFntTy *)g_startSystem_0081176C->field_0030,this_00->field_1C67,0,
                      *piVar7 + -10,piVar7[1] - 0xb4,piVar7[2],piVar7[3]);
     uVar18 = ((message->arg0).words.low != 1) + 5;
     iVar14 = -1;
     iVar15 = -1;
+    /* ST_CALLSITE[005CA94A]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     local_EAX_7946 = LoadResourceString(0x234a,g_hINSTANCE_00807618);
+
     ccFntTy::WrStr((ccFntTy *)g_startSystem_0081176C->field_0030,local_EAX_7946,iVar15,iVar14,uVar18
                   );
     if ((message->arg0).words.low != 3) break;
@@ -1501,6 +1549,7 @@ cf_common_join_005CA971:
     pcVar21 = (char *)&DAT_0080f33a;
     memmove(pcVar21, pcVar17, uVar18); /* compiler REP MOVS byte copy */
     uVar19 = 0;
+
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,this_00->field_1E1E,0,local_1c,local_18,
                      local_14,local_10);
     wVar2 = (message->arg0).words.low;
@@ -1510,6 +1559,7 @@ cf_common_join_005CA971:
     else {
       uVar18 = (-(uint)(wVar2 != 0) & 2) + 1;
     }
+
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,(char *)&DAT_0080f33a,-1,-1,uVar18);
     break;
   case 0x6582:
@@ -1542,6 +1592,7 @@ LAB_005cab38:
       if (STPiece<3,1>(DAT_00808a90) != '\0') goto LAB_005cab38;
       local_20 = 0x234e;
     }
+
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,this_00->field_1E1E,0,local_1c,local_18,
                      local_14,local_10);
     wVar2 = (message->arg0).words.low;
@@ -1553,7 +1604,9 @@ LAB_005cab38:
     }
     iVar14 = -1;
     iVar15 = -1;
+    /* ST_CALLSITE[005CAB9A]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     local_EAX_8538 = LoadResourceString(local_20,g_hINSTANCE_00807618);
+
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,local_EAX_8538,iVar15,iVar14,uVar18);
     break;
   case 0x6586:
@@ -1577,6 +1630,7 @@ LAB_005cab38:
       /* ST_CALLSITE[005CABC8]: CALL dword ptr [0x0085bde8] */
       wsprintfA((LPSTR)&DAT_0080f33a,"%d",DAT_00808a97);
     }
+
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,this_00->field_1E1E,0,local_1c,local_18,
                      local_14,local_10);
     wVar2 = (message->arg0).words.low;
@@ -1586,6 +1640,7 @@ LAB_005cab38:
     else {
       uVar18 = (-(uint)(wVar2 != 0) & 2) + 1;
     }
+
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,(char *)&DAT_0080f33a,-1,-1,uVar18);
     break;
   case 0x6587:
@@ -1600,6 +1655,7 @@ LAB_005cab38:
       /* ST_CALLSITE[005CACB8]: CALL dword ptr [0x0085bde8] */
       wsprintfA((LPSTR)&DAT_0080f33a,"%s %d",local_EAX_8808,iVar15);
     }
+
     ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,this_00->field_1E1E,0,local_1c,local_18,
                      local_14,local_10);
     wVar2 = (message->arg0).words.low;
@@ -1609,6 +1665,7 @@ LAB_005cab38:
     else {
       uVar18 = (-(uint)(wVar2 != 0) & 2) + 1;
     }
+
     ccFntTy::WrStr(g_startSystem_0081176C->field_0034,(char *)&DAT_0080f33a,-1,-1,uVar18);
     break;
   case 0x6588:
@@ -1617,6 +1674,7 @@ LAB_005cab38:
   case 0x6589:
     if (DAT_00808a8f == '\0') break;
 LAB_005cadd5:
+    /* ST_CALLSITE[005CADDE]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
     pBVar13 = FUN_0070b3a0(this_00->field_1F4F,0);
     iVar15 = (local_10 + -0x10) / 2 + local_18;
     pRVar22 = (RecoveredSourceFamily_dibcopy *)this_00->field_1E1E;
@@ -1641,12 +1699,13 @@ LAB_005cad88:
       pRVar22 = (RecoveredSourceFamily_dibcopy *)this_00->field_1E1E;
 cf_common_exit_005CAE0F:
       /* ST_CALLSITE[005CAE0F]: CALL 0x00403229; direct=00403229 DibPut */
-      DibPut(pRVar22,iVar14,iVar15,'\x06',(byte *)pBVar13);
+      DibPut(pRVar22,iVar14,iVar15,'\x06',(RecoveredRecordView_006B84D0_87AF9D9B *)pBVar13);
     }
     break;
   case 0x658c:
     if (DAT_00808aaa != '\0') goto LAB_005cadd5;
   }
+
   FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_1E22);
   if ((message->arg0).words.low == 3) {
     thunk_FUN_005b6730(this_00,9,'\x01',-1);

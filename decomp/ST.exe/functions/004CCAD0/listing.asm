@@ -7,7 +7,7 @@ FUN_004ccad0:
 004CCAE0  74 09                     JZ 0x004ccaeb
 004CCAE2  6A 00                     PUSH 0x0
 004CCAE4  8B CE                     MOV ECX,ESI
-004CCAE6  E8 43 49 F3 FF            CALL 0x0040142e
+004CCAE6  E8 43 49 F3 FF            CALL 0x0040142e  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 LAB_004ccaeb:
 004CCAEB  8B 8E 65 02 00 00         MOV ECX,dword ptr [ESI + 0x265]
 004CCAF1  83 E1 FD                  AND ECX,0xfffffffd

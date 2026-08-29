@@ -23,9 +23,23 @@
    0052FB00 -> 0053DEA0 @ 005309D5; literal 0 at 0053099A | 0052FB00 -> 0053DEA0 @ 00530B35; literal
    0 at 00530B12 | 0052FB00 -> 0053DEA0 @ 00530C60; literal 0 at 00530C28 | 0052FB00 -> 0053DEA0 @
    005318BD; literal 0 at 0053188A | 00539B90 -> 0053DEA0 @ 00539FB1; literal 0 at 00539F99 |
-   00539B90 -> 0053DEA0 @ 0053A020; literal 0 at 00539FE7 */
+   00539B90 -> 0053DEA0 @ 0053A020; literal 0 at 00539FE7
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (19), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00510E30 @ 00511440 -> read as EAX on
+   every CFG path | 00510E30 @ 005114D9 -> read as EAX on every CFG path | 0052E5E0 @ 0052E7B7 ->
+   read as EAX on every CFG path | 0052E5E0 @ 0052E7F1 -> read as EAX on every CFG path | 0052FB00 @
+   00530650 -> read as EAX on every CFG path | 0052FB00 @ 005306A3 -> read as EAX on every CFG path
+   | 0052FB00 @ 005306E3 -> read as EAX on every CFG path | 0052FB00 @ 00530725 -> read as EAX on
+   every CFG path | 0052FB00 @ 0053077F -> read as EAX on every CFG path | 0052FB00 @ 0053098D ->
+   read as EAX on every CFG path | 0052FB00 @ 005309D5 -> read as EAX on every CFG path | 0052FB00 @
+   00530B35 -> read as EAX on every CFG path | 0052FB00 @ 00530C60 -> read as EAX on every CFG path
+   | 0052FB00 @ 0053187D -> read as EAX on every CFG path | 0052FB00 @ 005318BD -> read as EAX on
+   every CFG path | 0052FB00 @ 005318F0 -> read as EAX on every CFG path | 00539B90 @ 00539E01 ->
+   read as EAX on every CFG path | 00539B90 @ 00539FB1 -> read as EAX on every CFG path | 00539B90 @
+   0053A020 -> read as EAX on every CFG path */
 
-undefined4 __thiscall
+int __thiscall
 UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,int param_4,
                    byte param_5,LPSTR param_6,undefined4 param_7,undefined4 param_8,short param_9,
                    ushort param_10,undefined4 param_11,char *param_12,undefined4 param_13,
@@ -36,39 +50,38 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
   UPanelTy *pUVar2;
   int iVar3;
   int iVar4;
-  uint uVar3;
   int iVar5;
   int *piVar6;
   int local_1d0 [4];
-  undefined4 local_1c0;
-  undefined4 local_1bc;
-  undefined4 local_1b0;
-  undefined4 local_1ac;
-  undefined4 local_1a8;
-  undefined4 local_170;
-  undefined4 local_16c;
-  undefined4 local_168;
-  undefined4 local_150;
-  undefined4 local_14c;
-  undefined4 local_148;
+  uint local_1c0;
+  uint local_1bc;
+  uint local_1b0;
+  uint local_1ac;
+  uint local_1a8;
+  uint local_170;
+  uint local_16c;
+  uint local_168;
+  uint local_150;
+  uint local_14c;
+  uint local_148;
   ushort local_144;
   short local_142;
-  undefined4 local_140;
-  undefined4 local_138;
-  undefined4 local_12c;
-  undefined4 local_128;
-  undefined4 local_124;
+  uint local_140;
+  uint local_138;
+  uint local_12c;
+  uint local_128;
+  uint local_124;
   ushort local_120;
   short local_11e;
-  undefined4 local_11c;
-  undefined4 local_114;
-  undefined4 local_c8;
-  undefined4 local_c4;
+  uint local_11c;
+  uint local_114;
+  uint local_c8;
+  uint local_c4;
   ushort *local_ac;
   int local_a8;
   InternalExceptionFrame local_54;
   UPanelTy *local_10;
-  undefined4 local_c;
+  int local_c;
   ushort *local_8;
 
   local_8 = nullptr;
@@ -76,6 +89,7 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar3 == 0) {
     piVar6 = local_1d0;
@@ -136,15 +150,16 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
     local_170 = local_1b0;
     if (param_12 != nullptr) {
       local_ac = FUN_0070aa70(g_cMf32_00806790,param_12,0,1);
+
       local_a8 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,param_12,1);
     }
-    /* ST_CALLSITE[0053E0B9]: CALL dword ptr [EAX + 0x8] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*STField<int *>(pUVar2,0xC) + 8))(2,&local_c,0,local_1d0,0);
+    /* ST_CALLSITE[0053E0B9]: CALL dword ptr [EAX + 0x8]; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
+    STStructuralVirtualCall<void>(STField<int *>(pUVar2,0xC), 0x8, 2, &local_c, 0, local_1d0, 0);
     g_currentExceptionFrame = local_54.previous;
     return local_c;
   }
   g_currentExceptionFrame = local_54.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0xb1,0,iVar3,"%s",
                              "UPanelTy::CreateBut");
   if (iVar4 == 0) {

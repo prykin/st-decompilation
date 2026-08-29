@@ -13,14 +13,14 @@ int FUN_0069c790(uint *param_1,int param_2,uint param_3,uint param_4)
   uint uVar4;
   int iVar5;
   int local_c;
-  int local_8;
+  RecoveredRecord_0069C710_92A26D6D *local_8;
 
   local_c = 0;
   if (param_3 < param_1[3]) {
-    local_8 = param_1[2] * param_3 + param_1[7];
+    local_8 = (RecoveredRecord_0069C710_92A26D6D *)(param_1[2] * param_3 + param_1[7]);
   }
   else {
-    local_8 = 0;
+    local_8 = nullptr;
   }
   if (param_4 < param_1[3]) {
     iVar5 = param_1[2] * param_4 + param_1[7];
@@ -29,7 +29,7 @@ int FUN_0069c790(uint *param_1,int param_2,uint param_3,uint param_4)
     iVar5 = 0;
   }
   iVar3 = 0;
-  if ((local_8 != 0) && (iVar5 != 0)) {
+  if ((local_8 != nullptr) && (iVar5 != 0)) {
     iVar3 = STField<int>(iVar5,0xC);
     uVar4 = 0;
     uVar2 = STField<uint>(iVar3,0xC);
@@ -42,6 +42,7 @@ int FUN_0069c790(uint *param_1,int param_2,uint param_3,uint param_4)
           piVar1 = nullptr;
         }
         iVar3 = *piVar1;
+
         uVar2 = thunk_FUN_0069c710(param_2,iVar3,local_8);
         if (-1 < (int)uVar2) {
           *(uint *)(param_2 + 10 + iVar3 * 0xe) = param_3;

@@ -17,7 +17,7 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
   int iVar3;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   int *unaff_EDI;
-  undefined4 local_20;
+  uint local_20;
   int local_1c;
   short local_18 [2];
   short local_14 [2];
@@ -31,6 +31,7 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     iVar4 = (*param_1->vtable->MoveStep)((STGameObjC *)param_1,unaff_EDI);
     if (iVar4 == -1) {
+
       iVar3 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bmove.cpp",0x4f,0,-5,"%s",
                                  "move error");
       if (iVar3 != 0) {
@@ -44,14 +45,15 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
       if (iVar4 != 2) goto cf_common_exit_004C6F47;
       iVar4 = param_1->field_0404 + 1;
       param_1->field_0404 = iVar4;
-      /* ST_CALLSITE[004C6EB7]: CALL 0x00404e9e; direct=00404E9E TLOBaseTy::sub_004EA620 */
+      /* ST_CALLSITE[004C6EB7]: CALL 0x00404e9e; direct=00404E9E TLOBaseTy::sub_004EA620; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_004167A0; source view only; no Ghidra override */
       if ((9 < iVar4) && (iVar4 = TLOBaseTy::sub_004EA620((TLOBaseTy *)param_1), iVar4 != 0)) {
         param_1->field_03FC = 1;
         param_1->field_0400 = 0;
       }
-      iVar4 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030
-                        ((AnonReceiver_004167A0 *)param_1,param_1->field_03E0,param_1->field_03E4,
-                         param_1->field_03E8);
+
+      iVar4 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_004167A0::thunk_FUN_00418030
+                        ((RecoveredReceiver_004167A0 *)param_1,param_1->field_03E0,
+                         param_1->field_03E4,param_1->field_03E8);
       if (iVar4 != -1) {
         if (iVar4 == 2) {
           param_1->field_03DC = 0;
@@ -67,6 +69,7 @@ undefined4 __fastcall FUN_004c6d00(STJellyGunC *param_1)
       /* ST_CALLSITE[004C6D29]: CALL dword ptr [EAX + 0x20] */
       iVar4 = param_1->vfunc_20();
       if (iVar4 == -1) {
+
         local_EAX_244 =
              ReportDebugMessage("E:\\__titans\\Artem\\TLO_bmove.cpp",0x35,0,-5,"%s",
                                 "stop move error");
@@ -106,6 +109,7 @@ LAB_004c6e4d:
       sub_004167A0(param_1);
       goto cf_common_exit_004C6F47;
     }
+
     local_EAX_371 =
          ReportDebugMessage("E:\\__titans\\Artem\\TLO_bmove.cpp",0x47,0,-5,"%s",
                             "move error");
@@ -125,6 +129,7 @@ cf_common_exit_004C6F47:
   param_1->field_05B8 = (int)local_a;
   if ((param_1->field_03DC == 0) && (param_1->field_03EC != 0)) {
     param_1->field_03EC = 0;
+
     thunk_FUN_004c6bb0(param_1,param_1->field_03F0,param_1->field_03F4,param_1->field_03F8);
   }
   return 0;

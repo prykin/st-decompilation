@@ -99,17 +99,17 @@ void __thiscall st::fn_005AE950(ChooseMapTy *this)
     this->field_002D = 0x20;
     this->field_0031 = 0;
     this->field_0033 = 0;
-    st::fn_006E6080(this,2,g_startSystem_0081176C->field_054C,(undefined4 *)&this->field_0x1d);
+    st::fn_006E6080(this,2,g_startSystem_0081176C->field_054C,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     this->field_002D = 0x29;
     this->field_0031 = 0x19;
     this->field_0033 = 0;
-    st::fn_006E6080(this,2,g_startSystem_0081176C->field_054C,(undefined4 *)&this->field_0x1d);
+    st::fn_006E6080(this,2,g_startSystem_0081176C->field_054C,reinterpret_cast<undefined4 *>(&this->field_0x1d));
   }
   if (g_startSystem_0081176C->field_0550 != 0) {
     this->field_002D = 0x20;
     this->field_0031 = 0;
     this->field_0033 = 0;
-    st::fn_006E6080(this,2,g_startSystem_0081176C->field_0550,(undefined4 *)&this->field_0x1d);
+    st::fn_006E6080(this,2,g_startSystem_0081176C->field_0550,reinterpret_cast<undefined4 *>(&this->field_0x1d));
   }
   return;
 }
@@ -136,52 +136,51 @@ st::fn_005B5BE0(ChooseMapTy *this,RecoveredSourceFamily_dibcopy *param_1,int *pa
   int iVar2;
 
   iVar2 = (*param_2 + -1) * param_2[5];
-  st::fn_006B4170(param_1,0,iVar2,0,st::machine_word_boundary_cast<int>(param_2[5] + -2),param_1->field_0008,0xff);
+  st::fn_006B4170(param_1,0,iVar2,0,param_2[5] + -2,param_1->field_0008,0xff);
   if (param_2[1] == 1) {
-    st::fn_006B4170(param_1,0,iVar2,0,st::machine_word_boundary_cast<int>(param_2[5] + -2),0x14,0);
-    st::fn_006B4170(param_1,0,iVar2 + 1,0x14,st::machine_word_boundary_cast<int>(param_2[5] + -5),2,0);
-    st::fn_006B4170(param_1,0,iVar2 + 3,0x16,st::machine_word_boundary_cast<int>(param_2[5] + -9),2,0);
+    st::fn_006B4170(param_1,0,iVar2,0,param_2[5] + -2,0x14,0);
+    st::fn_006B4170(param_1,0,iVar2 + 1,0x14,param_2[5] + -5,2,0);
+    st::fn_006B4170(param_1,0,iVar2 + 3,0x16,param_2[5] + -9,2,0);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,-(uint)(*param_2 != 1) & 2,iVar2,
+    st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,iVar2,-(uint)(*param_2 != 1) & 2,iVar2,
                  0x14,(byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,0x14,iVar2 + 3,0x17,
+    st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,iVar2,0x14,iVar2 + 3,0x17,
                  (byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2 + 3,0x17,st::machine_word_boundary_cast<int>(param_2[5] + -6 + iVar2),
+    st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,iVar2 + 3,0x17,param_2[5] + -6 + iVar2,
                  0x17,(byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -6),0x17,
-                 st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -3),0x14,
+    st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,param_2[5] + iVar2 + -6,0x17,
+                 param_2[5] + iVar2 + -3,0x14,
                  (byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
-    iVar2 = st::machine_word_boundary_cast<int>(param_2[5] + -3 + iVar2);
+    iVar2 = param_2[5] + -3 + iVar2;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,0x14,iVar2,2,
+    st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,iVar2,0x14,iVar2,2,
                  (byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
     return;
   }
-  st::fn_006B4170(param_1,0,iVar2,0,st::machine_word_boundary_cast<int>(param_2[5] + -2),0x13,0);
-  st::fn_006B4170(param_1,0,iVar2 + 2,0x13,st::machine_word_boundary_cast<int>(param_2[5] + -6),3,0);
+  st::fn_006B4170(param_1,0,iVar2,0,param_2[5] + -2,0x13,0);
+  st::fn_006B4170(param_1,0,iVar2 + 2,0x13,param_2[5] + -6,3,0);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,-(uint)(*param_2 != 1) & 2,iVar2,0x13,
+  st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,iVar2,-(uint)(*param_2 != 1) & 2,iVar2,0x13,
                (byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,0x13,iVar2 + 3,0x16,
+  st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,iVar2,0x13,iVar2 + 3,0x16,
                (byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2 + 3,0x16,st::machine_word_boundary_cast<int>(param_2[5] + -6 + iVar2),0x16,
+  st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,iVar2 + 3,0x16,param_2[5] + -6 + iVar2,0x16,
                (byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -6),0x16,
-               st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -3),0x13,
+  st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,param_2[5] + iVar2 + -6,0x16,
+               param_2[5] + iVar2 + -3,0x13,
                (byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
-  iVar1 = st::machine_word_boundary_cast<int>(param_2[5] + -3 + iVar2);
+  iVar1 = param_2[5] + -3 + iVar2;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar1,0x13,iVar1,2,
+  st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,iVar1,0x13,iVar1,2,
                (byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,1,st::machine_word_boundary_cast<int>(param_2[5] + -3 + iVar2),1,
+  st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,iVar2,1,param_2[5] + -3 + iVar2,1,
                (byte)*(undefined4 *)(this->array_00BC[0xc].field_01DB + 0x140),0xd);
   return;
 }
-

@@ -5,7 +5,7 @@
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
    decompilation contains no value return */
 
-void __fastcall FUN_006a00b0(AnonShape_006A00B0_8C09D559 *param_1)
+void __fastcall FUN_006a00b0(RecoveredRecordView_006A00B0_C4D66491 *param_1)
 
 {
   undefined4 *slotStorage;

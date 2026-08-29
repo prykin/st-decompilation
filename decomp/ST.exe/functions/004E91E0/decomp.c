@@ -2,9 +2,14 @@
 
 
 /* [STPrototypeRepairApplier] Propagated parameter 1.
-   Evidence: 00479600 -> 004E91E0 @ 004797EC */
+   Evidence: 00479600 -> 004E91E0 @ 004797EC
 
-undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
+   [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=3, ignored=0,
+   unknown=0 */
+
+int __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
 
 {
   int iVar1;
@@ -27,7 +32,8 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
   int *piVar18;
 
   if (STField<int>(this,0x5ac) == 0x6c) {
-    iVar4 = thunk_FUN_004e9930((int)this);
+
+    iVar4 = thunk_FUN_004e9930(this);
     if ((((iVar4 == 0) || (iVar13 = STField<int>(this,0x61b), iVar13 == 0)) ||
         (STField<int>(iVar13,0x20) != 1000)) ||
        ((STField<int>(iVar13,0x4D8) != 0xffff || (g_worldGrid.sizeZ + -1 <= STField<int>(iVar13,0x5B8)))
@@ -119,6 +125,7 @@ undefined4 __thiscall FUN_004e91e0(void *this,STBoatC *param_1)
       iVar11 = STField<int>(this,0x430);
       /* ST_CALLSITE[004E945C]: CALL dword ptr [EAX + 0x2c] */
       SVar8 = param_1->sub_0045EEE0();
+
       thunk_FUN_004b2520(STField<uint>(this,0x24),SVar8,iVar11,iVar14,iVar13,puVar15,puVar16,
                          puVar17,uVar7,piVar18);
     }
@@ -130,6 +137,7 @@ LAB_004e946f:
       dVar9 = param_1->sub_0045EEE0();
       STField<dword>(this,0x4dc) = dVar9;
       if (g_tLOFake_00800BCC == nullptr) {
+
         thunk_FUN_004d0f00();
       }
       /* ST_CALLSITE[004E94CC]: CALL 0x00401582; direct=00401582 TLOFakeTy::sub_004D0970 */

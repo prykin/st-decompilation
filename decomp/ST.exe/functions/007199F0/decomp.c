@@ -13,8 +13,7 @@ undefined4 __cdecl FUN_007199f0(DWORD_PTR dwParam2,byte param_2,MCIDEVICEID *par
   MCIERROR mcierr;
   DWORD_PTR local_10;
   uint local_c;
-  undefined4 local_8;
-
+  uint local_8;
   if (*param_3 == 0) {
     return 1;
   }

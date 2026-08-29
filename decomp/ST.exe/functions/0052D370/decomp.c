@@ -34,6 +34,7 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,byte param_2)
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_14 = this;
+
     iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (iVar3 == 0) {
       uVar9 = 0xffffffff;
@@ -44,6 +45,7 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,byte param_2)
         cVar1 = *pcVar6;
         pcVar6 = pcVar6 + 1;
       } while (cVar1 != '\0');
+      /* ST_CALLSITE[0052D3CC]: CALL 0x006aac10; direct=006AAC10 Library::DKW::LIB::MemAllocClear; [STCallResultViewApplier] presentation_only; exact direct-call result=/winnt.h/LPSTR; source view only; no Ghidra override */
       local_8 = Library::DKW::LIB::MemAllocClear(~uVar9 + 4);
       this_00 = local_14;
       pDVar4 = local_c;
@@ -57,6 +59,7 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,byte param_2)
       pDVar5 = local_10;
       if (pDVar4 != nullptr) {
         pDVar5 = (DArrayTy *)
+                 /* ST_CALLSITE[0052D448]: CALL 0x007121f0; direct=007121F0 ccFntTy::FormSarr; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; source view only; no Ghidra override */
                  ccFntTy::FormSarr(this_00->field_0094,&pDVar4->flags," ,.;:!?/\\()[]{}",
                                    (&DAT_00807570)[(_DAT_00807348 & 0xff) * 4],0,0xffffffff,1);
         local_10 = pDVar5;
@@ -73,6 +76,7 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,byte param_2)
           do {
             pcVar6 = *(char **)(pDVar5->growCapacity + iVar3 * 4);
 LAB_0052d48d:
+
             Library::DKW::TBL::FUN_006b5aa0((DArrayTy *)this_00->field_0098,pcVar6);
             if ((byte)this_00->field_009C < DAT_00807346) {
               this_00->field_009C = this_00->field_009C + 1;
@@ -87,6 +91,7 @@ LAB_0052d48d:
               else {
                 pcVar6 = nullptr;
               }
+
               uVar8 = FUN_00711110(this_00->field_0094,pcVar6);
               if ((int)*(uint *)(this_00->field_0090 + 2) <= uVar8) {
                 uVar8 = *(uint *)(this_00->field_0090 + 2);
@@ -94,10 +99,12 @@ LAB_0052d48d:
               this_00->field_0054[(byte)this_00->field_009C - 1] = uVar8;
               FUN_006b2800(g_ddxContext_008075A8,
                            this_00->field_0054[(byte)this_00->field_009C - 0x10],uVar8,0x13);
+
               Library::DKW::DDX::FUN_006b3640
                         ((int *)g_ddxContext_008075A8,
                          this_00->field_0054[(byte)this_00->field_009C - 0x10],0xffffffff,0xd,
                          (uint)(byte)this_00->field_009C * 0x13 + 0xb);
+
               Library::DKW::DDX::FUN_006b3430
                         ((int *)g_ddxContext_008075A8,
                          this_00->field_0054[(byte)this_00->field_009C - 0x10]);
@@ -111,6 +118,7 @@ LAB_0052d48d:
       return;
     }
     g_currentExceptionFrame = local_58.previous;
+
     iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\mpopup.cpp",0x61,0,iVar3,"%s",
                                "PopUpTy::AddStr");
     if (iVar7 != 0) {

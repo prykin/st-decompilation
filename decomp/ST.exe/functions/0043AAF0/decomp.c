@@ -31,7 +31,7 @@ STAllPlayersC::GetCamPoint
   undefined2 in_stack_00000006;
   STAllPlayersC_GetObjPtr_param_3Enum SVar11;
   int local_14;
-  undefined1 local_10 [4];
+  byte local_10 [4];
   uint local_c;
   int local_8;
 
@@ -52,10 +52,11 @@ STAllPlayersC::GetCamPoint
       local_c = 0;
       if (0 < (int)dVar1) {
         do {
+
           DArrayGetElement(param_3,local_c,local_10);
           if (STPiece<0,2>(local_10) != 0xffff) {
             uVar6 = uVar6 + 1;
-            /* ST_CALLSITE[0043ABBD]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
+            /* ST_CALLSITE[0043ABBD]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override */
             pSVar5 = GetObjPtr(g_allPlayers_007FA174,(char)param_2,STPiece<0,2>(local_10),CASE_1);
             /* ST_CALLSITE[0043ABD0]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             STFishC::sub_004162B0
@@ -68,13 +69,15 @@ STAllPlayersC::GetCamPoint
         if (uVar6 != 0) {
           local_c = 0;
           do {
+
             DArrayGetElement(param_3,local_c,local_10);
             if (STPiece<0,2>(local_10) != 0xffff) {
-              /* ST_CALLSITE[0043AC3D]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
+              /* ST_CALLSITE[0043AC3D]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override */
               pSVar5 = GetObjPtr(g_allPlayers_007FA174,(char)param_2,STPiece<0,2>(local_10),CASE_1);
               /* ST_CALLSITE[0043AC52]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
               STFishC::sub_004162B0
                         ((STFishC *)pSVar5,&param_1,(short *)&local_8,(short *)((int)&param_4 + 2));
+
               iVar3 = FUN_006acf90((int)param_1,(short)local_8,
                                    (short)((short)iVar8 / (int)(uint)uVar6),
                                    (short)((short)iVar9 / (int)(uint)uVar6));
@@ -108,6 +111,7 @@ STAllPlayersC::GetCamPoint
     else {
       if (_param_1 != 0x172) {
 LAB_0043acdb:
+
         iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x19fb,0,0,"%s"
                                    ,"STAllPlayersC::GetCamPoint invalid game type");
         if (iVar7 == 0) {
@@ -128,7 +132,7 @@ LAB_0043acdb:
     if (_param_1 != 0x1b8) goto LAB_0043acdb;
     SVar11 = CASE_6;
   }
-  /* ST_CALLSITE[0043AD34]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
+  /* ST_CALLSITE[0043AD34]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override */
   pSVar5 = GetObjPtr(g_allPlayers_007FA174,(char)param_2,(ushort)param_4,SVar11);
   /* ST_CALLSITE[0043AD49]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
   STFishC::sub_004162B0((STFishC *)pSVar5,&param_1,(short *)&local_8,(short *)((int)&param_4 + 2));

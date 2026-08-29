@@ -20,14 +20,15 @@ undefined4 * __cdecl LoadPlrEdit(int param_1,char *param_2)
   local_8 = nullptr;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
+
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (errorCode == 0) {
     if ((param_1 == 0) || (param_2 == nullptr)) {
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0xee);
     }
-    local_8 = (AllocationRecord_0067D1D0 *)
-              Library::Ourlib::MFAOBJ::mfAObjLoad((cMf32 *)param_1,param_2,1,0);
+    /* ST_CALLSITE[0067D8E6]: CALL 0x006f2d90; direct=006F2D90 Library::Ourlib::MFAOBJ::mfAObjLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D1D0; signature=__cdecl;pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D1D0;pointer:/cMf32;pointer:/char;/byte;/int */
+    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad((cMf32 *)param_1,param_2,1,0);
     if (local_8 != nullptr) {
       local_c = thunk_FUN_0067d1d0(local_8);
       thunk_FUN_0067d160((int *)&local_8);
@@ -36,6 +37,7 @@ undefined4 * __cdecl LoadPlrEdit(int param_1,char *param_2)
     return (undefined4 *)local_c;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar2 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0xf5,0,errorCode,"%s",
                              "LoadPlrEdit");
   if (iVar2 != 0) {

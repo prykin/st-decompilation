@@ -16,7 +16,7 @@ MTaskTy::CreateTextSSpr
   int local_EAX_61;
   int iVar3;
   int iVar4;
-  AnonShape_006B4B20_3D4F4412 *pAVar5;
+  ccFntTy *pcVar5;
   uint *puVar6;
   InternalExceptionFrame local_5c;
   int local_18;
@@ -32,6 +32,7 @@ MTaskTy::CreateTextSSpr
   local_8 = nullptr;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
+
   local_EAX_61 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (local_EAX_61 == 0) {
     if (((param_1 == nullptr) || ((char)*param_1 == '\0')) || (param_6 == nullptr)) {
@@ -51,7 +52,9 @@ MTaskTy::CreateTextSSpr
         param_9 = param_7 + -1;
       }
     }
+
     iVar3 = FUN_00711370(param_6,param_1);
+
     iVar4 = FUN_007113e0(param_6,param_1);
     if ((param_2 < 1) || (param_3 < 1)) {
       local_18 = (((int)param_4 < 1) - 1 & param_4) + iVar3;
@@ -65,29 +68,40 @@ MTaskTy::CreateTextSSpr
       local_c = 0;
     }
     uVar3 = local_c;
+
     local_8 = Library::DKW::LIB::MemAllocClear(0x3d);
     local_8->field_0023 = 3;
     local_8->field_0029 = (undefined2)local_18;
     local_8->field_002B = (short)iVar2;
-    pAVar5 = (AnonShape_006B4B20_3D4F4412 *)
-             ccFntTy::CreateSurf(param_6,0,0,0,0,(short)local_8->field_0029,
+    /* ST_CALLSITE[005E3FC4]: CALL 0x00710ba0; direct=00710BA0 ccFntTy::CreateSurf; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__thiscall;pointer:/ccFntTy;pointer:/ccFntTy;/int;/uint;/int;/int;/int;/int;/int */
+    pcVar5 = ccFntTy::CreateSurf(param_6,0,0,0,0,(short)local_8->field_0029,
                                  (int)local_8->field_002B,1);
-    ccFntTy::SetSurf(param_6,(int)pAVar5,0,0,0,0,0);
+
+    ccFntTy::SetSurf(param_6,(int)pcVar5,0,0,0,0,0);
+
     ccFntTy::WrTxt(param_6,(char *)param_1,local_10,uVar3,param_7,-1,-1);
-    FUN_006b4b20((int *)&local_8->field_0x2d,pAVar5,0,0);
+
+    FUN_006b4b20((int *)&local_8->field_0x2d,(RecoveredRecordView_006B4B20_F20E56A6 *)pcVar5,0,0);
+
     ccFntTy::WrTxt(param_6,(char *)param_1,local_10,uVar3,param_8,-1,-1);
-    FUN_006b4b20((int *)&local_8[1].field_0x1,pAVar5,0,0);
+
+    FUN_006b4b20((int *)&local_8[1].field_0x1,(RecoveredRecordView_006B4B20_F20E56A6 *)pcVar5,0,0);
+
     ccFntTy::WrTxt(param_6,(char *)param_1,local_10,uVar3,param_9,-1,-1);
-    FUN_006b4b20((int *)&local_8[1].field_0x5,pAVar5,0,0);
+
+    FUN_006b4b20((int *)&local_8[1].field_0x5,(RecoveredRecordView_006B4B20_F20E56A6 *)pcVar5,0,0);
+
     ccFntTy::EraseSufr(param_6);
     g_currentExceptionFrame = local_5c.previous;
     return (undefined4 *)local_8;
   }
   g_currentExceptionFrame = local_5c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",0x485,0,local_EAX_61,
                              "%s","MTaskTy::CreateTextSSpr");
   if (iVar4 == 0) {
     if (param_6 != nullptr) {
+
       ccFntTy::EraseSufr(param_6);
     }
     FUN_00725e30((int *)&local_8);

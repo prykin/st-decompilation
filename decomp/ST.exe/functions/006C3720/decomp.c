@@ -9,7 +9,7 @@ undefined4 FUN_006c3720(WPARAM param_1)
   LPARAM lParam;
   DWORD DVar3;
   int iVar4;
-  undefined1 local_c [4];
+  byte local_c [4];
   LPARAM local_8;
 
   WVar2 = param_1;
@@ -30,7 +30,7 @@ undefined4 FUN_006c3720(WPARAM param_1)
         param_1 = 0;
       }
       else {
-        Library::DKW::DV::FUN_006c4110((AnonShape_006C3FC0_72DDFA27 *)WVar2);
+        Library::DKW::DV::FUN_006c4110((RecoveredSourceFamily_dvideo *)WVar2);
         if ((param_1 != 0) && ((uVar1 & 0x20000000) != 0)) {
           /* ST_CALLSITE[006C379C]: CALL dword ptr [0x0085be5c] */
           PostMessageA(*(HWND *)(WVar2 + 0x78),*(UINT *)(WVar2 + 0x80),param_1,lParam);

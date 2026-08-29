@@ -29,6 +29,7 @@ int FUN_00672f00(void)
     (*STField<code *>(PTR_0081194c,0x4))(DAT_00857560);
     DAT_00857560 = 0;
   }
+
   FUN_006b98c0((int *)&DAT_00811958,piVar3);
   if (piVar3 != nullptr) {
     if ((PTR_00857528 != nullptr) && ((char *)piVar3[6] != nullptr)) {
@@ -90,7 +91,7 @@ int FUN_00672f00(void)
     DAT_007d2d18 = piVar3[4];
     DAT_00811954 = piVar3[5];
     DAT_00857560 = piVar3[1];
-    PTR_0081194c = (AnonShape_GLOBAL_0081194C_4D1525E6 *)piVar3[2];
+    PTR_0081194c = (RecoveredGlobalRecordView_0081194C *)piVar3[2];
     DAT_00857554 = piVar3[8];
   }
   if (DAT_00811958 == nullptr) {

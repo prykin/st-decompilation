@@ -43,7 +43,7 @@ STT3DSprC::Init:
 004AD259  8D 14 C0                  LEA EDX,[EAX + EAX*0x8]
 004AD25C  C1 E2 02                  SHL EDX,0x2
 004AD25F  52                        PUSH EDX
-004AD260  E8 0B DA 1F 00            CALL 0x006aac70
+004AD260  E8 0B DA 1F 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STT3DSprC_0020; source view only; no Ghidra override
 004AD265  8B F8                     MOV EDI,EAX
 004AD267  33 C0                     XOR EAX,EAX
 004AD269  89 7E 20                  MOV dword ptr [ESI + 0x20],EDI

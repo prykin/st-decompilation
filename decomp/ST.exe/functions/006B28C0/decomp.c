@@ -20,7 +20,7 @@ bool FUN_006b28c0(DDXContext_008075A8 *param_1,uint param_2,int param_3)
       if (param_3 != 0) {
         pDVar1->flags = uVar2 & 0xbffdffff | 0x40020000;
       }
-      FUN_006b23e0((int)param_1,&pDVar1->flags);
+      FUN_006b23e0((RecoveredRecord_006B23E0_5A2050A1 *)param_1,&pDVar1->flags);
     }
   }
   return bVar3;

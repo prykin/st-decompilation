@@ -11,7 +11,7 @@ info	roundtrip_call_presentation_failure	0	0	0	ok	Strict readability invariant: 
 info	output_call_scalar_alias	0	0	0	ok	Strict readability invariant: output_call_scalar_alias must remain absent from every accepted body
 info	tagged_message_vtable_slot_untyped	0	0	0	ok	-
 info	function_count	10407	10407	0	ok	policy=nondecreasing
-info	body_function_count	5555	5555	0	ok	policy=per-address nondecreasing
+info	body_function_count	5035	5035	0	ok	policy=per-address nondecreasing
 info	new_library_body_exclusions	0	0	0	ok	-
 info	covered_executable_bytes	2825571	2825571	0	ok	policy=nondecreasing
 info	unclaimed_meaningful_bytes	83886	83886	0	ok	policy=nonincreasing
@@ -21,24 +21,24 @@ info	typed_vtable_slot_erasure	0	0	0	ok	-
 info	function_addresses_removed	0	0	0	ok	-
 info	semantic_name_downgrades	0	0	0	ok	-
 info	quality:call_clobber_piece	272	272	0	ok	policy=nonincreasing; blocking=false
-info	quality:canonical_casted_call_result	1383	1383	0	ok	policy=nonincreasing; blocking=false
-info	quality:casted_call_result	964	964	0	ok	policy=nonincreasing; blocking=false
-info	quality:dynamic_array_indexing	85	85	0	ok	policy=nonincreasing; blocking=false
+info	quality:canonical_casted_call_result	311	311	0	ok	policy=nonincreasing; blocking=false
+info	quality:casted_call_result	301	301	0	ok	policy=nonincreasing; blocking=false
+info	quality:dynamic_array_indexing	94	94	0	ok	policy=nonincreasing; blocking=false
 info	quality:explicit_typed_vtable_dispatch	80	80	0	ok	policy=nonincreasing; blocking=false
 info	quality:flattened_global_record_array	35	35	0	ok	policy=nonincreasing; blocking=false
-info	quality:generic_global_aggregate	107	107	0	ok	policy=nonincreasing; blocking=false
-info	quality:generic_undefined_declaration	7819	7819	0	ok	policy=nonincreasing; blocking=false
-info	quality:raw_indirect_call	1332	1318	-14	improved	policy=nonincreasing; blocking=true
-info	quality:raw_pointer_offset	1730	1730	0	ok	policy=nonincreasing; blocking=false
-info	quality:return_width_artifact	291	291	0	ok	policy=nonincreasing; blocking=true
-info	quality:stack_slot_reuse	459	459	0	ok	policy=nonincreasing; blocking=false
-info	quality:string_based_aggregate_address	7	7	0	ok	policy=nonincreasing; blocking=false
-info	quality:undefined_type	15696	15696	0	ok	policy=nonincreasing; blocking=false
-info	quality:unresolved_register_input	407	407	0	ok	policy=nonincreasing; blocking=true
-info	readability_by_function:raw_indirect_call	1332	1318	-14	improved	policy=per-address nonincreasing; cross-function compensation forbidden
-info	readability_by_function:unresolved_register_input	407	407	0	ok	policy=per-address nonincreasing; cross-function compensation forbidden
-info	readability_by_function:return_width_artifact	291	291	0	ok	policy=per-address nonincreasing; cross-function compensation forbidden
-info	readability_by_function:raw_pointer_offset	1730	1730	0	ok	policy=per-address nonincreasing; cross-function compensation forbidden
-info	readability_by_function:generic_undefined_declaration	7819	7819	0	ok	policy=per-address nonincreasing; cross-function compensation forbidden
-info	readability_by_function:canonical_casted_call_result	1383	1383	0	ok	policy=per-address nonincreasing; cross-function compensation forbidden
+info	quality:generic_global_aggregate	114	114	0	ok	policy=nonincreasing; blocking=false
+info	quality:generic_undefined_declaration	3183	3183	0	ok	policy=nonincreasing; blocking=false
+info	quality:raw_indirect_call	459	459	0	ok	policy=nonincreasing; blocking=true
+info	quality:raw_pointer_offset	1105	1105	0	ok	policy=nonincreasing; blocking=false
+info	quality:return_width_artifact	261	261	0	ok	policy=nonincreasing; blocking=true
+info	quality:stack_slot_reuse	462	462	0	ok	policy=nonincreasing; blocking=false
+info	quality:string_based_aggregate_address	16	16	0	ok	policy=nonincreasing; blocking=false
+info	quality:undefined_type	14598	14598	0	ok	policy=nonincreasing; blocking=false
+info	quality:unresolved_register_input	362	362	0	ok	policy=nonincreasing; blocking=true
+info	readability_by_function:raw_indirect_call	459	459	0	ok	policy=per-address nonincreasing; cross-function compensation forbidden
+info	readability_by_function:unresolved_register_input	362	362	0	ok	policy=per-address nonincreasing; cross-function compensation forbidden
+info	readability_by_function:return_width_artifact	261	261	0	ok	policy=per-address nonincreasing; cross-function compensation forbidden
+info	readability_by_function:raw_pointer_offset	1105	1105	0	ok	policy=per-address nonincreasing; cross-function compensation forbidden
+info	readability_by_function:generic_undefined_declaration	3183	3183	0	ok	policy=per-address nonincreasing; cross-function compensation forbidden
+info	readability_by_function:canonical_casted_call_result	311	311	0	ok	policy=per-address nonincreasing; cross-function compensation forbidden
 info	readability_by_function:explicit_typed_vtable_dispatch	80	80	0	ok	policy=per-address nonincreasing; cross-function compensation forbidden

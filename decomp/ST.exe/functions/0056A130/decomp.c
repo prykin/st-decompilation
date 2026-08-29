@@ -2,23 +2,23 @@
 
 
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
-   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0056A130.
+   /SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_0056A130.
    Evidence: incoming_receiver_captures=1; receiver_accesses=2; incoming_edx_uses=0; calls=10;
    ecx_pointer_setup=10; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[16];
    expected_stack=16; receiver_family_members=1; adopt_untyped_existing_thiscall */
 
 void __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0056A130::FUN_0056a130
-          (AnonReceiver_0056A130 *this,uint param_1,char param_2,int param_3,uint *param_4)
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0056A130::FUN_0056a130
+          (RecoveredReceiver_0056A130 *this,uint param_1,char param_2,int param_3,uint *param_4)
 
 {
   int iVar1;
   uint uVar1;
   int iVar2;
   InternalExceptionFrame local_4c;
-  AnonReceiver_0056A130 *local_8;
+  RecoveredReceiver_0056A130 *local_8;
 
-  if (*(int *)&this->field_0xf8b == 0) {
+  if (this->field_0F8B == 0) {
     return;
   }
   local_4c.previous = g_currentExceptionFrame;
@@ -27,7 +27,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0056A130::FUN_0056a130
   iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
     if (param_4 == nullptr) {
-      param_4 = FUN_0071a990(*(AnonShape_0071A990_7656000F **)&local_8->field_0xdf3,
+      param_4 = FUN_0071a990(local_8->field_0DF3,
                              (param_1 ^ (int)param_1 >> 0x1f) - ((int)param_1 >> 0x1f),-1,
                              nullptr);
     }

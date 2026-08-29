@@ -2,9 +2,14 @@
 
 
 /* [STPrototypeApplier] Propagated parameter 6.
-   Evidence: 0064D270 -> 00675B10 @ 0064D376; MOVSX at 0064D35A establishes signed source width 2 */
+   Evidence: 0064D270 -> 00675B10 @ 0064D376; MOVSX at 0064D35A establishes signed source width 2
 
-undefined4 __cdecl
+   [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=4, ignored=0,
+   unknown=0 */
+
+int __cdecl
 FUN_00675b10(int param_1,int param_2,short param_3,short *param_4,short *param_5,short *param_6,
             int param_7)
 
@@ -56,7 +61,7 @@ FUN_00675b10(int param_1,int param_2,short param_3,short *param_4,short *param_5
               ((g_worldGrid.sizeZ <= sVar6 ||
                ((this = STGridAt3D(g_worldGrid, sVar8, sVar9, sVar6).objects[0],
                 this == nullptr ||
-                /* ST_CALLSITE[00675C12]: [STIndirectCallsiteApplier] exact slot 0x114; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4 */
+                /* ST_CALLSITE[00675C12]: CALL dword ptr [EDX + 0x114]; [STIndirectCallsiteApplier] exact slot 0x114; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4 */
                 (iVar3 = (*this->vtable[5].slots_00_28[9])(this,param_7), iVar3 != 0)))))))) {
             *param_4 = sVar8;
             *param_5 = sVar9;

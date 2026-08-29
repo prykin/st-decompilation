@@ -21,10 +21,12 @@ void __thiscall HelpPanelTy::PrepMissObj(HelpPanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
+
     iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x39b,0,iVar3,"%s"
                                ,"HelpPanelTy::PrepMissObj");
     if (iVar7 != 0) {
@@ -36,6 +38,7 @@ void __thiscall HelpPanelTy::PrepMissObj(HelpPanelTy *this)
   if ((DArrayTy *)local_8->field_01D3 != nullptr) {
     FUN_006b5570((DArrayTy *)local_8->field_01D3);
   }
+  /* ST_CALLSITE[00514F5D]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
   pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
   this_00->field_01D3 = &pDVar4->flags;
   iVar3 = 0;
@@ -59,8 +62,10 @@ LAB_00514f85:
   }
   this_00->field_01D3 = puVar6;
   if (puVar6 == nullptr) {
+    /* ST_CALLSITE[00514FF2]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
     pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     this_00->field_01D3 = &pDVar4->flags;
+
     Library::DKW::TBL::FUN_006b5aa0(pDVar4,&CHAR___007c3b5c);
   }
   puVar6 = this_00->field_01D3;

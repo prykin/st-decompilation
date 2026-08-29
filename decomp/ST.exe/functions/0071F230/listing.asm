@@ -23,7 +23,7 @@ LAB_0071f252:
 0071F262  57                        PUSH EDI
 0071F263  8B CE                     MOV ECX,ESI
 0071F265  89 45 F8                  MOV dword ptr [EBP + -0x8],EAX
-0071F268  FF 52 08                  CALL dword ptr [EDX + 0x8]
+0071F268  FF 52 08                  CALL dword ptr [EDX + 0x8]  ; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4
 0071F26B  8B 4E 30                  MOV ECX,dword ptr [ESI + 0x30]
 0071F26E  89 45 F4                  MOV dword ptr [EBP + -0xc],EAX
 0071F271  03 C3                     ADD EAX,EBX
@@ -36,7 +36,7 @@ LAB_0071f252:
 0071F27F  51                        PUSH ECX
 0071F280  57                        PUSH EDI
 0071F281  8B CE                     MOV ECX,ESI
-0071F283  FF 50 0C                  CALL dword ptr [EAX + 0xc]
+0071F283  FF 50 0C                  CALL dword ptr [EAX + 0xc]  ; [STIndirectCallsiteApplier] exact slot 0xC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4
 0071F286  85 C0                     TEST EAX,EAX
 0071F288  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
 0071F28B  75 1B                     JNZ 0x0071f2a8

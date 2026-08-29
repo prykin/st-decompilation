@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 void FUN_00753050(int param_1,int param_2,char param_3)
 
@@ -19,7 +17,9 @@ void FUN_00753050(int param_1,int param_2,char param_3)
       puVar1 = &pAVar4->field_0000;
       pAVar4 = (AnonPointee_TLOBaseTy_0607 *)((int)&pAVar4->field_0000 + 1);
     } while (*(char *)puVar1 != '\0');
-    Library::MSVCRT::FUN_0072da70((undefined4 *)((int)&pAVar3->field_0000 + 1),pAVar3,~uVar2);
+
+    Library::MSVCRT::FUN_0072da70
+              ((RecoveredRecord_006BFE70_3123BCE8 *)((int)&pAVar3->field_0000 + 1),pAVar3,~uVar2);
     *(char *)&pAVar3->field_0000 = param_3;
   }
   return;

@@ -9,30 +9,33 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
 
 {
   SpriteClassTy *pSVar1;
-  DWORD DVar3;
+  uint uVar3;
   CursorClassTy *pCVar4;
   int iVar5;
   int iVar6;
   InternalExceptionFrame local_54;
-  DWORD local_10;
+  uint local_10;
   CursorClassTy *local_c;
   int local_8;
 
   local_c = this;
+
   local_10 = STAppC::sub_006E51B0((STAppC *)this->field_0010);
   local_8 = 0;
   if (this->field_001C == 0xffffffff) {
     iVar5 = 0;
   }
   else {
+
     iVar5 = FUN_006b33f0(this->field_0060,this->field_001C);
   }
   if (iVar5 != 0) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
+
     iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
     pCVar4 = local_c;
-    DVar3 = local_10;
+    uVar3 = local_10;
     if (iVar5 == 0) {
       local_c->field_0020 = 0xfffffffe;
       if (param_1 != -1) {
@@ -54,6 +57,7 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
                        local_c->field_0020);
         }
         else {
+
           Library::DKW::DDX::FUN_006b3640
                     ((int *)g_ddxContext_008075A8,local_c->field_001C,local_c->field_0020,
                      local_c->field_00B9 + local_c->field_0034,
@@ -64,14 +68,15 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
       if ((pSVar1 != nullptr) && (g_sT3DSMAPContext_00807598 != nullptr)
          ) {
         if (pSVar1->field_000C + -1 <= pSVar1->field_0008) {
+
           SpriteClassTy::CloseSprite(pSVar1);
           Library::MSVCRT::FUN_0072e2b0((HoloTy *)pCVar4->field_04EB);
           pCVar4->field_04EB = nullptr;
           g_currentExceptionFrame = local_54.previous;
           return;
         }
-        if ((uint)(pSVar1->field_0040 + pSVar1->field_0044) <= DVar3) {
-          pSVar1->field_0044 = DVar3;
+        if ((uint)(pSVar1->field_0040 + pSVar1->field_0044) <= uVar3) {
+          pSVar1->field_0044 = uVar3;
           pSVar1->field_0008 = pSVar1->field_0008 + 1;
           ST3DSMAPContext::sub_006E2970
                     (g_sT3DSMAPContext_00807598,(float)pCVar4->field_04EF,(float)pCVar4->field_04F3,
@@ -83,6 +88,7 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
           pCVar4->field_04EB->field_0020 =
                pCVar4->field_04EB->field_0020 - *(int *)((int)pCVar4->field_04E7 + 0xd) / 2;
           pSVar1 = pCVar4->field_04EB;
+
           Library::DKW::DDX::FUN_006b3730
                     ((uint *)g_ddxContext_008075A8,pSVar1->field_0004,pSVar1->field_0008,
                      pSVar1->field_001C,pSVar1->field_0020);
@@ -92,6 +98,7 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
       return;
     }
     g_currentExceptionFrame = local_54.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\to_cursor.cpp",0xcc,0,iVar5,
                                "%s","CursorClassTy::DrawSprite");
     if (iVar6 != 0) {

@@ -30,6 +30,7 @@ void __fastcall FUN_0041da30(RecoveredRecord_STTorpC_0041DA30 *param_1)
   }
   /* ST_CALLSITE[0041DB4C]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
   STT3DSprC::sub_004AD3C0((STT3DSprC *)&param_1[4].field_0x5,fVar1,fVar2,fVar3);
+
   thunk_FUN_004ac9e0(&param_1[4].field_0x5,g_playSystem_00802A38->field_00E4);
   return;
 }

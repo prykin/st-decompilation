@@ -8,11 +8,11 @@
    Evidence: all observed direct callers ignore the return register (ignored=49, used=0, unknown=0),
    and decompilation contains no value return */
 
-void __cdecl FUN_00710790(AnonShape_00710790_4CBB90D4 *param_1)
+void __cdecl FUN_00710790(RecoveredRecordView_00710790_7768A573 *param_1)
 
 {
-  AnonShape_00710790_4CBB90D4 *pAVar1;
-  AnonShape_00710790_4CBB90D4 *pAVar2;
+  RecoveredRecordView_00710790_7768A573 *pRVar1;
+  RecoveredRecordView_00710790_7768A573 *pRVar2;
   int iVar3;
   uint uVar4;
   int iVar5;
@@ -37,27 +37,27 @@ void __cdecl FUN_00710790(AnonShape_00710790_4CBB90D4 *param_1)
         iVar5 = iVar5 + 4;
       } while (iVar6 < **(short **)(iVar3 + 0x9a));
     }
-    pAVar1 = *(AnonShape_00710790_4CBB90D4 **)&param_1[1].field_0x8;
-    if (*(int *)(pAVar1 + 1) != 0) {
-      FUN_00710790(pAVar1);
+    pRVar1 = *(RecoveredRecordView_00710790_7768A573 **)&param_1[1].field_0x8;
+    if (*(int *)(pRVar1 + 1) != 0) {
+      FUN_00710790(pRVar1);
     }
-    pAVar2 = *(AnonShape_00710790_4CBB90D4 **)&param_1[1].field_0x8;
-    param_1->field_008A = pAVar1->field_008A;
-    if (*(int *)(pAVar2 + 1) != 0) {
-      FUN_00710790(pAVar2);
+    pRVar2 = *(RecoveredRecordView_00710790_7768A573 **)&param_1[1].field_0x8;
+    param_1->field_008A = pRVar1->field_008A;
+    if (*(int *)(pRVar2 + 1) != 0) {
+      FUN_00710790(pRVar2);
     }
-    pAVar1 = *(AnonShape_00710790_4CBB90D4 **)&param_1[1].field_0x8;
-    param_1->field_0086 = pAVar2->field_0086;
-    if (*(int *)(pAVar1 + 1) != 0) {
-      FUN_00710790(pAVar1);
+    pRVar1 = *(RecoveredRecordView_00710790_7768A573 **)&param_1[1].field_0x8;
+    param_1->field_0086 = pRVar2->field_0086;
+    if (*(int *)(pRVar1 + 1) != 0) {
+      FUN_00710790(pRVar1);
     }
-    pAVar2 = *(AnonShape_00710790_4CBB90D4 **)&param_1[1].field_0x8;
-    param_1->field_0092 = pAVar1->field_0092;
-    if (*(int *)(pAVar2 + 1) != 0) {
-      FUN_00710790(pAVar2);
+    pRVar2 = *(RecoveredRecordView_00710790_7768A573 **)&param_1[1].field_0x8;
+    param_1->field_0092 = pRVar1->field_0092;
+    if (*(int *)(pRVar2 + 1) != 0) {
+      FUN_00710790(pRVar2);
     }
     iVar3 = *(int *)&param_1[1].field_0x8;
-    param_1->field_008E = pAVar2->field_008E;
+    param_1->field_008E = pRVar2->field_008E;
     *(undefined4 *)&param_1[1].field_0xc = STField<undefined4>(iVar3,0xAC);
   }
   return;

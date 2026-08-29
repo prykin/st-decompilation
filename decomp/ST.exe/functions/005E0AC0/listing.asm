@@ -81,7 +81,8 @@ LAB_005e0b38:
 005E0B97  8B 4E 31                  MOV ECX,dword ptr [ESI + 0x31]
 005E0B9A  6A 00                     PUSH 0x0
 005E0B9C  6A 01                     PUSH 0x1
-005E0B9E  E8 3D 35 13 00            CALL 0x007140e0
+MTaskTy::NoneMTask::override::prt_5e0b9e_a4cfac2c:
+005E0B9E  E8 3D 35 13 00            CALL 0x007140e0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; signature=__thiscall;pointer:/wingdi.h/tagBITMAPINFO;pointer:/void;/int;/char
 005E0BA3  85 C0                     TEST EAX,EAX
 005E0BA5  74 1B                     JZ 0x005e0bc2
 005E0BA7  8B 4E 18                  MOV ECX,dword ptr [ESI + 0x18]
@@ -128,7 +129,8 @@ LAB_005e0be8:
 005E0C08  8B 4E 31                  MOV ECX,dword ptr [ESI + 0x31]
 005E0C0B  6A 00                     PUSH 0x0
 005E0C0D  6A 01                     PUSH 0x1
-005E0C0F  E8 CC 34 13 00            CALL 0x007140e0
+MTaskTy::NoneMTask::override::prt_5e0c0f_a4cfac2c:
+005E0C0F  E8 CC 34 13 00            CALL 0x007140e0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; signature=__thiscall;pointer:/wingdi.h/tagBITMAPINFO;pointer:/void;/int;/char
 005E0C14  85 C0                     TEST EAX,EAX
 005E0C16  74 1B                     JZ 0x005e0c33
 005E0C18  8B 56 18                  MOV EDX,dword ptr [ESI + 0x18]

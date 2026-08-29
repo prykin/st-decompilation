@@ -23,7 +23,7 @@ STAllPlayersC::DelObjFromTmps
   int iVar8;
   uint uVar9;
   Global_sub_0043FC50_param_1Enum GVar10;
-  undefined4 local_c;
+  uint local_c;
   uint local_8;
   local_c = 0xffffffff;
   if (param_2 < 0x1a5) {
@@ -67,6 +67,7 @@ STAllPlayersC::DelObjFromTmps
           dVar4 = pDVar3->count;
           if (0 < (int)dVar4) {
             do {
+
               DArrayGetElement(pDVar3,uVar9,&local_8);
               if ((ushort)local_8 == (ushort)param_4) {
                 /* ST_CALLSITE[0042C821]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -74,6 +75,7 @@ STAllPlayersC::DelObjFromTmps
                 /* ST_CALLSITE[0042C82C]: CALL dword ptr [EDX + 0xe8]; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2 */
                 (*pSVar6->vtable[1].vfunc_14)(pSVar6,0);
                 local_8 = 0xffff;
+
                 Library::DKW::TBL::DArrayPut(pDVar3,uVar9,&local_8);
                 STField<short>(puVar1,0xe) = STField<short>(puVar1,0xe) + -1;
                 if (STField<short>(puVar1,0xe) == 0) {
@@ -228,6 +230,7 @@ STAllPlayersC::DelObjFromTmps
         dVar4 = pDVar3->count;
         if (0 < (int)dVar4) {
           do {
+
             DArrayGetElement(pDVar3,uVar9,&local_8);
             if ((ushort)local_8 == (ushort)param_4) {
               /* ST_CALLSITE[0042CB82]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -235,6 +238,7 @@ STAllPlayersC::DelObjFromTmps
               /* ST_CALLSITE[0042CB8D]: CALL dword ptr [EDX + 0xe8]; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2 */
               (*pSVar6->vtable[1].vfunc_14)(pSVar6,0);
               local_8 = 0xffff;
+
               Library::DKW::TBL::DArrayPut(pDVar3,uVar9,&local_8);
               STField<short>(puVar1,0xe) = STField<short>(puVar1,0xe) + -1;
               if (STField<short>(puVar1,0xe) == 0) {
@@ -263,6 +267,7 @@ STAllPlayersC::DelObjFromTmps
       }
     } while( true );
   }
+
   iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x352,0,0,"%s",
                              "STAllPlayersC::DelObjFromTmps invalid game type");
   if (iVar6 == 0) {

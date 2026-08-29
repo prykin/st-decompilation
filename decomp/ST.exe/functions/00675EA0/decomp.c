@@ -33,9 +33,8 @@ void __cdecl _AddObjGrpExch(uint param_1,int *param_2)
     g_currentExceptionFrame = local_48.previous;
     return;
   }
-  /* ST_CALLSITE[00675EDC]: CALL dword ptr [EAX + 0x2c] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar4 = (**(code **)(*param_2 + 0x2c))();
+  /* ST_CALLSITE[00675EDC]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+  iVar4 = STStructuralVirtualCall<undefined4>(param_2, 0x2C);
   if ((iVar4 < 1) || (0x28 < iVar4)) {
     bVar2 = false;
   }

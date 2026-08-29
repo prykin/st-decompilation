@@ -32,40 +32,41 @@ void __thiscall CPanelTy::SetControlObj(CPanelTy *this,char param_1)
   int iVar10;
   int iVar11;
   int iVar13;
-  uint *puVar14;
-  byte *puVar15;
+  int iVar14;
+  uint *puVar15;
   uint uVar16;
   uint uVar17;
   short sVar18;
-  ushort uVar19;
+  RecoveredRecord_004F3130_3F0D2FD9 *pRVar19;
   ushort uVar20;
-  int iVar21;
-  uint uVar22;
-  char *pcVar23;
-  uint uVar24;
-  AnonShape_004F2E40_DC76A8C6 local_b44 [7];
-  undefined4 local_25c [84];
+  ushort uVar21;
+  byte *puVar22;
+  uint uVar23;
+  char *pcVar24;
+  uint uVar25;
+  RecoveredRecordView_004F2E40_41FE7B1E local_b44 [7];
+  uint local_25c [84];
   InternalExceptionFrame local_10c;
-  undefined4 local_c8 [4];
-  undefined4 local_b8;
-  undefined4 local_b4;
-  undefined4 local_b0;
-  undefined4 local_98;
-  undefined4 local_94;
-  undefined4 local_90;
+  uint local_c8 [4];
+  uint local_b8;
+  uint local_b4;
+  uint local_b0;
+  uint local_98;
+  uint local_94;
+  uint local_90;
   undefined4 *local_80;
   uint local_7c;
-  undefined4 local_78;
-  undefined4 local_74;
-  undefined4 local_70 [4];
-  undefined4 local_60;
-  undefined4 local_5c;
-  undefined4 local_58;
-  undefined4 local_40;
-  undefined4 local_3c;
-  undefined4 local_38;
+  uint local_78;
+  uint local_74;
+  uint local_70 [4];
+  uint local_60;
+  uint local_5c;
+  uint local_58;
+  uint local_40;
+  uint local_3c;
+  uint local_38;
   int local_28;
-  AnonShape_004F2E40_DC76A8C6 *local_24;
+  RecoveredRecordView_004F2E40_41FE7B1E *local_24;
   CPanelTy *local_20;
   Global_sub_00529590_param_1Enum *local_1c;
   uint *local_18;
@@ -77,9 +78,11 @@ void __thiscall CPanelTy::SetControlObj(CPanelTy *this,char param_1)
   local_10c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_10c;
   local_20 = this;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_10c.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_10c.previous;
+
     iVar12 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0x53e,0,iVar5,
                                 "%s","CPanelTy::SetControlObj");
     if (iVar12 != 0) {
@@ -101,13 +104,13 @@ void __thiscall CPanelTy::SetControlObj(CPanelTy *this,char param_1)
   if (uVar6 != 0) {
     StartSystemTy::sub_006E56B0(this_00->field_000C,uVar6);
   }
-  puVar14 = this_00->field_0310 + 1;
+  puVar15 = this_00->field_0310 + 1;
   this_00->field_0308[1] = 0;
-  local_18 = puVar14;
+  local_18 = puVar15;
   if (this_00->field_0310[1] != 0) {
     StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_0310[1]);
   }
-  *puVar14 = 0;
+  *puVar15 = 0;
   if (this_00->field_0310[2] != 0) {
     StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_0310[2]);
   }
@@ -117,16 +120,16 @@ void __thiscall CPanelTy::SetControlObj(CPanelTy *this,char param_1)
     StartSystemTy::sub_006E56B0(this_00->field_000C,uVar6);
   }
   this_00->field_09D0 = 0;
-  puVar14 = this_00->field_0A15;
-  iVar10 = 6;
+  puVar15 = this_00->field_0A15;
+  iVar11 = 6;
   do {
-    if (*puVar14 != 0) {
-      StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar14);
-      *puVar14 = 0;
+    if (*puVar15 != 0) {
+      StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar15);
+      *puVar15 = 0;
     }
-    puVar14 = puVar14 + 1;
-    iVar10 = iVar10 + -1;
-  } while (iVar10 != 0);
+    puVar15 = puVar15 + 1;
+    iVar11 = iVar11 + -1;
+  } while (iVar11 != 0);
   CVar1 = this_00->field_0BFA;
   if (((CVar1 == CASE_0) || (CVar1 == CASE_3)) || (CVar1 == CASE_4)) {
     uVar6 = this_00->field_09C0[1];
@@ -141,28 +144,28 @@ void __thiscall CPanelTy::SetControlObj(CPanelTy *this,char param_1)
     memset(local_70, 0, 0x50); /* compiler bulk-zero initialization */
     local_c = &this_00->field_0x86a;
     local_1c = &this_00->field_0BFE;
-    iVar10 = -0xbff - (int)this_00;
-    local_14 = iVar10;
+    iVar11 = -0xbff - (int)this_00;
+    local_14 = iVar11;
     do {
       if (*local_1c == 0) goto LAB_00509a02;
-      iVar13 = 0xe;
-      iVar11 = 0xf;
-      switch(static_cast<uint32_t>(STRawWord(local_1c + iVar10))) {
+      iVar14 = 0xe;
+      iVar13 = 0xf;
+      switch(static_cast<uint32_t>(STRawWord(local_1c + iVar11))) {
       case 0:
-        iVar13 = 0x4b;
+        iVar14 = 0x4b;
         break;
       case 0x1:
-        iVar13 = 0x88;
+        iVar14 = 0x88;
         break;
       case 0x2:
         goto switchD_00509942_caseD_2;
       case 0x3:
-        iVar13 = 0x88;
+        iVar14 = 0x88;
         goto switchD_00509942_caseD_2;
       case 0x4:
-        iVar13 = 0x4b;
+        iVar14 = 0x4b;
 switchD_00509942_caseD_2:
-        iVar11 = 0x37;
+        iVar13 = 0x37;
       }
       /* ST_CALLSITE[00509970]: CALL 0x0040313e; direct=0040313E CPanelTy::sub_004F17D0 */
       sub_004F17D0(this_00,0,(byte)local_10);
@@ -172,20 +175,21 @@ switchD_00509942_caseD_2:
       else {
         local_8 = (uint *)(uint)local_1c[6];
       }
-      pcVar23 = nullptr;
-      uVar20 = 0;
-      uVar19 = 1;
-      iVar10 = 0;
-      puVar15 = local_c;
+      pcVar24 = nullptr;
+      uVar21 = 0;
+      uVar20 = 1;
+      iVar11 = 0;
+      puVar22 = local_c;
       pcVar5_mg0 = thunk_FUN_00529590(*local_1c,this_00->field_0BF5);
-      pCVar5 = thunk_FUN_00571240(pcVar5_mg0,iVar10);
+      pCVar5 = thunk_FUN_00571240(pcVar5_mg0,iVar11);
       /* ST_CALLSITE[005099DD]: CALL 0x004041ba; direct=004041BA CPanelTy::SetButStruct */
-      SetButStruct(this_00,(AnonShape_004F2E40_DC76A8C6 *)((int)local_b44 + local_28 * 0x17c),5,
-                   local_8,iVar13,iVar11,1,pCVar5,uVar19,uVar20,puVar15,pcVar23);
-      iVar10 = local_28 * 0x17c;
+      SetButStruct(this_00,(RecoveredRecordView_004F2E40_41FE7B1E *)
+                           ((int)local_b44 + local_28 * 0x17c),5,local_8,iVar14,iVar13,1,pCVar5,
+                   uVar20,uVar21,puVar22,pcVar24);
+      iVar11 = local_28 * 0x17c;
       local_28 = local_28 + 1;
-      *(undefined4 *)((int)local_b44 + iVar10 + 0x110) = 1;
-      iVar10 = local_14;
+      *(undefined4 *)((int)local_b44 + iVar11 + 0x110) = 1;
+      iVar11 = local_14;
 LAB_00509a02:
       bVar9 = (char)local_10 + 1;
       local_c = local_c + 0x27;
@@ -220,19 +224,19 @@ LAB_00509a02:
     }
     if (this_00->field_0BFB == '\x02') {
 LAB_00509b60:
-      uVar24 = 0;
-      uVar22 = 0;
+      uVar25 = 0;
+      uVar23 = 0;
       iVar11 = 0;
-      pcVar23 = nullptr;
-      iVar10 = 0;
-      uVar19 = 0;
+      pcVar24 = nullptr;
+      pRVar19 = nullptr;
+      uVar20 = 0;
       sVar18 = 0;
       uVar17 = 0xb13f;
       uVar16 = 0xb12f;
       pCVar5 = thunk_FUN_00571240("BUT_SMALL",0);
       /* ST_CALLSITE[00509BA5]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
       uVar6 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),0x92,0x6e,1,pCVar5,uVar16,
-                        uVar17,sVar18,uVar19,iVar10,pcVar23,iVar11,uVar22,uVar24);
+                        uVar17,sVar18,uVar20,pRVar19,pcVar24,iVar11,uVar23,uVar25);
       *local_18 = uVar6;
       g_currentExceptionFrame = local_10c.previous;
       return;
@@ -245,29 +249,29 @@ LAB_00509b60:
       if (*(int *)&this_00->field_0xc12 != 0) goto LAB_00509b60;
       break;
     case CASE_33:
-      iVar10 = 0xb12f;
+      iVar11 = 0xb12f;
       local_c = (undefined1 *)0x4c;
       local_8 = (uint *)0x2;
-      puVar14 = local_18;
+      puVar15 = local_18;
       do {
-        if (STField<int>(puVar14,0x8fe) != 0) {
-          uVar22 = 0;
+        if (STField<int>(puVar15,0x8fe) != 0) {
+          uVar23 = 0;
           uVar17 = 0;
-          iVar21 = 0;
-          pcVar23 = nullptr;
-          iVar13 = 0;
-          uVar19 = 0;
+          iVar14 = 0;
+          pcVar24 = nullptr;
+          pRVar19 = nullptr;
+          uVar20 = 0;
           sVar18 = 0;
           uVar16 = 0xb13f;
-          iVar11 = iVar10;
+          iVar13 = iVar11;
           pCVar5 = thunk_FUN_00571240("BUT_SMALL",0);
           /* ST_CALLSITE[00509CE7]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
           uVar6 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),0x92,(int)local_c,1,
-                            pCVar5,iVar11,uVar16,sVar18,uVar19,iVar13,pcVar23,iVar21,uVar17,uVar22);
-          *puVar14 = uVar6;
+                            pCVar5,iVar13,uVar16,sVar18,uVar20,pRVar19,pcVar24,iVar14,uVar17,uVar23);
+          *puVar15 = uVar6;
         }
-        puVar14 = puVar14 + 1;
-        iVar10 = iVar10 + 1;
+        puVar15 = puVar15 + 1;
+        iVar11 = iVar11 + 1;
         local_c = (undefined1 *)((int)local_c + 0x22);
         local_8 = (uint *)((int)local_8 + -1);
       } while (local_8 != nullptr);
@@ -276,23 +280,23 @@ LAB_00509b60:
     case CASE_34:
       local_8 = (uint *)0x2;
       memset(local_c8, 0, 0x58); /* compiler bulk-zero initialization */
-      iVar10 = 0;
+      iVar11 = 0;
       memset(local_25c, 0, 0x150); /* compiler bulk-zero initialization */
       local_14 = this_00->field_0138;
       puVar7 = local_25c + 1;
-      iVar11 = this_00->field_0050 + 99;
-      iVar10 = 0;
+      iVar13 = this_00->field_0050 + 99;
+      iVar11 = 0;
       do {
-        iVar13 = local_14;
-        puVar7[-1] = iVar10 + 1;
+        iVar14 = local_14;
+        puVar7[-1] = iVar11 + 1;
         *puVar7 = 0;
-        puVar7[2] = iVar11;
+        puVar7[2] = iVar13;
         puVar7[4] = 0x2e;
-        iVar21 = DAT_00806734;
-        if (iVar13 != 0) {
-          iVar21 = this_00->field_00A8;
+        iVar10 = DAT_00806734;
+        if (iVar14 != 0) {
+          iVar10 = this_00->field_00A8;
         }
-        puVar7[3] = iVar21 + 0x22;
+        puVar7[3] = iVar10 + 0x22;
         puVar7[5] = 0x10;
         puVar7[0x11] = 0;
         puVar7[0x15] = 0x101;
@@ -305,20 +309,20 @@ LAB_00509b60:
         *(undefined2 *)(puVar7 + 0xd) = 0;
         STField<undefined2>(puVar7,0x62) = 2;
         STField<undefined2>(puVar7,0x36) = 2;
-        if (iVar10 == 0) {
+        if (iVar11 == 0) {
           uVar16 = 0x3aa6;
 LAB_00509ddd:
           puVar7[0x19] = uVar16;
           puVar7[0xe] = uVar16;
         }
-        else if (iVar10 == 1) {
+        else if (iVar11 == 1) {
           uVar16 = 0x3aa7;
           goto LAB_00509ddd;
         }
-        iVar11 = iVar11 + 0x31;
+        iVar13 = iVar13 + 0x31;
         puVar7 = puVar7 + 0x1c;
         local_8 = (uint *)((int)local_8 + -1);
-        iVar10 = iVar10 + 1;
+        iVar11 = iVar11 + 1;
         if (local_8 == nullptr) {
           local_80 = local_25c;
           local_7c = (uint)(byte)this_00->field_09D4;
@@ -338,32 +342,32 @@ LAB_00509ddd:
                      ,0);
           local_c = (undefined1 *)((uint)local_c & 0xffffff00);
           local_10 = 0x3b;
-          iVar10 = *(int *)(this_00->field_0194 + 4);
-          iVar11 = *(int *)(this_00->field_09D9[8] + 4);
-          puVar15 = &this_00->field_0xa2d;
-          memset((void *)puVar15, 0, 0xea); /* compiler bulk-zero initialization */
-          local_14 = (iVar10 - iVar11) / 2 + 8;
+          iVar11 = *(int *)(this_00->field_0194 + 4);
+          iVar13 = *(int *)(this_00->field_09D9[8] + 4);
+          pRVar19 = (RecoveredRecord_004F3130_3F0D2FD9 *)&this_00->field_0xa2d;
+          memset((void *)pRVar19, 0, 0xea); /* compiler bulk-zero initialization */
+          local_14 = (iVar11 - iVar13) / 2 + 8;
           local_8 = this_00->field_0A15;
-          iVar10 = 0xb18f;
+          iVar11 = 0xb18f;
           do {
-            *puVar15 = 2;
+            *(undefined1 *)pRVar19 = 2;
             if (DAT_0080874e == '\x01') {
               GVar4 = (this_00->field_09D4 != '\x01') + CASE_1;
             }
             else {
               GVar4 = CASE_2 - (this_00->field_09D4 != '\x01');
             }
-            uVar16 = thunk_FUN_00525ef0(GVar4,(Global_sub_00525EF0_param_2Enum)local_c);
-            *(undefined4 *)(puVar15 + 1) = uVar16;
+
+            iVar13 = thunk_FUN_00525ef0(GVar4,(Global_sub_00525EF0_param_2Enum)local_c);
+            *(int *)&pRVar19->field_0x1 = iVar13;
             /* ST_CALLSITE[00509F30]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
             uVar6 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),local_14,local_10,0,
-                              nullptr,iVar10,iVar10 + 0x10,1,0,(int)puVar15,nullptr,0x11,10,
-                              0);
-            puVar15 = puVar15 + 0x27;
+                              nullptr,iVar11,iVar11 + 0x10,1,0,pRVar19,nullptr,0x11,10,0);
+            pRVar19 = pRVar19 + 3;
             local_10 = local_10 + 0xb;
             *local_8 = uVar6;
             bVar9 = (char)local_c + 1;
-            iVar10 = iVar10 + 1;
+            iVar11 = iVar11 + 1;
             local_8 = local_8 + 1;
             local_c = (undefined1 *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar9));
           } while (bVar9 < 6);
@@ -373,12 +377,12 @@ LAB_00509ddd:
       } while( true );
     case CASE_35:
       if (this_00->field_0C31 != '\0') {
-        uVar24 = 0;
-        uVar22 = 0;
+        uVar25 = 0;
+        uVar23 = 0;
         iVar11 = 0;
-        pcVar23 = nullptr;
-        iVar10 = 0;
-        uVar19 = 0;
+        pcVar24 = nullptr;
+        pRVar19 = nullptr;
+        uVar20 = 0;
         sVar18 = 0;
         uVar17 = 0xb13f;
         uVar16 = 0xb12f;
@@ -387,7 +391,7 @@ LAB_00509ddd:
 LAB_00509c11:
         /* ST_CALLSITE[00509C17]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
         uVar6 = CreateBut(this_00,5,0,(uint)(cVar2 != '\0'),0x92,0x6e,1,pCVar5,uVar16,uVar17,sVar18,
-                          uVar19,iVar10,pcVar23,iVar11,uVar22,uVar24);
+                          uVar20,pRVar19,pcVar24,iVar11,uVar23,uVar25);
         *local_18 = uVar6;
         g_currentExceptionFrame = local_10c.previous;
         return;
@@ -395,12 +399,12 @@ LAB_00509c11:
       break;
     case CASE_3C:
       if (this_00->field_0C3C == CASE_1) {
-        uVar24 = 0;
-        uVar22 = 0;
+        uVar25 = 0;
+        uVar23 = 0;
         iVar11 = 0;
-        pcVar23 = nullptr;
-        iVar10 = 0;
-        uVar19 = 0;
+        pcVar24 = nullptr;
+        pRVar19 = nullptr;
+        uVar20 = 0;
         sVar18 = 0;
         uVar17 = 0xb13f;
         uVar16 = 0xb12f;
@@ -412,40 +416,41 @@ LAB_00509c11:
     case CASE_43:
     case CASE_4C:
       if (this_00->field_0BFC == '\0') {
-        iVar10 = 0;
+        iVar11 = 0;
       }
       else {
-        iVar10 = (-(uint)(this_00->field_0C11 != CASE_0) & 2) + 1;
+        iVar11 = (-(uint)(this_00->field_0C11 != CASE_0) & 2) + 1;
       }
-      uVar24 = 0;
-      uVar22 = 0;
+      uVar25 = 0;
+      uVar23 = 0;
       iVar13 = 0;
-      pcVar23 = nullptr;
-      iVar11 = 0;
-      uVar19 = 0;
+      pcVar24 = nullptr;
+      pRVar19 = nullptr;
+      uVar20 = 0;
       sVar18 = 0;
       uVar17 = 0xb12e;
       uVar16 = 0xb12d;
       pCVar5 = thunk_FUN_00571240("BUT_AUTO",0);
       /* ST_CALLSITE[00509B32]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
-      uVar6 = CreateBut(this_00,5,3,iVar10,-1,0x58,1,pCVar5,uVar16,uVar17,sVar18,uVar19,iVar11,
-                        pcVar23,iVar13,uVar22,uVar24);
+      uVar6 = CreateBut(this_00,5,3,iVar11,-1,0x58,1,pCVar5,uVar16,uVar17,sVar18,uVar20,pRVar19,
+                        pcVar24,iVar13,uVar23,uVar25);
       this_00->field_0308[1] = uVar6;
       g_currentExceptionFrame = local_10c.previous;
       return;
     case CASE_50:
-      iVar11 = 0xb17f;
+      iVar13 = 0xb17f;
       local_c = (undefined1 *)0x6;
-      iVar10 = 0x3b;
+      iVar11 = 0x3b;
       local_14 = (*(int *)(this_00->field_0194 + 4) - *(int *)(this_00->field_09D9[8] + 4)) / 2 + 8;
       local_8 = this_00->field_0A15;
       do {
         /* ST_CALLSITE[00509FE3]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
-        uVar6 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),local_14,iVar10,0,
-                          nullptr,iVar11 + -0x20,iVar11,2,0,0x4f20,nullptr,0xaa,10,
-                          iVar11 + -0x10);
-        iVar11 = iVar11 + 1;
-        iVar10 = iVar10 + 0xb;
+        uVar6 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),local_14,iVar11,0,
+                          nullptr,iVar13 + -0x20,iVar13,2,0,
+                          (RecoveredRecord_004F3130_3F0D2FD9 *)0x4f20,nullptr,0xaa,10,
+                          iVar13 + -0x10);
+        iVar13 = iVar13 + 1;
+        iVar11 = iVar11 + 0xb;
         *local_8 = uVar6;
         local_8 = local_8 + 1;
         local_c = (undefined1 *)((int)local_c + -1);

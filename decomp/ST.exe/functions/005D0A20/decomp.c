@@ -26,6 +26,7 @@ void __thiscall SettMapMTy::ChangePlayerState(SettMapMTy *this,uint param_1)
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
+
     errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     this_00 = local_8;
     if (errorCode == 0) {
@@ -51,6 +52,7 @@ void __thiscall SettMapMTy::ChangePlayerState(SettMapMTy *this,uint param_1)
             if (element_1f84->handle != nullptr) {
               DArrayDestroy(element_1f84->handle);
             }
+
             DArrayRemoveAt((DArrayTy *)this_00->field_1F84,index);
           }
           element_1f84_2->field_0x1 = 1;
@@ -68,6 +70,7 @@ void __thiscall SettMapMTy::ChangePlayerState(SettMapMTy *this,uint param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x5ba,0,errorCode,
                                "%s","SettMapMTy::ChangePlayerState");
     if (iVar4 != 0) {

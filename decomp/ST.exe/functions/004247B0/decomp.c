@@ -36,7 +36,8 @@ void __thiscall STGroupC::SetAVPar(STGroupC *this,uint param_1)
                      599);
         }
         if (this_00->field_0020 == 0x14) {
-          thunk_FUN_004956c0(this_00,this->field_0039);
+          /* ST_CALLSITE[0042484B]: CALL 0x00401c26; direct=00401C26 STGameObjC::sub_004956C0 */
+          STGameObjC::sub_004956C0(this_00,this->field_0039);
         }
       }
       uVar4 = uVar4 + 1;

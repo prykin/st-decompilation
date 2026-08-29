@@ -18,8 +18,10 @@ MMsgTy * __cdecl CreateMMsg(void)
   SpriteClassTy *this_00;
   MMsgTy_Record_00BC_01FB *pMVar5;
 
-  this = (MMsgTy *)FUN_006b04d0(0x1eaa);
+
+  this = STPointerBoundaryCast<MMsgTy *>(FUN_006b04d0(0x1eaa));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->vtable = (MMsgTyVTable *)&VTable_0079C018;
     this->field_0018 = 0;

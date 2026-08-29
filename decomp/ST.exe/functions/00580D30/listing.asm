@@ -15,7 +15,7 @@ LAB_00580d48:
 00580D52  6A 00                     PUSH 0x0
 00580D54  6A 00                     PUSH 0x0
 00580D56  8B CE                     MOV ECX,ESI
-00580D58  E8 CE 3B E8 FF            CALL 0x0040492b
+00580D58  E8 CE 3B E8 FF            CALL 0x0040492b  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 LAB_00580d5d:
 00580D5D  66 8B 46 32               MOV AX,word ptr [ESI + 0x32]
 00580D61  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]

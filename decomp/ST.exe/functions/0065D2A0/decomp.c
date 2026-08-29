@@ -24,6 +24,7 @@ int __thiscall AiFltClassTy::InitData(AiFltClassTy *this,undefined4 *param_1)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pAVar3 = local_c;
   if (iVar4 == 0) {
@@ -57,10 +58,12 @@ int __thiscall AiFltClassTy::InitData(AiFltClassTy *this,undefined4 *param_1)
       pAVar3->field_0217 = pDVar4;
     }
     if (pAVar3->field_0223 == nullptr) {
+      /* ST_CALLSITE[0065D372]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0223; source view only; no Ghidra override */
       pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x14,10);
       pAVar3->field_0223 = (AnonPointee_AiFltClassTy_0223 *)pDVar4;
     }
     if (pAVar3->field_022F == nullptr) {
+      /* ST_CALLSITE[0065D38F]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_022F; source view only; no Ghidra override */
       pDVar4 = Library::DKW::TBL::DArrayCreate(nullptr,10,0xc,10);
       pAVar3->field_022F = (AnonPointee_AiFltClassTy_022F *)pDVar4;
     }
@@ -72,7 +75,9 @@ int __thiscall AiFltClassTy::InitData(AiFltClassTy *this,undefined4 *param_1)
     return 0;
   }
   g_currentExceptionFrame = local_50.previous;
-  thunk_FUN_0065d480(local_c);
+  /* ST_CALLSITE[0065D3D6]: CALL 0x0040220c; direct=0040220C AiFltClassTy::sub_0065D480 */
+  sub_0065D480(local_c);
+
   iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0x31,0,iVar4,"%s",
                              "AiFltClassTy::InitData");
   if (iVar5 != 0) {

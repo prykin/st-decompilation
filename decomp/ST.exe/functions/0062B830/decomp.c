@@ -27,18 +27,17 @@ FUN_0062b830(int param_1,int param_2,int param_3,undefined4 param_4,int *param_5
 {
   int *this;
   int iVar1;
-  undefined4 local_44 [5];
+  uint local_44 [5];
   uint local_30;
-  undefined4 local_2c;
+  uint local_2c;
   int local_28;
   int local_24;
   int local_20;
-  undefined4 local_1c;
+  uint local_1c;
   int local_18;
   int local_14;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_c;
+  uint local_8;
   this = param_5;
   memset(local_44, 0, 0x40); /* compiler bulk-zero initialization */
   local_28 = param_1;
@@ -52,14 +51,14 @@ FUN_0062b830(int param_1,int param_2,int param_3,undefined4 param_4,int *param_5
   local_44[2] = 0;
   local_44[3] = 0;
   local_2c = 1;
-  /* ST_CALLSITE[0062B88C]: CALL dword ptr [EAX + 0x2c] */
+  /* ST_CALLSITE[0062B88C]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4 */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar1 = (**(code **)(*param_5 + 0x2c))();
   local_8 = param_7;
   local_30 = (uint)(*(int *)(&DAT_00791d68 + iVar1 * 4) == 1);
   local_c = param_6;
   /* ST_CALLSITE[0062B8C1]: CALL dword ptr [EDX + 0x8] */
-  g_playSystem_00802A38->vfunc_08(0x124,0,0,(short)local_44,0);
+  g_playSystem_00802A38->vfunc_8(0x124,nullptr,nullptr,(short)local_44,0);
   /* ST_CALLSITE[0062B8D2]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
   STFishC::sub_004162B0
             ((STFishC *)this,(short *)((int)&param_3 + 2),(short *)((int)&param_2 + 2),

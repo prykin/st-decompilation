@@ -20,7 +20,7 @@ undefined4 __thiscall STLightC::sub_0061F290(STLightC *this,int param_1)
   int local_1c;
   int local_18;
   STLightC *local_14;
-  undefined4 local_10;
+  uint local_10;
   uint local_c;
   int local_8;
 
@@ -77,6 +77,7 @@ undefined4 __thiscall STLightC::sub_0061F290(STLightC *this,int param_1)
                  ((this_00->field_004C == nullptr ||
                   (this_00->field_004C[local_18 + iVar4 * this_00->field_0030] != 0)))) {
                 if (element_00a3->state == 0) {
+
                   Library::Ourlib::ST3DSMAP::SprShow
                             (g_sT3DSMAPContext_00807598,element_00a3->spriteHandle,0);
                   element_00a3->state = 1;

@@ -1,12 +1,10 @@
-#include "../../pseudocode_runtime.h"
-
 
 short FUN_0043f130(char param_1,byte *param_2)
 
 {
   byte bVar1;
-  int iVar2;
-  int *piVar3;
+  DArrayOf_STGameObjCPtr *pDVar2;
+  STGameObjC *pSVar3;
   short sVar4;
   short sVar5;
   byte *pbVar6;
@@ -15,21 +13,20 @@ short FUN_0043f130(char param_1,byte *param_2)
   int iVar9;
   bool bVar10;
   byte local_18 [16];
-  int local_8;
+  dword local_8;
 
   iVar9 = 0;
   sVar5 = 0;
-  iVar2 = g_packedRecords_A62x8[param_1].field3_0x9;
-  local_8 = STField<int>(iVar2,0xC);
+  pDVar2 = g_packedRecords_A62x8[param_1].field3_0x9;
+  local_8 = pDVar2->count;
   sVar4 = 0;
-  if (0 < local_8) {
+  if (0 < (int)local_8) {
     do {
       sVar5 = sVar4;
-      piVar3 = *(int **)(STField<int>(iVar2,0x1C) + iVar9 * 4);
-      if (piVar3 != nullptr) {
+      pSVar3 = pDVar2->data[iVar9];
+      if (pSVar3 != nullptr) {
         /* ST_CALLSITE[0043F173]: CALL dword ptr [EAX + 0x74] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(*piVar3 + 0x74))(local_18);
+        (*pSVar3->vtable->vfunc_74)((short)local_18);
         pbVar8 = local_18;
         pbVar6 = param_2;
         do {
@@ -55,7 +52,7 @@ LAB_0043f1a5:
       }
       iVar9 = iVar9 + 1;
       sVar4 = sVar5;
-    } while (iVar9 < local_8);
+    } while (iVar9 < (int)local_8);
   }
   return sVar5;
 }

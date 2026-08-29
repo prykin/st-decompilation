@@ -32,7 +32,7 @@ switchD_0052dd68::caseD_2:
 0052DD7B  51                        PUSH ECX
 0052DD7C  53                        PUSH EBX
 0052DD7D  52                        PUSH EDX
-0052DD7E  E8 6C 5C ED FF            CALL 0x004039ef
+0052DD7E  E8 6C 5C ED FF            CALL 0x004039ef  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 0052DD83  89 86 94 00 00 00         MOV dword ptr [ESI + 0x94],EAX
 0052DD89  C7 40 7E 01 00 00 00      MOV dword ptr [EAX + 0x7e],0x1
 0052DD90  05 9E 00 00 00            ADD EAX,0x9e
@@ -125,7 +125,7 @@ LAB_0052de39:
 0052DE94  6A 0A                     PUSH 0xa
 0052DE96  6A 0A                     PUSH 0xa
 0052DE98  6A 00                     PUSH 0x0
-0052DE9A  E8 51 76 18 00            CALL 0x006b54f0
+0052DE9A  E8 51 76 18 00            CALL 0x006b54f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 0052DE9F  B9 20 76 80 00            MOV ECX,0x807620
 0052DEA4  89 86 98 00 00 00         MOV dword ptr [ESI + 0x98],EAX
 0052DEAA  E8 01 73 1B 00            CALL 0x006e51b0

@@ -17,8 +17,7 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
   short sVar6;
   short sVar7;
   short sVar8;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0;
   this->field_02C2 = this->field_0276;
   this->field_02C6 = this->field_027A;
@@ -26,6 +25,7 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
   this->field_0041 = (short)this->field_02C2;
   this->field_0043 = (short)this->field_02C6;
   this->field_0045 = (short)this->field_02CA;
+  /* ST_CALLSITE[00622BFD]: CALL 0x0040581c; direct=0040581C thunk_FUN_004ab050; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STMineSetC; source view only; no Ghidra override */
   SVar2 = thunk_FUN_004ab050();
   /* ST_CALLSITE[00622C05]: CALL 0x00402414; direct=00402414 STMineSetC::sub_00626B50 */
   sub_00626B50(this,SVar2);
@@ -44,6 +44,7 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
   this->field_004B = sVar8;
   this->field_005B = sVar6;
   this->field_005F = sVar8;
+
   uVar3 = thunk_FUN_00626f10(this->field_0272);
   this->field_02AD = (STMineSetC_field_02ADState)uVar3;
   this->field_035F = g_playSystem_00802A38->field_00E4;
@@ -59,6 +60,7 @@ undefined4 __thiscall STMineSetC::sub_00622BA0(STMineSetC *this)
   this->field_003E = sVar7;
   this->field_028A = (short)(sVar8 + 100) + -0x32;
   this->field_008E = 1;
+
   iVar4 = FUN_006acf0d(this->field_02C2,this->field_02C6,this->field_02CA,(int)sVar6,(int)sVar6,
                        (int)sVar7);
   this->field_02F6 = iVar4;

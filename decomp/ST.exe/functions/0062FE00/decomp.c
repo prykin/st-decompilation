@@ -18,7 +18,8 @@ void __fastcall FUN_0062fe00(STJellyGunC *param_1)
   do {
     if (*piVar4 != 0) {
       if (*(int *)(*piVar4 + 0x10) == 0) {
-        pSVar1 = (STT3DSprC *)Library::MSVCRT::FUN_0072e530(0x40);
+        /* ST_CALLSITE[0062FE1C]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint */
+        pSVar1 = Library::MSVCRT::FUN_0072e530(0x40);
         if (pSVar1 == nullptr) {
           pSVar1 = nullptr;
         }
@@ -28,6 +29,7 @@ void __fastcall FUN_0062fe00(STJellyGunC *param_1)
         }
         *(STT3DSprC **)(*piVar4 + 0x10) = pSVar1;
       }
+
       iVar2 = thunk_FUN_0062f080(param_1,iVar3,*(undefined4 *)(*piVar4 + 0xc),
                                  *(STRubbishC_LoadImagSpr_param_4Enum *)(*piVar4 + 4));
       if (iVar2 == 0) {
@@ -36,6 +38,7 @@ void __fastcall FUN_0062fe00(STJellyGunC *param_1)
           STRubbishC::sub_0062F900((STRubbishC *)param_1);
         }
         else {
+
           thunk_FUN_0062f6c0(param_1,iVar3);
         }
       }

@@ -21,6 +21,7 @@ StartSystemTy::sub_006E5360(StartSystemTy *this,int param_1,int *param_2,undefin
 {
   int iVar1;
 
+
   iVar1 = FUN_006e3450(this->field_0010,param_1,param_2,param_3);
   return iVar1;
 }

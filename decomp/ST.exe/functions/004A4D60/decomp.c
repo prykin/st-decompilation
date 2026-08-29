@@ -20,11 +20,13 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,shor
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
     if (iVar2 != -0x5001fff7) {
+
       iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1294,0,iVar2,
                                  "%s","STGroupBoatC::ChangeMDNotify");
       if (iVar3 != 0) {
@@ -48,6 +50,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,shor
     index = 0;
     if (0 < iVar2) {
       do {
+
         DArrayGetElement((DArrayTy *)this_00->field_029F,index,local_8);
         if (local_8[0] == -1) break;
         index = index + 1;
@@ -55,6 +58,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,shor
     }
     element = &param_2;
 LAB_004a4e27:
+
     Library::DKW::TBL::DArrayPut((DArrayTy *)this_00->field_029F,index,element);
   }
   else {
@@ -67,6 +71,7 @@ LAB_004a4e27:
     index = 0;
     if (0 < iVar2) {
       do {
+
         DArrayGetElement((DArrayTy *)this_00->field_029F,index,local_8);
         if (local_8[0] == param_2) {
           local_8[0] = -1;
@@ -79,7 +84,7 @@ LAB_004a4e27:
     }
   }
   /* ST_CALLSITE[004A4E44]: CALL 0x00403251; direct=00403251 STGroupBoatC::DistributeDock */
-  DistributeDock(this_00,0,(DArrayTy *)this_00->field_029F,(DArrayTy *)this_00->field_0029);
+  DistributeDock(this_00,0,(DArrayTy *)this_00->field_029F,this_00->field_0029);
   g_currentExceptionFrame = local_50.previous;
   return;
 }

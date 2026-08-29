@@ -29,7 +29,8 @@ FUN_0070c900:
 0070C943  E8 58 86 FA FF            CALL 0x006b4fa0
 0070C948  50                        PUSH EAX
 0070C949  56                        PUSH ESI
-0070C94A  E8 A1 63 04 00            CALL 0x00752cf0
+FUN_0070c900::override::prt_70c94a_ab40cacf:
+0070C94A  E8 A1 63 04 00            CALL 0x00752cf0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/undefined4; signature=__stdcall;pointer:/undefined4;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy;/int;/int;/char;pointer:/uint
 0070C94F  EB 19                     JMP 0x0070c96a
 LAB_0070c951:
 0070C951  8B 4D 10                  MOV ECX,dword ptr [EBP + 0x10]

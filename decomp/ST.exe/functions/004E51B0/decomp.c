@@ -177,6 +177,7 @@ cf_continue_loop_004E5505:
     puVar14 = &DAT_007c0dd4;
     local_10 = iVar10;
     do {
+
       iVar7 = FUN_006b0fd0((int)&local_30);
       if (iVar7 != 0) {
         iVar7 = 1;
@@ -201,6 +202,7 @@ LAB_004e5598:
     param_2 = &g_packedRecords_A62x8[(int)piVar5].field1024_0x593;
     param_3 = (uint *)0x32;
     do {
+
       iVar10 = FUN_006b0fd0((int)&local_30);
       iVar7 = local_10;
       if (iVar10 != 0) {
@@ -226,11 +228,14 @@ LAB_004e5655:
         iVar10 = *(int *)((int)&g_packedRecords_A62x8[0].field1966_0x9ce + local_10);
         if (iVar10 != 0) {
           STField<undefined4>(iVar10,0x4) = 0;
+
           iVar9 = DArrayGetNext(*(DArrayTy **)
                                  ((int)&g_packedRecords_A62x8[0].field1966_0x9ce + local_10),
                                 (byte *)&param_1);
           while (-1 < iVar9) {
-            thunk_FUN_004dd880((AnonShape_004DDCC0_33DEB43E *)param_1);
+
+            thunk_FUN_004dd880((RecoveredRecordView_004DDCC0_A8DE46ED *)param_1);
+
             iVar9 = DArrayGetNext(*(DArrayTy **)
                                    ((int)&g_packedRecords_A62x8[0].field1966_0x9ce + iVar7),
                                   (byte *)&param_1);
@@ -239,41 +244,40 @@ LAB_004e5655:
         iVar10 = *(int *)((int)&g_packedRecords_A62x8[0].field3_0x9 + iVar7);
         if (iVar10 != 0) {
           STField<undefined4>(iVar10,0x4) = 0;
+
           local_EAX_1316 =
                DArrayGetNext(*(DArrayTy **)((int)&g_packedRecords_A62x8[0].field3_0x9 + iVar7),
                              (byte *)&param_1);
           while (-1 < local_EAX_1316) {
             if (param_1 != nullptr) {
-              /* ST_CALLSITE[004E56EA]: CALL dword ptr [EDX + 0x2c] */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-              iVar10 = (**(code **)(*param_1 + 0x2c))();
-              /* ST_CALLSITE[004E56F7]: CALL dword ptr [EAX + 0x2c] */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-              if ((iVar10 == 0x36) || (iVar10 = (**(code **)(*param_1 + 0x2c))(), iVar10 == 0x5d)) {
-                thunk_FUN_004e4d60((AnonShape_004E4D60_C16F78E8 *)param_1);
+              /* ST_CALLSITE[004E56EA]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+              iVar10 = STStructuralVirtualCall<undefined4>(param_1, 0x2C);
+              /* ST_CALLSITE[004E56F7]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+              if ((iVar10 == 0x36) || (iVar10 = STStructuralVirtualCall<undefined4>(param_1, 0x2C), iVar10 == 0x5d)) {
+
+                thunk_FUN_004e4d60((RecoveredRecordView_004E4D60_1AFEFB7D *)param_1);
               }
               if (param_1 != nullptr) {
-                /* ST_CALLSITE[004E5710]: CALL dword ptr [EDX + 0x2c] */
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                iVar10 = (**(code **)(*param_1 + 0x2c))();
-                /* ST_CALLSITE[004E571D]: CALL dword ptr [EAX + 0x2c] */
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                if ((iVar10 == 0x5d) || (iVar10 = (**(code **)(*param_1 + 0x2c))(), iVar10 == 0x3d))
+                /* ST_CALLSITE[004E5710]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                iVar10 = STStructuralVirtualCall<undefined4>(param_1, 0x2C);
+                /* ST_CALLSITE[004E571D]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                if ((iVar10 == 0x5d) || (iVar10 = STStructuralVirtualCall<undefined4>(param_1, 0x2C), iVar10 == 0x3d))
                 {
+
                   thunk_FUN_004e4f30((STMineSetC *)param_1);
                 }
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                 if ((param_1 != nullptr) &&
-                   /* ST_CALLSITE[004E5736]: CALL dword ptr [EDX + 0x2c] */
-                   (((iVar10 = (**(code **)(*param_1 + 0x2c))(), iVar10 == 5 ||
-                     /* ST_CALLSITE[004E5743]: CALL dword ptr [EAX + 0x2c] */
-                     (iVar10 = (**(code **)(*param_1 + 0x2c))(), iVar10 == 0x21)) ||
-                    /* ST_CALLSITE[004E5750]: CALL dword ptr [EDX + 0x2c] */
-                    (iVar10 = (**(code **)(*param_1 + 0x2c))(), iVar10 == 0x11)))) {
-                  thunk_FUN_00494ae0((AnonShape_00494AE0_7F188308 *)param_1);
+                   /* ST_CALLSITE[004E5736]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                   (((iVar10 = STStructuralVirtualCall<undefined4>(param_1, 0x2C), iVar10 == 5 ||
+                     /* ST_CALLSITE[004E5743]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                     (iVar10 = STStructuralVirtualCall<undefined4>(param_1, 0x2C), iVar10 == 0x21)) ||
+                    /* ST_CALLSITE[004E5750]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                    (iVar10 = STStructuralVirtualCall<undefined4>(param_1, 0x2C), iVar10 == 0x11)))) {
+                  thunk_FUN_00494ae0((RecoveredRecordView_00494AE0_424326F5 *)param_1);
                 }
               }
             }
+
             local_EAX_1316 =
                  DArrayGetNext(*(DArrayTy **)((int)&g_packedRecords_A62x8[0].field3_0x9 + iVar7),
                                (byte *)&param_1);

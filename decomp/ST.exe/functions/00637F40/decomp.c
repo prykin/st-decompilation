@@ -18,6 +18,7 @@ void __cdecl FUN_00637f40(uint param_1,uint param_2,int param_3)
   else {
     text = "mstarGb";
   }
+  /* ST_CALLSITE[00637F73]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
   puVar1 = Library::Ourlib::MFRLOAD::mfRLoad
                      (PTR_00806774,CASE_1D,text,0xffffffff,0,1,0,nullptr);
   if ((puVar1 != nullptr) && (g_sT3DSMAPContext_00807598 != nullptr)) {
@@ -33,12 +34,15 @@ void __cdecl FUN_00637f40(uint param_1,uint param_2,int param_3)
       uVar5 = 100;
       uVar4 = 0x78;
     }
+
     ST3DSMAPContext::sub_006E8660
               (g_sT3DSMAPContext_00807598,(int *)&param_2,1,0,uVar2,uVar3,uVar4,uVar5,0);
+
     ST3DSMAPContext::sub_006E98E0
               (g_sT3DSMAPContext_00807598,param_2,0,*(int *)puVar1,STField<int>(puVar1,0x21),1);
     ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,param_2,0,0);
     Library::Ourlib::ST3DSMAP::SprSetSeqAnim(g_sT3DSMAPContext_00807598,param_2,2,param_1,param_3);
+
     Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,param_2,0);
   }
   return;

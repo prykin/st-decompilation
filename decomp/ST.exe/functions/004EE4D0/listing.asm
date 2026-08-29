@@ -233,7 +233,7 @@ switchD_004ee68c::caseD_c0b1:
 004EE766  6A 00                     PUSH 0x0
 004EE768  68 DC 16 7C 00            PUSH 0x7c16dc
 LAB_004ee76d:
-004EE76D  E8 0A 70 F1 FF            CALL 0x0040577c
+004EE76D  E8 0A 70 F1 FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_004EE350_18D491EA; source view only; no Ghidra override
 004EE772  83 C4 08                  ADD ESP,0x8
 004EE775  8B CE                     MOV ECX,ESI
 004EE777  50                        PUSH EAX

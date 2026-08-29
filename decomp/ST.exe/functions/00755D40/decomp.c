@@ -8,7 +8,8 @@
    [STPrototypeApplier] Propagated parameter 0.
    Evidence: 00755DA0 -> 00755D40 @ 00755DDA; FUN_00755da0 parameter param_1 */
 
-void FUN_00755d40(AnonShape_00753C80_4C8E695D *param_1,int param_2,int param_3)
+void FUN_00755d40(RecoveredRecordView_00753C80_637B4E8C *param_1,
+                 RecoveredRecord_00755D40_97E6B3C8 *param_2,int param_3)
 
 {
   short sVar1;
@@ -18,17 +19,17 @@ void FUN_00755d40(AnonShape_00753C80_4C8E695D *param_1,int param_2,int param_3)
   if (sVar1 == 0) {
     /* ST_CALLSITE[00755D65]: CALL dword ptr [EAX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar2 = (**(code **)&param_1->field_000C->field_0x8)(param_2 + 0x18 + param_3);
+    iVar2 = (**(code **)&param_1->field_000C->field_0x8)(&param_2[2].field_0x4 + param_3);
   }
   else {
     iVar2 = (int)sVar1;
   }
-  iVar2 = iVar2 + 8;
+
   Library::MSVCRT::FUN_0072da70
-            ((undefined4 *)(param_2 + 0x10 + param_3),
-             (AnonPointee_TLOBaseTy_0607 *)(iVar2 + param_2 + 0x10 + param_3),
-             (*(short *)(param_2 + 8) - iVar2) - param_3);
-  *(short *)(param_2 + 8) = *(short *)(param_2 + 8) - (short)iVar2;
+            ((RecoveredRecord_006BFE70_3123BCE8 *)(&param_2[1].field_0x6 + param_3),
+             (AnonPointee_TLOBaseTy_0607 *)(&param_2[2].field_0x4 + param_3 + iVar2),
+             ((int)param_2->field_0008 - (iVar2 + 8)) - param_3);
+  param_2->field_0008 = param_2->field_0008 - (short)(iVar2 + 8);
   return;
 }
 

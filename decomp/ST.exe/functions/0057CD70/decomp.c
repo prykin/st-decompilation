@@ -40,13 +40,17 @@ void __thiscall STFishC::LifeFish(STFishC *this)
   int *unaff_EDI;
   uint local_8;
 
-  iVar3 = thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)this);
+
+  iVar3 = thunk_FUN_0041c710((RecoveredRecordView_0041C710_A35B7121 *)this);
   this_00 = &this->field_01D5;
   if (iVar3 == 0) {
     iVar3 = 0;
+
     uVar4 = thunk_FUN_004ad650((STT3DSprC *)this_00);
+
     Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this->field_0211,uVar4,iVar3);
-    iVar2 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)this);
+
+    iVar2 = thunk_FUN_0041caf0((RecoveredRecordView_0041CAF0_18493751 *)this);
     if (iVar2 == 1) {
       iVar3 = 1;
     }
@@ -56,10 +60,13 @@ void __thiscall STFishC::LifeFish(STFishC *this)
   }
   else {
     iVar3 = 1;
+
     uVar4 = thunk_FUN_004ad650((STT3DSprC *)this_00);
+
     Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this->field_0211,uVar4,iVar3);
     iVar3 = 1;
   }
+
   iVar4 = thunk_FUN_004ad650((STT3DSprC *)this_00);
   FUN_006e6870((void *)this->field_0211,iVar4,iVar3);
   SVar1 = this->field_023B;
@@ -67,6 +74,7 @@ void __thiscall STFishC::LifeFish(STFishC *this)
     /* ST_CALLSITE[0057CDF2]: CALL dword ptr [EAX + 0x20] */
     iVar3 = this->vfunc_20();
     if (iVar3 == -1) {
+
       local_EAX_271 =
            ReportDebugMessage("E:\\__titans\\Igor\\To_fish.cpp",0x709,0,0,"%s",
                               "stop move error");
@@ -84,8 +92,10 @@ void __thiscall STFishC::LifeFish(STFishC *this)
       }
       thunk_FUN_00417ff0(this,cVar6 + 7);
       thunk_FUN_00418010(this,cVar6 + 6);
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030
-                ((AnonReceiver_004167A0 *)this,this->field_0235,this->field_0237,this->field_0239);
+
+      SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_004167A0::thunk_FUN_00418030
+                ((RecoveredReceiver_004167A0 *)this,this->field_0235,this->field_0237,
+                 this->field_0239);
       this->field_023B = CASE_1;
     }
   }
@@ -99,6 +109,7 @@ void __thiscall STFishC::LifeFish(STFishC *this)
       }
       else {
         if (iVar3 != 2) {
+
           local_EAX_344 =
                ReportDebugMessage("E:\\__titans\\Igor\\To_fish.cpp",0x72d,0,0,"%s",
                                   "STFishC::LifeFish Error Move");
@@ -117,12 +128,14 @@ void __thiscall STFishC::LifeFish(STFishC *this)
     }
   }
   else if (SVar1 == 2) {
-    iVar3 = thunk_FUN_00417830((AnonShape_00417830_9254190A *)this);
+
+    iVar3 = thunk_FUN_00417830((RecoveredRecordView_00417830_39C1D071 *)this);
     if (iVar3 == 0) {
       this->field_023B = CASE_0;
       this->field_023F = 7;
     }
     else if ((iVar3 != 2) && (iVar3 != 3)) {
+
       local_EAX_471 =
            ReportDebugMessage("E:\\__titans\\Igor\\To_fish.cpp",0x740,0,0,"%s",
                               "STFishC::LifeFish Error Move");
@@ -135,6 +148,7 @@ void __thiscall STFishC::LifeFish(STFishC *this)
   else if (SVar1 == CASE_5) {
     /* ST_CALLSITE[0057CF7E]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
     iVar3 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_00,'\b');
+
     iVar5 = thunk_FUN_004ac910(this_00,'\b');
     if (iVar5 == iVar3 + -1) {
       /* ST_CALLSITE[0057CF97]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */

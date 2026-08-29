@@ -10,6 +10,7 @@ undefined4 * __cdecl FUN_00680590(byte *param_1)
   byte *pbVar2;
   CHAR local_404 [1024];
 
+
   puVar1 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,param_1,0,0,0);
   _Drive = (byte *)((int)puVar1 + 0x231);
   pbVar2 = _Drive;

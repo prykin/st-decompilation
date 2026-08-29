@@ -10,6 +10,7 @@ void __thiscall STColl3C::sub_005F9450(STColl3C *this)
 
 {
   if ((g_manRub3_008117A4 != nullptr) && (this->field_029E == '\x01')) {
+
     thunk_FUN_0062d120(g_manRub3_008117A4,this->field_0235,this->field_027D,this->field_0281,
                        this->field_0285,this->field_0289,0xffffffff,0);
   }

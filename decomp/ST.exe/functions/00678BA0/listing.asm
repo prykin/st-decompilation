@@ -1,4 +1,4 @@
-FUN_00678ba0:
+AiPlrClassTy::sub_00678BA0:
 00678BA0  56                        PUSH ESI
 00678BA1  8B F1                     MOV ESI,ECX
 00678BA3  8D 4E 1C                  LEA ECX,[ESI + 0x1c]

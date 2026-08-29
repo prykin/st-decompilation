@@ -17,18 +17,18 @@ void __thiscall AiPlrClassTy::sub_0067BFD0(AiPlrClassTy *this,DArrayTy *param_1,
   int iVar2;
   int iVar3;
   ushort *puVar4;
-  AnonShape_0068FD00_A5257008 **ppAVar5;
+  RecoveredRecordView_0068FD00_630BE91E **ppRVar5;
   uint uVar6;
   bool bVar7;
-  AnonShape_0068FD00_A5257008 *local_40;
+  RecoveredRecordView_0068FD00_630BE91E *local_40;
   uint local_3c;
-  undefined1 local_38;
+  byte local_38;
   int local_37;
-  undefined4 local_33;
-  undefined2 local_2f;
-  undefined4 local_2d;
-  undefined4 local_29;
-  undefined4 local_25;
+  uint local_33;
+  ushort local_2f;
+  uint local_2d;
+  uint local_29;
+  uint local_25;
   AiPlrClassTy *local_c;
   uint local_8;
 
@@ -41,16 +41,18 @@ void __thiscall AiPlrClassTy::sub_0067BFD0(AiPlrClassTy *this,DArrayTy *param_1,
       if ((((bVar7) &&
            (puVar4 = DArrayAt<ushort>(param_1, local_8),
            puVar4 != nullptr)) && (*puVar4 != 0)) &&
-         ((puVar1 = (ushort *)thunk_FUN_0067bc80(param_2,*(uint *)(puVar4 + 4)),
+
+         ((puVar1 = STPointerBoundaryCast<ushort *>(thunk_FUN_0067bc80(param_2,*(uint *)(puVar4 + 4))),
           puVar1 != nullptr ||
-          (puVar1 = (ushort *)thunk_FUN_0067bc10(param_2), puVar1 != nullptr)))) {
+
+          (puVar1 = STPointerBoundaryCast<ushort *>(thunk_FUN_0067bc10(param_2)), puVar1 != nullptr)))) {
         *(uint *)(puVar4 + 6) = (uint)*puVar1;
-        ppAVar5 = &local_40;
+        ppRVar5 = &local_40;
         for (iVar3 = 0xd; this_00 = local_c, iVar3 != 0; iVar3 = iVar3 + -1) {
-          *ppAVar5 = nullptr;
-          ppAVar5 = ppAVar5 + 1;
+          *ppRVar5 = nullptr;
+          ppRVar5 = ppRVar5 + 1;
         }
-        local_40 = (AnonShape_0068FD00_A5257008 *)0x67;
+        local_40 = (RecoveredRecordView_0068FD00_630BE91E *)0x67;
         local_38 = 0;
         local_3c = local_c->field_06FE;
         /* ST_CALLSITE[0067C068]: CALL 0x00402a09; direct=00402A09 AiPlrClassTy::sub_0067BF30 */
@@ -63,7 +65,7 @@ void __thiscall AiPlrClassTy::sub_0067BFD0(AiPlrClassTy *this,DArrayTy *param_1,
         local_29 = *(undefined4 *)(puVar1 + 4);
         local_25 = *(undefined4 *)(puVar1 + 6);
         /* ST_CALLSITE[0067C0A1]: CALL 0x00405dc6; direct=00405DC6 AiPlrClassTy::sub_0067A020 */
-        sub_0067A020(this_00,(AnonShape_0068FD00_A5257008 *)&local_40,(uint)*puVar4);
+        sub_0067A020(this_00,(RecoveredRecordView_0068FD00_630BE91E *)&local_40,(uint)*puVar4);
         uVar6 = local_8;
       }
       local_8 = uVar6 + 1;

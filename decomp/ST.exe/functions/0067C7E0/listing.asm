@@ -201,7 +201,7 @@ LAB_0067ca25:
 0067CA4C  52                        PUSH EDX
 0067CA4D  6A 02                     PUSH 0x2
 0067CA4F  50                        PUSH EAX
-0067CA50  E8 AB 61 07 00            CALL 0x006f2c00
+0067CA50  E8 AB 61 07 00            CALL 0x006f2c00  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STPlaySystemC; source view only; no Ghidra override
 0067CA55  8B 0D 38 2A 80 00         MOV ECX,dword ptr [0x00802a38]
 0067CA5B  83 C4 0C                  ADD ESP,0xc
 0067CA5E  50                        PUSH EAX
@@ -275,7 +275,8 @@ LAB_0067cb1b:
 0067CB23  66 8B 87 1C 08 00 00      MOV AX,word ptr [EDI + 0x81c]
 0067CB2A  8B CB                     MOV ECX,EBX
 0067CB2C  50                        PUSH EAX
-0067CB2D  E8 1A 8F D8 FF            CALL 0x00405a4c
+AiPlrClassTy::GetMessage::override::prt_67cb2d_aa7c5f43:
+0067CB2D  E8 1A 8F D8 FF            CALL 0x00405a4c  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__thiscall;pointer:/AiFltClassTy;pointer:/void;/short
 0067CB32  85 C0                     TEST EAX,EAX
 0067CB34  0F 84 3F FE FF FF         JZ 0x0067c979
 0067CB3A  6A 00                     PUSH 0x0

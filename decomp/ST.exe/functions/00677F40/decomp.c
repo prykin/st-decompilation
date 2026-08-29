@@ -12,9 +12,9 @@ _EnumArt(short param_1,byte *param_2,short param_3,short param_4,short param_5,s
 
 {
   byte bVar1;
-  STFishC *this;
+  STGameObjC *this;
   int iVar3;
-  uint *puVar3;
+  STGameObjC **ppSVar3;
   byte *pbVar4;
   int iVar5;
   int iVar6;
@@ -33,9 +33,11 @@ _EnumArt(short param_1,byte *param_2,short param_3,short param_4,short param_5,s
   local_18 = 0;
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_6c.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_mdef.cpp",0x3fc,0,iVar3,"%s",
                                "_EnumArt");
     if (iVar6 != 0) {
@@ -55,19 +57,20 @@ _EnumArt(short param_1,byte *param_2,short param_3,short param_4,short param_5,s
   }
   do {
     if (local_10 < g_array_007FA154->count) {
-      puVar3 = DArrayAt<undefined4>(g_array_007FA154, local_10);
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_007FA154, local_10) (runtime stride) */
+      ppSVar3 = (STGameObjC **)
+                (g_array_007FA154->elementSize * local_10 + (int)g_array_007FA154->data);
     }
     else {
-      puVar3 = nullptr;
+      ppSVar3 = nullptr;
     }
-    this = (STFishC *)*puVar3;
-    if ((this != nullptr) &&
-       ((param_1 == 0 || (*(int *)&this[1].field_0xd7 == (int)param_1)))) {
+    this = *ppSVar3;
+    if ((this != nullptr) && ((param_1 == 0 || (this->field_0342 == (int)param_1)))) {
       iVar7 = 1;
       local_14 = 1;
       if ((param_2 != nullptr) && (*param_2 != 0)) {
-        /* ST_CALLSITE[00678004]: CALL dword ptr [EDX + 0x74] */
-        (*this->vtable->vfunc_74)((short)local_28);
+        /* ST_CALLSITE[00678004]: CALL dword ptr [EDX + 0x74]; [STIndirectCallsiteApplier] exact slot 0x74; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4 */
+        (*((STFishCVTable *)this->vtable)->vfunc_74)((short)local_28);
         pbVar8 = local_28;
         pbVar4 = param_2;
         do {
@@ -95,8 +98,8 @@ LAB_00678036:
       if (iVar7 != 0) {
         if ((((0 < param_6) && (0 < param_7)) && (0 < param_8)) &&
            /* ST_CALLSITE[0067806C]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
-           ((((STFishC::sub_004162F0(this,&local_6,&local_8,&local_a), local_6 < param_3 ||
-              (local_8 < param_4)) ||
+           ((((STFishC::sub_004162F0((STFishC *)this,&local_6,&local_8,&local_a), local_6 < param_3
+              || (local_8 < param_4)) ||
              ((local_a < param_5 ||
               (((int)param_3 + (int)param_6 <= (int)local_6 ||
                ((int)param_4 + (int)param_7 <= (int)local_8)))))) ||

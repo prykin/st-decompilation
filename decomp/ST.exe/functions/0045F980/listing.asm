@@ -166,7 +166,7 @@ LAB_0045fb41:
 0045FB59  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 0045FB5F  52                        PUSH EDX
 0045FB60  50                        PUSH EAX
-0045FB61  E8 93 61 FA FF            CALL 0x00405cf9
+0045FB61  E8 93 61 FA FF            CALL 0x00405cf9  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_0040D540_1BB7A4CF; source view only; no Ghidra override
 0045FB66  8B F8                     MOV EDI,EAX
 0045FB68  3B FB                     CMP EDI,EBX
 0045FB6A  0F 84 C9 00 00 00         JZ 0x0045fc39

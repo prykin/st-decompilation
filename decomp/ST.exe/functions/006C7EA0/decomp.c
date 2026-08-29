@@ -18,7 +18,7 @@ void FUN_006c7ea0(AnonPointee_MReportTy_0073 *param_1,undefined4 param_2,undefin
 
 {
   AnonPointee_MReportTy_0073 *local_10;
-  undefined4 local_c;
+  uint local_c;
   uint local_8;
 
   local_10 = param_1;

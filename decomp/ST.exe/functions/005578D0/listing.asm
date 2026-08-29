@@ -83,7 +83,7 @@ VisibleClassTy::InitData:
 005579D9  0F AF 46 34               IMUL EAX,dword ptr [ESI + 0x34]
 005579DD  D1 E0                     SHL EAX,0x1
 005579DF  50                        PUSH EAX
-005579E0  E8 2B 32 15 00            CALL 0x006aac10
+005579E0  E8 2B 32 15 00            CALL 0x006aac10  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 005579E5  89 46 50                  MOV dword ptr [ESI + 0x50],EAX
 005579E8  8D 7E 3C                  LEA EDI,[ESI + 0x3c]
 005579EB  BB 04 00 00 00            MOV EBX,0x4
@@ -100,13 +100,13 @@ LAB_005579f0:
 00557A07  6A 1C                     PUSH 0x1c
 00557A09  6A 0A                     PUSH 0xa
 00557A0B  6A 00                     PUSH 0x0
-00557A0D  E8 7E 68 15 00            CALL 0x006ae290
+00557A0D  E8 7E 68 15 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/VisibleClassTy_field_00F4DArray; source view only; no Ghidra override
 00557A12  6A 0A                     PUSH 0xa
 00557A14  6A 0C                     PUSH 0xc
 00557A16  6A 0A                     PUSH 0xa
 00557A18  6A 00                     PUSH 0x0
 00557A1A  89 86 F4 00 00 00         MOV dword ptr [ESI + 0xf4],EAX
-00557A20  E8 6B 68 15 00            CALL 0x006ae290
+00557A20  E8 6B 68 15 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/VisibleClassTy_field_0110DArray; source view only; no Ghidra override
 00557A25  33 D2                     XOR EDX,EDX
 00557A27  89 86 10 01 00 00         MOV dword ptr [ESI + 0x110],EAX
 00557A2D  8A 15 95 8A 80 00         MOV DL,byte ptr [0x00808a95]

@@ -97,7 +97,7 @@ LAB_00552399:
 005523C1  50                        PUSH EAX
 005523C2  8B CE                     MOV ECX,ESI
 005523C4  C7 46 28 FF BF 00 00      MOV dword ptr [ESI + 0x28],0xbfff
-005523CB  FF 12                     CALL dword ptr [EDX]
+005523CB  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 005523CD  8B 55 9C                  MOV EDX,dword ptr [EBP + -0x64]
 005523D0  33 C0                     XOR EAX,EAX
 005523D2  89 15 F8 8D 85 00         MOV dword ptr [0x00858df8],EDX
@@ -211,16 +211,17 @@ LAB_005524ee:
 00552504  6A 02                     PUSH 0x2
 00552506  6A 00                     PUSH 0x0
 00552508  68 A8 87 7C 00            PUSH 0x7c87a8
-0055250D  E8 6A 32 EB FF            CALL 0x0040577c
+0055250D  E8 6A 32 EB FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 00552512  83 C4 08                  ADD ESP,0x8
 00552515  50                        PUSH EAX
-00552516  E8 E5 06 1A 00            CALL 0x006f2c00
+00552516  E8 E5 06 1A 00            CALL 0x006f2c00  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 0055251B  8B 15 94 67 80 00         MOV EDX,dword ptr [0x00806794]
 00552521  83 C4 0C                  ADD ESP,0xc
 00552524  50                        PUSH EAX
 00552525  6A 01                     PUSH 0x1
 00552527  52                        PUSH EDX
-00552528  E8 C3 75 1B 00            CALL 0x00709af0
+TradePanelTy::GetMessage::override::prt_552528_46f798ab:
+00552528  E8 C3 75 1B 00            CALL 0x00709af0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/int;/SubmarineTitans/Recovered/Enums/Global_mfRLoad_param_2Enum;pointer:/char;/uint;/byte;/int;/int;pointer:/undefined4
 0055252D  8B 4E 68                  MOV ECX,dword ptr [ESI + 0x68]
 00552530  50                        PUSH EAX
 00552531  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
@@ -240,13 +241,14 @@ LAB_005524ee:
 00552552  6A FF                     PUSH -0x1
 00552554  6A 00                     PUSH 0x0
 00552556  68 98 87 7C 00            PUSH 0x7c8798
-0055255B  E8 1C 32 EB FF            CALL 0x0040577c
+0055255B  E8 1C 32 EB FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 00552560  83 C4 08                  ADD ESP,0x8
 00552563  50                        PUSH EAX
 00552564  A1 94 67 80 00            MOV EAX,[0x00806794]
 00552569  6A 06                     PUSH 0x6
 0055256B  50                        PUSH EAX
-0055256C  E8 7F 75 1B 00            CALL 0x00709af0
+TradePanelTy::GetMessage::override::prt_55256c_46f798ab:
+0055256C  E8 7F 75 1B 00            CALL 0x00709af0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/int;/SubmarineTitans/Recovered/Enums/Global_mfRLoad_param_2Enum;pointer:/char;/uint;/byte;/int;/int;pointer:/undefined4
 00552571  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 00552574  8B 56 68                  MOV EDX,dword ptr [ESI + 0x68]
 00552577  50                        PUSH EAX

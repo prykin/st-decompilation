@@ -28,8 +28,7 @@ void FUN_006b7070(int *param_1)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d908;
   puStack_10 = &LAB_0072d964;

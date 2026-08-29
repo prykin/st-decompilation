@@ -13,8 +13,10 @@ SoundManagerTy * __cdecl CreateSoundManager(void)
 {
   SoundManagerTy *this;
 
-  this = (SoundManagerTy *)FUN_006b04d0(0x41);
+
+  this = STPointerBoundaryCast<SoundManagerTy *>(FUN_006b04d0(0x41));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->vtable = &SoundManagerTyVTable;
     this->field_0038 = CASE_0;

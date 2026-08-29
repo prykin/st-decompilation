@@ -133,8 +133,9 @@ cf_common_join_0063EACD:
                       ) && (STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).objects[0]
                             != nullptr)) {
                     thunk_FUN_00601d10(STField<int>(this,0x259),local_1c,
-                                       (int)STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).objects[0],
-                                       (short)STField<undefined4>(this,0x25d),
+                                       (RecoveredRecord_00601D10_11B39116 *)
+                                       STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).
+                                       objects[0],(short)STField<undefined4>(this,0x25d),
                                        STField<ushort>(this,0x261),0xa8,0x110);
                   }
                   if ((((short)local_c < g_worldGrid.sizeX) && (-1 < sVar8)) &&
@@ -143,8 +144,9 @@ cf_common_join_0063EACD:
                        (STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).objects[1] !=
                         nullptr)))))) {
                     thunk_FUN_00601d10(STField<int>(this,0x259),local_1c,
-                                       (int)STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).objects[1],
-                                       (short)STField<undefined4>(this,0x25d),
+                                       (RecoveredRecord_00601D10_11B39116 *)
+                                       STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).
+                                       objects[1],(short)STField<undefined4>(this,0x25d),
                                        STField<ushort>(this,0x261),0xa8,0x110);
                   }
                 }
@@ -192,8 +194,9 @@ cf_common_join_0063EACD:
                       (STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).objects[0] !=
                        nullptr)))))) {
                 thunk_FUN_00601d10(STField<int>(this,0x259),local_1c,
-                                   (int)STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).
-                                        objects[0],(short)STField<undefined4>(this,0x25d),
+                                   (RecoveredRecord_00601D10_11B39116 *)
+                                   STGridAt3D(g_worldGrid, local_c, sVar8, sVar3).
+                                   objects[0],(short)STField<undefined4>(this,0x25d),
                                    STField<ushort>(this,0x261),0xa8,0x110);
               }
               local_10 = local_10 + 1;

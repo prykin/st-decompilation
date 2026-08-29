@@ -20,4 +20,3 @@ SliderClassTy * __thiscall st::fn_00724310(SliderClassTy *this)
   this->field_0050 = 0;
   return this;
 }
-

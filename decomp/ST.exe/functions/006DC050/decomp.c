@@ -52,11 +52,13 @@ ST3DSMAPContext::sub_006DC050
   AnonShape_006DBCA0_EF06575F *pAVar5;
   longlong lVar6;
 
+
   puVar3 = Library::DKW::LIB::MemRealloc(param_1->field_0350,0x658);
   pAVar5 = nullptr;
   param_1->field_0350 = puVar3;
   *puVar3 = 0;
   *(undefined4 *)((int)param_1->field_0350 + 4) = 0;
+
   puVar3 = Library::DKW::LIB::MemRealloc(param_1->field_0354,0x658);
   param_1->field_0354 = puVar3;
   *puVar3 = 0;
@@ -68,7 +70,8 @@ ST3DSMAPContext::sub_006DC050
   param_1->field_0124 = 0;
   sub_006DBD20(param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8,param_9,param_10);
   if (0 < param_13) {
-    pAVar4 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
+    /* ST_CALLSITE[006DC11F]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F;/uint */
+    pAVar4 = FUN_006b04d0(0x4f2);
     if (pAVar4 != nullptr) {
       pAVar5 = FUN_006dbca0(pAVar4);
     }

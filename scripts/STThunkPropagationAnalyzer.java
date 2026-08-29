@@ -59,6 +59,8 @@ public class STThunkPropagationAnalyzer extends GhidraScript {
                 !protectedSource(thunk.getSymbol().getSource()) &&
                 !alreadyForwarded;
             boolean abiEquivalent = equivalentAbi(thunk, target);
+            boolean signatureApply = transparent && !abiEquivalent &&
+                !protectedSource(thunk.getSignatureSource());
             boolean nameApply = transparent && semanticTarget && abiEquivalent &&
                 (redundantManualSuffix || generatedStale);
             String reason = "transparent=" + bit(transparent) +
@@ -66,14 +68,17 @@ public class STThunkPropagationAnalyzer extends GhidraScript {
                 "; already_forwarded=" + bit(alreadyForwarded) +
                 "; redundant_manual_suffix=" + bit(redundantManualSuffix) +
                 "; generated_stale=" + bit(generatedStale) +
-                "; abi_equivalent=" + bit(abiEquivalent);
-            rows.add(new Row(nameApply, thunk, target, reason));
+                "; abi_equivalent=" + bit(abiEquivalent) +
+                "; signature_apply=" + bit(signatureApply);
+            rows.add(new Row(nameApply || signatureApply, nameApply,
+                signatureApply, thunk, target, reason));
         }
         rows.sort(Comparator.comparing(row -> row.thunkAddress));
 
         Path proposals = directory.resolve("thunk_proposals.tsv");
         write(proposals, rows);
-        long nameApply = rows.stream().filter(row -> row.apply).count();
+        long nameApply = rows.stream().filter(row -> row.nameApply).count();
+        long signatureApply = rows.stream().filter(row -> row.signatureApply).count();
         Files.write(directory.resolve("thunk_summary.txt"), List.of(
             "program=" + currentProgram.getName(),
             "thunks=" + rows.size(),
@@ -81,11 +86,11 @@ public class STThunkPropagationAnalyzer extends GhidraScript {
             "note=Only one-instruction direct JMP thunks can mutate. A USER_DEFINED " +
                 "name is released only when it is exactly TargetName_thunk in the " +
                 "target namespace and its ABI is already equivalent to the target. " +
-                "Ghidra thunk signatures already delegate to the target and are never " +
-                "mutated by this pair."),
+                "A weak non-equivalent thunk signature is copied from its exact final " +
+                "target; manual/imported thunk signatures remain protected."),
         StandardCharsets.UTF_8);
         println("Thunk propagation: thunks=" + rows.size() +
-            ", apply=" + nameApply);
+            ", name_apply=" + nameApply + ", signature_apply=" + signatureApply);
         println("Proposals: " + proposals.toAbsolutePath().normalize());
     }
 
@@ -165,13 +170,17 @@ public class STThunkPropagationAnalyzer extends GhidraScript {
     private void write(Path path, List<Row> rows) throws Exception {
         try (BufferedWriter out =
                 Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
-            out.write("apply\tthunk_address\texpected_qualified_name\t" +
-                "expected_name_source\ttarget_address\ttarget_qualified_name\t" +
+            out.write("apply\tname_apply\tsignature_apply\tthunk_address\t" +
+                "expected_qualified_name\texpected_name_source\t" +
+                "expected_signature\texpected_signature_source\t" +
+                "target_address\ttarget_qualified_name\t" +
                 "target_name_source\ttarget_signature\tproposed_qualified_name\treason\n");
             for (Row row : rows) {
-                out.write(bit(row.apply) + "\t" +
+                out.write(bit(row.apply) + "\t" + bit(row.nameApply) + "\t" +
+                    bit(row.signatureApply) + "\t" +
                     row.thunkAddress + "\t" + tsv(row.expectedQualifiedName) + "\t" +
-                    row.expectedNameSource + "\t" + row.targetAddress + "\t" +
+                    row.expectedNameSource + "\t" + tsv(row.expectedSignature) + "\t" +
+                    row.expectedSignatureSource + "\t" + row.targetAddress + "\t" +
                     tsv(row.targetQualifiedName) + "\t" + row.targetNameSource + "\t" +
                     tsv(row.targetSignature) + "\t" +
                     tsv(row.proposedQualifiedName) + "\t" + tsv(row.reason) + "\n");
@@ -191,16 +200,22 @@ public class STThunkPropagationAnalyzer extends GhidraScript {
     }
 
     private class Row {
-        final boolean apply;
+        final boolean apply, nameApply, signatureApply;
         final String thunkAddress, expectedQualifiedName, expectedNameSource,
+            expectedSignature, expectedSignatureSource,
             targetAddress, targetQualifiedName, targetNameSource, targetSignature,
             proposedQualifiedName, reason;
 
-        Row(boolean apply, Function thunk, Function target, String reason) {
+        Row(boolean apply, boolean nameApply, boolean signatureApply,
+                Function thunk, Function target, String reason) {
             this.apply = apply;
+            this.nameApply = nameApply;
+            this.signatureApply = signatureApply;
             thunkAddress = addr(thunk.getEntryPoint());
             expectedQualifiedName = thunk.getName(true);
             expectedNameSource = thunk.getSymbol().getSource().toString();
+            expectedSignature = thunk.getSignature().getPrototypeString(true);
+            expectedSignatureSource = thunk.getSignatureSource().toString();
             targetAddress = addr(target.getEntryPoint());
             targetQualifiedName = target.getName(true);
             targetNameSource = target.getSymbol().getSource().toString();

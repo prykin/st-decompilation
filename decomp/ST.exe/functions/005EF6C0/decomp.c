@@ -19,9 +19,12 @@ void __thiscall FUN_005ef6c0(void *this,int param_1)
     if ((this_00 != nullptr) && (this_00->field_0018 == STField<int>(this,0x2a7)))
     goto LAB_005ef720;
   }
-  if (STField<AnonShape_005EFAE0_B406B78B *>(this,0x2a7) != nullptr) {
+  if (STField<RecoveredRecordView_005EFAE0_855D930D *>(this,0x2a7) !=
+      nullptr) {
+
     iVar1 = STPlaySystemC::sub_006E62D0
-                      (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x2a7),
+                      (g_playSystem_00802A38,
+                       STField<RecoveredRecordView_005EFAE0_855D930D *>(this,0x2a7),
                        (int *)&local_8);
     if (iVar1 != -4) {
       this_00 = local_8;

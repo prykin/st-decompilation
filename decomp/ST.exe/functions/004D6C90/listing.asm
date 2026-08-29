@@ -1,4 +1,4 @@
-FUN_004d6c90:
+TLOEmbryoTy::vfunc_28:
 004D6C90  55                        PUSH EBP
 004D6C91  8B EC                     MOV EBP,ESP
 004D6C93  8B C1                     MOV EAX,ECX
@@ -24,7 +24,7 @@ LAB_004d6ca9:
 004D6CBC  83 F8 14                  CMP EAX,0x14
 004D6CBF  75 16                     JNZ 0x004d6cd7
 004D6CC1  8B 01                     MOV EAX,dword ptr [ECX]
-004D6CC3  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]
+004D6CC3  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004D6CC9  85 C0                     TEST EAX,EAX
 004D6CCB  74 2E                     JZ 0x004d6cfb
 004D6CCD  B8 03 00 00 00            MOV EAX,0x3
@@ -38,7 +38,7 @@ LAB_004d6cd7:
 004D6CE3  75 16                     JNZ 0x004d6cfb
 LAB_004d6ce5:
 004D6CE5  8B 11                     MOV EDX,dword ptr [ECX]
-004D6CE7  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]
+004D6CE7  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004D6CED  85 C0                     TEST EAX,EAX
 004D6CEF  74 0A                     JZ 0x004d6cfb
 004D6CF1  B8 04 00 00 00            MOV EAX,0x4

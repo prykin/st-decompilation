@@ -34,7 +34,8 @@ LAB_00757569:
 00757572  8B 17                     MOV EDX,dword ptr [EDI]
 00757574  53                        PUSH EBX
 00757575  52                        PUSH EDX
-00757576  E8 D5 85 F6 FF            CALL 0x006bfb50
+FUN_00757530::override::prt_757576_ec32e0c6:
+00757576  E8 D5 85 F6 FF            CALL 0x006bfb50  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_00757530_000C_743CE253; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_00757530_000C_743CE253;pointer:/int;/uint
 0075757B  85 C0                     TEST EAX,EAX
 0075757D  89 07                     MOV dword ptr [EDI],EAX
 0075757F  74 24                     JZ 0x007575a5

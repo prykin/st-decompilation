@@ -8,7 +8,7 @@
    Evidence: 0070B3A0 returns used as parameter 3 of PutDDX @ 00592C0A | 0070B3A0 returns used as
    parameter 3 of PutDDX @ 005B49F2 */
 
-BITMAPINFO * __cdecl FUN_0070b3a0(AnonShape_GLOBAL_0081175C_57F682DD *param_1,int param_2)
+BITMAPINFO * __cdecl FUN_0070b3a0(RecoveredGlobalRecordView_0081175C *param_1,int param_2)
 
 {
   if ((-1 < param_2) && (param_2 < param_1->field_0023)) {

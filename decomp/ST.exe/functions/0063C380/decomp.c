@@ -13,8 +13,9 @@ uint __thiscall FUN_0063c380(void *this,int param_1)
           - STField<int>(this,0x292) * iVar2;
   STField<int>(this,0x26e) = iVar2;
   if (STField<int>(this,0x245) != 2) {
-    uVar1 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
-                      ((AnonReceiver_00601500 *)((int)this + 899),STField<int>(this,0x266),
+
+    uVar1 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00601500::thunk_FUN_00601500
+                      ((RecoveredReceiver_00601500 *)((int)this + 899),STField<int>(this,0x266),
                        STField<int>(this,0x26a),iVar2,STField<int>(this,0x272),
                        STField<int>(this,0x276),STField<int>(this,0x27a),
                        STField<int>(this,0x235),50000,STField<int>(this,0x25d),

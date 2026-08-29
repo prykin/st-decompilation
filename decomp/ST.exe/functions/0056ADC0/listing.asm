@@ -191,7 +191,8 @@ LAB_0056b005:
 0056B05D  6A 00                     PUSH 0x0
 0056B05F  57                        PUSH EDI
 0056B060  68 45 03 00 00            PUSH 0x345
-0056B065  E8 56 5E 18 00            CALL 0x006f0ec0
+STAppC::InitApp::override::prt_56b065_9d92389d:
+0056B065  E8 56 5E 18 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 0056B06A  50                        PUSH EAX
 0056B06B  A3 80 67 80 00            MOV [0x00806780],EAX
 0056B070  E8 4B E7 19 00            CALL 0x007097c0
@@ -208,7 +209,8 @@ LAB_0056b005:
 0056B098  6A 00                     PUSH 0x0
 0056B09A  57                        PUSH EDI
 0056B09B  68 45 03 00 00            PUSH 0x345
-0056B0A0  E8 1B 5E 18 00            CALL 0x006f0ec0
+STAppC::InitApp::override::prt_56b0a0_9d92389d:
+0056B0A0  E8 1B 5E 18 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 0056B0A5  8B 0D 30 B0 79 00         MOV ECX,dword ptr [0x0079b030]
 0056B0AB  83 C4 50                  ADD ESP,0x50
 0056B0AE  A3 98 67 80 00            MOV [0x00806798],EAX
@@ -224,7 +226,8 @@ LAB_0056b005:
 0056B0CB  6A 00                     PUSH 0x0
 0056B0CD  57                        PUSH EDI
 0056B0CE  68 45 03 00 00            PUSH 0x345
-0056B0D3  E8 E8 5D 18 00            CALL 0x006f0ec0
+STAppC::InitApp::override::prt_56b0d3_9d92389d:
+0056B0D3  E8 E8 5D 18 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 0056B0D8  6A 00                     PUSH 0x0
 0056B0DA  50                        PUSH EAX
 0056B0DB  A3 5C 67 80 00            MOV [0x0080675c],EAX
@@ -569,7 +572,8 @@ switchD_0056b4ce::caseD_7e:
 0056B5D4  6A 02                     PUSH 0x2
 0056B5D6  50                        PUSH EAX
 0056B5D7  68 45 03 00 00            PUSH 0x345
-0056B5DC  E8 DF 58 18 00            CALL 0x006f0ec0
+STAppC::InitApp::override::prt_56b5dc_9d92389d:
+0056B5DC  E8 DF 58 18 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 0056B5E1  8B 15 80 B0 79 00         MOV EDX,dword ptr [0x0079b080]
 0056B5E7  83 C4 14                  ADD ESP,0x14
 0056B5EA  8D 4D FC                  LEA ECX,[EBP + -0x4]
@@ -851,7 +855,8 @@ switchD_0056b4ce::caseD_44:
 0056B8EF  8B CA                     MOV ECX,EDX
 0056B8F1  83 E1 03                  AND ECX,0x3
 0056B8F4  F3 A4                     MOVSB.REP ES:EDI,ESI
-0056B8F6  E8 35 2C 1C 00            CALL 0x0072e530
+STAppC::InitApp::override::prt_56b8f6_a996e55:
+0056B8F6  E8 35 2C 1C 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/StartSystemTy; signature=__cdecl;pointer:/StartSystemTy;/uint
 0056B8FB  83 C4 04                  ADD ESP,0x4
 0056B8FE  85 C0                     TEST EAX,EAX
 0056B900  74 08                     JZ 0x0056b90a
@@ -1163,7 +1168,8 @@ switchD_0056bc5c::caseD_42:
 0056BCAA  6A 00                     PUSH 0x0
 0056BCAC  52                        PUSH EDX
 0056BCAD  68 45 03 00 00            PUSH 0x345
-0056BCB2  E8 09 52 18 00            CALL 0x006f0ec0
+STAppC::InitApp::override::prt_56bcb2_9d92389d:
+0056BCB2  E8 09 52 18 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 0056BCB7  8B 15 80 B0 79 00         MOV EDX,dword ptr [0x0079b080]
 0056BCBD  83 C4 14                  ADD ESP,0x14
 0056BCC0  8D 4D C8                  LEA ECX,[EBP + -0x38]
@@ -1238,7 +1244,8 @@ LAB_0056bd7a:
 0056BDAF  E9 E4 01 00 00            JMP 0x0056bf98
 LAB_0056bdb4:
 0056BDB4  68 B6 06 00 00            PUSH 0x6b6
-0056BDB9  E8 72 27 1C 00            CALL 0x0072e530
+STAppC::InitApp::override::prt_56bdb9_a996e55:
+0056BDB9  E8 72 27 1C 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/StartSystemTy; signature=__cdecl;pointer:/StartSystemTy;/uint
 0056BDBE  83 C4 04                  ADD ESP,0x4
 0056BDC1  85 C0                     TEST EAX,EAX
 0056BDC3  74 08                     JZ 0x0056bdcd
@@ -1419,7 +1426,8 @@ LAB_0056bfbc:
 0056C001  50                        PUSH EAX
 0056C002  51                        PUSH ECX
 0056C003  56                        PUSH ESI
-0056C004  E8 FA 83 E9 FF            CALL 0x00404403
+STAppC::InitApp::override::prt_56c004_68e51c9a:
+0056C004  E8 FA 83 E9 FF            CALL 0x00404403  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArrayTy;/winnt.h/LPCSTR;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_00683C70_9F6EAF4E;pointer:/undefined4;pointer:/int;pointer:/undefined
 0056C009  8B 4D CC                  MOV ECX,dword ptr [EBP + -0x34]
 0056C00C  83 C4 24                  ADD ESP,0x24
 0056C00F  83 F9 40                  CMP ECX,0x40
@@ -1468,7 +1476,8 @@ switchD_0056c078::caseD_affe000d:
 0056C098  50                        PUSH EAX
 0056C099  52                        PUSH EDX
 0056C09A  68 4C 26 00 00            PUSH 0x264c
-0056C09F  E8 9C 40 14 00            CALL 0x006b0140
+STAppC::InitApp::override::prt_56c09f_c279b6d:
+0056C09F  E8 9C 40 14 00            CALL 0x006b0140  ; [STCallResultViewApplier] readability_validated; exact direct-call result=/winnt.h/LPCSTR; signature=__stdcall;/winnt.h/LPCSTR;/WinDef.h/UINT;/WinDef.h/HINSTANCE
 0056C0A4  50                        PUSH EAX
 0056C0A5  6A 00                     PUSH 0x0
 0056C0A7  FF 15 EC BD 85 00         CALL dword ptr [0x0085bdec]
@@ -1483,7 +1492,8 @@ switchD_0056c078::caseD_affe000a:
 0056C0C7  50                        PUSH EAX
 0056C0C8  51                        PUSH ECX
 0056C0C9  68 4B 26 00 00            PUSH 0x264b
-0056C0CE  E8 6D 40 14 00            CALL 0x006b0140
+STAppC::InitApp::override::prt_56c0ce_c279b6d:
+0056C0CE  E8 6D 40 14 00            CALL 0x006b0140  ; [STCallResultViewApplier] readability_validated; exact direct-call result=/winnt.h/LPCSTR; signature=__stdcall;/winnt.h/LPCSTR;/WinDef.h/UINT;/WinDef.h/HINSTANCE
 0056C0D3  50                        PUSH EAX
 0056C0D4  6A 00                     PUSH 0x0
 0056C0D6  FF 15 EC BD 85 00         CALL dword ptr [0x0085bdec]

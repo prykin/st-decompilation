@@ -1,4 +1,4 @@
-FUN_004c93e0:
+STGameObjC::sub_004C93E0:
 004C93E0  55                        PUSH EBP
 004C93E1  8B EC                     MOV EBP,ESP
 004C93E3  8B 91 D4 03 00 00         MOV EDX,dword ptr [ECX + 0x3d4]

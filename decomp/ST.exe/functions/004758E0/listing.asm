@@ -149,7 +149,7 @@ LAB_00475a3d:
 00475A7B  50                        PUSH EAX
 00475A7C  8B CB                     MOV ECX,EBX
 00475A7E  66 89 83 DA 05 00 00      MOV word ptr [EBX + 0x5da],AX
-00475A85  E8 28 D6 F8 FF            CALL 0x004030b2
+00475A85  E8 28 D6 F8 FF            CALL 0x004030b2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override
 00475A8A  50                        PUSH EAX
 00475A8B  8B CB                     MOV ECX,EBX
 00475A8D  E8 6A C8 F8 FF            CALL 0x004022fc
@@ -201,7 +201,7 @@ LAB_00475a3d:
 00475B21  E8 9B F3 F8 FF            CALL 0x00404ec1
 00475B26  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
 00475B29  8B 01                     MOV EAX,dword ptr [ECX]
-00475B2B  FF 90 B8 00 00 00         CALL dword ptr [EAX + 0xb8]
+00475B2B  FF 90 B8 00 00 00         CALL dword ptr [EAX + 0xb8]  ; [STIndirectCallsiteApplier] exact slot 0xB8; mode=structural-presentation; signature=__thiscall;/void;pointer:/void
 00475B31  8B 4B 18                  MOV ECX,dword ptr [EBX + 0x18]
 00475B34  66 8B 93 D4 05 00 00      MOV DX,word ptr [EBX + 0x5d4]
 00475B3B  66 8B 83 D2 05 00 00      MOV AX,word ptr [EBX + 0x5d2]

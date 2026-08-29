@@ -57,6 +57,8 @@ public class STAbiRegressionGate extends GhidraScript {
         "\\\"name\\\":\\\"([^\\\"]+)\\\"");
     private static final Pattern JSON_CLASS = Pattern.compile(
         "\\\"class\\\":\\\"([^\\\"]+)\\\"");
+    private static final Pattern JSON_DESCRIPTION = Pattern.compile(
+        "\\\"description\\\":\\\"((?:\\\\.|[^\\\"])*)\\\"");
     private static final Pattern JSON_LENGTH = Pattern.compile(
         "\\\"length\\\":(-?[0-9]+)");
     private static final Pattern CALLING_CONVENTION = Pattern.compile(
@@ -73,6 +75,8 @@ public class STAbiRegressionGate extends GhidraScript {
         "\\\"name\\\":\\\"(?:\\\\.|[^\\\"])*\\\",\\\"type\\\":\\\"([^\\\"]+)\\\"");
     private static final Pattern VTABLE_SOURCE = Pattern.compile(
         "\\bfrom ([0-9A-Fa-f]{8})\\b");
+    private static final Pattern GENERATED_LAYOUT_HASH = Pattern.compile(
+        "(?:^|;)\\s*generated_layout_sha256=([0-9a-f]{64})(?:;|$)");
     private static final Pattern COMPONENT = Pattern.compile(
         "\\{\\\"ordinal\\\":[0-9]+,\\\"offset\\\":([0-9]+)," +
         "\\\"length\\\":([0-9]+),\\\"field_name\\\":\\\"([^\\\"]*)\\\"," +
@@ -111,6 +115,7 @@ public class STAbiRegressionGate extends GhidraScript {
     private String transitionsHash;
     private String metricBaselineStatus = "unavailable";
     private String metricBaselineHash = "";
+    private Baseline acceptedBaseline;
 
     @Override
     protected void run() throws Exception {
@@ -144,9 +149,25 @@ public class STAbiRegressionGate extends GhidraScript {
         AcceptedReceipt receipt = verifyAcceptedManifest(baselineRoot, recovery);
         loadTransitions(transitionPath);
         Baseline baseline = loadBaseline(functions, types);
+        acceptedBaseline = baseline;
         List<Rule> rules = loadRules(policy.resolve(RULES_FILE));
         Path metricBaseline = recovery.resolve(METRIC_BASELINE_FILE);
         boolean metricBaselineLoaded = loadMetricBaseline(metricBaseline, receipt, rules);
+        boolean reboundZeroMetricBaseline = false;
+        if (!metricBaselineLoaded &&
+                loadAcceptedZeroMetricBaseline(baselineRoot, receipt, rules)) {
+            writeMetricBaseline(metricBaseline, receipt, rules);
+            metricSamples.clear();
+            metricBaselineLoaded = loadMetricBaseline(metricBaseline, receipt, rules);
+            reboundZeroMetricBaseline = metricBaselineLoaded;
+        }
+        if (!metricBaselineLoaded &&
+                loadPortableZeroFloorMetricBaseline(metricBaseline, rules)) {
+            writeMetricBaseline(metricBaseline, receipt, rules);
+            metricSamples.clear();
+            metricBaselineLoaded = loadMetricBaseline(metricBaseline, receipt, rules);
+            reboundZeroMetricBaseline = metricBaselineLoaded;
+        }
         boolean initializeMetricBaseline = !metricBaselineLoaded &&
             ("startup".equals(phase) || "accepted-refresh".equals(phase)) &&
             "passed".equals(receipt.status) &&
@@ -160,7 +181,8 @@ public class STAbiRegressionGate extends GhidraScript {
                 "A raw fixture baseline may be initialized only from a freshly " +
                 "fingerprinted Program whose semantic hash equals the passed receipt"));
         }
-        else metricBaselineStatus = initializeMetricBaseline ? "initializing" : "verified";
+        else metricBaselineStatus = initializeMetricBaseline ? "initializing" :
+            reboundZeroMetricBaseline ? "rebound_from_accepted_zero_corpus" : "verified";
 
         checkClassVptrs(baseline);
         checkAcceptedVtableSlots(baseline);
@@ -270,6 +292,10 @@ public class STAbiRegressionGate extends GhidraScript {
                 }
                 if (!"StructureDB".equals(kind.group(1))) continue;
                 Map<Integer, String> components = components(line);
+                int structureLength = Integer.parseInt(match(JSON_LENGTH, line));
+                String structureDescription = unescape(match(JSON_DESCRIPTION, line));
+                result.structures.put(typePath, new BaselineStructure(typePath,
+                    structureLength, componentGeometry(line), structureDescription));
                 if (typePath.startsWith("/SubmarineTitans/Recovered/VTables/")) {
                     Matcher source = VTABLE_SOURCE.matcher(line);
                     String address = source.find() ?
@@ -321,6 +347,8 @@ public class STAbiRegressionGate extends GhidraScript {
             Structure structure = current instanceof Structure value ? value : null;
             if (structure == null) {
                 structure = exactSemanticAlias(entry.getValue(), manager);
+                if (structure == null)
+                    structure = exactGeneratedReceiverRename(entry.getValue(), manager);
                 if (structure == null) {
                     regressions++;
                     mismatch("class-vptr:" + entry.getKey(), "class_structure_erasure",
@@ -331,7 +359,8 @@ public class STAbiRegressionGate extends GhidraScript {
                 currentPath = structure.getPathName();
                 rows.add(new Row("info", "abi", "class-vptr:" + entry.getKey(),
                     "class_structure_exact_alias", entry.getKey(), currentPath, "", "", "ok",
-                    "Missing accepted path resolved to one exact-layout semantic anchor"));
+                    "Missing accepted path resolved to one exact-layout semantic or " +
+                    "deterministically renamed generated anchor"));
             }
             DataTypeComponent component = structure.getComponentAt(0);
             if (component == null) {
@@ -372,6 +401,61 @@ public class STAbiRegressionGate extends GhidraScript {
             matches.add(candidate);
         }
         return matches.size() == 1 ? matches.get(0) : null;
+    }
+
+    /**
+     * Accept the one deterministic hidden-receiver identity migration only when
+     * address suffix, generated provenance, a non-shrinking extent, and the physical
+     * vptr remain exact after the prefix substitution.  Later recovery may legitimately
+     * refine or extend the rest of the generated layout; typed physical slots are guarded
+     * independently below.  This is deliberately not a general path alias.
+     */
+    private Structure exactGeneratedReceiverRename(BaselineClass accepted,
+            DataTypeManager manager) {
+        String prefix = "/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_";
+        if (!accepted.path.startsWith(prefix)) return null;
+        String candidatePath = accepted.path.replace(prefix,
+            "/SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_");
+        DataType type = manager.getDataType(candidatePath);
+        if (!(type instanceof Structure candidate) ||
+                candidate.getLength() < accepted.length ||
+                !generatedReceiverOwnedAndIntact(candidate)) return null;
+        DataTypeComponent vptr = candidate.getComponentAt(0);
+        BaselineComponent acceptedVptr = accepted.components.get(0);
+        return vptr != null && acceptedVptr != null &&
+            "vtable".equals(text(vptr.getFieldName())) &&
+            generatedReceiverTypeEquivalent(acceptedVptr.type,
+                vptr.getDataType().getPathName()) ? candidate : null;
+    }
+
+    private boolean generatedReceiverOwnedAndIntact(Structure candidate) {
+        String description = text(candidate.getDescription());
+        if (description.contains("[STHiddenThisApplier generated]")) return true;
+        if (!description.contains("[STClassLayoutApplier]")) return false;
+        Matcher matcher = GENERATED_LAYOUT_HASH.matcher(description);
+        if (!matcher.find()) return false;
+        return matcher.group(1).equals(structureLayoutHash(candidate));
+    }
+
+    private String structureLayoutHash(Structure structure) {
+        StringBuilder layout = new StringBuilder();
+        layout.append("length=").append(structure.getLength()).append('\n');
+        for (DataTypeComponent component : structure.getDefinedComponents()) {
+            layout.append(component.getOffset()).append('|')
+                .append(component.getLength()).append('|')
+                .append(component.getDataType().getPathName()).append('|')
+                .append(text(component.getFieldName())).append('|')
+                .append(text(component.getComment())).append('\n');
+        }
+        try { return sha256Text(layout.toString()); }
+        catch (Exception exception) { return ""; }
+    }
+
+    private boolean generatedReceiverTypeEquivalent(String beforeRaw, String afterRaw) {
+        String before = canonicalType(beforeRaw).replace(
+            "/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_",
+            "/SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_");
+        return before.equals(canonicalType(afterRaw));
     }
 
     private boolean exactCompatibleGeometry(BaselineClass accepted,
@@ -484,7 +568,8 @@ public class STAbiRegressionGate extends GhidraScript {
                     mismatches++;
                     mismatch(subject, "typed_slot_abi", accepted.descriptor(),
                         candidate.descriptor(), table.path + ": " +
-                            String.join("; ", problems));
+                            String.join("; ", problems) + "; candidate_definition=" +
+                            definition.getPathName());
                 }
             }
         }
@@ -605,6 +690,7 @@ public class STAbiRegressionGate extends GhidraScript {
         String before = canonicalType(beforeRaw);
         String after = canonicalType(afterRaw);
         if (before.equals(after)) return null;
+        if (identityViewTypeEquivalent(before, after)) return null;
         int beforeLength = typeLength(before);
         int afterLength = typeLength(after);
         // An accepted generic x86 stack word may be refined to a concrete one-word source
@@ -634,6 +720,57 @@ public class STAbiRegressionGate extends GhidraScript {
             return before + " -> " + after + " (concrete type weakened)";
         // Equal-width concrete signedness/name changes are semantic review, not an ABI error.
         return null;
+    }
+
+    /**
+     * A TypeFamily RecordView promotion replaces one managed generated structure; it does
+     * not change storage or merge two records.  Permit that nominal change at an accepted
+     * ABI boundary only when the current type explicitly records the old path, retains the
+     * original PointerShape layout hash, and every baseline component is still exact.
+     * Nested nominal changes must independently satisfy this same proof.
+     */
+    private boolean identityViewTypeEquivalent(String beforeRaw, String afterRaw) {
+        String before = canonicalType(beforeRaw);
+        String after = canonicalType(afterRaw);
+        int beforeDepth = pointerDepth(before);
+        if (beforeDepth == 0 || beforeDepth != pointerDepth(after)) return false;
+        return identityViewAlias(pointerBase(before), pointerBase(after), new HashSet<>());
+    }
+
+    private boolean identityViewAlias(String beforePath, String afterPath,
+            Set<String> visited) {
+        String key = beforePath + "->" + afterPath;
+        if (!visited.add(key) || acceptedBaseline == null) return false;
+        BaselineStructure baseline = acceptedBaseline.structures.get(beforePath);
+        DataType current = currentProgram.getDataTypeManager().getDataType(afterPath);
+        if (baseline == null || !(current instanceof Structure candidate) ||
+                candidate.getLength() != baseline.length) return false;
+        String description = text(candidate.getDescription());
+        if (!description.contains("[ST_IDENTITY_VIEW]") ||
+                !description.contains("promoted_from=" + beforePath + ";")) return false;
+        Matcher acceptedHash = GENERATED_LAYOUT_HASH.matcher(baseline.description);
+        if (!acceptedHash.find() || !description.contains(
+                "generated_layout_sha256=" + acceptedHash.group(1))) return false;
+
+        DataTypeComponent[] components = candidate.getComponents();
+        if (components.length != baseline.components.size()) return false;
+        for (DataTypeComponent component : components) {
+            BaselineComponent before = baseline.components.get(component.getOffset());
+            if (before == null || before.length != component.getLength() ||
+                    !identityViewStorageEquivalent(before.type,
+                        component.getDataType().getPathName(), visited)) return false;
+        }
+        return true;
+    }
+
+    private boolean identityViewStorageEquivalent(String beforeRaw, String afterRaw,
+            Set<String> visited) {
+        String before = canonicalType(beforeRaw);
+        String after = canonicalType(afterRaw);
+        if (before.equals(after)) return true;
+        int beforeDepth = pointerDepth(before);
+        if (beforeDepth == 0 || beforeDepth != pointerDepth(after)) return false;
+        return identityViewAlias(pointerBase(before), pointerBase(after), visited);
     }
 
     private void checkFixtures(Baseline baseline, List<Rule> rules,
@@ -815,6 +952,84 @@ public class STAbiRegressionGate extends GhidraScript {
         }
         metricBaselineHash = sha256(path);
         return true;
+    }
+
+    /**
+     * Rebind a stale fixture file without an historical Program snapshot only at the
+     * mathematically strict zero floor.  The accepted exported corpus is allowed to
+     * prove that a forbidden token occurs zero times; exporter normalization cannot
+     * make a later positive raw-decompiler count acceptable.  Non-zero metrics still
+     * require initialization from the exact accepted Program semantic fingerprint.
+     */
+    private boolean loadAcceptedZeroMetricBaseline(Path baselineRoot,
+            AcceptedReceipt receipt, List<Rule> rules) throws Exception {
+        metricSamples.clear();
+        for (Rule rule : rules) {
+            if (!rule.enabled || rule.metrics.isEmpty()) continue;
+            Path bodyPath = baselineRoot.resolve("functions").resolve(rule.address)
+                .resolve("decomp.c");
+            if (!Files.isRegularFile(bodyPath)) {
+                metricSamples.clear();
+                return false;
+            }
+            String body = Files.readString(bodyPath, StandardCharsets.UTF_8);
+            String bodyHash = sha256Text(body);
+            for (String metric : rule.metrics) {
+                String token = metric.startsWith("token:") ? metric.substring(6) : null;
+                if (token == null || token.isEmpty() || count(body, token) != 0) {
+                    metricSamples.clear();
+                    return false;
+                }
+                metricSamples.add(new MetricSample(rule.id, rule.address, metric, 0,
+                    bodyHash));
+            }
+        }
+        return !metricSamples.isEmpty() &&
+            metricSamples.size() == expectedMetricKeys(rules).size();
+    }
+
+    /**
+     * A complete all-zero token baseline is portable across accepted manifests:
+     * zero is the strict lower bound for every supported occurrence metric, so
+     * rebinding it cannot admit a regression.  This keeps failed/incomplete
+     * export recovery independent of ignored run directories.  Any non-zero
+     * count, changed rule bundle, profile mismatch or incomplete key set rejects
+     * the migration and still requires the exact historical Program.
+     */
+    private boolean loadPortableZeroFloorMetricBaseline(Path path, List<Rule> rules)
+            throws Exception {
+        metricSamples.clear();
+        if (!Files.isRegularFile(path)) return false;
+        List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+        String header = "schema_version\taccepted_manifest_sha256\t" +
+            "program_semantic_sha256\trules_sha256\tdecompiler_profile\t" +
+            "rule_id\tfunction_address\tmetric\tcount\tbody_sha256";
+        if (lines.isEmpty() || !header.equals(lines.get(0))) return false;
+        Set<String> seen = new TreeSet<>();
+        for (int index = 1; index < lines.size(); index++) {
+            if (lines.get(index).isBlank()) continue;
+            String[] fields = lines.get(index).split("\t", -1);
+            if (fields.length != 10 || !METRIC_BASELINE_SCHEMA.equals(fields[0]) ||
+                    !rulesHash.equals(fields[3]) ||
+                    !decompilerProfile().equals(fields[4]) ||
+                    !fields[6].matches("[0-9A-F]{8}") || !"0".equals(fields[8]) ||
+                    !fields[9].matches("[0-9a-f]{64}")) {
+                metricSamples.clear();
+                return false;
+            }
+            String key = metricKey(fields[5], fields[6], fields[7]);
+            if (!seen.add(key)) {
+                metricSamples.clear();
+                return false;
+            }
+            metricSamples.add(new MetricSample(fields[5], fields[6], fields[7], 0,
+                fields[9]));
+        }
+        if (!seen.equals(expectedMetricKeys(rules))) {
+            metricSamples.clear();
+            return false;
+        }
+        return !metricSamples.isEmpty();
     }
 
     private void writeMetricBaseline(Path path, AcceptedReceipt receipt, List<Rule> rules)
@@ -1151,6 +1366,7 @@ public class STAbiRegressionGate extends GhidraScript {
     private static final class Baseline {
         final Map<String, Boundary> functions = new HashMap<>();
         final Map<String, Abi> definitions = new HashMap<>();
+        final Map<String, BaselineStructure> structures = new HashMap<>();
         List<BaselineVtable> vtables = new ArrayList<>();
         final Map<String, BaselineClass> classVptrs = new HashMap<>();
     }
@@ -1158,6 +1374,8 @@ public class STAbiRegressionGate extends GhidraScript {
     private record BaselineClass(String path, String name, int length, String vptr,
             Map<Integer, BaselineComponent> components) { }
     private record BaselineComponent(int offset, int length, String type) { }
+    private record BaselineStructure(String path, int length,
+            Map<Integer, BaselineComponent> components, String description) { }
 
     private record Boundary(String signature, String callingConvention, int parameterCount,
             String qualifiedName, List<String> parameterTypes, boolean varargs,

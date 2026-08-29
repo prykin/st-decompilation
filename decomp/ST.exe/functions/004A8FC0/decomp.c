@@ -29,9 +29,11 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_10 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_5c.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\To_optic.cpp",0x107,0,iVar3,"%s",
                                "OpticClassC::InitOptic");
     if (iVar4 == 0) {
@@ -123,7 +125,8 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
              ,DAT_00807574,(double)(DAT_00807420 * _DAT_00790780),
              (double)(DAT_00807420 * _DAT_00790784),(double)(DAT_00807424 * _DAT_00790780),
              (double)(DAT_00807424 * _DAT_00790784),10.0,9.965999793052674,(int)lVar10);
-  thunk_FUN_004a9b60(DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c);
+  /* ST_CALLSITE[004A90EE]: CALL 0x00401b6d; direct=00401B6D OpticClassC::sub_004A9B60 */
+  sub_004A9B60(local_10,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c);
   thunk_FUN_004a8f20(1);
   DAT_0080674c = 2;
   DAT_0080745d = 0;

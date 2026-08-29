@@ -13,7 +13,8 @@ void * __cdecl FUN_00558ba0(void)
 {
   VisibleClassTy *pVVar1;
 
-  pVVar1 = (VisibleClassTy *)FUN_006b04d0(0x298);
+  /* ST_CALLSITE[00558BA5]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/VisibleClassTy; signature=__stdcall;pointer:/VisibleClassTy;/uint */
+  pVVar1 = FUN_006b04d0(0x298);
   if (pVVar1 != nullptr) {
     pVVar1 = VisibleClassTy::VisibleClassTy(pVVar1);
     return pVVar1;

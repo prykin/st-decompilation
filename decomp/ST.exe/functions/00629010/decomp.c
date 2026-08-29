@@ -9,13 +9,13 @@
 uint * FUN_00629010(void)
 
 {
-  uint *puVar1;
-  uint *puVar2;
+  RecoveredRecord_00629040_09AFDC96 *pRVar1;
 
-  puVar1 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x108);
-  if (puVar1 != nullptr) {
-    puVar2 = thunk_FUN_00629040(puVar1);
-    return puVar2;
+  /* ST_CALLSITE[00629015]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00629040_09AFDC96; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00629040_09AFDC96;/uint */
+  pRVar1 = Library::MSVCRT::FUN_0072e530(0x108);
+  if (pRVar1 != nullptr) {
+    pRVar1 = thunk_FUN_00629040(pRVar1);
+    return (uint *)pRVar1;
   }
   return nullptr;
 }

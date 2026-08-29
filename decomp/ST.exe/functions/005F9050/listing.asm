@@ -50,7 +50,7 @@ FUN_005f9050:
 005F90F9  75 7D                     JNZ 0x005f9178
 005F90FB  8B 16                     MOV EDX,dword ptr [ESI]
 005F90FD  8B CE                     MOV ECX,ESI
-005F90FF  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+005F90FF  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 005F9102  83 F8 6E                  CMP EAX,0x6e
 005F9105  75 71                     JNZ 0x005f9178
 005F9107  8B 46 18                  MOV EAX,dword ptr [ESI + 0x18]

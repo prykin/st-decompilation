@@ -1,4 +1,4 @@
-FUN_0041d620:
+STMineSetC::sub_0041D620:
 0041D620  55                        PUSH EBP
 0041D621  8B EC                     MOV EBP,ESP
 0041D623  57                        PUSH EDI

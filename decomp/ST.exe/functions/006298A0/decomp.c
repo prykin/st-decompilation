@@ -36,10 +36,12 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   local_18 = this;
+
   iVar8 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   pSVar7 = local_18;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_60.previous;
+
     iVar10 = ReportDebugMessage("E:\\__titans\\nick\\to_Part.Cpp",800,0,iVar8,"%s",
                                 "STParticleC::InitVisibelDeton");
     if (iVar10 == 0) {
@@ -52,22 +54,26 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
   if (3 < (byte)local_18->field_0014) {
     text = PTR_s_expl_sb0_007d0c40;
   }
+  /* ST_CALLSITE[00629903]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
   puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
                      (PTR_00806764,CASE_1D,text,0xffffffff,0,1,0,nullptr);
   pSVar7->field_00B6 = *(int *)puVar8;
   if (param_1 != 0) {
     piVar1 = &pSVar7->field_00C6;
     if (pSVar7->field_00C6 < 0) {
+
       ST3DSMAPContext::sub_006E8660
                 (g_sT3DSMAPContext_00807598,piVar1,2,0,STField<uint>(puVar8,9),
                  STField<uint>(puVar8,0xd),0x5a,0x45,0);
     }
     else {
       Library::Ourlib::ST3DSMAP::SprSetShadow(g_sT3DSMAPContext_00807598,pSVar7->field_00C6,0,0,0);
+
       Library::Ourlib::ST3DSMAP::SprSetIms
                 (g_sT3DSMAPContext_00807598,*piVar1,2,0,STField<uint>(puVar8,9),
                  STField<uint>(puVar8,0xd),0x5a,0x45,1);
     }
+
     ST3DSMAPContext::sub_006E98E0
               (g_sT3DSMAPContext_00807598,*piVar1,0,*(int *)puVar8,STField<int>(puVar8,0x21),1);
     ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*piVar1,0,pSVar7->field_00B2);
@@ -79,6 +85,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
     pSVar7->field_0072 = fVar5;
     Library::Ourlib::ST3DSMAP::SprMove
               (g_sT3DSMAPContext_00807598,*piVar1,local_1c,local_c,fVar5 + _DAT_007904fc);
+
     Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,*piVar1,0);
     pSVar7->field_00C1 = 1;
     pVVar6 = g_visibleClass_00802A88;
@@ -124,6 +131,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
       }
       if (bVar12) {
         if (pSVar7->field_00C1 == '\0') {
+
           Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,*piVar1,0);
           pSVar7->field_00C1 = 1;
         }
@@ -134,24 +142,28 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
       }
     }
     if ((byte)pSVar7->field_0014 < 4) {
+      /* ST_CALLSITE[00629BC6]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
       puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
                          (PTR_00806764,CASE_1D,"expl_s1",0xffffffff,0,1,0,nullptr
                          );
       if (0xe < pSVar7->field_00B2) {
         local_8 = pSVar7->field_00B2 + 3;
       }
+
       ST3DSMAPContext::sub_006E98E0
                 (g_sT3DSMAPContext_00807598,*piVar1,1,*(int *)puVar8,STField<int>(puVar8,0x21),1);
       ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*piVar1,1,local_8);
       puVar13 = (uint *)*piVar1;
     }
     else {
+      /* ST_CALLSITE[00629C21]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
       puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
                          (PTR_00806764,CASE_1D,"expl_s0",0xffffffff,0,1,0,nullptr
                          );
       if (0xe < pSVar7->field_00B2) {
         local_8 = pSVar7->field_00B2 - 0xf;
       }
+
       ST3DSMAPContext::sub_006E98E0
                 (g_sT3DSMAPContext_00807598,*piVar1,1,*(int *)puVar8,STField<int>(puVar8,0x21),1);
       ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*piVar1,1,local_8);
@@ -169,6 +181,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
                   (g_sT3DSMAPContext_00807598,*piVar1,pAVar2->field_01ED);
       }
     }
+
     Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand(g_sT3DSMAPContext_00807598,*piVar1,1,0x5a,0x53);
     g_currentExceptionFrame = local_60.previous;
     return 0;

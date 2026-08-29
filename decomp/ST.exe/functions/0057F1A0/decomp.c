@@ -13,7 +13,8 @@ STDcResourcC * __cdecl CreateSTDcResourc(void)
 {
   STDcResourcC *pSVar1;
 
-  pSVar1 = (STDcResourcC *)FUN_006b04d0(0x277);
+  /* ST_CALLSITE[0057F1A5]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STDcResourcC; signature=__stdcall;pointer:/STDcResourcC;/uint */
+  pSVar1 = FUN_006b04d0(0x277);
   if (pSVar1 != nullptr) {
     pSVar1 = STDcResourcC::STDcResourcC(pSVar1);
     return pSVar1;

@@ -435,15 +435,29 @@ PY
 hydrate_project() {
     require_repository
     local metadata="$canonical_root/$program.snapshot.tsv"
-    [[ -f "$metadata" ]] || fail "missing canonical snapshot metadata $metadata"
     local packed_file semantic packed_sha packed_size snapshot
-    packed_file=$(snapshot_field "$metadata" packed_file)
-    [[ "$packed_file" == "$(basename "$packed_file")" ]] ||
-        fail "canonical metadata contains a non-local packed_file"
-    snapshot="$canonical_root/$packed_file"
-    semantic=$(snapshot_field "$metadata" semantic_sha256)
-    packed_sha=$(snapshot_field "$metadata" packed_sha256)
-    packed_size=$(snapshot_field "$metadata" packed_size)
+    if (( $# == 1 )); then
+        snapshot=$1
+        [[ "$snapshot" = /* ]] || snapshot="$repo/$snapshot"
+        [[ -f "$snapshot" ]] || fail "missing explicit packed snapshot $snapshot"
+        local filename=${snapshot##*/}
+        semantic=${filename#"$program."}
+        semantic=${semantic%.gzf}
+        [[ "$filename" == "$program.$semantic.gzf" ]] ||
+            fail "explicit snapshot filename must be $program.<semantic-sha256>.gzf"
+        validate_sha256 "$semantic"
+        packed_sha=$(sha256sum "$snapshot" | awk '{print $1}')
+        packed_size=$(stat -c '%s' "$snapshot")
+    else
+        [[ -f "$metadata" ]] || fail "missing canonical snapshot metadata $metadata"
+        packed_file=$(snapshot_field "$metadata" packed_file)
+        [[ "$packed_file" == "$(basename "$packed_file")" ]] ||
+            fail "canonical metadata contains a non-local packed_file"
+        snapshot="$canonical_root/$packed_file"
+        semantic=$(snapshot_field "$metadata" semantic_sha256)
+        packed_sha=$(snapshot_field "$metadata" packed_sha256)
+        packed_size=$(snapshot_field "$metadata" packed_size)
+    fi
     validate_sha256 "$semantic"
     validate_sha256 "$packed_sha"
     [[ -f "$snapshot" ]] || fail "missing canonical packed snapshot $snapshot"
@@ -468,9 +482,18 @@ hydrate_project() {
     fi
     local temporary_root
     temporary_root=$(mktemp -d /tmp/st-project-hydrate.XXXXXX)
+    local import_snapshot="$snapshot"
+    if [[ "${snapshot##*/}" != "$program.gzf" ]]; then
+        import_snapshot="$temporary_root/$program.gzf"
+        cp -f "$snapshot" "$import_snapshot"
+        [[ "$(sha256sum "$import_snapshot" | awk '{print $1}')" == "$packed_sha" ]] || {
+            rm -rf -- "$temporary_root"
+            fail "explicit hydration snapshot copy failed SHA-256 verification"
+        }
+    fi
     set +e
     "$headless" "$project_root" "$staging_name" \
-        -import "$snapshot" -noanalysis \
+        -import "$import_snapshot" -noanalysis \
         -scriptPath "$repo/scripts" \
         -postScript STEvidenceLedger.java fingerprint "$temporary_root/fingerprint"
     local status=$?
@@ -505,6 +528,7 @@ hydrate_project() {
 
 run_recovery() {
     local mode=$1
+    local run_mode=$mode
     echo "Submarine Titans decompilation environment"
     echo "repository=$repo"
     echo "project=$project_root/$project_name.gpr"
@@ -512,10 +536,44 @@ run_recovery() {
     echo "mode=$mode"
     echo "ghidra=$ghidra_home"
     java -version
-    "$headless" "$project_root" "$project_name" \
-        -process "$program" -noanalysis \
-        -scriptPath "$repo/scripts" \
-        -postScript STRecoveryLauncher.java "$mode"
+    local status bootstrap_staging restart_sentinel restart_count
+    bootstrap_staging="$repo/recovery/$program/pipeline_bootstrap.log.tmp"
+    restart_sentinel="$repo/.st-local/restart-after-call-result-cleanup"
+    restart_count=0
+    while true; do
+        rm -f -- "$restart_sentinel"
+        set +e
+        "$headless" "$project_root" "$project_name" \
+            -process "$program" -noanalysis \
+            -scriptPath "$repo/scripts" \
+            -postScript STRecoveryLauncher.java "$run_mode"
+        status=$?
+        set -e
+        if [[ -f "$restart_sentinel" ]]; then
+            restart_count=$((restart_count + 1))
+            rm -f -- "$restart_sentinel" "$bootstrap_staging"
+            (( restart_count <= 8 )) ||
+                fail "call-result cleanup did not converge after 8 fresh Ghidra processes"
+            echo "Restarting Ghidra after committed call-result override cleanup ($restart_count/8)"
+            # Cleanup has already committed every earlier phase.  Replaying a
+            # full/deep/export ABI pass can cost hours and needlessly perturb
+            # the proposal frontier.  Resume only the direct-call-view fixed
+            # point in the fresh process.
+            run_mode=call-result-refresh
+            continue
+        fi
+        (( status == 0 )) || return "$status"
+        [[ ! -f "$bootstrap_staging" ]] ||
+            fail "Ghidra reported a script failure; inspect $bootstrap_staging and the retained run logs"
+        if [[ "$run_mode" == call-result-refresh &&
+                ( "$mode" == export || "$mode" == full-export ) ]]; then
+            # ABI state is now fixed and gated.  Export the already-recorded
+            # Program without replaying the broad ABI analyzers a third time.
+            run_mode=corpus-export
+            continue
+        fi
+        break
+    done
 }
 
 import_program() {
@@ -586,11 +644,35 @@ indirect_callsite_audit() {
         -postScript STIndirectCallsiteAnalyzer.java "$repo/recovery"
 }
 
+run_script() {
+    require_project
+    local script=${1:-}
+    shift || true
+    [[ "$script" =~ ^ST[A-Za-z0-9_]+\.java$ ]] ||
+        fail "run-script requires one repository ST*.java basename"
+    [[ -f "$repo/scripts/$script" ]] || fail "missing script $repo/scripts/$script"
+    local diagnostic status
+    diagnostic=$(mktemp "$log_root/run-script-diagnostic.XXXXXX")
+    set +e
+    "$headless" "$project_root" "$project_name" \
+        -process "$program" -noanalysis \
+        -scriptPath "$repo/scripts" \
+        -postScript "$script" "$@" 2>&1 | tee "$diagnostic"
+    status=${PIPESTATUS[0]}
+    set -e
+    if (( status == 0 )) && grep -Eq \
+            'REPORT SCRIPT ERROR:|> Error running script:' "$diagnostic"; then
+        status=1
+    fi
+    rm -f -- "$diagnostic"
+    return "$status"
+}
+
 command=${1:-full-export}
 shift || true
 
 case "$command" in
-    core|deep|abi-refresh|full|export|full-export)
+    core|deep|abi-refresh|callable-refresh|call-result-refresh|corpus-export|full|export|full-export)
         (( $# == 0 )) || fail "$command accepts no additional arguments"
         with_project_lock run_logged "recovery-$command" run_recovery "$command"
         ;;
@@ -635,6 +717,11 @@ case "$command" in
         (( $# == 0 )) || fail "indirect-callsite-audit accepts no additional arguments"
         with_project_read_lock run_logged indirect-callsite-audit indirect_callsite_audit
         ;;
+    run-script)
+        (( $# >= 1 )) || fail "run-script requires STScript.java and optional arguments"
+        script_name=${1%.java}
+        with_project_lock run_logged "script-$script_name" run_script "$@"
+        ;;
     snapshot)
         (( $# == 0 )) || fail "snapshot accepts no additional arguments"
         with_project_read_lock run_logged snapshot snapshot_program
@@ -648,17 +735,20 @@ case "$command" in
         with_project_read_lock run_logged snapshot-publish publish_snapshot
         ;;
     project-hydrate)
-        (( $# == 0 )) || fail "project-hydrate accepts no additional arguments"
+        (( $# <= 1 )) || fail "project-hydrate accepts at most one snapshot path"
         require_repository
         exec 9>"$log_root/project-writer.lock"
         flock -n 9 || fail "another Docker process owns the project writer lock"
-        run_logged project-hydrate hydrate_project
+        run_logged project-hydrate hydrate_project "$@"
         ;;
     shell)
         exec /bin/bash "$@"
         ;;
     *)
-        fail "unknown command '$command'; expected core, deep, abi-refresh, full, export, "\
-"full-export, build-scripts, source-tree, compile-audit, compile-audit-baseline, source-audit, import, doctor, headless-smoke, indirect-callsite-audit, snapshot, snapshot-verify, snapshot-publish, project-hydrate, or shell"
+        fail "unknown command '$command'; expected core, deep, abi-refresh, callable-refresh, "\
+"call-result-refresh, corpus-export, full, export, full-export, build-scripts, run-script, "\
+"source-tree, compile-audit, compile-audit-baseline, source-audit, import, doctor, "\
+"headless-smoke, indirect-callsite-audit, snapshot, snapshot-verify, snapshot-publish, "\
+"project-hydrate, or shell"
         ;;
 esac

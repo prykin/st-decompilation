@@ -31,14 +31,17 @@ int __thiscall st::fn_00495980(DumpClassC *this,STMessage *message)
   DumpClassC *local_8;
 
   local_8 = this;
+
   st::fn_006E5FD0(this,message);
   switch(message->id) {
   case MESS_ID_CREATE:
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
+
     iVar3 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
     if (iVar3 != 0) {
       g_currentExceptionFrame = local_4c.previous;
+
       iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_dump.cpp"),0x3d,0,iVar3,st::mutable_c_string("%s"),
                                  "DumpClassC::GetMessage - MESS_ID_CREATE");
       if (iVar5 != 0) {
@@ -53,8 +56,9 @@ LAB_00495c27:
     g_pathingGrid.sizeY = PTR_00806750[1];
     g_pathingGrid.sizeZ = 5;
     g_pathingGrid.planeStride = *PTR_00806750 * PTR_00806750[1];
-    g_pathingGrid.cells =static_cast<short *>(
-         st::fn_006AAC70((int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX * 10));
+
+    g_pathingGrid.cells =
+         static_cast<short *>(st::fn_006AAC70((int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX * 10));
     if (g_pathingGrid.cells == nullptr) {
       st::fn_006A5E40
                 (-1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\To_dump.cpp"),0x2b);
@@ -74,8 +78,9 @@ LAB_00495c27:
     g_pathingScratchGrid.sizeZ = g_pathingGrid.sizeZ;
     g_pathingScratchGrid.sizeX = g_pathingGrid.sizeX;
     g_pathingScratchGrid.planeStride = g_pathingGrid.planeStride;
-    g_pathingScratchGrid.cells =static_cast<short *>(
-         st::fn_006AAC70
+
+    g_pathingScratchGrid.cells =
+         static_cast<short *>(st::fn_006AAC70
                    ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX *
                     2));
     if (g_pathingScratchGrid.cells == nullptr) {
@@ -86,8 +91,9 @@ LAB_00495c27:
     g_worldGrid.sizeZ = g_pathingGrid.sizeZ;
     g_worldGrid.sizeX = g_pathingGrid.sizeX;
     g_worldGrid.planeStride = g_pathingGrid.planeStride;
-    g_worldGrid.cells =static_cast<STWorldCell *>(
-         st::fn_006AAC70
+
+    g_worldGrid.cells =
+         static_cast<STWorldCell *>(st::fn_006AAC70
                    ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX *
                     8));
     if (g_worldGrid.cells == nullptr) {
@@ -105,12 +111,13 @@ LAB_00495c27:
       *(undefined1 *)ppSVar9 = 0;
       ppSVar9 = (STWorldObject **)((int)ppSVar9 + 1);
     }
+
     DAT_007fb26c = st::machine_word_boundary_cast<undefined4>(st::fn_006AAC70
                              ((int)g_pathingScratchGrid.sizeY * (int)g_pathingScratchGrid.sizeX));
     iVar4 = (int)g_pathingScratchGrid.sizeY;
     iVar7 = (int)g_pathingScratchGrid.sizeX;
     puVar10 = st::pointer_boundary_cast<uint *>(DAT_007fb26c);
-    for (uVar5 = (uint)(iVar4 * iVar7) >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+    for (uVar5 = st::storage_bit_cast<uint>(static_cast<uint32_t>(iVar4 * iVar7)) >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
       *puVar10 = 0;
       puVar10 = puVar10 + 1;
     }
@@ -121,14 +128,17 @@ LAB_00495c27:
     g_array_007FB270 = st::fn_006AE290(nullptr,10,0x18,10);
     st::fn_00404D22();
     g_currentExceptionFrame = local_4c.previous;
+
     st::fn_006E4D40((void *)local_8->field_0010,local_8->field_000C);
     break;
   case MESS_SHARED_0003:
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;
+
     iVar3 = st::fn_0072D7F0(local_90.jumpBuffer,0);
     if (iVar3 != 0) {
       g_currentExceptionFrame = local_90.previous;
+
       local_EAX_923 =
            st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_dump.cpp"),0x58,0,iVar3,st::mutable_c_string("%s"),
                               "DumpClassC::GetMessage - MESS_ID_DONE");
@@ -153,6 +163,7 @@ LAB_00495c27:
     if (g_array_007FB270 != nullptr) {
       st::fn_006AE110(g_array_007FB270);
     }
+
     uVar4 = st::fn_006E4D40((void *)pDVar2->field_0010,pDVar2->field_000C);
     if (uVar4 == 1) {
       g_currentExceptionFrame = local_90.previous;
@@ -202,4 +213,3 @@ st::fn_00495EC0
   }
   return 0xffffffff;
 }
-

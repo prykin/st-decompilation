@@ -14,8 +14,7 @@ SndUnderAttMenegC::sub_006203F0(SndUnderAttMenegC *this,int param_1,int param_2,
   uint index;
   int *piVar1;
   uint uVar2;
-  undefined4 local_8;
-
+  uint local_8;
   uVar2 = 0xffffffff;
   local_8 = 0xffffffff;
   if ((this->field_00D1 != nullptr) &&

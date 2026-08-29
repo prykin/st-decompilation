@@ -1,12 +1,13 @@
-#include "../../pseudocode_runtime.h"
-
 
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00601DB0_param_1Enum. Cases:
    CASE_0=0;CASE_A6=166;CASE_A7=167;CASE_AF=175;CASE_BD=189;CASE_DC=220;CASE_DD=221;CASE_DE=222;CASE_DF=223;CASE_E0=224;CASE_FD=253;CASE_FE=254
-    */
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=005FF430 @ 005FF47B -> read as EAX on
+   every CFG path | 0061C5F0 @ 0061C629 -> read as EAX on every CFG path */
 
-undefined4 FUN_00601db0(Global_sub_00601DB0_param_1Enum param_1)
+int FUN_00601db0(Global_sub_00601DB0_param_1Enum param_1)
 
 {
   switch(param_1) {

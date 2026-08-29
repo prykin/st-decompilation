@@ -19,10 +19,12 @@ ChooseMapTy * __cdecl st::fn_005B2790(void)
   uint *puVar5;
   int local_8;
 
-  this = (ChooseMapTy *)st::fn_006B04D0(0x20c4);
+
+  this = STPointerBoundaryCast<ChooseMapTy *>(st::fn_006B04D0(0x20c4));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
-    this->vtable = (ChooseMapTyVTable *)&st_global_0079C018;
+    this->vtable = reinterpret_cast<ChooseMapTyVTable *>(&st_global_0079C018);
     this->field_0018 = 0;
     this->field_005D = nullptr;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -36,10 +38,10 @@ ChooseMapTy * __cdecl st::fn_005B2790(void)
       st::fn_00715820(this_00 + -1);
       st::fn_00715820(this_00);
       st::fn_00715820(this_00 + 1);
-      this_00 = (SpriteClassTy *)&this_00[3].field_0048;
+      this_00 = reinterpret_cast<SpriteClassTy *>(&this_00[3].field_0048);
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    this->vtable = (ChooseMapTyVTable *)&st_global_0079C008;
+    this->vtable = reinterpret_cast<ChooseMapTyVTable *>(&st_global_0079C008);
     this->field_0065 = 2;
     this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
@@ -50,16 +52,16 @@ ChooseMapTy * __cdecl st::fn_005B2790(void)
       pCVar4 = pCVar2;
       for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
         *(undefined4 *)pCVar4 = 0;
-        pCVar4 = (ChooseMapTy_Record_00BC_01FB *)&pCVar4->field_0x4;
+        pCVar4 = reinterpret_cast<ChooseMapTy_Record_00BC_01FB *>(reinterpret_cast<byte *>(pCVar4) + 0x4);
       }
       *(undefined2 *)pCVar4 = 0;
       pCVar4->field_0x2 = 0;
       local_8 = local_8 + -1;
       pCVar2 = pCVar2 + 1;
     } while (local_8 != 0);
-    st::fn_00715820((SpriteClassTy *)&this->array_00BC[0xc].field_01F0);
-    st::fn_00715820((SpriteClassTy *)&this->field_1B01);
-    st::fn_00715820((SpriteClassTy *)&this->field_1B92);
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->array_00BC[0xc].field_01F0));
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_1B01));
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_1B92));
     this->vtable = &st_global_0079C088;
     this->array_00BC[0xc].field_01E0 = 1;
     this->array_00BC[0xc].field_01EC = 0;
@@ -106,10 +108,11 @@ MainMenuTy * __cdecl st::fn_005B50E0(void)
   uint *puVar3;
   SpriteClassTy *this_00;
   uint *puVar4;
-  this = (MainMenuTy *)st::fn_006B04D0(0x1ee4);
+  this = STPointerBoundaryCast<MainMenuTy *>(st::fn_006B04D0(0x1ee4));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
-    this->vtable = (MainMenuTyVTable *)&st_global_0079C018;
+    this->vtable = reinterpret_cast<MainMenuTyVTable *>(&st_global_0079C018);
     this->field_0018 = 0;
     this->field_005D = 0;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -122,10 +125,10 @@ MainMenuTy * __cdecl st::fn_005B50E0(void)
       st::fn_00715820(this_00 + -1);
       st::fn_00715820(this_00);
       st::fn_00715820(this_00 + 1);
-      this_00 = (SpriteClassTy *)&this_00[3].field_0048;
+      this_00 = reinterpret_cast<SpriteClassTy *>(&this_00[3].field_0048);
       iVar1 = iVar1 + -1;
     } while (iVar1 != 0);
-    this->vtable = (MainMenuTyVTable *)&st_global_0079C008;
+    this->vtable = reinterpret_cast<MainMenuTyVTable *>(&st_global_0079C008);
     this->field_0065 = 2;
     this->field_009A = 0;
     memset(this->field_0066, 0, 0x34); /* compiler bulk-zero initialization */
@@ -134,7 +137,7 @@ MainMenuTy * __cdecl st::fn_005B50E0(void)
     do {
       puVar4 = puVar3;
       memset(puVar4, 0, 0x27); /* compiler bulk-zero initialization */
-      puVar4 = (undefined4 *)((byte *)puVar4 + 0x24);
+      puVar4 = reinterpret_cast<uint *>(((byte *)puVar4 + 0x24));
       iVar1 = iVar1 + -1;
       puVar3 = (undefined4 *)((int)puVar3 + 0x1fb);
     } while (iVar1 != 0);
@@ -217,7 +220,7 @@ int __fastcall st::fn_005B66E0(MTaskTy *param_1)
   param_1->field_0029 = 0;
   param_1->field_002D = 10;
   param_1->field_0031 = param_1->field_0008;
-  iVar1 = st::fn_006E60A0(param_1,(undefined4 *)&param_1->field_0x1d);
+  iVar1 = st::fn_006E60A0(param_1,reinterpret_cast<undefined4 *>(&param_1->field_0x1d));
   return iVar1;
 }
 
@@ -235,7 +238,7 @@ void __thiscall st::fn_005B6730(void *this,uint param_1,char param_2,int param_3
   }
   if ((STPiece<1,1>(DAT_00807300) & 8) != 0) {
     st::fn_00402FD1
-              ((AnonReceiver_0056A130 *)&g_sound,param_1,param_2,param_3,nullptr);
+              (reinterpret_cast<RecoveredReceiver_0056A130 *>(&g_sound),param_1,param_2,param_3,nullptr);
   }
   return;
 }
@@ -281,10 +284,12 @@ MMsgTy * __cdecl st::fn_005B95B0(void)
   SpriteClassTy *this_00;
   MMsgTy_Record_00BC_01FB *pMVar5;
 
-  this = (MMsgTy *)st::fn_006B04D0(0x1eaa);
+
+  this = STPointerBoundaryCast<MMsgTy *>(st::fn_006B04D0(0x1eaa));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
-    this->vtable = (MMsgTyVTable *)&st_global_0079C018;
+    this->vtable = reinterpret_cast<MMsgTyVTable *>(&st_global_0079C018);
     this->field_0018 = 0;
     this->field_005D = 0;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -297,10 +302,10 @@ MMsgTy * __cdecl st::fn_005B95B0(void)
       st::fn_00715820(this_00 + -1);
       st::fn_00715820(this_00);
       st::fn_00715820(this_00 + 1);
-      this_00 = (SpriteClassTy *)&this_00[3].field_0048;
+      this_00 = reinterpret_cast<SpriteClassTy *>(&this_00[3].field_0048);
       iVar1 = iVar1 + -1;
     } while (iVar1 != 0);
-    this->vtable = (MMsgTyVTable *)&st_global_0079C008;
+    this->vtable = reinterpret_cast<MMsgTyVTable *>(&st_global_0079C008);
     this->field_0065 = 2;
     this->field_009A = 0;
     memset(this->field_0066, 0, 0x34); /* compiler bulk-zero initialization */
@@ -310,16 +315,16 @@ MMsgTy * __cdecl st::fn_005B95B0(void)
       pMVar5 = pMVar3;
       for (iVar2 = 9; iVar2 != 0; iVar2 = iVar2 + -1) {
         pMVar5->field_0000 = 0;
-        pMVar5 = (MMsgTy_Record_00BC_01FB *)&pMVar5->field_0x4;
+        pMVar5 = reinterpret_cast<MMsgTy_Record_00BC_01FB *>(reinterpret_cast<byte *>(pMVar5) + 0x4);
       }
       *(undefined2 *)&pMVar5->field_0000 = 0;
       iVar1 = iVar1 + -1;
       STField<undefined1>(pMVar5,0x2) = 0;
       pMVar3 = pMVar3 + 1;
     } while (iVar1 != 0);
-    st::fn_00715820((SpriteClassTy *)&this->field_0x1cf7);
-    st::fn_00715820((SpriteClassTy *)&this->field_1D88);
-    st::fn_00715820((SpriteClassTy *)&this->field_0x1e19);
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_0x1cf7));
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_1D88));
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_0x1e19));
     this->vtable = &st_global_0079C0A8;
     this->array_00BC[0xc].field_01DF = 0;
     this->field_1CAA = 0;
@@ -337,7 +342,7 @@ MMsgTy * __cdecl st::fn_005B95B0(void)
 
 // 005BBA40 FUN_005bba40
 #line 4 "decomp/ST.exe/functions/005BBA40/decomp.c"
-void __fastcall st::fn_005BBA40(AnonShape_005BB9F0_E38C41BB *param_1)
+void __fastcall st::fn_005BBA40(RecoveredRecordView_005BB9F0_C0A10156 *param_1)
 
 {
   param_1->field_1A65 = 0;
@@ -346,7 +351,7 @@ void __fastcall st::fn_005BBA40(AnonShape_005BB9F0_E38C41BB *param_1)
   if (param_1->field_1A73 != 0) {
     param_1->field_0025 = param_1->field_1A73;
     param_1->field_0031 = 0;
-    /* ST_CALLSITE[005BBA71]: CALL dword ptr [EDX + 0x18] */
+    /* ST_CALLSITE[005BBA71]: CALL dword ptr [EDX + 0x18]; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_1->field_000C + 0x18))(&param_1->field_0x1d);
   }
@@ -371,10 +376,12 @@ PrividerTy * __cdecl st::fn_005BD2E0(void)
   uint *puVar5;
   int local_8;
 
-  this = (PrividerTy *)st::fn_006B04D0(0x1c9e);
+
+  this = STPointerBoundaryCast<PrividerTy *>(st::fn_006B04D0(0x1c9e));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
-    this->vtable = (PrividerTyVTable *)&st_global_0079C018;
+    this->vtable = reinterpret_cast<PrividerTyVTable *>(&st_global_0079C018);
     this->field_0018 = 0;
     this->field_005D = nullptr;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -388,10 +395,10 @@ PrividerTy * __cdecl st::fn_005BD2E0(void)
       st::fn_00715820(this_00 + -1);
       st::fn_00715820(this_00);
       st::fn_00715820(this_00 + 1);
-      this_00 = (SpriteClassTy *)&this_00[3].field_0048;
+      this_00 = reinterpret_cast<SpriteClassTy *>(&this_00[3].field_0048);
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    this->vtable = (PrividerTyVTable *)&st_global_0079C008;
+    this->vtable = reinterpret_cast<PrividerTyVTable *>(&st_global_0079C008);
     this->field_0065 = 2;
     this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
@@ -402,16 +409,16 @@ PrividerTy * __cdecl st::fn_005BD2E0(void)
       pPVar4 = pPVar2;
       for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
         *(undefined4 *)pPVar4 = 0;
-        pPVar4 = (PrividerTy_Record_00BC_01FB *)&pPVar4->field_0x4;
+        pPVar4 = reinterpret_cast<PrividerTy_Record_00BC_01FB *>(reinterpret_cast<byte *>(pPVar4) + 0x4);
       }
       *(undefined2 *)pPVar4 = 0;
       pPVar4->field_0x2 = 0;
       local_8 = local_8 + -1;
       pPVar2 = pPVar2 + 1;
     } while (local_8 != 0);
-    st::fn_00715820((SpriteClassTy *)&this->array_00BC[0xc].field_01F7);
-    st::fn_00715820((SpriteClassTy *)&this->field_1B08);
-    st::fn_00715820((SpriteClassTy *)&this->field_1B99);
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->array_00BC[0xc].field_01F7));
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_1B08));
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_1B99));
     this->vtable = &st_global_0079C0C4;
     this->array_00BC[0xc].field_01E5 = 1;
     this->array_00BC[0xc].field_01F3 = 0;
@@ -436,4 +443,3 @@ PrividerTy * __cdecl st::fn_005BD2E0(void)
   }
   return nullptr;
 }
-

@@ -24,17 +24,17 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
   uint *puVar13;
   int iVar14;
   bool bVar15;
-  undefined4 local_bc [6];
-  undefined2 local_a2;
-  undefined2 local_a0;
-  undefined2 local_9e;
-  undefined2 local_9c;
-  undefined2 local_9a;
-  undefined2 local_98;
-  undefined2 local_96;
-  undefined4 local_94;
+  uint local_bc [6];
+  ushort local_a2;
+  ushort local_a0;
+  ushort local_9e;
+  ushort local_9c;
+  ushort local_9a;
+  ushort local_98;
+  ushort local_96;
+  uint local_94;
   int local_8f;
-  undefined2 local_8b;
+  ushort local_8b;
   int local_64;
   int local_60;
   int local_5c;
@@ -139,9 +139,8 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
             }
           }
           else if (local_18[6] != *(int *)&this_00->field_0x18) {
-            /* ST_CALLSITE[00626798]: CALL dword ptr [EDX + 0xf0] */
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            iVar4 = (**(code **)(*param_1 + 0xf0))();
+            /* ST_CALLSITE[00626798]: CALL dword ptr [EDX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+            iVar4 = STStructuralVirtualCall<undefined4>(param_1, 0xF0);
             if (iVar4 == 0) {
               return 0;
             }
@@ -218,9 +217,8 @@ LAB_0062687f:
   local_bc[0] = 0x28;
   local_a0 = (undefined2)local_54;
   local_94 = 0x9b;
-  /* ST_CALLSITE[0062697A]: CALL dword ptr [EDI + 0x10] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  local_96 = (**(code **)(*piVar9 + 0x10))(local_20,local_54,local_40,local_28,local_24,local_38);
+  /* ST_CALLSITE[0062697A]: CALL dword ptr [EDI + 0x10]; [STIndirectCallsiteApplier] exact slot 0x10; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
+  local_96 = STStructuralVirtualCall<undefined4>(piVar9, 0x10, local_20, local_54, local_40, local_28, local_24, local_38);
   local_8f = piVar9[6];
   local_8b = 0xffff;
   /* ST_CALLSITE[006269AB]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */

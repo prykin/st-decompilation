@@ -17,7 +17,7 @@ STBHEShellC::sub_005F5B80:
 005F5BA6  81 C2 2C 01 00 00         ADD EDX,0x12c
 005F5BAC  52                        PUSH EDX
 005F5BAD  6A 00                     PUSH 0x0
-005F5BAF  E8 AC A4 0B 00            CALL 0x006b0060
+005F5BAF  E8 AC A4 0B 00            CALL 0x006b0060  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STBHEShellC_field_0169DArray; source view only; no Ghidra override
 005F5BB4  89 83 69 01 00 00         MOV dword ptr [EBX + 0x169],EAX
 005F5BBA  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]
 005F5BBD  8B 80 28 01 00 00         MOV EAX,dword ptr [EAX + 0x128]

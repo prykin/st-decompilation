@@ -19,6 +19,7 @@ undefined4 __fastcall FUN_004e9050(TLOBaseTy *param_1)
     pbVar4 = param_1->field_0024;
     iVar2 = 0x21;
 LAB_004e9090:
+
     iVar2 = thunk_FUN_004e60d0((int)pbVar4,iVar2);
     uVar3 = (uint)(iVar2 != 0);
   }
@@ -43,6 +44,7 @@ LAB_004e9090:
     }
   }
   if (((int)param_1->field_04D0 < 100) && (param_1->field_04E0[5] != 0)) {
+
     iVar2 = thunk_FUN_004ac910(&param_1->field_01D5,'\f');
     if (iVar2 == param_1->field_01F5->field_01C4) {
       param_1->field_04E0[5] = 0;
@@ -54,9 +56,11 @@ LAB_004e914a:
   if (((param_1->field_05AC == CASE_6C) &&
       (param_1->field_061B != nullptr)) && (param_1->field_04E0[7] == 0))
   {
+
     iVar2_mg3 = STPlaySystemC::sub_006E62D0
                           (g_playSystem_00802A38,
-                           (AnonShape_005EFAE0_B406B78B *)param_1->field_04E0[6],nullptr);
+                           (RecoveredRecordView_005EFAE0_855D930D *)param_1->field_04E0[6],
+                           nullptr);
     if (iVar2_mg3 != 0) {
       param_1->field_04E0[6] = 0;
       param_1->field_061B = nullptr;

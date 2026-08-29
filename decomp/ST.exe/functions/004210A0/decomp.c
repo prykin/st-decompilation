@@ -7,7 +7,7 @@ void FUN_004210a0(void)
 
 {
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  uint in_ECX;
+  RecoveredRecordView_004AD550_F37E00D1 *in_ECX;
 
   if (DAT_00807326 == '\x01') {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */

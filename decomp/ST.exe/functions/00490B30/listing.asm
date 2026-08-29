@@ -1,4 +1,4 @@
-FUN_00490b30:
+STBoatC::vfunc_8C:
 00490B30  55                        PUSH EBP
 00490B31  8B EC                     MOV EBP,ESP
 00490B33  53                        PUSH EBX

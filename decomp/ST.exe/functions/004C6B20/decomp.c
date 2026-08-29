@@ -13,7 +13,8 @@ TLOBldMark * __cdecl CreateTLOBldMark(void)
 {
   TLOBldMark *pTVar1;
 
-  pTVar1 = (TLOBldMark *)FUN_006b04d0(0x3c);
+  /* ST_CALLSITE[004C6B22]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/TLOBldMark; signature=__stdcall;pointer:/TLOBldMark;/uint */
+  pTVar1 = FUN_006b04d0(0x3c);
   if (pTVar1 != nullptr) {
     pTVar1 = TLOBldMark::TLOBldMark(pTVar1);
     return pTVar1;

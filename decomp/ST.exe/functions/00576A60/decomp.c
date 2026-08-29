@@ -13,7 +13,8 @@ STAlgaC * __cdecl CreateSTAlga(void)
 {
   STAlgaC *this;
 
-  this = (STAlgaC *)FUN_006b04d0(0x4c);
+
+  this = STPointerBoundaryCast<STAlgaC *>(FUN_006b04d0(0x4c));
   if (this != nullptr) {
     sub_006E60E0(this);
     this->vtable = &STAlgaCVTable;

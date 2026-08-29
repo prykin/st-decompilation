@@ -12,7 +12,7 @@ FUN_005f0240:
 005F0256  89 47 02                  MOV dword ptr [EDI + 0x2],EAX
 005F0259  8B 16                     MOV EDX,dword ptr [ESI]
 005F025B  8B CE                     MOV ECX,ESI
-005F025D  FF 52 0C                  CALL dword ptr [EDX + 0xc]
+005F025D  FF 52 0C                  CALL dword ptr [EDX + 0xc]  ; [STIndirectCallsiteApplier] exact slot 0xC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 005F0260  88 47 06                  MOV byte ptr [EDI + 0x6],AL
 005F0263  8B 46 18                  MOV EAX,dword ptr [ESI + 0x18]
 005F0266  89 47 07                  MOV dword ptr [EDI + 0x7],EAX

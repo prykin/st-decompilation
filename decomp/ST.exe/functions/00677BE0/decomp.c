@@ -12,20 +12,20 @@ _EnumRCCont(short param_1,short param_2,byte *param_3,short param_4,short param_
 
 {
   byte bVar1;
-  STFishC *this;
+  STGameObjC *this;
   int iVar3;
-  uint *puVar3;
+  STGameObjC **ppSVar3;
   int iVar4;
   byte *pbVar5;
   int iVar7;
   int iVar6;
-  DArrayTy *pDVar8;
+  DArrayOf_STGameObjCPtr *pDVar8;
   uint uVar9;
   byte *pbVar10;
   bool bVar11;
   InternalExceptionFrame local_70;
   byte local_2c [16];
-  undefined4 local_1c;
+  uint local_1c;
   int local_18;
   int local_14;
   uint local_10;
@@ -36,9 +36,11 @@ _EnumRCCont(short param_1,short param_2,byte *param_3,short param_4,short param_
   local_18 = 0;
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_mdef.cpp",0x3ba,0,iVar3,"%s",
                                "_EnumRCCont");
     if (iVar6 != 0) {
@@ -59,25 +61,27 @@ _EnumRCCont(short param_1,short param_2,byte *param_3,short param_4,short param_
   }
   do {
     if (uVar9 < pDVar8->count) {
-      puVar3 = DArrayAt<undefined4>(pDVar8, uVar9);
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(pDVar8, uVar9) (runtime stride) */
+      ppSVar3 = (STGameObjC **)(pDVar8->elementSize * uVar9 + (int)pDVar8->data);
     }
     else {
-      puVar3 = nullptr;
+      ppSVar3 = nullptr;
     }
-    this = (STFishC *)*puVar3;
+    this = *ppSVar3;
     if (((this != nullptr) &&
+        (local_10 = uVar9,
         /* ST_CALLSITE[00677C6F]: CALL dword ptr [EDX + 0x12c]; [STIndirectCallsiteApplier] exact slot 0x12C; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STFishC */
-        (local_10 = uVar9, local_1c = (*this->vtable[1].vfunc_08)(this), pDVar8 = g_array_007FA160,
-        (short)local_1c == param_1)) &&
+        local_1c = (*((STFishCVTable *)this->vtable)[1].vfunc_08)((STFishC *)this),
+        pDVar8 = g_array_007FA160, (short)local_1c == param_1)) &&
        ((param_2 == 0 ||
         /* ST_CALLSITE[00677C8F]: CALL dword ptr [EAX + 0x130]; [STIndirectCallsiteApplier] exact slot 0x130; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STFishC */
-        (iVar4 = (*this->vtable[1].vfunc_0C)(this), pDVar8 = g_array_007FA160, iVar4 == param_2))))
-    {
+        (iVar4 = (*((STFishCVTable *)this->vtable)[1].vfunc_0C)((STFishC *)this),
+        pDVar8 = g_array_007FA160, iVar4 == param_2)))) {
       iVar4 = 1;
       local_14 = 1;
       if ((param_3 != nullptr) && (*param_3 != 0)) {
-        /* ST_CALLSITE[00677CBC]: CALL dword ptr [EDX + 0x74] */
-        (*this->vtable->vfunc_74)((short)local_2c);
+        /* ST_CALLSITE[00677CBC]: CALL dword ptr [EDX + 0x74]; [STIndirectCallsiteApplier] exact slot 0x74; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4 */
+        (*((STFishCVTable *)this->vtable)->vfunc_74)((short)local_2c);
         pbVar10 = local_2c;
         pbVar5 = param_3;
         do {
@@ -107,8 +111,8 @@ LAB_00677cee:
       if (iVar4 != 0) {
         if ((((0 < param_7) && (0 < param_8)) && (0 < param_9)) &&
            /* ST_CALLSITE[00677D24]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
-           ((((STFishC::sub_004162F0(this,&local_6,&local_8,&local_a), local_6 < param_4 ||
-              (local_8 < param_5)) ||
+           ((((STFishC::sub_004162F0((STFishC *)this,&local_6,&local_8,&local_a), local_6 < param_4
+              || (local_8 < param_5)) ||
              ((local_a < param_6 ||
               (((int)param_4 + (int)param_7 <= (int)local_6 ||
                ((int)param_5 + (int)param_8 <= (int)local_8)))))) ||

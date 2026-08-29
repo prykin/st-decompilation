@@ -140,7 +140,7 @@ LAB_005fd50d:
 005FD514  8D 45 F8                  LEA EAX,[EBP + -0x8]
 005FD517  8B CB                     MOV ECX,EBX
 005FD519  50                        PUSH EAX
-005FD51A  E8 42 5C E0 FF            CALL 0x00403161
+005FD51A  E8 42 5C E0 FF            CALL 0x00403161  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 005FD51F  85 C0                     TEST EAX,EAX
 005FD521  89 45 F4                  MOV dword ptr [EBP + -0xc],EAX
 005FD524  74 1D                     JZ 0x005fd543

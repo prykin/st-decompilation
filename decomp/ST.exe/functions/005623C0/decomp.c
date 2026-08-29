@@ -96,6 +96,7 @@ int FUN_005623c0(int param_1,int param_2,int param_3,int *param_4,int param_5)
       param_4 = (int *)((int)param_4 + DAT_008033a4 * 2);
     } while (iVar19 < STField<int>(iVar11,0x10));
   }
+
   local_EAX_437 = thunk_FUN_0055de60(DAT_00803304,DAT_00803308,local_18,local_14);
   iVar11 = (DAT_00803384 + 2) * DAT_00803320;
   if (local_EAX_437 < iVar11) {
@@ -103,10 +104,13 @@ int FUN_005623c0(int param_1,int param_2,int param_3,int *param_4,int param_5)
   }
   iVar19 = (int)(local_EAX_437 * uVar12) / DAT_00803390;
   piVar18 = (int *)PTR_008033b0[param_3];
+
   iVar10 = FUN_006db6d0(iVar7);
+
   iVar4 = Library::DKW::STR::FUN_006db640(iVar7);
   iVar11 = param_2 * 0x10000 - DAT_00803354 * -iVar4 >> 0x10;
   iVar8 = param_1 * 0x10000 - DAT_00803354 * iVar10 >> 0x10;
+
   local_EAX_574 = FUN_006acf90(iVar8,iVar11,DAT_00803304,DAT_00803308);
   if (local_EAX_574 < DAT_00803358) {
     iVar19 = iVar19 * 2;
@@ -140,6 +144,7 @@ int FUN_005623c0(int param_1,int param_2,int param_3,int *param_4,int param_5)
         piVar15 = piVar15 + 2;
       } while (iVar17 < piVar18[4]);
     }
+
     iVar5 = thunk_FUN_0055de60(DAT_00803304,DAT_00803308,local_18,local_14);
     iVar11 = (DAT_00803384 + 2) * DAT_00803320;
     if (iVar5 < iVar11) {
@@ -182,12 +187,14 @@ int FUN_005623c0(int param_1,int param_2,int param_3,int *param_4,int param_5)
       param_4 = (int *)((int)param_4 + DAT_008033a4 * 2);
     } while (iVar8 < piVar18[4]);
   }
+
   local_EAX_1115 = thunk_FUN_0055de60(DAT_00803304,DAT_00803308,local_18,local_14);
   iVar11 = (DAT_00803384 + 2) * DAT_00803320;
   if (local_EAX_1115 < iVar11) {
     local_EAX_1115 = iVar11;
   }
   iVar11 = ((int)piVar15 * local_EAX_1115) / DAT_00803390;
+
   iVar10 = thunk_FUN_0055de60(DAT_00803304,DAT_00803308,param_1,param_2);
   iVar8 = 0;
   sVar3 = PTR_008033b4[DAT_008033a4 * param_2 + param_1];
@@ -195,6 +202,7 @@ int FUN_005623c0(int param_1,int param_2,int param_3,int *param_4,int param_5)
     iVar8 = ((DAT_0080339c * DAT_00803320 + (int)sVar3) - iVar10) + -1;
   }
   iVar10 = *piVar18;
+
   iVar6 = FUN_00562cd0(param_1,param_2,param_3);
   iVar11 = ((DAT_00803388 * DAT_00803340 - DAT_0080333c * iVar8) - DAT_00803338 * local_38) +
            DAT_00803334 * iVar6 + DAT_00803330 * (iVar19 + iVar11) +
@@ -284,8 +292,9 @@ int FUN_005623c0(int param_1,int param_2,int param_3,int *param_4,int param_5)
         DAT_00803398 = 99;
       }
       if (iVar10 < iVar19) {
+
         Library::MSVCRT::FUN_0072da70
-                  (&local_24_mg1[iVar10 + 1].field_0000,
+                  ((RecoveredRecord_006BFE70_3123BCE8 *)(local_24_mg1 + iVar10 + 1),
                    (AnonPointee_TLOBaseTy_0607 *)(local_24_mg1 + iVar10),
                    iVar19 * 0x14 + iVar10 * -0x14);
         iVar19 = DAT_00803398;

@@ -6,7 +6,8 @@
    decompilation contains no value return */
 
 void __cdecl
-FUN_00571a30(AnonShape_00571A30_8BA8841B *param_1,AnonShape_00571A30_67EE4B56 *param_2,char param_3)
+FUN_00571a30(RecoveredRecordView_00571A30_BA76E758 *param_1,
+            RecoveredRecordView_00571A30_CCE71750 *param_2,char param_3)
 
 {
   int iVar1;

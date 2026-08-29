@@ -17,7 +17,8 @@ void FUN_0075ef60(int *param_1,int param_2)
   piVar1[3] = 0x3f;
   piVar1[4] = 0;
   piVar1[5] = 0x1f;
-  FUN_0075efe0(param_1,piVar1);
+  FUN_0075efe0((RecoveredRecord_0075EFE0_EBB05E23 *)param_1,piVar1);
+
   iVar2 = FUN_0075f3f0(param_1,(int)piVar1,1,param_2);
   iVar3 = 0;
   if (0 < iVar2) {

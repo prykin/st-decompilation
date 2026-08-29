@@ -124,6 +124,13 @@ public class STUtilityFunctionAnalyzer extends GhidraScript {
                 new String[] { darrayPointer, "/uint", "/uint", "/uint" },
                 new String[] { "array", "initialCapacity", "elementSize", "growCapacity" },
                 "creates or initializes a generic dynamic-array descriptor");
+            addDiscovered(result, occupied, discoverSourceCreate("darrcrea.c", 20),
+                "darray_create_tracked", "DArrayCreateTracked", "__stdcall", darrayPointer,
+                new String[] { darrayPointer, "/uint", "/uint", "/uint", "/uint" },
+                new String[] { "array", "initialCapacity", "elementSize", "growCapacity",
+                    "callerPc" },
+                "creates or initializes a generic dynamic-array descriptor and records " +
+                    "the caller program counter supplied by the instrumented runtime");
             addDiscovered(result, occupied, discoverSourceCreate("sarrcrea.c", 12),
                 "sarray_create", "SArrayCreate", "__stdcall", darrayPointer,
                 new String[] { darrayPointer, "/uint", "/uint" },

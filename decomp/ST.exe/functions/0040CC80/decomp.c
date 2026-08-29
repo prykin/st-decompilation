@@ -11,7 +11,8 @@ int __thiscall FUN_0040cc80(void *this,uint param_1)
   int iVar5;
   int local_8;
 
-  pSVar1 = thunk_FUN_00423e70(this,(ushort)param_1);
+  /* ST_CALLSITE[0040CC89]: CALL 0x0040286f; direct=0040286F STGroupBoatC::sub_00423E70 */
+  pSVar1 = STGroupBoatC::sub_00423E70(this,(ushort)param_1);
   if ((pSVar1 == nullptr) || (pSVar1->field_009F == nullptr)) {
     return -4;
   }

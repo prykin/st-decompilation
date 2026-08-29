@@ -6,7 +6,8 @@ void FUN_006d03e0(HDC param_1,int param_2,int param_3,BITMAPINFO *param_4,void *
   UINT cLines;
 
   if (param_5 == nullptr) {
-    param_5 = (void *)FUN_006b4fa0((int *)param_4);
+
+    param_5 = STPointerBoundaryCast<void *>(FUN_006b4fa0((RecoveredRecord_006B4FA0_DAC3A217 *)param_4));
   }
   cLines = (param_4->bmiHeader).biHeight;
   if (-1 < (int)cLines) {

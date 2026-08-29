@@ -4,7 +4,7 @@
 void __thiscall FUN_00422e20(void *this,byte param_1)
 
 {
-  STGameObjC *objPtr;
+  STGameObjC *this_00;
   int iVar1;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
@@ -21,13 +21,14 @@ void __thiscall FUN_00422e20(void *this,byte param_1)
 
   /* ST_CALLSITE[00422E29]: CALL dword ptr [EAX + 0x4] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  objPtr = (STGameObjC *)(**(code **)(*(int *)this + 4))();
+  this_00 = (STGameObjC *)(**(code **)(*(int *)this + 4))();
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uVar2 = extraout_ECX;
-  /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   if (((STField<int>(this,0x20) != 0x14) ||
-      (iVar1 = thunk_FUN_0045ff10(objPtr), uVar2 = extraout_ECX_00, iVar1 != 0x14)) ||
-     (objPtr->field_05C0 != 3)) {
+      /* ST_CALLSITE[00422E38]: CALL 0x00402edc; direct=00402EDC STGameObjC::sub_0045FF10 */
+      /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
+      (iVar1 = STGameObjC::sub_0045FF10(this_00), uVar2 = extraout_ECX_00, iVar1 != 0x14)) ||
+     (this_00->field_05C0 != CASE_3)) {
     if (((param_1 & 1) != 0) && ((STField<byte>(this,0x1d1) & 1) == 0)) {
       /* ST_CALLSITE[00422E66]: CALL 0x0040464c; direct=0040464C sub_0041C5A0 */
       sub_0041C5A0(this);
@@ -40,8 +41,10 @@ void __thiscall FUN_00422e20(void *this,byte param_1)
       if (STField<int>(this,0x20) == 0x14) {
         iVar1 = 0;
         do {
-          thunk_FUN_0042c300(DAT_0080874d,0,iVar1,STField<char>(this,0x24),
-                             STReplaceLowWord((uint32_t)(uVar2), (uint16_t)(STField<undefined2>(this,0x32))));
+          /* ST_CALLSITE[00422EAB]: CALL 0x004024e1; direct=004024E1 STAllPlayersC::sub_0042C300 */
+          STAllPlayersC::sub_0042C300
+                    (g_allPlayers_007FA174,DAT_0080874d,0,iVar1,STField<char>(this,0x24),
+                     STReplaceLowWord((uint32_t)(uVar2), (uint16_t)(STField<undefined2>(this,0x32))));
           iVar1 = iVar1 + 1;
           /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar2 = extraout_ECX_02;
@@ -50,8 +53,10 @@ void __thiscall FUN_00422e20(void *this,byte param_1)
       else {
         iVar1 = 0;
         do {
-          thunk_FUN_0042c300(DAT_0080874d,1,iVar1,STField<char>(this,0x24),
-                             STReplaceLowWord((uint32_t)(uVar2), (uint16_t)(STField<undefined2>(this,0x32))));
+          /* ST_CALLSITE[00422ED1]: CALL 0x004024e1; direct=004024E1 STAllPlayersC::sub_0042C300 */
+          STAllPlayersC::sub_0042C300
+                    (g_allPlayers_007FA174,DAT_0080874d,1,iVar1,STField<char>(this,0x24),
+                     STReplaceLowWord((uint32_t)(uVar2), (uint16_t)(STField<undefined2>(this,0x32))));
           iVar1 = iVar1 + 1;
           /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           uVar2 = extraout_ECX_03;

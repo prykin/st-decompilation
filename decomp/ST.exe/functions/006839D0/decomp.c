@@ -10,18 +10,19 @@
    Evidence: raw retained-width parameter lifetime: width=2, reads=1, sites=00683B73 MOV DX,word ptr
    [EBP + 0x10] */
 
-int __cdecl FUN_006839d0(int param_1,int *param_2,ushort param_3,int param_4)
+int __cdecl
+FUN_006839d0(RecoveredRecord_006839D0_1EDE16BA *param_1,int *param_2,ushort param_3,int param_4)
 
 {
   char cVar1;
   int iVar2;
   int iVar3;
-  AnonShape_00683780_11EA4E23 *pAVar4;
+  RecoveredGlobalRecordView_00848A14 *pRVar4;
   int iVar5;
   int iVar6;
-  undefined1 local_18;
+  byte local_18;
   ushort local_17;
-  undefined2 local_15;
+  ushort local_15;
   int local_10;
   int local_c;
   int local_8;
@@ -31,7 +32,8 @@ int __cdecl FUN_006839d0(int param_1,int *param_2,ushort param_3,int param_4)
   local_8 = 0;
   local_c = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if (((param_4 == 0) || (param_2 == nullptr)) || (param_1 == 0)) {
+  if (((param_4 == 0) || (param_2 == nullptr)) ||
+     (param_1 == nullptr)) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x3e5);
   }
@@ -42,23 +44,27 @@ int __cdecl FUN_006839d0(int param_1,int *param_2,ushort param_3,int param_4)
       cVar1 = (&DAT_00813bc8)[param_4_after_write + DAT_008488b0 * 0x2b14];
       switch(cVar1) {
       case '\x01':
+
         thunk_FUN_006838b0(param_2,cVar1,(byte *)(&PTR_00811aec)[DAT_008488b0 * 0xac5 + local_c],
                            iVar3);
         local_c = local_c + 1;
         break;
       case '\x02':
+
         thunk_FUN_006838b0(param_2,cVar1,(byte *)(&DAT_00811c80 + DAT_008488b0 * 0xac5 + iVar5),
                            iVar3);
         iVar5 = iVar5 + 1;
         break;
       case '\x03':
+
         thunk_FUN_006838b0(param_2,cVar1,&DAT_00812c24 + (DAT_008488b0 * 0xac5 + local_8) * 4,iVar3);
         local_8 = local_8 + 1;
         break;
       case '\x04':
         iVar6 = iVar3;
-        pAVar4 = thunk_FUN_0067fca0((&DAT_00811c80)[DAT_008488b0 * 0xac5 + iVar5]);
-        thunk_FUN_00683780(param_2,pAVar4,iVar6);
+        pRVar4 = thunk_FUN_0067fca0((&DAT_00811c80)[DAT_008488b0 * 0xac5 + iVar5]);
+
+        thunk_FUN_00683780(param_2,pRVar4,iVar6);
         iVar5 = iVar5 + 1;
         break;
       default:
@@ -71,10 +77,11 @@ int __cdecl FUN_006839d0(int param_1,int *param_2,ushort param_3,int param_4)
   local_17 = param_3;
   local_18 = 0xb;
   local_15 = *(undefined2 *)(&DAT_00813bc4 + DAT_008488b0 * 0xac5);
+
   thunk_FUN_0064a830(param_2,(undefined4 *)&local_18);
   local_10 = iVar2;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  Library::DKW::TBL::DArrayAppend(*(DArrayTy **)(param_1 + 0xf),&local_10);
+
+  Library::DKW::TBL::DArrayAppend(param_1->field_000F,&local_10);
   return iVar2;
 }
 

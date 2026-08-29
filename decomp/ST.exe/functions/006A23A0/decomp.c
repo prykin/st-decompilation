@@ -9,7 +9,7 @@ FUN_006a23a0(int *param_1,uint param_2,int param_3,int param_4,short *param_5,un
   int iVar2;
   int iVar1;
   int iVar3;
-  undefined1 local_10 [8];
+  RecoveredRecord_006A1370_30F34641 local_10;
   int local_8;
 
   local_8 = 0xff;
@@ -27,10 +27,12 @@ FUN_006a23a0(int *param_1,uint param_2,int param_3,int param_4,short *param_5,un
   iVar3 = param_4;
   if ((int)(param_4 - (((ushort)param_5[2] & 0xf00) >> 8)) < param_4) {
     do {
+
       iVar2 = thunk_FUN_006a20e0(param_1,param_2,param_3,iVar3,0xff);
       if ((((iVar2 != 0) && (-1 < (int)param_2)) && ((int)param_2 < *param_1)) &&
          (((-1 < param_3 && (param_3 < param_1[1])) && ((-1 < iVar3 && (iVar3 < 6)))))) {
-        iVar1 = thunk_FUN_006a1370(param_1,param_2,param_3,iVar3,(int)local_10);
+
+        iVar1 = thunk_FUN_006a1370(param_1,param_2,param_3,iVar3,&local_10);
         if ((short)iVar1 != 0) {
           local_8 = 0xff;
         }

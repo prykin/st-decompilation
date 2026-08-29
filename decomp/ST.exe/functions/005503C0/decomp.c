@@ -13,9 +13,8 @@ void __thiscall FUN_005503c0(void *this,int param_1)
       return;
     }
     STField<undefined4>(this,0xd0) = 0x44ff;
-    /* ST_CALLSITE[00550408]: CALL dword ptr [EDX + 0x20] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*(int *)this + 0x20))((int)this + 0xc0);
+    /* ST_CALLSITE[00550408]: CALL dword ptr [EDX + 0x20]; [STIndirectCallsiteApplier] exact slot 0x20; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
+    STStructuralVirtualCall<undefined4>(this, 0x20, (int)this + 0xc0);
   }
   return;
 }

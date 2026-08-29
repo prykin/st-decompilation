@@ -266,7 +266,8 @@ LAB_00532f6b:
 00533029  50                        PUSH EAX
 0053302A  68 45 03 00 00            PUSH 0x345
 0053302F  F3 A4                     MOVSB.REP ES:EDI,ESI
-00533031  E8 8A DE 1B 00            CALL 0x006f0ec0
+OptPanelTy::PrepFiles::override::prt_533031_9d92389d:
+00533031  E8 8A DE 1B 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 00533036  8B 0D 04 AD 79 00         MOV ECX,dword ptr [0x0079ad04]
 0053303C  83 C4 14                  ADD ESP,0x14
 0053303F  8B F0                     MOV ESI,EAX

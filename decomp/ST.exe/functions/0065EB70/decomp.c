@@ -34,6 +34,7 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
         local_8 = 0;
       }
       else {
+        /* ST_CALLSITE[0065EBEE]: CALL 0x006aac10; direct=006AAC10 Library::DKW::LIB::MemAllocClear; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
         local_c = Library::DKW::LIB::MemAllocClear((uint)uVar1 * 0x2c);
         DAT_00811900 = 0;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -52,12 +53,14 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
         else if (iVar5 < DAT_00811900) {
           if (0 < iVar5) {
             do {
+
               iVar2 = thunk_FUN_00423220((void *)((int)this + 0x1c),(int *)local_c,DAT_00811900);
               if (local_c[iVar2 * 0xb + 3] != 0) {
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 STPiece<0,2>(param_2) = CONCAT11(1,cVar6);
                 /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
                 param_2 = CONCAT22((short)local_c[iVar2 * 0xb + 4],(undefined2)param_2);
+
                 Library::DKW::TBL::DArrayAppend((DArrayTy *)param_3,&param_2);
                 local_8 = local_8 + 1;
               }
@@ -75,6 +78,7 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
                 STPiece<0,2>(param_2) = CONCAT11(1,cVar6);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 param_2 = CONCAT22(*(undefined2 *)(iVar3 + 0x10 + (int)local_c),(undefined2)param_2);
+
                 Library::DKW::TBL::DArrayAppend((DArrayTy *)param_3,&param_2);
                 local_8 = local_8 + 1;
                 iVar5 = DAT_00811900;

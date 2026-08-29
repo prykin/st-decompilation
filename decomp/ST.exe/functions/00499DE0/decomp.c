@@ -34,8 +34,8 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
   int local_50;
   int local_4c;
   uint local_48;
-  undefined4 local_44;
-  undefined1 local_40;
+  uint local_44;
+  byte local_40;
   int local_3f;
   short local_3b;
   short local_39;
@@ -46,14 +46,13 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
   short local_26;
   uint local_24;
   uint local_20;
-  undefined1 local_1c [2];
+  byte local_1c [2];
   short sStack_1a;
   short local_16;
   dword local_14;
   DArrayTy *local_10;
   uint local_c;
-  undefined1 local_5;
-
+  byte local_5;
   uVar11 = 0;
   local_10 = nullptr;
   local_34 = nullptr;
@@ -61,6 +60,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
   local_a4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a4;
   local_60 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0);
   this_00 = local_60;
   if (iVar3 != 0) {
@@ -71,6 +71,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
       }
       return 0;
     }
+
     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x5eb,0,iVar3,"%s",
                                "STGroupBoatC::DistributeTargets");
     if (iVar5 != 0) {
@@ -84,14 +85,17 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",0x55a
               );
   }
+
   Library::DKW::TBL::FUN_006afe40((int *)&local_10,param_1);
   local_20 = g_playSystem_00802A38->field_00E4;
   local_14 = local_10->count;
   if (0 < (int)local_14) {
     do {
       dVar4 = local_14;
+
       DArrayGetElement(local_10,uVar11,&local_c);
       if ((ushort)local_c == 0xffff) {
+
         DArrayRemoveAt(local_10,uVar11);
         uVar11 = uVar11 - 1;
         local_14 = dVar4 - 1;
@@ -106,7 +110,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0x564);
         }
-        /* ST_CALLSITE[00499ECC]: CALL dword ptr [EDX + 0x2c] */
+        /* ST_CALLSITE[00499ECC]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC */
         dVar4 = pSVar3->sub_0045EEE0();
         switch(dVar4) {
         case 7:
@@ -120,6 +124,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
         case 0x1b:
         case 0x24:
         case 0x25:
+
           DArrayRemoveAt(local_10,uVar11);
           uVar11 = uVar11 - 1;
           local_14 = local_14 - 1;
@@ -128,11 +133,13 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
           break;
         default:
           if ((this_00->field_020A == 1) &&
-             /* ST_CALLSITE[00499F14]: CALL dword ptr [EDX + 0x2c] */
+             /* ST_CALLSITE[00499F14]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC */
              (dVar4 = pSVar3->sub_0045EEE0(), dVar4 != 0x17)) {
+
             DArrayRemoveAt(local_10,uVar11);
             uVar11 = uVar11 - 1;
             local_14 = local_14 - 1;
+
             iVar6 = thunk_FUN_00490d90((STGameObjC *)pSVar3);
             if (iVar6 == 0) {
               /* ST_CALLSITE[00499F41]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
@@ -152,6 +159,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
     uVar12 = 0;
     if (pDVar8->count != 0) {
       do {
+
         DArrayGetElement(pDVar8,uVar11,local_1c);
         if (sStack_1a != -1) {
           this_00->field_0212 = this_00->field_0212 + 1;
@@ -170,13 +178,14 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
     local_24 = 0;
     if (0 < (int)dVar4) {
       do {
+
         DArrayGetElement(local_10,uVar11,&local_c);
         if ((ushort)local_c != 0xffff) {
           pSVar3 = (STBoatC *)
                    /* ST_CALLSITE[0049A005]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                    STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_c,CASE_1);
-          /* ST_CALLSITE[0049A010]: CALL dword ptr [EDX + 0x2c] */
+          /* ST_CALLSITE[0049A010]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC */
           dVar4 = pSVar3->sub_0045EEE0();
           if (dVar4 == 9) {
             /* ST_CALLSITE[0049A032]: CALL 0x004019ba; direct=004019BA STGroupBoatC::GetDepotForAttack */
@@ -226,6 +235,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
               local_4c = local_4c + -1;
             } while (local_4c != 0);
             sVar13 = (short)local_58;
+
             DArrayGetElement(this_00->field_020E,(int)sVar13,local_1c);
             local_48 = g_playSystem_00802A38->field_00E4;
             local_40 = (undefined1)_local_1c;
@@ -233,9 +243,8 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
             local_3b = sStack_1a;
             local_3f = (int)(char)((uint)_local_1c >> 8);
             local_39 = sVar13;
-            pSVar3 = (STBoatC *)
-                     /* ST_CALLSITE[0049A15D]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-                     STAllPlayersC::GetObjPtr
+            /* ST_CALLSITE[0049A15D]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum */
+            pSVar3 = STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,this_00->field_0024,(ushort)local_c,CASE_1);
             puVar16 = &local_48;
             SVar14 = CASE_2;
@@ -248,14 +257,14 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
       } while ((int)uVar11 < (int)local_14);
     }
     if (this_00->field_020A == 1) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      local_14 = *(dword *)(this_00->field_0029 + 0xc);
+      local_14 = this_00->field_0029->count;
       uVar11 = 0;
       local_24 = 0;
       pDVar8 = local_34;
       if (0 < (int)local_14) {
         do {
-          DArrayGetElement((DArrayTy *)this_00->field_0029,uVar11,&local_c);
+
+          DArrayGetElement(this_00->field_0029,uVar11,&local_c);
           if ((ushort)local_c != 0xffff) {
             /* ST_CALLSITE[0049A1D3]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             this_01 = STAllPlayersC::GetObjPtr
@@ -292,6 +301,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
                 }
               }
               else {
+
                 iVar6 = thunk_FUN_00490d90(this_01);
                 if (iVar6 == 0) break;
                 pDVar15 = local_30;
@@ -300,6 +310,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
                   pDVar15 = local_30;
                 }
               }
+
               Library::DKW::TBL::DArrayAppend(pDVar15,&local_c);
             }
           }

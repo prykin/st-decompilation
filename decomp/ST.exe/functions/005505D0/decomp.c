@@ -14,7 +14,8 @@ void __thiscall STPlaySystemC::sub_005505D0(STPlaySystemC *this,int param_1,int 
 
 {
   char *pcVar2;
-  DWORD DVar3;
+  int iVar3;
+  PopUpTy *text;
   char *pcVar1;
   byte bVar4;
   uint uVar5;
@@ -22,16 +23,21 @@ void __thiscall STPlaySystemC::sub_005505D0(STPlaySystemC *this,int param_1,int 
   uint local_8;
 
   if (param_2 != nullptr) {
-    pcVar2 = (char *)thunk_FUN_0054eab0(this,*param_2,&local_8);
+    /* ST_CALLSITE[005505F2]: CALL 0x00404863; direct=00404863 thunk_FUN_0054eab0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__thiscall;pointer:/char;pointer:/void;/int;pointer:/undefined4 */
+    pcVar2 = thunk_FUN_0054eab0(this,*param_2,&local_8);
     if (pcVar2 == nullptr) {
+
       FUN_00715360(g_int_00811764,param_1,'7',nullptr,0,0,0xffffffff);
-      thunk_FUN_005508f0(this,param_1);
+      /* ST_CALLSITE[0055079F]: CALL 0x00401370; direct=00401370 STPlaySystemC::sub_005508F0 */
+      sub_005508F0(this,param_1);
     }
     else {
+
       FUN_00715360(g_int_00811764,param_1,'1',pcVar2,local_8,1,*(undefined4 *)pcVar2);
       if (this->field_00BB < 5) {
-        DVar3 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
-        (&this->field_00A7)[this->field_00BB] = DVar3;
+
+        uVar5 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
+        (&this->field_00A7)[this->field_00BB] = uVar5;
         this->field_00BB = this->field_00BB + 1;
       }
       else {
@@ -39,16 +45,19 @@ void __thiscall STPlaySystemC::sub_005505D0(STPlaySystemC *this,int param_1,int 
         this->field_00AB = this->field_00AF;
         this->field_00AF = this->field_00B3;
         this->field_00B3 = this->field_00B7;
-        DVar3 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
-        this->field_00B7 = DVar3;
+
+        iVar3 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
+        this->field_00B7 = iVar3;
         if (DAT_0080735e == '\0') {
           return;
         }
-        if ((DVar3 - this->field_00A7) / 5 < 0x7d1) {
+        if ((iVar3 - this->field_00A7) / 5 < 0x7d1) {
           if (g_popUp_008016D8 != nullptr) {
             uVar5 = 9;
-            pcVar2 = LoadResourceString(17000,g_hINSTANCE_00807618);
-            thunk_FUN_0052d320(g_popUp_008016D8,pcVar2,uVar5);
+            /* ST_CALLSITE[0055069B]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/PopUpTy; signature=__stdcall;pointer:/PopUpTy;/WinDef.h/UINT;/WinDef.h/HINSTANCE */
+            text = LoadResourceString(17000,g_hINSTANCE_00807618);
+            /* ST_CALLSITE[005506A7]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
+            PopUpTy::sub_0052D320(g_popUp_008016D8,(char *)text,uVar5);
           }
           this->field_00BB = 0;
         }
@@ -65,7 +74,8 @@ void __thiscall STPlaySystemC::sub_005505D0(STPlaySystemC *this,int param_1,int 
               /* ST_CALLSITE[0055074C]: CALL ESI */
               wsprintfA(local_10c,"%s %s",pcVar1,pcVar2);
               if (g_popUp_008016D8 != nullptr) {
-                thunk_FUN_0052d320(g_popUp_008016D8,local_10c,8);
+                /* ST_CALLSITE[00550764]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
+                PopUpTy::sub_0052D320(g_popUp_008016D8,local_10c,8);
               }
             }
             bVar4 = bVar4 + 1;

@@ -34,7 +34,7 @@ STAllPlayersC::_AssignDocks(STAllPlayersC *this,char param_1,DArrayTy *param_2,D
   uint uVar15;
   short *psVar16;
   STWorldObject *this_00;
-  undefined4 local_130 [13];
+  uint local_130 [13];
   short local_fc;
   short local_fa;
   short local_f8;
@@ -56,7 +56,7 @@ STAllPlayersC::_AssignDocks(STAllPlayersC *this,char param_1,DArrayTy *param_2,D
   DArrayTy *local_54;
   DArrayTy *local_50;
   ushort local_4c;
-  undefined2 local_4a;
+  ushort local_4a;
   dword local_48;
   DArrayTy *local_44;
   STAllPlayersC *local_40;
@@ -80,13 +80,15 @@ STAllPlayersC::_AssignDocks(STAllPlayersC *this,char param_1,DArrayTy *param_2,D
 
   local_70 = nullptr;
   local_c8.previous = g_currentExceptionFrame;
-  local_80 = (DArrayTy *)g_packedRecords_A62x8[param_1].field2_0x5;
+  local_80 = g_packedRecords_A62x8[param_1].field2_0x5;
   g_currentExceptionFrame = &local_c8;
   local_40 = this;
+
   local_EAX_82 = Library::MSVCRT::__setjmp3(local_c8.jumpBuffer,0);
   if (local_EAX_82 != 0) {
     g_currentExceptionFrame = local_c8.previous;
     if (local_EAX_82 != -0x5001fff7) {
+
       iVar10 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x234b,0,local_EAX_82,
                                   "%s","STAllPlayersC::_AssignDocks");
       if (iVar10 != 0) {
@@ -112,9 +114,11 @@ STAllPlayersC::_AssignDocks(STAllPlayersC *this,char param_1,DArrayTy *param_2,D
   uVar14 = 0;
   if (0 < (int)uVar15) {
     do {
+
       DArrayGetElement(param_2,uVar14,local_28);
       if ((ushort)STPiece<0,4>(local_28) == 0xffff) {
 LAB_00440bab:
+
         DArrayRemoveAt(param_2,uVar14);
         uVar15 = uVar15 - 1;
         uVar14 = uVar14 - 1;
@@ -138,9 +142,11 @@ LAB_00440bab:
   uVar14 = 0;
   if (0 < (int)local_48) {
     do {
+
       DArrayGetElement(param_3,uVar14,local_28);
       if ((ushort)STPiece<0,4>(local_28) == 0xffff) {
 LAB_00440c19:
+
         DArrayRemoveAt(param_3,uVar14);
         local_48 = local_48 - 1;
         uVar14 = uVar14 - 1;
@@ -168,6 +174,7 @@ LAB_00440c19:
       local_10 = nullptr;
       local_8 = nullptr;
       local_c = nullptr;
+
       Library::DKW::TBL::DArrayPut(pDVar6,uVar14,&local_10);
       uVar14 = uVar14 + 1;
     } while ((int)uVar14 < (int)uVar15);
@@ -176,22 +183,24 @@ LAB_00440c19:
   if (0 < (int)local_84) {
     do {
       uVar15 = local_1c;
+
       DArrayGetElement(local_80,local_1c,&local_7c);
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       if (((local_7c != nullptr) &&
-          /* ST_CALLSITE[00440CAB]: CALL dword ptr [EAX + 0xc] */
-          (iVar5 = (**(code **)(*(int *)local_7c + 0xc))(), iVar5 == 4)) &&
+          /* ST_CALLSITE[00440CAB]: CALL dword ptr [EAX + 0xc]; [STIndirectCallsiteApplier] exact slot 0xC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+          (iVar5 = STStructuralVirtualCall<undefined4>(local_7c, 0xC), iVar5 == 4)) &&
          (local_7c->field_0027 != 0)) {
         local_6c = local_7c->field_0029;
         local_2c = 0;
         local_78 = (DArrayTy *)local_6c->count;
         if (0 < (int)local_78) {
           do {
+
             DArrayGetElement(local_6c,local_2c,local_28);
             if ((ushort)STPiece<0,4>(local_28) != 0xffff) {
               /* ST_CALLSITE[00440D05]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar4 = GetObjPtr(local_40,param_1,(ushort)STPiece<0,4>(local_28),CASE_1);
               if (pSVar4 == nullptr) {
+
                 iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2239,0,0,
                                            "%s","STAllPlayersC::_AssignDocks invalid pointer"
                                           );
@@ -202,8 +211,10 @@ LAB_00440c19:
                           (-0x5001fffc,g_overwriteContext_007ED77C,
                            "E:\\__titans\\wlad\\to_allpl.cpp",0x223a);
               }
-              if ((pSVar4->field_0020 == 0x14) && (iVar5 = thunk_FUN_0045ff10(pSVar4), iVar5 == 4))
-              {
+              if ((pSVar4->field_0020 == 0x14) &&
+                 /* ST_CALLSITE[00440D5A]: CALL 0x00402edc; direct=00402EDC STGameObjC::sub_0045FF10 */
+                 (iVar5 = STGameObjC::sub_0045FF10(pSVar4), iVar5 == 4)) {
+
                 puVar8 = thunk_FUN_0048dcc0(pSVar4,local_130);
                 psVar16 = &local_fc;
                 for (iVar5 = 0xd; dVar1 = local_48, iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -215,6 +226,7 @@ LAB_00440c19:
                   uVar15 = 0;
                   if (0 < (int)local_48) {
                     do {
+
                       DArrayGetElement(param_3,uVar15,&local_22);
                       if (local_28[0] == local_22) break;
                       uVar15 = uVar15 + 1;
@@ -239,6 +251,7 @@ LAB_00440c19:
                       uVar14 = 0;
                       if (0 < (int)local_20) {
                         do {
+
                           DArrayGetElement(param_2,uVar14,&local_22);
                           if (local_22 == *(ushort *)&this_00[1].field_0xe) break;
                           uVar14 = uVar14 + 1;
@@ -246,12 +259,15 @@ LAB_00440c19:
                       }
                       pDVar6 = local_44;
                       if (uVar14 != uVar15) {
+
                         DArrayGetElement(local_44,uVar14,&local_10);
                         if (local_10 == nullptr) {
                           local_10 = Library::DKW::TBL::DArrayCreate(nullptr,1,6,1);
+
                           Library::DKW::TBL::DArrayPut(pDVar6,uVar14,&local_10);
                         }
                         local_3c = local_28[0];
+
                         Library::DKW::TBL::DArrayAppend(local_10,&local_3c);
                       }
                     }
@@ -274,6 +290,7 @@ LAB_00440c19:
   if (0 < (int)dVar1) {
     do {
       local_54 = Library::DKW::TBL::DArrayCreate(nullptr,local_20,4,1);
+
       Library::DKW::TBL::DArrayPut(pDVar6,uVar15,&local_54);
       uVar15 = uVar15 + 1;
     } while ((int)uVar15 < (int)dVar1);
@@ -282,8 +299,9 @@ LAB_00440c19:
   if (0 < (int)local_20) {
     do {
       uVar15 = local_1c;
+
       DArrayGetElement(param_2,local_1c,local_28);
-      /* ST_CALLSITE[00440F6D]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
+      /* ST_CALLSITE[00440F6D]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override */
       pSVar4 = GetObjPtr(local_40,param_1,(ushort)STPiece<0,4>(local_28),CASE_1);
       /* ST_CALLSITE[00440F80]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
       STFishC::sub_004162B0((STFishC *)pSVar4,&local_12,&local_14,&local_16);
@@ -300,14 +318,17 @@ LAB_00440c19:
         psVar15_mg1 = (short *)((int)psVar15_mg1 + 1);
         psVar16_mg1 = (short *)((int)psVar16_mg1 + 1);
       }
+
       FUN_006ab090((int)g_pathingScratchGrid.cells,(int)g_pathingGrid.sizeX,(int)g_pathingGrid.sizeY
                    ,(int)g_pathingGrid.sizeZ,(int)local_12,(int)local_14,(int)local_16,-1,-1,-1);
+
       DArrayGetElement(local_44,uVar15,&local_10);
       if (((local_10 != nullptr) && (local_64 = local_10->count, local_64 != 0)) &&
          (uVar15 = 0, 0 < (int)local_64)) {
         do {
+
           DArrayGetElement(local_10,uVar15,&local_3c);
-          /* ST_CALLSITE[00441044]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
+          /* ST_CALLSITE[00441044]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override */
           pSVar4 = GetObjPtr(local_40,param_1,local_3c,CASE_1);
           /* ST_CALLSITE[00441059]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0((STFishC *)pSVar4,&local_12,&local_14,&local_16);
@@ -318,6 +339,7 @@ LAB_00440c19:
                         [(int)local_16 * (int)g_pathingGrid.planeStride +
                          (int)local_14 * (int)g_pathingGrid.sizeX + (int)local_12] * 0xc9 + -0xc9) /
                       3) / (int)(uint)bVar3;
+
           Library::DKW::TBL::DArrayPut(local_10,uVar15,&local_3c);
           uVar15 = uVar15 + 1;
         } while ((int)uVar15 < (int)local_64);
@@ -325,8 +347,9 @@ LAB_00440c19:
       uVar15 = 0;
       if (0 < (int)local_48) {
         do {
+
           DArrayGetElement(param_3,uVar15,local_28);
-          /* ST_CALLSITE[0044110A]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
+          /* ST_CALLSITE[0044110A]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override */
           pSVar4 = GetObjPtr(local_40,param_1,(ushort)STPiece<0,4>(local_28),CASE_1);
           /* ST_CALLSITE[0044111F]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0((STFishC *)pSVar4,&local_12,&local_14,&local_16);
@@ -342,7 +365,9 @@ LAB_00440c19:
             bVar3 = thunk_FUN_00430750(GVar9);
             local_68 = ((local_68 * 0xc9 + -0xc9) / 3) / (int)(uint)bVar3;
           }
+
           DArrayGetElement(local_78,uVar15,&local_54);
+
           Library::DKW::TBL::DArrayPut(local_54,local_1c,&local_68);
           uVar15 = uVar15 + 1;
         } while ((int)uVar15 < (int)local_48);
@@ -355,15 +380,18 @@ LAB_00440c19:
   pDVar6 = local_44;
   if (0 < (int)local_20) {
     do {
+
       DArrayGetElement(pDVar6,local_1c,&local_10);
       if ((local_10 != nullptr) && (local_64 = local_10->count, local_64 != 0)) {
         array = local_10;
         dVar1 = local_64;
         if (local_64 == 1) {
+
           DArrayGetElement(local_10,0,&local_3c);
           /* ST_CALLSITE[0044122D]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar4 = GetObjPtr(local_40,param_1,local_3c,CASE_1);
-          local_60 = thunk_FUN_00486b40(pSVar4);
+          /* ST_CALLSITE[00441236]: CALL 0x004043e0; direct=004043E0 STGameObjC::sub_00486B40 */
+          local_60 = STGameObjC::sub_00486B40(pSVar4);
           /* ST_CALLSITE[00441242]: CALL dword ptr [EDX + 0x78] */
           iVar5 = pSVar4->vfunc_78();
           if (iVar5 < 1) {
@@ -373,6 +401,7 @@ LAB_00440c19:
           iVar11 = pSVar4->vfunc_2C();
           local_c = (DArrayTy *)
                     ((int)(*(int *)(&DAT_007e049c + iVar11 * 4) * local_60) / iVar5 + uStack_3a);
+
           Library::DKW::TBL::DArrayPut(pDVar6,local_1c,&local_10);
           uVar15 = local_20;
         }
@@ -381,12 +410,16 @@ LAB_00440c19:
             uVar15 = 0;
             if (0 < (int)dVar1) {
               do {
+
                 DArrayGetElement(array,uVar15,&local_34);
                 uVar14 = uVar15 + 1;
+
                 DArrayGetElement(local_10,uVar14,&local_5c);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 if (CONCAT22(uStack_58,uStack_5a) < CONCAT22(uStack_30,uStack_32)) {
+
                   Library::DKW::TBL::DArrayPut(local_10,uVar15,&local_5c);
+
                   Library::DKW::TBL::DArrayPut(local_10,uVar14,&local_34);
                 }
                 array = local_10;
@@ -394,10 +427,12 @@ LAB_00440c19:
               } while ((int)uVar14 < (int)dVar1);
             }
           }
+
           DArrayGetElement(array,0,&local_34);
           /* ST_CALLSITE[00441302]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar4 = GetObjPtr(local_40,param_1,local_34,CASE_1);
-          local_EAX_2155 = thunk_FUN_00486b40(pSVar4);
+          /* ST_CALLSITE[0044130B]: CALL 0x004043e0; direct=004043E0 STGameObjC::sub_00486B40 */
+          local_EAX_2155 = STGameObjC::sub_00486B40(pSVar4);
           /* ST_CALLSITE[00441316]: CALL dword ptr [EAX + 0x78] */
           iVar5 = pSVar4->vfunc_78();
           if (iVar5 < 1) {
@@ -412,10 +447,12 @@ LAB_00440c19:
           local_2c = 1;
           if (1 < (int)local_64) {
             do {
+
               DArrayGetElement(local_10,local_2c,&local_5c);
               /* ST_CALLSITE[00441374]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar4 = GetObjPtr(local_40,param_1,local_5c,CASE_1);
-              local_60 = thunk_FUN_00486b40(pSVar4);
+              /* ST_CALLSITE[0044137D]: CALL 0x004043e0; direct=004043E0 STGameObjC::sub_00486B40 */
+              local_60 = STGameObjC::sub_00486B40(pSVar4);
               /* ST_CALLSITE[00441389]: CALL dword ptr [EDX + 0x78] */
               iVar11 = pSVar4->vfunc_78();
               if (iVar11 < 1) {
@@ -439,6 +476,7 @@ LAB_00440c19:
             } while ((int)local_2c < (int)local_64);
           }
           local_c = local_50;
+
           Library::DKW::TBL::DArrayPut(local_44,local_1c,&local_10);
           uVar15 = local_20;
           pDVar6 = local_44;
@@ -450,12 +488,16 @@ LAB_00440c19:
   local_1c = 0;
   if (0 < (int)local_48) {
     do {
+
       DArrayGetElement(param_3,local_1c,&local_3c);
       uVar14 = 0;
       if (0 < (int)uVar15) {
         do {
+
           DArrayGetElement(local_78,local_1c,&local_54);
+
           DArrayGetElement(local_54,uVar14,&uStack_3a);
+
           DArrayGetElement(pDVar6,uVar14,&local_10);
           if (uStack_3a == -1) {
             local_8 = (DArrayTy *)0x3b9aca00;
@@ -464,9 +506,11 @@ LAB_00440c19:
             if (local_10 == nullptr) {
               local_10 = Library::DKW::TBL::DArrayCreate(nullptr,1,6,1);
             }
+
             Library::DKW::TBL::DArrayAppend(local_10,&local_3c);
             local_8 = nullptr;
           }
+
           Library::DKW::TBL::DArrayPut(pDVar6,uVar14,&local_10);
           uVar14 = uVar14 + 1;
         } while ((int)uVar14 < (int)uVar15);
@@ -474,15 +518,18 @@ LAB_00440c19:
       local_2c = 0;
       if (0 < (int)uVar15) {
         do {
+
           DArrayGetElement(pDVar6,local_2c,&local_10);
           if (local_8 != (DArrayTy *)0x3b9aca00) {
             local_64 = local_10->count;
             dVar1 = local_64;
             if (local_64 == 1) {
+
               DArrayGetElement(local_10,0,&local_3c);
               /* ST_CALLSITE[004414FB]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar4 = GetObjPtr(local_40,param_1,local_3c,CASE_1);
-              local_EAX_2660 = thunk_FUN_00486b40(pSVar4);
+              /* ST_CALLSITE[00441504]: CALL 0x004043e0; direct=004043E0 STGameObjC::sub_00486B40 */
+              local_EAX_2660 = STGameObjC::sub_00486B40(pSVar4);
               /* ST_CALLSITE[0044150F]: CALL dword ptr [EDX + 0x78] */
               iVar5 = pSVar4->vfunc_78();
               if (iVar5 < 1) {
@@ -499,22 +546,28 @@ LAB_00440c19:
                 uVar15 = 0;
                 if (0 < (int)dVar1) {
                   do {
+
                     DArrayGetElement(local_10,uVar15,&local_34);
                     uVar14 = uVar15 + 1;
+
                     DArrayGetElement(local_10,uVar14,&local_5c);
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     if (CONCAT22(uStack_58,uStack_5a) < CONCAT22(uStack_30,uStack_32)) {
+
                       Library::DKW::TBL::DArrayPut(local_10,uVar15,&local_5c);
+
                       Library::DKW::TBL::DArrayPut(local_10,uVar14,&local_34);
                     }
                     uVar15 = uVar14;
                   } while ((int)uVar14 < (int)dVar1);
                 }
               }
+
               DArrayGetElement(local_10,0,&local_34);
               /* ST_CALLSITE[004415BB]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar4 = GetObjPtr(local_40,param_1,local_34,CASE_1);
-              local_EAX_2852 = thunk_FUN_00486b40(pSVar4);
+              /* ST_CALLSITE[004415C4]: CALL 0x004043e0; direct=004043E0 STGameObjC::sub_00486B40 */
+              local_EAX_2852 = STGameObjC::sub_00486B40(pSVar4);
               /* ST_CALLSITE[004415CF]: CALL dword ptr [EDX + 0x78] */
               iVar5 = pSVar4->vfunc_78();
               if (iVar5 < 1) {
@@ -529,10 +582,12 @@ LAB_00440c19:
               local_6c = (DArrayTy *)0x1;
               if (1 < (int)local_64) {
                 do {
+
                   DArrayGetElement(local_10,(uint)local_6c,&local_5c);
                   /* ST_CALLSITE[0044162D]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                   pSVar4 = GetObjPtr(local_40,param_1,local_5c,CASE_1);
-                  local_60 = thunk_FUN_00486b40(pSVar4);
+                  /* ST_CALLSITE[00441636]: CALL 0x004043e0; direct=004043E0 STGameObjC::sub_00486B40 */
+                  local_60 = STGameObjC::sub_00486B40(pSVar4);
                   /* ST_CALLSITE[00441642]: CALL dword ptr [EDX + 0x78] */
                   iVar11 = pSVar4->vfunc_78();
                   if (iVar11 < 1) {
@@ -557,6 +612,7 @@ LAB_00440c19:
               }
               local_8 = local_50;
             }
+
             Library::DKW::TBL::DArrayPut(local_44,local_2c,&local_10);
             uVar15 = local_20;
             pDVar6 = local_44;
@@ -567,10 +623,12 @@ LAB_00440c19:
       if (local_70 == nullptr) {
         local_70 = Library::DKW::TBL::DArrayCreate(nullptr,0,4,1);
       }
+
       DArrayGetElement(param_3,local_1c,&local_4c);
       uVar14 = 0;
       if (0 < (int)uVar15) {
         do {
+
           DArrayGetElement(pDVar6,uVar14,&local_10);
           if (local_8 != (DArrayTy *)0x3b9aca00) break;
           uVar14 = uVar14 + 1;
@@ -578,12 +636,16 @@ LAB_00440c19:
       }
       if (uVar14 == uVar15) {
         local_4a = 0xffff;
+
         Library::DKW::TBL::DArrayAppend(local_70,&local_4c);
       }
       else if (uVar14 == uVar15 - 1) {
+
         DArrayGetElement(param_2,uVar14,&local_4a);
+
         Library::DKW::TBL::DArrayAppend(local_70,&local_4c);
         local_c = local_8;
+
         Library::DKW::TBL::DArrayPut(pDVar6,uVar14,&local_10);
       }
       else {
@@ -592,6 +654,7 @@ LAB_00440c19:
         local_60 = uVar14;
         if ((int)uVar15 < (int)local_20) {
           do {
+
             DArrayGetElement(pDVar6,uVar15,&local_10);
             if ((local_8 != (DArrayTy *)0x3b9aca00) && ((int)local_8 < (int)local_6c)) {
               local_6c = local_8;
@@ -601,23 +664,30 @@ LAB_00440c19:
           } while ((int)uVar15 < (int)local_20);
         }
         local_60 = uVar14;
+
         DArrayGetElement(param_2,uVar14,&local_4a);
+
         Library::DKW::TBL::DArrayAppend(local_70,&local_4c);
+
         DArrayGetElement(pDVar6,uVar14,&local_10);
         local_c = local_8;
+
         Library::DKW::TBL::DArrayPut(pDVar6,uVar14,&local_10);
         local_2c = 0;
         if (0 < (int)local_20) {
           do {
             if (local_2c != uVar14) {
+
               DArrayGetElement(pDVar6,local_2c,&local_10);
               if (local_8 != (DArrayTy *)0x3b9aca00) {
                 uVar15 = 0;
                 dVar1 = local_10->count;
                 if (0 < (int)dVar1) {
                   do {
+
                     DArrayGetElement(local_10,uVar15,&local_3c);
                     if (local_3c == local_4c) {
+
                       DArrayRemoveAt(local_10,uVar15);
                       pDVar6 = local_44;
                       break;
@@ -640,6 +710,7 @@ LAB_00440c19:
   uVar14 = 0;
   if (0 < (int)uVar15) {
     do {
+
       DArrayGetElement(pDVar6,uVar14,&local_10);
       if (local_10 != nullptr) {
         DArrayDestroy(local_10);
@@ -653,6 +724,7 @@ LAB_00440c19:
   uVar15 = 0;
   if (0 < (int)local_48) {
     do {
+
       DArrayGetElement(pDVar6,uVar15,&local_54);
       if (local_54 != nullptr) {
         DArrayDestroy(local_54);

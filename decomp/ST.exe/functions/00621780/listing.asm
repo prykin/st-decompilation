@@ -144,7 +144,7 @@ switchD_006217ba::caseD_8:
 00621912  6A 08                     PUSH 0x8
 00621914  50                        PUSH EAX
 00621915  68 4A 27 00 00            PUSH 0x274a
-0062191A  E8 21 E8 08 00            CALL 0x006b0140
+0062191A  E8 21 E8 08 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/PopUpTy; source view only; no Ghidra override
 0062191F  8B 0D D8 16 80 00         MOV ECX,dword ptr [0x008016d8]
 00621925  50                        PUSH EAX
 00621926  E8 AD FB DD FF            CALL 0x004014d8

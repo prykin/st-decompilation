@@ -5,7 +5,7 @@
    full EAX (1), none consume AL/AX, and every RET path defines full EAX; sites=00652810 @ 00659669
    -> TEST TEST EAX,EAX */
 
-int __cdecl FUN_006525e0(AnonShape_006525E0_52237033 *param_1)
+int __cdecl FUN_006525e0(RecoveredRecordView_006525E0_3E62F5FD *param_1)
 
 {
   int iVar1;

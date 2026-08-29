@@ -18,8 +18,10 @@ SettMapTy * __cdecl CreateSettMap(void)
   uint *puVar6;
   int local_8;
 
-  this = (SettMapTy *)FUN_006b04d0(0x21fc);
+
+  this = STPointerBoundaryCast<SettMapTy *>(FUN_006b04d0(0x21fc));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->vtable = (SettMapTyVTable *)&VTable_0079C018;
     this->field_0018 = 0;

@@ -20,37 +20,33 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
             (g_tLOFake_00800BCC,STField<int>(this,0x4e4),STField<int>(this,0x4e8),
              STField<int>(this,0x4ec));
   STField<undefined4>(this,0x4e0) = 0;
+
   iVar1_mg0 = STPlaySystemC::sub_006E62D0
-                        (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x4d8),
+                        (g_playSystem_00802A38,
+                         STField<RecoveredRecordView_005EFAE0_855D930D *>(this,0x4d8),
                          (int *)&param_1);
   if (iVar1_mg0 == 0) {
-    /* ST_CALLSITE[004E9732]: CALL dword ptr [EAX + 0x2c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar1 = (**(code **)(*param_1 + 0x2c))();
-    /* ST_CALLSITE[004E973F]: CALL dword ptr [EDX + 0x2c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    if ((iVar1 < 1) || (iVar1 = (**(code **)(*param_1 + 0x2c))(), 0x28 < iVar1)) {
-      /* ST_CALLSITE[004E975D]: CALL dword ptr [EDX + 0x2c] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      iVar1 = (**(code **)(*param_1 + 0x2c))();
-      /* ST_CALLSITE[004E976A]: CALL dword ptr [EAX + 0x2c] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      if ((iVar1 < 0x32) || (iVar1 = (**(code **)(*param_1 + 0x2c))(), 0x73 < iVar1)) {
+    /* ST_CALLSITE[004E9732]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+    iVar1 = STStructuralVirtualCall<undefined4>(param_1, 0x2C);
+    /* ST_CALLSITE[004E973F]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+    if ((iVar1 < 1) || (iVar1 = STStructuralVirtualCall<undefined4>(param_1, 0x2C), 0x28 < iVar1)) {
+      /* ST_CALLSITE[004E975D]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+      iVar1 = STStructuralVirtualCall<undefined4>(param_1, 0x2C);
+      /* ST_CALLSITE[004E976A]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+      if ((iVar1 < 0x32) || (iVar1 = STStructuralVirtualCall<undefined4>(param_1, 0x2C), 0x73 < iVar1)) {
         iVar1 = 100;
       }
       else {
         /* ST_CALLSITE[004E9780]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         uVar2 = LookupRecordByte((char)param_1[9]);
-        /* ST_CALLSITE[004E9792]: CALL dword ptr [EAX + 0x2c] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar1 = (**(code **)(*param_1 + 0x2c))();
+        /* ST_CALLSITE[004E9792]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+        iVar1 = STStructuralVirtualCall<undefined4>(param_1, 0x2C);
         iVar1 = *(int *)(&DAT_007e37b0 + ((uint)(byte)uVar2 + iVar1 * 3) * 4);
       }
     }
     else {
-      /* ST_CALLSITE[004E974C]: CALL dword ptr [EAX + 0x2c] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      iVar1 = (**(code **)(*param_1 + 0x2c))();
+      /* ST_CALLSITE[004E974C]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+      iVar1 = STStructuralVirtualCall<undefined4>(param_1, 0x2C);
       iVar1 = *(int *)(&DAT_007e0d9c + iVar1 * 4);
     }
     iVar1 = STField<int>(this,0x4d0) + (iVar1 * -100) / 100;
@@ -80,7 +76,7 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
           iVar1 = *(int *)this;
           uVar3 = 0x405;
         }
-        /* ST_CALLSITE[004E9874]: CALL dword ptr [EDX + 0x90] */
+        /* ST_CALLSITE[004E9874]: CALL dword ptr [EDX + 0x90]; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4 */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(iVar1 + 0x90))(4,uVar3);
       }

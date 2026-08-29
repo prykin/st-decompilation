@@ -26,7 +26,8 @@ void FUN_006b5b10(AnonShape_006E6FB0_BC494FEA *param_1,int param_2,int param_3,i
   iVar10 = param_5;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_2 == 0) {
-    param_2 = FUN_006b4fa0((int *)param_1);
+
+    param_2 = FUN_006b4fa0((RecoveredRecord_006B4FA0_DAC3A217 *)param_1);
   }
   iVar4 = param_1->field_0004;
   pAVar1 = param_1->field_0008;

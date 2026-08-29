@@ -30,7 +30,8 @@ int STGroupBoatC::Way3DGrpDistribTgt
   if (sVar1 == 0) {
     return 0;
   }
-  uVar5 = thunk_FUN_004233c0(param_1);
+  /* ST_CALLSITE[00415187]: CALL 0x00401735; direct=00401735 STGroupBoatC::sub_004233C0 */
+  uVar5 = sub_004233C0(param_1);
   DAT_007f4d4c = (uint)uVar5;
   if ((DAT_007f4d4c < 2) && (param_1->field_0027 == 1)) {
     if (param_2->count == 0) {
@@ -39,7 +40,8 @@ int STGroupBoatC::Way3DGrpDistribTgt
     else {
       puVar6 = param_2->data;
     }
-    pSVar7 = thunk_FUN_00423e70(param_1,*puVar6);
+    /* ST_CALLSITE[004151B6]: CALL 0x0040286f; direct=0040286F STGroupBoatC::sub_00423E70 */
+    pSVar7 = sub_00423E70(param_1,*puVar6);
     if (pSVar7 != nullptr) {
       pSVar7->field_00B7 = 0;
       pSVar7->field_00BB = param_3;
@@ -53,6 +55,7 @@ int STGroupBoatC::Way3DGrpDistribTgt
   }
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
+
   iVar7 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar7 == 0) {
     iVar8 = thunk_FUN_00413af0(param_1,param_2,param_3,param_4,param_5);
@@ -68,7 +71,8 @@ int STGroupBoatC::Way3DGrpDistribTgt
           else {
             puVar6 = nullptr;
           }
-          pSVar7 = thunk_FUN_00423e70(param_1,*puVar6);
+          /* ST_CALLSITE[00415282]: CALL 0x0040286f; direct=0040286F STGroupBoatC::sub_00423E70 */
+          pSVar7 = sub_00423E70(param_1,*puVar6);
           if (pSVar7 != nullptr) {
             iVar8 = *(int *)(uVar9 + 0xc + (int)PTR_007f4d04);
             pSVar7->field_00BB = iVar8;
@@ -98,7 +102,8 @@ int STGroupBoatC::Way3DGrpDistribTgt
           else {
             puVar6 = nullptr;
           }
-          pSVar7 = thunk_FUN_00423e70(param_1,*puVar6);
+          /* ST_CALLSITE[00415328]: CALL 0x0040286f; direct=0040286F STGroupBoatC::sub_00423E70 */
+          pSVar7 = sub_00423E70(param_1,*puVar6);
           if (pSVar7 != nullptr) {
             iVar3 = PTR_007f4d04[((uint)(ushort)param_1->field_0027 - iVar8) * 7 + -4];
             pSVar7->field_00BB = iVar3;
@@ -125,7 +130,8 @@ int STGroupBoatC::Way3DGrpDistribTgt
         else {
           puVar6 = nullptr;
         }
-        pSVar7 = thunk_FUN_00423e70(param_1,*puVar6);
+        /* ST_CALLSITE[004153E6]: CALL 0x0040286f; direct=0040286F STGroupBoatC::sub_00423E70 */
+        pSVar7 = sub_00423E70(param_1,*puVar6);
         if (pSVar7 != nullptr) {
           pSVar7->field_00BB = param_3;
           pSVar7->field_00C7 = param_3;
@@ -143,6 +149,7 @@ int STGroupBoatC::Way3DGrpDistribTgt
   else {
     g_currentExceptionFrame = local_50.previous;
     local_c = iVar7;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\Grpway3d.cpp",0xe66,0,iVar7,"%s",
                                "STGroupBoatC::Way3DGrpDistribTgt");
     if (iVar6 != 0) {

@@ -41,7 +41,8 @@ void __fastcall FUN_006057c0(STExplosionC *param_1)
         }
       }
       else if (param_1->field_0286 != 0) {
-        thunk_FUN_004ad430(param_1->field_02AF);
+        /* ST_CALLSITE[0060591D]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+        STT3DSprC::sub_004AD430(param_1->field_02AF);
         param_1->field_0286 = 0;
       }
     }

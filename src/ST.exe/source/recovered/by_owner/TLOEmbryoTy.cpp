@@ -8,26 +8,28 @@
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
-undefined4 __fastcall st::fn_00419C70(int *param_1,undefined4 param_2,int param_3)
+undefined4 __fastcall
+st::fn_00419C70(RecoveredRecord_00419C70_4C4EF73F *param_1,undefined4 param_2,int param_3)
 
 {
   uint uVar1;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
 
-  /* ST_CALLSITE[00419C92]: CALL 0x004052c2; direct=004052C2 STAllPlayersC::RegisterObject */
+  /* ST_CALLSITE[00419C92]: CALL 0x004052c2; direct=004052C2 STAllPlayersC::RegisterObject; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
   uVar1 = st::fn_004052C2
-                    (g_allPlayers_007FA174,(char)param_1[9],
-                     STReplaceLowWord((uint32_t)(param_1), (uint16_t)((short)param_1[0xc])),0xffff,param_1,
-                     param_3,0);
+                    (g_allPlayers_007FA174,param_1->field_0x24,
+                     STReplaceLowWord((uint32_t)(param_1), (uint16_t)(*(undefined2 *)&param_1->field_0x30)),
+                     0xffff,reinterpret_cast<int *>(param_1),param_3,0);
   /* ST_CALLSITE[00419CAA]: CALL 0x0040494e; direct=0040494E STAllPlayersC::_ChangeMD */
   st::fn_0040494E
-            (g_allPlayers_007FA174,1,(int *)param_1[9],
-             STReplaceLowWord((uint32_t)(uVar1), (uint16_t)(STField<undefined2>(param_1,0x32))));
+            (g_allPlayers_007FA174,1,*(int **)&param_1->field_0x24,
+             STReplaceLowWord(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(uVar1)), (uint16_t)(param_1->field_0032)));
   /* ST_CALLSITE[00419CC0]: CALL 0x004019a6; direct=004019A6 STAllPlayersC::_ChangeDock */
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   st::fn_004019A6
-            (1,(int *)param_1[9],CONCAT22(extraout_var,STField<undefined2>(param_1,0x32)));
+            (g_allPlayers_007FA174,1,*(int **)&param_1->field_0x24,
+             CONCAT22(extraout_var,param_1->field_0032));
   return uVar1;
 }
 
@@ -48,7 +50,7 @@ void __fastcall st::fn_00419CF0(int *param_1,undefined4 param_2,uint param_3)
   /* ST_CALLSITE[00419D0B]: CALL 0x004052c2; direct=004052C2 STAllPlayersC::RegisterObject */
   st::fn_004052C2
             (g_allPlayers_007FA174,(char)param_1[9],
-             STReplaceLowWord((uint32_t)(param_2), (uint16_t)((short)param_1[0xc])),param_3,param_1,1,0);
+             STReplaceLowWord(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(param_2)), (uint16_t)((short)param_1[0xc])),param_3,param_1,1,0);
   return;
 }
 
@@ -73,6 +75,7 @@ void __thiscall st::fn_0041C3F0(TLOEmbryoTy *this,undefined *param_1)
                (undefined *)(int)this->field_005F,(int *)this->field_0024,(uint)param_1,
                (int *)this->field_0018,0xffffffff);
     if (this->field_0020 == 0x14) {
+
       iVar1 = st::fn_0040186B(this->field_0024,10);
       if (iVar1 < 1) {
         this->field_0105 = (int)this->field_0101;
@@ -122,9 +125,9 @@ TLOEmbryoTy * __thiscall st::fn_004D0FC0(TLOEmbryoTy *this)
 {
 
   /* ST_CALLSITE[004D0FC4]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
-  st::fn_00401933((STGameObjC *)this);
+  st::fn_00401933(reinterpret_cast<STGameObjC *>(this));
   /* ST_CALLSITE[004D0FD1]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
-  st::fn_00401316((STT3DSprC *)&this->vtable_at_1d5);
+  st::fn_00401316(reinterpret_cast<STT3DSprC *>(&this->vtable_at_1d5));
   this->vtable = &st_global_00798C70;
   this->vtable_at_1d5 = &st_global_00798C6C;
   this->field_02A8 = 0;
@@ -169,12 +172,76 @@ undefined4 __thiscall st::fn_004D10A0(TLOEmbryoTy *this,int param_1)
     uVar2 = (*(int *)(this->field_01F5 + 0x18 + this->field_02F0 * 0x24) -
             *(int *)(this->field_01F5 + this->field_02F0 * 0x24 + 0x10)) + uVar1;
   }
+
   st::fn_00401EBA(&this->vtable_at_1d5,(byte)this->field_02F0,uVar1,uVar1 + 8,'\0');
   /* ST_CALLSITE[004D1149]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
-  st::fn_00401064((STT3DSprC *)&this->vtable_at_1d5,(char)this->field_02F0,uVar2);
+  st::fn_00401064(reinterpret_cast<STT3DSprC *>(&this->vtable_at_1d5),(char)this->field_02F0,uVar2);
+
   st::fn_00401EBA(&this->vtable_at_1d5,(char)this->field_02F0 - 1,uVar1,uVar1 + 8,'\0');
   /* ST_CALLSITE[004D1177]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
-  st::fn_00401064((STT3DSprC *)&this->vtable_at_1d5,(char)this->field_02F0 + -1,uVar2);
+  st::fn_00401064(reinterpret_cast<STT3DSprC *>(&this->vtable_at_1d5),(char)this->field_02F0 + -1,uVar2);
+  return 0;
+}
+
+// 004D6590 TLOEmbryoTy::vfunc_E0
+#line 4 "decomp/ST.exe/functions/004D6590/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 00798C70
+   Entries: 00403C3D
+   Slots: 0xE0
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_physical_vtable_owner_and_slot;
+   receiver_extent=868/884; unique_owner_for_target */
+
+undefined4 __thiscall
+st::fn_004D6590
+          (TLOEmbryoTy *this,float param_1,short *param_2,short *param_3,short *param_4,
+          undefined4 *param_5)
+
+{
+  float fVar1;
+  int iVar2;
+  int iVar3;
+  float fVar4;
+  float fVar5;
+  short *psVar6;
+  short *psVar7;
+  int iVar8;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  float10 extraout_ST0;
+  longlong lVar9;
+
+  psVar7 = param_4;
+  psVar6 = param_3;
+  iVar2 = this->field_0265;
+  iVar3 = this->field_0261;
+  iVar8 = (int)param_1 * 0xc;
+  param_1 = (float)((int)((2 - (uint)(this->field_002C != 1)) * 0xc9) / 2);
+  *param_2 = *(short *)(iVar8 + this->field_0360) + (short)this->field_025D * 0xc9 +
+             SUB42(param_1,0);
+  *param_3 = *(short *)(iVar8 + 4 + this->field_0360) + (short)iVar3 * 0xc9 + SUB42(param_1,0);
+  *param_4 = *(short *)(iVar8 + 8 + this->field_0360) + (short)iVar2 * 200;
+  *param_5 = 0;
+  st::fn_006DD530(this->field_0211,&param_1,reinterpret_cast<float *>(&param_3),reinterpret_cast<float *>(&param_4));
+  lVar9 = st::fn_0072E288();
+  param_1 = (float)(short)lVar9;
+  lVar9 = st::fn_0072E288();
+  param_1 = (float)(short)lVar9;
+  lVar9 = st::fn_0072E288();
+  fVar4 = (float)(int)this->field_0043 - param_1;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  fVar1 = (float)((float10)(int)this->field_0041 - extraout_ST0);
+  fVar5 = (float)(int)*psVar7 - (float)(short)lVar9;
+  fVar5 = fVar5 * fVar5;
+  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+  if (((float10)(int)*param_2 - extraout_ST0) * ((float10)(int)*param_2 - extraout_ST0) +
+      ((float10)(int)*psVar6 - (float10)param_1) * ((float10)(int)*psVar6 - (float10)param_1) +
+      (float10)fVar5 <
+      (float10)fVar4 * (float10)fVar4 + (float10)fVar1 * (float10)fVar1 + (float10)fVar5) {
+    *param_5 = 0;
+    return 0;
+  }
+  *param_5 = 1;
   return 0;
 }
 
@@ -191,7 +258,8 @@ undefined4 __thiscall st::fn_004D10A0(TLOEmbryoTy *this,int param_1)
    owner_type=/TLOEmbryoTy; current target parameter and return types retained when arity agrees;
    physical-slot geometry proves receiver/stack ABI only */
 
-void __thiscall st::fn_004D6890(TLOEmbryoTy *this,AnonShape_004D6890_0C7826D6 *param_1)
+void __thiscall
+st::fn_004D6890(TLOEmbryoTy *this,RecoveredRecordView_004D6890_603A41DD *param_1)
 
 {
   byte uVar1;
@@ -199,14 +267,14 @@ void __thiscall st::fn_004D6890(TLOEmbryoTy *this,AnonShape_004D6890_0C7826D6 *p
   byte bVar3;
   dword dVar4;
   int iVar5;
-  AnonShape_004D6890_0C7826D6 *pAVar6;
+  RecoveredRecordView_004D6890_603A41DD *pRVar6;
 
-  pAVar6 = param_1;
+  pRVar6 = param_1;
   for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(undefined4 *)pAVar6 = 0;
-    pAVar6 = (AnonShape_004D6890_0C7826D6 *)((int)&pAVar6->field_0003 + 1);
+    *(undefined4 *)pRVar6 = 0;
+    pRVar6 = (RecoveredRecordView_004D6890_603A41DD *)((int)&pRVar6->field_0003 + 1);
   }
-  *(undefined2 *)pAVar6 = 0;
+  *(undefined2 *)pRVar6 = 0;
   /* ST_CALLSITE[004D68B2]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   bVar3 = st::fn_004049B7((char)this->field_0024);
   param_1->field_0007 = bVar3;
@@ -311,7 +379,8 @@ st::fn_004D6930(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy_004D6930 *param_1)
     *(undefined4 *)((int)&param_1[1].field_0027 + 1) = 0xbb9;
     return;
   }
-  iVar6 = st::fn_00402815(this->field_0024);
+
+  iVar6 = st::fn_00402815((RecoveredRecord_004B31C0_F3AB8C37 *)this->field_0024);
   if (iVar6 == 0) {
     *(undefined4 *)((int)&param_1[1].field_0027 + 1) = 0xbdf;
     return;
@@ -370,3 +439,67 @@ dword __thiscall st::fn_004D6C50(TLOEmbryoTy *this)
   return this->field_02A8;
 }
 
+// 004D6C90 TLOEmbryoTy::vfunc_28
+#line 4 "decomp/ST.exe/functions/004D6C90/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 00798C70
+   Entries: 00401839
+   Slots: 0x28
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_physical_vtable_owner_and_slot;
+   receiver_extent=4/884; unique_owner_for_target */
+
+undefined4 __thiscall st::fn_004D6C90(TLOEmbryoTy *this,undefined4 param_1,int *param_2)
+
+{
+  int iVar1;
+
+  if (st::machine_word_boundary_cast<uint>((TLOEmbryoTy *)param_2) == st::machine_word_boundary_cast<uint>(this)) {
+    return 4;
+  }
+  if ((param_2 != nullptr) && (param_2[9] == this->field_0024)) {
+    this = (TLOEmbryoTy *)param_2[8];
+    if (st::machine_word_boundary_cast<uint>(this) == st::machine_word_boundary_cast<uint>((TLOEmbryoTy *)0x14)) {
+      /* ST_CALLSITE[004D6CC3]: CALL dword ptr [EAX + 0xec]; [STIndirectCallsiteApplier] exact slot 0xEC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+      iVar1 = STStructuralVirtualCall<undefined4>(param_2, 0xEC);
+      this = nullptr;
+      if (iVar1 != 0) {
+        return 3;
+      }
+    }
+    else if ((st::machine_word_boundary_cast<uint>(this) == st::machine_word_boundary_cast<uint>((TLOEmbryoTy *)0x3e8)) || (st::machine_word_boundary_cast<uint>(this) == st::machine_word_boundary_cast<uint>((TLOEmbryoTy *)0x3e9))) {
+      /* ST_CALLSITE[004D6CE7]: CALL dword ptr [EDX + 0xec]; [STIndirectCallsiteApplier] exact slot 0xEC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+      iVar1 = STStructuralVirtualCall<undefined4>(param_2, 0xEC);
+      this = nullptr;
+      if (iVar1 != 0) {
+        return 4;
+      }
+    }
+  }
+  return (uint)this & 0xffff0000;
+}
+
+// 004D6D50 TLOEmbryoTy::vfunc_68
+#line 4 "decomp/ST.exe/functions/004D6D50/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 00798C70
+   Entries: 004037BF
+   Slots: 0x68
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_physical_vtable_owner_and_slot;
+   receiver_extent=605/884; unique_owner_for_target; unique physical vtable owner and slot type only
+   the existing __thiscall receiver; explicit parameters and return are retained */
+
+void __thiscall st::fn_004D6D50(TLOEmbryoTy *this,undefined4 *param_1)
+
+{
+  byte bVar1;
+
+  *param_1 = this->field_0018;
+  param_1[1] = this->field_0259;
+  /* ST_CALLSITE[004D6D72]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
+  bVar1 = st::fn_004049B7((char)this->field_0024);
+  ((byte *)param_1)[2] = bVar1;
+  st::fn_0072E340((char *)((int)param_1 + 9),&this->field_0271,0xe);
+  return;
+}

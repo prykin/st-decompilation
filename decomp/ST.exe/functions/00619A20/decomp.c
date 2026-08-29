@@ -55,6 +55,7 @@ void __thiscall STJumpMineC::sub_00619A20(STJumpMineC *this)
       if (this->field_00C4 != '\0') {
         return;
       }
+
       Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,this->field_0097,0);
       this->field_00C4 = 1;
       return;

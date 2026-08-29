@@ -31,8 +31,8 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
   InternalExceptionFrame local_108;
   InternalExceptionFrame local_c4;
   InternalExceptionFrame local_80;
-  undefined4 local_3c [4];
-  undefined4 local_2c;
+  uint local_3c [4];
+  uint local_2c;
   uint local_28;
   uint local_1c;
   int local_18;

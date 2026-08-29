@@ -62,7 +62,7 @@ LAB_0063e1bd:
 0063E1FF  51                        PUSH ECX
 0063E200  6A 1D                     PUSH 0x1d
 0063E202  52                        PUSH EDX
-0063E203  E8 E8 B8 0C 00            CALL 0x00709af0
+0063E203  E8 E8 B8 0C 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 0063E208  8B F8                     MOV EDI,EAX
 0063E20A  8B 43 38                  MOV EAX,dword ptr [EBX + 0x38]
 0063E20D  83 C4 20                  ADD ESP,0x20

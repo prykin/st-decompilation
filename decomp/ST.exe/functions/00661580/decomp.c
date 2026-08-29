@@ -39,6 +39,7 @@ void __thiscall AiFltClassTy::sub_00661580(AiFltClassTy *this)
     }
   }
 LAB_006615ff:
+
   iVar1 = thunk_FUN_0068e800(this_00,this->field_007D);
   if (iVar1 < (int)(3 - (uint)(this->field_007B != 1))) {
     pDVar3 = this->field_020B;

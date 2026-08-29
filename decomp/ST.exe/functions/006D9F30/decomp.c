@@ -7,8 +7,8 @@ int FUN_006d9f30(int *param_1,int param_2,int param_3,int param_4,int param_5)
   int *piVar1;
   int iVar2;
   int iVar3;
-  undefined4 local_24;
-  undefined4 local_20;
+  uint local_24;
+  uint local_20;
   int local_1c;
   int local_18;
   int local_14;
@@ -29,7 +29,9 @@ int FUN_006d9f30(int *param_1,int param_2,int param_3,int param_4,int param_5)
     if (param_1[0x72] < param_5) {
       param_1[0x72] = param_5;
     }
-    iVar2 = FUN_006bb6c0(*param_1,param_1 + 0x73,param_1[0x71],param_1[0x72],-1,0x800);
+
+    iVar2 = FUN_006bb6c0((RecoveredRecord_006BB6C0_6F39CDC5 *)*param_1,param_1 + 0x73,param_1[0x71],
+                         param_1[0x72],-1,0x800);
     if (iVar2 != 0) {
       param_1[0x71] = 0;
       param_1[0x72] = 0;

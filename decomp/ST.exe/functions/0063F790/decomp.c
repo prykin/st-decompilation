@@ -3,7 +3,7 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int __fastcall FUN_0063f790(AnonShape_0063F790_F83B8A8C *param_1)
+int __fastcall FUN_0063f790(RecoveredRecordView_0063F790_BCC59576 *param_1)
 
 {
   float fVar1;

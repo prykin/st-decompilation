@@ -5,7 +5,7 @@
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
    and decompilation contains no value return */
 
-void __fastcall FUN_0048a840(AnonShape_0048A840_34A87A21 *param_1)
+void __fastcall FUN_0048a840(RecoveredRecordView_0048A840_B5CC239D *param_1)
 
 {
   uint uVar1;
@@ -27,6 +27,7 @@ void __fastcall FUN_0048a840(AnonShape_0048A840_34A87A21 *param_1)
   param_1->field_07BA = uVar1;
   param_1->field_07BE = uVar1;
   if (iVar3 == 0x21) {
+
     iVar3 = thunk_FUN_004e60d0(param_1->field_0024,0x74);
     if (iVar3 == 0) {
       param_1->field_07BE = 0;

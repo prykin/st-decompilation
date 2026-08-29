@@ -1,6 +1,7 @@
 CreateSTGroupBoat:
 004A8890  68 12 03 00 00            PUSH 0x312
-004A8895  E8 36 7C 20 00            CALL 0x006b04d0
+CreateSTGroupBoat::override::prt_4a8895_6fae859f:
+004A8895  E8 36 7C 20 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STGroupBoatC; signature=__stdcall;pointer:/STGroupBoatC;/uint
 004A889A  85 C0                     TEST EAX,EAX
 004A889C  74 07                     JZ 0x004a88a5
 004A889E  8B C8                     MOV ECX,EAX

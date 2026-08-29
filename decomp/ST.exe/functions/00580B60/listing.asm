@@ -50,7 +50,7 @@ LAB_00580bd5:
 00580BEA  6A 1D                     PUSH 0x1d
 00580BEC  52                        PUSH EDX
 LAB_00580bed:
-00580BED  E8 FE 8E 18 00            CALL 0x00709af0
+00580BED  E8 FE 8E 18 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 00580BF2  8B F0                     MOV ESI,EAX
 00580BF4  83 C4 20                  ADD ESP,0x20
 00580BF7  85 F6                     TEST ESI,ESI

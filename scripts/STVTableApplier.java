@@ -42,6 +42,7 @@ import ghidra.program.model.data.DataUtilities;
 import ghidra.program.model.data.FunctionDefinition;
 import ghidra.program.model.data.FunctionDefinitionDataType;
 import ghidra.program.model.data.ParameterDefinition;
+import ghidra.program.model.data.ParameterDefinitionImpl;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.PointerDataType;
 import ghidra.program.model.data.Structure;
@@ -407,8 +408,24 @@ public class STVTableApplier extends GhidraScript {
                     continue;
                 }
 
+                // A semantic owner/name can improve while the bytes still denote the same
+                // physical table.  Keep the hash-intact live table as the ABI retention
+                // source when building a newly named alias; table ownership alone is not
+                // evidence for changing inherited slot receivers or other parameters.
+                Data liveTable = listing.getDefinedDataContaining(tableAddress);
+                Structure physicalRetention = isOwnedTableData(liveTable, addressText) &&
+                        liveTable.getDataType() instanceof Structure liveStructure ?
+                    liveStructure : null;
+                if (!semanticApply && strongerSemanticPhysicalTable(physicalRetention,
+                        proposedName)) {
+                    report.add(new ReportRow("table", addressText, "already_present",
+                        physicalRetention.getName(),
+                        "retained stronger semantic table for the same physical bytes; " +
+                        "layout-only alias " + proposedName + " suppressed"));
+                    continue;
+                }
                 StructureResolution typeResolution = resolveStructure(proposedName, slots,
-                    effectiveProposal);
+                    effectiveProposal, physicalRetention);
                 if (typeResolution.error != null) {
                     report.add(new ReportRow("table", addressText, "conflict", proposedName,
                         typeResolution.error));
@@ -422,7 +439,7 @@ public class STVTableApplier extends GhidraScript {
                     continue;
                 }
 
-                Data existing = listing.getDefinedDataContaining(tableAddress);
+                Data existing = liveTable;
                 DataType replacedOwnedType = isOwnedTableData(existing, addressText) ?
                     existing.getDataType() : null;
                 boolean alreadyApplied = existing != null &&
@@ -469,6 +486,28 @@ public class STVTableApplier extends GhidraScript {
                     message(exception)));
             }
         }
+    }
+
+    private boolean strongerSemanticPhysicalTable(Structure live, String proposedName) {
+        if (live == null || !generatedForTable(live,
+                proposedName.replaceFirst("(?i)^VTable_", ""))) return false;
+        String owner = generatedOwner(live);
+        return !owner.isBlank() && !structuralReceiverOwner(owner);
+    }
+
+    private String generatedOwner(Structure table) {
+        String description = text(table == null ? null : table.getDescription());
+        Matcher matcher = Pattern.compile("(?i)(?:^|;)\\s*owner=([^;]*)")
+            .matcher(description);
+        return matcher.find() ? matcher.group(1).trim() : "";
+    }
+
+    private boolean structuralReceiverOwner(String owner) {
+        String value = text(owner);
+        return value.startsWith(
+            "SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_") ||
+            value.startsWith(
+                "SubmarineTitans::Recovered::HiddenThis::AnonReceiver_");
     }
 
     /**
@@ -639,6 +678,9 @@ public class STVTableApplier extends GhidraScript {
             if (type instanceof Pointer pointer) {
                 DataType pointed = pointer.getDataType();
                 if (pointed == null || pointed instanceof VoidDataType) return true;
+                if ("vtable".equals(component.getFieldName()) &&
+                        pointed instanceof Structure priorVtable &&
+                        generatedVtableUnchanged(priorVtable)) return true;
                 String path = pointed.getPathName();
                 String name = pointed.getName().toLowerCase(Locale.ROOT);
                 return path.contains("/Recovered/ClassPointees/AnonPointee_") ||
@@ -668,6 +710,14 @@ public class STVTableApplier extends GhidraScript {
         return true;
     }
 
+    private boolean generatedVtableUnchanged(Structure structure) {
+        if (!structure.getCategoryPath().equals(VTABLES)) return false;
+        String description = structure.getDescription();
+        if (description == null || !description.contains(COMMENT_MARKER)) return false;
+        String stored = storedLayoutHash(description);
+        return stored != null && stored.equals(structureLayoutHash(structure));
+    }
+
     private void refreshGeneratedLayoutHash(Structure structure) {
         String description = structure.getDescription();
         if (description == null) description = "";
@@ -678,9 +728,10 @@ public class STVTableApplier extends GhidraScript {
     }
 
     private StructureResolution resolveStructure(String name, List<Map<String, String>> slots,
-            Map<String, String> proposal) {
+            Map<String, String> proposal, Structure physicalRetention) {
         Structure existing = findStructure(name);
-        Structure desired = buildStructure(name, slots, proposal, existing);
+        Structure desired = buildStructure(name, slots, proposal,
+            existing != null ? existing : physicalRetention);
         String desiredHash = structureLayoutHash(desired);
         desired.setDescription(desired.getDescription() + LAYOUT_HASH_MARKER + desiredHash);
 
@@ -732,7 +783,13 @@ public class STVTableApplier extends GhidraScript {
         for (Map<String, String> slot : slots) {
             Address rawAddress = address(slot.get("raw_target_address"));
             Function function = currentProgram.getFunctionManager().getFunctionAt(rawAddress);
-            DataType fieldType = pointerFor(function, rawAddress);
+            Address resolvedAddress = address(slot.get("resolved_target_address"));
+            Function resolved = resolvedAddress == null ? null :
+                currentProgram.getFunctionManager().getFunctionAt(resolvedAddress);
+            boolean exactThunkTarget = "true".equalsIgnoreCase(slot.get("thunk")) &&
+                resolved != null && function != null && !resolved.equals(function);
+            Function signatureFunction = exactThunkTarget ? resolved : function;
+            DataType fieldType = pointerFor(signatureFunction, rawAddress);
             int slotIndex = Integer.parseInt(slot.get("slot_index"));
             int slotOffset = slotIndex * pointerSize;
             String baseName = fieldName(unt(slot.get("proposed_function")), slotIndex);
@@ -742,20 +799,137 @@ public class STVTableApplier extends GhidraScript {
                 slot.get("raw_target_address") + " " + unt(slot.get("raw_target_symbol"));
             DataType retained = retainedIndirectCallType(existing, slotOffset,
                 slot.get("raw_target_address"));
+            DataType stablePhysical = retainedStablePhysicalSlotType(existing, slotOffset,
+                slot.get("raw_target_address"));
             DataType physicalAlias = physicalAliasIndirectType(
                 proposal.get("table_address"), slotOffset,
                 slot.get("raw_target_address"));
+            DataType dominant = dominantIndirectCallType(rawAddress, fieldType,
+                signatureFunction);
+            // Rebuilding or renaming a physical table is not ABI evidence.  Preserve
+            // the hash-intact slot first, then an exact physical alias, and only use
+            // recovered target consensus to initialize a slot which has no accepted
+            // physical baseline.  STIndirectCallApplier owns later ABI refinements.
+            if (retained == null) retained = stablePhysical;
             if (retained == null) retained = physicalAlias;
             if (retained == null)
-                retained = dominantIndirectCallType(rawAddress, fieldType, function);
-            if (retained != null && (physicalAlias != null ||
-                    retainIndependentSlotAbi(fieldType, retained, function))) {
+                retained = dominant;
+            boolean retainedPhysicalAbi = retained != null;
+            if (retainedPhysicalAbi) {
                 fieldType = retained;
-                comment += " " + INDIRECT_CALL_MARKER;
+                if (stablePhysical != null) {
+                    DataTypeComponent prior = existing.getComponentAt(slotOffset);
+                    String priorComment = prior == null ? "" : text(prior.getComment());
+                    if (!priorComment.isBlank()) comment = priorComment;
+                }
+                else comment += " " + INDIRECT_CALL_MARKER;
+            }
+            if (!retainedPhysicalAbi) {
+                DataType ownerReceiver = strengthenGenericReceiver(fieldType,
+                    unt(proposal.get("owner")), rawAddress);
+                if (ownerReceiver != null) fieldType = ownerReceiver;
             }
             structure.add(fieldType, pointerSize, fieldName, comment);
         }
         return structure;
+    }
+
+    /**
+     * A unique semantic table owner proves the primary receiver when the candidate
+     * slot is still void/generic or belongs only to a structural hidden-this view.
+     * It never replaces another concrete receiver (which may be a base subobject).
+     * Prefer an existing owner-specific generated definition so accepted ABI identity
+     * and all prior refinements survive a table-name recovery.
+     */
+    private DataType strengthenGenericReceiver(DataType candidate, String ownerName,
+            Address rawAddress) {
+        if (ownerName.isBlank() || structuralReceiverOwner(ownerName) ||
+                !(candidate instanceof Pointer pointer) ||
+                !(pointer.getDataType() instanceof FunctionDefinition definition) ||
+                !"__thiscall".equals(definition.getCallingConventionName()) ||
+                definition.getArguments().length == 0 ||
+                !genericOrStructuralReceiver(definition.getArguments()[0].getDataType()))
+            return null;
+        DataType owner = findOwnerStructure(ownerName);
+        if (owner == null) return null;
+        DataType ownerPointer = new PointerDataType(owner, pointerSize, dataTypes);
+        DataType retained = existingOwnerSpecificDefinition(definition, ownerPointer,
+            ownerName, rawAddress);
+        if (retained != null) return retained;
+
+        String name = "vfunc_" + addr(rawAddress) + "_for_" + sanitize(ownerName);
+        FunctionDefinitionDataType desired = new FunctionDefinitionDataType(
+            VFUNCTIONS, name, dataTypes);
+        try {
+            desired.setCallingConvention(definition.getCallingConventionName());
+        }
+        catch (Exception exception) { return null; }
+        desired.setReturnType(definition.getReturnType());
+        desired.setVarArgs(definition.hasVarArgs());
+        desired.setNoReturn(definition.hasNoReturn());
+        ParameterDefinition[] old = definition.getArguments();
+        ParameterDefinition[] arguments = new ParameterDefinition[old.length];
+        for (int index = 0; index < old.length; index++) {
+            DataType type = index == 0 ? ownerPointer : old[index].getDataType();
+            arguments[index] = new ParameterDefinitionImpl(old[index].getName(), type,
+                old[index].getComment());
+        }
+        desired.setArguments(arguments);
+        String hash = functionSignatureHash(desired);
+        desired.setComment(COMMENT_MARKER + " Owner receiver recovered from unique " +
+            "physical-table ownership" + SIGNATURE_HASH_MARKER + hash);
+        DataType resolved = dataTypes.resolve(desired,
+            DataTypeConflictHandler.KEEP_HANDLER);
+        return new PointerDataType(resolved, pointerSize, dataTypes);
+    }
+
+    private boolean genericOrStructuralReceiver(DataType type) {
+        if (!(type instanceof Pointer pointer)) return false;
+        DataType pointee = pointer.getDataType();
+        if (pointee == null || pointee instanceof VoidDataType ||
+                pointee.getName().toLowerCase(Locale.ROOT).startsWith("undefined"))
+            return true;
+        return pointee.getPathName().startsWith(
+            "/SubmarineTitans/Recovered/HiddenThis/") &&
+            text(pointee.getDescription()).contains("[STHiddenThisApplier generated]");
+    }
+
+    private DataType existingOwnerSpecificDefinition(FunctionDefinition candidate,
+            DataType ownerPointer, String ownerName, Address rawAddress) {
+        String address = addr(rawAddress).toUpperCase(Locale.ROOT);
+        String suffix = "_for_" + sanitize(ownerName);
+        DataType agreed = null;
+        Iterator<DataType> iterator = dataTypes.getAllDataTypes();
+        while (iterator.hasNext()) {
+            DataType value = iterator.next();
+            if (!(value instanceof FunctionDefinition definition) ||
+                    !definition.getName().toUpperCase(Locale.ROOT).contains(address) ||
+                    !definition.getName().endsWith(suffix) ||
+                    !"__thiscall".equals(definition.getCallingConventionName()) ||
+                    definition.getArguments().length != candidate.getArguments().length ||
+                    definition.getArguments().length == 0 ||
+                    !definition.getArguments()[0].getDataType().isEquivalent(ownerPointer) ||
+                    !sameNonReceiverAbi(definition, candidate)) continue;
+            DataType pointer = new PointerDataType(definition, pointerSize, dataTypes);
+            if (agreed != null && !agreed.isEquivalent(pointer)) return null;
+            agreed = pointer;
+        }
+        return agreed;
+    }
+
+    private boolean sameNonReceiverAbi(FunctionDefinition left,
+            FunctionDefinition right) {
+        if (!text(left.getCallingConventionName()).equals(
+                text(right.getCallingConventionName())) ||
+                left.hasVarArgs() != right.hasVarArgs() ||
+                left.hasNoReturn() != right.hasNoReturn() ||
+                !left.getReturnType().isEquivalent(right.getReturnType())) return false;
+        ParameterDefinition[] a = left.getArguments();
+        ParameterDefinition[] b = right.getArguments();
+        if (a.length != b.length) return false;
+        for (int index = 1; index < a.length; index++)
+            if (!a[index].getDataType().isEquivalent(b[index].getDataType())) return false;
+        return true;
     }
 
     /**
@@ -781,6 +955,31 @@ public class STVTableApplier extends GhidraScript {
         return definitionComment.contains(INDIRECT_CALL_MARKER) ||
                 definition.getCategoryPath().equals(INDIRECT_FUNCTIONS) ?
             component.getDataType() : null;
+    }
+
+    /**
+     * A hash-intact generated structure installed over the same physical table is the
+     * accepted ABI baseline for its existing slots.  Recovering a more specific table
+     * owner may create a differently named alias, but it must not rewrite inherited
+     * receivers (for example Base * to Derived *) or any other slot ABI merely from that
+     * owner decision.  Independently refined indirect-call slots are handled above; this
+     * fallback retains every other exact target-bound function definition.
+     */
+    private DataType retainedStablePhysicalSlotType(Structure existing, int offset,
+            String rawTarget) {
+        if (existing == null) return null;
+        String description = text(existing.getDescription());
+        String stored = storedLayoutHash(description);
+        if (!description.contains(COMMENT_MARKER) || stored == null ||
+                !stored.equals(structureLayoutHash(existing))) return null;
+        DataTypeComponent component = existing.getComponentAt(offset);
+        if (component == null || component.getOffset() != offset ||
+                component.getLength() != pointerSize ||
+                !text(component.getComment()).toUpperCase(Locale.ROOT).contains(
+                    "-> " + unt(rawTarget).toUpperCase(Locale.ROOT)) ||
+                !(component.getDataType() instanceof Pointer pointer) ||
+                !(pointer.getDataType() instanceof FunctionDefinition)) return null;
+        return component.getDataType();
     }
 
     /**

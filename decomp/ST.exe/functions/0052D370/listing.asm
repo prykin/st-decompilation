@@ -33,7 +33,7 @@ PopUpTy::AddStr:
 0052D3C6  F7 D1                     NOT ECX
 0052D3C8  83 C1 04                  ADD ECX,0x4
 0052D3CB  51                        PUSH ECX
-0052D3CC  E8 3F D8 17 00            CALL 0x006aac10
+0052D3CC  E8 3F D8 17 00            CALL 0x006aac10  ; [STCallResultViewApplier] presentation_only; exact direct-call result=/winnt.h/LPSTR; source view only; no Ghidra override
 0052D3D1  8B 75 F0                  MOV ESI,dword ptr [EBP + -0x10]
 0052D3D4  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
 0052D3D7  85 C0                     TEST EAX,EAX
@@ -73,7 +73,7 @@ LAB_0052d41c:
 0052D441  52                        PUSH EDX
 0052D442  68 D8 21 7C 00            PUSH 0x7c21d8
 0052D447  57                        PUSH EDI
-0052D448  E8 A3 4D 1E 00            CALL 0x007121f0
+0052D448  E8 A3 4D 1E 00            CALL 0x007121f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; source view only; no Ghidra override
 0052D44D  8B 8E 94 00 00 00         MOV ECX,dword ptr [ESI + 0x94]
 0052D453  8B D8                     MOV EBX,EAX
 0052D455  53                        PUSH EBX

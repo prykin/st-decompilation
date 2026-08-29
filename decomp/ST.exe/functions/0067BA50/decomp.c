@@ -9,15 +9,14 @@ undefined4 __cdecl FUN_0067ba50(AiFltClassTy *param_1,uint *param_2)
 {
   uint local_48 [2];
   char local_40;
-  undefined2 local_3f;
-  undefined4 local_3d;
-  undefined4 local_39;
-  undefined2 local_14;
+  ushort local_3f;
+  uint local_3d;
+  uint local_39;
+  ushort local_14;
   undefined2 uStack_12;
-  undefined4 local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_10;
+  uint local_c;
+  uint local_8;
   memset(local_48, 0, 0x34); /* compiler bulk-zero initialization */
   local_48[0] = 0x66;
   local_48[1] = 0xffffffff;

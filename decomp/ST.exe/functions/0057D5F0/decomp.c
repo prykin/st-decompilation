@@ -26,6 +26,7 @@ STFishC_field_023BState __thiscall STFishC::sub_0057D5F0(STFishC *this,uint para
       if (iVar1 != 2) {
         return CASE_0;
       }
+
       iVar1 = thunk_FUN_00417740(this,this->field_006C,(short)local_8);
       if (iVar1 != 0) {
         return CASE_0;
@@ -36,6 +37,7 @@ STFishC_field_023BState __thiscall STFishC::sub_0057D5F0(STFishC *this,uint para
     this->field_0237 = local_c[0];
     this->field_0239 = local_10[0];
   }
+
   iVar1 = thunk_FUN_0057d420(this);
   if (iVar1 != 0) {
     return CASE_1;

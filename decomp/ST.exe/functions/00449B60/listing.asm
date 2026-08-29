@@ -62,7 +62,7 @@ LAB_00449bbc:
 00449C2A  8B 11                     MOV EDX,dword ptr [ECX]
 00449C2C  8D 45 C4                  LEA EAX,[EBP + -0x3c]
 00449C2F  50                        PUSH EAX
-00449C30  FF 12                     CALL dword ptr [EDX]
+00449C30  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 00449C32  B8 01 00 00 00            MOV EAX,0x1
 00449C37  5E                        POP ESI
 00449C38  8B E5                     MOV ESP,EBP

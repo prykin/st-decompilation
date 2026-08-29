@@ -43,7 +43,8 @@ TLOBaseTy::GetMessage:
 004BA03B  50                        PUSH EAX
 004BA03C  E8 3B 80 F4 FF            CALL 0x0040207c
 004BA041  8B CB                     MOV ECX,EBX
-004BA043  E8 E1 A5 F4 FF            CALL 0x00404629
+TLOBaseTy::GetMessage::override::prt_4ba043_1ab5ff41:
+004BA043  E8 E1 A5 F4 FF            CALL 0x00404629  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/TLOBaseTy; signature=__thiscall;pointer:/TLOBaseTy;pointer:/TLOBaseTy
 004BA048  66 8B 8B B8 05 00 00      MOV CX,word ptr [EBX + 0x5b8]
 004BA04F  66 8B 93 B4 05 00 00      MOV DX,word ptr [EBX + 0x5b4]
 004BA056  66 8B 83 B0 05 00 00      MOV AX,word ptr [EBX + 0x5b0]
@@ -675,7 +676,8 @@ switchD_004ba2a0::caseD_2:
 004BA865  74 12                     JZ 0x004ba879
 004BA867  6B C0 27                  IMUL EAX,EAX,0x27
 004BA86A  50                        PUSH EAX
-004BA86B  E8 00 04 1F 00            CALL 0x006aac70
+TLOBaseTy::GetMessage::override::prt_4ba86b_37caac39:
+004BA86B  E8 00 04 1F 00            CALL 0x006aac70  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607; signature=__stdcall;pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607;/uint
 004BA870  8B 55 F8                  MOV EDX,dword ptr [EBP + -0x8]
 004BA873  89 83 07 06 00 00         MOV dword ptr [EBX + 0x607],EAX
 LAB_004ba879:
@@ -799,7 +801,8 @@ LAB_004baa1e:
 004BAA1E  39 B7 DE 03 00 00         CMP dword ptr [EDI + 0x3de],ESI
 004BAA24  0F 84 00 01 00 00         JZ 0x004bab2a
 004BAA2A  6A 40                     PUSH 0x40
-004BAA2C  E8 FF 3A 27 00            CALL 0x0072e530
+TLOBaseTy::GetMessage::override::prt_4baa2c_a7ad5ad2:
+004BAA2C  E8 FF 3A 27 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint
 004BAA31  83 C4 04                  ADD ESP,0x4
 004BAA34  3B C6                     CMP EAX,ESI
 004BAA36  74 09                     JZ 0x004baa41
@@ -870,7 +873,8 @@ switchD_004baaa5::caseD_33:
 004BAAFD  E8 A3 A1 F4 FF            CALL 0x00404ca5
 004BAB02  6A 0A                     PUSH 0xa
 004BAB04  8D 8B D5 01 00 00         LEA ECX,[EBX + 0x1d5]
-004BAB0A  E8 BD A7 F4 FF            CALL 0x004052cc
+TLOBaseTy::GetMessage::override::prt_4bab0a_4768c9e3:
+004BAB0A  E8 BD A7 F4 FF            CALL 0x004052cc  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC
 004BAB0F  8B 8B FF 05 00 00         MOV ECX,dword ptr [EBX + 0x5ff]
 004BAB15  50                        PUSH EAX
 004BAB16  E8 B1 A7 F4 FF            CALL 0x004052cc
@@ -882,7 +886,8 @@ LAB_004bab2a:
 004BAB2A  39 B7 EE 03 00 00         CMP dword ptr [EDI + 0x3ee],ESI
 004BAB30  0F 84 01 01 00 00         JZ 0x004bac37
 004BAB36  6A 40                     PUSH 0x40
-004BAB38  E8 F3 39 27 00            CALL 0x0072e530
+TLOBaseTy::GetMessage::override::prt_4bab38_a7ad5ad2:
+004BAB38  E8 F3 39 27 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint
 004BAB3D  83 C4 04                  ADD ESP,0x4
 004BAB40  3B C6                     CMP EAX,ESI
 004BAB42  74 09                     JZ 0x004bab4d
@@ -954,7 +959,8 @@ LAB_004babcb:
 004BAC11  E8 74 9D F4 FF            CALL 0x0040498a
 004BAC16  6A 06                     PUSH 0x6
 004BAC18  8B CF                     MOV ECX,EDI
-004BAC1A  E8 AD A6 F4 FF            CALL 0x004052cc
+TLOBaseTy::GetMessage::override::prt_4bac1a_4768c9e3:
+004BAC1A  E8 AD A6 F4 FF            CALL 0x004052cc  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC
 004BAC1F  8B 8B 03 06 00 00         MOV ECX,dword ptr [EBX + 0x603]
 004BAC25  50                        PUSH EAX
 004BAC26  E8 A1 A6 F4 FF            CALL 0x004052cc
@@ -1307,7 +1313,8 @@ LAB_004bb048:
 004BB05B  8B 8B 1F 06 00 00         MOV ECX,dword ptr [EBX + 0x61f]
 004BB061  3B CF                     CMP ECX,EDI
 004BB063  75 36                     JNZ 0x004bb09b
-004BB065  E8 83 8B F4 FF            CALL 0x00403bed
+TLOBaseTy::GetMessage::override::prt_4bb065_e26f9dee:
+004BB065  E8 83 8B F4 FF            CALL 0x00403bed  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/HoloTy; signature=__stdcall;pointer:/HoloTy
 004BB06A  8B 13                     MOV EDX,dword ptr [EBX]
 004BB06C  8B CB                     MOV ECX,EBX
 004BB06E  89 83 1F 06 00 00         MOV dword ptr [EBX + 0x61f],EAX

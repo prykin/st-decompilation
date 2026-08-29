@@ -22,11 +22,11 @@ FUN_004b1040(int param_1,int param_2,int param_3,int param_4,int param_5,uint pa
 
 {
   uint *puVar2;
-  undefined4 local_5c;
+  uint local_5c;
   int local_58;
-  undefined4 local_54;
-  undefined4 local_50;
-  undefined4 local_4c;
+  uint local_54;
+  uint local_50;
+  uint local_4c;
   int local_48;
   int local_44;
   int local_40;
@@ -34,9 +34,8 @@ FUN_004b1040(int param_1,int param_2,int param_3,int param_4,int param_5,uint pa
   uint local_38;
   int local_34;
   char local_30 [19];
-  undefined4 local_1d;
-  undefined4 local_15;
-
+  uint local_1d;
+  uint local_15;
   puVar2 = &local_5c;
   memset(puVar2, 0, 0x57); /* compiler bulk-zero initialization */
   puVar2 = (undefined4 *)((byte *)puVar2 + 0x54);

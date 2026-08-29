@@ -70,7 +70,7 @@ LAB_00499e7b:
 LAB_00499ec8:
 00499EC8  8B 17                     MOV EDX,dword ptr [EDI]
 00499ECA  8B CF                     MOV ECX,EDI
-00499ECC  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+00499ECC  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 00499ECF  83 C0 F9                  ADD EAX,-0x7
 00499ED2  83 F8 1E                  CMP EAX,0x1e
 00499ED5  77 30                     JA 0x00499f07
@@ -98,7 +98,7 @@ switchD_00499edf::caseD_9:
 00499F0E  75 47                     JNZ 0x00499f57
 00499F10  8B 17                     MOV EDX,dword ptr [EDI]
 00499F12  8B CF                     MOV ECX,EDI
-00499F14  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+00499F14  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 00499F17  83 F8 17                  CMP EAX,0x17
 00499F1A  74 3B                     JZ 0x00499f57
 00499F1C  8B 45 F4                  MOV EAX,dword ptr [EBP + -0xc]
@@ -188,7 +188,7 @@ LAB_00499fdf:
 0049A00A  8B D8                     MOV EBX,EAX
 0049A00C  8B CB                     MOV ECX,EBX
 0049A00E  8B 13                     MOV EDX,dword ptr [EBX]
-0049A010  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+0049A010  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 0049A013  83 F8 09                  CMP EAX,0x9
 0049A016  75 6F                     JNZ 0x0049a087
 0049A018  8D 45 DE                  LEA EAX,[EBP + -0x22]
@@ -300,7 +300,8 @@ LAB_0049a100:
 0049A155  8A 46 24                  MOV AL,byte ptr [ESI + 0x24]
 0049A158  50                        PUSH EAX
 0049A159  66 89 7D CB               MOV word ptr [EBP + -0x35],DI
-0049A15D  E8 58 87 F6 FF            CALL 0x004028ba
+STGroupBoatC::DistributeTargets::override::prt_49a15d_6c9e7102:
+0049A15D  E8 58 87 F6 FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 0049A162  8D 4D BC                  LEA ECX,[EBP + -0x44]
 0049A165  51                        PUSH ECX
 0049A166  6A 02                     PUSH 0x2

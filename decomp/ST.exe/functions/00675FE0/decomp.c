@@ -23,9 +23,11 @@ void __cdecl _AddAllGrpExch(uint param_1)
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_48.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_mdef.cpp",0x118,0,iVar3,"%s",
                                "_AddAllGrpExch");
     if (iVar5 != 0) {
@@ -36,8 +38,8 @@ void __cdecl _AddAllGrpExch(uint param_1)
   }
   if (g_allPlayers_007FA174 != nullptr) {
     objPtr = (char)param_1;
-    /* ST_CALLSITE[00676024]: CALL 0x00404abb; direct=00404ABB STAllPlayersC::GetObjsList */
-    groupContent = (DArrayTy *)STAllPlayersC::GetObjsList(objPtr);
+    /* ST_CALLSITE[00676024]: CALL 0x00404abb; direct=00404ABB STAllPlayersC::GetObjsList; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArrayTy;/char */
+    groupContent = STAllPlayersC::GetObjsList(objPtr);
     if (groupContent != nullptr) {
       dVar1 = groupContent->count;
       if (dVar1 != 0) {

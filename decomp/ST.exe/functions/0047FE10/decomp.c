@@ -24,8 +24,6 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
   int local_EAX_693;
   int local_EAX_876;
   int iVar6;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  void *unaff_EDI;
 
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
@@ -48,8 +46,7 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
   if (iVar5 != 0) {
     if (iVar5 == 1) {
       /* ST_CALLSITE[0047FFC5]: CALL dword ptr [EDX + 0x20] */
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      iVar5 = this->StopMove(unaff_EDI);
+      iVar5 = this->StopMove();
       if (iVar5 == -1) {
         return -1;
       }
@@ -69,6 +66,7 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
       return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
     }
     if (iVar5 != 2) {
+
       iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3bbf,0,0,"%s",
                                  "STBoatC::Scout incorrect entry");
       if (iVar6 == 0) {
@@ -89,6 +87,7 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
     }
     pSVar6 = thunk_FUN_0042b760((char)this->field_0024,this->field_0030);
     if (pSVar6 == nullptr) {
+
       local_EAX_632 =
            ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3b9b,0,0,"%s",
                               "STBoatC::Scout ptr==NULL");
@@ -97,9 +96,11 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
+    /* ST_CALLSITE[004800C5]: CALL 0x0040407a; direct=0040407A STGroupBoatC::sub_0040BC90 */
     local_EAX_693 =
-         thunk_FUN_0040bc90(pSVar6,(uint)(ushort)this->field_0032,(short *)(int)this->field_06D1,
-                            (short *)(int)this->field_06D3,(short *)(int)this->field_06D5,'\0');
+         STGroupBoatC::sub_0040BC90
+                   (pSVar6,(uint)(ushort)this->field_0032,(short *)(int)this->field_06D1,
+                    (short *)(int)this->field_06D3,(short *)(int)this->field_06D5,'\0');
     switch(this->field_06E3) {
     case CASE_0:
       break;
@@ -123,6 +124,7 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
       }
       break;
     default:
+
       local_EAX_876 =
            ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3bb7,0,0,"%s",
                               "STBoatC::Scout incorrect ssi.num 2");
@@ -161,6 +163,7 @@ LAB_0047ff46:
   }
   pSVar6 = thunk_FUN_0042b760((char)this->field_0024,this->field_0030);
   if (pSVar6 == nullptr) {
+
     local_EAX_123 =
          ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3b57,0,0,"%s",
                             "STBoatC::Scout ptr==NULL");
@@ -169,9 +172,11 @@ LAB_0047ff46:
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+  /* ST_CALLSITE[0047FEC4]: CALL 0x0040407a; direct=0040407A STGroupBoatC::sub_0040BC90 */
   local_EAX_180 =
-       thunk_FUN_0040bc90(pSVar6,(uint)(ushort)this->field_0032,(short *)(int)this->field_06CB,
-                          (short *)(int)this->field_06CD,(short *)(int)this->field_06CF,'\0');
+       STGroupBoatC::sub_0040BC90
+                 (pSVar6,(uint)(ushort)this->field_0032,(short *)(int)this->field_06CB,
+                  (short *)(int)this->field_06CD,(short *)(int)this->field_06CF,'\0');
   switch(this->field_06E3) {
   case CASE_0:
     break;
@@ -194,6 +199,7 @@ LAB_0047ff46:
     }
     break;
   default:
+
     local_EAX_400 =
          ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3b76,0,0,"%s",
                             "STBoatC::Scout incorrect ssi.num");

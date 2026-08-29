@@ -37,7 +37,7 @@ LAB_00501a83:
 00501AA1  89 86 54 04 00 00         MOV dword ptr [ESI + 0x454],EAX
 00501AA7  C7 86 58 04 00 00 64 00 00 00  MOV dword ptr [ESI + 0x458],0x64
 00501AB1  C7 86 5C 04 00 00 3C 00 00 00  MOV dword ptr [ESI + 0x45c],0x3c
-00501ABB  E8 E0 98 20 00            CALL 0x0070b3a0
+00501ABB  E8 E0 98 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override
 00501AC0  8B 96 58 04 00 00         MOV EDX,dword ptr [ESI + 0x458]
 00501AC6  8B 8E A0 00 00 00         MOV ECX,dword ptr [ESI + 0xa0]
 00501ACC  89 86 60 04 00 00         MOV dword ptr [ESI + 0x460],EAX
@@ -53,7 +53,7 @@ LAB_00501a83:
 00501AFA  89 8E 70 04 00 00         MOV dword ptr [ESI + 0x470],ECX
 00501B00  C7 86 74 04 00 00 20 00 00 00  MOV dword ptr [ESI + 0x474],0x20
 00501B0A  C7 86 78 04 00 00 35 00 00 00  MOV dword ptr [ESI + 0x478],0x35
-00501B14  E8 87 98 20 00            CALL 0x0070b3a0
+00501B14  E8 87 98 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override
 00501B19  83 C4 10                  ADD ESP,0x10
 00501B1C  89 86 7C 04 00 00         MOV dword ptr [ESI + 0x47c],EAX
 00501B22  8B 86 74 04 00 00         MOV EAX,dword ptr [ESI + 0x474]

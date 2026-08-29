@@ -22,7 +22,7 @@ int __fastcall FUN_00416400(STJellyGunC *param_1)
   byte local_10;
   undefined3 uStack_f;
   int local_c;
-  undefined1 local_6;
+  byte local_6;
   bool local_5;
 
   if (param_1->field_00E3 != '\x01') {

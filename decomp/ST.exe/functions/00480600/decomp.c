@@ -29,35 +29,43 @@ undefined4 __fastcall FUN_00480600(void *param_1)
   int iVar19;
   short sVar20;
   byte bVar21;
-  undefined4 local_20 [2];
+  uint local_20 [2];
   uint local_18;
   short local_14;
   int local_10;
   undefined4 *local_c;
   uint local_8;
 
+
   iVar3 = thunk_FUN_0041c710(param_1);
   this = (STT3DSprC *)((int)param_1 + 0x1d5);
   if (iVar3 == 1) {
     iVar3 = 1;
+
     uVar4 = thunk_FUN_004ad650(this);
+
     Library::Ourlib::ST3DSMAP::SprSetVisible(STField<void *>(param_1,0x211),uVar4,iVar3);
     iVar2 = 1;
   }
   else {
     iVar3 = 0;
+
     uVar4 = thunk_FUN_004ad650(this);
+
     Library::Ourlib::ST3DSMAP::SprSetVisible(STField<void *>(param_1,0x211),uVar4,iVar3);
+
     iVar3 = thunk_FUN_004e60d0(STField<int>(param_1,0x24),0x24);
     if ((iVar3 < 1) ||
        ((STField<int>(param_1,0x77a) + g_playSystem_00802A38->field_00E4) %
         (STField<uint>(param_1,0x77e) * 2) <= STField<uint>(param_1,0x77e))) {
+      /* ST_CALLSITE[00480689]: CALL 0x004050d8; direct=004050D8 thunk_FUN_0041caf0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STT3DSprC; source view only; no Ghidra override */
       iVar2 = thunk_FUN_0041caf0(param_1);
     }
     else {
       iVar2 = 0;
     }
   }
+
   local_EAX_145 = thunk_FUN_004ad650(this);
   FUN_006e6870(STField<void *>(param_1,0x211),local_EAX_145,iVar2);
   switch(STField<undefined4>(param_1,0x6f7)) {
@@ -72,6 +80,7 @@ undefined4 __fastcall FUN_00480600(void *param_1)
     }
     local_8 = (int)puVar5 + STField<int>(param_1,0x822) + iVar3;
     local_c = puVar5;
+
     uVar4 = thunk_FUN_004ac910(this,'\x0e');
     if (local_8 != uVar4) {
       /* ST_CALLSITE[00480858]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
@@ -99,6 +108,7 @@ undefined4 __fastcall FUN_00480600(void *param_1)
 switchD_004806bc_caseD_a:
     uVar10 = ((0x18 - (int)STField<short>(param_1,0x6c) / 0xf) % 0x18 + (4 - DAT_008073fc) * 6) %
              0x18;
+
     uVar4 = thunk_FUN_004ac910(this,'\x0e');
     if (uVar10 != uVar4) {
       /* ST_CALLSITE[00480F73]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
@@ -133,6 +143,7 @@ switchD_004806bc_caseD_a:
     }
     local_8 = scalar_puVar5 + STField<int>(param_1,0x822) + iVar19;
     int scalar_local_c = scalar_puVar5;
+
     uVar4 = thunk_FUN_004ac910(this,'\x0e');
     if (local_8 != uVar4) {
       /* ST_CALLSITE[00480750]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
@@ -159,6 +170,7 @@ switchD_004806bc_caseD_a:
   case 0x16:
   case 0x25:
     if (STField<int>(param_1,0x732) == 1) {
+
       iVar4 = thunk_FUN_0041d350(param_1,(uint)DAT_0080874d);
       iVar3 = STField<int>(param_1,0x74a);
       if (iVar4 == 1) {
@@ -307,6 +319,7 @@ LAB_00480b30:
       if (STField<int>(param_1,0x74a) <= (int)PTR_00806724->entryCount / 2) goto LAB_00480c7f;
 LAB_00480c6a:
       iVar3 = 0;
+
       local_EAX_1646 = thunk_FUN_004ad650(this);
       FUN_006e6870(STField<void *>(param_1,0x211),local_EAX_1646,iVar3);
     }
@@ -384,13 +397,21 @@ LAB_00480e0f:
             STT3DSprC::sub_004ACE60(this,'\r');
             /* ST_CALLSITE[00480E42]: CALL 0x00401bae; direct=00401BAE STT3DSprC::sub_004ACE60 */
             STT3DSprC::sub_004ACE60(this,'\f');
+
             thunk_FUN_004aceb0(this,'\x01');
+
             thunk_FUN_004aceb0(this,'\x02');
+
             thunk_FUN_004aceb0(this,'\0');
+
             thunk_FUN_004aceb0(this,'\x0f');
+
             thunk_FUN_004aceb0(this,'\v');
+
             thunk_FUN_004aceb0(this,'\n');
+
             thunk_FUN_004aceb0(this,'\t');
+
             thunk_FUN_004aceb0(this,'\b');
             STField<undefined4>(param_1,0x746) = 0;
           }
@@ -432,6 +453,7 @@ LAB_00480f12:
   }
   if ((STField<int>(param_1,0x76) == 1) ||
      ((STField<int>(param_1,0x76) == 0 && (STField<short>(param_1,0x6e) != 0x2f)))) {
+
     thunk_FUN_00416390(param_1);
   }
   uVar4 = STField<int>(param_1,0x1c) * 0x41c64e6d + 0x3039;
@@ -449,6 +471,7 @@ LAB_00480f12:
       (local_8 = 0, STField<char>(param_1,0x2bf) != '\0')))) {
     local_c = (undefined4 *)((int)param_1 + 0x2b3);
     do {
+
       puVar5 = thunk_FUN_0041dc40(local_20,(short)*local_c,*(ushort *)(local_c + 1),
                                   STField<short>(param_1,0x6c));
       uVar7 = *puVar5;

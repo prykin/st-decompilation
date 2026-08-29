@@ -111,7 +111,7 @@ LAB_005f120c:
 005F1213  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
 005F1216  8D 45 F4                  LEA EAX,[EBP + -0xc]
 005F1219  50                        PUSH EAX
-005F121A  E8 B6 1E E1 FF            CALL 0x004030d5
+005F121A  E8 B6 1E E1 FF            CALL 0x004030d5  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 005F121F  8B 4D F4                  MOV ECX,dword ptr [EBP + -0xc]
 005F1222  8B 15 7C C5 79 00         MOV EDX,dword ptr [0x0079c57c]
 005F1228  6A 0C                     PUSH 0xc

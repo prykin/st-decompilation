@@ -17,8 +17,10 @@ ChooseMapTy * __cdecl CreateChooseMap(void)
   uint *puVar5;
   int local_8;
 
-  this = (ChooseMapTy *)FUN_006b04d0(0x20c4);
+
+  this = STPointerBoundaryCast<ChooseMapTy *>(FUN_006b04d0(0x20c4));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->vtable = (ChooseMapTyVTable *)&VTable_0079C018;
     this->field_0018 = 0;

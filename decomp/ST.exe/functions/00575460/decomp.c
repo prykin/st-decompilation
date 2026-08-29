@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
+void __cdecl FUN_00575460(RecoveredRecordView_00575460_D990C64A *param_1)
 
 {
   undefined4 *element;
@@ -10,13 +10,13 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
   uint uVar2;
   AnonNested_AnonShape_00575460_06C413C6_044D_A1003587 *pAVar3;
   ST3DSMAPContext *pSVar4;
-  AnonShape_00575460_06C413C6 *pAVar5;
+  RecoveredRecordView_00575460_D990C64A *pRVar5;
   DArrayTy *array;
   int iVar6;
   int *piVar7;
   int local_8;
 
-  pAVar5 = param_1;
+  pRVar5 = param_1;
   pSVar4 = g_sT3DSMAPContext_0080760C;
   if (g_sT3DSMAPContext_0080760C != nullptr) {
     ST3DSMAPContext::sub_006DBCF0(g_sT3DSMAPContext_0080760C);
@@ -34,6 +34,7 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
       pAVar1->field_0004 = uVar2 + 1;
       if (iVar6 == 0) break;
       element = (undefined4 *)(iVar6 + 8);
+
       Library::DKW::TBL::DArrayAppend(array,element);
       FUN_006a5e90((short *)*element);
     }
@@ -41,7 +42,7 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
     param_1->field_0451 = nullptr;
     local_8 = 0;
     if (0 < param_1->field_0455) {
-      auto param_1_after_write = (AnonShape_00575460_06C413C6 *)&param_1->field_0x459; /* compiler stack-slot lifetime split */
+      auto param_1_after_write = (RecoveredRecordView_00575460_D990C64A *)&param_1->field_0x459; /* compiler stack-slot lifetime split */
       do {
         iVar6 = *(int *)param_1_after_write;
         if ((iVar6 != 0) && (element_00 = (int *)(iVar6 + 0xc), STField<int>(iVar6,0xC) != 0)) {
@@ -55,20 +56,21 @@ void __cdecl FUN_00575460(AnonShape_00575460_06C413C6 *param_1)
           } while (*element_00 != *piVar7);
           if (piVar7 == nullptr) {
 LAB_0057554f:
+
             Library::DKW::TBL::DArrayAppend(array,element_00);
             FreeAndNull(element_00);
           }
           *element_00 = 0;
         }
         local_8 = local_8 + 1;
-        param_1_after_write = (AnonShape_00575460_06C413C6 *)&param_1_after_write->field_0x4;
-      } while (local_8 < pAVar5->field_0455);
+        param_1_after_write = (RecoveredRecordView_00575460_D990C64A *)&param_1_after_write->field_0x4;
+      } while (local_8 < pRVar5->field_0455);
     }
     DArrayDestroy(array);
   }
-  pAVar5->field_044D->field_0004 = 0;
+  pRVar5->field_044D->field_0004 = 0;
   while( true ) {
-    pAVar3 = pAVar5->field_044D;
+    pAVar3 = pRVar5->field_044D;
     uVar2 = pAVar3->field_0004;
     if ((uint)pAVar3->field_000C <= uVar2) break;
     iVar6 = *(int *)&pAVar3->field_0x8 * uVar2 + pAVar3[1].field_000C;
@@ -76,8 +78,8 @@ LAB_0057554f:
     if (iVar6 == 0) break;
     FUN_006a5e90(*(short **)(iVar6 + 4));
   }
-  DArrayDestroy((DArrayTy *)pAVar5->field_044D);
-  pAVar5->field_044D = nullptr;
+  DArrayDestroy((DArrayTy *)pRVar5->field_044D);
+  pRVar5->field_044D = nullptr;
   return;
 }
 

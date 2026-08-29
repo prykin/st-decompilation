@@ -26,15 +26,15 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
   int iVar9;
   byte **ppbVar10;
   int iVar11;
-  undefined4 local_c0 [2];
-  undefined4 local_b8 [2];
+  uint local_c0 [2];
+  uint local_b8 [2];
   byte *local_b0 [5];
-  undefined2 local_9c;
-  undefined2 local_9a;
-  undefined2 local_98;
-  undefined2 local_96;
-  undefined2 local_94;
-  undefined2 local_92;
+  ushort local_9c;
+  ushort local_9a;
+  ushort local_98;
+  ushort local_96;
+  ushort local_94;
+  ushort local_92;
   byte *local_84 [5];
   short local_70;
   short local_6e;
@@ -45,17 +45,17 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
   short local_64;
   short local_62;
   short local_60;
-  undefined2 local_5e;
+  ushort local_5e;
   int local_5c;
-  undefined1 local_58;
+  byte local_58;
   int *local_57;
-  undefined2 local_53;
-  AnonShape_005EFAE0_B406B78B *local_41;
+  ushort local_53;
+  RecoveredRecordView_005EFAE0_855D930D *local_41;
   short local_2c;
   short sStack_2a;
   short local_28;
   STJellyManC *local_24;
-  undefined2 local_20;
+  ushort local_20;
   int local_1c;
   int local_18;
   int local_14;
@@ -154,6 +154,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
           if (((int)piVar8 < 1) || (local_14 == *(int *)(&this->field_0x2c1 + iVar9))) {
             iVar4 = ((int)piVar8 + this->field_0235 * 2) * 0x16;
             if (*(int *)(&DAT_007932d0 + iVar4) != 0) {
+
               puVar3 = thunk_FUN_0041dc40(local_b8,(short)*(undefined4 *)
                                                            (&DAT_007932d4 + iVar4 + iVar11),
                                           *(ushort *)((int)(&DAT_007932d4 + iVar4 + iVar11) + 4),
@@ -168,6 +169,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
               local_20 = *(undefined2 *)(&DAT_007932d8 + iVar11 + iVar4 * 0x16);
               local_24 = (STJellyManC *)
                          (*(uint *)(&DAT_007932d4 + iVar4 * 0x16 + iVar11) & 0xffff0000);
+
               puVar3 = thunk_FUN_0041dc40(local_c0,0,0,-(short)this->field_0259);
               local_2c = (short)*puVar3;
               sStack_2a = (short)((uint)*puVar3 >> 0x10);
@@ -180,6 +182,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
                (iVar4 = local_18, piVar8 = param_1, *(int *)(&this->field_0x2c5 + iVar9) != 0)) {
               iVar4 = (&DAT_00792ca0)[local_14 + iVar1 * 3];
               if (iVar4 == 0xab) {
+
                 thunk_FUN_00586240((int)local_6a,(int)local_68,(int)local_66,
                                    (&this->field_028D)[(int)piVar2 * 0x20],this->field_0024,
                                    this->field_0018,this->field_0032);
@@ -241,6 +244,7 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
                 (g_allPlayers_007FA174,(int)this->field_0024,0xa8,
                  (int *)(&this->field_0x2a5 + iVar11),&this->field_02A9 + iVar4,
                  (int *)(&this->field_0x2ad + iVar9),&local_1c);
+
       thunk_FUN_00584a30(this->field_04E0[0],this->field_04E0[1],this->field_04E0[2],
                          *param_1 * 0xc9 + 100,(&this->field_02A9)[iVar4] * 0xc9 + 100,
                          this->field_0024,local_1c,this->field_0018,this->field_0032);
@@ -298,9 +302,10 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       break;
     case 0xb2:
       if ((this->field_05AC == CASE_70) && (this->field_04E0[4] == 0)) {
-        this_00 = (void *)thunk_FUN_0058bab0(this->field_04E0[0],this->field_04E0[1],
+
+        this_00 = STPointerBoundaryCast<void *>(thunk_FUN_0058bab0(this->field_04E0[0],this->field_04E0[1],
                                              this->field_04E0[2],this->field_0024,this->field_0018,
-                                             this->field_0032);
+                                             this->field_0032));
         this->field_04E0[4] = STField<uint>(this_00,0x18);
         if ((-1 < *(int *)(&this->field_0x2a5 + (int)piVar2 * 0x80)) &&
            (-1 < (&this->field_02A9)[(int)piVar2 * 0x20])) {
@@ -355,10 +360,13 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
       if (&stack0x00000000 != (undefined1 *)0x10) {
         sVar5 = this->field_0045;
       }
-      if ((AnonShape_005EFAE0_B406B78B *)this->field_04D0 != nullptr) {
+      if ((RecoveredRecordView_005EFAE0_855D930D *)this->field_04D0 !=
+          nullptr) {
+
         iVar3_mgC = STPlaySystemC::sub_006E62D0
-                              (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_04D0
-                               ,(int *)&local_24);
+                              (g_playSystem_00802A38,
+                               (RecoveredRecordView_005EFAE0_855D930D *)this->field_04D0,
+                               (int *)&local_24);
         if (iVar3_mgC != 0) {
           this->field_04D0 = CASE_0;
           *(undefined4 *)(&this->field_0x29d + (int)piVar2 * 0x80) = 1;
@@ -394,11 +402,14 @@ undefined4 __thiscall TLOBaseTy::sub_004C4550(TLOBaseTy *this,int *param_1)
     }
     else if ((&DAT_00792ca0)[iVar4 * 3] == 0xb3) {
       param_1 = nullptr;
-      if (((AnonShape_005EFAE0_B406B78B *)this->field_04E0[3] != nullptr)
-         && (iVar3_mgB = STPlaySystemC::sub_006E62D0
-                                   (g_playSystem_00802A38,
-                                    (AnonShape_005EFAE0_B406B78B *)this->field_04E0[3],
-                                    (int *)&param_1), iVar3_mgB == 0)) {
+      if (((RecoveredRecordView_005EFAE0_855D930D *)this->field_04E0[3] !=
+           nullptr) &&
+
+         (iVar3_mgB = STPlaySystemC::sub_006E62D0
+                                (g_playSystem_00802A38,
+                                 (RecoveredRecordView_005EFAE0_855D930D *)this->field_04E0[3],
+                                 (int *)&param_1), iVar3_mgB == 0)) {
+
         thunk_FUN_00617b10(param_1,*(undefined4 *)(&this->field_0x2a5 + (int)piVar2 * 0x80),
                            (&this->field_02A9)[(int)piVar2 * 0x20],
                            *(undefined4 *)(&this->field_0x2ad + (int)piVar2 * 0x80),

@@ -2,7 +2,7 @@
 
 
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
-   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00601500.
+   /SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_00601500.
    Evidence: incoming_receiver_captures=1; receiver_accesses=19; incoming_edx_uses=0; calls=17;
    ecx_pointer_setup=16; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[52];
    expected_stack=52; receiver_family_members=2; adopt_untyped_existing_thiscall
@@ -21,13 +21,26 @@
    00624C9E; literal 65535 at 00624C6F | 0062A370 -> 00601500 @ 0062A54B; literal 65535 at 0062A522
    | 0063C170 -> 00601500 @ 0063C23C; unproven partial register write at 0063C1EE | 0063C380 ->
    00601500 @ 0063C444; unproven partial register write at 0063C3F6 | 0063C510 -> 00601500 @
-   0063C5F4; unproven partial register write at 0063C5A6 */
+   0063C5F4; unproven partial register write at 0063C5A6
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (14), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=005F27C0 @ 005F2A2B -> read as EAX on
+   every CFG path | 005F27C0 @ 005F2B21 -> read as EAX on every CFG path | 006001E0 @ 0060039D ->
+   read as EAX on every CFG path | 006101B0 @ 0061084C -> read as EAX on every CFG path | 006101B0 @
+   006111CC -> read as EAX on every CFG path | 006101B0 @ 0061182E -> read as EAX on every CFG path
+   | 006101B0 @ 00612338 -> read as EAX on every CFG path | 00619C70 @ 0061A739 -> read as EAX on
+   every CFG path | 0061B340 @ 0061B680 -> read as EAX on every CFG path | 0061B340 @ 0061BB26 ->
+   read as EAX on every CFG path | 0061E7F0 @ 0061ED10 -> killed on every CFG path | 00624920 @
+   00624C9E -> read as EAX on every CFG path | 0062A370 @ 0062A54B -> read as EAX on every CFG path
+   | 00639670 @ 006397FF -> read as EAX on every CFG path | 0063C170 @ 0063C23C -> read as EAX on
+   every CFG path | 0063C380 @ 0063C444 -> unknown: terminal before explicit accumulator kill |
+   0063C510 @ 0063C5F4 -> killed on every CFG path */
 
-uint __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500
-          (AnonReceiver_00601500 *this,int param_1,int param_2,int param_3,int param_4,int param_5,
-          int param_6,int param_7,int param_8,int param_9,ushort param_10,int param_11,int param_12,
-          int param_13)
+int __thiscall
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00601500::FUN_00601500
+          (RecoveredReceiver_00601500 *this,int param_1,int param_2,int param_3,int param_4,
+          int param_5,int param_6,int param_7,int param_8,int param_9,ushort param_10,int param_11,
+          int param_12,int param_13)
 
 {
   uint uVar1;
@@ -50,7 +63,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500
   int local_1c;
   int local_18;
   int local_14;
-  AnonReceiver_00601500 *local_10;
+  RecoveredReceiver_00601500 *local_10;
   uint local_c;
   int local_8;
 
@@ -75,13 +88,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500
     local_c = 1;
     local_8 = 0;
 cf_common_exit_00601B38:
-    *(int *)&this->field_0x28 = param_3;
-    *(int *)&this->field_0x20 = param_1;
-    *(int *)&this->field_0x24 = param_2;
-    *(int *)this = iVar10;
-    *(int *)&this->field_0x4 = iVar7;
-    *(int *)&this->field_0x8 = local_8;
-    *(undefined4 *)&this->field_0x14 = 0;
+    this->field_0028 = param_3;
+    this->field_0020 = param_1;
+    this->field_0024 = param_2;
+    this->field_0000 = iVar10;
+    this->field_0004 = iVar7;
+    this->field_0008 = local_8;
+    this->field_0014 = 0;
     return local_c;
   }
   if (local_c != 0) {
@@ -103,10 +116,12 @@ cf_common_exit_00601B38:
            (iVar8 = g_worldGrid.sizeX * iVar7, *(char *)(DAT_007fb26c + iVar8 + iVar10) != '\0'))))
          && (((&DAT_007fb24c)[param_7] == 0 ||
              (*(char *)((&DAT_007fb24c)[param_7] + iVar8 + iVar10) == '\0')))) {
-        if ((this->field_0x2c == '\0') && (iVar5 < 5)) {
+        if ((this->field_002C == '\0') && (iVar5 < 5)) {
+
           uVar2 = thunk_FUN_00497030(iVar10,iVar7,param_7,1,param_8);
           if (-1 < (int)uVar2) {
             local_c = 5;
+
             thunk_FUN_00497850(param_4,param_5,param_6,param_1,param_2,param_3,uVar2,&local_14,
                                &local_18,&local_1c);
             thunk_FUN_00637ae0(local_14,local_18,local_1c);
@@ -114,7 +129,7 @@ cf_common_exit_00601B38:
           }
         }
         else {
-          this->field_0x2c = 1;
+          this->field_002C = 1;
         }
       }
     }
@@ -125,6 +140,7 @@ cf_common_exit_00601B38:
     sVar6 = (short)iVar10;
     sVar9 = (short)iVar7;
     sVar13 = (short)local_8;
+
     iVar3 = thunk_FUN_004961b0(sVar6,sVar9,sVar13);
     if (iVar3 == 0) {
       if ((((sVar6 < 0) || (g_worldGrid.sizeX <= sVar6)) ||
@@ -152,20 +168,21 @@ cf_common_exit_00601B38:
         if ((param_13 != 0) && (this_00[1].vtable == (STWorldObjectVTable *)param_7)) {
           return local_c;
         }
-        *(int *)local_10 = iVar10;
-        *(int *)&local_10->field_0x4 = iVar7;
-        *(int *)&local_10->field_0x8 = local_8;
+        local_10->field_0000 = iVar10;
+        local_10->field_0004 = iVar7;
+        local_10->field_0008 = local_8;
 LAB_00601aeb:
         local_c = 2;
         uVar1 = *(undefined4 *)&this_00->field_0x18;
-        *(int *)&local_10->field_0x18 = iVar4;
-        *(undefined4 *)&local_10->field_0x10 = uVar1;
-        *(STWorldObject **)&local_10->field_0x14 = this_00;
-        *(undefined4 *)&local_10->field_0xc = 1;
+        local_10->field_0018 = iVar4;
+        local_10->field_0010 = uVar1;
+        local_10->field_0014 = this_00;
+        local_10->field_000C = 1;
         if (param_12 != 0) {
           return 2;
         }
-        thunk_FUN_00601d10(param_7,param_8,(int)this_00,(short)param_9,param_10,param_11,0x110);
+        thunk_FUN_00601d10(param_7,param_8,(RecoveredRecord_00601D10_11B39116 *)this_00,
+                           (short)param_9,param_10,param_11,0x110);
         return local_c;
       }
     }
@@ -221,14 +238,14 @@ LAB_006018c7:
       local_20 = 4;
     }
   }
-  if (((*(int *)local_10 != iVar10) || (*(int *)&local_10->field_0x4 != iVar7)) ||
-     (*(int *)&local_10->field_0x8 != iVar8)) {
-    *(int *)local_10 = iVar10;
-    *(int *)&local_10->field_0x4 = iVar7;
-    *(int *)&local_10->field_0x8 = iVar8;
-    *(undefined4 *)&local_10->field_0xc = 0;
+  if (((local_10->field_0000 != iVar10) || (local_10->field_0004 != iVar7)) ||
+     (local_10->field_0008 != iVar8)) {
+    local_10->field_0000 = iVar10;
+    local_10->field_0004 = iVar7;
+    local_10->field_0008 = iVar8;
+    local_10->field_000C = 0;
   }
-  if (*(int *)&local_10->field_0xc != 0) {
+  if (local_10->field_000C != 0) {
     return local_c;
   }
   iVar10 = local_1c;
@@ -257,9 +274,9 @@ LAB_006018c7:
                               (this_00,param_1,param_2,param_3,param_4,param_5,param_6),
            iVar8 = local_1c, 0 < iVar4)))) &&
          ((param_13 == 0 || (this_00[1].vtable != (STWorldObjectVTable *)param_7)))) {
-        *(int *)local_10 = local_8;
-        *(int *)&local_10->field_0x4 = iVar7;
-        *(int *)&local_10->field_0x8 = iVar10;
+        local_10->field_0000 = local_8;
+        local_10->field_0004 = iVar7;
+        local_10->field_0008 = iVar10;
         goto LAB_00601aeb;
       }
     }

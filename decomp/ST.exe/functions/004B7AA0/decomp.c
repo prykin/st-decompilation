@@ -6,6 +6,7 @@ undefined4 __fastcall FUN_004b7aa0(TLOBaseTy *param_1)
 {
   int iVar1;
 
+
   iVar1 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
   if (iVar1 == param_1->field_01F5->field_020C) {
     if (param_1->field_04D0 == CASE_1) {

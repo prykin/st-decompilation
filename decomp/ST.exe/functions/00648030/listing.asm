@@ -65,7 +65,7 @@ LAB_006480f5:
 006480F8  8B CB                     MOV ECX,EBX
 006480FA  52                        PUSH EDX
 006480FB  C7 45 FC 00 00 00 00      MOV dword ptr [EBP + -0x4],0x0
-00648102  E8 3A B2 DB FF            CALL 0x00403341
+00648102  E8 3A B2 DB FF            CALL 0x00403341  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 00648107  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 0064810A  8B 15 14 D6 79 00         MOV EDX,dword ptr [0x0079d614]
 00648110  6A 0C                     PUSH 0xc

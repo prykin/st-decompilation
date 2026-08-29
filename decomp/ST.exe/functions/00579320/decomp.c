@@ -13,7 +13,8 @@ STCrabC * __cdecl CreateSTCrab(void)
 {
   STCrabC *pSVar1;
 
-  pSVar1 = (STCrabC *)FUN_006b04d0(0x281);
+  /* ST_CALLSITE[00579325]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STCrabC; signature=__stdcall;pointer:/STCrabC;/uint */
+  pSVar1 = FUN_006b04d0(0x281);
   if (pSVar1 != nullptr) {
     pSVar1 = STCrabC::STCrabC(pSVar1);
     return pSVar1;

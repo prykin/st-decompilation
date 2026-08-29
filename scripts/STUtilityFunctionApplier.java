@@ -393,12 +393,15 @@ public class STUtilityFunctionApplier extends GhidraScript {
     private void deleteOverrides(Function caller, Address call) {
         Namespace root = HighFunction.findOverrideSpace(caller);
         if (root == null) return;
-        List<Symbol> remove = new ArrayList<>();
-        for (Symbol symbol : currentProgram.getSymbolTable().getSymbols(call))
-            if (root.equals(symbol.getParentNamespace()) &&
-                    HighFunctionDBUtil.readOverride(symbol) != null)
-                remove.add(symbol);
-        for (Symbol symbol : remove) symbol.delete();
+        List<DataTypeSymbol> remove = new ArrayList<>();
+        for (Symbol symbol : currentProgram.getSymbolTable().getSymbols(call)) {
+            if (!root.equals(symbol.getParentNamespace())) continue;
+            DataTypeSymbol value = HighFunctionDBUtil.readOverride(symbol);
+            if (value != null) remove.add(value);
+        }
+        for (DataTypeSymbol value : remove) {
+            if (value.getSymbol().delete()) value.cleanupUnusedOverride();
+        }
     }
 
     private Function function(String address) {

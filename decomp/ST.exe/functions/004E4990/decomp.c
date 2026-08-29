@@ -17,8 +17,10 @@ undefined4 __fastcall FUN_004e4990(TLOBaseTy *param_1)
     local_8 = param_1;
     if (0 < (int)array->count) {
       do {
+
         DArrayGetElement(array,index,&local_8);
         if (local_8 == param_1) {
+
           DArrayRemoveAt(g_packedRecords_A62x8[(int)param_1->field_0024].field1972_0x9e6,index);
           break;
         }

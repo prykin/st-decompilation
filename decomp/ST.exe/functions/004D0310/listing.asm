@@ -96,7 +96,7 @@ LAB_004d041b:
 LAB_004d0428:
 004D0428  6A 0A                     PUSH 0xa
 004D042A  8D 8E D5 01 00 00         LEA ECX,[ESI + 0x1d5]
-004D0430  E8 97 4E F3 FF            CALL 0x004052cc
+004D0430  E8 97 4E F3 FF            CALL 0x004052cc  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STT3DSprC; source view only; no Ghidra override
 004D0435  8B 8E FF 05 00 00         MOV ECX,dword ptr [ESI + 0x5ff]
 004D043B  50                        PUSH EAX
 004D043C  E8 8B 4E F3 FF            CALL 0x004052cc

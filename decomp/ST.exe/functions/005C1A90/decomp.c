@@ -22,25 +22,24 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
   RecoveredSourceFamily_dibcopy *pRVar8;
   bool bVar10;
   MReportTy *this_00;
-  DWORD DVar11;
+  int iVar11;
   int local_EAX_49;
-  int iVar13;
   char *pcVar14_mg4;
-  uint *puVar14;
-  void *pvVar15;
+  uint *puVar12;
+  void *pvVar13;
   char *pcVar14_mg2;
   char *pcVar14_mg0;
   char *pcVar14_mg3;
   int iVar12;
   int iVar16;
-  uint uVar16;
-  uint uVar17;
-  int iVar18;
-  int *piVar19;
-  char *pcVar20;
-  int *piVar21;
-  char *pcVar22;
-  UINT UVar23;
+  uint uVar14;
+  uint uVar15;
+  int iVar17;
+  int *piVar18;
+  char *pcVar19;
+  int *piVar20;
+  char *pcVar21;
+  UINT UVar22;
   InternalExceptionFrame local_5c;
   uint local_18;
   uint local_14;
@@ -49,15 +48,18 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
   int *local_8;
 
   local_10 = this;
-  DVar11 = STAppC::sub_006E51B0(this->field_0010);
-  piVar21 = nullptr;
-  this->field_0061 = DVar11;
+
+  iVar11 = STAppC::sub_006E51B0(this->field_0010);
+  piVar20 = nullptr;
+  this->field_0061 = iVar11;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
+
   local_EAX_49 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   this_00 = local_10;
   if (local_EAX_49 != 0) {
     g_currentExceptionFrame = local_5c.previous;
+
     iVar16 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x42b,0,local_EAX_49,
                                 "%s","MReportTy::GetMessage");
     if (iVar16 == 0) {
@@ -71,36 +73,38 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
     if (SVar5 < MESS_SHARED_6980) {
       if (SVar5 == MESS_SHARED_697F) {
         if ((message->arg0).words.low < 3) {
+
           ccFntTy::SetSurf(local_10->field_0087,(message->arg1).i32,0,0,0,0,0);
           wVar4 = (message->arg0).words.low;
           if (wVar4 == 1) {
-            UVar23 = 0x23f0;
+            UVar22 = 0x23f0;
           }
           else if (wVar4 == 2) {
-            UVar23 = 0x23f2;
+            UVar22 = 0x23f2;
           }
           else {
-            UVar23 = 0x23f1;
+            UVar22 = 0x23f1;
           }
-          pcVar14_mg0 = LoadResourceString(UVar23,g_hINSTANCE_00807618);
-          uVar16 = 0xffffffff;
+          pcVar14_mg0 = LoadResourceString(UVar22,g_hINSTANCE_00807618);
+          uVar14 = 0xffffffff;
           do {
-            pcVar20 = pcVar14_mg0;
-            if (uVar16 == 0) break;
-            uVar16 = uVar16 - 1;
-            pcVar20 = pcVar14_mg0 + 1;
+            pcVar19 = pcVar14_mg0;
+            if (uVar14 == 0) break;
+            uVar14 = uVar14 - 1;
+            pcVar19 = pcVar14_mg0 + 1;
             cVar1 = *pcVar14_mg0;
-            pcVar14_mg0 = pcVar20;
+            pcVar14_mg0 = pcVar19;
           } while (cVar1 != '\0');
-          uVar16 = ~uVar16;
-          pcVar20 = pcVar20 + -uVar16;
-          pcVar22 = (char *)&DAT_0080f33a;
-          memmove(pcVar22, pcVar20, uVar16); /* compiler REP MOVS byte copy */
-          uVar17 = 0;
-          for (puVar14 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar14 != nullptr;
-              puVar14 = Library::MSVCRT::FUN_0072e560(puVar14,'\n')) {
-            *(undefined1 *)puVar14 = 0x20;
+          uVar14 = ~uVar14;
+          pcVar19 = pcVar19 + -uVar14;
+          pcVar21 = (char *)&DAT_0080f33a;
+          memmove(pcVar21, pcVar19, uVar14); /* compiler REP MOVS byte copy */
+          uVar15 = 0;
+          for (puVar12 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar12 != nullptr;
+              puVar12 = Library::MSVCRT::FUN_0072e560(puVar12,'\n')) {
+            *(undefined1 *)puVar12 = 0x20;
           }
+
           ccFntTy::WrStr(this_00->field_0087,(char *)&DAT_0080f33a,-1,-1,
                          (uint)((message->arg0).words.high == 1));
           if ((message->arg0).words.high == 1) {
@@ -122,34 +126,34 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
         else if (SVar5 == MESS_MREPORTTY_6215) {
           pDVar7 = (&local_10->field_0347)[(byte)local_10->field_006A];
           if (pDVar7 != nullptr) {
-            uVar16 = local_10->field_006B;
-            if (uVar16 < pDVar7->count) {
-              pvVar15 = DArrayAt<void>(pDVar7, uVar16);
+            uVar14 = local_10->field_006B;
+            if (uVar14 < pDVar7->count) {
+              pvVar13 = DArrayAt<void>(pDVar7, uVar14);
             }
             else {
-              pvVar15 = nullptr;
+              pvVar13 = nullptr;
             }
-            if (pvVar15 != nullptr) {
-              if (uVar16 < pDVar7->count) {
-                piVar21 = DArrayAt<int>(pDVar7, uVar16);
+            if (pvVar13 != nullptr) {
+              if (uVar14 < pDVar7->count) {
+                piVar20 = DArrayAt<int>(pDVar7, uVar14);
               }
               else {
-                piVar21 = nullptr;
+                piVar20 = nullptr;
               }
-              iVar13 = *piVar21 + 1;
+              iVar11 = *piVar20 + 1;
               pcVar14_mg2 = LoadResourceString(0x2445,g_hINSTANCE_00807618);
               /* ST_CALLSITE[005C201C]: CALL dword ptr [0x0085bde8] */
-              wsprintfA((LPSTR)&DAT_0080f33a,"%s %d",pcVar14_mg2,iVar13);
+              wsprintfA((LPSTR)&DAT_0080f33a,"%s %d",pcVar14_mg2,iVar11);
               /* ST_CALLSITE[005C2033]: CALL 0x00404881; direct=00404881 MReportTy::PaintBut */
               PaintBut(this_00,message,0,2,'\x01',&DAT_0080f33a);
             }
           }
         }
-        else if ((SVar5 == MESS_MMSGTY_68FF) && (uVar16 = (message->arg0).u32, uVar16 < 3)) {
-          local_10->field_006A = (char)uVar16;
-          uVar16 = (&local_10->field_0347)[uVar16 & 0xff]->count;
-          if (uVar16 <= local_10->field_006B) {
-            local_10->field_006B = uVar16 - 1;
+        else if ((SVar5 == MESS_MMSGTY_68FF) && (uVar14 = (message->arg0).u32, uVar14 < 3)) {
+          local_10->field_006A = (char)uVar14;
+          uVar14 = (&local_10->field_0347)[uVar14 & 0xff]->count;
+          if (uVar14 <= local_10->field_006B) {
+            local_10->field_006B = uVar14 - 1;
           }
           /* ST_CALLSITE[005C1F94]: CALL 0x00403b07; direct=00403B07 MReportTy::SetCtrl */
           SetCtrl(local_10);
@@ -185,15 +189,17 @@ int __thiscall MReportTy::GetMessage(MReportTy *this,STMessage *message)
     if (SVar5 == MESS_SHARED_6980) {
       pDVar7 = (&local_10->field_0347)[(byte)local_10->field_006A];
       if ((pDVar7 != nullptr) &&
-         (uVar16 = (uint)(message->arg0).words.low, uVar16 < pDVar7->count)) {
-        piVar21 = DArrayAt<int>(pDVar7, uVar16);
+         (uVar14 = (uint)(message->arg0).words.low, uVar14 < pDVar7->count)) {
+        piVar20 = DArrayAt<int>(pDVar7, uVar14);
       }
-      if (piVar21 != nullptr) {
+      if (piVar20 != nullptr) {
+
         ccFntTy::SetSurf(local_10->field_0087,(message->arg1).i32,0,0,0,0,0);
-        iVar13 = *piVar21 + 1;
+        iVar11 = *piVar20 + 1;
         pcVar14_mg3 = LoadResourceString(0x2445,g_hINSTANCE_00807618);
         /* ST_CALLSITE[005C223B]: CALL dword ptr [0x0085bde8] */
-        wsprintfA((LPSTR)&DAT_0080f33a,"%s %d",pcVar14_mg3,iVar13);
+        wsprintfA((LPSTR)&DAT_0080f33a,"%s %d",pcVar14_mg3,iVar11);
+
         ccFntTy::WrStr(this_00->field_0087,(char *)&DAT_0080f33a,-1,-1,
                        (uint)((message->arg0).words.high == 1));
         if ((message->arg0).words.high == 1) {
@@ -213,32 +219,32 @@ switchD_005c1b14_caseD_5:
   }
   if (SVar5 == MESS_MREPORTTY_6214) {
     if (local_10->field_006A == '\x01') {
-      UVar23 = 0x23f0;
+      UVar22 = 0x23f0;
     }
     else if (local_10->field_006A == '\x02') {
-      UVar23 = 0x23f2;
+      UVar22 = 0x23f2;
     }
     else {
-      UVar23 = 0x23f1;
+      UVar22 = 0x23f1;
     }
-    pcVar14_mg4 = LoadResourceString(UVar23,g_hINSTANCE_00807618);
-    uVar16 = 0xffffffff;
+    pcVar14_mg4 = LoadResourceString(UVar22,g_hINSTANCE_00807618);
+    uVar14 = 0xffffffff;
     do {
-      pcVar20 = pcVar14_mg4;
-      if (uVar16 == 0) break;
-      uVar16 = uVar16 - 1;
-      pcVar20 = pcVar14_mg4 + 1;
+      pcVar19 = pcVar14_mg4;
+      if (uVar14 == 0) break;
+      uVar14 = uVar14 - 1;
+      pcVar19 = pcVar14_mg4 + 1;
       cVar1 = *pcVar14_mg4;
-      pcVar14_mg4 = pcVar20;
+      pcVar14_mg4 = pcVar19;
     } while (cVar1 != '\0');
-    uVar16 = ~uVar16;
-    pcVar20 = pcVar20 + -uVar16;
-    pcVar22 = (char *)&DAT_0080f33a;
-    memmove(pcVar22, pcVar20, uVar16); /* compiler REP MOVS byte copy */
-    uVar17 = 0;
-    for (puVar14 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar14 != nullptr;
-        puVar14 = Library::MSVCRT::FUN_0072e560(puVar14,'\n')) {
-      *(undefined1 *)puVar14 = 0x20;
+    uVar14 = ~uVar14;
+    pcVar19 = pcVar19 + -uVar14;
+    pcVar21 = (char *)&DAT_0080f33a;
+    memmove(pcVar21, pcVar19, uVar14); /* compiler REP MOVS byte copy */
+    uVar15 = 0;
+    for (puVar12 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar12 != nullptr;
+        puVar12 = Library::MSVCRT::FUN_0072e560(puVar12,'\n')) {
+      *(undefined1 *)puVar12 = 0x20;
     }
     /* ST_CALLSITE[005C1F2B]: CALL 0x00404881; direct=00404881 MReportTy::PaintBut */
     PaintBut(this_00,message,0,2,'\x01',&DAT_0080f33a);
@@ -269,44 +275,44 @@ switchD_005c1b14_caseD_5:
         local_18 = STReplaceLowWord((uint32_t)(local_18), (uint16_t)(uVar2));
         local_14 = STReplaceLowWord((uint32_t)(local_14), (uint16_t)(uVar3));
         if ((local_10->field_0067 != '\0') && (local_10->field_0069 != '\0')) {
-          piVar19 = &local_10->field_0357;
+          piVar18 = &local_10->field_0357;
           local_c = 9;
           do {
-            if (piVar19[5] != 0) {
-              if (((((int)(uint)uVar2 < piVar19[-1]) ||
-                   (piVar19[1] + piVar19[-1] <= (int)(uint)uVar2)) || ((int)(uint)uVar3 < *piVar19))
-                 || (piVar19[2] + *piVar19 <= (int)(uint)uVar3)) {
+            if (piVar18[5] != 0) {
+              if (((((int)(uint)uVar2 < piVar18[-1]) ||
+                   (piVar18[1] + piVar18[-1] <= (int)(uint)uVar2)) || ((int)(uint)uVar3 < *piVar18))
+                 || (piVar18[2] + *piVar18 <= (int)(uint)uVar3)) {
                 bVar10 = false;
               }
               else {
                 bVar10 = true;
               }
-              piVar21 = local_8;
+              piVar20 = local_8;
               if (bVar10) {
-                local_8 = (int *)piVar19[5];
-                piVar21 = local_8;
+                local_8 = (int *)piVar18[5];
+                piVar20 = local_8;
               }
             }
-            piVar19 = piVar19 + 7;
+            piVar18 = piVar18 + 7;
             local_c = local_c + -1;
           } while (local_c != 0);
         }
-        piVar19 = (int *)local_10->field_044F;
-        if (piVar19 != piVar21) {
-          if (piVar19 != nullptr) {
+        piVar18 = (int *)local_10->field_044F;
+        if (piVar18 != piVar20) {
+          if (piVar18 != nullptr) {
             local_10->field_002D = 0x4202;
             local_10->field_0031 = 0;
             local_10->field_0033 = 3;
-            local_10->field_0035 = piVar19;
+            local_10->field_0035 = piVar18;
             /* ST_CALLSITE[005C1C06]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
             g_cursorClass_00802A30->GetMessage((STMessage *)&local_10->field_0x1d);
           }
-          this_00->field_044F = piVar21;
-          if (piVar21 != nullptr) {
+          this_00->field_044F = piVar20;
+          if (piVar20 != nullptr) {
             this_00->field_002D = 0x4201;
             this_00->field_0031 = 0;
             this_00->field_0033 = 3;
-            this_00->field_0035 = piVar21;
+            this_00->field_0035 = piVar20;
             /* ST_CALLSITE[005C1C36]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
             g_cursorClass_00802A30->GetMessage((STMessage *)&this_00->field_0x1d);
           }
@@ -323,39 +329,39 @@ switchD_005c1b14_caseD_5:
     }
     /* ST_CALLSITE[005C1C72]: CALL dword ptr [0x0085bde8] */
     wsprintfA(&CHAR_00h_0080ed16,"%s%s",&CHAR_00h_00807680,&CHAR_00h_0080c52e);
-    uVar16 = 0xffffffff;
-    pcVar20 = &CHAR_00h_0080c52e;
+    uVar14 = 0xffffffff;
+    pcVar19 = &CHAR_00h_0080c52e;
     do {
-      pcVar22 = pcVar20;
-      if (uVar16 == 0) break;
-      uVar16 = uVar16 - 1;
-      pcVar22 = pcVar20 + 1;
-      cVar1 = *pcVar20;
-      pcVar20 = pcVar22;
+      pcVar21 = pcVar19;
+      if (uVar14 == 0) break;
+      uVar14 = uVar14 - 1;
+      pcVar21 = pcVar19 + 1;
+      cVar1 = *pcVar19;
+      pcVar19 = pcVar21;
     } while (cVar1 != '\0');
-    uVar16 = ~uVar16;
-    pcVar20 = pcVar22 + -uVar16;
-    pcVar22 = &CHAR_00h_0080ef1e;
-    memmove(pcVar22, pcVar20, uVar16); /* compiler REP MOVS byte copy */
-    uVar17 = 0;
-    uVar16 = 0xffffffff;
-    pcVar20 = &CHAR_00h_0080ed16;
+    uVar14 = ~uVar14;
+    pcVar19 = pcVar21 + -uVar14;
+    pcVar21 = &CHAR_00h_0080ef1e;
+    memmove(pcVar21, pcVar19, uVar14); /* compiler REP MOVS byte copy */
+    uVar15 = 0;
+    uVar14 = 0xffffffff;
+    pcVar19 = &CHAR_00h_0080ed16;
     do {
-      pcVar22 = pcVar20;
-      if (uVar16 == 0) break;
-      uVar16 = uVar16 - 1;
-      pcVar22 = pcVar20 + 1;
-      cVar1 = *pcVar20;
-      pcVar20 = pcVar22;
+      pcVar21 = pcVar19;
+      if (uVar14 == 0) break;
+      uVar14 = uVar14 - 1;
+      pcVar21 = pcVar19 + 1;
+      cVar1 = *pcVar19;
+      pcVar19 = pcVar21;
     } while (cVar1 != '\0');
-    uVar16 = ~uVar16;
-    pcVar20 = pcVar22 + -uVar16;
-    pcVar22 = (char *)&DAT_0080ee1a;
-    memmove(pcVar22, pcVar20, uVar16); /* compiler REP MOVS byte copy */
+    uVar14 = ~uVar14;
+    pcVar19 = pcVar21 + -uVar14;
+    pcVar21 = (char *)&DAT_0080ee1a;
+    memmove(pcVar21, pcVar19, uVar14); /* compiler REP MOVS byte copy */
     STPiece<0,1>(DAT_008087a0) = 8;
     /* ST_CALLSITE[005C1CD3]: CALL 0x00404b4c; direct=00404B4C STAppC::sub_0056E9E0 */
-    iVar13 = STAppC::sub_0056E9E0((STAppC *)&DAT_00807620,1);
-    if (iVar13 != 0) {
+    iVar11 = STAppC::sub_0056E9E0((STAppC *)&DAT_00807620,1);
+    if (iVar11 != 0) {
       this_00->field_004D = 0x6104;
       this_00->field_0051 = 0;
       this_00->field_0055 = 2;
@@ -394,14 +400,14 @@ LAB_005c1d24:
         dVar6 = (&local_10->field_0347)[(byte)local_10->field_006A]->count;
         local_10->field_0307 = local_10->field_006B;
         local_10->field_030F = dVar6;
-        iVar13 = local_10->field_030B * dVar6;
-        iVar18 = iVar13 + 10;
+        iVar11 = local_10->field_030B * dVar6;
+        iVar17 = iVar11 + 10;
         local_10->field_032B = 0x50;
         local_10->field_0333 = 200;
-        iVar13 = 0x1ea - (iVar13 + -0x14) / 2;
-        local_10->field_032F = iVar13;
-        if (600 < iVar13 + iVar18) {
-          local_10->field_032F = 600 - iVar18;
+        iVar11 = 0x1ea - (iVar11 + -0x14) / 2;
+        local_10->field_032F = iVar11;
+        if (600 < iVar11 + iVar17) {
+          local_10->field_032F = 600 - iVar17;
         }
         /* ST_CALLSITE[005C1E3E]: CALL dword ptr [EDX + 0x8] */
         (*local_10->field_000C->vtable->CreateObject)
@@ -427,6 +433,7 @@ LAB_005c1d24:
   }
 cf_common_exit_005C22B1:
   g_currentExceptionFrame = local_5c.previous;
+
   iVar12 = FUN_006e5fd0(this_00,message);
   return iVar12;
 }

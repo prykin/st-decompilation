@@ -7,13 +7,22 @@
    [STAbiConsistencyApplier] pointer_return_element_width target=return:-1: return=/byte *32
    Evidence: generic returned address is dereferenced with one consistent machine width across
    callers; width=1, sites=0043BEB0 @ 0043C2BE MOV BL,byte ptr [EAX + 0x1] | 0043BEB0 @ 0043C2C7 MOV
-   BL,byte ptr [EAX + -0x2] */
+   BL,byte ptr [EAX + -0x2]
+   [STAbiConsistencyApplier] ecx_context_register target=function:-1: prototype=byte * __stdcall
+   FUN_0044d320(STAllPlayersC * context, Global_sub_0044D320_param_1Enum param_2)
+   previous_return_type=pointer:/byte Evidence: incoming ECX reaches only unadjusted __thiscall
+   receivers of /STAllPlayersC; receiver_calls=1; exact RET purge=4 matches declared stack bytes=4;
+   sites=0044D74B -> STAllPlayersC::GetObjPtr receiver=/STAllPlayersC
 
-byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
+   [STSwitchEnumApplier] Switch target param_2 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_0044D320_param_2Enum. Cases:
+   CASE_1=1;CASE_2=2;CASE_4=4;CASE_8=8;CASE_10=16;CASE_28=40 */
+
+byte * FUN_0044d320(STAllPlayersC *context,Global_sub_0044D320_param_2Enum param_2)
 
 {
   short sVar1;
-  Global_sub_0044D320_param_1Enum GVar2;
+  Global_sub_0044D320_param_2Enum GVar2;
   byte *pbVar3;
   STGameObjC *this;
   int local_EAX_1172;
@@ -26,26 +35,27 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
   int local_EAX_1797;
   int local_EAX_1904;
   int local_EAX_2097;
-  uint uVar6;
   int local_EAX_2244;
   int local_EAX_2370;
-  uint uVar7;
+  uint uVar6;
   int local_EAX_2562;
   int iVar4;
-  undefined4 local_18;
+  uint local_18;
   DArrayTy *local_14;
   dword local_10;
   STAllPlayersC *local_c;
   int local_8;
 
-  GVar2 = param_1;
+  GVar2 = param_2;
   local_8 = 0;
   local_14 = (DArrayTy *)g_packedRecords_A62x8[DAT_0080874d].field102_0x16d;
   local_10 = local_14->count;
+  local_c = context;
+
   pbVar3 = Library::DKW::LIB::MemAlloc(0xc);
-  if (param_1 < 0x1001) {
+  if (param_2 < 0x1001) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    if (param_1 == 0x1000) {
+    if (param_2 == 0x1000) {
       pbVar3[0] = 1;
       pbVar3[1] = 2;
       pbVar3[2] = 0;
@@ -59,8 +69,8 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
       pbVar3[10] = 1;
       pbVar3[0xb] = 0xb;
     }
-    else if (param_1 < 0x41) {
-      if (param_1 == 0x40) {
+    else if (param_2 < 0x41) {
+      if (param_2 == 0x40) {
         pbVar3[0] = 1;
         pbVar3[1] = 2;
         pbVar3[2] = 1;
@@ -75,7 +85,7 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
         pbVar3[0xb] = 9;
       }
       else {
-        switch(param_1) {
+        switch(param_2) {
         case CASE_1:
           pbVar3[0] = 1;
           pbVar3[1] = 2;
@@ -138,8 +148,8 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
         }
       }
     }
-    else if (param_1 < 0x201) {
-      if (param_1 == 0x200) {
+    else if (param_2 < 0x201) {
+      if (param_2 == 0x200) {
         pbVar3[0] = 1;
         pbVar3[1] = 2;
         pbVar3[2] = 1;
@@ -154,7 +164,7 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
         pbVar3[0xb] = 0x12;
       }
       else {
-        if ((param_1 != 0x80) && (param_1 != 0x100)) {
+        if ((param_2 != 0x80) && (param_2 != 0x100)) {
           return pbVar3;
         }
         pbVar3[0] = 1;
@@ -171,7 +181,7 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
         pbVar3[0xb] = 0;
       }
     }
-    else if (param_1 == 0x400) {
+    else if (param_2 == 0x400) {
       pbVar3[0] = 1;
       pbVar3[1] = 2;
       pbVar3[2] = 1;
@@ -186,7 +196,7 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
       pbVar3[0xb] = 0x13;
     }
     else {
-      if (param_1 != 0x800) {
+      if (param_2 != 0x800) {
         return pbVar3;
       }
       pbVar3[0] = 1;
@@ -204,16 +214,16 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
     }
     goto LAB_0044d710;
   }
-  if (param_1 < 0x100001) {
-    if (param_1 == 0x100000) {
+  if (param_2 < 0x100001) {
+    if (param_2 == 0x100000) {
       pbVar3[0] = 1;
       pbVar3[1] = 2;
       pbVar3[2] = 1;
       pbVar3[3] = 0x10;
       goto LAB_0044d6f8;
     }
-    if (param_1 < 0x20001) {
-      if (param_1 == 0x20000) {
+    if (param_2 < 0x20001) {
+      if (param_2 == 0x20000) {
         pbVar3[0] = 1;
         pbVar3[1] = 2;
         pbVar3[2] = 1;
@@ -227,7 +237,7 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
         pbVar3[10] = 1;
         pbVar3[0xb] = 0x12;
       }
-      else if (param_1 == 0x2000) {
+      else if (param_2 == 0x2000) {
         pbVar3[0] = 1;
         pbVar3[1] = 2;
         pbVar3[2] = 1;
@@ -242,7 +252,7 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
         pbVar3[0xb] = 6;
       }
       else {
-        if (param_1 != 0x10000) {
+        if (param_2 != 0x10000) {
           return pbVar3;
         }
         pbVar3[0] = 1;
@@ -260,14 +270,14 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
       }
     }
     else {
-      if (param_1 == 0x40000) {
+      if (param_2 == 0x40000) {
         pbVar3[0] = 1;
         pbVar3[1] = 2;
         pbVar3[2] = 1;
         pbVar3[3] = 0xe;
         goto LAB_0044d6d7;
       }
-      if (param_1 != 0x80000) {
+      if (param_2 != 0x80000) {
         return pbVar3;
       }
       pbVar3[0] = 1;
@@ -285,8 +295,8 @@ byte * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
     }
   }
   else {
-    if (param_1 < 0x800001) {
-      if (param_1 == 0x800000) {
+    if (param_2 < 0x800001) {
+      if (param_2 == 0x800000) {
 LAB_0044d6cc:
         pbVar3[0] = 1;
         pbVar3[1] = 2;
@@ -303,8 +313,8 @@ LAB_0044d6d7:
         pbVar3[0xb] = 0;
         goto LAB_0044d710;
       }
-      if (param_1 != 0x200000) {
-        if (param_1 != 0x400000) {
+      if (param_2 != 0x200000) {
+        if (param_2 != 0x400000) {
           return pbVar3;
         }
         pbVar3[0] = 1;
@@ -327,8 +337,8 @@ LAB_0044d6d7:
       pbVar3[3] = 0x13;
     }
     else {
-      if (param_1 != 0x1000000) {
-        if (param_1 != 0x2000000) {
+      if (param_2 != 0x1000000) {
+        if (param_2 != 0x2000000) {
           return pbVar3;
         }
         goto LAB_0044d6cc;
@@ -349,10 +359,11 @@ LAB_0044d6f8:
     pbVar3[0xb] = 0x18;
   }
 LAB_0044d710:
-  auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
+  auto param_2_after_write = 0; /* compiler stack-slot lifetime split */
   if (0 < (int)local_10) {
     do {
-      DArrayGetElement(local_14,param_1_after_write,&local_18);
+
+      DArrayGetElement(local_14,param_2_after_write,&local_18);
       if (((ushort)local_18 != 0xffff) &&
          /* ST_CALLSITE[0044D74B]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
          (this = STAllPlayersC::GetObjPtr(local_c,DAT_0080874d,(ushort)local_18,CASE_1),
@@ -365,7 +376,8 @@ switchD_0044d78f_caseD_28:
             if ((iVar5 == 0x16) || (iVar5 == 0x25)) {
               local_8 = 1;
               if ((pbVar3[6] == 0) &&
-                 ((local_EAX_1904 = thunk_FUN_00486b40(this), 0 < local_EAX_1904 &&
+                 /* ST_CALLSITE[0044DA90]: CALL 0x004043e0; direct=004043E0 STGameObjC::sub_00486B40 */
+                 ((local_EAX_1904 = STGameObjC::sub_00486B40(this), 0 < local_EAX_1904 &&
                   ((short)g_packedRecords_A62x8[(char)this->field_0024].field94_0x15b != 0)))) {
                 pbVar3[6] = 1;
                 pbVar3[7] = 4;
@@ -383,7 +395,8 @@ switchD_0044d78f_caseD_28:
               if (iVar5 == 4) {
                 local_8 = 1;
                 if (((pbVar3[6] == 0) &&
-                    (local_EAX_1434 = thunk_FUN_00486b40(this), 0 < local_EAX_1434)) &&
+                    /* ST_CALLSITE[0044D8BA]: CALL 0x004043e0; direct=004043E0 STGameObjC::sub_00486B40 */
+                    (local_EAX_1434 = STGameObjC::sub_00486B40(this), 0 < local_EAX_1434)) &&
                    ((short)g_packedRecords_A62x8[(char)this->field_0024].field94_0x15b != 0)) {
                   pbVar3[6] = 1;
                   pbVar3[7] = 4;
@@ -401,7 +414,8 @@ switchD_0044d78f_caseD_28:
                 iVar5 = this->vfunc_2C();
                 if ((iVar5 == 6) || (iVar5 == 0x12)) {
                   local_8 = 1;
-                  local_EAX_1172 = thunk_FUN_00486b40(this);
+                  /* ST_CALLSITE[0044D7B4]: CALL 0x004043e0; direct=004043E0 STGameObjC::sub_00486B40 */
+                  local_EAX_1172 = STGameObjC::sub_00486B40(this);
                   if (0 < local_EAX_1172) {
                     sVar1 = (short)g_packedRecords_A62x8[(char)this->field_0024].field94_0x15b;
 joined_r0x0044d9f5:
@@ -421,7 +435,8 @@ joined_r0x0044d9f5:
                 if (((iVar5 == 5) || (iVar5 == 0xb)) || (iVar5 == 0x11)) {
                   local_8 = 1;
                   if (((pbVar3[6] == 0) &&
-                      (local_EAX_1269 = thunk_FUN_00486b40(this), 0 < local_EAX_1269)) &&
+                      /* ST_CALLSITE[0044D815]: CALL 0x004043e0; direct=004043E0 STGameObjC::sub_00486B40 */
+                      (local_EAX_1269 = STGameObjC::sub_00486B40(this), 0 < local_EAX_1269)) &&
                      ((short)g_packedRecords_A62x8[(char)this->field_0024].field94_0x15b != 0))
                   {
                     pbVar3[6] = 1;
@@ -439,7 +454,8 @@ LAB_0044dc25:
                 iVar5 = this->vfunc_2C();
                 if (iVar5 == 0x17) {
                   local_8 = 1;
-                  local_EAX_1351 = thunk_FUN_00486b40(this);
+                  /* ST_CALLSITE[0044D867]: CALL 0x004043e0; direct=004043E0 STGameObjC::sub_00486B40 */
+                  local_EAX_1351 = STGameObjC::sub_00486B40(this);
                   if (0 < local_EAX_1351) {
                     sVar1 = (short)g_packedRecords_A62x8[(char)this->field_0024].field94_0x15b;
                     goto joined_r0x0044d9f5;
@@ -457,7 +473,8 @@ LAB_0044dc25:
               iVar5 = this->vfunc_2C();
               if ((iVar5 == 8) || (iVar5 == 0x14)) {
                 local_8 = 1;
-                local_EAX_1608 = thunk_FUN_00486b40(this);
+                /* ST_CALLSITE[0044D968]: CALL 0x004043e0; direct=004043E0 STGameObjC::sub_00486B40 */
+                local_EAX_1608 = STGameObjC::sub_00486B40(this);
                 if (0 < local_EAX_1608) {
                   sVar1 = (short)g_packedRecords_A62x8[(char)this->field_0024].field94_0x15b;
                   goto joined_r0x0044d9f5;
@@ -481,12 +498,14 @@ LAB_0044dc25:
             if ((iVar5 == 7) || (iVar5 == 0x13)) {
               local_8 = 1;
               if ((pbVar3[6] == 0) &&
-                 ((local_EAX_1797 = thunk_FUN_00486b40(this), 0 < local_EAX_1797 &&
+                 /* ST_CALLSITE[0044DA25]: CALL 0x004043e0; direct=004043E0 STGameObjC::sub_00486B40 */
+                 ((local_EAX_1797 = STGameObjC::sub_00486B40(this), 0 < local_EAX_1797 &&
                   ((short)g_packedRecords_A62x8[(char)this->field_0024].field94_0x15b != 0)))) {
                 pbVar3[6] = 1;
                 pbVar3[7] = 4;
               }
-              iVar5 = thunk_FUN_00492370(this);
+              /* ST_CALLSITE[0044DA53]: CALL 0x00402608; direct=00402608 STGameObjC::sub_00492370 */
+              iVar5 = STGameObjC::sub_00492370(this);
               if (iVar5 != 0) {
                 pbVar3[10] = 1;
                 pbVar3[0xb] = 0x14;
@@ -498,7 +517,8 @@ LAB_0044dc25:
                   ((iVar5 = this->vfunc_2C(), iVar5 == 0xc || (iVar5 == 0x18)))) {
 LAB_0044d9c4:
             local_8 = 1;
-            local_EAX_1709 = thunk_FUN_00486b40(this);
+            /* ST_CALLSITE[0044D9CD]: CALL 0x004043e0; direct=004043E0 STGameObjC::sub_00486B40 */
+            local_EAX_1709 = STGameObjC::sub_00486B40(this);
             if (0 < local_EAX_1709) {
               sVar1 = (short)g_packedRecords_A62x8[(char)this->field_0024].field94_0x15b;
               goto joined_r0x0044d9f5;
@@ -514,12 +534,14 @@ LAB_0044d9c4:
               /* ST_CALLSITE[0044DB51]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
               local_EAX_2097 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
               if (((0 < local_EAX_2097) &&
-                  (uVar6 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < (int)uVar6)) &&
+
+                  (iVar5 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < iVar5)) &&
                  ((short)g_packedRecords_A62x8[(char)this->field_0024].field95_0x15f != 0)) {
                 pbVar3[6] = 1;
                 pbVar3[7] = 0x48;
               }
 LAB_0044dcbe:
+
               iVar5 = thunk_FUN_004e60d0((uint)DAT_0080874d,0x5f);
               if (0 < iVar5) {
                 iVar5 = this->field_071E;
@@ -541,8 +563,8 @@ joined_r0x0044ddc7:
             else if ((GVar2 != 0x40000) && (GVar2 != 0x80000)) goto cf_continue_loop_0044DDCF;
 LAB_0044dce3:
             /* ST_CALLSITE[0044DCE7]: CALL dword ptr [EDX + 0x2c] */
-            uVar7 = this->vfunc_2C();
-            switch(uVar7) {
+            uVar6 = this->vfunc_2C();
+            switch(uVar6) {
             case 0x19:
             case 0x1a:
             case 0x1c:
@@ -553,7 +575,8 @@ switchD_0044dcfe_caseD_19:
               /* ST_CALLSITE[0044DD22]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
               local_EAX_2562 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
               if (((0 < local_EAX_2562) &&
-                  (uVar6 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < (int)uVar6)) &&
+
+                  (iVar5 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < iVar5)) &&
                  ((short)g_packedRecords_A62x8[(char)this->field_0024].field95_0x15f != 0)) {
                 pbVar3[6] = 1;
                 pbVar3[7] = 0x48;
@@ -572,12 +595,14 @@ switchD_0044dcfe_caseD_19:
               /* ST_CALLSITE[0044DC62]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
               local_EAX_2370 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
               if (((0 < local_EAX_2370) &&
-                  (uVar6 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < (int)uVar6)) &&
+
+                  (iVar5 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < iVar5)) &&
                  ((short)g_packedRecords_A62x8[(char)this->field_0024].field95_0x15f != 0)) {
                 pbVar3[6] = 1;
                 pbVar3[7] = 0x48;
               }
-              iVar5 = thunk_FUN_00492370(this);
+              /* ST_CALLSITE[0044DCA5]: CALL 0x00402608; direct=00402608 STGameObjC::sub_00492370 */
+              iVar5 = STGameObjC::sub_00492370(this);
               if (iVar5 != 0) {
                 pbVar3[2] = 1;
                 pbVar3[3] = 0x14;
@@ -592,7 +617,8 @@ switchD_0044dcfe_caseD_19:
             /* ST_CALLSITE[0044DBE4]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
             local_EAX_2244 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
             if ((0 < local_EAX_2244) &&
-               ((uVar6 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < (int)uVar6 &&
+
+               ((iVar5 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < iVar5 &&
                 ((short)g_packedRecords_A62x8[(char)this->field_0024].field95_0x15f != 0)))) {
               pbVar3[6] = 1;
               pbVar3[7] = 0x48;
@@ -607,7 +633,8 @@ switchD_0044dcfe_caseD_19:
             local_8 = 1;
             /* ST_CALLSITE[0044DD80]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
             iVar4 = TLOBaseTy::sub_004D6DF0((TLOBaseTy *)this);
-            if (((0 < iVar4) && (uVar6 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < (int)uVar6)) &&
+
+            if (((0 < iVar4) && (iVar5 = thunk_FUN_004e41c0((uint)DAT_0080874d), 0 < iVar5)) &&
                ((short)g_packedRecords_A62x8[(char)this->field_0024].field95_0x15f != 0)) {
               pbVar3[6] = 1;
               pbVar3[7] = 0x48;
@@ -619,8 +646,8 @@ switchD_0044dcfe_caseD_19:
         else if (GVar2 == 0x2000000) goto switchD_0044dcfe_caseD_19;
       }
 cf_continue_loop_0044DDCF:
-      param_1_after_write = param_1_after_write + CASE_1;
-    } while ((int)param_1_after_write < (int)local_10);
+      param_2_after_write = param_2_after_write + CASE_1;
+    } while ((int)param_2_after_write < (int)local_10);
     if (local_8 != 0) {
       return pbVar3;
     }

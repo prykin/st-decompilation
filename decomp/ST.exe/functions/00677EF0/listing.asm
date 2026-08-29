@@ -3,7 +3,7 @@ FUN_00677ef0:
 00677EF1  8B EC                     MOV EBP,ESP
 00677EF3  8B 4D 10                  MOV ECX,dword ptr [EBP + 0x10]
 00677EF6  8B 01                     MOV EAX,dword ptr [ECX]
-00677EF8  FF 90 38 01 00 00         CALL dword ptr [EAX + 0x138]
+00677EF8  FF 90 38 01 00 00         CALL dword ptr [EAX + 0x138]  ; [STIndirectCallsiteApplier] exact slot 0x138; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 00677EFE  8B 0D 80 19 81 00         MOV ECX,dword ptr [0x00811980]
 00677F04  03 C8                     ADD ECX,EAX
 00677F06  33 C0                     XOR EAX,EAX

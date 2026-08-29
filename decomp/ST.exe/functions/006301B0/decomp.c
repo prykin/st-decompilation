@@ -7,7 +7,7 @@
    [STPrototypeApplier] Propagated return.
    Evidence: 006301B0 returns return of STRubbishC::sub_0062FCA0 @ 006301BD */
 
-int __thiscall FUN_006301b0(void *this,AnonShape_0062FCA0_22A9EE35 *param_1)
+int __thiscall FUN_006301b0(void *this,RecoveredRecordView_0062FCA0_4CB838FB *param_1)
 
 {
   int iVar1;

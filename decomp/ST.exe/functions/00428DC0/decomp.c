@@ -1,8 +1,14 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:3: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=1,
+   pointer_dereferences=4, scalar_uses=0; sites=00428DFD dereference: OR byte ptr [ESI + EBX*0x1],AH
+   | 00428E09 dereference: OR byte ptr [ESI + ECX*0x1],AH | 00428E10 dereference: OR byte ptr [ESI +
+   EBX*0x1],AH | 00428E19 dereference: OR byte ptr [ESI + ECX*0x1],AH */
+
 void __cdecl
-FUN_00428dc0(uint *param_1,int param_2,int param_3,int param_4,undefined4 param_5,byte param_6)
+FUN_00428dc0(uint *param_1,int param_2,int param_3,void *param_4,undefined4 param_5,byte param_6)
 
 {
   byte *pbVar1;
@@ -27,21 +33,21 @@ FUN_00428dc0(uint *param_1,int param_2,int param_3,int param_4,undefined4 param_
     }
     bVar4 = (byte)(uVar6 >> 8);
     if ((char)uVar6 != -1) {
-      pbVar1 = (byte *)(param_4 + (uVar6 & 0xff));
+      pbVar1 = (byte *)((int)param_4 + (uVar6 & 0xff));
       *pbVar1 = *pbVar1 | param_6;
     }
     bVar3 = (byte)(uVar6 >> 0x10);
     if (bVar4 != 0xff) {
-      pbVar1 = (byte *)(param_4 + (uint)bVar4);
+      pbVar1 = (byte *)((int)param_4 + (uint)bVar4);
       *pbVar1 = *pbVar1 | param_6;
     }
     if (bVar3 != 0xff) {
-      pbVar1 = (byte *)(param_4 + (uint)bVar3);
+      pbVar1 = (byte *)((int)param_4 + (uint)bVar3);
       *pbVar1 = *pbVar1 | param_6;
     }
     bVar4 = (byte)(uVar6 >> 0x18);
     if (bVar4 != 0xff) {
-      pbVar1 = (byte *)(param_4 + (uint)bVar4);
+      pbVar1 = (byte *)((int)param_4 + (uint)bVar4);
       *pbVar1 = *pbVar1 | param_6;
     }
     uVar6 = uVar5 - 1;

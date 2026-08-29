@@ -1,7 +1,16 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __thiscall FUN_005fccb0(void *this,char *param_1)
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079C714
+   Entries: 00401B5E
+   Slots: 0x70
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_physical_vtable_owner_and_slot;
+   receiver_extent=864/1147; unique_owner_for_target; unique physical vtable owner and slot type
+   only the existing __thiscall receiver; explicit parameters and return are retained */
+
+void __thiscall STContainerC::vfunc_70(STContainerC *this,char *param_1)
 
 {
   char cVar1;
@@ -20,8 +29,8 @@ void __thiscall FUN_005fccb0(void *this,char *param_1)
     pcVar4_mg0 = pcVar4_mg0 + 1;
   } while (cVar1 != '\0');
   if (0xe < ~uVar2 - 1) {
-    Library::MSVCRT::_strncpy((char *)((int)this + 0x35c),param_1,0xe);
-    STField<undefined1>(this,0x36a) = 0;
+    Library::MSVCRT::_strncpy(&this->field_0x35c,param_1,0xe);
+    this->field_036A = 0;
     return;
   }
   uVar2 = 0xffffffff;
@@ -35,7 +44,7 @@ void __thiscall FUN_005fccb0(void *this,char *param_1)
   } while (cVar1 != '\0');
   uVar2 = ~uVar2;
   pcVar4 = pcVar4_mg1 + -uVar2;
-  pcVar5 = (char *)((int)this + 0x35c);
+  pcVar5 = &this->field_0x35c;
   memmove(pcVar5, pcVar4, uVar2); /* compiler REP MOVS byte copy */
   return;
 }

@@ -17,14 +17,14 @@ FUN_0061c5f0:
 0061C61F  8B 8E 23 01 00 00         MOV ECX,dword ptr [ESI + 0x123]
 0061C625  51                        PUSH ECX
 0061C626  8D 4E 20                  LEA ECX,[ESI + 0x20]
-0061C629  E8 24 7A DE FF            CALL 0x00404052
+0061C629  E8 24 7A DE FF            CALL 0x00404052  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 0061C62E  66 8B 96 49 01 00 00      MOV DX,word ptr [ESI + 0x149]
 0061C635  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 0061C63B  50                        PUSH EAX
 0061C63C  8A 86 1F 01 00 00         MOV AL,byte ptr [ESI + 0x11f]
 0061C642  52                        PUSH EDX
 0061C643  50                        PUSH EAX
-0061C644  E8 71 62 DE FF            CALL 0x004028ba
+0061C644  E8 71 62 DE FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override
 0061C649  8B F8                     MOV EDI,EAX
 0061C64B  85 FF                     TEST EDI,EDI
 0061C64D  0F 84 0F 02 00 00         JZ 0x0061c862

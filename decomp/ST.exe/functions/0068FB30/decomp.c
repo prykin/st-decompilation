@@ -17,7 +17,7 @@ void __thiscall AiTactClassTy::BackFromRepair(AiTactClassTy *this,short param_1)
   InternalExceptionFrame local_80;
   uint local_3c [2];
   short local_33;
-  undefined4 local_31;
+  uint local_31;
   DArrayTy *local_2b;
   AiTactClassTy *local_8;
 
@@ -40,7 +40,7 @@ void __thiscall AiTactClassTy::BackFromRepair(AiTactClassTy *this,short param_1)
     /* ST_CALLSITE[0068FBA8]: CALL 0x00403cdd; direct=00403CDD AiTactClassTy::sub_006902B0 */
     sub_006902B0(this_00,-0x8000,local_3c);
     /* ST_CALLSITE[0068FBB0]: CALL 0x00405b23; direct=00405B23 AiTactClassTy::sub_0068E290 */
-    this_01 = (void *)sub_0068E290(this_00,param_1);
+    this_01 = STPointerBoundaryCast<void *>(sub_0068E290(this_00,param_1));
     if (this_01 != nullptr) {
       thunk_FUN_0065d940(this_01,local_2b,0);
     }

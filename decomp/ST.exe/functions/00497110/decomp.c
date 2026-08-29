@@ -1,7 +1,8 @@
 #include "../../pseudocode_runtime.h"
 
 
-void FUN_00497110(AnonShape_00497110_11FEE69C *param_1,AnonShape_00497110_465BC742 *param_2)
+void FUN_00497110(RecoveredRecordView_00497110_2502479B *param_1,
+                 RecoveredRecordView_00497110_CEDB446E *param_2)
 
 {
   short sVar1;
@@ -22,6 +23,7 @@ void FUN_00497110(AnonShape_00497110_11FEE69C *param_1,AnonShape_00497110_465BC7
   iVar5 = param_1->field_01E9 + 100;
   local_18 = param_2->field_01ED + 100;
   iVar4 = param_2->field_01E9 + 100;
+
   iVar2 = FUN_006aced8(iVar5,iVar6,iVar4,local_18);
   if (0 < iVar2) {
     iVar3 = local_18 - iVar6;

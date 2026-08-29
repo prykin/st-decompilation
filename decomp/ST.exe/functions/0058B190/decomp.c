@@ -4,9 +4,14 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as STOctopusC.
    Evidence: this_call_owners=[STOctopusC]; agreed_this_calls=1; incoming_this_accesses=59;
    incoming_edx_uses=17; incoming_stack_parameter_uses=5; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
 
-undefined4 __thiscall
+   [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=3, ignored=0,
+   unknown=0 */
+
+int __thiscall
 STOctopusC::sub_0058B190
           (STOctopusC *this,short *param_1,short *param_2,short *param_3,short *param_4)
 
@@ -183,9 +188,11 @@ LAB_0058b499:
     iVar3 = local_c - local_8;
     if (0x31 < iVar3) {
       iVar3 = STBiasedDiv16(iVar3, 200); /* exact signed 16-bit grid-index division */
+
       uVar11 = thunk_FUN_00496250(iVar6,iVar5,iVar3);
       iVar3 = local_8 + local_c;
       iVar3 = STBiasedDiv16(iVar3, 200); /* exact signed 16-bit grid-index division */
+
       uVar10 = thunk_FUN_00496250(iVar6,iVar5,iVar3);
       if (((int)uVar11 < 0) && ((int)uVar10 < 0)) {
         if ((local_8 & 1) != 0) {
@@ -228,6 +235,7 @@ LAB_0058b5ac:
           }
           sVar8 = (short)iVar6;
           sVar9 = (short)iVar5;
+
           iVar4 = thunk_FUN_004961b0(sVar8,sVar9,(short)iVar3);
           if ((iVar4 != 0) &&
              ((((sVar8 < 0 || (g_worldGrid.sizeX <= sVar8)) || (sVar9 < 0)) ||

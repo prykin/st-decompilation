@@ -4,7 +4,7 @@
 /* [STPrototypeApplier] Propagated return.
    Evidence: 0065FD00 returns zeroed full register at 0065FD30 @ 0065FD32 */
 
-uint __fastcall FUN_0065fd00(AnonShape_0065FD00_EB74ED0C *param_1,undefined4 param_2)
+uint __fastcall FUN_0065fd00(RecoveredRecordView_0065FD00_071C1E69 *param_1,undefined4 param_2)
 
 {
   STGroupBoatC *this;

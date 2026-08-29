@@ -34,9 +34,9 @@ STAllPlayersC::GetScrObjList
   int local_1c;
   int local_18;
   ushort *local_14;
-  undefined1 local_10;
-  undefined1 local_f;
-  undefined2 local_e;
+  byte local_10;
+  byte local_f;
+  ushort local_e;
   short *local_c;
   int local_8;
 
@@ -125,11 +125,10 @@ LAB_0044ca10:
                     bVar15 = g_bulkInitializedRecords_008087C7[uVar9].field_0023 !=
                              g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                   }
-                  /* ST_CALLSITE[0044CA23]: CALL dword ptr [EDX + 0xf8] */
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                  if (((bVar15) && (iVar13 = (**(code **)(*piVar4 + 0xf8))(), iVar13 != 0)) &&
-                     /* ST_CALLSITE[0044CA3A]: CALL dword ptr [EAX + 0xf4] */
-                     (iVar13 = (**(code **)(*piVar4 + 0xf4))(DAT_0080874d), iVar13 != 0)) {
+                  /* ST_CALLSITE[0044CA23]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                  if (((bVar15) && (iVar13 = STStructuralVirtualCall<undefined4>(piVar4, 0xF8), iVar13 != 0)) &&
+                     /* ST_CALLSITE[0044CA3A]: CALL dword ptr [EAX + 0xf4]; [STIndirectCallsiteApplier] exact slot 0xF4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
+                     (iVar13 = STStructuralVirtualCall<undefined4>(piVar4, 0xF4, DAT_0080874d), iVar13 != 0)) {
                     local_10 = (undefined1)piVar4[9];
                     local_e = STField<undefined2>(piVar4,0x32);
                     Library::DKW::TBL::DArrayAppend(pDVar7,&local_10);

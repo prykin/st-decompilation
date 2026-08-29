@@ -19,15 +19,18 @@ LPSTR __cdecl GetStrategName(undefined4 param_1,undefined4 param_2)
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar2 == 0) {
     iVar4 = 3;
+    /* ST_CALLSITE[0067E4DF]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
     local_EAX_63 = FUN_006f2c00(PTR_s_STRATEG_0079d72c,1,param_1);
     pCVar3 = FUN_006f2c00(local_EAX_63,iVar4,param_2);
     g_currentExceptionFrame = local_48.previous;
     return pCVar3;
   }
   g_currentExceptionFrame = local_48.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0x1d9,0,iVar2,"%s",
                              "GetStrategName");
   if (iVar3 != 0) {

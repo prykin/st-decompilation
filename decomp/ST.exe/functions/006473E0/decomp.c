@@ -9,14 +9,13 @@ void __thiscall FUN_006473e0(void *this,undefined4 param_1)
 
 {
   int iVar1;
-  undefined4 local_44 [5];
-  undefined4 local_30;
-  undefined4 local_2c;
-  undefined4 local_28;
-  undefined4 local_24;
+  uint local_44 [5];
+  uint local_30;
+  uint local_2c;
+  uint local_28;
+  uint local_24;
   int local_20;
-  undefined4 local_1c;
-
+  uint local_1c;
   memset(local_44, 0, 0x40); /* compiler bulk-zero initialization */
   local_28 = STField<undefined4>(this,0x3c);
   local_24 = STField<undefined4>(this,0x40);
@@ -38,7 +37,7 @@ cf_common_exit_00647445:
   local_1c = param_1;
   local_30 = 0;
   /* ST_CALLSITE[00647469]: CALL dword ptr [EDX + 0x8] */
-  g_playSystem_00802A38->vfunc_08(0x124,0,0,(short)local_44,0);
+  g_playSystem_00802A38->vfunc_8(0x124,nullptr,nullptr,(short)local_44,0);
   thunk_FUN_00647a60(this,0x4b5);
   return;
 }

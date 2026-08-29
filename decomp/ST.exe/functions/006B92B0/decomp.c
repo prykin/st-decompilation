@@ -1,7 +1,11 @@
-#include "../../pseudocode_runtime.h"
 
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (4), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=006B89B0 @ 006B89E6 -> read as EAX on
+   every CFG path | 006B8A60 @ 006B8AB5 -> read as EAX on every CFG path | 006B8B10 @ 006B8B68 ->
+   read as EAX on every CFG path | 006B8C60 @ 006B8CF8 -> read as EAX on every CFG path */
 
-undefined4 FUN_006b92b0(int *param_1,int *param_2)
+int FUN_006b92b0(int *param_1,int *param_2)
 
 {
   int iVar1;
@@ -27,6 +31,7 @@ undefined4 FUN_006b92b0(int *param_1,int *param_2)
   int local_8;
 
   if ((*(uint *)&((DDXContext *)*param_1)->field_0x8 & 0x3000000) != 0) {
+
     Library::DKW::DDX::FUN_006bb370((DDXContext *)*param_1,0,0);
     return 0;
   }
@@ -43,6 +48,7 @@ undefined4 FUN_006b92b0(int *param_1,int *param_2)
   iVar7 = param_2[2];
   local_38 = param_2[3];
   local_18 = iVar6;
+
   iVar4 = FUN_006b0460(&local_34,param_2,&local_14);
   if (iVar4 == 0) {
     iVar4 = 0;
@@ -122,11 +128,14 @@ LAB_006b93a7:
     iVar6 = local_28;
   }
 LAB_006b945a:
+
   Library::DKW::DDX::FUN_006bac60(*param_1,0,0,local_14,local_10,local_c,local_8);
   if ((iVar7 != 0) && (local_38 != 0)) {
+
     Library::DKW::DDX::FUN_006bac60(*param_1,0,0,local_44,iVar1,iVar7,local_38);
   }
   if ((iVar4 != 0) && (iVar6 != 0)) {
+
     Library::DKW::DDX::FUN_006bac60(*param_1,0,0,local_24,local_20,iVar4,iVar6);
     return 0;
   }

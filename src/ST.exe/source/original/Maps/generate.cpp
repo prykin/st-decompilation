@@ -26,19 +26,21 @@ undefined4 __thiscall st::fn_006A01D0(CGenerate *this)
   InternalExceptionFrame local_64;
   int local_20;
   int local_1c;
-  undefined4 local_18;
+  uint local_18;
   CGenerate *local_10;
-  undefined4 local_c;
+  uint local_c;
   Global_sub_00693710_param_1Enum *local_8;
 
   local_c = 1;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_10 = this;
+
   local_EAX_42 = st::fn_0072D7F0(local_64.jumpBuffer,0);
   this_00 = local_10;
   if (local_EAX_42 != 0) {
     g_currentExceptionFrame = local_64.previous;
+
     iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Maps\\generate.cpp"),0x72,0,local_EAX_42,
                                st::mutable_c_string("%s"),"CGenerate::CreateMap");
     if (iVar3 != 0) {
@@ -50,7 +52,7 @@ undefined4 __thiscall st::fn_006A01D0(CGenerate *this)
   local_10->field_53EB = (local_10->aggregate_001C).field_020C;
   local_10->field_53EF = iVar6;
   uVar8 = 0xffffffff;
-  pcVar10 = &(local_10->aggregate_001C).field_0x108;
+  pcVar10 = (char *)&(local_10->aggregate_001C).field_0x108;
   do {
     pcVar11 = pcVar10;
     if (uVar8 == 0) break;
@@ -65,37 +67,39 @@ undefined4 __thiscall st::fn_006A01D0(CGenerate *this)
   memmove(pcVar11, pcVar10, uVar8); /* compiler REP MOVS byte copy */
   local_8 = nullptr;
   st::fn_006F1CE0(*(cMf32 **)&(local_10->aggregate_001C).field_0x218,0xc,st::mutable_c_string("TEXTURE_DSCR"),
-                (int *)&local_8,1);
+                reinterpret_cast<int *>(&local_8),1);
   st::fn_00404633(*local_8);
-  st::fn_006F20E0(*(cMf32 **)&(this_00->aggregate_001C).field_0x218,(uint *)&local_8);
-  pcVar3 = (cMf32 *)st::fn_006F0EC0
-                              (0x345,&(this_00->aggregate_001C).field_0x4,1,0,0);
+  st::fn_006F20E0(*(cMf32 **)&(this_00->aggregate_001C).field_0x218,reinterpret_cast<uint *>(&local_8));
+  /* ST_CALLSITE[006A0295]: CALL 0x006f0ec0; direct=006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint */
+  pcVar3 = st::pointer_boundary_cast<cMf32 *>(st::fn_006F0EC0(0x345,&(this_00->aggregate_001C).field_0x4,1,0,0));
   this_00->field_0018 = pcVar3;
   /* ST_CALLSITE[006A02A2]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   st::fn_00404A43(this_00);
-  pbVar4 = (byte *)st::fn_006EFC50
+
+  pbVar4 = STPointerBoundaryCast<byte *>(st::fn_006EFC50
                              ((this_00->aggregate_001C).field_020C,
                               (this_00->aggregate_001C).field_0210,
                               *(cMf32 **)&(this_00->aggregate_001C).field_0x218,
-                              *(int *)&(this_00->aggregate_001C).field_0x21d,0x20);
+                              *(int *)&(this_00->aggregate_001C).field_0x21d,0x20));
   this_00->field_000C = pbVar4;
   /* ST_CALLSITE[006A02D2]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   st::fn_00404A43(this_00);
-  piVar5 = st::fn_006F0620((short *)this_00->field_000C);
+  piVar5 = st::fn_006F0620(reinterpret_cast<short *>(this_00->field_000C));
   this_00->field_0008 = piVar5;
   /* ST_CALLSITE[006A02E8]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   st::fn_00404A43(this_00);
-  st::fn_00401CB2(1,st::pointer_boundary_cast<int *>(this_00->field_0008));
+  st::fn_00401CB2(1,this_00->field_0008);
   /* ST_CALLSITE[006A02FD]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   st::fn_00404A43(this_00);
+
   local_EAX_314 =
-       st::fn_006F0C00((short *)this_00->field_000C,st::pointer_boundary_cast<int *>(this_00->field_0008));
+       st::fn_006F0C00(reinterpret_cast<short *>(this_00->field_000C),this_00->field_0008);
   if (local_EAX_314 != 0) {
     local_c = 0;
   }
   /* ST_CALLSITE[006A031B]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
   st::fn_00404A43(this_00);
-  iVar6 = st::fn_00404C1E(&this_00->field_0x24e,(undefined2 *)&this_00->field_53EB);
+  iVar6 = st::fn_00404C1E(&this_00->field_0x24e,reinterpret_cast<undefined2 *>(&this_00->field_53EB));
   if (iVar6 == 0) {
     local_c = 0;
   }
@@ -132,13 +136,14 @@ int __thiscall st::fn_006A0740(CGenerate *this)
   char *pcVar4_mg0;
   int local_EAX_218;
   int local_EAX_254;
+  byte *pbVar4;
   int iVar2;
-  uint uVar4;
-  char *pcVar6;
+  uint uVar5;
   char *pcVar7;
-  uint *puVar8;
-  char cVar9;
-  uint *puVar10;
+  char *pcVar8;
+  uint *puVar9;
+  char cVar10;
+  uint *puVar11;
   InternalExceptionFrame local_54;
   CGenerate *local_10;
   AnonShape_006B5050_99986F91 *local_c;
@@ -148,10 +153,12 @@ int __thiscall st::fn_006A0740(CGenerate *this)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
+
   local_EAX_42 = st::fn_0072D7F0(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (local_EAX_42 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Maps\\generate.cpp"),0xcd,0,local_EAX_42,
                                st::mutable_c_string("%s"),"CGenerate::SaveMap");
     if (iVar2 != 0) {
@@ -160,39 +167,44 @@ int __thiscall st::fn_006A0740(CGenerate *this)
     return 0;
   }
   local_10->field_570B = 0x32;
+
   iVar3 = st::fn_00402103
-                    ((AnonReceiver_00693D00 *)&local_10->field_0x24e,st::pointer_boundary_cast<cMf32 *>(local_10->field_0018),
+                    (reinterpret_cast<RecoveredReceiver_00693B20 *>(&local_10->field_0x24e),local_10->field_0018,
                      DAT_00853de0);
   if (iVar3 == 0) {
     local_8 = 0;
   }
   pcVar4_mg0 = st::fn_006B0140(0x232b,g_hINSTANCE_00807618);
-  uVar4 = 0xffffffff;
+  uVar5 = 0xffffffff;
   do {
-    pcVar6 = pcVar4_mg0;
-    if (uVar4 == 0) break;
-    uVar4 = uVar4 - 1;
-    pcVar6 = pcVar4_mg0 + 1;
-    cVar9 = *pcVar4_mg0;
-    pcVar4_mg0 = pcVar6;
-  } while (cVar9 != '\0');
-  uVar4 = ~uVar4;
-  pcVar6 = pcVar6 + -uVar4;
-  pcVar7 = (char *)&this_00->field_0x55fb;
-  memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
-  st::fn_006F13F0(st::pointer_boundary_cast<cMf32 *>(this_00->field_0018),0,PTR_s_TITLE_MISSION_0079d838,(byte *)&this_00->field_0x55fb,0x104,
+    pcVar7 = pcVar4_mg0;
+    if (uVar5 == 0) break;
+    uVar5 = uVar5 - 1;
+    pcVar7 = pcVar4_mg0 + 1;
+    cVar10 = *pcVar4_mg0;
+    pcVar4_mg0 = pcVar7;
+  } while (cVar10 != '\0');
+  uVar5 = ~uVar5;
+  pcVar7 = pcVar7 + -uVar5;
+  pcVar8 = (char *)&this_00->field_0x55fb;
+  memmove(pcVar8, pcVar7, uVar5); /* compiler REP MOVS byte copy */
+
+  st::fn_006F13F0(this_00->field_0018,0,PTR_s_TITLE_MISSION_0079d838,&this_00->field_0x55fb,0x104,
                 nullptr,'\0',nullptr);
-  st::fn_006F13F0(st::pointer_boundary_cast<cMf32 *>(this_00->field_0018),0,PTR_s_TEXTURE_0079d83c,(byte *)&this_00->field_0x53f3,0x104,
+
+  st::fn_006F13F0(this_00->field_0018,0,PTR_s_TEXTURE_0079d83c,&this_00->field_0x53f3,0x104,
                 nullptr,'\0',nullptr);
+
   local_EAX_218 =
-       st::fn_006F0C00((short *)this_00->field_000C,st::pointer_boundary_cast<int *>(this_00->field_0008));
+       st::fn_006F0C00(reinterpret_cast<short *>(this_00->field_000C),this_00->field_0008);
   if (local_EAX_218 != 0) {
     local_8 = 0;
   }
   this_00->field_000C[4] = 0x20;
+
   local_EAX_254 =
        st::fn_006EFDB0
-                 ((short *)this_00->field_000C,(int)this_00->field_0018,st::mutable_c_string("3D_MAP"),'\0');
+                 (reinterpret_cast<short *>(this_00->field_000C),(int)this_00->field_0018,st::mutable_c_string("3D_MAP"),'\0');
   if (local_EAX_254 != 0) {
     local_8 = 0;
   }
@@ -203,13 +215,16 @@ int __thiscall st::fn_006A0740(CGenerate *this)
       local_8 = 0;
     }
   }
-  local_c = (AnonShape_006B5050_99986F91 *)st::fn_004041D3((short *)this_00->field_000C);
-  puVar10 = nullptr;
-  cVar9 = '\0';
-  puVar8 = nullptr;
-  uVar4 = st::fn_006B5050(local_c);
-  st::fn_006F13F0(st::pointer_boundary_cast<cMf32 *>(this_00->field_0018),0xc,PTR_s_SMALL_MAP_0079d840,(byte *)local_c,uVar4,puVar8,cVar9,
-                puVar10);
+  /* ST_CALLSITE[006A086F]: CALL 0x004041d3; direct=004041D3 thunk_FUN_006a2ed0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B5050_99986F91; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B5050_99986F91;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006A2ED0_9EFE711B */
+  local_c = st::pointer_boundary_cast<AnonShape_006B5050_99986F91 *>(st::fn_004041D3(reinterpret_cast<RecoveredRecord_006A2ED0_9EFE711B *>(this_00->field_000C)));
+  puVar11 = nullptr;
+  cVar10 = '\0';
+  puVar9 = nullptr;
+  /* ST_CALLSITE[006A087E]: CALL 0x006b5050; direct=006B5050 FUN_006b5050; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/byte; signature=__stdcall;pointer:/byte;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B5050_99986F91 */
+  pbVar4 = st::pointer_boundary_cast<byte *>(st::fn_006B5050(local_c));
+
+  st::fn_006F13F0(this_00->field_0018,0xc,PTR_s_SMALL_MAP_0079d840,reinterpret_cast<byte *>(local_c),(uint)pbVar4,puVar9
+                ,cVar10,puVar11);
   if (local_c != nullptr) {
     st::fn_006AB060(&local_c);
   }
@@ -230,8 +245,7 @@ undefined4 __thiscall st::fn_006A0960(CGenerate *this)
   int iVar3;
   uint uVar4;
   int local_48 [16];
-  undefined4 local_8;
-
+  uint local_8;
   pIVar2 = g_currentExceptionFrame;
   local_8 = 1;
   iVar3 = st::fn_0072D7F0(local_48,0);
@@ -247,4 +261,3 @@ undefined4 __thiscall st::fn_006A0960(CGenerate *this)
   }
   return 0;
 }
-

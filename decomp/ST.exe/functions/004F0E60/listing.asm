@@ -107,7 +107,7 @@ LAB_004f0f14:
 004F0F7C  83 C1 09                  ADD ECX,0x9
 004F0F7F  51                        PUSH ECX
 004F0F80  52                        PUSH EDX
-004F0F81  E8 1A A4 21 00            CALL 0x0070b3a0
+004F0F81  E8 1A A4 21 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 004F0F86  50                        PUSH EAX
 004F0F87  8B 46 68                  MOV EAX,dword ptr [ESI + 0x68]
 004F0F8A  6A 06                     PUSH 0x6

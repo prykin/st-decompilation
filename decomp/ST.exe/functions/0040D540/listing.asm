@@ -709,7 +709,7 @@ LAB_0040dde7:
 0040DE01  6A 10                     PUSH 0x10
 0040DE03  89 BE A7 00 00 00         MOV dword ptr [ESI + 0xa7],EDI
 0040DE09  89 96 AB 00 00 00         MOV dword ptr [ESI + 0xab],EDX
-0040DE0F  E8 FC CD 29 00            CALL 0x006aac10
+0040DE0F  E8 FC CD 29 00            CALL 0x006aac10  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 0040DE14  85 C0                     TEST EAX,EAX
 0040DE16  89 86 97 00 00 00         MOV dword ptr [ESI + 0x97],EAX
 0040DE1C  75 0E                     JNZ 0x0040de2c

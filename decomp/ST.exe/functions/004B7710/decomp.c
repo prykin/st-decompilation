@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0044EE30 -> 004B7710 @ 00450E64 | 0044EE30 -> 004B7710 @ 0045AC44 | 004B9A40 ->
@@ -13,15 +15,25 @@
 
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=10, used=0, unknown=0),
-   and decompilation contains no value return */
+   and decompilation contains no value return
 
-void FUN_004b7710(uint param_1,int param_2)
+   [STMethodOwnerApplier] Structural method owner recovered as STAllPlayersC.
+   Evidence: this_call_owners=[STAllPlayersC]; agreed_this_calls=10; incoming_this_accesses=0;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=2; incoming_this_forward_calls=2;
+   entry_incoming_ecx_capture=true; ret_stack_matches_explicit_parameters=true;
+   direct_non_thunk_callers=0; incoming_ecx_receiver_callers=0; attributed_named_callers=7;
+   owner_evidence_coverage=adequate; unique_primary_physical_vtable=true;
+   callee_closed_hidden_ecx_receiver_transport */
+
+void __thiscall STAllPlayersC::sub_004B7710(STAllPlayersC *this,uint param_1,int param_2)
 
 {
   int iVar1;
 
+
   iVar1 = thunk_FUN_004b72e0((char)param_1,param_2);
-  thunk_FUN_004b7240(param_1,iVar1);
+
+  thunk_FUN_004b7240(this,param_1,iVar1);
   return;
 }
 

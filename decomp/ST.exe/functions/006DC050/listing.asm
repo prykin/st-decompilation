@@ -65,7 +65,8 @@ ST3DSMAPContext::sub_006DC050:
 006DC112  3B DF                     CMP EBX,EDI
 006DC114  0F 8E DA 01 00 00         JLE 0x006dc2f4
 006DC11A  68 F2 04 00 00            PUSH 0x4f2
-006DC11F  E8 AC 43 FD FF            CALL 0x006b04d0
+ST3DSMAPContext::sub_006DC050::override::prt_6dc11f_c759b330:
+006DC11F  E8 AC 43 FD FF            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F;/uint
 006DC124  3B C7                     CMP EAX,EDI
 006DC126  74 09                     JZ 0x006dc131
 006DC128  8B C8                     MOV ECX,EAX

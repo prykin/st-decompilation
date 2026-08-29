@@ -19,7 +19,8 @@ LandInit:
 0057521B  3B F7                     CMP ESI,EDI
 0057521D  0F 85 74 01 00 00         JNZ 0x00575397
 00575223  68 F2 04 00 00            PUSH 0x4f2
-00575228  E8 A3 B2 13 00            CALL 0x006b04d0
+LandInit::override::prt_575228_c759b330:
+00575228  E8 A3 B2 13 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F;/uint
 0057522D  3B C7                     CMP EAX,EDI
 0057522F  74 09                     JZ 0x0057523a
 00575231  8B C8                     MOV ECX,EAX
@@ -120,7 +121,7 @@ LAB_0057531d:
 0057533A  51                        PUSH ECX
 0057533B  89 7D F4                  MOV dword ptr [EBP + -0xc],EDI
 0057533E  D1 FB                     SAR EBX,0x1
-00575340  E8 2B 59 13 00            CALL 0x006aac70
+00575340  E8 2B 59 13 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override
 00575345  85 FF                     TEST EDI,EDI
 00575347  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
 0057534A  C7 45 F8 00 00 00 00      MOV dword ptr [EBP + -0x8],0x0

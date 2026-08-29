@@ -1,4 +1,4 @@
-FUN_00647d90:
+AiBossClassTy::vfunc_30:
 00647D90  55                        PUSH EBP
 00647D91  8B EC                     MOV EBP,ESP
 00647D93  8B 45 10                  MOV EAX,dword ptr [EBP + 0x10]

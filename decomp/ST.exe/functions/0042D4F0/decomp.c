@@ -26,6 +26,7 @@ STAllPlayersC::ResetActivityFromTmp
   }
   else {
     if (param_2 != 1) {
+
       local_EAX_45 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x44d,0,0,
                                         "%s","STAllPlayersC::ResetActivityFromTmp invalid panel number");
       if (local_EAX_45 == 0) {
@@ -56,6 +57,7 @@ LAB_0042d599:
   else {
     if (((iVar3 != 0x1a4) && (iVar3 != 0x1ae)) && (iVar3 != 0x1b8)) {
 cf_common_exit_0042D5BC:
+
       iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x45f,0,0,"%s",
                                  "STAllPlayersC::ResetActivityFromTmp invalid type");
       if (iVar2 == 0) {

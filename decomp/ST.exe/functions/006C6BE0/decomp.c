@@ -30,7 +30,8 @@ uint FUN_006c6be0(AnonShape_006C6BE0_5C8BBC13 *param_1)
     STPiece<3,1>(param_1) = (char)((uint)pAVar1 >> 0x18);
     param_1 = pAVar1;
     if (STPiece<3,1>(param_1) == '!') {
-      uVar3 = FUN_006c6c80((int)pAVar2);
+
+      uVar3 = FUN_006c6c80((RecoveredRecord_006C6C80_604E9FE0 *)pAVar2);
       if (uVar3 != 0) {
         return uVar3;
       }

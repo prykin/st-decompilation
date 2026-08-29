@@ -1,6 +1,7 @@
 CreateSTBHEShell:
 005F3410  68 75 01 00 00            PUSH 0x175
-005F3415  E8 B6 D0 0B 00            CALL 0x006b04d0
+CreateSTBHEShell::override::prt_5f3415_d00084ae:
+005F3415  E8 B6 D0 0B 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBHEShellC; signature=__stdcall;pointer:/STBHEShellC;/uint
 005F341A  85 C0                     TEST EAX,EAX
 005F341C  74 07                     JZ 0x005f3425
 005F341E  8B C8                     MOV ECX,EAX

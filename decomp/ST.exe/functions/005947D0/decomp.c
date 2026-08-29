@@ -13,8 +13,10 @@ Visible * __cdecl CreateVisible(void)
 {
   Visible *this;
 
-  this = (Visible *)FUN_006b04d0(0x118);
+
+  this = STPointerBoundaryCast<Visible *>(FUN_006b04d0(0x118));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->vtable = &VisibleVTable;
     memset(&this->field_0x88, 0, 0x80); /* compiler bulk-zero initialization */

@@ -10,8 +10,8 @@ int FUN_00751c40(undefined4 param_1,uint param_2,int param_3,uint *param_4,int p
 
 {
   int iVar1;
-  undefined1 local_38 [14];
-  undefined2 local_2a;
+  byte local_38 [14];
+  ushort local_2a;
   int local_28;
   int local_18;
   uint local_10 [3];

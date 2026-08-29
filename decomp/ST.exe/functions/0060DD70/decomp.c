@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
+int __fastcall FUN_0060dd70(RecoveredRecordView_0060DD70_6BD00D59 *param_1)
 
 {
   short sVar1;
@@ -30,6 +30,7 @@ int __fastcall FUN_0060dd70(AnonShape_0060DD70_701DD710 *param_1)
        (iVar5 - iVar4 <= g_sT3DSMAPContext_00807598->field_0058)) &&
       (g_sT3DSMAPContext_00807598->field_0044 <= iVar4 + iVar6)) &&
      (iVar6 - iVar4 <= g_sT3DSMAPContext_00807598->field_0054)) {
+
     local_14 = FUN_006ddbd0();
     pVVar2 = g_visibleClass_00802A88;
     if (local_14 == 0) {

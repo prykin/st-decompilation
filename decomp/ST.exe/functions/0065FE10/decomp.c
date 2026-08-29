@@ -1,8 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall
-FUN_0065fe10(AiFltClassTy *param_1,undefined4 param_2,int param_3,short *param_4)
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00664960 @ 006652CB -> read as EAX on
+   every CFG path | 00664960 @ 00666B64 -> read as EAX on every CFG path */
+
+int __fastcall FUN_0065fe10(AiFltClassTy *param_1,undefined4 param_2,int param_3,short *param_4)
 
 {
   short sVar1;
@@ -16,10 +20,10 @@ FUN_0065fe10(AiFltClassTy *param_1,undefined4 param_2,int param_3,short *param_4
   DArrayTy **ppDVar5;
   DArrayTy *local_38 [5];
   uint local_24;
-  undefined4 local_20;
+  uint local_20;
   DArrayTy *local_1c;
   DArrayTy *local_c;
-  undefined4 local_8;
+  int local_8;
 
   ppDVar5 = local_38;
   for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -33,7 +37,7 @@ FUN_0065fe10(AiFltClassTy *param_1,undefined4 param_2,int param_3,short *param_4
   uVar2 = AiFltClassTy::sub_0065D9C0(param_1);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   if (CONCAT22(extraout_var,uVar2) == 0) {
-    return 0xffffffff;
+    return -1;
   }
   sVar1 = param_1->field_0039;
   if (param_3 == 0xdd) {
@@ -86,13 +90,13 @@ LAB_0065fec9:
       if (((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) &&
          (this = thunk_FUN_0042b760((char)param_1->field_0024,param_1->field_007D),
          this != nullptr)) {
-        /* ST_CALLSITE[0065FF66]: CALL dword ptr [EDX + 0x8] */
+        /* ST_CALLSITE[0065FF66]: CALL dword ptr [EDX + 0x8]; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STGroupBoatC;/undefined2;/undefined2 */
         this->sub_00498D20(8,(short)local_38);
         goto LAB_0065ff72;
       }
     }
   }
-  local_8 = 0xffffffff;
+  local_8 = -1;
 LAB_0065ff72:
   if (array != nullptr) {
     DArrayDestroy(array);

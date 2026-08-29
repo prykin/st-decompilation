@@ -20,7 +20,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
   int local_EAX_43;
   int iVar6;
   STT3DSprC *pSVar7;
-  char *pcVar8;
+  int *piVar8;
   int iVar5;
   STWorldObject *pSVar9;
   int local_EAX_1699;
@@ -41,10 +41,12 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_18 = this;
+
   local_EAX_43 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   this_00 = local_18;
   if (local_EAX_43 != 0) {
     g_currentExceptionFrame = local_5c.previous;
+
     iVar10 = ReportDebugMessage("E:\\__titans\\Igor\\To_gold.cpp",0x2b3,0,local_EAX_43,
                                 "%s","STDcResourcC::CreateRes");
     if (iVar10 != 0) {
@@ -71,19 +73,19 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
           pSVar7 = (STT3DSprC *)&this_00->field_01D5;
         }
         /* ST_CALLSITE[0057F977]: CALL 0x00405911; direct=00405911 STDcResourcC::Init */
-        if ((3 < local_14) && (pSVar7 = (STT3DSprC *)Init(this_00), pSVar7 == nullptr))
+        if ((3 < local_14) && (pSVar7 = STPointerBoundaryCast<STT3DSprC *>(Init(this_00)), pSVar7 == nullptr))
         goto cf_break_loop_0057FAA5;
         GVar15 = CASE_1D;
-        /* ST_CALLSITE[0057F990]: CALL 0x00401744; direct=00401744 STDcResourcC::sub_0057F3A0 */
-        pcVar8 = (char *)sub_0057F3A0(this_00,local_c,0);
+        /* ST_CALLSITE[0057F990]: CALL 0x00401744; direct=00401744 STDcResourcC::sub_0057F3A0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/int; signature=__thiscall;pointer:/int;pointer:/STDcResourcC;/int;/int */
+        piVar8 = sub_0057F3A0(this_00,local_c,0);
         /* ST_CALLSITE[0057F9A1]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
-        iVar6 = STT3DSprC::LoadSequence(pSVar7,0xe,PTR_00806774,pcVar8,GVar15);
+        iVar6 = STT3DSprC::LoadSequence(pSVar7,0xe,PTR_00806774,(char *)piVar8,GVar15);
         if (iVar6 != 0) goto cf_break_loop_0057FAA5;
         GVar15 = CASE_1D;
-        /* ST_CALLSITE[0057F9B8]: CALL 0x00401744; direct=00401744 STDcResourcC::sub_0057F3A0 */
-        pcVar8 = (char *)sub_0057F3A0(this_00,local_c,1);
+        /* ST_CALLSITE[0057F9B8]: CALL 0x00401744; direct=00401744 STDcResourcC::sub_0057F3A0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/int; signature=__thiscall;pointer:/int;pointer:/STDcResourcC;/int;/int */
+        piVar8 = sub_0057F3A0(this_00,local_c,1);
         /* ST_CALLSITE[0057F9C8]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
-        iVar6 = STT3DSprC::LoadSequence(pSVar7,0xd,PTR_00806774,pcVar8,GVar15);
+        iVar6 = STT3DSprC::LoadSequence(pSVar7,0xd,PTR_00806774,(char *)piVar8,GVar15);
         if (iVar6 != 0) goto cf_break_loop_0057FAA5;
         /* ST_CALLSITE[0057F9E6]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
         STT3DSprC::StartShow(pSVar7,0xe,g_playSystem_00802A38->field_00E4);
@@ -100,7 +102,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
                   (pSVar7,(float)local_10 * _DAT_007904f8 + _DAT_007904f4,
                    (float)iVar6 * _DAT_007904f8 + _DAT_007904f4,
                    (float)this_00->field_024D * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
-        Library::Ourlib::ST3DSMAP::SprSetLevAfter((void *)this_00->field_0211,pSVar7->field_0018,-1);
+        Library::Ourlib::ST3DSMAP::SprSetLevAfter(this_00->field_0211,pSVar7->field_0018,-1);
       }
       local_14 = local_14 + 4;
       local_c = local_c + 1;
@@ -123,19 +125,19 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
           pSVar7 = (STT3DSprC *)&this_00->field_01D5;
         }
         /* ST_CALLSITE[0057F7C1]: CALL 0x00405911; direct=00405911 STDcResourcC::Init */
-        if ((3 < local_14) && (pSVar7 = (STT3DSprC *)Init(this_00), pSVar7 == nullptr))
+        if ((3 < local_14) && (pSVar7 = STPointerBoundaryCast<STT3DSprC *>(Init(this_00)), pSVar7 == nullptr))
         goto cf_break_loop_0057FAA5;
         GVar15 = CASE_1D;
-        /* ST_CALLSITE[0057F7DA]: CALL 0x00404fd4; direct=00404FD4 STDcResourcC::sub_0057F2E0 */
-        pcVar8 = (char *)sub_0057F2E0(this_00,local_c,0);
+        /* ST_CALLSITE[0057F7DA]: CALL 0x00404fd4; direct=00404FD4 STDcResourcC::sub_0057F2E0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/int; signature=__thiscall;pointer:/int;pointer:/STDcResourcC;/int;/int */
+        piVar8 = sub_0057F2E0(this_00,local_c,0);
         /* ST_CALLSITE[0057F7EB]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
-        iVar6 = STT3DSprC::LoadSequence(pSVar7,0xe,PTR_00806774,pcVar8,GVar15);
+        iVar6 = STT3DSprC::LoadSequence(pSVar7,0xe,PTR_00806774,(char *)piVar8,GVar15);
         if (iVar6 != 0) goto cf_break_loop_0057FAA5;
         GVar15 = CASE_1D;
-        /* ST_CALLSITE[0057F802]: CALL 0x00404fd4; direct=00404FD4 STDcResourcC::sub_0057F2E0 */
-        pcVar8 = (char *)sub_0057F2E0(this_00,local_c,1);
+        /* ST_CALLSITE[0057F802]: CALL 0x00404fd4; direct=00404FD4 STDcResourcC::sub_0057F2E0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/int; signature=__thiscall;pointer:/int;pointer:/STDcResourcC;/int;/int */
+        piVar8 = sub_0057F2E0(this_00,local_c,1);
         /* ST_CALLSITE[0057F812]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
-        iVar6 = STT3DSprC::LoadSequence(pSVar7,0xd,PTR_00806774,pcVar8,GVar15);
+        iVar6 = STT3DSprC::LoadSequence(pSVar7,0xd,PTR_00806774,(char *)piVar8,GVar15);
         if (iVar6 != 0) goto cf_break_loop_0057FAA5;
         /* ST_CALLSITE[0057F830]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
         STT3DSprC::StartShow(pSVar7,0xe,g_playSystem_00802A38->field_00E4);
@@ -152,7 +154,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
                   (pSVar7,(float)local_10 * _DAT_007904f8 + _DAT_007904f4,
                    (float)iVar6 * _DAT_007904f8 + _DAT_007904f4,
                    (float)this_00->field_024D * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
-        Library::Ourlib::ST3DSMAP::SprSetLevAfter((void *)this_00->field_0211,pSVar7->field_0018,-1);
+        Library::Ourlib::ST3DSMAP::SprSetLevAfter(this_00->field_0211,pSVar7->field_0018,-1);
       }
       local_14 = local_14 + 4;
       local_c = local_c + 1;
@@ -177,18 +179,18 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
           pSVar7 = (STT3DSprC *)&this_00->field_01D5;
         }
         /* ST_CALLSITE[0057FB49]: CALL 0x00405911; direct=00405911 STDcResourcC::Init */
-        if ((iVar12 < 0) || (pSVar7 = (STT3DSprC *)Init(this_00), pSVar7 != nullptr)) {
+        if ((iVar12 < 0) || (pSVar7 = STPointerBoundaryCast<STT3DSprC *>(Init(this_00)), pSVar7 != nullptr)) {
           GVar15 = CASE_1D;
-          /* ST_CALLSITE[0057FB5F]: CALL 0x0040185c; direct=0040185C STDcResourcC::sub_0057F470 */
-          pcVar8 = (char *)sub_0057F470(this_00,iVar12,0);
+          /* ST_CALLSITE[0057FB5F]: CALL 0x0040185c; direct=0040185C STDcResourcC::sub_0057F470; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/int; signature=__thiscall;pointer:/int;pointer:/STDcResourcC;/int;/int */
+          piVar8 = sub_0057F470(this_00,iVar12,0);
           /* ST_CALLSITE[0057FB70]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
-          iVar6 = STT3DSprC::LoadSequence(pSVar7,0xe,PTR_00806774,pcVar8,GVar15);
+          iVar6 = STT3DSprC::LoadSequence(pSVar7,0xe,PTR_00806774,(char *)piVar8,GVar15);
           if (iVar6 == 0) {
             GVar15 = CASE_1D;
-            /* ST_CALLSITE[0057FB84]: CALL 0x0040185c; direct=0040185C STDcResourcC::sub_0057F470 */
-            pcVar8 = (char *)sub_0057F470(this_00,iVar12,1);
+            /* ST_CALLSITE[0057FB84]: CALL 0x0040185c; direct=0040185C STDcResourcC::sub_0057F470; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/int; signature=__thiscall;pointer:/int;pointer:/STDcResourcC;/int;/int */
+            piVar8 = sub_0057F470(this_00,iVar12,1);
             /* ST_CALLSITE[0057FB94]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
-            iVar6 = STT3DSprC::LoadSequence(pSVar7,0xd,PTR_00806774,pcVar8,GVar15);
+            iVar6 = STT3DSprC::LoadSequence(pSVar7,0xd,PTR_00806774,(char *)piVar8,GVar15);
             if (iVar6 == 0) {
               /* ST_CALLSITE[0057FBB2]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
               STT3DSprC::StartShow(pSVar7,0xe,g_playSystem_00802A38->field_00E4);
@@ -204,8 +206,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
                         (pSVar7,(float)local_14 * _DAT_007904f8 + _DAT_007904f4,
                          (float)(this_00->field_0249 + local_10) * _DAT_007904f8 + _DAT_007904f4,
                          (float)this_00->field_024D * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
-              Library::Ourlib::ST3DSMAP::SprSetLevAfter
-                        ((void *)this_00->field_0211,pSVar7->field_0018,-1);
+              Library::Ourlib::ST3DSMAP::SprSetLevAfter(this_00->field_0211,pSVar7->field_0018,-1);
               goto LAB_0057fc59;
             }
           }
@@ -227,6 +228,7 @@ LAB_0057fc59:
          (local_18->field_0249 < (int)g_worldGrid.sizeY)) &&
         ((-1 < local_18->field_0249 && (iVar12 = local_18->field_024D, -1 < iVar12)))) &&
        ((iVar12 < 5 &&
+
         (iVar5 = thunk_FUN_004961b0((short)local_18->field_0245,(short)local_18->field_0249,
                                     (short)iVar12), iVar5 != 0)))) {
       sVar1 = (short)this_00->field_0245;
@@ -253,6 +255,7 @@ LAB_0057faac:
   }
 LAB_0057fd72:
   if (local_8 != 0) {
+
     local_EAX_1699 = thunk_FUN_004ab050();
     local_c = 0;
     if (0 < this_00->field_0265) {

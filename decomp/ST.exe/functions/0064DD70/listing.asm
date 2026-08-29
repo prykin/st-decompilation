@@ -5,7 +5,7 @@ FUN_0064dd70:
 0064DD76  8B 55 14                  MOV EDX,dword ptr [EBP + 0x14]
 0064DD79  52                        PUSH EDX
 0064DD7A  8B 01                     MOV EAX,dword ptr [ECX]
-0064DD7C  FF 90 40 01 00 00         CALL dword ptr [EAX + 0x140]
+0064DD7C  FF 90 40 01 00 00         CALL dword ptr [EAX + 0x140]  ; [STIndirectCallsiteApplier] exact slot 0x140; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4
 0064DD82  83 C8 FF                  OR EAX,0xffffffff
 0064DD85  5D                        POP EBP
 0064DD86  C3                        RET

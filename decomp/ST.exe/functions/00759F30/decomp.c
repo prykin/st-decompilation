@@ -4,7 +4,7 @@
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 0075FEE0 -> 00759F30 @ 0075FF24 */
 
-void FUN_00759f30(undefined4 *param_1,AnonShape_0075FEE0_E0ABA202 *param_2)
+void FUN_00759f30(undefined4 *param_1,RecoveredRecordView_0075FEE0_2D7647F4 *param_2)
 
 {
   uint uVar1;

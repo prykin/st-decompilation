@@ -12,7 +12,8 @@
    owner_type=/TLOEmbryoTy; current target parameter and return types retained when arity agrees;
    physical-slot geometry proves receiver/stack ABI only */
 
-void __thiscall TLOEmbryoTy::sub_004D6890(TLOEmbryoTy *this,AnonShape_004D6890_0C7826D6 *param_1)
+void __thiscall
+TLOEmbryoTy::sub_004D6890(TLOEmbryoTy *this,RecoveredRecordView_004D6890_603A41DD *param_1)
 
 {
   byte uVar1;
@@ -20,14 +21,14 @@ void __thiscall TLOEmbryoTy::sub_004D6890(TLOEmbryoTy *this,AnonShape_004D6890_0
   byte bVar3;
   dword dVar4;
   int iVar5;
-  AnonShape_004D6890_0C7826D6 *pAVar6;
+  RecoveredRecordView_004D6890_603A41DD *pRVar6;
 
-  pAVar6 = param_1;
+  pRVar6 = param_1;
   for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(undefined4 *)pAVar6 = 0;
-    pAVar6 = (AnonShape_004D6890_0C7826D6 *)((int)&pAVar6->field_0003 + 1);
+    *(undefined4 *)pRVar6 = 0;
+    pRVar6 = (RecoveredRecordView_004D6890_603A41DD *)((int)&pRVar6->field_0003 + 1);
   }
-  *(undefined2 *)pAVar6 = 0;
+  *(undefined2 *)pRVar6 = 0;
   /* ST_CALLSITE[004D68B2]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   bVar3 = LookupRecordByte((char)this->field_0024);
   param_1->field_0007 = bVar3;

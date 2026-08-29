@@ -32,12 +32,12 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
   undefined4 *local_48;
   STMBombC *local_44;
   void *local_40;
-  undefined4 local_3c;
-  undefined4 local_38;
+  uint local_3c;
+  uint local_38;
   ushort *local_34;
-  undefined4 local_30;
-  undefined4 local_2c;
-  undefined4 local_28;
+  uint local_30;
+  uint local_2c;
+  uint local_28;
   void *local_24;
   byte *local_20;
   byte *local_1c;
@@ -55,10 +55,12 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
   local_44 = this;
+
   local_EAX_85 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
   this_00 = local_44;
   if (local_EAX_85 != 0) {
     g_currentExceptionFrame = local_8c.previous;
+
     iVar9 = ReportDebugMessage("E:\\__titans\\Igor\\to_mbomb.cpp",0x389,0,local_EAX_85,
                                "%s","STMBombC::GetMessage");
     if (iVar9 == 0) {
@@ -86,9 +88,10 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
   }
   if (SVar1 == MESS_SHARED_010F) {
     /* ST_CALLSITE[0058922D]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
-    local_20 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_10);
+    local_20 = STPointerBoundaryCast<byte *>(STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_10));
     /* ST_CALLSITE[0058923B]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
-    local_1c = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_18);
+    local_1c = STPointerBoundaryCast<byte *>(STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_18));
+
     local_14 = Library::DKW::LIB::MemAlloc(local_18 + 0x87 + local_10);
     if (local_20 == nullptr) {
       g_currentExceptionFrame = local_8c.previous;
@@ -161,6 +164,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
     return 0;
   }
   if (SVar1 == MESS_ID_CREATE) {
+
     DAT_0081170c = FUN_006acf0d(0,0,0,0x3ed,0x3ed,1000);
     dVar2 = (message->arg0).u32;
     this_00->field_0231 = 3;
@@ -209,11 +213,12 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
           /* ST_CALLSITE[00589072]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
           STT3DSprC::StartShow
                     ((STT3DSprC *)&this_00->field_01D5,0xe,g_playSystem_00802A38->field_00E4);
-          if (((AnonShape_005EFAE0_B406B78B *)this_00->field_029C ==
+          if (((RecoveredRecordView_005EFAE0_855D930D *)this_00->field_029C ==
                nullptr) ||
+
              (iVar4_mgB = STPlaySystemC::sub_006E62D0
                                     (g_playSystem_00802A38,
-                                     (AnonShape_005EFAE0_B406B78B *)this_00->field_029C,
+                                     (RecoveredRecordView_005EFAE0_855D930D *)this_00->field_029C,
                                      (int *)&local_24), iVar4_mgB != 0)) {
             this_00->field_0231 = 1;
             this_00->field_0235 = 0;
@@ -228,6 +233,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
             local_a = local_a - this_00->field_0045;
             local_8 = local_8 - this_00->field_0043;
             local_6 = local_6 - this_00->field_0041;
+
             local_EAX_1342 = FUN_006acf0d(0,0,0,(int)local_6,(int)local_8,(int)local_a);
             this_00->field_0235 = 0;
             this_00->field_0239 = 0;
@@ -246,10 +252,12 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
           return 0;
         }
       }
+
       iVar8 = ReportDebugMessage("E:\\__titans\\Igor\\to_mbomb.cpp",0x2ae,0,0,"%s",
                                  "STMBombC:Bad init coordinates");
       if (iVar8 == 0) {
-        thunk_FUN_005862e0(this_00);
+
+        thunk_FUN_005862e0((RecoveredRecord_005862E0_AFF1B07D *)this_00);
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
@@ -303,6 +311,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
     this_00->field_0276 = STField<undefined1>(local_48,0x79);
     this_00->field_0277 = STField<undefined1>(local_48,0x7a);
     this_00->field_0278 = STField<undefined4>(local_48,0x7b);
+
     local_40 = Library::DKW::LIB::MemAlloc(0x44);
     if (local_40 == nullptr) {
       g_currentExceptionFrame = local_8c.previous;
@@ -323,7 +332,7 @@ int __thiscall STMBombC::GetMessage(STMBombC *this,STMessage *message)
     /* ST_CALLSITE[00588E5F]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
     STT3DSprC::RestoreSpr
               ((STT3DSprC *)&this_00->field_01D5,(int *)&local_40,
-               (AnonShape_004AD790_77673787 *)((int)puVar7 + 0x83));
+               (RecoveredRecordView_004AD790_D4DB5A31 *)((int)puVar7 + 0x83));
     FreeAndNull(&local_40);
     g_currentExceptionFrame = local_8c.previous;
     return 0;

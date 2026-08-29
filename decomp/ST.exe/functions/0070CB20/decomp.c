@@ -5,8 +5,8 @@
    Evidence: 0070CB20 -> EXTERNAL:000000B2 @ 0070CD54 */
 
 uint __cdecl
-FUN_0070cb20(uint param_1,int param_2,int *param_3,int param_4,int param_5,byte param_6,byte param_7
-            ,int param_8,HPALETTE h,uint param_10,int param_11)
+FUN_0070cb20(uint param_1,int param_2,RecoveredRecord_0070CB20_44158EDF *param_3,int param_4,
+            int param_5,byte param_6,byte param_7,int param_8,HPALETTE h,uint param_10,int param_11)
 
 {
   byte bVar1;
@@ -44,10 +44,11 @@ FUN_0070cb20(uint param_1,int param_2,int *param_3,int param_4,int param_5,byte 
     iVar6 = local_c[-1] + param_1;
     iVar10 = *local_c + param_2;
     if ((((-1 < iVar6) && (iVar6 < param_4)) && (-1 < iVar10)) && (iVar10 < param_5)) {
-      iVar2 = FUN_006b4fa0(param_3);
+
+      iVar2 = FUN_006b4fa0((RecoveredRecord_006B4FA0_DAC3A217 *)param_3);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      bVar1 = *(byte *)(((uint)STField<ushort>(param_3,0xe) * param_3[1] + 0x1f >> 3 & 0x1ffffffc
-                        ) * ((param_3[2] - iVar10) + -1) + iVar6 + iVar2);
+      bVar1 = *(byte *)(((uint)param_3->field_000E * *(int *)&param_3->field_0x4 + 0x1f >> 3 &
+                        0x1ffffffc) * ((*(int *)&param_3->field_0x8 - iVar10) + -1) + iVar6 + iVar2);
       if (bVar1 != param_7) {
         uVar2 = (uint)bVar1;
         local_14[-1] = param_10_after_write;
@@ -73,16 +74,16 @@ FUN_0070cb20(uint param_1,int param_2,int *param_3,int param_4,int param_5,byte 
   _param_7 = (uint)*(byte *)(param_8 + 5 + uVar2 * 4) * iVar6;
   param_10_after_write = (uint)*(byte *)(param_8 + 6 + uVar2 * 4) * iVar6;
   if (0 < local_8) {
-    auto param_3_after_write = &DAT_007f0150; /* compiler stack-slot lifetime split */
+    auto param_3_after_write = (RecoveredRecord_0070CB20_44158EDF *)&DAT_007f0150; /* compiler stack-slot lifetime split */
     int param_8_after_write = local_8; /* compiler stack-slot lifetime split */
     puVar7 = local_54 + 1;
     do {
-      iVar8 = *param_3_after_write;
+      iVar8 = *(int *)param_3_after_write;
       iVar10 = iVar10 + puVar7[-1] * iVar8;
       _param_7 = _param_7 + iVar8 * *puVar7;
       iVar6 = iVar6 + iVar8;
       param_10_after_write = param_10_after_write + puVar7[1] * iVar8;
-      param_3_after_write = param_3_after_write + 3;
+      param_3_after_write = (RecoveredRecord_0070CB20_44158EDF *)&param_3_after_write->field_0xc;
       param_8_after_write = param_8_after_write + -1;
       puVar7 = puVar7 + 4;
     } while (param_8_after_write != 0);

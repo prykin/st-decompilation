@@ -1,4 +1,4 @@
-FUN_004d6d50:
+TLOEmbryoTy::vfunc_68:
 004D6D50  55                        PUSH EBP
 004D6D51  8B EC                     MOV EBP,ESP
 004D6D53  56                        PUSH ESI

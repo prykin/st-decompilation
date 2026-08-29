@@ -44,7 +44,7 @@ uint * __thiscall st::fn_004233E0(STGroupC *this)
       index = 0;
       uVar6 = local_14;
       do {
-        st::fn_006ACC70((DArrayTy *)local_10->field_0029,index,&local_6);
+        st::fn_006ACC70(reinterpret_cast<DArrayTy *>(local_10->field_0029),index,&local_6);
         if (local_6 != -1) {
           st::fn_006AE140(local_c,uVar6 & 0xffff,&local_6);
           uVar6 = uVar6 + 1;
@@ -87,7 +87,7 @@ uint __thiscall st::fn_00423520(STGroupC *this,int param_1)
   InternalExceptionFrame local_58;
   uint local_14;
   STGroupC *local_10;
-  undefined1 local_c [4];
+  byte local_c [4];
   int local_8;
 
   uVar6 = 0;
@@ -101,7 +101,7 @@ uint __thiscall st::fn_00423520(STGroupC *this,int param_1)
     local_14 = local_10->field_0029[3];
     if (0 < (int)local_14) {
       do {
-        st::fn_006ACC70((DArrayTy *)pSVar2->field_0029,uVar6,local_c);
+        st::fn_006ACC70(reinterpret_cast<DArrayTy *>(pSVar2->field_0029),uVar6,local_c);
         if (STPiece<0,2>(local_c) != 0xffff) {
           /* ST_CALLSITE[0042358D]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           this_00 = st::fn_004028BA
@@ -154,8 +154,7 @@ uint * __thiscall st::fn_00423660(STGroupC *this,int param_1)
   uint local_14;
   STGroupC *local_10;
   DArrayTy *local_c;
-  undefined1 local_8 [4];
-
+  byte local_8 [4];
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_10 = this;
@@ -167,7 +166,7 @@ uint * __thiscall st::fn_00423660(STGroupC *this,int param_1)
     local_14 = local_10->field_0029[3];
     if (0 < (int)local_14) {
       do {
-        st::fn_006ACC70((DArrayTy *)pSVar2->field_0029,index,local_8);
+        st::fn_006ACC70(reinterpret_cast<DArrayTy *>(pSVar2->field_0029),index,local_8);
         if (STPiece<0,2>(local_8) != 0xffff) {
           /* ST_CALLSITE[004236D9]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           this_00 = st::fn_004028BA
@@ -217,19 +216,18 @@ uint __thiscall st::fn_00423850(STGroupC *this,uint param_1,int param_2)
   uint uVar6;
   uint index;
   InternalExceptionFrame local_80;
-  undefined1 local_3c [16];
-  undefined4 local_2c;
-  undefined2 local_28;
-  undefined2 local_26;
-  undefined4 local_24;
+  byte local_3c [16];
+  uint local_2c;
+  ushort local_28;
+  ushort local_26;
+  uint local_24;
   STGroupC *local_1c;
   uint local_18;
   uint local_14;
   uint local_10;
   uint local_c;
   short local_8;
-  undefined1 local_5;
-
+  byte local_5;
   local_18 = this->field_0029[3];
   local_c = 0;
   local_10 = 0;
@@ -237,13 +235,15 @@ uint __thiscall st::fn_00423850(STGroupC *this,uint param_1,int param_2)
   g_currentExceptionFrame = &local_80;
   local_1c = this;
   local_14 = local_18;
+
   errorCode = st::fn_0072D7F0(local_80.jumpBuffer,0);
   pSVar2 = local_1c;
   index = local_14;
   uVar6 = local_18;
   if (errorCode == 0) {
     while (uVar6 = uVar6 - 1, -1 < (int)uVar6) {
-      st::fn_006ACC70((DArrayTy *)pSVar2->field_0029,uVar6,&local_8);
+
+      st::fn_006ACC70(reinterpret_cast<DArrayTy *>(pSVar2->field_0029),uVar6,&local_8);
       if (local_8 == -1) {
         index = uVar6;
         local_14 = uVar6;
@@ -254,24 +254,29 @@ uint __thiscall st::fn_00423850(STGroupC *this,uint param_1,int param_2)
                    0xb1);
       }
     }
-    st::fn_006AE140((DArrayTy *)pSVar2->field_0029,index,&param_1);
+
+    st::fn_006AE140(reinterpret_cast<DArrayTy *>(pSVar2->field_0029),index,&param_1);
     /* ST_CALLSITE[00423907]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     this_00 = st::fn_004028BA
                         (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)param_1,CASE_1);
+    /* ST_CALLSITE[00423915]: CALL 0x004033be; direct=004033BE STGameObjC::sub_00419C30 */
     st::fn_004033BE(this_00,pSVar2->field_0025);
     pSVar2->field_0027 = pSVar2->field_0027 + 1;
     if (param_2 == 1) {
       if (pSVar2->field_002D == nullptr) {
+        /* ST_CALLSITE[00423935]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
         pDVar3 = st::fn_006AE290(nullptr,5,2,5);
         pSVar2->field_002D = &pDVar3->flags;
       }
-      st::fn_006AE1C0((DArrayTy *)pSVar2->field_002D,&param_1);
+
+      st::fn_006AE1C0(reinterpret_cast<DArrayTy *>(pSVar2->field_002D),&param_1);
       local_5 = 0xff;
-      /* ST_CALLSITE[00423958]: CALL dword ptr [EDX + 0x8] */
+      /* ST_CALLSITE[00423958]: CALL dword ptr [EDX + 0x8]; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4 */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(pSVar2->vtable + 8))(0x65,&local_5);
     }
-    uVar4 = st::fn_0040579F((int)this_00);
+
+    uVar4 = st::fn_0040579F(reinterpret_cast<RecoveredRecord_00423120_79B5B62D *>(this_00));
     uVar6 = pSVar2->field_0035;
     if ((uVar6 & 1) == 0) {
       if ((uVar4 & 1) != 0) {
@@ -322,6 +327,7 @@ uint __thiscall st::fn_00423850(STGroupC *this,uint param_1,int param_2)
       this_00->vfunc_104((char)local_10);
     }
     if (this_00->field_0020 == 0x14) {
+      /* ST_CALLSITE[00423A0A]: CALL 0x00401c26; direct=00401C26 STGameObjC::sub_004956C0 */
       st::fn_00401C26(this_00,pSVar2->field_0039);
     }
     if ((undefined4 *)pSVar2->field_001C != 0) {
@@ -329,7 +335,7 @@ uint __thiscall st::fn_00423850(STGroupC *this,uint param_1,int param_2)
       local_28 = 0;
       local_26 = (short)param_1;
       local_24 = this_00->field_0018;
-      /* ST_CALLSITE[00423A37]: CALL dword ptr [EDX] */
+      /* ST_CALLSITE[00423A37]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4 */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)**(undefined4 **)pSVar2->field_001C)(local_3c);
     }
@@ -338,6 +344,7 @@ uint __thiscall st::fn_00423850(STGroupC *this,uint param_1,int param_2)
   }
   g_currentExceptionFrame = local_80.previous;
   if (errorCode != -0x5001ffff) {
+
     iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0xdf,0,errorCode,st::mutable_c_string("%s")
                                ,"STGroupC::AddObj");
     if (iVar5 != 0) {
@@ -417,14 +424,14 @@ undefined4 __thiscall st::fn_00423B50(STGroupC *this,DArrayTy *param_1,int param
 
    [STDiscriminatedPayloadApplier] Case-local payload view: message->id == MESS_ID_CREATE uses
    /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupC_GetMessage_00423EC0_MessagePayload_Case_MESS_ID_CREATE.
-   The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage. */
+   carrier=message; The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage. */
 
 int __thiscall st::fn_00423EC0(STGroupC *this,STMessage *message)
 
 {
   STGroupC *this_00;
   int iVar2;
-  uint *puVar2;
+  DArrayTy *pDVar2;
   int iVar3;
   int iVar4;
   uint index;
@@ -437,10 +444,12 @@ int __thiscall st::fn_00423EC0(STGroupC *this,STMessage *message)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
+
   iVar2 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0x17c,0,iVar2,st::mutable_c_string("%s"),
                                "STGroupC::GetMessage");
     if (iVar3 != 0) {
@@ -449,21 +458,24 @@ int __thiscall st::fn_00423EC0(STGroupC *this,STMessage *message)
     st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\wlad\\tc_grp.cpp"),0x17d);
     return 0xffff;
   }
+
   st::fn_006E5FD0(local_8,message);
   if (message->id == MESS_ID_CREATE) {
     iVar4 = (message->arg0).i32;
     if (STField<uint>(iVar4,0xC) < 2) {
       this_00->field_0020 = STField<undefined4>(iVar4,0x20);
-      this_00->field_0024 = ((char *)iVar4)[4];
+      this_00->field_0024 = STField<char>(iVar4,0x4);
       this_00->field_0025 = STField<undefined2>(iVar4,0x14);
       this_00->field_0027 = STField<undefined2>(iVar4,0x18);
-      puVar2 = st::fn_006AE310(nullptr,5,2,5,0x4045c5);
-      this_00->field_0029 = puVar2;
+      /* ST_CALLSITE[00423FD0]: CALL 0x006ae310; direct=006AE310 Library::DKW::TBL::DArrayCreateTracked; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
+      pDVar2 = st::fn_006AE310(nullptr,5,2,5,0x4045c5);
+      this_00->field_0029 = &pDVar2->flags;
       local_c = STField<int>(iVar4,0x1C);
       if (0 < local_c) {
         element = (void *)(iVar4 + 0x24);
         do {
-          st::fn_006AE140((DArrayTy *)this_00->field_0029,index,element);
+
+          st::fn_006AE140(reinterpret_cast<DArrayTy *>(this_00->field_0029),index,element);
           index = index + 1;
           element = (void *)((int)element + 4);
         } while ((int)index < local_c);
@@ -471,7 +483,7 @@ int __thiscall st::fn_00423EC0(STGroupC *this,STMessage *message)
       /* ST_CALLSITE[0042400B]: CALL 0x004059d9; direct=004059D9 STAllPlayersC::RegisterGroup */
       st::fn_004059D9
                 (g_allPlayers_007FA174,this_00->field_0024,this_00->field_0025,(int)this_00);
-      this_00->field_0031 = st::machine_word_boundary_cast<undefined4>(this_00->field_0018 * DAT_00808754);
+      this_00->field_0031 = this_00->field_0018 * DAT_00808754;
     }
     else if (STField<uint>(iVar4,0xC) == 2) {
       /* ST_CALLSITE[00423F7A]: CALL 0x00404f48; direct=00404F48 STGroupC::RestoreGrpData */
@@ -485,13 +497,13 @@ int __thiscall st::fn_00423EC0(STGroupC *this,STMessage *message)
   }
   else if (message->id == MESS_SHARED_0003) {
     st::fn_00405088(this_00);
-    st::fn_006AE110((DArrayTy *)this_00->field_0029);
+    st::fn_006AE110(reinterpret_cast<DArrayTy *>(this_00->field_0029));
     this_00->field_0029 = nullptr;
     /* ST_CALLSITE[00423F36]: CALL 0x004019ab; direct=004019AB STAllPlayersC::UnRegisterGroup */
     st::fn_004019AB
               (g_allPlayers_007FA174,this_00->field_0024,this_00->field_0025,(int)this_00);
     if ((DArrayTy *)this_00->field_002D != nullptr) {
-      st::fn_006AE110((DArrayTy *)this_00->field_002D);
+      st::fn_006AE110(reinterpret_cast<DArrayTy *>(this_00->field_002D));
       this_00->field_002D = nullptr;
       g_currentExceptionFrame = local_50.previous;
       return 0;
@@ -533,12 +545,12 @@ int __thiscall st::fn_004240F0(STGroupC *this,int *param_1)
   if (iVar2 == 0) {
     *param_1 = 0x40;
     if (local_10->field_0029 != nullptr) {
-      local_c = st::pointer_boundary_cast<undefined4 *>(st::fn_006B0020(local_10->field_0029,(int *)&local_8));
+      local_c = (undefined4 *)st::fn_006B0020(local_10->field_0029,reinterpret_cast<int *>(&local_8));
       st::fn_006AB060(&local_c);
       *param_1 = *param_1 + local_8;
     }
     if (pSVar6->field_002D != nullptr) {
-      local_c = st::pointer_boundary_cast<undefined4 *>(st::fn_006B0020(pSVar6->field_002D,(int *)&local_8));
+      local_c = (undefined4 *)st::fn_006B0020(pSVar6->field_002D,reinterpret_cast<int *>(&local_8));
       st::fn_006AB060(&local_c);
       *param_1 = *param_1 + local_8;
     }
@@ -559,8 +571,8 @@ int __thiscall st::fn_004240F0(STGroupC *this,int *param_1)
       STField<undefined4>(pvVar2,0x20) = 0;
     }
     else {
-      local_c = st::pointer_boundary_cast<undefined4 *>(st::fn_006B0020(pSVar6->field_0029,(int *)&local_8));
-      puVar7 = (byte *)(local_c);
+      local_c = (undefined4 *)st::fn_006B0020(pSVar6->field_0029,reinterpret_cast<int *>(&local_8));
+      puVar7 = reinterpret_cast<byte *>((local_c));
       puVar8 = (byte *)((int)pvVar2 + 0x40);
       memmove(puVar8, puVar7, local_8); /* compiler REP MOVS byte copy */
       uVar5 = 0;
@@ -576,8 +588,8 @@ int __thiscall st::fn_004240F0(STGroupC *this,int *param_1)
     }
     else {
       local_14 = iVar4;
-      local_c = st::pointer_boundary_cast<undefined4 *>(st::fn_006B0020(pSVar6->field_002D,(int *)&local_8));
-      puVar7 = (byte *)(local_c);
+      local_c = (undefined4 *)st::fn_006B0020(pSVar6->field_002D,reinterpret_cast<int *>(&local_8));
+      puVar7 = reinterpret_cast<byte *>((local_c));
       puVar8 = (byte *)(iVar4 + (int)pvVar2);
       memmove(puVar8, puVar7, local_8); /* compiler REP MOVS byte copy */
       STField<int>(pvVar2,0x24) = local_14;
@@ -646,13 +658,13 @@ void __thiscall st::fn_00424360(STGroupC *this,int param_1)
     local_c->field_0029 = nullptr;
   }
   else {
-    puVar5 = st::fn_006B00C0(nullptr,(uint *)(&local_8->field_0x0 + local_8->field_001C),
+    puVar5 = st::fn_006B00C0(nullptr,reinterpret_cast<uint *>((&local_8->field_0x0 + local_8->field_001C)),
                           st::function_address_boundary_cast<undefined *>(st::fn_00423E30));
     pSVar3->field_0029 = puVar5;
   }
   iVar1 = *(int *)&pAVar4->field_0x24;
   if (iVar1 != -1) {
-    puVar5 = st::fn_006B00C0(nullptr,(uint *)(&pAVar4->field_0x0 + iVar1),st::function_address_boundary_cast<undefined *>(st::fn_00423E30));
+    puVar5 = st::fn_006B00C0(nullptr,reinterpret_cast<uint *>((&pAVar4->field_0x0 + iVar1)),st::function_address_boundary_cast<undefined *>(st::fn_00423E30));
     pSVar3->field_002D = puVar5;
     g_currentExceptionFrame = local_50.previous;
     return;
@@ -683,7 +695,7 @@ void __thiscall st::fn_004247B0(STGroupC *this,uint param_1)
   if (uVar1 != 0) {
     index = 0;
     do {
-      st::fn_006ACC70((DArrayTy *)this->field_0029,index,&param_1);
+      st::fn_006ACC70(reinterpret_cast<DArrayTy *>(this->field_0029),index,&param_1);
       if ((ushort)param_1 != 0xffff) {
         /* ST_CALLSITE[004247F6]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         this_00 = st::fn_004028BA
@@ -699,6 +711,7 @@ void __thiscall st::fn_004247B0(STGroupC *this,uint param_1)
                      599);
         }
         if (this_00->field_0020 == 0x14) {
+          /* ST_CALLSITE[0042484B]: CALL 0x00401c26; direct=00401C26 STGameObjC::sub_004956C0 */
           st::fn_00401C26(this_00,this->field_0039);
         }
       }
@@ -708,4 +721,3 @@ void __thiscall st::fn_004247B0(STGroupC *this,uint param_1)
   }
   return;
 }
-

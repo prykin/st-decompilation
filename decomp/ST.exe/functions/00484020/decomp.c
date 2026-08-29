@@ -3,41 +3,49 @@
 
 /* [STAbiConsistencyApplier] stack_parameter_width: parameter=/short Evidence: entry-use
    width=/short; unmasked_dword_reads=0; evidence=004842C6 MOVSX EDX,word ptr [EBP + 0x8] | 00484301
-   MOVSX EAX,word ptr [EBP + 0x8] */
+   MOVSX EAX,word ptr [EBP + 0x8]
+
+   [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
+   Evidence: this_call_owners=[STBoatC]; agreed_this_calls=2; incoming_this_accesses=3;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=12; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
 
 undefined4 __thiscall
-FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param_4)
+STBoatC::sub_00484020(STBoatC *this,short param_1,short *param_2,short *param_3,short *param_4)
 
 {
   short sVar1;
   short sVar2;
   short sVar3;
   short sVar4;
-  int iVar5;
-  uint uVar6;
-  int *piVar7;
-  uint *puVar8;
-  int iVar9;
-  uint uVar10;
-  int iVar11;
+  ushort uVar5;
+  int iVar6;
+  uint uVar7;
+
+  int *piVar8;
+  uint *puVar9;
+  int iVar10;
+  uint uVar11;
+  byte *puVar12;
+  int iVar13;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined2 in_stack_00000006;
   short sStack_56;
   undefined2 uStack_52;
-  undefined4 local_50 [2];
-  undefined4 local_48 [2];
+  uint local_50 [2];
+  uint local_48 [2];
   int local_40;
   int local_3c;
-  undefined4 local_38;
+  uint local_38;
   short *local_34;
   int local_30;
   int local_2c;
   int local_28;
   int local_24;
-  undefined4 local_20;
+  ushort local_20;
   STWorldObject *local_1c;
-  uint local_18;
-  uint local_14;
+  short local_18 [2];
+  short local_14 [2];
   STWorldObject *local_10;
   undefined *local_c;
   int local_8;
@@ -59,10 +67,10 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
     local_8 = -1;
     local_c = nullptr;
   }
-  sVar3 = STField<short>(this,0x800);
-  sVar4 = STField<short>(this,0x802);
+  sVar3 = this->field_0800;
+  sVar4 = this->field_0802;
   _param_1 = STReplaceLowWord((uint32_t)(this), (uint16_t)(sVar4));
-  sVar1 = STField<short>(this,0x804);
+  sVar1 = this->field_0804;
   if (((((((sVar3 < 0) || (g_worldGrid.sizeX <= sVar3)) || (sVar4 < 0)) ||
         ((g_worldGrid.sizeY <= sVar4 || (sVar1 < 0)))) || (g_worldGrid.sizeZ <= sVar1)) ||
       (local_10 = STGridAt3D(g_worldGrid, sVar3, sVar4, sVar1).objects[0], local_10 == nullptr)) &&
@@ -72,18 +80,18 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
       (local_10 = STGridAt3D(g_worldGrid, sVar3, sVar4, sVar1).objects[1], local_10 == nullptr)))) {
     return 0;
   }
-  thunk_FUN_00416270(local_10,&local_14,(short *)&local_18,&param_1);
+  thunk_FUN_00416270(local_10,(uint *)local_14,local_18,&param_1);
   local_30 = 0;
   if (0 < local_8) {
     local_34 = (short *)(local_c + 2);
     do {
-      sVar3 = local_34[1] + STField<short>(this,0x4b);
+      sVar3 = local_34[1] + this->field_004B;
       *param_4 = sVar3;
       if ((-1 < sVar3) && ((int)sVar3 <= g_worldGrid.sizeZ + -1)) {
-        sVar3 = STField<short>(this,0x49) + *local_34;
+        sVar3 = this->field_0049 + *local_34;
         *param_3 = sVar3;
         if ((-1 < sVar3) && ((int)sVar3 <= g_worldGrid.sizeY + -1)) {
-          sVar4 = local_34[-1] + STField<short>(this,0x47);
+          sVar4 = local_34[-1] + this->field_0047;
           *param_2 = sVar4;
           if (-1 < sVar4) {
             local_28 = (int)g_worldGrid.sizeX;
@@ -99,63 +107,62 @@ FUN_00484020(void *this,short param_1,short *param_2,short *param_3,short *param
                           [(int)sVar2 * (int)g_worldGrid.planeStride + sVar1 * local_28 + (int)sVar4
                           ].objects[0] == nullptr)))) {
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                iVar9 = CONCAT22(sVar3 >> 0xf,sVar4) * 0xc9 + 100;
+                iVar13 = CONCAT22(sVar3 >> 0xf,sVar4) * 0xc9 + 100;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_c = (undefined *)
                           (CONCAT22((short)((uint)(local_28 + -1) >> 0x10),sVar1) * 0xc9 + 100);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                iVar11 = CONCAT22(sVar4 >> 0xf,sVar2) * 200 + 100;
-                local_40 = iVar9;
-                local_3c = iVar11;
-                iVar5 = FUN_006acf0d((short)iVar9,(short)local_c,(short)iVar11,
-                                     (short)local_14,(short)local_18,(int)param_1);
-                if ((iVar5 <= STField<short>(this,0x814)) &&
-                   ((iVar5 < 1 ||
-                    (uVar6 = (int)param_1 - (short)iVar11, uVar10 = (int)uVar6 >> 0x1f,
-                    (int)(((uVar6 ^ uVar10) - uVar10) * 10) / iVar5 < 4)))) {
+                iVar10 = CONCAT22(sVar4 >> 0xf,sVar2) * 200 + 100;
+                local_40 = iVar13;
+                local_3c = iVar10;
+                iVar6 = FUN_006acf0d((short)iVar13,(short)local_c,(short)iVar10,
+                                     (int)local_14[0],(int)local_18[0],(int)param_1);
+                if ((iVar6 <= this->field_0814) &&
+                   ((iVar6 < 1 ||
+                    (uVar7 = (int)param_1 - (short)iVar10, uVar11 = (int)uVar7 >> 0x1f,
+                    (int)(((uVar7 ^ uVar11) - uVar11) * 10) / iVar6 < 4)))) {
                   /* ST_CALLSITE[00484336]: CALL dword ptr [EAX + 0x10] */
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                  local_20 = (**(code **)(*(int *)this + 0x10))
-                                       (iVar9,local_c,iVar11,local_14,local_18,_param_1);
+                  uVar5 = (*this->vtable->vfunc_10)
+                                    ((short)iVar13,(short)local_c,iVar10,local_14[0],local_18[0],
+                                     _param_1);
+                  local_20 = uVar5;
                   local_2c = 0;
-                  if (STField<char>(this,0x2b2) == '\0') {
+                  if (this->field_02B2 == '\0') {
                     return 1;
                   }
-                  iVar11 = (int)this + 0x2a8;
+                  puVar12 = &this->field_0x2a8;
                   do {
-                    piVar7 = thunk_FUN_0041dc40(local_48,(short)*(undefined4 *)(iVar11 + -2),
-                                                STField<ushort>(iVar11,0x2),(short)local_20);
-                    sStack_56 = (short)((uint)*piVar7 >> 0x10);
-                    local_28 = *piVar7 + iVar9;
+                    piVar8 = thunk_FUN_0041dc40(local_48,(short)*(undefined4 *)(puVar12 + -2),
+                                                *(ushort *)(puVar12 + 2),(short)local_20);
+                    sStack_56 = (short)((uint)*piVar8 >> 0x10);
+                    local_28 = *piVar8 + iVar13;
                     sVar3 = (short)local_c - sStack_56;
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    local_24 = CONCAT22(uStack_52,(short)piVar7[1]) + local_3c;
-                    puVar8 = thunk_FUN_0041dc40(local_50,0,0,(short)local_20);
-                    sStack_56 = (short)((uint)*puVar8 >> 0x10);
-                    sVar4 = (short)local_14 + (short)*puVar8;
-                    sStack_56 = (short)local_18 - sStack_56;
-                    if (STField<int>(this,0x736) == 0) {
+                    local_24 = CONCAT22(uStack_52,(short)piVar8[1]) + local_3c;
+                    puVar9 = thunk_FUN_0041dc40(local_50,0,0,(short)local_20);
+                    sStack_56 = (short)((uint)*puVar9 >> 0x10);
+                    sVar4 = local_14[0] + (short)*puVar9;
+                    sStack_56 = local_18[0] - sStack_56;
+                    if (this->field_0736 == 0) {
                       /* ST_CALLSITE[0048440F]: CALL 0x00405907; direct=00405907 STSprGameObjC::CheckRay */
-                      iVar9 = STSprGameObjC::CheckRay
-                                        (this,(short)local_28,sVar3,(short)local_24,sVar4,sStack_56,
-                                         (short)_param_1,
-                                         STField<STSprGameObjC_CheckRay_param_7Enum>(this,0x79a),
-                                         (int *)&local_1c,0);
-                      if ((iVar9 == 0) && (local_1c != local_10)) break;
+                      iVar10 = STSprGameObjC::CheckRay
+                                         ((STSprGameObjC *)this,(short)local_28,sVar3,
+                                          (short)local_24,sVar4,sStack_56,(short)_param_1,
+                                          this->field_079A,(int *)&local_1c,0);
+                      if ((iVar10 == 0) && (local_1c != local_10)) break;
                     }
                     else {
                       /* ST_CALLSITE[00484442]: CALL 0x00405907; direct=00405907 STSprGameObjC::CheckRay */
-                      iVar9 = STSprGameObjC::CheckRay
-                                        (this,(short)local_28,sVar3,(short)local_24,sVar4,sStack_56,
-                                         (short)_param_1,
-                                         STField<STSprGameObjC_CheckRay_param_7Enum>(this,0x79a),
-                                         (int *)&local_1c,1);
-                      if ((iVar9 == 0) && (local_1c != local_10)) break;
+                      iVar10 = STSprGameObjC::CheckRay
+                                         ((STSprGameObjC *)this,(short)local_28,sVar3,
+                                          (short)local_24,sVar4,sStack_56,(short)_param_1,
+                                          this->field_079A,(int *)&local_1c,1);
+                      if ((iVar10 == 0) && (local_1c != local_10)) break;
                     }
                     local_2c = local_2c + 1;
-                    iVar11 = iVar11 + 6;
-                    iVar9 = local_40;
-                    if ((int)(uint)STField<byte>(this,0x2b2) <= local_2c) {
+                    puVar12 = puVar12 + 6;
+                    iVar13 = local_40;
+                    if ((int)(uint)(byte)this->field_02B2 <= local_2c) {
                       return 1;
                     }
                   } while( true );

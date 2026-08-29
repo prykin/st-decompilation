@@ -4,10 +4,11 @@
 /* [STPrototypeApplier] Propagated return.
    Evidence: 004DCBC0 returns zeroed full register at 004DCBCF @ 004DCBD1 */
 
-uint __fastcall FUN_004dcbc0(AnonShape_004DCCF0_FF75E3FE *param_1)
+uint __fastcall FUN_004dcbc0(RecoveredRecordView_004DCCF0_71744BDA *param_1)
 
 {
   if (*(int *)&param_1->field_0x231 == 0) {
+
     thunk_FUN_004dccf0(param_1);
   }
   return 0;

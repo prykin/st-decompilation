@@ -27,10 +27,12 @@ int __thiscall STManBasisC::GetMessage(STManBasisC *this,STMessage *message)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_c = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\nick\\to_basis.cpp",0x5b,0,iVar3,"%s",
                                "STManBasisC::GetMessage");
     if (iVar4 == 0) {
@@ -73,7 +75,8 @@ int __thiscall STManBasisC::GetMessage(STManBasisC *this,STMessage *message)
         sub_005F21D0(this_00);
       }
       else {
-        thunk_FUN_005f1380(this_00);
+
+        thunk_FUN_005f1380((RecoveredRecord_005F1380_AD368A85 *)this_00);
       }
       if ((local_8 != nullptr) && (g_cMf32_00806754 != nullptr)) {
         cMf32::RecMemFree(g_cMf32_00806754,(uint *)&local_8);
@@ -83,7 +86,7 @@ int __thiscall STManBasisC::GetMessage(STManBasisC *this,STMessage *message)
     }
   }
   else if (SVar1 == MESS_SHARED_010F) {
-    /* ST_CALLSITE[005F121A]: CALL 0x004030d5; direct=004030D5 STManBasisC::sub_005F1FA0 */
+    /* ST_CALLSITE[005F121A]: CALL 0x004030d5; direct=004030D5 STManBasisC::sub_005F1FA0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
     local_14 = sub_005F1FA0(local_c,(int *)&local_10);
     /* ST_CALLSITE[005F1236]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
     STPlaySystemC::SaveObjData(g_playSystem_00802A38,PTR_s_BASIS_MAN_0079c57c,local_14,local_10,0xc);

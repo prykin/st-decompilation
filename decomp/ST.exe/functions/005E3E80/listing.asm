@@ -134,7 +134,8 @@ LAB_005e3f89:
 005E3FBE  6A 00                     PUSH 0x0
 005E3FC0  6A 00                     PUSH 0x0
 005E3FC2  6A 00                     PUSH 0x0
-005E3FC4  E8 D7 CB 12 00            CALL 0x00710ba0
+MTaskTy::CreateTextSSpr::override::prt_5e3fc4_3ffd47ca:
+005E3FC4  E8 D7 CB 12 00            CALL 0x00710ba0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__thiscall;pointer:/ccFntTy;pointer:/ccFntTy;/int;/uint;/int;/int;/int;/int;/int
 005E3FC9  6A 00                     PUSH 0x0
 005E3FCB  6A 00                     PUSH 0x0
 005E3FCD  6A 00                     PUSH 0x0

@@ -1,10 +1,10 @@
 #include "../../pseudocode_runtime.h"
 
 
-int __cdecl FUN_00660d10(int param_1,int param_2)
+int __cdecl
+FUN_00660d10(RecoveredRecord_00660D10_4E35C399 *param_1,RecoveredRecord_00660D10_E926646A *param_2)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return (int)*(short *)(param_1 + 0xc) - (int)*(short *)(param_2 + 0xc);
+  return (int)param_1->field_000C - (int)param_2->field_000C;
 }
 

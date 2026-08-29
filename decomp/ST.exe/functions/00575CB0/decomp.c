@@ -56,12 +56,12 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,STMessage *message)
   InternalExceptionFrame local_e8;
   InternalExceptionFrame local_a4;
   int local_60;
-  undefined4 local_5c;
-  undefined4 local_58;
-  undefined4 local_54;
-  undefined4 local_50;
-  undefined4 local_4c;
-  undefined4 local_48;
+  uint local_5c;
+  uint local_58;
+  uint local_54;
+  uint local_50;
+  uint local_4c;
+  uint local_48;
   uint local_44;
   AnonShape_00575CB0_C367735D *local_3c;
   int local_38;
@@ -70,7 +70,7 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,STMessage *message)
   STAlgaC *local_2c;
   int local_28;
   int local_24;
-  AnonShape_0060EA30_DCEB68AD *local_20;
+  RecoveredRecordView_0060EA30_C6688588 *local_20;
   byte *local_1c;
   int local_18;
   DArrayTy *local_14;
@@ -81,10 +81,12 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,STMessage *message)
   local_a4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a4;
   local_2c = this;
+
   local_EAX_47 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0);
   pSVar18 = local_2c;
   if (local_EAX_47 != 0) {
     g_currentExceptionFrame = local_a4.previous;
+
     iVar22 = ReportDebugMessage("E:\\__titans\\Object\\To_alga.cpp",0x196,0,local_EAX_47,
                                 "%s","STAlgaC::GetMessage");
     if (iVar22 != 0) {
@@ -93,6 +95,7 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,STMessage *message)
     RaiseInternalException(local_EAX_47,0,"E:\\__titans\\Object\\To_alga.cpp",0x197);
     return local_EAX_47;
   }
+
   iVar8 = FUN_006e5fd0(local_2c,message);
   if (iVar8 == 0xffff) {
     RaiseInternalException
@@ -114,7 +117,7 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,STMessage *message)
     puVar25 = (byte *)&pSVar18->field_0x1c;
     memmove(puVar25, puVar19, 0x14); /* compiler REP MOVS byte copy */
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    local_20 = *(AnonShape_0060EA30_DCEB68AD **)((message->arg0).u32 + 0x14);
+    local_20 = *(RecoveredRecordView_0060EA30_C6688588 **)((message->arg0).u32 + 0x14);
     local_10 = (AnonShape_00575CB0_065D0A66 *)((message->arg0).u32 + 0x18);
     /* ST_CALLSITE[005760B5]: CALL dword ptr [0x0085bbb8] */
     BVar8 = IsBadReadPtr(local_10,(int)local_20 * 0x92);
@@ -187,6 +190,7 @@ LAB_005761a6:
 LAB_005761b9:
           local_e8.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &local_e8;
+
           local_EAX_1322 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0);
           pAVar5 = local_10;
           if (local_EAX_1322 == 0) {
@@ -226,6 +230,7 @@ LAB_005761b9:
             piVar22 = &local_60;
             local_60 = local_2c->field_0030;
             if ((int)local_2c->field_0034 <= local_60) {
+
               pvVar10 = Library::DKW::LIB::MemRealloc
                                   (local_2c->field_0038,local_2c->field_0034 * 8 + 0x50);
               pSVar18->field_0038 = pvVar10;
@@ -236,6 +241,7 @@ LAB_005761b9:
             pcVar11_mg1 = FUN_006c49b0(puVar28);
             array = local_14;
             *(char **)((int)pSVar18->field_0038 + pSVar18->field_0030 * 8 + 4) = pcVar11_mg1;
+
             Library::DKW::TBL::DArrayAppend(local_14,&local_60);
             pSVar18->field_0030 = pSVar18->field_0030 + 1;
             goto LAB_00576308;
@@ -251,6 +257,7 @@ LAB_00576308:
           iVar14 = local_10->field_0086;
           if (iVar14 < 0) {
             if (local_28 <= pSVar18->field_0044) {
+              /* ST_CALLSITE[00576331]: CALL 0x006acf50; direct=006ACF50 Library::DKW::LIB::MemRealloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
               puVar12 = Library::DKW::LIB::MemRealloc(pSVar18->field_0048,(local_28 * 5 + 0x32) * 4);
               pSVar18->field_0048 = puVar12;
               local_28 = iVar7 + 10;
@@ -266,22 +273,26 @@ LAB_00576308:
                  (float)(int)local_10->field_0004 * _DAT_00790504 * (float)_DAT_0079b168 +
                  (float)_DAT_0079b158;
             puVar12[9] = *(ushort *)(piVar22 + 7);
+
             uVar14 = Library::MSVCRT::FUN_0072e6c0();
             uVar15 = 0;
             local_34 = (int)uVar14 % piVar22[1];
             local_3c = *(AnonShape_00575CB0_C367735D **)piVar22[2];
             lVar30 = Library::MSVCRT::__ftol();
+
             ST3DSMAPContext::sub_006E8660
                       (g_sT3DSMAPContext_00807598,(int *)&local_c,(piVar22[4] != 0) + 1,0,
                        local_3c->field_0004,local_3c->field_0008,piVar22[5],piVar22[6] - (int)lVar30
                        ,uVar15);
             puVar12[8] = (ushort)local_c;
+
             ST3DSMAPContext::sub_006E98E0
                       (g_sT3DSMAPContext_00807598,local_c,0,piVar22[1],piVar22[2],1);
             ST3DSMAPContext::sub_006E9EF0
                       (g_sT3DSMAPContext_00807598,local_c,0,1,(short)puVar12[9],0,30000);
             ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,local_c,0,local_34);
             if (piVar22[4] != 0) {
+
               ST3DSMAPContext::sub_006E98E0
                         (g_sT3DSMAPContext_00807598,local_c,1,piVar22[3],piVar22[4],1);
               ST3DSMAPContext::sub_006E9EF0
@@ -294,6 +305,7 @@ LAB_00576308:
             }
             iVar14 = local_3c->field_0008 - piVar22[6];
             if (0xd < iVar14) {
+
               local_24 = FUN_006db610(iVar14 * 0x10000,-g_sT3DSMAPContext_00807598->field_0108);
               Library::Ourlib::ST3DSMAP::SprSetSplit(g_sT3DSMAPContext_00807598,local_c);
             }
@@ -301,12 +313,14 @@ LAB_00576308:
             Library::Ourlib::ST3DSMAP::SprMove
                       (g_sT3DSMAPContext_00807598,local_c,*(float *)(puVar12 + 2),
                        *(float *)(puVar12 + 4),*(float *)(puVar12 + 6));
+
             Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,local_c,0);
             pSVar18->field_0044 = pSVar18->field_0044 + 1;
             array = local_14;
           }
           else if ((iVar14 < piVar22[1]) && ((piVar22[4] == 0 || (iVar14 < piVar22[3])))) {
             if (local_30 <= pSVar18->field_003C) {
+              /* ST_CALLSITE[005765C0]: CALL 0x006acf50; direct=006ACF50 Library::DKW::LIB::MemRealloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/GlobalAggregates/RuntimeRecord_007F4D3C_0014; source view only; no Ghidra override */
               pRVar13 = Library::DKW::LIB::MemRealloc
                                   (pSVar18->field_0040,(local_30 * 0xb + 0x6e) * 4);
               pSVar18->field_0040 = pRVar13;
@@ -338,6 +352,7 @@ LAB_00576308:
               puVar19[6] = 0;
             }
             else {
+
               local_24 = FUN_006db610(iVar14 * 0x10000,-g_sT3DSMAPContext_00807598->field_0108);
               lVar30 = Library::MSVCRT::__ftol();
               puVar19[6] = (int)lVar30;
@@ -396,7 +411,8 @@ LAB_00576308:
   }
   else if ((SVar3 == MESS_SHARED_010F) &&
           (iVar14 = pSVar18->field_003C + pSVar18->field_0044, 0 < iVar14)) {
-    local_20 = (AnonShape_0060EA30_DCEB68AD *)(iVar14 * 0x92 + 0x18);
+    local_20 = (RecoveredRecordView_0060EA30_C6688588 *)(iVar14 * 0x92 + 0x18);
+
     local_1c = Library::DKW::LIB::MemAllocClear((uint)local_20);
     puVar19 = (byte *)&pSVar18->field_0x1c;
     pbVar9 = local_1c;

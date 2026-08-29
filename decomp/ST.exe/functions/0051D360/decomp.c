@@ -22,6 +22,7 @@ void __thiscall HelpPanelTy::NatProc(HelpPanelTy *this,int param_1,char param_2)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar3_mg0 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar3_mg0 == 0) {
@@ -54,11 +55,13 @@ void __thiscall HelpPanelTy::NatProc(HelpPanelTy *this,int param_1,char param_2)
         }
       }
     }
+
     UVar4 = thunk_FUN_00523410(param_1,'\0',0);
     /* ST_CALLSITE[0051D445]: CALL 0x00403ef9; direct=00403EF9 HelpPanelTy::DrawTitle */
     DrawTitle(this_00,0x55f9,0,UVar4);
     /* ST_CALLSITE[0051D453]: CALL 0x00403d78; direct=00403D78 HelpPanelTy::DrawObj */
     DrawObj(this_00,&local_8,(STAllPlayersC_GetTOBJImage_param_2Enum *)param_1,0,0);
+    /* ST_CALLSITE[0051D45C]: CALL 0x00403684; direct=00403684 thunk_FUN_00523410; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
     UVar4 = thunk_FUN_00523410(param_1,'\0',2);
     /* ST_CALLSITE[0051D46B]: CALL 0x00402dab; direct=00402DAB HelpPanelTy::DrawDescription */
     DrawDescription(this_00,&local_8,UVar4);
@@ -68,6 +71,7 @@ void __thiscall HelpPanelTy::NatProc(HelpPanelTy *this,int param_1,char param_2)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar4_mg0 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x93f,0,iVar3_mg0,
                                  "%s","HelpPanelTy::NatProc");
   if (iVar4_mg0 != 0) {

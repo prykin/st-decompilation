@@ -11,11 +11,10 @@
 STAppC * __thiscall st::fn_0056A5F0(STAppC *this,undefined4 param_1)
 
 {
-  DWORD DVar1;
-  int iVar2;
+  int iVar1;
 
-  st::fn_006E34C0((AppClassTy *)this,0,param_1);
-  st::fn_004057EF((AnonShape_00571CD0_C1ECCB3F *)&this->field_0038);
+  st::fn_006E34C0(reinterpret_cast<AppClassTy *>(this),0,param_1);
+  st::fn_004057EF(reinterpret_cast<RecoveredRecordView_00571CD0_140859AA *>(&this->field_0038));
   this->field_1111 = 10;
   this->field_1115 = 10;
   this->field_0FC7 = 0;
@@ -32,7 +31,7 @@ STAppC * __thiscall st::fn_0056A5F0(STAppC *this,undefined4 param_1)
   this->field_0E3F = 0xffffffff;
   this->field_0E3B = 0xffffffff;
   this->vtable = &st_global_0079B0A8;
-  g_app_00806728 = (AppClassTy *)this;
+  g_app_00806728 = reinterpret_cast<AppClassTy *>(this);
   this->field_115A = nullptr;
   DAT_0080673c = 0;
   this->field_115E = 1;
@@ -64,14 +63,15 @@ STAppC * __thiscall st::fn_0056A5F0(STAppC *this,undefined4 param_1)
   this->field_4EFA = 0;
   this->field_1138 = 0;
   this->field_7D0E = 0;
-  DVar1 = st::fn_006E51B0(this);
-  this->field_1134 = DVar1;
+
+  iVar1 = st::fn_006E51B0(this);
+  this->field_1134 = iVar1;
   this->field_76F2 = nullptr;
   this->field_854E = 0;
   this->field_8552 = 0;
   this->field_8556 = 0;
   memset(&this->field_0x1196, 0, 0x1999); /* compiler bulk-zero initialization */
-  iVar2 = 0;
+  iVar1 = 0;
   memset(&this->field_4DA3, 0, 0x104); /* compiler bulk-zero initialization */
   this->field_4EA7 = nullptr;
   this->field_4EAB = nullptr;
@@ -84,9 +84,16 @@ STAppC * __thiscall st::fn_0056A5F0(STAppC *this,undefined4 param_1)
 /* [STMethodOwnerApplier] Structural method owner recovered as STAppC.
    Evidence: this_call_owners=[STAppC]; agreed_this_calls=1; incoming_this_accesses=9;
    incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (5), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00533D10 @ 00534940 -> killed on
+   every CFG path | 0056ADC0 @ 0056BC2E -> read as EAX on every CFG path | 0056FA60 @ 0056FE13 ->
+   read as EAX on every CFG path | 00593040 @ 005934B8 -> read as EAX on every CFG path | 005B0BA0 @
+   005B19CC -> read as EAX on every CFG path | 005C1A90 @ 005C1CD3 -> read as EAX on every CFG path
+    */
 
-undefined4 __thiscall st::fn_0056E9E0(STAppC *this,int param_1)
+int __thiscall st::fn_0056E9E0(STAppC *this,int param_1)
 
 {
   byte bVar1;
@@ -104,7 +111,7 @@ undefined4 __thiscall st::fn_0056E9E0(STAppC *this,int param_1)
   InternalExceptionFrame local_5c;
   STAppC *local_18;
   char *local_14;
-  undefined4 local_10;
+  int local_10;
   char *local_c;
   cMf32 *local_8;
 
@@ -116,6 +123,7 @@ undefined4 __thiscall st::fn_0056E9E0(STAppC *this,int param_1)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_18 = this;
+
   iVar3 = st::fn_0072D7F0(local_5c.jumpBuffer,0);
   pSVar2 = local_18;
   if (iVar3 != 0) {
@@ -123,32 +131,35 @@ undefined4 __thiscall st::fn_0056E9E0(STAppC *this,int param_1)
     return 0;
   }
   local_c = &local_18->field_76F6;
-  pcVar3 = (cMf32 *)st::fn_006F0EC0(0x345,(byte *)local_c,0,0,0);
+
+  pcVar3 = STPointerBoundaryCast<cMf32 *>(st::fn_006F0EC0(0x345,reinterpret_cast<byte *>(local_c),0,0,0));
   local_8 = pcVar3;
   if ((DArrayTy *)pSVar2->field_4EA7 != nullptr) {
-    st::fn_006B5570((DArrayTy *)pSVar2->field_4EA7);
+    st::fn_006B5570(reinterpret_cast<DArrayTy *>(pSVar2->field_4EA7));
   }
   puVar4 = st::fn_0071AA10(pcVar3,PTR_s_DESCRIPTION_0079b074,0);
   pSVar2->field_4EA7 = puVar4;
   if (puVar4 == nullptr) {
+    /* ST_CALLSITE[0056EA86]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
     pDVar5 = st::fn_006B54F0(nullptr,10,10);
     pSVar2->field_4EA7 = &pDVar5->flags;
   }
   if ((DArrayTy *)pSVar2->field_4EAB != nullptr) {
-    st::fn_006B5570((DArrayTy *)pSVar2->field_4EAB);
+    st::fn_006B5570(reinterpret_cast<DArrayTy *>(pSVar2->field_4EAB));
   }
   puVar4 = st::fn_0071AA10(pcVar3,PTR_s_OBJECTIVES_0079b078,0);
   pSVar2->field_4EAB = puVar4;
   if (puVar4 == nullptr) {
+    /* ST_CALLSITE[0056EAC2]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
     pDVar5 = st::fn_006B54F0(nullptr,10,10);
     pSVar2->field_4EAB = &pDVar5->flags;
   }
   pbVar13 = &pSVar2->field_4DA3;
   memset((void *)pbVar13, 0, 0x104); /* compiler bulk-zero initialization */
-  local_14 = (char *)pbVar13;
-  puVar6 = st::fn_006F1CE0(local_8,0xc,PTR_s_TITLE_MISSION_0079b070,(int *)&local_14,0);
+  local_14 = reinterpret_cast<char *>(pbVar13);
+  puVar6 = st::fn_006F1CE0(local_8,0xc,PTR_s_TITLE_MISSION_0079b070,reinterpret_cast<int *>(&local_14),0);
   if ((puVar6 == nullptr) || (*pbVar13 == '\0')) {
-    st::fn_0072E730((byte *)local_c,nullptr,nullptr,local_160,nullptr);
+    st::fn_0072E730(reinterpret_cast<byte *>(local_c),nullptr,nullptr,local_160,nullptr);
     uVar8 = 0xffffffff;
     pbVar10 = local_160;
     do {
@@ -197,10 +208,10 @@ void __thiscall st::fn_0056EBE0(STAppC *this)
   int local_8;
 
   if ((DArrayTy *)this->field_4EAB != nullptr) {
-    st::fn_006B5570((DArrayTy *)this->field_4EAB);
+    st::fn_006B5570(reinterpret_cast<DArrayTy *>(this->field_4EAB));
   }
   if ((DArrayTy *)this->field_4EA7 != nullptr) {
-    st::fn_006B5570((DArrayTy *)this->field_4EA7);
+    st::fn_006B5570(reinterpret_cast<DArrayTy *>(this->field_4EA7));
   }
   if ((this->field_4EE6[3] == 0) || (uVar8 = this->field_4EE6[7], uVar8 == 0)) {
     this->field_233C = 1;
@@ -229,19 +240,21 @@ void __thiscall st::fn_0056EBE0(STAppC *this)
   puVar2 = st::fn_0071AA10(g_cMf32_0080675C,PTR_s_DESCRIPTION_0079b074,0);
   this->field_4EA7 = puVar2;
   if (puVar2 == nullptr) {
+    /* ST_CALLSITE[0056ECB1]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
     pDVar3 = st::fn_006B54F0(nullptr,10,10);
     this->field_4EA7 = &pDVar3->flags;
   }
   if (this->field_4EAB == nullptr) {
+    /* ST_CALLSITE[0056ECCC]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
     pDVar3 = st::fn_006B54F0(nullptr,10,10);
     this->field_4EAB = &pDVar3->flags;
   }
   /* ST_CALLSITE[0056ECE7]: CALL 0x00403f44; direct=00403F44 CreateOpponentList */
-  pDVar3 = (DArrayTy *)st::fn_00403F44(g_cMf32_0080675C,1,this->field_233C);
+  pDVar3 = reinterpret_cast<DArrayTy *>(st::fn_00403F44(g_cMf32_0080675C,1,this->field_233C));
   /* ST_CALLSITE[0056ECFF]: CALL 0x00403f44; direct=00403F44 CreateOpponentList */
-  array = (DArrayTy *)st::fn_00403F44(g_cMf32_0080675C,2,this->field_233C);
+  array = reinterpret_cast<DArrayTy *>(st::fn_00403F44(g_cMf32_0080675C,2,this->field_233C));
   /* ST_CALLSITE[0056ED16]: CALL 0x00403f44; direct=00403F44 CreateOpponentList */
-  array_00 = (DArrayTy *)st::fn_00403F44(g_cMf32_0080675C,3,this->field_233C);
+  array_00 = reinterpret_cast<DArrayTy *>(st::fn_00403F44(g_cMf32_0080675C,3,this->field_233C));
   pcVar9 = (char *)&this->field_11A7;
   local_8 = 8;
   do {
@@ -475,6 +488,33 @@ void __thiscall st::fn_0056F040(STAppC *this)
   return;
 }
 
+// 005711D0 STAppC::sub_005711D0
+#line 4 "decomp/ST.exe/functions/005711D0/decomp.c"
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=9, used=0), and
+   decompilation contains no value return
+
+   [STMethodOwnerApplier] Structural method owner recovered as STAppC.
+   Evidence: this_call_owners=[STAppC]; agreed_this_calls=7; incoming_this_accesses=0;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+
+void __thiscall st::fn_005711D0(STAppC *this,int *param_1)
+
+{
+  if ((RecoveredRecord_006E4C30_151FBAE9 *)*param_1 != nullptr) {
+    st::fn_006E4C30(this,(RecoveredRecord_006E4C30_151FBAE9 *)*param_1);
+    st::fn_006E4B80(this,(RecoveredRecord_006E4B80_A7B295CE *)*param_1);
+    st::fn_006E4D20(this,(DebugSystemC *)*param_1);
+    /* ST_CALLSITE[005711FE]: CALL dword ptr [EDX + 0x4]; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void */
+    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
+    (**(code **)(*(int *)*param_1 + 4))();
+    st::fn_0072E2B0((HoloTy *)*param_1);
+    *param_1 = 0;
+  }
+  return;
+}
+
 // 006E51B0 STAppC::sub_006E51B0
 #line 4 "decomp/ST.exe/functions/006E51B0/decomp.c"
 /* [STPrototypeApplier] Propagated return.
@@ -490,11 +530,27 @@ void __thiscall st::fn_0056F040(STAppC *this)
    [STMethodOwnerApplier] Structural method owner recovered as STAppC.
    Evidence: this_call_owners=[STAppC]; agreed_this_calls=2; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=39;
-   incoming_ecx_receiver_callers=2; attributed_named_callers=2; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=2; attributed_named_callers=2; owner_evidence_coverage=adequate
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (53), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=004C61E0 @ 004C61ED -> read as EAX on
+   every CFG path | 004C6210 @ 004C635F -> read as EAX on every CFG path | 004C6440 @ 004C6680 ->
+   read as EAX on every CFG path | 004C6440 @ 004C6777 -> read as EAX on every CFG path | 004C9770 @
+   004C9CD3 -> read as EAX on every CFG path | 004FB060 @ 004FB074 -> read as EAX on every CFG path
+   | 0051FAC0 @ 0051FB2B -> read as EAX on every CFG path | 0051FBA0 @ 0051FCF4 -> read as EAX on
+   every CFG path | 0052DD20 @ 0052DEAA -> read as EAX on every CFG path | 0052DD20 @ 0052DFBE ->
+   read as EAX on every CFG path | 0052DD20 @ 0052E00A -> read as EAX on every CFG path | 005384A0 @
+   005384B0 -> read as EAX on every CFG path | 00543C90 @ 00543CA0 -> read as EAX on every CFG path
+   | 005449B0 @ 005449C2 -> read as EAX on every CFG path | 0054D640 @ 0054DF87 -> read as EAX on
+   every CFG path | 0054E4F0 @ 0054E7D1 -> read as EAX on every CFG path | 0054F1D0 @ 0054F75C ->
+   read as EAX on every CFG path | 0054F1D0 @ 0054F78A -> read as EAX on every CFG path | 0054F1D0 @
+   0054F8AB -> read as EAX on every CFG path | 0054F1D0 @ 0054F923 -> read as EAX on every CFG path
+   | 0054F1D0 @ 0054FC03 -> read as EAX on every CFG path | 00550430 @ 0055046A -> read as EAX on
+   every CFG path | 005505D0 @ 00550655 -> read as EAX on every CFG path | 005505D0 @ 005506BA ->
+   read as EAX on every CFG path */
 
-DWORD __thiscall st::fn_006E51B0(STAppC *this)
+int __thiscall st::fn_006E51B0(STAppC *this)
 
 {
   return this->field_0018;
 }
-

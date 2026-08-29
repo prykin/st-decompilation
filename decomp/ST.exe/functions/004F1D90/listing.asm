@@ -39,7 +39,7 @@ CPanelTy::PaintDamageXY:
 004F1DF5  6A 00                     PUSH 0x0
 004F1DF7  51                        PUSH ECX
 004F1DF8  52                        PUSH EDX
-004F1DF9  E8 42 E3 1B 00            CALL 0x006b0140
+004F1DF9  E8 42 E3 1B 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 004F1DFE  8B 8E B8 01 00 00         MOV ECX,dword ptr [ESI + 0x1b8]
 004F1E04  50                        PUSH EAX
 004F1E05  E8 66 FD 21 00            CALL 0x00711b70
@@ -88,7 +88,7 @@ CPanelTy::PaintDamageXY:
 004F1E87  6A FF                     PUSH -0x1
 004F1E89  52                        PUSH EDX
 004F1E8A  68 B2 36 00 00            PUSH 0x36b2
-004F1E8F  E8 AC E2 1B 00            CALL 0x006b0140
+004F1E8F  E8 AC E2 1B 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 004F1E94  8B 8E B8 01 00 00         MOV ECX,dword ptr [ESI + 0x1b8]
 004F1E9A  50                        PUSH EAX
 004F1E9B  E8 D0 FC 21 00            CALL 0x00711b70

@@ -31,7 +31,7 @@ CPanelTy::PaintPerResSI:
 005049F6  8B 96 B2 02 00 00         MOV EDX,dword ptr [ESI + 0x2b2]
 005049FC  6A 01                     PUSH 0x1
 005049FE  52                        PUSH EDX
-005049FF  E8 9C 69 20 00            CALL 0x0070b3a0
+005049FF  E8 9C 69 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 00504A04  50                        PUSH EAX
 00504A05  8B 86 94 01 00 00         MOV EAX,dword ptr [ESI + 0x194]
 00504A0B  6A 01                     PUSH 0x1
@@ -60,7 +60,7 @@ LAB_00504a46:
 00504A46  8B 96 B6 02 00 00         MOV EDX,dword ptr [ESI + 0x2b6]
 00504A4C  6A 01                     PUSH 0x1
 00504A4E  52                        PUSH EDX
-00504A4F  E8 4C 69 20 00            CALL 0x0070b3a0
+00504A4F  E8 4C 69 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 00504A54  8B 8E 94 01 00 00         MOV ECX,dword ptr [ESI + 0x194]
 00504A5A  50                        PUSH EAX
 00504A5B  6A 01                     PUSH 0x1
@@ -89,7 +89,7 @@ LAB_00504aa0:
 00504AA0  8B 96 B6 02 00 00         MOV EDX,dword ptr [ESI + 0x2b6]
 00504AA6  6A 00                     PUSH 0x0
 00504AA8  52                        PUSH EDX
-00504AA9  E8 F2 68 20 00            CALL 0x0070b3a0
+00504AA9  E8 F2 68 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 00504AAE  50                        PUSH EAX
 00504AAF  8B 86 94 01 00 00         MOV EAX,dword ptr [ESI + 0x194]
 00504AB5  6A 01                     PUSH 0x1

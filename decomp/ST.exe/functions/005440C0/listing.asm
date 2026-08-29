@@ -1,4 +1,4 @@
-FUN_005440c0:
+CursorClassTy::sub_005440C0:
 005440C0  55                        PUSH EBP
 005440C1  8B EC                     MOV EBP,ESP
 005440C3  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

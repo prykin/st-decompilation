@@ -25,6 +25,7 @@ void __thiscall MReportTy::PaintMainScore(MReportTy *this,int param_1,uint param
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_c = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pMVar2 = local_c;
   if (iVar3 == 0) {
@@ -35,7 +36,7 @@ void __thiscall MReportTy::PaintMainScore(MReportTy *this,int param_1,uint param
       do {
         /* ST_CALLSITE[005BFDA7]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)pMVar2->field_0073,iVar5,local_10,'\x06',
-               (byte *)pMVar2->field_006F);
+               (RecoveredRecordView_006B84D0_87AF9D9B *)pMVar2->field_006F);
         iVar5 = iVar5 + 6;
         local_8 = local_8 - 1;
       } while (local_8 != 0);
@@ -46,12 +47,15 @@ void __thiscall MReportTy::PaintMainScore(MReportTy *this,int param_1,uint param
     FUN_006b4170((RecoveredSourceFamily_dibcopy *)pMVar2->field_0073,0,0x280,uVar3,0x50,0x1c,0);
     FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)pMVar2->field_0073,0,0x280,uVar3,0x50,0x1c,0x18,
                  0xd);
+
     ccFntTy::SetSurf(pMVar2->field_008B,(int)pMVar2->field_0073,0,0x280,uVar3,0x50,0x1c);
+
     ccFntTy::WrStr(pMVar2->field_008B,(char *)&DAT_0080f33a,-1,-1,8);
     g_currentExceptionFrame = local_54.previous;
     return;
   }
   g_currentExceptionFrame = local_54.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x208,0,iVar3,"%s",
                              "MReportTy::PaintMainScore");
   if (iVar4 != 0) {

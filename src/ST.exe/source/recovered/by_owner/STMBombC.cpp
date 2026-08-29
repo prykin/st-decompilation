@@ -15,13 +15,12 @@ STMBombC * __thiscall st::fn_005861F0(STMBombC *this)
 
 {
   /* ST_CALLSITE[005861F4]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
-  st::fn_00401933((STGameObjC *)this);
+  st::fn_00401933(reinterpret_cast<STGameObjC *>(this));
   /* ST_CALLSITE[00586201]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
-  st::fn_00401316((STT3DSprC *)&this->field_01D5);
+  st::fn_00401316(reinterpret_cast<STT3DSprC *>(&this->field_01D5));
   this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079BBB4);
   this->vtable = &st_global_0079BA54;
   this->field_0231 = 1;
   this->field_026F = 0xff;
   return this;
 }
-

@@ -150,7 +150,7 @@ LAB_0053d652:
 0053D66E  0F 94 C2                  SETZ DL
 0053D671  52                        PUSH EDX
 0053D672  50                        PUSH EAX
-0053D673  E8 28 DD 1C 00            CALL 0x0070b3a0
+0053D673  E8 28 DD 1C 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 0053D678  8B 4E 68                  MOV ECX,dword ptr [ESI + 0x68]
 0053D67B  50                        PUSH EAX
 0053D67C  6A 01                     PUSH 0x1

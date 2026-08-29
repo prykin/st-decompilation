@@ -10,7 +10,7 @@
    decompilation contains no value return */
 
 void __thiscall
-STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *param_2)
+STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,RecoveredRecordView_004AD790_D4DB5A31 *param_2)
 
 {
   byte *pbVar1;
@@ -39,10 +39,12 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_24 = this;
+
   local_EAX_35 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   this_00 = local_24;
   if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_68.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0x43d,0,local_EAX_35,
                                "%s","STT3DSprC::RestoreSpr");
     if (iVar6 == 0) {
@@ -185,6 +187,7 @@ STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,AnonShape_004AD790_77673787 *
         sub_004ACE60(this_00,(char)local_8);
       }
       else {
+
         thunk_FUN_004aceb0(this_00,(char)local_8);
       }
       pAVar5 = local_10;

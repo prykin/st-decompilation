@@ -28,7 +28,7 @@ StartSystemTy::AddToChat:
 005DD89C  6A 01                     PUSH 0x1
 005DD89E  6A 02                     PUSH 0x2
 005DD8A0  50                        PUSH EAX
-005DD8A1  E8 4A 7C 0D 00            CALL 0x006b54f0
+005DD8A1  E8 4A 7C 0D 00            CALL 0x006b54f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 005DD8A6  8B D8                     MOV EBX,EAX
 005DD8A8  85 DB                     TEST EBX,EBX
 005DD8AA  89 5D F4                  MOV dword ptr [EBP + -0xc],EBX
@@ -81,7 +81,7 @@ LAB_005dd8f4:
 005DD946  8B 4F 34                  MOV ECX,dword ptr [EDI + 0x34]
 005DD949  68 D8 21 7C 00            PUSH 0x7c21d8
 005DD94E  53                        PUSH EBX
-005DD94F  E8 9C 48 13 00            CALL 0x007121f0
+005DD94F  E8 9C 48 13 00            CALL 0x007121f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; source view only; no Ghidra override
 005DD954  8B F0                     MOV ESI,EAX
 005DD956  85 F6                     TEST ESI,ESI
 005DD958  74 45                     JZ 0x005dd99f

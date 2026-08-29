@@ -23,6 +23,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this)
   int iVar5;
   cMf32 *pcVar6;
   OptPanelTy_field_02FDDArray *pOVar7;
+  DArrayTy *pOVar7_mg0;
   char *pcVar7_mg0;
   char *pcVar7_mg1;
   int iVar9;
@@ -35,7 +36,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this)
   byte *pbVar16;
   bool bVar17;
   char local_12c [108];
-  undefined4 local_c0;
+  uint local_c0;
   InternalExceptionFrame local_94;
   InternalExceptionFrame local_50;
   uint local_c;
@@ -48,10 +49,12 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this)
   FUN_006e6080(this,2,this->field_01B5[0],(undefined4 *)&this->field_0x18);
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
+
   local_EAX_67 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pOVar12 = local_8;
   if (local_EAX_67 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0x3ad,0,local_EAX_67,
                                "%s","OptPanelTy::PrepAsses");
     if (iVar8 != 0) {
@@ -66,12 +69,13 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this)
   pOVar12->field_02FD = nullptr;
   local_94.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_94;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_94.previous;
-    pOVar7 = (OptPanelTy_field_02FDDArray *)
-             Library::DKW::TBL::DArrayCreate(nullptr,1,0x98,1);
-    local_8->field_02FD = pOVar7;
+    /* ST_CALLSITE[0053274A]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/OptPanelTy_field_02FDDArray; source view only; no Ghidra override */
+    pOVar7_mg0 = Library::DKW::TBL::DArrayCreate(nullptr,1,0x98,1);
+    local_8->field_02FD = (OptPanelTy_field_02FDDArray *)pOVar7_mg0;
     pOVar12 = local_8;
     goto LAB_00532758;
   }
@@ -95,7 +99,8 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this)
     /* ST_CALLSITE[005326A7]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)&DAT_0080f33a,"%s%s",&CHAR_00h_00807680,&CHAR_00h_0080ef1e);
   }
-  pcVar6 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
+
+  pcVar6 = STPointerBoundaryCast<cMf32 *>(Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0));
   pOVar12 = local_8;
   switch(DAT_008087a0 & 0xff) {
   case 1:
@@ -144,6 +149,7 @@ LAB_00532758:
     memmove(pcVar15, pcVar13, uVar10); /* compiler REP MOVS byte copy */
   }
   local_c0 = 1;
+
   Library::DKW::TBL::FUN_006b11d0(&pOVar12->field_02FD->flags,0,(undefined4 *)local_12c);
   pOVar12->field_0028 = 0x28;
   puVar1 = &pOVar12->field_0x18;
@@ -155,6 +161,7 @@ LAB_00532758:
   pOVar12->field_002C = 1;
   pOVar12->field_002E = 0;
   FUN_006e6080(pOVar12,2,pOVar12->field_01B5[0],(undefined4 *)puVar1);
+
   iVar9 = thunk_FUN_00648a30((uint)DAT_0080874d,(char *)&DAT_0080f33a);
   if (iVar9 == 0) {
     pOVar12->field_0028 = 0x22;

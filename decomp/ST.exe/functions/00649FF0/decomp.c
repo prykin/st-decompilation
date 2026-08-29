@@ -109,8 +109,9 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
   memmove(pcVar12, pcVar9, uVar6); /* compiler REP MOVS byte copy */
   FUN_006b78c0(stack_bytes_neg_330,stack_bytes_neg_330);
   array = (DArrayTy *)
-          thunk_FUN_00683c70((LPCSTR)param_1,(AnonShape_00683C70_22193481 *)stack_bytes_neg_330,
-                             &local_14,param_4,nullptr);
+          thunk_FUN_00683c70((LPCSTR)param_1,
+                             (RecoveredRecordView_00683C70_9F6EAF4E *)stack_bytes_neg_330,&local_14,
+                             param_4,nullptr);
   if (array != nullptr) {
     if (local_14 != CASE_A) {
       local_8 = array;
@@ -129,8 +130,10 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
           pcVar9 = nullptr;
         }
         if (((*pcVar9 != '\0') &&
+
             (iVar6 = Library::MSVCRT::__strcmpi((char *)&DAT_008117c0,pcVar9), iVar6 != 0)) ||
            (uVar8 != *(uint *)(pcVar9 + 0x104))) {
+
           DArrayRemoveAt(array,uVar6);
         }
       }

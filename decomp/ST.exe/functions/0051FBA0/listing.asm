@@ -31,7 +31,8 @@ switchD_0051fbe8::caseD_2:
 0051FBF5  8B 51 30                  MOV EDX,dword ptr [ECX + 0x30]
 0051FBF8  52                        PUSH EDX
 0051FBF9  68 9D 01 00 00            PUSH 0x19d
-0051FBFE  E8 FD E2 1E 00            CALL 0x0070df00
+HelpStringTy::GetMessage::override::prt_51fbfe_bb1a54ff:
+0051FBFE  E8 FD E2 1E 00            CALL 0x0070df00  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/ccFntTy
 0051FC03  89 86 1E 01 00 00         MOV dword ptr [ESI + 0x11e],EAX
 0051FC09  89 58 58                  MOV dword ptr [EAX + 0x58],EBX
 0051FC0C  89 58 5C                  MOV dword ptr [EAX + 0x5c],EBX

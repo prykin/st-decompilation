@@ -20,9 +20,9 @@ STSharkC * __thiscall st::fn_0058D750(STSharkC *this)
 {
 
   /* ST_CALLSITE[0058D754]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
-  st::fn_00401933((STGameObjC *)this);
+  st::fn_00401933(reinterpret_cast<STGameObjC *>(this));
   /* ST_CALLSITE[0058D761]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
-  st::fn_00401316((STT3DSprC *)&this->field_01D5);
+  st::fn_00401316(reinterpret_cast<STT3DSprC *>(&this->field_01D5));
   this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079BFE0);
   this->vtable = &st_global_0079BE80;
   this->field_0257 = CASE_0;
@@ -30,6 +30,79 @@ STSharkC * __thiscall st::fn_0058D750(STSharkC *this)
   this->field_023D = 0;
   this->field_0249 = 0xff;
   return this;
+}
+
+// 0058E440 STSharkC::vfunc_DC
+#line 4 "decomp/ST.exe/functions/0058E440/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079BE80
+   Entries: 00403E4A
+   Slots: 0xDC
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_physical_vtable_owner_and_slot;
+   receiver_extent=71/655; unique_owner_for_target */
+
+undefined4 __thiscall
+st::fn_0058E440(STSharkC *this,short param_1,short param_2,short param_3,short param_4,
+                  short param_5,short param_6)
+
+{
+  short sVar1;
+  short sVar2;
+  short sVar3;
+  short sVar4;
+  short sVar5;
+  short sVar6;
+
+  sVar1 = this->field_0045 + -0xc;
+  sVar4 = this->field_0045 + 0xc;
+  sVar6 = this->field_0041 + -0x1c;
+  sVar2 = this->field_0043 + -0xc;
+  sVar3 = this->field_0041 + 0x1c;
+  sVar5 = this->field_0043 + 0xc;
+  if ((((((sVar6 <= param_1) && (param_1 <= sVar3)) || ((sVar6 <= param_4 && (param_4 <= sVar3))))
+       || ((param_1 <= sVar6 && (sVar3 <= param_4)))) &&
+      (((sVar2 <= param_2 && (param_2 <= sVar5)) ||
+       (((sVar2 <= param_5 && (param_5 <= sVar5)) || ((param_2 <= sVar2 && (sVar5 <= param_5))))))))
+     && ((((sVar1 <= param_3 && (param_3 <= sVar4)) || ((sVar1 <= param_6 && (param_6 <= sVar4))))
+         || ((param_3 <= sVar1 && (sVar4 <= param_6)))))) {
+    return 0;
+  }
+  return 0xffffffff;
+}
+
+// 0058E530 STSharkC::vfunc_E0
+#line 4 "decomp/ST.exe/functions/0058E530/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079BE80
+   Entries: 0040376A
+   Slots: 0xE0
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_physical_vtable_owner_and_slot;
+   receiver_extent=71/655; unique_owner_for_target
+
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 0058E53A exact 2-byte output store from /STSharkC+0x41; exact partial-width MOV at
+   0058E536
+
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 0058E544 exact 2-byte output store from /STSharkC+0x43; exact partial-width MOV at
+   0058E540
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 0058E551 exact 2-byte output store from /STSharkC+0x45; exact partial-width MOV at
+   0058E547 */
+
+undefined4 __thiscall
+st::fn_0058E530(STSharkC *this,undefined4 param_1,short *param_2,short *param_3,short *param_4,
+                  undefined4 *param_5)
+
+{
+  *param_2 = this->field_0041;
+  *param_3 = this->field_0043;
+  *param_4 = this->field_0045;
+  *param_5 = 0;
+  return 0;
 }
 
 // 0058EFE0 STSharkC::sub_0058EFE0
@@ -46,8 +119,7 @@ STSharkC * __thiscall st::fn_0058D750(STSharkC *this)
 void __thiscall st::fn_0058EFE0(STSharkC *this)
 
 {
-  undefined4 local_24 [8];
-
+  uint local_24 [8];
   memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
   local_24[3] = 0;
   local_24[5] = this->field_0008;
@@ -85,11 +157,11 @@ int __thiscall st::fn_0058F430(STSharkC *this)
   local_14 = 0x7fff;
   this->field_023D = 0;
   this->field_0249 = 0xff;
-  iVar6 = st::machine_word_boundary_cast<int>(this->field_0047 + -4);
+  iVar6 = this->field_0047 + -4;
   if (iVar6 < this->field_0047 + 4) {
     do {
       if (((iVar6 <= g_worldGrid.sizeX) && (-1 < iVar6)) &&
-         (iVar9 = st::machine_word_boundary_cast<int>(this->field_0049 + -4), sVar7 = g_worldGrid.sizeX, iVar9 < this->field_0049 + 4)) {
+         (iVar9 = this->field_0049 + -4, sVar7 = g_worldGrid.sizeX, iVar9 < this->field_0049 + 4)) {
         do {
           if ((iVar9 <= g_worldGrid.sizeY) && (-1 < iVar9)) {
             local_c = 0;
@@ -105,15 +177,15 @@ int __thiscall st::fn_0058F430(STSharkC *this)
                      (this_00->value_20 == 0x14)))))))) &&
                  /* ST_CALLSITE[0058F530]: CALL dword ptr [EAX + 0x2c] */
                  (iVar2 = this_00->GetObjectTypeId(), iVar2 == 0x15)) {
-                iVar2 = st::machine_word_boundary_cast<int>(this->field_0047 - iVar6);
+                iVar2 = this->field_0047 - iVar6;
                 if (iVar2 < 0) {
                   iVar2 = -iVar2;
                 }
-                iVar3 = st::machine_word_boundary_cast<int>(this->field_0049 - iVar9);
+                iVar3 = this->field_0049 - iVar9;
                 if (iVar3 < 0) {
                   iVar3 = -iVar3;
                 }
-                iVar4 = st::machine_word_boundary_cast<int>(this->field_004B - local_c);
+                iVar4 = this->field_004B - local_c;
                 if (iVar4 < 0) {
                   iVar4 = -iVar4;
                 }
@@ -165,14 +237,13 @@ int __thiscall st::fn_0058FF70(STSharkC *this)
   uVar2 = g_playSystem_00802A38->field_00E4;
   switch(this->field_0257) {
   case CASE_0:
-    uVar1 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
+    uVar1 = this->field_001C * 0x41c64e6d + 0x3039;
     this->field_001C = uVar1;
     return uVar2 + 1 + (uVar1 >> 0x10) % 5;
   case CASE_6:
-    uVar1 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
+    uVar1 = this->field_001C * 0x41c64e6d + 0x3039;
     this->field_001C = uVar1;
     uVar2 = uVar2 + 0xf + (uVar1 >> 0x10 & 0xf);
   }
   return uVar2;
 }
-

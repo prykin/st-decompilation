@@ -568,7 +568,7 @@ LAB_004b9387:
 004B938A  85 C0                     TEST EAX,EAX
 004B938C  74 19                     JZ 0x004b93a7
 004B938E  8B CE                     MOV ECX,ESI
-004B9390  E8 8B BB F4 FF            CALL 0x00404f20
+004B9390  E8 8B BB F4 FF            CALL 0x00404f20  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/TLOBaseTy; source view only; no Ghidra override
 004B9395  3B 86 45 02 00 00         CMP EAX,dword ptr [ESI + 0x245]
 004B939B  74 0A                     JZ 0x004b93a7
 004B939D  6A 01                     PUSH 0x1

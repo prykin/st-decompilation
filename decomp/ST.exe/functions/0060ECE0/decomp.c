@@ -26,6 +26,7 @@ FUN_0060ece0(void *this,int param_1,int param_2,int param_3,int param_4,int para
   STField<short>(this,0x268) = (short)(param_6 % 0xc9);
   STField<short>(this,0x26a) = (short)(param_7 % 200);
   if (param_8 == 2) {
+
     iVar2 = FUN_006acf0d(param_2,param_3,param_4,param_5,param_6,param_7);
     STField<int>(this,0x28c) = iVar2;
     STField<int>(this,0x27c) = ((param_5 - param_2) * 10000) / iVar2;

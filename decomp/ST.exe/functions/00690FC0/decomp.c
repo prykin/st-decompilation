@@ -22,15 +22,17 @@ AllocationRecord_00690FC0 * __cdecl FUN_00690fc0(AllocationRecord_00690FC0 *para
   AllocationRecord_00668330 *pAVar6;
   AllocationRecord_00690FC0 *pAVar7;
   InternalExceptionFrame local_54;
-  undefined4 local_10;
+  uint local_10;
   byte *local_c;
   AnonShape_00690FC0_955C4112 *local_8;
 
   local_8 = nullptr;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
+
   iVar1 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar1 == 0) {
+
     pAVar1 = Library::DKW::LIB::MemAllocClear(0x10c);
     pAVar5 = param_1;
     pAVar7 = pAVar1;
@@ -50,6 +52,7 @@ AllocationRecord_00690FC0 * __cdecl FUN_00690fc0(AllocationRecord_00690FC0 *para
       iVar4 = iVar4 + 0xc;
     } while (iVar4 < 0x60);
     if (pAVar1->field_0085 == 0) {
+      /* ST_CALLSITE[0069106E]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
       pDVar2 = Library::DKW::TBL::DArrayCreate(nullptr,10,8,10);
       local_8->field_0085 = &pDVar2->flags;
       pAVar1 = (AllocationRecord_00690FC0 *)local_8;
@@ -70,6 +73,7 @@ AllocationRecord_00690FC0 * __cdecl FUN_00690fc0(AllocationRecord_00690FC0 *para
           else {
             local_c = &pAVar3[-1].field_0x240;
           }
+
           Library::DKW::TBL::DArrayAppend((DArrayTy *)local_8->field_0085,&local_10);
           pAVar6 = (AllocationRecord_00668330 *)(&pAVar6->field_0x0 + pAVar6->field_0014);
           iVar4 = iVar4 + 1;

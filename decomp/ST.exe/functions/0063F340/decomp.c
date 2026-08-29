@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_0063f340(AnonShape_0063F340_151E9E14 *param_1)
+void __fastcall FUN_0063f340(RecoveredRecordView_0063F340_498264FB *param_1)
 
 {
   int iVar1;
@@ -10,6 +10,7 @@ void __fastcall FUN_0063f340(AnonShape_0063F340_151E9E14 *param_1)
 
   puVar3 = param_1->field_0347;
   if (puVar3 == nullptr) {
+    /* ST_CALLSITE[0063F361]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
     puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                        (PTR_00806774,CASE_1D,"expl_nb0",0xffffffff,0,1,0,nullptr);
     param_1->field_0347 = puVar3;

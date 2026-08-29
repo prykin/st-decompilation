@@ -107,11 +107,16 @@ void __thiscall FUN_0069ece0(void *this,int param_1,int param_2)
   thunk_FUN_006a0a70(this);
   if (0 < param_1) {
     do {
+
       uVar1 = Library::MSVCRT::FUN_0072e6c0();
       iVar3 = (int)uVar1 % (STField<int>(this,0x5833) * 100 + -99);
+
       uVar1 = Library::MSVCRT::FUN_0072e6c0();
       local_c = (int)uVar1 % (STField<int>(this,0x5837) * 100 + -99);
-      uVar2 = thunk_FUN_00695010(this,iVar3 / 200,local_c / 200,param_2);
+
+      uVar2 = thunk_FUN_00695010(this,iVar3 / 200,local_c / 200,
+                                 (RecoveredRecord_00695010_96BA53C4 *)param_2);
+
       uVar1 = Library::MSVCRT::FUN_0072e6c0();
       iVar4 = (int)uVar1 % 10;
       switch(uVar2) {
@@ -143,6 +148,7 @@ void __thiscall FUN_0069ece0(void *this,int param_1,int param_2)
         local_8 = local_19c[iVar4 + 0x50];
       }
       iVar4 = local_8;
+
       uVar1 = thunk_FUN_006950f0(local_8);
       thunk_FUN_006a0ae0(this,iVar3,local_c,0,iVar4,uVar1);
       param_1 = param_1 + -1;

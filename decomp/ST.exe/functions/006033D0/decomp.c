@@ -12,27 +12,27 @@
    owner_type=/STDestC; current target parameter and return types retained when arity agrees;
    physical-slot geometry proves receiver/stack ABI only */
 
-void __thiscall STDestC::sub_006033D0(STDestC *this,undefined1 *param_1)
+void __thiscall STDestC::sub_006033D0(STDestC *this,RecoveredRecord_006033D0_8A1D4BAE *param_1)
 
 {
   byte bVar1;
   uint uVar2;
   if (this->field_036E != CASE_0) {
-    *param_1 = 4;
-    param_1[1] = this->field_021D;
-    param_1[2] = 1;
+    *(undefined1 *)param_1 = 4;
+    param_1->field_0x1 = this->field_021D;
+    param_1->field_0x2 = 1;
     /* ST_CALLSITE[006033F6]: CALL dword ptr [EDX + 0x2c] */
     uVar2 = this->vfunc_2C();
-    *(undefined4 *)(param_1 + 3) = uVar2;
+    param_1->field_0003 = uVar2;
     /* ST_CALLSITE[00603406]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar1 = LookupRecordByte(this->field_0024);
-    param_1[7] = bVar1;
-    *(int **)(param_1 + 8) = this->field_0018;
+    param_1->field_0x7 = bVar1;
+    param_1->field_0008 = this->field_0018;
   }
-  Library::MSVCRT::_strncpy(param_1 + 0xc,&this->field_025B,0xe);
-  param_1[0x1b] = 100;
+  Library::MSVCRT::_strncpy((char *)(param_1 + 1),&this->field_025B,0xe);
+  *(undefined1 *)&param_1[2].field_0003 = 100;
   if (this->field_036E != CASE_0) {
-    param_1[0x1d] = 1;
+    *(undefined1 *)((int)&param_1[2].field_0003 + 2) = 1;
   }
   return;
 }

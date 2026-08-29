@@ -68,12 +68,12 @@ LAB_004dde0c:
 004DDE2F  8B 14 85 1C 60 7E 00      MOV EDX,dword ptr [EAX*0x4 + 0x7e601c]
 004DDE36  8B 07                     MOV EAX,dword ptr [EDI]
 004DDE38  89 55 F8                  MOV dword ptr [EBP + -0x8],EDX
-004DDE3B  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+004DDE3B  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004DDE3E  8A 4F 24                  MOV CL,byte ptr [EDI + 0x24]
 004DDE41  50                        PUSH EAX
 004DDE42  51                        PUSH ECX
 004DDE43  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
-004DDE49  E8 49 4A F2 FF            CALL 0x00402897
+004DDE49  E8 49 4A F2 FF            CALL 0x00402897  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 004DDE4E  85 C0                     TEST EAX,EAX
 004DDE50  74 39                     JZ 0x004dde8b
 004DDE52  8B 57 18                  MOV EDX,dword ptr [EDI + 0x18]

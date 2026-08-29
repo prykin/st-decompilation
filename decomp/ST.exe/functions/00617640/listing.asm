@@ -30,7 +30,7 @@ JumpManagC::GetMessage:
 00617695  8D 45 F8                  LEA EAX,[EBP + -0x8]
 00617698  50                        PUSH EAX
 00617699  8B CE                     MOV ECX,ESI
-0061769B  E8 55 9F DE FF            CALL 0x004015f5
+0061769B  E8 55 9F DE FF            CALL 0x004015f5  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 006176A0  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
 006176A3  8B 56 18                  MOV EDX,dword ptr [ESI + 0x18]
 006176A6  51                        PUSH ECX

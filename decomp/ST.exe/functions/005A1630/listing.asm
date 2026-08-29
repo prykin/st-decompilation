@@ -108,7 +108,7 @@ LAB_005a1747:
 005A1792  6A FE                     PUSH -0x2
 005A1794  51                        PUSH ECX
 005A1795  68 B9 25 00 00            PUSH 0x25b9
-005A179A  E8 A1 E9 10 00            CALL 0x006b0140
+005A179A  E8 A1 E9 10 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 005A179F  8B 8E 73 1A 00 00         MOV ECX,dword ptr [ESI + 0x1a73]
 005A17A5  50                        PUSH EAX
 005A17A6  E8 C5 03 17 00            CALL 0x00711b70

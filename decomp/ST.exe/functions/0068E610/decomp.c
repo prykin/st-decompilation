@@ -10,7 +10,7 @@ int __thiscall AiTactClassTy::sub_0068E610(AiTactClassTy *this,int param_1)
 
 {
   AiTactClassTy_field_00A5Element *element_00a5;
-  uint uVar2;
+  int iVar2;
   AiTactClassTy_field_00A5DArray *pAVar3;
   int iVar4;
   uint uVar5;
@@ -28,10 +28,11 @@ int __thiscall AiTactClassTy::sub_0068E610(AiTactClassTy *this,int param_1)
       else {
         element_00a5 = nullptr;
       }
-      if ((AnonReceiver_0065DA50 *)element_00a5->field_0004 != nullptr) {
-        uVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::thunk_FUN_0065da50
-                          ((AnonReceiver_0065DA50 *)element_00a5->field_0004,param_1,-1);
-        iVar4 = iVar4 + uVar2;
+      if ((RecoveredReceiver_0065DA50 *)element_00a5->field_0004 != nullptr) {
+
+        iVar2 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0065DA50::
+                thunk_FUN_0065da50((RecoveredReceiver_0065DA50 *)element_00a5->field_0004,param_1,-1);
+        iVar4 = iVar4 + iVar2;
       }
       pAVar3 = this->field_00A5;
       uVar5 = uVar5 + 1;

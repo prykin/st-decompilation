@@ -11,25 +11,26 @@
    decompilation contains no value return */
 
 void __thiscall
-SettMapMTy::sub_005D00B0(SettMapMTy *this,AnonShape_005D00B0_9E7CC102 *param_1,uint param_2)
+SettMapMTy::sub_005D00B0
+          (SettMapMTy *this,RecoveredRecordView_005D00B0_4C4B9991 *param_1,uint param_2)
 
 {
   uint *puVar1;
-  undefined4 local_64;
-  undefined1 local_60;
-  undefined1 local_1a;
-  undefined4 local_19;
-  undefined1 local_15;
+  uint local_64;
+  byte local_60;
+  byte local_1a;
+  uint local_19;
+  byte local_15;
   int local_14;
-  undefined4 local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_10;
+  uint local_c;
+  uint local_8;
   puVar1 = param_1->field_0050;
   memset(&local_64, 0, 0x60); /* compiler bulk-zero initialization */
   STPiece<3,1>(local_64) = param_1->field_0003;
   STPiece<2,1>(local_64) = param_1->field_0002;
   local_60 = 1;
+
   Library::DKW::TBL::FUN_006afe40(&local_14,puVar1);
   local_10 = param_1->field_0054;
   local_1a = param_1->field_004A;
@@ -37,6 +38,7 @@ SettMapMTy::sub_005D00B0(SettMapMTy *this,AnonShape_005D00B0_9E7CC102 *param_1,u
   local_8 = param_1->field_005C;
   local_19 = 0;
   local_15 = 0;
+
   Library::DKW::TBL::FUN_006b11d0(&this->field_1F84->flags,param_2,&local_64);
   return;
 }

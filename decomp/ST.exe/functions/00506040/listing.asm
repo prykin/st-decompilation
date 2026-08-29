@@ -21,7 +21,7 @@ CPanelTy::sub_00506040:
 0050608D  89 8E 6C 05 00 00         MOV dword ptr [ESI + 0x56c],ECX
 00506093  C7 86 70 05 00 00 64 00 00 00  MOV dword ptr [ESI + 0x570],0x64
 0050609D  C7 86 74 05 00 00 3C 00 00 00  MOV dword ptr [ESI + 0x574],0x3c
-005060A7  E8 F4 52 20 00            CALL 0x0070b3a0
+005060A7  E8 F4 52 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override
 005060AC  8B 4E 50                  MOV ECX,dword ptr [ESI + 0x50]
 005060AF  8B 96 A8 00 00 00         MOV EDX,dword ptr [ESI + 0xa8]
 005060B5  89 86 78 05 00 00         MOV dword ptr [ESI + 0x578],EAX
@@ -37,7 +37,7 @@ CPanelTy::sub_00506040:
 005060E9  89 96 88 05 00 00         MOV dword ptr [ESI + 0x588],EDX
 005060EF  C7 86 8C 05 00 00 20 00 00 00  MOV dword ptr [ESI + 0x58c],0x20
 005060F9  C7 86 90 05 00 00 35 00 00 00  MOV dword ptr [ESI + 0x590],0x35
-00506103  E8 98 52 20 00            CALL 0x0070b3a0
+00506103  E8 98 52 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override
 00506108  8B 8E 8C 05 00 00         MOV ECX,dword ptr [ESI + 0x58c]
 0050610E  83 C4 10                  ADD ESP,0x10
 00506111  89 86 94 05 00 00         MOV dword ptr [ESI + 0x594],EAX

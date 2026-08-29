@@ -28,9 +28,11 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",0x48,0,iVar2,"%s",
                                "MainMenuTy::InitMainMenu");
     if (iVar6 == 0) {
@@ -53,6 +55,7 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
   }
   if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {
+
       Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
     else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
@@ -65,6 +68,7 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
     do {
       iVar8 = 0;
       bVar6 = 0;
+      /* ST_CALLSITE[005B2A3C]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       pCVar2 = FUN_006f2c00("MM_FLC",2,iVar5);
       puVar3 = Library::Ourlib::MFANY::mfAnyLoad(g_cMf32_00806780,pCVar2,bVar6,iVar8);
       *puVar4 = puVar3;
@@ -75,6 +79,7 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
   iVar5 = 0;
   do {
     if (this_02->field_1AA7[iVar5 + -10] != 0) {
+
       puVar4 = Library::DKW::FLC::FUN_006c4a20(this_02->field_1AA7[iVar5 + -10]);
       this_02->field_1AA7[iVar5] = (uint)puVar4;
       if (puVar4 != nullptr) {
@@ -168,6 +173,7 @@ switchD_005b2a8d_default:
         *(undefined4 *)(*(int *)(this_02->field_00BB[0xc].field_01DC + 0x2e6) + 0x1cab) =
              this_02->field_0008;
       }
+
       FUN_006bc360(g_startSystem_0081176C->field_002C,(undefined4 *)&this_02->field_0x1adf,
                    nullptr);
       this_01 = g_cursorClass_00802A30;
@@ -187,8 +193,8 @@ switchD_005b2a8d_default:
       SetMode(this_02,param_1,1);
       thunk_FUN_00568bc0(&g_sound,0);
       if ((STPiece<1,1>(DAT_00807300) & 8) != 0) {
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0056A130::thunk_FUN_0056a130
-                  ((AnonReceiver_0056A130 *)&g_sound,0x10,'\x02',0,nullptr);
+        SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0056A130::thunk_FUN_0056a130
+                  ((RecoveredReceiver_0056A130 *)&g_sound,0x10,'\x02',0,nullptr);
       }
       if (DAT_00808446 == '\0') {
         uVar7 = this_02->field_0008;

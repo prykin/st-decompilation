@@ -10,7 +10,7 @@ void __thiscall STBHEShellC::sub_005F5D10(STBHEShellC *this,int param_1)
 
 {
   int iVar1;
-  undefined4 local_c;
+  uint local_c;
   short local_8;
   short local_6;
 
@@ -28,10 +28,8 @@ LAB_005f5d4b:
     }
     if (param_1 == 2) {
       if ((int *)this->field_0034 != nullptr) {
-        /* ST_CALLSITE[005F5D91]: CALL dword ptr [EAX + 0xe0] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar1 = (**(code **)(*STField<int *>(this,0x34) + 0xe0))
-                          (this->field_0038,(int)&param_1 + 2,&local_6,&local_8,&local_c);
+        /* ST_CALLSITE[005F5D91]: CALL dword ptr [EAX + 0xe0]; [STIndirectCallsiteApplier] exact slot 0xE0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
+        iVar1 = STStructuralVirtualCall<undefined4>(STField<int *>(this,0x34), 0xE0, this->field_0038, (int)&param_1 + 2, &local_6, &local_8, &local_c);
         if (iVar1 == 0) {
           this->field_0040 = (int)STPiece<2,2>(param_1);
           this->field_0093 = (int)STPiece<2,2>(param_1);

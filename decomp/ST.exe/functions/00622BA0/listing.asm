@@ -20,7 +20,7 @@ STMineSetC::sub_00622BA0:
 00622BEF  66 89 4E 43               MOV word ptr [ESI + 0x43],CX
 00622BF3  66 89 56 45               MOV word ptr [ESI + 0x45],DX
 00622BF7  8B 0D A0 B2 7F 00         MOV ECX,dword ptr [0x007fb2a0]
-00622BFD  E8 1A 2C DE FF            CALL 0x0040581c
+00622BFD  E8 1A 2C DE FF            CALL 0x0040581c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STMineSetC; source view only; no Ghidra override
 00622C02  50                        PUSH EAX
 00622C03  8B CE                     MOV ECX,ESI
 00622C05  E8 0A F8 DD FF            CALL 0x00402414

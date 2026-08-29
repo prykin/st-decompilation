@@ -12,8 +12,7 @@ undefined4 __thiscall CGenerate::_saveObj(CGenerate *this)
   int iVar3;
   uint uVar4;
   int local_48 [16];
-  undefined4 local_8;
-
+  uint local_8;
   pIVar2 = g_currentExceptionFrame;
   local_8 = 1;
   iVar3 = Library::MSVCRT::__setjmp3(local_48,0);

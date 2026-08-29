@@ -125,7 +125,7 @@ LAB_00532734:
 00532741  6A 01                     PUSH 0x1
 00532743  57                        PUSH EDI
 00532744  89 0D F8 8D 85 00         MOV dword ptr [0x00858df8],ECX
-0053274A  E8 41 BB 17 00            CALL 0x006ae290
+0053274A  E8 41 BB 17 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/OptPanelTy_field_02FDDArray; source view only; no Ghidra override
 0053274F  8B 5D FC                  MOV EBX,dword ptr [EBP + -0x4]
 00532752  89 83 FD 02 00 00         MOV dword ptr [EBX + 0x2fd],EAX
 LAB_00532758:

@@ -6,7 +6,8 @@ FUN_00636170:
 00636175  68 98 1D 7D 00            PUSH 0x7d1d98
 0063617A  68 8C 1D 7D 00            PUSH 0x7d1d8c
 0063617F  C7 45 FC FF FF FF FF      MOV dword ptr [EBP + -0x4],0xffffffff
-00636186  E8 E5 88 0F 00            CALL 0x0072ea70
+FUN_00636170::override::prt_636186_c1311782:
+00636186  E8 E5 88 0F 00            CALL 0x0072ea70  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/int; signature=__cdecl;pointer:/int;/winnt.h/LPCSTR;pointer:/char
 0063618B  8B F0                     MOV ESI,EAX
 0063618D  83 C4 08                  ADD ESP,0x8
 00636190  85 F6                     TEST ESI,ESI

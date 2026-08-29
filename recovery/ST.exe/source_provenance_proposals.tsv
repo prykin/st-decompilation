@@ -31,7 +31,7 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 0	0	004240F0	STGroupC::SaveGrpData	E:\\__titans\\wlad\\tc_grp.cpp	441 | 442	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	00424360	STGroupC::RestoreGrpData	E:\\__titans\\wlad\\tc_grp.cpp	469 | 470	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	004247B0	STGroupC::SetAVPar	E:\\__titans\\wlad\\tc_grp.cpp	598 | 599	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
-1	0	00424E10	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10	E:\\__titans\\wlad\\Td3dshad.cpp	1376	high	unique_embedded_source_path		none	no_strict_free_function_string	-
+1	0	00424E10	SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_004248D0::FUN_00424e10	E:\\__titans\\wlad\\Td3dshad.cpp	1376	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 1	0	00427F20	FUN_00427f20	E:\\__titans\\wlad\\Td3dshad.cpp	1935	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 1	0	00428E50	FUN_00428e50	E:\\__titans\\tload.cpp	589	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 1	1	0042A290	LoadLand	E:\\__titans\\tload.cpp	1166 | 1282 | 1283	high	unique_embedded_source_path	LoadLand	high	unique_nearby_name_and_source_metadata	LoadLand
@@ -781,7 +781,7 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 0	0	005C5B60	SettMapTy::CloseButtons	E:\\__titans\\Start\\sett_obj.cpp	592	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	005C6030	SettMapTy::CreateCtrls	E:\\__titans\\Start\\sett_obj.cpp	845	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	005C6D40	SettMapTy::DeleteCtrls	E:\\__titans\\Start\\sett_obj.cpp	932	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
-1	0	005C8200	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::FUN_005c8200	E:\\__titans\\Start\\sett_obj.cpp	1114 | 1141 | 1143	high	unique_embedded_source_path		none	no_strict_free_function_string	-
+1	0	005C8200	SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0053F510::FUN_005c8200	E:\\__titans\\Start\\sett_obj.cpp	1114 | 1141 | 1143	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 0	0	005C87C0	SettMapTy::PaintSC	E:\\__titans\\Start\\sett_obj.cpp	1196	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	005C8A40	SettMapTy::GetMessage	E:\\__titans\\Start\\sett_obj.cpp	1880	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	005CBD00	SettMapMTy::InitSettMap	E:\\__titans\\Start\\settmobj.cpp	79	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
@@ -872,7 +872,7 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 0	0	005F6AF0	STColl3C::LoadImagSpr	E:\\__titans\\nick\\to_coll3.cpp	431 | 433	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	005F94C0	STColl3C::CreateAddSpr	E:\\__titans\\nick\\to_coll3.cpp	1496 | 1498	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	005FB640	STContainerC::GetMessage	E:\\__titans\\nick\\to_cont.cpp	313 | 315	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
-1	0	005FDB50	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50	E:\\__titans\\nick\\to_DcBom.cpp	317	high	unique_embedded_source_path		none	no_strict_free_function_string	-
+1	0	005FDB50	SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_005FDB50::FUN_005fdb50	E:\\__titans\\nick\\to_DcBom.cpp	317	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 0	0	00601F80	STDestC::GetMessage	E:\\__titans\\nick\\to_dest.cpp	149 | 151	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	00603740	STExplosion::GetMessage	E:\\__titans\\nick\\to_Expl.cpp	443 | 445	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	006041A0	STExplosionC::CreateGroupPart	E:\\__titans\\nick\\to_Expl.cpp	502 | 504	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
@@ -935,7 +935,7 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 1	0	0064A630	FUN_0064a630	E:\\__titans\\ai\\ai_erc.cpp	23	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 1	0	0064A6F0	FUN_0064a6f0	E:\\__titans\\ai\\ai_erc.cpp	37 | 42	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 1	0	0064A830	FUN_0064a830	E:\\__titans\\ai\\ai_erc.cpp	86	high	unique_embedded_source_path		none	no_strict_free_function_string	-
-1	0	0064A970	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0064a970	E:\\__titans\\ai\\ai_erc.cpp	129 | 130 | 138 | 142 | 159 | 160 | 161 | 173 | 192 | 205 | 223 | 248 | 284 | 294 | 305 | 313 | 323 | 338 | 346 | 356 | 369 | 386 | 399 | 402 | 413 | 416 | 428 | 443 | 458 | 472 | 486 | 500 | 518 | 536 | 538 | 544 | 576 | 591	high	unique_embedded_source_path		none	no_strict_free_function_string	-
+1	0	0064A970	SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::FUN_0064a970	E:\\__titans\\ai\\ai_erc.cpp	129 | 130 | 138 | 142 | 159 | 160 | 161 | 173 | 192 | 205 | 223 | 248 | 284 | 294 | 305 | 313 | 323 | 338 | 346 | 356 | 369 | 386 | 399 | 402 | 413 | 416 | 428 | 443 | 458 | 472 | 486 | 500 | 518 | 536 | 538 | 544 | 576 | 591	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 0	0	0064CD80	AiEventClassTy::InitData	E:\\__titans\\ai\\ai_event.cpp	80 | 81	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	0064D000	AiEventClassTy::PrepareToSave	E:\\__titans\\ai\\ai_event.cpp	102 | 103	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	0064D270	AiEventClassTy::__CreateObjPl	E:\\__titans\\ai\\ai_event.cpp	203 | 204	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
@@ -953,14 +953,14 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 0	0	0065D760	AiFltClassTy::_AddObjFlt	E:\\__titans\\ai\\ai_flt.cpp	155 | 165 | 166	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	0065F1D0	AiFltClassTy::AppendZone	E:\\__titans\\ai\\ai_flt.cpp	735 | 736	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	0065F660	AiFltClassTy::AppendPoint	E:\\__titans\\ai\\ai_flt.cpp	771 | 772	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
-1	0	00660180	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180	E:\\__titans\\ai\\ai_flt.cpp	1127	high	unique_embedded_source_path		none	no_strict_free_function_string	-
+1	0	00660180	SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00660180::FUN_00660180	E:\\__titans\\ai\\ai_flt.cpp	1127	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 0	0	006618E0	AiFltClassTy::GoToRepair	E:\\__titans\\ai\\ai_flt.cpp	1769 | 1770	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	00662240	AiFltClassTy::GetAiMess	E:\\__titans\\ai\\ai_flt.cpp	2442 | 2443	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	00667D90	AiFltClassTy::GetMessage	E:\\__titans\\ai\\ai_flt.cpp	3696 | 3786 | 3787	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 1	0	00668180	FUN_00668180	E:\\__titans\\ai\\ai_flt_d.cpp	42	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 1	0	00668330	FUN_00668330	E:\\__titans\\ai\\ai_flt_d.cpp	78	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 1	1	006684E0	FltDataPack	E:\\__titans\\ai\\ai_flt_d.cpp	117 | 118	high	unique_embedded_source_path	FltDataPack	high	unique_nearby_name_and_source_metadata	FltDataPack
-1	0	0066ACC0	SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0066acc0	E:\\__titans\\ai\\ai_interp.cpp	338	high	unique_embedded_source_path		none	no_strict_free_function_string	-
+1	0	0066ACC0	SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::FUN_0066acc0	E:\\__titans\\ai\\ai_interp.cpp	338	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 1	0	00671F10	FUN_00671f10	E:\\__titans\\ai\\ai_interp.cpp	1342 | 1356 | 1369 | 1374 | 1388 | 1392 | 1413 | 1419	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 1	0	00672B60	FUN_00672b60	E:\\__titans\\ai\\Ai_lex.c	231 | 253	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 1	1	00675EA0	_AddObjGrpExch	E:\\__titans\\ai\\ai_mdef.cpp	257 | 258	high	unique_embedded_source_path	_AddObjGrpExch	high	unique_nearby_name_and_source_metadata	_AddObjGrpExch

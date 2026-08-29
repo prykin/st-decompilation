@@ -25,8 +25,7 @@ void __thiscall st::fn_00532CE0(OptPanelTy *this)
     uVar1 = this->field_01B5[3];
     this->field_002C = (short)(uint)(iVar2 != 0);
     this->field_002E = (short)((uint)(iVar2 != 0) >> 0x10);
-    st::fn_006E6080(this,2,uVar1,(undefined4 *)&this->field_0x18);
+    st::fn_006E6080(this,2,uVar1,reinterpret_cast<undefined4 *>(&this->field_0x18));
   }
   return;
 }
-

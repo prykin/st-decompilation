@@ -36,7 +36,7 @@ LAB_00624041:
 00624060  51                        PUSH ECX
 00624061  6A 1D                     PUSH 0x1d
 00624063  52                        PUSH EDX
-00624064  E8 87 5A 0E 00            CALL 0x00709af0
+00624064  E8 87 5A 0E 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 00624069  33 C9                     XOR ECX,ECX
 0062406B  C7 86 CE 02 00 00 00 00 00 00  MOV dword ptr [ESI + 0x2ce],0x0
 00624075  8B 00                     MOV EAX,dword ptr [EAX]
@@ -52,7 +52,7 @@ LAB_00624041:
 00624099  52                        PUSH EDX
 0062409A  6A 1D                     PUSH 0x1d
 0062409C  50                        PUSH EAX
-0062409D  E8 4E 5A 0E 00            CALL 0x00709af0
+0062409D  E8 4E 5A 0E 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 006240A2  83 C4 40                  ADD ESP,0x40
 006240A5  33 D2                     XOR EDX,EDX
 006240A7  8A 96 AD 02 00 00         MOV DL,byte ptr [ESI + 0x2ad]

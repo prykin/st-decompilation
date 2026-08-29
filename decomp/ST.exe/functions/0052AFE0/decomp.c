@@ -15,7 +15,7 @@ void __thiscall CPanelTy::sub_0052AFE0(CPanelTy *this,byte param_1,float param_2
   float fVar3;
   float fVar4;
   int iVar5;
-  uint *puVar6;
+  RecoveredRecordView_006E6540_42B9D3AB *pRVar6;
   int *piVar7;
   int iVar8;
   longlong lVar9;
@@ -71,10 +71,10 @@ void __thiscall CPanelTy::sub_0052AFE0(CPanelTy *this,byte param_1,float param_2
       piVar7 = piVar7 + 2;
     } while (iVar5 < 4);
     if (fVar2 != _DAT_0079034c) {
-      puVar6 = FUN_006e6460(g_sT3DSMAPContext_00807598,this->field_0DBF + (param_1 - 2),1,0x97,0x96,
+      pRVar6 = FUN_006e6460(g_sT3DSMAPContext_00807598,this->field_0DBF + (param_1 - 2),1,0x97,0x96,
                             0,1);
       iVar5 = local_30[iVar8 * 2];
-      this->field_0DB3 = puVar6;
+      this->field_0DB3 = pRVar6;
       this->field_0DCC = param_1;
       this->field_0DC7 = 1;
       this->field_0DC8 = 0;
@@ -93,15 +93,17 @@ void __thiscall CPanelTy::sub_0052AFE0(CPanelTy *this,byte param_1,float param_2
       fVar3 = (param_3 - fVar2) * _DAT_0079acbc;
       this->field_0DE2 = fVar3;
       this->field_0DEA = fVar3 * _DAT_0079acb8;
-      FUN_006e6540((int)puVar6,local_8,fVar2,-1);
+      FUN_006e6540(pRVar6,local_8,fVar2,-1);
       thunk_FUN_005252c0((this->field_0DCC != '\0') + CASE_B8);
       return;
     }
   }
   else {
+
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006e65c0(g_sT3DSMAPContext_00807598,this->field_0DBF[param_1],
-                 (char)*(undefined2 *)(this->field_09C0[param_1 + 2] + 0x23),param_2,param_3,5,5,1);
+    ST3DSMAPContext::sub_006E65C0
+              (g_sT3DSMAPContext_00807598,this->field_0DBF[param_1],
+               (char)*(undefined2 *)(this->field_09C0[param_1 + 2] + 0x23),param_2,param_3,5,5,1);
     thunk_FUN_005252c0((param_1 != 0) + CASE_B6);
   }
   return;

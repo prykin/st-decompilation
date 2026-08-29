@@ -36,7 +36,6 @@ int __thiscall STBoatC::BackBuild(STBoatC *this,int *param_1)
   int local_EAX_592;
   uint uVar4;
   int iVar5;
-  uint uVar5;
   int local_EAX_1042;
   int local_EAX_1089;
   int iVar6;
@@ -73,11 +72,12 @@ int __thiscall STBoatC::BackBuild(STBoatC *this,int *param_1)
       this->field_050C = 4;
     }
     if (this->field_050C == 4) {
-      /* ST_CALLSITE[0046CA8C]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+      /* ST_CALLSITE[0046CA8C]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
       uVar4 = sub_004176C0(this,this->field_0506);
       /* ST_CALLSITE[0046CA94]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       uVar4 = sub_00417910(this,(short)uVar4);
       if ((short)uVar4 == -1) {
+
         local_EAX_354 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x253e,0,0,"%s",
                                 "STBoatC::BackBuild, BUILD_PMOVE");
@@ -105,8 +105,9 @@ int __thiscall STBoatC::BackBuild(STBoatC *this,int *param_1)
     }
     if (this->field_050C == 6) {
       /* ST_CALLSITE[0046CB8D]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
-      uVar5 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
-      if ((short)uVar5 == -1) {
+      iVar6 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
+      if ((short)iVar6 == -1) {
+
         local_EAX_592 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2554,0,0,"%s",
                                 "STBoatC::BackBuild, BUILD_PMOVE 2");
@@ -119,7 +120,7 @@ cf_error_exit_0046CBE2:
                   (0xffff,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",iVar6);
         return 0xffff;
       }
-      if ((short)uVar5 == 0) {
+      if ((short)iVar6 == 0) {
         /* ST_CALLSITE[0046CBA6]: CALL dword ptr [EDX + 0xd8] */
         iVar6 = this->vfunc_D8();
         return -(uint)(iVar6 != 0);
@@ -149,11 +150,12 @@ cf_error_exit_0046CBE2:
       this->field_050C = CASE_1;
     }
     if (this->field_050C == CASE_1) {
-      /* ST_CALLSITE[0046CC82]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+      /* ST_CALLSITE[0046CC82]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
       uVar4 = sub_004176C0(this,this->field_0506);
       /* ST_CALLSITE[0046CC8A]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       uVar4 = sub_00417910(this,(short)uVar4);
       if ((short)uVar4 == -1) {
+
         iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x256d,0,0,"%s",
                                    "STBoatC::BackBuild, BUILD_OMOVE");
         if (iVar5 != 0) {
@@ -176,8 +178,9 @@ cf_error_exit_0046CBE2:
     }
     if (this->field_050C == CASE_3) {
       /* ST_CALLSITE[0046CD4F]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
-      uVar5 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
-      if ((short)uVar5 == -1) {
+      iVar6 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
+      if ((short)iVar6 == -1) {
+
         local_EAX_1042 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2583,0,0,"%s",
                                 "STBoatC::BackBuild, BUILD_OMOVE 2");
@@ -187,7 +190,7 @@ cf_error_exit_0046CBE2:
         iVar6 = 0x2584;
         goto cf_error_exit_0046CBE2;
       }
-      if ((short)uVar5 == 0) {
+      if ((short)iVar6 == 0) {
         /* ST_CALLSITE[0046CD68]: CALL dword ptr [EDX + 0xd8] */
         iVar6 = this->vfunc_D8();
         return -(uint)(iVar6 != 0);
@@ -195,6 +198,7 @@ cf_error_exit_0046CBE2:
     }
     break;
   default:
+
     local_EAX_1089 =
          ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2590,0,0,"%s",
                             "STBoatC::BackBuild");

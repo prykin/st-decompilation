@@ -12,9 +12,9 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   byte **slotStorage;
   byte *puVar6;
   byte *pbVar7;
-  undefined4 local_17c;
-  undefined4 local_170;
-  undefined4 local_10d [44];
+  uint local_17c;
+  uint local_170;
+  uint local_10d[44];
   uint local_5d;
   int local_59;
   uint local_55;
@@ -26,7 +26,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   int local_18;
   byte *local_14;
   byte *local_10;
-  AnonShape_0060EA30_DCEB68AD *local_c;
+  RecoveredRecordView_0060EA30_C6688588 *local_c;
   byte *local_8;
 
   local_2c[3] = nullptr;
@@ -51,17 +51,17 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   puVar6 = (byte *)(local_10d);
   memmove(puVar6, puVar1, 0xb0); /* compiler REP MOVS byte copy */
   /* ST_CALLSITE[004D3032]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
-  local_2c[3] = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)param_1,(int *)&local_5d);
+  local_2c[3] = STPointerBoundaryCast<byte *>(STAllPlayersC::SaveGObjData((STAllPlayersC *)param_1,(int *)&local_5d));
   local_59 = 0x14f;
   /* ST_CALLSITE[004D304B]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
-  local_10 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)(param_1 + 0x1d5),&local_55);
+  local_10 = STPointerBoundaryCast<byte *>(STT3DSprC::SaveSpr((STT3DSprC *)(param_1 + 0x1d5),&local_55));
   local_51 = local_5d + local_59;
   /* ST_CALLSITE[004D3068]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_14 = (byte *)STT3DSprC::SaveSpr(*(STT3DSprC **)(param_1 + 0x35c),&local_4d);
+  local_14 = STPointerBoundaryCast<byte *>(STT3DSprC::SaveSpr(*(STT3DSprC **)(param_1 + 0x35c),&local_4d));
   local_49 = local_55 + local_51;
   iVar2 = 0;
-  local_c = (AnonShape_0060EA30_DCEB68AD *)(local_4d + local_49);
+  local_c = (RecoveredRecordView_0060EA30_C6688588 *)(local_4d + local_49);
   local_18 = 0;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (*(int *)(param_1 + 0x370) == 0) {
@@ -70,15 +70,17 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
       /* ST_CALLSITE[004D30A5]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
       puVar1 = (byte *)(STT3DSprC::SaveSpr(*(STT3DSprC **)local_2c[4],(uint *)((int)local_45 + iVar2)));
       *(undefined4 **)((int)local_2c + iVar2) = puVar1;
-      *(AnonShape_0060EA30_DCEB68AD **)((int)local_45 + iVar2 + 0xc) = local_c;
+      *(RecoveredRecordView_0060EA30_C6688588 **)((int)local_45 + iVar2 + 0xc) = local_c;
       uVar3 = *(uint *)((int)local_45 + iVar2);
       iVar2 = iVar2 + 4;
-      local_c = (AnonShape_0060EA30_DCEB68AD *)(&local_c->field_0x0 + uVar3);
+      local_c = (RecoveredRecordView_0060EA30_C6688588 *)(&local_c->field_0x0 + uVar3);
       local_2c[4] = (byte *)((int)local_2c[4] + 4);
       local_18 = local_18 + uVar3;
     } while (iVar2 < 0xc);
   }
-  local_c = (AnonShape_0060EA30_DCEB68AD *)(local_18 + local_4d + local_55 + 0x14f + local_5d);
+  local_c = (RecoveredRecordView_0060EA30_C6688588 *)
+            (local_18 + local_4d + local_55 + 0x14f + local_5d);
+
   local_8 = Library::DKW::LIB::MemAlloc((uint)local_c);
   puVar1 = (byte *)(&local_17c);
   pbVar5 = local_8;

@@ -27,10 +27,12 @@ void __thiscall PopUpTy::OutStr(PopUpTy *this,byte param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pPVar4 = local_8;
   if (errorCode == 0) {
     uVar3 = (uint)param_1;
+
     ccFntTy::SetSurf(local_8->field_0094,(int)local_8->field_0090,0,0,uVar3 * 0x13,
                      *(int *)(local_8->field_0090 + 2),0x13);
     puVar1 = pPVar4->field_0098;
@@ -40,11 +42,13 @@ void __thiscall PopUpTy::OutStr(PopUpTy *this,byte param_1)
     else {
       resourceString = nullptr;
     }
+
     ccFntTy::WrStr(pPVar4->field_0094,resourceString,0,0,0);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\mpopup.cpp",0x2d,0,errorCode,"%s"
                              ,"PopUpTy::OutStr");
   if (iVar5 != 0) {

@@ -28,11 +28,11 @@ int __fastcall FUN_00482db0(int *param_1,undefined4 param_2)
   uint uVar10;
   short sVar12;
   int iVar13;
-  undefined4 local_3c [2];
-  undefined4 local_34 [2];
+  uint local_3c [2];
+  uint local_34 [2];
   uint local_2c;
-  undefined2 local_28;
-  undefined4 local_24;
+  ushort local_28;
+  uint local_24;
   int local_20;
   uint local_1c;
   uint local_18;
@@ -87,9 +87,10 @@ LAB_00482f52:
       goto LAB_00482f52;
     }
   }
+
   iVar13_mg1 = STPlaySystemC::sub_006E62D0
-                         (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)param_1[0x1fd],
-                          (int *)&local_14);
+                         (g_playSystem_00802A38,
+                          (RecoveredRecordView_005EFAE0_855D930D *)param_1[0x1fd],(int *)&local_14);
   if (iVar13_mg1 == -4) {
     return 4;
   }
@@ -100,19 +101,18 @@ LAB_00482f52:
   local_8 = (RecoveredRecord_STBoatC_00482DB0 *)local_14;
 LAB_00482fa9:
   this = local_8;
-  /* ST_CALLSITE[00482FAD]: CALL dword ptr [EDX + 0xf8] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar13 = (**(code **)(*(int *)local_8 + 0xf8))();
+  /* ST_CALLSITE[00482FAD]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+  iVar13 = STStructuralVirtualCall<undefined4>(local_8, 0xF8);
   if (iVar13 == 0) {
     return 4;
   }
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   if ((*(int *)&this->field_0x20 == 0x1ae) &&
-     /* ST_CALLSITE[00482FC8]: CALL dword ptr [EAX + 0xf4] */
-     (iVar13 = (**(code **)(*(int *)this + 0xf4))(param_1[9]), iVar13 == 0)) {
+     /* ST_CALLSITE[00482FC8]: CALL dword ptr [EAX + 0xf4]; [STIndirectCallsiteApplier] exact slot 0xF4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
+     (iVar13 = STStructuralVirtualCall<undefined4>(this, 0xF4, param_1[9]), iVar13 == 0)) {
     return 4;
   }
   thunk_FUN_00416270(this,&local_18,(short *)&local_1c,local_c);
+
   iVar12 = FUN_006acf0d((int)STField<short>(param_1,0x41),(int)STField<short>(param_1,0x43),
                         (int)STField<short>(param_1,0x45),(short)local_18,
                         (short)local_1c,(int)local_c[0]);
@@ -122,7 +122,8 @@ LAB_00482fa9:
   uVar6 = (int)local_c[0] - (int)STField<short>(param_1,0x45);
   uVar10 = (int)uVar6 >> 0x1f;
   if ((int)(((uVar6 ^ uVar10) - uVar10) * 10) / iVar12 < 4) {
-    uVar5 = thunk_FUN_004836c0((AnonShape_004836C0_617DC527 *)param_1);
+
+    uVar5 = thunk_FUN_004836c0((RecoveredRecordView_004836C0_090580C8 *)param_1);
     if ((short)uVar5 != (short)param_1[0x1b]) {
       return 9;
     }
@@ -136,6 +137,7 @@ LAB_00482fa9:
       if (STField<char>(param_1,0x2b2) != '\0') {
         local_10 = (ushort *)(param_1 + 0xaa);
         do {
+
           puVar7 = thunk_FUN_0041dc40(local_34,(short)*(undefined4 *)(local_10 + -1),local_10[1],
                                       (short)param_1[0x1b]);
           uVar2 = *puVar7;
@@ -144,6 +146,7 @@ LAB_00482fa9:
           local_24 = STReplaceLowWord((uint32_t)(puVar7), (uint16_t)(*(short *)(puVar7 + 1) + STField<short>(param_1,0x45)));
           local_2c = (uint)*local_10 << 0x10;
           sVar1 = STField<short>(param_1,0x41);
+
           puVar7 = thunk_FUN_0041dc40(local_3c,0,0,(short)param_1[0x1b]);
           local_2c = *puVar7;
           local_28 = *(undefined2 *)(puVar7 + 1);

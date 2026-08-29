@@ -38,7 +38,7 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this)
   short local_2a;
   short local_28;
   int local_26;
-  undefined4 local_22;
+  uint local_22;
   short local_1c;
   short local_1a;
   short local_18;
@@ -69,12 +69,14 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this)
   uVar7 = 0;
   if (0 < (int)pDVar4->count) {
     do {
+
       DArrayGetElement(pDVar4,uVar7,&local_1c);
       local_2c = local_1c;
       local_2a = local_1a;
       local_22 = 0;
       local_26 = 0;
       local_28 = local_18;
+
       Library::DKW::TBL::DArrayPut(array,uVar7,&local_2c);
       pDVar4 = this->field_0226;
       uVar7 = uVar7 + 1;
@@ -86,7 +88,9 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this)
     if (uVar7 != 1 && -1 < (int)(uVar7 - 1)) {
       local_c = 1;
       do {
+
         DArrayGetElement(array,local_8,&local_2c);
+
         DArrayGetElement(array,local_c,&local_3c);
         psVar3 = Library::DKW::WAY::FUN_006a9190
                            ((int)g_pathingGrid.cells,(int)g_pathingGrid.sizeX,
@@ -108,6 +112,7 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this)
             psVar3 = (short *)((int)psVar3 + 1);
             psVar8 = (short *)((int)psVar8 + 1);
           }
+
           FUN_006ab090((int)g_pathingScratchGrid.cells,(int)g_pathingGrid.sizeX,
                        (int)g_pathingGrid.sizeY,(int)g_pathingGrid.sizeZ,(int)local_2c,(int)local_2a
                        ,(int)local_28,(int)local_3c,(int)local_3a,(int)local_38);
@@ -123,6 +128,7 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this)
         uVar7 = local_c;
         iVar6 = iVar6 / 3;
         if (iVar6 < this->field_0242) {
+
           DArrayRemoveAt(array,local_c);
           local_8 = local_8 - 1;
           local_c = uVar7 - 1;
@@ -130,7 +136,9 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this)
         else {
           local_32 = iVar6;
           local_26 = iVar6;
+
           Library::DKW::TBL::DArrayPut(array,local_8,&local_2c);
+
           Library::DKW::TBL::DArrayPut(array,local_c,&local_3c);
         }
         local_8 = local_8 + 1;
@@ -138,12 +146,14 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this)
       } while ((int)local_8 < (int)(array->count - 1));
     }
     if (this->field_0232 != 0xffffffff) {
+
       DArrayGetElement(this->field_022A,this->field_0232,&local_4c);
       pDVar4 = this->field_0226;
       uVar7 = 0;
       local_c = 0xffffffff;
       if (0 < (int)pDVar4->count) {
         do {
+
           DArrayGetElement(pDVar4,uVar7,&local_1c);
           if (((local_1c == local_4c) && (local_1a == local_4a)) && (local_18 == local_48)) {
             local_c = uVar7;
@@ -154,6 +164,7 @@ void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this)
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < (int)pDVar4->count);
       }
+
       iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x15ed,0,0,"%s",
                                  "STGroupBoatC::ReMakePatrolPoints wrong index");
       if (iVar6 != 0) {
@@ -166,10 +177,12 @@ LAB_004a77bb:
         pDVar4 = this->field_0226;
         if ((int)local_c < (int)pDVar4->count) {
           do {
+
             DArrayGetElement(pDVar4,local_8,&local_1c);
             uVar7 = 0;
             if (0 < (int)array->count) {
               do {
+
                 DArrayGetElement(array,uVar7,&local_2c);
                 if (((local_1c == local_2c) && (local_1a == local_2a)) && (local_18 == local_28)) {
                   this->field_0232 = uVar7;
@@ -188,10 +201,12 @@ LAB_004a77bb:
       }
       else {
         for (; -1 < (int)local_8; local_8 = local_8 - 1) {
+
           DArrayGetElement(this->field_0226,local_8,&local_1c);
           uVar7 = 0;
           if (0 < (int)array->count) {
             do {
+
               DArrayGetElement(array,uVar7,&local_2c);
               if (((local_1c == local_2c) && (local_1a == local_2a)) && (local_18 == local_28)) {
                 this->field_0232 = uVar7;
@@ -206,6 +221,7 @@ LAB_004a77bb:
         this->field_0232 = 0;
       }
       if ((this->field_0232 == -1) &&
+
          (iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x160e,0,0,
                                      "%s","STGroupBoatC::ReMakePatrolPoints unknown error"),
          iVar6 != 0)) {
@@ -225,7 +241,9 @@ LAB_004a792e:
   uVar7 = 0;
   if (0 < (int)array->count) {
     do {
+
       DArrayGetElement(array,uVar7,&local_2c);
+
       Library::DKW::TBL::DArrayPut(this->field_022A,uVar7,&local_2c);
       uVar7 = uVar7 + 1;
     } while ((int)uVar7 < (int)array->count);

@@ -20,16 +20,15 @@ FUN_005f15f0(void *this,ushort param_1,short param_2,undefined2 param_3,undefine
   ushort *puVar4;
   ushort local_24;
   short local_22;
-  undefined2 local_20;
-  undefined1 local_1e;
-  undefined2 local_1d;
+  ushort local_20;
+  byte local_1e;
+  ushort local_1d;
   uint local_1b;
-  undefined4 local_16;
-  undefined4 local_12;
-  undefined1 local_e;
+  uint local_16;
+  uint local_12;
+  byte local_e;
   char local_d;
-  undefined4 local_c;
-
+  uint local_c;
   if (STField<int>(this,0x3c) == 0) {
     pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x20,10);
     STField<DArrayTy *>(this,0x3c) = pDVar1;
@@ -56,10 +55,12 @@ FUN_005f15f0(void *this,ushort param_1,short param_2,undefined2 param_3,undefine
   local_c = 0xffffffff;
   if (-1 < param_6) {
     local_e = 0;
+
     local_EAX_152 = Library::DKW::TBL::DArrayAppend(pDVar1,&local_24);
     return local_EAX_152 + 1;
   }
   local_e = (undefined1)PTR_00806724->entryCount;
+
   iVar2 = Library::DKW::TBL::DArrayAppend(pDVar1,&local_24);
   return iVar2 + 1;
 }

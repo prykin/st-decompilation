@@ -13,7 +13,8 @@ STFishC * __cdecl CreateSTFish(void)
 {
   STFishC *pSVar1;
 
-  pSVar1 = (STFishC *)FUN_006b04d0(0x26b);
+  /* ST_CALLSITE[0057CC65]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STFishC; signature=__stdcall;pointer:/STFishC;/uint */
+  pSVar1 = FUN_006b04d0(0x26b);
   if (pSVar1 != nullptr) {
     pSVar1 = STFishC::STFishC(pSVar1);
     return pSVar1;

@@ -1,23 +1,27 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_004e28d0(int param_1)
+/* [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:0: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=1,
+   pointer_dereferences=3, scalar_uses=0; sites=004E28D7 dereference: MOV EAX,dword ptr [ESI + 0x24]
+   | 004E2900 dereference: MOV ECX,dword ptr [ESI + 0x24] | 004E291B dereference: MOV ESI,dword ptr
+   [ESI + 0x24] */
+
+undefined4 __fastcall FUN_004e28d0(RecoveredRecord_004E28D0_27E8535E *param_1)
 
 {
   DArrayTy *pDVar1;
-  int local_8;
+  RecoveredRecord_004E28D0_27E8535E *local_8;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (g_packedRecords_A62x8[*(int *)(param_1 + 0x24)].field1969_0x9da == nullptr) {
+  if (g_packedRecords_A62x8[param_1->field_0024].field1969_0x9da == nullptr) {
     local_8 = param_1;
     pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,10,4,10);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    g_packedRecords_A62x8[*(int *)(param_1 + 0x24)].field1969_0x9da = pDVar1;
+    g_packedRecords_A62x8[param_1->field_0024].field1969_0x9da = pDVar1;
   }
   local_8 = param_1;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+
   Library::DKW::TBL::DArrayAppend
-            (g_packedRecords_A62x8[*(int *)(param_1 + 0x24)].field1969_0x9da,&local_8);
+            (g_packedRecords_A62x8[param_1->field_0024].field1969_0x9da,&local_8);
   return 0;
 }
 

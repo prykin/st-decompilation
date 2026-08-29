@@ -106,12 +106,12 @@ LAB_0043eaa1:
 0043EABB  74 6A                     JZ 0x0043eb27
 0043EABD  8B 16                     MOV EDX,dword ptr [ESI]
 0043EABF  8B CE                     MOV ECX,ESI
-0043EAC1  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+0043EAC1  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0043EAC4  3B 45 0C                  CMP EAX,dword ptr [EBP + 0xc]
 0043EAC7  75 5E                     JNZ 0x0043eb27
 0043EAC9  8B 06                     MOV EAX,dword ptr [ESI]
 0043EACB  8B CE                     MOV ECX,ESI
-0043EACD  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+0043EACD  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0043EAD3  85 C0                     TEST EAX,EAX
 0043EAD5  74 50                     JZ 0x0043eb27
 0043EAD7  8B 4D 28                  MOV ECX,dword ptr [EBP + 0x28]
@@ -132,7 +132,7 @@ switchD_0043eaf1::caseD_38:
 0043EAFF  8D 4D F0                  LEA ECX,[EBP + -0x10]
 0043EB02  51                        PUSH ECX
 0043EB03  8B CE                     MOV ECX,ESI
-0043EB05  FF 90 88 00 00 00         CALL dword ptr [EAX + 0x88]
+0043EB05  FF 90 88 00 00 00         CALL dword ptr [EAX + 0x88]  ; [STIndirectCallsiteApplier] exact slot 0x88; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 0043EB0B  85 C0                     TEST EAX,EAX
 0043EB0D  7E 18                     JLE 0x0043eb27
 LAB_0043eb0f:
@@ -140,7 +140,7 @@ LAB_0043eb0f:
 0043EB13  74 0F                     JZ 0x0043eb24
 0043EB15  8B 16                     MOV EDX,dword ptr [ESI]
 0043EB17  8B CE                     MOV ECX,ESI
-0043EB19  FF 52 6C                  CALL dword ptr [EDX + 0x6c]
+0043EB19  FF 52 6C                  CALL dword ptr [EDX + 0x6c]  ; [STIndirectCallsiteApplier] exact slot 0x6C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0043EB1C  0F BE 4D 2C               MOVSX ECX,byte ptr [EBP + 0x2c]
 0043EB20  3B C1                     CMP EAX,ECX
 0043EB22  75 03                     JNZ 0x0043eb27

@@ -10,13 +10,13 @@ FUN_00584a30(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
             ushort param_9)
 
 {
-  undefined4 local_38 [5];
-  undefined4 local_24;
-  undefined4 local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
+  uint local_38 [5];
+  uint local_24;
+  uint local_20;
+  uint local_1c;
+  uint local_18;
+  uint local_14;
+  uint local_10;
   ushort local_c;
 
   memset(local_38, 0, 0x32); /* compiler bulk-zero initialization */
@@ -32,7 +32,7 @@ FUN_00584a30(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_38[3] = 1;
   local_14 = param_5;
   /* ST_CALLSITE[00584AA5]: CALL dword ptr [EDX + 0x8] */
-  g_playSystem_00802A38->vfunc_08(0x130,0,(short)&param_6,(short)local_38,0);
+  g_playSystem_00802A38->vfunc_8(0x130,nullptr,&param_6,(short)local_38,0);
   return param_6;
 }
 

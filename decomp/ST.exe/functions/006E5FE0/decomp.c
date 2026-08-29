@@ -11,7 +11,9 @@ int __thiscall FUN_006e5fe0(void *this,undefined4 *param_1)
 
   *param_1 = STField<undefined4>(this,8);
   param_1[1] = 2;
-  iVar1 = FUN_006e3db0((int)param_1);
+
+  iVar1 = FUN_006e3db0(STField<AppClassTy *>(this,0x10),
+                       (RecoveredRecord_006E3DB0_0F66DDCF *)param_1);
   return iVar1;
 }
 

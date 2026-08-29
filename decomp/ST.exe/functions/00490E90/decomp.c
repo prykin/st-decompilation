@@ -1,7 +1,16 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __thiscall FUN_00490e90(void *this,char *param_1)
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 007905A0
+   Entries: 00401E33
+   Slots: 0x74
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_physical_vtable_owner_and_slot;
+   receiver_extent=1791/2106; unique_owner_for_target; unique physical vtable owner and slot type
+   only the existing __thiscall receiver; explicit parameters and return are retained */
+
+void __thiscall STBoatC::vfunc_74(STBoatC *this,char *param_1)
 
 {
   char cVar1;
@@ -10,7 +19,7 @@ void __thiscall FUN_00490e90(void *this,char *param_1)
   char *pcVar5;
 
   uVar2 = 0xffffffff;
-  pcVar4 = (char *)((int)this + 0x6fb);
+  pcVar4 = (char *)&this->field_06FB;
   do {
     pcVar5 = pcVar4;
     if (uVar2 == 0) break;

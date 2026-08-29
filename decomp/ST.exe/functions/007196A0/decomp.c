@@ -5,11 +5,10 @@ undefined4 __cdecl FUN_007196a0(undefined4 param_1,MCIDEVICEID *param_2)
 
 {
   MCIERROR mcierr;
-  undefined4 local_14;
-  undefined4 local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_14;
+  uint local_10;
+  uint local_c;
+  uint local_8;
   if (*param_2 == 0) {
     return 1;
   }

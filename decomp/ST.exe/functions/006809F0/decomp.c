@@ -20,11 +20,14 @@ undefined4 __cdecl FUN_006809f0(uint *param_1)
   local_8 = nullptr;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
+
   local_14 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (local_14 == 0) {
     local_18 = param_1[2];
     local_10 = local_14;
-    local_8 = (byte *)FUN_006c8910(param_1,(int *)&local_c);
+    /* ST_CALLSITE[00680A41]: CALL 0x006c8910; direct=006C8910 FUN_006c8910; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/byte; signature=__stdcall;pointer:/byte;pointer:/uint;pointer:/int */
+    local_8 = FUN_006c8910(param_1,(int *)&local_c);
+
     thunk_FUN_00680890(0x17,local_8,local_c,&local_18);
     if (local_8 != nullptr) {
       FreeAndNull(&local_8);

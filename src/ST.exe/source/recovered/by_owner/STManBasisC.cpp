@@ -39,10 +39,10 @@ st::fn_005F14B0
           (STManBasisC *this,short param_1,short param_2,short param_3,byte param_4,short param_5)
 
 {
-  STManBasisC_field_0038DArray *pSVar1;
+  DArrayTy *pSVar1;
   int iVar2;
-  int iVar3;
-  short *psVar4;
+  int iVar1;
+  short *psVar2;
   short local_20;
   short local_1e;
   short local_1c;
@@ -53,20 +53,20 @@ st::fn_005F14B0
   int local_f;
 
   if (this->field_0038 == nullptr) {
-    pSVar1 = (STManBasisC_field_0038DArray *)
-             st::fn_006AE290(nullptr,10,0x19,10);
-    this->field_0038 = pSVar1;
+    /* ST_CALLSITE[005F14CC]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STManBasisC_field_0038DArray; source view only; no Ghidra override */
+    pSVar1 = st::fn_006AE290(nullptr,10,0x19,10);
+    this->field_0038 = reinterpret_cast<STManBasisC_field_0038DArray *>(pSVar1);
     if (pSVar1 == nullptr) {
       return -1;
     }
   }
-  psVar4 = &local_20;
-  for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-    psVar4[0] = 0;
-    psVar4[1] = 0;
-    psVar4 = psVar4 + 2;
+  psVar2 = &local_20;
+  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+    psVar2[0] = 0;
+    psVar2[1] = 0;
+    psVar2 = psVar2 + 2;
   }
-  *(undefined1 *)psVar4 = 0;
+  *(undefined1 *)psVar2 = 0;
   local_1c = param_3;
   local_1e = param_2;
   local_20 = param_1;
@@ -74,21 +74,23 @@ st::fn_005F14B0
   local_1a = param_4;
   local_f = DAT_00811788;
   local_17 = g_playSystem_00802A38->field_00E4;
+
   local_13 = st::fn_0040335F((uint)param_4,(int)param_5,(short)(param_1 * 0xc9 + 100),
                                 (short)(param_2 * 0xc9 + 100),(short)(param_3 * 200 + 100)
                                );
   if (local_13 == nullptr) {
-    iVar3 = -1;
+    iVar1 = -1;
   }
   else {
-    iVar2 = st::fn_006AE1C0((DArrayTy *)this->field_0038,&local_20);
-    iVar3 = iVar2 + 1;
-    if (-1 < iVar3) {
+
+    iVar2 = st::fn_006AE1C0(reinterpret_cast<DArrayTy *>(this->field_0038),&local_20);
+    iVar1 = iVar2 + 1;
+    if (-1 < iVar1) {
       DAT_00811788 = DAT_00811788 + 1;
-      return iVar3;
+      return iVar1;
     }
   }
-  return iVar3;
+  return iVar1;
 }
 
 // 005F19A0 STManBasisC::sub_005F19A0
@@ -204,7 +206,7 @@ joined_r0x005f19be:
   }
 LAB_005f1c4c:
   /* ST_CALLSITE[005F1C66]: CALL 0x00401465; direct=00401465 STManBasisC::sub_005F14B0 */
-  iVar7 = st::fn_00401465(local_14,*psVar6,psVar6[1],psVar6[2],((byte *)psVar6)[3],
+  iVar7 = st::fn_00401465(local_14,*psVar6,psVar6[1],psVar6[2],static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)psVar6)[3])),
                        STField<short>(psVar6,7));
   pVVar4 = g_visibleClass_00802A88;
   if (-1 < iVar7) {
@@ -252,28 +254,28 @@ byte * __thiscall st::fn_005F1FA0(STManBasisC *this,int *param_1)
   local_8 = 0;
   local_c = 0;
   if (this->field_0038 != nullptr) {
-    local_10 = st::pointer_boundary_cast<byte *>(st::fn_006B0020(&this->field_0038->flags,(int *)&local_8));
+    local_10 = (byte *)st::fn_006B0020(&this->field_0038->flags,reinterpret_cast<int *>(&local_8));
     if (local_8 == 0) {
-      st::fn_006AE110((DArrayTy *)this->field_0038);
+      st::fn_006AE110(reinterpret_cast<DArrayTy *>(this->field_0038));
       this->field_0038 = nullptr;
     }
   }
   if (this->field_003C != nullptr) {
-    local_14 = static_cast<uint *>(st::fn_006B0020(&this->field_003C->flags,(int *)&local_c));
+    local_14 = static_cast<uint *>(st::fn_006B0020(&this->field_003C->flags,reinterpret_cast<int *>(&local_c)));
     if (local_c == 0) {
       st::fn_006AE110(this->field_003C);
       this->field_003C = nullptr;
     }
   }
   size = local_c + 0x30 + local_8;
-  pbVar2 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(size));
+  pbVar2 = (byte *)st::fn_006AAC70(size);
   uVar1 = DAT_00811788;
   this->field_002C = 2;
   this->field_0034 = uVar1;
   ppuVar6 = &this->field_0020;
   pbVar7 = pbVar2;
   memmove(pbVar7, ppuVar6, 0x28); /* compiler REP MOVS byte copy */
-  puVar5 = (uint *)(pbVar2 + 0x28);
+  puVar5 = reinterpret_cast<uint *>((pbVar2 + 0x28));
   if (local_8 != 0) {
     *puVar5 = local_8;
     pbVar7 = local_10;
@@ -281,7 +283,7 @@ byte * __thiscall st::fn_005F1FA0(STManBasisC *this,int *param_1)
     memmove(pbVar9, pbVar7, local_8); /* compiler REP MOVS byte copy */
     uVar4 = 0;
     st::fn_006AB060(&local_10);
-    puVar5 = (uint *)(pbVar2 + 0x2c + local_8);
+    puVar5 = reinterpret_cast<uint *>((pbVar2 + 0x2c + local_8));
   }
   if (local_c != 0) {
     *puVar5 = local_c;
@@ -314,43 +316,44 @@ undefined4 __thiscall st::fn_005F2110(STManBasisC *this,undefined4 *param_1)
 
 {
   DArrayTy *pDVar1;
-  STManBasisC_field_0038DArray *pSVar2;
+  DArrayTy *pSVar2;
   DArrayTy *pDVar2;
-  void *pvVar3;
-  int iVar4;
-  uint uVar5;
-  uint *puVar6;
-  int *piVar7;
-  ushort **ppuVar8;
+  void *pvVar2;
+  int iVar3;
+  uint uVar4;
+  uint *puVar5;
+  int *piVar6;
+  ushort **ppuVar7;
 
-  puVar6 = param_1;
-  ppuVar8 = &this->field_0020;
-  for (iVar4 = 10; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *ppuVar8 = (ushort *)*puVar6;
-    puVar6 = puVar6 + 1;
-    ppuVar8 = ppuVar8 + 1;
+  puVar5 = param_1;
+  ppuVar7 = &this->field_0020;
+  for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
+    *ppuVar7 = (ushort *)*puVar5;
+    puVar5 = puVar5 + 1;
+    ppuVar7 = ppuVar7 + 1;
   }
   DAT_00811788 = this->field_0034;
-  piVar7 = reinterpret_cast<int *>(param_1 + 10);
+  piVar6 = reinterpret_cast<int *>(param_1 + 10);
   if (this->field_0038 != nullptr) {
-    pSVar2 = (STManBasisC_field_0038DArray *)st::fn_006B0060(nullptr,param_1 + 0xb);
-    this->field_0038 = pSVar2;
-    piVar7 = (int *)((int)(param_1 + 0xb) + *piVar7);
+    /* ST_CALLSITE[005F2142]: CALL 0x006b0060; direct=006B0060 FUN_006b0060; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STManBasisC_field_0038DArray; source view only; no Ghidra override */
+    pSVar2 = st::fn_006B0060(nullptr,param_1 + 0xb);
+    this->field_0038 = reinterpret_cast<STManBasisC_field_0038DArray *>(pSVar2);
+    piVar6 = (int *)((int)(param_1 + 0xb) + *piVar6);
   }
   if (this->field_003C != nullptr) {
-    pDVar2 = st::fn_006B0060(nullptr,(uint *)(piVar7 + 1));
+    pDVar2 = st::fn_006B0060(nullptr,reinterpret_cast<uint *>((piVar6 + 1)));
     this->field_003C = pDVar2;
-    uVar5 = 0;
+    uVar4 = 0;
     if (0 < (int)pDVar2->count) {
       do {
         pDVar1 = this->field_003C;
-        if ((uVar5 < pDVar1->count) &&
-           (pvVar3 = DArrayAt<void>(pDVar1, uVar5),
-           pvVar3 != nullptr)) {
-          STField<undefined4>(pvVar3,0x18) = 0xffffffff;
+        if ((uVar4 < pDVar1->count) &&
+           (pvVar2 = DArrayAt<void>(pDVar1, uVar4),
+           pvVar2 != nullptr)) {
+          STField<undefined4>(pvVar2,0x18) = 0xffffffff;
         }
-        uVar5 = uVar5 + 1;
-      } while ((int)uVar5 < (int)this->field_003C->count);
+        uVar4 = uVar4 + 1;
+      } while ((int)uVar4 < (int)this->field_003C->count);
     }
   }
   return 0x28;
@@ -431,7 +434,7 @@ void __thiscall st::fn_005F2330(STManBasisC *this)
 
   uVar4 = 0;
   if (this->field_0038 != nullptr) {
-    st::fn_006AE110((DArrayTy *)this->field_0038);
+    st::fn_006AE110(reinterpret_cast<DArrayTy *>(this->field_0038));
     this->field_0038 = nullptr;
   }
   if (this->field_003C != nullptr) {
@@ -459,3 +462,112 @@ void __thiscall st::fn_005F2330(STManBasisC *this)
   return;
 }
 
+// 005F23D0 STManBasisC::sub_005F23D0
+#line 4 "decomp/ST.exe/functions/005F23D0/decomp.c"
+/* [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 004B9FA0 -> 005F23D0 @ 004BA77A | 004D32C0 -> 005F23D0 @ 004D3487
+
+   [STMethodOwnerApplier] Structural method owner recovered as STManBasisC.
+   Evidence: this_call_owners=[STManBasisC]; agreed_this_calls=2; incoming_this_accesses=0;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=23; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+
+undefined4 __thiscall
+st::fn_005F23D0
+          (STManBasisC *this,int param_1,int param_2,int param_3,uint param_4,int param_5,
+          int param_6)
+
+{
+  VisibleClassTy *pVVar1;
+  VisibleClassTy *pVVar2;
+  int iVar3;
+  int iVar4;
+  int local_EAX_707;
+  int iVar5;
+  int iVar6;
+  int local_1c;
+  int local_18;
+  int local_14;
+  int local_10;
+  STManBasisC *local_c;
+  uint local_8;
+  iVar4 = param_2;
+  iVar6 = param_1;
+  local_8 = 0;
+  if ((((param_6 == 3) || (param_3 != 0)) || (param_5 == 0x39)) ||
+     ((param_5 == 0x4f || (*(int *)(&DAT_007918bc + param_6 * 4 + param_5 * 0xc) != 0)))) {
+    return 0;
+  }
+  local_c = this;
+  iVar3 = st::fn_00403F12(this,param_1,param_2,0,(char)param_4);
+  pVVar1 = g_visibleClass_00802A88;
+  if (iVar3 == 0) {
+    return local_8;
+  }
+  if (g_visibleClass_00802A88 == nullptr) {
+cf_common_exit_005F26AF:
+    iVar5 = st::fn_00405AB5(local_c,(ushort)iVar6,(short)param_2,0,(char)param_4,0,'\0');
+    if (-1 < iVar5) {
+      local_8 = 1;
+    }
+  }
+  else {
+    if ((char)param_4 == '\x01') {
+      if ((((((DAT_0080874d != -1) && (g_visibleClass_00802A88->field_00F8 != 0)) &&
+            /* ST_CALLSITE[005F248A]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
+            ((st::fn_00403F53
+                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,iVar4,
+                         &param_6,&param_3), pVVar2 = g_visibleClass_00802A88, -1 < param_6 &&
+             (((param_6 < pVVar1->field_0030 &&
+               (iVar4 = param_3 + g_centeredOffsets5[0], -1 < iVar4)) &&
+              (iVar4 < pVVar1->field_0034)))))) &&
+           ((pVVar1->field_004C != nullptr &&
+            (pVVar1->field_004C[param_6 + iVar4 * pVVar1->field_0030] == 0)))) &&
+          (DAT_0080874d != -1)) &&
+         ((((g_visibleClass_00802A88->field_00F8 != 0 &&
+            /* ST_CALLSITE[005F251A]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
+            (st::fn_00403F53
+                       (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6 + 1,
+                        param_2,&param_5,&local_10), pVVar1 = g_visibleClass_00802A88, -1 < param_5)
+            ) && ((param_5 < pVVar2->field_0030 &&
+                  (((local_10 = local_10 + g_centeredOffsets5[0], -1 < local_10 &&
+                    (local_10 < pVVar2->field_0034)) && (pVVar2->field_004C != nullptr)))))) &&
+          (((pVVar2->field_004C[param_5 + local_10 * pVVar2->field_0030] == 0 &&
+            (DAT_0080874d != -1)) && (g_visibleClass_00802A88->field_00F8 != 0)))))) {
+        iVar4 = param_2 + 1;
+        /* ST_CALLSITE[005F25AA]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
+        st::fn_00403F53
+                  (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,iVar4,&local_14
+                   ,&local_18);
+        iVar3 = param_1;
+        pVVar2 = g_visibleClass_00802A88;
+        if (((((-1 < local_14) && (local_14 < pVVar1->field_0030)) &&
+             ((local_18 = local_18 + g_centeredOffsets5[0], iVar6 = iVar3, -1 < local_18 &&
+              ((((local_18 < pVVar1->field_0034 && (pVVar1->field_004C != nullptr)) &&
+                (pVVar1->field_004C[local_14 + local_18 * pVVar1->field_0030] == 0)) &&
+               ((DAT_0080874d != -1 && (g_visibleClass_00802A88->field_00F8 != 0)))))))) &&
+            /* ST_CALLSITE[005F2632]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
+            ((st::fn_00403F53
+                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,param_1 + 1,
+                         iVar4,&param_1,&local_1c), -1 < param_1 &&
+             ((param_1 < pVVar2->field_0030 &&
+              (local_1c = g_centeredOffsets5[0] + local_1c, -1 < local_1c)))))) &&
+           ((local_1c < pVVar2->field_0034 &&
+            ((pVVar2->field_004C != nullptr &&
+             (pVVar2->field_004C[param_1 + local_1c * pVVar2->field_0030] == 0))))))
+        goto cf_common_exit_005F26AF;
+      }
+    }
+    else {
+      /* ST_CALLSITE[005F2675]: CALL 0x00404e5d; direct=00404E5D VisibleClassTy::sub_005F1D80 */
+      iVar4 = st::fn_00404E5D(g_visibleClass_00802A88,iVar6,iVar4,0);
+      if (iVar4 == 0) goto cf_common_exit_005F26AF;
+    }
+    /* ST_CALLSITE[005F2693]: CALL 0x00401465; direct=00401465 STManBasisC::sub_005F14B0 */
+    local_EAX_707 = st::fn_00401465(local_c,(short)iVar6,(short)param_2,0,(byte)param_4,0);
+    if (-1 < local_EAX_707) {
+      return 1;
+    }
+  }
+  return local_8;
+}

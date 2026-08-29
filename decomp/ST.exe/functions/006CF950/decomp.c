@@ -15,8 +15,8 @@ void FUN_006cf950(uint *param_1)
   int iVar5;
   int iVar6;
   short *psVar7;
-  undefined4 local_a0;
-  undefined4 local_9c;
+  uint local_a0;
+  uint local_9c;
   uint local_98;
   uint local_94;
   int local_20;

@@ -117,7 +117,8 @@ LAB_00489acc:
 00489AE7  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 00489AED  56                        PUSH ESI
 00489AEE  52                        PUSH EDX
-00489AEF  E8 83 C1 F7 FF            CALL 0x00405c77
+STBoatC::GetDefenceTarget::override::prt_489aef_6b21bb28:
+00489AEF  E8 83 C1 F7 FF            CALL 0x00405c77  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArrayTy;/byte;pointer:/int;pointer:/uint;/int;/int;pointer:/int;/int;/int;/int
 00489AF4  8B F8                     MOV EDI,EAX
 00489AF6  3B FB                     CMP EDI,EBX
 00489AF8  89 7D 08                  MOV dword ptr [EBP + 0x8],EDI

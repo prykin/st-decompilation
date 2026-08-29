@@ -44,7 +44,7 @@ undefined4 __thiscall STMineSetC::sub_00625730(STMineSetC *this)
   short *local_24;
   int local_20;
   int local_1c;
-  undefined4 local_18;
+  uint local_18;
   int local_14;
   short local_a;
   short local_8;
@@ -101,6 +101,7 @@ undefined4 __thiscall STMineSetC::sub_00625730(STMineSetC *this)
             sVar19 = (short)iVar14;
             sVar20 = (short)iVar15;
             sVar12 = (short)local_14;
+
             local_EAX_289 = thunk_FUN_004961b0(sVar19,sVar20,sVar12);
             if (local_EAX_289 == 0) goto switchD_00625b9f_caseD_a8;
             if ((((((sVar19 < 0) || (g_worldGrid.sizeX <= sVar19)) || (sVar20 < 0)) ||
@@ -149,22 +150,26 @@ LAB_006259bf:
             }
             else {
               thunk_FUN_00416270(this_00,(uint *)&local_a,&local_8,&local_6);
+
               local_EAX_752 =
                    FUN_006acf0d(this->field_02C2,this->field_02C6,this->field_02CA,(int)local_a,
                                 (int)local_8,(int)local_6);
               if (local_EAX_752 < *(int *)(&DAT_007d0294 + (uint)this->field_02AD * 4)) {
                 if (local_EAX_752 < 0x15e) {
+
                   iVar6 = thunk_FUN_00627670(this);
                 }
                 else if (*(int *)(&DAT_007d0294 + (uint)this->field_02AD * 4) == 0) {
                   iVar6 = 0;
                 }
                 else {
+
                   iVar6 = thunk_FUN_00627670(this);
                 }
-                thunk_FUN_00601d10(this->field_0262,iVar6,(int)this_00,(short)this->field_0018,
-                                   0xffff,*(int *)(&DAT_007d04d0 + (uint)this->field_02AD * 4),0x110
-                                  );
+                thunk_FUN_00601d10(this->field_0262,iVar6,
+                                   (RecoveredRecord_00601D10_11B39116 *)this_00,
+                                   (short)this->field_0018,0xffff,
+                                   *(int *)(&DAT_007d04d0 + (uint)this->field_02AD * 4),0x110);
                 if ((this_00->value_20 == 1000) || (this_00->value_20 == 0x14)) {
                   this->field_0241 = *(int *)&this_00->field_0x18;
                 }
@@ -184,6 +189,7 @@ LAB_00625ad5:
                 if (this->field_0342 != 0) {
                   /* ST_CALLSITE[00625AEC]: CALL dword ptr [EAX + 0x2c] */
                   GVar8 = this_00->GetObjectTypeId();
+
                   uVar9 = thunk_FUN_006263b0(GVar8);
                   if ((this->field_0342 & uVar9) != 0) goto LAB_00625aff;
                 }
@@ -200,7 +206,7 @@ LAB_00625b06:
                    ))) && (pSVar16 = (STMineSetC *)
                                      STGridAt3D(g_worldGrid, sVar19, sVar20, sVar12).objects[1]
                           , pSVar16 != nullptr)) {
-                /* ST_CALLSITE[00625B8A]: CALL dword ptr [EDX + 0x2c] */
+                /* ST_CALLSITE[00625B8A]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STMineSetC */
                 uVar10 = pSVar16->vfunc_2C();
                 switch(uVar10) {
                 case 0xa6:
@@ -245,6 +251,7 @@ LAB_00625d60:
             iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
             iVar7 = this->field_02C2;
             iVar7 = STBiasedDiv16(iVar7, 0xc9); /* exact signed 16-bit grid-index division */
+
             iVar13 = FUN_006acf90(iVar7,iVar6,iVar14,iVar15);
             if (iVar13 < 2) {
               iVar15 = this->field_02C2;
@@ -260,7 +267,7 @@ LAB_00625d60:
               }
             }
             if (pSVar16 != nullptr) {
-              /* ST_CALLSITE[0062605C]: CALL dword ptr [EAX + 0x2c] */
+              /* ST_CALLSITE[0062605C]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STMineSetC */
               uVar10 = pSVar16->vfunc_2C();
               switch(uVar10) {
               case 0xa6:
@@ -276,27 +283,31 @@ LAB_00625d60:
           pSVar16 = (STMineSetC *)
                     STGridAt3D(g_worldGrid, sVar12, sVar20, sVar19).objects[0];
           if (pSVar16 == nullptr) goto LAB_00625d60;
-          /* ST_CALLSITE[00625CE3]: CALL dword ptr [EAX + 0xf0] */
+          /* ST_CALLSITE[00625CE3]: CALL dword ptr [EAX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STMineSetC */
           iVar6 = pSVar16->sub_00627A60();
           if (iVar6 != 0) {
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
             if (in_stack_00000010 != 0) {
               thunk_FUN_00416270(pSVar16,(uint *)&local_a,&local_8,&local_6);
+
               iVar5 = FUN_006acf0d(this->field_02C2,this->field_02C6,this->field_02CA,(int)local_a,
                                    (int)local_8,(int)local_6);
               if (iVar5 < *(int *)(&DAT_007d0294 + (uint)this->field_02AD * 4)) {
                 if (iVar5 < 0x15e) {
+
                   iVar6 = thunk_FUN_00627670(this);
                 }
                 else if (*(int *)(&DAT_007d0294 + (uint)this->field_02AD * 4) == 0) {
                   iVar6 = 0;
                 }
                 else {
+
                   iVar6 = thunk_FUN_00627670(this);
                 }
-                thunk_FUN_00601d10(this->field_0262,iVar6,(int)pSVar16,(short)this->field_0018,
-                                   0xffff,*(int *)(&DAT_007d04d0 + (uint)this->field_02AD * 4),0x110
-                                  );
+                thunk_FUN_00601d10(this->field_0262,iVar6,
+                                   (RecoveredRecord_00601D10_11B39116 *)pSVar16,
+                                   (short)this->field_0018,0xffff,
+                                   *(int *)(&DAT_007d04d0 + (uint)this->field_02AD * 4),0x110);
                 if ((pSVar16->field_0020 == 1000) || (pSVar16->field_0020 == 0x14)) {
                   this->field_0241 = pSVar16->field_0018;
                 }
@@ -346,8 +357,9 @@ LAB_00625efc:
                 bVar18 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
                          g_bulkInitializedRecords_008087C7[bVar1].field_0023;
               }
-              /* ST_CALLSITE[00625F13]: CALL dword ptr [EDX + 0xf8] */
+              /* ST_CALLSITE[00625F13]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STMineSetC */
               if (((bVar18) && (iVar11 = pSVar16->vfunc_F8(), iVar11 != 0)) &&
+
                  (iVar11 = thunk_FUN_006264d0(this,(int *)pSVar16,local_20), iVar11 != 0)) {
                 if (g_sndUnderAttMeneg_00811798 != nullptr) {
                   /* ST_CALLSITE[00625F42]: CALL dword ptr [EDX + 0x2c] */

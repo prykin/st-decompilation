@@ -11,7 +11,7 @@
 int __thiscall
 CGenerate::sub_006991C0
           (CGenerate *this,int param_1,int param_2,int param_3,int param_4,uint param_5,int param_6,
-          int param_7,AnonShape_006991C0_D95B9E4A *param_8)
+          int param_7,RecoveredRecordView_006991C0_C443ACC2 *param_8)
 
 {
   short *psVar1;
@@ -67,16 +67,16 @@ CGenerate::sub_006991C0
   short asStackY_f10 [612];
   int aiStackY_a48 [5];
   undefined4 auStackY_a34 [561];
-  undefined4 uStackY_170;
+  uint uStackY_170;
   int local_144;
   int local_140;
   int local_13c;
   uint local_134;
   uint local_130;
-  undefined2 local_12c;
+  ushort local_12c;
   undefined2 uStack_12a;
-  undefined2 local_128;
-  undefined1 local_126;
+  ushort local_128;
+  byte local_126;
   int local_124;
   undefined4 *local_120;
   int local_11c;
@@ -128,8 +128,7 @@ CGenerate::sub_006991C0
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d7b8;
   puStack_10 = &LAB_0072d964;
@@ -143,6 +142,7 @@ CGenerate::sub_006991C0
   local_d4 = param_1 * param_2;
   FreeAndNull(&this->field_584B);
   uStackY_170 = 0x69922a;
+
   pbVar8 = Library::DKW::LIB::MemAlloc(param_1 * param_2);
   this->field_584B = pbVar8;
   uVar15 = this->field_582F;
@@ -218,6 +218,7 @@ CGenerate::sub_006991C0
               *(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 8) = (int)psVar1[1];
               *(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 4) = (int)*psVar1;
               *(undefined4 *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7) = 0x699421;
+
               uVar12 = FUN_006acf90(*(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 4),
                                     *(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 8),
                                     *(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 0xc),
@@ -288,9 +289,11 @@ CGenerate::sub_006991C0
         local_50 = iVar19;
         do {
           *(undefined4 *)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4) = 0x69957b;
+
           uVar14 = Library::MSVCRT::FUN_0072e6c0();
           iVar25 = (int)uVar14 % iVar21;
           *(undefined4 *)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4) = 0x699585;
+
           local_EAX_960 = Library::MSVCRT::FUN_0072e6c0();
           iVar22 = (int)local_EAX_960 % iVar21;
           psVar1 = (short *)(local_b4 + iVar22 * 10);
@@ -300,6 +303,7 @@ CGenerate::sub_006991C0
           *(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 8) = (int)psVar2[1];
           *(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 4) = (int)*psVar2;
           *(undefined4 *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7) = 0x6995b3;
+
           iVar9 = FUN_006acf90(*(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 4),
                                *(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 8),
                                *(int *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 0xc),
@@ -327,6 +331,7 @@ CGenerate::sub_006991C0
         *(uint **)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4) = &local_134;
         *(undefined4 *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 0xc) = param_8->field_001C;
         *(undefined4 *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 8) = 0x699662;
+
         Library::DKW::TBL::DArrayAppend
                   (*(DArrayTy **)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 0xc),
                    *(void **)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4));
@@ -339,6 +344,7 @@ CGenerate::sub_006991C0
         *(uint **)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4) = &local_134;
         *(undefined4 *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 0xc) = param_8->field_001C;
         *(undefined4 *)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 8) = 0x6996ad;
+
         Library::DKW::TBL::DArrayAppend
                   (*(DArrayTy **)((int)aiStackY_a48 + iVar24 + iVar20 + iVar7 + 0xc),
                    *(void **)((int)auStackY_a34 + iVar24 + iVar20 + iVar7 + -4));
@@ -427,6 +433,7 @@ CGenerate::sub_006991C0
               *(undefined4 *)
                ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x30) =
                    0x6998ec;
+
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_EAX_1831 =
                    FUN_006aced8(*(int *)((int)aiStackY_1150 +
@@ -527,6 +534,7 @@ LAB_0069999c:
             *(undefined4 *)
              ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x30) = 0x699b46
             ;
+
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             iVar16 = FUN_006aced8(*(int *)((int)aiStackY_1150 +
                                           iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x34),
@@ -563,6 +571,7 @@ LAB_0069999c:
                     *(undefined4 *)
                      ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x30) =
                          0x699c0c;
+
                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     local_EAX_2631 =
                          FUN_006aced8(*(int *)((int)aiStackY_1150 +
@@ -608,11 +617,13 @@ LAB_0069999c:
                 *(undefined4 *)
                  ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40) =
                      0x699cae;
+
                 local_EAX_2793 = Library::MSVCRT::FUN_0072e6c0();
                 *(undefined4 *)
                  ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x40) =
                      0x699cc1;
                 local_4c = (int)local_EAX_2793 % local_144;
+
                 uVar13 = Library::MSVCRT::FUN_0072e6c0();
                 local_5c = (int)uVar13 % local_144;
                 iVar25 = ((int)uVar13 % local_144) * 10;
@@ -636,6 +647,7 @@ LAB_0069999c:
                 *(undefined4 *)
                  ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x30) =
                      0x699cf2;
+
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 local_EAX_2861 =
                      FUN_006aced8(*(int *)((int)aiStackY_1150 +
@@ -669,6 +681,7 @@ LAB_0069999c:
                       *(undefined4 *)
                        ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x30)
                            = 0x699d60;
+
                       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                       local_ec = FUN_006acf90(*(int *)((int)aiStackY_1150 +
                                                       iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7
@@ -700,6 +713,7 @@ LAB_0069999c:
                       *(undefined4 *)
                        ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x30)
                            = 0x699d9a;
+
                       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                       iVar15 = FUN_006acf90(*(int *)((int)aiStackY_1150 +
                                                     iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 +
@@ -744,6 +758,7 @@ LAB_0069999c:
                     *(undefined4 *)
                      ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x30) =
                          0x699e42;
+
                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     local_EAX_3197 =
                          FUN_006aced8(*(int *)((int)aiStackY_1150 +
@@ -774,6 +789,7 @@ LAB_0069999c:
                     *(undefined4 *)
                      ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x20) =
                          0x699e6c;
+
                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     iVar18 = FUN_006aced8(*(int *)((int)aiStackY_1150 +
                                                   iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 +
@@ -805,6 +821,7 @@ LAB_0069999c:
                     *(undefined4 *)
                      ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x10) =
                          0x699e9c;
+
                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     iVar12 = FUN_006aced8(*(int *)((int)aiStackY_1150 +
                                                   iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 +
@@ -836,6 +853,7 @@ LAB_0069999c:
                     *(undefined4 *)
                      ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7) =
                          0x699ec6;
+
                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     iVar17 = FUN_006aced8(*(int *)((int)aiStackY_1150 +
                                                   iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 4
@@ -868,6 +886,7 @@ LAB_0069999c:
                     *(undefined4 *)
                      ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x30) =
                          0x699eff;
+
                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                     local_EAX_3386 =
                          FUN_006aced8(*(int *)((int)aiStackY_1150 +
@@ -918,6 +937,7 @@ LAB_00699f26:
                 *(undefined4 *)
                  ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x38) =
                      0x699fd4;
+
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 Library::DKW::TBL::DArrayAppend
                           (*(DArrayTy **)
@@ -957,6 +977,7 @@ LAB_00699f26:
                   *(undefined4 *)
                    ((int)aiStackY_1150 + iVar21 * -8 + iVar24 + param_5 * -0x14 + iVar7 + 0x38) =
                        0x69a0a7;
+
                   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   Library::DKW::TBL::DArrayAppend
                             (*(DArrayTy **)
@@ -1006,6 +1027,7 @@ LAB_00699f26:
           *(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -0xc) = (int)psVar1[1];
           *(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -0x10) = (int)*psVar1;
           *(undefined4 *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -0x14) = 0x69a1cd;
+
           local_EAX_4104 =
                thunk_FUN_0069ac20(*(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -0x10),
                                   *(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -0xc),
@@ -1042,6 +1064,7 @@ LAB_00699f26:
           local_dc = 0;
           do {
             *(undefined4 *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -4) = 0x69a243;
+
             local_EAX_4222 = Library::MSVCRT::FUN_0072e6c0();
             iVar20 = (int)local_EAX_4222 % local_b8;
             uVar11 = local_a0[iVar20];
@@ -1062,6 +1085,7 @@ LAB_00699f26:
                     *(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -0xc) = (int)psVar2[1];
                     *(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -0x10) = (int)*psVar2;
                     *(undefined4 *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -0x14) = 0x69a2f5;
+
                     local_EAX_4400 =
                          FUN_006acf90(*(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -0x10),
                                       *(int *)(puVar23 + iVar21 * -8 + iVar7 * -8 + -0xc),
@@ -1120,6 +1144,7 @@ LAB_00699f26:
                      (int)*psVar2;
                 *(undefined4 *)(puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -0x14) =
                      0x69a432;
+
                 local_EAX_4717 =
                      FUN_006aced8(*(int *)(puVar23 +
                                           iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -0x10),
@@ -1161,6 +1186,7 @@ LAB_00699f26:
               do {
                 *(undefined4 *)(puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -4) =
                      0x69a4ba;
+
                 local_EAX_4853 = Library::MSVCRT::FUN_0072e6c0();
                 iVar22 = (int)local_EAX_4853 % (int)uVar15;
                 if (puVar26[iVar22] == 0) {
@@ -1190,6 +1216,7 @@ LAB_00699f26:
               do {
                 *(undefined4 *)(puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -4) =
                      0x69a51c;
+
                 local_EAX_4951 = Library::MSVCRT::FUN_0072e6c0();
                 iVar22 = (int)local_EAX_4951 % (int)uVar15;
                 if (puVar26[iVar22] == 0) {
@@ -1261,6 +1288,7 @@ LAB_00699f26:
                    param_8->field_001C;
               *(undefined4 *)(puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -0xc) =
                    0x69a631;
+
               Library::DKW::TBL::DArrayAppend
                         (*(DArrayTy **)(puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -8),
                          *(void **)(puVar23 + iVar20 + uVar15 * -8 + iVar24 + iVar7 * -8 + -4));

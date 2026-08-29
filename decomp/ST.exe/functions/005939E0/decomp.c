@@ -24,28 +24,33 @@ ComboTy::OutBmpProc(ComboTy *this,DDXContext *param_1,undefined4 param_2,undefin
   if (param_8 != 0) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
+
     iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     pAVar2 = local_8;
     if (iVar3 == 0) {
       if (local_8->field_0060 != 0) {
         iVar3 = local_8->field_0078;
+
         Library::DKW::DDX::FUN_006c5000
                   (param_1,param_4,param_5 + 3,iVar3,0,0,0,STField<uint>(iVar3,0x4),STField<int>(iVar3,0x8),
                    local_8->field_0060,(byte)local_8->field_0058);
       }
       if (*(int *)&pAVar2->field_0x5c != 0) {
         iVar3 = *(int *)&pAVar2->field_0x74;
+
         Library::DKW::DDX::FUN_006c5000
                   (param_1,param_4,param_5,iVar3,0,0,0,STField<uint>(iVar3,0x4),STField<int>(iVar3,0x8),
                    *(int *)&pAVar2->field_0x5c,(byte)*(undefined4 *)&pAVar2->field_0x50);
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
+
       FUN_006b4640(param_1,param_4 + 3,param_5,*(BITMAPINFO **)&pAVar2->field_0x74,nullptr);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\Start\\combo.cpp",0x12,0,iVar3,"%s",
                                "ComboTy::OutBmpProc");
     if (iVar4 != 0) {

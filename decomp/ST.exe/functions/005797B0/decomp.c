@@ -7,9 +7,14 @@
 
    [STPrototypeApplier] Propagated parameter 2.
    Evidence: 00579DC9 exact 2-byte output store from MOVSX at 00579D96 establishes signed source
-   width 2 */
+   width 2
 
-undefined4 __thiscall FUN_005797b0(void *this,short *param_1,short *param_2,undefined2 *param_3)
+   [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=2, ignored=0,
+   unknown=0 */
+
+int __thiscall FUN_005797b0(void *this,short *param_1,short *param_2,undefined2 *param_3)
 
 {
   uint uVar1;
@@ -228,6 +233,7 @@ switchD_0057988b_default:
     while( true ) {
       while( true ) {
         while( true ) {
+
           uVar1 = thunk_FUN_00496250(local_14,local_18,(int)STField<short>(this,0x45));
           sVar4 = (short)iVar2;
           if ((int)uVar1 < 0) {
@@ -246,6 +252,7 @@ switchD_0057988b_default:
                 iVar9 = local_18 - STField<short>(this,0x43);
                 STField<int>(this,0x245) = iVar2;
                 STField<int>(this,0x24d) = iVar9;
+
                 iVar3 = FUN_006acf0d(0,0,0,iVar2,iVar9,0);
                 STField<undefined4>(this,0x249) = 0;
                 STField<undefined4>(this,0x241) = 0;
@@ -258,11 +265,9 @@ switchD_0057988b_default:
                 STField<int>(this,0x255) = (int)sVar5;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 uVar7 = CONCAT22(sVar5 >> 0xf,STField<undefined2>(this,0x45));
-                /* ST_CALLSITE[00579E50]: CALL dword ptr [EBX + 0x10] */
-                /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable or function-table callback call with the machine-proven calling convention; expected named packed member, bit extract/compose, or unaligned load */
-                sVar4 = (**(code **)(*(int *)this + 0x10))
-                                  (STReplaceLowWord((uint32_t)(iVar2), (uint16_t)(sVar4)),
-                                   CONCAT22(sVar4 >> 0xf,sVar5),uVar7,local_14,local_18,uVar7);
+                /* ST_CALLSITE[00579E50]: CALL dword ptr [EBX + 0x10]; [STIndirectCallsiteApplier] exact slot 0x10; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
+                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                sVar4 = STStructuralVirtualCall<undefined4>(this, 0x10, STReplaceLowWord((uint32_t)(iVar2), (uint16_t)(sVar4)), CONCAT22(sVar4 >> 0xf,sVar5), uVar7, local_14, local_18, uVar7);
                 uVar3 = (short)((sVar4 / 0x2d + 3) - (short)((int)sVar4 / -0x4c000000)) &
                         0x80000007;
                 if ((int)uVar3 < 0) {

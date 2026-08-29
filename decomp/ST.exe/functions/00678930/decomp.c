@@ -9,7 +9,7 @@
    Evidence: slot_family_has_no_named_method; unique_owner_for_target;
    receiver_only_leaf_virtual_signature */
 
-dword __thiscall AiPlrClassTy::FUN_00678930(AiPlrClassTy *this)
+dword __thiscall AiPlrClassTy::vfunc_18(AiPlrClassTy *this)
 
 {
   return this->field_05BB;

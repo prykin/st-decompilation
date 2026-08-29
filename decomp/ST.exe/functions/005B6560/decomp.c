@@ -15,7 +15,8 @@
 
 void __thiscall
 MMMObjTy::PaintSlBut
-          (MMMObjTy *this,RecoveredRecord_MMMObjTy_005B6560 *param_1,int param_2,byte param_3)
+          (MMMObjTy *this,RecoveredRecord_MMMObjTy_005B6560 *param_1,
+          RecoveredRecord_005B6560_90DC7408 *param_2,byte param_3)
 
 {
   int iVar2;
@@ -27,9 +28,11 @@ MMMObjTy::PaintSlBut
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
+
     iVar3 = ReportDebugMessage("E:\\__titans\\Start\\mmenuobj.cpp",0x121,0,iVar2,"%s"
                                ,"MMMObjTy::PaintSlBut");
     if (iVar3 != 0) {
@@ -38,8 +41,7 @@ MMMObjTy::PaintSlBut
     RaiseInternalException(iVar2,0,"E:\\__titans\\Start\\mmenuobj.cpp",0x121);
     return;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined2 *)(param_2 + 0x14)) {
+  switch(param_2->field_0014) {
   case 0:
     param_1->field_0008 = (uint)param_3 * 3 + 2;
     goto switchD_005b65a4_default;
@@ -56,17 +58,16 @@ MMMObjTy::PaintSlBut
   param_1->field_0008 = uVar2;
 switchD_005b65a4_default:
   if (param_1->field_0004 != 0xffffffff) {
+
     Library::DKW::DDX::FUN_006b3730
               (param_1->field_0048,param_1->field_0004,param_1->field_0008,param_1->field_001C,
                param_1->field_0020);
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(short *)(param_2 + 0x14) == 2) {
+  if (param_2->field_0014 == 2) {
     uVar2 = 10;
   }
   else {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(short *)(param_2 + 0x14) != 3) {
+    if (param_2->field_0014 != 3) {
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

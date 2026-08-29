@@ -31,12 +31,12 @@ int __thiscall STSatC::GetMessage(STSatC *this,STMessage *message)
   byte *pbVar15;
   InternalExceptionFrame local_80;
   void *local_3c;
-  AnonShape_GLOBAL_00806724_3210464F *local_38;
+  RecoveredGlobalRecordView_00806724 *local_38;
   int local_34;
   ushort *local_30;
-  undefined4 local_2c;
-  undefined4 local_28;
-  undefined4 local_24;
+  uint local_2c;
+  uint local_28;
+  uint local_24;
   AnonShape_0058C760_4470B7C6 *local_20;
   STSatC *local_1c;
   byte *local_18;
@@ -51,10 +51,12 @@ int __thiscall STSatC::GetMessage(STSatC *this,STMessage *message)
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_1c = this;
+
   iVar10 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   this_00 = local_1c;
   if (iVar10 != 0) {
     g_currentExceptionFrame = local_80.previous;
+
     iVar11 = ReportDebugMessage("E:\\__titans\\Igor\\to_sat.cpp",0x1fd,0,iVar10,"%s",
                                 "STSatC::GetMessage");
     if (iVar11 == 0) {
@@ -69,9 +71,10 @@ int __thiscall STSatC::GetMessage(STSatC *this,STMessage *message)
   if (SVar1 < MESS_TORPHIT) {
     if (SVar1 == MESS_SHARED_010F) {
       /* ST_CALLSITE[0058CB79]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
-      local_18 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
+      local_18 = STPointerBoundaryCast<byte *>(STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8));
       /* ST_CALLSITE[0058CB87]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
-      local_14 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
+      local_14 = STPointerBoundaryCast<byte *>(STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10));
+
       local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x7c + local_8);
       if (((local_18 != nullptr) && (local_14 != nullptr)) &&
          (local_c != nullptr)) {
@@ -136,7 +139,7 @@ int __thiscall STSatC::GetMessage(STSatC *this,STMessage *message)
     }
     else {
       if (SVar1 == MESS_ID_NONE) {
-        thunk_FUN_0058bd90((AnonShape_0058BD90_DCBCF849 *)this_00);
+        thunk_FUN_0058bd90((RecoveredRecordView_0058BD90_5921842F *)this_00);
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
@@ -157,6 +160,7 @@ int __thiscall STSatC::GetMessage(STSatC *this,STMessage *message)
             RaiseInternalException
                       (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\to_sat.cpp",0x158);
           }
+
           thunk_FUN_004ac610(puVar11,'\x0e');
           /* ST_CALLSITE[0058CA08]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
           STT3DSprC::StartShow((STT3DSprC *)puVar11,0xe,g_playSystem_00802A38->field_00E4);
@@ -204,6 +208,7 @@ int __thiscall STSatC::GetMessage(STSatC *this,STMessage *message)
           this_00->field_0041 = local_20->field_006A;
           this_00->field_0043 = *(short *)&local_20->field_0x6c;
           this_00->field_0045 = local_20->field_006E;
+
           local_3c = Library::DKW::LIB::MemAlloc(0x44);
           if (local_3c != nullptr) {
             iVar7 = 0;
@@ -213,7 +218,7 @@ int __thiscall STSatC::GetMessage(STSatC *this,STMessage *message)
             } while (iVar7 < 0x44);
             if (((this_00->field_0239 < 1) ||
                 (PTR_00806724 == nullptr)) ||
-               (PTR_00806724 == (AnonShape_GLOBAL_00806724_3210464F *)0xffffffd0)) {
+               (PTR_00806724 == (RecoveredGlobalRecordView_00806724 *)0xffffffd0)) {
               local_38 = nullptr;
             }
             else {
@@ -227,7 +232,7 @@ int __thiscall STSatC::GetMessage(STSatC *this,STMessage *message)
             /* ST_CALLSITE[0058C987]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
             STT3DSprC::RestoreSpr
                       ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
-                       (AnonShape_004AD790_77673787 *)&pAVar10[1].field_0x8);
+                       (RecoveredRecordView_004AD790_D4DB5A31 *)&pAVar10[1].field_0x8);
             FreeAndNull(&local_3c);
           }
         }

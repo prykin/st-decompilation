@@ -1,0 +1,10 @@
+program=ST.exe
+candidate_functions=168
+proven_accessors=9
+targets=14
+auto_apply=14
+output_local_targets=0
+output_local_apply=0
+source_conflicts=0
+decompile_failures=1
+policy=A concrete object-pointer return must derive every non-null return from one DArrayGetElement out-parameter, while one selector local ranges over at least two exact DArray-compatible global or generated-record sources. Only those exact sources receive a descriptor whose data is T **; the neutral DArrayTy ABI is unchanged.

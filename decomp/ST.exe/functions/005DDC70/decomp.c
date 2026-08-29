@@ -22,40 +22,40 @@ void __thiscall StartSystemTy::CreateBinDesc(StartSystemTy *this)
   int *piVar8;
   byte *puVar9;
   int local_8c4 [6];
-  undefined4 local_8ac;
-  undefined4 local_8a8;
-  undefined4 local_8a4;
-  undefined4 local_8a0;
+  uint local_8ac;
+  uint local_8a8;
+  uint local_8a4;
+  uint local_8a0;
   int local_88c;
-  undefined4 local_888;
-  undefined4 local_884;
-  undefined4 local_814;
-  undefined4 local_810;
-  undefined4 local_80c;
-  undefined4 local_808 [4];
-  undefined4 local_7f8;
-  undefined4 local_7f4;
+  uint local_888;
+  uint local_884;
+  uint local_814;
+  uint local_810;
+  uint local_80c;
+  uint local_808 [4];
+  uint local_7f8;
+  uint local_7f4;
   int local_7a8;
-  undefined4 local_7a4;
-  undefined4 local_7a0;
-  undefined4 local_6f8;
-  undefined4 local_6f4;
-  undefined4 local_68c;
-  undefined4 local_688 [4];
-  undefined4 local_678;
-  undefined4 local_674;
-  undefined4 local_620;
-  undefined4 local_50c;
-  undefined4 local_508;
-  undefined4 local_500;
-  undefined4 local_4fc;
-  undefined4 local_4f8;
-  undefined4 local_4f4;
-  undefined4 local_4f0;
-  undefined4 local_4ec;
+  uint local_7a4;
+  uint local_7a0;
+  uint local_6f8;
+  uint local_6f4;
+  uint local_68c;
+  uint local_688 [4];
+  uint local_678;
+  uint local_674;
+  uint local_620;
+  uint local_50c;
+  uint local_508;
+  uint local_500;
+  uint local_4fc;
+  uint local_4f8;
+  uint local_4f4;
+  uint local_4f0;
+  uint local_4ec;
   int local_4b8;
-  undefined4 local_4b4;
-  undefined4 local_4b0;
+  uint local_4b4;
+  uint local_4b0;
   InternalExceptionFrame local_4c;
   StartSystemTy *local_8;
 
@@ -67,6 +67,7 @@ void __thiscall StartSystemTy::CreateBinDesc(StartSystemTy *this)
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar5 == 0) {
@@ -79,7 +80,7 @@ void __thiscall StartSystemTy::CreateBinDesc(StartSystemTy *this)
     local_8c4[3] = 0;
     local_8c4[4] = 0xd5;
     if (pcVar1->field_00A0 != 0) {
-      FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar1);
+      FUN_00710790((RecoveredRecordView_00710790_7768A573 *)pcVar1);
     }
     local_8c4[5] = *(int *)&pcVar1->field_0x8a;
     local_8a8 = (undefined4)(0x119 / (longlong)local_8c4[5]);
@@ -125,18 +126,22 @@ void __thiscall StartSystemTy::CreateBinDesc(StartSystemTy *this)
     /* ST_CALLSITE[005DDE9F]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,8,&this_00->field_0389,nullptr,local_8c4,0);
+
     Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_00->field_0540);
     if (this_00->field_0391 != 0xffffffff) {
+
       Library::DKW::DDX::FUN_006b34d0
                 ((uint *)this_00->field_03D5,this_00->field_0391,0xfffffffe,this_00->field_03A9,
                  this_00->field_03AD);
     }
     if (this_00->field_0422 != 0xffffffff) {
+
       Library::DKW::DDX::FUN_006b34d0
                 ((uint *)this_00->field_0466,this_00->field_0422,0xfffffffe,this_00->field_043A,
                  this_00->field_043E);
     }
     if (this_00->field_04B3 != 0xffffffff) {
+
       Library::DKW::DDX::FUN_006b34d0
                 ((uint *)this_00->field_04F7,this_00->field_04B3,0xfffffffe,this_00->field_04CB,
                  this_00->field_04CF);
@@ -145,6 +150,7 @@ void __thiscall StartSystemTy::CreateBinDesc(StartSystemTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0x3b8,0,iVar5,"%s",
                              "StartSystemTy::CreateBinDesc");
   if (iVar4 != 0) {

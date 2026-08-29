@@ -19,6 +19,7 @@ void __thiscall ProdPanelTy::DoneProdPanel(ProdPanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pPVar2 = local_8;
   if (iVar3 == 0) {
@@ -53,6 +54,7 @@ void __thiscall ProdPanelTy::DoneProdPanel(ProdPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x1a6,0,iVar3,"%s",
                              "ProdPanelTy::DoneProdPanel");
   if (iVar4 != 0) {

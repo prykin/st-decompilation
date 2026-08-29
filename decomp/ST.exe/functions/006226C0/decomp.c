@@ -38,7 +38,8 @@ byte __thiscall STMineSetC::sub_006226C0(STMineSetC *this,uint param_1,int param
       }
       break;
     case CASE_1:
-      iVar4 = thunk_FUN_0041d620(this,uVar3);
+      /* ST_CALLSITE[00622710]: CALL 0x00401811; direct=00401811 STMineSetC::sub_0041D620 */
+      iVar4 = sub_0041D620(this,uVar3);
       if (iVar4 == 0) {
         return 0;
       }

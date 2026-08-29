@@ -21,7 +21,7 @@
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_32=50;CASE_34=52;CASE_35=53;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3B=59;CASE_40=64;CASE_41=65;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4F=79;CASE_50=80;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_73=115;CASE_FFFFFFFF=4294967295
     */
 
-undefined4 __fastcall TLOBaseTy::sub_004EAA20(AnonShape_004D9C80_80F657D3 *param_1)
+undefined4 __fastcall TLOBaseTy::sub_004EAA20(RecoveredRecordView_004D9C80_63C53606 *param_1)
 
 {
   STT3DSprC *pSVar1;
@@ -33,7 +33,8 @@ undefined4 __fastcall TLOBaseTy::sub_004EAA20(AnonShape_004D9C80_80F657D3 *param
   int local_8;
 
   if (param_1->field_05FF == 0) {
-    pSVar1 = (STT3DSprC *)Library::MSVCRT::FUN_0072e530(0x40);
+    /* ST_CALLSITE[004EAA39]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint */
+    pSVar1 = Library::MSVCRT::FUN_0072e530(0x40);
     if (pSVar1 == nullptr) {
       pSVar1 = nullptr;
     }
@@ -67,12 +68,12 @@ undefined4 __fastcall TLOBaseTy::sub_004EAA20(AnonShape_004D9C80_80F657D3 *param
     param_1->field_0261 = 0;
     param_1->field_0265 = param_1->field_0265 & 0xfffffffd;
     param_1->field_026D = 0;
-    /* ST_CALLSITE[004EAAFC]: CALL dword ptr [EAX + 0x90] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(param_1->field_0000 + 0x90))(3,0x279);
+    /* ST_CALLSITE[004EAAFC]: CALL dword ptr [EAX + 0x90]; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4 */
+    STStructuralVirtualCall<void>(param_1, 0x90, 3, 0x279);
   }
   if ((*(int *)&param_1->field_0x4d0 != 1) && (*(int *)&param_1->field_0x4d0 != 3)) {
-    thunk_FUN_004ad430((STT3DSprC *)param_1->field_05FF);
+    /* ST_CALLSITE[004EAB18]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+    STT3DSprC::sub_004AD430((STT3DSprC *)param_1->field_05FF);
     return 0;
   }
   /* ST_CALLSITE[004EAB36]: CALL dword ptr [0x0085bde8] */
@@ -85,9 +86,12 @@ undefined4 __fastcall TLOBaseTy::sub_004EAA20(AnonShape_004D9C80_80F657D3 *param
               (iVar3,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_tls.cpp",99);
   }
   uVar4 = 10;
-  iVar2 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
+  /* ST_CALLSITE[004EAB7B]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC */
+  iVar2 = (int)thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
+
   uVar3 = thunk_FUN_004ad650((STT3DSprC *)param_1->field_05FF);
   FUN_006ea340(param_1->field_0211,uVar3,iVar2,uVar4);
+
   thunk_FUN_004abce0((void *)param_1->field_05FF,0xe,0x28,
                      (-(uint)(*(int *)&param_1->field_0x4d0 != 3) & 0xffffffed) + 0x3b,'\0');
   /* ST_CALLSITE[004EABC6]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
@@ -109,9 +113,8 @@ undefined4 __fastcall TLOBaseTy::sub_004EAA20(AnonShape_004D9C80_80F657D3 *param
              _DAT_007904f0 + _DAT_007904fc);
   thunk_FUN_004ad460((void *)param_1->field_05FF,1);
   if (*(int *)&param_1->field_0x4d0 == 3) {
-    /* ST_CALLSITE[004EACAA]: CALL dword ptr [EAX + 0x90] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(param_1->field_0000 + 0x90))(3,0x279);
+    /* ST_CALLSITE[004EACAA]: CALL dword ptr [EAX + 0x90]; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4 */
+    STStructuralVirtualCall<undefined4>(param_1, 0x90, 3, 0x279);
   }
   return 0;
 }

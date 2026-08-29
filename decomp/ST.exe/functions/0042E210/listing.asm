@@ -827,7 +827,7 @@ LAB_0042eb6f:
 0042EB9D  8B 11                     MOV EDX,dword ptr [ECX]
 0042EB9F  50                        PUSH EAX
 0042EBA0  68 FF 10 00 00            PUSH 0x10ff
-0042EBA5  FF 52 08                  CALL dword ptr [EDX + 0x8]
+0042EBA5  FF 52 08                  CALL dword ptr [EDX + 0x8]  ; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STPlaySystemC;/int;pointer:/undefined4;pointer:/int;/undefined2;/int
 0042EBA8  8B 55 E8                  MOV EDX,dword ptr [EBP + -0x18]
 0042EBAB  8D 4D F8                  LEA ECX,[EBP + -0x8]
 0042EBAE  51                        PUSH ECX

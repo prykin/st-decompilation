@@ -45,7 +45,8 @@ LAB_006837c9:
 LAB_006837e3:
 006837E3  0F BF 45 F9               MOVSX EAX,word ptr [EBP + -0x7]
 006837E7  50                        PUSH EAX
-006837E8  E8 4D FD D7 FF            CALL 0x0040353a
+FUN_00683780::override::prt_6837e8_859c3ac5:
+006837E8  E8 4D FD D7 FF            CALL 0x0040353a  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/byte; signature=__cdecl;pointer:/byte;/int
 006837ED  83 C4 04                  ADD ESP,0x4
 006837F0  85 C0                     TEST EAX,EAX
 006837F2  74 13                     JZ 0x00683807

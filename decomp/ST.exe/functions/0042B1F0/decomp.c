@@ -124,10 +124,9 @@ STAllPlayersC::GetGObjFromBox
             iVar5 = local_2c * 8 + -8;
             do {
               piVar1 = *(int **)((int)g_worldGrid.cells[1].objects + iVar5);
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               if (((piVar1 != nullptr) && (piVar1[9] == (int)param_1)) &&
-                 /* ST_CALLSITE[0042B410]: CALL dword ptr [EDX + 0xf8] */
-                 (iVar8 = (**(code **)(*piVar1 + 0xf8))(), iVar8 == 1)) {
+                 /* ST_CALLSITE[0042B410]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                 (iVar8 = STStructuralVirtualCall<undefined4>(piVar1, 0xF8), iVar8 == 1)) {
                 iVar8 = piVar1[8];
                 if (iVar8 == 0x14) {
                   piVar3 = param_10;

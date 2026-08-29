@@ -72,7 +72,7 @@ LAB_00465447:
 00465477  FF 50 10                  CALL dword ptr [EAX + 0x10]
 0046547A  50                        PUSH EAX
 0046547B  8B CE                     MOV ECX,ESI
-0046547D  E8 30 DC F9 FF            CALL 0x004030b2
+0046547D  E8 30 DC F9 FF            CALL 0x004030b2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override
 00465482  50                        PUSH EAX
 00465483  8B CE                     MOV ECX,ESI
 00465485  E8 72 CE F9 FF            CALL 0x004022fc
@@ -230,7 +230,7 @@ LAB_004655fe:
 00465646  FF 50 10                  CALL dword ptr [EAX + 0x10]
 00465649  50                        PUSH EAX
 0046564A  8B CE                     MOV ECX,ESI
-0046564C  E8 61 DA F9 FF            CALL 0x004030b2
+0046564C  E8 61 DA F9 FF            CALL 0x004030b2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override
 00465651  50                        PUSH EAX
 00465652  8B CE                     MOV ECX,ESI
 00465654  E8 A3 CC F9 FF            CALL 0x004022fc

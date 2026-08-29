@@ -3,16 +3,16 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
-   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00727C80.
+   /SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_00727C80.
    Evidence: incoming_receiver_captures=1; receiver_accesses=7; incoming_edx_uses=0; calls=1;
    ecx_pointer_setup=1; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
    expected_stack=12; receiver_family_members=4; adopt_untyped_existing_thiscall;
    single_call_corroborated_by_receiver_family */
 
 void __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_007282b0
-          (AnonReceiver_00727C80 *this,AnonShape_007282B0_AFD740A9 *param_1,uint param_2,int param_3
-          )
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00727C80::FUN_007282b0
+          (RecoveredReceiver_00727C80 *this,AnonShape_007282B0_AFD740A9 *param_1,uint param_2,
+          int param_3)
 
 {
   byte *pbVar1;
@@ -21,17 +21,11 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_007282b0
   int iVar4;
   int iVar5;
   int iVar6;
-  int local_60;
-  int local_5c;
-  int local_58;
-  int local_3c;
+  RecoveredRecord_007285D0_033BCCA5 local_60;
   int local_38;
-  int local_34;
-  int local_30;
-  int local_2c;
-  int local_10;
+  RecoveredRecord_007285D0_B1C1C37A local_34;
   int local_c;
-  AnonReceiver_00727C80 *local_8;
+  RecoveredReceiver_00727C80 *local_8;
 
   pbVar1 = (byte *)(param_1->field_0028 + param_2 * 0x1c);
   puVar3 = (undefined4 *)((uint)pbVar1[1] * 0x10 + param_3);
@@ -77,7 +71,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_007282b0
     else {
       if ((param_1->field_0048 != 0) &&
          ((double)*(float *)(param_1->field_0020 + 8 + (uint)pbVar1[1] * 0xc) <=
-          -(*(double *)&this->field_0xd0 * _DAT_007901c0))) {
+          -(this->field_00D0 * _DAT_007901c0))) {
         _DAT_008570f8 = ((int)param_1->field_0008 - (uint)param_1->field_0048) * 2;
       }
       if ((*(byte *)(param_1->field_003C + param_2) & DAT_00857058) == 0) {
@@ -120,39 +114,43 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_007282b0
 LAB_007284f0:
   if (iVar4 < iVar5) {
     DAT_00857098 = iVar4 >> 0x10;
-    local_34 = -1;
+    local_34.field_0000 = 0xffffffff;
     local_8 = this;
-    iVar4 = FUN_00727c80(&local_34,iVar6);
+
+    iVar4 = FUN_00727c80((int *)&local_34,iVar6);
     if (iVar4 != 0) {
-      local_60 = 1;
-      iVar4 = FUN_00727c80(&local_60,iVar6);
-      if ((iVar4 != 0) && (DAT_00857098 < *(int *)&this->field_0x3c)) {
+      local_60.field_0000 = 1;
+
+      iVar4 = FUN_00727c80((int *)&local_60,iVar6);
+      if ((iVar4 != 0) && (DAT_00857098 < this->field_003C)) {
         do {
-          if (*(int *)&this->field_0x34 <= DAT_00857098) {
-            FUN_007285d0((int)&local_34,(int)&local_60);
+          if (this->field_0034 <= DAT_00857098) {
+            FUN_007285d0(&local_34,&local_60);
           }
-          local_30 = local_30 + -1;
-          if (local_30 < 1) {
-            iVar4 = FUN_00727c80(&local_34,local_2c);
+          local_34.field_0004 = local_34.field_0004 - 1;
+          if ((int)local_34.field_0004 < 1) {
+
+            iVar4 = FUN_00727c80((int *)&local_34,STPiece<8,4>(local_34));
             if (iVar4 == 0) {
               return;
             }
           }
           else {
-            local_10 = local_10 + local_c;
+            local_34.field_0024 = local_34.field_0024 + local_c;
           }
-          local_5c = local_5c + -1;
-          if (local_5c < 1) {
-            iVar4 = FUN_00727c80(&local_60,local_58);
+          local_60.field_0004 = local_60.field_0004 - 1;
+          if ((int)local_60.field_0004 < 1) {
+
+            iVar4 = FUN_00727c80((int *)&local_60,STPiece<8,4>(local_60));
             if (iVar4 == 0) {
               return;
             }
           }
           else {
-            local_3c = local_3c + local_38;
+            local_60.field_0024 = local_60.field_0024 + local_38;
           }
           DAT_00857098 = DAT_00857098 + 1;
-        } while (DAT_00857098 < *(int *)&this->field_0x3c);
+        } while (DAT_00857098 < this->field_003C);
       }
     }
   }

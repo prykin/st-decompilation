@@ -21,7 +21,7 @@ SpecPanelTy::InitPanel
           UINT param_6,undefined4 param_7,undefined4 param_8)
 
 {
-  ushort *puVar1;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar1;
   AnonPointee_SpecPanelTy_0000 *pAVar2;
   SpecPanelTy *pSVar4;
   int iVar5;
@@ -46,24 +46,26 @@ SpecPanelTy::InitPanel
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pSVar4 = local_8;
   if (iVar5 == 0) {
     local_8->field_003C = local_8->field_003C + (g_nWidth_00806730 + -800) / 2;
     puVar5 = cMf32::RecGet(g_cMf32_00806790,1,text,nullptr,1);
     pSVar4->field_0185 = puVar5;
-    /* ST_CALLSITE[0053E469]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
-    pcVar6 = (ccFntTy *)ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0028);
+    /* ST_CALLSITE[0053E469]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/ccFntTy */
+    pcVar6 = ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0028);
     pSVar4->field_0189 = pcVar6;
     pcVar6->field_0058 = 0;
     pcVar6->field_005C = 0;
-    puVar1 = pSVar4->field_0068;
-    uVar10 = *(uint *)(puVar1 + 10);
+    pRVar1 = (RecoveredRecord_006B4FA0_DAC3A217 *)pSVar4->field_0068;
+    uVar10 = *(uint *)&pRVar1[1].field_0x4;
     if (uVar10 == 0) {
-      uVar10 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-               *(int *)(puVar1 + 4);
+      uVar10 = ((uint)pRVar1->field_000E * *(int *)&pRVar1->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+               *(int *)&pRVar1->field_0x8;
     }
-    puVar7 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
+
+    puVar7 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0(pRVar1));
     for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
       *puVar7 = 0xffffffff;
       puVar7 = puVar7 + 1;
@@ -73,13 +75,16 @@ SpecPanelTy::InitPanel
       puVar7 = (undefined4 *)((int)puVar7 + 1);
     }
     /* ST_CALLSITE[0053E4CD]: CALL 0x00403229; direct=00403229 DibPut */
-    DibPut((RecoveredSourceFamily_dibcopy *)pSVar4->field_0068,0,0,'\x01',(byte *)pSVar4->field_0185
-          );
+    DibPut((RecoveredSourceFamily_dibcopy *)pSVar4->field_0068,0,0,'\x01',
+           (RecoveredRecordView_006B84D0_87AF9D9B *)pSVar4->field_0185);
+
     ccFntTy::SetSurf(pSVar4->field_0189,(int)pSVar4->field_0068,0,param_2,param_3,param_4,param_5);
     uVar10 = 0;
     iVar16 = -1;
     iVar5 = -2;
+    /* ST_CALLSITE[0053E507]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     resourceString = LoadResourceString(param_6,g_hINSTANCE_00807618);
+
     ccFntTy::WrStr(pSVar4->field_0189,resourceString,iVar5,iVar16,uVar10);
     uVar18 = 1;
     pAVar2 = pSVar4->field_0000;
@@ -90,7 +95,7 @@ SpecPanelTy::InitPanel
     uVar12 = 0xc000;
     uVar11 = 0xbfff;
     pCVar8 = thunk_FUN_00571240("BUT_MEDIUM",0);
-    /* ST_CALLSITE[0053E552]: CALL dword ptr [EDI + 0x4] */
+    /* ST_CALLSITE[0053E552]: CALL dword ptr [EDI + 0x4]; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
     uVar11 = (*STField<code *>(pAVar2,0x4))
                        (0,1,param_7,param_8,0,1,1,pCVar8,uVar11,uVar12,uVar13,uVar14,uVar15,uVar17,
                         uVar18);
@@ -99,6 +104,7 @@ SpecPanelTy::InitPanel
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar16 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0xeb,0,iVar5,"%s",
                               "SpecPanelTy::InitPanel");
   if (iVar16 != 0) {

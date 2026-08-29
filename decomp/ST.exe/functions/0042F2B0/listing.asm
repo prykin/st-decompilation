@@ -1011,7 +1011,7 @@ LAB_0042ff6f:
 0042FF72  57                        PUSH EDI
 0042FF73  50                        PUSH EAX
 0042FF74  8B CE                     MOV ECX,ESI
-0042FF76  E8 D8 26 FD FF            CALL 0x00402653
+0042FF76  E8 D8 26 FD FF            CALL 0x00402653  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 0042FF7B  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]
 0042FF7E  8B 53 20                  MOV EDX,dword ptr [EBX + 0x20]
 0042FF81  A0 4D 87 80 00            MOV AL,[0x0080874d]

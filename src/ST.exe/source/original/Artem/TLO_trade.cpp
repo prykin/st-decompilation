@@ -6,17 +6,22 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\Artem\TLO_trade.cpp
    Diagnostic line evidence: 283 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:0: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=1,
+   pointer_dereferences=3, scalar_uses=0; sites=004EC053 dereference: MOV EAX,dword ptr [ESI +
+   0x5ff] | 004EC082 dereference: MOV dword ptr [ESI + 0x5ff],EAX | 004EC0B7 dereference: MOV
+   ECX,dword ptr [ESI + 0x5ff] */
 
-undefined4 __fastcall st::fn_004EC050(int param_1)
+undefined4 __fastcall st::fn_004EC050(RecoveredRecord_004EC050_2F5ECB40 *param_1)
 
 {
   STT3DSprC *pSVar1;
   int exceptionCode;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int *)(param_1 + 0x5ff) == 0) {
-    pSVar1 = (STT3DSprC *)st::fn_0072E530(0x40);
+  if (param_1->field_05FF == nullptr) {
+    /* ST_CALLSITE[004EC05F]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint */
+    pSVar1 = st::pointer_boundary_cast<STT3DSprC *>(st::fn_0072E530(0x40));
     if (pSVar1 == nullptr) {
       pSVar1 = nullptr;
     }
@@ -24,7 +29,7 @@ undefined4 __fastcall st::fn_004EC050(int param_1)
       /* ST_CALLSITE[004EC06D]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
       pSVar1 = st::fn_00401316(pSVar1);
     }
-    *(STT3DSprC **)(param_1 + 0x5ff) = pSVar1;
+    param_1->field_05FF = pSVar1;
     /* ST_CALLSITE[004EC097]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
     exceptionCode =
          st::fn_0040537B(pSVar1,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
@@ -33,8 +38,7 @@ undefined4 __fastcall st::fn_004EC050(int param_1)
                 (exceptionCode,g_overwriteContext_007ED77C,
                  st::mutable_c_string("E:\\__titans\\Artem\\TLO_trade.cpp"),0x11b);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    st::fn_00402A90(*(STT3DSprC **)(param_1 + 0x5ff));
+    st::fn_00402A90(param_1->field_05FF);
   }
   return 0;
 }
@@ -47,7 +51,7 @@ undefined4 __fastcall st::fn_004EC050(int param_1)
    Diagnostic line evidence: 294 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-undefined4 __fastcall st::fn_004EC0F0(AnonShape_004EC0F0_C371FA68 *param_1)
+undefined4 __fastcall st::fn_004EC0F0(RecoveredRecordView_004EC0F0_2BA6D5E3 *param_1)
 
 {
   int iVar1;
@@ -63,7 +67,9 @@ undefined4 __fastcall st::fn_004EC0F0(AnonShape_004EC0F0_C371FA68 *param_1)
               (iVar1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_trade.cpp"),0x126);
   }
   uVar3 = 10;
-  iVar1 = st::fn_004052CC((STT3DSprC *)&param_1->field_0x1d5);
+  /* ST_CALLSITE[004EC13D]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STT3DSprC; source view only; no Ghidra override */
+  iVar1 = st::fn_004052CC(reinterpret_cast<STT3DSprC *>(&param_1->field_0x1d5));
+
   uVar2 = st::fn_004052CC((STT3DSprC *)param_1->field_05FF);
   st::fn_006EA340(param_1->field_0211,uVar2,iVar1,uVar3);
   /* ST_CALLSITE[004EC1A8]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
@@ -72,6 +78,7 @@ undefined4 __fastcall st::fn_004EC0F0(AnonShape_004EC0F0_C371FA68 *param_1)
              (float)param_1->field_04FC * _DAT_007904f8 * _DAT_007904f0,
              (float)param_1->field_0500 * _DAT_007904f8 * _DAT_007904f0,
              (float)param_1->field_0504 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+
   iVar1 = st::fn_0040581C();
   uVar3 = 0;
   switch(iVar1) {
@@ -88,6 +95,7 @@ undefined4 __fastcall st::fn_004EC0F0(AnonShape_004EC0F0_C371FA68 *param_1)
     uVar3 = DAT_0079aa9c;
   }
   st::fn_00402982((void *)param_1->field_05FF,1);
+
   st::fn_00401EBA((void *)param_1->field_05FF,0xe,uVar3,uVar3,'\0');
   /* ST_CALLSITE[004EC209]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   st::fn_00401064((STT3DSprC *)param_1->field_05FF,'\x0e',uVar3);
@@ -95,4 +103,3 @@ undefined4 __fastcall st::fn_004EC0F0(AnonShape_004EC0F0_C371FA68 *param_1)
   st::fn_00405240((STT3DSprC *)param_1->field_05FF,0xe,g_playSystem_00802A38->field_00E4);
   return 0;
 }
-

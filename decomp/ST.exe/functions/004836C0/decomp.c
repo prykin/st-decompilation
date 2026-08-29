@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-uint __fastcall FUN_004836c0(AnonShape_004836C0_617DC527 *param_1)
+uint __fastcall FUN_004836c0(RecoveredRecordView_004836C0_090580C8 *param_1)
 
 {
   short sVar1;
@@ -32,14 +32,9 @@ uint __fastcall FUN_004836c0(AnonShape_004836C0_617DC527 *param_1)
   uVar5 = 0;
   if (pSVar4 != nullptr) {
     uVar6 = (undefined2)((uint)pSVar4 >> 0x10);
-    /* ST_CALLSITE[004837C8]: CALL dword ptr [EDX + 0x10] */
-    /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable or function-table callback call with the machine-proven calling convention; expected named packed member, bit extract/compose, or unaligned load */
-    uVar5 = (**(code **)(*(int *)param_1 + 0x10))
-                      (CONCAT22(uVar6,param_1->field_0041),CONCAT22(uVar6,param_1->field_0043),
-                       CONCAT22(uVar6,param_1->field_0045),
-                       CONCAT22(uVar6,*(undefined2 *)&pSVar4[1].field_0x1d),
-                       CONCAT22(sVar2 >> 0xf,*(undefined2 *)&pSVar4[1].field_0x1f),
-                       CONCAT22(sVar2 >> 0xf,*(undefined2 *)((int)&pSVar4[1].value_20 + 1)));
+    /* ST_CALLSITE[004837C8]: CALL dword ptr [EDX + 0x10]; [STIndirectCallsiteApplier] exact slot 0x10; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
+    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+    uVar5 = STStructuralVirtualCall<undefined4>(param_1, 0x10, CONCAT22(uVar6,param_1->field_0041), CONCAT22(uVar6,param_1->field_0043), CONCAT22(uVar6,param_1->field_0045), CONCAT22(uVar6,*(undefined2 *)&pSVar4[1].field_0x1d), CONCAT22(sVar2 >> 0xf,*(undefined2 *)&pSVar4[1].field_0x1f), CONCAT22(sVar2 >> 0xf,*(undefined2 *)((int)&pSVar4[1].value_20 + 1)));
     return uVar5;
   }
 cf_common_exit_004837CF:

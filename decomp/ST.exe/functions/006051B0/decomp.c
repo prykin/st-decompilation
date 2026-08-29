@@ -21,7 +21,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
   uint uVar10;
   bool bVar11;
   InternalExceptionFrame local_68;
-  undefined4 local_24;
+  uint local_24;
   int local_20;
   int local_1c;
   STExplosionC *local_18;
@@ -37,10 +37,12 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_18 = this;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   pSVar4 = local_18;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_68.previous;
+
     iVar8 = ReportDebugMessage("E:\\__titans\\nick\\to_Expl.cpp",0x38c,0,iVar5,"%s",
                                "STExplosionC::LoadImagSpr");
     if (iVar8 == 0) {
@@ -58,6 +60,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     }
     /* ST_CALLSITE[0060525F]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase(pSVar4->field_02AF,'\x0f',pSVar4->field_029F);
+
     thunk_FUN_004ac610(pSVar4->field_02AF,'\x0f');
     /* ST_CALLSITE[00605286]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     STT3DSprC::StartShow(pSVar4->field_02AF,0xf,g_playSystem_00802A38->field_00E4);
@@ -68,7 +71,8 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     return local_24;
   }
   if (local_18->field_02AF == nullptr) {
-    pSVar7 = (STT3DSprC *)Library::MSVCRT::FUN_0072e530(0x40);
+    /* ST_CALLSITE[006052BE]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint */
+    pSVar7 = Library::MSVCRT::FUN_0072e530(0x40);
     if (pSVar7 == nullptr) {
       pSVar7 = nullptr;
     }
@@ -115,6 +119,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
               (pSVar4->field_02AF,(float)pSVar4->field_028A * _DAT_007904f8 * _DAT_007904f0,
                (float)pSVar4->field_028E * _DAT_007904f8 * _DAT_007904f0,
                (float)pSVar4->field_0292 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+
     thunk_FUN_004ac610(pSVar4->field_02AF,'\r');
     /* ST_CALLSITE[00605471]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     STT3DSprC::StartShow(pSVar4->field_02AF,0xd,g_playSystem_00802A38->field_00E4);
@@ -152,7 +157,8 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
         }
       }
       if (!bVar11) {
-        thunk_FUN_004ad430(pSVar4->field_02AF);
+        /* ST_CALLSITE[006055D1]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+        STT3DSprC::sub_004AD430(pSVar4->field_02AF);
         pSVar4->field_0286 = 0;
       }
       g_currentExceptionFrame = local_68.previous;

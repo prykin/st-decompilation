@@ -64,6 +64,7 @@ MMObjTy::PaintButDib(MMObjTy *this,int param_1,int *param_2,int param_3,byte par
   local_14 = local_3c;
   local_c = local_40;
   local_8 = local_3c;
+
   errorCode = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0);
   if (errorCode == 0) {
     if (-1 < (int)param_5) {
@@ -74,6 +75,7 @@ MMObjTy::PaintButDib(MMObjTy *this,int param_1,int *param_2,int param_3,byte par
     return;
   }
   g_currentExceptionFrame = local_94.previous;
+
   iVar2 = ReportDebugMessage("E:\\__titans\\Start\\mmenuobj.cpp",0xa0,0,errorCode,
                              "%s","MMObjTy::PaintButDib");
   if (iVar2 != 0) {

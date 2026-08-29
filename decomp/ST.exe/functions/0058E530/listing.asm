@@ -1,4 +1,4 @@
-FUN_0058e530:
+STSharkC::vfunc_E0:
 0058E530  55                        PUSH EBP
 0058E531  8B EC                     MOV EBP,ESP
 0058E533  8B 55 0C                  MOV EDX,dword ptr [EBP + 0xc]

@@ -1,4 +1,4 @@
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030:
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_004167A0::FUN_00418030:
 00418030  55                        PUSH EBP
 00418031  8B EC                     MOV EBP,ESP
 00418033  81 EC 98 00 00 00         SUB ESP,0x98
@@ -100,7 +100,7 @@ LAB_0041815b:
 0041815D  75 64                     JNZ 0x004181c3
 0041815F  6A 10                     PUSH 0x10
 00418161  C7 83 9B 00 00 00 02 00 00 00  MOV dword ptr [EBX + 0x9b],0x2
-0041816B  E8 A0 2A 29 00            CALL 0x006aac10
+0041816B  E8 A0 2A 29 00            CALL 0x006aac10  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 00418170  66 8B 55 08               MOV DX,word ptr [EBP + 0x8]
 00418174  66 8B 4D 0C               MOV CX,word ptr [EBP + 0xc]
 00418178  89 83 97 00 00 00         MOV dword ptr [EBX + 0x97],EAX
@@ -386,7 +386,7 @@ LAB_00418463:
 004184AE  52                        PUSH EDX
 004184AF  50                        PUSH EAX
 004184B0  51                        PUSH ECX
-004184B1  E8 1A 63 29 00            CALL 0x006ae7d0
+004184B1  E8 1A 63 29 00            CALL 0x006ae7d0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 004184B6  85 C0                     TEST EAX,EAX
 004184B8  89 83 97 00 00 00         MOV dword ptr [EBX + 0x97],EAX
 004184BE  0F 85 5E 01 00 00         JNZ 0x00418622
@@ -506,7 +506,7 @@ LAB_004185d4:
 00418614  50                        PUSH EAX
 00418615  51                        PUSH ECX
 00418616  52                        PUSH EDX
-00418617  E8 84 75 29 00            CALL 0x006afba0
+00418617  E8 84 75 29 00            CALL 0x006afba0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 0041861C  89 83 97 00 00 00         MOV dword ptr [EBX + 0x97],EAX
 LAB_00418622:
 00418622  8D 45 F0                  LEA EAX,[EBP + -0x10]

@@ -27,6 +27,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_8 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pSVar3 = local_8;
   if (iVar4 == 0) {
@@ -41,6 +42,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
     uVar9 = pSVar3->field_020E->count;
     pSVar3->field_021A = uVar9;
     local_c = uVar9;
+    /* ST_CALLSITE[00499C0C]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
     puVar4 = Library::DKW::LIB::MemAlloc(uVar9 * 8);
     uVar2 = local_c;
     pSVar3->field_021E = puVar4;
@@ -57,11 +59,13 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
     pSVar3->field_0216 = 0;
     if (0 < (int)local_c) {
       do {
+
         DArrayGetElement(pSVar3->field_020E,uVar9,&local_14);
         /* ST_CALLSITE[00499C60]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         pSVar5 = STAllPlayersC::GetObjPtr(g_allPlayers_007FA174,local_14,uStack_12,(int)cStack_13);
         if (pSVar5 == nullptr) {
           uStack_12 = 0xffff;
+
           Library::DKW::TBL::DArrayPut(pSVar3->field_020E,uVar9,&local_14);
           puVar4 = pSVar3->field_021E;
           (puVar4 + uVar9 * 4)[0] = 0xffff;
@@ -88,6 +92,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
   if (iVar4 == -0x5001fff7) {
     return 0;
   }
+
   iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x543,0,iVar4,"%s",
                              "STGroupBoatC::MakePVec");
   if (iVar7 != 0) {

@@ -5,20 +5,20 @@
    full EAX (1), none consume AL/AX, and every RET path defines full EAX; sites=005FFF60 @ 0060000F
    -> TEST TEST EAX,EAX */
 
-int __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int param_3)
+int __thiscall
+FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,RecoveredRecord_005FE5D0_FE3006E4 *param_3)
 
 {
   short *psVar1;
   void *pvVar2;
   int iVar3;
   int iVar4;
-  uint uVar5;
-  int *piVar6;
+  int *piVar5;
+  int iVar6;
   int iVar7;
-  int iVar8;
+  short sVar8;
   short sVar9;
   short sVar10;
-  short sVar11;
   uint local_2c;
   int local_28;
   int local_24;
@@ -38,6 +38,7 @@ int __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int param
   if (*(int *)(psVar1 + 0x27) != 0) {
     FreeAndNull(psVar1 + 0x27);
   }
+
   pvVar2 = Library::DKW::LIB::MemAlloc(600);
   *(void **)(psVar1 + 0x27) = pvVar2;
   psVar1[0x23] = 0;
@@ -55,46 +56,50 @@ int __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int param
       *(undefined2 *)(*(int *)(psVar1 + 0x27) + 4) = param_2[2];
     }
     else {
+
       iVar3 = thunk_FUN_005fe280(psVar1,local_8,&local_10,&local_14,&local_18);
       if (iVar3 != 0) {
-        if (local_18 <= *(short *)(param_3 + 4)) {
+        if (local_18 <= param_3->field_0004) {
           local_c = 0;
         }
         iVar3 = STBiasedDiv16(local_10, 0xc9); /* exact signed 16-bit grid-index division */
-        iVar8 = STBiasedDiv16(local_14, 0xc9); /* exact signed 16-bit grid-index division */
-        iVar7 = STBiasedDiv16(local_18, 200); /* exact signed 16-bit grid-index division */
-        if ((((iVar3 < 0) || (g_worldGrid.sizeX <= iVar3)) || (iVar8 < 0)) ||
-           (((g_worldGrid.sizeY <= iVar8 || (iVar7 < 0)) || (g_worldGrid.sizeZ <= iVar7)))) {
+        iVar7 = STBiasedDiv16(local_14, 0xc9); /* exact signed 16-bit grid-index division */
+        iVar6 = STBiasedDiv16(local_18, 200); /* exact signed 16-bit grid-index division */
+        if ((((iVar3 < 0) || (g_worldGrid.sizeX <= iVar3)) || (iVar7 < 0)) ||
+           (((g_worldGrid.sizeY <= iVar7 || (iVar6 < 0)) || (g_worldGrid.sizeZ <= iVar6)))) {
           local_8 = local_8 + -1;
           if (local_8 < 1) {
+
             thunk_FUN_005fd6a0(this);
             return 0;
           }
           goto cf_common_exit_005FE866;
         }
-        if (((iVar3 != local_20) || (iVar8 != local_24)) || (iVar7 != local_28)) {
-          sVar9 = (short)iVar3;
-          sVar10 = (short)iVar8;
-          sVar11 = (short)iVar7;
-          iVar4 = thunk_FUN_004961b0(sVar9,sVar10,sVar11);
-          local_28 = iVar7;
-          local_24 = iVar8;
+        if (((iVar3 != local_20) || (iVar7 != local_24)) || (iVar6 != local_28)) {
+          sVar8 = (short)iVar3;
+          sVar9 = (short)iVar7;
+          sVar10 = (short)iVar6;
+
+          iVar4 = thunk_FUN_004961b0(sVar8,sVar9,sVar10);
+          local_28 = iVar6;
+          local_24 = iVar7;
           local_20 = iVar3;
           if ((iVar4 == 0) &&
-             ((((((-1 < sVar9 && (sVar9 < g_worldGrid.sizeX)) && (-1 < sVar10)) &&
-                ((sVar10 < g_worldGrid.sizeY && (-1 < sVar11)))) &&
-               ((sVar11 < g_worldGrid.sizeZ &&
-                (STGridAt3D(g_worldGrid, sVar9, sVar10, sVar11).objects[0] != nullptr)))) ||
-              (uVar5 = thunk_FUN_00496250(local_10,local_14,local_18), -1 < (int)uVar5)))) {
+             ((((((-1 < sVar8 && (sVar8 < g_worldGrid.sizeX)) && (-1 < sVar9)) &&
+                ((sVar9 < g_worldGrid.sizeY && (-1 < sVar10)))) &&
+               ((sVar10 < g_worldGrid.sizeZ &&
+                (STGridAt3D(g_worldGrid, sVar8, sVar9, sVar10).objects[0] != nullptr)))) ||
+
+              (iVar3 = thunk_FUN_00496250(local_10,local_14,local_18), -1 < iVar3)))) {
             local_c = 0;
           }
         }
-        piVar6 = (int *)(psVar1 + 0x27);
+        piVar5 = (int *)(psVar1 + 0x27);
         iVar3 = local_8 * 6;
         local_8 = local_8 + 1;
-        *(undefined2 *)(*piVar6 + iVar3) = (undefined2)local_10;
-        *(undefined2 *)(*piVar6 + 2 + iVar3) = (undefined2)local_14;
-        *(undefined2 *)(*piVar6 + 4 + iVar3) = (undefined2)local_18;
+        *(undefined2 *)(*piVar5 + iVar3) = (undefined2)local_10;
+        *(undefined2 *)(*piVar5 + 2 + iVar3) = (undefined2)local_14;
+        *(undefined2 *)(*piVar5 + 4 + iVar3) = (undefined2)local_18;
         if (99 < local_8) {
           local_c = 0;
           goto cf_common_exit_005FE866;

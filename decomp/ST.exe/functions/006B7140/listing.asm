@@ -13,7 +13,7 @@ FUN_006b7140:
 006B715A  68 70 71 6B 00            PUSH 0x6b7170
 006B715F  50                        PUSH EAX
 006B7160  51                        PUSH ECX
-006B7161  FF 52 30                  CALL dword ptr [EDX + 0x30]
+006B7161  FF 52 30                  CALL dword ptr [EDX + 0x30]  ; [STIndirectCallsiteApplier] exact slot 0x30; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 006B7164  8B 06                     MOV EAX,dword ptr [ESI]
 006B7166  5E                        POP ESI
 006B7167  40                        INC EAX

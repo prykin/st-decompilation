@@ -72,7 +72,7 @@ LAB_005153d4:
 005153E0  6A FF                     PUSH -0x1
 005153E2  51                        PUSH ECX
 005153E3  52                        PUSH EDX
-005153E4  E8 57 AD 19 00            CALL 0x006b0140
+005153E4  E8 57 AD 19 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 005153E9  8B 8B E4 01 00 00         MOV ECX,dword ptr [EBX + 0x1e4]
 005153EF  50                        PUSH EAX
 005153F0  E8 CB C5 1F 00            CALL 0x007119c0
@@ -108,7 +108,7 @@ LAB_0051541b:
 00515440  6A FF                     PUSH -0x1
 00515442  51                        PUSH ECX
 00515443  57                        PUSH EDI
-00515444  E8 F7 AC 19 00            CALL 0x006b0140
+00515444  E8 F7 AC 19 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 00515449  8B 8B E0 01 00 00         MOV ECX,dword ptr [EBX + 0x1e0]
 0051544F  50                        PUSH EAX
 00515450  E8 6B C5 1F 00            CALL 0x007119c0

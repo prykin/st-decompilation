@@ -32,7 +32,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
   int iVar17;
   bool bVar18;
   InternalExceptionFrame local_b8;
-  undefined4 local_74 [2];
+  uint local_74 [2];
   int local_6c;
   short local_68;
   short sStack_66;
@@ -71,10 +71,12 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
   local_60 = this;
+
   iVar7 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
   this_00 = local_60;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_b8.previous;
+
     iVar16 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bfire.cpp",0x126,0,iVar7,
                                 "%s","TLOBaseTy::fireFindCheckTarget error");
     if (iVar16 == 0) {
@@ -84,7 +86,8 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   ppTVar16 = &local_60->vtable + param_1 * 0x20;
-  STField<AnonShape_005EFAE0_B406B78B *>(ppTVar16,0x28d) = nullptr;
+  STField<RecoveredRecordView_005EFAE0_855D930D *>(ppTVar16,0x28d) =
+       nullptr;
   STField<AnonPointee_TLOBaseTy_0291 *>(ppTVar16,0x291) = nullptr;
   if (&stack0x00000000 != (undefined1 *)0x2c) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -99,6 +102,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
   }
   local_10 = ppTVar16;
   if (*(int *)(&DAT_00792a90 + (param_1 + local_60->field_0235 * 2) * 4) == 1) {
+
     local_58 = thunk_FUN_004e81b0((int)local_60->field_0024,local_60->field_0235,param_1);
     iVar15 = this_00->field_05B4 + -8;
     local_18 = iVar15;
@@ -113,6 +117,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
             do {
               if (((-1 < iVar17) && (iVar17 < g_worldGrid.sizeX)) &&
                  (local_28 = iVar17,
+
                  local_EAX_288 = FUN_006aced8(iVar17,iVar15,iVar9,this_00->field_05B4),
                  local_EAX_288 <= local_58)) {
                 local_24 = local_EAX_288 / 3;
@@ -139,9 +144,9 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                       }
                       if (((((TLOBaseTy *)local_8 != nullptr) &&
                            ((TLOBaseTy *)local_8 != this_00)) &&
-                          /* ST_CALLSITE[004C3DF8]: CALL dword ptr [EDX + 0xf8] */
-                          (dVar7 = (*((TLOBaseTy *)local_8)->vtable->slot_F8)((TLOBaseTy *)local_8),
-                          iVar15 = local_18, iVar17 = local_28, dVar7 != 0)) &&
+                          /* ST_CALLSITE[004C3DF8]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/dword;pointer:/TLOBaseTy */
+                          (dVar7 = (*((TLOBaseTy *)local_8)->vtable->vfunc_F8)((TLOBaseTy *)local_8)
+                          , iVar15 = local_18, iVar17 = local_28, dVar7 != 0)) &&
                          ((local_8->field_0024 != 0xff &&
                           /* ST_CALLSITE[004C3E1C]: CALL dword ptr [EAX + 0xf4] */
                           (iVar9 = (*local_8->vtable->vfunc_F4)(this_00->field_0024),
@@ -150,6 +155,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                         STFishC::sub_004162B0(local_8,&local_12,&local_14,&local_a);
                         thunk_FUN_00416270(local_8,(uint *)local_40,local_38,local_1c);
                         iVar15 = (short)local_30;
+
                         iVar8 = FUN_006acf0d((int)local_40[0],(int)local_38[0],(int)local_1c[0],
                                              (int)local_2c,(int)local_34,iVar15);
                         uVar10 = local_1c[0] - iVar15;
@@ -162,10 +168,9 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                           if ((param_2 == 0) || (this_00->field_0255 == 0)) goto LAB_004c4080;
                           /* ST_CALLSITE[004C3EE9]: CALL dword ptr [EDX + 0x10] */
                           sVar6 = (*this_00->vtable->vfunc_10)
-                                            (*(short *)&local_8->field_0x41,
-                                             *(short *)&local_8->field_0x43,
-                                             STReplaceLowWord((uint32_t)(_local_34), (uint16_t)(*(undefined2 *)&local_8->field_0x45)),
-                                             (short)_local_2c,(short)_local_34,local_30);
+                                            (local_8->field_0041,local_8->field_0043,
+                                             STReplaceLowWord((uint32_t)(_local_34), (uint16_t)(local_8->field_0045)),(short)_local_2c,
+                                             (short)_local_34,local_30);
                           iVar9 = ((sVar6 + 0xb4) % 0x168) / 0xf;
                           uVar10 = (int)*(uint *)(&DAT_007be8c8 +
                                                  (this_00->field_0259 / 0xf + iVar9 * 0x18) * 4) >>
@@ -240,11 +245,12 @@ LAB_004c4192:
                                   }
                                   else {
 LAB_004c41a5:
-                                    /* ST_CALLSITE[004C41A9]: CALL dword ptr [EAX + 0xf0] */
+                                    /* ST_CALLSITE[004C41A9]: CALL dword ptr [EAX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STFishC */
                                     iVar9 = local_8->vfunc_F0();
                                     iVar15 = local_18;
                                     iVar17 = local_28;
                                     if (iVar9 != 0) {
+
                                       local_EAX_1496 =
                                            FUN_006aadd0(this_00->field_05B0,this_00->field_05B4,
                                                         this_00->field_05B8,local_28,local_18,
@@ -254,7 +260,7 @@ LAB_004c41a5:
                                         iVar9 = *(int *)&local_8->field_0x215;
                                       }
                                       else {
-                                        /* ST_CALLSITE[004C41F1]: CALL dword ptr [EDX + 0x7c] */
+                                        /* ST_CALLSITE[004C41F1]: CALL dword ptr [EDX + 0x7c]; [STIndirectCallsiteApplier] exact slot 0x7C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STFishC */
                                         iVar9 = local_8->vfunc_7C();
                                       }
                                       iVar15 = local_18;
@@ -281,6 +287,7 @@ LAB_004c41a5:
                               if (0 < *(int *)(&DAT_007932d0 + iVar11)) {
                                 iVar15 = 0;
                                 do {
+
                                   puVar12 = thunk_FUN_0041dc40(local_74,(short)*(undefined4 *)
                                                                                 (&DAT_007932d4 +
                                                                                 iVar15 + iVar11),
@@ -339,15 +346,16 @@ LAB_004c41a5:
   }
 LAB_004c42b5:
   if (local_20 != nullptr) {
-    STField<AnonShape_005EFAE0_B406B78B *>(ppTVar16,0x28d) =
-         (AnonShape_005EFAE0_B406B78B *)local_20->field_0018;
+    STField<RecoveredRecordView_005EFAE0_855D930D *>(ppTVar16,0x28d) =
+         (RecoveredRecordView_005EFAE0_855D930D *)local_20->field_0018;
     STField<STFishC *>(ppTVar16,0x291) = local_20;
     if ((((STField<byte>(ppTVar16,0x265) & 2) != 0) &&
-        (STField<AnonShape_005EFAE0_B406B78B *>(ppTVar16,0x28d) !=
-         STField<AnonShape_005EFAE0_B406B78B *>(ppTVar16,0x26d))) &&
+        (STField<RecoveredRecordView_005EFAE0_855D930D *>(ppTVar16,0x28d) !=
+         STField<RecoveredRecordView_005EFAE0_855D930D *>(ppTVar16,0x26d))) &&
+
        (iVar15_mg5 = STPlaySystemC::sub_006E62D0
                                (g_playSystem_00802A38,
-                                STField<AnonShape_005EFAE0_B406B78B *>(ppTVar16,0x26d),
+                                STField<RecoveredRecordView_005EFAE0_855D930D *>(ppTVar16,0x26d),
                                 (int *)&local_8), iVar15_mg5 != 0)) {
       STField<uint>(ppTVar16,0x265) = STField<int>(ppTVar16,0x265) & 0xfffffffd;
       STField<undefined4>(ppTVar16,0x26d) = 0;

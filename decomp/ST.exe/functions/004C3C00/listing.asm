@@ -154,7 +154,7 @@ LAB_004c3de3:
 004C3DEE  3B CE                     CMP ECX,ESI
 004C3DF0  0F 84 54 04 00 00         JZ 0x004c424a
 004C3DF6  8B 11                     MOV EDX,dword ptr [ECX]
-004C3DF8  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+004C3DF8  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/dword;pointer:/TLOBaseTy
 004C3DFE  85 C0                     TEST EAX,EAX
 004C3E00  0F 84 3B 04 00 00         JZ 0x004c4241
 004C3E06  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
@@ -460,7 +460,7 @@ LAB_004c419d:
 LAB_004c41a5:
 004C41A5  8B 07                     MOV EAX,dword ptr [EDI]
 004C41A7  8B CF                     MOV ECX,EDI
-004C41A9  FF 90 F0 00 00 00         CALL dword ptr [EAX + 0xf0]
+004C41A9  FF 90 F0 00 00 00         CALL dword ptr [EAX + 0xf0]  ; [STIndirectCallsiteApplier] exact slot 0xF0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STFishC
 004C41AF  85 C0                     TEST EAX,EAX
 004C41B1  0F 84 8A 00 00 00         JZ 0x004c4241
 004C41B7  8B 4D C8                  MOV ECX,dword ptr [EBP + -0x38]
@@ -483,7 +483,7 @@ LAB_004c41a5:
 004C41EA  74 0A                     JZ 0x004c41f6
 004C41EC  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 004C41EF  8B 11                     MOV EDX,dword ptr [ECX]
-004C41F1  FF 52 7C                  CALL dword ptr [EDX + 0x7c]
+004C41F1  FF 52 7C                  CALL dword ptr [EDX + 0x7c]  ; [STIndirectCallsiteApplier] exact slot 0x7C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STFishC
 004C41F4  EB 09                     JMP 0x004c41ff
 LAB_004c41f6:
 004C41F6  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]

@@ -13,10 +13,18 @@
    byte_write_sites=006D0FCF MOV byte ptr [EDI],AL | 006D0FE6 MOV byte ptr [EDI],AL | 006D0FFD MOV
    byte ptr [EDI],AL | 006D1014 MOV byte ptr [EDI],AL | 006D1030 MOV byte ptr [EDI],DL | 006D1033
    MOV byte ptr [EDI],CL | 006D1045 MOV byte ptr [EDI],DL | 006D1048 MOV byte ptr [EDI],AL | ... +4;
-   wide_sites=006D101D MOV EAX,dword ptr [EDI] operand=DWORD PTR [EDI] width=4 */
+   wide_sites=006D101D MOV EAX,dword ptr [EDI] operand=DWORD PTR [EDI] width=4
+   [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:6: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=2,
+   pointer_dereferences=9, scalar_uses=0; sites=006D0FCC dereference: MOV AL,byte ptr [EBX +
+   EDX*0x1] | 006D0FE3 dereference: MOV AL,byte ptr [EBX + EDX*0x1] | 006D0FFA dereference: MOV
+   AL,byte ptr [EBX + EDX*0x1] | 006D1011 dereference: MOV AL,byte ptr [EBX + EDX*0x1] | 006D1027
+   dereference: MOV DL,byte ptr [EBX + EDX*0x1] | 006D102A dereference: MOV CL,byte ptr [EBX +
+   ECX*0x1] | 006D103E dereference: MOV DL,byte ptr [EBX + EDX*0x1] | 006D1041 dereference: MOV
+   AL,byte ptr [EBX + ECX*0x1] | 006D1073 dereference: MOV AL,byte ptr [EBX + EAX*0x1] */
 
 void FUN_006d0f50(byte *param_1,int param_2,uint *param_3,int param_4,uint param_5,int param_6,
-                 int param_7,byte param_8,uint param_9)
+                 void *param_7,byte param_8,uint param_9)
 
 {
   int iVar1;
@@ -51,7 +59,7 @@ void FUN_006d0f50(byte *param_1,int param_2,uint *param_3,int param_4,uint param
               else {
                 if ((byte)uVar5 != (byte)param_9) {
                   if ((byte)uVar5 == param_8) {
-                    uVar5 = STReplaceLowByte((uint32_t)(uVar5), (uint8_t)(*(undefined1 *)(param_7 + (uint)(byte)*(uint *)param_1)));
+                    uVar5 = STReplaceLowByte((uint32_t)(uVar5), (uint8_t)(*(undefined1 *)((int)param_7 + (uint)(byte)*(uint *)param_1)));
                   }
                   *param_1 = (byte)uVar5;
                 }
@@ -62,7 +70,7 @@ void FUN_006d0f50(byte *param_1,int param_2,uint *param_3,int param_4,uint param
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     uVar4 = (uint)CONCAT21((short)(uVar5 >> 0x10),
                                            *(undefined1 *)
-                                            (param_7 + (uint)STField<byte>(param_1,1)));
+                                            ((int)param_7 + (uint)STField<byte>(param_1,1)));
                   }
                   STField<byte>(param_1,1) = (byte)uVar4;
                 }
@@ -73,14 +81,14 @@ void FUN_006d0f50(byte *param_1,int param_2,uint *param_3,int param_4,uint param
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     uVar5 = (uint)CONCAT21((short)(uVar4 >> 0x10),
                                            *(undefined1 *)
-                                            (param_7 + (uint)STField<byte>(param_1,2)));
+                                            ((int)param_7 + (uint)STField<byte>(param_1,2)));
                   }
                   STField<byte>(param_1,2) = (byte)uVar5;
                 }
                 bVar3 = (byte)(uVar5 >> 8);
                 if (bVar3 != (byte)param_9) {
                   if (bVar3 == param_8) {
-                    bVar3 = *(byte *)(param_7 + (uint)STField<byte>(param_1,3));
+                    bVar3 = *(byte *)((int)param_7 + (uint)STField<byte>(param_1,3));
                   }
                   STField<byte>(param_1,3) = bVar3;
                 }
@@ -92,11 +100,11 @@ void FUN_006d0f50(byte *param_1,int param_2,uint *param_3,int param_4,uint param
               }
             }
             uVar5 = *(uint *)param_1;
-            bVar3 = *(byte *)(param_7 + (uVar5 >> 8 & 0xff));
-            *param_1 = *(byte *)(param_7 + (uVar5 & 0xff));
+            bVar3 = *(byte *)((int)param_7 + (uVar5 >> 8 & 0xff));
+            *param_1 = *(byte *)((int)param_7 + (uVar5 & 0xff));
             STField<byte>(param_1,1) = bVar3;
-            bVar3 = *(byte *)(param_7 + (uVar5 >> 0x18));
-            STField<byte>(param_1,2) = *(byte *)(param_7 + (uVar5 >> 0x10 & 0xff));
+            bVar3 = *(byte *)((int)param_7 + (uVar5 >> 0x18));
+            STField<byte>(param_1,2) = *(byte *)((int)param_7 + (uVar5 >> 0x10 & 0xff));
             STField<byte>(param_1,3) = bVar3;
             param_1 = (byte *)((int)param_1 + 4);
             uVar5 = uVar6 - 1;
@@ -112,7 +120,7 @@ LAB_006d105f:
               bVar3 = (byte)*param_3;
               param_3 = (uint *)((int)param_3 + 1);
               if (bVar3 != param_8) break;
-              *param_1 = *(byte *)(param_7 + (uint)(byte)*(uint *)param_1);
+              *param_1 = *(byte *)((int)param_7 + (uint)(byte)*(uint *)param_1);
               param_1 = (byte *)((int)param_1 + 1);
               uVar5 = uVar6 - 1;
               bVar2 = (int)uVar6 < 1;
@@ -148,7 +156,7 @@ LAB_006d1089:
             uVar5 = *param_3;
             param_3 = (uint *)((int)param_3 + 1);
             if ((byte)uVar5 == param_8) {
-              *param_1 = *(byte *)((uint)*param_1 + param_7);
+              *param_1 = *(byte *)((uint)*param_1 + (int)param_7);
             }
             else {
               *param_1 = (byte)uVar5;

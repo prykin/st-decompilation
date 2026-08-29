@@ -4,20 +4,25 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as TLOBaseTy.
    Evidence: this_call_owners=[TLOBaseTy]; agreed_this_calls=1; incoming_this_accesses=4;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=004B7F90 @ 004B8066 -> unknown:
+   terminal before explicit accumulator kill | 004B9FA0 @ 004BC19D -> read as EAX on every CFG path
+   | 004BEA70 @ 004BEE55 -> read as EAX on every CFG path */
 
-undefined4 __thiscall TLOBaseTy::sub_004C7070(TLOBaseTy *this,int param_1)
+int __thiscall TLOBaseTy::sub_004C7070(TLOBaseTy *this,int param_1)
 
 {
   short sVar1;
   short sVar2;
-  uint uVar3;
+  int iVar3;
   short sVar4;
   int iVar5;
-  undefined4 local_8;
+  int local_8;
 
   local_8 = 0;
-  uVar3 = 0;
+  iVar3 = 0;
   if (this->field_03DC == 0) {
     if (this->field_05B8 == 0) {
       return 1;
@@ -58,10 +63,10 @@ LAB_004c7175:
           }
         }
         iVar5 = iVar5 + -1;
-        uVar3 = local_8;
+        iVar3 = local_8;
       } while (-1 < iVar5);
     }
   }
-  return uVar3;
+  return iVar3;
 }
 

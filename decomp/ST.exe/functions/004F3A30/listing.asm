@@ -72,7 +72,8 @@ CPanelTy::PaintTxtBut::cf_common_join_004F3AC3:
 004F3B04  51                        PUSH ECX
 004F3B05  8B 0D 90 67 80 00         MOV ECX,dword ptr [0x00806790]
 004F3B0B  53                        PUSH EBX
-004F3B0C  E8 CF E1 1F 00            CALL 0x006f1ce0
+CPanelTy::PaintTxtBut::override::prt_4f3b0c_6752cf82:
+004F3B0C  E8 CF E1 1F 00            CALL 0x006f1ce0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int
 004F3B11  8B 75 08                  MOV ESI,dword ptr [EBP + 0x8]
 004F3B14  8B 7D F4                  MOV EDI,dword ptr [EBP + -0xc]
 004F3B17  8B 55 F8                  MOV EDX,dword ptr [EBP + -0x8]
@@ -117,7 +118,7 @@ CPanelTy::PaintTxtBut::cf_common_join_004F3AC3:
 004F3B88  6A FE                     PUSH -0x2
 004F3B8A  51                        PUSH ECX
 004F3B8B  52                        PUSH EDX
-004F3B8C  E8 AF C5 1B 00            CALL 0x006b0140
+004F3B8C  E8 AF C5 1B 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 004F3B91  8B 8F B8 01 00 00         MOV ECX,dword ptr [EDI + 0x1b8]
 004F3B97  50                        PUSH EAX
 004F3B98  E8 D3 DF 21 00            CALL 0x00711b70

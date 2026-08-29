@@ -38,7 +38,7 @@ CGenerate::sub_0069CB50:
 0069CBCC  2B CE                     SUB ECX,ESI
 0069CBCE  D1 E1                     SHL ECX,0x1
 0069CBD0  51                        PUSH ECX
-0069CBD1  E8 9A E0 00 00            CALL 0x006aac70
+0069CBD1  E8 9A E0 00 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_0069CB50_791EEE4D; source view only; no Ghidra override
 0069CBD6  89 45 8C                  MOV dword ptr [EBP + -0x74],EAX
 0069CBD9  56                        PUSH ESI
 0069CBDA  E8 91 E0 00 00            CALL 0x006aac70

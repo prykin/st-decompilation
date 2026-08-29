@@ -327,7 +327,8 @@ LAB_005c64ee:
 005C64F0  56                        PUSH ESI
 005C64F1  68 16 ED 80 00            PUSH 0x80ed16
 005C64F6  68 45 03 00 00            PUSH 0x345
-005C64FB  E8 C0 A9 12 00            CALL 0x006f0ec0
+SettMapTy::CreateCtrls::override::prt_5c64fb_9d92389d:
+005C64FB  E8 C0 A9 12 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 005C6500  89 83 3F 1F 00 00         MOV dword ptr [EBX + 0x1f3f],EAX
 005C6506  A0 7E 87 80 00            MOV AL,[0x0080877e]
 005C650B  83 C4 14                  ADD ESP,0x14
@@ -343,7 +344,7 @@ LAB_005c652b:
 005C652B  6A 0A                     PUSH 0xa
 005C652D  6A 0A                     PUSH 0xa
 005C652F  6A 00                     PUSH 0x0
-005C6531  E8 BA EF 0E 00            CALL 0x006b54f0
+005C6531  E8 BA EF 0E 00            CALL 0x006b54f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 005C6536  8B 0D 6C 17 81 00         MOV ECX,dword ptr [0x0081176c]
 005C653C  BE 60 99 80 00            MOV ESI,0x809960
 005C6541  8D BD E8 F9 FF FF         LEA EDI,[EBP + 0xfffff9e8]

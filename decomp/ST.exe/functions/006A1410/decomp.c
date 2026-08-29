@@ -14,11 +14,9 @@ FUN_006a1410(int *param_1,int param_2,int param_3,int param_4,int param_5,undefi
   uint *puVar2;
   int iVar3;
   int iVar4;
-  uint local_14;
-  uint local_10;
+  ulonglong local_14;
   uint local_c;
-  undefined2 local_8;
-
+  ushort local_8;
   local_c = 0;
   local_8 = 0;
   if (param_6 != nullptr) {
@@ -26,11 +24,13 @@ FUN_006a1410(int *param_1,int param_2,int param_3,int param_4,int param_5,undefi
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (*(code *)param_6)(param_2,param_3,param_4,param_7);
   }
-  iVar3 = thunk_FUN_006a1370(param_1,param_2,param_3,param_4,(int)&local_14);
+
+  iVar3 = thunk_FUN_006a1370(param_1,param_2,param_3,param_4,
+                             (RecoveredRecord_006A1370_30F34641 *)&local_14);
   if (param_5 == 0xff) {
     iVar4 = (short)iVar3;
     iVar3 = iVar4;
-    if ((int)(iVar4 - (local_10 >> 8 & 0xf)) < iVar4) {
+    if ((int)(iVar4 - (STPiece<4,4>(local_14) >> 8 & 0xf)) < iVar4) {
       do {
         if (param_6 != nullptr) {
           /* ST_CALLSITE[006A1490]: CALL EAX */
@@ -55,9 +55,9 @@ FUN_006a1410(int *param_1,int param_2,int param_3,int param_4,int param_5,undefi
           }
         }
         iVar3 = iVar3 + -1;
-      } while ((int)(iVar4 - (local_10 >> 8 & 0xf)) < iVar3);
+      } while ((int)(iVar4 - (STPiece<4,4>(local_14) >> 8 & 0xf)) < iVar3);
     }
-    if ((local_10 & 0x1000) != 0) {
+    if ((STPiece<4,4>(local_14) & 0x1000) != 0) {
       local_c = STReplaceLowWord((uint32_t)(local_c), (uint16_t)(1));
       puVar1 = (undefined4 *)((int)param_1 + (*param_1 * param_3 + param_2) * 6 + 8);
       *puVar1 = local_c;
@@ -66,17 +66,17 @@ FUN_006a1410(int *param_1,int param_2,int param_3,int param_4,int param_5,undefi
     }
   }
   else {
-    local_c = local_14;
+    local_c = (uint)local_14;
     if (param_5 == 0) {
-      STPiece<2,2>(local_c) = (undefined2)(local_14 >> 0x10);
+      STPiece<2,2>(local_c) = (undefined2)((uint)local_14 >> 0x10);
       local_c = STReplaceLowWord((uint32_t)(local_c), (uint16_t)(1));
     }
     else if (param_5 == 1) {
-      local_c = local_14 & 0xffff;
+      local_c = (uint)local_14 & 0xffff;
     }
     puVar2 = (uint *)((int)param_1 + (*param_1 * param_3 + param_2) * 6 + 8);
     *puVar2 = local_c;
-    *(undefined2 *)(puVar2 + 1) = (undefined2)local_10;
+    *(ushort *)(puVar2 + 1) = STPiece<4,2>(local_14);
   }
   return;
 }

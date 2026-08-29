@@ -17,12 +17,12 @@ undefined4 __thiscall TLOBldMark::sub_004C6210(TLOBldMark *this,int param_1,int 
   STT3DSprC *pSVar1;
   int iVar2;
   uint uVar3;
-  DWORD DVar4;
 
   this->field_0018 = 0;
   this->field_001C = param_1;
   this->field_0020 = param_2;
-  pSVar1 = (STT3DSprC *)Library::MSVCRT::FUN_0072e530(0x40);
+  /* ST_CALLSITE[004C622B]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint */
+  pSVar1 = Library::MSVCRT::FUN_0072e530(0x40);
   if (pSVar1 == nullptr) {
     pSVar1 = nullptr;
   }
@@ -46,6 +46,7 @@ undefined4 __thiscall TLOBldMark::sub_004C6210(TLOBldMark *this,int param_1,int 
       RaiseInternalException
                 (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x49);
     }
+
     uVar3 = thunk_FUN_004ad650(this->field_002C);
     Library::Ourlib::ST3DSMAP::SprSetSplit(g_sT3DSMAPContext_00807598,uVar3);
   }
@@ -59,14 +60,17 @@ undefined4 __thiscall TLOBldMark::sub_004C6210(TLOBldMark *this,int param_1,int 
     RaiseInternalException
               (iVar2,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_BldMark.cpp",0x4c);
   }
+
   thunk_FUN_004abce0(this->field_002C,0,*(int *)(&DAT_00790f84 + this->field_001C * 4),
                      *(int *)(&DAT_00790f84 + this->field_001C * 4),'\0');
   /* ST_CALLSITE[004C6357]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   STT3DSprC::SetCurFase(this->field_002C,'\0',*(uint *)(&DAT_00790f84 + this->field_001C * 4));
-  DVar4 = STAppC::sub_006E51B0(this->field_0010);
+
+  uVar3 = STAppC::sub_006E51B0(this->field_0010);
   /* ST_CALLSITE[004C636A]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
-  STT3DSprC::StartShow(this->field_002C,0,DVar4);
-  thunk_FUN_004ad430(this->field_002C);
+  STT3DSprC::StartShow(this->field_002C,0,uVar3);
+  /* ST_CALLSITE[004C6372]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+  STT3DSprC::sub_004AD430(this->field_002C);
   this->field_0024 = 0;
   this->field_0028 = 0;
   return 0;

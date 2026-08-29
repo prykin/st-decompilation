@@ -6,9 +6,14 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_GnBom.cpp
-   STGenBombC::LoadImagSpr */
+   STGenBombC::LoadImagSpr
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=0060EA30 @ 0060EAFB -> read as EAX on
+   every CFG path | 006101B0 @ 00611CF9 -> killed on every CFG path | 00615FD0 @ 00616113 -> read as
+   EAX on every CFG path | 00615FD0 @ 006161B5 -> read as EAX on every CFG path */
 
-undefined4 __thiscall st::fn_006132F0(STGenBombC *this,int param_1,int param_2)
+int __thiscall st::fn_006132F0(STGenBombC *this,int param_1,int param_2)
 
 {
   short sVar2;
@@ -30,16 +35,18 @@ undefined4 __thiscall st::fn_006132F0(STGenBombC *this,int param_1,int param_2)
   int local_14;
   STGenBombC *local_10;
   int local_c;
-  undefined4 local_8;
+  int local_8;
 
   local_8 = 0;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_10 = this;
+
   iVar5 = st::fn_0072D7F0(local_5c.jumpBuffer,0);
   pSVar4 = local_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_5c.previous;
+
     iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_GnBom.cpp"),0x54b,0,iVar5,st::mutable_c_string("%s"),
                                "STGenBombC::LoadImagSpr()");
     if (iVar8 == 0) {
@@ -49,7 +56,8 @@ undefined4 __thiscall st::fn_006132F0(STGenBombC *this,int param_1,int param_2)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (local_10->field_0252 == nullptr) {
-    pSVar5 = (STT3DSprC *)st::fn_0072E530(0x40);
+    /* ST_CALLSITE[00613336]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint */
+    pSVar5 = st::pointer_boundary_cast<STT3DSprC *>(st::fn_0072E530(0x40));
     if (pSVar5 == nullptr) {
       pSVar5 = nullptr;
     }
@@ -59,7 +67,7 @@ undefined4 __thiscall st::fn_006132F0(STGenBombC *this,int param_1,int param_2)
     }
     pSVar4->field_0252 = pSVar5;
     if (pSVar5 == nullptr) {
-      return 0xffffffff;
+      return -1;
     }
     /* ST_CALLSITE[0061337D]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
     iVar6 = st::fn_0040537B(pSVar5,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
@@ -92,14 +100,18 @@ undefined4 __thiscall st::fn_006132F0(STGenBombC *this,int param_1,int param_2)
     uVar11 = 0x5a;
     iVar6 = 1;
     pSVar4->field_0251 = 1;
+
     uVar7 = st::fn_004052CC(st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252));
+
     st::fn_006EA4E0
               (g_sT3DSMAPContext_00807598,uVar7,iVar6,uVar11,uVar13);
+
     st::fn_004022D4(st::pointer_boundary_cast<void *>(pSVar4->field_0252),'\x0f');
     /* ST_CALLSITE[00613581]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     st::fn_00405240(st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252),0xd,g_playSystem_00802A38->field_00E4);
     iVar6 = (int)PTR_00806724->field_002C;
     uVar12 = 0;
+
     uVar7 = st::fn_004052CC(st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252));
     st::fn_006E9350(g_sT3DSMAPContext_00807598,uVar7,uVar12,iVar6);
     pSVar4->field_0250 = 1;
@@ -130,11 +142,11 @@ undefined4 __thiscall st::fn_006132F0(STGenBombC *this,int param_1,int param_2)
     }
     else {
       if (iVar6 == 1) {
-        text = "ionbomb";
+        text = st::mutable_c_string("ionbomb");
       }
       else {
         if (iVar6 != 2) goto LAB_00613424;
-        text = "den_bmb";
+        text = st::mutable_c_string("den_bmb");
       }
       /* ST_CALLSITE[006133EA]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
       iVar6 = st::fn_00404183(st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252),0xd,PTR_00806774,text,CASE_1D);
@@ -200,10 +212,10 @@ LAB_0061364b:
     }
   }
   else if (pSVar4->field_0250 != '\0') {
+    /* ST_CALLSITE[006137D2]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
     st::fn_00403D0F(st::pointer_boundary_cast<STT3DSprC *>(pSVar4->field_0252));
     pSVar4->field_0250 = 0;
   }
   g_currentExceptionFrame = local_5c.previous;
   return local_8;
 }
-

@@ -13,7 +13,8 @@ STExplosion * __cdecl CreateSTExplosion(void)
 {
   STExplosion *pSVar1;
 
-  pSVar1 = (STExplosion *)FUN_006b04d0(0x2bf);
+  /* ST_CALLSITE[00604055]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STExplosion; signature=__stdcall;pointer:/STExplosion;/uint */
+  pSVar1 = FUN_006b04d0(0x2bf);
   if (pSVar1 != nullptr) {
     pSVar1 = STExplosion::STExplosion(pSVar1);
     return pSVar1;

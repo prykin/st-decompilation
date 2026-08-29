@@ -14,27 +14,29 @@ int __thiscall MMsgTy::GetMessage(MMsgTy *this,STMessage *message)
 {
   MMsgTy *this_00;
   byte bVar2;
-  DWORD DVar3;
+  int iVar3;
   int local_EAX_47;
   int iVar4;
   int iVar5;
+  uint uVar4;
   int iVar6;
-  uint uVar7;
-  int iVar8;
   InternalExceptionFrame local_4c;
   MMsgTy *local_8;
   uint SVar1;
   uint temp_5f8e730a25;
 
   local_8 = this;
-  DVar3 = STAppC::sub_006E51B0(this->field_0010);
-  this->field_0061 = DVar3;
+
+  iVar3 = STAppC::sub_006E51B0(this->field_0010);
+  this->field_0061 = iVar3;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   local_EAX_47 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (local_EAX_47 != 0) {
     g_currentExceptionFrame = local_4c.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\Start\\mmsg_obj.cpp",0x200,0,local_EAX_47,
                                "%s","MMsgTy::GetMessage");
     if (iVar5 != 0) {
@@ -48,50 +50,51 @@ int __thiscall MMsgTy::GetMessage(MMsgTy *this,STMessage *message)
   if ((0x697e < temp_5f8e730a25) && (temp_5f8e730a25 < 0x69ff)) {
     switch(temp_5f8e730a25) {
     case 0x697f:
-      iVar8 = -1;
-      iVar6 = 3;
-      uVar7 = 0;
+      iVar6 = -1;
+      iVar3 = 3;
+      uVar4 = 0;
       break;
     case 0x6980:
-      iVar8 = -1;
-      iVar6 = 2;
-      uVar7 = 1;
+      iVar6 = -1;
+      iVar3 = 2;
+      uVar4 = 1;
       break;
     case 0x6981:
-      iVar8 = -1;
-      iVar6 = 2;
-      uVar7 = 2;
+      iVar6 = -1;
+      iVar3 = 2;
+      uVar4 = 2;
       break;
     case 0x6982:
-      iVar8 = -2;
-      iVar6 = 2;
-      uVar7 = 3;
+      iVar6 = -2;
+      iVar3 = 2;
+      uVar4 = 3;
       break;
     case 0x6983:
-      iVar8 = 2;
       iVar6 = 2;
-      uVar7 = 4;
+      iVar3 = 2;
+      uVar4 = 4;
       break;
     case 0x6984:
-      iVar8 = 1;
-      iVar6 = 2;
-      uVar7 = 5;
+      iVar6 = 1;
+      iVar3 = 2;
+      uVar4 = 5;
       break;
     case 0x6985:
-      iVar8 = 1;
-      iVar6 = 2;
-      uVar7 = 6;
+      iVar6 = 1;
+      iVar3 = 2;
+      uVar4 = 6;
       break;
     case 0x6986:
-      iVar8 = 1;
-      iVar6 = 3;
-      uVar7 = 7;
+      iVar6 = 1;
+      iVar3 = 3;
+      uVar4 = 7;
       break;
     default:
       goto switchD_005b939a_default;
     }
     /* ST_CALLSITE[005B93F2]: CALL 0x0040499e; direct=0040499E MMObjTy::PaintSprBut */
-    MMObjTy::PaintSprBut((MMObjTy *)this_00,(int)message,uVar7,iVar6,iVar8,-1);
+    MMObjTy::PaintSprBut
+              ((MMObjTy *)this_00,(RecoveredRecord_005B5690_213E8178 *)message,uVar4,iVar3,iVar6,-1);
   }
 switchD_005b939a_default:
   SVar1 = message->id;
@@ -100,6 +103,7 @@ switchD_005b939a_default:
     this_00->array_00BC[0xc].field_01DA = bVar2;
     if (this_00->array_00BC[bVar2].field_0025 == '\0') {
       if (*(int *)&this_00->array_00BC[bVar2].field_0x15 != 0) {
+
         AppClassTy::PostNextMessage
                   ((AppClassTy *)&DAT_00807620,(undefined4 *)&this_00->array_00BC[bVar2].field_0x5);
       }

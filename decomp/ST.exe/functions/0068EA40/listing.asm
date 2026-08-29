@@ -28,7 +28,7 @@ AiTactClassTy::ClaimRestore:
 0068EA8C  8B 86 30 01 00 00         MOV EAX,dword ptr [ESI + 0x130]
 0068EA92  50                        PUSH EAX
 0068EA93  6A 00                     PUSH 0x0
-0068EA95  E8 C6 15 02 00            CALL 0x006b0060
+0068EA95  E8 C6 15 02 00            CALL 0x006b0060  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/AiTactClassTy_field_00BDDArray; source view only; no Ghidra override
 0068EA9A  89 86 BD 00 00 00         MOV dword ptr [ESI + 0xbd],EAX
 LAB_0068eaa0:
 0068EAA0  8B 4D B8                  MOV ECX,dword ptr [EBP + -0x48]

@@ -13,7 +13,8 @@ STVolcanoC * __cdecl CreateSTVolcano(void)
 {
   STVolcanoC *pSVar1;
 
-  pSVar1 = (STVolcanoC *)FUN_006b04d0(0xb5);
+  /* ST_CALLSITE[00646C65]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STVolcanoC; signature=__stdcall;pointer:/STVolcanoC;/uint */
+  pSVar1 = FUN_006b04d0(0xb5);
   if (pSVar1 != nullptr) {
     pSVar1 = STVolcanoC::STVolcanoC(pSVar1);
     return pSVar1;

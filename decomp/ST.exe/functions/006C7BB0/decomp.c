@@ -4,7 +4,8 @@
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 005A1920 -> 006C7BB0 @ 005A1C39 */
 
-undefined1 * FUN_006c7bb0(int *param_1,undefined1 *param_2,int *param_3)
+undefined1 *
+FUN_006c7bb0(RecoveredRecord_006C7BB0_7D90AE39 *param_1,undefined1 *param_2,int *param_3)
 
 {
   int iVar1;
@@ -12,9 +13,10 @@ undefined1 * FUN_006c7bb0(int *param_1,undefined1 *param_2,int *param_3)
   byte *puVar3;
   int iVar4;
 
-  iVar1 = STField<int>(param_1,0x1a);
-  iVar4 = STField<int>(param_1,0x1e);
+  iVar1 = param_1->field_001A;
+  iVar4 = param_1->field_001E;
   if (param_2 == nullptr) {
+
     param_2 = Library::DKW::LIB::MemAlloc(iVar1 * 4);
     if (param_2 == nullptr) {
       return nullptr;

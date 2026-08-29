@@ -1,7 +1,8 @@
 CreateSTTorp:
 00645830  56                        PUSH ESI
 00645831  68 89 02 00 00            PUSH 0x289
-00645836  E8 95 AC 06 00            CALL 0x006b04d0
+CreateSTTorp::override::prt_645836_f2dc8dba:
+00645836  E8 95 AC 06 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STGameObjC; signature=__stdcall;pointer:/STGameObjC;/uint
 0064583B  8B F0                     MOV ESI,EAX
 0064583D  85 F6                     TEST ESI,ESI
 0064583F  74 26                     JZ 0x00645867

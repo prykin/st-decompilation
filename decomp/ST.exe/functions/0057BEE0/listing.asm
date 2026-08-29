@@ -1,4 +1,4 @@
-FUN_0057bee0:
+STFishC::vfunc_E0:
 0057BEE0  55                        PUSH EBP
 0057BEE1  8B EC                     MOV EBP,ESP
 0057BEE3  8B 55 0C                  MOV EDX,dword ptr [EBP + 0xc]

@@ -33,6 +33,7 @@ st::fn_0061F8B0(SndUnderAttMenegC *this,int param_1,int param_2,uint param_3)
         (((g_sT3DSMAPContext_00807598->field_0058 < param_1 + -1 ||
           (param_2 + 1 < g_sT3DSMAPContext_00807598->field_0044)) ||
          (g_sT3DSMAPContext_00807598->field_0054 < param_2 + -1)))) ||
+
        (iVar1 = st::fn_006DDBD0(), iVar1 == 0)))) &&
      /* ST_CALLSITE[0061F933]: CALL 0x00402b8f; direct=00402B8F SndUnderAttMenegC::sub_0061FA40 */
      (((uVar2 = st::fn_00402B8F(this,local_8,param_1,param_2), (int)uVar2 < 0 &&
@@ -55,7 +56,7 @@ st::fn_0061F8B0(SndUnderAttMenegC *this,int param_1,int param_2,uint param_3)
     local_14.x = -1;
     local_14.y = -1;
     /* ST_CALLSITE[0061F9A1]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
-    st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,iVar1,&local_14,0);
+    st::fn_00404BD8(reinterpret_cast<SoundClassTy *>(&g_sound),SOUND_MODE_6,nullptr,iVar1,&local_14,0);
     st::fn_00402D5B(1,(float)param_1 * _DAT_007904f8 + _DAT_007904f4,
                        (float)param_2 * _DAT_007904f8 + _DAT_007904f4);
     this->field_00B5 = local_8 + 0xfa;
@@ -78,12 +79,11 @@ st::fn_0061FA40(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
   uint index;
   int *piVar1;
   uint uVar2;
-  undefined4 local_8;
-
+  uint local_8;
   uVar2 = 0xffffffff;
   local_8 = 0xffffffff;
   if ((this->field_00B9 != nullptr) &&
-     (index = st::machine_word_boundary_cast<uint>(this->field_00B9->count - 1), -1 < (int)index)) {
+     (index = this->field_00B9->count - 1, -1 < (int)index)) {
     do {
       array = this->field_00B9;
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
@@ -93,8 +93,8 @@ st::fn_0061FA40(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
         if ((param_2 < piVar1[2] + -3) ||
            (((piVar1[2] + 3 < param_2 || (uVar2 = local_8, param_3 < piVar1[3] + -3)) ||
             (piVar1[3] + 3 < param_3)))) {
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
-            st::fn_006B0C70((DArrayTy *)array,index);
+          if (0x1194 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_1 - *piVar1))) {
+            st::fn_006B0C70(reinterpret_cast<DArrayTy *>(array),index);
           }
         }
         else {
@@ -103,7 +103,7 @@ st::fn_0061FA40(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
           local_8 = 1;
           piVar1[3] = param_3;
           piVar1[1] = param_1;
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
+          if (0x1194 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_1 - *piVar1))) {
             uVar2 = 2;
             *piVar1 = param_1;
             local_8 = 2;
@@ -130,27 +130,27 @@ st::fn_0061FB70
           undefined4 param_4)
 
 {
-  SndUnderAttMenegC_field_00B9DArray *pSVar1;
-  uint uVar2;
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  DArrayTy *pSVar1;
+  uint uVar1;
+  uint local_18;
+  uint local_14;
+  uint local_10;
+  uint local_c;
+  uint local_8;
   local_14 = param_1;
   local_18 = param_1;
   local_10 = param_2;
   local_c = param_3;
   local_8 = param_4;
   if (this->field_00B9 == nullptr) {
-    pSVar1 = (SndUnderAttMenegC_field_00B9DArray *)
-             st::fn_006AE290(nullptr,10,0x14,10);
-    this->field_00B9 = pSVar1;
+    /* ST_CALLSITE[0061FBAA]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/SndUnderAttMenegC_field_00B9DArray; source view only; no Ghidra override */
+    pSVar1 = st::fn_006AE290(nullptr,10,0x14,10);
+    this->field_00B9 = reinterpret_cast<SndUnderAttMenegC_field_00B9DArray *>(pSVar1);
   }
   if (this->field_00B9 != nullptr) {
-    uVar2 = st::fn_006AE1C0((DArrayTy *)this->field_00B9,&local_18);
-    return uVar2;
+
+    uVar1 = st::fn_006AE1C0(reinterpret_cast<DArrayTy *>(this->field_00B9),&local_18);
+    return uVar1;
   }
   return 0xffffffff;
 }
@@ -166,35 +166,35 @@ void __thiscall st::fn_0061FCC0(SndUnderAttMenegC *this)
 
 {
   if (this->field_00B9 != nullptr) {
-    st::fn_006AE110((DArrayTy *)this->field_00B9);
+    st::fn_006AE110(reinterpret_cast<DArrayTy *>(this->field_00B9));
     this->field_00B9 = nullptr;
   }
   if (this->field_00C5 != nullptr) {
-    st::fn_006AE110((DArrayTy *)this->field_00C5);
+    st::fn_006AE110(reinterpret_cast<DArrayTy *>(this->field_00C5));
     this->field_00C5 = nullptr;
   }
   if (this->field_00D1 != nullptr) {
-    st::fn_006AE110((DArrayTy *)this->field_00D1);
+    st::fn_006AE110(reinterpret_cast<DArrayTy *>(this->field_00D1));
     this->field_00D1 = nullptr;
   }
   if (this->field_00DD != nullptr) {
-    st::fn_006AE110((DArrayTy *)this->field_00DD);
+    st::fn_006AE110(reinterpret_cast<DArrayTy *>(this->field_00DD));
     this->field_00DD = nullptr;
   }
   if (this->field_00E9 != nullptr) {
-    st::fn_006AE110((DArrayTy *)this->field_00E9);
+    st::fn_006AE110(reinterpret_cast<DArrayTy *>(this->field_00E9));
     this->field_00E9 = nullptr;
   }
   if (this->field_00F5 != nullptr) {
-    st::fn_006AE110((DArrayTy *)this->field_00F5);
+    st::fn_006AE110(reinterpret_cast<DArrayTy *>(this->field_00F5));
     this->field_00F5 = nullptr;
   }
   if (this->field_0101 != nullptr) {
-    st::fn_006AE110((DArrayTy *)this->field_0101);
+    st::fn_006AE110(reinterpret_cast<DArrayTy *>(this->field_0101));
     this->field_0101 = nullptr;
   }
   if (this->field_010A != nullptr) {
-    st::fn_006AE110((DArrayTy *)this->field_010A);
+    st::fn_006AE110(reinterpret_cast<DArrayTy *>(this->field_010A));
     this->field_010A = nullptr;
   }
   return;
@@ -284,7 +284,7 @@ st::fn_0061FE80
     local_10.x = -1;
     local_10.y = -1;
     /* ST_CALLSITE[0061FF9B]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
-    st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
+    st::fn_00404BD8(reinterpret_cast<SoundClassTy *>(&g_sound),SOUND_MODE_6,nullptr,soundId,&local_10,0);
     /* ST_CALLSITE[0061FFAF]: CALL 0x00405d62; direct=00405D62 SndUnderAttMenegC::sub_00620DA0 */
     st::fn_00405D62(this,param_1,param_2,0x8e);
     this->field_00C1 = uVar1 + 0xfa;
@@ -308,12 +308,11 @@ st::fn_00620030(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
   uint index;
   int *piVar1;
   uint uVar2;
-  undefined4 local_8;
-
+  uint local_8;
   uVar2 = 0xffffffff;
   local_8 = 0xffffffff;
   if ((this->field_00C5 != nullptr) &&
-     (index = st::machine_word_boundary_cast<uint>(this->field_00C5->count - 1), -1 < (int)index)) {
+     (index = this->field_00C5->count - 1, -1 < (int)index)) {
     do {
       array = this->field_00C5;
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
@@ -323,8 +322,8 @@ st::fn_00620030(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
         if ((param_2 < piVar1[2] + -3) ||
            (((piVar1[2] + 3 < param_2 || (uVar2 = local_8, param_3 < piVar1[3] + -3)) ||
             (piVar1[3] + 3 < param_3)))) {
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
-            st::fn_006B0C70((DArrayTy *)array,index);
+          if (0x1194 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_1 - *piVar1))) {
+            st::fn_006B0C70(reinterpret_cast<DArrayTy *>(array),index);
           }
         }
         else {
@@ -333,7 +332,7 @@ st::fn_00620030(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
           local_8 = 1;
           piVar1[3] = param_3;
           piVar1[1] = param_1;
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
+          if (0x1194 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_1 - *piVar1))) {
             uVar2 = 2;
             *piVar1 = param_1;
             local_8 = 2;
@@ -363,27 +362,27 @@ st::fn_00620160
           undefined4 param_4)
 
 {
-  SndUnderAttMenegC_field_00C5DArray *pSVar1;
-  uint uVar2;
-  undefined4 local_18;
-  undefined4 local_14;
+  DArrayTy *pSVar1;
+  uint uVar1;
+  uint local_18;
+  uint local_14;
   int local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_c;
+  uint local_8;
   local_14 = param_1;
   local_18 = param_1;
   local_10 = param_2;
   local_c = param_3;
   local_8 = param_4;
   if (this->field_00C5 == nullptr) {
-    pSVar1 = (SndUnderAttMenegC_field_00C5DArray *)
-             st::fn_006AE290(nullptr,10,0x14,10);
-    this->field_00C5 = pSVar1;
+    /* ST_CALLSITE[0062019A]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/SndUnderAttMenegC_field_00C5DArray; source view only; no Ghidra override */
+    pSVar1 = st::fn_006AE290(nullptr,10,0x14,10);
+    this->field_00C5 = reinterpret_cast<SndUnderAttMenegC_field_00C5DArray *>(pSVar1);
   }
   if (this->field_00C5 != nullptr) {
-    uVar2 = st::fn_006AE1C0((DArrayTy *)this->field_00C5,&local_18);
-    return uVar2;
+
+    uVar1 = st::fn_006AE1C0(reinterpret_cast<DArrayTy *>(this->field_00C5),&local_18);
+    return uVar1;
   }
   return 0xffffffff;
 }
@@ -422,6 +421,7 @@ st::fn_006202B0
     if (DAT_0080874e != '\x03') goto LAB_0062030e;
     iVar3 = 0x4d;
   }
+
   st::fn_0040186B((uint)DAT_0080874d,iVar3);
 LAB_0062030e:
   /* ST_CALLSITE[0062031A]: CALL 0x00404e8f; direct=00404E8F SndUnderAttMenegC::sub_006203F0 */
@@ -447,7 +447,7 @@ LAB_0062030e:
   local_10.x = -1;
   local_10.y = -1;
   /* ST_CALLSITE[00620384]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
-  st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,iVar3,&local_10,0);
+  st::fn_00404BD8(reinterpret_cast<SoundClassTy *>(&g_sound),SOUND_MODE_6,nullptr,iVar3,&local_10,0);
   /* ST_CALLSITE[00620392]: CALL 0x00405d62; direct=00405D62 SndUnderAttMenegC::sub_00620DA0 */
   st::fn_00405D62(this,param_1,param_2,0x28);
   this->field_00C1 = uVar1 + 0xfa;
@@ -469,12 +469,11 @@ st::fn_006203F0(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
   uint index;
   int *piVar1;
   uint uVar2;
-  undefined4 local_8;
-
+  uint local_8;
   uVar2 = 0xffffffff;
   local_8 = 0xffffffff;
   if ((this->field_00D1 != nullptr) &&
-     (index = st::machine_word_boundary_cast<uint>(this->field_00D1->count - 1), -1 < (int)index)) {
+     (index = this->field_00D1->count - 1, -1 < (int)index)) {
     do {
       array = this->field_00D1;
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
@@ -484,8 +483,8 @@ st::fn_006203F0(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
         if ((param_2 < piVar1[2] + -3) ||
            (((piVar1[2] + 3 < param_2 || (uVar2 = local_8, param_3 < piVar1[3] + -3)) ||
             (piVar1[3] + 3 < param_3)))) {
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
-            st::fn_006B0C70((DArrayTy *)array,index);
+          if (0x1194 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_1 - *piVar1))) {
+            st::fn_006B0C70(reinterpret_cast<DArrayTy *>(array),index);
           }
         }
         else {
@@ -494,7 +493,7 @@ st::fn_006203F0(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
           local_8 = 1;
           piVar1[3] = param_3;
           piVar1[1] = param_1;
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
+          if (0x1194 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_1 - *piVar1))) {
             uVar2 = 2;
             *piVar1 = param_1;
             local_8 = 2;
@@ -524,27 +523,27 @@ st::fn_00620520
           undefined4 param_4)
 
 {
-  SndUnderAttMenegC_field_00D1DArray *pSVar1;
-  uint uVar2;
-  undefined4 local_18;
-  undefined4 local_14;
+  DArrayTy *pSVar1;
+  uint uVar1;
+  uint local_18;
+  uint local_14;
   int local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_c;
+  uint local_8;
   local_14 = param_1;
   local_18 = param_1;
   local_10 = param_2;
   local_c = param_3;
   local_8 = param_4;
   if (this->field_00D1 == nullptr) {
-    pSVar1 = (SndUnderAttMenegC_field_00D1DArray *)
-             st::fn_006AE290(nullptr,10,0x14,10);
-    this->field_00D1 = pSVar1;
+    /* ST_CALLSITE[0062055A]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/SndUnderAttMenegC_field_00D1DArray; source view only; no Ghidra override */
+    pSVar1 = st::fn_006AE290(nullptr,10,0x14,10);
+    this->field_00D1 = reinterpret_cast<SndUnderAttMenegC_field_00D1DArray *>(pSVar1);
   }
   if (this->field_00D1 != nullptr) {
-    uVar2 = st::fn_006AE1C0((DArrayTy *)this->field_00D1,&local_18);
-    return uVar2;
+
+    uVar1 = st::fn_006AE1C0(reinterpret_cast<DArrayTy *>(this->field_00D1),&local_18);
+    return uVar1;
   }
   return 0xffffffff;
 }
@@ -598,7 +597,7 @@ st::fn_00620670(SndUnderAttMenegC *this,int param_1,int param_2,uint param_3)
     local_10.x = -1;
     local_10.y = -1;
     /* ST_CALLSITE[0062071B]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
-    st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
+    st::fn_00404BD8(reinterpret_cast<SoundClassTy *>(&g_sound),SOUND_MODE_6,nullptr,soundId,&local_10,0);
     this->field_00C1 = uVar1 + 0xfa;
     return;
   }
@@ -620,12 +619,11 @@ st::fn_00620780(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
   uint index;
   int *piVar1;
   uint uVar2;
-  undefined4 local_8;
-
+  uint local_8;
   uVar2 = 0xffffffff;
   local_8 = 0xffffffff;
   if ((this->field_00DD != nullptr) &&
-     (index = st::machine_word_boundary_cast<uint>(this->field_00DD->count - 1), -1 < (int)index)) {
+     (index = this->field_00DD->count - 1, -1 < (int)index)) {
     do {
       array = this->field_00DD;
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
@@ -635,8 +633,8 @@ st::fn_00620780(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
         if ((param_2 < piVar1[2] + -3) ||
            (((piVar1[2] + 3 < param_2 || (uVar2 = local_8, param_3 < piVar1[3] + -3)) ||
             (piVar1[3] + 3 < param_3)))) {
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
-            st::fn_006B0C70((DArrayTy *)array,index);
+          if (0x1194 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_1 - *piVar1))) {
+            st::fn_006B0C70(reinterpret_cast<DArrayTy *>(array),index);
           }
         }
         else {
@@ -645,7 +643,7 @@ st::fn_00620780(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
           local_8 = 1;
           piVar1[3] = param_3;
           piVar1[1] = param_1;
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
+          if (0x1194 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_1 - *piVar1))) {
             uVar2 = 2;
             *piVar1 = param_1;
             local_8 = 2;
@@ -672,27 +670,27 @@ st::fn_006208B0
           undefined4 param_4)
 
 {
-  SndUnderAttMenegC_field_00DDDArray *pSVar1;
-  uint uVar2;
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  DArrayTy *pSVar1;
+  uint uVar1;
+  uint local_18;
+  uint local_14;
+  uint local_10;
+  uint local_c;
+  uint local_8;
   local_14 = param_1;
   local_18 = param_1;
   local_10 = param_2;
   local_c = param_3;
   local_8 = param_4;
   if (this->field_00DD == nullptr) {
-    pSVar1 = (SndUnderAttMenegC_field_00DDDArray *)
-             st::fn_006AE290(nullptr,10,0x14,10);
-    this->field_00DD = pSVar1;
+    /* ST_CALLSITE[006208EA]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/SndUnderAttMenegC_field_00DDDArray; source view only; no Ghidra override */
+    pSVar1 = st::fn_006AE290(nullptr,10,0x14,10);
+    this->field_00DD = reinterpret_cast<SndUnderAttMenegC_field_00DDDArray *>(pSVar1);
   }
   if (this->field_00DD != nullptr) {
-    uVar2 = st::fn_006AE1C0((DArrayTy *)this->field_00DD,&local_18);
-    return uVar2;
+
+    uVar1 = st::fn_006AE1C0(reinterpret_cast<DArrayTy *>(this->field_00DD),&local_18);
+    return uVar1;
   }
   return 0xffffffff;
 }
@@ -742,7 +740,7 @@ st::fn_00620A00(SndUnderAttMenegC *this,int param_1,int param_2,uint param_3)
     local_10.y = -1;
     local_10.unknown = 0;
     /* ST_CALLSITE[00620AA9]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
-    st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
+    st::fn_00404BD8(reinterpret_cast<SoundClassTy *>(&g_sound),SOUND_MODE_6,nullptr,soundId,&local_10,0);
     /* ST_CALLSITE[00620ABA]: CALL 0x00405d62; direct=00405D62 SndUnderAttMenegC::sub_00620DA0 */
     st::fn_00405D62(this,param_1,param_2,0x8e);
     this->field_00E5 = uVar1 + 0xfa;
@@ -766,12 +764,11 @@ st::fn_00620B20(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
   uint index;
   int *piVar1;
   uint uVar2;
-  undefined4 local_8;
-
+  uint local_8;
   uVar2 = 0xffffffff;
   local_8 = 0xffffffff;
   if ((this->field_00E9 != nullptr) &&
-     (index = st::machine_word_boundary_cast<uint>(this->field_00E9->count - 1), -1 < (int)index)) {
+     (index = this->field_00E9->count - 1, -1 < (int)index)) {
     do {
       array = this->field_00E9;
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
@@ -781,8 +778,8 @@ st::fn_00620B20(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
         if ((param_2 < piVar1[2] + -3) ||
            (((piVar1[2] + 3 < param_2 || (uVar2 = local_8, param_3 < piVar1[3] + -3)) ||
             (piVar1[3] + 3 < param_3)))) {
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
-            st::fn_006B0C70((DArrayTy *)array,index);
+          if (0x1194 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_1 - *piVar1))) {
+            st::fn_006B0C70(reinterpret_cast<DArrayTy *>(array),index);
           }
         }
         else {
@@ -791,7 +788,7 @@ st::fn_00620B20(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
           local_8 = 1;
           piVar1[3] = param_3;
           piVar1[1] = param_1;
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
+          if (0x1194 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_1 - *piVar1))) {
             uVar2 = 2;
             *piVar1 = param_1;
             local_8 = 2;
@@ -821,27 +818,27 @@ st::fn_00620C50
           undefined4 param_4)
 
 {
-  SndUnderAttMenegC_field_00E9DArray *pSVar1;
-  uint uVar2;
-  undefined4 local_18;
-  undefined4 local_14;
+  DArrayTy *pSVar1;
+  uint uVar1;
+  uint local_18;
+  uint local_14;
   int local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_c;
+  uint local_8;
   local_14 = param_1;
   local_18 = param_1;
   local_10 = param_2;
   local_c = param_3;
   local_8 = param_4;
   if (this->field_00E9 == nullptr) {
-    pSVar1 = (SndUnderAttMenegC_field_00E9DArray *)
-             st::fn_006AE290(nullptr,10,0x14,10);
-    this->field_00E9 = pSVar1;
+    /* ST_CALLSITE[00620C8A]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/SndUnderAttMenegC_field_00E9DArray; source view only; no Ghidra override */
+    pSVar1 = st::fn_006AE290(nullptr,10,0x14,10);
+    this->field_00E9 = reinterpret_cast<SndUnderAttMenegC_field_00E9DArray *>(pSVar1);
   }
   if (this->field_00E9 != nullptr) {
-    uVar2 = st::fn_006AE1C0((DArrayTy *)this->field_00E9,&local_18);
-    return uVar2;
+
+    uVar1 = st::fn_006AE1C0(reinterpret_cast<DArrayTy *>(this->field_00E9),&local_18);
+    return uVar1;
   }
   return 0xffffffff;
 }
@@ -874,7 +871,7 @@ st::fn_00620DA0
       *(int *)((int)&this->field_0021 + iVar1 * 0x1d) = param_1;
       *(undefined4 *)((int)&this->field_0025 + iVar1 * 0x1d) = param_2;
       *(undefined4 *)((int)&this->field_0029 + iVar1 * 0x1d) = param_3;
-      *(int *)((int)&this->field_002D + iVar1 * 0x1d) = st::machine_word_boundary_cast<int>(this->field_001C * 10);
+      *(int *)((int)&this->field_002D + iVar1 * 0x1d) = this->field_001C * 10;
       *(uint *)((int)&this->field_0039 + iVar1 * 0x1d) = g_playSystem_00802A38->field_00E4;
       *(undefined4 *)((int)&this->field_0031 + iVar1 * 0x1d) = 0xf;
       *(float *)((int)&this->field_0035 + iVar1 * 0x1d) =
@@ -932,7 +929,7 @@ st::fn_00620E40(SndUnderAttMenegC *this,int param_1,int param_2,uint param_3)
     local_10.x = -1;
     local_10.y = -1;
     /* ST_CALLSITE[00620EEA]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
-    st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
+    st::fn_00404BD8(reinterpret_cast<SoundClassTy *>(&g_sound),SOUND_MODE_6,nullptr,soundId,&local_10,0);
     /* ST_CALLSITE[00620EF8]: CALL 0x00405d62; direct=00405D62 SndUnderAttMenegC::sub_00620DA0 */
     st::fn_00405D62(this,param_1,param_2,0x28);
     this->field_00F1 = uVar1 + 0xfa;
@@ -956,12 +953,11 @@ st::fn_00620F60(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
   uint index;
   int *piVar1;
   uint uVar2;
-  undefined4 local_8;
-
+  uint local_8;
   uVar2 = 0xffffffff;
   local_8 = 0xffffffff;
   if ((this->field_00F5 != nullptr) &&
-     (index = st::machine_word_boundary_cast<uint>(this->field_00F5->count - 1), -1 < (int)index)) {
+     (index = this->field_00F5->count - 1, -1 < (int)index)) {
     do {
       array = this->field_00F5;
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
@@ -971,8 +967,8 @@ st::fn_00620F60(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
         if ((param_2 < piVar1[2] + -3) ||
            (((piVar1[2] + 3 < param_2 || (uVar2 = local_8, param_3 < piVar1[3] + -3)) ||
             (piVar1[3] + 3 < param_3)))) {
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
-            st::fn_006B0C70((DArrayTy *)array,index);
+          if (0x1194 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_1 - *piVar1))) {
+            st::fn_006B0C70(reinterpret_cast<DArrayTy *>(array),index);
           }
         }
         else {
@@ -981,7 +977,7 @@ st::fn_00620F60(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
           local_8 = 1;
           piVar1[3] = param_3;
           piVar1[1] = param_1;
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
+          if (0x1194 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_1 - *piVar1))) {
             uVar2 = 2;
             *piVar1 = param_1;
             local_8 = 2;
@@ -1011,27 +1007,27 @@ st::fn_00621090
           undefined4 param_4)
 
 {
-  SndUnderAttMenegC_field_00F5DArray *pSVar1;
-  uint uVar2;
-  undefined4 local_18;
-  undefined4 local_14;
+  DArrayTy *pSVar1;
+  uint uVar1;
+  uint local_18;
+  uint local_14;
   int local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_c;
+  uint local_8;
   local_14 = param_1;
   local_18 = param_1;
   local_10 = param_2;
   local_c = param_3;
   local_8 = param_4;
   if (this->field_00F5 == nullptr) {
-    pSVar1 = (SndUnderAttMenegC_field_00F5DArray *)
-             st::fn_006AE290(nullptr,10,0x14,10);
-    this->field_00F5 = pSVar1;
+    /* ST_CALLSITE[006210CA]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/SndUnderAttMenegC_field_00F5DArray; source view only; no Ghidra override */
+    pSVar1 = st::fn_006AE290(nullptr,10,0x14,10);
+    this->field_00F5 = reinterpret_cast<SndUnderAttMenegC_field_00F5DArray *>(pSVar1);
   }
   if (this->field_00F5 != nullptr) {
-    uVar2 = st::fn_006AE1C0((DArrayTy *)this->field_00F5,&local_18);
-    return uVar2;
+
+    uVar1 = st::fn_006AE1C0(reinterpret_cast<DArrayTy *>(this->field_00F5),&local_18);
+    return uVar1;
   }
   return 0xffffffff;
 }
@@ -1081,7 +1077,7 @@ st::fn_006211E0(SndUnderAttMenegC *this,int param_1,int param_2,uint param_3)
     local_10.y = -1;
     local_10.unknown = 0;
     /* ST_CALLSITE[00621289]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
-    st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
+    st::fn_00404BD8(reinterpret_cast<SoundClassTy *>(&g_sound),SOUND_MODE_6,nullptr,soundId,&local_10,0);
     /* ST_CALLSITE[0062129A]: CALL 0x00405d62; direct=00405D62 SndUnderAttMenegC::sub_00620DA0 */
     st::fn_00405D62(this,param_1,param_2,0x8e);
     this->field_00FD = uVar1 + 0xfa;
@@ -1105,12 +1101,11 @@ st::fn_00621300(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
   uint index;
   int *piVar1;
   uint uVar2;
-  undefined4 local_8;
-
+  uint local_8;
   uVar2 = 0xffffffff;
   local_8 = 0xffffffff;
   if ((this->field_0101 != nullptr) &&
-     (index = st::machine_word_boundary_cast<uint>(this->field_0101->count - 1), -1 < (int)index)) {
+     (index = this->field_0101->count - 1, -1 < (int)index)) {
     do {
       array = this->field_0101;
       /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
@@ -1120,8 +1115,8 @@ st::fn_00621300(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
         if ((param_2 < piVar1[2] + -3) ||
            (((piVar1[2] + 3 < param_2 || (uVar2 = local_8, param_3 < piVar1[3] + -3)) ||
             (piVar1[3] + 3 < param_3)))) {
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
-            st::fn_006B0C70((DArrayTy *)array,index);
+          if (0x1194 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_1 - *piVar1))) {
+            st::fn_006B0C70(reinterpret_cast<DArrayTy *>(array),index);
           }
         }
         else {
@@ -1130,7 +1125,7 @@ st::fn_00621300(SndUnderAttMenegC *this,int param_1,int param_2,int param_3)
           local_8 = 1;
           piVar1[3] = param_3;
           piVar1[1] = param_1;
-          if (0x1194 < (uint)(param_1 - *piVar1)) {
+          if (0x1194 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_1 - *piVar1))) {
             uVar2 = 2;
             *piVar1 = param_1;
             local_8 = 2;
@@ -1160,27 +1155,27 @@ st::fn_00621430
           undefined4 param_4)
 
 {
-  SndUnderAttMenegC_field_0101DArray *pSVar1;
-  uint uVar2;
-  undefined4 local_18;
-  undefined4 local_14;
+  DArrayTy *pSVar1;
+  uint uVar1;
+  uint local_18;
+  uint local_14;
   int local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_c;
+  uint local_8;
   local_14 = param_1;
   local_18 = param_1;
   local_10 = param_2;
   local_c = param_3;
   local_8 = param_4;
   if (this->field_0101 == nullptr) {
-    pSVar1 = (SndUnderAttMenegC_field_0101DArray *)
-             st::fn_006AE290(nullptr,10,0x14,10);
-    this->field_0101 = pSVar1;
+    /* ST_CALLSITE[0062146A]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/SndUnderAttMenegC_field_0101DArray; source view only; no Ghidra override */
+    pSVar1 = st::fn_006AE290(nullptr,10,0x14,10);
+    this->field_0101 = reinterpret_cast<SndUnderAttMenegC_field_0101DArray *>(pSVar1);
   }
   if (this->field_0101 != nullptr) {
-    uVar2 = st::fn_006AE1C0((DArrayTy *)this->field_0101,&local_18);
-    return uVar2;
+
+    uVar1 = st::fn_006AE1C0(reinterpret_cast<DArrayTy *>(this->field_0101),&local_18);
+    return uVar1;
   }
   return 0xffffffff;
 }
@@ -1210,8 +1205,9 @@ void __thiscall st::fn_00621580(SndUnderAttMenegC *this,byte *param_1,int param_
     return;
   }
   if ((this->field_010A == nullptr) ||
-     (uVar1 = st::fn_00405E1B(this,param_2,(undefined4 *)&local_8), (int)uVar1 < 0)) {
-    /* ST_CALLSITE[006215BD]: CALL 0x00405b37; direct=00405B37 SndUnderAttMenegC::sub_006216E0 */
+
+     (uVar1 = st::fn_00405E1B(this,param_2,reinterpret_cast<undefined4 *>(&local_8)), (int)uVar1 < 0)) {
+    /* ST_CALLSITE[006215BD]: CALL 0x00405b37; direct=00405B37 SndUnderAttMenegC::sub_006216E0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SndUnderAttMenegC; source view only; no Ghidra override */
     uVar1 = st::fn_00405B37(this,param_2);
   }
   if ((local_8 != 0) && (-1 < (int)uVar1)) {
@@ -1235,27 +1231,27 @@ void __thiscall st::fn_00621580(SndUnderAttMenegC *this,byte *param_1,int param_
 uint __thiscall st::fn_006216E0(SndUnderAttMenegC *this,undefined4 param_1)
 
 {
-  SndUnderAttMenegC_field_010ADArray *pSVar1;
-  uint uVar2;
-  undefined4 local_14;
+  DArrayTy *pSVar1;
+  uint uVar1;
+  uint local_14;
   int local_10;
-  undefined4 local_c;
-  undefined1 local_8;
-
+  uint local_c;
+  byte local_8;
   local_14 = 0;
   local_8 = (undefined1)((uint)param_1 >> 0x18);
-  local_10 = st::machine_word_boundary_cast<int>(g_playSystem_00802A38->field_00E4 << 8);
+  local_10 = g_playSystem_00802A38->field_00E4 << 8;
   STPiece<0,1>(local_c) = (undefined1)(g_playSystem_00802A38->field_00E4 >> 0x18);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_c = CONCAT31((int3)param_1,(undefined1)local_c);
   if (this->field_010A == nullptr) {
-    pSVar1 = (SndUnderAttMenegC_field_010ADArray *)
-             st::fn_006AE290(nullptr,10,0xd,10);
-    this->field_010A = pSVar1;
+    /* ST_CALLSITE[00621722]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/SndUnderAttMenegC_field_010ADArray; source view only; no Ghidra override */
+    pSVar1 = st::fn_006AE290(nullptr,10,0xd,10);
+    this->field_010A = reinterpret_cast<SndUnderAttMenegC_field_010ADArray *>(pSVar1);
   }
   if (this->field_010A != nullptr) {
-    uVar2 = st::fn_006AE1C0((DArrayTy *)this->field_010A,&local_14);
-    return uVar2;
+
+    uVar1 = st::fn_006AE1C0(reinterpret_cast<DArrayTy *>(this->field_010A),&local_14);
+    return uVar1;
   }
   return 0xffffffff;
 }
@@ -1387,7 +1383,9 @@ void __thiscall st::fn_00621780(SndUnderAttMenegC *this,uint param_1)
       break;
     case 8:
       uVar3 = 8;
+      /* ST_CALLSITE[0062191A]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/PopUpTy; source view only; no Ghidra override */
       text = st::fn_006B0140(0x274a,g_hINSTANCE_00807618);
+      /* ST_CALLSITE[00621926]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
       st::fn_004014D8(g_popUp_008016D8,text,uVar3);
       if (DAT_0080874e == '\x01') {
         soundId = 0xba;
@@ -1409,7 +1407,7 @@ void __thiscall st::fn_00621780(SndUnderAttMenegC *this,uint param_1)
     local_10.x = -1;
     local_10.y = -1;
     /* ST_CALLSITE[00621972]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
-    st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_6,nullptr,soundId,&local_10,0);
+    st::fn_00404BD8(reinterpret_cast<SoundClassTy *>(&g_sound),SOUND_MODE_6,nullptr,soundId,&local_10,0);
     *puVar2 = 1;
     *(uint *)(puVar2 + 1) = g_playSystem_00802A38->field_00E4;
     this->field_0106 = g_playSystem_00802A38->field_00E4;
@@ -1417,4 +1415,3 @@ void __thiscall st::fn_00621780(SndUnderAttMenegC *this,uint param_1)
 switchD_006217ba_default:
   return;
 }
-

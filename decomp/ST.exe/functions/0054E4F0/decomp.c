@@ -32,25 +32,28 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
   char *pcVar12;
   char *pcVar13;
   DWORD *pDVar14;
-  undefined1 local_2b8;
+  byte local_2b8;
   char local_2b7 [515];
   InternalExceptionFrame local_b4;
   InternalExceptionFrame local_70;
-  undefined4 local_2c [8];
+  uint local_2c [8];
   STPlaySystemC *local_c;
   int local_8;
 
   local_c = this;
+
   local_EAX_19 = SystemClassTy::GetMessage((SystemClassTy *)this,message);
   if (local_EAX_19 != 0xffff) {
     local_70.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_70;
+
     iVar5 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
     pSVar10 = local_c;
     if (iVar5 == 0) {
       if (message->id == MESS_SHARED_0008) {
         local_b4.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_b4;
+
         local_EAX_308 = Library::MSVCRT::__setjmp3(local_b4.jumpBuffer,0);
         this_00 = g_cMf32_00806754;
         if (local_EAX_308 == 0) {
@@ -81,10 +84,12 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
               pcVar13 = pcVar13 + 1;
             }
             cMf32::ToBeg(g_cMf32_00806754,FUN_006f2d10,&local_2b8);
+
             puVar5 = cMf32::RecNameGetNext(this_00);
             iVar8 = local_8;
             while (puVar5 != nullptr) {
               local_8 = iVar8 + 1;
+
               puVar5 = cMf32::RecNameGetNext(this_00);
               iVar8 = local_8;
             }
@@ -95,6 +100,7 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
           }
           pSVar10 = local_c;
           DAT_00802a3c = 0;
+
           Library::Ourlib::MFAOBJ::mfAObjEnum
                     (g_cMf32_00806754,PTR_DAT_007c83b0,thunk_FUN_0054ca10,local_c,0);
           local_EAX_530 = LoadResourceString(0x4a39,g_hINSTANCE_00807618);
@@ -121,14 +127,17 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
         if (DAT_00808783 == '\x03') {
           pSVar10->field_0038 = 1;
           if (g_int_00811764 != nullptr) {
+
             FUN_006b6500(g_int_00811764,DAT_0080733c);
           }
           if (DAT_0080877e == '\0') {
+
             FUN_00715360(g_int_00811764,1,'.',nullptr,0,0,0xffffffff);
           }
           else if (DAT_00808aaf != 0) {
             pDVar14 = &DAT_00808af8;
             do {
+
               DVar7 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
               *pDVar14 = DVar7;
               uVar9 = uVar9 + 1;
@@ -151,10 +160,14 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
             piVar4 = g_int_00811764;
             if ((*(int *)(pcVar12 + -6) == pSVar10->field_00F4) && (*pcVar12 != '\0')) {
               *pcVar12 = '\0';
+
               FUN_006b6500(piVar4,1);
+
               FUN_00715360(g_int_00811764,pSVar10->field_00F4,'7',nullptr,0,0,0xffffffff);
+
               FUN_006b6500(g_int_00811764,DAT_0080733c);
-              thunk_FUN_005508f0(pSVar10,pSVar10->field_00F4);
+              /* ST_CALLSITE[0054E5D0]: CALL 0x00401370; direct=00401370 STPlaySystemC::sub_005508F0 */
+              sub_005508F0(pSVar10,pSVar10->field_00F4);
               pSVar10->field_00F4 = 0;
             }
             uVar9 = uVar9 + 1;
@@ -168,6 +181,7 @@ int __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,STMessage *message)
       return 0;
     }
     g_currentExceptionFrame = local_70.previous;
+
     local_EAX_854 =
          ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x463,0,iVar5,"%s",
                             "STPlaySystemC::GetMessage error !");

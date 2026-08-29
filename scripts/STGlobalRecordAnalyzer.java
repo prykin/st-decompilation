@@ -225,6 +225,13 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
             Pattern.quote(arrayName) + "\\s*\\[[^\\]]+\\]\\s*\\.\\s*" +
             "(?<field>[A-Za-z_$][A-Za-z0-9_$]*)",
             Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+        Pattern cursorRoot = Pattern.compile(
+            "(?m)^\\s*(?<cursor>[A-Za-z_$][A-Za-z0-9_$]*)\\s*=\\s*&\\s*" +
+            Pattern.quote(arrayName) + "\\s*\\[[^\\]]+\\]\\s*\\.\\s*" +
+            "(?<field>[A-Za-z_$][A-Za-z0-9_$]*)\\s*;");
+        Pattern cursorDeclaration = Pattern.compile(
+            "(?m)^\\s*(?<type>[A-Za-z_$][A-Za-z0-9_$:]*)\\s*\\*\\s*" +
+            "(?<name>[A-Za-z_$][A-Za-z0-9_$]*)\\s*;");
         DecompInterface decompiler = new DecompInterface();
         decompiler.toggleCCode(true);
         decompiler.toggleSyntaxTree(false);
@@ -260,6 +267,20 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
                     String path = uniqueStructurePath(matcher.group("type"));
                     if (!path.isBlank()) pointerLocals.put(matcher.group("name"), path);
                 }
+                Map<String, Integer> cursorWidths = new HashMap<>();
+                matcher = cursorDeclaration.matcher(rendered);
+                while (matcher.find()) {
+                    int width = renderedPointeeWidth(matcher.group("type"));
+                    if (width > 0) cursorWidths.put(matcher.group("name"), width);
+                }
+                Map<String, Integer> recordCursors = new HashMap<>();
+                matcher = cursorRoot.matcher(rendered);
+                while (matcher.find()) {
+                    int offset = renderedFieldOffset(matcher.group("field"));
+                    if (offset >= 0 && offset < stride &&
+                            cursorWidths.containsKey(matcher.group("cursor")))
+                        recordCursors.put(matcher.group("cursor"), offset);
+                }
                 matcher = pointerStore.matcher(rendered);
                 while (matcher.find()) {
                     int offset = renderedFieldOffset(matcher.group("field"));
@@ -270,6 +291,33 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
                     field.pointerStores.merge(path, 1, Integer::sum);
                     field.pointerSites.add(functionSite + " exact pointer store " + path +
                         " at +0x" + Integer.toHexString(offset).toUpperCase(Locale.ROOT));
+                }
+                for (Map.Entry<String, Integer> cursor : recordCursors.entrySet()) {
+                    int elementWidth = cursorWidths.get(cursor.getKey());
+                    Pattern cursorStore = Pattern.compile(
+                        "(?m)^\\s*(?:\\*\\s*" + Pattern.quote(cursor.getKey()) +
+                        "|" + Pattern.quote(cursor.getKey()) +
+                        "\\s*\\[\\s*(?<index>0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\])" +
+                        "\\s*=\\s*(?:\\(\\s*(?:int|uint|undefined4)\\s*\\)\\s*)?" +
+                        "(?<source>[A-Za-z_$][A-Za-z0-9_$]*)\\s*;");
+                    Matcher cursorStoreMatcher = cursorStore.matcher(rendered);
+                    while (cursorStoreMatcher.find()) {
+                        int index = 0;
+                        if (cursorStoreMatcher.group("index") != null) {
+                            try { index = Integer.decode(cursorStoreMatcher.group("index")); }
+                            catch (NumberFormatException ignored) { continue; }
+                        }
+                        int offset = cursor.getValue() + index * elementWidth;
+                        String path = pointerLocals.getOrDefault(
+                            cursorStoreMatcher.group("source"), "");
+                        if (offset < 0 || offset + 4 > stride || path.isBlank()) continue;
+                        FieldEvidence field = scan.fields.computeIfAbsent((long)offset,
+                            FieldEvidence::new);
+                        field.pointerStores.merge(path, 1, Integer::sum);
+                        field.pointerSites.add(functionSite +
+                            " exact record-cursor pointer store " + path + " at +0x" +
+                            Integer.toHexString(offset).toUpperCase(Locale.ROOT));
+                    }
                 }
                 matcher = pointerConsumer.matcher(rendered);
                 while (matcher.find()) {
@@ -308,6 +356,14 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
         }
     }
 
+    private int renderedPointeeWidth(String rendered) {
+        String scalar = scalarType(rendered);
+        if (!scalar.isBlank()) return scalarWidth(scalar);
+        String path = uniqueStructurePath(rendered);
+        DataType type = path.isBlank() ? null : dataTypes.getDataType(path);
+        return type == null ? -1 : type.getLength();
+    }
+
     private String uniqueStructurePath(String rendered) {
         if (rendered == null || rendered.isBlank()) return "";
         String leaf = rendered;
@@ -335,6 +391,10 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
             case "ulonglong" -> "/ulonglong";
             case "float" -> "/float";
             case "double" -> "/double";
+            case "undefined1" -> "/undefined1";
+            case "undefined2" -> "/undefined2";
+            case "undefined4" -> "/undefined4";
+            case "undefined8" -> "/undefined8";
             default -> "";
         };
     }
@@ -345,6 +405,10 @@ public class STGlobalRecordAnalyzer extends GhidraScript {
             case "/short", "/ushort" -> 2;
             case "/int", "/uint", "/float" -> 4;
             case "/longlong", "/ulonglong", "/double" -> 8;
+            case "/undefined1" -> 1;
+            case "/undefined2" -> 2;
+            case "/undefined4" -> 4;
+            case "/undefined8" -> 8;
             default -> -1;
         };
     }

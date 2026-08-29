@@ -36,7 +36,8 @@ LAB_0068e536:
 0068E53D  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]
 0068E540  51                        PUSH ECX
 0068E541  8B C8                     MOV ECX,EAX
-0068E543  E8 6E 74 D7 FF            CALL 0x004059b6
+FUN_0068e4f0::override::prt_68e543_1084745e:
+0068E543  E8 6E 74 D7 FF            CALL 0x004059b6  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__fastcall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/AiFltClassTy;/undefined4;/int
 0068E548  8B F8                     MOV EDI,EAX
 0068E54A  85 FF                     TEST EDI,EDI
 0068E54C  74 41                     JZ 0x0068e58f

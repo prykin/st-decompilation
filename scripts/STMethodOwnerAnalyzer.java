@@ -13,6 +13,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
@@ -26,10 +27,13 @@ import java.util.regex.Pattern;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.TypeDef;
+import ghidra.program.model.data.Undefined;
+import ghidra.program.model.data.VoidDataType;
 import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
@@ -37,7 +41,9 @@ import ghidra.program.model.listing.FunctionTag;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
+import ghidra.program.model.scalar.Scalar;
 import ghidra.program.model.symbol.Reference;
+import ghidra.program.model.symbol.StackReference;
 import ghidra.program.model.symbol.SourceType;
 
 public class STMethodOwnerAnalyzer extends GhidraScript {
@@ -83,7 +89,7 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
             monitor.checkCancelled();
             Function caller = functions.next();
             if (caller.isThunk() || caller.isExternal() || isLibrary(caller)) continue;
-            typedSingletonCalls += analyzeTypedSingletonReceivers(caller);
+            typedSingletonCalls += analyzeTypedProducerReceivers(caller);
         }
 
         // Preserve reviewed rows on later analyzer runs even when no currently named caller
@@ -118,34 +124,85 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
     }
 
     private void analyzeCaller(Function caller, String owner) {
-        Map<String, ThisValue> registers = new HashMap<>();
-        Map<String, ThisValue> stackSpills = new HashMap<>();
-        registers.put("ECX", new ThisValue(0));
-        InstructionIterator instructions = currentProgram.getListing()
-            .getInstructions(caller.getBody(), true);
-        while (instructions.hasNext()) {
-            Instruction instruction = instructions.next();
+        traceIncomingThisCalls(caller, owner, null, true);
+    }
+
+    /**
+     * Trace the unadjusted incoming receiver over the machine CFG.  The previous
+     * address-order walk lost callee-saved ESI/EDI/EBX aliases whenever a later
+     * branch block happened to be listed before its predecessor.  That hid exact
+     * caller ownership for large helper families and encouraged weaker anonymous
+     * receiver types downstream.  At joins retain only facts which every reached
+     * predecessor agrees on; calls kill volatile registers but not stable EBP
+     * spills or callee-saved aliases.
+     */
+    private Set<Address> traceIncomingThisCalls(Function caller, String owner,
+            Function targetFilter, boolean recordCandidates) {
+        Set<Address> matched = new TreeSet<>();
+        Set<Address> recorded = new HashSet<>();
+        Map<Address, ThisFlowState> incoming = new TreeMap<>();
+        ArrayDeque<Address> pending = new ArrayDeque<>();
+        ThisFlowState entry = new ThisFlowState();
+        entry.registers.put("ECX", new ThisValue(0));
+        incoming.put(caller.getEntryPoint(), entry);
+        pending.add(caller.getEntryPoint());
+
+        while (!pending.isEmpty()) {
+            Address address = pending.removeFirst();
+            Instruction instruction = currentProgram.getListing().getInstructionAt(address);
+            if (instruction == null || !caller.getBody().contains(address)) continue;
+            ThisFlowState state = incoming.get(address).copy();
             String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
             String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
-            if ("CALL".equals(mnemonic)) {
+            boolean call = "CALL".equals(mnemonic);
+            if (call) {
                 Function target = calledFunction(instruction);
-                ThisValue receiver = registers.get("ECX");
-                if (target != null && receiver != null && receiver.offset == 0 &&
-                        isCandidate(target)) {
-                    Candidate candidate = candidates.computeIfAbsent(target.getEntryPoint(),
-                        ignored -> new Candidate(target));
-                    candidate.ownerCalls.merge(owner, 1, Integer::sum);
-                    candidate.attributedCallers.add(caller.getEntryPoint());
-                    candidate.callSites.add(addr(instruction.getAddress()) + " " +
-                        caller.getName(true));
+                ThisValue receiver = state.registers.get("ECX");
+                if (target != null && receiver != null && receiver.offset == 0) {
+                    if (targetFilter != null &&
+                            target.getEntryPoint().equals(targetFilter.getEntryPoint()))
+                        matched.add(address);
+                    if (recordCandidates && isCandidate(target) && recorded.add(address)) {
+                        Candidate candidate = candidates.computeIfAbsent(target.getEntryPoint(),
+                            ignored -> new Candidate(target));
+                        candidate.ownerCalls.merge(owner, 1, Integer::sum);
+                        candidate.attributedCallers.add(caller.getEntryPoint());
+                        candidate.callSites.add(addr(address) + " " + caller.getName(true) +
+                            " [CFG-exact incoming this]");
+                    }
                 }
-                registers.remove("EAX");
-                registers.remove("ECX");
-                registers.remove("EDX");
-                continue;
+                state.registers.remove("EAX");
+                state.registers.remove("ECX");
+                state.registers.remove("EDX");
             }
-            updateRegisters(mnemonic, operands, registers, stackSpills);
+            else updateRegisters(mnemonic, operands, state.registers, state.stackSpills);
+
+            Set<Address> successors = new TreeSet<>();
+            Address fallthrough = instruction.getFallThrough();
+            if (fallthrough != null && caller.getBody().contains(fallthrough))
+                successors.add(fallthrough);
+            if (!call) {
+                for (Address flow : instruction.getFlows())
+                    if (caller.getBody().contains(flow)) successors.add(flow);
+            }
+            for (Address successor : successors) {
+                if (mergeIncoming(incoming, successor, state)) pending.addLast(successor);
+            }
         }
+        return matched;
+    }
+
+    private boolean mergeIncoming(Map<Address, ThisFlowState> states, Address address,
+            ThisFlowState incoming) {
+        ThisFlowState current = states.get(address);
+        if (current == null) {
+            states.put(address, incoming.copy());
+            return true;
+        }
+        ThisFlowState merged = current.intersection(incoming);
+        if (merged.equals(current)) return false;
+        states.put(address, merged);
+        return true;
     }
 
     /**
@@ -184,6 +241,185 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
             updateOwnerRegisters(instruction, mnemonic, operands, registers, stackSpills);
         }
         return result;
+    }
+
+    /**
+     * Propagate exact concrete pointer producers over the caller CFG.  The old
+     * owner pass recognized only the caller's own auto-this and a linear load
+     * from a typed global singleton.  It consequently discarded equally strong
+     * machine boundaries: concrete pointer parameters, trusted pointer returns,
+     * and concrete pointer members loaded from an already typed object.
+     *
+     * Facts survive a join only when every predecessor agrees on the same
+     * semantic owner.  Calls kill volatile facts, stack parameters are matched
+     * through Ghidra StackReference offsets, and a member load is accepted only
+     * at the exact start of one concrete pointer component.  No decompiler local
+     * type or source-looking name participates in the proof.
+     */
+    private int analyzeTypedProducerReceivers(Function caller) {
+        Map<Integer, TypedOwner> entryStack = new TreeMap<>();
+        TypedOwnerFlowState entry = new TypedOwnerFlowState();
+        for (Parameter parameter : caller.getParameters()) {
+            if (parameter.isAutoParameter()) continue;
+            String owner = concreteOwner(parameter.getDataType());
+            if (owner.isBlank()) continue;
+            TypedOwner value = new TypedOwner(owner,
+                "typed parameter " + parameter.getName());
+            if (parameter.isRegisterVariable() && parameter.getRegister() != null)
+                entry.registers.put(canonicalRegister(parameter.getRegister().getName()), value);
+            else if (parameter.isStackVariable())
+                entryStack.put(parameter.getStackOffset(), value);
+        }
+        entry.stack.putAll(entryStack);
+
+        Map<Address, TypedOwnerFlowState> incoming = new TreeMap<>();
+        ArrayDeque<Address> pending = new ArrayDeque<>();
+        incoming.put(caller.getEntryPoint(), entry);
+        pending.add(caller.getEntryPoint());
+        Set<String> recorded = new HashSet<>();
+        int result = 0;
+
+        while (!pending.isEmpty()) {
+            Address address = pending.removeFirst();
+            Instruction instruction = currentProgram.getListing().getInstructionAt(address);
+            if (instruction == null || !caller.getBody().contains(address)) continue;
+            TypedOwnerFlowState state = incoming.get(address).copy();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+            boolean call = "CALL".equals(mnemonic);
+
+            if (call) {
+                Function target = calledFunction(instruction);
+                TypedOwner receiver = state.registers.get("ECX");
+                if (target != null && receiver != null && isCandidate(target)) {
+                    String key = addr(instruction.getAddress()) + "|" + receiver.owner;
+                    if (recorded.add(key)) {
+                        Candidate candidate = candidates.computeIfAbsent(target.getEntryPoint(),
+                            ignored -> new Candidate(target));
+                        candidate.ownerCalls.merge(receiver.owner, 1, Integer::sum);
+                        candidate.attributedCallers.add(caller.getEntryPoint());
+                        candidate.callSites.add(addr(instruction.getAddress()) + " " +
+                            caller.getName(true) + " [CFG-exact " + receiver.reason + "]");
+                        result++;
+                    }
+                }
+                state.registers.remove("EAX");
+                state.registers.remove("ECX");
+                state.registers.remove("EDX");
+                String returnedOwner = target == null ? "" :
+                    trustedConcreteReturnOwner(target);
+                if (!returnedOwner.isBlank())
+                    state.registers.put("EAX", new TypedOwner(returnedOwner,
+                        "trusted return from " + target.getName(true)));
+            }
+            else updateTypedOwnerState(instruction, mnemonic, operands, state);
+
+            Set<Address> successors = new TreeSet<>();
+            Address fallthrough = instruction.getFallThrough();
+            if (fallthrough != null && caller.getBody().contains(fallthrough))
+                successors.add(fallthrough);
+            if (!call) {
+                for (Address flow : instruction.getFlows())
+                    if (caller.getBody().contains(flow)) successors.add(flow);
+            }
+            for (Address successor : successors) {
+                TypedOwnerFlowState current = incoming.get(successor);
+                if (current == null) {
+                    incoming.put(successor, state.copy());
+                    pending.addLast(successor);
+                    continue;
+                }
+                TypedOwnerFlowState merged = current.intersection(state);
+                if (!merged.equals(current)) {
+                    incoming.put(successor, merged);
+                    pending.addLast(successor);
+                }
+            }
+        }
+        return result;
+    }
+
+    private void updateTypedOwnerState(Instruction instruction, String mnemonic,
+            String[] operands, TypedOwnerFlowState state) {
+        if (operands.length == 0) return;
+        String destination = cleanRegister(operands[0]);
+        Integer destinationStack = stackOffset(instruction, 0);
+        if ("MOV".equals(mnemonic) && operands.length >= 2) {
+            TypedOwner source = typedOwnerSource(instruction, 1, operands[1], state);
+            if (destination != null) {
+                if (isFullRegister(operands[0]) && source != null)
+                    state.registers.put(destination, source);
+                else state.registers.remove(destination);
+            }
+            else if (destinationStack != null) {
+                if (source == null) state.stack.remove(destinationStack);
+                else state.stack.put(destinationStack, source);
+            }
+            return;
+        }
+        if ("LEA".equals(mnemonic) && destination != null && operands.length >= 2) {
+            String owner = typedGlobalOwner(instruction, false);
+            if (owner == null) state.registers.remove(destination);
+            else state.registers.put(destination,
+                new TypedOwner(owner, "typed global object address"));
+            return;
+        }
+        if (destination != null && !Set.of("CMP", "TEST", "PUSH", "JMP", "RET")
+                .contains(mnemonic)) state.registers.remove(destination);
+        if (destinationStack != null && !Set.of("CMP", "TEST", "PUSH")
+                .contains(mnemonic)) state.stack.remove(destinationStack);
+    }
+
+    private TypedOwner typedOwnerSource(Instruction instruction, int operand,
+            String rendered, TypedOwnerFlowState state) {
+        String register = cleanRegister(rendered);
+        if (register != null && isFullRegister(rendered))
+            return state.registers.get(register);
+        Integer stack = stackOffset(instruction, operand);
+        if (stack != null) return state.stack.get(stack);
+        MemoryExpr memory = memoryExpr(rendered);
+        if (memory != null) {
+            TypedOwner base = state.registers.get(memory.register);
+            if (base != null) {
+                String owner = exactPointerMemberOwner(base.owner, memory.displacement);
+                if (!owner.isBlank()) return new TypedOwner(owner,
+                    "typed member of " + base.owner + "+0x" +
+                        Long.toHexString(memory.displacement).toUpperCase(Locale.ROOT));
+            }
+        }
+        String global = typedGlobalOwner(instruction, true);
+        return global == null ? null : new TypedOwner(global, "typed global singleton");
+    }
+
+    private Integer stackOffset(Instruction instruction, int operand) {
+        for (Reference reference : instruction.getReferencesFrom())
+            if (reference.getOperandIndex() == operand &&
+                    reference instanceof StackReference stack)
+                return stack.getStackOffset();
+        return null;
+    }
+
+    private String exactPointerMemberOwner(String owner, long offset) {
+        if (offset < 0 || offset > Integer.MAX_VALUE) return "";
+        String path = ownerTypePath(owner);
+        DataType type = path.isBlank() ? null : dataTypes.getDataType(path);
+        if (!(type instanceof Structure structure)) return "";
+        DataTypeComponent component = structure.getComponentAt((int)offset);
+        if (component == null || component.getOffset() != offset) return "";
+        return concreteOwner(component.getDataType());
+    }
+
+    private String trustedConcreteReturnOwner(Function function) {
+        if (function == null || function.getSignatureSource() == SourceType.DEFAULT) return "";
+        return concreteOwner(function.getReturnType());
+    }
+
+    private String concreteOwner(DataType type) {
+        DataType value = unwrap(type);
+        if (!(value instanceof Pointer pointer)) return "";
+        DataType pointee = unwrap(pointer.getDataType());
+        return pointee instanceof Structure structure && namedReceiverType(structure) ?
+            structure.getName() : "";
     }
 
     private void updateOwnerRegisters(Instruction instruction, String mnemonic,
@@ -274,11 +510,18 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
         int receiverAccesses = incomingThisAccesses(function);
         int edxUses = incomingEdxUses(function);
         int stackParameterUses = incomingStackParameterUses(function);
+        int receiverForwards = incomingThisForwardCalls(function);
+        boolean entryReceiverCapture = entryIncomingEcxCapture(function);
+        boolean retStackMatches = returnStackMatches(function);
         String ownerTypePath = owner.isBlank() ? "" : ownerTypePath(owner);
         boolean scriptOwned = hasTag(function, TAG);
         boolean synthetic = isSynthetic(function.getName()) || scriptOwned;
+        boolean stackReceiverConvention = Set.of("__stdcall", "__cdecl")
+            .contains(function.getCallingConventionName()) && entryReceiverCapture &&
+            receiverForwards > 0 && edxUses == 0 && retStackMatches;
         boolean conventionCandidate = "__thiscall".equals(function.getCallingConventionName()) ||
-            "__fastcall".equals(function.getCallingConventionName());
+            "__fastcall".equals(function.getCallingConventionName()) ||
+            stackReceiverConvention;
         boolean manualName = protectedSource(function.getSymbol().getSource());
         boolean manualSignature = protectedSource(function.getSignatureSource());
         int directCallers = 0;
@@ -289,18 +532,25 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
         }
         int attributedCallers = candidate.attributedCallers.size();
         boolean adequateCoverage = receiverAliasCallers <= Math.max(3, attributedCallers * 3);
-        boolean conflictingNamedOwners = candidate.ownerCalls.size() > 1;
         boolean sharedReceiverHelper = directCallers >= 8 && receiverAliasCallers >= 4 &&
             receiverAliasCallers * 2 >= directCallers;
         boolean repairApply = scriptOwned && !existingOwner.isBlank() &&
-            (conflictingNamedOwners || sharedReceiverHelper &&
-                attributedCallers * 3 < receiverAliasCallers) &&
+            sharedReceiverHelper && attributedCallers * 3 < receiverAliasCallers &&
             !manualName && !manualSignature;
+        boolean physicalOwner = !ownerTypePath.isBlank() &&
+            uniquePrimaryPhysicalVtable(ownerTypePath);
+        // Two differently typed callers do not prove that an already recovered method is a
+        // shared helper.  In this image the same primary-base receiver routinely arrives
+        // through a base and a derived view; treating that ordinary polymorphism as a repair
+        // erased valid STMineSetC/STFishC/TLO owners and cascaded into hundreds of void-this
+        // indirect calls.  Removing a script-owned owner requires the closed, dense direct-
+        // caller family above.  Conflicting sparse votes remain review-only.
         boolean strong = !owner.isBlank() && !ownerTypePath.isBlank() && synthetic &&
-            conventionCandidate && receiverAccesses > 0 && adequateCoverage &&
+            conventionCandidate && adequateCoverage && attributedCallers >= 2 &&
+            physicalOwner &&
             (!"__fastcall".equals(function.getCallingConventionName()) || edxUses == 0) &&
-            (agreedCalls >= 2 || (agreedCalls == 1 && candidate.callSites.size() == 1 &&
-                receiverAccesses >= 2));
+            agreedCalls >= 2 &&
+            receiverConversionCompatible(function, ownerTypePath);
         boolean alreadyApplied = scriptOwned && !repairApply && !existingOwner.isBlank() &&
             existingOwner.equals(owner) && adequateCoverage;
         String proposedName = owner.isBlank() ? "" : owner + "::sub_" + addr(function.getEntryPoint());
@@ -314,7 +564,8 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
                 "__thiscall".equals(function.getCallingConventionName()) &&
                 !explicitParameters(function).isEmpty());
         boolean conventionApply = (strong || alreadyApplied) && !manualSignature &&
-            !"__thiscall".equals(function.getCallingConventionName()) && parameterApply;
+            !"__thiscall".equals(function.getCallingConventionName()) &&
+            (parameterApply || stackReceiverConvention);
         boolean thisTypeApply = (strong || alreadyApplied) && !manualSignature &&
             ("__thiscall".equals(function.getCallingConventionName()) ||
                 conventionApply) &&
@@ -327,12 +578,20 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
         reasons.add("incoming_this_accesses=" + receiverAccesses);
         reasons.add("incoming_edx_uses=" + edxUses);
         reasons.add("incoming_stack_parameter_uses=" + stackParameterUses);
+        reasons.add("incoming_this_forward_calls=" + receiverForwards);
+        reasons.add("entry_incoming_ecx_capture=" + entryReceiverCapture);
+        reasons.add("ret_stack_matches_explicit_parameters=" + retStackMatches);
         reasons.add("direct_non_thunk_callers=" + directCallers);
         reasons.add("incoming_ecx_receiver_callers=" + receiverAliasCallers);
         reasons.add("attributed_named_callers=" + attributedCallers);
         reasons.add("owner_evidence_coverage=" + (adequateCoverage ? "adequate" : "weak"));
+        reasons.add("unique_primary_physical_vtable=" + physicalOwner);
         if (ownerTypePath.isBlank()) reasons.add("owner_data_type_missing");
         if (!conventionCandidate) reasons.add("calling_convention_not_receiver_compatible");
+        if (stackReceiverConvention)
+            reasons.add("callee_closed_hidden_ecx_receiver_transport");
+        if (attributedCallers < 2)
+            reasons.add("requires_two_independent_named_caller_functions");
         if ((strong || alreadyApplied) &&
                 !"__thiscall".equals(function.getCallingConventionName()) &&
                 !conventionApply &&
@@ -350,29 +609,43 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
             repairApply ? "repair" : confidence, String.join("; ", reasons));
     }
 
-    private boolean callsTargetWithIncomingEcx(Function caller, Function target) {
-        Map<String, ThisValue> registers = new HashMap<>();
-        Map<String, ThisValue> stackSpills = new HashMap<>();
-        registers.put("ECX", new ThisValue(0));
-        InstructionIterator instructions = currentProgram.getListing()
-            .getInstructions(caller.getBody(), true);
-        while (instructions.hasNext()) {
-            Instruction instruction = instructions.next();
-            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
-            String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
-            if ("CALL".equals(mnemonic)) {
-                Function called = calledFunction(instruction);
-                ThisValue receiver = registers.get("ECX");
-                if (called != null && called.getEntryPoint().equals(target.getEntryPoint()) &&
-                        receiver != null && receiver.offset == 0) return true;
-                registers.remove("EAX");
-                registers.remove("ECX");
-                registers.remove("EDX");
-                continue;
-            }
-            updateRegisters(mnemonic, operands, registers, stackSpills);
+    /**
+     * New semantic ownership requires a real primary physical vptr, not merely
+     * matching object geometry.  The offset-zero member must point at one
+     * accepted vtable structure and that same datatype may not be the primary
+     * vptr of a different semantic class.  Secondary subobject vtables therefore
+     * cannot win this proof by datatype iteration order.
+     */
+    private boolean uniquePrimaryPhysicalVtable(String ownerTypePath) {
+        DataType type = dataTypes.getDataType(ownerTypePath);
+        if (!(type instanceof Structure owner) || owner.isZeroLength()) return false;
+        DataTypeComponent component = owner.getComponentAt(0);
+        if (component == null || component.getOffset() != 0) return false;
+        DataType member = unwrap(component.getDataType());
+        if (!(member instanceof Pointer pointer)) return false;
+        DataType target = unwrap(pointer.getDataType());
+        if (!(target instanceof Structure vtable) ||
+                !vtable.getPathName().contains("/Recovered/VTables/") ||
+                vtable.getName().contains("_at_")) return false;
+
+        int owners = 0;
+        java.util.Iterator<Structure> structures = dataTypes.getAllStructures();
+        while (structures.hasNext()) {
+            Structure candidate = structures.next();
+            if (!namedReceiverType(candidate) || candidate.isZeroLength()) continue;
+            DataTypeComponent first = candidate.getComponentAt(0);
+            if (first == null || first.getOffset() != 0) continue;
+            DataType firstType = unwrap(first.getDataType());
+            if (!(firstType instanceof Pointer firstPointer)) continue;
+            DataType pointed = unwrap(firstPointer.getDataType());
+            if (pointed != null && pointed.getPathName().equals(vtable.getPathName())) owners++;
+            if (owners > 1) return false;
         }
-        return false;
+        return owners == 1;
+    }
+
+    private boolean callsTargetWithIncomingEcx(Function caller, Function target) {
+        return !traceIncomingThisCalls(caller, "", target, false).isEmpty();
     }
 
     private boolean receiverOnlyFastcallSignature(Function function) {
@@ -382,6 +655,24 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
         Parameter parameter = parameters.get(0);
         return parameter.isRegisterVariable() && parameter.getRegister() != null &&
             "ECX".equals(canonicalRegister(parameter.getRegister().getName()));
+    }
+
+    /**
+     * Converting a one-register fastcall helper into Owner::__thiscall changes the semantic
+     * receiver type globally.  That is safe only when the existing ECX parameter is generic
+     * machine storage or already names the proposed owner.  A concrete foreign/base pointer
+     * (for example STGameObjC *) is independent evidence and must not be narrowed merely
+     * because the currently observed callers all belong to one derived class.
+     */
+    private boolean receiverConversionCompatible(Function function, String ownerTypePath) {
+        if (!"__fastcall".equals(function.getCallingConventionName())) return true;
+        List<Parameter> parameters = explicitParameters(function);
+        if (parameters.size() != 1) return false;
+        DataType type = parameters.get(0).getDataType();
+        if (!(type instanceof Pointer pointer)) return Undefined.isUndefined(type);
+        DataType pointee = unwrap(pointer.getDataType());
+        if (pointee instanceof VoidDataType || Undefined.isUndefined(pointee)) return true;
+        return pointee.getPathName().equals(ownerTypePath);
     }
 
     private List<Parameter> explicitParameters(Function function) {
@@ -464,6 +755,96 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
             }
         }
         return uses;
+    }
+
+    /**
+     * Count direct calls which receive the callee's original, unadjusted ECX value.
+     * The value may travel through a callee-saved register or a fixed EBP spill.  This
+     * is deliberately a transport proof only: semantic ownership still comes from the
+     * independently typed callers collected above.
+     */
+    private int incomingThisForwardCalls(Function function) {
+        Map<String, ThisValue> registers = new HashMap<>();
+        Map<String, ThisValue> stackSpills = new HashMap<>();
+        registers.put("ECX", new ThisValue(0));
+        int calls = 0;
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+            if ("CALL".equals(mnemonic)) {
+                ThisValue receiver = registers.get("ECX");
+                if (calledFunction(instruction) != null && receiver != null &&
+                        receiver.offset == 0) calls++;
+                registers.remove("EAX");
+                registers.remove("ECX");
+                registers.remove("EDX");
+            }
+            else updateRegisters(mnemonic, operands, registers, stackSpills);
+        }
+        return calls;
+    }
+
+    /**
+     * Require an entry-prologue capture of incoming ECX before any call, branch, or
+     * redefinition.  This excludes ordinary stdcall helpers which merely happen to
+     * inherit a caller's volatile ECX value at one callsite.
+     */
+    private boolean entryIncomingEcxCapture(Function function) {
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        int seen = 0;
+        while (instructions.hasNext() && seen++ < 32) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+            if ("MOV".equals(mnemonic) && operands.length >= 2 &&
+                    "ECX".equals(cleanRegister(operands[1])) &&
+                    isFullRegister(operands[1])) {
+                String destination = cleanRegister(operands[0]);
+                MemoryExpr memory = memoryExpr(operands[0]);
+                if (destination != null && Set.of("EBX", "ESI", "EDI")
+                        .contains(destination) && isFullRegister(operands[0])) return true;
+                if (memory != null && isStackMemory(memory)) return true;
+            }
+            if (instruction.getFlowType().isCall() || instruction.getFlowType().isJump())
+                return false;
+            if (writesIncomingEcx(mnemonic, operands)) return false;
+        }
+        return false;
+    }
+
+    private boolean writesIncomingEcx(String mnemonic, String[] operands) {
+        if (operands.length == 0 || !"ECX".equals(cleanRegister(operands[0])) ||
+                !isFullRegister(operands[0])) return false;
+        return !Set.of("CMP", "TEST", "PUSH").contains(mnemonic);
+    }
+
+    private boolean returnStackMatches(Function function) {
+        Set<Long> pops = new TreeSet<>();
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            if (!"RET".equals(mnemonic) && !"RETF".equals(mnemonic)) continue;
+            Scalar scalar = instruction.getScalar(0);
+            pops.add(scalar == null ? 0 : scalar.getUnsignedValue());
+        }
+        return pops.size() == 1 && pops.iterator().next() == expectedStackBytes(function);
+    }
+
+    private int expectedStackBytes(Function function) {
+        int result = 0;
+        for (Parameter parameter : function.getParameters()) {
+            if (parameter.isAutoParameter()) continue;
+            int length = parameter.getDataType() == null ? 4 : parameter.getDataType().getLength();
+            if (length < 1) length = 4;
+            result += Math.max(4, (length + 3) & ~3);
+        }
+        return result;
     }
 
     private void updateRegisters(String mnemonic, String[] operands,
@@ -572,7 +953,7 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
     }
 
     private boolean recoveredAnonymousOwner(String owner) {
-        return owner.contains("SubmarineTitans::Recovered::HiddenThis::AnonReceiver_") ||
+        return owner.contains("SubmarineTitans::Recovered::HiddenThis::") ||
             owner.contains("SubmarineTitans::Recovered::PointerShapes::Anon") ||
             owner.contains("SubmarineTitans::Recovered::ClassPointees::Anon");
     }
@@ -786,9 +1167,87 @@ public class STMethodOwnerAnalyzer extends GhidraScript {
             .replace("\r", "\\r").replace("\n", "\\n").replace("\t", "\\t") + "\"";
     }
 
-    private static class ThisValue {
-        final long offset;
-        ThisValue(long offset) { this.offset = offset; }
+    private record ThisValue(long offset) { }
+    private record TypedOwner(String owner, String reason) {
+        @Override
+        public boolean equals(Object value) {
+            // Provenance text is diagnostic.  At a CFG join only the concrete
+            // semantic owner is part of the dataflow fact.
+            return value instanceof TypedOwner other && owner.equals(other.owner);
+        }
+
+        @Override
+        public int hashCode() { return owner.hashCode(); }
+    }
+
+    private static final class TypedOwnerFlowState {
+        final Map<String, TypedOwner> registers = new HashMap<>();
+        final Map<Integer, TypedOwner> stack = new HashMap<>();
+
+        TypedOwnerFlowState copy() {
+            TypedOwnerFlowState result = new TypedOwnerFlowState();
+            result.registers.putAll(registers);
+            result.stack.putAll(stack);
+            return result;
+        }
+
+        TypedOwnerFlowState intersection(TypedOwnerFlowState other) {
+            TypedOwnerFlowState result = new TypedOwnerFlowState();
+            intersectTyped(registers, other.registers, result.registers);
+            intersectTyped(stack, other.stack, result.stack);
+            return result;
+        }
+
+        private static <K> void intersectTyped(Map<K, TypedOwner> left,
+                Map<K, TypedOwner> right, Map<K, TypedOwner> output) {
+            for (Map.Entry<K, TypedOwner> entry : left.entrySet())
+                if (entry.getValue().equals(right.get(entry.getKey())))
+                    output.put(entry.getKey(), entry.getValue());
+        }
+
+        @Override
+        public boolean equals(Object value) {
+            return value instanceof TypedOwnerFlowState other &&
+                registers.equals(other.registers) && stack.equals(other.stack);
+        }
+
+        @Override
+        public int hashCode() { return 31 * registers.hashCode() + stack.hashCode(); }
+    }
+
+    private static final class ThisFlowState {
+        final Map<String, ThisValue> registers = new HashMap<>();
+        final Map<String, ThisValue> stackSpills = new HashMap<>();
+
+        ThisFlowState copy() {
+            ThisFlowState result = new ThisFlowState();
+            result.registers.putAll(registers);
+            result.stackSpills.putAll(stackSpills);
+            return result;
+        }
+
+        ThisFlowState intersection(ThisFlowState other) {
+            ThisFlowState result = new ThisFlowState();
+            intersect(registers, other.registers, result.registers);
+            intersect(stackSpills, other.stackSpills, result.stackSpills);
+            return result;
+        }
+
+        private static void intersect(Map<String, ThisValue> left,
+                Map<String, ThisValue> right, Map<String, ThisValue> output) {
+            for (Map.Entry<String, ThisValue> entry : left.entrySet())
+                if (entry.getValue().equals(right.get(entry.getKey())))
+                    output.put(entry.getKey(), entry.getValue());
+        }
+
+        @Override
+        public boolean equals(Object value) {
+            return value instanceof ThisFlowState other &&
+                registers.equals(other.registers) && stackSpills.equals(other.stackSpills);
+        }
+
+        @Override
+        public int hashCode() { return 31 * registers.hashCode() + stackSpills.hashCode(); }
     }
     private static class MemoryExpr {
         final String register;

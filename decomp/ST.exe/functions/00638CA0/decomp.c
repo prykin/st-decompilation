@@ -1,7 +1,11 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
+/* [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=forwarded:0041E530; family_names=STSprGameObjC::GetMessage; ret4=10;
+   direct_offsets={10:1,14:1,18:1,1c:0}; forwarded_envelope=true */
+
+int __thiscall FUN_00638ca0(void *this,STMessage *message)
 
 {
   STT3DSprC *this_00;
@@ -24,15 +28,16 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
   byte *local_8;
 
   /* ST_CALLSITE[00638CAE]: CALL 0x00404f07; direct=00404F07 STSprGameObjC::GetMessage */
-  iVar5 = STSprGameObjC::GetMessage(this,param_1);
+  iVar5 = STSprGameObjC::GetMessage(this,message);
   if (iVar5 == 0xffff) {
     return 0xffff;
   }
-  SVar2 = param_1->id;
+  SVar2 = message->id;
   if (MESS_SHARED_0003 < SVar2) {
     if (SVar2 != MESS_SHARED_010F) {
       return 0;
     }
+
     local_8 = Library::DKW::LIB::MemAlloc(0x7a);
     thunk_FUN_00639bf0(this,(undefined4 *)local_8);
     /* ST_CALLSITE[00639292]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
@@ -48,7 +53,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     if (SVar2 != MESS_ID_CREATE) {
       return 0;
     }
-    puVar9 = (byte *)((param_1->arg0).ptr);
+    puVar9 = (byte *)((message->arg0).ptr);
     if (puVar9[3] == 2) {
       thunk_FUN_00639c40(this,puVar9);
       puVar9 = (byte *)((int)this + 0x2ab);
@@ -70,14 +75,17 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     if (STField<char>(this,0x26f) == '\x01') {
       return 0;
     }
+
     thunk_FUN_00639990(this);
     return 0;
   }
   switch(STField<undefined1>(this,0x26f)) {
   case 0:
     if (STField<char>(this,0x270) == '\0') {
+
       thunk_FUN_00639990(this);
     }
+
     uVar6 = thunk_FUN_00639670(this,g_playSystem_00802A38->field_00E4);
     if (0 < (int)uVar6) {
       iVar8 = STField<int>(this,0x2bf);
@@ -96,10 +104,13 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
       uVar12 = 0x53;
       uVar11 = 0x5a;
       iVar8 = 1;
+
       uVar5 = thunk_FUN_004ad650((STT3DSprC *)((int)this + 0x1d5));
+
       Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand
                 (STField<void *>(this,0x211),uVar5,iVar8,uVar11,uVar12);
       STField<undefined1>(this,0x26f) = 2;
+
       thunk_FUN_00639990(this);
       return 0;
     }
@@ -119,12 +130,12 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
     iVar8 = STField<int>(this,0x282);
     sVar3 = (short)(iVar8 >> 0x1f);
     if (iVar8 < 0) {
-      param_1 = (STMessage *)
+      message = (STMessage *)
                 ((short)(((short)(iVar8 / 200) + sVar3) -
                         (short)((longlong)iVar8 * 0x51eb851f >> 0x3f)) + -1);
     }
     else {
-      param_1 = (STMessage *)
+      message = (STMessage *)
                 (short)(((short)(iVar8 / 200) + sVar3) -
                             (short)((longlong)iVar8 * 0x51eb851f >> 0x3f));
     }
@@ -136,10 +147,10 @@ undefined4 __thiscall FUN_00638ca0(void *this,STMessage *param_1)
          /* ST_CALLSITE[00638F8A]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
          (VisibleClassTy::sub_00558C00
                     (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,iVar8,
-                     &local_c,&local_10), -1 < (int)param_1)) &&
-        ((((int)param_1 < 5 && (-1 < local_c)) &&
+                     &local_c,&local_10), -1 < (int)message)) &&
+        ((((int)message < 5 && (-1 < local_c)) &&
          ((local_c < pVVar4->field_0030 &&
-          ((local_10 = local_10 + g_centeredOffsets5[(int)param_1], -1 < local_10 &&
+          ((local_10 = local_10 + g_centeredOffsets5[(int)message], -1 < local_10 &&
            (local_10 < pVVar4->field_0034)))))))) && (pVVar4->field_004C != nullptr)) {
       bVar1 = pVVar4->field_004C[local_c + local_10 * pVVar4->field_0030];
 joined_r0x00639236:
@@ -147,7 +158,8 @@ joined_r0x00639236:
         if (STField<char>(this,0x271) == '\0') {
           return 0;
         }
-        thunk_FUN_004ad430((STT3DSprC *)((int)this + 0x1d5));
+        /* ST_CALLSITE[00639016]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+        STT3DSprC::sub_004AD430((STT3DSprC *)((int)this + 0x1d5));
         STField<undefined1>(this,0x271) = 0;
         return 0;
       }
@@ -165,6 +177,7 @@ joined_r0x00639236:
     if (STField<char>(this,0x270) == '\0') {
       return 0;
     }
+
     thunk_FUN_00639990(this);
     return 0;
   case 2:
@@ -173,10 +186,12 @@ joined_r0x00639236:
       return 0;
     }
     this_00 = (STT3DSprC *)((int)this + 0x1d5);
+
     iVar8 = thunk_FUN_004ac910(this_00,'\r');
     if (STField<char>(this,0x2a2) != '\0') {
       /* ST_CALLSITE[00639069]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar6 = STT3DSprC::sub_004ACD30(this_00,'\x0e');
+
       iVar7 = thunk_FUN_004ac910(this_00,'\x0e');
       if ((iVar6 + -1 <= iVar7) && (STField<char>(this,0x270) != '\0')) {
         /* ST_CALLSITE[0063908C]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
@@ -189,6 +204,7 @@ joined_r0x00639236:
     }
     /* ST_CALLSITE[006390BB]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
     iVar8 = STT3DSprC::sub_004ACD30(this_00,'\r');
+
     iVar6 = thunk_FUN_004ac910(this_00,'\r');
     if (iVar8 + -1 == iVar6) {
       /* ST_CALLSITE[006390D4]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
@@ -196,6 +212,7 @@ joined_r0x00639236:
     }
     /* ST_CALLSITE[006390DD]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
     iVar8 = STT3DSprC::sub_004ACD30(this_00,'\x0f');
+
     iVar6 = thunk_FUN_004ac910(this_00,'\x0f');
     if (iVar8 + -1 == iVar6) {
       STField<undefined1>(this,0x26f) = 3;
@@ -210,12 +227,12 @@ joined_r0x00639236:
     iVar8 = STField<int>(this,0x282);
     sVar3 = (short)(iVar8 >> 0x1f);
     if (iVar8 < 0) {
-      param_1 = (STMessage *)
+      message = (STMessage *)
                 ((short)(((short)(iVar8 / 200) + sVar3) -
                         (short)((longlong)iVar8 * 0x51eb851f >> 0x3f)) + -1);
     }
     else {
-      param_1 = (STMessage *)
+      message = (STMessage *)
                 (short)(((short)(iVar8 / 200) + sVar3) -
                             (short)((longlong)iVar8 * 0x51eb851f >> 0x3f));
     }
@@ -227,16 +244,17 @@ joined_r0x00639236:
           /* ST_CALLSITE[006391D1]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
           (VisibleClassTy::sub_00558C00
                      (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar6,iVar8,
-                      &local_10,&local_c), -1 < (int)param_1)) &&
-         (((int)param_1 < 5 && (-1 < local_10)))) &&
+                      &local_10,&local_c), -1 < (int)message)) &&
+         (((int)message < 5 && (-1 < local_10)))) &&
         ((local_10 < pVVar4->field_0030 &&
-         ((local_c = local_c + g_centeredOffsets5[(int)param_1], -1 < local_c &&
+         ((local_c = local_c + g_centeredOffsets5[(int)message], -1 < local_c &&
           (local_c < pVVar4->field_0034)))))) && (pVVar4->field_004C != nullptr)) {
       bVar1 = pVVar4->field_004C[local_10 + local_c * pVVar4->field_0030];
       goto joined_r0x00639236;
     }
     break;
   case 3:
+
     thunk_FUN_00639630(this);
     return 0;
   default:

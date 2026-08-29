@@ -8,11 +8,16 @@
    EAX,EAX | 0054AEE0 @ 0054AF24 -> TEST TEST EAX,EAX
 
    [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 0054AEE0 -> 00544990 @ 0054AF24 */
+   Evidence: 0054AEE0 -> 00544990 @ 0054AF24
 
-int __fastcall FUN_00544990(CursorClassTy *param_1)
+   [STMethodOwnerApplier] Structural method owner recovered as CursorClassTy.
+   Evidence: this_call_owners=[CursorClassTy]; agreed_this_calls=6; incoming_this_accesses=1;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+
+int __thiscall CursorClassTy::sub_00544990(CursorClassTy *this)
 
 {
-  return (uint)(param_1->field_0493 == 2);
+  return (uint)(this->field_0493 == 2);
 }
 

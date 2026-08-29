@@ -55,22 +55,26 @@ void __thiscall STJellyGunC::LifeGun(STJellyGunC *this)
   AnonShape_0041AF40_F59F8577 local_4c;
   STAppCVTable **local_2c;
   int local_28;
-  undefined4 local_24;
+  uint local_24;
   int local_20;
   uint local_1c;
   int local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-  undefined4 local_c;
+  uint local_14;
+  uint local_10;
+  uint local_c;
   char local_5;
 
-  iVar11 = thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)this);
+
+  iVar11 = thunk_FUN_0041c710((RecoveredRecordView_0041C710_A35B7121 *)this);
   puVar1 = &this->field_01D5;
   if (iVar11 == 0) {
     iVar11 = 0;
+
     uVar12 = thunk_FUN_004ad650((STT3DSprC *)puVar1);
+
     Library::Ourlib::ST3DSMAP::SprSetVisible(this->field_0211,uVar12,iVar11);
-    iVar10 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)this);
+
+    iVar10 = thunk_FUN_0041caf0((RecoveredRecordView_0041CAF0_18493751 *)this);
     if (iVar10 == 1) {
       iVar11 = 1;
     }
@@ -80,10 +84,13 @@ void __thiscall STJellyGunC::LifeGun(STJellyGunC *this)
   }
   else {
     iVar11 = 1;
+
     uVar12 = thunk_FUN_004ad650((STT3DSprC *)puVar1);
+
     Library::Ourlib::ST3DSMAP::SprSetVisible(this->field_0211,uVar12,iVar11);
     iVar11 = 1;
   }
+
   iVar12 = thunk_FUN_004ad650((STT3DSprC *)puVar1);
   FUN_006e6870(this->field_0211,iVar12,iVar11);
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -108,6 +115,7 @@ void __thiscall STJellyGunC::LifeGun(STJellyGunC *this)
             (*(char *)(iVar16 * iVar14 + DAT_007fb26c + iVar11) == '\0')))))))) ||
         (((&DAT_007fb24c)[this->field_0024] != 0 &&
          (*(char *)(iVar16 * iVar14 + (&DAT_007fb24c)[this->field_0024] + iVar11) != '\0')))) ||
+
        (uVar11 = thunk_FUN_00497030(iVar11,iVar14,this->field_0024,1,DAT_007e6760), (int)uVar11 < 0)
        ) {
       if (local_2c == nullptr) {
@@ -117,6 +125,7 @@ LAB_005829e6:
       else {
         if (local_2c != (STAppCVTable **)0x1) {
           if (local_2c != (STAppCVTable **)0x2) {
+
             local_EAX_970 =
                  ReportDebugMessage("E:\\__titans\\Igor\\to_jelly.cpp",0x11b,0,0,"%s"
                                     ,"STJellyGunC::LifeGun Error Move");
@@ -252,6 +261,7 @@ LAB_00582958:
     }
     break;
   case CASE_2:
+
     uVar12 = thunk_FUN_004ac910(puVar1,'\b');
     local_1c = uVar12;
     if (((uVar12 == 1) && (this->field_0241 != 0xff)) &&
@@ -299,6 +309,7 @@ LAB_00582958:
     if (this->field_0x24f != '\0') {
       /* ST_CALLSITE[00582E0A]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar11 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\t');
+
       iVar14 = thunk_FUN_004ac910(puVar1,'\t');
       uVar12 = local_1c;
       if (iVar14 == iVar11 + -1) {

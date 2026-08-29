@@ -22,10 +22,12 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = g_cursorClass_00802A30;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_4c.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xab9,0,iVar4,"%s"
                                ,"FSGSTy::CreateGame");
     if (iVar5 == 0) {

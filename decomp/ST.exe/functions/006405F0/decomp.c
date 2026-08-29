@@ -38,16 +38,16 @@ FUN_006405f0(int param_1,undefined4 param_2,undefined4 param_3,ushort param_4,us
             ushort param_6,ushort param_7,ushort param_8,ushort param_9,ushort param_10)
 
 {
-  undefined4 local_38 [5];
-  undefined4 local_24;
+  uint local_38 [5];
+  uint local_24;
   ushort local_1c;
   ushort local_1a;
   ushort local_18;
   ushort local_16;
   ushort local_14;
-  undefined2 local_12;
-  undefined4 local_10;
-  undefined4 local_c;
+  ushort local_12;
+  uint local_10;
+  uint local_c;
   ushort local_8;
   ushort local_6;
 

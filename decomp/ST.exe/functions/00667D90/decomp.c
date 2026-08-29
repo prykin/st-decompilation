@@ -33,10 +33,12 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0xeca,0,iVar5,
                                "AiFltClassTy::GetMessage error mess->id == %lX Name=%d",message->id,
                                local_10->field_0018);
@@ -57,11 +59,12 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
       if (SVar1 == MESS_SHARED_0003) {
         /* ST_CALLSITE[00667F87]: CALL 0x00401cdf; direct=00401CDF AiFltClassTy::sub_0065D6E0 */
         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-        sub_0065D6E0((AnonShape_0065D6E0_0F9074F6 *)local_10,extraout_EDX);
+        sub_0065D6E0((RecoveredRecordView_0065D6E0_071C1E69 *)local_10,extraout_EDX);
         /* ST_CALLSITE[00667F8E]: CALL 0x00404c41; direct=00404C41 AiFltClassTy::sub_0065D720 */
         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-        sub_0065D720((AnonShape_0065D720_52DE2AAB *)this_00,extraout_EDX_00);
-        thunk_FUN_0065d480(this_00);
+        sub_0065D720((RecoveredRecordView_0065D720_071C1E69 *)this_00,extraout_EDX_00);
+        /* ST_CALLSITE[00667F95]: CALL 0x0040220c; direct=0040220C AiFltClassTy::sub_0065D480 */
+        sub_0065D480(this_00);
       }
       else if (SVar1 == MESS_ID_NONE) {
         if (local_10->field_0093 == 0) {
@@ -122,7 +125,7 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
     }
     else if (SVar1 == MESS_SHARED_010F) {
       local_8 = 0;
-      /* ST_CALLSITE[00667FB0]: CALL 0x00402c39; direct=00402C39 AiFltClassTy::PrepareToSave */
+      /* ST_CALLSITE[00667FB0]: CALL 0x00402c39; direct=00402C39 AiFltClassTy::PrepareToSave; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
       local_c = PrepareToSave(local_10,&local_8);
       /* ST_CALLSITE[00667FC7]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
       STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_c,local_8);
@@ -141,9 +144,10 @@ int __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,STMessage *message)
     }
     /* ST_CALLSITE[00667FFF]: CALL 0x00403a1c; direct=00403A1C AiFltClassTy::sub_00661CA0 */
     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-    sub_00661CA0((AnonShape_00661CA0_93A030EF *)local_10,extraout_EDX,(int)message);
+    sub_00661CA0((RecoveredRecordView_00661CA0_FD5CEA6E *)local_10,extraout_EDX,(int)message);
   }
 LAB_00668010:
+
   FUN_006e5fd0(this_00,message);
   g_currentExceptionFrame = local_54.previous;
   return 0;

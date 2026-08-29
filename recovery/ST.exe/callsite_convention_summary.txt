@@ -1,11 +1,12 @@
 program=ST.exe
-candidates=81
-candidates_with_direct_calls=78
-callsites=641
-suggested_thiscall=50
+candidates=1289
+candidates_with_direct_calls=1094
+callsites=5078
+suggested_thiscall=875
 suggested_cdecl=1
-automatic_cdecl=0
-classifications={possible_preserved_this=11, static_cdecl_candidate=1, stdcall_or_preserved_this_candidate=27, thiscall_supported=39, unreferenced=3}
+suggested_stdcall=8
+automatic_convention_repairs=0
+classifications={ambiguous=55, ecx_is_not_receiver_candidate=34, possible_preserved_this=22, static_cdecl_candidate=1, static_stdcall_candidate=8, stdcall_or_preserved_this_candidate=121, thiscall_supported=853, unreferenced=195}
 note=Direct references to the function and every thunk resolving to it are audited.
 note_limit=Indirect virtual calls cannot be attributed to one concrete target here.
-note_safety=Only repeatable all-caller cleanup with no pointer ECX and no RET pop is enabled; the transactional applier rechecks the exact signature baseline.
+note_safety=Only repeatable exact stack discipline plus complete absence of incoming ECX consumption is enabled; the transactional applier rechecks the exact signature baseline.

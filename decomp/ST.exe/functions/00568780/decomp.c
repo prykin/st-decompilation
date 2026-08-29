@@ -7,8 +7,7 @@ undefined4 __thiscall FUN_00568780(void *this,int param_1,int param_2)
   int iVar1;
   InternalExceptionFrame local_50;
   uint local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0;
   if (STField<int>(this,0xf8b) == 0) {
     return 0;

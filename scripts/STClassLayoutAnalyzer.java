@@ -58,7 +58,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         "^(Get|Set|Is|Has)([A-Z][A-Za-z0-9_]*)$");
     private static final String MARKER = "[STClassLayoutApplier]";
     private static final Set<String> COOPERATING_LAYOUT_MARKERS = Set.of(
-        MARKER, "[STGlobalDataApplier]");
+        MARKER, "[STGlobalDataApplier]", "[STHiddenThisApplier generated]");
     private static final String HASH_MARKER = "generated_layout_sha256=";
     private static final String OVERLAY_HASH_MARKER = "generated_overlay_sha256=";
     private static final String SWITCH_ENUM_MARKER = "[STSwitchEnumApplier]";
@@ -137,12 +137,14 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             for (MemberArrayProposal array : ownerArrays)
                 if (array.apply) observedSize = Math.max(observedSize,
                     array.offset + array.size);
-            if (vtableTypes.containsKey(evidence.owner)) observedSize = Math.max(observedSize, 4);
+            String ownerVtableType = vtableTypes.get(evidence.owner);
+            if (ownerVtableType == null)
+                ownerVtableType = existingGeneratedVtableType(structure);
+            if (ownerVtableType != null) observedSize = Math.max(observedSize, 4);
             long exactSize = exactSizes.getOrDefault(evidence.owner, -1L);
             long proposedSize = exactSize >= observedSize ? exactSize : observedSize;
             if (proposedSize < 1 || proposedSize > MAX_CLASS_SIZE) continue;
 
-            String ownerVtableType = vtableTypes.get(evidence.owner);
             List<NestedTypeProposal> ownerNested = prepareNestedTypes(evidence, nestedFields,
                 ownerVtableType != null);
             List<FieldProposal> ownerFields = makeFields(evidence, structure,
@@ -156,7 +158,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 proposedSize == structure.getLength() && ownerFields.stream()
                     .anyMatch(field -> isSurgicalField(structure, field));
             boolean hasExactSize = exactSize >= observedSize;
-            boolean hasVtable = vtableTypes.containsKey(evidence.owner);
+            boolean hasVtable = ownerVtableType != null;
             // A single remote access is too weak to justify materializing a mostly-empty,
             // potentially enormous structure.  Require a second independent offset, an
             // applied vtable type, or a unique constructor allocation size.
@@ -314,6 +316,7 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 Function called = calledFunction(instruction);
                 if (called != null) {
                     inferThisReceiver(owner, function, called, registers.get("ECX"));
+                    inferRegisterArguments(owner, function, called, registers);
                     inferStackArguments(owner, function, called, pendingPushes);
                 }
                 registers.remove("EAX");
@@ -1587,6 +1590,47 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             "] used as receiver of " + called.getName(true));
     }
 
+    /**
+     * MSVC x86 fastcall carries its first two explicit arguments in ECX and EDX.
+     * A value loaded from an exact this-relative field and then consumed by a
+     * trusted recovered register parameter is the same type boundary as a PUSH
+     * consumed by cdecl/stdcall.  Keeping this proof here avoids making the
+     * decompiler's current cast spelling authoritative and applies equally to
+     * every recovered helper, including DArray utilities.
+     */
+    private void inferRegisterArguments(ClassEvidence owner, Function containing,
+            Function called, Map<String, RegisterValue> registers) {
+        if (!"__fastcall".equals(called.getCallingConventionName())) return;
+        boolean recoveredAbi = recoveredPrototype(called);
+        for (Parameter parameter : called.getParameters()) {
+            if (parameter.isAutoParameter() || !parameter.isRegisterVariable() ||
+                    parameter.getRegister() == null) continue;
+            String register = canonicalRegister(parameter.getRegister().getName());
+            if (!("ECX".equals(register) || "EDX".equals(register))) continue;
+            RegisterValue value = registers.get(register);
+            if (value == null) continue;
+            boolean trusted = trusted(parameter.getSource()) || recoveredAbi;
+            if (!trusted) continue;
+            String evidence = addr(containing.getEntryPoint()) + " " + register +
+                " argument " + parameter.getName() + " of " + called.getName(true);
+            if (value.kind == ValueKind.THIS_ADDRESS && value.offset != 0) {
+                String inferredType = addressedFieldType(parameter.getDataType());
+                if (!inferredType.isBlank())
+                    field(owner, value.offset).addType(inferredType,
+                        evidence + " receives exact address of [this+" +
+                        hex(value.offset) + "]");
+                continue;
+            }
+            if (value.kind != ValueKind.FIELD_VALUE) continue;
+            String inferredType = meaningfulTypeSpecification(parameter.getDataType());
+            FieldEvidence field = field(owner, value.offset);
+            if (!inferredType.isBlank()) field.addType(inferredType,
+                evidence + " receives [this+" + hex(value.offset) + "]");
+            if (meaningfulParameterName(parameter.getName()))
+                field.addName(cleanFieldName(parameter.getName()), evidence);
+        }
+    }
+
     private void inferStackArguments(ClassEvidence owner, Function containing, Function called,
             List<PushEvidence> pushes) {
         String convention = called.getCallingConventionName();
@@ -2709,6 +2753,30 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         return result;
     }
 
+    /**
+     * Hidden-this and callable-receiver passes can own a neutral offset-zero
+     * vptr even though no constructor-backed row exists in vtable_proposals.tsv.
+     * Once class-layout adopts that hash-owned structure, later rebuilds must
+     * carry the cooperating vptr forward.  Dropping it turns every previously
+     * typed dispatch through the receiver back into raw code** calls.
+     */
+    private String existingGeneratedVtableType(Structure owner) {
+        if (!isOwnedUnchangedCandidate(owner) || owner.getLength() <
+                currentProgram.getDefaultPointerSize()) return null;
+        DataTypeComponent component = owner.getComponentAt(0);
+        if (component == null || component.getOffset() != 0 ||
+                !"vtable".equals(component.getFieldName()) ||
+                !(untypedef(component.getDataType()) instanceof Pointer pointer)) return null;
+        DataType pointed = untypedef(pointer.getDataType());
+        if (!(pointed instanceof Structure table) ||
+                !table.getName().endsWith("VTable")) return null;
+        String description = unt(table.getDescription());
+        if (!description.contains("[STHiddenThisApplier generated]") &&
+                !description.contains("[STCallableReceiverApplier]") &&
+                !description.contains("[STVTableApplier]")) return null;
+        return table.getPathName();
+    }
+
     private String ownerOf(Function function) {
         String qualified = function.getName(true);
         int separator = qualified.lastIndexOf("::");
@@ -2759,6 +2827,12 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         String description = structure.getDescription();
         if (description == null || COOPERATING_LAYOUT_MARKERS.stream()
                 .noneMatch(description::contains)) return false;
+        // Hidden-this first creates only an extent and, when observed, one neutral
+        // vptr.  That exact pristine shell has no hash yet because it intentionally
+        // owns no field semantics.  Let class-layout take it over once method-body
+        // accesses provide the ordinary exact-offset evidence.  Any additional
+        // component or altered vptr is preserved as manual/review state.
+        if (pristineHiddenReceiverSkeleton(structure)) return true;
         String stored = storedLayoutHash(description);
         if (stored == null) return false;
         if (stored.equals(layoutHash(structure))) return true;
@@ -2769,6 +2843,26 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         // the same transient representation and accept only a cryptographic
         // match with that legacy hash.
         return stored.equals(transientLayoutHash(structure));
+    }
+
+    private boolean pristineHiddenReceiverSkeleton(Structure structure) {
+        String description = structure.getDescription();
+        if (!structure.getPathName().startsWith(
+                "/SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_") ||
+                description == null ||
+                !description.contains("[STHiddenThisApplier generated]")) return false;
+        DataTypeComponent[] components = structure.getDefinedComponents();
+        if (components.length == 0) return true;
+        if (components.length != 1) return false;
+        DataTypeComponent component = components[0];
+        if (component.getOffset() != 0 || !"vtable".equals(component.getFieldName()) ||
+                !(untypedef(component.getDataType()) instanceof Pointer pointer)) return false;
+        DataType pointed = untypedef(pointer.getDataType());
+        return pointed instanceof Structure vtable &&
+            vtable.getPathName().startsWith(
+                "/SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_") &&
+            vtable.getName().endsWith("VTable") && vtable.getDescription() != null &&
+            vtable.getDescription().contains("[STHiddenThisApplier generated]");
     }
 
     private boolean isOwnedSurgicalCandidate(Structure structure) {
@@ -3471,6 +3565,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         }
         String uniqueType() {
             if (inferredTypes.size() == 1) return inferredTypes.keySet().iterator().next();
+            String nestedPointee = dominantNestedPointeeType();
+            if (!nestedPointee.isBlank()) return nestedPointee;
             if (hasNarrowCharQuorum()) return "/char";
             String fullWidthScalar = fullWidthScalarType();
             if (!fullWidthScalar.isBlank()) return fullWidthScalar;
@@ -3486,6 +3582,30 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 type.startsWith("pointer:"));
             return pointerAlternativesOnly && namedPointers.size() == 1 ?
                 namedPointers.get(0) : "";
+        }
+        /**
+         * A dynamic byte/word access through one pointer proves addressability, not that the
+         * complete pointee is an array of that primitive.  Prefer the generated nested record
+         * only when the same loaded pointer is independently reused for a dense fixed-offset
+         * layout.  A named/concrete competing pointee still vetoes the refinement.
+         */
+        private String dominantNestedPointeeType() {
+            List<String> nested = inferredTypes.keySet().stream().filter(type ->
+                type.startsWith("pointer:/SubmarineTitans/Recovered/ClassPointees/"))
+                .toList();
+            if (nested.size() != 1 || pointerUses < 8) return "";
+            List<PointeeFieldEvidence> fixed = pointeeFields.values().stream()
+                .filter(field -> field.uniqueSize() > 0).toList();
+            int sites = fixed.stream().mapToInt(field -> field.sites.size()).sum();
+            if (fixed.size() < 3 || sites < 8) return "";
+            for (String type : inferredTypes.keySet()) {
+                if (type.equals(nested.get(0))) continue;
+                if (!Set.of("pointer:/void", "pointer:/byte", "pointer:/uchar",
+                        "pointer:/char", "pointer:/ushort", "pointer:/short",
+                        "pointer:/undefined1", "pointer:/undefined2",
+                        "pointer:/undefined4").contains(type)) return "";
+            }
+            return nested.get(0);
         }
         boolean hasDominantSameWidthScalarType() {
             return !dominantSameWidthScalarType().isBlank();

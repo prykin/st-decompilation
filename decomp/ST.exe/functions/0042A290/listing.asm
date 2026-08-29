@@ -91,7 +91,8 @@ LAB_0042a37b:
 0042A39C  88 83 09 04 00 00         MOV byte ptr [EBX + 0x409],AL
 0042A3A2  88 83 0A 04 00 00         MOV byte ptr [EBX + 0x40a],AL
 0042A3A8  88 83 0B 04 00 00         MOV byte ptr [EBX + 0x40b],AL
-0042A3AE  E8 1D 61 28 00            CALL 0x006b04d0
+LoadLand::override::prt_42a3ae_c759b330:
+0042A3AE  E8 1D 61 28 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F;/uint
 0042A3B3  85 C0                     TEST EAX,EAX
 0042A3B5  74 0E                     JZ 0x0042a3c5
 0042A3B7  8B C8                     MOV ECX,EAX

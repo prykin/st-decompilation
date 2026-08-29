@@ -29,7 +29,7 @@ FUN_0062b830:
 0062B87F  89 7D CC                  MOV dword ptr [EBP + -0x34],EDI
 0062B882  C7 45 D8 01 00 00 00      MOV dword ptr [EBP + -0x28],0x1
 0062B889  89 55 F0                  MOV dword ptr [EBP + -0x10],EDX
-0062B88C  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+0062B88C  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4
 0062B88F  8B 14 85 68 1D 79 00      MOV EDX,dword ptr [EAX*0x4 + 0x791d68]
 0062B896  8B 45 20                  MOV EAX,dword ptr [EBP + 0x20]
 0062B899  33 C9                     XOR ECX,ECX

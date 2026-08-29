@@ -33,10 +33,12 @@ import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
+import ghidra.program.model.lang.Register;
 import ghidra.program.model.scalar.Scalar;
 import ghidra.program.model.symbol.Reference;
 import ghidra.program.model.symbol.ReferenceIterator;
 import ghidra.program.model.symbol.SourceType;
+import ghidra.program.model.symbol.StackReference;
 
 public class STMessageHandlerAnalyzer extends GhidraScript {
     private static final String MESSAGE_PATH = "/SubmarineTitans/Recovered/STMessage";
@@ -44,6 +46,8 @@ public class STMessageHandlerAnalyzer extends GhidraScript {
     private static final String TAG = "RECOVERED_MESSAGE_HANDLER";
     private static final Pattern MESSAGE_OFFSET = Pattern.compile(
         "(?i)\\+\\s*0x(10|14|18|1c)\\]");
+    private static final Pattern FIRST_FRAMED_STACK_ARGUMENT = Pattern.compile(
+        "(?i)\\[(?:E|R)BP\\s*\\+\\s*(?:0x)?0*8\\]");
 
     @Override
     protected void run() throws Exception {
@@ -82,6 +86,39 @@ public class STMessageHandlerAnalyzer extends GhidraScript {
                 ignored -> new Candidate(function));
             candidate.sharedZeroStub = true;
             candidate.familyNames.addAll(callers);
+        }
+
+        // An unnamed optimized handler may still forward its sole stack
+        // argument into one already proven common GetMessage anchor before it
+        // reads the message envelope itself.  This catches stack-slot reuse
+        // where a later x87 output overwrites the same incoming slot and Ghidra
+        // consequently labels the ABI parameter as float.  The proof is
+        // machine-local: exact parameter load, register-preserving forwarding,
+        // exact PUSH into the direct anchor, RET 4, and at least one canonical
+        // message-envelope offset read.  No owner or semantic method name is
+        // inferred from the forwarding edge.
+        Set<Address> messageAnchors = new HashSet<>(candidates.keySet());
+        functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            monitor.checkCancelled();
+            Function function = functions.next();
+            if (function.isExternal() || function.isThunk() ||
+                    candidates.containsKey(function.getEntryPoint())) continue;
+            List<Parameter> explicit = explicitParameters(function);
+            RetEvidence ret = retEvidence(function);
+            if (explicit.size() != 1 || ret.count == 0 || !ret.allPop4 ||
+                    protectedSource(explicit.get(0).getSource())) continue;
+            Address anchor = forwardedMessageAnchor(
+                function, explicit.get(0), messageAnchors);
+            int[] offsets = messageOffsetCounts(function);
+            int directOffsets = java.util.Arrays.stream(offsets).sum();
+            if (anchor == null || directOffsets == 0) continue;
+            Candidate source = candidates.get(anchor);
+            Candidate candidate = new Candidate(function);
+            candidate.forwardedEnvelope = true;
+            candidate.familyNames.addAll(source.familyNames);
+            candidate.familyEntries.add("forwarded:" + addr(anchor));
+            candidates.put(function.getEntryPoint(), candidate);
         }
 
         List<Proposal> proposals = new ArrayList<>();
@@ -136,6 +173,7 @@ public class STMessageHandlerAnalyzer extends GhidraScript {
         Parameter parameter = explicit.size() == 1 ? explicit.get(0) : null;
         boolean parameterCompatible = parameter == null ? candidate.sharedZeroStub :
             isMessagePointer(parameter.getDataType()) || genericMessageParameter(parameter.getDataType());
+        if (candidate.forwardedEnvelope) parameterCompatible = true;
         boolean parameterManualConflict = parameter != null && protectedSource(parameter.getSource()) &&
             !isMessagePointer(parameter.getDataType());
         RetEvidence ret = retEvidence(function);
@@ -154,7 +192,8 @@ public class STMessageHandlerAnalyzer extends GhidraScript {
             "; ret4=" + ret.count +
             "; direct_offsets={10:" + offsets[0] + ",14:" + offsets[1] +
             ",18:" + offsets[2] + ",1c:" + offsets[3] + "}" +
-            (candidate.sharedZeroStub ? "; shared_zero_stub=true" : "");
+            (candidate.sharedZeroStub ? "; shared_zero_stub=true" : "") +
+            (candidate.forwardedEnvelope ? "; forwarded_envelope=true" : "");
         String reason;
         String confidence;
         boolean apply;
@@ -176,6 +215,7 @@ public class STMessageHandlerAnalyzer extends GhidraScript {
             apply = safe;
         }
         else { reason = candidate.sharedZeroStub ? "shared_zero_GetMessage_stub" :
+            candidate.forwardedEnvelope ? "forwarded_GetMessage_envelope_with_RET4" :
             "named_GetMessage_family_with_RET4"; confidence = "high"; apply = safe; }
 
         return new Proposal(apply, function, proposedReturn, candidate.sharedZeroStub,
@@ -308,6 +348,114 @@ public class STMessageHandlerAnalyzer extends GhidraScript {
         return result;
     }
 
+    private Address forwardedMessageAnchor(Function function, Parameter parameter,
+            Set<Address> anchors) {
+        if (!parameter.isStackVariable()) return null;
+        int stackOffset = parameter.getStackOffset();
+        Map<String, Boolean> parameterRegisters = new java.util.HashMap<>();
+        boolean lastPush = false;
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            Register destination = standaloneRegister(instruction, 0);
+            // Operand zero is not necessarily a definition on x86.  In
+            // particular PUSH EDI reports EDI as op0 but writes only ESP; the
+            // old code consequently killed the exact argument provenance one
+            // instruction before the forwarding CALL.
+            if (destination != null && writesRegister(instruction, destination)) {
+                boolean origin = false;
+                if ("MOV".equals(mnemonic)) {
+                    for (Reference reference : instruction.getOperandReferences(1))
+                        if (reference instanceof StackReference stack &&
+                                exactSoleIncomingStackWord(function, parameter,
+                                    stackOffset, stack.getStackOffset()))
+                            origin = true;
+                    // Some Ghidra x86 frame rebuilds retain Stack[0x4] on the
+                    // formal but omit the StackReference on the corresponding
+                    // framed [EBP+8] load.  The physical instruction is still
+                    // an exact ABI anchor for the sole RET-4 argument.
+                    if (exactSoleFramedArgumentLoad(function, parameter,
+                            instruction, 1)) origin = true;
+                    Register source = standaloneRegister(instruction, 1);
+                    if (source != null && parameterRegisters.getOrDefault(
+                            source.getName().toUpperCase(Locale.ROOT), false))
+                        origin = true;
+                }
+                parameterRegisters.put(destination.getName().toUpperCase(Locale.ROOT), origin);
+            }
+            if ("PUSH".equals(mnemonic)) {
+                Register pushed = standaloneRegister(instruction, 0);
+                lastPush = pushed != null && parameterRegisters.getOrDefault(
+                    pushed.getName().toUpperCase(Locale.ROOT), false);
+                continue;
+            }
+            if (!"CALL".equals(mnemonic)) continue;
+            Function called = resolveThunk(directCalledFunction(instruction));
+            if (called != null && anchors.contains(called.getEntryPoint()) && lastPush)
+                return called.getEntryPoint();
+            lastPush = false;
+            for (String volatileRegister : List.of("EAX", "ECX", "EDX"))
+                parameterRegisters.put(volatileRegister, false);
+        }
+        return null;
+    }
+
+    private boolean writesRegister(Instruction instruction, Register register) {
+        for (Object result : instruction.getResultObjects())
+            if (result instanceof Register written &&
+                    written.getName().equalsIgnoreCase(register.getName())) return true;
+        return false;
+    }
+
+    private boolean exactSoleFramedArgumentLoad(Function function,
+            Parameter parameter, Instruction instruction, int operand) {
+        if (operand < 0 || operand >= instruction.getNumOperands() ||
+                explicitParameters(function).size() != 1 ||
+                !explicitParameters(function).get(0).equals(parameter)) return false;
+        RetEvidence ret = retEvidence(function);
+        if (ret.count == 0 || !ret.allPop4) return false;
+        String rendered = instruction.getDefaultOperandRepresentation(operand);
+        return rendered != null && FIRST_FRAMED_STACK_ARGUMENT.matcher(
+            rendered.replace(" ", "")).find();
+    }
+
+    /**
+     * Ghidra's x86 stack model can expose the same first explicit argument as
+     * either the entry-ESP displacement (4) or the framed EBP displacement (8),
+     * depending on which variable-storage pass last rebuilt the signature.  Do
+     * not bake either rendering into the recovery rule.  RET 4 plus exactly one
+     * explicit parameter proves that the sole positive incoming stack word is
+     * that parameter; negative offsets are locals and zero is the saved frame.
+     */
+    private boolean exactSoleIncomingStackWord(Function function, Parameter parameter,
+            int parameterOffset, int referenceOffset) {
+        if (referenceOffset == parameterOffset) return true;
+        if (explicitParameters(function).size() != 1 ||
+                explicitParameters(function).get(0) != parameter || referenceOffset <= 0)
+            return false;
+        RetEvidence ret = retEvidence(function);
+        return ret.count > 0 && ret.allPop4 &&
+            (referenceOffset == 4 || referenceOffset == 8) &&
+            (parameterOffset == 4 || parameterOffset == 8);
+    }
+
+    private Register standaloneRegister(Instruction instruction, int operand) {
+        if (operand < 0 || operand >= instruction.getNumOperands()) return null;
+        Object[] objects = instruction.getOpObjects(operand);
+        return objects.length == 1 && objects[0] instanceof Register register ?
+            register : null;
+    }
+
+    private Function directCalledFunction(Instruction instruction) {
+        for (Address flow : instruction.getFlows()) {
+            Function function = currentProgram.getFunctionManager().getFunctionAt(flow);
+            if (function != null) return function;
+        }
+        return null;
+    }
+
     private void writeTsv(Path path, List<Proposal> proposals) throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             out.write("apply\tfunction_address\texpected_function\texpected_signature\t" +
@@ -380,6 +528,7 @@ public class STMessageHandlerAnalyzer extends GhidraScript {
         final Set<String> familyNames = new TreeSet<>();
         final Set<String> familyEntries = new TreeSet<>();
         boolean sharedZeroStub;
+        boolean forwardedEnvelope;
         Candidate(Function function) { this.function = function; }
     }
     private record RetEvidence(int count, boolean allPop4) { }

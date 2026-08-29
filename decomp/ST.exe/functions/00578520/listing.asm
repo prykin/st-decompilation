@@ -1,4 +1,4 @@
-FUN_00578520:
+STCrabC::vfunc_E0:
 00578520  55                        PUSH EBP
 00578521  8B EC                     MOV EBP,ESP
 00578523  8B 55 0C                  MOV EDX,dword ptr [EBP + 0xc]

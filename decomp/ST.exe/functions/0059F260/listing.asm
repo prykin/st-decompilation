@@ -73,7 +73,7 @@ LAB_0059f302:
 0059F33F  6A 5E                     PUSH 0x5e
 0059F341  6A 22                     PUSH 0x22
 0059F343  51                        PUSH ECX
-0059F344  E8 37 55 12 00            CALL 0x006c4880
+0059F344  E8 37 55 12 00            CALL 0x006c4880  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override
 0059F349  68 8E 69 00 00            PUSH 0x698e
 0059F34E  68 06 69 00 00            PUSH 0x6906
 0059F353  6A 19                     PUSH 0x19

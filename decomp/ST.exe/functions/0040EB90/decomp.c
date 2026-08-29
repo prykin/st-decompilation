@@ -24,7 +24,7 @@ undefined4 FUN_0040eb90(void)
   int iVar13;
   int *piVar14;
   int aiStack_a8 [6];
-  undefined4 uStack_90;
+  uint uStack_90;
   int local_80;
   int local_7c;
   int local_74;
@@ -39,7 +39,7 @@ undefined4 FUN_0040eb90(void)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
+  uint local_8;
   undefined4 *piVar10;
 
   iVar3 = DAT_007f4d20;

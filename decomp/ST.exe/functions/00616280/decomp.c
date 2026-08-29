@@ -1,7 +1,13 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __thiscall FUN_00616280(void *this,int *param_1,int *param_2,int *param_3)
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=006139A0 @ 00613CC6 -> read as EAX on
+   every CFG path | 006164E0 @ 006164F7 -> read as EAX on every CFG path | 00616F60 @ 00617037 ->
+   read as EAX on every CFG path */
+
+int __thiscall FUN_00616280(void *this,int *param_1,int *param_2,int *param_3)
 
 {
   short sVar1;
@@ -26,10 +32,12 @@ undefined4 __thiscall FUN_00616280(void *this,int *param_1,int *param_2,int *par
        ((g_worldGrid.sizeZ <= sVar2 ||
         ((this_00 = STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0], this_00 == nullptr ||
          (*(int *)&this_00->field_0x18 != STField<int>(this,0x2d1))))))))) &&
+
      (iVar4 = STPlaySystemC::sub_006E62D0
-                        (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x2d1),
+                        (g_playSystem_00802A38,
+                         STField<RecoveredRecordView_005EFAE0_855D930D *>(this,0x2d1),
                          (int *)&local_14), this_00 = local_14, iVar4 == -4)) {
-    return 0xffffffff;
+    return -1;
   }
   thunk_FUN_00416270(this_00,&local_8,local_10 + 2,local_10);
   *param_1 = (short)local_8;

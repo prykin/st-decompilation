@@ -660,7 +660,7 @@ LAB_00610969:
 00610A71  50                        PUSH EAX
 00610A72  51                        PUSH ECX
 00610A73  8B CE                     MOV ECX,ESI
-00610A75  FF 52 14                  CALL dword ptr [EDX + 0x14]
+00610A75  FF 52 14                  CALL dword ptr [EDX + 0x14]  ; [STIndirectCallsiteApplier] exact slot 0x14; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00610A78  0F BF D0                  MOVSX EDX,AX
 00610A7B  8B 04 95 38 21 7D 00      MOV EAX,dword ptr [EDX*0x4 + 0x7d2138]
 00610A82  89 86 37 02 00 00         MOV dword ptr [ESI + 0x237],EAX
@@ -995,7 +995,7 @@ LAB_00610d9f:
 00610EA7  51                        PUSH ECX
 00610EA8  52                        PUSH EDX
 00610EA9  8B CE                     MOV ECX,ESI
-00610EAB  FF 50 14                  CALL dword ptr [EAX + 0x14]
+00610EAB  FF 50 14                  CALL dword ptr [EAX + 0x14]  ; [STIndirectCallsiteApplier] exact slot 0x14; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00610EAE  0F BF C0                  MOVSX EAX,AX
 00610EB1  8B 0C 85 38 21 7D 00      MOV ECX,dword ptr [EAX*0x4 + 0x7d2138]
 00610EB8  89 8E 37 02 00 00         MOV dword ptr [ESI + 0x237],ECX
@@ -1441,7 +1441,7 @@ LAB_00611304:
 0061140C  51                        PUSH ECX
 0061140D  52                        PUSH EDX
 0061140E  8B CE                     MOV ECX,ESI
-00611410  FF 50 14                  CALL dword ptr [EAX + 0x14]
+00611410  FF 50 14                  CALL dword ptr [EAX + 0x14]  ; [STIndirectCallsiteApplier] exact slot 0x14; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00611413  0F BF C0                  MOVSX EAX,AX
 00611416  8B 0C 85 38 21 7D 00      MOV ECX,dword ptr [EAX*0x4 + 0x7d2138]
 0061141D  89 8E 37 02 00 00         MOV dword ptr [ESI + 0x237],ECX
@@ -1955,7 +1955,7 @@ LAB_0061196b:
 00611A73  50                        PUSH EAX
 00611A74  51                        PUSH ECX
 00611A75  8B CE                     MOV ECX,ESI
-00611A77  FF 52 14                  CALL dword ptr [EDX + 0x14]
+00611A77  FF 52 14                  CALL dword ptr [EDX + 0x14]  ; [STIndirectCallsiteApplier] exact slot 0x14; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00611A7A  0F BF D0                  MOVSX EDX,AX
 00611A7D  8B 04 95 38 21 7D 00      MOV EAX,dword ptr [EDX*0x4 + 0x7d2138]
 00611A84  89 86 37 02 00 00         MOV dword ptr [ESI + 0x237],EAX
@@ -2853,7 +2853,7 @@ LAB_00612459:
 00612561  51                        PUSH ECX
 00612562  52                        PUSH EDX
 00612563  8B CE                     MOV ECX,ESI
-00612565  FF 50 14                  CALL dword ptr [EAX + 0x14]
+00612565  FF 50 14                  CALL dword ptr [EAX + 0x14]  ; [STIndirectCallsiteApplier] exact slot 0x14; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00612568  0F BF C0                  MOVSX EAX,AX
 0061256B  8B 0C 85 38 21 7D 00      MOV ECX,dword ptr [EAX*0x4 + 0x7d2138]
 00612572  89 8E 37 02 00 00         MOV dword ptr [ESI + 0x237],ECX

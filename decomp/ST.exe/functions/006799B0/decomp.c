@@ -8,9 +8,9 @@ void __thiscall FUN_006799b0(void *this,uint param_1)
   uint uVar2;
   int iVar3;
   uint uVar4;
-  AnonShape_0068FD00_A5257008 *pAVar5;
+  RecoveredRecordView_0068FD00_630BE91E *pRVar5;
   bool bVar6;
-  AnonShape_0068FD00_A5257008 local_3c [3];
+  RecoveredRecordView_0068FD00_630BE91E local_3c [3];
   uint local_8;
 
   local_8 = STField<uint>(this,0x640);
@@ -22,6 +22,7 @@ void __thiscall FUN_006799b0(void *this,uint param_1)
          (uVar4 = (uint)(short)uVar1, uVar4 != local_8)) &&
         (uVar2 = STField<uint>(this,0x5d7), uVar4 != uVar2)))) {
       if (DAT_00808a8f == '\0') {
+
         iVar3 = thunk_FUN_005822e0(&DAT_00807620,(byte)param_1,(byte)uVar2);
         bVar6 = iVar3 < 0;
       }
@@ -70,10 +71,10 @@ void __thiscall FUN_006799b0(void *this,uint param_1)
   }
   STPiece<8,4>(local_3c[0]) = STField<uint>(this,0x640);
   if (STPiece<8,4>(local_3c[0]) != local_8) {
-    pAVar5 = local_3c;
+    pRVar5 = local_3c;
     for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(undefined4 *)pAVar5 = 0;
-      pAVar5 = (AnonShape_0068FD00_A5257008 *)&pAVar5->field_0x4;
+      *(undefined4 *)pRVar5 = 0;
+      pRVar5 = (RecoveredRecordView_0068FD00_630BE91E *)&pRVar5->field_0x4;
     }
     STPiece<4,4>(local_3c[0]) = STField<undefined4>(this,0x6fe);
     STPiece<0,4>(local_3c[0]) = 0x6a;

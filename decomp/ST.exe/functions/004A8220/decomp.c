@@ -10,8 +10,7 @@ void __thiscall FUN_004a8220(void *this,char param_1,short param_2,ushort param_
 {
   int iVar1;
   uint uVar2;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = this;
   if (((STField<int>(this,0xef) != 0) &&
       (iVar1 = *(int *)(STField<int>(this,0xef) + 0xc), iVar1 != 0)) && (uVar2 = 0, 0 < iVar1)) {

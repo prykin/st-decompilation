@@ -19,8 +19,9 @@ int FUN_0042b5b0(char param_1,ushort param_2)
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined2 in_stack_0000000a;
 
-  uVar1 = ((DArrayTy *)g_packedRecords_A62x8[param_1].field3_0x9)->count;
+  uVar1 = (g_packedRecords_A62x8[param_1].field3_0x9)->count;
   if ((uVar1 != 0) && (param_2 < uVar1)) {
+
     DArrayGetElement((DArrayTy *)g_packedRecords_A62x8[param_1].field3_0x9,(uint)param_2,&param_1);
     return (uint)(_param_1 != 0);
   }

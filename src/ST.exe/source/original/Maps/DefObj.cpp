@@ -61,8 +61,10 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
         _DAT_00853ce4 = 0;
         _DAT_00853ce8 = 0;
         _DAT_00853cf0 = 0;
+
         uVar3 = st::fn_00401131(param_2);
         if (DAT_00853d84 <= uVar3) {
+
           iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Maps\\DefObj.cpp"),0x1ba,0,uVar3,
                                      st::mutable_c_string("%s"),"Out of Range Entourage Group Index ");
           if (iVar7 != 0) {
@@ -72,6 +74,7 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
         }
         iVar8 = uVar3 * 0x218;
         if (*(uint *)(iVar8 + 0x20c + DAT_00853d80) <= param_5) {
+
           iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Maps\\DefObj.cpp"),0x1c0,0,param_5,
                                      st::mutable_c_string("%s"),"Out of Range Entourage Index ");
           if (iVar5 != 0) {
@@ -85,10 +88,10 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
         if (*(int *)(pcVar9 + 0x210) != 0) {
           _DAT_00853d72 = 0xffffffff;
           /* ST_CALLSITE[00692DE7]: CALL dword ptr [0x0085bde8] */
-          st::external_00000080(local_108,st::mutable_c_string("%s%u"),pcVar9,param_5);
+          st::external_00000080(reinterpret_cast<LPSTR>(local_108),st::mutable_c_string("%s%u"),pcVar9,param_5);
           iVar3 = DAT_00853d80;
           uVar5 = 0xffffffff;
-          pcVar9 = local_108;
+          pcVar9 = reinterpret_cast<char *>(local_108);
           do {
             pcVar10 = pcVar9;
             if (uVar5 == 0) break;
@@ -99,7 +102,7 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
           } while (cVar1 != '\0');
           uVar5 = ~uVar5;
           pcVar9 = pcVar10 + -uVar5;
-          pcVar10 = (char *)&DAT_00853cf2;
+          pcVar10 = reinterpret_cast<char *>(&DAT_00853cf2);
           memmove(pcVar10, pcVar9, uVar5); /* compiler REP MOVS byte copy */
           uVar6 = 0;
           pcVar9 = (char *)(iVar8 + 0x104 + iVar3);
@@ -113,9 +116,9 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
           } while (cVar1 != '\0');
           if (iVar8 != -2) {
             /* ST_CALLSITE[00692E41]: CALL dword ptr [0x0085bde8] */
-            st::external_00000080(local_108,st::mutable_c_string("%s%u"),pcVar9,param_5);
+            st::external_00000080(reinterpret_cast<LPSTR>(local_108),st::mutable_c_string("%s%u"),pcVar9,param_5);
             uVar5 = 0xffffffff;
-            pcVar9 = local_108;
+            pcVar9 = reinterpret_cast<char *>(local_108);
             do {
               pcVar10 = pcVar9;
               if (uVar5 == 0) break;
@@ -126,7 +129,7 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
             } while (cVar1 != '\0');
             uVar5 = ~uVar5;
             pcVar9 = pcVar10 + -uVar5;
-            pcVar10 = (char *)&DAT_00853d32;
+            pcVar10 = reinterpret_cast<char *>(&DAT_00853d32);
             memmove(pcVar10, pcVar9, uVar5); /* compiler REP MOVS byte copy */
           }
           return &DAT_00853cd8;
@@ -143,7 +146,7 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
         } while (cVar1 != '\0');
         uVar5 = ~uVar5;
         pcVar10 = pcVar12 + -uVar5;
-        pcVar12 = (char *)&DAT_00853cf2;
+        pcVar12 = reinterpret_cast<char *>(&DAT_00853cf2);
         memmove(pcVar12, pcVar10, uVar5); /* compiler REP MOVS byte copy */
         uVar6 = 0;
         uVar5 = 0xffffffff;
@@ -158,7 +161,7 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
         } while (cVar1 != '\0');
         uVar5 = ~uVar5;
         pcVar9 = pcVar10 + -uVar5;
-        pcVar10 = (char *)&DAT_00853d32;
+        pcVar10 = reinterpret_cast<char *>(&DAT_00853d32);
         memmove(pcVar10, pcVar9, uVar5); /* compiler REP MOVS byte copy */
         _DAT_00853d72 = param_5;
         return &DAT_00853cd8;
@@ -295,4 +298,3 @@ switchD_00693197_caseD_bc0:
   }
   return nullptr;
 }
-

@@ -68,6 +68,7 @@ int __thiscall STBHEShellC::sub_005F4FA0(STBHEShellC *this)
               if ((((iVar6 < 0) || (g_worldGrid.sizeX <= iVar6)) ||
                   ((*(int *)(pcVar9 + 6) < 0 ||
                    (((int)g_worldGrid.sizeY <= *(int *)(pcVar9 + 6) || (iVar2 < 0)))))) ||
+
                  (iVar5 = thunk_FUN_004961b0(local_18,local_14,sVar7), iVar5 == 0)) {
                 ST3DSMAPContext::sub_006E3210
                           (g_sT3DSMAPContext_00807598,
@@ -86,6 +87,7 @@ int __thiscall STBHEShellC::sub_005F4FA0(STBHEShellC *this)
               }
               if (*pcVar9 == '\0') {
                 if ((*(uint *)(pcVar9 + 0x1f) == 0xffffffff) && (this->field_0103 != '\0')) {
+
                   thunk_FUN_005f4a30((int)pcVar9,pcVar9[1],0);
                 }
                 *pcVar9 = '\x01';

@@ -13,7 +13,7 @@ uint __thiscall CGenerate::sub_00695F70(CGenerate *this,uint param_1,int param_2
   DArrayTy *pDVar2;
   uint uVar3;
   int *piVar4;
-  undefined2 local_c;
+  ushort local_c;
   int iStack_a;
 
   pCVar1 = this->field_5853;

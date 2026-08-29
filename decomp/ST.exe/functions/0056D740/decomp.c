@@ -21,10 +21,11 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
   InternalExceptionFrame *pIVar6;
   uint uVar7;
   uint *puVar8;
-  undefined4 local_4bc [256];
+  RecoveredRecord_006E3DB0_0F66DDCF *pRVar9;
+  uint local_4bc [256];
   InternalExceptionFrame local_bc;
-  undefined4 local_78 [4];
-  undefined4 local_68;
+  RecoveredRecord_006E3DB0_0F66DDCF local_78;
+  uint local_68;
   InternalExceptionFrame local_58;
   STAppC *local_14;
   int local_10;
@@ -39,6 +40,7 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_14 = this;
+
     local_EAX_107 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (local_EAX_107 == 0) {
       FUN_006b13e0((int *)g_ddxContext_008075A8);
@@ -75,12 +77,18 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
         if (local_10 != 0) {
           memset(local_4bc, 0, 0x400); /* compiler bulk-zero initialization */
           iVar5 = 0;
-          memset(local_78, 0, 0x20); /* compiler bulk-zero initialization */
+          pRVar9 = &local_78;
+          for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
+            *(undefined4 *)pRVar9 = 0;
+            pRVar9 = (RecoveredRecord_006E3DB0_0F66DDCF *)&pRVar9->field_0x4;
+          }
           g_currentExceptionFrame = &local_bc;
           local_bc.previous = pIVar6;
+
           iVar3 = Library::MSVCRT::__setjmp3(local_bc.jumpBuffer,0);
           uVar7 = local_c;
           if (iVar3 == 0) {
+
             DVar3 = Library::DKW::DDX::FUN_006b9b40
                               (g_dDXContext_0080759C,0x10000001,g_nWidth_00806730,DAT_00806734,
                                DAT_00806738,g_nWidth_00806730,DAT_00806734,(int)local_4bc,0,0x100);
@@ -88,7 +96,8 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
             /* ST_CALLSITE[0056D921]: CALL dword ptr [0x0085be3c] */
             MoveWindow(HWND_00856d78,0,0,g_nWidth_00806730,DAT_00806734,1);
             local_68 = 0x66;
-            AppClassTy::SendMessage((AppClassTy *)local_14,3,1,(int)local_78);
+
+            AppClassTy::SendMessage((AppClassTy *)local_14,3,1,&local_78);
             uVar7 = (uint)(DVar3 == 0);
           }
           pIVar6 = local_bc.previous;
@@ -100,7 +109,9 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
       if (local_8 < 0) {
         RaiseInternalException(-1,g_overwriteContext_007ED77C,"E:\\__titans\\tapp.cpp",0x442);
       }
+
       Library::DKW::DDX::FUN_006b1470((int *)g_ddxContext_008075A8);
+
       Library::DKW::DDX::FUN_006b1680((int *)g_ddxContext_008075A8,g_dDXContext_0080759C);
       FUN_006b1980((int *)g_ddxContext_008075A8,2,-1,(&DAT_00807568)[iVar5 * 4],
                    (&DAT_0080756c)[iVar5 * 4],(&DAT_00807570)[iVar5 * 4],(&DAT_00807574)[iVar5 * 4]);
@@ -113,6 +124,7 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_58.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\tapp.cpp",0x44f,0,local_EAX_107,"%s",
                                "STAppC::ChangeResolution");
     if (iVar4 != 0) {

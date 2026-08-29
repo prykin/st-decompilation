@@ -1,9 +1,16 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:7: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=3,
+   pointer_dereferences=3, scalar_uses=0; sites=0060E6EA dereference: CMP ECX,dword ptr [EAX + 0xc]
+   | 0060E7C3 dereference: CMP ECX,dword ptr [EAX + 0xc] | 0060E8CA dereference: CMP EDX,dword ptr
+   [EAX + 0xc] */
+
 undefined4 __cdecl
 FUN_0060e680(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6,
-            int *param_7,int param_8,uint *param_9,uint *param_10,uint *param_11)
+            int *param_7,RecoveredRecord_0060E680_206C65A9 *param_8,uint *param_9,uint *param_10,
+            uint *param_11)
 
 {
   int iVar1;
@@ -24,10 +31,10 @@ FUN_0060e680(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5,ui
   if ((iVar5 < iVar3) &&
      (iVar1 = (param_5 ^ (int)param_5 >> 0x1f) - ((int)param_5 >> 0x1f), iVar1 < iVar3)) {
     iVar2 = (param_6 ^ (int)param_6 >> 0x1f) - ((int)param_6 >> 0x1f);
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((iVar2 < param_7[2]) &&
        (param_7[2] * iVar2 * iVar2 + iVar3 * iVar5 * iVar5 + param_7[1] * iVar1 * iVar1 <
-        *(int *)(param_8 + 0xc))) {
+        param_8->field_000C)) {
+
       iVar3 = FUN_006acf0d(param_4,param_5,param_6,param_1,param_2,param_3);
       if (0xc9 < iVar3) {
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -42,10 +49,9 @@ FUN_0060e680(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5,ui
       if ((iVar5 < iVar3) &&
          (iVar1 = (param_2 ^ (int)param_2 >> 0x1f) - ((int)param_2 >> 0x1f), iVar1 < iVar3)) {
         iVar2 = (param_3 ^ (int)param_3 >> 0x1f) - ((int)param_3 >> 0x1f);
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         if ((iVar2 < param_7[2]) &&
            (param_7[2] * iVar2 * iVar2 + iVar3 * iVar5 * iVar5 + param_7[1] * iVar1 * iVar1 <
-            *(int *)(param_8 + 0xc))) {
+            param_8->field_000C)) {
           *param_9 = ((int)((param_4 - param_1) + ((int)(param_4 - param_1) >> 0x1f & 7U)) >> 3) +
                      param_1;
           *param_10 = ((int)((param_5 - param_2) + ((int)(param_5 - param_2) >> 0x1f & 7U)) >> 3) +
@@ -70,11 +76,10 @@ FUN_0060e680(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5,ui
         if ((iVar5 < iVar3) &&
            (iVar1 = (uVar8 ^ (int)uVar8 >> 0x1f) - ((int)uVar8 >> 0x1f), iVar1 < iVar3)) {
           iVar2 = (uVar4 ^ (int)uVar4 >> 0x1f) - ((int)uVar4 >> 0x1f);
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if ((iVar2 < param_7[2]) &&
              (uVar6 = param_3,
              param_7[2] * iVar2 * iVar2 + iVar3 * iVar5 * iVar5 + param_7[1] * iVar1 * iVar1 <
-             *(int *)(param_8 + 0xc))) {
+             param_8->field_000C)) {
             uVar6 = uVar7;
             param_2 = uVar8;
             param_3 = uVar7;

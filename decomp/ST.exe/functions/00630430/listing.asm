@@ -258,7 +258,7 @@ LAB_006306d8:
 006306DF  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
 006306E2  8D 45 F4                  LEA EAX,[EBP + -0xc]
 006306E5  50                        PUSH EAX
-006306E6  E8 FF 4B DD FF            CALL 0x004052ea
+006306E6  E8 FF 4B DD FF            CALL 0x004052ea  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 006306EB  8B 4D F4                  MOV ECX,dword ptr [EBP + -0xc]
 006306EE  8B 15 98 D1 79 00         MOV EDX,dword ptr [0x0079d198]
 006306F4  6A 0C                     PUSH 0xc

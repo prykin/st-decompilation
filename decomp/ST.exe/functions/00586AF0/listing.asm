@@ -277,7 +277,7 @@ LAB_00586dab:
 00586E12  E8 F0 C2 E7 FF            CALL 0x00403107
 00586E17  8B 16                     MOV EDX,dword ptr [ESI]
 00586E19  8B CE                     MOV ECX,ESI
-00586E1B  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]
+00586E1B  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]  ; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 00586E21  5F                        POP EDI
 00586E22  5E                        POP ESI
 00586E23  5B                        POP EBX
@@ -2245,7 +2245,7 @@ LAB_00588478:
 LAB_005884da:
 005884DA  8B 16                     MOV EDX,dword ptr [ESI]
 005884DC  8B CE                     MOV ECX,ESI
-005884DE  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]
+005884DE  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]  ; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 005884E4  5F                        POP EDI
 005884E5  5E                        POP ESI
 005884E6  5B                        POP EBX

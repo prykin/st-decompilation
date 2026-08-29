@@ -17,6 +17,7 @@ void __thiscall BehPanelTy::DoneBehPanel(BehPanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pBVar2 = local_8;
   if (errorCode == 0) {
@@ -42,6 +43,7 @@ void __thiscall BehPanelTy::DoneBehPanel(BehPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\behpanel.cpp",0x77,0,errorCode,
                              "%s","BehPanelTy::DoneBehPanel");
   if (iVar3 != 0) {

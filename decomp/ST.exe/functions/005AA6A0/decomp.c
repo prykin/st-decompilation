@@ -31,6 +31,7 @@ void __thiscall HoloTy::OutHoloProc(HoloTy *this,uint param_1)
   {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
+
     iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     if (iVar3 == 0) {
       uVar6 = 0;
@@ -64,6 +65,7 @@ void __thiscall HoloTy::OutHoloProc(HoloTy *this,uint param_1)
             default:
               goto switchD_005aa738_default;
             }
+
             Library::DKW::DDX::FUN_006b42d0
                       ((DDXContext *)param_1,iVar4,iVar3,pBVar7,nullptr,iVar8,iVar5,DVar9,DVar10
                       );
@@ -76,6 +78,7 @@ switchD_005aa738_default:
       return;
     }
     g_currentExceptionFrame = local_50.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\Start\\hologram.cpp",0x1e,0,iVar3,"%s",
                                "HoloTy::OutHoloProc");
     if (iVar4 != 0) {

@@ -9,9 +9,8 @@ void FUN_006d4f50(int *param_1)
 
 {
   if (param_1 != nullptr) {
-    /* ST_CALLSITE[006D4F5E]: CALL dword ptr [EAX + 0xc] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*param_1 + 0xc))(1);
+    /* ST_CALLSITE[006D4F5E]: CALL dword ptr [EAX + 0xc]; [STIndirectCallsiteApplier] exact slot 0xC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
+    STStructuralVirtualCall<undefined4>(param_1, 0xC, 1);
   }
   return;
 }

@@ -32,7 +32,7 @@ FUN_0060bd30:
 0060BDA0  89 45 D8                  MOV dword ptr [EBP + -0x28],EAX
 0060BDA3  8D 45 C4                  LEA EAX,[EBP + -0x3c]
 0060BDA6  50                        PUSH EAX
-0060BDA7  FF 12                     CALL dword ptr [EDX]
+0060BDA7  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4
 0060BDA9  5F                        POP EDI
 0060BDAA  8B E5                     MOV ESP,EBP
 0060BDAC  5D                        POP EBP

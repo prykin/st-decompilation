@@ -27,7 +27,7 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
   byte local_290 [560];
   InternalExceptionFrame local_60;
   char local_1c [8];
-  undefined1 local_14;
+  byte local_14;
   FSGSTy *local_10;
   FSGSTy_field_1EBEElement *element_1ebe;
   uint local_8;
@@ -37,6 +37,7 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
     local_60.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_60;
     local_10 = this;
+
     iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
     this_00 = g_cursorClass_00802A30;
     if (iVar3 == 0) {
@@ -153,6 +154,7 @@ LAB_005a3810:
               if ((char)param_2[0x1f] != '\0') {
                 Library::MSVCRT::_strncpy(local_1c,(char *)((int)param_2 + 0x7f),8);
                 local_14 = 0;
+
                 Library::MSVCRT::FUN_0072ee80(local_1c,"%08x");
                 if (local_8 == this_01->field_1EC6) {
                   pFVar13 = this_01->field_1EBE;
@@ -167,6 +169,7 @@ LAB_005a3810:
             pFVar13 = this_01->field_1EBE;
           }
 LAB_005a36e9:
+
           Library::DKW::TBL::DArrayAppend((DArrayTy *)pFVar13,param_2);
         }
 LAB_005a36ee:
@@ -175,6 +178,7 @@ LAB_005a36ee:
       } while( true );
     }
     g_currentExceptionFrame = local_60.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xaf6,0,iVar3,"%s"
                                ,"FSGSTy::SetGameList");
     if (iVar6 != 0) {

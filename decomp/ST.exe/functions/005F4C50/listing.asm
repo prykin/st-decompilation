@@ -58,7 +58,7 @@ LAB_005f4d11:
 005F4D17  6A 23                     PUSH 0x23
 005F4D19  53                        PUSH EBX
 005F4D1A  6A 00                     PUSH 0x0
-005F4D1C  E8 6F 95 0B 00            CALL 0x006ae290
+005F4D1C  E8 6F 95 0B 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STBHEShellC_field_0169DArray; source view only; no Ghidra override
 005F4D21  85 C0                     TEST EAX,EAX
 005F4D23  89 86 69 01 00 00         MOV dword ptr [ESI + 0x169],EAX
 005F4D29  0F 84 95 01 00 00         JZ 0x005f4ec4

@@ -29,8 +29,7 @@ void __thiscall FUN_0060d390(void *this,uint *param_1)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   puStack_c = &DAT_0079cd78;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
@@ -45,6 +44,7 @@ void __thiscall FUN_0060d390(void *this,uint *param_1)
     uVar8 = iVar4 * 0x44;
     auStack_70[1 - iVar4] = 0x60d413;
     ExceptionList = &local_14;
+
     uVar1 = thunk_FUN_0062ca00();
     iVar12 = 0;
     local_30 = uVar8;
@@ -76,6 +76,7 @@ void __thiscall FUN_0060d390(void *this,uint *param_1)
     if (uVar8 != 0) {
       auStack_70[1 - iVar4] = local_30;
       auStack_70[-iVar4] = 0x60d49c;
+
       local_3c = Library::DKW::LIB::MemAlloc(auStack_70[1 - iVar4]);
       if (local_3c != nullptr) {
         puVar11 = STField<undefined4 *>(this,0x244);

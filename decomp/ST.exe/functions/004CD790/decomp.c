@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_004cd790(AnonShape_004CD790_161F55D2 *param_1)
+undefined4 __fastcall FUN_004cd790(RecoveredRecordView_004CD790_D51B3E61 *param_1)
 
 {
   STWorldObject *pSVar1;
@@ -24,6 +24,7 @@ undefined4 __fastcall FUN_004cd790(AnonShape_004CD790_161F55D2 *param_1)
      ((iVar3 = pSVar1->GetObjectTypeId(), iVar3 < 0x5b &&
       (*(int *)&pSVar1[0x29].field_0xf == 0)))) {
     *(undefined4 *)&pSVar1[0x29].field_0xf = param_1->field_0018;
+
     thunk_FUN_004ce250(pSVar1,1);
   }
   iVar3 = param_1->field_05B4 + 1;
@@ -39,6 +40,7 @@ undefined4 __fastcall FUN_004cd790(AnonShape_004CD790_161F55D2 *param_1)
       ((iVar4 = pSVar1->GetObjectTypeId(), iVar4 < 0x5b &&
        (*(int *)&pSVar1[0x29].field_0xf == 0)))))) {
     *(undefined4 *)&pSVar1[0x29].field_0xf = param_1->field_0018;
+
     thunk_FUN_004ce250(pSVar1,1);
   }
   iVar4 = param_1->field_05B0 + 1;
@@ -57,6 +59,7 @@ undefined4 __fastcall FUN_004cd790(AnonShape_004CD790_161F55D2 *param_1)
         ((iVar3 = pSVar1->GetObjectTypeId(), iVar3 < 0x5b &&
          (*(int *)&pSVar1[0x29].field_0xf == 0)))))) {
       *(undefined4 *)&pSVar1[0x29].field_0xf = param_1->field_0018;
+
       thunk_FUN_004ce250(pSVar1,1);
     }
     iVar3 = param_1->field_05B4 + 2;
@@ -71,6 +74,7 @@ undefined4 __fastcall FUN_004cd790(AnonShape_004CD790_161F55D2 *param_1)
          ((iVar4 = pSVar1->GetObjectTypeId(), iVar4 < 0x5b &&
           (*(int *)&pSVar1[0x29].field_0xf == 0)))))))) {
       *(undefined4 *)&pSVar1[0x29].field_0xf = param_1->field_0018;
+
       thunk_FUN_004ce250(pSVar1,1);
     }
   }
@@ -88,6 +92,7 @@ undefined4 __fastcall FUN_004cd790(AnonShape_004CD790_161F55D2 *param_1)
         ((iVar3 = pSVar1->GetObjectTypeId(), iVar3 < 0x5b &&
          (*(int *)&pSVar1[0x29].field_0xf == 0)))))) {
       *(undefined4 *)&pSVar1[0x29].field_0xf = param_1->field_0018;
+
       thunk_FUN_004ce250(pSVar1,1);
     }
     iVar3 = param_1->field_05B4 + 1;
@@ -104,6 +109,7 @@ undefined4 __fastcall FUN_004cd790(AnonShape_004CD790_161F55D2 *param_1)
         ((iVar4 = pSVar1->GetObjectTypeId(), iVar4 < 0x5b &&
          (*(int *)&pSVar1[0x29].field_0xf == 0)))))) {
       *(undefined4 *)&pSVar1[0x29].field_0xf = param_1->field_0018;
+
       thunk_FUN_004ce250(pSVar1,1);
     }
   }
@@ -122,6 +128,7 @@ undefined4 __fastcall FUN_004cd790(AnonShape_004CD790_161F55D2 *param_1)
          (iVar3 = pSVar1->GetObjectTypeId(), iVar3 < 0x5b)) &&
         (*(int *)&pSVar1[0x29].field_0xf == 0)))) {
       *(undefined4 *)&pSVar1[0x29].field_0xf = param_1->field_0018;
+
       thunk_FUN_004ce250(pSVar1,1);
     }
     iVar3 = param_1->field_05B4 + 1;
@@ -138,6 +145,7 @@ undefined4 __fastcall FUN_004cd790(AnonShape_004CD790_161F55D2 *param_1)
         ((iVar3 = pSVar1->GetObjectTypeId(), iVar3 < 0x5b &&
          (*(int *)&pSVar1[0x29].field_0xf == 0)))))) {
       *(undefined4 *)&pSVar1[0x29].field_0xf = param_1->field_0018;
+
       thunk_FUN_004ce250(pSVar1,1);
     }
   }

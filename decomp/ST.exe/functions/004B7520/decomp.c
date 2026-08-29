@@ -1,5 +1,3 @@
-#include "../../pseudocode_runtime.h"
-
 
 /* [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004B7520_param_2Enum. Cases:
@@ -7,9 +5,14 @@
 
    [STPrototypeApplier] Propagated parameter 0.
    Evidence: 004D11D0 -> 004B7520 @ 004D2278 | 004D2760 -> 004B7520 @ 004D2828 | 004D32C0 ->
-   004B7520 @ 004D38EA | 004D32C0 -> 004B7520 @ 004D43D5 */
+   004B7520 @ 004D38EA | 004D32C0 -> 004B7520 @ 004D43D5
 
-undefined4 FUN_004b7520(uint param_1,Global_sub_004B7520_param_2Enum param_2)
+   [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=5, ignored=0,
+   unknown=0 */
+
+int FUN_004b7520(uint param_1,Global_sub_004B7520_param_2Enum param_2)
 
 {
   switch(param_2) {

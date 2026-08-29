@@ -11,40 +11,37 @@ FUN_00696eb0(int *param_1,int param_2,int param_3,int param_4,int param_5,int pa
   int *piVar2;
   byte *pbVar3;
   int iVar4;
-  ushort local_1c;
-  ushort uStack_1a;
-  undefined2 uStack_18;
-  char cStack_17;
-  ushort local_14;
-  ushort uStack_12;
-  undefined2 uStack_10;
-  char cStack_f;
-  undefined4 local_c;
+  RecoveredRecord_006A1370_30F34641 local_1c;
+  RecoveredRecord_006A1370_30F34641 local_14;
+  uint local_c;
   int local_8;
 
   local_c = 0;
   if (((((-1 < param_2) && (param_2 < *param_1)) && (-1 < param_3)) &&
       ((param_3 < param_1[1] && (-1 < param_4)))) &&
      ((param_4 < *param_1 && ((-1 < param_5 && (param_5 < param_1[1])))))) {
-    iVar2 = thunk_FUN_006a1370(param_1,param_2,param_3,param_6,(int)&local_14);
-    iVar3 = thunk_FUN_006a1370(param_1,param_4,param_5,param_6,(int)&local_1c);
-    if (uStack_12 != 0) {
+
+    iVar2 = thunk_FUN_006a1370(param_1,param_2,param_3,param_6,&local_14);
+
+    iVar3 = thunk_FUN_006a1370(param_1,param_4,param_5,param_6,&local_1c);
+    if (STPiece<2,2>(local_14) != 0) {
       pbVar3 = (byte *)(STField<int>(local_8,0x5833) * param_3 + STField<int>(local_8,0x584B) + param_2);
       *pbVar3 = *pbVar3 | '\x01' << ((byte)param_6 & 0x1f);
     }
-    if (uStack_1a != 0) {
+    if (STPiece<2,2>(local_1c) != 0) {
       pbVar3 = (byte *)(STField<int>(local_8,0x5833) * param_5 + STField<int>(local_8,0x584B) + param_4);
       *pbVar3 = *pbVar3 | '\x01' << ((byte)param_6 & 0x1f);
     }
-    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    if ((((cStack_17 == cStack_f) && ((short)iVar2 == (short)iVar3)) &&
-        (((-(uint)((uStack_12 & 0x2000) != 0) & 0xffffff01) + 0xffff & (uint)uStack_12) ==
-         ((-(uint)((uStack_1a & 0x2000) != 0) & 0xffffff01) + 0xffff & (uint)uStack_1a))) &&
-       (uVar1 = CONCAT22(uStack_1a,local_1c),
-       ((-(ushort)((local_14 & 0x2000) != 0) & 0xff01) - 1 & local_14) ==
-       ((-(ushort)((local_1c & 0x2000) != 0) & 0xff01) - 1 & local_1c))) {
+    if ((((STPiece<1,1>(local_1c.field_0004) == STPiece<1,1>(local_14.field_0004)) && ((short)iVar2 == (short)iVar3)
+         ) && (((-(uint)((STPiece<2,2>(local_14) & 0x2000) != 0) & 0xffffff01) + 0xffff &
+               (uint)(ushort)STPiece<2,2>(local_14)) ==
+               ((-(uint)((STPiece<2,2>(local_1c) & 0x2000) != 0) & 0xffffff01) + 0xffff &
+               (uint)(ushort)STPiece<2,2>(local_1c)))) &&
+       (uVar1 = STReplaceLowWord((uint32_t)(local_1c), (uint16_t)(STPiece<0,2>(local_1c))),
+       ((-(ushort)((STPiece<0,2>(local_14) & 0x2000) != 0) & 0xff01) - 1 & STPiece<0,2>(local_14)) ==
+       ((-(ushort)((STPiece<0,2>(local_1c) & 0x2000) != 0) & 0xff01) - 1 & STPiece<0,2>(local_1c)))) {
       if (param_7 == 1) {
-        uVar1 = (uint)uStack_1a;
+        uVar1 = (uint)(ushort)STPiece<2,2>(local_1c);
       }
       iVar4 = 0;
       piVar2 = &DAT_007df82c;

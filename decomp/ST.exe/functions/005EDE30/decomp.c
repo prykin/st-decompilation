@@ -28,6 +28,7 @@ undefined4 __thiscall FUN_005ede30(void *this,undefined4 *param_1,undefined4 *pa
       *param_3 = iVar4 + -0x1d;
       uVar3 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
       STField<uint>(this,0x1c) = uVar3;
+
       thunk_FUN_005ecd70(this,STField<int>(this,0x277),STField<int>(this,0x27b),iVar4 + 0x1e,
                          STField<int>(this,0x273),'\0',0x1e - (uVar3 >> 0x10) % 0xb);
       return 1;
@@ -39,6 +40,7 @@ undefined4 __thiscall FUN_005ede30(void *this,undefined4 *param_1,undefined4 *pa
     *param_3 = iVar4 + 0x1d;
     uVar3 = STField<int>(this,0x1c) * 0x41c64e6d + 0x3039;
     STField<uint>(this,0x1c) = uVar3;
+
     thunk_FUN_005ecd70(this,STField<int>(this,0x277),STField<int>(this,0x27b),iVar4 + -0x1e,
                        STField<int>(this,0x273),'\0',0x1e - (uVar3 >> 0x10) % 0xb);
     return 1;

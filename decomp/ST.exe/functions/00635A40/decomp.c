@@ -34,26 +34,26 @@ void __thiscall FUN_00635a40(void *this,int param_1)
             STField<undefined4>(iVar3,0x19) = 0;
           }
           if (STField<int>(iVar3,0x8) == 1) {
-            if (((char *)iVar3)[0xc] == '\0') {
+            if (STField<char>(iVar3,0xC) == '\0') {
               Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,STField<uint>(iVar3,0x4),0);
-              ((undefined1 *)iVar3)[0xc] = 1;
+              STField<undefined1>(iVar3,0xC) = 1;
             }
             if (param_1 == 0) {
-              if (((char *)iVar3)[0xc] != '\0') {
+              if (STField<char>(iVar3,0xC) != '\0') {
                 uVar5 = STField<uint>(iVar3,0x4);
                 goto LAB_00635b61;
               }
             }
-            else if (((char *)iVar3)[0xc] == '\0') {
+            else if (STField<char>(iVar3,0xC) == '\0') {
               Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,STField<uint>(iVar3,0x4),0);
-              ((undefined1 *)iVar3)[0xc] = 1;
+              STField<undefined1>(iVar3,0xC) = 1;
             }
           }
-          else if (((char *)iVar3)[0xc] != '\0') {
+          else if (STField<char>(iVar3,0xC) != '\0') {
             uVar5 = STField<uint>(iVar3,0x4);
 LAB_00635b61:
             Library::Ourlib::ST3DSMAP::SprHide(g_sT3DSMAPContext_00807598,uVar5);
-            ((undefined1 *)iVar3)[0xc] = 0;
+            STField<undefined1>(iVar3,0xC) = 0;
           }
         }
         uVar4 = uVar4 + 1;

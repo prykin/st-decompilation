@@ -13,7 +13,8 @@ AiBossClassTy * __cdecl CreateAiBoss(void)
 {
   AiBossClassTy *pAVar1;
 
-  pAVar1 = (AiBossClassTy *)FUN_006b04d0(0x65c);
+  /* ST_CALLSITE[006483D5]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiBossClassTy; signature=__stdcall;pointer:/AiBossClassTy;/uint */
+  pAVar1 = FUN_006b04d0(0x65c);
   if (pAVar1 != nullptr) {
     pAVar1 = AiBossClassTy::AiBossClassTy(pAVar1);
     return pAVar1;

@@ -2,9 +2,16 @@
 
 
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
+/* [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:6: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=1,
+   pointer_dereferences=6, scalar_uses=0; sites=006D05E2 dereference: MOV AX,word ptr [EBP +
+   EDX*0x2] | 006D05FE dereference: MOV AX,word ptr [EBP + EDX*0x2] | 006D060D dereference: MOV
+   AX,word ptr [EBP + EDX*0x2] | 006D0623 dereference: MOV AX,word ptr [EBP + EDX*0x2] | 006D0632
+   dereference: MOV AX,word ptr [EBP + EDX*0x2] | 006D064A dereference: MOV AX,word ptr [EBP +
+   EDX*0x2] */
 
 void FUN_006d05b0(undefined4 *param_1,int param_2,uint *param_3,int param_4,int param_5,int param_6,
-                 int param_7)
+                 void *param_7)
 
 {
   uint uVar1;
@@ -26,24 +33,24 @@ LAB_006d05f0:
         while (bVar2 = 1 < iVar3, iVar3 = iVar4, puVar6 = puVar5, puVar8 = puVar7, bVar2) {
           uVar1 = *puVar5;
           puVar6 = (uint *)((int)puVar5 + 2);
-          *puVar7 = CONCAT22(*(undefined2 *)(param_7 + (uVar1 >> 8 & 0xff) * 2),
-                             *(undefined2 *)(param_7 + (uVar1 & 0xff) * 2));
+          *puVar7 = CONCAT22(*(undefined2 *)((int)param_7 + (uVar1 >> 8 & 0xff) * 2),
+                             *(undefined2 *)((int)param_7 + (uVar1 & 0xff) * 2));
           puVar8 = puVar7 + 1;
           iVar3 = iVar4 + -2;
           if (iVar4 < 2) break;
           puVar5 = puVar5 + 1;
-          *puVar8 = CONCAT22(*(undefined2 *)(param_7 + (uVar1 >> 0x18) * 2),
-                             *(undefined2 *)(param_7 + (uVar1 >> 0x10 & 0xff) * 2));
+          *puVar8 = CONCAT22(*(undefined2 *)((int)param_7 + (uVar1 >> 0x18) * 2),
+                             *(undefined2 *)((int)param_7 + (uVar1 >> 0x10 & 0xff) * 2));
           puVar7 = puVar7 + 2;
           iVar4 = iVar4 + -4;
         }
         if (iVar3 != -2) {
-          *(undefined2 *)puVar8 = *(undefined2 *)(param_7 + (uint)(byte)*puVar6 * 2);
+          *(undefined2 *)puVar8 = *(undefined2 *)((int)param_7 + (uint)(byte)*puVar6 * 2);
         }
       }
       else {
         puVar5 = (uint *)((int)param_3 + 1);
-        *(undefined2 *)param_1 = *(undefined2 *)(param_7 + (uint)(byte)*param_3 * 2);
+        *(undefined2 *)param_1 = *(undefined2 *)((int)param_7 + (uint)(byte)*param_3 * 2);
         puVar7 = (undefined4 *)((int)param_1 + 2);
         iVar3 = param_5 + -1;
         if (iVar3 != 0 && 0 < param_5) goto LAB_006d05f0;

@@ -2,35 +2,38 @@
 
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
+   Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=7; incoming_this_accesses=0;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=11; direct_non_thunk_callers=3;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=3; owner_evidence_coverage=adequate */
 
 undefined4 __thiscall
-FUN_006e1dd0(void *this,int param_1,int param_2,float *param_3,float *param_4,float *param_5)
+ST3DSMAPContext::sub_006E1DD0
+          (ST3DSMAPContext *this,int param_1,int param_2,float *param_3,float *param_4,
+          float *param_5)
 
 {
   double dVar1;
-  ushort uVar2;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined2 extraout_var;
+  int iVar2;
   uint uVar3;
   float local_10;
   float local_c;
   float local_8;
 
-  uVar2 = ST3DSMAPContext::sub_006E2D00(this,param_1,param_2);
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  if (30000 < CONCAT22(extraout_var,uVar2)) {
+
+  iVar2 = sub_006E2D00(this,param_1,param_2);
+  if (30000 < iVar2) {
     return 0;
   }
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  Library::Ourlib::STREND::FUN_006e29d0(this,&local_10,param_1,param_2,CONCAT22(extraout_var,uVar2));
-  dVar1 = STField<double>(this,200) * _DAT_0079b168;
+  Library::Ourlib::STREND::FUN_006e29d0(this,&local_10,param_1,param_2,iVar2);
+  dVar1 = this->field_00C8 * _DAT_0079b168;
   if ((((local_10 < _DAT_0079034c) ||
-       ((double)(int)*STField<short *>(this,0x280) * STField<double>(this,200) - dVar1 <=
-        (double)local_10)) || (local_c < _DAT_0079034c)) ||
-     ((double)(int)(STField<short *>(this,0x280))[1] * STField<double>(this,200) - dVar1 <=
+       ((double)(int)*STField<short *>(this,0x280) * this->field_00C8 - dVar1 <= (double)local_10)) ||
+      (local_c < _DAT_0079034c)) ||
+     ((double)(int)*(short *)&this->field_0280->field_0x2 * this->field_00C8 - dVar1 <=
       (double)local_c)) {
-    local_10 = -(float)STField<double>(this,200);
-    local_8 = -(float)STField<double>(this,0xd0);
+    local_10 = -(float)this->field_00C8;
+    local_8 = -(float)this->field_00D0;
     uVar3 = 0;
     local_c = local_10;
   }

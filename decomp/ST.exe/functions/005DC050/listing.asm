@@ -68,7 +68,8 @@ LAB_005dc10f:
 005DC115  6A 00                     PUSH 0x0
 005DC117  52                        PUSH EDX
 005DC118  53                        PUSH EBX
-005DC119  E8 F2 E8 13 00            CALL 0x0071aa10
+StartSystemTy::LoadMapData::override::prt_5dc119_8c81087f:
+005DC119  E8 F2 E8 13 00            CALL 0x0071aa10  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__cdecl;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/cMf32;pointer:/char;/int
 005DC11E  83 C4 0C                  ADD ESP,0xc
 005DC121  A3 C7 C4 80 00            MOV [0x0080c4c7],EAX
 005DC126  85 C0                     TEST EAX,EAX
@@ -89,7 +90,8 @@ LAB_005dc148:
 005DC14D  6A 00                     PUSH 0x0
 005DC14F  50                        PUSH EAX
 005DC150  53                        PUSH EBX
-005DC151  E8 BA E8 13 00            CALL 0x0071aa10
+StartSystemTy::LoadMapData::override::prt_5dc151_8c81087f:
+005DC151  E8 BA E8 13 00            CALL 0x0071aa10  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__cdecl;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/cMf32;pointer:/char;/int
 005DC156  83 C4 0C                  ADD ESP,0xc
 005DC159  A3 CB C4 80 00            MOV [0x0080c4cb],EAX
 005DC15E  85 C0                     TEST EAX,EAX
@@ -207,7 +209,8 @@ LAB_005dc2ad:
 005DC2AD  6A 0A                     PUSH 0xa
 005DC2AF  6A 0A                     PUSH 0xa
 005DC2B1  6A 00                     PUSH 0x0
-005DC2B3  E8 38 92 0D 00            CALL 0x006b54f0
+StartSystemTy::LoadMapData::override::prt_5dc2b3_1d2df247:
+005DC2B3  E8 38 92 0D 00            CALL 0x006b54f0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint
 005DC2B8  89 86 48 05 00 00         MOV dword ptr [ESI + 0x548],EAX
 005DC2BE  8B 15 18 76 80 00         MOV EDX,dword ptr [0x00807618]
 005DC2C4  52                        PUSH EDX

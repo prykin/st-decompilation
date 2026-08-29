@@ -26,6 +26,7 @@ FUN_0067cf30(char *source,undefined2 param_2,char *param_3,undefined4 param_4)
   local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   exceptionCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (exceptionCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
@@ -33,6 +34,7 @@ FUN_0067cf30(char *source,undefined2 param_2,char *param_3,undefined4 param_4)
     RaiseInternalException(exceptionCode,0,"E:\\__titans\\ai\\ai_plr_d.cpp",0x28);
     return nullptr;
   }
+
   local_8 = Library::DKW::LIB::MemAllocClear(299);
   *(undefined4 *)local_8 = 0x38e;
   *(undefined4 *)&local_8->field_0x14 = 299;
@@ -45,6 +47,7 @@ FUN_0067cf30(char *source,undefined2 param_2,char *param_3,undefined4 param_4)
   Library::MSVCRT::_strncpy(&local_8->field_0x5b,_Source,0xb);
   local_8->field_0019 = param_2;
   local_8->field_006D = 0xff;
+  /* ST_CALLSITE[0067CFE0]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
   pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,5,0x10,5);
   local_8->field_00C2 = &pDVar1->flags;
   pAVar2 = thunk_FUN_0065c9e0(source);

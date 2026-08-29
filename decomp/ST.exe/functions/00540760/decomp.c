@@ -7,22 +7,26 @@
    [STSourceProvenanceApplier end] */
 
 void __cdecl
-DibPut(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,char param_4,byte *param_5)
+DibPut(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,char param_4,
+      RecoveredRecordView_006B84D0_87AF9D9B *param_5)
 
 {
   int errorCode;
   int iVar2;
   InternalExceptionFrame local_48;
 
-  if ((param_1 != nullptr) && (param_5 != nullptr)) {
+  if ((param_1 != nullptr) &&
+     (param_5 != nullptr)) {
     local_48.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_48;
+
     errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
     if (errorCode == 0) {
       if (param_4 == '\x01') {
+
         Library::DKW::WGR::FUN_006b55f0
-                  (param_1,0,param_2,param_3,param_5,0,0,0,*(int *)(param_5 + 4),
-                   *(int *)(param_5 + 8));
+                  (param_1,0,param_2,param_3,param_5,0,0,0,*(int *)&param_5->field_0x4,
+                   *(int *)&param_5->field_0x8);
       }
       else if (param_4 == '\x06') {
         FUN_006b84d0(param_1,0,param_2,param_3,param_5);
@@ -33,6 +37,7 @@ DibPut(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,char param
       return;
     }
     g_currentExceptionFrame = local_48.previous;
+
     iVar2 = ReportDebugMessage("E:\\__titans\\Andrey\\support.cpp",0x4f,0,errorCode,
                                "%s","DibPut");
     if (iVar2 != 0) {

@@ -13,8 +13,10 @@ FrmPanelTy * __cdecl CreateFrmPanel(void)
 {
   FrmPanelTy *this;
 
-  this = (FrmPanelTy *)FUN_006b04d0(0x1e3);
+
+  this = STPointerBoundaryCast<FrmPanelTy *>(FUN_006b04d0(0x1e3));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;

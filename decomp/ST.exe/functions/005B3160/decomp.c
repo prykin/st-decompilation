@@ -30,6 +30,7 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   uVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (uVar3 == 0) {
     FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
@@ -78,10 +79,12 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
       puVar6 = &pMVar2->field_00BB[0].field_0028.field_001C;
       do {
         if (puVar6[-6] != 0xffffffff) {
+
           Library::DKW::DDX::FUN_006b3730
                     ((uint *)puVar6[0xb],puVar6[-6],puVar6[-5],*puVar6,puVar6[1]);
         }
         if ((pMVar2->field_0065 == '\x01') && (STField<uint>(puVar6,0x79) != 0xffffffff)) {
+
           Library::DKW::DDX::FUN_006b3730
                     (STField<uint *>(puVar6,0xbd),STField<uint>(puVar6,0x79),
                      STField<uint>(puVar6,0x7d),STField<uint>(puVar6,0x91),
@@ -95,6 +98,7 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",0x7e,0,uVar3,"%s",
                              "MainMenuTy::PaintMainMenu");
   if (iVar4 != 0) {

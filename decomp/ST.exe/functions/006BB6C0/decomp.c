@@ -1,12 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-int FUN_006bb6c0(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4,int param_5,
-                uint param_6)
+int FUN_006bb6c0(RecoveredRecord_006BB6C0_6F39CDC5 *param_1,undefined4 *param_2,undefined4 param_3,
+                undefined4 param_4,int param_5,uint param_6)
 
 {
   int iVar1;
-  undefined4 local_88 [26];
+  uint local_88 [26];
   uint local_20;
   int local_c;
   int local_8;
@@ -23,8 +23,7 @@ int FUN_006bb6c0(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 p
   local_88[3] = param_3;
   /* ST_CALLSITE[006BB728]: CALL dword ptr [ECX + 0x18] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar1 = (**(code **)(**(int **)(param_1 + 0x30) + 0x18))
-                    (*(int **)(param_1 + 0x30),local_88,param_2,0);
+  iVar1 = (**(code **)(*param_1->field_0030 + 0x18))(param_1->field_0030,local_88,param_2,0);
   if ((iVar1 == 0) && (param_5 != -1)) {
     local_8 = param_5;
     local_c = param_5;

@@ -1,6 +1,7 @@
 CreateOpticClass:
 004A88F0  6A 20                     PUSH 0x20
-004A88F2  E8 D9 7B 20 00            CALL 0x006b04d0
+CreateOpticClass::override::prt_4a88f2_b1fc6aab:
+004A88F2  E8 D9 7B 20 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/OpticClassC; signature=__stdcall;pointer:/OpticClassC;/uint
 004A88F7  85 C0                     TEST EAX,EAX
 004A88F9  74 0D                     JZ 0x004a8908
 004A88FB  8B C8                     MOV ECX,EAX

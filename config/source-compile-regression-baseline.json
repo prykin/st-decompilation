@@ -1,31 +1,6 @@
 {
   "address_error_families": [
     {
-      "address": "0040F4D0",
-      "count": 4,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "00413AF0",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "004168D0",
-      "count": 1,
-      "kind": "call_arity"
-    },
-    {
-      "address": "00416DB0",
-      "count": 1,
-      "kind": "call_arity"
-    },
-    {
-      "address": "00449B60",
-      "count": 1,
-      "kind": "pointer_indirection"
-    },
-    {
       "address": "0044D320",
       "count": 1,
       "kind": "other"
@@ -36,109 +11,9 @@
       "kind": "other"
     },
     {
-      "address": "004900E0",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "00495720",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
       "address": "00495720",
       "count": 1,
       "kind": "return_type"
-    },
-    {
-      "address": "00495750",
-      "count": 1,
-      "kind": "invalid_cast"
-    },
-    {
-      "address": "00496CC0",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "004BEA70",
-      "count": 8,
-      "kind": "other"
-    },
-    {
-      "address": "004C3570",
-      "count": 1,
-      "kind": "other"
-    },
-    {
-      "address": "004C4550",
-      "count": 4,
-      "kind": "other"
-    },
-    {
-      "address": "004C7C50",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "004FAE90",
-      "count": 1,
-      "kind": "call_argument_type"
-    },
-    {
-      "address": "00502360",
-      "count": 5,
-      "kind": "other"
-    },
-    {
-      "address": "005097E0",
-      "count": 5,
-      "kind": "other"
-    },
-    {
-      "address": "0051DDD0",
-      "count": 7,
-      "kind": "other"
-    },
-    {
-      "address": "00540C40",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "00548C40",
-      "count": 20,
-      "kind": "other"
-    },
-    {
-      "address": "0054D640",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "0054E4F0",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "0054F1D0",
-      "count": 1,
-      "kind": "invalid_cast"
-    },
-    {
-      "address": "00553390",
-      "count": 1,
-      "kind": "pointer_indirection"
-    },
-    {
-      "address": "00553410",
-      "count": 1,
-      "kind": "pointer_indirection"
-    },
-    {
-      "address": "0055BCB0",
-      "count": 1,
-      "kind": "assignment_type"
     },
     {
       "address": "0055C180",
@@ -146,74 +21,9 @@
       "kind": "other"
     },
     {
-      "address": "0055C320",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "0055EE70",
-      "count": 4,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "005623C0",
-      "count": 2,
-      "kind": "other"
-    },
-    {
-      "address": "0056ADC0",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "00581BF0",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "0058E570",
-      "count": 1,
-      "kind": "call_argument_type"
-    },
-    {
-      "address": "00590B40",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "00591BF0",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "00595E40",
-      "count": 1,
-      "kind": "invalid_cast"
-    },
-    {
-      "address": "0059B2C0",
-      "count": 3,
-      "kind": "other"
-    },
-    {
-      "address": "005A2380",
-      "count": 1,
-      "kind": "other"
-    },
-    {
-      "address": "005A3540",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
       "address": "005A4350",
-      "count": 2,
-      "kind": "other"
-    },
-    {
-      "address": "005B3430",
       "count": 1,
-      "kind": "assignment_type"
+      "kind": "other"
     },
     {
       "address": "005C0B00",
@@ -221,123 +31,8 @@
       "kind": "pointer_indirection"
     },
     {
-      "address": "005C7800",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "005C8200",
-      "count": 2,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "005D1400",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "005D1400",
-      "count": 13,
-      "kind": "other"
-    },
-    {
-      "address": "005D5560",
-      "count": 4,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "005D5560",
-      "count": 6,
-      "kind": "other"
-    },
-    {
-      "address": "005DAC80",
-      "count": 1,
-      "kind": "other"
-    },
-    {
-      "address": "005E1330",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "005E1330",
-      "count": 4,
-      "kind": "other"
-    },
-    {
-      "address": "006010A0",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "00604A90",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "00605B60",
-      "count": 17,
-      "kind": "other"
-    },
-    {
-      "address": "0060D390",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "00614A90",
-      "count": 2,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "00618240",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "00618C00",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "0061E7F0",
-      "count": 1,
-      "kind": "invalid_cast"
-    },
-    {
-      "address": "0062BBC0",
-      "count": 1,
-      "kind": "other"
-    },
-    {
-      "address": "0062BFF0",
-      "count": 1,
-      "kind": "other"
-    },
-    {
-      "address": "0062D670",
-      "count": 4,
-      "kind": "other"
-    },
-    {
-      "address": "0062ED90",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
       "address": "00630430",
       "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "00630430",
-      "count": 3,
-      "kind": "invalid_operands"
-    },
-    {
-      "address": "00630430",
-      "count": 4,
       "kind": "other"
     },
     {
@@ -346,33 +41,8 @@
       "kind": "pointer_indirection"
     },
     {
-      "address": "0064A970",
-      "count": 8,
-      "kind": "invalid_cast"
-    },
-    {
-      "address": "0064A970",
-      "count": 21,
-      "kind": "other"
-    },
-    {
-      "address": "00652810",
-      "count": 5,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "00652810",
-      "count": 15,
-      "kind": "other"
-    },
-    {
-      "address": "0065BD70",
-      "count": 1,
-      "kind": "other"
-    },
-    {
       "address": "0066ACC0",
-      "count": 7,
+      "count": 1,
       "kind": "other"
     },
     {
@@ -381,49 +51,9 @@
       "kind": "pointer_indirection"
     },
     {
-      "address": "00678980",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "0067D3B0",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "00680890",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "006809F0",
-      "count": 1,
-      "kind": "invalid_cast"
-    },
-    {
-      "address": "00682290",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "00683C70",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
       "address": "00683C70",
       "count": 2,
       "kind": "other"
-    },
-    {
-      "address": "00694C30",
-      "count": 2,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "00694CD0",
-      "count": 1,
-      "kind": "call_arity"
     },
     {
       "address": "006975F0",
@@ -431,49 +61,14 @@
       "kind": "other"
     },
     {
-      "address": "006A01D0",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "006A5990",
-      "count": 1,
-      "kind": "pointer_indirection"
-    },
-    {
-      "address": "006ACED8",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "006ACF0D",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "006AD4D0",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
       "address": "006ADC30",
-      "count": 3,
+      "count": 2,
       "kind": "other"
     },
     {
       "address": "006ADC30",
       "count": 4,
       "kind": "pointer_indirection"
-    },
-    {
-      "address": "006B2020",
-      "count": 1,
-      "kind": "other"
-    },
-    {
-      "address": "006B3070",
-      "count": 1,
-      "kind": "other"
     },
     {
       "address": "006BFBF0",
@@ -481,13 +76,8 @@
       "kind": "pointer_indirection"
     },
     {
-      "address": "006C0800",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
       "address": "006C08E0",
-      "count": 4,
+      "count": 1,
       "kind": "other"
     },
     {
@@ -501,227 +91,12 @@
       "kind": "pointer_indirection"
     },
     {
-      "address": "006DDD50",
-      "count": 1,
-      "kind": "invalid_cast"
-    },
-    {
-      "address": "006E9490",
-      "count": 2,
-      "kind": "invalid_cast"
-    },
-    {
-      "address": "006E9CB0",
-      "count": 2,
-      "kind": "invalid_cast"
-    },
-    {
-      "address": "006E9D40",
-      "count": 2,
-      "kind": "invalid_cast"
-    },
-    {
-      "address": "006E9DD0",
-      "count": 2,
-      "kind": "invalid_cast"
-    },
-    {
-      "address": "006E9E60",
-      "count": 2,
-      "kind": "invalid_cast"
-    },
-    {
-      "address": "006F31D0",
-      "count": 3,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "006F31D0",
-      "count": 6,
-      "kind": "other"
-    },
-    {
-      "address": "0070C900",
-      "count": 1,
-      "kind": "invalid_cast"
-    },
-    {
-      "address": "00711110",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "007111C0",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "007140E0",
-      "count": 1,
-      "kind": "other"
-    },
-    {
-      "address": "00714B30",
-      "count": 1,
-      "kind": "other"
-    },
-    {
-      "address": "007279B0",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "0072AFC0",
-      "count": 1,
-      "kind": "other"
-    },
-    {
-      "address": "007495BF",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "007498EC",
-      "count": 1,
-      "kind": "invalid_cast"
-    },
-    {
-      "address": "0074AB3D",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "0074BC6A",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "0074BD15",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "0074C6EA",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "0074C8EC",
-      "count": 1,
-      "kind": "call_arity"
-    },
-    {
-      "address": "0074C8F6",
-      "count": 1,
-      "kind": "call_arity"
-    },
-    {
-      "address": "0074C900",
-      "count": 1,
-      "kind": "call_arity"
-    },
-    {
-      "address": "0074D678",
-      "count": 1,
-      "kind": "call_argument_type"
-    },
-    {
-      "address": "0074DCA1",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "0074DFF5",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "0074E0D6",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "0074E17D",
-      "count": 1,
-      "kind": "invalid_cast"
-    },
-    {
-      "address": "0074E337",
-      "count": 2,
-      "kind": "call_arity"
-    },
-    {
-      "address": "0074E337",
-      "count": 1,
-      "kind": "invalid_cast"
-    },
-    {
-      "address": "0074E7B1",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "0074E847",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
-      "address": "00750565",
-      "count": 1,
-      "kind": "call_arity"
-    },
-    {
-      "address": "0075056F",
-      "count": 1,
-      "kind": "call_arity"
-    },
-    {
-      "address": "00750579",
-      "count": 1,
-      "kind": "call_arity"
-    },
-    {
-      "address": "0075E890",
-      "count": 1,
-      "kind": "assignment_type"
-    },
-    {
       "address": "007611C0",
-      "count": 5,
+      "count": 1,
       "kind": "other"
     }
   ],
   "address_translation_units": [
-    {
-      "address": "0040F4D0",
-      "translation_units": [
-        "source/recovered/by_address/0040.cpp"
-      ]
-    },
-    {
-      "address": "00413AF0",
-      "translation_units": [
-        "source/recovered/by_address/0041.cpp"
-      ]
-    },
-    {
-      "address": "004168D0",
-      "translation_units": [
-        "source/recovered/by_address/0041.cpp"
-      ]
-    },
-    {
-      "address": "00416DB0",
-      "translation_units": [
-        "source/recovered/by_address/0041.cpp"
-      ]
-    },
-    {
-      "address": "00449B60",
-      "translation_units": [
-        "source/original/wlad/to_allpl.cpp"
-      ]
-    },
     {
       "address": "0044D320",
       "translation_units": [
@@ -735,123 +110,9 @@
       ]
     },
     {
-      "address": "004900E0",
-      "translation_units": [
-        "source/original/wlad/To_boat.cpp"
-      ]
-    },
-    {
       "address": "00495720",
       "translation_units": [
         "source/recovered/by_address/0049.cpp"
-      ]
-    },
-    {
-      "address": "00495750",
-      "translation_units": [
-        "source/recovered/by_address/0049.cpp"
-      ]
-    },
-    {
-      "address": "00496CC0",
-      "translation_units": [
-        "source/recovered/by_address/0049.cpp"
-      ]
-    },
-    {
-      "address": "004BEA70",
-      "translation_units": [
-        "source/recovered/by_owner/TLOBaseTy.cpp"
-      ]
-    },
-    {
-      "address": "004C3570",
-      "translation_units": [
-        "source/original/Artem/TLO_bfire.cpp"
-      ]
-    },
-    {
-      "address": "004C4550",
-      "translation_units": [
-        "source/recovered/by_owner/TLOBaseTy.cpp"
-      ]
-    },
-    {
-      "address": "004C7C50",
-      "translation_units": [
-        "source/recovered/by_address/004C.cpp"
-      ]
-    },
-    {
-      "address": "004FAE90",
-      "translation_units": [
-        "source/recovered/by_owner/CPanelTy.cpp"
-      ]
-    },
-    {
-      "address": "00502360",
-      "translation_units": [
-        "source/original/Andrey/cpanel2.cpp"
-      ]
-    },
-    {
-      "address": "005097E0",
-      "translation_units": [
-        "source/original/Andrey/cpanel4.cpp"
-      ]
-    },
-    {
-      "address": "0051DDD0",
-      "translation_units": [
-        "source/original/Andrey/helppan.cpp"
-      ]
-    },
-    {
-      "address": "00540C40",
-      "translation_units": [
-        "source/recovered/by_address/0054.cpp"
-      ]
-    },
-    {
-      "address": "00548C40",
-      "translation_units": [
-        "source/original/Andrey/to_cursor.cpp"
-      ]
-    },
-    {
-      "address": "0054D640",
-      "translation_units": [
-        "source/original/Andrey/tplaysys.cpp"
-      ]
-    },
-    {
-      "address": "0054E4F0",
-      "translation_units": [
-        "source/original/Andrey/tplaysys.cpp"
-      ]
-    },
-    {
-      "address": "0054F1D0",
-      "translation_units": [
-        "source/original/Andrey/tplaysys.cpp"
-      ]
-    },
-    {
-      "address": "00553390",
-      "translation_units": [
-        "source/recovered/by_address/0055.cpp"
-      ]
-    },
-    {
-      "address": "00553410",
-      "translation_units": [
-        "source/recovered/by_address/0055.cpp"
-      ]
-    },
-    {
-      "address": "0055BCB0",
-      "translation_units": [
-        "source/recovered/by_address/0055.cpp"
       ]
     },
     {
@@ -861,201 +122,15 @@
       ]
     },
     {
-      "address": "0055C320",
-      "translation_units": [
-        "source/recovered/by_address/0055.cpp"
-      ]
-    },
-    {
-      "address": "0055EE70",
-      "translation_units": [
-        "source/recovered/by_address/0055.cpp"
-      ]
-    },
-    {
-      "address": "005623C0",
-      "translation_units": [
-        "source/recovered/by_address/0056.cpp"
-      ]
-    },
-    {
-      "address": "0056ADC0",
-      "translation_units": [
-        "source/original/tapp.cpp"
-      ]
-    },
-    {
-      "address": "00581BF0",
-      "translation_units": [
-        "source/original/Igor/to_jell_m.cpp"
-      ]
-    },
-    {
-      "address": "0058E570",
-      "translation_units": [
-        "source/original/Igor/To_shark.cpp"
-      ]
-    },
-    {
-      "address": "00590B40",
-      "translation_units": [
-        "source/original/Start/camp_obj.cpp"
-      ]
-    },
-    {
-      "address": "00591BF0",
-      "translation_units": [
-        "source/original/Start/camp_obj.cpp"
-      ]
-    },
-    {
-      "address": "00595E40",
-      "translation_units": [
-        "source/original/Start/fsgs_obj.cpp"
-      ]
-    },
-    {
-      "address": "0059B2C0",
-      "translation_units": [
-        "source/original/Start/fsgs_obj.cpp"
-      ]
-    },
-    {
-      "address": "005A2380",
-      "translation_units": [
-        "source/original/Start/fsgs_obj.cpp"
-      ]
-    },
-    {
-      "address": "005A3540",
-      "translation_units": [
-        "source/original/Start/fsgs_obj.cpp"
-      ]
-    },
-    {
       "address": "005A4350",
       "translation_units": [
         "source/original/Start/fsgs_obj.cpp"
       ]
     },
     {
-      "address": "005B3430",
-      "translation_units": [
-        "source/original/Start/main_obj.cpp"
-      ]
-    },
-    {
       "address": "005C0B00",
       "translation_units": [
         "source/original/Start/rpt_obj.cpp"
-      ]
-    },
-    {
-      "address": "005C7800",
-      "translation_units": [
-        "source/recovered/by_address/005C.cpp"
-      ]
-    },
-    {
-      "address": "005C8200",
-      "translation_units": [
-        "source/original/Start/sett_obj.cpp"
-      ]
-    },
-    {
-      "address": "005D1400",
-      "translation_units": [
-        "source/original/Start/settmobj.cpp"
-      ]
-    },
-    {
-      "address": "005D5560",
-      "translation_units": [
-        "source/original/Start/settsobj.cpp"
-      ]
-    },
-    {
-      "address": "005DAC80",
-      "translation_units": [
-        "source/original/Start/startsys.cpp"
-      ]
-    },
-    {
-      "address": "005E1330",
-      "translation_units": [
-        "source/original/Start/task_obj.cpp"
-      ]
-    },
-    {
-      "address": "006010A0",
-      "translation_units": [
-        "source/recovered/by_address/0060.cpp"
-      ]
-    },
-    {
-      "address": "00604A90",
-      "translation_units": [
-        "source/original/nick/to_Expl.cpp"
-      ]
-    },
-    {
-      "address": "00605B60",
-      "translation_units": [
-        "source/recovered/by_address/0060.cpp"
-      ]
-    },
-    {
-      "address": "0060D390",
-      "translation_units": [
-        "source/recovered/by_address/0060.cpp"
-      ]
-    },
-    {
-      "address": "00614A90",
-      "translation_units": [
-        "source/recovered/by_address/0061.cpp"
-      ]
-    },
-    {
-      "address": "00618240",
-      "translation_units": [
-        "source/recovered/by_address/0061.cpp"
-      ]
-    },
-    {
-      "address": "00618C00",
-      "translation_units": [
-        "source/original/nick/to_jump_mine.cpp"
-      ]
-    },
-    {
-      "address": "0061E7F0",
-      "translation_units": [
-        "source/recovered/by_address/0061.cpp"
-      ]
-    },
-    {
-      "address": "0062BBC0",
-      "translation_units": [
-        "source/recovered/by_address/0062.cpp"
-      ]
-    },
-    {
-      "address": "0062BFF0",
-      "translation_units": [
-        "source/recovered/by_address/0062.cpp"
-      ]
-    },
-    {
-      "address": "0062D670",
-      "translation_units": [
-        "source/recovered/by_owner/STManRub3C.cpp"
-      ]
-    },
-    {
-      "address": "0062ED90",
-      "translation_units": [
-        "source/original/nick/to_Rubb.cpp"
       ]
     },
     {
@@ -1071,24 +146,6 @@
       ]
     },
     {
-      "address": "0064A970",
-      "translation_units": [
-        "source/original/ai/ai_erc.cpp"
-      ]
-    },
-    {
-      "address": "00652810",
-      "translation_units": [
-        "source/original/ai/ai_event.cpp"
-      ]
-    },
-    {
-      "address": "0065BD70",
-      "translation_units": [
-        "source/recovered/by_owner/AiEventClassTy.cpp"
-      ]
-    },
-    {
       "address": "0066ACC0",
       "translation_units": [
         "source/original/ai/ai_interp.cpp"
@@ -1101,51 +158,9 @@
       ]
     },
     {
-      "address": "00678980",
-      "translation_units": [
-        "source/original/ai/ai_plr.cpp"
-      ]
-    },
-    {
-      "address": "0067D3B0",
-      "translation_units": [
-        "source/original/ai/ai_plr_d.cpp"
-      ]
-    },
-    {
-      "address": "00680890",
-      "translation_units": [
-        "source/original/ai/ai_script.cpp"
-      ]
-    },
-    {
-      "address": "006809F0",
-      "translation_units": [
-        "source/original/ai/ai_script.cpp"
-      ]
-    },
-    {
-      "address": "00682290",
-      "translation_units": [
-        "source/recovered/by_address/0068.cpp"
-      ]
-    },
-    {
       "address": "00683C70",
       "translation_units": [
         "source/original/ai/ai_script.cpp"
-      ]
-    },
-    {
-      "address": "00694C30",
-      "translation_units": [
-        "source/recovered/by_owner/CGenerate.cpp"
-      ]
-    },
-    {
-      "address": "00694CD0",
-      "translation_units": [
-        "source/recovered/by_owner/CGenerate.cpp"
       ]
     },
     {
@@ -1155,63 +170,15 @@
       ]
     },
     {
-      "address": "006A01D0",
-      "translation_units": [
-        "source/original/Maps/generate.cpp"
-      ]
-    },
-    {
-      "address": "006A5990",
-      "translation_units": [
-        "source/recovered/by_address/006A.cpp"
-      ]
-    },
-    {
-      "address": "006ACED8",
-      "translation_units": [
-        "source/recovered/by_address/006A.cpp"
-      ]
-    },
-    {
-      "address": "006ACF0D",
-      "translation_units": [
-        "source/recovered/by_address/006A.cpp"
-      ]
-    },
-    {
-      "address": "006AD4D0",
-      "translation_units": [
-        "source/recovered/by_address/006A.cpp"
-      ]
-    },
-    {
       "address": "006ADC30",
       "translation_units": [
         "source/recovered/by_address/006A.cpp"
       ]
     },
     {
-      "address": "006B2020",
-      "translation_units": [
-        "source/recovered/by_address/006B.cpp"
-      ]
-    },
-    {
-      "address": "006B3070",
-      "translation_units": [
-        "source/recovered/by_address/006B.cpp"
-      ]
-    },
-    {
       "address": "006BFBF0",
       "translation_units": [
         "source/recovered/by_address/006B.cpp"
-      ]
-    },
-    {
-      "address": "006C0800",
-      "translation_units": [
-        "source/recovered/by_address/006C.cpp"
       ]
     },
     {
@@ -1233,222 +200,13 @@
       ]
     },
     {
-      "address": "006DDD50",
-      "translation_units": [
-        "source/recovered/by_owner/ST3DSMAPContext.cpp"
-      ]
-    },
-    {
-      "address": "006E9490",
-      "translation_units": [
-        "source/recovered/by_address/006E.cpp"
-      ]
-    },
-    {
-      "address": "006E9CB0",
-      "translation_units": [
-        "source/recovered/by_owner/ST3DSMAPContext.cpp"
-      ]
-    },
-    {
-      "address": "006E9D40",
-      "translation_units": [
-        "source/recovered/by_owner/ST3DSMAPContext.cpp"
-      ]
-    },
-    {
-      "address": "006E9DD0",
-      "translation_units": [
-        "source/recovered/by_address/006E.cpp"
-      ]
-    },
-    {
-      "address": "006E9E60",
-      "translation_units": [
-        "source/recovered/by_address/006E.cpp"
-      ]
-    },
-    {
-      "address": "006F31D0",
-      "translation_units": [
-        "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_006F31D0.cpp"
-      ]
-    },
-    {
-      "address": "0070C900",
-      "translation_units": [
-        "source/recovered/by_address/0070.cpp"
-      ]
-    },
-    {
-      "address": "00711110",
-      "translation_units": [
-        "source/recovered/by_address/0071.cpp"
-      ]
-    },
-    {
-      "address": "007111C0",
-      "translation_units": [
-        "source/recovered/by_address/0071.cpp"
-      ]
-    },
-    {
-      "address": "007140E0",
-      "translation_units": [
-        "source/recovered/by_address/0071.cpp"
-      ]
-    },
-    {
-      "address": "00714B30",
-      "translation_units": [
-        "source/recovered/by_address/0071.cpp"
-      ]
-    },
-    {
-      "address": "007279B0",
-      "translation_units": [
-        "source/recovered/by_address/0072.cpp"
-      ]
-    },
-    {
-      "address": "0072AFC0",
-      "translation_units": [
-        "source/recovered/by_address/0072.cpp"
-      ]
-    },
-    {
-      "address": "007495BF",
-      "translation_units": [
-        "source/recovered/by_address/0074.cpp"
-      ]
-    },
-    {
-      "address": "007498EC",
-      "translation_units": [
-        "source/recovered/by_address/0074.cpp"
-      ]
-    },
-    {
-      "address": "0074AB3D",
-      "translation_units": [
-        "source/recovered/by_address/0074.cpp"
-      ]
-    },
-    {
-      "address": "0074BC6A",
-      "translation_units": [
-        "source/recovered/by_address/0074.cpp"
-      ]
-    },
-    {
-      "address": "0074BD15",
-      "translation_units": [
-        "source/recovered/by_address/0074.cpp"
-      ]
-    },
-    {
-      "address": "0074C6EA",
-      "translation_units": [
-        "source/recovered/by_address/0074.cpp"
-      ]
-    },
-    {
-      "address": "0074C8EC",
-      "translation_units": [
-        "source/recovered/by_address/0074.cpp"
-      ]
-    },
-    {
-      "address": "0074C8F6",
-      "translation_units": [
-        "source/recovered/by_address/0074.cpp"
-      ]
-    },
-    {
-      "address": "0074C900",
-      "translation_units": [
-        "source/recovered/by_address/0074.cpp"
-      ]
-    },
-    {
-      "address": "0074D678",
-      "translation_units": [
-        "source/recovered/by_address/0074.cpp"
-      ]
-    },
-    {
-      "address": "0074DCA1",
-      "translation_units": [
-        "source/recovered/by_address/0074.cpp"
-      ]
-    },
-    {
-      "address": "0074DFF5",
-      "translation_units": [
-        "source/recovered/by_address/0074.cpp"
-      ]
-    },
-    {
-      "address": "0074E0D6",
-      "translation_units": [
-        "source/recovered/by_address/0074.cpp"
-      ]
-    },
-    {
-      "address": "0074E17D",
-      "translation_units": [
-        "source/recovered/by_address/0074.cpp"
-      ]
-    },
-    {
-      "address": "0074E337",
-      "translation_units": [
-        "source/recovered/by_address/0074.cpp"
-      ]
-    },
-    {
-      "address": "0074E7B1",
-      "translation_units": [
-        "source/recovered/by_address/0074.cpp"
-      ]
-    },
-    {
-      "address": "0074E847",
-      "translation_units": [
-        "source/recovered/by_address/0074.cpp"
-      ]
-    },
-    {
-      "address": "00750565",
-      "translation_units": [
-        "source/recovered/by_address/0075.cpp"
-      ]
-    },
-    {
-      "address": "0075056F",
-      "translation_units": [
-        "source/recovered/by_address/0075.cpp"
-      ]
-    },
-    {
-      "address": "00750579",
-      "translation_units": [
-        "source/recovered/by_address/0075.cpp"
-      ]
-    },
-    {
-      "address": "0075E890",
-      "translation_units": [
-        "source/recovered/by_address/0075.cpp"
-      ]
-    },
-    {
       "address": "007611C0",
       "translation_units": [
         "source/recovered/by_address/0076.cpp"
       ]
     }
   ],
+  "address_value_domain_families": [],
   "compiler": "Ubuntu clang version 18.1.3 (1ubuntu1)",
   "configuration": {
     "error_limit_per_translation_unit": 64,
@@ -1458,11 +216,11 @@
     "target_data_model": "ilp32",
     "warnings_included": false
   },
-  "input_manifest_sha256": "c50b13669e0f1fac02131a52c9263b43b256c1d8e1dd9d8d4d8cbe973f88bea8",
-  "program_semantic_sha256": "08bae36b54cb8ddf14a1e734c23d387a8e2344e30be19e58fbadfa617bee1eeb",
+  "input_manifest_sha256": "c6e099a7a23a3f36508cd7463210d095031021f1d8ac92822f6fb772ca1598db",
+  "program_semantic_sha256": "a7939e1e5340f76bc779b9617a409135d5be18cfcac6d040fa320fc1bf495d99",
   "schema": "st-source-compile-regression-baseline",
   "schema_version": 1,
-  "source_manifest_sha256": "374b34119f6743afee551b66365df444ee0f876d0f131380f41ff9a31f9fe0b2",
+  "source_manifest_sha256": "6ac11f8aeb73c2be3702dbd8b92dc779b4d03d25dce4e7b55d01deef2da58eb2",
   "translation_units": {
     "source/original/Andrey/behpanel.cpp": {
       "errors": 0,
@@ -1500,8 +258,8 @@
       "reached_error_limit": false
     },
     "source/original/Andrey/cpanel2.cpp": {
-      "errors": 5,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/Andrey/cpanel3.cpp": {
@@ -1510,8 +268,8 @@
       "reached_error_limit": false
     },
     "source/original/Andrey/cpanel4.cpp": {
-      "errors": 5,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/Andrey/frmpanel.cpp": {
@@ -1520,8 +278,8 @@
       "reached_error_limit": false
     },
     "source/original/Andrey/helppan.cpp": {
-      "errors": 7,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/Andrey/helpstr.cpp": {
@@ -1600,13 +358,13 @@
       "reached_error_limit": false
     },
     "source/original/Andrey/to_cursor.cpp": {
-      "errors": 20,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/Andrey/tplaysys.cpp": {
-      "errors": 3,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/Andrey/tradecen.cpp": {
@@ -1645,8 +403,8 @@
       "reached_error_limit": false
     },
     "source/original/Artem/TLO_bfire.cpp": {
-      "errors": 1,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/Artem/TLO_bmove.cpp": {
@@ -1730,8 +488,8 @@
       "reached_error_limit": false
     },
     "source/original/Igor/To_shark.cpp": {
-      "errors": 1,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/Igor/to_crab.cpp": {
@@ -1745,8 +503,8 @@
       "reached_error_limit": false
     },
     "source/original/Igor/to_jell_m.cpp": {
-      "errors": 1,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/Igor/to_jelly.cpp": {
@@ -1790,8 +548,8 @@
       "reached_error_limit": false
     },
     "source/original/Maps/generate.cpp": {
-      "errors": 1,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/Maps/map_cnt.cpp": {
@@ -1815,8 +573,8 @@
       "reached_error_limit": false
     },
     "source/original/Start/camp_obj.cpp": {
-      "errors": 2,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/Start/combo.cpp": {
@@ -1825,7 +583,7 @@
       "reached_error_limit": false
     },
     "source/original/Start/fsgs_obj.cpp": {
-      "errors": 8,
+      "errors": 1,
       "passed": false,
       "reached_error_limit": false
     },
@@ -1840,8 +598,8 @@
       "reached_error_limit": false
     },
     "source/original/Start/main_obj.cpp": {
-      "errors": 1,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/Start/mmenuobj.cpp": {
@@ -1865,18 +623,18 @@
       "reached_error_limit": false
     },
     "source/original/Start/sett_obj.cpp": {
-      "errors": 2,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/Start/settmobj.cpp": {
-      "errors": 14,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/Start/settsobj.cpp": {
-      "errors": 10,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/Start/sid_obj.cpp": {
@@ -1885,13 +643,13 @@
       "reached_error_limit": false
     },
     "source/original/Start/startsys.cpp": {
-      "errors": 1,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/Start/task_obj.cpp": {
-      "errors": 5,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/Start/test_obj.cpp": {
@@ -1925,13 +683,13 @@
       "reached_error_limit": false
     },
     "source/original/ai/ai_erc.cpp": {
-      "errors": 29,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/ai/ai_event.cpp": {
-      "errors": 20,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/ai/ai_event_d.cpp": {
@@ -1950,7 +708,7 @@
       "reached_error_limit": false
     },
     "source/original/ai/ai_interp.cpp": {
-      "errors": 7,
+      "errors": 1,
       "passed": false,
       "reached_error_limit": false
     },
@@ -1960,17 +718,17 @@
       "reached_error_limit": false
     },
     "source/original/ai/ai_plr.cpp": {
-      "errors": 1,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/ai/ai_plr_d.cpp": {
-      "errors": 1,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/ai/ai_script.cpp": {
-      "errors": 5,
+      "errors": 2,
       "passed": false,
       "reached_error_limit": false
     },
@@ -2010,8 +768,8 @@
       "reached_error_limit": false
     },
     "source/original/nick/to_Expl.cpp": {
-      "errors": 1,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/nick/to_GnBom.cpp": {
@@ -2025,8 +783,8 @@
       "reached_error_limit": false
     },
     "source/original/nick/to_Rubb.cpp": {
-      "errors": 1,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/nick/to_TmMin.cpp": {
@@ -2070,8 +828,8 @@
       "reached_error_limit": false
     },
     "source/original/nick/to_jump_mine.cpp": {
-      "errors": 1,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/nick/to_light.cpp": {
@@ -2095,7 +853,7 @@
       "reached_error_limit": false
     },
     "source/original/nick/to_ruinm.cpp": {
-      "errors": 8,
+      "errors": 1,
       "passed": false,
       "reached_error_limit": false
     },
@@ -2140,8 +898,8 @@
       "reached_error_limit": false
     },
     "source/original/tapp.cpp": {
-      "errors": 1,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/tinittxt.cpp": {
@@ -2175,8 +933,8 @@
       "reached_error_limit": false
     },
     "source/original/wlad/To_boat.cpp": {
-      "errors": 1,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/wlad/To_dump.cpp": {
@@ -2200,8 +958,8 @@
       "reached_error_limit": false
     },
     "source/original/wlad/to_allpl.cpp": {
-      "errors": 1,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/original/wlad/to_grpb.cpp": {
@@ -2210,13 +968,13 @@
       "reached_error_limit": false
     },
     "source/recovered/by_address/0040.cpp": {
-      "errors": 4,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/recovered/by_address/0041.cpp": {
-      "errors": 3,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/recovered/by_address/0042.cpp": {
@@ -2255,7 +1013,7 @@
       "reached_error_limit": false
     },
     "source/recovered/by_address/0049.cpp": {
-      "errors": 4,
+      "errors": 1,
       "passed": false,
       "reached_error_limit": false
     },
@@ -2270,8 +1028,8 @@
       "reached_error_limit": false
     },
     "source/recovered/by_address/004C.cpp": {
-      "errors": 1,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/recovered/by_address/004D.cpp": {
@@ -2310,18 +1068,18 @@
       "reached_error_limit": false
     },
     "source/recovered/by_address/0054.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_address/0055.cpp": {
       "errors": 1,
       "passed": false,
       "reached_error_limit": false
     },
-    "source/recovered/by_address/0055.cpp": {
-      "errors": 9,
-      "passed": false,
-      "reached_error_limit": false
-    },
     "source/recovered/by_address/0056.cpp": {
-      "errors": 2,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/recovered/by_address/0057.cpp": {
@@ -2350,8 +1108,8 @@
       "reached_error_limit": false
     },
     "source/recovered/by_address/005C.cpp": {
-      "errors": 1,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/recovered/by_address/005D.cpp": {
@@ -2370,18 +1128,18 @@
       "reached_error_limit": false
     },
     "source/recovered/by_address/0060.cpp": {
-      "errors": 19,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/recovered/by_address/0061.cpp": {
-      "errors": 4,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/recovered/by_address/0062.cpp": {
-      "errors": 2,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/recovered/by_address/0063.cpp": {
@@ -2410,8 +1168,8 @@
       "reached_error_limit": false
     },
     "source/recovered/by_address/0068.cpp": {
-      "errors": 1,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/recovered/by_address/0069.cpp": {
@@ -2420,17 +1178,17 @@
       "reached_error_limit": false
     },
     "source/recovered/by_address/006A.cpp": {
-      "errors": 11,
+      "errors": 6,
       "passed": false,
       "reached_error_limit": false
     },
     "source/recovered/by_address/006B.cpp": {
-      "errors": 4,
+      "errors": 2,
       "passed": false,
       "reached_error_limit": false
     },
     "source/recovered/by_address/006C.cpp": {
-      "errors": 9,
+      "errors": 5,
       "passed": false,
       "reached_error_limit": false
     },
@@ -2440,8 +1198,8 @@
       "reached_error_limit": false
     },
     "source/recovered/by_address/006E.cpp": {
-      "errors": 6,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/recovered/by_address/006F.cpp": {
@@ -2450,32 +1208,27 @@
       "reached_error_limit": false
     },
     "source/recovered/by_address/0070.cpp": {
-      "errors": 1,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/recovered/by_address/0071.cpp": {
-      "errors": 4,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/recovered/by_address/0072.cpp": {
-      "errors": 2,
-      "passed": false,
-      "reached_error_limit": false
-    },
-    "source/recovered/by_address/0074.cpp": {
-      "errors": 19,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/recovered/by_address/0075.cpp": {
-      "errors": 4,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/recovered/by_address/0076.cpp": {
-      "errors": 5,
+      "errors": 1,
       "passed": false,
       "reached_error_limit": false
     },
@@ -2485,8 +1238,8 @@
       "reached_error_limit": false
     },
     "source/recovered/by_owner/AiEventClassTy.cpp": {
-      "errors": 1,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/recovered/by_owner/AiFltClassTy.cpp": {
@@ -2529,19 +1282,14 @@
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/CBaseRenderer.cpp": {
-      "errors": 0,
-      "passed": true,
-      "reached_error_limit": false
-    },
     "source/recovered/by_owner/CGenerate.cpp": {
-      "errors": 5,
+      "errors": 2,
       "passed": false,
       "reached_error_limit": false
     },
     "source/recovered/by_owner/CPanelTy.cpp": {
-      "errors": 1,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/recovered/by_owner/CampaignTy.cpp": {
@@ -2609,6 +1357,11 @@
       "passed": true,
       "reached_error_limit": false
     },
+    "source/recovered/by_owner/ListClassTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
     "source/recovered/by_owner/MAdvTy.cpp": {
       "errors": 0,
       "passed": true,
@@ -2659,6 +1412,11 @@
       "passed": true,
       "reached_error_limit": false
     },
+    "source/recovered/by_owner/PopUpTy.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
     "source/recovered/by_owner/PrividerTy.cpp": {
       "errors": 0,
       "passed": true,
@@ -2675,8 +1433,8 @@
       "reached_error_limit": false
     },
     "source/recovered/by_owner/ST3DSMAPContext.cpp": {
-      "errors": 5,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/recovered/by_owner/STAllPlayersC.cpp": {
@@ -2795,8 +1553,8 @@
       "reached_error_limit": false
     },
     "source/recovered/by_owner/STManRub3C.cpp": {
-      "errors": 4,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/recovered/by_owner/STManRuinC.cpp": {
@@ -2859,6 +1617,11 @@
       "passed": true,
       "reached_error_limit": false
     },
+    "source/recovered/by_owner/STTorpC.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
     "source/recovered/by_owner/STVolcanoC.cpp": {
       "errors": 0,
       "passed": true,
@@ -2899,117 +1662,142 @@
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00416270.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00416270.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_004167A0.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_004167A0.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_004248D0.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_004248D0.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_004603B0.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00493610.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00493610.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_0053F510.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0054A9B0.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_0054A9B0.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00573260.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_0055C320.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00601500.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00567510.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0060EF40.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00568010.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00636260.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00568940.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00644410.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_0056A130.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0064A970.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00573260.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0065DA50.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00601500.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_0065ED90.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_0060EF40.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00664540.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00636260.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00678E00.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00644410.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00693D00.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_0064A970.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_006CEC40.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_0065DA50.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_006F31D0.cpp": {
-      "errors": 9,
-      "passed": false,
-      "reached_error_limit": false
-    },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00702510.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_0065ED90.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00714CE0.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00664540.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00727C80.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00678E00.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
     },
-    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__AnonReceiver_00728640.cpp": {
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00693B20.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_006CEC40.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_006F31D0.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00702510.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00714CE0.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00727C80.cpp": {
+      "errors": 0,
+      "passed": true,
+      "reached_error_limit": false
+    },
+    "source/recovered/by_owner/SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00728640.cpp": {
       "errors": 0,
       "passed": true,
       "reached_error_limit": false
@@ -3025,8 +1813,8 @@
       "reached_error_limit": false
     },
     "source/recovered/by_owner/TLOBaseTy.cpp": {
-      "errors": 12,
-      "passed": false,
+      "errors": 0,
+      "passed": true,
       "reached_error_limit": false
     },
     "source/recovered/by_owner/TLOBldMark.cpp": {

@@ -53,7 +53,7 @@ LAB_005cbdae:
 005CBDB0  6A 0C                     PUSH 0xc
 005CBDB2  6A 20                     PUSH 0x20
 005CBDB4  57                        PUSH EDI
-005CBDB5  E8 D6 24 0E 00            CALL 0x006ae290
+005CBDB5  E8 D6 24 0E 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/SettMapMTy_field_2237DArray; source view only; no Ghidra override
 005CBDBA  89 86 37 22 00 00         MOV dword ptr [ESI + 0x2237],EAX
 005CBDC0  A1 6C 17 81 00            MOV EAX,[0x0081176c]
 005CBDC5  6A 01                     PUSH 0x1
@@ -222,7 +222,7 @@ LAB_005cbfa7:
 005CBFC7  68 F1 01 00 00            PUSH 0x1f1
 005CBFCC  68 C8 00 00 00            PUSH 0xc8
 005CBFD1  51                        PUSH ECX
-005CBFD2  E8 19 3A 0F 00            CALL 0x006bf9f0
+005CBFD2  E8 19 3A 0F 00            CALL 0x006bf9f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; source view only; no Ghidra override
 005CBFD7  8B 8E F8 21 00 00         MOV ECX,dword ptr [ESI + 0x21f8]
 005CBFDD  50                        PUSH EAX
 005CBFDE  68 F1 01 00 00            PUSH 0x1f1

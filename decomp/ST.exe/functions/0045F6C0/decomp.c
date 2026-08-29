@@ -44,6 +44,7 @@ undefined4 __thiscall STBoatC::sub_0045F6C0(STBoatC *this)
     iVar12 = this->field_0024;
     iVar13 = 0x6d;
   }
+
   iVar12 = thunk_FUN_004e60d0(iVar12,iVar13);
 LAB_0045f710:
   bVar4 = thunk_FUN_00430750(this->field_06F7);
@@ -102,6 +103,7 @@ LAB_0045f710:
       /* ST_CALLSITE[0045F8CF]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
       uVar7 = sub_004176C0(this,sVar5);
       if ((short)uVar7 != this->field_006C) {
+
         thunk_FUN_00417740(this,this->field_006C,(short)uVar7);
       }
     }

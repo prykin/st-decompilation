@@ -10,10 +10,10 @@ int FUN_006bb9d0(AnonShape_006BB9D0_BD42D958 *param_1,int param_2,int param_3,in
   BOOL BVar3;
   int iVar4;
   tagRECT local_44;
-  undefined4 local_34;
-  undefined4 local_30;
-  undefined4 local_2c;
-  undefined4 local_28;
+  uint local_34;
+  uint local_30;
+  uint local_2c;
+  uint local_28;
   RECT local_24;
   RECT local_14;
 

@@ -47,14 +47,16 @@ undefined4 __fastcall FUN_004ddd50(int *param_1)
         }
         else {
           iVar7 = piVar8[-2] + -0x96;
+
           iVar5 = thunk_FUN_004e60d0(param_1[9],local_8);
           local_c = *(int *)(&DAT_007e601c + (iVar5 + iVar7 * 5) * 4);
-          /* ST_CALLSITE[004DDE3B]: CALL dword ptr [EAX + 0x2c] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar5 = (**(code **)(*param_1 + 0x2c))();
+          /* ST_CALLSITE[004DDE3B]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+          iVar5 = STStructuralVirtualCall<undefined4>(param_1, 0x2C);
+          /* ST_CALLSITE[004DDE49]: CALL 0x00402897; direct=00402897 thunk_FUN_004b72e0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
           iVar5 = thunk_FUN_004b72e0((char)param_1[9],iVar5);
           if (iVar5 != 0) {
-            iVar5 = thunk_FUN_004b79c0((char)param_1[9],param_1[6]);
+            /* ST_CALLSITE[004DDE60]: CALL 0x00402c98; direct=00402C98 STAllPlayersC::sub_004B79C0 */
+            iVar5 = STAllPlayersC::sub_004B79C0(g_allPlayers_007FA174,(char)param_1[9],param_1[6]);
             if (iVar5 == 0) {
               local_c = local_c * 4;
               if (g_sndUnderAttMeneg_00811798 != nullptr) {
@@ -65,8 +67,10 @@ undefined4 __fastcall FUN_004ddd50(int *param_1)
           }
           if ((uint)(piVar8[2] + local_c) <= g_playSystem_00802A38->field_00E4) {
             iVar5 = (&DAT_007e6024)[iVar7 * 5];
+
             iVar6 = thunk_FUN_004d7b50((char)param_1[9],3);
             if (iVar5 <= iVar6) {
+
               thunk_FUN_004d7d30((char)param_1[9],3,param_1[6],iVar5);
               iVar5 = piVar8[-1];
               bVar3 = true;
@@ -85,11 +89,13 @@ undefined4 __fastcall FUN_004ddd50(int *param_1)
       piVar8 = piVar8 + 5;
     } while (-1 < *piVar1);
     if (bVar2) {
-      thunk_FUN_004ddcc0((AnonShape_004DDCC0_33DEB43E *)param_1);
+
+      thunk_FUN_004ddcc0((RecoveredRecordView_004DDCC0_A8DE46ED *)param_1);
     }
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if ((bVar3) && (param_1[9] == (uint)*(byte *)(param_1[4] + 0x112d))) {
-      thunk_FUN_004d8b70((char)param_1[9]);
+      /* ST_CALLSITE[004DDF55]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+      STAllPlayersC::sub_004D8B70(g_allPlayers_007FA174,(char)param_1[9]);
     }
   }
   return 0;

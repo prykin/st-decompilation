@@ -38,10 +38,12 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0xa91,0,iVar4,"%s",
                                "STSprGameObjC::GetMessage");
     if (iVar5 == 0) {
@@ -75,7 +77,9 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
         STT3DSprC::StopShow((STT3DSprC *)puVar8,0xf);
         /* ST_CALLSITE[0041EF3F]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
         STT3DSprC::StopShow((STT3DSprC *)puVar8,0);
+
         thunk_FUN_004abce0(puVar8,0,0,0x13,'\0');
+
         thunk_FUN_004abce0(puVar8,0xf,0x14,0x27,'\0');
         thunk_FUN_004acd60(puVar8,'\0',g_playSystem_00802A38->field_00E4 & 1);
         thunk_FUN_004acd60(puVar8,'\x0f',g_playSystem_00802A38->field_00E4 & 1);
@@ -95,7 +99,9 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
       STT3DSprC::StopShow((STT3DSprC *)puVar8,0xf);
       /* ST_CALLSITE[0041EEC7]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)puVar8,0);
+
       thunk_FUN_004abce0(puVar8,0,0,0,'\0');
+
       thunk_FUN_004abce0(puVar8,0xf,0x14,0x14,'\0');
       /* ST_CALLSITE[0041EEF5]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow((STT3DSprC *)puVar8,0,g_playSystem_00802A38->field_00E4);
@@ -105,7 +111,7 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
       return 0;
     }
     if (SVar2 == MESS_STSPRGAMEOBJC_4403) {
-      thunk_FUN_0041f630((AnonShape_0041F630_B1BEE81C *)this_00);
+      thunk_FUN_0041f630((RecoveredRecordView_0041F630_FBFD9742 *)this_00);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
@@ -114,8 +120,9 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
+
       thunk_FUN_004ad4a0(&this_00->field_01D5,PTR_00806774,"simmsk");
-      thunk_FUN_004ad4f0((int)&this_00->field_01D5);
+      thunk_FUN_004ad4f0((RecoveredRecord_004AD4F0_063639E5 *)&this_00->field_01D5);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
@@ -127,7 +134,7 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    thunk_FUN_004ad510((int)&this_00->field_01D5);
+    thunk_FUN_004ad510((RecoveredRecord_004AD510_C348FA0E *)&this_00->field_01D5);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
@@ -149,7 +156,8 @@ int __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,STMessage *message)
         return 0;
       }
       /* ST_CALLSITE[0041ED88]: CALL 0x004059cf; direct=004059CF SoundManagerTy::sub_00566BD0 */
-      SoundManagerTy::sub_00566BD0(g_soundManager_008033F0,(int)this_00);
+      SoundManagerTy::sub_00566BD0
+                (g_soundManager_008033F0,(RecoveredRecord_00566BD0_FD8EB056 *)this_00);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }

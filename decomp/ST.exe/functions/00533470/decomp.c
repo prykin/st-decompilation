@@ -20,8 +20,7 @@ undefined4 __thiscall OptPanelTy::CheckFiles(OptPanelTy *this,byte *param_1)
   bool bVar10;
   InternalExceptionFrame local_54;
   OptPanelTy *local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;

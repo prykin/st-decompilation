@@ -13,8 +13,10 @@ UpgPanelTy * __cdecl CreateUpgPanel(void)
 {
   UpgPanelTy *this;
 
-  this = (UpgPanelTy *)FUN_006b04d0(0x3f7);
+
+  this = STPointerBoundaryCast<UpgPanelTy *>(FUN_006b04d0(0x3f7));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;

@@ -4,7 +4,7 @@ void FUN_006bcd10(void)
 {
   int iVar1;
   int iVar2;
-  AnonShape_GLOBAL_00854F44_D3146D26 *pAVar3;
+  RecoveredGlobalRecordView_00854F44 *pRVar3;
   int *piVar4;
   uint uVar5;
   uint uVar6;
@@ -23,36 +23,39 @@ joined_r0x006bcd2a:
       DAT_00854f60 = iVar2;
       return;
     }
-    PTR_00854f44 = (AnonShape_GLOBAL_00854F44_D3146D26 *)PTR_00854fdc[iVar2];
+    PTR_00854f44 = (RecoveredGlobalRecordView_00854F44 *)PTR_00854fdc[iVar2];
     DAT_00854f60 = iVar2;
     if ((*(uint *)PTR_00854f44 & 8) == 0) {
       if ((*(uint *)PTR_00854f44 & 2) == 0) goto joined_r0x006bcd2a;
       if (((g_int_00854FD4[0x7a] < (int)PTR_00854f44->field_0044) && (g_int_00854FD4[0x77] != 0)) &&
+
          (iVar2 = FUN_006cfeb0((int *)&DAT_00854f08,(int *)&PTR_00854f44->field_0x28,
                                g_int_00854FD4 + g_int_00854FD4[0x79] * 4 + 5), iVar2 != 0)) {
         FUN_006bcb30(g_int_00854FD4,DAT_00854f08,DAT_00854f0c,DAT_00854f10,DAT_00854f14);
       }
       DAT_00854eec = 0;
-      pAVar3 = PTR_00854f44;
+      pRVar3 = PTR_00854f44;
       iVar2 = DAT_00854f60;
       if (0 < DAT_00854f60) {
         do {
           PTR_00854fd0 = (uint *)PTR_00854fdc[DAT_00854eec];
           if ((((*PTR_00854fd0 & 2) == 0) || ((int)PTR_00854fd0[0x1a] < 5)) &&
-             (DAT_00854edc = 0, 4 < pAVar3->field_0068)) {
+             (DAT_00854edc = 0, 4 < pRVar3->field_0068)) {
+
             iVar2 = FUN_006b0460((int *)&DAT_00854f08,(int *)(PTR_00854fd0 + 1),
-                                 (int *)&pAVar3->field_0x28);
+                                 (int *)&pRVar3->field_0x28);
             if (iVar2 != 0) {
+
               DAT_00854edc = FUN_006d1ad0((int *)(PTR_00854fd0 + 0x1a),4,DAT_00854f08,DAT_00854f0c,
                                           DAT_00854f10,DAT_00854f14,PTR_00854fd0[3],PTR_00854fd0[4],
                                           -(uint)((*PTR_00854fd0 & 0x2000) != 0));
             }
-            pAVar3 = PTR_00854f44;
+            pRVar3 = PTR_00854f44;
             if (DAT_00854edc != 0) {
               *PTR_00854fd0 = *PTR_00854fd0 | 2;
               uVar8 = *PTR_00854fd0;
               if (((uVar8 & 0x3000) != 0) ||
-                 ((pAVar3 = PTR_00854f44, (uVar8 & 0x4000) != 0 && ((uVar8 & 0x20000) == 0)))) {
+                 ((pRVar3 = PTR_00854f44, (uVar8 & 0x4000) != 0 && ((uVar8 & 0x20000) == 0)))) {
                 *PTR_00854fd0 = uVar8 | 4;
                 if (((*(uint *)PTR_00854f44 & 0x2000) == 0) || (DAT_00854edc == -1)) {
                   iVar2 = g_int_00854FD4[4];
@@ -72,13 +75,14 @@ joined_r0x006bcd2a:
                   uVar7 = DAT_00854f10;
                   uVar8 = DAT_00854f14;
                 }
+
                 DAT_00854f28 = FUN_006d1ad0(piVar4,100,uVar5,uVar6,uVar7,uVar8,iVar1,iVar2,1);
                 if (DAT_00854f28 == -1) {
                   DAT_00854f98 = 1;
                   iVar2 = DAT_00854f60;
                   break;
                 }
-                pAVar3 = PTR_00854f44;
+                pRVar3 = PTR_00854f44;
                 if (DAT_00854f28 != 0) goto LAB_006bd0ad;
               }
             }
@@ -94,9 +98,11 @@ joined_r0x006bcd2a:
         do {
           PTR_00854fd0 = (uint *)PTR_00854fdc[DAT_00854eec];
           if (((((*PTR_00854fd0 & 2) == 0) || ((int)PTR_00854fd0[0x1a] < 5)) &&
+
               (iVar1 = FUN_006cfeb0((int *)&DAT_00854f08,(int *)(PTR_00854fd0 + 10),
                                     g_int_00854FD4 + g_int_00854FD4[0x79] * 4 + 5),
               iVar2 = DAT_00854f60, iVar1 != 0)) &&
+
              (iVar1 = FUN_006bd0c0(g_int_00854FD4,DAT_00854f08,DAT_00854f0c,DAT_00854f10,
                                    DAT_00854f14), iVar2 = DAT_00854f60, iVar1 != 0)) {
             PTR_00854fd0[0x1a] = 5;
@@ -105,6 +111,7 @@ joined_r0x006bcd2a:
             if (((uVar8 & 0x3000) != 0) ||
                ((iVar2 = DAT_00854f60, (uVar8 & 0x4000) != 0 && ((uVar8 & 0x20000) == 0)))) {
               *PTR_00854fd0 = uVar8 | 4;
+
               DAT_00854f28 = FUN_006d1ad0((int *)g_int_00854FD4[0x70],100,PTR_00854fd0[1],
                                           PTR_00854fd0[2],PTR_00854fd0[3],PTR_00854fd0[4],
                                           g_int_00854FD4[3],g_int_00854FD4[4],1);

@@ -12,11 +12,11 @@ void FUN_00682d70(void)
   byte *pbVar1;
   int iVar2;
   char *pcVar3;
-  undefined1 local_c;
-  undefined2 local_b;
-
+  byte local_c;
+  ushort local_b;
   pcVar3 = PTR_00857548;
   pbVar1 = thunk_FUN_0067eca0();
+
   iVar2 = thunk_FUN_0067f180(pbVar1,pcVar3);
   if (iVar2 < 0) {
     RaiseInternalException

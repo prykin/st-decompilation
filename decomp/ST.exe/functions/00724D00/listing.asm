@@ -1,6 +1,7 @@
 CreateSlider:
 00724D00  6A 64                     PUSH 0x64
-00724D02  E8 C9 B7 F8 FF            CALL 0x006b04d0
+CreateSlider::override::prt_724d02_832a4a8e:
+00724D02  E8 C9 B7 F8 FF            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SliderClassTy; signature=__stdcall;pointer:/SliderClassTy;/uint
 00724D07  85 C0                     TEST EAX,EAX
 00724D09  74 07                     JZ 0x00724d12
 00724D0B  8B C8                     MOV ECX,EAX

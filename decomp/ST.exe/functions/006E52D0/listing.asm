@@ -27,7 +27,7 @@ LAB_006e52fe:
 006E5304  51                        PUSH ECX
 006E5305  8B CF                     MOV ECX,EDI
 006E5307  8B 07                     MOV EAX,dword ptr [EDI]
-006E5309  FF 10                     CALL dword ptr [EAX]
+006E5309  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 006E530B  8B 56 10                  MOV EDX,dword ptr [ESI + 0x10]
 006E530E  53                        PUSH EBX
 006E530F  52                        PUSH EDX

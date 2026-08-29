@@ -22,6 +22,7 @@ void __thiscall MTestTy::NoneMTest(MTestTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pMVar2 = local_8;
   if (iVar3 == 0) {
@@ -49,6 +50,7 @@ void __thiscall MTestTy::NoneMTest(MTestTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Start\\test_obj.cpp",0x6c,0,iVar3,"%s",
                              "MTestTy::NoneMTest");
   if (iVar4 != 0) {

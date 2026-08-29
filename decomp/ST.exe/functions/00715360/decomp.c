@@ -34,7 +34,7 @@ FUN_00715360(int *param_1,int param_2,char param_3,char *param_4,uint param_5,in
   char *pcVar5;
   InternalExceptionFrame local_6c;
   char local_28;
-  undefined4 local_27;
+  uint local_27;
   char local_23 [23];
   uint local_c;
   AnonShape_00715360_91615618 *local_8;

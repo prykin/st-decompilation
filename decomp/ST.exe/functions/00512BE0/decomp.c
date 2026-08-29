@@ -17,7 +17,8 @@
    incoming_edx_uses=0; incoming_stack_parameter_uses=54; direct_non_thunk_callers=0;
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
-void __thiscall HelpPanelTy::sub_00512BE0(HelpPanelTy *this,int param_1)
+void __thiscall
+HelpPanelTy::sub_00512BE0(HelpPanelTy *this,RecoveredRecord_00512BE0_263FD6FB *param_1)
 
 {
   ccFntTy *pcVar1;
@@ -27,50 +28,50 @@ void __thiscall HelpPanelTy::sub_00512BE0(HelpPanelTy *this,int param_1)
   int *piVar6;
   int *piVar7;
   int local_8c4 [4];
-  undefined4 local_8b4;
+  uint local_8b4;
   int local_8b0;
-  undefined4 local_8ac;
-  undefined4 local_8a8;
+  uint local_8ac;
+  uint local_8a8;
   int local_8a4;
   int local_8a0;
-  undefined4 local_88c;
-  undefined4 local_888;
-  undefined4 local_884;
-  undefined4 local_814;
-  undefined4 local_810;
-  undefined4 local_80c;
+  uint local_88c;
+  uint local_888;
+  uint local_884;
+  uint local_814;
+  uint local_810;
+  uint local_80c;
   int local_808 [4];
-  undefined4 local_7f8;
-  undefined4 local_7f4;
-  undefined4 local_7a8;
-  undefined4 local_7a4;
-  undefined4 local_7a0;
-  undefined4 local_700;
-  undefined4 local_6fc;
-  undefined4 local_6f8;
-  undefined4 local_6f4;
+  uint local_7f8;
+  uint local_7f4;
+  uint local_7a8;
+  uint local_7a4;
+  uint local_7a0;
+  uint local_700;
+  uint local_6fc;
+  uint local_6f8;
+  uint local_6f4;
   ushort *local_6e4;
   int local_6e0;
-  undefined4 local_68c;
+  uint local_68c;
   int local_688 [26];
-  undefined4 local_620;
+  uint local_620;
   ushort *local_564;
   int local_560;
-  undefined4 local_50c;
-  undefined4 local_508;
-  undefined4 local_500;
+  uint local_50c;
+  uint local_508;
+  uint local_500;
   int local_4fc;
   int local_4f8;
-  undefined4 local_4f4;
-  undefined4 local_4f0;
-  undefined4 local_4ec;
-  undefined4 local_4b8;
-  undefined4 local_4b4;
-  undefined4 local_4b0;
-  undefined4 local_478;
-  undefined4 local_474;
-  undefined4 local_5c;
-  undefined4 local_58;
+  uint local_4f4;
+  uint local_4f0;
+  uint local_4ec;
+  uint local_4b8;
+  uint local_4b4;
+  uint local_4b0;
+  uint local_478;
+  uint local_474;
+  uint local_5c;
+  uint local_58;
   InternalExceptionFrame local_4c;
   HelpPanelTy *local_8;
 
@@ -82,6 +83,7 @@ void __thiscall HelpPanelTy::sub_00512BE0(HelpPanelTy *this,int param_1)
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   local_8c4[0] = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (local_8c4[0] == 0) {
@@ -96,10 +98,10 @@ void __thiscall HelpPanelTy::sub_00512BE0(HelpPanelTy *this,int param_1)
     pcVar1 = local_8->field_01E4;
     local_8a0 = local_8a0 + 0x16;
     local_8c4[2] = 1;
-    local_8c4[3] = *(undefined4 *)(param_1 + 8);
+    local_8c4[3] = param_1->field_0008;
     local_8b4 = 0x19c;
     if (pcVar1->field_00A0 != 0) {
-      FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar1);
+      FUN_00710790((RecoveredRecordView_00710790_7768A573 *)pcVar1);
     }
     local_8b0 = *(int *)&pcVar1->field_0x8a;
     local_8a8 = (undefined4)(0x118 / (longlong)local_8b0);
@@ -128,6 +130,7 @@ void __thiscall HelpPanelTy::sub_00512BE0(HelpPanelTy *this,int param_1)
     local_7a0 = 0x8165;
     local_7a8 = local_88c;
     local_6e4 = FUN_0070aa70(g_cMf32_00806790,"BUT_MSLDN",0,1);
+
     local_6e0 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,"BUT_MSLDN",1);
     iVar4 = this_00->field_005C;
     local_700 = 1;
@@ -145,6 +148,7 @@ void __thiscall HelpPanelTy::sub_00512BE0(HelpPanelTy *this,int param_1)
     local_688[3] = local_688[3] + 0x16;
     local_620 = 0x8164;
     local_564 = FUN_0070aa70(g_cMf32_00806790,"BUT_MSLUP",0,1);
+
     local_560 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,"BUT_MSLUP",1);
     local_4fc = this_00->field_003C + 0x1c3;
     local_50c = 3;
@@ -180,6 +184,7 @@ void __thiscall HelpPanelTy::sub_00512BE0(HelpPanelTy *this,int param_1)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x220,0,local_8c4[0],
                              "%s","HelpPanelTy ::CreateVText");
   if (iVar3 != 0) {

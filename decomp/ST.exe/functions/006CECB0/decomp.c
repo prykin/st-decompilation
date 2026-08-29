@@ -7,15 +7,15 @@ int FUN_006cecb0(AnonShape_006CECB0_97249119 *param_1,int param_2)
   int *piVar1;
   uint uVar2;
   int iVar3;
-  undefined4 local_38c [95];
-  undefined4 local_210;
+  uint local_38c [95];
+  uint local_210;
   byte local_20c;
   byte local_164;
-  undefined4 local_94 [18];
-  undefined4 local_4c;
-  undefined4 local_48;
-  undefined4 local_40;
-  undefined4 local_2c;
+  uint local_94 [18];
+  uint local_4c;
+  uint local_48;
+  uint local_40;
+  uint local_2c;
   uint local_18 [4];
   int *local_8;
 
@@ -37,8 +37,7 @@ int FUN_006cecb0(AnonShape_006CECB0_97249119 *param_1,int param_2)
     local_40 = 8;
   }
   /* ST_CALLSITE[006CED5A]: CALL dword ptr [EDX + 0x18] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar3 = (**(code **)(*param_1->field_0030 + 0x18))(param_1->field_0030,local_94,&local_8,0);
+  iVar3 = (*STField<code **>(param_1->field_0030,0x0000)[6])(param_1->field_0030,local_94,&local_8,0);
   if (iVar3 == 0) {
     if (param_2 == 0) {
       piVar1 = (int *)param_1->field_0044;
@@ -65,8 +64,7 @@ int FUN_006cecb0(AnonShape_006CECB0_97249119 *param_1,int param_2)
       local_210 = 0x17c;
       local_38c[0] = 0x17c;
       /* ST_CALLSITE[006CEDB3]: CALL dword ptr [ECX + 0x2c] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(*param_1->field_0030 + 0x2c))(param_1->field_0030,&local_210,local_38c);
+      (*STField<code **>(param_1->field_0030,0x0000)[0xb])(param_1->field_0030,&local_210,local_38c);
       uVar2 = param_1->field_000C & 0xfffffffd;
       param_1->field_000C = uVar2;
       if ((((local_18[0] & 0x4000) != 0) && ((local_20c & 0x40) != 0)) ||

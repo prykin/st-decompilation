@@ -11,7 +11,7 @@ AiFltClassTy::sub_0065E360:
 0065E37A  8A 40 24                  MOV AL,byte ptr [EAX + 0x24]
 0065E37D  52                        PUSH EDX
 0065E37E  50                        PUSH EAX
-0065E37F  E8 75 79 DA FF            CALL 0x00405cf9
+0065E37F  E8 75 79 DA FF            CALL 0x00405cf9  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STGroupC; source view only; no Ghidra override
 0065E384  85 C0                     TEST EAX,EAX
 0065E386  74 0F                     JZ 0x0065e397
 0065E388  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]

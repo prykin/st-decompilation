@@ -80,7 +80,7 @@ LAB_0059d780:
 0059D802  6A 01                     PUSH 0x1
 0059D804  6A 01                     PUSH 0x1
 0059D806  6A 00                     PUSH 0x0
-0059D808  E8 E3 7C 11 00            CALL 0x006b54f0
+0059D808  E8 E3 7C 11 00            CALL 0x006b54f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 0059D80D  68 A0 16 80 00            PUSH 0x8016a0
 0059D812  50                        PUSH EAX
 0059D813  89 86 04 1B 00 00         MOV dword ptr [ESI + 0x1b04],EAX

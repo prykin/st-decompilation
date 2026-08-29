@@ -819,7 +819,7 @@ LAB_0061a6ee:
 0061A734  50                        PUSH EAX
 0061A735  57                        PUSH EDI
 0061A736  8D 4E 20                  LEA ECX,[ESI + 0x20]
-0061A739  E8 D8 9D DE FF            CALL 0x00404516
+0061A739  E8 D8 9D DE FF            CALL 0x00404516  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STJumpMineC; source view only; no Ghidra override
 0061A73E  85 C0                     TEST EAX,EAX
 0061A740  0F 8E 29 01 00 00         JLE 0x0061a86f
 0061A746  83 F8 05                  CMP EAX,0x5

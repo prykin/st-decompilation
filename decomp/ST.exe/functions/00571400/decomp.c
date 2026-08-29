@@ -18,7 +18,7 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
   void *pvVar7;
   int iVar5;
   InternalExceptionFrame local_70;
-  undefined1 local_2c [14];
+  byte local_2c [14];
   uint local_1e;
   STAppC *local_10;
   uint local_c;
@@ -132,7 +132,8 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
     }
     pSVar2->field_1185 = 0;
     if (g_popUp_008016D8 != nullptr) {
-      thunk_FUN_0052d320(g_popUp_008016D8,"Playing of commands has finished!",8);
+      /* ST_CALLSITE[00571603]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
+      PopUpTy::sub_0052D320(g_popUp_008016D8,"Playing of commands has finished!",8);
       /* ST_CALLSITE[00571609]: CALL dword ptr [0x0085bbc8] */
       CloseHandle(hFile);
       goto cf_common_exit_00571620;
@@ -145,8 +146,10 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
   CloseHandle(hFile);
 cf_common_exit_00571620:
   if ((local_8 != 0) && (pSVar2->field_1185 = 0, g_popUp_008016D8 != nullptr)) {
-    thunk_FUN_0052d320(g_popUp_008016D8,"Error playing command!",9);
-    thunk_FUN_0052d320(g_popUp_008016D8,"Playing of command has turned off.",8);
+    /* ST_CALLSITE[00571642]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
+    PopUpTy::sub_0052D320(g_popUp_008016D8,"Error playing command!",9);
+    /* ST_CALLSITE[00571654]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
+    PopUpTy::sub_0052D320(g_popUp_008016D8,"Playing of command has turned off.",8);
   }
   g_currentExceptionFrame = local_70.previous;
   return;

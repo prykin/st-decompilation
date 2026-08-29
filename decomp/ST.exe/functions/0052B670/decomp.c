@@ -13,8 +13,10 @@ MoneyTy * __cdecl CreateMoney(void)
 {
   MoneyTy *this;
 
-  this = (MoneyTy *)FUN_006b04d0(0xa6);
+
+  this = STPointerBoundaryCast<MoneyTy *>(FUN_006b04d0(0xa6));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->vtable = &MoneyTyVTable;
     this->field_0048 = 0x24;

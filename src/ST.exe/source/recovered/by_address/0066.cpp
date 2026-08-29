@@ -14,11 +14,10 @@ undefined4 __fastcall st::fn_00660010(AiFltClassTy *param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   STGroupBoatC *this;
-  undefined4 local_14;
+  uint local_14;
   DArrayTy *local_10;
-  undefined2 local_c;
-  undefined4 local_8;
-
+  ushort local_c;
+  uint local_8;
   local_8 = 0;
   sVar1 = param_1->field_0039;
   param_1->field_00A7 = 0;
@@ -34,8 +33,8 @@ undefined4 __fastcall st::fn_00660010(AiFltClassTy *param_1)
   }
   iVar4 = 0;
 LAB_00660050:
-  /* ST_CALLSITE[00660063]: CALL 0x004038e1; direct=004038E1 AiFltClassTy::sub_0065FA60 */
-  array = (DArrayTy *)st::fn_004038E1(param_1,iVar4,(sVar1 != 3) - 1 & 2,nullptr);
+  /* ST_CALLSITE[00660063]: CALL 0x004038e1; direct=004038E1 AiFltClassTy::sub_0065FA60; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__thiscall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/AiFltClassTy;/int;/int;pointer:/short */
+  array = st::pointer_boundary_cast<DArrayTy *>(st::fn_004038E1(param_1,iVar4,(sVar1 != 3) - 1 & 2,nullptr));
   if (array == nullptr) {
     return 0xfffffffe;
   }
@@ -78,8 +77,7 @@ undefined4 __thiscall st::fn_00660420(void *this,undefined4 param_1)
 
 {
   STGroupBoatC *this_00;
-  undefined4 local_1c [6];
-
+  uint local_1c [6];
   STField<undefined4>(this,0xa7) = 0;
   memset(local_1c, 0, 0x18); /* compiler bulk-zero initialization */
   local_1c[0] = 0;
@@ -105,9 +103,8 @@ undefined4 __fastcall st::fn_006604B0(AiFltClassTy *param_1,undefined4 param_2,u
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   STGroupBoatC *this;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_c;
+  uint local_8;
   local_c = 0;
   local_8 = 0;
   param_1->field_00A7 = 0;
@@ -150,11 +147,10 @@ st::fn_00660540(void *this,undefined4 param_1,short param_2,short param_3,short 
   short local_24;
   short local_22;
   short local_20;
-  undefined4 local_1e;
+  uint local_1e;
   int local_1a;
   char local_16 [15];
-  undefined2 local_7;
-
+  ushort local_7;
   psVar2 = &local_24;
   for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {
     psVar2[0] = 0;
@@ -190,35 +186,36 @@ st::fn_00660540(void *this,undefined4 param_1,short param_2,short param_3,short 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 undefined4 __fastcall
-st::fn_00660620(AnonShape_00660620_6BCED4D7 *param_1,undefined4 param_2,uint param_3)
+st::fn_00660620(RecoveredRecordView_00660620_D94F552E *param_1,undefined4 param_2,uint param_3)
 
 {
-  STGroupBoatC *pSVar1;
+  STGroupC *this;
   DArrayTy *array;
-  undefined4 local_18;
+  STGroupBoatC *this_00;
+  uint local_18;
   DArrayTy *local_14;
-  undefined4 local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_10;
+  uint local_c;
+  uint local_8;
   local_18 = 0;
   local_14 = nullptr;
   local_10 = 0;
   local_c = 0;
   param_1->field_00A7 = 0;
   local_8 = 0;
-  pSVar1 = st::fn_00405CF9(param_1->field_0024,(ushort)param_3);
-  if (pSVar1 != nullptr) {
-    /* ST_CALLSITE[0066065A]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent */
-    array = (DArrayTy *)st::fn_00402DB5((STGroupC *)pSVar1);
+  /* ST_CALLSITE[0066064F]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STGroupC; signature=__stdcall;pointer:/STGroupC;/char;/ushort */
+  this = st::pointer_boundary_cast<STGroupC *>(st::fn_00405CF9(param_1->field_0024,(ushort)param_3));
+  if (this != nullptr) {
+    /* ST_CALLSITE[0066065A]: CALL 0x00402db5; direct=00402DB5 STGroupC::GetGroupContent; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__thiscall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/STGroupC */
+    array = st::pointer_boundary_cast<DArrayTy *>(st::fn_00402DB5(this));
     if ((array != nullptr) || (_DAT_0000000c != 0)) {
       local_18 = 0;
       local_14 = array;
       if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
-        pSVar1 = st::fn_00405CF9(param_1->field_0024,param_1->field_007D);
-        if (pSVar1 != nullptr) {
+        this_00 = st::fn_00405CF9(param_1->field_0024,param_1->field_007D);
+        if (this_00 != nullptr) {
           /* ST_CALLSITE[006606A4]: CALL dword ptr [EDX + 0x8] */
-          pSVar1->sub_00498D20(5,(short)&local_18);
+          this_00->sub_00498D20(5,(short)&local_18);
           if (array != nullptr) {
             st::fn_006AE110(array);
           }
@@ -245,7 +242,7 @@ st::fn_00660700(void *this,short param_1,short param_2,short param_3,int param_4
   int iVar2;
   STGroupBoatC *this_01;
   short sVar3;
-  undefined4 local_14;
+  uint local_14;
   uint local_10;
   short local_c;
   short sStack_a;
@@ -306,8 +303,9 @@ st::fn_00660700(void *this,short param_1,short param_2,short param_3,int param_4
         return 0xffffffff;
       }
       local_14 = 1;
-      st::fn_00402FD6(this_00,(undefined4 *)&param_1,(undefined4 *)&param_2,
-                         (undefined4 *)&param_3);
+
+      st::fn_00402FD6(this_00,reinterpret_cast<undefined4 *>(&param_1),reinterpret_cast<undefined4 *>(&param_2),
+                         reinterpret_cast<undefined4 *>(&param_3));
       sStack_a = param_1;
       local_8 = param_2;
       sStack_6 = param_3;
@@ -331,12 +329,11 @@ undefined4 __thiscall st::fn_00660910(void *this,short param_1,short param_2,sho
   STWorldObject *pSVar1;
   uint uVar2;
   STGroupBoatC *this_00;
-  undefined1 local_c;
+  byte local_c;
   undefined2 uStack_b;
   undefined1 uStack_9;
-  undefined2 local_8;
-  undefined1 local_6;
-
+  ushort local_8;
+  byte local_6;
   STField<undefined4>(this,0xa7) = 0;
   if (((((-1 < param_1) && (param_1 < g_worldGrid.sizeX)) && (-1 < param_2)) &&
       ((param_2 < g_worldGrid.sizeY && (-1 < param_3)))) && (param_3 < g_worldGrid.sizeZ)) {
@@ -368,8 +365,7 @@ undefined4 __thiscall st::fn_00660A40(void *this,short param_1,short param_2,sho
 
 {
   STGroupBoatC *this_00;
-  undefined4 local_8;
-
+  uint local_8;
   STField<undefined4>(this,0xa7) = 0;
   if (((((-1 < param_1) && (param_1 < g_worldGrid.sizeX)) && (-1 < param_2)) &&
       ((param_2 < g_worldGrid.sizeY && (-1 < param_3)))) && (param_3 < g_worldGrid.sizeZ)) {
@@ -401,7 +397,7 @@ undefined4 __thiscall st::fn_00660A40(void *this,short param_1,short param_2,sho
    00666DA3; MOVSX at 00666D88 establishes signed source width 2 */
 
 undefined4 __fastcall
-st::fn_00660B50(AnonShape_00660620_6BCED4D7 *param_1,int param_2,short param_3,short param_4,
+st::fn_00660B50(RecoveredRecordView_00660620_D94F552E *param_1,int param_2,short param_3,short param_4,
             int param_5,int param_6)
 
 {
@@ -418,7 +414,7 @@ st::fn_00660B50(AnonShape_00660620_6BCED4D7 *param_1,int param_2,short param_3,s
   if (param_6 == 0) {
     local_8 = (short)param_5;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_c = st::machine_word_boundary_cast<uint>((AnonShape_00660620_6BCED4D7 *)CONCAT22(param_4,param_3));
+    local_c = st::machine_word_boundary_cast<uint>((RecoveredRecordView_00660620_D94F552E *)CONCAT22(param_4,param_3));
     if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
       pSVar1 = st::fn_00405CF9(param_1->field_0024,param_1->field_007D);
       if (pSVar1 != nullptr) {
@@ -453,16 +449,16 @@ st::fn_00660B50(AnonShape_00660620_6BCED4D7 *param_1,int param_2,short param_3,s
 
 // 00660D10 FUN_00660d10
 #line 4 "decomp/ST.exe/functions/00660D10/decomp.c"
-int __cdecl st::fn_00660D10(int param_1,int param_2)
+int __cdecl
+st::fn_00660D10(RecoveredRecord_00660D10_4E35C399 *param_1,RecoveredRecord_00660D10_E926646A *param_2)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return (int)*(short *)(param_1 + 0xc) - (int)*(short *)(param_2 + 0xc);
+  return (int)param_1->field_000C - (int)param_2->field_000C;
 }
 
 // 00660D40 FUN_00660d40
 #line 4 "decomp/ST.exe/functions/00660D40/decomp.c"
-void __fastcall st::fn_00660D40(AnonShape_00660D40_E58DF1E6 *param_1)
+void __fastcall st::fn_00660D40(RecoveredRecordView_00660D40_386ADDB8 *param_1)
 
 {
   uint uVar1;
@@ -472,16 +468,16 @@ void __fastcall st::fn_00660D40(AnonShape_00660D40_E58DF1E6 *param_1)
   uint uVar5;
   int iVar6;
   int iVar7;
-  AnonShape_0068EB30_4F4B480A *pAVar8;
+  RecoveredRecordView_0068EB30_46CFB8C2 *pRVar8;
   bool bVar9;
-  AnonShape_0068EB30_4F4B480A local_5c;
+  RecoveredRecordView_0068EB30_46CFB8C2 local_5c;
   AiPlrClassTy *local_10;
   uint local_c;
   AnonShape_00660D40_F4300C26 *local_8;
 
   if (((param_1->field_0284 != 0) && (param_1->field_020B != 0)) &&
      (g_allPlayers_007FA174 != nullptr)) {
-    local_8 = (AnonShape_00660D40_F4300C26 *)param_1;
+    local_8 = reinterpret_cast<AnonShape_00660D40_F4300C26 *>(param_1);
     local_10 = st::fn_00401DC5(param_1->field_0024);
     iVar7 = param_1->field_020B;
     local_c = 0;
@@ -502,12 +498,12 @@ void __fastcall st::fn_00660D40(AnonShape_00660D40_E58DF1E6 *param_1)
             uVar1 = *(uint *)(iVar7 + iVar6 * 4);
             if ((((uVar1 != 0) && (STField<int>(iVar7,0x28) == 0)) && (STField<int>(iVar7,0x24) == 0))
                && (((uVar1 != 0 && (uVar1 < 0x29)) || (sVar3 == 1)))) {
-              pAVar8 = &local_5c;
+              pRVar8 = &local_5c;
               for (iVar4 = 0x12; iVar4 != 0; iVar4 = iVar4 + -1) {
-                *(undefined4 *)pAVar8 = 0;
-                pAVar8 = (AnonShape_0068EB30_4F4B480A *)((int)&pAVar8->field_0003 + 1);
+                *(undefined4 *)pRVar8 = 0;
+                pRVar8 = (RecoveredRecordView_0068EB30_46CFB8C2 *)((int)&pRVar8->field_0003 + 1);
               }
-              *(undefined2 *)pAVar8 = 0;
+              *(undefined2 *)pRVar8 = 0;
               pAVar2 = local_8;
               STPiece<0,4>(local_5c) = *(undefined4 *)(iVar7 + iVar6 * 4);
               STPiece<8,4>(local_5c) = 0;
@@ -526,13 +522,13 @@ void __fastcall st::fn_00660D40(AnonShape_00660D40_E58DF1E6 *param_1)
               STPiece<22,2>(local_5c) = STField<undefined2>(iVar7,0xE);
               STPiece<24,2>(local_5c) = STField<undefined2>(iVar7,0x10);
               STPiece<26,2>(local_5c) = STField<undefined2>(iVar7,0x12);
-              STPiece<28,1>(local_5c) = ((char *)iVar7)[0x14];
+              STPiece<28,1>(local_5c) = STField<char>(iVar7,0x14);
               if ((((char)STPiece<28,1>(local_5c) < '\0') || ('\a' < (char)STPiece<28,1>(local_5c))) &&
                  ((STPiece<28,1>(local_5c) = local_8->field_0081, (char)STPiece<28,1>(local_5c) < '\0' ||
                   ('\a' < (char)STPiece<28,1>(local_5c))))) {
                 STPiece<28,1>(local_5c) = local_8->field_0024;
               }
-              st::fn_0072E340((char *)&local_5c.field_0x1d,(char *)(iVar7 + 0x15),0xe);
+              st::fn_0072E340(reinterpret_cast<char *>(&local_5c.field_0x1d),(char *)(iVar7 + 0x15),0xe);
               if (iVar6 == 0) {
                 sVar3 = *(short *)&pAVar2->field_0x7f;
               }
@@ -542,7 +538,7 @@ void __fastcall st::fn_00660D40(AnonShape_00660D40_E58DF1E6 *param_1)
               /* ST_CALLSITE[00660EB8]: CALL 0x004056be; direct=004056BE AiTactClassTy::PrepareToSave */
               st::fn_004056BE(*(AiTactClassTy **)&pAVar2[4].field_0x74,&local_5c,sVar3);
               uVar5 = local_c;
-              param_1 = (AnonShape_00660D40_E58DF1E6 *)local_8;
+              param_1 = reinterpret_cast<RecoveredRecordView_00660D40_386ADDB8 *>(local_8);
             }
             sVar3 = param_1->field_007B;
             iVar6 = iVar6 + 1;
@@ -596,7 +592,7 @@ void __thiscall st::fn_006616B0(void *this,uint param_1,uint param_2)
             }
             iVar6 = iVar6 + 1;
             puVar7 = puVar7 + 1;
-          } while (iVar6 < (int)(uVar4 + 1));
+          } while (iVar6 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar4 + 1)));
         }
       }
       local_10 = local_10 + 1;
@@ -694,7 +690,7 @@ undefined4 __thiscall st::fn_00664650(void *this,int param_1)
 
 // 006646E0 FUN_006646e0
 #line 4 "decomp/ST.exe/functions/006646E0/decomp.c"
-undefined4 __fastcall st::fn_006646E0(int param_1)
+undefined4 __fastcall st::fn_006646E0(RecoveredRecord_006646E0_797C098D *param_1)
 
 {
   dword dVar1;
@@ -703,8 +699,7 @@ undefined4 __fastcall st::fn_006646E0(int param_1)
   uint index;
   bool bVar3;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  array = *(DArrayTy **)(param_1 + 0x217);
+  array = param_1->field_0217;
   dVar1 = array->count;
   if (dVar1 == 0) {
     return 0xffffffff;
@@ -720,16 +715,15 @@ undefined4 __fastcall st::fn_006646E0(int param_1)
         puVar2 = nullptr;
       }
       if ((0x31 < *puVar2) && (*puVar2 < 100)) {
+
         st::fn_006B0C70(array,index);
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      array = *(DArrayTy **)(param_1 + 0x217);
+      array = param_1->field_0217;
       index = index + 1;
       bVar3 = index < array->count;
     } while ((int)index < (int)array->count);
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return *(undefined4 *)(*(int *)(param_1 + 0x217) + 0xc);
+  return param_1->field_0217->count;
 }
 
 // 00668150 CreateAiFlt
@@ -746,7 +740,8 @@ AiFltClassTy * __cdecl st::fn_00668150(void)
 {
   AiFltClassTy *pAVar1;
 
-  pAVar1 = (AiFltClassTy *)st::fn_006B04D0(0x288);
+  /* ST_CALLSITE[00668155]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__stdcall;pointer:/AiFltClassTy;/uint */
+  pAVar1 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_006B04D0(0x288));
   if (pAVar1 != nullptr) {
     pAVar1 = st::fn_004047A5(pAVar1);
     return pAVar1;
@@ -758,16 +753,20 @@ AiFltClassTy * __cdecl st::fn_00668150(void)
 #line 4 "decomp/ST.exe/functions/00668670/decomp.c"
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=3, used=0, unknown=0),
-   and decompilation contains no value return */
+   and decompilation contains no value return
+   [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:0: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=1,
+   pointer_dereferences=3, scalar_uses=0; sites=00668676 dereference: MOV CL,byte ptr [EAX + 0x18] |
+   0066868A dereference: MOV EAX,dword ptr [ESI] | 00668696 dereference: MOV dword ptr [ESI],0x0 */
 
-void __cdecl st::fn_00668670(int param_1)
+void __cdecl st::fn_00668670(RecoveredRecord_00668670_926FA73E *param_1)
 
 {
   uint *puVar1;
   int iVar2;
 
-  if (((char *)param_1)[0x18] != '\0') {
-    puVar1 = (undefined4 *)(param_1 + 0x1eb);
+  if (param_1->field_0018 != '\0') {
+    puVar1 = reinterpret_cast<uint *>(&param_1[0x13].field_0x10);
     iVar2 = 7;
     do {
       if ((DArrayTy *)*puVar1 != nullptr) {
@@ -786,8 +785,8 @@ void __cdecl st::fn_00668670(int param_1)
 void __cdecl st::fn_006686C0(int *param_1)
 
 {
-  if (*param_1 != 0) {
-    st::fn_00402293(*param_1);
+  if ((RecoveredRecord_00668670_926FA73E *)*param_1 != nullptr) {
+    st::fn_00402293((RecoveredRecord_00668670_926FA73E *)*param_1);
     st::fn_006AB060(param_1);
   }
   return;
@@ -798,9 +797,13 @@ void __cdecl st::fn_006686C0(int *param_1)
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_006686F0_param_1Enum. Cases:
    CASE_320=800;CASE_321=801;CASE_384=900;CASE_385=901;CASE_386=902;CASE_387=903;CASE_388=904;CASE_389=905;CASE_38A=906;CASE_38C=908;CASE_38D=909;CASE_38E=910;CASE_38F=911;CASE_7D1=2001;CASE_7D2=2002;CASE_7D3=2003;CASE_7D4=2004;CASE_7D6=2006;CASE_7D7=2007;CASE_7DA=2010;CASE_7DC=2012;CASE_7DD=2013;CASE_7DE=2014;CASE_7E4=2020;CASE_7E5=2021;CASE_7E6=2022;CASE_7E7=2023;CASE_7E8=2024;CASE_7E9=2025;CASE_7EA=2026;CASE_7EB=2027;CASE_7EC=2028;CASE_7ED=2029;CASE_7EE=2030;CASE_7EF=2031;CASE_7F0=2032;CASE_7F2=2034;CASE_7F3=2035;CASE_7F4=2036;CASE_7F5=2037;CASE_7F6=2038;CASE_7F7=2039;CASE_7F8=2040;CASE_7F9=2041;CASE_7FA=2042;CASE_7FB=2043;CASE_7FC=2044;CASE_80C=2060;CASE_80D=2061;CASE_80E=2062;CASE_80F=2063;CASE_810=2064;CASE_816=2070;CASE_817=2071;CASE_818=2072;CASE_819=2073;CASE_81A=2074;CASE_81B=2075;CASE_81C=2076;CASE_81D=2077;CASE_82A=2090;CASE_82B=2091;CASE_82C=2092;CASE_82D=2093;CASE_82E=2094;CASE_82F=2095;CASE_830=2096;CASE_831=2097;CASE_848=2120;CASE_849=2121;CASE_84A=2122;CASE_84B=2123;CASE_84C=2124;CASE_84D=2125
-    */
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (4), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00671F10 @ 00671FEA -> read as EAX on
+   every CFG path | 006823E0 @ 00682455 -> read as EAX on every CFG path | 00682850 @ 00682886 ->
+   read as EAX on every CFG path | 00682DF0 @ 00682E39 -> read as EAX on every CFG path */
 
-undefined4 __cdecl st::fn_006686F0(Global_sub_006686F0_param_1Enum param_1)
+int __cdecl st::fn_006686F0(Global_sub_006686F0_param_1Enum param_1)
 
 {
   if (0x7f1 < (int)param_1) {
@@ -907,7 +910,7 @@ switchD_006687a8_caseD_7f2:
           goto cf_common_exit_00668754;
         default:
 cf_common_exit_006687E7:
-          return 0xffffffff;
+          return -1;
         }
       }
       if (param_1 != 2000) {
@@ -962,7 +965,12 @@ undefined4 __cdecl st::fn_00668A30(int param_1)
 
 // 00668A70 FUN_00668a70
 #line 4 "decomp/ST.exe/functions/00668A70/decomp.c"
-undefined4 __cdecl st::fn_00668A70(int param_1)
+/* [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=2, ignored=0,
+   unknown=0 */
+
+int __cdecl st::fn_00668A70(int param_1)
 
 {
   if ((899 < param_1) && (param_1 < 0x390)) {
@@ -982,56 +990,56 @@ undefined4 __cdecl st::fn_00668A70(int param_1)
    CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 2 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_2. The carrier
-   ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_2.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 4 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_4. The carrier
-   ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_4.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 6 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_6. The carrier
-   ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_6.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 7 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_7. The carrier
-   ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_7.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 8 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_8. The carrier
-   ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_8.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 11 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_B. The carrier
-   ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_B.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 2063 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_80F. The
-   carrier ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_80F.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 2064 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_810. The
-   carrier ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_810.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 2076 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_81C. The
-   carrier ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_81C.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 2077 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_81D. The
-   carrier ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_81D.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 2090 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_82A. The
-   carrier ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_82A.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 2091 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_82B. The
-   carrier ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_82B.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 2092 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_82C. The
-   carrier ABI remains pointer:/undefined1. */
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_82C.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1. */
 
 undefined4 __cdecl
 st::fn_00668AA0(Global_sub_00668AA0_param_1Enum param_1,Global_sub_00668AA0_param_2Enum param_2,
@@ -1295,7 +1303,7 @@ int st::fn_0066AB60(char playerId,byte *param_2,byte *param_3)
   AiPlrClassTy *this;
   int iVar3;
   int iVar4;
-  int *piVar5;
+  uint *puVar5;
   int iVar6;
   byte *pbVar7;
   int iVar8;
@@ -1306,20 +1314,25 @@ int st::fn_0066AB60(char playerId,byte *param_2,byte *param_3)
      (g_allPlayers_007FA174 != nullptr)) {
     this = st::fn_00401DC5(playerId);
     if ((this != nullptr) &&
+
        (iVar3 = st::fn_004017C6(this,param_2,param_3), iVar3 != 0)) {
       return iVar3;
     }
     if ((g_allPlayers_007FA174 != nullptr) &&
+
        (iVar4 = st::fn_004021F8(playerId), iVar4 != 0)) {
       uVar2 = STField<uint>(iVar4,0xC);
       while (uVar2 = uVar2 - 1, -1 < (int)uVar2) {
         if (uVar2 < STField<uint>(iVar4,0xC)) {
-          piVar5 = (int *)(STField<int>(iVar4,0x8) * uVar2 + STField<int>(iVar4,0x1C));
+          puVar5 = (undefined4 *)(STField<int>(iVar4,0x8) * uVar2 + STField<int>(iVar4,0x1C));
         }
         else {
-          piVar5 = nullptr;
+          puVar5 = nullptr;
         }
-        if ((*piVar5 != 0) && (iVar6 = st::fn_00405902(*piVar5), iVar6 != 0)) {
+        if (((RecoveredRecord_00423300_67884733 *)*puVar5 !=
+             nullptr) &&
+
+           (iVar6 = st::fn_00405902((RecoveredRecord_00423300_67884733 *)*puVar5), iVar6 != 0)) {
           pbVar9 = (byte *)(iVar6 + 0x3b);
           pbVar7 = param_2;
           do {
@@ -1370,10 +1383,12 @@ int st::fn_0066AC80(char param_1,ushort param_2)
   STGroupBoatC *pSVar1;
   int iVar2;
 
+  /* ST_CALLSITE[0066AC91]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; source view only; no Ghidra override */
   pSVar1 = st::fn_00405CF9(param_1,param_2);
-  if ((pSVar1 != nullptr) && (iVar2 = st::fn_00405902((int)pSVar1), iVar2 != 0)) {
+  if ((pSVar1 != nullptr) &&
+
+     (iVar2 = st::fn_00405902(reinterpret_cast<RecoveredRecord_00423300_67884733 *>(pSVar1)), iVar2 != 0)) {
     return iVar2;
   }
   return 0;
 }
-

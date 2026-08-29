@@ -17,7 +17,7 @@ int __thiscall FUN_00607a60(void *this,int param_1,int param_2,int param_3)
   char in_stack_00000020;
   int local_d0 [20];
   STMessage local_80;
-  undefined4 local_60 [5];
+  uint local_60 [5];
   int local_4c;
   int local_44;
   int local_40;
@@ -26,7 +26,7 @@ int __thiscall FUN_00607a60(void *this,int param_1,int param_2,int param_3)
   int local_34;
   uint local_30;
   uint local_2c;
-  undefined4 local_28;
+  uint local_28;
   byte local_1f;
   int local_1e;
   undefined4 *local_18;

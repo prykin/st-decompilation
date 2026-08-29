@@ -44,7 +44,8 @@ LAB_005fd8a4:
 005FD8C0  7E 42                     JLE 0x005fd904
 LAB_005fd8c2:
 005FD8C2  6A 40                     PUSH 0x40
-005FD8C4  E8 67 0C 13 00            CALL 0x0072e530
+FUN_005fd850::override::prt_5fd8c4_a7ad5ad2:
+005FD8C4  E8 67 0C 13 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint
 005FD8C9  83 C4 04                  ADD ESP,0x4
 005FD8CC  85 C0                     TEST EAX,EAX
 005FD8CE  74 09                     JZ 0x005fd8d9

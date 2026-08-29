@@ -13,7 +13,8 @@ STManRub3C * __cdecl CreateSTManRub3(void)
 {
   STManRub3C *this;
 
-  this = (STManRub3C *)FUN_006b04d0(0xb8);
+  /* ST_CALLSITE[0062CEC5]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STManRub3C; signature=__stdcall;pointer:/STManRub3C;/uint */
+  this = FUN_006b04d0(0xb8);
   if (this != nullptr) {
     /* ST_CALLSITE[0062CED0]: CALL 0x004053ee; direct=004053EE STManRub3C::STManRub3C */
     g_manRub3_008117A4 = STManRub3C::STManRub3C(this);

@@ -74,7 +74,7 @@ LAB_00435124:
 00435127  8B D7                     MOV EDX,EDI
 00435129  51                        PUSH ECX
 0043512A  8B 4E 0A                  MOV ECX,dword ptr [ESI + 0xa]
-0043512D  E8 3E 7B 27 00            CALL 0x006acc70
+0043512D  E8 3E 7B 27 00            CALL 0x006acc70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 00435132  8B 55 F8                  MOV EDX,dword ptr [EBP + -0x8]
 00435135  8A 46 04                  MOV AL,byte ptr [ESI + 0x4]
 00435138  8B 4D F4                  MOV ECX,dword ptr [EBP + -0xc]
@@ -167,7 +167,7 @@ LAB_00435229:
 0043522C  8B D7                     MOV EDX,EDI
 0043522E  51                        PUSH ECX
 0043522F  8B 4E 0A                  MOV ECX,dword ptr [ESI + 0xa]
-00435232  E8 39 7A 27 00            CALL 0x006acc70
+00435232  E8 39 7A 27 00            CALL 0x006acc70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 00435237  8B 55 F8                  MOV EDX,dword ptr [EBP + -0x8]
 0043523A  8A 46 04                  MOV AL,byte ptr [ESI + 0x4]
 0043523D  8B 4D F4                  MOV ECX,dword ptr [EBP + -0xc]

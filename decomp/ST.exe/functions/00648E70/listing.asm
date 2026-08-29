@@ -47,7 +47,7 @@ LAB_00648edf:
 00648EED  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
 00648EF0  85 C0                     TEST EAX,EAX
 00648EF2  75 08                     JNZ 0x00648efc
-00648EF4  E8 E4 94 DB FF            CALL 0x004023dd
+00648EF4  E8 E4 94 DB FF            CALL 0x004023dd  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 00648EF9  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
 LAB_00648efc:
 00648EFC  8B 0D 38 2A 80 00         MOV ECX,dword ptr [0x00802a38]

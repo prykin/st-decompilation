@@ -21,7 +21,7 @@ CPanelTy::PaintLBut(CPanelTy *this,byte param_1,AnonShape_004F3FE0_1578D6B9 *par
   CPanelTy *local_14;
   int local_10;
   int local_c;
-  ushort *local_8;
+  RecoveredRecordView_006B84D0_87AF9D9B *local_8;
 
   uVar2 = (uint)param_1;
   local_8 = nullptr;
@@ -64,27 +64,31 @@ cf_common_join_004F4070:
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_14 = this;
+
     iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
     if (iVar4 == 0) {
       /* ST_CALLSITE[004F40AC]: CALL dword ptr [EBP + 0x1c] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar4 = (*(code *)param_6)(param_2);
       text = FUN_006f2c00(param_4,1,uVar4);
+      /* ST_CALLSITE[004F40CC]: CALL 0x006f1ce0; direct=006F1CE0 cMf32::RecGet; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int */
       local_8 = cMf32::RecGet(g_cMf32_00806790,param_3,text,nullptr,1);
       pCVar3 = local_14;
       uVar2 = (uint)param_1;
       /* ST_CALLSITE[004F40F5]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)local_14->field_0148[uVar2 + 0xe],local_10,local_c,
-             param_3,(byte *)local_8);
+             param_3,local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       if (param_2->field_0014 == 3) {
+        /* ST_CALLSITE[004F4122]: CALL 0x006f1ce0; direct=006F1CE0 cMf32::RecGet; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int */
         local_8 = cMf32::RecGet(g_cMf32_00806790,6,param_5,nullptr,1);
         /* ST_CALLSITE[004F413D]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)pCVar3->field_0148[uVar2 + 0xe],local_10,local_c,
-               '\x06',(byte *)local_8);
+               '\x06',local_8);
         cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       }
       if ((param_1 < 0xb) && (-1 < (int)pCVar3->field_0148[uVar2])) {
+
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,(uint)pCVar3->field_0148[uVar2],0xffffffff,
                    (&pCVar3->field_003C)[uVar2],(&pCVar3->field_0094)[uVar2]);
@@ -93,6 +97,7 @@ cf_common_join_004F4070:
       return;
     }
     g_currentExceptionFrame = local_58.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0x235,0,iVar4,"%s",
                                "CPanelTy::PaintLBut");
     if (iVar5 != 0) {

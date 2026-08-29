@@ -21,7 +21,7 @@ FUN_0041cf50:
 LAB_0041cf82:
 0041CF82  8B 06                     MOV EAX,dword ptr [ESI]
 0041CF84  8B CE                     MOV ECX,ESI
-0041CF86  FF 50 08                  CALL dword ptr [EAX + 0x8]
+0041CF86  FF 50 08                  CALL dword ptr [EAX + 0x8]  ; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0041CF89  83 F8 01                  CMP EAX,0x1
 0041CF8C  75 32                     JNZ 0x0041cfc0
 0041CF8E  8B 46 24                  MOV EAX,dword ptr [ESI + 0x24]

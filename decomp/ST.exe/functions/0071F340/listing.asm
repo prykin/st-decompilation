@@ -17,7 +17,7 @@ LAB_0071f357:
 0071F366  50                        PUSH EAX
 0071F367  57                        PUSH EDI
 0071F368  8B CE                     MOV ECX,ESI
-0071F36A  FF 52 08                  CALL dword ptr [EDX + 0x8]
+0071F36A  FF 52 08                  CALL dword ptr [EDX + 0x8]  ; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4
 0071F36D  8B 56 30                  MOV EDX,dword ptr [ESI + 0x30]
 0071F370  8D 0C 18                  LEA ECX,[EAX + EBX*0x1]
 0071F373  3B CA                     CMP ECX,EDX

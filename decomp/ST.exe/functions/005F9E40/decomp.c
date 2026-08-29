@@ -3,7 +3,7 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __fastcall FUN_005f9e40(AnonShape_005F9E40_7E333F34 *param_1)
+void __fastcall FUN_005f9e40(RecoveredRecordView_005F9E40_46F0E2B5 *param_1)
 
 {
   AnonNested_AnonShape_005F9E40_7E333F34_02E6_E59503F8 *pAVar1;

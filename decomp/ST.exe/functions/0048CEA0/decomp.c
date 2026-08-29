@@ -22,7 +22,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   int iVar7;
   uint index;
   InternalExceptionFrame local_68;
-  undefined1 local_24 [4];
+  byte local_24 [4];
   ushort local_20;
   undefined2 uStack_1e;
   int local_1a;
@@ -36,10 +36,12 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_10 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   pSVar2 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x4bb4,0,iVar3,"%s",
                                "STBoatC::_CheckDefenceShots");
     if (iVar5 != 0) {
@@ -51,6 +53,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   pDVar5 = local_10->field_047B;
   if ((pDVar5 != nullptr) && (index = 0, 0 < (int)pDVar5->count)) {
     do {
+
       DArrayGetElement(pDVar5,index,local_24);
       if (local_20 != 0xffff) {
         local_1a = local_1a - param_1;
@@ -70,7 +73,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
               iVar4 = (*this_00->vtable[1].MoveStep)(this_00);
               if (iVar4 == 1) {
                 /* ST_CALLSITE[0048CF88]: CALL dword ptr [EAX + 0xf4]; [STIndirectCallsiteApplier] exact slot 0xF4; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4 */
-                iVar4 = (*this_00->vtable[1].vfunc_20)(this_00,pSVar2->field_0024);
+                iVar4 = this_00->vfunc_F4(pSVar2->field_0024);
                 if (iVar4 == 1) {
                   thunk_FUN_00416270(this_00,(uint *)&local_a,&local_8,&local_6);
                   iVar4 = (int)pSVar2->field_0041 - (int)local_a;
@@ -91,6 +94,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
           _local_20 = CONCAT22(uStack_1e,0xffff);
         }
 LAB_0048d016:
+
         Library::DKW::TBL::DArrayPut(pDVar5,index,local_24);
       }
       pDVar5 = pSVar2->field_047B;

@@ -15,11 +15,13 @@ void __thiscall ST3DSMAPContext::sub_006E8580(ST3DSMAPContext *this,int *param_1
   this->field_0000[0x8b] = (int)FUN_006eb570;
   this->field_0000[0x8d] = (int)this;
   if (DAT_007ee1ac < 0) {
+
     Library::DKW::DDX::FUN_006cff10
               (param_1,(uint *)&DAT_007ee1ac,0,0,this->field_0004->field_001C - 0xd,0xfa,0x10,
                0xffffff,0xffffffff);
   }
   if (DAT_007ee1b0 < 0) {
+
     Library::DKW::DDX::FUN_006cff10
               (param_1,(uint *)&DAT_007ee1b0,0,this->field_0004->field_0018 - 0xfa,
                this->field_0004->field_001C - 0xd,0xfa,0x10,0xffffff,0xffffffff);

@@ -1,4 +1,4 @@
-FUN_00484020:
+STBoatC::sub_00484020:
 00484020  55                        PUSH EBP
 00484021  8B EC                     MOV EBP,ESP
 00484023  83 EC 54                  SUB ESP,0x54

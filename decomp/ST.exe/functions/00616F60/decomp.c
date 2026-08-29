@@ -30,8 +30,10 @@ int __thiscall FUN_00616f60(void *this,int *param_1,int *param_2,int *param_3)
   if ((local_8 <= _DAT_0079ceb8) && (STField<char>(this,0x29c) == '\0'))
   goto cf_common_exit_00617221;
   if (local_8 <= _DAT_0079ceb4) {
+
     iVar3 = thunk_FUN_00616280(this,(int *)&local_c,&local_10,&local_14);
     if (iVar3 < 0) {
+
       iVar5 = thunk_FUN_006173a0(this,iVar6,param_1,param_2,param_3);
       if (0 < iVar5) {
         STField<undefined4>(this,0x256) = 2;
@@ -42,9 +44,11 @@ int __thiscall FUN_00616f60(void *this,int *param_1,int *param_2,int *param_3)
       }
     }
     else {
+
       iVar3 = FUN_006acf0d((int)STField<short>(this,0x260),(int)STField<short>(this,0x262),
                            (int)STField<short>(this,0x264),(int)STField<short>(this,0x25a),
                            (int)STField<short>(this,0x25c),(int)STField<short>(this,0x25e));
+
       iVar4 = FUN_006acf0d((int)STField<short>(this,0x260),(int)STField<short>(this,0x262),
                            (int)STField<short>(this,0x264),(int)local_c,local_10,local_14);
       if ((iVar3 == 0) || (iVar4 == 0)) goto cf_common_exit_00617221;
@@ -59,6 +63,7 @@ int __thiscall FUN_00616f60(void *this,int *param_1,int *param_2,int *param_3)
         STField<undefined1>(this,0x29c) = 1;
         goto cf_common_exit_00617221;
       }
+
       iVar5 = thunk_FUN_006173a0(this,iVar6,param_1,param_2,param_3);
       if (0 < iVar5) {
         STField<undefined4>(this,0x256) = 2;
@@ -70,6 +75,7 @@ int __thiscall FUN_00616f60(void *this,int *param_1,int *param_2,int *param_3)
     }
   }
   else {
+
     iVar5 = thunk_FUN_006173a0(this,iVar6,param_1,param_2,param_3);
     if (0 < iVar5) {
       STField<undefined4>(this,0x256) = 2;
@@ -84,6 +90,7 @@ LAB_006171d9:
       goto cf_common_exit_00617221;
     }
   }
+
   thunk_FUN_0060ec00(this);
   STField<undefined4>(this,0x20c) = 9;
 cf_common_exit_00617221:

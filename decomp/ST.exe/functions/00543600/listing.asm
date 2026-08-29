@@ -89,7 +89,7 @@ CursorClassTy::InitCursor:
 005436FD  52                        PUSH EDX
 005436FE  68 96 00 00 00            PUSH 0x96
 00543703  68 20 03 00 00            PUSH 0x320
-00543708  E8 B3 19 17 00            CALL 0x006b50c0
+00543708  E8 B3 19 17 00            CALL 0x006b50c0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 0054370D  8D 4D FC                  LEA ECX,[EBP + -0x4]
 00543710  89 86 D2 04 00 00         MOV dword ptr [ESI + 0x4d2],EAX
 00543716  51                        PUSH ECX

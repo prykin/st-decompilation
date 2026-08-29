@@ -197,7 +197,7 @@ LAB_00465abf:
 00465B05  E8 5C C7 F9 FF            CALL 0x00402266
 00465B0A  8B 16                     MOV EDX,dword ptr [ESI]
 00465B0C  8B CE                     MOV ECX,ESI
-00465B0E  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]
+00465B0E  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]  ; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 00465B14  F7 D8                     NEG EAX
 00465B16  1B C0                     SBB EAX,EAX
 00465B18  5F                        POP EDI

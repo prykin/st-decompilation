@@ -57,7 +57,8 @@ LAB_0062edfd:
 0062EE28  84 C0                     TEST AL,AL
 0062EE2A  74 26                     JZ 0x0062ee52
 0062EE2C  6A 40                     PUSH 0x40
-0062EE2E  E8 FD F6 0F 00            CALL 0x0072e530
+STRubbishC::RubbishCreatePart::override::prt_62ee2e_a7ad5ad2:
+0062EE2E  E8 FD F6 0F 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint
 0062EE33  83 C4 04                  ADD ESP,0x4
 0062EE36  85 C0                     TEST EAX,EAX
 0062EE38  74 09                     JZ 0x0062ee43

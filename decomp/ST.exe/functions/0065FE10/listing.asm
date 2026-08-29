@@ -146,7 +146,7 @@ LAB_0065ff31:
 0065FF61  51                        PUSH ECX
 0065FF62  6A 08                     PUSH 0x8
 0065FF64  8B C8                     MOV ECX,EAX
-0065FF66  FF 52 08                  CALL dword ptr [EDX + 0x8]
+0065FF66  FF 52 08                  CALL dword ptr [EDX + 0x8]  ; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STGroupBoatC;/undefined2;/undefined2
 0065FF69  EB 07                     JMP 0x0065ff72
 LAB_0065ff6b:
 0065FF6B  C7 45 FC FF FF FF FF      MOV dword ptr [EBP + -0x4],0xffffffff

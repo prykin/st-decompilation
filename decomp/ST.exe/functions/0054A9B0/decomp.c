@@ -3,7 +3,7 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
-   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0054A9B0.
+   /SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_0054A9B0.
    Evidence: incoming_receiver_captures=1; receiver_accesses=18; incoming_edx_uses=0; calls=16;
    ecx_pointer_setup=16; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
    expected_stack=12; receiver_family_members=1
@@ -13,14 +13,14 @@
    and decompilation contains no value return */
 
 void __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
-          (AnonReceiver_0054A9B0 *this,float param_1,float param_2,float param_3)
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0054A9B0::FUN_0054a9b0
+          (RecoveredReceiver_0054A9B0 *this,float param_1,float param_2,float param_3)
 
 {
   uint uVar1;
   bool bVar2;
   VisibleClassTy *pVVar3;
-  AnonShape_0054A9B0_643B0813 *pAVar4;
+  RecoveredReceiver_0054A9B0 *pRVar4;
   int iVar5;
   uint uVar5;
   SpriteClassTy *pSVar6;
@@ -30,7 +30,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
   InternalExceptionFrame local_58;
   int local_14;
   int local_10;
-  AnonShape_0054A9B0_643B0813 *local_c;
+  RecoveredReceiver_0054A9B0 *local_c;
   uint local_8;
 
   if ((g_sT3DSMAPContext_00807598 == nullptr) ||
@@ -39,7 +39,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
   }
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
-  local_c = (AnonShape_0054A9B0_643B0813 *)this;
+  local_c = this;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_58.previous;
@@ -124,47 +125,49 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
       }
     }
   }
-  pAVar4 = local_c;
+  pRVar4 = local_c;
   if (0 < (int)uVar5) {
     if ((SpriteClassTy *)local_c->field_04EB != nullptr) {
+
       SpriteClassTy::CloseSprite((SpriteClassTy *)local_c->field_04EB);
-      Library::MSVCRT::FUN_0072e2b0((HoloTy *)pAVar4->field_04EB);
-      pAVar4->field_04EB = 0;
+      Library::MSVCRT::FUN_0072e2b0((HoloTy *)pRVar4->field_04EB);
+      pRVar4->field_04EB = 0;
     }
-    pSVar6 = (SpriteClassTy *)Library::MSVCRT::FUN_0072e530(0x91);
+    /* ST_CALLSITE[0054ABDA]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SpriteClassTy; signature=__cdecl;pointer:/SpriteClassTy;/uint */
+    pSVar6 = Library::MSVCRT::FUN_0072e530(0x91);
     if (pSVar6 == nullptr) {
       pSVar6 = nullptr;
     }
     else {
       pSVar6 = SpriteClassTy::SpriteClassTy(pSVar6);
     }
-    pAVar4->field_04EB = pSVar6;
+    pRVar4->field_04EB = pSVar6;
     if (pSVar6 == nullptr) {
       g_currentExceptionFrame = local_58.previous;
       return;
     }
+
     SpriteClassTy::InitSprite(pSVar6,(int *)g_ddxContext_008075A8,1,'\a',nullptr,0,0);
-    /* ST_CALLSITE[0054AC30]: CALL dword ptr [EDX + 0x4] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*STField<int *>(pAVar4,0x4EB) + 4))
-              (PTR_00806784,7,0,"CUR_CONFIRM2D",0xffffffff);
-    *(undefined4 *)(pAVar4->field_04EB + 0x40) = 0x19;
-    *(undefined4 *)(pAVar4->field_04EB + 8) = 0;
-    pAVar4->field_04EF = param_1;
-    pAVar4->field_04F3 = param_2;
-    pAVar4->field_04F7 = param_3;
+    /* ST_CALLSITE[0054AC30]: CALL dword ptr [EDX + 0x4]; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
+    STStructuralVirtualCall<void>(STField<int *>(pRVar4,0x4EB), 0x4, PTR_00806784, 7, 0, "CUR_CONFIRM2D", 0xffffffff);
+    *(undefined4 *)(pRVar4->field_04EB + 0x40) = 0x19;
+    *(undefined4 *)(pRVar4->field_04EB + 8) = 0;
+    pRVar4->field_04EF = param_1;
+    pRVar4->field_04F3 = param_2;
+    pRVar4->field_04F7 = param_3;
     ST3DSMAPContext::sub_006E2970
-              (g_sT3DSMAPContext_00807598,param_1,param_2,param_3,(int *)(pAVar4->field_04EB + 0x1c)
-               ,(int *)(pAVar4->field_04EB + 0x20));
-    *(int *)(pAVar4->field_04EB + 0x1c) =
-         *(int *)(pAVar4->field_04EB + 0x1c) - *(int *)(pAVar4->field_04E7 + 9) / 2;
-    *(int *)(pAVar4->field_04EB + 0x20) =
-         *(int *)(pAVar4->field_04EB + 0x20) - *(int *)(pAVar4->field_04E7 + 0xd) / 2;
-    iVar7 = pAVar4->field_04EB;
+              (g_sT3DSMAPContext_00807598,param_1,param_2,param_3,(int *)(pRVar4->field_04EB + 0x1c)
+               ,(int *)(pRVar4->field_04EB + 0x20));
+    *(int *)(pRVar4->field_04EB + 0x1c) =
+         *(int *)(pRVar4->field_04EB + 0x1c) - (int)pRVar4->field_04E7->field_0009 / 2;
+    *(int *)(pRVar4->field_04EB + 0x20) =
+         *(int *)(pRVar4->field_04EB + 0x20) - (int)pRVar4->field_04E7->field_000D / 2;
+    iVar7 = pRVar4->field_04EB;
     if (STField<uint>(iVar7,0x4) == 0xffffffff) {
       g_currentExceptionFrame = local_58.previous;
       return;
     }
+
     Library::DKW::DDX::FUN_006b34d0
               (*(uint **)(iVar7 + 0x48),STField<uint>(iVar7,0x4),0xfffffffe,STField<uint>(iVar7,0x1C),
                STField<uint>(iVar7,0x20));
@@ -172,19 +175,20 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0
     return;
   }
 cf_common_exit_0054ACFD:
-  pAVar4 = local_c;
+  pRVar4 = local_c;
   local_8 = 0xffffffff;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar5 = *(uint *)(local_c->field_04E7 + 0xd);
-  uVar1 = *(uint *)(local_c->field_04E7 + 9);
+  uVar5 = local_c->field_04E7->field_000D;
+  uVar1 = local_c->field_04E7->field_0009;
+
   ST3DSMAPContext::sub_006E8660
             (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,uVar1,uVar5,(int)uVar1 / 2,
              (int)uVar5 / 2 - 0xe,0);
   if (-1 < (int)local_8) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+
     ST3DSMAPContext::sub_006E98E0
-              (g_sT3DSMAPContext_00807598,local_8,0,*STField<int *>(pAVar4,0x4E7),
-               *(int *)((int)pAVar4->field_04E7 + 0x21),1);
+              (g_sT3DSMAPContext_00807598,local_8,0,pRVar4->field_04E7->field_0000,
+               pRVar4->field_04E7->field_0021,1);
+
     Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,local_8,0);
     Library::Ourlib::ST3DSMAP::SprMove
               (g_sT3DSMAPContext_00807598,local_8,param_1,param_2,param_3 + _DAT_007904fc);

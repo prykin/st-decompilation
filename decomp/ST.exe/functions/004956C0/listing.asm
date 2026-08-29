@@ -1,4 +1,4 @@
-FUN_004956c0:
+STGameObjC::sub_004956C0:
 004956C0  55                        PUSH EBP
 004956C1  8B EC                     MOV EBP,ESP
 004956C3  83 B9 F7 06 00 00 17      CMP dword ptr [ECX + 0x6f7],0x17

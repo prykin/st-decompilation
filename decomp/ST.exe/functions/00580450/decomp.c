@@ -6,13 +6,12 @@ FUN_00580450(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
             undefined4 param_5)
 
 {
-  undefined4 local_2c [5];
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_2c [5];
+  uint local_18;
+  uint local_14;
+  uint local_10;
+  uint local_c;
+  uint local_8;
   memset(local_2c, 0, 0x28); /* compiler bulk-zero initialization */
   local_18 = param_1;
   local_14 = param_2;
@@ -24,7 +23,7 @@ FUN_00580450(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_2c[3] = 1;
   local_10 = param_3;
   /* ST_CALLSITE[005804B6]: CALL dword ptr [EDX + 0x8] */
-  g_playSystem_00802A38->vfunc_08(0x10b,0,(short)&param_1,(short)local_2c,0);
+  g_playSystem_00802A38->vfunc_8(0x10b,nullptr,&param_1,(short)local_2c,0);
   return param_1;
 }
 

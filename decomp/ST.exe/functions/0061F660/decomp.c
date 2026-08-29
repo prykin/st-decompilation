@@ -27,9 +27,11 @@ int __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,STMessage *
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\nick\\to_manag.Cpp",0x6e,0,iVar4,"%s",
                                "SndUnderAttMenegC::GetMessage");
     if (iVar5 != 0) {

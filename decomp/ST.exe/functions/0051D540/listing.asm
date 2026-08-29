@@ -192,7 +192,7 @@ LAB_0051d76f:
 0051D78B  6A 01                     PUSH 0x1
 0051D78D  6A 00                     PUSH 0x0
 0051D78F  68 A8 3D 7C 00            PUSH 0x7c3da8
-0051D794  E8 E3 7F EE FF            CALL 0x0040577c
+0051D794  E8 E3 7F EE FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 0051D799  83 C4 08                  ADD ESP,0x8
 0051D79C  50                        PUSH EAX
 0051D79D  E8 5E 54 1D 00            CALL 0x006f2c00
@@ -200,7 +200,8 @@ LAB_0051d76f:
 0051D7A8  83 C4 0C                  ADD ESP,0xc
 0051D7AB  50                        PUSH EAX
 0051D7AC  6A 01                     PUSH 0x1
-0051D7AE  E8 2D 45 1D 00            CALL 0x006f1ce0
+HelpPanelTy::TipProc::override::prt_51d7ae_6752cf82:
+0051D7AE  E8 2D 45 1D 00            CALL 0x006f1ce0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int
 0051D7B3  8B 8B 18 02 00 00         MOV ECX,dword ptr [EBX + 0x218]
 0051D7B9  8D 77 0A                  LEA ESI,[EDI + 0xa]
 0051D7BC  50                        PUSH EAX
@@ -238,7 +239,7 @@ LAB_0051d76f:
 0051D815  6A 01                     PUSH 0x1
 0051D817  51                        PUSH ECX
 0051D818  68 93 5C 00 00            PUSH 0x5c93
-0051D81D  E8 1E 29 19 00            CALL 0x006b0140
+0051D81D  E8 1E 29 19 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 0051D822  8B 8B E0 01 00 00         MOV ECX,dword ptr [EBX + 0x1e0]
 0051D828  50                        PUSH EAX
 0051D829  E8 92 41 1F 00            CALL 0x007119c0

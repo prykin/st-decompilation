@@ -4,10 +4,18 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\Grpway3d.cpp
    Diagnostic line evidence: 371 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+
+   [STMethodOwnerApplier] Structural method owner recovered as STGroupBoatC.
+   Evidence: this_call_owners=[STGroupBoatC]; agreed_this_calls=5; incoming_this_accesses=0;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=14; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=3; owner_evidence_coverage=adequate;
+   unique_primary_physical_vtable=true */
 
 int __thiscall
-FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_4,char param_5)
+STGroupBoatC::sub_0040BC90
+          (STGroupBoatC *this,uint param_1,short *param_2,short *param_3,short *param_4,char param_5
+          )
 
 {
   STGameObjC *pSVar1;
@@ -21,7 +29,7 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
   int iVar8;
   short *psVar9;
   int local_2c;
-  void *local_28;
+  STGroupBoatC *local_28;
   int local_24;
   int local_20;
   int local_1c;
@@ -32,8 +40,10 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
   short *local_8;
 
   local_28 = this;
-  pSVar1 = thunk_FUN_00423e70(this,(ushort)param_1);
+  /* ST_CALLSITE[0040BCA0]: CALL 0x0040286f; direct=0040286F STGroupBoatC::sub_00423E70; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_STBoatC_0040AE40; source view only; no Ghidra override */
+  pSVar1 = sub_00423E70(this,(ushort)param_1);
   if (pSVar1 != nullptr) {
+
     local_8 = Library::DKW::LIB::MemAlloc
                         ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY *
                          (int)g_pathingGrid.sizeX * 2);
@@ -88,6 +98,7 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
               iVar2 = local_24;
               do {
                 if ((*psVar9 == 0) &&
+
                    (iVar8 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar1,iVar2,
                                                local_1c,param_1_after_write), iVar8 == 0)) {
                   *psVar9 = -3;
@@ -124,6 +135,7 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
                         param_3,param_4,0,&local_2c,nullptr,nullptr,uVar4);
     psVar9 = local_8;
     if (psVar3 == nullptr) {
+
       iVar2 = FUN_006ab090((int)local_8,(int)g_pathingGrid.sizeX,(int)g_pathingGrid.sizeY,
                            (int)g_pathingGrid.sizeZ,(int)param_2,(int)param_3,(int)param_4,
                            (int)pSVar1->field_0047,(int)pSVar1->field_0049,(int)pSVar1->field_004B);

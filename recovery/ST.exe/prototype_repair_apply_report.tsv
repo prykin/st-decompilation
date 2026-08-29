@@ -1,2 +1,9 @@
 function_address	target	status	detail
+004DBCC0	parameter:1	disabled	apply flags are 0
+004DBF30	parameter:1	disabled	apply flags are 0
 004E2190	parameter:1	disabled	apply flags are 0
+00523410	return:	disabled	apply flags are 0
+00524FE0	return:	disabled	apply flags are 0
+00528060	return:	disabled	apply flags are 0
+005293F0	return:	disabled	apply flags are 0
+006BFE70	parameter:2	disabled	apply flags are 0

@@ -15,13 +15,12 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
   int iVar5;
   byte *puVar5;
   ushort *puVar6;
-  uint uVar7;
   int iVar8;
-  int iVar9;
+  int iVar7;
   MReportTy *this_00;
   cMf32 *this_01;
-  int *piVar10;
-  byte *puVar11;
+  int *piVar8;
+  byte *puVar9;
   InternalExceptionFrame local_98;
   InternalExceptionFrame local_54;
   undefined4 *local_10;
@@ -31,6 +30,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_c = this;
+
   local_EAX_39 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_c;
   if (local_EAX_39 == 0) {
@@ -59,9 +59,11 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
                 PTR_s_SAVEGAME__0079c0d4,&CHAR_00h_00807ddd,PTR_s_PL_LOG_0079c0d8);
       local_98.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_98;
+
       iVar5 = Library::MSVCRT::__setjmp3(local_98.jumpBuffer,0);
       if (iVar5 == 0) {
-        local_8 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
+
+        local_8 = STPointerBoundaryCast<cMf32 *>(Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0));
       }
       this_01 = local_8;
       this_00 = local_c;
@@ -82,8 +84,8 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
         if (puVar6 != nullptr) {
           this_00->field_0067 = 1;
           puVar5 = (byte *)(&DAT_0080c967);
-          puVar11 = (byte *)(&DAT_008087b6);
-          memmove(puVar11, puVar5, 0x1999); /* compiler REP MOVS byte copy */
+          puVar9 = (byte *)(&DAT_008087b6);
+          memmove(puVar9, puVar5, 0x1999); /* compiler REP MOVS byte copy */
           this_01 = local_8;
         }
         cMf32::delete(this_01);
@@ -92,22 +94,22 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
     puVar1 = &this_00->field_0x1d;
     memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
     this_00->field_002D = 0x23;
-    iVar9 = 0;
+    iVar7 = 0;
     do {
-      this_00->field_0031 = (short)iVar9 + 1;
-      if (iVar9 == 0) {
+      this_00->field_0031 = (short)iVar7 + 1;
+      if (iVar7 == 0) {
         sVar4 = 1;
       }
       else if (this_00->field_0067 == '\0') {
         sVar4 = 2;
       }
       else {
-        sVar4 = (((int)(DAT_0080c83e + 2) <= iVar9) - 1 & 0xfffe) + 2;
+        sVar4 = (((int)(DAT_0080c83e + 2) <= iVar7) - 1 & 0xfffe) + 2;
       }
       this_00->field_0033 = sVar4;
       FUN_006e6080(this_00,2,this_00->field_009F,(undefined4 *)puVar1);
-      iVar9 = iVar9 + 1;
-    } while (iVar9 < 9);
+      iVar7 = iVar7 + 1;
+    } while (iVar7 < 9);
     if (this_00->field_0067 == '\0') {
       this_00->field_002D = 0x20;
       this_00->field_0031 = 0;
@@ -115,29 +117,29 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
       FUN_006e6080(this_00,2,this_00->field_008F,(undefined4 *)puVar1);
     }
     else {
-      iVar9 = 0;
+      iVar7 = 0;
       this_00->field_0069 = 0;
       this_00->field_02A3 = 0;
       if (DAT_0080c83e != 0) {
-        piVar10 = &DAT_0080c947;
+        piVar8 = &DAT_0080c947;
         do {
-          if (this_00->field_02A3 < *piVar10) {
-            this_00->field_02A3 = *piVar10;
+          if (this_00->field_02A3 < *piVar8) {
+            this_00->field_02A3 = *piVar8;
           }
-          iVar9 = iVar9 + 1;
-          piVar10 = piVar10 + 1;
-        } while (iVar9 < (int)(uint)DAT_0080c83e);
+          iVar7 = iVar7 + 1;
+          piVar8 = piVar8 + 1;
+        } while (iVar7 < (int)(uint)DAT_0080c83e);
       }
       if (this_00->field_02A3 < DAT_0080c963) {
         this_00->field_02A3 = DAT_0080c963;
       }
       /* ST_CALLSITE[005C115E]: CALL 0x00405ecf; direct=00405ECF MReportTy::CreateBut */
-      uVar7 = CreateBut(this_00,1,1,0x262,0x226,0x91,0x28,0x6200,0x6212);
-      this_00->field_008F = uVar7;
+      iVar7 = CreateBut(this_00,1,1,0x262,0x226,0x91,0x28,0x6200,0x6212);
+      this_00->field_008F = iVar7;
       if (this_00->field_0066 == '\x01') {
         /* ST_CALLSITE[005C118E]: CALL 0x00405ecf; direct=00405ECF MReportTy::CreateBut */
-        uVar7 = CreateBut(this_00,1,1,0x1e,0x1ea,300,0x1e,0x6203,0x6215);
-        this_00->field_009B = uVar7;
+        iVar7 = CreateBut(this_00,1,1,0x1e,0x1ea,300,0x1e,0x6203,0x6215);
+        this_00->field_009B = iVar7;
       }
     }
     this_00->field_0068 = 1;
@@ -149,6 +151,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
+
   iVar8 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x30e,0,local_EAX_39,
                              "%s","MReportTy::SetCtrl");
   if (iVar8 == 0) {

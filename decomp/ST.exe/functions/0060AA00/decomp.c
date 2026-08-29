@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_0060aa00(AnonShape_0060AA00_19A5DB50 *param_1)
+void __fastcall FUN_0060aa00(RecoveredRecordView_0060AA00_20917E81 *param_1)
 
 {
   int iVar1;
@@ -147,6 +147,7 @@ void __fastcall FUN_0060aa00(AnonShape_0060AA00_19A5DB50 *param_1)
   if ((((float)(int)((uVar3 ^ uVar5) - uVar5) < param_1->field_022A) &&
       (param_1->field_022F == '\0')) &&
      ((param_1->field_01F5 == 0x43 || (param_1->field_01F5 == 0x42)))) {
+
     thunk_FUN_0060aef0(param_1);
     param_1->field_022F = 1;
   }

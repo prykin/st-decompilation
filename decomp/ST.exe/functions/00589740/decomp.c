@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_00589740(AnonShape_00589740_397F9B27 *param_1)
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00586AF0 @ 00587754 -> read as EAX on
+   every CFG path | 00586AF0 @ 00587C3B -> read as EAX on every CFG path */
+
+int __fastcall FUN_00589740(RecoveredRecordView_00589740_39D83294 *param_1)
 
 {
   byte *this;
@@ -21,9 +26,8 @@ undefined4 __fastcall FUN_00589740(AnonShape_00589740_397F9B27 *param_1)
     STT3DSprC::sub_004ACF20((STT3DSprC *)this,PTR_008032b8,0x10);
     /* ST_CALLSITE[005897C2]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     STT3DSprC::StartShow((STT3DSprC *)this,10,g_playSystem_00802A38->field_00E4);
-    /* ST_CALLSITE[005897CB]: CALL dword ptr [EDX + 0xd8] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(param_1->field_0000 + 0xd8))();
+    /* ST_CALLSITE[005897CB]: CALL dword ptr [EDX + 0xd8]; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/void;pointer:/void */
+    STStructuralVirtualCall<void>(param_1, 0xD8);
     /* ST_CALLSITE[005897E2]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar1 = STT3DSprC::LoadSequence((STT3DSprC *)this,9,PTR_00806764,"bulb_n4",CASE_1D);
     if (iVar1 == 0) {
@@ -37,6 +41,6 @@ undefined4 __fastcall FUN_00589740(AnonShape_00589740_397F9B27 *param_1)
     }
     return 0;
   }
-  return 0xffffffff;
+  return -1;
 }
 

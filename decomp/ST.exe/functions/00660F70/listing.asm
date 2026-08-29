@@ -201,7 +201,8 @@ LAB_006611bf:
 006611D3  77 45                     JA 0x0066121a
 006611D5  6A 53                     PUSH 0x53
 006611D7  8B CE                     MOV ECX,ESI
-006611D9  E8 D8 47 DA FF            CALL 0x004059b6
+AiFltClassTy::sub_00660F70::override::prt_6611d9_1084745e:
+006611D9  E8 D8 47 DA FF            CALL 0x004059b6  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__fastcall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/AiFltClassTy;/undefined4;/int
 006611DE  8B F8                     MOV EDI,EAX
 006611E0  85 FF                     TEST EDI,EDI
 006611E2  74 36                     JZ 0x0066121a

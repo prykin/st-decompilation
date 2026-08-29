@@ -2,7 +2,7 @@
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 006B94E0 -> 006C6410 @ 006B9577 */
 
-int FUN_006c6410(AnonShape_006B94E0_A7E74DF0 *param_1,int param_2)
+int FUN_006c6410(RecoveredRecordView_006B94E0_92E1E144 *param_1,int param_2)
 
 {
   int iVar1;

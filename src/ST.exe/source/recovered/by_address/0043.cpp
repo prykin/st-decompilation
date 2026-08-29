@@ -34,6 +34,7 @@ void st::fn_004353B0(uint param_1,uint param_2,uint param_3)
       (g_packedRecords_A62x8[uVar2].field149_0x1b3 == 0x19a)) &&
      (objPtr = (char)param_1, *(int *)&g_packedRecords_A62x8[uVar2].field150_0x1b7 == (int)objPtr))
   {
+
     st::fn_006ACC70((DArrayTy *)g_packedRecords_A62x8[uVar2].field155_0x1bd,0,
                      (void *)((int)&param_1 + 2));
     if (STPiece<2,2>(param_1) == (ushort)param_2) {
@@ -42,6 +43,7 @@ void st::fn_004353B0(uint param_1,uint param_2,uint param_3)
       pSVar1 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_2,CASE_1);
       /* ST_CALLSITE[0043542C]: CALL dword ptr [EDX + 0xe8]; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2 */
       pSVar1->vfunc_E8(0);
+
       st::fn_006AE140
                 ((DArrayTy *)g_packedRecords_A62x8[DAT_0080874d].field155_0x1bd,0,&param_3);
       /* ST_CALLSITE[00435463]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -106,7 +108,14 @@ int st::fn_00435820(int param_1,int param_2)
    all resolved direct callers consume only AX or kill the result; narrow_uses=2, ignored=1, full=0,
    unknown=0; reverse CFG traversal from every RET finds the same exact low-accumulator definition
    width on every path; sites=004455C0 @ 00445752 -> read as AX on every CFG path | 0054C740 @
-   0054C8A3 -> killed on every CFG path | 00667D90 @ 00667E6B -> read as AX on every CFG path */
+   0054C8A3 -> killed on every CFG path | 00667D90 @ 00667E6B -> read as AX on every CFG path
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:0: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:0: parameter=/char
+   previous_type=/undefined4 Evidence: entry-use width=/char; unmasked_dword_reads=0;
+   evidence=00435858 MOVSX ESI,byte ptr [EBP + 0x8] | 004358D8 address-of incoming slot passed to
+   call; end entry lifetime */
 
 ushort st::fn_00435850(char param_1,int param_2,int *param_3)
 
@@ -118,22 +127,23 @@ ushort st::fn_00435850(char param_1,int param_2,int *param_3)
   int iVar2;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined3 in_stack_00000005;
-  undefined1 local_38 [4];
+  byte local_38 [4];
   int local_34;
-  undefined4 local_2c;
+  uint local_2c;
   uint local_24;
-  undefined4 local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
-  undefined1 local_10 [4];
+  uint local_20;
+  uint local_1c;
+  uint local_18;
+  uint local_10;
   int local_c;
   DArrayTy *local_8;
 
   iVar2 = (int)param_1;
-  local_8 = (DArrayTy *)g_packedRecords_A62x8[iVar2].field2_0x5;
+  local_8 = g_packedRecords_A62x8[iVar2].field2_0x5;
   index = local_8->count;
   uVar1 = index;
   while (index = index - 1, -1 < (int)index) {
+
     st::fn_006ACC70(local_8,index,&local_c);
     if (local_c == 0) {
       uVar1 = index;
@@ -146,12 +156,12 @@ ushort st::fn_00435850(char param_1,int param_2,int *param_3)
   local_2c = 1;
   local_34 = iVar2;
   /* ST_CALLSITE[004358D8]: CALL dword ptr [EDX + 0x8] */
-  g_playSystem_00802A38->vfunc_08(0x10ff,(short)local_10,(short)&param_1,(short)local_38,0);
+  g_playSystem_00802A38->vfunc_8(0x10ff,&local_10,&_param_1,(short)local_38,0);
   if (param_2 == 1) {
-    st::fn_004037A6(_param_1);
+    st::fn_004037A6(st::pointer_boundary_cast<RecoveredRecord_00423360_E7F08AAB *>(_param_1));
   }
   if (param_3 != nullptr) {
-    *param_3 = _param_1;
+    *param_3 = (int)_param_1;
   }
   return (ushort)uVar1;
 }
@@ -264,7 +274,7 @@ short st::fn_00435B90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3
         param_4_after_write = (int *)((int)param_4_after_write + 1);
       } while ((int)param_4_after_write < (int)dVar8);
     }
-    bVar1 = ((byte *)this)[9];
+    bVar1 = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)this)[9]));
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = STReplaceLowByte((uint32_t)(param_3), (uint8_t)(bVar1));
     if (DAT_00808a8f == '\0') {
@@ -653,7 +663,7 @@ switchD_00435c5c_caseD_1:
           /* ST_CALLSITE[00436421]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar4 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          if ((STGameObjC *)this == pSVar4) {
+          if (st::machine_word_boundary_cast<uint>((STGameObjC *)this) == st::machine_word_boundary_cast<uint>(pSVar4)) {
             return 0;
           }
           /* ST_CALLSITE[0043643D]: CALL dword ptr [EDX + 0x28] */
@@ -678,7 +688,7 @@ switchD_00435c5c_caseD_1:
           /* ST_CALLSITE[0043649A]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar4 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          if ((STGameObjC *)this == pSVar4) {
+          if (st::machine_word_boundary_cast<uint>((STGameObjC *)this) == st::machine_word_boundary_cast<uint>(pSVar4)) {
             return 0;
           }
           /* ST_CALLSITE[004364B6]: CALL dword ptr [EDX + 0x28] */
@@ -772,7 +782,7 @@ switchD_00435c5c_caseD_1:
           /* ST_CALLSITE[00436397]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar4 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          if ((STGameObjC *)this == pSVar4) {
+          if (st::machine_word_boundary_cast<uint>((STGameObjC *)this) == st::machine_word_boundary_cast<uint>(pSVar4)) {
             return 0;
           }
           /* ST_CALLSITE[004363B3]: CALL dword ptr [EDX + 0x28] */
@@ -797,7 +807,7 @@ switchD_00435c5c_caseD_1:
           /* ST_CALLSITE[00436517]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar4 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          if ((STGameObjC *)this == pSVar4) {
+          if (st::machine_word_boundary_cast<uint>((STGameObjC *)this) == st::machine_word_boundary_cast<uint>(pSVar4)) {
             return 0;
           }
           /* ST_CALLSITE[00436533]: CALL dword ptr [EDX + 0x28] */
@@ -890,33 +900,32 @@ uint * st::fn_0043E420(undefined4 *param_1,char param_2)
 short st::fn_0043E460(char param_1)
 
 {
-  int iVar1;
-  int iVar2;
-  int *piVar3;
+  DArrayOf_STGameObjCPtr *pDVar1;
+  dword dVar2;
+  STGameObjC *this;
+  short sVar3;
   short sVar4;
-  short sVar5;
+  int iVar5;
   int iVar6;
-  int iVar7;
 
-  iVar7 = 0;
-  sVar5 = 0;
-  iVar1 = g_packedRecords_A62x8[param_1].field3_0x9;
-  iVar2 = STField<int>(iVar1,0xC);
+  iVar6 = 0;
   sVar4 = 0;
-  if (0 < iVar2) {
+  pDVar1 = g_packedRecords_A62x8[param_1].field3_0x9;
+  dVar2 = pDVar1->count;
+  sVar3 = 0;
+  if (0 < (int)dVar2) {
     do {
-      sVar5 = sVar4;
-      piVar3 = *(int **)(STField<int>(iVar1,0x1C) + iVar7 * 4);
-      /* ST_CALLSITE[0043E499]: CALL dword ptr [EAX + 0xf8] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      if ((piVar3 != nullptr) && (iVar6 = (**(code **)(*piVar3 + 0xf8))(), iVar6 == 1)) {
-        sVar5 = sVar5 + 1;
+      sVar4 = sVar3;
+      this = pDVar1->data[iVar6];
+      /* ST_CALLSITE[0043E499]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+      if ((this != nullptr) && (iVar5 = this->vfunc_F8(), iVar5 == 1)) {
+        sVar4 = sVar4 + 1;
       }
-      iVar7 = iVar7 + 1;
-      sVar4 = sVar5;
-    } while (iVar7 < iVar2);
+      iVar6 = iVar6 + 1;
+      sVar3 = sVar4;
+    } while (iVar6 < (int)dVar2);
   }
-  return sVar5;
+  return sVar4;
 }
 
 // 0043E640 FUN_0043e640
@@ -928,58 +937,56 @@ short st::fn_0043E460(char param_1)
 short st::fn_0043E640(char param_1,Global_sub_0043E640_param_2Enum param_2,int param_3,char param_4)
 
 {
-  int iVar1;
-  int *piVar2;
+  DArrayOf_STGameObjCPtr *pDVar1;
+  STGameObjC *this;
+  short sVar2;
   short sVar3;
-  short sVar4;
-  Global_sub_0043E640_param_2Enum GVar5;
+  Global_sub_0043E640_param_2Enum GVar4;
+  int iVar5;
   int iVar6;
-  int iVar7;
-  undefined1 local_c [4];
-  int local_8;
+  byte local_c [4];
+  dword local_8;
 
-  iVar7 = 0;
-  sVar4 = 0;
-  iVar1 = g_packedRecords_A62x8[param_1].field3_0x9;
-  local_8 = STField<int>(iVar1,0xC);
+  iVar6 = 0;
   sVar3 = 0;
-  if (0 < local_8) {
+  pDVar1 = g_packedRecords_A62x8[param_1].field3_0x9;
+  local_8 = pDVar1->count;
+  sVar2 = 0;
+  if (0 < (int)local_8) {
     do {
-      sVar4 = sVar3;
-      piVar2 = *(int **)(STField<int>(iVar1,0x1C) + iVar7 * 4);
-      /* ST_CALLSITE[0043E685]: CALL dword ptr [EAX + 0x2c] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      if (((piVar2 != nullptr) && (GVar5 = (**(code **)(*piVar2 + 0x2c))(), GVar5 == param_2)) &&
-         /* ST_CALLSITE[0043E691]: CALL dword ptr [EDX + 0xf8] */
-         (iVar6 = (**(code **)(*piVar2 + 0xf8))(), iVar6 != 0)) {
+      sVar3 = sVar2;
+      this = pDVar1->data[iVar6];
+      if (((this != nullptr) &&
+          /* ST_CALLSITE[0043E685]: CALL dword ptr [EAX + 0x2c] */
+          (GVar4 = this->vfunc_2C(), GVar4 == param_2)) &&
+         /* ST_CALLSITE[0043E691]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+         (iVar5 = this->vfunc_F8(), iVar5 != 0)) {
         if (param_3 == 0) {
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_0043e6d3:
           if ((param_4 == -1) ||
              /* ST_CALLSITE[0043E6E1]: CALL dword ptr [EAX + 0x6c] */
-             (iVar6 = (**(code **)(**(int **)(STField<int>(iVar1,0x1C) + iVar7 * 4) + 0x6c))(),
-             iVar6 == param_4)) {
-            sVar4 = sVar4 + 1;
+             (iVar5 = pDVar1->data[iVar6]->vfunc_6C(),
+             iVar5 == param_4)) {
+            sVar3 = sVar3 + 1;
           }
         }
         else {
           switch(param_2) {
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           case CASE_38:
           case CASE_39:
           case CASE_4F:
           case CASE_5E:
             /* ST_CALLSITE[0043E6C9]: CALL dword ptr [EAX + 0x88] */
-            if ((param_3 == 1) && (iVar6 = (**(code **)(*piVar2 + 0x88))(local_c), 0 < iVar6))
+            if ((param_3 == 1) && (iVar5 = (*this->vtable->vfunc_88)(st::machine_word_boundary_cast<undefined4>(local_c)), 0 < iVar5))
             goto LAB_0043e6d3;
           }
         }
       }
-      iVar7 = iVar7 + 1;
-      sVar3 = sVar4;
-    } while (iVar7 < local_8);
+      iVar6 = iVar6 + 1;
+      sVar2 = sVar3;
+    } while (iVar6 < (int)local_8);
   }
-  return sVar4;
+  return sVar3;
 }
 
 // 0043E9A0 FUN_0043e9a0
@@ -1000,7 +1007,7 @@ st::fn_0043E9A0(char param_1,Global_sub_0043E9A0_param_2Enum param_2,short param
   int iVar5;
   int iVar6;
   int iVar7;
-  undefined1 local_14 [4];
+  byte local_14 [4];
   int local_10;
   int local_c;
   int local_8;
@@ -1037,7 +1044,7 @@ st::fn_0043E9A0(char param_1,Global_sub_0043E9A0_param_2Enum param_2,short param
   iVar4 = g_worldGrid.sizeX * _param_6 + local_8 + (iVar2 + -1) * (int)g_worldGrid.planeStride;
   if (iVar2 <= _param_5) {
     _param_5 = _param_5 - iVar2;
-    iVar2 = STReplaceLowWord((uint32_t)(iVar2), (uint16_t)(g_worldGrid.sizeX));
+    iVar2 = STReplaceLowWord(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(iVar2)), (uint16_t)(g_worldGrid.sizeX));
     _param_5 = _param_5 + 1;
     iVar6 = local_c;
     iVar7 = local_8;
@@ -1055,20 +1062,18 @@ st::fn_0043E9A0(char param_1,Global_sub_0043E9A0_param_2Enum param_2,short param
             do {
               piVar1 = *(int **)((int)g_worldGrid.cells[1].objects + iVar2);
               pSVar3 = g_worldGrid.cells;
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               if ((((piVar1 != nullptr) && (piVar1[9] == (int)param_1)) && (piVar1 != nullptr)
-                  /* ST_CALLSITE[0043EAC1]: CALL dword ptr [EDX + 0x2c] */
-                  ) && ((pSVar3 = (STWorldCell *)(**(code **)(*piVar1 + 0x2c))(),
-                        pSVar3 == (STWorldCell *)param_2 &&
-                        /* ST_CALLSITE[0043EACD]: CALL dword ptr [EAX + 0xf8] */
-                        (pSVar3 = (STWorldCell *)(**(code **)(*piVar1 + 0xf8))(),
+                  /* ST_CALLSITE[0043EAC1]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                  ) && ((pSVar3 = (STWorldCell *)STStructuralVirtualCall<undefined4>(piVar1, 0x2C),
+                        st::machine_word_boundary_cast<uint>(pSVar3) == st::machine_word_boundary_cast<uint>((STWorldCell *)param_2) &&
+                        /* ST_CALLSITE[0043EACD]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                        (pSVar3 = (STWorldCell *)STStructuralVirtualCall<undefined4>(piVar1, 0xF8),
                         pSVar3 != nullptr)))) {
                 if (param_9 == 0) {
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_0043eb0f:
                   if ((param_10 == -1) ||
-                     /* ST_CALLSITE[0043EB19]: CALL dword ptr [EDX + 0x6c] */
-                     (pSVar3 = (STWorldCell *)(**(code **)(*piVar1 + 0x6c))(),
+                     /* ST_CALLSITE[0043EB19]: CALL dword ptr [EDX + 0x6c]; [STIndirectCallsiteApplier] exact slot 0x6C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                     (pSVar3 = (STWorldCell *)STStructuralVirtualCall<undefined4>(piVar1, 0x6C),
                      pSVar3 == (STWorldCell *)(int)param_10)) {
                     param_3_after_write = param_3_after_write + 1;
                   }
@@ -1076,14 +1081,13 @@ LAB_0043eb0f:
                 else {
                   pSVar3 = (STWorldCell *)(param_2 - CASE_38);
                   switch(param_2) {
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                   case CASE_38:
                   case CASE_39:
                   case CASE_4F:
                   case CASE_5E:
                     if ((param_9 == 1) &&
-                       /* ST_CALLSITE[0043EB05]: CALL dword ptr [EAX + 0x88] */
-                       (pSVar3 = (STWorldCell *)(**(code **)(*piVar1 + 0x88))(local_14),
+                       /* ST_CALLSITE[0043EB05]: CALL dword ptr [EAX + 0x88]; [STIndirectCallsiteApplier] exact slot 0x88; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
+                       (pSVar3 = (STWorldCell *)STStructuralVirtualCall<undefined4>(piVar1, 0x88, local_14),
                        0 < (int)pSVar3)) goto LAB_0043eb0f;
                   }
                 }
@@ -1101,7 +1105,7 @@ LAB_0043eb0f:
       _param_5 = _param_5 + -1;
     } while (_param_5 != 0);
   }
-  return STReplaceLowWord((uint32_t)(iVar2), (uint16_t)(param_3_after_write));
+  return STReplaceLowWord(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(iVar2)), (uint16_t)(param_3_after_write));
 }
 
 // 0043EC20 FUN_0043ec20
@@ -1122,7 +1126,7 @@ uint * st::fn_0043EC20(char param_1,Global_sub_0043EC20_param_2Enum param_2,shor
   int iVar4;
   int iVar5;
   int iVar6;
-  undefined1 local_14 [4];
+  byte local_14 [4];
   int local_10;
   int local_c;
   int local_8;
@@ -1172,31 +1176,28 @@ uint * st::fn_0043EC20(char param_1,Global_sub_0043EC20_param_2Enum param_2,shor
             iVar6 = iVar3 * 8 + -8;
             do {
               piVar1 = *(int **)((int)g_worldGrid.cells[1].objects + iVar6);
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               if ((((piVar1 != nullptr) && (piVar1[9] == (int)param_1)) && (piVar1 != nullptr)
-                  /* ST_CALLSITE[0043ED52]: CALL dword ptr [EAX + 0x2c] */
-                  ) && ((GVar2 = (**(code **)(*piVar1 + 0x2c))(), GVar2 == param_2 &&
-                        /* ST_CALLSITE[0043ED5E]: CALL dword ptr [EDX + 0xf8] */
-                        (iVar4 = (**(code **)(*piVar1 + 0xf8))(), iVar4 != 0)))) {
+                  /* ST_CALLSITE[0043ED52]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                  ) && ((GVar2 = STStructuralVirtualCall<undefined4>(piVar1, 0x2C), GVar2 == param_2 &&
+                        /* ST_CALLSITE[0043ED5E]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                        (iVar4 = STStructuralVirtualCall<undefined4>(piVar1, 0xF8), iVar4 != 0)))) {
                 if (param_9 == 0) {
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_0043eda0:
                   if ((param_10 == -1) ||
-                     /* ST_CALLSITE[0043EDAA]: CALL dword ptr [EDX + 0x6c] */
-                     (iVar4 = (**(code **)(*piVar1 + 0x6c))(), iVar4 == param_10)) {
+                     /* ST_CALLSITE[0043EDAA]: CALL dword ptr [EDX + 0x6c]; [STIndirectCallsiteApplier] exact slot 0x6C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                     (iVar4 = STStructuralVirtualCall<undefined4>(piVar1, 0x6C), iVar4 == param_10)) {
                     st::fn_006AE1C0(array,(void *)((int)piVar1 + 0x32));
                   }
                 }
                 else {
                   switch(param_2) {
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                   case CASE_38:
                   case CASE_39:
                   case CASE_4F:
                   case CASE_5E:
                     if ((param_9 == 1) &&
-                       /* ST_CALLSITE[0043ED96]: CALL dword ptr [EAX + 0x88] */
-                       (iVar4 = (**(code **)(*piVar1 + 0x88))(local_14), 0 < iVar4))
+                       /* ST_CALLSITE[0043ED96]: CALL dword ptr [EAX + 0x88]; [STIndirectCallsiteApplier] exact slot 0x88; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
+                       (iVar4 = STStructuralVirtualCall<undefined4>(piVar1, 0x88, local_14), 0 < iVar4))
                     goto LAB_0043eda0;
                   }
                 }
@@ -1220,13 +1221,14 @@ LAB_0043eda0:
 }
 
 // 0043F130 FUN_0043f130
-#line 4 "decomp/ST.exe/functions/0043F130/decomp.c"
+#line 1 "decomp/ST.exe/functions/0043F130/decomp.c"
+
 short st::fn_0043F130(char param_1,byte *param_2)
 
 {
   byte bVar1;
-  int iVar2;
-  int *piVar3;
+  DArrayOf_STGameObjCPtr *pDVar2;
+  STGameObjC *pSVar3;
   short sVar4;
   short sVar5;
   byte *pbVar6;
@@ -1235,21 +1237,20 @@ short st::fn_0043F130(char param_1,byte *param_2)
   int iVar9;
   bool bVar10;
   byte local_18 [16];
-  int local_8;
+  dword local_8;
 
   iVar9 = 0;
   sVar5 = 0;
-  iVar2 = g_packedRecords_A62x8[param_1].field3_0x9;
-  local_8 = STField<int>(iVar2,0xC);
+  pDVar2 = g_packedRecords_A62x8[param_1].field3_0x9;
+  local_8 = pDVar2->count;
   sVar4 = 0;
-  if (0 < local_8) {
+  if (0 < (int)local_8) {
     do {
       sVar5 = sVar4;
-      piVar3 = *(int **)(STField<int>(iVar2,0x1C) + iVar9 * 4);
-      if (piVar3 != nullptr) {
+      pSVar3 = pDVar2->data[iVar9];
+      if (pSVar3 != nullptr) {
         /* ST_CALLSITE[0043F173]: CALL dword ptr [EAX + 0x74] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(*piVar3 + 0x74))(local_18);
+        (*pSVar3->vtable->vfunc_74)((short)local_18);
         pbVar8 = local_18;
         pbVar6 = param_2;
         do {
@@ -1275,7 +1276,7 @@ LAB_0043f1a5:
       }
       iVar9 = iVar9 + 1;
       sVar4 = sVar5;
-    } while (iVar9 < local_8);
+    } while (iVar9 < (int)local_8);
   }
   return sVar5;
 }
@@ -1335,7 +1336,7 @@ st::fn_0043F380(char param_1,byte *param_2,short param_3,short param_4,short par
   iVar6 = g_worldGrid.sizeX * _param_3 + local_8 + (iVar3 + -1) * (int)g_worldGrid.planeStride;
   if (iVar3 <= _param_5) {
     _param_5 = _param_5 - iVar3;
-    iVar3 = STReplaceLowWord((uint32_t)(iVar3), (uint16_t)(g_worldGrid.sizeX));
+    iVar3 = STReplaceLowWord(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(iVar3)), (uint16_t)(g_worldGrid.sizeX));
     _param_5 = _param_5 + 1;
     iVar8 = local_c;
     iVar10 = local_8;
@@ -1354,9 +1355,8 @@ st::fn_0043F380(char param_1,byte *param_2,short param_3,short param_4,short par
               piVar2 = *(int **)((int)g_worldGrid.cells[1].objects + iVar3);
               pSVar5 = g_worldGrid.cells;
               if ((piVar2 != nullptr) && (piVar2[9] == (int)param_1)) {
-                /* ST_CALLSITE[0043F49B]: CALL dword ptr [EAX + 0x74] */
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                (**(code **)(*piVar2 + 0x74))(local_20);
+                /* ST_CALLSITE[0043F49B]: CALL dword ptr [EAX + 0x74]; [STIndirectCallsiteApplier] exact slot 0x74; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4 */
+                STStructuralVirtualCall<void>(piVar2, 0x74, local_20);
                 pbVar9 = local_20;
                 pbVar4 = param_2;
                 do {
@@ -1393,7 +1393,7 @@ LAB_0043f4cd:
       _param_5 = _param_5 + -1;
     } while (_param_5 != 0);
   }
-  return STReplaceLowWord((uint32_t)(iVar3), (uint16_t)(param_6_after_write));
+  return STReplaceLowWord(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(iVar3)), (uint16_t)(param_6_after_write));
 }
 
 // 0043F580 FUN_0043f580
@@ -1465,9 +1465,8 @@ uint * st::fn_0043F580(char param_1,byte *param_2,short param_3,short param_4,sh
             do {
               piVar2 = *(int **)((int)g_worldGrid.cells[1].objects + iVar7);
               if ((piVar2 != nullptr) && (piVar2[9] == (int)param_1)) {
-                /* ST_CALLSITE[0043F6B6]: CALL dword ptr [EAX + 0x74] */
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                (**(code **)(*piVar2 + 0x74))(local_24);
+                /* ST_CALLSITE[0043F6B6]: CALL dword ptr [EAX + 0x74]; [STIndirectCallsiteApplier] exact slot 0x74; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4 */
+                STStructuralVirtualCall<void>(piVar2, 0x74, local_24);
                 pbVar8 = local_24;
                 pbVar4 = param_2;
                 do {
@@ -1583,7 +1582,7 @@ uint * st::fn_0043F7B0(byte param_1,int *param_2,uint *param_3,int param_4,int p
                  ((((iVar7 = piVar3[8], param_6 = piVar3, iVar7 == 0x14 || (iVar7 == 1000)) ||
                    (iVar7 == 0x3e9)) && (param_2 != piVar3)))) {
                 if (param_9 == 0) {
-                  bVar1 = ((byte *)piVar3)[9];
+                  bVar1 = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)piVar3)[9]));
                   if (DAT_00808a8f == '\0') {
                     if (bVar1 == bVar5) {
 LAB_0043f9bd:
@@ -1614,14 +1613,12 @@ LAB_0043f9bd:
                              g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                   }
                   if (!bVar11) goto LAB_0043f9fa;
-                  /* ST_CALLSITE[0043F9D1]: CALL dword ptr [EAX + 0xf8] */
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                  iVar7 = (**(code **)(*piVar3 + 0xf8))();
+                  /* ST_CALLSITE[0043F9D1]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                  iVar7 = STStructuralVirtualCall<undefined4>(piVar3, 0xF8);
                 }
                 else {
-                  /* ST_CALLSITE[0043F9E2]: CALL dword ptr [EAX + 0xf8] */
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                  iVar7 = (**(code **)(*piVar3 + 0xf8))();
+                  /* ST_CALLSITE[0043F9E2]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                  iVar7 = STStructuralVirtualCall<undefined4>(piVar3, 0xF8);
                 }
                 if (iVar7 == 1) {
                   st::fn_006AE1C0(array,&param_6);
@@ -1632,9 +1629,9 @@ LAB_0043f9fa:
               if (((piVar3 != nullptr) && (param_6 = piVar3, piVar3[8] == 0x1ae)) &&
                  (param_2 != piVar3)) {
                 if (param_9 == 0) {
-                  bVar1 = ((byte *)piVar3)[9];
+                  bVar1 = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)piVar3)[9]));
                   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-                  param_8 = STReplaceLowByte((uint32_t)(param_8), (uint8_t)(bVar1));
+                  param_8 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(param_8)), (uint8_t)(bVar1));
                   if (DAT_00808a8f == '\0') {
                     if (bVar1 == bVar5) {
 LAB_0043fad9:
@@ -1665,14 +1662,12 @@ LAB_0043fad9:
                              g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                   }
                   if (!bVar11) goto LAB_0043fb16;
-                  /* ST_CALLSITE[0043FAED]: CALL dword ptr [EAX + 0xf8] */
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                  iVar7 = (**(code **)(*piVar3 + 0xf8))();
+                  /* ST_CALLSITE[0043FAED]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                  iVar7 = STStructuralVirtualCall<undefined4>(piVar3, 0xF8);
                 }
                 else {
-                  /* ST_CALLSITE[0043FAFE]: CALL dword ptr [EAX + 0xf8] */
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                  iVar7 = (**(code **)(*piVar3 + 0xf8))();
+                  /* ST_CALLSITE[0043FAFE]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                  iVar7 = STStructuralVirtualCall<undefined4>(piVar3, 0xF8);
                 }
                 if (iVar7 == 1) {
                   st::fn_006AE1C0(array,&param_6);
@@ -1888,4 +1883,3 @@ LAB_0043fd36:
   }
   return;
 }
-

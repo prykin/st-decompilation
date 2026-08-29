@@ -15,16 +15,18 @@ undefined4 __fastcall FUN_004d9700(TLOBaseTy *param_1)
     local_8 = param_1;
     if (0 < (int)g_array_007FA16C->count) {
       do {
-        DArrayGetElement(g_array_007FA16C,index,&local_8);
+
+        DArrayGetElement((DArrayTy *)g_array_007FA16C,index,&local_8);
         if (local_8 == param_1) {
-          DArrayRemoveAt(g_array_007FA16C,index);
+
+          DArrayRemoveAt((DArrayTy *)g_array_007FA16C,index);
           break;
         }
         index = index + 1;
       } while ((int)index < (int)g_array_007FA16C->count);
     }
     if (g_array_007FA16C->count == 0) {
-      DArrayDestroy(g_array_007FA16C);
+      DArrayDestroy((DArrayTy *)g_array_007FA16C);
       g_array_007FA16C = nullptr;
     }
   }

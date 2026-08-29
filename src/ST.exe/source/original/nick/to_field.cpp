@@ -12,11 +12,11 @@ uint __thiscall st::fn_006099E0(STFieldC *this,uint param_1)
 {
   STFieldC *pSVar2;
   int iVar3;
-  STFieldC_field_0234DArray *pSVar3;
+  DArrayTy *pSVar3;
   int iVar4;
   uint uVar7;
-  undefined4 local_90 [15];
-  undefined4 local_54;
+  uint local_90 [15];
+  uint local_54;
   InternalExceptionFrame local_50;
   STFieldC *local_c;
   uint local_8;
@@ -25,6 +25,7 @@ uint __thiscall st::fn_006099E0(STFieldC *this,uint param_1)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar3 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   pSVar2 = local_c;
   if (iVar3 != 0) {
@@ -32,11 +33,12 @@ uint __thiscall st::fn_006099E0(STFieldC *this,uint param_1)
     uVar7 = local_8;
     if (0 < (int)local_8) {
       do {
-        st::fn_006AE110((DArrayTy *)pSVar2->field_0234);
+        st::fn_006AE110(reinterpret_cast<DArrayTy *>(pSVar2->field_0234));
         uVar7 = uVar7 - 1;
         pSVar2->field_0234 = nullptr;
       } while (uVar7 != 0);
     }
+
     iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_field.cpp"),0x1e5,0,iVar3,st::mutable_c_string("%s"),
                                "STFieldC::CreateField");
     if (iVar4 == 0) {
@@ -46,16 +48,17 @@ uint __thiscall st::fn_006099E0(STFieldC *this,uint param_1)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (local_c->field_0234 == nullptr) {
-    pSVar3 = (STFieldC_field_0234DArray *)
-             st::fn_006AE290(nullptr,param_1,0x40,10);
-    pSVar2->field_0234 = pSVar3;
+    /* ST_CALLSITE[00609A36]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STFieldC_field_0234DArray; source view only; no Ghidra override */
+    pSVar3 = st::fn_006AE290(nullptr,param_1,0x40,10);
+    pSVar2->field_0234 = reinterpret_cast<STFieldC_field_0234DArray *>(pSVar3);
   }
   if ((pSVar2->field_0234 != nullptr) && (param_1 != 0)) {
     memset(local_90, 0, 0x40); /* compiler bulk-zero initialization */
     local_54 = 0xffffffff;
     if (0 < (int)param_1) {
       do {
-        local_8 = st::fn_006AE1C0((DArrayTy *)pSVar2->field_0234,local_90);
+
+        local_8 = st::fn_006AE1C0(reinterpret_cast<DArrayTy *>(pSVar2->field_0234),local_90);
         param_1 = param_1 - 1;
       } while (param_1 != 0);
     }
@@ -149,7 +152,7 @@ undefined4 __thiscall st::fn_00609D60(STFieldC *this,uint param_1)
   int *piVar8;
   char *text;
   InternalExceptionFrame local_54;
-  undefined4 local_10;
+  uint local_10;
   STFieldC_field_0234Element *element_0234;
   uint local_8;
 
@@ -167,10 +170,12 @@ undefined4 __thiscall st::fn_00609D60(STFieldC *this,uint param_1)
   if ((element_0234 != nullptr) && (element_0234->field_0004 != 0xffffffff)) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
+
     errorCode = st::fn_0072D7F0(local_54.jumpBuffer,0);
-    puVar4 = &(element_0234)->field_0000;
+    puVar4 = reinterpret_cast<uint *>(element_0234);
     if (errorCode != 0) {
       g_currentExceptionFrame = local_54.previous;
+
       iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_field.cpp"),0x248,0,errorCode,
                                  st::mutable_c_string("%s"),"STFieldC::LoadImagSpr");
       if (iVar6 != 0) {
@@ -188,12 +193,15 @@ undefined4 __thiscall st::fn_00609D60(STFieldC *this,uint param_1)
       text = (&PTR_s_pics_g_007cf6d0)[uVar2];
       piVar8 = PTR_00806774;
     }
+    /* ST_CALLSITE[00609E06]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
     puVar5 = st::fn_00709AF0
                        (piVar8,CASE_1D,text,0xffffffff,0,1,0,nullptr);
+
     st::fn_006E8660
-              (g_sT3DSMAPContext_00807598,(int *)&local_8,1,0,STField<uint>(puVar5,9),
+              (g_sT3DSMAPContext_00807598,reinterpret_cast<int *>(&local_8),1,0,STField<uint>(puVar5,9),
                STField<uint>(puVar5,0xd),*(int *)(&DAT_007cf6f0 + *puVar4 * 8) / 2,
                *(int *)(&DAT_007cf6f4 + *puVar4 * 8) / 2 - 0xe,0);
+
     st::fn_006E98E0
               (g_sT3DSMAPContext_00807598,local_8,0,*(int *)puVar5,STField<int>(puVar5,0x21),1);
     st::fn_006EA270(g_sT3DSMAPContext_00807598,local_8,0,0);
@@ -203,6 +211,7 @@ undefined4 __thiscall st::fn_00609D60(STFieldC *this,uint param_1)
                (float)(int)puVar4[3] * _DAT_007904f8 * _DAT_007904f0,
                (float)(int)puVar4[4] * _DAT_007904f8 * _DAT_007904f0,
                (float)(int)puVar4[5] * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+
     st::fn_006EAAA0(g_sT3DSMAPContext_00807598,local_8,0);
     puVar4[1] = 1;
     puVar4[0xf] = local_8;
@@ -210,4 +219,3 @@ undefined4 __thiscall st::fn_00609D60(STFieldC *this,uint param_1)
   }
   return local_10;
 }
-

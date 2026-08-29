@@ -34,6 +34,7 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
+
   local_EAX_34 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_14;
   if (local_EAX_34 == 0) {
@@ -42,6 +43,7 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
     if (SVar1 < MESS_STSPRGAMEOBJC_0109) {
       if (SVar1 == MESS_SHARED_0108) {
         if (local_14->field_0114 != 0) {
+
           iVar3 = thunk_FUN_004ab050();
           uVar6 = this_00->field_0030 * this_00->field_0034;
           this_00->field_010C = iVar3;
@@ -91,6 +93,7 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
       else if (SVar1 == MESS_ID_CREATE) {
         local_8 = nullptr;
         if (g_cMf32_00806754 != nullptr) {
+          /* ST_CALLSITE[005588FC]: CALL 0x006f2d90; direct=006F2D90 Library::Ourlib::MFAOBJ::mfAObjLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/Visible; source view only; no Ghidra override */
           local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad
                               (g_cMf32_00806754,PTR_s_VISIBILITY_0079aec4,0,0);
         }
@@ -120,7 +123,7 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
     }
     else if (SVar1 == MESS_SHARED_010F) {
       local_c = 0;
-      /* ST_CALLSITE[00558A4B]: CALL 0x00403224; direct=00403224 VisibleClassTy::PrepareToSave */
+      /* ST_CALLSITE[00558A4B]: CALL 0x00403224; direct=00403224 VisibleClassTy::PrepareToSave; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       local_10 = PrepareToSave(local_14,&local_c);
       /* ST_CALLSITE[00558A67]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
       STPlaySystemC::SaveObjData
@@ -132,11 +135,13 @@ int __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,STMessage *messag
     else if (SVar1 == MESS_ID_ALLCREATE) {
       local_14->field_0104 = 0;
     }
+
     FUN_006e5fd0(this_00,message);
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
   g_currentExceptionFrame = local_58.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0x186,0,local_EAX_34,
                              "VisibleClassTy::GetMessage error mess->id == %lX",message->id);
   if (iVar4 == 0) {

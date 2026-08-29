@@ -182,7 +182,7 @@ LAB_006003fc:
 0060042D  52                        PUSH EDX
 0060042E  8B 96 ED 01 00 00         MOV EDX,dword ptr [ESI + 0x1ed]
 00600434  52                        PUSH EDX
-00600435  FF 90 E0 00 00 00         CALL dword ptr [EAX + 0xe0]
+00600435  FF 90 E0 00 00 00         CALL dword ptr [EAX + 0xe0]  ; [STIndirectCallsiteApplier] exact slot 0xE0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 0060043B  85 C0                     TEST EAX,EAX
 0060043D  75 68                     JNZ 0x006004a7
 0060043F  0F BF 45 0A               MOVSX EAX,word ptr [EBP + 0xa]

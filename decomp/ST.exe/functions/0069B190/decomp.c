@@ -32,6 +32,7 @@ int __thiscall CGenerate::sub_0069B190(CGenerate *this,int param_1,int param_2,i
   this->field_5837 = param_2;
   FreeAndNull(&this->field_584F);
   uVar4 = uVar9 * 2;
+  /* ST_CALLSITE[0069B1DE]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
   puVar2 = Library::DKW::LIB::MemAlloc(uVar4);
   this->field_584F = puVar2;
   for (uVar9 = (uVar9 & 0x7fffffff) >> 1; uVar9 != 0; uVar9 = uVar9 - 1) {

@@ -26,7 +26,7 @@ LAB_004ce082:
 004CE09B  85 C9                     TEST ECX,ECX
 004CE09D  74 0D                     JZ 0x004ce0ac
 004CE09F  8B 11                     MOV EDX,dword ptr [ECX]
-004CE0A1  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+004CE0A1  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004CE0A4  3B 45 08                  CMP EAX,dword ptr [EBP + 0x8]
 004CE0A7  75 03                     JNZ 0x004ce0ac
 004CE0A9  FF 45 FC                  INC dword ptr [EBP + -0x4]

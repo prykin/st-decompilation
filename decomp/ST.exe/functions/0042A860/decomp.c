@@ -13,11 +13,12 @@ void FUN_0042a860(void)
   byte *puVar1;
   short *psVar2;
   int iVar3;
-  undefined1 local_448 [1024];
+  byte local_448 [1024];
   InternalExceptionFrame local_48;
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
+
   iVar1 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar1 == 0) {
     puVar1 = local_448 + 1;
@@ -31,7 +32,8 @@ void FUN_0042a860(void)
       iVar3 = iVar3 + -1;
       psVar2 = psVar2 + 2;
     } while (iVar3 != 0);
-    FUN_006b08f0((AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,(int)local_448,0,0x100);
+
+    FUN_006b08f0((RecoveredGlobalRecordView_00854EB8 *)g_dDXContext_0080759C,(int)local_448,0,0x100);
     g_currentExceptionFrame = local_48.previous;
     return;
   }

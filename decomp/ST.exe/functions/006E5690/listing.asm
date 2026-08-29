@@ -9,6 +9,6 @@ FUN_006e5690:
 006E569E  6A 00                     PUSH 0x0
 006E56A0  6A 00                     PUSH 0x0
 006E56A2  52                        PUSH EDX
-006E56A3  FF 50 08                  CALL dword ptr [EAX + 0x8]
+006E56A3  FF 50 08                  CALL dword ptr [EAX + 0x8]  ; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 006E56A6  5D                        POP EBP
 006E56A7  C2 08 00                  RET 0x8

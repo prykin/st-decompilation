@@ -40,9 +40,9 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
   int iVar20;
   ushort *puVar21;
   undefined1 auStack_122c [252];
-  undefined4 uStack_1130;
+  uint uStack_1130;
   undefined4 auStack_112c [1023];
-  undefined4 uStack_130;
+  uint uStack_130;
   int local_120;
   int local_11c;
   float local_ec [2];
@@ -60,11 +60,11 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
   int local_90;
   int local_8c;
   float local_88;
-  undefined4 local_84;
-  undefined4 local_80;
+  uint local_84;
+  uint local_80;
   int local_7c [2];
   int local_74;
-  undefined1 local_68 [24];
+  byte local_68 [24];
   char *local_50;
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *local_44;
   float local_40;
@@ -77,7 +77,7 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
+  uint local_8;
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar15;
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *temp_5f4598f33d;
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *temp_5f0ea6b32c;
@@ -143,6 +143,7 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
       local_cc = auStack_122c;
       for (pRVar16 = temp_5f0ea6b32c; pRVar16 != nullptr;
           pRVar16 = pRVar16->next) {
+
         sub_006E25D0(param_1,local_7c,&local_88,
                      (double)pRVar16->field_0004 * param_1->field_00C8,
                      (double)pRVar16->field_0006 * param_1->field_00C8,
@@ -183,11 +184,12 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E1EE0::FUN_006e1ee0
                   ((AnonReceiver_006E1EE0 *)param_1,(AnonShape_006E1EE0_698AE49A *)temp_5f0605bde0,
                    local_3c,(int)local_cc,local_a0);
-        FUN_00726ce0(param_1,(int)temp_5f0605bde0);
+        FUN_00726ce0(param_1,(RecoveredRecord_00726CE0_B9FB2C5D *)temp_5f0605bde0);
         iVar20 = 0;
         if (0 < local_a0[0]) {
           do {
-            FUN_007279b0(param_1,(int)temp_5f0605bde0,(uint)(byte)local_cc[iVar20],(int)local_3c);
+            FUN_007279b0(param_1,(RecoveredRecord_007279B0_99D820F0 *)temp_5f0605bde0,
+                         (uint)(byte)local_cc[iVar20],(int)local_3c);
             iVar20 = iVar20 + 1;
           } while (iVar20 < local_a0[0]);
         }
@@ -204,12 +206,12 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006E1EE0::FUN_006e1ee0
                   ((AnonReceiver_006E1EE0 *)param_1,(AnonShape_006E1EE0_698AE49A *)temp_5ff32f7558,
                    local_3c,(int)local_cc,local_a0);
-        FUN_00726ce0(param_1,(int)temp_5ff32f7558);
+        FUN_00726ce0(param_1,(RecoveredRecord_00726CE0_B9FB2C5D *)temp_5ff32f7558);
         iVar20 = 0;
         if (0 < local_a0[0]) {
           do {
-            SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_007282b0
-                      ((AnonReceiver_00727C80 *)param_1,
+            SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00727C80::FUN_007282b0
+                      ((RecoveredReceiver_00727C80 *)param_1,
                        (AnonShape_007282B0_AFD740A9 *)temp_5ff32f7558,(uint)(byte)local_cc[iVar20],
                        (int)local_3c);
             iVar20 = iVar20 + 1;
@@ -227,6 +229,7 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
         local_c0 = temp_5ff32f7558->field_0006 * local_bc;
         local_bc = local_bc * 2;
         local_b8 = local_bc;
+
         iVar20 = FUN_006b0460(&local_b4,&local_c4,&local_38);
         if (iVar20 != 0) {
           if (local_e4 == 0) {
@@ -271,12 +274,12 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
                     ((AnonReceiver_006E1EE0 *)param_1,(AnonShape_006E1EE0_698AE49A *)temp_5f4598f33d
                      ,local_3c,(int)local_cc,local_a0);
         }
-        FUN_00726ce0(param_1,(int)temp_5f4598f33d);
+        FUN_00726ce0(param_1,(RecoveredRecord_00726CE0_B9FB2C5D *)temp_5f4598f33d);
         iVar20 = 0;
         if (0 < local_a0[0]) {
           do {
-            SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
-                      ((AnonReceiver_00727C80 *)param_1,
+            SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00727C80::FUN_00727da0
+                      ((RecoveredReceiver_00727C80 *)param_1,
                        (AnonShape_00727DA0_C4265AA0 *)temp_5f4598f33d,(uint)(byte)local_cc[iVar20],
                        (int)local_3c);
             iVar20 = iVar20 + 1;
@@ -316,16 +319,22 @@ void __fastcall ST3DSMAPContext::sub_006DDD50(ST3DSMAPContext *param_1)
       local_88 = 0.0;
       local_84 = 0;
       local_80 = 0;
+
       sub_006E25D0(param_1,local_7c,&local_88,0.0,0.0,param_1->field_00D0 * _DAT_0079dff0,0);
       iVar14 = local_74;
+
       sub_006E25D0(param_1,local_7c,&local_88,0.0,0.0,param_1->field_00D0 * _DAT_0079df68,0);
       iVar2 = local_74;
+
       sub_006E25D0(param_1,local_7c,&local_88,0.0,0.0,param_1->field_00D0 * _DAT_0079b128,0);
       iVar3 = local_74;
+
       sub_006E25D0(param_1,local_7c,&local_88,0.0,0.0,param_1->field_00D0 + param_1->field_00D0,0);
       iVar4 = local_74;
+
       sub_006E25D0(param_1,local_7c,&local_88,0.0,0.0,param_1->field_00D0,0);
       iVar5 = local_74;
+
       sub_006E25D0(param_1,local_7c,&local_88,0.0,0.0,0.0,0);
       iVar20 = (local_74 - iVar5) / 10;
       puVar15 = (undefined1 *)param_1->field_000C;

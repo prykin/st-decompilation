@@ -13,15 +13,15 @@
 void __thiscall AiTactClassTy::sub_0068E010(AiTactClassTy *this)
 
 {
-  AnonShape_00691480_E757992C *pAVar1;
+  RecoveredRecordView_00691480_8BF19534 *pRVar1;
 
   if (this == nullptr) {
-    pAVar1 = nullptr;
+    pRVar1 = nullptr;
   }
   else {
-    pAVar1 = (AnonShape_00691480_E757992C *)&this->field_0020;
+    pRVar1 = (RecoveredRecordView_00691480_8BF19534 *)&this->field_0020;
   }
-  thunk_FUN_00691480(pAVar1);
+  thunk_FUN_00691480(pRVar1);
   if (this->field_0130 != nullptr) {
     FreeAndNull(&this->field_0130);
   }

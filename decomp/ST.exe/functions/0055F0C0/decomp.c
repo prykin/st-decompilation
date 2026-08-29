@@ -16,7 +16,7 @@ int * FUN_0055f0c0(int *param_1,uint param_2,uint param_3,int param_4,uint param
   int iVar6;
   int *piVar7;
   uint auStack_8c [4];
-  undefined4 uStack_7c;
+  uint uStack_7c;
   int local_6c;
   int *local_64;
   int local_60;
@@ -33,7 +33,7 @@ int * FUN_0055f0c0(int *param_1,uint param_2,uint param_3,int param_4,uint param
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
+  uint local_8;
   int *piVar4_mg0;
 
   puStack_c = &DAT_0079afc0;

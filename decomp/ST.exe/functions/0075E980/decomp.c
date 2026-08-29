@@ -7,12 +7,12 @@
    accumulator definitions are INC EAX and at least one reachable path increments the count; machine
    CFG audit: used=1, ignored=0, unknown=0 */
 
-uint FUN_0075e980(AnonShape_0075E890_C23EB446 *param_1,int param_2,int *param_3,int param_4,
-                 int param_5)
+uint FUN_0075e980(RecoveredRecordView_0075E890_53B4743B *param_1,int param_2,int *param_3,
+                 int param_4,int param_5)
 
 {
   AnonNested_0075EB40_0080_454B432A *pAVar1;
-  AnonShape_0075E890_C23EB446 *pAVar2;
+  RecoveredRecordView_0075E890_53B4743B *pRVar2;
   int iVar3;
   uint uVar4;
   uint uVar5;
@@ -33,15 +33,15 @@ uint FUN_0075e980(AnonShape_0075E890_C23EB446 *param_1,int param_2,int *param_3,
   int *piVar7;
 
   piVar7 = param_3;
-  pAVar2 = param_1;
+  pRVar2 = param_1;
   local_c = *(int *)&param_1->field_0x7c;
   local_20 = (int)param_3 * 2 + 0x1c >> 1;
   local_8 = 0x7fffffff;
-  AnonShape_0075E890_C23EB446 * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+  RecoveredRecordView_0075E890_53B4743B * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
   local_28 = param_2 * 2 + 0x18 >> 1;
   local_24 = param_4 * 2 + 0x18 >> 1;
   if (0 < local_c) {
-    pAVar1 = pAVar2->field_0080;
+    pAVar1 = pRVar2->field_0080;
     auto param_3_after_write = local_428; /* compiler stack-slot lifetime split */
     local_18 = pAVar1->field_0000;
     local_10 = pAVar1->field_0004;
@@ -108,7 +108,7 @@ LAB_0075eac8:
       if (iVar3 < local_8) {
         local_8 = iVar3;
       }
-      param_1_after_write = (AnonShape_0075E890_C23EB446 *)&param_1_after_write->field_0x1;
+      param_1_after_write = (RecoveredRecordView_0075E890_53B4743B *)&param_1_after_write->field_0x1;
       param_3_after_write = param_3_after_write + 1;
     } while ((int)param_1_after_write < local_c);
   }

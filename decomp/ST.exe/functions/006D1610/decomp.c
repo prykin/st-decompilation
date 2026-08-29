@@ -19,27 +19,28 @@ void FUN_006d1610(undefined8 *param_1,undefined8 *param_2,RecoveredSourceFamily_
 {
   int iVar1;
   AnonPointee_TLOBaseTy_0607 *source;
-  byte *destination;
+  RecoveredRecord_006BFE70_3123BCE8 *destination;
 
   if (param_1 <= param_2) {
     CopyRows((byte *)param_1,(int)param_3,(byte *)param_2,(int)param_3,param_4,param_5);
     return;
   }
   iVar1 = (param_5 + -1) * (int)param_3;
-  destination = (byte *)((int)param_1 + iVar1);
+  destination = (RecoveredRecord_006BFE70_3123BCE8 *)((int)param_1 + iVar1);
   source = (AnonPointee_TLOBaseTy_0607 *)((int)param_2 + iVar1);
   if ((int)destination - (int)source < (int)param_4) {
     if ((0 < (int)param_4) && (0 < param_5)) {
       do {
-        Library::MSVCRT::FUN_0072da70((undefined4 *)destination,source,param_4);
+
+        Library::MSVCRT::FUN_0072da70(destination,source,param_4);
         source = (AnonPointee_TLOBaseTy_0607 *)((int)source - (int)param_3);
-        destination = destination + -(int)param_3;
+        destination = (RecoveredRecord_006BFE70_3123BCE8 *)((int)destination - (int)param_3);
         param_5 = param_5 + -1;
       } while (param_5 != 0);
     }
     return;
   }
-  CopyRows(destination,-(int)param_3,(byte *)source,-(int)param_3,param_4,param_5);
+  CopyRows((byte *)destination,-(int)param_3,(byte *)source,-(int)param_3,param_4,param_5);
   return;
 }
 

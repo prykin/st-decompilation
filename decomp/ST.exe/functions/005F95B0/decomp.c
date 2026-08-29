@@ -3,7 +3,7 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-undefined4 __fastcall FUN_005f95b0(AnonShape_005F95B0_F363C582 *param_1)
+undefined4 __fastcall FUN_005f95b0(RecoveredRecordView_005F95B0_EAB4932B *param_1)
 
 {
   uint uVar1;
@@ -19,21 +19,21 @@ undefined4 __fastcall FUN_005f95b0(AnonShape_005F95B0_F363C582 *param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   unkbyte10 extraout_ST0;
   longlong lVar10;
-  undefined4 local_64;
+  uint local_64;
   int local_60;
   int local_5c;
   int local_58;
   int local_54;
   int local_50;
-  undefined4 local_44;
-  undefined4 local_40;
-  undefined4 local_3c;
-  undefined4 local_38;
-  undefined4 local_34;
-  undefined4 local_30;
+  uint local_44;
+  uint local_40;
+  uint local_3c;
+  uint local_38;
+  uint local_34;
+  uint local_30;
   int local_24;
   int local_20;
-  undefined4 local_1c;
+  uint local_1c;
   uint local_18;
   void *local_14;
   int local_10;
@@ -79,6 +79,7 @@ undefined4 __fastcall FUN_005f95b0(AnonShape_005F95B0_F363C582 *param_1)
   local_18 = (uint)(short)(((short)(iVar8 / 200) + (short)(iVar8 >> 0x1f)) -
                           (short)((longlong)iVar8 * 0x51eb851f >> 0x3f));
   if ((int)local_18 < 1) {
+
     pvVar2 = Library::DKW::LIB::MemAlloc(200);
     local_10 = 10;
     iVar9 = 0;
@@ -187,9 +188,11 @@ undefined4 __fastcall FUN_005f95b0(AnonShape_005F95B0_F363C582 *param_1)
   local_44 = 0;
   local_14 = *(void **)(iVar7 + 0x58);
   if (local_14 == nullptr) {
+
     local_14 = Library::DKW::LIB::MemAlloc(200);
   }
   iVar7 = local_10;
+
   iVar9_mg5 = thunk_FUN_0060e210(&local_64,&local_44,local_18,(int)local_14,local_10);
   if (iVar9_mg5 != 0) {
     FreeAndNull(&local_14);

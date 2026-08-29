@@ -1,4 +1,4 @@
-FUN_00627200:
+STMineSetC::vfunc_E0:
 00627200  55                        PUSH EBP
 00627201  8B EC                     MOV EBP,ESP
 00627203  8B 55 0C                  MOV EDX,dword ptr [EBP + 0xc]

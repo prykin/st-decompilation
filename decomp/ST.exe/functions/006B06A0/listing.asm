@@ -115,7 +115,7 @@ LAB_006b07c2:
 LAB_006b07e6:
 006B07E6  8B 3D 7C BA 85 00         MOV EDI,dword ptr [0x0085ba7c]
 006B07EC  56                        PUSH ESI
-006B07ED  FF D7                     CALL EDI
+006B07ED  FF D7                     CALL EDI  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/WinDef.h/HPALETTE__; source view only; no Ghidra override
 006B07EF  85 C0                     TEST EAX,EAX
 006B07F1  89 03                     MOV dword ptr [EBX],EAX
 006B07F3  75 09                     JNZ 0x006b07fe
@@ -127,7 +127,7 @@ LAB_006b07e6:
 006B07FB  C2 14 00                  RET 0x14
 LAB_006b07fe:
 006B07FE  56                        PUSH ESI
-006B07FF  FF D7                     CALL EDI
+006B07FF  FF D7                     CALL EDI  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/WinDef.h/HPALETTE__; source view only; no Ghidra override
 006B0801  85 C0                     TEST EAX,EAX
 006B0803  89 83 B4 04 00 00         MOV dword ptr [EBX + 0x4b4],EAX
 006B0809  75 1A                     JNZ 0x006b0825
@@ -189,7 +189,7 @@ LAB_006b087b:
 006B08AB  F3 AB                     STOSD.REP ES:EDI
 006B08AD  8D 85 FC FB FF FF         LEA EAX,[EBP + 0xfffffbfc]
 006B08B3  50                        PUSH EAX
-006B08B4  FF 15 7C BA 85 00         CALL dword ptr [0x0085ba7c]
+006B08B4  FF 15 7C BA 85 00         CALL dword ptr [0x0085ba7c]  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/WinDef.h/HPALETTE__; source view only; no Ghidra override
 006B08BA  85 C0                     TEST EAX,EAX
 006B08BC  89 83 E0 04 00 00         MOV dword ptr [EBX + 0x4e0],EAX
 006B08C2  75 09                     JNZ 0x006b08cd

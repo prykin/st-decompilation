@@ -33,13 +33,15 @@ FUN_007527a0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,char
   int local_c;
 
   if (param_2 == 0) {
-    param_2 = FUN_006b4fa0((int *)param_1);
+
+    param_2 = FUN_006b4fa0((RecoveredRecord_006B4FA0_DAC3A217 *)param_1);
   }
   iVar1 = param_1->field_0004;
   iVar2 = param_1->field_0008;
   iVar15 = (int)(iVar1 + 7 + (iVar1 + 7 >> 0x1f & 7U)) >> 3;
   uVar13 = (uint)param_1->field_000E * iVar1 + 0x1f >> 3 & 0x1ffffffc;
   *param_5 = iVar15 * iVar2;
+
   puVar3 = Library::DKW::LIB::MemAllocClear(iVar15 * iVar2);
   if (puVar3 == nullptr) {
     return nullptr;

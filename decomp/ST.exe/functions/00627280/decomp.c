@@ -1,7 +1,16 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __thiscall FUN_00627280(void *this,short param_1,short param_2,short param_3)
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079CEFC
+   Entries: 00403369
+   Slots: 0xDC
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_physical_vtable_owner_and_slot;
+   receiver_extent=718/1456; unique_owner_for_target */
+
+undefined4 __thiscall
+STMineSetC::vfunc_DC(STMineSetC *this,short param_1,short param_2,short param_3)
 
 {
   int iVar1;
@@ -9,10 +18,10 @@ undefined4 __thiscall FUN_00627280(void *this,short param_1,short param_2,short 
   int iVar3;
   int iVar4;
 
-  iVar2 = STField<int>(this,0x2c2) - (int)param_1;
-  iVar3 = STField<int>(this,0x2c6) - (int)param_2;
-  iVar4 = STField<int>(this,0x2ca) - (int)param_3;
-  iVar1 = (uint)STField<byte>(this,0x2ad) * 6;
+  iVar2 = this->field_02C2 - (int)param_1;
+  iVar3 = this->field_02C6 - (int)param_2;
+  iVar4 = this->field_02CA - (int)param_3;
+  iVar1 = (uint)this->field_02AD * 6;
   if ((iVar2 * iVar2 * 1000) /
       ((int)*(short *)(&DAT_007d04a8 + iVar1) * (int)*(short *)(&DAT_007d04a8 + iVar1)) +
       (iVar3 * iVar3 * 1000) /

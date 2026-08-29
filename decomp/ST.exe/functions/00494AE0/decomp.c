@@ -8,7 +8,7 @@
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
    and decompilation contains no value return */
 
-void __fastcall FUN_00494ae0(AnonShape_00494AE0_7F188308 *param_1)
+void __fastcall FUN_00494ae0(RecoveredRecordView_00494AE0_424326F5 *param_1)
 
 {
   int iVar1;
@@ -17,8 +17,11 @@ void __fastcall FUN_00494ae0(AnonShape_00494AE0_7F188308 *param_1)
   if (((iVar1 != 5) && (iVar1 != 0x11)) && (iVar1 != 0x21)) {
     return;
   }
+
   iVar1 = thunk_FUN_004e60d0(*(int *)&param_1->field_0x24,0x3c);
+
   if (((iVar1 < 1) && (iVar1 = thunk_FUN_004e60d0(*(int *)&param_1->field_0x24,0x91), iVar1 < 1)) &&
+
      (iVar1 = thunk_FUN_004e60d0(*(int *)&param_1->field_0x24,0x4c), iVar1 < 1)) {
     if (((param_1->field_0792 == 1) &&
         (((param_1->field_0792 = 0, param_1->field_045D != 0x14 ||
@@ -41,8 +44,11 @@ void __fastcall FUN_00494ae0(AnonShape_00494AE0_7F188308 *param_1)
                (char)param_1->field_005F,*(uint *)&param_1->field_0x24,param_1->field_0101,
                *(uint *)&param_1->field_0x18,0xffffffff);
   }
+
   iVar1 = thunk_FUN_004e60d0(*(int *)&param_1->field_0x24,0x9a);
+
   if (((0 < iVar1) || (iVar1 = thunk_FUN_004e60d0(*(int *)&param_1->field_0x24,0x41), 0 < iVar1)) ||
+
      (iVar1 = thunk_FUN_004e60d0(*(int *)&param_1->field_0x24,0x4b), 0 < iVar1)) {
     if ((param_1->field_0796 == 0) &&
        ((((param_1->field_0796 = 1, param_1->field_045D != 0x14 ||

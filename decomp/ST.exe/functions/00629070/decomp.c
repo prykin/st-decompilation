@@ -134,9 +134,11 @@ LAB_00629242:
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_1c = this;
+
   iVar9 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   if (iVar9 != 0) {
     g_currentExceptionFrame = local_70.previous;
+
     iVar11 = ReportDebugMessage("E:\\__titans\\nick\\to_Part.Cpp",0x2ac,0,iVar9,"%s",
                                 "STParticleC::InitVisibelFlight");
     if (iVar11 != 0) {
@@ -145,6 +147,7 @@ LAB_00629242:
     RaiseInternalException(iVar9,0,"E:\\__titans\\nick\\to_Part.Cpp",0x2ae);
     return 0xffff;
   }
+  /* ST_CALLSITE[006292B0]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
   puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
                      (PTR_00806774,CASE_1D,local_8[local_18 & 0xff],0xffffffff,0,1,0,
                       nullptr);
@@ -155,6 +158,7 @@ LAB_00629242:
   }
   local_1c->field_00CA = puVar9;
   piVar1 = &local_1c->field_00C6;
+
   ST3DSMAPContext::sub_006E8660
             (g_sT3DSMAPContext_00807598,piVar1,2,0,STField<uint>(puVar9,9),
              STField<uint>(puVar9,0xd),local_10,local_c,0);
@@ -162,6 +166,7 @@ LAB_00629242:
     Library::Ourlib::ST3DSMAP::SprSetShadow
               (g_sT3DSMAPContext_00807598,*piVar1,0,0x4049f8,(uint)pSVar8);
   }
+
   ST3DSMAPContext::sub_006E98E0
             (g_sT3DSMAPContext_00807598,*piVar1,0,*(int *)puVar9,STField<int>(puVar9,0x21),1);
   ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,*piVar1,0,0);
@@ -174,9 +179,11 @@ LAB_00629242:
   pSVar8->field_0072 = fVar6;
   Library::Ourlib::ST3DSMAP::SprMove
             (g_sT3DSMAPContext_00807598,uVar3,local_20,local_14,fVar6 + _DAT_007904fc);
+
   Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,*piVar1,0);
   pSVar8->field_00C1 = 1;
   if (local_24 == 4) {
+
     Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand
               (g_sT3DSMAPContext_00807598,*piVar1,1,0xffffffff,0xffffffff);
     if (pSVar8->field_0018 != 0) {
@@ -227,6 +234,7 @@ LAB_00629242:
     }
     if (bVar14) {
       if (pSVar8->field_00C1 == '\0') {
+
         Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,pSVar8->field_00C6,0);
         pSVar8->field_00C1 = 1;
         g_currentExceptionFrame = local_70.previous;

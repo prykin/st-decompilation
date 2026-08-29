@@ -16,7 +16,7 @@ STJellyGunC_field_0235State __thiscall STJellyGunC::sub_00583E30(STJellyGunC *th
   int iVar2;
   int uVar3;
   uint uVar4;
-  uint uVar5;
+  int iVar5;
   int iVar6;
   int iVar7;
   int iVar8;
@@ -66,31 +66,38 @@ STJellyGunC_field_0235State __thiscall STJellyGunC::sub_00583E30(STJellyGunC *th
       if (*(int *)&this->field_0x247 == 10) {
         *(undefined4 *)&this->field_0x24b = 0;
       }
+
       uVar3 = FUN_006db910((int)this->field_0047,(int)this->field_0049,local_10,local_c);
-      uVar4 = FUN_006db990(uVar3,8);
-      uVar5 = this->field_001C * 0x41c64e6d + 0x3039;
-      this->field_001C = uVar5;
-      uVar5 = uVar5 >> 0x10;
+
+      iVar2 = FUN_006db990(uVar3,8);
+      uVar4 = this->field_001C * 0x41c64e6d + 0x3039;
+      this->field_001C = uVar4;
+      uVar4 = uVar4 >> 0x10;
       piVar11 = (int *)local_18;
       iVar7 = (int)this->field_0049;
       piVar10 = (int *)local_1c;
       iVar8 = (int)this->field_0047;
       piVar9 = (int *)local_20;
-      iVar2 = (int)this->field_004B;
+      iVar5 = (int)this->field_004B;
+
       iVar6 = FUN_006acf90(iVar8,iVar7,local_10,local_c);
-      iVar2 = thunk_FUN_005845b0(uVar4,local_8 - this->field_004B,iVar6,iVar8,iVar7,iVar2,piVar9,
-                                 piVar10,piVar11,uVar5);
+
+      iVar2 = thunk_FUN_005845b0(iVar2,local_8 - this->field_004B,iVar6,iVar8,iVar7,iVar5,piVar9,
+                                 piVar10,piVar11,uVar4);
       if (iVar2 != 0) {
         thunk_FUN_00417ff0(this,6);
         thunk_FUN_00418010(this,5);
-        iVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030
-                          ((AnonReceiver_004167A0 *)this,local_20[0],local_1c[0],local_18[0]);
+
+        iVar2 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_004167A0::
+                thunk_FUN_00418030((RecoveredReceiver_004167A0 *)this,local_20[0],local_1c[0],
+                                   local_18[0]);
         if (iVar2 == 0) {
           return CASE_1;
         }
-        iVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030
-                          ((AnonReceiver_004167A0 *)this,(short)local_10,(short)local_c,
-                           (short)local_8);
+
+        iVar2 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_004167A0::
+                thunk_FUN_00418030((RecoveredReceiver_004167A0 *)this,(short)local_10,(short)local_c
+                                   ,(short)local_8);
         if (iVar2 == 0) {
           return CASE_1;
         }

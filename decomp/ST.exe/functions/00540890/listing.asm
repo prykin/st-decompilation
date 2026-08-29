@@ -65,7 +65,8 @@ LAB_0054090a:
 00540923  6A 00                     PUSH 0x0
 00540925  6A 00                     PUSH 0x0
 00540927  6A 00                     PUSH 0x0
-00540929  E8 C2 4C 17 00            CALL 0x006b55f0
+StartServTy::WrTextDDX::override::prt_540929_50b9d970:
+00540929  E8 C2 4C 17 00            CALL 0x006b55f0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__stdcall;pointer:/ccFntTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy;/int;/int;/int;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;/int;/int;/int;/int;/int
 0054092E  6A 00                     PUSH 0x0
 00540930  6A 00                     PUSH 0x0
 00540932  6A 00                     PUSH 0x0

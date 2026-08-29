@@ -23,6 +23,7 @@ void STAllPlayersC::PushTV(char param_1,int param_2)
   }
   else {
     if (param_2 != 1) {
+
       iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3028,0,0,"%s",
                                  "STAllPlayersC::PushTV");
       if (iVar2 == 0) {
@@ -41,7 +42,9 @@ void STAllPlayersC::PushTV(char param_1,int param_2)
     *(undefined2 *)((int)&pAVar3[3].field_0004 + 2) = 0;
   }
   pAVar3[2].field_0010 = 0;
-  Library::MSVCRT::FUN_0072da70(&pAVar3->field_0010,pAVar3,0x40);
+
+  Library::MSVCRT::FUN_0072da70
+            ((RecoveredRecord_006BFE70_3123BCE8 *)&pAVar3->field_0010,pAVar3,0x40);
   pAVar3->field_0000 = 0;
   STField<undefined4>(pAVar3,0xA) = 0;
   STField<undefined2>(pAVar3,0xE) = 0;

@@ -44,18 +44,22 @@ ST3DSMAPContext::sub_006DBD20
   param_1->field_0028 = param_5;
   iVar2 = param_5 * param_6;
   param_1->field_002C = param_6;
+
   pvVar1 = Library::DKW::LIB::MemRealloc(param_1->field_0008,iVar2 + 0x18);
   param_1->field_0008 = pvVar1;
   param_1->field_000C = ((int)pvVar1 - 1U ^ param_3) & 7 ^ (int)pvVar1 + 7U;
   if (param_1->field_0124 == 1) {
+
     pvVar1 = Library::DKW::LIB::MemRealloc(param_1->field_0010,iVar2 + 0x10);
     param_1->field_0010 = pvVar1;
   }
   else {
+
     pvVar1 = Library::DKW::LIB::MemRealloc(param_1->field_0010,iVar2 * 2 + 0x10);
     param_1->field_0010 = pvVar1;
     if (((param_1->field_0144 != 0) && (iVar2 = param_1->field_0174, 0 < iVar2)) &&
        (iVar2 < param_1->field_002C)) {
+
       pvVar1 = Library::DKW::LIB::MemRealloc(param_1->field_001C,param_1->field_0028 * iVar2);
       param_1->field_001C = pvVar1;
     }
@@ -82,7 +86,9 @@ ST3DSMAPContext::sub_006DBD20
     local_20[0] = 0.0;
     local_20[1] = 0.0;
     local_20[2] = 0.0;
+
     sub_006E25D0(param_1,&local_40,local_20,0.0,0.0,0.0,1);
+
     sub_006E25D0(param_1,&local_30,local_20,0.0,0.0,1.0,1);
     param_1->field_0108 = local_2c - local_3c;
   }

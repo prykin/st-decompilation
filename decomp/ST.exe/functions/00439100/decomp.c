@@ -151,10 +151,12 @@ void __thiscall STAllPlayersC::RestoreTmp(STAllPlayersC *this,int param_1)
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_2c = this;
+
   local_EAX_51 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   if (local_EAX_51 != 0) {
     g_currentExceptionFrame = local_70.previous;
     if (local_EAX_51 != -0x5001fff7) {
+
       iVar8 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x19ab,0,0,"%s",
                                  "STAllPlayersC::RestoreTmp");
       if (iVar8 != 0) {
@@ -224,6 +226,7 @@ LAB_00439aaa:
         else {
           if ((iVar9 != 0x1a4) && (iVar9 != 0x1b8)) {
 LAB_00439c59:
+
             local_EAX_2929 =
                  ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x17d3,0,0,
                                     "%s","STAllPlayersC::RestoreTmp GAMETYPE_OBJECT ACT_LEFT");
@@ -255,6 +258,7 @@ LAB_00439cc7:
         goto cf_common_exit_0043A47C;
       }
       if (g_packedRecords_A62x8[(int)pSVar3].field200_0x203 != 1) {
+
         local_EAX_2252 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x17d7,0,0,"%s",
                                 "STAllPlayersC::RestoreTmp GAMETYPE_OBJECT wrong panel number");
@@ -316,6 +320,7 @@ LAB_00439b10:
         uVar11 = extraout_var_01;
         goto LAB_00439cc7;
       }
+
       local_EAX_2554 =
            ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x17a9,0,0,"%s",
                               "STAllPlayersC::RestoreTmp GAMETYPE_OBJECT ACT_RIGHT");
@@ -332,6 +337,7 @@ LAB_00439b10:
         cVar12 = (char)local_8;
         if (g_packedRecords_A62x8[(int)pSVar3].field200_0x203 != 0) {
           if (g_packedRecords_A62x8[(int)pSVar3].field200_0x203 != 1) {
+
             local_EAX_1726 =
                  ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x18df,0,0,
                                     "%s","STAllPlayersC::RestoreTmp GAMETYPE_ARTEFACT wrong panel number");
@@ -360,6 +366,7 @@ LAB_0043986a:
             if (local_EAX_1921 < 0) goto LAB_00439672;
             goto cf_common_join_0043A107;
           }
+
           local_EAX_1876 =
                ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x18b4,0,0,"%s",
                                   "STAllPlayersC::RestoreTmp GAMETYPE_ARTEFACT ACT_RIGHT");
@@ -392,6 +399,7 @@ LAB_00439956:
           }
           goto LAB_00439986;
         }
+
         local_EAX_2112 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x18db,0,0,"%s",
                                 "STAllPlayersC::RestoreTmp GAMETYPE_ARTEFACT ACT_LEFT");
@@ -401,6 +409,7 @@ LAB_00439956:
         goto cf_common_exit_0043A47C;
       }
 LAB_00439cfb:
+
       local_EAX_3091 =
            ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1998,0,0,"%s",
                               "STAllPlayersC::RestoreTmp invalid game type");
@@ -469,6 +478,7 @@ LAB_0043953a:
           goto LAB_0043953a;
         }
         if (iVar9 != 0x1ae) {
+
           local_EAX_729 =
                ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1748,0,0,"%s",
                                   "STAllPlayersC::RestoreTmp GAMETYPE_BOAT ACT_LEFT");
@@ -503,6 +513,7 @@ LAB_00439469:
       }
       else {
         if (g_packedRecords_A62x8[(int)pSVar3].field200_0x203 != 1) {
+
           local_EAX_274 =
                ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1778,0,0,"%s",
                                   "STAllPlayersC::RestoreTmp GAMETYPE_BOAT wrong panel number");
@@ -518,6 +529,7 @@ LAB_00439469:
         if (iVar9 == 0) goto LAB_00439369;
         if (iVar9 != 0x3c) {
           if (iVar9 != 0x1ae) {
+
             local_EAX_377 =
                  ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1774,0,0,
                                     "%s","STAllPlayersC::RestoreTmp GAMETYPE_BOAT ACT_RIGHT");
@@ -576,6 +588,7 @@ LAB_00439566:
     cVar12 = (char)local_8;
     if (g_packedRecords_A62x8[(int)pSVar3].field200_0x203 != 0) {
       if (g_packedRecords_A62x8[(int)pSVar3].field200_0x203 != 1) {
+
         local_EAX_1216 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1885,0,0,"%s",
                                 "STAllPlayersC::RestoreTmp GAMETYPE_RESOURCE wrong panel number");
@@ -627,6 +640,7 @@ LAB_0043963c:
         if (-1 < local_EAX_1363) goto cf_common_join_0043A107;
         goto LAB_00439672;
       }
+
       local_EAX_1318 =
            ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x185a,0,0,"%s",
                               "STAllPlayersC::RestoreTmp GAMETYPE_RESOURCE ACT_RIGHT");
@@ -678,6 +692,7 @@ LAB_004398e7:
     else {
       if ((iVar9 != 0x1a4) && (iVar9 != 0x1b8)) {
 LAB_00439712:
+
         local_EAX_1578 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1881,0,0,"%s",
                                 "STAllPlayersC::RestoreTmp GAMETYPE_RESOURCE ACT_LEFT");
@@ -719,6 +734,7 @@ LAB_0043a470:
       cVar12 = (char)local_8;
       if (g_packedRecords_A62x8[(int)pSVar3].field200_0x203 != 0) {
         if (g_packedRecords_A62x8[(int)pSVar3].field200_0x203 != 1) {
+
           local_EAX_4354 =
                ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1939,0,0,"%s",
                                   "STAllPlayersC::RestoreTmp GAMETYPE_CONTAINER wrong panel number");
@@ -768,6 +784,7 @@ LAB_0043a247:
         else {
           if ((iVar9 != 0x1a4) && (iVar9 != 0x1b8)) {
 LAB_0043a2bc:
+
             local_EAX_4564 =
                  ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x190e,0,0,
                                     "%s","STAllPlayersC::RestoreTmp GAMETYPE_CONTAINER ACT_RIGHT");
@@ -847,6 +864,7 @@ LAB_0043a394:
       else {
         if ((iVar9 != 0x1a4) && (iVar9 != 0x1b8)) {
 LAB_0043a405:
+
           local_EAX_4893 =
                ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1935,0,0,"%s",
                                   "STAllPlayersC::RestoreTmp GAMETYPE_CONTAINER ACT_LEFT");
@@ -912,6 +930,7 @@ LAB_00439eb7:
           }
           goto LAB_0043a459;
         }
+
         local_EAX_3489 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x198f,0,0,"%s",
                                 "STAllPlayersC::RestoreTmp GAMETYPE_CONTAINER ACT_LEFT");
@@ -921,6 +940,7 @@ LAB_00439eb7:
         goto cf_common_exit_0043A47C;
       }
       if (g_packedRecords_A62x8[(int)pSVar3].field200_0x203 != 1) {
+
         local_EAX_3199 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1993,0,0,"%s",
                                 "STAllPlayersC::RestoreTmp GAMETYPE_CONTAINER wrong panel number");
@@ -948,6 +968,7 @@ LAB_00439dfb:
         }
         goto joined_r0x0043a31a;
       }
+
       local_EAX_3301 =
            ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1968,0,0,"%s",
                               "STAllPlayersC::RestoreTmp GAMETYPE_CONTAINER ACT_RIGHT");
@@ -1005,6 +1026,7 @@ LAB_0043a177:
       }
       else {
         if (iVar9 != 0x1ae) {
+
           local_EAX_3979 =
                ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1803,0,0,"%s",
                                   "STAllPlayersC::RestoreTmp GAMETYPE_MINESET ACT_LEFT");
@@ -1037,6 +1059,7 @@ LAB_0043a177:
     }
     else {
       if (g_packedRecords_A62x8[(int)pSVar3].field200_0x203 != 1) {
+
         local_EAX_3626 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x182b,0,0,"%s",
                                 "STAllPlayersC::RestoreTmp GAMETYPE_MINESET wrong panel number");
@@ -1073,6 +1096,7 @@ LAB_0043a177:
       }
       else {
         if (iVar9 != 0x1ae) {
+
           local_EAX_3730 =
                ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1827,0,0,"%s",
                                   "STAllPlayersC::RestoreTmp GAMETYPE_MINESET ACT_RIGHT");
@@ -1111,13 +1135,14 @@ cf_common_exit_0043A47C:
       iVar9 = GetCamPoint((short)*(undefined4 *)local_28,
                           STReplaceLowByte((uint32_t)(uVar5), (uint8_t)(local_28->field_0x4)),local_28->field_000A,
                           uVar5,&local_18,&local_14,&local_10,&local_1c), iVar9 == 0)) &&
+
      (iVar9 = Library::Ourlib::ST3DSPR::SprInRect
                         (g_sT3DSMAPContext_00807598,local_1c,DAT_00807410,DAT_00807414,DAT_00807418,
                          DAT_0080741c), iVar9 != 1)) {
     thunk_FUN_004a8e00(local_18,local_14,local_10);
     thunk_FUN_004a8f20(1);
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::thunk_FUN_00567510
-              ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+    SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00567510::thunk_FUN_00567510
+              ((RecoveredReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
                DAT_0080743c & 0xff);
     /* ST_CALLSITE[0043A53B]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
     CursorClassTy::sub_0054B540(g_cursorClass_00802A30);

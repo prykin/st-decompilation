@@ -17,6 +17,7 @@ void __thiscall MMsgTy::InitMMsg(MMsgTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
@@ -72,6 +73,7 @@ void __thiscall MMsgTy::InitMMsg(MMsgTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar2 = ReportDebugMessage("E:\\__titans\\Start\\mmsg_obj.cpp",0x22,0,errorCode,
                              "%s","MMsgTy::InitMMsg");
   if (iVar2 != 0) {

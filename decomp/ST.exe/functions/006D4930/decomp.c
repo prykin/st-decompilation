@@ -5,10 +5,15 @@
    Evidence: 006D4930 -> EXTERNAL:0000004F @ 006D496E
 
    [STPrototypeApplier] Propagated parameter 3.
-   Evidence: 006D4930 -> EXTERNAL:0000004F @ 006D496E */
+   Evidence: 006D4930 -> EXTERNAL:0000004F @ 006D496E
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=006C08E0 @ 006C0D11 -> read as EAX on
+   every CFG path | 006C2460 @ 006C24B1 -> read as EAX on every CFG path | 006D49F0 @ 006D4A04 ->
+   read as EAX on every CFG path */
 
-DWORD FUN_006d4930(AnonShape_006D4930_676532DD *param_1,LPDWORD lpNumberOfBytesRead,
-                  undefined4 *param_3,DWORD nNumberOfBytesToRead)
+int FUN_006d4930(AnonShape_006D4930_676532DD *param_1,LPDWORD lpNumberOfBytesRead,
+                undefined4 *param_3,DWORD nNumberOfBytesToRead)
 
 {
   DWORD DVar1;
@@ -18,7 +23,7 @@ DWORD FUN_006d4930(AnonShape_006D4930_676532DD *param_1,LPDWORD lpNumberOfBytesR
   puVar4 = (byte *)(param_3);
   if ((param_1->field_0008 & 0x100000) == 0) {
     if (param_1->field_0034 == 0) {
-      return 0xffffffaf;
+      return -0x51;
     }
     if ((int)lpNumberOfBytesRead + nNumberOfBytesToRead <= param_1->field_0038) {
       if (param_3 != nullptr) {
@@ -43,12 +48,12 @@ DWORD FUN_006d4930(AnonShape_006D4930_676532DD *param_1,LPDWORD lpNumberOfBytesR
       if (DVar1 != 0) {
         return DVar1;
       }
-      return 0xffffff03;
+      return -0xfd;
     }
     if (lpNumberOfBytesRead == (LPDWORD)nNumberOfBytesToRead) {
       return 0;
     }
   }
-  return 0xfffffff2;
+  return -0xe;
 }
 

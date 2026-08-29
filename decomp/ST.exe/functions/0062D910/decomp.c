@@ -41,8 +41,8 @@ STManRub3C::AddNewDock
   ushort local_32;
   ushort local_30;
   ushort local_2e;
-  undefined4 local_2c;
-  undefined4 local_18;
+  uint local_2c;
+  uint local_18;
   uint local_10;
   int local_c;
   STManRub3C *local_8;

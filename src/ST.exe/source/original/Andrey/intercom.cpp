@@ -23,7 +23,7 @@ void __thiscall st::fn_00521900(IntercomPanelTy *this)
   iVar3 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   pIVar2 = local_8;
   if (iVar3 == 0) {
-    st::fn_006B1A50(g_ddxContext_008075A8,3,nullptr,(undefined4 *)&local_8->field_0x188);
+    st::fn_006B1A50(g_ddxContext_008075A8,3,nullptr,reinterpret_cast<undefined4 *>(&local_8->field_0x188));
     iVar5 = pIVar2->field_018C - pIVar2->field_0048;
     pIVar2->field_0044 = iVar5;
     pIVar2->field_0174 = iVar5 + pIVar2->field_0048;
@@ -55,10 +55,11 @@ void __thiscall st::fn_005219E0(IntercomPanelTy *this)
   LPSTR text;
   ushort *puVar4;
   uint uVar5;
-  ushort *puVar6;
-  DArrayTy *pDVar7;
+  int puVar6_mg1;
+  DArrayTy *pDVar6;
   int iVar9;
-  int *piVar8;
+  int *piVar7;
+  ushort *puVar8;
   int iVar10;
   InternalExceptionFrame local_4c;
   IntercomPanelTy *local_8;
@@ -66,37 +67,41 @@ void __thiscall st::fn_005219E0(IntercomPanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   pIVar2 = local_8;
   if (iVar3 == 0) {
     g_intercomPanel_0080169C = local_8;
     /* ST_CALLSITE[00521A2A]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
-    puVar3 = st::fn_0070DF00(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0030);
+    puVar3 = st::fn_0070DF00(0x19d,reinterpret_cast<ccFntTy *>(g_interSystem_00802A28->field_0030));
     pIVar2->field_0180 = puVar3;
     puVar3[0x16] = 0;
     puVar3[0x17] = 0;
     iVar10 = 1;
-    piVar8 = nullptr;
+    piVar7 = nullptr;
     text = st::fn_0040577C(st::mutable_c_string("BKG_EDITCHAT"),0);
-    puVar4 = st::fn_006F1CE0(g_cMf32_00806790,1,text,piVar8,iVar10);
-    puVar6 = puVar4 + 0x14;
+    puVar4 = st::fn_006F1CE0(g_cMf32_00806790,1,reinterpret_cast<char *>(text),piVar7,iVar10);
+    puVar8 = puVar4 + 0x14;
     iVar10 = 1;
     pIVar2->field_0184 = puVar4;
+
     uVar5 = st::fn_006B4FE0(puVar4);
-    puVar6 = (ushort *)
-             st::fn_006B50C0((-(uint)(DAT_0080874e != '\x03') & 0x32) + 700,0x14,
-                          (uint)pIVar2->field_0184[7],uVar5,(undefined4 *)puVar6,iVar10);
-    pIVar2->field_019C = puVar6;
+    /* ST_CALLSITE[00521AA0]: CALL 0x006b50c0; direct=006B50C0 FUN_006b50c0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
+    puVar6_mg1 = st::fn_006B50C0((-(uint)(DAT_0080874e != '\x03') & 0x32) + 700,0x14,
+                              (uint)pIVar2->field_0184[7],uVar5,reinterpret_cast<undefined4 *>(puVar8),iVar10);
+    pIVar2->field_019C = (ushort *)puVar6_mg1;
     /* ST_CALLSITE[00521ABC]: CALL 0x00403229; direct=00403229 DibPut */
-    st::fn_00403229((RecoveredSourceFamily_dibcopy *)pIVar2->field_0068,0,0,'\x01',(byte *)pIVar2->field_0184
-          );
-    pDVar7 = st::fn_006B54F0(nullptr,1,1);
-    pIVar2->field_0198 = pDVar7;
-    st::fn_006B6020(pDVar7,0,&CHAR_00h_008016a0);
+    st::fn_00403229((RecoveredSourceFamily_dibcopy *)pIVar2->field_0068,0,0,'\x01',
+           reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(pIVar2->field_0184));
+    pDVar6 = st::fn_006B54F0(nullptr,1,1);
+    pIVar2->field_0198 = pDVar6;
+
+    st::fn_006B6020(pDVar6,0,&CHAR_00h_008016a0);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\intercom.cpp"),0x34,0,iVar3,st::mutable_c_string("%s"),
                              "IntercomPanelTy::InitIntercomPanel");
   if (iVar9 != 0) {
@@ -124,6 +129,7 @@ void __thiscall st::fn_00521B90(IntercomPanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   pIVar2 = local_8;
   if (errorCode == 0) {
@@ -141,15 +147,16 @@ void __thiscall st::fn_00521B90(IntercomPanelTy *this)
       pIVar2->field_0180 = nullptr;
     }
     if (pIVar2->field_0184 != nullptr) {
-      st::fn_006F20E0(g_cMf32_00806790,(uint *)&pIVar2->field_0184);
+      st::fn_006F20E0(g_cMf32_00806790,reinterpret_cast<uint *>(&pIVar2->field_0184));
     }
     if (pIVar2->field_019C != nullptr) {
-      st::fn_006F20E0(g_cMf32_00806790,(uint *)&pIVar2->field_019C);
+      st::fn_006F20E0(g_cMf32_00806790,reinterpret_cast<uint *>(&pIVar2->field_019C));
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\intercom.cpp"),0x4a,0,errorCode,
                              st::mutable_c_string("%s"),"IntercomPanelTy::DoneIntercomPanel");
   if (iVar3 != 0) {
@@ -248,8 +255,9 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
 {
   ushort uVar1;
   STMessageId SVar2;
-  AnonShape_00710790_4CBB90D4 *pAVar3;
-  ushort *puVar4;
+  RecoveredRecordView_00710790_7768A573 *pRVar3;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar4;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar5;
   IntercomPanelTy *this_00;
   int iVar6;
   int iVar7;
@@ -257,25 +265,25 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
   int iVar8;
   int iVar9;
   uint uVar10;
-  AnonShape_00710790_4CBB90D4 **ppAVar11;
-  AnonShape_00710790_4CBB90D4 *local_8dc [3];
+  RecoveredRecordView_00710790_7768A573 **ppRVar11;
+  RecoveredRecordView_00710790_7768A573 *local_8dc [3];
   int local_8d0;
   int local_8cc;
   int local_8c8;
   int local_8c4;
-  undefined4 local_8c0;
+  uint local_8c0;
   DArrayTy *local_8bc;
-  undefined4 local_8b0;
-  undefined4 local_8ac;
-  undefined4 local_8a8;
-  undefined4 local_890;
-  undefined4 local_88c;
-  undefined4 local_888;
-  undefined4 local_850;
-  undefined4 local_84c;
-  undefined4 local_848;
-  undefined4 local_80;
-  undefined4 local_7c;
+  uint local_8b0;
+  uint local_8ac;
+  uint local_8a8;
+  uint local_890;
+  uint local_88c;
+  uint local_888;
+  uint local_850;
+  uint local_84c;
+  uint local_848;
+  uint local_80;
+  uint local_7c;
   InternalExceptionFrame local_50;
   IntercomPanelTy *local_c;
   uint local_8;
@@ -283,10 +291,12 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar6 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\intercom.cpp"),0x197,0,iVar6,
                                st::mutable_c_string("%s"),"IntercomPanelTy::GetMessage");
     if (iVar8 == 0) {
@@ -300,7 +310,7 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
     st::fn_004031CA(local_c);
   }
   /* ST_CALLSITE[00522ED0]: CALL 0x004017f8; direct=004017F8 PanelTy::GetMessage */
-  st::fn_004017F8((PanelTy *)this_00,message);
+  st::fn_004017F8(reinterpret_cast<PanelTy *>(this_00),message);
   SVar2 = message->id;
   if (SVar2 < MESS_BEHPANELTY_C0A0) {
     if (SVar2 != MESS_SHARED_C09F) {
@@ -308,24 +318,24 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
         if (this_00->field_0172 == CASE_3) {
           iVar7 = this_00->field_018C;
           if (this_00->field_0044 < iVar7) {
-            this_00->field_0044 = st::machine_word_boundary_cast<int>(this_00->field_0044 + 5);
+            this_00->field_0044 = this_00->field_0044 + 5;
           }
           if (iVar7 <= this_00->field_0044) {
-            ppAVar11 = local_8dc;
+            ppRVar11 = local_8dc;
             for (iVar9 = 0x223; iVar9 != 0; iVar9 = iVar9 + -1) {
-              *ppAVar11 = nullptr;
-              ppAVar11 = ppAVar11 + 1;
+              *ppRVar11 = nullptr;
+              ppRVar11 = ppRVar11 + 1;
             }
-            pAVar3 = static_cast<AnonShape_00710790_4CBB90D4 *>(this_00->field_0180);
+            pRVar3 = static_cast<RecoveredRecordView_00710790_7768A573 *>(this_00->field_0180);
             this_00->field_0044 = iVar7;
             this_00->field_0172 = CASE_1;
-            local_8dc[0] = (AnonShape_00710790_4CBB90D4 *)0x1;
-            local_8dc[1] = (AnonShape_00710790_4CBB90D4 *)0x9;
-            local_8dc[2] = pAVar3;
-            if (*(int *)(pAVar3 + 1) != 0) {
-              st::fn_00710790(pAVar3);
+            local_8dc[0] = (RecoveredRecordView_00710790_7768A573 *)0x1;
+            local_8dc[1] = (RecoveredRecordView_00710790_7768A573 *)0x9;
+            local_8dc[2] = pRVar3;
+            if (*(int *)(pRVar3 + 1) != 0) {
+              st::fn_00710790(pRVar3);
             }
-            local_8c4 = st::machine_word_boundary_cast<int>(pAVar3->field_008A + 1);
+            local_8c4 = pRVar3->field_008A + 1;
             local_8d0 = (-(uint)(DAT_0080874e != '\x03') & 0xffffffe7) + 0x1e + this_00->field_003C;
             local_7c = 1;
             local_80 = 1;
@@ -344,11 +354,12 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
             local_850 = local_8b0;
             /* ST_CALLSITE[005230E3]: CALL dword ptr [EDX + 0x8] */
             (*this_00->field_000C->vtable->CreateObject)
-                      ((SystemClassTy *)this_00->field_000C,6,&this_00->field_01A0,nullptr,
+                      (reinterpret_cast<SystemClassTy *>(this_00->field_000C),6,&this_00->field_01A0,nullptr,
                        st::machine_word_boundary_cast<undefined4>(local_8dc),1);
           }
+
           st::fn_006B3640
-                    ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C
+                    (reinterpret_cast<int *>(g_ddxContext_008075A8),this_00->field_0060,0xffffffff,this_00->field_003C
                      ,this_00->field_0044);
           g_currentExceptionFrame = local_50.previous;
           return 0;
@@ -359,15 +370,16 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
         }
         iVar7 = this_00->field_018C - this_00->field_0048;
         if (iVar7 < this_00->field_0044) {
-          this_00->field_0044 = st::machine_word_boundary_cast<int>(this_00->field_0044 + -5);
+          this_00->field_0044 = this_00->field_0044 + -5;
         }
         if (this_00->field_0044 <= iVar7) {
           this_00->field_0044 = iVar7;
           this_00->field_0172 = CASE_2;
           this_00->field_017C = 0;
         }
+
         st::fn_006B3640
-                  ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                  (reinterpret_cast<int *>(g_ddxContext_008075A8),this_00->field_0060,0xffffffff,this_00->field_003C,
                    this_00->field_0044);
         g_currentExceptionFrame = local_50.previous;
         return 0;
@@ -387,42 +399,48 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
-    st::fn_00403120((AnonShape_00521CF0_154649D2 *)this_00);
+    st::fn_00403120(reinterpret_cast<AnonShape_00521CF0_154649D2 *>(this_00));
+
     st::fn_006B6020(this_00->field_0198,0,&CHAR_00h_008016a0);
     this_00->field_0028 = 0x33;
     this_00->field_002C = st::machine_word_boundary_cast<undefined4>(this_00->field_0198);
-    st::fn_006E6080(this_00,2,this_00->field_01A0,(undefined4 *)&this_00->field_0x18);
+    st::fn_006E6080(this_00,2,this_00->field_01A0,reinterpret_cast<undefined4 *>(&this_00->field_0x18));
   }
   else if (SVar2 != MESS_BEHPANELTY_C0A0) {
     if (SVar2 != MESS_INTERCOMPANELTY_C0AF) {
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
-    puVar4 = this_00->field_019C;
-    local_8 = *(uint *)(puVar4 + 10);
+    pRVar4 = reinterpret_cast<RecoveredRecord_006B4FA0_DAC3A217 *>(this_00->field_019C);
+    local_8 = *(uint *)&pRVar4[1].field_0x4;
     if (local_8 == 0) {
-      local_8 = ((uint)puVar4[7] * *(int *)(puVar4 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-                *(int *)(puVar4 + 4);
+      local_8 = ((uint)pRVar4->field_000E * *(int *)&pRVar4->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+                *(int *)&pRVar4->field_0x8;
     }
-    puVar8 = (byte *)st::fn_006B4FA0((int *)puVar4);
+
+    puVar8 = STPointerBoundaryCast<byte *>(st::fn_006B4FA0(pRVar4));
     memset(puVar8, 0, local_8); /* compiler bulk-zero initialization */
+
     st::fn_00710A90(static_cast<ccFntTy *>(this_00->field_0180),(int)this_00->field_019C,0,0,0,0,0);
+
     st::fn_007119C0(static_cast<ccFntTy *>(this_00->field_0180),*(char **)(message->arg0).ptr,0,-1,0);
     uVar1 = (message->arg1).words.low;
     if ((uVar1 != 0xffff) || ((message->arg1).words.high != 0xffff)) {
       uVar10 = (uint)(message->arg1).words.high;
-      st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)this_00->field_019C,0,(uint)uVar1,uVar10 + 1,
+      st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(this_00->field_019C),0,(uint)uVar1,uVar10 + 1,
                    (uint)uVar1,
                    (int)((AnonShape_006E6FB0_BC494FEA *)this_00->field_019C)->field_0008 +
                    (uVar10 - 3),0x6c,0xd);
     }
-    puVar4 = this_00->field_019C;
+    pRVar5 = reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(this_00->field_019C);
+
     st::fn_006B55F0
               ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,
-               (-(uint)(DAT_0080874e != '\x03') & 0xffffffe7) + 0x1e,5,(byte *)puVar4,0,0,0,
-               *(int *)(puVar4 + 2),*(int *)(puVar4 + 4));
+               (-(uint)(DAT_0080874e != '\x03') & 0xffffffe7) + 0x1e,5,pRVar5,0,0,0,
+               *(int *)&pRVar5->field_0x4,*(int *)&pRVar5->field_0x8);
+
     st::fn_006B3640
-              ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
+              (reinterpret_cast<int *>(g_ddxContext_008075A8),this_00->field_0060,0xffffffff,this_00->field_003C,
                this_00->field_0044);
     g_currentExceptionFrame = local_50.previous;
     return 0;
@@ -434,4 +452,3 @@ int __thiscall st::fn_00522E80(IntercomPanelTy *this,STMessage *message)
   g_currentExceptionFrame = local_50.previous;
   return 0;
 }
-

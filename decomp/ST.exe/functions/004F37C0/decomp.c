@@ -29,7 +29,7 @@ CPanelTy::PaintBBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,
   int iVar6;
   InternalExceptionFrame local_54;
   int *local_10;
-  ushort *local_c;
+  RecoveredRecordView_006B84D0_87AF9D9B *local_c;
   CPanelTy *local_8;
 
   local_10 = (param_2->arg1).ptr;
@@ -37,9 +37,11 @@ CPanelTy::PaintBBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
-  errorCode = (int *)Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
+
+  errorCode = STPointerBoundaryCast<int *>(Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0));
   if (errorCode != nullptr) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0x1de,0,(int)errorCode,
                                "%s","CPanelTy::PaintBBut");
     if (iVar5 != 0) {
@@ -50,6 +52,7 @@ CPanelTy::PaintBBut(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,
   }
   iVar6 = 1;
   text = FUN_006f2c00(param_4,1,(uint)param_5);
+  /* ST_CALLSITE[004F382B]: CALL 0x006f1ce0; direct=006F1CE0 cMf32::RecGet; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int */
   local_c = cMf32::RecGet(g_cMf32_00806790,param_3,text,errorCode,iVar6);
   pCVar3 = local_8;
   uVar2 = (uint)param_1;
@@ -87,9 +90,10 @@ LAB_004f38ad:
   }
   /* ST_CALLSITE[004F38D2]: CALL 0x00403229; direct=00403229 DibPut */
   DibPut((RecoveredSourceFamily_dibcopy *)local_8->field_0148[uVar2 + 0xe],
-         *local_10 - (&local_8->field_003C)[uVar2],iVar6 - iVar4,param_3,(byte *)local_c);
+         *local_10 - (&local_8->field_003C)[uVar2],iVar6 - iVar4,param_3,local_c);
   cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
   if ((param_1 < 0xb) && (-1 < (int)pCVar3->field_0148[uVar2])) {
+
     Library::DKW::DDX::FUN_006b3640
               ((int *)g_ddxContext_008075A8,(uint)pCVar3->field_0148[uVar2],0xffffffff,
                (&pCVar3->field_003C)[uVar2],(&pCVar3->field_0094)[uVar2]);

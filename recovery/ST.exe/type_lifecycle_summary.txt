@@ -1,6 +1,6 @@
 program=ST.exe
-candidates=2075
+candidates=2096
 automatic_replacements=0
 automatic_removals=0
-retained_review=2075
+retained_review=2096
 note=Deletion requires script provenance or the pipeline-owned VIEW_ONLY opt-in marker, plus zero parents/signature/Listing uses. Direct Pointer/Array chains inherit view-only retirement without crossing through an owning structure. Non-view deletion is limited to generated anonymous PointerShapes/ClassPointees/HiddenThis types and unreferenced switch enums whose decompiler-local spelling has no stable typed target. A structure with an exact offset-zero physical vptr companion is retained until class and vtable can be retired atomically. Equivalent types migrate only when one semantic anchor also shares the discriminator address/case, exact conflict identity, or same-category generated-layout provenance; equal geometry alone never merges semantic identities.

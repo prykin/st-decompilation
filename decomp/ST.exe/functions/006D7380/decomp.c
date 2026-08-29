@@ -29,8 +29,9 @@ undefined4 __thiscall FUN_006d7380(void *this,int param_1)
     }
   }
   else if (*(int *)(STField<int>(this,0x90) + 0x18) != 0) {
-    iVar2 = FUN_0074b9f5((void *)(STField<int>(this,0x8c) + 0x1c),
-                         (char *)(STField<int>(this,0x90) + 0x1c));
+    iVar2 = Library::Win32::COMSupport::FUN_0074b9f5
+                      ((void *)(STField<int>(this,0x8c) + 0x1c),
+                       (char *)(STField<int>(this,0x90) + 0x1c));
     if (iVar2 != 0) {
       if (STField<int>(this,0x90) != 0) {
         /* ST_CALLSITE[006D740C]: CALL dword ptr [ECX + 0x20] */

@@ -24,8 +24,7 @@ ST3DSMAPContext::sub_006E1C20
   int local_20;
   float local_14;
   float local_10;
-  undefined4 local_c;
-
+  uint local_c;
   local_14 = (float)this->field_0098;
   local_10 = (float)this->field_00A0;
   local_c = 0;

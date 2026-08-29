@@ -42,7 +42,7 @@ LAB_0068dce9:
 0068DCF4  8D 84 08 0B 01 00 00      LEA EAX,[EAX + ECX*0x1 + 0x10b]
 0068DCFB  50                        PUSH EAX
 0068DCFC  6A 00                     PUSH 0x0
-0068DCFE  E8 5D 23 02 00            CALL 0x006b0060
+0068DCFE  E8 5D 23 02 00            CALL 0x006b0060  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/AiTactClassTy_field_00A5DArray; source view only; no Ghidra override
 0068DD03  89 06                     MOV dword ptr [ESI],EAX
 LAB_0068dd05:
 0068DD05  83 C6 0C                  ADD ESI,0xc
@@ -55,7 +55,7 @@ LAB_0068dd05:
 0068DD17  6A 08                     PUSH 0x8
 0068DD19  6A 0A                     PUSH 0xa
 0068DD1B  6A 00                     PUSH 0x0
-0068DD1D  E8 6E 05 02 00            CALL 0x006ae290
+0068DD1D  E8 6E 05 02 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/AiTactClassTy_field_00A5DArray; source view only; no Ghidra override
 0068DD22  89 83 A5 00 00 00         MOV dword ptr [EBX + 0xa5],EAX
 LAB_0068dd28:
 0068DD28  8B 83 B1 00 00 00         MOV EAX,dword ptr [EBX + 0xb1]
@@ -75,7 +75,7 @@ LAB_0068dd45:
 0068DD51  6A 4A                     PUSH 0x4a
 0068DD53  6A 0A                     PUSH 0xa
 0068DD55  6A 00                     PUSH 0x0
-0068DD57  E8 34 05 02 00            CALL 0x006ae290
+0068DD57  E8 34 05 02 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/AiTactClassTy_field_00BDDArray; source view only; no Ghidra override
 0068DD5C  89 83 BD 00 00 00         MOV dword ptr [EBX + 0xbd],EAX
 LAB_0068dd62:
 0068DD62  8B 83 C9 00 00 00         MOV EAX,dword ptr [EBX + 0xc9]

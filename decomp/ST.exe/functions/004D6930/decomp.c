@@ -81,7 +81,8 @@ TLOEmbryoTy::sub_004D6930(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy_004D6930
     *(undefined4 *)((int)&param_1[1].field_0027 + 1) = 0xbb9;
     return;
   }
-  iVar6 = thunk_FUN_0044e1b0(this->field_0024);
+
+  iVar6 = thunk_FUN_0044e1b0((RecoveredRecord_004B31C0_F3AB8C37 *)this->field_0024);
   if (iVar6 == 0) {
     *(undefined4 *)((int)&param_1[1].field_0027 + 1) = 0xbdf;
     return;

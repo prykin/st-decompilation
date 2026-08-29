@@ -42,11 +42,11 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
   bool local_20 [12];
   bool local_14;
   int3 iStack_13;
-  undefined1 local_10;
+  byte local_10;
   undefined2 uStack_f;
   undefined1 uStack_d;
-  undefined2 local_c;
-  undefined1 local_a;
+  ushort local_c;
+  byte local_a;
   bool local_8;
   bool local_7;
   bool local_6;
@@ -67,9 +67,11 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
   local_e8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_e8;
   local_44 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_e8.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0xa1a,0,iVar4,"%s"
                                ,"CPanelTy::SetCmdObj");
     if (iVar5 == 0) {
@@ -417,7 +419,8 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,byte param_1)
     local_5c[0] = true;
     puVar9 = (undefined4 *)0x16;
   }
-  thunk_FUN_0054edf0(puVar9,(uint *)pbVar7,0,0xffffffff);
+  /* ST_CALLSITE[0050F997]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+  STPlaySystemC::sub_0054EDF0(g_playSystem_00802A38,puVar9,(uint *)pbVar7,0,0xffffffff);
 switchD_0050f5b2_caseD_4:
   g_currentExceptionFrame = local_e8.previous;
   return;

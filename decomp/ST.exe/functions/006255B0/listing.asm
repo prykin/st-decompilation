@@ -27,7 +27,7 @@ FUN_006255b0:
 006255FA  52                        PUSH EDX
 006255FB  8B 96 49 02 00 00         MOV EDX,dword ptr [ESI + 0x249]
 00625601  52                        PUSH EDX
-00625602  FF 90 E0 00 00 00         CALL dword ptr [EAX + 0xe0]
+00625602  FF 90 E0 00 00 00         CALL dword ptr [EAX + 0xe0]  ; [STIndirectCallsiteApplier] exact slot 0xE0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00625608  85 C0                     TEST EAX,EAX
 0062560A  0F 85 C0 00 00 00         JNZ 0x006256d0
 00625610  0F BF 4D 26               MOVSX ECX,word ptr [EBP + 0x26]

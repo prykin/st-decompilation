@@ -1,4 +1,4 @@
-FUN_00488ee0:
+STBoatC::vfunc_58:
 00488EE0  55                        PUSH EBP
 00488EE1  8B EC                     MOV EBP,ESP
 00488EE3  56                        PUSH ESI

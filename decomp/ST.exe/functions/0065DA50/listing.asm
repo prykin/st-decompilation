@@ -1,4 +1,4 @@
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50:
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0065DA50::FUN_0065da50:
 0065DA50  55                        PUSH EBP
 0065DA51  8B EC                     MOV EBP,ESP
 0065DA53  83 EC 08                  SUB ESP,0x8
@@ -17,7 +17,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50:
 0065DA81  50                        PUSH EAX
 0065DA82  8A 46 24                  MOV AL,byte ptr [ESI + 0x24]
 0065DA85  50                        PUSH EAX
-0065DA86  E8 6E 82 DA FF            CALL 0x00405cf9
+0065DA86  E8 6E 82 DA FF            CALL 0x00405cf9  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STGroupC; source view only; no Ghidra override
 0065DA8B  85 C0                     TEST EAX,EAX
 0065DA8D  0F 84 F9 00 00 00         JZ 0x0065db8c
 0065DA93  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
@@ -115,7 +115,7 @@ LAB_0065db43:
 0065DB5C  74 20                     JZ 0x0065db7e
 0065DB5E  8B 06                     MOV EAX,dword ptr [ESI]
 0065DB60  8B CE                     MOV ECX,ESI
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065DA50::FUN_0065da50::override::prt_65db62_d4e0dbd9:
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0065DA50::FUN_0065da50::override::prt_65db62_d4e0dbd9:
 0065DB62  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0065DB68  85 C0                     TEST EAX,EAX
 0065DB6A  74 12                     JZ 0x0065db7e

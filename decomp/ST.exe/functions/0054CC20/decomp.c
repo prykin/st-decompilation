@@ -7,8 +7,8 @@
 
 int __thiscall
 STPlaySystemC::CreateGameObject
-          (STPlaySystemC *this,int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-          undefined4 param_5)
+          (STPlaySystemC *this,int param_1,undefined4 *param_2,int *param_3,undefined4 param_4,
+          int param_5)
 
 {
   STPlaySystemC *this_00;
@@ -19,7 +19,7 @@ STPlaySystemC::CreateGameObject
   int iVar3;
   InternalExceptionFrame local_50;
   STPlaySystemC *local_c;
-  undefined2 local_8 [2];
+  int local_8;
 
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
@@ -27,14 +27,13 @@ STPlaySystemC::CreateGameObject
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar2 == 0) {
-    iVar4_mg2 = thunk_FUN_0054cbb0(param_1,(undefined4 *)local_8);
+    iVar4_mg2 = thunk_FUN_0054cbb0(param_1,&local_8);
     if (iVar4_mg2 != 0) {
       RaiseInternalException
                 (-4,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0xef);
     }
     /* ST_CALLSITE[0054CC95]: CALL dword ptr [EAX + 0x8] */
-    iVar4 = this_00->vfunc_08(local_8[0],(undefined2)param_2,(undefined2)param_3,
-                       (undefined2)param_4,(undefined2)param_5);
+    iVar4 = this_00->vfunc_8(local_8,param_2,param_3,(undefined2)param_4,param_5);
     if (iVar4 != 0) {
       RaiseInternalException
                 (iVar4,g_overwriteContext_007ED77C,"E:\\__titans\\Andrey\\tplaysys.cpp",0xf0);

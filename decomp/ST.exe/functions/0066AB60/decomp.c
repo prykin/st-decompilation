@@ -12,7 +12,7 @@ int FUN_0066ab60(char playerId,byte *param_2,byte *param_3)
   AiPlrClassTy *this;
   int iVar3;
   int iVar4;
-  int *piVar5;
+  uint *puVar5;
   int iVar6;
   byte *pbVar7;
   int iVar8;
@@ -23,20 +23,25 @@ int FUN_0066ab60(char playerId,byte *param_2,byte *param_3)
      (g_allPlayers_007FA174 != nullptr)) {
     this = thunk_FUN_004357f0(playerId);
     if ((this != nullptr) &&
+
        (iVar3 = thunk_FUN_00679d60(this,param_2,param_3), iVar3 != 0)) {
       return iVar3;
     }
     if ((g_allPlayers_007FA174 != nullptr) &&
+
        (iVar4 = thunk_FUN_0042a9c0(playerId), iVar4 != 0)) {
       uVar2 = STField<uint>(iVar4,0xC);
       while (uVar2 = uVar2 - 1, -1 < (int)uVar2) {
         if (uVar2 < STField<uint>(iVar4,0xC)) {
-          piVar5 = (int *)(STField<int>(iVar4,0x8) * uVar2 + STField<int>(iVar4,0x1C));
+          puVar5 = (undefined4 *)(STField<int>(iVar4,0x8) * uVar2 + STField<int>(iVar4,0x1C));
         }
         else {
-          piVar5 = nullptr;
+          puVar5 = nullptr;
         }
-        if ((*piVar5 != 0) && (iVar6 = thunk_FUN_00423300(*piVar5), iVar6 != 0)) {
+        if (((RecoveredRecord_00423300_67884733 *)*puVar5 !=
+             nullptr) &&
+
+           (iVar6 = thunk_FUN_00423300((RecoveredRecord_00423300_67884733 *)*puVar5), iVar6 != 0)) {
           pbVar9 = (byte *)(iVar6 + 0x3b);
           pbVar7 = param_2;
           do {

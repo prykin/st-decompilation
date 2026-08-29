@@ -57,7 +57,8 @@ int FUN_0040d540(AnonShape_0040D540_1BB7A4CF *param_1,uint param_2)
   local_20 = 0;
   local_3c = 0;
   local_40 = nullptr;
-  pSVar7 = thunk_FUN_00423e70(param_1,(ushort)param_2);
+  /* ST_CALLSITE[0040D55B]: CALL 0x0040286f; direct=0040286F STGroupBoatC::sub_00423E70 */
+  pSVar7 = STGroupBoatC::sub_00423E70((STGroupBoatC *)param_1,(ushort)param_2);
   psVar6 = g_pathingGrid.cells;
   iVar11 = (int)pSVar7->field_0047;
   if (((iVar11 == pSVar7->field_00BB) && ((int)pSVar7->field_0049 == pSVar7->field_00BF)) &&
@@ -65,6 +66,7 @@ int FUN_0040d540(AnonShape_0040D540_1BB7A4CF *param_1,uint param_2)
     return 0;
   }
   if (pSVar7->field_009F == nullptr) {
+
     iVar8 = FUN_006aadd0(iVar11,(int)pSVar7->field_0049,(int)pSVar7->field_004B,pSVar7->field_00BB,
                          pSVar7->field_00BF,pSVar7->field_00C3);
     return ((pSVar7->field_00B7 < iVar8) - 1 & 6) - 6;
@@ -93,6 +95,7 @@ int FUN_0040d540(AnonShape_0040D540_1BB7A4CF *param_1,uint param_2)
     puVar15 = (ushort *)(pSVar7->field_009F + (pSVar7->field_00A7 + local_1c) * 0x24);
     do {
       if (*puVar15 == 0xffff) break;
+
       local_10 = FUN_006a5eb0((int)pSVar7->field_0047,(int)pSVar7->field_0049,
                               (int)pSVar7->field_004B,(short)*puVar15,(short)puVar15[1],
                               (short)puVar15[2]);
@@ -117,6 +120,7 @@ LAB_0040d750:
         local_34 = local_10 & 1;
         if ((local_8 <= local_14) &&
            (((local_8 != local_14 || ((local_10 == pSVar7->field_00AF && (local_1c < 2)))) &&
+
             (local_EAX_594 =
                   thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,(short)*puVar15
                                      ,(short)puVar15[1],(short)puVar15[2]),
@@ -138,12 +142,14 @@ LAB_0040dc04:
                        puVar13 == nullptr)) break;
                     uVar3 = *puVar13;
                     if (((uVar3 != 0xffff) &&
-                        ((((pSVar14 = thunk_FUN_00423e70(param_1,uVar3),
+                        /* ST_CALLSITE[0040DC5D]: CALL 0x0040286f; direct=0040286F STGroupBoatC::sub_00423E70 */
+                        ((((pSVar14 = STGroupBoatC::sub_00423E70((STGroupBoatC *)param_1,uVar3),
                            pSVar14 != nullptr && (pSVar14 != pSVar7)) &&
                           (puVar13 = pSVar14->field_0097, puVar13 != nullptr)) &&
                          (pSVar14->field_009F != nullptr)))) &&
                        ((((puVar13[4] == *puVar15 && (puVar13[5] == puVar15[1])) &&
                          (puVar13[6] == puVar15[2])) ||
+
                         ((((local_48 = FUN_006a5eb0((int)pSVar14->field_0047,
                                                     (int)pSVar14->field_0049,
                                                     (int)pSVar14->field_004B,(short)*puVar15,
@@ -153,10 +159,11 @@ LAB_0040dc04:
                             (pSVar14->field_009F
                              [(pSVar14->field_00A7 * 9 + (int)pSVar14->field_00AB) * 4 + 3] <
                              local_38)))) &&
+
                           (local_EAX_2011 =
-                                thunk_FUN_0040ce20(param_1,(AnonShape_0040CE20_D3328A6B *)pSVar14,
-                                                   &local_4c,&local_50,&local_54,&local_48),
-                          local_EAX_2011 != 0)) &&
+                                thunk_FUN_0040ce20(param_1,(RecoveredRecordView_0040CE20_65C5764C *)
+                                                           pSVar14,&local_4c,&local_50,&local_54,
+                                                   &local_48), local_EAX_2011 != 0)) &&
                          (((local_4c == (short)*puVar15 && (local_50 == (short)puVar15[1])) &&
                           (local_54 == (short)puVar15[2])))))))) goto LAB_0040dd8a;
                     local_34 = local_34 + 1;
@@ -175,11 +182,13 @@ LAB_0040dc04:
             }
             else if (((psVar6[iVar11 + ((short)puVar15[2] - (int)pSVar7->field_004B) * local_c]
                       & 0xc000U) != 0xc000) &&
+
                     (iVar10 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
                                                  (int)pSVar7->field_0047,(int)pSVar7->field_0049,
                                                  (short)puVar15[2]), iVar10 != 0)) {
               if (puVar15[1] == pSVar7->field_0049) {
                 if ((psVar6[iVar11 + iVar16] & 0xc000U) != 0xc000) {
+
                   iVar9 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
                                              (short)*puVar15,(int)pSVar7->field_0049,
                                              (int)pSVar7->field_004B);
@@ -188,6 +197,7 @@ joined_r0x0040dbb9:
                 }
               }
               else if ((psVar6[iVar11 + g_pathingGrid.sizeX * local_18] & 0xc000U) != 0xc000) {
+
                 iVar9 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
                                            (int)pSVar7->field_0047,(short)puVar15[1],
                                            (int)pSVar7->field_004B);
@@ -197,10 +207,12 @@ joined_r0x0040dbb9:
           }
           else if (((((psVar6[iVar11 + iVar16] & 0xc000U) != 0xc000) &&
                     ((psVar6[iVar11 + g_pathingGrid.sizeX * local_18] & 0xc000U) != 0xc000)) &&
+
                    (local_EAX_716 =
                          thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
                                             (int)pSVar7->field_0047,(short)puVar15[1],
                                             (int)pSVar7->field_004B), local_EAX_716 != 0)) &&
+
                   (local_EAX_747 =
                         thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
                                            (short)*puVar15,(int)pSVar7->field_0049,
@@ -214,22 +226,27 @@ joined_r0x0040dbb9:
                    (((psVar6[iVar11 + iVar12 + iVar16] & 0xc000U) != 0xc000 &&
                     ((psVar6[iVar11 + iVar16] & 0xc000U) != 0xc000)))))) &&
                  (((psVar6[iVar11 + iVar12] & 0xc000U) != 0xc000 &&
+
                   ((((local_EAX_1324 =
                            thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
                                               (int)pSVar7->field_0047,(int)pSVar7->field_0049,
                                               pSVar7->field_004B + 1), local_EAX_1324 != 0 &&
+
                      (local_EAX_1356 =
                            thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
                                               (short)*puVar15,(int)pSVar7->field_0049,
                                               pSVar7->field_004B + 1), local_EAX_1356 != 0)) &&
+
                     (local_EAX_1389 =
                           thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
                                              (int)pSVar7->field_0047,(short)puVar15[1],
                                              pSVar7->field_004B + 1), local_EAX_1389 != 0)) &&
+
                    ((local_EAX_1420 =
                           thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
                                              (short)*puVar15,(short)puVar15[1],
                                              (int)pSVar7->field_004B), local_EAX_1420 != 0 &&
+
                     (local_EAX_1452 =
                           thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
                                              (int)pSVar7->field_0047,(short)puVar15[1],
@@ -247,22 +264,27 @@ joined_r0x0040dbb9:
                        ((((psVar6[iVar11 + iVar12 + iVar16] & 0xc000U) != 0xc000 &&
                          ((psVar6[iVar11 + iVar16] & 0xc000U) != 0xc000)) &&
                         ((psVar6[iVar11 + iVar12] & 0xc000U) != 0xc000)))))) &&
+
                      ((local_EAX_967 =
                             thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
                                                (int)pSVar7->field_0047,(int)pSVar7->field_0049,
                                                pSVar7->field_004B + -1), local_EAX_967 != 0 &&
+
                       (local_EAX_999 =
                             thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
                                                (short)*puVar15,(int)pSVar7->field_0049,
                                                pSVar7->field_004B + -1), local_EAX_999 != 0)))) &&
+
                     ((local_EAX_1032 =
                            thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
                                               (int)pSVar7->field_0047,(short)puVar15[1],
                                               pSVar7->field_004B + -1), local_EAX_1032 != 0 &&
+
                      ((local_EAX_1063 =
                             thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
                                                (short)*puVar15,(short)puVar15[1],
                                                (int)pSVar7->field_004B), local_EAX_1063 != 0 &&
+
                       (local_EAX_1095 =
                             thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
                                                (int)pSVar7->field_0047,(short)puVar15[1],
@@ -271,6 +293,7 @@ joined_r0x0040dbb9:
               sVar2 = pSVar7->field_0049;
               uVar3 = *puVar15;
 LAB_0040db07:
+
               iVar9 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar7,
                                          (short)uVar3,(int)sVar2,(int)sVar1);
               goto joined_r0x0040dbb9;
@@ -286,9 +309,10 @@ LAB_0040dd8a:
     if (2 < local_1c) break;
   }
   if (local_14 == 30000) {
+
     local_EAX_2187 =
-         thunk_FUN_0040ce20(param_1,(AnonShape_0040CE20_D3328A6B *)pSVar7,&local_28,&local_2c,
-                            &local_30,&local_20);
+         thunk_FUN_0040ce20(param_1,(RecoveredRecordView_0040CE20_65C5764C *)pSVar7,&local_28,
+                            &local_2c,&local_30,&local_20);
     if (local_EAX_2187 == 0) {
       return 2;
     }
@@ -302,6 +326,7 @@ LAB_0040dde1:
   FUN_006a5e90((short *)pSVar7->field_0097);
   pSVar7->field_00A7 = pSVar7->field_00A7 + local_3c;
   pSVar7->field_00AB = local_40;
+  /* ST_CALLSITE[0040DE0F]: CALL 0x006aac10; direct=006AAC10 Library::DKW::LIB::MemAllocClear; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
   puVar15 = Library::DKW::LIB::MemAllocClear(0x10);
   pSVar7->field_0097 = puVar15;
   if (puVar15 != nullptr) {

@@ -11,7 +11,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Locale;
+import java.util.Set;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
@@ -35,6 +38,7 @@ public class STAbiConsistencyApplier extends GhidraScript {
     private static final String COMMENT_MARKER = "[STAbiConsistencyApplier]";
     private DataTypeManager dataTypes;
     private final List<Report> report = new ArrayList<>();
+    private final Set<String> selectedFunctions = new HashSet<>();
 
     @Override
     protected void run() throws Exception {
@@ -43,6 +47,7 @@ public class STAbiConsistencyApplier extends GhidraScript {
         end(true);
         if (currentProgram == null) { printerr("Open the analyzed ST program first."); return; }
         File file = inputFile(); if (file == null) return;
+        parseSelectors();
         Tsv tsv = readTsv(file.toPath());
         requireColumns(tsv, "apply", "repair_kind", "function_address", "expected_function",
             "expected_signature", "expected_signature_source", "target_kind", "target_ordinal",
@@ -57,6 +62,8 @@ public class STAbiConsistencyApplier extends GhidraScript {
         try {
             for (Map<String, String> row : tsv.rows) {
                 monitor.checkCancelled();
+                if (!selectedFunctions.isEmpty() && !selectedFunctions.contains(
+                        row.get("function_address").toUpperCase(Locale.ROOT))) continue;
                 if (!enabled(row.get("apply"))) {
                     report.add(new Report(row.get("function_address"), row.get("repair_kind"),
                         "disabled", "apply=0"));
@@ -76,6 +83,22 @@ public class STAbiConsistencyApplier extends GhidraScript {
             count("unchanged") + ", preserved=" + count("preserved") +
             ", conflicts=" + count("conflict") + ", disabled=" + count("disabled"));
         println("Apply report: " + output);
+    }
+
+    /** Optional address selectors make surgical reviewed application possible
+     * without editing the analyzer-owned proposal TSV. */
+    private void parseSelectors() {
+        String[] arguments = getScriptArgs();
+        for (int index = 1; index < arguments.length; index++) {
+            String value = arguments[index].trim();
+            if (!value.toLowerCase(Locale.ROOT).startsWith("function="))
+                throw new IllegalArgumentException("Unknown selector: " + value);
+            String address = value.substring(value.indexOf('=') + 1).trim()
+                .toUpperCase(Locale.ROOT);
+            if (!address.matches("[0-9A-F]{8}"))
+                throw new IllegalArgumentException("Invalid function selector: " + value);
+            selectedFunctions.add(address);
+        }
     }
 
     private void apply(Map<String, String> row) {
@@ -162,6 +185,12 @@ public class STAbiConsistencyApplier extends GhidraScript {
     private VariableStorage customReturnStorage(Function function,
             DataType returnType) throws Exception {
         VariableStorage current = function.getReturn().getVariableStorage();
+        // Ghidra's generic `undefined` return is the unsized/no-value Listing
+        // placeholder.  A custom parameter layout must retain its unassigned
+        // return storage; trying to manufacture a one-byte accumulator result
+        // both fails validation and would invent an AL ABI.
+        if ("/undefined".equals(returnType.getPathName()))
+            return VariableStorage.UNASSIGNED_STORAGE;
         int length = returnType.getLength();
         if (length <= 0) return VariableStorage.UNASSIGNED_STORAGE;
         if (current != null && !current.isUnassignedStorage() &&

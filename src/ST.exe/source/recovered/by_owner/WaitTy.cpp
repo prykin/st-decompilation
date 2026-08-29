@@ -72,18 +72,17 @@ void __thiscall st::fn_005E9A40(WaitTy *this)
     this->field_002D = 0x20;
     this->field_0031 = 0;
     this->field_0033 = 0;
-    st::fn_006E6080(this,2,g_startSystem_0081176C->field_054C,(undefined4 *)&this->field_0x1d);
+    st::fn_006E6080(this,2,g_startSystem_0081176C->field_054C,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     this->field_002D = 0x29;
     this->field_0031 = 0x19;
     this->field_0033 = 0;
-    st::fn_006E6080(this,2,g_startSystem_0081176C->field_054C,(undefined4 *)&this->field_0x1d);
+    st::fn_006E6080(this,2,g_startSystem_0081176C->field_054C,reinterpret_cast<undefined4 *>(&this->field_0x1d));
   }
   if (g_startSystem_0081176C->field_0550 != 0) {
     this->field_002D = 0x20;
     this->field_0031 = 0;
     this->field_0033 = 0;
-    st::fn_006E6080(this,2,g_startSystem_0081176C->field_0550,(undefined4 *)&this->field_0x1d);
+    st::fn_006E6080(this,2,g_startSystem_0081176C->field_0550,reinterpret_cast<undefined4 *>(&this->field_0x1d));
   }
   return;
 }
-

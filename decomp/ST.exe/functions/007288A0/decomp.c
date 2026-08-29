@@ -2,8 +2,17 @@
 
 
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
+/* [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:3: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=1,
+   pointer_dereferences=10, scalar_uses=0; sites=00728974 dereference: MOV AL,byte ptr [EBP +
+   EDX*0x1] | 0072898D dereference: MOV BL,byte ptr [EBP + EDX*0x1] | 00728994 dereference: MOV
+   BH,byte ptr [EBP + EAX*0x1] | 007289A9 dereference: MOV BL,byte ptr [EBP + EDX*0x1] | 007289B0
+   dereference: MOV BH,byte ptr [EBP + EAX*0x1] | 007289BA dereference: MOV BL,byte ptr [EBP +
+   EDX*0x1] | 007289C1 dereference: MOV BH,byte ptr [EBP + EAX*0x1] | 007289DA dereference: MOV
+   AL,byte ptr [EBP + EDX*0x1] | 007289E6 dereference: MOV AL,byte ptr [EBP + EDX*0x1] | 007289F3
+   dereference: MOV AL,byte ptr [EBP + EDX*0x1] */
 
-void __thiscall FUN_007288a0(void *this,int param_1,int param_2,int param_3)
+void __thiscall FUN_007288a0(void *this,int param_1,int param_2,void *param_3)
 
 {
   byte *pbVar1;
@@ -42,9 +51,11 @@ void __thiscall FUN_007288a0(void *this,int param_1,int param_2,int param_3)
   local_10 = iVar10;
   local_c = this;
   local_8 = iVar12;
+
   iVar5 = FUN_007287e0(&local_30,g_runtimeRecordCount_00857114);
   if (iVar5 != 0) {
     local_4c = -1;
+
     iVar5 = FUN_007287e0(&local_4c,g_runtimeRecordCount_00857114);
     if ((iVar5 != 0) && (iVar10 < STField<int>(this,0x3c))) {
       do {
@@ -69,7 +80,7 @@ void __thiscall FUN_007288a0(void *this,int param_1,int param_2,int param_3)
               uVar8 = (uint)*pbVar11;
               if (((uint)puVar13 & 1) != 0) {
                 pbVar11 = pbVar11 + 1;
-                *(undefined1 *)puVar13 = *(undefined1 *)(param_3 + uVar8);
+                *(undefined1 *)puVar13 = *(undefined1 *)((int)param_3 + uVar8);
                 puVar13 = (uint *)((int)puVar13 + 1);
                 iVar7 = iVar7 + -1;
                 uVar8 = (uint)*pbVar11;
@@ -80,23 +91,23 @@ void __thiscall FUN_007288a0(void *this,int param_1,int param_2,int param_3)
                 iVar7 = iVar7 + -2;
                 *(ushort *)puVar13 =
                      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                     CONCAT11(*(undefined1 *)(param_3 + (uint)*pbVar1),
-                              *(undefined1 *)(param_3 + uVar8));
+                     CONCAT11(*(undefined1 *)((int)param_3 + (uint)*pbVar1),
+                              *(undefined1 *)((int)param_3 + uVar8));
                 uVar8 = (uint)*pbVar11;
                 puVar13 = (uint *)((int)puVar13 + 2);
               }
               while (3 < iVar7) {
                 pbVar1 = pbVar11 + 2;
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                uVar9 = CONCAT11(*(undefined1 *)(param_3 + (uint)pbVar11[1]),
-                                 *(undefined1 *)(param_3 + uVar8));
+                uVar9 = CONCAT11(*(undefined1 *)((int)param_3 + (uint)pbVar11[1]),
+                                 *(undefined1 *)((int)param_3 + uVar8));
                 pbVar2 = pbVar11 + 3;
                 pbVar11 = pbVar11 + 4;
                 *puVar13 = (uint)uVar9 |
                            /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                           CONCAT22(uVar9,CONCAT11(*(undefined1 *)(param_3 + (uint)*pbVar2),
-                                                   *(undefined1 *)(param_3 + (uint)*pbVar1))) <<
-                           0x10;
+                           CONCAT22(uVar9,CONCAT11(*(undefined1 *)((int)param_3 + (uint)*pbVar2),
+                                                   *(undefined1 *)((int)param_3 + (uint)*pbVar1)))
+                           << 0x10;
                 uVar8 = (uint)*pbVar11;
                 puVar13 = puVar13 + 1;
                 iVar7 = iVar7 + -4;
@@ -104,12 +115,12 @@ void __thiscall FUN_007288a0(void *this,int param_1,int param_2,int param_3)
               if (iVar7 == 0) goto LAB_00728a04;
             }
             bVar3 = pbVar11[1];
-            *(undefined1 *)puVar13 = *(undefined1 *)(param_3 + uVar8);
+            *(undefined1 *)puVar13 = *(undefined1 *)((int)param_3 + uVar8);
             if (iVar7 != 1) {
               bVar4 = pbVar11[2];
-              STField<undefined1>(puVar13,1) = *(undefined1 *)(param_3 + (uint)bVar3);
+              STField<undefined1>(puVar13,1) = *(undefined1 *)((int)param_3 + (uint)bVar3);
               if (iVar7 != 2) {
-                STField<undefined1>(puVar13,2) = *(undefined1 *)(param_3 + (uint)bVar4);
+                STField<undefined1>(puVar13,2) = *(undefined1 *)((int)param_3 + (uint)bVar4);
               }
             }
           }
@@ -117,6 +128,7 @@ void __thiscall FUN_007288a0(void *this,int param_1,int param_2,int param_3)
 LAB_00728a04:
         local_2c = local_2c + -1;
         if (local_2c == 0) {
+
           iVar5 = FUN_007287e0(&local_30,local_28);
           if (iVar5 == 0) {
             return;
@@ -127,6 +139,7 @@ LAB_00728a04:
         }
         local_48 = local_48 + -1;
         if (local_48 == 0) {
+
           iVar5 = FUN_007287e0(&local_4c,local_44);
           if (iVar5 == 0) {
             return;

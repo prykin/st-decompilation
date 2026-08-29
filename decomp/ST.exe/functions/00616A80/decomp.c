@@ -31,7 +31,7 @@ FUN_00616a80(void *this,int param_1,int param_2,int param_3,int *param_4,int *pa
   float local_34;
   float local_30;
   float local_2c;
-  undefined4 local_28;
+  uint local_28;
   int local_24;
   int local_20;
   float local_1c;
@@ -44,8 +44,10 @@ FUN_00616a80(void *this,int param_1,int param_2,int param_3,int *param_4,int *pa
   fVar8 = thunk_FUN_00616400(this,param_1,param_2,param_3);
   local_8 = (float)fVar8;
   if (fVar8 == (float10)_DAT_0079034c) {
+
     iVar7 = thunk_FUN_006173a0(this,STField<int>(this,0x288),param_4,param_5,param_6);
     if (iVar7 < 1) {
+
       thunk_FUN_0060ec00(this);
       STField<undefined4>(this,0x20c) = 9;
       return iVar7;
@@ -117,6 +119,7 @@ FUN_00616a80(void *this,int param_1,int param_2,int param_3,int *param_4,int *pa
     local_34 = local_38 * local_48 - local_3c * local_44;
     local_30 = local_40 * local_44 - local_38 * local_4c;
     local_2c = local_3c * local_4c - local_40 * local_48;
+
     iVar8 = thunk_FUN_0062ba50(&local_4c,(float *)((int)this + 0x29d));
     if (iVar8 != 0) {
       STField<undefined4>(this,0x20c) = 5;

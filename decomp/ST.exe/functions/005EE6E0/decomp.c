@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
+undefined4 __fastcall FUN_005ee6e0(RecoveredRecordView_005EE6E0_769300DA *param_1)
 
 {
   byte *this;
@@ -15,16 +15,15 @@ undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
   uint uVar6;
-  undefined4 local_38 [2];
-  undefined4 local_30;
-  undefined4 local_2c;
-  undefined4 local_28;
+  uint local_38 [2];
+  uint local_30;
+  uint local_2c;
+  uint local_28;
   int local_18;
   int local_14;
   int local_10;
   int local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0;
   switch(param_1->field_023A) {
   case 0:
@@ -32,6 +31,7 @@ undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
       param_1->field_028F = g_playSystem_00802A38->field_00E4;
       uVar1 = *(int *)&param_1->field_0x1c * 0x41c64e6d + 0x3039;
       *(uint *)&param_1->field_0x1c = uVar1;
+
       thunk_FUN_005ecd70(param_1,param_1->field_0277,param_1->field_027B,param_1->field_027F + -0x1e
                          ,param_1->field_02BA,'\0',0x1e - (uVar1 >> 0x10) % 0xb);
       uVar1 = *(uint *)&param_1[1].field_0x4;
@@ -41,6 +41,7 @@ undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
     }
     break;
   case 1:
+
     iVar4 = thunk_FUN_005ede30(param_1,&local_c,&local_10,&local_14);
     if (iVar4 != 0) {
       param_1->field_027F = local_14;
@@ -48,8 +49,10 @@ undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
       param_1->field_027B = local_10;
       if ((((param_1->field_0317 != '\0') && ((g_playSystem_00802A38->field_00E4 & 3) == 0)) &&
           (param_1->field_0x250 == '\0')) && (param_1->field_024F == '\0')) {
-        iVar4 = thunk_FUN_005eda50((AnonShape_005EDA50_4BDBD797 *)param_1);
+
+        iVar4 = thunk_FUN_005eda50((RecoveredRecordView_005EDA50_CEB6238A *)param_1);
         if (iVar4 == 0) {
+
           iVar4 = thunk_FUN_005f07a0((STBoatC *)param_1);
           if (iVar4 != 0) {
             param_1->field_0x250 = 1;
@@ -81,6 +84,7 @@ undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
       }
     }
     else {
+
       iVar4 = thunk_FUN_005ed1c0(param_1,&local_c,&local_10,&local_14,&local_18);
       if (iVar4 != 0) {
         param_1->field_0277 = local_c;
@@ -104,7 +108,8 @@ undefined4 __fastcall FUN_005ee6e0(AnonShape_005EE6E0_AB6798ED *param_1)
   case 3:
     if ((uint)param_1->field_028F <= g_playSystem_00802A38->field_00E4) {
       if (param_1->field_0x250 == '\x02') {
-        iVar4 = thunk_FUN_005edc20((AnonShape_005EDC20_3D37DB9E *)param_1);
+
+        iVar4 = thunk_FUN_005edc20((RecoveredRecordView_005EDC20_AE493B38 *)param_1);
         if (iVar4 < 0) {
 LAB_005ee9db:
           param_1->field_0x250 = 0;
@@ -122,11 +127,13 @@ LAB_005ee9db:
         }
       }
       else {
+
         iVar4 = thunk_FUN_005ed1c0(param_1,&local_c,&local_10,&local_14,&local_18);
         if (iVar4 == 0) {
+
           iVar2 = thunk_FUN_005ef4b0(param_1,param_1->field_0273);
           if (iVar2 == 0) {
-            thunk_FUN_005ee670((AnonShape_005EE670_EFEE702F *)param_1);
+            thunk_FUN_005ee670((RecoveredRecordView_005EE670_8C60353D *)param_1);
           }
           else {
             param_1->field_023A = 2;
@@ -154,6 +161,7 @@ LAB_005ee9db:
     local_30 = *(undefined4 *)&param_1->field_0x8;
     local_28 = 0x129;
     local_2c = 2;
+
     SystemClassTy::PostMessage((SystemClassTy *)g_playSystem_00802A38,local_38);
     return local_8;
   case 5:
@@ -168,6 +176,7 @@ cf_common_exit_005EEDDF:
     }
     else {
       this = &param_1->field_0x1d5;
+
       iVar4 = thunk_FUN_004ac910(this,'\b');
       if (iVar4 == 1) {
         /* ST_CALLSITE[005EEBF1]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
@@ -178,8 +187,10 @@ cf_common_exit_005EEDDF:
         STT3DSprC::StopShow((STT3DSprC *)this,1);
       }
       if (iVar4 == *(int *)(&DAT_007cdf52 + (uint)param_1->field_02DF * 0x32)) {
+
         iVar5 = thunk_FUN_00495ff0(param_1->field_0242,*(short *)&param_1->field_0x244,
-                                   param_1->field_0246,0,(AnonShape_00495FF0_59081BDD *)param_1);
+                                   param_1->field_0246,0,
+                                   (RecoveredRecordView_00495FF0_A2A90B23 *)param_1);
         if (iVar5 == 0) {
           param_1->field_0252 = param_1->field_0252 + -1;
         }
@@ -187,9 +198,11 @@ cf_common_exit_005EEDDF:
         STT3DSprC::StopShow((STT3DSprC *)this,0xe);
         if ((param_1->field_0315 == '\x04') || (param_1->field_0315 == '\x02')) {
           uVar6 = 0xffffffff;
+
           iVar3 = thunk_FUN_004ad650((STT3DSprC *)this);
           thunk_FUN_0062b770((int)param_1->field_0041,(int)param_1->field_0043,
-                             (int)param_1->field_0045,param_1->field_0231,(int)param_1,
+                             (int)param_1->field_0045,param_1->field_0231,
+                             (RecoveredRecord_0062B770_F0FEBA2F *)param_1,
                              (int)*(short *)&param_1->field_0x6c,iVar3,uVar6);
         }
         if (param_1->field_0231 == 0xfd) {
@@ -200,18 +213,18 @@ cf_common_exit_005EEDDF:
             /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
             iVar5 = STAllPlayersC::UnRegisterArtefact
                               (g_allPlayers_007FA174,CONCAT22(extraout_var_00,param_1->field_0032),
-                               (AnonShape_00449E60_F2069C78 *)param_1);
+                               (RecoveredRecordView_00449E60_60F0F4F3 *)param_1);
             goto joined_r0x005eed0b;
           }
         }
         else if ((param_1->field_0231 == 0xfe) && (g_allPlayers_007FA174 != nullptr)) {
-          /* ST_CALLSITE[005EECB8]: CALL 0x00401afa; direct=00401AFA STContainerC::sub_005F0D90 */
+          /* ST_CALLSITE[005EECB8]: CALL 0x00401afa; direct=00401AFA STContainerC::sub_005F0D90; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
           STContainerC::sub_005F0D90((STContainerC *)param_1);
           /* ST_CALLSITE[005EECD3]: CALL 0x00401f64; direct=00401F64 STAllPlayersC::UnRegisterContainer */
           /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
           iVar5 = STAllPlayersC::UnRegisterContainer
                             (g_allPlayers_007FA174,CONCAT22(extraout_var,param_1->field_0032),
-                             (AnonShape_0044A730_DBE673B2 *)param_1);
+                             (RecoveredRecordView_0044A730_60F0F4F3 *)param_1);
 joined_r0x005eed0b:
           if (iVar5 != 0) {
             param_1->field_023A = 6;
@@ -234,6 +247,7 @@ joined_r0x005eed0b:
         /* ST_CALLSITE[005EED99]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
         STT3DSprC::StopShow((STT3DSprC *)this,8);
       }
+
       iVar4 = thunk_FUN_004ac910(this,'\t');
       if (iVar4 == *(int *)(&DAT_007cdf5e + (uint)param_1->field_02DF * 0x32))
       goto cf_common_exit_005EEDDF;
@@ -241,8 +255,10 @@ joined_r0x005eed0b:
     thunk_FUN_005eeff0(param_1,1);
     break;
   case 6:
+
     iVar4 = thunk_FUN_00495ff0(param_1->field_0242,*(short *)&param_1->field_0x244,
-                               param_1->field_0246,0,(AnonShape_00495FF0_59081BDD *)param_1);
+                               param_1->field_0246,0,
+                               (RecoveredRecordView_00495FF0_A2A90B23 *)param_1);
     if (iVar4 == 0) {
       param_1->field_0252 = param_1->field_0252 + -1;
       return local_8;

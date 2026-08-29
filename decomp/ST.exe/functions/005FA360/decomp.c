@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __thiscall
+/* [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=5, ignored=0,
+   unknown=0 */
+
+int __thiscall
 FUN_005fa360(void *this,undefined4 *param_1,int param_2,int param_3,int param_4,int *param_5,
             int *param_6,int *param_7)
 

@@ -15,16 +15,16 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
   int iVar5;
   ccFntTy **ppcVar6;
   ccFntTy *local_8d8 [6];
-  undefined4 local_8c0;
-  undefined4 local_8bc;
+  uint local_8c0;
+  uint local_8bc;
   DArrayTy *local_8b8;
   int local_88c;
-  undefined4 local_888;
-  undefined4 local_884;
+  uint local_888;
+  uint local_884;
   int local_84c;
-  undefined4 local_848;
-  undefined4 local_844;
-  undefined4 local_74;
+  uint local_848;
+  uint local_844;
+  uint local_74;
   InternalExceptionFrame local_4c;
   WaitTy *local_8;
 
@@ -36,6 +36,7 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pWVar2 = local_8;
   if (iVar4 == 0) {
@@ -70,6 +71,7 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
       (*this_00->vtable->CreateObject)
                 ((SystemClassTy *)this_00,6,&g_startSystem_0081176C->field_054C,nullptr,local_8d8
                  ,0);
+
       Library::DKW::DDX::FUN_006b3430
                 ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
     }
@@ -77,6 +79,7 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Start\\wait_obj.cpp",0x303,0,iVar4,"%s",
                              "WaitTy::CreateCtrls");
   if (iVar3 != 0) {

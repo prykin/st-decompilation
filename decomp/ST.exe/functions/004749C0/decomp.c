@@ -14,7 +14,11 @@
 
    [STSwitchEnumApplier] Switch target field_05C4 uses
    /SubmarineTitans/Recovered/Enums/STBoatC_field_05C4State. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7
+
+   [STSwitchEnumApplier] Switch target field_05C0 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_05C0State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
 
 int __thiscall STBoatC::WaitLoad(STBoatC *this,STBoatC *param_1)
 
@@ -53,15 +57,15 @@ int __thiscall STBoatC::WaitLoad(STBoatC *this,STBoatC *param_1)
   int iVar22;
   short sVar23;
   byte bVar24;
-  undefined4 local_4c [2];
-  undefined4 local_44;
-  undefined4 local_40;
-  undefined4 local_3c;
-  undefined4 local_2c [2];
+  uint local_4c [2];
+  uint local_44;
+  uint local_40;
+  uint local_3c;
+  uint local_2c [2];
   uint local_24;
   short local_20;
   int local_1c;
-  undefined4 local_18;
+  uint local_18;
   int local_14;
   int local_10;
   int local_c;
@@ -73,21 +77,22 @@ int __thiscall STBoatC::WaitLoad(STBoatC *this,STBoatC *param_1)
     this->field_02C4 = 0;
     memset(&this->field_05A0, 0, 0x2a); /* compiler bulk-zero initialization */
     this->field_05A0 = this->field_03C8;
-    this->field_05C0 = 0;
+    this->field_05C0 = CASE_0;
     pSVar13 = nullptr;
   }
-  if (this->field_05C0 != 0) {
-    if (this->field_05C0 != 1) {
+  if (this->field_05C0 != CASE_0) {
+    if (this->field_05C0 != CASE_1) {
 LAB_00475068:
-      if (this->field_05C0 == 2) {
+      if (this->field_05C0 == CASE_2) {
         /* ST_CALLSITE[00475076]: CALL 0x00402658; direct=00402658 STBoatC::BackWaitLoad */
         local_EAX_1718 = BackWaitLoad(this,(int *)0x2);
         if (local_EAX_1718 == 0) {
-          this->field_05C0 = 0;
+          this->field_05C0 = CASE_0;
         }
         return 2;
       }
-      if (this->field_05C0 != 3) {
+      if (this->field_05C0 != CASE_3) {
+
         local_EAX_2278 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3007,0,0,"%s",
                                 "STBoatC::WaitLoad unknown swli.regime");
@@ -97,6 +102,7 @@ LAB_00475068:
         STDebugBreak(); /* noreturn in standalone pseudocode */
       }
       if ((this->field_05A6 == nullptr) &&
+
          (iVar12_mg11 = STPlaySystemC::sub_006E62D0
                                   (g_playSystem_00802A38,this->field_05A2,(int *)&this->field_05A6),
          iVar12_mg11 == -4)) {
@@ -120,23 +126,34 @@ LAB_00475068:
           }
           local_8 = (undefined4 *)((*(int *)(&DAT_0085442c + iVar12 * 4) * iVar9) / iVar22);
           iVar22 = (*(int *)(&DAT_007e07a0 + iVar12 * 4) * iVar9) / iVar22;
-          thunk_FUN_004d7480((char)this->field_0024,4,this->field_0018,(int)local_8,0,iVar22,0);
+          /* ST_CALLSITE[004751BF]: CALL 0x00405556; direct=00405556 STAllPlayersC::sub_004D7480 */
+          STAllPlayersC::sub_004D7480
+                    (g_allPlayers_007FA174,(char)this->field_0024,4,this->field_0018,
+                     (int)local_8,0,iVar22,0);
+
           iVar12 = thunk_FUN_004d7b10((char)this->field_0024,4);
           if (((int)local_8 <= iVar12) &&
+
              (iVar12 = thunk_FUN_004d7b90((char)this->field_0024,4), iVar22 <= iVar12)) {
+
             thunk_FUN_004d7c10((char)this->field_0024,4,this->field_0018,(int)local_8);
+
             thunk_FUN_004d7e50((char)this->field_0024,4,this->field_0018,iVar22);
             this->field_0716 = this->field_0716 + iVar9;
             if (this->field_0024 == (uint)(byte)this->field_0010->field_112D) {
-              thunk_FUN_004d8b70((char)this->field_0024);
+              /* ST_CALLSITE[00475245]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+              STAllPlayersC::sub_004D8B70(g_allPlayers_007FA174,(char)this->field_0024);
             }
           }
-          thunk_FUN_004d7570((char)this->field_0024,4,(int *)this->field_0018);
+          /* ST_CALLSITE[0047525A]: CALL 0x004051eb; direct=004051EB STAllPlayersC::sub_004D7570 */
+          STAllPlayersC::sub_004D7570
+                    (g_allPlayers_007FA174,(char)this->field_0024,4,(int *)this->field_0018);
         }
       }
       local_44 = this->field_0008;
       local_3c = 0x129;
       local_40 = 2;
+
       SystemClassTy::PostMessage((SystemClassTy *)g_playSystem_00802A38,local_4c);
 switchD_00474a47_caseD_2:
       return 2;
@@ -152,7 +169,8 @@ switchD_00474a47_caseD_2:
         iVar12 = this->field_05BC;
         this->field_05BC = iVar12 + 1;
         if ((&this->field_05B4)[iVar12] != -1) {
-          param_1 = (STBoatC *)thunk_FUN_0042b760((char)this->field_0024,this->field_0030);
+          /* ST_CALLSITE[00474B1F]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__stdcall;pointer:/STBoatC;/char;/ushort */
+          param_1 = thunk_FUN_0042b760((char)this->field_0024,this->field_0030);
           /* ST_CALLSITE[00474B42]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
           sub_00481520(this,(int)this->field_005B,(int)this->field_005D,
                        (int)(&this->field_05B2)[this->field_05BC]);
@@ -174,7 +192,8 @@ switchD_00474a47_caseD_2:
       case 2:
         goto switchD_00474a47_caseD_2;
       case 3:
-        this->field_05C0 = 0;
+        this->field_05C0 = CASE_0;
+
         iVar12_mg2 = STPlaySystemC::sub_006E62D0
                                (g_playSystem_00802A38,this->field_05A2,(int *)&param_1);
         if (iVar12_mg2 != -4) {
@@ -182,6 +201,7 @@ switchD_00474a47_caseD_2:
           NotReadyForLoading(param_1,this->field_0018);
           return 2;
         }
+
         local_EAX_248 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2f68,0,0,"%s",
                                 "STBoatC::WaitLoad WAITLOAD_PREPARE ptr=NULL");
@@ -190,6 +210,7 @@ switchD_00474a47_caseD_2:
         }
         STDebugBreak(); /* noreturn in standalone pseudocode */
       case -1:
+
         local_EAX_164 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2f61,0,0,"%s",
                                 "STBoatC::WaitLoad WAITLOAD_PREPARE ret=STATE_ERROR");
@@ -213,7 +234,7 @@ switchD_00474a47_caseD_2:
       this->field_05C4 = CASE_2;
     }
     if (this->field_05C4 == CASE_2) {
-      /* ST_CALLSITE[00474C64]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+      /* ST_CALLSITE[00474C64]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
       uVar7 = sub_004176C0(this,this->field_05C8);
       /* ST_CALLSITE[00474C6C]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       uVar7 = sub_00417910(this,(short)uVar7);
@@ -225,6 +246,7 @@ switchD_00474a47_caseD_2:
         iVar12 = this->vfunc_D8();
         return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
       }
+
       local_EAX_758 =
            ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2f8f,0,0,"%s",
                               "STBoatC::WaitLoad swli.regime2=2");
@@ -256,6 +278,7 @@ switchD_00474a47_caseD_2:
          (local_10 = 0, this->field_02BF != '\0')) {
         local_8 = (undefined4 *)&this->field_0x2b3;
         do {
+
           puVar8 = thunk_FUN_0041dc40(local_2c,(short)*local_8,*(ushort *)(local_8 + 1),
                                       this->field_006C);
           uVar3 = *puVar8;
@@ -300,6 +323,7 @@ switchD_00474a47_caseD_2:
         } while (local_10 < (int)(uint)(byte)this->field_02BF);
       }
       if (local_1c == -1) {
+
         local_EAX_1388 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2fb6,0,0,"%s",
                                 "STBoatC::WaitLoad swli.regime2=4");
@@ -316,11 +340,12 @@ switchD_00474a47_caseD_2:
       return (-(uint)(iVar12 != 0) & 0xfffffffd) + 2;
     }
     if (SVar2 == CASE_5) {
-      /* ST_CALLSITE[00474F58]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+      /* ST_CALLSITE[00474F58]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
       uVar7 = sub_004176C0(this,this->field_05B0);
       /* ST_CALLSITE[00474F60]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       uVar7 = sub_00417910(this,(short)uVar7);
       if (uVar7 == 0xffffffff) {
+
         local_EAX_1495 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2fc5,0,0,"%s",
                                 "STBoatC::WaitLoad swli.regime2=5");
@@ -337,9 +362,11 @@ switchD_00474a47_caseD_2:
       if (SVar2 == CASE_6) {
         if (this->field_006E == 0x2f) {
           this->field_0076 = 0;
+
           iVar12_mgD = STPlaySystemC::sub_006E62D0
                                  (g_playSystem_00802A38,this->field_05A2,(int *)&param_1);
           if (iVar12_mgD == -4) {
+
             local_EAX_1592 =
                  ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2fd1,0,0,"%s"
                                     ,"STBoatC::WaitLoad WAITLOAD_PREPARE ptr=NULL 2");

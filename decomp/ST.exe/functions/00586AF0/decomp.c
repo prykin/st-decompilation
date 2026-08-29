@@ -74,13 +74,17 @@ void __fastcall FUN_00586af0(int *param_1)
   sVar14 = STBiasedDiv16(sVar14, 200); /* exact signed 16-bit grid-index division */
   STField<short>(param_1,0x4b) = sVar14;
   STField<short>(param_1,0x5f) = sVar14;
-  iVar8 = thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)param_1);
+
+  iVar8 = thunk_FUN_0041c710((RecoveredRecordView_0041C710_A35B7121 *)param_1);
   this = (STT3DSprC *)((int)param_1 + 0x1d5);
   if (iVar8 == 0) {
     iVar8 = 0;
+
     uVar9 = thunk_FUN_004ad650(this);
+
     Library::Ourlib::ST3DSMAP::SprSetVisible(STField<void *>(param_1,0x211),uVar9,iVar8);
-    iVar7 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)param_1);
+
+    iVar7 = thunk_FUN_0041caf0((RecoveredRecordView_0041CAF0_18493751 *)param_1);
     if (iVar7 == 1) {
       iVar8 = 1;
     }
@@ -90,10 +94,13 @@ void __fastcall FUN_00586af0(int *param_1)
   }
   else {
     iVar8 = 1;
+
     uVar9 = thunk_FUN_004ad650(this);
+
     Library::Ourlib::ST3DSMAP::SprSetVisible(STField<void *>(param_1,0x211),uVar9,iVar8);
     iVar8 = 1;
   }
+
   iVar9 = thunk_FUN_004ad650(this);
   FUN_006e6870(STField<void *>(param_1,0x211),iVar9,iVar8);
   iVar8 = STField<int>(param_1,0x231);
@@ -117,7 +124,7 @@ void __fastcall FUN_00586af0(int *param_1)
                           STField<ushort>(param_1,0x273),CASE_1);
     if (local_44 == nullptr) {
 LAB_00587844:
-      local_44 = (STGameObjC *)thunk_FUN_00586320((AnonShape_00586320_9792A2C7 *)param_1);
+      local_44 = (STGameObjC *)thunk_FUN_00586320((RecoveredRecordView_00586320_0792B306 *)param_1);
       STField<uint>(param_1,0x253) = g_playSystem_00802A38->field_00E4;
       if ((local_44 == nullptr) || (STField<int>(param_1,0x231) != 0)) {
         STField<undefined4>(param_1,0x26b) = 0;
@@ -127,6 +134,7 @@ LAB_00587844:
       }
       thunk_FUN_00416270(local_44,(uint *)((int)param_1 + 0x241),(short *)((int)param_1 + 0x243),
                          (short *)((int)param_1 + 0x245));
+
       local_EAX_3393 =
            FUN_006acf0d((int)STField<short>(param_1,0x41),(int)STField<short>(param_1,0x43),
                         (int)STField<short>(param_1,0x45),(int)STField<short>(param_1,0x241),
@@ -135,6 +143,7 @@ LAB_00587844:
     else {
       thunk_FUN_00416270(local_44,(uint *)((int)param_1 + 0x241),(short *)((int)param_1 + 0x243),
                          (short *)((int)param_1 + 0x245));
+
       local_EAX_3393 =
            FUN_006acf0d((int)STField<short>(param_1,0x41),(int)STField<short>(param_1,0x43),
                         (int)STField<short>(param_1,0x45),(int)STField<short>(param_1,0x241),
@@ -238,6 +247,7 @@ LAB_00587dde:
            ((g_worldGrid.sizeZ <= sVar16 ||
             (pSVar17 = STGridAt3D(g_worldGrid, sVar14, sVar15, sVar16).objects[0],
             local_20 = pSVar17, pSVar17 == nullptr)))) {
+
           uVar8 = thunk_FUN_00496250(iVar11,local_14,iVar8);
           local_20 = (STWorldObject *)(uint)(-1 < (int)uVar8);
           goto LAB_00587fb9;
@@ -348,6 +358,7 @@ LAB_00588002:
             ((g_worldGrid.sizeZ <= sVar15 ||
              (pSVar17 = STGridAt3D(g_worldGrid, sVar16, sVar14, sVar15).objects[0],
              pSVar17 == nullptr)))))) {
+
           local_EAX_6098 = thunk_FUN_00496250(local_c,local_1c,local_18);
           pSVar17 = (STWorldObject *)(uint)(-1 < (int)local_EAX_6098);
         }
@@ -422,7 +433,8 @@ LAB_005882a0:
       thunk_FUN_004ad5e0((STT3DSprC *)((int)param_1 + 0x1d5));
       thunk_FUN_00589870(param_1,(int)STField<short>(param_1,0x41),
                          (int)STField<short>(param_1,0x43),0x45c);
-      iVar8 = thunk_FUN_00589740((AnonShape_00589740_397F9B27 *)param_1);
+
+      iVar8 = thunk_FUN_00589740((RecoveredRecordView_00589740_39D83294 *)param_1);
       pSVar10 = local_44;
       if (iVar8 != 0) goto LAB_00587761;
       /* ST_CALLSITE[00587C63]: CALL dword ptr [EDX + 0xe0] */
@@ -538,6 +550,7 @@ LAB_00587161:
         (g_worldGrid.sizeZ <= sVar16)) ||
        (pSVar17 = STGridAt3D(g_worldGrid, sVar14, sVar15, sVar16).objects[0], local_20 = pSVar17, pSVar17 == nullptr))
     {
+
       local_EAX_2124 = thunk_FUN_00496250(local_10,local_14,local_18);
       local_38 = 0;
       iVar8 = local_18;
@@ -652,6 +665,7 @@ LAB_005873a4:
            ((g_worldGrid.sizeY <= sVar15 || (sVar16 < 0)))) || (g_worldGrid.sizeZ <= sVar16)) ||
          (pSVar17 = STGridAt3D(g_worldGrid, sVar14, sVar15, sVar16).objects[0],
          local_20 = pSVar17, pSVar17 == nullptr)) {
+
         local_EAX_2928 = thunk_FUN_00496250(local_c,local_1c,iVar8);
         local_20 = (STWorldObject *)(uint)(-1 < (int)local_EAX_2928);
       }
@@ -720,7 +734,7 @@ LAB_00587648:
       STField<undefined4>(param_1,0x25f) = 0xfffffffe;
     }
     if (10 < g_playSystem_00802A38->field_00E4 - STField<int>(param_1,0x253)) {
-      thunk_FUN_00586320((AnonShape_00586320_9792A2C7 *)param_1);
+      thunk_FUN_00586320((RecoveredRecordView_00586320_0792B306 *)param_1);
       STField<uint>(param_1,0x253) = g_playSystem_00802A38->field_00E4;
     }
     if (4000 < g_playSystem_00802A38->field_00E4 - STField<int>(param_1,599)) {
@@ -729,14 +743,17 @@ LAB_00587648:
       STT3DSprC::StopShow((STT3DSprC *)((int)param_1 + 0x1d5),0xe);
       thunk_FUN_004ad5e0((STT3DSprC *)((int)param_1 + 0x1d5));
       STField<undefined4>(param_1,0x26f) = 0xff;
-      iVar8 = thunk_FUN_00589740((AnonShape_00589740_397F9B27 *)param_1);
+
+      iVar8 = thunk_FUN_00589740((RecoveredRecordView_00589740_39D83294 *)param_1);
       if (iVar8 == 0) goto LAB_00588350;
 LAB_00587761:
-      thunk_FUN_005862e0(param_1);
+
+      thunk_FUN_005862e0((RecoveredRecord_005862E0_AFF1B07D *)param_1);
     }
   }
   else if (iVar8 == 2) {
-    pSVar10 = (STGameObjC *)thunk_FUN_004ac910(this,'\b');
+
+    pSVar10 = STPointerBoundaryCast<STGameObjC *>(thunk_FUN_004ac910(this,'\b'));
     local_44 = pSVar10;
     if ((pSVar10 == (STGameObjC *)0x1) && (STField<int>(param_1,0x26f) != 0xff)) {
       /* ST_CALLSITE[00586C64]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -788,6 +805,7 @@ LAB_00587761:
     if (STField<char>(param_1,0x275) != '\0') {
       /* ST_CALLSITE[00586D5D]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar8 = STT3DSprC::sub_004ACD30(this,'\t');
+
       iVar11 = thunk_FUN_004ac910(this,'\t');
       pSVar10 = local_44;
       if (iVar11 == iVar8 + -1) {
@@ -800,7 +818,8 @@ LAB_00587761:
     /* ST_CALLSITE[00586D89]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
     iVar8 = STT3DSprC::sub_004ACD30(this,'\b');
     if ((pSVar10 == (STGameObjC *)(iVar8 - 1U)) && (STField<char>(param_1,0x275) == '\0')) {
-      thunk_FUN_005862e0(param_1);
+
+      thunk_FUN_005862e0((RecoveredRecord_005862E0_AFF1B07D *)param_1);
       return;
     }
     if ((((int)pSVar10 < 10) && (STField<int>(param_1,0x26f) != 0xff)) &&
@@ -818,7 +837,7 @@ LAB_00587761:
       (*pSVar10->vtable[1].vfunc_0C)(pSVar10);
       /* ST_CALLSITE[00586E12]: CALL 0x00403107; direct=00403107 sub_00416240 */
       sub_00416240(param_1,local_28[0],local_2c[0],local_30[0]);
-      /* ST_CALLSITE[00586E1B]: CALL dword ptr [EDX + 0xd8] */
+      /* ST_CALLSITE[00586E1B]: CALL dword ptr [EDX + 0xd8]; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*param_1 + 0xd8))(iVar8,puVar21,psVar22,puVar23,piVar18);
       return;
@@ -845,6 +864,7 @@ LAB_00588350:
         )))) {
       if ((((&DAT_007fb24c)[param_1[9]] == 0) ||
           (*(char *)((&DAT_007fb24c)[param_1[9]] + iVar8 + iVar13) == '\0')) &&
+
          (local_EAX_6553 = thunk_FUN_00497030(iVar8,iVar11,param_1[9],1,DAT_007e660c),
          -1 < (int)local_EAX_6553)) {
         thunk_FUN_00637ae0((int)STField<short>(param_1,0x41),(int)STField<short>(param_1,0x43)
@@ -854,14 +874,14 @@ LAB_00588350:
         thunk_FUN_004ad5e0((STT3DSprC *)((int)param_1 + 0x1d5));
         STField<undefined4>(param_1,0x231) = 2;
         STField<undefined4>(param_1,0x26f) = 0xff;
-        thunk_FUN_005862e0(param_1);
+
+        thunk_FUN_005862e0((RecoveredRecord_005862E0_AFF1B07D *)param_1);
       }
     }
   }
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_005884da:
-  /* ST_CALLSITE[005884DE]: CALL dword ptr [EDX + 0xd8] */
-  (**(code **)(*param_1 + 0xd8))();
+  /* ST_CALLSITE[005884DE]: CALL dword ptr [EDX + 0xd8]; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+  STStructuralVirtualCall<undefined4>(param_1, 0xD8);
   return;
 }
 

@@ -68,7 +68,7 @@ LAB_005c5d35:
 005C5D58  8D 56 1D                  LEA EDX,[ESI + 0x1d]
 005C5D5B  8B 01                     MOV EAX,dword ptr [ECX]
 005C5D5D  52                        PUSH EDX
-005C5D5E  FF 50 18                  CALL dword ptr [EAX + 0x18]
+005C5D5E  FF 50 18                  CALL dword ptr [EAX + 0x18]  ; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 005C5D61  B9 01 00 00 00            MOV ECX,0x1
 LAB_005c5d66:
 005C5D66  8D BE 25 21 00 00         LEA EDI,[ESI + 0x2125]
@@ -104,7 +104,7 @@ LAB_005c5d9f:
 005C5DB8  8D 7E 1D                  LEA EDI,[ESI + 0x1d]
 005C5DBB  8B 01                     MOV EAX,dword ptr [ECX]
 005C5DBD  57                        PUSH EDI
-005C5DBE  FF 50 18                  CALL dword ptr [EAX + 0x18]
+005C5DBE  FF 50 18                  CALL dword ptr [EAX + 0x18]  ; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 005C5DC1  8B 4E 0C                  MOV ECX,dword ptr [ESI + 0xc]
 005C5DC4  33 C0                     XOR EAX,EAX
 005C5DC6  C7 46 2D 22 00 00 00      MOV dword ptr [ESI + 0x2d],0x22
@@ -112,7 +112,7 @@ LAB_005c5d9f:
 005C5DD3  89 46 31                  MOV dword ptr [ESI + 0x31],EAX
 005C5DD6  8B 11                     MOV EDX,dword ptr [ECX]
 005C5DD8  57                        PUSH EDI
-005C5DD9  FF 52 18                  CALL dword ptr [EDX + 0x18]
+005C5DD9  FF 52 18                  CALL dword ptr [EDX + 0x18]  ; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 005C5DDC  8B 86 84 1F 00 00         MOV EAX,dword ptr [ESI + 0x1f84]
 005C5DE2  C7 46 2D 28 00 00 00      MOV dword ptr [ESI + 0x2d],0x28
 005C5DE9  8B 40 0C                  MOV EAX,dword ptr [EAX + 0xc]
@@ -127,7 +127,7 @@ LAB_005c5dfb:
 005C5DFE  89 46 31                  MOV dword ptr [ESI + 0x31],EAX
 005C5E01  57                        PUSH EDI
 005C5E02  8B 11                     MOV EDX,dword ptr [ECX]
-005C5E04  FF 52 18                  CALL dword ptr [EDX + 0x18]
+005C5E04  FF 52 18                  CALL dword ptr [EDX + 0x18]  ; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 005C5E07  B9 01 00 00 00            MOV ECX,0x1
 LAB_005c5e0c:
 005C5E0C  A1 6C 17 81 00            MOV EAX,[0x0081176c]
@@ -142,11 +142,11 @@ LAB_005c5e0c:
 005C5E26  8D 46 1D                  LEA EAX,[ESI + 0x1d]
 005C5E29  8B 11                     MOV EDX,dword ptr [ECX]
 005C5E2B  50                        PUSH EAX
-005C5E2C  FF 52 18                  CALL dword ptr [EDX + 0x18]
+005C5E2C  FF 52 18                  CALL dword ptr [EDX + 0x18]  ; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 LAB_005c5e2f:
 005C5E2F  8B 16                     MOV EDX,dword ptr [ESI]
 005C5E31  8B CE                     MOV ECX,ESI
-005C5E33  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+005C5E33  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 005C5E36  5E                        POP ESI
 005C5E37  8B E5                     MOV ESP,EBP
 005C5E39  5D                        POP EBP

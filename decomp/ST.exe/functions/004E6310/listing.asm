@@ -1,4 +1,4 @@
-FUN_004e6310:
+STAllPlayersC::sub_004E6310:
 004E6310  55                        PUSH EBP
 004E6311  8B EC                     MOV EBP,ESP
 004E6313  83 EC 1C                  SUB ESP,0x1c
@@ -102,7 +102,7 @@ LAB_004e641e:
 004E6436  0F AB 11                  BTS [ECX],EDX
 LAB_004e6439:
 004E6439  8B 5D 0C                  MOV EBX,dword ptr [EBP + 0xc]
-FUN_004e6310::cf_continue_loop_004E643C:
+STAllPlayersC::sub_004E6310::cf_continue_loop_004E643C:
 004E643C  8B 45 F4                  MOV EAX,dword ptr [EBP + -0xc]
 004E643F  8B 4D E8                  MOV ECX,dword ptr [EBP + -0x18]
 004E6442  83 C0 19                  ADD EAX,0x19
@@ -158,17 +158,17 @@ LAB_004e64cb:
 004E64D9  85 C9                     TEST ECX,ECX
 004E64DB  74 34                     JZ 0x004e6511
 004E64DD  8B 01                     MOV EAX,dword ptr [ECX]
-004E64DF  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+004E64DF  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004E64E2  83 F8 36                  CMP EAX,0x36
 004E64E5  74 1A                     JZ 0x004e6501
 004E64E7  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 004E64EA  8B 11                     MOV EDX,dword ptr [ECX]
-004E64EC  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+004E64EC  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004E64EF  83 F8 5D                  CMP EAX,0x5d
 004E64F2  74 0D                     JZ 0x004e6501
 004E64F4  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 004E64F7  8B 01                     MOV EAX,dword ptr [ECX]
-004E64F9  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+004E64F9  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004E64FC  83 F8 3D                  CMP EAX,0x3d
 004E64FF  75 10                     JNZ 0x004e6511
 LAB_004e6501:
@@ -213,17 +213,17 @@ LAB_004e6557:
 004E6565  85 C9                     TEST ECX,ECX
 004E6567  74 2C                     JZ 0x004e6595
 004E6569  8B 01                     MOV EAX,dword ptr [ECX]
-004E656B  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+004E656B  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004E656E  83 F8 05                  CMP EAX,0x5
 004E6571  74 1A                     JZ 0x004e658d
 004E6573  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 004E6576  8B 11                     MOV EDX,dword ptr [ECX]
-004E6578  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+004E6578  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004E657B  83 F8 21                  CMP EAX,0x21
 004E657E  74 0D                     JZ 0x004e658d
 004E6580  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 004E6583  8B 01                     MOV EAX,dword ptr [ECX]
-004E6585  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+004E6585  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004E6588  83 F8 11                  CMP EAX,0x11
 004E658B  75 08                     JNZ 0x004e6595
 LAB_004e658d:

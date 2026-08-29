@@ -35,6 +35,7 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,ushort pa
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;
+
     iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     pHVar3 = local_c;
     if (iVar4 == 0) {
@@ -42,8 +43,10 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,ushort pa
       pAVar4 = local_c->field_0218;
       slotStorage = &local_c->field_0218;
       puVar7 = local_c->field_01DC + 0x14;
+
       uVar5 = FUN_006b4fe0(local_c->field_01DC);
       pAVar4 = (AnonPointee_HelpPanelTy_0218 *)
+
                FUN_006b50c0(pAVar4->field_0004,pAVar4->field_0008 + 0x32,(uint)pHVar3->field_01DC[7]
                             ,uVar5,(undefined4 *)puVar7,iVar9);
       local_8 = pAVar4->field_0014;
@@ -51,7 +54,8 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,ushort pa
         local_8 = ((uint)(ushort)pAVar4->field_000E * pAVar4->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
                   pAVar4->field_0008;
       }
-      puVar5 = (undefined4 *)FUN_006b4fa0((int *)pAVar4);
+
+      puVar5 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0((RecoveredRecord_006B4FA0_DAC3A217 *)pAVar4));
       for (uVar6 = local_8 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
         *puVar5 = 0xffffffff;
         puVar5 = puVar5 + 1;
@@ -61,15 +65,18 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,ushort pa
         puVar5 = (undefined4 *)((int)puVar5 + 1);
       }
       pAVar1 = *slotStorage;
+
       Library::DKW::WGR::FUN_006b55f0
-                ((RecoveredSourceFamily_dibcopy *)pAVar4,0,0,0,(byte *)pAVar1,0,0,0,
-                 pAVar1->field_0004,pAVar1->field_0008);
+                ((RecoveredSourceFamily_dibcopy *)pAVar4,0,0,0,
+                 (RecoveredRecordView_006B84D0_87AF9D9B *)pAVar1,0,0,0,pAVar1->field_0004,
+                 pAVar1->field_0008);
       FreeAndNull(slotStorage);
       *slotStorage = pAVar4;
       g_currentExceptionFrame = local_50.previous;
       return;
     }
     g_currentExceptionFrame = local_50.previous;
+
     iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0xdc,0,iVar4,"%s",
                                "HelpPanelTy::CheckBkView");
     if (iVar8 != 0) {

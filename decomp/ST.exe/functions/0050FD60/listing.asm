@@ -28,7 +28,7 @@ FrmPanelTy::InitFrmPanel:
 0050FDAE  50                        PUSH EAX
 0050FDAF  68 58 2A 7C 00            PUSH 0x7c2a58
 0050FDB4  89 35 8C 16 80 00         MOV dword ptr [0x0080168c],ESI
-0050FDBA  E8 BD 59 EF FF            CALL 0x0040577c
+0050FDBA  E8 BD 59 EF FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SpecPanelTy; source view only; no Ghidra override
 0050FDBF  83 C4 08                  ADD ESP,0x8
 0050FDC2  8B CE                     MOV ECX,ESI
 0050FDC4  50                        PUSH EAX

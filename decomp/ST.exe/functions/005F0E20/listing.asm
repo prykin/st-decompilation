@@ -23,7 +23,7 @@ LAB_005f0e39:
 005F0E4E  83 F8 14                  CMP EAX,0x14
 005F0E51  75 16                     JNZ 0x005f0e69
 005F0E53  8B 11                     MOV EDX,dword ptr [ECX]
-005F0E55  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]
+005F0E55  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 005F0E5B  85 C0                     TEST EAX,EAX
 005F0E5D  74 2E                     JZ 0x005f0e8d
 005F0E5F  B8 03 00 00 00            MOV EAX,0x3
@@ -37,7 +37,7 @@ LAB_005f0e69:
 005F0E75  75 16                     JNZ 0x005f0e8d
 LAB_005f0e77:
 005F0E77  8B 01                     MOV EAX,dword ptr [ECX]
-005F0E79  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]
+005F0E79  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 005F0E7F  85 C0                     TEST EAX,EAX
 005F0E81  74 0A                     JZ 0x005f0e8d
 005F0E83  B8 04 00 00 00            MOV EAX,0x4

@@ -1,9 +1,9 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined1 __fastcall FUN_00416330(int param_1)
+undefined1 __fastcall FUN_00416330(RecoveredRecord_00416330_34920DE3 *param_1)
 
 {
-  return ((undefined1 *)param_1)[0x40];
+  return param_1->field_0040;
 }
 

@@ -18,9 +18,9 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,uint param_2,int param_3,undef
   uint uVar3;
   int iVar5;
   InternalExceptionFrame local_6c;
-  undefined4 local_28 [4];
-  undefined4 local_18;
-  undefined4 local_14;
+  uint local_28 [4];
+  uint local_18;
+  uint local_14;
   FSGSTy *local_8;
 
   this_00 = g_cursorClass_00802A30;
@@ -38,6 +38,7 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,uint param_2,int param_3,undef
   if (this->array_00BC[0xc].field_01DF == '\t') {
     local_6c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_6c;
+
     iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
     this_01 = local_8;
     if (iVar2 == 0) {
@@ -47,6 +48,7 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,uint param_2,int param_3,undef
       }
       this_01->field_1EDF = param_2;
       this_01->field_1EE3 = param_3;
+
       puVar2 = Library::DKW::LIB::MemAlloc(param_3 * 0x24);
       uVar3 = this_01->field_1EE3;
       *slotStorage = puVar2;
@@ -81,6 +83,7 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,uint param_2,int param_3,undef
       return;
     }
     g_currentExceptionFrame = local_6c.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xb65,0,iVar2,"%s"
                                ,"FSGSTy::SetLadder");
     if (iVar4 != 0) {

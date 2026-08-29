@@ -1,4 +1,4 @@
-FUN_005fcc70:
+STContainerC::sub_005FCC70:
 005FCC70  55                        PUSH EBP
 005FCC71  8B EC                     MOV EBP,ESP
 005FCC73  56                        PUSH ESI

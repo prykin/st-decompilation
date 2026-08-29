@@ -11,7 +11,7 @@ LAB_006b015e:
 006B0161  85 C0                     TEST EAX,EAX
 006B0163  75 07                     JNZ 0x006b016c
 006B0165  50                        PUSH EAX
-006B0166  FF 15 4C BC 85 00         CALL dword ptr [0x0085bc4c]
+006B0166  FF 15 4C BC 85 00         CALL dword ptr [0x0085bc4c]  ; [STCallResultViewApplier] presentation_only; exact direct-call result=/WinDef.h/HINSTANCE; source view only; no Ghidra override
 LAB_006b016c:
 006B016C  8B 0D E0 68 85 00         MOV ECX,dword ptr [0x008568e0]
 006B0172  68 00 08 00 00            PUSH 0x800

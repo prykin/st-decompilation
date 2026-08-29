@@ -166,7 +166,7 @@ LAB_004424fc:
 00442513  52                        PUSH EDX
 00442514  50                        PUSH EAX
 00442515  8B CB                     MOV ECX,EBX
-00442517  E8 9E 03 FC FF            CALL 0x004028ba
+00442517  E8 9E 03 FC FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override
 0044251C  8D 4D D0                  LEA ECX,[EBP + -0x30]
 0044251F  8B F0                     MOV ESI,EAX
 00442521  8D 55 CE                  LEA EDX,[EBP + -0x32]
@@ -388,7 +388,7 @@ LAB_00442788:
 0044279B  50                        PUSH EAX
 0044279C  51                        PUSH ECX
 0044279D  8B CB                     MOV ECX,EBX
-0044279F  E8 16 01 FC FF            CALL 0x004028ba
+0044279F  E8 16 01 FC FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override
 004427A4  8B F0                     MOV ESI,EAX
 004427A6  8D 45 B0                  LEA EAX,[EBP + -0x50]
 004427A9  50                        PUSH EAX

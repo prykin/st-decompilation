@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_00660d40(AnonShape_00660D40_E58DF1E6 *param_1)
+void __fastcall FUN_00660d40(RecoveredRecordView_00660D40_386ADDB8 *param_1)
 
 {
   uint uVar1;
@@ -11,9 +11,9 @@ void __fastcall FUN_00660d40(AnonShape_00660D40_E58DF1E6 *param_1)
   uint uVar5;
   int iVar6;
   int iVar7;
-  AnonShape_0068EB30_4F4B480A *pAVar8;
+  RecoveredRecordView_0068EB30_46CFB8C2 *pRVar8;
   bool bVar9;
-  AnonShape_0068EB30_4F4B480A local_5c;
+  RecoveredRecordView_0068EB30_46CFB8C2 local_5c;
   AiPlrClassTy *local_10;
   uint local_c;
   AnonShape_00660D40_F4300C26 *local_8;
@@ -41,12 +41,12 @@ void __fastcall FUN_00660d40(AnonShape_00660D40_E58DF1E6 *param_1)
             uVar1 = *(uint *)(iVar7 + iVar6 * 4);
             if ((((uVar1 != 0) && (STField<int>(iVar7,0x28) == 0)) && (STField<int>(iVar7,0x24) == 0))
                && (((uVar1 != 0 && (uVar1 < 0x29)) || (sVar3 == 1)))) {
-              pAVar8 = &local_5c;
+              pRVar8 = &local_5c;
               for (iVar4 = 0x12; iVar4 != 0; iVar4 = iVar4 + -1) {
-                *(undefined4 *)pAVar8 = 0;
-                pAVar8 = (AnonShape_0068EB30_4F4B480A *)((int)&pAVar8->field_0003 + 1);
+                *(undefined4 *)pRVar8 = 0;
+                pRVar8 = (RecoveredRecordView_0068EB30_46CFB8C2 *)((int)&pRVar8->field_0003 + 1);
               }
-              *(undefined2 *)pAVar8 = 0;
+              *(undefined2 *)pRVar8 = 0;
               pAVar2 = local_8;
               STPiece<0,4>(local_5c) = *(undefined4 *)(iVar7 + iVar6 * 4);
               STPiece<8,4>(local_5c) = 0;
@@ -65,7 +65,7 @@ void __fastcall FUN_00660d40(AnonShape_00660D40_E58DF1E6 *param_1)
               STPiece<22,2>(local_5c) = STField<undefined2>(iVar7,0xE);
               STPiece<24,2>(local_5c) = STField<undefined2>(iVar7,0x10);
               STPiece<26,2>(local_5c) = STField<undefined2>(iVar7,0x12);
-              STPiece<28,1>(local_5c) = ((char *)iVar7)[0x14];
+              STPiece<28,1>(local_5c) = STField<char>(iVar7,0x14);
               if ((((char)STPiece<28,1>(local_5c) < '\0') || ('\a' < (char)STPiece<28,1>(local_5c))) &&
                  ((STPiece<28,1>(local_5c) = local_8->field_0081, (char)STPiece<28,1>(local_5c) < '\0' ||
                   ('\a' < (char)STPiece<28,1>(local_5c))))) {
@@ -81,7 +81,7 @@ void __fastcall FUN_00660d40(AnonShape_00660D40_E58DF1E6 *param_1)
               /* ST_CALLSITE[00660EB8]: CALL 0x004056be; direct=004056BE AiTactClassTy::PrepareToSave */
               AiTactClassTy::PrepareToSave(*(AiTactClassTy **)&pAVar2[4].field_0x74,&local_5c,sVar3);
               uVar5 = local_c;
-              param_1 = (AnonShape_00660D40_E58DF1E6 *)local_8;
+              param_1 = (RecoveredRecordView_00660D40_386ADDB8 *)local_8;
             }
             sVar3 = param_1->field_007B;
             iVar6 = iVar6 + 1;

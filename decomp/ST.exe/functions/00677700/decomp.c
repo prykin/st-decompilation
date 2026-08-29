@@ -8,36 +8,42 @@
 int __cdecl FUN_00677700(int param_1,Global_sub_00677700_param_2Enum param_2)
 
 {
-  uint uVar1;
+  int iVar1;
   int iVar2;
-  int iVar3;
-  char cVar4;
+  char cVar3;
 
-  uVar1 = 0;
+  iVar1 = 0;
   if (g_allPlayers_007FA174 == nullptr) {
-    return uVar1;
+    return iVar1;
   }
-  cVar4 = (char)param_1;
+  cVar3 = (char)param_1;
   switch(param_2) {
   case CASE_DC:
-    iVar2 = thunk_FUN_004d8870(cVar4);
-    return iVar2;
+
+    iVar1 = thunk_FUN_004d8870(cVar3);
+    return iVar1;
   case CASE_DD:
-    iVar2 = thunk_FUN_004d89b0(cVar4);
-    return iVar2;
+
+    iVar1 = thunk_FUN_004d89b0(cVar3);
+    return iVar1;
   case CASE_DE:
-    iVar2 = thunk_FUN_004d8af0(cVar4);
-    return iVar2;
+
+    iVar1 = thunk_FUN_004d8af0(cVar3);
+    return iVar1;
   case CASE_DF:
-    iVar2 = thunk_FUN_004b72b0(cVar4);
-    iVar3 = thunk_FUN_004b71c0(cVar4);
-    return iVar3 - iVar2;
+
+    iVar1 = thunk_FUN_004b72b0(cVar3);
+
+    iVar2 = thunk_FUN_004b71c0(cVar3);
+    return iVar2 - iVar1;
   case CASE_E2:
-    iVar2 = thunk_FUN_004e4410((byte *)param_1);
-    return iVar2;
+
+    iVar1 = thunk_FUN_004e4410((byte *)param_1);
+    return iVar1;
   case CASE_E3:
-    uVar1 = thunk_FUN_004e41c0(param_1);
+
+    iVar1 = thunk_FUN_004e41c0(param_1);
   }
-  return uVar1;
+  return iVar1;
 }
 

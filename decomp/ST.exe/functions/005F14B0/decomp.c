@@ -11,10 +11,10 @@ STManBasisC::sub_005F14B0
           (STManBasisC *this,short param_1,short param_2,short param_3,byte param_4,short param_5)
 
 {
-  STManBasisC_field_0038DArray *pSVar1;
+  DArrayTy *pSVar1;
   int iVar2;
-  int iVar3;
-  short *psVar4;
+  int iVar1;
+  short *psVar2;
   short local_20;
   short local_1e;
   short local_1c;
@@ -25,20 +25,20 @@ STManBasisC::sub_005F14B0
   int local_f;
 
   if (this->field_0038 == nullptr) {
-    pSVar1 = (STManBasisC_field_0038DArray *)
-             Library::DKW::TBL::DArrayCreate(nullptr,10,0x19,10);
-    this->field_0038 = pSVar1;
+    /* ST_CALLSITE[005F14CC]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STManBasisC_field_0038DArray; source view only; no Ghidra override */
+    pSVar1 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x19,10);
+    this->field_0038 = (STManBasisC_field_0038DArray *)pSVar1;
     if (pSVar1 == nullptr) {
       return -1;
     }
   }
-  psVar4 = &local_20;
-  for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-    psVar4[0] = 0;
-    psVar4[1] = 0;
-    psVar4 = psVar4 + 2;
+  psVar2 = &local_20;
+  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+    psVar2[0] = 0;
+    psVar2[1] = 0;
+    psVar2 = psVar2 + 2;
   }
-  *(undefined1 *)psVar4 = 0;
+  *(undefined1 *)psVar2 = 0;
   local_1c = param_3;
   local_1e = param_2;
   local_20 = param_1;
@@ -46,20 +46,22 @@ STManBasisC::sub_005F14B0
   local_1a = param_4;
   local_f = DAT_00811788;
   local_17 = g_playSystem_00802A38->field_00E4;
+
   local_13 = thunk_FUN_005f1e40((uint)param_4,(int)param_5,(short)(param_1 * 0xc9 + 100),
                                 (short)(param_2 * 0xc9 + 100),(short)(param_3 * 200 + 100)
                                );
   if (local_13 == nullptr) {
-    iVar3 = -1;
+    iVar1 = -1;
   }
   else {
+
     iVar2 = Library::DKW::TBL::DArrayAppend((DArrayTy *)this->field_0038,&local_20);
-    iVar3 = iVar2 + 1;
-    if (-1 < iVar3) {
+    iVar1 = iVar2 + 1;
+    if (-1 < iVar1) {
       DAT_00811788 = DAT_00811788 + 1;
-      return iVar3;
+      return iVar1;
     }
   }
-  return iVar3;
+  return iVar1;
 }
 

@@ -13,10 +13,12 @@ import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
@@ -51,6 +53,9 @@ public class STPointerShapeApplier extends GhidraScript {
     private final List<ReportRow> report = new ArrayList<>();
     private DataTypeManager dataTypes;
     private Listing listing;
+    private final Set<String> selectedFunctions = new HashSet<>();
+    private final Set<String> selectedGlobals = new HashSet<>();
+    private boolean restoreSelected;
 
     @Override
     protected void run() throws Exception {
@@ -84,6 +89,9 @@ public class STPointerShapeApplier extends GhidraScript {
 
         dataTypes = currentProgram.getDataTypeManager();
         listing = currentProgram.getListing();
+        List<Map<String, String>> targetRows = selectedTargets(targets.rows);
+        List<Map<String, String>> typeRows = selectedTypes(types.rows, fields.rows,
+            targetRows);
 
         int transaction = currentProgram.startTransaction("Apply recovered pointer shapes");
         boolean commit = false;
@@ -92,11 +100,11 @@ public class STPointerShapeApplier extends GhidraScript {
             for (Map<String, String> row : fields.rows)
                 byShape.computeIfAbsent(unt(row.get("shape_id")), ignored -> new ArrayList<>())
                     .add(row);
-            for (Map<String, String> row : dependencyOrder(types.rows, byShape)) {
+            for (Map<String, String> row : dependencyOrder(typeRows, byShape)) {
                 monitor.checkCancelled();
                 applyType(row, byShape.getOrDefault(unt(row.get("shape_id")), List.of()));
             }
-            applyTargets(targets.rows);
+            applyTargets(targetRows);
             commit = true;
         }
         finally {
@@ -110,6 +118,53 @@ public class STPointerShapeApplier extends GhidraScript {
             ", preserved=" + count("preserved") + ", conflicts=" + count("conflict") +
             ", disabled=" + count("disabled"));
         println("Apply report: " + reportPath.toAbsolutePath().normalize());
+    }
+
+    private List<Map<String, String>> selectedTargets(
+            List<Map<String, String>> rows) {
+        if (!hasSelection()) return rows;
+        return rows.stream().filter(row -> {
+            String function = unt(row.get("function_address")).toUpperCase(Locale.ROOT);
+            return (!function.isBlank() && selectedFunctions.contains(function)) ||
+                (unt(row.get("target_kind")).equals("global") &&
+                    selectedGlobals.contains(unt(row.get("target_name"))));
+        }).toList();
+    }
+
+    private List<Map<String, String>> selectedTypes(List<Map<String, String>> rows,
+            List<Map<String, String>> fields, List<Map<String, String>> targets) {
+        if (!hasSelection()) return rows;
+        Set<String> paths = new HashSet<>();
+        for (Map<String, String> target : targets) {
+            if (!enabled(target.get("apply"))) continue;
+            String path = unt(target.get("proposed_type"));
+            while (path.startsWith("pointer:"))
+                path = path.substring("pointer:".length());
+            if (!path.isBlank()) paths.add(path);
+        }
+        Map<String, String> pathByShape = new HashMap<>();
+        for (Map<String, String> row : rows)
+            pathByShape.put(unt(row.get("shape_id")), unt(row.get("type_path")));
+        boolean changed;
+        do {
+            changed = false;
+            for (Map<String, String> field : fields) {
+                String ownerPath = pathByShape.get(unt(field.get("shape_id")));
+                if (ownerPath == null || !paths.contains(ownerPath) ||
+                        !enabled(field.get("apply"))) continue;
+                String dependency = unt(field.get("proposed_type"));
+                while (dependency.startsWith("pointer:"))
+                    dependency = dependency.substring("pointer:".length());
+                if (pathByShape.containsValue(dependency) && paths.add(dependency))
+                    changed = true;
+            }
+        } while (changed);
+        return rows.stream().filter(row -> paths.contains(
+            unt(row.get("type_path")))).toList();
+    }
+
+    private boolean hasSelection() {
+        return !selectedFunctions.isEmpty() || !selectedGlobals.isEmpty();
     }
 
     // Child shapes must exist before a parent field can be resolved as a pointer
@@ -230,6 +285,11 @@ public class STPointerShapeApplier extends GhidraScript {
     private void applyTargets(List<Map<String, String>> rows) throws Exception {
         Map<String, List<Map<String, String>>> localsByFunction = new LinkedHashMap<>();
         for (Map<String, String> row : rows) {
+            if (restoreSelected) {
+                if (enabled(row.get("apply"))) restoreTarget(row);
+                else report.add(targetReport(row, "disabled", "apply=0"));
+                continue;
+            }
             if (!enabled(row.get("apply"))) {
                 report.add(new ReportRow("target", unt(row.get("function_address")),
                     unt(row.get("target_locator")), "disabled", "apply=0"));
@@ -244,6 +304,72 @@ public class STPointerShapeApplier extends GhidraScript {
             monitor.checkCancelled();
             applyFunctionTargets(entry.getKey(), entry.getValue());
         }
+    }
+
+    /**
+     * Roll back one explicitly selected, still hash/provenance-owned proposal
+     * to the exact baseline recorded by the analyzer.  This is deliberately
+     * unavailable for an unfiltered run and refuses manual/imported or stale
+     * state.  It exists for readability-gate failures discovered only after a
+     * fresh decompile (for example, an inferred inline stack aggregate whose
+     * one-byte root was incorrectly made pointer-sized).
+     */
+    private void restoreTarget(Map<String, String> row) {
+        String kind = unt(row.get("target_kind"));
+        if (kind.equals("global")) {
+            report.add(targetReport(row, "preserved",
+                "explicit proposal restore currently supports variables only"));
+            return;
+        }
+        try {
+            Function function = currentProgram.getFunctionManager().getFunctionAt(
+                address(unt(row.get("function_address"))));
+            Variable variable = function == null ? null : findRestoreVariable(function, row);
+            if (variable == null)
+                throw new IllegalArgumentException("persistent variable baseline is stale/ambiguous");
+            String comment = text(variable.getComment());
+            String current = typeSpecification(variable.getDataType());
+            String proposed = unt(row.get("proposed_type"));
+            if (!comment.contains(MARKER))
+                throw new IllegalArgumentException("current variable is not owned by this applier");
+            if (!current.equals(proposed))
+                throw new IllegalArgumentException("current type no longer matches proposed type");
+            DataType expected = resolvePointer(unt(row.get("expected_type")));
+            if (expected == null)
+                throw new IllegalArgumentException("recorded baseline type is missing");
+            SourceType expectedSource = optionalSource(row.get("expected_source"));
+            if (expectedSource == SourceType.USER_DEFINED || expectedSource == SourceType.IMPORTED)
+                throw new IllegalArgumentException("refusing to synthesize a protected baseline");
+            variable.setDataType(expected,
+                expectedSource == null ? SourceType.DEFAULT : expectedSource);
+            variable.setComment(null);
+            report.add(targetReport(row, "restored", current + " -> " +
+                typeSpecification(expected)));
+        }
+        catch (Exception exception) {
+            report.add(targetReport(row, "conflict", message(exception)));
+        }
+    }
+
+    private Variable findRestoreVariable(Function function, Map<String, String> row) {
+        Variable exact = findVariable(function, row);
+        if (exact != null) return exact;
+        boolean parameter = unt(row.get("target_kind")).equals("parameter");
+        Variable[] candidates = parameter ? function.getParameters() : function.getLocalVariables();
+        String name = unt(row.get("target_name"));
+        String locator = unt(row.get("target_locator"));
+        int colon = locator.lastIndexOf(':');
+        String storageRoot = colon < 0 ? locator : locator.substring(0, colon);
+        List<Variable> matches = new ArrayList<>();
+        for (Variable candidate : candidates) {
+            if (!candidate.isValid() || candidate.getVariableStorage() == null ||
+                    !candidate.getName().equals(name)) continue;
+            String current = candidate.getVariableStorage().toString();
+            int currentColon = current.lastIndexOf(':');
+            String currentRoot = currentColon < 0 ? current : current.substring(0, currentColon);
+            if (storageRoot.equals(currentRoot)) matches.add(candidate);
+        }
+        return matches.size() == 1 ? matches.get(0) : null;
     }
 
     private void applyFunctionTargets(String functionAddress,
@@ -671,7 +797,31 @@ public class STPointerShapeApplier extends GhidraScript {
 
     private File inputFile() throws Exception {
         String[] args = getScriptArgs();
-        if (args.length > 0 && !args[0].isBlank()) return new File(args[0]);
+        if (args.length > 0 && !args[0].isBlank()) {
+            for (int index = 1; index < args.length; index++) {
+                String value = args[index].trim();
+                String lower = value.toLowerCase(Locale.ROOT);
+                if (lower.startsWith("function=")) {
+                    String address = value.substring(value.indexOf('=') + 1).trim()
+                        .toUpperCase(Locale.ROOT);
+                    if (!address.matches("[0-9A-F]{8}"))
+                        throw new IllegalArgumentException("Invalid function selector: " + value);
+                    selectedFunctions.add(address);
+                }
+                else if (lower.startsWith("global=")) {
+                    String name = value.substring(value.indexOf('=') + 1).trim();
+                    if (name.isBlank())
+                        throw new IllegalArgumentException("Invalid global selector: " + value);
+                    selectedGlobals.add(name);
+                }
+                else if (lower.equals("restore=true")) restoreSelected = true;
+                else throw new IllegalArgumentException("Unknown selector: " + value);
+            }
+            if (restoreSelected && !hasSelection())
+                throw new IllegalArgumentException(
+                    "restore=true requires at least one function= or global= selector");
+            return new File(args[0]);
+        }
         if (isRunningHeadless()) throw new IllegalArgumentException(
             "Path to pointer_shape_target_proposals.tsv is required");
         return askFile("Select pointer_shape_target_proposals.tsv or its directory",

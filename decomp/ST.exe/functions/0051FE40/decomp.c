@@ -14,8 +14,10 @@ InfocPanelTy * __cdecl CreateInfocPanel(void)
   InfocPanelTy *this;
   int iVar1;
 
-  this = (InfocPanelTy *)FUN_006b04d0(0x3d9);
+
+  this = STPointerBoundaryCast<InfocPanelTy *>(FUN_006b04d0(0x3d9));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;

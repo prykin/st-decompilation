@@ -32,7 +32,7 @@ FUN_004b2520(uint param_1,STBoatC_field_06F7State param_2,int param_3,int param_
   STWorldObject *this;
   bool bVar15;
   int aiStack_138 [44];
-  undefined4 uStack_88;
+  uint uStack_88;
   int local_68;
   int local_64;
   int local_48;
@@ -43,8 +43,7 @@ FUN_004b2520(uint param_1,STBoatC_field_06F7State param_2,int param_3,int param_
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   puStack_c = &DAT_00790940;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
@@ -58,6 +57,7 @@ FUN_004b2520(uint param_1,STBoatC_field_06F7State param_2,int param_3,int param_
   uStack_88 = 0x4b2585;
   local_34 = 0;
   local_8 = 0xffffffff;
+
   iVar6 = thunk_FUN_004b2390(param_1,param_3,param_4,param_5,param_10,1);
   if (iVar6 != 0) {
     aiStack_138[0] = param_3;
@@ -189,6 +189,7 @@ LAB_004b288e:
               iVar7 = local_68 + iVar6;
               if ((-1 < iVar7) &&
                  ((iVar7 < g_worldGrid.sizeY &&
+
                   (iVar9 = thunk_FUN_004b2390(param_1,iVar13,iVar7,iVar8,param_10,local_48),
                   uVar11 = STPiece<0,4>(g_worldGrid), iVar9 != 0)))) {
                 *piVar14 = iVar13;
@@ -200,6 +201,7 @@ LAB_004b288e:
               }
               iVar7 = local_64 + iVar6;
               if (((-1 < iVar7) && (iVar7 < g_worldGrid.sizeY)) &&
+
                  (iVar9 = thunk_FUN_004b2390(param_1,iVar13,iVar7,iVar8,param_10,local_48),
                  uVar11 = STPiece<0,4>(g_worldGrid), iVar9 != 0)) {
                 *piVar14 = iVar13;
@@ -221,6 +223,7 @@ LAB_004b288e:
             if ((-1 < iVar13) && (iVar13 < g_worldGrid.sizeY)) {
               if ((-1 < local_68) &&
                  ((local_68 < (short)uVar11 &&
+
                   (iVar9 = thunk_FUN_004b2390(param_1,local_68,iVar13,iVar8,param_10,local_48),
                   uVar11 = STPiece<0,4>(g_worldGrid), iVar9 != 0)))) {
                 *piVar14 = local_68;
@@ -231,6 +234,7 @@ LAB_004b288e:
                 if (0xe < local_34) goto cf_common_exit_004B2601;
               }
               if (((-1 < local_64) && (local_64 < (short)uVar11)) &&
+
                  (iVar9 = thunk_FUN_004b2390(param_1,local_64,iVar13,iVar8,param_10,local_48),
                  uVar11 = STPiece<0,4>(g_worldGrid), iVar9 != 0)) {
                 *piVar14 = local_64;

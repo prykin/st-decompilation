@@ -22,10 +22,10 @@ void __fastcall FUN_006dc320(AnonShape_006DC320_0C876EFA *param_1)
   float local_2c;
   float local_28;
   int local_24;
-  undefined8 local_20;
+  ulonglong local_20;
   float local_18;
   float local_14;
-  undefined4 local_10;
+  uint local_10;
   int iStack_c;
   int local_8;
 
@@ -70,6 +70,7 @@ void __fastcall FUN_006dc320(AnonShape_006DC320_0C876EFA *param_1)
   local_30 = 0.0;
   local_2c = 0.0;
   local_28 = 0.0;
+
   ST3DSMAPContext::sub_006E25D0((ST3DSMAPContext *)param_1,&local_50,&local_30,0.0,0.0,0.0,1);
   switch(param_1->field_00A8) {
   case 0:
@@ -92,16 +93,19 @@ void __fastcall FUN_006dc320(AnonShape_006DC320_0C876EFA *param_1)
     iStack_c = 0;
     local_8 = 0;
   }
+
   ST3DSMAPContext::sub_006E25D0
             ((ST3DSMAPContext *)param_1,&local_40,&local_30,(double)iStack_c,0.0,0.0,1);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   _local_10 = CONCAT44(local_38 - local_48,local_10);
   param_1->field_02F8 = (double)(local_38 - local_48) * _DAT_0079b148;
+
   ST3DSMAPContext::sub_006E25D0
             ((ST3DSMAPContext *)param_1,&local_40,&local_30,0.0,(double)local_8,0.0,1);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   _local_10 = CONCAT44(local_38 - local_48,local_10);
   param_1->field_0300 = (double)(local_38 - local_48) * _DAT_0079b148;
+
   ST3DSMAPContext::sub_006E25D0((ST3DSMAPContext *)param_1,&local_40,&local_30,0.0,0.0,1.0,1);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   _local_10 = CONCAT44(local_38 - local_48,local_10);
@@ -109,12 +113,14 @@ void __fastcall FUN_006dc320(AnonShape_006DC320_0C876EFA *param_1)
   local_2c = 0.0;
   local_28 = 0.0;
   param_1->field_0308 = (double)(local_38 - local_48) * _DAT_0079b148;
+
   ST3DSMAPContext::sub_006E25D0
             ((ST3DSMAPContext *)param_1,&local_50,&local_30,*(double *)&param_1->field_0x98,
              *(double *)&param_1->field_0xa0,0.0,0);
   local_30 = (float)param_1->field_0368;
   local_2c = 0.0;
   local_28 = 0.0;
+
   ST3DSMAPContext::sub_006E25D0
             ((ST3DSMAPContext *)param_1,&local_40,&local_30,*(double *)&param_1->field_0x98,
              *(double *)&param_1->field_0xa0,0.0,0);
@@ -124,6 +130,7 @@ void __fastcall FUN_006dc320(AnonShape_006DC320_0C876EFA *param_1)
   local_2c = (float)param_1->field_0368;
   local_30 = 0.0;
   local_28 = 0.0;
+
   ST3DSMAPContext::sub_006E25D0
             ((ST3DSMAPContext *)param_1,&local_40,&local_30,*(double *)&param_1->field_0x98,
              *(double *)&param_1->field_0xa0,0.0,0);
@@ -133,6 +140,7 @@ void __fastcall FUN_006dc320(AnonShape_006DC320_0C876EFA *param_1)
   local_30 = 0.0;
   local_2c = 0.0;
   local_28 = (float)((float10)param_1->field_03A4 * (float10)_DAT_0079dfa8);
+
   ST3DSMAPContext::sub_006E25D0
             ((ST3DSMAPContext *)param_1,&local_40,&local_30,*(double *)&param_1->field_0x98,
              *(double *)&param_1->field_0xa0,0.0,0);
@@ -292,6 +300,7 @@ LAB_006dca21:
     param_1->field_0414 = iVar5;
   }
 LAB_006dcafd:
+
   ST3DSMAPContext::sub_006E1C20
             ((ST3DSMAPContext *)param_1,(float)param_1->field_0030,param_1->field_0034,0.0,&local_14
              ,&local_18);
@@ -316,6 +325,7 @@ LAB_006dcafd:
     param_1->field_0050 = iVar5;
     param_1->field_0054 = iVar2 + 2;
   }
+
   ST3DSMAPContext::sub_006E1C20
             ((ST3DSMAPContext *)param_1,(float)(param_1->field_0038 + -1),param_1->field_0034,0.0,
              &local_14,&local_18);
@@ -340,6 +350,7 @@ LAB_006dcafd:
     param_1->field_004C = iVar2;
     param_1->field_0048 = iVar5 + -2;
   }
+
   ST3DSMAPContext::sub_006E1C20
             ((ST3DSMAPContext *)param_1,(float)param_1->field_0030,param_1->field_003C + -1,
              (float)((float10)param_1->field_00D0 * (float10)_DAT_0079df90),&local_14,&local_18);
@@ -364,6 +375,7 @@ LAB_006dcafd:
     param_1->field_005C = iVar2;
     param_1->field_0058 = iVar5 + 2;
   }
+
   ST3DSMAPContext::sub_006E1C20
             ((ST3DSMAPContext *)param_1,(float)(param_1->field_0038 + -1),param_1->field_003C + -1,
              (float)((float10)param_1->field_00D0 * (float10)_DAT_0079df90),&local_14,&local_18);

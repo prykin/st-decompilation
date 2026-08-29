@@ -80,7 +80,8 @@ CPanelTy::PaintTxtBut::cf_common_join_004F3D83:
 004F3DDA  83 C4 10                  ADD ESP,0x10
 004F3DDD  50                        PUSH EAX
 004F3DDE  52                        PUSH EDX
-004F3DDF  E8 FC DE 1F 00            CALL 0x006f1ce0
+CPanelTy::PaintTxtBut::override::prt_4f3ddf_6752cf82:
+004F3DDF  E8 FC DE 1F 00            CALL 0x006f1ce0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int
 004F3DE4  8B 75 08                  MOV ESI,dword ptr [EBP + 0x8]
 004F3DE7  8B 7D F0                  MOV EDI,dword ptr [EBP + -0x10]
 004F3DEA  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
@@ -127,7 +128,8 @@ CPanelTy::PaintTxtBut::cf_common_join_004F3D83:
 004F3E61  6A FE                     PUSH -0x2
 004F3E63  52                        PUSH EDX
 004F3E64  50                        PUSH EAX
-004F3E65  E8 D6 C2 1B 00            CALL 0x006b0140
+CPanelTy::PaintTxtBut::override::prt_4f3e65_b09bf718:
+004F3E65  E8 D6 C2 1B 00            CALL 0x006b0140  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__stdcall;pointer:/ccFntTy;/WinDef.h/UINT;/WinDef.h/HINSTANCE
 004F3E6A  8B 0D 28 2A 80 00         MOV ECX,dword ptr [0x00802a28]
 004F3E70  50                        PUSH EAX
 004F3E71  8B 49 24                  MOV ECX,dword ptr [ECX + 0x24]

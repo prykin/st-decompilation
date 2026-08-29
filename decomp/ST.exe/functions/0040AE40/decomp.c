@@ -12,9 +12,15 @@
 
    [STTypeFamilyApplier] RETURN_TO_LOCAL_FAMILY.
    Evidence: direct call return copied through registers into this script-owned anonymous stack
-   local */
+   local
 
-int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
+   [STMethodOwnerApplier] Structural method owner recovered as STGroupBoatC.
+   Evidence: this_call_owners=[STGroupBoatC]; agreed_this_calls=4; incoming_this_accesses=0;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=7; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=3; owner_evidence_coverage=adequate;
+   unique_primary_physical_vtable=true */
+
+int __thiscall STGroupBoatC::sub_0040AE40(STGroupBoatC *this,uint param_1,char param_2)
 
 {
   short sVar1;
@@ -62,14 +68,15 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
   short *local_20;
   int local_1c;
   short *local_18;
-  void *local_14;
+  STGroupBoatC *local_14;
   short *local_10;
   int local_c;
   int local_8;
   short *temp_103f0adf3284;
 
   local_14 = this;
-  pSVar5_mg0 = thunk_FUN_00423e70(this,(ushort)param_1);
+  /* ST_CALLSITE[0040AE53]: CALL 0x0040286f; direct=0040286F STGroupBoatC::sub_00423E70 */
+  pSVar5_mg0 = sub_00423E70(this,(ushort)param_1);
   if (pSVar5_mg0 == nullptr) {
     return -4;
   }
@@ -124,6 +131,7 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
   if (g_pathingGrid.sizeZ <= iVar11) {
     return -4;
   }
+
   local_3c = FUN_006aadd0((int)sVar1,(int)sVar2,(int)sVar3,iVar8,iVar9,iVar11);
   if (local_3c <= pSVar5_mg0->field_00B7) {
     return 0;
@@ -131,6 +139,7 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
   local_2c = nullptr;
   local_90.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_90;
+
   local_EAX_318 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
   pSVar5 = local_48;
   if (local_EAX_318 != 0) {
@@ -146,6 +155,7 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
   iVar9 = local_8 * g_pathingGrid.planeStride;
   iVar8 = local_c * g_pathingGrid.sizeX;
   if (g_pathingGrid.cells[local_48->field_00BB + iVar8 + iVar9] < 0) {
+    /* ST_CALLSITE[0040AFED]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/short; source view only; no Ghidra override */
     psVar6 = Library::DKW::LIB::MemAlloc(0x90);
     pSVar5->field_009F = psVar6;
     for (iVar8 = 0x24; iVar8 != 0; iVar8 = iVar8 + -1) {
@@ -176,10 +186,12 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
       else if (((((g_pathingGrid.cells
                    [(int)local_48->field_0049 * (int)g_pathingGrid.sizeX + iVar11 + iVar9] & 0xc000U
                   ) != 0xc000) &&
+
                 (local_EAX_679 =
                       thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)local_48,iVar11,
                                          (int)local_48->field_0049,local_8), local_EAX_679 != 0)) &&
                ((STGridAt3D(g_pathingGrid, pSVar5->field_0047, pSVar5->field_00BF, pSVar5->field_004B) & 0xc000U) != 0xc000)) &&
+
               (local_EAX_775 =
                     thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar5,
                                        (int)pSVar5->field_0047,pSVar5->field_00BF,
@@ -198,11 +210,13 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
         iVar9 = local_8;
 joined_r0x0040b258:
         if (((uVar4 & 0xc000) != 0xc000) &&
+
            (local_EAX_884 =
                  thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)local_48,iVar11,iVar12,iVar9
                                    ), local_EAX_884 != 0)) {
           if (((STGridAt3D(g_pathingGrid, pSVar5->field_00BB, pSVar5->field_0049, pSVar5->field_004B) &
                0xc000U) != 0xc000) &&
+
              (local_EAX_976 =
                    thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar5,pSVar5->field_00BB,
                                       (int)pSVar5->field_0049,(int)pSVar5->field_004B),
@@ -221,34 +235,40 @@ joined_r0x0040b258:
         }
         if (((((((g_pathingGrid.cells[iVar9 * g_pathingGrid.planeStride + iVar11 + iVar8] & 0xc000U)
                  != 0xc000) &&
+
                (iVar6 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)local_48,iVar11,
                                            local_c,iVar9), iVar6 != 0)) &&
               ((STGridAt3D(g_pathingGrid, pSVar5->field_00BB, pSVar5->field_0049, pSVar5->field_004B) &
                0xc000U) != 0xc000)) &&
+
              (((local_EAX_1206 =
                      thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar5,
                                         pSVar5->field_00BB,(int)pSVar5->field_0049,
                                         (int)pSVar5->field_004B), local_EAX_1206 != 0 &&
                ((STGridAt3D(g_pathingGrid, pSVar5->field_00BB, pSVar5->field_00BF, pSVar5->field_004B) &
                 0xc000U) != 0xc000)) &&
+
               ((local_EAX_1305 =
                      thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar5,
                                         pSVar5->field_00BB,pSVar5->field_00BF,
                                         (int)pSVar5->field_004B), local_EAX_1305 != 0 &&
                (((STGridAt3D(g_pathingGrid, pSVar5->field_0047, pSVar5->field_00BF, pSVar5->field_00C3) &
                  0xc000U) != 0xc000 &&
+
                 (local_EAX_1402 =
                       thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar5,
                                          (int)pSVar5->field_0047,pSVar5->field_00BF,
                                          pSVar5->field_00C3), local_EAX_1402 != 0)))))))) &&
             ((STGridAt3D(g_pathingGrid, pSVar5->field_00BB, pSVar5->field_0049, pSVar5->field_00C3) & 0xc000U)
              != 0xc000)) &&
+
            ((local_EAX_1497 =
                   thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar5,pSVar5->field_00BB,
                                      (int)pSVar5->field_0049,pSVar5->field_00C3),
             local_EAX_1497 != 0 &&
             ((STGridAt3D(g_pathingGrid, pSVar5->field_0047, pSVar5->field_0049, pSVar5->field_00C3) &
              0xc000U) != 0xc000)))) {
+
           local_EAX_1584 =
                thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar5,(int)pSVar5->field_0047
                                   ,(int)pSVar5->field_0049,pSVar5->field_00C3);
@@ -260,6 +280,7 @@ joined_r0x0040b258:
     }
 LAB_0040b481:
     if (psVar6 == nullptr) goto LAB_0040b56a;
+    /* ST_CALLSITE[0040B48E]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/short; source view only; no Ghidra override */
     psVar6 = Library::DKW::LIB::MemAlloc(0x90);
     pSVar5->field_009F = psVar6;
     for (iVar8 = 0x24; iVar8 != 0; iVar8 = iVar8 + -1) {
@@ -289,10 +310,12 @@ LAB_0040b481:
   pSVar5->field_00A3 = 2;
 LAB_0040b56a:
   if (pSVar5->field_009F == nullptr) {
+
     local_EAX_1884 =
          FUN_006a62e0((int)pSVar5->field_0047,(int)pSVar5->field_0049,(int)pSVar5->field_004B,
                       pSVar5->field_00BB,pSVar5->field_00BF,pSVar5->field_00C3);
     pSVar5->field_00AF = local_EAX_1884;
+
     local_28 = Library::DKW::LIB::MemAllocClear(0x2ae);
     sVar1 = pSVar5->field_0047;
     local_10 = (short *)((int)local_28 + 0x156);
@@ -346,6 +369,7 @@ LAB_0040b56a:
             if (iVar8 <= local_30) {
               psVar6 = local_38 + local_8;
               do {
+
                 iVar10 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)pSVar5,
                                             pSVar5->field_0047 + iVar8,
                                             (int)pSVar5->field_0049 + local_24,
@@ -390,6 +414,7 @@ LAB_0040b56a:
     if (psVar7 == nullptr) {
       int scalar_psVar13 = (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX; /* split integer lifetime from pointer-typed SSA storage */
       int scalar_local_40 = scalar_psVar13;
+
       local_2c = Library::DKW::LIB::MemAlloc((int)g_pathingGrid.sizeZ * scalar_psVar13 * 2);
       iVar8 = (int)g_pathingGrid.sizeZ;
       temp_103f0adf3284 = g_pathingGrid.cells;

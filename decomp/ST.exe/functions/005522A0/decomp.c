@@ -18,7 +18,7 @@ int __thiscall TradePanelTy::GetMessage(TradePanelTy *this,STMessage *message)
   int iVar3;
   LPSTR pCVar3;
   int iVar4;
-  ushort *puVar5;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar5;
   int iVar6;
   int iVar7;
   AnonPointee_TradePanelTy_0000 *pAVar8;
@@ -33,7 +33,7 @@ int __thiscall TradePanelTy::GetMessage(TradePanelTy *this,STMessage *message)
   uint *puVar16;
   uint uVar17;
   InternalExceptionFrame local_68;
-  undefined1 local_24;
+  byte local_24;
   short sStack_23;
   uint uStack_21;
   undefined1 uStack_1d;
@@ -49,10 +49,12 @@ int __thiscall TradePanelTy::GetMessage(TradePanelTy *this,STMessage *message)
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_c = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   this_00 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\tradecen.cpp",0x175,0,iVar3,
                                "%s","TradePanelTy::GetMessage");
     if (iVar6 == 0) {
@@ -90,10 +92,12 @@ LAB_00552481:
           uStack_10 = (undefined1)
                       ((ushort)*(undefined2 *)(&this_00->field_0x1ad + (uint)bVar11 * 8) >> 8);
         }
-        thunk_FUN_0054edf0((undefined4 *)0x20,(uint *)&local_18,0,0xffffffff);
+        /* ST_CALLSITE[005523A9]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+        STPlaySystemC::sub_0054EDF0
+                  (g_playSystem_00802A38,(undefined4 *)0x20,(uint *)&local_18,0,0xffffffff);
         if (this_00->field_01BB != '\0') {
           this_00->field_0028 = 0xbfff;
-          /* ST_CALLSITE[005523CB]: CALL dword ptr [EDX] */
+          /* ST_CALLSITE[005523CB]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
           (*STField<code *>(this_00->field_0000,0x0000))(&this_00->field_0x18);
           g_currentExceptionFrame = local_68.previous;
           return 0;
@@ -128,7 +132,9 @@ LAB_00552481:
         uVar1 = *(undefined2 *)((int)&this_00->field_01AF + (uint)bVar11 * 8 + 2);
         uStack_1d = (undefined1)uVar1;
         uStack_1c = (undefined1)((ushort)uVar1 >> 8);
-        thunk_FUN_0054edf0((undefined4 *)0x20,(uint *)&local_24,0,0xffffffff);
+        /* ST_CALLSITE[00552441]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+        STPlaySystemC::sub_0054EDF0
+                  (g_playSystem_00802A38,(undefined4 *)0x20,(uint *)&local_24,0,0xffffffff);
         g_currentExceptionFrame = local_68.previous;
         return 0;
       }
@@ -167,28 +173,33 @@ LAB_00552481:
       uVar10 = 0xffffffff;
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar7 = *(int *)((message->arg0).u32 + 0x10) - iVar7;
+
       iVar4 = thunk_FUN_0052a7b0((AnonShape_0052A7B0_DD603BF4 *)message);
       iVar9 = 2;
+      /* ST_CALLSITE[0055250D]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       pCVar3 = thunk_FUN_00571240("BUT_RCTTYPE",0);
+      /* ST_CALLSITE[00552516]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       pCVar3 = FUN_006f2c00(pCVar3,iVar9,iVar4);
-      puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+      /* ST_CALLSITE[00552528]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/int;/SubmarineTitans/Recovered/Enums/Global_mfRLoad_param_2Enum;pointer:/char;/uint;/byte;/int;/int;pointer:/undefined4 */
+      pRVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                          (PTR_00806794,CASE_1,pCVar3,uVar10,bVar11,iVar12,iVar14,puVar16);
       /* ST_CALLSITE[00552539]: CALL 0x00403229; direct=00403229 DibPut */
-      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,iVar7,'\x01',
-             (byte *)puVar5);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,iVar7,'\x01',pRVar5);
       if (*(int *)((message->arg0).u32 + 4) == 3) {
         puVar16 = nullptr;
         iVar9 = 0;
         iVar4 = 1;
         bVar11 = 0;
         uVar10 = 0xffffffff;
+        /* ST_CALLSITE[0055255B]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
         pCVar3 = thunk_FUN_00571240("BUT_RCTFTYPE",0);
-        puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+        /* ST_CALLSITE[0055256C]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/int;/SubmarineTitans/Recovered/Enums/Global_mfRLoad_param_2Enum;pointer:/char;/uint;/byte;/int;/int;pointer:/undefined4 */
+        pRVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                            (PTR_00806794,CASE_6,pCVar3,uVar10,bVar11,iVar4,iVar9,puVar16);
         /* ST_CALLSITE[0055257D]: CALL 0x00403229; direct=00403229 DibPut */
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,iVar7,'\x06',
-               (byte *)puVar5);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,local_8,iVar7,'\x06',pRVar5);
       }
+
       Library::DKW::DDX::FUN_006b3640
                 ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
                  this_00->field_0044);

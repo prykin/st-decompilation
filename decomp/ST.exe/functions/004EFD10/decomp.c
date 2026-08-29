@@ -28,12 +28,14 @@ void __thiscall BldLabPanelTy::Update(BldLabPanelTy *this)
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_8 = this;
+
     errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     this_00 = local_8;
     if (errorCode == 0) {
       ppBVar1 = &local_8->field_027A;
       /* ST_CALLSITE[004EFD67]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
-      STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,0xc,(AnonShape_0043BEB0_1C00EC12 *)ppBVar1);
+      STAllPlayersC::GetPanelInfo
+                (g_allPlayers_007FA174,0xc,(RecoveredRecordView_0043BEB0_8330D129 *)ppBVar1);
       thunk_FUN_0053f510(this_00,(*ppBVar1)->count,local_c);
       /* ST_CALLSITE[004EFD7F]: CALL 0x004038eb; direct=004038EB BldLabPanelTy::sub_004EFE20 */
       sub_004EFE20(this_00);
@@ -41,6 +43,7 @@ void __thiscall BldLabPanelTy::Update(BldLabPanelTy *this)
       return;
     }
     g_currentExceptionFrame = local_50.previous;
+
     iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\bldlab.cpp",0x30,0,errorCode,
                                "%s","BldLabPanelTy::Update");
     if (iVar3 != 0) {

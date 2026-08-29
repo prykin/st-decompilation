@@ -38,6 +38,7 @@ undefined4 __thiscall TLOBaseTy::sub_004CA7B0(TLOBaseTy *this,uint param_1,int p
   local_8 = this->field_0245;
   puVar7 = &local_10;
   puVar5 = &param_1;
+
   uVar3 = thunk_FUN_004ab050();
   /* ST_CALLSITE[004CA7FB]: CALL 0x00404101; direct=00404101 TLOBaseTy::sub_004CAFC0 */
   sub_004CAFC0(this,uVar8,uVar3,puVar5,puVar7);
@@ -54,6 +55,7 @@ cf_common_exit_004CA871:
     if (iVar2 != 1) {
       iVar4 = ((0x18 - this->field_0259 / 0xf) % 0x18 + (4 - DAT_008073fc) * 6) % 0x18;
       iVar2 = param_1 * iVar4;
+
       thunk_FUN_004abce0(this_00,bVar6,iVar2,iVar2,'\0');
       uVar8 = param_1 * iVar4;
       goto cf_common_exit_004CAAA4;
@@ -81,6 +83,7 @@ LAB_004ca835:
       else {
         iVar2 = iVar2 - *(int *)(&pAVar1->field_0x18 + uVar8 * 0x24);
       }
+
       thunk_FUN_004abce0(this_00,bVar6,param_1,local_10,'\0');
       uVar8 = param_1;
       if (param_2 != 0) {
@@ -117,6 +120,7 @@ LAB_004ca835:
         local_8 = iVar2 - *(int *)(&pAVar1->field_0x18 + uVar8 * 0x24);
       }
       iVar2 = local_c + 1;
+
       thunk_FUN_004abce0(this_00,bVar6,param_1 * local_c,iVar2 * param_1 + -1,'\0');
       if (param_2 == 0) {
         uVar8 = param_1 * local_c;
@@ -140,6 +144,7 @@ LAB_004ca835:
       goto cf_common_exit_004CAAA4;
     }
   }
+
   thunk_FUN_004abce0(this_00,bVar6,0,0,'\0');
   uVar8 = 0;
 cf_common_exit_004CAAA4:

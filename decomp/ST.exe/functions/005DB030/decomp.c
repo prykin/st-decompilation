@@ -25,7 +25,7 @@ undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
   byte local_274 [260];
   byte local_170 [260];
   InternalExceptionFrame local_6c;
-  undefined1 local_28 [3];
+  byte local_28 [3];
   int local_25;
   byte *local_20;
   int *local_1c;
@@ -33,8 +33,7 @@ undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
   int local_14;
   int local_10;
   int local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0;
   if (param_3 != '\0') {
     return 0;
@@ -51,12 +50,14 @@ undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
             ((char *)local_170,(char *)local_378,(char *)local_274,(char *)local_47c,nullptr);
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_6c.previous;
     return local_8;
   }
-  this = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_170,0,0,0);
+  /* ST_CALLSITE[005DB0F3]: CALL 0x006f0ec0; direct=006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint */
+  this = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_170,0,0,0);
   puVar5 = cMf32::RecGet(this,0,PTR_s_DESCRIPTOR_0079c1d8,(int *)&local_1c,0);
   if ((puVar5 == nullptr) ||
      ((*local_18 == '\x05' &&

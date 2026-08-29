@@ -34,7 +34,7 @@ LAB_004a839c:
 004A83A7  68 3C BE 7A 00            PUSH 0x7abe3c
 004A83AC  51                        PUSH ECX
 004A83AD  68 09 00 FE AF            PUSH 0xaffe0009
-004A83B2  E8 89 DA 1F 00            CALL 0x006a5e40
+004A83B2  E8 89 DA 1F 00            CALL 0x006a5e40  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 LAB_004a83b7:
 004A83B7  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]
 004A83BA  8A 46 24                  MOV AL,byte ptr [ESI + 0x24]
@@ -42,7 +42,7 @@ LAB_004a83b7:
 004A83C3  6A 01                     PUSH 0x1
 004A83C5  52                        PUSH EDX
 004A83C6  50                        PUSH EAX
-004A83C7  E8 EE A4 F5 FF            CALL 0x004028ba
+004A83C7  E8 EE A4 F5 FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override
 004A83CC  8D 4D F8                  LEA ECX,[EBP + -0x8]
 004A83CF  8D 55 F6                  LEA EDX,[EBP + -0xa]
 004A83D2  51                        PUSH ECX

@@ -6,7 +6,8 @@
    structure /SubmarineTitans/Recovered/PointerShapes/AnonShape_004F4F90_2D6E0DDA (current recovered
    extent=3528) */
 
-AnonShape_004F4F90_2D6E0DDA * __fastcall FUN_004f4f90(AnonShape_004F4F90_2D6E0DDA *param_1)
+RecoveredRecordView_004F4F90_9FDA4667 * __fastcall
+FUN_004f4f90(RecoveredRecordView_004F4F90_9FDA4667 *param_1)
 
 {
   byte *puVar1;

@@ -44,12 +44,14 @@ int __fastcall FUN_0048d440(STBoatC *param_1)
   if (param_1->field_04AB == (HoloTy *)0xffffffff) {
     return (uint)(param_1->field_07DA + param_1->field_07D6 + param_1->field_07D2 < 0x28);
   }
-  iVar1 = thunk_FUN_0040bc90(this,(uint)(ushort)param_1->field_0032,
-                             (short *)(int)param_1->field_049B,(short *)(int)param_1->field_049D,
-                             (short *)(param_1->field_049F + 1),'\0');
-  iVar2 = thunk_FUN_0040bc90(this,(uint)(ushort)param_1->field_0032,
-                             (short *)(int)param_1->field_04A5,(short *)(int)param_1->field_04A7,
-                             (short *)(param_1->field_04A9 + 1),'\0');
+  /* ST_CALLSITE[0048D4EF]: CALL 0x0040407a; direct=0040407A STGroupBoatC::sub_0040BC90 */
+  iVar1 = STGroupBoatC::sub_0040BC90
+                    (this,(uint)(ushort)param_1->field_0032,(short *)(int)param_1->field_049B,
+                     (short *)(int)param_1->field_049D,(short *)(param_1->field_049F + 1),'\0');
+  /* ST_CALLSITE[0048D51A]: CALL 0x0040407a; direct=0040407A STGroupBoatC::sub_0040BC90 */
+  iVar2 = STGroupBoatC::sub_0040BC90
+                    (this,(uint)(ushort)param_1->field_0032,(short *)(int)param_1->field_04A5,
+                     (short *)(int)param_1->field_04A7,(short *)(param_1->field_04A9 + 1),'\0');
   if (iVar1 != -4) {
     if (iVar2 == -4) {
       return (uint)(param_1->field_07DA + param_1->field_07D6 + param_1->field_07D2 < 0x28);

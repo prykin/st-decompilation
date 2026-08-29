@@ -17,7 +17,7 @@ uint * FUN_0043ec20(char param_1,Global_sub_0043EC20_param_2Enum param_2,short p
   int iVar4;
   int iVar5;
   int iVar6;
-  undefined1 local_14 [4];
+  byte local_14 [4];
   int local_10;
   int local_c;
   int local_8;
@@ -67,31 +67,28 @@ uint * FUN_0043ec20(char param_1,Global_sub_0043EC20_param_2Enum param_2,short p
             iVar6 = iVar3 * 8 + -8;
             do {
               piVar1 = *(int **)((int)g_worldGrid.cells[1].objects + iVar6);
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
               if ((((piVar1 != nullptr) && (piVar1[9] == (int)param_1)) && (piVar1 != nullptr)
-                  /* ST_CALLSITE[0043ED52]: CALL dword ptr [EAX + 0x2c] */
-                  ) && ((GVar2 = (**(code **)(*piVar1 + 0x2c))(), GVar2 == param_2 &&
-                        /* ST_CALLSITE[0043ED5E]: CALL dword ptr [EDX + 0xf8] */
-                        (iVar4 = (**(code **)(*piVar1 + 0xf8))(), iVar4 != 0)))) {
+                  /* ST_CALLSITE[0043ED52]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                  ) && ((GVar2 = STStructuralVirtualCall<undefined4>(piVar1, 0x2C), GVar2 == param_2 &&
+                        /* ST_CALLSITE[0043ED5E]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                        (iVar4 = STStructuralVirtualCall<undefined4>(piVar1, 0xF8), iVar4 != 0)))) {
                 if (param_9 == 0) {
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_0043eda0:
                   if ((param_10 == -1) ||
-                     /* ST_CALLSITE[0043EDAA]: CALL dword ptr [EDX + 0x6c] */
-                     (iVar4 = (**(code **)(*piVar1 + 0x6c))(), iVar4 == param_10)) {
+                     /* ST_CALLSITE[0043EDAA]: CALL dword ptr [EDX + 0x6c]; [STIndirectCallsiteApplier] exact slot 0x6C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                     (iVar4 = STStructuralVirtualCall<undefined4>(piVar1, 0x6C), iVar4 == param_10)) {
                     Library::DKW::TBL::DArrayAppend(array,(void *)((int)piVar1 + 0x32));
                   }
                 }
                 else {
                   switch(param_2) {
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                   case CASE_38:
                   case CASE_39:
                   case CASE_4F:
                   case CASE_5E:
                     if ((param_9 == 1) &&
-                       /* ST_CALLSITE[0043ED96]: CALL dword ptr [EAX + 0x88] */
-                       (iVar4 = (**(code **)(*piVar1 + 0x88))(local_14), 0 < iVar4))
+                       /* ST_CALLSITE[0043ED96]: CALL dword ptr [EAX + 0x88]; [STIndirectCallsiteApplier] exact slot 0x88; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
+                       (iVar4 = STStructuralVirtualCall<undefined4>(piVar1, 0x88, local_14), 0 < iVar4))
                     goto LAB_0043eda0;
                   }
                 }

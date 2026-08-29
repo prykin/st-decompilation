@@ -19,9 +19,9 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
   int local_EBX_18;
   int iVar6;
   InternalExceptionFrame local_58;
-  undefined2 local_14;
-  undefined2 local_12;
-  undefined2 local_10;
+  ushort local_14;
+  ushort local_12;
+  ushort local_10;
   int local_c;
   DArrayTy *local_8;
 
@@ -34,20 +34,24 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
   }
   array = Library::DKW::TBL::DArrayCreate(nullptr,(uint)uVar2,6,1);
   local_8 = array;
-  uVar2 = thunk_FUN_004233c0(param_1);
+  /* ST_CALLSITE[004155D4]: CALL 0x00401735; direct=00401735 STGroupBoatC::sub_004233C0 */
+  uVar2 = sub_004233C0(param_1);
   DAT_007f4d4c = (uint)uVar2;
   if ((DAT_007f4d4c < 2) && (param_1->field_0027 == 1)) {
     local_14 = (undefined2)param_6;
     local_12 = (undefined2)param_7;
     local_10 = (undefined2)param_8;
+
     Library::DKW::TBL::DArrayAppend(array,&local_14);
     goto LAB_004157f0;
   }
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
+
   local_EBX_18 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   if (local_EBX_18 == 0) {
     if (param_1->field_004D != 0) {
+
       iVar4 = FUN_006db910(param_3,param_4,param_6,param_7);
       iVar3 = ((iVar4 * 4 + 0x2d) / 0x5a) * 0x5a;
       iVar3 = STSignedDiv4(iVar3);
@@ -66,6 +70,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
           local_14 = *(undefined2 *)(iVar6 + 0xc + (int)PTR_007f4d04);
           local_12 = *(undefined2 *)(iVar6 + 0x10 + (int)PTR_007f4d04);
           local_10 = *(undefined2 *)(iVar6 + 0x14 + (int)PTR_007f4d04);
+
           Library::DKW::TBL::DArrayPut
                     (local_8,*(uint *)(iVar6 + 0x18 + (int)PTR_007f4d04),&local_14);
           iVar3 = iVar3 + 1;
@@ -79,6 +84,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
           local_14 = *(undefined2 *)(PTR_007f4d04 + iVar6 * 7 + -4);
           local_12 = *(undefined2 *)(PTR_007f4d04 + iVar6 * 7 + -3);
           local_10 = *(undefined2 *)(PTR_007f4d04 + iVar6 * 7 + -2);
+
           Library::DKW::TBL::DArrayPut(local_8,PTR_007f4d04[iVar6 * 7 + -1],&local_14);
           iVar3 = iVar3 + 1;
         } while (iVar3 < DAT_007f4cf8);
@@ -94,6 +100,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
       local_12 = (undefined2)param_7;
       if (param_1->field_0027 != 0) {
         do {
+
           Library::DKW::TBL::DArrayAppend(local_8,&local_14);
           iVar3 = iVar3 + 1;
         } while (iVar3 < (int)(uint)(ushort)param_1->field_0027);
@@ -105,6 +112,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
   else {
     g_currentExceptionFrame = local_58.previous;
     local_c = local_EBX_18;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\Grpway3d.cpp",0xeae,0,local_EBX_18,
                                "%s","STGroupBoatC::Way3DGrpGetDistrPoint");
     if (iVar5 != 0) {

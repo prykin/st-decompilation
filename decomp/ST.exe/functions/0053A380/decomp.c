@@ -20,6 +20,7 @@ void __thiscall PlayPanelTy::DonePlayPanel(PlayPanelTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pPVar2 = local_c;
   if (iVar3 == 0) {
@@ -64,6 +65,7 @@ void __thiscall PlayPanelTy::DonePlayPanel(PlayPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\playpan.cpp",0x97,0,iVar3,"%s",
                              "PlayPanelTy::DonePlayPanel");
   if (iVar4 != 0) {

@@ -22,7 +22,7 @@ float10 FUN_006c8990(byte *param_1,int *param_2,undefined4 *param_3)
   int iVar14;
   double local_30;
   uint local_28;
-  undefined4 local_24;
+  uint local_24;
   uint uStack_1c;
   uint local_18;
   int local_14;

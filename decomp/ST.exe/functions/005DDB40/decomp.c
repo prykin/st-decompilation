@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_005ddb40(int param_1)
+/* [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=3, ignored=0,
+   unknown=0 */
+
+int __fastcall FUN_005ddb40(RecoveredRecordView_005DDB40_9DCD82E5 *param_1)
 
 {
   char cVar1;
@@ -20,13 +25,11 @@ undefined4 __fastcall FUN_005ddb40(int param_1)
   char *local_c;
   StartSystemTy *local_8;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int *)(*(int *)(param_1 + 0x686) + 8) < 1) {
+  if (param_1->field_0686->field_0008 < 1) {
     pcVar8 = nullptr;
   }
   else {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    pcVar8 = (char *)**(undefined4 **)(*(int *)(param_1 + 0x686) + 0x14);
+    pcVar8 = (char *)*param_1->field_0686->field_0014;
   }
   local_8 = (StartSystemTy *)param_1;
   bVar3 = thunk_FUN_00571810(pcVar8);
@@ -34,8 +37,7 @@ undefined4 __fastcall FUN_005ddb40(int param_1)
   if (CONCAT31(extraout_var,bVar3) == 0) {
     return 0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  pDVar7 = *(DArrayTy **)(param_1 + 0x696);
+  pDVar7 = param_1->field_0696;
   pcVar8 = local_460;
   for (iVar4 = 0x114; iVar4 != 0; iVar4 = iVar4 + -1) {
     pcVar8[0] = '\0';

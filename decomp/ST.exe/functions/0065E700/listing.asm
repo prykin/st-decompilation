@@ -7,7 +7,8 @@ FUN_0065e700:
 0065E708  57                        PUSH EDI
 0065E709  89 4D F4                  MOV dword ptr [EBP + -0xc],ECX
 0065E70C  83 CE FF                  OR ESI,0xffffffff
-0065E70F  E8 BB 31 DA FF            CALL 0x004018cf
+FUN_0065e700::override::prt_65e70f_a0e5684e:
+0065E70F  E8 BB 31 DA FF            CALL 0x004018cf  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__fastcall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/AiFltClassTy;/undefined4
 0065E714  8B F8                     MOV EDI,EAX
 0065E716  85 FF                     TEST EDI,EDI
 0065E718  0F 84 D9 00 00 00         JZ 0x0065e7f7
@@ -42,7 +43,8 @@ LAB_0065e760:
 0065E769  8A 48 24                  MOV CL,byte ptr [EAX + 0x24]
 0065E76C  51                        PUSH ECX
 0065E76D  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
-0065E773  E8 42 41 DA FF            CALL 0x004028ba
+FUN_0065e700::override::prt_65e773_81281cbb:
+0065E773  E8 42 41 DA FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STFishC; signature=__thiscall;pointer:/STFishC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 0065E778  85 C0                     TEST EAX,EAX
 0065E77A  74 37                     JZ 0x0065e7b3
 0065E77C  8D 55 FA                  LEA EDX,[EBP + -0x6]

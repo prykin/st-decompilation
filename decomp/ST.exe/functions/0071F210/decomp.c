@@ -9,7 +9,8 @@ ViewerClassTy * __cdecl CreateViewer(void)
 {
   ViewerClassTy *pVVar1;
 
-  pVVar1 = (ViewerClassTy *)FUN_006b04d0(0x1f8);
+  /* ST_CALLSITE[0071F215]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ViewerClassTy; signature=__stdcall;pointer:/ViewerClassTy;/uint */
+  pVVar1 = FUN_006b04d0(0x1f8);
   if (pVVar1 != nullptr) {
     pVVar1 = ViewerClassTy::ViewerClassTy(pVVar1);
     return pVVar1;

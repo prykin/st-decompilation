@@ -12,9 +12,9 @@ _EnumDest(byte *param_1,char param_2,short param_3,short param_4,short param_5,s
 
 {
   byte bVar1;
-  STFishC *this;
+  STGameObjC *this;
   int iVar3;
-  uint *puVar3;
+  STGameObjC **ppSVar3;
   byte *pbVar4;
   int iVar5;
   int iVar6;
@@ -37,9 +37,11 @@ _EnumDest(byte *param_1,char param_2,short param_3,short param_4,short param_5,s
   }
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_6c.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_mdef.cpp",0x470,0,iVar3,"%s",
                                "_EnumDest");
     if (iVar6 != 0) {
@@ -59,18 +61,20 @@ _EnumDest(byte *param_1,char param_2,short param_3,short param_4,short param_5,s
   }
   do {
     if (local_10 < g_array_007FA164->count) {
-      puVar3 = DArrayAt<undefined4>(g_array_007FA164, local_10);
+      /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(g_array_007FA164, local_10) (runtime stride) */
+      ppSVar3 = (STGameObjC **)
+                (g_array_007FA164->elementSize * local_10 + (int)g_array_007FA164->data);
     }
     else {
-      puVar3 = nullptr;
+      ppSVar3 = nullptr;
     }
-    this = (STFishC *)*puVar3;
+    this = *ppSVar3;
     if (this != nullptr) {
       iVar7 = 1;
       local_14 = 1;
       if ((param_1 != nullptr) && (*param_1 != 0)) {
-        /* ST_CALLSITE[00678660]: CALL dword ptr [EDX + 0x74] */
-        (*this->vtable->vfunc_74)((short)local_28);
+        /* ST_CALLSITE[00678660]: CALL dword ptr [EDX + 0x74]; [STIndirectCallsiteApplier] exact slot 0x74; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4 */
+        (*((STFishCVTable *)this->vtable)->vfunc_74)((short)local_28);
         pbVar8 = local_28;
         pbVar4 = param_1;
         do {
@@ -96,16 +100,18 @@ LAB_00678692:
         }
       }
       if ((iVar7 != 0) &&
-         /* ST_CALLSITE[006786AD]: CALL dword ptr [EAX + 0x6c] */
-         ((local_5 == -1 || (iVar5 = this->vfunc_6C(), local_5 == iVar5)))) {
+         ((local_5 == -1 ||
+          /* ST_CALLSITE[006786AD]: CALL dword ptr [EAX + 0x6c] */
+          (iVar5 = (*((STFishCVTable *)this->vtable)->vfunc_6C)((STFishC *)this), local_5 == iVar5))
+         )) {
         if ((0 < param_6) &&
            (((0 < param_7 && (0 < param_8)) &&
             /* ST_CALLSITE[006786E1]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
-            ((STFishC::sub_004162B0(this,&local_8,&local_a,&local_c), local_8 < param_3 ||
-             ((((local_a < param_4 || (local_c < param_5)) ||
-               ((int)param_3 + (int)param_6 <= (int)local_8)) ||
-              (((int)param_4 + (int)param_7 <= (int)local_a ||
-               (iVar7 = local_14, (int)param_5 + (int)param_8 <= (int)local_c)))))))))) {
+            ((STFishC::sub_004162B0((STFishC *)this,&local_8,&local_a,&local_c), local_8 < param_3
+             || ((((local_a < param_4 || (local_c < param_5)) ||
+                  ((int)param_3 + (int)param_6 <= (int)local_8)) ||
+                 (((int)param_4 + (int)param_7 <= (int)local_a ||
+                  (iVar7 = local_14, (int)param_5 + (int)param_8 <= (int)local_c)))))))))) {
           iVar7 = 0;
         }
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */

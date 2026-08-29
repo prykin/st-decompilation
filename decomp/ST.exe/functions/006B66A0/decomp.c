@@ -20,7 +20,7 @@ int FUN_006b66a0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undef
   undefined1 auStack_24 [4];
   int iStack_20;
   int *piStack_1c;
-  undefined4 uStack_18;
+  uint uStack_18;
   undefined4 **ppuStack_14;
 
   puVar4 = param_1;

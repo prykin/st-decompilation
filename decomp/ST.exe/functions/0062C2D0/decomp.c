@@ -3,7 +3,8 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-bool __cdecl FUN_0062c2d0(AnonShape_0062C2D0_06591E1F *param_1,int param_2,int param_3,int param_4)
+bool __cdecl
+FUN_0062c2d0(RecoveredRecordView_0062C2D0_7D89257C *param_1,int param_2,int param_3,int param_4)
 
 {
   float fVar1;

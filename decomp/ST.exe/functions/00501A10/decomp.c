@@ -36,7 +36,8 @@ void __thiscall CPanelTy::sub_00501A10(CPanelTy *this)
       this->field_0454 = this->field_00A0 + 8;
       this->field_0458 = 100;
       this->field_045C = 0x3c;
-      pBVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_077C,0);
+      /* ST_CALLSITE[00501ABB]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override */
+      pBVar2 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this->field_077C,0);
       this->field_0460 = pBVar2;
       this->field_0464 = this->field_0458;
       this->field_0468 = 0x4e87;
@@ -44,7 +45,8 @@ void __thiscall CPanelTy::sub_00501A10(CPanelTy *this)
       this->field_0470 = this->field_00A0 + 6;
       this->field_0474 = 0x20;
       this->field_0478 = 0x35;
-      pBVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_077C,2);
+      /* ST_CALLSITE[00501B14]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override */
+      pBVar2 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this->field_077C,2);
       this->field_047C = pBVar2;
       this->field_0484 = 0x2ef0;
       this->field_0480 = this->field_0474;
@@ -56,9 +58,9 @@ void __thiscall CPanelTy::sub_00501A10(CPanelTy *this)
     case CASE_16:
     case CASE_17:
     case CASE_25:
-      pBVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_02B2,0);
+      pBVar2 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this->field_02B2,0);
       this->field_043C = (pBVar2->bmiHeader).biWidth;
-      pBVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_02B2,0);
+      pBVar2 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this->field_02B2,0);
       this->field_0440 = (pBVar2->bmiHeader).biHeight;
       *piVar1 = (this->field_018C->field_0004 - this->field_043C) / 2 + this->field_0048;
       this->field_0438 = this->field_00A0 + 0x50;

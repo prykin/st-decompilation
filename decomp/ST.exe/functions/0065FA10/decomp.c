@@ -26,7 +26,8 @@
    decompilation contains no value return */
 
 void __fastcall
-FUN_0065fa10(AnonShape_0065FA10_37C5A4D3 *param_1,int param_2,int param_3,int param_4,int param_5)
+FUN_0065fa10(RecoveredRecordView_0065FA10_071C1E69 *param_1,int param_2,int param_3,int param_4,
+            int param_5)
 
 {
   STGroupBoatC *pSVar1;

@@ -53,7 +53,8 @@ LAB_004eeaae:
 004EEAE2  8B 0D 90 67 80 00         MOV ECX,dword ptr [0x00806790]
 004EEAE8  51                        PUSH ECX
 004EEAE9  68 9D 01 00 00            PUSH 0x19d
-004EEAEE  E8 BD E3 21 00            CALL 0x0070ceb0
+BldBoatPanelTy::InitBldBoatPanel::override::prt_4eeaee_bcd42e10:
+004EEAEE  E8 BD E3 21 00            CALL 0x0070ceb0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/cMf32;pointer:/char;/byte
 004EEAF3  83 C4 10                  ADD ESP,0x10
 004EEAF6  89 86 8A 02 00 00         MOV dword ptr [ESI + 0x28a],EAX
 004EEAFC  C7 40 58 01 00 00 00      MOV dword ptr [EAX + 0x58],0x1
@@ -258,7 +259,7 @@ LAB_004eed5b:
 004EEDAE  53                        PUSH EBX
 004EEDAF  56                        PUSH ESI
 004EEDB0  6A 05                     PUSH 0x5
-004EEDB2  FF 52 08                  CALL dword ptr [EDX + 0x8]
+004EEDB2  FF 52 08                  CALL dword ptr [EDX + 0x8]  ; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 004EEDB5  8B 8D 4C FF FF FF         MOV ECX,dword ptr [EBP + 0xffffff4c]
 004EEDBB  89 0D F8 8D 85 00         MOV dword ptr [0x00858df8],ECX
 004EEDC1  5F                        POP EDI

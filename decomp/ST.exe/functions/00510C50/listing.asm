@@ -1,6 +1,7 @@
 CreateHelpPanel:
 00510C50  68 54 02 00 00            PUSH 0x254
-00510C55  E8 76 F8 19 00            CALL 0x006b04d0
+CreateHelpPanel::override::prt_510c55_88b7ffba:
+00510C55  E8 76 F8 19 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/HelpPanelTy; signature=__stdcall;pointer:/HelpPanelTy;/uint
 00510C5A  85 C0                     TEST EAX,EAX
 00510C5C  74 07                     JZ 0x00510c65
 00510C5E  8B C8                     MOV ECX,EAX

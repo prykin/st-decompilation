@@ -42,7 +42,7 @@ FUN_005f0ba0:
 005F0C1E  E8 E0 3C E1 FF            CALL 0x00404903
 005F0C23  8B 17                     MOV EDX,dword ptr [EDI]
 005F0C25  8B CF                     MOV ECX,EDI
-005F0C27  FF 12                     CALL dword ptr [EDX]
+005F0C27  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/void;pointer:/void
 LAB_005f0c29:
 005F0C29  8B 86 D2 02 00 00         MOV EAX,dword ptr [ESI + 0x2d2]
 005F0C2F  85 C0                     TEST EAX,EAX

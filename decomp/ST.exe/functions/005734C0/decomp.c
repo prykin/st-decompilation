@@ -225,7 +225,7 @@ LAB_0057366c:
   pcVar8 = (char *)((int)this + 0x645);
   memmove(pcVar8, pcVar6, uVar2); /* compiler REP MOVS byte copy */
 LAB_005737e5:
-  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00573260::thunk_FUN_00573260(this);
+  SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00573260::thunk_FUN_00573260(this);
   return;
 }
 

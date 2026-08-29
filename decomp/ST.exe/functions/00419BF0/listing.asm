@@ -9,7 +9,7 @@ FUN_00419bf0:
 00419C03  75 16                     JNZ 0x00419c1b
 00419C05  8B 16                     MOV EDX,dword ptr [ESI]
 00419C07  8B CE                     MOV ECX,ESI
-00419C09  FF 52 20                  CALL dword ptr [EDX + 0x20]
+00419C09  FF 52 20                  CALL dword ptr [EDX + 0x20]  ; [STIndirectCallsiteApplier] exact slot 0x20; mode=structural-presentation; signature=__thiscall;/void;pointer:/void
 00419C0C  C7 86 F4 00 00 00 00 00 00 00  MOV dword ptr [ESI + 0xf4],0x0
 00419C16  B8 01 00 00 00            MOV EAX,0x1
 LAB_00419c1b:

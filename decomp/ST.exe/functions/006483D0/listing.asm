@@ -1,6 +1,7 @@
 CreateAiBoss:
 006483D0  68 5C 06 00 00            PUSH 0x65c
-006483D5  E8 F6 80 06 00            CALL 0x006b04d0
+CreateAiBoss::override::prt_6483d5_cda62c15:
+006483D5  E8 F6 80 06 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiBossClassTy; signature=__stdcall;pointer:/AiBossClassTy;/uint
 006483DA  85 C0                     TEST EAX,EAX
 006483DC  74 07                     JZ 0x006483e5
 006483DE  8B C8                     MOV ECX,EAX

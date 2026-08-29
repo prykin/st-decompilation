@@ -6,7 +6,8 @@
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
-int __thiscall STRubbishC::sub_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9EE35 *param_1)
+int __thiscall
+STRubbishC::sub_0062FCA0(STRubbishC *this,RecoveredRecordView_0062FCA0_4CB838FB *param_1)
 
 {
   int *piVar1;
@@ -15,7 +16,7 @@ int __thiscall STRubbishC::sub_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9
   int iVar4;
   int iVar5;
   uint *puVar6;
-  /* ST_CALLSITE[0062FCA7]: CALL 0x004017f3; direct=004017F3 STRubbishC::RubbishCreatePart */
+  /* ST_CALLSITE[0062FCA7]: CALL 0x004017f3; direct=004017F3 STRubbishC::RubbishCreatePart; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STRubbishC; source view only; no Ghidra override */
   iVar3 = RubbishCreatePart(this);
   iVar4 = this->field_01E1;
   if (iVar3 < 0) {
@@ -47,6 +48,7 @@ int __thiscall STRubbishC::sub_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9
     /* ST_CALLSITE[0062FCCF]: CALL 0x004036ca; direct=004036CA STRubbishC::sub_0062EF00 */
     sub_0062EF00(this,iVar3,param_1);
     if (this->field_01F9 != '\0') {
+
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar4 = thunk_FUN_0062f080(this,iVar3,*(undefined4 *)((&this->field_01E5)[iVar3] + 0xc),
                                  *(STRubbishC_LoadImagSpr_param_4Enum *)
@@ -60,6 +62,7 @@ int __thiscall STRubbishC::sub_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9
         sub_0062F900(this);
         return 0xffff;
       }
+
       thunk_FUN_0062f6c0(this,iVar3);
       iVar3 = -1;
     }

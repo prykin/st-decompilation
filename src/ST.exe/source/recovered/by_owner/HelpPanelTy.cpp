@@ -24,6 +24,7 @@ HelpPanelTy * __thiscall st::fn_00510C80(HelpPanelTy *this)
   byte *pbVar1;
   int iVar2;
 
+
   st::fn_006E5FB0(this);
   this->field_005C = 0;
   this->field_0044 = 0;
@@ -108,7 +109,7 @@ void __thiscall st::fn_005148A0(HelpPanelTy *this,int param_1)
   }
   iVar6 = param_1;
   do {
-    pbVar5 = st::pointer_boundary_cast<byte *>(this->field_01C7 + iVar6 * 0x11);
+    pbVar5 = this->field_01C7 + iVar6 * 0x11;
     if ((*(int *)pbVar5 == *(int *)(this->field_01C7 + param_1 * 0x11 + 4)) ||
        (*(int *)(pbVar5 + 4) == 0)) {
       pAVar1 = this->field_01B3;
@@ -463,7 +464,7 @@ void __thiscall st::fn_0051DA70(HelpPanelTy *this)
       uVar11 = uVar10 % (iVar13 + 1U);
       uVar5 = (uint)(byte)this->field_0250;
       local_8 = uVar11 & 0xff;
-      if ((int)(uVar11 & 0xff) < (int)(uVar5 - bVar4)) {
+      if (st::storage_bit_cast<int>(static_cast<uint32_t>(uVar11 & 0xff)) < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar5 - bVar4))) {
         puVar12 = &DAT_0080734e;
         local_c = 0;
       }
@@ -508,4 +509,3 @@ void __thiscall st::fn_0051DA70(HelpPanelTy *this)
   }
   return;
 }
-

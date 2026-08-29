@@ -21,9 +21,26 @@
    004EC050 -> 004AD1F0 @ 004EC097; data at 008073CC | 004ECEA0 -> 004AD1F0 @ 004ECEEB; data at
    008073CC | 0057F580 -> 004AD1F0 @ 0057F632; data at 008073CC | 005FDB50 -> 004AD1F0 @ 005FDEC3;
    data at 008073CC | 006132F0 -> 004AD1F0 @ 0061337D; data at 008073CC | 0062F3B0 -> 004AD1F0 @
-   0062F4D9; data at 008073CC */
+   0062F4D9; data at 008073CC
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (24), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=0041E530 @ 0041E9D5 -> read as EAX on
+   every CFG path | 0041E530 @ 0041EA40 -> read as EAX on every CFG path | 004B9FA0 @ 004BAA63 ->
+   read as EAX on every CFG path | 004B9FA0 @ 004BAB7D -> read as EAX on every CFG path | 004C6210 @
+   004C6275 -> read as EAX on every CFG path | 004C6210 @ 004C62CC -> read as EAX on every CFG path
+   | 004CC220 @ 004CC2B1 -> read as EAX on every CFG path | 004D01F0 @ 004D0241 -> read as EAX on
+   every CFG path | 004D11D0 @ 004D18FC -> read as EAX on every CFG path | 004D11D0 @ 004D1A31 ->
+   read as EAX on every CFG path | 004D11D0 @ 004D1B45 -> read as EAX on every CFG path | 004D11D0 @
+   004D2153 -> read as EAX on every CFG path | 004D9000 @ 004D904B -> read as EAX on every CFG path
+   | 004D9C80 @ 004D9CD0 -> read as EAX on every CFG path | 004DCE00 @ 004DCE50 -> read as EAX on
+   every CFG path | 004EAA20 @ 004EAA70 -> read as EAX on every CFG path | 004EC050 @ 004EC097 ->
+   read as EAX on every CFG path | 004ECEA0 @ 004ECEEB -> read as EAX on every CFG path | 0057F580 @
+   0057F632 -> read as EAX on every CFG path | 005FDB50 @ 005FDEC3 -> read as EAX on every CFG path
+   | 006051B0 @ 00605307 -> read as EAX on every CFG path | 006051B0 @ 00605356 -> read as EAX on
+   every CFG path | 006132F0 @ 0061337D -> read as EAX on every CFG path | 0062F3B0 @ 0062F4D9 ->
+   read as EAX on every CFG path */
 
-undefined4 __thiscall
+int __thiscall
 STT3DSprC::Init(STT3DSprC *this,ushort *param_1,uint param_2,uint param_3,STDcResourcC *param_4,
                uint param_5,uint param_6,uint param_7)
 
@@ -33,14 +50,14 @@ STT3DSprC::Init(STT3DSprC *this,ushort *param_1,uint param_2,uint param_3,STDcRe
   AnonPointee_STT3DSprC_0020 *pAVar3;
   int iVar3;
   uint uVar4;
-  uint uVar5;
-  int iVar6;
+  int iVar5;
   InternalExceptionFrame local_4c;
   STT3DSprC *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   local_EAX_34 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pSVar2 = local_8;
   if (local_EAX_34 == 0) {
@@ -48,16 +65,18 @@ STT3DSprC::Init(STT3DSprC *this,ushort *param_1,uint param_2,uint param_3,STDcRe
     local_8->field_0008 = param_3;
     local_8->field_0004 = param_2;
     local_8->field_0014 = param_7;
+
     ST3DSMAPContext::sub_006E8660
               (local_8->field_003C,(int *)&local_8->field_0018,param_7,0,param_5,param_6,param_2,
                param_3,(uint)param_4);
+    /* ST_CALLSITE[004AD260]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STT3DSprC_0020; source view only; no Ghidra override */
     pAVar3 = Library::DKW::LIB::MemAlloc(pSVar2->field_0014 * 0x24);
     pSVar2->field_0020 = pAVar3;
-    for (uVar5 = pSVar2->field_0014 * 9 & 0x3fffffff; uVar5 != 0; uVar5 = uVar5 - 1) {
+    for (uVar4 = pSVar2->field_0014 * 9 & 0x3fffffff; uVar4 != 0; uVar4 = uVar4 - 1) {
       *(undefined4 *)pAVar3 = 0;
       pAVar3 = (AnonPointee_STT3DSprC_0020 *)&pAVar3->field_0x4;
     }
-    for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
+    for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
       *(undefined1 *)pAVar3 = 0;
       pAVar3 = (AnonPointee_STT3DSprC_0020 *)&pAVar3->field_0x1;
     }
@@ -65,11 +84,12 @@ STT3DSprC::Init(STT3DSprC *this,ushort *param_1,uint param_2,uint param_3,STDcRe
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0x2b1,0,local_EAX_34,
                              "%s","STT3DSprC::Init");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  return 0xffffffff;
+  return -1;
 }
 

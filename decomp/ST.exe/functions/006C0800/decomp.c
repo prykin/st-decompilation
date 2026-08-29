@@ -16,7 +16,7 @@ void FUN_006c0800(short *param_1,byte param_2,undefined4 param_3,undefined4 para
   uint uVar4;
   int iVar5;
   uint *puVar6;
-  AnonShape_006BFBF0_13F73F95 *pAVar7;
+  RecoveredRecordView_006BFBF0_7F78587C *pRVar7;
 
   iVar5 = param_11 * 0xc4;
   (&DAT_00855024)[param_11 * 0x31] = (uint)param_2;
@@ -41,7 +41,8 @@ void FUN_006c0800(short *param_1,byte param_2,undefined4 param_3,undefined4 para
     param_1 = (short *)((int)param_1 + 1);
     puVar6 = (undefined4 *)((int)puVar6 + 1);
   }
-  iVar2 = FUN_006bfbf0((AnonShape_006BFBF0_13F73F95 *)(&DAT_00854ff8 + iVar5));
+
+  iVar2 = FUN_006bfbf0((RecoveredRecordView_006BFBF0_7F78587C *)(&DAT_00854ff8 + iVar5));
   if (iVar2 != 0) {
     piVar1 = (&PTR_00855004)[param_11 * 0x31];
     if (piVar1 != nullptr) {
@@ -59,10 +60,10 @@ void FUN_006c0800(short *param_1,byte param_2,undefined4 param_3,undefined4 para
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)(&PTR_00855004)[param_11 * 0x31] + 8))((&PTR_00855004)[param_11 * 0x31]);
     }
-    pAVar7 = (AnonShape_006BFBF0_13F73F95 *)(&DAT_00854ff8 + iVar5);
+    pRVar7 = (RecoveredRecordView_006BFBF0_7F78587C *)(&DAT_00854ff8 + iVar5);
     for (iVar2 = 0x31; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(undefined4 *)pAVar7 = 0;
-      pAVar7 = (AnonShape_006BFBF0_13F73F95 *)&pAVar7->field_0x4;
+      *(undefined4 *)pRVar7 = 0;
+      pRVar7 = (RecoveredRecordView_006BFBF0_7F78587C *)&pRVar7->field_0x4;
     }
   }
   return;

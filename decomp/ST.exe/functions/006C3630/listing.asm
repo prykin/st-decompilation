@@ -53,7 +53,7 @@ LAB_006c3648:
 006C36AE  8D 4F 44                  LEA ECX,[EDI + 0x44]
 006C36B1  50                        PUSH EAX
 006C36B2  51                        PUSH ECX
-006C36B3  E8 B8 18 01 00            CALL 0x006d4f70
+006C36B3  E8 B8 18 01 00            CALL 0x006d4f70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=/winbase.h/LPSECURITY_ATTRIBUTES; source view only; no Ghidra override
 006C36B8  8B F0                     MOV ESI,EAX
 006C36BA  85 F6                     TEST ESI,ESI
 006C36BC  75 52                     JNZ 0x006c3710

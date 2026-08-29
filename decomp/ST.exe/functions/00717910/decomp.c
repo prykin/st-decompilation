@@ -10,8 +10,9 @@ FUN_00717910(void *this,byte *param_1,int param_2,int param_3,byte *param_4,int 
     FUN_006b5f80(*(int **)this,STField<int>(this,0x20) + param_2,
                  STField<int>(this,0x24) + param_3,param_7,param_8);
   }
-  FUN_006d2820(param_1,STField<RecoveredSourceFamily_dibcopy *>(this,0x28),param_4,param_5,param_6
-               ,param_7,param_8,0,nullptr,0,0,nullptr);
+  FUN_006d2820(param_1,STField<RecoveredSourceFamily_dibcopy *>(this,0x28),
+               (RecoveredRecord_006D2820_5C2BCC8C *)param_4,param_5,param_6,param_7,param_8,0,
+               nullptr,0,0,nullptr);
   return;
 }
 

@@ -14,7 +14,7 @@
 void __thiscall st::fn_0051F8F0(HelpStringTy *this)
 
 {
-  ushort *puVar1;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar1;
   HelpStringTy *pHVar3;
   int iVar4;
   int iVar6;
@@ -27,31 +27,36 @@ void __thiscall st::fn_0051F8F0(HelpStringTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar4 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar4 == 0) {
     iVar6 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e;
-    st::fn_006B5F80((int *)g_ddxContext_008075A8,iVar6,DAT_00806734 + -0x1a,
+    st::fn_006B5F80(reinterpret_cast<int *>(g_ddxContext_008075A8),iVar6,DAT_00806734 + -0x1a,
                  (g_nWidth_00806730 - iVar6) + -0x87,0x12);
     pHVar3 = local_8;
-    puVar1 = local_8->field_012A;
-    uVar9 = *(uint *)(puVar1 + 10);
+    pRVar1 = reinterpret_cast<RecoveredRecord_006B4FA0_DAC3A217 *>(local_8->field_012A);
+    uVar9 = *(uint *)&pRVar1[1].field_0x4;
     if (uVar9 == 0) {
-      uVar9 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-              *(int *)(puVar1 + 4);
+      uVar9 = ((uint)pRVar1->field_000E * *(int *)&pRVar1->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+              *(int *)&pRVar1->field_0x8;
     }
-    puVar7 = (byte *)st::fn_006B4FA0((int *)puVar1);
+
+    puVar7 = STPointerBoundaryCast<byte *>(st::fn_006B4FA0(pRVar1));
     memset(puVar7, 0, uVar9); /* compiler bulk-zero initialization */
     if (pHVar3->field_0018 != '\0') {
+
       st::fn_00710A90(pHVar3->field_011E,(int)pHVar3->field_012A,0,0,0,0,0);
+
       st::fn_007119C0(pHVar3->field_011E,&pHVar3->field_0018,0,-1,(uint)(byte)pHVar3->field_011D);
     }
     /* ST_CALLSITE[0051FA03]: CALL 0x00403738; direct=00403738 PutDDX */
     st::fn_00403738((-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e,DAT_00806734 + -0x1a,'\x01',
-           (BITMAPINFO *)pHVar3->field_012A);
+           reinterpret_cast<BITMAPINFO *>(pHVar3->field_012A));
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\helpstr.cpp"),0x1b,0,iVar4,st::mutable_c_string("%s"),
                              "HelpStringTy::OutStr");
   if (iVar5 != 0) {
@@ -78,28 +83,30 @@ int __thiscall st::fn_0051FBA0(HelpStringTy *this,STMessage *message)
   int local_EAX_36;
   ccFntTy *pcVar2;
   int uVar4;
-  ushort *puVar3;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar3;
   byte *puVar4;
-  DWORD DVar5;
   int iVar2;
   int iVar6;
-  int iVar7;
-  uint uVar9;
-  char *pcVar10;
+  int iVar5;
+  uint uVar7;
+  char *pcVar8;
+  ushort *puVar9;
   InternalExceptionFrame local_4c;
   HelpStringTy *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   local_EAX_36 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (local_EAX_36 == 0) {
     switch(message->id) {
     case MESS_ID_NONE:
       if ((local_8->field_012E != 0) &&
-         (DVar5 = st::fn_006E51B0(local_8->field_0010),
-         this_00->field_0126 <= DVar5 - this_00->field_0122)) {
+
+         (iVar5 = st::fn_006E51B0(local_8->field_0010),
+         this_00->field_0126 <= (uint)(iVar5 - this_00->field_0122))) {
         memset(&this_00->field_0018, 0, 0x104); /* compiler bulk-zero initialization */
         /* ST_CALLSITE[0051FD19]: CALL 0x004015fa; direct=004015FA HelpStringTy::OutStr */
         st::fn_004015FA(this_00);
@@ -108,32 +115,35 @@ int __thiscall st::fn_0051FBA0(HelpStringTy *this,STMessage *message)
       }
       break;
     case MESS_ID_CREATE:
-      /* ST_CALLSITE[0051FBFE]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
-      pcVar2 = (ccFntTy *)st::fn_0070DF00(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0030);
+      /* ST_CALLSITE[0051FBFE]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/ccFntTy */
+      pcVar2 = st::pointer_boundary_cast<ccFntTy *>(st::fn_0070DF00(0x19d,reinterpret_cast<ccFntTy *>(g_interSystem_00802A28->field_0030)));
       this_00->field_011E = pcVar2;
       pcVar2->field_0058 = 0;
       pcVar2->field_005C = 0;
-      puVar3 = PTR_0080679c + 0x14;
-      iVar7 = 1;
+      puVar9 = PTR_0080679c + 0x14;
+      iVar5 = 1;
+
       uVar4 = st::fn_006B4FE0(PTR_0080679c);
-      puVar3 = (ushort *)
+      pRVar3 = (RecoveredRecord_006B4FA0_DAC3A217 *)
+
                st::fn_006B50C0((g_nWidth_00806730 -
                             ((-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e)) + -0x87,0x12,
-                            (uint)PTR_0080679c[7],uVar4,(undefined4 *)puVar3,iVar7);
-      this_00->field_012A = puVar3;
-      uVar9 = *(uint *)(puVar3 + 10);
-      if (uVar9 == 0) {
-        uVar9 = ((uint)puVar3[7] * *(int *)(puVar3 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-                *(int *)(puVar3 + 4);
+                            (uint)PTR_0080679c[7],uVar4,reinterpret_cast<undefined4 *>(puVar9),iVar5);
+      this_00->field_012A = reinterpret_cast<ushort *>(pRVar3);
+      uVar7 = *(uint *)&pRVar3[1].field_0x4;
+      if (uVar7 == 0) {
+        uVar7 = ((uint)pRVar3->field_000E * *(int *)&pRVar3->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+                *(int *)&pRVar3->field_0x8;
       }
-      puVar4 = (byte *)st::fn_006B4FA0((int *)puVar3);
-      memset(puVar4, 0, uVar9); /* compiler bulk-zero initialization */
+
+      puVar4 = STPointerBoundaryCast<byte *>(st::fn_006B4FA0(pRVar3));
+      memset(puVar4, 0, uVar7); /* compiler bulk-zero initialization */
       g_helpString_00801694 = this_00;
       break;
     case MESS_SHARED_0003:
       g_helpString_00801694 = nullptr;
       if (local_8->field_011E != nullptr) {
-        st::fn_00710560((uint *)local_8->field_011E);
+        st::fn_00710560(reinterpret_cast<uint *>(local_8->field_011E));
         this_00->field_011E = nullptr;
       }
       if (this_00->field_012A != nullptr) {
@@ -145,10 +155,12 @@ int __thiscall st::fn_0051FBA0(HelpStringTy *this,STMessage *message)
       st::fn_004015FA(local_8);
     }
     g_currentExceptionFrame = local_4c.previous;
+
     iVar2 = st::fn_006E5FD0(this_00,message);
     return iVar2;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\helpstr.cpp"),0x4d,0,local_EAX_36,
                              st::mutable_c_string("%s"),"HelpStringTy::GetMessage");
   if (iVar6 != 0) {
@@ -157,4 +169,3 @@ int __thiscall st::fn_0051FBA0(HelpStringTy *this,STMessage *message)
   st::fn_006A5E40(local_EAX_36,0,st::mutable_c_string("E:\\__titans\\Andrey\\helpstr.cpp"),0x4d);
   return 0xffff;
 }
-

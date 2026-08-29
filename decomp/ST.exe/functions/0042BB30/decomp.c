@@ -22,7 +22,7 @@ STAllPlayersC::AddObjToTmp
   int *piVar6;
   Global_sub_0043FC50_param_1Enum GVar7;
   InternalExceptionFrame local_5c;
-  undefined4 local_18;
+  uint local_18;
   uint local_14;
   int local_10;
   STAllPlayersC *local_c;
@@ -32,10 +32,12 @@ STAllPlayersC::AddObjToTmp
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_c = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_5c.previous;
     if (iVar2 == -0x5001fff7) {
+
       iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x21d,0,0,"%s",
                                  "STAllPlayersC::AddObjToTmp invalid panel number");
       if (iVar2 == 0) {
@@ -44,6 +46,7 @@ STAllPlayersC::AddObjToTmp
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
     if (iVar2 == -0x5001ffff) {
+
       iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x219,0,0,"%s",
                                  "STAllPlayersC::AddObjToTmp coincide value");
       if (iVar2 == 0) {
@@ -51,6 +54,7 @@ STAllPlayersC::AddObjToTmp
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
+
     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x215,0,iVar2,"%s",
                                "STAllPlayersC::AddObjToTmp");
     if (iVar5 == 0) {
@@ -93,6 +97,7 @@ LAB_0042bc00:
     }
   }
   if (piVar6[1] != (int)param_4) {
+
     iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x210,0,0,"%s",
                                "STAllPlayersC::AddObjToTmp something wrong...");
     if (iVar2 == 0) {
@@ -105,6 +110,7 @@ LAB_0042bc00:
   local_14 = pDVar3->count;
   index = local_14;
   while (index = index - 1, -1 < (int)index) {
+
     DArrayGetElement(pDVar3,index,&local_6);
     if (local_6 == -1) {
       local_14 = index;
@@ -115,6 +121,7 @@ LAB_0042bc00:
                  0x209);
     }
   }
+
   Library::DKW::TBL::DArrayPut(pDVar3,local_14,&param_5);
   STField<short>(piVar6,0xe) = STField<short>(piVar6,0xe) + 1;
   /* ST_CALLSITE[0042BCBC]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */

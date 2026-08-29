@@ -8,7 +8,7 @@
    Diagnostic line evidence: 195 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-undefined4 __fastcall st::fn_004E04A0(AnonShape_004E04A0_3A5B2D2E *param_1)
+undefined4 __fastcall st::fn_004E04A0(RecoveredRecordView_004E04A0_E5D04031 *param_1)
 
 {
   byte *this;
@@ -30,35 +30,35 @@ undefined4 __fastcall st::fn_004E04A0(AnonShape_004E04A0_3A5B2D2E *param_1)
     case 0:
 switchD_004e04e5_caseD_0:
       /* ST_CALLSITE[004E0578]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
-      st::fn_00404264((STT3DSprC *)&param_1->field_0x1d5,0xb);
+      st::fn_00404264(reinterpret_cast<STT3DSprC *>(&param_1->field_0x1d5),0xb);
       break;
     case 1:
       if (iVar1 == 0x5e) {
-        local_8 = "corisi_lid";
+        local_8 = st::mutable_c_string("corisi_lid");
       }
       else {
 LAB_004e05d3:
-        local_8 = "mine_ani1_lid";
+        local_8 = st::mutable_c_string("mine_ani1_lid");
       }
       break;
     case 2:
       switch(iVar1) {
       case 0x38:
-        local_8 = "mine_ani1_gld";
+        local_8 = st::mutable_c_string("mine_ani1_gld");
         break;
       case 0x39:
-        local_8 = "mine_ani1_cor";
+        local_8 = st::mutable_c_string("mine_ani1_cor");
         break;
       case 0x4f:
-        local_8 = "mine_ani1_met";
+        local_8 = st::mutable_c_string("mine_ani1_met");
         break;
       case 0x5e:
-        local_8 = "corisi_ani1_cor";
+        local_8 = st::mutable_c_string("corisi_ani1_cor");
       }
       break;
     case 3:
       if (iVar1 != 0x5e) goto LAB_004e05d3;
-      local_8 = "corisi_lid";
+      local_8 = st::mutable_c_string("corisi_lid");
     }
     break;
   case 0x3b:
@@ -68,18 +68,18 @@ LAB_004e05d3:
       goto switchD_004e04e5_caseD_0;
     case 1:
     case 3:
-      local_8 = "depo_ani1_lid";
+      local_8 = st::mutable_c_string("depo_ani1_lid");
       break;
     case 2:
       iVar1 = param_1->field_04DC;
       if (iVar1 == 0xdc) {
-        local_8 = "depo_ani1_gld";
+        local_8 = st::mutable_c_string("depo_ani1_gld");
       }
       else if (iVar1 == 0xdd) {
-        local_8 = "depo_ani1_cor";
+        local_8 = st::mutable_c_string("depo_ani1_cor");
       }
       else if (iVar1 == 0xde) {
-        local_8 = "depo_ani1_met";
+        local_8 = st::mutable_c_string("depo_ani1_met");
       }
     }
     break;
@@ -89,10 +89,10 @@ LAB_004e05d3:
       goto switchD_004e04e5_caseD_0;
     case 1:
     case 3:
-      local_8 = "silo_ani1_lid";
+      local_8 = st::mutable_c_string("silo_ani1_lid");
       break;
     case 2:
-      local_8 = "silo_ani1_cor";
+      local_8 = st::mutable_c_string("silo_ani1_cor");
     }
   }
   if (param_1->field_04E8 == 0) {
@@ -100,43 +100,39 @@ LAB_004e05d3:
   }
   this = &param_1->field_0x1d5;
   /* ST_CALLSITE[004E05FF]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
-  iVar1 = st::fn_00404183((STT3DSprC *)this,0xb,PTR_0080678c,local_8,CASE_1D);
+  iVar1 = st::fn_00404183(reinterpret_cast<STT3DSprC *>(this),0xb,PTR_0080678c,local_8,CASE_1D);
   if (iVar1 != 0) {
     st::fn_006A5E40
               (iVar1,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_rc.cpp"),0xc3);
   }
   iVar1 = param_1->field_04E8;
   if (iVar1 == 1) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar2 = **(int **)(param_1->field_01F5 + 0x18c);
+    iVar2 = *param_1->field_01F5->field_018C;
   }
   else {
     if (iVar1 != 2) {
       if (iVar1 == 3) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        uVar3 = **(int **)(param_1->field_01F5 + 0x18c) - 1;
+        uVar3 = *param_1->field_01F5->field_018C - 1;
         iVar2 = 0;
       }
       goto cf_common_exit_004E068C;
     }
     iVar1 = param_1->field_05AC;
     if (((iVar1 != 0x3b) && (iVar1 != 0x60)) && (iVar1 != 0x52)) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      uVar3 = **(int **)(param_1->field_01F5 + 0x18c) - 1;
+      uVar3 = *param_1->field_01F5->field_018C - 1;
       iVar2 = 0;
       goto cf_common_exit_004E068C;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar2 = **(int **)(param_1->field_01F5 + 0x18c);
+    iVar2 = *param_1->field_01F5->field_018C;
   }
   uVar3 = 0;
   iVar2 = iVar2 + -1;
 cf_common_exit_004E068C:
+
   st::fn_00401EBA(this,0xb,uVar3,iVar2,'\0');
   /* ST_CALLSITE[004E06A1]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
-  st::fn_00401064((STT3DSprC *)this,'\v',uVar3);
+  st::fn_00401064(reinterpret_cast<STT3DSprC *>(this),'\v',uVar3);
   /* ST_CALLSITE[004E06B7]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
-  st::fn_00405240((STT3DSprC *)this,0xb,g_playSystem_00802A38->field_00E4);
+  st::fn_00405240(reinterpret_cast<STT3DSprC *>(this),0xb,g_playSystem_00802A38->field_00E4);
   return 0;
 }
-

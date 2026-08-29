@@ -10,9 +10,14 @@
 
    [STMethodOwnerApplier] Structural method owner recovered as STJellyGunC.
    Evidence: this_call_owners=[STJellyGunC]; agreed_this_calls=1; incoming_this_accesses=2;
-   incoming_edx_uses=0; incoming_stack_parameter_uses=5 */
+   incoming_edx_uses=0; incoming_stack_parameter_uses=5
 
-undefined4 __thiscall st::fn_00415ED0(STJellyGunC *this,undefined4 *param_1,int *param_2)
+   [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=42,
+   ignored=0, unknown=0 */
+
+int __thiscall st::fn_00415ED0(STJellyGunC *this,undefined4 *param_1,int *param_2)
 
 {
   short sVar1;
@@ -25,8 +30,7 @@ undefined4 __thiscall st::fn_00415ED0(STJellyGunC *this,undefined4 *param_1,int 
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   puStack_c = (undefined *)&DAT_007901b0;
   puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
@@ -36,7 +40,7 @@ undefined4 __thiscall st::fn_00415ED0(STJellyGunC *this,undefined4 *param_1,int 
   }
   if (10 < this->field_008F) {
     ExceptionList = &local_14;
-    st::fn_0040338C((int *)this);
+    st::fn_0040338C(reinterpret_cast<int *>(this));
   }
   this->field_008F = -1;
   if (this->field_007A == 1) {
@@ -73,11 +77,11 @@ undefined4 __thiscall st::fn_00415ED0(STJellyGunC *this,undefined4 *param_1,int 
   iVar5 = (int)sVar2;
   this->field_0058 = (short)(iVar5 / 200);
   uVar3 = (iVar7 / 0xc9) * 0xc9 + 100U & 0xffff;
-  if (((int)(uVar3 - 0x1e) < iVar7) && (iVar7 < (int)(uVar3 + 0x1e))) {
+  if ((st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 0x1e)) < iVar7) && (iVar7 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 + 0x1e)))) {
     uVar3 = (iVar4 / 0xc9) * 0xc9 + 100U & 0xffff;
-    if (((int)(uVar3 - 0x1e) < iVar4) && (iVar4 < (int)(uVar3 + 0x1e))) {
+    if ((st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 0x1e)) < iVar4) && (iVar4 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 + 0x1e)))) {
       uVar3 = (iVar5 / 200) * 200 + 100U & 0xffff;
-      if (((int)(uVar3 - 0x1d) < iVar5) && (iVar5 < (int)(uVar3 + 0x1d))) {
+      if ((st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 0x1d)) < iVar5) && (iVar5 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 + 0x1d)))) {
         this->field_005A = 0;
         goto LAB_004160cd;
       }
@@ -99,7 +103,7 @@ LAB_004160cd:
     *param_2 = 1;
   }
   if (this->field_0068 == this->field_0064) {
-    this->field_008F = st::machine_word_boundary_cast<int>(this->field_008F + 1);
+    this->field_008F = this->field_008F + 1;
     ExceptionList = local_14;
     return 0;
   }
@@ -126,9 +130,9 @@ STJellyGunC * __thiscall st::fn_005823D0(STJellyGunC *this)
 {
 
   /* ST_CALLSITE[005823D4]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
-  st::fn_00401933((STGameObjC *)this);
+  st::fn_00401933(reinterpret_cast<STGameObjC *>(this));
   /* ST_CALLSITE[005823E1]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
-  st::fn_00401316((STT3DSprC *)&this->field_01D5);
+  st::fn_00401316(reinterpret_cast<STT3DSprC *>(&this->field_01D5));
   this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079B8EC);
   this->vtable = &st_global_0079B78C;
   memset(&this->field_0x256, 0, 0x3e); /* compiler bulk-zero initialization */
@@ -156,10 +160,9 @@ STJellyGunC * __thiscall st::fn_005823D0(STJellyGunC *this)
 void __thiscall st::fn_00582530(STJellyGunC *this)
 
 {
-  undefined4 local_24 [4];
-  undefined4 local_14;
-  undefined4 local_10;
-
+  uint local_24 [4];
+  uint local_14;
+  uint local_10;
   memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
   local_10 = this->field_0008;
   local_14 = 0x124;
@@ -180,11 +183,10 @@ int __thiscall st::fn_00582580(STJellyGunC *this)
 
 {
   int iVar1;
-  undefined4 local_24 [3];
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-
+  uint local_24 [3];
+  uint local_18;
+  uint local_14;
+  uint local_10;
   local_10 = this->field_0008;
   local_18 = 0;
   local_14 = 10;
@@ -209,7 +211,7 @@ STJellyGunC_field_0235State __thiscall st::fn_00583E30(STJellyGunC *this)
   int iVar2;
   int uVar3;
   uint uVar4;
-  uint uVar5;
+  int iVar5;
   int iVar6;
   int iVar7;
   int iVar8;
@@ -259,31 +261,36 @@ STJellyGunC_field_0235State __thiscall st::fn_00583E30(STJellyGunC *this)
       if (*(int *)&this->field_0x247 == 10) {
         *(undefined4 *)&this->field_0x24b = 0;
       }
+
       uVar3 = st::fn_006DB910((int)this->field_0047,(int)this->field_0049,local_10,local_c);
-      uVar4 = st::fn_006DB990(uVar3,8);
-      uVar5 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
-      this->field_001C = uVar5;
-      uVar5 = uVar5 >> 0x10;
-      piVar11 = (int *)local_18;
+
+      iVar2 = st::fn_006DB990(uVar3,8);
+      uVar4 = this->field_001C * 0x41c64e6d + 0x3039;
+      this->field_001C = uVar4;
+      uVar4 = uVar4 >> 0x10;
+      piVar11 = reinterpret_cast<int *>(local_18);
       iVar7 = (int)this->field_0049;
-      piVar10 = (int *)local_1c;
+      piVar10 = reinterpret_cast<int *>(local_1c);
       iVar8 = (int)this->field_0047;
-      piVar9 = (int *)local_20;
-      iVar2 = (int)this->field_004B;
+      piVar9 = reinterpret_cast<int *>(local_20);
+      iVar5 = (int)this->field_004B;
+
       iVar6 = st::fn_006ACF90(iVar8,iVar7,local_10,local_c);
-      iVar2 = st::fn_0040244B(uVar4,local_8 - this->field_004B,iVar6,iVar8,iVar7,iVar2,piVar9,
-                                 piVar10,piVar11,uVar5);
+
+      iVar2 = st::fn_0040244B(iVar2,local_8 - this->field_004B,iVar6,iVar8,iVar7,iVar5,piVar9,
+                                 piVar10,piVar11,uVar4);
       if (iVar2 != 0) {
         st::fn_00405C90(this,6);
         st::fn_00405105(this,5);
-        iVar2 = st::fn_00404318
-                          ((AnonReceiver_004167A0 *)this,local_20[0],local_1c[0],local_18[0]);
+
+        iVar2 = st::fn_00404318(reinterpret_cast<RecoveredReceiver_004167A0 *>(this),local_20[0],local_1c[0],
+                                   local_18[0]);
         if (iVar2 == 0) {
           return CASE_1;
         }
-        iVar2 = st::fn_00404318
-                          ((AnonReceiver_004167A0 *)this,(short)local_10,(short)local_c,
-                           (short)local_8);
+
+        iVar2 = st::fn_00404318(reinterpret_cast<RecoveredReceiver_004167A0 *>(this),(short)local_10,(short)local_c
+                                   ,(short)local_8);
         if (iVar2 == 0) {
           return CASE_1;
         }
@@ -328,7 +335,7 @@ st::fn_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param_3)
        /* ST_CALLSITE[0058409B]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
        (iVar1 = this_00->vfunc_F8(), iVar1 != 0)) {
       /* ST_CALLSITE[005840B3]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
-      st::fn_00405F0B((STFishC *)this_00,&local_6,&local_8,&local_a);
+      st::fn_00405F0B(reinterpret_cast<STFishC *>(this_00),&local_6,&local_8,&local_a);
       *param_1 = (int)local_6;
       *param_2 = (int)local_8;
       *param_3 = (int)local_a;
@@ -337,16 +344,16 @@ st::fn_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param_3)
     this->field_023D = 0;
   }
   /* ST_CALLSITE[005840F9]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
-  st::fn_004018C5((STFishC *)this,&local_10,&local_e,&local_c);
-  iVar1 = st::machine_word_boundary_cast<int>(this->field_001C * 0x41c64e6d + 0x3039);
+  st::fn_004018C5(reinterpret_cast<STFishC *>(this),&local_10,&local_e,&local_c);
+  iVar1 = this->field_001C * 0x41c64e6d + 0x3039;
   this->field_001C = iVar1;
   local_14 = (short)(((ushort)((uint)iVar1 >> 0x10) & 1) + 1);
-  uVar2 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
+  uVar2 = this->field_001C * 0x41c64e6d + 0x3039;
   this->field_001C = uVar2;
   if ((uVar2 >> 0x10) % 3 == 0) {
     local_14 = -local_14;
   }
-  local_14 = st::machine_word_boundary_cast<int>(this->field_004B - local_14);
+  local_14 = this->field_004B - local_14;
   if (local_14 < 0) {
     local_14 = -local_14;
   }
@@ -361,7 +368,7 @@ st::fn_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param_3)
   uVar2 = iVar1 * 0x41c64e6d + 0x3039;
   this->field_001C = uVar2;
   iVar1 = this->field_027A;
-  local_18 = (uVar2 >> 0x10) % (uint)(this->field_027E - local_18) + local_18;
+  local_18 = (uVar2 >> 0x10) % st::storage_bit_cast<uint>(static_cast<uint32_t>(this->field_027E - local_18)) + local_18;
   if (iVar1 < 0) {
     iVar4 = this->field_001C;
   }
@@ -371,7 +378,7 @@ st::fn_00584060(STJellyGunC *this,int *param_1,int *param_2,int *param_3)
   uVar2 = iVar4 * 0x41c64e6d + 0x3039;
   this->field_001C = uVar2;
   local_1c = 0;
-  iVar1 = (uVar2 >> 0x10) % (uint)(this->field_0282 - iVar1) + iVar1;
+  iVar1 = (uVar2 >> 0x10) % st::storage_bit_cast<uint>(static_cast<uint32_t>(this->field_0282 - iVar1)) + iVar1;
 LAB_005841dc:
   do {
     while( true ) {
@@ -383,7 +390,7 @@ LAB_005841dc:
           *param_3 = local_14;
           return 1;
         }
-        uVar2 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
+        uVar2 = this->field_001C * 0x41c64e6d + 0x3039;
         this->field_001C = uVar2;
         if ((uVar2 >> 0x10) % 3 == 0) {
           local_14 = local_14 + 1;
@@ -432,9 +439,14 @@ joined_r0x00584297:
 #line 4 "decomp/ST.exe/functions/00584380/decomp.c"
 /* [STMethodOwnerApplier] Structural method owner recovered as STJellyGunC.
    Evidence: this_call_owners=[STJellyGunC]; agreed_this_calls=2; incoming_this_accesses=3;
-   incoming_edx_uses=0 */
+   incoming_edx_uses=0
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=005825C0 @ 0058276C -> read as EAX on
+   every CFG path | 005825C0 @ 00582C64 -> read as EAX on every CFG path | 00583270 @ 00583A46 ->
+   read as EAX on every CFG path */
 
-undefined4 __thiscall st::fn_00584380(STJellyGunC *this)
+int __thiscall st::fn_00584380(STJellyGunC *this)
 
 {
   undefined4 *this_00;
@@ -442,27 +454,27 @@ undefined4 __thiscall st::fn_00584380(STJellyGunC *this)
   uint uVar2;
   this_00 = &this->field_01D5;
   /* ST_CALLSITE[0058439F]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
-  iVar1 = st::fn_00404183((STT3DSprC *)this_00,8,PTR_00806774,st::mutable_c_string("Expb11"),CASE_1D);
+  iVar1 = st::fn_00404183(reinterpret_cast<STT3DSprC *>(this_00),8,PTR_00806774,st::mutable_c_string("Expb11"),CASE_1D);
   if (iVar1 == 0) {
     /* ST_CALLSITE[005843BD]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
-    st::fn_00405240((STT3DSprC *)this_00,8,g_playSystem_00802A38->field_00E4);
+    st::fn_00405240(reinterpret_cast<STT3DSprC *>(this_00),8,g_playSystem_00802A38->field_00E4);
     /* ST_CALLSITE[005843D3]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
-    st::fn_00404183((STT3DSprC *)this_00,10,PTR_00806774,st::mutable_c_string("expmask3"),CASE_1D);
+    st::fn_00404183(reinterpret_cast<STT3DSprC *>(this_00),10,PTR_00806774,st::mutable_c_string("expmask3"),CASE_1D);
     /* ST_CALLSITE[005843DC]: CALL 0x00403233; direct=00403233 STT3DSprC::sub_004ACFE0 */
-    st::fn_00403233((STT3DSprC *)this_00,'\n');
+    st::fn_00403233(reinterpret_cast<STT3DSprC *>(this_00),'\n');
     /* ST_CALLSITE[005843EC]: CALL 0x004044ee; direct=004044EE STT3DSprC::sub_004ACF20 */
-    st::fn_004044EE((STT3DSprC *)this_00,PTR_008032b8,0x10);
+    st::fn_004044EE(reinterpret_cast<STT3DSprC *>(this_00),PTR_008032b8,0x10);
     /* ST_CALLSITE[00584402]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
-    st::fn_00405240((STT3DSprC *)this_00,10,g_playSystem_00802A38->field_00E4);
+    st::fn_00405240(reinterpret_cast<STT3DSprC *>(this_00),10,g_playSystem_00802A38->field_00E4);
     /* ST_CALLSITE[0058440B]: CALL dword ptr [EDX + 0xd8] */
     this->vfunc_D8();
     /* ST_CALLSITE[00584422]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
-    iVar1 = st::fn_00404183((STT3DSprC *)this_00,9,PTR_00806764,st::mutable_c_string("bulb_n5"),CASE_1D);
+    iVar1 = st::fn_00404183(reinterpret_cast<STT3DSprC *>(this_00),9,PTR_00806764,st::mutable_c_string("bulb_n5"),CASE_1D);
     if (iVar1 == 0) {
       /* ST_CALLSITE[0058442F]: CALL 0x00402761; direct=00402761 STT3DSprC::sub_004AD070 */
-      st::fn_00402761((STT3DSprC *)this_00,9);
+      st::fn_00402761(reinterpret_cast<STT3DSprC *>(this_00),9);
       /* ST_CALLSITE[00584438]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
-      uVar2 = st::fn_004022AC((STT3DSprC *)this_00,'\t');
+      uVar2 = st::fn_004022AC(reinterpret_cast<STT3DSprC *>(this_00),'\t');
       this->field_0x24f = (char)uVar2;
       this->field_0x250 = DAT_007cb414;
       this->field_0251 = 0;
@@ -470,7 +482,7 @@ undefined4 __thiscall st::fn_00584380(STJellyGunC *this)
     this->field_0239 = 100;
     return 0;
   }
-  return 0xffffffff;
+  return -1;
 }
 
 // 005844E0 STJellyGunC::sub_005844E0
@@ -512,7 +524,6 @@ void __thiscall st::fn_005844E0(STJellyGunC *this,int param_1,int param_2,int so
   }
   local_10.unknown = this->field_0018;
   /* ST_CALLSITE[00584566]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
-  st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_2,nullptr,soundId,&local_10,0);
+  st::fn_00404BD8(reinterpret_cast<SoundClassTy *>(&g_sound),SOUND_MODE_2,nullptr,soundId,&local_10,0);
   return;
 }
-

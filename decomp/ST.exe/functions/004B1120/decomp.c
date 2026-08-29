@@ -40,8 +40,8 @@ FUN_004b1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3,in
   local_10 = thunk_FUN_004ae0b0((short)*param_3,*param_4,*param_5,param_2,param_1,nullptr,
                                 nullptr,nullptr,0,piVar4);
   if (local_10 == 0) {
-    if ((&STGroupBoatCVTable.vfunc_04)[param_2] ==
-        (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x1) {
+    if ((&STGroupBoatCVTable.vfunc_4)[param_2] ==
+        (icall_004A0EE0_STGroupBoatC__vfunc_4_for_STGroupBoatC *)0x1) {
       param_7 = 0;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_1 = 0;
@@ -55,7 +55,7 @@ FUN_004b1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3,in
               switch(param_2) {
               case CASE_38:
                 /* ST_CALLSITE[004B11E2]: CALL dword ptr [EAX + 0x2c] */
-                dVar2 = local_18->slot_2C();
+                dVar2 = local_18->vfunc_2C();
                 if (dVar2 == 0xdc) {
 LAB_004b1226:
                   /* ST_CALLSITE[004B1235]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
@@ -75,17 +75,17 @@ LAB_004b1226:
               case CASE_39:
               case CASE_5E:
                 /* ST_CALLSITE[004B11F4]: CALL dword ptr [EDX + 0x2c] */
-                dVar2 = local_18->slot_2C();
+                dVar2 = local_18->vfunc_2C();
                 if (dVar2 == 0xdd) goto LAB_004b1226;
                 break;
               case CASE_4F:
                 /* ST_CALLSITE[004B1206]: CALL dword ptr [EAX + 0x2c] */
-                dVar2 = local_18->slot_2C();
+                dVar2 = local_18->vfunc_2C();
                 if (dVar2 == 0xde) goto LAB_004b1226;
                 break;
               case CASE_61:
                 /* ST_CALLSITE[004B1218]: CALL dword ptr [EDX + 0x2c] */
-                dVar2 = local_18->slot_2C();
+                dVar2 = local_18->vfunc_2C();
                 if (dVar2 == 0xe0) goto LAB_004b1226;
               }
             }

@@ -14,12 +14,12 @@ void __thiscall CursorClassTy::AddOpticAcc(CursorClassTy *this)
   int iVar4;
   uint *puVar5;
   InternalExceptionFrame local_b8;
-  undefined4 local_74 [5];
-  undefined4 local_60;
-  undefined4 local_5c;
-  undefined4 local_58;
-  undefined4 local_28 [4];
-  undefined4 local_18;
+  uint local_74 [5];
+  uint local_60;
+  uint local_5c;
+  uint local_58;
+  uint local_28 [4];
+  uint local_18;
   undefined4 *local_14;
   CursorClassTy *local_8;
 

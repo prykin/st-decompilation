@@ -27,6 +27,7 @@ uint __thiscall CPanelTy::PaintPerRes(CPanelTy *this,int param_1)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_c = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_c;
   if (iVar2 == 0) {
@@ -40,10 +41,11 @@ uint __thiscall CPanelTy::PaintPerRes(CPanelTy *this,int param_1)
     if (local_10 != 0) {
       uVar6 = 0;
       do {
-        pBVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3);
+        /* ST_CALLSITE[00504870]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+        pBVar2 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,3);
         /* ST_CALLSITE[00504886]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,param_1 + 0xb + uVar6 * 4,0x5c,
-               '\x01',(byte *)pBVar2);
+               '\x01',(RecoveredRecordView_006B84D0_87AF9D9B *)pBVar2);
         bVar4 = (byte)local_8 + 1;
         local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar4));
         uVar6 = (uint)bVar4;
@@ -54,10 +56,11 @@ uint __thiscall CPanelTy::PaintPerRes(CPanelTy *this,int param_1)
       iVar7 = param_1 + 0xb + (local_8 & 0xff) * 4;
       iVar5 = 0x28 - (local_8 & 0xff);
       do {
-        pBVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+        /* ST_CALLSITE[005048C8]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+        pBVar2 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
         /* ST_CALLSITE[005048DA]: CALL 0x00403229; direct=00403229 DibPut */
         uVar3 = DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar7,0x5c,'\x01',
-                       (byte *)pBVar2);
+                       (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar2);
         iVar7 = iVar7 + 4;
         iVar5 = iVar5 + -1;
       } while (iVar5 != 0);
@@ -66,6 +69,7 @@ uint __thiscall CPanelTy::PaintPerRes(CPanelTy *this,int param_1)
     return uVar3;
   }
   g_currentExceptionFrame = local_54.previous;
+
   iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0x57,0,iVar2,"%s",
                              "CPanelTy::PaintPerRes");
   if (iVar6 != 0) {

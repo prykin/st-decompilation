@@ -15,21 +15,23 @@ void __thiscall StartSystemTy::sub_006E56B0(StartSystemTy *this,uint param_1)
   AnonPointee_StartSystemTy_000C *pAVar1;
   uint uVar2;
   int iVar3;
-  undefined1 local_28 [16];
-  undefined4 local_18;
+  byte local_28 [16];
+  uint local_18;
   undefined4 *local_8;
 
   uVar2 = param_1;
   local_8 = nullptr;
+
   iVar3 = sub_006E5360(this,param_1,(int *)&param_1,&local_8);
   if (iVar3 == 0) {
     local_18 = 3;
-    /* ST_CALLSITE[006E56E8]: CALL dword ptr [EDX] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*local_8)(local_28);
+    /* ST_CALLSITE[006E56E8]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4 */
+    STStructuralVirtualCall<void>(local_8, 0x0, local_28);
   }
+
   iVar3 = sub_006E5360(this,uVar2,(int *)&param_1,&local_8);
   if (iVar3 == 0) {
+
     DArrayRemoveAt(this->field_0010,param_1);
     AppClassTy::DeleteObject(this->field_0018,uVar2);
     for (pAVar1 = this->field_000C; pAVar1 != nullptr;

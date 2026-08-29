@@ -26,19 +26,19 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
   uint uVar15;
   uint uVar16;
   uint *puVar17;
-  undefined4 local_430 [224];
+  uint local_430 [224];
   InternalExceptionFrame local_b0;
-  undefined4 local_6c [4];
-  undefined4 local_5c;
-  undefined4 local_58;
-  undefined4 local_54;
-  undefined4 local_3c;
-  undefined4 local_38;
-  undefined4 local_34;
+  uint local_6c [4];
+  uint local_5c;
+  uint local_58;
+  uint local_54;
+  uint local_3c;
+  uint local_38;
+  uint local_34;
   undefined4 *local_24;
-  undefined4 local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
+  uint local_20;
+  uint local_1c;
+  uint local_18;
   int local_14;
   InfocPanelTy *local_10;
   int local_c;
@@ -53,6 +53,7 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
   memset(local_430, 0, 0x380); /* compiler bulk-zero initialization */
   local_b0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b0;
+
   iVar6 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0);
   this_00 = local_10;
   if (iVar6 == 0) {
@@ -64,6 +65,7 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     uVar9 = 3;
     iVar7 = 0x40;
     g_infocPanel_00801698 = local_10;
+    /* ST_CALLSITE[0051FFD3]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SpecPanelTy; source view only; no Ghidra override */
     pCVar3 = thunk_FUN_00571240("BKG_INFOCENTERW",0);
     /* ST_CALLSITE[0051FFDE]: CALL 0x00403800; direct=00403800 SpecPanelTy::InitPanel */
     SpecPanelTy::InitPanel
@@ -80,12 +82,13 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     iVar7 = 1;
     bVar12 = 0;
     uVar11 = 0xffffffff;
+    /* ST_CALLSITE[0052003E]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
     pCVar3 = thunk_FUN_00571240("IND_PNT",0);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                        (PTR_00806794,CASE_B,pCVar3,uVar11,bVar12,iVar7,iVar10,puVar17);
     this_00->field_03CC = puVar4;
-    /* ST_CALLSITE[0052006D]: CALL 0x0070ceb0; direct=0070CEB0 ccFntTy::operator_new */
-    pcVar5 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
+    /* ST_CALLSITE[0052006D]: CALL 0x0070ceb0; direct=0070CEB0 ccFntTy::operator_new; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/cMf32;pointer:/char;/byte */
+    pcVar5 = ccFntTy::operator_new(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
     this_00->field_03D5 = pcVar5;
     pcVar5->field_0058 = 1;
     pcVar5->field_005C = 0;
@@ -199,6 +202,7 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_b0.previous;
+
   iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\infocen.cpp",0x3e,0,iVar6,"%s",
                              "InfocPanelTy::InitInfocPanel");
   if (iVar9 != 0) {

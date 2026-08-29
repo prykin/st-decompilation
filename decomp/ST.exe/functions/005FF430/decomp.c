@@ -31,6 +31,7 @@ FUN_005ff430(void *this,Global_sub_005FF430_param_1Enum param_1,int param_2,uint
     puVar1 = (ushort *)
              (STField<int>(this,0x23b) +
              *(int *)(STField<int>(this,0x23f) + param_2 * 4) * 0x18);
+
     SVar3 = thunk_FUN_00601db0(*(Global_sub_00601DB0_param_1Enum *)
                                 (STField<int>(this,0x23b) + 4 +
                                 *(int *)(STField<int>(this,0x23f) + param_2 * 4) * 0x18));

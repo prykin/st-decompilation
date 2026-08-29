@@ -1,4 +1,4 @@
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500:
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00601500::FUN_00601500:
 00601500  55                        PUSH EBP
 00601501  8B EC                     MOV EBP,ESP
 00601503  83 EC 24                  SUB ESP,0x24
@@ -306,7 +306,7 @@ LAB_0060183a:
 LAB_0060184f:
 0060184F  8B 16                     MOV EDX,dword ptr [ESI]
 00601851  8B CE                     MOV ECX,ESI
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500::override::prt_601853_e5e2351e:
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00601500::FUN_00601500::override::prt_601853_e5e2351e:
 00601853  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 00601859  85 C0                     TEST EAX,EAX
 0060185B  0F 84 F5 02 00 00         JZ 0x00601b56
@@ -328,7 +328,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500::ove
 00601887  50                        PUSH EAX
 00601888  51                        PUSH ECX
 00601889  8B CE                     MOV ECX,ESI
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500::override::prt_60188b_6c7b7428:
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00601500::FUN_00601500::override::prt_60188b_6c7b7428:
 0060188B  FF 92 DC 00 00 00         CALL dword ptr [EDX + 0xdc]  ; [STIndirectCallsiteApplier] exact slot 0xDC; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00601891  85 C0                     TEST EAX,EAX
 00601893  7E 2F                     JLE 0x006018c4
@@ -507,7 +507,7 @@ LAB_006019ed:
 00601A7E  50                        PUSH EAX
 00601A7F  51                        PUSH ECX
 00601A80  8B CE                     MOV ECX,ESI
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500::override::prt_601a82_6c7b7428:
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00601500::FUN_00601500::override::prt_601a82_6c7b7428:
 00601A82  FF 92 DC 00 00 00         CALL dword ptr [EDX + 0xdc]  ; [STIndirectCallsiteApplier] exact slot 0xDC; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00601A88  85 C0                     TEST EAX,EAX
 00601A8A  7E 11                     JLE 0x00601a9d
@@ -584,7 +584,7 @@ LAB_00601aeb:
 LAB_00601b33:
 00601B33  83 FA 01                  CMP EDX,0x1
 00601B36  75 1E                     JNZ 0x00601b56
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500::cf_common_exit_00601B38:
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00601500::FUN_00601500::cf_common_exit_00601B38:
 00601B38  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]
 00601B3B  89 71 28                  MOV dword ptr [ECX + 0x28],ESI
 00601B3E  89 51 20                  MOV dword ptr [ECX + 0x20],EDX

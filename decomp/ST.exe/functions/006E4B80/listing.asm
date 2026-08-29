@@ -7,7 +7,8 @@ FUN_006e4b80:
 006E4B89  8B 48 14                  MOV ECX,dword ptr [EAX + 0x14]
 006E4B8C  51                        PUSH ECX
 006E4B8D  8B CE                     MOV ECX,ESI
-006E4B8F  E8 0C FA FF FF            CALL 0x006e45a0
+FUN_006e4b80::override::prt_6e4b8f_fb6c0904:
+006E4B8F  E8 0C FA FF FF            CALL 0x006e45a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/int; signature=__thiscall;pointer:/int;pointer:/void;/int
 006E4B94  85 C0                     TEST EAX,EAX
 006E4B96  74 08                     JZ 0x006e4ba0
 006E4B98  50                        PUSH EAX

@@ -36,7 +36,8 @@ LAB_006487dd:
 006487DF  6A 01                     PUSH 0x1
 006487E1  57                        PUSH EDI
 006487E2  56                        PUSH ESI
-006487E3  E8 A8 A5 0A 00            CALL 0x006f2d90
+LoadBossEdit::override::prt_6487e3_d4cef684:
+006487E3  E8 A8 A5 0A 00            CALL 0x006f2d90  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_00648530; signature=__cdecl;pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_00648530;pointer:/cMf32;pointer:/char;/byte;/int
 006487E8  83 C4 10                  ADD ESP,0x10
 006487EB  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
 006487EE  85 C0                     TEST EAX,EAX

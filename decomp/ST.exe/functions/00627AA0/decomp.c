@@ -120,7 +120,8 @@ LAB_00627c8a:
     local_EAX_513 = sub_0041D6C0(this,param_1);
     return SUB41(local_EAX_513,0);
   case CASE_1:
-    iVar3 = thunk_FUN_0041d620(this,param_1);
+    /* ST_CALLSITE[00627CB5]: CALL 0x00401811; direct=00401811 STMineSetC::sub_0041D620 */
+    iVar3 = sub_0041D620(this,param_1);
     return SUB41(iVar3,0);
   case CASE_3:
     goto switchD_00627c97_default;

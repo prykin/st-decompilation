@@ -47,19 +47,19 @@ void __thiscall WaitTy::NoneWait(WaitTy *this)
   UINT UVar24;
   uint uVar25;
   char local_114 [2];
-  undefined1 local_112;
+  byte local_112;
   InternalExceptionFrame local_ec;
-  undefined4 local_a8 [2];
-  undefined2 local_9e;
-  undefined2 local_9c;
+  uint local_a8 [2];
+  ushort local_9e;
+  ushort local_9c;
   int local_8c [8];
   int local_6c;
   char local_68;
   int local_67;
-  undefined4 local_63;
+  uint local_63;
   char local_5c;
   int local_5b;
-  undefined4 local_57;
+  uint local_57;
   WaitTy *local_50;
   STMessage local_4c;
   uint local_2c;
@@ -80,10 +80,12 @@ void __thiscall WaitTy::NoneWait(WaitTy *this)
   this->field_0061 = DVar7;
   local_ec.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_ec;
+
   local_EAX_66 = Library::MSVCRT::__setjmp3(local_ec.jumpBuffer,0);
   this_01 = local_50;
   if (local_EAX_66 != 0) {
     g_currentExceptionFrame = local_ec.previous;
+
     iVar9 = ReportDebugMessage("E:\\__titans\\Start\\wait_obj.cpp",0x2a6,0,local_EAX_66,
                                "%s","WaitTy::NoneWait");
     if (iVar9 != 0) {
@@ -118,6 +120,7 @@ void __thiscall WaitTy::NoneWait(WaitTy *this)
         pcVar22[0] = '\0';
         pcVar22[1] = '\0';
         local_112 = 4;
+
         FUN_00715360(g_int_00811764,1,'\x1a',local_114,0x26,1,0xffffffff);
       }
       iVar10 = this_01->array_00BC[0xc].field_01F0 + 1;
@@ -129,10 +132,12 @@ void __thiscall WaitTy::NoneWait(WaitTy *this)
         /* ST_CALLSITE[005E8AD1]: CALL dword ptr [0x0085c05c] */
         CFsgsConnection::PumpMessages((CFsgsConnection *)&DAT_00802a90);
       }
+
       Library::DKW::DDX::FUN_006b7510(g_int_00811764,-1,&local_24,-1,0);
       local_1c = 0;
       if (0 < local_24) {
         do {
+
           iVar10 = Library::Ourlib::CONNECT::FUN_00715630
                              (g_int_00811764,-1,&local_2c,&local_6c,&local_14,&local_28,-1,0);
           pAVar6 = local_14;
@@ -209,6 +214,7 @@ LAB_005e9233:
                     local_5c = *puVar1;
                     local_5b = pAVar6->field_0003;
                     local_57 = 0;
+
                     local_EAX_2136 =
                          FUN_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,&local_5c,
                                       0);
@@ -224,6 +230,7 @@ LAB_005e9233:
                     local_68 = *puVar1;
                     local_67 = pAVar6->field_0003;
                     local_63 = *(undefined4 *)&pAVar6->field_0x7;
+
                     iVar8 = FUN_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,
                                          &local_68,0);
                     if (iVar8 == -0x70) {
@@ -253,8 +260,11 @@ LAB_005e9233:
                         FreeAndNull(piVar11);
                       }
                       local_18 = (byte *)0xffffffff;
+
                       FUN_006b6500(g_int_00811764,1);
+
                       FUN_00715360(g_int_00811764,1,'%',(char *)&local_18,4,0,0xffffffff);
+
                       FUN_006b6500(g_int_00811764,DAT_0080733c);
                     }
                   }
@@ -324,6 +334,7 @@ LAB_005e8ee0:
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 if (*(int *)(this_01->array_00BC[0xc].field_01DB + 0x69a) == 0) {
                   pAVar19 = local_14 + 1;
+
                   pvVar12 = Library::DKW::LIB::MemAlloc(*(uint *)(local_14 + 1));
                   *(void **)(this_01->array_00BC[0xc].field_01DB + 0x69a) = pvVar12;
                   slotStorage = &this_01->field_1A83;
@@ -342,6 +353,7 @@ LAB_005e8ee0:
                   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                   uVar16 = *(uint *)(this_01->array_00BC[0xc].field_01DB + 0x6a6);
                   this_01->field_1A7F = uVar16;
+
                   pbVar13 = Library::DKW::LIB::MemAllocClear(uVar16);
                   *slotStorage = pbVar13;
                   uVar25 = 0;
@@ -383,7 +395,8 @@ LAB_005e8ee0:
                     AddStr(this_01,&DAT_0080f33a,1);
                   }
                   if (this_01->field_1A7F == 0) {
-                    iVar10 = thunk_FUN_005deb90((AnonShape_005DEB90_CA287120 *)
+
+                    iVar10 = thunk_FUN_005deb90((RecoveredRecordView_005DEB90_D3D89167 *)
                                                 this_01->array_00BC[0xc].field_01DB);
                     if (iVar10 == 0) {
                       this_01->array_00BC[0xc].field_01F4 = 0;
@@ -430,6 +443,7 @@ LAB_005e91f7:
            (3000 < this_01->field_0061 - this_01->field_1A7B)) && (this_01->field_1A7F != 0)) &&
          (this_01->field_1A83 != nullptr)) {
         uVar16 = this_01->field_1A7F * 4 + 4;
+
         local_20 = Library::DKW::LIB::MemAlloc(uVar16);
         local_18 = this_01->field_1A83;
         *local_20 = this_01->field_1A7F;
@@ -449,8 +463,11 @@ LAB_005e91f7:
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           } while (uVar14 < *(uint *)(this_01->array_00BC[0xc].field_01DB + 0x6a6));
         }
+
         FUN_006b6500(g_int_00811764,1);
+
         FUN_00715360(g_int_00811764,1,'%',(char *)local_20,uVar16,1,0xffffffff);
+
         FUN_006b6500(g_int_00811764,DAT_0080733c);
         FreeAndNull(&local_20);
         this_01->field_1A7B = this_01->field_0061;
@@ -462,6 +479,7 @@ LAB_005e91f7:
        (g_startSystem_0081176C->field_0300 < g_startSystem_0081176C->field_0304 + -1)) {
       g_startSystem_0081176C->field_0300 = g_startSystem_0081176C->field_0300 + 1;
       if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b3730
                   ((uint *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC,
                    g_startSystem_0081176C->field_0300,g_startSystem_0081176C->field_0314,
@@ -512,6 +530,7 @@ LAB_005e91f7:
       this_01->field_0065 = 1;
       this_01->array_00BC[0xc].field_01EC = this_01->field_0061;
       if (iVar10 == 0) {
+
         Library::DKW::DDX::FUN_006b3430
                   ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_02EC);
         if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
@@ -533,39 +552,48 @@ LAB_005e91f7:
       puVar17 = this_01->field_1A94;
       iVar10 = 0x16;
       do {
+
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*puVar17);
         puVar17 = puVar17 + 1;
         iVar10 = iVar10 + -1;
       } while (iVar10 != 0);
       if (g_startSystem_0081176C->field_0391 != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_03D5,g_startSystem_0081176C->field_0391,
                    0xfffffffe,g_startSystem_0081176C->field_03A9,g_startSystem_0081176C->field_03AD);
       }
       if (g_startSystem_0081176C->field_0422 != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_0466,g_startSystem_0081176C->field_0422,
                    0xfffffffe,g_startSystem_0081176C->field_043A,g_startSystem_0081176C->field_043E);
       }
       if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3,
                    0xfffffffe,g_startSystem_0081176C->field_04CB,g_startSystem_0081176C->field_04CF);
       }
+
       Library::DKW::DDX::FUN_006b3430
                 ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
       if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560,
                    0xfffffffe,g_startSystem_0081176C->field_0578,g_startSystem_0081176C->field_057C);
       }
       if (g_startSystem_0081176C->field_05F1 != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1,
                    0xfffffffe,g_startSystem_0081176C->field_0609,g_startSystem_0081176C->field_060D);
       }
+
       Library::DKW::DDX::FUN_006b3430
                 ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0558);
+
       Library::DKW::DDX::FUN_006b3430
                 ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
       /* ST_CALLSITE[005E8A34]: CALL 0x004043f4; direct=004043F4 WaitTy::PaintWait */
@@ -578,6 +606,7 @@ LAB_005e91f7:
     if ((this_01->array_00BC[0xc].field_01E4 == 0) && (0 < g_startSystem_0081176C->field_0300)) {
       g_startSystem_0081176C->field_0300 = g_startSystem_0081176C->field_0300 + -1;
       if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b3730
                   ((uint *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC,
                    g_startSystem_0081176C->field_0300,g_startSystem_0081176C->field_0314,
@@ -634,6 +663,7 @@ LAB_005e91f7:
       bVar3 = this_01->array_00BC[0xc].field_01DA;
       this_01->field_0065 = 2;
       if ((bVar3 != 0xff) && (*(int *)&this_01->array_00BC[bVar3].field_0x15 != 0)) {
+
         AppClassTy::PostNextMessage
                   ((AppClassTy *)&DAT_00807620,(undefined4 *)&this_01->array_00BC[bVar3].field_0x5);
         g_currentExceptionFrame = local_ec.previous;

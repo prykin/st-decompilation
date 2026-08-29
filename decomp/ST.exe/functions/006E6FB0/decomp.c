@@ -72,7 +72,8 @@ ST3DSMAPContext::sub_006E6FB0
     if (param_4 != 0) {
       iVar8 = param_1->field_0008;
       DAT_00856d8c = (uint)param_1->field_000E * param_1->field_0004 + 0x1f >> 3 & 0x1ffffffc;
-      iVar7 = FUN_006b4fa0((int *)param_1);
+
+      iVar7 = FUN_006b4fa0((RecoveredRecord_006B4FA0_DAC3A217 *)param_1);
       local_2c = ((iVar8 - param_3) + -1) * DAT_00856d8c + param_2 + iVar7;
       local_4c = this->field_041C;
       if ((int)this->field_0310 < this->field_041C) {
@@ -671,6 +672,7 @@ LAB_006e7ff9:
       }
       else {
         pAVar6 = *(AnonShape_006E6AF0_D2F012A7 **)pAVar2;
+
         FUN_006b98c0((int *)&this->field_0442,(int *)pAVar2);
         FUN_006a5e90((short *)pAVar2);
         pAVar2 = pAVar6;

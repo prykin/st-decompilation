@@ -1,7 +1,8 @@
 #include "../../pseudocode_runtime.h"
 
 
-void FUN_00761550(int *param_1,int param_2,int param_3,int *param_4,int param_5)
+void FUN_00761550(RecoveredRecord_00761550_95FF8642 *param_1,int param_2,int param_3,int *param_4,
+                 int param_5)
 
 {
   byte uVar1;
@@ -15,7 +16,7 @@ void FUN_00761550(int *param_1,int param_2,int param_3,int *param_4,int param_5)
   int local_c;
   int local_8;
 
-  local_8 = STField<int>(param_1,0x132) + 0x80;
+  local_8 = param_1->field_0132 + 0x80;
   piVar4 = (int *)(param_3 + 0x60);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   piVar6 = (int *)(*(int *)(param_2 + 0x50) + 0x60);
@@ -45,10 +46,10 @@ void FUN_00761550(int *param_1,int param_2,int param_3,int *param_4,int param_5)
     param_2_after_write = param_2_after_write + -1;
   } while (0 < param_2_after_write);
   piVar4 = local_4c;
-  auto param_1_after_write = param_4; /* compiler stack-slot lifetime split */
+  auto param_1_after_write = (RecoveredRecord_00761550_95FF8642 *)param_4; /* compiler stack-slot lifetime split */
   auto param_3_after_write = 2; /* compiler stack-slot lifetime split */
   do {
-    puVar3 = (undefined1 *)(param_5 + *param_1_after_write);
+    puVar3 = (undefined1 *)(param_5 + *(int *)param_1_after_write);
     if (((piVar4[1] == 0 && piVar4[3] == 0) && piVar4[5] == 0) && piVar4[7] == 0) {
       uVar1 = *(undefined1 *)((*piVar4 + 0x10 >> 5 & 0x3ffU) + local_8);
       *puVar3 = uVar1;
@@ -61,7 +62,7 @@ void FUN_00761550(int *param_1,int param_2,int param_3,int *param_4,int param_5)
       puVar3[1] = *(undefined1 *)(((iVar5 * 0x8000 - iVar2) + 0x80000 >> 0x14 & 0x3ffU) + local_8);
     }
     piVar4 = piVar4 + 8;
-    param_1_after_write = param_1_after_write + 1;
+    param_1_after_write = (RecoveredRecord_00761550_95FF8642 *)&param_1_after_write->field_0x4;
     param_3_after_write = param_3_after_write + -1;
   } while (param_3_after_write != 0);
   return;

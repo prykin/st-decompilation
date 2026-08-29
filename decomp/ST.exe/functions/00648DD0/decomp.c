@@ -31,7 +31,8 @@ void __cdecl FUN_00648dd0(uint param_1)
       local_24.id = MESS_AIPLRCLASSTY_5D97;
       /* ST_CALLSITE[00648E2B]: CALL dword ptr [EAX] */
       this->GetMessage(&local_24);
-      thunk_FUN_0054cf70(g_playSystem_00802A38,this->field_0008);
+      /* ST_CALLSITE[00648E37]: CALL 0x0040432c; direct=0040432C STPlaySystemC::sub_0054CF70 */
+      STPlaySystemC::sub_0054CF70(g_playSystem_00802A38,this->field_0008);
     }
   }
   return;

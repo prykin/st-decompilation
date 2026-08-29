@@ -11,8 +11,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.util.ArrayList;
+import java.util.ArrayDeque;
 import java.util.Comparator;
+import java.util.Deque;
 import java.util.HashSet;
+import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
@@ -243,6 +246,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                 currentType);
         boolean exactCallViewCandidate =
             scriptOwnedGenericStoragePointer(highSymbol, currentType);
+        boolean generatedReceiverCallViewCandidate =
+            scriptOwnedGeneratedReceiverPointer(highSymbol, currentType);
         boolean scalarTransportPointerCandidate =
             groups.size() == 1 && scalarTransportPointerCandidate(
                 function, groups.values().iterator().next(), currentType);
@@ -251,7 +256,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                 !receiverAliasCandidate && !receiverHistoryCandidate &&
                 !priorScriptRepairCandidate &&
                 !misattachedReceiverHistoryCandidate &&
-                !exactCallViewCandidate && !databaseTypeMismatch &&
+                !exactCallViewCandidate && !generatedReceiverCallViewCandidate &&
+                !databaseTypeMismatch &&
                 !scalarTransportPointerCandidate)
             return;
         if (merged) {
@@ -491,6 +497,58 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             "/int", "/uint").contains(type.getPathName());
     }
 
+    /**
+     * Revisit an automation-owned local which a previous receiver-alias pass
+     * changed from a concrete caller view to a generated HiddenThis receiver.
+     * A HiddenThis identity describes the callee's structural ECX domain; it is
+     * not automatically the best persistent type for a caller-local alias.  The
+     * ordinary exact call-argument solver below must still find one unanimous
+     * stronger semantic pointer before any repair can be applied.
+     */
+    private boolean scriptOwnedGeneratedReceiverPointer(Object highSymbol,
+            DataType currentType) {
+        // The datatype itself is automation-owned: these receiver structures
+        // exist only under our deterministic HiddenThis category.  Older
+        // applier revisions did not consistently leave a variable comment, so
+        // requiring a marker here strands exactly the stale locals this audit
+        // is meant to repair.  A persistent Listing local is still required;
+        // synthetic High variables remain out of scope.
+        try {
+            return persistentVariable(highSymbol) != null &&
+                generatedHiddenReceiverPointer(currentType);
+        }
+        catch (Exception ignored) { return false; }
+    }
+
+    private boolean automationOwnedPersistentLocal(Object highSymbol) {
+        try {
+            Variable variable = persistentVariable(highSymbol);
+            String comment = variable == null ? "" : text(variable.getComment());
+            return comment.contains(APPLIER_MARKER) ||
+                comment.contains("[STPointerShapeApplier]");
+        }
+        catch (Exception ignored) { return false; }
+    }
+
+    private boolean generatedHiddenReceiverPointer(DataType type) {
+        DataType base = untypedef(type);
+        if (!(base instanceof Pointer pointer)) return false;
+        DataType pointed = untypedef(pointer.getDataType());
+        if (!(pointed instanceof Structure)) return false;
+        String path = pointed.getPathName();
+        return path.startsWith("/SubmarineTitans/Recovered/HiddenThis/" +
+            "RecoveredReceiver_") ||
+            path.startsWith("/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_");
+    }
+
+    private boolean concreteSemanticPointer(DataType type) {
+        DataType base = untypedef(type);
+        if (!(base instanceof Pointer pointer)) return false;
+        DataType pointed = untypedef(pointer.getDataType());
+        return pointed instanceof Structure && !generatedHiddenReceiverPointer(type) &&
+            !pointed.getPathName().startsWith("/SubmarineTitans/Recovered/");
+    }
+
     private DataType resolveType(String specification) {
         if (specification == null || specification.isBlank()) return null;
         if (specification.startsWith("pointer:")) {
@@ -683,6 +741,7 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         if (type == null || !semanticType(type)) return false;
         if (recursivePointerIdentity(type) != null) return true;
         return evidence.sources.contains("call_return") ||
+            evidence.sources.contains("indirect_receiver") ||
             evidence.sources.contains("typed_copy") ||
             evidence.sources.contains("typed_cast") ||
             evidence.sources.contains("floating_role") ||
@@ -712,6 +771,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                 evidence.sources.contains("receiver_history"))
             return TYPED_FIELD_WEIGHT;
         if (evidence.sources.contains("call_return")) return RETURN_WEIGHT;
+        if (evidence.sources.contains("indirect_receiver"))
+            return TYPED_FIELD_WEIGHT;
         if (evidence.sources.contains("typed_copy")) return COPY_WEIGHT;
         if (evidence.sources.contains("typed_cast")) return COPY_WEIGHT;
         if (evidence.sources.contains("floating_role"))
@@ -735,6 +796,19 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                 .filter(value -> value.sources.contains("receiver_alias") ||
                     value.sources.contains("receiver_history"))
                 .toList();
+            if (receiverAliases.size() == 1 &&
+                    generatedHiddenReceiverPointer(resolveTypeSpecification(
+                        receiverAliases.get(0).specification))) {
+                List<TypeEvidence> semanticCallViews = evidence.values().stream()
+                    .filter(value -> value.sources.contains("call_argument") &&
+                        concreteSemanticPointer(resolveTypeSpecification(
+                            value.specification)) &&
+                        value.anchors.stream().filter(anchor ->
+                            anchor.kind.equals("call_argument")).count() >= 2)
+                    .toList();
+                if (semanticCallViews.size() == 1)
+                    return new Decision(semanticCallViews.get(0), false, evidence);
+            }
             // The exact unadjusted machine provenance of a local is stronger
             // than a downstream call accepting a base or neutral pointer.  A
             // competing receiver origin still cancels the proposal.
@@ -772,9 +846,13 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         Structure receiver = pointedStructure(receiverType);
         Structure current = pointedStructure(currentType);
         if (receiver == null || current == null ||
-                equivalentLifetimeType(receiverType, currentType) ||
-                receiver.getNumDefinedComponents() <=
-                    current.getNumDefinedComponents()) return;
+                equivalentLifetimeType(receiverType, currentType)) return;
+        // A generated structural receiver does not outrank a concrete semantic
+        // caller-local view.  The structural type remains correct for auto-this,
+        // while exact typed call boundaries may legitimately require the concrete
+        // base object in the spill/reload lifetime.
+        if (generatedHiddenReceiverPointer(receiverType) &&
+                concreteSemanticPointer(currentType)) return;
         try {
             for (Object varnode : varnodes) {
                 Object definition = varnode.getClass().getMethod("getDef")
@@ -925,7 +1003,25 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         String prior = priorPointerShapeSpecification(highSymbol);
         DataType priorType = prior == null ? null :
             resolveTypeSpecification(prior);
-        DataType receiver = receiverType(functionOf(highSymbol));
+        Function function = functionOf(highSymbol);
+        DataType receiver = receiverType(function);
+        // One physical Listing stack local cannot persist two overlapping
+        // source lifetimes.  When the slot is the exact entry-block ECX spill,
+        // its durable identity is the unadjusted method receiver.  A later call
+        // accepting a base/peer pointer is a use-site view and must not revive
+        // an older pointer-shape marker on the whole slot.  Otherwise the two
+        // individually valid recovery rules alternate forever:
+        //
+        //   receiver spill -> old call-boundary view -> receiver spill -> ...
+        //
+        // This is storage/provenance based, not tied to an address, class, or
+        // local name.  A genuinely separable High merge group is still handled
+        // by the ordinary lifetime analysis before this migration path.
+        if (receiver != null &&
+                priorLocalLifetimeSpecifications(highSymbol).contains(
+                    typeSpecification(receiver)) &&
+                exactEntryReceiverStackSpill(function, highSymbol) != null)
+            return false;
         return priorType != null && receiver != null &&
             equivalentLifetimeType(currentType, receiver) &&
             !equivalentLifetimeType(priorType, currentType);
@@ -1086,16 +1182,41 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
 
     private void preferTrustedCurrentCallView(DataType currentType,
             Map<String, TypeEvidence> evidence) {
+        if (generatedHiddenReceiverPointer(currentType)) {
+            List<TypeEvidence> concreteBoundaries = evidence.values().stream()
+                .filter(value -> {
+                    DataType type = resolveTypeSpecification(value.specification);
+                    if (!semanticPointer(type) ||
+                            generatedHiddenReceiverPointer(type)) return false;
+                    long arguments = value.anchors.stream()
+                        .filter(anchor -> anchor.kind.equals("call_argument"))
+                        .count();
+                    return value.sources.contains("indirect_receiver") ||
+                        arguments >= 2;
+                })
+                .toList();
+            if (concreteBoundaries.size() == 1) {
+                String selected = concreteBoundaries.get(0).specification;
+                evidence.entrySet().removeIf(entry ->
+                    !entry.getKey().equals(selected) &&
+                    generatedHiddenReceiverPointer(
+                        resolveTypeSpecification(entry.getKey())));
+                return;
+            }
+        }
         TypeEvidence current = evidence.values().stream()
             .filter(value -> equivalentLifetimeSpecifications(
                 value.specification, typeSpecification(currentType)) &&
-                value.sources.contains("call_argument"))
+                (value.sources.contains("call_argument") ||
+                    value.sources.contains("indirect_receiver")))
             .findFirst().orElse(null);
         if (current == null) return;
         evidence.entrySet().removeIf(entry ->
             !entry.getKey().equals(current.specification) &&
-            entry.getValue().sources.stream().allMatch(source ->
-                source.equals("typed_copy") || source.equals("receiver_alias")));
+            (entry.getValue().sources.stream().allMatch(source ->
+                source.equals("typed_copy") || source.equals("receiver_alias")) ||
+             generatedHiddenReceiverPointer(
+                resolveTypeSpecification(entry.getKey()))));
     }
 
     private void collectPriorScriptRepairEvidence(Object highSymbol,
@@ -1372,6 +1493,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                 Object op = descendants.next();
                 if (mnemonic(op).equals("CALL"))
                     collectCallArgument(op, varnode, evidence);
+                else if (mnemonic(op).equals("CALLIND"))
+                    collectIndirectReceiver(op, varnode, evidence);
                 else if (mnemonic(op).equals("STORE"))
                     collectTypedFieldStore(op, varnode, evidence);
                 if (mnemonic(op).equals("INT_ADD"))
@@ -1382,11 +1505,62 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                 if (mixedDomainEligible)
                     collectFloatingRole(op, varnode, evidence);
             }
+            collectTransparentConsumerEvidence(varnode, evidence);
             if (mixedDomainEligible)
                 collectControlIndexRole(varnode, evidence);
         }
         catch (Exception ignored) {
             // One malformed p-code edge does not invalidate other independent anchors.
+        }
+    }
+
+    /**
+     * Follow only value-preserving, same-width p-code into a later High
+     * lifetime before inspecting typed call boundaries.  Ghidra commonly
+     * materializes a cast or COPY between one persistent Listing local and a
+     * receiver-aware call override.  Looking only at direct descendants then
+     * leaves the stale whole-local type in place and exports a cast at every
+     * otherwise readable virtual call.
+     *
+     * This deliberately does not cross arithmetic, PTRSUB/PTRADD, LOAD/STORE,
+     * or MULTIEQUAL.  Those operations may adjust the pointer or merge another
+     * value and therefore cannot prove that the original local has the same
+     * source-level role.  The terminal evidence is still the independently
+     * installed exact call ABI; the transparent chain contributes no type by
+     * itself.
+     */
+    private void collectTransparentConsumerEvidence(Object root,
+            Map<String, TypeEvidence> evidence) throws Exception {
+        int rootSize = ((Number)root.getClass().getMethod("getSize")
+            .invoke(root)).intValue();
+        Set<Object> seen = java.util.Collections.newSetFromMap(
+            new IdentityHashMap<>());
+        Deque<ValueDepth> queue = new ArrayDeque<>();
+        seen.add(root);
+        queue.addLast(new ValueDepth(root, 0));
+        while (!queue.isEmpty()) {
+            ValueDepth current = queue.removeFirst();
+            if (current.depth >= 6) continue;
+            @SuppressWarnings("unchecked")
+            Iterator<Object> descendants = (Iterator<Object>)current.varnode
+                .getClass().getMethod("getDescendants").invoke(current.varnode);
+            while (descendants.hasNext()) {
+                Object op = descendants.next();
+                String operation = mnemonic(op);
+                if (operation.equals("CALL"))
+                    collectCallArgument(op, current.varnode, evidence);
+                else if (operation.equals("CALLIND"))
+                    collectIndirectReceiver(op, current.varnode, evidence);
+                if (!operation.equals("COPY") && !operation.equals("CAST") &&
+                        !operation.equals("INDIRECT")) continue;
+                if (operandOf(op, current.varnode) < 0) continue;
+                Object output = op.getClass().getMethod("getOutput").invoke(op);
+                if (output == null || !seen.add(output)) continue;
+                int outputSize = ((Number)output.getClass().getMethod("getSize")
+                    .invoke(output)).intValue();
+                if (outputSize != rootSize) continue;
+                queue.addLast(new ValueDepth(output, current.depth + 1));
+            }
         }
     }
 
@@ -1783,6 +1957,60 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             "signature=[^;\\r\\n]*;(pointer:[^;\\s]+|/[^;\\s]+)")
             .matcher(comment);
         return marker.find() ? resolveTypeSpecification(marker.group(1)) : null;
+    }
+
+    /**
+     * Feed one exact receiver-aware CALLIND boundary back into the local
+     * lifetime solver.  Ghidra does not always propagate a call-override's
+     * first argument through a raw or merged local, even though the override
+     * already proves the physical receiver type at that instruction.  Only
+     * operand one (the receiver), a script-owned override, and a concrete
+     * named structure are accepted; sibling merge groups remain independent.
+     */
+    private void collectIndirectReceiver(Object op, Object varnode,
+            Map<String, TypeEvidence> evidence) throws Exception {
+        if (operandOf(op, varnode) != 1) return;
+        Address call = sequenceAddress(op);
+        Function caller = currentProgram.getFunctionManager()
+            .getFunctionContaining(call);
+        FunctionDefinition definition = exactScriptCallDefinition(caller, call);
+        if (definition == null ||
+                !"__thiscall".equals(definition.getCallingConventionName()) ||
+                definition.getArguments().length < 1) return;
+        DataType receiver = definition.getArguments()[0].getDataType();
+        DataType unwrapped = untypedef(receiver);
+        if (!(unwrapped instanceof Pointer pointer)) return;
+        DataType pointee = untypedef(pointer.getDataType());
+        if (!(pointee instanceof Structure structure) ||
+                structure.getPathName().contains(
+                    "/PointerShapes/CallableReceivers/")) return;
+        int size = ((Number)varnode.getClass().getMethod("getSize")
+            .invoke(varnode)).intValue();
+        if (!usableType(receiver, size)) return;
+        Evidence anchor = anchor(op, "indirect_receiver", 1, null,
+            structure.getPathName());
+        addEvidence(evidence, receiver, TYPED_FIELD_WEIGHT,
+            "indirect_receiver", anchor);
+    }
+
+    private FunctionDefinition exactScriptCallDefinition(Function caller,
+            Address call) {
+        if (caller == null || call == null) return null;
+        String comment = text(currentProgram.getListing()
+            .getComment(CommentType.EOL, call));
+        if (!comment.contains("[STIndirectCallsiteApplier]")) return null;
+        Namespace root = HighFunction.findOverrideSpace(caller);
+        if (root == null) return null;
+        FunctionDefinition agreed = null;
+        for (Symbol symbol : currentProgram.getSymbolTable().getSymbols(call)) {
+            if (!root.equals(symbol.getParentNamespace())) continue;
+            DataTypeSymbol value = HighFunctionDBUtil.readOverride(symbol);
+            if (value == null || !(value.getDataType() instanceof
+                    FunctionDefinition definition)) continue;
+            if (agreed != null && !agreed.isEquivalent(definition)) return null;
+            agreed = definition;
+        }
+        return agreed;
     }
 
     private void collectCallArgument(Object op, Object varnode,
@@ -2573,6 +2801,7 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             this.specification = specification;
         }
     }
+    private record ValueDepth(Object varnode, int depth) {}
     private record Decision(TypeEvidence selected, boolean conflict,
         Map<String, TypeEvidence> evidence) {}
     private record CallTarget(Function direct, Function resolved) {}

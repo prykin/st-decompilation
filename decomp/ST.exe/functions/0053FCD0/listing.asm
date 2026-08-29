@@ -52,7 +52,7 @@ LAB_0053fd16:
 0053FD58  6A 02                     PUSH 0x2
 0053FD5A  56                        PUSH ESI
 0053FD5B  68 F4 7A 7C 00            PUSH 0x7c7af4
-0053FD60  E8 17 5A EC FF            CALL 0x0040577c
+0053FD60  E8 17 5A EC FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 0053FD65  83 C4 08                  ADD ESP,0x8
 0053FD68  50                        PUSH EAX
 0053FD69  E8 92 2E 1B 00            CALL 0x006f2c00
@@ -60,7 +60,8 @@ LAB_0053fd16:
 0053FD74  83 C4 0C                  ADD ESP,0xc
 0053FD77  50                        PUSH EAX
 0053FD78  6A 01                     PUSH 0x1
-0053FD7A  E8 61 1F 1B 00            CALL 0x006f1ce0
+ProdPanelTy::PaintTab::override::prt_53fd7a_6752cf82:
+0053FD7A  E8 61 1F 1B 00            CALL 0x006f1ce0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int
 0053FD7F  8B 75 F0                  MOV ESI,dword ptr [EBP + -0x10]
 0053FD82  8B 5D F8                  MOV EBX,dword ptr [EBP + -0x8]
 0053FD85  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
@@ -89,7 +90,8 @@ LAB_0053fd16:
 0053FDCA  83 C4 08                  ADD ESP,0x8
 0053FDCD  50                        PUSH EAX
 0053FDCE  6A 06                     PUSH 0x6
-0053FDD0  E8 0B 1F 1B 00            CALL 0x006f1ce0
+ProdPanelTy::PaintTab::override::prt_53fdd0_6752cf82:
+0053FDD0  E8 0B 1F 1B 00            CALL 0x006f1ce0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int
 0053FDD5  8B 4D F4                  MOV ECX,dword ptr [EBP + -0xc]
 0053FDD8  8B 56 68                  MOV EDX,dword ptr [ESI + 0x68]
 0053FDDB  50                        PUSH EAX

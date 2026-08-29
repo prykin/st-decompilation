@@ -23,10 +23,10 @@ int __thiscall st::fn_004A8920(OpticClassC *this,STMessage *message)
   uint uVar5;
   longlong lVar6;
   InternalExceptionFrame local_6c;
-  undefined1 local_28 [12];
-  undefined4 local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
+  byte local_28 [12];
+  uint local_1c;
+  uint local_18;
+  uint local_14;
   OpticClassC *local_8;
 
   local_6c.previous = g_currentExceptionFrame;
@@ -119,7 +119,7 @@ int __thiscall st::fn_004A8920(OpticClassC *this,STMessage *message)
     local_14 = 0;
     /* ST_CALLSITE[004A8B44]: CALL dword ptr [EAX + 0x18] */
     (*g_playSystem_00802A38->vtable->SendMessage)
-              ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,(int)local_28);
+              (reinterpret_cast<SystemWithNamedObjClassTy *>(g_playSystem_00802A38),(int)local_28);
 LAB_004a8b47:
     uVar3 = DAT_0080743c & 0xff;
   }
@@ -155,7 +155,7 @@ LAB_004a8b47:
     case MESS_SHARED_010F:
       /* ST_CALLSITE[004A8B9F]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
       st::fn_00401078
-                (g_playSystem_00802A38,st::mutable_c_string("opticsave"),(byte *)&DAT_008073d0,399,0xc);
+                (g_playSystem_00802A38,st::mutable_c_string("opticsave"),reinterpret_cast<byte *>(&DAT_008073d0),399,0xc);
       g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
@@ -168,13 +168,13 @@ LAB_004a8c23:
     local_14 = uVar5;
     /* ST_CALLSITE[004A8C46]: CALL dword ptr [EDX + 0x18] */
     (*g_playSystem_00802A38->vtable->SendMessage)
-              ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,(int)local_28);
+              (reinterpret_cast<SystemWithNamedObjClassTy *>(g_playSystem_00802A38),(int)local_28);
 LAB_004a8c49:
     uVar3 = DAT_0080743c & 0xff;
   }
 LAB_004a8c6a:
   st::fn_004036D4
-            ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,uVar3);
+            (reinterpret_cast<RecoveredReceiver_00567510 *>(&g_sound),DAT_008073d8,DAT_008073dc,DAT_008073fc,uVar3);
 switchD_004a8b81_caseD_108:
   g_currentExceptionFrame = local_6c.previous;
   return 0;
@@ -210,9 +210,11 @@ void __thiscall st::fn_004A8FC0(OpticClassC *this)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_10 = this;
+
   iVar3 = st::fn_0072D7F0(local_5c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_5c.previous;
+
     iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_optic.cpp"),0x107,0,iVar3,st::mutable_c_string("%s"),
                                "OpticClassC::InitOptic");
     if (iVar4 == 0) {
@@ -289,7 +291,7 @@ void __thiscall st::fn_004A8FC0(OpticClassC *this)
     return;
   }
   puVar6 = local_c;
-  puVar7 = (ushort *)&DAT_008073d0;
+  puVar7 = reinterpret_cast<ushort *>(&DAT_008073d0);
   for (iVar5 = 99; iVar5 != 0; iVar5 = iVar5 + -1) {
     *(undefined4 *)puVar7 = *(undefined4 *)puVar6;
     puVar6 = puVar6 + 2;
@@ -304,11 +306,12 @@ void __thiscall st::fn_004A8FC0(OpticClassC *this)
              ,DAT_00807574,(double)(DAT_00807420 * _DAT_00790780),
              (double)(DAT_00807420 * _DAT_00790784),(double)(DAT_00807424 * _DAT_00790780),
              (double)(DAT_00807424 * _DAT_00790784),10.0,9.965999793052674,(int)lVar10);
-  st::fn_00401B6D(DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c);
+  /* ST_CALLSITE[004A90EE]: CALL 0x00401b6d; direct=00401B6D OpticClassC::sub_004A9B60 */
+  st::fn_00401B6D(local_10,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c);
   st::fn_00405547(1);
   DAT_0080674c = 2;
   DAT_0080745d = 0;
-  st::fn_006F20E0(g_cMf32_00806754,(uint *)&local_c);
+  st::fn_006F20E0(g_cMf32_00806754,reinterpret_cast<uint *>(&local_c));
   g_currentExceptionFrame = local_5c.previous;
   return;
 }
@@ -338,9 +341,11 @@ void __thiscall st::fn_004A9540(OpticClassC *this,int param_1)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_18 = this;
+
   errorCode = st::fn_0072D7F0(local_5c.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_5c.previous;
+
     iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\To_optic.cpp"),0x13c,0,errorCode,
                                st::mutable_c_string("%s"));
     if (iVar3 == 0) {
@@ -393,7 +398,8 @@ void __thiscall st::fn_004A9540(OpticClassC *this,int param_1)
   st::fn_006DD800
             (g_sT3DSMAPContext_00807598,
              _DAT_0080742c * _DAT_00790784 + local_8 * (float)_DAT_00790770 + (float)_DAT_00790760);
-  st::fn_00401B6D(DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c);
+  /* ST_CALLSITE[004A97C6]: CALL 0x00401b6d; direct=00401B6D OpticClassC::sub_004A9B60 */
+  st::fn_00401B6D(local_18,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c);
   st::fn_00405547(1);
   DAT_0080674c = 2;
   DAT_0080745d = 0;
@@ -411,9 +417,8 @@ void __thiscall st::fn_004A9540(OpticClassC *this,int param_1)
     st::fn_00403C47(1);
   }
   st::fn_004036D4
-            ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+            (reinterpret_cast<RecoveredReceiver_00567510 *>(&g_sound),DAT_008073d8,DAT_008073dc,DAT_008073fc,
              DAT_0080743c & 0xff);
   g_currentExceptionFrame = local_5c.previous;
   return;
 }
-

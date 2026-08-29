@@ -1,4 +1,4 @@
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0060EF40::FUN_0060ef40:
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0060EF40::FUN_0060ef40:
 0060EF40  55                        PUSH EBP
 0060EF41  8B EC                     MOV EBP,ESP
 0060EF43  6A FF                     PUSH -0x1
@@ -229,7 +229,7 @@ LAB_0060f1da:
 0060F1DC  74 3D                     JZ 0x0060f21b
 0060F1DE  8B 16                     MOV EDX,dword ptr [ESI]
 0060F1E0  8B CE                     MOV ECX,ESI
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0060EF40::FUN_0060ef40::override::prt_60f1e2_e5e2351e:
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0060EF40::FUN_0060ef40::override::prt_60f1e2_e5e2351e:
 0060F1E2  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject
 0060F1E8  85 C0                     TEST EAX,EAX
 0060F1EA  74 2C                     JZ 0x0060f218
@@ -397,7 +397,7 @@ LAB_0060f3b2:
 0060F3BF  2B D0                     SUB EDX,EAX
 0060F3C1  C1 E2 02                  SHL EDX,0x2
 0060F3C4  52                        PUSH EDX
-0060F3C5  E8 A6 B8 09 00            CALL 0x006aac70
+0060F3C5  E8 A6 B8 09 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 0060F3CA  89 06                     MOV dword ptr [ESI],EAX
 0060F3CC  8B 55 9C                  MOV EDX,dword ptr [EBP + -0x64]
 LAB_0060f3cf:

@@ -37,6 +37,7 @@ uint FUN_0064e300(int param_1,char *param_2,ushort param_3,char param_4,ushort p
   local_14 = nullptr;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
+
   uVar1 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   if (uVar1 != 0) {
     g_currentExceptionFrame = local_64.previous;
@@ -73,8 +74,8 @@ uint FUN_0064e300(int param_1,char *param_2,ushort param_3,char param_4,ushort p
   else {
     uVar2 = (uint)STField<ushort>(local_14,0x7d);
     local_20[2] = uVar2;
-    /* ST_CALLSITE[0064E400]: CALL 0x00404da9; direct=00404DA9 _GetStaffGrpExch */
-    array = (DArrayTy *)_GetStaffGrpExch(param_1);
+    /* ST_CALLSITE[0064E400]: CALL 0x00404da9; direct=00404DA9 _GetStaffGrpExch; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__cdecl;pointer:/SubmarineTitans/Recovered/DArrayTy;/undefined4 */
+    array = _GetStaffGrpExch(param_1);
     if (array != nullptr) {
       thunk_FUN_0065d940(local_14,array,0);
       DArrayDestroy(array);

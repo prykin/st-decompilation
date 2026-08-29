@@ -10,7 +10,8 @@ FUN_00753f10(undefined4 param_1,int param_2,int param_3,undefined4 param_4,undef
   int _Value;
   byte *puVar1;
   puVar1 = &stack0xfffffffc;
-  context = (AnonShape_00754185_34BF31BE *)thunk_FUN_006a3be0(0xc1d2);
+  /* ST_CALLSITE[00753F1D]: CALL 0x00402b21; direct=00402B21 thunk_FUN_006a3be0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00754185_34BF31BE; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00754185_34BF31BE;/uint */
+  context = thunk_FUN_006a3be0(0xc1d2);
   if (context == nullptr) {
     _Value = -2;
   }

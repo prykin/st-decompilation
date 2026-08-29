@@ -1,6 +1,7 @@
 CreateSTRubbish:
 0062ECE0  68 FE 01 00 00            PUSH 0x1fe
-0062ECE5  E8 E6 17 08 00            CALL 0x006b04d0
+CreateSTRubbish::override::prt_62ece5_6ff34d75:
+0062ECE5  E8 E6 17 08 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STRubbishC; signature=__stdcall;pointer:/STRubbishC;/uint
 0062ECEA  85 C0                     TEST EAX,EAX
 0062ECEC  74 07                     JZ 0x0062ecf5
 0062ECEE  8B C8                     MOV ECX,EAX

@@ -73,7 +73,8 @@ LAB_0067e87b:
 0067E8B7  8B CB                     MOV ECX,EBX
 0067E8B9  E8 F2 29 07 00            CALL 0x006f12b0
 0067E8BE  8B CB                     MOV ECX,EBX
-0067E8C0  E8 CB 3E 07 00            CALL 0x006f2790
+CreateArbList::override::prt_67e8c0_193d8281:
+0067E8C0  E8 CB 3E 07 00            CALL 0x006f2790  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__thiscall;pointer:/char;pointer:/cMf32
 0067E8C5  8B D8                     MOV EBX,EAX
 0067E8C7  85 DB                     TEST EBX,EBX
 0067E8C9  0F 84 11 02 00 00         JZ 0x0067eae0

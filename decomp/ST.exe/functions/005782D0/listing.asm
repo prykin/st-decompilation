@@ -1,6 +1,7 @@
 FUN_005782d0:
 005782D0  6A 24                     PUSH 0x24
-005782D2  E8 59 62 1B 00            CALL 0x0072e530
+FUN_005782d0::override::prt_5782d2_e4808ecf:
+005782D2  E8 59 62 1B 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/DebugSystemC; signature=__cdecl;pointer:/DebugSystemC;/uint
 005782D7  83 C4 04                  ADD ESP,0x4
 005782DA  85 C0                     TEST EAX,EAX
 005782DC  74 10                     JZ 0x005782ee

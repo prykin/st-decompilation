@@ -39,7 +39,7 @@ TradePanelTy::PaintPanel:
 00551C07  6A 00                     PUSH 0x0
 00551C09  52                        PUSH EDX
 00551C0A  50                        PUSH EAX
-00551C0B  E8 90 97 1B 00            CALL 0x0070b3a0
+00551C0B  E8 90 97 1B 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override
 00551C10  8B 4E 68                  MOV ECX,dword ptr [ESI + 0x68]
 00551C13  83 C4 08                  ADD ESP,0x8
 00551C16  50                        PUSH EAX
@@ -87,7 +87,7 @@ TradePanelTy::PaintPanel:
 00551C8E  6A FE                     PUSH -0x2
 00551C90  50                        PUSH EAX
 00551C91  68 5B 4E 00 00            PUSH 0x4e5b
-00551C96  E8 A5 E4 15 00            CALL 0x006b0140
+00551C96  E8 A5 E4 15 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 00551C9B  8B 8E 89 01 00 00         MOV ECX,dword ptr [ESI + 0x189]
 00551CA1  50                        PUSH EAX
 00551CA2  E8 C9 FE 1B 00            CALL 0x00711b70
@@ -104,7 +104,7 @@ LAB_00551cac:
 00551CC6  83 C1 04                  ADD ECX,0x4
 00551CC9  51                        PUSH ECX
 00551CCA  52                        PUSH EDX
-00551CCB  E8 D0 96 1B 00            CALL 0x0070b3a0
+00551CCB  E8 D0 96 1B 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override
 00551CD0  83 C4 08                  ADD ESP,0x8
 00551CD3  50                        PUSH EAX
 00551CD4  8B 46 68                  MOV EAX,dword ptr [ESI + 0x68]
@@ -131,7 +131,7 @@ LAB_00551d08:
 00551D26  50                        PUSH EAX
 00551D27  8B 86 D9 01 00 00         MOV EAX,dword ptr [ESI + 0x1d9]
 00551D2D  50                        PUSH EAX
-00551D2E  E8 6D 96 1B 00            CALL 0x0070b3a0
+00551D2E  E8 6D 96 1B 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 00551D33  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 00551D36  8B 56 68                  MOV EDX,dword ptr [ESI + 0x68]
 00551D39  50                        PUSH EAX

@@ -1,21 +1,21 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_004c2c10(AnonShape_004C2C10_59B6D93C *param_1)
+undefined4 __fastcall FUN_004c2c10(RecoveredRecordView_004C2C10_0CCE72F6 *param_1)
 
 {
   uint uVar1;
   int iVar2;
-  undefined4 local_58 [5];
+  uint local_58 [5];
   int local_44;
   int local_40;
   int local_3c;
-  undefined4 local_38;
-  undefined4 local_34;
-  undefined4 local_30;
-  undefined4 local_2c;
+  uint local_38;
+  uint local_34;
+  uint local_30;
+  uint local_2c;
   uint local_28;
-  undefined4 local_24;
+  uint local_24;
   int local_8;
 
   if (param_1->field_0408 == 0) {

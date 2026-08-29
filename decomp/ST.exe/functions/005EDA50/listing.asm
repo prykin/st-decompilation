@@ -45,7 +45,7 @@ FUN_005eda50:
 005EDAF3  74 18                     JZ 0x005edb0d
 005EDAF5  8B 16                     MOV EDX,dword ptr [ESI]
 005EDAF7  8B CE                     MOV ECX,ESI
-005EDAF9  FF 92 28 01 00 00         CALL dword ptr [EDX + 0x128]
+005EDAF9  FF 92 28 01 00 00         CALL dword ptr [EDX + 0x128]  ; [STIndirectCallsiteApplier] exact slot 0x128; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 005EDAFF  39 47 18                  CMP dword ptr [EDI + 0x18],EAX
 005EDB02  75 09                     JNZ 0x005edb0d
 005EDB04  5F                        POP EDI
@@ -58,7 +58,7 @@ FUN_005eda50:
 LAB_005edb0d:
 005EDB0D  8B 07                     MOV EAX,dword ptr [EDI]
 005EDB0F  8B CF                     MOV ECX,EDI
-005EDB11  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+005EDB11  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 005EDB14  83 F8 52                  CMP EAX,0x52
 005EDB17  74 09                     JZ 0x005edb22
 005EDB19  83 F8 5F                  CMP EAX,0x5f
@@ -73,7 +73,7 @@ LAB_005edb22:
 005EDB35  75 74                     JNZ 0x005edbab
 005EDB37  8B 16                     MOV EDX,dword ptr [ESI]
 005EDB39  8B CE                     MOV ECX,ESI
-005EDB3B  FF 52 0C                  CALL dword ptr [EDX + 0xc]
+005EDB3B  FF 52 0C                  CALL dword ptr [EDX + 0xc]  ; [STIndirectCallsiteApplier] exact slot 0xC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 005EDB3E  50                        PUSH EAX
 005EDB3F  8B 46 18                  MOV EAX,dword ptr [ESI + 0x18]
 005EDB42  50                        PUSH EAX

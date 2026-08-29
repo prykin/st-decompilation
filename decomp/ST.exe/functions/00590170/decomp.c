@@ -23,10 +23,12 @@ void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
     if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
+
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
       else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
@@ -36,12 +38,14 @@ void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
     this_01 = local_8;
     iVar6 = 1;
     bVar5 = 0;
+    /* ST_CALLSITE[005901F1]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
     text = FUN_006f2c00(&DAT_007cbc5c,1,(uint)(local_8->field_005D != '\0'));
     puVar3 = FUN_0070a9f0(g_cMf32_00806780,text,bVar5,iVar6);
     this_01->field_005E = puVar3;
     memset(&this_01->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
     this_01->field_002C = this_01->field_0008;
     this_01->field_0028 = 0x13;
+
     FUN_006e6000(this_01,3,1,(undefined4 *)&this_01->field_0x18);
     if (g_startSystem_0081176C->field_02E6 != nullptr) {
       /* ST_CALLSITE[00590248]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
@@ -76,6 +80,7 @@ void __thiscall MAdvTy::InitMAdv(MAdvTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Start\\adv_obj.cpp",0x1f,0,iVar2,"%s",
                              "MAdvTy::InitMAdv");
   if (iVar4 != 0) {

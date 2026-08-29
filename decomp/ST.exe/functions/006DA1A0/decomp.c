@@ -1,10 +1,9 @@
 #include "../../pseudocode_runtime.h"
 
 
-/* WARNING: Type propagation algorithm not settling */
-
-void FUN_006da1a0(int param_1,int param_2,int param_3,int param_4,byte *param_5,int param_6,
-                 int param_7,int param_8,byte *param_9,undefined1 *param_10)
+void FUN_006da1a0(int param_1,int param_2,int param_3,int param_4,
+                 RecoveredRecord_006DA1A0_A15A54BB *param_5,int param_6,int param_7,int param_8,
+                 byte *param_9,undefined1 *param_10)
 
 {
   short sVar1;
@@ -17,7 +16,7 @@ void FUN_006da1a0(int param_1,int param_2,int param_3,int param_4,byte *param_5,
   int iVar6;
   int iVar7;
   uint uVar8;
-  byte *pbVar9;
+  byte *puVar9;
   int iVar10;
   int iVar11;
   int iVar12;
@@ -41,8 +40,10 @@ void FUN_006da1a0(int param_1,int param_2,int param_3,int param_4,byte *param_5,
     iVar12 = (local_8 + -1) / 2;
     iVar10 = (local_8 + -1) / 2;
     do {
+
       local_EAX_117 = Library::MSVCRT::FUN_0072e6c0();
       iVar6 = (int)local_EAX_117 % local_8;
+
       uVar3 = Library::MSVCRT::FUN_0072e6c0();
       piVar2 = local_10;
       local_10 = local_10 + 1;
@@ -52,18 +53,17 @@ void FUN_006da1a0(int param_1,int param_2,int param_3,int param_4,byte *param_5,
     iVar6 = param_7 + iVar10;
     iVar7 = param_8 + (1 - local_8);
     pbVar3 = param_9 + (1 - iVar11);
-    pbVar9 = (byte *)(iVar10 * param_2 + iVar12 + param_1);
+    puVar9 = (undefined1 *)(iVar10 * param_2 + iVar12 + param_1);
     auto param_10_after_write = (undefined1 *)(iVar10 * param_4 + iVar12 + param_3); /* compiler stack-slot lifetime split */
     auto param_7_after_write = 0; /* compiler stack-slot lifetime split */
     if (iVar6 < 1) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_9 = param_5 + (param_5[0xd] >> 1 & 0xe) + 0x16;
+      param_9 = &param_5[1].field_0x2 + ((byte)param_5->field_0xd >> 1 & 0xe);
     }
     else {
-      param_9 = FUN_006cfe10(param_5,iVar6);
+      param_9 = FUN_006cfe10((RecoveredRecord_006CFE10_B59F6D2D *)param_5,iVar6);
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    sVar1 = *(short *)(param_5 + 0x12);
+    sVar1 = param_5->field_0012;
     local_c = (int)sVar1;
     auto param_1_after_write = (int)pbVar3; /* compiler stack-slot lifetime split */
     if (0 < (int)pbVar3) {
@@ -72,7 +72,7 @@ void FUN_006da1a0(int param_1,int param_2,int param_3,int param_4,byte *param_5,
         param_9 = param_9 + 1;
         iVar11 = param_6 + iVar12;
         if (uVar8 == 0) {
-          pbVar9 = pbVar9 + param_2;
+          puVar9 = puVar9 + param_2;
           param_10_after_write = param_10_after_write + param_4;
         }
         else {
@@ -99,7 +99,7 @@ void FUN_006da1a0(int param_1,int param_2,int param_3,int param_4,byte *param_5,
             }
           }
 LAB_006da325:
-          auto param_5_after_write = (byte *)(uVar4 - iVar11); /* compiler stack-slot lifetime split */
+          auto param_5_after_write = (RecoveredRecord_006DA1A0_A15A54BB *)(uVar4 - iVar11); /* compiler stack-slot lifetime split */
           if (((byte)uVar8 & 0xc0) == 0x80) {
             param_9 = param_9 + iVar11;
           }
@@ -108,7 +108,7 @@ LAB_006da325:
             do {
               iVar11 = iVar11 - (int)param_5_after_write;
               if ((uVar8 & 0x80) == 0) {
-                pbVar9 = pbVar9 + (int)param_5_after_write;
+                puVar9 = &param_5_after_write->field_0x0 + (int)puVar9;
                 param_10_after_write = param_10_after_write + (int)param_5_after_write;
               }
               else {
@@ -120,14 +120,15 @@ LAB_006da325:
                 }
                 if (0 < (int)param_5_after_write) {
                   do {
-                    pbVar9[local_8c[param_7_after_write]] = *param_10_after_write;
+                    puVar9[local_8c[param_7_after_write]] = *param_10_after_write;
                     param_7_after_write = param_7_after_write + 1;
-                    pbVar9 = pbVar9 + 1;
+                    puVar9 = puVar9 + 1;
                     param_10_after_write = param_10_after_write + 1;
                     if (0x1e < param_7_after_write) {
                       param_7_after_write = 0;
                     }
-                    param_5_after_write = param_5_after_write + -1;
+                    param_5_after_write = (RecoveredRecord_006DA1A0_A15A54BB *)
+                              ((int)&param_5_after_write[-1].field_0012 + 1);
                   } while (param_5_after_write != nullptr);
                 }
               }
@@ -139,17 +140,17 @@ LAB_006da325:
               uVar8 = (uint)bVar5;
               param_9 = param_9 + 1;
               if ((bVar5 & 0x80) == 0) {
-                param_5_after_write = (byte *)(uVar8 & 0x7f);
+                param_5_after_write = (RecoveredRecord_006DA1A0_A15A54BB *)(uVar8 & 0x7f);
               }
               else {
-                param_5_after_write = (byte *)(uVar8 & 0x3f);
+                param_5_after_write = (RecoveredRecord_006DA1A0_A15A54BB *)(uVar8 & 0x3f);
               }
             } while ((int)param_5_after_write <= iVar11);
           }
           uVar4 = (int)param_5_after_write - iVar11;
           bVar5 = (byte)uVar8;
           if ((uVar8 & 0x80) == 0) {
-            pbVar9 = pbVar9 + iVar11;
+            puVar9 = puVar9 + iVar11;
             param_10_after_write = param_10_after_write + iVar11;
           }
           else {
@@ -161,9 +162,9 @@ LAB_006da325:
             }
             if (0 < iVar11) {
               do {
-                pbVar9[local_8c[param_7_after_write]] = *param_10_after_write;
+                puVar9[local_8c[param_7_after_write]] = *param_10_after_write;
                 param_7_after_write = param_7_after_write + 1;
-                pbVar9 = pbVar9 + 1;
+                puVar9 = puVar9 + 1;
                 param_10_after_write = param_10_after_write + 1;
                 if (0x1e < param_7_after_write) {
                   param_7_after_write = 0;
@@ -192,7 +193,7 @@ LAB_006da325:
           if ((bVar5 & 0xc0) == 0x80) {
             param_9 = param_9 + iVar11;
           }
-          pbVar9 = pbVar9 + (param_2 - iVar7);
+          puVar9 = puVar9 + (param_2 - iVar7);
           param_10_after_write = param_10_after_write + (param_4 - iVar7);
         }
         param_1_after_write = param_1_after_write + -1;

@@ -10,8 +10,7 @@ int __thiscall FUN_006961b0(void *this,uint param_1,uint param_2,int param_3,int
   uint uVar4;
   int iVar5;
   bool bVar6;
-  undefined4 local_8;
-
+  uint local_8;
   iVar5 = STField<int>(this,0x5853);
   local_8 = 0;
   if (iVar5 != 0) {

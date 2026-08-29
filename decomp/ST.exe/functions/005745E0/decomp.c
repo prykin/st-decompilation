@@ -5,7 +5,7 @@
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
    and decompilation contains no value return */
 
-void __cdecl FUN_005745e0(AnonShape_005745E0_AF52CC75 *param_1,undefined4 *param_2)
+void __cdecl FUN_005745e0(RecoveredRecordView_005745E0_17311247 *param_1,undefined4 *param_2)
 
 {
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 **ppRVar1;
@@ -20,7 +20,7 @@ void __cdecl FUN_005745e0(AnonShape_005745E0_AF52CC75 *param_1,undefined4 *param
   uint uVar10;
   char *pcVar11;
   byte *pbVar12;
-  undefined4 local_28;
+  uint local_28;
   void *local_24;
   int local_20;
   void *local_18;
@@ -65,6 +65,7 @@ cf_break_loop_00574651:
       *(undefined2 *)(param_2 + 1) = STPiece<0,2>(local_18);
       STField<undefined2>(param_2,6) = (undefined2)local_14;
       *(undefined2 *)(param_2 + 2) = (undefined2)local_10;
+
       local_24 = Library::DKW::LIB::MemAllocClear
                            ((uint)param_1->field_0004 * (uint)param_1->field_0004);
       local_28 = param_2[10];
@@ -121,6 +122,7 @@ cf_break_loop_00574651:
         local_c = 0;
       }
       local_18 = local_24;
+
       Library::DKW::TBL::DArrayAppend((DArrayTy *)param_1->field_044D,&local_28);
       param_2[6] = local_18;
       return;

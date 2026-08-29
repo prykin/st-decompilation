@@ -20,7 +20,7 @@ STManBasisC::sub_005F2110:
 005F213C  83 C6 04                  ADD ESI,0x4
 005F213F  56                        PUSH ESI
 005F2140  6A 00                     PUSH 0x0
-005F2142  E8 19 DF 0B 00            CALL 0x006b0060
+005F2142  E8 19 DF 0B 00            CALL 0x006b0060  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STManBasisC_field_0038DArray; source view only; no Ghidra override
 005F2147  89 43 38                  MOV dword ptr [EBX + 0x38],EAX
 005F214A  8B 07                     MOV EAX,dword ptr [EDI]
 005F214C  03 F0                     ADD ESI,EAX

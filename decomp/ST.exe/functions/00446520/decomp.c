@@ -39,11 +39,13 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
   local_18 = (DArrayTy *)g_packedRecords_A62x8[param_1].field1976_0x9f6;
   g_currentExceptionFrame = &local_68;
   local_14 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   array = local_18;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
     if (iVar3 != -0x5001fff7) {
+
       iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x296d,0,0,"%s",
                                  "STAllPlayersC::DeleteGuardBoat");
       if (iVar5 != 0) {
@@ -63,16 +65,19 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
     uVar6 = 0;
     if (0 < (int)local_c) {
       do {
+
         DArrayGetElement(array,uVar6,&local_24);
         uVar7 = 0;
         uVar8 = local_20->count;
         if (0 < (int)uVar8) {
           do {
+
             DArrayGetElement(local_20,uVar7,local_8);
             if (local_8[0] == param_2) {
+
               DArrayRemoveAt(local_20,uVar7);
-              /* ST_CALLSITE[00446602]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-              pSVar4 = (STBoatC *)GetObjPtr(local_14,param_1,local_8[0],CASE_1);
+              /* ST_CALLSITE[00446602]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum */
+              pSVar4 = GetObjPtr(local_14,param_1,local_8[0],CASE_1);
               local_10 = g_playSystem_00802A38->field_00E4;
               /* ST_CALLSITE[0044661E]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
               STBoatC::CmdToObj(pSVar4,CASE_21,&local_10);
@@ -86,6 +91,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
             DArrayDestroy(local_24);
             DArrayDestroy(local_20);
             DArrayDestroy(local_1c);
+
             DArrayRemoveAt(local_18,uVar6);
             local_c = local_c - 1;
           }
@@ -106,13 +112,16 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
     uVar6 = 0;
     if (0 < (int)local_c) {
       do {
+
         DArrayGetElement(array,uVar6,&local_24);
         uVar7 = 0;
         uVar8 = local_24->count;
         if (0 < (int)uVar8) {
           do {
+
             DArrayGetElement(local_24,uVar7,local_8);
             if (local_8[0] == param_2) {
+
               DArrayRemoveAt(local_24,uVar7);
               break;
             }
@@ -124,10 +133,12 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
           dVar1 = local_20->count;
           if (0 < (int)dVar1) {
             do {
+
               DArrayGetElement(local_20,uVar8,local_8);
-              /* ST_CALLSITE[00446710]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-              pSVar4 = (STBoatC *)GetObjPtr(local_14,param_1,local_8[0],CASE_1);
+              /* ST_CALLSITE[00446710]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum */
+              pSVar4 = GetObjPtr(local_14,param_1,local_8[0],CASE_1);
               if (pSVar4 == nullptr) {
+
                 iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2955,0,0,
                                            "%s","STAllPlayersC::DeleteGuardBoat NULL"
                                           );
@@ -146,6 +157,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,char param_1,short param_2,in
           DArrayDestroy(local_24);
           DArrayDestroy(local_20);
           DArrayDestroy(local_1c);
+
           DArrayRemoveAt(local_18,uVar6);
           local_c = local_c - 1;
           uVar6 = uVar6 - 1;

@@ -40,7 +40,8 @@ SpecPanelTy::InitPanel:
 0053E460  8B 42 28                  MOV EAX,dword ptr [EDX + 0x28]
 0053E463  50                        PUSH EAX
 0053E464  68 9D 01 00 00            PUSH 0x19d
-0053E469  E8 92 FA 1C 00            CALL 0x0070df00
+SpecPanelTy::InitPanel::override::prt_53e469_bb1a54ff:
+0053E469  E8 92 FA 1C 00            CALL 0x0070df00  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/ccFntTy
 0053E46E  89 86 89 01 00 00         MOV dword ptr [ESI + 0x189],EAX
 0053E474  89 78 58                  MOV dword ptr [EAX + 0x58],EDI
 0053E477  89 78 5C                  MOV dword ptr [EAX + 0x5c],EDI
@@ -97,7 +98,7 @@ LAB_0053e4a1:
 0053E503  6A FE                     PUSH -0x2
 0053E505  51                        PUSH ECX
 0053E506  52                        PUSH EDX
-0053E507  E8 34 1C 17 00            CALL 0x006b0140
+0053E507  E8 34 1C 17 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 0053E50C  8B 8E 89 01 00 00         MOV ECX,dword ptr [ESI + 0x189]
 0053E512  50                        PUSH EAX
 0053E513  E8 A8 34 1D 00            CALL 0x007119c0
@@ -124,7 +125,7 @@ LAB_0053e4a1:
 0053E54C  6A 01                     PUSH 0x1
 0053E54E  6A 00                     PUSH 0x0
 0053E550  8B CE                     MOV ECX,ESI
-0053E552  FF 57 04                  CALL dword ptr [EDI + 0x4]
+0053E552  FF 57 04                  CALL dword ptr [EDI + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 0053E555  8B 55 B8                  MOV EDX,dword ptr [EBP + -0x48]
 0053E558  89 86 7C 01 00 00         MOV dword ptr [ESI + 0x17c],EAX
 0053E55E  89 15 F8 8D 85 00         MOV dword ptr [0x00858df8],EDX

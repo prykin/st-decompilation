@@ -349,7 +349,6 @@ extern undefined4 DAT_0079e2e8;
 extern undefined4 DAT_0079e2f8;
 extern undefined4 DAT_0079e320;
 extern undefined4 DAT_0079e330;
-extern undefined1 DAT_0079e368;
 extern undefined4 DAT_0079ea38;
 extern undefined4 DAT_0079ea3c;
 extern undefined4 DAT_0079ea40;
@@ -359,17 +358,6 @@ extern undefined4 DAT_0079fc78;
 extern undefined1 DAT_007a10d8;
 extern undefined4 DAT_007a10e8;
 extern undefined4 DAT_007a10f8;
-extern undefined1 DAT_007a1200;
-extern undefined1 DAT_007a1210;
-extern undefined1 DAT_007a1220;
-extern undefined1 DAT_007a1230;
-extern undefined4 DAT_007a1240;
-extern undefined4 DAT_007a1244;
-extern undefined4 DAT_007a1248;
-extern undefined4 DAT_007a1250;
-extern undefined4 DAT_007a1254;
-extern undefined4 DAT_007a1258;
-extern undefined4 DAT_007a1274;
 extern undefined4 DAT_007a1348;
 extern undefined4 DAT_007a134c;
 extern undefined4 DAT_007a1350;
@@ -399,45 +387,6 @@ extern undefined4 DAT_007a1700;
 extern undefined4 DAT_007a1704;
 extern undefined4 DAT_007a1708;
 extern undefined4 DAT_007a170c;
-extern undefined4 DAT_007a1738;
-extern undefined1 DAT_007a1a90;
-extern undefined4 DAT_007a1aa0;
-extern undefined4 DAT_007a1ab0;
-extern undefined1 DAT_007a1ac0;
-extern undefined1 DAT_007a1ad0;
-extern undefined4 DAT_007a1ae0;
-extern undefined4 DAT_007a1af0;
-extern undefined4 DAT_007a1b00;
-extern undefined4 DAT_007a1b10;
-extern undefined1 DAT_007a1b20;
-extern undefined1 DAT_007a1b30;
-extern undefined1 DAT_007a1b40;
-extern undefined1 DAT_007a1b50;
-extern undefined1 DAT_007a1b60;
-extern undefined1 DAT_007a1b70;
-extern undefined1 DAT_007a1b80;
-extern undefined1 DAT_007a1ba0;
-extern undefined1 DAT_007a1bb0;
-extern undefined4 DAT_007a1d98;
-extern undefined4 DAT_007a1d9c;
-extern undefined4 DAT_007a1da0;
-extern undefined4 DAT_007a1da4;
-extern undefined4 DAT_007a1da8;
-extern undefined4 DAT_007a1dac;
-extern undefined4 DAT_007a1db0;
-extern undefined4 DAT_007a1db4;
-extern undefined4 DAT_007a1db8;
-extern undefined1 DAT_007a1dc8;
-extern undefined1 DAT_007a1dd8;
-extern undefined4 DAT_007a1ddc;
-extern undefined4 DAT_007a1de0;
-extern undefined4 DAT_007a1de4;
-extern undefined1 DAT_007a1de8;
-extern undefined1 DAT_007a1df8;
-extern undefined1 DAT_007a1e08;
-extern undefined1 DAT_007a1e18;
-extern undefined1 DAT_007a1e28;
-extern undefined1 DAT_007a22b8;
 extern undefined4 DAT_007a4b60;
 extern undefined4 DAT_007a4b88;
 extern undefined4 DAT_007a4b8c;
@@ -1287,7 +1236,11 @@ extern undefined4 DAT_00811728;
 extern undefined1 DAT_00811750;
 extern undefined4 DAT_00811754;
 extern undefined1 DAT_00811768;
+extern undefined4 DAT_00811780;
 extern undefined4 DAT_00811788;
+extern undefined4 DAT_00811794;
+extern undefined4 DAT_008117a0;
+extern undefined4 DAT_008117ac;
 extern undefined4 DAT_008117c0;
 extern undefined4 DAT_008118e0;
 extern undefined4 DAT_008118e4;
@@ -1561,7 +1514,6 @@ extern undefined4 DAT_0085713c;
 extern undefined4 DAT_00857148;
 extern undefined4 DAT_00857154;
 extern undefined4 DAT_008571cc;
-extern undefined4 DAT_00857504;
 extern undefined4 DAT_00857508;
 extern undefined4 DAT_0085751c;
 extern undefined4 DAT_00857540;
@@ -1629,7 +1581,7 @@ extern undefined1 *PTR_00803380;
 extern undefined4 *PTR_008033b0;
 extern undefined2 *PTR_008033b4;
 extern undefined4 *PTR_008033b8;
-extern AnonShape_GLOBAL_00806724_3210464F *PTR_00806724;
+extern RecoveredGlobalRecordView_00806724 *PTR_00806724;
 extern DArrayTy *PTR_00806740;
 extern short *PTR_00806750;
 extern int *PTR_00806764;
@@ -1648,23 +1600,23 @@ extern DArrayTy *PTR_0080c502;
 extern undefined4 *PTR_0080c506;
 extern AnonPointee_TLOBaseTy_0607 *PTR_00811718;
 extern AnonPointee_TLOBaseTy_0607 *PTR_0081171c;
-extern AnonShape_GLOBAL_0081175C_57F682DD *PTR_0081175c;
+extern RecoveredGlobalRecordView_0081175C *PTR_0081175c;
 extern void *PTR_00811924;
 extern void *PTR_00811934;
 extern void *PTR_00811938;
 extern void *PTR_0081193c;
 extern char *PTR_00811948;
-extern AnonShape_GLOBAL_0081194C_4D1525E6 *PTR_0081194c;
+extern RecoveredGlobalRecordView_0081194C *PTR_0081194c;
 extern char *PTR_00811aec;
 extern char *PTR_00811af0;
-extern AnonShape_GLOBAL_008489CC_CDF8C3F4 *PTR_008489cc;
+extern RecoveredGlobalRecordView_008489CC *PTR_008489cc;
 extern undefined2 *PTR_00853dd4;
 extern cMf32 *PTR_00853ff8;
 extern undefined4 *PTR_0085496c;
-extern AnonShape_GLOBAL_00854EE8_A19F58CE *PTR_00854ee8;
-extern AnonShape_006D86E0_D6D32C07 *PTR_00854f00;
-extern AnonShape_GLOBAL_00854F44_D3146D26 *PTR_00854f44;
-extern AnonShape_006D86E0_768BB816 *PTR_00854f68;
+extern RecoveredGlobalRecordView_00854EE8 *PTR_00854ee8;
+extern RecoveredGlobalRecordView_00854F00 *PTR_00854f00;
+extern RecoveredGlobalRecordView_00854F44 *PTR_00854f44;
+extern RecoveredGlobalRecordView_00854F68 *PTR_00854f68;
 extern int *PTR_00854f90;
 extern uint *PTR_00854fd0;
 extern int *PTR_00854fd8;
@@ -1673,12 +1625,12 @@ extern RecoveredSourceFamily_dibcopy *PTR_00854fe0;
 extern void *PTR_00855004;
 extern void *PTR_00855008;
 extern byte *PTR_00856fe0;
-extern byte *PTR_00856fe4;
+extern AnonShape_GLOBAL_00856FE4_DDA5DC8B *PTR_00856fe4;
 extern byte *PTR_00857024;
 extern byte *PTR_00857034;
 extern uint *PTR_00857118;
 extern undefined4 *PTR_00857134;
-extern AnonShape_GLOBAL_00857168_D75747E9 *PTR_00857168;
+extern RecoveredGlobalRecordView_00857168 *PTR_00857168;
 extern char *PTR_00857528;
 extern byte *PTR_0085753c;
 extern char *PTR_00857548;
@@ -1701,7 +1653,6 @@ extern undefined *PTR_DAT_0079c0dc;
 extern undefined *PTR_DAT_0079d198;
 extern undefined *PTR_DAT_0079d65c;
 extern undefined *PTR_DAT_0079d6c8;
-extern undefined *PTR_DAT_007a1270;
 extern undefined *PTR_DAT_007a5250;
 extern undefined *PTR_DAT_007b5170;
 extern undefined *PTR_DAT_007b8310;
@@ -2014,45 +1965,7 @@ extern VTable_0079E1B0 st_global_0079E1B0; // image symbol: VTable_0079E1B0
 extern VTable_0079E284 st_global_0079E284; // image symbol: VTable_0079E284
 extern VTable_0079E2C0 st_global_0079E2C0; // image symbol: VTable_0079E2C0
 extern VTable_0079E360 st_global_0079E360; // image symbol: VTable_0079E360
-extern VTable_007A1108 st_global_007A1108; // image symbol: VTable_007A1108
-extern VTable_007A1128 st_global_007A1128; // image symbol: VTable_007A1128
-extern VTable_007A1148 st_global_007A1148; // image symbol: VTable_007A1148
-extern VTable_007A11A0 st_global_007A11A0; // image symbol: VTable_007A11A0
-extern VTable_007A11C8 st_global_007A11C8; // image symbol: VTable_007A11C8
-extern VTable_007A1378 st_global_007A1378; // image symbol: VTable_007A1378
-extern VTable_007A1390 st_global_007A1390; // image symbol: VTable_007A1390
-extern VTable_007A13D0 st_global_007A13D0; // image symbol: VTable_007A13D0
-extern VTable_007A1488 st_global_007A1488; // image symbol: VTable_007A1488
-extern VTable_007A14B0 st_global_007A14B0; // image symbol: VTable_007A14B0
-extern VTable_007A14C8 st_global_007A14C8; // image symbol: VTable_007A14C8
-extern VTable_007A1510 st_global_007A1510; // image symbol: VTable_007A1510
-extern VTable_007A1550 st_global_007A1550; // image symbol: VTable_007A1550
-extern VTable_007A1568 st_global_007A1568; // image symbol: VTable_007A1568
-extern VTable_007A1590 st_global_007A1590; // image symbol: VTable_007A1590
-extern VTable_007A15A8 st_global_007A15A8; // image symbol: VTable_007A15A8
-extern VTable_007A15E8 st_global_007A15E8; // image symbol: VTable_007A15E8
-extern VTable_007A1740 st_global_007A1740; // image symbol: VTable_007A1740
-extern VTable_007A1768 st_global_007A1768; // image symbol: VTable_007A1768
-extern VTable_007A1780 st_global_007A1780; // image symbol: VTable_007A1780
-extern VTable_007A17C8 st_global_007A17C8; // image symbol: VTable_007A17C8
-extern VTable_007A1808 st_global_007A1808; // image symbol: VTable_007A1808
-extern VTable_007A1820 st_global_007A1820; // image symbol: VTable_007A1820
-extern VTable_007A1868 st_global_007A1868; // image symbol: VTable_007A1868
-extern VTable_007A18C8 st_global_007A18C8; // image symbol: VTable_007A18C8
-extern VTable_007A18F0 st_global_007A18F0; // image symbol: VTable_007A18F0
-extern VTable_007A1908 st_global_007A1908; // image symbol: VTable_007A1908
 extern VTable_007A1950 st_global_007A1950; // image symbol: VTable_007A1950
-extern VTable_007A1990 st_global_007A1990; // image symbol: VTable_007A1990
-extern VTable_007A19A8 st_global_007A19A8; // image symbol: VTable_007A19A8
-extern VTable_007A19F0 st_global_007A19F0; // image symbol: VTable_007A19F0
-extern VTable_007A1C08 st_global_007A1C08; // image symbol: VTable_007A1C08
-extern VTable_007A1C18 st_global_007A1C18; // image symbol: VTable_007A1C18
-extern VTable_007A1C60 st_global_007A1C60; // image symbol: VTable_007A1C60
-extern VTable_007A1CB8 st_global_007A1CB8; // image symbol: VTable_007A1CB8
-extern VTable_007A1CC8 st_global_007A1CC8; // image symbol: VTable_007A1CC8
-extern VTable_007A1D10 st_global_007A1D10; // image symbol: VTable_007A1D10
-extern VTable_007A1D68 st_global_007A1D68; // image symbol: VTable_007A1D68
-extern VTable_007A1D88 st_global_007A1D88; // image symbol: VTable_007A1D88
 extern ViewerClassTyVTable st_global_0079E298; // image symbol: ViewerClassTyVTable
 extern VisibleClassTyVTable st_global_0079AEEC; // image symbol: VisibleClassTyVTable
 extern VisibleVTable st_global_0079C01C; // image symbol: VisibleVTable
@@ -2192,8 +2105,6 @@ extern undefined4 _DAT_0079e264;
 extern undefined4 _DAT_0079e268;
 extern undefined4 _DAT_0079e270;
 extern undefined4 _DAT_0079e278;
-extern undefined4 _DAT_007a1bf8;
-extern undefined1 _DAT_007a1dd8; // image symbol: DAT_007a1dd8
 extern undefined4 _DAT_007a22a4;
 extern undefined4 _DAT_007a22a8;
 extern undefined4 _DAT_007a22ac;
@@ -2399,18 +2310,17 @@ extern AllocationRecord_00648620 *g_allocationRecord_00648620_008489B4;
 extern AllocationRecord_0065CD10 *g_allocationRecord_0065CD10_008489BC;
 extern AllocationRecord_006684E0 *g_allocationRecord_006684E0_008489C4;
 extern AllocationRecord_0067D3B0 *g_allocationRecord_0067D3B0_008489B8;
-extern AnonShape_00683780_11EA4E23 *g_anonShape_00683780_11EA4E23_00848A14;
-extern AnonShape_006C3FC0_72DDFA27 *g_anonShape_006C3FC0_72DDFA27_008075A0;
-extern AnonShape_GLOBAL_0080759C_9638EF10 *g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8;
+extern RecoveredGlobalRecordView_00848A14 *g_anonShape_00683780_11EA4E23_00848A14;
+extern RecoveredGlobalRecordView_00854EB8 *g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8;
 extern AppClassTy *g_app_00806728;
-extern DArrayTy *g_array_007FA130;
+extern DArrayOf_STTorpCPtr *g_array_007FA130;
 extern DArrayTy *g_array_007FA150;
-extern DArrayTy *g_array_007FA154;
-extern DArrayTy *g_array_007FA158;
-extern DArrayTy *g_array_007FA15C;
-extern DArrayTy *g_array_007FA160;
-extern DArrayTy *g_array_007FA164;
-extern DArrayTy *g_array_007FA16C;
+extern DArrayOf_STGameObjCPtr *g_array_007FA154;
+extern DArrayOf_STGameObjCPtr *g_array_007FA158;
+extern DArrayOf_STGameObjCPtr *g_array_007FA15C;
+extern DArrayOf_STGameObjCPtr *g_array_007FA160;
+extern DArrayOf_STGameObjCPtr *g_array_007FA164;
+extern DArrayOf_STFishCPtr *g_array_007FA16C;
 extern DArrayTy *g_array_007FA170;
 extern DArrayTy *g_array_007FB270;
 extern DArrayTy *g_array_008026F0;
@@ -2502,7 +2412,6 @@ extern FSGSTy *g_fSGS_0081174C;
 extern STFishC *g_fish_00811984;
 extern FrmPanelTy *g_frmPanel_0080168C;
 extern HINSTANCE g_hINSTANCE_00807618;
-extern HINSTANCE__ *g_hINSTANCE_00857500;
 extern HINSTANCE g_hInstance_00856D70;
 extern HANDLE g_hThread_008568C0;
 extern HWND g_hWnd_00806748;
@@ -2537,6 +2446,7 @@ extern PlayPanelTy *g_playPanel_008016E4;
 extern STPlaySystemC *g_playSystem_00802A38;
 extern byte g_playerRelationMatrix[8][8];
 extern PopUpTy *g_popUp_008016D8;
+extern RecoveredSourceFamily_dvideo *g_recoveredSourceFamily_dvideo_008075A0;
 extern ProdPanelTy *g_researchPanel_008016E8;
 extern char g_resourceStringBuffer[4100];
 extern uint g_resourceStringBufferOffset;
@@ -2774,45 +2684,6 @@ extern VTable_0079E2C0 st_global_0079E2C0; // image symbol: VTable_0079E2C0
 extern SliderClassTyVTable st_global_0079E2C8; // image symbol: SliderClassTyVTable
 extern TrackbarClassTyVTable st_global_0079E2CC; // image symbol: TrackbarClassTyVTable
 extern VTable_0079E360 st_global_0079E360; // image symbol: VTable_0079E360
-extern VTable_007A1108 st_global_007A1108; // image symbol: VTable_007A1108
-extern VTable_007A1128 st_global_007A1128; // image symbol: VTable_007A1128
-extern VTable_007A1148 st_global_007A1148; // image symbol: VTable_007A1148
-extern VTable_007A11A0 st_global_007A11A0; // image symbol: VTable_007A11A0
-extern VTable_007A11C8 st_global_007A11C8; // image symbol: VTable_007A11C8
-extern VTable_007A1378 st_global_007A1378; // image symbol: VTable_007A1378
-extern VTable_007A1390 st_global_007A1390; // image symbol: VTable_007A1390
-extern VTable_007A13D0 st_global_007A13D0; // image symbol: VTable_007A13D0
-extern VTable_007A1488 st_global_007A1488; // image symbol: VTable_007A1488
-extern VTable_007A14B0 st_global_007A14B0; // image symbol: VTable_007A14B0
-extern VTable_007A14C8 st_global_007A14C8; // image symbol: VTable_007A14C8
-extern VTable_007A1510 st_global_007A1510; // image symbol: VTable_007A1510
-extern VTable_007A1550 st_global_007A1550; // image symbol: VTable_007A1550
-extern VTable_007A1568 st_global_007A1568; // image symbol: VTable_007A1568
-extern VTable_007A1590 st_global_007A1590; // image symbol: VTable_007A1590
-extern VTable_007A15A8 st_global_007A15A8; // image symbol: VTable_007A15A8
-extern VTable_007A15E8 st_global_007A15E8; // image symbol: VTable_007A15E8
-extern VTable_007A1740 st_global_007A1740; // image symbol: VTable_007A1740
-extern VTable_007A1768 st_global_007A1768; // image symbol: VTable_007A1768
-extern VTable_007A1780 st_global_007A1780; // image symbol: VTable_007A1780
-extern VTable_007A17C8 st_global_007A17C8; // image symbol: VTable_007A17C8
-extern VTable_007A1808 st_global_007A1808; // image symbol: VTable_007A1808
-extern VTable_007A1820 st_global_007A1820; // image symbol: VTable_007A1820
-extern VTable_007A1868 st_global_007A1868; // image symbol: VTable_007A1868
-extern VTable_007A18C8 st_global_007A18C8; // image symbol: VTable_007A18C8
-extern VTable_007A18F0 st_global_007A18F0; // image symbol: VTable_007A18F0
-extern VTable_007A1908 st_global_007A1908; // image symbol: VTable_007A1908
-extern VTable_007A1950 st_global_007A1950; // image symbol: VTable_007A1950
-extern VTable_007A1990 st_global_007A1990; // image symbol: VTable_007A1990
-extern VTable_007A19A8 st_global_007A19A8; // image symbol: VTable_007A19A8
-extern VTable_007A19F0 st_global_007A19F0; // image symbol: VTable_007A19F0
-extern VTable_007A1C08 st_global_007A1C08; // image symbol: VTable_007A1C08
-extern VTable_007A1C18 st_global_007A1C18; // image symbol: VTable_007A1C18
-extern VTable_007A1C60 st_global_007A1C60; // image symbol: VTable_007A1C60
-extern VTable_007A1CB8 st_global_007A1CB8; // image symbol: VTable_007A1CB8
-extern VTable_007A1CC8 st_global_007A1CC8; // image symbol: VTable_007A1CC8
-extern VTable_007A1D10 st_global_007A1D10; // image symbol: VTable_007A1D10
-extern VTable_007A1D68 st_global_007A1D68; // image symbol: VTable_007A1D68
-extern VTable_007A1D88 st_global_007A1D88; // image symbol: VTable_007A1D88
 extern char st_global_007C1B00; // image symbol: CHAR_#_007c1b00
 extern char st_global_007C3B5C; // image symbol: CHAR_ _007c3b5c
 extern char st_global_007C3FEC; // image symbol: CHAR_ _007c3fec
@@ -2836,11 +2707,6 @@ extern char st_global_007CD500; // image symbol: CHAR_#_007cd500
 extern char st_global_007D5684; // image symbol: CHAR_(_007d5684
 extern byte st_image_006B68B0; // exact image address, semantic type unresolved
 extern byte st_image_0072D964; // exact image address, semantic type unresolved
-extern byte st_image_0074A606; // exact image address, semantic type unresolved
-extern byte st_image_00750541; // exact image address, semantic type unresolved
-extern byte st_image_0075054A; // exact image address, semantic type unresolved
-extern byte st_image_00750553; // exact image address, semantic type unresolved
-extern byte st_image_0075055C; // exact image address, semantic type unresolved
 extern byte st_image_00798E48; // exact image address, semantic type unresolved
 extern byte st_image_00798E4C; // exact image address, semantic type unresolved
 extern byte st_image_00798E50; // exact image address, semantic type unresolved
@@ -2859,7 +2725,6 @@ extern byte st_image_0079AB28; // exact image address, semantic type unresolved
 extern byte st_image_0079AB2C; // exact image address, semantic type unresolved
 extern byte st_image_0079AB30; // exact image address, semantic type unresolved
 extern byte st_image_0079AB34; // exact image address, semantic type unresolved
-extern byte st_image_007A1278; // exact image address, semantic type unresolved
 extern byte st_image_0080350F; // exact image address, semantic type unresolved
 extern byte st_image_00807304; // exact image address, semantic type unresolved
 extern byte st_image_0080743D; // exact image address, semantic type unresolved

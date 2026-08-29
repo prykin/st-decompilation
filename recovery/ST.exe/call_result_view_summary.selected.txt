@@ -1,0 +1,7 @@
+Direct-call result view summary
+Candidate generic-return calls: 9
+Functions decompiled: 1
+Apply: 1
+Cleanup: 0
+Conflicts: 0
+Failures: 0

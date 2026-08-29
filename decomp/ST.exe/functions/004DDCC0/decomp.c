@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_004ddcc0(AnonShape_004DDCC0_33DEB43E *param_1)
+undefined4 __fastcall FUN_004ddcc0(RecoveredRecordView_004DDCC0_A8DE46ED *param_1)
 
 {
   int *piVar1;
@@ -21,7 +21,9 @@ undefined4 __fastcall FUN_004ddcc0(AnonShape_004DDCC0_33DEB43E *param_1)
     piVar3 = piVar3 + 5;
     iVar2 = *piVar1;
   }
-  thunk_FUN_004d76e0(param_1->field_0024,3,(int *)param_1->field_0018,0,iVar4,0,0);
+  /* ST_CALLSITE[004DDD20]: CALL 0x0040497b; direct=0040497B STAllPlayersC::sub_004D76E0 */
+  STAllPlayersC::sub_004D76E0
+            (g_allPlayers_007FA174,param_1->field_0024,3,(int *)param_1->field_0018,0,iVar4,0,0);
   return 0;
 }
 

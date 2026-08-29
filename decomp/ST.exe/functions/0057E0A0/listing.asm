@@ -83,7 +83,7 @@ LAB_0057e16d:
 LAB_0057e1a2:
 0057E1A2  8B 83 6D 02 00 00         MOV EAX,dword ptr [EBX + 0x26d]
 0057E1A8  50                        PUSH EAX
-0057E1A9  E8 02 01 1B 00            CALL 0x0072e2b0
+0057E1A9  E8 02 01 1B 00            CALL 0x0072e2b0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 0057E1AE  83 C4 04                  ADD ESP,0x4
 LAB_0057e1b1:
 0057E1B1  66 8B 43 32               MOV AX,word ptr [EBX + 0x32]

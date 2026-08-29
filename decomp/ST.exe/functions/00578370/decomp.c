@@ -4,7 +4,7 @@ void FUN_00578370(void)
 {
   if (g_debugSystem_00811644 != nullptr) {
     if (g_debugSystem_00811644->field_0020 == 1) {
-      FUN_006e4b80(g_app_00806728,(int)g_debugSystem_00811644);
+      FUN_006e4b80(g_app_00806728,(RecoveredRecord_006E4B80_A7B295CE *)g_debugSystem_00811644);
       FUN_006e4d20(g_app_00806728,g_debugSystem_00811644);
     }
     /* ST_CALLSITE[005783A5]: CALL dword ptr [EDX + 0x4] */

@@ -8,17 +8,22 @@
    [STPrototypeApplier] Propagated parameter 3.
    Evidence: 004B23F3 TEST SI,SI classifies dword parameter loaded at 004B23E1 | 004B23F8 CMP
    SI,word ptr [0x007fb244] classifies dword parameter loaded at 004B23E1 | 004B2520 -> 004B2390 @
-   004B25DA; FUN_004b2520 parameter param_5 */
+   004B25DA; FUN_004b2520 parameter param_5
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (5), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=004B2520 @ 004B25DA -> read as EAX on
+   every CFG path | 004B2520 @ 004B2996 -> read as EAX on every CFG path | 004B2520 @ 004B29F2 ->
+   read as EAX on every CFG path | 004B2520 @ 004B2A8B -> read as EAX on every CFG path | 004B2520 @
+   004B2ADB -> read as EAX on every CFG path */
 
-undefined4 __cdecl
-FUN_004b2390(uint param_1,int param_2,int param_3,int param_4,int *param_5,int param_6)
+int __cdecl FUN_004b2390(uint param_1,int param_2,int param_3,int param_4,int *param_5,int param_6)
 
 {
   short sVar1;
   int iVar2;
   short sVar3;
   short sVar4;
-  undefined4 local_8;
+  int local_8;
 
   local_8 = 0;
   if ((((-1 < param_2) && (param_2 < g_worldGrid.sizeX)) && (-1 < param_3)) &&

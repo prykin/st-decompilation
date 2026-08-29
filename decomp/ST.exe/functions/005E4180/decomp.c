@@ -16,19 +16,18 @@ MTaskTy::CreateBut(MTaskTy *this,undefined4 param_1,undefined4 param_2,undefined
   uint uVar2;
   int iVar5;
   uint *puVar6;
-  undefined4 local_1cc [4];
-  undefined4 local_1bc;
-  undefined4 local_1b8;
-  undefined4 local_1ac;
-  undefined4 local_1a8;
-  undefined4 local_1a4;
-  undefined4 local_16c;
-  undefined4 local_168;
-  undefined4 local_164;
+  uint local_1cc [4];
+  uint local_1bc;
+  uint local_1b8;
+  uint local_1ac;
+  uint local_1a8;
+  uint local_1a4;
+  uint local_16c;
+  uint local_168;
+  uint local_164;
   InternalExceptionFrame local_50;
   MTaskTy *local_c;
-  undefined4 local_8;
-
+  uint local_8;
   puVar6 = local_1cc;
   local_c = this;
   for (iVar5 = 0x5f; iVar5 != 0; iVar5 = iVar5 + -1) {

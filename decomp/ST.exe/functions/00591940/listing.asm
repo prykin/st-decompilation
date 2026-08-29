@@ -150,12 +150,13 @@ LAB_00591aca:
 00591AD6  51                        PUSH ECX
 00591AD7  6A 01                     PUSH 0x1
 00591AD9  68 10 BE 7C 00            PUSH 0x7cbe10
-00591ADE  E8 1D 11 16 00            CALL 0x006f2c00
+00591ADE  E8 1D 11 16 00            CALL 0x006f2c00  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 00591AE3  8B 15 80 67 80 00         MOV EDX,dword ptr [0x00806780]
 00591AE9  83 C4 0C                  ADD ESP,0xc
 00591AEC  50                        PUSH EAX
 00591AED  52                        PUSH EDX
-00591AEE  E8 FD 8E 17 00            CALL 0x0070a9f0
+CampaignTy::PaintCampaign::override::prt_591aee_1cc576dc:
+00591AEE  E8 FD 8E 17 00            CALL 0x0070a9f0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/wingdi.h/BITMAPINFO; signature=__cdecl;pointer:/wingdi.h/BITMAPINFO;pointer:/cMf32;pointer:/char;/byte;/int
 00591AF3  50                        PUSH EAX
 00591AF4  6A 01                     PUSH 0x1
 00591AF6  6A 37                     PUSH 0x37

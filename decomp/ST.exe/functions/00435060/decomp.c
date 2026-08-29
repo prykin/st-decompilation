@@ -16,7 +16,7 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
   int iVar4;
   uint uVar6;
   int iVar7;
-  undefined1 local_c [4];
+  byte local_c [4];
   int local_8;
 
   if (DAT_0080874d != 0xff) {
@@ -32,9 +32,10 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
             uVar6 = 0;
             if (0 < iVar3) {
               do {
+                /* ST_CALLSITE[0043512D]: CALL 0x006acc70; direct=006ACC70 DArrayGetElement; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
                 DArrayGetElement(*(DArrayTy **)(iVar1 + 10),uVar6,local_c);
                 /* ST_CALLSITE[0043513F]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-                pSVar5 = GetObjPtr(this,((char *)iVar1)[4],STPiece<0,2>(local_c),CASE_1);
+                pSVar5 = GetObjPtr(this,STField<char>(iVar1,0x4),STPiece<0,2>(local_c),CASE_1);
                 if (pSVar5 != nullptr) {
                   if (local_8 == 0) {
                     /* ST_CALLSITE[00435151]: CALL 0x004042c8; direct=004042C8 STGameObjC::SetSelfCheckFlag */
@@ -65,6 +66,7 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
           }
         }
         else {
+
           local_EAX_121 =
                ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x10bb,0,0,"%s",
                                   "STAllPlayersC::SelfCheckObjControl ACT_LEFT invalid game type");
@@ -88,9 +90,10 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
             uVar6 = 0;
             if (0 < iVar3) {
               do {
+                /* ST_CALLSITE[00435232]: CALL 0x006acc70; direct=006ACC70 DArrayGetElement; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
                 DArrayGetElement(*(DArrayTy **)(iVar1 + 10),uVar6,local_c);
                 /* ST_CALLSITE[00435244]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-                pSVar5 = GetObjPtr(this,((char *)iVar1)[4],STPiece<0,2>(local_c),CASE_1);
+                pSVar5 = GetObjPtr(this,STField<char>(iVar1,0x4),STPiece<0,2>(local_c),CASE_1);
                 if (pSVar5 != nullptr) {
                   if (local_8 == 0) {
                     /* ST_CALLSITE[00435256]: CALL 0x004042c8; direct=004042C8 STGameObjC::SetSelfCheckFlag */
@@ -155,6 +158,7 @@ LAB_004352f5:
       }
       else {
 LAB_00435287:
+
         iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x10ec,0,0,"%s"
                                    ,"STAllPlayersC::SelfCheckObjControl ACT_RIGHT invalid game type");
         if (iVar4 != 0) {

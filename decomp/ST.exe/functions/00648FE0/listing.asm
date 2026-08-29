@@ -192,7 +192,7 @@ LAB_0064924b:
 00649252  6A 02                     PUSH 0x2
 00649254  51                        PUSH ECX
 LAB_00649255:
-00649255  E8 A6 99 0A 00            CALL 0x006f2c00
+00649255  E8 A6 99 0A 00            CALL 0x006f2c00  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 0064925A  83 C4 0C                  ADD ESP,0xc
 LAB_0064925d:
 0064925D  89 45 F4                  MOV dword ptr [EBP + -0xc],EAX

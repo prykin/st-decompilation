@@ -17,44 +17,47 @@ STAllPlayersC::UnRegisterObject
 {
   int *piVar1;
   MoneyTy *pMVar3;
+  DArrayTy *array;
   STAllPlayersC *this_00;
-  STGroupBoatC *pSVar4;
-  short sVar5;
+  STGroupBoatC *this_01;
+  ushort uVar4;
   int iVar10;
-  int iVar7;
+  int iVar5;
   int local_EAX_1804;
   int local_EAX_3102;
-  uint uVar8;
-  STGameObjC *pSVar9;
-  DArrayTy *pDVar10;
+  uint uVar6;
+  STGameObjC *pSVar7;
+  DArrayOf_STGameObjCPtr *array_00;
   int iVar6;
-  int iVar11;
-  uint uVar12;
+  int iVar8;
+  uint uVar9;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined3 in_stack_00000005;
   InternalExceptionFrame local_68;
   dword local_24;
   DArrayTy *local_20;
-  DArrayTy *local_1c;
+  DArrayOf_STGameObjCPtr *local_1c;
   STAllPlayersC *local_18;
-  DArrayTy *local_14;
+  DArrayOf_STGameObjCPtr *local_14;
   STGroupBoatC *local_10;
-  undefined4 local_c;
+  uint local_c;
   uint local_8;
-  iVar11 = (int)param_1;
+  iVar8 = (int)param_1;
   local_c = 0;
-  local_14 = (DArrayTy *)g_packedRecords_A62x8[iVar11].field3_0x9;
-  local_1c = (DArrayTy *)g_packedRecords_A62x8[iVar11].field2_0x5;
-  local_20 = (DArrayTy *)g_packedRecords_A62x8[iVar11].field355_0x2e7;
+  local_14 = g_packedRecords_A62x8[iVar8].field3_0x9;
+  local_1c = (DArrayOf_STGameObjCPtr *)g_packedRecords_A62x8[iVar8].field2_0x5;
+  local_20 = (DArrayTy *)g_packedRecords_A62x8[iVar8].field355_0x2e7;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_18 = this;
+
   iVar10 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   if (iVar10 != 0) {
     g_currentExceptionFrame = local_68.previous;
     if (iVar10 == -0x5001fff7) {
       return 0;
     }
+
     iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x7cd,0,iVar10,"%s"
                                ,"STAllPlayersC::UnRegisterObject");
     if (iVar6 == 0) {
@@ -70,113 +73,114 @@ STAllPlayersC::UnRegisterObject
   }
   if (((STGameObjC *)param_4)->field_0020 == 0x14) {
     /* ST_CALLSITE[0042F354]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-    iVar11 = ((STGameObjC *)param_4)->vfunc_2C();
-    if ((STBitTest(g_bitset_00801480, iVar11 + 0x41U)) == 0) {
+    iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+    if ((STBitTest(g_bitset_00801480, iVar8 + 0x41U)) == 0) {
       /* ST_CALLSITE[0042F39F]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-      iVar11 = ((STGameObjC *)param_4)->vfunc_2C();
-      if ((STBitTest(g_bitset_00800F10, iVar11 + 0x41U)) == 0) {
+      iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+      if ((STBitTest(g_bitset_00800F10, iVar8 + 0x41U)) == 0) {
         /* ST_CALLSITE[0042F3E7]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-        iVar11 = ((STGameObjC *)param_4)->vfunc_2C();
-        if ((STBitTest(g_bitset_00801450, iVar11 + 0x41U)) == 0)
+        iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+        if ((STBitTest(g_bitset_00801450, iVar8 + 0x41U)) == 0)
         goto LAB_0042f42f;
         /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-        iVar11 = param_1 * 0xa62;
+        iVar8 = param_1 * 0xa62;
         g_packedRecords_A62x8[param_1].field20_0x33 =
              g_packedRecords_A62x8[param_1].field20_0x33 + -1;
       }
       else {
         /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-        iVar11 = param_1 * 0xa62;
+        iVar8 = param_1 * 0xa62;
         g_packedRecords_A62x8[param_1].field19_0x2f =
              g_packedRecords_A62x8[param_1].field19_0x2f + -1;
       }
     }
     else {
       /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-      iVar11 = param_1 * 0xa62;
+      iVar8 = param_1 * 0xa62;
       g_packedRecords_A62x8[param_1].field18_0x2b = g_packedRecords_A62x8[param_1].field18_0x2b + -1
       ;
     }
-    piVar1 = (int *)((int)&g_packedRecords_A62x8[0].field21_0x37 + iVar11);
+    piVar1 = (int *)((int)&g_packedRecords_A62x8[0].field21_0x37 + iVar8);
     *piVar1 = *piVar1 + 1;
   }
 LAB_0042f42f:
   if (((STGameObjC *)param_4)->field_0020 == 1000) {
     /* ST_CALLSITE[0042F440]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-    iVar11 = ((STGameObjC *)param_4)->vfunc_2C();
-    if ((STBitTest(g_bitset_00800F90, iVar11 - 0x32U)) == 0) {
+    iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+    if ((STBitTest(g_bitset_00800F90, iVar8 - 0x32U)) == 0) {
       /* ST_CALLSITE[0042F48B]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-      iVar11 = ((STGameObjC *)param_4)->vfunc_2C();
-      if ((STBitTest(g_bitset_00801360, iVar11 - 0x32U)) == 0) {
+      iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+      if ((STBitTest(g_bitset_00801360, iVar8 - 0x32U)) == 0) {
         /* ST_CALLSITE[0042F4D3]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-        iVar11 = ((STGameObjC *)param_4)->vfunc_2C();
-        if (((STBitTest(g_bitset_008014A0, iVar11 - 0x32U)) == 0)
+        iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+        if (((STBitTest(g_bitset_008014A0, iVar8 - 0x32U)) == 0) &&
            /* ST_CALLSITE[0042F4FF]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-           && (iVar11 = ((STGameObjC *)param_4)->vfunc_2C(),
-              (STBitTest(g_bitset_00800F80, iVar11 - 0x32U)) == 0))
+           (iVar8 = ((STGameObjC *)param_4)->vfunc_2C(),
+           (STBitTest(g_bitset_00800F80, iVar8 - 0x32U)) == 0))
         goto LAB_0042f547;
         /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-        iVar11 = param_1 * 0xa62;
+        iVar8 = param_1 * 0xa62;
         g_packedRecords_A62x8[param_1].field24_0x43 =
              g_packedRecords_A62x8[param_1].field24_0x43 + -1;
       }
       else {
         /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-        iVar11 = param_1 * 0xa62;
+        iVar8 = param_1 * 0xa62;
         g_packedRecords_A62x8[param_1].field23_0x3f =
              g_packedRecords_A62x8[param_1].field23_0x3f + -1;
       }
     }
     else {
       /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-      iVar11 = param_1 * 0xa62;
+      iVar8 = param_1 * 0xa62;
       g_packedRecords_A62x8[param_1].field22_0x3b = g_packedRecords_A62x8[param_1].field22_0x3b + -1
       ;
     }
-    piVar1 = (int *)((int)&g_packedRecords_A62x8[0].field25_0x47 + iVar11);
+    piVar1 = (int *)((int)&g_packedRecords_A62x8[0].field25_0x47 + iVar8);
     *piVar1 = *piVar1 + 1;
   }
 LAB_0042f547:
   pMVar3 = g_money_008016D4;
   if (((STGameObjC *)param_4)->field_0020 == 0x14) {
-    iVar11 = (int)param_1;
-    g_packedRecords_A62x8[iVar11].field4_0xd = g_packedRecords_A62x8[iVar11].field4_0xd + -1;
+    iVar8 = (int)param_1;
+    g_packedRecords_A62x8[iVar8].field4_0xd = g_packedRecords_A62x8[iVar8].field4_0xd + -1;
     if (pMVar3 != nullptr) {
       /* ST_CALLSITE[0042F58A]: CALL 0x0040161d; direct=0040161D MoneyTy::sub_0052BDA0 */
-      MoneyTy::sub_0052BDA0(pMVar3,param_1,(uint)(ushort)g_packedRecords_A62x8[iVar11].field4_0xd);
+      MoneyTy::sub_0052BDA0(pMVar3,param_1,(uint)(ushort)g_packedRecords_A62x8[iVar8].field4_0xd);
     }
     /* ST_CALLSITE[0042F593]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-    iVar7 = ((STGameObjC *)param_4)->vfunc_2C();
-    if (iVar7 != 0x19) {
+    iVar5 = ((STGameObjC *)param_4)->vfunc_2C();
+    if (iVar5 != 0x19) {
       /* ST_CALLSITE[0042F5A3]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-      iVar7 = ((STGameObjC *)param_4)->vfunc_2C();
-      if ((STBitTest(g_bitset_00801000, iVar7 + 0x41U)) == 0) {
+      iVar5 = ((STGameObjC *)param_4)->vfunc_2C();
+      if ((STBitTest(g_bitset_00801000, iVar5 + 0x41U)) == 0) {
         /* ST_CALLSITE[0042F625]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-        iVar7 = ((STGameObjC *)param_4)->vfunc_2C();
-        if ((STBitTest(g_bitset_00801010, iVar7 + 0x41U)) == 0) {
+        iVar5 = ((STGameObjC *)param_4)->vfunc_2C();
+        if ((STBitTest(g_bitset_00801010, iVar5 + 0x41U)) == 0) {
           /* ST_CALLSITE[0042F6A7]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-          iVar7 = ((STGameObjC *)param_4)->vfunc_2C();
-          if ((STBitTest(g_bitset_00800F00, iVar7 + 0x41U)) == 0) {
+          iVar5 = ((STGameObjC *)param_4)->vfunc_2C();
+          if ((STBitTest(g_bitset_00800F00, iVar5 + 0x41U)) == 0) {
             /* ST_CALLSITE[0042F729]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-            iVar7 = ((STGameObjC *)param_4)->vfunc_2C();
-            if ((STBitTest(g_bitset_00801370, iVar7 + 0x41U)) == 0)
+            iVar5 = ((STGameObjC *)param_4)->vfunc_2C();
+            if ((STBitTest(g_bitset_00801370, iVar5 + 0x41U)) == 0)
             {
               /* ST_CALLSITE[0042F7AB]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-              iVar7 = ((STGameObjC *)param_4)->vfunc_2C();
-              if ((STBitTest(g_bitset_00800FA0, iVar7 + 0x41U)) == 0
+              iVar5 = ((STGameObjC *)param_4)->vfunc_2C();
+              if ((STBitTest(g_bitset_00800FA0, iVar5 + 0x41U)) == 0
                  ) {
                 /* ST_CALLSITE[0042F82D]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-                iVar7 = ((STGameObjC *)param_4)->vfunc_2C();
-                if ((STBitTest(g_bitset_00800FF0, iVar7 + 0x41U)) ==
+                iVar5 = ((STGameObjC *)param_4)->vfunc_2C();
+                if ((STBitTest(g_bitset_00800FF0, iVar5 + 0x41U)) ==
                     0) {
                   /* ST_CALLSITE[0042F8AF]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-                  iVar7 = ((STGameObjC *)param_4)->vfunc_2C();
-                  if ((STBitTest(g_bitset_00801460, iVar7 + 0x41U))
+                  iVar5 = ((STGameObjC *)param_4)->vfunc_2C();
+                  if ((STBitTest(g_bitset_00801460, iVar5 + 0x41U))
                       == 0) {
                     /* ST_CALLSITE[0042F931]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-                    iVar7 = ((STGameObjC *)param_4)->vfunc_2C();
-                    if ((STBitTest(g_bitset_00800FE0, iVar7 + 0x41U)
+                    iVar5 = ((STGameObjC *)param_4)->vfunc_2C();
+                    if ((STBitTest(g_bitset_00800FE0, iVar5 + 0x41U)
                         ) == 0) {
+
                       local_EAX_1804 =
                            ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x73c,0,0,
                                               "%s",
@@ -186,88 +190,87 @@ LAB_0042f547:
                       }
                     }
                     else {
-                      g_packedRecords_A62x8[iVar11].field54_0xbb =
-                           g_packedRecords_A62x8[iVar11].field54_0xbb + -1;
+                      g_packedRecords_A62x8[iVar8].field54_0xbb =
+                           g_packedRecords_A62x8[iVar8].field54_0xbb + -1;
                       if ((param_5 != 0xfe) &&
-                         (g_packedRecords_A62x8[iVar11].field56_0xc3 =
-                               g_packedRecords_A62x8[iVar11].field56_0xc3 + 1, param_5 != 0xff)) {
+                         (g_packedRecords_A62x8[iVar8].field56_0xc3 =
+                               g_packedRecords_A62x8[iVar8].field56_0xc3 + 1, param_5 != 0xff)) {
                         g_packedRecords_A62x8[param_5].field57_0xc7 =
                              g_packedRecords_A62x8[param_5].field57_0xc7 + 1;
                       }
                     }
                   }
                   else {
-                    g_packedRecords_A62x8[iVar11].field50_0xab =
-                         g_packedRecords_A62x8[iVar11].field50_0xab + -1;
+                    g_packedRecords_A62x8[iVar8].field50_0xab =
+                         g_packedRecords_A62x8[iVar8].field50_0xab + -1;
                     if ((param_5 != 0xfe) &&
-                       (g_packedRecords_A62x8[iVar11].field52_0xb3 =
-                             g_packedRecords_A62x8[iVar11].field52_0xb3 + 1, param_5 != 0xff)) {
+                       (g_packedRecords_A62x8[iVar8].field52_0xb3 =
+                             g_packedRecords_A62x8[iVar8].field52_0xb3 + 1, param_5 != 0xff)) {
                       g_packedRecords_A62x8[param_5].field53_0xb7 =
                            g_packedRecords_A62x8[param_5].field53_0xb7 + 1;
                     }
                   }
                 }
                 else {
-                  g_packedRecords_A62x8[iVar11].field46_0x9b =
-                       g_packedRecords_A62x8[iVar11].field46_0x9b + -1;
+                  g_packedRecords_A62x8[iVar8].field46_0x9b =
+                       g_packedRecords_A62x8[iVar8].field46_0x9b + -1;
                   if ((param_5 != 0xfe) &&
-                     (g_packedRecords_A62x8[iVar11].field48_0xa3 =
-                           g_packedRecords_A62x8[iVar11].field48_0xa3 + 1, param_5 != 0xff)) {
+                     (g_packedRecords_A62x8[iVar8].field48_0xa3 =
+                           g_packedRecords_A62x8[iVar8].field48_0xa3 + 1, param_5 != 0xff)) {
                     g_packedRecords_A62x8[param_5].field49_0xa7 =
                          g_packedRecords_A62x8[param_5].field49_0xa7 + 1;
                   }
                 }
               }
               else {
-                g_packedRecords_A62x8[iVar11].field42_0x8b =
-                     g_packedRecords_A62x8[iVar11].field42_0x8b + -1;
+                g_packedRecords_A62x8[iVar8].field42_0x8b =
+                     g_packedRecords_A62x8[iVar8].field42_0x8b + -1;
                 if ((param_5 != 0xfe) &&
-                   (g_packedRecords_A62x8[iVar11].field44_0x93 =
-                         g_packedRecords_A62x8[iVar11].field44_0x93 + 1, param_5 != 0xff)) {
+                   (g_packedRecords_A62x8[iVar8].field44_0x93 =
+                         g_packedRecords_A62x8[iVar8].field44_0x93 + 1, param_5 != 0xff)) {
                   g_packedRecords_A62x8[param_5].field45_0x97 =
                        g_packedRecords_A62x8[param_5].field45_0x97 + 1;
                 }
               }
             }
             else {
-              g_packedRecords_A62x8[iVar11].field38_0x7b =
-                   g_packedRecords_A62x8[iVar11].field38_0x7b + -1;
+              g_packedRecords_A62x8[iVar8].field38_0x7b =
+                   g_packedRecords_A62x8[iVar8].field38_0x7b + -1;
               if ((param_5 != 0xfe) &&
-                 (g_packedRecords_A62x8[iVar11].field40_0x83 =
-                       g_packedRecords_A62x8[iVar11].field40_0x83 + 1, param_5 != 0xff)) {
+                 (g_packedRecords_A62x8[iVar8].field40_0x83 =
+                       g_packedRecords_A62x8[iVar8].field40_0x83 + 1, param_5 != 0xff)) {
                 g_packedRecords_A62x8[param_5].field41_0x87 =
                      g_packedRecords_A62x8[param_5].field41_0x87 + 1;
               }
             }
           }
           else {
-            g_packedRecords_A62x8[iVar11].field34_0x6b =
-                 g_packedRecords_A62x8[iVar11].field34_0x6b + -1;
+            g_packedRecords_A62x8[iVar8].field34_0x6b =
+                 g_packedRecords_A62x8[iVar8].field34_0x6b + -1;
             if ((param_5 != 0xfe) &&
-               (g_packedRecords_A62x8[iVar11].field36_0x73 =
-                     g_packedRecords_A62x8[iVar11].field36_0x73 + 1, param_5 != 0xff)) {
+               (g_packedRecords_A62x8[iVar8].field36_0x73 =
+                     g_packedRecords_A62x8[iVar8].field36_0x73 + 1, param_5 != 0xff)) {
               g_packedRecords_A62x8[param_5].field37_0x77 =
                    g_packedRecords_A62x8[param_5].field37_0x77 + 1;
             }
           }
         }
         else {
-          g_packedRecords_A62x8[iVar11].field30_0x5b =
-               g_packedRecords_A62x8[iVar11].field30_0x5b + -1;
+          g_packedRecords_A62x8[iVar8].field30_0x5b = g_packedRecords_A62x8[iVar8].field30_0x5b + -1
+          ;
           if ((param_5 != 0xfe) &&
-             (g_packedRecords_A62x8[iVar11].field32_0x63 =
-                   g_packedRecords_A62x8[iVar11].field32_0x63 + 1, param_5 != 0xff)) {
+             (g_packedRecords_A62x8[iVar8].field32_0x63 =
+                   g_packedRecords_A62x8[iVar8].field32_0x63 + 1, param_5 != 0xff)) {
             g_packedRecords_A62x8[param_5].field33_0x67 =
                  g_packedRecords_A62x8[param_5].field33_0x67 + 1;
           }
         }
       }
       else {
-        g_packedRecords_A62x8[iVar11].field26_0x4b = g_packedRecords_A62x8[iVar11].field26_0x4b + -1
-        ;
+        g_packedRecords_A62x8[iVar8].field26_0x4b = g_packedRecords_A62x8[iVar8].field26_0x4b + -1;
         if ((param_5 != 0xfe) &&
-           (g_packedRecords_A62x8[iVar11].field28_0x53 =
-                 g_packedRecords_A62x8[iVar11].field28_0x53 + 1, param_5 != 0xff)) {
+           (g_packedRecords_A62x8[iVar8].field28_0x53 =
+                 g_packedRecords_A62x8[iVar8].field28_0x53 + 1, param_5 != 0xff)) {
           g_packedRecords_A62x8[param_5].field29_0x57 =
                g_packedRecords_A62x8[param_5].field29_0x57 + 1;
         }
@@ -276,54 +279,53 @@ LAB_0042f547:
   }
   pMVar3 = g_money_008016D4;
   if (((STGameObjC *)param_4)->field_0020 == 1000) {
-    iVar11 = (int)param_1;
-    g_packedRecords_A62x8[iVar11].field4_0xd = g_packedRecords_A62x8[iVar11].field4_0xd + -1;
+    iVar8 = (int)param_1;
+    g_packedRecords_A62x8[iVar8].field4_0xd = g_packedRecords_A62x8[iVar8].field4_0xd + -1;
     if (pMVar3 != nullptr) {
       /* ST_CALLSITE[0042FA0B]: CALL 0x0040161d; direct=0040161D MoneyTy::sub_0052BDA0 */
-      MoneyTy::sub_0052BDA0(pMVar3,param_1,(uint)(ushort)g_packedRecords_A62x8[iVar11].field4_0xd);
+      MoneyTy::sub_0052BDA0(pMVar3,param_1,(uint)(ushort)g_packedRecords_A62x8[iVar8].field4_0xd);
     }
     /* ST_CALLSITE[0042FA14]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-    iVar7 = ((STGameObjC *)param_4)->vfunc_2C();
-    if (iVar7 == 0x33) {
-      g_packedRecords_A62x8[iVar11].field94_0x15b = g_packedRecords_A62x8[iVar11].field94_0x15b + -1
-      ;
+    iVar5 = ((STGameObjC *)param_4)->vfunc_2C();
+    if (iVar5 == 0x33) {
+      g_packedRecords_A62x8[iVar8].field94_0x15b = g_packedRecords_A62x8[iVar8].field94_0x15b + -1;
     }
-    else if (iVar7 == 0x62) {
-      g_packedRecords_A62x8[iVar11].field95_0x15f = g_packedRecords_A62x8[iVar11].field95_0x15f + -1
-      ;
+    else if (iVar5 == 0x62) {
+      g_packedRecords_A62x8[iVar8].field95_0x15f = g_packedRecords_A62x8[iVar8].field95_0x15f + -1;
     }
     /* ST_CALLSITE[0042FA33]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-    iVar7 = ((STGameObjC *)param_4)->vfunc_2C();
-    if ((STBitTest(g_bitset_00801420, iVar7 - 0x32U)) == 0) {
+    iVar5 = ((STGameObjC *)param_4)->vfunc_2C();
+    if ((STBitTest(g_bitset_00801420, iVar5 - 0x32U)) == 0) {
       /* ST_CALLSITE[0042FAB5]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-      iVar7 = ((STGameObjC *)param_4)->vfunc_2C();
-      if ((STBitTest(g_bitset_008013E0, iVar7 - 0x32U)) == 0) {
+      iVar5 = ((STGameObjC *)param_4)->vfunc_2C();
+      if ((STBitTest(g_bitset_008013E0, iVar5 - 0x32U)) == 0) {
         /* ST_CALLSITE[0042FB37]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-        iVar7 = ((STGameObjC *)param_4)->vfunc_2C();
-        if ((STBitTest(g_bitset_00800EE0, iVar7 - 0x32U)) == 0) {
+        iVar5 = ((STGameObjC *)param_4)->vfunc_2C();
+        if ((STBitTest(g_bitset_00800EE0, iVar5 - 0x32U)) == 0) {
           /* ST_CALLSITE[0042FBB9]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-          iVar7 = ((STGameObjC *)param_4)->vfunc_2C();
-          if ((STBitTest(g_bitset_00801490, iVar7 - 0x32U)) == 0) {
+          iVar5 = ((STGameObjC *)param_4)->vfunc_2C();
+          if ((STBitTest(g_bitset_00801490, iVar5 - 0x32U)) == 0) {
             /* ST_CALLSITE[0042FC3B]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-            iVar7 = ((STGameObjC *)param_4)->vfunc_2C();
-            if ((STBitTest(g_bitset_00800F20, iVar7 - 0x32U)) == 0)
+            iVar5 = ((STGameObjC *)param_4)->vfunc_2C();
+            if ((STBitTest(g_bitset_00800F20, iVar5 - 0x32U)) == 0)
             {
               /* ST_CALLSITE[0042FCBD]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-              iVar7 = ((STGameObjC *)param_4)->vfunc_2C();
-              if ((STBitTest(g_bitset_00800EF0, iVar7 - 0x32U)) == 0
+              iVar5 = ((STGameObjC *)param_4)->vfunc_2C();
+              if ((STBitTest(g_bitset_00800EF0, iVar5 - 0x32U)) == 0
                  ) {
                 /* ST_CALLSITE[0042FD3F]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-                iVar7 = ((STGameObjC *)param_4)->vfunc_2C();
-                if ((STBitTest(g_bitset_00801430, iVar7 - 0x32U)) ==
+                iVar5 = ((STGameObjC *)param_4)->vfunc_2C();
+                if ((STBitTest(g_bitset_00801430, iVar5 - 0x32U)) ==
                     0) {
                   /* ST_CALLSITE[0042FDC1]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-                  iVar7 = ((STGameObjC *)param_4)->vfunc_2C();
-                  if ((STBitTest(g_bitset_00801440, iVar7 - 0x32U))
+                  iVar5 = ((STGameObjC *)param_4)->vfunc_2C();
+                  if ((STBitTest(g_bitset_00801440, iVar5 - 0x32U))
                       == 0) {
                     /* ST_CALLSITE[0042FE43]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-                    iVar7 = ((STGameObjC *)param_4)->vfunc_2C();
-                    if ((STBitTest(g_bitset_00800F60, iVar7 - 0x32U)
+                    iVar5 = ((STGameObjC *)param_4)->vfunc_2C();
+                    if ((STBitTest(g_bitset_00800F60, iVar5 - 0x32U)
                         ) == 0) {
+
                       local_EAX_3102 =
                            ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x797,0,0,
                                               "%s",
@@ -333,98 +335,97 @@ LAB_0042f547:
                       }
                     }
                     else {
-                      g_packedRecords_A62x8[iVar11].field90_0x14b =
-                           g_packedRecords_A62x8[iVar11].field90_0x14b + -1;
+                      g_packedRecords_A62x8[iVar8].field90_0x14b =
+                           g_packedRecords_A62x8[iVar8].field90_0x14b + -1;
                       if ((param_5 != 0xfe) &&
-                         (g_packedRecords_A62x8[iVar11].field92_0x153 =
-                               g_packedRecords_A62x8[iVar11].field92_0x153 + 1, param_5 != 0xff)) {
+                         (g_packedRecords_A62x8[iVar8].field92_0x153 =
+                               g_packedRecords_A62x8[iVar8].field92_0x153 + 1, param_5 != 0xff)) {
                         g_packedRecords_A62x8[param_5].field93_0x157 =
                              g_packedRecords_A62x8[param_5].field93_0x157 + 1;
                       }
                     }
                   }
                   else {
-                    g_packedRecords_A62x8[iVar11].field86_0x13b =
-                         g_packedRecords_A62x8[iVar11].field86_0x13b + -1;
+                    g_packedRecords_A62x8[iVar8].field86_0x13b =
+                         g_packedRecords_A62x8[iVar8].field86_0x13b + -1;
                     if ((param_5 != 0xfe) &&
-                       (g_packedRecords_A62x8[iVar11].field88_0x143 =
-                             g_packedRecords_A62x8[iVar11].field88_0x143 + 1, param_5 != 0xff)) {
+                       (g_packedRecords_A62x8[iVar8].field88_0x143 =
+                             g_packedRecords_A62x8[iVar8].field88_0x143 + 1, param_5 != 0xff)) {
                       g_packedRecords_A62x8[param_5].field89_0x147 =
                            g_packedRecords_A62x8[param_5].field89_0x147 + 1;
                     }
                   }
                 }
                 else {
-                  g_packedRecords_A62x8[iVar11].field82_0x12b =
-                       g_packedRecords_A62x8[iVar11].field82_0x12b + -1;
+                  g_packedRecords_A62x8[iVar8].field82_0x12b =
+                       g_packedRecords_A62x8[iVar8].field82_0x12b + -1;
                   if ((param_5 != 0xfe) &&
-                     (g_packedRecords_A62x8[iVar11].field84_0x133 =
-                           g_packedRecords_A62x8[iVar11].field84_0x133 + 1, param_5 != 0xff)) {
+                     (g_packedRecords_A62x8[iVar8].field84_0x133 =
+                           g_packedRecords_A62x8[iVar8].field84_0x133 + 1, param_5 != 0xff)) {
                     g_packedRecords_A62x8[param_5].field85_0x137 =
                          g_packedRecords_A62x8[param_5].field85_0x137 + 1;
                   }
                 }
               }
               else {
-                g_packedRecords_A62x8[iVar11].field78_0x11b =
-                     g_packedRecords_A62x8[iVar11].field78_0x11b + -1;
+                g_packedRecords_A62x8[iVar8].field78_0x11b =
+                     g_packedRecords_A62x8[iVar8].field78_0x11b + -1;
                 if ((param_5 != 0xfe) &&
-                   (g_packedRecords_A62x8[iVar11].field80_0x123 =
-                         g_packedRecords_A62x8[iVar11].field80_0x123 + 1, param_5 != 0xff)) {
+                   (g_packedRecords_A62x8[iVar8].field80_0x123 =
+                         g_packedRecords_A62x8[iVar8].field80_0x123 + 1, param_5 != 0xff)) {
                   g_packedRecords_A62x8[param_5].field81_0x127 =
                        g_packedRecords_A62x8[param_5].field81_0x127 + 1;
                 }
               }
             }
             else {
-              g_packedRecords_A62x8[iVar11].field74_0x10b =
-                   g_packedRecords_A62x8[iVar11].field74_0x10b + -1;
+              g_packedRecords_A62x8[iVar8].field74_0x10b =
+                   g_packedRecords_A62x8[iVar8].field74_0x10b + -1;
               if ((param_5 != 0xfe) &&
-                 (g_packedRecords_A62x8[iVar11].field76_0x113 =
-                       g_packedRecords_A62x8[iVar11].field76_0x113 + 1, param_5 != 0xff)) {
+                 (g_packedRecords_A62x8[iVar8].field76_0x113 =
+                       g_packedRecords_A62x8[iVar8].field76_0x113 + 1, param_5 != 0xff)) {
                 g_packedRecords_A62x8[param_5].field77_0x117 =
                      g_packedRecords_A62x8[param_5].field77_0x117 + 1;
               }
             }
           }
           else {
-            g_packedRecords_A62x8[iVar11].field70_0xfb =
-                 g_packedRecords_A62x8[iVar11].field70_0xfb + -1;
+            g_packedRecords_A62x8[iVar8].field70_0xfb =
+                 g_packedRecords_A62x8[iVar8].field70_0xfb + -1;
             if ((param_5 != 0xfe) &&
-               (g_packedRecords_A62x8[iVar11].field72_0x103 =
-                     g_packedRecords_A62x8[iVar11].field72_0x103 + 1, param_5 != 0xff)) {
+               (g_packedRecords_A62x8[iVar8].field72_0x103 =
+                     g_packedRecords_A62x8[iVar8].field72_0x103 + 1, param_5 != 0xff)) {
               g_packedRecords_A62x8[param_5].field73_0x107 =
                    g_packedRecords_A62x8[param_5].field73_0x107 + 1;
             }
           }
         }
         else {
-          g_packedRecords_A62x8[iVar11].field66_0xeb =
-               g_packedRecords_A62x8[iVar11].field66_0xeb + -1;
+          g_packedRecords_A62x8[iVar8].field66_0xeb = g_packedRecords_A62x8[iVar8].field66_0xeb + -1
+          ;
           if ((param_5 != 0xfe) &&
-             (g_packedRecords_A62x8[iVar11].field68_0xf3 =
-                   g_packedRecords_A62x8[iVar11].field68_0xf3 + 1, param_5 != 0xff)) {
+             (g_packedRecords_A62x8[iVar8].field68_0xf3 =
+                   g_packedRecords_A62x8[iVar8].field68_0xf3 + 1, param_5 != 0xff)) {
             g_packedRecords_A62x8[param_5].field69_0xf7 =
                  g_packedRecords_A62x8[param_5].field69_0xf7 + 1;
           }
         }
       }
       else {
-        g_packedRecords_A62x8[iVar11].field62_0xdb = g_packedRecords_A62x8[iVar11].field62_0xdb + -1
-        ;
+        g_packedRecords_A62x8[iVar8].field62_0xdb = g_packedRecords_A62x8[iVar8].field62_0xdb + -1;
         if ((param_5 != 0xfe) &&
-           (g_packedRecords_A62x8[iVar11].field64_0xe3 =
-                 g_packedRecords_A62x8[iVar11].field64_0xe3 + 1, param_5 != 0xff)) {
+           (g_packedRecords_A62x8[iVar8].field64_0xe3 =
+                 g_packedRecords_A62x8[iVar8].field64_0xe3 + 1, param_5 != 0xff)) {
           g_packedRecords_A62x8[param_5].field65_0xe7 =
                g_packedRecords_A62x8[param_5].field65_0xe7 + 1;
         }
       }
     }
     else {
-      g_packedRecords_A62x8[iVar11].field58_0xcb = g_packedRecords_A62x8[iVar11].field58_0xcb + -1;
+      g_packedRecords_A62x8[iVar8].field58_0xcb = g_packedRecords_A62x8[iVar8].field58_0xcb + -1;
       if ((param_5 != 0xfe) &&
-         (g_packedRecords_A62x8[iVar11].field60_0xd3 =
-               g_packedRecords_A62x8[iVar11].field60_0xd3 + 1, param_5 != 0xff)) {
+         (g_packedRecords_A62x8[iVar8].field60_0xd3 = g_packedRecords_A62x8[iVar8].field60_0xd3 + 1,
+         param_5 != 0xff)) {
         g_packedRecords_A62x8[param_5].field61_0xd7 =
              g_packedRecords_A62x8[param_5].field61_0xd7 + 1;
       }
@@ -432,8 +433,8 @@ LAB_0042f547:
   }
   this_00 = local_18;
   /* ST_CALLSITE[0042FEEA]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-  pSVar9 = GetObjPtr(local_18,param_1,(ushort)param_3,CASE_1);
-  if (pSVar9 != (STGameObjC *)param_4) {
+  pSVar7 = GetObjPtr(local_18,param_1,(ushort)param_3,CASE_1);
+  if (pSVar7 != (STGameObjC *)param_4) {
     RaiseInternalException
               (-0x5001fff9,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x7a3);
@@ -445,51 +446,62 @@ LAB_0042f547:
                 (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x7a5);
     }
-    iVar11 = thunk_FUN_004237d0(local_10,(ushort)param_3);
-    if (iVar11 == 0) {
+
+    iVar8 = thunk_FUN_004237d0(local_10,(ushort)param_3);
+    if (iVar8 == 0) {
       RaiseInternalException
                 (-0x5001fffd,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x7a6);
     }
   }
+  /* ST_CALLSITE[0042FF76]: CALL 0x00402653; direct=00402653 thunk_FUN_00440820; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
   thunk_FUN_00440820(_param_1,param_3);
   /* ST_CALLSITE[0042FF8C]: CALL 0x004021a3; direct=004021A3 STAllPlayersC::DelObjFromTmps */
   DelObjFromTmps(this_00,DAT_0080874d,((STGameObjC *)param_4)->field_0020,param_1,param_3);
   /* ST_CALLSITE[0042FF9C]: CALL 0x00403643; direct=00403643 STAllPlayersC::DelObjFromSaveTmps */
   DelObjFromSaveTmps(this_00,((STGameObjC *)param_4)->field_0020,param_1,(ushort)param_3);
-  pSVar4 = local_10;
-  pDVar10 = local_14;
-  uVar12 = param_3;
+  this_01 = local_10;
+  array_00 = local_14;
+  uVar9 = param_3;
   if ((ushort)param_2 != 0xffff) {
     /* ST_CALLSITE[0042FFB1]: CALL dword ptr [EAX + 0x4] */
-    local_10->vfunc_04((ushort)param_3);
-    Library::DKW::TBL::DArrayPut(local_14,param_3 & 0xffff,&local_c);
-    sVar5 = thunk_FUN_004233c0(pSVar4);
-    if ((sVar5 != 0) || (iVar11 = thunk_FUN_004233a0((int)pSVar4), iVar11 != 0)) goto LAB_00430018;
-    thunk_FUN_0054cf70(g_playSystem_00802A38,pSVar4->field_0008);
-    pDVar10 = local_1c;
-    uVar12 = param_2;
+    local_10->vfunc_4((ushort)param_3);
+
+    Library::DKW::TBL::DArrayPut((DArrayTy *)local_14,param_3 & 0xffff,&local_c);
+    /* ST_CALLSITE[0042FFCC]: CALL 0x00401735; direct=00401735 STGroupBoatC::sub_004233C0 */
+    uVar4 = STGroupBoatC::sub_004233C0(this_01);
+    if ((uVar4 != 0) ||
+
+       (iVar8 = thunk_FUN_004233a0((RecoveredRecord_004233A0_9E2D1712 *)this_01), iVar8 != 0))
+    goto LAB_00430018;
+    /* ST_CALLSITE[0042FFEB]: CALL 0x0040432c; direct=0040432C STPlaySystemC::sub_0054CF70 */
+    STPlaySystemC::sub_0054CF70(g_playSystem_00802A38,this_01->field_0008);
+    array_00 = local_1c;
+    uVar9 = param_2;
   }
-  Library::DKW::TBL::DArrayPut(pDVar10,uVar12 & 0xffff,&local_c);
+
+  Library::DKW::TBL::DArrayPut((DArrayTy *)array_00,uVar9 & 0xffff,&local_c);
 LAB_00430018:
   /* ST_CALLSITE[0043001C]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-  iVar11 = ((STGameObjC *)param_4)->vfunc_2C();
-  pDVar10 = local_20;
-  if ((iVar11 == 0x1d) && (local_20 != nullptr)) {
+  iVar8 = ((STGameObjC *)param_4)->vfunc_2C();
+  array = local_20;
+  if ((iVar8 == 0x1d) && (local_20 != nullptr)) {
     local_24 = local_20->count;
-    uVar12 = 0;
+    uVar9 = 0;
     if (0 < (int)local_24) {
       while( true ) {
-        DArrayGetElement(pDVar10,uVar12,&local_8);
+
+        DArrayGetElement(array,uVar9,&local_8);
         if ((ushort)local_8 == (ushort)param_3) break;
-        uVar12 = uVar12 + 1;
-        if ((int)local_24 <= (int)uVar12) {
+        uVar9 = uVar9 + 1;
+        if ((int)local_24 <= (int)uVar9) {
           g_currentExceptionFrame = local_68.previous;
           return 0;
         }
       }
       local_8 = 0xffff;
-      Library::DKW::TBL::DArrayPut(pDVar10,uVar12,&local_8);
+
+      Library::DKW::TBL::DArrayPut(array,uVar9,&local_8);
     }
   }
   g_currentExceptionFrame = local_68.previous;

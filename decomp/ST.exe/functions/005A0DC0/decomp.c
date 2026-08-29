@@ -9,7 +9,7 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
 
 {
   char cVar1;
-  ushort *puVar2;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar2;
   FSGSTy *pFVar4;
   int iVar5;
   uint *puVar6;
@@ -28,16 +28,18 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
+
     iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     pFVar4 = local_8;
     if (iVar5 == 0) {
-      puVar2 = local_8->field_1AC0;
-      uVar9 = *(uint *)(puVar2 + 10);
+      pRVar2 = (RecoveredRecord_006B4FA0_DAC3A217 *)local_8->field_1AC0;
+      uVar9 = *(uint *)&pRVar2[1].field_0x4;
       if (uVar9 == 0) {
-        uVar9 = ((uint)puVar2[7] * *(int *)(puVar2 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-                *(int *)(puVar2 + 4);
+        uVar9 = ((uint)pRVar2->field_000E * *(int *)&pRVar2->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+                *(int *)&pRVar2->field_0x8;
       }
-      puVar6 = (undefined4 *)FUN_006b4fa0((int *)puVar2);
+
+      puVar6 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0(pRVar2));
       for (uVar8 = uVar9 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
         *puVar6 = 0xffffffff;
         puVar6 = puVar6 + 1;
@@ -46,6 +48,7 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
         *(undefined1 *)puVar6 = 0xff;
         puVar6 = (undefined4 *)((int)puVar6 + 1);
       }
+
       ccFntTy::SetSurf(pFVar4->array_00BC[0xc].field_01F3,(int)pFVar4->field_1AC0,0,0,0x16,0x1b8,
                        0xf0);
       if (param_1 < param_2) {
@@ -70,12 +73,15 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
         pcVar11 = (char *)&DAT_0080f33a;
         memmove(pcVar11, pcVar10, uVar9); /* compiler REP MOVS byte copy */
       }
+
       ccFntTy::WrTxt(pFVar4->array_00BC[0xc].field_01F3,(char *)&DAT_0080f33a,-1,-1,2,-1,-1);
+
       FUN_006b35d0((int *)g_ddxContext_008075A8,pFVar4->field_1ABC);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
+
     iVar7 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x909,0,iVar5,"%s"
                                ,"FSGSTy::ConnectProc");
     if (iVar7 != 0) {

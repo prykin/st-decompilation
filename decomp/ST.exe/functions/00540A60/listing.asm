@@ -69,7 +69,8 @@ LAB_00540ae2:
 00540AFB  6A 00                     PUSH 0x0
 00540AFD  6A 00                     PUSH 0x0
 00540AFF  6A 00                     PUSH 0x0
-00540B01  E8 EA 4A 17 00            CALL 0x006b55f0
+StartServTy::WrSarrDDX::override::prt_540b01_50b9d970:
+00540B01  E8 EA 4A 17 00            CALL 0x006b55f0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__stdcall;pointer:/ccFntTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy;/int;/int;/int;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;/int;/int;/int;/int;/int
 00540B06  6A 00                     PUSH 0x0
 00540B08  6A 00                     PUSH 0x0
 00540B0A  6A 00                     PUSH 0x0

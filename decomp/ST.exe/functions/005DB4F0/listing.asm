@@ -133,7 +133,7 @@ switchD_005db569::default:
 005DB710  51                        PUSH ECX
 005DB711  53                        PUSH EBX
 005DB712  50                        PUSH EAX
-005DB713  E8 D7 7D E2 FF            CALL 0x004034ef
+005DB713  E8 D7 7D E2 FF            CALL 0x004034ef  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/WinDef.h/HDC__; source view only; no Ghidra override
 005DB718  89 46 30                  MOV dword ptr [ESI + 0x30],EAX
 005DB71B  C7 40 58 01 00 00 00      MOV dword ptr [EAX + 0x58],0x1
 005DB722  89 58 5C                  MOV dword ptr [EAX + 0x5c],EBX
@@ -142,7 +142,7 @@ switchD_005db569::default:
 005DB731  52                        PUSH EDX
 005DB732  53                        PUSH EBX
 005DB733  50                        PUSH EAX
-005DB734  E8 25 87 E2 FF            CALL 0x00403e5e
+005DB734  E8 25 87 E2 FF            CALL 0x00403e5e  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 005DB739  89 46 34                  MOV dword ptr [ESI + 0x34],EAX
 005DB73C  8B 86 F0 02 00 00         MOV EAX,dword ptr [ESI + 0x2f0]
 005DB742  83 C4 34                  ADD ESP,0x34
@@ -189,7 +189,7 @@ switchD_005db569::default:
 005DB7B5  6A 07                     PUSH 0x7
 005DB7B7  51                        PUSH ECX
 005DB7B8  8B CF                     MOV ECX,EDI
-005DB7BA  FF 50 04                  CALL dword ptr [EAX + 0x4]
+005DB7BA  FF 50 04                  CALL dword ptr [EAX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 005DB7BD  53                        PUSH EBX
 005DB7BE  53                        PUSH EBX
 005DB7BF  53                        PUSH EBX
@@ -211,7 +211,7 @@ switchD_005db569::default:
 005DB7FE  6A 07                     PUSH 0x7
 005DB800  51                        PUSH ECX
 005DB801  8B CF                     MOV ECX,EDI
-005DB803  FF 50 04                  CALL dword ptr [EAX + 0x4]
+005DB803  FF 50 04                  CALL dword ptr [EAX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 005DB806  C7 86 A9 03 00 00 E5 00 00 00  MOV dword ptr [ESI + 0x3a9],0xe5
 005DB810  C7 86 AD 03 00 00 B8 00 00 00  MOV dword ptr [ESI + 0x3ad],0xb8
 005DB81A  89 9E 95 03 00 00         MOV dword ptr [ESI + 0x395],EBX
@@ -241,7 +241,7 @@ LAB_005db832:
 005DB85B  6A 07                     PUSH 0x7
 005DB85D  50                        PUSH EAX
 005DB85E  8B CF                     MOV ECX,EDI
-005DB860  FF 52 04                  CALL dword ptr [EDX + 0x4]
+005DB860  FF 52 04                  CALL dword ptr [EDX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 005DB863  C7 86 3A 04 00 00 E5 00 00 00  MOV dword ptr [ESI + 0x43a],0xe5
 005DB86D  C7 86 3E 04 00 00 B8 01 00 00  MOV dword ptr [ESI + 0x43e],0x1b8
 005DB877  89 9E 26 04 00 00         MOV dword ptr [ESI + 0x426],EBX
@@ -271,7 +271,7 @@ LAB_005db88f:
 005DB8BA  6A 07                     PUSH 0x7
 005DB8BC  51                        PUSH ECX
 005DB8BD  8B CF                     MOV ECX,EDI
-005DB8BF  FF 50 04                  CALL dword ptr [EAX + 0x4]
+005DB8BF  FF 50 04                  CALL dword ptr [EAX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 005DB8C2  C7 86 CB 04 00 00 EB 00 00 00  MOV dword ptr [ESI + 0x4cb],0xeb
 005DB8CC  C7 86 CF 04 00 00 D8 00 00 00  MOV dword ptr [ESI + 0x4cf],0xd8
 005DB8D6  89 9E B7 04 00 00         MOV dword ptr [ESI + 0x4b7],EBX
@@ -438,7 +438,7 @@ LAB_005dba05:
 005DBABD  6A 07                     PUSH 0x7
 005DBABF  51                        PUSH ECX
 005DBAC0  8B CF                     MOV ECX,EDI
-005DBAC2  FF 50 04                  CALL dword ptr [EAX + 0x4]
+005DBAC2  FF 50 04                  CALL dword ptr [EAX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 005DBAC5  53                        PUSH EBX
 005DBAC6  53                        PUSH EBX
 005DBAC7  C7 86 78 05 00 00 3A 02 00 00  MOV dword ptr [ESI + 0x578],0x23a
@@ -460,7 +460,7 @@ LAB_005dba05:
 005DBB0A  6A 07                     PUSH 0x7
 005DBB0C  51                        PUSH ECX
 005DBB0D  8B CF                     MOV ECX,EDI
-005DBB0F  FF 50 04                  CALL dword ptr [EAX + 0x4]
+005DBB0F  FF 50 04                  CALL dword ptr [EAX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 005DBB12  8B 86 15 06 00 00         MOV EAX,dword ptr [ESI + 0x615]
 005DBB18  BA 3A 02 00 00            MOV EDX,0x23a
 005DBB1D  2B D0                     SUB EDX,EAX

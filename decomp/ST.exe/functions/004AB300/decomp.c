@@ -44,8 +44,8 @@ void FUN_004ab300(int param_1)
   }
   thunk_FUN_004a9c80(iVar1);
 switchD_004ab3a0_default:
-  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::thunk_FUN_00567510
-            ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+  SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00567510::thunk_FUN_00567510
+            ((RecoveredReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
              DAT_0080743c & 0xff);
   return;
 }

@@ -175,7 +175,8 @@ LAB_0049c409:
 0049C446  50                        PUSH EAX
 0049C447  51                        PUSH ECX
 0049C448  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
-0049C44E  E8 21 55 F6 FF            CALL 0x00401974
+STGroupBoatC::GrpLoadRC::override::prt_49c44e_34c48aa9:
+0049C44E  E8 21 55 F6 FF            CALL 0x00401974  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArrayTy;/char;/SubmarineTitans/Recovered/Enums/Global_sub_0043EC20_param_2Enum;/short;/short;/short;/short;/short;/short;/int;/char
 0049C453  8B F8                     MOV EDI,EAX
 0049C455  6A 01                     PUSH 0x1
 0049C457  6A 02                     PUSH 0x2
@@ -369,7 +370,8 @@ LAB_0049c658:
 0049C68D  51                        PUSH ECX
 LAB_0049c68e:
 0049C68E  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
-0049C694  E8 DB 52 F6 FF            CALL 0x00401974
+STGroupBoatC::GrpLoadRC::override::prt_49c694_34c48aa9:
+0049C694  E8 DB 52 F6 FF            CALL 0x00401974  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArrayTy;/char;/SubmarineTitans/Recovered/Enums/Global_sub_0043EC20_param_2Enum;/short;/short;/short;/short;/short;/short;/int;/char
 0049C699  8B F0                     MOV ESI,EAX
 0049C69B  6A 01                     PUSH 0x1
 0049C69D  6A 02                     PUSH 0x2
@@ -442,7 +444,8 @@ LAB_0049c74c:
 0049C751  51                        PUSH ECX
 LAB_0049c752:
 0049C752  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
-0049C758  E8 B8 4C F6 FF            CALL 0x00401415
+STGroupBoatC::GrpLoadRC::override::prt_49c758_a75d8299:
+0049C758  E8 B8 4C F6 FF            CALL 0x00401415  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__thiscall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/STAllPlayersC;/char;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetTOBJList_param_2Enum;/int;/char
 0049C75D  8B F0                     MOV ESI,EAX
 0049C75F  6A 01                     PUSH 0x1
 0049C761  6A 02                     PUSH 0x2

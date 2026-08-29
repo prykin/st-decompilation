@@ -24,7 +24,7 @@ undefined4 * CreatePlrDataForBO(void)
   char local_17c [260];
   InternalExceptionFrame local_78;
   int local_34 [6];
-  undefined4 local_1c;
+  uint local_1c;
   uint local_18;
   uint local_14;
   AllocationRecord_0065CD10 *local_10;
@@ -36,12 +36,14 @@ undefined4 * CreatePlrDataForBO(void)
   local_10 = nullptr;
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_78.previous;
     thunk_FUN_0065d0f0((int *)&local_10);
     thunk_FUN_0067d160((int *)&local_8);
     thunk_FUN_0067d160((int *)&local_c);
+
     iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_creat.cpp",0x167,0,iVar3,"%s",
                                "CreatePlrDataForBO");
     if (iVar4 != 0) {
@@ -158,10 +160,11 @@ undefined4 * CreatePlrDataForBO(void)
   pcVar11 = pcVar10 + -1;
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   local_8 = (AllocationRecord_0067D3B0 *)
-            thunk_FUN_00683c70(local_17c,(AnonShape_00683C70_22193481 *)stack_bytes_neg_494,&local_1c,
-                               local_34,nullptr);
+            /* ST_CALLSITE[006498D9]: CALL 0x00404403; direct=00404403 thunk_FUN_00683c70; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D3B0; source view only; no Ghidra override */
+            thunk_FUN_00683c70(local_17c,(RecoveredRecordView_00683C70_9F6EAF4E *)stack_bytes_neg_494,
+                               &local_1c,local_34,nullptr);
   if (local_8 != nullptr) {
-    /* ST_CALLSITE[006498F3]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
+    /* ST_CALLSITE[006498F3]: CALL 0x00401ebf; direct=00401EBF EventDataPack; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override */
     local_10 = EventDataPack(*(AllocationRecord_0065CD10 **)&local_8->field_0x106,&local_14);
     /* ST_CALLSITE[00649908]: CALL 0x00405204; direct=00405204 PlrDataPack */
     local_c = PlrDataPack(local_8,(undefined4 *)local_10,local_14,&local_18);

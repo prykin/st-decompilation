@@ -23,7 +23,7 @@ void __thiscall st::fn_005F0D90(STContainerC *this)
     pSVar2 = &local_24;
     for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
       pSVar2->unknown_00 = 0;
-      pSVar2 = (STMessage *)&pSVar2->unknown_04;
+      pSVar2 = reinterpret_cast<STMessage *>(&pSVar2->unknown_04);
     }
     local_24.arg0.words.high = this->field_0032;
     if ((this->field_030D == '\0') || (this->field_030E == 0xff)) {
@@ -54,11 +54,10 @@ int __thiscall st::fn_005FC3E0(STContainerC *this)
 
 {
   int iVar1;
-  undefined4 local_24 [3];
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-
+  uint local_24 [3];
+  uint local_18;
+  uint local_14;
+  uint local_10;
   local_18 = 0;
   local_10 = this->field_0008;
   local_14 = 10;
@@ -82,7 +81,7 @@ bool __thiscall st::fn_005FC450(STContainerC *this,int param_1)
 {
   int iVar1;
 
-  iVar1 = st::machine_word_boundary_cast<int>(this->field_023E - param_1);
+  iVar1 = this->field_023E - param_1;
   this->field_023E = iVar1;
   if (iVar1 < 1) {
     this->field_023E = 0;
@@ -90,7 +89,92 @@ bool __thiscall st::fn_005FC450(STContainerC *this,int param_1)
   return this->field_023E == 0;
 }
 
-// 005FCD80 STContainerC::FUN_005fcd80
+// 005FCC70 STContainerC::sub_005FCC70
+#line 4 "decomp/ST.exe/functions/005FCC70/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079C714
+   Entries: 004056E6
+   Slots: 0x74
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_physical_vtable_owner_and_slot;
+   receiver_extent=864/1147; unique_owner_for_target; unique physical vtable owner and slot type
+   only the existing __thiscall receiver; explicit parameters and return are retained */
+
+void __thiscall st::fn_005FCC70(STContainerC *this,char *param_1)
+
+{
+  char cVar1;
+  uint uVar2;
+  char *pcVar4;
+  char *pcVar5;
+
+  uVar2 = 0xffffffff;
+  pcVar4 = (char *)&this->field_0x35c;
+  do {
+    pcVar5 = pcVar4;
+    if (uVar2 == 0) break;
+    uVar2 = uVar2 - 1;
+    pcVar5 = pcVar4 + 1;
+    cVar1 = *pcVar4;
+    pcVar4 = pcVar5;
+  } while (cVar1 != '\0');
+  uVar2 = ~uVar2;
+  pcVar4 = pcVar5 + -uVar2;
+  memmove(param_1, pcVar4, uVar2); /* compiler REP MOVS byte copy */
+  return;
+}
+
+// 005FCCB0 STContainerC::vfunc_70
+#line 4 "decomp/ST.exe/functions/005FCCB0/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079C714
+   Entries: 00401B5E
+   Slots: 0x70
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_physical_vtable_owner_and_slot;
+   receiver_extent=864/1147; unique_owner_for_target; unique physical vtable owner and slot type
+   only the existing __thiscall receiver; explicit parameters and return are retained */
+
+void __thiscall st::fn_005FCCB0(STContainerC *this,char *param_1)
+
+{
+  char cVar1;
+  uint uVar2;
+  char *pcVar4;
+  char *pcVar5;
+  char *pcVar4_mg1;
+  char *pcVar4_mg0;
+
+  uVar2 = 0xffffffff;
+  pcVar4_mg0 = param_1;
+  do {
+    if (uVar2 == 0) break;
+    uVar2 = uVar2 - 1;
+    cVar1 = *pcVar4_mg0;
+    pcVar4_mg0 = pcVar4_mg0 + 1;
+  } while (cVar1 != '\0');
+  if (0xe < ~uVar2 - 1) {
+    st::fn_0072E340(reinterpret_cast<char *>(&this->field_0x35c),param_1,0xe);
+    this->field_036A = 0;
+    return;
+  }
+  uVar2 = 0xffffffff;
+  do {
+    pcVar4_mg1 = param_1;
+    if (uVar2 == 0) break;
+    uVar2 = uVar2 - 1;
+    pcVar4_mg1 = param_1 + 1;
+    cVar1 = *param_1;
+    param_1 = pcVar4_mg1;
+  } while (cVar1 != '\0');
+  uVar2 = ~uVar2;
+  pcVar4 = pcVar4_mg1 + -uVar2;
+  pcVar5 = (char *)&this->field_0x35c;
+  memmove(pcVar5, pcVar4, uVar2); /* compiler REP MOVS byte copy */
+  return;
+}
+
+// 005FCD80 STContainerC::vfunc_12C
 #line 4 "decomp/ST.exe/functions/005FCD80/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079C714
@@ -106,7 +190,7 @@ dword __thiscall st::fn_005FCD80(STContainerC *this)
   return this->field_032A;
 }
 
-// 005FCDA0 STContainerC::FUN_005fcda0
+// 005FCDA0 STContainerC::vfunc_130
 #line 4 "decomp/ST.exe/functions/005FCDA0/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079C714
@@ -122,7 +206,7 @@ dword __thiscall st::fn_005FCDA0(STContainerC *this)
   return this->field_0346;
 }
 
-// 005FCE30 STContainerC::FUN_005fce30
+// 005FCE30 STContainerC::vfunc_138
 #line 4 "decomp/ST.exe/functions/005FCE30/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: D:0079C84C>00401C21 | P:0079C84C>00401C21
@@ -141,7 +225,7 @@ dword __thiscall st::fn_005FCE30(STContainerC *this)
   return this->field_034A;
 }
 
-// 005FCE50 STContainerC::FUN_005fce50
+// 005FCE50 STContainerC::vfunc_13C
 #line 4 "decomp/ST.exe/functions/005FCE50/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: D:0079C850>004020A9 | P:0079C850>004020A9
@@ -160,7 +244,30 @@ dword __thiscall st::fn_005FCE50(STContainerC *this)
   return (dword)&this->field_0x36b;
 }
 
-// 005FD360 STContainerC::FUN_005fd360
+// 005FCE70 STContainerC::vfunc_140
+#line 4 "decomp/ST.exe/functions/005FCE70/decomp.c"
+/* [STPrototypeApplier] Propagated return.
+   Evidence: 005FCE70 returns return of Library::MSVCRT::_strncpy @ 005FCE97
+
+   [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079C714
+   Entries: 00402C75
+   Slots: 0x140
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_physical_vtable_owner_and_slot;
+   receiver_extent=1135/1147; unique_owner_for_target */
+
+char * __thiscall st::fn_005FCE70(STContainerC *this,char *param_1)
+
+{
+  char *pcVar1;
+
+  pcVar1 = st::fn_0072E340(reinterpret_cast<char *>(&this->field_0x36b),param_1,0x103);
+  this->field_046E = 0;
+  return pcVar1;
+}
+
+// 005FD360 STContainerC::vfunc_128
 #line 4 "decomp/ST.exe/functions/005FD360/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
    Evidence: D:0079C83C>00404476 | P:0079C83C>00404476
@@ -178,4 +285,3 @@ dword __thiscall st::fn_005FD360(STContainerC *this)
 {
   return this->field_0358;
 }
-

@@ -84,11 +84,13 @@ STPlaySystemC::SetCtrlCmd
   g_currentExceptionFrame = &local_54;
   local_c = param_5;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   uVar6 = local_c;
   if (iVar3 == 0) {
     iVar1 = local_c + param_7;
     local_10 = iVar1;
+    /* ST_CALLSITE[0054EFA3]: CALL 0x006aac10; direct=006AAC10 Library::DKW::LIB::MemAllocClear; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
     pvVar4 = Library::DKW::LIB::MemAllocClear(iVar1 + 0x1b);
     STField<uint>(pvVar4,4) = local_8->field_00E4;
     STField<undefined1>(pvVar4,8) = param_1;
@@ -135,6 +137,7 @@ STPlaySystemC::SetCtrlCmd
     return;
   }
   g_currentExceptionFrame = local_54.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x55b,0,iVar3,"%s",
                              "STPlaySystemC::SetCtrlCmd");
   if (iVar4 != 0) {

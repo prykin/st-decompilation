@@ -68,6 +68,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
     private final Map<TargetKey, Evidence> evidence = new TreeMap<>();
     private final Map<TargetKey, Set<TargetKey>> boundaryEdges = new TreeMap<>();
     private final Set<TargetKey> localPointerOutputTargets = new TreeSet<>();
+    private final Set<TargetKey> aggregatePointerOutputTargets = new TreeSet<>();
     private final Set<TargetKey> definiteOutputReusedParameters = new TreeSet<>();
     private final Set<TargetKey> addressedStackParameters = new TreeSet<>();
     private final Map<TargetKey, Set<String>> addressedStackScalarDomains = new TreeMap<>();
@@ -102,6 +103,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
             evidence.clear();
             boundaryEdges.clear();
             localPointerOutputTargets.clear();
+            aggregatePointerOutputTargets.clear();
             definiteOutputReusedParameters.clear();
             addressedStackParameters.clear();
             addressedStackScalarDomains.clear();
@@ -137,6 +139,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 evidence.clear();
                 boundaryEdges.clear();
                 localPointerOutputTargets.clear();
+                aggregatePointerOutputTargets.clear();
                 definiteOutputReusedParameters.clear();
                 addressedStackParameters.clear();
                 addressedStackScalarDomains.clear();
@@ -803,6 +806,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
         Map<TargetKey, String> result = new TreeMap<>();
         for (Map.Entry<TargetKey, Evidence> entry : evidence.entrySet()) {
             TargetKey key = entry.getKey();
+            if (aggregatePointerOutputTargets.contains(key)) continue;
             Evidence found = entry.getValue();
             String candidate = selectedType(found);
             if (candidate.isBlank()) continue;
@@ -876,6 +880,7 @@ public class STPrototypeAnalyzer extends GhidraScript {
             }
             String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
             String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+            observeParameterMemoryGeometry(caller, operands, registers);
             if ("PUSH".equals(mnemonic)) {
                 pushes.add(sourceValue(instruction, 0, operands.length == 0 ? "" : operands[0],
                     registers, stackParameters, stackSpills, false));
@@ -972,6 +977,25 @@ public class STPrototypeAnalyzer extends GhidraScript {
         }
         addPointerAddressOutputEvidence(caller, pointerOutputs);
         return calls;
+    }
+
+    /**
+     * An offset-zero scalar store does not make an output aggregate a scalar
+     * pointer.  Record any independently observed nonzero access through the
+     * same exact parameter-derived base and veto scalar-pointee propagation for
+     * that formal.  This prevents a record header copied from an enum/scalar
+     * field from turning the complete output buffer into Enum * or short *.
+     */
+    private void observeParameterMemoryGeometry(Function function, String[] operands,
+            Map<String, Value> registers) {
+        for (String operand : operands) {
+            MemoryExpr memory = memoryExpr(operand);
+            if (memory == null || memory.displacement == 0) continue;
+            Value base = registers.get(memory.register);
+            if (base == null || base.parameterOrdinal < 0) continue;
+            aggregatePointerOutputTargets.add(new TargetKey(function.getEntryPoint(),
+                "parameter", base.parameterOrdinal));
+        }
     }
 
     private void propagateCall(Function caller, Function called, Value receiver,
@@ -1630,7 +1654,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
                 currentType, proposedType, strongTypeCount) && !typeConflict && typeChange &&
                 enoughTypeEvidence;
             boolean typeApply = (!manual || protectedOverride) && !abiMachineTarget &&
-                !typeConflict && typeChange && enoughTypeEvidence;
+                !typeConflict && typeChange && enoughTypeEvidence &&
+                !aggregatePointerOutputTargets.contains(key);
             boolean invalidThisName = "parameter".equals(key.kind) &&
                 "this".equals(currentName) && scriptOwned;
             if (invalidThisName && proposedName.isBlank())
@@ -1656,6 +1681,8 @@ public class STPrototypeAnalyzer extends GhidraScript {
             if (protectedOverride)
                 reasons.add("legacy_debug_signature_source_override");
             if (abiMachineTarget) reasons.add("machine_abi_target_preserved");
+            if (aggregatePointerOutputTargets.contains(key))
+                reasons.add("offset_zero_scalar_store_is_part_of_larger_output_aggregate");
             if (scriptOwned) reasons.add("script_target_repair");
             if (scalarRoleRepair)
                 reasons.add("post_overwrite_scalar_role_replaces_generated_pointer_view");

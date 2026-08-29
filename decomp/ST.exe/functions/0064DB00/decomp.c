@@ -28,9 +28,11 @@ AiEventClassTy::_CreateArt
   local_24 = -1;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
+
   local_EAX_38 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   if (local_EAX_38 != 0) {
     g_currentExceptionFrame = local_68.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0x117,0,local_EAX_38,
                                "%s","AiEventClassTy::_CreateArt");
     if (iVar4 != 0) {
@@ -50,6 +52,7 @@ AiEventClassTy::_CreateArt
       local_c = param_3;
       local_8 = param_4;
       local_10 = param_5;
+
       iVar3 = thunk_FUN_004961b0((short)param_3,(short)param_4,(short)param_5);
       if (iVar3 == 0) {
         local_14 = param_3 + -1;
@@ -62,6 +65,7 @@ AiEventClassTy::_CreateArt
         local_c = local_14 + 1;
         local_8 = local_18 + 1;
       }
+
       iVar5 = thunk_FUN_00675b10(local_c,local_8,(short)local_10,(short *)&local_c,(short *)&local_8
                                  ,(short *)&local_10,0xfd);
       if (iVar5 != 0) {

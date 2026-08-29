@@ -20,12 +20,12 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
   uint uVar5;
   InternalExceptionFrame local_50;
   TLOBaseTy *local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (errorCode == 0) {
@@ -36,14 +36,17 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
     case 2:
+
       uVar5 = thunk_FUN_004e2c30(local_c,*(uint *)&local_c->field_0x369);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
     case 3:
+
       uVar3 = thunk_FUN_004ea830(local_c);
       g_currentExceptionFrame = local_50.previous;
       return uVar3;
     case 4:
+
       uVar5 = thunk_FUN_004d9c20(local_c);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
@@ -58,19 +61,22 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
       g_currentExceptionFrame = local_50.previous;
       return 1;
     case 6:
-      uVar5 = thunk_FUN_004de820((AnonShape_004DE820_615D04DD *)local_c);
+
+      uVar5 = thunk_FUN_004de820((RecoveredRecordView_004DE820_F2971E79 *)local_c);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
     default:
       g_currentExceptionFrame = local_50.previous;
       return local_8;
     case 8:
+
       uVar5 = thunk_FUN_004ece40(local_c);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
     }
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bproc.cpp",0x291,0,errorCode,
                              "%s","TLOBaseTy::procResult error");
   if (iVar4 != 0) {

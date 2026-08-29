@@ -47,13 +47,13 @@ CGenerate::CteateField:
 00695B00  0F AF C8                  IMUL ECX,EAX
 00695B03  D1 E1                     SHL ECX,0x1
 00695B05  51                        PUSH ECX
-00695B06  E8 65 51 01 00            CALL 0x006aac70
+00695B06  E8 65 51 01 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 00695B0B  6A 0A                     PUSH 0xa
 00695B0D  6A 1D                     PUSH 0x1d
 00695B0F  6A 0A                     PUSH 0xa
 00695B11  6A 00                     PUSH 0x0
 00695B13  89 86 4F 58 00 00         MOV dword ptr [ESI + 0x584f],EAX
-00695B19  E8 72 87 01 00            CALL 0x006ae290
+00695B19  E8 72 87 01 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/CGenerate_field_5853DArray; source view only; no Ghidra override
 00695B1E  8B 55 B4                  MOV EDX,dword ptr [EBP + -0x4c]
 00695B21  89 86 53 58 00 00         MOV dword ptr [ESI + 0x5853],EAX
 00695B27  89 15 F8 8D 85 00         MOV dword ptr [0x00858df8],EDX

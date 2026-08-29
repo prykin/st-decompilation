@@ -20,10 +20,11 @@ void __thiscall FUN_005eeff0(void *this,int param_1)
   pVVar3 = g_visibleClass_00802A88;
   if (param_1 == 0) {
     if (STField<int>(this,0x2d6) < 0) {
+
       thunk_FUN_005ec9f0(0);
     }
     else {
-      thunk_FUN_005ef5f0((int)this);
+      thunk_FUN_005ef5f0(this);
     }
     pVVar3 = g_visibleClass_00802A88;
     if (STField<char>(this,0x2de) == '\0') {
@@ -49,9 +50,8 @@ void __thiscall FUN_005eeff0(void *this,int param_1)
            (pVVar3->field_0034 <= local_c)))))))) ||
        ((pVVar3->field_004C == nullptr ||
         (pVVar3->field_004C[local_8 + local_c * pVVar3->field_0030] != 0)))) {
-      /* ST_CALLSITE[005EF149]: CALL dword ptr [EDX + 0xd8] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(*(int *)this + 0xd8))();
+      /* ST_CALLSITE[005EF149]: CALL dword ptr [EDX + 0xd8]; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/void;pointer:/void */
+      STStructuralVirtualCall<void>(this, 0xD8);
       /* ST_CALLSITE[005EF19F]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
       STT3DSprC::sub_004AD3C0
                 ((STT3DSprC *)((int)this + 0x1d5),
@@ -92,16 +92,16 @@ joined_r0x005ef316:
           ((local_8 = g_centeredOffsets5[param_1] + local_8, local_8 < 0 ||
            (pVVar3->field_0034 <= local_8)))))) || (pVVar3->field_004C == nullptr)) ||
        (pVVar3->field_004C[local_c + local_8 * pVVar3->field_0030] != 0)) {
-      /* ST_CALLSITE[005EF308]: CALL dword ptr [EDX + 0xd8] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(*(int *)this + 0xd8))();
+      /* ST_CALLSITE[005EF308]: CALL dword ptr [EDX + 0xd8]; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/void;pointer:/void */
+      STStructuralVirtualCall<void>(this, 0xD8);
       cVar1 = STField<char>(this,0x2b9);
       goto joined_r0x005ef316;
     }
     cVar1 = STField<char>(this,0x2b9);
   }
   if (cVar1 != '\0') {
-    thunk_FUN_004ad430((STT3DSprC *)((int)this + 0x1d5));
+    /* ST_CALLSITE[005EF335]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+    STT3DSprC::sub_004AD430((STT3DSprC *)((int)this + 0x1d5));
     STField<undefined1>(this,0x2b9) = 0;
   }
   return;

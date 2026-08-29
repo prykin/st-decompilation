@@ -178,7 +178,7 @@ LAB_0041ded1:
 LAB_0041df5b:
 0041DF5B  8B 16                     MOV EDX,dword ptr [ESI]
 0041DF5D  8B CE                     MOV ECX,ESI
-0041DF5F  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+0041DF5F  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0041DF62  83 C0 C4                  ADD EAX,-0x3c
 0041DF65  83 F8 37                  CMP EAX,0x37
 0041DF68  0F 87 67 03 00 00         JA 0x0041e2d5
@@ -330,12 +330,12 @@ LAB_0041e10a:
 0041E13B  75 41                     JNZ 0x0041e17e
 0041E13D  8B 16                     MOV EDX,dword ptr [ESI]
 0041E13F  8B CE                     MOV ECX,ESI
-0041E141  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+0041E141  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0041E144  83 F8 0B                  CMP EAX,0xb
 0041E147  74 12                     JZ 0x0041e15b
 0041E149  8B 06                     MOV EAX,dword ptr [ESI]
 0041E14B  8B CE                     MOV ECX,ESI
-0041E14D  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+0041E14D  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0041E150  83 F8 23                  CMP EAX,0x23
 0041E153  74 06                     JZ 0x0041e15b
 0041E155  83 7E 20 14               CMP dword ptr [ESI + 0x20],0x14
@@ -414,7 +414,7 @@ LAB_0041e1fa:
 LAB_0041e238:
 0041E238  8B 06                     MOV EAX,dword ptr [ESI]
 0041E23A  8B CE                     MOV ECX,ESI
-0041E23C  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+0041E23C  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0041E23F  83 C0 C4                  ADD EAX,-0x3c
 0041E242  83 F8 37                  CMP EAX,0x37
 0041E245  0F 87 8A 00 00 00         JA 0x0041e2d5

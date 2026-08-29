@@ -32,6 +32,7 @@ undefined4 __thiscall TLOFakeTy::sub_004D0970(TLOFakeTy *this,int param_1,int pa
   if (this->field_0249 <= this->field_0245 + 1) {
     iVar1 = this->field_0249 + 10;
     this->field_0249 = iVar1;
+    /* ST_CALLSITE[004D099E]: CALL 0x006acf50; direct=006ACF50 Library::DKW::LIB::MemRealloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
     puVar2 = Library::DKW::LIB::MemRealloc(this->field_024D,iVar1 * 0xc);
     this->field_024D = puVar2;
   }

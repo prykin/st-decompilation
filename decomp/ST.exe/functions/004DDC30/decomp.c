@@ -18,6 +18,7 @@ undefined4 __thiscall FUN_004ddc30(void *this,int param_1,int param_2)
       iVar3 = iVar3 + 0x14;
       iVar4 = iVar4 + 1;
       if (iVar2 < 0) {
+
         thunk_FUN_004ddcc0(this);
         return 0;
       }
@@ -29,6 +30,7 @@ undefined4 __thiscall FUN_004ddc30(void *this,int param_1,int param_2)
       *piVar1 = 0;
     }
   }
+
   thunk_FUN_004ddcc0(this);
   return 0;
 }

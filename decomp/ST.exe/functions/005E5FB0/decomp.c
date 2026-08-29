@@ -16,25 +16,26 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
   int *piVar1;
   HoloTy *pHVar3;
   MTestTy *this_00;
-  DWORD DVar4;
+  int iVar4;
   int local_EAX_59;
+  RecoveredRecord_005AACB0_2533FD69 *pRVar5;
   int iVar5;
   int iVar6;
-  int iVar7;
-  int iVar8;
-  byte bVar9;
-  char cVar10;
-  uint uVar11;
+  byte bVar6;
+  char cVar7;
+  uint uVar8;
   InternalExceptionFrame local_50;
   MTestTy *local_c;
   uint local_8;
 
   local_8 = 0xffffffff;
   local_c = this;
-  DVar4 = STAppC::sub_006E51B0(this->field_0010);
-  this->field_00A1 = DVar4;
+
+  iVar4 = STAppC::sub_006E51B0(this->field_0010);
+  this->field_00A1 = iVar4;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
+
   local_EAX_59 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (local_EAX_59 == 0) {
@@ -57,6 +58,7 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
       break;
     case MESS_TRACKBARCLASSTY_0062:
       if (local_c->field_00B3 == 0) {
+
         _DAT_00811774 = STAppC::sub_006E51B0(local_c->field_0010);
         this_00->field_00B3 = CASE_1;
         if (g_holo_00811778 != nullptr) {
@@ -65,10 +67,13 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
           Library::MSVCRT::FUN_0072e2b0(g_holo_00811778);
           g_holo_00811778 = nullptr;
         }
+
         FUN_006b2330(g_ddxContext_008075A8,&local_8,0x32,0x403099,0xf9,0x123,
                      (ushort *)&g_startSystem_0081176C->field_0140);
+
         Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,local_8,0xffffffff,10,0xb4);
-        g_holo_00811778 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
+        /* ST_CALLSITE[005E6267]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/HoloTy; signature=__cdecl;pointer:/HoloTy;/uint */
+        g_holo_00811778 = Library::MSVCRT::FUN_0072e530(0x33);
         if (g_holo_00811778 == nullptr) {
           g_holo_00811778 = nullptr;
         }
@@ -89,18 +94,20 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
           g_holo_00811778->field_002B = 1;
         }
         if (g_holo_00811778 != nullptr) {
-          uVar11 = 0;
-          cVar10 = '\x01';
-          bVar9 = 0x10;
-          iVar8 = 1;
-          iVar7 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x123);
+          uVar8 = 0;
+          cVar7 = '\x01';
+          bVar6 = 0x10;
+          iVar4 = 1;
+          /* ST_CALLSITE[005E62D7]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69;pointer:/int;/undefined4;/undefined4;/undefined4;/undefined4 */
+          pRVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x123);
           /* ST_CALLSITE[005E62EC]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
-          HoloTy::Init(g_holo_00811778,CASE_4,10,0xb4,iVar7,iVar8,bVar9,cVar10,uVar11);
+          HoloTy::Init(g_holo_00811778,CASE_4,10,0xb4,pRVar5,iVar4,bVar6,cVar7,uVar8);
           pHVar3 = g_holo_00811778;
           piVar1 = &g_holo_00811778->field_0013;
           g_holo_00811778->field_0002 = 1;
           pHVar3->field_0017 = *piVar1;
           if (-1 < (int)*(uint *)&g_holo_00811778->field_0x3) {
+
             Library::DKW::DDX::FUN_006b3430
                       ((int *)g_ddxContext_008075A8,*(uint *)&g_holo_00811778->field_0x3);
           }
@@ -111,6 +118,7 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
         }
       }
       else if (local_c->field_00B3 == CASE_4) {
+
         _DAT_00811774 = STAppC::sub_006E51B0(local_c->field_0010);
         this_00->field_00B3 = CASE_5;
         if (g_holo_00811778 != nullptr) {
@@ -119,7 +127,8 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
           Library::MSVCRT::FUN_0072e2b0(g_holo_00811778);
           g_holo_00811778 = nullptr;
         }
-        g_holo_00811778 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
+        /* ST_CALLSITE[005E609E]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/HoloTy; signature=__cdecl;pointer:/HoloTy;/uint */
+        g_holo_00811778 = Library::MSVCRT::FUN_0072e530(0x33);
         if (g_holo_00811778 == nullptr) {
           g_holo_00811778 = nullptr;
         }
@@ -146,17 +155,19 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
                     ((MMMObjTy *)&g_startSystem_0081176C->field_0140,(int)g_dDXContext_0080759C,
                      nullptr,nullptr,10,0xb4,0xf9,0x123,
                      &g_startSystem_0081176C->field_0140);
-          uVar11 = 0;
-          cVar10 = '\x01';
-          bVar9 = 0x10;
-          iVar8 = 1;
-          iVar7 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x123);
+          uVar8 = 0;
+          cVar7 = '\x01';
+          bVar6 = 0x10;
+          iVar4 = 1;
+          /* ST_CALLSITE[005E615C]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69;pointer:/int;/undefined4;/undefined4;/undefined4;/undefined4 */
+          pRVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x123);
           /* ST_CALLSITE[005E6171]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
-          HoloTy::Init(g_holo_00811778,CASE_4,10,0xb4,iVar7,iVar8,bVar9,cVar10,uVar11);
+          HoloTy::Init(g_holo_00811778,CASE_4,10,0xb4,pRVar5,iVar4,bVar6,cVar7,uVar8);
           pHVar3 = g_holo_00811778;
           g_holo_00811778->field_0002 = 0;
           pHVar3->field_0017 = -1;
           if (-1 < (int)*(uint *)&g_holo_00811778->field_0x3) {
+
             Library::DKW::DDX::FUN_006b3430
                       ((int *)g_ddxContext_008075A8,*(uint *)&g_holo_00811778->field_0x3);
           }
@@ -173,10 +184,12 @@ int __thiscall MTestTy::GetMessage(MTestTy *this,STMessage *message)
       this_00->field_0091 = 0x7102;
     }
     g_currentExceptionFrame = local_50.previous;
+
     iVar5 = FUN_006e5fd0(this_00,message);
     return iVar5;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar6 = ReportDebugMessage("E:\\__titans\\Start\\test_obj.cpp",0xb5,0,local_EAX_59,
                              "%s","MTestTy::GetMessage");
   if (iVar6 != 0) {

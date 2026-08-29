@@ -1,7 +1,15 @@
 #include "../../pseudocode_runtime.h"
 
 
-uint FUN_00497030(int param_1,int param_2,int param_3,int param_4,int param_5)
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (6), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=005825C0 @ 005828FB -> read as EAX on
+   every CFG path | 00586AF0 @ 00588489 -> read as EAX on every CFG path | 00601500 @ 00601722 ->
+   read as EAX on every CFG path | 00619C70 @ 00619E2C -> read as EAX on every CFG path | 00619C70 @
+   0061A39E -> read as EAX on every CFG path | 006406D0 @ 006413FB -> read as EAX on every CFG path
+    */
+
+int FUN_00497030(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
   uint uVar1;
@@ -13,7 +21,7 @@ uint FUN_00497030(int param_1,int param_2,int param_3,int param_4,int param_5)
   uVar1 = g_array_007FB270->count;
   uVar5 = 0;
   if ((int)uVar1 < 1) {
-    return 0xffffffff;
+    return -1;
   }
   do {
     if (uVar5 < uVar1) {
@@ -35,7 +43,7 @@ uint FUN_00497030(int param_1,int param_2,int param_3,int param_4,int param_5)
     }
     uVar5 = uVar5 + 1;
     if ((int)uVar1 <= (int)uVar5) {
-      return 0xffffffff;
+      return -1;
     }
   } while( true );
 }

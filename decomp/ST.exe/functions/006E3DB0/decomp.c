@@ -1,16 +1,20 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STPrototypeApplier] Propagated return.
-   Evidence: 006E3DB0 returns return of AppClassTy::SendMessage @ 006E3DC5 */
+   Evidence: 006E3DB0 returns return of AppClassTy::SendMessage @ 006E3DC5
+   [STAbiConsistencyApplier] ecx_context_register target=function:-1: prototype=int __stdcall
+   FUN_006e3db0(AppClassTy * context, int param_2) previous_return_type=/int Evidence: incoming ECX
+   reaches only unadjusted __thiscall receivers of /AppClassTy; receiver_calls=1; exact RET purge=4
+   matches declared stack bytes=4; sites=006E3DBF -> AppClassTy::SendMessage receiver=/AppClassTy */
 
-int FUN_006e3db0(int param_1)
+int FUN_006e3db0(AppClassTy *context,RecoveredRecord_006E3DB0_0F66DDCF *param_2)
 
 {
   int iVar1;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  AppClassTy *in_ECX;
 
-  /* ST_PSEUDO[unresolved_register_input,raw_pointer_offset]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention; candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar1 = AppClassTy::SendMessage(in_ECX,*(uint *)(param_1 + 0xc),*(int *)(param_1 + 8),param_1);
+
+  iVar1 = AppClassTy::SendMessage(context,param_2->field_000C,param_2->field_0008,param_2);
   return iVar1;
 }
 

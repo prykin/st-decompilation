@@ -1,8 +1,14 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:0: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=1,
+   pointer_dereferences=4, scalar_uses=0; sites=0065E082 dereference: MOV DX,word ptr [ESI + 0x7d] |
+   0065E092 dereference: MOV AL,byte ptr [ESI + 0x24] | 0065E0A8 dereference: MOV AL,byte ptr [ESI +
+   0x81] | 0065E0B9 dereference: MOV EAX,dword ptr [ESI + 0x24] */
+
 int __fastcall
-FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param_5,char param_6,
+FUN_0065e070(void *param_1,undefined4 param_2,uint param_3,uint param_4,uint param_5,char param_6,
             byte *param_7)
 
 {
@@ -29,17 +35,16 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
   short local_8;
   short local_6;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar2 = *(undefined2 *)(param_1 + 0x7d);
+  uVar2 = STField<undefined2>(param_1,0x7d);
   memset(local_4c, 0, 0x20); /* compiler bulk-zero initialization */
   iVar9 = 0;
   local_14 = 0;
-  thunk_FUN_0044e260(STReplaceLowByte((uint32_t)(local_4c), (uint8_t)(((undefined1 *)param_1)[0x24])),
+  thunk_FUN_0044e260(g_allPlayers_007FA174,
+                     STReplaceLowByte((uint32_t)(local_4c), (uint8_t)(STField<undefined1>(param_1,0x24))),
                      STReplaceLowWord((uint32_t)(param_2), (uint16_t)(uVar2)),param_3,local_4c);
-  cVar3 = ((char *)param_1)[0x81];
+  cVar3 = STField<char>(param_1,0x81);
   if ((cVar3 < '\0') || ('\a' < cVar3)) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    cVar3 = (char)*(undefined4 *)(param_1 + 0x24);
+    cVar3 = (char)STField<undefined4>(param_1,0x24);
   }
   if ((param_6 != '\b') && ((param_6 < '\0' || (cVar3 = param_6, '\b' < param_6)))) {
     auto param_6_after_write = -1; /* compiler stack-slot lifetime split */

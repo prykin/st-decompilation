@@ -1,6 +1,7 @@
 FUN_00495950:
 00495950  6A 18                     PUSH 0x18
-00495952  E8 79 AB 21 00            CALL 0x006b04d0
+FUN_00495950::override::prt_495952_17480618:
+00495952  E8 79 AB 21 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/DumpClassC; signature=__stdcall;pointer:/DumpClassC;/uint
 00495957  85 C0                     TEST EAX,EAX
 00495959  74 0D                     JZ 0x00495968
 0049595B  8B C8                     MOV ECX,EAX

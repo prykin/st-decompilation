@@ -21,7 +21,7 @@ _AddObjGrpExch:
 00675ED6  74 6A                     JZ 0x00675f42
 00675ED8  8B 07                     MOV EAX,dword ptr [EDI]
 00675EDA  8B CF                     MOV ECX,EDI
-00675EDC  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+00675EDC  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 00675EDF  83 F8 01                  CMP EAX,0x1
 00675EE2  7C 0C                     JL 0x00675ef0
 00675EE4  83 F8 29                  CMP EAX,0x29

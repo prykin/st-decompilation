@@ -13,14 +13,16 @@ undefined4 __thiscall CGenerate::sub_006A0150(CGenerate *this)
   int *piVar2;
   int iVar3;
 
-  pbVar1 = (byte *)Library::Ourlib::MFSTMAP::mfTMapCreate
+
+  pbVar1 = STPointerBoundaryCast<byte *>(Library::Ourlib::MFSTMAP::mfTMapCreate
                              ((this->aggregate_001C).field_020C,(this->aggregate_001C).field_0210,
                               *(cMf32 **)&(this->aggregate_001C).field_0x218,
-                              *(int *)&(this->aggregate_001C).field_0x21d,0x20);
+                              *(int *)&(this->aggregate_001C).field_0x21d,0x20));
   this->field_000C = pbVar1;
   piVar2 = Library::Ourlib::MFSTMAP::FUN_006f0620((short *)pbVar1);
   this->field_0008 = piVar2;
   thunk_FUN_006a2d80(1,piVar2);
+
   iVar3 = Library::Ourlib::MFSTMAP::AuxTMapRefreshAll((short *)this->field_000C,this->field_0008);
   if (iVar3 != 0) {
     return 0;

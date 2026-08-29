@@ -257,7 +257,7 @@ LAB_0075607c:
 00756086  52                        PUSH EDX
 00756087  57                        PUSH EDI
 00756088  56                        PUSH ESI
-00756089  E8 F2 DA FF FF            CALL 0x00753b80
+00756089  E8 F2 DA FF FF            CALL 0x00753b80  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006BFE70_3123BCE8; source view only; no Ghidra override
 0075608E  8B D8                     MOV EBX,EAX
 00756090  0F BF 43 08               MOVSX EAX,word ptr [EBX + 0x8]
 00756094  50                        PUSH EAX

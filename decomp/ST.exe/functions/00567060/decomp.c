@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-uint __fastcall FUN_00567060(int param_1)
+uint __fastcall FUN_00567060(RecoveredRecord_00567060_20B54E08 *param_1)
 
 {
   byte bVar1;
@@ -19,22 +19,22 @@ uint __fastcall FUN_00567060(int param_1)
   FUN_007193f0();
   uVar3 = DAT_00807300 & 0xff;
   if (uVar3 == 2) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(int *)(param_1 + 0xf8f) != 0) {
-      bVar2 = FUN_00719650((MCIDEVICEID *)(param_1 + 0xf8f));
+    if (param_1->field_0F8F != 0) {
+      bVar2 = FUN_00719650((MCIDEVICEID *)&param_1->field_0F8F);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
       return CONCAT31(extraout_var,bVar2);
     }
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  else if (((uVar3 == 4) || (uVar3 == 8)) && (*(int *)(param_1 + 0xf8b) != 0)) {
+  else if (((uVar3 == 4) || (uVar3 == 8)) && (param_1->field_0F8B != 0)) {
     local_c = 0;
     local_8 = local_8 & 0xffffff00;
     do {
       local_54.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_54;
+
       iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
       if (iVar4 == 0) {
+
         FUN_006c1f00(local_8 & 0xff,&local_c,nullptr);
       }
       g_currentExceptionFrame = local_54.previous;

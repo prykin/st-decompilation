@@ -36,6 +36,7 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
     FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
@@ -72,7 +73,7 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
         ((param_1 != '\0' && (pSVar3->field_21E6 == '\0')))))) {
       /* ST_CALLSITE[005C4F76]: CALL 0x00403b61; direct=00403B61 ChatGlassTy::OutChGlProc */
       ChatGlassTy::OutChGlProc
-                (pCVar6,(AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,0,0,200,0x1f1,
+                (pCVar6,(RecoveredGlobalRecordView_00854EB8 *)g_dDXContext_0080759C,0,0,200,0x1f1,
                  400,0x62,(undefined4 *)(pSVar3->array_00BC[0xc].field_01DB + 0x140));
     }
     if ((pSVar3->field_21E8 == nullptr) && (param_1 == '\0')) {
@@ -100,6 +101,7 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Start\\sett_obj.cpp",0x1ee,0,errorCode,
                              "%s","SettMapTy::PaintSettMap");
   if (iVar4 != 0) {

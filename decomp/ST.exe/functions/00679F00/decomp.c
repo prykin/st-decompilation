@@ -5,7 +5,7 @@
    Evidence: 00679FE0 -> 00679F00 @ 00679FFA */
 
 int __thiscall
-FUN_00679f00(void *this,uint param_1,AnonShape_0068FD00_A5257008 *param_2,int param_3)
+FUN_00679f00(void *this,uint param_1,RecoveredRecordView_0068FD00_630BE91E *param_2,int param_3)
 
 {
   int iVar1;
@@ -29,6 +29,7 @@ FUN_00679f00(void *this,uint param_1,AnonShape_0068FD00_A5257008 *param_2,int pa
         local_EAX_70 = AiTactClassTy::GetAiMess(this_00,param_2);
         return local_EAX_70;
       }
+
       iVar2 = thunk_FUN_0068fc70(this_00,param_2,(short)param_3);
       return iVar2;
     }

@@ -161,7 +161,8 @@ LAB_005d1590:
 005D1606  6A FF                     PUSH -0x1
 005D1608  51                        PUSH ECX
 005D1609  57                        PUSH EDI
-005D160A  E8 31 EB 0D 00            CALL 0x006b0140
+SettMapMTy::GetMessage::override::prt_5d160a_b09bf718:
+005D160A  E8 31 EB 0D 00            CALL 0x006b0140  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__stdcall;pointer:/ccFntTy;/WinDef.h/UINT;/WinDef.h/HINSTANCE
 005D160F  8B 15 6C 17 81 00         MOV EDX,dword ptr [0x0081176c]
 005D1615  50                        PUSH EAX
 005D1616  8B 4A 34                  MOV ECX,dword ptr [EDX + 0x34]
@@ -3099,7 +3100,8 @@ LAB_005d38bd:
 005D38BD  8B 0D 6C 17 81 00         MOV ECX,dword ptr [0x0081176c]
 005D38C3  8B 51 34                  MOV EDX,dword ptr [ECX + 0x34]
 005D38C6  52                        PUSH EDX
-005D38C7  E8 A3 F9 E2 FF            CALL 0x0040326f
+SettMapMTy::GetMessage::override::prt_5d38c7_551b5682:
+005D38C7  E8 A3 F9 E2 FF            CALL 0x0040326f  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00540C40_D825DD02;pointer:/uint;pointer:/uint;/int
 005D38CC  83 C4 10                  ADD ESP,0x10
 005D38CF  50                        PUSH EAX
 005D38D0  A1 6C 17 81 00            MOV EAX,[0x0081176c]
@@ -3132,7 +3134,8 @@ LAB_005d38e2:
 005D391F  68 74 72 7C 00            PUSH 0x7c7274
 005D3924  57                        PUSH EDI
 005D3925  50                        PUSH EAX
-005D3926  E8 44 F9 E2 FF            CALL 0x0040326f
+SettMapMTy::GetMessage::override::prt_5d3926_551b5682:
+005D3926  E8 44 F9 E2 FF            CALL 0x0040326f  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00540C40_D825DD02;pointer:/uint;pointer:/uint;/int
 005D392B  8B 0D 6C 17 81 00         MOV ECX,dword ptr [0x0081176c]
 005D3931  83 C4 10                  ADD ESP,0x10
 005D3934  8B 49 34                  MOV ECX,dword ptr [ECX + 0x34]
@@ -3383,7 +3386,8 @@ LAB_005d3bf4:
 005D3BF4  8B 93 4F 1F 00 00         MOV EDX,dword ptr [EBX + 0x1f4f]
 LAB_005d3bfa:
 005D3BFA  52                        PUSH EDX
-005D3BFB  E8 A0 77 13 00            CALL 0x0070b3a0
+SettMapMTy::GetMessage::override::prt_5d3bfb_6dd2908b:
+005D3BFB  E8 A0 77 13 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 005D3C00  8B C8                     MOV ECX,EAX
 005D3C02  8B 45 E8                  MOV EAX,dword ptr [EBP + -0x18]
 005D3C05  51                        PUSH ECX

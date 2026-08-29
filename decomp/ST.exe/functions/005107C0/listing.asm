@@ -263,7 +263,7 @@ switchD_0051099e::caseD_c0b6:
 00510A58  6A 00                     PUSH 0x0
 00510A5A  68 E8 29 7C 00            PUSH 0x7c29e8
 LAB_00510a5f:
-00510A5F  E8 18 4D EF FF            CALL 0x0040577c
+00510A5F  E8 18 4D EF FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_005105E0_C0011880; source view only; no Ghidra override
 00510A64  83 C4 08                  ADD ESP,0x8
 00510A67  8B CE                     MOV ECX,ESI
 00510A69  50                        PUSH EAX

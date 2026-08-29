@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-int __fastcall FUN_0065e3b0(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 param_2)
+int __fastcall FUN_0065e3b0(RecoveredRecordView_0065DA10_5A1C53AF *param_1,undefined4 param_2)
 
 {
   DArrayTy *array;
@@ -14,8 +14,8 @@ int __fastcall FUN_0065e3b0(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 para
 
   uVar3 = 0;
   local_8 = 0;
-  /* ST_CALLSITE[0065E3BE]: CALL 0x004018cf; direct=004018CF AiFltClassTy::sub_0065DA10 */
-  array = (DArrayTy *)AiFltClassTy::sub_0065DA10((AiFltClassTy *)param_1,param_2);
+  /* ST_CALLSITE[0065E3BE]: CALL 0x004018cf; direct=004018CF AiFltClassTy::sub_0065DA10; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__fastcall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/AiFltClassTy;/undefined4 */
+  array = AiFltClassTy::sub_0065DA10((AiFltClassTy *)param_1,param_2);
   if (array != nullptr) {
     if (0 < (int)array->count) {
       bVar4 = array->count != 0;

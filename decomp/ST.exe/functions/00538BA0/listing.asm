@@ -71,7 +71,8 @@ LAB_00538c11:
 00538C4F  51                        PUSH ECX
 00538C50  8B 0D 90 67 80 00         MOV ECX,dword ptr [0x00806790]
 00538C56  57                        PUSH EDI
-00538C57  E8 84 90 1B 00            CALL 0x006f1ce0
+PanelTy::PaintTxtBut::override::prt_538c57_6752cf82:
+00538C57  E8 84 90 1B 00            CALL 0x006f1ce0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int
 00538C5C  8B 75 F0                  MOV ESI,dword ptr [EBP + -0x10]
 00538C5F  8B 5D F4                  MOV EBX,dword ptr [EBP + -0xc]
 00538C62  50                        PUSH EAX
@@ -112,7 +113,7 @@ LAB_00538c11:
 00538CBA  6A FE                     PUSH -0x2
 00538CBC  52                        PUSH EDX
 00538CBD  50                        PUSH EAX
-00538CBE  E8 7D 74 17 00            CALL 0x006b0140
+00538CBE  E8 7D 74 17 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 00538CC3  50                        PUSH EAX
 00538CC4  8B CF                     MOV ECX,EDI
 00538CC6  E8 F5 8C 1D 00            CALL 0x007119c0

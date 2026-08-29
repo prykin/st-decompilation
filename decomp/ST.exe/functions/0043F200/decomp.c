@@ -9,7 +9,7 @@ uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,by
 
 {
   byte bVar1;
-  int *piVar2;
+  STGameObjC *pSVar2;
   int iVar4;
   byte *pbVar5;
   int iVar7;
@@ -19,17 +19,19 @@ uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,by
   bool bVar10;
   InternalExceptionFrame local_64;
   byte local_20 [16];
-  int local_10;
+  DArrayOf_STGameObjCPtr *local_10;
   DArrayTy *local_c;
-  int local_8;
+  dword local_8;
 
   local_10 = g_packedRecords_A62x8[param_1].field3_0x9;
-  local_8 = STField<int>(local_10,0xC);
+  local_8 = local_10->count;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_64.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2075,0,iVar4,"%s"
                                ,"STAllPlayersC::GetTOBJList");
     if (iVar6 != 0) {
@@ -40,13 +42,12 @@ uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,by
   }
   local_c = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
   iVar4 = 0;
-  if (0 < local_8) {
+  if (0 < (int)local_8) {
     do {
-      piVar2 = *(int **)(STField<int>(local_10,0x1C) + iVar4 * 4);
-      if (piVar2 != nullptr) {
+      pSVar2 = local_10->data[iVar4];
+      if (pSVar2 != nullptr) {
         /* ST_CALLSITE[0043F280]: CALL dword ptr [EDX + 0x74] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(*piVar2 + 0x74))(local_20);
+        (*pSVar2->vtable->vfunc_74)((short)local_20);
         pbVar9 = local_20;
         pbVar5 = param_2;
         do {
@@ -67,11 +68,12 @@ LAB_0043f2ad:
         iVar7 = 0;
 LAB_0043f2b2:
         if (iVar7 == 0) {
-          Library::DKW::TBL::DArrayAppend(local_c,(void *)((int)piVar2 + 0x32));
+
+          Library::DKW::TBL::DArrayAppend(local_c,&pSVar2->field_0032);
         }
       }
       iVar4 = iVar4 + 1;
-    } while (iVar4 < local_8);
+    } while (iVar4 < (int)local_8);
   }
   g_currentExceptionFrame = local_64.previous;
   return &local_c->flags;

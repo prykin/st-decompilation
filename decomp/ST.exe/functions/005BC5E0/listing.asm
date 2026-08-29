@@ -462,7 +462,8 @@ LAB_005bcc08:
 005BCC25  68 97 01 00 00            PUSH 0x197
 005BCC2A  6A 79                     PUSH 0x79
 005BCC2C  51                        PUSH ECX
-005BCC2D  E8 BE 2D 10 00            CALL 0x006bf9f0
+PrividerTy::GetMessage::override::prt_5bcc2d_84f22ef4:
+005BCC2D  E8 BE 2D 10 00            CALL 0x006bf9f0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69;pointer:/int;/undefined4;/undefined4;/undefined4;/undefined4
 005BCC32  8B 8E 9A 1C 00 00         MOV ECX,dword ptr [ESI + 0x1c9a]
 005BCC38  50                        PUSH EAX
 005BCC39  68 97 01 00 00            PUSH 0x197

@@ -1,4 +1,4 @@
-FUN_004a9b60:
+OpticClassC::sub_004A9B60:
 004A9B60  55                        PUSH EBP
 004A9B61  8B EC                     MOV EBP,ESP
 004A9B63  83 EC 08                  SUB ESP,0x8

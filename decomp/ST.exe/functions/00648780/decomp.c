@@ -20,14 +20,15 @@ undefined4 * __cdecl LoadBossEdit(int param_1,char *param_2)
   local_8 = nullptr;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
+
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (errorCode == 0) {
     if ((param_1 == 0) || (param_2 == nullptr)) {
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_boss_d.cpp",0x7f);
     }
-    local_8 = (AllocationRecord_00648530 *)
-              Library::Ourlib::MFAOBJ::mfAObjLoad((cMf32 *)param_1,param_2,1,0);
+    /* ST_CALLSITE[006487E3]: CALL 0x006f2d90; direct=006F2D90 Library::Ourlib::MFAOBJ::mfAObjLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_00648530; signature=__cdecl;pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_00648530;pointer:/cMf32;pointer:/char;/byte;/int */
+    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad((cMf32 *)param_1,param_2,1,0);
     if (local_8 != nullptr) {
       local_c = thunk_FUN_00648530(local_8);
       thunk_FUN_006484f0((int *)&local_8);
@@ -36,6 +37,7 @@ undefined4 * __cdecl LoadBossEdit(int param_1,char *param_2)
     return (undefined4 *)local_c;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar2 = ReportDebugMessage("E:\\__titans\\ai\\ai_boss_d.cpp",0x86,0,errorCode,"%s",
                              "LoadBossEdit");
   if (iVar2 != 0) {

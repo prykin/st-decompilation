@@ -153,7 +153,7 @@ switchD_005d4f58::caseD_4:
 005D503A  8D 47 1D                  LEA EAX,[EDI + 0x1d]
 005D503D  50                        PUSH EAX
 005D503E  8B 11                     MOV EDX,dword ptr [ECX]
-005D5040  FF 52 18                  CALL dword ptr [EDX + 0x18]
+005D5040  FF 52 18                  CALL dword ptr [EDX + 0x18]  ; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 005D5043  8B 45 F4                  MOV EAX,dword ptr [EBP + -0xc]
 LAB_005d5046:
 005D5046  43                        INC EBX

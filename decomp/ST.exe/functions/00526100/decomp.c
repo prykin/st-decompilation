@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-char * __cdecl FUN_00526100(undefined1 *param_1,int param_2)
+char * __cdecl FUN_00526100(RecoveredRecord_00526100_020D84E3 *param_1,int param_2)
 
 {
   char cVar1;
@@ -14,12 +14,12 @@ char * __cdecl FUN_00526100(undefined1 *param_1,int param_2)
   if (param_2 != 0) {
     return "TV_SWITCH";
   }
-  switch(*param_1) {
+  switch(*(undefined1 *)param_1) {
   case 1:
   case 3:
   case 4:
-    if (param_1[1] != '\0') {
-      switch(*(undefined4 *)(param_1 + 3)) {
+    if (param_1->field_0x1 != '\0') {
+      switch(param_1->field_0003) {
       case 1:
         return "TV_SENTINEL";
       case 2:
@@ -99,73 +99,73 @@ char * __cdecl FUN_00526100(undefined1 *param_1,int param_2)
       case 0x26:
         return "TV_FLAGWS";
       case 0x32:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSDOCKYARD";
         }
         return "TV_BODOCKYARD";
       case 0x33:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSRDOCK";
         }
         return "TV_BORDOCK";
       case 0x34:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSMFACTORY";
         }
         return "TV_BOMFACTORY";
       case 0x35:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSREASLAB";
         }
         return "TV_BOREASLAB";
       case 0x36:
-        if (param_1[2] == '\x01') {
+        if (param_1->field_0x2 == '\x01') {
           return "TV_SWIM1";
         }
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSSONAR";
         }
         return "TV_BOSONAR";
       case 0x37:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSTELEPORT";
         }
         return "TV_BOTELEPORT";
       case 0x39:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSCMINE";
         }
         return "TV_BOCMINE";
       case 0x3a:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSGOLDPLANT";
         }
         return "TV_BOGOLDPLANT";
       case 0x3b:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSDEPOT";
         }
         return "TV_BODEPOT";
       case 0x3c:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSINFOCENTER";
         }
         return "TV_BOINFOCENTER";
       case 0x3d:
-        if (param_1[2] == '\x01') {
+        if (param_1->field_0x2 == '\x01') {
           return "TV_SWIM1";
         }
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSDISPERSER";
         }
         return "TV_BODISPERSER";
       case 0x3e:
-        if (param_1[2] == '\x01') {
+        if (param_1->field_0x2 == '\x01') {
           return "TV_SWIM1";
         }
         return "TV_HFCANNON";
       case 0x3f:
-        if (param_1[2] == '\x01') {
+        if (param_1->field_0x2 == '\x01') {
           return "TV_SWIM1";
         }
         return "TV_STOLP";
@@ -182,12 +182,12 @@ char * __cdecl FUN_00526100(undefined1 *param_1,int param_2)
       case 0x45:
         return "TV_TLS";
       case 0x46:
-        if (param_1[2] == '\x01') {
+        if (param_1->field_0x2 == '\x01') {
           return "TV_SWIM2";
         }
         return "TV_LLASER";
       case 0x47:
-        if (param_1[2] == '\x01') {
+        if (param_1->field_0x2 == '\x01') {
           return "TV_SWIM1";
         }
         return "TV_CSCANNON";
@@ -196,12 +196,12 @@ char * __cdecl FUN_00526100(undefined1 *param_1,int param_2)
       case 0x49:
         return "TV_CCENTERBO";
       case 0x4a:
-        if (param_1[2] == '\x01') {
+        if (param_1->field_0x2 == '\x01') {
           return "TV_SWIM1";
         }
         return "TV_HLASER";
       case 0x4b:
-        if (param_1[2] == '\x01') {
+        if (param_1->field_0x2 == '\x01') {
           return "TV_SWIM1";
         }
         return "TV_ELP";
@@ -212,23 +212,23 @@ char * __cdecl FUN_00526100(undefined1 *param_1,int param_2)
       case 0x4e:
         return "TV_LBL";
       case 0x4f:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSMMINE";
         }
       case 0x38:
         return "TV_BOMMINE";
       case 0x50:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSAIRPLANT";
         }
         return "TV_BOAIRPLANT";
       case 0x51:
-        if (param_1[2] == '\x01') {
+        if (param_1->field_0x2 == '\x01') {
           return "TV_SWIM1";
         }
         return "TV_PLASMACANN";
       case 0x52:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSRCTELEPORT";
         }
         return "TV_BORCTELEPORT";
@@ -314,15 +314,15 @@ char * __cdecl FUN_00526100(undefined1 *param_1,int param_2)
       case 0xe0:
         return "TV_TERMOSRC";
       case 0xfd:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_ARTEFACTWS";
         }
-        if (param_1[7] != '\x02') {
+        if (((char *)param_1)[1] != '\x02') {
           return "TV_ARTEFACTSI";
         }
         return "TV_ARTEFACTBO";
       case 0xfe:
-        cVar1 = param_1[7];
+        cVar1 = ((char *)param_1)[1];
         if (cVar1 == '\x01') {
           return "TV_CONTAINER1";
         }
@@ -336,8 +336,8 @@ char * __cdecl FUN_00526100(undefined1 *param_1,int param_2)
     }
     break;
   case 2:
-    if (param_1[1] != '\0') {
-      cVar1 = param_1[7];
+    if (param_1->field_0x1 != '\0') {
+      cVar1 = ((char *)param_1)[1];
       if (cVar1 == '\x01') {
         return "TV_GROUPWS";
       }

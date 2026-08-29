@@ -64,7 +64,8 @@ void st::fn_005335E0(void)
       pcVar9 = (char *)((int)puVar2 + 0xd);
       memmove(pcVar9, pcVar7, uVar4); /* compiler REP MOVS byte copy */
       uVar5 = 0;
-      st::fn_00403C33((undefined4 *)0x32,local_c,1,local_10);
+      /* ST_CALLSITE[005336A4]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+      st::fn_00403C33(g_playSystem_00802A38,(undefined4 *)0x32,local_c,1,local_10);
       st::fn_006AB060(&local_c);
     }
   }
@@ -136,7 +137,7 @@ void st::fn_005335E0(void)
     uVar5 = 0;
     st::fn_006B8280(&CHAR_00h_0080f022,&CHAR_00h_0080f022);
     uVar4 = 0xffffffff;
-    pcVar7 = st::pointer_boundary_cast<char *>(PTR_DAT_0079ad00);
+    pcVar7 = reinterpret_cast<char *>(PTR_DAT_0079ad00);
     do {
       pcVar9 = pcVar7;
       if (uVar4 == 0) break;
@@ -188,9 +189,8 @@ void st::fn_005335E0(void)
   }
   local_8[10] = 0xc001;
   local_8[0xd] = 0;
-  /* ST_CALLSITE[005336CB]: CALL dword ptr [EAX] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)*local_8)(local_8 + 6);
+  /* ST_CALLSITE[005336CB]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
+  STStructuralVirtualCall<undefined4>(local_8, 0x0, local_8 + 6);
   g_currentExceptionFrame = local_54.previous;
   return;
 }
@@ -207,14 +207,15 @@ void __fastcall st::fn_00533B80(RecoveredRecord_STPlaySystemC_00533B80 *param_1)
   int iVar3;
   int iVar4;
   int iVar5;
-  undefined4 local_24 [4];
-  undefined4 local_14;
-
+  uint local_24 [4];
+  uint local_14;
   if ((DAT_008067a0 != '\0') && (param_1->field_0172 != 2)) {
     if ((param_1->field_01A4 == '\x05') && (param_1->field_01AB == '\x04')) {
+
       st::fn_006B55F0
                 ((RecoveredSourceFamily_dibcopy *)param_1->field_0068,0,0x1d,0x13,
-                 param_1->field_0184,0,0x1d,0x13,0xee,0x6a);
+                 reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(param_1->field_0184),0,0x1d,0x13,0xee,0x6a);
+
       st::fn_00710A90(param_1->field_0180,param_1->field_0068,0,0x1d,0x13,0xee,0x6a);
       if (DAT_008067a0 == '\0') {
         resourceId = 0x3e84;
@@ -234,10 +235,13 @@ void __fastcall st::fn_00533B80(RecoveredRecord_STPlaySystemC_00533B80 *param_1)
       iVar4 = -1;
       iVar3 = -1;
       iVar2 = -2;
+      /* ST_CALLSITE[00533C5C]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
       resourceString = st::fn_006B0140(resourceId,g_hINSTANCE_00807618);
+
       st::fn_00711B70(param_1->field_0180,resourceString,iVar2,iVar3,uVar1,iVar4,iVar5);
+
       st::fn_006B3640
-                ((int *)g_ddxContext_008075A8,param_1->field_0060,0xffffffff,param_1->field_003C,
+                (reinterpret_cast<int *>(g_ddxContext_008075A8),param_1->field_0060,0xffffffff,param_1->field_003C,
                  param_1->field_0044);
       return;
     }
@@ -265,8 +269,10 @@ PausePanelTy * __cdecl st::fn_005391E0(void)
 {
   PausePanelTy *this;
 
-  this = (PausePanelTy *)st::fn_006B04D0(0x188);
+
+  this = STPointerBoundaryCast<PausePanelTy *>(st::fn_006B04D0(0x188));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
     this->field_005C = 0;
     this->field_003C = 0;
@@ -301,8 +307,10 @@ PlayPanelTy * __cdecl st::fn_00539AA0(void)
 {
   PlayPanelTy *this;
 
-  this = (PlayPanelTy *)st::fn_006B04D0(0x1e1);
+
+  this = STPointerBoundaryCast<PlayPanelTy *>(st::fn_006B04D0(0x1e1));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
     this->field_005C = 0;
     this->field_0044 = 0;
@@ -345,8 +353,9 @@ ResearchPanelTy * __cdecl st::fn_0053BFF0(void)
 {
   ResearchPanelTy *this;
   uint *puVar2;
-  this = (ResearchPanelTy *)st::fn_006B04D0(0x286);
+  this = STPointerBoundaryCast<ResearchPanelTy *>(st::fn_006B04D0(0x286));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;
@@ -365,9 +374,9 @@ ResearchPanelTy * __cdecl st::fn_0053BFF0(void)
     this->field_01A9 = 0;
     this->field_01AD = 0;
     this->field_01B1 = 0;
-    puVar2 = (undefined4 *)&this->field_01B5;
+    puVar2 = reinterpret_cast<uint *>(&this->field_01B5);
     memset(puVar2, 0, 0xc3); /* compiler bulk-zero initialization */
-    puVar2 = (undefined4 *)((byte *)puVar2 + 0xc0);
+    puVar2 = reinterpret_cast<uint *>(((byte *)puVar2 + 0xc0));
     this->field_0199 = 0;
     this->field_0279 = 1;
     this->field_0278 = 0;
@@ -400,8 +409,10 @@ SAMPanelTy * __cdecl st::fn_0053CE10(void)
 {
   SAMPanelTy *this;
 
-  this = (SAMPanelTy *)st::fn_006B04D0(0x1d1);
+
+  this = STPointerBoundaryCast<SAMPanelTy *>(st::fn_006B04D0(0x1d1));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;
@@ -441,7 +452,7 @@ void __thiscall st::fn_0053F510(void *this,uint param_1,uint param_2)
     STField<undefined4>(this,0x199) = 0;
   }
   if (param_1 - 5 < STField<uint>(this,0x199)) {
-    STField<uint>(this,0x199) = ~-(uint)(param_1 < 5) & param_1 - 5;
+    STField<uint>(this,0x199) = ~-st::storage_bit_cast<uint>(static_cast<uint32_t>(param_1 < 5)) & param_1 - 5;
   }
   if (param_1 < 5) {
     STField<undefined4>(this,0x2c) = 0;
@@ -467,4 +478,3 @@ void __thiscall st::fn_0053F510(void *this,uint param_1,uint param_2)
   st::fn_006E6080(this,2,STField<undefined4>(this,0x19d),(undefined4 *)((int)this + 0x18));
   return;
 }
-

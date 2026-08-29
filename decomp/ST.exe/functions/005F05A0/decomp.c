@@ -18,7 +18,7 @@ void __thiscall FUN_005f05a0(void *this,ushort param_1,word param_2)
       pSVar2->unknown_00 = 0;
       pSVar2 = (STMessage *)&pSVar2->unknown_04;
     }
-    /* ST_CALLSITE[005F05C2]: CALL dword ptr [EAX + 0x144] */
+    /* ST_CALLSITE[005F05C2]: CALL dword ptr [EAX + 0x144]; [STIndirectCallsiteApplier] exact slot 0x144; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     local_24.arg0.words.high = (**(code **)(*(int *)this + 0x144))();
     local_24.arg1.words.low = param_1;

@@ -33,10 +33,12 @@ STAllPlayersC::CalibrateTmp
   local_c = nullptr;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_5c.previous;
     if (iVar2 != -0x5001fff7) {
+
       iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3095,0,iVar2,
                                  "%s","STAllPlayersC::CalibrateTmp");
       if (iVar4 != 0) {
@@ -58,6 +60,7 @@ STAllPlayersC::CalibrateTmp
     local_18 = *(DArrayTy **)(param_3 * 0x10 + STRecordByteAddress(g_packedRecords_A62x8, param_1, 0x1BD));
   }
   else {
+
     iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3079,0,0,"%s",
                                "STAllPlayersC::CalibrateTmp invalid panel number");
     if (iVar2 != 0) {
@@ -90,22 +93,29 @@ STAllPlayersC::CalibrateTmp
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x3080);
   }
+
   Library::DKW::TBL::FUN_006afe40((int *)&local_10,&local_18->flags);
+
   Library::DKW::TBL::FUN_006afe40((int *)&local_c,param_4);
   index_00 = 0;
   if (0 < (int)dVar5) {
     do {
+
       DArrayGetElement(local_10,index_00,&local_8);
       if ((local_8 != -1) && (index = 0, 0 < (int)local_14)) {
         do {
+
           DArrayGetElement(local_c,index,&local_6);
           if (local_8 == local_6) {
             if (param_6 != nullptr) {
+
               Library::DKW::TBL::DArrayAppend((DArrayTy *)*param_6,&local_6);
             }
+
             DArrayRemoveAt(local_10,index_00);
             dVar5 = dVar5 - 1;
             index_00 = index_00 - 1;
+
             DArrayRemoveAt(local_c,index);
             local_14 = local_14 - 1;
             index = index - 1;
@@ -117,9 +127,11 @@ STAllPlayersC::CalibrateTmp
     } while ((int)index_00 < (int)dVar5);
   }
   if (param_5 != nullptr) {
+
     Library::DKW::TBL::FUN_006afe40(param_5,&local_10->flags);
   }
   if (param_7 != nullptr) {
+
     Library::DKW::TBL::FUN_006afe40(param_7,&local_c->flags);
   }
   DArrayDestroy(local_10);

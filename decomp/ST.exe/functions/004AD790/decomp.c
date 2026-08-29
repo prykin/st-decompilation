@@ -20,11 +20,11 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
   int iVar10;
   char *pcVar11;
   char *pcVar12;
-  AnonShape_004AD790_77673787 *pAVar13;
+  RecoveredRecordView_004AD790_D4DB5A31 *pRVar13;
   InternalExceptionFrame local_60;
   char *local_1c;
   STT3DSprC *local_18;
-  AnonShape_004AD790_77673787 *local_14;
+  RecoveredRecordView_004AD790_D4DB5A31 *local_14;
   int local_10;
   char *local_c;
   int local_8;
@@ -32,10 +32,12 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   local_18 = this;
+
   local_EAX_35 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   this_00 = local_18;
   if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_60.previous;
+
     iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0x3da,0,local_EAX_35,
                                "%s","STT3DSprC::SaveSpr");
     if (iVar3 == 0) {
@@ -70,16 +72,17 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
       local_c = (char *)((int)local_c + 0x24);
     } while (iVar10 < this_00->field_0014);
   }
+
   local_14 = Library::DKW::LIB::MemAlloc(*param_1);
   uVar9 = *param_1;
-  pAVar13 = local_14;
+  pRVar13 = local_14;
   for (uVar7 = uVar9 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *(undefined4 *)pAVar13 = 0;
-    pAVar13 = (AnonShape_004AD790_77673787 *)&pAVar13->field_0x4;
+    *(undefined4 *)pRVar13 = 0;
+    pRVar13 = (RecoveredRecordView_004AD790_D4DB5A31 *)&pRVar13->field_0x4;
   }
   for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-    *(undefined1 *)pAVar13 = 0;
-    pAVar13 = (AnonShape_004AD790_77673787 *)&pAVar13->field_0x1;
+    *(undefined1 *)pRVar13 = 0;
+    pRVar13 = (RecoveredRecordView_004AD790_D4DB5A31 *)&pRVar13->field_0x1;
   }
   pcVar11 = &local_14[1].field_0x4;
   *(undefined4 *)local_14 = this_00->field_0004;

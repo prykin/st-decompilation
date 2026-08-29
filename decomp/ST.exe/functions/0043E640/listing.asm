@@ -31,7 +31,7 @@ LAB_0043e677:
 0043E68B  75 62                     JNZ 0x0043e6ef
 0043E68D  8B 16                     MOV EDX,dword ptr [ESI]
 0043E68F  8B CE                     MOV ECX,ESI
-0043E691  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+0043E691  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0043E697  85 C0                     TEST EAX,EAX
 0043E699  74 54                     JZ 0x0043e6ef
 0043E69B  8B 4D 10                  MOV ECX,dword ptr [EBP + 0x10]

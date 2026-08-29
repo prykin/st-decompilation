@@ -32,17 +32,17 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this)
   SettMapTy *this_00;
   bool bVar14;
   InternalExceptionFrame local_b8;
-  undefined1 local_74;
-  undefined1 local_73;
+  byte local_74;
+  byte local_73;
   byte local_72;
   byte bStack_71;
   undefined1 uStack_70;
   undefined1 uStack_6f;
-  undefined4 local_6e;
+  uint local_6e;
   char local_6a [64];
   byte local_2a;
-  undefined4 local_29;
-  undefined1 local_25;
+  uint local_29;
+  byte local_25;
   uint *local_24;
   uint local_20;
   uint local_1c;
@@ -56,10 +56,12 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this)
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
   local_8 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
   this_00 = (SettMapTy *)local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_b8.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\Start\\settsobj.cpp",0x86,0,iVar4,"%s",
                                "SettMapSTy::PrepPlList");
     if (iVar5 == 0) {
@@ -203,6 +205,7 @@ LAB_005d5350:
       local_18 = *(uint *)(pbVar11 + 0xb);
       local_29 = 0;
       local_25 = 1;
+
       Library::DKW::TBL::DArrayAppend(local_8->field_1F84,&local_74);
       this_00 = (SettMapTy *)local_8;
     }
@@ -259,7 +262,7 @@ code_r0x005d540b:
 LAB_005d5426:
   /* ST_CALLSITE[005D5428]: CALL 0x00402a9a; direct=00402A9A SettMapTy::PaintSC */
   SettMapTy::PaintSC(this_00);
-  /* ST_CALLSITE[005D5431]: CALL dword ptr [EDX + 0x20] */
+  /* ST_CALLSITE[005D5431]: CALL dword ptr [EDX + 0x20]; [STIndirectCallsiteApplier] exact slot 0x20; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/SettMapTy */
   this_00->vfunc_20();
   g_currentExceptionFrame = local_b8.previous;
   return;

@@ -13,7 +13,8 @@ TLOFakeTy * __cdecl CreateTLOFake(void)
 {
   TLOFakeTy *pTVar1;
 
-  pTVar1 = (TLOFakeTy *)FUN_006b04d0(0x251);
+  /* ST_CALLSITE[004D0ED5]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/TLOFakeTy; signature=__stdcall;pointer:/TLOFakeTy;/uint */
+  pTVar1 = FUN_006b04d0(0x251);
   if (pTVar1 != nullptr) {
     pTVar1 = TLOFakeTy::TLOFakeTy(pTVar1);
     return pTVar1;

@@ -4,7 +4,7 @@
 /* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
    Evidence: exact anonymous structure fingerprint shared across functions */
 
-uint FUN_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int param_3)
+uint FUN_00755830(RecoveredRecordView_00753C80_637B4E8C *param_1,uint *param_2,int param_3)
 
 {
   byte *puVar1;
@@ -25,10 +25,12 @@ uint FUN_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int param_3
     puVar8 = (byte *)&param_1->field_000C[1].field_0xa;
     puVar10 = (byte *)&param_1->field_000C[1].field_0x12;
     memmove(puVar10, puVar8, 0x38); /* compiler REP MOVS byte copy */
+
     uVar3 = FUN_00753b40(param_1);
     if ((int)uVar3 < 0) {
       return uVar3;
     }
+
     uVar4 = Library::DKW::FMM::FUN_006d4c50
                       ((AnonNested_00757670_0008_104EC36D *)param_1->field_0008,uVar3,
                        (int)((AnonNested_00757670_0008_104EC36D *)param_1->field_0008)->field_0016);
@@ -69,7 +71,8 @@ uint FUN_00755830(AnonShape_00753C80_4C8E695D *param_1,uint *param_2,int param_3
     }
   }
   else {
-    FUN_007574c0(param_1,param_1->field_0008->field_0034 + param_1->field_0010,param_2,
+    FUN_007574c0(param_1,(RecoveredRecord_007574C0_96B4D703 *)
+                         (param_1->field_0008->field_0034 + param_1->field_0010),param_2,
                  *(int *)(&param_1->field_000C[1].field_0xe + param_3 * 8));
     uVar4 = 0;
   }

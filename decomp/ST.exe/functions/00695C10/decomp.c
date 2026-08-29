@@ -15,14 +15,13 @@ CGenerate::sub_00695C10
           undefined4 param_5)
 
 {
-  CGenerate_field_5853DArray *pCVar1;
-  uint uVar2;
+  DArrayTy *pCVar1;
+  uint uVar1;
   uint local_24;
-  undefined1 local_20;
-  undefined4 local_1f;
-  undefined4 local_1b;
-  undefined4 local_17;
-
+  byte local_20;
+  uint local_1f;
+  uint local_1b;
+  uint local_17;
   memset(&local_24, 0, 0x1d); /* compiler bulk-zero initialization */
   local_1f = param_2;
   local_24 = param_1;
@@ -33,13 +32,14 @@ CGenerate::sub_00695C10
   local_1b = param_4;
   local_17 = param_5;
   if (this->field_5853 == nullptr) {
-    pCVar1 = (CGenerate_field_5853DArray *)
-             Library::DKW::TBL::DArrayCreate(nullptr,10,0x1d,10);
-    this->field_5853 = pCVar1;
+    /* ST_CALLSITE[00695C61]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/CGenerate_field_5853DArray; source view only; no Ghidra override */
+    pCVar1 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x1d,10);
+    this->field_5853 = (CGenerate_field_5853DArray *)pCVar1;
   }
   if (this->field_5853 != nullptr) {
-    uVar2 = Library::DKW::TBL::DArrayAppend((DArrayTy *)this->field_5853,&local_24);
-    return uVar2;
+
+    uVar1 = Library::DKW::TBL::DArrayAppend((DArrayTy *)this->field_5853,&local_24);
+    return uVar1;
   }
   return 0xffffffff;
 }

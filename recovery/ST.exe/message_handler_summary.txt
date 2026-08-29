@@ -1,7 +1,7 @@
 program=ST.exe
-final_handlers=106
+final_handlers=111
 automatic=0
-already_typed=106
+already_typed=111
 provenance_tag_repairs=0
 conflicts_or_manual=0
 shared_zero_stubs=1

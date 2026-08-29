@@ -343,7 +343,7 @@ LAB_00443212:
 00443222  85 C9                     TEST ECX,ECX
 00443224  0F 84 CD 03 00 00         JZ 0x004435f7
 0044322A  8B 11                     MOV EDX,dword ptr [ECX]
-0044322C  FF 52 0C                  CALL dword ptr [EDX + 0xc]
+0044322C  FF 52 0C                  CALL dword ptr [EDX + 0xc]  ; [STIndirectCallsiteApplier] exact slot 0xC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0044322F  83 F8 08                  CMP EAX,0x8
 00443232  0F 85 BF 03 00 00         JNZ 0x004435f7
 00443238  8B 4D E8                  MOV ECX,dword ptr [EBP + -0x18]
@@ -1151,7 +1151,8 @@ LAB_00443a6b:
 00443A8A  6A 01                     PUSH 0x1
 00443A8C  50                        PUSH EAX
 00443A8D  52                        PUSH EDX
-00443A8E  E8 27 EE FB FF            CALL 0x004028ba
+STAllPlayersC::_AssignMDPairs::override::prt_443a8e_81281cbb:
+00443A8E  E8 27 EE FB FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STFishC; signature=__thiscall;pointer:/STFishC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 00443A93  8D 4D EE                  LEA ECX,[EBP + -0x12]
 00443A96  8D 55 F0                  LEA EDX,[EBP + -0x10]
 00443A99  51                        PUSH ECX

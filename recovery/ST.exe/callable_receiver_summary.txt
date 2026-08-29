@@ -1,13 +1,13 @@
 program=ST.exe
 audited_call_sites=3763
-exact_parameter_receiver_sites=215
-candidate_groups=92
+exact_parameter_receiver_sites=177
+candidate_groups=71
 auto_apply_groups=1
 auto_apply_sites=41
 auto_apply_slots=1
 origin_conflicts=2723
 abi_conflicts=1
-insufficient_extent=14
+insufficient_extent=8
 protected_targets=0
 reused_parameter_storage=5
 unresolved_incoming_arguments=3

@@ -706,7 +706,8 @@ LAB_005e1ae8:
 005E1AF4  51                        PUSH ECX
 005E1AF5  6A 01                     PUSH 0x1
 005E1AF7  68 64 DA 7C 00            PUSH 0x7cda64
-005E1AFC  E8 FF 10 11 00            CALL 0x006f2c00
+MTaskTy::PlayScript::override::prt_5e1afc_c67451d8:
+005E1AFC  E8 FF 10 11 00            CALL 0x006f2c00  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;pointer:/char;/int;/undefined4
 005E1B01  8B 15 80 67 80 00         MOV EDX,dword ptr [0x00806780]
 005E1B07  83 C4 0C                  ADD ESP,0xc
 005E1B0A  50                        PUSH EAX
@@ -788,7 +789,8 @@ LAB_005e1bdb:
 005E1BE4  51                        PUSH ECX
 005E1BE5  6A 00                     PUSH 0x0
 005E1BE7  52                        PUSH EDX
-005E1BE8  E8 B8 26 E2 FF            CALL 0x004042a5
+MTaskTy::PlayScript::override::prt_5e1be8_cdce5103:
+005E1BE8  E8 B8 26 E2 FF            CALL 0x004042a5  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/int;pointer:/undefined;/WinDef.h/BYTE
 005E1BED  89 83 89 00 00 00         MOV dword ptr [EBX + 0x89],EAX
 005E1BF3  C7 40 58 01 00 00 00      MOV dword ptr [EAX + 0x58],0x1
 005E1BFA  C7 40 5C 00 00 00 00      MOV dword ptr [EAX + 0x5c],0x0
@@ -805,7 +807,8 @@ LAB_005e1c17:
 005E1C1F  50                        PUSH EAX
 005E1C20  6A 00                     PUSH 0x0
 005E1C22  51                        PUSH ECX
-005E1C23  E8 DE 06 E2 FF            CALL 0x00402306
+MTaskTy::PlayScript::override::prt_5e1c23_cdce5103:
+005E1C23  E8 DE 06 E2 FF            CALL 0x00402306  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/int;pointer:/undefined;/WinDef.h/BYTE
 005E1C28  83 C4 0C                  ADD ESP,0xc
 005E1C2B  B9 58 76 80 00            MOV ECX,0x807658
 005E1C30  89 83 8D 00 00 00         MOV dword ptr [EBX + 0x8d],EAX
@@ -1348,7 +1351,8 @@ LAB_005e22b8:
 005E22B8  6A 0A                     PUSH 0xa
 005E22BA  6A 0A                     PUSH 0xa
 005E22BC  6A 00                     PUSH 0x0
-005E22BE  E8 2D 32 0D 00            CALL 0x006b54f0
+MTaskTy::PlayScript::override::prt_5e22be_1d2df247:
+005E22BE  E8 2D 32 0D 00            CALL 0x006b54f0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint
 005E22C3  8B 0D 6C 17 81 00         MOV ECX,dword ptr [0x0081176c]
 005E22C9  89 81 48 05 00 00         MOV dword ptr [ECX + 0x548],EAX
 005E22CF  8B 0D CB C4 80 00         MOV ECX,dword ptr [0x0080c4cb]
@@ -1407,7 +1411,8 @@ LAB_005e236d:
 005E236D  6A 0A                     PUSH 0xa
 005E236F  6A 0A                     PUSH 0xa
 005E2371  6A 00                     PUSH 0x0
-005E2373  E8 78 31 0D 00            CALL 0x006b54f0
+MTaskTy::PlayScript::override::prt_5e2373_1d2df247:
+005E2373  E8 78 31 0D 00            CALL 0x006b54f0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint
 005E2378  8B 0D 6C 17 81 00         MOV ECX,dword ptr [0x0081176c]
 005E237E  89 81 48 05 00 00         MOV dword ptr [ECX + 0x548],EAX
 005E2384  8A 8B C7 06 00 00         MOV CL,byte ptr [EBX + 0x6c7]
@@ -1535,7 +1540,8 @@ LAB_005e24ec:
 005E2517  50                        PUSH EAX
 005E2518  57                        PUSH EDI
 005E2519  51                        PUSH ECX
-005E251A  E8 A1 2B 0D 00            CALL 0x006b50c0
+MTaskTy::PlayScript::override::prt_5e251a_db00da17:
+005E251A  E8 A1 2B 0D 00            CALL 0x006b50c0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_MTaskTy_06BF; signature=__stdcall;pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_MTaskTy_06BF;/int;/int;/int;/uint;pointer:/undefined4;/int
 005E251F  89 83 BF 06 00 00         MOV dword ptr [EBX + 0x6bf],EAX
 005E2525  8A 46 0A                  MOV AL,byte ptr [ESI + 0xa]
 005E2528  33 D2                     XOR EDX,EDX
@@ -1945,7 +1951,8 @@ LAB_005e2a51:
 005E2AD3  50                        PUSH EAX
 005E2AD4  57                        PUSH EDI
 005E2AD5  51                        PUSH ECX
-005E2AD6  E8 E5 25 0D 00            CALL 0x006b50c0
+MTaskTy::PlayScript::override::prt_5e2ad6_14f2e6ea:
+005E2AD6  E8 E5 25 0D 00            CALL 0x006b50c0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006B4FA0_DAC3A217; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006B4FA0_DAC3A217;/int;/int;/int;/uint;pointer:/undefined4;/int
 005E2ADB  89 85 CC FE FF FF         MOV dword ptr [EBP + 0xfffffecc],EAX
 005E2AE1  8B 48 14                  MOV ECX,dword ptr [EAX + 0x14]
 005E2AE4  85 C9                     TEST ECX,ECX
@@ -2022,7 +2029,8 @@ LAB_005e2b44:
 005E2BBA  8B F8                     MOV EDI,EAX
 005E2BBC  57                        PUSH EDI
 005E2BBD  6A 00                     PUSH 0x0
-005E2BBF  E8 BC 04 13 00            CALL 0x00713080
+MTaskTy::PlayScript::override::prt_5e2bbf_ab745c19:
+005E2BBF  E8 BC 04 13 00            CALL 0x00713080  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__thiscall;pointer:/uint;pointer:/ccFntTy;pointer:/char;/int
 005E2BC4  85 C0                     TEST EAX,EAX
 005E2BC6  89 85 02 FF FF FF         MOV dword ptr [EBP + 0xffffff02],EAX
 005E2BCC  0F 84 86 00 00 00         JZ 0x005e2c58
@@ -2124,7 +2132,8 @@ LAB_005e2cb8:
 005E2CE3  51                        PUSH ECX
 005E2CE4  57                        PUSH EDI
 005E2CE5  52                        PUSH EDX
-005E2CE6  E8 D5 23 0D 00            CALL 0x006b50c0
+MTaskTy::PlayScript::override::prt_5e2ce6_14f2e6ea:
+005E2CE6  E8 D5 23 0D 00            CALL 0x006b50c0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006B4FA0_DAC3A217; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006B4FA0_DAC3A217;/int;/int;/int;/uint;pointer:/undefined4;/int
 005E2CEB  8B 4D 88                  MOV ECX,dword ptr [EBP + -0x78]
 005E2CEE  81 E1 FF 00 00 00         AND ECX,0xff
 005E2CF4  8D 8C 8D CC FE FF FF      LEA ECX,[EBP + ECX*0x4 + 0xfffffecc]

@@ -1,12 +1,13 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 FUN_006b4b20(int *param_1,AnonShape_006B4B20_3D4F4412 *param_2,int param_3,byte param_4)
+undefined4
+FUN_006b4b20(int *param_1,RecoveredRecordView_006B4B20_F20E56A6 *param_2,int param_3,byte param_4)
 
 {
   byte bVar1;
   byte bVar2;
-  AnonShape_006B4B20_3D4F4412 *pAVar3;
+  RecoveredRecordView_006B4B20_F20E56A6 *pRVar3;
   uint uVar4;
   uint *puVar5;
   byte *pbVar6;
@@ -19,7 +20,7 @@ undefined4 FUN_006b4b20(int *param_1,AnonShape_006B4B20_3D4F4412 *param_2,int pa
   uint uVar13;
   byte *pbVar14;
   uint uVar15;
-  AnonShape_006B4B20_3D4F4412 *pAVar16;
+  RecoveredRecordView_006B4B20_F20E56A6 *pRVar16;
   byte *pbVar17;
   int iVar18;
   byte *pbVar19;
@@ -27,66 +28,68 @@ undefined4 FUN_006b4b20(int *param_1,AnonShape_006B4B20_3D4F4412 *param_2,int pa
   short *local_3c;
   int local_34;
   byte *local_30;
-  AnonShape_006B4B20_3D4F4412 *local_2c;
+  RecoveredRecordView_006B4B20_F20E56A6 *local_2c;
   int local_20;
   int local_1c;
   uint local_14;
   int local_10;
   int local_c;
-  AnonShape_006B4B20_3D4F4412 *pAVar16_mg0;
+  RecoveredRecordView_006B4B20_F20E56A6 *pAVar16_mg0;
 
   *param_1 = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_3 == 0) {
-    param_3 = FUN_006b4fa0((int *)param_2);
+
+    param_3 = FUN_006b4fa0((RecoveredRecord_006B4FA0_DAC3A217 *)param_2);
   }
-  pAVar3 = (AnonShape_006B4B20_3D4F4412 *)param_2->field_0004;
+  pRVar3 = (RecoveredRecordView_006B4B20_F20E56A6 *)param_2->field_0004;
   uVar4 = param_2->field_0008;
-  uVar15 = (uint)param_2->field_000E * (int)pAVar3 + 0x1f >> 3 & 0x1ffffffc;
-  puVar5 = Library::DKW::LIB::MemAlloc((int)((int)&pAVar3->field_0x1 * uVar4 * 3) / 2 + 0x16);
+  uVar15 = (uint)param_2->field_000E * (int)pRVar3 + 0x1f >> 3 & 0x1ffffffc;
+
+  puVar5 = Library::DKW::LIB::MemAlloc((int)((int)&pRVar3->field_0x1 * uVar4 * 3) / 2 + 0x16);
   if (puVar5 == nullptr) {
     return 0xfffffffe;
   }
   pbVar6 = (byte *)((uVar4 - 1) * uVar15 + param_3);
   pbVar14 = (byte *)((int)puVar5 + 0x16);
   local_1c = -1;
-  AnonShape_006B4B20_3D4F4412 * param_2_after_write = nullptr; /* compiler stack-slot lifetime split */
+  RecoveredRecordView_006B4B20_F20E56A6 * param_2_after_write = nullptr; /* compiler stack-slot lifetime split */
   local_20 = 0;
   local_14 = 0;
   iVar12 = 0;
   pAVar16_mg0 = nullptr;
-  local_2c = pAVar3;
+  local_2c = pRVar3;
   if (0 < (int)uVar4) {
     do {
-      pAVar16 = nullptr;
+      pRVar16 = nullptr;
       while( true ) {
         bVar1 = *pbVar6;
         while (bVar1 == param_4) {
-          if ((int)pAVar3 <= (int)pAVar16) goto LAB_006b4c1b;
+          if ((int)pRVar3 <= (int)pRVar16) goto LAB_006b4c1b;
           pbVar6 = pbVar6 + 1;
-          pAVar16 = (AnonShape_006B4B20_3D4F4412 *)&pAVar16->field_0x1;
+          pRVar16 = (RecoveredRecordView_006B4B20_F20E56A6 *)&pRVar16->field_0x1;
           bVar1 = *pbVar6;
         }
-        if ((int)pAVar3 <= (int)pAVar16) break;
+        if ((int)pRVar3 <= (int)pRVar16) break;
         if (local_1c == -1) {
           local_1c = local_14;
         }
         local_20 = local_14;
-        if ((int)pAVar16 < (int)local_2c) {
-          local_2c = pAVar16;
+        if ((int)pRVar16 < (int)local_2c) {
+          local_2c = pRVar16;
         }
         bVar1 = *pbVar6;
-        for (; (bVar1 != param_4 && ((int)pAVar16 < (int)pAVar3));
-            pAVar16 = (AnonShape_006B4B20_3D4F4412 *)&pAVar16->field_0x1) {
+        for (; (bVar1 != param_4 && ((int)pRVar16 < (int)pRVar3));
+            pRVar16 = (RecoveredRecordView_006B4B20_F20E56A6 *)&pRVar16->field_0x1) {
           pbVar6 = pbVar6 + 1;
           bVar1 = *pbVar6;
         }
-        if ((int)param_2_after_write < (int)pAVar16) {
-          param_2_after_write = pAVar16;
+        if ((int)param_2_after_write < (int)pRVar16) {
+          param_2_after_write = pRVar16;
         }
       }
 LAB_006b4c1b:
-      pbVar6 = pbVar6 + -(int)(&pAVar3->field_0x0 + uVar15);
+      pbVar6 = pbVar6 + -(int)(&pRVar3->field_0x0 + uVar15);
       local_14 = local_14 + 1;
       iVar12 = local_20;
       pAVar16_mg0 = param_2_after_write;
@@ -248,7 +251,7 @@ LAB_006b4ef4:
     }
     cVar9 = (char)local_10;
   }
-  puVar5[1] = (uint)pAVar3;
+  puVar5[1] = (uint)pRVar3;
   STField<char>(puVar5,0xd) = cVar9 << 2;
   puVar5[2] = uVar4;
   STField<undefined2>(puVar5,0xe) = STPiece<0,2>(local_2c);

@@ -5,6 +5,6 @@ control_flow_table_entry=3
 initialized_data_pointer=352
 string_pointer=222
 zero_initialized_global=79
-zero_global_anonymous_pointees=12
+zero_global_anonymous_pointees=13
 named_upgrade_auto_apply=0
 note=Control-flow, code and string table entries retain PTR_* labels; they are not class instances.

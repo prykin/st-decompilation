@@ -231,6 +231,15 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
                 for (var parameter : definition.getArguments())
                     pending.add(parameter.getDataType());
             }
+            else if (current instanceof Structure structure) {
+                // A generated pointer/array wrapper stored in one live class or
+                // record component is a real use even when Ghidra does not
+                // expose that containment through DataType.getParents().  Walk
+                // the exact managed component graph; path identity still keeps
+                // equal-but-unrelated anonymous geometries separate.
+                for (DataTypeComponent component : structure.getDefinedComponents())
+                    pending.add(component.getDataType());
+            }
         }
         for (DataType type : matched) counts.merge(type, 1, Integer::sum);
     }
@@ -309,7 +318,7 @@ public class STTypeLifecycleAnalyzer extends GhidraScript {
     private boolean hiddenThis(DataType type, String description) {
         return type instanceof Structure &&
             type.getPathName().startsWith(
-                "/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_") &&
+                "/SubmarineTitans/Recovered/HiddenThis/") &&
             description.contains("[STHiddenThisApplier generated]");
     }
 

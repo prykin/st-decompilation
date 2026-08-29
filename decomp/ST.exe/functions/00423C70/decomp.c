@@ -9,13 +9,12 @@ undefined4 __thiscall FUN_00423c70(void *this,short param_1)
   STGameObjC *this_00;
   uint index;
   uint uVar3;
-  undefined1 local_28 [16];
-  undefined4 local_18;
-  undefined2 local_14;
+  byte local_28 [16];
+  uint local_18;
+  ushort local_14;
   short local_12;
-  undefined4 local_10;
-  undefined4 local_8;
-
+  uint local_10;
+  uint local_8;
   uVar1 = *(uint *)(STField<int>(this,0x29) + 0xc);
   uVar2 = 0xffffffff;
   if ((uVar1 != 0) && (uVar3 = 0, uVar1 != 0)) {
@@ -32,7 +31,8 @@ undefined4 __thiscall FUN_00423c70(void *this,short param_1)
     /* ST_CALLSITE[00423CD3]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     this_00 = STAllPlayersC::GetObjPtr
                         (g_allPlayers_007FA174,STField<char>(this,0x24),(ushort)local_8,CASE_1);
-    thunk_FUN_00419c30(this_00,0xffff);
+    /* ST_CALLSITE[00423CE1]: CALL 0x004033be; direct=004033BE STGameObjC::sub_00419C30 */
+    STGameObjC::sub_00419C30(this_00,0xffff);
     local_8 = 0xffff;
     Library::DKW::TBL::DArrayPut(STField<DArrayTy *>(this,0x29),uVar3 & 0xffff,&local_8);
     STField<short>(this,0x27) = STField<short>(this,0x27) + -1;
@@ -41,7 +41,7 @@ undefined4 __thiscall FUN_00423c70(void *this,short param_1)
       local_14 = 1;
       local_12 = param_1;
       local_10 = this_00->field_0018;
-      /* ST_CALLSITE[00423D2F]: CALL dword ptr [EDX] */
+      /* ST_CALLSITE[00423D2F]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4 */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)*STField<undefined4 *>(this,0x1c))(local_28);
     }

@@ -33,36 +33,36 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
   uint *puVar23;
   uint local_5e0 [84];
   int local_490 [6];
-  undefined4 local_478;
-  undefined4 local_474;
-  undefined4 local_428;
-  undefined4 local_424;
-  undefined4 local_420;
-  undefined4 local_380;
-  undefined4 local_37c;
-  undefined4 local_378;
-  undefined4 local_374;
-  undefined4 local_30c;
+  uint local_478;
+  uint local_474;
+  uint local_428;
+  uint local_424;
+  uint local_420;
+  uint local_380;
+  uint local_37c;
+  uint local_378;
+  uint local_374;
+  uint local_30c;
   int local_308 [26];
-  undefined4 local_2a0;
-  undefined4 local_e8;
-  undefined4 local_e4;
-  undefined4 local_e0;
-  undefined4 local_c4;
-  undefined4 local_c0;
-  undefined4 local_bc;
+  uint local_2a0;
+  uint local_e8;
+  uint local_e4;
+  uint local_e0;
+  uint local_c4;
+  uint local_c0;
+  uint local_bc;
   InternalExceptionFrame local_b8;
-  undefined4 local_74 [4];
-  undefined4 local_64;
-  undefined4 local_60;
-  undefined4 local_5c;
-  undefined4 local_44;
-  undefined4 local_40;
-  undefined4 local_3c;
+  uint local_74 [4];
+  uint local_64;
+  uint local_60;
+  uint local_5c;
+  uint local_44;
+  uint local_40;
+  uint local_3c;
   uint *local_2c;
-  undefined4 local_28;
-  undefined4 local_24;
-  undefined4 local_20;
+  uint local_28;
+  uint local_24;
+  uint local_20;
   int local_1c;
   ushort *local_18;
   TradePanelTy *local_14;
@@ -81,7 +81,8 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
   memset(local_490, 0, 0x3d8); /* compiler bulk-zero initialization */
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
-  puVar3 = (undefined4 *)Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
+
+  puVar3 = STPointerBoundaryCast<undefined4 *>(Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0));
   this_00 = local_14;
   if (puVar3 == nullptr) {
     uVar22 = 0x77;
@@ -92,12 +93,13 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     iVar16 = 0xbf;
     uVar15 = 3;
     iVar14 = 0x40;
+    /* ST_CALLSITE[00550E4B]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SpecPanelTy; source view only; no Ghidra override */
     pCVar4 = thunk_FUN_00571240("BKG_TRADECENTERW",0);
     /* ST_CALLSITE[00550E56]: CALL 0x00403800; direct=00403800 SpecPanelTy::InitPanel */
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)this_00,pCVar4,iVar14,uVar15,iVar16,iVar18,UVar19,iVar9,uVar22);
-    /* ST_CALLSITE[00550E6D]: CALL 0x0070ceb0; direct=0070CEB0 ccFntTy::operator_new */
-    pcVar5 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
+    /* ST_CALLSITE[00550E6D]: CALL 0x0070ceb0; direct=0070CEB0 ccFntTy::operator_new; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/cMf32;pointer:/char;/byte */
+    pcVar5 = ccFntTy::operator_new(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
     uVar11 = 1;
     this_00->field_01DD = pcVar5;
     pcVar5->field_0058 = 1;
@@ -112,6 +114,7 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     uVar17 = 0xffffffff;
     puVar20 = puVar3;
     puVar23 = puVar3;
+    /* ST_CALLSITE[00550ECF]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
     pCVar4 = thunk_FUN_00571240("TRADE_RATE",0);
     puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
                        (PTR_00806794,CASE_B,pCVar4,uVar17,(byte)puVar3,iVar9,(int)puVar20,puVar23);
@@ -170,6 +173,7 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     local_380 = 1;
     local_490[2] = 0;
     local_490[3] = 2;
+    /* ST_CALLSITE[0055101E]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
     pCVar4 = thunk_FUN_00571240("BUT_TBUP",0);
     pCVar4 = FUN_006f2c00(pCVar4,iVar9,uVar15);
     local_18 = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar21,iVar14);
@@ -218,6 +222,7 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_b8.previous;
+
   iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\tradecen.cpp",0x53,0,(int)puVar3,
                              "%s","TradePanelTy::InitTradePanel");
   if (iVar8 != 0) {

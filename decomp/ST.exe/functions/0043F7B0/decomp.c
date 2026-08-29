@@ -103,14 +103,12 @@ LAB_0043f9bd:
                              g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                   }
                   if (!bVar11) goto LAB_0043f9fa;
-                  /* ST_CALLSITE[0043F9D1]: CALL dword ptr [EAX + 0xf8] */
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                  iVar7 = (**(code **)(*piVar3 + 0xf8))();
+                  /* ST_CALLSITE[0043F9D1]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                  iVar7 = STStructuralVirtualCall<undefined4>(piVar3, 0xF8);
                 }
                 else {
-                  /* ST_CALLSITE[0043F9E2]: CALL dword ptr [EAX + 0xf8] */
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                  iVar7 = (**(code **)(*piVar3 + 0xf8))();
+                  /* ST_CALLSITE[0043F9E2]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                  iVar7 = STStructuralVirtualCall<undefined4>(piVar3, 0xF8);
                 }
                 if (iVar7 == 1) {
                   Library::DKW::TBL::DArrayAppend(array,&param_6);
@@ -154,14 +152,12 @@ LAB_0043fad9:
                              g_bulkInitializedRecords_008087C7[bVar1].field_0023;
                   }
                   if (!bVar11) goto LAB_0043fb16;
-                  /* ST_CALLSITE[0043FAED]: CALL dword ptr [EAX + 0xf8] */
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                  iVar7 = (**(code **)(*piVar3 + 0xf8))();
+                  /* ST_CALLSITE[0043FAED]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                  iVar7 = STStructuralVirtualCall<undefined4>(piVar3, 0xF8);
                 }
                 else {
-                  /* ST_CALLSITE[0043FAFE]: CALL dword ptr [EAX + 0xf8] */
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                  iVar7 = (**(code **)(*piVar3 + 0xf8))();
+                  /* ST_CALLSITE[0043FAFE]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                  iVar7 = STStructuralVirtualCall<undefined4>(piVar3, 0xF8);
                 }
                 if (iVar7 == 1) {
                   Library::DKW::TBL::DArrayAppend(array,&param_6);

@@ -31,7 +31,7 @@ LAB_0049a52e:
 0049A54C  6A 01                     PUSH 0x1
 0049A54E  50                        PUSH EAX
 0049A54F  52                        PUSH EDX
-0049A550  E8 65 83 F6 FF            CALL 0x004028ba
+0049A550  E8 65 83 F6 FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override
 0049A555  8D 4D E8                  LEA ECX,[EBP + -0x18]
 0049A558  8D 55 EC                  LEA EDX,[EBP + -0x14]
 0049A55B  51                        PUSH ECX

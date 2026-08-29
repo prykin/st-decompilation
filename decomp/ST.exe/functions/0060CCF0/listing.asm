@@ -69,7 +69,8 @@ FUN_0060ccf0:
 0060CDE4  52                        PUSH EDX
 0060CDE5  50                        PUSH EAX
 0060CDE6  51                        PUSH ECX
-0060CDE7  E8 E4 DF 09 00            CALL 0x006aadd0
+FUN_0060ccf0::override::prt_60cde7_fe5b7a24:
+0060CDE7  E8 E4 DF 09 00            CALL 0x006aadd0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/undefined2; signature=__stdcall;pointer:/undefined2;/int;/int;/int;/int;/int;/int
 0060CDEC  8B 97 44 02 00 00         MOV EDX,dword ptr [EDI + 0x244]
 0060CDF2  8D 4C 16 04               LEA ECX,[ESI + EDX*0x1 + 0x4]
 0060CDF6  51                        PUSH ECX

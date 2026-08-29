@@ -64,8 +64,10 @@ int __thiscall FUN_006139a0(void *this,int *param_1,int *param_2,int *param_3)
     STField<undefined4 *>(this,0x2d9) = local_c;
     if ((2 < STField<int>(this,0x2d5)) && (STField<int>(this,0x2d5) + -3 <= (int)local_c)) {
       if (STField<char>(this,0x2ea) != '\0') {
+
         iVar7 = thunk_FUN_00616280(this,&local_24,&local_20,&local_1c);
         if ((-1 < iVar7) &&
+
            (local_EAX_841 =
                  thunk_FUN_00616a80(this,local_24,local_20,local_1c,param_1,param_2,param_3),
            local_EAX_841 != 0)) {
@@ -88,6 +90,7 @@ int __thiscall FUN_006139a0(void *this,int *param_1,int *param_2,int *param_3)
         iVar9 = STBiasedDiv16(sVar2, 0xc9); /* exact signed 16-bit grid-index division */
         sVar2 = STField<short>(this,0x25a);
         iVar4 = STBiasedDiv16(sVar2, 0xc9); /* exact signed 16-bit grid-index division */
+
         iVar6 = thunk_FUN_006151e0(this,local_c,iVar4,iVar9,iVar7);
         if ((iVar6 != 0) && (STField<char>(this,0x2ea) == '\0')) {
           return local_8;
@@ -104,10 +107,12 @@ int __thiscall FUN_006139a0(void *this,int *param_1,int *param_2,int *param_3)
       STField<uint>(this,0x298) = g_playSystem_00802A38->field_00E4;
       STField<undefined4>(this,0x256) = 2;
 LAB_00613c8b:
+
       iVar7 = thunk_FUN_006173a0(this,local_14,param_1,param_2,param_3);
       if (0 < iVar7) {
         return iVar7;
       }
+
       thunk_FUN_0060ec00(this);
       STField<undefined4>(this,0x20c) = 9;
       return iVar7;
@@ -136,6 +141,7 @@ LAB_00613c8b:
     else {
       local_14 = (iVar8 * 51000) / (*(int *)(&DAT_007cfe74 + STField<short>(iVar7,0x6) * 4) * 0xc9);
     }
+
     local_18 = thunk_FUN_006141b0(this,local_14,GVar3,&local_28,&local_10);
   }
   psVar1 = (short *)(STField<int>(this,0x2dd) + STField<int>(this,0x2d9) * 0x1c);

@@ -75,8 +75,7 @@ void FUN_006b4170(RecoveredSourceFamily_dibcopy *param_1,int param_2,int lprcSrc
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079d8b0;
   puStack_10 = &LAB_0072d964;
@@ -87,7 +86,8 @@ void FUN_006b4170(RecoveredSourceFamily_dibcopy *param_1,int param_2,int lprcSrc
     puVar1 = &stack0xffffffa0;
     if (param_2 == 0) {
       ExceptionList = &local_14;
-      param_2 = FUN_006b4fa0((int *)param_1);
+
+      param_2 = FUN_006b4fa0((RecoveredRecord_006B4FA0_DAC3A217 *)param_1);
       puVar1 = local_1c;
     }
     local_1c = puVar1;

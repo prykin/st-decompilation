@@ -1,4 +1,4 @@
-FUN_00488890:
+STBoatC::vfunc_40:
 00488890  55                        PUSH EBP
 00488891  8B EC                     MOV EBP,ESP
 00488893  83 EC 78                  SUB ESP,0x78

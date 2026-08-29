@@ -18,7 +18,7 @@ STRubbishC * __thiscall st::fn_0062ED10(STRubbishC *this)
 
 {
   /* ST_CALLSITE[0062ED13]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
-  st::fn_00401933((STGameObjC *)this);
+  st::fn_00401933(reinterpret_cast<STGameObjC *>(this));
   this->field_01D5 = -1;
   this->field_01D9 = -1;
   this->field_01DD = -1;
@@ -45,7 +45,8 @@ STRubbishC * __thiscall st::fn_0062ED10(STRubbishC *this)
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
 undefined4 __thiscall
-st::fn_0062EF00(STRubbishC *this,int param_1,AnonShape_0062FCA0_22A9EE35 *param_2)
+st::fn_0062EF00
+          (STRubbishC *this,int param_1,RecoveredRecordView_0062FCA0_4CB838FB *param_2)
 
 {
   uint uVar1;
@@ -63,12 +64,14 @@ st::fn_0062EF00(STRubbishC *this,int param_1,AnonShape_0062FCA0_22A9EE35 *param_
     *(int *)(&this->field_01E5)[param_1] = param_2->field_0020;
     *(uint *)((&this->field_01E5)[param_1] + 0x35) = g_playSystem_00802A38->field_00E4;
     *(undefined4 *)((&this->field_01E5)[param_1] + 0x39) = 3000;
-    uVar1 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
+    uVar1 = this->field_001C * 0x41c64e6d + 0x3039;
     this->field_001C = uVar1;
     *(uint *)((&this->field_01E5)[param_1] + 0x1c) = (uVar1 >> 0x10) % 5;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar5 = *(int *)((&this->field_01E5)[param_1] + 0x1c);
+
     iVar3 = st::fn_0040581C();
+
     iVar4 = st::fn_004038F5(iVar3,iVar5);
     *(int *)((&this->field_01E5)[param_1] + 0x2c) = iVar4;
     *(uint *)((&this->field_01E5)[param_1] + 4) = (uint)param_2->field_0028 >> 0x10;
@@ -98,11 +101,10 @@ int __thiscall st::fn_0062F900(STRubbishC *this)
 
 {
   int iVar1;
-  undefined4 local_24 [3];
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-
+  uint local_24 [3];
+  uint local_18;
+  uint local_14;
+  uint local_10;
   local_10 = this->field_0008;
   local_18 = 0;
   local_14 = 10;
@@ -117,7 +119,8 @@ int __thiscall st::fn_0062F900(STRubbishC *this)
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
-int __thiscall st::fn_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9EE35 *param_1)
+int __thiscall
+st::fn_0062FCA0(STRubbishC *this,RecoveredRecordView_0062FCA0_4CB838FB *param_1)
 
 {
   int *piVar1;
@@ -126,7 +129,7 @@ int __thiscall st::fn_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9EE35 *par
   int iVar4;
   int iVar5;
   uint *puVar6;
-  /* ST_CALLSITE[0062FCA7]: CALL 0x004017f3; direct=004017F3 STRubbishC::RubbishCreatePart */
+  /* ST_CALLSITE[0062FCA7]: CALL 0x004017f3; direct=004017F3 STRubbishC::RubbishCreatePart; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STRubbishC; source view only; no Ghidra override */
   iVar3 = st::fn_004017F3(this);
   iVar4 = this->field_01E1;
   if (iVar3 < 0) {
@@ -158,6 +161,7 @@ int __thiscall st::fn_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9EE35 *par
     /* ST_CALLSITE[0062FCCF]: CALL 0x004036ca; direct=004036CA STRubbishC::sub_0062EF00 */
     st::fn_004036CA(this,iVar3,param_1);
     if (this->field_01F9 != '\0') {
+
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       iVar4 = st::fn_0040318E(this,iVar3,*(undefined4 *)((&this->field_01E5)[iVar3] + 0xc),
                                  *(STRubbishC_LoadImagSpr_param_4Enum *)
@@ -171,6 +175,7 @@ int __thiscall st::fn_0062FCA0(STRubbishC *this,AnonShape_0062FCA0_22A9EE35 *par
         st::fn_00405885(this);
         return 0xffff;
       }
+
       st::fn_00404728(this,iVar3);
       iVar3 = -1;
     }
@@ -216,7 +221,7 @@ int __thiscall st::fn_0062FEA0(STRubbishC *this,int param_1,int param_2)
     /* ST_CALLSITE[0062FF35]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
     st::fn_00403F53
               (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,this->field_01D5,
-               this->field_01D9,&param_2,(int *)&local_8);
+               this->field_01D9,&param_2,reinterpret_cast<int *>(&local_8));
     if (iVar3 < 0) {
       return iVar2;
     }
@@ -262,10 +267,9 @@ void __thiscall st::fn_00630260(STRubbishC *this,int param_1,int param_2)
 {
   uint *puVar1;
   int local_24 [4];
-  undefined4 local_14;
+  uint local_14;
   int local_10;
-  undefined4 local_c;
-
+  uint local_c;
   if (g_manRub3_008117A4 != nullptr) {
     puVar1 = (undefined4 *)(&this->field_01E5)[param_1];
     if ((puVar1 != nullptr) && ((puVar1[1] == 3 || (puVar1[1] == 6)))) {
@@ -287,4 +291,3 @@ void __thiscall st::fn_00630260(STRubbishC *this,int param_1,int param_2)
   }
   return;
 }
-

@@ -51,29 +51,24 @@ have been checked.
 
 ## Current authoritative state
 
-The current accepted headless export is run
-`70014c5e33f73c16c65fe8bfa8feb5141ce2ae1b31b7b912641767f7fd872afb`.
-Its receipt is `passed` with Program semantic hash
-`fc00e8aed308228e25421162c642838447438f5c77fbbd1de3d9bbf05135ffe2`
+The current headless export receipt is `passed` with Program semantic hash
+`a7939e1e5340f76bc779b9617a409135d5be18cfcac6d040fa320fc1bf495d99`
 and corpus manifest hash
-`c148e7d458af2ef833e92d8f163c49c4d37e8cbc94c54c58d26e07a371913dc0`.
+`c6e099a7a23a3f36508cd7463210d095031021f1d8ac92822f6fb772ca1598db`.
 The manifest binds portable `program.json` metadata as
 `3bb8a76833b385eab3616325d3bd622ddaea5741bd8c60a99eb35c483ad7d761`.
 The manifest binds `pseudocode_runtime.h` as
-`483d0740a1b332108dd6f52935a8cbf55c9c0e7c07424470a7dc93993a3840e4`.
+`7cfc0521a1f5c0c81be5a86a0faa5dc3e3e293790665ae468b92b83606bfc735`.
 Obtain the current repository revision and worktree status from Git; do not
 embed a soon-stale commit identifier in this handoff.
 
-The accepted corpus contains 10,407 function records, 5,555 bodies, zero failed
-bodies, and 3,192 typed physical-vtable slots. The export and ABI gates both
-pass with zero errors and zero warnings. The accepted export took `00:08:15`;
-this is an elapsed diagnostic, not a wall-clock timestamp. The current
-indirect-callsite pass retains 527 automatic proposals; 14 were newly applied
-in this slice and all 527 were unchanged on confirmation.
+The accepted corpus contains 10,407 function records, 5,035 bodies, zero failed
+bodies, 1,546 excluded library functions, 3,826 thunks, and 3,192 typed
+physical-vtable slots. Export and ABI gates pass with zero errors or warnings.
 
 The canonical Git/LFS Program checkpoint is the deterministic normalized
-`ghidra/ST.exe.gzf`: 28,434,049 bytes with packed SHA-256
-`0f129690d57d7b69b019769bd66751e0c28deabeaefb5a890a3576ef47faf725`.
+`ghidra/ST.exe.gzf`: 29,326,263 bytes with packed SHA-256
+`c17e4e8e18a14bae2820b5218d1edda3bb9392847b64ff250659e273314cc971`.
 Its normalization is
 `zip-dos-time-1980-01-01+private-metadata-v5`: ZIP time, database revision
 times, database owners, and absolute workstation paths are removed before the
@@ -90,32 +85,30 @@ paths, database owner identities, database revision times, and wall-clock data
 in log-like artifacts are forbidden. Commit author dates remain intentional
 Git metadata and committer identity/date must exactly match the author.
 
-The current quality inventory contains 3,733 anonymous-shape occurrences,
-15,696 undefined types, 3,285 casts over generic fields, 1,730 raw pointer
-offsets, 1,318 raw indirect calls, 1,383 canonical casted call results, 291
-return-width artifacts, 459 residual stack-slot-reuse occurrences, and 407
+The current quality inventory contains 1,042 anonymous-shape occurrences,
+14,598 undefined types, 5,613 casts over generic fields, 1,105 raw pointer
+offsets, 459 raw indirect calls, 311 canonical casted call results, 261
+return-width artifacts, 462 residual stack-slot-reuse occurrences, and 362
 unresolved register inputs. The counts overlap and are occurrences across all
 exported `functions/**/decomp.c`, not independent recovery facts. In total,
-4,924 of 5,555 bodies have at least one quality row.
+4,347 of 5,035 bodies have at least one quality row.
 
-`tools/st_source_tree.py` emits all 5,555 bodies as 334 C++17 translation units,
+`tools/st_source_tree.py` emits all 5,035 bodies as 328 C++17 translation units,
 with 1,044 bodies under proven original paths and address-stable
 `st::fn_ADDRESS` implementations. It generates 1,147 physical-vtable member
-wrappers, 1,326 uniquely owned non-virtual source methods, 38 exact indirect
-member wrappers, and 2,316 exact unnamed field views. The deterministic source
-audit contains 13,053 rows. The strict generated-source readability profile
-contains 4,815 generic undefined declarations, 868 pointer-boundary casts,
-1,318 raw code calls, 571 `unaff`/`extraout` occurrences, 38 undefined static
-casts, and zero residual duplicated-vtable calls.
+wrappers, 1,396 source-member wrappers, 37 exact indirect member wrappers, and
+2,321 exact unnamed field views. The strict generated-source readability
+profile contains 2,355 generic undefined declarations, 1,418 pointer-boundary
+casts, 459 raw code calls, and 529 `unaff`/`extraout` occurrences.
 
 The current fixed Docker Clang audit uses C++17, MS extensions, an ILP32 target,
-and a limit of 64 errors per translation unit. It passes 280 of 334 units and
-retains 192 errors, all mapped to stable function addresses; no translation
-unit reaches the cap. The tracked deterministic source manifest is
-`f4a43bbd4dfed5aae8ae27f6ecb80d6ec33f170b0b2e2cb9b55ade659b9364a3`.
+and a limit of 64 errors per translation unit. It passes 312 of 328 units and
+retains 35 errors, all mapped to stable function addresses. The tracked
+deterministic source manifest is
+`6ac11f8aeb73c2be3702dbd8b92dc779b4d03d25dce4e7b55d01deef2da58eb2`.
 `config/source-compile-regression-baseline.json` binds this accepted compiler
 state and has SHA-256
-`b9f8e86f012dd4278f826d2eb491d56cd312881c9635b0e81f6d87b417dcb3ca`.
+`e7b51b2c90ac1bbab01adcc5fc3667bab832361f3f94b6f995ab17ff42dcc539`.
 The ratchet passes with zero regressions; raw compiler output remains ignored
 under `.st-local/`.
 
@@ -128,7 +121,7 @@ all undeclared identifiers, and all unaddressed template errors are closed.
 Eleven call-arity errors remain at ten stable addresses and belong to ABI
 recovery, not to the removed wrapper-family defect.
 
-The current Q-058 slice is accepted. CFG-aware receiver tracing recovered 35
+Q-058 is complete. CFG-aware receiver tracing recovered 35
 additional primary-vtable calls in `STGameObjC::FUN_004845e0` across slots
 `0x2c`, `0x7c`, and `0xbc` while keeping its generic parameter ABI neutral.
 The new persistent callable-receiver pass audited 95 dense parameter-origin
@@ -148,29 +141,26 @@ address-local physical-base view when a hash-intact generated partial structure
 has at least two concrete fields, its whole layout is an exact prefix of one
 unique base, and every indirect slot ABI agrees. This recovered 14 calls in
 `00435B90` as `STSprGameObjC` slots `0x2c`/`0xec` without persistently retyping
-the reused `int *` parameter. The accepted Program semantic hash is
-`fc00e8aed308228e25421162c642838447438f5c77fbbd1de3d9bbf05135ffe2`;
-the corpus manifest is
-`c148e7d458af2ef833e92d8f163c49c4d37e8cbc94c54c58d26e07a371913dc0`.
-The corpus now contains 1,318 raw indirect calls. Export, ABI, source-readability,
-compiler-regression, and packed-snapshot verification gates all pass; the fixed
-compiler audit remains 280/334 translation units with 192 addressed errors.
+the reused `int *` parameter. The final corpus contains 459 raw indirect calls,
+305 ownerless `__thiscall` functions, and 311 canonical casted call results.
+This meets every Q-058 directional threshold while preserving all 3,192
+physical slots and every manual/imported ABI. Export, ABI, source-readability,
+compiler-regression, and packed-snapshot round-trip gates all pass; the fixed
+compiler audit is 312/328 translation units with 35 addressed errors and zero
+regressions.
 
 ## Ordered next work
 
-The current work is inside `Q-058`; `Q-057` has materially reduced compiler
-debt but its strict zero-family completion criteria are not yet met. Continue
+The current work is inside `Q-059`; `Q-058` is complete and `Q-057` has
+materially reduced compiler debt but its strict zero-family completion criteria
+are not yet met. Continue
 with the items below; their full definitions and completion criteria are in
 `docs/recovery-task-queue.md`.
 
 1. `Q-057` — separate pointer, scalar, floating, DArray, stack-output, and
    post-call SSA lifetimes; close return ABI/value-domain contradictions from
    machine and call-boundary evidence. Never solve these with whole-local casts.
-2. `Q-058` — recover remaining callable ownership: physical vtables, callback
-   fields/parameters, function tables, library callbacks, and ownerless
-   `__thiscall` families. Shared physical ABI wins; address-local overrides
-   remain the last resort.
-3. `Q-059` — consolidate pointer layouts, anonymous records, arrays, global
+2. `Q-059` — consolidate pointer layouts, anonymous records, arrays, global
    aggregates, unclaimed executable ranges, and only then semantic names and CFG
    presentation. Generic names are review debt, not permission to invent names.
 

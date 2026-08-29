@@ -4,7 +4,7 @@
 void FUN_00682cf0(void)
 
 {
-  undefined1 local_c;
+  byte local_c;
   char *local_b;
 
   local_c = 1;

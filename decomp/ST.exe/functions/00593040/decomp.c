@@ -33,20 +33,23 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
   byte bVar16;
   int iVar17;
   InternalExceptionFrame local_54;
-  undefined4 local_10;
+  uint local_10;
   int *local_c;
   CampaignTy *local_8;
   char *pcVar9_mg0;
 
   local_8 = this;
+
   DVar6 = STAppC::sub_006E51B0(this->field_0010);
   this->field_0061 = DVar6;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
+
   local_EAX_49 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_8;
   if (local_EAX_49 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar11 = ReportDebugMessage("E:\\__titans\\Start\\camp_obj.cpp",0x24f,0,local_EAX_49,
                                 "%s","CampaignTy::GetMessage");
     if (iVar11 != 0) {
@@ -87,8 +90,10 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
         FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
         iVar17 = 0;
         bVar16 = 0;
+        /* ST_CALLSITE[00593153]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
         text = FUN_006f2c00("CMPG_BKG",1,(uint)DAT_0080874e);
-        pBVar7 = (BITMAPINFO *)FUN_0070a9f0(g_cMf32_00806780,text,bVar16,iVar17);
+        /* ST_CALLSITE[00593162]: CALL 0x0070a9f0; direct=0070A9F0 FUN_0070a9f0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/wingdi.h/BITMAPINFO; signature=__cdecl;pointer:/wingdi.h/BITMAPINFO;pointer:/cMf32;pointer:/char;/byte;/int */
+        pBVar7 = FUN_0070a9f0(g_cMf32_00806780,text,bVar16,iVar17);
         /* ST_CALLSITE[00593171]: CALL 0x00403738; direct=00403738 PutDDX */
         PutDDX(0xa5,0x37,'\x01',pBVar7);
       }
@@ -106,6 +111,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
     this_00->field_0049 = 0;
     this_00->field_004D = 0x6102;
     this_00->field_0051 = message->arg0;
+
     thunk_FUN_005b66e0((MTaskTy *)this_00);
     break;
   case MESS_WAITTY_6943:
@@ -126,6 +132,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
     this_00->field_004D = 0x7101;
     this_00->field_0051 = 3;
     this_00->field_0055 = 1;
+
     thunk_FUN_005b66e0((MTaskTy *)this_00);
     break;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -188,6 +195,7 @@ int __thiscall CampaignTy::GetMessage(CampaignTy *this,STMessage *message)
     this_00->field_004D = 0x6104;
     this_00->field_0051 = 0;
     this_00->field_0055 = 1;
+
     thunk_FUN_005b66e0((MTaskTy *)this_00);
     break;
   case MESS_SHARED_697F:
@@ -217,6 +225,7 @@ switchD_005931dd_default:
     uVar11 = this_00->field_00BB[iVar17].field_0028.field_0004;
     local_c = piVar3;
     if (uVar11 != 0xffffffff) {
+
       Library::DKW::DDX::FUN_006b3730
                 ((uint *)this_00->field_00BB[iVar17].field_0028.field_0048,uVar11,
                  this_00->field_00BB[iVar17].field_0028.field_0008,
@@ -245,6 +254,7 @@ switchD_005931dd_default:
       }
       uVar11 = this_00->field_00BB[iVar17].field_014A.field_0004;
       if (uVar11 != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b3730
                   ((uint *)this_00->field_00BB[iVar17].field_014A.field_0048,uVar11,
                    this_00->field_00BB[iVar17].field_014A.field_0008,
@@ -287,6 +297,7 @@ LAB_00593378:
     }
     uVar11 = this_00->field_00BB[iVar17].field_00B9.field_0004;
     if (uVar11 != 0xffffffff) {
+
       Library::DKW::DDX::FUN_006b3730
                 ((uint *)this_00->field_00BB[iVar17].field_00B9.field_0048,uVar11,
                  this_00->field_00BB[iVar17].field_00B9.field_0008,

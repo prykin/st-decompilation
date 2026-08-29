@@ -7,7 +7,8 @@
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
 void __fastcall
-AiFltClassTy::sub_00661CA0(AnonShape_00661CA0_93A030EF *param_1,undefined4 param_2,int param_3)
+AiFltClassTy::sub_00661CA0
+          (RecoveredRecordView_00661CA0_FD5CEA6E *param_1,undefined4 param_2,int param_3)
 
 {
   AnonNested_AnonShape_00661CA0_93A030EF_020B_27162EA8 *pAVar1;
@@ -25,12 +26,12 @@ AiFltClassTy::sub_00661CA0(AnonShape_00661CA0_93A030EF *param_1,undefined4 param
   uint uVar12;
   uint uVar13;
   uint *puVar14;
-  AnonShape_0068FD00_A5257008 **ppAVar15;
+  RecoveredRecordView_0068FD00_630BE91E **ppRVar15;
   bool bVar16;
-  AnonShape_0068FD00_A5257008 *local_64;
-  undefined4 local_60;
-  undefined1 local_5c;
-  undefined1 local_5b;
+  RecoveredRecordView_0068FD00_630BE91E *local_64;
+  uint local_60;
+  byte local_5c;
+  byte local_5b;
   short *psStack_5a;
   undefined1 uStack_56;
   short local_30;
@@ -39,7 +40,7 @@ AiFltClassTy::sub_00661CA0(AnonShape_00661CA0_93A030EF *param_1,undefined4 param
   AiPlrClassTy *local_20;
   short local_1c [2];
   short local_18 [2];
-  AnonShape_00661CA0_93A030EF *local_14;
+  RecoveredRecordView_00661CA0_FD5CEA6E *local_14;
   STGameObjC *local_10;
   uint local_c;
   short local_6;
@@ -165,21 +166,23 @@ LAB_00661e5f:
         local_2e[1] = 0;
         local_2e[4] = 5;
         thunk_FUN_006756d0(&local_30,local_2e,local_2e + 2,local_2e + 3);
-        ppAVar15 = &local_64;
+        ppRVar15 = &local_64;
         for (iVar11 = 0xd; iVar11 != 0; iVar11 = iVar11 + -1) {
-          *ppAVar15 = nullptr;
-          ppAVar15 = ppAVar15 + 1;
+          *ppRVar15 = nullptr;
+          ppRVar15 = ppRVar15 + 1;
         }
         local_60 = param_1->field_0280;
-        local_64 = (AnonShape_0068FD00_A5257008 *)0x6c;
+        local_64 = (RecoveredRecordView_0068FD00_630BE91E *)0x6c;
         local_5c = 0;
         /* ST_CALLSITE[00661EEC]: CALL dword ptr [EDX + 0x2c] */
         GVar7 = local_10->vfunc_2C();
+
         iVar10 = thunk_FUN_006753a0(GVar7);
         local_5b = (undefined1)iVar10;
         psStack_5a = &local_30;
         /* ST_CALLSITE[00661F0B]: CALL 0x004010e1; direct=004010E1 AiTactClassTy::GetAiMess */
-        AiTactClassTy::GetAiMess(param_1->field_0284,(AnonShape_0068FD00_A5257008 *)&local_64);
+        AiTactClassTy::GetAiMess
+                  (param_1->field_0284,(RecoveredRecordView_0068FD00_630BE91E *)&local_64);
       }
       if (((0 < (int)local_c) && ((int)local_c < 0x29)) && (param_1->field_007B == -0x8000)) {
         if (param_1->field_009B == 0x78) {
@@ -191,7 +194,7 @@ LAB_00661e5f:
         uVar5 = 0;
         if (param_1->field_0284 != nullptr) {
           /* ST_CALLSITE[00661F75]: CALL 0x00405b23; direct=00405B23 AiTactClassTy::sub_0068E290 */
-          pvVar8 = (void *)AiTactClassTy::sub_0068E290(param_1->field_0284,local_10->field_081C);
+          pvVar8 = STPointerBoundaryCast<void *>(AiTactClassTy::sub_0068E290(param_1->field_0284,local_10->field_081C));
           if (local_20 != nullptr) {
             uVar5 = local_20->field_065C;
             local_20->field_065C = uVar5 + 1;
@@ -228,7 +231,7 @@ LAB_00661e5f:
       if ((((0 < (int)uVar5) && ((int)uVar5 < 0x29)) && (param_1->field_007B == -0x8000)) &&
          ((param_1->field_0284 != nullptr &&
           /* ST_CALLSITE[0066200E]: CALL 0x00405b23; direct=00405B23 AiTactClassTy::sub_0068E290 */
-          (pvVar8 = (void *)AiTactClassTy::sub_0068E290(param_1->field_0284,local_10->field_081C),
+          (pvVar8 = STPointerBoundaryCast<void *>(AiTactClassTy::sub_0068E290(param_1->field_0284,local_10->field_081C)),
           pvVar8 != nullptr)))) {
         thunk_FUN_00661790(pvVar8,uVar5,pSVar4->field_081E);
       }
@@ -236,10 +239,10 @@ LAB_00661e5f:
     pIVar9 = thunk_FUN_00674fb0(local_c);
     if ((((uint)pIVar9 & 0x60) != 0) &&
        (pAVar3 = param_1->field_0284, pAVar3 != nullptr)) {
-      ppAVar15 = &local_64;
+      ppRVar15 = &local_64;
       for (iVar11 = 0xd; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *ppAVar15 = nullptr;
-        ppAVar15 = ppAVar15 + 1;
+        *ppRVar15 = nullptr;
+        ppRVar15 = ppRVar15 + 1;
       }
       local_60 = param_1->field_0280;
       local_5c = ((undefined1 *)param_3)[0x14];
@@ -249,17 +252,17 @@ LAB_00661e5f:
       STPiece<0,1>(psStack_5a) = (undefined1)((ushort)*(undefined2 *)(param_3 + 0x16) >> 8);
       STPiece<1,3>(psStack_5a) = (undefined3)local_c;
       uStack_56 = (undefined1)(local_c >> 0x18);
-      local_64 = (AnonShape_0068FD00_A5257008 *)0x6e;
+      local_64 = (RecoveredRecordView_0068FD00_630BE91E *)0x6e;
       /* ST_CALLSITE[00662079]: CALL 0x004010e1; direct=004010E1 AiTactClassTy::GetAiMess */
-      AiTactClassTy::GetAiMess(pAVar3,(AnonShape_0068FD00_A5257008 *)&local_64);
+      AiTactClassTy::GetAiMess(pAVar3,(RecoveredRecordView_0068FD00_630BE91E *)&local_64);
     }
     pIVar9 = thunk_FUN_00674fb0(local_c);
     if ((((uint)pIVar9 & 0x10) != 0) &&
        (pAVar3 = param_1->field_0284, pAVar3 != nullptr)) {
-      ppAVar15 = &local_64;
+      ppRVar15 = &local_64;
       for (iVar11 = 0xd; iVar11 != 0; iVar11 = iVar11 + -1) {
-        *ppAVar15 = nullptr;
-        ppAVar15 = ppAVar15 + 1;
+        *ppRVar15 = nullptr;
+        ppRVar15 = ppRVar15 + 1;
       }
       local_60 = param_1->field_0280;
       local_5c = ((undefined1 *)param_3)[0x14];
@@ -269,9 +272,9 @@ LAB_00661e5f:
       STPiece<0,1>(psStack_5a) = (undefined1)((ushort)*(undefined2 *)(param_3 + 0x16) >> 8);
       STPiece<1,3>(psStack_5a) = (undefined3)local_c;
       uStack_56 = (undefined1)(local_c >> 0x18);
-      local_64 = (AnonShape_0068FD00_A5257008 *)0x74;
+      local_64 = (RecoveredRecordView_0068FD00_630BE91E *)0x74;
       /* ST_CALLSITE[006620D1]: CALL 0x004010e1; direct=004010E1 AiTactClassTy::GetAiMess */
-      AiTactClassTy::GetAiMess(pAVar3,(AnonShape_0068FD00_A5257008 *)&local_64);
+      AiTactClassTy::GetAiMess(pAVar3,(RecoveredRecordView_0068FD00_630BE91E *)&local_64);
     }
     if ((((0 < (int)local_c) && ((int)local_c < 0x29)) && (param_1->field_007B != 1)) &&
        (param_1->field_009B == 0x41)) {

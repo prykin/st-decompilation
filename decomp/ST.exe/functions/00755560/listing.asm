@@ -29,7 +29,7 @@ LAB_00755593:
 007555A0  8B 53 1C                  MOV EDX,dword ptr [EBX + 0x1c]
 007555A3  56                        PUSH ESI
 007555A4  52                        PUSH EDX
-007555A5  E8 A6 A5 F6 FF            CALL 0x006bfb50
+007555A5  E8 A6 A5 F6 FF            CALL 0x006bfb50  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_AnonShape_00753C80_4C8E695D_0008_9237F694; source view only; no Ghidra override
 007555AA  85 C0                     TEST EAX,EAX
 007555AC  89 43 1C                  MOV dword ptr [EBX + 0x1c],EAX
 007555AF  75 0E                     JNZ 0x007555bf

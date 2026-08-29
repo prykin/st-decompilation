@@ -50,20 +50,23 @@ int __thiscall FUN_004603b0(void *this,STTorpC *param_1)
     if ((((bVar10) && (DAT_007fa134 != 0)) && (uVar2 = g_array_007FA130->count, uVar2 != 0)) &&
        (index = 0, iVar7 = DAT_007fa134, uVar2 != 0)) {
       do {
-        DArrayGetElement(g_array_007FA130,index,&param_1);
+
+        DArrayGetElement((DArrayTy *)g_array_007FA130,index,&param_1);
         if (param_1 != nullptr) {
           iVar7 = iVar7 + -1;
           /* ST_CALLSITE[00460482]: CALL 0x0040478c; direct=0040478C STTorpC::IsDangerous */
           iVar3 = STTorpC::IsDangerous(param_1,STField<int>(this,0x18),&local_8);
           if (iVar3 != 2) {
             if (iVar3 == 0) {
-              iVar4 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::
+
+              iVar4 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_004603B0::
                       thunk_FUN_004838e0(this,(RecoveredRecord_STBoatC_004838E0 *)param_1);
               if (iVar4 == 1) {
                 /* ST_CALLSITE[004604AB]: CALL 0x0040368e; direct=0040368E STTorpC::SetDangerous */
                 STTorpC::SetDangerous(param_1,STField<uint>(this,0x18),&local_8);
 LAB_004604c9:
-                iVar4 = thunk_FUN_00483e30(this,(RecoveredRecord_STBoatC_00482DB0 *)param_1);
+                /* ST_CALLSITE[004604CF]: CALL 0x00401451; direct=00401451 STBoatC::sub_00483E30 */
+                iVar4 = STBoatC::sub_00483E30(this,(RecoveredRecord_STBoatC_00482DB0 *)param_1);
                 if (iVar4 == 1) {
                   /* ST_CALLSITE[00460546]: CALL 0x0040282e; direct=0040282E STTorpC::ClearDangerous */
                   STTorpC::ClearDangerous(param_1,STField<int>(this,0x18),local_8);
@@ -79,9 +82,9 @@ LAB_004604c9:
                     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
                     uVar6 = extraout_var;
                     uVar11 = 1;
-/* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable or function-table callback call with the machine-proven calling convention; expected named packed member, bit extract/compose, or unaligned load */
 LAB_00460581:
-                    /* ST_CALLSITE[0046058D]: CALL dword ptr [EDX + 0x18] */
+                    /* ST_CALLSITE[0046058D]: CALL dword ptr [EDX + 0x18]; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4 */
+                    /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable or function-table callback call with the machine-proven calling convention; expected named packed member, bit extract/compose, or unaligned load */
                     iVar7 = (**(code **)(iVar4 + 0x18))
                                       (CONCAT22(uVar6,STField<undefined2>(this,0x47)),
                                        STReplaceLowWord((uint32_t)(uVar5), (uint16_t)(STField<undefined2>(this,0x49))),uVar11);
@@ -93,11 +96,9 @@ LAB_00460581:
                   }
                   else if (sVar1 == 4) {
                     STField<undefined2>(this,0x469) = 0xffff;
-                    /* ST_CALLSITE[004605FB]: CALL dword ptr [EAX + 0x18] */
-                    /* ST_PSEUDO[return_width_artifact,raw_indirect_call]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected typed vtable or function-table callback call with the machine-proven calling convention */
-                    iVar7 = (**(code **)(*(int *)this + 0x18))
-                                      (CONCAT22(extraout_var_02,STField<undefined2>(this,0x47)),
-                                       CONCAT22(extraout_var,STField<undefined2>(this,0x49)),3);
+                    /* ST_CALLSITE[004605FB]: CALL dword ptr [EAX + 0x18]; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4 */
+                    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+                    iVar7 = STStructuralVirtualCall<undefined4>(this, 0x18, CONCAT22(extraout_var_02,STField<undefined2>(this,0x47)), CONCAT22(extraout_var,STField<undefined2>(this,0x49)), 3);
                     if (iVar7 != 1) break;
                     iVar8 = (int)STField<short>(this,0x49);
                     STField<undefined4>(this,0x82e) = 1;
@@ -113,12 +114,9 @@ LAB_00460581:
                     sVar1 = (short)iVar7;
                     STField<short>(this,0x469) = sVar1;
                     uVar6 = (undefined2)((uint)iVar7 >> 0x10);
-                    /* ST_CALLSITE[00460669]: CALL dword ptr [EDX + 0x18] */
-                    /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable or function-table callback call with the machine-proven calling convention; expected named packed member, bit extract/compose, or unaligned load */
-                    iVar7 = (**(code **)(*(int *)this + 0x18))
-                                      (CONCAT22(uVar6,STField<undefined2>(this,0x47)),
-                                       STReplaceLowWord((uint32_t)(iVar4), (uint16_t)(STField<undefined2>(this,0x49))),
-                                       CONCAT22(uVar6,sVar1 + STField<short>(this,0x4b)));
+                    /* ST_CALLSITE[00460669]: CALL dword ptr [EDX + 0x18]; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4 */
+                    /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                    iVar7 = STStructuralVirtualCall<undefined4>(this, 0x18, CONCAT22(uVar6,STField<undefined2>(this,0x47)), STReplaceLowWord((uint32_t)(iVar4), (uint16_t)(STField<undefined2>(this,0x49))), CONCAT22(uVar6,sVar1 + STField<short>(this,0x4b)));
                     if (iVar7 != 1) {
                       sVar1 = STField<short>(this,0x469);
                       iVar4 = *(int *)this;
@@ -172,14 +170,13 @@ LAB_00460581:
       STField<undefined4>(this,0x82e) = 0;
     }
   }
-  if ((STField<int>(this,0x82e) == 2) && (iVar7 = thunk_FUN_00483f10(this), iVar7 == 1)) {
+  /* ST_CALLSITE[004606CB]: CALL 0x00405e57; direct=00405E57 STBoatC::sub_00483F10 */
+  if ((STField<int>(this,0x82e) == 2) && (iVar7 = STBoatC::sub_00483F10(this), iVar7 == 1)) {
     sVar1 = STField<short>(this,0x469);
     STField<short>(this,0x469) = -sVar1;
-    /* ST_CALLSITE[004606F9]: CALL dword ptr [EDX + 0x18] */
-    /* ST_PSEUDO[return_width_artifact,raw_indirect_call]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar7 = (**(code **)(*(int *)this + 0x18))
-                      (CONCAT22(extraout_var_01,STField<undefined2>(this,0x47)),
-                       STField<undefined2>(this,0x49),-sVar1 + STField<short>(this,0x4b));
+    /* ST_CALLSITE[004606F9]: CALL dword ptr [EDX + 0x18]; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4 */
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    iVar7 = STStructuralVirtualCall<undefined4>(this, 0x18, CONCAT22(extraout_var_01,STField<undefined2>(this,0x47)), STField<undefined2>(this,0x49), -sVar1 + STField<short>(this,0x4b));
     if (iVar7 == 1) {
       STField<undefined4>(this,0x82e) = 3;
       /* ST_CALLSITE[00460725]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
@@ -207,9 +204,8 @@ LAB_00460581:
       STField<undefined4>(this,0x82e) = 0;
     }
   }
-  /* ST_CALLSITE[0046078E]: CALL dword ptr [EDX + 0xd8] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar7 = (**(code **)(*(int *)this + 0xd8))();
+  /* ST_CALLSITE[0046078E]: CALL dword ptr [EDX + 0xd8]; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+  iVar7 = STStructuralVirtualCall<undefined4>(this, 0xD8);
   return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
 }
 

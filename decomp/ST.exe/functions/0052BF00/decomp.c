@@ -26,7 +26,7 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
   LPSTR text;
   ushort *puVar9;
   int uVar12;
-  ushort *puVar7;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar7;
   int local_EAX_597;
   int local_EAX_719;
   int local_EAX_841;
@@ -38,9 +38,10 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
   uint uVar10;
   byte bVar11;
   int iVar12;
+  ushort *puVar13;
   char *text_00;
-  uint *puVar13;
-  uint uVar14;
+  uint *puVar14;
+  uint uVar15;
   InternalExceptionFrame local_bc;
   STMessage local_78;
   int local_58;
@@ -49,9 +50,9 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
   int local_4c;
   CHAR local_48 [8];
   CHAR local_40 [8];
-  undefined4 local_38 [4];
-  undefined4 local_28;
-  undefined4 local_24;
+  uint local_38 [4];
+  uint local_28;
+  uint local_24;
   CHAR local_18 [8];
   MoneyTy *local_10;
   uint local_c;
@@ -60,11 +61,13 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
   local_bc.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_bc;
   local_10 = this;
+
   local_EAX_48 = Library::MSVCRT::__setjmp3(local_bc.jumpBuffer,0);
   this_00 = local_10;
   if (local_EAX_48 == 0) {
     switch(message->id) {
     case MESS_ID_NONE:
+
       uVar13 = FUN_006e4d40(&DAT_00807620,local_10->field_000C);
       if (uVar13 == 1) {
         uVar10 = this_00->field_0086;
@@ -96,34 +99,37 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
           }
           this_00->field_0086 = iVar8;
           if (DAT_0080874e == '\x03') {
-            uVar14 = this_00->field_0086;
+            uVar15 = this_00->field_0086;
             text_00 = "%6d";
           }
           else {
-            uVar14 = this_00->field_0086;
+            uVar15 = this_00->field_0086;
             text_00 = "%5d";
           }
           /* ST_CALLSITE[0052C666]: CALL EDI */
-          wsprintfA(local_18,text_00,uVar14);
-          puVar7 = this_00->field_0072;
-          local_c = *(uint *)(puVar7 + 10);
+          wsprintfA(local_18,text_00,uVar15);
+          pRVar7 = (RecoveredRecord_006B4FA0_DAC3A217 *)this_00->field_0072;
+          local_c = *(uint *)&pRVar7[1].field_0x4;
           if (local_c == 0) {
-            local_c = ((uint)puVar7[7] * *(int *)(puVar7 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-                      *(int *)(puVar7 + 4);
+            local_c = ((uint)pRVar7->field_000E * *(int *)&pRVar7->field_0x4 + 0x1f >> 3 &
+                      0x1ffffffc) * *(int *)&pRVar7->field_0x8;
           }
           uVar1 = this_00->field_0069;
-          puVar13 = (undefined4 *)FUN_006b4fa0((int *)puVar7);
+
+          puVar14 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0(pRVar7));
           for (uVar10 = local_c >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-            *puVar13 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
-            puVar13 = puVar13 + 1;
+            *puVar14 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
+            puVar14 = puVar14 + 1;
           }
           for (uVar10 = local_c & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-            *(undefined1 *)puVar13 = uVar1;
-            puVar13 = (undefined4 *)((int)puVar13 + 1);
+            *(undefined1 *)puVar14 = uVar1;
+            puVar14 = (undefined4 *)((int)puVar14 + 1);
           }
-          puVar7 = this_00->field_0072;
-          ccFntTy::SetSurf(this_00->field_006A,(int)puVar7,0,0,0,*(int *)(puVar7 + 2),
-                           *(int *)(puVar7 + 4));
+          puVar13 = this_00->field_0072;
+
+          ccFntTy::SetSurf(this_00->field_006A,(int)puVar13,0,0,0,*(int *)(puVar13 + 2),
+                           *(int *)(puVar13 + 4));
+
           ccFntTy::WrStr(this_00->field_006A,local_18,-1,-1,
                          (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 5);
           /* ST_CALLSITE[0052C6F7]: CALL 0x00403666; direct=00403666 MoneyTy::sub_0052B8A0 */
@@ -159,25 +165,28 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
           this_00->field_008E = iVar8;
           /* ST_CALLSITE[0052C75C]: CALL EDI */
           wsprintfA(local_40,"%6d",iVar8);
-          puVar7 = this_00->field_0076;
-          local_c = *(uint *)(puVar7 + 10);
+          pRVar7 = (RecoveredRecord_006B4FA0_DAC3A217 *)this_00->field_0076;
+          local_c = *(uint *)&pRVar7[1].field_0x4;
           if (local_c == 0) {
-            local_c = ((uint)puVar7[7] * *(int *)(puVar7 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-                      *(int *)(puVar7 + 4);
+            local_c = ((uint)pRVar7->field_000E * *(int *)&pRVar7->field_0x4 + 0x1f >> 3 &
+                      0x1ffffffc) * *(int *)&pRVar7->field_0x8;
           }
           uVar1 = this_00->field_0069;
-          puVar13 = (undefined4 *)FUN_006b4fa0((int *)puVar7);
+
+          puVar14 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0(pRVar7));
           for (uVar10 = local_c >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-            *puVar13 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
-            puVar13 = puVar13 + 1;
+            *puVar14 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
+            puVar14 = puVar14 + 1;
           }
           for (uVar10 = local_c & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-            *(undefined1 *)puVar13 = uVar1;
-            puVar13 = (undefined4 *)((int)puVar13 + 1);
+            *(undefined1 *)puVar14 = uVar1;
+            puVar14 = (undefined4 *)((int)puVar14 + 1);
           }
-          puVar7 = this_00->field_0076;
-          ccFntTy::SetSurf(this_00->field_006A,(int)puVar7,0,0,0,*(int *)(puVar7 + 2),
-                           *(int *)(puVar7 + 4));
+          puVar13 = this_00->field_0076;
+
+          ccFntTy::SetSurf(this_00->field_006A,(int)puVar13,0,0,0,*(int *)(puVar13 + 2),
+                           *(int *)(puVar13 + 4));
+
           ccFntTy::WrStr(this_00->field_006A,local_40,-1,-1,
                          (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 4);
           /* ST_CALLSITE[0052C7ED]: CALL 0x00404949; direct=00404949 MoneyTy::sub_0052B8F0 */
@@ -213,25 +222,28 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
           this_00->field_0096 = iVar8;
           /* ST_CALLSITE[0052C852]: CALL EDI */
           wsprintfA(local_48,"%6d",iVar8);
-          puVar7 = this_00->field_007A;
-          local_c = *(uint *)(puVar7 + 10);
+          pRVar7 = (RecoveredRecord_006B4FA0_DAC3A217 *)this_00->field_007A;
+          local_c = *(uint *)&pRVar7[1].field_0x4;
           if (local_c == 0) {
-            local_c = ((uint)puVar7[7] * *(int *)(puVar7 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-                      *(int *)(puVar7 + 4);
+            local_c = ((uint)pRVar7->field_000E * *(int *)&pRVar7->field_0x4 + 0x1f >> 3 &
+                      0x1ffffffc) * *(int *)&pRVar7->field_0x8;
           }
           uVar1 = this_00->field_0069;
-          puVar13 = (undefined4 *)FUN_006b4fa0((int *)puVar7);
+
+          puVar14 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0(pRVar7));
           for (uVar10 = local_c >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-            *puVar13 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
-            puVar13 = puVar13 + 1;
+            *puVar14 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
+            puVar14 = puVar14 + 1;
           }
           for (uVar10 = local_c & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-            *(undefined1 *)puVar13 = uVar1;
-            puVar13 = (undefined4 *)((int)puVar13 + 1);
+            *(undefined1 *)puVar14 = uVar1;
+            puVar14 = (undefined4 *)((int)puVar14 + 1);
           }
-          puVar7 = this_00->field_007A;
-          ccFntTy::SetSurf(this_00->field_006A,(int)puVar7,0,0,0,*(int *)(puVar7 + 2),
-                           *(int *)(puVar7 + 4));
+          puVar13 = this_00->field_007A;
+
+          ccFntTy::SetSurf(this_00->field_006A,(int)puVar13,0,0,0,*(int *)(puVar13 + 2),
+                           *(int *)(puVar13 + 4));
+
           ccFntTy::WrStr(this_00->field_006A,local_48,-1,-1,
                          (-(uint)(DAT_0080874e != '\x03') & 0xfffffffb) + 7);
           /* ST_CALLSITE[0052C8E4]: CALL 0x0040146f; direct=0040146F MoneyTy::sub_0052B940 */
@@ -284,117 +296,131 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
       local_10->field_0038 = g_nWidth_00806730 + -99;
       local_10->field_003C = DAT_00806734 + -0x16;
       local_10->field_0069 = ((DAT_0080874e == '\x03') - 1U & 0xc3) + 0x3d;
-      /* ST_CALLSITE[0052C06D]: CALL 0x0070ceb0; direct=0070CEB0 ccFntTy::operator_new */
-      pcVar6 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
+      /* ST_CALLSITE[0052C06D]: CALL 0x0070ceb0; direct=0070CEB0 ccFntTy::operator_new; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/cMf32;pointer:/char;/byte */
+      pcVar6 = ccFntTy::operator_new(0x19d,g_cMf32_00806790,"MONEY_FONT",0);
       this_00->field_006A = pcVar6;
       pcVar6->field_0058 = 1;
       pcVar6->field_005C = 0;
-      /* ST_CALLSITE[0052C092]: CALL 0x0070ceb0; direct=0070CEB0 ccFntTy::operator_new */
-      pcVar6 = (ccFntTy *)ccFntTy::operator_new(0x19d,g_cMf32_00806790,"TIME_FONT",0);
+      /* ST_CALLSITE[0052C092]: CALL 0x0070ceb0; direct=0070CEB0 ccFntTy::operator_new; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/cMf32;pointer:/char;/byte */
+      pcVar6 = ccFntTy::operator_new(0x19d,g_cMf32_00806790,"TIME_FONT",0);
       this_00->field_006E = pcVar6;
       pcVar6->field_0058 = 1;
       pcVar6->field_005C = 0;
-      puVar13 = nullptr;
+      puVar14 = nullptr;
       iVar12 = 0;
       iVar8 = 1;
       bVar11 = 0;
       uVar10 = 0xffffffff;
+      /* ST_CALLSITE[0052C0AF]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       text = thunk_FUN_00571240("IND_PNT",0);
       puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
-                         (PTR_00806794,CASE_B,text,uVar10,bVar11,iVar8,iVar12,puVar13);
+                         (PTR_00806794,CASE_B,text,uVar10,bVar11,iVar8,iVar12,puVar14);
       this_00->field_0082 = puVar9;
-      puVar7 = PTR_0080679c + 0x14;
+      puVar13 = PTR_0080679c + 0x14;
       iVar8 = 1;
+
       uVar12 = FUN_006b4fe0(PTR_0080679c);
-      puVar7 = (ushort *)
+      pRVar7 = (RecoveredRecord_006B4FA0_DAC3A217 *)
+
                FUN_006b50c0(this_00->field_0040,this_00->field_0044,(uint)PTR_0080679c[7],uVar12,
-                            (undefined4 *)puVar7,iVar8);
-      this_00->field_0072 = puVar7;
-      local_c = *(uint *)(puVar7 + 10);
+                            (undefined4 *)puVar13,iVar8);
+      this_00->field_0072 = (ushort *)pRVar7;
+      local_c = *(uint *)&pRVar7[1].field_0x4;
       if (local_c == 0) {
-        local_c = ((uint)puVar7[7] * *(int *)(puVar7 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-                  *(int *)(puVar7 + 4);
+        local_c = ((uint)pRVar7->field_000E * *(int *)&pRVar7->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+                  *(int *)&pRVar7->field_0x8;
       }
       uVar1 = this_00->field_0069;
-      puVar13 = (undefined4 *)FUN_006b4fa0((int *)puVar7);
+
+      puVar14 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0(pRVar7));
       iVar8 = 1;
       for (uVar10 = local_c >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-        *puVar13 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
-        puVar13 = puVar13 + 1;
+        *puVar14 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
+        puVar14 = puVar14 + 1;
       }
       for (uVar10 = local_c & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-        *(undefined1 *)puVar13 = uVar1;
-        puVar13 = (undefined4 *)((int)puVar13 + 1);
+        *(undefined1 *)puVar14 = uVar1;
+        puVar14 = (undefined4 *)((int)puVar14 + 1);
       }
-      puVar7 = PTR_0080679c + 0x14;
+      puVar13 = PTR_0080679c + 0x14;
+
       local_EAX_597 = FUN_006b4fe0(PTR_0080679c);
-      puVar7 = (ushort *)
+      pRVar7 = (RecoveredRecord_006B4FA0_DAC3A217 *)
+
                FUN_006b50c0(this_00->field_0048,this_00->field_004C,(uint)PTR_0080679c[7],
-                            local_EAX_597,(undefined4 *)puVar7,iVar8);
-      this_00->field_0076 = puVar7;
-      local_c = *(uint *)(puVar7 + 10);
+                            local_EAX_597,(undefined4 *)puVar13,iVar8);
+      this_00->field_0076 = (ushort *)pRVar7;
+      local_c = *(uint *)&pRVar7[1].field_0x4;
       if (local_c == 0) {
-        local_c = ((uint)puVar7[7] * *(int *)(puVar7 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-                  *(int *)(puVar7 + 4);
+        local_c = ((uint)pRVar7->field_000E * *(int *)&pRVar7->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+                  *(int *)&pRVar7->field_0x8;
       }
       uVar1 = this_00->field_0069;
-      puVar13 = (undefined4 *)FUN_006b4fa0((int *)puVar7);
+
+      puVar14 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0(pRVar7));
       iVar8 = 1;
       for (uVar10 = local_c >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-        *puVar13 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
-        puVar13 = puVar13 + 1;
+        *puVar14 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
+        puVar14 = puVar14 + 1;
       }
       for (uVar10 = local_c & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-        *(undefined1 *)puVar13 = uVar1;
-        puVar13 = (undefined4 *)((int)puVar13 + 1);
+        *(undefined1 *)puVar14 = uVar1;
+        puVar14 = (undefined4 *)((int)puVar14 + 1);
       }
-      puVar7 = PTR_0080679c + 0x14;
+      puVar13 = PTR_0080679c + 0x14;
+
       local_EAX_719 = FUN_006b4fe0(PTR_0080679c);
-      puVar7 = (ushort *)
+      pRVar7 = (RecoveredRecord_006B4FA0_DAC3A217 *)
+
                FUN_006b50c0(this_00->field_0050,this_00->field_0054,(uint)PTR_0080679c[7],
-                            local_EAX_719,(undefined4 *)puVar7,iVar8);
-      this_00->field_007A = puVar7;
-      local_c = *(uint *)(puVar7 + 10);
+                            local_EAX_719,(undefined4 *)puVar13,iVar8);
+      this_00->field_007A = (ushort *)pRVar7;
+      local_c = *(uint *)&pRVar7[1].field_0x4;
       if (local_c == 0) {
-        local_c = ((uint)puVar7[7] * *(int *)(puVar7 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-                  *(int *)(puVar7 + 4);
+        local_c = ((uint)pRVar7->field_000E * *(int *)&pRVar7->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+                  *(int *)&pRVar7->field_0x8;
       }
       uVar1 = this_00->field_0069;
-      puVar13 = (undefined4 *)FUN_006b4fa0((int *)puVar7);
+
+      puVar14 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0(pRVar7));
       iVar8 = 1;
       for (uVar10 = local_c >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-        *puVar13 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
-        puVar13 = puVar13 + 1;
+        *puVar14 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
+        puVar14 = puVar14 + 1;
       }
       for (uVar10 = local_c & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-        *(undefined1 *)puVar13 = uVar1;
-        puVar13 = (undefined4 *)((int)puVar13 + 1);
+        *(undefined1 *)puVar14 = uVar1;
+        puVar14 = (undefined4 *)((int)puVar14 + 1);
       }
-      puVar7 = PTR_0080679c + 0x14;
+      puVar13 = PTR_0080679c + 0x14;
+
       local_EAX_841 = FUN_006b4fe0(PTR_0080679c);
-      puVar7 = (ushort *)
+      pRVar7 = (RecoveredRecord_006B4FA0_DAC3A217 *)
+
                FUN_006b50c0(this_00->field_0060,this_00->field_0064,(uint)PTR_0080679c[7],
-                            local_EAX_841,(undefined4 *)puVar7,iVar8);
-      this_00->field_007E = puVar7;
-      local_c = *(uint *)(puVar7 + 10);
+                            local_EAX_841,(undefined4 *)puVar13,iVar8);
+      this_00->field_007E = (ushort *)pRVar7;
+      local_c = *(uint *)&pRVar7[1].field_0x4;
       if (local_c == 0) {
-        local_c = ((uint)puVar7[7] * *(int *)(puVar7 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-                  *(int *)(puVar7 + 4);
+        local_c = ((uint)pRVar7->field_000E * *(int *)&pRVar7->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+                  *(int *)&pRVar7->field_0x8;
       }
       uVar1 = this_00->field_0069;
-      puVar13 = (undefined4 *)FUN_006b4fa0((int *)puVar7);
+
+      puVar14 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0(pRVar7));
       for (uVar10 = local_c >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-        *puVar13 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
-        puVar13 = puVar13 + 1;
+        *puVar14 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
+        puVar14 = puVar14 + 1;
       }
       for (uVar10 = local_c & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-        *(undefined1 *)puVar13 = uVar1;
-        puVar13 = (undefined4 *)((int)puVar13 + 1);
+        *(undefined1 *)puVar14 = uVar1;
+        puVar14 = (undefined4 *)((int)puVar14 + 1);
       }
       memset(local_38, 0, 0x20); /* compiler bulk-zero initialization */
       iVar8 = 0;
       local_24 = this_00->field_0008;
       local_28 = 0x13;
+
       FUN_006e6000(this_00,3,1,local_38);
       this_00->field_0086 = 1;
       this_00->field_008E = 1;
@@ -409,15 +435,17 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
       }
       g_money_008016D4 = this_00;
       if (g_allPlayers_007FA174 != nullptr) {
-        thunk_FUN_004d8b70(DAT_0080874d);
+        /* ST_CALLSITE[0052C364]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+        STAllPlayersC::sub_004D8B70(g_allPlayers_007FA174,DAT_0080874d);
       }
       break;
     case MESS_SHARED_0003:
       g_money_008016D4 = nullptr;
-      uVar14 = local_10->field_0008;
+      uVar15 = local_10->field_0008;
       memset(local_38, 0, 0x20); /* compiler bulk-zero initialization */
       local_28 = 0x14;
-      local_24 = uVar14;
+      local_24 = uVar15;
+
       FUN_006e6000(this_00,3,1,local_38);
       if (this_00->field_0072 != nullptr) {
         FreeAndNull(&this_00->field_0072);
@@ -528,7 +556,7 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
         if (local_10->field_0068 != 0) {
           local_78.id = MESS_CURSORCLASSTY_4202;
           /* ST_CALLSITE[0052C563]: CALL 0x00403af3; direct=00403AF3 MoneyTy::sub_0052B760 */
-          sub_0052B760(local_10,(AnonShape_0052B760_30F4E0D5 *)&local_78);
+          sub_0052B760(local_10,(RecoveredRecordView_0052B760_26CB92BA *)&local_78);
           /* ST_CALLSITE[0052C574]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
           g_cursorClass_00802A30->GetMessage(&local_78);
         }
@@ -536,17 +564,19 @@ int __thiscall MoneyTy::GetMessage(MoneyTy *this,STMessage *message)
         if (MVar9 != 0) {
           local_78.id = MESS_CURSORCLASSTY_4201;
           /* ST_CALLSITE[0052C58E]: CALL 0x00403af3; direct=00403AF3 MoneyTy::sub_0052B760 */
-          sub_0052B760(this_00,(AnonShape_0052B760_30F4E0D5 *)&local_78);
+          sub_0052B760(this_00,(RecoveredRecordView_0052B760_26CB92BA *)&local_78);
           /* ST_CALLSITE[0052C59F]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
           g_cursorClass_00802A30->GetMessage(&local_78);
         }
       }
     }
     g_currentExceptionFrame = local_bc.previous;
+
     iVar7 = FUN_006e5fd0(this_00,message);
     return iVar7;
   }
   g_currentExceptionFrame = local_bc.previous;
+
   iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\money.cpp",0x12a,0,local_EAX_48,
                              "%s","MoneyTy::GetMessage");
   if (iVar9 != 0) {

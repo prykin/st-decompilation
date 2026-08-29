@@ -16,39 +16,43 @@ TLOBaseTy::sub_004C7860
           (TLOBaseTy *this,int param_1,uint param_2,int param_3,int param_4,int param_5)
 
 {
-  byte uVar1;
-  bool bVar2;
+  bool bVar1;
   int local_EAX_52;
   int iVar3;
+  int iVar2;
   int iVar4;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined3 extraout_var;
   int local_EAX_285;
   dword dVar5;
   int iVar5;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined3 extraout_var_00;
+  undefined3 extraout_var;
   int iVar6;
   byte *pbVar7;
 
   iVar6 = 0;
   switch(param_1 + -1) {
   case 0:
+
     local_EAX_52 = thunk_FUN_004e6a80(this->field_0024,param_2);
     if ((local_EAX_52 != 0) && (this->field_05B8 < g_worldGrid.sizeZ + -1))
     goto switchD_004c787f_caseD_2;
     break;
   case 1:
+
     iVar3 = thunk_FUN_004e5910((int)this->field_0024,param_2);
     if (iVar3 == 0) {
-      iVar4 = thunk_FUN_004e60d0((int)this->field_0024,param_2);
-      iVar4 = thunk_FUN_004e7f20((int)this->field_0024,param_2,iVar4 + 1);
-      if (iVar4 == 0) break;
+
+      iVar2 = thunk_FUN_004e60d0((int)this->field_0024,param_2);
+      /* ST_CALLSITE[004C78F5]: CALL 0x00402342; direct=00402342 STAllPlayersC::sub_004E7F20 */
+      iVar2 = STAllPlayersC::sub_004E7F20
+                        (g_allPlayers_007FA174,(int)this->field_0024,param_2,iVar2 + 1);
+      if (iVar2 == 0) break;
     }
-    uVar1 = thunk_FUN_004e6140((int)this->field_0024,param_2);
+
+    iVar2 = thunk_FUN_004e6140((int)this->field_0024,param_2);
+
     iVar4 = thunk_FUN_004e60d0((int)this->field_0024,param_2);
-    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-    if (iVar4 < CONCAT31(extraout_var,uVar1)) {
+    if (iVar4 < iVar2) {
       iVar6 = 1;
       goto LAB_004c796d;
     }
@@ -71,6 +75,7 @@ switchD_004c787f_caseD_2:
     pbVar7 = this->field_0024;
     iVar6 = 0x75;
 LAB_004c795c:
+
     iVar6 = thunk_FUN_004e60d0((int)pbVar7,iVar6);
 LAB_004c7967:
     if (iVar6 != 0) {
@@ -95,7 +100,7 @@ LAB_004c796d:
   }
   iVar6 = 0;
   /* ST_CALLSITE[004C79C5]: CALL dword ptr [EAX + 0xf8] */
-  dVar5 = this->slot_F8();
+  dVar5 = this->vfunc_F8();
   if (dVar5 == 0) {
     return 0;
   }
@@ -109,14 +114,15 @@ LAB_004c796d:
     if (*(int *)&this->field_0x361 != 0) {
       return 0;
     }
+
     iVar5 = thunk_FUN_004e5f90((int)this->field_0024,param_2);
     if (iVar5 != 0) {
       return 0;
     }
     if ((&PTR_DAT_007bfc04)[this->field_0239][param_2] != '\0') {
-      bVar2 = thunk_FUN_004e5c40(this->field_0024,param_2);
+      bVar1 = thunk_FUN_004e5c40(this->field_0024,param_2);
       /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-      if (CONCAT31(extraout_var_00,bVar2) == 0) {
+      if (CONCAT31(extraout_var,bVar1) == 0) {
         return 0;
       }
       return 1;
@@ -130,8 +136,8 @@ LAB_004c796d:
     break;
   case 4:
     /* ST_CALLSITE[004C7A7A]: CALL dword ptr [EDX + 0x7c] */
-    iVar4 = this->sub_004BE380();
-    if (iVar4 == 100) {
+    iVar2 = this->sub_004BE380();
+    if (iVar2 == 100) {
       return 0;
     }
   case 5:
@@ -140,16 +146,19 @@ LAB_004c796d:
     }
     break;
   case 6:
-    iVar4 = thunk_FUN_004e1490((STBoatC *)this);
-    if (iVar4 != 0) {
+
+    iVar2 = thunk_FUN_004e1490((STBoatC *)this);
+    if (iVar2 != 0) {
       if (param_2 == 0xdd) {
-        iVar4 = thunk_FUN_004d89b0(*(char *)&this->field_0024);
-        if (param_3 <= iVar4) {
+
+        iVar2 = thunk_FUN_004d89b0(*(char *)&this->field_0024);
+        if (param_3 <= iVar2) {
           return 1;
         }
       }
       else if ((param_2 == 0xde) &&
-              (iVar4 = thunk_FUN_004d8af0(*(char *)&this->field_0024), param_3 <= iVar4)) {
+
+              (iVar2 = thunk_FUN_004d8af0(*(char *)&this->field_0024), param_3 <= iVar2)) {
         return 1;
       }
     }

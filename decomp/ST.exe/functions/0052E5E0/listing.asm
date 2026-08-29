@@ -24,7 +24,8 @@ OptPanelTy::InitOptPanel:
 0052E623  8B 48 28                  MOV ECX,dword ptr [EAX + 0x28]
 0052E626  51                        PUSH ECX
 0052E627  68 9D 01 00 00            PUSH 0x19d
-0052E62C  E8 CF F8 1D 00            CALL 0x0070df00
+OptPanelTy::InitOptPanel::override::prt_52e62c_bb1a54ff:
+0052E62C  E8 CF F8 1D 00            CALL 0x0070df00  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/ccFntTy
 0052E631  89 86 7C 01 00 00         MOV dword ptr [ESI + 0x17c],EAX
 0052E637  89 78 58                  MOV dword ptr [EAX + 0x58],EDI
 0052E63A  89 78 5C                  MOV dword ptr [EAX + 0x5c],EDI
@@ -32,7 +33,8 @@ OptPanelTy::InitOptPanel:
 0052E643  8B 42 2C                  MOV EAX,dword ptr [EDX + 0x2c]
 0052E646  50                        PUSH EAX
 0052E647  68 9D 01 00 00            PUSH 0x19d
-0052E64C  E8 AF F8 1D 00            CALL 0x0070df00
+OptPanelTy::InitOptPanel::override::prt_52e64c_bb1a54ff:
+0052E64C  E8 AF F8 1D 00            CALL 0x0070df00  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/ccFntTy
 0052E651  83 C4 10                  ADD ESP,0x10
 0052E654  89 86 80 01 00 00         MOV dword ptr [ESI + 0x180],EAX
 0052E65A  C7 40 58 01 00 00 00      MOV dword ptr [EAX + 0x58],0x1
@@ -89,7 +91,7 @@ OptPanelTy::InitOptPanel:
 0052E6FF  57                        PUSH EDI
 0052E700  68 78 20 7C 00            PUSH 0x7c2078
 0052E705  89 86 94 01 00 00         MOV dword ptr [ESI + 0x194],EAX
-0052E70B  E8 6C 70 ED FF            CALL 0x0040577c
+0052E70B  E8 6C 70 ED FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 0052E710  8B 0D 94 67 80 00         MOV ECX,dword ptr [0x00806794]
 0052E716  83 C4 08                  ADD ESP,0x8
 0052E719  50                        PUSH EAX
@@ -111,7 +113,8 @@ OptPanelTy::InitOptPanel:
 0052E74A  51                        PUSH ECX
 0052E74B  6A 0B                     PUSH 0xb
 0052E74D  68 DE 00 00 00            PUSH 0xde
-0052E752  E8 69 69 18 00            CALL 0x006b50c0
+OptPanelTy::InitOptPanel::override::prt_52e752_899bc419:
+0052E752  E8 69 69 18 00            CALL 0x006b50c0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ushort; signature=__stdcall;pointer:/ushort;/int;/int;/int;/uint;pointer:/undefined4;/int
 0052E757  6A 01                     PUSH 0x1
 0052E759  6A 01                     PUSH 0x1
 0052E75B  57                        PUSH EDI

@@ -17,7 +17,8 @@
    Evidence: exact anonymous structure fingerprint shared across functions */
 
 uint * __cdecl
-FUN_0068cec0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *param_3,undefined *param_4)
+FUN_0068cec0(LPCSTR lpFileName,RecoveredRecordView_00683C70_9F6EAF4E *param_2,int *param_3,
+            undefined *param_4)
 
 {
   char cVar1;
@@ -86,55 +87,66 @@ FUN_0068cec0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *param_3
   uVar8 = 0;
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
+
   local_EAX_114 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
   if (local_EAX_114 == 0) {
     if (lpFileName == (LPCSTR)0x0) {
       RaiseInternalException
                 (-6,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa39);
     }
+
     thunk_FUN_00672b60(lpFileName,
-                       (AnonShape_GLOBAL_0081194C_4D1525E6 *)&PTR_thunk_FUN_00680270_007d3fa8);
+                       (RecoveredGlobalRecordView_0081194C *)&PTR_thunk_FUN_00680270_007d3fa8);
     g_currentExceptionFrame = &local_74;
     local_74.previous = local_b8.previous;
+
     iVar3 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0);
     if (iVar3 == 0) {
       thunk_FUN_006729b0(this,1);
       thunk_FUN_006729f0(this_00,1);
       thunk_FUN_00672a30(this_01,0);
       thunk_FUN_00672a70(this_02,0);
+
       thunk_FUN_00672930(1);
       thunk_FUN_00672970(this_03,1);
+
       thunk_FUN_006728f0((undefined4 *)&DAT_007d3f78);
       thunk_FUN_00680040();
       if (param_2 == nullptr) {
         RaiseInternalException
                   (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa55);
       }
+
       iVar4 = thunk_FUN_0067f030("_main_path",(char *)param_2,nullptr);
       if (iVar4 == 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa56);
       }
+
       iVar4 = thunk_FUN_0067f030("_inc_path",&param_2->field_0x104,nullptr);
       if (iVar4 == 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa57);
       }
+
       iVar4 = thunk_FUN_0067f030("_maps_path",&param_2->field_0x208,nullptr);
       if (iVar4 == 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa58);
       }
+
       uVar7 = thunk_FUN_0067f740("_env_var0",param_2->field_030C);
       if ((int)uVar7 < 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa59);
       }
+
       local_EAX_499 = thunk_FUN_0067f740("_env_var1",param_2->field_0310);
       if ((int)local_EAX_499 < 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa5a);
       }
+
       local_EAX_547 = thunk_FUN_0067f740("_env_var2",param_2->field_0314);
       if ((int)local_EAX_547 < 0) {
         RaiseInternalException
@@ -145,6 +157,7 @@ FUN_0068cec0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *param_3
       Library::MSVCRT::FUN_0072e730
                 (&DAT_0084868c,&DAT_008478a8,&DAT_00848790,&DAT_0084858c,(byte *)&DAT_00811990);
       Library::MSVCRT::__makepath(&DAT_0084868c,&DAT_008478a8,&DAT_00848790,nullptr,nullptr);
+
       iVar4 = thunk_FUN_0067f030("_curr_path",&DAT_0084868c,nullptr);
       if (iVar4 == 0) {
         RaiseInternalException
@@ -152,7 +165,9 @@ FUN_0068cec0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *param_3
       }
       puVar18 = nullptr;
       pcVar17 = &DAT_0084868c;
+      /* ST_CALLSITE[0068D18B]: CALL 0x00401aa5; direct=00401AA5 thunk_FUN_0067ece0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       pbVar5_mg0 = thunk_FUN_0067ece0(DAT_00848a24);
+
       iVar4 = thunk_FUN_0067f030((char *)pbVar5_mg0,pcVar17,puVar18);
       if (iVar4 == 0) {
         RaiseInternalException
@@ -160,11 +175,15 @@ FUN_0068cec0(LPCSTR lpFileName,AnonShape_00683C70_22193481 *param_2,int *param_3
       }
       pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,0x32,0x32);
       local_8 = pDVar5;
+
       Library::DKW::TBL::FUN_006b5aa0(pDVar5,s_include<[_inc_path]_AiScript_dfn_007d56b4);
+
       Library::DKW::TBL::FUN_006b5aa0(pDVar5,s_include<[_inc_path]_AiScript_mcr_007d5688);
+
       Library::DKW::TBL::FUN_006b5aa0(pDVar5,&CHAR_00h_008016a0);
       iVar4 = local_10;
 cf_continue_loop_0068D1EB:
+
       iVar6 = thunk_FUN_006736f0();
       if (iVar6 < 0) {
         RaiseInternalException
@@ -217,8 +236,10 @@ cf_continue_loop_0068D1EB:
                     );
         }
         thunk_FUN_00680070();
+
         iVar17 = thunk_FUN_00672f00();
         while (iVar17 != 0) {
+
           iVar17 = thunk_FUN_00672f00();
         }
         g_currentExceptionFrame = local_74.previous;
@@ -288,6 +309,7 @@ cf_continue_loop_0068D1EB:
                        0xaa5);
           }
           if (iVar4 < DAT_00857554) {
+
             Library::DKW::TBL::FUN_006b5aa0(local_8,local_10bc);
             Library::MSVCRT::_strncpy(local_10bc,PTR_0085755c,0x1000);
             local_10 = DAT_00857554;
@@ -320,7 +342,9 @@ cf_continue_loop_0068D1EB:
           pcVar15 = pcVar14 + -1;
           memmove(pcVar15, pcVar17, uVar6); /* compiler REP MOVS byte copy */
           uVar8 = 0;
+
           Library::DKW::TBL::FUN_006b5aa0(local_8,local_10bc);
+
           Library::DKW::TBL::FUN_006b5aa0(pDVar5,&CHAR_00h_008016a0);
           iVar4 = -1;
           local_c = 0;
@@ -391,6 +415,7 @@ cf_continue_loop_0068D1EB:
                     );
         }
         if (iVar4 < DAT_00857554) {
+
           Library::DKW::TBL::FUN_006b5aa0(local_8,local_10bc);
           Library::MSVCRT::_strncpy(local_10bc,PTR_0085755c,0x1000);
           local_10 = DAT_00857554;
@@ -448,7 +473,9 @@ cf_continue_loop_0068D1EB:
         pcVar15 = pcVar14 + -1;
         memmove(pcVar15, pcVar17, uVar6); /* compiler REP MOVS byte copy */
         uVar8 = 0;
+
         Library::DKW::TBL::FUN_006b5aa0(local_8,local_10bc);
+
         Library::DKW::TBL::FUN_006b5aa0(pDVar5,&CHAR_00h_008016a0);
         iVar4 = -1;
         local_c = 0;
@@ -456,6 +483,7 @@ cf_continue_loop_0068D1EB:
         goto cf_continue_loop_0068D1EB;
       }
       if ((-1 < iVar4) && (iVar4 < DAT_00857554)) {
+
         Library::DKW::TBL::FUN_006b5aa0(local_8,local_10bc);
         Library::MSVCRT::_strncpy(local_10bc,PTR_0085755c,0x1000);
         local_10 = DAT_00857554;
@@ -500,9 +528,11 @@ cf_continue_loop_0068D1EB:
     }
     local_8 = nullptr;
     thunk_FUN_00680070();
+
     local_EAX_2325 = thunk_FUN_00672f00();
     if (local_EAX_2325 != 0) {
       do {
+
         local_EAX_2338 = thunk_FUN_00672f00();
       } while (local_EAX_2338 != 0);
       return nullptr;

@@ -39,10 +39,12 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
+
   local_EAX_35 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_8;
   if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\nick\\to_volc.cpp",0x121,0,local_EAX_35,
                                "%s","STVolcanoC::GetMessage");
     if (iVar6 == 0) {
@@ -64,7 +66,8 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
       case CASE_1:
         if (local_8->field_00A4 < g_playSystem_00802A38->field_00E4) {
           local_8->field_009C = g_playSystem_00802A38->field_00E4;
-          thunk_FUN_00647370((AnonShape_00647370_C4EFCC30 *)local_8);
+          thunk_FUN_00647370((RecoveredRecordView_00647370_DB694E9C *)local_8);
+
           local_EAX_406 =
                thunk_FUN_00646e00(this_00->field_0065,this_00->field_0069,this_00->field_006D);
           if (local_EAX_406 != 0) {
@@ -153,6 +156,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
           thunk_FUN_006473e0(this_00,0);
         }
         if (this_00->field_00A8 == '\0') {
+
           local_EAX_1518 =
                thunk_FUN_00646e00(this_00->field_0065,this_00->field_0069,this_00->field_006D);
           if (local_EAX_1518 != 0) {
@@ -164,7 +168,7 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
           }
         }
         else if (this_00->field_00A9 == CASE_2) {
-          thunk_FUN_00647960((int)this_00);
+          thunk_FUN_00647960((RecoveredRecord_STVolcanoC_00647960 *)this_00);
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
@@ -200,10 +204,11 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
           thunk_FUN_006473e0(this_00,1);
         }
         if (this_00->field_00A8 != '\0') {
-          thunk_FUN_00647960((int)this_00);
+          thunk_FUN_00647960((RecoveredRecord_STVolcanoC_00647960 *)this_00);
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
+
         local_EAX_1859 =
              thunk_FUN_00646e00(this_00->field_0065,this_00->field_0069,this_00->field_006D);
         if (local_EAX_1859 != 0) {
@@ -236,10 +241,11 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
             local_8->field_008A = 0;
           }
           if (local_8->field_00A8 != '\0') {
-            thunk_FUN_00647960((int)local_8);
+            thunk_FUN_00647960((RecoveredRecord_STVolcanoC_00647960 *)local_8);
             g_currentExceptionFrame = local_54.previous;
             return 0;
           }
+
           iVar5 = thunk_FUN_00646e00(local_8->field_0065,local_8->field_0069,local_8->field_006D);
           if (iVar5 != 0) {
             this_00->field_00A8 = 1;
@@ -251,7 +257,8 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
         }
         break;
       case CASE_5:
-        thunk_FUN_00646d00(local_8);
+
+        thunk_FUN_00646d00((RecoveredRecord_00646D00_34D7A97E *)local_8);
         g_currentExceptionFrame = local_54.previous;
         return 0;
       case CASE_6:
@@ -283,13 +290,14 @@ int __thiscall STVolcanoC::GetMessage(STVolcanoC *this,STMessage *message)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      thunk_FUN_00646d00(this_00);
+
+      thunk_FUN_00646d00((RecoveredRecord_00646D00_34D7A97E *)this_00);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
   }
   else if (SVar2 == MESS_SHARED_010F) {
-    /* ST_CALLSITE[0064699A]: CALL 0x00403f35; direct=00403F35 STVolcanoC::sub_00646D40 */
+    /* ST_CALLSITE[0064699A]: CALL 0x00403f35; direct=00403F35 STVolcanoC::sub_00646D40; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
     local_10 = sub_00646D40(local_8,&local_c);
     /* ST_CALLSITE[006469B1]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);

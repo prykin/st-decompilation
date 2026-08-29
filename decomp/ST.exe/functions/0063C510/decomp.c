@@ -27,22 +27,26 @@ int __thiscall FUN_0063c510(void *this,int param_1)
       STField<int>(this,0x26e) = STField<int>(this,0x282);
     }
     if (STField<int>(this,0x26e) < 1000) {
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
-                ((AnonReceiver_00601500 *)((int)this + 899),STField<int>(this,0x266),
+
+      SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00601500::thunk_FUN_00601500
+                ((RecoveredReceiver_00601500 *)((int)this + 899),STField<int>(this,0x266),
                  STField<int>(this,0x26a),STField<int>(this,0x26e),STField<int>(this,0x272)
                  ,STField<int>(this,0x276),STField<int>(this,0x27a),
                  STField<int>(this,0x235),50000,STField<int>(this,0x25d),
                  STField<ushort>(this,0x261),0xa8,0,0);
     }
   }
+
   iVar4 = thunk_FUN_0063cb30(this);
   if (iVar4 == 3) {
     if ((STField<char>(this,0x29e) == '\x04') || (STField<char>(this,0x29e) == '\x01')) {
       this_00 = (STT3DSprC *)((int)this + 0x1d5);
+
       thunk_FUN_004abce0(this_00,0xd,0,0x13,'\0');
       /* ST_CALLSITE[0063C664]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow(this_00,0xd,g_playSystem_00802A38->field_00E4);
       STField<undefined1>(this,0x29f) = 1;
+
       thunk_FUN_004ac6b0(this_00,'\r');
       /* ST_CALLSITE[0063C693]: CALL 0x00403107; direct=00403107 sub_00416240 */
       sub_00416240(this,STField<ushort>(this,0x266),STField<short>(this,0x26a),
@@ -74,7 +78,8 @@ int __thiscall FUN_0063c510(void *this,int param_1)
           }
         }
         else if (STField<char>(this,0x29f) != '\0') {
-          thunk_FUN_004ad430((STT3DSprC *)((int)this + 0x1d5));
+          /* ST_CALLSITE[0063C7E3]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+          STT3DSprC::sub_004AD430((STT3DSprC *)((int)this + 0x1d5));
           STField<undefined1>(this,0x29f) = 0;
         }
       }

@@ -4,9 +4,13 @@
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_006686F0_param_1Enum. Cases:
    CASE_320=800;CASE_321=801;CASE_384=900;CASE_385=901;CASE_386=902;CASE_387=903;CASE_388=904;CASE_389=905;CASE_38A=906;CASE_38C=908;CASE_38D=909;CASE_38E=910;CASE_38F=911;CASE_7D1=2001;CASE_7D2=2002;CASE_7D3=2003;CASE_7D4=2004;CASE_7D6=2006;CASE_7D7=2007;CASE_7DA=2010;CASE_7DC=2012;CASE_7DD=2013;CASE_7DE=2014;CASE_7E4=2020;CASE_7E5=2021;CASE_7E6=2022;CASE_7E7=2023;CASE_7E8=2024;CASE_7E9=2025;CASE_7EA=2026;CASE_7EB=2027;CASE_7EC=2028;CASE_7ED=2029;CASE_7EE=2030;CASE_7EF=2031;CASE_7F0=2032;CASE_7F2=2034;CASE_7F3=2035;CASE_7F4=2036;CASE_7F5=2037;CASE_7F6=2038;CASE_7F7=2039;CASE_7F8=2040;CASE_7F9=2041;CASE_7FA=2042;CASE_7FB=2043;CASE_7FC=2044;CASE_80C=2060;CASE_80D=2061;CASE_80E=2062;CASE_80F=2063;CASE_810=2064;CASE_816=2070;CASE_817=2071;CASE_818=2072;CASE_819=2073;CASE_81A=2074;CASE_81B=2075;CASE_81C=2076;CASE_81D=2077;CASE_82A=2090;CASE_82B=2091;CASE_82C=2092;CASE_82D=2093;CASE_82E=2094;CASE_82F=2095;CASE_830=2096;CASE_831=2097;CASE_848=2120;CASE_849=2121;CASE_84A=2122;CASE_84B=2123;CASE_84C=2124;CASE_84D=2125
-    */
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (4), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00671F10 @ 00671FEA -> read as EAX on
+   every CFG path | 006823E0 @ 00682455 -> read as EAX on every CFG path | 00682850 @ 00682886 ->
+   read as EAX on every CFG path | 00682DF0 @ 00682E39 -> read as EAX on every CFG path */
 
-undefined4 __cdecl FUN_006686f0(Global_sub_006686F0_param_1Enum param_1)
+int __cdecl FUN_006686f0(Global_sub_006686F0_param_1Enum param_1)
 
 {
   if (0x7f1 < (int)param_1) {
@@ -113,7 +117,7 @@ switchD_006687a8_caseD_7f2:
           goto cf_common_exit_00668754;
         default:
 cf_common_exit_006687E7:
-          return 0xffffffff;
+          return -1;
         }
       }
       if (param_1 != 2000) {

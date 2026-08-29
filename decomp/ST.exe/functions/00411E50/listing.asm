@@ -103,7 +103,7 @@ LAB_00411f96:
 00411FA3  8B C3                     MOV EAX,EBX
 00411FA5  C1 E0 05                  SHL EAX,0x5
 00411FA8  50                        PUSH EAX
-00411FA9  E8 C2 8C 29 00            CALL 0x006aac70
+00411FA9  E8 C2 8C 29 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 00411FAE  89 45 AC                  MOV dword ptr [EBP + -0x54],EAX
 00411FB1  53                        PUSH EBX
 00411FB2  50                        PUSH EAX
@@ -634,7 +634,7 @@ LAB_00412604:
 00412622  57                        PUSH EDI
 00412623  8B 55 AC                  MOV EDX,dword ptr [EBP + -0x54]
 00412626  52                        PUSH EDX
-00412627  E8 24 A9 29 00            CALL 0x006acf50
+00412627  E8 24 A9 29 00            CALL 0x006acf50  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 0041262C  89 45 AC                  MOV dword ptr [EBP + -0x54],EAX
 0041262F  56                        PUSH ESI
 00412630  50                        PUSH EAX

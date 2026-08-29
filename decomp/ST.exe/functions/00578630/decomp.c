@@ -38,12 +38,12 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
   byte *pbVar15;
   InternalExceptionFrame local_80;
   void *local_3c;
-  undefined4 local_38;
-  undefined4 local_34;
+  uint local_38;
+  uint local_34;
   ushort *local_30;
-  undefined4 local_2c;
-  undefined4 local_28;
-  undefined4 local_24;
+  uint local_2c;
+  uint local_28;
+  uint local_24;
   undefined4 *local_20;
   STCrabC *local_1c;
   byte *local_18;
@@ -58,10 +58,12 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_1c = this;
+
   local_EAX_70 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   this_00 = local_1c;
   if (local_EAX_70 != 0) {
     g_currentExceptionFrame = local_80.previous;
+
     iVar8 = ReportDebugMessage("E:\\__titans\\Igor\\to_crab.cpp",0x1b7,0,local_EAX_70,
                                "%s","STCrabC::GetMessage");
     if (iVar8 != 0) {
@@ -93,15 +95,17 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
+
     uVar10 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
     Library::Ourlib::ST3DSMAP::SprHide((void *)this_00->field_0211,uVar10);
     goto LAB_00578ea2;
   }
   if (SVar1 == MESS_SHARED_010F) {
     /* ST_CALLSITE[00578CA8]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
-    local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
+    local_14 = STPointerBoundaryCast<byte *>(STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8));
     /* ST_CALLSITE[00578CB6]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
-    local_18 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
+    local_18 = STPointerBoundaryCast<byte *>(STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10));
+
     local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x68 + local_8);
     if (local_14 == nullptr) {
       g_currentExceptionFrame = local_80.previous;
@@ -170,7 +174,7 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
-    thunk_FUN_00579350((AnonShape_00579350_2E014C47 *)this_00);
+    thunk_FUN_00579350((RecoveredRecordView_00579350_91ECCCD1 *)this_00);
     g_currentExceptionFrame = local_80.previous;
     return 0;
   }
@@ -179,6 +183,7 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
+
     thunk_FUN_0058d080(this_00->field_0018);
     thunk_FUN_004ad310((STT3DSprC *)&this_00->field_01D5);
     g_currentExceptionFrame = local_80.previous;
@@ -201,9 +206,11 @@ int __thiscall STCrabC::GetMessage(STCrabC *this,STMessage *message)
          (this_00->field_0271 < 0)) ||
         (((int)g_worldGrid.sizeY <= this_00->field_0271 || (iVar9 = this_00->field_0275, iVar9 < 0))
         )) || ((g_worldGrid.sizeZ <= iVar9 ||
+
                (iVar7 = thunk_FUN_004961b0((short)this_00->field_026D,(short)this_00->field_0271,
                                            (short)iVar9), iVar7 == 0)))) {
-      thunk_FUN_005783f0(this_00);
+
+      thunk_FUN_005783f0((RecoveredRecord_005783F0_545AD987 *)this_00);
       this_00->field_0239 = CASE_2;
     }
     else {
@@ -321,7 +328,9 @@ cf_error_exit_00578B5D:
       puVar11 = (byte *)(&this_00->field_01D5);
       /* ST_CALLSITE[00578B6E]: CALL 0x00403afd; direct=00403AFD STT3DSprC::sub_004ACF50 */
       STT3DSprC::sub_004ACF50((STT3DSprC *)puVar11,'\r');
+
       thunk_FUN_004ac610(puVar11,'\x0e');
+
       thunk_FUN_004ac610(puVar11,'\r');
       /* ST_CALLSITE[00578B95]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow((STT3DSprC *)puVar11,0xe,g_playSystem_00802A38->field_00E4);
@@ -340,6 +349,7 @@ cf_error_exit_00578B5D:
       this_00->field_0045 = sVar6;
       this_00->field_006C =
            (short)(this_00->field_027D / 0x2d) - (short)(this_00->field_027D / -0x4c000000);
+
       SVar7 = thunk_FUN_005797b0(this_00,&this_00->field_004E,&this_00->field_0050,
                                  &this_00->field_006C);
       this_00->field_0239 = SVar7;
@@ -373,6 +383,7 @@ cf_error_exit_00578B5D:
     this_00->field_0050 = *(undefined2 *)(local_20 + 0x16);
     this_00->field_006C = STField<short>(local_20,0x5a);
     this_00->field_023D = local_20[0xc];
+
     local_3c = Library::DKW::LIB::MemAlloc(0x44);
     if (local_3c != nullptr) {
       iVar9 = 0;
@@ -389,7 +400,7 @@ cf_error_exit_00578B5D:
       /* ST_CALLSITE[00578803]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
       STT3DSprC::RestoreSpr
                 ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
-                 (AnonShape_004AD790_77673787 *)(puVar11 + 0x19));
+                 (RecoveredRecordView_004AD790_D4DB5A31 *)(puVar11 + 0x19));
       FreeAndNull(&local_3c);
     }
   }
@@ -397,13 +408,15 @@ cf_error_exit_00578B5D:
     g_currentExceptionFrame = local_80.previous;
     return 0;
   }
-  iVar9 = thunk_FUN_0058cfe0((int)this_00);
+
+  iVar9 = thunk_FUN_0058cfe0((RecoveredRecord_0058CFE0_6E80059E *)this_00);
   if (iVar9 != 0) {
     g_currentExceptionFrame = local_80.previous;
     return 0;
   }
 LAB_00578ea2:
-  thunk_FUN_005783f0(this_00);
+
+  thunk_FUN_005783f0((RecoveredRecord_005783F0_545AD987 *)this_00);
   this_00->field_0239 = CASE_2;
   g_currentExceptionFrame = local_80.previous;
   return 0;

@@ -20,9 +20,13 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.listing.Function;
+import ghidra.program.model.listing.Function.FunctionUpdateType;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Parameter;
+import ghidra.program.model.listing.ParameterImpl;
+import ghidra.program.model.listing.ReturnParameterImpl;
+import ghidra.program.model.listing.Variable;
 import ghidra.program.model.symbol.SourceType;
 
 public class STThunkPropagationApplier extends GhidraScript {
@@ -38,8 +42,9 @@ public class STThunkPropagationApplier extends GhidraScript {
         File input = inputFile();
         if (input == null) return;
         Tsv tsv = read(input.toPath());
-        require(tsv, "apply", "thunk_address", "expected_qualified_name",
-            "expected_name_source", "target_address", "target_qualified_name",
+        require(tsv, "apply", "name_apply", "signature_apply", "thunk_address",
+            "expected_qualified_name", "expected_name_source", "expected_signature",
+            "expected_signature_source", "target_address", "target_qualified_name",
             "target_name_source", "target_signature", "proposed_qualified_name", "reason");
 
         int transaction =
@@ -95,6 +100,11 @@ public class STThunkPropagationApplier extends GhidraScript {
                 thunk.getName(true).equals(row.get("expected_qualified_name")) &&
                 thunk.getSymbol().getSource().toString()
                     .equals(row.get("expected_name_source"));
+            boolean signatureBaseline =
+                thunk.getSignature().getPrototypeString(true)
+                    .equals(row.get("expected_signature")) &&
+                thunk.getSignatureSource().toString()
+                    .equals(row.get("expected_signature_source"));
             boolean targetBaseline =
                 target.getName(true).equals(row.get("target_qualified_name")) &&
                 target.getSymbol().getSource().toString()
@@ -109,13 +119,29 @@ public class STThunkPropagationApplier extends GhidraScript {
 
             boolean changed = false;
             List<String> details = new ArrayList<>();
+            if (enabled(row.get("signature_apply"))) {
+                if (!signatureBaseline || protectedSource(thunk.getSignatureSource())) {
+                    details.add("signature=preserved(stale/manual/imported)");
+                }
+                else {
+                    copyTargetSignature(thunk, target);
+                    if (!equivalentAbi(thunk, target))
+                        throw new IllegalStateException(
+                            "copied thunk signature is not target-equivalent");
+                    details.add("signature=copied_from_exact_target");
+                    changed = true;
+                }
+            }
             boolean exactRedundantManual =
                 thunk.getParentNamespace().equals(target.getParentNamespace()) &&
                 thunk.getName().equals(target.getName() + "_thunk") &&
                 thunk.getSymbol().getSource() == SourceType.USER_DEFINED;
             boolean generated =
                 !protectedSource(thunk.getSymbol().getSource());
-            if (thunk.getSymbol().getSource() == SourceType.DEFAULT &&
+            if (!enabled(row.get("name_apply"))) {
+                details.add("name=disabled");
+            }
+            else if (thunk.getSymbol().getSource() == SourceType.DEFAULT &&
                     thunk.getName(true).equals(target.getName(true))) {
                 details.add("name=unchanged(dynamic target forwarding)");
             }
@@ -184,6 +210,20 @@ public class STThunkPropagationApplier extends GhidraScript {
             if (!equivalent(leftParameters.get(index).getDataType(),
                     rightParameters.get(index).getDataType())) return false;
         return true;
+    }
+
+    private void copyTargetSignature(Function thunk, Function target) throws Exception {
+        List<Variable> parameters = new ArrayList<>();
+        for (Parameter parameter : explicitParameters(target))
+            parameters.add(new ParameterImpl(parameter.getName(),
+                parameter.getFormalDataType(), currentProgram, SourceType.ANALYSIS));
+        thunk.updateFunction(target.getCallingConventionName(),
+            new ReturnParameterImpl(target.getReturnType(), currentProgram),
+            parameters, FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS, true,
+            SourceType.ANALYSIS);
+        thunk.setVarArgs(target.hasVarArgs());
+        thunk.setNoReturn(target.hasNoReturn());
+        thunk.setSignatureSource(SourceType.ANALYSIS);
     }
 
     private List<Parameter> explicitParameters(Function function) {

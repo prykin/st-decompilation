@@ -57,4 +57,3 @@ void __thiscall st::fn_00424510(STGroupC *this,undefined4 param_1,undefined4 par
 {
   return;
 }
-

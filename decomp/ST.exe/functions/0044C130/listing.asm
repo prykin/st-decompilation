@@ -185,7 +185,7 @@ LAB_0044c2c1:
 0044C30F  50                        PUSH EAX
 0044C310  51                        PUSH ECX
 0044C311  52                        PUSH EDX
-0044C312  E8 D9 D7 2B 00            CALL 0x00709af0
+0044C312  E8 D9 D7 2B 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 0044C317  8B 08                     MOV ECX,dword ptr [EAX]
 0044C319  8B 55 0C                  MOV EDX,dword ptr [EBP + 0xc]
 0044C31C  83 C4 20                  ADD ESP,0x20

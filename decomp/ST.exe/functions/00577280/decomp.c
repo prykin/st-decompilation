@@ -19,9 +19,11 @@ void CreateGameSystem(void)
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar2 == 0) {
-    this_00 = (GameSystemC *)Library::MSVCRT::FUN_0072e530(0x435);
+    /* ST_CALLSITE[005772B5]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/GameSystemC; signature=__cdecl;pointer:/GameSystemC;/uint */
+    this_00 = Library::MSVCRT::FUN_0072e530(0x435);
     if (this_00 == nullptr) {
       g_parentSystem_0081163C = nullptr;
     }
@@ -53,6 +55,7 @@ void CreateGameSystem(void)
     return;
   }
   g_currentExceptionFrame = local_48.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\tsystem.cpp",0xbb,0,iVar2,"%s",
                              "CreateGameSystem");
   if (iVar3 != 0) {

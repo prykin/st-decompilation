@@ -52,7 +52,9 @@ int FUN_006a7d50(int param_1,int param_2,int param_3,int param_4,int param_5,int
   local_44 = 0;
   local_18 = 0;
   STField<undefined2>(puVar12,0xe) = 0x7fff;
+
   uVar6 = FUN_006a6360(param_5,param_6,param_7,param_8,param_9,param_10);
+
   local_2c = FUN_006a6320(uVar6);
   if (((param_8 == param_5) && (param_9 == param_6)) && (param_10 == param_7)) {
     local_8 = local_8 + -1;
@@ -86,10 +88,13 @@ LAB_006a8234:
     auto param_13_after_write = 30000; /* compiler stack-slot lifetime split */
     iVar1 = param_1 + (local_c * param_2 + local_30 + local_10 * iVar11) * 2;
     if (uVar7 == 0) {
+
       uVar9 = FUN_006a6360(param_5,param_6,param_7,local_30,local_c,local_10);
+
       local_34 = FUN_006a6320(uVar9);
     }
     else {
+
       iVar8 = FUN_006a6100(local_30,local_c,local_10,param_8,param_9,param_10,(int *)&local_4c);
       if (iVar8 < 0x1a) {
         local_34 = (uint)(&SHORT_007ed576)[iVar8 * 4];

@@ -30,12 +30,12 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
   char *pcVar16;
   byte *pbVar17;
   bool bVar18;
-  undefined1 local_33c [516];
+  byte local_33c [516];
   char local_138 [76];
   char local_ec [36];
   char local_c8 [32];
   uint local_a8;
-  undefined4 local_a4;
+  uint local_a4;
   InternalExceptionFrame local_a0;
   byte local_5c [64];
   int local_1c;
@@ -54,9 +54,11 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
   local_10 = nullptr;
   local_a0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a0;
+
   iVar8 = Library::MSVCRT::__setjmp3(local_a0.jumpBuffer,0);
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_a0.previous;
+
     iVar11 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0x245,0,iVar8,"%s",
                                 "CreateArbList");
     if (iVar11 == 0) {
@@ -97,7 +99,8 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
   memmove(pcVar16, pcVar5, uVar10); /* compiler REP MOVS byte copy */
   uVar11 = 0;
   cMf32::ToBeg(param_1,FUN_006f2d10,local_33c);
-  pcVar5 = (char *)cMf32::RecNameGetNext(param_1);
+  /* ST_CALLSITE[0067E8C0]: CALL 0x006f2790; direct=006F2790 cMf32::RecNameGetNext; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__thiscall;pointer:/char;pointer:/cMf32 */
+  pcVar5 = cMf32::RecNameGetNext(param_1);
   do {
     if (pcVar5 == nullptr) {
       if (local_10 != nullptr) {
@@ -160,6 +163,7 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
       pbVar17 = pbVar17 + -1;
       memmove(pbVar17, pbVar13, uVar10); /* compiler REP MOVS byte copy */
       uVar11 = 0;
+
       Library::MSVCRT::FUN_0072ee80(pcVar5,local_5c);
       iVar9 = local_18;
       if (local_18 == 0) {
@@ -254,11 +258,13 @@ uint * __cdecl CreateArbList(cMf32 *param_1,int param_2)
         }
       }
       if (bVar4) {
+
         Library::DKW::TBL::DArrayAppend(local_8,local_138);
       }
       cMf32::RecMemFree(param_1,(uint *)&local_c);
     }
-    pcVar5 = (char *)cMf32::RecNameGetNext(param_1);
+
+    pcVar5 = STPointerBoundaryCast<char *>(cMf32::RecNameGetNext(param_1));
   } while( true );
 }
 

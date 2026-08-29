@@ -58,7 +58,7 @@ LAB_0067cfbb:
 0067CFD5  6A 05                     PUSH 0x5
 0067CFD7  6A 00                     PUSH 0x0
 0067CFD9  C7 41 6D FF 00 00 00      MOV dword ptr [ECX + 0x6d],0xff
-0067CFE0  E8 AB 12 03 00            CALL 0x006ae290
+0067CFE0  E8 AB 12 03 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 0067CFE5  8B 55 FC                  MOV EDX,dword ptr [EBP + -0x4]
 0067CFE8  56                        PUSH ESI
 0067CFE9  89 82 C2 00 00 00         MOV dword ptr [EDX + 0xc2],EAX

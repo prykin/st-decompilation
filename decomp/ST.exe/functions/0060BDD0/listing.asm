@@ -108,7 +108,7 @@ switchD_0060be1d::caseD_44:
 0060BF42  8D 45 AC                  LEA EAX,[EBP + -0x54]
 0060BF45  50                        PUSH EAX
 0060BF46  8B CF                     MOV ECX,EDI
-0060BF48  FF 12                     CALL dword ptr [EDX]
+0060BF48  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 0060BF4A  8B 45 C4                  MOV EAX,dword ptr [EBP + -0x3c]
 0060BF4D  5F                        POP EDI
 0060BF4E  5E                        POP ESI

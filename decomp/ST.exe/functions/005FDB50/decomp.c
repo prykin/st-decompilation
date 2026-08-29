@@ -8,14 +8,19 @@
    [STSourceProvenanceApplier end]
 
    [STHiddenThisApplier] Anonymous hidden receiver recovered as
-   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_005FDB50.
+   /SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_005FDB50.
    Evidence: incoming_receiver_captures=1; receiver_accesses=9; incoming_edx_uses=0; calls=3;
    ecx_pointer_setup=3; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[8];
-   expected_stack=8; receiver_family_members=1; adopt_untyped_existing_thiscall */
+   expected_stack=8; receiver_family_members=1; adopt_untyped_existing_thiscall
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=005FD3A0 @ 005FD4CE -> killed on
+   every CFG path | 00600750 @ 006007EC -> read as EAX on every CFG path | 00600750 @ 00600840 ->
+   read as EAX on every CFG path */
 
-undefined4 __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
-          (AnonReceiver_005FDB50 *this,int param_1,int param_2)
+int __thiscall
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_005FDB50::FUN_005fdb50
+          (RecoveredReceiver_005FDB50 *this,int param_1,int param_2)
 
 {
   byte bVar1;
@@ -34,11 +39,11 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
   int local_18;
   int local_14;
   int local_10;
-  AnonReceiver_005FDB50 *local_c;
+  RecoveredReceiver_005FDB50 *local_c;
   int local_8;
 
   if (param_2 < 0) {
-    local_10 = *(int *)&this->field_0x226;
+    local_10 = this->field_0226;
     local_14 = 0;
   }
   else {
@@ -49,11 +54,11 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
     iVar8 = local_14 * 0x52;
     local_c = this;
     do {
-      iVar5 = *(int *)(iVar8 + 0x39 + *(int *)&this->field_0x233);
+      iVar5 = *(int *)(iVar8 + 0x39 + this->field_0233);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if ((((iVar5 != 4) && (iVar5 != 5)) &&
-          (this_00 = *(STT3DSprC **)(iVar8 + *(int *)&this->field_0x233 + 0x42),
-          this_00 != nullptr)) && (-1 < param_2 || iVar5 != 2)) {
+          (this_00 = *(STT3DSprC **)(iVar8 + this->field_0233 + 0x42), this_00 != nullptr))
+         && (-1 < param_2 || iVar5 != 2)) {
         local_8 = iVar8;
         if ((iVar5 == 1) || (iVar5 == 2)) {
           /* ST_CALLSITE[005FDEC3]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
@@ -70,21 +75,21 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::FUN_005fdb50
             return 0xffff;
           }
           thunk_FUN_004ad380(this_00,0x5a,0x45);
-          iVar5 = iVar8 + *(int *)&this->field_0x233;
+          iVar5 = iVar8 + this->field_0233;
           local_18 = (int)STField<short>(iVar5,0x6);
           /* ST_CALLSITE[005FDF59]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
           STT3DSprC::sub_004AD3C0
                     (this_00,(float)local_18 * _DAT_007904f8 * _DAT_007904f0,
                      (float)(int)STField<short>(iVar5,0x8) * _DAT_007904f8 * _DAT_007904f0,
-                     (float)(int)*(short *)(iVar8 + 10 + *(int *)&this->field_0x233) * _DAT_007904f8
-                     * _DAT_007904f0 + _DAT_007904fc);
+                     (float)(int)*(short *)(iVar8 + 10 + this->field_0233) * _DAT_007904f8 *
+                     _DAT_007904f0 + _DAT_007904fc);
           /* ST_CALLSITE[005FDF6E]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
           STT3DSprC::StartShow(this_00,0xd,g_playSystem_00802A38->field_00E4);
-          *(undefined1 *)(iVar8 + 0x41 + *(int *)&this->field_0x233) = 1;
+          *(undefined1 *)(iVar8 + 0x41 + this->field_0233) = 1;
           pVVar3 = g_visibleClass_00802A88;
           if (g_visibleClass_00802A88 != nullptr) {
-            iVar5 = iVar8 + *(int *)&this->field_0x233;
-            sVar2 = *(short *)(iVar8 + 10 + *(int *)&this->field_0x233);
+            iVar5 = iVar8 + this->field_0233;
+            sVar2 = *(short *)(iVar8 + 10 + this->field_0233);
             iVar7 = STBiasedDiv16(sVar2, 200); /* exact signed 16-bit grid-index division */
             sVar2 = STField<short>(iVar5,0x8);
             iVar6 = STBiasedDiv16(sVar2, 0xc9); /* exact signed 16-bit grid-index division */
@@ -105,8 +110,9 @@ joined_r0x005fe09b:
               iVar8 = local_8;
               this = local_c;
               if (bVar1 == 0) {
-                thunk_FUN_004ad430(this_00);
-                *(undefined1 *)(local_8 + 0x41 + *(int *)&local_c->field_0x233) = 0;
+                /* ST_CALLSITE[005FE09F]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+                STT3DSprC::sub_004AD430(this_00);
+                *(undefined1 *)(local_8 + 0x41 + local_c->field_0233) = 0;
                 iVar8 = local_8;
                 this = local_c;
               }
@@ -124,8 +130,8 @@ joined_r0x005fe09b:
             thunk_FUN_004ad310(this_00);
           }
           else {
-            uVar4 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
-            *(uint *)&this->field_0x1c = uVar4;
+            uVar4 = this->field_001C * 0x41c64e6d + 0x3039;
+            this->field_001C = uVar4;
             /* ST_CALLSITE[005FDC3D]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
             iVar5 = STT3DSprC::LoadSequence
                               (this_00,0xd,PTR_00806774,(&PTR_s_Expb24_007ce934)[uVar4 >> 0x10 & 1],
@@ -145,7 +151,8 @@ joined_r0x005fe09b:
             }
             /* ST_CALLSITE[005FDC98]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
             STT3DSprC::StartShow(this_00,0xe,g_playSystem_00802A38->field_00E4);
-            *(undefined1 *)(iVar8 + 0x28 + *(int *)&this->field_0x233) = 1;
+            *(undefined1 *)(iVar8 + 0x28 + this->field_0233) = 1;
+
             thunk_FUN_004ac700(this_00,'\x0f');
             /* ST_CALLSITE[005FDCC2]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
             STT3DSprC::StartShow(this_00,0xd,g_playSystem_00802A38->field_00E4);
@@ -153,19 +160,19 @@ joined_r0x005fe09b:
             STT3DSprC::sub_004ACF20(this_00,PTR_008032b8,0x10);
             /* ST_CALLSITE[005FDCDB]: CALL 0x00403233; direct=00403233 STT3DSprC::sub_004ACFE0 */
             STT3DSprC::sub_004ACFE0(this_00,'\x0e');
-            iVar5 = iVar8 + *(int *)&this->field_0x233;
+            iVar5 = iVar8 + this->field_0233;
             local_18 = (int)STField<short>(iVar5,0x6);
             /* ST_CALLSITE[005FDD40]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
             STT3DSprC::sub_004AD3C0
                       (this_00,(float)local_18 * _DAT_007904f8 * _DAT_007904f0,
                        (float)(int)STField<short>(iVar5,0x8) * _DAT_007904f8 * _DAT_007904f0,
-                       (float)(int)*(short *)(iVar8 + 10 + *(int *)&this->field_0x233) *
-                       _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-            *(undefined1 *)(iVar8 + 0x41 + *(int *)&this->field_0x233) = 1;
+                       (float)(int)*(short *)(iVar8 + 10 + this->field_0233) * _DAT_007904f8 *
+                       _DAT_007904f0 + _DAT_007904fc);
+            *(undefined1 *)(iVar8 + 0x41 + this->field_0233) = 1;
             pVVar3 = g_visibleClass_00802A88;
             if (g_visibleClass_00802A88 != nullptr) {
-              sVar2 = *(short *)(iVar8 + 10 + *(int *)&this->field_0x233);
-              iVar8 = iVar8 + *(int *)&this->field_0x233;
+              sVar2 = *(short *)(iVar8 + 10 + this->field_0233);
+              iVar8 = iVar8 + this->field_0233;
               iVar5 = STBiasedDiv16(sVar2, 200); /* exact signed 16-bit grid-index division */
               sVar2 = STField<short>(iVar8,0x8);
               iVar7 = STBiasedDiv16(sVar2, 0xc9); /* exact signed 16-bit grid-index division */

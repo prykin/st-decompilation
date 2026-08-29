@@ -2,8 +2,13 @@
 
 
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (4), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00428E50 @ 004296B5 -> read as EAX on
+   every CFG path | 00428E50 @ 00429917 -> read as EAX on every CFG path | 00428E50 @ 00429AF9 ->
+   read as EAX on every CFG path | 00428E50 @ 00429CE7 -> read as EAX on every CFG path */
 
-undefined4 __cdecl
+int __cdecl
 FUN_00428ce0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,
             byte param_8)
 

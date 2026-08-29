@@ -271,7 +271,8 @@ LAB_00445ce0:
 00445CF3  52                        PUSH EDX
 00445CF4  53                        PUSH EBX
 00445CF5  8B CE                     MOV ECX,ESI
-00445CF7  E8 BE CB FB FF            CALL 0x004028ba
+STAllPlayersC::RegisterPGPair::override::prt_445cf7_6c9e7102:
+00445CF7  E8 BE CB FB FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 00445CFC  8B 0D 38 2A 80 00         MOV ECX,dword ptr [0x00802a38]
 00445D02  8B 91 E4 00 00 00         MOV EDX,dword ptr [ECX + 0xe4]
 00445D08  8D 4D D8                  LEA ECX,[EBP + -0x28]

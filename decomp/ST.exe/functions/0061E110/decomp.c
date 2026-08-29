@@ -18,7 +18,7 @@ undefined4 __fastcall FUN_0061e110(STLightC *param_1)
   int local_18;
   int local_14;
   int local_10;
-  undefined4 local_c;
+  uint local_c;
   int local_8;
 
   sVar1 = param_1->field_0030;

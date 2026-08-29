@@ -17,7 +17,7 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
   uint uVar3;
   BITMAPINFO *pBVar4;
   int iVar9;
-  AnonShape_GLOBAL_0081175C_57F682DD *pAVar5;
+  RecoveredGlobalRecordView_0081175C *pRVar5;
   byte bVar6;
   int iVar7;
   uint uVar8;
@@ -37,10 +37,12 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_28 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   pCVar2 = local_28;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
+
     iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0x184,0,iVar3,"%s"
                                ,"CPanelTy::PaintArsenal");
     if (iVar9 == 0) {
@@ -74,18 +76,20 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
       else {
         uVar3 = ((uint)local_18->field_0002 * 10) / (uint)local_18->field_0004;
       }
-      pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,5);
+      /* ST_CALLSITE[00505A68]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+      pBVar4 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)pCVar2->field_02B2,5);
       /* ST_CALLSITE[00505A7D]: CALL 0x00403229; direct=00403229 DibPut */
-      DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,0x74,local_1c,'\x01',(byte *)pBVar4
-            );
+      DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,0x74,local_1c,'\x01',
+             (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar4);
       local_10 = local_10 & 0xffffff00;
       if (uVar3 != 0) {
         uVar8 = 0;
         do {
-          pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,1);
+          /* ST_CALLSITE[00505A98]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+          pBVar4 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)pCVar2->field_02B6,1);
           /* ST_CALLSITE[00505AB6]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,uVar8 * 4 + 0x76,local_1c + 2,
-                 '\x01',(byte *)pBVar4);
+                 '\x01',(RecoveredRecordView_006B84D0_87AF9D9B *)pBVar4);
           bVar6 = (byte)local_10 + 1;
           local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar6));
           uVar8 = (uint)bVar6;
@@ -95,10 +99,11 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
         iVar10 = 10 - (local_10 & 0xff);
         iVar7 = (local_10 & 0xff) * 4 + 0x76;
         do {
-          pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,0);
+          /* ST_CALLSITE[00505AF8]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+          pBVar4 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)pCVar2->field_02B6,0);
           /* ST_CALLSITE[00505B0F]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,iVar7,local_1c + 2,'\x01',
-                 (byte *)pBVar4);
+                 (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar4);
           iVar7 = iVar7 + 4;
           iVar10 = iVar10 + -1;
         } while (iVar10 != 0);
@@ -106,7 +111,9 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
       /* ST_CALLSITE[00505B33]: CALL dword ptr [0x0085bde8] */
       wsprintfA(&pCVar2->field_01E1,"%3d",(uint)local_18->field_0002);
       uVar3 = local_1c;
+
       ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,0xa2,local_1c,0x15,0xc);
+
       ccFntTy::WrStr(pCVar2->field_01B8,&pCVar2->field_01E1,-3,-1,5);
       if ((char)local_20 == '\0') {
         if ((int)uVar3 < 0x76) {
@@ -125,17 +132,18 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
         return;
       }
       if (*(char *)local_18 == '\0') {
-        pAVar5 = (AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_0292;
+        pRVar5 = (RecoveredGlobalRecordView_0081175C *)pCVar2->field_0292;
       }
       else {
-        pAVar5 = (AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_028E;
+        pRVar5 = (RecoveredGlobalRecordView_0081175C *)pCVar2->field_028E;
       }
-      pBVar4 = FUN_0070b3a0(pAVar5,(-(uint)(*(char *)local_18 != '\0') & 0x14) + 0xb + local_14 +
+      /* ST_CALLSITE[00505C3C]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+      pBVar4 = FUN_0070b3a0(pRVar5,(-(uint)(*(char *)local_18 != '\0') & 0x14) + 0xb + local_14 +
                                    local_2c);
       if (pBVar4 != nullptr) {
         /* ST_CALLSITE[00505C5A]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,local_c,local_8,'\x06',
-               (byte *)pBVar4);
+               (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar4);
       }
       local_14 = local_14 + 1;
       local_18 = (AnonShape_00505960_269BEFC9 *)&local_18->field_0x6;

@@ -29,7 +29,7 @@ void FUN_006b2800(DDXContext_008075A8 *param_1,uint param_2,uint param_3,uint pa
     pDVar1->field_003C = param_4;
     pDVar1->field_0034 = param_4;
     pDVar1->field_0024 = param_4;
-    FUN_006b23e0((int)param_1,&pDVar1->flags);
+    FUN_006b23e0((RecoveredRecord_006B23E0_5A2050A1 *)param_1,&pDVar1->flags);
   }
   return;
 }

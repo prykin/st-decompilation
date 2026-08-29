@@ -3,9 +3,14 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
-   STGroupBoatC::GrpUnLoadRC */
+   STGroupBoatC::GrpUnLoadRC
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00497E00 @ 004981FA -> read as EAX on
+   every CFG path | 00497E00 @ 00498204 -> read as EAX on every CFG path | 00497E00 @ 0049859C ->
+   read as EAX on every CFG path */
 
-undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
+int __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
 
 {
   short sVar1;
@@ -20,7 +25,6 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
   DArrayTy *array_00;
   STGameObjC *this_01;
   int iVar8;
-  uint uVar8;
   int iVar9;
   uint uVar10;
   uint index;
@@ -29,9 +33,9 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
   uint *puVar13;
   InternalExceptionFrame local_7c;
   uint local_38;
-  undefined2 local_34;
-  undefined2 local_32;
-  undefined2 local_30;
+  ushort local_34;
+  ushort local_32;
+  ushort local_30;
   STGroupBoatC *local_2c;
   int local_28;
   uint local_24;
@@ -39,26 +43,26 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
   int local_1c;
   int local_18;
   DArrayTy *local_14;
-  uint local_10;
+  dword local_10;
   DArrayTy *local_c;
-  undefined1 local_8 [4];
-
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_10 = *(uint *)(this->field_0029 + 0xc);
+  byte local_8 [4];
+  local_10 = this->field_0029->count;
   local_c = nullptr;
   local_14 = nullptr;
   local_7c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_7c;
   local_2c = this;
+
   iVar6 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0);
   pSVar6 = local_2c;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_7c.previous;
+
     iVar8 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x99a,0,iVar6,"%s",
                                "STGroupBoatC::GrpUnLoadRC");
     if (iVar8 == 0) {
       RaiseInternalException(iVar6,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x99b);
-      return 0xffffffff;
+      return -1;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
@@ -79,7 +83,8 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
     local_24 = local_38;
     if (local_10 != 0) {
       do {
-        DArrayGetElement((DArrayTy *)pSVar6->field_0029,uVar10,local_8);
+
+        DArrayGetElement(pSVar6->field_0029,uVar10,local_8);
         if (STPiece<0,2>(local_8) != 0xffff) {
           this_00 = (STBoatC *)
                     /* ST_CALLSITE[0049D31C]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -90,26 +95,29 @@ undefined4 __thiscall STGroupBoatC::GrpUnLoadRC(STGroupBoatC *this,int param_1)
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0x960);
           }
-          /* ST_CALLSITE[0049D345]: CALL dword ptr [EDX + 0x2c] */
+          /* ST_CALLSITE[0049D345]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC */
           dVar7 = this_00->sub_0045EEE0();
-          /* ST_CALLSITE[0049D351]: CALL dword ptr [EAX + 0x2c] */
+          /* ST_CALLSITE[0049D351]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC */
           if (((dVar7 == 8) || (dVar7 = this_00->sub_0045EEE0(), dVar7 == 0x14))
-             /* ST_CALLSITE[0049D35D]: CALL dword ptr [EDX + 0x2c] */
+             /* ST_CALLSITE[0049D35D]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC */
              || (dVar7 = this_00->sub_0045EEE0(), dVar7 == 0x1a)) {
             if (array_00 == nullptr) {
               array_00 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
               local_14 = array_00;
             }
+
             Library::DKW::TBL::DArrayAppend(array_00,local_8);
             puVar13 = &local_38;
             SVar12 = CASE_D;
           }
           else {
+
             iVar9 = thunk_FUN_00490d90((STGameObjC *)this_00);
             if (iVar9 != 0) {
               if (local_c == nullptr) {
                 local_c = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
               }
+
               Library::DKW::TBL::DArrayAppend(local_c,local_8);
               goto LAB_0049d3ca;
             }
@@ -165,7 +173,8 @@ LAB_0049d3ca:
       if (local_10 != 0) {
         index = 0;
         do {
-          DArrayGetElement((DArrayTy *)pSVar6->field_0029,index,local_8);
+
+          DArrayGetElement(pSVar6->field_0029,index,local_8);
           if (STPiece<0,2>(local_8) != 0xffff) {
             /* ST_CALLSITE[0049D508]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             this_01 = STAllPlayersC::GetObjPtr
@@ -184,7 +193,8 @@ LAB_0049d3ca:
               local_18 = local_18 + 1;
               local_1c = local_1c + this_01->field_07DA + this_01->field_07D6 + this_01->field_07D2;
               if (0 < local_1c) break;
-              iVar9 = thunk_FUN_0045ff10(this_01);
+              /* ST_CALLSITE[0049D57D]: CALL 0x00402edc; direct=00402EDC STGameObjC::sub_0045FF10 */
+              iVar9 = STGameObjC::sub_0045FF10(this_01);
               if (iVar9 == 0xd) {
                 local_28 = 1;
                 break;

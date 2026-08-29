@@ -17,9 +17,8 @@ void __thiscall FUN_00690450(void *this,short param_1,undefined4 param_2)
       if ((((bVar4) && (iVar2 = STField<int>(iVar2,0x8) * uVar3 + STField<int>(iVar2,0x1C), iVar2 != 0))
           && (puVar1 = *(undefined4 **)(iVar2 + 4), puVar1 != nullptr)) &&
          ((STField<short>(puVar1,0x7b) == param_1 && (puVar1 != nullptr)))) {
-        /* ST_CALLSITE[00690497]: CALL dword ptr [EDX] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)*puVar1)(param_2);
+        /* ST_CALLSITE[00690497]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4 */
+        STStructuralVirtualCall<void>(puVar1, 0x0, param_2);
       }
       iVar2 = STField<int>(this,0xa5);
       uVar3 = uVar3 + 1;

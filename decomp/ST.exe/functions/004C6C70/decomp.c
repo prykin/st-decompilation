@@ -13,6 +13,7 @@ TLOBaseTy::sub_004C6C70(TLOBaseTy *this,undefined4 param_1,undefined4 param_2,un
   int iVar1;
 
   if (this->field_03DC == 0) {
+
     thunk_FUN_004c6bb0(this,param_1,param_2,param_3);
   }
   else {

@@ -22,7 +22,7 @@ void FUN_0075b540(undefined4 *param_1,int param_2,int *param_3)
   uint *puVar12;
   byte *puVar13;
   int local_51c [257];
-  undefined4 local_118;
+  uint local_118;
   int *local_10;
   int local_c;
   int local_8;

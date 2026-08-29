@@ -21,7 +21,6 @@ int __thiscall st::fn_005943F0(ComboTy *this)
   this->field_0024 = 0;
   this->field_0028 = 10;
   this->field_002C = (ComboTy *)this->field_0008;
-  iVar1 = st::fn_006E60A0(this,(undefined4 *)&this->field_0x18);
+  iVar1 = st::fn_006E60A0(this,reinterpret_cast<undefined4 *>(&this->field_0x18));
   return iVar1;
 }
-

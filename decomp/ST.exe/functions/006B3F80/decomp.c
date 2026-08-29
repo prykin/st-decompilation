@@ -15,6 +15,7 @@ void FUN_006b3f80(AnonShape_006B3F80_E1B76DFD *param_1,uint param_2,int param_3)
     local_14 = *(int *)(&param_1->field_0x11c + iVar2 * 8) + local_c * param_2;
     local_8 = param_1->field_01F0;
     local_10 = *(int *)(&param_1->field_0x120 + iVar2 * 8) + local_8 * param_3;
+
     iVar2 = FUN_006cfeb0(&local_14,&local_14,(int *)(&param_1->field_0x14 + iVar2 * 0x10));
     if (iVar2 != 0) {
       iVar2 = param_1->field_01F4 + 7;

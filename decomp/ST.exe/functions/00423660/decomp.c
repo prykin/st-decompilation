@@ -19,8 +19,7 @@ uint * __thiscall STGroupC::GetTOBJList(STGroupC *this,int param_1)
   uint local_14;
   STGroupC *local_10;
   DArrayTy *local_c;
-  undefined1 local_8 [4];
-
+  byte local_8 [4];
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_10 = this;

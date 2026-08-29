@@ -1,8 +1,8 @@
 #include "../../pseudocode_runtime.h"
 
 
-void FUN_006b94e0(AnonShape_006B94E0_A7E74DF0 *param_1,undefined4 param_2,int param_3,int param_4,
-                 int param_5,int param_6,int param_7,int param_8)
+void FUN_006b94e0(RecoveredRecordView_006B94E0_92E1E144 *param_1,undefined4 param_2,int param_3,
+                 int param_4,int param_5,int param_6,int param_7,int param_8)
 
 {
   uint *puVar1;
@@ -37,14 +37,18 @@ void FUN_006b94e0(AnonShape_006B94E0_A7E74DF0 *param_1,undefined4 param_2,int pa
   iVar3 = param_5 + -1 + param_7;
   iVar5 = param_1->field_04A0;
   uVar6 = param_1->field_04A4;
+
   FUN_006bbb00(param_1,0xd);
+
   FUN_006c6450(param_1,puVar1[1]);
+
   FUN_006c6410(param_1,puVar1[2]);
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_3 = 0;
   if (0 < iVar8) {
     auto param_8_after_write = param_5; /* compiler stack-slot lifetime split */
     do {
+
       iVar7 = Library::DKW::DDX::FUN_006c53b0
                         ((int)param_1,param_4,param_8_after_write,iVar2 - iVar8,param_8_after_write,*puVar1);
       if (iVar7 != 0) goto cf_common_exit_006B96BA;
@@ -52,11 +56,13 @@ void FUN_006b94e0(AnonShape_006B94E0_A7E74DF0 *param_1,undefined4 param_2,int pa
       param_8_after_write = param_8_after_write + 1;
     } while (param_3 < iVar8);
   }
+
   FUN_006c6410(param_1,puVar1[3]);
   param_3 = 0;
   if (0 < iVar8) {
     int param_8_after_write_2 = iVar2; /* compiler stack-slot lifetime split */
     do {
+
       iVar7 = Library::DKW::DDX::FUN_006c53b0
                         ((int)param_1,param_8_after_write_2,param_5,param_8_after_write_2,iVar3 - iVar8,*puVar1);
       if (iVar7 != 0) goto cf_common_exit_006B96BA;
@@ -64,12 +70,14 @@ void FUN_006b94e0(AnonShape_006B94E0_A7E74DF0 *param_1,undefined4 param_2,int pa
       param_8_after_write_2 = param_8_after_write_2 + -1;
     } while (param_3 < iVar8);
   }
+
   FUN_006c6410(param_1,puVar1[4]);
   param_3 = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_8 = iVar3;
   if (0 < iVar8) {
     do {
+
       iVar7 = Library::DKW::DDX::FUN_006c53b0
                         ((int)param_1,iVar2,param_8,iVar8 + param_4,param_8,*puVar1);
       if (iVar7 != 0) goto cf_common_exit_006B96BA;
@@ -77,12 +85,14 @@ void FUN_006b94e0(AnonShape_006B94E0_A7E74DF0 *param_1,undefined4 param_2,int pa
       param_8 = param_8 + -1;
     } while (param_3 < iVar8);
   }
+
   FUN_006c6410(param_1,puVar1[5]);
   param_3 = 0;
   if (0 < iVar8) {
     iVar2 = iVar8 + param_5;
     param_5 = param_4;
     do {
+
       iVar7 = Library::DKW::DDX::FUN_006c53b0((int)param_1,param_5,iVar3,param_5,iVar2,*puVar1);
       if (iVar7 != 0) break;
       param_3 = param_3 + 1;
@@ -90,8 +100,11 @@ void FUN_006b94e0(AnonShape_006B94E0_A7E74DF0 *param_1,undefined4 param_2,int pa
     } while (param_3 < iVar8);
   }
 cf_common_exit_006B96BA:
+
   FUN_006bbb00(param_1,uVar4);
+
   FUN_006c6410(param_1,iVar5);
+
   FUN_006c6450(param_1,uVar6);
   return;
 }

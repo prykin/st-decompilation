@@ -31,7 +31,9 @@ FUN_0060ccf0(void *this,int param_1,int param_2,int param_3,int param_4,int para
     *(undefined4 *)(iVar4 + 0x30 + STField<int>(this,0x244)) = 0;
     *(undefined4 *)(iVar4 + 0x34 + STField<int>(this,0x244)) = 10;
     *(undefined4 *)(iVar4 + 0x38 + STField<int>(this,0x244)) = 0x14;
-    puVar2 = (undefined2 *)FUN_006aadd0(param_2,param_3,param_4,param_5,param_6,param_7);
+    /* ST_CALLSITE[0060CDE7]: CALL 0x006aadd0; direct=006AADD0 FUN_006aadd0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/undefined2; signature=__stdcall;pointer:/undefined2;/int;/int;/int;/int;/int;/int */
+    puVar2 = FUN_006aadd0(param_2,param_3,param_4,param_5,param_6,param_7);
+
     puVar2 = thunk_FUN_0060cbe0(puVar2,(int *)(iVar4 + 4 + STField<int>(this,0x244)));
     *(undefined2 **)(iVar4 + 8 + STField<int>(this,0x244)) = puVar2;
     piVar3 = thunk_FUN_0062bbc0(param_2,param_3,param_4,param_5,param_6,param_7,0,0,7,0x1e0);

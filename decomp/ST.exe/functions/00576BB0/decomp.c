@@ -16,9 +16,11 @@ void CreateBaseSystem(void)
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
+
   errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (errorCode == 0) {
-    this = (BaseSystemC *)Library::MSVCRT::FUN_0072e530(0x24);
+    /* ST_CALLSITE[00576BE2]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/BaseSystemC; signature=__cdecl;pointer:/BaseSystemC;/uint */
+    this = Library::MSVCRT::FUN_0072e530(0x24);
     if (this == nullptr) {
       g_baseSystem_00811638 = nullptr;
     }
@@ -39,6 +41,7 @@ void CreateBaseSystem(void)
     return;
   }
   g_currentExceptionFrame = local_48.previous;
+
   iVar2 = ReportDebugMessage("E:\\__titans\\tsystem.cpp",0x40,0,errorCode,"%s",
                              "CreateBaseSystem");
   if (iVar2 != 0) {

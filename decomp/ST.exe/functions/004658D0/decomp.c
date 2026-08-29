@@ -24,14 +24,15 @@ int __thiscall FUN_004658d0(void *this,int param_1)
     /* ST_CALLSITE[00465AFD]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
     STBoatC::sub_00481520
               (this,STField<int>(this,199),STField<int>(this,0xcb),STField<int>(this,0xcf));
-    thunk_FUN_004601f0(this,0);
-    /* ST_CALLSITE[00465B0E]: CALL dword ptr [EDX + 0xd8] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar3 = (**(code **)(*(int *)this + 0xd8))();
+    /* ST_CALLSITE[00465B05]: CALL 0x00402266; direct=00402266 STBoatC::sub_004601F0 */
+    STBoatC::sub_004601F0(this,0);
+    /* ST_CALLSITE[00465B0E]: CALL dword ptr [EDX + 0xd8]; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+    iVar3 = STStructuralVirtualCall<undefined4>(this, 0xD8);
     return (-(uint)(iVar3 != 0) & 0xfffffffd) + 2;
   }
   if (STField<int>(this,0x497) == 0) {
-    local_EAX_48 = thunk_FUN_004601f0(this,2);
+    /* ST_CALLSITE[00465900]: CALL 0x00402266; direct=00402266 STBoatC::sub_004601F0 */
+    local_EAX_48 = STBoatC::sub_004601F0(this,2);
     switch(local_EAX_48) {
     case 0:
       pSVar1 = thunk_FUN_0042b760(STField<char>(this,0x24),STField<ushort>(this,0x30));
@@ -51,7 +52,8 @@ int __thiscall FUN_004658d0(void *this,int param_1)
           STBoatC::sub_00481520
                     (this,STField<int>(this,199),STField<int>(this,0xcb),
                      STField<int>(this,0xcf));
-          thunk_FUN_004601f0(this,0);
+          /* ST_CALLSITE[00465A15]: CALL 0x00402266; direct=00402266 STBoatC::sub_004601F0 */
+          STBoatC::sub_004601F0(this,0);
           return 2;
         }
         STField<undefined4>(this,0x497) = 1;
@@ -80,7 +82,8 @@ LAB_0046597c:
       STBoatC::sub_00481520
                 (this,STField<int>(this,199),STField<int>(this,0xcb),
                  STField<int>(this,0xcf));
-      thunk_FUN_004601f0(this,0);
+      /* ST_CALLSITE[0046596B]: CALL 0x00402266; direct=00402266 STBoatC::sub_004601F0 */
+      STBoatC::sub_004601F0(this,0);
       break;
     case -1:
       return -1;
@@ -101,7 +104,8 @@ switchD_0046590f_caseD_2:
         STBoatC::sub_00481520
                   (this,STField<int>(this,199),STField<int>(this,0xcb),
                    STField<int>(this,0xcf));
-        thunk_FUN_004601f0(this,0);
+        /* ST_CALLSITE[00465AAE]: CALL 0x00402266; direct=00402266 STBoatC::sub_004601F0 */
+        STBoatC::sub_004601F0(this,0);
         return 2;
       }
     }

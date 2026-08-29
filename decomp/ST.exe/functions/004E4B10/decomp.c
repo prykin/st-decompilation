@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_004e4b10(AnonShape_004E4B10_C52B4B94 *param_1)
+undefined4 __fastcall FUN_004e4b10(RecoveredRecordView_004E4B10_46382483 *param_1)
 
 {
   if ((param_1->field_0245 == 0) && (param_1->field_04D4 < 0x28)) {

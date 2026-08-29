@@ -28,11 +28,11 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
   char *pcVar10;
   byte bVar11;
   int iVar12;
-  undefined1 local_65c;
+  byte local_65c;
   char local_65b [515];
-  undefined1 local_458;
+  byte local_458;
   char local_457 [515];
-  undefined1 local_254;
+  byte local_254;
   char local_253 [515];
   InternalExceptionFrame local_50;
   uint local_c;
@@ -41,9 +41,11 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
   local_8 = nullptr;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar11 = ReportDebugMessage("E:\\__titans\\grig\\loading.cpp",0x3a,0,iVar3,"%s",
                                 "cLoadingTy::new");
     if (iVar11 == 0) {
@@ -60,6 +62,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+
   local_8 = Library::DKW::LIB::MemAllocClear(param_1);
   this_00 = g_cMf32_00806780;
   if (DAT_0080874e == '\x01') {
@@ -80,10 +83,12 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
     pcVar9 = local_65b;
     memmove(pcVar9, pcVar10, uVar6); /* compiler REP MOVS byte copy */
     cMf32::ToBeg(g_cMf32_00806780,FUN_006f2d10,&local_65c);
+
     puVar5 = cMf32::RecNameGetNext(this_00);
     uVar6 = local_c;
     while (puVar5 != nullptr) {
       local_c = uVar6 + 1;
+
       puVar5 = cMf32::RecNameGetNext(this_00);
       uVar6 = local_c;
     }
@@ -94,7 +99,9 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
     }
     iVar12 = 1;
     bVar11 = 0;
+
     uVar8 = Library::MSVCRT::FUN_0072e6c0();
+    /* ST_CALLSITE[00554306]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
     text_00 = FUN_006f2c00("LOADINGW",1,uVar8 % uVar6 + 1);
   }
   else {
@@ -117,13 +124,16 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
       memmove(pcVar9, pcVar10, uVar6); /* compiler REP MOVS byte copy */
       uVar8 = 0;
       cMf32::ToBeg(g_cMf32_00806780,FUN_006f2d10,&local_254);
+
       puVar5 = cMf32::RecNameGetNext(this_00);
       while (puVar5 != nullptr) {
         local_c = local_c + 1;
+
         puVar5 = cMf32::RecNameGetNext(this_00);
       }
       iVar12 = 1;
       bVar11 = 0;
+
       local_EAX_356 = Library::MSVCRT::FUN_0072e6c0();
       uVar6 = local_EAX_356 % local_c;
       pcVar10 = "LOADINGB";
@@ -151,13 +161,16 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
       pcVar9 = local_457;
       memmove(pcVar9, pcVar10, uVar6); /* compiler REP MOVS byte copy */
       cMf32::ToBeg(g_cMf32_00806780,FUN_006f2d10,&local_458);
+
       puVar5 = cMf32::RecNameGetNext(this_00);
       while (puVar5 != nullptr) {
         local_c = local_c + 1;
+
         puVar5 = cMf32::RecNameGetNext(this_00);
       }
       iVar12 = 1;
       bVar11 = 0;
+
       uVar5 = Library::MSVCRT::FUN_0072e6c0();
       uVar6 = uVar5 % local_c;
       pcVar10 = "LOADINGS";
@@ -169,6 +182,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,char *text,uint 
 LAB_00554324:
   pHVar4 = thunk_FUN_00553e20(*local_8,nullptr,DAT_00807dd9);
   local_8[2] = (uint)pHVar4;
+
   puVar5 = ccFntTy::CreateSurf((ccFntTy *)local_8[2],*local_8,0,0,0,0,0,1);
   local_8[1] = (uint)puVar5;
   if (text != nullptr) {

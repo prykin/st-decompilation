@@ -13,8 +13,10 @@ OptPanelTy * __cdecl CreateOptPanel(void)
 {
   OptPanelTy *this;
 
-  this = (OptPanelTy *)FUN_006b04d0(0x306);
+
+  this = STPointerBoundaryCast<OptPanelTy *>(FUN_006b04d0(0x306));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;

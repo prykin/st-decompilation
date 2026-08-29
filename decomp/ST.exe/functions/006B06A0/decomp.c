@@ -1,7 +1,13 @@
 #include "../../pseudocode_runtime.h"
 
 
-bool FUN_006b06a0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,LOGPALETTE *param_2,int param_3,
+/* [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:2: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=1,
+   pointer_dereferences=4, scalar_uses=0; sites=006B079F dereference: MOV DL,byte ptr [EAX + -0x2] |
+   006B07A8 dereference: MOV DL,byte ptr [EAX + -0x5] | 006B07AE dereference: MOV DL,byte ptr [EAX +
+   -0x4] | 006B07B3 dereference: MOV DL,byte ptr [EAX + -0x3] */
+
+bool FUN_006b06a0(RecoveredGlobalRecordView_00854EB8 *param_1,LOGPALETTE *param_2,void *param_3,
                  UINT param_4,int param_5)
 
 {
@@ -75,7 +81,7 @@ bool FUN_006b06a0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,LOGPALETTE *param_
   }
   if (0 < param_5) {
     pBVar3 = &param_2->palPalEntry[param_4].peBlue;
-    pBVar4 = (BYTE *)(param_3 + 2);
+    pBVar4 = (BYTE *)((int)param_3 + 2);
     iVar7 = param_5;
     do {
       ((PALETTEENTRY *)(pBVar3 + -2))->peRed = pBVar4[-2];
@@ -93,11 +99,11 @@ bool FUN_006b06a0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,LOGPALETTE *param_
     *(undefined1 *)((int)&param_2[0x80].palVersion + 1) = 0xff;
     *(undefined1 *)&param_2[0x80].palNumEntries = 0xff;
   }
-  /* ST_CALLSITE[006B07ED]: CALL EDI */
+  /* ST_CALLSITE[006B07ED]: CALL EDI; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/WinDef.h/HPALETTE__; source view only; no Ghidra override */
   pHVar5 = CreatePalette(param_2);
   *(HPALETTE *)param_1 = pHVar5;
   if (pHVar5 != (HPALETTE)0x0) {
-    /* ST_CALLSITE[006B07FF]: CALL EDI */
+    /* ST_CALLSITE[006B07FF]: CALL EDI; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/WinDef.h/HPALETTE__; source view only; no Ghidra override */
     pHVar5 = CreatePalette(param_2);
     param_1->field_04B4 = pHVar5;
     if (pHVar5 == (HPALETTE)0x0) {
@@ -133,13 +139,14 @@ bool FUN_006b06a0(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,LOGPALETTE *param_
         puVar11 = puVar11 + 1;
       }
       memset((void *)(*(int *)&param_1[1].field_0x24 + 0x8000), 0, 0x8000); /* compiler bulk-zero initialization */
-      /* ST_CALLSITE[006B08B4]: CALL dword ptr [0x0085ba7c] */
+      /* ST_CALLSITE[006B08B4]: CALL dword ptr [0x0085ba7c]; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/WinDef.h/HPALETTE__; source view only; no Ghidra override */
       pHVar5 = CreatePalette((LOGPALETTE *)&local_408);
       *(HPALETTE *)&param_1[1].field_0x28 = pHVar5;
       if (pHVar5 == (HPALETTE)0x0) {
         return false;
       }
     }
+
     iVar7_mg7 = FUN_006b0520(param_1,(int)&local_404,0,0x100);
     return (bool)('\x01' - (iVar7_mg7 != 0));
   }

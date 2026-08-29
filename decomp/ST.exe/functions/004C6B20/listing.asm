@@ -1,6 +1,7 @@
 CreateTLOBldMark:
 004C6B20  6A 3C                     PUSH 0x3c
-004C6B22  E8 A9 99 1E 00            CALL 0x006b04d0
+CreateTLOBldMark::override::prt_4c6b22_3bbdb176:
+004C6B22  E8 A9 99 1E 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/TLOBldMark; signature=__stdcall;pointer:/TLOBldMark;/uint
 004C6B27  85 C0                     TEST EAX,EAX
 004C6B29  74 07                     JZ 0x004c6b32
 004C6B2B  8B C8                     MOV ECX,EAX

@@ -29,9 +29,11 @@ void __thiscall TradePanelTy::SetModeControls(TradePanelTy *this,char param_1)
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
+
     errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     this_00 = local_8;
     if (errorCode == 0) {
+
       Library::DKW::WGR::FUN_006b55f0
                 ((RecoveredSourceFamily_dibcopy *)local_8->field_0068,0,0xa6,0x31,
                  local_8->field_0185,0,0xa6,0x31,0x77,0x39);
@@ -66,7 +68,7 @@ void __thiscall TradePanelTy::SetModeControls(TradePanelTy *this,char param_1)
         uVar7 = 0xb201;
         this_00->field_01C8 = uVar6;
         pCVar3 = thunk_FUN_00571240("BUT_MEDIUM",0);
-        /* ST_CALLSITE[005515B9]: CALL dword ptr [EDI + 0x4] */
+        /* ST_CALLSITE[005515B9]: CALL dword ptr [EDI + 0x4]; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
         uVar6 = (*STField<code *>(pAVar1,0x4))
                           (0,1,0xe5,0x57,0,1,1,pCVar3,uVar7,uVar8,uVar9,uVar10,uVar11,uVar12,uVar5);
         this_00->field_01CC = uVar6;
@@ -83,6 +85,7 @@ void __thiscall TradePanelTy::SetModeControls(TradePanelTy *this,char param_1)
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\tradecen.cpp",0x81,0,errorCode,
                                "%s","TradePanelTy::SetModeControls");
     if (iVar4 != 0) {

@@ -105,7 +105,7 @@ LAB_0043f47d:
 0043F495  8B 01                     MOV EAX,dword ptr [ECX]
 0043F497  8D 55 E4                  LEA EDX,[EBP + -0x1c]
 0043F49A  52                        PUSH EDX
-0043F49B  FF 50 74                  CALL dword ptr [EAX + 0x74]
+0043F49B  FF 50 74                  CALL dword ptr [EAX + 0x74]  ; [STIndirectCallsiteApplier] exact slot 0x74; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 0043F49E  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]
 0043F4A1  8D 75 E4                  LEA ESI,[EBP + -0x1c]
 LAB_0043f4a4:

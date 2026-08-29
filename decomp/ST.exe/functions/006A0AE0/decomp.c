@@ -17,10 +17,9 @@ FUN_006a0ae0(void *this,int param_1,int param_2,undefined4 param_3,int param_4,u
   byte *puVar5;
   uint *puVar6;
   byte *puVar7;
-  undefined4 local_9c;
-  undefined2 local_98;
-  undefined4 local_8;
-
+  uint local_9c;
+  ushort local_98;
+  uint local_8;
   local_8 = 0;
   puVar1_mg1 = thunk_FUN_00692c10(CASE_A,param_4,&local_8,0,param_5);
   puVar4 = puVar1_mg1 + 5;

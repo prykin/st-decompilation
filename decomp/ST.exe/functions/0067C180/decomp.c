@@ -37,9 +37,9 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
   uint uVar14;
   bool bVar15;
   InternalExceptionFrame local_80;
-  undefined4 local_3c;
+  uint local_3c;
   short local_38 [6];
-  undefined4 local_2c;
+  uint local_2c;
   IMAGE_DOS_HEADER *local_28;
   ushort local_24;
   AiPlrClassTy *local_20;
@@ -56,6 +56,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
     local_80.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_80;
     local_20 = this;
+
     local_EAX_93 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
     this_00 = local_20;
     if (local_EAX_93 == 0) {
@@ -93,6 +94,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
           }
           if ((((this_00->field_0677 <= local_1c) && (0 < (int)uVar14)) && (0 < local_1c)) &&
              ((0 < local_10 &&
+
               (iVar13 = thunk_FUN_0042a990((char)this_00->field_0640), local_18 = iVar13,
               iVar13 != 0)))) {
             bVar15 = STField<int>(iVar13,0xC) != 0;
@@ -107,18 +109,15 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
                   piVar5 = nullptr;
                 }
                 piVar5 = (int *)*piVar5;
-                /* ST_CALLSITE[0067C303]: CALL dword ptr [EAX + 0xf8] */
-                /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                if ((piVar5 != nullptr) && (iVar6 = (**(code **)(*piVar5 + 0xf8))(), iVar6 != 0))
+                /* ST_CALLSITE[0067C303]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                if ((piVar5 != nullptr) && (iVar6 = STStructuralVirtualCall<undefined4>(piVar5, 0xF8), iVar6 != 0))
                 {
-                  /* ST_CALLSITE[0067C311]: CALL dword ptr [EDX + 0x2c] */
-                  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                  iVar6 = (**(code **)(*piVar5 + 0x2c))();
+                  /* ST_CALLSITE[0067C311]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                  iVar6 = STStructuralVirtualCall<undefined4>(piVar5, 0x2C);
                   pIVar7 = thunk_FUN_00674fb0(iVar6);
                   if ((((uint)pIVar7 & 3) != 0) || (((uint)pIVar7 & 0x630000) != 0)) {
-                    /* ST_CALLSITE[0067C32C]: CALL dword ptr [EAX + 0xd4] */
-                    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-                    iVar6 = (**(code **)(*piVar5 + 0xd4))();
+                    /* ST_CALLSITE[0067C32C]: CALL dword ptr [EAX + 0xd4]; [STIndirectCallsiteApplier] exact slot 0xD4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                    iVar6 = STStructuralVirtualCall<undefined4>(piVar5, 0xD4);
                     local_14 = local_14 + iVar6;
                   }
                 }
@@ -148,13 +147,14 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this)
                     memset(&local_3c, 0, 0x1c); /* compiler bulk-zero initialization */
                     STPiece<0,2>(local_3c) = (undefined2)local_8;
                     /* ST_CALLSITE[0067C3CE]: CALL dword ptr [EDX + 0x2c] */
-                    dVar9 = pSVar1->slot_2C();
+                    dVar9 = pSVar1->vfunc_2C();
                     STPiece<2,2>(local_3c) = (short)dVar9;
                     thunk_FUN_0067bda0(local_38,pSVar1);
                     /* ST_CALLSITE[0067C3E6]: CALL dword ptr [EDX + 0xd4] */
                     local_2c = pSVar1->vfunc_D4();
                     local_28 = thunk_FUN_00674fb0((int)STPiece<2,2>(local_3c));
                     local_24 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
+
                     Library::DKW::TBL::DArrayAppend(this_00->field_06AD,&local_3c);
                     iVar13 = local_18;
                   }
@@ -185,6 +185,7 @@ LAB_0067c61b:
            (uVar14 = local_20->field_0685 + iVar13, uVar14 <= local_20->field_06FE)) {
           local_20->field_0685 = local_20->field_06FE;
           thunk_FUN_0067be20((int)local_20,uVar14,local_20->field_06AD);
+
           iVar4 = thunk_FUN_0067bd50(this_00->field_06AD);
           pDVar10 = Library::DKW::TBL::DArrayCreate(nullptr,5,0x10,5);
           local_c = pDVar10;
@@ -200,6 +201,7 @@ LAB_0067c61b:
             array = local_c;
             if (0 < (int)pDVar10->count) {
               if ((int)this_00->field_06AD->count < iVar13) {
+
                 iVar13 = thunk_FUN_0042a990((char)this_00->field_0640);
                 local_18 = iVar13;
                 if (iVar13 != 0) {
@@ -226,13 +228,14 @@ LAB_0067c61b:
                         memset(&local_3c, 0, 0x1c); /* compiler bulk-zero initialization */
                         STPiece<0,2>(local_3c) = uVar3;
                         /* ST_CALLSITE[0067C582]: CALL dword ptr [EAX + 0x2c] */
-                        dVar9 = pSVar1->slot_2C();
+                        dVar9 = pSVar1->vfunc_2C();
                         STPiece<2,2>(local_3c) = (short)dVar9;
                         thunk_FUN_0067bda0(local_38,pSVar1);
                         /* ST_CALLSITE[0067C59A]: CALL dword ptr [EDX + 0xd4] */
                         local_2c = pSVar1->vfunc_D4();
                         local_28 = thunk_FUN_00674fb0((int)STPiece<2,2>(local_3c));
                         local_24 = thunk_FUN_00675430((Global_sub_00675430_param_1Enum)local_28);
+
                         Library::DKW::TBL::DArrayAppend(this_00->field_06AD,&local_3c);
                         iVar13 = local_18;
                         uVar14 = local_8;
@@ -262,6 +265,7 @@ LAB_0067c61b:
     }
     else {
       g_currentExceptionFrame = local_80.previous;
+
       iVar7 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr.cpp",0x570,0,local_EAX_93,
                                  "%s","AiPlrClassTy::Offensive");
       if (iVar7 != 0) {

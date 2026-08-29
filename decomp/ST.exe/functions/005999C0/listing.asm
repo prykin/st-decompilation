@@ -68,7 +68,8 @@ LAB_00599a54:
 00599A73  51                        PUSH ECX
 00599A74  52                        PUSH EDX
 00599A75  50                        PUSH EAX
-00599A76  E8 45 B6 11 00            CALL 0x006b50c0
+FSGSTy::PrepBkgMess::override::prt_599a76_899bc419:
+00599A76  E8 45 B6 11 00            CALL 0x006b50c0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ushort; signature=__stdcall;pointer:/ushort;/int;/int;/int;/uint;pointer:/undefined4;/int
 00599A7B  8B 8E BC 1A 00 00         MOV ECX,dword ptr [ESI + 0x1abc]
 00599A81  89 07                     MOV dword ptr [EDI],EAX
 00599A83  8B 15 A8 75 80 00         MOV EDX,dword ptr [0x008075a8]

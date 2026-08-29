@@ -23,6 +23,7 @@ PopUpTy::OutProc(PopUpTy *this,int *param_1,int param_2,undefined4 param_3,int p
     local_10 = (AnonShape_0052D0A0_90C708AF *)param_8;
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
+
     errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
     if (errorCode == 0) {
       if ((local_10 != nullptr) &&
@@ -41,6 +42,7 @@ PopUpTy::OutProc(PopUpTy *this,int *param_1,int param_2,undefined4 param_3,int p
           local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar2));
         } while (bVar2 < 0xf);
         if (bVar4 != 0xff) {
+
           Library::DKW::DDX::FUN_006b4680
                     (param_1,param_4,param_5,local_10->field_0090,nullptr,0,
                      (local_c & 0xff) * 0x13,local_10->entries[local_c & 0xff],0x13,0x1000089);
@@ -50,6 +52,7 @@ PopUpTy::OutProc(PopUpTy *this,int *param_1,int param_2,undefined4 param_3,int p
       return;
     }
     g_currentExceptionFrame = local_54.previous;
+
     iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\mpopup.cpp",0x22,0,errorCode,
                                "%s","PopUpTy::OutProc");
     if (iVar3 != 0) {

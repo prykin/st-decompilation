@@ -18,7 +18,8 @@
    machine CFG audit: used=115, ignored=20, unknown=0 */
 
 int __thiscall
-STPlaySystemC::sub_006E62D0(STPlaySystemC *this,AnonShape_005EFAE0_B406B78B *param_1,int *param_2)
+STPlaySystemC::sub_006E62D0
+          (STPlaySystemC *this,RecoveredRecordView_005EFAE0_855D930D *param_1,int *param_2)
 
 {
   DArrayTy *pDVar1;
@@ -37,7 +38,7 @@ STPlaySystemC::sub_006E62D0(STPlaySystemC *this,AnonShape_005EFAE0_B406B78B *par
     pDVar1->iteratorIndex = uVar2 + 1;
     if (pvVar4 == nullptr) break;
     iVar3 = STField<int>(pvVar4,4);
-    if (*(AnonShape_005EFAE0_B406B78B **)(iVar3 + 0x18) == param_1) {
+    if (*(RecoveredRecordView_005EFAE0_855D930D **)(iVar3 + 0x18) == param_1) {
       if (param_2 != nullptr) {
         *param_2 = iVar3;
       }

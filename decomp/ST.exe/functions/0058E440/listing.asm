@@ -1,4 +1,4 @@
-FUN_0058e440:
+STSharkC::vfunc_DC:
 0058E440  55                        PUSH EBP
 0058E441  8B EC                     MOV EBP,ESP
 0058E443  83 EC 08                  SUB ESP,0x8

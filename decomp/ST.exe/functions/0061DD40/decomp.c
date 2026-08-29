@@ -13,7 +13,7 @@ undefined4 __fastcall FUN_0061dd40(RecoveredRecord_STLightC_0061DD40 *param_1)
   float fVar5;
   int iVar6;
   longlong lVar7;
-  undefined4 local_10;
+  uint local_10;
   int local_c;
   int local_8;
 

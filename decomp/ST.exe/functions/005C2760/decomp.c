@@ -7,10 +7,9 @@ void FUN_005c2760(void)
   DWORD DVar1;
   DWORD DVar2;
   BITMAPINFO *pBVar3;
-  undefined4 local_2c;
-  undefined1 local_20;
-  undefined4 local_1e;
-
+  uint local_2c;
+  byte local_20;
+  uint local_1e;
   /* ST_CALLSITE[005C2767]: CALL dword ptr [0x0085bedc] */
   DVar2 = timeGetTime();
   DVar1 = DAT_00811754;
@@ -19,6 +18,7 @@ void FUN_005c2760(void)
     pBVar3 = FUN_0070b3a0(PTR_0081175c,(short)PTR_0081175c->field_0029);
     /* ST_CALLSITE[005C27C3]: CALL 0x00403738; direct=00403738 PutDDX */
     PutDDX(0x15,0x14,'\x06',pBVar3);
+
     Library::DKW::DDX::FUN_006bb370(g_dDXContext_0080759C,0,0);
     PTR_0081175c->field_0029 = PTR_0081175c->field_0029 + 1;
     if (PTR_0081175c->field_0023 <= (short)PTR_0081175c->field_0029) {
@@ -31,6 +31,7 @@ void FUN_005c2760(void)
       local_20 = DAT_0080733b;
       STPiece<2,1>(local_2c) = 0;
       local_1e = DAT_00808754;
+
       FUN_00715360(g_int_00811764,0,'\x1a',(char *)&local_2c,0x26,1,0xffffffff);
     }
   }

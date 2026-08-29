@@ -44,18 +44,18 @@ AiEventClassTy::__CreateObjPl
   uint local_a4 [5];
   uint local_90;
   int local_8c;
-  undefined2 local_88;
-  undefined2 local_86;
-  undefined2 local_84;
-  undefined2 local_82;
-  undefined2 local_80;
-  undefined4 local_7e;
+  ushort local_88;
+  ushort local_86;
+  ushort local_84;
+  ushort local_82;
+  ushort local_80;
+  uint local_7e;
   int local_7a;
   int local_76;
-  undefined4 local_72;
+  uint local_72;
   char local_6e [15];
-  undefined4 local_5f;
-  undefined4 local_5b;
+  uint local_5f;
+  uint local_5b;
   AiEventClassTy *local_38;
   short local_34 [2];
   uint local_30;
@@ -74,9 +74,11 @@ AiEventClassTy::__CreateObjPl
   local_e8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_e8;
   local_38 = this;
+
   local_EAX_54 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0);
   if (local_EAX_54 != 0) {
     g_currentExceptionFrame = local_e8.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0xcb,0,local_EAX_54,
                                "%s","AiEventClassTy::__CreateObjPl");
     if (iVar4 != 0) {
@@ -107,12 +109,14 @@ AiEventClassTy::__CreateObjPl
       local_38->field_0088 = local_38->field_0088 * 0x41c64e6d + 0x3039;
       local_18 = local_38->field_0088 * 0x41c64e6d + 0x3039;
       local_38->field_0088 = local_18;
+
       iVar5 = thunk_FUN_00675b10((local_18 >> 0x10) % (uint)(int)local_28[0] + (short)local_20,
                                  (local_38->field_0088 >> 0x10) % (uint)(int)local_1c[0] +
                                  (short)local_30,1,(short *)&param_3,(short *)&param_4,
                                  (short *)&param_5,(int)param_2);
     }
     else {
+
       iVar3 = thunk_FUN_004961b0((short)param_3,(short)param_4,(short)param_5);
       if (iVar3 == 0) {
         local_2c = param_3 + -1;
@@ -126,6 +130,7 @@ AiEventClassTy::__CreateObjPl
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = local_24 + 1;
       }
+
       iVar5 = thunk_FUN_00675b10(param_3,param_4,(short)param_5,(short *)&param_3,(short *)&param_4,
                                  (short *)&param_5,(int)param_2);
     }
@@ -195,9 +200,11 @@ AiEventClassTy::__CreateObjPl
       iVar6 = 1;
       GVar10 = (Global_sub_004B1120_param_2Enum)param_2;
       uVar7 = param_1 & 0xffff;
+
       iVar5 = thunk_FUN_004ae0b0((short)param_3,local_c,local_10,GVar10,uVar7,nullptr,
                                  nullptr,nullptr,1,nullptr);
       if (iVar5 == 0) {
+
         iVar6 = thunk_FUN_004b1120(uVar7,GVar10,&local_8,&local_c,&local_10,0,0);
       }
       if (iVar6 == 0) {
@@ -212,11 +219,13 @@ AiEventClassTy::__CreateObjPl
     }
     else {
       uVar8 = param_1 & 0xffff;
+
       local_EAX_1070 = thunk_FUN_004b1120(uVar8,(int)param_2,&local_8,&local_c,&local_10,0,0);
       if (local_EAX_1070 != 0) {
         if (((int)uVar7 < 0) || (7 < (int)uVar7)) {
           uVar7 = uVar8;
         }
+
         thunk_FUN_004b0f20(uVar8,(int)param_2,local_8,local_c,local_10,param_6,uVar7,param_8,0,
                            param_9);
       }

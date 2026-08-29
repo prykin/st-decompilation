@@ -33,21 +33,21 @@ undefined4 __fastcall FUN_0061e7f0(STLightC *param_1)
   ushort uVar22;
   int iVar23;
   uint uVar24;
-  undefined4 local_80;
+  uint local_80;
   float local_7c;
   float local_78;
   float local_74;
   float local_70;
   float local_6c;
   float local_68;
-  undefined4 local_64;
-  undefined1 local_60;
-  undefined4 local_5f;
-  undefined1 local_5b;
+  uint local_64;
+  byte local_60;
+  uint local_5f;
+  byte local_5b;
   uint local_5a;
   int local_56;
-  undefined1 local_52;
-  undefined1 local_51;
+  byte local_52;
+  byte local_51;
   int local_50;
   int local_4c;
   int local_48;
@@ -165,8 +165,9 @@ LAB_0061eb1a:
             lVar19 = Library::MSVCRT::__ftol();
             iVar14 = (int)lVar19;
             lVar19 = Library::MSVCRT::__ftol();
-            SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
-                      ((AnonReceiver_00601500 *)(param_1 + 1),(int)lVar19,iVar14,iVar13,iVar12,
+
+            SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00601500::thunk_FUN_00601500
+                      ((RecoveredReceiver_00601500 *)(param_1 + 1),(int)lVar19,iVar14,iVar13,iVar12,
                        iVar11,iVar10,iVar20,iVar21,iVar15,uVar22,iVar23,uVar8,uVar24);
           }
           if (*(int *)((int)param_1->field_0057 + uVar17 * 4) == 0) {
@@ -190,10 +191,12 @@ LAB_0061eb1a:
           local_5a = 0xffffffff;
           local_52 = (undefined1)uVar17;
           local_80 = 1;
+
           ST3DSMAPContext::sub_006E88C0
                     (g_sT3DSMAPContext_00807598,(int *)&local_5a,local_7c,local_78,local_74,local_70
                      ,local_6c,local_68,local_64,0xac,uVar16,PTR_008032d0 + local_2c * 0x100,
                      0xffffffff);
+
           Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,local_5a,0);
           this = g_visibleClass_00802A88;
           if (param_1->field_00A7 == '\0') {
@@ -239,6 +242,7 @@ LAB_0061eefe:
                  (this->field_004C[local_38 + iVar15 * this->field_0030] == 0)) goto LAB_0061eefe;
             }
           }
+
           Library::DKW::TBL::DArrayAppend((DArrayTy *)param_1->field_00A3,&local_80);
           if (local_14 == *(int *)((int)param_1->field_009B + uVar17 * 4) + -2) {
             *(undefined4 *)((int)param_1->field_0057 + local_c * 4) = 0xfffffffe;
@@ -366,7 +370,7 @@ LAB_0061efea:
   cVar1 = param_1->field_0046;
 joined_r0x0061f03a:
   if (cVar1 == '\0') {
-    thunk_FUN_0061e770((AnonShape_0061E770_099C0C21 *)param_1);
+    thunk_FUN_0061e770((RecoveredRecordView_0061E770_B7808E1F *)param_1);
   }
 LAB_0061f043:
   local_c = local_c + 1;

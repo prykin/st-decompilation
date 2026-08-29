@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_004c3020(AnonShape_004C3020_45D93566 *param_1)
+undefined4 __fastcall FUN_004c3020(RecoveredRecordView_004C3020_65C82BB8 *param_1)
 
 {
   uint uVar1;
@@ -23,6 +23,7 @@ undefined4 __fastcall FUN_004c3020(AnonShape_004C3020_45D93566 *param_1)
     uVar4 = g_playSystem_00802A38->field_00E4;
   }
   else {
+
     iVar2 = thunk_FUN_004e8230(param_1->field_0024,iVar2,0);
     uVar4 = param_1->field_001C * 0x41c64e6d + 0x3039;
     param_1->field_001C = uVar4;
@@ -68,6 +69,7 @@ undefined4 __fastcall FUN_004c3020(AnonShape_004C3020_45D93566 *param_1)
     param_1->field_02FD = 0x18;
     param_1->field_0301 = 3;
     param_1->field_02ED = 0;
+
     iVar2 = thunk_FUN_004e8230(param_1->field_0024,iVar2,1);
     uVar4 = param_1->field_001C * 0x41c64e6d + 0x3039;
     param_1->field_001C = uVar4;

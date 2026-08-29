@@ -29,16 +29,18 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
   byte local_10;
   undefined3 uStack_f;
   SAMPanelTy *local_c;
-  undefined1 local_6;
+  byte local_6;
   char local_5;
 
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_c = this;
+
   iVar6 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_c;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar11 = ReportDebugMessage("E:\\__titans\\Andrey\\setamine.cpp",0x94,0,iVar6,
                                 "%s","SAMPanelTy::GetMessage");
     if (iVar11 != 0) {
@@ -53,7 +55,9 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
   if (SVar1 < 0xb509) {
     if (SVar1 == MESS_SAMPANELTY_B508) {
       local_6 = 0xff;
-      thunk_FUN_0054edf0((undefined4 *)0x2a,(uint *)&local_6,0,0xffffffff);
+      /* ST_CALLSITE[0053D5C5]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+      STPlaySystemC::sub_0054EDF0
+                (g_playSystem_00802A38,(undefined4 *)0x2a,(uint *)&local_6,0,0xffffffff);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
@@ -73,7 +77,9 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
     }
     else if ((0xb4fe < SVar1) && (SVar1 < MESS_SAMPANELTY_B508)) {
       local_5 = (char)message->id + 1;
-      thunk_FUN_0054edf0((undefined4 *)0x2a,(uint *)&local_5,0,0xffffffff);
+      /* ST_CALLSITE[0053D599]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+      STPlaySystemC::sub_0054EDF0
+                (g_playSystem_00802A38,(undefined4 *)0x2a,(uint *)&local_5,0,0xffffffff);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
@@ -90,11 +96,13 @@ int __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,STMessage *message)
       if (this_00->field_005C != 0) {
         iVar7 = this_00->field_0044;
       }
-      pBVar8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_01B1,
+      /* ST_CALLSITE[0053D673]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+      pBVar8 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_01B1,
                             (uint)(*(char *)((int)&this_00->field_01AB + (uint)bVar5) == '\0'));
       /* ST_CALLSITE[0053D681]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar12 - iVar10,iVar3 - iVar7,
-             '\x01',(byte *)pBVar8);
+             '\x01',(RecoveredRecordView_006B84D0_87AF9D9B *)pBVar8);
+
       Library::DKW::DDX::FUN_006b3640
                 ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
                  this_00->field_0044);

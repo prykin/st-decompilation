@@ -15,12 +15,11 @@ TLOFakeTy * __thiscall st::fn_004D0920(TLOFakeTy *this)
 
 {
   /* ST_CALLSITE[004D0924]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
-  st::fn_00401933((STGameObjC *)this);
+  st::fn_00401933(reinterpret_cast<STGameObjC *>(this));
   /* ST_CALLSITE[004D0931]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
-  st::fn_00401316((STT3DSprC *)&this->field_01D5);
+  st::fn_00401316(reinterpret_cast<STT3DSprC *>(&this->field_01D5));
   this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_007976C0);
   this->vtable = &st_global_00797560;
   this->field_024D = nullptr;
   return this;
 }
-

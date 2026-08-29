@@ -9,9 +9,18 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\scoreai.cpp
    Diagnostic line evidence: 3522 | 3540 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:3: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=2,
+   pointer_dereferences=10, scalar_uses=0; sites=00563071 dereference: MOV dword ptr [ECX +
+   -0x8],EDI | 00563074 dereference: MOV dword ptr [ECX + -0x4],EDI | 00563077 dereference: MOV
+   dword ptr [ECX + 0x8],EBX | 0056307A dereference: CMP dword ptr [ECX + -0xc],EBX | 0056307F
+   dereference: MOV EDX,dword ptr [ECX] | 00563085 dereference: MOV EAX,dword ptr [ECX + 0x4] |
+   0056309B dereference: MOV dword ptr [ECX + -0xc],EAX | 0056309E dereference: MOV dword ptr
+   [ECX],EBX | 005630A0 dereference: MOV dword ptr [ECX + 0x4],EBX | 005632AC dereference: MOV
+   EAX,dword ptr [EAX] */
 
-void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
+void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,void *param_4,int param_5,int param_6,
                         int param_7,int param_8,int param_9,uint param_10)
 
 {
@@ -53,16 +62,16 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
   RuntimeRecord_008032F4_0014 aRStackY_19c8 [99];
   int iStackY_11fc;
   AnonPointee_TLOBaseTy_0607 aAStackY_11f8 [16];
-  undefined4 uStackY_106c;
+  uint uStackY_106c;
   undefined4 auStackY_1068 [15];
-  undefined4 uStackY_102c;
+  uint uStackY_102c;
   undefined4 auStackY_1028 [16];
   undefined4 auStackY_fe8 [15];
-  undefined4 uStackY_fac;
+  uint uStackY_fac;
   int aiStackY_fa8 [703];
-  undefined4 uStackY_4ac;
+  uint uStackY_4ac;
   byte abStackY_4a8 [672];
-  undefined4 uStackY_208;
+  uint uStackY_208;
   InternalExceptionFrame local_1b8;
   undefined4 *local_174;
   int local_16c;
@@ -112,7 +121,7 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
+  uint local_8;
   RuntimeRecord_008032F4_0014 *temp_203f9621b1d8;
   RuntimeRecord_008032F8_0014 *temp_3f50488dac;
 
@@ -123,7 +132,7 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
   local_1c = &stack0xfffffe18;
   local_6c[0] = nullptr;
   local_70 = 0;
-  if ((param_4 != 0) && (0 < param_5)) {
+  if ((param_4 != nullptr) && (0 < param_5)) {
     _DAT_00803318 = 0;
     _DAT_0080331c = 1;
     DAT_00803320 = 2;
@@ -152,7 +161,7 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
     g_runtimeRecords_00803300 = nullptr;
     DAT_00803314 = 0;
     DAT_0080337c = 0;
-    piVar12 = (int *)(param_4 + 0xc);
+    piVar12 = (int *)((int)param_4 + 0xc);
     iVar18 = param_5;
     ExceptionList = &local_14;
     do {
@@ -191,11 +200,14 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
     DAT_00803308 = param_3 - DAT_008033c0;
     local_1b8.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_1b8;
+
     iVar14 = Library::MSVCRT::__setjmp3(local_1b8.jumpBuffer,2);
     local_1c = &stack0xfffffe18;
     if (iVar14 == 0) {
       local_1c = &stack0xfffffe18;
+
       local_60[0] = Library::DKW::LIB::MemAllocClear(DAT_008033ac * 2);
+
       PTR_00803380 = Library::DKW::LIB::MemAllocClear(DAT_008033ac * 2);
       local_a0 = abStackY_4a8;
       uStackY_4ac = 0x5631b8;
@@ -230,7 +242,7 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
       puVar8 = auStackY_1068;
       if (0 < param_5) {
         do {
-          piVar12 = (int *)(param_4 + local_78 * 0x18);
+          piVar12 = (int *)((int)param_4 + local_78 * 0x18);
           iVar13 = *piVar12;
           if (0 < iVar13) {
             iVar20 = 0;
@@ -241,8 +253,10 @@ void AiAiCalcMinesFields(uint param_1,int param_2,int param_3,int param_4,int pa
               } while (iVar20 < (int)uVar23);
             }
             if (iVar20 < (int)uVar23) {
+
               Library::MSVCRT::FUN_0072da70
-                        ((undefined4 *)((int)aAStackY_11f8 + iVar20 * 4 + iVar18 + 4),
+                        ((RecoveredRecord_006BFE70_3123BCE8 *)
+                         ((int)aAStackY_11f8 + iVar20 * 4 + iVar18 + 4),
                          (AnonPointee_TLOBaseTy_0607 *)((int)aAStackY_11f8 + iVar20 * 4 + iVar18),
                          (iVar20 * 0x3fffffff + uVar23) * 4);
             }
@@ -663,6 +677,7 @@ LAB_005637bc:
       if (0 < iVar13) {
         iVar18 = (iVar20 + iVar13 / 2) / iVar13;
         iVar16 = (local_dc + iVar13 / 2) / iVar13;
+
         local_EAX_3741 = FUN_006acf90(iVar18,iVar16,DAT_00803304,DAT_00803308);
         if (5 < local_EAX_3741) {
           iVar18 = ((local_EAX_3741 + -5) * DAT_00803304 + iVar18 * 5) / local_EAX_3741;
@@ -678,6 +693,7 @@ LAB_005637bc:
         piVar12 = piVar12 + 1;
       }
       for (; local_80 = piVar4, iVar13 < 0xe; iVar13 = iVar13 + 1) {
+
         local_28_mg1 = FUN_0055ee70(pbVar5,iVar13,1);
         iVar18 = 0;
         if (0 < local_28_mg1) {
@@ -712,7 +728,8 @@ LAB_005637bc:
       }
       *piVar4 = DAT_00803304;
       piVar4[1] = DAT_00803308;
-      PTR_008033b4 = (undefined2 *)FUN_00561670((int)local_60[0],DAT_008033a4,DAT_008033a8,piVar4,1);
+
+      PTR_008033b4 = STPointerBoundaryCast<undefined2 *>(FUN_00561670((int)local_60[0],DAT_008033a4,DAT_008033a8,piVar4,1));
       FreeAndNull(local_60);
       thunk_FUN_0055dee0(local_a0);
       iVar18 = 0;
@@ -728,6 +745,7 @@ LAB_005637bc:
         iVar13 = DAT_0080339c;
       } while (iVar18 < 0x10);
       while (local_88 = iVar13, iVar13 < 0x16) {
+
         local_28_mg1 = FUN_0055ee70(local_a0,iVar13,1);
         iVar18 = DAT_00803384 - DAT_0080339c;
         iVar20 = 0x16 - DAT_00803384;
@@ -759,6 +777,7 @@ LAB_005637bc:
                   if (pRVar7->field_0010 <= DAT_008032ec) {
                     iVar20 = DAT_008032ec;
                   }
+
                   iVar10 = FUN_006acf90(pRVar7->field_0000,pRVar7->field_0004,iVar18,iVar13);
                   if (iVar10 < iVar20 / 2) {
                     local_140 = 1;
@@ -769,10 +788,12 @@ LAB_005637bc:
               }
               if (local_140 == 0) {
                 iVar20 = 0x10;
+
                 uVar11 = FUN_006db910(DAT_00803304,DAT_00803308,iVar18,iVar13);
-                local_74 = (int *)FUN_006db990(uVar11,iVar20);
-                local_b0 = (int)local_74 - 3;
-                if (local_b0 <= (int)((int)local_74 + 3U)) {
+
+                local_74 = STPointerBoundaryCast<int *>(FUN_006db990(uVar11,iVar20));
+                local_b0 = (int)local_74 + -3;
+                if (local_b0 <= (int)local_74 + 3) {
                   do {
                     if (local_b0 < 0) {
                       iVar20 = local_b0 + 0x10;
@@ -783,13 +804,16 @@ LAB_005637bc:
                         iVar20 = local_b0 + -0x10;
                       }
                     }
+
                     iVar19 = FUN_00561dc0(iVar18,iVar13,iVar20);
+
                     FUN_00564f30(iVar18,iVar13,iVar19,local_74,DAT_0080330c,local_88);
                     if (-1 < local_8c) {
+
                       FUN_00564f30(iVar18,iVar13,iVar19,local_74,DAT_008032e8,local_88);
                     }
                     local_b0 = local_b0 + 3;
-                  } while (local_b0 <= (int)((int)local_74 + 3U));
+                  } while (local_b0 <= (int)local_74 + 3);
                 }
               }
             }
@@ -889,6 +913,7 @@ LAB_005637bc:
                     iVar13 = 0;
                     if (0 < local_158) {
                       do {
+
                         local_EAX_5415 =
                              FUN_006acf90(g_runtimeRecords_00803300[local_40[iVar13]].field_0000,
                                           g_runtimeRecords_00803300[local_40[iVar13]].field_0004,
@@ -938,6 +963,7 @@ LAB_005637bc:
                   iVar13 = 0;
                   if (0 < local_158) {
                     do {
+
                       local_EAX_5654 =
                            FUN_006acf90(g_runtimeRecords_00803300[local_40[iVar13]].field_0000,
                                         g_runtimeRecords_00803300[local_40[iVar13]].field_0004,
@@ -999,6 +1025,7 @@ LAB_005637bc:
     }
     else {
       g_currentExceptionFrame = local_1b8.previous;
+
       iVar15 = ReportDebugMessage("E:\\__titans\\scoreai.cpp",0xdc2,0,iVar14,"%s");
       if (iVar15 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */

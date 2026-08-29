@@ -19,8 +19,10 @@ undefined4 __thiscall TLOBaseTy::sub_004DF9F0(TLOBaseTy *this)
     local_8 = this;
     if (0 < (int)array->count) {
       do {
+
         DArrayGetElement(array,index,&local_8);
         if (local_8 == this) {
+
           DArrayRemoveAt(g_packedRecords_A62x8[(int)this->field_0024].field1967_0x9d2,index);
           break;
         }

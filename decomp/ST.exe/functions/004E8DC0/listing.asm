@@ -19,7 +19,7 @@ FUN_004e8dc0:
 004E8DED  75 39                     JNZ 0x004e8e28
 004E8DEF  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 004E8DF2  8B 11                     MOV EDX,dword ptr [ECX]
-004E8DF4  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+004E8DF4  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004E8DF7  83 F8 6C                  CMP EAX,0x6c
 004E8DFA  75 2C                     JNZ 0x004e8e28
 004E8DFC  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]

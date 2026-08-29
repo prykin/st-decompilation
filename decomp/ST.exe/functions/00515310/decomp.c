@@ -35,10 +35,12 @@ void __thiscall HelpPanelTy::DrawTitle(HelpPanelTy *this,UINT param_1,int param_
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pHVar4 = local_c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar12 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x3d3,0,iVar5,
                                 "%s","HelpPanelTy::DrawTitle");
     if (iVar12 == 0) {
@@ -52,10 +54,12 @@ void __thiscall HelpPanelTy::DrawTitle(HelpPanelTy *this,UINT param_1,int param_
   }
   pHVar4->field_01D7->count = 0;
   pHVar4->field_01DB = 0;
+
   Library::DKW::WGR::FUN_006b55f0
             ((RecoveredSourceFamily_dibcopy *)pHVar4->field_0068,0,0x21,0x16,
-             (byte *)pHVar4->field_01DC,0,0x21,0x16,0x1b8,0x118);
+             (RecoveredRecordView_006B84D0_87AF9D9B *)pHVar4->field_01DC,0,0x21,0x16,0x1b8,0x118);
   uVar9 = local_8;
+
   ccFntTy::SetSurf(pHVar4->field_01E4,(int)pHVar4->field_0068,0,0x21,local_8,0x19c,0x14);
   if (DAT_0080874e == '\x03') {
     uVar6 = 5;
@@ -65,7 +69,9 @@ void __thiscall HelpPanelTy::DrawTitle(HelpPanelTy *this,UINT param_1,int param_
   }
   iVar12 = -1;
   iVar5 = -1;
+  /* ST_CALLSITE[005153E4]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
   pcVar7_mg0 = LoadResourceString(param_1,g_hINSTANCE_00807618);
+
   ccFntTy::WrStr(pHVar4->field_01E4,pcVar7_mg0,iVar5,iVar12,uVar6);
   local_8 = uVar9 + 0x14;
   if (param_2 != 0) {
@@ -78,15 +84,19 @@ void __thiscall HelpPanelTy::DrawTitle(HelpPanelTy *this,UINT param_1,int param_
     else {
       resourceId = 0x5606;
     }
+
     ccFntTy::SetSurf(pHVar4->field_01E0,(int)pHVar4->field_0068,0,0x21,local_8,0x19c,0xf);
     uVar6 = 3;
     iVar12 = -1;
     iVar5 = -1;
+    /* ST_CALLSITE[00515444]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     pcVar7_mg1 = LoadResourceString(resourceId,g_hINSTANCE_00807618);
+
     ccFntTy::WrStr(pHVar4->field_01E0,pcVar7_mg1,iVar5,iVar12,uVar6);
     local_8 = uVar9 + 0x23;
   }
   if (param_3 != 0) {
+
     ccFntTy::SetSurf(pHVar4->field_01E0,(int)pHVar4->field_0068,0,0x21,local_8,0x19c,0xf);
     pcVar7_mg2 = LoadResourceString(param_3,g_hINSTANCE_00807618);
     uVar9 = 0xffffffff;
@@ -107,6 +117,7 @@ void __thiscall HelpPanelTy::DrawTitle(HelpPanelTy *this,UINT param_1,int param_
         puVar7 = Library::MSVCRT::FUN_0072e560(puVar7,'\n')) {
       *(undefined1 *)puVar7 = 0x20;
     }
+
     ccFntTy::WrStr(pHVar4->field_01E0,(char *)&DAT_0080f33a,-1,-1,(DAT_0080874e != '\x03') - 1 & 5);
     local_8 = local_8 + 0xf;
   }
@@ -116,7 +127,8 @@ void __thiscall HelpPanelTy::DrawTitle(HelpPanelTy *this,UINT param_1,int param_
     uVar9 = ((uint)(ushort)pAVar2->field_000E * pAVar2->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
             pAVar2->field_0008;
   }
-  puVar8 = (undefined4 *)FUN_006b4fa0((int *)pAVar2);
+
+  puVar8 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0((RecoveredRecord_006B4FA0_DAC3A217 *)pAVar2));
   for (uVar6 = uVar9 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
     *puVar8 = 0xffffffff;
     puVar8 = puVar8 + 1;

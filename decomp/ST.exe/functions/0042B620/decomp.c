@@ -72,7 +72,7 @@ STAllPlayersC::GetObjPtr
 {
   int iVar2;
   STGameObjC *pSVar3;
-  DArrayTy *array;
+  DArrayOf_STGameObjCPtr *array;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined3 in_stack_00000005;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -80,7 +80,7 @@ STAllPlayersC::GetObjPtr
 
   switch(param_3) {
   case CASE_1:
-    array = (DArrayTy *)g_packedRecords_A62x8[objPtr].field3_0x9;
+    array = g_packedRecords_A62x8[objPtr].field3_0x9;
     if (array == nullptr) {
       return nullptr;
     }
@@ -116,6 +116,7 @@ STAllPlayersC::GetObjPtr
     }
     break;
   default:
+
     iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x17a,0,0,
                                "STAllPlayersC::GetObjPtr player=%d num=%d",(int)objPtr,param_2);
     if (iVar2 == 0) {
@@ -123,7 +124,8 @@ STAllPlayersC::GetObjPtr
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  iVar2 = DArrayGetElement(array,(uint)param_2,&objPtr);
+
+  iVar2 = DArrayGetElement((DArrayTy *)array,(uint)param_2,&objPtr);
   return (STGameObjC *)(-(uint)(iVar2 != -4) & _objPtr);
 }
 

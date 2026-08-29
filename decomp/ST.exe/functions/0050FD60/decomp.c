@@ -31,6 +31,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 == 0) {
@@ -42,6 +43,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar6 = 2;
     iVar5 = 0x31;
     g_frmPanel_0080168C = local_8;
+    /* ST_CALLSITE[0050FDBA]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SpecPanelTy; source view only; no Ghidra override */
     pCVar3 = thunk_FUN_00571240("BKG_FORMATIONW",0);
     /* ST_CALLSITE[0050FDC5]: CALL 0x00403800; direct=00403800 SpecPanelTy::InitPanel */
     SpecPanelTy::InitPanel
@@ -218,6 +220,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\frmpanel.cpp",0x43,0,iVar3,"%s",
                              "FrmPanelTy::InitFrmPanel");
   if (iVar8 != 0) {

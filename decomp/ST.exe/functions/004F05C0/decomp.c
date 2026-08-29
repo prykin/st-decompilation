@@ -28,17 +28,17 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   undefined4 auStack_300 [3];
   undefined4 auStack_2f4 [143];
   InternalExceptionFrame local_b8;
-  undefined4 local_74 [4];
-  undefined4 local_64;
-  undefined4 local_60;
-  undefined4 local_5c;
-  undefined4 local_44;
-  undefined4 local_40;
-  undefined4 local_3c;
+  uint local_74 [4];
+  uint local_64;
+  uint local_60;
+  uint local_5c;
+  uint local_44;
+  uint local_40;
+  uint local_3c;
   int *local_2c;
   int local_28;
-  undefined4 local_24;
-  undefined4 local_20;
+  uint local_24;
+  uint local_20;
   BldObjPanelTy *local_1c;
   int local_18;
   int local_14;
@@ -168,9 +168,8 @@ switchD_004f0850_default:
   local_24 = 1;
   local_20 = 1;
   local_44 = local_64;
-  /* ST_CALLSITE[004F0900]: CALL dword ptr [EDX + 0x8] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)(*STField<int *>(this_00,0xC) + 8))(5,&this_00->field_0292,0,local_74,0);
+  /* ST_CALLSITE[004F0900]: CALL dword ptr [EDX + 0x8]; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
+  STStructuralVirtualCall<undefined4>(STField<int *>(this_00,0xC), 0x8, 5, &this_00->field_0292, 0, local_74, 0);
   g_currentExceptionFrame = local_b8.previous;
   return;
 }

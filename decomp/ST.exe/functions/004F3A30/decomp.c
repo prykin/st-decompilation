@@ -29,7 +29,7 @@ CPanelTy::PaintTxtBut
   uint local_14;
   CPanelTy *local_10;
   int local_c;
-  ushort *local_8;
+  RecoveredRecordView_006B84D0_87AF9D9B *local_8;
 
   uVar2 = (uint)param_1;
   local_18 = (param_2->arg1).ptr;
@@ -73,16 +73,19 @@ cf_common_join_004F3AC3:
     local_5c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_5c;
     local_10 = this;
+
     iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
     if (iVar4 == 0) {
+      /* ST_CALLSITE[004F3B0C]: CALL 0x006f1ce0; direct=006F1CE0 cMf32::RecGet; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int */
       local_8 = cMf32::RecGet(g_cMf32_00806790,param_3,param_4,nullptr,1);
       pCVar3 = local_10;
       uVar4 = local_14;
       uVar2 = (uint)param_1;
       /* ST_CALLSITE[004F3B32]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)local_10->field_0148[uVar2 + 0xe],local_c,local_14,
-             param_3,(byte *)local_8);
+             param_3,local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
+
       ccFntTy::SetSurf(pCVar3->field_01B8,(int)pCVar3->field_0148[uVar2 + 0xe],0,local_c,uVar4,
                        local_18[2],local_18[3]);
       iVar9 = -1;
@@ -92,9 +95,12 @@ cf_common_join_004F3AC3:
       uVar4 = (*(code *)param_6)(param_2);
       iVar7 = -1;
       iVar5 = -2;
+      /* ST_CALLSITE[004F3B8C]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
       resourceString = LoadResourceString(param_5,g_hINSTANCE_00807618);
+
       ccFntTy::WrTxt(pCVar3->field_01B8,resourceString,iVar5,iVar7,uVar4,iVar8,iVar9);
       if ((param_1 < 0xb) && (-1 < (int)pCVar3->field_0148[uVar2])) {
+
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,(uint)pCVar3->field_0148[uVar2],0xffffffff,
                    (&pCVar3->field_003C)[uVar2],(&pCVar3->field_0094)[uVar2]);
@@ -103,6 +109,7 @@ cf_common_join_004F3AC3:
       return;
     }
     g_currentExceptionFrame = local_5c.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0x1f8,0,iVar4,"%s",
                                "CPanelTy::PaintTxtBut");
     if (iVar6 != 0) {

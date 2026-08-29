@@ -15,7 +15,11 @@
 
    [STSwitchEnumApplier] Switch target field_05C4 uses
    /SubmarineTitans/Recovered/Enums/STBoatC_field_05C4State. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7
+
+   [STSwitchEnumApplier] Switch target field_05C0 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_05C0State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
 
 void __thiscall
 STBoatC::PrepareForLoading
@@ -25,12 +29,12 @@ STBoatC::PrepareForLoading
   short sVar1;
   int iVar3;
 
-  if ((AnonShape_005EFAE0_B406B78B *)param_1 == this->field_05A2) {
+  if ((RecoveredRecordView_005EFAE0_855D930D *)param_1 == this->field_05A2) {
     sVar1 = this->field_005F;
     *(short *)&this->field_0x5ac = param_3;
     *(short *)&this->field_0x5ae = param_4;
     this->field_05B0 = param_5;
-    this->field_05C0 = 1;
+    this->field_05C0 = CASE_1;
     this->field_05AA = param_2;
     switch((int)param_4 - (int)sVar1) {
     case 0:
@@ -81,6 +85,7 @@ STBoatC::PrepareForLoading
       this->field_05B2 = sVar1 + -1;
       break;
     default:
+
       iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x4fe6,0,0,"%s",
                                  "STBoatC::PrepareForLoading too much");
       if (iVar3 != 0) {
@@ -115,6 +120,7 @@ STBoatC::PrepareForLoading
     this->field_05C4 = CASE_1;
   }
   else {
+
     iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x4fcb,0,0,"%s",
                                "STBoatC::PrepareForLoading name!=swli.lname");
     if (iVar3 != 0) {

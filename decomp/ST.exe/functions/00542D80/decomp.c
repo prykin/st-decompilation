@@ -17,14 +17,15 @@ void CreateInterSystem(void)
   InterSystemC *this;
   int iVar2;
   InternalExceptionFrame local_68;
-  undefined1 local_24 [16];
-  undefined4 local_14;
-
+  byte local_24 [16];
+  uint local_14;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
+
   errorCode = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   if (errorCode == 0) {
-    this = (InterSystemC *)Library::MSVCRT::FUN_0072e530(0x34);
+    /* ST_CALLSITE[00542DB2]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/InterSystemC; signature=__cdecl;pointer:/InterSystemC;/uint */
+    this = Library::MSVCRT::FUN_0072e530(0x34);
     if (this == nullptr) {
       g_interSystem_00802A28 = nullptr;
     }
@@ -35,6 +36,7 @@ void CreateInterSystem(void)
     g_interSystem_00802A28->field_0020 = 0;
     /* ST_CALLSITE[00542DE4]: CALL dword ptr [EDX] */
     (*g_interSystem_00802A28->vtable->InitSystem)((SystemClassTy *)g_interSystem_00802A28);
+
     AppClassTy::AddChildSystem
               ((AppClassTy *)&DAT_00807620,(SystemClassTy *)g_parentSystem_0081163C,
                (SystemClassTy *)g_interSystem_00802A28,0);
@@ -48,6 +50,7 @@ void CreateInterSystem(void)
     return;
   }
   g_currentExceptionFrame = local_68.previous;
+
   iVar2 = ReportDebugMessage("E:\\__titans\\Andrey\\tintersys.cpp",0xca,0,errorCode,
                              "%s","CreateInterSystem");
   if (iVar2 != 0) {

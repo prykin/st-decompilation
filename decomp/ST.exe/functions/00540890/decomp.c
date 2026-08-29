@@ -42,46 +42,56 @@ StartServTy::WrTextDDX
 {
   int iVar2;
   InternalExceptionFrame local_50;
-  BITMAPINFO *local_c;
+  ccFntTy *local_c;
   int local_8;
 
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar2 == 0) {
     if (param_4 < 1) {
+
       iVar2 = FUN_00711370(param_9,(uint *)resourceString);
       param_4 = iVar2 + (((int)param_7 < 1) - 1 & param_7);
     }
     local_8 = param_4;
     if (param_5 < 1) {
+
       iVar2 = FUN_007113e0(param_9,(uint *)resourceString);
       param_5 = iVar2 + (((int)param_8 < 1) - 1 & param_8);
     }
     if (param_1 == 0) {
-      local_c = (BITMAPINFO *)ccFntTy::CreateSurf(param_9,0,0,0,0,local_8,param_5,1);
+
+      local_c = STPointerBoundaryCast<ccFntTy *>(ccFntTy::CreateSurf(param_9,0,0,0,0,local_8,param_5,1));
     }
     else {
-      local_c = (BITMAPINFO *)
-                Library::DKW::WGR::FUN_006b55f0
-                          (nullptr,0,0,0,(byte *)param_1,0,param_2,
-                           param_3,local_8,param_5);
+      /* ST_CALLSITE[00540929]: CALL 0x006b55f0; direct=006B55F0 Library::DKW::WGR::FUN_006b55f0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__stdcall;pointer:/ccFntTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy;/int;/int;/int;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;/int;/int;/int;/int;/int */
+      local_c = Library::DKW::WGR::FUN_006b55f0
+                          (nullptr,0,0,0,
+                           (RecoveredRecordView_006B84D0_87AF9D9B *)param_1,0,param_2,param_3,
+                           local_8,param_5);
+
       ccFntTy::SetSurf(param_9,(int)local_c,0,0,0,0,0);
     }
+
     ccFntTy::WrTxt(param_9,resourceString,param_7,param_8,param_10,-1,-1);
     FUN_006b5f80((int *)g_ddxContext_008075A8,param_2,param_3,local_8,param_5);
     /* ST_CALLSITE[005409A1]: CALL 0x00405ed4; direct=00405ED4 TransPutDDX */
-    TransPutDDX(param_2,param_3,'\x01',local_c,-(uint)(param_1 != 0));
+    TransPutDDX(param_2,param_3,'\x01',(BITMAPINFO *)local_c,-(uint)(param_1 != 0));
+
     ccFntTy::EraseSufr(param_9);
     g_currentExceptionFrame = local_50.previous;
     return;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar2 = ReportDebugMessage("E:\\__titans\\Andrey\\support.cpp",0x75,0,iVar2,"%s",
                              "StartServTy::WrTextDDX");
   if (iVar2 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+
   ccFntTy::EraseSufr(param_9);
   return;
 }

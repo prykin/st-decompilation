@@ -21,12 +21,12 @@ AiEventClassTy * __thiscall st::fn_0064CC90(AiEventClassTy *this)
     puVar2 = nullptr;
   }
   else {
-    puVar2 = (undefined4 *)&this->field_008C;
+    puVar2 = reinterpret_cast<uint *>(&this->field_008C);
   }
   memset(puVar2, 0, 0x49f); /* compiler bulk-zero initialization */
-  puVar2 = (undefined4 *)((byte *)puVar2 + 0x49c);
+  puVar2 = reinterpret_cast<uint *>(((byte *)puVar2 + 0x49c));
   iVar1 = 0;
-  st::fn_00403148((undefined4 *)&DAT_007d3f78);
+  st::fn_00403148(reinterpret_cast<undefined4 *>(&DAT_007d3f78));
   this->field_05B3 = nullptr;
   memset(this->field_052F, 0, 0x84); /* compiler bulk-zero initialization */
   return this;
@@ -184,7 +184,7 @@ int __thiscall st::fn_0065BD70(AiEventClassTy *this,STMessage *message,int param
   }
   switch(SVar1) {
   case MESS_AIBOSSCLASSTY_5DC5:
-    this->field_052F[0] = (uint)message->arg0;
+    this->field_052F[0] = (message->arg0).u32;
     goto cf_common_exit_0065C65B;
   case MESS_AIBOSSCLASSTY_5DC6:
     pcVar9 = static_cast<char *>((message->arg0).ptr);
@@ -217,7 +217,7 @@ int __thiscall st::fn_0065BD70(AiEventClassTy *this,STMessage *message,int param
         this->field_052F[4] = uVar6;
         /* ST_CALLSITE[0065BFE4]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
         st::fn_004018C5
-                  ((STFishC *)pSVar5,(short *)((int)&message + 2),(short *)((int)&param_2 + 2),
+                  (reinterpret_cast<STFishC *>(pSVar5),(short *)((int)&message + 2),(short *)((int)&param_2 + 2),
                    &local_6);
         this->field_052F[5] = (int)STPiece<2,2>(message);
         this->field_052F[6] = (int)STPiece<2,2>(param_2);
@@ -232,6 +232,7 @@ int __thiscall st::fn_0065BD70(AiEventClassTy *this,STMessage *message,int param
 LAB_0065c021:
         /* ST_CALLSITE[0065C029]: CALL dword ptr [EDX + 0x74] */
         (*pSVar5->vtable->vfunc_74)((short)local_1c);
+
         st::fn_006B6020(this->field_05B3,0,local_1c);
       }
     }
@@ -257,7 +258,7 @@ LAB_0065c021:
       this->field_052F[4] = 0;
       /* ST_CALLSITE[0065C111]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
       st::fn_00405F0B
-                ((STFishC *)pSVar5,(short *)((int)&message + 2),(short *)((int)&param_2 + 2),
+                (reinterpret_cast<STFishC *>(pSVar5),(short *)((int)&message + 2),(short *)((int)&param_2 + 2),
                  &local_6);
       this->field_052F[5] = (int)STPiece<2,2>(message);
       this->field_052F[6] = (int)STPiece<2,2>(param_2);
@@ -267,6 +268,7 @@ LAB_0065c021:
       this->field_052F[8] = uVar6;
       /* ST_CALLSITE[0065C14C]: CALL dword ptr [EDX + 0x74] */
       (*pSVar5->vtable->vfunc_74)((short)local_1c);
+
       st::fn_006B6020(this->field_05B3,0,local_1c);
     }
     wVar7 = (pSVar3->arg1).words.low;
@@ -296,13 +298,14 @@ LAB_0065c021:
       this->field_052F[3] = uVar6;
       /* ST_CALLSITE[0065C212]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
       st::fn_00405F0B
-                ((STFishC *)pSVar5,(short *)((int)&message + 2),(short *)((int)&param_2 + 2),
+                (reinterpret_cast<STFishC *>(pSVar5),(short *)((int)&message + 2),(short *)((int)&param_2 + 2),
                  &local_6);
       this->field_052F[6] = (int)STPiece<2,2>(param_2);
       this->field_052F[5] = (int)STPiece<2,2>(message);
       this->field_052F[7] = (int)local_6;
       /* ST_CALLSITE[0065C23D]: CALL dword ptr [EDX + 0x74] */
       (*pSVar5->vtable->vfunc_74)((short)local_1c);
+
       st::fn_006B6020(this->field_05B3,0,local_1c);
     }
     wVar7 = (pSVar3->arg1).words.low;
@@ -324,7 +327,7 @@ LAB_0065c021:
       this->field_052F[1] = 0;
       this->field_052F[2] = 0;
       /* ST_CALLSITE[0065C2C9]: CALL dword ptr [EAX + 0x2c] */
-      dVar4 = this_00->slot_2C();
+      dVar4 = this_00->vfunc_2C();
       this->field_052F[3] = dVar4;
       this->field_052F[4] = 0;
       /* ST_CALLSITE[0065C2EA]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
@@ -357,7 +360,7 @@ LAB_0065c021:
         this->field_052F[4] = uVar6;
         /* ST_CALLSITE[0065C3B9]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
         st::fn_004018C5
-                  ((STFishC *)pSVar5,(short *)((int)&message + 2),(short *)((int)&param_2 + 2),
+                  (reinterpret_cast<STFishC *>(pSVar5),(short *)((int)&message + 2),(short *)((int)&param_2 + 2),
                    &local_6);
         this->field_052F[5] = (int)STPiece<2,2>(message);
         this->field_052F[6] = (int)STPiece<2,2>(param_2);
@@ -435,7 +438,7 @@ LAB_0065c4bb:
     this->field_052F[0xe] = uVar6;
     /* ST_CALLSITE[0065C507]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
     st::fn_004018C5
-              ((STFishC *)pSVar5,(short *)((int)&message + 2),(short *)((int)&param_2 + 2),&local_6);
+              (reinterpret_cast<STFishC *>(pSVar5),(short *)((int)&message + 2),(short *)((int)&param_2 + 2),&local_6);
     this->field_052F[0xf] = (int)STPiece<2,2>(message);
     this->field_052F[0x10] = (int)STPiece<2,2>(param_2);
     this->field_052F[0x11] = (int)local_6;
@@ -466,9 +469,10 @@ LAB_0065c4bb:
     pcVar9 = (char *)((message->arg1).u32 + 0x92);
     uVar6 = 0;
   }
+
   st::fn_006B6020(pDVar10,uVar6,pcVar9);
 cf_common_exit_0065C65B:
-  this->field_052F[0x1e] = st::machine_word_boundary_cast<uint>(g_playSystem_00802A38->field_00E4 / 0x19);
+  this->field_052F[0x1e] = g_playSystem_00802A38->field_00E4 / 0x19;
   pAVar2 = this->vtable;
   this->field_052F[0x1f] = g_playSystem_00802A38->field_00E4;
   /* ST_CALLSITE[0065C68B]: CALL dword ptr [EDX + 0x14] */
@@ -476,4 +480,3 @@ cf_common_exit_0065C65B:
   this->field_052F[0x20] = uVar6;
   return local_c;
 }
-

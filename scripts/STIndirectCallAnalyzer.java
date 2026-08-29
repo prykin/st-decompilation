@@ -36,6 +36,7 @@ import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.FunctionTag;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
+import ghidra.program.model.listing.Parameter;
 import ghidra.program.model.scalar.Scalar;
 import ghidra.program.model.symbol.SourceType;
 
@@ -43,6 +44,8 @@ public class STIndirectCallAnalyzer extends GhidraScript {
     private static final String VTABLE_ROOT = "/SubmarineTitans/Recovered/VTables/";
     private static final String INDIRECT_FUNCTION_ROOT =
         "/SubmarineTitans/Recovered/IndirectCallFunctions";
+    private static final String VTABLE_FUNCTION_ROOT =
+        "/SubmarineTitans/Recovered/VTableFunctions";
     private static final String APPLIER_MARKER = "[STIndirectCallApplier]";
     private static final Pattern TARGET = Pattern.compile("(?i)->\\s*([0-9a-f]{8,16})\\b");
     private static final Pattern SLOT = Pattern.compile(
@@ -290,12 +293,14 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                 // physical-table slot still proves the receiver ABI; requiring a semantic
                 // ECX read here leaves common constant getters (for example a type-id slot)
                 // as void * even though every machine call is receiver-dispatched.
+                Synthetic refinement = trusted ?
+                    refinedGeneratedTargetSignature(pointer, target) : null;
                 Synthetic synthetic = trusted ? null : dispatchSignature(target, structure);
                 FunctionPointerFamily family = raw == null ? null :
                     targetFamilies.get(addr(raw));
                 if (family == null && target != null)
                     family = targetFamilies.get(addr(target.getEntryPoint()));
-                Pointer recovered = trusted ? strongerGeneratedPointer(
+                Pointer recovered = trusted && refinement == null ? strongerGeneratedPointer(
                     structure, component, pointer, target) : null;
                 boolean familyRepair = family != null &&
                     !pointer.isEquivalent(family.pointer);
@@ -311,28 +316,42 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                         "generated indirect ABI no longer has sufficient machine evidence"));
                     continue;
                 }
-                boolean apply = recovered != null || familyRepair || trusted ||
-                    synthetic != null || family != null;
+                // A generated physical-slot definition is independent ABI evidence.  A later
+                // semantic retype of the Listing target (pointer-shape, message envelope, void
+                // source intent, and so on) must not make the analyzer copy that target back
+                // over every table which shares the generated FunctionDefinition.  Only an
+                // explicit field-local refinement or an independently unanimous slot family may
+                // change an already generated slot.  Trusted target copying remains valid for a
+                // still-generic void* component.
+                boolean targetCopy = trusted && !generated;
+                boolean apply = refinement != null || recovered != null || familyRepair ||
+                    targetCopy || synthetic != null || family != null;
                 rows.add(new Row(apply, "vtable_slot", structure.getPathName(),
                     component.getOffset(), name(component), typeSpec(component.getDataType()),
                     safeText(component.getComment()), structure.getPathName(), name(component), 0, 0,
                     target == null ? "" : addr(target.getEntryPoint()),
                     target == null ? "" : target.getName(true),
-                    recovered != null ? "generated_family" :
+                    refinement != null ? refinement.mode :
+                        recovered != null ? "generated_family" :
                         familyRepair ? "family_target" :
-                        trusted ? "target" : synthetic != null ? synthetic.mode :
+                        targetCopy ? "target" : synthetic != null ? synthetic.mode :
                         family != null ? "family_target" : "",
-                    recovered != null ? typeSpec(recovered) :
+                    refinement != null ? refinement.receiverType :
+                        recovered != null ? typeSpec(recovered) :
                         familyRepair ? family.pointerType :
                         synthetic == null ? family == null ? "" : family.pointerType :
                             synthetic.receiverType,
-                    synthetic == null ? -1 : synthetic.stackParameters,
-                    synthetic == null ? "" : synthetic.parameterTypes,
-                    synthetic == null ? "" : synthetic.returnType,
-                    recovered != null || familyRepair ? "high" : trusted ? "high" :
+                    refinement != null ? refinement.stackParameters :
+                        synthetic == null ? -1 : synthetic.stackParameters,
+                    refinement != null ? refinement.parameterTypes :
+                        synthetic == null ? "" : synthetic.parameterTypes,
+                    refinement != null ? refinement.returnType :
+                        synthetic == null ? "" : synthetic.returnType,
+                    refinement != null || recovered != null || familyRepair ? "high" : targetCopy ? "high" :
                         synthetic != null ? "layout" :
                         family != null ? "family" : "review",
-                    recovered != null ?
+                    refinement != null ? refinement.evidence :
+                        recovered != null ?
                         "an automation-owned receiver-aware function-pointer ABI is " +
                             "strictly stronger than the reviewed target signature; " +
                             "preserving generated family " + typeSpec(recovered) :
@@ -341,7 +360,7 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                             "resolved target " + addr(target.getEntryPoint()) +
                             " unanimously carry stronger family " + family.pointerType +
                             "; replace the weaker physical-table typedef" :
-                        trusted ? "slot target has a reviewed function signature" :
+                        targetCopy ? "generic slot target has a reviewed function signature" :
                         synthetic != null ? synthetic.evidence :
                         family != null ?
                             family.occurrences + " independently typed vtable " +
@@ -351,6 +370,108 @@ public class STIndirectCallAnalyzer extends GhidraScript {
                             "slot target lacks consistent indirect ABI evidence"));
             }
         }
+    }
+
+    /**
+     * Keep the physical table's independently recovered receiver and return
+     * transport, but refine generic stack words from a trusted target's exact
+     * formal parameters.  The two views must agree on thiscall and arity; an
+     * already semantic generated argument is never replaced by a competing
+     * target type.  This is intentionally a field-local ABI merge, not a copy
+     * of an ownerless target signature over the physical receiver.
+     */
+    private Synthetic refinedGeneratedTargetSignature(Pointer pointer,
+            Function target) {
+        if (!(pointer.getDataType() instanceof FunctionDefinition definition) ||
+                !generatedFunctionDefinition(definition) || target == null ||
+                !"__thiscall".equals(definition.getCallingConventionName()) ||
+                !"__thiscall".equals(target.getCallingConventionName()) ||
+                definition.getArguments().length < 1 ||
+                !(definition.getArguments()[0].getDataType() instanceof Pointer))
+            return null;
+        List<Parameter> explicit = new ArrayList<>();
+        for (Parameter parameter : target.getParameters())
+            if (!parameter.isAutoParameter()) explicit.add(parameter);
+        int existingExplicit = definition.getArguments().length - 1;
+        boolean exactTargetCleanup = returnPops(target).equals(Set.of(
+            explicit.size() * (long)currentProgram.getDefaultPointerSize()));
+        if (existingExplicit != explicit.size()) {
+            // A previously generated slot may retain speculative neutral stack
+            // words after the named target's own callee-cleanup and Listing ABI
+            // have converged.  Those words are not stronger evidence.  Remove
+            // them only from the tail, only when every removed type is generic,
+            // and only when RET n exactly agrees with the target's explicit
+            // parameter count.
+            if (existingExplicit < explicit.size() || !exactTargetCleanup)
+                return null;
+            for (int index = explicit.size() + 1;
+                    index < definition.getArguments().length; index++)
+                if (!genericAbiParameter(
+                        definition.getArguments()[index].getDataType()))
+                    return null;
+        }
+
+        List<String> selected = new ArrayList<>();
+        boolean improved = false;
+        for (int index = 0; index < explicit.size(); index++) {
+            DataType existing = definition.getArguments()[index + 1].getDataType();
+            DataType candidate = explicit.get(index).getFormalDataType();
+            if (genericAbiType(existing) && semanticAbiType(candidate)) {
+                selected.add(typeSpec(candidate));
+                improved = true;
+            }
+            else if (semanticAbiType(existing) && semanticAbiType(candidate) &&
+                    !existing.isEquivalent(candidate)) {
+                return null;
+            }
+            else selected.add(typeSpec(existing));
+        }
+        boolean arityImproved = existingExplicit != explicit.size();
+        if (!improved && !arityImproved) return null;
+        // The existing generated definition is an accepted machine-return
+        // boundary.  A semantically named Listing target may expose bool,
+        // pointer, or void source intent, but that is not evidence that every
+        // physical slot consumer observes the same EAX width.  This refinement
+        // is deliberately stack-parameter-only.
+        DataType returned = definition.getReturnType();
+        return new Synthetic("refined_generated_target",
+            typeSpec(definition.getArguments()[0].getDataType()), explicit.size(),
+            String.join(";", selected), typeSpec(returned),
+            "physical generated receiver/return retained while trusted target " +
+                addr(target.getEntryPoint()) +
+                (arityImproved ? " removes " +
+                    (existingExplicit - explicit.size()) +
+                    " stale generic stack word(s); RET cleanup exactly agrees;" :
+                    " refines generic stack words;") +
+                " exact thiscall arity=" + explicit.size());
+    }
+
+    private boolean genericAbiParameter(DataType type) {
+        if (genericAbiType(type)) return true;
+        if (!(type instanceof Pointer pointer)) return false;
+        DataType pointed = pointer.getDataType();
+        return pointed == null || pointed instanceof VoidDataType ||
+            genericAbiType(pointed);
+    }
+
+    private boolean generatedFunctionDefinition(FunctionDefinition definition) {
+        return definition != null &&
+            (definition.getCategoryPath().getPath().startsWith(
+                INDIRECT_FUNCTION_ROOT) ||
+             definition.getCategoryPath().getPath().startsWith(
+                VTABLE_FUNCTION_ROOT) ||
+             safeText(definition.getComment()).contains(APPLIER_MARKER));
+    }
+
+    private boolean genericAbiType(DataType type) {
+        if (type == null) return true;
+        String name = type.getName().toLowerCase(Locale.ROOT);
+        return name.equals("undefined") || name.matches("undefined[1248]");
+    }
+
+    private boolean semanticAbiType(DataType type) {
+        return type != null && !genericAbiType(type) &&
+            !(type instanceof VoidDataType);
     }
 
     /**
@@ -635,9 +756,17 @@ public class STIndirectCallAnalyzer extends GhidraScript {
 
     private boolean generatedIndirectPointer(DataTypeComponent component, Pointer pointer) {
         if (!(pointer.getDataType() instanceof FunctionDefinition definition)) return false;
-        return safeText(component.getComment()).contains(APPLIER_MARKER) &&
+        String category = definition.getCategoryPath().getPath();
+        boolean indirectOwned = safeText(component.getComment()).contains(APPLIER_MARKER) &&
             (safeText(definition.getComment()).contains(APPLIER_MARKER) ||
-                definition.getCategoryPath().getPath().equals(INDIRECT_FUNCTION_ROOT));
+                category.startsWith(INDIRECT_FUNCTION_ROOT));
+        // STVTableApplier predates the indirect-call pass and records ownership through
+        // the deterministic VTableFunctions category plus the exact slot->target comment.
+        // Treat those definitions as equally script-owned so stale generic tail arguments
+        // can converge from the target's RET cleanup and Listing ABI.
+        boolean vtableOwned = category.startsWith(VTABLE_FUNCTION_ROOT) &&
+            TARGET.matcher(safeText(component.getComment())).find();
+        return indirectOwned || vtableOwned;
     }
 
     private Set<Long> returnPops(Function function) {

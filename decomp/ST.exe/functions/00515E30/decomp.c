@@ -25,14 +25,14 @@ HelpPanelTy::AddLinks(HelpPanelTy *this,int *param_1,char param_2,int param_3,in
   int iVar11;
   uint uVar12;
   InternalExceptionFrame local_88;
-  undefined4 local_44;
+  uint local_44;
   int local_40;
   int local_3c;
-  undefined4 local_38;
-  undefined1 local_34;
+  uint local_38;
+  byte local_34;
   int local_33;
   int local_2f;
-  undefined4 local_28;
+  uint local_28;
   uint local_24;
   HelpPanelTy *local_20;
   uint local_1c;
@@ -48,10 +48,12 @@ HelpPanelTy::AddLinks(HelpPanelTy *this,int *param_1,char param_2,int param_3,in
   local_88.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_88;
   local_20 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_88.jumpBuffer,0);
   this_00 = local_20;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_88.previous;
+
     iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x460,0,iVar3,"%s"
                                ,"HelpPanelTy::AddLinks");
     if (iVar8 != 0) {
@@ -72,18 +74,21 @@ LAB_00515ee1:
           if (local_14 != 0) {
             /* ST_CALLSITE[00515F07]: CALL 0x00401870; direct=00401870 HelpPanelTy::CheckBkView */
             CheckBkView(this_00,*param_1,0xf);
+
             ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,*param_1,0x19c,0xf);
             uVar12 = 3;
             iVar11 = -1;
             iVar10 = -1;
+            /* ST_CALLSITE[00515F3C]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
             pcVar5 = LoadResourceString(0x55f6,g_hINSTANCE_00807618);
+
             ccFntTy::WrStr(this_00->field_01E0,pcVar5,iVar10,iVar11,uVar12);
             local_14 = 0;
             *param_1 = *param_1 + 0xf;
           }
           /* ST_CALLSITE[00515F72]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x50,*param_1 + 1,'\x01',
-                 (byte *)this_00->field_024C);
+                 (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_024C);
           local_24 = *(uint *)sizeHelp_exref;
           if (local_24 != 0) {
             local_5 = *(byte *)((int)local_c + -1);
@@ -91,6 +96,7 @@ LAB_00515ee1:
             do {
               if (((pbVar3[-1] == local_5) && (*(int *)pbVar3 == *local_c)) &&
                  (*(int *)(pbVar3 + 4) == local_c[1])) {
+
                 ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,local_18 + 0x5f,
                                  *param_1,0x13d - local_18,0xf);
                 pcVar6 = LoadResourceString(*(UINT *)(this_00->field_01C7 + uVar8 * 0x11),
@@ -129,6 +135,7 @@ LAB_005160da:
             ((int)this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,
              (BITMAPINFO *)this_00->field_0218,0,0,0,0x19c,0x117 - (uint)(ushort)this_00->field_01AF
              ,0xff);
+
   Library::DKW::DDX::FUN_006b3640
             ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
              this_00->field_0044);
@@ -152,6 +159,7 @@ code_r0x00516013:
       puVar4 = Library::MSVCRT::FUN_0072e560(puVar4,'\n')) {
     *(undefined1 *)puVar4 = 0x20;
   }
+
   ccFntTy::WrStr(this_00->field_01E0,(char *)&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 5);
 LAB_0051607e:
   local_40 = *param_1;
@@ -161,6 +169,7 @@ LAB_0051607e:
   local_33 = *local_c;
   local_2f = local_c[1];
   local_44 = 0x50;
+
   Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_44);
   local_1c = local_1c + 1;
   local_c = (int *)((int)local_c + 9);

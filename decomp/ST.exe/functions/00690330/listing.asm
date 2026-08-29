@@ -25,7 +25,7 @@ LAB_0069035a:
 00690364  8B 10                     MOV EDX,dword ptr [EAX]
 00690366  51                        PUSH ECX
 00690367  8B C8                     MOV ECX,EAX
-00690369  FF 12                     CALL dword ptr [EDX]
+00690369  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 0069036B  5D                        POP EBP
 0069036C  C2 08 00                  RET 0x8
 LAB_0069036f:

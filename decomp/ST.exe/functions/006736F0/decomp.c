@@ -28,6 +28,7 @@ int FUN_006736f0(void)
 
   local_8 = nullptr;
   local_10 = DAT_007d2d24;
+
   local_EAX_24 = FUN_00673d20();
   if (-1 < local_EAX_24) {
     do {
@@ -44,6 +45,7 @@ int FUN_006736f0(void)
         do {
           if ((DAT_007d2d18 == 0x3c) || (DAT_007d2d18 == 0x22)) break;
           if (DAT_007d2d18 == 0x1d) goto cf_common_exit_00673BA7;
+
           local_EAX_24 = FUN_00673d20();
           if (local_EAX_24 < 0) goto cf_common_exit_00673BB3;
         } while (DAT_00811914 < DAT_00857558);
@@ -84,6 +86,7 @@ LAB_006737e7:
           if (iVar4 == 0) break;
         }
         if (local_8 != nullptr) goto LAB_0067383b;
+
         piVar5 = Library::DKW::LIB::MemAlloc(0xc);
         if (piVar5 != nullptr) {
           local_8 = piVar5;
@@ -101,11 +104,13 @@ LAB_00673bae:
       }
 LAB_0067383b:
       if (DAT_007d2d18 != 0x1d) {
+
         local_EAX_24 = FUN_00673d20();
         goto joined_r0x00673849;
       }
       while ((DAT_007d2d18 != 0x3c && (DAT_007d2d18 != 0x22))) {
         if (DAT_007d2d18 == 0x1d) goto cf_common_exit_00673BA7;
+
         local_EAX_24 = FUN_00673d20();
 joined_r0x00673849:
         if (local_EAX_24 < 0) goto cf_common_exit_00673BB3;
@@ -139,6 +144,7 @@ LAB_006738e9:
         iVar4 = 0;
 LAB_006738ee:
         if (iVar4 == 0) {
+
           FUN_006b98c0((int *)&DAT_00811908,local_8);
           FUN_006a5e90((short *)piVar5[1]);
           FUN_006a5e90((short *)piVar5[2]);
@@ -146,12 +152,14 @@ LAB_006738ee:
         }
       }
       while (DAT_007d2d18 != 0x1d) {
+
         local_EAX_24 = FUN_00673d20();
         if (local_EAX_24 < 0) goto cf_common_exit_00673BB3;
       }
       if ((local_10 & 1) != 0) {
         thunk_FUN_00673690(0x1d);
       }
+
       local_EAX_24 = FUN_00673d20();
       if (local_EAX_24 < 0) break;
     } while( true );
@@ -159,6 +167,7 @@ LAB_006738ee:
   goto cf_common_exit_00673BB3;
   while( true ) {
     if (DAT_007d2d18 == 0x22) goto LAB_006739cd;
+
     local_EAX_24 = FUN_00673d20();
     if (local_EAX_24 < 0) {
       return local_EAX_24;
@@ -239,11 +248,13 @@ LAB_006739cd:
     if (DAT_007d2d18 == 0x3c) {
       local_54.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_54;
+
       iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
       if (iVar3 != 0) {
         g_currentExceptionFrame = local_54.previous;
         return iVar3;
       }
+
       thunk_FUN_00672b60(PTR_00811948,PTR_0081194c);
       if ((code *)PTR_0081194c->field_0014 != nullptr) {
         /* ST_CALLSITE[00673B50]: CALL EAX */
@@ -251,6 +262,7 @@ LAB_006739cd:
       }
       DAT_007d2d24 = DAT_007d2d24 | 0x80;
       g_currentExceptionFrame = local_54.previous;
+
       local_EAX_24 = thunk_FUN_006736f0();
       if (local_EAX_24 < 0) {
         return local_EAX_24;
@@ -260,6 +272,7 @@ LAB_006739cd:
   else {
     do {
       if (DAT_007d2d18 == 0x1d) break;
+
       local_EAX_24 = FUN_00673d20();
     } while (-1 < local_EAX_24);
   }

@@ -13,19 +13,20 @@ int __thiscall MAdvTy::GetMessage(MAdvTy *this,STMessage *message)
 
 {
   MAdvTy *this_00;
-  DWORD DVar2;
+  int iVar2;
   int local_EAX_47;
   int iVar3;
   int iVar4;
-  int iVar5;
   InternalExceptionFrame local_4c;
   MAdvTy *local_8;
 
   local_8 = this;
-  DVar2 = STAppC::sub_006E51B0(this->field_0010);
-  this->field_0058 = DVar2;
+
+  iVar2 = STAppC::sub_006E51B0(this->field_0010);
+  this->field_0058 = iVar2;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   local_EAX_47 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (local_EAX_47 == 0) {
@@ -63,10 +64,12 @@ int __thiscall MAdvTy::GetMessage(MAdvTy *this,STMessage *message)
       }
     }
     g_currentExceptionFrame = local_4c.previous;
+
     iVar3 = FUN_006e5fd0(this_00,message);
     return iVar3;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Start\\adv_obj.cpp",0x87,0,local_EAX_47,
                              "%s","MAdvTy::GetMessage");
   if (iVar4 != 0) {

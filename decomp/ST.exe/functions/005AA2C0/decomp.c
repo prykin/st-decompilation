@@ -16,8 +16,10 @@ FSGSTy * __cdecl CreateFSGS(void)
   FSGSTy_Record_00BC_01FB *pFVar3;
   int local_8;
 
-  this = (FSGSTy *)FUN_006b04d0(0x20c3);
+
+  this = STPointerBoundaryCast<FSGSTy *>(FUN_006b04d0(0x20c3));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->vtable = (FSGSTyVTable *)&VTable_0079C018;
     this->field_0018 = 0;

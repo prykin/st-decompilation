@@ -33,10 +33,12 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
   this->field_0061 = DVar6;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
+
   iVar7 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar8 = ReportDebugMessage("E:\\__titans\\Start\\sett_obj.cpp",0x243,0,iVar7,"%s"
                                ,"SettMapTy::NoneSettMap");
     if (iVar8 == 0) {
@@ -89,6 +91,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
        (g_startSystem_0081176C->field_0300 < g_startSystem_0081176C->field_0304 + -1)) {
       g_startSystem_0081176C->field_0300 = g_startSystem_0081176C->field_0300 + 1;
       if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b3730
                   ((uint *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC,
                    g_startSystem_0081176C->field_0300,g_startSystem_0081176C->field_0314,
@@ -110,6 +113,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
       SVar2 = this_00->field_1E26;
       if ((((SVar2 == CASE_6) || (SVar2 == CASE_7)) || (SVar2 == CASE_E)) &&
          (this_00->field_21E3 != '\0')) {
+
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_00->field_1F80);
       }
       if (this_00->field_21E8 != nullptr) {
@@ -120,16 +124,19 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
       }
       if (this_00->field_21E1 != '\0') {
         if (this_00->field_1C6F != 0xffffffff) {
+
           Library::DKW::DDX::FUN_006b34d0
                     ((uint *)this_00->field_1CB3,this_00->field_1C6F,0xfffffffe,this_00->field_1C87,
                      this_00->field_1C8B);
         }
         if (this_00->field_1D00 != 0xffffffff) {
+
           Library::DKW::DDX::FUN_006b34d0
                     ((uint *)this_00->field_1D44,this_00->field_1D00,0xfffffffe,this_00->field_1D18,
                      this_00->field_1D1C);
         }
         if (this_00->field_1D91 != 0xffffffff) {
+
           Library::DKW::DDX::FUN_006b34d0
                     ((uint *)this_00->field_1DD5,this_00->field_1D91,0xfffffffe,this_00->field_1DA9,
                      this_00->field_1DAD);
@@ -137,6 +144,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
         puVar10 = this_00->field_20CC;
         iVar9 = 10;
         do {
+
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*puVar10);
           puVar10 = puVar10 + 1;
           iVar9 = iVar9 + -1;
@@ -149,6 +157,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
         this_00->field_21F4 = nullptr;
       }
       if (this_00->field_21E5 != '\0') {
+
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_00->field_1E22);
       }
       if (this_00->field_21EC != nullptr) {
@@ -160,27 +169,32 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
       SVar2 = this_00->field_1E26;
       if (((SVar2 != CASE_6) && (SVar2 != CASE_7)) && (SVar2 != CASE_E)) {
         if (g_startSystem_0081176C->field_0391 != 0xffffffff) {
+
           Library::DKW::DDX::FUN_006b34d0
                     ((uint *)g_startSystem_0081176C->field_03D5,g_startSystem_0081176C->field_0391,
                      0xfffffffe,g_startSystem_0081176C->field_03A9,
                      g_startSystem_0081176C->field_03AD);
         }
         if (g_startSystem_0081176C->field_0422 != 0xffffffff) {
+
           Library::DKW::DDX::FUN_006b34d0
                     ((uint *)g_startSystem_0081176C->field_0466,g_startSystem_0081176C->field_0422,
                      0xfffffffe,g_startSystem_0081176C->field_043A,
                      g_startSystem_0081176C->field_043E);
         }
         if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
+
           Library::DKW::DDX::FUN_006b34d0
                     ((uint *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3,
                      0xfffffffe,g_startSystem_0081176C->field_04CB,
                      g_startSystem_0081176C->field_04CF);
         }
+
         Library::DKW::DDX::FUN_006b3430
                   ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
       }
       if (this_00->field_21E4 != '\0') {
+
         Library::DKW::DDX::FUN_006b3430
                   ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_02EC);
         if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
@@ -195,19 +209,23 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
       }
       if (this_00->field_21E6 != '\0') {
         if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
+
           Library::DKW::DDX::FUN_006b34d0
                     ((uint *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560,
                      0xfffffffe,g_startSystem_0081176C->field_0578,
                      g_startSystem_0081176C->field_057C);
         }
         if (g_startSystem_0081176C->field_05F1 != 0xffffffff) {
+
           Library::DKW::DDX::FUN_006b34d0
                     ((uint *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1,
                      0xfffffffe,g_startSystem_0081176C->field_0609,
                      g_startSystem_0081176C->field_060D);
         }
+
         Library::DKW::DDX::FUN_006b3430
                   ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0558);
+
         Library::DKW::DDX::FUN_006b3430
                   ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
       }
@@ -216,8 +234,8 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
       this_00->CreateCtrls('\0');
       SVar2 = this_00->field_1E26;
       if (((SVar2 == CASE_6) || (SVar2 == CASE_7)) || (SVar2 == CASE_E)) {
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0053F510::thunk_FUN_005c8200
-                  ((AnonReceiver_0053F510 *)this_00);
+        SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0053F510::thunk_FUN_005c8200
+                  ((RecoveredReceiver_0053F510 *)this_00);
       }
       /* ST_CALLSITE[005C58BE]: CALL 0x004049d5; direct=004049D5 SettMapTy::PaintSettMap */
       PaintSettMap(this_00,'\0');
@@ -233,6 +251,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
     if ((local_c->field_21E4 != '\0') && (0 < g_startSystem_0081176C->field_0300)) {
       g_startSystem_0081176C->field_0300 = g_startSystem_0081176C->field_0300 + -1;
       if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b3730
                   ((uint *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC,
                    g_startSystem_0081176C->field_0300,g_startSystem_0081176C->field_0314,
@@ -319,6 +338,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this)
       bVar3 = this_00->array_00BC[0xc].field_01DA;
       this_00->field_0065 = 2;
       if ((bVar3 != 0xff) && (*(int *)&this_00->array_00BC[bVar3].field_0x15 != 0)) {
+
         AppClassTy::PostNextMessage
                   ((AppClassTy *)&DAT_00807620,(undefined4 *)&this_00->array_00BC[bVar3].field_0x5);
         g_currentExceptionFrame = local_50.previous;

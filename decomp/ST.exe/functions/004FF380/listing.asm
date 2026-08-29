@@ -621,7 +621,7 @@ LAB_004ffa57:
 004FFA77  8B 93 BE 02 00 00         MOV EDX,dword ptr [EBX + 0x2be]
 004FFA7D  50                        PUSH EAX
 004FFA7E  52                        PUSH EDX
-004FFA7F  E8 1C B9 20 00            CALL 0x0070b3a0
+004FFA7F  E8 1C B9 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 004FFA84  50                        PUSH EAX
 004FFA85  8B 83 84 01 00 00         MOV EAX,dword ptr [EBX + 0x184]
 004FFA8B  6A 01                     PUSH 0x1
@@ -632,7 +632,7 @@ LAB_004ffa57:
 004FFA97  8B 8B CA 02 00 00         MOV ECX,dword ptr [EBX + 0x2ca]
 004FFA9D  6A 01                     PUSH 0x1
 004FFA9F  51                        PUSH ECX
-004FFAA0  E8 FB B8 20 00            CALL 0x0070b3a0
+004FFAA0  E8 FB B8 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 004FFAA5  8B 93 84 01 00 00         MOV EDX,dword ptr [EBX + 0x184]
 004FFAAB  50                        PUSH EAX
 004FFAAC  6A 06                     PUSH 0x6

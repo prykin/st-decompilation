@@ -20,8 +20,7 @@ void FUN_006c72f0(AnonShape_006C72F0_54F06289 *param_1)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079da08;
   puStack_10 = &LAB_0072d964;
@@ -48,13 +47,16 @@ void FUN_006c72f0(AnonShape_006C72F0_54F06289 *param_1)
   if ((iVar6 == param_1->field_006A) && (iVar3 == param_1->field_006E)) {
     local_70.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_70;
+
     iVar5 = Library::MSVCRT::__setjmp3
                       (local_70.jumpBuffer,2,Library::MSVCRT::__seh_longjmp_unwind_4,local_8);
     local_1c = &stack0xffffff7c;
     if (iVar5 == 0) {
       local_8 = 0;
+
       puVar4 = Library::DKW::WGR::FUN_006b55f0
-                         (nullptr,0,0,0,(byte *)param_1->field_003A,
+                         (nullptr,0,0,0,
+                          (RecoveredRecordView_006B84D0_87AF9D9B *)param_1->field_003A,
                           param_1->field_003E,local_20,local_24,local_28,local_2c);
       param_1->field_0072 = puVar4;
       g_currentExceptionFrame = local_70.previous;

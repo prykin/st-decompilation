@@ -14,7 +14,7 @@ FUN_00638070:
 00638086  68 80 1C 7D 00            PUSH 0x7d1c80
 0063808B  6A 1D                     PUSH 0x1d
 0063808D  50                        PUSH EAX
-0063808E  E8 5D 1A 0D 00            CALL 0x00709af0
+0063808E  E8 5D 1A 0D 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 00638093  8B 5D 0C                  MOV EBX,dword ptr [EBP + 0xc]
 00638096  8B 7D 08                  MOV EDI,dword ptr [EBP + 0x8]
 00638099  8B F0                     MOV ESI,EAX
@@ -74,7 +74,7 @@ LAB_00638118:
 00638127  68 8C 1C 7D 00            PUSH 0x7d1c8c
 0063812C  6A 1D                     PUSH 0x1d
 0063812E  50                        PUSH EAX
-0063812F  E8 BC 19 0D 00            CALL 0x00709af0
+0063812F  E8 BC 19 0D 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 00638134  8B F0                     MOV ESI,EAX
 00638136  83 C4 20                  ADD ESP,0x20
 00638139  85 F6                     TEST ESI,ESI

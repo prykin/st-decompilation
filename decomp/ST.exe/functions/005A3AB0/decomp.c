@@ -65,25 +65,32 @@ LAB_005a3b63:
     if (iVar6 == 0) {
       local_68.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_68;
+
       iVar4 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
       if (iVar4 == 0) {
+        /* ST_CALLSITE[005A3BA6]: CALL 0x00403ec7; direct=00403EC7 thunk_FUN_0055d590; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
         pbVar3 = thunk_FUN_0055d590("Profile\\Age",param_2,param_3);
         this_01 = local_14;
         if (pbVar3 != nullptr) {
+
           Library::DKW::TBL::FUN_006b6020(local_14->field_1AF8,0,(char *)pbVar3);
           *(DArrayTy **)&this_01->field_0x31 = this_01->field_1AF8;
           this_01->field_002D = 0x33;
           FUN_006e6080(this_01,2,this_01->field_1AD8,(undefined4 *)&this_01->field_0x1d);
         }
+        /* ST_CALLSITE[005A3BF1]: CALL 0x00403ec7; direct=00403EC7 thunk_FUN_0055d590; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
         local_EAX_321 = thunk_FUN_0055d590("Profile\\Sex",param_2,param_3);
         if (local_EAX_321 != nullptr) {
+
           Library::DKW::TBL::FUN_006b6020(this_01->field_1AFC,0,(char *)local_EAX_321);
           this_01->field_002D = 0x33;
           *(DArrayTy **)&this_01->field_0x31 = this_01->field_1AFC;
           FUN_006e6080(this_01,2,this_01->field_1ADC,(undefined4 *)&this_01->field_0x1d);
         }
+        /* ST_CALLSITE[005A3C39]: CALL 0x00403ec7; direct=00403EC7 thunk_FUN_0055d590; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
         local_EAX_393 = thunk_FUN_0055d590("Profile\\Location",param_2,param_3);
         if (local_EAX_393 != nullptr) {
+
           Library::DKW::TBL::FUN_006b6020(this_01->field_1B00,0,(char *)local_EAX_393);
           this_01->field_002D = 0x33;
           *(DArrayTy **)&this_01->field_0x31 = this_01->field_1B00;
@@ -97,8 +104,10 @@ LAB_005a3b63:
           puVar7 = ccFntTy::_TxtToSarr(this_01->array_00BC[0xc].field_01F3,local_10);
           this_01->field_1B04 = puVar7;
           if (puVar7 == nullptr) {
+            /* ST_CALLSITE[005A3CBB]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
             pDVar8 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
             this_01->field_1B04 = &pDVar8->flags;
+
             Library::DKW::TBL::FUN_006b5aa0(pDVar8,&CHAR_00h_008016a0);
           }
           this_01->field_002D = 0x33;
@@ -134,6 +143,7 @@ LAB_005a3b63:
             pbVar4 = pbVar4 + 1;
           } while (bVar1 != 0);
           if (iVar6 != -2) {
+
             local_EAX_838 =
                  Library::MSVCRT::FUN_0072ee80((char *)local_EAX_791,(byte *)"%d %d");
             if (local_EAX_838 != 2) {
@@ -148,8 +158,10 @@ LAB_005a3b63:
                         local_24.wYear);
               FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_01->field_1AC0,0,0xe2,0x11b,0xb2,
                            0x17,0xff);
+
               ccFntTy::SetSurf(this_01->array_00BC[0xc].field_01F3,(int)this_01->field_1AC0,0,0xe2,
                                0x11b,0xb2,0x17);
+
               ccFntTy::WrStr(this_01->array_00BC[0xc].field_01F3,local_88,-1,-1,0);
             }
           }
@@ -166,11 +178,13 @@ LAB_005a3b63:
         /* ST_CALLSITE[005A3F38]: CALL 0x004049df; direct=004049DF FSGSTy::sub_005A39A0 */
         sub_005A39A0(this_01,(ccFntTy *)this_01->field_1A7F,"0\\Disconnects",param_2,param_3
                      ,0x146,0x161,0x4e,0x12);
+
         FUN_006b35d0((int *)g_ddxContext_008075A8,this_01->field_1ABC);
         g_currentExceptionFrame = local_68.previous;
         return;
       }
       g_currentExceptionFrame = local_68.previous;
+
       iVar5 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xb4e,0,iVar4,
                                  "%s","FSGSTy::SetInfo");
       if (iVar5 != 0) {

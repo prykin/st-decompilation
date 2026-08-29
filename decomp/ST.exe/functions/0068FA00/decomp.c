@@ -13,7 +13,7 @@ void __thiscall FUN_0068fa00(void *this,uint *param_1)
   bool bVar4;
   uint local_38 [2];
   char local_30;
-  undefined1 local_2f;
+  byte local_2f;
   uint *local_2e;
 
   uVar2 = 0;

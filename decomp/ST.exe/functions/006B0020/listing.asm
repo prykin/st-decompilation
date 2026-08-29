@@ -13,7 +13,7 @@ LAB_006b0032:
 006B0038  0F AF 46 08               IMUL EAX,dword ptr [ESI + 0x8]
 006B003C  83 C0 1C                  ADD EAX,0x1c
 006B003F  50                        PUSH EAX
-006B0040  E8 2B AC FF FF            CALL 0x006aac70
+006B0040  E8 2B AC FF FF            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 006B0045  85 C0                     TEST EAX,EAX
 006B0047  75 06                     JNZ 0x006b004f
 006B0049  5F                        POP EDI

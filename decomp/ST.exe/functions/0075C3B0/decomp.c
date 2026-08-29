@@ -4,7 +4,7 @@
 /* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
    Evidence: exact anonymous structure fingerprint shared across functions */
 
-undefined4 FUN_0075c3b0(AnonShape_0075BE40_B9FD5FDF *param_1)
+undefined4 FUN_0075c3b0(RecoveredRecordView_0075BE40_98313CE4 *param_1)
 
 {
   int iVar1;

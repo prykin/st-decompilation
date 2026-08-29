@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_005efcd0(AnonShape_005EFCD0_3603EDD8 *param_1)
+void __fastcall FUN_005efcd0(RecoveredRecordView_005EFCD0_193144B9 *param_1)
 
 {
   short sVar1;
@@ -23,7 +23,7 @@ void __fastcall FUN_005efcd0(AnonShape_005EFCD0_3603EDD8 *param_1)
                         (sVar1,sVar2,sVar3,0,(RecoveredRecord_DumpClassC_00495EC0 *)param_1),
      iVar5 == 0)) {
     param_1->field_0252 = param_1->field_0252 + '\x01';
-    thunk_FUN_005f06e0((AnonShape_005F0620_60AA17CE *)param_1);
+    thunk_FUN_005f06e0((RecoveredRecordView_005F0620_3EDDC37E *)param_1);
     sVar1 = param_1->field_0047;
     sVar2 = param_1->field_0049;
     param_1->field_0246 = param_1->field_004B;
@@ -49,6 +49,7 @@ void __fastcall FUN_005efcd0(AnonShape_005EFCD0_3603EDD8 *param_1)
       return;
     }
     param_1->field_028F = g_playSystem_00802A38->field_00E4 + 10;
+
     thunk_FUN_005ecd70(param_1,iVar5,(short)(sVar2 * 0xc9 + 100),param_1->field_02C6,
                        param_1->field_02BA,'\x01',0x1e);
     param_1->field_023A = 2;

@@ -23,29 +23,35 @@ void __thiscall st::fn_005040A0(CPanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   pCVar2 = local_8;
   if (iVar3 == 0) {
     /* ST_CALLSITE[005040EA]: CALL 0x00403229; direct=00403229 DibPut */
     st::fn_00403229((RecoveredSourceFamily_dibcopy *)local_8->field_0190,0,0,'\x01',
-           (byte *)local_8->field_0994);
+           reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(local_8->field_0994));
+
     st::fn_00710A90(pCVar2->field_01B8,pCVar2->field_0190,0,5,6,0x2a,10);
     iVar7 = -1;
     iVar6 = -1;
     uVar4 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 5;
     iVar5 = -1;
     iVar3 = -2;
+    /* ST_CALLSITE[00504133]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     resourceString = st::fn_006B0140(0x2712,g_hINSTANCE_00807618);
+
     st::fn_00711B70(pCVar2->field_01B8,resourceString,iVar3,iVar5,uVar4,iVar6,iVar7);
     if (-1 < (int)pCVar2->field_0148[4]) {
+
       st::fn_006B3640
-                ((int *)g_ddxContext_008075A8,(uint)pCVar2->field_0148[4],0xffffffff,
+                (reinterpret_cast<int *>(g_ddxContext_008075A8),(uint)pCVar2->field_0148[4],0xffffffff,
                  pCVar2->field_004C,pCVar2->field_00A4);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cpanel3.cpp"),0x13,0,iVar3,st::mutable_c_string("%s"),
                              "CPanelTy::PaintMap");
   if (iVar5 != 0) {
@@ -75,8 +81,8 @@ void __thiscall st::fn_00504210(CPanelTy *this,uint param_1)
   int iVar9;
   byte bVar8;
   int iVar10;
-  AnonShape_0043BEB0_1C00EC12 *pAVar11;
-  AnonShape_0043BEB0_1C00EC12 *pAVar12;
+  RecoveredRecordView_0043BEB0_8330D129 *pRVar11;
+  RecoveredRecordView_0043BEB0_8330D129 *pRVar12;
   bool bVar13;
   uint uVar14;
   int iVar15;
@@ -86,62 +92,63 @@ void __thiscall st::fn_00504210(CPanelTy *this,uint param_1)
   CPanelTy *local_24;
   char *local_20;
   uint local_1c;
-  AnonShape_0043BEB0_1C00EC12 *local_18;
+  RecoveredRecordView_0043BEB0_8330D129 *local_18;
   uint *local_14;
   byte *local_10;
-  AnonShape_0043BEB0_1C00EC12 *local_c;
+  RecoveredRecordView_0043BEB0_8330D129 *local_c;
   byte local_5;
 
   if (0x3ff < g_nWidth_00806730) {
     local_68.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_68;
     local_24 = this;
+
     iVar6 = st::fn_0072D7F0(local_68.jumpBuffer,0);
     this_00 = local_24;
     if (iVar6 == 0) {
-      local_c = (AnonShape_0043BEB0_1C00EC12 *)(param_1 & 0xff);
-      pAVar12 = (AnonShape_0043BEB0_1C00EC12 *)(&local_24->field_0xc87 + (int)local_c * 0x42);
-      pAVar11 = pAVar12;
+      local_c = (RecoveredRecordView_0043BEB0_8330D129 *)(param_1 & 0xff);
+      pRVar12 = reinterpret_cast<RecoveredRecordView_0043BEB0_8330D129 *>((&local_24->field_0xc87 + (int)local_c * 0x42));
+      pRVar11 = pRVar12;
       pcVar6 = local_ac;
       for (iVar10 = 0x10; iVar10 != 0; iVar10 = iVar10 + -1) {
-        uVar2 = pAVar11->field_0001;
-        uVar3 = pAVar11->field_0002;
-        uVar4 = pAVar11->field_0003;
-        pcVar6[0] = pAVar11->field_0x0;
+        uVar2 = pRVar11->field_0001;
+        uVar3 = pRVar11->field_0002;
+        uVar4 = pRVar11->field_0003;
+        pcVar6[0] = pRVar11->field_0x0;
         pcVar6[1] = uVar2;
         pcVar6[2] = uVar3;
         pcVar6[3] = uVar4;
-        pAVar11 = (AnonShape_0043BEB0_1C00EC12 *)&pAVar11->field_0004;
+        pRVar11 = reinterpret_cast<RecoveredRecordView_0043BEB0_8330D129 *>(&pRVar11->field_0004);
         pcVar6 = pcVar6 + 4;
       }
-      uVar2 = pAVar11->field_0001;
-      local_18 = pAVar12;
-      pcVar6[0] = pAVar11->field_0x0;
+      uVar2 = pRVar11->field_0001;
+      local_18 = pRVar12;
+      pcVar6[0] = pRVar11->field_0x0;
       pcVar6[1] = uVar2;
       /* ST_CALLSITE[00504295]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
       st::fn_004035BC
-                (g_allPlayers_007FA174,STReplaceLowByte((uint32_t)(param_1), (uint8_t)((char)param_1 + '\x0e')),pAVar12
+                (g_allPlayers_007FA174,STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(param_1)), (uint8_t)((char)param_1 + '\x0e')),pRVar12
                 );
-      pAVar12 = local_c;
+      pRVar12 = local_c;
       local_1c = local_1c & 0xffffff00;
       bVar5 = ((g_nWidth_00806730 != 0x400) - 1U & 0xfc) + 6;
       local_5 = bVar5;
       if (bVar5 != 0) {
         local_20 = local_ac;
         local_c = local_18;
-        local_10 = &this_00->field_0D3B + (int)pAVar12 * 6;
-        local_14 = this_00->field_0DBF + (int)pAVar12 * 6 + -0x1b;
+        local_10 = &this_00->field_0D3B + (int)pRVar12 * 6;
+        local_14 = this_00->field_0DBF + (int)pRVar12 * 6 + -0x1b;
         do {
           iVar10 = 0xb;
           bVar13 = true;
           pcVar6 = local_20;
-          pAVar12 = local_c;
+          pRVar12 = local_c;
           do {
             if (iVar10 == 0) break;
             iVar10 = iVar10 + -1;
-            bVar13 = *pcVar6 == *(char *)pAVar12;
+            bVar13 = *pcVar6 == *(char *)pRVar12;
             pcVar6 = pcVar6 + 1;
-            pAVar12 = (AnonShape_0043BEB0_1C00EC12 *)&pAVar12->field_0001;
+            pRVar12 = reinterpret_cast<RecoveredRecordView_0043BEB0_8330D129 *>(&pRVar12->field_0001);
           } while (bVar13);
           if ((!bVar13) && (local_10[0xc] == '\x01')) {
             puVar16 = nullptr;
@@ -149,20 +156,23 @@ void __thiscall st::fn_00504210(CPanelTy *this,uint param_1)
             iVar10 = 1;
             bVar5 = 0;
             uVar14 = 6;
-            pcVar6 = (char *)st::fn_004023B5((undefined1 *)local_c);
+            /* ST_CALLSITE[00504314]: CALL 0x004023b5; direct=004023B5 thunk_FUN_004f1d20; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__stdcall;pointer:/char;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_004F1D20_D68BC0B9 */
+            pcVar6 = st::pointer_boundary_cast<char *>(st::fn_004023B5(reinterpret_cast<RecoveredRecord_004F1D20_D68BC0B9 *>(local_c)));
             puVar7 = st::fn_00709AF0
                                (PTR_00806794,CASE_1F,pcVar6,uVar14,bVar5,iVar10,iVar15,puVar16);
             local_14[-0x12] = (uint)puVar7;
             *local_10 = 0;
             *local_14 = this_00->field_0038;
+            /* ST_CALLSITE[00504345]: CALL 0x00403b57; direct=00403B57 CPanelTy::sub_004F1C80 */
             st::fn_00403B57(this_00,param_1,local_1c);
             bVar8 = ((char)param_1 == '\0') + 9;
-            local_18 = (AnonShape_0043BEB0_1C00EC12 *)STReplaceLowByte((uint32_t)(local_18), (uint8_t)(bVar8));
+            local_18 = (RecoveredRecordView_0043BEB0_8330D129 *)STReplaceLowByte((uint32_t)(local_18), (uint8_t)(bVar8));
             bVar5 = local_5;
             if (bVar8 < 0xb) {
               if (-1 < (int)this_00->field_0148[bVar8]) {
+
                 st::fn_006B3640
-                          ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[bVar8],0xffffffff,
+                          (reinterpret_cast<int *>(g_ddxContext_008075A8),(uint)this_00->field_0148[bVar8],0xffffffff,
                            (&this_00->field_003C)[bVar8],(&this_00->field_0094)[bVar8]);
                 bVar5 = local_5;
               }
@@ -171,8 +181,8 @@ void __thiscall st::fn_00504210(CPanelTy *this,uint param_1)
           bVar8 = (char)local_1c + 1;
           local_14 = local_14 + 1;
           local_20 = local_20 + 0xb;
-          local_c = (AnonShape_0043BEB0_1C00EC12 *)&local_c->field_000B;
-          local_1c = STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(bVar8));
+          local_c = reinterpret_cast<RecoveredRecordView_0043BEB0_8330D129 *>(&local_c->field_000B);
+          local_1c = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_1c)), (uint8_t)(bVar8));
           local_10 = local_10 + 1;
         } while (bVar8 < bVar5);
       }
@@ -180,6 +190,7 @@ void __thiscall st::fn_00504210(CPanelTy *this,uint param_1)
       return;
     }
     g_currentExceptionFrame = local_68.previous;
+
     iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cpanel3.cpp"),0x2a,0,iVar6,st::mutable_c_string("%s"),
                                "CPanelTy::UpdateStackPanel");
     if (iVar9 != 0) {
@@ -189,4 +200,3 @@ void __thiscall st::fn_00504210(CPanelTy *this,uint param_1)
   }
   return;
 }
-

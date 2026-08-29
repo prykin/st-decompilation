@@ -35,10 +35,12 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar11 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0xaa,0,iVar4,"%s",
                                 "VisibleClassTy::Init");
     if (iVar11 == 0) {
@@ -55,6 +57,7 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
       psVar16 = (short *)0x1;
       bVar15 = 0;
       bVar14 = 0x1c;
+      /* ST_CALLSITE[00557D04]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       pCVar4 = FUN_006f2c00(PTR_DAT_0079aec8,1,iVar11);
       local_8 = Library::Ourlib::MFIMG::mfQmtLoad(PTR_00806770,pCVar4,bVar14,bVar15,psVar16);
       (&DAT_007c9290)[iVar11] = (int)STField<short>(local_8,9);
@@ -73,6 +76,7 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
       psVar16 = (short *)0x1;
       bVar15 = 0;
       bVar14 = 0x1c;
+      /* ST_CALLSITE[00557D74]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       pCVar4 = FUN_006f2c00(PTR_DAT_0079aecc,1,iVar11);
       local_8 = Library::Ourlib::MFIMG::mfQmtLoad(PTR_00806770,pCVar4,bVar14,bVar15,psVar16);
       puVar6 = (undefined4 *)((int)local_8 + 0x11);

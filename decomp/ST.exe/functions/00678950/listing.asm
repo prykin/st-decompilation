@@ -1,4 +1,4 @@
-FUN_00678950:
+AiPlrClassTy::vfunc_30:
 00678950  55                        PUSH EBP
 00678951  8B EC                     MOV EBP,ESP
 00678953  8B 45 10                  MOV EAX,dword ptr [EBP + 0x10]

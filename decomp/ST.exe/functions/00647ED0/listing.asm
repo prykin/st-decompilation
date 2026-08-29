@@ -1,3 +1,3 @@
-FUN_00647ed0:
+AiBossClassTy::sub_00647ED0:
 00647ED0  83 C1 1C                  ADD ECX,0x1c
 00647ED3  E9 3C AF DB FF            JMP 0x00402e14

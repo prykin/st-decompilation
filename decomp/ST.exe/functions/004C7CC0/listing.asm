@@ -377,7 +377,7 @@ LAB_004c8141:
 004C8175  2B C8                     SUB ECX,EAX
 004C8177  51                        PUSH ECX
 004C8178  52                        PUSH EDX
-004C8179  E8 D2 4D 1E 00            CALL 0x006acf50
+004C8179  E8 D2 4D 1E 00            CALL 0x006acf50  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607; source view only; no Ghidra override
 004C817E  89 83 07 06 00 00         MOV dword ptr [EBX + 0x607],EAX
 LAB_004c8184:
 004C8184  8B 83 D4 03 00 00         MOV EAX,dword ptr [EBX + 0x3d4]

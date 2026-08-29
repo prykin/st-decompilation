@@ -22,7 +22,7 @@ STRubbishC::LoadImagSpr
   int iVar3;
   uint uVar5;
   InternalExceptionFrame local_5c;
-  undefined4 local_18;
+  uint local_18;
   STT3DSprC *local_14;
   int local_10;
   int local_c;
@@ -66,6 +66,7 @@ LAB_0062f450:
   }
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   this_00 = local_14;
   if (iVar2 == 0) {
@@ -93,6 +94,7 @@ LAB_0062f450:
   }
   else {
     g_currentExceptionFrame = local_5c.previous;
+
     iVar3 = ReportDebugMessage("E:\\__titans\\nick\\to_Rubb.cpp",0x189,0,iVar2,"%s",
                                "STRubbishC::LoadImagSpr");
     if (iVar3 != 0) {

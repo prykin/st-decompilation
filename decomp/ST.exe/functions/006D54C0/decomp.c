@@ -21,7 +21,8 @@ undefined4 __fastcall FUN_006d54c0(AnonShape_006D54C0_FBA73A61 *param_1)
   local_18 = (_RTL_CRITICAL_SECTION *)&param_1->field_0x7c;
   /* ST_CALLSITE[006D54D9]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection(local_18);
-  FUN_0074a193(param_1);
+
+  Library::Win32::COMSupport::FUN_0074a193(param_1);
   pAVar1 = param_1->field_0284;
   iVar6 = pAVar1->field_000C - pAVar1->field_0004;
   iVar4 = pAVar1->field_0008 - pAVar1->field_0000;
@@ -46,6 +47,7 @@ undefined4 __fastcall FUN_006d54c0(AnonShape_006D54C0_FBA73A61 *param_1)
   param_1->field_0288->field_00B8 = pAVar1[2].field_0000;
   param_1->field_0288->field_00BC = pAVar1[2].field_0004;
   uVar5 = (int)pAVar1[3].field_0008 >> 0x1f;
+
   local_10 = Library::DKW::DDX::FUN_006c4350
                        (param_1->field_0288->field_0028,&local_8,pAVar1[3].field_0004,
                         (pAVar1[3].field_0008 ^ uVar5) - uVar5,0,0);
@@ -53,6 +55,7 @@ undefined4 __fastcall FUN_006d54c0(AnonShape_006D54C0_FBA73A61 *param_1)
     local_10 = 0;
     local_c = 0;
     do {
+
       local_10 = FUN_006bbe40(local_8,&local_1c,(int *)&local_14,0);
       if (local_10 == 0) {
 /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */

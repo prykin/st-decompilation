@@ -2,15 +2,15 @@
 
 
 /* [STMethodOwnerApplier] Structural method owner recovered as
-   SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970.
-   Evidence: this_call_owners=[SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970];
+   SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970.
+   Evidence: this_call_owners=[SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970];
    agreed_this_calls=2; incoming_this_accesses=1; incoming_edx_uses=0;
    incoming_stack_parameter_uses=124; direct_non_thunk_callers=0; incoming_ecx_receiver_callers=0;
    attributed_named_callers=1; owner_evidence_coverage=adequate */
 
 int __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
-          (AnonReceiver_0064A970 *this,char *param_1,uint param_2,uint *param_3)
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50
+          (RecoveredReceiver_0064A970 *this,char *param_1,uint param_2,uint *param_3)
 
 {
   byte bVar1;
@@ -79,6 +79,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
           do {
             if ((uVar7 != uVar2) && (*pbVar3 != 0xff)) {
               if (DAT_00808a8f == '\0') {
+
                 iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)uVar7,(byte)uVar2);
                 bVar9 = iVar6 < 0;
               }
@@ -105,6 +106,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
           do {
             if ((uVar2 != DAT_0080874d) && (*pbVar3 != 0xff)) {
               if (DAT_00808a8f == '\0') {
+
                 iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)uVar2,DAT_0080874d);
                 bVar9 = iVar6 < 0;
               }
@@ -130,6 +132,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
         do {
           if ((pcVar8 != param_1) && (*pbVar3 != 0xff)) {
             if (DAT_00808a8f == '\0') {
+
               iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)pcVar8,bVar5);
               bVar9 = iVar6 < 0;
             }
@@ -160,6 +163,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
           do {
             if (*pbVar3 != 0xff) {
               if (DAT_00808a8f == '\0') {
+
                 iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)uVar7,(byte)uVar2);
                 bVar9 = iVar6 < 0;
               }
@@ -186,6 +190,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
           do {
             if (*pbVar3 != 0xff) {
               if (DAT_00808a8f == '\0') {
+
                 iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)uVar2,DAT_0080874d);
                 bVar9 = iVar6 < 0;
               }
@@ -211,6 +216,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
         do {
           if (*pbVar3 != 0xff) {
             if (DAT_00808a8f == '\0') {
+
               iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)uVar2,bVar5);
               bVar9 = iVar6 < 0;
             }
@@ -241,6 +247,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
           do {
             if ((uVar7 != uVar2) && (*pbVar3 != 0xff)) {
               if (DAT_00808a8f == '\0') {
+
                 iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)uVar7,(byte)uVar2);
                 bVar9 = iVar6 < 0;
               }
@@ -267,6 +274,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50
           do {
             if ((uVar2 != DAT_0080874d) && (*pbVar3 != 0xff)) {
               if (DAT_00808a8f == '\0') {
+
                 iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)uVar2,DAT_0080874d);
                 bVar9 = iVar6 < 0;
               }
@@ -457,6 +465,7 @@ LAB_00669b3a:
               }
               if (!bVar9) {
                 if (DAT_00808a8f == '\0') {
+
                   iVar6 = thunk_FUN_005822e0(&DAT_00807620,bVar5,(byte)param_2_after_write_2);
                   bVar9 = iVar6 < 0;
                   bVar5 = DAT_0080874d;
@@ -487,6 +496,7 @@ LAB_00669b3a:
         do {
           if (*pbVar3 != 0xff) {
             if (DAT_00808a8f == '\0') {
+
               iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)param_2,bVar5);
               bVar9 = iVar6 < 0;
             }
@@ -582,6 +592,7 @@ LAB_00669cdc:
               }
               if (!bVar9) {
                 if (DAT_00808a8f == '\0') {
+
                   iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)uVar2,(byte)param_2);
                   bVar9 = iVar6 < 0;
                 }
@@ -611,6 +622,7 @@ LAB_00669cdc:
           do {
             if ((param_2 != DAT_0080874d) && (*param_1 != -1)) {
               if (DAT_00808a8f == '\0') {
+
                 iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)param_2,DAT_0080874d);
                 bVar9 = iVar6 < 0;
               }
@@ -787,6 +799,7 @@ LAB_0066a1c9:
               }
               if (!bVar9) {
                 if (DAT_00808a8f == '\0') {
+
                   iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)uVar2,(byte)param_2);
                   bVar9 = iVar6 < 0;
                 }
@@ -816,6 +829,7 @@ LAB_0066a23c:
           do {
             if ((param_2 != DAT_0080874d) && (*param_1 != -1)) {
               if (DAT_00808a8f == '\0') {
+
                 iVar6 = thunk_FUN_005822e0(&DAT_00807620,(byte)param_2,DAT_0080874d);
                 bVar9 = iVar6 < 0;
               }

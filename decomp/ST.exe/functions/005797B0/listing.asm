@@ -589,7 +589,7 @@ LAB_00579db8:
 00579E4C  51                        PUSH ECX
 00579E4D  50                        PUSH EAX
 00579E4E  8B CE                     MOV ECX,ESI
-00579E50  FF 53 10                  CALL dword ptr [EBX + 0x10]
+00579E50  FF 53 10                  CALL dword ptr [EBX + 0x10]  ; [STIndirectCallsiteApplier] exact slot 0x10; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00579E53  0F BF C8                  MOVSX ECX,AX
 00579E56  B8 B7 60 0B B6            MOV EAX,0xb60b60b7
 00579E5B  F7 E9                     IMUL ECX

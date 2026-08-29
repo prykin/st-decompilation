@@ -14,33 +14,34 @@ STManRuinC::sub_006308F0
 {
   byte bVar1;
   byte *pbVar2;
-  STManRuinC_field_0038DArray *pSVar3;
+  STManRuinC_field_0038DArray *array;
+  DArrayTy *pSVar3_mg0;
+  int iVar3;
   int iVar4;
-  int iVar5;
   uint index;
-  short *psVar6;
+  short *psVar5;
   short local_20;
   short local_1e;
   short local_1c;
-  undefined2 local_1a;
-  undefined4 local_18;
+  ushort local_1a;
+  uint local_18;
   uint local_14;
   int local_c;
   int local_8;
 
   index = 0xffffffff;
-  iVar5 = (g_worldGrid.sizeX * param_3 + param_2) * (int)g_worldGrid.sizeY + param_1;
+  iVar4 = (g_worldGrid.sizeX * param_3 + param_2) * (int)g_worldGrid.sizeY + param_1;
   local_8 = 0;
   if (param_4 == 1) {
-    bVar1 = this->field_0034[iVar5];
+    bVar1 = this->field_0034[iVar4];
   }
   else {
     pbVar2 = this->field_0034;
-    local_8 = g_worldGrid.sizeY + iVar5;
-    if (pbVar2[iVar5] != 0) {
+    local_8 = g_worldGrid.sizeY + iVar4;
+    if (pbVar2[iVar4] != 0) {
       return 0xffffffff;
     }
-    if (pbVar2[iVar5 + 1] != 0) {
+    if (pbVar2[iVar4 + 1] != 0) {
       return 0xffffffff;
     }
     if (pbVar2[local_8] != 0) {
@@ -50,17 +51,17 @@ STManRuinC::sub_006308F0
   }
   if (bVar1 == 0) {
     if (this->field_0038 == nullptr) {
-      pSVar3 = (STManRuinC_field_0038DArray *)
-               Library::DKW::TBL::DArrayCreate(nullptr,10,0x75,10);
-      this->field_0038 = pSVar3;
+      /* ST_CALLSITE[0063097E]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STManRuinC_field_0038DArray; source view only; no Ghidra override */
+      pSVar3_mg0 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x75,10);
+      this->field_0038 = (STManRuinC_field_0038DArray *)pSVar3_mg0;
     }
-    pSVar3 = this->field_0038;
-    if ((pSVar3 != nullptr) && (pSVar3->count < 0xfe)) {
-      psVar6 = &local_20;
-      for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-        psVar6[0] = 0;
-        psVar6[1] = 0;
-        psVar6 = psVar6 + 2;
+    array = this->field_0038;
+    if ((array != nullptr) && (array->count < 0xfe)) {
+      psVar5 = &local_20;
+      for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+        psVar5[0] = 0;
+        psVar5[1] = 0;
+        psVar5 = psVar5 + 2;
       }
       local_1a = (undefined2)param_4;
       local_18 = param_5;
@@ -69,20 +70,23 @@ STManRuinC::sub_006308F0
       local_1c = (short)param_3;
       local_1e = (short)param_2;
       local_c = param_6;
-      index = Library::DKW::TBL::DArrayAppend((DArrayTy *)pSVar3,&local_20);
+
+      index = Library::DKW::TBL::DArrayAppend((DArrayTy *)array,&local_20);
       if (-1 < (int)index) {
         if (param_4 == 1) {
-          this->field_0034[iVar5] = 1;
+          this->field_0034[iVar4] = 1;
         }
         else {
-          this->field_0034[iVar5] = 1;
-          this->field_0034[iVar5 + 1] = 1;
+          this->field_0034[iVar4] = 1;
+          this->field_0034[iVar4 + 1] = 1;
           this->field_0034[local_8] = 1;
           this->field_0034[local_8 + 1] = 1;
         }
-        iVar5 = thunk_FUN_00631190(this,index,(short)param_1,(short)param_2,(short)param_3,param_4,
+
+        iVar4 = thunk_FUN_00631190(this,index,(short)param_1,(short)param_2,(short)param_3,param_4,
                                    param_5,param_6);
-        if (iVar5 == 0) {
+        if (iVar4 == 0) {
+
           DArrayRemoveAt((DArrayTy *)this->field_0038,index);
           index = 0xffffffff;
         }

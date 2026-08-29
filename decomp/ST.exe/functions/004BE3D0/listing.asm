@@ -1,4 +1,4 @@
-FUN_004be3d0:
+TLOBaseTy::vfunc_84:
 004BE3D0  55                        PUSH EBP
 004BE3D1  8B EC                     MOV EBP,ESP
 004BE3D3  56                        PUSH ESI

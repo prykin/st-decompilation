@@ -1,4 +1,4 @@
-FUN_0065d480:
+AiFltClassTy::sub_0065D480:
 0065D480  85 C9                     TEST ECX,ECX
 0065D482  74 0B                     JZ 0x0065d48f
 0065D484  8D 41 20                  LEA EAX,[ECX + 0x20]

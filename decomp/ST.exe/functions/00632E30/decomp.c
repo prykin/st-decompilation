@@ -3,7 +3,7 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-undefined4 __fastcall FUN_00632e30(AnonShape_00632E30_A9A0278F *param_1)
+undefined4 __fastcall FUN_00632e30(RecoveredRecordView_00632E30_F8A8BDAE *param_1)
 
 {
   float fVar1;
@@ -24,7 +24,7 @@ undefined4 __fastcall FUN_00632e30(AnonShape_00632E30_A9A0278F *param_1)
   longlong lVar14;
   int local_14;
   float local_10;
-  undefined4 local_c;
+  uint local_c;
   float local_8;
 
   local_c = 0;
@@ -140,6 +140,7 @@ LAB_00632f7e:
     }
     break;
   case 3:
+
     pvVar5 = Library::DKW::LIB::MemAlloc(param_1->field_0019 << 3);
     fVar1 = (float)param_1->field_006D - param_1->field_0069;
     param_1->field_0039 = (int)pvVar5;
@@ -249,6 +250,7 @@ LAB_00632f7e:
             STField<float>(iVar13,0x21) = local_10;
             STField<undefined4>(iVar13,0x25) = param_1->field_006D;
             param_1->field_0071 = param_1->field_006D;
+
             uVar10 = Library::MSVCRT::FUN_0072e6c0();
             STField<undefined4>(iVar13,0x8) = 1;
             STField<undefined4>(iVar13,0x1D) = 7;
@@ -266,10 +268,12 @@ LAB_00632f7e:
         else {
           iVar13 = 0;
         }
+
         local_EAX_1564 = Library::MSVCRT::FUN_0072e6c0();
         local_8 = (float)((int)local_EAX_1564 % 0x168) * _DAT_0079d1a8;
         if (iVar13 != 0) {
           STField<float>(iVar13,0x21) = local_8;
+
           local_EAX_1602 = Library::MSVCRT::FUN_0072e6c0();
           fVar1 = (float)param_1->field_0079;
           fVar2 = (float)param_1->field_006D;

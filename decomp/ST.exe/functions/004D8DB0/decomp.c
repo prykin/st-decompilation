@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_004d8db0(AnonShape_004D8DB0_597A2A4F *param_1)
+undefined4 __fastcall FUN_004d8db0(RecoveredRecordView_004D8DB0_DB767380 *param_1)
 
 {
   switch(param_1->field_0245) {

@@ -61,13 +61,14 @@ LAB_00551f76:
 00551F7E  6A FF                     PUSH -0x1
 00551F80  6A 00                     PUSH 0x0
 00551F82  68 4C 87 7C 00            PUSH 0x7c874c
-00551F87  E8 F0 37 EB FF            CALL 0x0040577c
+00551F87  E8 F0 37 EB FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 00551F8C  8B 0D 94 67 80 00         MOV ECX,dword ptr [0x00806794]
 00551F92  83 C4 08                  ADD ESP,0x8
 00551F95  50                        PUSH EAX
 00551F96  6A 01                     PUSH 0x1
 00551F98  51                        PUSH ECX
-00551F99  E8 52 7B 1B 00            CALL 0x00709af0
+TradePanelTy::PaintIndicators::override::prt_551f99_46f798ab:
+00551F99  E8 52 7B 1B 00            CALL 0x00709af0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/int;/SubmarineTitans/Recovered/Enums/Global_mfRLoad_param_2Enum;pointer:/char;/uint;/byte;/int;/int;pointer:/undefined4
 00551F9E  50                        PUSH EAX
 00551F9F  8B 46 68                  MOV EAX,dword ptr [ESI + 0x68]
 00551FA2  6A 01                     PUSH 0x1

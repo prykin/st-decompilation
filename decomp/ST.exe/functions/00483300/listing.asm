@@ -133,7 +133,7 @@ LAB_0048342f:
 00483443  51                        PUSH ECX
 00483444  52                        PUSH EDX
 00483445  8B CE                     MOV ECX,ESI
-00483447  FF 50 10                  CALL dword ptr [EAX + 0x10]
+00483447  FF 50 10                  CALL dword ptr [EAX + 0x10]  ; [STIndirectCallsiteApplier] exact slot 0x10; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 0048344A  0F BF C0                  MOVSX EAX,AX
 0048344D  89 45 EC                  MOV dword ptr [EBP + -0x14],EAX
 00483450  8A 86 B2 02 00 00         MOV AL,byte ptr [ESI + 0x2b2]

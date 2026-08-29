@@ -36,18 +36,18 @@
    Evidence: 00601500 -> 00601D10 @ 00601B22;
    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::FUN_00601500 parameter param_11 */
 
-void FUN_00601d10(int param_1,int param_2,int param_3,short param_4,ushort param_5,int param_6,
-                 undefined4 param_7)
+void FUN_00601d10(int param_1,int param_2,RecoveredRecord_00601D10_11B39116 *param_3,short param_4,
+                 ushort param_5,int param_6,undefined4 param_7)
 
 {
   int iVar1;
-  undefined4 local_40 [5];
+  uint local_40 [5];
   int *local_2c;
   int local_20 [3];
   ushort local_14;
   short local_12;
 
-  if (param_3 != 0) {
+  if (param_3 != nullptr) {
     memset(local_20, 0, 0x1c); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(local_40, 0, 0x20); /* compiler bulk-zero initialization */
@@ -55,7 +55,7 @@ void FUN_00601d10(int param_1,int param_2,int param_3,short param_4,ushort param
     local_20[0] = param_2;
     local_14 = param_5;
     local_12 = param_4;
-    local_40[2] = *(undefined4 *)(param_3 + 8);
+    local_40[2] = param_3->field_0008;
     local_20[1] = param_6;
     local_2c = local_20;
     local_40[3] = 2;

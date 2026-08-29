@@ -12,11 +12,10 @@ undefined4 __fastcall FUN_00660010(AiFltClassTy *param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   STGroupBoatC *this;
-  undefined4 local_14;
+  uint local_14;
   DArrayTy *local_10;
-  undefined2 local_c;
-  undefined4 local_8;
-
+  ushort local_c;
+  uint local_8;
   local_8 = 0;
   sVar1 = param_1->field_0039;
   param_1->field_00A7 = 0;
@@ -32,8 +31,8 @@ undefined4 __fastcall FUN_00660010(AiFltClassTy *param_1)
   }
   iVar4 = 0;
 LAB_00660050:
-  /* ST_CALLSITE[00660063]: CALL 0x004038e1; direct=004038E1 AiFltClassTy::sub_0065FA60 */
-  array = (DArrayTy *)AiFltClassTy::sub_0065FA60(param_1,iVar4,(sVar1 != 3) - 1 & 2,nullptr);
+  /* ST_CALLSITE[00660063]: CALL 0x004038e1; direct=004038E1 AiFltClassTy::sub_0065FA60; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__thiscall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/AiFltClassTy;/int;/int;pointer:/short */
+  array = AiFltClassTy::sub_0065FA60(param_1,iVar4,(sVar1 != 3) - 1 & 2,nullptr);
   if (array == nullptr) {
     return 0xfffffffe;
   }

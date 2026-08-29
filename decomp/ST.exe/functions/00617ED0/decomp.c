@@ -8,7 +8,7 @@ void __thiscall FUN_00617ed0(void *this,int param_1,int *param_2)
   STFishC *pSVar2;
   DArrayTy *pDVar3;
   int iVar3_mg1;
-  undefined4 local_18;
+  uint local_18;
   uint local_14;
   STFishC *local_10;
   short local_a;
@@ -26,15 +26,17 @@ void __thiscall FUN_00617ed0(void *this,int param_1,int *param_2)
     }
     if (0 < param_1) {
       do {
+
         iVar3_mg1 = STPlaySystemC::sub_006E62D0
-                              (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*param_2,
-                               (int *)&local_10);
+                              (g_playSystem_00802A38,
+                               (RecoveredRecordView_005EFAE0_855D930D *)*param_2,(int *)&local_10);
         pSVar2 = local_10;
         if (iVar3_mg1 != -4) {
           /* ST_CALLSITE[00617F3C]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0(local_10,&local_a,&local_8,&local_6);
           local_18 = pSVar2->field_0018;
           local_14 = (uint)*(ushort *)&pSVar2->field_0x32;
+
           Library::DKW::TBL::DArrayAppend(STField<DArrayTy *>(this,0x66),&local_18);
         }
         param_2 = param_2 + 1;

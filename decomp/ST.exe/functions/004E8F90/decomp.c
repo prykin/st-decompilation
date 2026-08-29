@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_004e8f90(AnonShape_004E8F90_6386CD4A *param_1)
+undefined4 __fastcall FUN_004e8f90(RecoveredRecordView_004E8F90_77A5C19A *param_1)
 
 {
   if ((param_1->field_04D8 != 0xffff) && (param_1->field_04D8 = 0xffff, param_1->field_04E0 != 0)) {
@@ -12,7 +12,8 @@ undefined4 __fastcall FUN_004e8f90(AnonShape_004E8F90_6386CD4A *param_1)
   }
   if (((param_1->field_04F8 != 0) && (param_1->field_04FC != 0)) &&
      (param_1->field_061B != nullptr)) {
-    thunk_FUN_004e9bb0(param_1->field_061B,(int)param_1);
+
+    thunk_FUN_004e9bb0(param_1->field_061B,(RecoveredRecord_004E9BB0_CD9D470B *)param_1);
     param_1->field_04F8 = 0;
     param_1->field_04FC = 0;
   }

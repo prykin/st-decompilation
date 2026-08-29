@@ -43,7 +43,7 @@ FUN_00589740:
 005897C2  E8 79 BA E7 FF            CALL 0x00405240
 005897C7  8B 17                     MOV EDX,dword ptr [EDI]
 005897C9  8B CF                     MOV ECX,EDI
-005897CB  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]
+005897CB  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]  ; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/void;pointer:/void
 005897D1  A1 64 67 80 00            MOV EAX,[0x00806764]
 005897D6  6A 1D                     PUSH 0x1d
 005897D8  68 50 B9 7C 00            PUSH 0x7cb950

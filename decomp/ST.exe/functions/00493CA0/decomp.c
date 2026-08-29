@@ -15,7 +15,7 @@ void FUN_00493ca0(void)
   int in_ECX;
 
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  thunk_FUN_004e8030(*(int *)(in_ECX + 0x6f7));
+  thunk_FUN_004e8030(*(STBoatC_field_06F7State *)(in_ECX + 0x6f7));
   return;
 }
 

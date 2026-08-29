@@ -35,39 +35,39 @@ void __thiscall st::fn_0059B820(FSGSTy *this)
     this->field_002D = 0x29;
     *(undefined4 *)&this->field_0x31 = 0x89;
     if (this->field_1AC4 != 0) {
-      st::fn_006E6080(this,2,this->field_1AC4,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AC4,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1AD8 != 0) {
-      st::fn_006E6080(this,2,this->field_1AD8,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AD8,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1ADC != 0) {
-      st::fn_006E6080(this,2,this->field_1ADC,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1ADC,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1AE0 != 0) {
-      st::fn_006E6080(this,2,this->field_1AE0,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AE0,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     *(undefined4 *)&this->field_0x31 = 0x29;
     if (this->field_1AC8 != 0) {
-      st::fn_006E6080(this,2,this->field_1AC8,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AC8,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1ACC != 0) {
-      st::fn_006E6080(this,2,this->field_1ACC,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1ACC,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1AD4 != 0) {
-      st::fn_006E6080(this,2,this->field_1AD4,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AD4,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     *(undefined4 *)&this->field_0x31 = 200;
-    if (this->field_1AE4 != (LPCSTR)0x0) {
-      st::fn_006E6080(this,2,st::machine_word_boundary_cast<undefined4>(this->field_1AE4),(undefined4 *)&this->field_0x1d);
+    if (st::machine_word_boundary_cast<uint>(this->field_1AE4) != st::machine_word_boundary_cast<uint>((LPCSTR)0x0)) {
+      st::fn_006E6080(this,2,st::machine_word_boundary_cast<undefined4>(this->field_1AE4),reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     this->field_002D = 0x20;
     *(undefined4 *)&this->field_0x31 = 1;
     if (this->field_1B14 != 0) {
-      st::fn_006E6080(this,2,this->field_1B14,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1B14,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     *(undefined4 *)&this->field_0x31 = 1;
     if (this->field_1AD0 != 0) {
-      st::fn_006E6080(this,2,this->field_1AD0,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AD0,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     pCVar4 = (LPCSTR)this->field_1EB6;
     break;
@@ -75,29 +75,29 @@ void __thiscall st::fn_0059B820(FSGSTy *this)
     this->field_002D = 0x29;
     *(undefined4 *)&this->field_0x31 = 9;
     if (this->field_1B10 != 0) {
-      st::fn_006E6080(this,2,this->field_1B10,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1B10,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     *(undefined4 *)&this->field_0x31 = 0x89;
     if (this->field_1AC4 != 0) {
-      st::fn_006E6080(this,2,this->field_1AC4,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AC4,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1AC8 != 0) {
-      st::fn_006E6080(this,2,this->field_1AC8,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AC8,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     this->field_002D = 0x20;
     *(undefined4 *)&this->field_0x31 = 1;
     if (this->field_1B14 != 0) {
-      st::fn_006E6080(this,2,this->field_1B14,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1B14,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     *(undefined4 *)&this->field_0x31 = 1;
     if ((this->field_1B18 != 0) && (this->array_00BC[0xc].field_01E0 == '\0')) {
-      st::fn_006E6080(this,2,this->field_1B18,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1B18,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if ((this->field_1B24 != 0) && (this->array_00BC[0xc].field_01E0 != '\0')) {
-      st::fn_006E6080(this,2,this->field_1B24,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1B24,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1B1C != 0) {
-      st::fn_006E6080(this,2,this->field_1B1C,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1B1C,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     pCVar4 = (LPCSTR)this->field_1B20;
     *(undefined4 *)&this->field_0x31 = 1;
@@ -106,23 +106,23 @@ void __thiscall st::fn_0059B820(FSGSTy *this)
     this->field_002D = 0x29;
     *(undefined4 *)&this->field_0x31 = 0x99;
     if (this->field_1AC4 != 0) {
-      st::fn_006E6080(this,2,this->field_1AC4,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AC4,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     *(undefined4 *)&this->field_0x31 = 0x89;
     if (this->field_1AC8 != 0) {
-      st::fn_006E6080(this,2,this->field_1AC8,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AC8,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     this->field_002D = 0x20;
     *(undefined4 *)&this->field_0x31 = 1;
     if (this->field_1EB6 != 0) {
-      st::fn_006E6080(this,2,this->field_1EB6,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1EB6,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1B24 != 0) {
-      st::fn_006E6080(this,2,this->field_1B24,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1B24,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     *(uint *)&this->field_0x31 = (uint)(this->field_1EC2 == 0x100);
     if (this->field_1EBA != 0) {
-      st::fn_006E6080(this,2,this->field_1EBA,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1EBA,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     pCVar4 = (LPCSTR)this->field_1B20;
     *(undefined4 *)&this->field_0x31 = 1;
@@ -131,27 +131,27 @@ void __thiscall st::fn_0059B820(FSGSTy *this)
     *(uint *)&this->field_0x31 = (uint)(this->field_1EDF != 0);
     this->field_002D = 0x20;
     if (this->field_1ED3 != 0) {
-      st::fn_006E6080(this,2,this->field_1ED3,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1ED3,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
-    *(uint *)&this->field_0x31 = (uint)(this->field_1EDF < 0xf4230);
+    *(uint *)&this->field_0x31 = st::storage_bit_cast<uint>(static_cast<uint32_t>(this->field_1EDF < 0xf4230));
     if (this->field_1ED7 != 0) {
-      st::fn_006E6080(this,2,this->field_1ED7,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1ED7,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     *(undefined4 *)&this->field_0x31 = 1;
     if (this->field_1EB6 != 0) {
-      st::fn_006E6080(this,2,this->field_1EB6,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1EB6,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1EBA != 0) {
-      st::fn_006E6080(this,2,this->field_1EBA,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1EBA,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1B24 != 0) {
-      st::fn_006E6080(this,2,this->field_1B24,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1B24,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     pCVar4 = (LPCSTR)this->field_1AC4;
     this->field_002D = 0x29;
     *(undefined4 *)&this->field_0x31 = 0x89;
 joined_r0x0059bcb0:
-    if (pCVar4 == (LPCSTR)0x0) goto switchD_0059b84b_default;
+    if (st::machine_word_boundary_cast<uint>(pCVar4) == st::machine_word_boundary_cast<uint>((LPCSTR)0x0)) goto switchD_0059b84b_default;
     goto LAB_0059bcb6;
   case 10:
     pbVar3 = this->field_1B0C;
@@ -179,13 +179,13 @@ LAB_0059bb6c:
       *(undefined4 *)&this->field_0x31 = 0x99;
     }
     if (this->field_1AD8 != 0) {
-      st::fn_006E6080(this,2,this->field_1AD8,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AD8,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1ADC != 0) {
-      st::fn_006E6080(this,2,this->field_1ADC,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1ADC,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1AE0 != 0) {
-      st::fn_006E6080(this,2,this->field_1AE0,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AE0,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     *(undefined4 *)&this->field_0x31 = 200;
     if (iVar6 != 0) {
@@ -196,15 +196,15 @@ LAB_0059bb6c:
   default:
     goto switchD_0059b84b_default;
   }
-  if (pCVar4 != (LPCSTR)0x0) {
+  if (st::machine_word_boundary_cast<uint>(pCVar4) != st::machine_word_boundary_cast<uint>((LPCSTR)0x0)) {
 LAB_0059bcb6:
-    st::fn_006E6080(this,2,st::machine_word_boundary_cast<undefined4>(pCVar4),(undefined4 *)&this->field_0x1d);
+    st::fn_006E6080(this,2,st::machine_word_boundary_cast<undefined4>(pCVar4),reinterpret_cast<undefined4 *>(&this->field_0x1d));
   }
 switchD_0059b84b_default:
   this->field_002D = 0x61;
   this->field_0035 = 0;
   this->field_0037 = 0;
-  st::fn_006E6080(this,0xf,0,(undefined4 *)&this->field_0x1d);
+  st::fn_006E6080(this,0xf,0,reinterpret_cast<undefined4 *>(&this->field_0x1d));
   return;
 }
 
@@ -237,65 +237,65 @@ void __thiscall st::fn_0059BE50(FSGSTy *this)
     this->field_002D = 0x20;
     *(undefined4 *)&this->field_0x31 = 0;
     if (this->field_1AC4 != 0) {
-      st::fn_006E6080(this,2,this->field_1AC4,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AC4,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1AC8 != 0) {
-      st::fn_006E6080(this,2,this->field_1AC8,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AC8,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1ACC != 0) {
-      st::fn_006E6080(this,2,this->field_1ACC,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1ACC,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1AD4 != 0) {
-      st::fn_006E6080(this,2,this->field_1AD4,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AD4,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1AD8 != 0) {
-      st::fn_006E6080(this,2,this->field_1AD8,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AD8,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1ADC != 0) {
-      st::fn_006E6080(this,2,this->field_1ADC,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1ADC,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1AE0 != 0) {
-      st::fn_006E6080(this,2,this->field_1AE0,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AE0,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
-    if (this->field_1AE4 != (LPCSTR)0x0) {
-      st::fn_006E6080(this,2,st::machine_word_boundary_cast<undefined4>(this->field_1AE4),(undefined4 *)&this->field_0x1d);
+    if (st::machine_word_boundary_cast<uint>(this->field_1AE4) != st::machine_word_boundary_cast<uint>((LPCSTR)0x0)) {
+      st::fn_006E6080(this,2,st::machine_word_boundary_cast<undefined4>(this->field_1AE4),reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     this->field_002D = 0x29;
     *(undefined4 *)&this->field_0x31 = 0x99;
     if (this->field_1AC4 != 0) {
-      st::fn_006E6080(this,2,this->field_1AC4,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AC4,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1AD8 != 0) {
-      st::fn_006E6080(this,2,this->field_1AD8,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AD8,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1ADC != 0) {
-      st::fn_006E6080(this,2,this->field_1ADC,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1ADC,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1AE0 != 0) {
-      st::fn_006E6080(this,2,this->field_1AE0,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AE0,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     *(undefined4 *)&this->field_0x31 = 0x39;
     if (this->field_1AC8 != 0) {
-      st::fn_006E6080(this,2,this->field_1AC8,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AC8,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1ACC != 0) {
-      st::fn_006E6080(this,2,this->field_1ACC,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1ACC,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1AD4 != 0) {
-      st::fn_006E6080(this,2,this->field_1AD4,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AD4,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     *(undefined4 *)&this->field_0x31 = 0xd8;
-    if (this->field_1AE4 != (LPCSTR)0x0) {
-      st::fn_006E6080(this,2,st::machine_word_boundary_cast<undefined4>(this->field_1AE4),(undefined4 *)&this->field_0x1d);
+    if (st::machine_word_boundary_cast<uint>(this->field_1AE4) != st::machine_word_boundary_cast<uint>((LPCSTR)0x0)) {
+      st::fn_006E6080(this,2,st::machine_word_boundary_cast<undefined4>(this->field_1AE4),reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     this->field_002D = 0x20;
     *(undefined4 *)&this->field_0x31 = 0;
     if (this->field_1B14 != 0) {
-      st::fn_006E6080(this,2,this->field_1B14,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1B14,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     *(undefined4 *)&this->field_0x31 = 0;
     if (this->field_1AD0 != 0) {
-      st::fn_006E6080(this,2,this->field_1AD0,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AD0,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     iVar2 = this->field_1EB6;
     goto LAB_0059c1ca;
@@ -303,26 +303,26 @@ void __thiscall st::fn_0059BE50(FSGSTy *this)
     this->field_002D = 0x29;
     *(undefined4 *)&this->field_0x31 = 0x19;
     if (this->field_1B10 != 0) {
-      st::fn_006E6080(this,2,this->field_1B10,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1B10,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     *(undefined4 *)&this->field_0x31 = 0x99;
     if (this->field_1AC4 != 0) {
-      st::fn_006E6080(this,2,this->field_1AC4,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AC4,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1AC8 != 0) {
-      st::fn_006E6080(this,2,this->field_1AC8,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AC8,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     this->field_002D = 0x20;
     *(undefined4 *)&this->field_0x31 = 0;
     if (this->field_1B14 != 0) {
-      st::fn_006E6080(this,2,this->field_1B14,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1B14,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     *(undefined4 *)&this->field_0x31 = 0;
     if (this->field_1B18 != 0) {
-      st::fn_006E6080(this,2,this->field_1B18,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1B18,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1B24 != 0) {
-      st::fn_006E6080(this,2,this->field_1B24,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1B24,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     iVar2 = this->field_1B1C;
     goto joined_r0x0059c1b1;
@@ -330,29 +330,29 @@ void __thiscall st::fn_0059BE50(FSGSTy *this)
     this->field_002D = 0x29;
     *(undefined4 *)&this->field_0x31 = 0x99;
     if (this->field_1AC4 != 0) {
-      st::fn_006E6080(this,2,this->field_1AC4,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AC4,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1AC8 != 0) {
-      st::fn_006E6080(this,2,this->field_1AC8,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AC8,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     this->field_002D = 0x20;
     *(undefined4 *)&this->field_0x31 = 0;
     if (this->field_1EB6 != 0) {
-      st::fn_006E6080(this,2,this->field_1EB6,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1EB6,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1EBA != 0) {
-      st::fn_006E6080(this,2,this->field_1EBA,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1EBA,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     iVar2 = this->field_1B24;
 joined_r0x0059c1b1:
     if (iVar2 != 0) {
-      st::fn_006E6080(this,2,iVar2,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,iVar2,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     iVar2 = this->field_1B20;
     *(undefined4 *)&this->field_0x31 = 0;
 LAB_0059c1ca:
     if (iVar2 != 0) {
-      st::fn_006E6080(this,2,iVar2,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,iVar2,reinterpret_cast<undefined4 *>(&this->field_0x1d));
       return;
     }
     break;
@@ -360,60 +360,60 @@ LAB_0059c1ca:
     this->field_002D = 0x20;
     *(undefined4 *)&this->field_0x31 = 0;
     if (this->field_1ED3 != 0) {
-      st::fn_006E6080(this,2,this->field_1ED3,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1ED3,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1ED7 != 0) {
-      st::fn_006E6080(this,2,this->field_1ED7,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1ED7,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1EB6 != 0) {
-      st::fn_006E6080(this,2,this->field_1EB6,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1EB6,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1EBA != 0) {
-      st::fn_006E6080(this,2,this->field_1EBA,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1EBA,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1B24 != 0) {
-      st::fn_006E6080(this,2,this->field_1B24,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1B24,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     this->field_002D = 0x20;
     *(undefined4 *)&this->field_0x31 = 0;
     if (this->field_1AC4 != 0) {
-      st::fn_006E6080(this,2,this->field_1AC4,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AC4,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     this->field_002D = 0x29;
     *(undefined4 *)&this->field_0x31 = 0x99;
     if (this->field_1AC4 != 0) {
-      st::fn_006E6080(this,2,this->field_1AC4,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AC4,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     break;
   case 10:
     this->field_002D = 0x20;
     *(undefined4 *)&this->field_0x31 = 0;
     if (this->field_1AD8 != 0) {
-      st::fn_006E6080(this,2,this->field_1AD8,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AD8,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1ADC != 0) {
-      st::fn_006E6080(this,2,this->field_1ADC,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1ADC,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1AE0 != 0) {
-      st::fn_006E6080(this,2,this->field_1AE0,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AE0,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
-    if (this->field_1AE4 != (LPCSTR)0x0) {
-      st::fn_006E6080(this,2,st::machine_word_boundary_cast<undefined4>(this->field_1AE4),(undefined4 *)&this->field_0x1d);
+    if (st::machine_word_boundary_cast<uint>(this->field_1AE4) != st::machine_word_boundary_cast<uint>((LPCSTR)0x0)) {
+      st::fn_006E6080(this,2,st::machine_word_boundary_cast<undefined4>(this->field_1AE4),reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     this->field_002D = 0x29;
     *(undefined4 *)&this->field_0x31 = 0x99;
     if (this->field_1AD8 != 0) {
-      st::fn_006E6080(this,2,this->field_1AD8,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AD8,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1ADC != 0) {
-      st::fn_006E6080(this,2,this->field_1ADC,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1ADC,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     if (this->field_1AE0 != 0) {
-      st::fn_006E6080(this,2,this->field_1AE0,(undefined4 *)&this->field_0x1d);
+      st::fn_006E6080(this,2,this->field_1AE0,reinterpret_cast<undefined4 *>(&this->field_0x1d));
     }
     *(undefined4 *)&this->field_0x31 = 0xd8;
-    if (this->field_1AE4 != (LPCSTR)0x0) {
-      st::fn_006E6080(this,2,st::machine_word_boundary_cast<undefined4>(this->field_1AE4),(undefined4 *)&this->field_0x1d);
+    if (st::machine_word_boundary_cast<uint>(this->field_1AE4) != st::machine_word_boundary_cast<uint>((LPCSTR)0x0)) {
+      st::fn_006E6080(this,2,st::machine_word_boundary_cast<undefined4>(this->field_1AE4),reinterpret_cast<undefined4 *>(&this->field_0x1d));
       return;
     }
   }
@@ -466,7 +466,7 @@ void __thiscall st::fn_005A0590(FSGSTy *this)
     st::fn_006E56B0(this->field_000C,this->field_1AE0);
   }
   this->field_1AE0 = 0;
-  if (this->field_1AE4 != (LPCSTR)0x0) {
+  if (st::machine_word_boundary_cast<uint>(this->field_1AE4) != st::machine_word_boundary_cast<uint>((LPCSTR)0x0)) {
     st::fn_006E56B0(this->field_000C,(uint)this->field_1AE4);
   }
   this->field_1AE4 = (LPCSTR)0x0;
@@ -503,7 +503,7 @@ void __thiscall st::fn_005A0590(FSGSTy *this)
   }
   this->field_1B00 = nullptr;
   if ((DArrayTy *)this->field_1B04 != nullptr) {
-    st::fn_006B5570((DArrayTy *)this->field_1B04);
+    st::fn_006B5570(reinterpret_cast<DArrayTy *>(this->field_1B04));
   }
   this->field_1B04 = nullptr;
   if (this->field_1E8E != 0) {
@@ -580,11 +580,11 @@ void __thiscall st::fn_005A07F0(FSGSTy *this)
   }
   this->field_1AEC = nullptr;
   if (this->field_1EA6 != nullptr) {
-    st::fn_006AE110((DArrayTy *)this->field_1EA6);
+    st::fn_006AE110(reinterpret_cast<DArrayTy *>(this->field_1EA6));
   }
   this->field_1EA6 = nullptr;
   if (this->field_1EAA != nullptr) {
-    st::fn_006AE110((DArrayTy *)this->field_1EAA);
+    st::fn_006AE110(reinterpret_cast<DArrayTy *>(this->field_1EAA));
   }
   this->field_1EAA = nullptr;
   if (this->field_1E8E != 0) {
@@ -683,11 +683,11 @@ void __thiscall st::fn_005A0AF0(FSGSTy *this)
   }
   this->field_1AEC = nullptr;
   if ((DArrayTy *)this->field_1B04 != nullptr) {
-    st::fn_006B5570((DArrayTy *)this->field_1B04);
+    st::fn_006B5570(reinterpret_cast<DArrayTy *>(this->field_1B04));
   }
   this->field_1B04 = nullptr;
   if (this->field_1EBE != nullptr) {
-    st::fn_006AE110((DArrayTy *)this->field_1EBE);
+    st::fn_006AE110(reinterpret_cast<DArrayTy *>(this->field_1EBE));
   }
   this->field_1EBE = nullptr;
   if (this->field_1E8E != 0) {
@@ -807,7 +807,7 @@ st::fn_005A39A0
     if (iVar5 != -2) {
       uVar4 = st::fn_0072FF00(pbVar3);
       /* ST_CALLSITE[005A39E5]: CALL dword ptr [0x0085bde8] */
-      st::external_00000080(local_10,st::mutable_c_string("%6d"),uVar4);
+      st::external_00000080(reinterpret_cast<LPSTR>(local_10),st::mutable_c_string("%6d"),uVar4);
       goto LAB_005a3a15;
     }
   }
@@ -823,13 +823,14 @@ st::fn_005A39A0
   } while (cVar2 != '\0');
   uVar6 = ~uVar6;
   pcVar8 = pcVar10 + -uVar6;
-  pcVar10 = local_10;
+  pcVar10 = reinterpret_cast<char *>(local_10);
   memmove(pcVar10, pcVar8, uVar6); /* compiler REP MOVS byte copy */
 LAB_005a3a15:
-  st::fn_006B4170((RecoveredSourceFamily_dibcopy *)this->field_1AC0,0,param_5,param_6,param_7,param_8,
+  st::fn_006B4170(reinterpret_cast<RecoveredSourceFamily_dibcopy *>(this->field_1AC0),0,param_5,param_6,param_7,param_8,
                0xff);
+
   st::fn_00710A90(param_1,(int)this->field_1AC0,0,param_5,param_6,param_7,param_8);
-  st::fn_007119C0(param_1,local_10,-1,-1,0);
+
+  st::fn_007119C0(param_1,reinterpret_cast<char *>(local_10),-1,-1,0);
   return;
 }
-

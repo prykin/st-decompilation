@@ -357,7 +357,7 @@ LAB_004770fa:
 00477102  66 8B 93 0F 06 00 00      MOV DX,word ptr [EBX + 0x60f]
 00477109  8B CB                     MOV ECX,EBX
 0047710B  52                        PUSH EDX
-0047710C  E8 A1 BF F8 FF            CALL 0x004030b2
+0047710C  E8 A1 BF F8 FF            CALL 0x004030b2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override
 00477111  50                        PUSH EAX
 00477112  8B CB                     MOV ECX,EBX
 00477114  E8 E3 B1 F8 FF            CALL 0x004022fc
@@ -897,7 +897,7 @@ LAB_00477778:
 00477780  66 8B 93 0F 06 00 00      MOV DX,word ptr [EBX + 0x60f]
 00477787  8B CB                     MOV ECX,EBX
 00477789  52                        PUSH EDX
-0047778A  E8 23 B9 F8 FF            CALL 0x004030b2
+0047778A  E8 23 B9 F8 FF            CALL 0x004030b2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override
 0047778F  50                        PUSH EAX
 00477790  8B CB                     MOV ECX,EBX
 00477792  E8 65 AB F8 FF            CALL 0x004022fc

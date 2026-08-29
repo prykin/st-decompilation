@@ -1,15 +1,15 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_00548b90(int param_1)
+undefined4 __fastcall FUN_00548b90(RecoveredRecord_00548B90_C039E281 *param_1)
 
 {
   uint uVar1;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int *)(param_1 + 0x4a2) == 0) {
+  if (param_1->field_04A2 == 0) {
     return 1;
   }
-  uVar1 = FUN_00405687(param_1);
+
+  uVar1 = FUN_00405687((int)param_1);
   return uVar1;
 }
 

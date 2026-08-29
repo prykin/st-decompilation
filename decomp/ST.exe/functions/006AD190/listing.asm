@@ -33,7 +33,8 @@ LAB_006ad1d7:
 LAB_006ad1f5:
 006AD1F5  51                        PUSH ECX
 006AD1F6  50                        PUSH EAX
-006AD1F7  E8 74 18 08 00            CALL 0x0072ea70
+FUN_006ad190::override::prt_6ad1f7_c1311782:
+006AD1F7  E8 74 18 08 00            CALL 0x0072ea70  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/int; signature=__cdecl;pointer:/int;/winnt.h/LPCSTR;pointer:/char
 006AD1FC  8B F0                     MOV ESI,EAX
 006AD1FE  83 C4 08                  ADD ESP,0x8
 006AD201  85 F6                     TEST ESI,ESI

@@ -9,7 +9,8 @@
    Diagnostic line evidence: 22 | 47 | 58 | 66 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *param_4)
+void __cdecl
+st::fn_0052AB40(RecoveredRecord_0052AB40_8E5CB246 *param_1,int *param_2,uint param_3,byte *param_4)
 
 {
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar1;
@@ -22,7 +23,7 @@ void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *para
   void *pvVar8;
   int iVar11;
   uint uVar9;
-  int *piVar10;
+  RecoveredRecord_0052AB40_8E5CB246 *pRVar10;
   int iVar12;
   uint *puVar13;
   uint *puVar14;
@@ -47,33 +48,36 @@ void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *para
   param_2[3] = 0;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
+
   iVar6 = st::fn_0072D7F0(local_68.jumpBuffer,0);
   if (iVar6 == 0) {
     if (g_cLoading_00802A58 != nullptr) {
       /* ST_CALLSITE[0052ABA6]: CALL 0x00404d8b; direct=00404D8B cLoadingTy::SetProcess */
       st::fn_00404D8B(g_cLoading_00802A58,0,st::mutable_c_string("Preparing mini-map..."),900);
     }
-    pAVar7 = (AnonShape_006DBCA0_EF06575F *)st::fn_006B04D0(0x4f2);
+    /* ST_CALLSITE[0052ABB0]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F;/uint */
+    pAVar7 = st::pointer_boundary_cast<AnonShape_006DBCA0_EF06575F *>(st::fn_006B04D0(0x4f2));
     if (pAVar7 == nullptr) {
       this = nullptr;
     }
     else {
-      this = (ST3DSMAPContext *)st::fn_006DBCA0(pAVar7);
+      this = reinterpret_cast<ST3DSMAPContext *>(st::fn_006DBCA0(pAVar7));
     }
     local_10 = this;
     if (this == nullptr) {
       st::fn_006A5E40
                 (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Andrey\\minimap.cpp"),0x16);
     }
-    local_18 = (int)*param_1;
+    local_18 = (int)*(short *)param_1;
     local_1c = -local_18;
     uVar9 = param_3 + 1 & 0xfffffffe;
     st::fn_006DC050
               (this,g_dDXContext_0080759C,0,0,uVar9,uVar9,
                (double)((float)(int)local_1c * local_8 * _DAT_007904f4),
                (double)((float)local_18 * local_8 * _DAT_007904f4),
-               (double)((float)-(int)param_1[1] * local_8 * _DAT_007904f4),
-               (double)((float)(int)param_1[1] * local_8 * _DAT_007904f4),10.0,9.965999793052674,0);
+               (double)((float)-(int)*(short *)&param_1->field_0x2 * local_8 * _DAT_007904f4),
+               (double)((float)(int)*(short *)&param_1->field_0x2 * local_8 * _DAT_007904f4),10.0,
+               9.965999793052674,0);
     this->field_0128 = (uint)*param_4;
     this->field_0124 = 2;
     bVar3 = param_4[1];
@@ -87,19 +91,19 @@ void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *para
     iVar6 = 0;
     this->field_043C = param_4[4];
     this->field_043D = bVar3;
-    if (0 < STField<int>(param_1,0x455)) {
-      piVar10 = (int *)((int)param_1 + 0x459);
+    if (0 < param_1->field_0455) {
+      pRVar10 = param_1 + 1;
       do {
-        pRVar1 = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)*piVar10;
+        pRVar1 = *(RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 **)pRVar10;
         if ((pRVar1 != nullptr) &&
            (pRVar1->field_0008 != 0)) {
           pRVar1->next = this->field_0140;
           this->field_0140 = pRVar1;
-          this->field_013C = st::machine_word_boundary_cast<int>(this->field_013C + 1);
+          this->field_013C = this->field_013C + 1;
         }
         iVar6 = iVar6 + 1;
-        piVar10 = piVar10 + 1;
-      } while (iVar6 < STField<int>(param_1,0x455));
+        pRVar10 = reinterpret_cast<RecoveredRecord_0052AB40_8E5CB246 *>(reinterpret_cast<byte *>(pRVar10) + 0x4);
+      } while (iVar6 < param_1->field_0455);
     }
     local_24 = param_3 * param_3;
     local_1c = CASE_0;
@@ -111,12 +115,13 @@ void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *para
         st::fn_00403472(g_cLoading_00802A58,CASE_1,local_14,nullptr);
       }
       local_14 = local_14 + 1;
-      local_18 = (int)*param_1;
+      local_18 = (int)*(short *)param_1;
       st::fn_006DD610
                 (this,SVar15 | 8,(double)((float)local_18 * _DAT_007904f4),
-                 (double)((float)(int)param_1[1] * _DAT_007904f4));
+                 (double)((float)(int)*(short *)&param_1->field_0x2 * _DAT_007904f4));
       st::fn_006DDBE0(this);
       st::fn_006DDD50(this);
+
       pvVar8 = st::fn_006AAC10(local_24);
       *local_c = (int)pvVar8;
       if (pvVar8 == nullptr) {
@@ -153,6 +158,7 @@ void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *para
   else {
     g_currentExceptionFrame = local_68.previous;
     local_20 = iVar6;
+
     iVar11 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\minimap.cpp"),0x3a,0,iVar6,st::mutable_c_string("%s")
                                 ,"CreateMiniMap");
     this = local_10;
@@ -162,7 +168,7 @@ void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *para
   }
   if (this != nullptr) {
     st::fn_006DBCF0(this);
-    st::fn_0072E2B0((HoloTy *)this);
+    st::fn_0072E2B0(reinterpret_cast<HoloTy *>(this));
   }
   if (iVar6 != 0) {
     iVar12 = 4;
@@ -180,4 +186,3 @@ void __cdecl st::fn_0052AB40(short *param_1,int *param_2,uint param_3,byte *para
   }
   return;
 }
-

@@ -1,8 +1,25 @@
 
 /* [STPrototypeApplier] Propagated return.
-   Evidence: 004E41C0 returns used as parameter 1 of MoneyTy::sub_0052BC30 @ 004D8C18 */
+   Evidence: 004E41C0 returns used as parameter 1 of MoneyTy::sub_0052BC30 @ 004D8C18
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (29), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=0044D320 @ 0044DB65 -> read as EAX on
+   every CFG path | 0044D320 @ 0044DBF9 -> read as EAX on every CFG path | 0044D320 @ 0044DC77 ->
+   read as EAX on every CFG path | 0044D320 @ 0044DD3B -> read as EAX on every CFG path | 0044D320 @
+   0044DD94 -> read as EAX on every CFG path | 00486E20 @ 00487A89 -> read as EAX on every CFG path
+   | 00486E20 @ 00487B8B -> read as EAX on every CFG path | 00486E20 @ 00487CF2 -> read as EAX on
+   every CFG path | 00486E20 @ 00487E64 -> read as EAX on every CFG path | 00486E20 @ 00487F97 ->
+   read as EAX on every CFG path | 00486E20 @ 00488083 -> read as EAX on every CFG path | 00486E20 @
+   0048815D -> read as EAX on every CFG path | 004BEA70 @ 004C0DEE -> read as EAX on every CFG path
+   | 004C84C0 @ 004C8A5E -> read as EAX on every CFG path | 004D6F70 @ 004D6F85 -> read as EAX on
+   every CFG path | 004D6F70 @ 004D6F98 -> read as EAX on every CFG path | 004D8B70 @ 004D8BCB ->
+   read as EAX on every CFG path | 004D8B70 @ 004D8C0C -> read as EAX on every CFG path | 004DA390 @
+   004DA602 -> read as EAX on every CFG path | 004E0830 @ 004E0F54 -> read as EAX on every CFG path
+   | 004E4270 @ 004E4286 -> read as EAX on every CFG path | 004E4270 @ 004E4299 -> read as EAX on
+   every CFG path | 004E4270 @ 004E42B2 -> unknown: terminal before explicit accumulator kill |
+   004E42E0 @ 004E42F6 -> read as EAX on every CFG path */
 
-uint FUN_004e41c0(int param_1)
+int FUN_004e41c0(int param_1)
 
 {
   return g_packedRecords_A62x8[param_1].field1949_0x996;

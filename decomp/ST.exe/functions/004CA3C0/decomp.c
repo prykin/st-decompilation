@@ -13,9 +13,8 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
   TLOBaseTy *pTVar4;
   int iVar5;
   int iVar7;
-  uint uVar8;
   int iVar6;
-  int iVar9;
+  int iVar8;
   CHAR local_15c [256];
   InternalExceptionFrame local_5c;
   TLOBaseTy *local_18;
@@ -27,6 +26,7 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_18 = this;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   pTVar4 = local_18;
   if (iVar5 == 0) {
@@ -41,18 +41,20 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
       if (iVar7 != 0) {
         /* ST_CALLSITE[004CA441]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
         iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
+
         local_8 = Library::DKW::LIB::MemAllocClear(iVar7 << 2);
-        iVar9 = 0;
+        iVar8 = 0;
         /* ST_CALLSITE[004CA458]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
         iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
         if (0 < iVar7) {
           do {
-            uVar8 = thunk_FUN_004acdd0(puVar1,'\r',iVar9);
-            *(undefined4 *)((int)local_8 + iVar9 * 4) = uVar8;
-            iVar9 = iVar9 + 1;
+
+            iVar7 = thunk_FUN_004acdd0(puVar1,'\r',iVar8);
+            *(int *)((int)local_8 + iVar8 * 4) = iVar7;
+            iVar8 = iVar8 + 1;
             /* ST_CALLSITE[004CA476]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
             iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
-          } while (iVar9 < iVar7);
+          } while (iVar8 < iVar7);
         }
       }
       /* ST_CALLSITE[004CA499]: CALL dword ptr [0x0085bde8] */
@@ -63,19 +65,20 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
         RaiseInternalException
                   (iVar7,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xd3);
       }
+
       thunk_FUN_004abce0(puVar1,0xd,local_10,local_14,'\0');
       /* ST_CALLSITE[004CA4F0]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\r',local_c);
-      iVar9 = 0;
+      iVar8 = 0;
       /* ST_CALLSITE[004CA4FB]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
       if (0 < iVar7) {
         do {
-          thunk_FUN_004ace00(puVar1,'\r',iVar9,*(undefined4 *)((int)local_8 + iVar9 * 4));
-          iVar9 = iVar9 + 1;
+          thunk_FUN_004ace00(puVar1,'\r',iVar8,*(undefined4 *)((int)local_8 + iVar8 * 4));
+          iVar8 = iVar8 + 1;
           /* ST_CALLSITE[004CA51A]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
           iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
-        } while (iVar9 < iVar7);
+        } while (iVar8 < iVar7);
       }
       FreeAndNull(&local_8);
     }
@@ -91,18 +94,20 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
       if (iVar7 != 0) {
         /* ST_CALLSITE[004CA591]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
         iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
+
         local_8 = Library::DKW::LIB::MemAllocClear(iVar7 << 2);
-        iVar9 = 0;
+        iVar8 = 0;
         /* ST_CALLSITE[004CA5A8]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
         iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
         if (0 < iVar7) {
           do {
-            uVar8 = thunk_FUN_004acdd0(puVar1,'\b',iVar9);
-            *(undefined4 *)((int)local_8 + iVar9 * 4) = uVar8;
-            iVar9 = iVar9 + 1;
+
+            iVar7 = thunk_FUN_004acdd0(puVar1,'\b',iVar8);
+            *(int *)((int)local_8 + iVar8 * 4) = iVar7;
+            iVar8 = iVar8 + 1;
             /* ST_CALLSITE[004CA5C6]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
             iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
-          } while (iVar9 < iVar7);
+          } while (iVar8 < iVar7);
         }
       }
       /* ST_CALLSITE[004CA5E9]: CALL dword ptr [0x0085bde8] */
@@ -113,19 +118,20 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
         RaiseInternalException
                   (iVar7,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xea);
       }
+
       thunk_FUN_004abce0(puVar1,8,local_10,local_14,'\0');
       /* ST_CALLSITE[004CA640]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\b',local_c);
-      iVar9 = 0;
+      iVar8 = 0;
       /* ST_CALLSITE[004CA64B]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
       if (0 < iVar7) {
         do {
-          thunk_FUN_004ace00(puVar1,'\b',iVar9,*(undefined4 *)((int)local_8 + iVar9 * 4));
-          iVar9 = iVar9 + 1;
+          thunk_FUN_004ace00(puVar1,'\b',iVar8,*(undefined4 *)((int)local_8 + iVar8 * 4));
+          iVar8 = iVar8 + 1;
           /* ST_CALLSITE[004CA66A]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
           iVar7 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
-        } while (iVar9 < iVar7);
+        } while (iVar8 < iVar7);
       }
       FreeAndNull(&local_8);
     }
@@ -133,6 +139,7 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
     return 0;
   }
   g_currentExceptionFrame = local_5c.previous;
+
   iVar6 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bspr.cpp",0xf6,0,iVar5,"%s",
                              "TLOBaseTy::ReloadLogoPlane error");
   if (iVar6 != 0) {

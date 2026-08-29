@@ -20,8 +20,7 @@ void FUN_004969f0(int param_1,int param_2,int param_3,int param_4,uint param_5,u
   int local_14;
   int local_10;
   uint local_c;
-  undefined4 local_8;
-
+  uint local_8;
   if (-1 < (int)param_7) {
     if (param_7 < g_array_007FB270->count) {
       piVar1 = DArrayAt<int>(g_array_007FB270, param_7);

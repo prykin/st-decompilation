@@ -42,7 +42,7 @@ ushort * __cdecl st::fn_00648AB0(int param_1,char *param_2,int *param_3)
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_00402E05((int *)&local_c);
+  st::fn_00402E05(reinterpret_cast<int *>(&local_c));
   if ((local_8 != nullptr) && (local_8 != local_c)) {
     st::fn_006AB060(&local_8);
   }
@@ -69,7 +69,7 @@ ushort * __cdecl st::fn_00648AB0(int param_1,char *param_2,int *param_3)
    post-CALL EAX reads alone do not prove a source-level return value; machine CFG audit: used=1,
    ignored=2, unknown=0 */
 
-void __cdecl st::fn_00648C10(AnonShape_00648C10_30A1BBFD *strategData,uint param_2)
+void __cdecl st::fn_00648C10(RecoveredRecordView_00648C10_4BE0A791 *strategData,uint param_2)
 
 {
   int errorCode;
@@ -77,12 +77,13 @@ void __cdecl st::fn_00648C10(AnonShape_00648C10_30A1BBFD *strategData,uint param
   int iVar3;
   InternalExceptionFrame local_50;
   int local_c;
-  AnonShape_00648C10_30A1BBFD *local_8;
+  RecoveredRecordView_00648C10_4BE0A791 *local_8;
 
   local_8 = nullptr;
   local_c = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
+
   errorCode = st::fn_0072D7F0(local_50.jumpBuffer,0);
   if (errorCode == 0) {
     if ((((g_playSystem_00802A38 == nullptr) ||
@@ -100,23 +101,25 @@ void __cdecl st::fn_00648C10(AnonShape_00648C10_30A1BBFD *strategData,uint param
     strategData->field_0067 = (short)g_bulkInitializedRecords_008087C7[param_2].field_0024;
     strategData->field_0069 = (short)g_bulkInitializedRecords_008087C7[param_2].field_0028;
     strategData->field_006B = (short)g_bulkInitializedRecords_008087C7[param_2].field_002C;
+
     st::fn_006E6200
               (g_playSystem_00802A38,0x402,(undefined4 *)(param_2 + 0x29),nullptr,
                nullptr,st::machine_word_boundary_cast<undefined4>(strategData),0);
     if (local_c != 0) {
-      st::fn_00402E05((int *)&local_8);
+      st::fn_00402E05(reinterpret_cast<int *>(&local_8));
     }
     g_currentExceptionFrame = local_50.previous;
     return;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_creat.cpp"),0x5f,0,errorCode,st::mutable_c_string("%s"),
                              "StartStrateg");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (local_c != 0) {
-    st::fn_00402E05((int *)&local_8);
+    st::fn_00402E05(reinterpret_cast<int *>(&local_8));
   }
   st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_creat.cpp"),0x61);
   return;
@@ -141,6 +144,7 @@ int __cdecl st::fn_00648E70(int param_1,char *param_2)
   local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   iVar2 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
     if ((g_playSystem_00802A38 == nullptr) || (param_1 == 0)) {
@@ -152,23 +156,25 @@ int __cdecl st::fn_00648E70(int param_1,char *param_2)
     }
     local_8 = st::fn_006F2D90((cMf32 *)param_1,param_2,1,0);
     if (local_8 == nullptr) {
-      /* ST_CALLSITE[00648EF4]: CALL 0x004023dd; direct=004023DD CreateDefaultBossData */
-      local_8 = (ushort *)st::fn_004023DD();
+      /* ST_CALLSITE[00648EF4]: CALL 0x004023dd; direct=004023DD CreateDefaultBossData; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
+      local_8 = STPointerBoundaryCast<ushort *>(st::fn_004023DD());
     }
+
     st::fn_006E6200
               (g_playSystem_00802A38,0x403,(undefined4 *)0x28,nullptr,nullptr,st::machine_word_boundary_cast<undefined4>(local_8),0
               );
-    st::fn_004020A4((int *)&local_8);
+    st::fn_004020A4(reinterpret_cast<int *>(&local_8));
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_creat.cpp"),0x8d,0,iVar2,st::mutable_c_string("%s"),
                              "CreateArbiter");
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_004020A4((int *)&local_8);
+  st::fn_004020A4(reinterpret_cast<int *>(&local_8));
   st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\ai\\ai_creat.cpp"),0x8f);
   return iVar2;
 }
@@ -204,16 +210,18 @@ void st::fn_00648FE0(void)
   int local_14;
   char *local_10;
   cMf32 *local_c;
-  AnonShape_00648C10_30A1BBFD *local_8;
+  RecoveredRecordView_00648C10_4BE0A791 *local_8;
 
   local_c = nullptr;
   local_8 = nullptr;
   local_10 = nullptr;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
+
   iVar3 = st::fn_0072D7F0(local_64.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_64.previous;
+
     iVar12 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_creat.cpp"),0x10a,0,iVar3,st::mutable_c_string("%s"),
                                 "CreateAi");
     if (iVar12 != 0) {
@@ -250,7 +258,7 @@ void st::fn_00648FE0(void)
       else {
         DAT_0080c52a = *DAT_0080ed12;
         piVar7 = st::pointer_boundary_cast<int *>(DAT_0080ed12 + 0x101);
-        piVar9 = (int *)&g_packedRecords_A62x8[DAT_0080874d].field_0x2eb;
+        piVar9 = reinterpret_cast<int *>(&g_packedRecords_A62x8[DAT_0080874d].field_0x2eb);
         memmove(piVar9, piVar7, 0x14); /* compiler REP MOVS byte copy */
         iVar13 = 0;
         piVar7 = st::pointer_boundary_cast<int *>(DAT_0080ed12 + 0x106);
@@ -266,7 +274,7 @@ void st::fn_00648FE0(void)
         memmove(piVar9, piVar7, 0x1a8); /* compiler REP MOVS byte copy */
         iVar13 = 0;
         piVar7 = st::pointer_boundary_cast<int *>(DAT_0080ed12 + 0x210);
-        piVar9 = (int *)&g_packedRecords_A62x8[DAT_0080874d].field1445_0x73b;
+        piVar9 = reinterpret_cast<int *>(&g_packedRecords_A62x8[DAT_0080874d].field1445_0x73b);
         memmove(piVar9, piVar7, 0x9b); /* compiler REP MOVS byte copy */
         if (DAT_0080ed12 != 0) {
           st::fn_006AB060(&DAT_0080ed12);
@@ -286,7 +294,7 @@ void st::fn_00648FE0(void)
   pcVar6 = local_c;
   if (local_c != nullptr) {
     /* ST_CALLSITE[006491C4]: CALL 0x00403f2b; direct=00403F2B CreateArbiter */
-    st::fn_00403F2B((int)local_c,(char *)&DAT_00809960);
+    st::fn_00403F2B((int)local_c,reinterpret_cast<char *>(&DAT_00809960));
     local_1c = 0;
     local_18 = g_bulkInitializedRecords_008087C7;
     do {
@@ -312,7 +320,7 @@ void st::fn_00648FE0(void)
           case 8:
             uVar4 = 0;
             iVar13 = 3;
-            pcVar7 = st::fn_006F2C00(PTR_s_STRATEG_0079d668,1,local_1c);
+            pcVar7 = reinterpret_cast<char *>(st::fn_006F2C00(PTR_s_STRATEG_0079d668,1,local_1c));
             goto LAB_00649255;
           }
         }
@@ -321,10 +329,11 @@ void st::fn_00648FE0(void)
           pcVar7 = PTR_s_AIPLAYER_0079d660;
           uVar4 = local_1c;
 LAB_00649255:
-          local_10 = st::fn_006F2C00(pcVar7,iVar13,uVar4);
+          /* ST_CALLSITE[00649255]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
+          local_10 = st::pointer_boundary_cast<char *>(st::fn_006F2C00(pcVar7,iVar13,uVar4));
         }
         if ((local_10 != nullptr) &&
-           (local_8 = (AnonShape_00648C10_30A1BBFD *)
+           (local_8 = (RecoveredRecordView_00648C10_4BE0A791 *)
                       /* ST_CALLSITE[00649271]: CALL 0x004012ad; direct=004012AD LoadStrategData */
                       st::fn_004012AD((int)pcVar6,local_10,nullptr),
            local_8 != nullptr)) {
@@ -394,7 +403,7 @@ undefined4 * st::fn_006494C0(void)
   char local_17c [260];
   InternalExceptionFrame local_78;
   int local_34 [6];
-  undefined4 local_1c;
+  uint local_1c;
   uint local_18;
   uint local_14;
   AllocationRecord_0065CD10 *local_10;
@@ -406,12 +415,14 @@ undefined4 * st::fn_006494C0(void)
   local_10 = nullptr;
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
+
   iVar3 = st::fn_0072D7F0(local_78.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_78.previous;
-    st::fn_00401537((int *)&local_10);
-    st::fn_00402E05((int *)&local_8);
-    st::fn_00402E05((int *)&local_c);
+    st::fn_00401537(reinterpret_cast<int *>(&local_10));
+    st::fn_00402E05(reinterpret_cast<int *>(&local_8));
+    st::fn_00402E05(reinterpret_cast<int *>(&local_c));
+
     iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_creat.cpp"),0x139,0,iVar3,st::mutable_c_string("%s"),
                                "CreatePlrDataForWS");
     if (iVar4 != 0) {
@@ -439,7 +450,7 @@ undefined4 * st::fn_006494C0(void)
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   uVar7 = 0;
   uVar6 = 0xffffffff;
-  pcVar8 = st::pointer_boundary_cast<char *>(PTR_DAT_0079d65c);
+  pcVar8 = reinterpret_cast<char *>(PTR_DAT_0079d65c);
   do {
     pcVar11 = pcVar8;
     if (uVar6 == 0) break;
@@ -479,7 +490,7 @@ undefined4 * st::fn_006494C0(void)
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   uVar7 = 0;
   uVar6 = 0xffffffff;
-  pcVar8 = st::pointer_boundary_cast<char *>(PTR_DAT_0079d65c);
+  pcVar8 = reinterpret_cast<char *>(PTR_DAT_0079d65c);
   do {
     pcVar11 = pcVar8;
     if (uVar6 == 0) break;
@@ -504,7 +515,7 @@ undefined4 * st::fn_006494C0(void)
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   uVar7 = 0;
   uVar6 = 0xffffffff;
-  pcVar8 = "WS_Opponent_00.stg";
+  pcVar8 = st::mutable_c_string("WS_Opponent_00.stg");
   do {
     pcVar11 = pcVar8;
     if (uVar6 == 0) break;
@@ -528,15 +539,16 @@ undefined4 * st::fn_006494C0(void)
   pcVar11 = pcVar10 + -1;
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   local_8 = (AllocationRecord_0067D3B0 *)
-            st::fn_00404403(local_17c,(AnonShape_00683C70_22193481 *)stack_bytes_neg_494,&local_1c,
-                               local_34,nullptr);
+            /* ST_CALLSITE[00649609]: CALL 0x00404403; direct=00404403 thunk_FUN_00683c70; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D3B0; source view only; no Ghidra override */
+            st::fn_00404403(reinterpret_cast<LPCSTR>(local_17c),reinterpret_cast<RecoveredRecordView_00683C70_9F6EAF4E *>(stack_bytes_neg_494),
+                               &local_1c,local_34,nullptr);
   if (local_8 != nullptr) {
-    /* ST_CALLSITE[00649623]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
+    /* ST_CALLSITE[00649623]: CALL 0x00401ebf; direct=00401EBF EventDataPack; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override */
     local_10 = st::fn_00401EBF(*(AllocationRecord_0065CD10 **)&local_8->field_0x106,&local_14);
     /* ST_CALLSITE[00649638]: CALL 0x00405204; direct=00405204 PlrDataPack */
-    local_c = st::fn_00405204(local_8,(undefined4 *)local_10,local_14,&local_18);
-    st::fn_00401537((int *)&local_10);
-    st::fn_00402E05((int *)&local_8);
+    local_c = st::fn_00405204(local_8,reinterpret_cast<undefined4 *>(local_10),local_14,&local_18);
+    st::fn_00401537(reinterpret_cast<int *>(&local_10));
+    st::fn_00402E05(reinterpret_cast<int *>(&local_8));
     g_currentExceptionFrame = local_78.previous;
     return (undefined4 *)local_c;
   }
@@ -571,7 +583,7 @@ undefined4 * st::fn_00649790(void)
   char local_17c [260];
   InternalExceptionFrame local_78;
   int local_34 [6];
-  undefined4 local_1c;
+  uint local_1c;
   uint local_18;
   uint local_14;
   AllocationRecord_0065CD10 *local_10;
@@ -583,12 +595,14 @@ undefined4 * st::fn_00649790(void)
   local_10 = nullptr;
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
+
   iVar3 = st::fn_0072D7F0(local_78.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_78.previous;
-    st::fn_00401537((int *)&local_10);
-    st::fn_00402E05((int *)&local_8);
-    st::fn_00402E05((int *)&local_c);
+    st::fn_00401537(reinterpret_cast<int *>(&local_10));
+    st::fn_00402E05(reinterpret_cast<int *>(&local_8));
+    st::fn_00402E05(reinterpret_cast<int *>(&local_c));
+
     iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_creat.cpp"),0x167,0,iVar3,st::mutable_c_string("%s"),
                                "CreatePlrDataForBO");
     if (iVar4 != 0) {
@@ -616,7 +630,7 @@ undefined4 * st::fn_00649790(void)
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   uVar7 = 0;
   uVar6 = 0xffffffff;
-  pcVar8 = st::pointer_boundary_cast<char *>(PTR_DAT_0079d65c);
+  pcVar8 = reinterpret_cast<char *>(PTR_DAT_0079d65c);
   do {
     pcVar11 = pcVar8;
     if (uVar6 == 0) break;
@@ -656,7 +670,7 @@ undefined4 * st::fn_00649790(void)
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   uVar7 = 0;
   uVar6 = 0xffffffff;
-  pcVar8 = st::pointer_boundary_cast<char *>(PTR_DAT_0079d65c);
+  pcVar8 = reinterpret_cast<char *>(PTR_DAT_0079d65c);
   do {
     pcVar11 = pcVar8;
     if (uVar6 == 0) break;
@@ -681,7 +695,7 @@ undefined4 * st::fn_00649790(void)
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   uVar7 = 0;
   uVar6 = 0xffffffff;
-  pcVar8 = "BO_Opponent_00.stg";
+  pcVar8 = st::mutable_c_string("BO_Opponent_00.stg");
   do {
     pcVar11 = pcVar8;
     if (uVar6 == 0) break;
@@ -705,15 +719,16 @@ undefined4 * st::fn_00649790(void)
   pcVar11 = pcVar10 + -1;
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   local_8 = (AllocationRecord_0067D3B0 *)
-            st::fn_00404403(local_17c,(AnonShape_00683C70_22193481 *)stack_bytes_neg_494,&local_1c,
-                               local_34,nullptr);
+            /* ST_CALLSITE[006498D9]: CALL 0x00404403; direct=00404403 thunk_FUN_00683c70; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D3B0; source view only; no Ghidra override */
+            st::fn_00404403(reinterpret_cast<LPCSTR>(local_17c),reinterpret_cast<RecoveredRecordView_00683C70_9F6EAF4E *>(stack_bytes_neg_494),
+                               &local_1c,local_34,nullptr);
   if (local_8 != nullptr) {
-    /* ST_CALLSITE[006498F3]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
+    /* ST_CALLSITE[006498F3]: CALL 0x00401ebf; direct=00401EBF EventDataPack; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override */
     local_10 = st::fn_00401EBF(*(AllocationRecord_0065CD10 **)&local_8->field_0x106,&local_14);
     /* ST_CALLSITE[00649908]: CALL 0x00405204; direct=00405204 PlrDataPack */
-    local_c = st::fn_00405204(local_8,(undefined4 *)local_10,local_14,&local_18);
-    st::fn_00401537((int *)&local_10);
-    st::fn_00402E05((int *)&local_8);
+    local_c = st::fn_00405204(local_8,reinterpret_cast<undefined4 *>(local_10),local_14,&local_18);
+    st::fn_00401537(reinterpret_cast<int *>(&local_10));
+    st::fn_00402E05(reinterpret_cast<int *>(&local_8));
     g_currentExceptionFrame = local_78.previous;
     return (undefined4 *)local_c;
   }
@@ -796,7 +811,7 @@ undefined4 * st::fn_00649B90(void)
   char local_17c [260];
   InternalExceptionFrame local_78;
   int local_34 [6];
-  undefined4 local_1c;
+  uint local_1c;
   uint local_18;
   uint local_14;
   AllocationRecord_0065CD10 *local_10;
@@ -808,12 +823,14 @@ undefined4 * st::fn_00649B90(void)
   local_10 = nullptr;
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
+
   iVar3 = st::fn_0072D7F0(local_78.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_78.previous;
-    st::fn_00401537((int *)&local_10);
-    st::fn_004020A4((int *)&local_8);
-    st::fn_004020A4((int *)&local_c);
+    st::fn_00401537(reinterpret_cast<int *>(&local_10));
+    st::fn_004020A4(reinterpret_cast<int *>(&local_8));
+    st::fn_004020A4(reinterpret_cast<int *>(&local_c));
+
     iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_creat.cpp"),0x1a7,0,iVar3,st::mutable_c_string("%s"),
                                "CreateBossData");
     if (iVar4 != 0) {
@@ -841,7 +858,7 @@ undefined4 * st::fn_00649B90(void)
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   uVar7 = 0;
   uVar6 = 0xffffffff;
-  pcVar8 = st::pointer_boundary_cast<char *>(PTR_DAT_0079d65c);
+  pcVar8 = reinterpret_cast<char *>(PTR_DAT_0079d65c);
   do {
     pcVar11 = pcVar8;
     if (uVar6 == 0) break;
@@ -877,10 +894,10 @@ undefined4 * st::fn_00649B90(void)
   } while (cVar1 != '\0');
   uVar6 = ~uVar6;
   pcVar8 = pcVar11 + -uVar6;
-  pcVar11 = st::pointer_boundary_cast<char *>(stack_bytes_neg_494);
+  pcVar11 = reinterpret_cast<char *>(stack_bytes_neg_494);
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   uVar7 = 0;
-  st::fn_006B78C0(st::pointer_boundary_cast<char *>(stack_bytes_neg_494),st::pointer_boundary_cast<char *>(stack_bytes_neg_494));
+  st::fn_006B78C0(reinterpret_cast<char *>(stack_bytes_neg_494),reinterpret_cast<char *>(stack_bytes_neg_494));
   uVar6 = 0xffffffff;
   pcVar8 = &CHAR_00h_00807680;
   do {
@@ -897,7 +914,7 @@ undefined4 * st::fn_00649B90(void)
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   uVar7 = 0;
   uVar6 = 0xffffffff;
-  pcVar8 = st::pointer_boundary_cast<char *>(PTR_DAT_0079d65c);
+  pcVar8 = reinterpret_cast<char *>(PTR_DAT_0079d65c);
   do {
     pcVar11 = pcVar8;
     if (uVar6 == 0) break;
@@ -922,7 +939,7 @@ undefined4 * st::fn_00649B90(void)
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   uVar7 = 0;
   uVar6 = 0xffffffff;
-  pcVar8 = "Arbiter_battle.arb";
+  pcVar8 = st::mutable_c_string("Arbiter_battle.arb");
   do {
     pcVar11 = pcVar8;
     if (uVar6 == 0) break;
@@ -946,15 +963,16 @@ undefined4 * st::fn_00649B90(void)
   pcVar11 = pcVar10 + -1;
   memmove(pcVar11, pcVar8, uVar6); /* compiler REP MOVS byte copy */
   local_8 = (AllocationRecord_00648620 *)
-            st::fn_00404403(local_17c,(AnonShape_00683C70_22193481 *)stack_bytes_neg_494,&local_1c,
-                               local_34,nullptr);
+            /* ST_CALLSITE[00649D1E]: CALL 0x00404403; direct=00404403 thunk_FUN_00683c70; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_00648620; source view only; no Ghidra override */
+            st::fn_00404403(reinterpret_cast<LPCSTR>(local_17c),reinterpret_cast<RecoveredRecordView_00683C70_9F6EAF4E *>(stack_bytes_neg_494),
+                               &local_1c,local_34,nullptr);
   if (local_8 != nullptr) {
-    /* ST_CALLSITE[00649D35]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
+    /* ST_CALLSITE[00649D35]: CALL 0x00401ebf; direct=00401EBF EventDataPack; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override */
     local_10 = st::fn_00401EBF(*(AllocationRecord_0065CD10 **)&local_8->field_0x4e,&local_14);
     /* ST_CALLSITE[00649D4A]: CALL 0x00405a24; direct=00405A24 BossDataPack */
-    local_c = st::fn_00405A24(local_8,(undefined4 *)local_10,local_14,&local_18);
-    st::fn_00401537((int *)&local_10);
-    st::fn_004020A4((int *)&local_8);
+    local_c = st::fn_00405A24(local_8,reinterpret_cast<undefined4 *>(local_10),local_14,&local_18);
+    st::fn_00401537(reinterpret_cast<int *>(&local_10));
+    st::fn_004020A4(reinterpret_cast<int *>(&local_8));
     g_currentExceptionFrame = local_78.previous;
     return (undefined4 *)local_c;
   }
@@ -989,22 +1007,24 @@ undefined4 * st::fn_00649EB0(void)
   local_10 = nullptr;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
+
   errorCode = st::fn_0072D7F0(local_5c.jumpBuffer,0);
   if (errorCode == 0) {
     local_8 = st::fn_0040117C(st::mutable_c_string("Default Arbiter"),1);
-    /* ST_CALLSITE[00649F08]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
+    /* ST_CALLSITE[00649F08]: CALL 0x00401ebf; direct=00401EBF EventDataPack; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override */
     local_10 = st::fn_00401EBF(*(AllocationRecord_0065CD10 **)&local_8->field_0x4e,&local_14);
     /* ST_CALLSITE[00649F1D]: CALL 0x00405a24; direct=00405A24 BossDataPack */
-    local_c = st::fn_00405A24(local_8,(undefined4 *)local_10,local_14,&local_18);
-    st::fn_00401537((int *)&local_10);
-    st::fn_004020A4((int *)&local_8);
+    local_c = st::fn_00405A24(local_8,reinterpret_cast<undefined4 *>(local_10),local_14,&local_18);
+    st::fn_00401537(reinterpret_cast<int *>(&local_10));
+    st::fn_004020A4(reinterpret_cast<int *>(&local_8));
     g_currentExceptionFrame = local_5c.previous;
     return (undefined4 *)local_c;
   }
   g_currentExceptionFrame = local_5c.previous;
-  st::fn_00401537((int *)&local_10);
-  st::fn_004020A4((int *)&local_8);
-  st::fn_004020A4((int *)&local_c);
+  st::fn_00401537(reinterpret_cast<int *>(&local_10));
+  st::fn_004020A4(reinterpret_cast<int *>(&local_8));
+  st::fn_004020A4(reinterpret_cast<int *>(&local_c));
+
   iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_creat.cpp"),0x1c1,0,errorCode,st::mutable_c_string("%s"),
                              "CreateDefaultBossData");
   if (iVar2 != 0) {
@@ -1013,4 +1033,3 @@ undefined4 * st::fn_00649EB0(void)
   st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_creat.cpp"),0x1c2);
   return nullptr;
 }
-

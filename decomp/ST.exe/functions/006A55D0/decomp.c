@@ -2,9 +2,14 @@
 
 
 /* [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 006A55D0 -> EXTERNAL:00000023 @ 006A55E1 | 006A56B0 -> 006A55D0 @ 006A56EA */
+   Evidence: 006A55D0 -> EXTERNAL:00000023 @ 006A55E1 | 006A56B0 -> 006A55D0 @ 006A56EA
 
-undefined4 __cdecl FUN_006a55d0(void *param_1,UINT_PTR ucb,int param_3)
+   [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=3, ignored=0,
+   unknown=0 */
+
+int __cdecl FUN_006a55d0(void *param_1,UINT_PTR ucb,int param_3)
 
 {
   BOOL BVar1;

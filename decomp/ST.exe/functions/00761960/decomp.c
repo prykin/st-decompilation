@@ -12,8 +12,7 @@ undefined4 __cdecl FUN_00761960(LPCSTR lpExistingFileName,LPCSTR lpNewFileName)
 {
   BOOL BVar1;
   uint uVar2;
-  undefined4 local_8;
-
+  uint local_8;
   /* ST_CALLSITE[0076196C]: CALL dword ptr [0x0085bc8c] */
   BVar1 = MoveFileA(lpExistingFileName,lpNewFileName);
   if (BVar1 == 0) {

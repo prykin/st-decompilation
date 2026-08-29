@@ -13,16 +13,15 @@ STSharkC::CreateShark
 {
   int iVar3;
   uint uVar2;
-  undefined4 local_38 [5];
+  uint local_38 [5];
   int local_24;
   int local_20;
   int local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_18;
+  uint local_14;
+  uint local_10;
+  uint local_c;
+  uint local_8;
   memset(local_38, 0, 0x34); /* compiler bulk-zero initialization */
   local_14 = param_4;
   local_8 = param_7;
@@ -48,7 +47,7 @@ STSharkC::CreateShark
   local_20 = param_2;
   local_1c = param_3;
   /* ST_CALLSITE[005900DA]: CALL dword ptr [EAX + 0x8] */
-  g_playSystem_00802A38->vfunc_08(0x129,0,(short)&param_9,(short)local_38,0);
+  g_playSystem_00802A38->vfunc_8(0x129,nullptr,&param_9,(short)local_38,0);
   return param_9;
 }
 

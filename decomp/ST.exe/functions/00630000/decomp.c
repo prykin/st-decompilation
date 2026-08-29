@@ -16,6 +16,7 @@ void __thiscall FUN_00630000(void *this,int param_1)
   local_8 = 5;
   do {
     if (*piVar3 != 0) {
+
       iVar1 = thunk_FUN_0062ffd0(param_1,*(int *)(*piVar3 + 0x1c));
       *(int *)(*piVar3 + 0x2c) = iVar1;
       this_00 = *(STT3DSprC **)(*piVar3 + 0x10);

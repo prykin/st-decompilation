@@ -18,7 +18,7 @@ LAB_004e03f4:
 004E0411  51                        PUSH ECX
 004E0412  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 004E0418  52                        PUSH EDX
-004E0419  E8 2A 5A F2 FF            CALL 0x00405e48
+004E0419  E8 2A 5A F2 FF            CALL 0x00405e48  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STResourceC; source view only; no Ghidra override
 004E041E  8B F8                     MOV EDI,EAX
 004E0420  85 FF                     TEST EDI,EDI
 004E0422  74 2B                     JZ 0x004e044f

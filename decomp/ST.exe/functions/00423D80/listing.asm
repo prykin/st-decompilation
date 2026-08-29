@@ -25,7 +25,7 @@ LAB_00423da2:
 00423DB1  8B 13                     MOV EDX,dword ptr [EBX]
 00423DB3  50                        PUSH EAX
 00423DB4  8B CB                     MOV ECX,EBX
-00423DB6  FF 52 04                  CALL dword ptr [EDX + 0x4]
+00423DB6  FF 52 04                  CALL dword ptr [EDX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 00423DB9  85 C0                     TEST EAX,EAX
 00423DBB  75 07                     JNZ 0x00423dc4
 00423DBD  C7 45 FC 01 00 00 00      MOV dword ptr [EBP + -0x4],0x1

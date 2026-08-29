@@ -13,18 +13,17 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
   SettMapTy *this_00;
   int iVar4;
   HoloTy *pHVar4;
-  int iVar5;
+  RecoveredRecord_005AACB0_2533FD69 *pRVar5;
   uint uVar11;
   uint local_EAX_848;
-  DArrayTy *pDVar6;
+  uint *puVar6;
   uint local_EAX_1327;
   uint local_EAX_1858;
   int iVar8;
-  uint *puVar7;
-  int iVar9;
-  byte bVar10;
-  char cVar11;
-  uint uVar12;
+  int iVar7;
+  byte bVar8;
+  char cVar9;
+  uint uVar10;
   InternalExceptionFrame local_54;
   SettMapTy *local_10;
   int local_c;
@@ -33,9 +32,11 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar8 = ReportDebugMessage("E:\\__titans\\Start\\sett_obj.cpp",0x3a4,0,iVar4,"%s"
                                ,"SettMapTy::DeleteCtrls");
     if (iVar8 != 0) {
@@ -46,6 +47,7 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
   }
   if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {
+
       Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
     else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
@@ -57,16 +59,16 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     StartSystemTy::sub_006E56B0(local_10->field_000C,local_10->field_215D);
   }
   this_00->field_215D = 0;
-  puVar7 = this_00->field_1F8C;
+  puVar6 = this_00->field_1F8C;
   local_c = 10;
   do {
     local_8 = 8;
     do {
-      if (*puVar7 != 0) {
-        StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar7);
-        *puVar7 = 0;
+      if (*puVar6 != 0) {
+        StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar6);
+        *puVar6 = 0;
       }
-      puVar7 = puVar7 + 1;
+      puVar6 = puVar6 + 1;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
     if (this_00->field_211D != 0) {
@@ -103,20 +105,22 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
   }
   this_00->field_21E8 = pHVar4;
   if (pHVar4 != nullptr) {
-    uVar12 = 0;
-    cVar11 = '\x01';
-    bVar10 = 0x10;
-    iVar9 = 1;
-    iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x112,0x38,0x205,0x104);
+    uVar10 = 0;
+    cVar9 = '\x01';
+    bVar8 = 0x10;
+    iVar7 = 1;
+    /* ST_CALLSITE[005C6EA9]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69;pointer:/int;/undefined4;/undefined4;/undefined4;/undefined4 */
+    pRVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x112,0x38,0x205,0x104);
     /* ST_CALLSITE[005C6EBE]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
-    uVar11 = HoloTy::Init(this_00->field_21E8,CASE_2,0x112,0x38,iVar5,iVar9,bVar10,cVar11,uVar12);
+    uVar11 = HoloTy::Init(this_00->field_21E8,CASE_2,0x112,0x38,pRVar5,iVar7,bVar8,cVar9,uVar10);
     if (uVar11 != 0) {
       pHVar4 = this_00->field_21E8;
       pHVar4->field_0002 = 0;
       pHVar4->field_0017 = -1;
-      uVar12 = *(uint *)&this_00->field_21E8->field_0x3;
-      if (-1 < (int)uVar12) {
-        Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar12);
+      uVar10 = *(uint *)&this_00->field_21E8->field_0x3;
+      if (-1 < (int)uVar10) {
+
+        Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar10);
       }
       /* ST_CALLSITE[005C6EF7]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       HoloTy::NextFas(this_00->field_21E8);
@@ -135,21 +139,21 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
   if (this_00->field_1D91 != 0xffffffff) {
     FUN_006b3af0((int *)this_00->field_1DD5,this_00->field_1D91);
   }
-  puVar7 = this_00->field_20CC;
+  puVar6 = this_00->field_20CC;
   local_c = 10;
   do {
-    FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar7);
-    puVar7 = puVar7 + 1;
+    FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar6);
+    puVar6 = puVar6 + 1;
     local_c = local_c + -1;
   } while (local_c != 0);
-  puVar7 = this_00->field_2125;
+  puVar6 = this_00->field_2125;
   local_c = 0xe;
   do {
-    if (*puVar7 != 0) {
-      StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar7);
-      *puVar7 = 0;
+    if (*puVar6 != 0) {
+      StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar6);
+      *puVar6 = 0;
     }
-    puVar7 = puVar7 + 1;
+    puVar6 = puVar6 + 1;
     local_c = local_c + -1;
   } while (local_c != 0);
   if (this_00->field_21F4 != nullptr) {
@@ -180,21 +184,23 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
   }
   this_00->field_21F4 = pHVar4;
   if (pHVar4 != nullptr) {
-    uVar12 = 0;
-    cVar11 = '\x01';
-    bVar10 = 0x10;
-    iVar9 = 1;
-    iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x112,0x149,0x205,0x8c);
+    uVar10 = 0;
+    cVar9 = '\x01';
+    bVar8 = 0x10;
+    iVar7 = 1;
+    /* ST_CALLSITE[005C7078]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69;pointer:/int;/undefined4;/undefined4;/undefined4;/undefined4 */
+    pRVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x112,0x149,0x205,0x8c);
     /* ST_CALLSITE[005C7090]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
     local_EAX_848 =
-         HoloTy::Init(this_00->field_21F4,CASE_2,0x112,0x149,iVar5,iVar9,bVar10,cVar11,uVar12);
+         HoloTy::Init(this_00->field_21F4,CASE_2,0x112,0x149,pRVar5,iVar7,bVar8,cVar9,uVar10);
     if (local_EAX_848 != 0) {
       pHVar4 = this_00->field_21F4;
       pHVar4->field_0002 = 0;
       pHVar4->field_0017 = -1;
-      uVar12 = *(uint *)&this_00->field_21F4->field_0x3;
-      if (-1 < (int)uVar12) {
-        Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar12);
+      uVar10 = *(uint *)&this_00->field_21F4->field_0x3;
+      if (-1 < (int)uVar10) {
+
+        Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar10);
       }
       /* ST_CALLSITE[005C70C8]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       HoloTy::NextFas(this_00->field_21F4);
@@ -221,8 +227,9 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     if ((DArrayTy *)g_startSystem_0081176C->field_0548 != nullptr) {
       FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
     }
-    pDVar6 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
-    g_startSystem_0081176C->field_0548 = &pDVar6->flags;
+    /* ST_CALLSITE[005C71BB]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint */
+    puVar6 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
+    g_startSystem_0081176C->field_0548 = puVar6;
     if (this_00->field_21EC != nullptr) {
       /* ST_CALLSITE[005C71D6]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(this_00->field_21EC);
@@ -251,21 +258,23 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     }
     this_00->field_21EC = pHVar4;
     if (pHVar4 != nullptr) {
-      uVar12 = 0;
-      cVar11 = '\x01';
-      bVar10 = 0x10;
-      iVar9 = 1;
-      iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121);
+      uVar10 = 0;
+      cVar9 = '\x01';
+      bVar8 = 0x10;
+      iVar7 = 1;
+      /* ST_CALLSITE[005C725A]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69;pointer:/int;/undefined4;/undefined4;/undefined4;/undefined4 */
+      pRVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121);
       /* ST_CALLSITE[005C726F]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       local_EAX_1327 =
-           HoloTy::Init(this_00->field_21EC,CASE_4,10,0xb4,iVar5,iVar9,bVar10,cVar11,uVar12);
+           HoloTy::Init(this_00->field_21EC,CASE_4,10,0xb4,pRVar5,iVar7,bVar8,cVar9,uVar10);
       if (local_EAX_1327 != 0) {
         pHVar4 = this_00->field_21EC;
         pHVar4->field_0002 = 0;
         pHVar4->field_0017 = -1;
-        uVar12 = *(uint *)&this_00->field_21EC->field_0x3;
-        if (-1 < (int)uVar12) {
-          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar12);
+        uVar10 = *(uint *)&this_00->field_21EC->field_0x3;
+        if (-1 < (int)uVar10) {
+
+          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar10);
         }
         /* ST_CALLSITE[005C72A8]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
         HoloTy::NextFas(this_00->field_21EC);
@@ -288,14 +297,14 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
   }
   if ((this_00->field_21E3 != '\0') &&
      (((SVar1 = this_00->field_1E26, SVar1 == CASE_6 || (SVar1 == CASE_7)) || (SVar1 == CASE_E)))) {
-    puVar7 = this_00->field_1F60;
+    puVar6 = this_00->field_1F60;
     local_c = 7;
     do {
-      if (*puVar7 != 0) {
-        StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar7);
-        *puVar7 = 0;
+      if (*puVar6 != 0) {
+        StartSystemTy::sub_006E56B0(this_00->field_000C,*puVar6);
+        *puVar6 = 0;
       }
-      puVar7 = puVar7 + 1;
+      puVar6 = puVar6 + 1;
       local_c = local_c + -1;
     } while (local_c != 0);
     if (this_00->field_21F0 != nullptr) {
@@ -326,21 +335,23 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     }
     this_00->field_21F0 = pHVar4;
     if (pHVar4 != nullptr) {
-      uVar12 = 0;
-      cVar11 = '\x01';
-      bVar10 = 0x10;
-      iVar9 = 1;
-      iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x123);
+      uVar10 = 0;
+      cVar9 = '\x01';
+      bVar8 = 0x10;
+      iVar7 = 1;
+      /* ST_CALLSITE[005C746D]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69;pointer:/int;/undefined4;/undefined4;/undefined4;/undefined4 */
+      pRVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x123);
       /* ST_CALLSITE[005C7482]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       local_EAX_1858 =
-           HoloTy::Init(this_00->field_21F0,CASE_4,10,0xb4,iVar5,iVar9,bVar10,cVar11,uVar12);
+           HoloTy::Init(this_00->field_21F0,CASE_4,10,0xb4,pRVar5,iVar7,bVar8,cVar9,uVar10);
       if (local_EAX_1858 != 0) {
         pHVar4 = this_00->field_21F0;
         pHVar4->field_0002 = 0;
         pHVar4->field_0017 = -1;
-        uVar12 = *(uint *)&this_00->field_21F0->field_0x3;
-        if (-1 < (int)uVar12) {
-          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar12);
+        uVar10 = *(uint *)&this_00->field_21F0->field_0x3;
+        if (-1 < (int)uVar10) {
+
+          Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar10);
         }
         /* ST_CALLSITE[005C74BA]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
         HoloTy::NextFas(this_00->field_21F0);
@@ -354,9 +365,11 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
   }
   if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {
+
       Library::DKW::DDX::FUN_006b8a60((byte *)g_cursorClass_00802A30->field_00AD);
     }
     else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
+
       Library::DKW::DDX::FUN_006b34d0
                 ((uint *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C,
                  0xfffffffe,g_cursorClass_00802A30->field_0034,g_cursorClass_00802A30->field_0038);

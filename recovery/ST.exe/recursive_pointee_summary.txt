@@ -1,8 +1,8 @@
-owner_functions=2007
-machine_loop_functions=846
-machine_root_offset_functions=356
-candidate_functions=300
-decompiled_functions=300
+owner_functions=2178
+machine_loop_functions=909
+machine_root_offset_functions=368
+candidate_functions=308
+decompiled_functions=308
 root_fields=3
 root_loads=8
 recursive_traversal_sites=24

@@ -7,8 +7,7 @@ void FUN_006b03d0(char *param_1,char *param_2,int param_3,int param_4,char param
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   puStack_c = &DAT_0079d8a0;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;

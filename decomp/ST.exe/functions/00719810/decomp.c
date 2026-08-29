@@ -7,10 +7,9 @@ undefined4 __cdecl FUN_00719810(MCIDEVICEID *param_1,int param_2)
   MCIERROR mcierr;
   MCIDEVICEID mciId;
   DWORD_PTR dwParam1;
-  undefined4 local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_10;
+  uint local_c;
+  uint local_8;
   local_10 = 0;
   local_c = 0;
   local_8 = 0;

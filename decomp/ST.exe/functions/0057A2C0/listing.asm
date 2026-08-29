@@ -754,7 +754,7 @@ LAB_0057ab86:
 0057ABD7  66 8B 4B 41               MOV CX,word ptr [EBX + 0x41]
 0057ABDB  51                        PUSH ECX
 0057ABDC  8B CB                     MOV ECX,EBX
-0057ABDE  FF 52 10                  CALL dword ptr [EDX + 0x10]
+0057ABDE  FF 52 10                  CALL dword ptr [EDX + 0x10]  ; [STIndirectCallsiteApplier] exact slot 0x10; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 0057ABE1  8B 17                     MOV EDX,dword ptr [EDI]
 0057ABE3  66 89 44 F2 06            MOV word ptr [EDX + ESI*0x8 + 0x6],AX
 0057ABE8  8B 85 14 FF FF FF         MOV EAX,dword ptr [EBP + 0xffffff14]
@@ -1015,7 +1015,7 @@ LAB_0057ae26:
 0057AF6E  66 8B 4B 41               MOV CX,word ptr [EBX + 0x41]
 0057AF72  51                        PUSH ECX
 0057AF73  8B CB                     MOV ECX,EBX
-0057AF75  FF 52 10                  CALL dword ptr [EDX + 0x10]
+0057AF75  FF 52 10                  CALL dword ptr [EDX + 0x10]  ; [STIndirectCallsiteApplier] exact slot 0x10; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 0057AF78  8B 55 10                  MOV EDX,dword ptr [EBP + 0x10]
 0057AF7B  8B 0A                     MOV ECX,dword ptr [EDX]
 0057AF7D  66 89 44 F9 06            MOV word ptr [ECX + EDI*0x8 + 0x6],AX

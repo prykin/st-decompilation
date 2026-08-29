@@ -7,7 +7,7 @@ STDcResourcC::sub_005805C0:
 005805CC  6A 00                     PUSH 0x0
 005805CE  50                        PUSH EAX
 005805CF  8D BE D5 01 00 00         LEA EDI,[ESI + 0x1d5]
-005805D5  E8 FB 2F E8 FF            CALL 0x004035d5
+005805D5  E8 FB 2F E8 FF            CALL 0x004035d5  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 005805DA  8B 0D 64 67 80 00         MOV ECX,dword ptr [0x00806764]
 005805E0  50                        PUSH EAX
 005805E1  51                        PUSH ECX

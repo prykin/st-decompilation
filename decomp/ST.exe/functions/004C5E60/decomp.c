@@ -1,23 +1,20 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_004c5e60(int param_1)
+undefined4 __fastcall FUN_004c5e60(RecoveredRecord_004C5E60_EA3D928C *param_1)
 
 {
   int iVar1;
-  int local_8;
+  RecoveredRecord_004C5E60_EA3D928C *local_8;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(AnonShape_005EFAE0_B406B78B **)(param_1 + 0x4d0) != nullptr) {
+  if (param_1->field_04D0 != nullptr) {
     local_8 = param_1;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar1 = STPlaySystemC::sub_006E62D0
-                      (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)(param_1 + 0x4d0),
-                       &local_8);
+
+    iVar1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,param_1->field_04D0,(int *)&local_8);
     if (iVar1 == 0) {
-      thunk_FUN_00581b80(local_8);
+      thunk_FUN_00581b80((RecoveredRecord_00581B80_E3538055 *)local_8);
     }
-    *(undefined4 *)(param_1 + 0x4d0) = 0;
+    param_1->field_04D0 = nullptr;
   }
   return 0;
 }

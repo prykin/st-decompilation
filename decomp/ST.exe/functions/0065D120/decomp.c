@@ -9,19 +9,21 @@
    [STPrototypeApplier] Propagated return.
    Evidence: 0065D120 returns stored into global 008489CC @ 00685EC8 */
 
-AnonShape_GLOBAL_008489CC_CDF8C3F4 * FUN_0065d120(void)
+RecoveredGlobalRecordView_008489CC * FUN_0065d120(void)
 
 {
   int exceptionCode;
   DArrayTy *pDVar1;
   InternalExceptionFrame local_4c;
-  AnonShape_GLOBAL_008489CC_CDF8C3F4 *local_8;
+  RecoveredGlobalRecordView_008489CC *local_8;
 
   local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   exceptionCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
+
     local_8 = Library::DKW::LIB::MemAllocClear(0x1b);
     *(undefined1 *)local_8 = 0;
     local_8->field_0009 = 0xffff;

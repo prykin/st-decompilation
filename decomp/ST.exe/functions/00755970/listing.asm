@@ -22,7 +22,7 @@ LAB_00755994:
 00755998  53                        PUSH EBX
 00755999  57                        PUSH EDI
 0075599A  89 41 1C                  MOV dword ptr [ECX + 0x1c],EAX
-0075599D  E8 DE E1 FF FF            CALL 0x00753b80
+0075599D  E8 DE E1 FF FF            CALL 0x00753b80  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 007559A2  8B D8                     MOV EBX,EAX
 007559A4  33 F6                     XOR ESI,ESI
 007559A6  83 C8 FF                  OR EAX,0xffffffff

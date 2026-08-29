@@ -1,25 +1,25 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_0058bb90(AnonShape_0058BB90_CF74AF20 *param_1)
+void __fastcall FUN_0058bb90(RecoveredRecordView_0058BB90_A8C58367 *param_1)
 
 {
   uint uVar1;
   int iVar2;
   int iVar3;
   undefined *puVar5;
-  undefined4 local_60 [6];
+  uint local_60 [6];
   short local_46;
   short local_44;
   short local_42;
   short local_40;
   short local_3e;
   short local_3c;
-  undefined2 local_3a;
-  undefined4 local_38;
-  undefined1 local_34;
-  undefined4 local_33;
-  undefined2 local_2f;
+  ushort local_3a;
+  uint local_38;
+  byte local_34;
+  uint local_33;
+  ushort local_2f;
   int local_8;
 
   uVar1 = param_1->field_0279;
@@ -41,11 +41,13 @@ void __fastcall FUN_0058bb90(AnonShape_0058BB90_CF74AF20 *param_1)
   local_60[1] = uVar1;
   local_40 = local_46;
   local_3e = local_44;
+
   iVar2 = thunk_FUN_004961b0((short)local_8,(short)iVar3,4);
   if (iVar2 != 0) {
     do {
       if ((int)puVar5 < 1) break;
       puVar5 = puVar5 + -1;
+
       iVar2 = thunk_FUN_004961b0((short)local_8,(short)iVar3,(short)puVar5);
     } while (iVar2 != 0);
     if ((int)puVar5 < 0) {

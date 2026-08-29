@@ -203,7 +203,8 @@ LAB_0050c879:
 0050C879  8B 93 B6 02 00 00         MOV EDX,dword ptr [EBX + 0x2b6]
 0050C87F  6A 01                     PUSH 0x1
 0050C881  52                        PUSH EDX
-0050C882  E8 19 EB 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50c882_6dd2908b:
+0050C882  E8 19 EB 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050C887  50                        PUSH EAX
 0050C888  8B 83 94 01 00 00         MOV EAX,dword ptr [EBX + 0x194]
 0050C88E  6A 01                     PUSH 0x1
@@ -224,7 +225,8 @@ LAB_0050c8b1:
 0050C8B1  8B 8B B6 02 00 00         MOV ECX,dword ptr [EBX + 0x2b6]
 0050C8B7  6A 00                     PUSH 0x0
 0050C8B9  51                        PUSH ECX
-0050C8BA  E8 E1 EA 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50c8ba_6dd2908b:
+0050C8BA  E8 E1 EA 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050C8BF  8B 93 94 01 00 00         MOV EDX,dword ptr [EBX + 0x194]
 0050C8C5  50                        PUSH EAX
 0050C8C6  6A 01                     PUSH 0x1
@@ -643,7 +645,8 @@ LAB_0050cda0:
 0050CDA0  8B 93 B6 02 00 00         MOV EDX,dword ptr [EBX + 0x2b6]
 0050CDA6  6A 01                     PUSH 0x1
 0050CDA8  52                        PUSH EDX
-0050CDA9  E8 F2 E5 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50cda9_6dd2908b:
+0050CDA9  E8 F2 E5 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050CDAE  50                        PUSH EAX
 0050CDAF  8B 83 94 01 00 00         MOV EAX,dword ptr [EBX + 0x194]
 0050CDB5  6A 01                     PUSH 0x1
@@ -664,7 +667,8 @@ LAB_0050cdd8:
 0050CDD8  8B 8B B6 02 00 00         MOV ECX,dword ptr [EBX + 0x2b6]
 0050CDDE  6A 00                     PUSH 0x0
 0050CDE0  51                        PUSH ECX
-0050CDE1  E8 BA E5 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50cde1_6dd2908b:
+0050CDE1  E8 BA E5 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050CDE6  8B 93 94 01 00 00         MOV EDX,dword ptr [EBX + 0x194]
 0050CDEC  50                        PUSH EAX
 0050CDED  6A 01                     PUSH 0x1
@@ -835,7 +839,8 @@ LAB_0050d006:
 0050D006  8B 8B B6 02 00 00         MOV ECX,dword ptr [EBX + 0x2b6]
 0050D00C  6A 01                     PUSH 0x1
 0050D00E  51                        PUSH ECX
-0050D00F  E8 8C E3 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50d00f_6dd2908b:
+0050D00F  E8 8C E3 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050D014  8B 93 94 01 00 00         MOV EDX,dword ptr [EBX + 0x194]
 0050D01A  50                        PUSH EAX
 0050D01B  6A 01                     PUSH 0x1
@@ -856,7 +861,8 @@ LAB_0050d03e:
 0050D03E  8B 83 B6 02 00 00         MOV EAX,dword ptr [EBX + 0x2b6]
 0050D044  6A 00                     PUSH 0x0
 0050D046  50                        PUSH EAX
-0050D047  E8 54 E3 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50d047_6dd2908b:
+0050D047  E8 54 E3 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050D04C  8B 8B 94 01 00 00         MOV ECX,dword ptr [EBX + 0x194]
 0050D052  50                        PUSH EAX
 0050D053  6A 01                     PUSH 0x1
@@ -954,7 +960,8 @@ LAB_0050d178:
 0050D178  8B 8B B6 02 00 00         MOV ECX,dword ptr [EBX + 0x2b6]
 0050D17E  6A 01                     PUSH 0x1
 0050D180  51                        PUSH ECX
-0050D181  E8 1A E2 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50d181_6dd2908b:
+0050D181  E8 1A E2 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050D186  8B 93 94 01 00 00         MOV EDX,dword ptr [EBX + 0x194]
 0050D18C  50                        PUSH EAX
 0050D18D  6A 01                     PUSH 0x1
@@ -975,7 +982,8 @@ LAB_0050d1b0:
 0050D1B0  8B 83 B6 02 00 00         MOV EAX,dword ptr [EBX + 0x2b6]
 0050D1B6  6A 00                     PUSH 0x0
 0050D1B8  50                        PUSH EAX
-0050D1B9  E8 E2 E1 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50d1b9_6dd2908b:
+0050D1B9  E8 E2 E1 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050D1BE  8B 8B 94 01 00 00         MOV ECX,dword ptr [EBX + 0x194]
 0050D1C4  50                        PUSH EAX
 0050D1C5  6A 01                     PUSH 0x1
@@ -1072,7 +1080,8 @@ LAB_0050d2f5:
 0050D2F5  8B 93 B6 02 00 00         MOV EDX,dword ptr [EBX + 0x2b6]
 0050D2FB  6A 01                     PUSH 0x1
 0050D2FD  52                        PUSH EDX
-0050D2FE  E8 9D E0 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50d2fe_6dd2908b:
+0050D2FE  E8 9D E0 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050D303  50                        PUSH EAX
 0050D304  8B 83 94 01 00 00         MOV EAX,dword ptr [EBX + 0x194]
 0050D30A  6A 01                     PUSH 0x1
@@ -1093,7 +1102,8 @@ LAB_0050d32d:
 0050D32D  8B 8B B6 02 00 00         MOV ECX,dword ptr [EBX + 0x2b6]
 0050D333  6A 00                     PUSH 0x0
 0050D335  51                        PUSH ECX
-0050D336  E8 65 E0 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50d336_6dd2908b:
+0050D336  E8 65 E0 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050D33B  8B 93 94 01 00 00         MOV EDX,dword ptr [EBX + 0x194]
 0050D341  50                        PUSH EAX
 0050D342  6A 01                     PUSH 0x1
@@ -1135,7 +1145,8 @@ LAB_0050d39c:
 0050D3B0  6A 64                     PUSH 0x64
 0050D3B2  6A 00                     PUSH 0x0
 0050D3B4  50                        PUSH EAX
-0050D3B5  E8 E6 37 20 00            CALL 0x00710ba0
+CPanelTy::Update4PanelSI::override::prt_50d3b5_b177932a:
+0050D3B5  E8 E6 37 20 00            CALL 0x00710ba0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/ccFntTy;/int;/uint;/int;/int;/int;/int;/int
 0050D3BA  8B F0                     MOV ESI,EAX
 0050D3BC  85 F6                     TEST ESI,ESI
 0050D3BE  0F 84 1D 0C 00 00         JZ 0x0050dfe1
@@ -1239,7 +1250,8 @@ LAB_0050d4fd:
 0050D4FD  8B 93 B6 02 00 00         MOV EDX,dword ptr [EBX + 0x2b6]
 0050D503  6A 01                     PUSH 0x1
 0050D505  52                        PUSH EDX
-0050D506  E8 95 DE 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50d506_6dd2908b:
+0050D506  E8 95 DE 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050D50B  50                        PUSH EAX
 0050D50C  8B 83 94 01 00 00         MOV EAX,dword ptr [EBX + 0x194]
 0050D512  6A 01                     PUSH 0x1
@@ -1260,7 +1272,8 @@ LAB_0050d535:
 0050D535  8B 8B B6 02 00 00         MOV ECX,dword ptr [EBX + 0x2b6]
 0050D53B  6A 00                     PUSH 0x0
 0050D53D  51                        PUSH ECX
-0050D53E  E8 5D DE 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50d53e_6dd2908b:
+0050D53E  E8 5D DE 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050D543  8B 93 94 01 00 00         MOV EDX,dword ptr [EBX + 0x194]
 0050D549  50                        PUSH EAX
 0050D54A  6A 01                     PUSH 0x1
@@ -1282,7 +1295,8 @@ LAB_0050d563:
 0050D57A  6A 15                     PUSH 0x15
 0050D57C  6A 00                     PUSH 0x0
 0050D57E  50                        PUSH EAX
-0050D57F  E8 1C 36 20 00            CALL 0x00710ba0
+CPanelTy::Update4PanelSI::override::prt_50d57f_b177932a:
+0050D57F  E8 1C 36 20 00            CALL 0x00710ba0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/ccFntTy;/int;/uint;/int;/int;/int;/int;/int
 0050D584  8B F0                     MOV ESI,EAX
 0050D586  85 F6                     TEST ESI,ESI
 0050D588  74 53                     JZ 0x0050d5dd
@@ -1338,7 +1352,8 @@ LAB_0050d62a:
 0050D62A  8B 8B B6 02 00 00         MOV ECX,dword ptr [EBX + 0x2b6]
 0050D630  6A 01                     PUSH 0x1
 0050D632  51                        PUSH ECX
-0050D633  E8 68 DD 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50d633_6dd2908b:
+0050D633  E8 68 DD 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050D638  8B 93 94 01 00 00         MOV EDX,dword ptr [EBX + 0x194]
 0050D63E  50                        PUSH EAX
 0050D63F  6A 01                     PUSH 0x1
@@ -1359,7 +1374,8 @@ LAB_0050d662:
 0050D662  8B 83 B6 02 00 00         MOV EAX,dword ptr [EBX + 0x2b6]
 0050D668  6A 00                     PUSH 0x0
 0050D66A  50                        PUSH EAX
-0050D66B  E8 30 DD 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50d66b_6dd2908b:
+0050D66B  E8 30 DD 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050D670  8B 8B 94 01 00 00         MOV ECX,dword ptr [EBX + 0x194]
 0050D676  50                        PUSH EAX
 0050D677  6A 01                     PUSH 0x1
@@ -1401,7 +1417,8 @@ LAB_0050d6e9:
 0050D6E9  8B 83 B6 02 00 00         MOV EAX,dword ptr [EBX + 0x2b6]
 0050D6EF  6A 01                     PUSH 0x1
 0050D6F1  50                        PUSH EAX
-0050D6F2  E8 A9 DC 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50d6f2_6dd2908b:
+0050D6F2  E8 A9 DC 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050D6F7  8B 8B 94 01 00 00         MOV ECX,dword ptr [EBX + 0x194]
 0050D6FD  50                        PUSH EAX
 0050D6FE  6A 01                     PUSH 0x1
@@ -1424,7 +1441,8 @@ LAB_0050d727:
 0050D727  8B 83 B6 02 00 00         MOV EAX,dword ptr [EBX + 0x2b6]
 0050D72D  6A 00                     PUSH 0x0
 0050D72F  50                        PUSH EAX
-0050D730  E8 6B DC 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50d730_6dd2908b:
+0050D730  E8 6B DC 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050D735  8B 8B 94 01 00 00         MOV ECX,dword ptr [EBX + 0x194]
 0050D73B  50                        PUSH EAX
 0050D73C  6A 01                     PUSH 0x1
@@ -1446,7 +1464,8 @@ LAB_0050d755:
 0050D76C  6A 24                     PUSH 0x24
 0050D76E  6A 00                     PUSH 0x0
 0050D770  52                        PUSH EDX
-0050D771  E8 2A 34 20 00            CALL 0x00710ba0
+CPanelTy::Update4PanelSI::override::prt_50d771_b177932a:
+0050D771  E8 2A 34 20 00            CALL 0x00710ba0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/ccFntTy;/int;/uint;/int;/int;/int;/int;/int
 0050D776  8B F0                     MOV ESI,EAX
 0050D778  85 F6                     TEST ESI,ESI
 0050D77A  74 50                     JZ 0x0050d7cc
@@ -1462,7 +1481,8 @@ LAB_0050d755:
 0050D791  1B C9                     SBB ECX,ECX
 0050D793  81 C1 C4 36 00 00         ADD ECX,0x36c4
 0050D799  51                        PUSH ECX
-0050D79A  E8 A1 29 1A 00            CALL 0x006b0140
+CPanelTy::Update4PanelSI::override::prt_50d79a_b09bf718:
+0050D79A  E8 A1 29 1A 00            CALL 0x006b0140  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__stdcall;pointer:/ccFntTy;/WinDef.h/UINT;/WinDef.h/HINSTANCE
 0050D79F  8B 8B B8 01 00 00         MOV ECX,dword ptr [EBX + 0x1b8]
 0050D7A5  50                        PUSH EAX
 0050D7A6  E8 C5 43 20 00            CALL 0x00711b70
@@ -1509,7 +1529,8 @@ LAB_0050d816:
 0050D82A  6A 7F                     PUSH 0x7f
 0050D82C  6A 00                     PUSH 0x0
 0050D82E  50                        PUSH EAX
-0050D82F  E8 6C 33 20 00            CALL 0x00710ba0
+CPanelTy::Update4PanelSI::override::prt_50d82f_b177932a:
+0050D82F  E8 6C 33 20 00            CALL 0x00710ba0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/ccFntTy;/int;/uint;/int;/int;/int;/int;/int
 0050D834  8B 3D E8 BD 85 00         MOV EDI,dword ptr [0x0085bde8]
 0050D83A  8B F0                     MOV ESI,EAX
 0050D83C  85 F6                     TEST ESI,ESI
@@ -1546,7 +1567,8 @@ LAB_0050d88d:
 0050D8A1  68 A5 00 00 00            PUSH 0xa5
 0050D8A6  6A 00                     PUSH 0x0
 0050D8A8  50                        PUSH EAX
-0050D8A9  E8 F2 32 20 00            CALL 0x00710ba0
+CPanelTy::Update4PanelSI::override::prt_50d8a9_b177932a:
+0050D8A9  E8 F2 32 20 00            CALL 0x00710ba0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/ccFntTy;/int;/uint;/int;/int;/int;/int;/int
 0050D8AE  8B F0                     MOV ESI,EAX
 0050D8B0  85 F6                     TEST ESI,ESI
 0050D8B2  74 50                     JZ 0x0050d904
@@ -1602,7 +1624,8 @@ LAB_0050d941:
 0050D941  8B 83 B6 02 00 00         MOV EAX,dword ptr [EBX + 0x2b6]
 0050D947  6A 01                     PUSH 0x1
 0050D949  50                        PUSH EAX
-0050D94A  E8 51 DA 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50d94a_6dd2908b:
+0050D94A  E8 51 DA 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050D94F  8B 8B 94 01 00 00         MOV ECX,dword ptr [EBX + 0x194]
 0050D955  50                        PUSH EAX
 0050D956  6A 01                     PUSH 0x1
@@ -1623,7 +1646,8 @@ LAB_0050d979:
 0050D979  8B 93 B6 02 00 00         MOV EDX,dword ptr [EBX + 0x2b6]
 0050D97F  6A 00                     PUSH 0x0
 0050D981  52                        PUSH EDX
-0050D982  E8 19 DA 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50d982_6dd2908b:
+0050D982  E8 19 DA 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050D987  50                        PUSH EAX
 0050D988  8B 83 94 01 00 00         MOV EAX,dword ptr [EBX + 0x194]
 0050D98E  6A 01                     PUSH 0x1
@@ -1662,7 +1686,8 @@ LAB_0050d9ef:
 0050D9EF  8B 8B B6 02 00 00         MOV ECX,dword ptr [EBX + 0x2b6]
 0050D9F5  6A 01                     PUSH 0x1
 0050D9F7  51                        PUSH ECX
-0050D9F8  E8 A3 D9 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50d9f8_6dd2908b:
+0050D9F8  E8 A3 D9 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050D9FD  8B 93 94 01 00 00         MOV EDX,dword ptr [EBX + 0x194]
 0050DA03  50                        PUSH EAX
 0050DA04  6A 01                     PUSH 0x1
@@ -1685,7 +1710,8 @@ LAB_0050da2e:
 0050DA2E  8B 8B B6 02 00 00         MOV ECX,dword ptr [EBX + 0x2b6]
 0050DA34  6A 00                     PUSH 0x0
 0050DA36  51                        PUSH ECX
-0050DA37  E8 64 D9 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50da37_6dd2908b:
+0050DA37  E8 64 D9 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050DA3C  8B 93 94 01 00 00         MOV EDX,dword ptr [EBX + 0x194]
 0050DA42  50                        PUSH EAX
 0050DA43  6A 01                     PUSH 0x1
@@ -1723,7 +1749,8 @@ LAB_0050da9b:
 0050DA9B  8B 8B B6 02 00 00         MOV ECX,dword ptr [EBX + 0x2b6]
 0050DAA1  6A 01                     PUSH 0x1
 0050DAA3  51                        PUSH ECX
-0050DAA4  E8 F7 D8 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50daa4_6dd2908b:
+0050DAA4  E8 F7 D8 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050DAA9  8B 93 94 01 00 00         MOV EDX,dword ptr [EBX + 0x194]
 0050DAAF  50                        PUSH EAX
 0050DAB0  6A 01                     PUSH 0x1
@@ -1745,7 +1772,8 @@ LAB_0050dad8:
 0050DAD8  8B 83 B6 02 00 00         MOV EAX,dword ptr [EBX + 0x2b6]
 0050DADE  6A 00                     PUSH 0x0
 0050DAE0  50                        PUSH EAX
-0050DAE1  E8 BA D8 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50dae1_6dd2908b:
+0050DAE1  E8 BA D8 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050DAE6  8B 8B 94 01 00 00         MOV ECX,dword ptr [EBX + 0x194]
 0050DAEC  50                        PUSH EAX
 0050DAED  6A 01                     PUSH 0x1
@@ -1825,7 +1853,8 @@ LAB_0050dbc9:
 0050DBC9  8B 83 B6 02 00 00         MOV EAX,dword ptr [EBX + 0x2b6]
 0050DBCF  6A 01                     PUSH 0x1
 0050DBD1  50                        PUSH EAX
-0050DBD2  E8 C9 D7 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50dbd2_6dd2908b:
+0050DBD2  E8 C9 D7 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050DBD7  8B 8B 94 01 00 00         MOV ECX,dword ptr [EBX + 0x194]
 0050DBDD  50                        PUSH EAX
 0050DBDE  6A 01                     PUSH 0x1
@@ -1846,7 +1875,8 @@ LAB_0050dc01:
 0050DC01  8B 93 B6 02 00 00         MOV EDX,dword ptr [EBX + 0x2b6]
 0050DC07  6A 00                     PUSH 0x0
 0050DC09  52                        PUSH EDX
-0050DC0A  E8 91 D7 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50dc0a_6dd2908b:
+0050DC0A  E8 91 D7 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050DC0F  50                        PUSH EAX
 0050DC10  8B 83 94 01 00 00         MOV EAX,dword ptr [EBX + 0x194]
 0050DC16  6A 01                     PUSH 0x1
@@ -2013,7 +2043,8 @@ LAB_0050ddd2:
 0050DE0E  8B 93 C2 02 00 00         MOV EDX,dword ptr [EBX + 0x2c2]
 0050DE14  50                        PUSH EAX
 0050DE15  52                        PUSH EDX
-0050DE16  E8 85 D5 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50de16_6dd2908b:
+0050DE16  E8 85 D5 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050DE1B  50                        PUSH EAX
 0050DE1C  8B 83 94 01 00 00         MOV EAX,dword ptr [EBX + 0x194]
 0050DE22  6A 01                     PUSH 0x1
@@ -2056,7 +2087,8 @@ LAB_0050de91:
 0050DE91  8B 93 B6 02 00 00         MOV EDX,dword ptr [EBX + 0x2b6]
 0050DE97  6A 07                     PUSH 0x7
 0050DE99  52                        PUSH EDX
-0050DE9A  E8 01 D5 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50de9a_6dd2908b:
+0050DE9A  E8 01 D5 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050DE9F  8B 8B 94 01 00 00         MOV ECX,dword ptr [EBX + 0x194]
 0050DEA5  50                        PUSH EAX
 0050DEA6  8B 45 F8                  MOV EAX,dword ptr [EBP + -0x8]
@@ -2082,7 +2114,8 @@ LAB_0050ded9:
 0050DED9  8B 83 B6 02 00 00         MOV EAX,dword ptr [EBX + 0x2b6]
 0050DEDF  6A 08                     PUSH 0x8
 0050DEE1  50                        PUSH EAX
-0050DEE2  E8 B9 D4 1F 00            CALL 0x0070b3a0
+CPanelTy::Update4PanelSI::override::prt_50dee2_6dd2908b:
+0050DEE2  E8 B9 D4 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int
 0050DEE7  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
 0050DEEA  8B 93 94 01 00 00         MOV EDX,dword ptr [EBX + 0x194]
 0050DEF0  50                        PUSH EAX
@@ -2146,7 +2179,8 @@ LAB_0050df27:
 0050DF9A  6A 5F                     PUSH 0x5f
 0050DF9C  6A 00                     PUSH 0x0
 0050DF9E  50                        PUSH EAX
-0050DF9F  E8 FC 2B 20 00            CALL 0x00710ba0
+CPanelTy::Update4PanelSI::override::prt_50df9f_b177932a:
+0050DF9F  E8 FC 2B 20 00            CALL 0x00710ba0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/ccFntTy;/int;/uint;/int;/int;/int;/int;/int
 0050DFA4  8B F0                     MOV ESI,EAX
 0050DFA6  85 F6                     TEST ESI,ESI
 0050DFA8  74 37                     JZ 0x0050dfe1

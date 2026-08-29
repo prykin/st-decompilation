@@ -43,7 +43,7 @@ LAB_004f239c:
 004F23C3  6A FF                     PUSH -0x1
 004F23C5  51                        PUSH ECX
 004F23C6  68 B3 36 00 00            PUSH 0x36b3
-004F23CB  E8 70 DD 1B 00            CALL 0x006b0140
+004F23CB  E8 70 DD 1B 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 004F23D0  8B 8E B8 01 00 00         MOV ECX,dword ptr [ESI + 0x1b8]
 004F23D6  50                        PUSH EAX
 004F23D7  E8 94 F7 21 00            CALL 0x00711b70

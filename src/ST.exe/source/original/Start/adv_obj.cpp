@@ -25,26 +25,30 @@ void __thiscall st::fn_00590170(MAdvTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar2 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
     if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
+
         st::fn_006B8B10((int *)g_cursorClass_00802A30->field_00AD);
       }
       else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
-        st::fn_006B3AF0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
+        st::fn_006B3AF0(reinterpret_cast<int *>(g_cursorClass_00802A30->field_0060),g_cursorClass_00802A30->field_001C);
       }
     }
     this_01 = local_8;
     iVar6 = 1;
     bVar5 = 0;
-    text = st::fn_006F2C00((char *)&DAT_007cbc5c,1,(uint)(local_8->field_005D != '\0'));
-    puVar3 = st::fn_0070A9F0(g_cMf32_00806780,text,bVar5,iVar6);
+    /* ST_CALLSITE[005901F1]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
+    text = st::fn_006F2C00(reinterpret_cast<char *>(&DAT_007cbc5c),1,(uint)(local_8->field_005D != '\0'));
+    puVar3 = st::fn_0070A9F0(g_cMf32_00806780,reinterpret_cast<char *>(text),bVar5,iVar6);
     this_01->field_005E = puVar3;
     memset(&this_01->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
     this_01->field_002C = this_01->field_0008;
     this_01->field_0028 = 0x13;
-    st::fn_006E6000(this_01,3,1,(undefined4 *)&this_01->field_0x18);
+
+    st::fn_006E6000(this_01,3,1,reinterpret_cast<undefined4 *>(&this_01->field_0x18));
     if (g_startSystem_0081176C->field_02E6 != nullptr) {
       /* ST_CALLSITE[00590248]: CALL 0x00401fa5; direct=00401FA5 MMsgTy::HidePanel */
       st::fn_00401FA5(g_startSystem_0081176C->field_02E6,0,0,1);
@@ -55,7 +59,7 @@ void __thiscall st::fn_00590170(MAdvTy *this)
     st::fn_00401D43(g_dDXContext_0080759C,1,0);
     /* ST_CALLSITE[00590272]: CALL 0x00403ab2; direct=00403AB2 MAdvTy::PaintMAdv */
     st::fn_00403AB2(this_01);
-    st::fn_0040448A((undefined4 *)g_dDXContext_0080759C,(int *)g_ddxContext_008075A8,
+    st::fn_0040448A(reinterpret_cast<undefined4 *>(g_dDXContext_0080759C),reinterpret_cast<int *>(g_ddxContext_008075A8),
                        this_01->field_005E,10,2);
     this_00 = g_cursorClass_00802A30;
     if (g_cursorClass_00802A30 != nullptr) {
@@ -78,6 +82,7 @@ void __thiscall st::fn_00590170(MAdvTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\adv_obj.cpp"),0x1f,0,iVar2,st::mutable_c_string("%s"),
                              "MAdvTy::InitMAdv");
   if (iVar4 != 0) {
@@ -115,12 +120,12 @@ void __thiscall st::fn_00590410(MAdvTy *this)
     memset(&this_00->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
     this_00->field_0028 = 0x14;
     this_00->field_002C = this_00->field_0008;
-    st::fn_006E6000(this_00,3,1,(undefined4 *)&this_00->field_0x18);
-    st::fn_006F20E0(g_cMf32_00806780,(uint *)&this_00->field_005E);
+    st::fn_006E6000(this_00,3,1,reinterpret_cast<undefined4 *>(&this_00->field_0x18));
+    st::fn_006F20E0(g_cMf32_00806780,reinterpret_cast<uint *>(&this_00->field_005E));
     /* ST_CALLSITE[005904C3]: CALL 0x00401d43; direct=00401D43 DarkScreen */
     st::fn_00401D43(g_dDXContext_0080759C,10,2);
     if (this_00->field_0048 != 0) {
-      st::fn_006E3B50((AppClassTy *)&DAT_00807620,(undefined4 *)&this_00->field_0x38);
+      st::fn_006E3B50(reinterpret_cast<AppClassTy *>(&DAT_00807620),reinterpret_cast<undefined4 *>(&this_00->field_0x38));
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
@@ -176,11 +181,11 @@ void __thiscall st::fn_00590580(MAdvTy *this)
   local_8 = this;
   iVar3 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar3 == 0) {
-    st::fn_006B5F80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
+    st::fn_006B5F80(reinterpret_cast<int *>(g_ddxContext_008075A8),0,0,g_nWidth_00806730,DAT_00806734);
     pMVar2 = local_8;
     /* ST_CALLSITE[005905DB]: CALL 0x00403738; direct=00403738 PutDDX */
-    st::fn_00403738(0,0,'\x01',(BITMAPINFO *)local_8->field_005E);
-    pcVar11 = (ccFntTy *)g_startSystem_0081176C->field_0030;
+    st::fn_00403738(0,0,'\x01',reinterpret_cast<BITMAPINFO *>(local_8->field_005E));
+    pcVar11 = reinterpret_cast<ccFntTy *>(g_startSystem_0081176C->field_0030);
     uVar12 = 1;
     uVar10 = 0xffffffff;
     if (pMVar2->field_005D == '\0') {
@@ -188,7 +193,7 @@ void __thiscall st::fn_00590580(MAdvTy *this)
       pcVar3 = st::fn_006B0140(0x25e4,g_hINSTANCE_00807618);
       /* ST_CALLSITE[005906B7]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       st::fn_00404C2D(this_02,0,0,0x1b8,800,0x14,pcVar3,uVar9,uVar10,pcVar11,uVar12);
-      pcVar11 = (ccFntTy *)g_startSystem_0081176C->field_0030;
+      pcVar11 = reinterpret_cast<ccFntTy *>(g_startSystem_0081176C->field_0030);
       uVar9 = 1;
       uVar12 = 0xffffffff;
       uVar10 = 0xffffffff;
@@ -205,14 +210,14 @@ void __thiscall st::fn_00590580(MAdvTy *this)
       pcVar3 = st::fn_006B0140(0x25e5,g_hINSTANCE_00807618);
       /* ST_CALLSITE[0059061C]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       st::fn_00404C2D(this_00,0,10,10,0x30c,0x32,pcVar3,uVar9,uVar10,pcVar11,uVar12);
-      pcVar11 = (ccFntTy *)g_startSystem_0081176C->field_0030;
+      pcVar11 = reinterpret_cast<ccFntTy *>(g_startSystem_0081176C->field_0030);
       uVar9 = 1;
       uVar12 = 0xffffffff;
       uVar10 = 0;
       pcVar3 = st::fn_006B0140(0x25e6,g_hINSTANCE_00807618);
       /* ST_CALLSITE[00590658]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       st::fn_00404C2D(this_01,0,0x10e,0x3c,0x20d,0xfa,pcVar3,uVar10,uVar12,pcVar11,uVar9);
-      pcVar11 = (ccFntTy *)g_startSystem_0081176C->field_0030;
+      pcVar11 = reinterpret_cast<ccFntTy *>(g_startSystem_0081176C->field_0030);
       uVar9 = 1;
       uVar12 = 0xffffffff;
       uVar10 = 0;
@@ -283,19 +288,20 @@ int __thiscall st::fn_005908B0(MAdvTy *this,STMessage *message)
 
 {
   MAdvTy *this_00;
-  DWORD DVar2;
+  int iVar2;
   int local_EAX_47;
   int iVar3;
   int iVar4;
-  int iVar5;
   InternalExceptionFrame local_4c;
   MAdvTy *local_8;
 
   local_8 = this;
-  DVar2 = st::fn_006E51B0(this->field_0010);
-  this->field_0058 = DVar2;
+
+  iVar2 = st::fn_006E51B0(this->field_0010);
+  this->field_0058 = iVar2;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   local_EAX_47 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (local_EAX_47 == 0) {
@@ -333,10 +339,12 @@ int __thiscall st::fn_005908B0(MAdvTy *this,STMessage *message)
       }
     }
     g_currentExceptionFrame = local_4c.previous;
+
     iVar3 = st::fn_006E5FD0(this_00,message);
     return iVar3;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\adv_obj.cpp"),0x87,0,local_EAX_47,
                              st::mutable_c_string("%s"),"MAdvTy::GetMessage");
   if (iVar4 != 0) {
@@ -345,4 +353,3 @@ int __thiscall st::fn_005908B0(MAdvTy *this,STMessage *message)
   st::fn_006A5E40(local_EAX_47,0,st::mutable_c_string("E:\\__titans\\Start\\adv_obj.cpp"),0x87);
   return 0xffff;
 }
-

@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_004b9d90(AnonShape_004B9D90_4F3151F9 *param_1)
+/* [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=15,
+   ignored=0, unknown=0 */
+
+int __fastcall FUN_004b9d90(RecoveredRecordView_004B9D90_09AED060 *param_1)
 
 {
   int iVar1;
@@ -52,7 +57,8 @@ undefined4 __fastcall FUN_004b9d90(AnonShape_004B9D90_4F3151F9 *param_1)
       return 0;
     }
     if (iVar1 == 0x6c) {
-      iVar2 = thunk_FUN_004e9930((int)param_1);
+
+      iVar2 = thunk_FUN_004e9930((RecoveredRecord_004E9930_E29CCD11 *)param_1);
       if (iVar2 == 0) {
         return 0;
       }

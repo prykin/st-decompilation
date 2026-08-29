@@ -5,7 +5,7 @@
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
    and decompilation contains no value return */
 
-void __fastcall FUN_004945c0(AnonShape_004945C0_2B3B394D *param_1)
+void __fastcall FUN_004945c0(RecoveredRecordView_004945C0_EEF10AEC *param_1)
 
 {
   byte bVar1;
@@ -91,6 +91,7 @@ LAB_00494766:
           goto LAB_004947b1;
         }
       }
+
       iVar3 = thunk_FUN_0041d350(param_1,local_c);
       if (iVar3 == 1) {
         *piVar6 = 0;

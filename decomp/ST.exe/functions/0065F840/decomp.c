@@ -13,8 +13,8 @@ uint * FUN_0065f840(DArrayTy *param_1,uint param_2,int param_3)
   uint *puVar3;
   uint uVar4;
   InternalExceptionFrame local_54;
-  undefined4 local_10;
-  undefined2 local_c;
+  uint local_10;
+  ushort local_c;
   DArrayTy *local_8;
 
   local_8 = nullptr;

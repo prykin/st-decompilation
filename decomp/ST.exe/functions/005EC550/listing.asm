@@ -1,4 +1,4 @@
-FUN_005ec550:
+STArtiafactC::vfunc_70:
 005EC550  55                        PUSH EBP
 005EC551  8B EC                     MOV EBP,ESP
 005EC553  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]

@@ -5,7 +5,7 @@
    Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
    decompilation contains no value return */
 
-void __fastcall FUN_0041d100(AnonShape_0041D100_A90F7B7E *param_1)
+void __fastcall FUN_0041d100(RecoveredRecordView_0041D100_F8DD70B8 *param_1)
 
 {
   int iVar1;
@@ -17,9 +17,8 @@ void __fastcall FUN_0041d100(AnonShape_0041D100_A90F7B7E *param_1)
                (char)param_1->field_005F,*(uint *)&param_1->field_0x24,param_1->field_0109,
                *(int *)&param_1->field_0x18);
   }
-  /* ST_CALLSITE[0041D134]: CALL dword ptr [EAX + 0x8] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar1 = (**(code **)(param_1->field_0000 + 8))();
+  /* ST_CALLSITE[0041D134]: CALL dword ptr [EAX + 0x8]; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+  iVar1 = STStructuralVirtualCall<undefined4>(param_1, 0x8);
   if ((iVar1 == 1) && (*(uint *)&param_1->field_0x24 == (uint)DAT_0080874d)) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     ST3DSMAPContext::sub_006E6780

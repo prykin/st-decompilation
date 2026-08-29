@@ -13,13 +13,17 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
   void *local_8;
 
   local_8 = nullptr;
-  if ((STField<AnonShape_005EFAE0_B406B78B *>(this,0x5d3) != nullptr)
-     && (STField<int>(this,0x4d4) == 0)) {
+  if ((STField<RecoveredRecordView_005EFAE0_855D930D *>(this,0x5d3) !=
+       nullptr) && (STField<int>(this,0x4d4) == 0)) {
+
     iVar4 = STPlaySystemC::sub_006E62D0
-                      (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x5d3),
+                      (g_playSystem_00802A38,
+                       STField<RecoveredRecordView_005EFAE0_855D930D *>(this,0x5d3),
                        (int *)&local_8);
     if (iVar4 == 0) {
+
       thunk_FUN_004cdeb0(local_8,STField<undefined4>(this,0x18));
+
       uVar5 = thunk_FUN_004cdf80(local_8,STField<int>(this,0x18));
       STField<undefined4>(this,0x4d4) = uVar5;
       if (param_1 != 0) {
@@ -39,6 +43,7 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
             iVar4 = pSVar2->GetObjectTypeId();
             if ((iVar4 < 0x5b) && (*(int *)&pSVar2[0x29].field_0xf == 0)) {
               *(undefined4 *)&pSVar2[0x29].field_0xf = STField<undefined4>(this,0x5d3);
+
               thunk_FUN_004ce250(pSVar2,1);
             }
           }
@@ -58,6 +63,7 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
             iVar4 = pSVar2->GetObjectTypeId();
             if ((iVar4 < 0x5b) && (*(int *)&pSVar2[0x29].field_0xf == 0)) {
               *(undefined4 *)&pSVar2[0x29].field_0xf = STField<undefined4>(this,0x5d3);
+
               thunk_FUN_004ce250(pSVar2,1);
             }
           }
@@ -79,6 +85,7 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
               iVar4 = pSVar2->GetObjectTypeId();
               if ((iVar4 < 0x5b) && (*(int *)&pSVar2[0x29].field_0xf == 0)) {
                 *(undefined4 *)&pSVar2[0x29].field_0xf = STField<undefined4>(this,0x5d3);
+
                 thunk_FUN_004ce250(pSVar2,1);
               }
             }
@@ -100,6 +107,7 @@ undefined4 __thiscall FUN_004ce250(void *this,int param_1)
               iVar4 = pSVar2->GetObjectTypeId();
               if ((iVar4 < 0x5b) && (*(int *)&pSVar2[0x29].field_0xf == 0)) {
                 *(undefined4 *)&pSVar2[0x29].field_0xf = STField<undefined4>(this,0x5d3);
+
                 thunk_FUN_004ce250(pSVar2,1);
               }
             }

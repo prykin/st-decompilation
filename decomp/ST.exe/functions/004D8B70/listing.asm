@@ -1,4 +1,4 @@
-FUN_004d8b70:
+STAllPlayersC::sub_004D8B70:
 004D8B70  55                        PUSH EBP
 004D8B71  8B EC                     MOV EBP,ESP
 004D8B73  51                        PUSH ECX
@@ -59,7 +59,7 @@ LAB_004d8bf5:
 004D8C07  51                        PUSH ECX
 004D8C08  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 004D8C0B  57                        PUSH EDI
-004D8C0C  E8 96 AA F2 FF            CALL 0x004036a7
+004D8C0C  E8 96 AA F2 FF            CALL 0x004036a7  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/MoneyTy; source view only; no Ghidra override
 004D8C11  8B 0D D4 16 80 00         MOV ECX,dword ptr [0x008016d4]
 004D8C17  50                        PUSH EAX
 004D8C18  E8 66 92 F2 FF            CALL 0x00401e83

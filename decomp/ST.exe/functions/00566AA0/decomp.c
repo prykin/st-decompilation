@@ -37,9 +37,11 @@ void __thiscall SoundManagerTy::sub_00566AA0(SoundManagerTy *this)
         sub_00566970(this,0,2000);
       }
       else {
-        uVar1 = thunk_FUN_0056a4d0(0x807658);
+
+        uVar1 = thunk_FUN_0056a4d0((RecoveredRecord_0056A4D0_88DA6D2B *)&g_sound);
         if (uVar1 == 0) {
           if (((int)uVar2 < 2) || ((this->field_0038 != CASE_1 && (this->field_0038 != CASE_3)))) {
+
             uVar1 = Library::MSVCRT::FUN_0072e6c0();
             uVar1 = uVar1 % uVar2;
             if ((uVar1 == this->field_0039) && (1 < this->field_003D)) {
@@ -50,6 +52,7 @@ void __thiscall SoundManagerTy::sub_00566AA0(SoundManagerTy *this)
             }
           }
           else {
+
             uVar1 = Library::MSVCRT::FUN_0072e6c0();
             uVar1 = uVar1 % (uVar2 - 1) + 1;
             if ((uVar1 == this->field_0039) && (1 < this->field_003D)) {

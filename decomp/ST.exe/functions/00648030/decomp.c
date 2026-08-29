@@ -34,10 +34,12 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_boss.cpp",0xde,0,iVar3,
                                "AiBossClassTy::GetMessage error mess->id == %lX Name=%d",message->id,
                                local_10->field_0018);
@@ -53,7 +55,7 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
   if (SVar1 < MESS_TORPHIT) {
     if (SVar1 == MESS_SHARED_010F) {
       local_8 = 0;
-      /* ST_CALLSITE[00648102]: CALL 0x00403341; direct=00403341 AiBossClassTy::PrepareToSave */
+      /* ST_CALLSITE[00648102]: CALL 0x00403341; direct=00403341 AiBossClassTy::PrepareToSave; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       local_c = PrepareToSave(local_10,&local_8);
       /* ST_CALLSITE[0064811E]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
       STPlaySystemC::SaveObjData(g_playSystem_00802A38,PTR_s_AIBOSS_0079d614,local_c,local_8,0xc);
@@ -74,11 +76,13 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
       /* ST_CALLSITE[006480D2]: CALL 0x00403774; direct=00403774 AiBossClassTy::InitData */
       InitData(this_00,puVar9);
       g_aiBossClass_008117BC = this_00;
+
       thunk_FUN_0064a450();
     }
     else if (SVar1 == MESS_SHARED_0003) {
       thunk_FUN_0064a580();
-      thunk_FUN_00647ed0(this_00);
+      /* ST_CALLSITE[006480A3]: CALL 0x00401528; direct=00401528 AiBossClassTy::sub_00647ED0 */
+      sub_00647ED0(this_00);
       g_aiBossClass_008117BC = nullptr;
     }
   }
@@ -147,11 +151,13 @@ int __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,STMessage *message)
     pcVar13 = (char *)&DAT_0080c736;
     memmove(pcVar13, pcVar10, uVar6); /* compiler REP MOVS byte copy */
     if ((char)DAT_008087a0 == '\b') {
+
       thunk_FUN_006767d0();
     }
     DAT_0080c52a = DAT_0080c52a + 1;
   }
 LAB_00648291:
+
   FUN_006e5fd0(this_00,message);
   g_currentExceptionFrame = local_54.previous;
   return 0;

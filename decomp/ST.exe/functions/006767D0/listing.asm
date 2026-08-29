@@ -34,7 +34,8 @@ FUN_006767d0:
 0067683E  6A 02                     PUSH 0x2
 00676840  50                        PUSH EAX
 00676841  68 45 03 00 00            PUSH 0x345
-00676846  E8 75 A6 07 00            CALL 0x006f0ec0
+FUN_006767d0::override::prt_676846_9d92389d:
+00676846  E8 75 A6 07 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 0067684B  8B 0D 2A C5 80 00         MOV ECX,dword ptr [0x0080c52a]
 00676851  33 D2                     XOR EDX,EDX
 00676853  8A 15 4E 87 80 00         MOV DL,byte ptr [0x0080874e]

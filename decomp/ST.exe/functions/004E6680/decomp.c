@@ -19,11 +19,14 @@ void FUN_004e6680(int param_1)
   iVar3 = bVar2 - 1;
   pbVar7 = &DAT_007c0dd4;
   do {
+
     iVar4 = FUN_006b0fd0((int)(g_bitset_008013F0 + iVar3 * 4));
+
     if (((iVar4 != 0) || (iVar4 = FUN_006b0fd0((int)(g_bitset_008013B0 + iVar3 * 4)), iVar4 != 0))
        && (iVar4 = 1, pbVar7[1] != 0)) {
       do {
         if (2 < iVar4) break;
+
         iVar5 = thunk_FUN_004e60d0(param_1,(uint)pbVar7[iVar4]);
         if (iVar5 == 0) goto LAB_004e6740;
         iVar5 = iVar4 + 1;
@@ -40,6 +43,7 @@ LAB_004e6740:
   } while (iVar4 < 0x29);
   local_8 = 0x32;
   do {
+
     iVar4 = FUN_006b0fd0((int)(g_bitset_00801380 + iVar3 * 4));
     if (iVar4 != 0) {
       iVar5 = 1;
@@ -48,6 +52,7 @@ LAB_004e6740:
         do {
           if (2 < iVar5) break;
           iVar1 = (iVar3 * 0x42 + -0x32 + local_8) * 3;
+
           iVar6 = thunk_FUN_004e60d0(param_1,(uint)(byte)(&DAT_007c0e4c)[iVar5 + iVar1]);
           if (iVar6 == 0) goto LAB_004e680d;
           iVar1 = iVar5 + iVar1;

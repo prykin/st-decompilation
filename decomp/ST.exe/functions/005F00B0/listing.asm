@@ -15,7 +15,7 @@ FUN_005f00b0:
 005F00D2  89 47 03                  MOV dword ptr [EDI + 0x3],EAX
 005F00D5  8B 06                     MOV EAX,dword ptr [ESI]
 005F00D7  8B CE                     MOV ECX,ESI
-005F00D9  FF 50 0C                  CALL dword ptr [EAX + 0xc]
+005F00D9  FF 50 0C                  CALL dword ptr [EAX + 0xc]  ; [STIndirectCallsiteApplier] exact slot 0xC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 005F00DC  88 47 07                  MOV byte ptr [EDI + 0x7],AL
 005F00DF  8B 4E 18                  MOV ECX,dword ptr [ESI + 0x18]
 005F00E2  89 4F 08                  MOV dword ptr [EDI + 0x8],ECX
@@ -23,7 +23,7 @@ FUN_005f00b0:
 005F00E7  8D 45 F0                  LEA EAX,[EBP + -0x10]
 005F00EA  8B CE                     MOV ECX,ESI
 005F00EC  50                        PUSH EAX
-005F00ED  FF 52 74                  CALL dword ptr [EDX + 0x74]
+005F00ED  FF 52 74                  CALL dword ptr [EDX + 0x74]  ; [STIndirectCallsiteApplier] exact slot 0x74; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 005F00F0  8D 4D F0                  LEA ECX,[EBP + -0x10]
 005F00F3  6A 0E                     PUSH 0xe
 005F00F5  8D 57 0C                  LEA EDX,[EDI + 0xc]
@@ -33,7 +33,7 @@ FUN_005f00b0:
 005F00FF  8B 06                     MOV EAX,dword ptr [ESI]
 005F0101  83 C4 0C                  ADD ESP,0xc
 005F0104  8B CE                     MOV ECX,ESI
-005F0106  FF 50 7C                  CALL dword ptr [EAX + 0x7c]
+005F0106  FF 50 7C                  CALL dword ptr [EAX + 0x7c]  ; [STIndirectCallsiteApplier] exact slot 0x7C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 005F0109  88 47 1B                  MOV byte ptr [EDI + 0x1b],AL
 005F010C  8B B6 3A 02 00 00         MOV ESI,dword ptr [ESI + 0x23a]
 005F0112  83 FE 05                  CMP ESI,0x5

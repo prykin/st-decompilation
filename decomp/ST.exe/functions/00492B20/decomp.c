@@ -4,9 +4,14 @@
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 00476CE0 -> 00492B20 @ 00476D5E; STBoatC::Capture this; stable alias EBX | 00476CE0 ->
    00492B20 @ 00476E32; STBoatC::Capture this; stable alias EBX | 00476CE0 -> 00492B20 @ 00477C00;
-   STBoatC::Capture this; stable alias EBX */
+   STBoatC::Capture this; stable alias EBX
 
-undefined4 __fastcall FUN_00492b20(STBoatC *param_1)
+   [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=3, ignored=0,
+   unknown=0 */
+
+int __fastcall FUN_00492b20(STBoatC *param_1)
 
 {
   STGameObjC *this;
@@ -31,7 +36,7 @@ undefined4 __fastcall FUN_00492b20(STBoatC *param_1)
                    (g_allPlayers_007FA174,param_1->field_05FC,param_1->field_05FD,CASE_1);
   if ((((((this != nullptr) && (this->field_0018 == *(int *)&param_1->field_0x5ff)) &&
         /* ST_CALLSITE[00492B70]: CALL dword ptr [EAX + 0x108]; [STIndirectCallsiteApplier] exact slot 0x108; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4 */
-        (iVar1 = (*this->vtable[1].vfunc_34)(this,param_1->field_0024), iVar1 != 0)) &&
+        (iVar1 = this->vfunc_108(param_1->field_0024), iVar1 != 0)) &&
        /* ST_CALLSITE[00492B8C]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
        ((STFishC::sub_004162B0((STFishC *)this,&local_8,&local_6,local_c), -1 < local_8 &&
         (local_8 < g_pathingGrid.sizeX)))) && (-1 < local_6)) &&
@@ -53,6 +58,7 @@ undefined4 __fastcall FUN_00492b20(STBoatC *param_1)
       psVar8 = (short *)((int)psVar8 + 1);
       psVar11 = (short *)((int)psVar11 + 1);
     }
+
     FUN_006ab090((int)g_pathingScratchGrid.cells,(int)g_pathingGrid.sizeX,(int)g_pathingGrid.sizeY,
                  (int)g_pathingGrid.sizeZ,(int)param_1->field_005B,(int)param_1->field_005D,
                  (int)param_1->field_005F,(int)local_8,(int)local_6,local_c[0] + 1);

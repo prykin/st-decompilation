@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __thiscall FUN_005ed1c0(void *this,int *param_1,int *param_2,int *param_3,int *param_4)
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=005EE6E0 @ 005EE95B -> read as EAX on
+   every CFG path | 005EE6E0 @ 005EEA48 -> read as EAX on every CFG path */
+
+int __thiscall FUN_005ed1c0(void *this,int *param_1,int *param_2,int *param_3,int *param_4)
 
 {
   short sVar1;
@@ -94,6 +99,7 @@ undefined4 __thiscall FUN_005ed1c0(void *this,int *param_1,int *param_2,int *par
   sVar1 = STField<short>(this,0x246);
   if (iVar8 != sVar1) {
     if ((1 < STField<byte>(this,0x252)) && (STField<short>(this,600) == iVar8)) {
+
       iVar7 = thunk_FUN_00495ff0(STField<short>(this,0x242),STField<short>(this,0x244),sVar1,0
                                  ,this);
       if (iVar7 == 0) {
@@ -211,6 +217,7 @@ cf_common_exit_005ED874:
     return 1;
   }
 LAB_005ed643:
+
   thunk_FUN_005ef4b0(this,STField<int>(this,0x273));
   *param_1 = STField<int>(this,0x277);
   *param_2 = STField<int>(this,0x27b);

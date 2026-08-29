@@ -23,7 +23,7 @@ GetStrategName:
 0067E4DB  51                        PUSH ECX
 0067E4DC  6A 01                     PUSH 0x1
 0067E4DE  52                        PUSH EDX
-0067E4DF  E8 1C 47 07 00            CALL 0x006f2c00
+0067E4DF  E8 1C 47 07 00            CALL 0x006f2c00  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 0067E4E4  83 C4 0C                  ADD ESP,0xc
 0067E4E7  50                        PUSH EAX
 0067E4E8  E8 13 47 07 00            CALL 0x006f2c00

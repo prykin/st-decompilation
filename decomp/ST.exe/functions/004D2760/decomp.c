@@ -38,6 +38,7 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
         iVar7 = param_1->field_025D;
         if (iVar7 < (int)&local_8->vtable + iVar7) {
           do {
+
             thunk_FUN_00496140((short)iVar7,(short)iVar4,(short)param_1->field_0265);
             iVar7 = iVar7 + 1;
           } while (iVar7 < (int)&local_8->vtable + param_1->field_025D);
@@ -46,12 +47,17 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
         pTVar3 = local_8;
       } while (iVar4 < (int)&local_8->vtable + param_1->field_0261);
     }
+
     iVar4 = thunk_FUN_004b7520(STReplaceLowByte((uint32_t)(pTVar3), (uint8_t)(*(undefined1 *)&param_1->field_0024)),param_1->field_0259);
     if (iVar4 != 0) {
       /* ST_CALLSITE[004D2835]: CALL dword ptr [EAX + 0x2c] */
-      dVar1 = param_1->slot_2C();
+      dVar1 = param_1->vfunc_2C();
+      /* ST_CALLSITE[004D2843]: CALL 0x00402f0e; direct=00402F0E STAllPlayersC::sub_004B7710 */
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-      thunk_FUN_004b7710(STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)(*(undefined1 *)&param_1->field_0024)),dVar1);
+      STAllPlayersC::sub_004B7710
+                (g_allPlayers_007FA174,
+                 STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)(*(undefined1 *)&param_1->field_0024)),dVar1
+                );
     }
     /* ST_CALLSITE[004D284A]: CALL 0x00404629; direct=00404629 TLOBaseTy::sub_0041D590 */
     TLOBaseTy::sub_0041D590(param_1);
@@ -66,8 +72,10 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
     uVar5 = 0;
     if (0 < (int)dVar1) {
       do {
+
         DArrayGetElement(g_array_007FA170,uVar5,&local_c);
         if (local_c == param_1) {
+
           DArrayRemoveAt(g_array_007FA170,uVar5);
           break;
         }
@@ -87,8 +95,10 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
         do {
+
           DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
+
             DArrayRemoveAt(g_packedRecords_A62x8[(int)param_1->field_0024].field1968_0x9d6,uVar5);
             break;
           }
@@ -108,8 +118,10 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
         do {
+
           DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
+
             DArrayRemoveAt(g_packedRecords_A62x8[(int)param_1->field_0024].field1971_0x9e2,uVar5);
             break;
           }
@@ -129,8 +141,10 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
         do {
+
           DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
+
             DArrayRemoveAt(g_packedRecords_A62x8[(int)param_1->field_0024].field1974_0x9ee,uVar5);
             break;
           }
@@ -150,8 +164,10 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
         do {
+
           DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
+
             DArrayRemoveAt(g_packedRecords_A62x8[(int)param_1->field_0024].field1975_0x9f2,uVar5);
             break;
           }
@@ -171,9 +187,11 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
       uVar5 = 0;
       if (0 < (int)dVar1) {
         do {
-          DArrayGetElement(g_array_007FA16C,uVar5,&local_8);
+
+          DArrayGetElement((DArrayTy *)g_array_007FA16C,uVar5,&local_8);
           if (local_8 == param_1) {
-            DArrayRemoveAt(g_array_007FA16C,uVar5);
+
+            DArrayRemoveAt((DArrayTy *)g_array_007FA16C,uVar5);
             break;
           }
           uVar5 = uVar5 + 1;
@@ -181,7 +199,7 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
         dVar1 = g_array_007FA16C->count;
       }
       if (dVar1 == 0) {
-        DArrayDestroy(g_array_007FA16C);
+        DArrayDestroy((DArrayTy *)g_array_007FA16C);
         g_array_007FA16C = nullptr;
       }
     }
@@ -192,8 +210,10 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
       uVar5 = 0;
       if (0 < (int)pDVar2->count) {
         do {
+
           DArrayGetElement(pDVar2,uVar5,&local_8);
           if (local_8 == param_1) {
+
             DArrayRemoveAt(g_packedRecords_A62x8[(int)param_1->field_0024].field1972_0x9e6,uVar5);
             break;
           }
@@ -213,8 +233,10 @@ undefined4 __fastcall FUN_004d2760(TLOBaseTy *param_1)
     uVar5 = 0;
     if (0 < (int)pDVar2->count) {
       do {
+
         DArrayGetElement(pDVar2,uVar5,&local_8);
         if (local_8 == param_1) {
+
           DArrayRemoveAt(g_packedRecords_A62x8[(int)param_1->field_0024].field1973_0x9ea,uVar5);
           break;
         }

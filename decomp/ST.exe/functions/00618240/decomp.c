@@ -26,22 +26,22 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
   int iVar14;
   short sVar15;
   int iVar16;
-  byte *puVar17;
+  AnonShape_00618240_21BDD5D4 *pAVar17;
   STWorldObject *this_00;
   byte *puVar18;
   bool bVar19;
   uint auStack_bc [4];
-  undefined4 uStack_ac;
+  uint uStack_ac;
   short local_84 [2];
   int local_80;
   byte *local_6c;
   int local_64;
-  byte *local_60;
+  AnonShape_00618240_21BDD5D4 *local_60;
   int local_5c;
   int local_58 [2];
   short local_50 [2];
-  undefined4 local_4c;
-  undefined4 local_48;
+  uint local_4c;
+  uint local_48;
   uint local_44;
   int local_38;
   int local_34;
@@ -52,8 +52,7 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   puStack_c = &DAT_0079cec0;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
@@ -89,7 +88,7 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
       iVar12 = 0;
       uStack_ac = 0x6183b0;
       puVar18 = &stack0xffffff58 + iVar14 * -0x1e0;
-      local_60 = &stack0xffffff58 + iVar14 * -0x1b8;
+      local_60 = (AnonShape_00618240_21BDD5D4 *)(&stack0xffffff58 + iVar14 * -0x1b8);
       auStack_bc[iVar14 * -0x6e + 4] = 0x6183c9;
       local_1c = &stack0xffffff58 + iVar14 * -0x1e0;
       local_6c = &stack0xffffff58 + iVar14 * -0x1e0;
@@ -176,32 +175,33 @@ LAB_0061856a:
                         thunk_FUN_00416270(this_00,(uint *)auStack_bc[iVar14 * -0x78 + 2],
                                            (short *)auStack_bc[iVar14 * -0x78 + 3],
                                            (short *)auStack_bc[iVar14 * -0x78 + 4]);
-                        puVar17 = (byte *)(local_60 + iVar12 * 0x2c);
-                        *puVar17 = this_00[1].vtable;
+                        pAVar17 = local_60 + iVar12;
+                        *(STWorldObjectVTable **)pAVar17 = this_00[1].vtable;
                         pSVar5 = this_00->vtable->GetObjectTypeId;
                         auStack_bc[iVar14 * -0x78 + 4] = 0x6185ba;
                         /* ST_CALLSITE[006185B7]: CALL dword ptr [EDX + 0x2c] */
                         iVar6 = (*pSVar5)(this_00);
-                        puVar17[1] = iVar6;
-                        STField<undefined4>(puVar17,0x26) = *(undefined4 *)&this_00->field_0x18;
-                        STField<undefined2>(puVar17,0x2a) = *(undefined2 *)&this_00[1].field_0xe;
-                        STField<STWorldObject *>(puVar17,0x1a) = this_00;
-                        *(undefined2 *)(puVar17 + 5) = (undefined2)local_80;
-                        STField<undefined2>(puVar17,0x16) = (undefined2)local_38;
-                        *(undefined2 *)(puVar17 + 6) = (undefined2)local_34;
-                        puVar17[2] = (int)local_50[0];
-                        puVar17[3] = (int)local_84[0];
-                        puVar17[4] = (int)local_20[0];
+                        *(int *)&pAVar17->field_0x4 = iVar6;
+                        pAVar17->field_0026 = *(undefined4 *)&this_00->field_0x18;
+                        pAVar17->field_002A = *(ushort *)&this_00[1].field_0xe;
+                        *(STWorldObject **)&pAVar17->field_0x1a = this_00;
+                        *(undefined2 *)&pAVar17->field_0x14 = (undefined2)local_80;
+                        *(undefined2 *)&pAVar17->field_0x16 = (undefined2)local_38;
+                        *(undefined2 *)&pAVar17->field_0x18 = (undefined2)local_34;
+                        *(int *)&pAVar17->field_0x8 = (int)local_50[0];
+                        *(int *)&pAVar17->field_0xc = (int)local_84[0];
+                        *(int *)&pAVar17->field_0x10 = (int)local_20[0];
                         auStack_bc[iVar14 * -0x78 + 4] = (int)local_84[0];
                         auStack_bc[iVar14 * -0x78 + 3] = (int)local_50[0];
                         auStack_bc[iVar14 * -0x78 + 2] = param_2;
                         auStack_bc[iVar14 * -0x78 + 1] = param_1;
                         auStack_bc[iVar14 * -0x78] = 0x618612;
+
                         iVar8 = FUN_006aced8(auStack_bc[iVar14 * -0x78 + 1],
                                              auStack_bc[iVar14 * -0x78 + 2],
                                              auStack_bc[iVar14 * -0x78 + 3],
                                              auStack_bc[iVar14 * -0x78 + 4]);
-                        STField<int>(puVar17,0x1e) = iVar8;
+                        *(int *)&pAVar17->field_0x1e = iVar8;
                         iVar12 = iVar12 + 1;
                         iVar6 = local_38;
                         iVar13 = local_34;
@@ -243,17 +243,14 @@ LAB_0061856a:
           do {
             auStack_bc[iVar14 * -0x78 + 4] = (uint)local_58;
             puVar18 = local_6c;
-            /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-            auStack_bc[iVar14 * -0x78 + 3] =
-                 *(undefined4 *)(local_60 + *(int *)(local_6c + iVar6 * 4) * 0x2c + 0x26);
+            auStack_bc[iVar14 * -0x78 + 3] = local_60[*(int *)(local_6c + iVar6 * 4)].field_0026;
             auStack_bc[iVar14 * -0x78 + 2] = 0x6186aa;
+
             uVar8 = thunk_FUN_00618a50(this,auStack_bc[iVar14 * -0x78 + 3],
                                        (int *)auStack_bc[iVar14 * -0x78 + 4]);
             if ((int)uVar8 < 0) {
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              local_48 = *(undefined4 *)(local_60 + *(int *)(puVar18 + iVar6 * 4) * 0x2c + 0x26);
-              /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-              local_44 = (uint)*(ushort *)(local_60 + *(int *)(puVar18 + iVar6 * 4) * 0x2c + 0x2a);
+              local_48 = local_60[*(int *)(puVar18 + iVar6 * 4)].field_0026;
+              local_44 = (uint)local_60[*(int *)(puVar18 + iVar6 * 4)].field_002A;
               if (STField<int>(this,0x62) == 0) {
                 auStack_bc[iVar14 * -0x78 + 4] = 10;
                 auStack_bc[iVar14 * -0x78 + 3] = 8;
@@ -269,6 +266,7 @@ LAB_0061856a:
               auStack_bc[iVar14 * -0x78 + 4] = (uint)&local_48;
               auStack_bc[iVar14 * -0x78 + 3] = STField<undefined4>(this,0x62);
               auStack_bc[iVar14 * -0x78 + 2] = 0x618711;
+
               iVar13_mg3 = Library::DKW::TBL::DArrayAppend
                                      ((DArrayTy *)auStack_bc[iVar14 * -0x78 + 3],
                                       (void *)auStack_bc[iVar14 * -0x78 + 4]);
@@ -278,8 +276,8 @@ LAB_0061856a:
             else {
 LAB_0061871c:
               if (local_58[0] < 3) {
-                puVar17 = (byte *)(local_60 + *(int *)(puVar18 + iVar6 * 4) * 0x2c);
-                memmove(param_4, puVar17, 0x2c); /* compiler REP MOVS byte copy */
+                pAVar17 = local_60 + *(int *)(puVar18 + iVar6 * 4);
+                memmove(param_4, pAVar17, 0x2c); /* compiler REP MOVS byte copy */
                 ExceptionList = local_14;
                 return 1;
               }

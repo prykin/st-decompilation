@@ -1,7 +1,10 @@
-#include "../../pseudocode_runtime.h"
 
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00601F80 @ 00602072 -> read as EAX on
+   every CFG path | 00602BE0 @ 00602BF5 -> read as EAX on every CFG path */
 
-undefined4 FUN_006029c0(void)
+int FUN_006029c0(void)
 
 {
   byte *this;
@@ -12,11 +15,12 @@ undefined4 FUN_006029c0(void)
   int iVar2;
   InternalExceptionFrame local_50;
   AnonShape_006029C0_E1371936 *local_c;
-  undefined4 local_8;
+  int local_8;
 
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
+
   local_EAX_41 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (local_EAX_41 == 0) {
     if (local_c->field_0241 == 1) {
@@ -29,6 +33,7 @@ undefined4 FUN_006029c0(void)
     /* ST_CALLSITE[00602A35]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
     iVar3 = STT3DSprC::LoadSequence((STT3DSprC *)this,0xe,PTR_00806774,text,CASE_1D);
     if (iVar3 == 0) {
+
       thunk_FUN_004ac610(this,'\x0e');
       /* ST_CALLSITE[00602A56]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase((STT3DSprC *)this,'\x0e',local_c->field_0387);
@@ -48,6 +53,7 @@ undefined4 FUN_006029c0(void)
         }
         /* ST_CALLSITE[00602AC9]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
         STT3DSprC::SetCurFase((STT3DSprC *)this,'\f',local_c->field_038F);
+
         thunk_FUN_004ac610(this,'\f');
         /* ST_CALLSITE[00602ADB]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
         STT3DSprC::ShowCurFase((STT3DSprC *)this,'\f');
@@ -59,6 +65,7 @@ undefined4 FUN_006029c0(void)
       sVar1 = PTR_00806724->entryCount;
       local_c->field_039F = 0xff;
       local_c->field_0397 = sVar1 + -1;
+
       iVar2 = thunk_FUN_004ad650((STT3DSprC *)this);
       local_c->field_039B = iVar2;
       g_currentExceptionFrame = local_50.previous;

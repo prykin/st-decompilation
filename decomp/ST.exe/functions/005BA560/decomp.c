@@ -22,6 +22,7 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pPVar3 = local_8;
   if (iVar3 == 0) {
@@ -40,6 +41,7 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
       this_01->field_00D2 = 0;
       this_01->field_04DF = -1;
       if (g_cursorClass_00802A30->field_00A9 == 0) {
+
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
       else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
@@ -53,8 +55,11 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
     if (g_startSystem_0081176C->field_002C != nullptr) {
       cMf32::RecMemFree(g_cMf32_00806780,(uint *)&g_startSystem_0081176C->field_002C);
     }
+
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pPVar3->array_00BC[0xc].field_01F7);
+
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pPVar3->field_1B08);
+
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pPVar3->field_1B99);
     puVar6 = pPVar3->field_1C2A;
     iVar5 = 0x16;
@@ -95,6 +100,7 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
       (pPVar3->array_00BC[0xc].field_01DB)->field_02E6->field_1CAB = 0;
     }
     if (pPVar3->field_004D != 0) {
+
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pPVar3->field_0x3d);
     }
     /* ST_CALLSITE[005BA788]: CALL 0x00402b30; direct=00402B30 StartSystemTy::sub_005DAB30 */
@@ -107,6 +113,7 @@ void __thiscall PrividerTy::DonePrivider(PrividerTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0xd3,0,iVar3,"%s",
                              "PrividerTy::DonePrivider");
   if (iVar4 != 0) {

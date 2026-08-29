@@ -16,25 +16,26 @@
    /SubmarineTitans/Recovered/Enums/STMineSetC_field_02AEState. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
 
-void __thiscall STMineSetC::sub_00626FC0(STMineSetC *this,char *param_1)
+void __thiscall
+STMineSetC::sub_00626FC0(STMineSetC *this,RecoveredRecord_00626FC0_FA8FB6E1 *param_1)
 
 {
   byte bVar1;
   uint uVar2;
   if (this->field_02AE == CASE_4) {
-    *param_1 = '\x04';
+    *(undefined1 *)param_1 = 4;
   }
   else {
-    *param_1 = ((this->field_0262 != (uint)DAT_0080874d) - 1U & 0xfe) + 3;
+    *(byte *)param_1 = ((this->field_0262 != (uint)DAT_0080874d) - 1U & 0xfe) + 3;
   }
-  param_1[1] = '\x01';
+  param_1->field_0x1 = 1;
   /* ST_CALLSITE[00626FFE]: CALL dword ptr [EDX + 0x2c] */
   uVar2 = this->vfunc_2C();
-  *(undefined4 *)(param_1 + 2) = uVar2;
+  param_1->field_0002 = uVar2;
   /* ST_CALLSITE[0062700E]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   bVar1 = LookupRecordByte((char)this->field_0024);
-  param_1[6] = bVar1;
-  *(uint *)(param_1 + 7) = this->field_0018;
+  param_1->field_0x6 = bVar1;
+  param_1->field_0007 = this->field_0018;
   return;
 }
 

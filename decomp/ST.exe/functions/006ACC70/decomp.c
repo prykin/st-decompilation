@@ -16,7 +16,7 @@ int __fastcall DArrayGetElement(DArrayTy *array,uint index,void *outElement)
   }
   uVar2 = array->elementSize;
   if (uVar2 == 4) {
-    *(undefined4 *)outElement = *(undefined4 *)((int)array->data + index * 4);
+    *(undefined4 *)outElement = STFixedStrideAt<undefined4>(array->data, index);
     return index;
   }
   puVar3 = (undefined4 *)(uVar2 * index + (int)array->data);

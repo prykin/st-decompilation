@@ -15,7 +15,7 @@ FUN_004dd800:
 004DD828  68 16 04 00 00            PUSH 0x416
 004DD82D  6A 03                     PUSH 0x3
 004DD82F  8B CE                     MOV ECX,ESI
-004DD831  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]
+004DD831  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]  ; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4
 LAB_004dd837:
 004DD837  33 C0                     XOR EAX,EAX
 004DD839  5E                        POP ESI

@@ -6,7 +6,8 @@
    and decompilation contains no value return */
 
 void __cdecl
-FUN_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,undefined4 *param_4)
+FUN_00574920(RecoveredRecordView_00574920_F0A9E3AD *param_1,int param_2,int param_3,
+            undefined4 *param_4)
 
 {
   byte bVar1;
@@ -21,9 +22,9 @@ FUN_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,undefi
   uint uVar10;
   int iVar11;
   int *piVar12;
-  undefined4 local_6c;
-  undefined4 local_68;
-  undefined4 local_64;
+  uint local_6c;
+  uint local_68;
+  uint local_64;
   byte *local_60;
   uint local_5c;
   int local_58;
@@ -43,8 +44,7 @@ FUN_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,undefi
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079b0f8;
   puStack_10 = &LAB_0072d964;
@@ -86,6 +86,7 @@ FUN_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,undefi
         local_3c = 1;
         if (piVar12 == nullptr) {
           FUN_006a5e90(*(short **)(iVar3 + 0xc));
+
           puVar4 = Library::DKW::LIB::MemAlloc
                              ((uint)(byte)param_1->field_0x4 * (uint)(byte)param_1->field_0x4 * 4);
           *(undefined4 **)(iVar3 + 0xc) = puVar4;
@@ -108,7 +109,7 @@ FUN_00574920(AnonShape_00574920_7507981E *param_1,int param_2,int param_3,undefi
           local_8 = 0;
           iVar8 = (uint)(byte)param_1->field_0x4 << 1;
           FUN_006b03d0(*(char **)(iVar3 + 0xc),*(char **)(iVar3 + 0x14),iVar8,iVar8,
-                       ((char *)iVar3)[10]);
+                       STField<char>(iVar3,0xA));
           local_8 = 0xffffffff;
         }
         else {
@@ -134,7 +135,7 @@ LAB_00574b14:
           STField<int>(iVar3,0xC) = piVar12[2];
         }
       }
-      if ((local_34 == 0) || ((((byte *)iVar3)[0x4f] & 0x10) != 0)) {
+      if ((local_34 == 0) || ((STField<byte>(iVar3,0x4F) & 0x10) != 0)) {
         if (local_40 == 0) goto LAB_00574b4a;
       }
       else {
@@ -162,6 +163,7 @@ LAB_00574bcc:
                   FUN_006a5e90(*(short **)(iVar3 + 0xc));
                 }
               }
+
               puVar6 = Library::DKW::LIB::MemAlloc
                                  ((uint)(byte)param_1->field_0x4 * (uint)(byte)param_1->field_0x4 *
                                   4);
@@ -183,6 +185,7 @@ LAB_00574bcc:
               }
             }
             else if (local_20 == 0) {
+
               puVar7 = Library::DKW::LIB::MemAlloc
                                  ((uint)(byte)param_1->field_0x4 * (uint)(byte)param_1->field_0x4 *
                                   4);
@@ -202,7 +205,7 @@ LAB_00574bcc:
               *(undefined4 **)(iVar3 + 0xc) = puVar7;
             }
             local_28 = 0;
-            if ((local_34 == 0) || ((((byte *)iVar3)[0x4f] & 0x10) != 0)) {
+            if ((local_34 == 0) || ((STField<byte>(iVar3,0x4F) & 0x10) != 0)) {
               for (local_50 = 0; local_50 < (int)((uint)(byte)param_1->field_0x4 * 2);
                   local_50 = local_50 + 1) {
                 iVar8 = (uint)(byte)param_1->field_0x4 * local_50;
@@ -282,6 +285,7 @@ LAB_00574e10:
         local_6c = STField<undefined4>(iVar3,0x10);
         local_68 = STField<undefined4>(iVar3,0x14);
         local_64 = STField<undefined4>(iVar3,0xC);
+
         Library::DKW::TBL::DArrayAppend(param_1->field_0451,&local_6c);
       }
     }

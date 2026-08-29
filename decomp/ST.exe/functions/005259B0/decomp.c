@@ -4,9 +4,13 @@
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_005259B0_param_1Enum. Cases:
    CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154;CASE_9C=156;CASE_9D=157;CASE_9E=158;CASE_9F=159;CASE_A0=160;CASE_A3=163;CASE_A4=164;CASE_A6=166;CASE_A7=167;CASE_A8=168;CASE_A9=169;CASE_AB=171;CASE_AC=172;CASE_AD=173;CASE_AE=174;CASE_AF=175;CASE_B0=176;CASE_B2=178;CASE_B3=179;CASE_B5=181;CASE_B6=182;CASE_B7=183;CASE_B8=184;CASE_BA=186;CASE_BC=188;CASE_BD=189;CASE_BE=190;CASE_BF=191;CASE_FF=255
-    */
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (4), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=004F2560 @ 004F263A -> read as EAX on
+   every CFG path | 004F2560 @ 004F27C2 -> read as EAX on every CFG path | 00515900 @ 0051594B ->
+   read as EAX on every CFG path | 0051B5A0 @ 0051B6C8 -> read as EAX on every CFG path */
 
-uint __cdecl FUN_005259b0(Global_sub_005259B0_param_1Enum param_1,ushort param_2,char param_3)
+int __cdecl FUN_005259b0(Global_sub_005259B0_param_1Enum param_1,ushort param_2,char param_3)
 
 {
   uint uVar1;

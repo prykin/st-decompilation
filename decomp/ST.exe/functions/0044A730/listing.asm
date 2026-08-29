@@ -34,7 +34,7 @@ STAllPlayersC::UnRegisterContainer:
 0044A78F  68 04 60 7A 00            PUSH 0x7a6004
 0044A794  50                        PUSH EAX
 0044A795  68 07 00 FE AF            PUSH 0xaffe0007
-0044A79A  E8 A1 B6 25 00            CALL 0x006a5e40
+0044A79A  E8 A1 B6 25 00            CALL 0x006a5e40  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 LAB_0044a79f:
 0044A79F  8A 4F 24                  MOV CL,byte ptr [EDI + 0x24]
 0044A7A2  8B 57 20                  MOV EDX,dword ptr [EDI + 0x20]

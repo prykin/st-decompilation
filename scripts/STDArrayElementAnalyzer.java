@@ -245,7 +245,8 @@ public class STDArrayElementAnalyzer extends GhidraScript {
 
     private boolean isDArrayCreate(Function function) {
         return function.getTags().stream()
-            .anyMatch(tag -> "RECOVERED_UTILITY_DARRAY_CREATE".equals(tag.getName()));
+            .anyMatch(tag -> tag.getName().startsWith(
+                "RECOVERED_UTILITY_DARRAY_CREATE"));
     }
 
     private void collectCreationEvidence() throws Exception {

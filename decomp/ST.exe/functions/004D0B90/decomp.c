@@ -32,10 +32,12 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,STMessage *message)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pTVar4 = local_c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar9 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_dock.cpp",0x341,0,iVar5,"%s"
                                ,"TLOFakeTy::GetMessage error");
     if (iVar9 != 0) {
@@ -60,6 +62,7 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,STMessage *message)
     iVar6 = 0;
     if (pTVar4->field_023D == 2) {
       if (pTVar4->field_0249 != 0) {
+        /* ST_CALLSITE[004D0D21]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
         puVar5 = Library::DKW::LIB::MemAlloc(pTVar4->field_0249 * 0xc);
         pTVar4->field_024D = puVar5;
       }
@@ -108,6 +111,7 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,STMessage *message)
     }
   }
   else if (SVar2 == MESS_SHARED_010F) {
+
     local_8 = Library::DKW::LIB::MemAlloc(pTVar4->field_0245 * 0xc + 0x1c);
     if (pTVar4 == nullptr) {
       puVar11 = nullptr;

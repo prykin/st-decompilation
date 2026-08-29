@@ -16,7 +16,8 @@ CreateGameSystem:
 005772A8  85 F6                     TEST ESI,ESI
 005772AA  0F 85 E1 00 00 00         JNZ 0x00577391
 005772B0  68 35 04 00 00            PUSH 0x435
-005772B5  E8 76 72 1B 00            CALL 0x0072e530
+CreateGameSystem::override::prt_5772b5_5867e9c6:
+005772B5  E8 76 72 1B 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/GameSystemC; signature=__cdecl;pointer:/GameSystemC;/uint
 005772BA  83 C4 04                  ADD ESP,0x4
 005772BD  85 C0                     TEST EAX,EAX
 005772BF  74 10                     JZ 0x005772d1

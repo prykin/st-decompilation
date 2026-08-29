@@ -22,7 +22,7 @@ SndUnderAttMenegC::sub_0061FB70:
 0061FBA4  6A 14                     PUSH 0x14
 0061FBA6  6A 0A                     PUSH 0xa
 0061FBA8  6A 00                     PUSH 0x0
-0061FBAA  E8 E1 E6 08 00            CALL 0x006ae290
+0061FBAA  E8 E1 E6 08 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/SndUnderAttMenegC_field_00B9DArray; source view only; no Ghidra override
 0061FBAF  89 86 B9 00 00 00         MOV dword ptr [ESI + 0xb9],EAX
 LAB_0061fbb5:
 0061FBB5  8B B6 B9 00 00 00         MOV ESI,dword ptr [ESI + 0xb9]

@@ -29,7 +29,7 @@ AiFltClassTy::_AddObjFlt:
 0065D7B6  0F 84 B7 00 00 00         JZ 0x0065d873
 0065D7BC  8B 06                     MOV EAX,dword ptr [ESI]
 0065D7BE  8B CE                     MOV ECX,ESI
-0065D7C0  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+0065D7C0  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0065D7C3  83 F8 32                  CMP EAX,0x32
 0065D7C6  7C 0C                     JL 0x0065d7d4
 0065D7C8  83 F8 74                  CMP EAX,0x74
@@ -46,7 +46,7 @@ LAB_0065d7d6:
 LAB_0065d7e1:
 0065D7E1  8B 16                     MOV EDX,dword ptr [ESI]
 0065D7E3  8B CE                     MOV ECX,ESI
-0065D7E5  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+0065D7E5  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0065D7E8  83 F8 78                  CMP EAX,0x78
 0065D7EB  75 17                     JNZ 0x0065d804
 LAB_0065d7ed:
@@ -69,7 +69,7 @@ LAB_0065d804:
 0065D818  E8 A3 09 05 00            CALL 0x006ae1c0
 0065D81D  8B 16                     MOV EDX,dword ptr [ESI]
 0065D81F  8B CE                     MOV ECX,ESI
-0065D821  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+0065D821  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0065D824  83 F8 01                  CMP EAX,0x1
 0065D827  7C 0C                     JL 0x0065d835
 0065D829  83 F8 29                  CMP EAX,0x29

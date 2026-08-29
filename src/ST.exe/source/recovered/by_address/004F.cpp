@@ -15,8 +15,9 @@ BldObjPanelTy * __cdecl st::fn_004F0460(void)
 {
   BldObjPanelTy *this;
   uint *puVar2;
-  this = (BldObjPanelTy *)st::fn_006B04D0(0x296);
+  this = STPointerBoundaryCast<BldObjPanelTy *>(st::fn_006B04D0(0x296));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;
@@ -35,9 +36,9 @@ BldObjPanelTy * __cdecl st::fn_004F0460(void)
     this->field_01A9 = 0;
     this->field_01AD = 0;
     this->field_01B1 = 0;
-    puVar2 = (undefined4 *)&this->field_01B5;
+    puVar2 = reinterpret_cast<uint *>(&this->field_01B5);
     memset(puVar2, 0, 0xc3); /* compiler bulk-zero initialization */
-    puVar2 = (undefined4 *)((byte *)puVar2 + 0xc0);
+    puVar2 = reinterpret_cast<uint *>(((byte *)puVar2 + 0xc0));
     this->field_0199 = 0;
     this->field_0279 = 1;
     this->field_0278 = 0;
@@ -62,7 +63,7 @@ BldObjPanelTy * __cdecl st::fn_004F0460(void)
 
 // 004F0A60 FUN_004f0a60
 #line 4 "decomp/ST.exe/functions/004F0A60/decomp.c"
-void __fastcall st::fn_004F0A60(AnonShape_004F0A60_A5DE070F *param_1)
+void __fastcall st::fn_004F0A60(RecoveredRecordView_004F0A60_ACA1737C *param_1)
 
 {
   uint *puVar1;
@@ -73,9 +74,9 @@ void __fastcall st::fn_004F0A60(AnonShape_004F0A60_A5DE070F *param_1)
   }
   param_1->field_0292 = 0;
   if (param_1->field_027A != 0) {
-    st::fn_006F20E0(g_cMf32_00806790,(uint *)&param_1->field_027A);
+    st::fn_006F20E0(g_cMf32_00806790,reinterpret_cast<uint *>(&param_1->field_027A));
   }
-  puVar1 = (undefined4 *)&param_1->field_0x27e;
+  puVar1 = reinterpret_cast<uint *>(&param_1->field_0x27e);
   iVar2 = 5;
   do {
     if ((DArrayTy *)*puVar1 != nullptr) {
@@ -89,43 +90,19 @@ void __fastcall st::fn_004F0A60(AnonShape_004F0A60_A5DE070F *param_1)
   return;
 }
 
-// 004F1890 FUN_004f1890
-#line 4 "decomp/ST.exe/functions/004F1890/decomp.c"
-/* [STReturnSemanticsApplier] ignored_eax_void.
-   Evidence: all observed direct callers ignore the return register (ignored=7, used=0), and
-   decompilation contains no value return */
-
-void __thiscall st::fn_004F1890(void *this,byte param_1)
-
-{
-  int iVar1;
-  byte *pbVar2;
-
-  if (DAT_0080874e == '\x03') {
-    iVar1 = (-(uint)(param_1 != 0) & 0xfffffffd) + 5;
-  }
-  else {
-    iVar1 = (param_1 != 0) + 2;
-  }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  pbVar2 = st::fn_0070B650(*(short **)((int)this + (uint)param_1 * 4 + 0x2e2),
-                        (uint)*(byte *)(param_1 + 0x2ea + (int)this));
-  /* ST_CALLSITE[004F1905]: CALL 0x00403229; direct=00403229 DibPut */
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  st::fn_00403229(*(RecoveredSourceFamily_dibcopy **)((int)this + (-(uint)(param_1 != 0) & 8) * 4 + 0x180),
-         iVar1,(DAT_0080874e == '\x03') + 6,'\x06',pbVar2);
-  return;
-}
-
 // 004F19D0 FUN_004f19d0
 #line 4 "decomp/ST.exe/functions/004F19D0/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004F19D0_param_2Enum. Cases:
-   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5
 
-undefined4
-st::fn_004F19D0(char param_1,Global_sub_004F19D0_param_2Enum param_2,undefined4 *param_3,
-            undefined4 *param_4)
+   [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=3, ignored=0,
+   unknown=0 */
+
+int st::fn_004F19D0(char param_1,Global_sub_004F19D0_param_2Enum param_2,undefined4 *param_3,
+                undefined4 *param_4)
 
 {
   if (g_nWidth_00806730 == 0x400) {
@@ -200,52 +177,29 @@ st::fn_004F19D0(char param_1,Global_sub_004F19D0_param_2Enum param_2,undefined4 
   }
 }
 
-// 004F1C80 FUN_004f1c80
-#line 4 "decomp/ST.exe/functions/004F1C80/decomp.c"
-/* [STReturnSemanticsApplier] ignored_eax_void.
-   Evidence: all observed direct callers ignore the return register (ignored=4, used=0), and
-   decompilation contains no value return */
-
-void __thiscall st::fn_004F1C80(void *this,uint param_1,uint param_2)
-
-{
-  uint uVar1;
-  uint uVar2;
-  int iVar3;
-  byte *pbVar4;
-
-  uVar2 = param_2;
-  uVar1 = param_1;
-  iVar3 = st::fn_004058F3((char)param_1,(Global_sub_004F19D0_param_2Enum)param_2,&param_1,
-                             &param_2);
-  if (iVar3 != 0) {
-    iVar3 = (uVar2 & 0xff) + (uVar1 & 0xff) * 6;
-    pbVar4 = st::fn_0070B650(*(short **)((int)this + iVar3 * 4 + 0xd0b),
-                          (uint)*(byte *)(iVar3 + 0xd3b + (int)this));
-    /* ST_CALLSITE[004F1CE2]: CALL 0x00403229; direct=00403229 DibPut */
-    st::fn_00403229(*(RecoveredSourceFamily_dibcopy **)((int)this + (0x6a - (uVar1 & 0xff)) * 4),param_1,
-           param_2,'\x06',pbVar4);
-  }
-  return;
-}
-
 // 004F1D20 FUN_004f1d20
 #line 4 "decomp/ST.exe/functions/004F1D20/decomp.c"
-void st::fn_004F1D20(undefined1 *param_1)
+void st::fn_004F1D20(RecoveredRecord_004F1D20_D68BC0B9 *param_1)
 
 {
-  undefined1 local_3c [7];
-  undefined1 local_35;
-  undefined4 local_34;
-
-  memset((void *)local_3c, 0, 0x36); /* compiler bulk-zero initialization */
-  local_3c[1] = 1;
-  local_3c[0] = *param_1;
-  local_3c[2] = param_1[1];
-  STPiece<3,4>(local_3c) = *(undefined4 *)(param_1 + 2);
-  local_35 = param_1[6];
-  local_34 = *(undefined4 *)(param_1 + 7);
-  st::fn_00403607(local_3c,0);
+  int iVar1;
+  RecoveredRecord_00526100_020D84E3 *pRVar2;
+  RecoveredRecord_00526100_020D84E3 local_3c;
+  byte local_35;
+  uint local_34;
+  pRVar2 = &local_3c;
+  for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *(undefined4 *)pRVar2 = 0;
+    pRVar2 = (RecoveredRecord_00526100_020D84E3 *)((int)&pRVar2->field_0003 + 1);
+  }
+  *(undefined2 *)pRVar2 = 0;
+  STPiece<1,1>(local_3c) = 1;
+  STPiece<0,1>(local_3c) = *(undefined1 *)param_1;
+  STPiece<2,1>(local_3c) = param_1->field_0x1;
+  local_3c.field_0003 = param_1->field_0002;
+  local_35 = param_1->field_0x6;
+  local_34 = param_1->field_0007;
+  st::fn_00403607(&local_3c,0);
   return;
 }
 
@@ -278,11 +232,11 @@ HDC __cdecl st::fn_004F4640(ushort *param_1,undefined *param_2,BYTE param_3)
   pLVar7 = &local_a8;
   for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
     pLVar7->lfHeight = 0;
-    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
+    pLVar7 = reinterpret_cast<LOGFONTA *>(&pLVar7->lfWidth);
   }
   local_a8.lfCharSet = param_3;
   uVar4 = 0xffffffff;
-  pcVar6 = "Small Fonts";
+  pcVar6 = st::mutable_c_string("Small Fonts");
   do {
     pcVar8 = pcVar6;
     if (uVar4 == 0) break;
@@ -454,11 +408,11 @@ HDC __cdecl st::fn_004F4950(ushort *param_1,undefined *param_2,BYTE param_3)
   pLVar7 = &local_a8;
   for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
     pLVar7->lfHeight = 0;
-    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
+    pLVar7 = reinterpret_cast<LOGFONTA *>(&pLVar7->lfWidth);
   }
   local_a8.lfCharSet = param_3;
   uVar4 = 0xffffffff;
-  pcVar6 = "Verdana";
+  pcVar6 = st::mutable_c_string("Verdana");
   do {
     pcVar8 = pcVar6;
     if (uVar4 == 0) break;
@@ -628,11 +582,11 @@ HDC __cdecl st::fn_004F4C70(int param_1,undefined *param_2,BYTE param_3)
   pLVar7 = &local_a0;
   for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
     pLVar7->lfHeight = 0;
-    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
+    pLVar7 = reinterpret_cast<LOGFONTA *>(&pLVar7->lfWidth);
   }
   local_a0.lfCharSet = param_3;
   uVar4 = 0xffffffff;
-  pcVar6 = "System";
+  pcVar6 = st::mutable_c_string("System");
   do {
     pcVar8 = pcVar6;
     if (uVar4 == 0) break;
@@ -776,12 +730,13 @@ HDC __cdecl st::fn_004F4C70(int param_1,undefined *param_2,BYTE param_3)
 void * __cdecl st::fn_004F4F60(void)
 
 {
-  AnonShape_004F4F90_2D6E0DDA *pAVar1;
+  RecoveredRecordView_004F4F90_9FDA4667 *pRVar1;
 
-  pAVar1 = (AnonShape_004F4F90_2D6E0DDA *)st::fn_006B04D0(0xdee);
-  if (pAVar1 != nullptr) {
-    pAVar1 = st::fn_00402AA4(pAVar1);
-    return pAVar1;
+  /* ST_CALLSITE[004F4F65]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_004F4F90_2D6E0DDA; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_004F4F90_2D6E0DDA;/uint */
+  pRVar1 = reinterpret_cast<RecoveredRecordView_004F4F90_9FDA4667 *>(st::fn_006B04D0(0xdee));
+  if (pRVar1 != nullptr) {
+    pRVar1 = st::fn_00402AA4(pRVar1);
+    return pRVar1;
   }
   return nullptr;
 }
@@ -793,7 +748,8 @@ void * __cdecl st::fn_004F4F60(void)
    structure /SubmarineTitans/Recovered/PointerShapes/AnonShape_004F4F90_2D6E0DDA (current recovered
    extent=3528) */
 
-AnonShape_004F4F90_2D6E0DDA * __fastcall st::fn_004F4F90(AnonShape_004F4F90_2D6E0DDA *param_1)
+RecoveredRecordView_004F4F90_9FDA4667 * __fastcall
+st::fn_004F4F90(RecoveredRecordView_004F4F90_9FDA4667 *param_1)
 
 {
   byte *puVar1;
@@ -870,7 +826,7 @@ AnonShape_004F4F90_2D6E0DDA * __fastcall st::fn_004F4F90(AnonShape_004F4F90_2D6E
   *(undefined4 *)&param_1->field_0xe8 = 0x9b;
   *(undefined4 *)&param_1->field_0xf0 = 0x1e;
   *(undefined4 *)&param_1->field_0x104 = 0x22b;
-  puVar2 = (undefined4 *)&param_1->field_0x180;
+  puVar2 = reinterpret_cast<uint *>(&param_1->field_0x180);
   iVar3 = 0xb;
   do {
     puVar2[-0xe] = 0xffffffff;
@@ -935,7 +891,7 @@ AnonShape_004F4F90_2D6E0DDA * __fastcall st::fn_004F4F90(AnonShape_004F4F90_2D6E
   param_1->field_0B57 = 0;
   param_1->field_0B5B = 0;
   param_1->field_0B5F = 0;
-  puVar2 = (undefined4 *)&param_1->field_0x2fe;
+  puVar2 = reinterpret_cast<uint *>(&param_1->field_0x2fe);
   do {
     STField<undefined4>(puVar2,10) = 0;
     *puVar2 = 0;
@@ -967,7 +923,7 @@ AnonShape_004F4F90_2D6E0DDA * __fastcall st::fn_004F4F90(AnonShape_004F4F90_2D6E
   *(undefined4 *)&param_1->field_0x994 = 0;
   *(undefined4 *)&param_1->field_0x99c = 0;
   *(undefined4 *)&param_1->field_0x998 = 0;
-  *(uint *)&param_1->field_0x9a0 = st::machine_word_boundary_cast<uint>(g_playSystem_00802A38->field_00E4 / 0x19);
+  *(uint *)&param_1->field_0x9a0 = g_playSystem_00802A38->field_00E4 / 0x19;
   memset(&param_1->field_0x9a4, 0, 0x1c); /* compiler bulk-zero initialization */
   iVar3 = 0;
   *(undefined4 *)&param_1->field_0x9c0 = 0;
@@ -1061,10 +1017,9 @@ void st::fn_004F9260(char param_1)
 /* [STReturnSemanticsApplier] leaf_void.
    Evidence: leaf function has RET and never writes EAX/AX/AL/AH */
 
-void __fastcall st::fn_004FAE70(int param_1)
+void __fastcall st::fn_004FAE70(RecoveredRecord_004FAE70_42EA0A49 *param_1)
 
 {
-  *(undefined4 *)(param_1 + 0x13c) = 0;
+  param_1->field_013C = 0;
   return;
 }
-

@@ -458,7 +458,7 @@ LAB_005eb4aa:
 005EB4BD  8D 55 F8                  LEA EDX,[EBP + -0x8]
 005EB4C0  52                        PUSH EDX
 005EB4C1  8B CE                     MOV ECX,ESI
-005EB4C3  E8 14 98 E1 FF            CALL 0x00404cdc
+005EB4C3  E8 14 98 E1 FF            CALL 0x00404cdc  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 005EB4C8  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
 005EB4CB  8B 56 18                  MOV EDX,dword ptr [ESI + 0x18]
 005EB4CE  51                        PUSH ECX

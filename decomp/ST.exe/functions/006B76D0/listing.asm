@@ -16,7 +16,7 @@ FUN_006b76d0:
 006B76ED  8B 11                     MOV EDX,dword ptr [ECX]
 006B76EF  50                        PUSH EAX
 006B76F0  51                        PUSH ECX
-006B76F1  FF 52 24                  CALL dword ptr [EDX + 0x24]
+006B76F1  FF 52 24                  CALL dword ptr [EDX + 0x24]  ; [STIndirectCallsiteApplier] exact slot 0x24; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4
 006B76F4  C7 47 38 FF FF FF FF      MOV dword ptr [EDI + 0x38],0xffffffff
 LAB_006b76fb:
 006B76FB  8B 07                     MOV EAX,dword ptr [EDI]

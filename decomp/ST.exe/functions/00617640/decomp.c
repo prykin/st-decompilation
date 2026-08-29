@@ -27,10 +27,12 @@ int __thiscall JumpManagC::GetMessage(JumpManagC *this,STMessage *message)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\nick\\to_jbomb_m.Cpp",0x4b,0,iVar3,"%s"
                                ,"JumpManagC::GetMessage");
     if (iVar4 != 0) {
@@ -72,7 +74,7 @@ int __thiscall JumpManagC::GetMessage(JumpManagC *this,STMessage *message)
     }
   }
   else if (SVar1 == MESS_SHARED_010F) {
-    /* ST_CALLSITE[0061769B]: CALL 0x004015f5; direct=004015F5 JumpManagC::sub_00617FB0 */
+    /* ST_CALLSITE[0061769B]: CALL 0x004015f5; direct=004015F5 JumpManagC::sub_00617FB0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
     local_10 = sub_00617FB0(local_8,(int *)&local_c);
     /* ST_CALLSITE[006176B2]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);

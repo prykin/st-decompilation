@@ -26,26 +26,27 @@ void __thiscall CPanelTy::SetControlBoatSI(CPanelTy *this)
   uint uVar15;
   uint uVar16;
   short sVar17;
-  ushort uVar18;
+  RecoveredRecord_004F3130_3F0D2FD9 *pRVar18;
   ushort uVar19;
-  byte *puVar20;
-  uint uVar21;
-  int iVar22;
-  char *pcVar23;
-  uint uVar24;
-  undefined4 local_c28 [140];
-  AnonShape_004F2E40_DC76A8C6 local_9f8 [7];
-  undefined4 local_110 [22];
+  ushort uVar20;
+  byte *puVar21;
+  uint uVar22;
+  int iVar23;
+  char *pcVar24;
+  uint uVar25;
+  uint local_c28 [140];
+  RecoveredRecordView_004F2E40_41FE7B1E local_9f8 [7];
+  uint local_110 [22];
   InternalExceptionFrame local_b8;
-  undefined4 local_74 [4];
-  undefined4 local_64;
-  undefined4 local_60;
-  undefined4 local_5c;
-  undefined4 local_44;
-  undefined4 local_40;
-  undefined4 local_3c;
+  uint local_74 [4];
+  uint local_64;
+  uint local_60;
+  uint local_5c;
+  uint local_44;
+  uint local_40;
+  uint local_3c;
   int local_2c;
-  AnonShape_004F2E40_DC76A8C6 *local_28;
+  RecoveredRecordView_004F2E40_41FE7B1E *local_28;
   CPanelTy *local_24;
   int local_20;
   LPSTR local_1c;
@@ -64,9 +65,11 @@ void __thiscall CPanelTy::SetControlBoatSI(CPanelTy *this)
   memset(local_c28, 0, 0x230); /* compiler bulk-zero initialization */
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
+
   iVar8 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_b8.previous;
+
     iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel2.cpp",0x29d,0,iVar8,"%s"
                                ,"CPanelTy::SetControlBoatSI");
     if (iVar9 == 0) {
@@ -148,24 +151,25 @@ LAB_005035b5:
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         local_14 = (uint *)(uint)*(byte *)((int)this_00->field_0B1F + uVar14 + 0x89);
       }
-      pcVar23 = nullptr;
-      puVar20 = &this_00->field_0x780 + uVar14 * 0x27;
-      uVar19 = 0;
-      uVar18 = 1;
+      pcVar24 = nullptr;
+      puVar21 = &this_00->field_0x780 + uVar14 * 0x27;
+      uVar20 = 0;
+      uVar19 = 1;
       iVar10 = 0;
       pcVar5 = thunk_FUN_00529590(*(Global_sub_00529590_param_1Enum *)
                                    ((int)this_00->field_0B1F + uVar14 + 0x83),this_00->field_0B99);
       pCVar5 = thunk_FUN_00571240(pcVar5,iVar10);
       /* ST_CALLSITE[00503643]: CALL 0x004041ba; direct=004041BA CPanelTy::SetButStruct */
-      SetButStruct(this_00,(AnonShape_004F2E40_DC76A8C6 *)((int)local_9f8 + local_2c * 0x17c),3,
-                   local_14,iVar7,local_8,6,pCVar5,uVar18,uVar19,puVar20,pcVar23);
+      SetButStruct(this_00,(RecoveredRecordView_004F2E40_41FE7B1E *)
+                           ((int)local_9f8 + local_2c * 0x17c),3,local_14,iVar7,local_8,6,pCVar5,
+                   uVar19,uVar20,puVar21,pcVar24);
       iVar10 = local_2c;
       *(undefined4 *)((int)local_9f8 + local_2c * 0x17c + 0x110) = 1;
       if ((byte)local_c == 0) {
 LAB_00503678:
         iVar11 = 0;
 LAB_0050367a:
-        pBVar6 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02DE,iVar11);
+        pBVar6 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02DE,iVar11);
         *(BITMAPINFO **)((int)local_9f8 + iVar10 * 0x17c + 0x124) = pBVar6;
         *(undefined4 *)((int)local_9f8 + iVar10 * 0x17c + 0x128) = 0x3c;
         iVar10 = local_2c;
@@ -210,36 +214,36 @@ LAB_00503776:
      ((CVar2 = this_00->field_0B99, CVar2 != CASE_9 &&
       ((((CVar2 != CASE_15 && (CVar2 != CASE_BD)) && (CVar2 != CASE_A7)) &&
        ((CVar2 != CASE_A6 && (CVar2 != CASE_AF)))))))) {
-    uVar24 = 0;
-    uVar21 = 0;
-    iVar10 = 0;
-    pcVar23 = "BUT_SHOWUPDMSK";
-    iVar7 = 0x3b04;
-    uVar18 = 0;
+    uVar25 = 0;
+    uVar22 = 0;
+    iVar7 = 0;
+    pcVar24 = "BUT_SHOWUPDMSK";
+    pRVar18 = (RecoveredRecord_004F3130_3F0D2FD9 *)0x3b04;
+    uVar19 = 0;
     sVar17 = 2;
     uVar16 = 0xb118;
     uVar15 = 0xb117;
     pCVar5 = thunk_FUN_00571240("BUT_SHOWUPD",0);
     /* ST_CALLSITE[005037F8]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
-    uVar15 = CreateBut(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x40,0x2f,6,pCVar5,uVar15,
-                       uVar16,sVar17,uVar18,iVar7,pcVar23,iVar10,uVar21,uVar24);
-    this_00->field_0970 = uVar15;
+    iVar7 = CreateBut(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x40,0x2f,6,pCVar5,uVar15,
+                      uVar16,sVar17,uVar19,pRVar18,pcVar24,iVar7,uVar22,uVar25);
+    this_00->field_0970 = iVar7;
   }
   if (this_00->field_0B9E == CASE_2) {
-    uVar24 = 0;
-    uVar21 = 0;
-    iVar10 = 0;
-    pcVar23 = "BUT_SHOWUPDMSK";
-    iVar7 = 0x3b05;
-    uVar18 = 0;
+    uVar25 = 0;
+    uVar22 = 0;
+    iVar7 = 0;
+    pcVar24 = "BUT_SHOWUPDMSK";
+    pRVar18 = (RecoveredRecord_004F3130_3F0D2FD9 *)0x3b05;
+    uVar19 = 0;
     sVar17 = 2;
     uVar16 = 0xb11a;
     uVar15 = 0xb119;
     pCVar5 = thunk_FUN_00571240("BUT_SHOWFRM",0);
     /* ST_CALLSITE[00503854]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
-    uVar15 = CreateBut(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x40,0x2f,6,pCVar5,uVar15,
-                       uVar16,sVar17,uVar18,iVar7,pcVar23,iVar10,uVar21,uVar24);
-    this_00->field_0970 = uVar15;
+    iVar7 = CreateBut(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x40,0x2f,6,pCVar5,uVar15,
+                      uVar16,sVar17,uVar19,pRVar18,pcVar24,iVar7,uVar22,uVar25);
+    this_00->field_0970 = iVar7;
   }
   if (((this_00->field_0B9E == CASE_1) && (this_00->field_0B99 != CASE_BD)) ||
      (this_00->field_0B9E == CASE_2)) {
@@ -255,38 +259,39 @@ LAB_00503776:
         iVar7 = 0xf;
         local_18 = 0x6a;
         local_20 = 0xf;
-        pcVar23 = "BUT_BEHREPAIR0";
+        pcVar24 = "BUT_BEHREPAIR0";
         break;
       case 1:
         iVar10 = 0x7a;
         iVar7 = 0x14;
         local_18 = 0x7a;
         local_20 = 0x14;
-        pcVar23 = "BUT_BEHREPAIR20";
+        pcVar24 = "BUT_BEHREPAIR20";
         break;
       case 2:
         iVar10 = 0x98;
         iVar7 = 0x14;
         local_18 = 0x98;
         local_20 = 0x14;
-        pcVar23 = "BUT_BEHREPAIR50";
+        pcVar24 = "BUT_BEHREPAIR50";
         break;
       case 3:
         iVar10 = 0x98;
         iVar7 = 0xf;
         local_18 = 0x98;
         local_20 = 0xf;
-        pcVar23 = "BUT_BEHREPAIR80";
+        pcVar24 = "BUT_BEHREPAIR80";
         break;
       default:
         goto switchD_0050389f_default;
       }
-      local_1c = thunk_FUN_00571240(pcVar23,0);
+      local_1c = thunk_FUN_00571240(pcVar24,0);
 switchD_0050389f_default:
-      iVar22 = 1;
+      iVar23 = 1;
       iVar11 = local_8;
+      /* ST_CALLSITE[00503920]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       pCVar5 = thunk_FUN_00571240("BUT_BEHRMSK",0);
-      pCVar5 = FUN_006f2c00(pCVar5,iVar22,iVar11);
+      pCVar5 = FUN_006f2c00(pCVar5,iVar23,iVar11);
       if (this_00->field_0BA0 == '\0') {
         uVar14 = 0;
       }
@@ -295,7 +300,9 @@ switchD_0050389f_default:
       }
       /* ST_CALLSITE[00503980]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
       uVar14 = CreateBut(this_00,3,0,uVar14,iVar10,iVar7,6,local_1c,local_8 + 0xb220,
-                         local_8 + 0xb230,2,0,0x4e36 - (uint)((byte)local_c != '\0'),pCVar5,0,0,0);
+                         local_8 + 0xb230,2,0,
+                         (RecoveredRecord_004F3130_3F0D2FD9 *)
+                         (0x4e36 - (uint)((byte)local_c != '\0')),pCVar5,0,0,0);
       *local_14 = uVar14;
       bVar4 = (byte)local_c + 1;
       local_8 = local_8 + 1;

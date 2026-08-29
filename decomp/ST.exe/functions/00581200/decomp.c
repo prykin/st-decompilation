@@ -1,7 +1,13 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_00581200(int param_1)
+/* [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:0: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=1,
+   pointer_dereferences=4, scalar_uses=0; sites=00581206 dereference: MOV EDX,dword ptr [ECX +
+   0x1f5] | 0058120E dereference: MOV ESI,dword ptr [ECX + 0x1ed] | 00581216 dereference: MOV
+   EBX,dword ptr [ECX + 0x1f9] | 00581231 dereference: MOV EDI,dword ptr [ECX + 0x1f1] */
+
+void __fastcall FUN_00581200(void *param_1)
 
 {
   byte bVar1;
@@ -41,30 +47,24 @@ void __fastcall FUN_00581200(int param_1)
   short local_8;
   char local_5;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar10 = *(int *)(param_1 + 0x1f5) - *(int *)(param_1 + 0x1ed) >> 1;
+  iVar10 = STField<int>(param_1,0x1f5) - STField<int>(param_1,0x1ed) >> 1;
   local_1c = 0;
   iVar11 = iVar10 + 3;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar12 = *(int *)(param_1 + 0x1f9) - *(int *)(param_1 + 0x1f1) >> 1;
+  iVar12 = STField<int>(param_1,0x1f9) - STField<int>(param_1,0x1f1) >> 1;
   iVar15 = iVar12 + 3;
   if (iVar15 < iVar11) {
     iVar15 = iVar11;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar11 = *(int *)(param_1 + 0x1f5) + 3;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_40 = (int *)(*(int *)(param_1 + 0x1ed) + -3);
+  iVar11 = STField<int>(param_1,0x1f5) + 3;
+  local_40 = (int *)(STField<int>(param_1,0x1ed) + -3);
   if (g_worldGrid.sizeX <= iVar11) {
     iVar11 = g_worldGrid.sizeX + -1;
   }
   if ((int)local_40 < 0) {
     local_40 = nullptr;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_24 = *(int *)(param_1 + 0x1f9) + 3;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_20 = *(int *)(param_1 + 0x1f1) + -3;
+  local_24 = STField<int>(param_1,0x1f9) + 3;
+  local_20 = STField<int>(param_1,0x1f1) + -3;
   iVar14 = (int)g_worldGrid.sizeY;
   if (iVar14 <= local_24) {
     iVar14 = iVar14 + -1;
@@ -73,14 +73,12 @@ void __fastcall FUN_00581200(int param_1)
   if (local_20 < 0) {
     local_20 = 0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  sVar13 = *(short *)(param_1 + 0x1ed) + (short)iVar10;
+  sVar13 = STField<short>(param_1,0x1ed) + (short)iVar10;
   local_28 = STReplaceLowWord((uint32_t)(iVar14), (uint16_t)(sVar13));
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  sVar16 = *(short *)(param_1 + 0x1f1) + (short)iVar12;
+  sVar16 = STField<short>(param_1,0x1f1) + (short)iVar12;
   local_2c = STReplaceLowWord((uint32_t)(param_1), (uint16_t)(sVar16));
   local_10 = (int)sVar16;
-  local_c = (AnonShape_00581200_BFD82E5E *)param_1;
+  local_c = param_1;
   if ((((sVar13 <= iVar11) && (local_10 <= local_24)) && ((int)local_40 <= (int)sVar13)) &&
      (local_20 <= local_10)) {
     local_18 = 0;
@@ -100,6 +98,7 @@ void __fastcall FUN_00581200(int param_1)
              (g_bulkInitializedRecords_008087C7[(int)pSVar4[1].vtable].field_0022 < 8)))))))))) {
         this = (void *)local_c->field_0010;
         if (STField<char>(this,0x146f) == '\0') {
+
           iVar10 = thunk_FUN_005822e0(this,*(byte *)&pSVar4[1].vtable,local_c->field_0024);
           bVar17 = iVar10 < 0;
         }
@@ -184,7 +183,7 @@ LAB_00581545:
       bVar1 = *(byte *)&pSVar4[1].vtable;
       bVar2 = local_c->field_0024;
       iVar12 = local_c->field_0010;
-      if (((char *)iVar12)[0x146f] != '\0') {
+      if (STField<char>(iVar12,0x146F) != '\0') {
         local_5 = *(char *)((uint)bVar2 * 0x51 + 0x11ca + iVar12);
         local_14 = 0;
         bVar17 = local_5 != *(char *)((uint)bVar1 * 0x51 + 0x11ca + iVar12);

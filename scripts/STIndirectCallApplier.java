@@ -32,6 +32,7 @@ import ghidra.program.model.data.ParameterDefinitionImpl;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.PointerDataType;
 import ghidra.program.model.data.Structure;
+import ghidra.program.model.data.Undefined;
 import ghidra.program.model.data.VoidDataType;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionTag;
@@ -56,6 +57,7 @@ public class STIndirectCallApplier extends GhidraScript {
         end(true);
         if (currentProgram == null) { printerr("Open the analyzed ST program first."); return; }
         File file = inputFile(); if (file == null) return;
+        String selectedMode = selectedMode();
         Tsv input = read(file.toPath());
         require(input, "apply", "target_kind", "structure_path", "component_offset",
             "expected_field_name", "expected_component_type", "expected_comment",
@@ -66,7 +68,12 @@ public class STIndirectCallApplier extends GhidraScript {
         dataTypes = currentProgram.getDataTypeManager(); pointerSize = currentProgram.getDefaultPointerSize();
         int tx = currentProgram.startTransaction("Apply indirect-call prototypes"); boolean commit = false;
         try {
-            for (Map<String, String> row : input.rows) { monitor.checkCancelled(); apply(row); }
+            for (Map<String, String> row : input.rows) {
+                monitor.checkCancelled();
+                if (selectedMode != null &&
+                        !selectedMode.equals(row.get("signature_mode"))) continue;
+                apply(row);
+            }
             commit = true;
         }
         finally { currentProgram.endTransaction(tx, commit); }
@@ -76,6 +83,17 @@ public class STIndirectCallApplier extends GhidraScript {
             count("unchanged") + ", preserved=" + count("preserved") + ", conflicts=" +
             count("conflict") + ", disabled=" + count("disabled"));
         println("Apply report: " + output);
+        if (selectedMode != null) println("Signature-mode filter: " + selectedMode);
+    }
+
+    private String selectedMode() {
+        String[] args = getScriptArgs();
+        for (int index = 1; index < args.length; index++) {
+            String value = args[index];
+            if (value != null && value.startsWith("mode=") && value.length() > 5)
+                return value.substring(5);
+        }
+        return null;
     }
 
     private void apply(Map<String, String> row) {
@@ -119,6 +137,8 @@ public class STIndirectCallApplier extends GhidraScript {
             else if ("family_target".equals(mode))
                 desired = resolveSpecification(row.get("receiver_type"));
             else if ("synthetic_thiscall".equals(mode))
+                desired = syntheticThiscallFunctionPointer(row);
+            else if ("refined_generated_target".equals(mode))
                 desired = syntheticThiscallFunctionPointer(row);
             else if ("synthetic_stdcall".equals(mode))
                 desired = syntheticStdcallFunctionPointer(row);
@@ -268,8 +288,11 @@ public class STIndirectCallApplier extends GhidraScript {
         DataType definition;
         if (existing == null) definition = dataTypes.resolve(desired, DataTypeConflictHandler.KEEP_HANDLER);
         else if (existing instanceof FunctionDefinition current) {
-            if (current.getComment() != null && current.getComment().contains(MARKER) &&
-                    !current.isEquivalentSignature(desired)) current.replaceWith(desired);
+            // This deterministic target definition can be shared by many accepted physical
+            // slots.  Mutating it in place because one newly generic slot sees a later Listing
+            // signature silently rewrites every alias (for example int -> STMessage* or
+            // undefined -> void).  The existing target family is the stronger cross-table ABI;
+            // field-local refinements use owner-specific synthetic definitions instead.
             definition = current;
         }
         else return new PointerDataType(VoidDataType.dataType, pointerSize, dataTypes);
@@ -429,7 +452,14 @@ public class STIndirectCallApplier extends GhidraScript {
             DataType pointed = resolveSpecification(specification.substring("pointer:".length()));
             return pointed == null ? null : new PointerDataType(pointed, pointerSize, dataTypes);
         }
-        return dataTypes.getDataType(specification);
+        DataType resolved = dataTypes.getDataType(specification);
+        if (resolved != null) return resolved;
+        if (specification.matches("/undefined(?:[1248])?")) {
+            String suffix = specification.substring("/undefined".length());
+            int width = suffix.isBlank() ? 1 : Integer.parseInt(suffix);
+            return Undefined.getUndefinedDataType(width);
+        }
+        return null;
     }
 
     private boolean baseline(DataTypeComponent component, Map<String, String> row) {

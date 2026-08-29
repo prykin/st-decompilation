@@ -21,10 +21,10 @@ SettMapMTy::ChgPlList
   uint uVar4;
   char *pcVar6;
   char *pcVar7;
-  undefined4 local_15c;
-  undefined4 local_158;
-  undefined4 local_154;
-  undefined4 local_150;
+  uint local_15c;
+  uint local_158;
+  uint local_154;
+  uint local_150;
   char local_14c [260];
   InternalExceptionFrame local_48;
 

@@ -18,10 +18,12 @@ undefined4 __thiscall STT3DSprC::StopShow(STT3DSprC *this,byte param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pSVar2 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
+
     iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0x10e,0,iVar3,"%s",
                                "STT3DSprC::StopShow");
     if (iVar3 != 0) {

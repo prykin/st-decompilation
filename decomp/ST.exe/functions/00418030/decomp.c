@@ -5,11 +5,23 @@
    /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00417FF0.
    Evidence: incoming_receiver_captures=1; receiver_accesses=37; incoming_edx_uses=0; calls=15;
    ecx_pointer_setup=15; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
-   expected_stack=12; receiver_family_members=5; adopt_untyped_existing_thiscall */
+   expected_stack=12; receiver_family_members=5; adopt_untyped_existing_thiscall
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (13), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=004189D0 @ 00418BCF -> read as EAX on
+   every CFG path | 004C6BB0 @ 004C6BFF -> read as EAX on every CFG path | 004C6D00 @ 004C6EEA ->
+   read as EAX on every CFG path | 0057CD70 @ 0057CE53 -> killed on every CFG path | 0057D420 @
+   0057D4FD -> read as EAX on every CFG path | 0057D420 @ 0057D520 -> read as EAX on every CFG path
+   | 0057D420 @ 0057D55D -> read as EAX on every CFG path | 00583E30 @ 00583FB8 -> read as EAX on
+   every CFG path | 00583E30 @ 00583FCF -> read as EAX on every CFG path | 0058E570 @ 0058E701 ->
+   killed on every CFG path | 0058E570 @ 0058EA13 -> read as EAX on every CFG path | 0058F030 @
+   0058F0EA -> read as EAX on every CFG path | 0058F030 @ 0058F10D -> read as EAX on every CFG path
+   | 0058F030 @ 0058F14A -> read as EAX on every CFG path | 005FA7F0 @ 005FA816 -> read as EAX on
+   every CFG path */
 
-undefined4 __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030
-          (AnonReceiver_004167A0 *this,short param_1,short param_2,short param_3)
+int __thiscall
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_004167A0::FUN_00418030
+          (RecoveredReceiver_004167A0 *this,short param_1,short param_2,short param_3)
 
 {
   bool bVar1;
@@ -21,7 +33,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030
   STWorldObject *pSVar5;
   ushort *puVar6;
   uint uVar7;
+  short *puVar6_mg0;
   short *psVar8;
+  short *puVar6_mg1;
   uint uVar5;
   STBoatC *pSVar9;
   short sVar10;
@@ -47,7 +61,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030
   short *local_24;
   short *local_20;
   short *local_1c;
-  undefined1 local_15;
+  byte local_15;
   short *local_14;
   short *local_10;
   short *local_c;
@@ -58,17 +72,18 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030
   local_58 = (STBoatC *)this;
   /* ST_CALLSITE[00418041]: CALL 0x00405952; direct=00405952 sub_004167A0 */
   sub_004167A0(this);
-  if (((param_1 == *(short *)&this->field_0x47) && (param_2 == *(short *)&this->field_0x49)) &&
-     (param_3 == *(short *)&this->field_0x4b)) {
+  if (((param_1 == this->field_0047) && (param_2 == this->field_0049)) &&
+     (param_3 == this->field_004B)) {
     return 1;
   }
   local_9c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_9c;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_9c.jumpBuffer,0);
   this_00 = local_58;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_9c.previous;
-    return 0xffffffff;
+    return -1;
   }
   local_2c = (short *)(int)param_1;
   uVar4 = (int)local_2c - (int)local_58->field_005B;
@@ -89,11 +104,13 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030
     }
     if (pSVar5 == nullptr) {
       *(undefined4 *)&local_58->field_0x9b = 2;
+      /* ST_CALLSITE[0041816B]: CALL 0x006aac10; direct=006AAC10 Library::DKW::LIB::MemAllocClear; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
       puVar6 = Library::DKW::LIB::MemAllocClear(0x10);
       this_00->field_0097 = puVar6;
       puVar6[4] = param_1;
       this_00->field_0097[5] = param_2;
       this_00->field_0097[6] = param_3;
+
       uVar7 = FUN_006a5eb0((int)this_00->field_005B,(int)this_00->field_005D,
                            (int)this_00->field_005F,(int)local_2c,iVar15,iVar13);
       this_00->field_0097[7] = (ushort)uVar7;
@@ -101,6 +118,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::FUN_00418030
     }
   }
   local_44 = (short *)0x3;
+
   local_14 = Library::DKW::LIB::MemAllocClear(0x2ae);
   sVar3 = this_00->field_0047;
   local_54 = local_14 + 0xab;
@@ -213,15 +231,15 @@ LAB_004183b8:
   local_50 = (short *)(int)param_2;
   psVar14 = local_44;
   local_44 = (short *)(int)param_3;
-  puVar6 = (ushort *)
-           Library::DKW::WAY::FUN_006ae7d0
-                     ((int)g_pathingGrid.cells,(int)g_pathingGrid.sizeX,
-                      (short *)(int)g_pathingGrid.sizeY,(short *)(int)g_pathingGrid.sizeZ,
-                      (short *)(int)this_00->field_0047,(short *)(int)this_00->field_0049,
-                      (short *)(int)this_00->field_004B,local_2c,local_50,(short *)(int)param_3,
-                      (int *)&this_00->field_0x9b,(undefined4 *)local_14,psVar14);
-  this_00->field_0097 = puVar6;
-  if (puVar6 == nullptr) {
+  /* ST_CALLSITE[004184B1]: CALL 0x006ae7d0; direct=006AE7D0 Library::DKW::WAY::FUN_006ae7d0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
+  puVar6_mg0 = Library::DKW::WAY::FUN_006ae7d0
+                         ((int)g_pathingGrid.cells,(int)g_pathingGrid.sizeX,
+                          (short *)(int)g_pathingGrid.sizeY,(short *)(int)g_pathingGrid.sizeZ,
+                          (short *)(int)this_00->field_0047,(short *)(int)this_00->field_0049,
+                          (short *)(int)this_00->field_004B,local_2c,local_50,(short *)(int)param_3,
+                          (int *)&this_00->field_0x9b,(undefined4 *)local_14,psVar14);
+  this_00->field_0097 = (ushort *)puVar6_mg0;
+  if (puVar6_mg0 == nullptr) {
     iVar15 = (int)g_pathingGrid.planeStride;
     iVar13 = (int)g_pathingGrid.sizeZ;
     psVar14_mg3 = g_pathingGrid.cells;
@@ -268,14 +286,15 @@ LAB_004183b8:
         local_c = local_c + 0x31;
       } while ((int)local_1c <= (int)local_24);
     }
-    puVar6 = (ushort *)
-             Library::DKW::WAY::FUN_006afba0
-                       ((int)g_pathingScratchGrid.cells,(int)g_pathingScratchGrid.sizeX,
-                        (short *)(int)g_pathingScratchGrid.sizeY,
-                        (short *)(int)g_pathingScratchGrid.sizeZ,(short *)(int)this_00->field_0047,
-                        (short *)(int)this_00->field_0049,(short *)(int)this_00->field_004B,local_2c
-                        ,local_50,local_44,(int *)&this_00->field_0x9b,0);
-    this_00->field_0097 = puVar6;
+    /* ST_CALLSITE[00418617]: CALL 0x006afba0; direct=006AFBA0 Library::DKW::WAY::FUN_006afba0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
+    puVar6_mg1 = Library::DKW::WAY::FUN_006afba0
+                           ((int)g_pathingScratchGrid.cells,(int)g_pathingScratchGrid.sizeX,
+                            (short *)(int)g_pathingScratchGrid.sizeY,
+                            (short *)(int)g_pathingScratchGrid.sizeZ,
+                            (short *)(int)this_00->field_0047,(short *)(int)this_00->field_0049,
+                            (short *)(int)this_00->field_004B,local_2c,local_50,local_44,
+                            (int *)&this_00->field_0x9b,0);
+    this_00->field_0097 = (ushort *)puVar6_mg1;
   }
   FreeAndNull(&local_14);
 LAB_0041862b:
@@ -323,7 +342,7 @@ LAB_0041862b:
   iVar15 = sub_00415B30(this_00,this_00->field_0041,this_00->field_0043,this_00->field_0045,sVar3,
                         sVar10,(short)local_c,(byte)local_14);
   if (iVar15 != 0) {
-    return 0xffffffff;
+    return -1;
   }
   if ((this_00->field_008C != 1) &&
      ((this_00->field_0041 != sVar3 || (this_00->field_0043 != sVar10)))) {
@@ -334,6 +353,7 @@ LAB_0041862b:
     /* ST_CALLSITE[0041876E]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
     uVar5 = STBoatC::sub_004176C0(this_00,sVar3);
     if ((short)uVar5 != this_00->field_006C) {
+
       thunk_FUN_00417740(this_00,this_00->field_006C,(short)uVar5);
     }
   }

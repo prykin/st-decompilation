@@ -5,8 +5,7 @@ undefined4 __thiscall FUN_00660a40(void *this,short param_1,short param_2,short 
 
 {
   STGroupBoatC *this_00;
-  undefined4 local_8;
-
+  uint local_8;
   STField<undefined4>(this,0xa7) = 0;
   if (((((-1 < param_1) && (param_1 < g_worldGrid.sizeX)) && (-1 < param_2)) &&
       ((param_2 < g_worldGrid.sizeY && (-1 < param_3)))) && (param_3 < g_worldGrid.sizeZ)) {

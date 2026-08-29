@@ -55,7 +55,7 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
   SVar1 = message->id;
   if (SVar1 < MESS_SHARED_C000) {
     if (SVar1 == MESS_SHARED_BFFF) {
-      /* ST_CALLSITE[0053ECF4]: CALL dword ptr [EDX + 0x1c] */
+      /* ST_CALLSITE[0053ECF4]: CALL dword ptr [EDX + 0x1c]; [STIndirectCallsiteApplier] exact slot 0x1C; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4 */
       (*STField<code *>(this_00->field_0000,0x001C))(0);
       thunk_FUN_005252c0(0xae);
       g_currentExceptionFrame = local_4c.previous;
@@ -70,7 +70,7 @@ int __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,STMessage *message)
         if (this_00->field_0044 <= iVar6) {
           this_00->field_0044 = iVar6;
           this_00->field_0172 = CASE_1;
-          /* ST_CALLSITE[0053ECBF]: CALL dword ptr [EDX + 0x18] */
+          /* ST_CALLSITE[0053ECBF]: CALL dword ptr [EDX + 0x18]; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4 */
           (*STField<code *>(this_00->field_0000,0x0018))(1);
         }
         Library::DKW::DDX::FUN_006b3640

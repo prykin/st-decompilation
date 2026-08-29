@@ -20,6 +20,7 @@ int __thiscall FUN_004c5980(void *this,short param_1,short param_2,short param_3
   /* ST_CALLSITE[004C59A5]: CALL dword ptr [EDX + 0xf8] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
   iVar3 = (**(code **)(*(int *)this + 0xf8))();
+
   if ((iVar3 == 0) && (iVar3 = thunk_FUN_004ac910((void *)((int)this + 0x1d5),'\x04'), 0x10 < iVar3)
      ) {
     return -1;

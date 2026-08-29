@@ -21,6 +21,7 @@ int FUN_006d6290(AnonShape_006D6290_6C97E0B2 *param_1,int *param_2)
   }
   if (local_c->field_0310 != 0) {
     if ((*(uint *)(STField<int>(iVar2,0x28) + 8) & 0x4000000) != 0) {
+      /* ST_CALLSITE[006D62E8]: CALL dword ptr [0x0085bb8c] */
       EnterCriticalSection((LPCRITICAL_SECTION)(STField<int>(iVar2,0x28) + 0x4f0));
     }
     iVar3 = STField<int>(iVar2,0x28);
@@ -29,9 +30,7 @@ int FUN_006d6290(AnonShape_006D6290_6C97E0B2 *param_1,int *param_2)
       /* ST_CALLSITE[006D6318]: CALL ECX */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(iVar3 + 0x4e4))
-                /* ST_CALLSITE[006D6318]: CALL ECX */
                 (STField<undefined4>(iVar3,0x4EC),STField<int>(iVar3,0x10) + STField<int>(iVar2,0x18),
-                 /* ST_CALLSITE[006D6318]: CALL ECX */
                  STField<int>(iVar3,0x14) + STField<int>(iVar2,0x1C),STField<undefined4>(iVar2,0x20),
                  STField<undefined4>(iVar2,0x24));
     }
@@ -64,6 +63,7 @@ LAB_006d6394:
 LAB_006d6363:
       if ((local_c->field_0310 != 0) && ((*(uint *)(STField<int>(iVar2,0x28) + 8) & 0x4000000) != 0))
       {
+        /* ST_CALLSITE[006D6383]: CALL dword ptr [0x0085bb90] */
         LeaveCriticalSection((LPCRITICAL_SECTION)(STField<int>(iVar2,0x28) + 0x4f0));
       }
       return iVar3;

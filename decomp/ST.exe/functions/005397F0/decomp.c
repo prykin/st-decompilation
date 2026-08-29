@@ -24,10 +24,12 @@ int __thiscall PausePanelTy::GetMessage(PausePanelTy *this,STMessage *message)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\pause.cpp",0x9f,0,iVar3,"%s",
                                "PausePanelTy::GetMessage");
     if (iVar4 != 0) {
@@ -58,6 +60,7 @@ int __thiscall PausePanelTy::GetMessage(PausePanelTy *this,STMessage *message)
           /* ST_CALLSITE[00539903]: CALL 0x00404ea3; direct=00404EA3 PausePanelTy::ShiftControls */
           ShiftControls(this_00,1);
         }
+
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
                    this_00->field_0044);
@@ -73,6 +76,7 @@ int __thiscall PausePanelTy::GetMessage(PausePanelTy *this,STMessage *message)
           this_00->field_003C = iVar5;
           this_00->field_0172 = CASE_2;
         }
+
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
                    this_00->field_0044);
@@ -93,6 +97,7 @@ int __thiscall PausePanelTy::GetMessage(PausePanelTy *this,STMessage *message)
     g_cursorClass_00802A30->GetMessage((STMessage *)&this_00->field_0x18);
   }
   else if (SVar1 == MESS_SHARED_C000) {
+    /* ST_CALLSITE[00539960]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00538DB0_574DDCD0; source view only; no Ghidra override */
     pCVar6 = thunk_FUN_00571240("BUT_MEDIUM",0);
     /* ST_CALLSITE[00539975]: CALL 0x00402121; direct=00402121 PanelTy::PaintIBut */
     PanelTy::PaintIBut((PanelTy *)this_00,(AnonShape_00538DB0_574DDCD0 *)message,pCVar6,0x274d,1,0);

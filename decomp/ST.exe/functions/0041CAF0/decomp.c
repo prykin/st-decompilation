@@ -9,7 +9,7 @@
    00586BED -> CMP CMP EAX,0x1 | 0058A9E0 @ 0058AAD6 -> CMP CMP EAX,0x1 | 0058BD90 @ 0058BE98 -> CMP
    CMP EAX,0x1 | 0058E570 @ 0058E5D0 -> CMP CMP EAX,0x1 */
 
-int __fastcall FUN_0041caf0(AnonShape_0041CAF0_1630B9E0 *param_1)
+int __fastcall FUN_0041caf0(RecoveredRecordView_0041CAF0_18493751 *param_1)
 
 {
   byte *pbVar1;

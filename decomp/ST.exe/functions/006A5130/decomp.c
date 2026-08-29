@@ -10,8 +10,7 @@ undefined4 __cdecl FUN_006a5130(char *param_1,char param_2,int param_3)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   puStack_c = &DAT_0079d850;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;

@@ -365,7 +365,7 @@ LAB_00591fff:
 00592089  6A 00                     PUSH 0x0
 0059208B  52                        PUSH EDX
 0059208C  6A 05                     PUSH 0x5
-0059208E  FF 50 08                  CALL dword ptr [EAX + 0x8]
+0059208E  FF 50 08                  CALL dword ptr [EAX + 0x8]  ; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00592091  8B 93 5B 1A 00 00         MOV EDX,dword ptr [EBX + 0x1a5b]
 00592097  8B 82 E6 02 00 00         MOV EAX,dword ptr [EDX + 0x2e6]
 0059209D  85 C0                     TEST EAX,EAX

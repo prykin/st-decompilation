@@ -1,4 +1,4 @@
-FUN_004be240:
+TLOBaseTy::sub_004BE240:
 004BE240  55                        PUSH EBP
 004BE241  8B EC                     MOV EBP,ESP
 004BE243  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]

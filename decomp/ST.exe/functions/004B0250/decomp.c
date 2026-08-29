@@ -59,7 +59,9 @@ FUN_004b0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
     sVar15 = g_worldGrid.sizeX;
   }
   local_88[9] = (int)sVar15 / (int)(uint)DAT_008087c6;
+
   local_40 = thunk_FUN_004e81b0(param_1,param_2 + -0x32,0);
+
   local_10 = Library::DKW::LIB::MemAlloc(g_worldGrid.planeStride * 5);
   local_2c = Library::DKW::TBL::DArrayCreate(nullptr,10,4,10);
   local_18 = 0;
@@ -139,27 +141,29 @@ LAB_004b04c9:
                 if (bVar18) {
                   *(undefined1 *)((int)psVar11 + iVar16 + (int)local_10) = 4;
                   /* ST_CALLSITE[004B04E7]: CALL dword ptr [EDX + 0x2c] */
-                  dVar5 = local_c->slot_2C();
-                  if (((&STGroupBoatCVTable.vfunc_04)[dVar5] ==
-                       (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2) ||
+                  dVar5 = local_c->vfunc_2C();
+                  if (((&STGroupBoatCVTable.vfunc_4)[dVar5] ==
+                       (icall_004A0EE0_STGroupBoatC__vfunc_4_for_STGroupBoatC *)0x2) ||
                      /* ST_CALLSITE[004B04F9]: CALL dword ptr [EAX + 0x2c] */
-                     ((dVar5 = local_c->slot_2C(), dVar5 == 0x78 &&
-                      ((&STGroupBoatCVTable.vfunc_04)[*(int *)&local_c->field_0x259] ==
-                       (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2)))) {
+                     ((dVar5 = local_c->vfunc_2C(), dVar5 == 0x78 &&
+                      ((&STGroupBoatCVTable.vfunc_4)[*(int *)&local_c->field_0x259] ==
+                       (icall_004A0EE0_STGroupBoatC__vfunc_4_for_STGroupBoatC *)0x2)))) {
+
                     Library::DKW::TBL::DArrayAppend(local_2c,&local_c);
                   }
                   goto LAB_004b057d;
                 }
               }
               /* ST_CALLSITE[004B0528]: CALL dword ptr [EDX + 0x2c] */
-              dVar5 = local_c->slot_2C();
-              if (((&STGroupBoatCVTable.vfunc_04)[dVar5] ==
-                   (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2) ||
+              dVar5 = local_c->vfunc_2C();
+              if (((&STGroupBoatCVTable.vfunc_4)[dVar5] ==
+                   (icall_004A0EE0_STGroupBoatC__vfunc_4_for_STGroupBoatC *)0x2) ||
                  /* ST_CALLSITE[004B0540]: CALL dword ptr [EAX + 0x2c] */
-                 ((dVar5 = local_c->slot_2C(), dVar5 == 0x78 &&
-                  ((&STGroupBoatCVTable.vfunc_04)[*(int *)&local_c->field_0x259] ==
-                   (icall_004A0EE0_FUN_004a0ee0_for_STGroupBoatC *)0x2)))) {
+                 ((dVar5 = local_c->vfunc_2C(), dVar5 == 0x78 &&
+                  ((&STGroupBoatCVTable.vfunc_4)[*(int *)&local_c->field_0x259] ==
+                   (icall_004A0EE0_STGroupBoatC__vfunc_4_for_STGroupBoatC *)0x2)))) {
                 *(undefined1 *)((int)psVar11 + iVar16 + (int)local_10) = 6;
+
                 Library::DKW::TBL::DArrayAppend(local_2c,&local_c);
               }
               else {
@@ -179,6 +183,7 @@ LAB_004b057d:
   } while (local_18 < 4);
   if (g_array_007FA150 != nullptr) {
     g_array_007FA150->iteratorIndex = 0;
+
     iVar16 = DArrayGetNext(g_array_007FA150,(byte *)&local_c);
     while (-1 < iVar16) {
       if (local_c != nullptr) {
@@ -190,6 +195,7 @@ LAB_004b057d:
          (int)local_2e * (int)g_worldGrid.planeStride + (int)STPiece<2,2>(param_2) * (int)g_worldGrid.sizeX)
              = 2;
       }
+
       iVar16 = DArrayGetNext(g_array_007FA150,(byte *)&local_c);
     }
   }
@@ -318,6 +324,7 @@ LAB_004b057d:
                 iVar9 = -1;
                 local_54 = -1;
                 local_2c->iteratorIndex = 0;
+
                 iVar6 = DArrayGetNext(local_2c,(byte *)&local_c);
                 iVar13 = local_54;
                 if (-1 < iVar6) {
@@ -325,16 +332,19 @@ LAB_004b057d:
                   do {
                     /* ST_CALLSITE[004B099B]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                     STFishC::sub_004162B0(local_c,&local_22,(short *)((int)&param_2 + 2),&local_2e);
+
                     iVar12 = FUN_006aced8((int)local_22,(int)STPiece<2,2>(param_2),iVar16,local_14);
                     if ((iVar12 <= iVar6) && ((iVar9 < 0 || (iVar12 < iVar9)))) {
                       iVar9 = iVar12;
                     }
+
                     iVar7 = DArrayGetNext(local_2c,(byte *)&local_c);
                     iVar13 = iVar9;
                   } while (-1 < iVar7);
                 }
               }
               local_54 = iVar13;
+
               local_EAX_1940 = FUN_006aced8(iVar16,local_14,param_6,param_7);
               if (local_3c < 0) goto LAB_004b0a54;
               local_4c = local_EAX_1940 / local_88[9];

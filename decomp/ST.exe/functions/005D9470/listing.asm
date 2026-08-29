@@ -507,7 +507,7 @@ LAB_005d99fc:
 005D9A38  6A FF                     PUSH -0x1
 005D9A3A  52                        PUSH EDX
 005D9A3B  57                        PUSH EDI
-005D9A3C  E8 FF 66 0D 00            CALL 0x006b0140
+005D9A3C  E8 FF 66 0D 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 005D9A41  50                        PUSH EAX
 005D9A42  A1 6C 17 81 00            MOV EAX,[0x0081176c]
 005D9A47  8B 48 34                  MOV ECX,dword ptr [EAX + 0x34]

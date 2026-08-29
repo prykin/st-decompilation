@@ -33,6 +33,7 @@ int FUN_00673210(int param_1)
         }
       }
       DAT_00811940 = 0;
+
       iVar3 = FUN_006734c0();
       iVar4 = DAT_00811914;
       iVar5 = DAT_00857558;
@@ -55,9 +56,11 @@ int FUN_00673210(int param_1)
           /* ST_CALLSITE[006732A9]: CALL EAX */
           (*STField<code *>(PTR_0081194c,0x14))(PTR_0085753c,0);
         }
+
         thunk_FUN_00672f00();
         DAT_007d2d18 = 0x84e;
         DAT_00811940 = 0;
+
         iVar3 = FUN_006734c0();
         iVar4 = DAT_00811914;
         iVar5 = DAT_00857558;

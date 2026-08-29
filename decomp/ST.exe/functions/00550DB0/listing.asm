@@ -45,7 +45,7 @@ TradePanelTy::InitTradePanel:
 00550E43  6A 40                     PUSH 0x40
 00550E45  56                        PUSH ESI
 00550E46  68 80 86 7C 00            PUSH 0x7c8680
-00550E4B  E8 2C 49 EB FF            CALL 0x0040577c
+00550E4B  E8 2C 49 EB FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SpecPanelTy; source view only; no Ghidra override
 00550E50  83 C4 08                  ADD ESP,0x8
 00550E53  8B CB                     MOV ECX,EBX
 00550E55  50                        PUSH EAX
@@ -55,7 +55,8 @@ TradePanelTy::InitTradePanel:
 00550E62  68 1C 21 7C 00            PUSH 0x7c211c
 00550E67  51                        PUSH ECX
 00550E68  68 9D 01 00 00            PUSH 0x19d
-00550E6D  E8 3E C0 1B 00            CALL 0x0070ceb0
+TradePanelTy::InitTradePanel::override::prt_550e6d_bcd42e10:
+00550E6D  E8 3E C0 1B 00            CALL 0x0070ceb0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/cMf32;pointer:/char;/byte
 00550E72  BF 01 00 00 00            MOV EDI,0x1
 00550E77  56                        PUSH ESI
 00550E78  56                        PUSH ESI
@@ -90,7 +91,7 @@ TradePanelTy::InitTradePanel:
 00550EC7  6A FF                     PUSH -0x1
 00550EC9  56                        PUSH ESI
 00550ECA  68 70 86 7C 00            PUSH 0x7c8670
-00550ECF  E8 A8 48 EB FF            CALL 0x0040577c
+00550ECF  E8 A8 48 EB FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 00550ED4  8B 0D 94 67 80 00         MOV ECX,dword ptr [0x00806794]
 00550EDA  83 C4 08                  ADD ESP,0x8
 00550EDD  50                        PUSH EAX
@@ -190,7 +191,7 @@ LAB_00550f57:
 0055100C  89 B5 84 FC FF FF         MOV dword ptr [EBP + 0xfffffc84],ESI
 00551012  89 85 7C FB FF FF         MOV dword ptr [EBP + 0xfffffb7c],EAX
 00551018  89 BD 80 FB FF FF         MOV dword ptr [EBP + 0xfffffb80],EDI
-0055101E  E8 59 47 EB FF            CALL 0x0040577c
+0055101E  E8 59 47 EB FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 00551023  83 C4 08                  ADD ESP,0x8
 00551026  50                        PUSH EAX
 00551027  E8 D4 1B 1A 00            CALL 0x006f2c00

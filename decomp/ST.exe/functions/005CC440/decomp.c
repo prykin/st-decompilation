@@ -18,27 +18,27 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
   SettMapMTy *this_01;
   ccFntTy **ppcVar8;
   ccFntTy *local_a80 [6];
-  undefined4 local_a68;
-  undefined4 local_a64;
+  uint local_a68;
+  uint local_a64;
   DArrayTy *local_a60;
   int local_a34;
-  undefined4 local_a30;
-  undefined4 local_a2c;
+  uint local_a30;
+  uint local_a2c;
   int local_9f4;
-  undefined4 local_9f0;
-  undefined4 local_9ec;
-  undefined4 local_21c;
-  undefined4 local_1f4 [84];
+  uint local_9f0;
+  uint local_9ec;
+  uint local_21c;
+  uint local_1f4 [84];
   InternalExceptionFrame local_a4;
-  undefined4 local_60 [4];
-  undefined4 local_50;
-  undefined4 local_4c;
-  undefined4 local_48;
-  undefined4 local_30;
-  undefined4 local_2c;
-  undefined4 local_28;
+  uint local_60 [4];
+  uint local_50;
+  uint local_4c;
+  uint local_48;
+  uint local_30;
+  uint local_2c;
+  uint local_28;
   undefined4 *local_18;
-  undefined4 local_14;
+  uint local_14;
   SettMapMTy *local_8;
 
   ppcVar8 = local_a80;
@@ -52,6 +52,7 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
   memset(local_1f4, 0, 0x150); /* compiler bulk-zero initialization */
   local_a4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a4;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0);
   this_01 = local_8;
   if (iVar3 == 0) {
@@ -85,6 +86,7 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
       /* ST_CALLSITE[005CC542]: CALL dword ptr [EDX + 0x8] */
       (*local_8->field_000C->vtable->CreateObject)
                 ((SystemClassTy *)local_8->field_000C,5,&local_8->field_21FC,nullptr,local_60,0);
+
       Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_01->field_2200);
     }
     else {
@@ -118,18 +120,22 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
                   ((SystemClassTy *)this_00,6,&g_startSystem_0081176C->field_054C,nullptr,
                    local_a80,0);
       }
+
       Library::DKW::DDX::FUN_006b3430
                 ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0558);
       if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560,
                    0xfffffffe,g_startSystem_0081176C->field_0578,g_startSystem_0081176C->field_057C);
       }
       if (g_startSystem_0081176C->field_05F1 != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1,
                    0xfffffffe,g_startSystem_0081176C->field_0609,g_startSystem_0081176C->field_060D);
       }
+
       Library::DKW::DDX::FUN_006b3430
                 ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
     }
@@ -143,6 +149,7 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
     return;
   }
   g_currentExceptionFrame = local_a4.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x9d,0,iVar3,"%s",
                              "SettMapMTy::CreateCtrls");
   if (iVar4 != 0) {

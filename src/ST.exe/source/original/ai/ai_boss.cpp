@@ -27,19 +27,20 @@ int __thiscall st::fn_00647DC0(AiBossClassTy *this,undefined4 *param_1)
       puVar6 = nullptr;
     }
     else {
-      puVar6 = (byte *)&local_8->field_0x5d3;
+      puVar6 = reinterpret_cast<byte *>(&local_8->field_0x5d3);
     }
-    puVar5 = (byte *)(param_1);
+    puVar5 = reinterpret_cast<byte *>((param_1));
     memmove(puVar6, puVar5, 0x85); /* compiler REP MOVS byte copy */
     local_8->field_05D8 = 1;
     /* ST_CALLSITE[00647E26]: CALL 0x004054b1; direct=004054B1 AiEventClassTy::InitData */
     st::fn_004054B1
-              ((AiEventClassTy *)&local_8->vtable_at_1c,
+              (reinterpret_cast<AiEventClassTy *>(&local_8->vtable_at_1c),
                (int *)(local_8->field_0619 + 0x84 + (int)param_1));
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
+  /* ST_CALLSITE[00647E49]: CALL 0x00401528; direct=00401528 AiBossClassTy::sub_00647ED0 */
   st::fn_00401528(local_8);
   iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_boss.cpp"),0x29,0,iVar2,st::mutable_c_string("%s"),
                              "AiBossClassTy::InitData");
@@ -82,12 +83,12 @@ byte * __thiscall st::fn_00647EF0(AiBossClassTy *this,uint *param_1)
   pAVar2 = local_14;
   if (errorCode == 0) {
     /* ST_CALLSITE[00647F37]: CALL 0x00401d11; direct=00401D11 AiEventClassTy::PrepareToSave */
-    local_8 = st::fn_00401D11((AiEventClassTy *)&local_14->vtable_at_1c,&local_10);
+    local_8 = st::fn_00401D11(reinterpret_cast<AiEventClassTy *>(&local_14->vtable_at_1c),&local_10);
     if (pAVar2 == nullptr) {
       pAVar5 = nullptr;
     }
     else {
-      pAVar5 = (AllocationRecord_00648620 *)&pAVar2->field_0x5d3;
+      pAVar5 = reinterpret_cast<AllocationRecord_00648620 *>(&pAVar2->field_0x5d3);
     }
     /* ST_CALLSITE[00647F57]: CALL 0x00405a24; direct=00405A24 BossDataPack */
     local_c = st::fn_00405A24(pAVar5,local_8,local_10,param_1);
@@ -149,10 +150,12 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
+
   iVar3 = st::fn_0072D7F0(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_boss.cpp"),0xde,0,iVar3,
                                st::mutable_c_string("AiBossClassTy::GetMessage error mess->id == %lX Name=%d"),message->id,
                                local_10->field_0018);
@@ -168,7 +171,7 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
   if (SVar1 < MESS_TORPHIT) {
     if (SVar1 == MESS_SHARED_010F) {
       local_8 = 0;
-      /* ST_CALLSITE[00648102]: CALL 0x00403341; direct=00403341 AiBossClassTy::PrepareToSave */
+      /* ST_CALLSITE[00648102]: CALL 0x00403341; direct=00403341 AiBossClassTy::PrepareToSave; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       local_c = st::fn_00403341(local_10,&local_8);
       /* ST_CALLSITE[0064811E]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
       st::fn_00401078(g_playSystem_00802A38,PTR_s_AIBOSS_0079d614,local_c,local_8,0xc);
@@ -178,21 +181,23 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
     }
     else if (SVar1 == MESS_ID_NONE) {
       /* ST_CALLSITE[006480EB]: CALL 0x00401be0; direct=00401BE0 AiEventClassTy::GetMessage */
-      st::fn_00401BE0((AiEventClassTy *)&local_10->vtable_at_1c,message);
+      st::fn_00401BE0(reinterpret_cast<AiEventClassTy *>(&local_10->vtable_at_1c),message);
     }
     else if (SVar1 == MESS_ID_CREATE) {
-      puVar9 = (byte *)((message->arg0).ptr);
+      puVar9 = reinterpret_cast<byte *>(((message->arg0).ptr));
       if (puVar9 == nullptr) {
         st::fn_006A5E40
                   (-6,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_boss.cpp"),0x61);
       }
       /* ST_CALLSITE[006480D2]: CALL 0x00403774; direct=00403774 AiBossClassTy::InitData */
-      st::fn_00403774(this_00,st::pointer_boundary_cast<undefined4 *>(puVar9));
+      st::fn_00403774(this_00,reinterpret_cast<undefined4 *>(puVar9));
       g_aiBossClass_008117BC = this_00;
+
       st::fn_00401F69();
     }
     else if (SVar1 == MESS_SHARED_0003) {
       st::fn_0040281F();
+      /* ST_CALLSITE[006480A3]: CALL 0x00401528; direct=00401528 AiBossClassTy::sub_00647ED0 */
       st::fn_00401528(this_00);
       g_aiBossClass_008117BC = nullptr;
     }
@@ -204,7 +209,7 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
         local_10->field_0629 = uVar6;
       }
       /* ST_CALLSITE[00648186]: CALL 0x00401be0; direct=00401BE0 AiEventClassTy::GetMessage */
-      st::fn_00401BE0((AiEventClassTy *)&local_10->vtable_at_1c,message);
+      st::fn_00401BE0(reinterpret_cast<AiEventClassTy *>(&local_10->vtable_at_1c),message);
       if (g_allPlayers_007FA174 != nullptr) {
         cVar11 = '\0';
         pbVar8 = &g_bulkInitializedRecords_008087C7[0].field_0022;
@@ -226,10 +231,10 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
       DAT_0080c83a = 0;
     }
     else {
-      DAT_0080c83a = st::machine_word_boundary_cast<undefined4>(g_playSystem_00802A38->field_00E4 / 0x19);
+      DAT_0080c83a = g_playSystem_00802A38->field_00E4 / 0x19;
     }
-    puVar9 = (byte *)(&DAT_008087b6);
-    puVar12 = (byte *)(&DAT_0080c967);
+    puVar9 = reinterpret_cast<byte *>((&DAT_008087b6));
+    puVar12 = reinterpret_cast<byte *>((&DAT_0080c967));
     memmove(puVar12, puVar9, 0x1999); /* compiler REP MOVS byte copy */
     st::fn_00404197();
     uVar6 = 0xffffffff;
@@ -259,16 +264,17 @@ int __thiscall st::fn_00648030(AiBossClassTy *this,STMessage *message)
     } while (cVar11 != '\0');
     uVar6 = ~uVar6;
     pcVar10 = pcVar13 + -uVar6;
-    pcVar13 = (char *)&DAT_0080c736;
+    pcVar13 = reinterpret_cast<char *>(&DAT_0080c736);
     memmove(pcVar13, pcVar10, uVar6); /* compiler REP MOVS byte copy */
     if ((char)DAT_008087a0 == '\b') {
+
       st::fn_00405CF4();
     }
     DAT_0080c52a = DAT_0080c52a + 1;
   }
 LAB_00648291:
+
   st::fn_006E5FD0(this_00,message);
   g_currentExceptionFrame = local_54.previous;
   return 0;
 }
-

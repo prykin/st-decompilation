@@ -37,10 +37,12 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_14 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   pSVar3 = local_14;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_68.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x4e98,0,iVar2,"%s",
                                "STBoatC::SaveBoatData");
     if (iVar5 != 0) {
@@ -54,6 +56,7 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
   piVar9 = &local_14->field_0282;
   do {
     if ((uint *)*piVar9 != nullptr) {
+
       local_c = FUN_006b0020((uint *)*piVar9,(int *)&local_8);
       FreeAndNull(&local_c);
       *param_1 = *param_1 + local_8;
@@ -62,10 +65,12 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
     local_1c = (uint *)((int)local_1c + -1);
   } while (local_1c != nullptr);
   if (pSVar3->field_047B != nullptr) {
+
     local_c = FUN_006b0020(&pSVar3->field_047B->flags,(int *)&local_8);
     FreeAndNull(&local_c);
     *param_1 = *param_1 + local_8;
   }
+
   puVar2 = Library::DKW::LIB::MemAlloc(*param_1);
   *puVar2 = pSVar3->field_0020;
   puVar2[1] = pSVar3->field_0024;
@@ -230,6 +235,7 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
       *local_1c = 0;
     }
     else {
+
       local_c = FUN_006b0020((uint *)*local_18,(int *)&local_8);
       puVar4 = (byte *)(local_c);
       puVar16 = (byte *)(uVar8 + (int)puVar2);
@@ -247,6 +253,7 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
     local_10 = uVar8;
   } while (local_20 != 0);
   if (pSVar3->field_047B != nullptr) {
+
     local_c = FUN_006b0020(&pSVar3->field_047B->flags,(int *)&local_8);
     puVar4 = (byte *)(local_c);
     puVar16 = (byte *)(uVar8 + (int)puVar2);

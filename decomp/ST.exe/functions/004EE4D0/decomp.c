@@ -34,10 +34,12 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_8 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_70.previous;
+
     iVar10 = ReportDebugMessage("E:\\__titans\\Andrey\\behpanel.cpp",0xf3,0,iVar4,
                                 "%s","BehPanelTy::GetMessage");
     if (iVar10 != 0) {
@@ -137,7 +139,8 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
       }
     }
     local_f = (uint)(cVar3 == '\x03');
-    thunk_FUN_0054edf0((undefined4 *)0x17,local_2c,0,0xffffffff);
+    /* ST_CALLSITE[004EE71B]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+    STPlaySystemC::sub_0054EDF0(g_playSystem_00802A38,(undefined4 *)0x17,local_2c,0,0xffffffff);
     g_currentExceptionFrame = local_70.previous;
     return 0;
   default:
@@ -154,6 +157,7 @@ int __thiscall BehPanelTy::GetMessage(BehPanelTy *this,STMessage *message)
     bVar7 = this_00->field_01BD == '\x03';
     pcVar4 = "BUT_BAGR";
   }
+  /* ST_CALLSITE[004EE76D]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_004EE350_18D491EA; source view only; no Ghidra override */
   pCVar5 = thunk_FUN_00571240(pcVar4,0);
   /* ST_CALLSITE[004EE779]: CALL 0x004042be; direct=004042BE BehPanelTy::PaintBBut */
   PaintBBut(this_00,(AnonShape_004EE350_18D491EA *)message,pCVar5,bVar7);

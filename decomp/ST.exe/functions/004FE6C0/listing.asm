@@ -44,7 +44,7 @@ LAB_004fe6f6:
 004FE739  8B 87 DA 02 00 00         MOV EAX,dword ptr [EDI + 0x2da]
 004FE73F  56                        PUSH ESI
 004FE740  50                        PUSH EAX
-004FE741  E8 5A CC 20 00            CALL 0x0070b3a0
+004FE741  E8 5A CC 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override
 004FE746  8B 5D FC                  MOV EBX,dword ptr [EBP + -0x4]
 004FE749  83 C4 08                  ADD ESP,0x8
 004FE74C  68 FF 00 00 00            PUSH 0xff
@@ -97,7 +97,7 @@ LAB_004fe7ce:
 004FE7CE  8B 8F DA 02 00 00         MOV ECX,dword ptr [EDI + 0x2da]
 004FE7D4  6A 02                     PUSH 0x2
 004FE7D6  51                        PUSH ECX
-004FE7D7  E8 C4 CB 20 00            CALL 0x0070b3a0
+004FE7D7  E8 C4 CB 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override
 004FE7DC  8B 5D FC                  MOV EBX,dword ptr [EBP + -0x4]
 004FE7DF  83 C4 08                  ADD ESP,0x8
 004FE7E2  68 FF 00 00 00            PUSH 0xff

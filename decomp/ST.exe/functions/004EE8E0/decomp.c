@@ -13,8 +13,9 @@ BldBoatPanelTy * __cdecl CreateBldBoatPanel(void)
 {
   BldBoatPanelTy *this;
   uint *puVar2;
-  this = (BldBoatPanelTy *)FUN_006b04d0(0x296);
+  this = STPointerBoundaryCast<BldBoatPanelTy *>(FUN_006b04d0(0x296));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;

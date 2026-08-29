@@ -13,7 +13,8 @@ STRubbishC * __cdecl CreateSTRubbish(void)
 {
   STRubbishC *pSVar1;
 
-  pSVar1 = (STRubbishC *)FUN_006b04d0(0x1fe);
+  /* ST_CALLSITE[0062ECE5]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STRubbishC; signature=__stdcall;pointer:/STRubbishC;/uint */
+  pSVar1 = FUN_006b04d0(0x1fe);
   if (pSVar1 != nullptr) {
     pSVar1 = STRubbishC::STRubbishC(pSVar1);
     return pSVar1;

@@ -26,6 +26,7 @@ FUN_0062bbc0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   float local_c;
   AnonShape_0062BBC0_87279CD5 *local_8;
 
+
   local_8 = Library::DKW::LIB::MemAlloc(0x6d);
   pAVar7 = local_8;
   for (iVar6 = 0x1b; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -84,6 +85,7 @@ FUN_0062bbc0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   local_20 = local_10 * local_24 - local_c * local_28;
   local_1c = local_c * local_2c - local_14 * local_24;
   local_18 = local_14 * local_28 - local_10 * local_2c;
+
   iVar6 = thunk_FUN_0062ba50(&local_2c,(float *)&local_8->field_0x49);
   if (iVar6 == 0) {
     return nullptr;

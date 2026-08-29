@@ -26,11 +26,14 @@ uint FUN_00754fd0(AnonShape_00754FD0_6B521B56 *param_1,undefined4 param_2,ushort
   param_1->field_000C->field_001C = 0;
   param_1->field_000C->field_0040 = 0;
   param_1->field_000C->field_0044 = 0xffffffff;
+
   Library::MSVCRT::FUN_00730c40(&param_1->field_000C->field_0x36,0x7f2ce8);
-  iVar2 = FUN_00753b40((AnonShape_00753C80_4C8E695D *)param_1);
+
+  iVar2 = FUN_00753b40((RecoveredRecordView_00753C80_637B4E8C *)param_1);
   param_1->field_000C->field_0024 = iVar2;
   uVar4 = param_1->field_000C->field_0024;
   if (0 < (int)uVar4) {
+
     uVar4 = Library::DKW::FMM::FUN_006d4c50
                       ((AnonNested_00757670_0008_104EC36D *)param_1->field_0008,uVar4,
                        (short)param_1->field_0008->field_0016);
@@ -45,6 +48,7 @@ uint FUN_00754fd0(AnonShape_00754FD0_6B521B56 *param_1,undefined4 param_2,ushort
       *puVar6 = 0xffffffff;
       puVar6[1] = 0xffffffff;
       *(undefined2 *)(puVar6 + 2) = 0;
+
       uVar4 = FUN_00757360((AnonShape_00757360_9C23D284 *)param_1,
                            (AnonShape_00757360_9B4621C9 *)param_1->field_000C);
     }

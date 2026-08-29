@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_005ec6a0(AnonShape_005EC6A0_C8559927 *param_1)
+void __fastcall FUN_005ec6a0(RecoveredRecordView_005EC6A0_14461677 *param_1)
 
 {
   int iVar1_mg1;
@@ -19,10 +19,12 @@ void __fastcall FUN_005ec6a0(AnonShape_005EC6A0_C8559927 *param_1)
     local_28.arg0.words.high = param_1->field_0032;
     local_28.arg1.words.low = param_1->field_032A;
     local_28.id = 0x5ddb;
-    if ((AnonShape_005EFAE0_B406B78B *)param_1->field_0354 != nullptr) {
+    if ((RecoveredRecordView_005EFAE0_855D930D *)param_1->field_0354 !=
+        nullptr) {
+
       iVar1_mg1 = STPlaySystemC::sub_006E62D0
                             (g_playSystem_00802A38,
-                             (AnonShape_005EFAE0_B406B78B *)param_1->field_0354,&local_8);
+                             (RecoveredRecordView_005EFAE0_855D930D *)param_1->field_0354,&local_8);
       if (iVar1_mg1 != -4) {
         local_28.arg1.words.high = STField<word>(local_8,0x32);
       }

@@ -72,7 +72,8 @@ LAB_0068f70a:
 0068F70E  66 8B 86 1C 08 00 00      MOV AX,word ptr [ESI + 0x81c]
 0068F715  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 0068F718  50                        PUSH EAX
-0068F719  E8 05 64 D7 FF            CALL 0x00405b23
+AiTactClassTy::GiveObjByGrpNum::override::prt_68f719_f4036465:
+0068F719  E8 05 64 D7 FF            CALL 0x00405b23  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__thiscall;pointer:/AiFltClassTy;pointer:/AiTactClassTy;/short
 0068F71E  85 C0                     TEST EAX,EAX
 0068F720  74 11                     JZ 0x0068f733
 0068F722  6A 00                     PUSH 0x0

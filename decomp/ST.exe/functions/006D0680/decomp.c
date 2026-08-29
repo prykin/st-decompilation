@@ -1,16 +1,18 @@
-#include "../../pseudocode_runtime.h"
-
 
 /* [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
    Evidence: exact anonymous structure fingerprint shared across functions
 
    [STTypeFamilyApplier] SOURCE_FUNCTION_FAMILY.
    Evidence: one script-owned pointer shape is anchored by one library source basename, multiple
-   semantic function names, and exact first-argument call flow */
+   semantic function names, and exact first-argument call flow
 
-undefined4
-FUN_006d0680(RecoveredSourceFamily_dibcopy *param_1,int *param_2,uint *param_3,
-            RecoveredSourceFamily_dibcopy *param_4,int *param_5,uint *param_6)
+   [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=4, ignored=0,
+   unknown=0 */
+
+int FUN_006d0680(RecoveredSourceFamily_dibcopy *param_1,int *param_2,uint *param_3,
+                RecoveredSourceFamily_dibcopy *param_4,int *param_5,uint *param_6)
 
 {
   uint uVar1;
@@ -33,6 +35,7 @@ FUN_006d0680(RecoveredSourceFamily_dibcopy *param_1,int *param_2,uint *param_3,
       local_8 = -local_8;
       *param_6 = -uVar1;
     }
+
     iVar2 = FUN_006b0460(&local_24,param_5,local_14);
     if (iVar2 != 0) {
       local_14[1] = 0;
@@ -53,6 +56,7 @@ FUN_006d0680(RecoveredSourceFamily_dibcopy *param_1,int *param_2,uint *param_3,
         local_8 = -local_8;
         *param_3 = -uVar1;
       }
+
       iVar2 = FUN_006b0460(&local_24,param_2,local_14);
       if (iVar2 != 0) {
         *param_5 = *param_5 + (local_24 - *param_2);

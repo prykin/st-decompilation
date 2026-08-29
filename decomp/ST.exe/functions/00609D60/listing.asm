@@ -58,7 +58,7 @@ LAB_00609df6:
 00609E03  6A 1D                     PUSH 0x1d
 00609E05  50                        PUSH EAX
 LAB_00609e06:
-00609E06  E8 E5 FC 0F 00            CALL 0x00709af0
+00609E06  E8 E5 FC 0F 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 00609E0B  8B 0F                     MOV ECX,dword ptr [EDI]
 00609E0D  8B F0                     MOV ESI,EAX
 00609E0F  C1 E1 03                  SHL ECX,0x3

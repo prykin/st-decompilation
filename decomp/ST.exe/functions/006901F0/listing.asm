@@ -3,7 +3,8 @@ FUN_006901f0:
 006901F1  8B EC                     MOV EBP,ESP
 006901F3  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]
 006901F6  50                        PUSH EAX
-006901F7  E8 DF 2D D7 FF            CALL 0x00402fdb
+FUN_006901f0::override::prt_6901f7_e034937e:
+006901F7  E8 DF 2D D7 FF            CALL 0x00402fdb  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__thiscall;pointer:/AiFltClassTy;pointer:/void;/int
 006901FC  85 C0                     TEST EAX,EAX
 006901FE  74 0F                     JZ 0x0069020f
 00690200  8B 4D 0C                  MOV ECX,dword ptr [EBP + 0xc]

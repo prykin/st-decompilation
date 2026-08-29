@@ -58,7 +58,7 @@ LAB_0042da27:
 0042DA34  51                        PUSH ECX
 0042DA35  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 0042DA3B  52                        PUSH EDX
-0042DA3C  E8 79 4E FD FF            CALL 0x004028ba
+0042DA3C  E8 79 4E FD FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override
 0042DA41  8D 4D F4                  LEA ECX,[EBP + -0xc]
 0042DA44  8D 55 F8                  LEA EDX,[EBP + -0x8]
 0042DA47  51                        PUSH ECX
@@ -78,7 +78,7 @@ LAB_0042da64:
 0042DA73  51                        PUSH ECX
 0042DA74  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 0042DA7A  52                        PUSH EDX
-0042DA7B  E8 3A 4E FD FF            CALL 0x004028ba
+0042DA7B  E8 3A 4E FD FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override
 0042DA80  8D 4D F4                  LEA ECX,[EBP + -0xc]
 0042DA83  8D 55 F8                  LEA EDX,[EBP + -0x8]
 0042DA86  51                        PUSH ECX
@@ -148,7 +148,7 @@ LAB_0042daef:
 0042DB26  8A 14 4D D7 4F 7F 00      MOV DL,byte ptr [ECX*0x2 + 0x7f4fd7]
 0042DB2D  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 0042DB33  52                        PUSH EDX
-0042DB34  E8 81 4D FD FF            CALL 0x004028ba
+0042DB34  E8 81 4D FD FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override
 0042DB39  8D 4D F4                  LEA ECX,[EBP + -0xc]
 0042DB3C  8D 55 F8                  LEA EDX,[EBP + -0x8]
 0042DB3F  51                        PUSH ECX
@@ -243,7 +243,7 @@ LAB_0042dc14:
 0042DC23  51                        PUSH ECX
 0042DC24  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 0042DC2A  52                        PUSH EDX
-0042DC2B  E8 8A 4C FD FF            CALL 0x004028ba
+0042DC2B  E8 8A 4C FD FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override
 0042DC30  8D 4D F4                  LEA ECX,[EBP + -0xc]
 0042DC33  8D 55 F8                  LEA EDX,[EBP + -0x8]
 0042DC36  51                        PUSH ECX
@@ -315,7 +315,7 @@ LAB_0042dce0:
 0042DCEF  51                        PUSH ECX
 0042DCF0  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 0042DCF6  52                        PUSH EDX
-0042DCF7  E8 BE 4B FD FF            CALL 0x004028ba
+0042DCF7  E8 BE 4B FD FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override
 0042DCFC  8D 4D F4                  LEA ECX,[EBP + -0xc]
 0042DCFF  8D 55 F8                  LEA EDX,[EBP + -0x8]
 0042DD02  51                        PUSH ECX
@@ -385,7 +385,7 @@ LAB_0042dd67:
 0042DD9E  8A 14 4D 87 4F 7F 00      MOV DL,byte ptr [ECX*0x2 + 0x7f4f87]
 0042DDA5  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 0042DDAB  52                        PUSH EDX
-0042DDAC  E8 09 4B FD FF            CALL 0x004028ba
+0042DDAC  E8 09 4B FD FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override
 0042DDB1  8D 4D F4                  LEA ECX,[EBP + -0xc]
 0042DDB4  8D 55 F8                  LEA EDX,[EBP + -0x8]
 0042DDB7  51                        PUSH ECX

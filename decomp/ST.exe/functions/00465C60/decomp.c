@@ -120,7 +120,7 @@ int __thiscall STBoatC::LoadRC(STBoatC *this,int *param_1)
   int iVar23;
   short sVar24;
   byte bVar25;
-  undefined4 local_2c [2];
+  uint local_2c [2];
   uint local_24;
   short local_20;
   uint local_1c;
@@ -149,6 +149,7 @@ int __thiscall STBoatC::LoadRC(STBoatC *this,int *param_1)
     this->field_04BD = 0;
     *(undefined4 *)&this->field_0x4d1 = 0;
     *(undefined4 *)&this->field_0x4cd = 0;
+
     iVar5 = thunk_FUN_0048d440(this);
     if (iVar5 == 0) {
 LAB_00469972:
@@ -230,6 +231,7 @@ LAB_00465cda:
           }
         }
       }
+
       local_EAX_437 = thunk_FUN_0048d440(this);
       if (local_EAX_437 == 0) {
         return 2;
@@ -278,6 +280,7 @@ cf_common_exit_00465E7B:
                  ((pSVar1 = (STBoatC *)
                             STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0],
                   pSVar1 != nullptr && (pSVar1->field_0018 == this->field_04A1)))))) &&
+
                (iVar8 = thunk_FUN_004e1490(pSVar1), iVar8 != 1)) {
               /* ST_CALLSITE[004661F7]: CALL 0x00404908; direct=00404908 STBoatC::sub_0048DFD0 */
               /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -338,6 +341,7 @@ cf_common_exit_00465E7B:
               }
             }
           }
+
           local_EAX_1865 = thunk_FUN_0048d440(this);
           if (local_EAX_1865 == 0) goto cf_common_exit_00467FE4;
           if (local_EAX_1865 == 1) {
@@ -373,6 +377,7 @@ switchD_004660af_caseD_3:
           sub_00481520(this,(int)this->field_049B,(int)this->field_049D,this->field_049F + 1);
           break;
         case -1:
+
           local_EAX_1132 =
                ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1d02,0,0,"%s",
                                   "STBoatC::LoadRC, move to mine error");
@@ -450,6 +455,7 @@ LAB_00465f11:
           }
         }
       }
+
       local_EAX_1004 = thunk_FUN_0048d440(this);
       if (local_EAX_1004 == 0) {
         /* ST_CALLSITE[00466059]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
@@ -515,10 +521,12 @@ cf_common_exit_00465E5A:
           if (pSVar1->field_0018 != this->field_04A1) {
             return 2;
           }
+
           iVar8 = thunk_FUN_004e1490(pSVar1);
           if (iVar8 != 1) {
             return 2;
           }
+
           thunk_FUN_004e15f0(pSVar1,this->field_0018);
           sVar12 = this->field_049D;
           sVar18 = this->field_049B;
@@ -576,6 +584,7 @@ LAB_00468322:
             }
           }
         }
+
         local_EAX_3722 = thunk_FUN_0048d440(this);
         if (local_EAX_3722 == 0) {
           /* ST_CALLSITE[00466AF7]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
@@ -662,6 +671,7 @@ LAB_00466087:
                 }
               }
             }
+
             local_EAX_4894 = thunk_FUN_0048d440(this);
             if (local_EAX_4894 == 0) {
               /* ST_CALLSITE[00466F8B]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
@@ -698,6 +708,7 @@ LAB_00466087:
           case 3:
             goto switchD_004660af_caseD_3;
           case -1:
+
             local_EAX_4428 =
                  ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1e6e,0,0,"%s"
                                     ,"STBoatC::LoadRC, move to mine 2 error");
@@ -779,6 +790,7 @@ LAB_00466bff:
             }
           }
         }
+
         local_EAX_4314 = thunk_FUN_0048d440(this);
         if (local_EAX_4314 == 0) {
           /* ST_CALLSITE[00466D47]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
@@ -838,6 +850,7 @@ LAB_00466bff:
               }
             }
           }
+
           local_EAX_5538 = thunk_FUN_0048d440(this);
           if (local_EAX_5538 == 0) {
             /* ST_CALLSITE[0046720F]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
@@ -866,6 +879,7 @@ LAB_00466bff:
               sub_00481520(this,(int)this->field_049B,(int)this->field_049D,this->field_049F + 1);
             }
             else {
+
               local_EAX_6580 =
                    ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1efd,0,0,
                                       "%s","STBoatC::LoadRC, LOADRC_MINE");
@@ -895,10 +909,14 @@ LAB_00468b38:
           goto LAB_00468b42;
         }
         if ((*(int *)&pSVar6[0x21].field_0x10 == 0) && (*(int *)&pSVar6[0x10].field_0x5 != 6)) {
+
           thunk_FUN_004e1930(pSVar6,&local_8,0);
+          /* ST_CALLSITE[00467323]: CALL 0x00404e67; direct=00404E67 thunk_FUN_00430910; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
           iVar8 = thunk_FUN_00430910(local_8);
+
           local_18 = thunk_FUN_004e1930(pSVar6,&local_8,iVar8);
           if (local_18 == iVar8) {
+
             thunk_FUN_004e16d0(pSVar6,this->field_0018);
             if (*(int *)&this->field_0x4cd % 0x78 == 1) {
               SVar2 = this->field_06F7;
@@ -941,6 +959,7 @@ LAB_0046739a:
               }
             }
             else {
+
               iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1f2f,0,0,
                                          "%s","STBoatC::LoadRC, LOADRC_MINE - unknown resource type");
               if (iVar7 != 0) {
@@ -1046,6 +1065,7 @@ cf_common_exit_00468C50:
                     }
                   }
                 }
+
                 local_EAX_9083 = thunk_FUN_0048d440(this);
                 if (local_EAX_9083 == 0) goto cf_common_exit_00467FE4;
                 if (local_EAX_9083 != 1) goto LAB_0046817e;
@@ -1075,11 +1095,14 @@ cf_common_exit_00468C50:
                   ((pSVar1 = (STBoatC *)
                              STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0],
                    pSVar1 == nullptr || ((HoloTy *)pSVar1->field_0018 != this->field_04AB))))
+
                  || ((iVar8 = thunk_FUN_004e1490(pSVar1), iVar8 != 1 ||
+
                      (local_EAX_9412 = thunk_FUN_0048d650(this,(STFishC *)pSVar1),
                      local_EAX_9412 != 1)))) goto cf_common_exit_004699E9;
               /* ST_CALLSITE[00468134]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
               sub_004602B0(this);
+
               thunk_FUN_004e15f0(pSVar1,this->field_0018);
               *(undefined4 *)&this->field_0x4cd = 0;
               *(undefined4 *)&this->field_0x4d5 = 10;
@@ -1100,6 +1123,7 @@ cf_common_exit_00468C50:
               }
               goto LAB_00467e48;
             case -1:
+
               local_EAX_8422 =
                    ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x201c,0,0,
                                       "%s","STBoatC::LoadRC, correct move to depot error");
@@ -1158,14 +1182,17 @@ cf_error_exit_004660E9:
               if ((HoloTy *)pSVar1->field_0018 != this->field_04AB) {
                 return 2;
               }
+
               iVar8 = thunk_FUN_004e1490(pSVar1);
               if (iVar8 != 1) {
                 return 2;
               }
+
               local_EAX_9852 = thunk_FUN_0048d650(this,(STFishC *)pSVar1);
               if (local_EAX_9852 != 1) {
                 return 2;
               }
+
               thunk_FUN_004e15f0(pSVar1,this->field_0018);
               iVar8 = (int)this->field_04C9;
               sVar12 = this->field_04C7;
@@ -1221,6 +1248,7 @@ cf_error_exit_004660E9:
 LAB_00468493:
               bVar4 = false;
             }
+
             local_EAX_10296 = thunk_FUN_0048d440(this);
             if (local_EAX_10296 != 0) {
               if (local_EAX_10296 == 7) {
@@ -1269,11 +1297,12 @@ LAB_00468493:
                 this->field_04D9 = CASE_1;
               }
               if (this->field_04D9 == CASE_1) {
-                /* ST_CALLSITE[00468CEF]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+                /* ST_CALLSITE[00468CEF]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
                 uVar9 = sub_004176C0(this,this->field_04CB);
                 /* ST_CALLSITE[00468CF7]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
                 uVar9 = sub_00417910(this,(short)uVar9);
                 if (uVar9 == 0xffffffff) {
+
                   local_EAX_12513 =
                        ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2196,0,0,
                                           "%s","STBoatC::LoadRC, LOADRC_PDEPOT");
@@ -1304,6 +1333,7 @@ LAB_00468493:
                 if (this->field_02BF != '\0') {
                   local_c = (undefined4 *)&this->field_0x2b3;
                   do {
+
                     puVar10 = thunk_FUN_0041dc40(local_2c,(short)*local_c,*(ushort *)(local_c + 1),
                                                  this->field_006C);
                     local_24 = *puVar10;
@@ -1361,6 +1391,7 @@ LAB_00468493:
                   } while ((int)param_1_after_write < (int)(uint)(byte)this->field_02BF);
                 }
                 if (local_10 == -1) {
+
                   local_EAX_13191 =
                        ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x21bc,0,0,
                                           "%s","STBoatC::LoadRC, LOADRC_PDEPOT 2");
@@ -1399,11 +1430,12 @@ LAB_00468493:
                     this->field_04D9 = CASE_1;
                   }
                   if (this->field_04D9 == CASE_1) {
-                    /* ST_CALLSITE[00469478]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+                    /* ST_CALLSITE[00469478]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
                     uVar9 = sub_004176C0(this,this->field_04CB);
                     /* ST_CALLSITE[00469480]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
                     uVar9 = sub_00417910(this,(short)uVar9);
                     if (uVar9 == 0xffffffff) {
+
                       local_EAX_14419 =
                            ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x223c,0,0,
                                               "%s",
@@ -1433,6 +1465,7 @@ LAB_00468493:
                     if (this->field_02BF != '\0') {
                       local_c = (undefined4 *)&this->field_0x2b3;
                       do {
+
                         puVar10 = thunk_FUN_0041dc40(local_2c,(short)*local_c,
                                                      *(ushort *)(local_c + 1),this->field_006C);
                         local_24 = *puVar10;
@@ -1492,6 +1525,7 @@ LAB_00468493:
                       } while ((int)param_1_after_write_2 < (int)(uint)(byte)this->field_02BF);
                     }
                     if (local_10 == -1) {
+
                       local_EAX_15213 =
                            ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2262,0,0,
                                               "%s",
@@ -1506,6 +1540,7 @@ LAB_00468493:
                       *(undefined4 *)&this->field_0x4cd = 0;
                       *(undefined4 *)&this->field_0x4d1 = 0;
                       this->field_00B7 = 3;
+
                       local_EAX_15042 = thunk_FUN_0048d440(this);
                       if (local_EAX_15042 == 0) {
                         /* ST_CALLSITE[0046972D]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
@@ -1539,6 +1574,7 @@ LAB_00468493:
                 goto cf_common_exit_004699E9;
               }
               if (iVar8 != 0xe) {
+
                 local_EAX_15421 =
                      ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x22ad,0,0,
                                         "%s","STBoatC::LoadRC - incorrect entry");
@@ -1565,6 +1601,7 @@ LAB_00468493:
               default:
                 goto cf_common_exit_004699E9;
               case -1:
+
                 local_EAX_15305 =
                      ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x228f,0,0,
                                         "%s","STBoatC::LoadRC, LOADRC_MOVEWAITUNLOAD error");
@@ -1679,6 +1716,7 @@ LAB_004692be:
                       iVar16 = iVar8;
                     }
                     thunk_FUN_004e1d70(pSVar6,0xde,iVar16 * 0x14);
+
                     thunk_FUN_004e16d0(pSVar6,this->field_0018);
                     this->field_07DA = this->field_07DA - iVar16;
                   }
@@ -1688,6 +1726,7 @@ LAB_004692be:
                     iVar16 = iVar8;
                   }
                   thunk_FUN_004e1d70(pSVar6,0xdd,iVar16 * 3);
+
                   thunk_FUN_004e16d0(pSVar6,this->field_0018);
                   this->field_07D6 = this->field_07D6 - iVar16;
                 }
@@ -1697,6 +1736,7 @@ LAB_004692be:
                   iVar16 = iVar8;
                 }
                 thunk_FUN_004e1d70(pSVar6,0xdc,iVar16 * 5);
+
                 thunk_FUN_004e16d0(pSVar6,this->field_0018);
                 this->field_07D2 = this->field_07D2 - iVar16;
               }
@@ -1732,6 +1772,7 @@ LAB_004692be:
                    ))) && ((pSVar6 = STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0]
                            , pSVar6 != nullptr &&
                            (*(HoloTy **)&pSVar6->field_0x18 == this->field_04AB)))) {
+
                 thunk_FUN_004e1690(pSVar6,this->field_0018);
               }
               return 0;
@@ -1749,6 +1790,7 @@ LAB_004692be:
                    ((STFishC *)
                     STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0] !=
                     nullptr)))))) {
+
                 thunk_FUN_0048d650(this,(STFishC *)
                                         STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects
                                         [0]);
@@ -1757,6 +1799,7 @@ LAB_004692be:
               sub_00481520(this,(int)this->field_04C5,(int)this->field_04C7,(int)this->field_04C9);
               goto cf_common_exit_00468C49;
             case -1:
+
               local_EAX_11081 =
                    ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2126,0,0,
                                       "%s","STBoatC::LoadRC, move to depot 2 error");
@@ -1831,6 +1874,7 @@ LAB_004685d3:
               }
             }
           }
+
           local_EAX_10926 = thunk_FUN_0048d440(this);
           if (local_EAX_10926 == 0) {
             /* ST_CALLSITE[0046871B]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
@@ -1863,6 +1907,7 @@ LAB_004685d3:
                    ((pSVar1 = (STBoatC *)
                               STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0],
                     pSVar1 != nullptr && ((HoloTy *)pSVar1->field_0018 == this->field_04AB)))
+
                    ))) && (iVar8 = thunk_FUN_004e1490(pSVar1), iVar8 != 1)) {
                 /* ST_CALLSITE[00467A68]: CALL 0x00404908; direct=00404908 STBoatC::sub_0048DFD0 */
                 /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -1924,6 +1969,7 @@ LAB_004685d3:
                 local_c = (undefined4 *)0x1;
               }
             }
+
             local_EAX_8163 = thunk_FUN_0048d440(this);
             if (local_EAX_8163 == 0) goto cf_common_exit_00467FE4;
             if (local_EAX_8163 == 7) {
@@ -1956,6 +2002,7 @@ LAB_004685d3:
             sub_00481520(this,(int)this->field_04A5,(int)this->field_04A7,this->field_04A9 + 1);
             break;
           case -1:
+
             local_EAX_7418 =
                  ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1fb8,0,0,"%s"
                                     ,"STBoatC::LoadRC, move to depot error");
@@ -2030,6 +2077,7 @@ LAB_0046779f:
             }
           }
         }
+
         local_EAX_7290 = thunk_FUN_0048d440(this);
         if (local_EAX_7290 == 0) {
           /* ST_CALLSITE[004678E7]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
@@ -2073,6 +2121,7 @@ LAB_0046779f:
       default:
         goto cf_common_exit_004699E9;
       case -1:
+
         local_EAX_6719 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1f53,0,0,"%s",
                                 "STBoatC::LoadRC, LOADRC_MOVEWAITLOAD error");
@@ -2152,6 +2201,7 @@ LAB_00467da5:
             }
           }
         }
+
         local_EAX_2651 = thunk_FUN_0048d440(this);
         if (local_EAX_2651 == 0) {
 cf_common_exit_00467FE4:
@@ -2196,9 +2246,11 @@ LAB_00466744:
              ((pSVar1 = (STBoatC *)
                         STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0],
               pSVar1 == nullptr || (pSVar1->field_0018 != this->field_04A1)))))) ||
+
            (iVar8 = thunk_FUN_004e1490(pSVar1), iVar8 != 1)) goto cf_common_exit_004699E9;
         /* ST_CALLSITE[004667EF]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
         sub_004602B0(this);
+
         thunk_FUN_004e15f0(pSVar1,this->field_0018);
         *(undefined4 *)&this->field_0x4cd = 0;
         *(undefined4 *)&this->field_0x4d5 = 4;
@@ -2225,6 +2277,7 @@ LAB_00467e48:
       sub_00481520(this,(int)this->field_04AF,(int)this->field_04B1,(int)this->field_04B3);
       break;
     case -1:
+
       local_EAX_2055 =
            ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1d66,0,0,"%s",
                               "STBoatC::LoadRC, correct move to mine error");
@@ -2287,6 +2340,7 @@ switchD_0046878c_caseD_1:
         local_c = (undefined4 *)0x1;
       }
     }
+
     local_EAX_11852 = thunk_FUN_0048d440(this);
     if (local_EAX_11852 == 0) {
       /* ST_CALLSITE[00468AB9]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
@@ -2331,6 +2385,7 @@ switchD_0046878c_caseD_1:
       ((((sVar19 < g_worldGrid.sizeY && (-1 < sVar18)) && (sVar18 < g_worldGrid.sizeZ)) &&
        ((STFishC *)
         STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0] != nullptr)))))) {
+
     thunk_FUN_0048d650(this,(STFishC *)
                             STGridAt3D(g_worldGrid, sVar12, sVar19, sVar18).objects[0]);
   }

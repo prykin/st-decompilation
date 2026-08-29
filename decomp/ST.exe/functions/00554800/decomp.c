@@ -11,13 +11,13 @@ cLoadingTy::InitParam
           int param_6,int param_7,int param_8,int param_9)
 
 {
-  ushort *puVar1;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar1;
   ccFntTy *pcVar2;
   uint uVar3;
   cLoadingTy *pcVar5;
   int local_EAX_36;
   byte *puVar6;
-  char *resourceString;
+  RecoveredRecord_007111C0_C04D120D *resourceString;
   int iVar6;
   int iVar7;
   int iVar8;
@@ -29,6 +29,7 @@ cLoadingTy::InitParam
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   local_EAX_36 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pcVar5 = local_8;
   if (local_EAX_36 == 0) {
@@ -42,16 +43,17 @@ cLoadingTy::InitParam
       param_4 = (local_8->field_0000->bmiHeader).biHeight;
     }
     local_8->field_0020 = param_4;
-    puVar1 = local_8->field_0004;
+    pRVar1 = (RecoveredRecord_006B4FA0_DAC3A217 *)local_8->field_0004;
     local_8->field_000C = 0;
     local_8->field_0010 = 0;
     local_8->field_0038 = 0;
-    uVar10 = *(uint *)(puVar1 + 10);
+    uVar10 = *(uint *)&pRVar1[1].field_0x4;
     if (uVar10 == 0) {
-      uVar10 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-               *(int *)(puVar1 + 4);
+      uVar10 = ((uint)pRVar1->field_000E * *(int *)&pRVar1->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+               *(int *)&pRVar1->field_0x8;
     }
-    puVar6 = (byte *)FUN_006b4fa0((int *)puVar1);
+
+    puVar6 = STPointerBoundaryCast<byte *>(FUN_006b4fa0(pRVar1));
     memset(puVar6, 0, uVar10); /* compiler bulk-zero initialization */
     pcVar2 = pcVar5->field_0008;
     iVar7 = pcVar5->field_0020;
@@ -68,7 +70,9 @@ cLoadingTy::InitParam
     pcVar5->field_002C = param_7;
     pcVar2->field_0058 = param_6;
     pcVar2->field_005C = param_7;
+    /* ST_CALLSITE[005548ED]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_007111C0_C04D120D; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_007111C0_C04D120D;/WinDef.h/UINT;/WinDef.h/HINSTANCE */
     resourceString = LoadResourceString(0x267a,g_hINSTANCE_00807618);
+
     iVar6 = FUN_007111c0(pcVar5->field_0008,resourceString);
     iVar9 = pcVar5->field_002C + iVar6;
     iVar7 = pcVar5->field_0020 / iVar9;
@@ -81,12 +85,15 @@ cLoadingTy::InitParam
     pcVar5->field_0058 = param_8;
     pcVar5->field_0054 = param_9;
     FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
+
     FUN_006b4640(g_dDXContext_0080759C,0,0,pcVar5->field_0000,nullptr);
+
     Library::DKW::DDX::FUN_006bb370(g_dDXContext_0080759C,0,0);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar8 = ReportDebugMessage("E:\\__titans\\grig\\loading.cpp",0xac,0,local_EAX_36,
                              "%s","cLoadingTy::InitParam");
   if (iVar8 != 0) {

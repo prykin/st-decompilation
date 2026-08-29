@@ -1,9 +1,21 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079B3C4
+   Entries: 0040588A
+   Slots: 0xDC
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_physical_vtable_owner_and_slot;
+   receiver_extent=619/619; unique_owner_for_target
+
+   [STSwitchEnumApplier] Switch target field_0267 uses
+   /SubmarineTitans/Recovered/Enums/STFishC_field_0267State. Cases:
+   CASE_E7=231;CASE_E8=232;CASE_E9=233;CASE_EA=234;CASE_EB=235 */
+
 undefined4 __thiscall
-FUN_0057bd70(void *this,short param_1,short param_2,short param_3,short param_4,short param_5,
-            short param_6)
+STFishC::vfunc_DC(STFishC *this,short param_1,short param_2,short param_3,short param_4,
+                 short param_5,short param_6)
 
 {
   short sVar1;
@@ -16,18 +28,18 @@ FUN_0057bd70(void *this,short param_1,short param_2,short param_3,short param_4,
   sVar2 = 0;
   sVar5 = 0;
   sVar6 = 0;
-  switch(STField<undefined4>(this,0x267)) {
-  case 0xe7:
-  case 0xe9:
+  switch(this->field_0267) {
+  case CASE_E7:
+  case CASE_E9:
     sVar2 = 0x1c;
     sVar5 = 0x1c;
     sVar6 = 0x1c;
     goto switchD_0057bd8f_default;
-  case 0xe8:
-  case 0xea:
+  case CASE_E8:
+  case CASE_EA:
     sVar2 = 0x16;
     break;
-  case 0xeb:
+  case CASE_EB:
     sVar2 = 0x1c;
     break;
   default:
@@ -36,12 +48,12 @@ FUN_0057bd70(void *this,short param_1,short param_2,short param_3,short param_4,
   sVar5 = 0xc;
   sVar6 = 0xc;
 switchD_0057bd8f_default:
-  sVar3 = STField<short>(this,0x43) - sVar5;
-  sVar4 = STField<short>(this,0x45) - sVar6;
-  sVar1 = STField<short>(this,0x41) - sVar2;
-  sVar2 = sVar2 + STField<short>(this,0x41);
-  sVar5 = sVar5 + STField<short>(this,0x43);
-  sVar6 = sVar6 + STField<short>(this,0x45);
+  sVar3 = this->field_0043 - sVar5;
+  sVar4 = this->field_0045 - sVar6;
+  sVar1 = this->field_0041 - sVar2;
+  sVar2 = sVar2 + this->field_0041;
+  sVar5 = sVar5 + this->field_0043;
+  sVar6 = sVar6 + this->field_0045;
   if ((((((sVar1 <= param_1) && (param_1 <= sVar2)) || ((sVar1 <= param_4 && (param_4 <= sVar2))))
        || ((param_1 <= sVar1 && (sVar2 <= param_4)))) &&
       (((sVar3 <= param_2 && (param_2 <= sVar5)) ||

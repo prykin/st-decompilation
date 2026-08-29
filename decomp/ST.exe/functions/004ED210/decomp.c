@@ -15,6 +15,7 @@ undefined4 __fastcall FUN_004ed210(TLOBaseTy *param_1)
 
   TVar3 = param_1->field_04D0;
   if ((TVar3 == CASE_3) || (TVar3 == CASE_5)) {
+
     iVar4 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
     if (iVar4 != param_1->field_01F5->field_020C) {
       return 0;
@@ -58,7 +59,8 @@ undefined4 __fastcall FUN_004ed210(TLOBaseTy *param_1)
     /* ST_CALLSITE[004ED381]: CALL 0x00403efe; direct=00403EFE TLOBaseTy::sub_004C4550 */
     TLOBaseTy::sub_004C4550(param_1,nullptr);
   }
-  thunk_FUN_004ecea0((AnonShape_004D9C80_80F657D3 *)param_1);
+
+  thunk_FUN_004ecea0((RecoveredRecordView_004D9C80_63C53606 *)param_1);
   /* ST_CALLSITE[004ED3AE]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
   TLOBaseTy::RotateSpr(param_1,0);
   return 0;

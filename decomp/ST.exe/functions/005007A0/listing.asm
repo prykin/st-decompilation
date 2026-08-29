@@ -119,7 +119,7 @@ LAB_00500901:
 0050090A  8A 96 A8 02 00 00         MOV DL,byte ptr [ESI + 0x2a8]
 00500910  50                        PUSH EAX
 00500911  8B FA                     MOV EDI,EDX
-00500913  E8 88 AA 20 00            CALL 0x0070b3a0
+00500913  E8 88 AA 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 00500918  50                        PUSH EAX
 00500919  B8 05 00 00 00            MOV EAX,0x5
 0050091E  8D 4C BF 05               LEA ECX,[EDI + EDI*0x4 + 0x5]
@@ -209,7 +209,7 @@ LAB_00500a11:
 00500A1A  50                        PUSH EAX
 00500A1B  8B 86 A2 02 00 00         MOV EAX,dword ptr [ESI + 0x2a2]
 00500A21  50                        PUSH EAX
-00500A22  E8 79 A9 20 00            CALL 0x0070b3a0
+00500A22  E8 79 A9 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 00500A27  50                        PUSH EAX
 00500A28  33 C0                     XOR EAX,EAX
 00500A2A  8A 84 37 A8 02 00 00      MOV AL,byte ptr [EDI + ESI*0x1 + 0x2a8]

@@ -13,8 +13,8 @@ void FUN_004ab470(uint *param_1,int param_2)
   thunk_FUN_004a8f20(1);
   DAT_0080674c = 2;
   DAT_0080745d = 0;
-  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::thunk_FUN_00567510
-            ((AnonReceiver_00567510 *)&g_sound,(int)DAT_008073d8,DAT_008073dc,DAT_008073fc,
+  SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00567510::thunk_FUN_00567510
+            ((RecoveredReceiver_00567510 *)&g_sound,(int)DAT_008073d8,DAT_008073dc,DAT_008073fc,
              DAT_0080743c & 0xff);
   DAT_008073e0 = 0;
   return;

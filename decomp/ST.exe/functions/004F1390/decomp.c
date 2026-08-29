@@ -19,13 +19,16 @@ CPanelTy::OutProc(CPanelTy *this,DDXContext *param_1,undefined4 param_2,undefine
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
+
   errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (errorCode == 0) {
+
     FUN_006b4640(param_1,param_4,param_5,param_8,nullptr);
     g_currentExceptionFrame = local_48.previous;
     return;
   }
   g_currentExceptionFrame = local_48.previous;
+
   iVar2 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0xf,0,errorCode,"%s",
                              "CPanelTy::OutProc");
   if (iVar2 != 0) {

@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_004df2b0(AnonShape_004DC660_217FA9F0 *param_1)
+undefined4 __fastcall FUN_004df2b0(RecoveredRecordView_004DC660_DF43CFA8 *param_1)
 
 {
   uint uVar1;

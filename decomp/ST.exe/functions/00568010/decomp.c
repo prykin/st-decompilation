@@ -10,19 +10,19 @@
    and decompilation contains no value return
 
    [STHiddenThisApplier] Anonymous hidden receiver recovered as
-   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00568010.
+   /SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_00568010.
    Evidence: incoming_receiver_captures=1; receiver_accesses=10; incoming_edx_uses=0; calls=4;
    ecx_pointer_setup=4; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[4];
    expected_stack=4; receiver_family_members=2; adopt_untyped_existing_thiscall
 
    [STSwitchEnumApplier] Switch target param_1 uses
-   /SubmarineTitans/Recovered/Enums/SubmarineTitans_Recovered_HiddenThis_AnonReceiver_00568010_sub_00568010_param_1Enum.
+   /SubmarineTitans/Recovered/Enums/SubmarineTitans_Recovered_HiddenThis_RecoveredReceiver_00568010_sub_00568010_param_1Enum.
    Cases: CASE_1=1;CASE_2=2;CASE_4=4;CASE_8=8 */
 
 void __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00568010::FUN_00568010
-          (AnonReceiver_00568010 *this,
-          SubmarineTitans_Recovered_HiddenThis_AnonReceiver_00568010_sub_00568010_param_1Enum
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00568010::FUN_00568010
+          (RecoveredReceiver_00568010 *this,
+          SubmarineTitans_Recovered_HiddenThis_RecoveredReceiver_00568010_sub_00568010_param_1Enum
           param_1)
 
 {
@@ -33,7 +33,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00568010::FUN_00568010
   SoundClassTy *local_c;
   uint local_8;
 
-  if (*(int *)&this->field_0xf8b != 0) {
+  if (this->field_0F8B != 0) {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = (SoundClassTy *)this;

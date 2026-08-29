@@ -26,6 +26,7 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pGVar3 = local_8;
   if (errorCode == 0) {
@@ -34,10 +35,12 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this)
     }
     FUN_0070b1d0((int *)&PTR_00806724);
     if (g_interSystem_00802A28 != nullptr) {
-      thunk_FUN_005711d0(&DAT_00807620,(int *)&g_interSystem_00802A28);
+      /* ST_CALLSITE[00577147]: CALL 0x00401d3e; direct=00401D3E STAppC::sub_005711D0 */
+      STAppC::sub_005711D0((STAppC *)&DAT_00807620,(int *)&g_interSystem_00802A28);
     }
     if (g_playSystem_00802A38 != nullptr) {
-      thunk_FUN_005711d0(&DAT_00807620,(int *)&g_playSystem_00802A38);
+      /* ST_CALLSITE[0057715F]: CALL 0x00401d3e; direct=00401D3E STAppC::sub_005711D0 */
+      STAppC::sub_005711D0((STAppC *)&DAT_00807620,(int *)&g_playSystem_00802A38);
     }
     thunk_FUN_0058d720();
     pSVar2 = g_sT3DSMAPContext_00807598;
@@ -58,6 +61,7 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\tsystem.cpp",0xa7,0,errorCode,"%s",
                              "GameSystemC::DoneSystem");
   if (iVar4 != 0) {

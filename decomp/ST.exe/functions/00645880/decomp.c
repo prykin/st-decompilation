@@ -16,17 +16,17 @@ void __cdecl FUN_00645880(RecoveredRecord_STBoatC_00645880 *param_1)
   uint *puVar5;
   uint uVar6;
   Global_sub_00645D30_param_2Enum GVar7;
-  undefined4 local_c4;
+  uint local_c4;
   uint local_c0;
-  undefined4 local_bc;
-  undefined4 local_b8;
+  uint local_bc;
+  uint local_b8;
   ushort local_b0;
   short local_ae;
   short local_ac;
   uint local_aa;
   ushort local_a6;
-  undefined4 local_a4;
-  undefined4 local_a0;
+  uint local_a4;
+  uint local_a0;
   uint local_98 [5];
   int local_84;
   int local_80;
@@ -34,15 +34,15 @@ void __cdecl FUN_00645880(RecoveredRecord_STBoatC_00645880 *param_1)
   int local_78;
   int local_74;
   int local_70;
-  undefined4 local_6c;
-  undefined4 local_68;
+  uint local_6c;
+  uint local_68;
   uint local_64;
   ushort local_60;
   uint local_5c [5];
   ushort local_48;
   ushort local_46;
   ushort local_44;
-  undefined2 local_42;
+  ushort local_42;
   ushort local_40;
   ushort local_3e;
   ushort local_3c;
@@ -50,12 +50,11 @@ void __cdecl FUN_00645880(RecoveredRecord_STBoatC_00645880 *param_1)
   short local_38;
   ushort local_36;
   uint local_34;
-  undefined1 local_30;
+  byte local_30;
   uint local_2f;
   ushort local_2b;
   uint local_29;
-  undefined1 local_6;
-
+  byte local_6;
   uVar6 = param_1->field_0004;
   memset(local_5c, 0, 0x58); /* compiler bulk-zero initialization */
   iVar4 = 0;
@@ -101,7 +100,7 @@ void __cdecl FUN_00645880(RecoveredRecord_STBoatC_00645880 *param_1)
     local_a4 = 5;
     local_a0 = 0x32;
     /* ST_CALLSITE[00645AA8]: CALL dword ptr [EDX + 0x8] */
-    g_playSystem_00802A38->vfunc_08(0x10a,0,0,(short)&local_c4,0);
+    g_playSystem_00802A38->vfunc_8(0x10a,nullptr,nullptr,(short)&local_c4,0);
     return;
   case 0xb0:
   case 0xbb:
@@ -122,7 +121,7 @@ void __cdecl FUN_00645880(RecoveredRecord_STBoatC_00645880 *param_1)
     local_5c[3] = 1;
     local_5c[2] = 1;
     /* ST_CALLSITE[00645B4A]: CALL dword ptr [EAX + 0x8] */
-    g_playSystem_00802A38->vfunc_08(0x147,0,0,(short)local_5c,0);
+    g_playSystem_00802A38->vfunc_8(0x147,nullptr,nullptr,(short)local_5c,0);
     return;
   case 0xb5:
     uVar1 = param_1->field_0020;
@@ -145,7 +144,7 @@ void __cdecl FUN_00645880(RecoveredRecord_STBoatC_00645880 *param_1)
     local_64 = uVar6;
     local_60 = uVar1;
     /* ST_CALLSITE[00645BE8]: CALL dword ptr [EAX + 0x8] */
-    g_playSystem_00802A38->vfunc_08(0x150,0,0,(short)local_98,0);
+    g_playSystem_00802A38->vfunc_8(0x150,nullptr,nullptr,(short)local_98,0);
     return;
   }
   /* ST_CALLSITE[006458C5]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
@@ -214,7 +213,7 @@ LAB_006459df:
   local_34 = param_1->field_0004;
   local_36 = param_1->field_001A;
   /* ST_CALLSITE[00645A18]: CALL dword ptr [EDX + 0x8] */
-  g_playSystem_00802A38->vfunc_08(0x106,0,0,(short)local_5c,0);
+  g_playSystem_00802A38->vfunc_8(0x106,nullptr,nullptr,(short)local_5c,0);
   return;
 }
 

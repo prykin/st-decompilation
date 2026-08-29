@@ -20,10 +20,12 @@ undefined4 __thiscall STT3DSprC::UnLoadSequence(STT3DSprC *this,byte param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   local_EAX_35 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pSVar2 = local_8;
   if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_4c.previous;
+
     iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\Tspr3d.cpp",0x58,0,local_EAX_35,
                                "%s","STT3DSprC::UnLoadSequence");
     if (iVar3 != 0) {
@@ -42,6 +44,7 @@ undefined4 __thiscall STT3DSprC::UnLoadSequence(STT3DSprC *this,byte param_1)
   if (pSVar2->field_0020 != nullptr) {
     iVar4 = (char)param_1 * 0x24;
     if (*(int *)(&pSVar2->field_0020->field_0x0 + iVar4) != 0) {
+
       ST3DSMAPContext::sub_006E98E0(pSVar2->field_003C,pSVar2->field_0018,(int)(char)param_1,0,0,1);
       slotStorage = (int *)(&pSVar2->field_0020->field_0x4 + iVar4);
       pSVar2->field_001C = pSVar2->field_001C & ~(1 << (param_1 & 0x1f));

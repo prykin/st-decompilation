@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_0060cef0(AnonShape_0060CEF0_8FC1D59C *param_1)
+/* [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=2, ignored=0,
+   unknown=0 */
+
+int __fastcall FUN_0060cef0(RecoveredRecordView_0060CEF0_C00F2A90 *param_1)
 
 {
   int iVar1;
@@ -20,10 +25,13 @@ undefined4 __fastcall FUN_0060cef0(AnonShape_0060CEF0_8FC1D59C *param_1)
   if (0 < iVar1) {
     local_8 = 0;
     do {
+
       uVar2 = FUN_006aff50(local_8);
+
       uVar3 = FUN_006aff5b(local_8);
       iVar4 = (int)(param_1->field_01FD * uVar2) / 10000 + param_1->field_01E9;
       iVar5 = (int)(param_1->field_01FD * uVar3) / 10000 + param_1->field_01ED;
+
       iVar2 = thunk_FUN_0060ccf0(param_1,local_10,iVar4,iVar5,param_1->field_01F1,
                                  (int)(param_1->field_01F9 * uVar2) / 10000 + iVar4,
                                  (int)(param_1->field_01F9 * uVar3) / 10000 + iVar5,

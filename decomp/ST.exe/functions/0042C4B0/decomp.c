@@ -35,7 +35,8 @@ STAllPlayersC::DelObjsFromTmp
       do {
         DArrayGetElement(param_4,index,&local_8);
         if ((short)local_8 != -1) {
-          thunk_FUN_0042c300((char)param_1,param_2,param_3,(char)param_1,local_8);
+          /* ST_CALLSITE[0042C535]: CALL 0x004024e1; direct=004024E1 STAllPlayersC::sub_0042C300 */
+          sub_0042C300(local_c,(char)param_1,param_2,param_3,(char)param_1,local_8);
         }
         index = index + 1;
       } while ((int)index < (int)local_10);

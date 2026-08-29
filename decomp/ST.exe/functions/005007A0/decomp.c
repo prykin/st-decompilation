@@ -71,6 +71,7 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,byte param_2)
       local_58.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_58;
       local_10 = this;
+
       iVar5 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
       pCVar4 = local_10;
       if (iVar5 == 0) {
@@ -86,7 +87,8 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,byte param_2)
                 uVar9 = uVar9 + 5;
               }
               uVar10 = (uint)(byte)local_10->field_02A8;
-              pBVar8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_02A2,uVar9
+              /* ST_CALLSITE[00500913]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+              pBVar8 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)local_10->field_02A2,uVar9
                                    );
               iVar7 = (5 - uVar10) * 0xb;
               pRVar12 = pCVar4->field_018C;
@@ -100,19 +102,21 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,byte param_2)
                 iVar7 = uVar9 + 0x19;
               }
               uVar10 = (uint)*(byte *)((int)&pRVar12[0x2a].field_0008 + (int)local_10);
-              pBVar8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_02A2,iVar7
+              pBVar8 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)local_10->field_02A2,iVar7
                                    );
               pRVar12 = (RecoveredSourceFamily_dibcopy *)pCVar4->field_0194;
               iVar7 = uVar10 * 0xb + 0x87;
             }
             /* ST_CALLSITE[00500939]: CALL 0x00403229; direct=00403229 DibPut */
-            DibPut(pRVar12,iVar7,uVar10 * 0xb + 0xb,'\x06',(byte *)pBVar8);
+            DibPut(pRVar12,iVar7,uVar10 * 0xb + 0xb,'\x06',
+                   (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar8);
             bVar11 = (-(param_1 != 0) & 2U) + 3;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             _local_14 = CONCAT31(uStack_13,bVar11);
             pRVar12 = local_c;
             if (bVar11 < 0xb) {
               if (-1 < (int)pCVar4->field_0148[bVar11]) {
+
                 Library::DKW::DDX::FUN_006b3640
                           ((int *)g_ddxContext_008075A8,(uint)pCVar4->field_0148[bVar11],0xffffffff,
                            (&pCVar4->field_003C)[bVar11],(&pCVar4->field_0094)[bVar11]);
@@ -130,17 +134,19 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,byte param_2)
               cVar1 = (&local_10->field_0xc7b)[bVar11];
               local_c = (RecoveredSourceFamily_dibcopy *)local_10->field_0198;
             }
-            pBVar8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_02A2,
+            /* ST_CALLSITE[00500A22]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+            pBVar8 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)local_10->field_02A2,
                                   (-(uint)(cVar1 != '\0') & 0xfffffffe) + 2);
             /* ST_CALLSITE[00500A47]: CALL 0x00403229; direct=00403229 DibPut */
             DibPut(local_c,7,
                    (uint)*(byte *)((int)&pRVar12[0x2a].field_0008 + (int)pCVar4) * 0x1d + 6,'\x01',
-                   (byte *)pBVar8);
+                   (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar8);
             bVar11 = (-(param_1 != 0) & 4U) + 2;
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             _local_14 = CONCAT31(uStack_13,bVar11);
             if (bVar11 < 0xb) {
               if (-1 < (int)pCVar4->field_0148[bVar11]) {
+
                 Library::DKW::DDX::FUN_006b3640
                           ((int *)g_ddxContext_008075A8,(uint)pCVar4->field_0148[bVar11],0xffffffff,
                            (&pCVar4->field_003C)[bVar11],(&pCVar4->field_0094)[bVar11]);
@@ -153,11 +159,14 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,byte param_2)
         *(undefined4 *)((int)pCVar4->field_0308 + (int)pRVar12 * 4 + -0x5e) = 0;
         thunk_FUN_005252c0(0xb4);
         local_5 = param_2;
-        thunk_FUN_0054edf0((undefined4 *)0x15,(uint *)&local_5,0,0xffffffff);
+        /* ST_CALLSITE[005009C2]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+        STPlaySystemC::sub_0054EDF0
+                  (g_playSystem_00802A38,(undefined4 *)0x15,(uint *)&local_5,0,0xffffffff);
         g_currentExceptionFrame = local_58.previous;
         return;
       }
       g_currentExceptionFrame = local_58.previous;
+
       iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0x1fb,0,iVar5,
                                  "%s","CPanelTy::SetNewDeep");
       if (iVar6 != 0) {

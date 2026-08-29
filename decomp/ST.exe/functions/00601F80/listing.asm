@@ -144,7 +144,7 @@ LAB_0060211e:
 00602128  85 C0                     TEST EAX,EAX
 0060212A  74 07                     JZ 0x00602133
 0060212C  8B CE                     MOV ECX,ESI
-0060212E  E8 BF 0B E0 FF            CALL 0x00402cf2
+0060212E  E8 BF 0B E0 FF            CALL 0x00402cf2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 LAB_00602133:
 00602133  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 00602139  85 C9                     TEST ECX,ECX
@@ -198,7 +198,7 @@ LAB_006021c2:
 006021C5  8D 55 F8                  LEA EDX,[EBP + -0x8]
 006021C8  52                        PUSH EDX
 006021C9  8B CE                     MOV ECX,ESI
-006021CB  E8 A7 2B E0 FF            CALL 0x00404d77
+006021CB  E8 A7 2B E0 FF            CALL 0x00404d77  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 006021D0  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
 006021D3  8B 56 18                  MOV EDX,dword ptr [ESI + 0x18]
 006021D6  51                        PUSH ECX

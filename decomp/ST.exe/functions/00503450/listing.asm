@@ -399,7 +399,7 @@ switchD_0050389f::default:
 00503917  6A 01                     PUSH 0x1
 00503919  6A 00                     PUSH 0x0
 0050391B  68 60 26 7C 00            PUSH 0x7c2660
-00503920  E8 57 1E F0 FF            CALL 0x0040577c
+00503920  E8 57 1E F0 FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 00503925  83 C4 08                  ADD ESP,0x8
 00503928  50                        PUSH EAX
 00503929  E8 D2 F2 1E 00            CALL 0x006f2c00

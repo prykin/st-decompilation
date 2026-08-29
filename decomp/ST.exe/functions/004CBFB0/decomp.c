@@ -12,11 +12,13 @@ undefined4 __fastcall FUN_004cbfb0(int param_1)
   case 0x40:
   case 0x49:
   case 0x5c:
-    uVar1 = thunk_FUN_004d0670(param_1);
+
+    uVar1 = thunk_FUN_004d0670((RecoveredRecordView_004D0670_0B3E93E7 *)param_1);
     return uVar1;
   case 0x52:
   case 0x5f:
-    uVar1 = thunk_FUN_004ec2a0(param_1);
+
+    uVar1 = thunk_FUN_004ec2a0((RecoveredRecordView_004EC2A0_85163159 *)param_1);
   }
   return uVar1;
 }

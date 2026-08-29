@@ -14,7 +14,8 @@ STTorpC * __cdecl CreateSTTorp(void)
 {
   STGameObjC *this;
 
-  this = (STGameObjC *)FUN_006b04d0(0x289);
+  /* ST_CALLSITE[00645836]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STGameObjC; signature=__stdcall;pointer:/STGameObjC;/uint */
+  this = FUN_006b04d0(0x289);
   if (this != nullptr) {
     /* ST_CALLSITE[00645844]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
     STGameObjC::STGameObjC(this);

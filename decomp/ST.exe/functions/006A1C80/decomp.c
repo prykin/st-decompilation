@@ -11,24 +11,24 @@ FUN_006a1c80(int *param_1,uint param_2,int param_3,int param_4,int param_5,undef
   int iVar4;
   int iVar3;
   int iVar5;
-  ushort local_c;
-  ushort uStack_a;
-  ushort local_8;
+  RecoveredRecord_006A1370_30F34641 local_c;
 
   uVar2 = param_2;
   if (((((-1 < (int)param_2) && ((int)param_2 < *param_1)) && (-1 < param_3)) &&
       ((param_3 < param_1[1] && (-1 < param_4)))) &&
      ((param_4 < 6 &&
+
       (iVar4 = thunk_FUN_006a20e0(param_1,param_2,param_3,param_4,param_5), iVar4 != 0)))) {
-    iVar3 = thunk_FUN_006a1370(param_1,param_2,param_3,param_4,(int)&local_c);
+
+    iVar3 = thunk_FUN_006a1370(param_1,param_2,param_3,param_4,&local_c);
     iVar4 = (short)iVar3;
-    if ((((local_8 & 0x2000) != 0) || ((uStack_a & 0x1000) != 0)) ||
-       (bVar1 = true, (local_c & 0x1000) != 0)) {
+    if ((((local_c.field_0004 & 0x2000) != 0) || ((STPiece<2,2>(local_c) & 0x1000) != 0)) ||
+       (bVar1 = true, (STPiece<0,2>(local_c) & 0x1000) != 0)) {
       bVar1 = false;
     }
     if (param_5 == 1) {
       /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-      param_2 = ~CONCAT22(local_8,uStack_a) >> 0xd & 1;
+      param_2 = ~CONCAT22(local_c.field_0004,STPiece<2,2>(local_c)) >> 0xd & 1;
     }
     else {
       param_2 = 0;
@@ -38,15 +38,18 @@ FUN_006a1c80(int *param_1,uint param_2,int param_3,int param_4,int param_5,undef
       return 1;
     }
     if ((param_5 == 0xff) && (iVar4 == 0)) {
-      iVar4 = thunk_FUN_006a17b0(param_1,uVar2,param_3,0,0,&local_c,param_6,param_7);
+
+      iVar4 = thunk_FUN_006a17b0(param_1,uVar2,param_3,0,0,(ushort *)&local_c,param_6,param_7);
       if (iVar4 == 0) {
         return 0;
       }
-      iVar4 = thunk_FUN_006a1bb0(param_1,uVar2,param_3,0,0,&local_c,param_6,param_7);
+
+      iVar4 = thunk_FUN_006a1bb0(param_1,uVar2,param_3,0,0,(ushort *)&local_c,param_6,param_7);
       if (iVar4 == 0) {
         return 0;
       }
-      iVar4 = thunk_FUN_006a17b0(param_1,uVar2,param_3,0,1,&local_c,param_6,param_7);
+
+      iVar4 = thunk_FUN_006a17b0(param_1,uVar2,param_3,0,1,(ushort *)&local_c,param_6,param_7);
       if (iVar4 == 0) {
         return 0;
       }
@@ -54,12 +57,16 @@ FUN_006a1c80(int *param_1,uint param_2,int param_3,int param_4,int param_5,undef
       iVar4 = 0;
     }
     else {
-      iVar5 = thunk_FUN_006a17b0(param_1,uVar2,param_3,iVar4,param_5,&local_c,param_6,param_7);
+
+      iVar5 = thunk_FUN_006a17b0(param_1,uVar2,param_3,iVar4,param_5,(ushort *)&local_c,param_6,
+                                 param_7);
       if (iVar5 == 0) {
         return 0;
       }
     }
-    iVar4 = thunk_FUN_006a1bb0(param_1,uVar2,param_3,iVar4,param_5,&local_c,param_6,param_7);
+
+    iVar4 = thunk_FUN_006a1bb0(param_1,uVar2,param_3,iVar4,param_5,(ushort *)&local_c,param_6,
+                               param_7);
     if (iVar4 == 0) {
       return 0;
     }

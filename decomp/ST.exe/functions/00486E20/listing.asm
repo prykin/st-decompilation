@@ -30,7 +30,7 @@ LAB_00486e69:
 LAB_00486e6d:
 00486E6D  8B 13                     MOV EDX,dword ptr [EBX]
 00486E6F  8B CB                     MOV ECX,EBX
-00486E71  FF 52 08                  CALL dword ptr [EDX + 0x8]
+00486E71  FF 52 08                  CALL dword ptr [EDX + 0x8]  ; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 00486E74  BF 01 00 00 00            MOV EDI,0x1
 00486E79  3B C7                     CMP EAX,EDI
 00486E7B  75 06                     JNZ 0x00486e83

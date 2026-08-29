@@ -15,7 +15,7 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
   ushort *puVar3;
   int iVar4;
   int iVar5;
-  undefined4 local_44c [256];
+  uint local_44c [256];
   InternalExceptionFrame local_4c;
   MTestTy *local_8;
 

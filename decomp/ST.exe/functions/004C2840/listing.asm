@@ -1,4 +1,4 @@
-FUN_004c2840:
+TLOBaseTy::vfunc_68:
 004C2840  55                        PUSH EBP
 004C2841  8B EC                     MOV EBP,ESP
 004C2843  56                        PUSH ESI

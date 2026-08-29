@@ -23,7 +23,7 @@ uint __cdecl FUN_006d7d9a(AnonShape_006D7D9A_A5401417 *param_1)
   int local_3e;
   uint local_3a;
   uint local_36;
-  undefined1 local_2b;
+  byte local_2b;
   uint local_2a;
   int local_26;
   uint local_16;

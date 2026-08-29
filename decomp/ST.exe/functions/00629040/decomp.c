@@ -1,14 +1,26 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 * __fastcall FUN_00629040(undefined4 *param_1)
+/* [STReturnSemanticsApplier] typed_pointer_return.
+   Evidence: all 1 value-return path(s) forward Listing variable param_1 with evidence-backed
+   structure /SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00629040_09AFDC96 (current
+   recovered extent=202) */
+
+RecoveredRecord_00629040_09AFDC96 * __fastcall
+FUN_00629040(RecoveredRecord_00629040_09AFDC96 *param_1)
 
 {
-  uint *puVar2;
-  puVar2 = param_1;
-  memset(puVar2, 0, 0xd7); /* compiler bulk-zero initialization */
-  puVar2 = (undefined4 *)((byte *)puVar2 + 0xd4);
-  STField<undefined4>(param_1,0xc6) = 0xffffffff;
+  int iVar1;
+  RecoveredRecord_00629040_09AFDC96 *pRVar2;
+
+  pRVar2 = param_1;
+  for (iVar1 = 0x35; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *(undefined4 *)pRVar2 = 0;
+    pRVar2 = (RecoveredRecord_00629040_09AFDC96 *)&pRVar2->field_0x4;
+  }
+  *(undefined2 *)pRVar2 = 0;
+  pRVar2->field_0x2 = 0;
+  param_1->field_00C6 = 0xffffffff;
   return param_1;
 }
 

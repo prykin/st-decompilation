@@ -32,7 +32,7 @@ STTmMineC::LoadImagVacuum:
 0063F42C  68 1C 20 7D 00            PUSH 0x7d201c
 0063F431  6A 1D                     PUSH 0x1d
 0063F433  50                        PUSH EAX
-0063F434  E8 B7 A6 0C 00            CALL 0x00709af0
+0063F434  E8 B7 A6 0C 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 0063F439  8B F8                     MOV EDI,EAX
 0063F43B  83 C4 20                  ADD ESP,0x20
 0063F43E  8B 4F 09                  MOV ECX,dword ptr [EDI + 0x9]
@@ -138,7 +138,7 @@ LAB_0063f562:
 0063F58E  68 28 20 7D 00            PUSH 0x7d2028
 0063F593  6A 1D                     PUSH 0x1d
 0063F595  50                        PUSH EAX
-0063F596  E8 55 A5 0C 00            CALL 0x00709af0
+0063F596  E8 55 A5 0C 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 0063F59B  83 C4 20                  ADD ESP,0x20
 0063F59E  8B F8                     MOV EDI,EAX
 0063F5A0  89 BE 5F 03 00 00         MOV dword ptr [ESI + 0x35f],EDI

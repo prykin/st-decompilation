@@ -27,7 +27,7 @@ AiPlrClassTy::SetTech(AiPlrClassTy *this,int param_1,int param_2,int param_3,cha
   undefined1 uStack_15;
   int local_14;
   int local_10;
-  undefined2 local_c;
+  ushort local_c;
   AiPlrClassTy *local_8;
 
   local_8 = this;

@@ -48,9 +48,11 @@ void __thiscall TradePanelTy::sub_00551800(TradePanelTy *this)
 LAB_0055194f:
       if (iVar2 < 1) goto LAB_0055198e;
       if (DAT_0080874e == '\x03') {
+
         uVar2 = thunk_FUN_004e41c0((uint)DAT_0080874d);
       }
       else {
+
         uVar2 = thunk_FUN_004d8870(DAT_0080874d);
       }
       if ((int)uVar2 < iVar2) goto LAB_0055198e;
@@ -97,9 +99,11 @@ LAB_005519bc:
   FUN_006e6080(this,2,this->field_01CC,(undefined4 *)&this->field_0x18);
   iVar1 = *(int *)&this->field_0x2c;
   if (this->field_01D0 == '\0') {
+
     iVar2 = thunk_FUN_004d89b0(DAT_0080874d);
   }
   else {
+
     iVar2 = thunk_FUN_004d8af0(DAT_0080874d);
   }
   uVar3 = (uint)((int)(uint)(ushort)(&this->field_01BC)[(byte)this->field_01D0] <= iVar2);

@@ -60,7 +60,7 @@ void __thiscall ChooseMapTy::PrepFiles(ChooseMapTy *this,uint param_1)
   InternalExceptionFrame local_12c;
   InternalExceptionFrame local_e8;
   InternalExceptionFrame local_a4;
-  undefined4 local_60;
+  uint local_60;
   FILETIME local_44;
   FILETIME local_3c;
   int local_34;
@@ -120,10 +120,12 @@ switchD_005afd30_caseD_c:
   local_a4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a4;
   local_28 = this;
+
   local_EAX_175 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0);
   this_00 = local_28;
   if (local_EAX_175 != 0) {
     g_currentExceptionFrame = local_a4.previous;
+
     iVar14 = ReportDebugMessage("E:\\__titans\\Start\\load_obj.cpp",0x4f5,0,local_EAX_175,
                                 "%s","ChooseMapTy::PrepFiles");
     if (iVar14 != 0) {
@@ -168,6 +170,7 @@ switchD_005afd30_caseD_c:
   uVar20 = 0x3f;
   puVar16 = &this_00->field_1C23;
   do {
+
     Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar16,0xffffffff,0x114,uVar20);
     uVar20 = uVar20 + 0x13;
     puVar16 = puVar16 + 1;
@@ -353,16 +356,18 @@ LAB_005b0041:
                 uVar13 = 0;
                 local_e8.previous = g_currentExceptionFrame;
                 g_currentExceptionFrame = &local_e8;
+
                 iVar7 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0);
                 this_00 = local_28;
                 if (iVar7 == 0) {
-                  pcVar5 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
-                                              (0x345,(byte *)&local_28->field_1FAF,0,0,0);
+                  /* ST_CALLSITE[005B013C]: CALL 0x006f0ec0; direct=006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint */
+                  pcVar5 = Library::Ourlib::MF32INT::FUN_006f0ec0
+                                     (0x345,(byte *)&local_28->field_1FAF,0,0,0);
                   if (g_dArray_0080C4CB != nullptr) {
                     FUN_006b5570(g_dArray_0080C4CB);
                   }
+                  /* ST_CALLSITE[005B015F]: CALL 0x0071aa10; direct=0071AA10 Library::Ourlib::MFSARR::mfSarLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__cdecl;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/cMf32;pointer:/char;/int */
                   g_dArray_0080C4CB =
-                       (DArrayTy *)
                        Library::Ourlib::MFSARR::mfSarLoad(pcVar5,PTR_s_OBJECTIVES_0079c074,0);
                   if (g_dArray_0080C4CB == nullptr) {
                     g_dArray_0080C4CB = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
@@ -388,6 +393,7 @@ LAB_005b0041:
                 g_currentExceptionFrame = local_e8.previous;
                 if (local_10 == 0) goto LAB_005b01f3;
               }
+
               Library::DKW::TBL::FUN_006b5aa0(this_00->field_1C9F,local_26c.cFileName);
             }
           }
@@ -511,6 +517,7 @@ LAB_005b01f3:
                   ((byte *)local_26c.cFileName,nullptr,nullptr,local_370,nullptr);
         local_12c.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_12c;
+
         local_EAX_1635 = Library::MSVCRT::__setjmp3(local_12c.jumpBuffer,0);
         this_00 = local_28;
         if (local_EAX_1635 == 0) {
@@ -553,8 +560,8 @@ LAB_005b01f3:
           pbVar21 = pbVar24 + -uVar20;
           pbVar24 = (byte *)(pcVar10 + -1);
           memmove(pbVar24, pbVar21, uVar20); /* compiler REP MOVS byte copy */
-          pcVar5 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
-                                      (0x345,(byte *)&local_28->field_1FAF,0,0,0);
+          /* ST_CALLSITE[005B03DB]: CALL 0x006f0ec0; direct=006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint */
+          pcVar5 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&local_28->field_1FAF,0,0,0);
           bVar25 = false;
           switch(this_00->array_00BC[0xc].field_01DF) {
           case 1:
@@ -576,6 +583,7 @@ LAB_005b01f3:
             local_14 = &local_24;
             puVar6 = cMf32::RecGet(pcVar5,0x80,PTR_s_SAVE_DESC_0079c070,(int *)&local_14,0);
             if ((puVar6 != nullptr) && (local_c == local_24)) {
+
               Library::DKW::TBL::DArrayAppend(this_00->field_1C9B,&local_26c.ftLastWriteTime);
               uVar20 = 0xffffffff;
               pcVar17 = PTR_DAT_0079c06c;
@@ -589,6 +597,7 @@ LAB_005b01f3:
 LAB_005b051b:
               pDVar26 = this_00->field_1C97;
 LAB_005b0523:
+
               Library::DKW::TBL::FUN_006b5aa0(pDVar26,(char *)pbVar21);
             }
           }
@@ -667,8 +676,10 @@ LAB_005b0523:
           else {
             pcVar10 = nullptr;
           }
+
           local_EAX_2257 = Library::MSVCRT::__strcmpi(pcVar10,pcVar17);
           if (0 < local_EAX_2257) {
+
             FUN_006b8200((AnonShape_006B8200_800652FF *)this_00->field_1C9F,uVar20,uVar13);
             local_1c = 1;
           }
@@ -711,6 +722,7 @@ LAB_005b0639:
             else {
               pcVar10 = nullptr;
             }
+
             local_EAX_2515 = Library::MSVCRT::__strcmpi(pcVar10,pcVar17);
             if (0 < local_EAX_2515) {
               pDVar26 = this_00->field_1C97;
@@ -718,14 +730,19 @@ LAB_005b0639:
             }
           }
           else {
+
             DArrayGetElement(this_00->field_1C9B,uVar20,&local_3c);
+
             DArrayGetElement(this_00->field_1C9B,uVar20 + 1,&local_44);
             /* ST_CALLSITE[005B0685]: CALL dword ptr [0x0085bcd8] */
             LVar9 = CompareFileTime(&local_3c,&local_44);
             if (LVar9 < 0) {
-              FUN_006b0cd0((AnonShape_00413AF0_B6B4EE9A *)this_00->field_1C9B,uVar20,uVar20 + 1);
+
+              FUN_006b0cd0((RecoveredRecordView_00413AF0_B98DB3AE *)this_00->field_1C9B,uVar20,
+                           uVar20 + 1);
               pDVar26 = this_00->field_1C97;
 LAB_005b06e8:
+
               FUN_006b8200((AnonShape_006B8200_800652FF *)pDVar26,uVar20,uVar20 + 1);
               local_1c = 1;
             }

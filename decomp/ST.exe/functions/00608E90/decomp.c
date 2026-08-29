@@ -1,11 +1,16 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param_1)
+/* [STMessageHandlerApplier] Recovered common GetMessage envelope/signature.
+   Evidence: family_entries=forwarded:0041AF40; family_names=STGameObjC::GetMessage; ret4=11;
+   direct_offsets={10:1,14:2,18:3,1c:0}; forwarded_envelope=true */
+
+int __thiscall FUN_00608e90(void *this,STMessage *message)
 
 {
-  uint uVar1;
-  short sVar2;
+  STMessageId SVar1;
+  uint uVar2;
+  short sVar3;
   int local_EAX_15;
   int local_EAX_871;
   uint uVar3;
@@ -20,14 +25,15 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
   uint local_8;
 
   /* ST_CALLSITE[00608E9F]: CALL 0x00403ebd; direct=00403EBD STGameObjC::GetMessage */
-  local_EAX_15 = STGameObjC::GetMessage(this,(STMessage *)param_1);
+  local_EAX_15 = STGameObjC::GetMessage(this,message);
   if (local_EAX_15 == 0xffff) {
     return 0xffff;
   }
-  uVar1 = param_1->field_0010;
-  if (3 < uVar1) {
-    if (uVar1 == 0x10f) {
-      local_c = (byte *)thunk_FUN_0060c020(this,&local_8);
+  SVar1 = message->id;
+  if (MESS_SHARED_0003 < SVar1) {
+    if (SVar1 == MESS_SHARED_010F) {
+      /* ST_CALLSITE[00609615]: CALL 0x00401f6e; direct=00401F6E thunk_FUN_0060c020; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
+      local_c = STPointerBoundaryCast<byte *>(thunk_FUN_0060c020(this,&local_8));
       if (local_c == nullptr) {
         return 0;
       }
@@ -36,13 +42,13 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
       FreeAndNull(&local_c);
       return 0;
     }
-    if (uVar1 != 0x111) {
+    if (SVar1 != MESS_ID_ALLCREATE) {
       return 0;
     }
     thunk_FUN_0060c2d0(this);
     return 0;
   }
-  if (uVar1 == 3) {
+  if (SVar1 == MESS_SHARED_0003) {
     if (STField<int>(this,0x1f5) == 0x4d) {
       iVar6 = STField<int>(this,0x1f9);
       iVar6 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
@@ -50,23 +56,27 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
       iVar7 = STBiasedDiv16(iVar7, 0xc9); /* exact signed 16-bit grid-index division */
       iVar5 = STField<int>(this,0x1e9);
       iVar5 = STBiasedDiv16(iVar5, 0xc9); /* exact signed 16-bit grid-index division */
-      thunk_FUN_00496e40(iVar5,iVar7,iVar6,STField<int>(this,0x18));
+      /* ST_CALLSITE[006095C9]: CALL 0x00402554; direct=00402554 DumpClassC::sub_00496E40 */
+      DumpClassC::sub_00496E40(g_dumpClass_007FB284,iVar5,iVar7,iVar6,STField<int>(this,0x18));
     }
     if (STField<int>(this,0x23c) != 0) {
-      thunk_FUN_0060d300((int)this);
+      thunk_FUN_0060d300(this);
     }
     thunk_FUN_0060a9d0(this);
     return 0;
   }
-  if (uVar1 == 0) {
+  if (SVar1 == MESS_ID_NONE) {
     if ((STField<int>(this,0x221) == 0) &&
        (thunk_FUN_0060c2d0(this), STField<int>(this,0x221) == 0)) {
+
       thunk_FUN_006099a0(this);
       return 0;
     }
     if (STField<int>(this,0x248) == 1) {
       if (STField<uint>(this,0x250) <= g_playSystem_00802A38->field_00E4) {
+
         if ((STField<int>(this,0x20d) == 5) && (iVar6 = thunk_FUN_0060cef0(this), iVar6 == 0)) {
+
           thunk_FUN_006099a0(this);
         }
         STField<undefined1>(this,0x22f) = 0;
@@ -86,36 +96,43 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
             thunk_FUN_0060bcb0(this,0);
           }
           else {
+
             thunk_FUN_0060c320(this);
           }
         }
         if ((STField<int>(this,0x1f5) == 0x4c) && ((STField<byte>(this,0x254) & 0x3f) == 0)) {
+
           thunk_FUN_0060aef0(this);
         }
         break;
       case 5:
+
         iVar6 = thunk_FUN_0060d070(this);
         if ((0 < iVar6) && (iVar6 == 2)) {
-          thunk_FUN_0060d220((int)this);
-          uVar1 = g_playSystem_00802A38->field_00E4;
+          thunk_FUN_0060d220(this);
+          uVar2 = g_playSystem_00802A38->field_00E4;
           STField<undefined4>(this,0x248) = 1;
-          STField<uint>(this,0x250) = uVar1 + 200;
+          STField<uint>(this,0x250) = uVar2 + 200;
         }
         break;
       case 6:
+
         iVar6 = thunk_FUN_0060dab0(this);
         if ((0 < iVar6) && (iVar6 == 2)) {
-          thunk_FUN_0060d300((int)this);
+          thunk_FUN_0060d300(this);
+
           thunk_FUN_006099a0(this);
         }
       }
       if (STField<char>(this,0x22e) != '\0') {
         if (STField<char>(this,0x225) != '\0') {
+
           uVar4 = thunk_FUN_0060a4b0(this);
           STField<char>(this,0x225) = (char)uVar4;
           STField<int>(this,0x254) = STField<int>(this,0x254) + 1;
           return 0;
         }
+
         iVar2 = thunk_FUN_0060dd70(this);
         STField<char>(this,0x225) = (char)iVar2;
         if ((char)iVar2 != '\0') {
@@ -128,14 +145,15 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
     STField<int>(this,0x254) = STField<int>(this,0x254) + 1;
     return 0;
   }
-  if (uVar1 != 2) {
+  if (SVar1 != MESS_ID_CREATE) {
     return 0;
   }
-  puVar8 = (byte *)(param_1->field_0014);
+  puVar8 = (byte *)((message->arg0).ptr);
   puVar9 = (byte *)((int)this + 0x1d5);
   memmove(puVar9, puVar8, 0x50); /* compiler REP MOVS byte copy */
   if (STField<int>(this,0x1e1) == 2) {
-    STFieldC::thunk_FUN_0060c1a0(this,param_1->field_0014);
+
+    STFieldC::thunk_FUN_0060c1a0(this,(message->arg0).ptr);
     return 0;
   }
   iVar6 = STField<int>(this,0x1f9) / 0xc9;
@@ -187,6 +205,7 @@ undefined4 __thiscall FUN_00608e90(void *this,AnonShape_00608E90_523B07BC *param
     STField<undefined1>(this,0x225) = 0;
     if (STField<int>(this,0x209) == 0) {
 LAB_00609164:
+
       thunk_FUN_006099a0(this);
     }
     else {
@@ -203,6 +222,7 @@ LAB_00609164:
       if (STField<int>(this,0x209) != 0) {
         if ((STField<int>(this,0x221) == 0) &&
            (thunk_FUN_0060c2d0(this), STField<int>(this,0x221) == 0)) goto LAB_00609164;
+
         thunk_FUN_0060c320(this);
       }
     }
@@ -219,6 +239,7 @@ LAB_00609164:
     STField<undefined4>(this,0x211) = 2;
     STField<undefined4>(this,0x215) = 1;
 LAB_006091f5:
+
     local_EAX_871 = thunk_FUN_0060dd70(this);
     STField<char>(this,0x225) = (char)local_EAX_871;
 LAB_00609202:
@@ -248,20 +269,24 @@ LAB_00609202:
     STField<int>(this,0x219) = iVar6 * 2;
     break;
   case 5:
+
     iVar6 = thunk_FUN_0060cb60(this,6);
     if (iVar6 != 0) {
+
       iVar6 = thunk_FUN_0060cef0(this);
 joined_r0x0060929e:
       if (iVar6 != 0) break;
     }
     goto LAB_006092a0;
   case 6:
+
     iVar6 = thunk_FUN_0060cb60(this,5);
     if (iVar6 != 0) {
       iVar6 = thunk_FUN_0060d810(this,5,0x14);
       goto joined_r0x0060929e;
     }
 LAB_006092a0:
+
     thunk_FUN_006099a0(this);
   }
   /* ST_CALLSITE[006092B0]: CALL 0x004017b7; direct=004017B7 STFieldC::CreateField */
@@ -275,6 +300,7 @@ LAB_006092a0:
   case 2:
   case 3:
   case 4:
+
     thunk_FUN_0060a000(this);
     if (STField<int>(this,0x1f5) == 0x4d) {
       STField<undefined4>(this,0x248) = 2;
@@ -282,12 +308,15 @@ LAB_006092a0:
     }
     break;
   case 5:
+
     thunk_FUN_0060a000(this);
     STField<undefined4>(this,0x248) = 2;
     goto switchD_006092d2_default;
   case 6:
+
     iVar6 = thunk_FUN_0060d940(this);
     if (iVar6 == 0) {
+
       thunk_FUN_006099a0(this);
       goto switchD_006092d2_default;
     }

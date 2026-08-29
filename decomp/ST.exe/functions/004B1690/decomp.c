@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __cdecl FUN_004b1690(int param_1,int param_2,int param_3,int param_4,int param_5)
+/* [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=5, ignored=0,
+   unknown=0 */
+
+int __cdecl FUN_004b1690(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
   bool bVar1;
@@ -14,8 +19,7 @@ undefined4 __cdecl FUN_004b1690(int param_1,int param_2,int param_3,int param_4,
   int iVar8;
   STFishC *local_10;
   int local_c;
-  undefined4 local_8;
-
+  uint local_8;
   if ((((param_1 < 0) || ((int)g_worldGrid.sizeX < param_1 + 1)) || (param_2 < 0)) ||
      ((((int)g_worldGrid.sizeY < param_2 + 1 || (param_3 < 0)) ||
       ((int)g_worldGrid.sizeZ < param_3 + 1)))) {

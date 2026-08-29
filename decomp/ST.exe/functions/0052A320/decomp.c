@@ -1,13 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __cdecl FUN_0052a320(int param_1)
+undefined4 __cdecl FUN_0052a320(RecoveredRecord_0052A320_3DA6AF5F *param_1)
 
 {
   uint uVar1;
   uVar1 = 1;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined2 *)(param_1 + 0x14)) {
+  switch(param_1->field_0014) {
   case 0:
     return 0;
   case 1:

@@ -31,19 +31,22 @@ void __thiscall HelpPanelTy::TipProc(HelpPanelTy *this,void *param_1,int param_2
   UINT local_14;
   HelpPanelTy *local_10;
   uint local_c;
-  ushort *local_8;
+  RecoveredRecordView_006B84D0_87AF9D9B *local_8;
 
   local_10 = this;
+
   local_14 = thunk_FUN_00529d80((Global_sub_00529D80_param_1Enum)param_1,param_2);
   memset(local_34, 0, 0x19); /* compiler bulk-zero initialization */
   iVar6 = 0;
   local_c = 0;
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
+
   iVar8 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
   this_00 = local_10;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_78.previous;
+
     iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x973,0,iVar8,"%s"
                                ,"HelpPanelTy::TipProc");
     if (iVar9 == 0) {
@@ -115,11 +118,14 @@ LAB_0051d689:
     ccFntTy::FormIndentText
               (this_00->field_01E0,(char *)&DAT_0080f33a,&DAT_0080f33a," ,.;:!?/\\()[]{}",
                (uint *)&DAT_007c21ec,0x19c,&DAT_007c2198,1);
+
     uVar10 = FUN_007113e0(this_00->field_01E0,&DAT_0080f33a);
     local_c = uVar10;
     /* ST_CALLSITE[0051D71B]: CALL 0x00401870; direct=00401870 HelpPanelTy::CheckBkView */
     CheckBkView(this_00,0,(ushort)uVar10);
+
     ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,0,0x19c,uVar10 + 2);
+
     ccFntTy::WrTxt(this_00->field_01E0,(char *)&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 5,
                    -1,-1);
   }
@@ -129,24 +135,30 @@ LAB_0051d689:
   piVar12 = nullptr;
   uVar7 = (uint)(DAT_0080734d != '\0');
   iVar6 = 1;
+  /* ST_CALLSITE[0051D794]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
   pCVar4 = thunk_FUN_00571240("BUT_HLPTDAY",0);
   pCVar4 = FUN_006f2c00(pCVar4,iVar6,uVar7);
+  /* ST_CALLSITE[0051D7AE]: CALL 0x006f1ce0; direct=006F1CE0 cMf32::RecGet; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int */
   local_8 = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar12,iVar13);
   uVar7 = uVar10 + 10;
   /* ST_CALLSITE[0051D7C6]: CALL 0x00403229; direct=00403229 DibPut */
-  DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x50,uVar7,'\x01',(byte *)local_8);
-  local_18 = *(int *)(local_8 + 2);
+  DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0218,0x50,uVar7,'\x01',local_8);
+  local_18 = *(int *)&local_8->field_0x4;
+
   ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,local_18 + 0x5f,uVar7,
                    0x13d - local_18,0xf);
   uVar8 = (DAT_0080874e != '\x03') - 1 & 5;
   iVar13 = -1;
   iVar6 = 1;
+  /* ST_CALLSITE[0051D81D]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
   pcVar4_mg2 = LoadResourceString(0x5c93,g_hINSTANCE_00807618);
+
   ccFntTy::WrStr(this_00->field_01E0,pcVar4_mg2,iVar6,iVar13,uVar8);
   local_34[0] = 0x50;
   local_34[2] = local_18;
-  local_34[3] = *(uint *)(local_8 + 4);
+  local_34[3] = *(uint *)&local_8->field_0x8;
   local_34[1] = uVar7;
+
   Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,local_34);
   cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
   /* ST_CALLSITE[0051D86E]: CALL 0x00401870; direct=00401870 HelpPanelTy::CheckBkView */
@@ -165,6 +177,7 @@ LAB_0051d689:
             ((int)this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,
              (BITMAPINFO *)this_00->field_0218,0,0,0,0x19c,0x117 - (uint)(ushort)this_00->field_01AF
              ,0xff);
+
   Library::DKW::DDX::FUN_006b3640
             ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
              this_00->field_0044);

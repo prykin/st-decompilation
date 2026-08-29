@@ -48,8 +48,7 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0xffffffff;
   puStack_c = &DAT_00790070;
   puStack_10 = &LAB_0072d964;
@@ -80,8 +79,10 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
     }
     local_64 = *(int *)(&DAT_007a4bf8 + param_5 * 4);
     ExceptionList = &local_14;
+    /* ST_CALLSITE[0041139D]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
     psVar1 = Library::DKW::LIB::MemAlloc(local_64 << 5);
     local_54 = psVar1;
+
     uVar2 = FUN_00411cf0((char *)psVar1,local_64);
     local_3c = (int)(uVar2 * param_6 + 0xb4) / 0x168;
     if (local_3c == uVar2) {
@@ -172,6 +173,7 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
               local_2c = local_2c + local_28;
               psVar1 = local_54;
               do {
+
                 iVar2 = FUN_0040f840(local_24,uVar2,local_4c,1);
                 iVar3 = (int)(iVar2 + local_3c) % uVar2;
                 local_50 = (char)psVar1[iVar3 * 2] + param_1;
@@ -240,7 +242,9 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
           local_60 = param_3;
           local_64 = local_64 + 1;
           uVar4 = uVar4 + 0x20;
+          /* ST_CALLSITE[004119E5]: CALL 0x006acf50; direct=006ACF50 Library::DKW::LIB::MemRealloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
           local_54 = Library::DKW::LIB::MemRealloc(local_54,uVar4);
+
           uVar2 = FUN_00411cf0((char *)local_54,local_64);
           local_3c = (int)(uVar2 * param_6 + 0xb4) / 0x168;
           if (local_3c == uVar2) {
@@ -294,6 +298,7 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
         if ((((local_50 < 0) || (DAT_007f4d2c <= local_50)) || (local_58 < 0)) ||
            ((DAT_007f4d30 <= local_58 ||
             (PTR_007f4cf0[local_60 * local_38 + local_50 + DAT_007f4d2c * local_58] != 0)))) {
+
           iVar3 = FUN_0040f270(&local_50,&local_58,&local_60,DAT_007f4d0c >> 2,DAT_007f4d10 >> 2,
                                DAT_007f4d1c >> 2,param_1 >> 2,param_2 >> 2,param_3 >> 2);
           if (iVar3 != 0) {
@@ -311,6 +316,7 @@ int FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param_5,uin
         iVar7 = iVar7 + 0x14;
       } while (local_2c < DAT_007f4d20);
     }
+
     FUN_0040eb90();
     iVar3 = local_44;
 LAB_00411975:

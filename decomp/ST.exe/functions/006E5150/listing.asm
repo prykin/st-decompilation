@@ -1,4 +1,4 @@
-AppClassTy::sub_006E5150:
+AppClassTy::vfunc_18:
 006E5150  55                        PUSH EBP
 006E5151  8B EC                     MOV EBP,ESP
 006E5153  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]

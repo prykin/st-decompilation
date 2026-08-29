@@ -18,11 +18,10 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
   int local_20;
   short local_1c;
   int local_1a;
-  undefined4 local_16;
+  uint local_16;
   STBoatC *local_10;
   uint local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 200;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;

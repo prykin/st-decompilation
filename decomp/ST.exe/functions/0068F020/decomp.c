@@ -37,6 +37,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_8;
   if (iVar5 == 0) {
@@ -55,8 +56,8 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
             element_00a5 = nullptr;
           }
           if (((undefined4 *)element_00a5 != nullptr) &&
-             (element_00a5->field_0004 != nullptr))
-          {
+             (element_00a5->field_0004 !=
+              nullptr)) {
             thunk_FUN_00660d40(element_00a5->field_0004);
           }
           pAVar9 = this_00->field_00A5;
@@ -94,6 +95,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
               iVar7 = 0;
             }
             if ((iVar7 != 0) &&
+
                (uVar10 = thunk_FUN_0068e8c0(this_00,iVar7), this_00 = local_8, -1 < (int)uVar10)) {
               pAVar2 = local_8->field_00BD;
               if (uVar10 < pAVar2->count) {
@@ -109,13 +111,16 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
                 if (iVar7 == 0x78) {
                   this_01->field_0269 = (uint)uVar1;
                 }
+
                 DArrayRemoveAt((DArrayTy *)param_1,local_c);
               }
+
               DArrayRemoveAt((DArrayTy *)local_8->field_00BD,uVar10);
               this_00 = local_8;
             }
           }
           else {
+
             uVar10 = thunk_FUN_0068e8c0(this_00,iVar7);
             if (-1 < (int)uVar10) {
               pAVar2 = this_00->field_00BD;
@@ -141,9 +146,11 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
                   }
                 }
                 /* ST_CALLSITE[0068F236]: CALL 0x00404200; direct=00404200 AiFltClassTy::_AddObjFlt */
-                AiFltClassTy::_AddObjFlt(this_02,(uint)this_01,0);
+                AiFltClassTy::_AddObjFlt(this_02,(RecoveredRecord_0065D760_A4BF8285 *)this_01,0);
+
                 DArrayRemoveAt((DArrayTy *)param_1,local_c);
               }
+
               DArrayRemoveAt((DArrayTy *)this_00->field_00BD,uVar10);
             }
           }
@@ -156,6 +163,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,uint *param_1)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x242,0,iVar5,"%s",
                              "AiTactClassTy::GiveObjByClaim");
   if (iVar6 == 0) {

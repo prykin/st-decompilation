@@ -60,7 +60,7 @@ VisibleClassTy::sub_0055BB00
           byte param_6,uint param_7)
 
 {
-  undefined4 local_10;
+  uint local_10;
   short local_c;
   char cStack_a;
   byte bStack_9;

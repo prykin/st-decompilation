@@ -142,7 +142,7 @@ LAB_00595efc:
 00596032  89 BE 8B 1F 00 00         MOV dword ptr [ESI + 0x1f8b],EDI
 00596038  53                        PUSH EBX
 00596039  C7 86 83 1F 00 00 4D 00 00 00  MOV dword ptr [ESI + 0x1f83],0x4d
-00596043  E8 48 82 11 00            CALL 0x006ae290
+00596043  E8 48 82 11 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/FSGSTy_field_1FB3DArray; source view only; no Ghidra override
 00596048  89 86 B3 1F 00 00         MOV dword ptr [ESI + 0x1fb3],EAX
 0059604E  8B 86 5B 1A 00 00         MOV EAX,dword ptr [ESI + 0x1a5b]
 00596054  8B 48 30                  MOV ECX,dword ptr [EAX + 0x30]
@@ -155,7 +155,7 @@ LAB_00595efc:
 00596075  51                        PUSH ECX
 00596076  53                        PUSH EBX
 00596077  52                        PUSH EDX
-00596078  E8 B9 BF E6 FF            CALL 0x00402036
+00596078  E8 B9 BF E6 FF            CALL 0x00402036  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 0059607D  89 86 77 1A 00 00         MOV dword ptr [ESI + 0x1a77],EAX
 00596083  89 78 7E                  MOV dword ptr [EAX + 0x7e],EDI
 00596086  05 9E 00 00 00            ADD EAX,0x9e
@@ -167,7 +167,7 @@ LAB_00595efc:
 0059609C  8B 15 80 67 80 00         MOV EDX,dword ptr [0x00806780]
 005960A2  52                        PUSH EDX
 005960A3  68 9D 01 00 00            PUSH 0x19d
-005960A8  E8 03 6E 17 00            CALL 0x0070ceb0
+005960A8  E8 03 6E 17 00            CALL 0x0070ceb0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 005960AD  89 86 7B 1A 00 00         MOV dword ptr [ESI + 0x1a7b],EAX
 005960B3  89 78 58                  MOV dword ptr [EAX + 0x58],EDI
 005960B6  89 58 5C                  MOV dword ptr [EAX + 0x5c],EBX
@@ -176,7 +176,7 @@ LAB_00595efc:
 005960BF  68 64 C0 7C 00            PUSH 0x7cc064
 005960C4  50                        PUSH EAX
 005960C5  68 9D 01 00 00            PUSH 0x19d
-005960CA  E8 E1 6D 17 00            CALL 0x0070ceb0
+005960CA  E8 E1 6D 17 00            CALL 0x0070ceb0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/StartServTy; source view only; no Ghidra override
 005960CF  89 86 7F 1A 00 00         MOV dword ptr [ESI + 0x1a7f],EAX
 005960D5  89 78 58                  MOV dword ptr [EAX + 0x58],EDI
 005960D8  89 58 5C                  MOV dword ptr [EAX + 0x5c],EBX
@@ -225,13 +225,13 @@ LAB_0059612a:
 00596151  50                        PUSH EAX
 00596152  6A 02                     PUSH 0x2
 00596154  68 58 C0 7C 00            PUSH 0x7cc058
-00596159  E8 A2 CA 15 00            CALL 0x006f2c00
+00596159  E8 A2 CA 15 00            CALL 0x006f2c00  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 0059615E  8B 0D 80 67 80 00         MOV ECX,dword ptr [0x00806780]
 00596164  83 C4 0C                  ADD ESP,0xc
 00596167  50                        PUSH EAX
 00596168  6A 06                     PUSH 0x6
 0059616A  51                        PUSH ECX
-0059616B  E8 30 44 17 00            CALL 0x0070a5a0
+0059616B  E8 30 44 17 00            CALL 0x0070a5a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 00596170  8B 96 97 1A 00 00         MOV EDX,dword ptr [ESI + 0x1a97]
 00596176  50                        PUSH EAX
 00596177  6A 06                     PUSH 0x6
@@ -276,7 +276,7 @@ LAB_0059612a:
 005961E3  50                        PUSH EAX
 005961E4  68 06 01 00 00            PUSH 0x106
 005961E9  68 B8 01 00 00            PUSH 0x1b8
-005961EE  E8 CD EE 11 00            CALL 0x006b50c0
+005961EE  E8 CD EE 11 00            CALL 0x006b50c0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 005961F3  89 86 C0 1A 00 00         MOV dword ptr [ESI + 0x1ac0],EAX
 005961F9  88 9E BB 1A 00 00         MOV byte ptr [ESI + 0x1abb],BL
 005961FF  8B 48 08                  MOV ECX,dword ptr [EAX + 0x8]
@@ -322,7 +322,7 @@ LAB_0059612a:
 00596276  6A 07                     PUSH 0x7
 00596278  51                        PUSH ECX
 00596279  8B CF                     MOV ECX,EDI
-0059627B  FF 50 04                  CALL dword ptr [EAX + 0x4]
+0059627B  FF 50 04                  CALL dword ptr [EAX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 0059627E  89 9E 30 1B 00 00         MOV dword ptr [ESI + 0x1b30],EBX
 00596284  8B 47 04                  MOV EAX,dword ptr [EDI + 0x4]
 00596287  83 F8 FF                  CMP EAX,-0x1
@@ -350,7 +350,7 @@ LAB_00596296:
 005962BF  6A 07                     PUSH 0x7
 005962C1  50                        PUSH EAX
 005962C2  8B CF                     MOV ECX,EDI
-005962C4  FF 52 04                  CALL dword ptr [EDX + 0x4]
+005962C4  FF 52 04                  CALL dword ptr [EDX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 005962C7  89 9E C1 1B 00 00         MOV dword ptr [ESI + 0x1bc1],EBX
 005962CD  8B 47 04                  MOV EAX,dword ptr [EDI + 0x4]
 005962D0  83 F8 FF                  CMP EAX,-0x1
@@ -378,7 +378,7 @@ LAB_005962df:
 0059630A  6A 07                     PUSH 0x7
 0059630C  51                        PUSH ECX
 0059630D  8B CF                     MOV ECX,EDI
-0059630F  FF 50 04                  CALL dword ptr [EAX + 0x4]
+0059630F  FF 50 04                  CALL dword ptr [EAX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00596312  89 9E 52 1C 00 00         MOV dword ptr [ESI + 0x1c52],EBX
 00596318  8B 47 04                  MOV EAX,dword ptr [EDI + 0x4]
 0059631B  83 F8 FF                  CMP EAX,-0x1
@@ -406,7 +406,7 @@ LAB_0059632a:
 00596353  6A 07                     PUSH 0x7
 00596355  50                        PUSH EAX
 00596356  8B CF                     MOV ECX,EDI
-00596358  FF 52 04                  CALL dword ptr [EDX + 0x4]
+00596358  FF 52 04                  CALL dword ptr [EDX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 0059635B  89 9E E3 1C 00 00         MOV dword ptr [ESI + 0x1ce3],EBX
 00596361  8B 47 04                  MOV EAX,dword ptr [EDI + 0x4]
 00596364  83 F8 FF                  CMP EAX,-0x1
@@ -434,7 +434,7 @@ LAB_00596373:
 0059639E  6A 07                     PUSH 0x7
 005963A0  51                        PUSH ECX
 005963A1  8B CF                     MOV ECX,EDI
-005963A3  FF 50 04                  CALL dword ptr [EAX + 0x4]
+005963A3  FF 50 04                  CALL dword ptr [EAX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 005963A6  89 9E 74 1D 00 00         MOV dword ptr [ESI + 0x1d74],EBX
 005963AC  8B 47 04                  MOV EAX,dword ptr [EDI + 0x4]
 005963AF  83 F8 FF                  CMP EAX,-0x1
@@ -462,7 +462,7 @@ LAB_005963be:
 005963E7  6A 07                     PUSH 0x7
 005963E9  50                        PUSH EAX
 005963EA  8B CF                     MOV ECX,EDI
-005963EC  FF 52 04                  CALL dword ptr [EDX + 0x4]
+005963EC  FF 52 04                  CALL dword ptr [EDX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 005963EF  89 9E 05 1E 00 00         MOV dword ptr [ESI + 0x1e05],EBX
 005963F5  8B 47 04                  MOV EAX,dword ptr [EDI + 0x4]
 005963F8  83 F8 FF                  CMP EAX,-0x1
@@ -518,7 +518,7 @@ LAB_00596407:
 005964B0  6A 64                     PUSH 0x64
 005964B2  6A 64                     PUSH 0x64
 005964B4  53                        PUSH EBX
-005964B5  E8 36 F0 11 00            CALL 0x006b54f0
+005964B5  E8 36 F0 11 00            CALL 0x006b54f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 005964BA  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]
 005964BD  89 86 9E 1E 00 00         MOV dword ptr [ESI + 0x1e9e],EAX
 LAB_005964c3:

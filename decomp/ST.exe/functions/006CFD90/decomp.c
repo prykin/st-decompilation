@@ -13,7 +13,7 @@ undefined4 FUN_006cfd90(byte *param_1,int param_2,int param_3)
     pbVar1 = param_1 + (param_1[0xd] >> 1 & 0xe) + 0x16;
   }
   else {
-    pbVar1 = FUN_006cfe10(param_1,param_3);
+    pbVar1 = FUN_006cfe10((RecoveredRecord_006CFE10_B59F6D2D *)param_1,param_3);
   }
   uVar3 = (uint)*pbVar1;
   pbVar2 = pbVar1 + 1;

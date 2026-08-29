@@ -103,24 +103,24 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
   uint *puVar25;
   bool bVar27;
   bool bVar28;
-  undefined4 local_9c;
+  uint local_9c;
   uint local_98;
-  undefined4 local_94;
+  uint local_94;
   DArrayTy *local_90;
   uint local_68;
   short local_64;
   short local_62;
   short local_60;
-  undefined2 local_5e;
-  undefined2 local_5c;
-  undefined2 local_5a;
+  ushort local_5e;
+  ushort local_5c;
+  ushort local_5a;
   int local_58;
   int local_54;
   int local_50;
   uint local_4c;
   STGameObjC *local_48;
   uint local_44 [2];
-  undefined4 local_3c;
+  uint local_3c;
   undefined1 uStack_38;
   undefined1 uStack_37;
   undefined1 uStack_36;
@@ -145,8 +145,9 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
   }
   param_1->field_008F = param_1->field_0280;
   local_8 = thunk_FUN_004357f0((char)param_1->field_0024);
-  iVar14 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00664540::thunk_FUN_00664540
-                     ((AnonReceiver_00664540 *)param_1,local_44,&local_68);
+
+  iVar14 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00664540::thunk_FUN_00664540
+                     ((RecoveredReceiver_00664540 *)param_1,local_44,&local_68);
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   iVar16 = extraout_EDX;
   while (-1 < iVar14) {
@@ -195,6 +196,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       param_1->field_015F = CONCAT13(uStack_2c,CONCAT12(uStack_2d,CONCAT11(uStack_2e,uStack_2f)));
       break;
     case 4:
+
       Library::DKW::TBL::DArrayAppend(param_1->field_020B,&local_3c);
       thunk_FUN_00676c40(param_1->field_020B,thunk_FUN_00660d10);
       goto cf_common_join_00665024;
@@ -266,6 +268,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
               ((iVar21 <= (int)local_48 &&
                ((((iVar16 <= local_50 && (local_50 <= iVar1)) && (iVar23 <= local_54)) &&
                 (local_54 <= (int)local_48)))))))) {
+
             Library::DKW::TBL::DArrayPut((DArrayTy *)param_1->field_022F,local_c,&local_3c);
             goto cf_common_join_00665024;
           }
@@ -273,6 +276,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
         } while ((int)local_c < (int)local_4c);
       }
       if (param_1->field_022F != nullptr) {
+
         Library::DKW::TBL::FUN_006b11d0((uint *)param_1->field_022F,0,&local_3c);
       }
       param_1->field_0170 = param_1->field_0170 + 1;
@@ -332,6 +336,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       break;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case 0xe:
+
       thunk_FUN_00675950(CONCAT13(STPiece<3,1>(local_3c),
                                   CONCAT12(STPiece<2,1>(local_3c),
                                            STReplaceLowByte16((uint32_t)(local_3c), (uint8_t)((undefined1)local_3c)))),
@@ -363,6 +368,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
         } while ((int)uVar17 < (int)local_4c);
       }
       if (pAVar5 != nullptr) {
+
         Library::DKW::TBL::FUN_006b11d0((uint *)pAVar5,0,&local_3c);
       }
       param_1->field_0127 = param_1->field_0127 + 1;
@@ -377,6 +383,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
       param_1->field_0194 = (undefined1)local_3c;
       break;
     default:
+
       iVar16 = thunk_FUN_00664650(param_1,local_44[0]);
       if (iVar16 < 1) goto cf_common_join_00665024;
       break;
@@ -498,6 +505,7 @@ cf_common_join_00665024:
       if ((local_44[0] < 0x32) || (99 < local_44[0])) {
         if ((local_44[0] == 0) || (0x31 < local_44[0])) {
 switchD_006649d9_caseD_0:
+
           thunk_FUN_00664650(param_1,local_44[0]);
           /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           iVar16 = extraout_EDX_01;
@@ -505,12 +513,14 @@ switchD_006649d9_caseD_0:
         }
       }
       else {
-        thunk_FUN_006646e0((int)param_1);
+
+        thunk_FUN_006646e0((RecoveredRecord_006646E0_797C098D *)param_1);
       }
     }
 LAB_00665047:
-    iVar14 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00664540::thunk_FUN_00664540
-                       ((AnonReceiver_00664540 *)param_1,local_44,&local_68);
+
+    iVar14 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00664540::thunk_FUN_00664540
+                       ((RecoveredReceiver_00664540 *)param_1,local_44,&local_68);
     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     iVar16 = extraout_EDX_00;
   }
@@ -541,8 +551,10 @@ LAB_00666934:
         param_1->field_00A3 = 1;
         if ((iVar16 == 0x200) || (iVar16 == 0x400)) {
           psVar15 = &param_1->field_01A1;
-          iVar11 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065ED90::thunk_FUN_0065ed90
-                             ((AnonReceiver_0065ED90 *)param_1,&param_1->field_0195,psVar15,iVar16);
+
+          iVar11 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0065ED90::
+                   thunk_FUN_0065ed90((RecoveredReceiver_0065ED90 *)param_1,&param_1->field_0195,
+                                      psVar15,iVar16);
           if ((iVar11 == 0x200) || (iVar11 == 0x400)) {
             if (param_1->field_00F3 != 2) {
               sVar13 = param_1->field_01AB / 2 + param_1->field_01A5;
@@ -551,8 +563,9 @@ LAB_00666934:
               sVar4 = *psVar15;
               goto LAB_006668ef;
             }
-            iVar16 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::
-                     thunk_FUN_00660180((AnonReceiver_00660180 *)param_1,psVar15,'\x02');
+
+            iVar16 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00660180::
+                     thunk_FUN_00660180((RecoveredReceiver_00660180 *)param_1,psVar15,'\x02');
             goto LAB_006668f9;
           }
         }
@@ -567,18 +580,21 @@ LAB_00666901:
               param_1->field_00EB = 0x40;
               if (param_1->field_00A3 == 0) {
                 param_1->field_00A3 = 1;
-                iVar16 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::
-                         thunk_FUN_00660180((AnonReceiver_00660180 *)param_1,&param_1->field_0195,
-                                            (char)param_1->field_00FB);
+
+                iVar16 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00660180::
+                         thunk_FUN_00660180((RecoveredReceiver_00660180 *)param_1,
+                                            &param_1->field_0195,(char)param_1->field_00FB);
                 if (iVar16 == 0) goto cf_common_exit_00667066;
                 if (local_8 != nullptr) {
-                  thunk_FUN_0067bf60(local_8,-1,param_1->field_00F7);
+                  /* ST_CALLSITE[00665F8C]: CALL 0x00402c61; direct=00402C61 AiPlrClassTy::sub_0067BF60 */
+                  AiPlrClassTy::sub_0067BF60(local_8,-1,param_1->field_00F7);
                 }
               }
               else {
                 if (param_1->field_00A7 != 0) {
                   if (local_8 != nullptr) {
-                    thunk_FUN_0067bf60(local_8,'\x01',param_1->field_00F7);
+                    /* ST_CALLSITE[00665FB2]: CALL 0x00402c61; direct=00402C61 AiPlrClassTy::sub_0067BF60 */
+                    AiPlrClassTy::sub_0067BF60(local_8,'\x01',param_1->field_00F7);
                   }
                   param_1->field_009B = CASE_0;
                   param_1->field_009F = 0;
@@ -594,7 +610,8 @@ LAB_00666901:
                      (uint)(param_1->field_00AF + *(int *)&param_1->field_0xab)))))
                 goto cf_common_exit_00667066;
                 if (this != nullptr) {
-                  thunk_FUN_0067bf60(this,-1,param_1->field_00F7);
+                  /* ST_CALLSITE[00666018]: CALL 0x00402c61; direct=00402C61 AiPlrClassTy::sub_0067BF60 */
+                  AiPlrClassTy::sub_0067BF60(this,-1,param_1->field_00F7);
                 }
               }
             }
@@ -602,9 +619,10 @@ LAB_00666901:
               param_1->field_00EB = 0x40;
               if (param_1->field_00A3 == 0) {
                 param_1->field_00A3 = 1;
-                iVar16 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::
-                         thunk_FUN_00660180((AnonReceiver_00660180 *)param_1,&param_1->field_01A1,
-                                            '\x02');
+
+                iVar16 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00660180::
+                         thunk_FUN_00660180((RecoveredReceiver_00660180 *)param_1,
+                                            &param_1->field_01A1,'\x02');
                 if (iVar16 == 0) goto cf_common_exit_00667066;
 LAB_00665eba:
                 param_1->field_009B = CASE_85;
@@ -624,7 +642,8 @@ LAB_00665eba:
                   (param_1->field_0280 <= (uint)(param_1->field_00AF + *(int *)&param_1->field_0xab)
                   )))) goto cf_common_exit_00667066;
               if (local_8 != nullptr) {
-                thunk_FUN_0067bf60(local_8,-1,param_1->field_00F7);
+                /* ST_CALLSITE[00665F33]: CALL 0x00402c61; direct=00402C61 AiPlrClassTy::sub_0067BF60 */
+                AiPlrClassTy::sub_0067BF60(local_8,-1,param_1->field_00F7);
               }
             }
             else {
@@ -635,13 +654,15 @@ LAB_00665eba:
                 if (((param_1->field_00EF == 0x200) || (param_1->field_00EF == 0x400)) &&
                    (uVar17 = param_1->field_001C * 0x41c64e6d + 0x3039, param_1->field_001C = uVar17
                    , (uVar17 & 0x10000) != 0)) {
+
                   local_EAX_5229 =
-                       SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065ED90::
-                       thunk_FUN_0065ed90((AnonReceiver_0065ED90 *)param_1,&param_1->field_0195,
-                                          &param_1->field_01A1,param_1->field_00EF);
+                       SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0065ED90::
+                       thunk_FUN_0065ed90((RecoveredReceiver_0065ED90 *)param_1,&param_1->field_0195
+                                          ,&param_1->field_01A1,param_1->field_00EF);
                   if ((local_EAX_5229 == 0x200) || (local_EAX_5229 == 0x400)) {
-                    iVar16 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::
-                             thunk_FUN_00660180((AnonReceiver_00660180 *)param_1,
+
+                    iVar16 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00660180::
+                             thunk_FUN_00660180((RecoveredReceiver_00660180 *)param_1,
                                                 &param_1->field_01A1,'\x02');
                     if (iVar16 == 0) goto cf_common_exit_00667066;
                     param_1->field_009B = CASE_85;
@@ -667,7 +688,8 @@ LAB_00665eba:
                   (param_1->field_0280 <= (uint)(param_1->field_00AF + *(int *)&param_1->field_0xab)
                   )))) goto cf_common_exit_00667066;
               if (local_8 != nullptr) {
-                thunk_FUN_0067bf60(local_8,-1,param_1->field_00F7);
+                /* ST_CALLSITE[00665E7A]: CALL 0x00402c61; direct=00402C61 AiPlrClassTy::sub_0067BF60 */
+                AiPlrClassTy::sub_0067BF60(local_8,-1,param_1->field_00F7);
               }
             }
           }
@@ -677,7 +699,8 @@ LAB_00665eba:
               param_1->field_00EB = 0x40;
               *(undefined4 *)&param_1->field_0xab = param_1->field_00E6;
               param_1->field_00AF = param_1->field_0280;
-              thunk_FUN_0065fa10((AnonShape_0065FA10_37C5A4D3 *)param_1,param_1->field_0280,0,0,0);
+              thunk_FUN_0065fa10((RecoveredRecordView_0065FA10_071C1E69 *)param_1,
+                                 param_1->field_0280,0,0,0);
               STPiece<0,2>(uVar17) = param_1->field_00BF;
               STPiece<2,2>(uVar17) = param_1->field_00C1;
               uVar19 = uVar17 & 1;
@@ -715,16 +738,18 @@ LAB_00665eba:
                 STPiece<2,2>(uVar6) = param_1->field_00D1;
                 STPiece<0,2>(uVar7) = param_1->field_00CB;
                 STPiece<2,2>(uVar7) = param_1->field_00CD;
+
                 iVar16 = thunk_FUN_0065e9a0(param_1,*(short **)&param_1->field_00C7,
                                             &param_1->field_0195,uVar7,uVar6,&param_1->field_0xd5,
                                             STReplaceLowByte((uint32_t)(uVar19), (uint8_t)(param_1->field_0xd3)),1);
                 if (iVar16 != 0) goto cf_common_join_00667047;
                 iVar16 = param_1->field_00EF;
                 if (((iVar16 == 0x200) || (iVar16 == 0x400)) &&
+
                    (local_EAX_6228 =
-                         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065ED90::
-                         thunk_FUN_0065ed90((AnonReceiver_0065ED90 *)param_1,&param_1->field_0195,
-                                            &param_1->field_01A1,iVar16),
+                         SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0065ED90::
+                         thunk_FUN_0065ed90((RecoveredReceiver_0065ED90 *)param_1,
+                                            &param_1->field_0195,&param_1->field_01A1,iVar16),
                    local_EAX_6228 == param_1->field_00EF)) {
                   param_1->field_009B = CASE_1F5;
                 }
@@ -741,10 +766,12 @@ LAB_00665eba:
               param_1->field_00A3 = 1;
               *(undefined4 *)&param_1->field_0xab = param_1->field_015B;
               param_1->field_00AF = param_1->field_0280;
-              thunk_FUN_0065fa10((AnonShape_0065FA10_37C5A4D3 *)param_1,param_1->field_0280,0,0,0);
-              iVar16 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::
-                       thunk_FUN_00660180((AnonReceiver_00660180 *)param_1,&param_1->field_0195,
-                                          (char)param_1->field_015F);
+              thunk_FUN_0065fa10((RecoveredRecordView_0065FA10_071C1E69 *)param_1,
+                                 param_1->field_0280,0,0,0);
+
+              iVar16 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00660180::
+                       thunk_FUN_00660180((RecoveredReceiver_00660180 *)param_1,&param_1->field_0195
+                                          ,(char)param_1->field_015F);
               if (iVar16 == 0) goto cf_common_exit_00667066;
               if (param_1->field_0284 != nullptr) {
                 thunk_FUN_00690610(param_1->field_0284,param_1->field_007D);
@@ -770,15 +797,17 @@ LAB_00665eba:
         if (param_1->field_00A3 == 0) {
           param_1->field_00A3 = 1;
           if (param_1->field_00F3 == 2) {
-            iVar16 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::
-                     thunk_FUN_00660180((AnonReceiver_00660180 *)param_1,&param_1->field_01A1,'\x02'
-                                       );
+
+            iVar16 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00660180::
+                     thunk_FUN_00660180((RecoveredReceiver_00660180 *)param_1,&param_1->field_01A1,
+                                        '\x02');
           }
           else {
             sVar12 = param_1->field_01AB / 2 + param_1->field_01A5;
             iVar16 = (int)param_1->field_01A9 / 2 + (int)param_1->field_01A3;
             iVar14 = (int)param_1->field_01A7 / 2 + (int)param_1->field_01A1;
 LAB_00666413:
+
             iVar16 = thunk_FUN_0065fd50(param_1,iVar14,iVar16,sVar12,0);
           }
 LAB_0066641b:
@@ -811,9 +840,11 @@ LAB_0066641b:
         param_1->field_00A3 = 1;
         if ((iVar16 == 0x200) || (iVar16 == 0x400)) {
           psVar15 = &param_1->field_01A1;
+
           local_EAX_6733 =
-               SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065ED90::thunk_FUN_0065ed90
-                         ((AnonReceiver_0065ED90 *)param_1,&param_1->field_0195,psVar15,iVar16);
+               SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0065ED90::
+               thunk_FUN_0065ed90((RecoveredReceiver_0065ED90 *)param_1,&param_1->field_0195,psVar15
+                                  ,iVar16);
           if ((local_EAX_6733 == 0x200) || (local_EAX_6733 == 0x400)) {
             if (param_1->field_00F3 != 2) {
               sVar12 = param_1->field_01AB / 2 + param_1->field_01A5;
@@ -821,8 +852,9 @@ LAB_0066641b:
               iVar14 = (int)param_1->field_01A7 / 2 + (int)*psVar15;
               goto LAB_00666413;
             }
-            iVar16 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::
-                     thunk_FUN_00660180((AnonReceiver_00660180 *)param_1,psVar15,'\x02');
+
+            iVar16 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00660180::
+                     thunk_FUN_00660180((RecoveredReceiver_00660180 *)param_1,psVar15,'\x02');
             goto LAB_0066641b;
           }
         }
@@ -849,9 +881,10 @@ LAB_006664d8:
           goto LAB_006664e6;
         }
         param_1->field_00A3 = 1;
-        iVar16 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::thunk_FUN_00660180
-                           ((AnonReceiver_00660180 *)param_1,&param_1->field_0195,
-                            (char)param_1->field_00F3);
+
+        iVar16 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00660180::
+                 thunk_FUN_00660180((RecoveredReceiver_00660180 *)param_1,&param_1->field_0195,
+                                    (char)param_1->field_00F3);
         goto joined_r0x00666ceb;
       case CASE_1F8:
         param_1->field_00EB = 0x40;
@@ -888,6 +921,7 @@ LAB_006664d8:
         STPiece<2,2>(uVar9) = param_1->field_00CD;
         STPiece<0,2>(uVar10) = param_1->field_00C7;
         STPiece<2,2>(uVar10) = param_1->field_00C9;
+
         local_EAX_7232 =
              thunk_FUN_0065eb70(param_1,uVar10,uVar17,&param_1->field_023B->flags,uVar9,uVar8,
                                 &param_1->field_0xd5,(uint)(byte)param_1->field_0xd3);
@@ -899,6 +933,7 @@ LAB_006664d8:
           param_1->field_00A3 = 0;
           param_1->field_00A7 = 0;
         }
+
         iVar16 = thunk_FUN_00660420(param_1,param_1->field_023B);
         goto joined_r0x00666ceb;
       default:
@@ -907,8 +942,8 @@ LAB_006664d8:
         param_1->field_00EB = 0x40;
         *(int *)&param_1->field_0xab = *(int *)&param_1->field_0xd5;
         param_1->field_00AF = param_1->field_0280;
-        thunk_FUN_0065fa10((AnonShape_0065FA10_37C5A4D3 *)param_1,*(int *)&param_1->field_0xd5,0,0,0
-                          );
+        thunk_FUN_0065fa10((RecoveredRecordView_0065FA10_071C1E69 *)param_1,
+                           *(int *)&param_1->field_0xd5,0,0,0);
         param_1->field_0195 = param_1->field_00C7;
         param_1->field_0197 = param_1->field_00C9;
         param_1->field_0199 = param_1->field_00CB;
@@ -952,9 +987,10 @@ LAB_006664d8:
         if (param_1->field_00A3 == 0) {
           param_1->field_00A3 = 1;
           if (param_1->field_00F3 == 2) {
-            iVar16 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::
-                     thunk_FUN_00660180((AnonReceiver_00660180 *)param_1,&param_1->field_01A1,'\x02'
-                                       );
+
+            iVar16 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00660180::
+                     thunk_FUN_00660180((RecoveredReceiver_00660180 *)param_1,&param_1->field_01A1,
+                                        '\x02');
           }
           else {
             sVar13 = param_1->field_01AB / 2 + param_1->field_01A5;
@@ -962,6 +998,7 @@ LAB_006664d8:
             sVar12 = param_1->field_01A7;
             sVar4 = param_1->field_01A1;
 LAB_006668ef:
+
             iVar16 = thunk_FUN_0065fd50(param_1,(int)sVar12 / 2 + (int)sVar4,iVar16,sVar13,0);
           }
 LAB_006668f9:
@@ -981,9 +1018,10 @@ LAB_006668f9:
       param_1->field_00EB = 0x40;
       if (param_1->field_00A3 == 0) {
         param_1->field_00A3 = 1;
-        iVar16 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::thunk_FUN_00660180
-                           ((AnonReceiver_00660180 *)param_1,&param_1->field_0195,
-                            (char)param_1->field_00F3);
+
+        iVar16 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00660180::
+                 thunk_FUN_00660180((RecoveredReceiver_00660180 *)param_1,&param_1->field_0195,
+                                    (char)param_1->field_00F3);
         goto joined_r0x00666ceb;
       }
       if (param_1->field_00A7 != 0) {
@@ -1007,11 +1045,12 @@ LAB_006668f9:
         *(undefined2 *)&param_1->field_0xab = *(undefined2 *)&param_1->field_0xc5;
         *(short *)&param_1->field_0xad = param_1->field_00C7;
         param_1->field_00AF = param_1->field_0280;
-        thunk_FUN_0065fa10((AnonShape_0065FA10_37C5A4D3 *)param_1,(int)param_1->field_00CB,
-                           (int)param_1->field_00C9,(int)param_1->field_00CB,
+        thunk_FUN_0065fa10((RecoveredRecordView_0065FA10_071C1E69 *)param_1,(int)param_1->field_00CB
+                           ,(int)param_1->field_00C9,(int)param_1->field_00CB,
                            (int)param_1->field_00CD);
         STPiece<0,2>(uVar22) = param_1->field_00CF;
         STPiece<2,2>(uVar22) = param_1->field_00D1;
+
         iVar16 = thunk_FUN_0065fd50(param_1,(int)param_1->field_00BF,(int)param_1->field_00C1,
                                     *(short *)&param_1->field_0xc3,uVar22);
         goto joined_r0x00666ceb;
@@ -1031,10 +1070,11 @@ LAB_00666ddf:
         *(short *)&param_1->field_0xab = param_1->field_00C7;
         *(short *)&param_1->field_0xad = param_1->field_00C9;
         param_1->field_00AF = param_1->field_0280;
-        thunk_FUN_0065fa10((AnonShape_0065FA10_37C5A4D3 *)param_1,(uint)bVar2,0,0,0);
+        thunk_FUN_0065fa10((RecoveredRecordView_0065FA10_071C1E69 *)param_1,(uint)bVar2,0,0,0);
         /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
         uVar22 = CONCAT22(extraout_var_16,*(undefined2 *)&param_1->field_0xc3);
-        iVar16 = thunk_FUN_00660620((AnonShape_00660620_6BCED4D7 *)param_1,uVar22,uVar22);
+
+        iVar16 = thunk_FUN_00660620((RecoveredRecordView_00660620_D94F552E *)param_1,uVar22,uVar22);
         goto joined_r0x00666ceb;
       }
       if (param_1->field_00A7 == 0) {
@@ -1059,6 +1099,7 @@ LAB_006664e6:
         param_1->field_00A3 = 1;
         *(undefined4 *)&param_1->field_0xab = *(undefined4 *)&param_1->field_0xd3;
         param_1->field_00AF = param_1->field_0280;
+
         iVar16 = thunk_FUN_0065fe10(param_1,&param_1->field_00C7,*(int *)&param_1->field_0xc3,
                                     &param_1->field_00C7);
         goto joined_r0x00666ceb;
@@ -1080,6 +1121,7 @@ cf_common_join_00666DC1:
       *(undefined2 *)&param_1->field_0xab = param_1->field_00CF;
       *(undefined2 *)&param_1->field_0xad = param_1->field_00D1;
       param_1->field_00AF = param_1->field_0280;
+
       iVar16 = thunk_FUN_00660700(param_1,*(short *)&param_1->field_0xc3,
                                   *(short *)&param_1->field_0xc5,param_1->field_00C7,
                                   (int)param_1->field_00C9,(int)param_1->field_00CB,
@@ -1092,6 +1134,7 @@ cf_common_join_00666DC1:
         *(short *)&param_1->field_0xab = param_1->field_00CB;
         *(short *)&param_1->field_0xad = param_1->field_00CD;
         param_1->field_00AF = param_1->field_0280;
+
         iVar16 = thunk_FUN_00660910(param_1,*(short *)&param_1->field_0xc3,
                                     *(short *)&param_1->field_0xc5,param_1->field_00C7);
         goto joined_r0x00666ceb;
@@ -1112,6 +1155,7 @@ cf_common_join_00666DC1:
         *(short *)&param_1->field_0xab = param_1->field_00C9;
         *(short *)&param_1->field_0xad = param_1->field_00CB;
         param_1->field_00AF = param_1->field_0280;
+
         iVar16 = thunk_FUN_00660a40(param_1,*(short *)&param_1->field_0xc3,
                                     *(short *)&param_1->field_0xc5,param_1->field_00C7);
         goto joined_r0x00666ceb;
@@ -1134,7 +1178,8 @@ cf_common_join_00666DC1:
       STPiece<0,2>(iVar16) = param_1->field_00BF;
       STPiece<2,2>(iVar16) = param_1->field_00C1;
       param_1->field_00A3 = 1;
-      iVar16 = thunk_FUN_00660b50((AnonShape_00660620_6BCED4D7 *)param_1,
+
+      iVar16 = thunk_FUN_00660b50((RecoveredRecordView_00660620_D94F552E *)param_1,
                                   (int)*(short *)&param_1->field_0xc3,*(short *)&param_1->field_0xc3
                                   ,*(short *)&param_1->field_0xc5,(int)param_1->field_00C7,iVar16);
 joined_r0x00666ceb:
@@ -1144,8 +1189,9 @@ joined_r0x00666ceb:
       param_1->field_00EB = 0x40;
       if (param_1->field_00A3 == 0) {
         param_1->field_00A3 = 1;
+
         local_EAX_9418 =
-             thunk_FUN_0065e450((AnonShape_0065E360_B94C37CB *)param_1,
+             thunk_FUN_0065e450((RecoveredRecordView_0065E360_071C1E69 *)param_1,
                                 *(undefined4 *)&param_1->field_0xc3,
                                 *(undefined4 *)&param_1->field_0xc3,(int)param_1->field_00C7,
                                 (int)param_1->field_00C9);
@@ -1199,8 +1245,10 @@ joined_r0x00666ceb:
               case 0xa3:
               case 0xa8:
               case 0xbe:
-                uVar13 = thunk_FUN_004c5350(this_00,0,nullptr,(int)param_1->field_00C7,
-                                            (int)param_1->field_00C9,0,0,0);
+                /* ST_CALLSITE[00666F3E]: CALL 0x004012c1; direct=004012C1 STGameObjC::sub_004C5350 */
+                uVar13 = STGameObjC::sub_004C5350
+                                   (this_00,0,nullptr,(int)param_1->field_00C7,
+                                    (int)param_1->field_00C9,0,0,0);
                 if (uVar13 != 0) {
                   sVar12 = param_1->field_00C7;
                   sVar4 = param_1->field_00C9;
@@ -1223,6 +1271,7 @@ joined_r0x00666ceb:
                   if ((&DAT_007e1984)[local_EAX_9844 + local_4c] == '\0') break;
                 }
                 if ((local_48->field_0245 == 0) && (99 < local_48->field_04EC)) {
+
                   thunk_FUN_004d8e70(local_48,(int)param_1->field_00C7,(int)param_1->field_00C9,0);
                   local_8 = (AiPlrClassTy *)((int)&local_8->vtable + 1);
                   if ((int)param_1->field_00B3 <= (int)local_8) goto cf_break_loop_0066703E;
@@ -1246,13 +1295,14 @@ cf_common_join_00667047:
     param_1->field_00EB = 0x40;
     *(undefined4 *)&param_1->field_0xab = param_1->field_0190;
     param_1->field_00AF = param_1->field_0280;
-    thunk_FUN_0065fa10((AnonShape_0065FA10_37C5A4D3 *)param_1,param_1->field_0190,0,0,0);
+    thunk_FUN_0065fa10((RecoveredRecordView_0065FA10_071C1E69 *)param_1,param_1->field_0190,0,0,0);
     iVar16 = param_1->field_00EF;
     if (((iVar16 == 0x200) || (iVar16 == 0x400)) &&
+
        (local_EAX_5022 =
-             SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065ED90::thunk_FUN_0065ed90
-                       ((AnonReceiver_0065ED90 *)param_1,&param_1->field_0195,&param_1->field_01A1,
-                        iVar16), local_EAX_5022 == param_1->field_00EF)) {
+             SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0065ED90::thunk_FUN_0065ed90
+                       ((RecoveredReceiver_0065ED90 *)param_1,&param_1->field_0195,
+                        &param_1->field_01A1,iVar16), local_EAX_5022 == param_1->field_00EF)) {
       param_1->field_009B = CASE_83;
     }
     else {
@@ -1267,13 +1317,15 @@ cf_common_join_00667047:
     if (0x10 < uVar3) {
       if (uVar3 == 0x20) goto LAB_006650bc;
       if (uVar3 != 0x8000) goto cf_common_exit_00667066;
-      thunk_FUN_0065fd00((AnonShape_0065FD00_EB74ED0C *)param_1,iVar16);
+
+      thunk_FUN_0065fd00((RecoveredRecordView_0065FD00_071C1E69 *)param_1,iVar16);
       param_1->field_009B = CASE_32;
       break;
     }
     if (uVar3 == 0x10) {
 LAB_006650bc:
-      thunk_FUN_0065fd00((AnonShape_0065FD00_EB74ED0C *)param_1,iVar16);
+
+      thunk_FUN_0065fd00((RecoveredRecordView_0065FD00_071C1E69 *)param_1,iVar16);
       param_1->field_009B = CASE_3C;
       break;
     }
@@ -1364,6 +1416,7 @@ LAB_00665315:
     param_1->field_00A3 = 1;
     *(undefined4 *)&param_1->field_0xab = param_1->field_011A;
     param_1->field_00AF = param_1->field_0280;
+
     iVar16 = thunk_FUN_0065fe10(param_1,param_1->field_011A,param_1->field_011E,nullptr);
     if (-1 < iVar16) goto cf_common_exit_00667066;
     param_1->field_009B = CASE_28;
@@ -1378,6 +1431,7 @@ LAB_00665315:
       param_1->field_00A3 = 1;
       *(undefined4 *)&param_1->field_0xab = param_1->field_01BB;
       param_1->field_00AF = param_1->field_0280;
+
       iVar16 = thunk_FUN_00660540(param_1,param_1->field_01AD,param_1->field_01C3,
                                   param_1->field_01C5,param_1->field_01C7,param_1->field_01B9,
                                   param_1->field_01C9,&param_1->field_0x1ca);
@@ -1432,6 +1486,7 @@ LAB_0066586a:
     }
 LAB_00665886:
     if ((param_1->field_0163 == '\0') ||
+
        (iVar16 = thunk_FUN_0065ef70((AnonShape_0065EF70_E78A8204 *)param_1), iVar16 == 0))
     goto cf_common_exit_00667066;
     param_1->field_009B = CASE_64;
@@ -1467,16 +1522,17 @@ LAB_006655ba:
        psVar15 != nullptr)) {
       param_1->field_0131 = param_1->field_0280;
       param_1->field_0135 = *(int *)(psVar15 + 3);
-      thunk_FUN_0065fa10((AnonShape_0065FA10_37C5A4D3 *)param_1,(int)psVar15[6],(int)psVar15[5],
-                         (int)psVar15[6],(int)psVar15[7]);
+      thunk_FUN_0065fa10((RecoveredRecordView_0065FA10_071C1E69 *)param_1,(int)psVar15[6],
+                         (int)psVar15[5],(int)psVar15[6],(int)psVar15[7]);
       local_64 = *psVar15;
       local_62 = psVar15[1];
       local_60 = psVar15[2];
       local_5e = 1;
       local_5c = 1;
       local_5a = 1;
-      iVar16 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::thunk_FUN_00660180
-                         ((AnonReceiver_00660180 *)param_1,&local_64,'\x02');
+
+      iVar16 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00660180::
+               thunk_FUN_00660180((RecoveredReceiver_00660180 *)param_1,&local_64,'\x02');
       if (iVar16 == 0) goto cf_common_exit_00667066;
     }
     param_1->field_009B = CASE_3C;
@@ -1490,6 +1546,7 @@ LAB_006655ba:
   case CASE_34:
     if (param_1->field_00A3 == 0) {
       param_1->field_00A3 = 1;
+
       iVar16 = thunk_FUN_00660010(param_1);
       if (iVar16 == 0) goto cf_common_exit_00667066;
       param_1->field_009B = CASE_78;
@@ -1514,7 +1571,7 @@ LAB_006655ba:
           /* ST_CALLSITE[006656DC]: CALL 0x004010e1; direct=004010E1 AiTactClassTy::GetAiMess */
           AiTactClassTy::GetAiMess
                     ((AiTactClassTy *)param_1->field_0284,
-                     (AnonShape_0068FD00_A5257008 *)stack_bytes_neg_9C);
+                     (RecoveredRecordView_0068FD00_630BE91E *)stack_bytes_neg_9C);
         }
         DArrayDestroy(local_90);
       }
@@ -1550,8 +1607,9 @@ LAB_006655ba:
       param_1->field_00A3 = 1;
       *(undefined4 *)&param_1->field_0xab = param_1->field_0107;
       param_1->field_00AF = param_1->field_0280;
-      thunk_FUN_0065fa10((AnonShape_0065FA10_37C5A4D3 *)param_1,(int)param_1->field_010D,
+      thunk_FUN_0065fa10((RecoveredRecordView_0065FA10_071C1E69 *)param_1,(int)param_1->field_010D,
                          (int)param_1->field_010B,(int)param_1->field_010D,(int)param_1->field_010F);
+
       thunk_FUN_0065fd50(param_1,(int)param_1->field_0101,(int)param_1->field_0103,
                          param_1->field_0105,0);
       goto cf_common_exit_00667066;
@@ -1576,9 +1634,10 @@ LAB_006655ba:
       param_1->field_00A3 = 1;
       *(undefined4 *)&param_1->field_0xab = param_1->field_016C;
       param_1->field_00AF = param_1->field_0280;
-      thunk_FUN_0065fa10((AnonShape_0065FA10_37C5A4D3 *)param_1,param_1->field_016C,0,0,0);
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::thunk_FUN_00660180
-                ((AnonReceiver_00660180 *)param_1,&param_1->field_0195,'\x01');
+      thunk_FUN_0065fa10((RecoveredRecordView_0065FA10_071C1E69 *)param_1,param_1->field_016C,0,0,0);
+
+      SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00660180::thunk_FUN_00660180
+                ((RecoveredReceiver_00660180 *)param_1,&param_1->field_0195,'\x01');
       goto cf_common_exit_00667066;
     }
     if ((param_1->field_00A7 == 0) &&
@@ -1590,18 +1649,20 @@ LAB_006655ba:
     param_1->field_00EB = 0x80;
     *(undefined4 *)&param_1->field_0xab = param_1->field_0142;
     param_1->field_00AF = param_1->field_0280;
-    thunk_FUN_0065fa10((AnonShape_0065FA10_37C5A4D3 *)param_1,iVar16,0,0,0);
+    thunk_FUN_0065fa10((RecoveredRecordView_0065FA10_071C1E69 *)param_1,iVar16,0,0,0);
     if ((short *)param_1->field_0097 != (short *)0xff) {
+
       iVar16 = thunk_FUN_0065e9a0(param_1,(short *)param_1->field_0097,&param_1->field_0195,0,
                                   param_1->field_013A,nullptr,0xffffffff,0);
       if (iVar16 == 0) {
         uVar17 = param_1->field_001C * 0x41c64e6d + 0x3039;
         param_1->field_001C = uVar17;
         if ((uVar17 & 0x10000) == 0) {
+
           local_EAX_4212 =
-               SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065ED90::thunk_FUN_0065ed90
-                         ((AnonReceiver_0065ED90 *)param_1,&param_1->field_0195,&param_1->field_01A1
-                          ,0);
+               SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0065ED90::
+               thunk_FUN_0065ed90((RecoveredReceiver_0065ED90 *)param_1,&param_1->field_0195,
+                                  &param_1->field_01A1,0);
           if ((local_EAX_4212 == 0x200) || (local_EAX_4212 == 0x400)) {
             param_1->field_00EF = local_EAX_4212;
             param_1->field_009B = CASE_6F;
@@ -1643,8 +1704,9 @@ LAB_00665aac:
     }
     param_1->field_00A3 = 1;
 LAB_00665b48:
-    iVar16 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::thunk_FUN_00660180
-                       ((AnonReceiver_00660180 *)param_1,&param_1->field_01A1,'\x02');
+
+    iVar16 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00660180::thunk_FUN_00660180
+                       ((RecoveredReceiver_00660180 *)param_1,&param_1->field_01A1,'\x02');
     if (iVar16 == 0) goto cf_common_exit_00667066;
 LAB_00665b57:
     param_1->field_009B = CASE_71;
@@ -1674,9 +1736,10 @@ LAB_00665b57:
     if (((param_1->field_00EF != 0x200) && (param_1->field_00EF != 0x400)) ||
        (uVar17 = param_1->field_001C * 0x41c64e6d + 0x3039, param_1->field_001C = uVar17,
        (uVar17 & 0x10000) == 0)) goto LAB_00665b57;
+
     local_EAX_4547 =
-         SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065ED90::thunk_FUN_0065ed90
-                   ((AnonReceiver_0065ED90 *)param_1,&param_1->field_0195,&param_1->field_01A1,
+         SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0065ED90::thunk_FUN_0065ed90
+                   ((RecoveredReceiver_0065ED90 *)param_1,&param_1->field_0195,&param_1->field_01A1,
                     param_1->field_00EF);
     if ((local_EAX_4547 == 0x200) || (local_EAX_4547 == 0x400)) goto LAB_00665b48;
     param_1->field_009B = CASE_71;
@@ -1688,8 +1751,9 @@ LAB_00665b57:
       goto LAB_00665a76;
     }
     param_1->field_00A3 = 1;
-    iVar16 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::thunk_FUN_00660180
-                       ((AnonReceiver_00660180 *)param_1,&param_1->field_0195,
+
+    iVar16 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00660180::thunk_FUN_00660180
+                       ((RecoveredReceiver_00660180 *)param_1,&param_1->field_0195,
                         (char)param_1->field_0146);
     if (iVar16 == 0) goto cf_common_exit_00667066;
     param_1->field_014E = param_1->field_0280;

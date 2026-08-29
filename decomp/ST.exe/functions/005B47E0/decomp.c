@@ -25,9 +25,8 @@ void __thiscall MainMenuTy::sub_005B47E0(MainMenuTy *this)
       this->field_0029 = 2;
       this->field_002D = 0x20;
       this->field_0031 = 1;
-      /* ST_CALLSITE[005B4823]: CALL dword ptr [EAX + 0x18] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(*STField<int *>(this,0xC) + 0x18))(&this->field_0x1d);
+      /* ST_CALLSITE[005B4823]: CALL dword ptr [EAX + 0x18]; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4 */
+      STStructuralVirtualCall<void>(STField<int *>(this,0xC), 0x18, &this->field_0x1d);
     }
     puVar1 = puVar1 + 1;
     local_8 = local_8 + -1;

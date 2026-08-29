@@ -74,7 +74,7 @@ LAB_0059dbd0:
 0059DC11  6A 5E                     PUSH 0x5e
 0059DC13  6A 13                     PUSH 0x13
 0059DC15  51                        PUSH ECX
-0059DC16  E8 65 6C 12 00            CALL 0x006c4880
+0059DC16  E8 65 6C 12 00            CALL 0x006c4880  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override
 0059DC1B  6A 08                     PUSH 0x8
 0059DC1D  68 75 01 00 00            PUSH 0x175
 0059DC22  89 06                     MOV dword ptr [ESI],EAX
@@ -83,14 +83,14 @@ LAB_0059dbd0:
 0059DC2F  6A 5E                     PUSH 0x5e
 0059DC31  68 E9 01 00 00            PUSH 0x1e9
 0059DC36  52                        PUSH EDX
-0059DC37  E8 44 6C 12 00            CALL 0x006c4880
+0059DC37  E8 44 6C 12 00            CALL 0x006c4880  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override
 0059DC3C  6A 0A                     PUSH 0xa
 0059DC3E  6A 2E                     PUSH 0x2e
 0059DC40  33 F6                     XOR ESI,ESI
 0059DC42  6A 14                     PUSH 0x14
 0059DC44  56                        PUSH ESI
 0059DC45  89 07                     MOV dword ptr [EDI],EAX
-0059DC47  E8 44 06 11 00            CALL 0x006ae290
+0059DC47  E8 44 06 11 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/FSGSTy_field_1EA6DArray; source view only; no Ghidra override
 0059DC4C  8D 8D B4 FA FF FF         LEA ECX,[EBP + 0xfffffab4]
 0059DC52  89 83 A6 1E 00 00         MOV dword ptr [EBX + 0x1ea6],EAX
 0059DC58  51                        PUSH ECX
@@ -101,7 +101,7 @@ LAB_0059dbd0:
 0059DC68  6A 68                     PUSH 0x68
 0059DC6A  6A 14                     PUSH 0x14
 0059DC6C  56                        PUSH ESI
-0059DC6D  E8 1E 06 11 00            CALL 0x006ae290
+0059DC6D  E8 1E 06 11 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/FSGSTy_field_1EAADArray; source view only; no Ghidra override
 0059DC72  6A 01                     PUSH 0x1
 0059DC74  6A 01                     PUSH 0x1
 0059DC76  56                        PUSH ESI

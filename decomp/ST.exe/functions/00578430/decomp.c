@@ -1,9 +1,17 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079B238
+   Entries: 00401B90
+   Slots: 0xDC
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_physical_vtable_owner_and_slot;
+   receiver_extent=71/641; unique_owner_for_target */
+
 undefined4 __thiscall
-FUN_00578430(void *this,short param_1,short param_2,short param_3,short param_4,short param_5,
-            short param_6)
+STCrabC::vfunc_DC(STCrabC *this,short param_1,short param_2,short param_3,short param_4,
+                 short param_5,short param_6)
 
 {
   short sVar1;
@@ -13,12 +21,12 @@ FUN_00578430(void *this,short param_1,short param_2,short param_3,short param_4,
   short sVar5;
   short sVar6;
 
-  sVar1 = STField<short>(this,0x45) + -0x1c;
-  sVar4 = STField<short>(this,0x45) + 0x1c;
-  sVar6 = STField<short>(this,0x41) + -0x1c;
-  sVar2 = STField<short>(this,0x43) + -0x1c;
-  sVar3 = STField<short>(this,0x41) + 0x1c;
-  sVar5 = STField<short>(this,0x43) + 0x1c;
+  sVar1 = this->field_0045 + -0x1c;
+  sVar4 = this->field_0045 + 0x1c;
+  sVar6 = this->field_0041 + -0x1c;
+  sVar2 = this->field_0043 + -0x1c;
+  sVar3 = this->field_0041 + 0x1c;
+  sVar5 = this->field_0043 + 0x1c;
   if ((((((sVar6 <= param_1) && (param_1 <= sVar3)) || ((sVar6 <= param_4 && (param_4 <= sVar3))))
        || ((param_1 <= sVar6 && (sVar3 <= param_4)))) &&
       (((sVar2 <= param_2 && (param_2 <= sVar5)) ||

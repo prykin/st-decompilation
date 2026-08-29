@@ -130,7 +130,7 @@ LAB_0049b633:
 0049B64D  50                        PUSH EAX
 0049B64E  51                        PUSH ECX
 0049B64F  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
-0049B655  E8 60 72 F6 FF            CALL 0x004028ba
+0049B655  E8 60 72 F6 FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_0045FF30_A86BE482; source view only; no Ghidra override
 0049B65A  8B F0                     MOV ESI,EAX
 0049B65C  85 F6                     TEST ESI,ESI
 0049B65E  75 1B                     JNZ 0x0049b67b

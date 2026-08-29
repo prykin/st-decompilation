@@ -32,80 +32,80 @@ void __thiscall ChooseMapTy::CreateCtrls(ChooseMapTy *this,char param_1)
   ccFntTy **ppcVar9;
   uint *puVar10;
   ccFntTy *local_fe4 [6];
-  undefined4 local_fcc;
-  undefined4 local_fc8;
+  uint local_fcc;
+  uint local_fc8;
   DArrayTy *local_fc4;
   int local_f98;
-  undefined4 local_f94;
-  undefined4 local_f90;
+  uint local_f94;
+  uint local_f90;
   int local_f58;
-  undefined4 local_f54;
-  undefined4 local_f50;
-  undefined4 local_780;
+  uint local_f54;
+  uint local_f50;
+  uint local_780;
   int local_758 [112];
-  undefined4 local_598 [10];
-  undefined4 local_570;
-  undefined4 local_56c;
-  undefined4 local_568;
-  undefined4 local_550;
-  undefined4 local_54c;
-  undefined4 local_548;
-  undefined4 local_530;
-  undefined4 local_52c;
-  undefined4 local_528;
-  undefined4 local_510;
-  undefined4 local_50c;
-  undefined4 local_508;
-  undefined4 local_46c;
-  undefined4 local_468;
-  undefined4 local_464;
-  undefined4 local_460;
-  undefined4 local_45c;
-  undefined4 local_458;
-  undefined4 local_454;
-  undefined4 local_408;
-  undefined4 local_404;
-  undefined4 local_400;
-  undefined4 local_358;
-  undefined4 local_354;
-  undefined4 local_2ec;
-  undefined4 local_2e8;
-  undefined4 local_2e4;
-  undefined4 local_2e0;
-  undefined4 local_2dc;
-  undefined4 local_2d8;
-  undefined4 local_2d4;
-  undefined4 local_288;
-  undefined4 local_284;
-  undefined4 local_280;
-  undefined4 local_1d8;
-  undefined4 local_1d4;
-  undefined4 local_16c;
-  undefined4 local_168;
-  undefined4 local_160;
-  undefined4 local_15c;
-  undefined4 local_158;
-  undefined4 local_154;
-  undefined4 local_150;
-  undefined4 local_14c;
-  undefined4 local_118;
-  undefined4 local_114;
-  undefined4 local_110;
-  undefined4 local_c8;
+  uint local_598 [10];
+  uint local_570;
+  uint local_56c;
+  uint local_568;
+  uint local_550;
+  uint local_54c;
+  uint local_548;
+  uint local_530;
+  uint local_52c;
+  uint local_528;
+  uint local_510;
+  uint local_50c;
+  uint local_508;
+  uint local_46c;
+  uint local_468;
+  uint local_464;
+  uint local_460;
+  uint local_45c;
+  uint local_458;
+  uint local_454;
+  uint local_408;
+  uint local_404;
+  uint local_400;
+  uint local_358;
+  uint local_354;
+  uint local_2ec;
+  uint local_2e8;
+  uint local_2e4;
+  uint local_2e0;
+  uint local_2dc;
+  uint local_2d8;
+  uint local_2d4;
+  uint local_288;
+  uint local_284;
+  uint local_280;
+  uint local_1d8;
+  uint local_1d4;
+  uint local_16c;
+  uint local_168;
+  uint local_160;
+  uint local_15c;
+  uint local_158;
+  uint local_154;
+  uint local_150;
+  uint local_14c;
+  uint local_118;
+  uint local_114;
+  uint local_110;
+  uint local_c8;
   InternalExceptionFrame local_c4;
-  undefined4 local_80 [4];
-  undefined4 local_70;
-  undefined4 local_6c;
-  undefined4 local_68;
-  undefined4 local_50;
-  undefined4 local_4c;
-  undefined4 local_48;
+  uint local_80 [4];
+  uint local_70;
+  uint local_6c;
+  uint local_68;
+  uint local_50;
+  uint local_4c;
+  uint local_48;
   int *local_38;
   uint local_34;
-  undefined4 local_28;
-  undefined2 local_24;
-  undefined2 local_1e;
-  undefined2 local_1c;
+  uint local_28;
+  ushort local_24;
+  ushort local_1e;
+  ushort local_1c;
   ChooseMapTy *local_c;
   uint local_8;
 
@@ -126,10 +126,12 @@ void __thiscall ChooseMapTy::CreateCtrls(ChooseMapTy *this,char param_1)
   iVar2 = 0;
   local_c4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c4;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_c4.jumpBuffer,0);
   this_01 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_c4.previous;
+
     iVar3 = ReportDebugMessage("E:\\__titans\\Start\\load_obj.cpp",0x39f,0,iVar4,"%s"
                                ,"ChooseMapTy::CreateCtrls");
     if (iVar3 != 0) {
@@ -201,6 +203,7 @@ LAB_005aecc2:
     /* ST_CALLSITE[005AECAA]: CALL dword ptr [EAX + 0x8] */
     (*this_01->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_01->field_000C,5,&this_01->field_1C83,nullptr,local_80,0);
+
     Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_01->field_1C87);
     goto LAB_005aecc2;
   }
@@ -267,15 +270,18 @@ LAB_005aecc2:
              local_598,0);
   uVar6 = this_01->array_00BC[0xc].field_01F4;
   if (uVar6 != 0xffffffff) {
+
     Library::DKW::DDX::FUN_006b34d0
               ((uint *)this_01->field_1AB8,uVar6,0xfffffffe,this_01->field_1A8C,this_01->field_1A90);
   }
   if (this_01->field_1B05 != 0xffffffff) {
+
     Library::DKW::DDX::FUN_006b34d0
               ((uint *)this_01->field_1B49,this_01->field_1B05,0xfffffffe,this_01->field_1B1D,
                this_01->field_1B21);
   }
   if (this_01->field_1B96 != 0xffffffff) {
+
     Library::DKW::DDX::FUN_006b34d0
               ((uint *)this_01->field_1BDA,this_01->field_1B96,0xfffffffe,this_01->field_1BAE,
                this_01->field_1BB2);
@@ -322,6 +328,7 @@ LAB_005aef44:
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,6,&g_startSystem_0081176C->field_054C,nullptr,local_fe4,0
               );
+
     Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
   }
   iVar2 = this_01->array_00BC[0xc].field_01DB;

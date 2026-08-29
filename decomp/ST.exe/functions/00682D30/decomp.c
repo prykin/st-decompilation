@@ -6,7 +6,7 @@
 void FUN_00682d30(void)
 
 {
-  undefined1 local_c;
+  byte local_c;
   float local_b;
 
   local_b = (float)_PTR_00857548;

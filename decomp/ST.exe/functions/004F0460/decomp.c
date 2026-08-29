@@ -13,8 +13,9 @@ BldObjPanelTy * __cdecl CreateBldObjPanel(void)
 {
   BldObjPanelTy *this;
   uint *puVar2;
-  this = (BldObjPanelTy *)FUN_006b04d0(0x296);
+  this = STPointerBoundaryCast<BldObjPanelTy *>(FUN_006b04d0(0x296));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;

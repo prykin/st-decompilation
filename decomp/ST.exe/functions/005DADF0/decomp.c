@@ -12,7 +12,7 @@
 void __thiscall StartSystemTy::InitChat(StartSystemTy *this)
 
 {
-  ushort *puVar1;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar1;
   int errorCode;
   uint *puVar3;
   int iVar4;
@@ -24,20 +24,22 @@ void __thiscall StartSystemTy::InitChat(StartSystemTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
     if (g_dArray_0080C4FA != nullptr) {
       FUN_006b5570(g_dArray_0080C4FA);
     }
     g_dArray_0080C4FA = Library::DKW::TBL::SArrayCreate(nullptr,100,0x14);
-    puVar1 = local_8->field_067E;
-    if (puVar1 != nullptr) {
-      uVar6 = *(uint *)(puVar1 + 10);
+    pRVar1 = (RecoveredRecord_006B4FA0_DAC3A217 *)local_8->field_067E;
+    if (pRVar1 != nullptr) {
+      uVar6 = *(uint *)&pRVar1[1].field_0x4;
       if (uVar6 == 0) {
-        uVar6 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-                *(int *)(puVar1 + 4);
+        uVar6 = ((uint)pRVar1->field_000E * *(int *)&pRVar1->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+                *(int *)&pRVar1->field_0x8;
       }
-      puVar3 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
+
+      puVar3 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0(pRVar1));
       for (uVar5 = uVar6 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
         *puVar3 = 0xffffffff;
         puVar3 = puVar3 + 1;
@@ -51,6 +53,7 @@ void __thiscall StartSystemTy::InitChat(StartSystemTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Start\\startsys.cpp",0xda,0,errorCode,
                              "%s","StartSystemTy::InitChat");
   if (iVar4 != 0) {

@@ -19,7 +19,7 @@ FUN_004e0250:
 004E0287  0F 84 BF 00 00 00         JZ 0x004e034c
 004E028D  8B 07                     MOV EAX,dword ptr [EDI]
 004E028F  8B CF                     MOV ECX,EDI
-004E0291  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+004E0291  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004E0294  8B 8E AC 05 00 00         MOV ECX,dword ptr [ESI + 0x5ac]
 004E029A  89 86 DC 04 00 00         MOV dword ptr [ESI + 0x4dc],EAX
 004E02A0  83 C1 C8                  ADD ECX,-0x38

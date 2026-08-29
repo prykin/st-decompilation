@@ -9,7 +9,7 @@ AiFltClassTy::sub_0065D720:
 0065D737  8A 40 24                  MOV AL,byte ptr [EAX + 0x24]
 0065D73A  52                        PUSH EDX
 0065D73B  50                        PUSH EAX
-0065D73C  E8 B8 85 DA FF            CALL 0x00405cf9
+0065D73C  E8 B8 85 DA FF            CALL 0x00405cf9  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423380_AA1491AE; source view only; no Ghidra override
 0065D741  85 C0                     TEST EAX,EAX
 0065D743  74 07                     JZ 0x0065d74c
 0065D745  8B C8                     MOV ECX,EAX

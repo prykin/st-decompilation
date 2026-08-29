@@ -127,7 +127,7 @@ LAB_0041f793:
 0041F79B  0F 84 82 00 00 00         JZ 0x0041f823
 0041F7A1  8B 16                     MOV EDX,dword ptr [ESI]
 0041F7A3  8B CE                     MOV ECX,ESI
-0041F7A5  FF 52 6C                  CALL dword ptr [EDX + 0x6c]
+0041F7A5  FF 52 6C                  CALL dword ptr [EDX + 0x6c]  ; [STIndirectCallsiteApplier] exact slot 0x6C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0041F7A8  83 F8 07                  CMP EAX,0x7
 0041F7AB  77 37                     JA 0x0041f7e4
 switchD_0041f7ad::switchD:

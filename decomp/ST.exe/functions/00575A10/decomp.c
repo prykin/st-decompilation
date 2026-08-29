@@ -12,15 +12,14 @@ undefined4 FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079b118;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_1c = &stack0xffffff8c;
   ExceptionList = &local_14;
-  /* ST_CALLSITE[00575A3B]: CALL dword ptr [0x0085bc4c] */
+  /* ST_CALLSITE[00575A3B]: CALL dword ptr [0x0085bc4c]; [STCallResultViewApplier] presentation_only; exact direct-call result=/WinDef.h/HINSTANCE; source view only; no Ghidra override */
   g_hINSTANCE_00807618 = GetModuleHandleA("st_string.dll");
   if (g_hINSTANCE_00807618 == (HMODULE)0x0) {
     ExceptionList = local_14;
@@ -28,11 +27,13 @@ undefined4 FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,
   }
   resourceString = LoadResourceString(100,g_hINSTANCE_00807618);
   Library::MSVCRT::FUN_0072f260(0,resourceString);
+
   FUN_006ad190(0x18,"dbg_msg.rpt",0);
   thunk_FUN_004e82b0();
   local_8 = 0;
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
+
   iVar1 = Library::MSVCRT::__setjmp3
                     (local_60.jumpBuffer,2,Library::MSVCRT::__seh_longjmp_unwind_4,0);
   if (iVar1 == 0) {
@@ -43,6 +44,7 @@ undefined4 FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,
       ExceptionList = local_14;
       return 0;
     }
+
     AppClassTy::RunApp((AppClassTy *)&DAT_00807620);
     g_currentExceptionFrame = local_60.previous;
   }

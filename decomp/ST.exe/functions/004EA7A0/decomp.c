@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_004ea7a0(AnonShape_004EA7A0_0F37AD2F *param_1)
+undefined4 __fastcall FUN_004ea7a0(RecoveredRecordView_004EA7A0_FED0CB95 *param_1)
 
 {
   param_1->field_04D0 = 0;

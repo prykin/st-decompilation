@@ -6,7 +6,8 @@
    structure /SubmarineTitans/Recovered/PointerShapes/AnonShape_00571CD0_C1ECCB3F (current recovered
    extent=3568) */
 
-AnonShape_00571CD0_C1ECCB3F * __fastcall FUN_00571cd0(AnonShape_00571CD0_C1ECCB3F *param_1)
+RecoveredRecordView_00571CD0_140859AA * __fastcall
+FUN_00571cd0(RecoveredRecordView_00571CD0_140859AA *param_1)
 
 {
   char cVar1;
@@ -44,7 +45,7 @@ AnonShape_00571CD0_C1ECCB3F * __fastcall FUN_00571cd0(AnonShape_00571CD0_C1ECCB3
   param_1->field_0DEE = 0;
   param_1->field_0781 = 1;
   param_1->field_0DAE = 0;
-  thunk_FUN_005739a0((AnonShape_005739A0_A4724D00 *)param_1);
+  thunk_FUN_005739a0((RecoveredRecordView_005739A0_CFCAF2B5 *)param_1);
   return param_1;
 }
 

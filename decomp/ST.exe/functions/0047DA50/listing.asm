@@ -51,7 +51,7 @@ LAB_0047daf4:
 0047DAFF  66 8B 86 9B 06 00 00      MOV AX,word ptr [ESI + 0x69b]
 0047DB06  8B CE                     MOV ECX,ESI
 0047DB08  50                        PUSH EAX
-0047DB09  E8 A4 55 F8 FF            CALL 0x004030b2
+0047DB09  E8 A4 55 F8 FF            CALL 0x004030b2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override
 0047DB0E  50                        PUSH EAX
 0047DB0F  8B CE                     MOV ECX,ESI
 0047DB11  E8 E6 47 F8 FF            CALL 0x004022fc

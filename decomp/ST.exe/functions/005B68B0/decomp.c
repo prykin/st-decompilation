@@ -39,18 +39,22 @@ MMMObjTy::OutBSlProc
     local_8 = param_8;
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
+
     errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     if (errorCode == 0) {
       /* ST_CALLSITE[005B690C]: CALL 0x00403099; direct=00403099 MMMObjTy::OutRGlProc */
       OutRGlProc(param_2,(int)param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8);
       local_c = param_4 + -0x15 + param_6;
+
       Library::DKW::DDX::FUN_006c6660(param_1,local_c,param_5 + 0x26,7,param_7 - 0x4cU,3,0);
+
       Library::DKW::DDX::FUN_006c6470
                 ((int)param_1,local_c,param_5 + 0x26,(undefined4 *)0x7,param_7 - 0x4cU,3,*local_8);
       g_currentExceptionFrame = local_50.previous;
       return;
     }
     g_currentExceptionFrame = local_50.previous;
+
     iVar2 = ReportDebugMessage("E:\\__titans\\Start\\mmenuobj.cpp",0x147,0,errorCode,
                                "%s","MMMObjTy::OutBSlProc");
     if (iVar2 != 0) {

@@ -13,7 +13,8 @@ void * __cdecl FUN_00617810(void)
 {
   JumpManagC *pJVar1;
 
-  pJVar1 = (JumpManagC *)FUN_006b04d0(0x6e);
+  /* ST_CALLSITE[00617812]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/JumpManagC; signature=__stdcall;pointer:/JumpManagC;/uint */
+  pJVar1 = FUN_006b04d0(0x6e);
   if (pJVar1 != nullptr) {
     pJVar1 = JumpManagC::JumpManagC(pJVar1);
     return pJVar1;

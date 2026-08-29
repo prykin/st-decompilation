@@ -13,7 +13,8 @@ STJumpMineC * __cdecl CreateSTJumpMine(void)
 {
   STJumpMineC *pSVar1;
 
-  pSVar1 = (STJumpMineC *)FUN_006b04d0(0x151);
+  /* ST_CALLSITE[00619145]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STJumpMineC; signature=__stdcall;pointer:/STJumpMineC;/uint */
+  pSVar1 = FUN_006b04d0(0x151);
   if (pSVar1 != nullptr) {
     pSVar1 = STJumpMineC::STJumpMineC(pSVar1);
     return pSVar1;

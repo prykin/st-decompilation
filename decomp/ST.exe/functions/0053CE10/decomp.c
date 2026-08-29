@@ -13,8 +13,10 @@ SAMPanelTy * __cdecl CreateSAMPanel(void)
 {
   SAMPanelTy *this;
 
-  this = (SAMPanelTy *)FUN_006b04d0(0x1d1);
+
+  this = STPointerBoundaryCast<SAMPanelTy *>(FUN_006b04d0(0x1d1));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;

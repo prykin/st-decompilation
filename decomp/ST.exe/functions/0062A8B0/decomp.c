@@ -6,11 +6,12 @@ FUN_0062a8b0(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,int par
             int param_6)
 
 {
-  uint uVar1;
+  int iVar1;
 
-  uVar1 = thunk_FUN_00496250(param_4,param_5,param_6);
+
+  iVar1 = thunk_FUN_00496250(param_4,param_5,param_6);
   *param_3 = 0xd5c;
-  switch(uVar1) {
+  switch(iVar1) {
   case 0:
     *param_1 = 0x24b5;
     *param_2 = 0;
@@ -45,7 +46,7 @@ FUN_0062a8b0(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,int par
     return 1;
   default:
     return 0;
-  case 0xffffffff:
+  case -1:
     return 0xffffffff;
   }
 }

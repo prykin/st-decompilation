@@ -15,8 +15,8 @@ void __fastcall FUN_00566ff0(AnonShape_00566FF0_D4E50B19 *param_1)
     }
   }
   else if ((uVar1 == 4) || (uVar1 == 8)) {
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00568940::thunk_FUN_00568940
-              ((AnonReceiver_00568940 *)param_1,CASE_B);
+    SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00568940::thunk_FUN_00568940
+              ((RecoveredReceiver_00568940 *)param_1,CASE_B);
     return;
   }
   return;

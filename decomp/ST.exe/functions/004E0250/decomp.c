@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_004e0250(AnonShape_004E0250_5A3B9236 *param_1)
+void __fastcall FUN_004e0250(RecoveredRecordView_004E0250_21BF6808 *param_1)
 
 {
   uint *this;
@@ -16,9 +16,8 @@ void __fastcall FUN_004e0250(AnonShape_004E0250_5A3B9236 *param_1)
   if (this == nullptr) {
     return;
   }
-  /* ST_CALLSITE[004E0291]: CALL dword ptr [EAX + 0x2c] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar1 = (**(code **)(*this + 0x2c))();
+  /* ST_CALLSITE[004E0291]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+  iVar1 = STStructuralVirtualCall<undefined4>(this, 0x2C);
   param_1->field_04DC = iVar1;
   switch(param_1->field_05AC) {
   case 0x38:

@@ -27,10 +27,11 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this)
   SettMapMTy_field_1E26State SVar2;
   byte bVar3;
   int iVar5;
-  SettMapMTy_field_1F84DArray *pSVar5;
-  char *pcVar6;
+  DArrayTy *pSVar5_mg1;
+  char *pcVar5;
   SettMapMTy_field_1F84Element *element_1f84;
   int iVar7;
+  SettMapMTy_field_1F84DArray *pSVar6;
   int iVar8;
   byte *pbVar9;
   uint uVar10;
@@ -41,13 +42,13 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this)
   char *pcVar16;
   bool bVar17;
   InternalExceptionFrame local_b8;
-  undefined4 local_74;
+  uint local_74;
   undefined1 uStack_70;
   undefined1 uStack_6f;
   int local_6e;
   byte local_2a;
-  undefined4 local_29;
-  undefined1 local_25;
+  uint local_29;
+  byte local_25;
   uint *local_24;
   uint local_20;
   uint local_1c;
@@ -61,10 +62,12 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this)
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
   local_10 = this;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0);
   pSVar11 = local_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_b8.previous;
+
     iVar7 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x1cb,0,iVar5,"%s"
                                ,"SettMapMTy::PrepPlList");
     if (iVar7 != 0) {
@@ -80,31 +83,32 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this)
   else {
     local_8 = local_10->field_1F43;
   }
-  pSVar5 = local_10->field_1F84;
-  if (pSVar5 != nullptr) {
+  pSVar6 = local_10->field_1F84;
+  if (pSVar6 != nullptr) {
     uVar12 = 0;
-    if (0 < (int)pSVar5->count) {
-      bVar17 = pSVar5->count != 0;
+    if (0 < (int)pSVar6->count) {
+      bVar17 = pSVar6->count != 0;
       do {
         if (bVar17) {
           /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-          pcVar6 = &pSVar5->data->field_0000 + pSVar5->elementSize * uVar12;
+          pcVar5 = &pSVar6->data->field_0000 + pSVar6->elementSize * uVar12;
         }
         else {
-          pcVar6 = nullptr;
+          pcVar5 = nullptr;
         }
-        if ((pcVar6 != nullptr) && (*(DArrayTy **)(pcVar6 + 0x50) != nullptr)) {
-          DArrayDestroy(*(DArrayTy **)(pcVar6 + 0x50));
+        if ((pcVar5 != nullptr) && (*(DArrayTy **)(pcVar5 + 0x50) != nullptr)) {
+          DArrayDestroy(*(DArrayTy **)(pcVar5 + 0x50));
         }
-        pSVar5 = pSVar11->field_1F84;
+        pSVar6 = pSVar11->field_1F84;
         uVar12 = uVar12 + 1;
-        bVar17 = uVar12 < pSVar5->count;
-      } while ((int)uVar12 < (int)pSVar5->count);
+        bVar17 = uVar12 < pSVar6->count;
+      } while ((int)uVar12 < (int)pSVar6->count);
     }
     DArrayDestroy((DArrayTy *)pSVar11->field_1F84);
   }
-  pSVar5 = (SettMapMTy_field_1F84DArray *)Library::DKW::TBL::DArrayCreate(nullptr,8,0x60,8);
-  pSVar11->field_1F84 = pSVar5;
+  /* ST_CALLSITE[005CD503]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/SettMapMTy_field_1F84DArray; source view only; no Ghidra override */
+  pSVar5_mg1 = Library::DKW::TBL::DArrayCreate(nullptr,8,0x60,8);
+  pSVar11->field_1F84 = (SettMapMTy_field_1F84DArray *)pSVar5_mg1;
   if ((pSVar11->field_1E26 != CASE_C) && (pSVar11->field_1E26 != CASE_10)) {
     DAT_0080874d = -1;
     DAT_0080874e = '\0';
@@ -209,32 +213,33 @@ LAB_005cd675:
         local_18 = *(uint *)(pbVar13 + 0xb);
         local_29 = 0;
         local_25 = 1;
+
         Library::DKW::TBL::DArrayAppend((DArrayTy *)pSVar11->field_1F84,&local_74);
       }
       local_c = pbVar13 + 0x51;
     } while ((int)local_c < 0x808a70);
     if (pSVar11->field_1E26 == CASE_C) {
-      pSVar5 = pSVar11->field_1F84;
+      pSVar6 = pSVar11->field_1F84;
       uVar10 = 0;
-      uVar12 = pSVar5->count;
+      uVar12 = pSVar6->count;
       if (0 < (int)uVar12) {
         bVar17 = uVar12 != 0;
         do {
           if (bVar17) {
             /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
-            pcVar6 = &pSVar5->data->field_0000 + pSVar5->elementSize * uVar10;
+            pcVar5 = &pSVar6->data->field_0000 + pSVar6->elementSize * uVar10;
           }
           else {
-            pcVar6 = nullptr;
+            pcVar5 = nullptr;
           }
-          if (((pcVar6 != nullptr) && (pcVar6[4] == '\x01')) &&
-             ((DAT_0080874d == pcVar6[2] && (DAT_0080874e == pcVar6[3])))) {
-            pcVar6 = &CHAR_00h_00807e1d;
+          if (((pcVar5 != nullptr) && (pcVar5[4] == '\x01')) &&
+             ((DAT_0080874d == pcVar5[2] && (DAT_0080874e == pcVar5[3])))) {
+            pcVar5 = &CHAR_00h_00807e1d;
             if (DAT_008067a0 == '\0') {
-              pcVar6 = &CHAR_00h_00807ddd;
+              pcVar5 = &CHAR_00h_00807ddd;
             }
             /* ST_CALLSITE[005CD765]: CALL 0x004013a7; direct=004013A7 SettMapMTy::AddPlayerList */
-            AddPlayerList(pSVar11,DAT_0080877f,uVar10,(DAT_0080874f != '\0') + 2,pcVar6);
+            AddPlayerList(pSVar11,DAT_0080877f,uVar10,(DAT_0080874f != '\0') + 2,pcVar5);
             break;
           }
           uVar10 = uVar10 + 1;
@@ -243,14 +248,14 @@ LAB_005cd675:
       }
     }
     else {
-      pSVar5 = pSVar11->field_1F84;
+      pSVar6 = pSVar11->field_1F84;
       uVar10 = 0;
-      uVar12 = pSVar5->count;
+      uVar12 = pSVar6->count;
       if (0 < (int)uVar12) {
         bVar17 = uVar12 != 0;
         do {
           if (bVar17) {
-            element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar5, uVar10);
+            element_1f84 = DArrayAt<SettMapMTy_field_1F84Element>(pSVar6, uVar10);
           }
           else {
             element_1f84 = nullptr;
@@ -291,8 +296,8 @@ code_r0x005cd7da:
   }
   uVar12 = ~uVar12;
   pcVar15 = pcVar16 + -uVar12;
-  pcVar6 = pcVar6 + 10;
-  memmove(pcVar6, pcVar15, uVar12); /* compiler REP MOVS byte copy */
+  pcVar5 = pcVar5 + 10;
+  memmove(pcVar5, pcVar15, uVar12); /* compiler REP MOVS byte copy */
   goto LAB_005cd7f2;
 }
 

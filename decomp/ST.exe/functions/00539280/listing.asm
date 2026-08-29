@@ -30,7 +30,8 @@ PausePanelTy::InitPausePanel:
 005392E0  8B 42 28                  MOV EAX,dword ptr [EDX + 0x28]
 005392E3  50                        PUSH EAX
 005392E4  68 9D 01 00 00            PUSH 0x19d
-005392E9  E8 12 4C 1D 00            CALL 0x0070df00
+PausePanelTy::InitPausePanel::override::prt_5392e9_bb1a54ff:
+005392E9  E8 12 4C 1D 00            CALL 0x0070df00  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/ccFntTy
 005392EE  83 C4 08                  ADD ESP,0x8
 005392F1  89 86 7C 01 00 00         MOV dword ptr [ESI + 0x17c],EAX
 005392F7  C7 40 58 00 00 00 00      MOV dword ptr [EAX + 0x58],0x0
@@ -44,7 +45,8 @@ PausePanelTy::InitPausePanel:
 0053931B  83 C4 08                  ADD ESP,0x8
 0053931E  50                        PUSH EAX
 0053931F  6A 01                     PUSH 0x1
-00539321  E8 BA 89 1B 00            CALL 0x006f1ce0
+PausePanelTy::InitPausePanel::override::prt_539321_6752cf82:
+00539321  E8 BA 89 1B 00            CALL 0x006f1ce0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int
 00539326  8B 4E 68                  MOV ECX,dword ptr [ESI + 0x68]
 00539329  50                        PUSH EAX
 0053932A  6A 01                     PUSH 0x1
@@ -71,7 +73,7 @@ PausePanelTy::InitPausePanel:
 00539368  6A FE                     PUSH -0x2
 0053936A  50                        PUSH EAX
 0053936B  68 16 27 00 00            PUSH 0x2716
-00539370  E8 CB 6D 17 00            CALL 0x006b0140
+00539370  E8 CB 6D 17 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 00539375  8B 8E 7C 01 00 00         MOV ECX,dword ptr [ESI + 0x17c]
 0053937B  50                        PUSH EAX
 0053937C  E8 EF 87 1D 00            CALL 0x00711b70

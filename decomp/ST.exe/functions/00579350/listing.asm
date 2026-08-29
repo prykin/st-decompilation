@@ -303,7 +303,7 @@ LAB_00579632:
 005796BA  40                        INC EAX
 005796BB  8B CE                     MOV ECX,ESI
 005796BD  89 86 3D 02 00 00         MOV dword ptr [ESI + 0x23d],EAX
-005796C3  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]
+005796C3  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]  ; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 005796C9  5F                        POP EDI
 005796CA  5E                        POP ESI
 005796CB  5B                        POP EBX

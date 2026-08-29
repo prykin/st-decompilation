@@ -11,22 +11,26 @@ int __cdecl FUN_006aced8(int param_1,int param_2,int param_3,int param_4)
   int iVar2;
   longlong lVar3;
   longlong lVar4;
-  int iVar5;
+  uint uVar5;
   int iVar6;
-  uint uVar7;
+  int iVar7;
+  uint highWord;
 
   lVar3 = (longlong)(param_1 - param_3) * (longlong)(param_1 - param_3);
-  iVar5 = (int)((ulonglong)lVar3 >> 0x20);
-  if ((lVar3 < 0) ||
-     (lVar4 = (longlong)(param_2 - param_4) * (longlong)(param_2 - param_4),
-     iVar6 = (int)((ulonglong)lVar4 >> 0x20), uVar1 = (uint)CARRY4((uint)lVar4,(uint)lVar3),
-     iVar2 = iVar6 + iVar5, uVar7 = iVar2 + uVar1,
-     (SCARRY4(iVar6,iVar5) != SCARRY4(iVar2,uVar1)) != (int)uVar7 < 0)) {
-    iVar5 = 0x7fffffff;
+  iVar6 = (int)((ulonglong)lVar3 >> 0x20);
+  if (-1 < lVar3) {
+    lVar4 = (longlong)(param_2 - param_4) * (longlong)(param_2 - param_4);
+    iVar7 = (int)((ulonglong)lVar4 >> 0x20);
+    uVar5 = (uint)lVar4;
+    uVar1 = (uint)CARRY4(uVar5,(uint)lVar3);
+    iVar2 = iVar7 + iVar6;
+    highWord = iVar2 + uVar1;
+    if ((SCARRY4(iVar7,iVar6) != SCARRY4(iVar2,uVar1)) == (int)highWord < 0) {
+
+      iVar6 = FUN_006ace70(uVar5 + (uint)lVar3,highWord);
+      return iVar6;
+    }
   }
-  else {
-    iVar5 = FUN_006ace70((uint)lVar3,uVar7);
-  }
-  return iVar5;
+  return 0x7fffffff;
 }
 

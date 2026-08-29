@@ -76,7 +76,8 @@ LAB_00538a4c:
 00538A9C  83 C4 10                  ADD ESP,0x10
 00538A9F  50                        PUSH EAX
 00538AA0  56                        PUSH ESI
-00538AA1  E8 3A 92 1B 00            CALL 0x006f1ce0
+PanelTy::PaintBut::override::prt_538aa1_6752cf82:
+00538AA1  E8 3A 92 1B 00            CALL 0x006f1ce0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int
 00538AA6  8B 4D F4                  MOV ECX,dword ptr [EBP + -0xc]
 00538AA9  50                        PUSH EAX
 00538AAA  56                        PUSH ESI

@@ -3,7 +3,8 @@ FUN_0067f920:
 0067F921  8B EC                     MOV EBP,ESP
 0067F923  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]
 0067F926  50                        PUSH EAX
-0067F927  E8 F0 3B D8 FF            CALL 0x0040351c
+FUN_0067f920::override::prt_67f927_3fe4d6eb:
+0067F927  E8 F0 3B D8 FF            CALL 0x0040351c  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/float; signature=__cdecl;pointer:/float;pointer:/byte
 0067F92C  83 C4 04                  ADD ESP,0x4
 0067F92F  85 C0                     TEST EAX,EAX
 0067F931  74 04                     JZ 0x0067f937

@@ -31,7 +31,7 @@ FUN_004e2340:
 004E239F  03 D0                     ADD EDX,EAX
 004E23A1  8B FA                     MOV EDI,EDX
 004E23A3  8B 13                     MOV EDX,dword ptr [EBX]
-004E23A5  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+004E23A5  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004E23A8  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 004E23AE  50                        PUSH EAX
 004E23AF  8A 43 24                  MOV AL,byte ptr [EBX + 0x24]
@@ -72,7 +72,7 @@ LAB_004e23eb:
 004E2421  8B CB                     MOV ECX,EBX
 004E2423  8B F8                     MOV EDI,EAX
 004E2425  89 7D 08                  MOV dword ptr [EBP + 0x8],EDI
-004E2428  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+004E2428  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004E242B  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 004E2431  50                        PUSH EAX
 004E2432  8A 43 24                  MOV AL,byte ptr [EBX + 0x24]
@@ -293,7 +293,7 @@ LAB_004e2665:
 004E26AD  68 C8 02 00 00            PUSH 0x2c8
 004E26B2  6A 03                     PUSH 0x3
 004E26B4  8B CB                     MOV ECX,EBX
-004E26B6  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]
+004E26B6  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]  ; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4
 004E26BC  8B 86 E0 04 00 00         MOV EAX,dword ptr [ESI + 0x4e0]
 004E26C2  5F                        POP EDI
 004E26C3  5E                        POP ESI
@@ -306,7 +306,7 @@ LAB_004e26cb:
 004E26CD  68 00 02 00 00            PUSH 0x200
 004E26D2  6A 03                     PUSH 0x3
 004E26D4  8B CB                     MOV ECX,EBX
-004E26D6  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]
+004E26D6  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]  ; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4
 LAB_004e26dc:
 004E26DC  8B 86 E0 04 00 00         MOV EAX,dword ptr [ESI + 0x4e0]
 LAB_004e26e2:

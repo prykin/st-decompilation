@@ -11,13 +11,9 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
 {
   byte *pbVar1;
   uint uVar2;
-  byte uVar3;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined3 extraout_var;
+  int iVar3;
   int iVar4;
   uint uVar6;
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  undefined3 extraout_var_00;
   int local_EAX_634;
   int uVar5;
   int local_EAX_741;
@@ -33,37 +29,41 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
   int *piVar14;
   STMessage local_60;
   byte local_40 [20];
-  undefined4 local_2c [5];
+  uint local_2c[5];
   byte *local_18;
   undefined4 *local_14;
   uint local_10;
   int local_c;
   int local_8;
 
-  uVar3 = thunk_FUN_004e6140((int)this->field_0024,param_1);
+
+  iVar3 = thunk_FUN_004e6140((int)this->field_0024,param_1);
+
   iVar4 = thunk_FUN_004e60d0((int)this->field_0024,param_1);
-  /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-  if (CONCAT31(extraout_var,uVar3) <= iVar4) goto cf_common_exit_004E2FE4;
-  iVar4 = thunk_FUN_004ac910(&this->field_01D5,'\f');
-  if (iVar4 != this->field_01F5->field_01C4) {
+  if (iVar3 <= iVar4) goto cf_common_exit_004E2FE4;
+
+  iVar3 = thunk_FUN_004ac910(&this->field_01D5,'\f');
+  if (iVar3 != this->field_01F5->field_01C4) {
     return 0;
   }
+
   local_10 = thunk_FUN_004e60d0((int)this->field_0024,param_1);
   pbVar1 = this->field_0024;
   puVar8 = (byte *)&g_packedRecords_A62x8[(int)pbVar1].field_0x2eb;
   puVar9 = (byte *)(local_2c);
   memmove(puVar9, puVar8, 0x14); /* compiler REP MOVS byte copy */
-  iVar4 = 0;
+  iVar3 = 0;
   puVar8 = (byte *)(&g_packedRecords_A62x8[(int)pbVar1].field376_0x2ff);
   pbVar10 = local_40;
   memmove(pbVar10, puVar8, 0x14); /* compiler REP MOVS byte copy */
-  iVar4 = 0;
-  thunk_FUN_004e6310(pbVar1,param_1,local_10 + 1);
+  iVar3 = 0;
+  /* ST_CALLSITE[004E2CDD]: CALL 0x00402130; direct=00402130 STAllPlayersC::sub_004E6310 */
+  STAllPlayersC::sub_004E6310(g_allPlayers_007FA174,pbVar1,param_1,local_10 + 1);
   thunk_FUN_004e5f20(this->field_0024,param_1);
   if (g_aiBossClass_008117BC != nullptr) {
     pbVar1 = this->field_0024;
     pSVar11 = &local_60;
-    for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+    for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
       pSVar11->unknown_00 = 0;
       pSVar11 = (STMessage *)&pSVar11->unknown_04;
     }
@@ -71,12 +71,13 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
     local_60.arg0.words.low = *(undefined2 *)&this->field_0024;
     local_60.id = 0x5de7;
     local_60.arg1.words.low = (word)param_1;
+
     uVar6 = thunk_FUN_004e60d0((int)pbVar1,param_1);
     local_60.arg1.words.high = (word)uVar6;
     /* ST_CALLSITE[004E2D46]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_aiBossClass_008117BC->GetMessage(&local_60);
     pSVar11 = &local_60;
-    for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+    for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
       pSVar11->unknown_00 = 0;
       pSVar11 = (STMessage *)&pSVar11->unknown_04;
     }
@@ -94,11 +95,13 @@ undefined4 __thiscall TLOBaseTy::FUN_004e2c30(TLOBaseTy *this,uint param_1)
          (local_18 = (byte *)&g_packedRecords_A62x8[(int)this->field_0024].field376_0x2ff,
          (*(byte *)((int)local_18 + ((int)(local_10 ^ 7) >> 3)) >> ((local_10 ^ 7) & 7) & 1) != 0))
       {
-        uVar3 = thunk_FUN_004e6140((int)this->field_0024,local_10);
+
+        iVar3 = thunk_FUN_004e6140((int)this->field_0024,local_10);
+
         iVar4 = thunk_FUN_004e60d0((int)this->field_0024,uVar2);
-        /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
-        if (iVar4 < CONCAT31(extraout_var_00,uVar3)) {
+        if (iVar4 < iVar3) {
           local_60.arg1.words.low = (word)uVar2;
+
           uVar6 = thunk_FUN_004e60d0((int)this->field_0024,uVar2);
           local_60.arg1.words.high = (short)uVar6 + 1;
           /* ST_CALLSITE[004E2E4D]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */

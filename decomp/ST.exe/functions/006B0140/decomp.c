@@ -16,7 +16,7 @@ char * LoadResourceString(UINT resourceId,HINSTANCE module)
     g_resourceStringBufferOffset = 0;
   }
   if (module == (HINSTANCE)0x0) {
-    /* ST_CALLSITE[006B0166]: CALL dword ptr [0x0085bc4c] */
+    /* ST_CALLSITE[006B0166]: CALL dword ptr [0x0085bc4c]; [STCallResultViewApplier] presentation_only; exact direct-call result=/WinDef.h/HINSTANCE; source view only; no Ghidra override */
     module = GetModuleHandleA((LPCSTR)0x0);
   }
   /* ST_CALLSITE[006B0183]: CALL dword ptr [0x0085be44] */

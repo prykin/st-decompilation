@@ -66,10 +66,12 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_10 = this;
+
   local_EAX_75 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   this_01 = local_10;
   if (local_EAX_75 != 0) {
     g_currentExceptionFrame = local_70.previous;
+
     iVar12 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0x44f,0,local_EAX_75,
                                 "%s","OptPanelTy::PrepFiles");
     if (iVar12 == 0) {
@@ -264,6 +266,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
                   ((byte *)local_1f4.cFileName,nullptr,nullptr,local_2f8,nullptr);
         local_b4.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_b4;
+
         iVar5 = Library::MSVCRT::__setjmp3(local_b4.jumpBuffer,0);
         this_01 = local_10;
         hFindFile = local_18;
@@ -308,8 +311,9 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
           pbVar13 = pbVar16 + -uVar9;
           pbVar16 = (byte *)(pcVar15 + -1);
           memmove(pbVar16, pbVar13, uVar9); /* compiler REP MOVS byte copy */
-          this_00 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
-                                       (0x345,(byte *)&local_10->field_006C,0,0,0);
+          /* ST_CALLSITE[00533031]: CALL 0x006f0ec0; direct=006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint */
+          this_00 = Library::Ourlib::MF32INT::FUN_006f0ec0
+                              (0x345,(byte *)&local_10->field_006C,0,0,0);
           puVar6 = cMf32::RecGet(this_00,0x80,PTR_s_SAVE_DESC_0079ad04,(int *)&local_1c,0);
           if (puVar6 == nullptr) {
             local_8 = 0;
@@ -328,6 +332,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
               bVar17 = local_14 == local_8;
             }
             if (bVar17) {
+
               Library::DKW::TBL::DArrayAppend(this_01->field_01ED,&local_1f4.ftLastWriteTime);
               uVar9 = 0xffffffff;
               pcVar12 = PTR_DAT_0079ad00;
@@ -338,6 +343,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
                 pcVar12 = pcVar12 + 1;
               } while (cVar1 != '\0');
               pcVar7_mg17 = FUN_006b8240((char *)local_2f8,~uVar9 - 1);
+
               Library::DKW::TBL::FUN_006b5aa0(this_01->field_01E9,pcVar7_mg17);
             }
           }
@@ -359,6 +365,7 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
   local_8 = uVar9;
   if (uVar9 == 0) {
     if (this_01->field_01A4 != CASE_3) goto LAB_0053325d;
+
     Library::DKW::TBL::FUN_006b6020(this_01->field_01F1,0,&CHAR_00h_008016a0);
     uVar10 = this_01->field_01B5[1];
     this_01->field_0028 = 0x33;
@@ -371,13 +378,18 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
         uVar10 = 0;
         if (uVar9 != 1) {
           do {
+
             DArrayGetElement(this_01->field_01ED,uVar10,&local_2c);
             index = uVar10 + 1;
+
             DArrayGetElement(this_01->field_01ED,index,&local_24);
             /* ST_CALLSITE[00533180]: CALL dword ptr [0x0085bcd8] */
             LVar8 = CompareFileTime(&local_2c,&local_24);
             if (LVar8 < 0) {
-              FUN_006b0cd0((AnonShape_00413AF0_B6B4EE9A *)this_01->field_01ED,uVar10,index);
+
+              FUN_006b0cd0((RecoveredRecordView_00413AF0_B98DB3AE *)this_01->field_01ED,uVar10,index
+                          );
+
               FUN_006b8200((AnonShape_006B8200_800652FF *)this_01->field_01E9,uVar10,index);
               local_c = 1;
             }

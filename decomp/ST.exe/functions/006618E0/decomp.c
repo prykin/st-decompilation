@@ -33,7 +33,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this)
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_00;
   InternalExceptionFrame local_68;
-  undefined4 local_24;
+  uint local_24;
   int local_20;
   AiFltClassTy *local_1c;
   int local_18;
@@ -51,15 +51,18 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this)
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     iVar7 = CONCAT22(extraout_var,uVar4);
     if ((0 < iVar7) &&
+       (local_20 = iVar7,
        /* ST_CALLSITE[00661932]: CALL 0x004057e5; direct=004057E5 AiFltClassTy::sub_00661800 */
        /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-       (local_20 = iVar7, local_c = sub_00661800((AnonShape_0065DA10_8B0AA883 *)this,extraout_EDX),
+       local_c = sub_00661800((RecoveredRecordView_0065DA10_5A1C53AF *)this,extraout_EDX),
        (int)this->field_0179 < iVar7 - local_c)) {
+
       local_18 = thunk_FUN_0068f8f0(this->field_0284,this->field_007B);
       local_8 = nullptr;
       local_10 = nullptr;
       local_68.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_68;
+
       local_EAX_154 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
       pAVar3 = local_1c;
       if (local_EAX_154 == 0) {
@@ -114,16 +117,19 @@ LAB_00661a96:
                         bVar2 = true;
                       }
                       else {
-                        iVar5 = thunk_FUN_004c93e0(this_00,5);
+                        /* ST_CALLSITE[00661A86]: CALL 0x004046c9; direct=004046C9 STGameObjC::sub_004C93E0 */
+                        iVar5 = STGameObjC::sub_004C93E0(this_00,5);
                         if (iVar5 < 1) goto LAB_00661a96;
                         bVar2 = true;
                       }
                       if (!bVar2) {
                         if ((local_18 != 0) || (pAVar3->field_0039 != 3)) {
                           if (pAVar3->field_0039 == 3) {
-                            thunk_FUN_004d7270((AnonShape_004D7270_8F0A3C37 *)this_00);
+
+                            thunk_FUN_004d7270((RecoveredRecordView_004D7270_E82BF26F *)this_00);
                           }
                           else {
+
                             TLOBaseTy::thunk_FUN_004c7cc0
                                       ((TLOBaseTy *)this_00,5,0,1,1,0xffffffff,0,0xff,nullptr);
                           }
@@ -144,6 +150,7 @@ LAB_00661a96:
                         array = Library::DKW::TBL::DArrayCreate(nullptr,10,2,10);
                         local_10 = array;
                       }
+
                       Library::DKW::TBL::DArrayAppend(array,&local_24);
                       local_c = local_c + 1;
                     }
@@ -176,6 +183,7 @@ LAB_00661a96:
         DArrayDestroy(local_10);
         local_10 = nullptr;
       }
+
       iVar6 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0x6e9,0,local_EAX_154,
                                  "%s","AiFltClassTy::GoToRepair");
       if (iVar6 != 0) {

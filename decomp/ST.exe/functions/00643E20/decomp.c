@@ -9,7 +9,8 @@
    Evidence: slot_family_has_no_named_method; physical_slot_call_family=007900A0:54 calls=12
    caller_families=9 receiver_extent=638/649; unique_owner_for_target */
 
-undefined4 __fastcall STTorpC::sub_00643E20(AnonShape_00643E20_B7FEAA75 *param_1,undefined4 param_2)
+undefined4 __fastcall
+STTorpC::sub_00643E20(RecoveredRecordView_00643E20_2E427F9C *param_1,undefined4 param_2)
 
 {
   byte *puVar1;
@@ -60,7 +61,8 @@ undefined4 __fastcall STTorpC::sub_00643E20(AnonShape_00643E20_B7FEAA75 *param_1
       }
     }
     else if (param_1->field_01E7 == '\0') {
-      thunk_FUN_004ad430((STT3DSprC *)&param_1->field_0x1d5);
+      /* ST_CALLSITE[00643F72]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
+      STT3DSprC::sub_004AD430((STT3DSprC *)&param_1->field_0x1d5);
     }
   }
   if (param_1->field_023D == 1) {
@@ -124,17 +126,17 @@ undefined4 __fastcall STTorpC::sub_00643E20(AnonShape_00643E20_B7FEAA75 *param_1
     else {
       bVar7 = param_1->field_027C;
       if (bVar7 < 0xf) {
+
         iVar9_mg1 = STPlaySystemC::sub_006E62D0
                               (g_playSystem_00802A38,
-                               (AnonShape_005EFAE0_B406B78B *)param_1->field_0274,(int *)&local_8);
+                               (RecoveredRecordView_005EFAE0_855D930D *)param_1->field_0274,
+                               (int *)&local_8);
         if (iVar9_mg1 == -4) {
           param_1->field_027C = 0xfa;
           return 0;
         }
-        /* ST_CALLSITE[00644154]: CALL dword ptr [EDX + 0xe0] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar9 = (**(code **)(*local_8 + 0xe0))
-                          (param_1->field_0278,&local_10,&local_14,&local_18,&local_24);
+        /* ST_CALLSITE[00644154]: CALL dword ptr [EDX + 0xe0]; [STIndirectCallsiteApplier] exact slot 0xE0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
+        iVar9 = STStructuralVirtualCall<undefined4>(local_8, 0xE0, param_1->field_0278, &local_10, &local_14, &local_18, &local_24);
         if (iVar9 != 0) {
           return 0xffffffff;
         }
@@ -152,16 +154,17 @@ undefined4 __fastcall STTorpC::sub_00643E20(AnonShape_00643E20_B7FEAA75 *param_1
         bVar7 = param_1->field_027C;
       }
       if (bVar7 == 0xf) {
+
         iVar9_mg3 = STPlaySystemC::sub_006E62D0
                               (g_playSystem_00802A38,
-                               (AnonShape_005EFAE0_B406B78B *)param_1->field_0274,(int *)&local_8);
+                               (RecoveredRecordView_005EFAE0_855D930D *)param_1->field_0274,
+                               (int *)&local_8);
         if (iVar9_mg3 == -4) {
           param_1->field_027C = 0xfa;
           return 0;
         }
-        /* ST_CALLSITE[006441E9]: CALL dword ptr [EAX + 0xe4] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(*local_8 + 0xe4))(param_1->field_0278);
+        /* ST_CALLSITE[006441E9]: CALL dword ptr [EAX + 0xe4]; [STIndirectCallsiteApplier] exact slot 0xE4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
+        STStructuralVirtualCall<undefined4>(local_8, 0xE4, param_1->field_0278);
       }
       puVar1 = &param_1->field_0x1d5;
       /* ST_CALLSITE[00644202]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */

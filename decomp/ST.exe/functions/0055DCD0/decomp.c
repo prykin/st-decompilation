@@ -16,7 +16,7 @@ SetPalette(undefined4 *param_1,int *param_2,cMf32 *param_3,char *param_4,int par
 {
   int errorCode;
   int iVar2;
-  undefined4 local_44c [256];
+  uint local_44c [256];
   InternalExceptionFrame local_4c;
   ushort *local_8;
 

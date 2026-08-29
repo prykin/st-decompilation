@@ -1,4 +1,4 @@
-FUN_00589b10:
+STOctopusC::vfunc_E0:
 00589B10  55                        PUSH EBP
 00589B11  8B EC                     MOV EBP,ESP
 00589B13  8B 55 0C                  MOV EDX,dword ptr [EBP + 0xc]

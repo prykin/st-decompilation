@@ -39,6 +39,7 @@ int __thiscall STBoatC::DCBomb(STBoatC *this,int param_1)
     /* ST_CALLSITE[00476A3A]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
     iVar6 = sub_0045FF50(this,2);
     if (iVar6 == -1) {
+
       iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3184,0,0,"%s",
                                  "STBoatC::DCBomb, DCBOMB_MOVE error");
       if (iVar5 == 0) {

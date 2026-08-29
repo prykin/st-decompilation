@@ -15,11 +15,12 @@ void DestroyBaseSystem(void)
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
+
   errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (errorCode == 0) {
     if (g_baseSystem_00811638 != nullptr) {
       if (g_baseSystem_00811638->field_0020 == 1) {
-        FUN_006e4b80(&DAT_00807620,(int)g_baseSystem_00811638);
+        FUN_006e4b80(&DAT_00807620,(RecoveredRecord_006E4B80_A7B295CE *)g_baseSystem_00811638);
       }
       /* ST_CALLSITE[00576D2F]: CALL dword ptr [EAX + 0x4] */
       g_baseSystem_00811638->vfunc_04();
@@ -30,6 +31,7 @@ void DestroyBaseSystem(void)
     return;
   }
   g_currentExceptionFrame = local_48.previous;
+
   iVar2 = ReportDebugMessage("E:\\__titans\\tsystem.cpp",0x4f,0,errorCode,"%s",
                              "DestroyBaseSystem");
   if (iVar2 != 0) {

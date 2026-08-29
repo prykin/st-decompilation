@@ -103,7 +103,7 @@ LAB_004a0a7f:
 LAB_004a0ad1:
 004A0AD1  8B 10                     MOV EDX,dword ptr [EAX]
 004A0AD3  8B C8                     MOV ECX,EAX
-004A0AD5  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+004A0AD5  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STBoatC
 004A0ADB  85 C0                     TEST EAX,EAX
 004A0ADD  0F 84 B5 00 00 00         JZ 0x004a0b98
 004A0AE3  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
@@ -112,7 +112,7 @@ LAB_004a0ad1:
 004A0AED  0F 85 86 00 00 00         JNZ 0x004a0b79
 004A0AF3  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 004A0AF6  8B 01                     MOV EAX,dword ptr [ECX]
-004A0AF8  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+004A0AF8  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 004A0AFB  83 F8 07                  CMP EAX,0x7
 004A0AFE  74 18                     JZ 0x004a0b18
 004A0B00  83 F8 13                  CMP EAX,0x13
@@ -215,7 +215,8 @@ LAB_004a0bdc:
 004A0BF1  50                        PUSH EAX
 004A0BF2  51                        PUSH ECX
 004A0BF3  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
-004A0BF9  E8 BC 1C F6 FF            CALL 0x004028ba
+STGroupBoatC::GrpRepSub::override::prt_4a0bf9_6c9e7102:
+004A0BF9  E8 BC 1C F6 FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 004A0BFE  8D 55 EC                  LEA EDX,[EBP + -0x14]
 004A0C01  8B C8                     MOV ECX,EAX
 004A0C03  52                        PUSH EDX
@@ -294,12 +295,12 @@ LAB_004a0c86:
 LAB_004a0cd4:
 004A0CD4  8B 10                     MOV EDX,dword ptr [EAX]
 004A0CD6  8B C8                     MOV ECX,EAX
-004A0CD8  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+004A0CD8  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STBoatC
 004A0CDE  85 C0                     TEST EAX,EAX
 004A0CE0  74 3A                     JZ 0x004a0d1c
 004A0CE2  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 004A0CE5  8B 01                     MOV EAX,dword ptr [ECX]
-004A0CE7  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+004A0CE7  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 004A0CEA  83 F8 07                  CMP EAX,0x7
 004A0CED  74 0A                     JZ 0x004a0cf9
 004A0CEF  83 F8 13                  CMP EAX,0x13

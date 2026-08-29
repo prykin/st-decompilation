@@ -30,16 +30,22 @@ int FUN_006ad3a0(LPCSTR lpText,LPCSTR lpCaption,uint param_3)
   DAT_00854a84 = 1;
   if ((g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8 != nullptr)
      && ((g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 & 1) != 0)) {
+
     FUN_006b0ba0((DDXContext *)g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8,&DAT_00854aa4,0,0x100);
+
     FUN_006b0a20(g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8,0x854ec0,0,1,0);
+
     FUN_006b0a20(g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8,0x7ed7a0,4,1,0);
+
     FUN_006b0a20(g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8,0x7ed7a4,7,1,0);
+
     FUN_006b0a20(g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8,0x7ed7a8,0xff,1,0);
   }
   /* ST_CALLSITE[006AD487]: CALL dword ptr [0x0085bdec] */
   iVar1 = MessageBoxA(hWnd,lpText,lpCaption,param_3 | 0x10000);
   if ((g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8 != nullptr)
      && ((g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x8 & 1) != 0)) {
+
     FUN_006b0a20(g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8,0x854aa4,0,0x100,0);
   }
   DAT_00854a84 = 0;

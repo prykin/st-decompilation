@@ -11,14 +11,14 @@
    [STSourceProvenanceApplier end]
 
    [STHiddenThisApplier] Anonymous hidden receiver recovered as
-   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004248D0.
+   /SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_004248D0.
    Evidence: incoming_receiver_captures=1; receiver_accesses=36; incoming_edx_uses=0; calls=7;
    ecx_pointer_setup=7; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[28];
    expected_stack=28; receiver_family_members=21; adopt_untyped_existing_thiscall */
 
 int __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
-          (AnonReceiver_004248D0 *this,int param_1,float param_2,float param_3,float param_4,
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_004248D0::FUN_00424e10
+          (RecoveredReceiver_004248D0 *this,int param_1,float param_2,float param_3,float param_4,
           int param_5,int param_6,int *param_7)
 
 {
@@ -73,14 +73,14 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
   uint local_b4;
   uint *local_a8;
   uint *local_a4;
-  short *local_a0;
+  RecoveredRecordView_004248D0_552B02F1 *local_a0;
   int local_9c;
   byte *local_94;
   int local_90;
-  undefined4 local_8c;
+  uint local_8c;
   float local_84;
   float local_80;
-  undefined4 local_7c;
+  uint local_7c;
   int local_78;
   int local_74;
   float local_68;
@@ -102,8 +102,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   iVar17 = param_6;
   iVar24 = param_5;
   local_8 = 0xffffffff;
@@ -124,31 +123,35 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
   local_2c = 0;
   ExceptionList = &local_14;
   puVar9 = &stack0xfffffea0;
-  if ((*(int *)&this->field_0x358 != 0) &&
+  if ((this->field_0358 != 0) &&
      (ExceptionList = &local_14, puVar9 = &stack0xfffffea0, param_1 != 0)) {
     local_84 = param_2;
     local_80 = param_3;
     local_7c = 0;
     ExceptionList = &local_14;
+
     iVar11 = ST3DSMAPContext::sub_006E25D0
                        ((ST3DSMAPContext *)this,&local_78,&local_84,0.0,0.0,0.0,1);
     if (iVar11 != 1) {
-      if ((((*(int *)&this->field_0x30 <= *(int *)&this->field_0x3d8 + (local_78 >> 0x10)) &&
-           ((local_78 >> 0x10) - *(int *)&this->field_0x3d8 < *(int *)&this->field_0x38)) &&
-          (*(int *)&this->field_0x34 <= *(int *)&this->field_0x3d4 + (local_74 >> 0x10))) &&
-         ((local_74 >> 0x10) - *(int *)&this->field_0x3d0 < *(int *)&this->field_0x3c)) {
-        local_84 = (float)param_5 * (float)*(double *)&this->field_0x368 + local_84;
+      if ((((this->field_0030 <= this->field_03D8 + (local_78 >> 0x10)) &&
+           ((local_78 >> 0x10) - this->field_03D8 < this->field_0038)) &&
+          (this->field_0034 <= this->field_03D4 + (local_74 >> 0x10))) &&
+         ((local_74 >> 0x10) - this->field_03D0 < this->field_003C)) {
+        local_84 = (float)param_5 * (float)this->field_0368 + local_84;
+
         local_EAX_282 =
              ST3DSMAPContext::sub_006E25D0
                        ((ST3DSMAPContext *)this,&local_78,&local_84,0.0,0.0,0.0,1);
         iVar11 = 1;
         if (local_EAX_282 != 1) {
-          local_80 = (float)param_6 * (float)*(double *)&this->field_0x368 + local_80;
+          local_80 = (float)param_6 * (float)this->field_0368 + local_80;
+
           iVar12 = ST3DSMAPContext::sub_006E25D0
                              ((ST3DSMAPContext *)this,&local_78,&local_84,0.0,0.0,0.0,1);
           iVar11 = 1;
           if (iVar12 != 1) {
             local_84 = param_2;
+
             local_EAX_373 =
                  ST3DSMAPContext::sub_006E25D0
                            ((ST3DSMAPContext *)this,&local_78,&local_84,0.0,0.0,0.0,1);
@@ -157,24 +160,28 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
               local_84 = param_2;
               local_80 = param_3;
               local_7c = 0x424751eb;
+
               local_EAX_424 =
                    ST3DSMAPContext::sub_006E25D0
                              ((ST3DSMAPContext *)this,&local_78,&local_84,0.0,0.0,0.0,1);
               iVar11 = 1;
               if (local_EAX_424 != 1) {
-                local_84 = (float)param_5 * (float)*(double *)&this->field_0x368 + local_84;
+                local_84 = (float)param_5 * (float)this->field_0368 + local_84;
+
                 local_EAX_470 =
                      ST3DSMAPContext::sub_006E25D0
                                ((ST3DSMAPContext *)this,&local_78,&local_84,0.0,0.0,0.0,1);
                 iVar11 = 1;
                 if (local_EAX_470 != 1) {
-                  local_80 = (float)param_6 * (float)*(double *)&this->field_0x368 + local_80;
+                  local_80 = (float)param_6 * (float)this->field_0368 + local_80;
+
                   local_EAX_516 =
                        ST3DSMAPContext::sub_006E25D0
                                  ((ST3DSMAPContext *)this,&local_78,&local_84,0.0,0.0,0.0,1);
                   iVar11 = 1;
                   if (local_EAX_516 != 1) {
                     local_84 = param_2;
+
                     iVar11 = ST3DSMAPContext::sub_006E25D0
                                        ((ST3DSMAPContext *)this,&local_78,&local_84,0.0,0.0,0.0,1);
                   }
@@ -188,14 +195,14 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
     puVar9 = local_1c;
     if (iVar11 != 0) {
       local_28 = (int)(param_5 + 7 + (param_5 + 7 >> 0x1f & 7U)) >> 3;
-      dVar2 = (double)(param_2 / (float)*(double *)&this->field_0x368);
+      dVar2 = (double)(param_2 / (float)this->field_0368);
       Library::MSVCRT::FUN_0072e150(SUB84(dVar2,0),(uint)((ulonglong)dVar2 >> 0x20));
       lVar29 = Library::MSVCRT::__ftol();
-      local_68 = param_2 - (float)(int)lVar29 * (float)*(double *)&this->field_0x368;
-      iVar23 = (int)lVar29 - *(int *)&this->field_0x374;
+      local_68 = param_2 - (float)(int)lVar29 * (float)this->field_0368;
+      iVar23 = (int)lVar29 - this->field_0374;
       local_c4 = 0;
-      if (*(int *)&this->field_0x370 < iVar23 + param_5) {
-        param_5 = *(int *)&this->field_0x370 - iVar23;
+      if (this->field_0370 < iVar23 + param_5) {
+        param_5 = this->field_0370 - iVar23;
         local_2c = 1;
       }
       if (iVar23 < 0) {
@@ -203,15 +210,15 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
         param_5 = param_5 + iVar23;
         local_2c = 1;
       }
-      dVar2 = (double)(param_3 / (float)*(double *)&this->field_0x368);
+      dVar2 = (double)(param_3 / (float)this->field_0368);
       local_48 = iVar23;
       Library::MSVCRT::FUN_0072e150(SUB84(dVar2,0),(uint)((ulonglong)dVar2 >> 0x20));
       lVar29 = Library::MSVCRT::__ftol();
-      local_c0 = param_3 - (float)(int)lVar29 * (float)*(double *)&this->field_0x368;
-      local_54 = (int)lVar29 - *(int *)&this->field_0x378;
+      local_c0 = param_3 - (float)(int)lVar29 * (float)this->field_0368;
+      local_54 = (int)lVar29 - this->field_0378;
       local_d4 = 0;
-      if (*(int *)&this->field_0x370 < param_6 + local_54) {
-        param_6 = *(int *)&this->field_0x370 - local_54;
+      if (this->field_0370 < param_6 + local_54) {
+        param_6 = this->field_0370 - local_54;
         local_2c = 1;
       }
       if (local_54 < 0) {
@@ -229,10 +236,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
         if ((((param_7[7] != 0) &&
              ((pbVar27 = (byte *)param_7[8], pbVar27 != nullptr && (param_7[6] == param_1)))) &&
             (local_c4 == param_7[2])) && (local_d4 == param_7[3])) {
-          iVar15 = *(int *)&this->field_0x374;
+          iVar15 = this->field_0374;
           iVar13 = *param_7;
-          if ((iVar15 + iVar23 == iVar13) && (local_54 + *(int *)&this->field_0x378 == param_7[1]))
-          {
+          if ((iVar15 + iVar23 == iVar13) && (local_54 + this->field_0378 == param_7[1])) {
             if (((float)param_7[4] == local_68) && ((float)param_7[5] == local_c0)) {
               ExceptionList = local_14;
               return 2;
@@ -245,49 +251,50 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
           if (((param_7[7] == 1) && ((*pbVar27 & 4) == 0)) && (local_2c == 0)) {
             iVar18 = *(int *)(pbVar27 + 4);
             psVar5 = *(short **)(pbVar27 + 8);
-            iVar6 = *(int *)&this->field_0x378;
+            iVar6 = this->field_0378;
             iVar7 = param_7[1];
             psVar19 = psVar5 + 1;
-            cVar3 = *(char *)(*(int *)&this->field_0x37c * (*psVar19 - iVar6) +
-                              *(int *)&this->field_0x38c + (*psVar5 - iVar15));
+            cVar3 = *(char *)(this->field_037C * (*psVar19 - iVar6) + this->field_038C +
+                             (*psVar5 - iVar15));
             local_f0 = 0;
             if (0 < iVar18) {
               do {
                 psVar19[-1] = psVar19[-1] +
                               ((((short)iVar15 - (short)iVar13) + (short)iVar23) -
-                              *(short *)&this->field_0x374);
+                              (short)this->field_0374);
                 *psVar19 = *psVar19 +
                            ((((short)iVar6 - (short)iVar7) + (short)local_54) -
-                           *(short *)&this->field_0x378);
+                           (short)this->field_0378);
                 if ((((byte *)psVar19)[2] & 2) != 0) {
                   psVar19[-1] = psVar19[-1] + -1;
                 }
                 if ((((byte *)psVar19)[2] & 1) != 0) {
                   *psVar19 = *psVar19 + -1;
                 }
-                if (*(char *)((int)*psVar19 * *(int *)&this->field_0x37c + (int)psVar19[-1] +
-                             *(int *)&this->field_0x38c) != cVar3) break;
+                if (*(char *)((int)*psVar19 * this->field_037C + (int)psVar19[-1] + this->field_038C
+                             ) != cVar3) break;
                 local_f0 = local_f0 + 1;
                 psVar19 = psVar19 + 4;
               } while (local_f0 < iVar18);
             }
             if (iVar18 <= local_f0) {
+
               local_a0 = Library::DKW::LIB::MemAlloc(iVar18 * 8);
               iVar24 = 0;
               if (0 < iVar18) {
                 psVar19 = psVar5 + 1;
                 do {
                   /* ST_CALLSITE[004253AB]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                  sub_004248D0(this,(int)local_a0,iVar24,(int)psVar19[-1],(int)*psVar19,
+                  sub_004248D0(this,local_a0,iVar24,(int)psVar19[-1],(int)*psVar19,
                                ((byte *)psVar19)[2] & CASE_3,~CASE_0);
                   iVar24 = iVar24 + 1;
                   psVar19 = psVar19 + 4;
                 } while (iVar24 < iVar18);
               }
               FUN_006a5e90(psVar5);
-              *(short **)(param_7[8] + 8) = local_a0;
-              *param_7 = local_48 + *(int *)&this->field_0x374;
-              param_7[1] = local_54 + *(int *)&this->field_0x378;
+              *(RecoveredRecordView_004248D0_552B02F1 **)(param_7[8] + 8) = local_a0;
+              *param_7 = local_48 + this->field_0374;
+              param_7[1] = local_54 + this->field_0378;
               param_7[4] = (int)local_68;
               param_7[5] = (int)local_c0;
               ExceptionList = local_14;
@@ -309,8 +316,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
           puVar25 = (undefined4 *)((int)puVar25 + 1);
         }
         local_8 = 0xffffffff;
-        local_3c = (char *)((local_54 + local_d4) * *(int *)&this->field_0x37c +
-                            *(int *)&this->field_0x38c + local_c4 + local_48);
+        local_3c = (char *)((local_54 + local_d4) * this->field_037C + this->field_038C + local_c4 +
+                           local_48);
         local_dc = (uint *)(&stack0xfffffea0 + (iVar24 * local_d4 + local_c4) * 4);
         local_140 = param_6 + -1;
         iVar15 = local_c4 >> 3;
@@ -322,7 +329,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
           do {
             puVar14 = puVar14 + iVar24;
             local_12c = param_5 + -1;
-            pcVar10 = local_3c + *(int *)&this->field_0x37c;
+            pcVar10 = local_3c + this->field_037C;
             local_d8 = (uint)pbVar27[-1];
             local_b4 = (uint)local_138[-1];
             local_94 = local_138;
@@ -409,7 +416,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::FUN_00424e10
                 puVar14[iVar13] = puVar14[iVar13] | 4;
               }
             }
-            local_3c = local_3c + *(int *)&this->field_0x37c;
+            local_3c = local_3c + this->field_037C;
             local_dc = local_dc + iVar24;
             local_138 = local_138 + local_28;
             pbVar27 = pbVar27 + local_28;
@@ -490,13 +497,14 @@ LAB_0042596f:
         }
 LAB_004259c4:
         local_dc = local_dc + iVar15;
-        bVar4 = *(byte *)((iVar18 + local_54) * *(int *)&this->field_0x37c +
-                          *(int *)&this->field_0x38c + iVar15 + local_48);
+        bVar4 = *(byte *)((iVar18 + local_54) * this->field_037C + this->field_038C + iVar15 +
+                         local_48);
         local_24 = bVar4 & 0xf;
         if (local_9c <= local_d0) {
           *(int *)(&stack0xfffffe9c + iVar23) = (local_9c * 3 + 0x1e) * 4;
           *(uint **)(&stack0xfffffe98 + iVar23) = local_a8;
           *(undefined4 *)(&stack0xfffffe94 + iVar23) = 0x425a25;
+
           puVar14 = Library::DKW::LIB::MemRealloc
                               (*(void **)(&stack0xfffffe98 + iVar23),
                                *(uint *)(&stack0xfffffe9c + iVar23));
@@ -519,8 +527,8 @@ LAB_0042678e:
         *local_dc = *local_dc | 0x100;
         do {
           if (200 < local_90) {
-            if ((short *)local_a8[local_d0 * 3 + -1] != local_a0) {
-              *(short ***)(&stack0xfffffe9c + iVar23) = &local_a0;
+            if ((RecoveredRecordView_004248D0_552B02F1 *)local_a8[local_d0 * 3 + -1] != local_a0) {
+              *(RecoveredRecordView_004248D0_552B02F1 ***)(&stack0xfffffe9c + iVar23) = &local_a0;
               *(undefined4 *)(&stack0xfffffe98 + iVar23) = 0x42674b;
               FreeAndNull(*(void **)(&stack0xfffffe9c + iVar23));
             }
@@ -544,8 +552,9 @@ LAB_0042678e:
           }
           if (local_44 + -1 <= uVar15) {
             *(int *)(&stack0xfffffe9c + iVar23) = local_44 * 8 + 0x50;
-            *(short **)(&stack0xfffffe98 + iVar23) = local_a0;
+            *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe98 + iVar23) = local_a0;
             *(undefined4 *)(&stack0xfffffe94 + iVar23) = 0x425ab1;
+
             local_a0 = Library::DKW::LIB::MemRealloc
                                  (*(void **)(&stack0xfffffe98 + iVar23),
                                   *(uint *)(&stack0xfffffe9c + iVar23));
@@ -594,10 +603,11 @@ LAB_00426205:
                   *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                   *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                   *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                  *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                  *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) = local_a0;
                   *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x426014;
                   /* ST_CALLSITE[0042600F]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                  uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                  uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                              (&stack0xfffffe88 + iVar23),
                                         *(int *)(&stack0xfffffe8c + iVar23),
                                         *(int *)(&stack0xfffffe90 + iVar23),
                                         *(int *)(&stack0xfffffe94 + iVar23),
@@ -619,10 +629,11 @@ LAB_004265cd:
                 *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                 *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x4265ee;
                 /* ST_CALLSITE[004265E9]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                            (&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
                                       *(int *)(&stack0xfffffe94 + iVar23),
@@ -647,10 +658,11 @@ LAB_0042605b:
                 *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                 *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x42607c;
                 /* ST_CALLSITE[00426077]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                            (&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
                                       *(int *)(&stack0xfffffe94 + iVar23),
@@ -683,10 +695,11 @@ LAB_0042605b:
                   *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                   *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                   *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                  *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                  *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) = local_a0;
                   *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x426130;
                   /* ST_CALLSITE[0042612B]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                  uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                  uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                              (&stack0xfffffe88 + iVar23),
                                         *(int *)(&stack0xfffffe8c + iVar23),
                                         *(int *)(&stack0xfffffe90 + iVar23),
                                         *(int *)(&stack0xfffffe94 + iVar23),
@@ -708,10 +721,11 @@ LAB_004260a9:
                 *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                 *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x4260ca;
                 /* ST_CALLSITE[004260C5]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                            (&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
                                       *(int *)(&stack0xfffffe94 + iVar23),
@@ -737,10 +751,12 @@ LAB_004260cc:
                     *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                     *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                     *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                    *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                    *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) =
+                         local_a0;
                     *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x4263c2;
                     /* ST_CALLSITE[004263BD]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                    uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                    uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                                (&stack0xfffffe88 + iVar23),
                                           *(int *)(&stack0xfffffe8c + iVar23),
                                           *(int *)(&stack0xfffffe90 + iVar23),
                                           *(int *)(&stack0xfffffe94 + iVar23),
@@ -776,10 +792,11 @@ LAB_004260cc:
                   *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                   *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                   *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                  *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                  *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) = local_a0;
                   *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x42631a;
                   /* ST_CALLSITE[00426315]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                  uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                  uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                              (&stack0xfffffe88 + iVar23),
                                         *(int *)(&stack0xfffffe8c + iVar23),
                                         *(int *)(&stack0xfffffe90 + iVar23),
                                         *(int *)(&stack0xfffffe94 + iVar23),
@@ -801,10 +818,11 @@ LAB_0042627f:
                 *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                 *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x4262a0;
                 /* ST_CALLSITE[0042629B]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                            (&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
                                       *(int *)(&stack0xfffffe94 + iVar23),
@@ -845,10 +863,12 @@ LAB_004262a2:
                       *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                       *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                       *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                      *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                      *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) =
+                           local_a0;
                       *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x4265a9;
                       /* ST_CALLSITE[004265A4]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                      uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                      uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                                  (&stack0xfffffe88 + iVar23),
                                             *(int *)(&stack0xfffffe8c + iVar23),
                                             *(int *)(&stack0xfffffe90 + iVar23),
                                             *(int *)(&stack0xfffffe94 + iVar23),
@@ -875,10 +895,12 @@ LAB_00426527:
                     *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                     *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                     *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                    *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                    *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) =
+                         local_a0;
                     *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x426548;
                     /* ST_CALLSITE[00426543]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                    uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                    uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                                (&stack0xfffffe88 + iVar23),
                                           *(int *)(&stack0xfffffe8c + iVar23),
                                           *(int *)(&stack0xfffffe90 + iVar23),
                                           *(int *)(&stack0xfffffe94 + iVar23),
@@ -902,10 +924,11 @@ LAB_0042654a:
                   *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                   *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                   *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                  *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                  *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) = local_a0;
                   *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x4264dd;
                   /* ST_CALLSITE[004264D8]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                  uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                  uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                              (&stack0xfffffe88 + iVar23),
                                         *(int *)(&stack0xfffffe8c + iVar23),
                                         *(int *)(&stack0xfffffe90 + iVar23),
                                         *(int *)(&stack0xfffffe94 + iVar23),
@@ -927,10 +950,11 @@ LAB_00426163:
                 *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                 *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x426184;
                 /* ST_CALLSITE[0042617F]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                            (&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
                                       *(int *)(&stack0xfffffe94 + iVar23),
@@ -994,10 +1018,11 @@ LAB_00425bf9:
                   *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                   *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                   *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                  *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                  *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) = local_a0;
                   *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x425b6b;
                   /* ST_CALLSITE[00425B66]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                  uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                  uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                              (&stack0xfffffe88 + iVar23),
                                         *(int *)(&stack0xfffffe8c + iVar23),
                                         *(int *)(&stack0xfffffe90 + iVar23),
                                         *(int *)(&stack0xfffffe94 + iVar23),
@@ -1018,10 +1043,11 @@ LAB_00426339:
                 *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                 *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x426366;
                 /* ST_CALLSITE[00426361]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                            (&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
                                       *(int *)(&stack0xfffffe94 + iVar23),
@@ -1060,10 +1086,12 @@ LAB_00426339:
                     *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                     *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                     *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                    *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                    *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) =
+                         local_a0;
                     *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x425c89;
                     /* ST_CALLSITE[00425C84]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                    uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                    uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                                (&stack0xfffffe88 + iVar23),
                                           *(int *)(&stack0xfffffe8c + iVar23),
                                           *(int *)(&stack0xfffffe90 + iVar23),
                                           *(int *)(&stack0xfffffe94 + iVar23),
@@ -1090,10 +1118,11 @@ LAB_00426215:
                 *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                 *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x426236;
                 /* ST_CALLSITE[00426231]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                            (&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
                                       *(int *)(&stack0xfffffe94 + iVar23),
@@ -1114,10 +1143,11 @@ LAB_004261b5:
                 *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                 *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x4261d6;
                 /* ST_CALLSITE[004261D1]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                            (&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
                                       *(int *)(&stack0xfffffe94 + iVar23),
@@ -1147,10 +1177,12 @@ LAB_00425dd3:
                         *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                         *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                         *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                        *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                        *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) =
+                             local_a0;
                         *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x425e00;
                         /* ST_CALLSITE[00425DFB]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                        uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                        uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                                    (&stack0xfffffe88 + iVar23),
                                               *(int *)(&stack0xfffffe8c + iVar23),
                                               *(int *)(&stack0xfffffe90 + iVar23),
                                               *(int *)(&stack0xfffffe94 + iVar23),
@@ -1171,10 +1203,12 @@ LAB_00425d75:
                       *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                       *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                       *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                      *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                      *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) =
+                           local_a0;
                       *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x425da2;
                       /* ST_CALLSITE[00425D9D]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                      uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                      uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                                  (&stack0xfffffe88 + iVar23),
                                             *(int *)(&stack0xfffffe8c + iVar23),
                                             *(int *)(&stack0xfffffe90 + iVar23),
                                             *(int *)(&stack0xfffffe94 + iVar23),
@@ -1197,10 +1231,11 @@ LAB_00425eeb:
                   *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                   *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                   *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                  *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                  *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) = local_a0;
                   *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x425f1c;
                   /* ST_CALLSITE[00425F17]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                  uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                  uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                              (&stack0xfffffe88 + iVar23),
                                         *(int *)(&stack0xfffffe8c + iVar23),
                                         *(int *)(&stack0xfffffe90 + iVar23),
                                         *(int *)(&stack0xfffffe94 + iVar23),
@@ -1221,10 +1256,11 @@ LAB_00425eeb:
                   *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                   *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                   *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                  *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                  *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) = local_a0;
                   *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x425d46;
                   /* ST_CALLSITE[00425D41]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                  uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                  uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                              (&stack0xfffffe88 + iVar23),
                                         *(int *)(&stack0xfffffe8c + iVar23),
                                         *(int *)(&stack0xfffffe90 + iVar23),
                                         *(int *)(&stack0xfffffe94 + iVar23),
@@ -1245,10 +1281,11 @@ LAB_004263eb:
                 *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                 *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x42640c;
                 /* ST_CALLSITE[00426407]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                            (&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
                                       *(int *)(&stack0xfffffe94 + iVar23),
@@ -1275,10 +1312,11 @@ LAB_00425b8a:
                 *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                 *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x425bab;
                 /* ST_CALLSITE[00425BA6]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                            (&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
                                       *(int *)(&stack0xfffffe94 + iVar23),
@@ -1303,10 +1341,12 @@ LAB_00425bad:
                     *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                     *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                     *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                    *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                    *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) =
+                         local_a0;
                     *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x425f7a;
                     /* ST_CALLSITE[00425F75]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                    uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                    uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                                (&stack0xfffffe88 + iVar23),
                                           *(int *)(&stack0xfffffe8c + iVar23),
                                           *(int *)(&stack0xfffffe90 + iVar23),
                                           *(int *)(&stack0xfffffe94 + iVar23),
@@ -1329,10 +1369,11 @@ LAB_00425bad:
                   *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                   *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                   *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                  *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                  *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) = local_a0;
                   *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x425ec8;
                   /* ST_CALLSITE[00425EC3]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                  uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                  uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                              (&stack0xfffffe88 + iVar23),
                                         *(int *)(&stack0xfffffe8c + iVar23),
                                         *(int *)(&stack0xfffffe90 + iVar23),
                                         *(int *)(&stack0xfffffe94 + iVar23),
@@ -1354,10 +1395,11 @@ LAB_00425e40:
                 *(int *)(&stack0xfffffe94 + iVar23) = iVar18 + local_54;
                 *(int *)(&stack0xfffffe90 + iVar23) = iVar15 + local_48;
                 *(int *)(&stack0xfffffe8c + iVar23) = uVar15;
-                *(short **)(&stack0xfffffe88 + iVar23) = local_a0;
+                *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe88 + iVar23) = local_a0;
                 *(undefined4 *)(&stack0xfffffe84 + iVar23) = 0x425e61;
                 /* ST_CALLSITE[00425E5C]: CALL 0x00405010; direct=00405010 sub_004248D0 */
-                uVar15 = sub_004248D0(this,*(int *)(&stack0xfffffe88 + iVar23),
+                uVar15 = sub_004248D0(this,*(RecoveredRecordView_004248D0_552B02F1 **)
+                                            (&stack0xfffffe88 + iVar23),
                                       *(int *)(&stack0xfffffe8c + iVar23),
                                       *(int *)(&stack0xfffffe90 + iVar23),
                                       *(int *)(&stack0xfffffe94 + iVar23),
@@ -1397,8 +1439,8 @@ LAB_004267d5:
       FreeAndNull(param_7 + 8);
       local_a8 = local_a4;
     }
-    *param_7 = *(int *)&this->field_0x374 + local_48;
-    param_7[1] = *(int *)&this->field_0x378 + local_54;
+    *param_7 = this->field_0374 + local_48;
+    param_7[1] = this->field_0378 + local_54;
     param_7[2] = local_c4;
     param_7[3] = local_d4;
     param_7[4] = (int)local_68;
@@ -1427,22 +1469,22 @@ LAB_004267d5:
   ExceptionList = local_14;
   return iVar24;
 LAB_00426637:
-  if ((((local_a0[uVar15 * 4 + -4] == local_a0[4]) &&
-       ((local_a0[uVar15 * 4 + -3] == local_a0[5] &&
-        (uVar20 = (int)local_a0[uVar15 * 4 + -2] - (int)local_a0[6] >> 0x1f,
-        (int)(((int)local_a0[uVar15 * 4 + -2] - (int)local_a0[6] ^ uVar20) - uVar20) < 3)))) ||
-      ((local_a0[uVar15 * 4 + -8] == *local_a0 &&
-       ((local_a0[uVar15 * 4 + -7] == local_a0[1] &&
-        (uVar20 = (int)local_a0[uVar15 * 4 + -6] - (int)local_a0[2] >> 0x1f,
-        (int)(((int)local_a0[uVar15 * 4 + -6] - (int)local_a0[2] ^ uVar20) - uVar20) < 3)))))) ||
-     ((local_a0[uVar15 * 4 + -4] == *local_a0 &&
-      ((local_a0[uVar15 * 4 + -3] == local_a0[1] &&
-       (uVar20 = (int)local_a0[uVar15 * 4 + -2] - (int)local_a0[2] >> 0x1f,
-       (int)(((int)local_a0[uVar15 * 4 + -2] - (int)local_a0[2] ^ uVar20) - uVar20) < 3)))))) {
+  if ((((*(short *)(local_a0 + (uVar15 - 1)) == *(short *)(local_a0 + 1)) &&
+       ((local_a0[uVar15 - 1].field_0002 == local_a0[1].field_0002 &&
+        (uVar20 = (int)local_a0[uVar15 - 1].field_0004 - (int)local_a0[1].field_0004,
+        uVar22 = (int)uVar20 >> 0x1f, (int)((uVar20 ^ uVar22) - uVar22) < 3)))) ||
+      ((*(short *)(local_a0 + (uVar15 - 2)) == *(short *)local_a0 &&
+       ((local_a0[uVar15 - 2].field_0002 == local_a0->field_0002 &&
+        (uVar20 = (int)local_a0[uVar15 - 2].field_0004 - (int)local_a0->field_0004,
+        uVar22 = (int)uVar20 >> 0x1f, (int)((uVar20 ^ uVar22) - uVar22) < 3)))))) ||
+     ((*(short *)(local_a0 + (uVar15 - 1)) == *(short *)local_a0 &&
+      ((local_a0[uVar15 - 1].field_0002 == local_a0->field_0002 &&
+       (uVar20 = (int)local_a0[uVar15 - 1].field_0004 - (int)local_a0->field_0004,
+       uVar22 = (int)uVar20 >> 0x1f, (int)((uVar20 ^ uVar22) - uVar22) < 3)))))) {
     uVar15 = uVar15 - 1;
   }
   if (uVar15 < 3) {
-    *(short **)(&stack0xfffffe9c + iVar23) = local_a0;
+    *(RecoveredRecordView_004248D0_552B02F1 **)(&stack0xfffffe9c + iVar23) = local_a0;
     *(undefined4 *)(&stack0xfffffe98 + iVar23) = 0x4266f4;
     FUN_006a5e90(*(short **)(&stack0xfffffe9c + iVar23));
     local_2c = 1;

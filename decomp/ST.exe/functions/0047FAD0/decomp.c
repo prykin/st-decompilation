@@ -50,15 +50,21 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1)
     else {
       param_1 = (int *)STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
     }
-    if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
-        (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != *(int *)&this->field_0x6af
-        )) || ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
-               (iVar6 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar6 == 0)))) {
+    if ((((RecoveredRecordView_004B9D90_09AED060 *)param_1 ==
+          nullptr) ||
+        (*(int *)&((RecoveredRecordView_004B9D90_09AED060 *)param_1)->field_0x18 !=
+         *(int *)&this->field_0x6af)) ||
+       ((*(int *)&((RecoveredRecordView_004B9D90_09AED060 *)param_1)->field_0x24 != this->field_0024
+
+        || (iVar6 = thunk_FUN_004b9d90((RecoveredRecordView_004B9D90_09AED060 *)param_1), iVar6 == 0
+           )))) {
+
       STPlaySystemC::sub_006E62D0
-                (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x6af,
-                 (int *)&param_1);
+                (g_playSystem_00802A38,*(RecoveredRecordView_005EFAE0_855D930D **)&this->field_0x6af
+                 ,(int *)&param_1);
     }
     if (param_1 != nullptr) {
+
       thunk_FUN_004b9d20(param_1,this);
     }
     if (this->field_06B9 == 1) {
@@ -73,9 +79,10 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1)
     return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
   case CASE_5:
     /* ST_CALLSITE[0047FD08]: CALL 0x00403c1f; direct=00403C1F STBoatC::Dismant */
-    iVar5 = Dismant(this,(int *)0x2);
+    iVar5 = Dismant(this,(RecoveredRecordView_004B9D90_09AED060 *)0x2);
     return iVar5;
   default:
+
     local_EAX_602 =
          ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3b30,0,0,"%s",
                             "STBoatC::BackDismant incorrect entry");
@@ -97,13 +104,18 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1)
     else {
       param_1 = (int *)STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
     }
-    if ((((AnonShape_004B9D90_4F3151F9 *)param_1 == nullptr) ||
-        (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x18 != *(int *)&this->field_0x6af
-        )) || ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1)->field_0x24 != this->field_0024 ||
-               (iVar6 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1), iVar6 == 0)))) {
+    if ((((RecoveredRecordView_004B9D90_09AED060 *)param_1 ==
+          nullptr) ||
+        (*(int *)&((RecoveredRecordView_004B9D90_09AED060 *)param_1)->field_0x18 !=
+         *(int *)&this->field_0x6af)) ||
+       ((*(int *)&((RecoveredRecordView_004B9D90_09AED060 *)param_1)->field_0x24 != this->field_0024
+
+        || (iVar6 = thunk_FUN_004b9d90((RecoveredRecordView_004B9D90_09AED060 *)param_1), iVar6 == 0
+           )))) {
+
       STPlaySystemC::sub_006E62D0
-                (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x6af,
-                 (int *)&param_1);
+                (g_playSystem_00802A38,*(RecoveredRecordView_005EFAE0_855D930D **)&this->field_0x6af
+                 ,(int *)&param_1);
     }
     if ((param_1 != nullptr) && (param_1[300] == this->field_0018)) {
       param_1[300] = 0;

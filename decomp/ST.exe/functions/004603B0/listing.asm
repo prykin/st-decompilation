@@ -154,7 +154,7 @@ LAB_00460581:
 00460589  50                        PUSH EAX
 0046058A  51                        PUSH ECX
 0046058B  8B CE                     MOV ECX,ESI
-0046058D  FF 52 18                  CALL dword ptr [EDX + 0x18]
+0046058D  FF 52 18                  CALL dword ptr [EDX + 0x18]  ; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4
 00460590  83 F8 01                  CMP EAX,0x1
 00460593  0F 85 50 FF FF FF         JNZ 0x004604e9
 00460599  0F BF 96 69 04 00 00      MOVSX EDX,word ptr [ESI + 0x469]
@@ -193,7 +193,7 @@ LAB_004605dc:
 004605EF  52                        PUSH EDX
 004605F0  8B CE                     MOV ECX,ESI
 004605F2  66 C7 86 69 04 00 00 FF FF  MOV word ptr [ESI + 0x469],0xffff
-004605FB  FF 50 18                  CALL dword ptr [EAX + 0x18]
+004605FB  FF 50 18                  CALL dword ptr [EAX + 0x18]  ; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4
 004605FE  83 F8 01                  CMP EAX,0x1
 00460601  0F 85 E2 FE FF FF         JNZ 0x004604e9
 00460607  0F BF 4E 4B               MOVSX ECX,word ptr [ESI + 0x4b]
@@ -227,7 +227,7 @@ LAB_00460627:
 00460665  51                        PUSH ECX
 00460666  50                        PUSH EAX
 00460667  8B CE                     MOV ECX,ESI
-00460669  FF 52 18                  CALL dword ptr [EDX + 0x18]
+00460669  FF 52 18                  CALL dword ptr [EDX + 0x18]  ; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4
 0046066C  83 F8 01                  CMP EAX,0x1
 0046066F  75 23                     JNZ 0x00460694
 00460671  0F BF 8E 69 04 00 00      MOVSX ECX,word ptr [ESI + 0x469]
@@ -270,7 +270,7 @@ LAB_004606bc:
 004606F5  50                        PUSH EAX
 004606F6  51                        PUSH ECX
 004606F7  8B CE                     MOV ECX,ESI
-004606F9  FF 52 18                  CALL dword ptr [EDX + 0x18]
+004606F9  FF 52 18                  CALL dword ptr [EDX + 0x18]  ; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4
 004606FC  83 F8 01                  CMP EAX,0x1
 004606FF  75 41                     JNZ 0x00460742
 00460701  0F BF 96 69 04 00 00      MOVSX EDX,word ptr [ESI + 0x469]
@@ -320,7 +320,7 @@ LAB_00460784:
 LAB_0046078a:
 0046078A  8B 16                     MOV EDX,dword ptr [ESI]
 0046078C  8B CE                     MOV ECX,ESI
-0046078E  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]
+0046078E  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]  ; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 00460794  F7 D8                     NEG EAX
 00460796  1B C0                     SBB EAX,EAX
 00460798  5F                        POP EDI

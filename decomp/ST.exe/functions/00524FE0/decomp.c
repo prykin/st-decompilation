@@ -6,14 +6,21 @@
    CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154;CASE_9C=156;CASE_9D=157;CASE_9E=158;CASE_9F=159;CASE_A0=160;CASE_A1=161;CASE_A3=163;CASE_A4=164;CASE_A6=166;CASE_A7=167;CASE_A8=168;CASE_A9=169;CASE_AB=171;CASE_AC=172;CASE_AD=173;CASE_AE=174;CASE_AF=175;CASE_B0=176;CASE_B2=178;CASE_B3=179;CASE_B5=181;CASE_B6=182;CASE_B7=183;CASE_B8=184;CASE_BA=186;CASE_BC=188;CASE_BD=189;CASE_BE=190;CASE_BF=191;CASE_C0=192;CASE_C1=193;CASE_DD=221;CASE_DE=222
 
    [STPrototypeApplier] Propagated return.
-   Evidence: 00524FE0 returns used as parameter 3 of HelpPanelTy::DrawTitle @ 0051B6BE */
+   Evidence: 00524FE0 returns used as parameter 3 of HelpPanelTy::DrawTitle @ 0051B6BE
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (7), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=004F2560 @ 004F272D -> read as EAX on
+   every CFG path | 004F2560 @ 004F2781 -> read as EAX on every CFG path | 004F2560 @ 004F2A26 ->
+   read as EAX on every CFG path | 004F2560 @ 004F2ACC -> read as EAX on every CFG path | 00515900 @
+   005159C4 -> read as EAX on every CFG path | 00515900 @ 005159F3 -> read as EAX on every CFG path
+   | 0051B5A0 @ 0051B6AD -> read as EAX on every CFG path */
 
-UINT __cdecl FUN_00524fe0(Global_sub_00524FE0_param_1Enum param_1)
+int __cdecl FUN_00524fe0(Global_sub_00524FE0_param_1Enum param_1)
 
 {
-  UINT UVar1;
+  int iVar1;
 
-  UVar1 = 0;
+  iVar1 = 0;
   switch(param_1) {
   case CASE_96:
     return 0x3138;
@@ -62,7 +69,7 @@ UINT __cdecl FUN_00524fe0(Global_sub_00524FE0_param_1Enum param_1)
   case CASE_B0:
     return 0x314e;
   case CASE_B2:
-    UVar1 = 0x315c;
+    iVar1 = 0x315c;
     break;
   case CASE_B3:
     return 0x3151;
@@ -93,6 +100,6 @@ UINT __cdecl FUN_00524fe0(Global_sub_00524FE0_param_1Enum param_1)
   case CASE_DE:
     return 0x271e;
   }
-  return UVar1;
+  return iVar1;
 }
 

@@ -20,6 +20,7 @@ bool __fastcall FUN_005f0a30(STSprGameObjC *param_1)
   uVar5 = (uint)(byte)param_1->field_024F;
   if ((param_1->field_024F != 0) &&
      (uVar5 = (uint)(ushort)param_1->field_0246, 0 < param_1->field_0246)) {
+
     uVar5 = thunk_FUN_004961b0(param_1->field_0242,param_1->field_0244,(short)(uVar5 - 1));
     if (uVar5 == 0) {
       sVar1 = param_1->field_0242;
@@ -41,6 +42,7 @@ bool __fastcall FUN_005f0a30(STSprGameObjC *param_1)
             iVar7 = param_1->vfunc_130();
             /* ST_CALLSITE[005F0B21]: CALL dword ptr [EAX + 0x2c] */
             SVar8 = param_1->slot_2C();
+
             thunk_FUN_004b7e30(this,SVar8,iVar7,iVar6);
             /* ST_CALLSITE[005F0B34]: CALL dword ptr [EDX + 0xac] */
             iVar6 = param_1->vfunc_AC((short)*(undefined4 *)&this->field_0x18);

@@ -11,6 +11,6 @@ FUN_006e5670:
 006E5682  52                        PUSH EDX
 006E5683  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]
 006E5686  52                        PUSH EDX
-006E5687  FF 50 08                  CALL dword ptr [EAX + 0x8]
+006E5687  FF 50 08                  CALL dword ptr [EAX + 0x8]  ; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 006E568A  5D                        POP EBP
 006E568B  C2 10 00                  RET 0x10

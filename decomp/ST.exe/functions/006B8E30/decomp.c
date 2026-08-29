@@ -10,8 +10,8 @@ int FUN_006b8e30(int *param_1)
   int local_20;
   int local_1c;
   int local_18;
-  undefined4 local_14;
-  undefined4 local_10;
+  uint local_14;
+  uint local_10;
   int local_c;
   int local_8;
 
@@ -32,7 +32,6 @@ int FUN_006b8e30(int *param_1)
     /* ST_CALLSITE[006B8E9C]: CALL dword ptr [EDX + 0x14] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar1 = (**(code **)(**(int **)(*param_1 + 0x40) + 0x14))
-                      /* ST_CALLSITE[006B8E9C]: CALL dword ptr [EDX + 0x14] */
                       (*(int **)(*param_1 + 0x40),&local_24,param_1[0xf],&local_14,0x1000000,0);
     if (iVar1 == 0) break;
     if (iVar1 == -0x7789fe3e) {
@@ -43,6 +42,7 @@ int FUN_006b8e30(int *param_1)
     }
     else {
       if (((iVar1 != -0x7789ff60) && (iVar1 != -0x7789fe52)) || (iVar2 != 0)) break;
+      /* ST_CALLSITE[006B8ED6]: CALL dword ptr [0x0085bc6c] */
       Sleep(2);
     }
     iVar2 = iVar2 + 1;

@@ -35,7 +35,7 @@ int __thiscall STAppC::GetMessage(STAppC *this,STMessage *message)
   char *pcVar14;
   byte *puVar15;
   HANDLE pvVar16;
-  STMessageId *pSVar17;
+  RecoveredRecord_006E3DB0_0F66DDCF *pRVar17;
   int iVar20;
   uint uVar18;
   int iVar19;
@@ -58,9 +58,9 @@ int __thiscall STAppC::GetMessage(STAppC *this,STMessage *message)
   byte local_24c [256];
   InternalExceptionFrame local_14c;
   InternalExceptionFrame local_108;
-  undefined1 local_c4 [12];
-  undefined4 local_b8;
-  undefined4 local_b4;
+  byte local_c4 [12];
+  uint local_b8;
+  uint local_b4;
   InternalExceptionFrame local_a4;
   int local_60;
   int local_5c;
@@ -69,7 +69,8 @@ int __thiscall STAppC::GetMessage(STAppC *this,STMessage *message)
   int local_50;
   int local_4c;
   uint local_48;
-  STMessageId local_44 [5];
+  RecoveredRecord_006E3DB0_0F66DDCF local_44;
+  STMessageId local_34;
   STMessageArg local_30;
   STMessageArg local_2c;
   int local_24;
@@ -84,10 +85,12 @@ int __thiscall STAppC::GetMessage(STAppC *this,STMessage *message)
   local_a4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a4;
   local_18 = this;
+
   iVar12 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0);
   pSVar11 = local_18;
   if (iVar12 != 0) {
     g_currentExceptionFrame = local_a4.previous;
+
     iVar20 = ReportDebugMessage("E:\\__titans\\tapp.cpp",0x890,0,iVar12,"%s",
                                 "STAppC::GetMessage");
     if (iVar20 == 0) {
@@ -96,7 +99,8 @@ int __thiscall STAppC::GetMessage(STAppC *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  AppClassTy::sub_006E5150((AppClassTy *)local_18,message);
+
+  AppClassTy::vfunc_18((AppClassTy *)local_18,message);
   pCVar10 = g_cursorClass_00802A30;
   SVar5 = message->id;
   if (SVar5 < MESS_SHARED_6120) {
@@ -109,7 +113,8 @@ switchD_0056fad2_caseD_6105:
       /* ST_CALLSITE[005702DA]: CALL 0x00401578; direct=00401578 STAppC::ChangeResolution */
       ChangeResolution(pSVar11,0);
       if (g_startSystem_0081176C == nullptr) {
-        pSVar12 = (StartSystemTy *)Library::MSVCRT::FUN_0072e530(0x6b6);
+        /* ST_CALLSITE[005702ED]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/StartSystemTy; signature=__cdecl;pointer:/StartSystemTy;/uint */
+        pSVar12 = Library::MSVCRT::FUN_0072e530(0x6b6);
         if (pSVar12 != nullptr) {
           /* ST_CALLSITE[005702FC]: CALL 0x00405cd6; direct=00405CD6 StartSystemTy::StartSystemTy */
           StartSystemTy::StartSystemTy(pSVar12,(AppClassTy *)pSVar11);
@@ -127,17 +132,18 @@ switchD_0056fad2_caseD_6105:
         g_startSystem_0081176C->field_02EB = ((message->arg0).u32 == 2) + 1;
       }
       SVar6 = message->arg1;
-      pSVar17 = local_44;
+      pRVar17 = &local_44;
       for (iVar19 = 8; iVar19 != 0; iVar19 = iVar19 + -1) {
-        *pSVar17 = MESS_ID_NONE;
-        pSVar17 = pSVar17 + 1;
+        *(undefined4 *)pRVar17 = 0;
+        pRVar17 = (RecoveredRecord_006E3DB0_0F66DDCF *)&pRVar17->field_0x4;
       }
       local_30 = message->arg0;
-      local_44[3] = 0;
-      local_44[4] = message->id;
-      local_44[2] = 0x200;
+      local_44.field_000C = 0;
+      local_34 = message->id;
+      local_44.field_0008 = 0x200;
       local_2c = SVar6;
-      FUN_006e3db0((int)local_44);
+
+      FUN_006e3db0((AppClassTy *)pSVar11,&local_44);
       g_currentExceptionFrame = local_a4.previous;
       return 0;
     }
@@ -153,7 +159,7 @@ switchD_0056fad2_caseD_6105:
       /* ST_CALLSITE[0056FB02]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
       CursorClassTy::sub_0054B540(pCVar10);
       if (g_startSystem_0081176C != nullptr) {
-        FUN_006e4b80(pSVar11,(int)g_startSystem_0081176C);
+        FUN_006e4b80(pSVar11,(RecoveredRecord_006E4B80_A7B295CE *)g_startSystem_0081176C);
       }
       uVar26 = 0xffffffff;
       pcVar14 = &CHAR_00h_008016a0;
@@ -215,19 +221,22 @@ switchD_0056fad2_caseD_6105:
         memset(&pSVar11->field_0xe43, 0, 0x180); /* compiler bulk-zero initialization */
       }
       thunk_FUN_005713b0((int)pSVar11);
-      DVar13 = sub_006E51B0(pSVar11);
-      pSVar11->field_1134 = DVar13;
+
+      iVar19 = sub_006E51B0(pSVar11);
+      pSVar11->field_1134 = iVar19;
       pCVar10 = g_cursorClass_00802A30;
       g_cursorClass_00802A30->field_0493 = 0;
       /* ST_CALLSITE[0056FEBE]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
       CursorClassTy::sub_0054B540(pCVar10);
-      thunk_FUN_005711d0(pSVar11,(int *)&g_parentSystem_0081163C);
+      /* ST_CALLSITE[0056FECA]: CALL 0x00401d3e; direct=00401D3E STAppC::sub_005711D0 */
+      sub_005711D0(pSVar11,(int *)&g_parentSystem_0081163C);
       /* ST_CALLSITE[0056FED1]: CALL 0x00403562; direct=00403562 STAppC::CloseGameDBs */
       CloseGameDBs(pSVar11);
       if (g_startSystem_0081176C != nullptr) {
-        FUN_006e4b80(pSVar11,(int)g_startSystem_0081176C);
+        FUN_006e4b80(pSVar11,(RecoveredRecord_006E4B80_A7B295CE *)g_startSystem_0081176C);
       }
       if (g_cursorClass_00802A30->field_00A9 == 0) {
+
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
       else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
@@ -275,11 +284,13 @@ switchD_0056fad2_caseD_6102:
       g_cursorClass_00802A30->field_0493 = 0;
       /* ST_CALLSITE[005701E5]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
       CursorClassTy::sub_0054B540(pCVar10);
-      thunk_FUN_005711d0(pSVar11,(int *)&g_parentSystem_0081163C);
+      /* ST_CALLSITE[005701F1]: CALL 0x00401d3e; direct=00401D3E STAppC::sub_005711D0 */
+      sub_005711D0(pSVar11,(int *)&g_parentSystem_0081163C);
       /* ST_CALLSITE[005701F8]: CALL 0x00403562; direct=00403562 STAppC::CloseGameDBs */
       CloseGameDBs(pSVar11);
       if (g_startSystem_0081176C == nullptr) {
-        pSVar12 = (StartSystemTy *)Library::MSVCRT::FUN_0072e530(0x6b6);
+        /* ST_CALLSITE[0057020B]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/StartSystemTy; signature=__cdecl;pointer:/StartSystemTy;/uint */
+        pSVar12 = Library::MSVCRT::FUN_0072e530(0x6b6);
         if (pSVar12 != nullptr) {
           /* ST_CALLSITE[0057021A]: CALL 0x00405cd6; direct=00405CD6 StartSystemTy::StartSystemTy */
           StartSystemTy::StartSystemTy(pSVar12,(AppClassTy *)pSVar11);
@@ -293,26 +304,28 @@ switchD_0056fad2_caseD_6102:
         /* ST_CALLSITE[0057023F]: CALL 0x006e47e0; direct=006E47E0 AppClassTy::AddSystem */
         AppClassTy::AddSystem((AppClassTy *)pSVar11,(int *)g_startSystem_0081176C,0);
       }
-      pSVar17 = local_44;
+      pRVar17 = &local_44;
       for (iVar19 = 8; iVar19 != 0; iVar19 = iVar19 + -1) {
-        *pSVar17 = MESS_ID_NONE;
-        pSVar17 = pSVar17 + 1;
+        *(undefined4 *)pRVar17 = 0;
+        pRVar17 = (RecoveredRecord_006E3DB0_0F66DDCF *)&pRVar17->field_0x4;
       }
-      local_44[3] = 0;
-      local_44[4] = message->id;
-      local_44[2] = 0x200;
-      if (local_44[4] != MESS_STARTSYSTEMTY_6103) {
-        if (local_44[4] == MESS_STARTSYSTEMTY_6104) {
+      local_44.field_000C = 0;
+      local_34 = message->id;
+      local_44.field_0008 = 0x200;
+      if (local_34 != MESS_STARTSYSTEMTY_6103) {
+        if (local_34 == MESS_STARTSYSTEMTY_6104) {
           local_2c = message->arg1;
         }
-        else if (local_44[4] != MESS_SHARED_610A) {
-          FUN_006e3db0((int)local_44);
+        else if (local_34 != MESS_SHARED_610A) {
+
+          FUN_006e3db0((AppClassTy *)pSVar11,&local_44);
           g_currentExceptionFrame = local_a4.previous;
           return 0;
         }
       }
       local_30 = message->arg0;
-      FUN_006e3db0((int)local_44);
+
+      FUN_006e3db0((AppClassTy *)pSVar11,&local_44);
       g_currentExceptionFrame = local_a4.previous;
       return 0;
     case MESS_SHARED_6105:
@@ -326,7 +339,7 @@ switchD_0056fad2_caseD_6102:
       if (g_playSystem_00802A38 != nullptr) {
         STPlaySystemC::sub_006E57B0(g_playSystem_00802A38,0x121);
         /* ST_CALLSITE[0056FFE8]: CALL dword ptr [EAX + 0x8] */
-        g_playSystem_00802A38->vfunc_08(0x121,0,0,0,0);
+        g_playSystem_00802A38->vfunc_8(0x121,nullptr,nullptr,0,0);
         local_b8 = 0xf;
         local_b4 = 0x4405;
         /* ST_CALLSITE[0057000E]: CALL dword ptr [EDX + 0x18] */
@@ -334,12 +347,13 @@ switchD_0056fad2_caseD_6102:
                   ((SystemWithNamedObjClassTy *)g_playSystem_00802A38,(int)local_c4);
       }
       if (g_interSystem_00802A28 != nullptr) {
-        thunk_FUN_005711d0(pSVar11,(int *)&g_interSystem_00802A28);
+        /* ST_CALLSITE[00570021]: CALL 0x00401d3e; direct=00401D3E STAppC::sub_005711D0 */
+        sub_005711D0(pSVar11,(int *)&g_interSystem_00802A28);
       }
       /* ST_CALLSITE[00570026]: CALL 0x00403fa3; direct=00403FA3 CreateInterSystem */
       CreateInterSystem();
       if (g_allPlayers_007FA174 != nullptr) {
-        thunk_FUN_0042a9f0(bVar4);
+        thunk_FUN_0042a9f0(g_allPlayers_007FA174,bVar4);
         g_currentExceptionFrame = local_a4.previous;
         return 0;
       }
@@ -348,7 +362,8 @@ switchD_0056fad2_caseD_6102:
       /* ST_CALLSITE[00570061]: CALL 0x00401d43; direct=00401D43 DarkScreen */
       DarkScreen(g_dDXContext_0080759C,10,2);
       if (g_interSystem_00802A28 != nullptr) {
-        thunk_FUN_005711d0(pSVar11,(int *)&g_interSystem_00802A28);
+        /* ST_CALLSITE[00570079]: CALL 0x00401d3e; direct=00401D3E STAppC::sub_005711D0 */
+        sub_005711D0(pSVar11,(int *)&g_interSystem_00802A28);
       }
       /* ST_CALLSITE[0057008D]: CALL 0x00401578; direct=00401578 STAppC::ChangeResolution */
       ChangeResolution(pSVar11,_DAT_00807348 & 0xff);
@@ -363,10 +378,11 @@ switchD_0056fad2_caseD_6102:
         OpticClassC::ReInitOptic(g_opticClass_007FB2A0,_DAT_00807348 & 0xff);
         FUN_006b1a50(g_ddxContext_008075A8,3,nullptr,&local_60);
         if (g_cPanel_00801688 != nullptr) {
-          thunk_FUN_004a9b60(local_60,local_5c,local_58,
-                             local_54 -
-                             ((-(uint)(g_cPanel_00801688->field_023F != CASE_1) & 0xffffff65) + 0x9b
-                             ));
+          /* ST_CALLSITE[0057012D]: CALL 0x00401b6d; direct=00401B6D OpticClassC::sub_004A9B60 */
+          OpticClassC::sub_004A9B60
+                    (g_opticClass_007FB2A0,local_60,local_5c,local_58,
+                     local_54 -
+                     ((-(uint)(g_cPanel_00801688->field_023F != CASE_1) & 0xffffff65) + 0x9b));
         }
       }
       /* ST_CALLSITE[00570132]: CALL 0x00403fa3; direct=00403FA3 CreateInterSystem */
@@ -383,24 +399,24 @@ switchD_0056fad2_caseD_6102:
       g_cursorClass_00802A30->field_0493 = 0;
       /* ST_CALLSITE[0056FC94]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
       CursorClassTy::sub_0054B540(pCVar10);
-      pSVar17 = local_44;
+      pRVar17 = &local_44;
       for (iVar19 = 8; iVar19 != 0; iVar19 = iVar19 + -1) {
-        *pSVar17 = MESS_ID_NONE;
-        pSVar17 = pSVar17 + 1;
+        *(undefined4 *)pRVar17 = 0;
+        pRVar17 = (RecoveredRecord_006E3DB0_0F66DDCF *)&pRVar17->field_0x4;
       }
       bVar4 = pSVar11->field_6CE1;
       bVar3 = pSVar11->field_6CE0;
-      local_44[4] = 0x6102;
+      local_34 = 0x6102;
       if (((bVar3 <= bVar4) && (pSVar11->field_6CE2 <= bVar4)) && (bVar4 != 0)) {
         bVar29 = false;
-        local_44[4] = 0x6103;
+        local_34 = 0x6103;
         local_30 = (STMessageArg)0x0;
         pSVar11->field_6CE1 = 0;
       }
       if (bVar29) {
         bVar29 = true;
         if (((pSVar11->field_6CE1 < bVar3) && (pSVar11->field_6CE2 <= bVar3)) && (bVar3 != 0)) {
-          local_44[4] = 0x6104;
+          local_34 = 0x6104;
           local_30 = (STMessageArg)0x1;
           pSVar11->field_6CE0 = 0;
           bVar29 = false;
@@ -413,7 +429,7 @@ switchD_0056fad2_caseD_6102:
               pSVar11->field_6CE2 = 0;
             }
             else if (bVar4 != 0) {
-              local_44[4] = 0x7101;
+              local_34 = 0x7101;
               local_30 = (STMessageArg)0x4;
               pSVar11->field_6CE2 = 0;
               bVar29 = false;
@@ -448,13 +464,13 @@ switchD_0056fad2_caseD_6102:
             /* ST_CALLSITE[0056FE13]: CALL 0x00404b4c; direct=00404B4C STAppC::sub_0056E9E0 */
             iVar19 = sub_0056E9E0(pSVar11,1);
             if (iVar19 != 0) {
-              local_44[4] = 0x6104;
+              local_34 = 0x6104;
               local_30 = (STMessageArg)0x0;
             }
           }
         }
       }
-      if ((local_44[4] == 0x6102) && (DAT_008067a0 != '\0')) {
+      if ((local_34 == 0x6102) && (DAT_008067a0 != '\0')) {
         if ((DAT_00802a98 == '\0') ||
            /* ST_CALLSITE[0056FE4A]: CALL dword ptr [0x0085c048] */
            (iVar19 = CFsgsConnection::IsInitialized((CFsgsConnection *)&DAT_00802a90), iVar19 == 0))
@@ -465,12 +481,12 @@ switchD_0056fad2_caseD_6102:
           bVar29 = true;
         }
         if (bVar29) {
-          local_44[4] = 0x610a;
+          local_34 = 0x610a;
           local_30 = (STMessageArg)0x6;
         }
       }
       pSVar22 = pSVar11->vtable;
-      pSVar17 = local_44;
+      pRVar17 = &local_44;
       goto LAB_00570c77;
     }
   }
@@ -487,13 +503,18 @@ switchD_0056fad2_caseD_6102:
         goto switchD_0056fad2_caseD_6105;
       }
       local_8 = (byte *)0x1;
-      Library::DKW::DV::FUN_006c4110(g_anonShape_006C3FC0_72DDFA27_008075A0);
-      if ((g_anonShape_006C3FC0_72DDFA27_008075A0->field_0004 & 0x40000000) != 0) {
-        FUN_006c3f00((int)g_anonShape_006C3FC0_72DDFA27_008075A0);
+
+      Library::DKW::DV::FUN_006c4110(g_recoveredSourceFamily_dvideo_008075A0);
+      if ((g_recoveredSourceFamily_dvideo_008075A0->field_0004 & 0x40000000) != 0) {
+
+        FUN_006c3f00(g_recoveredSourceFamily_dvideo_008075A0);
       }
+
       local_10 = FUN_006c2a00(&DAT_00803408);
       if ((local_10 != 0) && (g_int_008075A4 == nullptr)) {
-        FUN_006e3db0((int)&pSVar11->field_0x113a);
+
+        FUN_006e3db0((AppClassTy *)pSVar11,
+                     (RecoveredRecord_006E3DB0_0F66DDCF *)&pSVar11->field_0x113a);
         g_currentExceptionFrame = local_a4.previous;
         return 0;
       }
@@ -507,20 +528,25 @@ switchD_0056fad2_caseD_6102:
       /* ST_CALLSITE[00570422]: CALL 0x00403058; direct=00403058 CursorClassTy::sub_0054B540 */
       CursorClassTy::sub_0054B540(pCVar10);
       if (g_startSystem_0081176C != nullptr) {
-        FUN_006e4b80(pSVar11,(int)g_startSystem_0081176C);
+        FUN_006e4b80(pSVar11,(RecoveredRecord_006E4B80_A7B295CE *)g_startSystem_0081176C);
       }
-      thunk_FUN_005711d0(pSVar11,(int *)&g_parentSystem_0081163C);
+      /* ST_CALLSITE[0057043F]: CALL 0x00401d3e; direct=00401D3E STAppC::sub_005711D0 */
+      sub_005711D0(pSVar11,(int *)&g_parentSystem_0081163C);
       if (g_cursorClass_00802A30->field_00A9 == 0) {
+
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
       else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
         FUN_006b3af0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
       }
       FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
+
       Library::DKW::DDX::FUN_006bab60(g_dDXContext_0080759C,0);
+
       Library::DKW::DDX::FUN_006bb370(g_dDXContext_0080759C,0,0);
       local_14c.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_14c;
+
       local_4c = Library::MSVCRT::__setjmp3(local_14c.jumpBuffer,0);
       if (local_4c != 0) {
         g_currentExceptionFrame = local_14c.previous;
@@ -529,17 +555,21 @@ switchD_0056fad2_caseD_6102:
         }
         if (DAT_00806738 != 8) {
           DAT_00806738 = 8;
+
           Library::DKW::DDX::FUN_006b9b40
                     (g_dDXContext_0080759C,0x10000001,g_nWidth_00806730,DAT_00806734,8,
                      g_nWidth_00806730,DAT_00806734,0,0,0x100);
+
           Library::DKW::DDX::FUN_006b1470((int *)g_ddxContext_008075A8);
         }
         pSVar11 = local_18;
         puVar15 = (byte *)(&local_18->field_0038);
         local_18->field_4EFA = 0;
-        thunk_FUN_00567220((AnonShape_00567220_C9DD1C7D *)puVar15);
+        thunk_FUN_00567220((RecoveredRecordView_00567220_6B6F72F8 *)puVar15);
         thunk_FUN_00567180(puVar15,HWND_00856d78);
-        FUN_006e3db0((int)&pSVar11->field_0x113a);
+
+        FUN_006e3db0((AppClassTy *)pSVar11,
+                     (RecoveredRecord_006E3DB0_0F66DDCF *)&pSVar11->field_0x113a);
         g_currentExceptionFrame = local_a4.previous;
         return 0;
       }
@@ -581,9 +611,11 @@ switchD_0056fad2_caseD_6102:
           local_108.previous = g_currentExceptionFrame;
           DAT_00806738 = iVar19;
           g_currentExceptionFrame = &local_108;
+
           local_EAX_2897 = Library::MSVCRT::__setjmp3(local_108.jumpBuffer,0);
           iVar19 = local_1c;
           if (local_EAX_2897 == 0) {
+
             DVar13 = Library::DKW::DDX::FUN_006b9b40
                                (g_dDXContext_0080759C,0x10000001,local_24,local_20,local_1c,local_24
                                 ,local_20,0,0,0);
@@ -619,10 +651,12 @@ LAB_00570645:
         local_8 = (byte *)((uint)local_8 | 4);
       }
       if (local_10 == 0) {
+
         Library::DKW::DV::FUN_006c3b00
-                  (g_anonShape_006C3FC0_72DDFA27_008075A0,(LPCSTR)&DAT_00803408,(uint)local_8);
+                  (g_recoveredSourceFamily_dvideo_008075A0,(LPCSTR)&DAT_00803408,(uint)local_8);
       }
       else {
+
         Library::DKW::DV::FUN_006c2ae0(g_int_008075A4,&DAT_00803408,(uint)local_8);
       }
       if (STPiece<2,1>(DAT_0080350c) == '\x01') {
@@ -649,16 +683,18 @@ LAB_00570645:
           goto cf_common_exit_0057073B;
         }
       }
-      FUN_006c3fc0(g_anonShape_006C3FC0_72DDFA27_008075A0,iVar21,iVar30,iVar31,iVar32);
+      FUN_006c3fc0(g_recoveredSourceFamily_dvideo_008075A0,iVar21,iVar30,iVar31,iVar32);
 cf_common_exit_0057073B:
       pSVar11 = local_18;
-      thunk_FUN_00567220((AnonShape_00567220_C9DD1C7D *)&local_18->field_0038);
+      thunk_FUN_00567220((RecoveredRecordView_00567220_6B6F72F8 *)&local_18->field_0038);
       pSVar11->field_4EFA = 1;
       if (iVar19 == 0) {
-        Library::DKW::DV::FUN_006c4000(g_anonShape_006C3FC0_72DDFA27_008075A0);
+
+        Library::DKW::DV::FUN_006c4000(g_recoveredSourceFamily_dvideo_008075A0);
         g_currentExceptionFrame = local_a4.previous;
         return 0;
       }
+
       Library::DKW::DV::FUN_006c2d90(g_int_008075A4);
       RaiseInternalException
                 (local_4c,g_overwriteContext_007ED77C,"E:\\__titans\\tapp.cpp",0x7bc);
@@ -711,12 +747,12 @@ cf_common_exit_0057073B:
         /* ST_CALLSITE[00570BFD]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)&DAT_00803408,"%s%s",&pSVar11->field_0x164,puVar15);
       }
-      pSVar17 = local_44;
+      pRVar17 = &local_44;
       for (iVar19 = 8; iVar19 != 0; iVar19 = iVar19 + -1) {
-        *pSVar17 = MESS_ID_NONE;
-        pSVar17 = pSVar17 + 1;
+        *(undefined4 *)pRVar17 = 0;
+        pRVar17 = (RecoveredRecord_006E3DB0_0F66DDCF *)&pRVar17->field_0x4;
       }
-      local_44[4] = 0x7100;
+      local_34 = 0x7100;
     }
     else if (dVar8 == 3) {
       memset(&DAT_00803408, 0, 0x118); /* compiler bulk-zero initialization */
@@ -726,12 +762,12 @@ cf_common_exit_0057073B:
       pSVar11->field_1146 = 1;
       pSVar11->field_114A = 0x6104;
       pSVar11->field_114E = 0;
-      pSVar17 = local_44;
+      pRVar17 = &local_44;
       for (iVar19 = 8; iVar19 != 0; iVar19 = iVar19 + -1) {
-        *pSVar17 = MESS_ID_NONE;
-        pSVar17 = pSVar17 + 1;
+        *(undefined4 *)pRVar17 = 0;
+        pRVar17 = (RecoveredRecord_006E3DB0_0F66DDCF *)&pRVar17->field_0x4;
       }
-      local_44[4] = 0x7100;
+      local_34 = 0x7100;
       if ((DAT_00807330 & 2) != 0) {
         memset(stack_bytes_neg_9A4, 0, 0x318); /* compiler bulk-zero initialization */
         iVar19 = 0;
@@ -741,8 +777,8 @@ cf_common_exit_0057073B:
                    PTR_s_CAMPAIGN_VPS_0079b03c,nullptr);
         local_c = (DArrayTy *)
                   thunk_FUN_00683c70(&pSVar11->field_7D1A,
-                                     (AnonShape_00683C70_22193481 *)stack_bytes_neg_9A4,&local_50,
-                                     nullptr,nullptr);
+                                     (RecoveredRecordView_00683C70_9F6EAF4E *)stack_bytes_neg_9A4,
+                                     &local_50,nullptr,nullptr);
         if ((local_50 == 0x40) && (local_c != nullptr)) {
           uVar26 = local_c->iteratorIndex;
           if ((message->arg1).u32 == 0) {
@@ -825,14 +861,14 @@ LAB_00570ab6:
     else if (dVar8 == 4) {
       memset(&pSVar11->field_0x113a, 0, 0x20); /* compiler bulk-zero initialization */
       iVar19 = 0;
-      pSVar17 = local_44;
+      pRVar17 = &local_44;
       for (iVar19 = 8; iVar19 != 0; iVar19 = iVar19 + -1) {
-        *pSVar17 = MESS_ID_NONE;
-        pSVar17 = pSVar17 + 1;
+        *(undefined4 *)pRVar17 = 0;
+        pRVar17 = (RecoveredRecord_006E3DB0_0F66DDCF *)&pRVar17->field_0x4;
       }
       pSVar11->field_1146 = 1;
       pSVar11->field_114A = 0x6108;
-      local_44[4] = 0x7100;
+      local_34 = 0x7100;
       puVar15 = (byte *)&pSVar11->field_0x6d03;
       puVar25 = (byte *)(&DAT_00803408);
       memmove(puVar25, puVar15, 0x118); /* compiler REP MOVS byte copy */
@@ -848,16 +884,16 @@ LAB_00570c2f:
     /* ST_CALLSITE[00570C42]: CALL dword ptr [0x0085bcec] */
     pvVar16 = FindFirstFileA((LPCSTR)&DAT_00803408,&local_68c);
     if (pvVar16 != (HANDLE)0xffffffff) {
-      /* ST_CALLSITE[00570C55]: CALL dword ptr [EAX + 0x18] */
-      pSVar11->GetMessage((int)local_44);
+      /* ST_CALLSITE[00570C55]: CALL dword ptr [EAX + 0x18]; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STAppC;/int */
+      pSVar11->GetMessage((int)&local_44);
       g_currentExceptionFrame = local_a4.previous;
       return 0;
     }
     pSVar22 = pSVar11->vtable;
-    pSVar17 = (STMessageId *)&pSVar11->field_0x113a;
+    pRVar17 = (RecoveredRecord_006E3DB0_0F66DDCF *)&pSVar11->field_0x113a;
 LAB_00570c77:
-    /* ST_CALLSITE[00570C7A]: CALL dword ptr [EDX + 0x18] */
-    (*pSVar22->GetMessage)(pSVar11,(int)pSVar17);
+    /* ST_CALLSITE[00570C7A]: CALL dword ptr [EDX + 0x18]; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STAppC;/int */
+    (*pSVar22->GetMessage)(pSVar11,(int)pRVar17);
   }
   g_currentExceptionFrame = local_a4.previous;
   return 0;

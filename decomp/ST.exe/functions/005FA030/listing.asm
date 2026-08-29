@@ -1,4 +1,4 @@
-FUN_005fa030:
+STColl3C::sub_005FA030:
 005FA030  56                        PUSH ESI
 005FA031  8B F1                     MOV ESI,ECX
 005FA033  E8 52 9F E0 FF            CALL 0x00403f8a

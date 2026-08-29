@@ -18,7 +18,8 @@ FUN_004cc220:
 004CC25B  A1 38 2A 80 00            MOV EAX,[0x00802a38]
 004CC260  03 90 E4 00 00 00         ADD EDX,dword ptr [EAX + 0xe4]
 004CC266  89 96 50 04 00 00         MOV dword ptr [ESI + 0x450],EDX
-004CC26C  E8 BF 22 26 00            CALL 0x0072e530
+FUN_004cc220::override::prt_4cc26c_a7ad5ad2:
+004CC26C  E8 BF 22 26 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint
 004CC271  83 C4 04                  ADD ESP,0x4
 004CC274  3B C7                     CMP EAX,EDI
 004CC276  74 09                     JZ 0x004cc281

@@ -36,7 +36,8 @@ CPanelTy::PaintBBut:
 004F3826  83 C4 0C                  ADD ESP,0xc
 004F3829  50                        PUSH EAX
 004F382A  53                        PUSH EBX
-004F382B  E8 B0 E4 1F 00            CALL 0x006f1ce0
+CPanelTy::PaintBBut::override::prt_4f382b_6752cf82:
+004F382B  E8 B0 E4 1F 00            CALL 0x006f1ce0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int
 004F3830  8B 75 08                  MOV ESI,dword ptr [EBP + 0x8]
 004F3833  8B 4D F4                  MOV ECX,dword ptr [EBP + -0xc]
 004F3836  81 E6 FF 00 00 00         AND ESI,0xff

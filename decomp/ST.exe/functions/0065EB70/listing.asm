@@ -53,7 +53,7 @@ LAB_0065ebe4:
 0065EBE7  8D 14 48                  LEA EDX,[EAX + ECX*0x2]
 0065EBEA  C1 E2 02                  SHL EDX,0x2
 0065EBED  52                        PUSH EDX
-0065EBEE  E8 1D C0 04 00            CALL 0x006aac10
+0065EBEE  E8 1D C0 04 00            CALL 0x006aac10  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 0065EBF3  8A 4D 20                  MOV CL,byte ptr [EBP + 0x20]
 0065EBF6  89 45 F8                  MOV dword ptr [EBP + -0x8],EAX
 0065EBF9  80 F9 08                  CMP CL,0x8

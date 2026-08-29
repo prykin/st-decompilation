@@ -9,7 +9,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
 
 {
   ushort **ppuVar1;
-  ushort *puVar2;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar2;
   PlayPanelTy *this_00;
   int iVar8;
   ccFntTy *pcVar4;
@@ -43,39 +43,39 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
   uint uVar22;
   uint *puVar23;
   uint uVar24;
-  undefined4 local_6b8 [140];
+  uint local_6b8 [140];
   int local_488 [6];
-  undefined4 local_470;
-  undefined4 local_46c;
-  undefined4 local_420;
-  undefined4 local_41c;
-  undefined4 local_418;
-  undefined4 local_378;
-  undefined4 local_374;
-  undefined4 local_370;
-  undefined4 local_36c;
-  undefined4 local_304;
+  uint local_470;
+  uint local_46c;
+  uint local_420;
+  uint local_41c;
+  uint local_418;
+  uint local_378;
+  uint local_374;
+  uint local_370;
+  uint local_36c;
+  uint local_304;
   int local_300 [26];
-  undefined4 local_298;
-  undefined4 local_e0;
-  undefined4 local_dc;
-  undefined4 local_d8;
+  uint local_298;
+  uint local_e0;
+  uint local_dc;
+  uint local_d8;
   int local_c8;
-  undefined4 local_c4;
+  uint local_c4;
   InternalExceptionFrame local_b0;
-  undefined4 local_6c [4];
-  undefined4 local_5c;
-  undefined4 local_58;
-  undefined4 local_54;
-  undefined4 local_3c;
-  undefined4 local_38;
-  undefined4 local_34;
+  uint local_6c [4];
+  uint local_5c;
+  uint local_58;
+  uint local_54;
+  uint local_3c;
+  uint local_38;
+  uint local_34;
   undefined4 *local_24;
-  undefined4 local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
+  uint local_20;
+  uint local_1c;
+  uint local_18;
   PlayPanelTy *local_14;
-  undefined4 *local_10;
+  int *local_10;
   int local_c;
   byte local_5;
 
@@ -87,12 +87,13 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
   }
   local_b0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b0;
+
   iVar8 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0);
   this_00 = local_14;
   if (iVar8 == 0) {
     g_playPanel_008016E4 = local_14;
-    /* ST_CALLSITE[00539BF8]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
-    pcVar4 = (ccFntTy *)ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0028);
+    /* ST_CALLSITE[00539BF8]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/ccFntTy */
+    pcVar4 = ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0028);
     this_00->field_01DD = pcVar4;
     pcVar4->field_0058 = 0;
     pcVar4->field_005C = 0;
@@ -105,6 +106,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     iVar7 = 1;
     bVar17 = 0;
     uVar16 = 0xffffffff;
+    /* ST_CALLSITE[00539C39]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
     pCVar5 = thunk_FUN_00571240("GAMEB_ALLY",0);
     puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                        (PTR_00806794,CASE_B,pCVar5,uVar16,bVar17,iVar7,iVar20,puVar23);
@@ -114,18 +116,20 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     iVar7 = 1;
     bVar17 = 0;
     uVar16 = 0xffffffff;
+    /* ST_CALLSITE[00539C65]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
     pCVar5 = thunk_FUN_00571240("BUT_PRODWEAP",0);
     local_EAX_231 =
          Library::Ourlib::MFRLOAD::mfRLoad
                    (PTR_00806794,CASE_B,pCVar5,uVar16,bVar17,iVar7,iVar20,puVar23);
     this_00->field_01D9 = local_EAX_231;
-    puVar2 = this_00->field_0068;
-    uVar16 = *(uint *)(puVar2 + 10);
+    pRVar2 = (RecoveredRecord_006B4FA0_DAC3A217 *)this_00->field_0068;
+    uVar16 = *(uint *)&pRVar2[1].field_0x4;
     if (uVar16 == 0) {
-      uVar16 = ((uint)puVar2[7] * *(int *)(puVar2 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-               *(int *)(puVar2 + 4);
+      uVar16 = ((uint)pRVar2->field_000E * *(int *)&pRVar2->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+               *(int *)&pRVar2->field_0x8;
     }
-    puVar23 = (undefined4 *)FUN_006b4fa0((int *)puVar2);
+
+    puVar23 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0(pRVar2));
     for (uVar8 = uVar16 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
       *puVar23 = 0xffffffff;
       puVar23 = puVar23 + 1;
@@ -137,21 +141,24 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       puVar23 = (undefined4 *)((int)puVar23 + 1);
     }
     pCVar5 = thunk_FUN_00571240("BKG_DIPLOMACYW",0);
+    /* ST_CALLSITE[00539CE0]: CALL 0x006f1ce0; direct=006F1CE0 cMf32::RecGet; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
     local_EAX_336 = cMf32::RecGet(g_cMf32_00806790,1,pCVar5,piVar21,iVar7);
     ppuVar1 = &this_00->field_01CD;
     *ppuVar1 = local_EAX_336;
     /* ST_CALLSITE[00539CF6]: CALL 0x00403229; direct=00403229 DibPut */
-    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0,'\x01',(byte *)local_EAX_336);
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0,'\x01',
+           (RecoveredRecordView_006B84D0_87AF9D9B *)local_EAX_336);
     cMf32::RecMemFree(g_cMf32_00806790,(uint *)ppuVar1);
     if (DAT_00808783 != '\x03') {
       iVar7 = 1;
       piVar21 = nullptr;
       pCVar5 = thunk_FUN_00571240("BKG_DIPLOMACYC",0);
+      /* ST_CALLSITE[00539D2D]: CALL 0x006f1ce0; direct=006F1CE0 cMf32::RecGet; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
       local_EAX_413 = cMf32::RecGet(g_cMf32_00806790,1,pCVar5,piVar21,iVar7);
       *ppuVar1 = local_EAX_413;
       /* ST_CALLSITE[00539D42]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x20,0xa4,'\x01',
-             (byte *)local_EAX_413);
+             (RecoveredRecordView_006B84D0_87AF9D9B *)local_EAX_413);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)ppuVar1);
     }
     iVar7 = 1;
@@ -159,11 +166,14 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     pCVar5 = thunk_FUN_00571240("BKG_DIPLOMACYB",0);
     local_EAX_480 = cMf32::RecGet(g_cMf32_00806790,1,pCVar5,piVar21,iVar7);
     *ppuVar1 = local_EAX_480;
+
     ccFntTy::SetSurf(this_00->field_01DD,(int)this_00->field_0068,0,0x6c,2,0xf3,0xc);
     uVar16 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar20 = -1;
     iVar7 = -2;
+    /* ST_CALLSITE[00539DB9]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     pcVar6_mg0 = LoadResourceString(0x2733,g_hINSTANCE_00807618);
+
     ccFntTy::WrStr(this_00->field_01DD,pcVar6_mg0,iVar7,iVar20,uVar16);
     /* ST_CALLSITE[00539DCC]: CALL 0x00403242; direct=00403242 PlayPanelTy::PaintPlayPanel */
     PaintPlayPanel(this_00);
@@ -177,9 +187,9 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     uVar12 = 0xbfff;
     pCVar5 = thunk_FUN_00571240("BUT_MEDIUM",0);
     /* ST_CALLSITE[00539E01]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
-    uVar12 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x171,199,1,pCVar5,uVar12,uVar13,sVar14,
-                                 uVar15,uVar18,pcVar19,uVar22,uVar24);
-    this_00->field_017C = uVar12;
+    iVar7 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x171,199,1,pCVar5,uVar12,uVar13,sVar14,
+                                uVar15,uVar18,pcVar19,uVar22,uVar24);
+    this_00->field_017C = iVar7;
     local_488[0] = 0;
     if (DAT_00808aaf < 9) {
       local_c8 = 0;
@@ -246,9 +256,9 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
         iVar6 = 0;
       }
       /* ST_CALLSITE[00539FB1]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
-      uVar12 = UPanelTy::CreateBut((UPanelTy *)this_00,0,iVar6,0x4d,iVar7 + -2,0,(LPSTR)0x0,iVar20,
-                                   iVar20 + 0x10,0,0,0,nullptr,0x16,0xe);
-      local_10[-8] = uVar12;
+      iVar6 = UPanelTy::CreateBut((UPanelTy *)this_00,0,iVar6,0x4d,iVar7 + -2,0,(LPSTR)0x0,iVar20,
+                                  iVar20 + 0x10,0,0,0,nullptr,0x16,0xe);
+      local_10[-8] = iVar6;
       if ((DAT_00808aaf <= local_5) || (local_c = 1, DAT_00808783 != '\x03')) {
         local_c = 0;
       }
@@ -262,13 +272,14 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       iVar9 = iVar20 + 0x20;
       uVar12 = 0;
       iVar11 = 1;
+      /* ST_CALLSITE[00539FFE]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       pCVar5 = thunk_FUN_00571240("BUT_PRODWEAP",0);
       pCVar5 = FUN_006f2c00(pCVar5,iVar11,uVar12);
       /* ST_CALLSITE[0053A020]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
-      uVar12 = UPanelTy::CreateBut((UPanelTy *)this_00,0,local_c,0x183,iVar7,1,pCVar5,iVar9,iVar6,
-                                   sVar14,uVar15,uVar13,pcVar19,uVar18,uVar22);
+      iVar6 = UPanelTy::CreateBut((UPanelTy *)this_00,0,local_c,0x183,iVar7,1,pCVar5,iVar9,iVar6,
+                                  sVar14,uVar15,uVar13,pcVar19,uVar18,uVar22);
       iVar7 = iVar7 + 0xf;
-      *local_10 = uVar12;
+      *local_10 = iVar6;
       local_5 = local_5 + 1;
       iVar20 = iVar20 + 1;
       local_10 = local_10 + 1;
@@ -318,11 +329,14 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       iVar7 = 0x3c;
       local_c = 4;
       do {
+
         ccFntTy::SetSurf(this_00->field_01DD,(int)this_00->field_0068,0,iVar7,0xa9,0x46,0xe);
         uVar16 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar6 = -1;
         iVar20 = 0;
+        /* ST_CALLSITE[0053A15B]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
         pcVar6_mg3 = LoadResourceString(resourceId,g_hINSTANCE_00807618);
+
         ccFntTy::WrStr(this_00->field_01DD,pcVar6_mg3,iVar20,iVar6,uVar16);
         iVar7 = iVar7 + 0x5c;
         resourceId = resourceId + 1;
@@ -333,6 +347,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_b0.previous;
+
   iVar21 = ReportDebugMessage("E:\\__titans\\Andrey\\playpan.cpp",0x81,0,iVar8,"%s",
                               "PlayPanelTy::InitPlayPanel");
   if (iVar21 != 0) {

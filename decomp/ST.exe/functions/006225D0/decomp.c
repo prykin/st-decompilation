@@ -13,7 +13,8 @@ STMineSetC * __cdecl CreateSTMineSet(void)
 {
   STMineSetC *pSVar1;
 
-  pSVar1 = (STMineSetC *)FUN_006b04d0(0x367);
+  /* ST_CALLSITE[006225D5]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STMineSetC; signature=__stdcall;pointer:/STMineSetC;/uint */
+  pSVar1 = FUN_006b04d0(0x367);
   if (pSVar1 != nullptr) {
     pSVar1 = STMineSetC::STMineSetC(pSVar1);
     return pSVar1;

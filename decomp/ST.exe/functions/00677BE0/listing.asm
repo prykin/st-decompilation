@@ -76,7 +76,7 @@ LAB_00677ca0:
 00677CB6  8D 45 D8                  LEA EAX,[EBP + -0x28]
 00677CB9  50                        PUSH EAX
 00677CBA  8B CF                     MOV ECX,EDI
-00677CBC  FF 52 74                  CALL dword ptr [EDX + 0x74]
+00677CBC  FF 52 74                  CALL dword ptr [EDX + 0x74]  ; [STIndirectCallsiteApplier] exact slot 0x74; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 00677CBF  8B 45 10                  MOV EAX,dword ptr [EBP + 0x10]
 00677CC2  8D 75 D8                  LEA ESI,[EBP + -0x28]
 LAB_00677cc5:

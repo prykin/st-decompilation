@@ -28,7 +28,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
   ccFntTy *pcVar4;
   AnonPointee_HelpPanelTy_0218 *pAVar5;
   void *pvVar6;
-  ushort *puVar7;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar7;
   UINT *pUVar8;
   HelpPanelTy *this_00;
   int iVar8;
@@ -72,10 +72,12 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
   local_84.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_84;
   local_20 = this;
+
   iVar8 = Library::MSVCRT::__setjmp3(local_84.jumpBuffer,0);
   this_00 = local_20;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_84.previous;
+
     iVar15 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0xac7,0,iVar8,
                                 "%s","HelpPanelTy::GetMessage");
     if (iVar15 != 0) {
@@ -97,6 +99,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
   if (SVar3 < MESS_OPTPANELTY_C001) {
     if (SVar3 == MESS_SHARED_C000) {
       UVar27 = 0x274e;
+      /* ST_CALLSITE[0051F028]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_0053DAF0_3BDC2979; source view only; no Ghidra override */
       pCVar17 = thunk_FUN_00571240("BUT_MEDIUM",0);
       /* ST_CALLSITE[0051F034]: CALL 0x00403508; direct=00403508 UPanelTy::PaintIBut */
       UPanelTy::PaintIBut((UPanelTy *)this_00,(AnonShape_0053DAF0_3BDC2979 *)message,pCVar17,UVar27);
@@ -107,7 +110,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
       if (SVar3 == MESS_SHARED_8160) {
         pcVar4 = this_00->field_01E4;
         if (pcVar4->field_00A0 != 0) {
-          FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar4);
+          FUN_00710790((RecoveredRecordView_00710790_7768A573 *)pcVar4);
         }
         (message->arg1).ptr = (void *)(*(int *)&pcVar4->field_0x8a + 1);
         g_currentExceptionFrame = local_84.previous;
@@ -291,15 +294,17 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         if (SVar3 == MESS_SHARED_6200) {
           this_00->field_01C3 = message->arg0;
           iVar9 = (ushort)this_00->field_01AF + 0x16;
+
           Library::DKW::WGR::FUN_006b55f0
                     ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x21,iVar9,
-                     (byte *)this_00->field_01DC,0,0x21,iVar9,0x19c,
-                     0x117 - (uint)(ushort)this_00->field_01AF);
+                     (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_01DC,0,0x21,iVar9,0x19c
+                     ,0x117 - (uint)(ushort)this_00->field_01AF);
           Library::DKW::WGR::FUN_006b5110
                     ((int)this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,
                      (BITMAPINFO *)this_00->field_0218,0,0,
                      (uint)(ushort)this_00->field_01B1 * this_00->field_01C3,0x19c,
                      0x117 - (uint)(ushort)this_00->field_01AF,0xff);
+
           Library::DKW::DDX::FUN_006b3640
                     ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C
                      ,this_00->field_0044);
@@ -321,7 +326,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         }
         pcVar4 = this_00->field_01E4;
         if (pcVar4->field_00A0 != 0) {
-          FUN_00710790((AnonShape_00710790_4CBB90D4 *)pcVar4);
+          FUN_00710790((RecoveredRecordView_00710790_7768A573 *)pcVar4);
         }
         local_18 = *(uint *)&pcVar4->field_0x8a;
         if (DAT_0080874e == '\x03') {
@@ -330,16 +335,19 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
         else {
           local_14 = STReplaceLowByte((uint32_t)(local_14), (uint8_t)((-(DAT_0080874e != '\x01') & 6U) + 1));
         }
+
         Library::DKW::WGR::FUN_006b55f0
                   ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x21,0x16,
-                   (byte *)this_00->field_01DC,0,0x21,0x16,0x19c,0x118);
+                   (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_01DC,0,0x21,0x16,0x19c,
+                   0x118);
         pAVar5 = this_00->field_0218;
         local_1c = (int *)pAVar5->field_0014;
         if (local_1c == nullptr) {
           local_1c = (int *)(((uint)(ushort)pAVar5->field_000E * pAVar5->field_0004 + 0x1f >> 3 &
                              0x1ffffffc) * pAVar5->field_0008);
         }
-        puVar11 = (undefined4 *)FUN_006b4fa0((int *)pAVar5);
+
+        puVar11 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0((RecoveredRecord_006B4FA0_DAC3A217 *)pAVar5));
         for (uVar18 = (uint)local_1c >> 2; uVar18 != 0; uVar18 = uVar18 - 1) {
           *puVar11 = 0xffffffff;
           puVar11 = puVar11 + 1;
@@ -359,9 +367,11 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
               local_1c = nullptr;
             }
             if (local_1c != nullptr) {
+
               ccFntTy::SetSurf(this_00->field_01E4,(int)this_00->field_0218,0,0,
                                (uVar18 - uVar20) * local_18,this_00->field_0218->field_0004,local_18
                               );
+
               ccFntTy::WrStr(this_00->field_01E4,(char *)local_1c,0,-1,local_14 & 0xff);
             }
             uVar20 = (uint)(message->arg0).words.high;
@@ -387,6 +397,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
               /* ST_CALLSITE[0051DF53]: CALL 0x00404fd9; direct=00404FD9 HelpPanelTy::ShiftControls */
               ShiftControls(this_00,1);
             }
+
             Library::DKW::DDX::FUN_006b3640
                       ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,
                        this_00->field_003C,this_00->field_0044);
@@ -405,6 +416,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
             this_00->field_0044 = iVar9;
             this_00->field_0172 = CASE_2;
           }
+
           Library::DKW::DDX::FUN_006b3640
                     ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C
                      ,this_00->field_0044);
@@ -505,6 +517,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
               }
               if ((bVar24) && ((int)local_c < this_00->field_0044 + 300)) {
                 local_10 = (undefined4 *)
+
                            thunk_FUN_00528060(*(Global_sub_00528060_param_1Enum *)
                                                ((int)local_8_mg0 + (uint)uVar21 * 0xd),
                                               *(char *)((int)local_8_mg0 + (uint)uVar21 * 0xd + 4));
@@ -571,16 +584,19 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           local_1c = (int *)STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(bVar24 + '\a'));
         }
         iVar9 = (message->arg1).words.high + 0x16;
+
         Library::DKW::WGR::FUN_006b55f0
                   ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x21,iVar9,
-                   (byte *)this_00->field_01DC,0,0x21,iVar9,0x19c,*(int *)(this_00->field_01EC + 4));
-        puVar7 = this_00->field_01EC;
-        uVar18 = *(uint *)(puVar7 + 10);
+                   (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_01DC,0,0x21,iVar9,0x19c,
+                   *(int *)(this_00->field_01EC + 4));
+        pRVar7 = (RecoveredRecord_006B4FA0_DAC3A217 *)this_00->field_01EC;
+        uVar18 = *(uint *)&pRVar7[1].field_0x4;
         if (uVar18 == 0) {
-          uVar18 = ((uint)puVar7[7] * *(int *)(puVar7 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-                   *(int *)(puVar7 + 4);
+          uVar18 = ((uint)pRVar7->field_000E * *(int *)&pRVar7->field_0x4 + 0x1f >> 3 & 0x1ffffffc)
+                   * *(int *)&pRVar7->field_0x8;
         }
-        puVar11 = (undefined4 *)FUN_006b4fa0((int *)puVar7);
+
+        puVar11 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0(pRVar7));
         for (uVar20 = uVar18 >> 2; uVar20 != 0; uVar20 = uVar20 - 1) {
           *puVar11 = 0xffffffff;
           puVar11 = puVar11 + 1;
@@ -589,6 +605,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           *(undefined1 *)puVar11 = 0xff;
           puVar11 = (undefined4 *)((int)puVar11 + 1);
         }
+
         ccFntTy::SetSurf(this_00->field_01E4,(int)this_00->field_01EC,0,0,0,0,0);
         pcVar13_mg1 = LoadResourceString(local_18,g_hINSTANCE_00807618);
         uVar18 = 0xffffffff;
@@ -611,6 +628,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           puVar14 = Library::MSVCRT::FUN_0072e560(puVar14,'\n');
           pUVar8 = local_8_mg0;
         }
+
         ccFntTy::WrStr(this_00->field_01E4,(char *)&DAT_0080f33a,
                        (uint)STField<byte>(pUVar8,0x11) * 0x14 + 10,-1,(uint)local_1c & 0xff);
         if ((this_00->field_01A1 == 0) && (STField<byte>(pUVar8,0x11) != 0)) {
@@ -682,6 +700,7 @@ LAB_0051ef61:
         FUN_006b5440((ushort *)this_00->field_0068,0,0x21,(message->arg1).words.high + 0x16,
                      (tagBITMAPINFO *)this_00->field_01EC,0,0xff);
       }
+
       Library::DKW::DDX::FUN_006b3640
                 ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
                  this_00->field_0044);
@@ -800,15 +819,20 @@ switchD_0051ea9b_caseD_0:
       bVar22 = 6;
       break;
     case MESS_SHARED_8166:
-      pBVar13 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0220,0);
+      /* ST_CALLSITE[0051EBAF]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+      pBVar13 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_0220,0);
       /* ST_CALLSITE[0051EBC2]: CALL 0x00403229; direct=00403229 DibPut */
-      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x1c3,0x2d,'\x06',(byte *)pBVar13);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x1c3,0x2d,'\x06',
+             (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar13);
+      /* ST_CALLSITE[0051EBDC]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      pBVar13 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_0220,
+      pBVar13 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_0220,
                              (*(int *)((message->arg2).u32 + 0x1c) != 1) + 1);
       /* ST_CALLSITE[0051EBF7]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0x1c3,
-             (message->arg0).words.high + 0x2d,'\x06',(byte *)pBVar13);
+             (message->arg0).words.high + 0x2d,'\x06',
+             (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar13);
+
       Library::DKW::DDX::FUN_006b3640
                 ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
                  this_00->field_0044);
@@ -940,18 +964,18 @@ switchD_0051e4d9_caseD_6:
 LAB_0051e1b2:
   this_00->field_01DB = 0x46;
 switchD_0051dfcc_caseD_7:
-  STPiece<0,2>(UVar27) = this_00->field_0178;
-  STPiece<2,2>(UVar27) = this_00->field_017A;
-  if ((undefined4 *)UVar27 == local_10) {
+  STPiece<0,2>(iVar9) = this_00->field_0178;
+  STPiece<2,2>(iVar9) = this_00->field_017A;
+  if ((undefined4 *)iVar9 == local_10) {
     g_currentExceptionFrame = local_84.previous;
     return 0;
   }
-  if (UVar27 != 0) {
+  if (iVar9 != 0) {
     this_00->field_0028 = 0x4202;
     *(undefined2 *)&this_00->field_0x2c = 0;
     *(undefined2 *)&this_00->field_0x2e = 2;
-    this_00->field_0030 = (undefined2)UVar27;
-    this_00->field_0032 = STPiece<2,2>(UVar27);
+    this_00->field_0030 = (undefined2)iVar9;
+    this_00->field_0032 = STPiece<2,2>(iVar9);
     if (g_cursorClass_00802A30 != nullptr) {
       /* ST_CALLSITE[0051E1F4]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/CursorClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
       g_cursorClass_00802A30->GetMessage((STMessage *)&this_00->field_0x18);

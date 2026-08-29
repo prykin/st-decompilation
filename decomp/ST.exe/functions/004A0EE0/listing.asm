@@ -1,4 +1,4 @@
-FUN_004a0ee0:
+STGroupBoatC::vfunc_4:
 004A0EE0  55                        PUSH EBP
 004A0EE1  8B EC                     MOV EBP,ESP
 004A0EE3  83 EC 18                  SUB ESP,0x18

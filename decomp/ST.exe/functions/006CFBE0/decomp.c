@@ -13,8 +13,8 @@ void FUN_006cfbe0(uint *param_1)
   uint uVar3;
   uint uVar4;
   int iVar5;
-  undefined4 local_8c;
-  undefined4 local_88;
+  uint local_8c;
+  uint local_88;
   uint local_84;
   uint local_80;
   uint local_10;

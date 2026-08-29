@@ -4,9 +4,14 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as VisibleClassTy.
    Evidence: this_call_owners=[VisibleClassTy]; agreed_this_calls=2; incoming_this_accesses=5;
    incoming_edx_uses=0; incoming_stack_parameter_uses=8; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate
 
-undefined4 __thiscall
+   [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=2, ignored=0,
+   unknown=0 */
+
+int __thiscall
 VisibleClassTy::sub_0055AD00
           (VisibleClassTy *this,int param_1,int param_2,undefined4 param_3,uint param_4,int param_5)
 

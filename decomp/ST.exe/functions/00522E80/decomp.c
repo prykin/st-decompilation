@@ -18,8 +18,9 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
 {
   ushort uVar1;
   STMessageId SVar2;
-  AnonShape_00710790_4CBB90D4 *pAVar3;
-  ushort *puVar4;
+  RecoveredRecordView_00710790_7768A573 *pRVar3;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar4;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar5;
   IntercomPanelTy *this_00;
   int iVar6;
   int iVar7;
@@ -27,25 +28,25 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
   int iVar8;
   int iVar9;
   uint uVar10;
-  AnonShape_00710790_4CBB90D4 **ppAVar11;
-  AnonShape_00710790_4CBB90D4 *local_8dc [3];
+  RecoveredRecordView_00710790_7768A573 **ppRVar11;
+  RecoveredRecordView_00710790_7768A573 *local_8dc [3];
   int local_8d0;
   int local_8cc;
   int local_8c8;
   int local_8c4;
-  undefined4 local_8c0;
+  uint local_8c0;
   DArrayTy *local_8bc;
-  undefined4 local_8b0;
-  undefined4 local_8ac;
-  undefined4 local_8a8;
-  undefined4 local_890;
-  undefined4 local_88c;
-  undefined4 local_888;
-  undefined4 local_850;
-  undefined4 local_84c;
-  undefined4 local_848;
-  undefined4 local_80;
-  undefined4 local_7c;
+  uint local_8b0;
+  uint local_8ac;
+  uint local_8a8;
+  uint local_890;
+  uint local_88c;
+  uint local_888;
+  uint local_850;
+  uint local_84c;
+  uint local_848;
+  uint local_80;
+  uint local_7c;
   InternalExceptionFrame local_50;
   IntercomPanelTy *local_c;
   uint local_8;
@@ -53,10 +54,12 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar6 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\intercom.cpp",0x197,0,iVar6,
                                "%s","IntercomPanelTy::GetMessage");
     if (iVar8 == 0) {
@@ -81,21 +84,21 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
             this_00->field_0044 = this_00->field_0044 + 5;
           }
           if (iVar7 <= this_00->field_0044) {
-            ppAVar11 = local_8dc;
+            ppRVar11 = local_8dc;
             for (iVar9 = 0x223; iVar9 != 0; iVar9 = iVar9 + -1) {
-              *ppAVar11 = nullptr;
-              ppAVar11 = ppAVar11 + 1;
+              *ppRVar11 = nullptr;
+              ppRVar11 = ppRVar11 + 1;
             }
-            pAVar3 = this_00->field_0180;
+            pRVar3 = this_00->field_0180;
             this_00->field_0044 = iVar7;
             this_00->field_0172 = CASE_1;
-            local_8dc[0] = (AnonShape_00710790_4CBB90D4 *)0x1;
-            local_8dc[1] = (AnonShape_00710790_4CBB90D4 *)0x9;
-            local_8dc[2] = pAVar3;
-            if (*(int *)(pAVar3 + 1) != 0) {
-              FUN_00710790(pAVar3);
+            local_8dc[0] = (RecoveredRecordView_00710790_7768A573 *)0x1;
+            local_8dc[1] = (RecoveredRecordView_00710790_7768A573 *)0x9;
+            local_8dc[2] = pRVar3;
+            if (*(int *)(pRVar3 + 1) != 0) {
+              FUN_00710790(pRVar3);
             }
-            local_8c4 = pAVar3->field_008A + 1;
+            local_8c4 = pRVar3->field_008A + 1;
             local_8d0 = (-(uint)(DAT_0080874e != '\x03') & 0xffffffe7) + 0x1e + this_00->field_003C;
             local_7c = 1;
             local_80 = 1;
@@ -117,6 +120,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
                       ((SystemClassTy *)this_00->field_000C,6,&this_00->field_01A0,nullptr,
                        local_8dc,1);
           }
+
           Library::DKW::DDX::FUN_006b3640
                     ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C
                      ,this_00->field_0044);
@@ -136,6 +140,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
           this_00->field_0172 = CASE_2;
           this_00->field_017C = 0;
         }
+
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
                    this_00->field_0044);
@@ -158,6 +163,7 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
       return 0;
     }
     thunk_FUN_00521cf0((AnonShape_00521CF0_154649D2 *)this_00);
+
     Library::DKW::TBL::FUN_006b6020(this_00->field_0198,0,&CHAR_00h_008016a0);
     this_00->field_0028 = 0x33;
     this_00->field_002C = this_00->field_0198;
@@ -168,15 +174,18 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
-    puVar4 = this_00->field_019C;
-    local_8 = *(uint *)(puVar4 + 10);
+    pRVar4 = (RecoveredRecord_006B4FA0_DAC3A217 *)this_00->field_019C;
+    local_8 = *(uint *)&pRVar4[1].field_0x4;
     if (local_8 == 0) {
-      local_8 = ((uint)puVar4[7] * *(int *)(puVar4 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-                *(int *)(puVar4 + 4);
+      local_8 = ((uint)pRVar4->field_000E * *(int *)&pRVar4->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+                *(int *)&pRVar4->field_0x8;
     }
-    puVar8 = (byte *)FUN_006b4fa0((int *)puVar4);
+
+    puVar8 = STPointerBoundaryCast<byte *>(FUN_006b4fa0(pRVar4));
     memset(puVar8, 0, local_8); /* compiler bulk-zero initialization */
+
     ccFntTy::SetSurf(this_00->field_0180,(int)this_00->field_019C,0,0,0,0,0);
+
     ccFntTy::WrStr(this_00->field_0180,*(char **)(message->arg0).ptr,0,-1,0);
     uVar1 = (message->arg1).words.low;
     if ((uVar1 != 0xffff) || ((message->arg1).words.high != 0xffff)) {
@@ -186,11 +195,13 @@ int __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,STMessage *mess
                    (int)((AnonShape_006E6FB0_BC494FEA *)this_00->field_019C)->field_0008 +
                    (uVar10 - 3),0x6c,0xd);
     }
-    puVar4 = this_00->field_019C;
+    pRVar5 = (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_019C;
+
     Library::DKW::WGR::FUN_006b55f0
               ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,
-               (-(uint)(DAT_0080874e != '\x03') & 0xffffffe7) + 0x1e,5,(byte *)puVar4,0,0,0,
-               *(int *)(puVar4 + 2),*(int *)(puVar4 + 4));
+               (-(uint)(DAT_0080874e != '\x03') & 0xffffffe7) + 0x1e,5,pRVar5,0,0,0,
+               *(int *)&pRVar5->field_0x4,*(int *)&pRVar5->field_0x8);
+
     Library::DKW::DDX::FUN_006b3640
               ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
                this_00->field_0044);

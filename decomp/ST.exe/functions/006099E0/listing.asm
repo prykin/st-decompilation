@@ -28,7 +28,7 @@ STFieldC::CreateField:
 00609A31  6A 40                     PUSH 0x40
 00609A33  53                        PUSH EBX
 00609A34  6A 00                     PUSH 0x0
-00609A36  E8 55 48 0A 00            CALL 0x006ae290
+00609A36  E8 55 48 0A 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STFieldC_field_0234DArray; source view only; no Ghidra override
 00609A3B  89 86 34 02 00 00         MOV dword ptr [ESI + 0x234],EAX
 LAB_00609a41:
 00609A41  8B 86 34 02 00 00         MOV EAX,dword ptr [ESI + 0x234]

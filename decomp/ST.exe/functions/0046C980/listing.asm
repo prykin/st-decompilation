@@ -90,7 +90,7 @@ LAB_0046ca76:
 0046CA82  66 8B 96 06 05 00 00      MOV DX,word ptr [ESI + 0x506]
 0046CA89  8B CE                     MOV ECX,ESI
 0046CA8B  52                        PUSH EDX
-0046CA8C  E8 21 66 F9 FF            CALL 0x004030b2
+0046CA8C  E8 21 66 F9 FF            CALL 0x004030b2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override
 0046CA91  50                        PUSH EAX
 0046CA92  8B CE                     MOV ECX,ESI
 0046CA94  E8 63 58 F9 FF            CALL 0x004022fc
@@ -256,7 +256,7 @@ LAB_0046cc70:
 0046CC78  66 8B 86 06 05 00 00      MOV AX,word ptr [ESI + 0x506]
 0046CC7F  8B CE                     MOV ECX,ESI
 0046CC81  50                        PUSH EAX
-0046CC82  E8 2B 64 F9 FF            CALL 0x004030b2
+0046CC82  E8 2B 64 F9 FF            CALL 0x004030b2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override
 0046CC87  50                        PUSH EAX
 0046CC88  8B CE                     MOV ECX,ESI
 0046CC8A  E8 6D 56 F9 FF            CALL 0x004022fc

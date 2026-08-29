@@ -56,7 +56,7 @@ LAB_0053f9ca:
 0053F9F0  89 BD E4 FB FF FF         MOV dword ptr [EBP + 0xfffffbe4],EDI
 0053F9F6  89 B5 EC FC FF FF         MOV dword ptr [EBP + 0xfffffcec],ESI
 0053F9FC  89 B5 E8 FC FF FF         MOV dword ptr [EBP + 0xfffffce8],ESI
-0053FA02  E8 75 5D EC FF            CALL 0x0040577c
+0053FA02  E8 75 5D EC FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 0053FA07  83 C4 08                  ADD ESP,0x8
 0053FA0A  50                        PUSH EAX
 0053FA0B  E8 F0 31 1B 00            CALL 0x006f2c00

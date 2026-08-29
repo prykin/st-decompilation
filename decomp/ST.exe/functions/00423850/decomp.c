@@ -17,19 +17,18 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
   uint uVar6;
   uint index;
   InternalExceptionFrame local_80;
-  undefined1 local_3c [16];
-  undefined4 local_2c;
-  undefined2 local_28;
-  undefined2 local_26;
-  undefined4 local_24;
+  byte local_3c [16];
+  uint local_2c;
+  ushort local_28;
+  ushort local_26;
+  uint local_24;
   STGroupC *local_1c;
   uint local_18;
   uint local_14;
   uint local_10;
   uint local_c;
   short local_8;
-  undefined1 local_5;
-
+  byte local_5;
   local_18 = this->field_0029[3];
   local_c = 0;
   local_10 = 0;
@@ -37,12 +36,14 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
   g_currentExceptionFrame = &local_80;
   local_1c = this;
   local_14 = local_18;
+
   errorCode = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   pSVar2 = local_1c;
   index = local_14;
   uVar6 = local_18;
   if (errorCode == 0) {
     while (uVar6 = uVar6 - 1, -1 < (int)uVar6) {
+
       DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar6,&local_8);
       if (local_8 == -1) {
         index = uVar6;
@@ -54,24 +55,29 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
                    0xb1);
       }
     }
+
     Library::DKW::TBL::DArrayPut((DArrayTy *)pSVar2->field_0029,index,&param_1);
     /* ST_CALLSITE[00423907]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     this_00 = STAllPlayersC::GetObjPtr
                         (g_allPlayers_007FA174,pSVar2->field_0024,(ushort)param_1,CASE_1);
-    thunk_FUN_00419c30(this_00,pSVar2->field_0025);
+    /* ST_CALLSITE[00423915]: CALL 0x004033be; direct=004033BE STGameObjC::sub_00419C30 */
+    STGameObjC::sub_00419C30(this_00,pSVar2->field_0025);
     pSVar2->field_0027 = pSVar2->field_0027 + 1;
     if (param_2 == 1) {
       if (pSVar2->field_002D == nullptr) {
+        /* ST_CALLSITE[00423935]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
         pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,5,2,5);
         pSVar2->field_002D = &pDVar3->flags;
       }
+
       Library::DKW::TBL::DArrayAppend((DArrayTy *)pSVar2->field_002D,&param_1);
       local_5 = 0xff;
-      /* ST_CALLSITE[00423958]: CALL dword ptr [EDX + 0x8] */
+      /* ST_CALLSITE[00423958]: CALL dword ptr [EDX + 0x8]; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4 */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(pSVar2->vtable + 8))(0x65,&local_5);
     }
-    uVar4 = thunk_FUN_00423120((int)this_00);
+
+    uVar4 = thunk_FUN_00423120((RecoveredRecord_00423120_79B5B62D *)this_00);
     uVar6 = pSVar2->field_0035;
     if ((uVar6 & 1) == 0) {
       if ((uVar4 & 1) != 0) {
@@ -122,14 +128,15 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
       (*this_00->vtable[1].vfunc_30)(this_00,(char)local_10);
     }
     if (this_00->field_0020 == 0x14) {
-      thunk_FUN_004956c0(this_00,pSVar2->field_0039);
+      /* ST_CALLSITE[00423A0A]: CALL 0x00401c26; direct=00401C26 STGameObjC::sub_004956C0 */
+      STGameObjC::sub_004956C0(this_00,pSVar2->field_0039);
     }
     if ((undefined4 *)pSVar2->field_001C != nullptr) {
       local_2c = 0x5d96;
       local_28 = 0;
       local_26 = (short)param_1;
       local_24 = this_00->field_0018;
-      /* ST_CALLSITE[00423A37]: CALL dword ptr [EDX] */
+      /* ST_CALLSITE[00423A37]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4 */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)**(undefined4 **)pSVar2->field_001C)(local_3c);
     }
@@ -138,6 +145,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
   }
   g_currentExceptionFrame = local_80.previous;
   if (errorCode != -0x5001ffff) {
+
     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0xdf,0,errorCode,"%s"
                                ,"STGroupC::AddObj");
     if (iVar5 != 0) {

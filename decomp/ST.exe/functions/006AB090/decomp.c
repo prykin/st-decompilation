@@ -2,11 +2,24 @@
 
 
 /* [STPrototypeApplier] Propagated parameter 2.
-   Evidence: 006C8EC0 -> 006AB090 @ 006C8F84 | 006C8EC0 -> 006AB090 @ 006CE697 */
+   Evidence: 006C8EC0 -> 006AB090 @ 006C8F84 | 006C8EC0 -> 006AB090 @ 006CE697
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (4), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=0040BC90 @ 0040BF17 -> read as EAX on
+   every CFG path | 0040C080 @ 0040C664 -> read as EAX on every CFG path | 00440AA0 @ 00440FEF ->
+   killed on every CFG path | 00441CE0 @ 00441F63 -> killed on every CFG path | 00442300 @ 004424BF
+   -> killed on every CFG path | 00442300 @ 0044271C -> killed on every CFG path | 0048DFD0 @
+   0048E9FB -> killed on every CFG path | 0048DFD0 @ 0048EAD0 -> killed on every CFG path | 0048DFD0
+   @ 0048EB72 -> killed on every CFG path | 004919C0 @ 00491A83 -> killed on every CFG path |
+   00492B20 @ 00492C6D -> killed on every CFG path | 0049B7D0 @ 0049BB07 -> killed on every CFG path
+   | 0049B7D0 @ 0049BCDA -> killed on every CFG path | 004A7490 @ 004A7681 -> killed on every CFG
+   path | 00575640 @ 0057586F -> killed on every CFG path | 006A9190 @ 006A9BF7 -> read as EAX on
+   every CFG path | 006AE7D0 @ 006AF167 -> read as EAX on every CFG path | 006C8EC0 @ 006C8F84 ->
+   unknown: terminal before explicit accumulator kill | 006C8EC0 @ 006CE697 -> unknown: terminal
+   before explicit accumulator kill */
 
-undefined4
-FUN_006ab090(int param_1,int param_2,Global_sub_006C8EC0_param_3Enum param_3,int param_4,int param_5
-            ,int param_6,int param_7,int param_8,int param_9,int param_10)
+int FUN_006ab090(int param_1,int param_2,Global_sub_006C8EC0_param_3Enum param_3,int param_4,
+                int param_5,int param_6,int param_7,int param_8,int param_9,int param_10)
 
 {
   byte bVar1;
@@ -36,7 +49,7 @@ FUN_006ab090(int param_1,int param_2,Global_sub_006C8EC0_param_3Enum param_3,int
   byte *pbVar25;
   ushort uVar26;
   int iVar27;
-  undefined4 local_4c;
+  int local_4c;
   short *local_48;
   int local_44;
   int local_40;
@@ -89,7 +102,7 @@ FUN_006ab090(int param_1,int param_2,Global_sub_006C8EC0_param_3Enum param_3,int
   local_38 = (byte *)FUN_006bfb70(iVar22 * 0x10);
   if (local_38 == nullptr) {
 LAB_006acc40:
-    local_4c = 0xfffffffe;
+    local_4c = -2;
   }
   else {
     local_24 = local_38 + iVar22 * 8;
@@ -129,8 +142,9 @@ LAB_006acc40:
           }
           pbVar23 = local_20 + param_5_after_write * 4;
           local_38 = pbVar11;
+
           Library::MSVCRT::FUN_0072da70
-                    ((undefined4 *)(pbVar11 + local_34 * 4),
+                    ((RecoveredRecord_006BFE70_3123BCE8 *)(pbVar11 + local_34 * 4),
                      (AnonPointee_TLOBaseTy_0607 *)(pbVar11 + local_34 * 4 + -0x200),
                      local_34 * 4 - 0x200);
         }

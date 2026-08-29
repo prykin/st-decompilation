@@ -386,11 +386,22 @@ public class STDiscriminatedPayloadApplier extends GhidraScript {
         if (label.isBlank()) label = row.get("case_value");
         String block = MARKER + " Case-local payload view: " +
             discriminator + " == " + label + " uses " +
-            type.getPathName() + ". The carrier ABI remains " +
+            type.getPathName() + ". carrier=" +
+            unt(row.getOrDefault("carrier_name", "")) + "; The carrier ABI remains " +
             unt(row.getOrDefault("carrier_type", "")) + ".";
         String old = function.getComment();
-        if (old == null || old.isBlank()) function.setComment(block);
-        else if (!old.contains(block)) function.setComment(old + "\n\n" + block);
+        if (old == null || old.isBlank()) {
+            function.setComment(block);
+            return;
+        }
+        if (old.contains(block)) return;
+        String prefix = MARKER + " Case-local payload view: " +
+            discriminator + " == " + label + " uses " + type.getPathName() + ".";
+        List<String> retained = new ArrayList<>();
+        for (String paragraph : old.split("\n\n", -1))
+            if (!paragraph.contains(prefix)) retained.add(paragraph);
+        retained.add(block);
+        function.setComment(String.join("\n\n", retained).trim());
     }
 
     private void ensureUnion(String family, List<DataType> members) throws Exception {

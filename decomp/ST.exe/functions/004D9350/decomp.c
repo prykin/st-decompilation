@@ -16,11 +16,13 @@ undefined4 __fastcall FUN_004d9350(TLOBaseTy *param_1)
 
   TVar3 = param_1->field_04D0;
   if ((TVar3 == CASE_3) || (TVar3 == CASE_5)) {
+
     iVar4 = thunk_FUN_004ac910(&param_1->field_01D5,'\f');
     if (iVar4 != param_1->field_01F5->field_01C4) {
       return 0;
     }
-    thunk_FUN_004d9000((AnonShape_004D9000_7AA66E43 *)param_1);
+
+    thunk_FUN_004d9000((RecoveredRecordView_004D9000_7F89BF8E *)param_1);
   }
   else {
     if (TVar3 != CASE_4) {

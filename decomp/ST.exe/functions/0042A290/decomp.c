@@ -17,7 +17,7 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
 {
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar1;
   int iVar3;
-  AnonShape_005751F0_0FFC949A *pAVar3;
+  RecoveredRecordView_005751F0_4081B804 *pRVar3;
   char *pcVar4;
   int iVar6;
   byte *puVar7;
@@ -39,21 +39,22 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
   int local_28;
   int local_24;
   undefined4 *local_20;
-  AnonShape_005751F0_0FFC949A *local_1c;
+  RecoveredRecordView_005751F0_4081B804 *local_1c;
   int local_18;
-  AnonShape_005751F0_0FFC949A *local_14;
+  RecoveredRecordView_005751F0_4081B804 *local_14;
   ST3DSMAPContext *local_10;
   DArrayTy *local_c;
   uint local_8;
 
   local_74.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_74;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0);
   if (iVar3 == 0) {
-    pAVar3 = (AnonShape_005751F0_0FFC949A *)
+    pRVar3 = (RecoveredRecordView_005751F0_4081B804 *)
              Library::Ourlib::MFSTMAP::mfTMapLoad
                        ((int)param_1,text,g_cMf32_00806760,g_cMf32_00806760,thunk_FUN_00428a10);
-    local_1c = pAVar3;
+    local_1c = pRVar3;
     if (g_cLoading_00802A58 != nullptr) {
       iVar6 = DAT_007f4e00;
       pcVar4 = LoadResourceString(0x2685,g_hINSTANCE_00807618);
@@ -70,7 +71,7 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
         cLoadingTy::SetState(g_cLoading_00802A58,CASE_0,0,nullptr);
       }
     }
-    puVar11 = &pAVar3->field_0xe;
+    puVar11 = &pRVar3->field_0xe;
     iVar6 = 0x100;
     puVar7 = (undefined1 *)((int)PTR_0080679c + 0x29);
     do {
@@ -81,10 +82,11 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
       iVar6 = iVar6 + -1;
       puVar7 = puVar7 + 4;
     } while (iVar6 != 0);
-    pAVar3->field_0x409 = 0xff;
-    pAVar3->field_0x40a = 0xff;
-    pAVar3->field_0x40b = 0xff;
-    pAVar8 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
+    pRVar3->field_0x409 = 0xff;
+    pRVar3->field_0x40a = 0xff;
+    pRVar3->field_0x40b = 0xff;
+    /* ST_CALLSITE[0042A3AE]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F;/uint */
+    pAVar8 = FUN_006b04d0(0x4f2);
     if (pAVar8 == nullptr) {
       local_10 = nullptr;
     }
@@ -109,8 +111,8 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
     ST3DSMAPContext::sub_006DD610(this,4,10.0,10.0);
     local_c = Library::DKW::TBL::DArrayCreate(nullptr,100,8,100);
     local_18 = 0;
-    if (0 < pAVar3->field_0455) {
-      local_14 = pAVar3 + 1;
+    if (0 < pRVar3->field_0455) {
+      local_14 = pRVar3 + 1;
       do {
         pRVar1 = *(RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 **)local_14;
         if (pRVar1 != nullptr) {
@@ -145,11 +147,13 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
             pRVar1->field_0004 = (short)local_8;
             local_24 = pRVar1->field_0028;
             pRVar1->field_0008 = (short)local_2c;
+
             local_20 = Library::DKW::LIB::MemAlloc(uVar14);
             puVar13 = (byte *)this->field_000C;
             puVar15 = (byte *)(local_20);
             memmove(puVar15, puVar13, uVar14); /* compiler REP MOVS byte copy */
             pRVar1->field_0040 = (int)local_20;
+
             Library::DKW::TBL::DArrayAppend(local_c,&local_24);
             this = local_10;
             iVar6 = local_30;
@@ -159,8 +163,8 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
           }
         }
         local_18 = local_18 + 1;
-        local_14 = (AnonShape_005751F0_0FFC949A *)&local_14->field_0004;
-        pAVar3 = local_1c;
+        local_14 = (RecoveredRecordView_005751F0_4081B804 *)&local_14->field_0004;
+        pRVar3 = local_1c;
       } while (local_18 < local_1c->field_0455);
     }
     if (this != nullptr) {
@@ -168,17 +172,18 @@ short * __cdecl LoadLand(cMf32 *param_1,char *text)
       Library::MSVCRT::FUN_0072e2b0((HoloTy *)this);
     }
     DArrayDestroy(local_c);
-    thunk_FUN_00428e50(&pAVar3->field_0000);
+    thunk_FUN_00428e50((RecoveredRecord_00428E50_9DEE1150 *)pRVar3);
     /* ST_CALLSITE[0042A605]: CALL 0x004010d7; direct=004010D7 LandInit */
-    LandInit(pAVar3);
+    LandInit(pRVar3);
     if (g_cLoading_00802A58 != nullptr) {
       /* ST_CALLSITE[0042A61D]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
       cLoadingTy::SetState(g_cLoading_00802A58,CASE_2,0,nullptr);
     }
     g_currentExceptionFrame = local_74.previous;
-    return &pAVar3->field_0000;
+    return &pRVar3->field_0000;
   }
   g_currentExceptionFrame = local_74.previous;
+
   iVar5 = ReportDebugMessage("E:\\__titans\\tload.cpp",0x502,0,iVar3,"%s",
                              "LoadLand");
   if (iVar5 == 0) {

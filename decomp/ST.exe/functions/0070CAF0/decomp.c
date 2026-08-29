@@ -8,7 +8,7 @@
    Evidence: incoming stack slot is read as a int before its address is passed as a distinct output
    lifetime */
 
-void __cdecl FUN_0070caf0(AnonShape_0070C9E0_7137F001 *param_1,uint *param_2,int param_3)
+void __cdecl FUN_0070caf0(RecoveredRecordView_0070C9E0_7D0EE2FF *param_1,uint *param_2,int param_3)
 
 {
   uint *puVar1;

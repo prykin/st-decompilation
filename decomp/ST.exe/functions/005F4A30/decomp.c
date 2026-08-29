@@ -17,8 +17,7 @@ undefined4 FUN_005f4a30(int param_1,byte param_2,int param_3)
   AnonShape_005F4A30_D28DC55A *local_14;
   char **local_10;
   int local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_c = param_1;
   local_8 = 0;
   local_10 = &PTR_s_pics_g_007ce5f8;

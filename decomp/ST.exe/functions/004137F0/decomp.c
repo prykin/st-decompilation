@@ -1,12 +1,13 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 FUN_004137f0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint param_3,int param_4)
+undefined4
+FUN_004137f0(RecoveredRecordView_004137F0_0E69B2C0 *param_1,int param_2,uint param_3,int param_4)
 
 {
   ushort uVar1;
   AnonNested_AnonShape_004137F0_350C8AE0_0029_743E91AB *pAVar2;
-  AnonShape_004137F0_350C8AE0 *this;
+  RecoveredRecordView_004137F0_0E69B2C0 *this;
   uint uVar3;
   int iVar4;
   AnonNested_AnonShape_004137F0_350C8AE0_0059_F07A8D99 *pAVar5;
@@ -41,9 +42,10 @@ undefined4 FUN_004137f0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint pa
   if ((param_2 == -2) || (param_2 == -3)) {
     iVar8 = param_1->field_0029->field_000C;
     param_1->field_0049 = param_1->field_0049 & 0xfffffffe;
-    AnonShape_004137F0_350C8AE0 * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
+    RecoveredRecordView_004137F0_0E69B2C0 * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
     auto param_4_after_write = 0; /* compiler stack-slot lifetime split */
     auto param_2_after_write = 0; /* compiler stack-slot lifetime split */
+    /* ST_CALLSITE[004138A8]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_AnonShape_004137F0_350C8AE0_0059_F07A8D99; source view only; no Ghidra override */
     pAVar5 = Library::DKW::LIB::MemAlloc(iVar8 * 0x10 + 0xc);
     this->field_0059 = pAVar5;
     piVar9 = &pAVar5->field_000C;
@@ -59,7 +61,8 @@ undefined4 FUN_004137f0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint pa
            puVar6 == nullptr)) break;
         uVar1 = *puVar6;
         if (uVar1 != 0xffff) {
-          pSVar7 = thunk_FUN_00423e70(this,uVar1);
+          /* ST_CALLSITE[00413905]: CALL 0x0040286f; direct=0040286F STGroupBoatC::sub_00423E70 */
+          pSVar7 = STGroupBoatC::sub_00423E70((STGroupBoatC *)this,uVar1);
           if (pSVar7 != nullptr) {
             iVar4 = pSVar7->field_00C7;
             if ((((iVar4 < 0) || (g_pathingGrid.sizeX <= iVar4)) || (pSVar7->field_00CB < 0)) ||
@@ -75,7 +78,7 @@ undefined4 FUN_004137f0(AnonShape_004137F0_350C8AE0 *param_1,int param_2,uint pa
               iVar4 = pSVar7->field_00CF;
             }
             piVar9[2] = iVar4 * 4 + 2;
-            param_1_after_write = (AnonShape_004137F0_350C8AE0 *)(&param_1_after_write->field_0x0 + *piVar9);
+            param_1_after_write = (RecoveredRecordView_004137F0_0E69B2C0 *)(&param_1_after_write->field_0x0 + *piVar9);
             param_4_after_write = param_4_after_write + piVar9[1];
             param_2_after_write = param_2_after_write + piVar9[2];
             piVar9[3] = (uint)(ushort)pSVar7->field_0032;

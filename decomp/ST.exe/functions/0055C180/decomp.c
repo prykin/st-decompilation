@@ -27,9 +27,8 @@ void __fastcall FUN_0055c180(CFsgsConnection *param_1)
   if (iVar3 == -2) {
     /* ST_CALLSITE[0055C20E]: CALL dword ptr [0x0085c010] */
     CFsgsConnection::GetFastestServer(param_1);
-    /* ST_CALLSITE[0055C220]: CALL dword ptr [EAX + 0x3c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*(int *)param_1 + 0x3c))(1,100,0,0);
+    /* ST_CALLSITE[0055C220]: CALL dword ptr [EAX + 0x3c]; [STIndirectCallsiteApplier] exact slot 0x3C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4 */
+    STStructuralVirtualCall<undefined4>(param_1, 0x3C, 1, 100, 0, 0);
     return;
   }
   /* ST_CALLSITE[0055C1EA]: CALL dword ptr [0x0085c038] */

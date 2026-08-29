@@ -19,6 +19,7 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pHVar2 = local_c;
   if (errorCode == 0) {
@@ -112,6 +113,7 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0xcf,0,errorCode,
                              "%s","HelpPanelTy::DoneHelpPanel");
   if (iVar3 != 0) {

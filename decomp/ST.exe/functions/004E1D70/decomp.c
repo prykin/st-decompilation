@@ -20,7 +20,8 @@ void __thiscall FUN_004e1d70(void *this,int param_1,int param_2)
   }
   thunk_FUN_004d78e0(STField<char>(this,0x24));
   if (STField<uint>(this,0x24) == (uint)*(byte *)(STField<int>(this,0x10) + 0x112d)) {
-    thunk_FUN_004d8b70((char)STField<uint>(this,0x24));
+    /* ST_CALLSITE[004E1DF1]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+    STAllPlayersC::sub_004D8B70(g_allPlayers_007FA174,(char)STField<uint>(this,0x24));
   }
   return;
 }

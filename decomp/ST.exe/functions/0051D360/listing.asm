@@ -81,7 +81,7 @@ LAB_0051d431:
 0051D458  6A 02                     PUSH 0x2
 0051D45A  53                        PUSH EBX
 0051D45B  57                        PUSH EDI
-0051D45C  E8 23 62 EE FF            CALL 0x00403684
+0051D45C  E8 23 62 EE FF            CALL 0x00403684  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 0051D461  83 C4 0C                  ADD ESP,0xc
 0051D464  8D 55 FC                  LEA EDX,[EBP + -0x4]
 0051D467  8B CE                     MOV ECX,ESI

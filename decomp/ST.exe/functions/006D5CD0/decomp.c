@@ -5,7 +5,7 @@ undefined4 * __thiscall
 FUN_006d5cd0(void *this,undefined4 param_1,undefined4 param_2,undefined4 *param_3)
 
 {
-  FUN_00749024(this,param_2,0,param_3,1);
+  Library::Win32::COMSupport::FUN_00749024(this,param_2,0,param_3,1);
   STField<undefined4>(this,0x58) = 0;
   STField<undefined4>(this,0x60) = 0;
   STField<undefined4>(this,100) = 0;

@@ -23,7 +23,7 @@ LAB_0043e48d:
 0043E493  85 C9                     TEST ECX,ECX
 0043E495  74 10                     JZ 0x0043e4a7
 0043E497  8B 01                     MOV EAX,dword ptr [ECX]
-0043E499  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+0043E499  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0043E49F  83 F8 01                  CMP EAX,0x1
 0043E4A2  75 03                     JNZ 0x0043e4a7
 0043E4A4  FF 45 08                  INC dword ptr [EBP + 0x8]

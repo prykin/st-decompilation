@@ -675,7 +675,7 @@ LAB_004d3b35:
 004D3B89  52                        PUSH EDX
 004D3B8A  50                        PUSH EAX
 004D3B8B  8B CF                     MOV ECX,EDI
-004D3B8D  E8 D2 D4 F2 FF            CALL 0x00401064
+004D3B8D  E8 D2 D4 F2 FF            CALL 0x00401064  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STT3DSprC; source view only; no Ghidra override
 004D3B92  8B 0D 38 2A 80 00         MOV ECX,dword ptr [0x00802a38]
 004D3B98  8A 86 F0 02 00 00         MOV AL,byte ptr [ESI + 0x2f0]
 004D3B9E  8B 91 E4 00 00 00         MOV EDX,dword ptr [ECX + 0xe4]
@@ -741,7 +741,7 @@ switchD_004d39e1::caseD_1:
 004D3C7C  52                        PUSH EDX
 004D3C7D  50                        PUSH EAX
 004D3C7E  8B CF                     MOV ECX,EDI
-004D3C80  E8 DF D3 F2 FF            CALL 0x00401064
+004D3C80  E8 DF D3 F2 FF            CALL 0x00401064  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STT3DSprC; source view only; no Ghidra override
 004D3C85  8B 0D 38 2A 80 00         MOV ECX,dword ptr [0x00802a38]
 004D3C8B  8A 86 F0 02 00 00         MOV AL,byte ptr [ESI + 0x2f0]
 004D3C91  8B 91 E4 00 00 00         MOV EDX,dword ptr [ECX + 0xe4]
@@ -882,7 +882,7 @@ LAB_004d3e1c:
 004D3E7E  52                        PUSH EDX
 004D3E7F  50                        PUSH EAX
 004D3E80  8B CF                     MOV ECX,EDI
-004D3E82  E8 DD D1 F2 FF            CALL 0x00401064
+004D3E82  E8 DD D1 F2 FF            CALL 0x00401064  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STT3DSprC; source view only; no Ghidra override
 004D3E87  8B 0D 38 2A 80 00         MOV ECX,dword ptr [0x00802a38]
 004D3E8D  8A 86 F0 02 00 00         MOV AL,byte ptr [ESI + 0x2f0]
 004D3E93  8B 91 E4 00 00 00         MOV EDX,dword ptr [ECX + 0xe4]
@@ -989,7 +989,7 @@ switchD_004d39e1::caseD_3:
 004D4002  8B CF                     MOV ECX,EDI
 004D4004  52                        PUSH EDX
 004D4005  8B D8                     MOV EBX,EAX
-004D4007  E8 58 02 F3 FF            CALL 0x00404264
+004D4007  E8 58 02 F3 FF            CALL 0x00404264  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STT3DSprC; source view only; no Ghidra override
 004D400C  8A 86 F0 02 00 00         MOV AL,byte ptr [ESI + 0x2f0]
 004D4012  8B CF                     MOV ECX,EDI
 004D4014  50                        PUSH EAX
@@ -1035,7 +1035,7 @@ LAB_004d4044:
 004D4096  E8 A5 11 F3 FF            CALL 0x00405240
 004D409B  8B 8E 5C 03 00 00         MOV ECX,dword ptr [ESI + 0x35c]
 004D40A1  6A 00                     PUSH 0x0
-004D40A3  E8 DA E8 F2 FF            CALL 0x00402982
+004D40A3  E8 DA E8 F2 FF            CALL 0x00402982  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STT3DSprC; source view only; no Ghidra override
 004D40A8  8B 96 70 03 00 00         MOV EDX,dword ptr [ESI + 0x370]
 004D40AE  8B CF                     MOV ECX,EDI
 004D40B0  F7 DA                     NEG EDX
@@ -1049,7 +1049,7 @@ LAB_004d4044:
 004D40C8  8B 8E F4 02 00 00         MOV ECX,dword ptr [ESI + 0x2f4]
 004D40CE  51                        PUSH ECX
 004D40CF  8B CF                     MOV ECX,EDI
-004D40D1  E8 F6 11 F3 FF            CALL 0x004052cc
+004D40D1  E8 F6 11 F3 FF            CALL 0x004052cc  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STT3DSprC; source view only; no Ghidra override
 004D40D6  8B 8E 5C 03 00 00         MOV ECX,dword ptr [ESI + 0x35c]
 004D40DC  50                        PUSH EAX
 004D40DD  E8 EA 11 F3 FF            CALL 0x004052cc

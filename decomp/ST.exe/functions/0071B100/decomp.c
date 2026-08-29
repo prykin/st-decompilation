@@ -13,8 +13,7 @@ int __cdecl FUN_0071b100(HKEY hKey,PHKEY phkResult)
   PHKEY lpSubKey;
   LSTATUS LVar1;
   int iVar2;
-  undefined1 local_108 [260];
-
+  byte local_108 [260];
   lpSubKey = phkResult;
   if ((phkResult != (PHKEY)0x0) && (*(char *)phkResult != '\0')) {
     /* ST_CALLSITE[0071B120]: CALL dword ptr [0x0085b958] */

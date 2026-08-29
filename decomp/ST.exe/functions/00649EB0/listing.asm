@@ -26,7 +26,7 @@ CreateDefaultBossData:
 00649F03  8D 4D F0                  LEA ECX,[EBP + -0x10]
 00649F06  51                        PUSH ECX
 00649F07  52                        PUSH EDX
-00649F08  E8 B2 7F DB FF            CALL 0x00401ebf
+00649F08  E8 B2 7F DB FF            CALL 0x00401ebf  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override
 00649F0D  8B 55 F0                  MOV EDX,dword ptr [EBP + -0x10]
 00649F10  8D 4D EC                  LEA ECX,[EBP + -0x14]
 00649F13  51                        PUSH ECX

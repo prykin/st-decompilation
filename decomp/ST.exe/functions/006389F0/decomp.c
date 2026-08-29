@@ -7,9 +7,8 @@ undefined4 __cdecl FUN_006389f0(short param_1,short param_2,short param_3)
   STWorldObject *pSVar1;
   int iVar2;
   int iVar3;
-  undefined4 local_28 [8];
-  undefined4 local_8;
-
+  uint local_28 [8];
+  uint local_8;
   local_8 = 0;
   iVar2 = thunk_FUN_004961b0(param_1,param_2,param_3);
   if (((((iVar2 == 0) && (-1 < param_1)) && (param_1 < g_worldGrid.sizeX)) &&

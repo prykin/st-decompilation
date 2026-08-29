@@ -39,25 +39,25 @@ undefined4 __thiscall TLOBaseTy::sub_004CEB00(TLOBaseTy *this,int param_1)
   byte *local_6c [5];
   byte *local_58;
   int local_54;
-  undefined2 local_50;
-  undefined2 local_4e;
-  undefined2 local_4c;
-  undefined2 local_4a;
-  undefined2 local_48;
-  undefined2 local_46;
-  undefined2 local_44;
-  undefined2 local_42;
-  undefined2 local_40;
-  undefined2 local_3e;
-  undefined2 local_3c;
+  ushort local_50;
+  ushort local_4e;
+  ushort local_4c;
+  ushort local_4a;
+  ushort local_48;
+  ushort local_46;
+  ushort local_44;
+  ushort local_42;
+  ushort local_40;
+  ushort local_3e;
+  ushort local_3c;
   char local_3a [15];
-  undefined4 local_2b;
+  uint local_2b;
   int local_24;
-  undefined2 local_20 [2];
+  ushort local_20 [2];
   int local_1c;
   uint local_18;
   int local_14;
-  undefined4 local_10;
+  uint local_10;
   uint local_c;
   uint local_8;
 
@@ -76,6 +76,7 @@ undefined4 __thiscall TLOBaseTy::sub_004CEB00(TLOBaseTy *this,int param_1)
       return 0;
     case CASE_40:
     case CASE_49:
+
       iVar6 = thunk_FUN_004ac910(&this->field_01D5,'\x0e');
       if (iVar6 != this->field_01F5->field_020C) {
         return local_10;
@@ -86,7 +87,8 @@ switchD_004ceb68_caseD_32:
       return local_10;
     }
   case CASE_2:
-    iVar6 = thunk_FUN_004b31c0((int *)this->field_0024,0);
+
+    iVar6 = thunk_FUN_004b31c0((RecoveredRecord_004B31C0_F3AB8C37 *)this->field_0024,0);
     if (iVar6 == 0) {
       if (g_sndUnderAttMeneg_00811798 == nullptr) {
         return local_10;
@@ -121,6 +123,7 @@ switchD_004ceb68_caseD_32:
             this->field_04E0[1] = local_c;
             this->field_04E0[2] = iVar6 + 1;
             if (g_tLOFake_00800BCC == nullptr) {
+
               thunk_FUN_004cf430();
             }
             /* ST_CALLSITE[004CECE4]: CALL 0x00401582; direct=00401582 TLOFakeTy::sub_004D0970 */
@@ -173,11 +176,14 @@ switchD_004ceb68_caseD_32:
     if ((this->field_05AC == CASE_32) || (iVar6 = 1, this->field_05AC == CASE_5C)) {
       iVar6 = 2;
     }
+
     iVar5 = thunk_FUN_004ac910(&this->field_01D5,'\t');
     if ((*(int *)&this->field_01F5->field_0x154 + iVar6 <= iVar5) &&
        ((*(uint *)&this->field_05FF->field_0x1c & 0x4000) == 0)) {
+
       thunk_FUN_004d0310(this);
     }
+
     iVar6 = thunk_FUN_004ac910(&this->field_01D5,'\x0e');
     if (iVar6 != this->field_01F5->field_020C) {
       return local_10;
@@ -272,7 +278,8 @@ cf_common_exit_004CF029:
     this->field_03D0 = 5;
     /* ST_CALLSITE[004CF041]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
     RotateSpr(this,1);
-    thunk_FUN_004cbf70(this);
+    /* ST_CALLSITE[004CF048]: CALL 0x00403616; direct=00403616 TLOBaseTy::sub_004CBF70 */
+    sub_004CBF70(this);
     return local_10;
   case CASE_4:
     if (this->field_04D8 == 0) {
@@ -317,6 +324,7 @@ switchD_004cf07f_caseD_40:
     }
     break;
   case CASE_5:
+
     iVar6 = thunk_FUN_004ac910(&this->field_01D5,'\x0e');
     if (iVar6 != this->field_01F5->field_020C) {
       return local_10;

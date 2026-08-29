@@ -84,7 +84,8 @@ LAB_005725b8:
 00572612  8D 85 A8 FE FF FF         LEA EAX,[EBP + 0xfffffea8]
 00572618  50                        PUSH EAX
 00572619  68 45 03 00 00            PUSH 0x345
-0057261E  E8 9D E8 17 00            CALL 0x006f0ec0
+FUN_00572510::override::prt_57261e_9d92389d:
+0057261E  E8 9D E8 17 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 00572623  8B 5D F4                  MOV EBX,dword ptr [EBP + -0xc]
 00572626  8B F0                     MOV ESI,EAX
 00572628  83 C4 14                  ADD ESP,0x14

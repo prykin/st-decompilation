@@ -13,7 +13,7 @@ STManBasisC::sub_005F14B0:
 005F14C6  6A 19                     PUSH 0x19
 005F14C8  6A 0A                     PUSH 0xa
 005F14CA  6A 00                     PUSH 0x0
-005F14CC  E8 BF CD 0B 00            CALL 0x006ae290
+005F14CC  E8 BF CD 0B 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STManBasisC_field_0038DArray; source view only; no Ghidra override
 005F14D1  85 C0                     TEST EAX,EAX
 005F14D3  89 43 38                  MOV dword ptr [EBX + 0x38],EAX
 005F14D6  0F 84 B6 00 00 00         JZ 0x005f1592

@@ -211,7 +211,7 @@ LAB_0062386c:
 00623883  8B 16                     MOV EDX,dword ptr [ESI]
 00623885  8B CE                     MOV ECX,ESI
 00623887  88 9E E9 02 00 00         MOV byte ptr [ESI + 0x2e9],BL
-0062388D  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]
+0062388D  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]  ; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 00623893  5F                        POP EDI
 00623894  5E                        POP ESI
 00623895  5B                        POP EBX
@@ -234,7 +234,7 @@ LAB_006238b0:
 LAB_006238c2:
 006238C2  8B 16                     MOV EDX,dword ptr [ESI]
 006238C4  8B CE                     MOV ECX,ESI
-006238C6  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]
+006238C6  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]  ; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 006238CC  5F                        POP EDI
 006238CD  5E                        POP ESI
 006238CE  5B                        POP EBX

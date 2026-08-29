@@ -83,7 +83,8 @@ LAB_00446282:
 00446294  50                        PUSH EAX
 00446295  51                        PUSH ECX
 00446296  8B 4D E8                  MOV ECX,dword ptr [EBP + -0x18]
-00446299  E8 1C C6 FB FF            CALL 0x004028ba
+STAllPlayersC::_DeleteGuardBoat::override::prt_446299_6c9e7102:
+00446299  E8 1C C6 FB FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 0044629E  8B 15 38 2A 80 00         MOV EDX,dword ptr [0x00802a38]
 004462A4  8B 8A E4 00 00 00         MOV ECX,dword ptr [EDX + 0xe4]
 004462AA  8D 55 F0                  LEA EDX,[EBP + -0x10]
@@ -184,7 +185,8 @@ LAB_00446376:
 0044638C  50                        PUSH EAX
 0044638D  51                        PUSH ECX
 0044638E  8B 4D E8                  MOV ECX,dword ptr [EBP + -0x18]
-00446391  E8 24 C5 FB FF            CALL 0x004028ba
+STAllPlayersC::_DeleteGuardBoat::override::prt_446391_6c9e7102:
+00446391  E8 24 C5 FB FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 00446396  8B 15 38 2A 80 00         MOV EDX,dword ptr [0x00802a38]
 0044639C  8B 8A E4 00 00 00         MOV ECX,dword ptr [EDX + 0xe4]
 004463A2  8D 55 F0                  LEA EDX,[EBP + -0x10]

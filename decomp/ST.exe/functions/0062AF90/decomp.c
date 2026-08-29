@@ -12,9 +12,9 @@ void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
   short sVar6;
   int iVar7;
   STWorldObject *this_00;
-  AnonShape_0062FCA0_22A9EE35 *pAVar8;
-  AnonShape_0062FCA0_22A9EE35 local_38;
-  undefined4 local_c;
+  RecoveredRecordView_0062FCA0_4CB838FB *pRVar8;
+  RecoveredRecordView_0062FCA0_4CB838FB local_38;
+  uint local_c;
   AnonShape_0062AF90_A19AAC76 *local_8;
 
   iVar5 = 1;
@@ -33,11 +33,11 @@ void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
     else {
       this_00 = STGridAt3D(g_worldGrid, sVar6, sVar3, sVar1).objects[1];
     }
-    pAVar8 = &local_38;
+    pRVar8 = &local_38;
     local_8 = this;
     for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *(undefined4 *)pAVar8 = 0;
-      pAVar8 = (AnonShape_0062FCA0_22A9EE35 *)&pAVar8->field_0x4;
+      *(undefined4 *)pRVar8 = 0;
+      pRVar8 = (RecoveredRecordView_0062FCA0_4CB838FB *)&pRVar8->field_0x4;
     }
     STPiece<28,4>(local_38) = param_3;
     STPiece<20,4>(local_38) = param_1;
@@ -74,11 +74,12 @@ void __thiscall FUN_0062af90(void *this,int param_1,int param_2,int param_3)
     STPiece<8,4>(local_38) = 0;
     STPiece<12,4>(local_38) = 1;
     if ((this_00 != nullptr) && (this_00->value_20 == 0xbe)) {
+
       thunk_FUN_006301b0(this_00,&local_38);
       return;
     }
-    /* ST_CALLSITE[0062B19D]: CALL dword ptr [EDX + 0x8] */
-    g_playSystem_00802A38->vfunc_08(0x132,0,0,(short)&local_38,0);
+    /* ST_CALLSITE[0062B19D]: CALL dword ptr [EDX + 0x8]; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STPlaySystemC;/int;pointer:/undefined4;pointer:/int;/undefined2;/int */
+    g_playSystem_00802A38->vfunc_8(0x132,nullptr,nullptr,(short)&local_38,0);
   }
   return;
 }

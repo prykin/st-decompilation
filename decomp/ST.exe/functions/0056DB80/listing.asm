@@ -104,7 +104,8 @@ LAB_0056dce3:
 0056DCE3  6A 01                     PUSH 0x1
 0056DCE5  68 D4 A1 7C 00            PUSH 0x7ca1d4
 0056DCEA  6A 5C                     PUSH 0x5c
-0056DCEC  E8 3D 6E E9 FF            CALL 0x00404b2e
+STAppC::StartGame::override::prt_56dcec_1cf34c31:
+0056DCEC  E8 3D 6E E9 FF            CALL 0x00404b2e  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/int; signature=__thiscall;pointer:/int;pointer:/cLoadingTy;/uint;pointer:/char;/uint
 0056DCF1  83 C4 0C                  ADD ESP,0xc
 0056DCF4  3B C3                     CMP EAX,EBX
 0056DCF6  74 09                     JZ 0x0056dd01
@@ -145,7 +146,8 @@ LAB_0056dd41:
 0056DD50  51                        PUSH ECX
 0056DD51  68 45 03 00 00            PUSH 0x345
 0056DD56  A3 20 67 80 00            MOV [0x00806720],EAX
-0056DD5B  E8 60 31 18 00            CALL 0x006f0ec0
+STAppC::StartGame::override::prt_56dd5b_9d92389d:
+0056DD5B  E8 60 31 18 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 0056DD60  8B 0D 68 B0 79 00         MOV ECX,dword ptr [0x0079b068]
 0056DD66  83 C4 14                  ADD ESP,0x14
 0056DD69  8D 55 FC                  LEA EDX,[EBP + -0x4]
@@ -266,7 +268,8 @@ LAB_0056de2c:
 0056DEDB  8D 8E 1A 7D 00 00         LEA ECX,[ESI + 0x7d1a]
 0056DEE1  51                        PUSH ECX
 0056DEE2  68 45 03 00 00            PUSH 0x345
-0056DEE7  E8 D4 2F 18 00            CALL 0x006f0ec0
+STAppC::StartGame::override::prt_56dee7_9d92389d:
+0056DEE7  E8 D4 2F 18 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 0056DEEC  8B 95 E4 FE FF FF         MOV EDX,dword ptr [EBP + 0xfffffee4]
 0056DEF2  83 C4 14                  ADD ESP,0x14
 0056DEF5  A3 58 67 80 00            MOV [0x00806758],EAX
@@ -294,7 +297,8 @@ LAB_0056df0a:
 0056DF3C  8D 8E F6 76 00 00         LEA ECX,[ESI + 0x76f6]
 0056DF42  51                        PUSH ECX
 0056DF43  68 45 03 00 00            PUSH 0x345
-0056DF48  E8 73 2F 18 00            CALL 0x006f0ec0
+STAppC::StartGame::override::prt_56df48_9d92389d:
+0056DF48  E8 73 2F 18 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 0056DF4D  8B 95 28 FF FF FF         MOV EDX,dword ptr [EBP + 0xffffff28]
 0056DF53  83 C4 14                  ADD ESP,0x14
 0056DF56  A3 58 67 80 00            MOV [0x00806758],EAX
@@ -368,7 +372,8 @@ LAB_0056e02d:
 0056E035  53                        PUSH EBX
 0056E036  50                        PUSH EAX
 0056E037  68 45 03 00 00            PUSH 0x345
-0056E03C  E8 7F 2E 18 00            CALL 0x006f0ec0
+STAppC::StartGame::override::prt_56e03c_9d92389d:
+0056E03C  E8 7F 2E 18 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 0056E041  50                        PUSH EAX
 0056E042  A3 60 67 80 00            MOV [0x00806760],EAX
 0056E047  E8 74 B7 19 00            CALL 0x007097c0
@@ -493,7 +498,8 @@ LAB_0056e1a0:
 0056E1C0  6A 0A                     PUSH 0xa
 0056E1C2  6A 0A                     PUSH 0xa
 0056E1C4  53                        PUSH EBX
-0056E1C5  E8 26 73 14 00            CALL 0x006b54f0
+STAppC::StartGame::override::prt_56e1c5_1d2df247:
+0056E1C5  E8 26 73 14 00            CALL 0x006b54f0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint
 0056E1CA  89 86 A7 4E 00 00         MOV dword ptr [ESI + 0x4ea7],EAX
 LAB_0056e1d0:
 0056E1D0  8B 86 AB 4E 00 00         MOV EAX,dword ptr [ESI + 0x4eab]
@@ -515,7 +521,8 @@ LAB_0056e1e0:
 0056E200  6A 0A                     PUSH 0xa
 0056E202  6A 0A                     PUSH 0xa
 0056E204  53                        PUSH EBX
-0056E205  E8 E6 72 14 00            CALL 0x006b54f0
+STAppC::StartGame::override::prt_56e205_1d2df247:
+0056E205  E8 E6 72 14 00            CALL 0x006b54f0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint
 0056E20A  89 86 AB 4E 00 00         MOV dword ptr [ESI + 0x4eab],EAX
 LAB_0056e210:
 0056E210  39 9E 7C 11 00 00         CMP dword ptr [ESI + 0x117c],EBX
@@ -699,7 +706,8 @@ LAB_0056e458:
 0056E4AC  8B 0D 18 76 80 00         MOV ECX,dword ptr [0x00807618]
 0056E4B2  51                        PUSH ECX
 0056E4B3  68 80 26 00 00            PUSH 0x2680
-0056E4B8  E8 83 1C 14 00            CALL 0x006b0140
+STAppC::StartGame::override::prt_56e4b8_42971bf0:
+0056E4B8  E8 83 1C 14 00            CALL 0x006b0140  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cLoadingTy; signature=__stdcall;pointer:/cLoadingTy;/WinDef.h/UINT;/WinDef.h/HINSTANCE
 0056E4BD  8B 0D 58 2A 80 00         MOV ECX,dword ptr [0x00802a58]
 0056E4C3  50                        PUSH EAX
 0056E4C4  E8 67 2D E9 FF            CALL 0x00401230
@@ -733,7 +741,7 @@ LAB_0056e509:
 0056E524  8B CE                     MOV ECX,ESI
 0056E526  C7 45 E0 07 61 00 00      MOV dword ptr [EBP + -0x20],0x6107
 0056E52D  C7 45 E4 01 00 00 00      MOV dword ptr [EBP + -0x1c],0x1
-0056E534  FF 50 18                  CALL dword ptr [EAX + 0x18]
+0056E534  FF 50 18                  CALL dword ptr [EAX + 0x18]  ; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STAppC;/int
 0056E537  53                        PUSH EBX
 0056E538  E8 89 3C E9 FF            CALL 0x004021c6
 0056E53D  B9 41 00 00 00            MOV ECX,0x41

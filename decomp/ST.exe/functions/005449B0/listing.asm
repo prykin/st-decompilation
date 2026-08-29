@@ -2087,7 +2087,8 @@ switchD_00546229::caseD_a120:
 005463C2  53                        PUSH EBX
 005463C3  68 1A EE 80 00            PUSH 0x80ee1a
 005463C8  68 45 03 00 00            PUSH 0x345
-005463CD  E8 EE AA 1A 00            CALL 0x006f0ec0
+CursorClassTy::GetMessage::override::prt_5463cd_9d92389d:
+005463CD  E8 EE AA 1A 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 005463D2  8B 0D EC AD 79 00         MOV ECX,dword ptr [0x0079adec]
 005463D8  83 C4 14                  ADD ESP,0x14
 005463DB  8B F0                     MOV ESI,EAX

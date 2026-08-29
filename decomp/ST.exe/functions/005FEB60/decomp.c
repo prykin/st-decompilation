@@ -26,7 +26,7 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
   uint *puVar17;
   bool bVar18;
   uint auStack_69c [383];
-  undefined4 uStack_a0;
+  uint uStack_a0;
   int local_64;
   int local_60;
   int local_58;
@@ -40,8 +40,7 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   puStack_c = &DAT_0079c9a0;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
@@ -132,7 +131,9 @@ LAB_005fee45:
               /* ST_CALLSITE[005FEE5C]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
               if ((bVar18) && (iVar8 = (*this_00->vtable[5].slots_00_28[2])(this_00), iVar8 != 0)) {
                 thunk_FUN_00416270(this_00,(uint *)local_20,local_30,local_2c);
+
                 iVar7 = FUN_006acf90(param_1,param_2,(int)local_20[0],(int)local_30[0]);
+
                 iVar8 = thunk_FUN_005fe990(param_3 - local_2c[0],iVar7);
                 if (iVar8 != 0) {
                   iVar8 = 0;
@@ -167,8 +168,10 @@ LAB_005fef0e:
     ExceptionList = ppvVar4;
     if (iVar13 != 0) {
       STField<int>(this,0x237) = iVar13;
+
       pvVar10 = Library::DKW::LIB::MemAlloc(iVar13 * 0x18);
       STField<void *>(this,0x23b) = pvVar10;
+
       pvVar10 = Library::DKW::LIB::MemAlloc(iVar13 * 4);
       STField<void *>(this,0x23f) = pvVar10;
       puVar16 = auStack_69c;
@@ -191,7 +194,8 @@ LAB_005fef0e:
         } while (iVar15 < iVar13);
       }
       if (STField<int>(this,0x226) < iVar13) {
-        thunk_FUN_005ff150(STField<int>(this,0x23b),STField<int *>(this,0x23f),iVar13);
+        thunk_FUN_005ff150(STField<RecoveredRecordView_005FF150_0B034029 *>(this,0x23b),
+                           STField<int *>(this,0x23f),iVar13);
       }
     }
   }

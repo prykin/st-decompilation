@@ -6,7 +6,8 @@ CPanelTy::sub_004F1950:
 004F195B  8B 8E 5B 02 00 00         MOV ECX,dword ptr [ESI + 0x25b]
 004F1961  50                        PUSH EAX
 004F1962  51                        PUSH ECX
-004F1963  E8 E8 9C 21 00            CALL 0x0070b650
+CPanelTy::sub_004F1950::override::prt_4f1963_92e7e0d4:
+004F1963  E8 E8 9C 21 00            CALL 0x0070b650  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/short;/int
 004F1968  8B 96 B4 01 00 00         MOV EDX,dword ptr [ESI + 0x1b4]
 004F196E  50                        PUSH EAX
 004F196F  6A 06                     PUSH 0x6

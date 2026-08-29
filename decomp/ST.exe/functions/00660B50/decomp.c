@@ -10,7 +10,7 @@
    00666DA3; MOVSX at 00666D88 establishes signed source width 2 */
 
 undefined4 __fastcall
-FUN_00660b50(AnonShape_00660620_6BCED4D7 *param_1,int param_2,short param_3,short param_4,
+FUN_00660b50(RecoveredRecordView_00660620_D94F552E *param_1,int param_2,short param_3,short param_4,
             int param_5,int param_6)
 
 {
@@ -25,7 +25,7 @@ FUN_00660b50(AnonShape_00660620_6BCED4D7 *param_1,int param_2,short param_3,shor
   if (param_6 == 0) {
     local_8 = (short)param_5;
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-    local_c = (AnonShape_00660620_6BCED4D7 *)CONCAT22(param_4,param_3);
+    local_c = (RecoveredRecordView_00660620_D94F552E *)CONCAT22(param_4,param_3);
     if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
       pSVar1 = thunk_FUN_0042b760(param_1->field_0024,param_1->field_007D);
       if (pSVar1 != nullptr) {

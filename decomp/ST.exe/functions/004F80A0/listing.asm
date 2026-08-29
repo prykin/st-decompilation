@@ -394,7 +394,8 @@ LAB_004f8549:
 004F8554  6A 06                     PUSH 0x6
 004F8556  50                        PUSH EAX
 004F8557  8B CE                     MOV ECX,ESI
-004F8559  E8 57 9E F0 FF            CALL 0x004023b5
+CPanelTy::PaintTV::override::prt_4f8559_9e902bc8:
+004F8559  E8 57 9E F0 FF            CALL 0x004023b5  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__stdcall;pointer:/char;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_004F1D20_D68BC0B9
 004F855E  8B 0D 94 67 80 00         MOV ECX,dword ptr [0x00806794]
 004F8564  50                        PUSH EAX
 004F8565  6A 1F                     PUSH 0x1f
@@ -572,7 +573,8 @@ LAB_004f876b:
 004F8771  6A 00                     PUSH 0x0
 004F8773  6A 00                     PUSH 0x0
 004F8775  6A 00                     PUSH 0x0
-004F8777  E8 26 AF F0 FF            CALL 0x004036a2
+CPanelTy::PaintTV::override::prt_4f8777_3ecbffe8:
+004F8777  E8 26 AF F0 FF            CALL 0x004036a2  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;/int;/undefined1;/int
 004F877C  83 C4 0C                  ADD ESP,0xc
 004F877F  50                        PUSH EAX
 004F8780  A1 90 67 80 00            MOV EAX,[0x00806790]
@@ -658,7 +660,8 @@ LAB_004f886a:
 004F8875  6A 00                     PUSH 0x0
 004F8877  6A 00                     PUSH 0x0
 004F8879  6A 00                     PUSH 0x0
-004F887B  E8 22 AE F0 FF            CALL 0x004036a2
+CPanelTy::PaintTV::override::prt_4f887b_3ecbffe8:
+004F887B  E8 22 AE F0 FF            CALL 0x004036a2  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;/int;/undefined1;/int
 004F8880  8B 0D 90 67 80 00         MOV ECX,dword ptr [0x00806790]
 004F8886  83 C4 0C                  ADD ESP,0xc
 004F8889  50                        PUSH EAX
@@ -718,7 +721,8 @@ CPanelTy::PaintTV::cf_common_join_004F88ED:
 004F8939  8B 8E D8 01 00 00         MOV ECX,dword ptr [ESI + 0x1d8]
 004F893F  6A 00                     PUSH 0x0
 004F8941  6A 01                     PUSH 0x1
-004F8943  E8 98 B7 21 00            CALL 0x007140e0
+CPanelTy::PaintTV::override::prt_4f8943_a4cfac2c:
+004F8943  E8 98 B7 21 00            CALL 0x007140e0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; signature=__thiscall;pointer:/wingdi.h/tagBITMAPINFO;pointer:/void;/int;/char
 004F8948  85 C0                     TEST EAX,EAX
 004F894A  74 1A                     JZ 0x004f8966
 004F894C  8B 8E B4 01 00 00         MOV ECX,dword ptr [ESI + 0x1b4]

@@ -32,8 +32,10 @@ void __thiscall STBoatC::ReadyForLoading(STBoatC *this,STFishC *param_1)
 
   if ((((this->field_045D == CASE_F) || (this->field_045D == CASE_E)) &&
       (*(STFishC **)&this->field_0x58e == param_1)) && (this->field_0596 == CASE_2)) {
+
     STPlaySystemC::sub_006E62D0
-              (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*(STFishC **)&this->field_0x58e,
+              (g_playSystem_00802A38,
+               (RecoveredRecordView_005EFAE0_855D930D *)*(STFishC **)&this->field_0x58e,
                (int *)&param_1);
     /* ST_CALLSITE[00492004]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
     STFishC::sub_004162F0(param_1,&this->field_0588,&this->field_058A,&this->field_058C);
@@ -41,6 +43,7 @@ void __thiscall STBoatC::ReadyForLoading(STBoatC *this,STFishC *param_1)
     this->field_059A = CASE_0;
     return;
   }
+
   iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x50bb,0,0,"%s",
                              "STBoatC::ReadyForLoading incorrect call");
   if (iVar2 != 0) {

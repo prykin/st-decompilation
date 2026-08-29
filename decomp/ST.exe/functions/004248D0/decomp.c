@@ -15,11 +15,20 @@
 
    [STSwitchEnumApplier] Switch target param_6 uses
    /SubmarineTitans/Recovered/Enums/SubmarineTitans_Recovered_HiddenThis_AnonReceiver_004248D0_sub_004248D0_param_6Enum.
-   Cases: CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
+   Cases: CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3
+   [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:1: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=4,
+   pointer_dereferences=8, scalar_uses=0; sites=004248F5 dereference: MOV word ptr [EDI +
+   ESI*0x8],DX | 0042490A dereference: MOV word ptr [EDI + ESI*0x8 + 0x2],DX | 0042490F dereference:
+   MOV word ptr [EDI + ESI*0x8 + 0x6],BX | 00424AE7 dereference: MOV word ptr [EDI + EAX*0x8 +
+   0x4],DX | 00424B11 dereference: MOV word ptr [EDI + EAX*0x8],DX | 00424B25 dereference: MOV word
+   ptr [EDI + EAX*0x8 + 0x2],DX | 00424B2A dereference: MOV word ptr [EDI + EAX*0x8 + 0x6],BX |
+   00424CD2 dereference: MOV word ptr [ECX + EAX*0x8 + 0x4],DX */
 
 int __thiscall
-sub_004248D0(void *this,int param_1,int param_2,int param_3,int param_4,
-            Global_sub_004248D0_param_5Enum param_5,Global_sub_004248D0_param_6Enum param_6)
+sub_004248D0(void *this,RecoveredRecordView_004248D0_552B02F1 *param_1,int param_2,int param_3,
+            int param_4,Global_sub_004248D0_param_5Enum param_5,
+            Global_sub_004248D0_param_6Enum param_6)
 
 {
   byte *pbVar1;
@@ -38,13 +47,13 @@ sub_004248D0(void *this,int param_1,int param_2,int param_3,int param_4,
   if ((param_5 & CASE_2) != CASE_0) {
     sVar4 = sVar8 + 1;
   }
-  *(short *)(param_1 + param_2 * 8) = STField<short>(this,0x374) + sVar4;
+  *(short *)(param_1 + param_2) = STField<short>(this,0x374) + sVar4;
   iVar6 = param_4 + 1;
   if ((param_5 & CASE_1) == CASE_0) {
     iVar6 = param_4;
   }
-  *(short *)(param_1 + 2 + param_2 * 8) = (short)iVar6 + STField<short>(this,0x378);
-  *(short *)(param_1 + 6 + param_2 * 8) = (short)param_5;
+  param_1[param_2].field_0002 = (short)iVar6 + STField<short>(this,0x378);
+  param_1[param_2].field_0006 = (short)param_5;
   iVar6 = STField<int>(this,0x37c);
   iVar10 = iVar6 * param_4 + param_3;
   iVar3 = STField<int>(this,0x390);
@@ -131,7 +140,7 @@ joined_r0x00424ada:
       }
     }
   }
-  *(short *)(param_1 + 4 + param_2 * 8) = (short)uVar9;
+  param_1[param_2].field_0004 = (short)uVar9;
   iVar6 = param_2 + 1;
   if ((int)param_6 < 0) {
     return iVar6;
@@ -139,13 +148,13 @@ joined_r0x00424ada:
   if ((param_6 & CASE_2) != CASE_0) {
     sVar8 = sVar8 + 1;
   }
-  *(short *)(param_1 + iVar6 * 8) = STField<short>(this,0x374) + sVar8;
+  *(short *)(param_1 + iVar6) = STField<short>(this,0x374) + sVar8;
   sVar8 = (short)param_4;
   if ((param_6 & CASE_1) != CASE_0) {
     sVar8 = sVar8 + 1;
   }
-  *(short *)(param_1 + 2 + iVar6 * 8) = sVar8 + STField<short>(this,0x378);
-  *(short *)(param_1 + 6 + iVar6 * 8) = (short)param_6;
+  param_1[iVar6].field_0002 = sVar8 + STField<short>(this,0x378);
+  param_1[iVar6].field_0006 = (short)param_6;
   iVar3 = STField<int>(this,0x390);
   uVar9 = (uint)*(byte *)(iVar3 + iVar10);
   switch(param_6) {
@@ -228,7 +237,7 @@ LAB_00424cca:
     }
   }
 switchD_00424b43_default:
-  *(short *)(param_1 + 4 + iVar6 * 8) = (short)uVar9;
+  param_1[iVar6].field_0004 = (short)uVar9;
   return param_2 + 2;
 }
 

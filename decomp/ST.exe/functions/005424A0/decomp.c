@@ -25,28 +25,28 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
   uint *puVar13;
   InternalExceptionFrame local_1c8;
   uint local_184 [4];
-  undefined4 local_174;
-  undefined4 local_170;
+  uint local_174;
+  uint local_170;
   int local_164;
-  undefined4 local_160;
-  undefined4 local_15c;
+  uint local_160;
+  uint local_15c;
   int local_124;
-  undefined4 local_120;
-  undefined4 local_11c;
-  undefined4 local_104;
-  undefined4 local_100;
-  undefined4 local_fc;
-  undefined2 local_f8;
-  undefined2 local_f6;
-  undefined4 local_f4;
-  undefined4 local_ec;
-  undefined4 local_e0;
-  undefined4 local_dc;
-  undefined4 local_d8;
-  undefined2 local_d4;
-  undefined2 local_d2;
-  undefined4 local_d0;
-  undefined4 local_c8;
+  uint local_120;
+  uint local_11c;
+  uint local_104;
+  uint local_100;
+  uint local_fc;
+  ushort local_f8;
+  ushort local_f6;
+  uint local_f4;
+  uint local_ec;
+  uint local_e0;
+  uint local_dc;
+  uint local_d8;
+  ushort local_d4;
+  ushort local_d2;
+  uint local_d0;
+  uint local_c8;
   ushort *local_60;
   int local_5c;
   InterSystemC *local_8;
@@ -54,6 +54,7 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
   local_1c8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_1c8;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_1c8.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 == 0) {
@@ -69,18 +70,22 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     this_00->field_0024 = pHVar3;
     pHVar3[0x16].unused = 1;
     pHVar3[0x17].unused = 0;
+    /* ST_CALLSITE[00542552]: CALL 0x004046f1; direct=004046F1 thunk_FUN_005412b0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/WinDef.h/HDC__; source view only; no Ghidra override */
     pHVar3 = thunk_FUN_005412b0(PTR_0080679c,nullptr,DAT_00807dd9);
     this_00->field_0028 = pHVar3;
     pHVar3[0x16].unused = 0;
     pHVar3[0x17].unused = 0;
+    /* ST_CALLSITE[0054256E]: CALL 0x0040267b; direct=0040267B thunk_FUN_005416a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/WinDef.h/HDC__; source view only; no Ghidra override */
     pHVar3 = thunk_FUN_005416a0((int)PTR_0080679c,nullptr,DAT_00807dd9);
     this_00->field_002C = pHVar3;
     pHVar3[0x16].unused = 1;
     pHVar3[0x17].unused = 0;
+    /* ST_CALLSITE[0054258B]: CALL 0x004024ff; direct=004024FF thunk_FUN_005419e0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/WinDef.h/HDC__; source view only; no Ghidra override */
     pHVar3 = thunk_FUN_005419e0((int)PTR_0080679c,nullptr,DAT_00807dd9);
     this_00->field_0030 = pHVar3;
     pHVar3[0x16].unused = 1;
     pHVar3[0x17].unused = 0;
+
     thunk_FUN_0056a500();
     memset(local_184, 0, 0x17c); /* compiler bulk-zero initialization */
     puVar13 = nullptr;
@@ -92,7 +97,9 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     iVar6 = 1;
     local_184[1] = 1;
     local_184[0] = 1;
+    /* ST_CALLSITE[005425D0]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
     pCVar4 = thunk_FUN_00571240("BUT_FILEOPT",0);
+    /* ST_CALLSITE[005425D9]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
     pCVar4 = FUN_006f2c00(pCVar4,iVar6,uVar8);
     puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
                        (PTR_00806794,CASE_1,pCVar4,uVar9,bVar10,iVar11,iVar12,puVar13);
@@ -173,6 +180,7 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     local_170 = 0x12;
     if (DAT_0080874e == '\x03') {
       local_60 = FUN_0070aa70(g_cMf32_00806790,"BUT_OHELPMSK",0,1);
+
       local_5c = Library::Ourlib::MFIMG::mfImgGetWidth
                            (g_cMf32_00806790,0x12,"BUT_OHELPMSK",1);
     }
@@ -183,38 +191,47 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     /* ST_CALLSITE[005428F5]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,2,nullptr,nullptr,local_184,1);
+
     thunk_FUN_0056a500();
     /* ST_CALLSITE[0054290E]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x11f,nullptr,nullptr,0,1);
+
     thunk_FUN_0056a500();
     /* ST_CALLSITE[00542927]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x120,nullptr,nullptr,0,1);
+
     thunk_FUN_0056a500();
     /* ST_CALLSITE[00542940]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x122,nullptr,nullptr,0,1);
+
     thunk_FUN_0056a500();
     /* ST_CALLSITE[00542959]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x123,nullptr,nullptr,0,1);
+
     thunk_FUN_0056a500();
     /* ST_CALLSITE[00542972]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x125,nullptr,nullptr,0,1);
+
     thunk_FUN_0056a500();
     /* ST_CALLSITE[0054298B]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x127,nullptr,nullptr,0,1);
+
     thunk_FUN_0056a500();
     /* ST_CALLSITE[005429A4]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x128,nullptr,nullptr,0,1);
+
     thunk_FUN_0056a500();
     /* ST_CALLSITE[005429BD]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x12a,nullptr,nullptr,0,1);
+
     thunk_FUN_0056a500();
     if (DAT_0080874e == '\x03') {
       /* ST_CALLSITE[005429DF]: CALL dword ptr [EDX + 0x8] */
@@ -227,59 +244,74 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     /* ST_CALLSITE[005429FF]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x149,nullptr,nullptr,0,1);
+
     thunk_FUN_0056a500();
     /* ST_CALLSITE[00542A18]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x148,nullptr,nullptr,0,1);
+
     thunk_FUN_0056a500();
     /* ST_CALLSITE[00542A31]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x14a,nullptr,nullptr,0,1);
+
     thunk_FUN_0056a500();
     /* ST_CALLSITE[00542A4A]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x153,nullptr,nullptr,0,1);
+
     thunk_FUN_0056a500();
     /* ST_CALLSITE[00542A63]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x155,nullptr,nullptr,0,1);
+
     thunk_FUN_0056a500();
     /* ST_CALLSITE[00542A7C]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x154,nullptr,nullptr,0,1);
+
     thunk_FUN_0056a500();
     /* ST_CALLSITE[00542A95]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x156,nullptr,nullptr,0,1);
+
     thunk_FUN_0056a500();
     /* ST_CALLSITE[00542AAE]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)((SystemClassTy *)this_00,299,nullptr,nullptr,0,1);
+
     thunk_FUN_0056a500();
     /* ST_CALLSITE[00542AC7]: CALL dword ptr [EDX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x12e,nullptr,nullptr,0,1);
+
     thunk_FUN_0056a500();
     /* ST_CALLSITE[00542AE0]: CALL dword ptr [EAX + 0x8] */
     (*this_00->vtable->CreateObject)
               ((SystemClassTy *)this_00,0x14b,nullptr,nullptr,0,1);
+
     thunk_FUN_0056a500();
     /* ST_CALLSITE[00542AF6]: CALL dword ptr [EDX + 0x10] */
     this_00->vfunc_10(0x201,0);
+
     thunk_FUN_0056a500();
     if (g_helpPanel_00801690 != nullptr) {
       /* ST_CALLSITE[00542B0C]: CALL 0x00404322; direct=00404322 HelpPanelTy::sub_0051DA70 */
       HelpPanelTy::sub_0051DA70(g_helpPanel_00801690);
     }
+
     thunk_FUN_0056a500();
     if ((DAT_0080877e == '\0') && (g_popUp_008016D8 != nullptr)) {
       uVar9 = 8;
+      /* ST_CALLSITE[00542B38]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/PopUpTy; source view only; no Ghidra override */
       text = LoadResourceString(0x4275,g_hINSTANCE_00807618);
-      thunk_FUN_0052d320(g_popUp_008016D8,text,uVar9);
+      /* ST_CALLSITE[00542B44]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
+      PopUpTy::sub_0052D320(g_popUp_008016D8,text,uVar9);
     }
     g_currentExceptionFrame = local_1c8.previous;
     return 0;
   }
   g_currentExceptionFrame = local_1c8.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\tintersys.cpp",0xb3,0,iVar3,"%s",
                              "InterSystemC::CreateInterfObjects");
   if (iVar4 != 0) {

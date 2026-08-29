@@ -21,9 +21,9 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,DArr
   InternalExceptionFrame local_58;
   dword local_14;
   STGroupBoatC *local_10;
-  undefined1 local_c [2];
+  byte local_c [2];
   short local_a;
-  undefined1 local_8 [2];
+  byte local_8 [2];
   short local_6;
 
   local_58.previous = g_currentExceptionFrame;

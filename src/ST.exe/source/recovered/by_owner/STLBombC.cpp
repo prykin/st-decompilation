@@ -16,9 +16,9 @@ STLBombC * __thiscall st::fn_00584970(STLBombC *this)
 {
 
   /* ST_CALLSITE[00584974]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
-  st::fn_00401933((STGameObjC *)this);
+  st::fn_00401933(reinterpret_cast<STGameObjC *>(this));
   /* ST_CALLSITE[00584981]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
-  st::fn_00401316((STT3DSprC *)&this->field_01D5);
+  st::fn_00401316(reinterpret_cast<STT3DSprC *>(&this->field_01D5));
   this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079BA50);
   this->vtable = &st_global_0079B8F0;
   this->field_0231 = 2;
@@ -36,4 +36,3 @@ STLBombC * __thiscall st::fn_00584970(STLBombC *this)
   memset(&this->field_0x258, 0, 0x32); /* compiler bulk-zero initialization */
   return this;
 }
-

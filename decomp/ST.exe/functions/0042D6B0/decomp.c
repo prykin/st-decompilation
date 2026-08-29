@@ -21,6 +21,7 @@ void STAllPlayersC::RemoveActiveTV(char param_1)
   }
   else {
     if (iVar1 != 1) {
+
       iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x470,0,0,"%s",
                                  "STAllPlayersC::RemoveActiveTV wrong panel number");
       if (iVar2 == 0) {

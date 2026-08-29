@@ -25,6 +25,7 @@ undefined4 FUN_004d7d30(char param_1,int param_2,int param_3,int param_4)
         return 0;
       }
     } while (*piVar4 != param_3);
+
     thunk_FUN_004d8940(param_1,param_4);
     (&g_packedRecords_A62x8[iVar2].field1603_0x7e2)[param_2 * 0x11] =
          (&g_packedRecords_A62x8[iVar2].field1603_0x7e2)[param_2 * 0x11] - param_4;
@@ -33,6 +34,7 @@ undefined4 FUN_004d7d30(char param_1,int param_2,int param_3,int param_4)
     piVar4[2] = piVar4[2] - param_4;
     uVar3 = 1;
     if ((&g_packedRecords_A62x8[iVar2].field1603_0x7e2)[param_2 * 0x11] == 0) {
+
       thunk_FUN_004d78e0(param_1);
     }
   }

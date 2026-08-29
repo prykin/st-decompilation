@@ -54,12 +54,14 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
   local_c = nullptr;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  ppDVar4 = (DArrayTy **)Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
+
+  ppDVar4 = STPointerBoundaryCast<DArrayTy **>(Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0));
   local_18 = ppDVar4;
   if (ppDVar4 == nullptr) {
     local_10 = param_3;
     if (((param_1->field_0018 == '\x02') && (param_1->field_00C2 != nullptr)) &&
        (dVar2 = param_1->field_00C2->count, dVar2 != 0)) {
+
       local_c = Library::DKW::LIB::MemAllocClear(dVar2 << 2);
       pDVar7 = param_1->field_00C2;
       uVar17 = 0;
@@ -73,7 +75,7 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
             piVar18 = nullptr;
           }
           iVar13 = *piVar18;
-          if ((iVar13 != 0) && (((char *)iVar13)[0x18] == '\x02')) {
+          if ((iVar13 != 0) && (STField<char>(iVar13,0x18) == '\x02')) {
             *(int *)((int)local_c + uVar17 * 4) = iVar13;
             /* ST_CALLSITE[0067D45A]: CALL 0x0040518c; direct=0040518C TactDataPack */
             pbVar5 = TactDataPack(*(undefined4 **)((int)local_c + uVar17 * 4),(uint *)(piVar18 + 3));
@@ -122,6 +124,7 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
       iVar10 = iVar10 + -1;
     } while (iVar10 != 0);
     *param_4 = iVar13 + 299U;
+
     pAVar6 = Library::DKW::LIB::MemAllocClear(iVar13 + 299U);
     pAVar15 = param_1;
     pAVar19 = pAVar6;
@@ -191,7 +194,7 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
           }
           if (((*piVar18 != 0) && (*(char *)(*piVar18 + 0x18) == '\0')) &&
              ((iVar13 = *(int *)((int)local_c + uVar17 * 4), iVar13 != 0 &&
-              (((char *)iVar13)[0x18] == '\x02')))) {
+              (STField<char>(iVar13,0x18) == '\x02')))) {
             FreeAndNull(piVar18);
             *piVar18 = *(int *)((int)local_c + uVar17 * 4);
           }
@@ -220,7 +223,7 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
         }
         if ((((*piVar18 != 0) && (*(char *)(*piVar18 + 0x18) == '\0')) &&
             (iVar13 = *(int *)((int)local_c + uVar17 * 4), iVar13 != 0)) &&
-           (((char *)iVar13)[0x18] == '\x02')) {
+           (STField<char>(iVar13,0x18) == '\x02')) {
           FreeAndNull(piVar18);
           *piVar18 = *(int *)((int)local_c + uVar17 * 4);
         }
@@ -238,6 +241,7 @@ PlrDataPack(AllocationRecord_0067D3B0 *param_1,undefined4 *param_2,int param_3,u
   if (local_8 != nullptr) {
     FreeAndNull(&local_8);
   }
+
   iVar12 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0xda,0,(int)ppDVar4,
                               "%s","PlrDataPack");
   if (iVar12 == 0) {

@@ -8,8 +8,7 @@ int __thiscall FUN_005fd940(void *this,int param_1)
   int iVar2;
   int iVar3;
   int iVar4;
-  undefined4 local_8;
-
+  uint local_8;
   iVar2 = 0;
   local_8 = 0;
   if (((STField<int>(this,0x233) != 0) && (STField<int>(this,0x226) != 0)) &&

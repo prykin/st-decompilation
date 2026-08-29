@@ -9,9 +9,9 @@ byte * __cdecl FUN_005530e0(int param_1)
 {
   int iVar1;
   InternalExceptionFrame local_54;
-  undefined2 local_10;
+  ushort local_10;
   undefined2 uStack_e;
-  undefined2 local_c;
+  ushort local_c;
   byte *local_8;
 
   local_8 = nullptr;
@@ -20,18 +20,22 @@ byte * __cdecl FUN_005530e0(int param_1)
   }
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
+
   iVar1 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar1 == 0) {
     if (g_array_00802A4C == nullptr) {
       thunk_FUN_005531f0();
     }
-    local_8 = (byte *)thunk_FUN_00553060(param_1);
+
+    local_8 = STPointerBoundaryCast<byte *>(thunk_FUN_00553060(param_1));
     if (local_8 == nullptr) {
-      local_8 = (byte *)thunk_FUN_00552f50(param_1);
+
+      local_8 = STPointerBoundaryCast<byte *>(thunk_FUN_00552f50(param_1));
       if (local_8 != nullptr) {
         uStack_e = SUB42(local_8,0);
         local_c = (undefined2)((uint)local_8 >> 0x10);
         local_10 = (undefined2)param_1;
+
         Library::DKW::TBL::DArrayAppend(g_array_00802A4C,&local_10);
       }
     }

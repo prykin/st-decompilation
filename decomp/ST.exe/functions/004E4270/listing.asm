@@ -1,4 +1,4 @@
-FUN_004e4270:
+STAllPlayersC::sub_004E4270:
 004E4270  55                        PUSH EBP
 004E4271  8B EC                     MOV EBP,ESP
 004E4273  53                        PUSH EBX

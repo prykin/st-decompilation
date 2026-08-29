@@ -24,13 +24,12 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this)
   int iVar5;
   int uVar2;
   int iVar6;
-  DWORD DVar7;
   int iVar4;
-  uint uVar8;
-  TLOBaseTy_field_0245State TVar9;
+  uint uVar7;
+  TLOBaseTy_field_0245State TVar8;
   undefined4 *this_01;
-  uint uVar10;
-  char cVar11;
+  uint uVar9;
+  char cVar10;
   char *text;
   CHAR local_154 [256];
   InternalExceptionFrame local_54;
@@ -45,10 +44,12 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this)
   local_8 = local_EAX_28 + -1;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bspr.cpp",0xbb,0,iVar3,"%s",
                                "TLOBaseTy::LoadImages error");
     if (iVar4 != 0) {
@@ -57,11 +58,11 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this)
     RaiseInternalException(iVar3,0,"E:\\__titans\\Artem\\TLO_bspr.cpp",0xbc);
     return iVar3;
   }
-  TVar9 = local_10->field_0245;
-  local_c = TVar9;
+  TVar8 = local_10->field_0245;
+  local_c = TVar8;
   /* ST_CALLSITE[004C97D2]: CALL 0x00404a11; direct=00404A11 TLOBaseTy::sub_004C96E0 */
   sub_004C96E0(local_10);
-  if ((TVar9 == CASE_1) && (this_00->field_024D == 4)) {
+  if ((TVar8 == CASE_1) && (this_00->field_024D == 4)) {
     iVar5 = (local_8 + this_00->field_0235 * 3) * 0xc;
     this_00->field_05EF = *(char **)(PTR_DAT_007bb1a8 + iVar5);
     this_00->field_05F3 = *(undefined4 *)(PTR_DAT_007bb1a8 + iVar5 + 4);
@@ -111,9 +112,11 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this)
     }
     if (*(int *)(&DAT_00790c2c + this_00->field_0235 * 4) != 0) {
       iVar5 = 1;
-      uVar10 = 0xc;
+      uVar9 = 0xc;
+
       uVar2 = thunk_FUN_004ad650((STT3DSprC *)this_01);
-      FUN_006ea190((void *)this_00->field_0211,uVar2,uVar10,iVar5);
+
+      FUN_006ea190(this_00->field_0211,uVar2,uVar9,iVar5);
     }
   }
   if (*(int *)(&DAT_00791a10 + this_00->field_0235 * 4) != 0) {
@@ -184,31 +187,34 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this)
       }
     }
   }
+
   thunk_FUN_004ac660(this_01,'\r');
   /* ST_CALLSITE[004C9B84]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
   iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_01,'\x0e');
   /* ST_CALLSITE[004C9B8F]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
   iVar6 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_01,'\r');
   if ((iVar6 < iVar5) &&
-     (uVar10 = this_00->field_01F5->field_01E4 - this_00->field_01F5->field_01E8,
-     uVar8 = (int)uVar10 >> 0x1f, 1 < (int)((uVar10 ^ uVar8) - uVar8))) {
+     (uVar9 = this_00->field_01F5->field_01E4 - this_00->field_01F5->field_01E8,
+     uVar7 = (int)uVar9 >> 0x1f, 1 < (int)((uVar9 ^ uVar7) - uVar7))) {
+
     iVar5 = thunk_FUN_004cba10();
     if (iVar5 == 2) {
       /* ST_CALLSITE[004C9BC8]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)this_01,0xd);
     }
     else {
+
       thunk_FUN_004ac700(this_01,'\r');
     }
   }
   /* ST_CALLSITE[004C9BD8]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
   RotateSpr(this_00,1);
-  TVar9 = local_c;
+  TVar8 = local_c;
   if ((local_c == CASE_1) && (this_00->field_024D == 4)) {
-    TVar9 = CASE_4;
+    TVar8 = CASE_4;
   }
   if (*(int *)(&DAT_00791b18 + (this_00->field_0235 * 3 + this_00->field_0239) * 4) != 0) {
-    if (((int)TVar9 < 2) || (4 < (int)TVar9)) {
+    if (((int)TVar8 < 2) || (4 < (int)TVar8)) {
       thunk_FUN_004ad5e0((STT3DSprC *)this_01);
     }
     else {
@@ -217,8 +223,8 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this)
       (**(code **)*this_01)();
     }
   }
-  if ((((TVar9 == CASE_0) || (TVar9 == CASE_5)) || ((TVar9 == CASE_1 && (this_00->field_024D == 0)))
-      ) || (TVar9 == CASE_6)) {
+  if ((((TVar8 == CASE_0) || (TVar8 == CASE_5)) || ((TVar8 == CASE_1 && (this_00->field_024D == 0)))
+      ) || (TVar8 == CASE_6)) {
     /* ST_CALLSITE[004C9C65]: CALL 0x00405ca9; direct=00405CA9 STT3DSprC::sub_004ACEF0 */
     STT3DSprC::sub_004ACEF0((STT3DSprC *)this_01,PTR_008073cc);
     /* ST_CALLSITE[004C9C82]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
@@ -229,14 +235,16 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this)
       RaiseInternalException
                 (iVar5,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_bspr.cpp",0x6a);
     }
+
     thunk_FUN_004abce0(this_01,0x10,*(int *)(&DAT_0079104c + this_00->field_0235 * 4),
                        *(int *)(&DAT_0079104c + this_00->field_0235 * 4),'\0');
     /* ST_CALLSITE[004C9CCB]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase
               ((STT3DSprC *)this_01,'\x10',*(uint *)(&DAT_0079104c + this_00->field_0235 * 4));
-    DVar7 = STAppC::sub_006E51B0(this_00->field_0010);
+
+    uVar9 = STAppC::sub_006E51B0(this_00->field_0010);
     /* ST_CALLSITE[004C9CDD]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
-    STT3DSprC::StartShow((STT3DSprC *)this_01,0x10,DVar7);
+    STT3DSprC::StartShow((STT3DSprC *)this_01,0x10,uVar9);
     /* ST_CALLSITE[004C9CE6]: CALL 0x00403afd; direct=00403AFD STT3DSprC::sub_004ACF50 */
     STT3DSprC::sub_004ACF50((STT3DSprC *)this_01,'\x10');
   }
@@ -278,11 +286,13 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this)
       if (iVar5 != 0) {
         return 0xffff;
       }
+
       thunk_FUN_004ac700(this_01,'\x04');
-      cVar11 = '\0';
+      cVar10 = '\0';
       /* ST_CALLSITE[004C9DC7]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar5 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_01,'\x04');
-      thunk_FUN_004abce0(this_01,4,0,iVar5,cVar11);
+
+      thunk_FUN_004abce0(this_01,4,0,iVar5,cVar10);
       /* ST_CALLSITE[004C9DDE]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase((STT3DSprC *)this_01,'\x04',0);
       /* ST_CALLSITE[004C9DF4]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
@@ -292,6 +302,7 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this)
                 ((STT3DSprC *)this_01,6,PTR_00806774,
                  "expmask3" + *(int *)(&DAT_0079125c + this_00->field_0235 * 4) * 0x32,
                  CASE_1D);
+
       thunk_FUN_004ac700(this_01,'\x06');
       /* ST_CALLSITE[004C9E3F]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow((STT3DSprC *)this_01,6,g_playSystem_00802A38->field_00E4);
@@ -326,12 +337,13 @@ LAB_004c9eda:
     }
     /* ST_CALLSITE[004C9EF1]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     STT3DSprC::StartShow((STT3DSprC *)this_01,4,g_playSystem_00802A38->field_00E4);
+
     thunk_FUN_004abce0(this_01,5,*(int *)(&DAT_007976e4 + this_00->field_002C * 0x20),
                        *(int *)(&DAT_007976e4 + this_00->field_002C * 0x20),'\0');
     /* ST_CALLSITE[004C9F20]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase
               ((STT3DSprC *)this_01,'\x05',*(uint *)(&DAT_007976e4 + this_00->field_002C * 0x20));
-    uVar10 = g_playSystem_00802A38->field_00E4;
+    uVar9 = g_playSystem_00802A38->field_00E4;
   }
   else {
     /* ST_CALLSITE[004C9F44]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
@@ -359,7 +371,7 @@ LAB_004c9fb1:
           goto LAB_004c9fb1;
         }
       }
-      uVar10 = g_playSystem_00802A38->field_00E4;
+      uVar9 = g_playSystem_00802A38->field_00E4;
     }
     else {
       if (iVar5 == 0) {
@@ -395,17 +407,18 @@ LAB_004ca02a:
         iVar6 = 3;
       }
       iVar5 = (iVar6 + this_00->field_002C * 4) * 8;
+
       thunk_FUN_004abce0(this_01,5,*(int *)(&DAT_007976c8 + iVar5),*(int *)(&DAT_007976cc + iVar5),
                          '\0');
       /* ST_CALLSITE[004CA088]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase
                 ((STT3DSprC *)this_01,'\x05',
                  *(uint *)(&DAT_007976c8 + (iVar6 + this_00->field_002C * 4) * 8));
-      uVar10 = g_playSystem_00802A38->field_00E4;
+      uVar9 = g_playSystem_00802A38->field_00E4;
     }
   }
   /* ST_CALLSITE[004CA09D]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
-  STT3DSprC::StartShow((STT3DSprC *)this_01,5,uVar10);
+  STT3DSprC::StartShow((STT3DSprC *)this_01,5,uVar9);
 LAB_004ca0a2:
   /* ST_CALLSITE[004CA0DC]: CALL 0x00402455; direct=00402455 sub_00415B30 */
   sub_00415B30(this_00,(short)this_00->field_05B0 * 0xc9 + 100,

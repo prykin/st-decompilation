@@ -48,12 +48,14 @@ LAB_0044b659:
 0044B66D  75 2B                     JNZ 0x0044b69a
 0044B66F  8B 17                     MOV EDX,dword ptr [EDI]
 0044B671  8B CF                     MOV ECX,EDI
-0044B673  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+STAllPlayersC::SelectObjects::override::prt_44b673_d4e0dbd9:
+0044B673  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0044B679  83 F8 01                  CMP EAX,0x1
 0044B67C  75 1C                     JNZ 0x0044b69a
 0044B67E  8B 07                     MOV EAX,dword ptr [EDI]
 0044B680  8B CF                     MOV ECX,EDI
-0044B682  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]
+STAllPlayersC::SelectObjects::override::prt_44b682_d4e0dbd9:
+0044B682  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0044B688  83 F8 01                  CMP EAX,0x1
 0044B68B  75 0D                     JNZ 0x0044b69a
 0044B68D  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
@@ -194,12 +196,14 @@ LAB_0044b7de:
 LAB_0044b7f1:
 0044B7F1  8B 07                     MOV EAX,dword ptr [EDI]
 0044B7F3  8B CF                     MOV ECX,EDI
-0044B7F5  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+STAllPlayersC::SelectObjects::override::prt_44b7f5_d4e0dbd9:
+0044B7F5  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0044B7FB  83 F8 01                  CMP EAX,0x1
 0044B7FE  75 1C                     JNZ 0x0044b81c
 0044B800  8B 17                     MOV EDX,dword ptr [EDI]
 0044B802  8B CF                     MOV ECX,EDI
-0044B804  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]
+STAllPlayersC::SelectObjects::override::prt_44b804_d4e0dbd9:
+0044B804  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0044B80A  83 F8 01                  CMP EAX,0x1
 0044B80D  75 0D                     JNZ 0x0044b81c
 0044B80F  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
@@ -255,12 +259,14 @@ LAB_0044b88b:
 0044B89C  74 2B                     JZ 0x0044b8c9
 0044B89E  8B 07                     MOV EAX,dword ptr [EDI]
 0044B8A0  8B CF                     MOV ECX,EDI
-0044B8A2  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+STAllPlayersC::SelectObjects::override::prt_44b8a2_d4e0dbd9:
+0044B8A2  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0044B8A8  83 F8 01                  CMP EAX,0x1
 0044B8AB  75 1C                     JNZ 0x0044b8c9
 0044B8AD  8B 17                     MOV EDX,dword ptr [EDI]
 0044B8AF  8B CF                     MOV ECX,EDI
-0044B8B1  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]
+STAllPlayersC::SelectObjects::override::prt_44b8b1_d4e0dbd9:
+0044B8B1  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0044B8B7  83 F8 01                  CMP EAX,0x1
 0044B8BA  75 0D                     JNZ 0x0044b8c9
 0044B8BC  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
@@ -316,12 +322,14 @@ LAB_0044b934:
 0044B945  74 2B                     JZ 0x0044b972
 0044B947  8B 07                     MOV EAX,dword ptr [EDI]
 0044B949  8B CF                     MOV ECX,EDI
-0044B94B  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+STAllPlayersC::SelectObjects::override::prt_44b94b_d4e0dbd9:
+0044B94B  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0044B951  83 F8 01                  CMP EAX,0x1
 0044B954  75 1C                     JNZ 0x0044b972
 0044B956  8B 17                     MOV EDX,dword ptr [EDI]
 0044B958  8B CF                     MOV ECX,EDI
-0044B95A  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]
+STAllPlayersC::SelectObjects::override::prt_44b95a_d4e0dbd9:
+0044B95A  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0044B960  83 F8 01                  CMP EAX,0x1
 0044B963  75 0D                     JNZ 0x0044b972
 0044B965  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
@@ -377,12 +385,14 @@ LAB_0044b9dd:
 0044B9EE  74 2B                     JZ 0x0044ba1b
 0044B9F0  8B 07                     MOV EAX,dword ptr [EDI]
 0044B9F2  8B CF                     MOV ECX,EDI
-0044B9F4  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+STAllPlayersC::SelectObjects::override::prt_44b9f4_d4e0dbd9:
+0044B9F4  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0044B9FA  83 F8 01                  CMP EAX,0x1
 0044B9FD  75 1C                     JNZ 0x0044ba1b
 0044B9FF  8B 17                     MOV EDX,dword ptr [EDI]
 0044BA01  8B CF                     MOV ECX,EDI
-0044BA03  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]
+STAllPlayersC::SelectObjects::override::prt_44ba03_d4e0dbd9:
+0044BA03  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0044BA09  83 F8 01                  CMP EAX,0x1
 0044BA0C  75 0D                     JNZ 0x0044ba1b
 0044BA0E  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
@@ -406,7 +416,7 @@ switchD_0044b629::caseD_6:
 0044BA38  51                        PUSH ECX
 0044BA39  8B 0D 98 75 80 00         MOV ECX,dword ptr [0x00807598]
 0044BA3F  52                        PUSH EDX
-0044BA40  E8 0B F9 29 00            CALL 0x006eb350
+0044BA40  E8 0B F9 29 00            CALL 0x006eb350  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 0044BA45  8B F8                     MOV EDI,EAX
 0044BA47  85 FF                     TEST EDI,EDI
 0044BA49  0F 84 C6 01 00 00         JZ 0x0044bc15
@@ -435,7 +445,7 @@ switchD_0044b629::caseD_6:
 0044BA96  6A FF                     PUSH -0x1
 0044BA98  6A 00                     PUSH 0x0
 0044BA9A  8B CF                     MOV ECX,EDI
-0044BA9C  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+0044BA9C  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4
 0044BA9F  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
 0044BAA2  50                        PUSH EAX
 0044BAA3  51                        PUSH ECX
@@ -520,7 +530,7 @@ switchD_0044b629::caseD_7:
 0044BB7A  50                        PUSH EAX
 0044BB7B  56                        PUSH ESI
 0044BB7C  8B CB                     MOV ECX,EBX
-0044BB7E  E8 76 A1 FB FF            CALL 0x00405cf9
+0044BB7E  E8 76 A1 FB FF            CALL 0x00405cf9  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STGroupC; source view only; no Ghidra override
 0044BB83  8B F8                     MOV EDI,EAX
 0044BB85  85 FF                     TEST EDI,EDI
 0044BB87  0F 84 88 00 00 00         JZ 0x0044bc15

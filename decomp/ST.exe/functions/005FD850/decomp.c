@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-int __fastcall FUN_005fd850(AnonShape_005FD850_1F07DA54 *param_1)
+int __fastcall FUN_005fd850(RecoveredRecordView_005FD850_C5173AC4 *param_1)
 
 {
   byte *puVar1;
@@ -16,6 +16,7 @@ int __fastcall FUN_005fd850(AnonShape_005FD850_1F07DA54 *param_1)
   iVar3 = -1;
   local_8 = -1;
   if (param_1->field_0226 != 0) {
+
     puVar1 = (byte *)(Library::DKW::LIB::MemAlloc(param_1->field_0226 * 0x52));
     param_1->field_0233 = puVar1;
     local_8 = 0;
@@ -26,7 +27,8 @@ int __fastcall FUN_005fd850(AnonShape_005FD850_1F07DA54 *param_1)
   if (((param_1->field_0233 != 0) && (param_1->field_0232 != '\0')) &&
      (iVar7 = 0, 0 < param_1->field_0226)) {
     do {
-      pSVar2 = (STT3DSprC *)Library::MSVCRT::FUN_0072e530(0x40);
+      /* ST_CALLSITE[005FD8C4]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint */
+      pSVar2 = Library::MSVCRT::FUN_0072e530(0x40);
       if (pSVar2 == nullptr) {
         pSVar2 = nullptr;
       }

@@ -32,6 +32,7 @@ void __cdecl FUN_00728170(AnonShape_00728170_E57D1DF1 *param_1,AnonShape_0072817
     }
     uVar7 = param_1->field_0024 & 0xffff0000;
     if ((int)uVar7 < (int)DAT_008570dc) {
+
       uVar2 = FUN_006db5f0(iVar4,DAT_008570dc - uVar7);
       local_c = local_c + uVar2;
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */

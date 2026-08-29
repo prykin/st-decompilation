@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __thiscall FUN_00614400(void *this,AnonShape_00614400_1B90EA7E *param_1)
+void __thiscall FUN_00614400(void *this,RecoveredRecordView_00614400_14E15A9C *param_1)
 
 {
   byte bVar1;
@@ -103,9 +103,10 @@ LAB_0061478b:
       goto LAB_006147e6;
     }
   }
+
   iVar6_mg4 = STPlaySystemC::sub_006E62D0
-                        (g_playSystem_00802A38,STField<AnonShape_005EFAE0_B406B78B *>(this,0x2d1),
-                         &local_10);
+                        (g_playSystem_00802A38,
+                         STField<RecoveredRecordView_005EFAE0_855D930D *>(this,0x2d1),&local_10);
   if (iVar6_mg4 == -4) {
     STField<undefined4>(this,0x2d1) = 0;
   }

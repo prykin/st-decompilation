@@ -48,6 +48,7 @@ undefined4 __thiscall FUN_004de300(void *this,Global_sub_004DE300_param_1Enum pa
     if (*puVar2 == uVar3) {
       *puVar4 = (uint)(*puVar4 == 0);
       puVar4[1] = g_playSystem_00802A38->field_00E4;
+
       thunk_FUN_004ddcc0(this);
     }
     puVar1 = puVar4 + 2;

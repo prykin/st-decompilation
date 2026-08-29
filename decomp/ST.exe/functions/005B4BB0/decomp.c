@@ -31,21 +31,24 @@ int __thiscall MainMenuTy::GetMessage(MainMenuTy *this,STMessage *message)
   char cVar10;
   int iVar11;
   InternalExceptionFrame local_8c;
-  undefined4 local_48 [8];
-  undefined4 local_28 [8];
+  uint local_48 [8];
+  uint local_28 [8];
   MainMenuTy *local_8;
   uint SVar1;
   uint temp_5f8d1d2a76;
 
   local_8 = this;
+
   DVar4 = STAppC::sub_006E51B0(this->field_0010);
   this->field_0061 = DVar4;
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
+
   local_EAX_60 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
   this_00 = local_8;
   if (local_EAX_60 != 0) {
     g_currentExceptionFrame = local_8c.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",0x241,0,local_EAX_60,
                                "%s","MainMenuTy::GetMessage");
     if (iVar6 != 0) {
@@ -91,7 +94,8 @@ LAB_005b4c5f:
     goto switchD_005b4c27_default;
   }
   /* ST_CALLSITE[005B4C6D]: CALL 0x0040499e; direct=0040499E MMObjTy::PaintSprBut */
-  MMObjTy::PaintSprBut((MMObjTy *)this_00,(int)message,uVar5,1,iVar11,iVar7);
+  MMObjTy::PaintSprBut
+            ((MMObjTy *)this_00,(RecoveredRecord_005B5690_213E8178 *)message,uVar5,1,iVar11,iVar7);
 switchD_005b4c27_default:
   SVar1 = message->id;
   if (SVar1 < 0x6903) {

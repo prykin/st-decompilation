@@ -25,15 +25,17 @@ void __thiscall CPanelTy::PaintBEnergy(CPanelTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pCVar2 = local_c;
   if (iVar3 == 0) {
-    pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_c->field_02B2,0);
+    pBVar3 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)local_c->field_02B2,0);
     iVar5 = (pCVar2->field_018C->field_0004 - (pBVar3->bmiHeader).biWidth) / 2;
-    pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,
+    /* ST_CALLSITE[00501072]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+    pBVar3 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)pCVar2->field_02B2,
                           -(uint)(DAT_0080874e != '\x01') & 6);
     /* ST_CALLSITE[00501084]: CALL 0x00403229; direct=00403229 DibPut */
-    DibPut(pCVar2->field_018C,iVar5,0x50,'\x01',(byte *)pBVar3);
+    DibPut(pCVar2->field_018C,iVar5,0x50,'\x01',(RecoveredRecordView_006B84D0_87AF9D9B *)pBVar3);
     if (pCVar2->field_0BCD != 0xff) {
       if (0x28 < (byte)pCVar2->field_0BCD) {
         pCVar2->field_0BCD = 0x28;
@@ -42,9 +44,11 @@ void __thiscall CPanelTy::PaintBEnergy(CPanelTy *this)
       local_8 = local_8 & 0xffffff00;
       if (pCVar2->field_0BCD != '\0') {
         do {
-          pBVar3 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,3);
+          /* ST_CALLSITE[005010B9]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+          pBVar3 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)pCVar2->field_02B6,3);
           /* ST_CALLSITE[005010D8]: CALL 0x00403229; direct=00403229 DibPut */
-          DibPut(pCVar2->field_018C,iVar5 + 3 + (local_8 & 0xff) * 4,0x53,'\x01',(byte *)pBVar3);
+          DibPut(pCVar2->field_018C,iVar5 + 3 + (local_8 & 0xff) * 4,0x53,'\x01',
+                 (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar3);
           bVar4 = bVar4 + 1;
           local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar4));
         } while (bVar4 < (byte)pCVar2->field_0BCD);
@@ -54,6 +58,7 @@ void __thiscall CPanelTy::PaintBEnergy(CPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel2.cpp",0x21,0,iVar3,"%s",
                              "CPanelTy::PaintBEnergy");
   if (iVar4 != 0) {

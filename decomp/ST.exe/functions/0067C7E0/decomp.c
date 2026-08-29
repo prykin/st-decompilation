@@ -32,13 +32,13 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
   STMessage *pSVar13;
   char *pcVar14;
   int *piVar15;
-  AnonShape_0068FD00_A5257008 **ppAVar16;
+  RecoveredRecordView_0068FD00_630BE91E **ppRVar16;
   bool bVar17;
   byte bVar18;
   InternalExceptionFrame local_b0;
-  AnonShape_0068FD00_A5257008 *local_6c;
+  RecoveredRecordView_0068FD00_630BE91E *local_6c;
   uint local_68;
-  undefined4 local_64;
+  uint local_64;
   DArrayTy *local_60;
   STMessage local_38;
   byte *local_18;
@@ -50,10 +50,12 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
   local_b0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b0;
   local_10 = this;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0);
   this_00 = local_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_b0.previous;
+
     iVar8 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr.cpp",0x655,0,iVar5,
                                "AiPlrClassTy::GetMessage error mess->id == %lX Name=%d ",message->id,
                                local_10->field_0018);
@@ -78,6 +80,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
         bVar18 = 0xc;
         uVar10 = local_14;
         local_18 = pbVar5;
+        /* ST_CALLSITE[0067CA50]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STPlaySystemC; source view only; no Ghidra override */
         pCVar6 = FUN_006f2c00(PTR_s_AIPLAYER_0079d6d0,2,this_00->field_05D7);
         /* ST_CALLSITE[0067CA5F]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
         STPlaySystemC::SaveObjData(g_playSystem_00802A38,pCVar6,pbVar5,uVar10,bVar18);
@@ -122,10 +125,10 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
           AiEventClassTy::GetMessage((AiEventClassTy *)&this_00->vtable_at_1c,message);
           if (this_00->field_0658 == 0) {
             this_00->field_0658 = 1;
-            thunk_FUN_0067a2d0((AnonShape_0067A2D0_742706D4 *)this_00);
+            thunk_FUN_0067a2d0((RecoveredRecordView_0067A2D0_BA835F0D *)this_00);
           }
           else {
-            thunk_FUN_0067a390((AnonShape_00679600_B8E418A8 *)this_00);
+            thunk_FUN_0067a390((RecoveredRecordView_00679600_4B4DB6B6 *)this_00);
             /* ST_CALLSITE[0067CA14]: CALL 0x00405065; direct=00405065 AiPlrClassTy::ExecTech */
             ExecTech(this_00);
             /* ST_CALLSITE[0067CA1B]: CALL 0x00402379; direct=00402379 AiPlrClassTy::Offensive */
@@ -144,6 +147,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
           local_38.unknown_0c = 0;
           local_38.arg0 = (STMessageArg)this_00->field_0008;
           local_38.id = MESS_SYSTEMCLASSTY_000A;
+
           SystemClassTy::PostMessage(this_00->field_000C,&local_38.unknown_00);
         }
       }
@@ -156,12 +160,14 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
         /* ST_CALLSITE[0067C903]: CALL 0x004033ff; direct=004033FF AiPlrClassTy::InitData */
         InitData(this_00,puVar3);
         if (g_allPlayers_007FA174 != nullptr) {
+
           thunk_FUN_004357b0((char)this_00->field_05D7,this_00);
         }
         if (puVar3[3] == 0) {
           /* ST_CALLSITE[0067C928]: CALL 0x004044bc; direct=004044BC AiPlrClassTy::sub_00678FC0 */
           sub_00678FC0(this_00);
         }
+
         thunk_FUN_0064a450();
       }
       else if (SVar2 == MESS_SHARED_0003) {
@@ -184,9 +190,11 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
         }
         thunk_FUN_0064a580();
         if (g_allPlayers_007FA174 != nullptr) {
+
           thunk_FUN_004357b0((char)this_00->field_05D7,nullptr);
         }
-        thunk_FUN_00678ba0(this_00);
+        /* ST_CALLSITE[0067C8D8]: CALL 0x0040485e; direct=0040485E AiPlrClassTy::sub_00678BA0 */
+        sub_00678BA0(this_00);
       }
     }
     else if (SVar2 == MESS_ID_ALLCREATE) {
@@ -201,11 +209,13 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
           else {
             piVar15 = nullptr;
           }
-          if ((AnonShape_005EFAE0_B406B78B *)piVar15[1] != nullptr) {
+          if ((RecoveredRecordView_005EFAE0_855D930D *)piVar15[1] !=
+              nullptr) {
             local_c = 0;
+
             iVar9_mg2 = STPlaySystemC::sub_006E62D0
-                                  (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)piVar15[1],
-                                   &local_c);
+                                  (g_playSystem_00802A38,
+                                   (RecoveredRecordView_005EFAE0_855D930D *)piVar15[1],&local_c);
             if ((iVar9_mg2 == 0) && (local_c != 0)) {
               *piVar15 = local_c;
             }
@@ -240,10 +250,11 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
           bVar17 = true;
         }
         if ((bVar17) &&
-           (this_02 = (AiFltClassTy *)thunk_FUN_00679e70(this_00,this_01->field_081C),
+           /* ST_CALLSITE[0067CB2D]: CALL 0x00405a4c; direct=00405A4C thunk_FUN_00679e70; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__thiscall;pointer:/AiFltClassTy;pointer:/void;/short */
+           (this_02 = thunk_FUN_00679e70(this_00,this_01->field_081C),
            this_02 != nullptr)) {
           /* ST_CALLSITE[0067CB3F]: CALL 0x00404200; direct=00404200 AiFltClassTy::_AddObjFlt */
-          AiFltClassTy::_AddObjFlt(this_02,(uint)this_01,0);
+          AiFltClassTy::_AddObjFlt(this_02,(RecoveredRecord_0065D760_A4BF8285 *)this_01,0);
         }
       }
     }
@@ -256,23 +267,24 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
       }
       else {
         local_8 = nullptr;
+
         Library::DKW::TBL::FUN_006afe40((int *)&local_8,(message->arg1).ptr);
         pDVar7 = local_8;
         if (local_8 != nullptr) {
-          ppAVar16 = &local_6c;
+          ppRVar16 = &local_6c;
           for (iVar9 = 0xd; iVar9 != 0; iVar9 = iVar9 + -1) {
-            *ppAVar16 = nullptr;
-            ppAVar16 = ppAVar16 + 1;
+            *ppRVar16 = nullptr;
+            ppRVar16 = ppRVar16 + 1;
           }
           local_68 = this_00->field_06FE;
-          local_6c = (AnonShape_0068FD00_A5257008 *)0x72;
+          local_6c = (RecoveredRecordView_0068FD00_630BE91E *)0x72;
           local_64 = 0;
           local_60 = pDVar7;
           /* ST_CALLSITE[0067CC4F]: CALL 0x00405dc6; direct=00405DC6 AiPlrClassTy::sub_0067A020 */
-          sub_0067A020(this_00,(AnonShape_0068FD00_A5257008 *)&local_6c,-1);
+          sub_0067A020(this_00,(RecoveredRecordView_0068FD00_630BE91E *)&local_6c,-1);
           local_64 = 1;
           /* ST_CALLSITE[0067CC63]: CALL 0x00405dc6; direct=00405DC6 AiPlrClassTy::sub_0067A020 */
-          sub_0067A020(this_00,(AnonShape_0068FD00_A5257008 *)&local_6c,-1);
+          sub_0067A020(this_00,(RecoveredRecordView_0068FD00_630BE91E *)&local_6c,-1);
           DArrayDestroy(local_8);
         }
       }
@@ -321,6 +333,7 @@ int __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,STMessage *message)
       }
     }
   }
+
   FUN_006e5fd0(this_00,message);
   g_currentExceptionFrame = local_b0.previous;
   return 0;

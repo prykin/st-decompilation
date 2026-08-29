@@ -7,7 +7,7 @@
    function definition)
    [STSourceProvenanceApplier end] */
 
-undefined4 __fastcall FUN_005deb90(AnonShape_005DEB90_CA287120 *param_1)
+undefined4 __fastcall FUN_005deb90(RecoveredRecordView_005DEB90_D3D89167 *param_1)
 
 {
   uint uVar1;
@@ -22,7 +22,7 @@ undefined4 __fastcall FUN_005deb90(AnonShape_005DEB90_CA287120 *param_1)
   byte abStack_165 [261];
   InternalExceptionFrame local_60;
   AnonShape_005DEB90_FE6FE747 *local_1c;
-  undefined4 local_18;
+  uint local_18;
   uint local_14;
   int local_10;
   HANDLE local_c;
@@ -39,6 +39,7 @@ undefined4 __fastcall FUN_005deb90(AnonShape_005DEB90_CA287120 *param_1)
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   local_1c = (AnonShape_005DEB90_FE6FE747 *)param_1;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   pAVar2 = local_1c;
   if (iVar3 == 0) {

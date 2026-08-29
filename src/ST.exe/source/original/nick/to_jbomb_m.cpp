@@ -29,10 +29,12 @@ int __thiscall st::fn_00617640(JumpManagC *this,STMessage *message)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
+
   iVar3 = st::fn_0072D7F0(local_54.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_jbomb_m.Cpp"),0x4b,0,iVar3,st::mutable_c_string("%s")
                                ,"JumpManagC::GetMessage");
     if (iVar4 != 0) {
@@ -43,15 +45,15 @@ int __thiscall st::fn_00617640(JumpManagC *this,STMessage *message)
   }
   SVar1 = message->id;
   if (SVar1 == MESS_ID_CREATE) {
-    puVar6 = (byte *)((message->arg0).ptr);
+    puVar6 = reinterpret_cast<byte *>(((message->arg0).ptr));
     if (puVar6[3] != 2) {
-      puVar7 = (byte *)&local_8->field_0x1c;
+      puVar7 = reinterpret_cast<byte *>(&local_8->field_0x1c);
       memmove(puVar7, puVar6, 0x3e); /* compiler REP MOVS byte copy */
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     /* ST_CALLSITE[0061774E]: CALL 0x00405119; direct=00405119 JumpManagC::sub_00618170 */
-    st::fn_00405119(local_8,st::pointer_boundary_cast<undefined4 *>(puVar6));
+    st::fn_00405119(local_8,reinterpret_cast<undefined4 *>(puVar6));
     /* ST_CALLSITE[00617755]: CALL 0x00404d09; direct=00404D09 JumpManagC::sub_006179D0 */
     st::fn_00404D09(this_00);
   }
@@ -74,8 +76,8 @@ int __thiscall st::fn_00617640(JumpManagC *this,STMessage *message)
     }
   }
   else if (SVar1 == MESS_SHARED_010F) {
-    /* ST_CALLSITE[0061769B]: CALL 0x004015f5; direct=004015F5 JumpManagC::sub_00617FB0 */
-    local_10 = st::fn_004015F5(local_8,(int *)&local_c);
+    /* ST_CALLSITE[0061769B]: CALL 0x004015f5; direct=004015F5 JumpManagC::sub_00617FB0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
+    local_10 = st::fn_004015F5(local_8,reinterpret_cast<int *>(&local_c));
     /* ST_CALLSITE[006176B2]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     st::fn_004025F9(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
     st::fn_006AB060(&local_10);
@@ -125,9 +127,11 @@ void __thiscall st::fn_006178C0(JumpManagC *this)
             iVar5 = -2;
           }
           else {
+
             iVar3 = st::fn_006E62D0
                               (g_playSystem_00802A38,
-                               STField<AnonShape_005EFAE0_B406B78B *>(pvVar6,0x1c),&local_8);
+                               STField<RecoveredRecordView_005EFAE0_855D930D *>(pvVar6,0x1c),
+                               &local_8);
             if (iVar3 == -4) {
               iVar5 = -3;
             }
@@ -149,6 +153,7 @@ void __thiscall st::fn_006178C0(JumpManagC *this)
         bVar8 = uVar7 < pDVar2->count;
       } while ((int)uVar7 < (int)pDVar2->count);
       if (iVar5 == 0) {
+
         iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_jbomb_m.Cpp"),0x8a,0,0,
                                    st::mutable_c_string("JumpManagC::CheckSystrm CheckProblem =  %d"),0);
         if (iVar4 != 0) {
@@ -159,4 +164,3 @@ void __thiscall st::fn_006178C0(JumpManagC *this)
   }
   return;
 }
-

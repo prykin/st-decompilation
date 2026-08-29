@@ -7,7 +7,7 @@
    Diagnostic line evidence: 62 | 87 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-undefined4 __fastcall FUN_004d9c80(AnonShape_004D9C80_80F657D3 *param_1)
+undefined4 __fastcall FUN_004d9c80(RecoveredRecordView_004D9C80_63C53606 *param_1)
 
 {
   STT3DSprC *pSVar1;
@@ -19,7 +19,8 @@ undefined4 __fastcall FUN_004d9c80(AnonShape_004D9C80_80F657D3 *param_1)
   int local_8;
 
   if (param_1->field_05FF == 0) {
-    pSVar1 = (STT3DSprC *)Library::MSVCRT::FUN_0072e530(0x40);
+    /* ST_CALLSITE[004D9C99]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint */
+    pSVar1 = Library::MSVCRT::FUN_0072e530(0x40);
     if (pSVar1 == nullptr) {
       pSVar1 = nullptr;
     }
@@ -80,7 +81,9 @@ undefined4 __fastcall FUN_004d9c80(AnonShape_004D9C80_80F657D3 *param_1)
     }
     thunk_FUN_004ad5e0((STT3DSprC *)param_1->field_05FF);
     uVar4 = 10;
-    iVar2 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
+    /* ST_CALLSITE[004D9DF3]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC */
+    iVar2 = (int)thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
+
     uVar3 = thunk_FUN_004ad650((STT3DSprC *)param_1->field_05FF);
     FUN_006ea340(param_1->field_0211,uVar3,iVar2,uVar4);
     /* ST_CALLSITE[004D9E25]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
@@ -99,12 +102,12 @@ undefined4 __fastcall FUN_004d9c80(AnonShape_004D9C80_80F657D3 *param_1)
                (float)(*(int *)(&DAT_00798ec0 + iVar3) + (int)param_1->field_0045) * _DAT_007904f8 *
                _DAT_007904f0 + _DAT_007904fc);
     thunk_FUN_004ad460((void *)param_1->field_05FF,1);
-    /* ST_CALLSITE[004D9EE7]: CALL dword ptr [EAX + 0x90] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(param_1->field_0000 + 0x90))(3,0x347);
+    /* ST_CALLSITE[004D9EE7]: CALL dword ptr [EAX + 0x90]; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4 */
+    STStructuralVirtualCall<undefined4>(param_1, 0x90, 3, 0x347);
     return 0;
   }
-  thunk_FUN_004ad430((STT3DSprC *)param_1->field_05FF);
+  /* ST_CALLSITE[004D9EFB]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+  STT3DSprC::sub_004AD430((STT3DSprC *)param_1->field_05FF);
   return 0;
 }
 

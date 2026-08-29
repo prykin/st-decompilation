@@ -15,21 +15,21 @@ void __thiscall st::fn_00539280(PausePanelTy *this)
   int iVar4;
   ccFntTy *pcVar5;
   LPSTR pCVar6;
-  ushort *puVar7;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7;
   char *resourceString;
-  uint uVar8;
   int iVar3;
-  int iVar9;
-  uint uVar10;
-  int *piVar11;
+  int iVar8;
+  uint uVar9;
+  int *piVar10;
+  int iVar11;
   int iVar12;
-  int iVar13;
   InternalExceptionFrame local_4c;
   PausePanelTy *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar2 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 == 0) {
@@ -37,35 +37,40 @@ void __thiscall st::fn_00539280(PausePanelTy *this)
     iVar4 = g_nWidth_00806730 + -0x1c;
     local_8->field_003C = iVar4;
     local_8->field_0174 = (local_8->field_0040 - iVar4) + g_nWidth_00806730;
-    /* ST_CALLSITE[005392E9]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
-    pcVar5 = (ccFntTy *)st::fn_0070DF00(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0028);
+    /* ST_CALLSITE[005392E9]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/ccFntTy */
+    pcVar5 = st::pointer_boundary_cast<ccFntTy *>(st::fn_0070DF00(0x19d,reinterpret_cast<ccFntTy *>(g_interSystem_00802A28->field_0028)));
     this_00->field_017C = pcVar5;
     pcVar5->field_0058 = 0;
     pcVar5->field_005C = 0;
     iVar4 = 1;
-    piVar11 = nullptr;
+    piVar10 = nullptr;
     pCVar6 = st::fn_0040577C(st::mutable_c_string("BKG_PAUSE"),0);
-    puVar7 = st::fn_006F1CE0(g_cMf32_00806790,1,pCVar6,piVar11,iVar4);
-    this_00->field_0180 = puVar7;
+    /* ST_CALLSITE[00539321]: CALL 0x006f1ce0; direct=006F1CE0 cMf32::RecGet; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int */
+    pRVar7 = st::pointer_boundary_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(st::fn_006F1CE0(g_cMf32_00806790,1,reinterpret_cast<char *>(pCVar6),piVar10,iVar4));
+    this_00->field_0180 = reinterpret_cast<ushort *>(pRVar7);
     /* ST_CALLSITE[00539337]: CALL 0x00403229; direct=00403229 DibPut */
-    st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0,'\x01',(byte *)puVar7);
+    st::fn_00403229((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0,'\x01',pRVar7);
+
     st::fn_00710A90(this_00->field_017C,this_00->field_0068,0,0x52,2,0xd1,0xc);
-    iVar13 = -1;
     iVar12 = -1;
-    uVar10 = 0;
-    iVar9 = -1;
+    iVar11 = -1;
+    uVar9 = 0;
+    iVar8 = -1;
     iVar4 = -2;
+    /* ST_CALLSITE[00539370]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     resourceString = st::fn_006B0140(0x2716,g_hINSTANCE_00807618);
-    st::fn_00711B70(this_00->field_017C,resourceString,iVar4,iVar9,uVar10,iVar12,iVar13);
+
+    st::fn_00711B70(this_00->field_017C,resourceString,iVar4,iVar8,uVar9,iVar11,iVar12);
     pCVar6 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
     /* ST_CALLSITE[005393BB]: CALL 0x0040300d; direct=0040300D PanelTy::CreateBut */
-    uVar8 = st::fn_0040300D((PanelTy *)this_00,0,1,0x115,0x8b,1,0,1,pCVar6,0xbfff,0xc000,0,0,0,
+    iVar4 = st::fn_0040300D(reinterpret_cast<PanelTy *>(this_00),0,1,0x115,0x8b,1,0,1,pCVar6,0xbfff,0xc000,0,0,0,
                                nullptr,1);
-    this_00->field_0184 = uVar8;
+    this_00->field_0184 = iVar4;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\pause.cpp"),0x28,0,iVar2,st::mutable_c_string("%s"),
                              "PausePanelTy::InitPausePanel");
   if (iVar3 != 0) {
@@ -93,6 +98,7 @@ void __thiscall st::fn_00539490(PausePanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   pPVar2 = local_8;
   if (errorCode == 0) {
@@ -102,16 +108,17 @@ void __thiscall st::fn_00539490(PausePanelTy *this)
     pPVar2->field_0184 = 0;
     g_pausePanel_008016E0 = nullptr;
     if (pPVar2->field_017C != nullptr) {
-      st::fn_00710560((uint *)pPVar2->field_017C);
+      st::fn_00710560(reinterpret_cast<uint *>(pPVar2->field_017C));
       pPVar2->field_017C = nullptr;
     }
     if (pPVar2->field_0180 != nullptr) {
-      st::fn_006F20E0(g_cMf32_00806790,(uint *)&pPVar2->field_0180);
+      st::fn_006F20E0(g_cMf32_00806790,reinterpret_cast<uint *>(&pPVar2->field_0180));
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\pause.cpp"),0x3b,0,errorCode,st::mutable_c_string("%s"),
                              "PausePanelTy::DonePausePanel");
   if (iVar3 != 0) {
@@ -228,7 +235,7 @@ void __thiscall st::fn_005396E0(PausePanelTy *this,int param_1)
     iVar4 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
     if (iVar4 == 0) {
       if (local_8->field_0184 != 0) {
-        st::fn_006E6080(local_8,2,local_8->field_0184,(undefined4 *)&local_8->field_0x18);
+        st::fn_006E6080(local_8,2,local_8->field_0184,reinterpret_cast<undefined4 *>(&local_8->field_0x18));
       }
       g_currentExceptionFrame = local_4c.previous;
       return;
@@ -269,10 +276,12 @@ int __thiscall st::fn_005397F0(PausePanelTy *this,STMessage *message)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
+
     iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\pause.cpp"),0x9f,0,iVar3,st::mutable_c_string("%s"),
                                "PausePanelTy::GetMessage");
     if (iVar4 != 0) {
@@ -282,7 +291,7 @@ int __thiscall st::fn_005397F0(PausePanelTy *this,STMessage *message)
     return 0xffff;
   }
   /* ST_CALLSITE[0053982D]: CALL 0x004017f8; direct=004017F8 PanelTy::GetMessage */
-  st::fn_004017F8((PanelTy *)local_8,message);
+  st::fn_004017F8(reinterpret_cast<PanelTy *>(local_8),message);
   SVar1 = message->id;
   if (SVar1 < 4) {
     if (SVar1 == MESS_SHARED_0003) {
@@ -295,7 +304,7 @@ int __thiscall st::fn_005397F0(PausePanelTy *this,STMessage *message)
       if (this_00->field_0172 == CASE_3) {
         iVar5 = this_00->field_0054 + -0x174 + this_00->field_004C;
         if (iVar5 < this_00->field_003C) {
-          this_00->field_003C = st::machine_word_boundary_cast<int>(this_00->field_003C + -0x1e);
+          this_00->field_003C = this_00->field_003C + -0x1e;
         }
         if (this_00->field_003C <= iVar5) {
           this_00->field_003C = iVar5;
@@ -303,8 +312,9 @@ int __thiscall st::fn_005397F0(PausePanelTy *this,STMessage *message)
           /* ST_CALLSITE[00539903]: CALL 0x00404ea3; direct=00404EA3 PausePanelTy::ShiftControls */
           st::fn_00404EA3(this_00,1);
         }
+
         st::fn_006B3640
-                  ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                  (reinterpret_cast<int *>(g_ddxContext_008075A8),this_00->field_0060,0xffffffff,this_00->field_003C,
                    this_00->field_0044);
         g_currentExceptionFrame = local_4c.previous;
         return 0;
@@ -312,14 +322,15 @@ int __thiscall st::fn_005397F0(PausePanelTy *this,STMessage *message)
       if (this_00->field_0172 == CASE_4) {
         iVar5 = this_00->field_0054 + this_00->field_004C;
         if (this_00->field_003C < iVar5) {
-          this_00->field_003C = st::machine_word_boundary_cast<int>(this_00->field_003C + 0x1e);
+          this_00->field_003C = this_00->field_003C + 0x1e;
         }
         if (iVar5 <= this_00->field_003C) {
           this_00->field_003C = iVar5;
           this_00->field_0172 = CASE_2;
         }
+
         st::fn_006B3640
-                  ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
+                  (reinterpret_cast<int *>(g_ddxContext_008075A8),this_00->field_0060,0xffffffff,this_00->field_003C,
                    this_00->field_0044);
         g_currentExceptionFrame = local_4c.previous;
         return 0;
@@ -338,13 +349,13 @@ int __thiscall st::fn_005397F0(PausePanelTy *this,STMessage *message)
     g_cursorClass_00802A30->GetMessage((STMessage *)&this_00->field_0x18);
   }
   else if (SVar1 == MESS_SHARED_C000) {
+    /* ST_CALLSITE[00539960]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00538DB0_574DDCD0; source view only; no Ghidra override */
     pCVar6 = st::fn_0040577C(st::mutable_c_string("BUT_MEDIUM"),0);
     /* ST_CALLSITE[00539975]: CALL 0x00402121; direct=00402121 PanelTy::PaintIBut */
-    st::fn_00402121((PanelTy *)this_00,(AnonShape_00538DB0_574DDCD0 *)message,pCVar6,0x274d,1,0);
+    st::fn_00402121(reinterpret_cast<PanelTy *>(this_00),reinterpret_cast<AnonShape_00538DB0_574DDCD0 *>(message),reinterpret_cast<char *>(pCVar6),0x274d,1,0);
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
   return 0;
 }
-

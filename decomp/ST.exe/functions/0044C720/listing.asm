@@ -264,7 +264,7 @@ LAB_0044ca1b:
 0044CA1D  74 42                     JZ 0x0044ca61
 0044CA1F  8B 16                     MOV EDX,dword ptr [ESI]
 0044CA21  8B CE                     MOV ECX,ESI
-0044CA23  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+0044CA23  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0044CA29  85 C0                     TEST EAX,EAX
 0044CA2B  74 34                     JZ 0x0044ca61
 0044CA2D  8B 06                     MOV EAX,dword ptr [ESI]
@@ -272,7 +272,7 @@ LAB_0044ca1b:
 0044CA31  8A 0D 4D 87 80 00         MOV CL,byte ptr [0x0080874d]
 0044CA37  51                        PUSH ECX
 0044CA38  8B CE                     MOV ECX,ESI
-0044CA3A  FF 90 F4 00 00 00         CALL dword ptr [EAX + 0xf4]
+0044CA3A  FF 90 F4 00 00 00         CALL dword ptr [EAX + 0xf4]  ; [STIndirectCallsiteApplier] exact slot 0xF4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 0044CA40  85 C0                     TEST EAX,EAX
 0044CA42  74 1D                     JZ 0x0044ca61
 0044CA44  8A 56 24                  MOV DL,byte ptr [ESI + 0x24]

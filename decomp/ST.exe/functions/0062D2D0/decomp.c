@@ -17,19 +17,18 @@ FUN_0062d2d0(void *this,int param_1,int param_2,int param_3,undefined4 param_4,i
   int *piVar6;
   int *piVar7;
   uint local_78 [7];
-  undefined4 uStack_5c;
+  uint uStack_5c;
   int *local_4c [2];
   int aiStack_44 [5];
   int local_30;
-  undefined4 local_2c;
+  uint local_2c;
   uint local_24;
   uint local_20;
   byte *local_1c;
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   puStack_c = &DAT_0079d088;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;

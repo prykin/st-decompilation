@@ -41,29 +41,33 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
   int iVar3;
   int iVar4;
   uint *puVar5;
+  RecoveredRecord_006E3DB0_0F66DDCF *pRVar6;
   uint *puVar7;
   bool bVar8;
   uint local_100 [19];
   InternalExceptionFrame local_b4;
-  int local_70 [5];
+  RecoveredRecord_006E3DB0_0F66DDCF local_70;
+  int local_60;
   uint *local_5c;
   uint local_50 [5];
-  undefined4 local_3c;
-  undefined4 local_38;
-  undefined4 local_34;
+  uint local_3c;
+  uint local_38;
+  uint local_34;
   uint local_30;
   uint local_2c;
-  undefined4 local_1c;
-  undefined4 local_18;
+  uint local_1c;
+  uint local_18;
   uint local_14;
   uint local_10;
   uint local_c;
 
   local_b4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b4;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_b4.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_b4.previous;
+
     iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\support.cpp",0xe7,0,iVar2,"%s",
                                "SetAccelerator");
     if (iVar3 == 0) {
@@ -85,24 +89,31 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
   local_30 = param_9;
   local_50[2] = param_7;
   local_2c = param_11;
-  memset(local_70, 0, 0x20); /* compiler bulk-zero initialization */
+  pRVar6 = &local_70;
+  for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+    *(undefined4 *)pRVar6 = 0;
+    pRVar6 = (RecoveredRecord_006E3DB0_0F66DDCF *)&pRVar6->field_0x4;
+  }
   local_c = param_12;
   local_5c = local_50;
   local_50[1] = param_6;
-  local_70[4] = 0x11 - (uint)(param_1 != 0);
-  local_70[2] = 1;
-  local_70[3] = 3;
-  FUN_006e3db0((int)local_70);
+  local_60 = 0x11 - (uint)(param_1 != 0);
+  local_70.field_0008 = 1;
+  local_70.field_000C = 3;
+
+  FUN_006e3db0((AppClassTy *)&DAT_00807620,&local_70);
   if (param_1 != 0) {
     if (g_array_008026F0 == nullptr) {
       g_array_008026F0 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x4c,10);
     }
+
     Library::DKW::TBL::DArrayAppend(g_array_008026F0,local_50);
     g_currentExceptionFrame = local_b4.previous;
     return;
   }
   if (g_array_008026F0 != nullptr) {
     g_array_008026F0->iteratorIndex = 0;
+
     index = DArrayGetNext(g_array_008026F0,(byte *)local_100);
     if (-1 < (int)index) {
       do {
@@ -118,6 +129,7 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
           puVar7 = puVar7 + 1;
         } while (bVar8);
         if (bVar8) {
+
           DArrayRemoveAt(g_array_008026F0,index);
           if (g_array_008026F0->count != 0) {
             g_currentExceptionFrame = local_b4.previous;
@@ -128,6 +140,7 @@ SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 para
           g_currentExceptionFrame = local_b4.previous;
           return;
         }
+
         index = DArrayGetNext(g_array_008026F0,(byte *)local_100);
         if ((int)index < 0) {
           g_currentExceptionFrame = local_b4.previous;

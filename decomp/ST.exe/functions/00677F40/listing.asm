@@ -67,7 +67,7 @@ LAB_00677fe8:
 00677FFE  8D 45 DC                  LEA EAX,[EBP + -0x24]
 00678001  50                        PUSH EAX
 00678002  8B CF                     MOV ECX,EDI
-00678004  FF 52 74                  CALL dword ptr [EDX + 0x74]
+00678004  FF 52 74                  CALL dword ptr [EDX + 0x74]  ; [STIndirectCallsiteApplier] exact slot 0x74; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 00678007  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]
 0067800A  8D 75 DC                  LEA ESI,[EBP + -0x24]
 LAB_0067800d:

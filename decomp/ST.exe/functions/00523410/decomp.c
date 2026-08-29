@@ -13,14 +13,31 @@
    HelpPanelTy::DrawTitle @ 00518D43 | 00523410 returns used as parameter 3 of
    HelpPanelTy::DrawTitle @ 0051A20E | 00523410 returns used as parameter 3 of
    HelpPanelTy::DrawTitle @ 0051CA96 | 00523410 returns used as parameter 3 of
-   HelpPanelTy::DrawTitle @ 0051D445 */
+   HelpPanelTy::DrawTitle @ 0051D445
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (32), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=004EF140 @ 004EF23B -> read as EAX on
+   every CFG path | 004EFE20 @ 004EFF00 -> read as EAX on every CFG path | 004F0C80 @ 004F0D7B ->
+   read as EAX on every CFG path | 004FE370 @ 004FE42B -> read as EAX on every CFG path | 005061C0 @
+   00506801 -> read as EAX on every CFG path | 005061C0 @ 00506FE0 -> read as EAX on every CFG path
+   | 0050A340 @ 0050A952 -> read as EAX on every CFG path | 0050A340 @ 0050AF10 -> read as EAX on
+   every CFG path | 0050A340 @ 0050B1C4 -> read as EAX on every CFG path | 00516A40 @ 00517403 ->
+   read as EAX on every CFG path | 00516A40 @ 00517564 -> read as EAX on every CFG path | 00517A50 @
+   00517CDB -> read as EAX on every CFG path | 00517A50 @ 00517F25 -> read as EAX on every CFG path
+   | 00517A50 @ 005180D4 -> read as EAX on every CFG path | 00517A50 @ 0051851E -> read as EAX on
+   every CFG path | 00517A50 @ 005186D5 -> read as EAX on every CFG path | 00518C20 @ 00518D2F ->
+   read as EAX on every CFG path | 00518C20 @ 00519C4B -> read as EAX on every CFG path | 0051A100 @
+   0051A1FD -> read as EAX on every CFG path | 0051A100 @ 0051B0F1 -> read as EAX on every CFG path
+   | 0051B5A0 @ 0051BE83 -> read as EAX on every CFG path | 0051B5A0 @ 0051C04B -> read as EAX on
+   every CFG path | 0051B5A0 @ 0051C1EB -> read as EAX on every CFG path | 0051B5A0 @ 0051C391 ->
+   read as EAX on every CFG path */
 
-UINT __cdecl FUN_00523410(Global_sub_00523410_param_1Enum param_1,char param_2,byte param_3)
+int __cdecl FUN_00523410(Global_sub_00523410_param_1Enum param_1,char param_2,byte param_3)
 
 {
-  UINT UVar1;
+  int iVar1;
 
-  UVar1 = 10000;
+  iVar1 = 10000;
   switch(param_1) {
   case CASE_1:
     if (param_3 == 1) {
@@ -1115,7 +1132,7 @@ UINT __cdecl FUN_00523410(Global_sub_00523410_param_1Enum param_1,char param_2,b
   case CASE_FA:
   case CASE_FB:
     if ((param_3 == 0) || (2 < param_3)) {
-      UVar1 = 0x2b97;
+      iVar1 = 0x2b97;
     }
     break;
   case CASE_FD:
@@ -1141,6 +1158,6 @@ UINT __cdecl FUN_00523410(Global_sub_00523410_param_1Enum param_1,char param_2,b
     }
     return 0x2b46;
   }
-  return UVar1;
+  return iVar1;
 }
 

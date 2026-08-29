@@ -33,10 +33,12 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar11 = ReportDebugMessage("E:\\__titans\\Andrey\\infocen.cpp",0xde,0,iVar4,"%s"
                                 ,"InfocPanelTy::PaintInfoc");
     if (iVar11 != 0) {
@@ -132,7 +134,9 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
     wsprintfA(&this_00->field_018D,"%4d",
               *(int *)(&this_00->field_0x1b4 + (uint)(byte)this_00->field_03D4 * 0x10));
   }
+
   ccFntTy::SetSurf(this_00->field_03D5,this_00->field_0068,0,0x54,0x71,0x23,0xc);
+
   ccFntTy::WrStr(this_00->field_03D5,&this_00->field_018D,-1,-1,
                  (-(uint)(DAT_0080874e != '\x03') & 0xfffffffb) + 6);
   if ((this_00->field_03D4 == 0xff) ||
@@ -158,7 +162,9 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
     wsprintfA(&this_00->field_018D,"%6d",
               *(int *)(&this_00->field_0x1b8 + (uint)(byte)this_00->field_03D4 * 0x10));
   }
+
   ccFntTy::SetSurf(this_00->field_03D5,this_00->field_0068,0,0x78,0x71,0x17,0xc);
+
   ccFntTy::WrStr(this_00->field_03D5,&this_00->field_018D,-1,-1,
                  (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 4);
   if ((this_00->field_03D4 == 0xff) ||
@@ -183,16 +189,20 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
     wsprintfA(&this_00->field_018D,"%6d",
               *(int *)(&this_00->field_0x1bc + (uint)(byte)this_00->field_03D4 * 0x10));
   }
+
   ccFntTy::SetSurf(this_00->field_03D5,this_00->field_0068,0,0xa2,0x71,0x23,0xc);
+
   ccFntTy::WrStr(this_00->field_03D5,&this_00->field_018D,-1,-1,
                  (-(uint)(DAT_0080874e != '\x03') & 0xfffffffd) + 5);
   if (this_00->field_03D4 == 0xff) {
     iVar9 = 0xce;
     iVar12 = 0x14;
     do {
-      pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,0);
+      /* ST_CALLSITE[0052129E]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+      pBVar4 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_03CC,0);
       /* ST_CALLSITE[005212AD]: CALL 0x00403229; direct=00403229 DibPut */
-      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar9,0x71,'\x01',(byte *)pBVar4);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar9,0x71,'\x01',
+             (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar4);
       iVar9 = iVar9 + 4;
       iVar12 = iVar12 + -1;
     } while (iVar12 != 0);
@@ -204,10 +214,11 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
       if (0 < iVar9 + 0x14) {
         uVar8 = 1;
         do {
-          pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,0);
+          /* ST_CALLSITE[005211DF]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+          pBVar4 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_03CC,0);
           /* ST_CALLSITE[005211F5]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,uVar8 * 4 + 0xca,0x71,'\x01',
-                 (byte *)pBVar4);
+                 (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar4);
           local_8 = local_8 + 1;
           uVar8 = (uint)local_8;
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -221,10 +232,11 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
         iVar12 = 0x15 - (uint)bVar3;
         iVar9 = (uint)bVar3 * 4 + 0xca;
         do {
-          pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,4);
+          /* ST_CALLSITE[0052125F]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+          pBVar4 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_03CC,4);
           /* ST_CALLSITE[0052126E]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar9,0x71,'\x01',
-                 (byte *)pBVar4);
+                 (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar4);
           iVar9 = iVar9 + 4;
           iVar12 = iVar12 + -1;
         } while (iVar12 != 0);
@@ -236,11 +248,12 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
       if (0 < iVar9) {
         uVar8 = 1;
         do {
-          pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,
+          /* ST_CALLSITE[0052111E]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+          pBVar4 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_03CC,
                                 (-(uint)(DAT_0080874e != '\x03') & 2) + 1);
           /* ST_CALLSITE[00521134]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,uVar8 * 4 + 0xca,0x71,'\x01',
-                 (byte *)pBVar4);
+                 (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar4);
           local_8 = local_8 + 1;
           uVar8 = (uint)local_8;
         } while ((int)uVar8 <=
@@ -253,10 +266,11 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
         iVar12 = 0x15 - (uint)bVar3;
         iVar9 = (uint)bVar3 * 4 + 0xca;
         do {
-          pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03CC,0);
+          /* ST_CALLSITE[0052119D]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+          pBVar4 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_03CC,0);
           /* ST_CALLSITE[005211AC]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar9,0x71,'\x01',
-                 (byte *)pBVar4);
+                 (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar4);
           iVar9 = iVar9 + 4;
           iVar12 = iVar12 + -1;
         } while (iVar12 != 0);

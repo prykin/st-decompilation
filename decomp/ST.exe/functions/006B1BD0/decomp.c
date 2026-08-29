@@ -18,7 +18,8 @@ uint FUN_006b1bd0(AnonShape_006B1BD0_7C890E99 *param_1,uint param_2)
          (pAVar1->field_004C = 0xfffffffd, (pAVar1->field_0000 & 0x20) != 0)) {
         param_1->field_01B4 = 1;
       }
-      uVar4 = FUN_006cee10((int)param_1,(int)pAVar1);
+
+      uVar4 = FUN_006cee10((int)param_1,(RecoveredRecord_006CEE10_585981DD *)pAVar1);
       pAVar1->field_0050 = uVar4;
       if (((pAVar1->field_0000 & 0x4000000) != 0) && (pAVar1->field_00D0 != 0)) {
         uVar2 = pAVar1->field_00C0;
@@ -27,6 +28,7 @@ uint FUN_006b1bd0(AnonShape_006B1BD0_7C890E99 *param_1,uint param_2)
           do {
             uVar3 = *(uint *)(pAVar1->field_00D0 + iVar6 * 4);
             if (-1 < (int)uVar3) {
+
               FUN_006b1bd0(param_1,uVar3);
             }
             iVar6 = iVar6 + 1;

@@ -26,8 +26,7 @@ void __thiscall FUN_00709670(void *this,uint param_1,int param_2,int param_3,byt
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   puStack_c = &DAT_0079e210;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
@@ -69,6 +68,7 @@ void __thiscall FUN_00709670(void *this,uint param_1,int param_2,int param_3,byt
     auStack_54[1 - uVar4] = (uint)(&stack0xffffffc4 + iVar5);
     auStack_54[-uVar4] = 0x709770;
     ExceptionList = &local_14;
+
     ST3DSMAPContext::sub_00709470
               (this,(int *)auStack_54[1 - uVar4],auStack_54[2 - uVar4],auStack_54[3 - uVar4],
                auStack_54[4 - uVar4],abStack_40[iVar5]);

@@ -30,19 +30,23 @@ void __cdecl st::fn_0055DBF0(DDXContext *param_1,int param_2,int param_3)
 {
   int errorCode;
   int iVar2;
-  undefined4 local_448 [256];
+  uint local_448 [256];
   InternalExceptionFrame local_48;
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
+
   errorCode = st::fn_0072D7F0(local_48.jumpBuffer,0);
   if (errorCode == 0) {
+
     st::fn_006B0BA0(param_1,st::machine_word_boundary_cast<undefined4>(local_448),0,0x100);
-    st::fn_007192D0((undefined4 *)param_1,local_448,0,0x100,param_2,param_3);
+
+    st::fn_007192D0(reinterpret_cast<undefined4 *>(param_1),local_448,0,0x100,param_2,param_3);
     g_currentExceptionFrame = local_48.previous;
     return;
   }
   g_currentExceptionFrame = local_48.previous;
+
   iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\paltool.cpp"),0x1d,0,errorCode,st::mutable_c_string("%s"),
                              "DarkScreen");
   if (iVar2 != 0) {
@@ -69,7 +73,7 @@ st::fn_0055DCD0(undefined4 *param_1,int *param_2,cMf32 *param_3,char *param_4,in
 {
   int errorCode;
   int iVar2;
-  undefined4 local_44c [256];
+  uint local_44c [256];
   InternalExceptionFrame local_4c;
   ushort *local_8;
 
@@ -82,7 +86,7 @@ st::fn_0055DCD0(undefined4 *param_1,int *param_2,cMf32 *param_3,char *param_4,in
     local_8 = st::fn_006F1CE0(param_3,1,param_4,nullptr,1);
     st::fn_006BC360(local_8,local_44c,nullptr);
     st::fn_00719080(param_1,local_44c,0,0x100,param_5,param_6);
-    st::fn_006F20E0(param_3,(uint *)&local_8);
+    st::fn_006F20E0(param_3,reinterpret_cast<uint *>(&local_8));
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
@@ -95,4 +99,3 @@ st::fn_0055DCD0(undefined4 *param_1,int *param_2,cMf32 *param_3,char *param_4,in
   st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\paltool.cpp"),0x4d);
   return;
 }
-

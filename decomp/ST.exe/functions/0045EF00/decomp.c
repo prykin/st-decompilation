@@ -14,12 +14,12 @@
    -> 0045EF00 @ 004A3965; address of /STPlaySystemC+0xe4
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 9 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/STBoatC_CmdToObj_0045EF00_Case_9. The carrier
-   ABI remains pointer:/uint.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STBoatC_CmdToObj_0045EF00_Case_9.
+   carrier=param_2; The carrier ABI remains pointer:/uint.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 17 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/STBoatC_CmdToObj_0045EF00_Case_11. The carrier
-   ABI remains pointer:/uint. */
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STBoatC_CmdToObj_0045EF00_Case_11.
+   carrier=param_2; The carrier ABI remains pointer:/uint. */
 
 void __thiscall STBoatC::CmdToObj(STBoatC *this,STBoatC_CmdToObj_param_1Enum param_1,uint *param_2)
 
@@ -44,7 +44,7 @@ void __thiscall STBoatC::CmdToObj(STBoatC *this,STBoatC_CmdToObj_param_1Enum par
     this->field_0332 = *param_2;
     this->field_0336 = param_2[1];
     this->field_033A = param_2[2];
-    this->field_033E = param_2[3];
+    *(uint *)&this->field_0x33e = param_2[3];
     this->field_0342 = (char)param_2[4];
     return;
   case CASE_3:
@@ -154,6 +154,7 @@ cf_common_exit_0045F1A9:
     this->field_0435 = (short)param_2[3];
     return;
   default:
+
     iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x13a7,0,0,"%s",
                                "STBoatC::CmdToObj unknown type");
     if (iVar2 != 0) {

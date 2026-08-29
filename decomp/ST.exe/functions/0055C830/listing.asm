@@ -42,7 +42,7 @@ switchD_0055c862::caseD_4:
 0055C8A0  49                        DEC ECX
 0055C8A1  8D 44 0A 06               LEA EAX,[EDX + ECX*0x1 + 0x6]
 0055C8A5  50                        PUSH EAX
-0055C8A6  E8 C5 E3 14 00            CALL 0x006aac70
+0055C8A6  E8 C5 E3 14 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=/winnt.h/LPSTR; source view only; no Ghidra override
 0055C8AB  85 C0                     TEST EAX,EAX
 0055C8AD  89 45 0C                  MOV dword ptr [EBP + 0xc],EAX
 0055C8B0  0F 84 44 07 00 00         JZ 0x0055cffa

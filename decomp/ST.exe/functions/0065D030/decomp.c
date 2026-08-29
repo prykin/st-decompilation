@@ -5,7 +5,7 @@
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
    decompilation contains no value return */
 
-void __cdecl FUN_0065d030(AnonShape_0065D030_CB0F82F0 *param_1)
+void __cdecl FUN_0065d030(RecoveredRecordView_0065D030_884B498B *param_1)
 
 {
   int iVar1;

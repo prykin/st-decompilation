@@ -36,14 +36,14 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this)
   InternalExceptionFrame local_b0;
   STMessage local_6c;
   uint local_4c;
-  undefined2 local_48;
-  undefined1 local_46;
-  undefined4 local_45;
+  ushort local_48;
+  byte local_46;
+  uint local_45;
   uint local_41;
-  undefined1 local_3d;
-  undefined1 local_3b;
-  undefined4 local_2a;
-  undefined4 local_26;
+  byte local_3d;
+  byte local_3b;
+  uint local_2a;
+  uint local_26;
   ChooseMapTy *local_20;
   int local_1c;
   uint local_18;
@@ -59,10 +59,12 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this)
   this->field_0061 = DVar5;
   local_b0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b0;
+
   iVar7 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0);
   this_00 = local_20;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_b0.previous;
+
     iVar8 = ReportDebugMessage("E:\\__titans\\Start\\load_obj.cpp",0x24e,0,iVar7,"%s"
                                ,"ChooseMapTy::NoneChooseMap");
     if (iVar8 != 0) {
@@ -102,6 +104,7 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this)
       case 0xc:
       case 0x13:
         local_c = nullptr;
+
         Library::DKW::DDX::FUN_006b7510(g_int_00811764,-1,&local_14,-1,0);
         if (DAT_008067a0 != '\0') {
           /* ST_CALLSITE[005ADA31]: CALL dword ptr [0x0085c05c] */
@@ -110,6 +113,7 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this)
         local_10 = 0;
         if (0 < local_14) {
           do {
+
             iVar6 = Library::Ourlib::CONNECT::FUN_00715630
                               (g_int_00811764,-1,&local_18,&local_1c,&local_c,&local_4c,-1,0);
             if (iVar6 == -0x4d) {
@@ -172,6 +176,7 @@ switchD_005adb01_caseD_c:
                   }
                   local_26 = local_c->field_0022;
                   local_2a = local_c->field_001E;
+
                   FUN_00715360(g_int_00811764,local_1c,'\x1a',(char *)&local_48,0x26,1,0xffffffff);
                 }
               }
@@ -195,6 +200,7 @@ switchD_005adb01_caseD_c:
        (g_startSystem_0081176C->field_0300 < g_startSystem_0081176C->field_0304 + -1)) {
       g_startSystem_0081176C->field_0300 = g_startSystem_0081176C->field_0300 + 1;
       if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b3730
                   ((uint *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC,
                    g_startSystem_0081176C->field_0300,g_startSystem_0081176C->field_0314,
@@ -242,6 +248,7 @@ switchD_005adb01_caseD_c:
       }
       this_00->field_0065 = 1;
       if (this_00->field_20B5 != '\0') {
+
         Library::DKW::DDX::FUN_006b3430
                   ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_02EC);
         if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
@@ -252,16 +259,19 @@ switchD_005adb01_caseD_c:
       CreateCtrls(this_00,'\x01');
       uVar3 = this_00->array_00BC[0xc].field_01F4;
       if (uVar3 != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)this_00->field_1AB8,uVar3,0xfffffffe,this_00->field_1A8C,
                    this_00->field_1A90);
       }
       if (this_00->field_1B05 != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)this_00->field_1B49,this_00->field_1B05,0xfffffffe,this_00->field_1B1D,
                    this_00->field_1B21);
       }
       if (this_00->field_1B96 != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)this_00->field_1BDA,this_00->field_1B96,0xfffffffe,this_00->field_1BAE,
                    this_00->field_1BB2);
@@ -269,43 +279,52 @@ switchD_005adb01_caseD_c:
       puVar7 = &this_00->field_1C23;
       iVar6 = 0x16;
       do {
+
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*puVar7);
         puVar7 = puVar7 + 1;
         iVar6 = iVar6 + -1;
       } while (iVar6 != 0);
       if (g_startSystem_0081176C->field_0391 != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_03D5,g_startSystem_0081176C->field_0391,
                    0xfffffffe,g_startSystem_0081176C->field_03A9,g_startSystem_0081176C->field_03AD);
       }
       if (g_startSystem_0081176C->field_0422 != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_0466,g_startSystem_0081176C->field_0422,
                    0xfffffffe,g_startSystem_0081176C->field_043A,g_startSystem_0081176C->field_043E);
       }
       if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3,
                    0xfffffffe,g_startSystem_0081176C->field_04CB,g_startSystem_0081176C->field_04CF);
       }
+
       Library::DKW::DDX::FUN_006b3430
                 ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0540);
       cVar1 = this_00->array_00BC[0xc].field_01DF;
       if ((((cVar1 == '\f') || (cVar1 == '\x04')) || (cVar1 == '\x05')) || (cVar1 == '\x13')) {
         if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
+
           Library::DKW::DDX::FUN_006b34d0
                     ((uint *)g_startSystem_0081176C->field_05A4,g_startSystem_0081176C->field_0560,
                      0xfffffffe,g_startSystem_0081176C->field_0578,
                      g_startSystem_0081176C->field_057C);
         }
         if (g_startSystem_0081176C->field_05F1 != 0xffffffff) {
+
           Library::DKW::DDX::FUN_006b34d0
                     ((uint *)g_startSystem_0081176C->field_0635,g_startSystem_0081176C->field_05F1,
                      0xfffffffe,g_startSystem_0081176C->field_0609,
                      g_startSystem_0081176C->field_060D);
         }
+
         Library::DKW::DDX::FUN_006b3430
                   ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0558);
+
         Library::DKW::DDX::FUN_006b3430
                   ((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_0554);
       }
@@ -319,6 +338,7 @@ switchD_005adb01_caseD_c:
     if ((this_00->field_20B5 != '\0') && (0 < g_startSystem_0081176C->field_0300)) {
       g_startSystem_0081176C->field_0300 = g_startSystem_0081176C->field_0300 + -1;
       if (g_startSystem_0081176C->field_02FC != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b3730
                   ((uint *)g_startSystem_0081176C->field_0340,g_startSystem_0081176C->field_02FC,
                    g_startSystem_0081176C->field_0300,g_startSystem_0081176C->field_0314,
@@ -373,6 +393,7 @@ switchD_005adb01_caseD_c:
       bVar2 = this_00->array_00BC[0xc].field_01DA;
       this_00->field_0065 = 2;
       if ((bVar2 != 0xff) && (*(int *)&this_00->array_00BC[bVar2].field_0x15 != 0)) {
+
         AppClassTy::PostNextMessage
                   ((AppClassTy *)&DAT_00807620,(undefined4 *)&this_00->array_00BC[bVar2].field_0x5);
         g_currentExceptionFrame = local_b0.previous;

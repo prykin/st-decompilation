@@ -33,8 +33,8 @@ FUN_004ae0b0(short param_1,int param_2,int param_3,Global_sub_004AE0B0_param_4En
   uint uVar19;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   short in_stack_00000006;
-  undefined4 local_24;
-  undefined4 local_20;
+  uint local_24;
+  uint local_20;
   int local_18;
   STFishC *local_10;
   int local_c;
@@ -123,6 +123,7 @@ LAB_004ae37e:
       if (param_2 < iVar17) {
         iVar18 = param_2;
         do {
+
           iVar7 = thunk_FUN_004961b0((short)local_c,(short)iVar18,sVar14 + 1);
           sVar15 = g_worldGrid.sizeX;
           if (iVar7 == 0) {
@@ -143,7 +144,7 @@ LAB_004ae41c:
       local_10 = (STFishC *)thunk_FUN_004d85e0(_param_1,param_2,param_3);
       if (local_10 != nullptr) {
         /* ST_CALLSITE[004AE467]: CALL dword ptr [EDX + 0x2c] */
-        dVar8 = local_10->slot_2C();
+        dVar8 = local_10->vfunc_2C();
                     /* WARNING: Switch is manually overridden */
         switch((&BYTE_004aecec)[param_4]) {
         case 0:
@@ -199,6 +200,7 @@ LAB_004ae41c:
       pDVar12 = g_packedRecords_A62x8[param_5].field1968_0x9d6;
       if ((pDVar12 != nullptr) && (uVar19 = 0, 0 < (int)pDVar12->count)) {
         do {
+
           DArrayGetElement(pDVar12,uVar19,&local_10);
           /* ST_CALLSITE[004AE92E]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
@@ -220,6 +222,7 @@ LAB_004ae41c:
         uVar19 = 0;
         if (0 < (int)pDVar12->count) {
           do {
+
             DArrayGetElement(pDVar12,uVar19,&local_10);
             /* ST_CALLSITE[004AE9F4]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
@@ -243,6 +246,7 @@ LAB_004ae41c:
         uVar19 = 0;
         if (0 < (int)pDVar12->count) {
           do {
+
             DArrayGetElement(pDVar12,uVar19,&local_10);
             /* ST_CALLSITE[004AEABB]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
@@ -266,6 +270,7 @@ LAB_004ae41c:
         uVar19 = 0;
         if (0 < (int)pDVar12->count) {
           do {
+
             DArrayGetElement(pDVar12,uVar19,&local_10);
             /* ST_CALLSITE[004AEB82]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);
@@ -290,6 +295,7 @@ LAB_004ae41c:
         uVar19 = 0;
         if (0 < (int)pDVar12->count) {
           do {
+
             DArrayGetElement(pDVar12,uVar19,&local_10);
             /* ST_CALLSITE[004AEC45]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             STFishC::sub_004162B0(local_10,(short *)((int)&param_9 + 2),&local_6,&local_8);

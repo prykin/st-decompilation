@@ -38,7 +38,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this)
   undefined2 uStack_3a;
   undefined1 uStack_38;
   undefined1 uStack_37;
-  undefined2 local_36;
+  ushort local_36;
   AiTactClassTy *local_10;
   uint local_c;
   uint local_8;
@@ -49,6 +49,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this)
     local_88.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_88;
     local_10 = this;
+
     iVar8 = Library::MSVCRT::__setjmp3(local_88.jumpBuffer,0);
     pAVar6 = local_10;
     if (iVar8 == 0) {
@@ -173,6 +174,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this)
                 AiFltClassTy::GetAiMess(element_00a5_2->field_0004,local_44);
               }
             }
+
             DArrayRemoveAt((DArrayTy *)pAVar6->field_00BD,local_8);
             local_8 = local_8 - 1;
             cVar7 = cStack_3b;
@@ -187,6 +189,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this)
       return;
     }
     g_currentExceptionFrame = local_88.previous;
+
     iVar10 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x1ff,0,iVar8,"%s",
                                 "AiTactClassTy::ExecClaim");
     if (iVar10 != 0) {

@@ -74,7 +74,7 @@ LAB_004837a4:
 004837C2  50                        PUSH EAX
 004837C3  66 8B 41 41               MOV AX,word ptr [ECX + 0x41]
 004837C7  50                        PUSH EAX
-004837C8  FF 52 10                  CALL dword ptr [EDX + 0x10]
+004837C8  FF 52 10                  CALL dword ptr [EDX + 0x10]  ; [STIndirectCallsiteApplier] exact slot 0x10; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 004837CB  5F                        POP EDI
 004837CC  5E                        POP ESI
 004837CD  5B                        POP EBX

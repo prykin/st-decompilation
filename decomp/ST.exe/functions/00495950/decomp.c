@@ -13,7 +13,8 @@ void * __cdecl FUN_00495950(void)
 {
   DumpClassC *this;
 
-  this = (DumpClassC *)FUN_006b04d0(0x18);
+  /* ST_CALLSITE[00495952]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/DumpClassC; signature=__stdcall;pointer:/DumpClassC;/uint */
+  this = FUN_006b04d0(0x18);
   if (this != nullptr) {
     /* ST_CALLSITE[0049595D]: CALL 0x00405baa; direct=00405BAA DumpClassC::DumpClassC */
     g_dumpClass_007FB284 = DumpClassC::DumpClassC(this);

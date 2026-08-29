@@ -10,7 +10,8 @@
    decompilation contains no value return */
 
 void __thiscall
-SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uint *param_2)
+SettMapMTy::PrepareAFT
+          (SettMapMTy *this,RecoveredRecordView_005D4990_99479A9B *param_1,uint *param_2)
 
 {
   int iVar1;
@@ -26,6 +27,7 @@ SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uin
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
+
     iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (iVar2 == 0) {
       if (*param_2 != 0xffffffff) {
@@ -63,6 +65,7 @@ SettMapMTy::PrepareAFT(SettMapMTy *this,AnonShape_005D4990_5F0525CF *param_1,uin
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
+
     iVar3 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x9af,0,iVar2,"%s"
                                ,"SettMapMTy::PrepareAFT");
     if (iVar3 != 0) {

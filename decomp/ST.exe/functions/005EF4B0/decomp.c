@@ -12,6 +12,7 @@ int __thiscall FUN_005ef4b0(void *this,int param_1)
   char local_8;
 
   if ((1 < STField<byte>(this,0x252)) &&
+
      (iVar1 = thunk_FUN_00495ff0(STField<short>(this,0x254),STField<short>(this,0x256),
                                  STField<short>(this,600),0,this), iVar1 == 0)) {
     STField<char>(this,0x252) = STField<char>(this,0x252) + -1;
@@ -22,6 +23,7 @@ int __thiscall FUN_005ef4b0(void *this,int param_1)
      (short)(STField<short>(this,0x244) * 0xc9 + 100) != STField<int>(this,0x27b))) {
     local_8 = '\x01';
   }
+
   iVar1 = thunk_FUN_005ecd70(this,iVar1,(short)(STField<short>(this,0x244) * 0xc9 + 100),
                              (short)(STField<short>(this,0x246) * 200 + 100),param_1,local_8
                              ,0x1e);

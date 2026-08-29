@@ -18,16 +18,19 @@ void __thiscall CampaignTy::LightPalette(CampaignTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pCVar3 = local_8;
   if (iVar4 == 0) {
     if (local_8->field_1BEC != 0) {
       puVar1 = &local_8->field_0x1bf8;
+
       iVar4 = Library::Ourlib::PALETTE::FUN_00718f40
                         (g_dDXContext_0080759C,(undefined4 *)puVar1,0,0x100,10,&local_8->field_1BF4,
                          2,local_8->field_0061,&local_8->field_1BF0);
       if (iVar4 == -4) {
-        FUN_006b0a20((AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,(int)puVar1,0,0x100
+
+        FUN_006b0a20((RecoveredGlobalRecordView_00854EB8 *)g_dDXContext_0080759C,(int)puVar1,0,0x100
                      ,0);
         pCVar3->field_1BEC = 0;
       }
@@ -36,6 +39,7 @@ void __thiscall CampaignTy::LightPalette(CampaignTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar5 = ReportDebugMessage("E:\\__titans\\Start\\camp_obj.cpp",0x12d,0,iVar4,"%s",
                              "CampaignTy::LightPalette");
   if (iVar5 != 0) {

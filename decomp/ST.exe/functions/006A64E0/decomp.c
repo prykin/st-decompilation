@@ -28,7 +28,7 @@ FUN_006a64e0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   byte *pbVar20;
   short sVar21;
   int iVar22;
-  undefined4 local_34;
+  uint local_34;
   int local_30;
   int local_2c;
   byte *local_24;
@@ -92,8 +92,9 @@ LAB_006a6ed7:
           }
           pbVar19 = local_18 + param_6_after_write * 4;
           local_24 = pbVar6;
+
           Library::MSVCRT::FUN_0072da70
-                    ((undefined4 *)(pbVar6 + local_20 * 4),
+                    ((RecoveredRecord_006BFE70_3123BCE8 *)(pbVar6 + local_20 * 4),
                      (AnonPointee_TLOBaseTy_0607 *)(pbVar6 + local_20 * 4 + -0x200),
                      local_20 * 4 - 0x200);
         }

@@ -1,6 +1,7 @@
 FUN_00583e00:
 00583E00  68 94 02 00 00            PUSH 0x294
-00583E05  E8 C6 C6 12 00            CALL 0x006b04d0
+FUN_00583e00::override::prt_583e05_169dbe2b:
+00583E05  E8 C6 C6 12 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STJellyGunC; signature=__stdcall;pointer:/STJellyGunC;/uint
 00583E0A  85 C0                     TEST EAX,EAX
 00583E0C  74 07                     JZ 0x00583e15
 00583E0E  8B C8                     MOV ECX,EAX

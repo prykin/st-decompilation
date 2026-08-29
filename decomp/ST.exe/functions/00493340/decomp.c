@@ -7,16 +7,20 @@
    [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=undefined4
    __thiscall CheckForReplenisher(STBoatC * this) Evidence: every machine RET purges exactly 0
    explicit stack bytes; current signature describes 4; removed trailing parameter slots have no
-   listing references; ret_sites=0049344B RET | 00493457 RET */
+   listing references; ret_sites=0049344B RET | 00493457 RET
 
-undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this)
+   [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=5, ignored=0,
+   unknown=0 */
+
+int __thiscall STBoatC::CheckForReplenisher(STBoatC *this)
 
 {
   DArrayTy *array;
-  DArrayTy *array_00;
+  DArrayOf_STGameObjCPtr *array_00;
   dword dVar1;
   int iVar3;
-  uint uVar4;
   uint index;
   uint local_14;
   STFishC *local_10;
@@ -25,16 +29,19 @@ undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this)
   short local_6;
 
   array = (DArrayTy *)g_packedRecords_A62x8[this->field_0024].field355_0x2e7;
-  array_00 = (DArrayTy *)g_packedRecords_A62x8[this->field_0024].field3_0x9;
+  array_00 = g_packedRecords_A62x8[this->field_0024].field3_0x9;
   if (array != nullptr) {
     dVar1 = array->count;
     index = 0;
     if (0 < (int)dVar1) {
       do {
+
         DArrayGetElement(array,index,&local_14);
         if ((short)local_14 != -1) {
-          DArrayGetElement(array_00,local_14 & 0xffff,&local_10);
+
+          DArrayGetElement((DArrayTy *)array_00,local_14 & 0xffff,&local_10);
           if (local_10 == nullptr) {
+
             iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x5221,0,0,
                                        "%s","STBoatC::CheckForReplenisher NULL");
             if (iVar3 != 0) {
@@ -46,6 +53,7 @@ undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this)
           }
           /* ST_CALLSITE[0049340A]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0(local_10,&local_a,&local_8,&local_6);
+
           iVar3 = FUN_006aadd0((int)this->field_0047,(int)this->field_0049,(int)this->field_004B,
                                (int)local_a,(int)local_8,(int)local_6);
           if (iVar3 < 7) {

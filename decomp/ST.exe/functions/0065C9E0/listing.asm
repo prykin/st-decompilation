@@ -33,14 +33,14 @@ FUN_0065c9e0:
 0065CA43  6A 05                     PUSH 0x5
 0065CA45  6A 05                     PUSH 0x5
 0065CA47  56                        PUSH ESI
-0065CA48  E8 A3 8A 05 00            CALL 0x006b54f0
+0065CA48  E8 A3 8A 05 00            CALL 0x006b54f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 0065CA4D  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 0065CA50  6A 05                     PUSH 0x5
 0065CA52  6A 1B                     PUSH 0x1b
 0065CA54  6A 05                     PUSH 0x5
 0065CA56  56                        PUSH ESI
 0065CA57  89 81 56 04 00 00         MOV dword ptr [ECX + 0x456],EAX
-0065CA5D  E8 2E 18 05 00            CALL 0x006ae290
+0065CA5D  E8 2E 18 05 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 0065CA62  8B 55 FC                  MOV EDX,dword ptr [EBP + -0x4]
 0065CA65  6A 0A                     PUSH 0xa
 0065CA67  89 82 62 04 00 00         MOV dword ptr [EDX + 0x462],EAX

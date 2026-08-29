@@ -12,6 +12,7 @@ import java.util.List;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.listing.Function;
+import ghidra.program.model.listing.FunctionTag;
 import ghidra.program.model.symbol.Namespace;
 import ghidra.program.model.symbol.SourceType;
 import ghidra.program.model.symbol.SymbolTable;
@@ -80,6 +81,8 @@ public class STLibraryApplier extends GhidraScript {
                         }
                     }
                     else ownerPreserved++;
+                    removeObsoleteScriptLibraryClassifications(function,
+                        selection.library);
                     if (!hasTag(function, TAG)) function.addTag(TAG);
                     String libraryTag = "LIBRARY_" + selection.library;
                     if (!hasTag(function, libraryTag)) function.addTag(libraryTag);
@@ -142,6 +145,13 @@ public class STLibraryApplier extends GhidraScript {
         }
         if (!hasTag(function, TAG) || !hasTag(function, "LIBRARY_" + selection.library))
             return true;
+        for (FunctionTag tag : function.getTags()) {
+            String name = tag.getName();
+            if (name.startsWith("LIBRARY_") &&
+                    !name.equals("LIBRARY_" + selection.library) &&
+                    hasScriptLibraryMarker(function, name.substring("LIBRARY_".length())))
+                return true;
+        }
         String marker = "Statically linked library function [" + selection.library + "]";
         String comment = function.getComment();
         String repeatable = function.getRepeatableComment();
@@ -155,6 +165,44 @@ public class STLibraryApplier extends GhidraScript {
 
     private boolean hasTag(Function function, String name) {
         return function.getTags().stream().anyMatch(tag -> name.equals(tag.getName()));
+    }
+
+    private boolean hasScriptLibraryMarker(Function function, String library) {
+        String marker = "Statically linked library function [" + library + "]";
+        String comment = function.getComment();
+        String repeatable = function.getRepeatableComment();
+        return comment != null && comment.contains(marker) ||
+            repeatable != null && repeatable.contains(marker);
+    }
+
+    private void removeObsoleteScriptLibraryClassifications(Function function,
+            String desiredLibrary) {
+        List<String> obsolete = new ArrayList<>();
+        for (FunctionTag tag : function.getTags()) {
+            String name = tag.getName();
+            if (!name.startsWith("LIBRARY_") ||
+                    name.equals("LIBRARY_" + desiredLibrary)) continue;
+            String library = name.substring("LIBRARY_".length());
+            if (hasScriptLibraryMarker(function, library)) obsolete.add(library);
+        }
+        for (String library : obsolete) {
+            function.removeTag("LIBRARY_" + library);
+            String quoted = java.util.regex.Pattern.quote(
+                "Statically linked library function [" + library + "].");
+            String comment = function.getComment();
+            if (comment != null) {
+                comment = comment.replaceAll("(?m)^" + quoted +
+                    "(?:\\R^Evidence:.*)?(?:\\R^Implementation is intentionally excluded " +
+                    "from the LLM decompilation corpus\\.)?(?:\\R\\R)?", "").trim();
+                function.setComment(comment.isBlank() ? null : comment);
+            }
+            String repeatable = function.getRepeatableComment();
+            if (repeatable != null) {
+                repeatable = repeatable.replaceAll("(?m)^" + quoted + "(?:\\R)?", "")
+                    .trim();
+                function.setRepeatableComment(repeatable.isBlank() ? null : repeatable);
+            }
+        }
     }
 
     private void addComment(Function function, String library, String evidence) {

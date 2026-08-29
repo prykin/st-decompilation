@@ -11,6 +11,7 @@ int __thiscall STBHEShellC::sub_005F5B80(STBHEShellC *this,undefined4 *param_1)
 {
   dword dVar1;
   STBHEShellC_field_0169DArray *pSVar2;
+  DArrayTy *pSVar2_mg0;
   int iVar3;
   char *pcVar4;
   byte *puVar5;
@@ -22,8 +23,9 @@ int __thiscall STBHEShellC::sub_005F5B80(STBHEShellC *this,undefined4 *param_1)
   memmove(puVar7, puVar5, 0x128); /* compiler REP MOVS byte copy */
   iVar3 = 0x128;
   if (this->field_0169 != nullptr) {
-    pSVar2 = (STBHEShellC_field_0169DArray *)FUN_006b0060(nullptr,param_1 + 0x4b);
-    this->field_0169 = pSVar2;
+    /* ST_CALLSITE[005F5BAF]: CALL 0x006b0060; direct=006B0060 FUN_006b0060; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STBHEShellC_field_0169DArray; source view only; no Ghidra override */
+    pSVar2_mg0 = FUN_006b0060(nullptr,param_1 + 0x4b);
+    this->field_0169 = (STBHEShellC_field_0169DArray *)pSVar2_mg0;
     iVar3 = param_1[0x4a] + 300;
   }
   this->field_008F = 0xffffffff;

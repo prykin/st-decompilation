@@ -22,7 +22,7 @@ LAB_00637f65:
 00637F70  6A 1D                     PUSH 0x1d
 00637F72  51                        PUSH ECX
 LAB_00637f73:
-00637F73  E8 78 1B 0D 00            CALL 0x00709af0
+00637F73  E8 78 1B 0D 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 00637F78  8B F0                     MOV ESI,EAX
 00637F7A  83 C4 20                  ADD ESP,0x20
 00637F7D  85 F6                     TEST ESI,ESI

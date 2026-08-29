@@ -13,7 +13,8 @@ TLOBaseTy * __cdecl CreateTLOBase(void)
 {
   TLOBaseTy *pTVar1;
 
-  pTVar1 = (TLOBaseTy *)FUN_006b04d0(0x623);
+  /* ST_CALLSITE[004BE355]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/TLOBaseTy; signature=__stdcall;pointer:/TLOBaseTy;/uint */
+  pTVar1 = FUN_006b04d0(0x623);
   if (pTVar1 != nullptr) {
     pTVar1 = TLOBaseTy::TLOBaseTy(pTVar1);
     return pTVar1;

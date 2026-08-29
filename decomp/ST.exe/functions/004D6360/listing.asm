@@ -18,7 +18,7 @@ FUN_004d6360:
 004D638A  1B F6                     SBB ESI,ESI
 004D638C  89 45 EC                  MOV dword ptr [EBP + -0x14],EAX
 004D638F  83 C6 02                  ADD ESI,0x2
-004D6392  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+004D6392  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4
 004D6398  85 C0                     TEST EAX,EAX
 004D639A  0F 84 65 01 00 00         JZ 0x004d6505
 004D63A0  0F BF 55 08               MOVSX EDX,word ptr [EBP + 0x8]

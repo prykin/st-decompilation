@@ -1,4 +1,4 @@
-FUN_004be180:
+TLOBaseTy::vfunc_C8:
 004BE180  55                        PUSH EBP
 004BE181  8B EC                     MOV EBP,ESP
 004BE183  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

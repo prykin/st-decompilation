@@ -122,7 +122,8 @@ LAB_006a05af:
 006A05C8  52                        PUSH EDX
 006A05C9  50                        PUSH EAX
 006A05CA  8D 8E 03 1C 00 00         LEA ECX,[ESI + 0x1c03]
-006A05D0  E8 C1 28 D6 FF            CALL 0x00402e96
+CGenerate::sub_006A0470::override::prt_6a05d0_af62abc3:
+006A05D0  E8 C1 28 D6 FF            CALL 0x00402e96  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__thiscall;pointer:/char;pointer:/void;/int;/int;/int
 006A05D5  85 C0                     TEST EAX,EAX
 006A05D7  74 27                     JZ 0x006a0600
 006A05D9  8B 8E 03 57 00 00         MOV ECX,dword ptr [ESI + 0x5703]

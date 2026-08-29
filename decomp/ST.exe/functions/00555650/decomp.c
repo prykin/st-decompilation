@@ -1,14 +1,13 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_00555650(int param_1)
+void __fastcall FUN_00555650(RecoveredRecord_00555650_8E7D0F7D *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int **)(param_1 + 0x4c) != nullptr) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    Library::MSVCRT::FUN_0072ea90(*(int **)(param_1 + 0x4c));
-    *(undefined4 *)(param_1 + 0x4c) = 0;
+  if (param_1->field_004C != nullptr) {
+
+    Library::MSVCRT::FUN_0072ea90(param_1->field_004C);
+    param_1->field_004C = nullptr;
   }
   return;
 }

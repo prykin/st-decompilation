@@ -68,7 +68,7 @@ LAB_00423cc6:
 00423D29  8B 11                     MOV EDX,dword ptr [ECX]
 00423D2B  8D 45 DC                  LEA EAX,[EBP + -0x24]
 00423D2E  50                        PUSH EAX
-00423D2F  FF 12                     CALL dword ptr [EDX]
+00423D2F  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 LAB_00423d31:
 00423D31  8B C7                     MOV EAX,EDI
 LAB_00423d33:

@@ -13,8 +13,7 @@
 void __thiscall STSharkC::sub_0058EFE0(STSharkC *this)
 
 {
-  undefined4 local_24 [8];
-
+  uint local_24 [8];
   memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
   local_24[3] = 0;
   local_24[5] = this->field_0008;

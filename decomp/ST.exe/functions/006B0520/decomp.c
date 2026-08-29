@@ -12,7 +12,7 @@
    returns establish signed int while zero is a signedness-neutral member of that same domain;
    machine CFG audit: used=3, ignored=0, unknown=0 */
 
-int FUN_006b0520(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT param_3,int param_4)
+int FUN_006b0520(RecoveredGlobalRecordView_00854EB8 *param_1,int param_2,UINT param_3,int param_4)
 
 {
   uint *puVar1;
@@ -21,6 +21,7 @@ int FUN_006b0520(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT pa
 
   if (*(int *)&param_1->field_0x24 == 0x10) {
     if (*(int *)&param_1[1].field_0x8 == 0) {
+
       puVar1 = FUN_006b04d0(0x200);
       *(undefined4 **)&param_1[1].field_0x8 = puVar1;
       if (puVar1 == nullptr) {
@@ -48,6 +49,7 @@ int FUN_006b0520(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT pa
   }
   else if (0x10 < *(int *)&param_1->field_0x24) {
     if (*(int *)&param_1[1].field_0x8 == 0) {
+
       puVar1 = FUN_006b04d0(0x400);
       *(undefined4 **)&param_1[1].field_0x8 = puVar1;
       if (puVar1 == nullptr) {

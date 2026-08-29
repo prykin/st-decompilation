@@ -19,7 +19,7 @@ uint __thiscall STGroupC::GetTOBJQty(STGroupC *this,int param_1)
   InternalExceptionFrame local_58;
   uint local_14;
   STGroupC *local_10;
-  undefined1 local_c [4];
+  byte local_c [4];
   int local_8;
 
   uVar6 = 0;

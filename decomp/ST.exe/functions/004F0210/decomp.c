@@ -26,10 +26,12 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_4c.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\bldlab.cpp",0x9a,0,iVar4,"%s",
                                "BldLabPanelTy::GetMessage");
     if (iVar5 == 0) {
@@ -97,7 +99,7 @@ int __thiscall BldLabPanelTy::GetMessage(BldLabPanelTy *this,STMessage *message)
         return 0;
       }
       /* ST_CALLSITE[004F0342]: CALL 0x0040587b; direct=0040587B BldLabPanelTy::PaintUpdBut */
-      PaintUpdBut(this_00,(AnonShape_004EF320_444F9AB1 *)message);
+      PaintUpdBut(this_00,(RecoveredRecordView_004EF320_A54422CD *)message);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }

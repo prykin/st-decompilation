@@ -24,7 +24,7 @@ STManRuinC::sub_00631880:
 006318B0  6A 25                     PUSH 0x25
 006318B2  6A 0A                     PUSH 0xa
 006318B4  6A 00                     PUSH 0x0
-006318B6  E8 D5 C9 07 00            CALL 0x006ae290
+006318B6  E8 D5 C9 07 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STManRuinC_field_003CDArray; source view only; no Ghidra override
 006318BB  89 43 3C                  MOV dword ptr [EBX + 0x3c],EAX
 LAB_006318be:
 006318BE  8B 5B 3C                  MOV EBX,dword ptr [EBX + 0x3c]

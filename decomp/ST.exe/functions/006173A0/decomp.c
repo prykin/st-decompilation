@@ -1,12 +1,22 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __thiscall FUN_006173a0(void *this,int param_1,int *param_2,int *param_3,int *param_4)
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (8), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=006101B0 @ 006116AA -> read as EAX on
+   every CFG path | 006101B0 @ 006121D5 -> read as EAX on every CFG path | 006139A0 @ 00613C8D ->
+   read as EAX on every CFG path | 006164E0 @ 006165CD -> read as EAX on every CFG path | 00616A80 @
+   00616DB6 -> read as EAX on every CFG path | 00616F60 @ 00616FE9 -> read as EAX on every CFG path
+   | 00616F60 @ 00617139 -> read as EAX on every CFG path | 00616F60 @ 006171A3 -> read as EAX on
+   every CFG path */
+
+int __thiscall FUN_006173a0(void *this,int param_1,int *param_2,int *param_3,int *param_4)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
+
 
   iVar1 = FUN_006acf0d((int)STField<short>(this,0x25a),(int)STField<short>(this,0x25c),
                        (int)STField<short>(this,0x25e),(int)STField<short>(this,0x260),

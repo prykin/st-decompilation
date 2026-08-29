@@ -18,8 +18,10 @@ CursorClassTy * __cdecl CreateCursor(void)
   uint uVar4;
   CursorClassTy_field_00DEState *pCVar5;
 
-  this = (CursorClassTy *)FUN_006b04d0(0x4fb);
+
+  this = STPointerBoundaryCast<CursorClassTy *>(FUN_006b04d0(0x4fb));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0018);
     this->vtable = &CursorClassTyVTable;

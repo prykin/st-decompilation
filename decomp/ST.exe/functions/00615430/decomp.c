@@ -16,21 +16,21 @@ FUN_00615430(void *this,int param_1,int param_2,int param_3,int param_4,int para
   int iVar6;
   uint *puVar7;
   uint *puVar8;
-  undefined4 local_34;
+  uint local_34;
   int local_30;
   int local_2c;
   int local_28;
-  undefined4 local_24;
+  uint local_24;
   int local_20;
   int local_1c;
-  undefined4 local_18;
-  uint local_14;
+  uint local_18;
+  int local_14;
   int local_10;
   int local_c;
-  undefined4 local_8;
-
+  uint local_8;
   puVar7 = param_10;
   local_8 = 0xffffffff;
+
   local_28 = FUN_006acf0d(param_2,param_3,param_4,param_8,param_9,(int)param_10);
   if (local_28 == 0) {
     return 0xffffffff;
@@ -38,12 +38,14 @@ FUN_00615430(void *this,int param_1,int param_2,int param_3,int param_4,int para
   local_c = param_8 - param_2;
   local_10 = (int)puVar7 - param_4;
   iVar3 = (local_10 * param_7 + (param_9 - param_3) * param_6 + local_c * param_5) / local_28;
+
   local_14 = FUN_006c8334(10000 - (iVar3 * iVar3) / 10000);
   iVar6 = param_1 * 0x1c;
   *(int *)(STField<int>(this,0x2dd) + 0xc + iVar6) = (local_c * iVar3) / local_28;
   *(int *)(STField<int>(this,0x2dd) + 0x10 + iVar6) = ((param_9 - param_3) * iVar3) / local_28;
   *(int *)(STField<int>(this,0x2dd) + 0x14 + iVar6) = (local_10 * iVar3) / local_28;
   iVar5 = STField<int>(this,0x2dd) + iVar6;
+
   iVar4 = FUN_006acf0d(STField<int>(iVar5,0xC),STField<int>(iVar5,0x10),STField<int>(iVar5,0x14),param_5,
                        param_6,param_7);
   piVar1 = (int *)(STField<int>(this,0x2dd) + 0xc + iVar6);
@@ -60,7 +62,7 @@ FUN_00615430(void *this,int param_1,int param_2,int param_3,int param_4,int para
   local_34 = 0;
   local_24 = 0;
   local_30 = (iVar3 * local_28 * 0x1e) / 600000;
-  local_20 = (int)(local_14 * local_28 * 0x1e) / 600000;
+  local_20 = (local_14 * local_28 * 0x1e) / 600000;
   local_2c = (iVar3 * local_28 * 0x46) / 600000;
   local_1c = local_20;
   if (local_20 < 0) {
@@ -68,7 +70,9 @@ FUN_00615430(void *this,int param_1,int param_2,int param_3,int param_4,int para
   }
   local_18 = 0;
   uVar2 = (local_28 * 3) / 0x21;
+
   param_10 = Library::DKW::LIB::MemAlloc(uVar2 * 4);
+
   iVar5_mg1 = thunk_FUN_0060e210(&local_34,&local_24,4,(int)param_10,uVar2);
   if (iVar5_mg1 != 0) {
     if (param_10 != nullptr) {

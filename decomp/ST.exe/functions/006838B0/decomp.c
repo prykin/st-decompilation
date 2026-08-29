@@ -12,11 +12,10 @@ int __cdecl FUN_006838b0(int *param_1,char param_2,byte *param_3,int param_4)
   int iVar1;
   uint uVar2;
   int iVar3;
-  undefined1 local_c;
+  byte local_c;
   undefined2 uStack_b;
   undefined1 uStack_9;
-  undefined1 local_8;
-
+  byte local_8;
   local_c = 0;
   uStack_b = 0;
   uStack_9 = 0;

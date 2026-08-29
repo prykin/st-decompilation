@@ -8,12 +8,11 @@ FUN_00631aa0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
 {
   DArrayTy *pDVar1;
   int iVar2;
-  undefined4 local_30 [4];
-  undefined4 local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
-
+  uint local_30 [4];
+  uint local_20;
+  uint local_1c;
+  uint local_18;
+  uint local_14;
   memset(local_30, 0, 0x29); /* compiler bulk-zero initialization */
   local_30[1] = param_2;
   local_30[0] = param_1;

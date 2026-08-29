@@ -69,7 +69,7 @@ LAB_00465581:
                         (this->field_0041,this->field_0043,CONCAT22(uVar8,this->field_0045),
                          this->field_0034,this->field_0036,
                          STReplaceLowWord((uint32_t)(pSVar6), (uint16_t)(this->field_0038)));
-      /* ST_CALLSITE[0046547D]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+      /* ST_CALLSITE[0046547D]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
       uVar5 = sub_004176C0(this,sVar2);
       /* ST_CALLSITE[00465485]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       uVar5 = sub_00417910(this,(short)uVar5);
@@ -85,6 +85,7 @@ LAB_00465581:
         iVar4 = this->vfunc_D8();
         return (-(uint)(iVar4 != 0) & 0xfffffffd) + 2;
       }
+
       local_EAX_335 =
            ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1b8c,0,0,"%s",
                               "STBoatC::BackAttack RotateCheat WORM");
@@ -100,6 +101,7 @@ LAB_00465581:
     /* ST_CALLSITE[00465529]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
     iVar4 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
     if (iVar4 == -1) {
+
       local_EAX_424 =
            ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1b9e,0,0,"%s",
                               "STBoatC::BackAttack LLMoveStep WORM");
@@ -141,7 +143,7 @@ LAB_00465581:
                          STReplaceLowWord((uint32_t)(iVar4), (uint16_t)(this->field_0045)),
                          this->field_0047 * 0xc9 + 100,(short)iVar4,
                          STReplaceLowWord((uint32_t)(pSVar6), (uint16_t)(this->field_004B * 200)) + 100);
-      /* ST_CALLSITE[0046564C]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+      /* ST_CALLSITE[0046564C]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
       uVar5 = sub_004176C0(this,sVar2);
       /* ST_CALLSITE[00465654]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       uVar5 = sub_00417910(this,(short)uVar5);
@@ -158,6 +160,7 @@ LAB_00465581:
         iVar4 = this->vfunc_D8();
         return (-(uint)(iVar4 != 0) & 0xfffffffd) + 2;
       }
+
       iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1bc5,0,0,"%s",
                                  "STBoatC::BackAttack RotateCheat DOLPHINE");
       if (iVar3 != 0) {
@@ -175,6 +178,7 @@ cf_error_exit_00465763:
     /* ST_CALLSITE[0046570D]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
     iVar4 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
     if (iVar4 == -1) {
+
       local_EAX_929 =
            ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1bd7,0,0,"%s",
                               "STBoatC::BackAttack LLMoveStep DOLPHINE");

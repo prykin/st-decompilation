@@ -25,7 +25,7 @@ ST3DSMAPContext::sub_006E98E0:
 006E992F  75 2A                     JNZ 0x006e995b
 006E9931  8D 14 C5 00 00 00 00      LEA EDX,[EAX*0x8 + 0x0]
 006E9938  52                        PUSH EDX
-006E9939  E8 D2 12 FC FF            CALL 0x006aac10
+006E9939  E8 D2 12 FC FF            CALL 0x006aac10  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 006E993E  85 C0                     TEST EAX,EAX
 006E9940  89 86 A0 00 00 00         MOV dword ptr [ESI + 0xa0],EAX
 006E9946  75 0B                     JNZ 0x006e9953

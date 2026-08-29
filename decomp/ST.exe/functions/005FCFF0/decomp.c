@@ -24,17 +24,17 @@ FUN_005fcff0(undefined4 param_1,uint param_2,int param_3,undefined4 param_4,unde
   uint local_15c [7];
   int local_140;
   int local_13c;
-  undefined4 local_138;
+  uint local_138;
   short local_134;
   short local_132;
   short local_130;
-  undefined4 local_12e;
-  undefined4 local_12a;
+  uint local_12e;
+  uint local_12a;
   char local_126 [14];
-  undefined1 local_118;
-  undefined4 local_13;
-  undefined4 local_f;
-  undefined4 local_b;
+  byte local_118;
+  uint local_13;
+  uint local_f;
+  uint local_b;
   char *pcVar5_mg1;
   char *pcVar5_mg0;
 
@@ -88,7 +88,7 @@ FUN_005fcff0(undefined4 param_1,uint param_2,int param_3,undefined4 param_4,unde
     }
   }
   /* ST_CALLSITE[005FD13D]: CALL dword ptr [EDX + 0x8] */
-  g_playSystem_00802A38->vfunc_08(0x157,0,0,(short)local_15c,0);
+  g_playSystem_00802A38->vfunc_8(0x157,nullptr,nullptr,(short)local_15c,0);
   return;
 }
 

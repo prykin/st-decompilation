@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_00579350(AnonShape_00579350_2E014C47 *param_1)
+void __fastcall FUN_00579350(RecoveredRecordView_00579350_91ECCCD1 *param_1)
 
 {
   byte *this;
@@ -11,28 +11,31 @@ void __fastcall FUN_00579350(AnonShape_00579350_2E014C47 *param_1)
   int iVar4;
   uint local_EAX_315;
   uint uVar2;
-  uint uVar5;
-  short sVar6;
+  short sVar5;
 
-  sVar6 = param_1->field_0041;
-  sVar6 = STBiasedDiv16(sVar6, 0xc9); /* exact signed 16-bit grid-index division */
-  param_1->field_0047 = sVar6;
-  param_1->field_005B = sVar6;
-  sVar6 = param_1->field_0043;
-  sVar6 = STBiasedDiv16(sVar6, 0xc9); /* exact signed 16-bit grid-index division */
-  param_1->field_0049 = sVar6;
-  param_1->field_005D = sVar6;
-  sVar6 = param_1->field_0045;
-  sVar6 = STBiasedDiv16(sVar6, 200); /* exact signed 16-bit grid-index division */
-  param_1->field_004B = sVar6;
-  param_1->field_005F = sVar6;
-  iVar2 = thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)param_1);
+  sVar5 = param_1->field_0041;
+  sVar5 = STBiasedDiv16(sVar5, 0xc9); /* exact signed 16-bit grid-index division */
+  param_1->field_0047 = sVar5;
+  param_1->field_005B = sVar5;
+  sVar5 = param_1->field_0043;
+  sVar5 = STBiasedDiv16(sVar5, 0xc9); /* exact signed 16-bit grid-index division */
+  param_1->field_0049 = sVar5;
+  param_1->field_005D = sVar5;
+  sVar5 = param_1->field_0045;
+  sVar5 = STBiasedDiv16(sVar5, 200); /* exact signed 16-bit grid-index division */
+  param_1->field_004B = sVar5;
+  param_1->field_005F = sVar5;
+
+  iVar2 = thunk_FUN_0041c710((RecoveredRecordView_0041C710_A35B7121 *)param_1);
   this = &param_1->field_0x1d5;
   if (iVar2 == 0) {
     iVar2 = 0;
+
     uVar3 = thunk_FUN_004ad650((STT3DSprC *)this);
+
     Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar3,iVar2);
-    iVar1 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)param_1);
+
+    iVar1 = thunk_FUN_0041caf0((RecoveredRecordView_0041CAF0_18493751 *)param_1);
     if (iVar1 == 1) {
       iVar2 = 1;
     }
@@ -42,13 +45,17 @@ void __fastcall FUN_00579350(AnonShape_00579350_2E014C47 *param_1)
   }
   else {
     iVar2 = 1;
+
     uVar3 = thunk_FUN_004ad650((STT3DSprC *)this);
+
     Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar3,iVar2);
     iVar2 = 1;
   }
+
   iVar4 = thunk_FUN_004ad650((STT3DSprC *)this);
   FUN_006e6870(param_1->field_0211,iVar4,iVar2);
   if ((param_1->field_0279 == 0xf6) || (param_1->field_0279 == 0xf7)) {
+
     uVar2 = thunk_FUN_00496250((int)param_1->field_0041,(int)param_1->field_0043,
                                (int)param_1->field_0045);
     if ((int)uVar2 < 0) {
@@ -61,6 +68,7 @@ void __fastcall FUN_00579350(AnonShape_00579350_2E014C47 *param_1)
     }
   }
   else {
+
     local_EAX_315 =
          thunk_FUN_00496250((int)param_1->field_0041,(int)param_1->field_0043,
                             (int)param_1->field_0045);
@@ -95,9 +103,10 @@ void __fastcall FUN_00579350(AnonShape_00579350_2E014C47 *param_1)
   else {
     if ((uint)param_1->field_023D < 0x10) goto LAB_005795a9;
 LAB_00579591:
-    uVar5 = thunk_FUN_005797b0(param_1,&param_1->field_004E,(short *)&param_1->field_0x50,
+
+    iVar2 = thunk_FUN_005797b0(param_1,&param_1->field_004E,(short *)&param_1->field_0x50,
                                (undefined2 *)&param_1->field_0x6c);
-    param_1->field_0239 = uVar5;
+    param_1->field_0239 = iVar2;
     param_1->field_023D = 0;
   }
 LAB_005795a9:
@@ -129,9 +138,8 @@ LAB_005795a9:
   /* ST_CALLSITE[005796AD]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
   STT3DSprC::ShowCurFase((STT3DSprC *)this,'\x0e');
   param_1->field_023D = param_1->field_023D + 1;
-  /* ST_CALLSITE[005796C3]: CALL dword ptr [EDX + 0xd8] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)(param_1->field_0000 + 0xd8))();
+  /* ST_CALLSITE[005796C3]: CALL dword ptr [EDX + 0xd8]; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+  STStructuralVirtualCall<undefined4>(param_1, 0xD8);
   return;
 }
 

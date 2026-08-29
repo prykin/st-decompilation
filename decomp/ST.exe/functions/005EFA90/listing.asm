@@ -7,6 +7,6 @@ FUN_005efa90:
 005EFA9D  52                        PUSH EDX
 005EFA9E  89 81 E5 02 00 00         MOV dword ptr [ECX + 0x2e5],EAX
 005EFAA4  8B 01                     MOV EAX,dword ptr [ECX]
-005EFAA6  FF 90 AC 00 00 00         CALL dword ptr [EAX + 0xac]
+005EFAA6  FF 90 AC 00 00 00         CALL dword ptr [EAX + 0xac]  ; [STIndirectCallsiteApplier] exact slot 0xAC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4
 005EFAAC  5D                        POP EBP
 005EFAAD  C2 04 00                  RET 0x4

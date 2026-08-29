@@ -15,7 +15,7 @@
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_32=50;CASE_34=52;CASE_35=53;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3B=59;CASE_40=64;CASE_41=65;CASE_48=72;CASE_49=73;CASE_4C=76;CASE_4F=79;CASE_50=80;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_63=99;CASE_64=100;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_73=115;CASE_FFFFFFFF=4294967295
     */
 
-undefined4 __thiscall TLOBaseTy::sub_004B7F90(TLOBaseTy *this,int param_1)
+int __thiscall TLOBaseTy::sub_004B7F90(TLOBaseTy *this,int param_1)
 
 {
   TLOBaseTy_field_046CState TVar1;
@@ -41,8 +41,10 @@ undefined4 __thiscall TLOBaseTy::sub_004B7F90(TLOBaseTy *this,int param_1)
   case CASE_FFFFFFFF:
     goto switchD_004b7fa6_caseD_ffffffff;
   }
+
   iVar2 = thunk_FUN_004ac910(&this->field_01D5,'\x0e');
   if ((iVar2 == this->field_01F5->field_0208) ||
+
      (iVar2 = thunk_FUN_004ac910(&this->field_01D5,'\x0e'), iVar2 == this->field_01F5->field_020C))
   {
     if (*(int *)(&DAT_00791a10 + this->field_0235 * 4) == 0) {
@@ -50,6 +52,7 @@ switchD_004b7fa6_caseD_ffffffff:
       uVar3 = 1;
     }
     else {
+
       uVar3 = thunk_FUN_004cc040(this);
     }
   }
@@ -58,7 +61,7 @@ cf_common_exit_004B8058:
     return uVar3;
   }
   /* ST_CALLSITE[004B8066]: CALL 0x004015a5; direct=004015A5 TLOBaseTy::sub_004C7070 */
-  uVar3 = sub_004C7070(this,1);
-  return uVar3;
+  iVar2 = sub_004C7070(this,1);
+  return iVar2;
 }
 

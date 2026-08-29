@@ -9,27 +9,27 @@
    Evidence: 006D0020 -> EXTERNAL:0000009F @ 006D00AA */
 
 void FUN_006d0020(HDC hdc,undefined4 param_2,undefined4 param_3,LPRECT lprc,int param_5,int param_6,
-                 int param_7,int param_8)
+                 int param_7,RecoveredRecord_006D0020_8F58320F *param_8)
 
 {
-  LPCSTR lpchText;
+  byte *lpchText;
   char cVar1;
   COLORREF color;
   HDC pHVar2;
-  int iVar3;
+  RecoveredRecord_006D0020_8F58320F *pRVar3;
   int iVar4;
   uint uVar5;
-  LPCSTR pCVar6;
+  char *pcVar6;
   tagRECT local_14;
 
   pHVar2 = hdc;
+
   iVar4 = Library::DKW::DDX::FUN_006ce770((uint)hdc,&hdc);
-  iVar3 = param_8;
+  pRVar3 = param_8;
   if (iVar4 == 0) {
     /* ST_CALLSITE[006D0049]: CALL dword ptr [0x0085bab8] */
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    SetTextColor(hdc,*(COLORREF *)(param_8 + 0xc));
-    color = STField<COLORREF>(iVar3,0x10);
+    SetTextColor(hdc,param_8->field_000C);
+    color = *(COLORREF *)(pRVar3 + 1);
     if (color == 0xffffffff) {
       /* ST_CALLSITE[006D005D]: CALL dword ptr [0x0085ba68] */
       SetBkMode(hdc,1);
@@ -42,17 +42,18 @@ void FUN_006d0020(HDC hdc,undefined4 param_2,undefined4 param_3,LPRECT lprc,int 
     local_14.right = (int)&lprc->left + param_6;
     local_14.top = param_5;
     local_14.bottom = param_5 + param_7;
-    lpchText = (LPCSTR)(iVar3 + 0x18);
+    lpchText = &pRVar3[1].field_0x8;
     uVar5 = 0xffffffff;
-    pCVar6 = lpchText;
+    pcVar6 = lpchText;
     do {
       if (uVar5 == 0) break;
       uVar5 = uVar5 - 1;
-      cVar1 = *pCVar6;
-      pCVar6 = pCVar6 + 1;
+      cVar1 = *pcVar6;
+      pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
     /* ST_CALLSITE[006D00AA]: CALL dword ptr [0x0085be64] */
     DrawTextA(hdc,lpchText,~uVar5 - 1,&local_14,0x800);
+
     Library::DKW::DDX::FUN_006ce8c0((int)pHVar2,hdc);
   }
   return;

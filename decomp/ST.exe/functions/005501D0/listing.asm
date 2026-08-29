@@ -27,7 +27,7 @@ LAB_0055020e:
 00550214  8D 55 E0                  LEA EDX,[EBP + -0x20]
 00550217  8B 01                     MOV EAX,dword ptr [ECX]
 00550219  52                        PUSH EDX
-0055021A  FF 50 20                  CALL dword ptr [EAX + 0x20]
+0055021A  FF 50 20                  CALL dword ptr [EAX + 0x20]  ; [STIndirectCallsiteApplier] exact slot 0x20; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 0055021D  8B E5                     MOV ESP,EBP
 0055021F  5D                        POP EBP
 00550220  C2 04 00                  RET 0x4

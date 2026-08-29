@@ -23,7 +23,7 @@ void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
   uint uVar8;
   uint uVar9;
   int iVar10;
-  AnonShape_005E10A0_819783CC *pAVar11;
+  RecoveredRecordView_005E10A0_0590A448 *pRVar11;
   SpriteClassTy *this_01;
   uint *puVar12;
   uint uVar13;
@@ -34,10 +34,12 @@ void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar8 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",0x19c,0,iVar4,"%s"
                                ,"MTaskTy::NoneMTask");
     if (iVar8 == 0) {
@@ -55,48 +57,53 @@ void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
     uVar9 = 0;
     if (pDVar6->count != 0) {
       if (pDVar6->count == 0) {
-        pAVar11 = nullptr;
+        pRVar11 = nullptr;
         goto LAB_005e0b38;
       }
       do {
-        pAVar11 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar6, uVar9);
+        pRVar11 = DArrayAt<RecoveredRecordView_005E10A0_0590A448>(pDVar6, uVar9);
 LAB_005e0b38:
-        if (((-1 < *(int *)pAVar11) && (pAVar11->field_003A != 0)) && (pAVar11->field_0031 != 0)) {
-          if ((*(uint *)&pAVar11->field_0x1c - 3 < *(uint *)&pAVar11->field_0x10) &&
-             (*(uint *)&pAVar11->field_0x28 <
-              (uint)(this_00->field_0069 - *(int *)&pAVar11->field_0x24))) {
-            if (*(uint *)&pAVar11->field_0x10 < *(uint *)&pAVar11->field_0x1c) {
+        if (((-1 < *(int *)pRVar11) && (pRVar11->field_003A != 0)) && (pRVar11->field_0031 != 0)) {
+          if ((*(uint *)&pRVar11->field_0x1c - 3 < *(uint *)&pRVar11->field_0x10) &&
+             (*(uint *)&pRVar11->field_0x28 <
+              (uint)(this_00->field_0069 - *(int *)&pRVar11->field_0x24))) {
+            if (*(uint *)&pRVar11->field_0x10 < *(uint *)&pRVar11->field_0x1c) {
               /* ST_CALLSITE[005E0B85]: CALL 0x00405a51; direct=00405A51 MTaskTy::PrepareTSurf */
-              PrepareTSurf(this_00,*(AnonShape_005E11D0_D0F8BE03 **)&pAVar11->field_0x4,
-                           pAVar11->field_0x35,pAVar11->field_0x38);
-              FUN_00714b30((void *)pAVar11->field_0031,*(int *)&pAVar11->field_0x10 + -1);
-              ptVar5 = (tagBITMAPINFO *)FUN_007140e0((void *)pAVar11->field_0031,1,'\0');
+              PrepareTSurf(this_00,*(RecoveredRecordView_005E11D0_93326EAB **)&pRVar11->field_0x4,
+                           pRVar11->field_0x35,pRVar11->field_0x38);
+
+              FUN_00714b30((void *)pRVar11->field_0031,*(int *)&pRVar11->field_0x10 + -1);
+              /* ST_CALLSITE[005E0B9E]: CALL 0x007140e0; direct=007140E0 FUN_007140e0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; signature=__thiscall;pointer:/wingdi.h/tagBITMAPINFO;pointer:/void;/int;/char */
+              ptVar5 = FUN_007140e0((void *)pRVar11->field_0031,1,'\0');
               if (ptVar5 != nullptr) {
-                FUN_006b5440(*(ushort **)&pAVar11->field_0x4,0,*(int *)&pAVar11->field_0x14,
-                             *(int *)&pAVar11->field_0x18,ptVar5,0,0xff);
+                FUN_006b5440(*(ushort **)&pRVar11->field_0x4,0,*(int *)&pRVar11->field_0x14,
+                             *(int *)&pRVar11->field_0x18,ptVar5,0,0xff);
               }
-              FUN_006b35d0((int *)g_ddxContext_008075A8,*(uint *)pAVar11);
-              *(int *)&pAVar11->field_0x10 = *(int *)&pAVar11->field_0x10 + 1;
-              *(undefined4 *)&pAVar11->field_0x24 = this_00->field_0069;
+
+              FUN_006b35d0((int *)g_ddxContext_008075A8,*(uint *)pRVar11);
+              *(int *)&pRVar11->field_0x10 = *(int *)&pRVar11->field_0x10 + 1;
+              *(undefined4 *)&pRVar11->field_0x24 = this_00->field_0069;
             }
             else {
               /* ST_CALLSITE[005E0BE3]: CALL 0x0040555b; direct=0040555B MTaskTy::TTaskItemClose */
-              TTaskItemClose(this_00,pAVar11);
+              TTaskItemClose(this_00,pRVar11);
             }
           }
-          if (*(uint *)&pAVar11->field_0x10 < *(int *)&pAVar11->field_0x1c - 3U) {
+          if (*(uint *)&pRVar11->field_0x10 < *(int *)&pRVar11->field_0x1c - 3U) {
             /* ST_CALLSITE[005E0C03]: CALL 0x00405a51; direct=00405A51 MTaskTy::PrepareTSurf */
-            PrepareTSurf(this_00,*(AnonShape_005E11D0_D0F8BE03 **)&pAVar11->field_0x4,
-                         pAVar11->field_0x35,pAVar11->field_0x38);
-            ptVar5 = (tagBITMAPINFO *)FUN_007140e0((void *)pAVar11->field_0031,1,'\0');
+            PrepareTSurf(this_00,*(RecoveredRecordView_005E11D0_93326EAB **)&pRVar11->field_0x4,
+                         pRVar11->field_0x35,pRVar11->field_0x38);
+            /* ST_CALLSITE[005E0C0F]: CALL 0x007140e0; direct=007140E0 FUN_007140e0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; signature=__thiscall;pointer:/wingdi.h/tagBITMAPINFO;pointer:/void;/int;/char */
+            ptVar5 = FUN_007140e0((void *)pRVar11->field_0031,1,'\0');
             if (ptVar5 != nullptr) {
-              FUN_006b5440(*(ushort **)&pAVar11->field_0x4,0,*(int *)&pAVar11->field_0x14,
-                           *(int *)&pAVar11->field_0x18,ptVar5,0,0xff);
+              FUN_006b5440(*(ushort **)&pRVar11->field_0x4,0,*(int *)&pRVar11->field_0x14,
+                           *(int *)&pRVar11->field_0x18,ptVar5,0,0xff);
             }
-            FUN_006b35d0((int *)g_ddxContext_008075A8,*(uint *)pAVar11);
-            uVar8 = *(int *)&pAVar11->field_0x10 + 1;
-            *(uint *)&pAVar11->field_0x10 = uVar8;
-            if ((pAVar11->field_0x30 != '\0') && (uVar8 % 3 != 0)) {
+
+            FUN_006b35d0((int *)g_ddxContext_008075A8,*(uint *)pRVar11);
+            uVar8 = *(int *)&pRVar11->field_0x10 + 1;
+            *(uint *)&pRVar11->field_0x10 = uVar8;
+            if ((pRVar11->field_0x30 != '\0') && (uVar8 % 3 != 0)) {
               thunk_FUN_005b6730(this_00,0x1e,'\x01',-1);
             }
           }
@@ -111,24 +118,25 @@ LAB_005e0b38:
     uVar9 = 0;
     if (pDVar6->count != 0) {
       if (pDVar6->count == 0) {
-        pAVar11 = nullptr;
+        pRVar11 = nullptr;
         goto LAB_005e0ca3;
       }
       do {
-        pAVar11 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar6, uVar9);
+        pRVar11 = DArrayAt<RecoveredRecordView_005E10A0_0590A448>(pDVar6, uVar9);
 LAB_005e0ca3:
-        if (((-1 < (int)*(uint *)pAVar11) && (*(int *)&pAVar11->field_0x10 != 0)) &&
-           (*(uint *)&pAVar11->field_0x28 <
-            (uint)(this_00->field_0069 - *(int *)&pAVar11->field_0x24))) {
-          uVar8 = *(int *)&pAVar11->field_0x10 + 1;
-          *(uint *)&pAVar11->field_0x10 = uVar8;
-          *(undefined4 *)&pAVar11->field_0x24 = this_00->field_0069;
+        if (((-1 < (int)*(uint *)pRVar11) && (*(int *)&pRVar11->field_0x10 != 0)) &&
+           (*(uint *)&pRVar11->field_0x28 <
+            (uint)(this_00->field_0069 - *(int *)&pRVar11->field_0x24))) {
+          uVar8 = *(int *)&pRVar11->field_0x10 + 1;
+          *(uint *)&pRVar11->field_0x10 = uVar8;
+          *(undefined4 *)&pRVar11->field_0x24 = this_00->field_0069;
           if (uVar8 < 3) {
-            FUN_006b35d0((int *)g_ddxContext_008075A8,*(uint *)pAVar11);
+
+            FUN_006b35d0((int *)g_ddxContext_008075A8,*(uint *)pRVar11);
           }
           else {
             /* ST_CALLSITE[005E0CDC]: CALL 0x0040555b; direct=0040555B MTaskTy::TTaskItemClose */
-            TTaskItemClose(this_00,pAVar11);
+            TTaskItemClose(this_00,pRVar11);
           }
         }
         pDVar6 = this_00->field_064F;
@@ -157,9 +165,11 @@ LAB_005e0d20:
               this_01->field_0008 = uVar7;
               this_01->field_0044 = this_00->field_0069;
               if (uVar7 == this_01->field_000C) {
+
                 SpriteClassTy::CloseSprite(this_01);
               }
               else {
+
                 Library::DKW::DDX::FUN_006b3730
                           ((uint *)this_01->field_0048,uVar9,uVar7,this_01->field_001C,
                            this_01->field_0020);
@@ -174,6 +184,7 @@ LAB_005e0d20:
                 this_01->field_0008 = 0;
               }
               this_01->field_0044 = this_00->field_0069;
+
               Library::DKW::DDX::FUN_006b3730
                         ((uint *)this_01->field_0048,uVar9,this_01->field_0008,this_01->field_001C,
                          this_01->field_0020);
@@ -202,6 +213,7 @@ LAB_005e0d20:
               puVar12 = (uint *)this_01->field_0048;
               goto LAB_005e0edd;
             }
+
             SpriteClassTy::CloseSprite(this_01);
             if (*(int *)((int)&this_01[1].field_0008 + 1) != 0) {
               FreeAndNull((void *)((int)&this_01[1].field_0008 + 1));
@@ -230,6 +242,7 @@ LAB_005e0d20:
             uVar13 = this_01->field_0008;
             puVar12 = (uint *)this_01->field_0048;
 LAB_005e0edd:
+
             Library::DKW::DDX::FUN_006b3730(puVar12,uVar9,uVar13,uVar7,uVar8);
             uVar8 = local_8;
           }

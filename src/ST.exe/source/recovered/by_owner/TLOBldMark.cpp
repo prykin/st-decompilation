@@ -14,6 +14,7 @@
 TLOBldMark * __thiscall st::fn_004C60A0(TLOBldMark *this)
 
 {
+
   st::fn_006E5FB0(this);
   this->vtable = &st_global_00790C04;
   this->field_002C = nullptr;
@@ -37,7 +38,7 @@ undefined4 __thiscall st::fn_004C61A0(TLOBldMark *this)
 {
   if (this->field_0018 == 0) {
     st::fn_004021D5(this->field_002C);
-    st::fn_0072E2B0((HoloTy *)this->field_002C);
+    st::fn_0072E2B0(reinterpret_cast<HoloTy *>(this->field_002C));
   }
   g_tLOBldMark_007FB2AC = nullptr;
   return 0;
@@ -53,11 +54,13 @@ undefined4 __thiscall st::fn_004C61A0(TLOBldMark *this)
 undefined4 __thiscall st::fn_004C61E0(TLOBldMark *this)
 
 {
-  DWORD DVar1;
+  int iVar1;
 
   if (this->field_0018 == 0) {
-    DVar1 = st::fn_006E51B0(this->field_0010);
-    st::fn_004033AA(this->field_002C,DVar1);
+
+    iVar1 = st::fn_006E51B0(this->field_0010);
+
+    st::fn_004033AA(this->field_002C,iVar1);
   }
   return 0;
 }
@@ -76,9 +79,8 @@ undefined4 __thiscall st::fn_004C63F0(TLOBldMark *this)
   /* ST_CALLSITE[004C63FF]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
   st::fn_00404264(this->field_002C,0);
   st::fn_004021D5(this->field_002C);
-  st::fn_0072E2B0((HoloTy *)this->field_002C);
+  st::fn_0072E2B0(reinterpret_cast<HoloTy *>(this->field_002C));
   this->field_0024 = 0;
   this->field_0028 = 0;
   return 0;
 }
-

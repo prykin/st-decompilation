@@ -36,7 +36,8 @@ CreateMiniMap:
 0052ABA6  E8 E0 A1 ED FF            CALL 0x00404d8b
 LAB_0052abab:
 0052ABAB  68 F2 04 00 00            PUSH 0x4f2
-0052ABB0  E8 1B 59 18 00            CALL 0x006b04d0
+CreateMiniMap::override::prt_52abb0_c759b330:
+0052ABB0  E8 1B 59 18 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F;/uint
 0052ABB5  3B C6                     CMP EAX,ESI
 0052ABB7  74 0B                     JZ 0x0052abc4
 0052ABB9  8B C8                     MOV ECX,EAX

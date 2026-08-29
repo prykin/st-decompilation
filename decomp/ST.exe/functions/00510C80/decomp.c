@@ -22,6 +22,7 @@ HelpPanelTy * __thiscall HelpPanelTy::HelpPanelTy(HelpPanelTy *this)
   byte *pbVar1;
   int iVar2;
 
+
   sub_006E5FB0(this);
   this->field_005C = 0;
   this->field_0044 = 0;

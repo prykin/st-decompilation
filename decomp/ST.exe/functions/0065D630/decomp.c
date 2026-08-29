@@ -1,14 +1,13 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_0065d630(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 param_2)
+void __fastcall FUN_0065d630(RecoveredRecordView_0065DA10_5A1C53AF *param_1,undefined4 param_2)
 
 {
   uint uVar1;
-  undefined4 local_24 [8];
-
+  uint local_24 [8];
   thunk_FUN_0065e6c0(param_1,param_2);
-  thunk_FUN_0065d600((int)param_1);
+  thunk_FUN_0065d600((RecoveredRecordView_0065D590_F2A3738B *)param_1);
   uVar1 = *(undefined4 *)&param_1->field_0x8;
   memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -16,6 +15,7 @@ void __fastcall FUN_0065d630(AnonShape_0065DA10_8B0AA883 *param_1,undefined4 par
   local_24[3] = 0;
   local_24[4] = 10;
   local_24[5] = uVar1;
+
   sub_006E60A0(param_1,local_24);
   return;
 }

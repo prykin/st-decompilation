@@ -33,6 +33,7 @@ AiFltClassTy::sub_0065FA60(AiFltClassTy *this,int param_1,int param_2,short *par
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_14 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   pAVar1 = local_14;
   if (iVar2 == 0) {
@@ -86,6 +87,7 @@ AiFltClassTy::sub_0065FA60(AiFltClassTy *this,int param_1,int param_2,short *par
               ((((int)*param_3 + (int)param_3[3] <= (int)local_6 ||
                 ((int)param_3[1] + (int)param_3[4] <= (int)local_8)) ||
                ((int)param_3[2] + (int)param_3[5] <= (int)local_a)))))) {
+
             DArrayRemoveAt(array,index);
             local_18 = index;
           }

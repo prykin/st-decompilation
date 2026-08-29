@@ -12,7 +12,7 @@ LAB_006c8922:
 006C8925  56                        PUSH ESI
 006C8926  E8 C5 FE FF FF            CALL 0x006c87f0
 006C892B  50                        PUSH EAX
-006C892C  E8 3F 23 FE FF            CALL 0x006aac70
+006C892C  E8 3F 23 FE FF            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 006C8931  85 C0                     TEST EAX,EAX
 006C8933  75 06                     JNZ 0x006c893b
 006C8935  5F                        POP EDI

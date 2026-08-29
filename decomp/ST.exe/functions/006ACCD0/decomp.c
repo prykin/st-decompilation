@@ -20,7 +20,7 @@ void FUN_006accd0(RuntimeRecord_007F4D3C_0014 *param_1,undefined4 *param_2,int p
   RuntimeRecord_007F4D3C_0014 *arg_2;
   RuntimeRecord_007F4D3C_0014 *pRVar4_mg0;
   RuntimeRecord_007F4D3C_0014 *pRVar5_mg1;
-  undefined4 local_fc;
+  uint local_fc;
   uint local_f8 [59];
   uint *local_c;
   RuntimeRecord_007F4D3C_0014 *local_8;

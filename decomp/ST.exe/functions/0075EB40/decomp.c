@@ -2,8 +2,8 @@
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0075E890 -> 0075EB40 @ 0075E8FE; FUN_0075e890 parameter param_1 */
 
-void FUN_0075eb40(AnonShape_0075E890_C23EB446 *param_1,int param_2,int param_3,int param_4,
-                 int param_5,int param_6,byte *param_7)
+void FUN_0075eb40(RecoveredRecordView_0075E890_53B4743B *param_1,int param_2,int param_3,int param_4
+                 ,int param_5,int param_6,byte *param_7)
 
 {
   byte bVar1;

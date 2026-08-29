@@ -5,7 +5,7 @@
    [STSourceProvenanceApplier end] */
 
 int FUN_00412960(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
-                AnonShape_00412960_B35D15BC *param_7,int param_8)
+                RecoveredRecordView_00412960_AA54A22A *param_7,int param_8)
 
 {
   int iVar1;
@@ -13,7 +13,7 @@ int FUN_00412960(int param_1,int param_2,int param_3,int param_4,int param_5,int
   int iVar2_mg2;
   int iVar3;
   int iVar4;
-  AnonShape_00412960_B35D15BC *pAVar5;
+  RecoveredRecordView_00412960_AA54A22A *pRVar5;
   int iVar6;
 
   if ((((DAT_007f4d20 < 0xc9) && (-1 < param_1)) && (param_1 < DAT_007f4d2c)) &&
@@ -25,32 +25,34 @@ int FUN_00412960(int param_1,int param_2,int param_3,int param_4,int param_5,int
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_2 = param_2 + (DAT_007f4d28 * param_4 >> 0x10);
     }
+
     DAT_007f4d28 = Library::DKW::STR::FUN_006db640(param_5 - param_7->field_0004);
+
     DAT_007f4d38 = FUN_006db6d0(param_5 - param_7->field_0004);
     if (param_6 != param_7->field_0008) {
       iVar2 = 30000;
       iVar3 = -30000;
-      pAVar5 = param_7 + 1;
+      pRVar5 = param_7 + 1;
       iVar6 = 30000;
       auto param_4_after_write = -30000; /* compiler stack-slot lifetime split */
       iVar4 = DAT_007f4d20;
       if (0 < DAT_007f4d20) {
         do {
-          iVar1 = *(int *)pAVar5;
+          iVar1 = *(int *)pRVar5;
           if (iVar1 < iVar2) {
             iVar2 = iVar1;
           }
           if (iVar3 < iVar1) {
             iVar3 = iVar1;
           }
-          iVar1 = pAVar5->field_0004;
+          iVar1 = pRVar5->field_0004;
           if (iVar1 < iVar6) {
             iVar6 = iVar1;
           }
           if (param_4_after_write < iVar1) {
             param_4_after_write = iVar1;
           }
-          pAVar5 = (AnonShape_00412960_B35D15BC *)&pAVar5[1].field_0004;
+          pRVar5 = (RecoveredRecordView_00412960_AA54A22A *)&pRVar5[1].field_0004;
           iVar4 = iVar4 + -1;
         } while (iVar4 != 0);
       }
@@ -64,13 +66,16 @@ int FUN_00412960(int param_1,int param_2,int param_3,int param_4,int param_5,int
       DAT_007f4d28 = (DAT_007f4d28 * iVar2) / iVar4;
     }
     if (param_8 == 0) {
+
       iVar2_mg2 = FUN_00412de0(param_1,param_2,param_3);
       if (iVar2_mg2 == 0) {
+
         FUN_0040eb90();
         return 0;
       }
     }
     else {
+
       iVar2_mg2 = FUN_00412b80(param_1,param_2,param_3);
       if (iVar2_mg2 == 0) {
         return 0;

@@ -93,6 +93,7 @@ public class STVTableAnalyzer extends GhidraScript {
         candidates.sort(Comparator.comparing(candidate -> candidate.address));
         List<Relation> relations = analyzeRelations(candidates);
         inferRareOverrideOwners(candidates);
+        demoteCompetingPrimaryOwnerTables(candidates);
         makeProposalNamesUnique(candidates);
 
         Path dir = root.toPath().toAbsolutePath().normalize()
@@ -251,6 +252,16 @@ public class STVTableAnalyzer extends GhidraScript {
         for (Slot slot : candidate.slots) {
             if (!slot.owner.isEmpty()) slotVotes.merge(slot.owner, 1, Integer::sum);
         }
+        // Hidden-this identities are structural placeholders, not semantic class
+        // owners.  Once one independently named owner is present they must not turn
+        // an otherwise coherent physical table into an owner conflict.  Keep them in
+        // slotOwners for audit, but exclude them from the owner vote itself.
+        Map<String, Integer> semanticSlotVotes = new TreeMap<>();
+        for (Map.Entry<String, Integer> vote : slotVotes.entrySet())
+            if (!structuralReceiverOwner(vote.getKey()))
+                semanticSlotVotes.put(vote.getKey(), vote.getValue());
+        Map<String, Integer> ownerVotes = semanticSlotVotes.isEmpty() ?
+            slotVotes : semanticSlotVotes;
         for (CodeReference reference : candidate.evidence.references) {
             if (!reference.strong || reference.owner.isEmpty()) continue;
             writerVotes.merge(reference.owner, 1, Integer::sum);
@@ -263,11 +274,11 @@ public class STVTableAnalyzer extends GhidraScript {
         candidate.constructorOwners.addAll(constructorVotes.keySet());
         candidate.vptrWriterOwners.addAll(writerVotes.keySet());
         String constructorOwner = uniqueOwner(constructorVotes);
-        String unanimousSlotOwner = uniqueOwner(slotVotes);
+        String unanimousSlotOwner = uniqueOwner(ownerVotes);
         boolean strongOwnerDisagreement = !constructorOwner.isEmpty() &&
             !unanimousSlotOwner.isEmpty() &&
             !constructorOwner.equals(unanimousSlotOwner) &&
-            slotVotes.getOrDefault(unanimousSlotOwner, 0) >= 2;
+            ownerVotes.getOrDefault(unanimousSlotOwner, 0) >= 2;
         if (strongOwnerDisagreement) {
             // A nested base constructor may already have inherited the derived method owner.
             // Do not let that structural name override several independently named virtual
@@ -297,26 +308,26 @@ public class STVTableAnalyzer extends GhidraScript {
             candidate.ownerConflict = true;
             candidate.confidence = "low";
         }
-        else if (slotVotes.size() == 1 && slotVotes.values().iterator().next() >= 2 &&
+        else if (ownerVotes.size() == 1 && ownerVotes.values().iterator().next() >= 2 &&
                 candidate.evidence.hasStrongReference()) {
-            candidate.owner = slotVotes.keySet().iterator().next();
+            candidate.owner = ownerVotes.keySet().iterator().next();
             candidate.reason = "unique_slot_owner_and_vptr_store";
             candidate.confidence = "high";
             candidate.apply = true;
         }
-        else if (candidate.slots.size() == 1 && slotVotes.size() == 1 &&
+        else if (candidate.slots.size() == 1 && ownerVotes.size() == 1 &&
                 candidate.hasPrimaryVptrStore() &&
-                hasDirectNamedSlotAnchor(candidate, slotVotes.keySet().iterator().next())) {
-            candidate.owner = slotVotes.keySet().iterator().next();
+                hasDirectNamedSlotAnchor(candidate, ownerVotes.keySet().iterator().next())) {
+            candidate.owner = ownerVotes.keySet().iterator().next();
             candidate.reason = "single_slot_named_override_and_vptr_store";
             candidate.confidence = "high";
             candidate.apply = true;
         }
-        else if (!slotVotes.isEmpty()) {
-            candidate.owner = slotVotes.size() == 1 ? slotVotes.keySet().iterator().next() : "";
-            candidate.reason = slotVotes.size() == 1 ? "single_named_slot_owner" :
+        else if (!ownerVotes.isEmpty()) {
+            candidate.owner = ownerVotes.size() == 1 ? ownerVotes.keySet().iterator().next() : "";
+            candidate.reason = ownerVotes.size() == 1 ? "single_named_slot_owner" :
                 "competing_slot_owners_left_unresolved";
-            candidate.ownerConflict = slotVotes.size() > 1;
+            candidate.ownerConflict = ownerVotes.size() > 1;
             candidate.confidence = candidate.ownerConflict ? "low" : "medium";
         }
         else {
@@ -335,6 +346,14 @@ public class STVTableAnalyzer extends GhidraScript {
             }
             else slot.proposedName = slot.targetName();
         }
+    }
+
+    private boolean structuralReceiverOwner(String owner) {
+        String value = owner == null ? "" : owner;
+        return value.startsWith(
+            "SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_") ||
+            value.startsWith(
+                "SubmarineTitans::Recovered::HiddenThis::AnonReceiver_");
     }
 
     private void indexFinalStrongVptrStores(List<Candidate> candidates) {
@@ -473,6 +492,80 @@ public class STVTableAnalyzer extends GhidraScript {
                 candidate.reason = "derived_owner_from_rare_override";
             }
         }
+    }
+
+    /**
+     * MSVC constructors can install a base or construction vtable before the
+     * final most-derived table.  Those are all real physical layouts, but only
+     * one may type the class's offset-zero vptr.  Selecting whichever proposal
+     * happens to be written first makes the owner oscillate and can destroy a
+     * previously readable derived dispatch.  Resolve each owner as a family and
+     * retain semantic ownership only for one uniquely strongest final anchor.
+     */
+    private void demoteCompetingPrimaryOwnerTables(List<Candidate> candidates) {
+        Map<String, List<Candidate>> byOwner = new TreeMap<>();
+        for (Candidate candidate : candidates) {
+            if (!candidate.apply || candidate.owner.isEmpty() ||
+                    !candidate.hasPrimaryVptrStore()) continue;
+            byOwner.computeIfAbsent(candidate.owner, ignored -> new ArrayList<>()).add(candidate);
+        }
+        for (List<Candidate> family : byOwner.values()) {
+            if (family.size() < 2) continue;
+            int best = family.stream().mapToInt(this::primaryOwnerScore).max().orElse(0);
+            List<Candidate> winners = family.stream()
+                .filter(candidate -> primaryOwnerScore(candidate) == best).toList();
+            Candidate winner = winners.size() == 1 ? winners.get(0) : null;
+            for (Candidate candidate : family) {
+                if (candidate == winner) continue;
+                demoteCompetingPrimary(candidate, winner);
+            }
+        }
+    }
+
+    private int primaryOwnerScore(Candidate candidate) {
+        int score = 0;
+        String ownerLeaf = candidate.owner;
+        int separator = ownerLeaf.lastIndexOf("::");
+        if (separator >= 0) ownerLeaf = ownerLeaf.substring(separator + 2);
+        for (CodeReference reference : candidate.evidence.references) {
+            if (!reference.strong || reference.thisOffset == null ||
+                    reference.thisOffset.longValue() != 0 || reference.function == null) continue;
+            if (reference.factoryAnchor && candidate.owner.equals(reference.owner))
+                score = Math.max(score, 500);
+            Address finalStore = finalStrongVptrStore.get(reference.function);
+            if (ownerLeaf.equals(reference.function.getName()) &&
+                    reference.address.equals(finalStore))
+                score = Math.max(score, 400);
+            if (hasTag(reference.function, CONSTRUCTOR_TAG) &&
+                    exactConstructorTable(reference.function, candidate.address))
+                score = Math.max(score, 200);
+        }
+        if ("unique_factory_result_vptr_anchor".equals(candidate.reason)) score += 80;
+        else if ("unique_constructor_vptr_anchor".equals(candidate.reason)) score += 40;
+        score += Math.min(32, candidate.namedSlotCount());
+        return score;
+    }
+
+    private boolean exactConstructorTable(Function function, Address tableAddress) {
+        String comment = function.getComment();
+        if (comment == null) return false;
+        Matcher matcher = RECOVERED_CONSTRUCTOR_TABLE.matcher(comment);
+        while (matcher.find())
+            if (addr(tableAddress).equalsIgnoreCase(matcher.group(1))) return true;
+        return false;
+    }
+
+    private void demoteCompetingPrimary(Candidate candidate, Candidate winner) {
+        candidate.apply = false;
+        candidate.ownerConflict = true;
+        candidate.confidence = "medium";
+        candidate.reason = winner == null ?
+            "competing_primary_tables_without_unique_final_anchor" :
+            "competing_primary_table_shadowed_by_stronger_final_anchor_" +
+                addr(winner.address);
+        candidate.owner = "";
+        candidate.proposedName = "VTable_" + addr(candidate.address);
+        for (Slot slot : candidate.slots) slot.proposedName = slot.targetName();
     }
 
     private void demoteInheritedOwnerGuess(Candidate candidate, Candidate related) {

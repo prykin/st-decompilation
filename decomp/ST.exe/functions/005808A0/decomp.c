@@ -12,18 +12,19 @@
    owner_type=/STDcResourcC; current target parameter and return types retained when arity agrees;
    physical-slot geometry proves receiver/stack ABI only */
 
-void __thiscall STDcResourcC::sub_005808A0(STDcResourcC *this,undefined1 *param_1)
+void __thiscall
+STDcResourcC::sub_005808A0(STDcResourcC *this,RecoveredRecord_005808A0_34963C85 *param_1)
 
 {
   dword dVar1;
 
-  *param_1 = 4;
-  param_1[1] = 0;
+  *(undefined1 *)param_1 = 4;
+  param_1->field_0x1 = 0;
   /* ST_CALLSITE[005808B3]: CALL dword ptr [EAX + 0x2c] */
-  dVar1 = this->slot_2C();
-  *(dword *)(param_1 + 2) = dVar1;
-  param_1[6] = 0;
-  *(undefined4 *)(param_1 + 7) = this->field_0018;
+  dVar1 = this->vfunc_2C();
+  param_1->field_0002 = dVar1;
+  param_1->field_0x6 = 0;
+  param_1->field_0007 = this->field_0018;
   return;
 }
 

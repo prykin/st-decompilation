@@ -39,7 +39,7 @@ LAB_0067e25e:
 0067E268  56                        PUSH ESI
 0067E269  6A 02                     PUSH 0x2
 0067E26B  52                        PUSH EDX
-0067E26C  E8 8F 49 07 00            CALL 0x006f2c00
+0067E26C  E8 8F 49 07 00            CALL 0x006f2c00  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 0067E271  83 C4 0C                  ADD ESP,0xc
 0067E274  50                        PUSH EAX
 0067E275  6A 00                     PUSH 0x0

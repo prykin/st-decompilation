@@ -37,7 +37,7 @@ LAB_004d6f9f:
 LAB_004d6fd7:
 004D6FD7  8B 06                     MOV EAX,dword ptr [ESI]
 004D6FD9  8B CE                     MOV ECX,ESI
-004D6FDB  FF 90 C4 00 00 00         CALL dword ptr [EAX + 0xc4]
+004D6FDB  FF 90 C4 00 00 00         CALL dword ptr [EAX + 0xc4]  ; [STIndirectCallsiteApplier] exact slot 0xC4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004D6FE1  33 C9                     XOR ECX,ECX
 004D6FE3  83 F8 64                  CMP EAX,0x64
 004D6FE6  0F 9D C1                  SETGE CL

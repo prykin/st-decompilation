@@ -17,8 +17,9 @@ MainMenuTy * __cdecl CreateMainMenu(void)
   uint *puVar3;
   SpriteClassTy *this_00;
   uint *puVar4;
-  this = (MainMenuTy *)FUN_006b04d0(0x1ee4);
+  this = STPointerBoundaryCast<MainMenuTy *>(FUN_006b04d0(0x1ee4));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->vtable = (MainMenuTyVTable *)&VTable_0079C018;
     this->field_0018 = 0;

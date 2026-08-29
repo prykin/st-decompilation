@@ -12,27 +12,28 @@
    owner_type=/STDcResourcC; current target parameter and return types retained when arity agrees;
    physical-slot geometry proves receiver/stack ABI only */
 
-void __thiscall STDcResourcC::sub_00580700(STDcResourcC *this,undefined1 *param_1)
+void __thiscall
+STDcResourcC::sub_00580700(STDcResourcC *this,RecoveredRecord_00580700_AE7D638A *param_1)
 
 {
   byte uVar1;
   byte bVar2;
   dword dVar3;
 
-  *param_1 = 4;
+  *(undefined1 *)param_1 = 4;
   uVar1 = this->field_021D;
-  param_1[2] = 0;
-  param_1[1] = uVar1;
+  param_1->field_0x2 = 0;
+  param_1->field_0x1 = uVar1;
   /* ST_CALLSITE[0058071C]: CALL dword ptr [EDX + 0x2c] */
-  dVar3 = this->slot_2C();
-  *(dword *)(param_1 + 3) = dVar3;
+  dVar3 = this->vfunc_2C();
+  param_1->field_0003 = dVar3;
   /* ST_CALLSITE[0058072C]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
   bVar2 = LookupRecordByte(this->field_0024);
-  param_1[7] = bVar2;
-  *(undefined4 *)(param_1 + 8) = this->field_0018;
-  param_1[0x2e - this->field_024D] = 1;
-  param_1[0x1b] = 100;
-  param_1[0x1d] = 1;
+  param_1->field_0x7 = bVar2;
+  param_1->field_0008 = this->field_0018;
+  *(undefined1 *)((int)param_1 + (0x2e - this->field_024D)) = 1;
+  *(undefined1 *)&param_1[2].field_0003 = 100;
+  *(undefined1 *)((int)&param_1[2].field_0003 + 2) = 1;
   return;
 }
 

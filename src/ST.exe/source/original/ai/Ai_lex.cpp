@@ -11,7 +11,7 @@
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 006736F0 -> 00672B60 @ 00673B35 */
 
-int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
+int st::fn_00672B60(char *param_1,RecoveredGlobalRecordView_0081194C *param_2)
 
 {
   char cVar1;
@@ -41,12 +41,14 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
     DAT_00811908 = 0;
     DAT_007d2d24 = 0x600;
   }
+
   local_1c = static_cast<int *>(st::fn_006AAC10(0x30));
   if (local_1c == nullptr) {
     return -2;
   }
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
+
   exceptionCode = st::fn_0072D7F0(local_60.jumpBuffer,0);
   if (exceptionCode != 0) {
     g_currentExceptionFrame = local_60.previous;
@@ -54,30 +56,34 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
     st::fn_006A5E90(local_10);
     st::fn_006A5E90(local_14);
     if (PTR_0085753c == nullptr) {
-      st::fn_006A5E90((short *)local_8);
+      st::fn_006A5E90(reinterpret_cast<short *>(local_8));
     }
     piVar2 = local_1c;
     st::fn_006A5E90((short *)local_1c[6]);
     st::fn_006A5E90((short *)piVar2[0xb]);
     st::fn_006A5E90((short *)piVar2[7]);
-    st::fn_006A5E90((short *)piVar2);
+    st::fn_006A5E90(reinterpret_cast<short *>(piVar2));
     st::fn_006A5E40(exceptionCode,0,st::mutable_c_string("E:\\__titans\\ai\\Ai_lex.c"),0xfd);
     return exceptionCode;
   }
   if (PTR_0085755c == nullptr) {
+
     local_c = static_cast<short *>(st::fn_006AAC70(0x401));
     *(char *)local_c = '\0';
   }
   if (PTR_00857528 == nullptr) {
+
     local_10 = static_cast<short *>(st::fn_006AAC70(0x401));
     *(char *)local_10 = '\0';
   }
   if (PTR_00811948 == nullptr) {
+
     local_14 = static_cast<short *>(st::fn_006AAC70(0x401));
     *(char *)local_14 = '\0';
   }
   if (PTR_0085753c == nullptr) {
-    local_8 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(0x105));
+
+    local_8 = (byte *)st::fn_006AAC70(0x105);
     *local_8 = 0;
   }
   else {
@@ -90,7 +96,7 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
   piVar2[6] = (int)pcVar3_mg0;
   pcVar3_mg1 = st::fn_006C49B0(PTR_00811948);
   piVar2[0xb] = (int)pcVar3_mg1;
-  pcVar3_mg2 = st::fn_006C49B0((char *)PTR_0085753c);
+  pcVar3_mg2 = st::fn_006C49B0(reinterpret_cast<char *>(PTR_0085753c));
   piVar2[7] = (int)pcVar3_mg2;
   PTR_0081194c = param_2;
   local_18 = 0;
@@ -113,19 +119,19 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
         param_1 = pcVar3_mg3;
       } while (cVar1 != '\0');
       uVar3 = ~uVar3;
-      pbVar5 = (byte *)(pcVar3_mg3 + -uVar3);
+      pbVar5 = reinterpret_cast<byte *>((pcVar3_mg3 + -uVar3));
       pbVar6 = local_8;
       memmove(pbVar6, pbVar5, uVar3); /* compiler REP MOVS byte copy */
     }
   }
   if (PTR_0085755c == nullptr) {
-    PTR_0085755c = (char *)local_c;
+    PTR_0085755c = reinterpret_cast<char *>(local_c);
   }
   if (PTR_00857528 == nullptr) {
-    PTR_00857528 = (char *)local_10;
+    PTR_00857528 = reinterpret_cast<char *>(local_10);
   }
   if (PTR_00811948 == nullptr) {
-    PTR_00811948 = (char *)local_14;
+    PTR_00811948 = reinterpret_cast<char *>(local_14);
   }
   if (PTR_0085753c == nullptr) {
     PTR_0085753c = local_8;
@@ -150,4 +156,3 @@ int st::fn_00672B60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
   DAT_00811958 = st::machine_word_boundary_cast<undefined4>(piVar2);
   return 0;
 }
-

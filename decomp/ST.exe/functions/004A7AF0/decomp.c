@@ -14,7 +14,7 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
   uint uVar4;
   STGameObjC *pSVar5;
   DArrayTy *array;
-  undefined4 local_2c;
+  uint local_2c;
   int local_26;
   int local_22;
   int local_1e;
@@ -28,29 +28,35 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
   if (this->field_022A == nullptr) {
     return 1;
   }
+
   DArrayGetElement(this->field_022A,this->field_0232,&local_14);
   if (param_1 == 1) {
-    local_1e = thunk_FUN_0040bc90(this,param_2 & 0xffff,(short *)(int)local_14,
-                                  (short *)(int)local_12,(short *)(int)local_10,'\0');
+    /* ST_CALLSITE[004A7B4F]: CALL 0x0040407a; direct=0040407A STGroupBoatC::sub_0040BC90 */
+    local_1e = sub_0040BC90(this,param_2 & 0xffff,(short *)(int)local_14,(short *)(int)local_12,
+                            (short *)(int)local_10,'\0');
     if (this->field_0242 < local_1e) {
       if ((1 < (ushort)this->field_0027) &&
          (((this->field_0236 == 1 && (local_1e <= local_a / 2)) ||
           ((this->field_0236 == 0 && (local_1e <= local_e / 2)))))) {
+
         DArrayGetElement(this->field_022E,param_3,&local_2c);
         if (local_1a != 0) {
           if (local_1a == 1) {
             if (local_1e < local_26) {
               local_1a = 1;
               local_26 = local_1e;
+
               Library::DKW::TBL::DArrayPut(this->field_022E,param_3,&local_2c);
               return 0;
             }
             local_1a = 2;
             local_22 = local_1e;
+
             Library::DKW::TBL::DArrayPut(this->field_022E,param_3,&local_2c);
             return 0;
           }
           if (local_1a != 2) {
+
             iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x164b,0,0,
                                        "%s","STGroupBoatC::GetPatrolTask incorrect data");
             if (iVar2 == 0) {
@@ -64,6 +70,7 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
             }
             local_1a = 3;
             local_2c = 1;
+
             Library::DKW::TBL::DArrayPut(this->field_022E,param_3,&local_2c);
             /* ST_CALLSITE[004A7C80]: CALL 0x0040331e; direct=0040331E STGroupBoatC::sub_004A7E30 */
             iVar3 = sub_004A7E30(this,1);
@@ -72,6 +79,7 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
         }
         local_1a = 1;
         local_26 = local_1e;
+
         Library::DKW::TBL::DArrayPut(this->field_022E,param_3,&local_2c);
       }
       return 0;
@@ -79,11 +87,13 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
     if (this->field_023E == 0) {
       this->field_023E = 1;
     }
+
     DArrayGetElement(this->field_022E,param_3,&local_2c);
     array = this->field_022E;
   }
   else {
-    pSVar5 = thunk_FUN_00423e70(this,(ushort)param_2);
+    /* ST_CALLSITE[004A7D11]: CALL 0x0040286f; direct=0040286F STGroupBoatC::sub_00423E70 */
+    pSVar5 = sub_00423E70(this,(ushort)param_2);
     if ((int)pSVar5->field_0047 != pSVar5->field_00C7) {
       return 0;
     }
@@ -96,10 +106,12 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
     if (this->field_023E == 0) {
       this->field_023E = 1;
     }
+
     DArrayGetElement(this->field_022E,param_3,&local_2c);
     array = this->field_022E;
   }
   local_2c = 1;
+
   Library::DKW::TBL::DArrayPut(array,param_3,&local_2c);
   /* ST_CALLSITE[004A7B9B]: CALL 0x0040331e; direct=0040331E STGroupBoatC::sub_004A7E30 */
   iVar3 = sub_004A7E30(this,1);

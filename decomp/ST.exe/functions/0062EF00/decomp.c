@@ -10,7 +10,8 @@
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
 undefined4 __thiscall
-STRubbishC::sub_0062EF00(STRubbishC *this,int param_1,AnonShape_0062FCA0_22A9EE35 *param_2)
+STRubbishC::sub_0062EF00
+          (STRubbishC *this,int param_1,RecoveredRecordView_0062FCA0_4CB838FB *param_2)
 
 {
   uint uVar1;
@@ -33,7 +34,9 @@ STRubbishC::sub_0062EF00(STRubbishC *this,int param_1,AnonShape_0062FCA0_22A9EE3
     *(uint *)((&this->field_01E5)[param_1] + 0x1c) = (uVar1 >> 0x10) % 5;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar5 = *(int *)((&this->field_01E5)[param_1] + 0x1c);
+
     iVar3 = thunk_FUN_004ab050();
+
     iVar4 = thunk_FUN_0062ffd0(iVar3,iVar5);
     *(int *)((&this->field_01E5)[param_1] + 0x2c) = iVar4;
     *(uint *)((&this->field_01E5)[param_1] + 4) = (uint)param_2->field_0028 >> 0x10;

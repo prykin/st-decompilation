@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_005ebd80(AnonShape_005EBD80_1A4ED01F *param_1)
+undefined4 __fastcall FUN_005ebd80(RecoveredRecordView_005EBD80_8404A6E9 *param_1)
 
 {
   short sVar1;
@@ -109,12 +109,14 @@ undefined4 __fastcall FUN_005ebd80(AnonShape_005EBD80_1A4ED01F *param_1)
   param_1->field_02BA = (iVar5 >> 3) - (iVar5 >> 0x1f);
   param_1->field_02C2 = (int)param_1->field_034C;
   param_1->field_02C6 = (int)param_1->field_034E;
+
   uVar6 = thunk_FUN_005ec5e0(param_1->field_033E);
   param_1->field_02B1 = uVar6;
   param_1->field_0235 = param_1->field_0332;
   param_1->field_023E = 2000;
   if (bVar3) {
     if (bVar4) {
+
       iVar5 = thunk_FUN_005ecd70(param_1,(short)(param_1->field_0242 * 0xc9 + 100),
                                  (short)(param_1->field_0244 * 0xc9 + 100),
                                  (short)(param_1->field_0246 * 200 + 100),param_1->field_0350,
@@ -126,6 +128,7 @@ undefined4 __fastcall FUN_005ebd80(AnonShape_005EBD80_1A4ED01F *param_1)
     else {
       uVar7 = param_1->field_001C * 0x41c64e6d + 0x3039;
       param_1->field_001C = uVar7;
+
       thunk_FUN_005ecd70(param_1,param_1->field_0277,param_1->field_027B,param_1->field_027F + -0x1e
                          ,param_1->field_0350,'\0',0x1e - (uVar7 >> 0x10) % 0xb);
       param_1->field_023A = 1;

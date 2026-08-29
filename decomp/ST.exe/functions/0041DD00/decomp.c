@@ -22,12 +22,11 @@ void __thiscall FUN_0041dd00(void *this,int param_1)
     STT3DSprC::UnLoadSequence((STT3DSprC *)((int)this + 0x1d5),0);
     /* ST_CALLSITE[0041E11E]: CALL 0x0040498a; direct=0040498A STT3DSprC::UnLoadSequence */
     STT3DSprC::UnLoadSequence((STT3DSprC *)((int)this + 0x1d5),0xf);
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if (((0 < STField<int>(this,0x105)) && (STField<uint>(this,0x24) == (uint)DAT_0080874d))
-       /* ST_CALLSITE[0041E141]: CALL dword ptr [EDX + 0x2c] */
-       && ((iVar3 = (**(code **)(*(int *)this + 0x2c))(), iVar3 == 0xb ||
-           /* ST_CALLSITE[0041E14D]: CALL dword ptr [EAX + 0x2c] */
-           ((iVar3 = (**(code **)(*(int *)this + 0x2c))(), iVar3 == 0x23 ||
+       /* ST_CALLSITE[0041E141]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+       && ((iVar3 = STStructuralVirtualCall<undefined4>(this, 0x2C), iVar3 == 0xb ||
+           /* ST_CALLSITE[0041E14D]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+           ((iVar3 = STStructuralVirtualCall<undefined4>(this, 0x2C), iVar3 == 0x23 ||
             (STField<int>(this,0x20) != 0x14)))))) {
       ST3DSMAPContext::sub_006E6780
                 (STField<ST3DSMAPContext *>(this,0x211),
@@ -55,9 +54,8 @@ void __thiscall FUN_0041dd00(void *this,int param_1)
                  CONCAT22(CONCAT11(3,(char)((uint)STField<undefined4>(this,0x18) >> 0x10)),
                           STField<undefined2>(this,0x18)));
     }
-    /* ST_CALLSITE[0041E23C]: CALL dword ptr [EAX + 0x2c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    uVar2 = (**(code **)(*(int *)this + 0x2c))();
+    /* ST_CALLSITE[0041E23C]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+    uVar2 = STStructuralVirtualCall<undefined4>(this, 0x2C);
     switch(uVar2) {
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     case 0x3c:
@@ -127,9 +125,8 @@ void __thiscall FUN_0041dd00(void *this,int param_1)
                CONCAT22(CONCAT11(3,(char)((uint)STField<undefined4>(this,0x18) >> 0x10)),
                         STField<undefined2>(this,0x18)));
   }
-  /* ST_CALLSITE[0041DF5F]: CALL dword ptr [EDX + 0x2c] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar2 = (**(code **)(*(int *)this + 0x2c))();
+  /* ST_CALLSITE[0041DF5F]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+  uVar2 = STStructuralVirtualCall<undefined4>(this, 0x2C);
   switch(uVar2) {
   case 0x3c:
   case 0x53:

@@ -5,16 +5,16 @@
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
    decompilation contains no value return */
 
-void __cdecl FUN_00691480(AnonShape_00691480_E757992C *param_1)
+void __cdecl FUN_00691480(RecoveredRecordView_00691480_8BF19534 *param_1)
 
 {
-  AnonShape_00691480_E757992C *pAVar1;
+  RecoveredRecordView_00691480_8BF19534 *pRVar1;
   int iVar2;
   uint uVar3;
   int *piVar4;
   bool bVar5;
 
-  pAVar1 = param_1;
+  pRVar1 = param_1;
   if (param_1->field_0018 != '\0') {
     if (param_1->field_0018 == '\x02') {
       iVar2 = param_1->field_0085;
@@ -33,16 +33,16 @@ void __cdecl FUN_00691480(AnonShape_00691480_E757992C *param_1)
             param_1 = nullptr;
           }
           else {
-            param_1 = (AnonShape_00691480_E757992C *)(STField<int>(iVar2,0x4) + 0x20);
+            param_1 = (RecoveredRecordView_00691480_8BF19534 *)(STField<int>(iVar2,0x4) + 0x20);
           }
           thunk_FUN_006686c0((int *)&param_1);
-          iVar2 = pAVar1->field_0085;
+          iVar2 = pRVar1->field_0085;
           uVar3 = uVar3 + 1;
           bVar5 = uVar3 < STField<uint>(iVar2,0xC);
         } while ((int)uVar3 < (int)STField<uint>(iVar2,0xC));
       }
     }
-    piVar4 = &pAVar1->field_0085;
+    piVar4 = &pRVar1->field_0085;
     iVar2 = 8;
     do {
       if ((DArrayTy *)*piVar4 != nullptr) {

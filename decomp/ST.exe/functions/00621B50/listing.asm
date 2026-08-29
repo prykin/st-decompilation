@@ -524,7 +524,7 @@ LAB_00622216:
 00622229  8D 45 F8                  LEA EAX,[EBP + -0x8]
 0062222C  50                        PUSH EAX
 0062222D  8B CE                     MOV ECX,ESI
-0062222F  E8 F1 F5 DD FF            CALL 0x00401825
+0062222F  E8 F1 F5 DD FF            CALL 0x00401825  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 00622234  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
 00622237  8B 56 18                  MOV EDX,dword ptr [ESI + 0x18]
 0062223A  51                        PUSH ECX
@@ -547,7 +547,7 @@ LAB_00622216:
 00622264  C2 04 00                  RET 0x4
 LAB_00622267:
 00622267  8B 0D A0 B2 7F 00         MOV ECX,dword ptr [0x007fb2a0]
-0062226D  E8 AA 35 DE FF            CALL 0x0040581c
+0062226D  E8 AA 35 DE FF            CALL 0x0040581c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STMineSetC; source view only; no Ghidra override
 00622272  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 00622275  50                        PUSH EAX
 00622276  E8 99 01 DE FF            CALL 0x00402414

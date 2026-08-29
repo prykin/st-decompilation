@@ -112,13 +112,13 @@ LAB_004e47e1:
 004E484E  8B 11                     MOV EDX,dword ptr [ECX]
 004E4850  8D 45 DC                  LEA EAX,[EBP + -0x24]
 004E4853  50                        PUSH EAX
-004E4854  FF 12                     CALL dword ptr [EDX]
+004E4854  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/int;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/STMessage
 LAB_004e4856:
 004E4856  8B 16                     MOV EDX,dword ptr [ESI]
 004E4858  68 CF 03 00 00            PUSH 0x3cf
 004E485D  6A 04                     PUSH 0x4
 004E485F  8B CE                     MOV ECX,ESI
-004E4861  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]
+004E4861  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]  ; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4
 LAB_004e4867:
 004E4867  5F                        POP EDI
 004E4868  33 C0                     XOR EAX,EAX

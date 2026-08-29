@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __thiscall FUN_006e4c30(void *this,int param_1)
+void __thiscall FUN_006e4c30(void *this,RecoveredRecord_006E4C30_151FBAE9 *param_1)
 
 {
   int iVar1;
@@ -9,8 +9,8 @@ void __thiscall FUN_006e4c30(void *this,int param_1)
   int iVar3;
   int *piVar4;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar3 = FUN_006e45a0(this,*(int *)(param_1 + 0x14));
+
+  iVar3 = FUN_006e45a0(this,param_1->field_0014);
   if ((iVar3 != 0) && (STField<int>(iVar3,0x8) != 0)) {
     *(undefined4 *)(STField<int>(iVar3,0x8) + 4) = 0;
     while( true ) {

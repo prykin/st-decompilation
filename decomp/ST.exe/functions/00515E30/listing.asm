@@ -83,7 +83,7 @@ LAB_00515ee1:
 00515F34  6A FF                     PUSH -0x1
 00515F36  51                        PUSH ECX
 00515F37  68 F6 55 00 00            PUSH 0x55f6
-00515F3C  E8 FF A1 19 00            CALL 0x006b0140
+00515F3C  E8 FF A1 19 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 00515F41  8B 8B E0 01 00 00         MOV ECX,dword ptr [EBX + 0x1e0]
 00515F47  50                        PUSH EAX
 00515F48  E8 73 BA 1F 00            CALL 0x007119c0

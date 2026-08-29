@@ -56,7 +56,7 @@ LAB_0055c20c:
 0055C21A  6A 64                     PUSH 0x64
 0055C21C  6A 01                     PUSH 0x1
 0055C21E  8B CE                     MOV ECX,ESI
-0055C220  FF 50 3C                  CALL dword ptr [EAX + 0x3c]
+0055C220  FF 50 3C                  CALL dword ptr [EAX + 0x3c]  ; [STIndirectCallsiteApplier] exact slot 0x3C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4
 0055C223  5F                        POP EDI
 0055C224  5E                        POP ESI
 0055C225  C3                        RET

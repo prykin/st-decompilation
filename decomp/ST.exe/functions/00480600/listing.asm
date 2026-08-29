@@ -46,7 +46,7 @@ LAB_00480634:
 00480685  EB 08                     JMP 0x0048068f
 LAB_00480687:
 00480687  8B CE                     MOV ECX,ESI
-00480689  E8 4A 4A F8 FF            CALL 0x004050d8
+00480689  E8 4A 4A F8 FF            CALL 0x004050d8  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STT3DSprC; source view only; no Ghidra override
 0048068E  50                        PUSH EAX
 LAB_0048068f:
 0048068F  8B CF                     MOV ECX,EDI

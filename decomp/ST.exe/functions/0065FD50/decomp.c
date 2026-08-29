@@ -1,8 +1,13 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __thiscall
-FUN_0065fd50(void *this,int param_1,int param_2,short param_3,undefined4 param_4)
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00664960 @ 006657F4 -> killed on
+   every CFG path | 00664960 @ 00666416 -> read as EAX on every CFG path | 00664960 @ 006668F4 ->
+   read as EAX on every CFG path | 00664960 @ 00666A5D -> read as EAX on every CFG path */
+
+int __thiscall FUN_0065fd50(void *this,int param_1,int param_2,short param_3,undefined4 param_4)
 
 {
   int iVar1;
@@ -16,6 +21,7 @@ FUN_0065fd50(void *this,int param_1,int param_2,short param_3,undefined4 param_4
   STPiece<0,2>(uStack_a) = 0;
   STPiece<2,2>(uStack_a) = 0;
   STField<undefined4>(this,0xa7) = 0;
+
   iVar1 = thunk_FUN_00675950(param_1,param_2,param_3,local_10,local_10 + 1,local_10 + 2,0);
   if (iVar1 != 0) {
     if ((STField<ushort>(this,0x7d) != 0xfffe) && (g_allPlayers_007FA174 != nullptr)
@@ -29,6 +35,6 @@ FUN_0065fd50(void *this,int param_1,int param_2,short param_3,undefined4 param_4
       }
     }
   }
-  return 0xffffffff;
+  return -1;
 }
 

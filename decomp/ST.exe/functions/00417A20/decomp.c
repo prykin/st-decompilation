@@ -9,6 +9,7 @@ undefined4 __thiscall FUN_00417a20(void *this,short param_1,short param_2,short 
 
   if (STField<int>(this,0x2c) == 0) {
     if (param_4 == 1) {
+
       thunk_FUN_00495ff0(STField<short>(this,0x5b),STField<short>(this,0x5d),
                          STField<short>(this,0x5f),STField<byte>(this,0x8e),this);
     }
@@ -26,12 +27,16 @@ undefined4 __thiscall FUN_00417a20(void *this,short param_1,short param_2,short 
   }
   else {
     if (param_4 == 1) {
+
       thunk_FUN_00495ff0(STField<short>(this,0x5b),STField<short>(this,0x5d),
                          STField<short>(this,0x5f),STField<byte>(this,0x8e),this);
+
       thunk_FUN_00495ff0(STField<short>(this,0x5b) + 1,STField<short>(this,0x5d),
                          STField<short>(this,0x5f),STField<byte>(this,0x8e),this);
+
       thunk_FUN_00495ff0(STField<short>(this,0x5b),STField<short>(this,0x5d) + 1,
                          STField<short>(this,0x5f),STField<byte>(this,0x8e),this);
+
       thunk_FUN_00495ff0(STField<short>(this,0x5b) + 1,STField<short>(this,0x5d) + 1,
                          STField<short>(this,0x5f),STField<byte>(this,0x8e),this);
     }

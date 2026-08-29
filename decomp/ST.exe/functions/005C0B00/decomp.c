@@ -57,6 +57,7 @@ MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_c = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   pAVar5 = local_14;
   if (errorCode == 0) {
@@ -65,7 +66,8 @@ MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,
       uVar10 = ((uint)(ushort)local_14->field_000E * local_14->field_0004 + 0x1f >> 3 & 0x1ffffffc)
                * local_14->field_0008;
     }
-    puVar6 = (undefined4 *)FUN_006b4fa0((int *)local_14);
+
+    puVar6 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0((RecoveredRecord_006B4FA0_DAC3A217 *)local_14));
     pbVar4 = local_1c;
     for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
       *puVar6 = 0xffffffff;
@@ -86,6 +88,7 @@ MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,
         param_5 = (uint *)LoadResourceString(param_2,g_hINSTANCE_00807618);
       }
       local_18 = param_5;
+
       ccFntTy::SetSurf(local_c->field_0083,(int)pAVar5,0,0,0,0,0);
       wVar1 = (param_1->arg0).words.low;
       if ((wVar1 == 1) || (wVar1 == 2)) {
@@ -97,6 +100,7 @@ MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,
       else {
         uVar10 = 4;
       }
+
       ccFntTy::WrStr(local_c->field_0083,(char *)local_18,-1,-1,uVar10);
     }
     SVar3 = local_20;
@@ -108,6 +112,7 @@ MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,
     PutDDXClip(*SVar3.i32,*(int *)(SVar3.u32 + 4),*SVar3.i32,*(int *)(SVar3.u32 + 4),(uint)local_8,
                pbVar4,'\x01',(BITMAPINFO *)local_c->field_005D);
                     /* WARNING: Load size is inaccurate */
+
     Library::DKW::DDX::FUN_006b48e0
               ((int)g_dDXContext_0080759C,*SVar3.i32,*(int *)(SVar3.u32 + 4),
                (AnonPointee_MReportTy_0073 *)pAVar5,0,0,0,(uint)local_8,(int)pbVar4,
@@ -116,6 +121,7 @@ MReportTy::PaintBut(MReportTy *this,STMessage *param_1,UINT param_2,int param_3,
     return;
   }
   g_currentExceptionFrame = local_64.previous;
+
   iVar7 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x2c1,0,errorCode,
                              "%s","MReportTy::PaintBut");
   if (iVar7 != 0) {

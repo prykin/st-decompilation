@@ -28,26 +28,26 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
   int iVar14;
   int iVar15;
   byte bVar16;
-  byte uVar17;
+  SpriteClassTy_SetImagesPtr_param_2Enum SVar17;
   uint uVar18;
   int iVar19;
   uint uVar20;
   uint uVar21;
-  undefined4 local_26c;
-  undefined4 local_245;
-  undefined4 local_238;
-  undefined4 local_234;
-  undefined4 local_230;
-  undefined4 local_1a9;
-  undefined4 local_19c;
-  undefined4 local_198;
-  undefined4 local_194;
-  undefined4 local_182;
-  undefined4 local_175;
-  undefined4 local_171;
-  undefined4 local_16d;
-  undefined4 local_169;
-  undefined4 local_70 [7];
+  uint local_26c;
+  uint local_245;
+  uint local_238;
+  uint local_234;
+  uint local_230;
+  uint local_1a9;
+  uint local_19c;
+  uint local_198;
+  uint local_194;
+  uint local_182;
+  uint local_175;
+  uint local_171;
+  uint local_16d;
+  uint local_169;
+  uint local_70 [7];
   InternalExceptionFrame local_54;
   CampaignTy *local_10;
   int local_c;
@@ -56,10 +56,12 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_02 = local_10;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar16 = ReportDebugMessage("E:\\__titans\\Start\\camp_obj.cpp",0x7d,0,iVar2,"%s"
                                 ,"CampaignTy::InitCampaign");
     if (iVar16 == 0) {
@@ -71,6 +73,7 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
   local_10->field_1FFC = param_1;
   if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {
+
       Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
     else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
@@ -86,6 +89,7 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
       do {
         iVar19 = 0;
         bVar16 = 0;
+        /* ST_CALLSITE[00590BEA]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
         pCVar3 = FUN_006f2c00("CMPG_FLC",3,iVar9);
         puVar4 = Library::Ourlib::MFANY::mfAnyLoad(g_cMf32_00806780,pCVar3,bVar16,iVar19);
         *puVar5 = puVar4;
@@ -101,6 +105,7 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
     do {
       iVar19 = 0;
       bVar16 = 0;
+      /* ST_CALLSITE[00590C35]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       pCVar3 = FUN_006f2c00("CMPG_FONFLC",2,iVar9);
       puVar4 = Library::Ourlib::MFANY::mfAnyLoad(g_cMf32_00806780,pCVar3,bVar16,iVar19);
       *puVar5 = puVar4;
@@ -111,6 +116,7 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
   iVar9 = 0;
   do {
     if (this_02->field_1BD7[iVar9 + -4] != 0) {
+
       puVar5 = Library::DKW::FLC::FUN_006c4a20(this_02->field_1BD7[iVar9 + -4]);
       this_02->field_1BD7[iVar9] = (uint)puVar5;
       if (puVar5 != nullptr) {
@@ -150,6 +156,7 @@ LAB_00590d2d:
             iVar13 = local_c + iVar9;
             iVar19 = (&this_02->field_00BB[0xc].field_01E0)[iVar13];
             if (iVar19 != 0) {
+
               puVar5 = Library::DKW::FLC::FUN_006c4a20(iVar19);
               (&this_02->field_1B13)[iVar13] = puVar5;
             }
@@ -164,6 +171,7 @@ LAB_00590d24:
               if (1 < iVar9) {
                 if (iVar9 == 6) {
                   if (this_02->field_1AA7 != 0) {
+
                     puVar5 = Library::DKW::FLC::FUN_006c4a20(this_02->field_1AA7);
                     this_02->field_1B67 = puVar5;
                   }
@@ -174,6 +182,7 @@ LAB_00590d24:
               iVar19 = (&this_02->field_00BB[0xc].field_01E0)[iVar9];
             }
             if (iVar19 != 0) {
+
               puVar5 = Library::DKW::FLC::FUN_006c4a20(iVar19);
               *(undefined4 **)(&this_02->field_0x1b4f + iVar9 * 4) = puVar5;
             }
@@ -308,6 +317,7 @@ switchD_00590d73_default:
             *(undefined4 *)(*(int *)(this_02->field_00BB[0xc].field_01DC + 0x2e6) + 0x1cab) =
                  this_02->field_0008;
           }
+
           FUN_006bc360(g_startSystem_0081176C->field_002C,(undefined4 *)&this_02->field_0x1bf8,
                        nullptr);
           this_01 = g_cursorClass_00802A30;
@@ -324,7 +334,7 @@ switchD_00590d73_default:
             this_01->field_04DF = -1;
           }
           uVar21 = 0xffffffff;
-          uVar17 = 7;
+          SVar17 = CASE_7;
           iVar15 = -1;
           pSVar1 = this_02->field_00BB[2].field_00B9.vtable;
           iVar14 = -1;
@@ -335,14 +345,16 @@ switchD_00590d73_default:
           cVar11 = CASE_FFFFFFFE;
           iVar19 = 0x28;
           iVar9 = 0x8c;
+          /* ST_CALLSITE[0059110D]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
           pcVar6 = LoadResourceString(0x23f1,g_hINSTANCE_00807618);
-          psVar7 = (short *)ccFntTy::CreateTypeSSpr
+
+          psVar7 = STPointerBoundaryCast<short *>(ccFntTy::CreateTypeSSpr
                                       ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar6,iVar9,
-                                       iVar19,cVar11,uVar12,iVar13,iVar14,iVar15);
+                                       iVar19,cVar11,uVar12,iVar13,iVar14,iVar15));
           /* ST_CALLSITE[00591124]: CALL dword ptr [EBX + 0x8] */
-          (*pSVar1->SetImagesPtr)(&this_02->field_00BB[2].field_00B9,psVar7,uVar17,uVar21);
+          (*pSVar1->SetImagesPtr)(&this_02->field_00BB[2].field_00B9,psVar7,SVar17,uVar21);
           uVar21 = 0xffffffff;
-          uVar17 = 7;
+          SVar17 = CASE_7;
           iVar15 = -1;
           pSVar1 = this_02->field_00BB[3].field_00B9.vtable;
           iVar14 = -1;
@@ -352,14 +364,16 @@ switchD_00590d73_default:
           cVar11 = CASE_FFFFFFFE;
           iVar19 = 0x28;
           iVar9 = 0x8c;
+          /* ST_CALLSITE[0059115E]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
           pcVar6 = LoadResourceString(0x23f0,g_hINSTANCE_00807618);
-          psVar7 = (short *)ccFntTy::CreateTypeSSpr
+
+          psVar7 = STPointerBoundaryCast<short *>(ccFntTy::CreateTypeSSpr
                                       ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar6,iVar9,
-                                       iVar19,cVar11,uVar12,iVar13,iVar14,iVar15);
+                                       iVar19,cVar11,uVar12,iVar13,iVar14,iVar15));
           /* ST_CALLSITE[00591174]: CALL dword ptr [EBX + 0x8] */
-          (*pSVar1->SetImagesPtr)(&this_02->field_00BB[3].field_00B9,psVar7,uVar17,uVar21);
+          (*pSVar1->SetImagesPtr)(&this_02->field_00BB[3].field_00B9,psVar7,SVar17,uVar21);
           uVar21 = 0xffffffff;
-          uVar17 = 7;
+          SVar17 = CASE_7;
           iVar15 = -1;
           pSVar1 = this_02->field_00BB[4].field_00B9.vtable;
           iVar14 = -1;
@@ -369,12 +383,14 @@ switchD_00590d73_default:
           cVar11 = CASE_FFFFFFFE;
           iVar19 = 0x28;
           iVar9 = 0x8c;
+          /* ST_CALLSITE[005911AE]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
           pcVar6 = LoadResourceString(0x23f2,g_hINSTANCE_00807618);
-          psVar7 = (short *)ccFntTy::CreateTypeSSpr
+
+          psVar7 = STPointerBoundaryCast<short *>(ccFntTy::CreateTypeSSpr
                                       ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar6,iVar9,
-                                       iVar19,cVar11,uVar12,iVar13,iVar14,iVar15);
+                                       iVar19,cVar11,uVar12,iVar13,iVar14,iVar15));
           /* ST_CALLSITE[005911C5]: CALL dword ptr [EBX + 0x8] */
-          (*pSVar1->SetImagesPtr)(&this_02->field_00BB[4].field_00B9,psVar7,uVar17,uVar21);
+          (*pSVar1->SetImagesPtr)(&this_02->field_00BB[4].field_00B9,psVar7,SVar17,uVar21);
           /* ST_CALLSITE[005911CA]: CALL 0x00401a5f; direct=00401A5F CampaignTy::PaintCampaign */
           PaintCampaign(this_02);
           iVar9 = 0;
@@ -430,8 +446,8 @@ switchD_00590d73_default:
           }
           thunk_FUN_00568bc0(&g_sound,0);
           if ((STPiece<1,1>(DAT_00807300) & 8) != 0) {
-            SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0056A130::thunk_FUN_0056a130
-                      ((AnonReceiver_0056A130 *)&g_sound,0x12,'\x02',0,nullptr);
+            SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0056A130::thunk_FUN_0056a130
+                      ((RecoveredReceiver_0056A130 *)&g_sound,0x12,'\x02',0,nullptr);
           }
           thunk_FUN_00568bc0(&g_sound,1);
           if (DAT_0080874e == 1) {

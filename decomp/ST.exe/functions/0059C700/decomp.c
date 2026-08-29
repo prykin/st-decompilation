@@ -11,38 +11,39 @@ void __thiscall FSGSTy::LoginCtrls(FSGSTy *this)
   FSGSTy *this_00;
   int iVar5;
   DArrayTy *pDVar2;
-  uint uVar3;
   int iVar4;
-  int iVar6;
+  int iVar3;
   char *text;
-  ccFntTy **ppcVar7;
+  ccFntTy **ppcVar4;
   ccFntTy *local_8d8 [8];
   DArrayTy *local_8b8;
-  undefined4 local_8ac;
-  undefined4 local_8a8;
-  undefined4 local_8a4;
-  undefined4 local_88c;
-  undefined4 local_888;
-  undefined4 local_884;
-  undefined4 local_68;
-  undefined4 local_64;
-  undefined4 local_60;
+  uint local_8ac;
+  uint local_8a8;
+  uint local_8a4;
+  uint local_88c;
+  uint local_888;
+  uint local_884;
+  uint local_68;
+  uint local_64;
+  uint local_60;
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
 
-  ppcVar7 = local_8d8;
+  ppcVar4 = local_8d8;
   local_8 = this;
-  for (iVar6 = 0x223; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *ppcVar7 = nullptr;
-    ppcVar7 = ppcVar7 + 1;
+  for (iVar3 = 0x223; iVar3 != 0; iVar3 = iVar3 + -1) {
+    *ppcVar4 = nullptr;
+    ppcVar4 = ppcVar4 + 1;
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar5 == 0) {
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00 = local_8;
     local_8->field_1AE8 = pDVar2;
+
     Library::DKW::TBL::FUN_006b5aa0(pDVar2,&CHAR_00h_00807e1d);
     pDVar2 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AEC = pDVar2;
@@ -50,11 +51,12 @@ void __thiscall FSGSTy::LoginCtrls(FSGSTy *this)
     if (DAT_0080735f == '\0') {
       text = &CHAR_00h_008016a0;
     }
+
     Library::DKW::TBL::FUN_006b5aa0(pDVar2,text);
-    ppcVar7 = local_8d8;
-    for (iVar6 = 0x223; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *ppcVar7 = nullptr;
-      ppcVar7 = ppcVar7 + 1;
+    ppcVar4 = local_8d8;
+    for (iVar3 = 0x223; iVar3 != 0; iVar3 = iVar3 + -1) {
+      *ppcVar4 = nullptr;
+      ppcVar4 = ppcVar4 + 1;
     }
     local_8d8[2] = this_00->array_00BC[0xc].field_01F3;
     local_8b8 = this_00->field_1AE8;
@@ -87,8 +89,8 @@ void __thiscall FSGSTy::LoginCtrls(FSGSTy *this)
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,6,&this_00->field_1AC8,nullptr,local_8d8,0);
     /* ST_CALLSITE[0059C8CF]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
-    uVar3 = MMObjTy::CreateSprBut((MMObjTy *)this_00,3,1,0x19a,0x13d,0x16,0x14,0x6900,0x6980);
-    this_00->field_1AD0 = uVar3;
+    iVar3 = MMObjTy::CreateSprBut((MMObjTy *)this_00,3,1,0x19a,0x13d,0x16,0x14,0x6900,0x6980);
+    this_00->field_1AD0 = iVar3;
     this_00->field_002D = 0x61;
     this_00->field_0035 = 0;
     this_00->field_0037 = 0;
@@ -97,6 +99,7 @@ void __thiscall FSGSTy::LoginCtrls(FSGSTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x5ac,0,iVar5,"%s",
                              "FSGSTy::LoginCtrls");
   if (iVar4 != 0) {

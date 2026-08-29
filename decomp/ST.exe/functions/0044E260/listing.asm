@@ -11,12 +11,14 @@ FUN_0044e260:
 0044E271  50                        PUSH EAX
 0044E272  51                        PUSH ECX
 0044E273  8B CB                     MOV ECX,EBX
-0044E275  E8 7F 7A FB FF            CALL 0x00405cf9
+FUN_0044e260::override::prt_44e275_e820036f:
+0044E275  E8 7F 7A FB FF            CALL 0x00405cf9  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STGroupC; signature=__stdcall;pointer:/STGroupC;/char;/ushort
 0044E27A  85 C0                     TEST EAX,EAX
 0044E27C  89 45 F0                  MOV dword ptr [EBP + -0x10],EAX
 0044E27F  0F 84 F3 02 00 00         JZ 0x0044e578
 0044E285  8B C8                     MOV ECX,EAX
-0044E287  E8 29 4B FB FF            CALL 0x00402db5
+FUN_0044e260::override::prt_44e287_66359455:
+0044E287  E8 29 4B FB FF            CALL 0x00402db5  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__thiscall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/STGroupC
 0044E28C  8B F8                     MOV EDI,EAX
 0044E28E  8B 47 0C                  MOV EAX,dword ptr [EDI + 0xc]
 0044E291  85 C0                     TEST EAX,EAX
@@ -208,7 +210,7 @@ LAB_0044e471:
 0044E47E  0F 84 BB 00 00 00         JZ 0x0044e53f
 0044E484  8B 16                     MOV EDX,dword ptr [ESI]
 0044E486  8B CE                     MOV ECX,ESI
-0044E488  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+0044E488  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0044E48E  85 C0                     TEST EAX,EAX
 0044E490  0F 84 A9 00 00 00         JZ 0x0044e53f
 0044E496  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]

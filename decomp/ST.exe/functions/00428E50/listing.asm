@@ -6,7 +6,8 @@ FUN_00428e50:
 00428E5A  56                        PUSH ESI
 00428E5B  57                        PUSH EDI
 00428E5C  68 F2 04 00 00            PUSH 0x4f2
-00428E61  E8 6A 76 28 00            CALL 0x006b04d0
+FUN_00428e50::override::prt_428e61_c759b330:
+00428E61  E8 6A 76 28 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F;/uint
 00428E66  85 C0                     TEST EAX,EAX
 00428E68  0F 84 62 04 00 00         JZ 0x004292d0
 00428E6E  8B C8                     MOV ECX,EAX

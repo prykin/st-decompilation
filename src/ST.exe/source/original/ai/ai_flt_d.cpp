@@ -50,7 +50,7 @@ st::fn_00668180(char *text,ushort param_2,ushort param_3,ushort param_4,byte par
     *(undefined4 *)local_8 = 900;
     *(undefined4 *)&local_8->field_0x14 = 0x260;
     local_8->field_0x18 = 2;
-    st::fn_0072E340((char *)&local_8->field_0x1b,text,0x3f);
+    st::fn_0072E340(reinterpret_cast<char *>(&local_8->field_0x1b),text,0x3f);
     local_8->field_0019 = param_2;
     local_8->field_005B = param_3;
     local_8->field_005F = param_4;
@@ -72,7 +72,7 @@ st::fn_00668180(char *text,ushort param_2,ushort param_3,ushort param_4,byte par
     return (AllocationRecord_006684E0 *)local_8;
   }
   g_currentExceptionFrame = local_4c.previous;
-  st::fn_00405BCD((int *)&local_8);
+  st::fn_00405BCD(reinterpret_cast<int *>(&local_8));
   st::fn_006A5E40(exceptionCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_flt_d.cpp"),0x2a);
   return nullptr;
 }
@@ -103,8 +103,10 @@ AllocationRecord_00668330 * __cdecl st::fn_00668330(AllocationRecord_00668330 *p
   local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   iVar1 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar1 == 0) {
+
     pAVar1 = static_cast<AllocationRecord_00668330 *>(st::fn_006AAC10(0x260));
     pAVar4 = param_1;
     pAVar5 = pAVar1;
@@ -112,37 +114,40 @@ AllocationRecord_00668330 * __cdecl st::fn_00668330(AllocationRecord_00668330 *p
     iVar3 = 0;
     pAVar1->field_0014 = 0x260;
     pAVar1->field_0018 = 2;
-    local_8 = (AnonShape_00668330_F270680B *)pAVar1;
+    local_8 = reinterpret_cast<AnonShape_00668330_F270680B *>(pAVar1);
     do {
       if (STObjectAtByteOffset(pAVar1, iVar3).field_01EB != 0) {
         pDVar2 = st::fn_006B0060(nullptr,
-                              (uint *)(&param_1->field_0x25f +
-                                      *(int *)(&pAVar1->field_0x1ef + iVar3)));
+                              reinterpret_cast<uint *>((&param_1->field_0x25f +
+                                      *(int *)(&pAVar1->field_0x1ef + iVar3))));
         *(DArrayTy **)((int)&local_8->field_01EB + iVar3) = pDVar2;
-        pAVar1 = (AllocationRecord_00668330 *)local_8;
+        pAVar1 = reinterpret_cast<AllocationRecord_00668330 *>(local_8);
       }
       iVar3 = iVar3 + 0xc;
     } while (iVar3 < 0x54);
     if (pAVar1->field_01EB == 0) {
+      /* ST_CALLSITE[006683E2]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
       pDVar2 = st::fn_006AE290(nullptr,10,0x2c,10);
       local_8->field_01EB = &pDVar2->flags;
-      pAVar1 = (AllocationRecord_00668330 *)local_8;
+      pAVar1 = reinterpret_cast<AllocationRecord_00668330 *>(local_8);
     }
     if (pAVar1->field_0203 == 0) {
+      /* ST_CALLSITE[00668405]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
       pDVar2 = st::fn_006AE290(nullptr,10,0x14,10);
       local_8->field_0203 = &pDVar2->flags;
-      pAVar1 = (AllocationRecord_00668330 *)local_8;
+      pAVar1 = reinterpret_cast<AllocationRecord_00668330 *>(local_8);
     }
     if (pAVar1->field_020F == 0) {
+      /* ST_CALLSITE[00668428]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
       pDVar2 = st::fn_006AE290(nullptr,10,0xc,10);
       local_8->field_020F = &pDVar2->flags;
-      pAVar1 = (AllocationRecord_00668330 *)local_8;
+      pAVar1 = reinterpret_cast<AllocationRecord_00668330 *>(local_8);
     }
     g_currentExceptionFrame = local_4c.previous;
     return pAVar1;
   }
   g_currentExceptionFrame = local_4c.previous;
-  st::fn_00405BCD((int *)&local_8);
+  st::fn_00405BCD(reinterpret_cast<int *>(&local_8));
   st::fn_006A5E40(iVar1,0,st::mutable_c_string("E:\\__titans\\ai\\ai_flt_d.cpp"),0x4e);
   return nullptr;
 }
@@ -191,7 +196,7 @@ AllocationRecord_006684E0 * __cdecl st::fn_006684E0(AllocationRecord_006684E0 *p
     do {
       puVar8 = *ppuVar5;
       if (puVar8 != nullptr) {
-        iVar1 = st::machine_word_boundary_cast<int>(puVar8[3] * puVar8[2] + 0x1c);
+        iVar1 = puVar8[3] * puVar8[2] + 0x1c;
         local_c = local_c + iVar1;
         ppuVar5[2] = (uint *)iVar1;
       }
@@ -205,7 +210,7 @@ AllocationRecord_006684E0 * __cdecl st::fn_006684E0(AllocationRecord_006684E0 *p
     iVar6 = 0;
     pAVar4->field_0014 = *param_2;
     pAVar4->field_0018 = 0;
-    puVar8 = (uint *)&pAVar4->field_0x25f;
+    puVar8 = reinterpret_cast<uint *>(&pAVar4->field_0x25f);
     local_8 = pAVar4;
     do {
       puVar2 = *(uint **)((int)&pAVar4->field_01EB + iVar6);
@@ -232,4 +237,3 @@ AllocationRecord_006684E0 * __cdecl st::fn_006684E0(AllocationRecord_006684E0 *p
   st::fn_006A5E40(iVar3,0,st::mutable_c_string("E:\\__titans\\ai\\ai_flt_d.cpp"),0x76);
   return nullptr;
 }
-

@@ -16,7 +16,8 @@ CreateInterSystem:
 00542DA8  85 F6                     TEST ESI,ESI
 00542DAA  0F 85 8B 00 00 00         JNZ 0x00542e3b
 00542DB0  6A 34                     PUSH 0x34
-00542DB2  E8 79 B7 1E 00            CALL 0x0072e530
+CreateInterSystem::override::prt_542db2_c292a194:
+00542DB2  E8 79 B7 1E 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/InterSystemC; signature=__cdecl;pointer:/InterSystemC;/uint
 00542DB7  83 C4 04                  ADD ESP,0x4
 00542DBA  85 C0                     TEST EAX,EAX
 00542DBC  74 10                     JZ 0x00542dce

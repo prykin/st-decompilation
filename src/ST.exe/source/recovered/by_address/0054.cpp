@@ -3,97 +3,100 @@
 
 // 00540C40 FUN_00540c40
 #line 4 "decomp/ST.exe/functions/00540C40/decomp.c"
-undefined4 * __cdecl st::fn_00540C40(void *param_1,uint *param_2,uint *param_3,int param_4)
+undefined4 * __cdecl
+st::fn_00540C40(RecoveredRecord_00540C40_D825DD02 *param_1,uint *param_2,uint *param_3,int param_4)
 
 {
   char cVar1;
-  int iVar2;
-  uint uVar3;
+  ushort uVar2;
+  int iVar3;
   uint uVar4;
-  int iVar5;
-  char *pcVar6;
+  uint uVar5;
+  int iVar6;
   char *pcVar7;
-  uint *puVar8;
-  char *pcVar9;
+  char *pcVar8;
+  uint *puVar9;
+  char *pcVar10;
   int local_c;
   int local_8;
 
-  uVar3 = 0xffffffff;
-  iVar5 = 0;
-  pcVar6 = &CHAR_00h_008016a0;
+  uVar4 = 0xffffffff;
+  iVar6 = 0;
+  pcVar7 = &CHAR_00h_008016a0;
   do {
-    pcVar9 = pcVar6;
-    if (uVar3 == 0) break;
-    uVar3 = uVar3 - 1;
-    pcVar9 = pcVar6 + 1;
-    cVar1 = *pcVar6;
-    pcVar6 = pcVar9;
+    pcVar10 = pcVar7;
+    if (uVar4 == 0) break;
+    uVar4 = uVar4 - 1;
+    pcVar10 = pcVar7 + 1;
+    cVar1 = *pcVar7;
+    pcVar7 = pcVar10;
   } while (cVar1 != '\0');
-  uVar3 = ~uVar3;
+  uVar4 = ~uVar4;
   local_8 = 0;
   local_c = 0;
-  pcVar6 = pcVar9 + -uVar3;
-  pcVar9 = &CHAR_00h_008016f0;
-  memmove(pcVar9, pcVar6, uVar3); /* compiler REP MOVS byte copy */
+  pcVar7 = pcVar10 + -uVar4;
+  pcVar10 = &CHAR_00h_008016f0;
+  memmove(pcVar10, pcVar7, uVar4); /* compiler REP MOVS byte copy */
   if ((param_1 != nullptr) && (param_2 != nullptr)) {
-    iVar2 = st::fn_00711110(param_1,(char *)param_2);
-    if (param_4 < iVar2) {
+
+    iVar3 = st::fn_00711110(param_1,reinterpret_cast<char *>(param_2));
+    if (param_4 < iVar3) {
       if (param_3 != nullptr) {
-        local_8 = st::fn_00711110(param_1,(char *)param_3);
+
+        local_8 = st::fn_00711110(param_1,reinterpret_cast<char *>(param_3));
       }
-      puVar8 = param_2;
-      iVar2 = local_8;
+      puVar9 = param_2;
+      iVar3 = local_8;
       if (param_4 < local_8) goto LAB_00540d59;
-      while (iVar2 < param_4) {
-        uVar3 = st::fn_00710FB0(param_1,(byte *)puVar8);
+      while (iVar3 < param_4) {
+        uVar2 = st::fn_00710FB0(param_1,reinterpret_cast<byte *>(puVar9));
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar5 = iVar5 + STField<int>(param_1,0x58) +
-                        (int)*(short *)(STField<int>(param_1,0x9a) + 0x6a + (uVar3 & 0xffff) * 10
-                                       );
+        iVar6 = iVar6 + param_1->field_0058 +
+                        (int)*(short *)(param_1->field_009A + 0x6a + (uint)uVar2 * 10);
         local_c = local_c + 1;
-        puVar8 = (uint *)((int)puVar8 + 1);
-        iVar2 = iVar5 + local_8;
+        puVar9 = (uint *)((int)puVar9 + 1);
+        iVar3 = iVar6 + local_8;
       }
-      st::fn_0072E340(&CHAR_00h_008016f0,(char *)param_2,local_c - 1);
-      uVar3 = 0xffffffff;
+      st::fn_0072E340(&CHAR_00h_008016f0,reinterpret_cast<char *>(param_2),local_c - 1);
+      uVar4 = 0xffffffff;
       *(undefined1 *)((int)&g_sAMPanel_008016EC + local_c + 3) = 0;
       do {
-        puVar8 = param_3;
-        if (uVar3 == 0) break;
-        uVar3 = uVar3 - 1;
-        puVar8 = (uint *)((int)param_3 + 1);
-        uVar4 = *param_3;
-        param_3 = puVar8;
-      } while ((char)uVar4 != '\0');
-      uVar3 = ~uVar3;
-      pcVar6 = (char *)((int)puVar8 - uVar3);
-      iVar5 = -1;
-      pcVar9 = &CHAR_00h_008016f0;
+        puVar9 = param_3;
+        if (uVar4 == 0) break;
+        uVar4 = uVar4 - 1;
+        puVar9 = (uint *)((int)param_3 + 1);
+        uVar5 = *param_3;
+        param_3 = puVar9;
+      } while ((char)uVar5 != '\0');
+      uVar4 = ~uVar4;
+      pcVar7 = (char *)((int)puVar9 - uVar4);
+      iVar6 = -1;
+      pcVar10 = &CHAR_00h_008016f0;
       do {
-        pcVar7 = pcVar9;
-        if (iVar5 == 0) break;
-        iVar5 = iVar5 + -1;
-        pcVar7 = pcVar9 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar7;
+        pcVar8 = pcVar10;
+        if (iVar6 == 0) break;
+        iVar6 = iVar6 + -1;
+        pcVar8 = pcVar10 + 1;
+        cVar1 = *pcVar10;
+        pcVar10 = pcVar8;
       } while (cVar1 != '\0');
-      pcVar7 = pcVar7 + -1;
+      pcVar8 = pcVar8 + -1;
     }
     else {
-      uVar3 = 0xffffffff;
+      uVar4 = 0xffffffff;
       do {
-        puVar8 = param_2;
-        if (uVar3 == 0) break;
-        uVar3 = uVar3 - 1;
-        puVar8 = (uint *)((int)param_2 + 1);
-        uVar4 = *param_2;
-        param_2 = puVar8;
-      } while ((char)uVar4 != '\0');
-      uVar3 = ~uVar3;
-      pcVar6 = (char *)((int)puVar8 - uVar3);
-      pcVar7 = &CHAR_00h_008016f0;
+        puVar9 = param_2;
+        if (uVar4 == 0) break;
+        uVar4 = uVar4 - 1;
+        puVar9 = (uint *)((int)param_2 + 1);
+        uVar5 = *param_2;
+        param_2 = puVar9;
+      } while ((char)uVar5 != '\0');
+      uVar4 = ~uVar4;
+      pcVar7 = (char *)((int)puVar9 - uVar4);
+      pcVar8 = &CHAR_00h_008016f0;
     }
-    memmove(pcVar7, pcVar6, uVar3); /* compiler REP MOVS byte copy */
+    memmove(pcVar8, pcVar7, uVar4); /* compiler REP MOVS byte copy */
   }
 LAB_00540d59:
   return (undefined4 *)&CHAR_00h_008016f0;
@@ -133,6 +136,7 @@ void __cdecl st::fn_005411A0(DArrayTy *param_1,char *param_2,char *text)
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   iVar2 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
@@ -155,6 +159,7 @@ void __cdecl st::fn_005411A0(DArrayTy *param_1,char *param_2,char *text)
       cVar1 = *pcVar6;
       pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
+    /* ST_CALLSITE[00541202]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=/winnt.h/LPSTR; source view only; no Ghidra override */
     local_8 = static_cast<uint *>(st::fn_006AAC70(~uVar4 + ~uVar5 + 2));
     if (local_8 != nullptr) {
       /* ST_CALLSITE[00541211]: CALL dword ptr [0x0085bde8] */
@@ -163,7 +168,8 @@ void __cdecl st::fn_005411A0(DArrayTy *param_1,char *param_2,char *text)
           puVar3 = st::fn_0072E560(puVar3,'\n')) {
         *(undefined1 *)puVar3 = 0x20;
       }
-      st::fn_006B5AA0(param_1,(char *)local_8);
+
+      st::fn_006B5AA0(param_1,reinterpret_cast<char *>(local_8));
       st::fn_006AB060(&local_8);
     }
   }
@@ -200,11 +206,11 @@ HDC __cdecl st::fn_005412B0(ushort *param_1,undefined *param_2,BYTE param_3)
   pLVar7 = &local_cc;
   for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
     pLVar7->lfHeight = 0;
-    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
+    pLVar7 = reinterpret_cast<LOGFONTA *>(&pLVar7->lfWidth);
   }
   local_cc.lfCharSet = param_3;
   uVar4 = 0xffffffff;
-  pcVar6 = "Small Fonts";
+  pcVar6 = st::mutable_c_string("Small Fonts");
   do {
     pcVar8 = pcVar6;
     if (uVar4 == 0) break;
@@ -408,11 +414,11 @@ HDC __cdecl st::fn_005416A0(int param_1,undefined *param_2,BYTE param_3)
   pLVar7 = &local_b0;
   for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
     pLVar7->lfHeight = 0;
-    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
+    pLVar7 = reinterpret_cast<LOGFONTA *>(&pLVar7->lfWidth);
   }
   local_b0.lfCharSet = param_3;
   uVar4 = 0xffffffff;
-  pcVar6 = "Verdana";
+  pcVar6 = st::mutable_c_string("Verdana");
   do {
     pcVar8 = pcVar6;
     if (uVar4 == 0) break;
@@ -587,11 +593,11 @@ HDC __cdecl st::fn_005419E0(int param_1,undefined *param_2,BYTE param_3)
   pLVar7 = &local_a4;
   for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
     pLVar7->lfHeight = 0;
-    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
+    pLVar7 = reinterpret_cast<LOGFONTA *>(&pLVar7->lfWidth);
   }
   local_a4.lfCharSet = param_3;
   uVar4 = 0xffffffff;
-  pcVar6 = "System";
+  pcVar6 = st::mutable_c_string("System");
   do {
     pcVar8 = pcVar6;
     if (uVar4 == 0) break;
@@ -759,11 +765,11 @@ HDC __cdecl st::fn_00541CF0(ushort *param_1,undefined *param_2,BYTE param_3)
   pLVar7 = &local_90;
   for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
     pLVar7->lfHeight = 0;
-    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
+    pLVar7 = reinterpret_cast<LOGFONTA *>(&pLVar7->lfWidth);
   }
   local_90.lfCharSet = param_3;
   uVar4 = 0xffffffff;
-  pcVar6 = "Small Fonts";
+  pcVar6 = st::mutable_c_string("Small Fonts");
   do {
     pcVar8 = pcVar6;
     if (uVar4 == 0) break;
@@ -911,11 +917,11 @@ HDC __cdecl st::fn_00541F60(ushort *param_1,undefined *param_2,BYTE param_3)
   pLVar7 = &local_90;
   for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
     pLVar7->lfHeight = 0;
-    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
+    pLVar7 = reinterpret_cast<LOGFONTA *>(&pLVar7->lfWidth);
   }
   local_90.lfCharSet = param_3;
   uVar4 = 0xffffffff;
-  pcVar6 = "Small Fonts";
+  pcVar6 = st::mutable_c_string("Small Fonts");
   do {
     pcVar8 = pcVar6;
     if (uVar4 == 0) break;
@@ -1063,11 +1069,11 @@ HDC __cdecl st::fn_005421D0(ushort *param_1,undefined *param_2,BYTE param_3)
   pLVar7 = &local_90;
   for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
     pLVar7->lfHeight = 0;
-    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
+    pLVar7 = reinterpret_cast<LOGFONTA *>(&pLVar7->lfWidth);
   }
   local_90.lfCharSet = param_3;
   uVar4 = 0xffffffff;
-  pcVar6 = "Small Fonts";
+  pcVar6 = st::mutable_c_string("Small Fonts");
   do {
     pcVar8 = pcVar6;
     if (uVar4 == 0) break;
@@ -1221,10 +1227,12 @@ CursorClassTy * __cdecl st::fn_00543450(void)
   uint uVar4;
   CursorClassTy_field_00DEState *pCVar5;
 
-  this = (CursorClassTy *)st::fn_006B04D0(0x4fb);
+
+  this = STPointerBoundaryCast<CursorClassTy *>(st::fn_006B04D0(0x4fb));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
-    st::fn_00715820((SpriteClassTy *)&this->field_0018);
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_0018));
     this->vtable = &st_global_0079AE04;
     this->field_0018 = st::machine_word_boundary_cast<undefined4>(&st_global_0079ADF4);
     this->field_00AD = 0;
@@ -1251,7 +1259,7 @@ CursorClassTy * __cdecl st::fn_00543450(void)
     this->field_04AE = 0;
     this->field_010B = -1;
     iVar3 = 0;
-    puVar1 = (uint *)&this->field_0x11b;
+    puVar1 = reinterpret_cast<uint *>(&this->field_0x11b);
     do {
       puVar1[-1] = 0xffffffff;
       bVar2 = (byte)iVar3;
@@ -1284,94 +1292,26 @@ CursorClassTy * __cdecl st::fn_00543450(void)
   return nullptr;
 }
 
-// 005440C0 FUN_005440c0
-#line 4 "decomp/ST.exe/functions/005440C0/decomp.c"
-/* [STReturnSemanticsApplier] ignored_eax_void.
-   Evidence: all observed direct callers ignore the return register (ignored=4, used=0, unknown=0),
-   and decompilation contains no value return */
-
-void __thiscall st::fn_005440C0(void *this,int param_1,undefined4 *param_2,int param_3)
-
-{
-  *(undefined4 *)(param_3 + 4) = (&DAT_00807ff6)[param_1];
-  *(undefined4 *)(param_3 + 0x1c) = (&DAT_00808136)[param_1];
-  st::fn_006E6000(this,3,1,param_2);
-  return;
-}
-
-// 00544100 FUN_00544100
-#line 4 "decomp/ST.exe/functions/00544100/decomp.c"
-/* [STPrototypeApplier] Propagated return.
-   Evidence: 00544100 returns return of FUN_006e6000 @ 00544137 */
-
-int __thiscall
-st::fn_00544100(void *this,int param_1,undefined4 *param_2,AnonShape_00544100_ABD6BC59 *param_3)
-
-{
-  int iVar1;
-
-  param_3->field_0004 = *(uint *)(&DAT_00808276 + param_1 * 4);
-  param_3->field_001C = *(uint *)(&DAT_008082ee + param_1 * 4);
-  param_3->field_003C = *(uint *)(&DAT_00808366 + param_1 * 4);
-  iVar1 = st::fn_006E6000(this,3,1,param_2);
-  return iVar1;
-}
-
-// 00544150 FUN_00544150
-#line 4 "decomp/ST.exe/functions/00544150/decomp.c"
-/* [STReturnSemanticsApplier] ignored_eax_void.
-   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
-   and decompilation contains no value return */
-
-void __thiscall st::fn_00544150(void *this,int param_1,undefined4 *param_2,int param_3)
-
-{
-  *(undefined4 *)(param_3 + 4) = *(undefined4 *)(&DAT_008083de + param_1 * 4);
-  *(int *)(param_3 + 0x1c) = param_1 + 0xa6ff;
-  if (*(int *)(&DAT_008083de + param_1 * 4) != 0) {
-    st::fn_006E6000(this,3,1,param_2);
-  }
-  return;
-}
-
-// 00544990 FUN_00544990
-#line 4 "decomp/ST.exe/functions/00544990/decomp.c"
-/* [STAbiConsistencyApplier] full_eax_return: return=/int Evidence: all observed callers consume
-   full EAX (6), none consume AL/AX, and every RET path defines full EAX; sites=005449B0 @ 00545079
-   -> TEST TEST EAX,EAX | 005449B0 @ 00545337 -> TEST TEST EAX,EAX | 005449B0 @ 0054545E -> TEST
-   TEST EAX,EAX | 005449B0 @ 005455EC -> TEST TEST EAX,EAX | 005449B0 @ 0054614F -> TEST TEST
-   EAX,EAX | 0054AEE0 @ 0054AF24 -> TEST TEST EAX,EAX
-
-   [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 0054AEE0 -> 00544990 @ 0054AF24 */
-
-int __fastcall st::fn_00544990(CursorClassTy *param_1)
-
-{
-  return (uint)(param_1->field_0493 == 2);
-}
-
 // 00548B90 FUN_00548b90
 #line 4 "decomp/ST.exe/functions/00548B90/decomp.c"
-undefined4 __fastcall st::fn_00548B90(int param_1)
+undefined4 __fastcall st::fn_00548B90(RecoveredRecord_00548B90_C039E281 *param_1)
 
 {
   uint uVar1;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(int *)(param_1 + 0x4a2) == 0) {
+  if (param_1->field_04A2 == 0) {
     return 1;
   }
-  uVar1 = st::fn_00405687(param_1);
+
+  uVar1 = st::fn_00405687((int)param_1);
   return uVar1;
 }
 
 // 00548BC0 FUN_00548bc0
 #line 4 "decomp/ST.exe/functions/00548BC0/decomp.c"
-undefined4 __fastcall st::fn_00548BC0(int param_1)
+undefined4 __fastcall st::fn_00548BC0(RecoveredRecord_00548BC0_697C8B62 *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(param_1 + 0x4a2)) {
+  switch(param_1->field_04A2) {
   case 3:
   case 5:
   case 10:
@@ -1564,7 +1504,7 @@ int st::fn_0054BDF0(int param_1,int param_2,int param_3,int param_4,int *param_5
   if (iVar1 < param_1) {
     *param_5 = param_1;
   }
-  uVar2 = (uint)(iVar1 < param_1);
+  uVar2 = st::storage_bit_cast<uint>(static_cast<uint32_t>(iVar1 < param_1));
   iVar1 = param_1 + -1 + param_3;
   if (iVar1 < *param_5) {
     *param_5 = iVar1;
@@ -1614,7 +1554,7 @@ int __cdecl st::fn_0054CA10(int *param_1,undefined4 param_2,cMf32 *param_3,int p
     }
   }
   uVar5 = 0xffffffff;
-  pcVar6 = st::pointer_boundary_cast<char *>(PTR_DAT_007c83b0);
+  pcVar6 = reinterpret_cast<char *>(PTR_DAT_007c83b0);
   do {
     if (uVar5 == 0) break;
     uVar5 = uVar5 - 1;
@@ -1622,15 +1562,17 @@ int __cdecl st::fn_0054CA10(int *param_1,undefined4 param_2,cMf32 *param_3,int p
     pcVar6 = pcVar6 + 1;
   } while (cVar1 != '\0');
   puVar3 = (undefined4 *)
+
            st::fn_006B9770((byte *)((~uVar5 - 1) + param_4),nullptr,10);
   DAT_00802a3c = DAT_00802a3c + 1;
   if (g_cLoading_00802A58 != nullptr) {
     /* ST_CALLSITE[0054CA9C]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */
     st::fn_00403472(g_cLoading_00802A58,CASE_1,DAT_00802a3c,nullptr);
   }
+
   iVar4 = st::fn_00404DDB(puVar3,*piVar2,nullptr,nullptr,param_1,0);
   if (param_1 != nullptr) {
-    st::fn_006F20E0(param_3,(uint *)&param_1);
+    st::fn_006F20E0(param_3,reinterpret_cast<uint *>(&param_1));
   }
   return iVar4;
 }
@@ -1685,38 +1627,6 @@ undefined4 st::fn_0054CDB0(void)
 
 {
   return 0;
-}
-
-// 0054CF00 FUN_0054cf00
-#line 4 "decomp/ST.exe/functions/0054CF00/decomp.c"
-int __thiscall
-st::fn_0054CF00(void *this,int param_1,undefined4 *param_2,int *param_3,undefined4 param_4,int param_5)
-
-{
-  int iVar1;
-
-  iVar1 = st::fn_006E6170(static_cast<SystemWithNamedObjClassTy *>(this),param_1,param_2,&param_5,param_4,param_5);
-  if (param_3 != nullptr) {
-    *param_3 = param_5;
-  }
-  if (iVar1 == 0) {
-    st::fn_0040129E();
-  }
-  return iVar1;
-}
-
-// 0054CF70 FUN_0054cf70
-#line 4 "decomp/ST.exe/functions/0054CF70/decomp.c"
-/* [STReturnSemanticsApplier] ignored_eax_void.
-   Evidence: all observed direct callers ignore the return register (ignored=14, used=0, unknown=0),
-   and decompilation contains no value return */
-
-void __thiscall st::fn_0054CF70(void *this,uint param_1)
-
-{
-  st::fn_00401AD7();
-  st::fn_006E56B0(static_cast<StartSystemTy *>(this),param_1);
-  return;
 }
 
 // 0054CFA0 FUN_0054cfa0
@@ -1780,43 +1690,3 @@ undefined4 __thiscall st::fn_0054EB20(void *this,uint *param_1)
   }
   return 0;
 }
-
-// 0054EDF0 FUN_0054edf0
-#line 4 "decomp/ST.exe/functions/0054EDF0/decomp.c"
-/* [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 00503BB0 -> 0054EDF0 @ 00503E68; address of zeroed full register at 00503E53 | 0052F2B0
-   -> 0054EDF0 @ 0052F54F; address of zeroed full register at 0052F51C | 0053CA80 -> 0054EDF0 @
-   0053CC2B; address of zeroed full register at 0053CBFD */
-
-void st::fn_0054EDF0(undefined4 *param_1,uint *param_2,uint param_3,uint param_4)
-
-{
-  uint uVar1;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  STPlaySystemC *in_ECX;
-  char cVar2;
-
-  cVar2 = (char)param_1;
-  if ((((*(char *)(g_bulkInitializedRecords_008087C7 + DAT_0080874d) == '\0') &&
-       (DAT_0080874f == '\0')) || (cVar2 == '\x05')) && (DAT_008087a5 == 0)) {
-    if (param_3 != 0) {
-      /* ST_CALLSITE[0054EE42]: CALL 0x0040422d; direct=0040422D STPlaySystemC::SetCtrlCmd */
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      st::fn_0040422D(in_ECX,DAT_0080874d,0,cVar2,param_2,param_4,nullptr,0);
-      return;
-    }
-    undefined4 * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
-    /* ST_CALLSITE[0054EE62]: CALL 0x00401fff; direct=00401FFF STAllPlayersC::PrepareToCmd */
-    uVar1 = st::fn_00401FFF(g_allPlayers_007FA174,(undefined4 *)&param_1_after_write,&param_3);
-    if (uVar1 != 0xffffffff) {
-      /* ST_CALLSITE[0054EE87]: CALL 0x0040422d; direct=0040422D STPlaySystemC::SetCtrlCmd */
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-      st::fn_0040422D(in_ECX,DAT_0080874d,uVar1,cVar2,param_2,param_4,param_1_after_write,param_3);
-    }
-    if (param_1_after_write != nullptr) {
-      st::fn_006AB060(&param_1_after_write);
-    }
-  }
-  return;
-}
-

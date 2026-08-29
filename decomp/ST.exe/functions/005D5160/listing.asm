@@ -273,7 +273,7 @@ LAB_005d5426:
 005D5428  E8 6D D6 E2 FF            CALL 0x00402a9a
 005D542D  8B 17                     MOV EDX,dword ptr [EDI]
 005D542F  8B CF                     MOV ECX,EDI
-005D5431  FF 52 20                  CALL dword ptr [EDX + 0x20]
+005D5431  FF 52 20                  CALL dword ptr [EDX + 0x20]  ; [STIndirectCallsiteApplier] exact slot 0x20; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/SettMapTy
 005D5434  8B 85 4C FF FF FF         MOV EAX,dword ptr [EBP + 0xffffff4c]
 005D543A  A3 F8 8D 85 00            MOV [0x00858df8],EAX
 005D543F  5F                        POP EDI

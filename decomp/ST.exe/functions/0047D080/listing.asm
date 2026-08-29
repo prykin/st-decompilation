@@ -106,7 +106,7 @@ LAB_0047d20c:
 0047D217  66 8B 96 9B 06 00 00      MOV DX,word ptr [ESI + 0x69b]
 0047D21E  8B CE                     MOV ECX,ESI
 0047D220  52                        PUSH EDX
-0047D221  E8 8C 5E F8 FF            CALL 0x004030b2
+0047D221  E8 8C 5E F8 FF            CALL 0x004030b2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override
 0047D226  50                        PUSH EAX
 0047D227  8B CE                     MOV ECX,ESI
 0047D229  E8 CE 50 F8 FF            CALL 0x004022fc

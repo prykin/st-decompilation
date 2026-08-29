@@ -22,7 +22,7 @@ BldLabPanelTy::InitBldLabPanel:
 004EFB9A  6A 28                     PUSH 0x28
 004EFB9C  50                        PUSH EAX
 004EFB9D  89 35 80 16 80 00         MOV dword ptr [0x00801680],ESI
-004EFBA3  E8 E8 E6 1B 00            CALL 0x006ae290
+004EFBA3  E8 E8 E6 1B 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/BldLabPanelTy_field_027ADArray; source view only; no Ghidra override
 004EFBA8  89 86 7A 02 00 00         MOV dword ptr [ESI + 0x27a],EAX
 004EFBAE  A1 30 67 80 00            MOV EAX,[0x00806730]
 004EFBB3  8B 4E 3C                  MOV ECX,dword ptr [ESI + 0x3c]

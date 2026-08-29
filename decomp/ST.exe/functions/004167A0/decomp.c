@@ -11,8 +11,7 @@ void __thiscall sub_004167A0(void *this)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   puStack_c = &DAT_007901d0;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;

@@ -3,11 +3,15 @@
 
 /* [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004F19D0_param_2Enum. Cases:
-   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5
 
-undefined4
-FUN_004f19d0(char param_1,Global_sub_004F19D0_param_2Enum param_2,undefined4 *param_3,
-            undefined4 *param_4)
+   [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=3, ignored=0,
+   unknown=0 */
+
+int FUN_004f19d0(char param_1,Global_sub_004F19D0_param_2Enum param_2,undefined4 *param_3,
+                undefined4 *param_4)
 
 {
   if (g_nWidth_00806730 == 0x400) {

@@ -1,4 +1,4 @@
-FUN_005fb540:
+STColl3C::vfunc_E0:
 005FB540  55                        PUSH EBP
 005FB541  8B EC                     MOV EBP,ESP
 005FB543  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

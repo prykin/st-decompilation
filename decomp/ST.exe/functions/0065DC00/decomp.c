@@ -15,8 +15,8 @@ int __fastcall FUN_0065dc00(AiFltClassTy *param_1,undefined4 param_2,uint param_
   int local_8;
 
   local_8 = 0;
-  /* ST_CALLSITE[0065DC13]: CALL 0x004018cf; direct=004018CF AiFltClassTy::sub_0065DA10 */
-  array = (DArrayTy *)AiFltClassTy::sub_0065DA10(param_1,param_2);
+  /* ST_CALLSITE[0065DC13]: CALL 0x004018cf; direct=004018CF AiFltClassTy::sub_0065DA10; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__fastcall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/AiFltClassTy;/undefined4 */
+  array = AiFltClassTy::sub_0065DA10(param_1,param_2);
   if (array != nullptr) {
     cVar1 = param_1->field_0081;
     if ((cVar1 < '\0') || ('\a' < cVar1)) {

@@ -23,9 +23,11 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar7 = ReportDebugMessage("E:\\__titans\\nick\\to_Rubb.cpp",0xd9,0,iVar2,"%s",
                                "STRubbishC::RubbishCreatePart");
     if (iVar7 == 0) {
@@ -40,6 +42,7 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
   do {
     if (*piVar2 == 0) {
       local_8 = iVar5;
+
       puVar3 = Library::DKW::LIB::MemAlloc(0x3e);
       (&local_c->field_01E5)[iVar6] = puVar3;
       if (puVar3 != nullptr) {
@@ -50,7 +53,8 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
         *(undefined2 *)puVar3 = 0;
         iVar5 = iVar6;
         if (local_c->field_01F9 != '\0') {
-          pSVar4 = (STT3DSprC *)Library::MSVCRT::FUN_0072e530(0x40);
+          /* ST_CALLSITE[0062EE2E]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint */
+          pSVar4 = Library::MSVCRT::FUN_0072e530(0x40);
           if (pSVar4 == nullptr) {
             pSVar4 = nullptr;
           }

@@ -45,6 +45,7 @@ FUN_0069f8d0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   if ((param_4 == param_6) && (iVar3 = 1, param_5 == param_7)) {
 LAB_0069fb6f:
     FreeAndNull(&local_18);
+
     local_28 = Library::DKW::LIB::MemAlloc(iVar3 * 4);
     if (local_28 != nullptr) {
       local_20 = 1;
@@ -90,6 +91,7 @@ LAB_0069fc43:
   }
   else {
     local_24 = 0x80;
+
     local_1c = Library::DKW::LIB::MemAlloc(0x400);
     local_18 = local_1c;
     if (local_1c != nullptr) {
@@ -121,6 +123,7 @@ LAB_0069fc43:
             local_38 = (undefined2 *)((int)local_38 + 0x400);
             local_24 = local_24 + 0x80;
             uVar5 = local_2c + 0x200;
+
             psVar4 = Library::DKW::LIB::MemRealloc(local_18,(uint)local_38);
             if (psVar4 == nullptr) goto LAB_0069fc5a;
             local_1c = psVar4 + ((int)local_1c - (int)local_18 >> 2) * 2;
@@ -133,8 +136,9 @@ LAB_0069fc43:
             }
             psVar6 = local_1c + local_8 * 2;
             local_18 = psVar4;
+
             Library::MSVCRT::FUN_0072da70
-                      ((undefined4 *)(local_2c + 0x400 + (int)psVar4),
+                      ((RecoveredRecord_006BFE70_3123BCE8 *)(local_2c + 0x400 + (int)psVar4),
                        (AnonPointee_TLOBaseTy_0607 *)(uVar5 + (int)psVar4),uVar5);
             local_2c = uVar5;
           }

@@ -28,8 +28,7 @@ ST3DSMAPContext::sub_006E2970
   int local_1c;
   float local_10;
   float local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_10 = param_1;
   local_c = param_2;
   local_8 = param_3;

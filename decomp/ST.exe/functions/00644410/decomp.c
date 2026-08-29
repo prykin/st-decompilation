@@ -2,18 +2,19 @@
 
 
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
-   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00644410.
+   /SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_00644410.
    Evidence: incoming_receiver_captures=1; receiver_accesses=28; incoming_edx_uses=0; calls=1;
    ecx_pointer_setup=1; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[16];
    expected_stack=16; receiver_family_members=2; adopt_untyped_existing_thiscall;
    single_call_corroborated_by_receiver_family */
 
 void __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
-          (AnonReceiver_00644410 *this,undefined4 *param_1,int *param_2,int *param_3,int *param_4)
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00644410::FUN_00644410
+          (RecoveredReceiver_00644410 *this,undefined4 *param_1,int *param_2,int *param_3,
+          int *param_4)
 
 {
-  AnonShape_00644410_A4B3CF3D *pAVar1;
+  RecoveredReceiver_00644410 *pRVar1;
   byte bVar2;
   short sVar3;
   int iVar4;
@@ -24,12 +25,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
   int iVar8;
   uint *puVar10;
   short sVar11;
-  STWorldObject *this_00;
+  RecoveredRecord_00645F10_DD339E8F *this_00;
   int iVar12;
   short sVar13;
   int iVar14;
   longlong lVar15;
-  undefined1 local_48 [4];
+  byte local_48 [4];
   int local_44;
   int local_40;
   int local_3c;
@@ -43,27 +44,28 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
   int local_1c;
   undefined4 *local_18;
   int local_14;
-  AnonShape_00644410_A4B3CF3D *local_10;
+  RecoveredReceiver_00644410 *local_10;
   short local_a;
   short local_8;
   short local_6;
 
   iVar14 = 0;
-  local_3c = (int)*(short *)&this->field_0x41;
-  local_40 = (int)*(short *)&this->field_0x43;
-  local_44 = (int)*(short *)&this->field_0x45;
+  local_3c = (int)this->field_0041;
+  local_40 = (int)this->field_0043;
+  local_44 = (int)this->field_0045;
   local_14 = 0;
   local_18 = nullptr;
-  if ((byte)this->field_0x27d < 2) {
+  if ((byte)this->field_027D < 2) {
     *param_2 = local_3c;
     *param_3 = local_40;
     *param_4 = local_44;
     *param_1 = 0;
     return;
   }
-  local_10 = (AnonShape_00644410_A4B3CF3D *)this;
-  local_2c = FUN_006aadd0((int)*(short *)&this->field_0x268,(int)*(short *)&this->field_0x26a,
-                          (int)*(short *)&this->field_0x26c,local_3c,local_40,local_44);
+  local_10 = this;
+
+  local_2c = FUN_006aadd0((int)this->field_0268,(int)this->field_026A,(int)this->field_026C,local_3c
+                          ,local_40,local_44);
   local_2c = local_2c / 0x32;
   if (local_2c < 1) {
     local_2c = 1;
@@ -71,13 +73,10 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
   local_38 = 1;
   if (0 < local_2c) {
     do {
-      iVar14 = ((local_3c - ((AnonShape_00644410_A4B3CF3D *)this)->field_0268) * local_38) /
-               local_2c + (int)((AnonShape_00644410_A4B3CF3D *)this)->field_0268;
-      local_14 = ((local_40 - ((AnonShape_00644410_A4B3CF3D *)this)->field_026A) * local_38) /
-                 local_2c + (int)((AnonShape_00644410_A4B3CF3D *)this)->field_026A;
+      iVar14 = ((local_3c - this->field_0268) * local_38) / local_2c + (int)this->field_0268;
+      local_14 = ((local_40 - this->field_026A) * local_38) / local_2c + (int)this->field_026A;
       local_18 = (undefined4 *)
-                 (((local_44 - ((AnonShape_00644410_A4B3CF3D *)this)->field_026C) * local_38) /
-                  local_2c + (int)((AnonShape_00644410_A4B3CF3D *)this)->field_026C);
+                 (((local_44 - this->field_026C) * local_38) / local_2c + (int)this->field_026C);
       local_24 = STBiasedDiv16(iVar14, 0xc9); /* exact signed 16-bit grid-index division */
       iVar6 = STBiasedDiv16(local_14, 0xc9); /* exact signed 16-bit grid-index division */
       sVar3 = (short)((int)local_18 >> 0x1f);
@@ -105,7 +104,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                  ((local_1c <= g_worldGrid.sizeY + -1 &&
                   (iVar6 = local_24 + -1, iVar6 <= local_24 + 1)))) {
                 do {
-                  pAVar1 = local_10;
+                  pRVar1 = local_10;
                   iVar14 = local_34;
                   if ((-1 < iVar6) && (iVar7 = (int)g_worldGrid.sizeX, iVar6 <= iVar7 + -1)) {
                     if (local_34 < 0) {
@@ -115,12 +114,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                         local_10->field_0270 = 0;
                         lVar15 = Library::MSVCRT::__ftol();
                         *param_2 = (int)lVar15;
-                        pAVar1->field_0041 = (short)lVar15;
+                        pRVar1->field_0041 = (short)lVar15;
                         lVar15 = Library::MSVCRT::__ftol();
                         *param_3 = (int)lVar15;
-                        *(short *)&pAVar1->field_0x43 = (short)lVar15;
+                        pRVar1->field_0043 = (short)lVar15;
                         *param_4 = 5;
-                        pAVar1->field_0045 = 5;
+                        pRVar1->field_0045 = 5;
                         return;
                       }
                     }
@@ -134,20 +133,24 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                         this_00 = nullptr;
                       }
                       else {
-                        this_00 = g_worldGrid.cells
+                        this_00 = (RecoveredRecord_00645F10_DD339E8F *)
+                                  g_worldGrid.cells
                                   [(int)sVar13 * (int)g_worldGrid.planeStride + sVar3 * iVar7 +
                                    (int)sVar11].objects[0];
                       }
-                      if (((local_10->field_0287 != '\0') && (this_00 == nullptr)) &&
+                      if (((local_10->field_0287 != '\0') &&
+                          (this_00 == nullptr)) &&
                          ((((sVar11 < 0 ||
                             (((g_worldGrid.sizeX <= sVar11 || (sVar3 < 0)) ||
                              (g_worldGrid.sizeY <= sVar3)))) ||
                            ((sVar13 < 0 || (g_worldGrid.sizeZ <= sVar13)))) ||
-                          ((this_00 = g_worldGrid.cells
+                          ((this_00 = (RecoveredRecord_00645F10_DD339E8F *)
+                                      g_worldGrid.cells
                                       [(int)sVar13 * (int)g_worldGrid.planeStride + sVar3 * iVar7 +
-                                       (int)sVar11].objects[1], this_00 != nullptr &&
-                           /* ST_CALLSITE[006446F4]: CALL dword ptr [EDX + 0x2c] */
-                           (((iVar7 = this_00->GetObjectTypeId(), iVar7 != 0xa6 &&
+                                       (int)sVar11].objects[1],
+                           this_00 != nullptr &&
+                           /* ST_CALLSITE[006446F4]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+                           (((iVar7 = STStructuralVirtualCall<undefined4>(this_00, 0x2C), iVar7 != 0xa6 &&
                              (iVar7 != 0xa7)) && ((iVar7 != 0xbd && (iVar7 != 0xaf)))))))))) {
                         this_00 = nullptr;
                       }
@@ -288,12 +291,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                         uVar9 = (undefined2)((uint)local_10 >> 0x10);
                         /* ST_CALLSITE[006447C2]: CALL dword ptr [EDX + 0xdc]; [STIndirectCallsiteApplier] exact slot 0xDC; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                        iVar14 = (*this_00->vtable[4].slots_00_28[7])
-                                           (this_00,local_20,local_14,local_18,
-                                            CONCAT22(uVar9,local_10->field_024B),
-                                            CONCAT22(uVar9,local_10->field_024D),
-                                            CONCAT22(uVar9,local_10->field_024F));
-                        pAVar1 = local_10;
+                        iVar14 = STStructuralVirtualCall<undefined4>((STWorldObject *)this_00, 0xDC, local_20, local_14, local_18, CONCAT22(uVar9,local_10->field_024B), CONCAT22(uVar9,local_10->field_024D), CONCAT22(uVar9,local_10->field_024F));
+                        pRVar1 = local_10;
                         if (-1 < iVar14) {
                           *param_1 = 1;
                           iVar6 = local_10->field_0259;
@@ -301,23 +300,22 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                               (iVar6 == 0x9b)) &&
                              (((local_10->field_0285 == '\0' &&
                                /* ST_CALLSITE[00644D02]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-                               (bVar2 = LookupRecordByte(*(char *)&this_00[1].vtable), bVar2 != 3))
-                              && (iVar6 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x1b),
-                                 iVar6 != 0)))) {
+                               (bVar2 = LookupRecordByte((char)this_00->field_0024), bVar2 != 3)
+
+                               ) && (iVar6 = thunk_FUN_004e60d0(this_00->field_0024,0x1b),
+                                    iVar6 != 0)))) {
                             /* ST_CALLSITE[00644D35]: CALL dword ptr [EAX + 0xe0]; [STIndirectCallsiteApplier] exact slot 0xE0; mode=machine-void; signature=__thiscall;/void;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
-                            (*this_00->vtable[4].slots_00_28[8])
-                                      (this_00,iVar14,&local_6,&local_8,&local_a,local_48);
+                            STStructuralVirtualCall<void>((STWorldObject *)this_00, 0xE0, iVar14, &local_6, &local_8, &local_a, local_48);
                             *param_2 = (int)local_6;
                             *param_3 = (int)local_8;
                             *param_4 = (int)local_a;
-                            /* ST_CALLSITE[00644D63]: CALL 0x00401159; direct=00401159 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::sub_00645F10 */
-                            sub_00645F10((AnonReceiver_00644410 *)pAVar1,this_00,(ushort)*param_2,
-                                         (ushort)*param_3,local_a);
-                            pAVar1->field_0285 = '\x02';
+                            /* ST_CALLSITE[00644D63]: CALL 0x00401159; direct=00401159 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00644410::sub_00645F10 */
+                            sub_00645F10(pRVar1,this_00,(ushort)*param_2,(ushort)*param_3,local_a);
+                            pRVar1->field_0285 = 2;
                           }
-                          pAVar1->field_0270 = 1;
-                          *(undefined4 *)&pAVar1->field_0x274 = *(undefined4 *)&this_00->field_0x18;
-                          *(int *)&pAVar1->field_0x278 = iVar14;
+                          pRVar1->field_0270 = 1;
+                          pRVar1->field_0274 = *(undefined4 *)&this_00->field_0x18;
+                          pRVar1->field_0278 = iVar14;
                           *param_2 = local_20;
                           *param_3 = local_14;
                           *param_4 = (int)local_18;
@@ -328,7 +326,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00644410::FUN_00644410
                   }
                   iVar6 = iVar6 + 1;
                   puVar10 = local_30;
-                  this = (AnonReceiver_00644410 *)local_10;
+                  this = local_10;
                   iVar14 = local_20;
                 } while (iVar6 <= local_24 + 1);
               }

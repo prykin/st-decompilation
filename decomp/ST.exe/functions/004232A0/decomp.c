@@ -22,9 +22,9 @@ STGroupC * __thiscall STGroupBoatC::sub_004232A0(STGroupBoatC *this)
 {
   sub_006E60E0(this);
   this->vtable = (STGroupBoatCVTable *)&VTable_00790508;
-  this->field_001C = 0;
+  this->field_001C = nullptr;
   this->field_0020 = CASE_0;
-  this->field_0029 = 0;
+  this->field_0029 = nullptr;
   this->field_002D = nullptr;
   this->field_0027 = 0;
   this->field_0035 = 0;

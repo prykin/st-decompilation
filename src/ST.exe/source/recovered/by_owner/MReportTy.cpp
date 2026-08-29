@@ -100,7 +100,7 @@ void __thiscall st::fn_005C05F0(MReportTy *this)
 
 {
   HoloTy *pHVar1;
-  int iVar2;
+  RecoveredRecord_005AACB0_2533FD69 *pRVar2;
   uint uVar7;
   uint local_EAX_546;
   uint *puVar3;
@@ -126,13 +126,14 @@ void __thiscall st::fn_005C05F0(MReportTy *this)
   }
   if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {
+
       st::fn_006B8B10((int *)g_cursorClass_00802A30->field_00AD);
     }
     else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
-      st::fn_006B3AF0((int *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C);
+      st::fn_006B3AF0(reinterpret_cast<int *>(g_cursorClass_00802A30->field_0060),g_cursorClass_00802A30->field_001C);
     }
   }
-  st::fn_006B5F80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
+  st::fn_006B5F80(reinterpret_cast<int *>(g_ddxContext_008075A8),0,0,g_nWidth_00806730,DAT_00806734);
   if (this->field_0453 != nullptr) {
     /* ST_CALLSITE[005C0694]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
     st::fn_0040128A(this->field_0453);
@@ -171,16 +172,18 @@ void __thiscall st::fn_005C05F0(MReportTy *this)
     cVar6 = '\x01';
     bVar5 = 0x10;
     iVar4 = 1;
-    iVar2 = st::fn_006BF9F0((int *)g_ddxContext_008075A8,0x47,0x46,0x2bd,0x15e);
+    /* ST_CALLSITE[005C0745]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69;pointer:/int;/undefined4;/undefined4;/undefined4;/undefined4 */
+    pRVar2 = st::pointer_boundary_cast<RecoveredRecord_005AACB0_2533FD69 *>(st::fn_006BF9F0(reinterpret_cast<int *>(g_ddxContext_008075A8),0x47,0x46,0x2bd,0x15e));
     /* ST_CALLSITE[005C0757]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
-    uVar7 = st::fn_0040459D(this->field_0453,CASE_2,0x47,0x46,iVar2,iVar4,bVar5,cVar6,uVar8);
+    uVar7 = st::fn_0040459D(this->field_0453,CASE_2,0x47,0x46,pRVar2,iVar4,bVar5,cVar6,uVar8);
     if (uVar7 != 0) {
       pHVar1 = this->field_0453;
       pHVar1->field_0002 = 0;
       pHVar1->field_0017 = -1;
       uVar8 = *(uint *)&this->field_0453->field_0x3;
       if (-1 < (int)uVar8) {
-        st::fn_006B3430((int *)g_ddxContext_008075A8,uVar8);
+
+        st::fn_006B3430(reinterpret_cast<int *>(g_ddxContext_008075A8),uVar8);
       }
       /* ST_CALLSITE[005C0790]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       st::fn_004055F1(this->field_0453);
@@ -214,16 +217,18 @@ void __thiscall st::fn_005C05F0(MReportTy *this)
     cVar6 = '\x01';
     bVar5 = 0x10;
     iVar4 = 1;
-    iVar2 = st::fn_006BF9F0((int *)g_ddxContext_008075A8,0x1a,10,0x2e9,0x32);
+    /* ST_CALLSITE[005C0800]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69;pointer:/int;/undefined4;/undefined4;/undefined4;/undefined4 */
+    pRVar2 = st::pointer_boundary_cast<RecoveredRecord_005AACB0_2533FD69 *>(st::fn_006BF9F0(reinterpret_cast<int *>(g_ddxContext_008075A8),0x1a,10,0x2e9,0x32));
     /* ST_CALLSITE[005C0812]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
-    local_EAX_546 = st::fn_0040459D(this->field_0457,CASE_3,0x1a,10,iVar2,iVar4,bVar5,cVar6,uVar8);
+    local_EAX_546 = st::fn_0040459D(this->field_0457,CASE_3,0x1a,10,pRVar2,iVar4,bVar5,cVar6,uVar8);
     if (local_EAX_546 != 0) {
       pHVar1 = this->field_0457;
       pHVar1->field_0002 = 0;
       pHVar1->field_0017 = -1;
       uVar8 = *(uint *)&this->field_0457->field_0x3;
       if (-1 < (int)uVar8) {
-        st::fn_006B3430((int *)g_ddxContext_008075A8,uVar8);
+
+        st::fn_006B3430(reinterpret_cast<int *>(g_ddxContext_008075A8),uVar8);
       }
       /* ST_CALLSITE[005C084B]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
       st::fn_004055F1(this->field_0457);
@@ -232,14 +237,16 @@ void __thiscall st::fn_005C05F0(MReportTy *this)
     st::fn_004055F1(this->field_0457);
   }
   /* ST_CALLSITE[005C0862]: CALL 0x00403738; direct=00403738 PutDDX */
-  st::fn_00403738(0,0,'\x01',(BITMAPINFO *)this->field_005D);
+  st::fn_00403738(0,0,'\x01',reinterpret_cast<BITMAPINFO *>(this->field_005D));
   if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {
+
       st::fn_006B8A60((byte *)g_cursorClass_00802A30->field_00AD);
     }
     else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
+
       st::fn_006B34D0
-                ((uint *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C,
+                (reinterpret_cast<uint *>(g_cursorClass_00802A30->field_0060),g_cursorClass_00802A30->field_001C,
                  0xfffffffe,g_cursorClass_00802A30->field_0034,g_cursorClass_00802A30->field_0038);
       this->field_0065 = 4;
       return;
@@ -248,4 +255,3 @@ void __thiscall st::fn_005C05F0(MReportTy *this)
   this->field_0065 = 4;
   return;
 }
-

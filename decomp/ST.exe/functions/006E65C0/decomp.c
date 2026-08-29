@@ -23,11 +23,17 @@
 
    [STPrototypeApplier] Propagated parameter 7.
    Evidence: 0052AFE0 -> 006E65C0 @ 0052B250; literal 1 at 0052B229 | 0052B330 -> 006E65C0 @
-   0052B55C; literal 1 at 0052B520 */
+   0052B55C; literal 1 at 0052B520
+
+   [STMethodOwnerApplier] Structural method owner recovered as ST3DSMAPContext.
+   Evidence: this_call_owners=[ST3DSMAPContext]; agreed_this_calls=2; incoming_this_accesses=0;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=7; direct_non_thunk_callers=2;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
 
 undefined4 __thiscall
-FUN_006e65c0(void *this,undefined4 param_1,char param_2,float param_3,float param_4,ushort param_5,
-            ushort param_6,ushort param_7)
+ST3DSMAPContext::sub_006E65C0
+          (ST3DSMAPContext *this,undefined4 param_1,char param_2,float param_3,float param_4,
+          ushort param_5,ushort param_6,ushort param_7)
 
 {
   void *pvVar1;
@@ -43,7 +49,7 @@ FUN_006e65c0(void *this,undefined4 param_1,char param_2,float param_3,float para
   STField<ushort>(pvVar1,0xe) = param_5;
   STField<ushort>(pvVar1,0x10) = param_6;
   STField<ushort>(pvVar1,0x12) = param_7;
-  FUN_006b9910((undefined4 *)((int)this + 0x442),(int)pvVar1);
+  FUN_006b9910(&this->field_0442,(int)pvVar1);
   return 0;
 }
 

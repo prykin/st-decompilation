@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_00623600(AnonShape_00623600_61226D23 *param_1)
+void __fastcall FUN_00623600(RecoveredRecordView_00623600_F614B92B *param_1)
 
 {
   byte *puVar1;
@@ -103,9 +103,8 @@ LAB_00623863:
       if (param_1->field_02E9 == '\0') {
         thunk_FUN_004ad460(&param_1->field_0x1d5,0);
         param_1->field_02E9 = 1;
-        /* ST_CALLSITE[0062388D]: CALL dword ptr [EDX + 0xd8] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(param_1->field_0000 + 0xd8))();
+        /* ST_CALLSITE[0062388D]: CALL dword ptr [EDX + 0xd8]; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+        STStructuralVirtualCall<undefined4>(param_1, 0xD8);
         return;
       }
       goto LAB_006238c2;
@@ -113,13 +112,13 @@ LAB_00623863:
     cVar2 = param_1->field_02E9;
   }
   if (cVar2 != '\0') {
-    thunk_FUN_004ad430((STT3DSprC *)&param_1->field_0x1d5);
+    /* ST_CALLSITE[006238B6]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+    STT3DSprC::sub_004AD430((STT3DSprC *)&param_1->field_0x1d5);
     param_1->field_02E9 = 0;
   }
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_006238c2:
-  /* ST_CALLSITE[006238C6]: CALL dword ptr [EDX + 0xd8] */
-  (**(code **)(param_1->field_0000 + 0xd8))();
+  /* ST_CALLSITE[006238C6]: CALL dword ptr [EDX + 0xd8]; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+  STStructuralVirtualCall<undefined4>(param_1, 0xD8);
   return;
 }
 

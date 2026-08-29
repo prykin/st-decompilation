@@ -42,7 +42,7 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
   int local_6c;
   float local_60;
   float local_5c;
-  undefined4 local_58;
+  uint local_58;
   int local_54 [4];
   int local_44;
   int *local_38;
@@ -53,8 +53,7 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0xffffffff;
   puStack_c = &DAT_00790550;
   puStack_10 = &LAB_0072d964;
@@ -84,18 +83,22 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
   local_5c = param_2 - local_5c;
   local_58 = 0;
   ExceptionList = &local_14;
+
   local_EAX_196 = ST3DSMAPContext::sub_006E25D0(this,local_54,&local_60,0.0,0.0,0.0,1);
   iVar5 = 1;
   if (local_EAX_196 != 1) {
     local_60 = (float)iVar7 * (float)STField<double>(this,0x368) + local_60;
+
     iVar3 = ST3DSMAPContext::sub_006E25D0(this,local_54,&local_60,0.0,0.0,0.0,1);
     iVar5 = 1;
     if (iVar3 != 1) {
       local_5c = (float)iVar7 * (float)STField<double>(this,0x368) + local_5c;
+
       local_EAX_311 = ST3DSMAPContext::sub_006E25D0(this,local_54,&local_60,0.0,0.0,0.0,1);
       iVar5 = 1;
       if (local_EAX_311 != 1) {
         local_60 = param_1 - (float)param_4 * (float)STField<double>(this,0x368);
+
         local_EAX_369 = ST3DSMAPContext::sub_006E25D0(this,local_54,&local_60,0.0,0.0,0.0,1);
         iVar5 = 1;
         if (local_EAX_369 != 1) {
@@ -103,18 +106,22 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
           local_60 = param_1 - local_5c;
           local_5c = param_2 - local_5c;
           local_58 = 0x424751eb;
+
           local_EAX_444 = ST3DSMAPContext::sub_006E25D0(this,local_54,&local_60,0.0,0.0,0.0,1);
           iVar5 = 1;
           if (local_EAX_444 != 1) {
             local_60 = (float)iVar7 * (float)STField<double>(this,0x368) + local_60;
+
             local_EAX_500 = ST3DSMAPContext::sub_006E25D0(this,local_54,&local_60,0.0,0.0,0.0,1);
             iVar5 = 1;
             if (local_EAX_500 != 1) {
               local_5c = (float)iVar7 * (float)STField<double>(this,0x368) + local_5c;
+
               iVar4 = ST3DSMAPContext::sub_006E25D0(this,local_54,&local_60,0.0,0.0,0.0,1);
               iVar5 = 1;
               if (iVar4 != 1) {
                 local_60 = param_1 - (float)param_4 * (float)STField<double>(this,0x368);
+
                 iVar5 = ST3DSMAPContext::sub_006E25D0(this,local_54,&local_60,0.0,0.0,0.0,1);
               }
             }
@@ -326,8 +333,9 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
     } while (iVar6 <= param_4);
   }
   if (param_5 < 1) {
-    local_30 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::thunk_FUN_00427bb0
-                         (this,iVar7,iVar10,0);
+
+    local_30 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_004248D0::
+               thunk_FUN_00427bb0(this,iVar7,iVar10,0);
 joined_r0x004286bb:
     puVar2 = local_1c;
     if (local_30 != 0) goto cf_common_join_004286D0;
@@ -338,8 +346,9 @@ joined_r0x004286bb:
       iVar6 = iVar10;
     }
     if ((iVar7 <= iVar6) &&
-       (local_30 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::thunk_FUN_00427bb0
-                             (this,iVar7,iVar6,0), puVar2 = local_1c, local_30 != 0))
+
+       (local_30 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_004248D0::
+                   thunk_FUN_00427bb0(this,iVar7,iVar6,0), puVar2 = local_1c, local_30 != 0))
     goto cf_common_join_004286D0;
     iVar6 = -param_5;
     if (-param_5 < iVar7) {
@@ -350,9 +359,11 @@ joined_r0x004286bb:
       iVar8 = iVar10;
     }
     if ((iVar6 <= iVar8) &&
-       ((local_30 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::
+
+       ((local_30 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_004248D0::
                     thunk_FUN_00427bb0(this,iVar6,iVar8,-1), puVar2 = local_1c, local_30 != 0 ||
-        (local_30 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::
+
+        (local_30 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_004248D0::
                     thunk_FUN_00427bb0(this,iVar6,iVar8,1), puVar2 = local_1c, local_30 != 0))))
     goto cf_common_join_004286D0;
     iVar6 = param_5 + 1;
@@ -360,8 +371,9 @@ joined_r0x004286bb:
       iVar6 = iVar7;
     }
     if (iVar6 <= iVar10) {
-      local_30 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::thunk_FUN_00427bb0
-                           (this,iVar6,iVar10,0);
+
+      local_30 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_004248D0::
+                 thunk_FUN_00427bb0(this,iVar6,iVar10,0);
       goto joined_r0x004286bb;
     }
   }

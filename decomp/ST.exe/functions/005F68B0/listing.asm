@@ -74,7 +74,7 @@ LAB_005f68f8:
 005F698A  89 7D 08                  MOV dword ptr [EBP + 0x8],EDI
 005F698D  0F 84 95 00 00 00         JZ 0x005f6a28
 005F6993  6A 6C                     PUSH 0x6c
-005F6995  E8 D6 42 0B 00            CALL 0x006aac70
+005F6995  E8 D6 42 0B 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 005F699A  B9 1B 00 00 00            MOV ECX,0x1b
 005F699F  8B F8                     MOV EDI,EAX
 005F69A1  89 83 E6 02 00 00         MOV dword ptr [EBX + 0x2e6],EAX

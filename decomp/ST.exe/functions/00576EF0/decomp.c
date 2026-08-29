@@ -23,11 +23,13 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar4 == 0) {
     /* ST_CALLSITE[00576F31]: CALL 0x00402112; direct=00402112 LoadLand */
     PTR_00806750 = LoadLand(g_cMf32_00806754,"3D_MAP");
-    pAVar5 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
+    /* ST_CALLSITE[00576F43]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F;/uint */
+    pAVar5 = FUN_006b04d0(0x4f2);
     if (pAVar5 == nullptr) {
       pSVar6 = nullptr;
     }
@@ -40,16 +42,19 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
     iVar4 = (int)*psVar2 / 2;
     pSVar6->field_0284 = iVar4;
     pSVar6->field_0288 = iVar4 * iVar4;
+
     SystemClassTy::InitSystem((SystemClassTy *)local_8);
     ST3DSMAPContext::sub_006E8580(g_sT3DSMAPContext_00807598,(int *)g_ddxContext_008075A8);
-    PTR_00806724 = (AnonShape_GLOBAL_00806724_3210464F *)
-                   Library::Ourlib::MFIMG::mfImtLoad
+    /* ST_CALLSITE[00576FB0]: CALL 0x0070ae60; direct=0070AE60 Library::Ourlib::MFIMG::mfImtLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_00806724; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_00806724;pointer:/cMf32;pointer:/char;/byte;/int;pointer:/undefined4;/int */
+    PTR_00806724 = Library::Ourlib::MFIMG::mfImtLoad
                              (PTR_00806770,"scmask",0,0,nullptr,1);
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;
+
     iVar4 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
     pGVar3 = local_8;
     if (iVar4 == 0) {
+
       puVar7 = Library::Ourlib::MFPLA::mfPlaPtrTy(g_cMf32_00806760,PTR_s_ANIM_PALETTE_0079b1a8,0);
       pGVar3->field_0431 = puVar7;
     }
@@ -58,6 +63,7 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar8 = ReportDebugMessage("E:\\__titans\\tsystem.cpp",0x86,0,iVar4,"%s",
                              "GameSystemC::InitSystem");
   if (iVar8 != 0) {

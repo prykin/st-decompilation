@@ -25,9 +25,11 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this)
   uint local_c;
   uint local_8;
   if (this->field_00E8 == 1) {
-    thunk_FUN_00417830((AnonShape_00417830_9254190A *)this);
+
+    thunk_FUN_00417830((RecoveredRecordView_00417830_39C1D071 *)this);
     return 0;
   }
+
   local_EAX_30 = thunk_FUN_00416400((STJellyGunC *)this);
   if (local_EAX_30 == 1) {
     return 0;
@@ -52,8 +54,9 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this)
     /* ST_CALLSITE[00418A39]: CALL 0x0040464c; direct=0040464C sub_0041C5A0 */
     sub_0041C5A0(this);
     this->field_00FA = 0;
+
     iVar6 = thunk_FUN_00495ff0(this->field_005B,this->field_005D,this->field_005F,this->field_008E,
-                               (AnonShape_00495FF0_59081BDD *)this);
+                               (RecoveredRecordView_00495FF0_A2A90B23 *)this);
     if ((iVar6 == 0) &&
        /* ST_CALLSITE[00418A93]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
        (iVar6 = DumpClassC::WritePtr
@@ -61,12 +64,13 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this)
                            (RecoveredRecord_DumpClassC_00495EC0 *)this), iVar6 == 0)) {
       /* ST_CALLSITE[00418AA9]: CALL 0x004023a1; direct=004023A1 TLOEmbryoTy::sub_0041C3F0 */
       TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)this,(undefined *)this->field_0101);
-      thunk_FUN_004168b0((int)this);
+      thunk_FUN_004168b0((RecoveredRecord_004168B0_1FFF2915 *)this);
       return 0;
     }
   }
   else if (local_EAX_30 == 3) {
     thunk_FUN_00416840(this,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8);
+
     uVar7 = thunk_FUN_00418d20(this->field_0047,this->field_0049,this->field_004B,(short)local_10,
                                (short)local_c,(short)local_8);
     if (uVar7 != 0xffffffff) {
@@ -81,9 +85,10 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this)
         this->field_00E3 = '\0';
         /* ST_CALLSITE[00418BBC]: CALL 0x00405952; direct=00405952 sub_004167A0 */
         sub_004167A0(this);
-        iVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030
-                          ((AnonReceiver_004167A0 *)this,(short)local_10,(short)local_c,
-                           (short)local_8);
+
+        iVar6 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_004167A0::
+                thunk_FUN_00418030((RecoveredReceiver_004167A0 *)this,(short)local_10,(short)local_c
+                                   ,(short)local_8);
         if (iVar6 == -1) {
           return 0xffffffff;
         }
@@ -96,11 +101,13 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this)
       }
       uVar2 = this->field_0097[this->field_00D3 * 4 + 3];
       if (((uVar2 & 0xfff) != 0xffe) && (uVar2 != this->field_006C)) {
+
         thunk_FUN_00417740(this,this->field_006C,uVar2);
       }
-      thunk_FUN_004168b0((int)this);
+      thunk_FUN_004168b0((RecoveredRecord_004168B0_1FFF2915 *)this);
       return 0;
     }
+
     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0x33f,0,0,"%s",
                                "STGameObjC::MoveStep far cells");
     if (iVar5 != 0) {

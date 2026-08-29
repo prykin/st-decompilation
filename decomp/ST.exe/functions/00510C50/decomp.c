@@ -13,7 +13,8 @@ HelpPanelTy * __cdecl CreateHelpPanel(void)
 {
   HelpPanelTy *pHVar1;
 
-  pHVar1 = (HelpPanelTy *)FUN_006b04d0(0x254);
+  /* ST_CALLSITE[00510C55]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/HelpPanelTy; signature=__stdcall;pointer:/HelpPanelTy;/uint */
+  pHVar1 = FUN_006b04d0(0x254);
   if (pHVar1 != nullptr) {
     pHVar1 = HelpPanelTy::HelpPanelTy(pHVar1);
     return pHVar1;

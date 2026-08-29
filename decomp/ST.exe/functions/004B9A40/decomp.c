@@ -26,10 +26,12 @@ undefined4 __thiscall TLOBaseTy::sub_004B9A40(TLOBaseTy *this)
       ((TVar1 != CASE_4C || (this->field_04D0 == CASE_2)))) &&
      ((TVar1 != CASE_43 || (this->field_04D0 == CASE_2)))) {
     /* ST_CALLSITE[004B9A7E]: CALL dword ptr [EAX + 0x2c] */
-    dVar2 = this->slot_2C();
+    dVar2 = this->vfunc_2C();
+    /* ST_CALLSITE[004B9A8C]: CALL 0x00402f0e; direct=00402F0E STAllPlayersC::sub_004B7710 */
     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-    thunk_FUN_004b7710(STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)(*(undefined1 *)&this->field_0024)),
-                       dVar2);
+    STAllPlayersC::sub_004B7710
+              (g_allPlayers_007FA174,
+               STReplaceLowByte((uint32_t)(extraout_ECX), (uint8_t)(*(undefined1 *)&this->field_0024)),dVar2);
   }
   TVar1 = this->field_05AC;
   if ((TVar1 == CASE_34) || (TVar1 == CASE_5B)) {

@@ -372,7 +372,8 @@ LAB_004d1670:
 004D1680  6A 04                     PUSH 0x4
 004D1682  6A 0A                     PUSH 0xa
 004D1684  57                        PUSH EDI
-004D1685  E8 06 CC 1D 00            CALL 0x006ae290
+TLOEmbryoTy::Create::override::prt_4d1685_7f8a0897:
+004D1685  E8 06 CC 1D 00            CALL 0x006ae290  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STFishCPtr; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STFishCPtr;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint;/uint
 004D168A  A3 6C A1 7F 00            MOV [0x007fa16c],EAX
 LAB_004d168f:
 004D168F  8D 4D BC                  LEA ECX,[EBP + -0x44]
@@ -547,7 +548,8 @@ LAB_004d188c:
 004D18AD  89 7D F4                  MOV dword ptr [EBP + -0xc],EDI
 004D18B0  E8 F0 33 F3 FF            CALL 0x00404ca5
 004D18B5  6A 40                     PUSH 0x40
-004D18B7  E8 74 CC 25 00            CALL 0x0072e530
+TLOEmbryoTy::Create::override::prt_4d18b7_a7ad5ad2:
+004D18B7  E8 74 CC 25 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint
 004D18BC  83 C4 04                  ADD ESP,0x4
 004D18BF  3B C7                     CMP EAX,EDI
 004D18C1  74 09                     JZ 0x004d18cc
@@ -614,7 +616,8 @@ LAB_004d1941:
 004D197C  8B 8B F4 02 00 00         MOV ECX,dword ptr [EBX + 0x2f4]
 004D1982  51                        PUSH ECX
 004D1983  8D 8B D5 01 00 00         LEA ECX,[EBX + 0x1d5]
-004D1989  E8 3E 39 F3 FF            CALL 0x004052cc
+TLOEmbryoTy::Create::override::prt_4d1989_4768c9e3:
+004D1989  E8 3E 39 F3 FF            CALL 0x004052cc  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC
 004D198E  8B 8B 5C 03 00 00         MOV ECX,dword ptr [EBX + 0x35c]
 004D1994  50                        PUSH EAX
 004D1995  E8 32 39 F3 FF            CALL 0x004052cc
@@ -642,7 +645,8 @@ LAB_004d1941:
 004D19EA  89 4D FC                  MOV dword ptr [EBP + -0x4],ECX
 LAB_004d19ed:
 004D19ED  6A 40                     PUSH 0x40
-004D19EF  E8 3C CB 25 00            CALL 0x0072e530
+TLOEmbryoTy::Create::override::prt_4d19ef_a7ad5ad2:
+004D19EF  E8 3C CB 25 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint
 004D19F4  83 C4 04                  ADD ESP,0x4
 004D19F7  85 C0                     TEST EAX,EAX
 004D19F9  74 09                     JZ 0x004d1a04
@@ -678,7 +682,8 @@ LAB_004d1a06:
 LAB_004d1a51:
 004D1A51  56                        PUSH ESI
 004D1A52  8D 8B D5 01 00 00         LEA ECX,[EBX + 0x1d5]
-004D1A58  E8 6F 38 F3 FF            CALL 0x004052cc
+TLOEmbryoTy::Create::override::prt_4d1a58_4768c9e3:
+004D1A58  E8 6F 38 F3 FF            CALL 0x004052cc  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC
 004D1A5D  8B 0F                     MOV ECX,dword ptr [EDI]
 004D1A5F  50                        PUSH EAX
 004D1A60  E8 67 38 F3 FF            CALL 0x004052cc
@@ -726,7 +731,8 @@ LAB_004d1aca:
 004D1AEA  C7 83 B4 02 00 00 01 00 00 00  MOV dword ptr [EBX + 0x2b4],0x1
 004D1AF4  89 93 B0 02 00 00         MOV dword ptr [EBX + 0x2b0],EDX
 004D1AFA  89 BB A4 02 00 00         MOV dword ptr [EBX + 0x2a4],EDI
-004D1B00  E8 2B CA 25 00            CALL 0x0072e530
+TLOEmbryoTy::Create::override::prt_4d1b00_a7ad5ad2:
+004D1B00  E8 2B CA 25 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint
 004D1B05  83 C4 04                  ADD ESP,0x4
 004D1B08  3B C7                     CMP EAX,EDI
 004D1B0A  74 09                     JZ 0x004d1b15
@@ -812,7 +818,8 @@ LAB_004d1bec:
 004D1C01  83 C0 07                  ADD EAX,0x7
 004D1C04  50                        PUSH EAX
 004D1C05  89 83 F4 02 00 00         MOV dword ptr [EBX + 0x2f4],EAX
-004D1C0B  E8 BC 36 F3 FF            CALL 0x004052cc
+TLOEmbryoTy::Create::override::prt_4d1c0b_4768c9e3:
+004D1C0B  E8 BC 36 F3 FF            CALL 0x004052cc  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC
 004D1C10  8B 8B 5C 03 00 00         MOV ECX,dword ptr [EBX + 0x35c]
 004D1C16  50                        PUSH EAX
 004D1C17  E8 B0 36 F3 FF            CALL 0x004052cc
@@ -1046,7 +1053,8 @@ LAB_004d1f0b:
 004D1F11  68 BC F4 7B 00            PUSH 0x7bf4bc
 004D1F16  51                        PUSH ECX
 004D1F17  50                        PUSH EAX
-004D1F18  E8 23 3F 1D 00            CALL 0x006a5e40
+TLOEmbryoTy::Create::override::prt_4d1f18_a88e3c6b:
+004D1F18  E8 23 3F 1D 00            CALL 0x006a5e40  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__stdcall;pointer:/STT3DSprC;/int;/int;pointer:/char;/int
 LAB_004d1f1d:
 004D1F1D  8B 93 70 03 00 00         MOV EDX,dword ptr [EBX + 0x370]
 004D1F23  8B CE                     MOV ECX,ESI
@@ -1061,7 +1069,8 @@ LAB_004d1f1d:
 004D1F3D  8B 8B F4 02 00 00         MOV ECX,dword ptr [EBX + 0x2f4]
 004D1F43  51                        PUSH ECX
 004D1F44  8B CE                     MOV ECX,ESI
-004D1F46  E8 81 33 F3 FF            CALL 0x004052cc
+TLOEmbryoTy::Create::override::prt_4d1f46_4768c9e3:
+004D1F46  E8 81 33 F3 FF            CALL 0x004052cc  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC
 004D1F4B  8B 8B 5C 03 00 00         MOV ECX,dword ptr [EBX + 0x35c]
 004D1F51  50                        PUSH EAX
 004D1F52  E8 75 33 F3 FF            CALL 0x004052cc
@@ -1184,7 +1193,8 @@ LAB_004d205f:
 004D20DE  52                        PUSH EDX
 004D20DF  50                        PUSH EAX
 004D20E0  8B CE                     MOV ECX,ESI
-004D20E2  E8 7D EF F2 FF            CALL 0x00401064
+TLOEmbryoTy::Create::override::prt_4d20e2_faa37b39:
+004D20E2  E8 7D EF F2 FF            CALL 0x00401064  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__thiscall;pointer:/STT3DSprC;pointer:/STT3DSprC;/char;/uint
 004D20E7  8B 0D 38 2A 80 00         MOV ECX,dword ptr [0x00802a38]
 004D20ED  8A 83 F0 02 00 00         MOV AL,byte ptr [EBX + 0x2f0]
 004D20F3  8B 91 E4 00 00 00         MOV EDX,dword ptr [ECX + 0xe4]
@@ -1196,7 +1206,8 @@ LAB_004d205f:
 004D2109  8D BB 50 03 00 00         LEA EDI,[EBX + 0x350]
 LAB_004d210f:
 004D210F  6A 40                     PUSH 0x40
-004D2111  E8 1A C4 25 00            CALL 0x0072e530
+TLOEmbryoTy::Create::override::prt_4d2111_a7ad5ad2:
+004D2111  E8 1A C4 25 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint
 004D2116  83 C4 04                  ADD ESP,0x4
 004D2119  85 C0                     TEST EAX,EAX
 004D211B  74 09                     JZ 0x004d2126
@@ -1250,7 +1261,8 @@ LAB_004d21a6:
 004D21A6  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
 004D21A9  8B CE                     MOV ECX,ESI
 004D21AB  50                        PUSH EAX
-004D21AC  E8 1B 31 F3 FF            CALL 0x004052cc
+TLOEmbryoTy::Create::override::prt_4d21ac_4768c9e3:
+004D21AC  E8 1B 31 F3 FF            CALL 0x004052cc  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC
 004D21B1  8B 0F                     MOV ECX,dword ptr [EDI]
 004D21B3  50                        PUSH EAX
 004D21B4  E8 13 31 F3 FF            CALL 0x004052cc

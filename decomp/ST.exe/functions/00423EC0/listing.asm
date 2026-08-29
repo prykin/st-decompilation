@@ -97,7 +97,7 @@ LAB_00423fa8:
 00423FC9  6A 05                     PUSH 0x5
 00423FCB  53                        PUSH EBX
 00423FCC  66 89 56 27               MOV word ptr [ESI + 0x27],DX
-00423FD0  E8 3B A3 28 00            CALL 0x006ae310
+00423FD0  E8 3B A3 28 00            CALL 0x006ae310  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 00423FD5  89 46 29                  MOV dword ptr [ESI + 0x29],EAX
 00423FD8  8B 47 1C                  MOV EAX,dword ptr [EDI + 0x1c]
 00423FDB  3B C3                     CMP EAX,EBX

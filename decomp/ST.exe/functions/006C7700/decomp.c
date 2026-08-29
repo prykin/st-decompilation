@@ -26,7 +26,7 @@ DWORD FUN_006c7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
   short sStack_52;
   undefined1 uStack_50;
   undefined1 uStack_4f;
-  undefined4 local_14;
+  uint local_14;
   int local_10;
   int *local_c;
   char local_5;

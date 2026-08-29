@@ -16,6 +16,7 @@ byte * __thiscall STJumpMineC::sub_00619350(STJumpMineC *this,undefined4 *param_
   byte *puVar3;
   byte *pbVar4;
 
+  /* ST_CALLSITE[0061935C]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/byte; source view only; no Ghidra override */
   pbVar1 = Library::DKW::LIB::MemAlloc(0x104);
   this->field_014C = this->field_001C;
   puVar3 = (byte *)&this->field_0x4d;

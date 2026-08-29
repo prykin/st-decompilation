@@ -3,6 +3,7 @@ function_address	semantic_id	status	detail
 006AB060	free_and_null	unchanged	desired name and prototype already present; consumer_call_views=0
 006AE110	darray_destroy	unchanged	desired name and prototype already present; consumer_call_views=0
 006AE290	darray_create	unchanged	desired name and prototype already present; consumer_call_views=0
+006AE310	darray_create_tracked	unchanged	desired name and prototype already present; consumer_call_views=0
 006B54F0	sarray_create	unchanged	desired name and prototype already present; consumer_call_views=0
 006AE140	darray_put	unchanged	desired name and prototype already present; consumer_call_views=0
 006AE1C0	darray_append	unchanged	desired name and prototype already present; consumer_call_views=0

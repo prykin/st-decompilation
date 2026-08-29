@@ -29,6 +29,7 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pAVar2 = local_c;
   if (iVar3 == 0) {
@@ -57,6 +58,7 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
     local_8 = (DArrayTy **)ppAVar12;
     do {
       if ((DArrayTy *)*ppAVar12 != nullptr) {
+        /* ST_CALLSITE[00678A1F]: CALL 0x006b0060; direct=006B0060 FUN_006b0060; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/AiPlrClassTy_field_06A1DArray; source view only; no Ghidra override */
         local_EAX_159 = FUN_006b0060(nullptr,(uint *)((int)ppAVar12[1] + 0x12a + (int)param_1));
         *ppAVar12 = (AiPlrClassTy_field_06A1DArray *)local_EAX_159;
       }
@@ -65,6 +67,7 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
     } while (iVar8 != 0);
     if (pAVar2->field_06A1 == nullptr) {
       pAVar3 = (AiPlrClassTy_field_06A1DArray *)
+               /* ST_CALLSITE[00678A3E]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/AiPlrClassTy_field_06A1DArray; source view only; no Ghidra override */
                Library::DKW::TBL::DArrayCreate(nullptr,10,0x12,5);
       pAVar2->field_06A1 = pAVar3;
     }
@@ -86,6 +89,7 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
         }
         if (puVar13[1] == 0) {
           iVar8 = puVar13[2];
+
           puVar6 = (byte *)(Library::DKW::LIB::MemAllocClear(puVar13[3]));
           uVar10 = puVar13[3];
           *puVar13 = puVar6;
@@ -101,7 +105,9 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
     return 0;
   }
   g_currentExceptionFrame = local_50.previous;
-  thunk_FUN_00678ba0(local_c);
+  /* ST_CALLSITE[00678AE8]: CALL 0x0040485e; direct=0040485E AiPlrClassTy::sub_00678BA0 */
+  sub_00678BA0(local_c);
+
   iVar7 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr.cpp",0x3c,0,iVar3,"%s",
                              "AiPlrClassTy::InitData");
   if (iVar7 != 0) {

@@ -1,8 +1,14 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:5: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=1,
+   pointer_dereferences=3, scalar_uses=0; sites=00698E98 dereference: MOV word ptr [ESI + -0xe],DX |
+   00698EA0 dereference: MOV word ptr [ESI + -0xc],AX | 00698EB2 dereference: MOV word ptr [ESI +
+   -0xa],CX */
+
 int FUN_00698de0(undefined1 *param_1,uint param_2,int param_3,undefined4 param_4,int param_5,
-                int param_6,int param_7)
+                void *param_6,int param_7)
 
 {
   short *psVar1;
@@ -37,8 +43,9 @@ int FUN_00698de0(undefined1 *param_1,uint param_2,int param_3,undefined4 param_4
   uint param_2_after_write = uVar4; /* compiler stack-slot lifetime split */
   if (0 < param_3) {
     auto param_7_after_write = param_3; /* compiler stack-slot lifetime split */
-    psVar6 = (short *)(param_6 + 4);
+    psVar6 = (short *)((int)param_6 + 4);
     do {
+
       local_EAX_152 = thunk_FUN_0069f7f0((int)puVar3,param_2_after_write,10,6,10);
       psVar8 = psVar6;
       if (-1 < local_EAX_152) {
@@ -52,6 +59,7 @@ int FUN_00698de0(undefined1 *param_1,uint param_2,int param_3,undefined4 param_4
           auto param_1_after_write = (undefined1 *)(param_2_after_write + 1); /* compiler stack-slot lifetime split */
           puVar7 = (uint *)(puVar3 + 6);
           do {
+
             iVar5 = FUN_006acf90((int)*psVar1,(int)psVar1[1],(int)*(short *)((int)puVar7 + -6),
                                  (short)puVar7[-1]);
             if (iVar5 < 7) {

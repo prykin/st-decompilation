@@ -26,14 +26,14 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
   int iVar15;
   int local_d0 [20];
   InternalExceptionFrame local_80;
-  undefined4 local_3c;
-  undefined4 local_38;
-  undefined4 local_34;
-  undefined4 local_30;
+  uint local_3c;
+  uint local_38;
+  uint local_34;
+  uint local_30;
   byte local_2c;
   char local_2b;
-  undefined1 local_2a;
-  undefined1 local_29;
+  byte local_2a;
+  byte local_29;
   uint local_28;
   uint local_24;
   HelpPanelTy *local_20;
@@ -42,7 +42,7 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
   int *local_14;
   uint local_10;
   uint local_c;
-  undefined1 local_6;
+  byte local_6;
   char local_5;
 
   local_18 = param_2 + 1;
@@ -51,11 +51,13 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_20 = this;
+
   iVar7 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   piVar13 = local_14;
   this_00 = local_20;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_80.previous;
+
     iVar10 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x26d,0,iVar7,
                                 "%s","HelpPanelTy::ChangeTree");
     if (iVar10 != 0) {
@@ -117,6 +119,7 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
           local_2b = STField<char>(local_14,0x11) + '\x01';
           local_2a = 0;
           local_29 = 0;
+
           Library::DKW::TBL::FUN_006b11d0((uint *)this_00->field_01B3,uVar7 & 0xffff,&local_3c);
           uVar7 = uVar7 + 1;
           local_5 = '\x01';
@@ -157,7 +160,7 @@ LAB_00513233:
         iVar11 = 0;
       }
       if (iVar11 != 0) {
-        ((undefined1 *)iVar11)[0x13] = 1;
+        STField<undefined1>(iVar11,0x13) = 1;
       }
     }
   }
@@ -168,6 +171,7 @@ LAB_00513233:
     while (((uVar7 < uVar12 &&
             (pvVar6 = DArrayAt<void>(array, uVar7), pvVar6 != nullptr
             )) && (STField<byte>(piVar13,0x11) < STField<byte>(pvVar6,0x11)))) {
+
       DArrayRemoveAt(array,uVar7);
       array = (DArrayTy *)this_00->field_01B3;
       uVar12 = array->count;
@@ -175,9 +179,10 @@ LAB_00513233:
   }
   STField<bool>(piVar13,0x12) = STField<char>(piVar13,0x12) == '\0';
   if ((this_00->field_019C != 0) && (this_00->field_01A1 == 0)) {
+
     Library::DKW::WGR::FUN_006b55f0
               ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x21,0x16,
-               (byte *)this_00->field_01DC,0,0x21,0x16,0x19c,0x118);
+               (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_01DC,0,0x21,0x16,0x19c,0x118);
     puVar1 = &this_00->field_0x18;
     memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
     uVar7 = this_00->field_01B7;

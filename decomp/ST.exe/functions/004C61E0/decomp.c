@@ -9,11 +9,13 @@
 undefined4 __thiscall TLOBldMark::sub_004C61E0(TLOBldMark *this)
 
 {
-  DWORD DVar1;
+  int iVar1;
 
   if (this->field_0018 == 0) {
-    DVar1 = STAppC::sub_006E51B0(this->field_0010);
-    thunk_FUN_004ac9e0(this->field_002C,DVar1);
+
+    iVar1 = STAppC::sub_006E51B0(this->field_0010);
+
+    thunk_FUN_004ac9e0(this->field_002C,iVar1);
   }
   return 0;
 }

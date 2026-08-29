@@ -6,7 +6,7 @@
    Diagnostic line evidence: 24 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-undefined4 __fastcall FUN_004e3880(AnonShape_004E3880_642C8E1A *param_1)
+undefined4 __fastcall FUN_004e3880(RecoveredRecordView_004E3880_20FD9D65 *param_1)
 
 {
   int exceptionCode;

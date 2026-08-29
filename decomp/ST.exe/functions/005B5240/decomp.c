@@ -44,6 +44,7 @@ MMObjTy::InitSprBut(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (iVar2 == 0) {
     puVar2 = (undefined4 *)&param_1->field_0x21;
@@ -53,16 +54,18 @@ MMObjTy::InitSprBut(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char
     *(undefined4 *)param_1 = param_7;
     *(undefined4 *)&param_1->field_0x4 = param_8;
     *(undefined4 *)&param_1->field_0xc = param_10;
+
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&param_1->field_0x48,(int *)g_ddxContext_008075A8,param_11,'\a',
                nullptr,0,0);
-    /* ST_CALLSITE[005B52CB]: CALL dword ptr [EDX + 0x4] */
+    /* ST_CALLSITE[005B52CB]: CALL dword ptr [EDX + 0x4]; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)&param_1->field_0x48 + 4))(PTR_00806784,7,0,text,0xffffffff);
     *(int *)&param_1->field_0x64 = param_3;
     *(int *)&param_1->field_0x68 = param_4;
     *(undefined4 *)&param_1->field_0x50 = 0;
     if (*(uint *)&param_1->field_0x4c != 0xffffffff) {
+
       Library::DKW::DDX::FUN_006b3730
                 (*(uint **)&param_1->field_0x90,*(uint *)&param_1->field_0x4c,
                  *(uint *)&param_1->field_0x50,*(uint *)&param_1->field_0x64,
@@ -78,16 +81,18 @@ MMObjTy::InitSprBut(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char
       param_1->field_0047 = 1;
       *(undefined4 *)&param_1->field_0x1c = param_16;
       param_1->field_01AA = param_17;
+
       SpriteClassTy::InitSprite
                 ((SpriteClassTy *)&param_1->field_0x16a,(int *)g_ddxContext_008075A8,param_11 - 1,
                  '\a',nullptr,0,0);
-      /* ST_CALLSITE[005B5363]: CALL dword ptr [EDX + 0x4] */
+      /* ST_CALLSITE[005B5363]: CALL dword ptr [EDX + 0x4]; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)&param_1->field_0x16a + 4))(PTR_00806784,7,0,param_12,0xffffffff);
       param_1->field_0186 = param_3 + param_13;
       param_1->field_0172 = 0;
       param_1->field_018A = param_4 + param_14;
     }
+
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&param_1->field_0xd9,(int *)g_ddxContext_008075A8,param_11 - 2,'\a',
                nullptr,0,0);
@@ -99,11 +104,13 @@ MMObjTy::InitSprBut(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char
       iVar3 = *(int *)&param_1->field_0xd9;
       uVar5 = 0xffffffff;
       cVar4 = CASE_FFFFFFFE;
+      /* ST_CALLSITE[005B5401]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
       resourceString = LoadResourceString(param_18,g_hINSTANCE_00807618);
+
       puVar2 = ccFntTy::CreateTypeSSpr
                          (param_19,resourceString,param_20,param_21,cVar4,uVar5,param_22,param_23,
                           param_24);
-      /* ST_CALLSITE[005B5412]: CALL dword ptr [EBX + 0x8] */
+      /* ST_CALLSITE[005B5412]: CALL dword ptr [EBX + 0x8]; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(iVar3 + 8))(puVar2,uVar6,uVar7);
     }
@@ -112,6 +119,7 @@ MMObjTy::InitSprBut(MMObjTy *this,RecoveredRecord_MMObjTy_005B5240 *param_1,char
     return;
   }
   g_currentExceptionFrame = local_48.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Start\\mmenuobj.cpp",0x2d,0,iVar2,"%s",
                              "MMObjTy::InitSprBut");
   if (iVar4 != 0) {

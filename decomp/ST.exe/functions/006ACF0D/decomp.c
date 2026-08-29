@@ -11,29 +11,35 @@ int __cdecl FUN_006acf0d(int param_1,int param_2,int param_3,int param_4,int par
   longlong lVar2;
   uint uVar3;
   uint uVar4;
-  int iVar5;
+  uint uVar5;
   int iVar6;
   int iVar7;
-  uint uVar8;
+  int iVar8;
+  uint highWord;
   int iVar9;
 
   lVar1 = (longlong)(param_1 - param_4) * (longlong)(param_1 - param_4);
-  iVar5 = (int)((ulonglong)lVar1 >> 0x20);
+  iVar6 = (int)((ulonglong)lVar1 >> 0x20);
   if (-1 < lVar1) {
     lVar2 = (longlong)(param_2 - param_5) * (longlong)(param_2 - param_5);
-    iVar6 = (int)((ulonglong)lVar2 >> 0x20);
+    iVar7 = (int)((ulonglong)lVar2 >> 0x20);
     uVar3 = (uint)lVar2;
-    uVar4 = (uint)lVar1 + uVar3;
+    uVar5 = (uint)lVar1 + uVar3;
     uVar3 = (uint)CARRY4((uint)lVar1,uVar3);
-    iVar7 = iVar5 + iVar6;
-    iVar9 = iVar7 + uVar3;
-    if (((SCARRY4(iVar5,iVar6) != SCARRY4(iVar7,uVar3)) == iVar9 < 0) &&
-       (lVar1 = (longlong)(param_3 - param_6) * (longlong)(param_3 - param_6),
-       iVar7 = (int)((ulonglong)lVar1 >> 0x20), uVar3 = (uint)CARRY4((uint)lVar1,uVar4),
-       iVar5 = iVar7 + iVar9, uVar8 = iVar5 + uVar3,
-       (SCARRY4(iVar7,iVar9) != SCARRY4(iVar5,uVar3)) == (int)uVar8 < 0)) {
-      iVar5 = FUN_006ace70(uVar4,uVar8);
-      return iVar5;
+    iVar8 = iVar6 + iVar7;
+    iVar9 = iVar8 + uVar3;
+    if ((SCARRY4(iVar6,iVar7) != SCARRY4(iVar8,uVar3)) == iVar9 < 0) {
+      lVar1 = (longlong)(param_3 - param_6) * (longlong)(param_3 - param_6);
+      iVar8 = (int)((ulonglong)lVar1 >> 0x20);
+      uVar4 = (uint)lVar1;
+      uVar3 = (uint)CARRY4(uVar4,uVar5);
+      iVar6 = iVar8 + iVar9;
+      highWord = iVar6 + uVar3;
+      if ((SCARRY4(iVar8,iVar9) != SCARRY4(iVar6,uVar3)) == (int)highWord < 0) {
+
+        iVar6 = FUN_006ace70(uVar4 + uVar5,highWord);
+        return iVar6;
+      }
     }
   }
   return 0x7fffffff;

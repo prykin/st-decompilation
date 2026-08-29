@@ -1,10 +1,10 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __cdecl FUN_0070b3c0(int param_1)
+void __cdecl FUN_0070b3c0(RecoveredRecord_0070B3C0_68B37622 *param_1)
 
 {
-  *(undefined2 *)(param_1 + 0x29) = 0xffff;
+  param_1->field_0029 = 0xffff;
   return;
 }
 

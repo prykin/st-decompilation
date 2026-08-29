@@ -29,7 +29,7 @@ STLightC::LoadNextLight:
 0061DBCE  51                        PUSH ECX
 0061DBCF  6A 00                     PUSH 0x0
 0061DBD1  52                        PUSH EDX
-0061DBD2  E8 19 BF 0E 00            CALL 0x00709af0
+0061DBD2  E8 19 BF 0E 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STLightC; source view only; no Ghidra override
 0061DBD7  83 C4 20                  ADD ESP,0x20
 0061DBDA  8D 4D FC                  LEA ECX,[EBP + -0x4]
 0061DBDD  6A 00                     PUSH 0x0
@@ -80,7 +80,7 @@ LAB_0061dc4b:
 0061DC6B  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
 0061DC6E  50                        PUSH EAX
 0061DC6F  6A 00                     PUSH 0x0
-0061DC71  E8 1A 06 09 00            CALL 0x006ae290
+0061DC71  E8 1A 06 09 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STLightC_field_00A3DArray; source view only; no Ghidra override
 0061DC76  8B 4D B4                  MOV ECX,dword ptr [EBP + -0x4c]
 0061DC79  89 86 A3 00 00 00         MOV dword ptr [ESI + 0xa3],EAX
 0061DC7F  89 0D F8 8D 85 00         MOV dword ptr [0x00858df8],ECX

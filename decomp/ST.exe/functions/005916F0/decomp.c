@@ -22,6 +22,7 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pCVar2 = local_8;
   if (iVar3 == 0) {
@@ -29,6 +30,7 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
     if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
+
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
       else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
@@ -80,12 +82,14 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
     if (pCVar2->field_004D != 0) {
+
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pCVar2->field_0x3d);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar6 = ReportDebugMessage("E:\\__titans\\Start\\camp_obj.cpp",0x9d,0,iVar3,"%s",
                              "CampaignTy::DoneCampaign");
   if (iVar6 != 0) {

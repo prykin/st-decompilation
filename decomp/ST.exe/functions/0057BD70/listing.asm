@@ -1,4 +1,4 @@
-FUN_0057bd70:
+STFishC::vfunc_DC:
 0057BD70  55                        PUSH EBP
 0057BD71  8B EC                     MOV EBP,ESP
 0057BD73  83 EC 10                  SUB ESP,0x10

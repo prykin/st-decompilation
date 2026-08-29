@@ -55,7 +55,7 @@ LAB_006683c8:
 006683DC  6A 2C                     PUSH 0x2c
 006683DE  6A 0A                     PUSH 0xa
 006683E0  6A 00                     PUSH 0x0
-006683E2  E8 A9 5E 04 00            CALL 0x006ae290
+006683E2  E8 A9 5E 04 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 006683E7  8B 55 FC                  MOV EDX,dword ptr [EBP + -0x4]
 006683EA  89 82 EB 01 00 00         MOV dword ptr [EDX + 0x1eb],EAX
 006683F0  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
@@ -67,7 +67,7 @@ LAB_006683f3:
 006683FF  6A 14                     PUSH 0x14
 00668401  6A 0A                     PUSH 0xa
 00668403  6A 00                     PUSH 0x0
-00668405  E8 86 5E 04 00            CALL 0x006ae290
+00668405  E8 86 5E 04 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 0066840A  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 0066840D  89 81 03 02 00 00         MOV dword ptr [ECX + 0x203],EAX
 00668413  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
@@ -79,7 +79,7 @@ LAB_00668416:
 00668422  6A 0C                     PUSH 0xc
 00668424  6A 0A                     PUSH 0xa
 00668426  6A 00                     PUSH 0x0
-00668428  E8 63 5E 04 00            CALL 0x006ae290
+00668428  E8 63 5E 04 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 0066842D  8B 55 FC                  MOV EDX,dword ptr [EBP + -0x4]
 00668430  89 82 0F 02 00 00         MOV dword ptr [EDX + 0x20f],EAX
 00668436  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]

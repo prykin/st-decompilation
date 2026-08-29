@@ -74,7 +74,8 @@ LAB_0057f7d0:
 0057F7D5  6A 00                     PUSH 0x0
 0057F7D7  50                        PUSH EAX
 0057F7D8  8B CE                     MOV ECX,ESI
-0057F7DA  E8 F5 57 E8 FF            CALL 0x00404fd4
+STDcResourcC::CreateRes::override::prt_57f7da_5e0d6c0d:
+0057F7DA  E8 F5 57 E8 FF            CALL 0x00404fd4  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/int; signature=__thiscall;pointer:/int;pointer:/STDcResourcC;/int;/int
 0057F7DF  8B 0D 74 67 80 00         MOV ECX,dword ptr [0x00806774]
 0057F7E5  50                        PUSH EAX
 0057F7E6  51                        PUSH ECX
@@ -88,7 +89,8 @@ LAB_0057f7d0:
 0057F7FD  6A 01                     PUSH 0x1
 0057F7FF  52                        PUSH EDX
 0057F800  8B CE                     MOV ECX,ESI
-0057F802  E8 CD 57 E8 FF            CALL 0x00404fd4
+STDcResourcC::CreateRes::override::prt_57f802_5e0d6c0d:
+0057F802  E8 CD 57 E8 FF            CALL 0x00404fd4  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/int; signature=__thiscall;pointer:/int;pointer:/STDcResourcC;/int;/int
 0057F807  50                        PUSH EAX
 0057F808  A1 74 67 80 00            MOV EAX,[0x00806774]
 0057F80D  50                        PUSH EAX
@@ -203,7 +205,8 @@ LAB_0057f986:
 0057F98B  6A 00                     PUSH 0x0
 0057F98D  50                        PUSH EAX
 0057F98E  8B CE                     MOV ECX,ESI
-0057F990  E8 AF 1D E8 FF            CALL 0x00401744
+STDcResourcC::CreateRes::override::prt_57f990_5e0d6c0d:
+0057F990  E8 AF 1D E8 FF            CALL 0x00401744  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/int; signature=__thiscall;pointer:/int;pointer:/STDcResourcC;/int;/int
 0057F995  8B 0D 74 67 80 00         MOV ECX,dword ptr [0x00806774]
 0057F99B  50                        PUSH EAX
 0057F99C  51                        PUSH ECX
@@ -217,7 +220,8 @@ LAB_0057f986:
 0057F9B3  6A 01                     PUSH 0x1
 0057F9B5  52                        PUSH EDX
 0057F9B6  8B CE                     MOV ECX,ESI
-0057F9B8  E8 87 1D E8 FF            CALL 0x00401744
+STDcResourcC::CreateRes::override::prt_57f9b8_5e0d6c0d:
+0057F9B8  E8 87 1D E8 FF            CALL 0x00401744  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/int; signature=__thiscall;pointer:/int;pointer:/STDcResourcC;/int;/int
 0057F9BD  50                        PUSH EAX
 0057F9BE  A1 74 67 80 00            MOV EAX,[0x00806774]
 0057F9C3  50                        PUSH EAX
@@ -341,7 +345,8 @@ LAB_0057fb58:
 0057FB5A  6A 00                     PUSH 0x0
 0057FB5C  53                        PUSH EBX
 0057FB5D  8B CE                     MOV ECX,ESI
-0057FB5F  E8 F8 1C E8 FF            CALL 0x0040185c
+STDcResourcC::CreateRes::override::prt_57fb5f_5e0d6c0d:
+0057FB5F  E8 F8 1C E8 FF            CALL 0x0040185c  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/int; signature=__thiscall;pointer:/int;pointer:/STDcResourcC;/int;/int
 0057FB64  8B 15 74 67 80 00         MOV EDX,dword ptr [0x00806774]
 0057FB6A  50                        PUSH EAX
 0057FB6B  52                        PUSH EDX
@@ -354,7 +359,8 @@ LAB_0057fb58:
 0057FB7F  6A 01                     PUSH 0x1
 0057FB81  53                        PUSH EBX
 0057FB82  8B CE                     MOV ECX,ESI
-0057FB84  E8 D3 1C E8 FF            CALL 0x0040185c
+STDcResourcC::CreateRes::override::prt_57fb84_5e0d6c0d:
+0057FB84  E8 D3 1C E8 FF            CALL 0x0040185c  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/int; signature=__thiscall;pointer:/int;pointer:/STDcResourcC;/int;/int
 0057FB89  50                        PUSH EAX
 0057FB8A  A1 74 67 80 00            MOV EAX,[0x00806774]
 0057FB8F  50                        PUSH EAX

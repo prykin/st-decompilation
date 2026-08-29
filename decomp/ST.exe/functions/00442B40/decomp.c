@@ -3,9 +3,14 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::_SubMDObject */
+   STAllPlayersC::_SubMDObject
+   [STAbiConsistencyApplier] ecx_context_register target=function:-1: prototype=undefined4 __stdcall
+   _SubMDObject(STAllPlayersC * context, undefined4 * param_2, uint param_3)
+   previous_return_type=/undefined4 Evidence: incoming ECX reaches only unadjusted __thiscall
+   receivers of /STAllPlayersC; receiver_calls=1; exact RET purge=8 matches declared stack bytes=8;
+   sites=00442B6F -> STAllPlayersC::GetObjPtr receiver=/STAllPlayersC */
 
-undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
+undefined4 STAllPlayersC::_SubMDObject(STAllPlayersC *context,undefined4 *param_2,uint param_3)
 
 {
   ushort uVar1;
@@ -14,8 +19,6 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
   uint uVar4;
   int iVar5;
   uint uVar6;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  STAllPlayersC *in_ECX;
   char objPtr;
   short local_50;
   short local_4e;
@@ -30,7 +33,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
   uint local_18;
   STGameObjC *local_14;
   int local_10;
-  undefined4 local_c;
+  uint local_c;
   short local_8;
   short local_6;
 
@@ -38,16 +41,16 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
   local_2c[1] = 0x39;
   local_2c[2] = 0x4f;
   local_2c[3] = 0x5e;
-  objPtr = (char)param_1;
+  objPtr = (char)param_2;
   /* ST_CALLSITE[00442B6F]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  this = GetObjPtr(in_ECX,objPtr,(ushort)param_2,CASE_1);
+  this = GetObjPtr(context,objPtr,(ushort)param_3,CASE_1);
   local_14 = this;
   /* ST_CALLSITE[00442B7D]: CALL dword ptr [EDX + 0x2c] */
   uVar4 = this->vfunc_2C();
   local_c = 0;
   local_18 = uVar4;
   if (this == nullptr) {
+
     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x246d,0,0,"%s",
                                "STAllPlayersC::_SubMDObject invalid input data");
     if (iVar5 != 0) {
@@ -65,17 +68,19 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
         uVar1 = (ushort)pDVar2->count;
         if (uVar1 != 0) {
           /* ST_CALLSITE[00442C29]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
-          STFishC::sub_004162B0((STFishC *)this,(short *)((int)&param_2 + 2),&local_6,&local_8);
+          STFishC::sub_004162B0((STFishC *)this,(short *)((int)&param_3 + 2),&local_6,&local_8);
           uVar4 = 0;
           local_1c = this->field_0032;
           this = local_14;
           if (uVar1 != 0) {
             do {
+
               DArrayGetElement(pDVar2,uVar4,&local_50);
-              if ((((local_4a != -1) && (local_42 != -1)) && (local_50 == STPiece<2,2>(param_2))) &&
+              if ((((local_4a != -1) && (local_42 != -1)) && (local_50 == STPiece<2,2>(param_3))) &&
                  (((local_4e == local_6 && (local_4c == local_8)) && (local_4a == local_1c)))) {
                 local_42 = -1;
                 local_4a = -1;
+
                 Library::DKW::TBL::DArrayPut(pDVar2,uVar4,&local_50);
                 local_c = 1;
               }
@@ -91,22 +96,24 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
     return local_c;
   }
   /* ST_CALLSITE[00442CD3]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
-  STFishC::sub_004162B0((STFishC *)this,(short *)((int)&param_2 + 2),&local_6,&local_8);
+  STFishC::sub_004162B0((STFishC *)this,(short *)((int)&param_3 + 2),&local_6,&local_8);
   local_1c = this->field_0032;
   local_14 = (STGameObjC *)0x4;
-  auto param_1_after_write = &g_packedRecords_A62x8[objPtr].field5_0xf; /* compiler stack-slot lifetime split */
+  auto param_2_after_write = &g_packedRecords_A62x8[objPtr].field5_0xf; /* compiler stack-slot lifetime split */
   do {
-    pDVar2 = (DArrayTy *)*param_1_after_write;
+    pDVar2 = (DArrayTy *)*param_2_after_write;
     if ((pDVar2 != nullptr) && (uVar1 = (ushort)pDVar2->count, uVar1 != 0)) {
       uVar4 = 0;
       local_18 = (uint)uVar1;
       if (uVar1 != 0) {
         do {
+
           DArrayGetElement(pDVar2,uVar4,&local_50);
-          if (((((local_4a != -1) && (local_42 != -1)) && (local_48 == STPiece<2,2>(param_2))) &&
+          if (((((local_4a != -1) && (local_42 != -1)) && (local_48 == STPiece<2,2>(param_3))) &&
               ((local_46 == local_6 && (local_44 == local_8)))) && (local_42 == local_1c)) {
             local_42 = -1;
             local_4a = -1;
+
             Library::DKW::TBL::DArrayPut(pDVar2,uVar4,&local_50);
             local_c = 1;
           }
@@ -114,7 +121,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
         } while ((int)uVar4 < (int)local_18);
       }
     }
-    param_1_after_write = param_1_after_write + 1;
+    param_2_after_write = param_2_after_write + 1;
     local_14 = (STGameObjC *)((int)local_14 + -1);
   } while (local_14 != nullptr);
   return local_c;

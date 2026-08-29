@@ -17,8 +17,10 @@ undefined4 __fastcall FUN_004e2970(TLOBaseTy *param_1)
     index = 0;
     if (0 < (int)array->count) {
       do {
+
         DArrayGetElement(array,index,&local_8);
         if (local_8 == param_1) {
+
           DArrayRemoveAt(g_packedRecords_A62x8[(int)param_1->field_0024].field1969_0x9da,index);
           break;
         }
@@ -31,6 +33,7 @@ undefined4 __fastcall FUN_004e2970(TLOBaseTy *param_1)
       g_packedRecords_A62x8[(int)param_1->field_0024].field1969_0x9da = nullptr;
     }
   }
+
   thunk_FUN_004e42e0((int)param_1->field_0024);
   return 0;
 }

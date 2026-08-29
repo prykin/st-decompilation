@@ -8,9 +8,8 @@ undefined4 __fastcall FUN_006604b0(AiFltClassTy *param_1,undefined4 param_2,unde
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   STGroupBoatC *this;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_c;
+  uint local_8;
   local_c = 0;
   local_8 = 0;
   param_1->field_00A7 = 0;

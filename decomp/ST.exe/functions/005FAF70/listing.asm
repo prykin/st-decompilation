@@ -14,7 +14,7 @@ FUN_005faf70:
 005FAF88  52                        PUSH EDX
 005FAF89  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]
 005FAF8C  52                        PUSH EDX
-005FAF8D  FF 50 10                  CALL dword ptr [EAX + 0x10]
+005FAF8D  FF 50 10                  CALL dword ptr [EAX + 0x10]  ; [STIndirectCallsiteApplier] exact slot 0x10; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 005FAF90  0F BF C0                  MOVSX EAX,AX
 005FAF93  5D                        POP EBP
 005FAF94  C2 18 00                  RET 0x18

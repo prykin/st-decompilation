@@ -8,7 +8,7 @@
 void __thiscall FSGSTy::PaintLogPsw(FSGSTy *this)
 
 {
-  ushort *puVar1;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar1;
   FSGSTy *pFVar3;
   int iVar4;
   uint *puVar5;
@@ -22,16 +22,18 @@ void __thiscall FSGSTy::PaintLogPsw(FSGSTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pFVar3 = local_8;
   if (iVar4 == 0) {
-    puVar1 = local_8->field_1AC0;
-    uVar8 = *(uint *)(puVar1 + 10);
+    pRVar1 = (RecoveredRecord_006B4FA0_DAC3A217 *)local_8->field_1AC0;
+    uVar8 = *(uint *)&pRVar1[1].field_0x4;
     if (uVar8 == 0) {
-      uVar8 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-              *(int *)(puVar1 + 4);
+      uVar8 = ((uint)pRVar1->field_000E * *(int *)&pRVar1->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+              *(int *)&pRVar1->field_0x8;
     }
-    puVar5 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
+
+    puVar5 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0(pRVar1));
     for (uVar7 = uVar8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
       *puVar5 = 0xffffffff;
       puVar5 = puVar5 + 1;
@@ -40,44 +42,59 @@ void __thiscall FSGSTy::PaintLogPsw(FSGSTy *this)
       *(undefined1 *)puVar5 = 0xff;
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
+
     ccFntTy::SetSurf(pFVar3->array_00BC[0xc].field_01F3,(int)pFVar3->field_1AC0,0,0x19,0x2a,0x186,
                      0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
+    /* ST_CALLSITE[0059A3C9]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     pcVar6 = LoadResourceString(0x254f,g_hINSTANCE_00807618);
+
     ccFntTy::WrStr(pFVar3->array_00BC[0xc].field_01F3,pcVar6,iVar4,iVar9,uVar8);
     FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x3d,0x188,0x1b,0xf,0xd);
+
     ccFntTy::SetSurf(pFVar3->array_00BC[0xc].field_01F3,(int)pFVar3->field_1AC0,0,0x19,0x61,0xb4,
                      0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
+    /* ST_CALLSITE[0059A428]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     pcVar6 = LoadResourceString(0x2556,g_hINSTANCE_00807618);
+
     ccFntTy::WrStr(pFVar3->array_00BC[0xc].field_01F3,pcVar6,iVar4,iVar9,uVar8);
     FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x74,0xb6,0x16,0xf,0xd);
+
     ccFntTy::SetSurf(pFVar3->array_00BC[0xc].field_01F3,(int)pFVar3->field_1AC0,0,0x19,0x89,0xb4,
                      0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
+    /* ST_CALLSITE[0059A48A]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     pcVar6 = LoadResourceString(0x2555,g_hINSTANCE_00807618);
+
     ccFntTy::WrStr(pFVar3->array_00BC[0xc].field_01F3,pcVar6,iVar4,iVar9,uVar8);
     FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0x9c,0xb6,0x16,0xf,0xd);
+
     ccFntTy::SetSurf(pFVar3->array_00BC[0xc].field_01F3,(int)pFVar3->field_1AC0,0,0x19,0xb1,0xb4,
                      0x14);
     uVar8 = 2;
     iVar9 = -1;
     iVar4 = 0;
+    /* ST_CALLSITE[0059A4EF]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     pcVar6 = LoadResourceString(0x2554,g_hINSTANCE_00807618);
+
     ccFntTy::WrStr(pFVar3->array_00BC[0xc].field_01F3,pcVar6,iVar4,iVar9,uVar8);
     FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)pFVar3->field_1AC0,0,0x18,0xc4,0xb6,0x16,0xf,0xd);
+
     Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,pFVar3->field_1ABC);
+
     FUN_006b35d0((int *)g_ddxContext_008075A8,pFVar3->field_1ABC);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar9 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x401,0,iVar4,"%s",
                              "FSGSTy::PaintLogPsw");
   if (iVar9 != 0) {

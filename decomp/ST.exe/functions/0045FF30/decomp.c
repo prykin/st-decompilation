@@ -1,10 +1,14 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_0045ff30(int param_1)
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=0049A620 @ 0049A7EE -> read as EAX on
+   every CFG path | 0049B4C0 @ 0049B67D -> read as EAX on every CFG path */
+
+int __fastcall FUN_0045ff30(RecoveredRecord_0045FF30_A86BE482 *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return *(undefined4 *)(param_1 + 0x459);
+  return param_1->field_0459;
 }
 

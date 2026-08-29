@@ -134,7 +134,7 @@ LAB_005ef0d0:
 LAB_005ef145:
 005EF145  8B 16                     MOV EDX,dword ptr [ESI]
 005EF147  8B CE                     MOV ECX,ESI
-005EF149  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]
+005EF149  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]  ; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/void;pointer:/void
 005EF14F  DB 86 C6 02 00 00         FILD dword ptr [ESI + 0x2c6]
 005EF155  51                        PUSH ECX
 005EF156  8D BE D5 01 00 00         LEA EDI,[ESI + 0x1d5]
@@ -289,7 +289,7 @@ LAB_005ef293:
 LAB_005ef304:
 005EF304  8B 16                     MOV EDX,dword ptr [ESI]
 005EF306  8B CE                     MOV ECX,ESI
-005EF308  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]
+005EF308  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]  ; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/void;pointer:/void
 005EF30E  8A 86 B9 02 00 00         MOV AL,byte ptr [ESI + 0x2b9]
 005EF314  84 C0                     TEST AL,AL
 005EF316  75 29                     JNZ 0x005ef341

@@ -1,6 +1,7 @@
 CreateSTManRuin:
 00630840  6A 75                     PUSH 0x75
-00630842  E8 89 FC 07 00            CALL 0x006b04d0
+CreateSTManRuin::override::prt_630842_e2dc1d50:
+00630842  E8 89 FC 07 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STManRuinC; signature=__stdcall;pointer:/STManRuinC;/uint
 00630847  85 C0                     TEST EAX,EAX
 00630849  74 0D                     JZ 0x00630858
 0063084B  8B C8                     MOV ECX,EAX

@@ -6,10 +6,9 @@ undefined4 FUN_0056a500(void)
 {
   DWORD DVar1;
   char local_2c [2];
-  undefined1 local_2a;
-  undefined1 local_20;
-  undefined4 local_1e;
-
+  byte local_2a;
+  byte local_20;
+  uint local_1e;
   if (DAT_00808783 == '\x03') {
     /* ST_CALLSITE[0056A50F]: CALL dword ptr [0x0085bedc] */
     DVar1 = timeGetTime();

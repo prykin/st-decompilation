@@ -95,7 +95,7 @@ LAB_005d9357:
 005D9365  6A FE                     PUSH -0x2
 005D9367  51                        PUSH ECX
 005D9368  68 21 25 00 00            PUSH 0x2521
-005D936D  E8 CE 6D 0D 00            CALL 0x006b0140
+005D936D  E8 CE 6D 0D 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 005D9372  8B 15 6C 17 81 00         MOV EDX,dword ptr [0x0081176c]
 005D9378  50                        PUSH EAX
 005D9379  8B 4A 34                  MOV ECX,dword ptr [EDX + 0x34]

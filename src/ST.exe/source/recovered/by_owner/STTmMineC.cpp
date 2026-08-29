@@ -15,7 +15,7 @@ void __thiscall st::fn_0063DDB0(STTmMineC *this,int param_1)
   uint uVar3;
 
   if (this->field_0336 != nullptr) {
-    dVar1 = this->field_0336->count;
+    dVar1 = st::storage_bit_cast<dword>(this->field_0336->count);
     uVar3 = 0;
     if (0 < (int)dVar1) {
       do {
@@ -32,4 +32,3 @@ void __thiscall st::fn_0063DDB0(STTmMineC *this,int param_1)
   }
   return;
 }
-

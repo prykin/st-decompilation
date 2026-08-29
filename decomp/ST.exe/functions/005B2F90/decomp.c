@@ -20,6 +20,7 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pMVar2 = local_8;
   if (iVar3 == 0) {
@@ -27,6 +28,7 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
     if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
+
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
       else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
@@ -59,12 +61,14 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
       iVar5 = iVar5 + -1;
     } while (iVar5 != 0);
     if (pMVar2->field_004D != 0) {
+
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pMVar2->field_0x3d);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",99,0,iVar3,"%s",
                              "MainMenuTy::DoneMainMenu");
   if (iVar4 != 0) {

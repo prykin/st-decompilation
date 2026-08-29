@@ -27,15 +27,17 @@ void __thiscall st::fn_00501000(CPanelTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar3 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   pCVar2 = local_c;
   if (iVar3 == 0) {
-    pBVar3 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)local_c->field_02B2,0);
+    pBVar3 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(local_c->field_02B2),0);
     iVar5 = (pCVar2->field_018C->field_0004 - (pBVar3->bmiHeader).biWidth) / 2;
-    pBVar3 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,
+    /* ST_CALLSITE[00501072]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+    pBVar3 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(pCVar2->field_02B2),
                           -(uint)(DAT_0080874e != '\x01') & 6);
     /* ST_CALLSITE[00501084]: CALL 0x00403229; direct=00403229 DibPut */
-    st::fn_00403229(pCVar2->field_018C,iVar5,0x50,'\x01',(byte *)pBVar3);
+    st::fn_00403229(pCVar2->field_018C,iVar5,0x50,'\x01',reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(pBVar3));
     if (pCVar2->field_0BCD != 0xff) {
       if (0x28 < (byte)pCVar2->field_0BCD) {
         pCVar2->field_0BCD = 0x28;
@@ -44,11 +46,13 @@ void __thiscall st::fn_00501000(CPanelTy *this)
       local_8 = local_8 & 0xffffff00;
       if (pCVar2->field_0BCD != '\0') {
         do {
-          pBVar3 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,3);
+          /* ST_CALLSITE[005010B9]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+          pBVar3 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(pCVar2->field_02B6),3);
           /* ST_CALLSITE[005010D8]: CALL 0x00403229; direct=00403229 DibPut */
-          st::fn_00403229(pCVar2->field_018C,iVar5 + 3 + (local_8 & 0xff) * 4,0x53,'\x01',(byte *)pBVar3);
+          st::fn_00403229(pCVar2->field_018C,iVar5 + 3 + (local_8 & 0xff) * 4,0x53,'\x01',
+                 reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(pBVar3));
           bVar4 = bVar4 + 1;
-          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar4));
+          local_8 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_8)), (uint8_t)(bVar4));
         } while (bVar4 < (byte)pCVar2->field_0BCD);
       }
     }
@@ -56,6 +60,7 @@ void __thiscall st::fn_00501000(CPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cpanel2.cpp"),0x21,0,iVar3,st::mutable_c_string("%s"),
                              "CPanelTy::PaintBEnergy");
   if (iVar4 != 0) {
@@ -94,54 +99,63 @@ void __thiscall st::fn_00501190(CPanelTy *this)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_10 = this;
+
   iVar4 = st::fn_0072D7F0(local_58.jumpBuffer,0);
   pCVar2 = local_10;
   if (iVar4 == 0) {
-    pBVar4 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)local_10->field_02B2,0);
+    pBVar4 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(local_10->field_02B2),0);
     iVar6 = (pCVar2->field_018C->field_0004 - (pBVar4->bmiHeader).biWidth) / 2;
-    pBVar4 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,
+    /* ST_CALLSITE[00501202]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+    pBVar4 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(pCVar2->field_02B2),
                           -(uint)(DAT_0080874e != '\x01') & 6);
     /* ST_CALLSITE[00501214]: CALL 0x00403229; direct=00403229 DibPut */
-    st::fn_00403229(pCVar2->field_018C,iVar6,0x50,'\x01',(byte *)pBVar4);
+    st::fn_00403229(pCVar2->field_018C,iVar6,0x50,'\x01',reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(pBVar4));
     local_8 = local_8 & 0xffffff00;
     if (pCVar2->field_0BB6 != '\0') {
       do {
-        pBVar4 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,1);
+        /* ST_CALLSITE[00501233]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+        pBVar4 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(pCVar2->field_02B6),1);
         /* ST_CALLSITE[00501252]: CALL 0x00403229; direct=00403229 DibPut */
-        st::fn_00403229(pCVar2->field_018C,iVar6 + 3 + (local_8 & 0xff) * 4,0x53,'\x01',(byte *)pBVar4);
+        st::fn_00403229(pCVar2->field_018C,iVar6 + 3 + (local_8 & 0xff) * 4,0x53,'\x01',
+               reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(pBVar4));
         bVar3 = (byte)local_8 + 1;
-        local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar3));
+        local_8 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_8)), (uint8_t)(bVar3));
       } while (bVar3 < (byte)pCVar2->field_0BB6);
     }
     uVar7 = local_8 & 0xff;
-    local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((byte)local_8));
+    local_c = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_c)), (uint8_t)((byte)local_8));
     local_14 = uVar7;
     if (uVar7 < (byte)pCVar2->field_0BB7 + uVar7) {
       do {
-        pBVar4 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,5);
+        /* ST_CALLSITE[00501295]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+        pBVar4 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(pCVar2->field_02B6),5);
         /* ST_CALLSITE[005012AB]: CALL 0x00403229; direct=00403229 DibPut */
-        st::fn_00403229(pCVar2->field_018C,iVar6 + 3 + uVar7 * 4,0x53,'\x01',(byte *)pBVar4);
+        st::fn_00403229(pCVar2->field_018C,iVar6 + 3 + uVar7 * 4,0x53,'\x01',
+               reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(pBVar4));
         bVar3 = (byte)local_c + 1;
-        local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar3));
+        local_c = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_c)), (uint8_t)(bVar3));
         uVar7 = (uint)bVar3;
-      } while ((int)uVar7 < (int)((byte)pCVar2->field_0BB7 + local_14));
+      } while ((int)uVar7 < st::storage_bit_cast<int>(static_cast<uint32_t>((byte)pCVar2->field_0BB7 + local_14)));
     }
     uVar7 = local_c & 0xff;
     STPiece<0,1>(local_8) = (byte)local_c;
     local_14 = uVar7;
     if (uVar7 < (byte)pCVar2->field_0BB5 + uVar7) {
       do {
-        pBVar4 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,2);
+        /* ST_CALLSITE[005012FE]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+        pBVar4 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(pCVar2->field_02B6),2);
         /* ST_CALLSITE[00501314]: CALL 0x00403229; direct=00403229 DibPut */
-        st::fn_00403229(pCVar2->field_018C,iVar6 + 3 + uVar7 * 4,0x53,'\x01',(byte *)pBVar4);
+        st::fn_00403229(pCVar2->field_018C,iVar6 + 3 + uVar7 * 4,0x53,'\x01',
+               reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(pBVar4));
         STPiece<0,1>(local_8) = (byte)local_8 + 1;
         uVar7 = (uint)(byte)local_8;
-      } while ((int)uVar7 < (int)((byte)pCVar2->field_0BB5 + local_14));
+      } while ((int)uVar7 < st::storage_bit_cast<int>(static_cast<uint32_t>((byte)pCVar2->field_0BB5 + local_14)));
     }
     g_currentExceptionFrame = local_58.previous;
     return;
   }
   g_currentExceptionFrame = local_58.previous;
+
   iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cpanel2.cpp"),0x32,0,iVar4,st::mutable_c_string("%s"),
                              "CPanelTy::PaintBCapacity");
   if (iVar5 != 0) {
@@ -173,15 +187,16 @@ void __thiscall st::fn_00501410(CPanelTy *this,int param_1)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar4 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   pCVar3 = local_c;
   if (iVar4 == 0) {
     st::fn_006B4170(local_c->field_018C,0,param_1 + 0x35,0x70,7,0x21,0);
     bVar1 = pCVar3->field_0BC8;
     cVar7 = (char)(((uint)bVar1 * 0x21) / 100);
-    local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(cVar7));
+    local_8 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_8)), (uint8_t)(cVar7));
     if ((bVar1 != 0) && (cVar7 == '\0')) {
-      local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(1));
+      local_8 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_8)), (uint8_t)(1));
     }
     if (bVar1 < 0x46) {
       iVar4 = (-(uint)(bVar1 < 0x14) & 5) + 5;
@@ -190,13 +205,17 @@ void __thiscall st::fn_00501410(CPanelTy *this,int param_1)
       iVar4 = 0;
     }
     uVar5 = local_8 & 0xff;
+
     st::fn_006B55F0
-              (pCVar3->field_018C,0,param_1 + 0x36,0x91 - uVar5,(byte *)pCVar3->field_028A,0,iVar4,
-               *(int *)(pCVar3->field_028A + 4) - uVar5,5,uVar5);
+              (pCVar3->field_018C,0,param_1 + 0x36,0x91 - uVar5,
+               reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(pCVar3->field_028A),0,iVar4,
+               *(int *)&((RecoveredRecordView_006B84D0_87AF9D9B *)pCVar3->field_028A)->field_0x8 -
+               uVar5,5,uVar5);
     g_currentExceptionFrame = local_50.previous;
     return;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cpanel2.cpp"),0x40,0,iVar4,st::mutable_c_string("%s"),
                              "CPanelTy::PaintBRLife");
   if (iVar6 != 0) {
@@ -236,17 +255,19 @@ void __thiscall st::fn_00501590(CPanelTy *this)
   int iVar3;
   RecoveredSourceFamily_dibcopy *pRVar3;
   int iVar4;
-  byte *pbVar5;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar5;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar2 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
+
     iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cpanel2.cpp"),0x95,0,iVar2,st::mutable_c_string("%s"),
                                "CPanelTy::PaintCtrlBoat");
     if (iVar3 != 0) {
@@ -258,55 +279,62 @@ void __thiscall st::fn_00501590(CPanelTy *this)
   switch(local_8->field_0B9E) {
   case CASE_0:
   case CASE_4:
-    pbVar5 = (byte *)local_8->field_0974[0];
+    pRVar5 = (RecoveredRecordView_006B84D0_87AF9D9B *)local_8->field_0974[0];
     pRVar3 = local_8->field_018C;
     iVar4 = 0;
     iVar2 = 0;
     goto LAB_00501758;
   case CASE_1:
     if ((local_8->field_0B99 == CASE_9) || (local_8->field_0B99 == CASE_15)) {
-      pbVar5 = (byte *)local_8->field_0974[1];
+      pRVar5 = (RecoveredRecordView_006B84D0_87AF9D9B *)local_8->field_0974[1];
       pRVar3 = local_8->field_018C;
       iVar4 = 0;
       iVar2 = 0;
       goto LAB_00501758;
     }
     /* ST_CALLSITE[00501659]: CALL 0x00403229; direct=00403229 DibPut */
-    st::fn_00403229(local_8->field_018C,0,0,'\x01',(byte *)local_8->field_0974[2]);
+    st::fn_00403229(local_8->field_018C,0,0,'\x01',
+           (RecoveredRecordView_006B84D0_87AF9D9B *)local_8->field_0974[2]);
     /* ST_CALLSITE[0050167E]: CALL 0x00403229; direct=00403229 DibPut */
     st::fn_00403229(this_00->field_018C,
-           (this_00->field_018C->field_0004 - *(int *)((byte *)this_00->field_0974[4] + 4)) / 2,0x61
-           ,'\x01',(byte *)this_00->field_0974[4]);
+           (this_00->field_018C->field_0004 -
+           *(int *)&((RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0974[4])->field_0x4) /
+           2,0x61,'\x01',(RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0974[4]);
     /* ST_CALLSITE[005016A3]: CALL 0x00403229; direct=00403229 DibPut */
     st::fn_00403229(this_00->field_018C,
-           (this_00->field_018C->field_0004 - *(int *)((byte *)this_00->field_0974[5] + 4)) / 2,0x7c
-           ,'\x01',(byte *)this_00->field_0974[5]);
+           (this_00->field_018C->field_0004 -
+           *(int *)&((RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0974[5])->field_0x4) /
+           2,0x7c,'\x01',(RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0974[5]);
     break;
   case CASE_2:
     if ((local_8->field_0B99 == CASE_9) || (local_8->field_0B99 == CASE_15)) {
       /* ST_CALLSITE[00501730]: CALL 0x00403229; direct=00403229 DibPut */
-      st::fn_00403229(local_8->field_018C,0,0,'\x01',(byte *)local_8->field_0974[1]);
+      st::fn_00403229(local_8->field_018C,0,0,'\x01',
+             (RecoveredRecordView_006B84D0_87AF9D9B *)local_8->field_0974[1]);
     }
     else {
       /* ST_CALLSITE[005016ED]: CALL 0x00403229; direct=00403229 DibPut */
-      st::fn_00403229(local_8->field_018C,0,0,'\x01',(byte *)local_8->field_0974[2]);
+      st::fn_00403229(local_8->field_018C,0,0,'\x01',
+             (RecoveredRecordView_006B84D0_87AF9D9B *)local_8->field_0974[2]);
       /* ST_CALLSITE[00501712]: CALL 0x00403229; direct=00403229 DibPut */
       st::fn_00403229(this_00->field_018C,
-             (this_00->field_018C->field_0004 - *(int *)((byte *)this_00->field_0974[5] + 4)) / 2,
-             0x7c,'\x01',(byte *)this_00->field_0974[5]);
+             (this_00->field_018C->field_0004 -
+             *(int *)&((RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0974[5])->field_0x4)
+             / 2,0x7c,'\x01',(RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0974[5]);
     }
 switchD_0050162e_caseD_a:
-    pbVar5 = (byte *)this_00->field_0974[4];
+    pRVar5 = (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0974[4];
     pRVar3 = this_00->field_018C;
     iVar4 = 0x61;
-    iVar2 = (pRVar3->field_0004 - *(int *)(pbVar5 + 4)) / 2;
+    iVar2 = (pRVar3->field_0004 - *(int *)&pRVar5->field_0x4) / 2;
 LAB_00501758:
     /* ST_CALLSITE[00501758]: CALL 0x00403229; direct=00403229 DibPut */
-    st::fn_00403229(pRVar3,iVar2,iVar4,'\x01',pbVar5);
+    st::fn_00403229(pRVar3,iVar2,iVar4,'\x01',pRVar5);
     break;
   case CASE_3:
     /* ST_CALLSITE[0050160A]: CALL 0x00403229; direct=00403229 DibPut */
-    st::fn_00403229(local_8->field_018C,0,0,'\x01',(byte *)local_8->field_0974[0]);
+    st::fn_00403229(local_8->field_018C,0,0,'\x01',
+           (RecoveredRecordView_006B84D0_87AF9D9B *)local_8->field_0974[0]);
     switch(this_00->field_0B99) {
     case CASE_9:
     case CASE_15:
@@ -341,8 +369,9 @@ switchD_0050179b_caseD_16:
   }
 switchD_0050179b_caseD_9:
   if (-1 < (int)this_00->field_0148[3]) {
+
     st::fn_006B3640
-              ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[3],0xffffffff,
+              (reinterpret_cast<int *>(g_ddxContext_008075A8),(uint)this_00->field_0148[3],0xffffffff,
                this_00->field_0048,this_00->field_00A0);
   }
   g_currentExceptionFrame = local_4c.previous;
@@ -381,10 +410,12 @@ void __thiscall st::fn_00501FF0(CPanelTy *this)
   local_a8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a8;
   local_8 = this;
+
   iVar4 = st::fn_0072D7F0(local_a8.jumpBuffer,0);
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_a8.previous;
+
     iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cpanel2.cpp"),0x13e,0,iVar4,st::mutable_c_string("%s")
                                ,"CPanelTy::Update2PanelWB");
     if (iVar5 == 0) {
@@ -399,7 +430,8 @@ void __thiscall st::fn_00501FF0(CPanelTy *this)
   memmove(pRVar8, pCVar7, 0x5c); /* compiler REP MOVS byte copy */
   memset(pCVar1, 0, 0x5c); /* compiler bulk-zero initialization */
   /* ST_CALLSITE[00502058]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
-  st::fn_004035BC(g_allPlayers_007FA174,2,(AnonShape_0043BEB0_1C00EC12 *)pCVar1);
+  st::fn_004035BC
+            (g_allPlayers_007FA174,2,reinterpret_cast<RecoveredRecordView_0043BEB0_8330D129 *>(pCVar1));
   if (STPiece<5,1>(local_64) != this_00->field_0B9E) {
 cf_common_exit_00502155:
     /* ST_CALLSITE[00502157]: CALL 0x004022cf; direct=004022CF CPanelTy::PaintCtrlBoat */
@@ -415,7 +447,8 @@ cf_common_exit_00502155:
   case CASE_1:
     if ((STPiece<0,4>(local_64) != this_00->field_0B99) || (STPiece<4,1>(local_64) != this_00->field_0B9D))
     goto cf_common_exit_00502155;
-    st::fn_00403FEE(this_00,(AnonShape_00501D00_3942B646 *)&this_00->field_0B99,&local_64);
+    /* ST_CALLSITE[005020B3]: CALL 0x00403fee; direct=00403FEE CPanelTy::sub_00501D00 */
+    st::fn_00403FEE(this_00,reinterpret_cast<RecoveredRecordView_00501D00_08D99E75 *>(&this_00->field_0B99),&local_64);
     switch(this_00->field_0B99) {
     case CASE_8:
     case CASE_14:
@@ -445,7 +478,8 @@ cf_common_exit_00502155:
   case CASE_2:
   case CASE_3:
     if (STPiece<0,4>(local_64) == this_00->field_0B99) {
-      st::fn_00403FEE(this_00,(AnonShape_00501D00_3942B646 *)&this_00->field_0B99,&local_64);
+      /* ST_CALLSITE[00502184]: CALL 0x00403fee; direct=00403FEE CPanelTy::sub_00501D00 */
+      st::fn_00403FEE(this_00,reinterpret_cast<RecoveredRecordView_00501D00_08D99E75 *>(&this_00->field_0B99),&local_64);
       g_currentExceptionFrame = local_a8.previous;
       return;
     }
@@ -464,8 +498,9 @@ cf_common_exit_00502155:
     goto switchD_0050207d_default;
   }
   if (-1 < (int)puVar2) {
+
     st::fn_006B3640
-              ((int *)g_ddxContext_008075A8,(uint)puVar2,0xffffffff,this_00->field_0048,
+              (reinterpret_cast<int *>(g_ddxContext_008075A8),(uint)puVar2,0xffffffff,this_00->field_0048,
                this_00->field_00A0);
   }
 switchD_0050207d_default:
@@ -488,11 +523,10 @@ void __thiscall st::fn_00502360(CPanelTy *this)
   int iVar8;
   char *pcVar4_mg0;
   LPSTR pCVar4;
-  int iVar5;
-  uint uVar6;
+  uint uVar5;
   int iVar10;
-  int iVar7;
-  byte bVar8;
+  int iVar6;
+  byte bVar7;
   int iVar9;
   uint *puVar10;
   uint *puVar11;
@@ -500,26 +534,27 @@ void __thiscall st::fn_00502360(CPanelTy *this)
   uint uVar13;
   uint uVar14;
   short sVar15;
-  ushort uVar16;
+  RecoveredRecord_004F3130_3F0D2FD9 *pRVar16;
   ushort uVar17;
-  int iVar18;
-  byte *puVar19;
-  uint uVar20;
-  char *pcVar21;
-  uint uVar22;
-  AnonShape_004F2E40_DC76A8C6 local_bb0 [7];
-  undefined4 local_2c8 [112];
-  undefined4 local_108 [22];
+  ushort uVar18;
+  int iVar19;
+  byte *puVar20;
+  uint uVar21;
+  char *pcVar22;
+  uint uVar23;
+  RecoveredRecordView_004F2E40_41FE7B1E local_bb0 [7];
+  uint local_2c8 [112];
+  uint local_108 [22];
   InternalExceptionFrame local_b0;
-  undefined4 local_6c [4];
-  undefined4 local_5c;
-  undefined4 local_58;
-  undefined4 local_54;
-  undefined4 local_3c;
-  undefined4 local_38;
-  undefined4 local_34;
+  uint local_6c [4];
+  uint local_5c;
+  uint local_58;
+  uint local_54;
+  uint local_3c;
+  uint local_38;
+  uint local_34;
   int local_24;
-  AnonShape_004F2E40_DC76A8C6 *local_20;
+  RecoveredRecordView_004F2E40_41FE7B1E *local_20;
   CPanelTy *local_1c;
   int local_18;
   Global_sub_00529590_param_1Enum *local_14;
@@ -528,16 +563,18 @@ void __thiscall st::fn_00502360(CPanelTy *this)
   byte *local_8;
   puVar11 = local_108;
   local_1c = this;
-  for (iVar7 = 0x16; iVar7 != 0; iVar7 = iVar7 + -1) {
+  for (iVar6 = 0x16; iVar6 != 0; iVar6 = iVar6 + -1) {
     *puVar11 = 0;
     puVar11 = puVar11 + 1;
   }
   memset(local_2c8, 0, 0x1c0); /* compiler bulk-zero initialization */
   local_b0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b0;
+
   iVar8 = st::fn_0072D7F0(local_b0.jumpBuffer,0);
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_b0.previous;
+
     iVar10 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cpanel2.cpp"),0x1a0,0,iVar8,
                                 st::mutable_c_string("%s"),"CPanelTy::SetControlBoat");
     if (iVar10 == 0) {
@@ -554,23 +591,23 @@ void __thiscall st::fn_00502360(CPanelTy *this)
   }
   this_00->field_02FE = 0;
   puVar10 = this_00->field_0960;
-  iVar7 = 4;
+  iVar6 = 4;
   do {
     if (*puVar10 != 0) {
       st::fn_006E56B0(this_00->field_000C,*puVar10);
       *puVar10 = 0;
     }
     puVar10 = puVar10 + 1;
-    iVar7 = iVar7 + -1;
-  } while (iVar7 != 0);
+    iVar6 = iVar6 + -1;
+  } while (iVar6 != 0);
   if (this_00->field_0970 != 0) {
     st::fn_006E56B0(this_00->field_000C,this_00->field_0970);
   }
   CVar1 = this_00->field_0B9E;
   this_00->field_0970 = 0;
   if (((CVar1 == CASE_0) || (CVar1 == CASE_4)) || (CVar1 == CASE_3)) {
-    uVar6 = this_00->field_09C0[0];
-    if (uVar6 == 0) goto LAB_00502622;
+    uVar5 = this_00->field_09C0[0];
+    if (uVar5 == 0) goto LAB_00502622;
     this_00->field_0028 = 0x20;
     *(undefined4 *)&this_00->field_0x2c = 0;
   }
@@ -578,14 +615,14 @@ void __thiscall st::fn_00502360(CPanelTy *this)
     local_c = (uint *)((uint)local_c & 0xffffff00);
     memset(local_6c, 0, 0x50); /* compiler bulk-zero initialization */
     local_8 = &this_00->field_0x780;
-    local_14 = st::pointer_boundary_cast<Global_sub_00529590_param_1Enum *>(&this_00->field_0BA2);
-    iVar7 = -0xba3 - (int)this_00;
-    local_18 = iVar7;
+    local_14 = reinterpret_cast<Global_sub_00529590_param_1Enum *>(&this_00->field_0BA2);
+    iVar6 = -0xba3 - (int)this_00;
+    local_18 = iVar6;
     do {
       if (*local_14 == 0) goto LAB_0050254c;
       iVar12 = 2;
       iVar9 = 5;
-      switch(static_cast<uint32_t>(STRawWord(local_14 + iVar7))) {
+      switch(static_cast<uint32_t>(STRawWord(local_14 + iVar6))) {
       case 0:
         iVar12 = 0x3f;
         break;
@@ -610,26 +647,27 @@ switchD_0050248c_caseD_2:
       else {
         local_10 = (uint)local_14[6];
       }
-      pcVar21 = nullptr;
-      uVar17 = 0;
-      uVar16 = 1;
-      iVar7 = 0;
-      puVar19 = local_8;
+      pcVar22 = nullptr;
+      uVar18 = 0;
+      uVar17 = 1;
+      iVar6 = 0;
+      puVar20 = local_8;
       pcVar4_mg0 = st::fn_00405493(*local_14,this_00->field_0B99);
-      pCVar4 = st::fn_0040577C(pcVar4_mg0,iVar7);
+      pCVar4 = st::fn_0040577C(pcVar4_mg0,iVar6);
       /* ST_CALLSITE[00502527]: CALL 0x004041ba; direct=004041BA CPanelTy::SetButStruct */
-      st::fn_004041BA(this_00,(AnonShape_004F2E40_DC76A8C6 *)((int)local_bb0 + local_24 * 0x17c),3,
-                   local_10,iVar12,iVar9,1,pCVar4,uVar16,uVar17,st::machine_word_boundary_cast<undefined4>(puVar19),pcVar21);
-      iVar7 = local_24 * 0x17c;
+      st::fn_004041BA(this_00,(RecoveredRecordView_004F2E40_41FE7B1E *)
+                           ((int)local_bb0 + local_24 * 0x17c),3,local_10,iVar12,iVar9,1,pCVar4,
+                   uVar17,uVar18,st::machine_word_boundary_cast<undefined4>(puVar20),pcVar22);
+      iVar6 = local_24 * 0x17c;
       local_24 = local_24 + 1;
-      *(undefined4 *)((int)local_bb0 + iVar7 + 0x110) = 1;
-      iVar7 = local_18;
+      *(undefined4 *)((int)local_bb0 + iVar6 + 0x110) = 1;
+      iVar6 = local_18;
 LAB_0050254c:
-      bVar8 = (char)local_c + 1;
+      bVar7 = (char)local_c + 1;
       local_8 = local_8 + 0x27;
       local_14 = local_14 + 1;
-      local_c = (uint *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar8));
-    } while (bVar8 < 6);
+      local_c = (uint *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar7));
+    } while (bVar7 < 6);
     local_5c = this_00->field_0008;
     local_20 = local_bb0;
     local_6c[0] = 1;
@@ -641,11 +679,11 @@ LAB_0050254c:
     local_3c = local_5c;
     /* ST_CALLSITE[005025B9]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,9,&this_00->field_02FE,nullptr,st::machine_word_boundary_cast<undefined4>(local_6c),0);
+              (reinterpret_cast<SystemClassTy *>(this_00->field_000C),9,&this_00->field_02FE,nullptr,st::machine_word_boundary_cast<undefined4>(local_6c),0);
     /* ST_CALLSITE[005025C0]: CALL 0x00404ba1; direct=00404BA1 CPanelTy::sub_004F1610 */
     st::fn_00404BA1(this_00,'\x01');
-    uVar6 = this_00->field_09C0[0];
-    if (uVar6 == 0) goto LAB_00502622;
+    uVar5 = this_00->field_09C0[0];
+    if (uVar5 == 0) goto LAB_00502622;
     this_00->field_0028 = 0x20;
     if (this_00->field_0BA0 == '\0') {
       *(undefined4 *)&this_00->field_0x2c = 0;
@@ -654,76 +692,76 @@ LAB_0050254c:
       *(uint *)&this_00->field_0x2c = (uint)(byte)this_00->field_0BAE;
     }
   }
-  st::fn_006E6080(this_00,2,uVar6,(undefined4 *)&this_00->field_0x18);
+  st::fn_006E6080(this_00,2,uVar5,reinterpret_cast<undefined4 *>(&this_00->field_0x18));
 LAB_00502622:
   if (((((this_00->field_0B9E == CASE_1) || (this_00->field_0B9E == CASE_3)) &&
        ((CVar2 = this_00->field_0B99, CVar2 != CASE_9 && ((CVar2 != CASE_15 && (CVar2 != CASE_BD))))
        )) && (CVar2 != CASE_A7)) && ((CVar2 != CASE_A6 && (CVar2 != CASE_AF)))) {
-    uVar22 = 0;
-    uVar20 = 0;
-    iVar9 = 0;
-    pcVar21 = nullptr;
-    iVar7 = 0x3b04;
-    uVar16 = 0;
+    uVar23 = 0;
+    uVar21 = 0;
+    iVar6 = 0;
+    pcVar22 = nullptr;
+    pRVar16 = (RecoveredRecord_004F3130_3F0D2FD9 *)0x3b04;
+    uVar17 = 0;
     sVar15 = 2;
     uVar14 = 0xb118;
     uVar13 = 0xb117;
     pCVar4 = st::fn_0040577C(st::mutable_c_string("BUT_SHOWUPD"),0);
     /* ST_CALLSITE[005026A1]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
-    uVar13 = st::fn_004017E9(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x4a,100,1,pCVar4,uVar13,
-                       uVar14,sVar15,uVar16,iVar7,pcVar21,iVar9,uVar20,uVar22);
-    this_00->field_0970 = uVar13;
+    iVar6 = st::fn_004017E9(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x4a,100,1,reinterpret_cast<char *>(pCVar4),uVar13,
+                      uVar14,sVar15,uVar17,pRVar16,pcVar22,iVar6,uVar21,uVar23);
+    this_00->field_0970 = iVar6;
   }
   if (this_00->field_0B9E == CASE_2) {
-    uVar22 = 0;
-    uVar20 = 0;
-    iVar9 = 0;
-    pcVar21 = nullptr;
-    iVar7 = 0x3b05;
-    uVar16 = 0;
+    uVar23 = 0;
+    uVar21 = 0;
+    iVar6 = 0;
+    pcVar22 = nullptr;
+    pRVar16 = (RecoveredRecord_004F3130_3F0D2FD9 *)0x3b05;
+    uVar17 = 0;
     sVar15 = 2;
     uVar14 = 0xb11a;
     uVar13 = 0xb119;
     pCVar4 = st::fn_0040577C(st::mutable_c_string("BUT_SHOWFRM"),0);
     /* ST_CALLSITE[005026FA]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
-    uVar13 = st::fn_004017E9(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x4a,100,1,pCVar4,uVar13,
-                       uVar14,sVar15,uVar16,iVar7,pcVar21,iVar9,uVar20,uVar22);
-    this_00->field_0970 = uVar13;
+    iVar6 = st::fn_004017E9(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x4a,100,1,reinterpret_cast<char *>(pCVar4),uVar13,
+                      uVar14,sVar15,uVar17,pRVar16,pcVar22,iVar6,uVar21,uVar23);
+    this_00->field_0970 = iVar6;
   }
   if ((((this_00->field_0B9E == CASE_1) && (this_00->field_0B99 != CASE_9)) &&
       (this_00->field_0B99 != CASE_15)) ||
      (((this_00->field_0B9E == CASE_2 && (this_00->field_0B99 != CASE_9)) &&
       (this_00->field_0B99 != CASE_15)))) {
     local_c = this_00->field_0960;
-    bVar8 = 0;
-    iVar7 = 0xb230;
+    bVar7 = 0;
+    iVar6 = 0xb230;
     local_8 = (undefined1 *)0xf;
     do {
       if (this_00->field_0BA0 == '\0') {
         local_10 = 0;
       }
       else {
-        local_10 = (uint)*(byte *)((int)this_00 + iVar7 + -0xa661);
+        local_10 = (uint)*(byte *)((int)this_00 + iVar6 + -0xa661);
       }
       uVar14 = 0;
       uVar13 = 0;
-      iVar18 = 0;
-      iVar5 = 0x4e36 - (uint)(bVar8 != 0);
-      pcVar21 = nullptr;
-      uVar16 = 0;
+      iVar19 = 0;
+      pRVar16 = (RecoveredRecord_004F3130_3F0D2FD9 *)(0x4e36 - (uint)(bVar7 != 0));
+      pcVar22 = nullptr;
+      uVar17 = 0;
       sVar15 = 2;
-      iVar9 = iVar7 + -0x10;
-      iVar12 = iVar7;
+      iVar9 = iVar6 + -0x10;
+      iVar12 = iVar6;
       pCVar4 = st::fn_0040577C(st::mutable_c_string("BUT_BEHREPAIR0"),0);
       /* ST_CALLSITE[005027B9]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
-      uVar6 = st::fn_004017E9(this_00,3,0,local_10,(int)local_8,0x80,1,pCVar4,iVar9,iVar12,sVar15,uVar16,
-                        iVar5,pcVar21,iVar18,uVar13,uVar14);
-      bVar8 = bVar8 + 1;
-      *local_c = uVar6;
+      uVar5 = st::fn_004017E9(this_00,3,0,local_10,(int)local_8,0x80,1,reinterpret_cast<char *>(pCVar4),iVar9,iVar12,sVar15,uVar17,
+                        pRVar16,pcVar22,iVar19,uVar13,uVar14);
+      bVar7 = bVar7 + 1;
+      *local_c = uVar5;
       local_c = local_c + 1;
-      iVar7 = iVar7 + 1;
+      iVar6 = iVar6 + 1;
       local_8 = (undefined1 *)((int)local_8 + 0x35);
-    } while (bVar8 < 3);
+    } while (bVar7 < 3);
   }
   g_currentExceptionFrame = local_b0.previous;
   return;
@@ -758,7 +796,7 @@ void __thiscall st::fn_00502990(CPanelTy *this)
   int iVar3;
   BITMAPINFO *pBVar3;
   int iVar5;
-  byte *pbVar4;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar4;
   byte bVar5;
   int iVar6;
   int iVar7;
@@ -770,10 +808,12 @@ void __thiscall st::fn_00502990(CPanelTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar3 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   pCVar2 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cpanel2.cpp"),0x1ed,0,iVar3,st::mutable_c_string("%s")
                                ,"CPanelTy::PaintCtrlBoatSI");
     if (iVar5 != 0) {
@@ -785,32 +825,38 @@ void __thiscall st::fn_00502990(CPanelTy *this)
   switch(local_c->field_0B9E) {
   case CASE_0:
     /* ST_CALLSITE[005029F2]: CALL 0x00403229; direct=00403229 DibPut */
-    st::fn_00403229(local_c->field_018C,0,0x46,'\x01',(byte *)local_c->field_0974[0]);
+    st::fn_00403229(local_c->field_018C,0,0x46,'\x01',
+           (RecoveredRecordView_006B84D0_87AF9D9B *)local_c->field_0974[0]);
     /* ST_CALLSITE[00502A0B]: CALL 0x00403229; direct=00403229 DibPut */
-    st::fn_00403229(pCVar2->field_018C,0x31,0,'\x06',(byte *)pCVar2->field_0974[2]);
+    st::fn_00403229(pCVar2->field_018C,0x31,0,'\x06',
+           (RecoveredRecordView_006B84D0_87AF9D9B *)pCVar2->field_0974[2]);
     break;
   case CASE_1:
     /* ST_CALLSITE[00502A2C]: CALL 0x00403229; direct=00403229 DibPut */
-    st::fn_00403229(local_c->field_018C,0,0x46,'\x01',(byte *)local_c->field_0974[5]);
+    st::fn_00403229(local_c->field_018C,0,0x46,'\x01',
+           (RecoveredRecordView_006B84D0_87AF9D9B *)local_c->field_0974[5]);
     if (pCVar2->field_0B99 == CASE_BD) {
-      pbVar4 = (byte *)pCVar2->field_0974[2];
+      pRVar4 = (RecoveredRecordView_006B84D0_87AF9D9B *)pCVar2->field_0974[2];
 LAB_00502b2d:
       pRVar8 = pCVar2->field_018C;
     }
     else {
-      pbVar4 = (byte *)pCVar2->field_0974[6];
+      pRVar4 = (RecoveredRecordView_006B84D0_87AF9D9B *)pCVar2->field_0974[6];
       pRVar8 = pCVar2->field_018C;
     }
     goto LAB_00502b3b;
   case CASE_2:
     /* ST_CALLSITE[00502A79]: CALL 0x00403229; direct=00403229 DibPut */
-    st::fn_00403229(local_c->field_018C,0,0x46,'\x01',(byte *)local_c->field_0974[5]);
+    st::fn_00403229(local_c->field_018C,0,0x46,'\x01',
+           (RecoveredRecordView_006B84D0_87AF9D9B *)local_c->field_0974[5]);
     /* ST_CALLSITE[00502A92]: CALL 0x00403229; direct=00403229 DibPut */
-    st::fn_00403229(pCVar2->field_018C,0x31,0,'\x06',(byte *)pCVar2->field_0974[6]);
+    st::fn_00403229(pCVar2->field_018C,0x31,0,'\x06',
+           (RecoveredRecordView_006B84D0_87AF9D9B *)pCVar2->field_0974[6]);
     break;
   case CASE_3:
     /* ST_CALLSITE[00502AEA]: CALL 0x00403229; direct=00403229 DibPut */
-    st::fn_00403229(local_c->field_018C,0,0x46,'\x01',(byte *)local_c->field_0974[0]);
+    st::fn_00403229(local_c->field_018C,0,0x46,'\x01',
+           (RecoveredRecordView_006B84D0_87AF9D9B *)local_c->field_0974[0]);
     switch(pCVar2->field_0B99) {
     case CASE_9:
     case CASE_15:
@@ -818,47 +864,54 @@ LAB_00502b2d:
     case CASE_A7:
     case CASE_AF:
     case CASE_BD:
-      pbVar4 = (byte *)pCVar2->field_0974[2];
+      pRVar4 = (RecoveredRecordView_006B84D0_87AF9D9B *)pCVar2->field_0974[2];
       pRVar8 = pCVar2->field_018C;
       break;
     default:
-      pbVar4 = (byte *)pCVar2->field_0974[7];
+      pRVar4 = (RecoveredRecordView_006B84D0_87AF9D9B *)pCVar2->field_0974[7];
       goto LAB_00502b2d;
     }
 LAB_00502b3b:
     /* ST_CALLSITE[00502B3B]: CALL 0x00403229; direct=00403229 DibPut */
-    st::fn_00403229(pRVar8,0x31,0,'\x06',pbVar4);
+    st::fn_00403229(pRVar8,0x31,0,'\x06',pRVar4);
     break;
   case CASE_4:
     /* ST_CALLSITE[00502AB3]: CALL 0x00403229; direct=00403229 DibPut */
-    st::fn_00403229(local_c->field_018C,0,0x46,'\x01',(byte *)local_c->field_0974[0]);
+    st::fn_00403229(local_c->field_018C,0,0x46,'\x01',
+           (RecoveredRecordView_006B84D0_87AF9D9B *)local_c->field_0974[0]);
     /* ST_CALLSITE[00502ACC]: CALL 0x00403229; direct=00403229 DibPut */
-    st::fn_00403229(pCVar2->field_018C,0x31,0,'\x06',(byte *)pCVar2->field_0974[2]);
+    st::fn_00403229(pCVar2->field_018C,0x31,0,'\x06',
+           (RecoveredRecordView_006B84D0_87AF9D9B *)pCVar2->field_0974[2]);
   }
   if (pCVar2->field_0B9E == CASE_1) {
     switch(pCVar2->field_0B99) {
     case CASE_1A:
-      pBVar3 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,3);
+      /* ST_CALLSITE[00502B7C]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+      pBVar3 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(pCVar2->field_02B2),3);
       /* ST_CALLSITE[00502B92]: CALL 0x00403229; direct=00403229 DibPut */
-      st::fn_00403229(pCVar2->field_018C,0x3c,0x84,'\x01',(byte *)pBVar3);
+      st::fn_00403229(pCVar2->field_018C,0x3c,0x84,'\x01',reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(pBVar3));
       bVar5 = 0;
       local_8 = local_8 & 0xffffff00;
       if ((pCVar2->field_0BB6 & 0xfe) != 0) {
         do {
-          pBVar3 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,3);
+          /* ST_CALLSITE[00502BB2]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+          pBVar3 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(pCVar2->field_02B6),3);
           /* ST_CALLSITE[00502BD7]: CALL 0x00403229; direct=00403229 DibPut */
-          st::fn_00403229(pCVar2->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',(byte *)pBVar3);
+          st::fn_00403229(pCVar2->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',
+                 reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(pBVar3));
           bVar5 = bVar5 + 1;
-          local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar5));
+          local_8 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_8)), (uint8_t)(bVar5));
         } while (bVar5 < (byte)pCVar2->field_0BB6 >> 1);
       }
       if (bVar5 < 0x14) {
         iVar6 = 0x14 - (local_8 & 0xff);
         iVar7 = (local_8 & 0xff) * 4 + 0x3f;
         do {
-          pBVar3 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,0);
+          /* ST_CALLSITE[00502C18]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+          pBVar3 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(pCVar2->field_02B6),0);
           /* ST_CALLSITE[00502C2D]: CALL 0x00403229; direct=00403229 DibPut */
-          st::fn_00403229(pCVar2->field_018C,iVar7,0x87,'\x01',(byte *)pBVar3);
+          st::fn_00403229(pCVar2->field_018C,iVar7,0x87,'\x01',
+                 reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(pBVar3));
           iVar7 = iVar7 + 4;
           iVar6 = iVar6 + -1;
         } while (iVar6 != 0);
@@ -869,27 +922,32 @@ LAB_00502b3b:
     case CASE_23:
     case CASE_24:
       if (pCVar2->field_0BCD != -1) {
-        pBVar3 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B2,3);
+        /* ST_CALLSITE[00502C56]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+        pBVar3 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(pCVar2->field_02B2),3);
         /* ST_CALLSITE[00502C6C]: CALL 0x00403229; direct=00403229 DibPut */
-        st::fn_00403229(pCVar2->field_018C,0x3c,0x84,'\x01',(byte *)pBVar3);
+        st::fn_00403229(pCVar2->field_018C,0x3c,0x84,'\x01',reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(pBVar3));
         bVar5 = 0;
         local_8 = local_8 & 0xffffff00;
         if (pCVar2->field_0BCD != '\0') {
           do {
-            pBVar3 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,1);
+            /* ST_CALLSITE[00502C8C]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+            pBVar3 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(pCVar2->field_02B6),1);
             /* ST_CALLSITE[00502CB1]: CALL 0x00403229; direct=00403229 DibPut */
-            st::fn_00403229(pCVar2->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',(byte *)pBVar3);
+            st::fn_00403229(pCVar2->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',
+                   reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(pBVar3));
             bVar5 = bVar5 + 1;
-            local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar5));
+            local_8 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_8)), (uint8_t)(bVar5));
           } while (bVar5 < (byte)pCVar2->field_0BCD);
         }
         if (bVar5 < 0x14) {
           iVar6 = 0x14 - (local_8 & 0xff);
           iVar7 = (local_8 & 0xff) * 4 + 0x3f;
           do {
-            pBVar3 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02B6,0);
+            /* ST_CALLSITE[00502CEC]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+            pBVar3 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(pCVar2->field_02B6),0);
             /* ST_CALLSITE[00502D01]: CALL 0x00403229; direct=00403229 DibPut */
-            st::fn_00403229(pCVar2->field_018C,iVar7,0x87,'\x01',(byte *)pBVar3);
+            st::fn_00403229(pCVar2->field_018C,iVar7,0x87,'\x01',
+                   reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(pBVar3));
             iVar7 = iVar7 + 4;
             iVar6 = iVar6 + -1;
           } while (iVar6 != 0);
@@ -898,8 +956,9 @@ LAB_00502b3b:
     }
   }
   if (-1 < (int)pCVar2->field_0148[3]) {
+
     st::fn_006B3640
-              ((int *)g_ddxContext_008075A8,(uint)pCVar2->field_0148[3],0xffffffff,
+              (reinterpret_cast<int *>(g_ddxContext_008075A8),(uint)pCVar2->field_0148[3],0xffffffff,
                pCVar2->field_0048,pCVar2->field_00A0);
   }
   g_currentExceptionFrame = local_50.previous;
@@ -944,10 +1003,12 @@ void __thiscall st::fn_00502FC0(CPanelTy *this)
   local_ac.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_ac;
   local_c = this;
+
   iVar5 = st::fn_0072D7F0(local_ac.jumpBuffer,0);
   this_00 = local_c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_ac.previous;
+
     iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cpanel2.cpp"),0x234,0,iVar5,st::mutable_c_string("%s")
                                ,"CPanelTy::Update2PanelSI");
     if (iVar7 == 0) {
@@ -962,12 +1023,15 @@ void __thiscall st::fn_00502FC0(CPanelTy *this)
   memmove(pRVar8, pCVar7, 0x5c); /* compiler REP MOVS byte copy */
   memset(pCVar1, 0, 0x5c); /* compiler bulk-zero initialization */
   /* ST_CALLSITE[0050302C]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
-  st::fn_004035BC(g_allPlayers_007FA174,2,(AnonShape_0043BEB0_1C00EC12 *)pCVar1);
+  st::fn_004035BC
+            (g_allPlayers_007FA174,2,reinterpret_cast<RecoveredRecordView_0043BEB0_8330D129 *>(pCVar1));
   if (STPiece<5,1>(local_68) == this_00->field_0B9E) {
     switch(this_00->field_0B9E) {
     case CASE_1:
       if ((STPiece<0,4>(local_68) == this_00->field_0B99) && (STPiece<4,1>(local_68) == this_00->field_0B9D)) {
-        st::fn_00403FEE(this_00,(AnonShape_00501D00_3942B646 *)&this_00->field_0B99,&local_68);
+        /* ST_CALLSITE[00503087]: CALL 0x00403fee; direct=00403FEE CPanelTy::sub_00501D00 */
+        st::fn_00403FEE(this_00,reinterpret_cast<RecoveredRecordView_00501D00_08D99E75 *>(&this_00->field_0B99),&local_68
+                    );
         switch(this_00->field_0B99) {
         case CASE_1A:
           goto switchD_005030a2_caseD_1a;
@@ -982,20 +1046,24 @@ void __thiscall st::fn_00502FC0(CPanelTy *this)
           }
           if ((cVar2 != -1) && (local_8 = (uint)STPiece<1,3>(local_8) << 8, cVar2 != '\0')) {
             do {
-              pBVar5 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,1);
+              /* ST_CALLSITE[005031B2]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+              pBVar5 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(this_00->field_02B6),1);
               /* ST_CALLSITE[005031D7]: CALL 0x00403229; direct=00403229 DibPut */
-              st::fn_00403229(this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',(byte *)pBVar5);
+              st::fn_00403229(this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',
+                     reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(pBVar5));
               bVar4 = (byte)local_8 + 1;
-              local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar4));
+              local_8 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_8)), (uint8_t)(bVar4));
             } while (bVar4 < (byte)this_00->field_0BCD);
           }
           if ((byte)local_8 < 0x14) {
             iVar9 = 0x14 - (local_8 & 0xff);
             iVar6 = (local_8 & 0xff) * 4 + 0x3f;
             do {
-              pBVar5 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+              /* ST_CALLSITE[00503216]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+              pBVar5 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(this_00->field_02B6),0);
               /* ST_CALLSITE[0050322B]: CALL 0x00403229; direct=00403229 DibPut */
-              st::fn_00403229(this_00->field_018C,iVar6,0x87,'\x01',(byte *)pBVar5);
+              st::fn_00403229(this_00->field_018C,iVar6,0x87,'\x01',
+                     reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(pBVar5));
               iVar6 = iVar6 + 4;
               iVar9 = iVar9 + -1;
             } while (iVar9 != 0);
@@ -1004,8 +1072,9 @@ void __thiscall st::fn_00502FC0(CPanelTy *this)
             g_currentExceptionFrame = local_ac.previous;
             return;
           }
+
           st::fn_006B3640
-                    ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[3],0xffffffff,
+                    (reinterpret_cast<int *>(g_ddxContext_008075A8),(uint)this_00->field_0148[3],0xffffffff,
                      this_00->field_0048,this_00->field_00A0);
           g_currentExceptionFrame = local_ac.previous;
           return;
@@ -1018,7 +1087,9 @@ void __thiscall st::fn_00502FC0(CPanelTy *this)
     case CASE_2:
     case CASE_3:
       if ((STPiece<0,4>(local_68) == this_00->field_0B99) && (STPiece<4,1>(local_68) == this_00->field_0B9D)) {
-        st::fn_00403FEE(this_00,(AnonShape_00501D00_3942B646 *)&this_00->field_0B99,&local_68);
+        /* ST_CALLSITE[00503299]: CALL 0x00403fee; direct=00403FEE CPanelTy::sub_00501D00 */
+        st::fn_00403FEE(this_00,reinterpret_cast<RecoveredRecordView_00501D00_08D99E75 *>(&this_00->field_0B99),&local_68
+                    );
         g_currentExceptionFrame = local_ac.previous;
         return;
       }
@@ -1050,20 +1121,23 @@ switchD_005030a2_caseD_1a:
   local_8 = (uint)STPiece<1,3>(local_8) << 8;
   if ((this_00->field_0BB6 & 0xfe) != 0) {
     do {
-      pBVar5 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,3);
+      /* ST_CALLSITE[005030CB]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+      pBVar5 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(this_00->field_02B6),3);
       /* ST_CALLSITE[005030EF]: CALL 0x00403229; direct=00403229 DibPut */
-      st::fn_00403229(this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',(byte *)pBVar5);
+      st::fn_00403229(this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',
+             reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(pBVar5));
       bVar4 = (byte)local_8 + 1;
-      local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar4));
+      local_8 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_8)), (uint8_t)(bVar4));
     } while (bVar4 < (byte)this_00->field_0BB6 >> 1);
   }
   if ((byte)local_8 < 0x14) {
     iVar9 = 0x14 - (local_8 & 0xff);
     iVar6 = (local_8 & 0xff) * 4 + 0x3f;
     do {
-      pBVar5 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B6,0);
+      /* ST_CALLSITE[00503130]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+      pBVar5 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(this_00->field_02B6),0);
       /* ST_CALLSITE[00503145]: CALL 0x00403229; direct=00403229 DibPut */
-      st::fn_00403229(this_00->field_018C,iVar6,0x87,'\x01',(byte *)pBVar5);
+      st::fn_00403229(this_00->field_018C,iVar6,0x87,'\x01',reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(pBVar5));
       iVar6 = iVar6 + 4;
       iVar9 = iVar9 + -1;
     } while (iVar9 != 0);
@@ -1072,8 +1146,9 @@ switchD_005030a2_caseD_1a:
     g_currentExceptionFrame = local_ac.previous;
     return;
   }
+
   st::fn_006B3640
-            ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[3],0xffffffff,
+            (reinterpret_cast<int *>(g_ddxContext_008075A8),(uint)this_00->field_0148[3],0xffffffff,
              this_00->field_0048,this_00->field_00A0);
   g_currentExceptionFrame = local_ac.previous;
   return;
@@ -1106,26 +1181,27 @@ void __thiscall st::fn_00503450(CPanelTy *this)
   uint uVar15;
   uint uVar16;
   short sVar17;
-  ushort uVar18;
+  RecoveredRecord_004F3130_3F0D2FD9 *pRVar18;
   ushort uVar19;
-  byte *puVar20;
-  uint uVar21;
-  int iVar22;
-  char *pcVar23;
-  uint uVar24;
-  undefined4 local_c28 [140];
-  AnonShape_004F2E40_DC76A8C6 local_9f8 [7];
-  undefined4 local_110 [22];
+  ushort uVar20;
+  byte *puVar21;
+  uint uVar22;
+  int iVar23;
+  char *pcVar24;
+  uint uVar25;
+  uint local_c28 [140];
+  RecoveredRecordView_004F2E40_41FE7B1E local_9f8 [7];
+  uint local_110 [22];
   InternalExceptionFrame local_b8;
-  undefined4 local_74 [4];
-  undefined4 local_64;
-  undefined4 local_60;
-  undefined4 local_5c;
-  undefined4 local_44;
-  undefined4 local_40;
-  undefined4 local_3c;
+  uint local_74 [4];
+  uint local_64;
+  uint local_60;
+  uint local_5c;
+  uint local_44;
+  uint local_40;
+  uint local_3c;
   int local_2c;
-  AnonShape_004F2E40_DC76A8C6 *local_28;
+  RecoveredRecordView_004F2E40_41FE7B1E *local_28;
   CPanelTy *local_24;
   int local_20;
   LPSTR local_1c;
@@ -1144,9 +1220,11 @@ void __thiscall st::fn_00503450(CPanelTy *this)
   memset(local_c28, 0, 0x230); /* compiler bulk-zero initialization */
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
+
   iVar8 = st::fn_0072D7F0(local_b8.jumpBuffer,0);
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_b8.previous;
+
     iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cpanel2.cpp"),0x29d,0,iVar8,st::mutable_c_string("%s")
                                ,"CPanelTy::SetControlBoatSI");
     if (iVar9 == 0) {
@@ -1228,24 +1306,25 @@ LAB_005035b5:
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         local_14 = (uint *)(uint)*(byte *)((int)this_00->field_0B1F + uVar14 + 0x89);
       }
-      pcVar23 = nullptr;
-      puVar20 = &this_00->field_0x780 + uVar14 * 0x27;
-      uVar19 = 0;
-      uVar18 = 1;
+      pcVar24 = nullptr;
+      puVar21 = &this_00->field_0x780 + uVar14 * 0x27;
+      uVar20 = 0;
+      uVar19 = 1;
       iVar10 = 0;
       pcVar5 = st::fn_00405493(*(Global_sub_00529590_param_1Enum *)
                                    ((int)this_00->field_0B1F + uVar14 + 0x83),this_00->field_0B99);
       pCVar5 = st::fn_0040577C(pcVar5,iVar10);
       /* ST_CALLSITE[00503643]: CALL 0x004041ba; direct=004041BA CPanelTy::SetButStruct */
-      st::fn_004041BA(this_00,(AnonShape_004F2E40_DC76A8C6 *)((int)local_9f8 + local_2c * 0x17c),3,
-                   st::machine_word_boundary_cast<undefined4>(local_14),iVar7,local_8,6,pCVar5,uVar18,uVar19,st::machine_word_boundary_cast<undefined4>(puVar20),pcVar23);
+      st::fn_004041BA(this_00,(RecoveredRecordView_004F2E40_41FE7B1E *)
+                           ((int)local_9f8 + local_2c * 0x17c),3,st::machine_word_boundary_cast<undefined4>(local_14),iVar7,local_8,6,pCVar5,
+                   uVar19,uVar20,st::machine_word_boundary_cast<undefined4>(puVar21),pcVar24);
       iVar10 = local_2c;
       *(undefined4 *)((int)local_9f8 + local_2c * 0x17c + 0x110) = 1;
       if ((byte)local_c == 0) {
 LAB_00503678:
         iVar11 = 0;
 LAB_0050367a:
-        pBVar6 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02DE,iVar11);
+        pBVar6 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(this_00->field_02DE),iVar11);
         *(BITMAPINFO **)((int)local_9f8 + iVar10 * 0x17c + 0x124) = pBVar6;
         *(undefined4 *)((int)local_9f8 + iVar10 * 0x17c + 0x128) = 0x3c;
         iVar10 = local_2c;
@@ -1258,7 +1337,7 @@ LAB_0050367a:
       local_2c = iVar10 + 1;
 LAB_005036ae:
       bVar4 = (byte)local_c + 1;
-      local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar4));
+      local_c = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_c)), (uint8_t)(bVar4));
     } while (bVar4 < 6);
     local_28 = local_9f8;
     local_64 = this_00->field_0008;
@@ -1271,7 +1350,7 @@ LAB_005036ae:
     local_44 = local_64;
     /* ST_CALLSITE[0050370D]: CALL dword ptr [EDX + 0x8] */
     (*this_00->field_000C->vtable->CreateObject)
-              ((SystemClassTy *)this_00->field_000C,9,&this_00->field_02FE,nullptr,st::machine_word_boundary_cast<undefined4>(local_74),0);
+              (reinterpret_cast<SystemClassTy *>(this_00->field_000C),9,&this_00->field_02FE,nullptr,st::machine_word_boundary_cast<undefined4>(local_74),0);
     /* ST_CALLSITE[00503714]: CALL 0x00404ba1; direct=00404BA1 CPanelTy::sub_004F1610 */
     st::fn_00404BA1(this_00,'\x01');
     uVar14 = this_00->field_09C0[0];
@@ -1284,42 +1363,42 @@ LAB_005036ae:
       *(uint *)&this_00->field_0x2c = (uint)(byte)this_00->field_0BAE;
     }
   }
-  st::fn_006E6080(this_00,2,uVar14,(undefined4 *)&this_00->field_0x18);
+  st::fn_006E6080(this_00,2,uVar14,reinterpret_cast<undefined4 *>(&this_00->field_0x18));
 LAB_00503776:
   if (((this_00->field_0B9E == CASE_1) || (this_00->field_0B9E == CASE_3)) &&
      ((CVar2 = this_00->field_0B99, CVar2 != CASE_9 &&
       ((((CVar2 != CASE_15 && (CVar2 != CASE_BD)) && (CVar2 != CASE_A7)) &&
        ((CVar2 != CASE_A6 && (CVar2 != CASE_AF)))))))) {
-    uVar24 = 0;
-    uVar21 = 0;
-    iVar10 = 0;
-    pcVar23 = "BUT_SHOWUPDMSK";
-    iVar7 = 0x3b04;
-    uVar18 = 0;
+    uVar25 = 0;
+    uVar22 = 0;
+    iVar7 = 0;
+    pcVar24 = st::mutable_c_string("BUT_SHOWUPDMSK");
+    pRVar18 = (RecoveredRecord_004F3130_3F0D2FD9 *)0x3b04;
+    uVar19 = 0;
     sVar17 = 2;
     uVar16 = 0xb118;
     uVar15 = 0xb117;
     pCVar5 = st::fn_0040577C(st::mutable_c_string("BUT_SHOWUPD"),0);
     /* ST_CALLSITE[005037F8]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
-    uVar15 = st::fn_004017E9(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x40,0x2f,6,pCVar5,uVar15,
-                       uVar16,sVar17,uVar18,iVar7,pcVar23,iVar10,uVar21,uVar24);
-    this_00->field_0970 = uVar15;
+    iVar7 = st::fn_004017E9(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x40,0x2f,6,reinterpret_cast<char *>(pCVar5),uVar15,
+                      uVar16,sVar17,uVar19,pRVar18,pcVar24,iVar7,uVar22,uVar25);
+    this_00->field_0970 = iVar7;
   }
   if (this_00->field_0B9E == CASE_2) {
-    uVar24 = 0;
-    uVar21 = 0;
-    iVar10 = 0;
-    pcVar23 = "BUT_SHOWUPDMSK";
-    iVar7 = 0x3b05;
-    uVar18 = 0;
+    uVar25 = 0;
+    uVar22 = 0;
+    iVar7 = 0;
+    pcVar24 = st::mutable_c_string("BUT_SHOWUPDMSK");
+    pRVar18 = (RecoveredRecord_004F3130_3F0D2FD9 *)0x3b05;
+    uVar19 = 0;
     sVar17 = 2;
     uVar16 = 0xb11a;
     uVar15 = 0xb119;
     pCVar5 = st::fn_0040577C(st::mutable_c_string("BUT_SHOWFRM"),0);
     /* ST_CALLSITE[00503854]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
-    uVar15 = st::fn_004017E9(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x40,0x2f,6,pCVar5,uVar15,
-                       uVar16,sVar17,uVar18,iVar7,pcVar23,iVar10,uVar21,uVar24);
-    this_00->field_0970 = uVar15;
+    iVar7 = st::fn_004017E9(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x40,0x2f,6,reinterpret_cast<char *>(pCVar5),uVar15,
+                      uVar16,sVar17,uVar19,pRVar18,pcVar24,iVar7,uVar22,uVar25);
+    this_00->field_0970 = iVar7;
   }
   if (((this_00->field_0B9E == CASE_1) && (this_00->field_0B99 != CASE_BD)) ||
      (this_00->field_0B9E == CASE_2)) {
@@ -1335,38 +1414,39 @@ LAB_00503776:
         iVar7 = 0xf;
         local_18 = 0x6a;
         local_20 = 0xf;
-        pcVar23 = "BUT_BEHREPAIR0";
+        pcVar24 = st::mutable_c_string("BUT_BEHREPAIR0");
         break;
       case 1:
         iVar10 = 0x7a;
         iVar7 = 0x14;
         local_18 = 0x7a;
         local_20 = 0x14;
-        pcVar23 = "BUT_BEHREPAIR20";
+        pcVar24 = st::mutable_c_string("BUT_BEHREPAIR20");
         break;
       case 2:
         iVar10 = 0x98;
         iVar7 = 0x14;
         local_18 = 0x98;
         local_20 = 0x14;
-        pcVar23 = "BUT_BEHREPAIR50";
+        pcVar24 = st::mutable_c_string("BUT_BEHREPAIR50");
         break;
       case 3:
         iVar10 = 0x98;
         iVar7 = 0xf;
         local_18 = 0x98;
         local_20 = 0xf;
-        pcVar23 = "BUT_BEHREPAIR80";
+        pcVar24 = st::mutable_c_string("BUT_BEHREPAIR80");
         break;
       default:
         goto switchD_0050389f_default;
       }
-      local_1c = st::fn_0040577C(pcVar23,0);
+      local_1c = st::fn_0040577C(pcVar24,0);
 switchD_0050389f_default:
-      iVar22 = 1;
+      iVar23 = 1;
       iVar11 = local_8;
+      /* ST_CALLSITE[00503920]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       pCVar5 = st::fn_0040577C(st::mutable_c_string("BUT_BEHRMSK"),0);
-      pCVar5 = st::fn_006F2C00(pCVar5,iVar22,iVar11);
+      pCVar5 = st::fn_006F2C00(reinterpret_cast<char *>(pCVar5),iVar23,iVar11);
       if (this_00->field_0BA0 == '\0') {
         uVar14 = 0;
       }
@@ -1374,13 +1454,15 @@ switchD_0050389f_default:
         uVar14 = (uint)(byte)(&this_00->field_0BCF)[local_8];
       }
       /* ST_CALLSITE[00503980]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
-      uVar14 = st::fn_004017E9(this_00,3,0,uVar14,iVar10,iVar7,6,local_1c,local_8 + 0xb220,
-                         local_8 + 0xb230,2,0,0x4e36 - (uint)((byte)local_c != '\0'),pCVar5,0,0,0);
+      uVar14 = st::fn_004017E9(this_00,3,0,uVar14,iVar10,iVar7,6,reinterpret_cast<char *>(local_1c),local_8 + 0xb220,
+                         local_8 + 0xb230,2,0,
+                         (RecoveredRecord_004F3130_3F0D2FD9 *)
+                         (0x4e36 - st::storage_bit_cast<uint>(static_cast<uint32_t>((byte)local_c != '\0'))),reinterpret_cast<char *>(pCVar5),0,0,0);
       *local_14 = uVar14;
       bVar4 = (byte)local_c + 1;
       local_8 = local_8 + 1;
       local_14 = local_14 + 1;
-      local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar4));
+      local_c = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_c)), (uint8_t)(bVar4));
     } while (bVar4 < 4);
   }
   g_currentExceptionFrame = local_b8.previous;
@@ -1415,10 +1497,9 @@ void __thiscall st::fn_00503BB0(CPanelTy *this,byte param_1)
   InternalExceptionFrame local_54;
   CPanelTy *local_10;
   uint local_c;
-  undefined1 local_8;
+  byte local_8;
   bool local_6;
-  undefined1 local_5;
-
+  byte local_5;
   if (DAT_00808784 != 0) {
     return;
   }
@@ -1434,9 +1515,11 @@ void __thiscall st::fn_00503BB0(CPanelTy *this,byte param_1)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
+
   iVar4 = st::fn_0072D7F0(local_54.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cpanel2.cpp"),0x2ff,0,iVar4,st::mutable_c_string("%s")
                                ,"CPanelTy::SetCmdBoat");
     if (iVar5 == 0) {
@@ -1467,7 +1550,7 @@ void __thiscall st::fn_00503BB0(CPanelTy *this,byte param_1)
   }
   if (g_infocPanel_00801698 != nullptr) {
     /* ST_CALLSITE[00503C95]: CALL dword ptr [EAX + 0x1c] */
-    (*g_infocPanel_00801698->vtable->SetPanel)((SpecPanelTy *)g_infocPanel_00801698,'\0');
+    (*g_infocPanel_00801698->vtable->SetPanel)(reinterpret_cast<SpecPanelTy *>(g_infocPanel_00801698),'\0');
   }
   if (g_tradePanel_00802A44 != nullptr) {
     /* ST_CALLSITE[00503CA6]: CALL 0x00404af7; direct=00404AF7 TradePanelTy::sub_00552160 */
@@ -1479,19 +1562,19 @@ void __thiscall st::fn_00503BB0(CPanelTy *this,byte param_1)
   }
   if (g_behPanel_00801678 != nullptr) {
     /* ST_CALLSITE[00503CCA]: CALL dword ptr [EDX + 0x1c] */
-    (*g_behPanel_00801678->vtable->SetPanel)((SpecPanelTy *)g_behPanel_00801678,'\0');
+    (*g_behPanel_00801678->vtable->SetPanel)(reinterpret_cast<SpecPanelTy *>(g_behPanel_00801678),'\0');
   }
   if (g_sAMPanel_008016EC != nullptr) {
     /* ST_CALLSITE[00503CDB]: CALL dword ptr [EAX + 0x1c] */
-    (*g_sAMPanel_008016EC->vtable->SetPanel)((SpecPanelTy *)g_sAMPanel_008016EC,'\0');
+    (*g_sAMPanel_008016EC->vtable->SetPanel)(reinterpret_cast<SpecPanelTy *>(g_sAMPanel_008016EC),'\0');
   }
   if (g_upgPanel_00802A48 != nullptr) {
     /* ST_CALLSITE[00503CEC]: CALL dword ptr [EDX + 0x1c] */
-    (*g_upgPanel_00802A48->vtable->SetPanel)((SpecPanelTy *)g_upgPanel_00802A48,'\0');
+    (*g_upgPanel_00802A48->vtable->SetPanel)(reinterpret_cast<SpecPanelTy *>(g_upgPanel_00802A48),'\0');
   }
   if (g_frmPanel_0080168C != nullptr) {
     /* ST_CALLSITE[00503CFD]: CALL dword ptr [EAX + 0x1c] */
-    (*g_frmPanel_0080168C->vtable->SetPanel)((SpecPanelTy *)g_frmPanel_0080168C,'\0');
+    (*g_frmPanel_0080168C->vtable->SetPanel)(reinterpret_cast<SpecPanelTy *>(g_frmPanel_0080168C),'\0');
   }
   /* ST_CALLSITE[00503D06]: CALL 0x004040fc; direct=004040FC CursorClassTy::sub_0054A8D0 */
   st::fn_004040FC(g_cursorClass_00802A30);
@@ -1500,7 +1583,9 @@ void __thiscall st::fn_00503BB0(CPanelTy *this,byte param_1)
   switch((uint)bVar1) {
   case 1:
     local_5 = 0;
-    st::fn_00403C33((undefined4 *)0xa,(uint *)(st_stack_frame + 159),0,0xffffffff);
+    /* ST_CALLSITE[00503D51]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+    st::fn_00403C33
+              (g_playSystem_00802A38,(undefined4 *)0xa,reinterpret_cast<uint *>((st_stack_frame + 159)),0,0xffffffff);
     g_currentExceptionFrame = local_54.previous;
     return;
   case 2:
@@ -1525,13 +1610,16 @@ void __thiscall st::fn_00503BB0(CPanelTy *this,byte param_1)
   case 4:
     memset(local_78, 0, 0x21); /* compiler bulk-zero initialization */
     STPiece<0,1>(local_78[0]) = 10;
-    st::fn_00403C33((undefined4 *)0x17,local_78,0,0xffffffff);
+    /* ST_CALLSITE[00503DF7]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+    st::fn_00403C33(g_playSystem_00802A38,(undefined4 *)0x17,local_78,0,0xffffffff);
     g_currentExceptionFrame = local_54.previous;
     return;
   case 0xb:
   case 0xc:
     local_6 = bVar1 == 0xb;
-    st::fn_00403C33((undefined4 *)0x28,(uint *)&local_6,0,0xffffffff);
+    /* ST_CALLSITE[00503E97]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+    st::fn_00403C33
+              (g_playSystem_00802A38,(undefined4 *)0x28,reinterpret_cast<uint *>(&local_6),0,0xffffffff);
     g_currentExceptionFrame = local_54.previous;
     return;
   case 0xe:
@@ -1544,7 +1632,8 @@ void __thiscall st::fn_00503BB0(CPanelTy *this,byte param_1)
   case 0x14:
     local_8 = 0;
     local_c = 3;
-    st::fn_00403C33((undefined4 *)0x21,&local_c,0,0xffffffff);
+    /* ST_CALLSITE[00503E68]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+    st::fn_00403C33(g_playSystem_00802A38,(undefined4 *)0x21,&local_c,0,0xffffffff);
     g_currentExceptionFrame = local_54.previous;
     return;
   default:
@@ -1552,19 +1641,20 @@ void __thiscall st::fn_00503BB0(CPanelTy *this,byte param_1)
   case 0x2f:
     if ((g_behPanel_00801678 != nullptr) && (g_behPanel_00801678->field_0172 == 2)) {
       /* ST_CALLSITE[00503DCE]: CALL dword ptr [EDX + 0x1c] */
-      (*g_behPanel_00801678->vtable->SetPanel)((SpecPanelTy *)g_behPanel_00801678,'\x01');
+      (*g_behPanel_00801678->vtable->SetPanel)(reinterpret_cast<SpecPanelTy *>(g_behPanel_00801678),'\x01');
     }
     break;
   case 0x48:
     memset(local_9c, 0, 0x21); /* compiler bulk-zero initialization */
     STPiece<0,1>(local_9c[0]) = 0x14;
-    st::fn_00403C33((undefined4 *)0x17,local_9c,0,0xffffffff);
+    /* ST_CALLSITE[00503E37]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+    st::fn_00403C33(g_playSystem_00802A38,(undefined4 *)0x17,local_9c,0,0xffffffff);
     g_currentExceptionFrame = local_54.previous;
     return;
   case 0x4c:
     if ((g_sAMPanel_008016EC != nullptr) && (g_sAMPanel_008016EC->field_0172 == 2)) {
       /* ST_CALLSITE[00503EC5]: CALL dword ptr [EAX + 0x1c] */
-      (*g_sAMPanel_008016EC->vtable->SetPanel)((SpecPanelTy *)g_sAMPanel_008016EC,'\x01');
+      (*g_sAMPanel_008016EC->vtable->SetPanel)(reinterpret_cast<SpecPanelTy *>(g_sAMPanel_008016EC),'\x01');
     }
   }
   /* ST_CALLSITE[00503ECA]: CALL 0x00402798; direct=00402798 CPanelTy::sub_004FAD20 */
@@ -1573,4 +1663,3 @@ switchD_00503d36_caseD_15:
   g_currentExceptionFrame = local_54.previous;
   return;
 }
-

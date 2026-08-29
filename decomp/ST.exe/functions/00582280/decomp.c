@@ -13,7 +13,8 @@ STJellyManC * __cdecl CreateSTJellyMan(void)
 {
   STJellyManC *pSVar1;
 
-  pSVar1 = (STJellyManC *)FUN_006b04d0(0x213);
+  /* ST_CALLSITE[00582285]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STJellyManC; signature=__stdcall;pointer:/STJellyManC;/uint */
+  pSVar1 = FUN_006b04d0(0x213);
   if (pSVar1 != nullptr) {
     pSVar1 = STJellyManC::STJellyManC(pSVar1);
     return pSVar1;

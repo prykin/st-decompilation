@@ -13,8 +13,10 @@ BehPanelTy * __cdecl CreateBehPanel(void)
 {
   BehPanelTy *this;
 
-  this = (BehPanelTy *)FUN_006b04d0(700);
+
+  this = STPointerBoundaryCast<BehPanelTy *>(FUN_006b04d0(700));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;

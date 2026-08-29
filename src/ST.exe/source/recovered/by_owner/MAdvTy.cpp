@@ -22,7 +22,6 @@ int __thiscall st::fn_00590860(MAdvTy *this)
   this->field_0024 = 0;
   this->field_0028 = 10;
   this->field_002C = this->field_0008;
-  iVar1 = st::fn_006E60A0(this,(undefined4 *)&this->field_0x18);
+  iVar1 = st::fn_006E60A0(this,reinterpret_cast<undefined4 *>(&this->field_0x18));
   return iVar1;
 }
-

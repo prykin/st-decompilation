@@ -29,7 +29,7 @@ LAB_0065d96b:
 0065D973  50                        PUSH EAX
 0065D974  51                        PUSH ECX
 0065D975  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
-0065D97B  E8 3A 4F DA FF            CALL 0x004028ba
+0065D97B  E8 3A 4F DA FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/AiFltClassTy; source view only; no Ghidra override
 0065D980  85 C0                     TEST EAX,EAX
 0065D982  74 0C                     JZ 0x0065d990
 0065D984  8B 55 0C                  MOV EDX,dword ptr [EBP + 0xc]

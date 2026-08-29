@@ -17,8 +17,7 @@
 BaseSystemC * __thiscall st::fn_00576AA0(BaseSystemC *this,AppClassTy *param_1)
 
 {
-  st::fn_006E51C0((SystemClassTy *)this,param_1,0);
+  st::fn_006E51C0(reinterpret_cast<SystemClassTy *>(this),param_1,0);
   this->vtable = &st_global_0079B1B4;
   return this;
 }
-

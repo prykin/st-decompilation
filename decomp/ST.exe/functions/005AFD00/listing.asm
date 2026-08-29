@@ -382,7 +382,8 @@ LAB_005b0050:
 005B0134  6A 00                     PUSH 0x0
 005B0136  50                        PUSH EAX
 005B0137  68 45 03 00 00            PUSH 0x345
-005B013C  E8 7F 0D 14 00            CALL 0x006f0ec0
+ChooseMapTy::PrepFiles::override::prt_5b013c_9d92389d:
+005B013C  E8 7F 0D 14 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 005B0141  8B F0                     MOV ESI,EAX
 005B0143  A1 CB C4 80 00            MOV EAX,[0x0080c4cb]
 005B0148  83 C4 14                  ADD ESP,0x14
@@ -395,7 +396,8 @@ LAB_005b0155:
 005B015B  6A 00                     PUSH 0x0
 005B015D  51                        PUSH ECX
 005B015E  56                        PUSH ESI
-005B015F  E8 AC A8 16 00            CALL 0x0071aa10
+ChooseMapTy::PrepFiles::override::prt_5b015f_8c81087f:
+005B015F  E8 AC A8 16 00            CALL 0x0071aa10  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__cdecl;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/cMf32;pointer:/char;/int
 005B0164  83 C4 0C                  ADD ESP,0xc
 005B0167  A3 CB C4 80 00            MOV [0x0080c4cb],EAX
 005B016C  85 C0                     TEST EAX,EAX
@@ -617,7 +619,8 @@ LAB_005b0316:
 005B03D3  50                        PUSH EAX
 005B03D4  68 45 03 00 00            PUSH 0x345
 005B03D9  F3 A4                     MOVSB.REP ES:EDI,ESI
-005B03DB  E8 E0 0A 14 00            CALL 0x006f0ec0
+ChooseMapTy::PrepFiles::override::prt_5b03db_9d92389d:
+005B03DB  E8 E0 0A 14 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 005B03E0  8B F0                     MOV ESI,EAX
 005B03E2  33 C0                     XOR EAX,EAX
 005B03E4  8A 83 5F 1A 00 00         MOV AL,byte ptr [EBX + 0x1a5f]

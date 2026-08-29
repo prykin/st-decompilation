@@ -13,22 +13,23 @@ STBHEShellC::sub_005F4C50
           int param_6)
 
 {
-  int iVar1;
-  STBHEShellC_field_0169DArray *pSVar2;
+  STBHEShellC_field_0169DArray *pSVar1;
+  int iVar2;
+  DArrayTy *pSVar2_mg0;
   STBHEShellC_field_0169Element *element_0169;
   uint *puVar4;
   uint uVar5;
   int iVar6;
   int iVar7;
   longlong lVar8;
-  undefined1 local_2c [6];
+  byte local_2c [6];
   int local_26;
-  undefined4 local_22;
-  undefined4 local_1e;
+  uint local_22;
+  uint local_1e;
   int local_1a;
   int local_16;
-  undefined4 local_12;
-  undefined4 local_d;
+  uint local_12;
+  uint local_d;
   float local_8;
 
   iVar6 = param_4;
@@ -47,9 +48,9 @@ STBHEShellC::sub_005F4C50
     do {
       puVar4[-4] = this->field_011D;
       *puVar4 = this->field_0119;
-      iVar1 = iVar7 / this->field_0121;
+      iVar2 = iVar7 / this->field_0121;
       iVar7 = iVar7 + -0x96;
-      puVar4[4] = iVar1 + g_playSystem_00802A38->field_00E4 + param_6;
+      puVar4[4] = iVar2 + g_playSystem_00802A38->field_00E4 + param_6;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = param_4 + -1;
       puVar4 = puVar4 + 1;
@@ -58,10 +59,10 @@ STBHEShellC::sub_005F4C50
   if (this->field_0169 != nullptr) {
     DArrayDestroy((DArrayTy *)this->field_0169);
   }
-  pSVar2 = (STBHEShellC_field_0169DArray *)
-           Library::DKW::TBL::DArrayCreate(nullptr,iVar6 * param_5,0x23,10);
-  this->field_0169 = pSVar2;
-  if ((pSVar2 != nullptr) && (param_4 = 0, 0 < this->field_010D)) {
+  /* ST_CALLSITE[005F4D1C]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STBHEShellC_field_0169DArray; source view only; no Ghidra override */
+  pSVar2_mg0 = Library::DKW::TBL::DArrayCreate(nullptr,iVar6 * param_5,0x23,10);
+  this->field_0169 = (STBHEShellC_field_0169DArray *)pSVar2_mg0;
+  if ((pSVar2_mg0 != nullptr) && (param_4 = 0, 0 < this->field_010D)) {
     do {
       auto param_1_after_write = 0.0; /* compiler stack-slot lifetime split */
       auto param_3_after_write = 0; /* compiler stack-slot lifetime split */
@@ -82,9 +83,9 @@ STBHEShellC::sub_005F4C50
             param_1_after_write = param_1_after_write + local_8;
           }
           else {
-            pSVar2 = this->field_0169;
-            if ((uint)(iVar6 - param_5) < pSVar2->count) {
-              element_0169 = DArrayAt<STBHEShellC_field_0169Element>(pSVar2, iVar6 - param_5);
+            pSVar1 = this->field_0169;
+            if ((uint)(iVar6 - param_5) < pSVar1->count) {
+              element_0169 = DArrayAt<STBHEShellC_field_0169Element>(pSVar1, iVar6 - param_5);
             }
             else {
               element_0169 = nullptr;
@@ -102,9 +103,11 @@ STBHEShellC::sub_005F4C50
           local_d = 0xffffffff;
           uVar5 = (uint)((&this->field_0159)[param_4] != 0);
           if (this->field_0103 != '\0') {
+
             thunk_FUN_005f4a30((int)local_2c,3,uVar5);
           }
           local_2c[0] = uVar5 == 0;
+
           Library::DKW::TBL::DArrayAppend((DArrayTy *)this->field_0169,local_2c);
           param_3_after_write = param_3_after_write + 1;
           iVar6 = iVar6 + 1;

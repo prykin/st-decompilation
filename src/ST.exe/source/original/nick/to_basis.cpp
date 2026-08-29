@@ -29,10 +29,12 @@ int __thiscall st::fn_005F10D0(STManBasisC *this,STMessage *message)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_c = this;
+
   iVar3 = st::fn_0072D7F0(local_58.jumpBuffer,0);
   this_00 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
+
     iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_basis.cpp"),0x5b,0,iVar3,st::mutable_c_string("%s"),
                                "STManBasisC::GetMessage");
     if (iVar4 == 0) {
@@ -56,10 +58,9 @@ int __thiscall st::fn_005F10D0(STManBasisC *this,STMessage *message)
       return 0;
     }
     if (SVar1 == MESS_ID_CREATE) {
-      local_c->field_001C = st::machine_word_boundary_cast<undefined4>(local_c->field_0018 * DAT_00808754);
+      local_c->field_001C = local_c->field_0018 * DAT_00808754;
       if (g_cMf32_00806754 != nullptr) {
-        local_8 = (AnonShape_005F10D0_60EBA416 *)
-                  st::fn_006F2D90(g_cMf32_00806754,PTR_s_BASIS_MAN_0079c57c,0,0);
+        local_8 = reinterpret_cast<AnonShape_005F10D0_60EBA416 *>(st::fn_006F2D90(g_cMf32_00806754,PTR_s_BASIS_MAN_0079c57c,0,0));
       }
       if (local_8 == nullptr) {
         this_00->field_0020 = nullptr;
@@ -69,24 +70,25 @@ int __thiscall st::fn_005F10D0(STManBasisC *this,STMessage *message)
       }
       else if (local_8->field_000C == 2) {
         /* ST_CALLSITE[005F1189]: CALL 0x00403eae; direct=00403EAE STManBasisC::sub_005F2110 */
-        st::fn_00403EAE(this_00,(undefined4 *)local_8);
+        st::fn_00403EAE(this_00,reinterpret_cast<undefined4 *>(local_8));
         this_00->field_001C = this_00->field_0044;
         /* ST_CALLSITE[005F1196]: CALL 0x00404f5c; direct=00404F5C STManBasisC::sub_005F21D0 */
         st::fn_00404F5C(this_00);
       }
       else {
-        st::fn_004016A9(this_00);
+
+        st::fn_004016A9(reinterpret_cast<RecoveredRecord_005F1380_AD368A85 *>(this_00));
       }
       if ((local_8 != nullptr) && (g_cMf32_00806754 != nullptr)) {
-        st::fn_006F20E0(g_cMf32_00806754,(uint *)&local_8);
+        st::fn_006F20E0(g_cMf32_00806754,reinterpret_cast<uint *>(&local_8));
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
     }
   }
   else if (SVar1 == MESS_SHARED_010F) {
-    /* ST_CALLSITE[005F121A]: CALL 0x004030d5; direct=004030D5 STManBasisC::sub_005F1FA0 */
-    local_14 = st::fn_004030D5(local_c,(int *)&local_10);
+    /* ST_CALLSITE[005F121A]: CALL 0x004030d5; direct=004030D5 STManBasisC::sub_005F1FA0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
+    local_14 = st::fn_004030D5(local_c,reinterpret_cast<int *>(&local_10));
     /* ST_CALLSITE[005F1236]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
     st::fn_00401078(g_playSystem_00802A38,PTR_s_BASIS_MAN_0079c57c,local_14,local_10,0xc);
     st::fn_006AB060(&local_14);
@@ -94,4 +96,3 @@ int __thiscall st::fn_005F10D0(STManBasisC *this,STMessage *message)
   g_currentExceptionFrame = local_58.previous;
   return 0;
 }
-

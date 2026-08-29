@@ -16,6 +16,7 @@ uint * __fastcall AiFltClassTy::sub_0065E360(AiFltClassTy *param_1,undefined4 pa
   uint *puVar1;
 
   if ((param_1->field_007D != 0xfffe) && (g_allPlayers_007FA174 != nullptr)) {
+    /* ST_CALLSITE[0065E37F]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STGroupC; source view only; no Ghidra override */
     this = thunk_FUN_0042b760((char)param_1->field_0024,param_1->field_007D);
     if (this != nullptr) {
       /* ST_CALLSITE[0065E38E]: CALL 0x00403d46; direct=00403D46 STGroupC::GetTOBJList */

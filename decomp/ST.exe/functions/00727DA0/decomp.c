@@ -4,16 +4,16 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
-   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00727C80.
+   /SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_00727C80.
    Evidence: incoming_receiver_captures=1; receiver_accesses=11; incoming_edx_uses=0; calls=1;
    ecx_pointer_setup=1; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
    expected_stack=12; receiver_family_members=4; adopt_untyped_existing_thiscall;
    single_call_corroborated_by_receiver_family */
 
 void __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
-          (AnonReceiver_00727C80 *this,AnonShape_00727DA0_C4265AA0 *param_1,uint param_2,int param_3
-          )
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00727C80::FUN_00727da0
+          (RecoveredReceiver_00727C80 *this,AnonShape_00727DA0_C4265AA0 *param_1,uint param_2,
+          int param_3)
 
 {
   AnonShape_00727DA0_C4265AA0 *pAVar1;
@@ -41,7 +41,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
   int local_38;
   AnonShape_00728170_E57D1DF1 local_34;
   int local_c;
-  AnonReceiver_00727C80 *local_8;
+  RecoveredReceiver_00727C80 *local_8;
 
   iVar5 = param_1->field_0028 + param_2 * 0x1c;
   puVar8 = (undefined4 *)
@@ -60,16 +60,15 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
   DAT_008570cc = puVar8[1];
   DAT_008570d0 = puVar8[2];
   _DAT_008570d4 = puVar8[3];
-  iVar5 = *(int *)&this->field_0x124;
+  iVar5 = this->field_0124;
   if (iVar5 == 2) {
     _DAT_008570f8 = (uint)(byte)(&this[1].field_0x150)[param_1->field_0008];
   }
   else if (iVar5 == 6) {
     _DAT_008570f8 = param_2;
-    DAT_008570a0 = '\x01' << ((byte)(*(int *)&this->field_0xa8 << 1) & 0x1f);
+    DAT_008570a0 = '\x01' << ((byte)(this->field_00A8 << 1) & 0x1f);
     DAT_008570d8 = param_1->field_003C;
-    DAT_00857078 = (int)(*(int *)&this->field_0x2e4 + (*(int *)&this->field_0x2e4 >> 0x1f & 3U)) >>
-                   2;
+    DAT_00857078 = (int)(this->field_02E4 + ((int)this->field_02E4 >> 0x1f & 3U)) >> 2;
     if (DAT_00857078 < 0x20000) {
       DAT_00857078 = 0x20000;
     }
@@ -102,19 +101,21 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
     DAT_00857098 = (int)pAVar9 >> 0x10;
     local_34.field_0000 = 0xffffffff;
     local_8 = this;
+
     iVar5 = FUN_00727c80((int *)&local_34,param_2_after_write);
     if (iVar5 != 0) {
       local_60.field_0000 = 1;
+
       iVar5 = FUN_00727c80((int *)&local_60,param_2_after_write);
       if (iVar5 != 0) {
-        if (*(int *)&this->field_0x124 == 6) {
-          iVar5 = *(int *)&this->field_0x28 * DAT_00857098;
-          param_1_after_write = (AnonShape_00727DA0_C4265AA0 *)(*(int *)&this->field_0xc + iVar5);
-          param_2_after_write = *(int *)&this->field_0x14 + iVar5 * 2;
-          if (DAT_00857098 < *(int *)&this->field_0x3c) {
+        if (this->field_0124 == 6) {
+          iVar5 = this->field_0028 * DAT_00857098;
+          param_1_after_write = (AnonShape_00727DA0_C4265AA0 *)(this->field_000C + iVar5);
+          param_2_after_write = this->field_0014 + iVar5 * 2;
+          if (DAT_00857098 < this->field_003C) {
             do {
               uVar6 = local_34.field_001C;
-              if (*(int *)&this->field_0x34 <= DAT_00857098) {
+              if (this->field_0034 <= DAT_00857098) {
                 uVar15 = local_34.field_0024 & 0xffff0000;
                 uVar12 = (local_60.field_0024 & 0xffff0000) - uVar15;
                 this = local_8;
@@ -126,6 +127,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
                     uVar12 = DAT_0085705c;
                   }
                   if ((int)uVar15 < (int)DAT_008570dc) {
+
                     uVar14 = FUN_006db5f0(DAT_00857068,DAT_008570dc - uVar15);
                     uVar6 = uVar6 + uVar14;
                     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -169,6 +171,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
               }
               local_34.field_0004 = local_34.field_0004 - 1;
               if (local_34.field_0004 == 0) {
+
                 iVar5 = FUN_00727c80((int *)&local_34,STPiece<8,4>(local_34));
                 if (iVar5 == 0) {
                   return;
@@ -180,6 +183,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
               }
               local_60.field_0004 = local_60.field_0004 - 1;
               if (local_60.field_0004 == 0) {
+
                 iVar5 = FUN_00727c80((int *)&local_60,STPiece<8,4>(local_60));
                 if (iVar5 == 0) {
                   return;
@@ -190,22 +194,23 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00727C80::FUN_00727da0
                 local_60.field_001C = local_60.field_001C + STPiece<32,4>(local_60);
               }
               DAT_00857098 = DAT_00857098 + 1;
-              param_1_after_write = (AnonShape_00727DA0_C4265AA0 *)
-                        (&param_1_after_write->field_0x0 + *(int *)&this->field_0x28);
-              param_2_after_write = param_2_after_write + *(int *)&this->field_0x28 * 2;
-            } while (DAT_00857098 < *(int *)&this->field_0x3c);
+              param_1_after_write = (AnonShape_00727DA0_C4265AA0 *)(&param_1_after_write->field_0x0 + this->field_0028);
+              param_2_after_write = param_2_after_write + this->field_0028 * 2;
+            } while (DAT_00857098 < this->field_003C);
             return;
           }
         }
-        else if (DAT_00857098 < *(int *)&this->field_0x3c) {
+        else if (DAT_00857098 < this->field_003C) {
           do {
-            if (*(int *)&this->field_0x34 <= DAT_00857098) {
+            if (this->field_0034 <= DAT_00857098) {
               FUN_00728170(&local_34,&local_60);
             }
+
             iVar4 = FUN_00727d50((int *)&local_34);
           } while (((iVar4 != 0) &&
+
                    (local_EAX_936 = FUN_00727d50((int *)&local_60), local_EAX_936 != 0)) &&
-                  (DAT_00857098 = DAT_00857098 + 1, DAT_00857098 < *(int *)&this->field_0x3c));
+                  (DAT_00857098 = DAT_00857098 + 1, DAT_00857098 < this->field_003C));
         }
       }
     }

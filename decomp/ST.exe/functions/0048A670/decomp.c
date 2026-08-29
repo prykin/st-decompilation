@@ -15,7 +15,12 @@
    [STAbiConsistencyApplier] machine_thiscall_arity target=function:-1: prototype=void __thiscall
    _SetSpeedFireLife(STBoatC * this) Evidence: every machine RET purges exactly 0 explicit stack
    bytes; current signature describes 4; removed trailing parameter slots have no listing
-   references; ret_sites=0048A73F RET */
+   references; ret_sites=0048A73F RET
+
+   [STSwitchEnumApplier] Switch target field_06F7 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_06F7State. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40;CASE_31=49;CASE_32=50;CASE_34=52
+    */
 
 void __thiscall STBoatC::_SetSpeedFireLife(STBoatC *this)
 

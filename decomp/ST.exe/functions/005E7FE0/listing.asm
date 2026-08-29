@@ -25,7 +25,8 @@ WaitTy::ShowDescription:
 005E8027  68 90 C7 7C 00            PUSH 0x7cc790
 005E802C  6A 01                     PUSH 0x1
 005E802E  50                        PUSH EAX
-005E802F  E8 6C 25 12 00            CALL 0x0070a5a0
+WaitTy::ShowDescription::override::prt_5e802f_f9313a7:
+005E802F  E8 6C 25 12 00            CALL 0x0070a5a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;/byte;/int
 005E8034  8B 0D 6C 17 81 00         MOV ECX,dword ptr [0x0081176c]
 005E803A  50                        PUSH EAX
 005E803B  6A 01                     PUSH 0x1
@@ -57,7 +58,8 @@ LAB_005e8084:
 005E8084  6A 0A                     PUSH 0xa
 005E8086  6A 0A                     PUSH 0xa
 005E8088  6A 00                     PUSH 0x0
-005E808A  E8 61 D4 0C 00            CALL 0x006b54f0
+WaitTy::ShowDescription::override::prt_5e808a_1d2df247:
+005E808A  E8 61 D4 0C 00            CALL 0x006b54f0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint
 005E808F  8B 0D 6C 17 81 00         MOV ECX,dword ptr [0x0081176c]
 005E8095  8B 75 FC                  MOV ESI,dword ptr [EBP + -0x4]
 005E8098  89 81 48 05 00 00         MOV dword ptr [ECX + 0x548],EAX
@@ -198,7 +200,8 @@ LAB_005e8242:
 005E8288  6A 00                     PUSH 0x0
 005E828A  51                        PUSH ECX
 005E828B  68 2D 25 00 00            PUSH 0x252d
-005E8290  E8 AB 7E 0C 00            CALL 0x006b0140
+WaitTy::ShowDescription::override::prt_5e8290_1ca4d525:
+005E8290  E8 AB 7E 0C 00            CALL 0x006b0140  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/WaitTy; signature=__stdcall;pointer:/WaitTy;/WinDef.h/UINT;/WinDef.h/HINSTANCE
 005E8295  50                        PUSH EAX
 LAB_005e8296:
 005E8296  8B CE                     MOV ECX,ESI

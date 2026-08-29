@@ -17,10 +17,9 @@
    0047F0AF RET 0x4 | 0047F0FD RET 0x4 | 0047F119 RET 0x4 | 0047F1B3 RET 0x4 | 0047F1CA RET 0x4 |
    0047F218 RET 0x4 | 0047F249 RET 0x4 | 0047F4C4 RET 0x4 | 0047F50A RET 0x4 */
 
-int __thiscall STBoatC::Dismant(STBoatC *this,int *param_1)
+int __thiscall STBoatC::Dismant(STBoatC *this,RecoveredRecordView_004B9D90_09AED060 *param_1)
 
 {
-  void *param_1_after_output = nullptr; /* compiler output-call stack-slot lifetime split */
   STBoatC_field_06C3State SVar1;
   uint uVar2;
   STBoatC_field_06F7State SVar3;
@@ -61,7 +60,7 @@ int __thiscall STBoatC::Dismant(STBoatC *this,int *param_1)
   int iVar20;
   short sVar21;
   byte bVar22;
-  undefined4 local_2c [2];
+  uint local_2c [2];
   uint local_24;
   short local_20;
   uint local_1c;
@@ -72,7 +71,8 @@ int __thiscall STBoatC::Dismant(STBoatC *this,int *param_1)
   int local_8;
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  if ((param_1 == nullptr) || (param_1 == (int *)0x1)) {
+  if ((param_1 == nullptr) ||
+     (param_1 == (RecoveredRecordView_004B9D90_09AED060 *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
     SVar3 = this->field_06F7;
@@ -96,27 +96,28 @@ int __thiscall STBoatC::Dismant(STBoatC *this,int *param_1)
       param_1 = nullptr;
     }
     else {
-      param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar16, sVar14).objects[0];
+      param_1 = (RecoveredRecordView_004B9D90_09AED060 *)
+                STGridAt3D(g_worldGrid, sVar6, sVar16, sVar14).objects[0];
     }
-    if ((AnonShape_004B9D90_4F3151F9 *)param_1_after_output == nullptr) {
+    if (param_1 == nullptr) {
       return 0;
     }
-    if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x18 != local_1c) {
+    if (*(int *)&param_1->field_0x18 != local_1c) {
       return 0;
     }
-    if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x20 != 1000) {
+    if (*(int *)&param_1->field_0x20 != 1000) {
       return 0;
     }
-    if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x24 != this->field_0024) {
+    if (*(int *)&param_1->field_0x24 != this->field_0024) {
       return 0;
     }
-    iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1_after_output);
+
+    iVar9 = thunk_FUN_004b9d90(param_1);
     if (iVar9 == 0) {
       return 0;
     }
-    /* ST_CALLSITE[0047F365]: CALL dword ptr [EDX + 0x2c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar9 = (**(code **)(*param_1 + 0x2c))();
+    /* ST_CALLSITE[0047F365]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+    iVar9 = STStructuralVirtualCall<undefined4>(param_1, 0x2C);
     iVar9 = *(int *)(&DAT_00791d68 + iVar9 * 4);
     this->field_06B9 = iVar9;
     if (iVar9 == 1) {
@@ -199,18 +200,22 @@ LAB_0047f4cd:
         param_1 = nullptr;
       }
       else {
-        param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
+        param_1 = (RecoveredRecordView_004B9D90_09AED060 *)
+                  STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
       }
-      if ((((AnonShape_004B9D90_4F3151F9 *)param_1_after_output == nullptr) ||
-          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x18 !=
-           *(int *)&this->field_0x6af)) ||
-         ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x24 != this->field_0024 ||
-          (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1_after_output), iVar9 == 0)))) {
+      if (((param_1 == nullptr) ||
+          (*(int *)&param_1->field_0x18 != *(int *)&this->field_0x6af)) ||
+         ((*(int *)&param_1->field_0x24 != this->field_0024 ||
+
+          (iVar9 = thunk_FUN_004b9d90(param_1), iVar9 == 0)))) {
         return 0;
       }
+
       iVar8 = thunk_FUN_00495420(this,&this->field_06B3,&this->field_06B5,&this->field_06B7);
-      if ((iVar8 == 1) && ((param_1[300] == 0 || (param_1[300] == this->field_0018)))) {
-        param_1[300] = this->field_0018;
+      if ((iVar8 == 1) &&
+         ((*(int *)&param_1->field_0x4b0 == 0 || (*(int *)&param_1->field_0x4b0 == this->field_0018)
+          ))) {
+        *(int *)&param_1->field_0x4b0 = this->field_0018;
         this->field_06C3 = CASE_2;
 LAB_0047e4df:
         iVar9 = (int)this->field_06B7;
@@ -242,13 +247,14 @@ LAB_0047e0a4:
         param_1 = nullptr;
       }
       else {
-        param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
+        param_1 = (RecoveredRecordView_004B9D90_09AED060 *)
+                  STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
       }
-      if ((((AnonShape_004B9D90_4F3151F9 *)param_1_after_output == nullptr) ||
-          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x18 !=
-           *(int *)&this->field_0x6af)) ||
-         ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x24 != this->field_0024 ||
-          (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1_after_output), iVar9 == 0)))) {
+      if (((param_1 == nullptr) ||
+          (*(int *)&param_1->field_0x18 != *(int *)&this->field_0x6af)) ||
+         ((*(int *)&param_1->field_0x24 != this->field_0024 ||
+
+          (iVar9 = thunk_FUN_004b9d90(param_1), iVar9 == 0)))) {
         /* ST_CALLSITE[0047E176]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
         sub_004602B0(this);
         this->field_00B7 = 0;
@@ -261,6 +267,7 @@ LAB_0047e0a4:
       iVar9 = this->field_06AD + 1;
       goto LAB_0047e4ee;
     case -1:
+
       local_EAX_97 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3987,0,0,
                                         "%s","STBoatC::Dismant, DISMANT_MOVE error");
       if (local_EAX_97 == 0) {
@@ -290,26 +297,30 @@ LAB_0047e0a4:
           param_1 = nullptr;
         }
         else {
-          param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
+          param_1 = (RecoveredRecordView_004B9D90_09AED060 *)
+                    STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
         }
-        if ((AnonShape_004B9D90_4F3151F9 *)param_1_after_output == nullptr) {
+        if (param_1 == nullptr) {
           return 0;
         }
-        if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x18 !=
-            *(int *)&this->field_0x6af) {
+        if (*(int *)&param_1->field_0x18 != *(int *)&this->field_0x6af) {
           return 0;
         }
-        if (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x24 != this->field_0024) {
+        if (*(int *)&param_1->field_0x24 != this->field_0024) {
           return 0;
         }
-        iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1_after_output);
+
+        iVar9 = thunk_FUN_004b9d90(param_1);
         if (iVar9 == 0) {
           return 0;
         }
+
         local_EAX_920 =
              thunk_FUN_00495420(this,&this->field_06B3,&this->field_06B5,&this->field_06B7);
-        if ((local_EAX_920 == 1) && ((param_1[300] == 0 || (param_1[300] == this->field_0018)))) {
-          param_1[300] = this->field_0018;
+        if ((local_EAX_920 == 1) &&
+           ((*(int *)&param_1->field_0x4b0 == 0 ||
+            (*(int *)&param_1->field_0x4b0 == this->field_0018)))) {
+          *(int *)&param_1->field_0x4b0 = this->field_0018;
           this->field_06C3 = CASE_2;
           /* ST_CALLSITE[0047E2D9]: CALL 0x00404f6b; direct=00404F6B STBoatC::sub_00481520 */
           sub_00481520(this,(int)this->field_06B3,(int)this->field_06B5,(int)this->field_06B7);
@@ -336,11 +347,12 @@ LAB_0047e0a4:
           this->field_06C7 = 1;
         }
         if (this->field_06C7 == 1) {
-          /* ST_CALLSITE[0047E772]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+          /* ST_CALLSITE[0047E772]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
           uVar11 = sub_004176C0(this,this->field_06BD);
           /* ST_CALLSITE[0047E77A]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
           uVar11 = sub_00417910(this,(short)uVar11);
           if (uVar11 == 0xffffffff) {
+
             local_EAX_2246 =
                  ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3a2d,0,0,"%s"
                                     ,"STBoatC::Dismant, DISMANT_PMOVE");
@@ -375,6 +387,7 @@ LAB_0047f1f7:
         if (this->field_02BF != '\0') {
           local_c = (undefined4 *)&this->field_0x2b3;
           do {
+
             puVar12 = thunk_FUN_0041dc40(local_2c,(short)*local_c,*(ushort *)(local_c + 1),
                                          this->field_006C);
             uVar2 = *puVar12;
@@ -429,6 +442,7 @@ LAB_0047f1f7:
           } while (local_8 < (int)(uint)(byte)this->field_02BF);
         }
         if (local_10 == -1) {
+
           local_EAX_3170 =
                ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3a53,0,0,"%s",
                                   "STBoatC::Dismant, DISMANT_PMOVE 2");
@@ -451,22 +465,26 @@ LAB_0047edd5:
           param_1 = nullptr;
         }
         else {
-          param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
+          param_1 = (RecoveredRecordView_004B9D90_09AED060 *)
+                    STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
         }
-        if ((((AnonShape_004B9D90_4F3151F9 *)param_1_after_output != nullptr) &&
-            (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x18 ==
-             *(int *)&this->field_0x6af)) &&
-           ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x24 == this->field_0024 &&
-            (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1_after_output), iVar9 != 0)))) {
-          thunk_FUN_004b9cf0((AnonShape_004B9D90_4F3151F9 *)param_1_after_output);
+        if (((param_1 != nullptr) &&
+            (*(int *)&param_1->field_0x18 == *(int *)&this->field_0x6af)) &&
+           ((*(int *)&param_1->field_0x24 == this->field_0024 &&
+
+            (iVar9 = thunk_FUN_004b9d90(param_1), iVar9 != 0)))) {
+
+          thunk_FUN_004b9cf0(param_1);
           this->field_06C3 = CASE_4;
           goto cf_common_exit_0047F19A;
         }
+
         STPlaySystemC::sub_006E62D0
-                  (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x6af,
-                   (int *)&param_1_after_output);
-        if ((param_1 != nullptr) && (param_1[300] == this->field_0018)) {
-          param_1[300] = 0;
+                  (g_playSystem_00802A38,
+                   *(RecoveredRecordView_005EFAE0_855D930D **)&this->field_0x6af,(int *)&param_1);
+        if ((param_1 != nullptr) &&
+           (*(int *)&param_1->field_0x4b0 == this->field_0018)) {
+          *(undefined4 *)&param_1->field_0x4b0 = 0;
         }
       }
       else {
@@ -485,11 +503,12 @@ LAB_0047edd5:
               this->field_06C7 = 1;
             }
             if (this->field_06C7 == 1) {
-              /* ST_CALLSITE[0047ED86]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+              /* ST_CALLSITE[0047ED86]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
               uVar11 = sub_004176C0(this,this->field_06BD);
               /* ST_CALLSITE[0047ED8E]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
               uVar11 = sub_00417910(this,(short)uVar11);
               if (uVar11 == 0xffffffff) {
+
                 local_EAX_3779 =
                      ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3aa0,0,0,
                                         "%s","STBoatC::Dismant, DISMANT_OMOVE");
@@ -518,6 +537,7 @@ LAB_0047edd5:
               if (this->field_02BF != '\0') {
                 local_c = (undefined4 *)&this->field_0x2b3;
                 do {
+
                   puVar12 = thunk_FUN_0041dc40(local_2c,(short)*local_c,*(ushort *)(local_c + 1),
                                                this->field_006C);
                   local_24 = *puVar12;
@@ -575,6 +595,7 @@ LAB_0047edd5:
                 } while (local_8 < (int)(uint)(byte)this->field_02BF);
               }
               if (local_10 == -1) {
+
                 local_EAX_4554 =
                      ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3ac6,0,0,
                                         "%s","STBoatC::Dismant, DISMANT_OMOVE 2");
@@ -607,6 +628,7 @@ LAB_0047edd5:
             return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
           }
           if (SVar1 != CASE_6) {
+
             local_EAX_4915 =
                  ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3af1,0,0,"%s"
                                     ,"STBoatC::Dismant - incorrect entry");
@@ -618,6 +640,7 @@ LAB_0047edd5:
           /* ST_CALLSITE[0047F129]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
           iVar9 = sub_0045FF50(this,2);
           if (iVar9 == -1) {
+
             local_EAX_4837 =
                  ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3ade,0,0,"%s"
                                     ,"STBoatC::Dismant, DISMANT_ESCMOVE error");
@@ -653,14 +676,15 @@ LAB_0047edd5:
           param_1 = nullptr;
         }
         else {
-          param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
+          param_1 = (RecoveredRecordView_004B9D90_09AED060 *)
+                    STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
         }
-        if ((((AnonShape_004B9D90_4F3151F9 *)param_1_after_output != nullptr) &&
-            (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x18 ==
-             *(int *)&this->field_0x6af)) &&
-           ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x24 == this->field_0024 &&
-            (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1_after_output), iVar9 != 0)))) {
-          if (STField<int>(param_1_after_output,0x245) == 6) {
+        if (((param_1 != nullptr) &&
+            (*(int *)&param_1->field_0x18 == *(int *)&this->field_0x6af)) &&
+           ((*(int *)&param_1->field_0x24 == this->field_0024 &&
+
+            (iVar9 = thunk_FUN_004b9d90(param_1), iVar9 != 0)))) {
+          if (param_1->field_0245 == 6) {
             if (this->field_06B9 == 1) {
               this->field_06C3 = CASE_5;
               this->field_06C7 = 0;
@@ -671,11 +695,13 @@ LAB_0047edd5:
           }
           goto cf_common_exit_0047F19A;
         }
+
         STPlaySystemC::sub_006E62D0
-                  (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x6af,
-                   (int *)&param_1_after_output);
-        if ((param_1 != nullptr) && (param_1[300] == this->field_0018)) {
-          param_1[300] = 0;
+                  (g_playSystem_00802A38,
+                   *(RecoveredRecordView_005EFAE0_855D930D **)&this->field_0x6af,(int *)&param_1);
+        if ((param_1 != nullptr) &&
+           (*(int *)&param_1->field_0x4b0 == this->field_0018)) {
+          *(undefined4 *)&param_1->field_0x4b0 = 0;
         }
         if (this->field_06B9 != 1) {
           sVar6 = this->field_06AD + 1;
@@ -713,23 +739,26 @@ cf_common_exit_0047F19A:
         param_1 = nullptr;
       }
       else {
-        param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
+        param_1 = (RecoveredRecordView_004B9D90_09AED060 *)
+                  STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
       }
-      if ((((AnonShape_004B9D90_4F3151F9 *)param_1_after_output == nullptr) ||
-          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x18 !=
-           *(int *)&this->field_0x6af)) ||
-         ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x24 != this->field_0024 ||
-          (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1_after_output), iVar9 == 0)))) {
+      if (((param_1 == nullptr) ||
+          (*(int *)&param_1->field_0x18 != *(int *)&this->field_0x6af)) ||
+         ((*(int *)&param_1->field_0x24 != this->field_0024 ||
+
+          (iVar9 = thunk_FUN_004b9d90(param_1), iVar9 == 0)))) {
+
         STPlaySystemC::sub_006E62D0
-                  (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x6af,
-                   (int *)&param_1_after_output);
+                  (g_playSystem_00802A38,
+                   *(RecoveredRecordView_005EFAE0_855D930D **)&this->field_0x6af,(int *)&param_1);
         if (param_1 == nullptr) {
           return 0;
         }
       }
       else {
         if (this->field_06B9 != 1) {
-          thunk_FUN_004b9cf0((AnonShape_004B9D90_4F3151F9 *)param_1_after_output);
+
+          thunk_FUN_004b9cf0(param_1);
           this->field_06C3 = CASE_4;
           return 2;
         }
@@ -740,10 +769,10 @@ cf_common_exit_0047F19A:
           return 2;
         }
       }
-      if (param_1[300] != this->field_0018) {
+      if (*(int *)&param_1->field_0x4b0 != this->field_0018) {
         return 0;
       }
-      param_1[300] = 0;
+      *(undefined4 *)&param_1->field_0x4b0 = 0;
       return 0;
     case 1:
       sVar6 = this->field_06A9;
@@ -754,18 +783,21 @@ cf_common_exit_0047F19A:
         param_1 = nullptr;
       }
       else {
-        param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
+        param_1 = (RecoveredRecordView_004B9D90_09AED060 *)
+                  STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
       }
-      if ((((AnonShape_004B9D90_4F3151F9 *)param_1_after_output == nullptr) ||
-          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x18 !=
-           *(int *)&this->field_0x6af)) ||
-         ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x24 != this->field_0024 ||
-          (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1_after_output), iVar9 == 0)))) {
+      if (((param_1 == nullptr) ||
+          (*(int *)&param_1->field_0x18 != *(int *)&this->field_0x6af)) ||
+         ((*(int *)&param_1->field_0x24 != this->field_0024 ||
+
+          (iVar9 = thunk_FUN_004b9d90(param_1), iVar9 == 0)))) {
+
         STPlaySystemC::sub_006E62D0
-                  (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x6af,
-                   (int *)&param_1_after_output);
-        if ((param_1 != nullptr) && (param_1[300] == this->field_0018)) {
-          param_1[300] = 0;
+                  (g_playSystem_00802A38,
+                   *(RecoveredRecordView_005EFAE0_855D930D **)&this->field_0x6af,(int *)&param_1);
+        if ((param_1 != nullptr) &&
+           (*(int *)&param_1->field_0x4b0 == this->field_0018)) {
+          *(undefined4 *)&param_1->field_0x4b0 = 0;
         }
         /* ST_CALLSITE[0047E6E0]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
         sub_004602B0(this);
@@ -773,6 +805,7 @@ cf_common_exit_0047F19A:
       }
       break;
     case 3:
+
       local_EAX_1493 =
            thunk_FUN_00495420(this,&this->field_06B3,&this->field_06B5,&this->field_06B7);
       if (local_EAX_1493 == 1) goto LAB_0047e4df;
@@ -784,32 +817,35 @@ cf_common_exit_0047F19A:
         param_1 = nullptr;
       }
       else {
-        param_1 = (int *)STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
+        param_1 = (RecoveredRecordView_004B9D90_09AED060 *)
+                  STGridAt3D(g_worldGrid, sVar6, sVar14, sVar16).objects[0];
       }
-      if ((((AnonShape_004B9D90_4F3151F9 *)param_1_after_output == nullptr) ||
-          (*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x18 !=
-           *(int *)&this->field_0x6af)) ||
-         ((*(int *)&((AnonShape_004B9D90_4F3151F9 *)param_1_after_output)->field_0x24 != this->field_0024 ||
-          (iVar9 = thunk_FUN_004b9d90((AnonShape_004B9D90_4F3151F9 *)param_1_after_output), iVar9 == 0)))) {
+      if (((param_1 == nullptr) ||
+          (*(int *)&param_1->field_0x18 != *(int *)&this->field_0x6af)) ||
+         ((*(int *)&param_1->field_0x24 != this->field_0024 ||
+
+          (iVar9 = thunk_FUN_004b9d90(param_1), iVar9 == 0)))) {
+
         STPlaySystemC::sub_006E62D0
-                  (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x6af,
-                   (int *)&param_1_after_output);
+                  (g_playSystem_00802A38,
+                   *(RecoveredRecordView_005EFAE0_855D930D **)&this->field_0x6af,(int *)&param_1);
         if (param_1 == nullptr) {
           return 0;
         }
-        if (param_1[300] != this->field_0018) {
+        if (*(int *)&param_1->field_0x4b0 != this->field_0018) {
           return 0;
         }
-        param_1[300] = 0;
+        *(undefined4 *)&param_1->field_0x4b0 = 0;
         return 0;
       }
-      if (param_1[300] == this->field_0018) {
-        param_1[300] = 0;
+      if (*(int *)&param_1->field_0x4b0 == this->field_0018) {
+        *(undefined4 *)&param_1->field_0x4b0 = 0;
       }
       this->field_06C3 = CASE_1;
       this->field_06BF = 0;
       goto LAB_0047e0a4;
     case -1:
+
       local_EAX_1073 =
            ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x39d9,0,0,"%s",
                               "STBoatC::Dismant DISMANT_MOVEOBJ error");

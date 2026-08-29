@@ -5,9 +5,14 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
    Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=3; incoming_this_accesses=12;
    incoming_edx_uses=2; incoming_stack_parameter_uses=32; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=005F27C0 @ 005F2904 -> killed on
+   every CFG path | 005F27C0 @ 005F2AB0 -> read as EAX on every CFG path | 005F27C0 @ 005F2BB0 ->
+   read as EAX on every CFG path | 005F3BF0 @ 005F41C4 -> read as EAX on every CFG path */
 
-undefined4 __thiscall
+int __thiscall
 STBHEShellC::sub_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,char param_4)
 
 {
@@ -28,7 +33,7 @@ STBHEShellC::sub_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 p
   float local_14_mg0;
   int local_10;
   int local_c;
-  undefined4 local_8;
+  int local_8;
 
   local_8 = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -55,6 +60,7 @@ STBHEShellC::sub_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 p
     }
   }
   else if (param_4 == '\x01') {
+
     iVar4 = FUN_006aced8(this->field_0093,this->field_0097,param_1,param_2);
     this->field_00EF = iVar4;
     local_14_mg0 = (float)iVar4;
@@ -79,6 +85,7 @@ STBHEShellC::sub_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 p
         this->field_00CD = (int)lVar10;
         lVar10 = Library::MSVCRT::__ftol();
         local_18 = -this->field_00DF;
+
         iVar7 = thunk_FUN_005f3b30((float)local_10,(float)(int)this->field_00DF,
                                    (float)(0x4b0 - iVar7),(float)local_18,local_20);
         if (iVar7 != 0) {
@@ -114,6 +121,7 @@ STBHEShellC::sub_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 p
         local_10 = ((local_c / 100) * (local_c / 100)) / ((int)pAVar5 * 2);
         iVar9 = (int)((ulonglong)((longlong)iVar6 * -0x68db8bad) >> 0x20);
         local_18 = (iVar9 >> 0xc) - (iVar9 >> 0x1f);
+
         iVar7 = thunk_FUN_005f3b30((float)local_c / (float)local_10,(float)iVar7,
                                    (float)((int)pAVar5 +
                                           (-(short)this->field_009B - (iVar6 * iVar8) / 20000)

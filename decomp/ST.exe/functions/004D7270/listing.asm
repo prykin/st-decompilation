@@ -13,13 +13,13 @@ FUN_004d7270:
 004D7293  0F 84 AC 00 00 00         JZ 0x004d7345
 004D7299  8B 16                     MOV EDX,dword ptr [ESI]
 004D729B  8B CE                     MOV ECX,ESI
-004D729D  FF 92 C4 00 00 00         CALL dword ptr [EDX + 0xc4]
+004D729D  FF 92 C4 00 00 00         CALL dword ptr [EDX + 0xc4]  ; [STIndirectCallsiteApplier] exact slot 0xC4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004D72A3  8B CE                     MOV ECX,ESI
 004D72A5  8B F8                     MOV EDI,EAX
 004D72A7  E8 6E B0 F2 FF            CALL 0x0040231a
 004D72AC  8B 06                     MOV EAX,dword ptr [ESI]
 004D72AE  8B CE                     MOV ECX,ESI
-004D72B0  FF 90 C4 00 00 00         CALL dword ptr [EAX + 0xc4]
+004D72B0  FF 90 C4 00 00 00         CALL dword ptr [EAX + 0xc4]  ; [STIndirectCallsiteApplier] exact slot 0xC4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004D72B6  3B C7                     CMP EAX,EDI
 004D72B8  7E 22                     JLE 0x004d72dc
 004D72BA  8B 7E 2C                  MOV EDI,dword ptr [ESI + 0x2c]
@@ -60,7 +60,7 @@ LAB_004d72dc:
 004D733A  8B CE                     MOV ECX,ESI
 004D733C  50                        PUSH EAX
 004D733D  6A 03                     PUSH 0x3
-004D733F  FF 97 90 00 00 00         CALL dword ptr [EDI + 0x90]
+004D733F  FF 97 90 00 00 00         CALL dword ptr [EDI + 0x90]  ; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4
 LAB_004d7345:
 004D7345  5F                        POP EDI
 004D7346  33 C0                     XOR EAX,EAX

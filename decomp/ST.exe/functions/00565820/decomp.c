@@ -47,7 +47,7 @@ uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int p
   int local_44;
   short local_40;
   short local_3e;
-  undefined2 local_3c;
+  ushort local_3c;
   int local_38;
   DArrayTy *local_34;
   int local_30;

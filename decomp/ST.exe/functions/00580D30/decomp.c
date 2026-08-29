@@ -20,7 +20,7 @@ void __thiscall STResourceC::sub_00580D30(STResourceC *this,int param_1)
   }
   uVar1 = 0;
   if (this->field_0259 != 0) {
-    /* ST_CALLSITE[00580D58]: CALL 0x0040492b; direct=0040492B STResourceC::sub_005802A0 */
+    /* ST_CALLSITE[00580D58]: CALL 0x0040492b; direct=0040492B STResourceC::sub_005802A0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
     sub_005802A0(this,0,0);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar1 = extraout_var;
@@ -31,6 +31,7 @@ void __thiscall STResourceC::sub_00580D30(STResourceC *this,int param_1)
   thunk_FUN_004d8530(this);
   this->field_0032 = 0xffff;
   if (param_1 == 0) {
+
     thunk_FUN_00580380(this);
   }
   return;

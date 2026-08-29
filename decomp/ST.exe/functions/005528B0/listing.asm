@@ -27,7 +27,7 @@ UpgPanelTy::InitUpgPanel:
 005528FD  50                        PUSH EAX
 005528FE  68 00 88 7C 00            PUSH 0x7c8800
 00552903  89 35 48 2A 80 00         MOV dword ptr [0x00802a48],ESI
-00552909  E8 6E 2E EB FF            CALL 0x0040577c
+00552909  E8 6E 2E EB FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SpecPanelTy; source view only; no Ghidra override
 0055290E  83 C4 08                  ADD ESP,0x8
 00552911  8B CE                     MOV ECX,ESI
 00552913  50                        PUSH EAX
@@ -62,7 +62,7 @@ UpgPanelTy::InitUpgPanel:
 00552969  6A FF                     PUSH -0x1
 0055296B  6A 00                     PUSH 0x0
 0055296D  68 5C 20 7C 00            PUSH 0x7c205c
-00552972  E8 05 2E EB FF            CALL 0x0040577c
+00552972  E8 05 2E EB FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 00552977  8B 15 94 67 80 00         MOV EDX,dword ptr [0x00806794]
 0055297D  83 C4 08                  ADD ESP,0x8
 00552980  50                        PUSH EAX

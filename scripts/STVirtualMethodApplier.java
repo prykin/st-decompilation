@@ -17,7 +17,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+import ghidra.app.decompiler.DecompInterface;
+import ghidra.app.decompiler.DecompileResults;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
@@ -41,8 +45,29 @@ import ghidra.program.model.symbol.SymbolTable;
 public class STVirtualMethodApplier extends GhidraScript {
     private static final String TAG = "RECOVERED_VIRTUAL_METHOD";
     private static final String COMMENT_MARKER = "[STVirtualMethodApplier]";
+    private static final int DECOMPILE_TIMEOUT = 600;
+    private static final Pattern UNRESOLVED_REGISTER = Pattern.compile(
+        "\\b(?:unaff|in|extraout)_[A-Za-z0-9_]+\\b");
+    private static final Pattern UNDEFINED_DECLARATION = Pattern.compile(
+        "(?m)^\\s*undefined(?:[1248])?\\s*\\*{0,8}\\s*[A-Za-z_][A-Za-z0-9_]*");
+    private static final Pattern RAW_INDIRECT_CALL = Pattern.compile(
+        "\\(\\s*\\*\\*?\\s*\\(\\s*code\\s*\\*\\*?\\s*\\)");
+    private static final Pattern POINTER_TOWER = Pattern.compile(
+        "\\bundefined(?:[1248])?\\s*\\*{3,}");
+    private static final Pattern ANONYMOUS_TYPE = Pattern.compile(
+        "\\b(?:AnonShape|AnonReceiver|AnonNested|AnonPointee)_[A-Za-z0-9_]+\\b");
+    private static final Pattern CASTED_CALL_RESULT = Pattern.compile(
+        "\\(\\s*[A-Za-z_][A-Za-z0-9_:<>]*\\s*\\*+\\s*\\)\\s*" +
+        "(?:[A-Za-z_][A-Za-z0-9_:]*\\s*::\\s*)*" +
+        "[A-Za-z_][A-Za-z0-9_:]*\\s*\\(", Pattern.MULTILINE);
+    private static final Pattern RAW_POINTER_OFFSET = Pattern.compile(
+        "\\*\\([^)]*\\*\\)\\([^;]*(?:param_|local_|->)[^;]*[+-]\\s*0x[0-9A-Fa-f]+");
+    private static final Pattern EXPLICIT_TYPED_VTABLE_DISPATCH = Pattern.compile(
+        "\\(\\*[A-Za-z_$][A-Za-z0-9_$]*->vtable->" +
+        "[A-Za-z_$][A-Za-z0-9_$]*\\)\\s*\\(");
 
     private DataTypeManager dataTypes;
+    private DecompInterface decompiler;
     private final List<ReportRow> report = new ArrayList<>();
 
     @Override
@@ -64,9 +89,15 @@ public class STVirtualMethodApplier extends GhidraScript {
             "anchor_address", "return_type_path", "parameters", "varargs", "noreturn",
             "confidence", "reason");
         dataTypes = currentProgram.getDataTypeManager();
+        decompiler = new DecompInterface();
+        decompiler.toggleCCode(true);
+        decompiler.toggleSyntaxTree(true);
+        if (!decompiler.openProgram(currentProgram))
+            throw new IllegalStateException("Decompiler could not open the current program");
 
         Set<Address> seen = new HashSet<>();
         int applied = 0, partial = 0, unchanged = 0, preserved = 0, conflicts = 0, disabled = 0;
+        try {
         for (Map<String, String> row : tsv.rows) {
             monitor.checkCancelled();
             boolean nameApply = enabled(row.get("name_apply"));
@@ -95,28 +126,61 @@ public class STVirtualMethodApplier extends GhidraScript {
                 continue;
             }
 
+            Function guardedFunction = currentProgram.getFunctionManager()
+                .getFunctionAt(targetAddress);
+            // Most rows are already at the requested fixpoint.  A fresh C
+            // decompile is required only before a transaction which can
+            // actually mutate the Program.  Decompiling every unchanged row
+            // on every deep fixpoint pass made the defensive readability gate
+            // dominate the whole pipeline without adding any protection.
+            boolean mayMutate = mayMutate(row, guardedFunction, nameApply,
+                conventionApply, signatureApply);
+            Readability before = mayMutate ?
+                readability(decompile(guardedFunction)) : null;
+            if (mayMutate && before == null) {
+                report.add(new ReportRow(addressText, "preserved", proposedName,
+                    "fresh pre-apply decompile unavailable; readability cannot be proven"));
+                preserved++;
+                continue;
+            }
             int transaction = currentProgram.startTransaction(
                 "Apply recovered virtual method " + addressText);
             boolean commit = false;
+            ApplyResult result = null;
             try {
-                ApplyResult result = applyRow(row, nameApply, conventionApply, signatureApply);
+                result = applyRow(row, nameApply, conventionApply, signatureApply);
                 commit = result.changed;
-                report.add(new ReportRow(addressText, result.status, proposedName, result.detail));
-                if (result.status.equals("applied")) applied++;
-                else if (result.status.equals("partial")) partial++;
-                else if (result.status.equals("unchanged")) unchanged++;
-                else if (result.status.equals("preserved")) preserved++;
-                else conflicts++;
+                if (result.changed) {
+                    if (before == null)
+                        throw new IllegalStateException(
+                            "mutation preflight disagreed with apply result");
+                    decompiler.flushCache();
+                    Readability after = readability(decompile(guardedFunction));
+                    String regression = before.regression(after);
+                    if (after == null || !regression.isBlank()) {
+                        commit = false;
+                        result = new ApplyResult("preserved",
+                            "rolled back: " + (after == null ?
+                                "post-apply decompile unavailable" : regression), false);
+                    }
+                }
             }
             catch (Exception exception) {
-                report.add(new ReportRow(addressText, "conflict", proposedName,
-                    message(exception)));
-                conflicts++;
+                result = new ApplyResult("conflict", message(exception), false);
             }
             finally {
                 currentProgram.endTransaction(transaction, commit);
+                decompiler.flushCache();
             }
+            report.add(new ReportRow(addressText, result.status, proposedName, result.detail));
+            if (result.status.equals("applied")) applied++;
+            else if (result.status.equals("partial")) partial++;
+            else if (result.status.equals("unchanged")) unchanged++;
+            else if (result.status.equals("preserved")) preserved++;
+            else conflicts++;
         }
+        }
+        finally { decompiler.dispose(); }
 
         Path reportPath = proposalFile.toPath().toAbsolutePath().normalize()
             .resolveSibling("virtual_method_apply_report.tsv");
@@ -125,6 +189,34 @@ public class STVirtualMethodApplier extends GhidraScript {
             ", unchanged=" + unchanged + ", manual/stale preserved=" + preserved +
             ", conflicts=" + conflicts + ", disabled=" + disabled);
         println("Apply report: " + reportPath);
+    }
+
+    private String decompile(Function function) {
+        if (function == null) return null;
+        DecompileResults result = decompiler.decompileFunction(function,
+            DECOMPILE_TIMEOUT, monitor);
+        return result != null && result.decompileCompleted() &&
+            result.getDecompiledFunction() != null ?
+                result.getDecompiledFunction().getC() : null;
+    }
+
+    private Readability readability(String code) {
+        return code == null ? null : new Readability(
+            matches(UNRESOLVED_REGISTER, code),
+            matches(UNDEFINED_DECLARATION, code),
+            matches(RAW_INDIRECT_CALL, code),
+            matches(POINTER_TOWER, code),
+            matches(ANONYMOUS_TYPE, code),
+            matches(CASTED_CALL_RESULT, code),
+            matches(RAW_POINTER_OFFSET, code),
+            matches(EXPLICIT_TYPED_VTABLE_DISPATCH, code));
+    }
+
+    private int matches(Pattern pattern, String text) {
+        int count = 0;
+        Matcher matcher = pattern.matcher(text);
+        while (matcher.find()) count++;
+        return count;
     }
 
     private ApplyResult applyRow(Map<String, String> row, boolean nameApply,
@@ -245,6 +337,44 @@ public class STVirtualMethodApplier extends GhidraScript {
         else if (actionPreserved) status = "preserved";
         else status = "unchanged";
         return new ApplyResult(status, String.join("; ", details), changed);
+    }
+
+    /**
+     * Mirror only the baseline predicates which can lead applyRow() to a write.
+     * Stale/manual rows still go through applyRow() so their report remains
+     * exact, but they do not pay for two whole-function decompiles.  Any future
+     * mutating branch not represented here fails closed through the assertion
+     * above and rolls its transaction back.
+     */
+    private boolean mayMutate(Map<String, String> row, Function function,
+            boolean nameApply, boolean conventionApply,
+            boolean signatureApply) {
+        if (function == null || function.isExternal() ||
+                isLibraryFunction(function)) return false;
+        String initialName = function.getName(true);
+        String initialSignature = function.getSignature()
+            .getPrototypeString(true);
+        String initialConvention = function.getCallingConventionName();
+        SourceType nameSource = function.getSymbol().getSource();
+        SourceType signatureSource = function.getSignatureSource();
+        boolean nameSafe = initialName.equals(unt(row.get("expected_name"))) &&
+            nameSource.toString().equals(row.get("expected_name_source")) &&
+            (nameSource != SourceType.USER_DEFINED || hasTag(function, TAG));
+        if (nameApply && nameSafe &&
+                !initialName.equals(unt(row.get("proposed_name")))) return true;
+
+        boolean signatureManual = signatureSource == SourceType.USER_DEFINED &&
+            !hasTag(function, TAG);
+        boolean signatureSafe = !signatureManual &&
+            initialSignature.equals(unt(row.get("expected_signature"))) &&
+            initialConvention.equals(unt(row.get("expected_calling_convention"))) &&
+            signatureSource.toString().equals(row.get("expected_signature_source"));
+        String desiredConvention = unt(row.get("proposed_calling_convention"));
+        if (signatureApply && signatureSafe &&
+                !signatureMatches(function, row, desiredConvention,
+                    unt(row.get("owner_type_path")))) return true;
+        return conventionApply && !signatureApply && signatureSafe &&
+            !initialConvention.equals(desiredConvention);
     }
 
     private void applySignature(Function function, Map<String, String> row,
@@ -557,6 +687,37 @@ public class STVirtualMethodApplier extends GhidraScript {
         }
         static ApplyResult conflict(String detail) {
             return new ApplyResult("conflict", detail, false);
+        }
+    }
+
+    private record Readability(int unresolvedRegisters, int undefinedDeclarations,
+            int rawIndirectCalls, int pointerTowers, int anonymousTypes,
+            int castedCallResults, int rawPointerOffsets,
+            int explicitTypedVtableDispatches) {
+        String regression(Readability after) {
+            if (after == null) return "";
+            List<String> reasons = new ArrayList<>();
+            addIncrease(reasons, "unresolved_register_input", unresolvedRegisters,
+                after.unresolvedRegisters);
+            addIncrease(reasons, "generic_undefined_declaration", undefinedDeclarations,
+                after.undefinedDeclarations);
+            addIncrease(reasons, "raw_indirect_call", rawIndirectCalls,
+                after.rawIndirectCalls);
+            addIncrease(reasons, "excessive_pointer_depth", pointerTowers,
+                after.pointerTowers);
+            addIncrease(reasons, "anonymous_shape_type", anonymousTypes,
+                after.anonymousTypes);
+            addIncrease(reasons, "casted_call_result", castedCallResults,
+                after.castedCallResults);
+            addIncrease(reasons, "raw_pointer_offset", rawPointerOffsets,
+                after.rawPointerOffsets);
+            addIncrease(reasons, "explicit_typed_vtable_dispatch",
+                explicitTypedVtableDispatches, after.explicitTypedVtableDispatches);
+            return String.join(", ", reasons);
+        }
+        private static void addIncrease(List<String> reasons, String name,
+                int before, int after) {
+            if (after > before) reasons.add(name + " " + before + "->" + after);
         }
     }
 

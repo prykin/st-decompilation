@@ -21,7 +21,7 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
   uint uVar1;
   VisibleClassTy *this_00;
   byte bVar2;
-  AnonReceiver_00636260 *this_01;
+  RecoveredReceiver_00636260 *this_01;
   int iVar3;
   uint uVar4;
   int iVar5;
@@ -35,8 +35,7 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
   int local_14;
   int local_10;
   int local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0;
   switch(this->field_02AE) {
   case CASE_0:
@@ -72,10 +71,12 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
         sub_00622670(this);
       }
       if (this->field_0363 == nullptr) {
-        this_01 = (AnonReceiver_00636260 *)thunk_FUN_00636200();
+
+        this_01 = STPointerBoundaryCast<RecoveredReceiver_00636260 *>(thunk_FUN_00636200());
         this->field_0363 = (HoloTy *)this_01;
         if (this_01 != nullptr) {
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00636260::thunk_FUN_00636260
+
+          SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00636260::thunk_FUN_00636260
                     (this_01,this->field_02C2,this->field_02C6,this->field_02CA + -0x28,0x82,0x14,5,
                      1);
         }
@@ -90,7 +91,9 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
     sub_00625730(this);
     thunk_FUN_00627790(this);
     this->field_02AE = CASE_4;
+
     iVar3 = thunk_FUN_00627d90(1);
+    /* ST_CALLSITE[00623B6B]: CALL 0x004049fd; direct=004049FD thunk_FUN_00627db0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
     uVar4 = thunk_FUN_00627db0(this,this->field_02C2,this->field_02C6,iVar3);
     /* ST_CALLSITE[00623B83]: CALL 0x00403a4e; direct=00403A4E STAllPlayersC::UnRegisterMine */
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
@@ -99,8 +102,9 @@ undefined4 __thiscall STMineSetC::sub_006239A0(STMineSetC *this)
                CONCAT22(extraout_var,this->field_0032),this);
     /* ST_CALLSITE[00623B91]: CALL 0x0040216c; direct=0040216C STMineSetC::sub_0041D2B0 */
     sub_0041D2B0(this);
+
     iVar3 = thunk_FUN_00495ff0(this->field_0047,this->field_0049,this->field_004B,this->field_008E,
-                               (AnonShape_00495FF0_59081BDD *)this);
+                               (RecoveredRecordView_00495FF0_A2A90B23 *)this);
     if (iVar3 == 0) {
       this->field_0314 = this->field_0314 + -1;
     }
@@ -197,7 +201,8 @@ LAB_00623d08:
         if (this->field_02E9 == '\0') {
           return local_8;
         }
-        thunk_FUN_004ad430((STT3DSprC *)&this->field_01D5);
+        /* ST_CALLSITE[00623E85]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+        STT3DSprC::sub_004AD430((STT3DSprC *)&this->field_01D5);
         this->field_02E9 = 0;
         return local_8;
       }

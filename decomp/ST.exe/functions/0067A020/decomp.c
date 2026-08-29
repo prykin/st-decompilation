@@ -13,7 +13,8 @@
    incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
 
 void __thiscall
-AiPlrClassTy::sub_0067A020(AiPlrClassTy *this,AnonShape_0068FD00_A5257008 *param_1,int param_2)
+AiPlrClassTy::sub_0067A020
+          (AiPlrClassTy *this,RecoveredRecordView_0068FD00_630BE91E *param_1,int param_2)
 
 {
   AiTactClassTy *this_00;
@@ -43,6 +44,7 @@ AiPlrClassTy::sub_0067A020(AiPlrClassTy *this,AnonShape_0068FD00_A5257008 *param
               AiTactClassTy::GetAiMess(this_00,param_1);
             }
             else {
+
               thunk_FUN_0068fc70(this_00,param_1,(short)param_2);
             }
           }

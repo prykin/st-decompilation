@@ -11,10 +11,9 @@ void __thiscall FUN_00584c50(void *this,undefined4 *param_1)
   int iVar1;
   undefined4 **ppuVar3;
   undefined4 *local_40 [8];
-  undefined4 local_20 [3];
-  undefined2 local_14;
-  undefined2 local_12;
-
+  uint local_20 [3];
+  ushort local_14;
+  ushort local_12;
   if (param_1 != nullptr) {
     memset(local_20, 0, 0x1c); /* compiler bulk-zero initialization */
     iVar1 = 0;
@@ -32,7 +31,7 @@ void __thiscall FUN_00584c50(void *this,undefined4 *param_1)
     local_20[1] = 0xa3;
     local_40[3] = (undefined4 *)0x2;
     local_40[4] = (undefined4 *)0x110;
-    /* ST_CALLSITE[00584CC9]: CALL dword ptr [EDX] */
+    /* ST_CALLSITE[00584CC9]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4 */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)*param_1)(local_40);
   }

@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_00679600(AnonShape_00679600_B8E418A8 *param_1)
+void __fastcall FUN_00679600(RecoveredRecordView_00679600_4B4DB6B6 *param_1)
 
 {
   byte bVar1;
@@ -13,16 +13,16 @@ void __fastcall FUN_00679600(AnonShape_00679600_B8E418A8 *param_1)
   int iVar7;
   uint uVar8;
   int *piVar9;
-  AnonShape_0068FD00_A5257008 *pAVar10;
+  RecoveredRecordView_0068FD00_630BE91E *pRVar10;
   bool bVar11;
   int local_1a8;
-  undefined4 local_1a4 [87];
-  AnonShape_0068FD00_A5257008 local_48 [3];
+  uint local_1a4 [87];
+  RecoveredRecordView_0068FD00_630BE91E local_48 [3];
   uint local_14;
   byte *local_10;
   byte local_c;
   undefined3 uStack_b;
-  AnonShape_00679600_B8E418A8 *local_8;
+  RecoveredRecordView_00679600_4B4DB6B6 *local_8;
 
   local_14 = param_1->field_0640;
   if (8 < local_14) {
@@ -130,16 +130,17 @@ LAB_0067971a:
     param_1->field_0640 = 0xff;
   }
   else {
+
     iVar6 = thunk_FUN_00423220(&param_1->field_0xa4,&local_1a8,iVar7);
     param_1->field_0640 = local_1a4[iVar6 * 0xb];
   }
 cf_common_exit_0067989B:
   uVar4 = param_1->field_0640;
   if (uVar4 != local_14) {
-    pAVar10 = local_48;
+    pRVar10 = local_48;
     for (iVar7 = 0xd; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *(undefined4 *)pAVar10 = 0;
-      pAVar10 = (AnonShape_0068FD00_A5257008 *)&pAVar10->field_0x4;
+      *(undefined4 *)pRVar10 = 0;
+      pRVar10 = (RecoveredRecordView_0068FD00_630BE91E *)&pRVar10->field_0x4;
     }
     STPiece<4,4>(local_48[0]) = param_1->field_06FE;
     STPiece<0,4>(local_48[0]) = 0x6a;

@@ -24,6 +24,7 @@ int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_10 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   dVar2 = local_c;
   if (iVar3 == 0) {
@@ -36,6 +37,7 @@ int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
     local_8 = 0;
     *param_2 = 0xffffffff;
     if (0 < (int)dVar2) {
+
       while (DArrayGetElement(local_10->field_0241,index,&local_18), local_18 != param_1) {
         index = index + 1;
         if ((int)dVar2 <= (int)index) {
@@ -51,6 +53,7 @@ int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
   }
   g_currentExceptionFrame = local_5c.previous;
   if (iVar3 != -0x5001fff7) {
+
     iVar4 = ReportDebugMessage("E:\\__titans\\nick\\to_torp.cpp",0x471,0,iVar3,"%s",
                                "STTorpC::IsDangerous");
     if (iVar4 == 0) {

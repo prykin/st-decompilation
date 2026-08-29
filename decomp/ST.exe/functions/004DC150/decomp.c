@@ -19,14 +19,17 @@ void __thiscall TLOBaseTy::sub_004DC150(TLOBaseTy *this)
   if (this->field_04C0 != 0) {
     this->field_04C0 = 0;
     local_8 = this;
-    if (this->field_061F != nullptr) {
-      thunk_FUN_00635fd0((int *)this->field_061F);
+    if ((RecoveredRecord_00635FD0_23FED72E *)this->field_061F !=
+        nullptr) {
+      thunk_FUN_00635fd0((RecoveredRecord_00635FD0_23FED72E *)this->field_061F);
       Library::MSVCRT::FUN_0072e2b0(this->field_061F);
       this->field_061F = nullptr;
     }
+
     iVar1 = STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_04C4,(int *)&local_8);
     if (iVar1 == 0) {
-      thunk_FUN_004dbe00(local_8,this->field_0018);
+
+      thunk_FUN_004dbe00(local_8,(RecoveredRecord_004DBE00_6A369FCE *)this->field_0018);
     }
   }
   return;

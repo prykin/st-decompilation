@@ -6,7 +6,6 @@ target	status	detail
 0041C710:Stack[-8]	disabled	needs_two_count_driven_consumers
 00428E50:Stack[-264]	disabled	needs_two_exact_output_calls
 0042ABE0:Stack[-8]	disabled	needs_two_exact_output_calls
-0042DFE0:Stack[-8]	disabled	needs_two_exact_output_calls
 00436F20:Stack[-78]	disabled	needs_two_exact_output_calls
 00436F20:Stack[-64]	disabled	needs_two_exact_output_calls
 00436F20:Stack[-28]	disabled	needs_two_count_driven_consumers
@@ -335,12 +334,6 @@ target	status	detail
 00652810:Stack[-364]	disabled	needs_two_exact_output_calls
 00652810:Stack[-364]	disabled	needs_two_exact_output_calls
 00652810:Stack[-364]	disabled	needs_two_exact_output_calls
-00652810:Stack[-364]	disabled	needs_two_exact_output_calls
-00652810:Stack[-364]	disabled	needs_two_exact_output_calls
-00652810:Stack[-364]	disabled	needs_two_exact_output_calls
-00652810:Stack[-364]	disabled	needs_two_exact_output_calls
-00652810:Stack[-364]	disabled	needs_two_exact_output_calls
-00652810:Stack[-364]	disabled	needs_two_exact_output_calls
 00652810:Stack[-364]	disabled	needs_two_count_driven_consumers
 00652810:Stack[-364]	disabled	needs_two_exact_output_calls
 00652810:Stack[-364]	disabled	needs_two_exact_output_calls
@@ -424,13 +417,4 @@ target	status	detail
 00717970:Stack[-12]	disabled	needs_two_exact_output_calls
 00727DA0:Stack[-96]	disabled	needs_two_exact_output_calls
 00727DA0:Stack[-52]	disabled	needs_two_exact_output_calls
-0074C115:Stack[-8]	disabled	needs_two_exact_output_calls
-0074D423:Stack[-8]	disabled	needs_two_exact_output_calls
-0074DFF5:Stack[-8]	disabled	needs_two_exact_output_calls
-0074EB3C:Stack[-8]	disabled	needs_two_exact_output_calls
-0074FC49:Stack[-8]	disabled	needs_two_exact_output_calls
-0074FEF7:Stack[-8]	disabled	needs_two_exact_output_calls
-0074FFD2:Stack[-8]	disabled	needs_two_count_driven_consumers
-00750104:Stack[-8]	disabled	needs_two_exact_output_calls
-0075019F:Stack[-8]	disabled	needs_two_exact_output_calls
 007535F0:Stack[-264]	disabled	needs_two_exact_output_calls

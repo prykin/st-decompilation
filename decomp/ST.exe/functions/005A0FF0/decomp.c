@@ -16,15 +16,16 @@ void __thiscall FSGSTy::DoLogon(FSGSTy *this)
   int iVar4;
   int iVar5;
   InternalExceptionFrame local_5c;
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-  undefined1 local_c;
+  uint local_18;
+  uint local_14;
+  uint local_10;
+  byte local_c;
   FSGSTy *local_8;
 
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_8 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   this_00 = g_cursorClass_00802A30;
   if (iVar4 == 0) {
@@ -56,6 +57,7 @@ void __thiscall FSGSTy::DoLogon(FSGSTy *this)
     return;
   }
   g_currentExceptionFrame = local_5c.previous;
+
   iVar5 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x918,0,iVar4,"%s",
                              "FSGSTy::DoLogon");
   if (iVar5 != 0) {

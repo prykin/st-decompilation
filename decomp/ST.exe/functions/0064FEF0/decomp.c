@@ -1,36 +1,31 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __cdecl FUN_0064fef0(short *param_1)
+undefined4 __cdecl FUN_0064fef0(RecoveredRecord_0064FEF0_DD304A9A *param_1)
 
 {
-  short sVar1;
-  int iVar2;
+  int iVar1;
 
-  iVar2 = 0;
+  iVar1 = 0;
   do {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(char *)((int)param_1 + iVar2 + 0xd0) != '\b') {
+    if ((&param_1->field_0xd0)[iVar1] != '\b') {
       return 0;
     }
-    iVar2 = iVar2 + 1;
-  } while (iVar2 < 4);
-  sVar1 = *param_1;
-  if (sVar1 < 5) {
-    param_1[0xc] = 10000;
-    param_1[0xd] = 0;
+    iVar1 = iVar1 + 1;
+  } while (iVar1 < 4);
+  if (*(short *)param_1 < 5) {
+    *(undefined4 *)&param_1->field_0x18 = 10000;
   }
-  else if ((char)param_1[0x6a] != '\b') {
+  else if (param_1->field_0xd4 != '\b') {
     return 0;
   }
-  if (5 < sVar1) {
-    if (STField<char>(param_1,0xd5) != '\b') {
+  if (5 < *(short *)param_1) {
+    if (param_1->field_00D5 != '\b') {
       return 0;
     }
     return 1;
   }
-  param_1[0xe] = 1;
-  param_1[0xf] = 0;
+  *(undefined4 *)&param_1->field_0x1c = 1;
   return 1;
 }
 

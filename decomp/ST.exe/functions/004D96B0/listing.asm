@@ -11,7 +11,8 @@ FUN_004d96b0:
 004D96C2  6A 04                     PUSH 0x4
 004D96C4  6A 0A                     PUSH 0xa
 004D96C6  50                        PUSH EAX
-004D96C7  E8 C4 4B 1D 00            CALL 0x006ae290
+FUN_004d96b0::override::prt_4d96c7_7f8a0897:
+004D96C7  E8 C4 4B 1D 00            CALL 0x006ae290  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STFishCPtr; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STFishCPtr;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint;/uint
 004D96CC  A3 6C A1 7F 00            MOV [0x007fa16c],EAX
 LAB_004d96d1:
 004D96D1  8D 4D FC                  LEA ECX,[EBP + -0x4]

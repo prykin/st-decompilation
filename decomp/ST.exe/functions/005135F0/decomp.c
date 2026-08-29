@@ -19,20 +19,21 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
   int iVar4;
   int iVar5;
   InternalExceptionFrame local_64;
-  undefined4 local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
+  uint local_20;
+  uint local_1c;
+  uint local_18;
+  uint local_14;
   byte local_10;
-  undefined1 local_f;
-  undefined1 local_e;
-  undefined1 local_d;
+  byte local_f;
+  byte local_e;
+  byte local_d;
   HelpPanelTy *local_c;
   uint local_8;
 
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_c = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   this_00 = local_c;
   if (iVar3 == 0) {
@@ -62,9 +63,10 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
     }
     this_00->field_01CF = 0xffffffff;
     this_00->field_01CB->count = 0;
+
     Library::DKW::WGR::FUN_006b55f0
               ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x21,0x16,
-               (byte *)this_00->field_01DC,0,0x21,0x16,0x1b8,0x118);
+               (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_01DC,0,0x21,0x16,0x1b8,0x118);
     local_8 = 0;
     *(undefined4 *)&this_00->field_01B3->field_0xc = 0;
     this_00->field_01B7 = 0;
@@ -81,6 +83,7 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
           local_f = 0;
           local_e = 0;
           local_d = 0;
+
           Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01B3,&local_20);
         }
         local_8 = local_8 + 1;
@@ -93,6 +96,7 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_64.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x295,0,iVar3,"%s",
                              "HelpPanelTy::HomeBut");
   if (iVar4 != 0) {

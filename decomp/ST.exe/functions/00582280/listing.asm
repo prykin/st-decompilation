@@ -1,6 +1,7 @@
 CreateSTJellyMan:
 00582280  68 13 02 00 00            PUSH 0x213
-00582285  E8 46 E2 12 00            CALL 0x006b04d0
+CreateSTJellyMan::override::prt_582285_6df3b33a:
+00582285  E8 46 E2 12 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STJellyManC; signature=__stdcall;pointer:/STJellyManC;/uint
 0058228A  85 C0                     TEST EAX,EAX
 0058228C  74 07                     JZ 0x00582295
 0058228E  8B C8                     MOV ECX,EAX

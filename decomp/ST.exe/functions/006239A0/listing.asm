@@ -138,7 +138,7 @@ switchD_006239c1::caseD_3:
 00623B67  50                        PUSH EAX
 00623B68  51                        PUSH ECX
 00623B69  8B CE                     MOV ECX,ESI
-00623B6B  E8 8D 0E DE FF            CALL 0x004049fd
+00623B6B  E8 8D 0E DE FF            CALL 0x004049fd  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 00623B70  66 8B 56 32               MOV DX,word ptr [ESI + 0x32]
 00623B74  8A 86 62 02 00 00         MOV AL,byte ptr [ESI + 0x262]
 00623B7A  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]

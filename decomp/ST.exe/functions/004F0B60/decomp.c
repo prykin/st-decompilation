@@ -19,12 +19,14 @@ void __thiscall BldObjPanelTy::Update(BldObjPanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
     /* ST_CALLSITE[004F0BA1]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
     STAllPlayersC::GetPanelInfo
-              (g_allPlayers_007FA174,8,(AnonShape_0043BEB0_1C00EC12 *)&local_8->field_027E);
+              (g_allPlayers_007FA174,8,(RecoveredRecordView_0043BEB0_8330D129 *)&local_8->field_027E
+              );
     if ((&this_00->field_027E)[(byte)this_00->field_0279] == 0) {
       uVar4 = 0;
     }
@@ -46,6 +48,7 @@ void __thiscall BldObjPanelTy::Update(BldObjPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\bldobj.cpp",0x5e,0,errorCode,"%s"
                              ,"BldObjPanelTy::Update");
   if (iVar3 != 0) {

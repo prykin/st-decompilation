@@ -45,7 +45,8 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
   case CASE_1:
   case CASE_3:
     if (this->field_0544 != 0) {
-      local_EAX_90 = thunk_FUN_004620f0(this);
+      /* ST_CALLSITE[0046F02A]: CALL 0x0040493a; direct=0040493A STBoatC::sub_004620F0 */
+      local_EAX_90 = sub_004620F0(this);
       return local_EAX_90;
     }
   case CASE_7:
@@ -53,7 +54,8 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
     local_EAX_56 = sub_00460360(this);
     break;
   case CASE_2:
-    local_EAX_56 = thunk_FUN_004620f0(this);
+    /* ST_CALLSITE[0046F03D]: CALL 0x0040493a; direct=0040493A STBoatC::sub_004620F0 */
+    local_EAX_56 = sub_004620F0(this);
     break;
   case CASE_4:
     SVar1 = this->field_0550;
@@ -89,6 +91,7 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
       /* ST_CALLSITE[0046F1CD]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
       iVar5 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
       if (iVar5 == -1) {
+
         local_EAX_603 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x283d,0,0,"%s",
                                 "STBoatC::BackUnLoadRC, UNLOADRC_PDEPOT 2");
@@ -107,7 +110,7 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
       sub_0048D930(this);
       goto LAB_0046f1fd;
     }
-    /* ST_CALLSITE[0046F0D9]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+    /* ST_CALLSITE[0046F0D9]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
     uVar4 = sub_004176C0(this,this->field_0542);
     /* ST_CALLSITE[0046F0E1]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
     uVar4 = sub_00417910(this,(short)uVar4);
@@ -117,6 +120,7 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
       }
       goto cf_common_exit_0046F0F9;
     }
+
     local_EAX_348 =
          ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2829,0,0,"%s",
                             "STBoatC::BackUnLoadRC, UNLOADRC_PDEPOT");
@@ -146,7 +150,7 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,STBoatC *param_1)
       this->field_0550 = CASE_1;
     }
     if (this->field_0550 == CASE_1) {
-      /* ST_CALLSITE[0046F315]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+      /* ST_CALLSITE[0046F315]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
       uVar4 = sub_004176C0(this,this->field_0542);
       /* ST_CALLSITE[0046F31D]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       uVar4 = sub_00417910(this,(short)uVar4);
@@ -159,6 +163,7 @@ cf_common_exit_0046F0F9:
         iVar5 = this->vfunc_D8();
         return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
       }
+
       local_EAX_902 =
            ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2864,0,0,"%s",
                               "STBoatC::BackUnLoadRC, UNLOADRC_ODEPOT");
@@ -177,6 +182,7 @@ cf_common_exit_0046F0F9:
       }
       if (this->field_0550 != CASE_3) {
 switchD_0046eff1_default:
+
         local_EAX_1149 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x288a,0,0,"%s",
                                 "STBoatC::BackUnLoadRC");
@@ -198,6 +204,7 @@ LAB_0046f1fd:
         iVar5 = this->vfunc_D8();
         return -(uint)(iVar5 != 0);
       }
+
       iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x287c,0,0,"%s",
                                  "STBoatC::BackUnLoadRC, UNLOADRC_ODEPOT 2");
       if (iVar4 != 0) {

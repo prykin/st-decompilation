@@ -188,14 +188,14 @@ LAB_0043f9c8:
 0043F9CB  75 2D                     JNZ 0x0043f9fa
 0043F9CD  8B 06                     MOV EAX,dword ptr [ESI]
 0043F9CF  8B CE                     MOV ECX,ESI
-0043F9D1  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+0043F9D1  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0043F9D7  83 F8 01                  CMP EAX,0x1
 0043F9DA  75 1E                     JNZ 0x0043f9fa
 0043F9DC  EB 0F                     JMP 0x0043f9ed
 LAB_0043f9de:
 0043F9DE  8B 06                     MOV EAX,dword ptr [ESI]
 0043F9E0  8B CE                     MOV ECX,ESI
-0043F9E2  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+0043F9E2  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0043F9E8  83 F8 01                  CMP EAX,0x1
 0043F9EB  75 0D                     JNZ 0x0043f9fa
 LAB_0043f9ed:
@@ -281,14 +281,14 @@ LAB_0043fae4:
 0043FAE7  75 2D                     JNZ 0x0043fb16
 0043FAE9  8B 06                     MOV EAX,dword ptr [ESI]
 0043FAEB  8B CE                     MOV ECX,ESI
-0043FAED  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+0043FAED  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0043FAF3  83 F8 01                  CMP EAX,0x1
 0043FAF6  75 1E                     JNZ 0x0043fb16
 0043FAF8  EB 0F                     JMP 0x0043fb09
 LAB_0043fafa:
 0043FAFA  8B 06                     MOV EAX,dword ptr [ESI]
 0043FAFC  8B CE                     MOV ECX,ESI
-0043FAFE  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]
+0043FAFE  FF 90 F8 00 00 00         CALL dword ptr [EAX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0043FB04  83 F8 01                  CMP EAX,0x1
 0043FB07  75 0D                     JNZ 0x0043fb16
 LAB_0043fb09:

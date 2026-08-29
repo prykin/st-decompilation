@@ -58,8 +58,10 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
       local_EAX_120 = LookupRecordByte(STField<char>(this,0x24));
       local_EAX_120 = (int)(byte)local_EAX_120;
       if (*(char *)(*(int *)(&DAT_007bfc00 + local_EAX_120 * 4) + iVar4) == '\0') {
+
         iVar2 = thunk_FUN_004e60d0((int)piVar1,iVar4);
-        iVar2 = thunk_FUN_004e7f20((int)piVar1,iVar4,iVar2 + 1);
+        /* ST_CALLSITE[004CCCB6]: CALL 0x00402342; direct=00402342 STAllPlayersC::sub_004E7F20 */
+        iVar2 = STAllPlayersC::sub_004E7F20(g_allPlayers_007FA174,(int)piVar1,iVar4,iVar2 + 1);
         if (iVar2 != 0) {
           *param_1_after_write = 1;
         }
@@ -77,9 +79,9 @@ void __thiscall FUN_004ccc10(void *this,int *param_1,int *param_2)
       if (uVar2 == 1) {
         iVar4 = *(int *)this;
         uVar8 = 0x74;
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
 LAB_004ccd43:
-        /* ST_CALLSITE[004CCD47]: CALL dword ptr [EAX + 0x90] */
+        /* ST_CALLSITE[004CCD47]: CALL dword ptr [EAX + 0x90]; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4 */
+        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(iVar4 + 0x90))(6,uVar8);
       }
       else if (uVar2 == 2) {
@@ -109,10 +111,13 @@ LAB_004ccd43:
         local_EAX_374 = (int)(byte)local_EAX_374;
         if ((*(char *)(*(int *)(&DAT_007bfc00 + local_EAX_374 * 4) + iVar4) == '\0') &&
            (*param_1_after_write == 0)) {
+
           iVar2 = thunk_FUN_004e60d0((int)piVar1,iVar4);
-          iVar2 = thunk_FUN_004e7f20((int)piVar1,iVar4,iVar2 + 1);
+          /* ST_CALLSITE[004CCDBC]: CALL 0x00402342; direct=00402342 STAllPlayersC::sub_004E7F20 */
+          iVar2 = STAllPlayersC::sub_004E7F20(g_allPlayers_007FA174,(int)piVar1,iVar4,iVar2 + 1);
           if (iVar2 != 0) {
             local_28.arg1.words.low = (word)iVar4;
+
             uVar8 = thunk_FUN_004e60d0((int)piVar1,iVar4);
             local_28.arg1.words.high = (short)uVar8 + 1;
             /* ST_CALLSITE[004CCDE7]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
@@ -130,6 +135,7 @@ LAB_004ccd43:
   local_EAX_512 = LookupRecordByte(recordIndex);
   local_EAX_512 = (int)(byte)local_EAX_512;
   STField<int>(this,0x239) = local_EAX_512 + -1;
+
   thunk_FUN_004b9920(this);
   iVar4 = 0;
   /* ST_CALLSITE[004CCE2D]: CALL 0x00404bc9; direct=00404BC9 TLOEmbryoTy::sub_00419C70 */
@@ -137,12 +143,14 @@ LAB_004ccd43:
   TLOEmbryoTy::sub_00419C70(this,extraout_EDX,0);
   thunk_FUN_0041f630(this);
   if ((*(int *)(&DAT_00792778 + STField<int>(this,0x235) * 4) == 0) ||
+
      (iVar2 = thunk_FUN_004e81b0(STField<int>(this,0x24),STField<int>(this,0x235),0),
      iVar2 == 0)) {
     puVar3 = (undefined *)0x5;
   }
   else {
     puVar3 = (undefined *)
+
              thunk_FUN_004e81b0(STField<int>(this,0x24),STField<int>(this,0x235),0);
   }
   /* ST_CALLSITE[004CCE75]: CALL 0x004023a1; direct=004023A1 TLOEmbryoTy::sub_0041C3F0 */
@@ -150,6 +158,7 @@ LAB_004ccd43:
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uVar8 = extraout_EDX_00;
   if (STField<int>(this,0x5ac) == 0x34) {
+
     thunk_FUN_004dd880(this);
     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     uVar8 = extraout_EDX_01;
@@ -157,12 +166,16 @@ LAB_004ccd43:
   if (STField<int>(this,0x24) == STField<int>(this,0x23d)) {
 LAB_004ccedc:
     if (STField<int>(this,0x5ac) == 0x50) {
-      thunk_FUN_004b7080(STReplaceLowByte((uint32_t)(uVar8), (uint8_t)(STField<undefined1>(this,0x24))),0x28);
+
+      thunk_FUN_004b7080(g_allPlayers_007FA174,
+                         STReplaceLowByte((uint32_t)(uVar8), (uint8_t)(STField<undefined1>(this,0x24))),0x28);
     }
     if ((STField<int>(this,0x5ac) == 0x6f) || (STField<int>(this,0x5ac) == 0x73)) {
+
       thunk_FUN_004ecc70(this);
     }
     if ((STField<int>(this,0x5ac) == 0x36) || (STField<int>(this,0x5ac) == 0x5d)) {
+
       iVar2 = thunk_FUN_004e60d0(STField<int>(this,0x24),
                                  *(int *)(&DAT_00798fb0 + STField<int>(this,0x239) * 4));
       iVar2 = *(int *)(&DAT_00798f98 + (iVar2 + STField<int>(this,0x239) * 2) * 4);
@@ -171,6 +184,7 @@ LAB_004ccedc:
       STField<undefined4>(this,0x4dc) = 1;
     }
     if ((STField<int>(this,0x5ac) == 0x3d) || (STField<int>(this,0x5ac) == 0x5d)) {
+
       thunk_FUN_004e4f30(this);
     }
   }
@@ -188,6 +202,7 @@ LAB_004ccedc:
     STField<undefined4>(this,0x261) = 0;
     STField<undefined4>(this,0x2e1) = 0;
     if (STField<int>(this,0x5ac) == 0x3c) {
+
       thunk_FUN_004db0a0(local_8);
     }
   }
@@ -202,13 +217,16 @@ LAB_004ccedc:
       uVar5 = LookupRecordByte(STField<char>(this,0x24));
       uVar5 = (int)(byte)uVar5;
       if ((&DAT_007e1984)[uVar5 + ((uint)(byte)local_EAX_948 + iVar2 * 3) * 3] == '\0') {
+
         thunk_FUN_004c2d40(this);
         goto LAB_004cd038;
       }
     }
+
     iVar2_mg9 = STPlaySystemC::sub_006E62D0
                           (g_playSystem_00802A38,
-                           STField<AnonShape_005EFAE0_B406B78B *>(this,0x40c),(int *)&param_2);
+                           STField<RecoveredRecordView_005EFAE0_855D930D *>(this,0x40c),
+                           (int *)&param_2);
     if ((iVar2_mg9 == 0) && (param_2 != nullptr)) {
       thunk_FUN_0060bc80(param_2,STField<undefined4>(this,0x24),STField<ushort>(this,0x32));
     }
@@ -216,19 +234,23 @@ LAB_004ccedc:
 LAB_004cd038:
   if (((STField<int>(this,0x5ac) == 0x6a) &&
       (STField<uint>(this,0x4d4) <= g_playSystem_00802A38->field_00E4)) &&
+
      (iVar2_mgA = STPlaySystemC::sub_006E62D0
                             (g_playSystem_00802A38,
-                             STField<AnonShape_005EFAE0_B406B78B *>(this,0x4d0),(int *)&param_2),
-     iVar2_mgA == 0)) {
+                             STField<RecoveredRecordView_005EFAE0_855D930D *>(this,0x4d0),
+                             (int *)&param_2), iVar2_mgA == 0)) {
     thunk_FUN_005822b0(param_2,STField<undefined4>(this,0x24),STField<ushort>(this,0x32));
   }
   if ((STField<int>(this,0x5ac) == 0x41) && (0 < STField<int>(this,0x4e4))) {
     puVar7 = (undefined4 *)((int)this + 0x4d0);
     do {
-      if (((AnonShape_005EFAE0_B406B78B *)*puVar7 != nullptr) &&
+      if (((RecoveredRecordView_005EFAE0_855D930D *)*puVar7 !=
+           nullptr) &&
+
          (iVar2_mgB = STPlaySystemC::sub_006E62D0
-                                (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*puVar7,
-                                 (int *)&param_2), iVar2_mgB == 0)) {
+                                (g_playSystem_00802A38,
+                                 (RecoveredRecordView_005EFAE0_855D930D *)*puVar7,(int *)&param_2),
+         iVar2_mgB == 0)) {
         thunk_FUN_00590130(param_2,STField<undefined4>(this,0x24));
       }
       iVar4 = iVar4 + 1;
@@ -236,18 +258,21 @@ LAB_004cd038:
     } while (iVar4 < STField<int>(this,0x4e4));
   }
   if ((STField<int>(this,0x5ac) == 0x69) &&
+
      (iVar4_mg6 = STPlaySystemC::sub_006E62D0
                             (g_playSystem_00802A38,
-                             STField<AnonShape_005EFAE0_B406B78B *>(this,0x4ec),(int *)&param_2),
-     iVar4_mg6 == 0)) {
+                             STField<RecoveredRecordView_005EFAE0_855D930D *>(this,0x4ec),
+                             (int *)&param_2), iVar4_mg6 == 0)) {
     thunk_FUN_00618b40(param_2,STField<undefined4>(this,0x24),STField<undefined2>(this,0x32));
   }
   if (((STField<int>(this,0x5ac) == 0x70) &&
-      (STField<AnonShape_005EFAE0_B406B78B *>(this,0x4f0) != nullptr))
-     && (iVar4_mg7 = STPlaySystemC::sub_006E62D0
-                               (g_playSystem_00802A38,
-                                STField<AnonShape_005EFAE0_B406B78B *>(this,0x4f0),(int *)&param_2
-                               ), iVar4_mg7 == 0)) {
+      (STField<RecoveredRecordView_005EFAE0_855D930D *>(this,0x4f0) !=
+       nullptr)) &&
+
+     (iVar4_mg7 = STPlaySystemC::sub_006E62D0
+                            (g_playSystem_00802A38,
+                             STField<RecoveredRecordView_005EFAE0_855D930D *>(this,0x4f0),
+                             (int *)&param_2), iVar4_mg7 == 0)) {
     thunk_FUN_0058cf90(param_2,STField<undefined4>(this,0x24),STField<undefined2>(this,0x32));
   }
   if (STField<int>(this,0x24) != STField<int>(this,0x23d)) {
@@ -264,10 +289,12 @@ LAB_004cd038:
   if ((((iVar4 != 0x4d) || (STField<int>(this,0x4d0) == 2)) &&
       ((iVar4 != 0x4c || (STField<int>(this,0x4d0) == 2)))) &&
      ((iVar4 != 0x43 || (STField<int>(this,0x4d0) == 2)))) {
-    /* ST_CALLSITE[004CD1C4]: CALL dword ptr [EDX + 0x2c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    iVar4 = (**(code **)(*(int *)this + 0x2c))();
-    thunk_FUN_004b76d0(STReplaceLowByte((uint32_t)(iVar4), (uint8_t)(STField<undefined1>(this,0x24))),iVar4);
+    /* ST_CALLSITE[004CD1C4]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+    iVar4 = STStructuralVirtualCall<undefined4>(this, 0x2C);
+    /* ST_CALLSITE[004CD1D2]: CALL 0x00405e39; direct=00405E39 STAllPlayersC::sub_004B76D0 */
+    STAllPlayersC::sub_004B76D0
+              (g_allPlayers_007FA174,
+               STReplaceLowByte((uint32_t)(iVar4), (uint8_t)(STField<undefined1>(this,0x24))),iVar4);
   }
 LAB_004cd1d7:
   /* ST_CALLSITE[004CD1D9]: CALL 0x00404e17; direct=00404E17 TLOBaseTy::ReloadLogoPlane */
@@ -275,7 +302,8 @@ LAB_004cd1d7:
   /* ST_CALLSITE[004CD1E2]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
   TLOBaseTy::RotateSpr(this,1);
   if (STField<uint>(this,0x24) == (uint)*(byte *)(STField<int>(this,0x10) + 0x112d)) {
-    thunk_FUN_004d8b70((char)STField<uint>(this,0x24));
+    /* ST_CALLSITE[004CD200]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+    STAllPlayersC::sub_004D8B70(g_allPlayers_007FA174,(char)STField<uint>(this,0x24));
   }
   return;
 }

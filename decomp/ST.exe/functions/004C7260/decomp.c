@@ -38,6 +38,7 @@ TLOBaseTy::sub_004C7260
     *param_6 = *(undefined4 *)(&DAT_007e09dc + param_2 * 4);
     return 0;
   case CASE_2:
+
     iVar3 = thunk_FUN_004e60d0((int)this->field_0024,param_2);
     *param_3 = *(undefined4 *)(&DAT_007e481c + (iVar3 + param_2 * 4) * 4);
     return 0;

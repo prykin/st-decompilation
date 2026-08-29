@@ -3,39 +3,46 @@
 
 /* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 00693DC0 -> 00693D00 @ 00693E07 */
+   Evidence: 00693DC0 -> 00693D00 @ 00693E07
 
-undefined4 FUN_00693dc0(cMf32 *param_1,undefined4 param_2)
+   [STHiddenThisApplier] Anonymous hidden receiver recovered as
+   /SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_00693B20.
+   Evidence: incoming_receiver_captures=0; entry_receiver_register_captures=1; receiver_accesses=1;
+   receiver_bulk_copies=1; incoming_edx_uses=0; calls=0; ecx_pointer_setup=0; ecx_scalar_setup=0;
+   caller_cleanup_calls=0; callee_ret_pop=[8]; expected_stack=8; receiver_family_members=13;
+   same_this_callees=3; closed_callee_receiver_chain */
+
+int __thiscall
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00693B20::FUN_00693dc0
+          (RecoveredReceiver_00693B20 *this,cMf32 *param_1,undefined4 param_2)
 
 {
-  uint uVar1;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  AnonReceiver_00693D00 *in_ECX;
-  int iVar2;
-  AnonReceiver_00693D00 *pAVar3;
-  AnonShape_00693910_1CC6632C *pAVar4;
-  AnonShape_00693910_1CC6632C local_19a8;
-  undefined4 uStack_8;
-
+  int iVar1;
+  RecoveredReceiver_00693B20 *pRVar3;
+  RecoveredRecordView_00693910_0CDC4AE1 *pRVar4;
+  RecoveredRecordView_00693910_0CDC4AE1 local_19a8;
+  uint uStack_8;
   uStack_8 = 0x693dcd;
   thunk_FUN_00693910(&local_19a8);
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  pAVar3 = in_ECX;
-  pAVar4 = &local_19a8;
-  memmove(pAVar4, pAVar3, 0x1999); /* compiler REP MOVS byte copy */
-  iVar2 = 0;
+  pRVar3 = this;
+  pRVar4 = &local_19a8;
+  memmove(pRVar4, pRVar3, 0x1998); /* compiler REP MOVS byte copy */
+  pRVar4 = (RecoveredRecordView_00693910_0CDC4AE1 *)((byte *)pRVar4 + 0x1998);
+  pRVar3 = pRVar3 + 0x222;
+  *(undefined1 *)pRVar4 = *(undefined1 *)&pRVar3->field_0000;
+  iVar1 = 0;
   do {
-    /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-    thunk_FUN_006940b0(in_ECX,iVar2);
-    iVar2 = iVar2 + 1;
-  } while (iVar2 < 8);
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  uVar1 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00693D00::thunk_FUN_00693d00
-                    (in_ECX,param_1,param_2);
-  pAVar4 = &local_19a8;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  memmove(in_ECX, pAVar4, 0x1999); /* compiler REP MOVS byte copy */
+    thunk_FUN_006940b0(this,iVar1);
+    iVar1 = iVar1 + 1;
+  } while (iVar1 < 8);
+
+  iVar1 = thunk_FUN_00693d00(this,param_1,param_2);
+  pRVar4 = &local_19a8;
+  memmove(this, pRVar4, 0x1998); /* compiler REP MOVS byte copy */
+  this = this + 0x222;
+  pRVar4 = (RecoveredRecordView_00693910_0CDC4AE1 *)((byte *)pRVar4 + 0x1998);
+  *(undefined1 *)&this->field_0000 = *(undefined1 *)pRVar4;
   thunk_FUN_006939d0();
-  return uVar1;
+  return iVar1;
 }
 

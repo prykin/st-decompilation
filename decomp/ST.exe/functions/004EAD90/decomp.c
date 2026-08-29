@@ -3,7 +3,7 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-undefined4 __fastcall FUN_004ead90(AnonShape_004EAD90_30D2E515 *param_1)
+undefined4 __fastcall FUN_004ead90(RecoveredRecordView_004EAD90_F1F407DB *param_1)
 
 {
   int iVar1;

@@ -7,7 +7,7 @@ uint __thiscall FUN_0063c170(void *this,int param_1)
   int iVar1;
   uint uVar2;
   int iVar3;
-  undefined4 local_c;
+  uint local_c;
   short local_8;
   short local_6;
 
@@ -20,8 +20,9 @@ uint __thiscall FUN_0063c170(void *this,int param_1)
   if (0x18 < iVar1) {
     return 10;
   }
-  uVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
-                    ((AnonReceiver_00601500 *)((int)this + 899),STField<int>(this,0x266),
+
+  uVar2 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00601500::thunk_FUN_00601500
+                    ((RecoveredReceiver_00601500 *)((int)this + 899),STField<int>(this,0x266),
                      STField<int>(this,0x26a),iVar3,STField<int>(this,0x272),
                      STField<int>(this,0x276),STField<int>(this,0x27a),
                      STField<int>(this,0x235),50000,STField<int>(this,0x25d),
@@ -36,11 +37,8 @@ uint __thiscall FUN_0063c170(void *this,int param_1)
     }
     if (uVar2 == 2) {
       if (STField<int *>(this,0x397) != nullptr) {
-        /* ST_CALLSITE[0063C2B0]: CALL dword ptr [EAX + 0xe0] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar3 = (**(code **)(*STField<int *>(this,0x397) + 0xe0))
-                          (STField<undefined4>(this,0x39b),(int)&param_1 + 2,&local_6,&local_8,
-                           &local_c);
+        /* ST_CALLSITE[0063C2B0]: CALL dword ptr [EAX + 0xe0]; [STIndirectCallsiteApplier] exact slot 0xE0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
+        iVar3 = STStructuralVirtualCall<undefined4>(STField<int *>(this,0x397), 0xE0, STField<undefined4>(this,0x39b), (int)&param_1 + 2, &local_6, &local_8, &local_c);
         if (iVar3 == 0) {
           STField<int>(this,0x3a3) = (int)STPiece<2,2>(param_1);
           STField<int>(this,0x266) = (int)STPiece<2,2>(param_1);
@@ -52,6 +50,7 @@ uint __thiscall FUN_0063c170(void *this,int param_1)
           return 2;
         }
       }
+
       thunk_FUN_0063cc10(this);
     }
   }

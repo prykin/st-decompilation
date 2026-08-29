@@ -18,7 +18,7 @@
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
    decompilation contains no value return */
 
-void __thiscall MoneyTy::sub_0052B760(MoneyTy *this,AnonShape_0052B760_30F4E0D5 *param_1)
+void __thiscall MoneyTy::sub_0052B760(MoneyTy *this,RecoveredRecordView_0052B760_26CB92BA *param_1)
 
 {
   ushort uVar1;

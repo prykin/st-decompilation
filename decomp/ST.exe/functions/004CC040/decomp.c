@@ -15,6 +15,7 @@ undefined4 __fastcall FUN_004cc040(TLOBaseTy *param_1)
   uint uVar1;
   uVar1 = 0;
   switch(param_1->field_05AC) {
+
   case CASE_32:
   case CASE_40:
   case CASE_49:
@@ -22,23 +23,29 @@ undefined4 __fastcall FUN_004cc040(TLOBaseTy *param_1)
     uVar1 = thunk_FUN_004d08e0();
     return uVar1;
   case CASE_45:
-    uVar1 = thunk_FUN_004eaf60((int)param_1);
+
+    uVar1 = thunk_FUN_004eaf60((RecoveredRecord_004EAF60_69129DB1 *)param_1);
     return uVar1;
   case CASE_4E:
-    uVar1 = thunk_FUN_004da230((int)param_1);
+
+    uVar1 = thunk_FUN_004da230((RecoveredRecord_004DA230_146070EB *)param_1);
     return uVar1;
+
   case CASE_52:
   case CASE_5F:
     uVar1 = thunk_FUN_004ec6c0();
     return uVar1;
+
   case CASE_69:
     uVar1 = thunk_FUN_004dd240();
     break;
   case CASE_70:
-    uVar1 = thunk_FUN_004d95a0((int)param_1);
+
+    uVar1 = thunk_FUN_004d95a0((RecoveredRecord_004D95A0_E0EC0EDA *)param_1);
     return uVar1;
   case CASE_72:
-    uVar1 = thunk_FUN_004ed430((int)param_1);
+
+    uVar1 = thunk_FUN_004ed430((RecoveredRecord_004ED430_B731E46F *)param_1);
     return uVar1;
   }
   return uVar1;

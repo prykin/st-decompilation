@@ -34,6 +34,7 @@ byte * __thiscall STColl3C::sub_005F66F0(STColl3C *this,uint *param_1)
   uint local_8;
 
   local_14 = this;
+
   allocation = Library::DKW::LIB::MemAlloc(0xc2);
   pSVar1 = local_14;
   if (this == nullptr) {
@@ -47,10 +48,11 @@ byte * __thiscall STColl3C::sub_005F66F0(STColl3C *this,uint *param_1)
   iVar4 = 0;
   allocation[3] = 2;
   /* ST_CALLSITE[005F6737]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
-  local_18 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&local_14->vtable_at_1d5,&local_c);
+  local_18 = STPointerBoundaryCast<byte *>(STT3DSprC::SaveSpr((STT3DSprC *)&local_14->vtable_at_1d5,&local_c));
   /* ST_CALLSITE[005F6745]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
   local_1c = STAllPlayersC::SaveGObjData((STAllPlayersC *)pSVar1,(int *)&local_10);
   local_8 = local_10 + 0xca + local_c;
+
   pbVar2 = Library::DKW::LIB::MemRealloc(allocation,local_8);
   *(uint *)(pbVar2 + 0xc2) = local_c;
   pbVar11 = local_18;
@@ -82,6 +84,7 @@ byte * __thiscall STColl3C::sub_005F66F0(STColl3C *this,uint *param_1)
     }
     newSize = local_8 + 0x6c + uVar5;
     local_8 = newSize;
+    /* ST_CALLSITE[005F67EB]: CALL 0x006acf50; direct=006ACF50 Library::DKW::LIB::MemRealloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/byte; source view only; no Ghidra override */
     pbVar3 = Library::DKW::LIB::MemRealloc(pbVar2,newSize);
     puVar10 = pSVar1->field_02E6;
     pbVar11 = pbVar3 + (newSize - uVar5) + -0x6c;

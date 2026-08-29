@@ -854,7 +854,7 @@ Completion criteria:
 
 ### Q-058 Recover callable ownership and indirect-call families
 
-Status: in progress. The first CFG-aware polymorphic-receiver layer is accepted
+Status: completed. The first CFG-aware polymorphic-receiver layer is accepted
 locally: reaching-definition analysis now follows convergent predecessors and
 callee-saved receiver transport instead of stopping at conditional branches.
 It recovered 54 exact slot-`0x2c` dispatches in the paired object registration
@@ -925,9 +925,27 @@ Completion targets, used as direction rather than permission to weaken proof:
 - preserve every manual/imported ABI, all 3,192 accepted typed physical slots,
   and the per-function readability baseline.
 
+The final accepted Q-058 checkpoint satisfies those targets without weakening
+the evidence policy. The body corpus contains 459 raw indirect calls, 305
+ownerless `__thiscall` functions, and 311 canonical casted call results, down
+from the recorded 1,318, 950, and 1,383 reference counts. All 3,192 physical
+vtable slots remain typed. Exact call-result views, physical/member receiver
+views, callback and callable-local families, DArray element receivers, linked
+library boundaries, and source-generation call boundaries are address-stable;
+dense or conflicting fallbacks remain explicit review rows. The accepted
+Program fingerprint is
+`a7939e1e5340f76bc779b9617a409135d5be18cfcac6d040fa320fc1bf495d99`
+and the corpus manifest is
+`c6e099a7a23a3f36508cd7463210d095031021f1d8ac92822f6fb772ca1598db`.
+Export, ABI, readability, snapshot round-trip, and compiler-regression gates
+pass. The generated source audit passes 312 of 328 translation units with 35
+addressed residual errors and zero regressions. A confirming pass has no
+additional Q-058 application work; the remaining callable sites have explicit
+rejection evidence and move forward as Q-059 or later semantic debt.
+
 ### Q-059 Consolidate aggregates, executable coverage, and semantic identities
 
-Status: planned; follows Q-058.
+Status: in progress; Q-058 is complete.
 
 After ABI and ownership stabilize, consolidate exact pointer layouts and
 anonymous records through cross-function flow, complete copy/zero spans,

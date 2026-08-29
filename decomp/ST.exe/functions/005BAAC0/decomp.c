@@ -14,39 +14,40 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
   int iVar4;
   int iVar5;
   uint *puVar6;
-  undefined4 local_264;
-  undefined4 local_257;
-  undefined4 local_253;
-  undefined4 local_24f;
-  undefined4 local_23d;
-  undefined4 local_230;
-  undefined4 local_22c;
-  undefined4 local_228;
-  undefined4 local_216;
-  undefined4 local_209;
-  undefined4 local_205;
-  undefined4 local_201;
-  undefined4 local_1a1;
-  undefined1 local_19d;
-  undefined4 local_194;
-  undefined4 local_190;
-  undefined4 local_18c;
-  undefined4 local_17a;
-  undefined1 local_176;
-  undefined4 local_16d;
-  undefined4 local_169;
-  undefined4 local_165;
-  undefined4 local_153;
-  undefined4 local_146;
-  undefined4 local_142;
-  undefined4 local_13e;
-  undefined4 local_68 [7];
+  uint local_264;
+  uint local_257;
+  uint local_253;
+  uint local_24f;
+  uint local_23d;
+  uint local_230;
+  uint local_22c;
+  uint local_228;
+  uint local_216;
+  uint local_209;
+  uint local_205;
+  uint local_201;
+  uint local_1a1;
+  byte local_19d;
+  uint local_194;
+  uint local_190;
+  uint local_18c;
+  uint local_17a;
+  byte local_176;
+  uint local_16d;
+  uint local_169;
+  uint local_165;
+  uint local_153;
+  uint local_146;
+  uint local_142;
+  uint local_13e;
+  uint local_68 [7];
   InternalExceptionFrame local_4c;
   PrividerTy *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar3 == 0) {
     puVar6 = &local_264;
@@ -117,14 +118,15 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
     this_00->field_0065 = CASE_3;
     thunk_FUN_00568bc0(&g_sound,0);
     if ((STPiece<1,1>(DAT_00807300) & 8) != 0) {
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0056A130::thunk_FUN_0056a130
-                ((AnonReceiver_0056A130 *)&g_sound,0x14,'\x02',0,nullptr);
+      SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0056A130::thunk_FUN_0056a130
+                ((RecoveredReceiver_0056A130 *)&g_sound,0x14,'\x02',0,nullptr);
     }
     thunk_FUN_005b6730(this_00,0xb,'\0',-1);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0x11e,0,iVar3,"%s",
                              "PrividerTy::SetMode");
   if (iVar4 != 0) {

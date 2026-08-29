@@ -24,8 +24,8 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this)
   uint uVar6;
   int iVar5;
   InternalExceptionFrame local_7c;
-  undefined1 local_38 [45];
-  undefined1 local_b;
+  byte local_38 [45];
+  byte local_b;
   FSGSTy *local_8;
 
   if (this->array_00BC[0xc].field_01DF == '\x06') {
@@ -33,6 +33,7 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this)
     local_7c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_7c;
     local_8 = this;
+
     iVar3 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0);
     this_00 = g_cursorClass_00802A30;
     if (iVar3 == 0) {
@@ -54,6 +55,7 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this)
       PutDDXClip(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',local_8->field_1E9A);
       this_01->field_1EA6->count = 0;
       local_b = 1;
+
       Library::DKW::TBL::DArrayAppend((DArrayTy *)this_01->field_1EA6,local_38);
       this_01->field_002D = 0x28;
       puVar1 = &this_01->field_0x1d;
@@ -82,6 +84,7 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this)
       return;
     }
     g_currentExceptionFrame = local_7c.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xa7d,0,iVar3,"%s"
                                ,"FSGSTy::JoinChannel");
     if (iVar5 != 0) {

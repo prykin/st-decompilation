@@ -18,40 +18,38 @@ void __cdecl st::fn_006F07E0(int *param_1)
 
 // 006F0E30 FUN_006f0e30
 #line 4 "decomp/ST.exe/functions/006F0E30/decomp.c"
-int __cdecl st::fn_006F0E30(byte *param_1,byte *param_2)
+int __cdecl
+st::fn_006F0E30(RecoveredRecord_006F0E30_F311FECB *param_1,RecoveredRecord_006F0E30_E46FC23B *param_2)
 
 {
   short sVar1;
   int iVar2;
   int iVar3;
-  byte *pbVar4;
-  byte *pbVar5;
+  RecoveredRecord_006F0E30_F311FECB *pRVar4;
+  RecoveredRecord_006F0E30_E46FC23B *pRVar5;
   bool bVar6;
   bool bVar7;
 
-  if (*param_1 != *param_2) {
-    return (uint)*param_1 - (uint)*param_2;
+  if (*(byte *)param_1 != *(byte *)param_2) {
+    return (uint)*(byte *)param_1 - (uint)*(byte *)param_2;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  sVar1 = *(short *)(param_1 + 0x16);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (sVar1 != *(short *)(param_2 + 0x16)) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    return (int)sVar1 - (int)*(short *)(param_2 + 0x16);
+  sVar1 = param_1->field_0016;
+  if (sVar1 != param_2->field_0016) {
+    return (int)sVar1 - (int)param_2->field_0016;
   }
   iVar3 = (int)sVar1;
   bVar6 = false;
   iVar2 = 0;
   bVar7 = true;
-  pbVar4 = param_1 + 0x18;
-  pbVar5 = param_2 + 0x18;
+  pRVar4 = param_1 + 1;
+  pRVar5 = param_2 + 1;
   do {
     if (iVar3 == 0) break;
     iVar3 = iVar3 + -1;
-    bVar6 = *pbVar4 < *pbVar5;
-    bVar7 = *pbVar4 == *pbVar5;
-    pbVar4 = pbVar4 + 1;
-    pbVar5 = pbVar5 + 1;
+    bVar6 = *(byte *)pRVar4 < *(byte *)pRVar5;
+    bVar7 = *(byte *)pRVar4 == *(byte *)pRVar5;
+    pRVar4 = reinterpret_cast<RecoveredRecord_006F0E30_F311FECB *>(reinterpret_cast<byte *>(pRVar4) + 0x1);
+    pRVar5 = reinterpret_cast<RecoveredRecord_006F0E30_E46FC23B *>(reinterpret_cast<byte *>(pRVar5) + 0x1);
   } while (bVar7);
   if (!bVar7) {
     iVar2 = (1 - (uint)bVar6) - (uint)(bVar6 != 0);
@@ -65,11 +63,10 @@ int __cdecl st::fn_006F0E30(byte *param_1,byte *param_2)
 // 006F0EA0 FUN_006f0ea0
 #line 1 "decomp/ST.exe/functions/006F0EA0/decomp.c"
 
-int st::fn_006F0EA0(int param_1)
+int st::fn_006F0EA0(RecoveredRecord_006F0EA0_D55EB521 *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return *(short *)(param_1 + 0x16) + 0x18;
+  return param_1->field_0016 + 0x18;
 }
 
 // 006F1CB0 FUN_006f1cb0
@@ -124,8 +121,8 @@ LPSTR __cdecl st::fn_006F2C00(char *text,int param_2,undefined4 param_3)
       text = pcVar7;
     } while (cVar1 != '\0');
     uVar3 = ~uVar3;
-    pCVar5 = st::pointer_boundary_cast<LPSTR>(&DAT_00856e40 + DAT_00856fc4 * 0x20);
-    pCVar6 = pcVar7 + -uVar3;
+    pCVar5 = reinterpret_cast<LPSTR>(&DAT_00856e40 + DAT_00856fc4 * 0x20);
+    pCVar6 = reinterpret_cast<CHAR *>(pcVar7 + -uVar3);
     pCVar8 = pCVar5;
     for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
       *(undefined4 *)pCVar8 = *(undefined4 *)pCVar6;
@@ -141,10 +138,10 @@ LPSTR __cdecl st::fn_006F2C00(char *text,int param_2,undefined4 param_3)
   else {
     st::fn_0072DE60(param_2,local_24,10);
     /* ST_CALLSITE[006F2C3F]: CALL EDI */
-    st::external_00000080(local_44,st::mutable_c_string("%s%s%s"),"%s%0",local_24,&DAT_007d5630);
-    pCVar5 = st::pointer_boundary_cast<LPSTR>(&DAT_00856e40 + iVar2 * 0x20);
+    st::external_00000080(reinterpret_cast<LPSTR>(local_44),st::mutable_c_string("%s%s%s"),"%s%0",local_24,&DAT_007d5630);
+    pCVar5 = reinterpret_cast<LPSTR>(&DAT_00856e40 + iVar2 * 0x20);
     /* ST_CALLSITE[006F2C57]: CALL EDI */
-    st::external_00000080(pCVar5,local_44,text,param_3);
+    st::external_00000080(pCVar5,reinterpret_cast<char *>(local_44),text,param_3);
   }
   DAT_00856fc4 = DAT_00856fc4 + 1;
   if (3 < DAT_00856fc4) {
@@ -180,38 +177,38 @@ int __cdecl st::fn_006F2CE0(byte *param_1,byte *param_2)
 
 // 006F2D10 FUN_006f2d10
 #line 4 "decomp/ST.exe/functions/006F2D10/decomp.c"
-uint __cdecl st::fn_006F2D10(byte *param_1,byte *param_2)
+uint __cdecl st::fn_006F2D10(RecoveredRecord_006F2D10_2C6A4914 *param_1,byte *param_2)
 
 {
   short sVar1;
   uint uVar3;
   uint uVar4;
-  uint *puVar5;
+  RecoveredRecord_006F2D10_2C6A4914 *pRVar5;
   uint *puVar6;
   uint local_204 [128];
 
-  if (*param_2 != *param_1) {
-    return (uint)*param_2 - (uint)*param_1;
+  if (*param_2 != *(byte *)param_1) {
+    return (uint)*param_2 - (uint)*(byte *)param_1;
   }
   if (param_2[1] == 0) {
     return 0;
   }
   memset(local_204, 0, 0x200); /* compiler bulk-zero initialization */
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  sVar1 = *(short *)(param_1 + 0x16);
-  puVar5 = (uint *)(param_1 + 0x18);
+  sVar1 = param_1->field_0016;
+  pRVar5 = param_1 + 1;
   puVar6 = local_204;
   for (uVar4 = (uint)(int)sVar1 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *puVar6 = *puVar5;
-    puVar5 = puVar5 + 1;
+    *puVar6 = *(uint *)pRVar5;
+    pRVar5 = reinterpret_cast<RecoveredRecord_006F2D10_2C6A4914 *>(reinterpret_cast<byte *>(pRVar5) + 0x4);
     puVar6 = puVar6 + 1;
   }
   for (uVar4 = (int)sVar1 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(char *)puVar6 = (char)*puVar5;
-    puVar5 = (uint *)((int)puVar5 + 1);
+    *(undefined1 *)puVar6 = *(undefined1 *)pRVar5;
+    pRVar5 = reinterpret_cast<RecoveredRecord_006F2D10_2C6A4914 *>(reinterpret_cast<byte *>(pRVar5) + 0x1);
     puVar6 = (uint *)((int)puVar6 + 1);
   }
-  uVar3 = st::fn_006F2CB0(local_204,(char *)(param_2 + 1));
+
+  uVar3 = st::fn_006F2CB0(local_204,reinterpret_cast<char *>((param_2 + 1)));
   return uVar3;
 }
 
@@ -722,7 +719,7 @@ LAB_006f5259:
       uVar6 = *(uint *)((int)param_3 + -2);
       uVar5 = uVar7;
       puVar4 = param_3;
-      while (uVar6 < (uint)(param_5 << 0x10)) {
+      while (uVar6 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_5 << 0x10))) {
         param_6 = param_6 + 1;
         param_3 = (uint *)((int)puVar4 + 2);
         param_1 = param_1 + 1;
@@ -774,7 +771,7 @@ LAB_006f52de:
         uVar6 = *(uint *)((int)param_3 + -2);
         uVar5 = uVar7;
         puVar4 = param_3;
-        while (param_6 = pbVar10, uVar6 < (uint)(param_5 << 0x10)) {
+        while (param_6 = pbVar10, uVar6 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_5 << 0x10))) {
           param_3 = (uint *)((int)puVar4 + 2);
           param_1 = param_1 + 1;
           if (uVar5 - 1 == 0 || (int)uVar5 < 1) goto cf_common_join_006F5339;
@@ -797,7 +794,7 @@ LAB_006f52de:
       uVar7 = *(uint *)((int)param_3 + -2);
       pbVar3 = pbVar9;
       puVar4 = param_3;
-      while (uVar7 < (uint)(param_5 << 0x10)) {
+      while (uVar7 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_5 << 0x10))) {
         param_6 = param_6 + 1;
         param_3 = (uint *)((int)puVar4 + 2);
         param_1 = param_1 + 1;
@@ -819,7 +816,7 @@ LAB_006f5352:
     uVar7 = *(uint *)((int)param_3 + -2);
     puVar4 = param_3;
     pbVar3 = pbVar9;
-    while (uVar7 < (uint)(param_5 << 0x10)) {
+    while (uVar7 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_5 << 0x10))) {
       param_3 = (uint *)((int)puVar4 + 2);
       param_1 = param_1 + 1;
       if (pbVar3 + -1 == nullptr || (int)pbVar3 < 1) goto cf_common_join_006F53A7;
@@ -849,7 +846,7 @@ cf_common_join_006F53A7:
       }
       if (((uint)pbVar10 & 0x40) == 0) break;
       param_6 = temp_3fc152a556 + 1;
-      if (iVar8 <= (int)((uint)pbVar10 & 0xffffff3f)) goto cf_continue_loop_006F53F2;
+      if (iVar8 <= st::storage_bit_cast<int>(static_cast<uint32_t>((uint)pbVar10 & 0xffffff3f))) goto cf_continue_loop_006F53F2;
       iVar8 = iVar8 - ((uint)pbVar10 & 0xffffff3f);
       pbVar10 = (byte *)(uint)*param_6;
       param_6 = temp_3fc152a556 + 2;
@@ -957,7 +954,7 @@ LAB_006f545a:
       uVar4 = uVar8;
       puVar5 = param_3;
       pbVar6 = pbVar11;
-      while (uVar7 < (uint)(param_5 << 0x10)) {
+      while (uVar7 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_5 << 0x10))) {
         param_3 = (uint *)((int)puVar5 + 2);
         DAT_00857014 = st::machine_word_boundary_cast<undefined4>(pbVar6 + 1);
         param_11 = (byte *)(uint)*(byte *)(iVar9 + (uint)*PTR_00857034);
@@ -1022,7 +1019,7 @@ LAB_006f54e6:
         uVar7 = *(uint *)((int)param_3 + -2);
         uVar4 = uVar8;
         puVar5 = param_3;
-        while (uVar7 < (uint)(param_5 << 0x10)) {
+        while (uVar7 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_5 << 0x10))) {
           bVar2 = *PTR_00857034;
           PTR_00857034 = PTR_00857034 + 1;
           param_3 = (uint *)((int)puVar5 + 2);
@@ -1050,7 +1047,7 @@ LAB_006f54e6:
       uVar7 = *(uint *)((int)param_3 + -2);
       uVar4 = uVar10;
       puVar5 = param_3;
-      while (uVar7 < (uint)(param_5 << 0x10)) {
+      while (uVar7 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_5 << 0x10))) {
         param_3 = (uint *)((int)puVar5 + 2);
         DAT_00857014 = st::machine_word_boundary_cast<undefined4>(param_6 + 1);
         param_11 = (byte *)(uint)*(byte *)(iVar9 + (uint)*PTR_00857034);
@@ -1080,7 +1077,7 @@ LAB_006f55f7:
     uVar7 = *(uint *)((int)param_3 + -2);
     puVar5 = param_3;
     uVar4 = uVar10;
-    while (uVar7 < (uint)(param_5 << 0x10)) {
+    while (uVar7 < st::storage_bit_cast<uint>(static_cast<uint32_t>(param_5 << 0x10))) {
       bVar2 = *PTR_00857034;
       PTR_00857034 = PTR_00857034 + 1;
       param_3 = (uint *)((int)puVar5 + 2);
@@ -1114,7 +1111,7 @@ cf_common_join_006F56D2:
       }
       if ((uVar8 & 0x40) == 0) break;
       param_6 = pbVar11 + 1;
-      if (iVar9 <= (int)(uVar8 & 0xffffff3f)) goto cf_continue_loop_006F571D;
+      if (iVar9 <= st::storage_bit_cast<int>(static_cast<uint32_t>(uVar8 & 0xffffff3f))) goto cf_continue_loop_006F571D;
       iVar9 = iVar9 - (uVar8 & 0xffffff3f);
       uVar8 = (uint)*param_6;
       param_6 = pbVar11 + 2;
@@ -1705,7 +1702,7 @@ void st::fn_006F5C60(undefined1 *param_1,int param_2,byte *param_3,int param_4,u
             uVar3 = uVar1 & 0x3f;
             iVar2 = iVar2 - uVar3;
             if ((uVar1 & 0x40) == 0) {
-              if (-1 < (int)(uVar3 - 1)) {
+              if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1))) {
                 param_8_after_write = param_8_after_write + uVar3;
                 do {
                   if (param_7 <= *param_5) {
@@ -1720,7 +1717,7 @@ void st::fn_006F5C60(undefined1 *param_1,int param_2,byte *param_3,int param_4,u
             }
             else {
               param_8_after_write = param_8_after_write + 1;
-              if (-1 < (int)(uVar3 - 1)) {
+              if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1))) {
                 do {
                   if (param_7 <= *param_5) {
                     *param_1 = *(undefined1 *)((uint)*param_3 + param_11);
@@ -1814,7 +1811,7 @@ LAB_006f5df3:
               param_3 = param_3 + uVar3;
             }
             else if ((uVar5 & 0x40) == 0) {
-              if (-1 < (int)(uVar3 - 1)) {
+              if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1))) {
                 do {
                   if (param_5 <= *param_3) {
                     *param_1 = *(undefined1 *)((uint)*param_6 + param_11);
@@ -1830,7 +1827,7 @@ LAB_006f5df3:
               bVar4 = *param_6;
               param_6 = param_6 + 1;
               uVar1 = *(undefined1 *)((uint)bVar4 + param_11);
-              if (-1 < (int)(uVar3 - 1)) {
+              if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1))) {
                 do {
                   if (param_5 <= *param_3) {
                     *param_1 = uVar1;
@@ -1994,7 +1991,7 @@ LAB_006f6090:
               param_3 = param_3 + uVar3;
             }
             else if ((uVar5 & 0x40) == 0) {
-              if (-1 < (int)(uVar3 - 1)) {
+              if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1))) {
                 do {
                   if (*param_3 < param_5) {
                     bVar4 = *param_12;
@@ -2016,7 +2013,7 @@ LAB_006f6090:
             else {
               uVar1 = *(undefined1 *)((uint)*param_6_after_write + param_11);
               param_6_after_write = param_6_after_write + 1;
-              if (-1 < (int)(uVar3 - 1)) {
+              if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1))) {
                 do {
                   if (*param_3 < param_5) {
                     *param_1 = *(undefined1 *)((uint)*param_12 + param_14);
@@ -2679,7 +2676,7 @@ LAB_006f6b90:
               }
             }
             else if ((uVar4 & 0x40) == 0) {
-              if (-1 < (int)(local_8 - 1)) {
+              if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(local_8 - 1))) {
                 do {
                   if (((*param_13_after_write & (byte)uVar7) == 0) && (param_5 <= *param_3)) {
                     *puVar10 = *(undefined1 *)((uint)*param_6_after_write + param_14);
@@ -2702,7 +2699,7 @@ LAB_006f6b90:
               uVar1 = *(undefined1 *)((uint)*param_6_after_write + param_14);
               param_6_after_write = param_6_after_write + 1;
               puVar10 = param_1;
-              if (-1 < (int)(local_8 - 1)) {
+              if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(local_8 - 1))) {
                 do {
                   if (((*param_13_after_write & (byte)uVar7) == 0) && (param_5 <= *param_3)) {
                     *param_1 = uVar1;
@@ -2907,7 +2904,7 @@ LAB_006f6f50:
               }
             }
             else if ((uVar8 & 0x40) == 0) {
-              if (-1 < (int)(local_8 - 1)) {
+              if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(local_8 - 1))) {
                 do {
                   if ((*param_13_after_write & (byte)uVar7) == 0) {
                     if (*param_3 < param_5) {
@@ -2936,7 +2933,7 @@ LAB_006f6f50:
               bVar5 = *(byte *)((uint)*param_6_after_write + param_14);
               param_6_after_write = param_6_after_write + 1;
               pbVar10 = param_1;
-              if (-1 < (int)(local_8 - 1)) {
+              if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(local_8 - 1))) {
                 do {
                   if ((*param_13_after_write & (byte)uVar7) == 0) {
                     if (*param_3 < param_5) {
@@ -3199,7 +3196,7 @@ LAB_006f73be:
         uVar3 = uVar3 - local_10;
       }
       else if (((uint)param_11 & 0x40) == 0) {
-        if (-1 < (int)(local_10 - 1)) {
+        if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(local_10 - 1))) {
           uVar8 = uVar4 & 0x80;
           pbVar7 = pbVar6;
           do {
@@ -3237,7 +3234,7 @@ LAB_006f73be:
       else {
         bVar1 = *param_6;
         param_6 = param_6 + 1;
-        if (-1 < (int)(local_10 - 1)) {
+        if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(local_10 - 1))) {
           uVar8 = uVar4 & 0x80;
           pbVar7 = pbVar6;
           do {
@@ -3912,7 +3909,7 @@ LAB_006f7d83:
               param_5 = param_5 + uVar2;
             }
             else if ((uVar4 & 0x40) == 0) {
-              if (-1 < (int)(uVar2 - 1)) {
+              if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar2 - 1))) {
                 param_8_after_write = param_8_after_write + uVar2;
                 do {
                   if (param_7 <= *param_5) {
@@ -3927,7 +3924,7 @@ LAB_006f7d83:
             }
             else {
               param_8_after_write = param_8_after_write + 1;
-              if (-1 < (int)(uVar2 - 1)) {
+              if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar2 - 1))) {
                 do {
                   if (param_7 <= *param_5) {
                     *param_1 = *(undefined1 *)((uint)*param_3 + param_13);
@@ -4080,7 +4077,7 @@ LAB_006f802d:
               param_3 = param_3 + uVar1;
             }
             else if ((uVar3 & 0x40) == 0) {
-              if (-1 < (int)(uVar1 - 1)) {
+              if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar1 - 1))) {
                 do {
                   if (param_5 <= *param_3) {
                     *param_1 = *(undefined1 *)((uint)CONCAT11(*param_6,*param_1) + param_11);
@@ -4250,7 +4247,7 @@ LAB_006f827e:
               param_16_after_write = param_16_after_write + ((int)uVar2 >> 3);
             }
             else if ((uVar8 & 0x40) == 0) {
-              if (-1 < (int)(uVar2 - 1)) {
+              if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar2 - 1))) {
                 param_8_after_write = param_8_after_write + uVar2;
                 do {
                   if (((*param_16_after_write & (byte)uVar7) == 0) && (param_7 <= *param_5)) {
@@ -4271,7 +4268,7 @@ LAB_006f827e:
             }
             else {
               param_8_after_write = param_8_after_write + 1;
-              if (-1 < (int)(uVar2 - 1)) {
+              if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar2 - 1))) {
                 do {
                   if (((*param_16_after_write & (byte)uVar7) == 0) && (param_7 <= *param_5)) {
                     *param_1 = *(undefined1 *)((uint)*param_3 + param_13);
@@ -4422,7 +4419,7 @@ void st::fn_006F85A0(undefined1 *param_1,int param_2,byte *param_3,int param_4,b
             uVar4 = uVar2 & 0x3f;
             iVar5 = iVar5 - uVar4;
             if ((uVar2 & 0x40) == 0) {
-              if (-1 < (int)(uVar4 - 1)) {
+              if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar4 - 1))) {
                 param_5_after_write = param_5_after_write + uVar4;
                 puVar3 = param_1;
                 do {
@@ -4438,7 +4435,7 @@ void st::fn_006F85A0(undefined1 *param_1,int param_2,byte *param_3,int param_4,b
             else {
               param_5_after_write = param_5_after_write + 1;
               puVar3 = param_1;
-              if (-1 < (int)(uVar4 - 1)) {
+              if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar4 - 1))) {
                 do {
                   bVar1 = *param_3;
                   param_1 = puVar3 + 1;
@@ -4483,7 +4480,7 @@ void st::fn_006F8660(undefined4 *param_1,int param_2,byte *param_3,int param_4,i
   uint local_8;
   byte *pbVar5_mg0;
 
-  if (-1 < (int)(param_7 - 1)) {
+  if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(param_7 - 1))) {
     local_c = param_7;
     pbVar3 = param_3;
     do {
@@ -4536,7 +4533,7 @@ LAB_006f86ce:
             else {
               puVar9 = puVar8;
               if ((local_8 & 0x40) == 0) {
-                if (-1 < (int)(uVar7 - 1)) {
+                if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar7 - 1))) {
                   do {
                     bVar6 = *param_3_after_write;
                     puVar9 = (undefined4 *)((int)puVar8 + 1);
@@ -4551,7 +4548,7 @@ LAB_006f86ce:
               else {
                 uVar1 = *(undefined1 *)((uint)*param_3_after_write + param_8);
                 param_3_after_write = param_3_after_write + 1;
-                if (-1 < (int)(uVar7 - 1)) {
+                if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar7 - 1))) {
                   for (uVar4 = uVar7 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
                     *puVar8 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
                     puVar8 = puVar8 + 1;
@@ -4711,7 +4708,7 @@ LAB_006f8909:
               param_3 = param_3 + uVar3;
             }
             else if ((uVar5 & 0x40) == 0) {
-              if (-1 < (int)(uVar3 - 1)) {
+              if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1))) {
                 param_5_after_write = param_5_after_write + uVar3;
                 puVar7 = param_1;
                 do {
@@ -4727,7 +4724,7 @@ LAB_006f8909:
             else {
               param_5_after_write = param_5_after_write + 1;
               puVar7 = param_1;
-              if (-1 < (int)(uVar3 - 1)) {
+              if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1))) {
                 do {
                   bVar4 = *param_3;
                   param_1 = puVar7 + 1;
@@ -4869,7 +4866,7 @@ void st::fn_006F8AB0(byte *param_1,int param_2,ushort *param_3,int param_4,uint 
             pbVar6 = pbVar6 + 1;
             uVar3 = uVar4 & 0x3f;
           }
-          if ((int)(iVar5 - uVar3) < 1) break;
+          if (st::storage_bit_cast<int>(static_cast<uint32_t>(iVar5 - uVar3)) < 1) break;
           uVar4 = (uint)*pbVar6;
           pbVar6 = pbVar6 + 1;
           iVar5 = iVar5 - uVar3;
@@ -4918,7 +4915,7 @@ LAB_006f8b92:
           local_c = local_8 & 0x80;
           param_6 = param_6 + -uVar4;
           if (local_c == 0) {
-            if (-1 < (int)(uVar4 - 1)) {
+            if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar4 - 1))) {
               do {
                 if (iVar5 != 1) {
                   pbVar10_mg0 = pbVar10_mg0 + 1;
@@ -4961,10 +4958,10 @@ LAB_006f8b92:
               pbVar10_mg0 = pbVar2 + 1;
               pbVar6 = pbVar7 + 1;
               iVar5 = 1;
-              if ((int)(uVar4 - 1) < 1) break;
+              if (st::storage_bit_cast<int>(static_cast<uint32_t>(uVar4 - 1)) < 1) break;
               pbVar6 = pbVar7 + 2;
               iVar5 = 2;
-              if ((int)(uVar4 - 2) < 1) break;
+              if (st::storage_bit_cast<int>(static_cast<uint32_t>(uVar4 - 2)) < 1) break;
               if (param_5 <= *puVar9) {
                 *pbVar10_mg0 = *pbVar6;
               }
@@ -5000,7 +4997,7 @@ LAB_006f8b92:
               puVar9 = puVar1 + 1;
               pbVar10_mg0 = pbVar7 + 1;
               iVar5 = 1;
-              if (((int)(uVar4 - 1) < 1) || (iVar5 = 2, (int)(uVar4 - 2) < 1)) break;
+              if ((st::storage_bit_cast<int>(static_cast<uint32_t>(uVar4 - 1)) < 1) || (iVar5 = 2, st::storage_bit_cast<int>(static_cast<uint32_t>(uVar4 - 2)) < 1)) break;
               if (param_5 <= *puVar9) {
                 *pbVar10_mg0 = bVar8;
               }
@@ -5177,7 +5174,7 @@ joined_r0x006f8f1a:
           param_6 = param_6 + 1;
           uVar1 = uVar2 & 0x3f;
         }
-        if ((int)(iVar8 - uVar1) < 1) break;
+        if (st::storage_bit_cast<int>(static_cast<uint32_t>(iVar8 - uVar1)) < 1) break;
         uVar2 = (uint)*param_6;
         param_6 = param_6 + 1;
         iVar8 = iVar8 - uVar1;
@@ -5226,7 +5223,7 @@ LAB_006f8fe5:
       local_14 = local_10 & 0x80;
       local_8 = local_8 - uVar2;
       if (local_14 == 0) {
-        if (-1 < (int)(uVar2 - 1)) {
+        if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar2 - 1))) {
           do {
             if (iVar8 != 1) {
               pbVar3_mg0 = pbVar3_mg0 + 1;
@@ -5284,10 +5281,10 @@ LAB_006f8fe5:
           param_6 = pbVar9 + 1;
           iVar8 = 1;
           local_c = puVar4;
-          if ((int)(uVar2 - 1) < 1) break;
+          if (st::storage_bit_cast<int>(static_cast<uint32_t>(uVar2 - 1)) < 1) break;
           param_6 = pbVar9 + 2;
           iVar8 = 2;
-          if ((int)(uVar2 - 2) < 1) break;
+          if (st::storage_bit_cast<int>(static_cast<uint32_t>(uVar2 - 2)) < 1) break;
           if (*puVar4 < param_5) {
             bVar7 = *(byte *)((uint)*pbVar10_mg0 + param_15);
           }
@@ -5345,7 +5342,7 @@ LAB_006f8fe5:
           pbVar10_mg0 = pbVar10 + 1;
           iVar8 = 1;
           local_c = puVar4;
-          if (((int)(uVar2 - 1) < 1) || (iVar8 = 2, (int)(uVar2 - 2) < 1)) break;
+          if ((st::storage_bit_cast<int>(static_cast<uint32_t>(uVar2 - 1)) < 1) || (iVar8 = 2, st::storage_bit_cast<int>(static_cast<uint32_t>(uVar2 - 2)) < 1)) break;
           bVar6 = bVar7;
           if (*puVar4 < param_5) {
             bVar6 = *(byte *)((uint)*pbVar10_mg0 + param_15);
@@ -5545,7 +5542,7 @@ void st::fn_006F94D0(byte *param_1,int param_2,ushort *param_3,int param_4,uint 
             pbVar7 = pbVar7 + 1;
             uVar2 = uVar3 & 0x3f;
           }
-          if ((int)(iVar5 - uVar2) < 1) break;
+          if (st::storage_bit_cast<int>(static_cast<uint32_t>(iVar5 - uVar2)) < 1) break;
           uVar3 = (uint)*pbVar7;
           pbVar7 = pbVar7 + 1;
           iVar5 = iVar5 - uVar2;
@@ -5598,7 +5595,7 @@ LAB_006f95b9:
         local_c = local_8 & 0x80;
         param_6 = param_6 + -uVar3;
         if (local_c == 0) {
-          if (-1 < (int)(uVar3 - 1)) {
+          if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1))) {
             do {
               if (((byte)iVar5 & 1) == 1) {
                 pbVar6_mg0 = pbVar6_mg0 + 1;
@@ -5998,7 +5995,7 @@ void st::fn_006F9AD0(byte *param_1,int param_2,ushort *param_3,int param_4,uint 
             puVar8 = (ushort *)((int)puVar8 + 1);
             uVar2 = uVar3 & 0x3f;
           }
-          if ((int)(iVar7 - uVar2) < 1) break;
+          if (st::storage_bit_cast<int>(static_cast<uint32_t>(iVar7 - uVar2)) < 1) break;
           uVar3 = (uint)(byte)*puVar8;
           puVar8 = (ushort *)((int)puVar8 + 1);
           iVar7 = iVar7 - uVar2;
@@ -6028,7 +6025,7 @@ void st::fn_006F9AD0(byte *param_1,int param_2,ushort *param_3,int param_4,uint 
       if ((local_c & 0x40) == 0) {
         local_8 = local_8 - uVar3;
         local_c = (uint)*(byte *)((int)puVar8 + uVar3);
-        puVar8 = (ushort *)((byte *)((int)puVar8 + uVar3) + 1);
+        puVar8 = reinterpret_cast<ushort *>(((byte *)((int)puVar8 + uVar3) + 1));
       }
       else {
         local_8 = local_8 - uVar3;
@@ -6054,7 +6051,7 @@ LAB_006f9bc6:
         if (local_10 == 0) {
           puVar10 = param_6;
           local_10 = uVar3;
-          if (-1 < (int)(uVar3 - 1)) {
+          if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1))) {
             do {
               if (((byte)iVar7 & 1) == 1) {
                 pbVar11 = pbVar11 + 1;
@@ -6526,7 +6523,7 @@ void st::fn_006FA280(undefined1 *param_1,int param_2,ushort *param_3,int param_4
             param_6 = param_6 + 1;
             uVar2 = uVar3 & 0x3f;
           }
-          if ((int)(iVar4 - uVar2) < 1) break;
+          if (st::storage_bit_cast<int>(static_cast<uint32_t>(iVar4 - uVar2)) < 1) break;
           uVar3 = (uint)*param_6;
           param_6 = param_6 + 1;
           iVar4 = iVar4 - uVar2;
@@ -6579,7 +6576,7 @@ LAB_006fa36d:
           puVar8 = puVar7;
           puVar9 = puVar10;
           if (local_14 == 0) {
-            if (-1 < (int)(uVar3 - 1)) {
+            if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1))) {
               do {
                 if (iVar4 != 1) {
                   puVar7 = puVar7 + 1;
@@ -6625,10 +6622,10 @@ LAB_006fa36d:
               param_6 = pbVar6 + 1;
               iVar4 = 1;
               local_c = puVar9;
-              if ((int)(uVar3 - 1) < 1) break;
+              if (st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1)) < 1) break;
               param_6 = pbVar6 + 2;
               iVar4 = 2;
-              if ((int)(uVar3 - 2) < 1) break;
+              if (st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 2)) < 1) break;
               if (param_5 <= *puVar9) {
                 *puVar8 = *(undefined1 *)((uint)*param_6 + param_13);
               }
@@ -6667,7 +6664,7 @@ LAB_006fa36d:
               puVar8 = puVar7 + 1;
               iVar4 = 1;
               local_c = puVar9;
-              if (((int)(uVar3 - 1) < 1) || (iVar4 = 2, (int)(uVar3 - 2) < 1)) break;
+              if ((st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1)) < 1) || (iVar4 = 2, st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 2)) < 1)) break;
               if (param_5 <= *puVar9) {
                 *puVar8 = uVar1;
               }
@@ -6847,7 +6844,7 @@ joined_r0x006fa7ba:
           param_6 = param_6 + 1;
           uVar2 = uVar3 & 0x3f;
         }
-        if ((int)(iVar10 - uVar2) < 1) break;
+        if (st::storage_bit_cast<int>(static_cast<uint32_t>(iVar10 - uVar2)) < 1) break;
         uVar3 = (uint)*param_6;
         param_6 = param_6 + 1;
         iVar10 = iVar10 - uVar2;
@@ -6901,7 +6898,7 @@ LAB_006fa888:
       puVar7 = puVar6;
       pbVar12 = pbVar13_mg0;
       if (local_18 == 0) {
-        if (-1 < (int)(uVar3 - 1)) {
+        if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1))) {
           do {
             if (iVar10 != 1) {
               puVar4 = puVar4 + 1;
@@ -6966,10 +6963,10 @@ LAB_006fa888:
           iVar10 = 1;
           local_10 = pbVar12;
           local_c = puVar7;
-          if ((int)(uVar3 - 1) < 1) break;
+          if (st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1)) < 1) break;
           param_6 = pbVar11 + 2;
           iVar10 = 2;
-          if ((int)(uVar3 - 2) < 1) break;
+          if (st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 2)) < 1) break;
           if (*puVar7 < param_5) {
             bVar9 = *pbVar12;
             iVar10 = param_16;
@@ -7032,7 +7029,7 @@ LAB_006fa888:
           iVar10 = 1;
           local_10 = pbVar12;
           local_c = puVar7;
-          if (((int)(uVar3 - 1) < 1) || (iVar10 = 2, (int)(uVar3 - 2) < 1)) break;
+          if ((st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1)) < 1) || (iVar10 = 2, st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 2)) < 1)) break;
           uVar8 = uVar1;
           if (*puVar7 < param_5) {
             uVar8 = *(undefined1 *)((uint)*pbVar12 + param_16);
@@ -7240,7 +7237,7 @@ void st::fn_006FADC0(undefined1 *param_1,int param_2,ushort *param_3,int param_4
             puVar11 = (ushort *)((int)puVar11 + 1);
             uVar5 = uVar6 & 0x3f;
           }
-          if ((int)(iVar8 - uVar5) < 1) break;
+          if (st::storage_bit_cast<int>(static_cast<uint32_t>(iVar8 - uVar5)) < 1) break;
           uVar6 = (uint)(byte)*puVar11;
           puVar11 = (ushort *)((int)puVar11 + 1);
           iVar8 = iVar8 - uVar5;
@@ -7269,7 +7266,7 @@ void st::fn_006FADC0(undefined1 *param_1,int param_2,ushort *param_3,int param_4
       if (iVar8 < (int)uVar6) break;
       if ((local_c & 0x40) == 0) {
         local_c = (uint)*(byte *)((int)puVar11 + uVar6);
-        puVar11 = (ushort *)((byte *)((int)puVar11 + uVar6) + 1);
+        puVar11 = reinterpret_cast<ushort *>(((byte *)((int)puVar11 + uVar6) + 1));
         iVar8 = iVar8 - uVar6;
       }
       else {
@@ -7295,7 +7292,7 @@ LAB_006faea8:
         if ((local_c & 0x80) == 0) {
           puVar13_mg0 = param_6;
           puVar4 = local_8;
-          if (-1 < (int)(uVar6 - 1)) {
+          if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar6 - 1))) {
             do {
               if (((byte)iVar8 & 1) == 1) {
                 puVar10 = puVar10 + 1;
@@ -7348,7 +7345,7 @@ LAB_006fb07f:
               iVar8 = 4;
               puVar13_mg0 = param_6;
               puVar4 = puVar10;
-              if (0 < (int)(uVar6 - 1)) {
+              if (0 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar6 - 1))) {
                 puVar11 = puVar12 + 1;
                 iVar8 = 0;
                 uVar6 = uVar6 - 2;
@@ -7442,7 +7439,7 @@ LAB_006faf65:
             puVar10 = local_8;
             puVar13_mg0 = param_6;
             puVar4 = local_8;
-            if (0 < (int)(uVar6 - 1)) {
+            if (0 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar6 - 1))) {
               iVar8 = 0;
               uVar6 = uVar6 - 2;
               goto switchD_006faf11_default;
@@ -7717,7 +7714,7 @@ joined_r0x006fb4b7:
           param_6 = param_6 + 1;
           uVar3 = uVar4 & 0x3f;
         }
-        if ((int)(iVar6 - uVar3) < 1) break;
+        if (st::storage_bit_cast<int>(static_cast<uint32_t>(iVar6 - uVar3)) < 1) break;
         uVar4 = (uint)*param_6;
         param_6 = param_6 + 1;
         iVar6 = iVar6 - uVar3;
@@ -7776,7 +7773,7 @@ LAB_006fb58c:
         pbVar14 = param_6;
         pbVar2 = local_c;
         puVar9 = local_8;
-        if (-1 < (int)(uVar4 - 1)) {
+        if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar4 - 1))) {
           do {
             if (((byte)iVar6 & 1) == 1) {
               puVar13 = puVar13 + 1;
@@ -7847,7 +7844,7 @@ LAB_006fb7eb:
             pbVar14 = param_6 + 1;
             pbVar2 = pbVar11;
             puVar9 = local_8;
-            if (0 < (int)(uVar4 - 1)) {
+            if (0 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar4 - 1))) {
               param_6 = param_6 + 2;
               iVar6 = 0;
               uVar4 = uVar4 - 2;
@@ -7962,7 +7959,7 @@ LAB_006fb661:
           puVar12 = puVar13;
           pbVar2 = local_c;
           puVar9 = local_8;
-          if (0 < (int)(uVar4 - 1)) {
+          if (0 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar4 - 1))) {
             iVar6 = 0;
             uVar4 = uVar4 - 2;
             goto switchD_006fb5ff_default;
@@ -8277,7 +8274,7 @@ void st::fn_006FBD40(byte *param_1,int param_2,ushort *param_3,int param_4,uint 
             param_6 = param_6 + 1;
             uVar3 = uVar5 & 0x3f;
           }
-          if ((int)(iVar7 - uVar3) < 1) break;
+          if (st::storage_bit_cast<int>(static_cast<uint32_t>(iVar7 - uVar3)) < 1) break;
           uVar5 = (uint)*param_6;
           param_6 = param_6 + 1;
           iVar7 = iVar7 - uVar3;
@@ -8326,7 +8323,7 @@ LAB_006fbe4e:
         do {
           local_10 = local_10 - uVar3;
           if ((local_18 & 0x80) == 0) {
-            if (-1 < (int)(uVar3 - 1)) {
+            if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1))) {
               do {
                 if (iVar7 != 1) {
                   local_14 = local_14 + 1;
@@ -8384,10 +8381,10 @@ LAB_006fbe4e:
               }
               param_6 = pbVar1_mg0 + 1;
               iVar7 = 1;
-              if ((int)(uVar3 - 1) < 1) break;
+              if (st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1)) < 1) break;
               param_6 = pbVar1_mg0 + 2;
               iVar7 = 2;
-              if ((int)(uVar3 - 2) < 1) break;
+              if (st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 2)) < 1) break;
               if (((*local_c & (byte)uVar5) == 0) && (param_5 <= *local_8)) {
                 *local_14 = *param_6;
               }
@@ -8438,7 +8435,7 @@ LAB_006fbe4e:
                 local_c = local_c + 1;
               }
               iVar7 = 1;
-              if (((int)(uVar3 - 1) < 1) || (iVar7 = 2, (int)(uVar3 - 2) < 1)) break;
+              if ((st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1)) < 1) || (iVar7 = 2, st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 2)) < 1)) break;
               if (((*local_c & (byte)uVar5) == 0) && (param_5 <= *local_8)) {
                 *local_14 = bVar6;
               }
@@ -8651,7 +8648,7 @@ void st::fn_006FC3E0(byte *param_1,int param_2,ushort *param_3,int param_4,uint 
             param_6 = param_6 + 1;
             uVar4 = uVar7 & 0x3f;
           }
-          if ((int)(iVar10 - uVar4) < 1) break;
+          if (st::storage_bit_cast<int>(static_cast<uint32_t>(iVar10 - uVar4)) < 1) break;
           uVar7 = (uint)*param_6;
           param_6 = param_6 + 1;
           iVar10 = iVar10 - uVar4;
@@ -8701,7 +8698,7 @@ LAB_006fc4ee:
         do {
           local_14 = local_14 - uVar4;
           if ((local_18 & 0x80) == 0) {
-            if (-1 < (int)(uVar4 - 1)) {
+            if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar4 - 1))) {
               do {
                 if (iVar10 != 1) {
                   pbVar9 = pbVar9 + 1;
@@ -8775,10 +8772,10 @@ LAB_006fc4ee:
               }
               param_6 = pbVar2_mg0 + 1;
               iVar10 = 1;
-              if ((int)(uVar4 - 1) < 1) break;
+              if (st::storage_bit_cast<int>(static_cast<uint32_t>(uVar4 - 1)) < 1) break;
               param_6 = pbVar2_mg0 + 2;
               iVar10 = 2;
-              if ((int)(uVar4 - 2) < 1) break;
+              if (st::storage_bit_cast<int>(static_cast<uint32_t>(uVar4 - 2)) < 1) break;
               if ((*local_c & (byte)uVar7) == 0) {
                 if (*local_8 < param_5) {
                   bVar6 = *(byte *)((uint)*local_10 + param_18);
@@ -8849,7 +8846,7 @@ LAB_006fc4ee:
                 local_c = local_c + 1;
               }
               iVar10 = 1;
-              if (((int)(uVar4 - 1) < 1) || (iVar10 = 2, (int)(uVar4 - 2) < 1)) break;
+              if ((st::storage_bit_cast<int>(static_cast<uint32_t>(uVar4 - 1)) < 1) || (iVar10 = 2, st::storage_bit_cast<int>(static_cast<uint32_t>(uVar4 - 2)) < 1)) break;
               if ((*local_c & (byte)uVar7) == 0) {
                 bVar5 = bVar6;
                 if (*local_8 < param_5) {
@@ -9095,7 +9092,7 @@ void st::fn_006FCB30(byte *param_1,int param_2,ushort *param_3,int param_4,uint 
             param_6 = param_6 + 1;
             uVar2 = uVar5 & 0x3f;
           }
-          if ((int)(iVar6 - uVar2) < 1) break;
+          if (st::storage_bit_cast<int>(static_cast<uint32_t>(iVar6 - uVar2)) < 1) break;
           uVar5 = (uint)*param_6;
           param_6 = param_6 + 1;
           iVar6 = iVar6 - uVar2;
@@ -9151,7 +9148,7 @@ LAB_006fcc2f:
           pbVar9 = param_6;
           puVar7 = local_c;
           pbVar8 = local_8;
-          if (-1 < (int)(uVar2 - 1)) {
+          if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar2 - 1))) {
             do {
               if (((byte)iVar6 & 1) == 1) {
                 local_8 = local_8 + 1;
@@ -9321,7 +9318,7 @@ LAB_006fcea8:
             pbVar9 = param_6 + 1;
             puVar7 = local_c;
             pbVar8 = local_8;
-            if (0 < (int)(uVar2 - 1)) {
+            if (0 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar2 - 1))) {
               param_6 = param_6 + 2;
               iVar6 = 0;
               uVar2 = uVar2 - 2;
@@ -9651,7 +9648,7 @@ void st::fn_006FD430(byte *param_1,int param_2,ushort *param_3,int param_4,uint 
             param_6 = param_6 + 1;
             uVar1 = uVar6 & 0x3f;
           }
-          if ((int)(iVar8 - uVar1) < 1) break;
+          if (st::storage_bit_cast<int>(static_cast<uint32_t>(iVar8 - uVar1)) < 1) break;
           uVar6 = (uint)*param_6;
           param_6 = param_6 + 1;
           iVar8 = iVar8 - uVar1;
@@ -9710,7 +9707,7 @@ LAB_006fd54d:
           pbVar9 = param_6;
           puVar7 = local_c;
           pbVar10 = local_8;
-          if (-1 < (int)(uVar1 - 1)) {
+          if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar1 - 1))) {
             do {
               if (((byte)iVar8 & 1) == 1) {
                 pbVar13 = pbVar13 + 1;
@@ -9796,7 +9793,7 @@ LAB_006fd7fa:
               pbVar9 = param_6 + 1;
               puVar7 = local_c;
               pbVar10 = local_8;
-              if (0 < (int)(uVar1 - 1)) {
+              if (0 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar1 - 1))) {
                 param_6 = param_6 + 2;
                 iVar8 = 0;
                 uVar1 = uVar1 - 2;
@@ -9931,7 +9928,7 @@ LAB_006fd629:
             pbVar12 = pbVar13;
             puVar7 = local_c;
             pbVar10 = local_8;
-            if (0 < (int)(uVar1 - 1)) {
+            if (0 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar1 - 1))) {
               iVar8 = 0;
               uVar1 = uVar1 - 2;
               goto switchD_006fd5b3_default;
@@ -10317,7 +10314,7 @@ void st::fn_006FDEA0(undefined1 *param_1,int param_2,ushort *param_3,int param_4
             param_6 = param_6 + 1;
             uVar2 = uVar4 & 0x3f;
           }
-          if ((int)(iVar6 - uVar2) < 1) break;
+          if (st::storage_bit_cast<int>(static_cast<uint32_t>(iVar6 - uVar2)) < 1) break;
           uVar4 = (uint)*param_6;
           param_6 = param_6 + 1;
           iVar6 = iVar6 - uVar2;
@@ -10366,7 +10363,7 @@ LAB_006fdf96:
         do {
           local_14 = local_14 - uVar2;
           if ((local_18 & 0x80) == 0) {
-            if (-1 < (int)(uVar2 - 1)) {
+            if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar2 - 1))) {
               do {
                 if (iVar6 != 1) {
                   local_10 = local_10 + 1;
@@ -10424,10 +10421,10 @@ LAB_006fdf96:
               }
               param_6 = pbVar8 + 1;
               iVar6 = 1;
-              if ((int)(uVar2 - 1) < 1) break;
+              if (st::storage_bit_cast<int>(static_cast<uint32_t>(uVar2 - 1)) < 1) break;
               param_6 = pbVar8 + 2;
               iVar6 = 2;
-              if ((int)(uVar2 - 2) < 1) break;
+              if (st::storage_bit_cast<int>(static_cast<uint32_t>(uVar2 - 2)) < 1) break;
               if (((*local_8 & (byte)uVar4) == 0) && (param_5 <= *local_10)) {
                 *local_c = *(undefined1 *)((uint)*param_6 + param_16);
               }
@@ -10478,7 +10475,7 @@ LAB_006fdf96:
                 local_8 = local_8 + 1;
               }
               iVar6 = 1;
-              if (((int)(uVar2 - 1) < 1) || (iVar6 = 2, (int)(uVar2 - 2) < 1)) break;
+              if ((st::storage_bit_cast<int>(static_cast<uint32_t>(uVar2 - 1)) < 1) || (iVar6 = 2, st::storage_bit_cast<int>(static_cast<uint32_t>(uVar2 - 2)) < 1)) break;
               if (((*local_8 & (byte)uVar4) == 0) && (param_5 <= *local_10)) {
                 *local_c = uVar1;
               }
@@ -10694,7 +10691,7 @@ void st::fn_006FE570(undefined1 *param_1,int param_2,ushort *param_3,int param_4
             param_6 = param_6 + 1;
             uVar6 = uVar9 & 0x3f;
           }
-          if ((int)(iVar10 - uVar6) < 1) break;
+          if (st::storage_bit_cast<int>(static_cast<uint32_t>(iVar10 - uVar6)) < 1) break;
           uVar9 = (uint)*param_6;
           param_6 = param_6 + 1;
           iVar10 = iVar10 - uVar6;
@@ -10745,7 +10742,7 @@ LAB_006fe684:
         do {
           local_14 = local_14 - uVar6;
           if ((local_1c & 0x80) == 0) {
-            if (-1 < (int)(uVar6 - 1)) {
+            if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar6 - 1))) {
               do {
                 if (iVar10 != 1) {
                   puVar11 = puVar11 + 1;
@@ -10826,10 +10823,10 @@ LAB_006fe684:
               param_6 = pbVar3_mg0 + 1;
               iVar10 = 1;
               local_18 = puVar11;
-              if ((int)(uVar6 - 1) < 1) break;
+              if (st::storage_bit_cast<int>(static_cast<uint32_t>(uVar6 - 1)) < 1) break;
               param_6 = pbVar3_mg0 + 2;
               iVar10 = 2;
-              if ((int)(uVar6 - 2) < 1) break;
+              if (st::storage_bit_cast<int>(static_cast<uint32_t>(uVar6 - 2)) < 1) break;
               if ((*local_c & (byte)uVar9) == 0) {
                 if (*local_8 < param_5) {
                   bVar8 = *local_10;
@@ -10905,7 +10902,7 @@ LAB_006fe684:
               }
               iVar10 = 1;
               local_18 = puVar11;
-              if (((int)(uVar6 - 1) < 1) || (iVar10 = 2, (int)(uVar6 - 2) < 1)) break;
+              if ((st::storage_bit_cast<int>(static_cast<uint32_t>(uVar6 - 1)) < 1) || (iVar10 = 2, st::storage_bit_cast<int>(static_cast<uint32_t>(uVar6 - 2)) < 1)) break;
               if ((*local_c & (byte)uVar9) == 0) {
                 uVar5 = uVar1;
                 if (*local_8 < param_5) {
@@ -11158,7 +11155,7 @@ void st::fn_006FED50(undefined1 *param_1,int param_2,ushort *param_3,int param_4
             pbVar10 = pbVar10 + 1;
             uVar3 = uVar6 & 0x3f;
           }
-          if ((int)(iVar7 - uVar3) < 1) break;
+          if (st::storage_bit_cast<int>(static_cast<uint32_t>(iVar7 - uVar3)) < 1) break;
           uVar6 = (uint)*pbVar10;
           pbVar10 = pbVar10 + 1;
           iVar7 = iVar7 - uVar3;
@@ -11216,7 +11213,7 @@ LAB_006fee4f:
           pbVar10 = param_6;
           puVar9 = local_10;
           puVar8 = local_8;
-          if (-1 < (int)(uVar3 - 1)) {
+          if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1))) {
             do {
               if (((byte)iVar7 & 1) == 1) {
                 local_10 = local_10 + 1;
@@ -11386,7 +11383,7 @@ LAB_006ff0cc:
             pbVar10 = param_6 + 1;
             puVar9 = local_10;
             puVar8 = local_8;
-            if (0 < (int)(uVar3 - 1)) {
+            if (0 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1))) {
               param_6 = param_6 + 2;
               iVar7 = 0;
               uVar3 = uVar3 - 2;
@@ -11721,7 +11718,7 @@ void st::fn_006FF690(undefined1 *param_1,int param_2,ushort *param_3,int param_4
             param_6 = param_6 + 1;
             uVar3 = uVar8 & 0x3f;
           }
-          if ((int)(iVar9 - uVar3) < 1) break;
+          if (st::storage_bit_cast<int>(static_cast<uint32_t>(iVar9 - uVar3)) < 1) break;
           uVar8 = (uint)*param_6;
           param_6 = param_6 + 1;
           iVar9 = iVar9 - uVar3;
@@ -11782,7 +11779,7 @@ LAB_006ff7b0:
           puVar2 = local_14;
           pbVar11 = local_10;
           puVar10 = local_8;
-          if (-1 < (int)(uVar3 - 1)) {
+          if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1))) {
             do {
               if (((byte)iVar9 & 1) == 1) {
                 puVar15 = puVar15 + 1;
@@ -11875,7 +11872,7 @@ LAB_006ffaa5:
               puVar2 = puVar15;
               pbVar11 = local_10;
               puVar10 = local_8;
-              if (0 < (int)(uVar3 - 1)) {
+              if (0 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1))) {
                 param_6 = param_6 + 2;
                 iVar9 = 0;
                 uVar3 = uVar3 - 2;
@@ -12024,7 +12021,7 @@ LAB_006ff8a4:
             puVar2 = local_14;
             pbVar11 = local_10;
             puVar10 = local_8;
-            if (0 < (int)(uVar3 - 1)) {
+            if (0 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 - 1))) {
               iVar9 = 0;
               uVar3 = uVar3 - 2;
               goto switchD_006ff820_default;
@@ -12368,4 +12365,3 @@ LAB_007000f4:
     }
   } while( true );
 }
-

@@ -8,7 +8,8 @@ FUN_004d01f0:
 004D01FF  85 C0                     TEST EAX,EAX
 004D0201  0F 85 C2 00 00 00         JNZ 0x004d02c9
 004D0207  6A 40                     PUSH 0x40
-004D0209  E8 22 E3 25 00            CALL 0x0072e530
+FUN_004d01f0::override::prt_4d0209_a7ad5ad2:
+004D0209  E8 22 E3 25 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint
 004D020E  83 C4 04                  ADD ESP,0x4
 004D0211  85 C0                     TEST EAX,EAX
 004D0213  74 09                     JZ 0x004d021e

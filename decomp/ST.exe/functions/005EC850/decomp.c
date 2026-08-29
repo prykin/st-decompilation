@@ -14,12 +14,12 @@ int __thiscall STAllPlayersC::FUN_005ec850(STAllPlayersC *this,int *param_1)
   int iVar8;
   int iVar9;
   void *local_24;
-  undefined4 local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-  undefined4 local_c;
+  uint local_20;
+  uint local_1c;
+  uint local_18;
+  uint local_14;
+  uint local_10;
+  uint local_c;
   int local_8;
 
   this->field_0318 = 0;
@@ -27,6 +27,7 @@ int __thiscall STAllPlayersC::FUN_005ec850(STAllPlayersC *this,int *param_1)
   this->field_0316 = 0;
   iVar1 = *param_1;
   local_8 = iVar1;
+
   local_24 = Library::DKW::LIB::MemAlloc(0x44);
   iVar3 = 0;
   do {
@@ -43,7 +44,8 @@ int __thiscall STAllPlayersC::FUN_005ec850(STAllPlayersC *this,int *param_1)
   /* ST_CALLSITE[005EC8CE]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
   STT3DSprC::RestoreSpr
             ((STT3DSprC *)&this->field_0x1d5,(int *)&local_24,
-             (AnonShape_004AD790_77673787 *)(param_1 + 1));
+             (RecoveredRecordView_004AD790_D4DB5A31 *)(param_1 + 1));
+
   iVar2 = thunk_FUN_004ad650((STT3DSprC *)&this->field_0x1d5);
   this->field_02D6 = iVar2;
   FreeAndNull(&local_24);
@@ -54,10 +56,11 @@ int __thiscall STAllPlayersC::FUN_005ec850(STAllPlayersC *this,int *param_1)
     iVar8 = *(int *)&this->field_0x2be;
     iVar9 = *(int *)&this->field_0x2c2;
     iVar7 = 1;
+
     uVar5 = thunk_FUN_004ad650((STT3DSprC *)&this->field_0x1d5);
     thunk_FUN_006377b0(uVar5,iVar7,iVar8,iVar9,iVar3,uVar4);
   }
-  piVar6 = (int *)(&((AnonShape_004AD790_77673787 *)(param_1 + 1))->field_0x0 + iVar1);
+  piVar6 = (int *)(&((RecoveredRecordView_004AD790_D4DB5A31 *)(param_1 + 1))->field_0x0 + iVar1);
   iVar1 = *piVar6;
   /* ST_CALLSITE[005EC957]: CALL 0x0040551f; direct=0040551F STAllPlayersC::RestoreGObjData */
   RestoreGObjData(this,piVar6 + 1);

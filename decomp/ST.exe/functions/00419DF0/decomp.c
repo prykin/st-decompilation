@@ -39,23 +39,31 @@ void __thiscall STGameObjC::SetSelfCheckFlag(STGameObjC *this)
   }
   if (this->field_01CD == 0) {
     this->field_01CD = 1;
+
     pbVar5 = Library::DKW::LIB::MemAlloc(0x36);
     this->field_011D = pbVar5;
+
     pbVar5 = Library::DKW::LIB::MemAlloc(0x36);
     this->field_0121 = pbVar5;
+
     pvVar6 = Library::DKW::LIB::MemAlloc(0x5c);
     this->field_0125 = pvVar6;
+
     pvVar6 = Library::DKW::LIB::MemAlloc(0x5c);
     this->field_0129 = pvVar6;
     uVar2 = this->field_0020;
     if (uVar2 < 0x1af) {
       if (uVar2 == 0x1ae) {
+        /* ST_CALLSITE[00419F1C]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_01AD; source view only; no Ghidra override */
         pAVar9 = Library::DKW::LIB::MemAlloc(0xb);
         this->field_01AD = pAVar9;
+        /* ST_CALLSITE[00419F29]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_01B1; source view only; no Ghidra override */
         pAVar10 = Library::DKW::LIB::MemAlloc(0xb);
         this->field_01B1 = pAVar10;
+        /* ST_CALLSITE[00419F36]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
         puVar11 = Library::DKW::LIB::MemAlloc(6);
         this->field_01C5 = puVar11;
+        /* ST_CALLSITE[00419F43]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
         puVar11 = Library::DKW::LIB::MemAlloc(6);
         this->field_01C9 = puVar11;
       }
@@ -72,16 +80,22 @@ void __thiscall STGameObjC::SetSelfCheckFlag(STGameObjC *this)
             this->field_0179 = nullptr;
             this->field_017D = nullptr;
             this->field_0181 = nullptr;
+            /* ST_CALLSITE[00419EB6]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_0195; source view only; no Ghidra override */
             pAVar7 = Library::DKW::LIB::MemAlloc(0x13);
             this->field_0195 = pAVar7;
+            /* ST_CALLSITE[00419EC3]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_0199; source view only; no Ghidra override */
             pAVar8 = Library::DKW::LIB::MemAlloc(0x13);
             this->field_0199 = pAVar8;
+            /* ST_CALLSITE[00419ED0]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_01AD; source view only; no Ghidra override */
             pAVar9 = Library::DKW::LIB::MemAlloc(0xb);
             this->field_01AD = pAVar9;
+            /* ST_CALLSITE[00419EDD]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_01B1; source view only; no Ghidra override */
             pAVar10 = Library::DKW::LIB::MemAlloc(0xb);
             this->field_01B1 = pAVar10;
+
             pvVar6 = Library::DKW::LIB::MemAlloc(0x240);
             this->field_01BD = pvVar6;
+
             pvVar6 = Library::DKW::LIB::MemAlloc(0x240);
             this->field_01C1 = pvVar6;
           }
@@ -90,6 +104,7 @@ void __thiscall STGameObjC::SetSelfCheckFlag(STGameObjC *this)
       }
       else if (uVar2 != 0x1a4) {
 cf_common_exit_00419F6C:
+
         local_EAX_402 =
              ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0x54d,0,0,"%s",
                                 "STGameObjC::SetSelfCheckFlag unknown game type");
@@ -113,22 +128,30 @@ cf_common_exit_00419F6C:
         this->field_0151 = nullptr;
         this->field_0155 = nullptr;
         this->field_0159 = nullptr;
+
         pvVar6 = Library::DKW::LIB::MemAlloc(0x129);
         this->field_0185 = pvVar6;
+
         pvVar6 = Library::DKW::LIB::MemAlloc(0x129);
         this->field_0189 = pvVar6;
+
         pvVar6 = Library::DKW::LIB::MemAlloc(0x10);
         this->field_018D = pvVar6;
+
         pvVar6 = Library::DKW::LIB::MemAlloc(0x10);
         this->field_0191 = pvVar6;
         this->field_019D = nullptr;
         this->field_01A1 = nullptr;
+
         pvVar6 = Library::DKW::LIB::MemAlloc(0xc);
         this->field_01A5 = pvVar6;
+
         pvVar6 = Library::DKW::LIB::MemAlloc(0xc);
         this->field_01A9 = pvVar6;
+        /* ST_CALLSITE[0041A03D]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_01B5; source view only; no Ghidra override */
         pAVar12 = Library::DKW::LIB::MemAlloc(0xb);
         this->field_01B5 = pAVar12;
+        /* ST_CALLSITE[0041A04A]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_01B9; source view only; no Ghidra override */
         pAVar13 = Library::DKW::LIB::MemAlloc(0xb);
         this->field_01B9 = pAVar13;
       }
@@ -194,10 +217,15 @@ cf_common_exit_00419F6C:
         this->field_0181 = nullptr;
         /* ST_CALLSITE[0041A13E]: CALL dword ptr [EAX + 0x40] */
         (*this->vtable->vfunc_40)((short)ppDVar1);
+
         Library::DKW::TBL::FUN_006afe40((int *)&this->field_015D,&(*ppDVar1)->flags);
+
         Library::DKW::TBL::FUN_006afe40((int *)&this->field_0161,&this->field_0175->flags);
+
         Library::DKW::TBL::FUN_006afe40((int *)&this->field_0165,&this->field_0179->flags);
+
         Library::DKW::TBL::FUN_006afe40((int *)&this->field_0169,&this->field_017D->flags);
+
         Library::DKW::TBL::FUN_006afe40((int *)&this->field_016D,&this->field_0181->flags);
         /* ST_CALLSITE[0041A19D]: CALL dword ptr [EDX + 0x4c] */
         (*this->vtable->vfunc_4C)((short)this->field_0199);
@@ -248,7 +276,9 @@ cf_common_exit_00419F6C:
       this->field_0139 = nullptr;
       /* ST_CALLSITE[0041A30A]: CALL dword ptr [EDX + 0x38] */
       (*this->vtable->vfunc_38)((short)ppDVar1);
+
       Library::DKW::TBL::FUN_006afe40((int *)&this->field_012D,&(*ppDVar1)->flags);
+
       Library::DKW::TBL::FUN_006afe40((int *)&this->field_0131,&this->field_0139->flags);
       ppDVar1 = &this->field_014D;
       if (this->field_014D != nullptr) {
@@ -269,9 +299,13 @@ cf_common_exit_00419F6C:
       this->field_0159 = nullptr;
       /* ST_CALLSITE[0041A385]: CALL dword ptr [EDX + 0x3c] */
       (*this->vtable->vfunc_3C)((short)ppDVar1);
+
       Library::DKW::TBL::FUN_006afe40((int *)&this->field_013D,&(*ppDVar1)->flags);
+
       Library::DKW::TBL::FUN_006afe40((int *)&this->field_0141,&this->field_0151->flags);
+
       Library::DKW::TBL::FUN_006afe40((int *)&this->field_0145,&this->field_0155->flags);
+
       Library::DKW::TBL::FUN_006afe40((int *)&this->field_0149,&this->field_0159->flags);
       /* ST_CALLSITE[0041A3D3]: CALL dword ptr [EAX + 0x44] */
       (*this->vtable->vfunc_44)((short)this->field_0189);
@@ -297,6 +331,7 @@ cf_common_exit_00419F6C:
       }
       /* ST_CALLSITE[0041A453]: CALL dword ptr [EDX + 0x50] */
       (*this->vtable->vfunc_50)((short)ppDVar1);
+
       Library::DKW::TBL::FUN_006afe40((int *)&this->field_019D,&(*ppDVar1)->flags);
       /* ST_CALLSITE[0041A46A]: CALL dword ptr [EAX + 0x54] */
       (*this->vtable->vfunc_54)((short)this->field_01A9);
@@ -319,6 +354,7 @@ cf_common_exit_00419F6C:
       return;
     }
   }
+
   iVar13 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0x5a5,0,0,"%s",
                               "STGameObjC::SetSelfCheckFlag unknown game type");
   if (iVar13 == 0) {

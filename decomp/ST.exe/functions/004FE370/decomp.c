@@ -26,6 +26,7 @@ void __thiscall CPanelTy::PaintName(CPanelTy *this,int param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pCVar2 = local_8;
   if (iVar4 == 0) {
@@ -35,6 +36,7 @@ void __thiscall CPanelTy::PaintName(CPanelTy *this,int param_1)
     else {
       iVar4 = local_8->field_0184;
     }
+
     ccFntTy::SetSurf(local_8->field_01B8,iVar4,0,1,0,0x4e,0x24);
     if (param_1 == 0) {
       cVar3 = pCVar2->field_0C5D;
@@ -52,7 +54,9 @@ void __thiscall CPanelTy::PaintName(CPanelTy *this,int param_1)
         GVar5 = pCVar2->field_0B66;
       }
       module = g_hINSTANCE_00807618;
+
       resourceId = thunk_FUN_00523410(GVar5,cVar3,0);
+      /* ST_CALLSITE[004FE434]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
       resourceString = LoadResourceString(resourceId,module);
     }
     else if (param_1 == 0) {
@@ -61,11 +65,13 @@ void __thiscall CPanelTy::PaintName(CPanelTy *this,int param_1)
     else {
       resourceString = &pCVar2->field_0B6F;
     }
+
     ccFntTy::WrTxt(pCVar2->field_01B8,resourceString,-2,-1,0,-1,-1);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0x1e,0,iVar4,"%s",
                              "CPanelTy::PaintName");
   if (iVar6 == 0) {

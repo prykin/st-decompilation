@@ -6,7 +6,7 @@
    AiTactClassTy::HelpOrganize */
 
 void __thiscall
-AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *param_1)
+AiTactClassTy::HelpOrganize(AiTactClassTy *this,RecoveredRecordView_00690650_B2F27882 *param_1)
 
 {
   byte bVar1;
@@ -29,14 +29,14 @@ AiTactClassTy::HelpOrganize(AiTactClassTy *this,AnonShape_00690650_F810CDF4 *par
   InternalExceptionFrame local_98;
   uint local_54 [2];
   char local_4c;
-  undefined1 local_4b;
-  undefined2 local_4a;
-  undefined2 local_48;
-  undefined2 local_46;
-  undefined2 local_44;
-  undefined1 local_42;
+  byte local_4b;
+  ushort local_4a;
+  ushort local_48;
+  ushort local_46;
+  ushort local_44;
+  byte local_42;
   uint local_20;
-  undefined2 local_1c;
+  ushort local_1c;
   undefined2 uStack_1a;
   uint local_18;
   byte local_14;
@@ -95,6 +95,7 @@ LAB_00690763:
     local_98.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_98;
     local_c = this;
+
     iVar6 = Library::MSVCRT::__setjmp3(local_98.jumpBuffer,0);
     this_01 = local_c;
     if (iVar6 == 0) {
@@ -116,6 +117,7 @@ LAB_00690763:
         else {
           sVar5 = -1;
         }
+
         uVar8 = thunk_FUN_00690550(this_01,STField<short>(iVar6,0x7D),sVar5);
         if ((int)uVar8 < 0) {
           pAVar9 = this_01->field_00A5;
@@ -148,6 +150,7 @@ LAB_00690763:
                                        *(undefined2 *)(element_00a5->field_0004 + 0x7d));
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_18 = CONCAT22(STField<undefined2>(iVar6,0x7B),(short)local_10);
+
                   Library::DKW::TBL::DArrayAppend(local_c->field_00C9,&local_1c);
                   g_currentExceptionFrame = local_98.previous;
                   return;
@@ -168,6 +171,7 @@ LAB_00690763:
       return;
     }
     g_currentExceptionFrame = local_98.previous;
+
     iVar10 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x433,0,iVar6,"%s",
                                 "AiTactClassTy::HelpOrganize");
     if (iVar10 != 0) {

@@ -13,7 +13,8 @@ AiTactClassTy * __cdecl CreateAiTact(void)
 {
   AiTactClassTy *pAVar1;
 
-  pAVar1 = (AiTactClassTy *)FUN_006b04d0(0x144);
+  /* ST_CALLSITE[00690E65]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiTactClassTy; signature=__stdcall;pointer:/AiTactClassTy;/uint */
+  pAVar1 = FUN_006b04d0(0x144);
   if (pAVar1 != nullptr) {
     pAVar1 = AiTactClassTy::AiTactClassTy(pAVar1);
     return pAVar1;

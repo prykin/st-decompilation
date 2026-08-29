@@ -16,7 +16,7 @@ undefined4 __thiscall FUN_0067a0c0(void *this,uint param_1,int param_2)
       piVar2 = nullptr;
     }
     if (((piVar2[1] != 0) && ((undefined4 *)*piVar2 != nullptr)) && (param_2 != 0)) {
-      /* ST_CALLSITE[0067A103]: CALL dword ptr [EDX] */
+      /* ST_CALLSITE[0067A103]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar3 = (*(code *)**(undefined4 **)*piVar2)(param_2);
       return uVar3;

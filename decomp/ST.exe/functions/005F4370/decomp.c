@@ -4,9 +4,14 @@
 /* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
    Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=3; incoming_this_accesses=22;
    incoming_edx_uses=0; incoming_stack_parameter_uses=12; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=005F27C0 @ 005F29E2 -> read as EAX on
+   every CFG path | 005F27C0 @ 005F2AD8 -> read as EAX on every CFG path | 005F27C0 @ 005F2BD8 ->
+   read as EAX on every CFG path */
 
-uint __thiscall
+int __thiscall
 STBHEShellC::sub_005F4370(STBHEShellC *this,int *param_1,int *param_2,int *param_3,int param_4)
 
 {

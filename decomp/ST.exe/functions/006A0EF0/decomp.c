@@ -18,9 +18,7 @@ FUN_006a0ef0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
   int iVar4;
   bool bVar5;
   uint local_2c [4];
-  ushort local_1c;
-  undefined2 uStack_1a;
-  ushort uStack_18;
+  RecoveredRecord_006A1370_30F34641 local_1c;
   uint *local_14;
   uint local_10;
   int *local_c;
@@ -46,20 +44,22 @@ FUN_006a0ef0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
       }
     }
     else {
+
       iVar1 = thunk_FUN_006a20e0(param_1,iVar3,iVar4,param_4,param_5);
       if (iVar1 != 0) {
-        iVar3 = thunk_FUN_006a1370(param_1,iVar3,iVar4,param_4,(int)&local_1c);
-        iVar3 = thunk_FUN_006a24e0(param_6,param_4,&local_1c,(short)iVar3,param_5);
+
+        iVar3 = thunk_FUN_006a1370(param_1,iVar3,iVar4,param_4,&local_1c);
+
+        iVar3 = thunk_FUN_006a24e0(param_6,param_4,(ushort *)&local_1c,(short)iVar3,param_5);
         if (iVar3 != 0) {
           if (param_5 == 0xff) {
-            uVar2 = (uint)uStack_18;
+            uVar2 = (uint)local_1c.field_0004;
           }
           else {
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-            uVar2 = CONCAT22(uStack_18,uStack_1a);
+            uVar2 = CONCAT22(local_1c.field_0004,STPiece<2,2>(local_1c));
             if (param_5 != 1) {
-              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-              uVar2 = CONCAT22(uStack_1a,local_1c);
+              uVar2 = STReplaceLowWord((uint32_t)(local_1c), (uint16_t)(STPiece<0,2>(local_1c)));
             }
           }
           local_10 = local_10 | *(ushort *)(&DAT_007df898 + (local_8 + (uVar2 & 0xf) * 8) * 2);

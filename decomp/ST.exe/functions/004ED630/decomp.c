@@ -43,12 +43,12 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
   undefined4 auStack_88c [7];
   undefined4 auStack_870 [497];
   InternalExceptionFrame local_ac;
-  undefined4 local_68 [4];
-  undefined4 local_58;
-  undefined4 local_54;
-  undefined4 local_50;
-  undefined4 local_38;
-  undefined4 local_34;
+  uint local_68 [4];
+  uint local_58;
+  uint local_54;
+  uint local_50;
+  uint local_38;
+  uint local_34;
   int local_30;
   int local_20;
   int *local_1c;
@@ -67,10 +67,12 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
   memset(local_994, 0, 0x8e8); /* compiler bulk-zero initialization */
   local_ac.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_ac;
+
   iVar7 = Library::MSVCRT::__setjmp3(local_ac.jumpBuffer,0);
   this_00 = local_18;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_ac.previous;
+
     iVar13 = ReportDebugMessage("E:\\__titans\\Andrey\\behpanel.cpp",0x68,0,iVar7,
                                 "%s","BehPanelTy::InitBehPanel");
     if (iVar13 == 0) {
@@ -87,6 +89,7 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
   uVar12 = 3;
   iVar8 = 0x36;
   g_behPanel_00801678 = local_18;
+  /* ST_CALLSITE[004ED6B0]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SpecPanelTy; source view only; no Ghidra override */
   pCVar3 = thunk_FUN_00571240("BKG_BEHAVIOURW",0);
   /* ST_CALLSITE[004ED6BB]: CALL 0x00403800; direct=00403800 SpecPanelTy::InitPanel */
   SpecPanelTy::InitPanel
@@ -176,13 +179,16 @@ switchD_004ed72f_default:
     auStack_88c[uVar9 * 0x5f + 1] = 1;
     if (DAT_0080874e == '\x03') {
       pcVar5_mg1 = thunk_FUN_00529590((&this_00->field_01AF)[uVar9],0);
+      /* ST_CALLSITE[004ED87D]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       pCVar3 = thunk_FUN_00571240(pcVar5_mg1,iVar8);
       pCVar3 = FUN_006f2c00(pCVar3,iVar14,uVar12);
       GVar11 = CASE_6;
     }
     else {
       pcVar5_mg0 = thunk_FUN_00529590((&this_00->field_01AF)[uVar9],0);
+      /* ST_CALLSITE[004ED8AB]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       pCVar3 = thunk_FUN_00571240(pcVar5_mg0,iVar8);
+      /* ST_CALLSITE[004ED8B4]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       pCVar3 = FUN_006f2c00(pCVar3,iVar14,uVar12);
       GVar11 = CASE_1;
     }
@@ -193,14 +199,16 @@ switchD_004ed72f_default:
     local_994[uVar9 * 0x5f + 5] = iVar8;
     local_14 = (int)&this_00->vtable + uVar9 * 0x27;
     STField<undefined1>(local_14,0x1CE) = 1;
+
     local_EAX_721 = thunk_FUN_00525390((&this_00->field_01AF)[uVar9],0);
     STField<int>(local_14,0x1CF) = local_EAX_721;
-    uVar12 = thunk_FUN_005272b0((&this_00->field_01AF)[uVar9]);
+
+    iVar8 = thunk_FUN_005272b0((&this_00->field_01AF)[uVar9]);
     iVar14 = local_14;
     auStack_914[uVar9 * 0x5f] = 0x101;
     auStack_914[uVar9 * 0x5f + 1] = 3;
     auStack_914[uVar9 * 0x5f + 2] = 0x4201;
-    STField<undefined4>(iVar14,0x1D7) = uVar12;
+    STField<int>(iVar14,0x1D7) = iVar8;
     *(undefined2 *)(aiStack_908 + uVar9 * 0x5f) = 0;
     *(undefined2 *)((int)aiStack_908 + (uVar9 * 0xbe + 1) * 2) = 1;
     aiStack_908[uVar9 * 0x5f + 1] = iVar14 + 0x1ce;
@@ -232,7 +240,7 @@ LAB_004eda0d:
         if (bVar6 == 0) goto LAB_004eda0d;
         iVar14 = uVar9 - 1;
       }
-      pBVar5 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02B8,iVar14);
+      pBVar5 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B8,iVar14);
       bVar6 = (byte)local_10;
       auStack_870[iVar8 * 0x5f] = pBVar5;
       auStack_870[iVar8 * 0x5f + 1] = 0x3c;

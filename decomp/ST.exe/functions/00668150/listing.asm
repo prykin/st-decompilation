@@ -1,6 +1,7 @@
 CreateAiFlt:
 00668150  68 88 02 00 00            PUSH 0x288
-00668155  E8 76 83 04 00            CALL 0x006b04d0
+CreateAiFlt::override::prt_668155_1715985f:
+00668155  E8 76 83 04 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__stdcall;pointer:/AiFltClassTy;/uint
 0066815A  85 C0                     TEST EAX,EAX
 0066815C  74 07                     JZ 0x00668165
 0066815E  8B C8                     MOV ECX,EAX

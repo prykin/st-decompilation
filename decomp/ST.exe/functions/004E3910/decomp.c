@@ -37,7 +37,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
     if (0 < param_1[0x139]) {
       do {
         iVar10 = local_c;
-        if ((AnonShape_005EFAE0_B406B78B *)param_1[local_c + 0x134] ==
+        if ((RecoveredRecordView_005EFAE0_855D930D *)param_1[local_c + 0x134] ==
             nullptr) {
           local_c = iVar10;
           if (local_10 == 0) {
@@ -52,6 +52,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                   do {
                     sVar1 = (short)iVar10;
                     sVar13 = (short)iVar4;
+
                     iVar5 = thunk_FUN_004961b0(0,sVar1,sVar13);
                     if ((iVar5 != 0) &&
                        (((sVar2 = g_worldGrid.sizeX, sVar2 < 1 || (sVar1 < 0)) ||
@@ -68,8 +69,10 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                       local_20 = nullptr;
                       local_1c = iVar10;
                       local_18 = iVar4;
+
                       Library::DKW::TBL::DArrayAppend(local_8,&local_20);
                     }
+
                     iVar5 = thunk_FUN_004961b0(g_worldGrid.sizeX + -1,sVar1,sVar13);
                     if (iVar5 != 0) {
                       sVar2 = g_worldGrid.sizeX;
@@ -90,6 +93,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                         local_20 = (STSharkC *)(sVar2 + -1);
                         local_1c = iVar10;
                         local_18 = iVar4;
+
                         Library::DKW::TBL::DArrayAppend(local_8,&local_20);
                       }
                     }
@@ -110,6 +114,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                   do {
                     sVar1 = (short)pSVar11;
                     sVar13 = (short)iVar10;
+
                     iVar3 = thunk_FUN_004961b0(sVar1,0,sVar13);
                     if (iVar3 != 0) {
                       if (((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) ||
@@ -126,9 +131,11 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                         local_1c = 0;
                         local_20 = pSVar11;
                         local_18 = iVar10;
+
                         Library::DKW::TBL::DArrayAppend(local_8,&local_20);
                       }
                     }
+
                     local_EAX_930 = thunk_FUN_004961b0(sVar1,g_worldGrid.sizeY + -1,sVar13);
                     if (local_EAX_930 != 0) {
                       sVar2 = g_worldGrid.sizeY + -1;
@@ -150,6 +157,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                         local_1c = g_worldGrid.sizeY + -1;
                         local_20 = pSVar11;
                         local_18 = iVar10;
+
                         Library::DKW::TBL::DArrayAppend(local_8,&local_20);
                       }
                     }
@@ -165,6 +173,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
             if (local_8->count != 0) {
               uVar6 = param_1[7] * 0x41c64e6d + 0x3039;
               param_1[7] = uVar6;
+
               DArrayGetElement(local_8,(uVar6 >> 0x10) % local_8->count,&local_20);
               iVar10 = param_1[0x16c] + -8;
               if (iVar10 < 0) {
@@ -191,23 +200,26 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
               cVar12 = '\0';
               /* ST_CALLSITE[004E3E67]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
               iVar10 = STT3DSprC::sub_004ACD30(this,'\v');
+
               thunk_FUN_004abce0(this,0xb,0,iVar10,cVar12);
               /* ST_CALLSITE[004E3E7E]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
               STT3DSprC::SetCurFase(this,'\v',0);
+
               thunk_FUN_004ac700(this,'\v');
               /* ST_CALLSITE[004E3E9D]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
               STT3DSprC::StartShow(this,0xb,g_playSystem_00802A38->field_00E4);
-              /* ST_CALLSITE[004E3EAD]: CALL dword ptr [EAX + 0x90] */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-              (**(code **)(*param_1 + 0x90))(3,0x25d);
+              /* ST_CALLSITE[004E3EAD]: CALL dword ptr [EAX + 0x90]; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4 */
+              STStructuralVirtualCall<void>(param_1, 0x90, 3, 0x25d);
             }
             DArrayDestroy(local_8);
           }
         }
         else {
+
           iVar4 = STPlaySystemC::sub_006E62D0
                             (g_playSystem_00802A38,
-                             (AnonShape_005EFAE0_B406B78B *)param_1[local_c + 0x134],nullptr);
+                             (RecoveredRecordView_005EFAE0_855D930D *)param_1[local_c + 0x134],
+                             nullptr);
           local_c = iVar10;
           if (iVar4 != 0) {
             param_1[iVar10 + 0x134] = 0;

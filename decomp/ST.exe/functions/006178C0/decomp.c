@@ -38,9 +38,11 @@ void __thiscall JumpManagC::CheckSystrm(JumpManagC *this)
             iVar5 = -2;
           }
           else {
+
             iVar3 = STPlaySystemC::sub_006E62D0
                               (g_playSystem_00802A38,
-                               STField<AnonShape_005EFAE0_B406B78B *>(pvVar6,0x1c),&local_8);
+                               STField<RecoveredRecordView_005EFAE0_855D930D *>(pvVar6,0x1c),
+                               &local_8);
             if (iVar3 == -4) {
               iVar5 = -3;
             }
@@ -62,6 +64,7 @@ void __thiscall JumpManagC::CheckSystrm(JumpManagC *this)
         bVar8 = uVar7 < pDVar2->count;
       } while ((int)uVar7 < (int)pDVar2->count);
       if (iVar5 == 0) {
+
         iVar4 = ReportDebugMessage("E:\\__titans\\nick\\to_jbomb_m.Cpp",0x8a,0,0,
                                    "JumpManagC::CheckSystrm CheckProblem =  %d",0);
         if (iVar4 != 0) {

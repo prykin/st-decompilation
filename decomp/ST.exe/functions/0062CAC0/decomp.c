@@ -4,7 +4,7 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 undefined4 __cdecl
-FUN_0062cac0(AnonShape_0062CAC0_4BF74422 *param_1,int param_2,int param_3,int param_4,
+FUN_0062cac0(RecoveredRecordView_0062CAC0_558776B8 *param_1,int param_2,int param_3,int param_4,
             undefined4 param_5,int param_6,int param_7,short *param_8)
 
 {

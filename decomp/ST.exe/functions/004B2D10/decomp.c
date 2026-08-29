@@ -76,6 +76,7 @@ undefined4 __cdecl FUN_004b2d10(byte param_1,int param_2,int param_3,int param_4
         }
         if (((((-1 < iVar8) && (iVar8 < g_worldGrid.sizeX)) && (-1 < param_2)) &&
             ((param_2 < g_worldGrid.sizeY &&
+
              (iVar6 = FUN_006aced8(param_3,param_4,iVar8,param_2), iVar6 <= DAT_007951b0 / 0xc9))))
            && (local_2c = 0, 0 < g_worldGrid.sizeZ)) {
           do {

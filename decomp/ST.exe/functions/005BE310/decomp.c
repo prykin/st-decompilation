@@ -20,6 +20,7 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pMVar3 = local_8;
   if (iVar3 == 0) {
@@ -28,6 +29,7 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
     local_8->field_002D = 0x14;
     local_8->field_0031 = local_8->field_0008;
     local_8->field_0033 = uVar2;
+
     FUN_006e6000(local_8,3,1,(undefined4 *)&local_8->field_0x1d);
     /* ST_CALLSITE[005BE378]: CALL 0x00401d43; direct=00401D43 DarkScreen */
     DarkScreen(g_dDXContext_0080759C,10,2);
@@ -83,12 +85,14 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
     }
     pMVar3->field_007F = nullptr;
     if (pMVar3->field_004D != 0) {
+
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pMVar3->field_0x3d);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0xe5,0,iVar3,"%s",
                              "MReportTy::DoneMReport");
   if (iVar4 != 0) {

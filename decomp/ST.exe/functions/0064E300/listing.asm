@@ -96,7 +96,8 @@ LAB_0064e386:
 0064E3F8  57                        PUSH EDI
 0064E3F9  66 8B 70 7D               MOV SI,word ptr [EAX + 0x7d]
 0064E3FD  89 75 EC                  MOV dword ptr [EBP + -0x14],ESI
-0064E400  E8 A4 69 DB FF            CALL 0x00404da9
+FUN_0064e300::override::prt_64e400_1c162bab:
+0064E400  E8 A4 69 DB FF            CALL 0x00404da9  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__cdecl;pointer:/SubmarineTitans/Recovered/DArrayTy;/undefined4
 0064E405  8B F8                     MOV EDI,EAX
 0064E407  83 C4 04                  ADD ESP,0x4
 0064E40A  3B FB                     CMP EDI,EBX

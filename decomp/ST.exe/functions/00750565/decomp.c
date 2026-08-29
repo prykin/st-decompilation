@@ -6,7 +6,7 @@
 void FUN_00750565(void)
 
 {
-  FUN_0074f026();
+  Library::Win32::COMSupport::FUN_0074f026();
   return;
 }
 

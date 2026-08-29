@@ -1,4 +1,4 @@
-FUN_004da390:
+STAllPlayersC::sub_004DA390:
 004DA390  55                        PUSH EBP
 004DA391  8B EC                     MOV EBP,ESP
 004DA393  81 EC 7C 02 00 00         SUB ESP,0x27c

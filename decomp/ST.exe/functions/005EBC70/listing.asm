@@ -1,7 +1,7 @@
 CreateSTArtiafact:
 005EBC70  56                        PUSH ESI
 005EBC71  68 77 04 00 00            PUSH 0x477
-005EBC76  E8 55 48 0C 00            CALL 0x006b04d0
+005EBC76  E8 55 48 0C 00            CALL 0x006b04d0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STSprGameObjC; source view only; no Ghidra override
 005EBC7B  8B F0                     MOV ESI,EAX
 005EBC7D  85 F6                     TEST ESI,ESI
 005EBC7F  74 1B                     JZ 0x005ebc9c

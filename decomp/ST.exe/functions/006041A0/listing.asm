@@ -24,8 +24,8 @@ STExplosionC::CreateGroupPart:
 006041D8  7E 30                     JLE 0x0060420a
 006041DA  8B 5D F8                  MOV EBX,dword ptr [EBP + -0x8]
 006041DD  8D BB 19 02 00 00         LEA EDI,[EBX + 0x219]
-LAB_006041e3:
-006041E3  E8 94 E3 DF FF            CALL 0x0040257c
+STExplosionC::CreateGroupPart::override::prt_6041e3_e26f9dee:
+006041E3  E8 94 E3 DF FF            CALL 0x0040257c  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/HoloTy; signature=__stdcall;pointer:/HoloTy
 006041E8  89 07                     MOV dword ptr [EDI],EAX
 006041EA  89 98 CE 00 00 00         MOV dword ptr [EAX + 0xce],EBX
 006041F0  8B 07                     MOV EAX,dword ptr [EDI]

@@ -11,33 +11,33 @@ void __cdecl FUN_00676930(uint param_1)
   uint *puVar5;
   uint *puVar6;
   byte *puVar7;
-  undefined4 local_298 [78];
+  uint local_298 [78];
   uint local_160 [8];
-  undefined4 local_140 [43];
+  uint local_140 [43];
   int local_94;
-  undefined4 local_8c;
-  undefined4 local_88;
+  uint local_8c;
+  uint local_88;
   int local_84;
-  undefined4 local_7c;
-  undefined4 local_78;
+  uint local_7c;
+  uint local_78;
   int local_74;
-  undefined4 local_6c;
-  undefined4 local_68;
+  uint local_6c;
+  uint local_68;
   int local_64;
-  undefined4 local_5c;
-  undefined4 local_58;
+  uint local_5c;
+  uint local_58;
   int local_54;
-  undefined4 local_4c;
-  undefined4 local_48;
+  uint local_4c;
+  uint local_48;
   int local_44;
-  undefined4 local_3c;
-  undefined4 local_38;
+  uint local_3c;
+  uint local_38;
   int local_34;
-  undefined4 local_2c;
-  undefined4 local_28;
+  uint local_2c;
+  uint local_28;
   int local_24;
-  undefined4 local_1c;
-  undefined4 local_18;
+  uint local_1c;
+  uint local_18;
   int local_14;
   uint *local_8;
 
@@ -46,12 +46,14 @@ void __cdecl FUN_00676930(uint param_1)
     puVar6 = local_160;
     memmove(puVar6, puVar5, 0x20); /* compiler REP MOVS byte copy */
     iVar3 = 0;
-    thunk_FUN_004da390(g_allPlayers_007FA174,param_1,&DAT_0080c83e,0);
+    /* ST_CALLSITE[00676968]: CALL 0x00404048; direct=00404048 STAllPlayersC::sub_004DA390 */
+    STAllPlayersC::sub_004DA390(g_allPlayers_007FA174,param_1,&DAT_0080c83e,0);
     auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
     local_8 = &DAT_0080c947;
     puVar4 = &DAT_0080c8cd;
     do {
       if ((byte)(&DAT_0080c83f)[param_1_after_write] < 8) {
+
         puVar1 = (byte *)(thunk_FUN_0043e420(local_298,(&DAT_0080c83f)[param_1_after_write]));
         puVar7 = (byte *)(local_140);
         memmove(puVar7, puVar1, 0x138); /* compiler REP MOVS byte copy */

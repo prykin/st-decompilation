@@ -19,6 +19,7 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,int param_1,int param_2,undefin
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (errorCode == 0) {
     local_8 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
@@ -41,6 +42,7 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,int param_1,int param_2,undefin
     return;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel.cpp",0x342,0,errorCode,
                              "%s","CPanelTy::OutText(first, num, time)");
   if (iVar3 == 0) {

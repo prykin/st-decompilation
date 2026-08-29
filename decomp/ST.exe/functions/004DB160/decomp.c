@@ -62,6 +62,7 @@ STAllPlayersC::sub_004DB160
     local_EAX_191 = LookupRecordByte(*(char *)&this_00[1].vtable);
     local_EAX_191 = (int)(byte)local_EAX_191;
     if (local_EAX_191 == 1) {
+
       iVar4 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x42);
     }
     else {
@@ -74,6 +75,7 @@ STAllPlayersC::sub_004DB160
         pSVar13 = this_00[1].vtable;
         iVar4 = 99;
       }
+
       iVar4 = thunk_FUN_004e60d0((int)pSVar13,iVar4);
     }
     if (iVar4 != 0) {
@@ -134,10 +136,14 @@ cf_common_join_004DB690:
       uVar6 = local_c->field_001C * 0x41c64e6d + 0x3039;
       local_c->field_001C = uVar6;
       uVar10 = (uVar6 >> 0x10) % 0x168;
+
       uVar6 = FUN_006aff50(uVar10);
+
       iVar10 = FUN_006b1280(uVar6 * iVar4);
       iVar11 = iVar10 + param_1;
+
       uVar6 = FUN_006aff5b(uVar10);
+
       iVar3 = FUN_006b1280(uVar6 * iVar4);
       iVar12 = iVar3 + iVar12;
       if (iVar11 < 0) {
@@ -186,6 +192,7 @@ LAB_004db257:
                 uVar4 = LookupRecordByte(*(char *)&this_00[1].vtable);
                 uVar4 = (int)(byte)uVar4;
                 if (uVar4 == 1) {
+
                   iVar5 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x42);
                   iVar4 = local_8;
                 }
@@ -199,6 +206,7 @@ LAB_004db257:
                     pSVar13 = this_00[1].vtable;
                     iVar4 = 99;
                   }
+
                   iVar5 = thunk_FUN_004e60d0((int)pSVar13,iVar4);
                   iVar4 = local_8;
                 }
@@ -209,6 +217,7 @@ LAB_004db3e4:
               iVar12 = *param_4 + (int)param_5_after_write;
               if ((((-1 < iVar12) && (iVar12 < g_worldGrid.sizeY)) &&
                   (this_00 = (STWorldObject *)
+
                              thunk_FUN_004db980(sVar2,(short)iVar12,(short)local_8,0),
                   this_00 != nullptr)) &&
                  ((this_00[1].vtable != (STWorldObjectVTable *)param_1 &&
@@ -220,6 +229,7 @@ LAB_004db3e4:
                 local_EAX_744 = LookupRecordByte(*(char *)&this_00[1].vtable);
                 local_EAX_744 = (int)(byte)local_EAX_744;
                 if (local_EAX_744 == 1) {
+
                   iVar5 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x42);
                   iVar4 = local_8;
                 }
@@ -233,6 +243,7 @@ LAB_004db3e4:
                     pSVar13 = this_00[1].vtable;
                     iVar4 = 99;
                   }
+
                   iVar5 = thunk_FUN_004e60d0((int)pSVar13,iVar4);
                   iVar4 = local_8;
                 }
@@ -252,6 +263,7 @@ LAB_004db497:
               if ((-1 < iVar11) &&
                  ((((iVar11 < g_worldGrid.sizeX &&
                     (this_00 = (STWorldObject *)
+
                                thunk_FUN_004db980((short)iVar11,(short)iVar12,(short)local_8,0),
                     this_00 != nullptr)) &&
                    (this_00[1].vtable != (STWorldObjectVTable *)param_1)) &&
@@ -263,6 +275,7 @@ LAB_004db497:
                 local_EAX_990 = LookupRecordByte(*(char *)&this_00[1].vtable);
                 local_EAX_990 = (int)(byte)local_EAX_990;
                 if (local_EAX_990 == 1) {
+
                   iVar5 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x42);
                   iVar4 = local_8;
                 }
@@ -276,6 +289,7 @@ LAB_004db497:
                     pSVar13 = this_00[1].vtable;
                     iVar4 = 99;
                   }
+
                   iVar5 = thunk_FUN_004e60d0((int)pSVar13,iVar4);
                   iVar4 = local_8;
                 }
@@ -286,6 +300,7 @@ LAB_004db58d:
               iVar11 = *param_3 + (int)param_5_after_write;
               if ((((-1 < iVar11) && (iVar11 < g_worldGrid.sizeX)) &&
                   ((this_00 = (STWorldObject *)
+
                               thunk_FUN_004db980((short)iVar11,(short)iVar12,(short)local_8,0),
                    this_00 != nullptr &&
                    (this_00[1].vtable != (STWorldObjectVTable *)param_1)))) &&
@@ -297,6 +312,7 @@ LAB_004db58d:
                 local_EAX_1169 = LookupRecordByte(*(char *)&this_00[1].vtable);
                 local_EAX_1169 = (int)(byte)local_EAX_1169;
                 if (local_EAX_1169 == 1) {
+
                   iVar5 = thunk_FUN_004e60d0((int)this_00[1].vtable,0x42);
                   iVar4 = local_8;
                 }
@@ -310,6 +326,7 @@ LAB_004db58d:
                     pSVar13 = this_00[1].vtable;
                     iVar4 = 99;
                   }
+
                   iVar5 = thunk_FUN_004e60d0((int)pSVar13,iVar4);
                   iVar4 = local_8;
                 }

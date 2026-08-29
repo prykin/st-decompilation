@@ -25,8 +25,7 @@ void __thiscall ST3DSMAPContext::sub_006DDBE0(ST3DSMAPContext *this)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079dfd8;
   puStack_10 = &LAB_0072d964;
@@ -59,6 +58,7 @@ void __thiscall ST3DSMAPContext::sub_006DDBE0(ST3DSMAPContext *this)
       local_2c = this->field_0014 + this->field_0028 * this->field_0034 + this->field_0030;
       local_8 = 1;
       while (iVar3 != 0) {
+
         FUN_006ce6c0(local_2c,uVar4,30000);
         local_2c = local_2c + this->field_0028;
         iVar3 = iVar3 + -1;

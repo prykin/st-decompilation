@@ -38,14 +38,17 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
   char *local_8;
 
   local_c = this;
+
   DVar7 = STAppC::sub_006E51B0(this->field_0010);
   this->field_0061 = DVar7;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
+
   local_EAX_52 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_02 = local_c;
   if (local_EAX_52 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar8 = ReportDebugMessage("E:\\__titans\\Start\\wait_obj.cpp",0x3bb,0,local_EAX_52,
                                "%s","WaitTy::GetMessage");
     if (iVar8 != 0) {
@@ -63,6 +66,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
       g_startSystem_0081176C->field_04CF =
            *(int *)((message->arg1).u32 + 4) + (uint)(message->arg0).words.high;
       if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b3730
                   ((uint *)g_startSystem_0081176C->field_04F7,g_startSystem_0081176C->field_04B3,
                    g_startSystem_0081176C->field_04B7,g_startSystem_0081176C->field_04CB,
@@ -75,6 +79,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
         this_02->field_0049 = 0;
         this_02->field_004D = message->id;
         this_02->field_0051 = 8;
+
         thunk_FUN_005b66e0((MTaskTy *)this_02);
       }
       else if (SVar2 < 4) {
@@ -103,6 +108,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
         this_02->field_004D = message->id;
         this_02->field_0051 = message->arg0;
         this_02->field_0055 = 0;
+
         thunk_FUN_005b66e0((MTaskTy *)this_02);
       }
     }
@@ -112,7 +118,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
         MMMObjTy::PaintSlBut
                   ((MMMObjTy *)this_02,
                    (RecoveredRecord_MMMObjTy_005B6560 *)&g_startSystem_0081176C->field_038D,
-                   (int)message,0);
+                   (RecoveredRecord_005B6560_90DC7408 *)message,0);
       }
       else if (SVar2 == MESS_SHARED_6121) {
         this_02->field_0045 = 0x200;
@@ -120,11 +126,13 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
         this_02->field_004D = message->id;
         this_02->field_0051 = message->arg0;
         this_02->field_0055 = message->arg1;
+
         thunk_FUN_005b66e0((MTaskTy *)this_02);
       }
       else if (SVar2 == MESS_SHARED_6332) {
         /* ST_CALLSITE[005EA7CF]: CALL 0x00404d72; direct=00404D72 StartSystemTy::PaintBinDesc */
-        StartSystemTy::PaintBinDesc(g_startSystem_0081176C,(AnonShape_005DE050_5BD86458 *)message);
+        StartSystemTy::PaintBinDesc
+                  (g_startSystem_0081176C,(RecoveredRecordView_005DE050_1F13B900 *)message);
       }
     }
     else if (SVar2 == MESS_SHARED_6334) {
@@ -132,7 +140,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
       MMMObjTy::PaintSlBut
                 ((MMMObjTy *)this_02,
                  (RecoveredRecord_MMMObjTy_005B6560 *)&g_startSystem_0081176C->field_041E,
-                 (int)message,0);
+                 (RecoveredRecord_005B6560_90DC7408 *)message,0);
     }
     goto cf_common_exit_005EAB6A;
   }
@@ -142,6 +150,7 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
       this_02->field_0049 = 0;
       this_02->field_004D = 0x6102;
       this_02->field_0051 = message->arg0;
+
       thunk_FUN_005b66e0((MTaskTy *)this_02);
     }
     else if (SVar2 < MESS_SHARED_6940) {
@@ -154,14 +163,16 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
         MMMObjTy::PaintSlBut
                   ((MMMObjTy *)this_02,
                    (RecoveredRecord_MMMObjTy_005B6560 *)
-                   (this_02->array_00BC[0xc].field_01DB + 0x55c),(int)message,0);
+                   (this_02->array_00BC[0xc].field_01DB + 0x55c),
+                   (RecoveredRecord_005B6560_90DC7408 *)message,0);
       }
       else if (SVar2 == MESS_SHARED_6341) {
         /* ST_CALLSITE[005EA8CA]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
         MMMObjTy::PaintSlBut
                   ((MMMObjTy *)this_02,
                    (RecoveredRecord_MMMObjTy_005B6560 *)
-                   (this_02->array_00BC[0xc].field_01DB + 0x5ed),(int)message,0);
+                   (this_02->array_00BC[0xc].field_01DB + 0x5ed),
+                   (RecoveredRecord_005B6560_90DC7408 *)message,0);
       }
     }
     else if (SVar2 == MESS_SHARED_6940) {
@@ -201,7 +212,9 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
     goto cf_common_exit_005EAB6A;
   }
   if (SVar2 != MESS_SHARED_C0A2) goto cf_common_exit_005EAB6A;
-  iVar9 = thunk_FUN_005ddb40(this_02->array_00BC[0xc].field_01DB);
+
+  iVar9 = thunk_FUN_005ddb40((RecoveredRecordView_005DDB40_9DCD82E5 *)
+                             this_02->array_00BC[0xc].field_01DB);
   if (iVar9 == 0) {
     if (DAT_008067a0 != '\0') {
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -280,10 +293,12 @@ int __thiscall WaitTy::GetMessage(WaitTy *this,STMessage *message)
     local_8 = local_464;
     /* ST_CALLSITE[005EAAFC]: CALL 0x00402bbc; direct=00402BBC StartSystemTy::AddToChat */
     StartSystemTy::AddToChat(this_01,(int)local_4a4);
+
     FUN_00715360(g_int_00811764,0,'\x1b',local_4a4,0x451,1,0xffffffff);
   }
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_005eab28:
+
   Library::DKW::TBL::FUN_006b6020
             (*(DArrayTy **)(this_02->array_00BC[0xc].field_01DB + 0x686),0,&CHAR_00h_008016a0);
   iVar9 = this_02->array_00BC[0xc].field_01DB;

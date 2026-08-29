@@ -15,7 +15,7 @@ FUN_004b7d90:
 004B7DB5  68 CB 03 00 00            PUSH 0x3cb
 004B7DBA  6A 03                     PUSH 0x3
 004B7DBC  8B CE                     MOV ECX,ESI
-004B7DBE  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]
+004B7DBE  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]  ; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4
 004B7DC4  8B C7                     MOV EAX,EDI
 004B7DC6  5F                        POP EDI
 LAB_004b7dc7:

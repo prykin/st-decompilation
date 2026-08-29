@@ -34,33 +34,34 @@ st::fn_006308F0
 {
   byte bVar1;
   byte *pbVar2;
-  STManRuinC_field_0038DArray *pSVar3;
+  STManRuinC_field_0038DArray *array;
+  DArrayTy *pSVar3_mg0;
+  int iVar3;
   int iVar4;
-  int iVar5;
   uint index;
-  short *psVar6;
+  short *psVar5;
   short local_20;
   short local_1e;
   short local_1c;
-  undefined2 local_1a;
-  undefined4 local_18;
+  ushort local_1a;
+  uint local_18;
   uint local_14;
   int local_c;
   int local_8;
 
   index = 0xffffffff;
-  iVar5 = (g_worldGrid.sizeX * param_3 + param_2) * (int)g_worldGrid.sizeY + param_1;
+  iVar4 = (g_worldGrid.sizeX * param_3 + param_2) * (int)g_worldGrid.sizeY + param_1;
   local_8 = 0;
   if (param_4 == 1) {
-    bVar1 = this->field_0034[iVar5];
+    bVar1 = this->field_0034[iVar4];
   }
   else {
     pbVar2 = this->field_0034;
-    local_8 = g_worldGrid.sizeY + iVar5;
-    if (pbVar2[iVar5] != 0) {
+    local_8 = g_worldGrid.sizeY + iVar4;
+    if (pbVar2[iVar4] != 0) {
       return 0xffffffff;
     }
-    if (pbVar2[iVar5 + 1] != 0) {
+    if (pbVar2[iVar4 + 1] != 0) {
       return 0xffffffff;
     }
     if (pbVar2[local_8] != 0) {
@@ -70,17 +71,17 @@ st::fn_006308F0
   }
   if (bVar1 == 0) {
     if (this->field_0038 == nullptr) {
-      pSVar3 = (STManRuinC_field_0038DArray *)
-               st::fn_006AE290(nullptr,10,0x75,10);
-      this->field_0038 = pSVar3;
+      /* ST_CALLSITE[0063097E]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STManRuinC_field_0038DArray; source view only; no Ghidra override */
+      pSVar3_mg0 = st::fn_006AE290(nullptr,10,0x75,10);
+      this->field_0038 = reinterpret_cast<STManRuinC_field_0038DArray *>(pSVar3_mg0);
     }
-    pSVar3 = this->field_0038;
-    if ((pSVar3 != nullptr) && (pSVar3->count < 0xfe)) {
-      psVar6 = &local_20;
-      for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-        psVar6[0] = 0;
-        psVar6[1] = 0;
-        psVar6 = psVar6 + 2;
+    array = this->field_0038;
+    if ((array != nullptr) && (array->count < 0xfe)) {
+      psVar5 = &local_20;
+      for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+        psVar5[0] = 0;
+        psVar5[1] = 0;
+        psVar5 = psVar5 + 2;
       }
       local_1a = (undefined2)param_4;
       local_18 = param_5;
@@ -89,21 +90,24 @@ st::fn_006308F0
       local_1c = (short)param_3;
       local_1e = (short)param_2;
       local_c = param_6;
-      index = st::fn_006AE1C0((DArrayTy *)pSVar3,&local_20);
+
+      index = st::fn_006AE1C0(reinterpret_cast<DArrayTy *>(array),&local_20);
       if (-1 < (int)index) {
         if (param_4 == 1) {
-          this->field_0034[iVar5] = 1;
+          this->field_0034[iVar4] = 1;
         }
         else {
-          this->field_0034[iVar5] = 1;
-          this->field_0034[iVar5 + 1] = 1;
+          this->field_0034[iVar4] = 1;
+          this->field_0034[iVar4 + 1] = 1;
           this->field_0034[local_8] = 1;
           this->field_0034[local_8 + 1] = 1;
         }
-        iVar5 = st::fn_00403B25(this,index,(short)param_1,(short)param_2,(short)param_3,param_4,
+
+        iVar4 = st::fn_00403B25(this,index,(short)param_1,(short)param_2,(short)param_3,param_4,
                                    param_5,param_6);
-        if (iVar5 == 0) {
-          st::fn_006B0C70((DArrayTy *)this->field_0038,index);
+        if (iVar4 == 0) {
+
+          st::fn_006B0C70(reinterpret_cast<DArrayTy *>(this->field_0038),index);
           index = 0xffffffff;
         }
       }
@@ -140,7 +144,7 @@ undefined4 __thiscall st::fn_00630AC0(STManRuinC *this,uint param_1)
   iVar5 = ((int)psVar3[2] * (int)g_worldGrid.sizeX + (int)psVar3[1]) * (int)g_worldGrid.sizeY +
           (int)*psVar3;
   iVar1 = g_worldGrid.sizeY + iVar5;
-  iVar4 = st::fn_006B0C70((DArrayTy *)array,param_1);
+  iVar4 = st::fn_006B0C70(reinterpret_cast<DArrayTy *>(array),param_1);
   if (iVar4 != 0) {
     return 0;
   }
@@ -266,7 +270,7 @@ st::fn_00630C50
                            ,0);
     }
     if (param_2 == 4) {
-      local_14 = st::machine_word_boundary_cast<int>(pSVar2->field_0054 + 100);
+      local_14 = pSVar2->field_0054 + 100;
       local_c = st::fn_006E9000
                           (g_sT3DSMAPContext_00807598,*STField<undefined4 *>(puVar3,0x21),0x78,
                            0x56,(float)local_14 * _DAT_007904f8 * _DAT_007904f0,
@@ -301,8 +305,8 @@ st::fn_00630C50
     iVar5 = pSVar2->field_0054;
   }
   else {
-    iVar4 = st::machine_word_boundary_cast<int>(pSVar2->field_0058 + 100);
-    iVar5 = st::machine_word_boundary_cast<int>(pSVar2->field_0054 + 100);
+    iVar4 = pSVar2->field_0058 + 100;
+    iVar5 = pSVar2->field_0054 + 100;
     local_14 = iVar5;
   }
   st::fn_006EA960
@@ -331,20 +335,19 @@ void __thiscall st::fn_00631010(STManRuinC *this)
   short *psVar3;
   STManRuinC_field_0038Element *element_0038;
   ushort *puVar4;
-  uint uVar5;
-  int iVar6;
-  short *psVar7;
+  int iVar5;
+  short *psVar6;
   short local_20;
   short local_1e;
   short local_1c;
   short local_1a;
-  undefined4 local_18;
+  uint local_18;
   int local_c;
   uint local_8;
 
   pSVar1 = this->field_0038;
   if (pSVar1 != nullptr) {
-    local_8 = st::machine_word_boundary_cast<uint>(pSVar1->count - 1);
+    local_8 = pSVar1->count - 1;
     if (-1 < (int)local_8) {
       if (local_8 < pSVar1->count) {
         element_0038 = DArrayAt<STManRuinC_field_0038Element>(pSVar1, local_8);
@@ -354,22 +357,23 @@ void __thiscall st::fn_00631010(STManRuinC *this)
       }
       if (element_0038->field_000C + 0x2eeU < g_playSystem_00802A38->field_00E4) {
         piVar2 = st::pointer_boundary_cast<int *>(element_0038->field_0010);
-        psVar7 = &local_20;
-        for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
-          *(undefined4 *)psVar7 = *(undefined4 *)element_0038;
+        psVar6 = &local_20;
+        for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
+          *(undefined4 *)psVar6 = *(undefined4 *)element_0038;
           psVar3 = psVar3 + 2;
-          psVar7 = psVar7 + 2;
+          psVar6 = psVar6 + 2;
         }
         st::fn_006E91D0(g_sT3DSMAPContext_00807598,piVar2);
         /* ST_CALLSITE[00631084]: CALL 0x0040461a; direct=0040461A STManRuinC::sub_00630AC0 */
-        iVar6 = st::fn_0040461A(this,local_8);
-        if (iVar6 != 0) {
+        iVar5 = st::fn_0040461A(this,local_8);
+        if (iVar5 != 0) {
           /* ST_CALLSITE[006310B0]: CALL 0x00401d57; direct=00401D57 STManRuinC::sub_00630BB0 */
           st::fn_00401D57(this,local_20,local_1e,local_1c,local_18,(int)local_1a,local_c);
           this->field_0044 = 1;
-          iVar6 = st::fn_004050A6();
-          this->field_0048 = iVar6;
-          if (iVar6 < 1) {
+
+          iVar5 = st::fn_004050A6();
+          this->field_0048 = iVar5;
+          if (iVar5 < 1) {
             this->field_0044 = 1;
           }
           else {
@@ -380,8 +384,8 @@ void __thiscall st::fn_00631010(STManRuinC *this)
             }
           }
           /* ST_CALLSITE[00631106]: CALL 0x00405eca; direct=00405ECA STManRuinC::sub_00631880 */
-          uVar5 = st::fn_00405ECA(this,&this->field_0040,this->field_0061);
-          if (((uVar5 == 0) && (this->field_0048 != 0)) && (this->field_0061 != 0)) {
+          iVar5 = st::fn_00405ECA(this,&this->field_0040,this->field_0061);
+          if (((iVar5 == 0) && (this->field_0048 != 0)) && (this->field_0061 != 0)) {
             st::fn_006E8BA0(g_sT3DSMAPContext_00807598,this->field_0061);
           }
           this->field_0061 = 0xffffffff;
@@ -449,7 +453,7 @@ void __thiscall st::fn_00631220(STManRuinC *this,int *param_1)
   local_8 = 0;
   local_10 = 0x55;
   if (pSVar1 != nullptr) {
-    iVar2 = st::machine_word_boundary_cast<int>(pSVar1->count * pSVar1->elementSize);
+    iVar2 = pSVar1->count * pSVar1->elementSize;
     local_8 = iVar2 + 0x20;
     local_10 = iVar2 + 0x75;
   }
@@ -468,22 +472,22 @@ void __thiscall st::fn_00631220(STManRuinC *this,int *param_1)
     puVar6 = nullptr;
   }
   else {
-    puVar6 = (byte *)(&this->field_001C);
+    puVar6 = reinterpret_cast<byte *>((&this->field_001C));
   }
-  puVar8 = (byte *)(puVar3);
+  puVar8 = reinterpret_cast<byte *>((puVar3));
   for (iVar2 = 0x15; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar8 = *puVar6;
-    puVar6 = (byte *)(puVar6 + 1);
-    puVar8 = (byte *)(puVar8 + 1);
+    puVar6 = reinterpret_cast<byte *>((puVar6 + 1));
+    puVar8 = reinterpret_cast<byte *>((puVar8 + 1));
   }
   *(undefined1 *)puVar8 = *(undefined1 *)puVar6;
   this->field_0061 = 0xffffffff;
   if (this->field_0038 != nullptr) {
-    local_14 = st::pointer_boundary_cast<undefined4 *>(st::fn_006B0020(&this->field_0038->flags,(int *)&local_8));
+    local_14 = (undefined4 *)st::fn_006B0020(&this->field_0038->flags,reinterpret_cast<int *>(&local_8));
     STField<uint>(puVar3,0x55) = local_8;
     local_c = (byte *)((int)puVar3 + 0x59);
-    puVar6 = (byte *)(local_14);
-    puVar8 = (byte *)local_c;
+    puVar6 = reinterpret_cast<byte *>((local_14));
+    puVar8 = reinterpret_cast<byte *>(local_c);
     memmove(puVar8, puVar6, local_8); /* compiler REP MOVS byte copy */
     if (local_14 != nullptr) {
       st::fn_006AB060(&local_14);
@@ -514,37 +518,39 @@ void __thiscall st::fn_00631220(STManRuinC *this,int *param_1)
 uint __thiscall st::fn_00631390(STManRuinC *this,undefined4 *param_1)
 
 {
-  STManRuinC_field_0038DArray *pSVar1;
-  byte *pbVar2;
-  uint uVar5;
-  byte *puVar6;
-  byte *pbVar7;
-  byte *puVar8;
+  DArrayTy *pSVar1;
+  byte *pbVar1;
+  uint uVar4;
+  byte *puVar5;
+  byte *pbVar6;
+  byte *puVar7;
 
   if (this == nullptr) {
-    puVar8 = nullptr;
+    puVar7 = nullptr;
   }
   else {
-    puVar8 = (byte *)(&this->field_001C);
+    puVar7 = reinterpret_cast<byte *>((&this->field_001C));
   }
-  puVar6 = (byte *)(param_1);
-  memmove(puVar8, puVar6, 0x55); /* compiler REP MOVS byte copy */
-  pbVar7 = (byte *)((int)param_1 + 0x55);
+  puVar5 = reinterpret_cast<byte *>((param_1));
+  memmove(puVar7, puVar5, 0x55); /* compiler REP MOVS byte copy */
+  pbVar6 = (byte *)((int)param_1 + 0x55);
   this->field_003C = nullptr;
   this->field_0061 = 0xffffffff;
   if (this->field_0038 != nullptr) {
-    pSVar1 = (STManRuinC_field_0038DArray *)st::fn_006B0060(nullptr,(uint *)((int)param_1 + 0x59));
-    this->field_0038 = pSVar1;
-    pbVar7 = (byte *)((int)param_1 + 0x59 + *(int *)pbVar7);
+    /* ST_CALLSITE[006313D0]: CALL 0x006b0060; direct=006B0060 FUN_006b0060; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STManRuinC_field_0038DArray; source view only; no Ghidra override */
+    pSVar1 = st::fn_006B0060(nullptr,(uint *)((int)param_1 + 0x59));
+    this->field_0038 = reinterpret_cast<STManRuinC_field_0038DArray *>(pSVar1);
+    pbVar6 = (byte *)((int)param_1 + 0x59 + *(int *)pbVar6);
   }
   if (this->field_0034 != nullptr) {
-    pbVar2 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(this->field_0030));
-    this->field_0034 = pbVar2;
+
+    pbVar1 = (byte *)st::fn_006AAC70(this->field_0030);
+    this->field_0034 = pbVar1;
   }
   if (this->field_0034 != nullptr) {
-    uVar5 = this->field_0030;
-    pbVar2 = this->field_0034;
-    memmove(pbVar2, pbVar7, uVar5); /* compiler REP MOVS byte copy */
+    uVar4 = this->field_0030;
+    pbVar1 = this->field_0034;
+    memmove(pbVar1, pbVar6, uVar4); /* compiler REP MOVS byte copy */
   }
   return this->field_0030;
 }
@@ -565,7 +571,7 @@ undefined4 __thiscall st::fn_00631450(STManRuinC *this)
   STManRuinC_field_0038Element *element_0038;
 
   if ((this->field_0038 != nullptr) &&
-     (index = st::machine_word_boundary_cast<uint>(this->field_0038->count - 1), -1 < (int)index)) {
+     (index = this->field_0038->count - 1, -1 < (int)index)) {
     do {
       pSVar1 = this->field_0038;
       if (index < pSVar1->count) {
@@ -581,7 +587,7 @@ undefined4 __thiscall st::fn_00631450(STManRuinC *this)
       puVar2 = st::fn_00405C9F(this,this->field_0040,this->field_004C,0,1,element_0038->field_0014);
       element_0038->field_0010 = st::machine_word_boundary_cast<undefined4>(puVar2);
       if (puVar2 == nullptr) {
-        st::fn_006B0C70((DArrayTy *)this->field_0038,index);
+        st::fn_006B0C70(reinterpret_cast<DArrayTy *>(this->field_0038),index);
       }
       index = index - 1;
     } while (-1 < (int)index);
@@ -608,7 +614,7 @@ st::fn_00631510
 {
   uint uVar1;
 
-  uVar1 = st::machine_word_boundary_cast<uint>(this->field_0071 * 0x41c64e6d + 0x3039);
+  uVar1 = this->field_0071 * 0x41c64e6d + 0x3039;
   this->field_0071 = uVar1;
   /* ST_CALLSITE[00631546]: CALL 0x00403a26; direct=00403A26 STManRuinC::sub_006308F0 */
   uVar1 = st::fn_00403A26(this,param_3,param_4,param_5,param_2,(uVar1 >> 0x10) % 3,param_6);
@@ -629,14 +635,14 @@ void __thiscall st::fn_00631560(STManRuinC *this)
     st::fn_006AB060(&this->field_0034);
   }
   if (this->field_0038 != nullptr) {
-    st::fn_006AE110((DArrayTy *)this->field_0038);
+    st::fn_006AE110(reinterpret_cast<DArrayTy *>(this->field_0038));
     this->field_0038 = nullptr;
   }
   if (-1 < (int)this->field_0061) {
     st::fn_006E8BA0(g_sT3DSMAPContext_00807598,this->field_0061);
   }
   if (this->field_003C != nullptr) {
-    st::fn_006AE110((DArrayTy *)this->field_003C);
+    st::fn_006AE110(reinterpret_cast<DArrayTy *>(this->field_003C));
     this->field_003C = nullptr;
   }
   return;
@@ -647,37 +653,40 @@ void __thiscall st::fn_00631560(STManRuinC *this)
 /* [STMethodOwnerApplier] Structural method owner recovered as STManRuinC.
    Evidence: this_call_owners=[STManRuinC]; agreed_this_calls=1; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00631010 @ 00631106 -> read as EAX on
+   every CFG path | 006315D0 @ 006317BB -> read as EAX on every CFG path */
 
-uint __thiscall st::fn_00631880(STManRuinC *this,undefined4 *param_1,undefined4 param_2)
+int __thiscall st::fn_00631880(STManRuinC *this,undefined4 *param_1,undefined4 param_2)
 
 {
-  uint uVar1;
-  STManRuinC_field_003CDArray *pSVar2;
-  byte *puVar4;
-  undefined4 local_2c [8];
-  undefined4 local_b;
-
-  uVar1 = 0xffffffff;
+  int iVar1;
+  DArrayTy *pSVar2;
+  byte *puVar2;
+  uint local_2c [8];
+  uint local_b;
+  iVar1 = -1;
   if (param_1 != nullptr) {
-    puVar4 = (byte *)(local_2c);
-    memmove(puVar4, param_1, 0x21); /* compiler REP MOVS byte copy */
+    puVar2 = reinterpret_cast<byte *>((local_2c));
+    memmove(puVar2, param_1, 0x21); /* compiler REP MOVS byte copy */
     local_b = param_2;
     if (this->field_003C == nullptr) {
-      pSVar2 = (STManRuinC_field_003CDArray *)
-               st::fn_006AE290(nullptr,10,0x25,10);
-      this->field_003C = pSVar2;
+      /* ST_CALLSITE[006318B6]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STManRuinC_field_003CDArray; source view only; no Ghidra override */
+      pSVar2 = st::fn_006AE290(nullptr,10,0x25,10);
+      this->field_003C = reinterpret_cast<STManRuinC_field_003CDArray *>(pSVar2);
     }
     if (this->field_003C == nullptr) {
-      uVar1 = 0xffffffff;
+      iVar1 = -1;
     }
     else {
-      uVar1 = st::fn_006AE1C0((DArrayTy *)this->field_003C,local_2c);
-      if (-1 < (int)uVar1) {
-        return uVar1 + 1;
+
+      iVar1 = st::fn_006AE1C0(reinterpret_cast<DArrayTy *>(this->field_003C),local_2c);
+      if (-1 < iVar1) {
+        return iVar1 + 1;
       }
     }
   }
-  return uVar1;
+  return iVar1;
 }
-

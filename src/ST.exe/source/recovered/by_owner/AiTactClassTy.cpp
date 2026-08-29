@@ -39,15 +39,15 @@ AiTactClassTy * __thiscall st::fn_0068DC00(AiTactClassTy *this)
 void __thiscall st::fn_0068E010(AiTactClassTy *this)
 
 {
-  AnonShape_00691480_E757992C *pAVar1;
+  RecoveredRecordView_00691480_8BF19534 *pRVar1;
 
   if (this == nullptr) {
-    pAVar1 = nullptr;
+    pRVar1 = nullptr;
   }
   else {
-    pAVar1 = (AnonShape_00691480_E757992C *)&this->field_0020;
+    pRVar1 = reinterpret_cast<RecoveredRecordView_00691480_8BF19534 *>(&this->field_0020);
   }
-  st::fn_00402202(pAVar1);
+  st::fn_00402202(pRVar1);
   if (this->field_0130 != nullptr) {
     st::fn_006AB060(&this->field_0130);
   }
@@ -148,7 +148,7 @@ int __thiscall st::fn_0068E610(AiTactClassTy *this,int param_1)
 
 {
   AiTactClassTy_field_00A5Element *element_00a5;
-  uint uVar2;
+  int iVar2;
   AiTactClassTy_field_00A5DArray *pAVar3;
   int iVar4;
   uint uVar5;
@@ -166,10 +166,10 @@ int __thiscall st::fn_0068E610(AiTactClassTy *this,int param_1)
       else {
         element_00a5 = nullptr;
       }
-      if ((AnonReceiver_0065DA50 *)element_00a5->field_0004 != 0) {
-        uVar2 = st::fn_00404A20
-                          ((AnonReceiver_0065DA50 *)element_00a5->field_0004,param_1,-1);
-        iVar4 = iVar4 + uVar2;
+      if ((RecoveredReceiver_0065DA50 *)element_00a5->field_0004 != 0) {
+
+        iVar2 = st::fn_00404A20((RecoveredReceiver_0065DA50 *)element_00a5->field_0004,param_1,-1);
+        iVar4 = iVar4 + iVar2;
       }
       pAVar3 = this->field_00A5;
       uVar5 = uVar5 + 1;
@@ -181,18 +181,19 @@ int __thiscall st::fn_0068E610(AiTactClassTy *this,int param_1)
 
 // 0068E730 AiTactClassTy::FUN_0068e730
 #line 4 "decomp/ST.exe/functions/0068E730/decomp.c"
-undefined4 __thiscall st::fn_0068E730(AiTactClassTy *this,int param_1)
+undefined4 __thiscall
+st::fn_0068E730(AiTactClassTy *this,RecoveredRecordView_0065D590_F2A3738B *param_1)
 
 {
   AiTactClassTy_field_00A5DArray *pAVar1;
   uint uVar2;
   AiTactClassTy_field_00A5Element *element_00a5;
 
-  if (param_1 == 0) {
+  if (param_1 == nullptr) {
     return 0xfffffffc;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar2 = st::fn_00402BEE(this,*(int *)(param_1 + 0x18));
+
+  uVar2 = st::fn_00402BEE(this,*(int *)&param_1->field_0x18);
   if ((int)uVar2 < 0) {
     return 0xfffffffc;
   }
@@ -206,8 +207,7 @@ undefined4 __thiscall st::fn_0068E730(AiTactClassTy *this,int param_1)
   element_00a5->field_0004 = 0;
   element_00a5->field_0000 = 0;
   /* ST_CALLSITE[0068E78F]: CALL 0x00405957; direct=00405957 AiTactClassTy::BackFromRepair */
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  st::fn_00405957(this,*(short *)(param_1 + 0x7d));
+  st::fn_00405957(this,*(short *)&param_1->field_0x7d);
   st::fn_00404F2A(param_1);
   return 0;
 }
@@ -307,10 +307,10 @@ void __thiscall st::fn_00690A40(AiTactClassTy *this)
 {
   uint uVar1;
 
-  uVar1 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
+  uVar1 = this->field_001C * 0x41c64e6d + 0x3039;
   this->field_001C = uVar1;
   this->field_0089 = (uVar1 >> 0x10 & 7) + 8;
-  uVar1 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
+  uVar1 = this->field_001C * 0x41c64e6d + 0x3039;
   this->field_001C = uVar1;
   this->field_0091 = (uVar1 >> 0x10 & 7) + 8;
   return;
@@ -342,4 +342,3 @@ void __thiscall st::fn_00690AB0(AiTactClassTy *this)
   }
   return;
 }
-

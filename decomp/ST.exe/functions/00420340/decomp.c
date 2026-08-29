@@ -251,6 +251,7 @@ switchD_00420436_caseD_1:
     case 0x72:
       goto switchD_00420436_caseD_7;
     default:
+
       iVar7 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0xc45,0,0,"%s",
                                  "STSprGameObjC::LoadActFrame 2 unknown object type");
       if (iVar7 == 0) {
@@ -435,7 +436,9 @@ LAB_00420678:
       STT3DSprC::StopShow((STT3DSprC *)this_00,0xf);
       /* ST_CALLSITE[004207D5]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)this_00,0);
+
       thunk_FUN_004abce0(this_00,0,0,0,'\0');
+
       thunk_FUN_004abce0(this_00,0xf,0x14,0x14,'\0');
       /* ST_CALLSITE[00420809]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow((STT3DSprC *)this_00,0,g_playSystem_00802A38->field_00E4);
@@ -443,7 +446,9 @@ LAB_00420678:
       STT3DSprC::StartShow((STT3DSprC *)this_00,0xf,g_playSystem_00802A38->field_00E4);
       return;
     }
+
     thunk_FUN_004abce0(this_00,0,0,0x13,'\0');
+
     thunk_FUN_004abce0(this_00,0xf,0x14,0x27,'\0');
     thunk_FUN_004acd60(this_00,'\0',g_playSystem_00802A38->field_00E4 & 1);
     thunk_FUN_004acd60(this_00,'\x0f',g_playSystem_00802A38->field_00E4 & 1);
@@ -462,6 +467,7 @@ LAB_00420678:
   case 0xbd:
     goto switchD_00420436_caseD_1;
   default:
+
     local_EAX_1282 =
          ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0xbc0,0,0,"%s",
                             "STSprGameObjC::LoadActFrame 1 unknown object type");

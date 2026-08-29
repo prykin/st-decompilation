@@ -1,4 +1,4 @@
-FUN_005fccb0:
+STContainerC::vfunc_70:
 005FCCB0  55                        PUSH EBP
 005FCCB1  8B EC                     MOV EBP,ESP
 005FCCB3  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]

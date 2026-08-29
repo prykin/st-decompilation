@@ -14,7 +14,8 @@ STArtiafactC * __cdecl CreateSTArtiafact(void)
 {
   STArtiafactC *this;
 
-  this = (STArtiafactC *)FUN_006b04d0(0x477);
+  /* ST_CALLSITE[005EBC76]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STSprGameObjC; source view only; no Ghidra override */
+  this = STPointerBoundaryCast<STArtiafactC *>(FUN_006b04d0(0x477));
   if (this != nullptr) {
     /* ST_CALLSITE[005EBC83]: CALL 0x00401807; direct=00401807 STSprGameObjC::STSprGameObjC */
     STSprGameObjC::STSprGameObjC((STSprGameObjC *)this);

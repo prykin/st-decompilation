@@ -8,7 +8,8 @@ FUN_0065e3b0:
 0065E3B7  33 FF                     XOR EDI,EDI
 0065E3B9  8B D9                     MOV EBX,ECX
 0065E3BB  89 7D FC                  MOV dword ptr [EBP + -0x4],EDI
-0065E3BE  E8 0C 35 DA FF            CALL 0x004018cf
+FUN_0065e3b0::override::prt_65e3be_a0e5684e:
+0065E3BE  E8 0C 35 DA FF            CALL 0x004018cf  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__fastcall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/AiFltClassTy;/undefined4
 0065E3C3  8B F0                     MOV ESI,EAX
 0065E3C5  85 F6                     TEST ESI,ESI
 0065E3C7  74 58                     JZ 0x0065e421

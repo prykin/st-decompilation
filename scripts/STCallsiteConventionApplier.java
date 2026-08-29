@@ -39,6 +39,7 @@ public class STCallsiteConventionApplier extends GhidraScript {
             "current_calling_convention", "signature_source", "calls",
             "ecx_pointer_setup", "caller_cleanup_calls", "caller_cleanup_bytes",
             "callee_ret_pop_bytes", "expected_stack_bytes",
+            "incoming_ecx_used", "exact_stack_argument_calls",
             "classification", "suggested_calling_convention", "confidence", "reason");
         int transaction = currentProgram.startTransaction("Apply callsite conventions");
         boolean commit = false;
@@ -70,23 +71,35 @@ public class STCallsiteConventionApplier extends GhidraScript {
             Function function = address == null ? null :
                 currentProgram.getFunctionManager().getFunctionAt(address);
             if (function == null) throw new IllegalArgumentException("function missing");
-            boolean exactRule = "static_cdecl_candidate".equals(row.get("classification")) &&
-                "__cdecl".equals(row.get("suggested_calling_convention")) &&
+            int calls = Integer.parseInt(row.get("calls"));
+            int expected = Integer.parseInt(row.get("expected_stack_bytes"));
+            int exactStackCalls = Integer.parseInt(row.get("exact_stack_argument_calls"));
+            String proposed = row.get("suggested_calling_convention");
+            boolean cdeclRule = "static_cdecl_candidate".equals(row.get("classification")) &&
+                "__cdecl".equals(proposed) &&
                 "high".equals(row.get("confidence")) &&
-                Integer.parseInt(row.get("calls")) >= 2 &&
+                calls >= 2 && exactStackCalls == calls &&
+                "0".equals(row.get("incoming_ecx_used")) &&
                 "0".equals(row.get("ecx_pointer_setup")) &&
                 Integer.parseInt(row.get("caller_cleanup_calls")) ==
-                    Integer.parseInt(row.get("calls")) &&
-                exactCleanup(row.get("caller_cleanup_bytes"),
-                    Integer.parseInt(row.get("expected_stack_bytes"))) &&
+                    calls &&
+                exactCleanup(row.get("caller_cleanup_bytes"), expected) &&
                 noPositive(row.get("callee_ret_pop_bytes"));
-            if (!exactRule) {
+            boolean stdcallRule =
+                "static_stdcall_candidate".equals(row.get("classification")) &&
+                "__stdcall".equals(proposed) && "high".equals(row.get("confidence")) &&
+                calls >= 2 && exactStackCalls == calls && expected > 0 &&
+                "0".equals(row.get("incoming_ecx_used")) &&
+                "0".equals(row.get("ecx_pointer_setup")) &&
+                "0".equals(row.get("caller_cleanup_calls")) &&
+                exactCleanup(row.get("callee_ret_pop_bytes"), expected);
+            if (!cdeclRule && !stdcallRule) {
                 report.add(new Report(target, "preserved",
                     "proposal no longer satisfies strict automatic rule"));
                 return;
             }
-            if ("__cdecl".equals(function.getCallingConventionName())) {
-                report.add(new Report(target, "unchanged", "already __cdecl"));
+            if (proposed.equals(function.getCallingConventionName())) {
+                report.add(new Report(target, "unchanged", "already " + proposed));
                 return;
             }
             boolean baseline = function.getName(true).equals(unt(row.get("function"))) &&
@@ -99,8 +112,9 @@ public class STCallsiteConventionApplier extends GhidraScript {
                 report.add(new Report(target, "preserved", "stale signature baseline"));
                 return;
             }
-            if (function.getSignatureSource() == SourceType.IMPORTED) {
-                report.add(new Report(target, "preserved", "IMPORTED signature"));
+            if (function.getSignatureSource() == SourceType.IMPORTED ||
+                    function.getSignatureSource() == SourceType.USER_DEFINED) {
+                report.add(new Report(target, "preserved", "manual/imported signature"));
                 return;
             }
             List<Variable> parameters = new ArrayList<>();
@@ -110,19 +124,20 @@ public class STCallsiteConventionApplier extends GhidraScript {
                     parameter.getFormalDataType(), currentProgram, SourceType.ANALYSIS));
             }
             boolean varargs = function.hasVarArgs();
-            function.updateFunction("__cdecl",
+            function.updateFunction(proposed,
                 new ReturnParameterImpl(function.getReturnType(), currentProgram),
                 parameters, FunctionUpdateType.DYNAMIC_STORAGE_FORMAL_PARAMS, true,
                 SourceType.ANALYSIS);
             function.setVarArgs(varargs);
             function.setSignatureSource(SourceType.ANALYSIS);
             if (!hasTag(function, TAG)) function.addTag(TAG);
-            String line = MARKER + " __cdecl inferred from all-caller stack cleanup. Evidence: " +
+            String line = MARKER + " " + proposed +
+                " inferred from complete caller/callee stack and ECX dataflow. Evidence: " +
                 unt(row.get("reason"));
             String old = function.getComment();
             if (old == null || old.isBlank()) function.setComment(line);
             else if (!old.contains(MARKER)) function.setComment(old + "\n\n" + line);
-            report.add(new Report(target, "applied", "__thiscall -> __cdecl"));
+            report.add(new Report(target, "applied", "__thiscall -> " + proposed));
         }
         catch (Exception exception) {
             report.add(new Report(target, "conflict", message(exception)));

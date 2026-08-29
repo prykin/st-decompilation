@@ -1,15 +1,19 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __cdecl FUN_00719bb0(MCIDEVICEID *param_1)
+/* [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=2, ignored=0,
+   unknown=0 */
+
+int __cdecl FUN_00719bb0(MCIDEVICEID *param_1)
 
 {
   MCIDEVICEID MVar1;
-  undefined4 local_14;
+  uint local_14;
   int local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_c;
+  uint local_8;
   if (*param_1 != 0) {
     local_14 = 0;
     local_10 = 0;

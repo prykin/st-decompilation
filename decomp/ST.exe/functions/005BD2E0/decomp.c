@@ -17,8 +17,10 @@ PrividerTy * __cdecl CreatePrivider(void)
   uint *puVar5;
   int local_8;
 
-  this = (PrividerTy *)FUN_006b04d0(0x1c9e);
+
+  this = STPointerBoundaryCast<PrividerTy *>(FUN_006b04d0(0x1c9e));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->vtable = (PrividerTyVTable *)&VTable_0079C018;
     this->field_0018 = 0;

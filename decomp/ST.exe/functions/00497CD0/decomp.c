@@ -17,8 +17,7 @@ STGroupBoatC::InitWay(STGroupBoatC *this,DArrayTy *param_1,int param_2,int param
   uint index;
   InternalExceptionFrame local_50;
   STGroupBoatC *local_c;
-  undefined1 local_8 [4];
-
+  byte local_8 [4];
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;

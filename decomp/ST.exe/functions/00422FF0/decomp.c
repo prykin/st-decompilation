@@ -4,14 +4,16 @@
 void __thiscall FUN_00422ff0(void *this,byte param_1)
 
 {
-  STGameObjC *objPtr;
+  STGameObjC *this_00;
   int iVar1;
 
   /* ST_CALLSITE[00422FF9]: CALL dword ptr [EAX + 0x4] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  objPtr = (STGameObjC *)(**(code **)(*(int *)this + 4))();
-  if (((STField<int>(this,0x20) == 0x14) && (iVar1 = thunk_FUN_0045ff10(objPtr), iVar1 == 0x14))
-     && (objPtr->field_05C0 == 3)) {
+  this_00 = (STGameObjC *)(**(code **)(*(int *)this + 4))();
+  if (((STField<int>(this,0x20) == 0x14) &&
+      /* ST_CALLSITE[00423008]: CALL 0x00402edc; direct=00402EDC STGameObjC::sub_0045FF10 */
+      (iVar1 = STGameObjC::sub_0045FF10(this_00), iVar1 == 0x14)) && (this_00->field_05C0 == CASE_3)
+     ) {
     return;
   }
   if (((param_1 & 1) != 0) && ((STField<uint>(this,0x1d1) & 1) != 0)) {

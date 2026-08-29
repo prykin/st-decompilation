@@ -14,7 +14,8 @@ FUN_006a2ed0:
 006A2EF0  C6 45 F8 E8               MOV byte ptr [EBP + -0x8],0xe8
 006A2EF4  C6 45 F9 EA               MOV byte ptr [EBP + -0x7],0xea
 006A2EF8  89 7D FC                  MOV dword ptr [EBP + -0x4],EDI
-006A2EFB  E8 D0 D5 00 00            CALL 0x006b04d0
+FUN_006a2ed0::override::prt_6a2efb_c759b330:
+006A2EFB  E8 D0 D5 00 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F;/uint
 006A2F00  3B C7                     CMP EAX,EDI
 006A2F02  0F 84 15 03 00 00         JZ 0x006a321d
 006A2F08  8B C8                     MOV ECX,EAX
@@ -150,7 +151,8 @@ LAB_006a3068:
 006A30AE  6A 08                     PUSH 0x8
 006A30B0  68 8B 00 00 00            PUSH 0x8b
 006A30B5  68 8B 00 00 00            PUSH 0x8b
-006A30BA  E8 01 20 01 00            CALL 0x006b50c0
+FUN_006a2ed0::override::prt_6a30ba_14f2e6ea:
+006A30BA  E8 01 20 01 00            CALL 0x006b50c0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006B4FA0_DAC3A217; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006B4FA0_DAC3A217;/int;/int;/int;/uint;pointer:/undefined4;/int
 006A30BF  8B F0                     MOV ESI,EAX
 006A30C1  8B 5E 14                  MOV EBX,dword ptr [ESI + 0x14]
 006A30C4  85 DB                     TEST EBX,EBX

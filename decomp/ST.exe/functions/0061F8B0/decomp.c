@@ -31,6 +31,7 @@ SndUnderAttMenegC::sub_0061F8B0(SndUnderAttMenegC *this,int param_1,int param_2,
         (((g_sT3DSMAPContext_00807598->field_0058 < param_1 + -1 ||
           (param_2 + 1 < g_sT3DSMAPContext_00807598->field_0044)) ||
          (g_sT3DSMAPContext_00807598->field_0054 < param_2 + -1)))) ||
+
        (iVar1 = FUN_006ddbd0(), iVar1 == 0)))) &&
      /* ST_CALLSITE[0061F933]: CALL 0x00402b8f; direct=00402B8F SndUnderAttMenegC::sub_0061FA40 */
      (((uVar2 = sub_0061FA40(this,local_8,param_1,param_2), (int)uVar2 < 0 &&

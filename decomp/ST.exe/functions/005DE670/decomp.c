@@ -7,7 +7,7 @@
    (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
+void __fastcall FUN_005de670(RecoveredRecordView_005DE670_1BE39CFA *param_1)
 
 {
   byte bVar1;
@@ -48,6 +48,7 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
   }
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
@@ -111,6 +112,7 @@ void __fastcall FUN_005de670(AnonShape_005DE670_0D4D7A8C *param_1)
     RaiseInternalException
               (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Start\\startsys.cpp",0x41c);
   }
+
   local_c = Library::DKW::LIB::MemAlloc(pAVar2->field_06AE + local_18 + pAVar2->field_06B2);
   if (local_c == nullptr) {
     RaiseInternalException

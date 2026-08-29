@@ -3,15 +3,30 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
-   ProdPanelTy::SetPanel */
+   ProdPanelTy::SetPanel
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (4), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=004F0210 @ 004F0323 -> killed on
+   every CFG path | 004F1080 @ 004F1203 -> killed on every CFG path | 004F9ED0 @ 004F9F95 ->
+   unknown: CFG scan limit | 004F9ED0 @ 004F9FA6 -> unknown: CFG scan limit | 004F9ED0 @ 004F9FB7 ->
+   killed on every CFG path | 004F9ED0 @ 004F9FC8 -> killed on every CFG path | 004F9ED0 @ 004FA180
+   -> unknown: CFG scan limit | 004F9ED0 @ 004FA191 -> unknown: CFG scan limit | 004F9ED0 @ 004FA1A2
+   -> unknown: CFG scan limit | 004F9ED0 @ 004FA1B3 -> unknown: terminal before explicit accumulator
+   kill | 004FF380 @ 004FF439 -> killed on every CFG path | 004FF380 @ 004FF4BE -> killed on every
+   CFG path | 004FF380 @ 004FF76C -> killed on every CFG path | 004FFE90 @ 004FFF17 -> killed on
+   every CFG path | 004FFE90 @ 004FFF28 -> killed on every CFG path | 004FFE90 @ 004FFF5D -> killed
+   on every CFG path | 004FFE90 @ 004FFF9E -> killed on every CFG path | 004FFE90 @ 004FFFAF ->
+   killed on every CFG path | 004FFE90 @ 004FFFE4 -> killed on every CFG path | 004FFE90 @ 00500032
+   -> killed on every CFG path | 004FFE90 @ 00500043 -> killed on every CFG path | 004FFE90 @
+   00500078 -> killed on every CFG path | 00503BB0 @ 00503C60 -> killed on every CFG path | 00503BB0
+   @ 00503C71 -> killed on every CFG path */
 
-undefined4 __thiscall ProdPanelTy::SetPanel(ProdPanelTy *this,char param_1)
+int __thiscall ProdPanelTy::SetPanel(ProdPanelTy *this,char param_1)
 
 {
   ProdPanelTy *this_00;
   int iVar2;
   int iVar3;
-  uint uVar2;
   int iVar4;
   InternalExceptionFrame local_4c;
   ProdPanelTy *local_8;
@@ -22,6 +37,7 @@ undefined4 __thiscall ProdPanelTy::SetPanel(ProdPanelTy *this,char param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 == 0) {
@@ -44,6 +60,7 @@ undefined4 __thiscall ProdPanelTy::SetPanel(ProdPanelTy *this,char param_1)
     return 1;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x1eb,0,iVar2,"%s",
                              "ProdPanelTy::SetPanel");
   if (iVar3 != 0) {

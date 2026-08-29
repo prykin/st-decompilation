@@ -14,7 +14,8 @@ STContainerC * __cdecl CreateSTContainer(void)
 {
   STContainerC *this;
 
-  this = (STContainerC *)FUN_006b04d0(0x47b);
+  /* ST_CALLSITE[005FC3A6]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STSprGameObjC; source view only; no Ghidra override */
+  this = STPointerBoundaryCast<STContainerC *>(FUN_006b04d0(0x47b));
   if (this != nullptr) {
     /* ST_CALLSITE[005FC3B3]: CALL 0x00401807; direct=00401807 STSprGameObjC::STSprGameObjC */
     STSprGameObjC::STSprGameObjC((STSprGameObjC *)this);

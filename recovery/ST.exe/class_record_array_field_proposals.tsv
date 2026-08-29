@@ -66,7 +66,7 @@ apply	type_path	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	475	4	field_01DB	pointer:/StartSystemTy	1	existing exact record-array element
 1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	479	1	field_01DF	/undefined1	1	existing exact record-array element
 1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	480	1	field_01E0	/undefined1	1	existing exact record-array element
-1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	481	4	field_01E1	/undefined4	1	existing exact record-array element
+1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	481	4	field_01E1	/int	1	existing exact record-array element
 1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	485	4	field_01E5	/undefined4	1	existing exact record-array element
 1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	489	4	field_01E9	/ulong	1	existing exact record-array element
 1	/SubmarineTitans/Recovered/InlineRecordArrays/PrividerTy_Record_00BC_01FB	493	4	field_01ED	/undefined4	1	existing exact record-array element
@@ -89,11 +89,11 @@ apply	type_path	offset	size	proposed_name	proposed_type	evidence_count	reason
 1	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapMTy_Record_00BC_01FB	184	145	field_00B8	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
 1	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapMTy_Record_00BC_01FB	329	145	field_0149	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
 1	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapMTy_Record_00BC_01FB	475	4	field_01DB	pointer:/StartSystemTy	1	existing exact record-array element
-1	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapTy_Record_00BC_01FB	39	145	field_0027	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
-1	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapTy_Record_00BC_01FB	184	145	field_00B8	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
-1	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapTy_Record_00BC_01FB	329	145	field_0149	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
-1	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapTy_Record_00BC_01FB	474	1	field_01DA	/undefined1	1	existing exact record-array element
-1	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapTy_Record_00BC_01FB	475	4	field_01DB	pointer:/MMMObjTy	1	existing exact record-array element
+0	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapTy_Record_00BC_01FB	39	145	field_0027	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+0	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapTy_Record_00BC_01FB	184	145	field_00B8	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+0	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapTy_Record_00BC_01FB	329	145	field_0149	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction
+0	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapTy_Record_00BC_01FB	474	1	field_01DA	/undefined1	1	existing exact record-array element
+0	/SubmarineTitans/Recovered/InlineRecordArrays/SettMapTy_Record_00BC_01FB	475	4	field_01DB	pointer:/MMMObjTy	1	existing exact record-array element
 0	/SubmarineTitans/Recovered/InlineRecordArrays/UpgPanelTy_Record_01AB_0030	0	4	field_0000	/uint	1	existing hash-owned class member 0x1AB
 0	/SubmarineTitans/Recovered/InlineRecordArrays/UpgPanelTy_Record_01AB_0030	8	1	field_0008	/undefined1	2	existing hash-owned class member 0x1B3 | exact record-cursor machine access
 1	/SubmarineTitans/Recovered/InlineRecordArrays/WaitTy_Record_00BC_01FB	39	145	field_0027	/SpriteClassTy	2	existing exact record-array element | exact repeated typed receiver construction

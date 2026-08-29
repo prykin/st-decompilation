@@ -6,7 +6,7 @@
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
    decompilation contains no value return */
 
-void __fastcall FUN_0063e410(AnonShape_0063E410_6FBC68F2 *param_1)
+void __fastcall FUN_0063e410(RecoveredRecordView_0063E410_5373BAB1 *param_1)
 
 {
   int iVar1;
@@ -48,6 +48,7 @@ void __fastcall FUN_0063e410(AnonShape_0063E410_6FBC68F2 *param_1)
                          (float)STField<int>(iVar5,0x8) * _DAT_007904f8 * _DAT_007904f0,
                          (float)STField<int>(iVar5,0xC) * _DAT_007904f8 * _DAT_007904f0,
                          STField<float>(iVar5,0x10) + _DAT_007904fc);
+
               Library::Ourlib::ST3DSMAP::SprShow(param_1->field_0211,STField<uint>(iVar5,0x38),0);
             }
           }

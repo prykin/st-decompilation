@@ -11,7 +11,7 @@
    006B0A20 @ 005A1CAA; data at 0080759C | 005B3B00 -> 006B0A20 @ 005B3B85; data at 0080759C |
    006B0A20 -> 006B0520 @ 006B0B2C */
 
-int FUN_006b0a20(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT iStart,UINT param_4,
+int FUN_006b0a20(RecoveredGlobalRecordView_00854EB8 *param_1,int param_2,UINT iStart,UINT param_4,
                 int param_5)
 
 {
@@ -67,6 +67,7 @@ int FUN_006b0a20(AnonShape_GLOBAL_0080759C_9638EF10 *param_1,int param_2,UINT iS
       SetPaletteEntries(*(HPALETTE *)param_1,iStart,param_4,local_404);
       /* ST_CALLSITE[006B0B1D]: CALL EDI */
       SetPaletteEntries(param_1->field_04B4,iStart,param_4,local_404);
+
       iVar2_mg1 = FUN_006b0520(param_1,(int)local_404,iStart,param_4);
       if (*(undefined4 **)&param_1[1].field_0x24 != nullptr) {
         puVar7 = *(undefined4 **)&param_1[1].field_0x24;

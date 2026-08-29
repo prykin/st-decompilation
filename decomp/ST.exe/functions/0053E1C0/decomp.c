@@ -3,9 +3,14 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\specpan.cpp
-   UPanelTy::CreateTab */
+   UPanelTy::CreateTab
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (4), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=0052FB00 @ 00530B86 -> read as EAX on
+   every CFG path | 0052FB00 @ 00530BB8 -> read as EAX on every CFG path | 0052FB00 @ 00530BE4 ->
+   read as EAX on every CFG path | 0052FB00 @ 00530F57 -> read as EAX on every CFG path */
 
-undefined4 __thiscall
+int __thiscall
 UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int param_4,uint param_5,
                    uint param_6,int param_7,int param_8,undefined4 param_9,undefined4 param_10)
 
@@ -13,33 +18,33 @@ UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int par
   byte bVar2;
   int iVar3;
   int iVar5;
-  uint uVar3;
   int iVar4;
   int iVar6;
   uint *puVar7;
   uint uVar9;
   uint local_510 [280];
   InternalExceptionFrame local_b0;
-  undefined4 local_6c [4];
-  undefined4 local_5c;
-  undefined4 local_58;
-  undefined4 local_54;
-  undefined4 local_3c;
-  undefined4 local_38;
-  undefined4 local_34;
+  uint local_6c [4];
+  uint local_5c;
+  uint local_58;
+  uint local_54;
+  uint local_3c;
+  uint local_38;
+  uint local_34;
   uint *local_24;
   int local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
+  uint local_1c;
+  uint local_18;
   int local_14;
   uint local_10;
   UPanelTy *local_c;
-  undefined4 local_8;
+  int local_8;
 
   local_8 = 0;
   local_b0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b0;
   local_c = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0);
   if (iVar3 == 0) {
     memset(local_6c, 0, 0x58); /* compiler bulk-zero initialization */
@@ -85,18 +90,18 @@ UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int par
     local_1c = 1;
     local_18 = 1;
     local_3c = local_5c;
-    /* ST_CALLSITE[0053E30F]: CALL dword ptr [EDX + 0x8] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*STField<int *>(local_c,0xC) + 8))(5,&local_8,0,local_6c,0);
+    /* ST_CALLSITE[0053E30F]: CALL dword ptr [EDX + 0x8]; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
+    STStructuralVirtualCall<void>(STField<int *>(local_c,0xC), 0x8, 5, &local_8, 0, local_6c, 0);
     g_currentExceptionFrame = local_b0.previous;
     return local_8;
   }
   g_currentExceptionFrame = local_b0.previous;
+
   iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0xd1,0,iVar3,"%s",
                              "UPanelTy::CreateTab");
   if (iVar5 == 0) {
     RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\specpan.cpp",0xd1);
-    return 0xffffffff;
+    return -1;
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */
 }

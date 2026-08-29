@@ -196,7 +196,7 @@ LAB_0042b3f3:
 0042B40A  75 5D                     JNZ 0x0042b469
 0042B40C  8B 16                     MOV EDX,dword ptr [ESI]
 0042B40E  8B CE                     MOV ECX,ESI
-0042B410  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+0042B410  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0042B416  83 F8 01                  CMP EAX,0x1
 0042B419  75 4E                     JNZ 0x0042b469
 0042B41B  8B 46 20                  MOV EAX,dword ptr [ESI + 0x20]

@@ -198,7 +198,8 @@ LAB_005d8dbf:
 005D8E3D  8D 83 D4 1C 00 00         LEA EAX,[EBX + 0x1cd4]
 005D8E43  50                        PUSH EAX
 005D8E44  68 45 03 00 00            PUSH 0x345
-005D8E49  E8 72 80 11 00            CALL 0x006f0ec0
+SIDTy::PrepFiles::override::prt_5d8e49_9d92389d:
+005D8E49  E8 72 80 11 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 005D8E4E  8B F0                     MOV ESI,EAX
 005D8E50  83 C4 14                  ADD ESP,0x14
 005D8E53  85 F6                     TEST ESI,ESI

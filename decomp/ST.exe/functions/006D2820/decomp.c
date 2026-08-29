@@ -8,9 +8,9 @@
    Evidence: one script-owned pointer shape is anchored by one library source basename, multiple
    semantic function names, and exact first-argument call flow */
 
-void FUN_006d2820(byte *param_1,RecoveredSourceFamily_dibcopy *param_2,byte *param_3,int param_4,
-                 uint param_5,uint param_6,uint param_7,int param_8,byte *param_9,int param_10,
-                 uint param_11,byte *param_12)
+void FUN_006d2820(byte *param_1,RecoveredSourceFamily_dibcopy *param_2,
+                 RecoveredRecord_006D2820_5C2BCC8C *param_3,int param_4,uint param_5,uint param_6,
+                 uint param_7,int param_8,byte *param_9,int param_10,uint param_11,byte *param_12)
 
 {
   byte bVar1;
@@ -38,13 +38,12 @@ void FUN_006d2820(byte *param_1,RecoveredSourceFamily_dibcopy *param_2,byte *par
   }
   if ((int)param_5 < 1) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_12 = param_3 + (param_3[0xd] >> 1 & 0xe) + 0x16;
+    param_12 = &param_3[1].field_0x2 + ((byte)param_3->field_0xd >> 1 & 0xe);
   }
   else {
-    param_12 = FUN_006cfe10(param_3,param_5);
+    param_12 = FUN_006cfe10((RecoveredRecord_006CFE10_B59F6D2D *)param_3,param_5);
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar3 = (uint)*(short *)(param_3 + 0x12);
+  uVar3 = (uint)param_3->field_0012;
   bVar7 = (byte)param_11;
   if (param_6 == uVar3) {
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -129,7 +128,7 @@ void FUN_006d2820(byte *param_1,RecoveredSourceFamily_dibcopy *param_2,byte *par
         uVar3 = (uint)*param_12;
         param_12 = param_12 + 1;
         pbVar12_mg4 = param_1;
-        auto param_3_after_write = param_9; /* compiler stack-slot lifetime split */
+        auto param_3_after_write = (RecoveredRecord_006D2820_5C2BCC8C *)param_9; /* compiler stack-slot lifetime split */
         if (uVar3 == 0) {
           param_1 = param_1 + (int)param_2;
         }
@@ -143,10 +142,12 @@ void FUN_006d2820(byte *param_1,RecoveredSourceFamily_dibcopy *param_2,byte *par
               param_1 = pbVar12_mg4;
               if (uVar6 < 0x81) {
                 uVar6 = uVar6 & 0xff;
-                param_3_after_write = param_3_after_write + ((int)uVar3 >> 3) + 1;
+                param_3_after_write = (RecoveredRecord_006D2820_5C2BCC8C *)
+                          (&param_3_after_write->field_0x1 + ((int)uVar3 >> 3));
               }
               else {
-                param_3_after_write = param_3_after_write + ((int)uVar3 >> 3);
+                param_3_after_write = (RecoveredRecord_006D2820_5C2BCC8C *)
+                          (&param_3_after_write->field_0x0 + ((int)uVar3 >> 3));
                 uVar6 = uVar6 >> 8 & 0xff;
               }
             }
@@ -157,7 +158,7 @@ void FUN_006d2820(byte *param_1,RecoveredSourceFamily_dibcopy *param_2,byte *par
                 if (-1 < (int)(pbVar10 + -1)) {
                   do {
                     param_1 = pbVar10;
-                    if ((*param_3_after_write & (byte)uVar6) != 0) {
+                    if ((*(byte *)param_3_after_write & (byte)uVar6) != 0) {
                       *pbVar12_mg4 = *(byte *)((uint)*param_12 + param_8);
                     }
                     pbVar12_mg4 = pbVar12_mg4 + 1;
@@ -166,7 +167,7 @@ void FUN_006d2820(byte *param_1,RecoveredSourceFamily_dibcopy *param_2,byte *par
                     uVar6 = (uint)bVar2;
                     if (bVar2 == 0) {
                       uVar6 = 0x80;
-                      param_3_after_write = param_3_after_write + 1;
+                      param_3_after_write = (RecoveredRecord_006D2820_5C2BCC8C *)&param_3_after_write->field_0x1;
                     }
                     pbVar10 = param_1 + -1;
                     param_1 = pbVar12_mg4;
@@ -180,7 +181,7 @@ void FUN_006d2820(byte *param_1,RecoveredSourceFamily_dibcopy *param_2,byte *par
                 pbVar12_mg4 = param_1;
                 if (-1 < (int)(pbVar10 + -1)) {
                   do {
-                    if ((*param_3_after_write & (byte)uVar6) != 0) {
+                    if ((*(byte *)param_3_after_write & (byte)uVar6) != 0) {
                       *param_1 = bVar2;
                     }
                     pbVar12_mg4 = param_1 + 1;
@@ -188,7 +189,7 @@ void FUN_006d2820(byte *param_1,RecoveredSourceFamily_dibcopy *param_2,byte *par
                     uVar6 = (uint)bVar1;
                     if (bVar1 == 0) {
                       uVar6 = 0x80;
-                      param_3_after_write = param_3_after_write + 1;
+                      param_3_after_write = (RecoveredRecord_006D2820_5C2BCC8C *)&param_3_after_write->field_0x1;
                     }
                     pbVar10 = pbVar10 + -1;
                     param_1 = pbVar12_mg4;
@@ -210,7 +211,7 @@ void FUN_006d2820(byte *param_1,RecoveredSourceFamily_dibcopy *param_2,byte *par
     }
   }
   else {
-    auto param_3_after_write_2 = param_9; /* compiler stack-slot lifetime split */
+    auto param_3_after_write_2 = (RecoveredRecord_006D2820_5C2BCC8C *)param_9; /* compiler stack-slot lifetime split */
     if (param_8 == 0) {
       if (param_9 == nullptr) {
         FUN_006d26d0(param_1,(int)param_2,param_12,uVar3,param_4,param_6,param_7);
@@ -262,18 +263,19 @@ LAB_006d2b87:
                   param_1 = param_1 + uVar4;
                   uVar8 = ((param_7 >> 0x18) << 8) >> ((byte)uVar4 & 7);
                   if (uVar8 < 0x81) {
-                    param_3_after_write_2 = param_3_after_write_2 + 1;
+                    param_3_after_write_2 = (RecoveredRecord_006D2820_5C2BCC8C *)&param_3_after_write_2->field_0x1;
                   }
                   else {
                     uVar8 = uVar8 >> 8;
                   }
                   param_7 = uVar8 << 0x18;
-                  param_3_after_write_2 = param_3_after_write_2 + ((int)uVar4 >> 3);
+                  param_3_after_write_2 = (RecoveredRecord_006D2820_5C2BCC8C *)
+                            (&param_3_after_write_2->field_0x0 + ((int)uVar4 >> 3));
                 }
                 else if ((uVar6 & 0x40) == 0) {
                   if (-1 < (int)(uVar4 - 1)) {
                     do {
-                      if ((*param_3_after_write_2 & STPiece<3,1>(param_7)) != 0) {
+                      if ((*(byte *)param_3_after_write_2 & STPiece<3,1>(param_7)) != 0) {
                         *param_1 = *param_12;
                       }
                       param_1 = param_1 + 1;
@@ -281,7 +283,7 @@ LAB_006d2b87:
                       uVar8 = (uint)(STPiece<3,1>(param_7) >> 1);
                       if (STPiece<3,1>(param_7) >> 1 == 0) {
                         uVar8 = 0x80;
-                        param_3_after_write_2 = param_3_after_write_2 + 1;
+                        param_3_after_write_2 = (RecoveredRecord_006D2820_5C2BCC8C *)&param_3_after_write_2->field_0x1;
                       }
                       param_7 = uVar8 << 0x18;
                       uVar4 = uVar4 - 1;
@@ -293,14 +295,14 @@ LAB_006d2b87:
                   param_12 = param_12 + 1;
                   if (-1 < (int)(uVar4 - 1)) {
                     do {
-                      if ((*param_3_after_write_2 & STPiece<3,1>(param_7)) != 0) {
+                      if ((*(byte *)param_3_after_write_2 & STPiece<3,1>(param_7)) != 0) {
                         *param_1 = bVar2;
                       }
                       param_1 = param_1 + 1;
                       uVar8 = (uint)(STPiece<3,1>(param_7) >> 1);
                       if (STPiece<3,1>(param_7) >> 1 == 0) {
                         uVar8 = 0x80;
-                        param_3_after_write_2 = param_3_after_write_2 + 1;
+                        param_3_after_write_2 = (RecoveredRecord_006D2820_5C2BCC8C *)&param_3_after_write_2->field_0x1;
                       }
                       param_7 = uVar8 << 0x18;
                       uVar4 = uVar4 - 1;
@@ -330,7 +332,7 @@ LAB_006d2b87:
             else if ((uVar6 & 0x40) == 0) {
               if (-1 < (int)(uVar5 - 1)) {
                 do {
-                  if ((*param_3_after_write_2 & STPiece<3,1>(param_7)) != 0) {
+                  if ((*(byte *)param_3_after_write_2 & STPiece<3,1>(param_7)) != 0) {
                     *param_1 = *param_12;
                   }
                   param_1 = param_1 + 1;
@@ -338,7 +340,7 @@ LAB_006d2b87:
                   uVar8 = (uint)(STPiece<3,1>(param_7) >> 1);
                   if (STPiece<3,1>(param_7) >> 1 == 0) {
                     uVar8 = 0x80;
-                    param_3_after_write_2 = param_3_after_write_2 + 1;
+                    param_3_after_write_2 = (RecoveredRecord_006D2820_5C2BCC8C *)&param_3_after_write_2->field_0x1;
                   }
                   param_7 = uVar8 << 0x18;
                   uVar5 = uVar5 - 1;
@@ -350,14 +352,14 @@ LAB_006d2b87:
               param_12 = param_12 + 1;
               if (-1 < (int)(uVar5 - 1)) {
                 do {
-                  if ((*param_3_after_write_2 & STPiece<3,1>(param_7)) != 0) {
+                  if ((*(byte *)param_3_after_write_2 & STPiece<3,1>(param_7)) != 0) {
                     *param_1 = bVar1;
                   }
                   param_1 = param_1 + 1;
                   uVar8 = (uint)(STPiece<3,1>(param_7) >> 1);
                   if (STPiece<3,1>(param_7) >> 1 == 0) {
                     uVar8 = 0x80;
-                    param_3_after_write_2 = param_3_after_write_2 + 1;
+                    param_3_after_write_2 = (RecoveredRecord_006D2820_5C2BCC8C *)&param_3_after_write_2->field_0x1;
                   }
                   param_7 = uVar8 << 0x18;
                   uVar5 = uVar5 - 1;
@@ -385,11 +387,11 @@ LAB_006d2b87:
               param_12 = param_12 + iVar11;
             }
             param_1 = param_1 + ((int)param_2 - param_6);
-            param_3_after_write_2 = param_9;
+            param_3_after_write_2 = (RecoveredRecord_006D2820_5C2BCC8C *)param_9;
           }
           if (param_3_after_write_2 != nullptr) {
-            param_3_after_write_2 = param_3_after_write_2 + param_10;
-            param_9 = param_3_after_write_2;
+            param_3_after_write_2 = (RecoveredRecord_006D2820_5C2BCC8C *)(&param_3_after_write_2->field_0x0 + param_10);
+            param_9 = (byte *)param_3_after_write_2;
           }
           param_8 = param_8 + -1;
           if (param_8 == 0) {
@@ -607,17 +609,19 @@ LAB_006d306f:
                 uVar5 = ((param_7 >> 0x18) << 8) >> ((byte)uVar4 & 7);
                 if (uVar5 < 0x81) {
                   param_7 = uVar5 << 0x18;
-                  param_3_after_write_2 = param_3_after_write_2 + ((int)uVar4 >> 3) + 1;
+                  param_3_after_write_2 = (RecoveredRecord_006D2820_5C2BCC8C *)
+                            (&param_3_after_write_2->field_0x1 + ((int)uVar4 >> 3));
                 }
                 else {
-                  param_3_after_write_2 = param_3_after_write_2 + ((int)uVar4 >> 3);
+                  param_3_after_write_2 = (RecoveredRecord_006D2820_5C2BCC8C *)
+                            (&param_3_after_write_2->field_0x0 + ((int)uVar4 >> 3));
                   param_7 = (uVar5 >> 8) << 0x18;
                 }
               }
               else if ((uVar6 & 0x40) == 0) {
                 if (-1 < (int)(uVar4 - 1)) {
                   do {
-                    if ((*param_3_after_write_2 & STPiece<3,1>(param_7)) != 0) {
+                    if ((*(byte *)param_3_after_write_2 & STPiece<3,1>(param_7)) != 0) {
                       *param_1 = *(byte *)((uint)*param_12 + param_8);
                     }
                     param_1 = param_1 + 1;
@@ -625,7 +629,7 @@ LAB_006d306f:
                     uVar5 = (uint)(STPiece<3,1>(param_7) >> 1);
                     if (STPiece<3,1>(param_7) >> 1 == 0) {
                       uVar5 = 0x80;
-                      param_3_after_write_2 = param_3_after_write_2 + 1;
+                      param_3_after_write_2 = (RecoveredRecord_006D2820_5C2BCC8C *)&param_3_after_write_2->field_0x1;
                     }
                     param_7 = uVar5 << 0x18;
                     uVar4 = uVar4 - 1;
@@ -638,14 +642,14 @@ LAB_006d306f:
                 bVar2 = *(byte *)((uint)bVar2 + param_8);
                 if (-1 < (int)(uVar4 - 1)) {
                   do {
-                    if ((*param_3_after_write_2 & STPiece<3,1>(param_7)) != 0) {
+                    if ((*(byte *)param_3_after_write_2 & STPiece<3,1>(param_7)) != 0) {
                       *param_1 = bVar2;
                     }
                     param_1 = param_1 + 1;
                     uVar5 = (uint)(STPiece<3,1>(param_7) >> 1);
                     if (STPiece<3,1>(param_7) >> 1 == 0) {
                       uVar5 = 0x80;
-                      param_3_after_write_2 = param_3_after_write_2 + 1;
+                      param_3_after_write_2 = (RecoveredRecord_006D2820_5C2BCC8C *)&param_3_after_write_2->field_0x1;
                     }
                     param_7 = uVar5 << 0x18;
                     uVar4 = uVar4 - 1;
@@ -675,7 +679,7 @@ LAB_006d306f:
           else if ((uVar6 & 0x40) == 0) {
             if (-1 < (int)(param_5 - 1)) {
               do {
-                if ((*param_3_after_write_2 & STPiece<3,1>(param_7)) != 0) {
+                if ((*(byte *)param_3_after_write_2 & STPiece<3,1>(param_7)) != 0) {
                   *param_1 = *(byte *)((uint)*param_12 + param_8);
                 }
                 param_1 = param_1 + 1;
@@ -683,7 +687,7 @@ LAB_006d306f:
                 uVar5 = (uint)(STPiece<3,1>(param_7) >> 1);
                 if (STPiece<3,1>(param_7) >> 1 == 0) {
                   uVar5 = 0x80;
-                  param_3_after_write_2 = param_3_after_write_2 + 1;
+                  param_3_after_write_2 = (RecoveredRecord_006D2820_5C2BCC8C *)&param_3_after_write_2->field_0x1;
                 }
                 param_7 = uVar5 << 0x18;
                 param_5 = param_5 - 1;
@@ -696,14 +700,14 @@ LAB_006d306f:
             bVar1 = *(byte *)((uint)bVar1 + param_8);
             if (-1 < (int)(param_5 - 1)) {
               do {
-                if ((*param_3_after_write_2 & STPiece<3,1>(param_7)) != 0) {
+                if ((*(byte *)param_3_after_write_2 & STPiece<3,1>(param_7)) != 0) {
                   *param_1 = bVar1;
                 }
                 param_1 = param_1 + 1;
                 uVar5 = (uint)(STPiece<3,1>(param_7) >> 1);
                 if (STPiece<3,1>(param_7) >> 1 == 0) {
                   uVar5 = 0x80;
-                  param_3_after_write_2 = param_3_after_write_2 + 1;
+                  param_3_after_write_2 = (RecoveredRecord_006D2820_5C2BCC8C *)&param_3_after_write_2->field_0x1;
                 }
                 param_7 = uVar5 << 0x18;
                 param_5 = param_5 - 1;
@@ -731,11 +735,11 @@ LAB_006d306f:
             param_12 = param_12 + iVar11;
           }
           param_1 = param_1 + ((int)param_2 - param_6);
-          param_3_after_write_2 = param_9;
+          param_3_after_write_2 = (RecoveredRecord_006D2820_5C2BCC8C *)param_9;
         }
         if (param_3_after_write_2 != nullptr) {
-          param_3_after_write_2 = param_3_after_write_2 + param_10;
-          param_9 = param_3_after_write_2;
+          param_3_after_write_2 = (RecoveredRecord_006D2820_5C2BCC8C *)(&param_3_after_write_2->field_0x0 + param_10);
+          param_9 = (byte *)param_3_after_write_2;
         }
         local_c = local_c - 1;
       } while (local_c != 0);

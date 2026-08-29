@@ -13,6 +13,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -27,8 +28,10 @@ import java.util.regex.Pattern;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.Pointer;
 import ghidra.program.model.data.Structure;
+import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.data.VoidDataType;
 import ghidra.program.model.listing.AutoParameterType;
 import ghidra.program.model.listing.Function;
@@ -45,6 +48,7 @@ import ghidra.program.model.symbol.SourceType;
 
 public class STHiddenThisAnalyzer extends GhidraScript {
     private static final String TAG = "RECOVERED_HIDDEN_THIS";
+    private static final String RECEIVER_ROLE_TAG = "RECOVERED_RECEIVER_ABI";
     private static final int BACKWARD_LIMIT = 24;
     private static final int FORWARD_LIMIT = 4;
     private static final long MAX_RECEIVER_SIZE = 0x100000L;
@@ -113,25 +117,59 @@ public class STHiddenThisAnalyzer extends GhidraScript {
         println("Candidates=" + proposals.size() + ", convention_apply=" +
             proposals.stream().filter(row -> row.conventionApply).count() +
             ", receiver_type_apply=" +
-            proposals.stream().filter(row -> row.receiverTypeApply).count());
+            proposals.stream().filter(row -> row.receiverTypeApply).count() +
+            ", receiver_type_cleanup=" +
+            proposals.stream().filter(row -> row.receiverTypeCleanup).count() +
+            ", receiver_role_apply=" +
+            proposals.stream().filter(row -> row.receiverRoleApply).count() +
+            ", receiver_role_cleanup=" +
+            proposals.stream().filter(row -> row.receiverRoleCleanup).count());
     }
 
     private BodyEvidence analyzeBody(Function function) {
         BodyEvidence result = new BodyEvidence(function);
         Map<String, Origin> registers = new HashMap<>();
         Map<String, Origin> saved = new HashMap<>();
+        Map<String, Long> constants = new HashMap<>();
         registers.put("ECX", Origin.receiver(0));
         boolean incomingEdxLive = true;
+        boolean entryCaptureWindow = true;
         InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
         while (instructions.hasNext()) {
             Instruction instruction = instructions.next();
             String mnemonic = upper(instruction.getMnemonicString());
             String[] operands = operands(instruction);
+            Function directTarget = instruction.getFlowType().isCall() ?
+                calledFunction(instruction) : null;
+            boolean allocaProbe = directTarget != null &&
+                "alloca_probe".equals(directTarget.getCallFixup());
+
+            String captureRegister = operands.length == 0 ? null : register(operands[0]);
+            if (entryCaptureWindow && "MOV".equals(mnemonic) && operands.length >= 2 &&
+                    captureRegister != null &&
+                    Set.of("EBX", "ESI", "EDI").contains(captureRegister) &&
+                    "ECX".equals(register(operands[1])))
+                result.receiverRegisterCaptures++;
+
+            if (mnemonic.contains("MOVS") && mnemonic.contains("REP")) {
+                Origin source = registers.get("ESI");
+                Long count = constants.get("ECX");
+                int width = mnemonic.contains("MOVSD") ? 4 :
+                    mnemonic.contains("MOVSW") ? 2 : 1;
+                if (source != null && source.kind == Kind.RECEIVER &&
+                        source.offset == 0 && count != null && count > 0 &&
+                        count <= MAX_RECEIVER_SIZE / width) {
+                    result.receiverAccesses++;
+                    result.receiverBulkCopies++;
+                    result.observedSize = Math.max(result.observedSize, count * width);
+                }
+            }
 
             if (incomingEdxLive) {
                 EdxUse edx = incomingEdxUse(mnemonic, operands);
                 result.incomingEdxUses += edx.uses;
-                incomingEdxLive = !edx.overwritten && !instruction.getFlowType().isCall();
+                incomingEdxLive = !edx.overwritten &&
+                    (!instruction.getFlowType().isCall() || allocaProbe);
             }
 
             if (!"LEA".equals(mnemonic)) {
@@ -157,20 +195,171 @@ public class STHiddenThisAnalyzer extends GhidraScript {
                         targetMemory.displacement >= 0 && targetMemory.displacement < 0x1000) {
                     result.vtableSlots.add(targetMemory.displacement);
                 }
-                Function target = calledFunction(instruction);
+                Function target = directTarget;
                 if (target != null && ecx != null && ecx.kind == Kind.RECEIVER &&
                         ecx.offset == 0) {
                     result.sameThisTargets.add(target.getEntryPoint());
                 }
                 registers.remove("EAX");
-                registers.remove("ECX");
-                registers.remove("EDX");
+                // The built-in call-fixup is attached only after the utility pass
+                // proves the complete MSVC page-probe contract.  Its p-code changes
+                // EAX/ESP, not the incoming receiver or EDX, so retaining those
+                // origins is machine semantics rather than a name/address exception.
+                if (!allocaProbe) {
+                    registers.remove("ECX");
+                    registers.remove("EDX");
+                    constants.remove("ECX");
+                    constants.remove("EDX");
+                    entryCaptureWindow = false;
+                }
                 continue;
             }
             updateOrigins(mnemonic, operands, registers, saved, result);
+            updateConstants(mnemonic, operands, constants);
+            if (instruction.getFlowType().isJump() ||
+                    (writesFullRegister(mnemonic, operands, "ECX") &&
+                        !("MOV".equals(mnemonic) && operands.length >= 2 &&
+                            "ECX".equals(register(operands[1])))))
+                entryCaptureWindow = false;
         }
+        result.vtableSlots.addAll(savedReceiverVtableSlots(function));
         result.returnPops.addAll(returnPops(function));
         return result;
+    }
+
+    /**
+     * Recover virtual slots reached through a callee-saved reload of the exact
+     * incoming receiver.  A linear register map is necessarily cleared by an
+     * early-return epilogue which precedes a later basic block in address order;
+     * the value in that later block is nevertheless exact when the entry ECX was
+     * first copied to one stack slot and the call receiver is loaded only from
+     * that slot.  This is a machine transport proof, not class ownership.
+     */
+    private Set<Long> savedReceiverVtableSlots(Function function) {
+        Set<Long> result = new TreeSet<>();
+        List<Instruction> body = new ArrayList<>();
+        InstructionIterator iterator = listing.getInstructions(function.getBody(), true);
+        while (iterator.hasNext()) body.add(iterator.next());
+        Map<String, Address> spills = entryReceiverSpills(body);
+        if (spills.isEmpty()) return result;
+        for (int index = 0; index < body.size(); index++) {
+            Instruction call = body.get(index);
+            if (!call.getFlowType().isCall()) continue;
+            String[] callOperands = operands(call);
+            MemoryExpr target = callOperands.length == 0 ? null :
+                memory(callOperands[0]);
+            if (target == null || target.displacement < 0 ||
+                    target.displacement >= 0x1000) continue;
+            String receiver = receiverRegisterForTable(body, index,
+                target.register);
+            if (receiver == null ||
+                    !liveEcxEqualsReceiver(body, index, receiver) ||
+                    !exactSavedReceiverRegister(body, index, receiver, spills))
+                continue;
+            result.add(target.displacement);
+        }
+        return result;
+    }
+
+    private Map<String, Address> entryReceiverSpills(List<Instruction> body) {
+        Set<String> receiverRegisters = new HashSet<>();
+        receiverRegisters.add("ECX");
+        Map<String, Address> candidates = new TreeMap<>();
+        for (Instruction instruction : body) {
+            if (instruction.getFlowType().isCall() ||
+                    instruction.getFlowType().isJump() ||
+                    instruction.getFlowType().isTerminal()) break;
+            String mnemonic = upper(instruction.getMnemonicString());
+            String[] values = operands(instruction);
+            if (values.length < 1) continue;
+            MemoryExpr destination = memory(values[0]);
+            if ("MOV".equals(mnemonic) && destination != null &&
+                    isStack(destination) && values.length >= 2) {
+                String source = register(values[1]);
+                if (source != null && receiverRegisters.contains(source))
+                    candidates.put(stackKey(destination), instruction.getAddress());
+                continue;
+            }
+            String destinationRegister = register(values[0]);
+            if (destinationRegister == null ||
+                    !writesFullRegister(mnemonic, values, destinationRegister)) continue;
+            String source = values.length >= 2 ? register(values[1]) : null;
+            if ("MOV".equals(mnemonic) && source != null &&
+                    receiverRegisters.contains(source))
+                receiverRegisters.add(destinationRegister);
+            else receiverRegisters.remove(destinationRegister);
+        }
+        if (candidates.isEmpty()) return candidates;
+        // A later write of another value makes the saved slot path-dependent.
+        // Reject it instead of treating address-order as reaching-definition
+        // evidence.
+        for (Instruction instruction : body) {
+            String[] values = operands(instruction);
+            if (values.length == 0) continue;
+            MemoryExpr destination = memory(values[0]);
+            if (destination == null || !isStack(destination)) continue;
+            String key = stackKey(destination);
+            Address original = candidates.get(key);
+            if (original != null && !original.equals(instruction.getAddress()))
+                candidates.remove(key);
+        }
+        return candidates;
+    }
+
+    private String receiverRegisterForTable(List<Instruction> body, int callIndex,
+            String tableRegister) {
+        for (int index = callIndex - 1, count = 0;
+                index >= 0 && count < BACKWARD_LIMIT; index--, count++) {
+            Instruction instruction = body.get(index);
+            String mnemonic = upper(instruction.getMnemonicString());
+            String[] values = operands(instruction);
+            if (!writesFullRegister(mnemonic, values, tableRegister)) continue;
+            if (!"MOV".equals(mnemonic) || values.length < 2) return null;
+            MemoryExpr source = memory(values[1]);
+            return source != null && source.displacement == 0 ?
+                source.register : null;
+        }
+        return null;
+    }
+
+    private boolean liveEcxEqualsReceiver(List<Instruction> body, int callIndex,
+            String receiver) {
+        if ("ECX".equals(receiver)) return true;
+        for (int index = callIndex - 1, count = 0;
+                index >= 0 && count < BACKWARD_LIMIT; index--, count++) {
+            Instruction instruction = body.get(index);
+            String mnemonic = upper(instruction.getMnemonicString());
+            String[] values = operands(instruction);
+            if (!writesFullRegister(mnemonic, values, "ECX")) continue;
+            return "MOV".equals(mnemonic) && values.length >= 2 &&
+                receiver.equals(register(values[1]));
+        }
+        return false;
+    }
+
+    private boolean exactSavedReceiverRegister(List<Instruction> body, int callIndex,
+            String receiver, Map<String, Address> spills) {
+        if (!Set.of("EBX", "ESI", "EDI").contains(receiver)) return false;
+        boolean loaded = false;
+        for (int index = 0; index < callIndex; index++) {
+            Instruction instruction = body.get(index);
+            String mnemonic = upper(instruction.getMnemonicString());
+            String[] values = operands(instruction);
+            if (!writesFullRegister(mnemonic, values, receiver) ||
+                    "POP".equals(mnemonic)) continue;
+            if (!"MOV".equals(mnemonic) || values.length < 2) return false;
+            MemoryExpr source = memory(values[1]);
+            if (source != null && spills.containsKey(stackKey(source))) {
+                loaded = true;
+                continue;
+            }
+            if ("ECX".equals(register(values[1]))) {
+                loaded = true;
+                continue;
+            }
+            return false;
+        }
+        return loaded;
     }
 
     private void updateOrigins(String mnemonic, String[] operands,
@@ -223,6 +412,26 @@ public class STHiddenThisAnalyzer extends GhidraScript {
             registers.remove(destinationRegister);
     }
 
+    private void updateConstants(String mnemonic, String[] operands,
+            Map<String, Long> constants) {
+        if (operands.length == 0) return;
+        String destination = register(operands[0]);
+        if (destination == null || !writesFullRegister(mnemonic, operands, destination))
+            return;
+        if ("MOV".equals(mnemonic) && operands.length >= 2) {
+            Long immediate = number(operands[1]);
+            if (immediate != null) constants.put(destination, immediate);
+            else constants.remove(destination);
+            return;
+        }
+        if (("XOR".equals(mnemonic) || "SUB".equals(mnemonic)) &&
+                operands.length >= 2 && destination.equals(register(operands[1]))) {
+            constants.put(destination, 0L);
+            return;
+        }
+        constants.remove(destination);
+    }
+
     private Proposal proposal(BodyEvidence body, GroupEvidence group,
             Map<Address, Set<Function>> thunkIndex) {
         Function function = body.function;
@@ -234,34 +443,107 @@ public class STHiddenThisAnalyzer extends GhidraScript {
         if (!alreadyThiscall && !Set.of("__stdcall", "__cdecl", "unknown")
                 .contains(function.getCallingConventionName())) return null;
         if (!scriptOwned && !synthetic(function.getName(true))) return null;
-        if (body.receiverCaptures + body.receiverAccesses == 0) return null;
+        if (body.receiverCaptures + body.receiverRegisterCaptures +
+                body.receiverAccesses == 0) return null;
 
         CallEvidence calls = callEvidence(function, thunkIndex);
-        if (calls.pointerSetup == 0 && !scriptOwned) return null;
+        // An already-established __thiscall ABI supplies the receiver transport
+        // itself.  Requiring two external callsites here left hundreds of real
+        // ECX-backed objects as void * merely because their only caller was an
+        // anonymous helper (or because calls reached them through a table).  For
+        // these functions recover only a structural receiver view: the current
+        // auto-this must still be generic, the body must dereference it more than
+        // once, every RET must agree with the installed stack ABI, and incoming
+        // EDX must not be a hidden second register argument.  This does not claim
+        // a semantic class name or change the calling convention.
         int expectedStack = expectedStackBytes(function);
         boolean retMatches = body.returnPops.size() == 1 &&
             body.returnPops.iterator().next() == expectedStack;
         boolean manualSignature = protectedSource(function.getSignatureSource());
+        boolean receiverRoleTagged = hasTag(function, RECEIVER_ROLE_TAG);
         boolean corroboratedSingleCall = calls.pointerSetup == 1 &&
             body.receiverAccesses >= 6 && group.memberCount >= 2;
-        boolean strong = (calls.pointerSetup >= 2 || corroboratedSingleCall) &&
+        // Some compiler-private helpers have no surviving direct caller at all: they are
+        // entered only through a callback/table which Ghidra has not yet typed.  Their own
+        // machine body can nevertheless close the receiver proof.  Accept that boundary
+        // only when entry ECX is captured, used repeatedly, forwarded unchanged to at least
+        // two direct callees in the same recovered receiver family, and RET n agrees with
+        // every explicit stack parameter.  This is deliberately stronger than a single
+        // body dereference and does not infer a semantic owner name.
+        boolean closedCalleeReceiverChain = calls.pointerSetup == 0 &&
+            body.receiverRegisterCaptures > 0 && body.receiverBulkCopies > 0 &&
+            body.receiverAccesses > 0 &&
+            body.sameThisTargets.size() >= 2 && group.memberCount >= 2 &&
+            body.incomingEdxUses == 0 && retMatches;
+        if (calls.pointerSetup == 0 && !scriptOwned && !alreadyThiscall &&
+                !closedCalleeReceiverChain) return null;
+        boolean strong = (calls.pointerSetup >= 2 || corroboratedSingleCall ||
+                closedCalleeReceiverChain) &&
             calls.scalarSetup == 0 &&
-            calls.cleanupCalls == 0 && body.receiverCaptures > 0 &&
-            body.receiverAccesses >= 2 && body.incomingEdxUses == 0 && retMatches &&
+            calls.cleanupCalls == 0 &&
+            (body.receiverCaptures > 0 || closedCalleeReceiverChain) &&
+            (body.receiverAccesses >= 2 || closedCalleeReceiverChain) &&
+            body.incomingEdxUses == 0 && retMatches &&
             !manualSignature;
+        // An existing __thiscall convention proves only the ECX transport.  Body
+        // dereferences and a shared layout do not prove that the helper owns a new
+        // nominal receiver type: applying one here back-propagates that synthetic
+        // type into concrete callers and can destroy their readable vtable view.
+        // Keep the interrupted state visible in the proposal, but require the same
+        // closed caller-side receiver proof as every other new receiver type.
+        boolean existingStructuralReceiver = false;
         boolean previouslyApplied = scriptOwned && alreadyThiscall;
+        // A one-function, field-only structural receiver cannot model the concrete
+        // base object seen by its callers.  Giving such a helper its own class
+        // namespace makes Ghidra down-cast a previously named caller value, erases
+        // the caller's physical vtable view, and increases raw indirect calls.  The
+        // broad existing-thiscall adoption used by the preceding revision is safe
+        // to retire only when its exact marker is still present.  Neither several
+        // functions nor observed slot geometry is an independent nominal-identity
+        // proof, so every instance lacking the original strong caller proof must be
+        // neutralized.  Physical-vtable and method-owner passes may subsequently
+        // install a concrete owner from independent evidence.
+        boolean cleanupStructuralReceiver = previouslyApplied &&
+            broadExistingThiscallAdoption(function) && !strong;
         boolean conventionApply = strong && !alreadyThiscall;
-        String typeName = "AnonReceiver_" + addr(group.anchor);
+        // The address is a stable structural identity, not an assertion that the
+        // original class name is known.  `RecoveredReceiver_` makes that explicit
+        // without keeping a perfectly coherent multi-function receiver in the
+        // anonymous-type debt forever.
+        String typeName = "RecoveredReceiver_" + addr(group.anchor);
         String typePath = "/SubmarineTitans/Recovered/HiddenThis/" + typeName;
         boolean plausibleAutomaticSize = group.observedSize <= MAX_AUTOMATIC_RECEIVER_SIZE;
-        boolean receiverTypeApply = (strong || previouslyApplied) &&
-            plausibleAutomaticSize && !receiverTypeMatches(function, typePath) &&
+        boolean durableStructuralIdentity = group.memberCount >= 2 ||
+            !group.vtableSlots.isEmpty();
+        boolean receiverVptrRepair = !cleanupStructuralReceiver && previouslyApplied &&
+            !group.vtableSlots.isEmpty() && generatedReceiverVptrMissing(typePath);
+        boolean receiverTypeApply = !cleanupStructuralReceiver && durableStructuralIdentity &&
+            (receiverVptrRepair ||
+            strong || previouslyApplied ||
+            existingStructuralReceiver) && plausibleAutomaticSize &&
+            (receiverVptrRepair || !receiverTypeMatches(function, typePath)) &&
             !manualSignature;
-        String confidence = strong || previouslyApplied ? "high" :
+        // A neutral global __thiscall is already a valid free-function ABI, but it
+        // is not yet a nominal class method.  Mark that structural role only when
+        // the callee itself closes the proof: the exact incoming ECX value is
+        // dereferenced at least twice, no incoming EDX/custom-register argument is
+        // live, every RET agrees with the installed stack ABI, and callers never
+        // present scalar ECX or perform cdecl cleanup.  This tag lets source
+        // assembly emit an explicit receiver wrapper without inventing a class or
+        // perturbing Ghidra's auto-this datatype.
+        boolean receiverRoleProven = alreadyThiscall && untypedThisReceiver(function) &&
+            body.receiverAccesses >= 2 && body.incomingEdxUses == 0 && retMatches &&
+            calls.scalarSetup == 0 && calls.cleanupCalls == 0;
+        boolean receiverRoleApply = receiverRoleProven && !receiverRoleTagged;
+        boolean receiverRoleCleanup = receiverRoleTagged && !receiverRoleProven;
+        String confidence = strong || previouslyApplied || existingStructuralReceiver ? "high" :
             calls.pointerSetup > 0 && calls.scalarSetup == 0 ? "medium" : "review";
         List<String> reasons = new ArrayList<>();
         reasons.add("incoming_receiver_captures=" + body.receiverCaptures);
+        reasons.add("entry_receiver_register_captures=" +
+            body.receiverRegisterCaptures);
         reasons.add("receiver_accesses=" + body.receiverAccesses);
+        reasons.add("receiver_bulk_copies=" + body.receiverBulkCopies);
         reasons.add("incoming_edx_uses=" + body.incomingEdxUses);
         reasons.add("calls=" + calls.calls);
         reasons.add("ecx_pointer_setup=" + calls.pointerSetup);
@@ -270,18 +552,53 @@ public class STHiddenThisAnalyzer extends GhidraScript {
         reasons.add("callee_ret_pop=" + set(body.returnPops));
         reasons.add("expected_stack=" + expectedStack);
         reasons.add("receiver_family_members=" + group.memberCount);
+        reasons.add("same_this_callees=" + body.sameThisTargets.size());
+        if (closedCalleeReceiverChain) reasons.add("closed_callee_receiver_chain");
         if (!retMatches) reasons.add("stack_discipline_mismatch");
         if (manualSignature) reasons.add("manual_signature_preserved");
         if (!plausibleAutomaticSize)
             reasons.add("receiver_size_requires_review(limit=0x" +
                 Long.toHexString(MAX_AUTOMATIC_RECEIVER_SIZE).toUpperCase(Locale.ROOT) + ")");
+        if (!durableStructuralIdentity)
+            reasons.add("single_function_field_only_receiver_kept_neutral");
         if (previouslyApplied) reasons.add("previously_applied");
+        if (cleanupStructuralReceiver)
+            reasons.add("retire_broad_structural_receiver_without_closed_caller_proof");
+        if (receiverVptrRepair)
+            reasons.add("repair_class_layout_shadowed_generated_vptr");
         if (interruptedApply) reasons.add("adopt_untyped_existing_thiscall");
+        if (existingStructuralReceiver)
+            reasons.add("existing_thiscall_structural_receiver_from_exact_ecx_dereferences");
         if (corroboratedSingleCall) reasons.add("single_call_corroborated_by_receiver_family");
-        return new Proposal(function, conventionApply, receiverTypeApply, typeName, typePath,
+        return new Proposal(function, conventionApply, receiverTypeApply,
+            cleanupStructuralReceiver, receiverRoleApply, receiverRoleCleanup,
+            typeName, typePath,
             group.observedSize, group.vtableSlots, group.memberCount, calls, expectedStack,
             confidence,
             String.join("; ", reasons));
+    }
+
+    private boolean broadExistingThiscallAdoption(Function function) {
+        String comment = function.getComment();
+        return comment != null && comment.contains("[STHiddenThisApplier]") &&
+            comment.contains(
+                "existing_thiscall_structural_receiver_from_exact_ecx_dereferences");
+    }
+
+    private boolean generatedReceiverVptrMissing(String receiverPath) {
+        DataType type = currentProgram.getDataTypeManager().getDataType(receiverPath);
+        if (!(type instanceof Structure structure) || structure.isZeroLength()) return false;
+        DataTypeComponent component = structure.getComponentAt(0);
+        if (component == null || component.getOffset() != 0 ||
+                !(untypedef(component.getDataType()) instanceof Pointer pointer)) return true;
+        DataType pointed = untypedef(pointer.getDataType());
+        return pointed == null ||
+            !(receiverPath + "VTable").equals(pointed.getPathName());
+    }
+
+    private DataType untypedef(DataType type) {
+        while (type instanceof TypeDef definition) type = definition.getBaseDataType();
+        return type;
     }
 
     private void prepareProposalOutput(Path path) throws Exception {
@@ -652,7 +969,9 @@ public class STHiddenThisAnalyzer extends GhidraScript {
 
     private void writeTsv(Path path, List<Proposal> rows) throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
-            out.write("convention_apply\treceiver_type_apply\taddress\texpected_name\t" +
+            out.write("convention_apply\treceiver_type_apply\treceiver_type_cleanup\t" +
+                "receiver_role_apply\treceiver_role_cleanup\t" +
+                "address\texpected_name\t" +
                 "expected_name_source\texpected_signature\texpected_signature_source\t" +
                 "expected_calling_convention\tproposed_calling_convention\t" +
                 "receiver_type_name\treceiver_type_path\tobserved_size\tgroup_members\t" +
@@ -663,7 +982,10 @@ public class STHiddenThisAnalyzer extends GhidraScript {
             for (Proposal row : rows) {
                 Function f = row.function;
                 out.write(bit(row.conventionApply) + "\t" + bit(row.receiverTypeApply) +
-                    "\t" + addr(row.address) + "\t" + tsv(f.getName(true)) + "\t" +
+                    "\t" + bit(row.receiverTypeCleanup) + "\t" +
+                    bit(row.receiverRoleApply) + "\t" +
+                    bit(row.receiverRoleCleanup) + "\t" + addr(row.address) +
+                    "\t" + tsv(f.getName(true)) + "\t" +
                     f.getSymbol().getSource() + "\t" +
                     tsv(f.getSignature().getPrototypeString(true)) + "\t" +
                     f.getSignatureSource() + "\t" + f.getCallingConventionName() +
@@ -673,7 +995,7 @@ public class STHiddenThisAnalyzer extends GhidraScript {
                     row.calls.calls + "\t" + row.calls.pointerSetup + "\t" +
                     row.calls.scalarSetup + "\t" + row.calls.liveEcx + "\t" +
                     row.calls.cleanupCalls + "\t" + row.expectedStack + "\t" +
-                    row.confidence + "\t" + tsv(row.reason) + "\t2\n");
+                    row.confidence + "\t" + tsv(row.reason) + "\t3\n");
             }
         }
     }
@@ -682,9 +1004,12 @@ public class STHiddenThisAnalyzer extends GhidraScript {
         List<String> lines = new ArrayList<>();
         for (Proposal row : rows) lines.add("{\"convention_apply\":" +
             row.conventionApply + ",\"receiver_type_apply\":" + row.receiverTypeApply +
+            ",\"receiver_type_cleanup\":" + row.receiverTypeCleanup +
+            ",\"receiver_role_apply\":" + row.receiverRoleApply +
+            ",\"receiver_role_cleanup\":" + row.receiverRoleCleanup +
             ",\"address\":" + q(addr(row.address)) + ",\"function\":" +
             q(row.function.getName(true)) + ",\"receiver_type_path\":" + q(row.typePath) +
-            ",\"analysis_version\":2,\"observed_size\":" + row.observedSize +
+            ",\"analysis_version\":3,\"observed_size\":" + row.observedSize +
             ",\"group_members\":" + row.groupMembers + ",\"vtable_slots\":" +
             q(offsets(row.vtableSlots)) + ",\"confidence\":" + q(row.confidence) +
             ",\"reason\":" + q(row.reason) + "}");
@@ -696,6 +1021,12 @@ public class STHiddenThisAnalyzer extends GhidraScript {
             "candidates=" + rows.size(),
             "convention_apply=" + rows.stream().filter(row -> row.conventionApply).count(),
             "receiver_type_apply=" + rows.stream().filter(row -> row.receiverTypeApply).count(),
+            "receiver_type_cleanup=" + rows.stream()
+                .filter(row -> row.receiverTypeCleanup).count(),
+            "receiver_role_apply=" + rows.stream()
+                .filter(row -> row.receiverRoleApply).count(),
+            "receiver_role_cleanup=" + rows.stream()
+                .filter(row -> row.receiverRoleCleanup).count(),
             "note=No class owner or semantic method name is invented.",
             "note_safety=High confidence requires incoming ECX capture/use, either two " +
                 "explicit pointer receiver call sites or one such call corroborated by a " +
@@ -705,7 +1036,10 @@ public class STHiddenThisAnalyzer extends GhidraScript {
                 Long.toHexString(MAX_AUTOMATIC_RECEIVER_SIZE).toUpperCase(Locale.ROOT) +
                 " bytes remain review-only.",
             "note_vtable=Generated anonymous vtables contain neutral void-pointer slots only; " +
-                "a later signature pass may refine individually proven slots."),
+                "a later signature pass may refine individually proven slots.",
+            "note_cleanup=An exact prior broad adoption is retired when it remains a " +
+                "single-function field-only receiver; such a nominal type erases stronger " +
+                "concrete caller/base views without proving callable ownership."),
             StandardCharsets.UTF_8);
     }
 
@@ -750,7 +1084,8 @@ public class STHiddenThisAnalyzer extends GhidraScript {
     }
     private static class BodyEvidence {
         final Function function;
-        int receiverCaptures, receiverAccesses, incomingEdxUses;
+        int receiverCaptures, receiverRegisterCaptures, receiverAccesses,
+            receiverBulkCopies, incomingEdxUses;
         long observedSize;
         final Set<Long> vtableSlots = new TreeSet<>();
         final Set<Long> returnPops = new TreeSet<>();
@@ -764,16 +1099,22 @@ public class STHiddenThisAnalyzer extends GhidraScript {
     }
     private static class Proposal {
         final Function function; final Address address;
-        final boolean conventionApply, receiverTypeApply;
+        final boolean conventionApply, receiverTypeApply, receiverTypeCleanup,
+            receiverRoleApply, receiverRoleCleanup;
         final String typeName, typePath, confidence, reason;
         final long observedSize; final int groupMembers; final Set<Long> vtableSlots;
         final CallEvidence calls; final int expectedStack;
         Proposal(Function function, boolean conventionApply, boolean receiverTypeApply,
-                String typeName, String typePath, long observedSize, Set<Long> vtableSlots,
+                boolean receiverTypeCleanup, boolean receiverRoleApply,
+                boolean receiverRoleCleanup, String typeName, String typePath,
+                long observedSize, Set<Long> vtableSlots,
                 int groupMembers, CallEvidence calls, int expectedStack, String confidence,
                 String reason) {
             this.function = function; this.address = function.getEntryPoint();
             this.conventionApply = conventionApply; this.receiverTypeApply = receiverTypeApply;
+            this.receiverTypeCleanup = receiverTypeCleanup;
+            this.receiverRoleApply = receiverRoleApply;
+            this.receiverRoleCleanup = receiverRoleCleanup;
             this.typeName = typeName; this.typePath = typePath;
             this.observedSize = Math.max(4, observedSize);
             this.groupMembers = groupMembers;

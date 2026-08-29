@@ -34,7 +34,8 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
   if (g_packedRecords_A62x8[uVar5].field200_0x203 == 0) {
     if (*(uint *)&g_packedRecords_A62x8[uVar5].field97_0x167 == uVar5) {
       if (g_packedRecords_A62x8[uVar5].field96_0x163 == 0x3c) {
-        local_10 = thunk_FUN_0042d770(DAT_0080874d,(int *)&local_8);
+
+        local_10 = STPointerBoundaryCast<uint *>(thunk_FUN_0042d770(this,DAT_0080874d,(int *)&local_8));
         local_c = 0;
         if ((short)local_10 == 0x7fff) {
           uVar5 = local_8->count * local_8->elementSize;
@@ -42,6 +43,7 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
             *puVar3 = uVar5;
           }
           if (param_1 != nullptr) {
+
             puVar7 = (byte *)(Library::DKW::LIB::MemAlloc(uVar5));
             *param_1 = puVar7;
             puVar9 = (byte *)(local_8->data);
@@ -65,6 +67,7 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
       dVar1 = array->count;
       if (0 < (int)dVar1) {
         do {
+
           DArrayGetElement(array,uVar5,&param_2);
           if (((ushort)param_2 != 0xffff) &&
              /* ST_CALLSITE[0042E0C6]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -80,6 +83,7 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
     }
   }
   else {
+
     iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x58f,0,0,"%s",
                                "STAllPlayersC::PrepareToCmd invalid panel number");
     if (iVar4 != 0) {

@@ -17,7 +17,7 @@ void __thiscall st::fn_005802A0(STResourceC *this,int param_1,int param_2)
   short sVar1;
   short sVar2;
   short sVar3;
-  AnonShape_004E0250_5A3B9236 *pAVar4;
+  RecoveredRecordView_004E0250_21BF6808 *pRVar4;
 
   /* ST_CALLSITE[005802B0]: CALL 0x00402973; direct=00402973 STResourceC::SetResource */
   st::fn_00402973(this,param_1,param_2);
@@ -27,14 +27,13 @@ void __thiscall st::fn_005802A0(STResourceC *this,int param_1,int param_2)
     sVar3 = this->field_0249;
     if ((((sVar1 < 0) || (g_worldGrid.sizeX <= sVar1)) || (sVar3 < 0)) ||
        (((g_worldGrid.sizeY <= sVar3 || (sVar2 < 0)) || (g_worldGrid.sizeZ <= sVar2)))) {
-      pAVar4 = nullptr;
+      pRVar4 = nullptr;
     }
     else {
-      pAVar4 = (AnonShape_004E0250_5A3B9236 *)
-               STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0];
+      pRVar4 = reinterpret_cast<RecoveredRecordView_004E0250_21BF6808 *>(STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0]);
     }
-    if (pAVar4->field_0018 == this->field_0269) {
-      st::fn_00405EE8(pAVar4);
+    if (pRVar4->field_0018 == this->field_0269) {
+      st::fn_00405EE8(pRVar4);
     }
   }
   return;
@@ -61,7 +60,7 @@ void __thiscall st::fn_00580D30(STResourceC *this,int param_1)
   }
   uVar1 = 0;
   if (this->field_0259 != 0) {
-    /* ST_CALLSITE[00580D58]: CALL 0x0040492b; direct=0040492B STResourceC::sub_005802A0 */
+    /* ST_CALLSITE[00580D58]: CALL 0x0040492b; direct=0040492B STResourceC::sub_005802A0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
     st::fn_0040492B(this,0,0);
     /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
     uVar1 = extraout_var;
@@ -72,8 +71,8 @@ void __thiscall st::fn_00580D30(STResourceC *this,int param_1)
   st::fn_00404D04(this);
   this->field_0032 = 0xffff;
   if (param_1 == 0) {
+
     st::fn_00404449(this);
   }
   return;
 }
-

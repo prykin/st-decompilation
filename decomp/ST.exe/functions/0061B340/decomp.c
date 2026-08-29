@@ -22,76 +22,77 @@ STJumpMineC::sub_0061B340
   int iVar5;
   int local_EAX_109;
   int iVar7;
-  uint uVar8;
   STJumpMineC_field_0093State SVar8;
   int local_EAX_1138;
   int iVar6;
-  int iVar9;
-  bool bVar10;
-  longlong lVar11;
+  int iVar8;
+  bool bVar9;
+  longlong lVar10;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   short in_stack_00000006;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   short in_stack_0000000a;
-  STJumpMineC_field_0093State SVar12;
-  short sVar13;
+  STJumpMineC_field_0093State SVar11;
+  short sVar12;
   int local_14;
   int local_10;
   byte local_c;
   undefined3 uStack_b;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0;
   *param_7 = param_6;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   if ((-1 < in_stack_00000006) && (-1 < in_stack_0000000a)) {
     if (param_3 < 0) goto LAB_0061bb57;
     if (((_param_1 < g_worldGrid.sizeX) && (_param_2 < g_worldGrid.sizeY)) && (param_3 < 5)) {
-      sVar13 = (short)param_3;
-      local_EAX_109 = thunk_FUN_004961b0(param_1,param_2,sVar13);
+      sVar12 = (short)param_3;
+
+      local_EAX_109 = thunk_FUN_004961b0(param_1,param_2,sVar12);
       if (local_EAX_109 == 0) {
         local_10 = this->field_00A7 - this->field_00E3;
         if (((((param_1 < 0) || (g_worldGrid.sizeX <= param_1)) || (param_2 < 0)) ||
-            ((g_worldGrid.sizeY <= param_2 || (sVar13 < 0)))) ||
-           ((g_worldGrid.sizeZ <= sVar13 ||
-            (pSVar4 = STGridAt3D(g_worldGrid, param_1, param_2, sVar13).objects[0],
+            ((g_worldGrid.sizeY <= param_2 || (sVar12 < 0)))) ||
+           ((g_worldGrid.sizeZ <= sVar12 ||
+            (pSVar4 = STGridAt3D(g_worldGrid, param_1, param_2, sVar12).objects[0],
             pSVar4 == nullptr)))) {
           ST3DSMAPContext::sub_006E3310
                     (g_sT3DSMAPContext_00807598,
                      (g_sT3DSMAPContext_00807598->field_0380 * param_4) / 0xc9,
                      (int *)((g_sT3DSMAPContext_00807598->field_0380 * param_5) / 0xc9),param_3,
                      &local_14);
-          lVar11 = Library::MSVCRT::__ftol();
-          iVar9 = (short)lVar11;
+          lVar10 = Library::MSVCRT::__ftol();
+          iVar8 = (short)lVar10;
           iVar7 = param_3 + 1;
           iVar5 = local_14;
           if (local_14 <= iVar7) {
             iVar5 = iVar7;
           }
           if (local_10 < 0) {
-            if (iVar9 < param_6) {
+            if (iVar8 < param_6) {
               return local_8;
             }
             if (((local_14 <= iVar7) && (iVar7 < 5)) &&
-               (local_EAX_1138 = thunk_FUN_004961b0(param_1,param_2,sVar13 + 1), local_EAX_1138 == 0
+
+               (local_EAX_1138 = thunk_FUN_004961b0(param_1,param_2,sVar12 + 1), local_EAX_1138 == 0
                )) {
               return 3;
             }
-            if (iVar5 * 200 < iVar9) {
+            if (iVar5 * 200 < iVar8) {
               return 3;
             }
           }
           else {
-            if (iVar9 <= param_6) {
+            if (iVar8 <= param_6) {
               return local_8;
             }
-            if ((iVar7 < 5) && (iVar6 = thunk_FUN_004961b0(param_1,param_2,sVar13 + -1), iVar6 != 0)
+
+            if ((iVar7 < 5) && (iVar6 = thunk_FUN_004961b0(param_1,param_2,sVar12 + -1), iVar6 != 0)
                ) {
               *param_7 = param_3 * 200;
               return 1;
             }
           }
-          *param_7 = iVar9;
+          *param_7 = iVar8;
           return 2;
         }
         if (0 < local_10) {
@@ -149,22 +150,23 @@ LAB_0061b627:
                 iVar7 = 2;
               }
             }
-            bVar10 = iVar7 < 0;
+            bVar9 = iVar7 < 0;
           }
           else {
-            bVar10 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
-                     g_bulkInitializedRecords_008087C7[bVar1].field_0023;
+            bVar9 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
+                    g_bulkInitializedRecords_008087C7[bVar1].field_0023;
           }
-          if (bVar10) {
-            uVar8 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::
-                    thunk_FUN_00601500((AnonReceiver_00601500 *)&this->field_0x20,param_4,param_5,
-                                       param_6,this->field_00DB,this->field_00DF,this->field_00E3,
-                                       this->field_0051,DAT_007e66ac,this->field_0085,
-                                       this->field_0089,0xb3,0,0);
-            if ((uVar8 != 2) && (uVar8 != 3)) {
+          if (bVar9) {
+            /* ST_CALLSITE[0061B680]: CALL 0x00404516; direct=00404516 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00601500::thunk_FUN_00601500; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STJumpMineC; source view only; no Ghidra override */
+            iVar7 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00601500::
+                    thunk_FUN_00601500((RecoveredReceiver_00601500 *)&this->field_0x20,param_4,
+                                       param_5,param_6,this->field_00DB,this->field_00DF,
+                                       this->field_00E3,this->field_0051,DAT_007e66ac,
+                                       this->field_0085,this->field_0089,0xb3,0,0);
+            if ((iVar7 != 2) && (iVar7 != 3)) {
               return local_8;
             }
-            SVar12 = this->field_0093;
+            SVar11 = this->field_0093;
             goto LAB_0061b6ac;
           }
         }
@@ -183,13 +185,13 @@ LAB_0061b627:
       if (g_worldGrid.sizeY <= param_2) {
         return local_8;
       }
-      if (sVar13 < 0) {
+      if (sVar12 < 0) {
         return local_8;
       }
-      if (g_worldGrid.sizeZ <= sVar13) {
+      if (g_worldGrid.sizeZ <= sVar12) {
         return local_8;
       }
-      pSVar4 = STGridAt3D(g_worldGrid, param_1, param_2, sVar13).objects[0];
+      pSVar4 = STGridAt3D(g_worldGrid, param_1, param_2, sVar12).objects[0];
       if (pSVar4 == nullptr) {
         return local_8;
       }
@@ -229,13 +231,13 @@ LAB_0061b993:
             iVar7 = 2;
           }
         }
-        bVar10 = iVar7 < 0;
+        bVar9 = iVar7 < 0;
       }
       else {
-        bVar10 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
-                 g_bulkInitializedRecords_008087C7[bVar1].field_0023;
+        bVar9 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
+                g_bulkInitializedRecords_008087C7[bVar1].field_0023;
       }
-      if (bVar10) {
+      if (bVar9) {
         /* ST_CALLSITE[0061BAC0]: CALL dword ptr [EDX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
         iVar7 = (*pSVar4->vtable[5].slots_00_28[0])(pSVar4);
         if (iVar7 == 0) {
@@ -246,17 +248,19 @@ LAB_0061b993:
         if (iVar7 == 0) {
           return local_8;
         }
-        uVar8 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
-                          ((AnonReceiver_00601500 *)&this->field_0x20,param_4,param_5,param_6,
-                           this->field_00DB,this->field_00DF,this->field_00E3,this->field_0051,
-                           DAT_007e66ac,this->field_0085,this->field_0089,0xb3,0,0);
-        if ((uVar8 != 2) && (uVar8 != 3)) {
+
+        iVar7 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00601500::
+                thunk_FUN_00601500((RecoveredReceiver_00601500 *)&this->field_0x20,param_4,param_5,
+                                   param_6,this->field_00DB,this->field_00DF,this->field_00E3,
+                                   this->field_0051,DAT_007e66ac,this->field_0085,this->field_0089,
+                                   0xb3,0,0);
+        if ((iVar7 != 2) && (iVar7 != 3)) {
           return local_8;
         }
-        SVar12 = this->field_0093;
+        SVar11 = this->field_0093;
 LAB_0061b6ac:
-        SVar8 = thunk_FUN_0061c910(this,uVar8,SVar12,_param_1,_param_2,param_3,param_4,param_5,
-                                   param_6);
+        /* ST_CALLSITE[0061B6AF]: CALL 0x004028e7; direct=004028E7 STJumpMineC::sub_0061C910 */
+        SVar8 = sub_0061C910(this,iVar7,SVar11,_param_1,_param_2,param_3,param_4,param_5,param_6);
         this->field_0093 = SVar8;
         if (SVar8 != CASE_5) {
           return local_8;

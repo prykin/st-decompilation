@@ -1,6 +1,6 @@
 function_address	function_name	store_site	destination	target_address	target_name
 0056ADC0	STAppC::InitApp	0056AE9D	dword ptr [EBP + -0x64]	0040251D	STAppC::MainWindowProc
-005C7800	FUN_005c7800	005C7B53	dword ptr [0x0085400e]	00404C64	thunk_FUN_005c2760
+005C7800	SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0053F510::FUN_005c7800	005C7B53	dword ptr [0x0085400e]	00404C64	thunk_FUN_005c2760
 00672930	FUN_00672930	00672943	dword ptr [0x007d2d1c]	00402928	thunk_FUN_00673110
 00672930	FUN_00672930	0067294F	dword ptr [0x007d2d1c]	00402F2C	thunk_FUN_00673160
 006E8580	ST3DSMAPContext::sub_006E8580	006E858C	dword ptr [EDI + 0x228]	006EB4B0	FUN_006eb4b0

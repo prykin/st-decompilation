@@ -592,7 +592,7 @@ LAB_00603d6a:
 00603D6A  8D 4D FC                  LEA ECX,[EBP + -0x4]
 00603D6D  51                        PUSH ECX
 00603D6E  8B CF                     MOV ECX,EDI
-00603D70  E8 EA 18 E0 FF            CALL 0x0040565f
+00603D70  E8 EA 18 E0 FF            CALL 0x0040565f  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 00603D75  3B C6                     CMP EAX,ESI
 00603D77  89 45 F8                  MOV dword ptr [EBP + -0x8],EAX
 00603D7A  0F 84 85 00 00 00         JZ 0x00603e05

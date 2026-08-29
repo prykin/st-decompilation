@@ -1,23 +1,23 @@
 #include "../../pseudocode_runtime.h"
 
 
-int FUN_006bb780(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4,int param_5,
-                int param_6,undefined4 *param_7,int param_8)
+int FUN_006bb780(RecoveredRecord_006BB780_43119500 *param_1,undefined4 *param_2,undefined4 param_3,
+                undefined4 param_4,int param_5,int param_6,undefined4 *param_7,int param_8)
 
 {
   int iVar1;
-  undefined4 local_88;
-  undefined4 local_84;
-  undefined4 local_80;
-  undefined4 local_7c;
-  undefined4 local_40;
-  undefined4 local_3c;
+  uint local_88;
+  uint local_84;
+  uint local_80;
+  uint local_7c;
+  uint local_40;
+  uint local_3c;
   int local_38;
   int local_34;
-  undefined4 local_30;
-  undefined4 local_2c;
-  undefined4 local_28;
-  undefined4 local_20;
+  uint local_30;
+  uint local_2c;
+  uint local_28;
+  uint local_20;
   int local_c;
   int local_8;
 
@@ -63,8 +63,7 @@ int FUN_006bb780(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 p
   local_80 = param_4;
   /* ST_CALLSITE[006BB86F]: CALL dword ptr [ECX + 0x18] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar1 = (**(code **)(**(int **)(param_1 + 0x30) + 0x18))
-                    (*(int **)(param_1 + 0x30),&local_88,param_2,0);
+  iVar1 = (**(code **)(*param_1->field_0030 + 0x18))(param_1->field_0030,&local_88,param_2,0);
   if ((iVar1 == 0) && (param_8 != -1)) {
     local_8 = param_8;
     local_c = param_8;

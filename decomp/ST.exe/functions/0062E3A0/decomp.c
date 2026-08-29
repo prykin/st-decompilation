@@ -16,12 +16,14 @@ void __thiscall FUN_0062e3a0(void *this,int *param_1,uint param_2,int param_3)
     puVar4 = (undefined4 *)(iVar2 + 0x10);
     iVar2 = 3;
     do {
-      if (((AnonShape_005EFAE0_B406B78B *)*puVar4 != nullptr) &&
+      if (((RecoveredRecordView_005EFAE0_855D930D *)*puVar4 !=
+           nullptr) &&
+
          (iVar3 = STPlaySystemC::sub_006E62D0
-                            (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)*puVar4,
+                            (g_playSystem_00802A38,(RecoveredRecordView_005EFAE0_855D930D *)*puVar4,
                              (int *)&param_1), iVar3 != -4)) {
         if (iVar1 == 0) {
-          thunk_FUN_005fb030((AnonShape_005FB030_9C7404C6 *)param_1);
+          thunk_FUN_005fb030((RecoveredRecordView_005FB030_E5A27901 *)param_1);
         }
         else if (iVar1 == 1) {
           thunk_FUN_005fb170((STColl3C *)param_1);

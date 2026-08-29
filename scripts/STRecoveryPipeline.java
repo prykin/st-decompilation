@@ -47,6 +47,11 @@ public class STRecoveryPipeline extends GhidraScript {
             "darray_element_proposals.tsv", "darray_element_field_proposals.tsv",
             "darray_element_local_proposals.tsv", "darray_element_decompile_failures.tsv",
             "darray_element_summary.txt")),
+        Map.entry("STDArrayPointerElementAnalyzer.java", List.of(
+            "darray_pointer_element_proposals.tsv",
+            "darray_pointer_output_proposals.tsv",
+            "darray_pointer_element_failures.tsv",
+            "darray_pointer_element_summary.txt")),
         Map.entry("STPointerShapeAnalyzer.java", List.of(
             "pointer_shape_type_proposals.tsv", "pointer_shape_field_proposals.tsv",
             "pointer_shape_target_proposals.tsv", "pointer_shape_decompile_failures.tsv",
@@ -54,6 +59,7 @@ public class STRecoveryPipeline extends GhidraScript {
         Map.entry("STSwitchEnumAnalyzer.java", List.of(
             "switch_enum_proposals.tsv", "switch_enum_decompile_retries.tsv",
             "switch_enum_decompile_failures.tsv", "switch_enum_domains.tsv",
+            "switch_enum_composition_audit.tsv",
             "switch_enum_summary.txt")),
         Map.entry("STJumpTableBoundaryAnalyzer.java", List.of(
             "jump_table_boundary_proposals.tsv",
@@ -96,6 +102,7 @@ public class STRecoveryPipeline extends GhidraScript {
         Map.entry("STTypeFamilyAnalyzer.java", List.of(
             "type_family_groups.tsv", "anon_named_type_matches.tsv",
             "anonymous_type_audit.tsv", "contextual_record_promotions.tsv",
+            "record_identity_view_audit.tsv",
             "type_family_proposals.tsv", "polymorphic_receiver_callsites.tsv",
             "type_family_summary.txt")),
         Map.entry("STClassLayoutAnalyzer.java", List.of(
@@ -143,9 +150,13 @@ public class STRecoveryPipeline extends GhidraScript {
             "callable_receiver_proposals.tsv",
             "callable_receiver_type_proposals.tsv",
             "callable_receiver_slot_proposals.tsv",
-            "callable_receiver_summary.txt")));
+            "callable_receiver_summary.txt")),
+        Map.entry("STCallResultViewAnalyzer.java", List.of(
+            "call_result_view_proposals.tsv",
+            "call_result_view_summary.txt")));
     private static final Map<String, List<String>> CACHEABLE_ANALYZER_INPUTS = Map.ofEntries(
         Map.entry("STDArrayElementAnalyzer.java", List.of()),
+        Map.entry("STDArrayPointerElementAnalyzer.java", List.of()),
         Map.entry("STPointerShapeAnalyzer.java", List.of()),
         Map.entry("STSwitchEnumAnalyzer.java", List.of("switch_enum_domains.tsv")),
         Map.entry("STJumpTableBoundaryAnalyzer.java", List.of()),
@@ -183,10 +194,11 @@ public class STRecoveryPipeline extends GhidraScript {
             "indirect_call_proposals.tsv", "indirect_call_sites.tsv",
             "polymorphic_receiver_callsites.tsv")),
         Map.entry("STCallableReceiverAnalyzer.java", List.of(
-            "callable_family_audit.tsv")));
+            "callable_family_audit.tsv")),
+        Map.entry("STCallResultViewAnalyzer.java", List.of()));
     private static final Set<String> MUTATING_STATUSES = Set.of(
         "applied", "created", "converted", "updated", "partial", "renamed", "repaired",
-        "removed");
+        "replaced", "removed", "reverted");
     private static final Set<String> UNCHANGED_STATUSES = Set.of(
         "unchanged", "already_present");
     private static final Set<String> REVIEW_STATUSES = Set.of(
@@ -203,6 +215,8 @@ public class STRecoveryPipeline extends GhidraScript {
     private int sequence;
     private boolean programMutationObserved;
     private boolean lastStepMutatedProgram;
+    private long lastStepModificationBefore = -1;
+    private long lastStepModificationAfter = -1;
     private Path runsRoot;
     private Path activeRun;
     private Path eventsPath;
@@ -265,7 +279,8 @@ public class STRecoveryPipeline extends GhidraScript {
             // unchanged database must reuse them instead of rescanning every
             // indirect callsite on each textual export.
             initializeAnalyzerCache();
-            if (!options.mode.equals("export")) {
+            if (!Set.of("export", "callable-refresh", "call-result-refresh",
+                    "corpus-export").contains(options.mode)) {
                 // Freeze only machine-proven finite jump tables before any broad analyzer opens
                 // a decompiler.  Without this boundary, packed selector bytes immediately after
                 // a table can be re-read as an extra code address on every DecompInterface.
@@ -279,6 +294,22 @@ public class STRecoveryPipeline extends GhidraScript {
                 case "core" -> { runCore(); recordEvidence(); }
                 case "deep" -> { runDeep(); recordEvidence(); }
                 case "abi-refresh" -> { runAbiRefresh(); recordEvidence(); }
+                // Internal restart target used after an override-cleanup phase.
+                // Earlier structural/deep mutations are already committed; a
+                // fresh process only needs to rebuild the callable ABI fixed
+                // point before the original operation may complete.
+                case "callable-refresh" -> {
+                    runExportAbiRepair();
+                    recordEvidence();
+                }
+                case "call-result-refresh" -> {
+                    runCallResultViewFixpoint();
+                    recordEvidence();
+                }
+                case "corpus-export" -> {
+                    recordEvidence();
+                    runExport();
+                }
                 case "full" -> { runCore(); runDeep(); recordEvidence(); }
                 case "export" -> finalizeAndExport();
                 case "full-export" -> {
@@ -358,6 +389,13 @@ public class STRecoveryPipeline extends GhidraScript {
             "method_owner_proposals.tsv", "method_owner_apply_report.tsv");
         pair("STDestructorAnalyzer.java", "STDestructorApplier.java",
             "destructor_proposals.tsv", "destructor_apply_report.tsv");
+        // Hidden-receiver retirement and method-owner repair can change which
+        // physical table is the class's primary offset-zero vptr.  Refresh the
+        // table family before the first deep ABI gate; waiting for the later
+        // structural phase leaves stale constructor/base ownership visible to
+        // pointer and indirect-call propagation.
+        pair("STVTableAnalyzer.java", "STVTableApplier.java",
+            "vtable_proposals.tsv", "vtable_apply_report.tsv");
         pair("STSwitchEnumAnalyzer.java", "STSwitchEnumApplier.java",
             "switch_enum_proposals.tsv", "switch_enum_apply_report.tsv");
 
@@ -459,6 +497,7 @@ public class STRecoveryPipeline extends GhidraScript {
             "function_pointer_field_proposals.tsv",
             "function_pointer_field_apply_report.tsv");
         runCallableReceiverTyping();
+        runCallResultViews();
         runAbiRegressionGate("post-structural-indirect");
 
         section("deep finalization");
@@ -518,6 +557,11 @@ public class STRecoveryPipeline extends GhidraScript {
                 "ABI-consistency apply reports under " + recoveryProgram);
 
         runLocalLifetimeFixpoint();
+        // Lifetime splitting can retire or merge generated anonymous records just
+        // like the end of the broad deep pipeline.  Keep this first-class ABI
+        // refresh mode semantically complete so an interrupted finalization can
+        // be resumed without rerunning every unrelated whole-program analyzer.
+        runTypeLifecycleFixpoint();
         runAbiRegressionGate("abi-refresh-final");
     }
 
@@ -597,6 +641,7 @@ public class STRecoveryPipeline extends GhidraScript {
                 "function_pointer_field_proposals.tsv",
                 "function_pointer_field_apply_report.tsv");
             changed += runCallableReceiverTyping();
+            changed += runCallResultViews();
             runAbiRegressionGate("export-indirect-pass-" + pass);
             println("Export indirect ABI stabilization pass " + pass +
                 ": mutating rows=" + changed);
@@ -634,6 +679,73 @@ public class STRecoveryPipeline extends GhidraScript {
         changed += receiverChanges;
         if (receiverChanges != 0) changed += runIndirectCallTyping();
         return changed;
+    }
+
+    /**
+     * Keep heterogeneous allocator/loader/helper return ABIs neutral while
+     * installing an exact concrete pointer view at the individual direct CALL.
+     * The analyzer re-proves every script-owned override and emits cleanup for
+     * stale views, so this is a normal fixed-point layer rather than a migration.
+     */
+    private int runCallResultViews() throws Exception {
+        String analyzer = "STCallResultViewAnalyzer.java";
+        String applier = "STCallResultViewApplier.java";
+        analyzer(analyzer);
+        Path proposals = requireFile("call_result_view_proposals.tsv", null);
+        step(applier, proposals.toString());
+        Path report = recoveryProgram.resolve("call_result_view_apply_report.tsv");
+        int changed = convergenceMutationCount(applier, proposals, report,
+            MUTATING_STATUSES);
+        int removed = applyStatusCount(report, "removed");
+        if (removed != 0) {
+            Path sentinel = repository.resolve(".st-local")
+                .resolve("restart-after-call-result-cleanup");
+            Files.createDirectories(sentinel.getParent());
+            Files.writeString(sentinel,
+                "removed=" + removed + "\n",
+                StandardCharsets.UTF_8);
+            throw new IllegalStateException(
+                "ST_RESTART_REQUIRED_AFTER_CALL_RESULT_CLEANUP: removed=" + removed);
+        }
+        return changed;
+    }
+
+    /**
+     * Resume only the address-local direct-call view layer after its cleanup
+     * phase deliberately restarted Ghidra.  Physical callable ABIs and every
+     * earlier structural layer were already committed and gated.  Re-running
+     * them here wastes hours and materially raises peak memory without adding
+     * evidence.  A cleanup still requests another fresh process; apply-only
+     * passes may converge safely in this one.
+     */
+    private void runCallResultViewFixpoint() throws Exception {
+        section("direct-call result-view restart fixed point");
+        for (int pass = 1; pass <= 8; pass++) {
+            int changed = runCallResultViews();
+            runAbiRegressionGate("call-result-restart-pass-" + pass);
+            println("Call-result restart pass " + pass +
+                ": mutating rows=" + changed);
+            if (changed == 0) return;
+        }
+        throw new IllegalStateException("Direct-call result views did not " +
+            "converge after 8 restart passes; inspect " +
+            recoveryProgram.resolve("call_result_view_apply_report.tsv"));
+    }
+
+    private int applyStatusCount(Path report, String wanted) throws Exception {
+        List<String> lines = Files.readAllLines(report, StandardCharsets.UTF_8);
+        if (lines.isEmpty()) return 0;
+        String[] header = lines.get(0).split("\\t", -1);
+        int statusColumn = indexOf(header, "status");
+        if (statusColumn < 0)
+            throw new IllegalStateException("Apply report has no status column: " + report);
+        int count = 0;
+        for (int line = 1; line < lines.size(); line++) {
+            if (lines.get(line).isBlank()) continue;
+            String[] values = lines.get(line).split("\\t", -1);
+            if (statusColumn < values.length && wanted.equals(values[statusColumn])) count++;
+        }
+        return count;
     }
 
     /**
@@ -851,6 +963,8 @@ public class STRecoveryPipeline extends GhidraScript {
 
         Path lastReport = recoveryProgram.resolve(
             "local_lifetime_apply_report.tsv");
+        Set<String> seenMutationStates = new java.util.HashSet<>();
+        seenMutationStates.add(localLifetimeMutationState(lastReport));
         Set<String> targets = mutatingFunctionAddresses(lastReport);
         for (int pass = 2; pass <= MAX_STRUCTURAL_PASSES; pass++) {
             if (targets.isEmpty())
@@ -889,11 +1003,62 @@ public class STRecoveryPipeline extends GhidraScript {
                         finalChanged + " mutation(s) after targeted convergence");
                 return totalChanged;
             }
+            String mutationState = localLifetimeMutationState(applyReport);
+            if (!seenMutationStates.add(mutationState))
+                throw new IllegalStateException(
+                    "Local-lifetime recovery entered a repeated mutation cycle " +
+                    "at targeted pass " + pass + "; functions=" +
+                    String.join(",", mutatingFunctionAddresses(applyReport)));
             targets = mutatingFunctionAddresses(applyReport);
         }
         throw new IllegalStateException(
             "Local-lifetime recovery did not reach a fixed point in " +
                 MAX_STRUCTURAL_PASSES + " passes");
+    }
+
+    /**
+     * Detect an analyzer/applier oscillation from semantic mutation rows rather
+     * than waiting for the broad structural pass limit.  Report ordering is not
+     * part of the state: the canonical key records the address, durable local,
+     * anchor, proposed type, and mutation result for every changed row.
+     */
+    private String localLifetimeMutationState(Path applyReport)
+            throws Exception {
+        if (!Files.isRegularFile(applyReport))
+            throw new IllegalStateException(
+                "Missing local-lifetime apply report: " + applyReport);
+        List<String> lines = Files.readAllLines(applyReport,
+            StandardCharsets.UTF_8);
+        if (lines.isEmpty()) return sha256("");
+        String[] header = lines.get(0).split("\\t", -1);
+        Map<String, Integer> columns = new java.util.HashMap<>();
+        for (int index = 0; index < header.length; index++)
+            columns.put(header[index], index);
+        for (String required : List.of("function_address", "original_name",
+                "anchor_address", "anchor_kind", "proposed_type", "status"))
+            if (!columns.containsKey(required))
+                throw new IllegalStateException(
+                    "Local-lifetime apply report lacks " + required + ": " +
+                    applyReport);
+        List<String> state = new ArrayList<>();
+        for (int line = 1; line < lines.size(); line++) {
+            if (lines.get(line).isBlank()) continue;
+            String[] values = lines.get(line).split("\\t", -1);
+            String status = value(values, columns.get("status"));
+            if (!MUTATING_STATUSES.contains(status)) continue;
+            state.add(String.join("\t",
+                value(values, columns.get("function_address")),
+                value(values, columns.get("original_name")),
+                value(values, columns.get("anchor_address")),
+                value(values, columns.get("anchor_kind")),
+                value(values, columns.get("proposed_type")), status));
+        }
+        state.sort(String::compareTo);
+        return sha256(String.join("\n", state));
+    }
+
+    private String value(String[] values, int index) {
+        return index >= 0 && index < values.length ? values[index] : "";
     }
 
     private Set<String> mutatingFunctionAddresses(Path applyReport)
@@ -945,6 +1110,10 @@ public class STRecoveryPipeline extends GhidraScript {
             recoveryProgram.resolve("darray_element_field_proposals.tsv"),
             recoveryProgram.resolve("darray_element_local_proposals.tsv"),
             recoveryProgram.resolve("darray_element_decompile_failures.tsv"));
+        changed += pair("STDArrayPointerElementAnalyzer.java",
+            "STDArrayPointerElementApplier.java",
+            "darray_pointer_element_proposals.tsv",
+            "darray_pointer_element_apply_report.tsv");
         return changed;
     }
 
@@ -1396,6 +1565,8 @@ public class STRecoveryPipeline extends GhidraScript {
             rethrow(failure);
         }
         lastStepMutatedProgram = modificationAfter != modificationBefore;
+        lastStepModificationBefore = modificationBefore;
+        lastStepModificationAfter = modificationAfter;
         if (lastStepMutatedProgram) programMutationObserved = true;
         String detail = modificationAfter == modificationBefore ? "" :
             "program_modification=" + modificationBefore + "->" + modificationAfter;
@@ -1658,7 +1829,7 @@ public class STRecoveryPipeline extends GhidraScript {
                     "report row; treating report state as settled (rolled-back row transactions " +
                     "can advance Ghidra's diagnostic counter)");
                 logLine("diagnostic_modification_without_reported_mutation script=" + applier);
-                rebaseAnalyzerStampsToCurrentModification();
+                rebaseCurrentAnalyzerStampsAfterDiagnosticTransaction();
             }
             return 0;
         }
@@ -1672,16 +1843,26 @@ public class STRecoveryPipeline extends GhidraScript {
      * source, dependency, and artifact hashes still have to match at the next use.  A real
      * mutating row never reaches this method and therefore invalidates the stamps normally.
      */
-    private void rebaseAnalyzerStampsToCurrentModification() throws Exception {
+    private void rebaseCurrentAnalyzerStampsAfterDiagnosticTransaction() throws Exception {
         long modification = currentProgram.getModificationNumber();
+        if (lastStepModificationBefore < 0 || lastStepModificationAfter != modification)
+            return;
+        int rebased = 0;
         for (Map.Entry<String, AnalyzerStamp> entry :
                 new ArrayList<>(analyzerStamps.entrySet())) {
             AnalyzerStamp stamp = entry.getValue();
+            // A rolled-back/no-op child transaction preserves only analyzer artifacts which
+            // were current immediately before that child ran.  Rebasing every stamp used to
+            // bless products made stale by an earlier real mutation (notably prototype
+            // proposals after a method-owner change), because Ghidra's diagnostic
+            // modification number also advances for rolled-back transactions.
+            if (stamp.programModification != lastStepModificationBefore) continue;
             entry.setValue(new AnalyzerStamp(modification, stamp.programSemantic,
                 stamp.sourceHash, stamp.dependencyToken, stamp.artifactToken));
+            rebased++;
         }
         logLine("analyzer_epoch_rebased modification=" + modification +
-            " entries=" + analyzerStamps.size());
+            " entries=" + rebased);
     }
 
     private void annotateLastStep(String script, String detail) throws Exception {
@@ -1706,7 +1887,8 @@ public class STRecoveryPipeline extends GhidraScript {
             String[] header = proposalLines.get(0).split("\\t", -1);
             List<Integer> applyColumns = new ArrayList<>();
             for (int column = 0; column < header.length; column++)
-                if ("apply".equals(header[column]) || header[column].endsWith("_apply"))
+                if ("apply".equals(header[column]) || header[column].endsWith("_apply") ||
+                        header[column].endsWith("_cleanup"))
                     applyColumns.add(column);
             for (int line = 1; line < proposalLines.size(); line++) {
                 if (proposalLines.get(line).isBlank()) continue;
@@ -1969,8 +2151,45 @@ public class STRecoveryPipeline extends GhidraScript {
                 Files.copy(source, baseline.resolve(snapshotName(name)),
                     StandardCopyOption.REPLACE_EXISTING);
         }
+        Path retainedTextHashes = sourceDirectory.resolve(
+            "function_text_hashes.snapshot");
+        if (Files.isRegularFile(retainedTextHashes))
+            Files.copy(retainedTextHashes,
+                baseline.resolve("function_text_hashes.snapshot"),
+                StandardCopyOption.REPLACE_EXISTING);
+        else
+            snapshotFunctionTextHashes(sourceDirectory,
+                baseline.resolve("function_text_hashes.snapshot"));
         logLine("export_baseline_snapshot path=" + portableArgument(baseline.toString()));
         return baseline;
+    }
+
+    /**
+     * Retain one deterministic hash per rendered body so an analysis-detector schema migration
+     * can distinguish byte-identical accounting changes from a real readability regression.
+     * The compact snapshot avoids copying thousands of function directories into run history.
+     */
+    private void snapshotFunctionTextHashes(Path corpus, Path destination) throws Exception {
+        Path functions = corpus.resolve("functions");
+        if (!Files.isDirectory(functions)) return;
+        List<Path> bodies;
+        try (java.util.stream.Stream<Path> stream = Files.walk(functions, 2)) {
+            bodies = stream.filter(path -> Files.isRegularFile(path) &&
+                    "decomp.c".equals(path.getFileName().toString()))
+                .sorted(Comparator.comparing(path ->
+                    path.getParent().getFileName().toString()))
+                .toList();
+        }
+        try (BufferedWriter out = Files.newBufferedWriter(destination,
+                StandardCharsets.UTF_8)) {
+            out.write("function_address\ttext_sha256\n");
+            for (Path body : bodies) {
+                String address = body.getParent().getFileName().toString();
+                if (!address.matches("[0-9A-Fa-f]{8}")) continue;
+                out.write(address.toUpperCase(Locale.ROOT) + "\t" +
+                    sha256(body) + "\n");
+            }
+        }
     }
 
     private Path regressionArtifact(Path directory, String name) {
@@ -2317,10 +2536,13 @@ public class STRecoveryPipeline extends GhidraScript {
     private String normalizeMode(String value) {
         String mode = value.toLowerCase(Locale.ROOT).replace('_', '-');
         if (mode.equals("auto")) return "full";
-        if (Set.of("core", "deep", "abi-refresh", "full", "export", "full-export")
+        if (Set.of("core", "deep", "abi-refresh", "callable-refresh",
+                "call-result-refresh", "corpus-export", "full", "export",
+                "full-export")
                 .contains(mode))
             return mode;
-        throw new IllegalArgumentException("Mode must be core, deep, abi-refresh, full, " +
+        throw new IllegalArgumentException("Mode must be core, deep, abi-refresh, " +
+            "callable-refresh, call-result-refresh, corpus-export, full, " +
             "export, or full-export");
     }
 

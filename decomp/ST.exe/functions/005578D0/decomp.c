@@ -15,15 +15,15 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
   byte *pbVar7;
   ushort *puVar8;
   void *pvVar9;
-  VisibleClassTy_field_00F4DArray *pVVar10;
-  VisibleClassTy_field_0110DArray *pVVar11;
-  uint uVar12;
+  DArrayTy *pVVar10;
+  DArrayTy *pVVar11;
+  uint uVar10;
   int iVar5;
+  uint uVar11;
+  int iVar12;
   uint uVar13;
-  int iVar14;
-  uint uVar15;
-  void **ppvVar16;
-  bool bVar17;
+  void **ppvVar14;
+  bool bVar15;
   InternalExceptionFrame local_50;
   VisibleClassTy *local_c;
   byte *local_8;
@@ -31,10 +31,12 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pVVar3 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\grig\\visible.cpp",0x77,0,iVar4,"%s",
                                "VisibleClassTy::InitData");
     if (iVar5 != 0) {
@@ -46,84 +48,88 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
     return;
   }
   local_c->field_0020 = (int)g_worldGrid.sizeX;
-  iVar14 = local_c->field_0020;
+  iVar12 = local_c->field_0020;
   iVar6 = (int)g_worldGrid.sizeY;
   local_c->field_0024 = iVar6;
-  local_c->field_0028 = (iVar14 + iVar6) * 0xb505 + 0x117878 >> 0x10;
-  local_c->field_002C = (local_c->field_0024 + iVar14) * 0xb505 + 0x117878 >> 0x10;
-  local_c->field_0030 = (local_c->field_0024 + iVar14) * 0xb505 + 0x117878 >> 0x10;
-  local_c->field_0034 = (local_c->field_0024 + iVar14) * 0xb505 + 0x117878 >> 0x10;
+  local_c->field_0028 = (iVar12 + iVar6) * 0xb505 + 0x117878 >> 0x10;
+  local_c->field_002C = (local_c->field_0024 + iVar12) * 0xb505 + 0x117878 >> 0x10;
+  local_c->field_0030 = (local_c->field_0024 + iVar12) * 0xb505 + 0x117878 >> 0x10;
+  local_c->field_0034 = (local_c->field_0024 + iVar12) * 0xb505 + 0x117878 >> 0x10;
   if (DAT_0080874d == 0xff) {
     local_c->field_0114 = 0;
     local_c->field_00F8 = 0;
   }
   else {
     local_c->field_0114 = 1;
-    pbVar7 = Library::DKW::LIB::MemAllocClear(local_c->field_0024 * iVar14 * 2);
+
+    pbVar7 = Library::DKW::LIB::MemAllocClear(local_c->field_0024 * iVar12 * 2);
     pVVar3->field_0038 = pbVar7;
+
     pbVar7 = Library::DKW::LIB::MemAllocClear(pVVar3->field_0030 * pVVar3->field_0034);
     pVVar3->field_004C = pbVar7;
+    /* ST_CALLSITE[005579E0]: CALL 0x006aac10; direct=006AAC10 Library::DKW::LIB::MemAllocClear; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
     puVar8 = Library::DKW::LIB::MemAllocClear(pVVar3->field_0030 * pVVar3->field_0034 * 2);
     pVVar3->field_0050 = puVar8;
-    ppvVar16 = pVVar3->field_003C;
-    iVar14 = 4;
+    ppvVar14 = pVVar3->field_003C;
+    iVar12 = 4;
     do {
+
       pvVar9 = Library::DKW::LIB::MemAllocClear(pVVar3->field_0028 * pVVar3->field_002C);
-      *ppvVar16 = pvVar9;
-      ppvVar16 = ppvVar16 + 1;
-      iVar14 = iVar14 + -1;
-    } while (iVar14 != 0);
-    pVVar10 = (VisibleClassTy_field_00F4DArray *)
-              Library::DKW::TBL::DArrayCreate(nullptr,10,0x1c,10);
-    pVVar3->field_00F4 = pVVar10;
-    pVVar11 = (VisibleClassTy_field_0110DArray *)
-              Library::DKW::TBL::DArrayCreate(nullptr,10,0xc,10);
-    pVVar3->field_0110 = pVVar11;
+      *ppvVar14 = pvVar9;
+      ppvVar14 = ppvVar14 + 1;
+      iVar12 = iVar12 + -1;
+    } while (iVar12 != 0);
+    /* ST_CALLSITE[00557A0D]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/VisibleClassTy_field_00F4DArray; source view only; no Ghidra override */
+    pVVar10 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x1c,10);
+    pVVar3->field_00F4 = (VisibleClassTy_field_00F4DArray *)pVVar10;
+    /* ST_CALLSITE[00557A20]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/VisibleClassTy_field_0110DArray; source view only; no Ghidra override */
+    pVVar11 = Library::DKW::TBL::DArrayCreate(nullptr,10,0xc,10);
+    pVVar3->field_0110 = (VisibleClassTy_field_0110DArray *)pVVar11;
     pVVar3->field_00F8 = (uint)DAT_00808a95;
     pVVar3->field_00FC[DAT_0080874d] = 1;
     if (DAT_00808a94 != '\0') {
-      uVar15 = 0;
+      uVar13 = 0;
       local_8 = &g_bulkInitializedRecords_008087C7[0].field_0022;
       do {
         if ((g_playSystem_00802A38 == nullptr) || (*local_8 < 8)) {
-          uVar12 = (uint)DAT_0080874d;
-          if (uVar15 != uVar12) {
+          uVar10 = (uint)DAT_0080874d;
+          if (uVar13 != uVar10) {
             if (DAT_00808a8f == '\0') {
-              if (DAT_0080874d == (byte)uVar15) {
+              if (DAT_0080874d == (byte)uVar13) {
 LAB_00557b2d:
-                iVar14 = 0;
+                iVar12 = 0;
               }
               else {
-                uVar13 = uVar15 & 0xff;
-                bVar1 = g_playerRelationMatrix[uVar12][uVar13];
-                if ((bVar1 == 0) && (g_playerRelationMatrix[uVar13][uVar12] == 0)) {
-                  iVar14 = -2;
+                uVar11 = uVar13 & 0xff;
+                bVar1 = g_playerRelationMatrix[uVar10][uVar11];
+                if ((bVar1 == 0) && (g_playerRelationMatrix[uVar11][uVar10] == 0)) {
+                  iVar12 = -2;
                 }
-                else if ((bVar1 == 1) && (g_playerRelationMatrix[uVar13][uVar12] == 0)) {
-                  iVar14 = -1;
+                else if ((bVar1 == 1) && (g_playerRelationMatrix[uVar11][uVar10] == 0)) {
+                  iVar12 = -1;
                 }
-                else if ((bVar1 == 0) && (g_playerRelationMatrix[uVar13][uVar12] == 1)) {
-                  iVar14 = 1;
+                else if ((bVar1 == 0) && (g_playerRelationMatrix[uVar11][uVar10] == 1)) {
+                  iVar12 = 1;
                 }
                 else {
-                  if ((bVar1 != 1) || (g_playerRelationMatrix[uVar13][uVar12] != 1))
+                  if ((bVar1 != 1) || (g_playerRelationMatrix[uVar11][uVar10] != 1))
                   goto LAB_00557b2d;
-                  iVar14 = 2;
+                  iVar12 = 2;
                 }
               }
-              bVar17 = iVar14 < 0;
+              bVar15 = iVar12 < 0;
             }
             else {
-              bVar17 = g_bulkInitializedRecords_008087C7[uVar15 & 0xff].field_0023 !=
-                       g_bulkInitializedRecords_008087C7[uVar12].field_0023;
+              bVar15 = g_bulkInitializedRecords_008087C7[uVar13 & 0xff].field_0023 !=
+                       g_bulkInitializedRecords_008087C7[uVar10].field_0023;
             }
-            if (bVar17) goto LAB_00557b44;
+            if (bVar15) goto LAB_00557b44;
           }
-          pVVar3->field_00FC[uVar15] = 1;
+          pVVar3->field_00FC[uVar13] = 1;
         }
 LAB_00557b44:
         local_8 = local_8 + 0x51;
-        uVar15 = uVar15 + 1;
+        uVar13 = uVar13 + 1;
       } while ((int)local_8 < 0x808a71);
     }
   }

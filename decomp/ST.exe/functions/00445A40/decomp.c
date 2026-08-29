@@ -49,6 +49,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   local_88.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_88;
   local_34 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_88.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_88.previous;
@@ -62,6 +63,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       DArrayDestroy(local_14);
     }
     if (iVar2 != -0x5001fff7) {
+
       iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x28a2,0,0,"%s",
                                  "STAllPlayersC::RegisterPGPair");
       if (iVar3 != 0) {
@@ -78,13 +80,16 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x2837);
   }
+
   Library::DKW::TBL::FUN_006afe40((int *)&local_18,param_2);
+
   Library::DKW::TBL::FUN_006afe40((int *)&local_14,param_3);
   uVar7 = 0;
   objPtr = (char)param_1;
   this_01 = local_34;
   if (0 < (int)uVar6) {
     do {
+
       DArrayGetElement(local_18,uVar7,local_8);
       this_01 = local_34;
       /* ST_CALLSITE[00445B03]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -92,6 +97,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       if ((pSVar2 == nullptr) ||
          /* ST_CALLSITE[00445B10]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
          (iVar4 = (*pSVar2->vtable[1].vfunc_24)(pSVar2), iVar4 == 0)) {
+
         DArrayRemoveAt(local_18,uVar7);
         uVar6 = uVar6 - 1;
         uVar7 = uVar7 - 1;
@@ -108,13 +114,16 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   uVar6 = 0;
   if (0 < (int)local_c) {
     do {
+
       DArrayGetElement(local_14,uVar6,local_8);
       /* ST_CALLSITE[00445B75]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       pSVar2 = GetObjPtr(this_01,objPtr,local_8[0],CASE_1);
+
       if (((pSVar2 == nullptr) || (iVar4 = thunk_FUN_00490d90(pSVar2), iVar4 == 0)) ||
          /* ST_CALLSITE[00445B8F]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
          ((iVar4 = (*pSVar2->vtable[1].vfunc_24)(pSVar2), iVar4 == 0 || (pSVar2->field_0030 == -1)))
          ) {
+
         DArrayRemoveAt(local_14,uVar6);
         local_c = local_c - 1;
         uVar6 = uVar6 - 1;
@@ -131,20 +140,25 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   pDVar5 = local_28;
   if (0 < (int)local_10) {
     do {
+
       DArrayGetElement(local_18,uVar6,local_8);
       uVar7 = 0;
       if (0 < (int)local_c) {
         do {
+
           DArrayGetElement(local_14,uVar7,&local_1a);
           if (local_8[0] == local_1a) {
             if (pDVar5 == nullptr) {
               pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
               local_28 = pDVar5;
             }
+
             Library::DKW::TBL::DArrayAppend(pDVar5,local_8);
+
             DArrayRemoveAt(local_18,uVar6);
             local_10 = local_10 - 1;
             uVar6 = uVar6 - 1;
+
             DArrayRemoveAt(local_14,uVar7);
             local_c = local_c - 1;
             uVar7 = uVar7 - 1;
@@ -166,9 +180,10 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
     if (0 < (int)local_30) {
       local_24 = &g_packedRecords_A62x8[objPtr].field1976_0x9f6;
       do {
+
         DArrayGetElement(pDVar5,local_20,local_8);
-        /* ST_CALLSITE[00445CF7]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-        this_00 = (STBoatC *)GetObjPtr(this_01,objPtr,local_8[0],CASE_1);
+        /* ST_CALLSITE[00445CF7]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum */
+        this_00 = GetObjPtr(this_01,objPtr,local_8[0],CASE_1);
         local_2c = g_playSystem_00802A38->field_00E4;
         /* ST_CALLSITE[00445D13]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
         STBoatC::CmdToObj(this_00,CASE_21,&local_2c);
@@ -194,6 +209,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   if (local_10 == 0) {
     bVar8 = local_c == 0;
     if (!bVar8) {
+
       Library::DKW::TBL::FUN_006afe40((int *)&local_18,&pDVar5->flags);
       goto LAB_00445db2;
     }
@@ -204,6 +220,7 @@ LAB_00445db2:
   }
   if (bVar8) {
     if (local_10 != 0) {
+
       Library::DKW::TBL::FUN_006afe40((int *)&local_14,&pDVar5->flags);
       goto LAB_00445dca;
     }
@@ -215,7 +232,9 @@ LAB_00445dca:
       local_20 = 0;
       if (0 < (int)local_30) {
         do {
+
           DArrayGetElement(pDVar5,local_20,local_8);
+
           Library::DKW::TBL::DArrayAppend(local_14,local_8);
           local_20 = local_20 + 1;
         } while ((int)local_20 < (int)local_30);
@@ -232,6 +251,7 @@ LAB_00445e36:
     local_24 = &g_packedRecords_A62x8[objPtr].field1976_0x9f6;
     do {
       if (*local_24 == 0) break;
+
       DArrayGetElement(local_14,uVar6,local_8);
       /* ST_CALLSITE[00445E79]: CALL 0x004027c5; direct=004027C5 STAllPlayersC::_DeleteGuardBoat */
       iVar4 = _DeleteGuardBoat(this_01,objPtr,local_8[0],1);
@@ -247,6 +267,7 @@ LAB_00445e36:
     local_24 = &g_packedRecords_A62x8[objPtr].field1976_0x9f6;
     do {
       if (*local_24 == 0) break;
+
       DArrayGetElement(local_18,uVar6,local_8);
       /* ST_CALLSITE[00445EDC]: CALL 0x004027c5; direct=004027C5 STAllPlayersC::_DeleteGuardBoat */
       _DeleteGuardBoat(this_01,objPtr,local_8[0],1);
@@ -254,14 +275,17 @@ LAB_00445e36:
     } while ((int)uVar6 < (int)local_10);
   }
   local_44 = Library::DKW::TBL::DArrayCreate(nullptr,local_10,2,1);
+
   Library::DKW::TBL::FUN_006afe40((int *)&local_44,&local_18->flags);
   local_40 = Library::DKW::TBL::DArrayCreate(nullptr,local_c,2,1);
+
   Library::DKW::TBL::FUN_006afe40((int *)&local_40,&local_14->flags);
   local_3c = Library::DKW::TBL::DArrayCreate(nullptr,1,4,1);
   if (g_packedRecords_A62x8[objPtr].field1976_0x9f6 == 0) {
     pDVar5 = Library::DKW::TBL::DArrayCreate(nullptr,1,0xc,1);
     g_packedRecords_A62x8[objPtr].field1976_0x9f6 = pDVar5;
   }
+
   Library::DKW::TBL::DArrayAppend
             ((DArrayTy *)g_packedRecords_A62x8[objPtr].field1976_0x9f6,&local_44);
   /* ST_CALLSITE[00445F74]: CALL 0x004017fd; direct=004017FD STAllPlayersC::OptimizeGuardBoats */

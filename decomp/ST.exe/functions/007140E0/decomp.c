@@ -6,7 +6,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
 {
   char cVar1;
   ccFntTy *this_00;
-  AnonShape_00710790_4CBB90D4 *pAVar2;
+  RecoveredRecordView_00710790_7768A573 *pRVar2;
   bool bVar3;
   int local_EAX_194;
   int local_EAX_260;
@@ -38,8 +38,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
   int local_14;
   int local_10;
   RecoveredSourceFamily_dibcopy *local_c;
-  undefined1 local_5;
-
+  byte local_5;
   iVar10 = 0;
   local_c = nullptr;
   local_10 = 0;
@@ -49,6 +48,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
      (*STField<char *>(this,0x58) == '\0')) {
     return 0;
   }
+
   ccFntTy::Save(*(ccFntTy **)this,(undefined4 *)&local_6c);
   FUN_007109f0(*(void **)this,(AnonShape_007109F0_BD33A2FF *)((int)this + 0x10));
   this_00 = *(ccFntTy **)this;
@@ -64,16 +64,19 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
     if (iVar10 <= STField<int>(this,4)) {
       if (param_1 != 0) {
         if (STField<int>(this,4) == iVar10) {
+
           ccFntTy::WrTxt(this_00,STField<char *>(this,0x58),STField<int>(this,0x6c),
                          STField<int>(this,0x70),STField<uint>(this,0x94),-1,-1);
         }
         if (STField<int>(this,4) == STField<int>(this,8) + -2) {
           *(undefined4 *)(*(int *)this + 0x82) = STField<undefined4>(this,0x98);
+
           ccFntTy::WrTxt(*(ccFntTy **)this,STField<char *>(this,0x58),STField<int>(this,0x6c),
                          STField<int>(this,0x70),STField<uint>(this,0x98),-1,-1);
         }
         if (STField<int>(this,4) == STField<int>(this,8) + -1) {
           *(undefined4 *)(*(int *)this + 0x82) = STField<undefined4>(this,0x9c);
+
           ccFntTy::WrTxt(*(ccFntTy **)this,STField<char *>(this,0x58),STField<int>(this,0x6c),
                          STField<int>(this,0x70),STField<uint>(this,0x9c),-1,-1);
         }
@@ -88,14 +91,17 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
     }
     bVar3 = false;
     local_18 = 0;
+
     local_EAX_194 =
          FUN_0070cd90(&this_00->field_0x9e,
                       (uint *)(STField<int>(this,0x58) + STField<int>(this,0xc)));
     if (local_EAX_194 == 0) {
       iVar10 = STField<int>(this,0xc) + 1;
       STField<int>(this,0xc) = iVar10;
+
       iVar10 = FUN_0070cdc0((byte *)(iVar10 + STField<int>(this,0x58)));
       if (iVar10 < 0) {
+
         local_EAX_260 =
              FUN_0070cd90((char *)(*(int *)this + 0x9e),
                           (uint *)(STField<int>(this,0x58) + STField<int>(this,0xc)));
@@ -125,6 +131,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       cVar1 = *pcVar7;
       pcVar7 = pcVar7 + 1;
     } while (cVar1 != '\0');
+
     local_EAX_359 =
          Library::MSVCRT::_strncmp
                    ((char *)(STField<int>(this,0x58) + STField<int>(this,0xc)),
@@ -202,6 +209,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
       }
+
       local_EAX_781 = FUN_00711110(*(void **)this,STField<char *>(this,0x8c));
       iVar10 = (STField<int>(this,0x5c) + STField<int>(this,100)) / 2 - local_EAX_781;
       if (puVar4 != nullptr) {
@@ -216,6 +224,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
       }
+
       local_EAX_717 = FUN_00711110(*(void **)this,STField<char *>(this,0x8c));
       iVar10 = STField<int>(this,0x5c) - local_EAX_717;
       if (puVar4 != nullptr) {
@@ -228,6 +237,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
       }
+
       local_EAX_637 = FUN_00711110(*(void **)this,STField<char *>(this,0x8c));
       iVar10 = (STField<int>(this,0x5c) - local_EAX_637) / 2;
       if (puVar4 != nullptr) {
@@ -244,16 +254,19 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         FUN_006b4170(local_c,iVar10,0,0,STField<int>(this,0x5c),STField<int>(this,0x60),
                      (byte)STField<undefined4>(this,0xa0));
         if (STField<int>(this,4) == STField<int>(this,8) + -3) {
+
           ccFntTy::WrTxt(*(ccFntTy **)this,STField<char *>(this,0x90),STField<int>(this,0x6c),
                          STField<int>(this,0x70),STField<uint>(this,0x94),-1,-1);
         }
         if (STField<int>(this,4) == STField<int>(this,8) + -2) {
           *(undefined4 *)(*(int *)this + 0x82) = STField<undefined4>(this,0x98);
+
           ccFntTy::WrTxt(*(ccFntTy **)this,STField<char *>(this,0x90),STField<int>(this,0x6c),
                          STField<int>(this,0x70),STField<uint>(this,0x98),-1,-1);
         }
         if (STField<int>(this,4) == STField<int>(this,8) + -1) {
           *(undefined4 *)(*(int *)this + 0x82) = STField<undefined4>(this,0x9c);
+
           ccFntTy::WrTxt(*(ccFntTy **)this,STField<char *>(this,0x90),STField<int>(this,0x6c),
                          STField<int>(this,0x70),STField<uint>(this,0x9c),-1,-1);
         }
@@ -267,7 +280,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
     }
     if (-1 < STField<int>(this,0x7c)) {
       if (this_00->field_00A0 != 0) {
-        FUN_00710790((AnonShape_00710790_4CBB90D4 *)this_00);
+        FUN_00710790((RecoveredRecordView_00710790_7768A573 *)this_00);
       }
       iVar11 = *(int *)(*(int *)this + 0x5c) + *(int *)&this_00->field_0x8a +
                STField<int>(this,0xa4);
@@ -275,13 +288,13 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       STField<undefined4>(this,0x7c) = 0xffffffff;
       STField<int>(this,0x80) = iVar10;
       *(int *)(STField<int>(this,0xa8) + STField<int>(this,0xb0) * 4) = iVar10;
-      pAVar2 = *(AnonShape_00710790_4CBB90D4 **)this;
+      pRVar2 = *(RecoveredRecordView_00710790_7768A573 **)this;
       STField<int>(this,0xb0) = STField<int>(this,0xb0) + 1;
       STField<int>(this,0x8c) = STField<int>(this,0x80) + STField<int>(this,0x58);
-      if (*(int *)(pAVar2 + 1) != 0) {
-        FUN_00710790(pAVar2);
+      if (*(int *)(pRVar2 + 1) != 0) {
+        FUN_00710790(pRVar2);
       }
-      if (pAVar2->field_008A + -1 + iVar11 < STField<int>(this,0x60)) {
+      if (pRVar2->field_008A + -1 + iVar11 < STField<int>(this,0x60)) {
         STField<int>(this,0xa4) = iVar11;
       }
       else {
@@ -305,6 +318,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
           else {
             iVar10 = -1;
           }
+
           ccFntTy::WrTxt(*(ccFntTy **)this,STField<char *>(this,0x88),STField<int>(this,0x6c),
                          STField<int>(this,0x70),STField<uint>(this,0x94),-1,iVar10);
         }
@@ -313,13 +327,16 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
     bVar3 = false;
     local_14 = 0;
     local_18 = 0;
+
     iVar9 = FUN_0070cd90((char *)(*(int *)this + 0x9e),
                          (uint *)(STField<int>(this,0x58) + STField<int>(this,0xc)));
     if (iVar9 == 0) {
       iVar10 = STField<int>(this,0xc) + 1;
       STField<int>(this,0xc) = iVar10;
+
       iVar10 = FUN_0070cdc0((byte *)(iVar10 + STField<int>(this,0x58)));
       if (iVar10 < 0) {
+
         local_EAX_1518 =
              FUN_0070cd90((char *)(*(int *)this + 0x9e),
                           (uint *)(STField<int>(this,0x58) + STField<int>(this,0xc)));
@@ -357,6 +374,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       cVar1 = *pcVar7;
       pcVar7 = pcVar7 + 1;
     } while (cVar1 != '\0');
+
     local_EAX_1664 =
          Library::MSVCRT::_strncmp
                    ((char *)(STField<int>(this,0x58) + STField<int>(this,0xc)),
@@ -441,6 +459,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
       }
+
       local_EAX_2090 = FUN_00711110(*(void **)this,STField<char *>(this,0x8c));
       iVar10 = (STField<int>(this,0x5c) + STField<int>(this,100)) / 2 - local_EAX_2090;
       if (puVar4 != nullptr) {
@@ -454,6 +473,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
       }
+
       local_EAX_2026 = FUN_00711110(*(void **)this,STField<char *>(this,0x8c));
       iVar10 = STField<int>(this,0x5c) - local_EAX_2026;
       if (puVar4 != nullptr) {
@@ -466,6 +486,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
       }
+
       local_EAX_1946 = FUN_00711110(*(void **)this,STField<char *>(this,0x8c));
       iVar10 = (STField<int>(this,0x5c) - local_EAX_1946) / 2;
       if (puVar4 != nullptr) {
@@ -476,22 +497,24 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
     if (param_2 == '\x01') {
       FUN_006b4170(local_c,local_10,0,0,STField<int>(this,0x5c),STField<int>(this,0x60),
                    (byte)STField<undefined4>(this,0xa0));
+
       ccFntTy::WrTxt(*(ccFntTy **)this,STField<char *>(this,0x88),STField<int>(this,0x6c),
                      STField<int>(this,0x70),STField<uint>(this,0x94),iVar10,local_14);
       goto cf_common_exit_00714ACB;
     }
     if (local_18 != 0) {
-      pAVar2 = *(AnonShape_00710790_4CBB90D4 **)this;
-      if (*(int *)(pAVar2 + 1) != 0) {
-        FUN_00710790(pAVar2);
+      pRVar2 = *(RecoveredRecordView_00710790_7768A573 **)this;
+      if (*(int *)(pRVar2 + 1) != 0) {
+        FUN_00710790(pRVar2);
       }
       FUN_006b4170(local_c,local_10,0,STField<int>(this,0xa4),STField<int>(this,0x5c),
-                   pAVar2->field_008A,(byte)STField<undefined4>(this,0xa0));
+                   pRVar2->field_008A,(byte)STField<undefined4>(this,0xa0));
     }
     uVar6 = STField<uint>(this,0x94);
     iVar8 = STField<int>(this,0xa4);
     iVar11 = local_14;
   }
+
   ccFntTy::WrTxt(*(ccFntTy **)this,STField<char *>(this,0x88),STField<int>(this,0x6c),iVar8,
                  uVar6,iVar10,iVar11);
 cf_common_exit_00714ACB:

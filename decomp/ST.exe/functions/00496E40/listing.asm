@@ -1,4 +1,4 @@
-FUN_00496e40:
+DumpClassC::sub_00496E40:
 00496E40  55                        PUSH EBP
 00496E41  8B EC                     MOV EBP,ESP
 00496E43  8B 55 10                  MOV EDX,dword ptr [EBP + 0x10]

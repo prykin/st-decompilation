@@ -55,7 +55,7 @@ LAB_0056ea66:
 0056EA81  6A 0A                     PUSH 0xa
 0056EA83  6A 0A                     PUSH 0xa
 0056EA85  50                        PUSH EAX
-0056EA86  E8 65 6A 14 00            CALL 0x006b54f0
+0056EA86  E8 65 6A 14 00            CALL 0x006b54f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 0056EA8B  89 86 A7 4E 00 00         MOV dword ptr [ESI + 0x4ea7],EAX
 LAB_0056ea91:
 0056EA91  8B 86 AB 4E 00 00         MOV EAX,dword ptr [ESI + 0x4eab]
@@ -76,7 +76,7 @@ LAB_0056eaa1:
 0056EABD  6A 0A                     PUSH 0xa
 0056EABF  6A 0A                     PUSH 0xa
 0056EAC1  50                        PUSH EAX
-0056EAC2  E8 29 6A 14 00            CALL 0x006b54f0
+0056EAC2  E8 29 6A 14 00            CALL 0x006b54f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 0056EAC7  89 86 AB 4E 00 00         MOV dword ptr [ESI + 0x4eab],EAX
 LAB_0056eacd:
 0056EACD  8D 9E A3 4D 00 00         LEA EBX,[ESI + 0x4da3]

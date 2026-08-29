@@ -25,16 +25,18 @@ int __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,STMessage *message)
   uint uVar8;
   InternalExceptionFrame local_60;
   uint local_1c [4];
-  undefined2 local_c;
+  ushort local_c;
   FrmPanelTy *local_8;
 
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   local_8 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_60.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\frmpanel.cpp",0xe0,0,iVar2,"%s"
                                ,"FrmPanelTy::GetMessage");
     if (iVar4 == 0) {
@@ -100,7 +102,9 @@ cf_common_exit_005109A5:
           case MESS_CPANELTY_B10E:
             local_1c[0] = 0xc;
           }
-          thunk_FUN_0054edf0((undefined4 *)0x18,local_1c,0,0xffffffff);
+          /* ST_CALLSITE[005109F4]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+          STPlaySystemC::sub_0054EDF0
+                    (g_playSystem_00802A38,(undefined4 *)0x18,local_1c,0,0xffffffff);
           thunk_FUN_005252c0(0xae);
           g_currentExceptionFrame = local_60.previous;
           return 0;
@@ -198,9 +202,10 @@ switchD_00510930_default:
   case MESS_RESEARCHPANELTY_C0B4|MESS_ID_CREATE:
     pcVar5 = "BUT_FBREAK";
   }
+  /* ST_CALLSITE[00510A5F]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_005105E0_C0011880; source view only; no Ghidra override */
   pCVar2 = thunk_FUN_00571240(pcVar5,0);
   /* ST_CALLSITE[00510A6B]: CALL 0x00405d9e; direct=00405D9E FrmPanelTy::PaintBut */
-  PaintBut(this_00,(AnonShape_005105E0_BBFE3E3B *)message,pCVar2);
+  PaintBut(this_00,(RecoveredRecordView_005105E0_C0011880 *)message,pCVar2);
 switchD_005108d5_default:
   g_currentExceptionFrame = local_60.previous;
   return 0;

@@ -23,25 +23,24 @@ STAllPlayersC::DestroyObjectMsg
   uint uVar2;
   int iVar3;
   uint uVar4;
-  DArrayTy *array;
+  DArrayOf_STGameObjCPtr *array;
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   undefined3 in_stack_00000005;
-  undefined1 local_40 [16];
-  undefined4 local_30;
+  byte local_40 [16];
+  uint local_30;
   undefined4 *local_2c;
-  undefined4 local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
-  undefined2 local_14;
-  undefined2 local_12;
-  undefined4 local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_20;
+  uint local_1c;
+  uint local_18;
+  ushort local_14;
+  ushort local_12;
+  uint local_10;
+  uint local_c;
+  uint local_8;
   uVar2 = param_2;
   switch(param_3) {
   case CASE_1:
-    array = (DArrayTy *)g_packedRecords_A62x8[param_1].field3_0x9;
+    array = g_packedRecords_A62x8[param_1].field3_0x9;
     break;
   case CASE_2:
     array = g_array_007FA154;
@@ -59,6 +58,7 @@ STAllPlayersC::DestroyObjectMsg
     array = g_array_007FA164;
     break;
   default:
+
     iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2eb1,0,0,"%s",
                                "STAllPlayersC::DestroyObjectMsg");
     if (iVar3 == 0) {
@@ -67,7 +67,8 @@ STAllPlayersC::DestroyObjectMsg
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (((array != nullptr) &&
-      (iVar3 = DArrayGetElement(array,param_2 & 0xffff,&param_1), iVar3 != -4)) &&
+
+      (iVar3 = DArrayGetElement((DArrayTy *)array,param_2 & 0xffff,&param_1), iVar3 != -4)) &&
      (_param_1 != nullptr)) {
     local_20 = 10000;
     local_1c = 0;
@@ -79,9 +80,8 @@ STAllPlayersC::DestroyObjectMsg
     local_c = 1;
     local_8 = param_4;
     local_30 = 0x128;
-    /* ST_CALLSITE[00449C30]: CALL dword ptr [EDX] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*_param_1)(local_40);
+    /* ST_CALLSITE[00449C30]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4 */
+    STStructuralVirtualCall<void>(_param_1, 0x0, local_40);
     return 1;
   }
   return 0;

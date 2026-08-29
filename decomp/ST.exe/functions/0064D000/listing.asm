@@ -27,7 +27,7 @@ LAB_0064d040:
 0064D040  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]
 0064D043  51                        PUSH ECX
 0064D044  50                        PUSH EAX
-0064D045  E8 75 4E DB FF            CALL 0x00401ebf
+0064D045  E8 75 4E DB FF            CALL 0x00401ebf  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override
 0064D04A  C6 00 01                  MOV byte ptr [EAX],0x1
 0064D04D  8B 96 88 00 00 00         MOV EDX,dword ptr [ESI + 0x88]
 0064D053  89 50 4E                  MOV dword ptr [EAX + 0x4e],EDX

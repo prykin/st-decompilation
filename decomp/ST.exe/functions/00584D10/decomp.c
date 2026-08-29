@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_00584d10(AnonShape_00584D10_AA6E9D03 *param_1)
+void __fastcall FUN_00584d10(RecoveredRecordView_00584D10_FD6C656C *param_1)
 
 {
   uint uVar1;
@@ -11,18 +11,18 @@ void __fastcall FUN_00584d10(AnonShape_00584D10_AA6E9D03 *param_1)
   int iVar5;
   int iVar6;
   uint *puVar7;
-  undefined4 local_64 [6];
+  uint local_64 [6];
   short local_4a;
   short sStack_48;
   short local_46;
   short sStack_44;
   short local_42;
   short local_40;
-  undefined2 local_3e;
-  undefined4 local_3c;
-  undefined1 local_38;
-  undefined4 local_37;
-  undefined2 local_33;
+  ushort local_3e;
+  uint local_3c;
+  byte local_38;
+  uint local_37;
+  ushort local_33;
   int local_c;
   int local_8;
 
@@ -46,7 +46,9 @@ void __fastcall FUN_00584d10(AnonShape_00584D10_AA6E9D03 *param_1)
     local_3e = (undefined2)iVar6;
     thunk_FUN_00416270(param_1,(uint *)&local_4a,&sStack_48,&local_46);
     if (local_c < 4) {
+
       uVar2 = FUN_006aff50(iVar6);
+
       uVar3 = FUN_006aff5b(local_8);
       iVar4 = uVar2 * 0xc9;
       iVar6 = iVar4 / 3;

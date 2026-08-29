@@ -26,7 +26,7 @@ LAB_006e576d:
 006E5773  51                        PUSH ECX
 006E5774  8B CE                     MOV ECX,ESI
 006E5776  8B 06                     MOV EAX,dword ptr [ESI]
-006E5778  FF 10                     CALL dword ptr [EAX]
+006E5778  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 006E577A  8B 56 08                  MOV EDX,dword ptr [ESI + 0x8]
 006E577D  8B 4F 18                  MOV ECX,dword ptr [EDI + 0x18]
 006E5780  52                        PUSH EDX

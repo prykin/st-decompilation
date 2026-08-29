@@ -18,6 +18,7 @@ int __cdecl CreateArbiter(int param_1,char *param_2)
   local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
     if ((g_playSystem_00802A38 == nullptr) || (param_1 == 0)) {
@@ -29,9 +30,10 @@ int __cdecl CreateArbiter(int param_1,char *param_2)
     }
     local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad((cMf32 *)param_1,param_2,1,0);
     if (local_8 == nullptr) {
-      /* ST_CALLSITE[00648EF4]: CALL 0x004023dd; direct=004023DD CreateDefaultBossData */
-      local_8 = (ushort *)CreateDefaultBossData();
+      /* ST_CALLSITE[00648EF4]: CALL 0x004023dd; direct=004023DD CreateDefaultBossData; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
+      local_8 = STPointerBoundaryCast<ushort *>(CreateDefaultBossData());
     }
+
     Library::Ourlib::SAPP::FUN_006e6200
               (g_playSystem_00802A38,0x403,(undefined4 *)0x28,nullptr,nullptr,local_8,0
               );
@@ -40,6 +42,7 @@ int __cdecl CreateArbiter(int param_1,char *param_2)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_creat.cpp",0x8d,0,iVar2,"%s",
                              "CreateArbiter");
   if (iVar3 != 0) {

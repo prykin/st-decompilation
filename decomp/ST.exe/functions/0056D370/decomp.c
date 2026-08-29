@@ -22,34 +22,41 @@ void __thiscall STAppC::OpenGameDBs(STAppC *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
     puVar1 = &local_8->field_0x470;
     puVar4 = (byte *)&local_8->field_7D1A;
     /* ST_CALLSITE[0056D3C6]: CALL EBX */
     wsprintfA((LPSTR)puVar4,"%s%s",puVar1,"NATURE");
+
     DAT_00806768 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
     PTR_0080676c = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)DAT_00806768);
     /* ST_CALLSITE[0056D3F5]: CALL EBX */
     wsprintfA((LPSTR)puVar4,"%s%s",puVar1,"OTHER");
-    PTR_00806770 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
+    /* ST_CALLSITE[0056D403]: CALL 0x006f0ec0; direct=006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint */
+    PTR_00806770 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
     PTR_00806774 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)PTR_00806770);
     /* ST_CALLSITE[0056D427]: CALL EBX */
     wsprintfA((LPSTR)puVar4,"%s%s",puVar1,&DAT_007ca15c);
+
     DAT_00806778 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
     PTR_0080677c = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)DAT_00806778);
     /* ST_CALLSITE[0056D456]: CALL EBX */
     wsprintfA((LPSTR)puVar4,"%s%s",puVar1,"CONTROLG");
-    g_cMf32_00806790 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
+    /* ST_CALLSITE[0056D464]: CALL 0x006f0ec0; direct=006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint */
+    g_cMf32_00806790 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
     PTR_00806794 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)g_cMf32_00806790);
     /* ST_CALLSITE[0056D488]: CALL EBX */
     wsprintfA((LPSTR)puVar4,"%s%s",puVar1,"OBJECT");
+
     DAT_00806788 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar4,0,0,0);
     PTR_0080678c = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)DAT_00806788);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\tapp.cpp",0x400,0,errorCode,"%s",
                              "STAppC::OpenGameDBs");
   if (iVar3 != 0) {

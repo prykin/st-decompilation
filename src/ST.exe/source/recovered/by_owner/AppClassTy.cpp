@@ -29,7 +29,7 @@ st::fn_006E34C0(AppClassTy *this,undefined4 param_1,undefined4 param_2)
   return this;
 }
 
-// 006E5150 AppClassTy::sub_006E5150
+// 006E5150 AppClassTy::vfunc_18
 #line 4 "decomp/ST.exe/functions/006E5150/decomp.c"
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 0056FA60 -> 006E5150 @ 0056FAAB
@@ -53,7 +53,11 @@ st::fn_006E34C0(AppClassTy *this,undefined4 param_1,undefined4 param_2)
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1->id == 4 uses
    /SubmarineTitans/Recovered/DiscriminatedPayloads/AppClassTy_sub_006E5150_006E5150_MessagePayload_Case_4.
-   The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage. */
+   The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage.
+
+   [STDiscriminatedPayloadApplier] Case-local payload view: param_1->id == 4 uses
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/AppClassTy_vfunc_18_006E5150_MessagePayload_Case_4.
+   carrier=param_1; The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage. */
 
 undefined4 __thiscall st::fn_006E5150(AppClassTy *this,STMessage *param_1)
 
@@ -61,7 +65,8 @@ undefined4 __thiscall st::fn_006E5150(AppClassTy *this,STMessage *param_1)
   if (param_1->id == 4) {
     DAT_00856d74 = (param_1->arg0).u32;
     if ((DAT_00856d74 != 0) && (this->field_0024 != 0)) {
-      st::fn_006E4290(0xf,5,0xf,0);
+
+      st::fn_006E4290(this,0xf,5,0xf,0);
       return 0;
     }
     st::fn_006E4340(this,(int *)0xf,5,0xf,0);
@@ -72,4 +77,3 @@ undefined4 __thiscall st::fn_006E5150(AppClassTy *this,STMessage *param_1)
   }
   return 0;
 }
-

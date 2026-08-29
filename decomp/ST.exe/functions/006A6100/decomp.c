@@ -1,8 +1,13 @@
-#include "../../pseudocode_runtime.h"
 
 
-undefined4
-FUN_006a6100(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int *param_7)
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=006A7D50 @ 006A7E7C -> read as EAX on
+   every CFG path | 006A9190 @ 006A93A3 -> read as EAX on every CFG path | 006A9190 @ 006AA350 ->
+   read as EAX on every CFG path */
+
+int FUN_006a6100(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
+                int *param_7)
 
 {
   byte bVar1;
@@ -14,10 +19,9 @@ FUN_006a6100(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   int iVar7;
   byte bVar8;
   byte bVar9;
-  undefined4 local_2c;
-  undefined4 local_18;
-  undefined4 local_14;
-
+  uint local_2c;
+  uint local_18;
+  uint local_14;
   uVar5 = param_4 - param_1 >> 0x1f;
   iVar7 = (param_4 - param_1 ^ uVar5) - uVar5;
   if (param_1 < param_4) {
@@ -121,6 +125,6 @@ FUN_006a6100(int param_1,int param_2,int param_3,int param_4,int param_5,int par
     *param_7 = iVar3;
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return *(undefined4 *)(((uVar5 + local_2c * 3) * 3 + local_14) * 4 + 0x7ed500);
+  return *(int *)(((uVar5 + local_2c * 3) * 3 + local_14) * 4 + 0x7ed500);
 }
 

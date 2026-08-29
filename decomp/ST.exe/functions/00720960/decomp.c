@@ -9,8 +9,10 @@ ListClassTy * __cdecl CreateList(void)
 {
   ListClassTy *pLVar1;
 
-  pLVar1 = (ListClassTy *)FUN_006b04d0(0x20c);
+
+  pLVar1 = STPointerBoundaryCast<ListClassTy *>(FUN_006b04d0(0x20c));
   if (pLVar1 != nullptr) {
+
     FUN_0072b700((undefined4 *)pLVar1);
     pLVar1->field_01E8 = 0;
     pLVar1->field_01E4 = 0;

@@ -43,7 +43,7 @@ LAB_0049a672:
 0049A6A4  89 5E 65                  MOV dword ptr [ESI + 0x65],EBX
 0049A6A7  89 46 41                  MOV dword ptr [ESI + 0x41],EAX
 0049A6AA  89 96 0E 03 00 00         MOV dword ptr [ESI + 0x30e],EDX
-0049A6B0  E8 00 87 F6 FF            CALL 0x00402db5
+0049A6B0  E8 00 87 F6 FF            CALL 0x00402db5  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STGroupBoatC; source view only; no Ghidra override
 0049A6B5  8B 4E 45                  MOV ECX,dword ptr [ESI + 0x45]
 0049A6B8  8B 56 41                  MOV EDX,dword ptr [ESI + 0x41]
 0049A6BB  8B F8                     MOV EDI,EAX
@@ -82,7 +82,8 @@ LAB_0049a6ff:
 0049A719  50                        PUSH EAX
 0049A71A  51                        PUSH ECX
 0049A71B  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
-0049A721  E8 94 81 F6 FF            CALL 0x004028ba
+STGroupBoatC::GrpMove::override::prt_49a721_6c9e7102:
+0049A721  E8 94 81 F6 FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 0049A726  8B F8                     MOV EDI,EAX
 0049A728  85 FF                     TEST EDI,EDI
 0049A72A  75 1B                     JNZ 0x0049a747
@@ -136,7 +137,7 @@ LAB_0049a7a4:
 0049A7BE  50                        PUSH EAX
 0049A7BF  51                        PUSH ECX
 0049A7C0  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
-0049A7C6  E8 EF 80 F6 FF            CALL 0x004028ba
+0049A7C6  E8 EF 80 F6 FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_0045FF30_A86BE482; source view only; no Ghidra override
 0049A7CB  8B F8                     MOV EDI,EAX
 0049A7CD  85 FF                     TEST EDI,EDI
 0049A7CF  75 1B                     JNZ 0x0049a7ec

@@ -17,11 +17,13 @@ FUN_00660620:
 00660645  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 0066064B  52                        PUSH EDX
 0066064C  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
-0066064F  E8 A5 56 DA FF            CALL 0x00405cf9
+FUN_00660620::override::prt_66064f_e820036f:
+0066064F  E8 A5 56 DA FF            CALL 0x00405cf9  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STGroupC; signature=__stdcall;pointer:/STGroupC;/char;/ushort
 00660654  85 C0                     TEST EAX,EAX
 00660656  74 6D                     JZ 0x006606c5
 00660658  8B C8                     MOV ECX,EAX
-0066065A  E8 56 27 DA FF            CALL 0x00402db5
+FUN_00660620::override::prt_66065a_66359455:
+0066065A  E8 56 27 DA FF            CALL 0x00402db5  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__thiscall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/STGroupC
 0066065F  8B F8                     MOV EDI,EAX
 00660661  85 FF                     TEST EDI,EDI
 00660663  75 09                     JNZ 0x0066066e

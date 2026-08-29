@@ -21,7 +21,7 @@ StartSystemTy::sub_006E56B0:
 006E56E2  8D 45 DC                  LEA EAX,[EBP + -0x24]
 006E56E5  8B 11                     MOV EDX,dword ptr [ECX]
 006E56E7  50                        PUSH EAX
-006E56E8  FF 12                     CALL dword ptr [EDX]
+006E56E8  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 LAB_006e56ea:
 006E56EA  8D 4D FC                  LEA ECX,[EBP + -0x4]
 006E56ED  8D 55 08                  LEA EDX,[EBP + 0x8]

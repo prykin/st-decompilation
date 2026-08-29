@@ -50,7 +50,7 @@ OptPanelTy::CreateSlider:
 0052EBF1  89 BD E8 FC FF FF         MOV dword ptr [EBP + 0xfffffce8],EDI
 0052EBF7  89 85 E0 FB FF FF         MOV dword ptr [EBP + 0xfffffbe0],EAX
 0052EBFD  89 B5 E4 FB FF FF         MOV dword ptr [EBP + 0xfffffbe4],ESI
-0052EC03  E8 74 6B ED FF            CALL 0x0040577c
+0052EC03  E8 74 6B ED FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 0052EC08  83 C4 08                  ADD ESP,0x8
 0052EC0B  50                        PUSH EAX
 0052EC0C  E8 EF 3F 1C 00            CALL 0x006f2c00

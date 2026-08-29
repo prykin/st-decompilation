@@ -17,6 +17,7 @@ void __thiscall CursorClassTy::DoneCursor(CursorClassTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pCVar2 = local_8;
   if (errorCode == 0) {
@@ -30,6 +31,7 @@ void __thiscall CursorClassTy::DoneCursor(CursorClassTy *this)
     pCVar2->field_04E3 = nullptr;
     pCVar2->field_04E7 = nullptr;
     if (pCVar2->field_04EB != nullptr) {
+
       SpriteClassTy::CloseSprite(pCVar2->field_04EB);
       Library::MSVCRT::FUN_0072e2b0((HoloTy *)pCVar2->field_04EB);
       pCVar2->field_04EB = nullptr;
@@ -38,12 +40,14 @@ void __thiscall CursorClassTy::DoneCursor(CursorClassTy *this)
       FUN_006b8a30((int *)pCVar2->field_00AD);
     }
     pCVar2->field_00AD = 0;
+
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar2->field_0018);
     g_cursorClass_00802A30 = nullptr;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\to_cursor.cpp",0x7d,0,errorCode,
                              "%s","CursorClassTy::DoneCursor");
   if (iVar3 != 0) {

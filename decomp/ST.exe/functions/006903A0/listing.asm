@@ -10,7 +10,7 @@ FUN_006903a0:
 006903B3  8B 10                     MOV EDX,dword ptr [EAX]
 006903B5  51                        PUSH ECX
 006903B6  8B C8                     MOV ECX,EAX
-006903B8  FF 12                     CALL dword ptr [EDX]
+006903B8  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 006903BA  5D                        POP EBP
 006903BB  C2 08 00                  RET 0x8
 LAB_006903be:

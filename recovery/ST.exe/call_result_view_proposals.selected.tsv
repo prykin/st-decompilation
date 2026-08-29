@@ -1,0 +1,2 @@
+apply	action	function_address	function_name	call_address	target_address	target_name	expected_override	proposed_return_type	confidence	evidence
+1	apply	00712D30	ccFntTy::FormIndentText	00712D74	00712F80	ccFntTy::_TxtToSarr	none	pointer:/ccFntTy	high	one exact direct CALL result reaches only the concrete pointer view pointer:/ccFntTy through COPY/CAST/INDIRECT; consumer anchors=[00712D74, 00712D74:machine-call-boundary, 00712D7B:null-test, 00712D9C, 00712D9C:typed-argument, 00712DA7, 00712DA7:typed-argument]; transport callee ABI pointer:/uint is retained

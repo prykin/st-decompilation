@@ -1,11 +1,11 @@
 #include "../../pseudocode_runtime.h"
 
 
-int __fastcall FUN_005fa180(AnonShape_005FA180_2D8671A3 *param_1)
+int __fastcall FUN_005fa180(RecoveredRecordView_005FA180_30990B79 *param_1)
 
 {
   byte *puVar1;
-  char cVar2;
+  byte bVar2;
   int iVar3;
   uint uVar4;
   int iVar5;
@@ -26,8 +26,8 @@ int __fastcall FUN_005fa180(AnonShape_005FA180_2D8671A3 *param_1)
     iVar3 = param_1->field_02D1 + -1;
     param_1->field_02D1 = iVar3;
     if (iVar3 == (int)PTR_00806724->entryCount / 2) {
-      cVar2 = thunk_FUN_004ad610((int)puVar1);
-      if (cVar2 != '\0') {
+      bVar2 = thunk_FUN_004ad610((RecoveredRecord_004AD610_D99117A2 *)puVar1);
+      if (bVar2 != 0) {
         thunk_FUN_005fa0b0((STColl3C *)param_1);
         /* ST_CALLSITE[005FA208]: CALL dword ptr [EAX] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
@@ -51,9 +51,12 @@ int __fastcall FUN_005fa180(AnonShape_005FA180_2D8671A3 *param_1)
   param_1->field_02D1 = iVar6;
   if (PTR_00806724->entryCount <= iVar6) {
     param_1->field_02D1 = iVar3;
+
     thunk_FUN_00495ff0((short)param_1->field_025D,(short)param_1->field_0261,
-                       (short)param_1->field_0265,0,(AnonShape_00495FF0_59081BDD *)param_1);
-    thunk_FUN_004ad430((STT3DSprC *)puVar1);
+                       (short)param_1->field_0265,0,(RecoveredRecordView_00495FF0_A2A90B23 *)param_1
+                      );
+    /* ST_CALLSITE[005FA2A3]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+    STT3DSprC::sub_004AD430((STT3DSprC *)puVar1);
     param_1->field_02BB = 0;
     /* ST_CALLSITE[005FA2B1]: CALL 0x0040464c; direct=0040464C sub_0041C5A0 */
     sub_0041C5A0(param_1);
@@ -66,6 +69,7 @@ int __fastcall FUN_005fa180(AnonShape_005FA180_2D8671A3 *param_1)
     iVar3 = (int)param_1->field_0041;
     uVar9 = 0;
     iVar8 = 0;
+
     uVar4 = thunk_FUN_004ad650((STT3DSprC *)puVar1);
     thunk_FUN_006377b0(uVar4,iVar8,iVar3,iVar7,iVar5,uVar9);
   }

@@ -10,7 +10,7 @@ int __thiscall FUN_0063e700(void *this,int param_1,int param_2,int param_3)
   int iVar4;
   short sVar5;
   int iVar6;
-  undefined4 local_3c [8];
+  uint local_3c [8];
   int local_1c;
   int local_18;
   int local_14;
@@ -59,11 +59,11 @@ int __thiscall FUN_0063e700(void *this,int param_1,int param_2,int param_3)
                    (short)local_18].objects[1] != nullptr)))) {
                 local_c = local_c + 1;
                 thunk_FUN_00601d10(STField<int>(this,0x259),0,
-                                   (int)g_worldGrid.cells
-                                        [(int)sVar1 * (int)sVar3 +
-                                         (int)sVar5 * (int)g_worldGrid.planeStride +
-                                         (short)local_18].objects[1],
-                                   (short)STField<undefined4>(this,0x25d),
+                                   (RecoveredRecord_00601D10_11B39116 *)
+                                   g_worldGrid.cells
+                                   [(int)sVar1 * (int)sVar3 +
+                                    (int)sVar5 * (int)g_worldGrid.planeStride + (short)local_18
+                                   ].objects[1],(short)STField<undefined4>(this,0x25d),
                                    STField<ushort>(this,0x261),0xa8,0x128);
                 iVar2 = local_8;
                 sVar3 = g_worldGrid.sizeX;
@@ -77,11 +77,11 @@ int __thiscall FUN_0063e700(void *this,int param_1,int param_2,int param_3)
                       (short)local_18].objects[0] != nullptr)))) {
                 local_c = local_c + 1;
                 thunk_FUN_00601d10(STField<int>(this,0x259),0,
-                                   (int)g_worldGrid.cells
-                                        [(int)sVar1 * (int)sVar3 +
-                                         (int)sVar5 * (int)g_worldGrid.planeStride +
-                                         (short)local_18].objects[0],
-                                   (short)STField<undefined4>(this,0x25d),
+                                   (RecoveredRecord_00601D10_11B39116 *)
+                                   g_worldGrid.cells
+                                   [(int)sVar1 * (int)sVar3 +
+                                    (int)sVar5 * (int)g_worldGrid.planeStride + (short)local_18
+                                   ].objects[0],(short)STField<undefined4>(this,0x25d),
                                    STField<ushort>(this,0x261),0xa8,0x128);
                 iVar2 = local_8;
                 sVar3 = g_worldGrid.sizeX;
@@ -102,6 +102,7 @@ int __thiscall FUN_0063e700(void *this,int param_1,int param_2,int param_3)
   memset(local_3c, 0, 0x20); /* compiler bulk-zero initialization */
   local_3c[3] = 2;
   local_3c[4] = 0x128;
+
   thunk_FUN_0058d480(param_1,param_2,param_3,local_3c,1);
   return local_c;
 }

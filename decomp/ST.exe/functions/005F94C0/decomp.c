@@ -20,8 +20,10 @@ int __thiscall STColl3C::CreateAddSpr(STColl3C *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar2 == 0) {
+    /* ST_CALLSITE[005F94F9]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
     puVar2 = Library::DKW::LIB::MemAlloc(0x6c);
     local_8->field_02E6 = puVar2;
     for (iVar4 = 0x1b; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -36,6 +38,7 @@ int __thiscall STColl3C::CreateAddSpr(STColl3C *this)
     return local_c + 2;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\nick\\to_coll3.cpp",0x5d8,0,iVar2,"%s",
                              "STColl3C::CreateAddSpr");
   if (iVar3 != 0) {

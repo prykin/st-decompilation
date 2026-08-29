@@ -21,7 +21,7 @@ void __thiscall CPanelTy::PaintTV(CPanelTy *this)
   CPanelTy *this_00;
   byte bVar4;
   int iVar5;
-  byte *puVar6;
+  RecoveredRecord_00526100_020D84E3 *pRVar6;
   char *text;
   ushort *local_EAX_411;
   ushort *puVar7;
@@ -40,14 +40,14 @@ void __thiscall CPanelTy::PaintTV(CPanelTy *this)
   int iVar17;
   uint *puVar18;
   InternalExceptionFrame local_74;
-  undefined4 local_30;
-  undefined4 local_2c;
+  uint local_30;
+  uint local_2c;
   uint local_28;
   CPanelTy *local_24;
-  byte *local_20;
+  RecoveredRecord_004F1D20_D68BC0B9 *local_20;
   int *local_1c;
   byte *local_18;
-  byte *local_14;
+  RecoveredRecord_004F1D20_D68BC0B9 *local_14;
   byte *local_10;
   uint local_c;
   byte local_5;
@@ -55,10 +55,12 @@ void __thiscall CPanelTy::PaintTV(CPanelTy *this)
   local_74.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_74;
   local_24 = this;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0);
   this_00 = local_24;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_74.previous;
+
     iVar17 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel.cpp",0x2c9,0,iVar5,"%s"
                                 ,"CPanelTy::PaintTV");
     if (iVar17 == 0) {
@@ -88,7 +90,8 @@ void __thiscall CPanelTy::PaintTV(CPanelTy *this)
         if (**(short **)((int)this_00->field_0308 + uVar12 * 4 + -0x26) <= (short)(ushort)bVar9) {
           *pbVar13 = 0;
         }
-        thunk_FUN_004f1890(this_00,(byte)local_c);
+        /* ST_CALLSITE[004F83F3]: CALL 0x00402ccf; direct=00402CCF CPanelTy::sub_004F1890 */
+        sub_004F1890(this_00,(byte)local_c);
         bVar9 = -((char)local_c != '\0');
         local_28 = STReplaceLowByte((uint32_t)(local_28), (uint8_t)(bVar9)) & 0xffffff08;
         if ((bVar9 & 8) < 0xb) {
@@ -96,6 +99,7 @@ void __thiscall CPanelTy::PaintTV(CPanelTy *this)
           puVar2 = this_00->field_0148[uVar12];
 joined_r0x004f81d1:
           if (-1 < (int)puVar2) {
+
             Library::DKW::DDX::FUN_006b3640
                       ((int *)g_ddxContext_008075A8,(uint)puVar2,0xffffffff,
                        (&this_00->field_003C)[uVar12],(&this_00->field_0094)[uVar12]);
@@ -110,16 +114,16 @@ joined_r0x004f81d1:
         pcVar7 = (char *)((int)this_00->field_0308 + (uVar12 - 0x1e));
         *(int *)((int)this_00->field_0308 + uVar12 * 4 + -0x1a) = this_00->field_0038;
         if (*pcVar7 == '\0') {
-          puVar6 = &this_00->field_0B63;
+          pRVar6 = (RecoveredRecord_00526100_020D84E3 *)&this_00->field_0B63;
           if (bVar9 != 0) {
-            puVar6 = &this_00->field_0C51;
+            pRVar6 = (RecoveredRecord_00526100_020D84E3 *)&this_00->field_0C51;
           }
           puVar18 = nullptr;
           iVar17 = 0;
           iVar5 = 1;
           bVar9 = 0;
           uVar15 = 6;
-          text = thunk_FUN_00526100(puVar6,0);
+          text = thunk_FUN_00526100(pRVar6,0);
           local_EAX_411 =
                Library::Ourlib::MFRLOAD::mfRLoad
                          (PTR_00806794,CASE_1F,text,uVar15,bVar9,iVar5,iVar17,puVar18);
@@ -143,12 +147,14 @@ joined_r0x004f81d1:
         else {
           *pcVar7 = *pcVar7 + -1;
         }
-        thunk_FUN_004f1890(this_00,(byte)local_c);
+        /* ST_CALLSITE[004F828E]: CALL 0x00402ccf; direct=00402CCF CPanelTy::sub_004F1890 */
+        sub_004F1890(this_00,(byte)local_c);
         bVar9 = -((char)local_c != '\0');
         local_1c = (int *)(STReplaceLowByte((uint32_t)(local_1c), (uint8_t)(bVar9)) & 0xffffff08);
         if ((bVar9 & 8) < 0xb) {
           uVar12 = bVar9 & 8;
           if (-1 < (int)this_00->field_0148[uVar12]) {
+
             Library::DKW::DDX::FUN_006b3640
                       ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[uVar12],0xffffffff,
                        (&this_00->field_003C)[uVar12],(&this_00->field_0094)[uVar12]);
@@ -188,9 +194,11 @@ joined_r0x004f81d1:
             }
           }
         }
-        thunk_FUN_004f1890(this_00,(byte)local_c);
+        /* ST_CALLSITE[004F81A6]: CALL 0x00402ccf; direct=00402CCF CPanelTy::sub_004F1890 */
+        sub_004F1890(this_00,(byte)local_c);
         bVar9 = -((char)local_c != '\0');
-        local_20 = (undefined1 *)(STReplaceLowByte((uint32_t)(local_20), (uint8_t)(bVar9)) & 0xffffff08);
+        local_20 = (RecoveredRecord_004F1D20_D68BC0B9 *)
+                   (STReplaceLowByte((uint32_t)(local_20), (uint8_t)(bVar9)) & 0xffffff08);
         if ((bVar9 & 8) < 0xb) {
           uVar12 = bVar9 & 8;
           puVar2 = this_00->field_0148[uVar12];
@@ -217,9 +225,11 @@ joined_r0x004f81d1:
           *local_10 = 1;
           *pbVar13 = 0;
         }
-        thunk_FUN_004f1890(this_00,(byte)local_c);
+        /* ST_CALLSITE[004F836C]: CALL 0x00402ccf; direct=00402CCF CPanelTy::sub_004F1890 */
+        sub_004F1890(this_00,(byte)local_c);
         bVar9 = -((char)local_c != '\0');
-        local_14 = (undefined1 *)(STReplaceLowByte((uint32_t)(local_14), (uint8_t)(bVar9)) & 0xffffff08);
+        local_14 = (RecoveredRecord_004F1D20_D68BC0B9 *)
+                   (STReplaceLowByte((uint32_t)(local_14), (uint8_t)(bVar9)) & 0xffffff08);
         if ((bVar9 & 8) < 0xb) {
           uVar12 = bVar9 & 8;
           puVar2 = this_00->field_0148[uVar12];
@@ -240,7 +250,7 @@ joined_r0x004f81d1:
   local_10 = (undefined1 *)((uint)local_10 & 0xffffff00);
   if (local_5 != 0) {
     local_18 = &this_00->field_0D3B;
-    local_20 = &this_00->field_0xc87;
+    local_20 = (RecoveredRecord_004F1D20_D68BC0B9 *)&this_00->field_0xc87;
     local_1c = &this_00->field_0D53;
     do {
       local_c = local_c & 0xffffff00;
@@ -257,7 +267,8 @@ joined_r0x004f81d1:
             if (*(short *)piVar11[-0x12] <= (short)(ushort)(byte)(bVar9 + 1)) {
               *pbVar13 = 0;
             }
-            thunk_FUN_004f1c80(this_00,local_c,(uint)local_10);
+            /* ST_CALLSITE[004F85F3]: CALL 0x00403b57; direct=00403B57 CPanelTy::sub_004F1C80 */
+            sub_004F1C80(this_00,local_c,(uint)local_10);
             bVar9 = ((char)local_c == '\0') + 9;
             local_30 = STReplaceLowByte((uint32_t)(local_30), (uint8_t)(bVar9));
             if (bVar9 < 0xb) {
@@ -276,7 +287,8 @@ joined_r0x004f81d1:
               iVar5 = 1;
               bVar9 = 0;
               uVar12 = 6;
-              pcVar7 = (char *)thunk_FUN_004f1d20(local_14);
+              /* ST_CALLSITE[004F8559]: CALL 0x004023b5; direct=004023B5 thunk_FUN_004f1d20; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__stdcall;pointer:/char;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_004F1D20_D68BC0B9 */
+              pcVar7 = thunk_FUN_004f1d20(local_14);
               local_EAX_1224 =
                    Library::Ourlib::MFRLOAD::mfRLoad
                              (PTR_00806794,CASE_1F,pcVar7,uVar12,bVar9,iVar5,iVar17,puVar18);
@@ -287,7 +299,8 @@ joined_r0x004f81d1:
             else {
               *pbVar13 = *pbVar13 - 1;
             }
-            thunk_FUN_004f1c80(this_00,local_c,(uint)local_10);
+            /* ST_CALLSITE[004F8584]: CALL 0x00403b57; direct=00403B57 CPanelTy::sub_004F1C80 */
+            sub_004F1C80(this_00,local_c,(uint)local_10);
             bVar9 = ((char)local_c == '\0') + 9;
             local_2c = STReplaceLowByte((uint32_t)(local_2c), (uint8_t)(bVar9));
             if (bVar9 < 0xb) {
@@ -306,7 +319,8 @@ joined_r0x004f81d1:
             *pbVar13 = bVar9;
             pbVar13[0xc] = 2;
           }
-          thunk_FUN_004f1c80(this_00,local_c,(uint)local_10);
+          /* ST_CALLSITE[004F84F2]: CALL 0x00403b57; direct=00403B57 CPanelTy::sub_004F1C80 */
+          sub_004F1C80(this_00,local_c,(uint)local_10);
           bVar9 = ((char)local_c == '\0') + 9;
           local_28 = STReplaceLowByte((uint32_t)(local_28), (uint8_t)(bVar9));
           if (bVar9 < 0xb) {
@@ -314,6 +328,7 @@ joined_r0x004f81d1:
             puVar2 = this_00->field_0148[uVar12];
 joined_r0x004f861b:
             if (-1 < (int)puVar2) {
+
               Library::DKW::DDX::FUN_006b3640
                         ((int *)g_ddxContext_008075A8,(uint)puVar2,0xffffffff,
                          (&this_00->field_003C)[uVar12],(&this_00->field_0094)[uVar12]);
@@ -321,7 +336,7 @@ joined_r0x004f861b:
           }
         }
         bVar9 = (char)local_c + 1;
-        local_14 = local_14 + 0x42;
+        local_14 = local_14 + 6;
         piVar11 = piVar11 + 6;
         pbVar13 = pbVar13 + 6;
         local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar9));
@@ -329,10 +344,11 @@ joined_r0x004f861b:
       bVar9 = (char)local_10 + 1;
       local_18 = local_18 + 1;
       local_1c = local_1c + 1;
-      local_20 = local_20 + 0xb;
+      local_20 = local_20 + 1;
       local_10 = (undefined1 *)STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar9));
     } while (bVar9 < local_5);
   }
+
   iVar5 = FUN_006b33f0(g_ddxContext_008075A8,this_00->field_017C);
   if (iVar5 == 0) {
     g_currentExceptionFrame = local_74.previous;
@@ -359,7 +375,8 @@ joined_r0x004f861b:
         psVar8 = (short *)0x1;
         bVar4 = 0;
         bVar9 = 6;
-        pcVar7 = (char *)thunk_FUN_005260b0(0,0,0);
+        /* ST_CALLSITE[004F8777]: CALL 0x004036a2; direct=004036A2 thunk_FUN_005260b0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;/int;/undefined1;/int */
+        pcVar7 = thunk_FUN_005260b0(0,0,0);
         psVar8 = Library::Ourlib::MFIMG::mfQmtLoad(g_cMf32_00806790,pcVar7,bVar9,bVar4,psVar8);
         this_00->field_025B = psVar8;
         this_00->field_0260 = CASE_1;
@@ -415,7 +432,8 @@ LAB_004f8860:
       psVar8 = (short *)0x1;
       bVar4 = 0;
       bVar9 = 6;
-      pcVar7 = (char *)thunk_FUN_005260b0(0,0,0);
+      /* ST_CALLSITE[004F887B]: CALL 0x004036a2; direct=004036A2 thunk_FUN_005260b0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;/int;/undefined1;/int */
+      pcVar7 = thunk_FUN_005260b0(0,0,0);
       psVar8 = Library::Ourlib::MFIMG::mfQmtLoad(g_cMf32_00806790,pcVar7,bVar9,bVar4,psVar8);
       *ppsVar1 = psVar8;
     }
@@ -429,10 +447,12 @@ cf_common_join_004F88ED:
   if (((this_00->field_01D8 != nullptr) && ((g_playSystem_00802A38->field_00E4 & 1) != 0)) &&
      (iVar5 = *(int *)&this_00->field_01D8->field_0x4, iVar5 < this_00->field_01DC + -2)) {
     FUN_006b4170((RecoveredSourceFamily_dibcopy *)this_00->field_01B4,0,100,5,0x226,0x55,0);
-    tOBJImage = (tagBITMAPINFO *)FUN_007140e0(this_00->field_01D8,1,'\0');
+    /* ST_CALLSITE[004F8943]: CALL 0x007140e0; direct=007140E0 FUN_007140e0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; signature=__thiscall;pointer:/wingdi.h/tagBITMAPINFO;pointer:/void;/int;/char */
+    tOBJImage = FUN_007140e0(this_00->field_01D8,1,'\0');
     if (tOBJImage != nullptr) {
       FUN_006b5440((ushort *)this_00->field_01B4,0,100,5,tOBJImage,0,0xff);
     }
+
     FUN_006b35d0((int *)g_ddxContext_008075A8,this_00->field_017C);
     if (this_00->field_01E0 != '\0') {
       uVar12 = iVar5 + 1U & 0x80000001;

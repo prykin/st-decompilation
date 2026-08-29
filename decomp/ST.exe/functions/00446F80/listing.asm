@@ -216,7 +216,8 @@ LAB_004471bd:
 004471D0  50                        PUSH EAX
 004471D1  51                        PUSH ECX
 004471D2  8B 4D 98                  MOV ECX,dword ptr [EBP + -0x68]
-004471D5  E8 E0 B6 FB FF            CALL 0x004028ba
+STAllPlayersC::DistributeGuardBoats::override::prt_4471d5_81281cbb:
+004471D5  E8 E0 B6 FB FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STFishC; signature=__thiscall;pointer:/STFishC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 004471DA  85 C0                     TEST EAX,EAX
 004471DC  89 45 DC                  MOV dword ptr [EBP + -0x24],EAX
 004471DF  0F 84 9A 01 00 00         JZ 0x0044737f
@@ -246,7 +247,8 @@ LAB_00447207:
 00447224  51                        PUSH ECX
 00447225  8B 4D 98                  MOV ECX,dword ptr [EBP + -0x68]
 00447228  52                        PUSH EDX
-00447229  E8 8C B6 FB FF            CALL 0x004028ba
+STAllPlayersC::DistributeGuardBoats::override::prt_447229_81281cbb:
+00447229  E8 8C B6 FB FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STFishC; signature=__thiscall;pointer:/STFishC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 0044722E  85 C0                     TEST EAX,EAX
 00447230  89 45 DC                  MOV dword ptr [EBP + -0x24],EAX
 00447233  0F 84 37 01 00 00         JZ 0x00447370
@@ -609,7 +611,8 @@ LAB_00447592:
 004475E7  6A 01                     PUSH 0x1
 004475E9  52                        PUSH EDX
 004475EA  56                        PUSH ESI
-004475EB  E8 CA B2 FB FF            CALL 0x004028ba
+STAllPlayersC::DistributeGuardBoats::override::prt_4475eb_81281cbb:
+004475EB  E8 CA B2 FB FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STFishC; signature=__thiscall;pointer:/STFishC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 004475F0  85 C0                     TEST EAX,EAX
 004475F2  89 45 DC                  MOV dword ptr [EBP + -0x24],EAX
 004475F5  0F 84 0D 02 00 00         JZ 0x00447808
@@ -658,12 +661,12 @@ LAB_0044765e:
 00447666  E8 05 56 26 00            CALL 0x006acc70
 0044766B  8B 4D DC                  MOV ECX,dword ptr [EBP + -0x24]
 0044766E  8B 11                     MOV EDX,dword ptr [ECX]
-00447670  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+00447670  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STFishC
 00447676  85 C0                     TEST EAX,EAX
 00447678  74 25                     JZ 0x0044769f
 0044767A  8B 4D DC                  MOV ECX,dword ptr [EBP + -0x24]
 0044767D  8B 01                     MOV EAX,dword ptr [ECX]
-0044767F  FF 90 F0 00 00 00         CALL dword ptr [EAX + 0xf0]
+0044767F  FF 90 F0 00 00 00         CALL dword ptr [EAX + 0xf0]  ; [STIndirectCallsiteApplier] exact slot 0xF0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STFishC
 00447685  85 C0                     TEST EAX,EAX
 00447687  74 16                     JZ 0x0044769f
 00447689  8B 4D DC                  MOV ECX,dword ptr [EBP + -0x24]
@@ -870,7 +873,8 @@ LAB_0044782a:
 004478A2  6A 01                     PUSH 0x1
 004478A4  52                        PUSH EDX
 004478A5  56                        PUSH ESI
-004478A6  E8 0F B0 FB FF            CALL 0x004028ba
+STAllPlayersC::DistributeGuardBoats::override::prt_4478a6_81281cbb:
+004478A6  E8 0F B0 FB FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STFishC; signature=__thiscall;pointer:/STFishC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 004478AB  85 C0                     TEST EAX,EAX
 004478AD  89 45 DC                  MOV dword ptr [EBP + -0x24],EAX
 004478B0  0F 84 91 02 00 00         JZ 0x00447b47
@@ -979,7 +983,8 @@ LAB_004479a7:
 004479E1  50                        PUSH EAX
 004479E2  51                        PUSH ECX
 004479E3  8B 4D 98                  MOV ECX,dword ptr [EBP + -0x68]
-004479E6  E8 CF AE FB FF            CALL 0x004028ba
+STAllPlayersC::DistributeGuardBoats::override::prt_4479e6_81281cbb:
+004479E6  E8 CF AE FB FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STFishC; signature=__thiscall;pointer:/STFishC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 004479EB  85 C0                     TEST EAX,EAX
 004479ED  89 45 DC                  MOV dword ptr [EBP + -0x24],EAX
 004479F0  0F 84 51 01 00 00         JZ 0x00447b47

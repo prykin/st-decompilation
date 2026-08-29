@@ -7,7 +7,7 @@
 
 void __thiscall
 STAllPlayersC::GetPanelInfo
-          (STAllPlayersC *this,undefined4 param_1,AnonShape_0043BEB0_1C00EC12 *param_2)
+          (STAllPlayersC *this,undefined4 param_1,RecoveredRecordView_0043BEB0_8330D129 *param_2)
 
 {
   DArrayTy *pDVar1;
@@ -17,7 +17,7 @@ STAllPlayersC::GetPanelInfo
   int local_EAX_583;
   int iVar6;
   STGroupBoatC *pSVar7;
-  Global_sub_0044D320_param_1Enum GVar8;
+  Global_sub_0044D320_param_2Enum GVar8;
   byte *pbVar9;
   dword dVar10;
   int iVar5;
@@ -30,7 +30,7 @@ STAllPlayersC::GetPanelInfo
   int local_EAX_4501;
   uint uVar12;
   int local_EAX_5245;
-  AnonShape_0043BEB0_1C00EC12 *pAVar13;
+  RecoveredRecordView_0043BEB0_8330D129 *pRVar13;
   int local_EAX_5472;
   int local_EAX_5865;
   int local_EAX_6027;
@@ -40,16 +40,16 @@ STAllPlayersC::GetPanelInfo
   uint uVar15;
   ushort *puVar16;
   uint uVar17;
-  AnonShape_0043BEB0_1C00EC12 *pAVar18;
+  RecoveredRecordView_0043BEB0_8330D129 *pRVar18;
   char cVar19;
   STAllPlayersC_GetObjPtr_param_3Enum SVar20;
-  undefined1 local_6c [3];
-  undefined4 local_69;
-  undefined4 local_64;
-  undefined1 local_51;
-  undefined4 local_34;
-  undefined4 local_30;
-  undefined1 local_2c;
+  byte local_6c [3];
+  uint local_69;
+  uint local_64;
+  byte local_51;
+  uint local_34;
+  uint local_30;
+  byte local_2c;
   int local_28;
   uint local_24;
   uint local_20;
@@ -57,11 +57,11 @@ STAllPlayersC::GetPanelInfo
   byte *local_18;
   dword local_14;
   STAllPlayersC *local_10;
-  undefined1 local_c [4];
+  byte local_c [4];
   short local_8;
   short local_6;
 
-  pAVar18 = param_2;
+  pRVar18 = param_2;
   local_20 = 0;
   local_10 = this;
   if ((char)param_1 == '\x01') {
@@ -72,6 +72,7 @@ STAllPlayersC::GetPanelInfo
     }
     if (iVar6 != 0x3c) {
       if (iVar6 != 0x1ae) {
+
         local_EAX_107 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1b8a,0,0,"%s",
                                 "STAllPlayersC::GetPanelInfo (1) unknown game type");
@@ -100,35 +101,37 @@ STAllPlayersC::GetPanelInfo
       param_2->field_0002 = 1;
       /* ST_CALLSITE[0043BFD8]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar3 = LookupRecordByte(DAT_0080874d);
-      pAVar18->field_0007 = bVar3;
+      pRVar18->field_0007 = bVar3;
       local_1c = (DArrayTy *)g_packedRecords_A62x8[uVar17].field102_0x16d;
       local_14 = local_1c->count;
-      pAVar18[1].field_000E = 0;
-      pAVar18[1].field_000F = 0;
-      pAVar18[1].field_0x10 = 0;
-      pAVar18[1].field_0011 = 0;
-      pAVar18[1].field_0012 = 0;
-      pAVar18[1].field_0001 = 1;
+      pRVar18[1].field_000E = 0;
+      pRVar18[1].field_000F = 0;
+      pRVar18[1].field_0x10 = 0;
+      pRVar18[1].field_0011 = 0;
+      pRVar18[1].field_0012 = 0;
+      pRVar18[1].field_0001 = 1;
       local_24 = 0;
       if ((int)local_14 < 1) {
         return;
       }
       do {
         uVar15 = local_24;
+
         DArrayGetElement(local_1c,local_24,local_c);
         if (STPiece<0,2>(local_c) != 0xffff) {
-          /* ST_CALLSITE[0043C02A]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
+          /* ST_CALLSITE[0043C02A]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override */
           pSVar11 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar17].field97_0x167,STPiece<0,2>(local_c),
                               CASE_1);
           /* ST_CALLSITE[0043C03F]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0((STFishC *)pSVar11,&local_6,&local_8,(short *)((int)&param_1 + 2));
-          *(undefined1 *)((int)pAVar18 + (0x2e - STPiece<2,2>(param_1))) = 1;
+          *(undefined1 *)((int)pRVar18 + (0x2e - STPiece<2,2>(param_1))) = 1;
           /* ST_CALLSITE[0043C058]: CALL dword ptr [EDX + 0x30] */
           (*pSVar11->vtable->vfunc_30)((short)local_6c);
           local_34 = local_64;
           local_30 = local_69;
           local_2c = local_51;
-          Library::DKW::TBL::DArrayAppend(*(DArrayTy **)&pAVar18[1].field_0x16,&local_34);
+
+          Library::DKW::TBL::DArrayAppend(*(DArrayTy **)&pRVar18[1].field_0x16,&local_34);
           uVar15 = local_24;
         }
         local_24 = uVar15 + 1;
@@ -142,6 +145,7 @@ STAllPlayersC::GetPanelInfo
       return;
     }
     while( true ) {
+
       DArrayGetElement(pDVar1,uVar15,local_c);
       uVar4 = STPiece<0,2>(local_c);
       if (uVar4 != 0xffff) break;
@@ -161,6 +165,7 @@ STAllPlayersC::GetPanelInfo
       }
       if (iVar6 != 0x3c) {
         if (iVar6 != 0x1ae) {
+
           local_EAX_583 =
                ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1d16,0,0,"%s",
                                   "STAllPlayersC::GetPanelInfo (2) unknown game type");
@@ -182,6 +187,7 @@ STAllPlayersC::GetPanelInfo
           return;
         }
         while( true ) {
+
           DArrayGetElement(pDVar1,uVar15,local_c);
           uVar4 = STPiece<0,2>(local_c);
           if (uVar4 != 0xffff) break;
@@ -200,16 +206,18 @@ STAllPlayersC::GetPanelInfo
       param_2->field_0005 = 2;
       /* ST_CALLSITE[0043C187]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       bVar3 = LookupRecordByte(DAT_0080874d);
-      pAVar18->field_0004 = bVar3;
+      pRVar18->field_0004 = bVar3;
       local_1c = (DArrayTy *)g_packedRecords_A62x8[uVar17].field102_0x16d;
       local_14 = local_1c->count;
       uVar17 = 0;
       if (0 < (int)local_14) {
         do {
+
           DArrayGetElement(local_1c,uVar17,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
             /* ST_CALLSITE[0043C1C4]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar11 = GetObjPtr(this,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
+
             iVar6 = thunk_FUN_00493cd0(pSVar11);
             if (iVar6 == 0) break;
           }
@@ -217,44 +225,46 @@ STAllPlayersC::GetPanelInfo
         } while ((int)uVar17 < (int)local_14);
       }
       if (uVar17 == local_14) {
-        pAVar18->field_0x15 = 0;
-        pAVar18->field_0x8 = 0;
-        pAVar18->field_0007 = 0;
+        pRVar18->field_0x15 = 0;
+        pRVar18->field_0x8 = 0;
+        pRVar18->field_0007 = 0;
         return;
       }
-      pAVar18->field_0x8 = 1;
+      pRVar18->field_0x8 = 1;
       if (g_packedRecords_A62x8[DAT_0080874d].field1_0x1 == 0) {
 LAB_0043c293:
-        pAVar18->field_0x15 = 0;
+        pRVar18->field_0x15 = 0;
       }
       else {
         uVar17 = 0;
-        pAVar18->field_0x15 = 3;
+        pRVar18->field_0x15 = 3;
         if (0 < (int)local_14) {
           do {
+
             DArrayGetElement(local_1c,uVar17,local_c);
             if (STPiece<0,2>(local_c) != 0xffff) {
               /* ST_CALLSITE[0043C24B]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar11 = GetObjPtr(this,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
               pSVar7 = thunk_FUN_0042b760(DAT_0080874d,pSVar11->field_0030);
               if ((pSVar7 != nullptr) &&
-                 (pAVar18->field_0x15 = 1, pSVar7->field_001C == 0)) break;
+                 (pRVar18->field_0x15 = 1, pSVar7->field_001C == nullptr)) break;
             }
             uVar17 = uVar17 + 1;
           } while ((int)uVar17 < (int)local_14);
         }
         if (uVar17 == local_14) {
-          if (pAVar18->field_0x15 == '\x03') goto LAB_0043c293;
-          if (pAVar18->field_0x15 == '\x01') {
-            pAVar18->field_0x15 = 3;
+          if (pRVar18->field_0x15 == '\x03') goto LAB_0043c293;
+          if (pRVar18->field_0x15 == '\x01') {
+            pRVar18->field_0x15 = 3;
           }
         }
       }
-      pAVar18->field_0007 = 1;
+      pRVar18->field_0007 = 1;
+      /* ST_CALLSITE[0043C29D]: CALL 0x004058a3; direct=004058A3 thunk_FUN_0044ce40; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
       GVar8 = thunk_FUN_0044ce40(this);
-      local_18 = thunk_FUN_0044d320(GVar8);
+      local_18 = thunk_FUN_0044d320(this,GVar8);
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_2 = (AnonShape_0043BEB0_1C00EC12 *)&pAVar18->field_000F;
+      param_2 = (RecoveredRecordView_0043BEB0_8330D129 *)&pRVar18->field_000F;
       pbVar9 = local_18;
       pbVar14 = (byte *)param_2;
       do {
@@ -262,77 +272,79 @@ LAB_0043c293:
         *pbVar14 = *pbVar9;
         pbVar14 = pbVar14 + 1;
         pbVar9 = pbVar9 + 2;
-      } while ((int)(pbVar14 + (-0xf - (int)pAVar18)) < 6);
+      } while ((int)(pbVar14 + (-0xf - (int)pRVar18)) < 6);
       FreeAndNull(&local_18);
       uVar17 = 0;
-      pAVar18[2].field_0001 = 1;
-      ((undefined1 *)pAVar18)[2] = 1;
-      *(undefined1 *)((int)&pAVar18[1].field_0018 + 3) = 1;
-      *(undefined1 *)((int)&pAVar18[1].field_0018 + 2) = 1;
+      pRVar18[2].field_0001 = 1;
+      ((undefined1 *)pRVar18)[2] = 1;
+      *(undefined1 *)((int)&pRVar18[1].field_0018 + 3) = 1;
+      *(undefined1 *)((int)&pRVar18[1].field_0018 + 2) = 1;
       if (0 < (int)local_14) {
         do {
+
           DArrayGetElement(local_1c,uVar17,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
             /* ST_CALLSITE[0043C31A]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar11 = GetObjPtr(local_10,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
-            *(undefined1 *)((int)&pAVar18[1].field_0018 + pSVar11->field_07EE + 2) = 3;
+            *(undefined1 *)((int)&pRVar18[1].field_0018 + pSVar11->field_07EE + 2) = 3;
           }
           uVar17 = uVar17 + 1;
         } while ((int)uVar17 < (int)local_14);
       }
       if (GVar8 < 0x40001) {
         if (GVar8 == 0x40000) {
-          *(undefined4 *)pAVar18 = 0x19;
+          *(undefined4 *)pRVar18 = 0x19;
         }
         else if (GVar8 < 0x81) {
           if (GVar8 == 0x80) {
-            *(undefined4 *)pAVar18 = 9;
+            *(undefined4 *)pRVar18 = 9;
           }
           else if (GVar8 == CASE_2) {
-            *(undefined4 *)pAVar18 = 5;
+            *(undefined4 *)pRVar18 = 5;
           }
           else if (GVar8 == CASE_4) {
-            *(undefined4 *)pAVar18 = 0xb;
+            *(undefined4 *)pRVar18 = 0xb;
           }
           else if (GVar8 == CASE_8) {
-            *(undefined4 *)pAVar18 = 0x11;
+            *(undefined4 *)pRVar18 = 0x11;
           }
         }
         else if (GVar8 == 0x100) {
-          *(undefined4 *)pAVar18 = 0x15;
+          *(undefined4 *)pRVar18 = 0x15;
         }
         else if (GVar8 == 0x10000) {
-          *(undefined4 *)pAVar18 = 0x22;
+          *(undefined4 *)pRVar18 = 0x22;
         }
         else if (GVar8 == 0x20000) {
-          *(undefined4 *)pAVar18 = 0x1a;
+          *(undefined4 *)pRVar18 = 0x1a;
         }
       }
       else if (GVar8 < 0x400001) {
         if (GVar8 == 0x400000) {
-          *(undefined4 *)pAVar18 = 0x21;
+          *(undefined4 *)pRVar18 = 0x21;
         }
         else if (GVar8 == 0x80000) {
-          *(undefined4 *)pAVar18 = 0x1c;
+          *(undefined4 *)pRVar18 = 0x1c;
         }
         else if (GVar8 == 0x100000) {
-          *(undefined4 *)pAVar18 = 0x1d;
+          *(undefined4 *)pRVar18 = 0x1d;
         }
         else if (GVar8 == 0x200000) {
-          *(undefined4 *)pAVar18 = 0x1b;
+          *(undefined4 *)pRVar18 = 0x1b;
         }
       }
       else if (GVar8 == 0x800000) {
-        *(undefined4 *)pAVar18 = 0x23;
+        *(undefined4 *)pRVar18 = 0x23;
       }
       else if (GVar8 == 0x1000000) {
-        *(undefined4 *)pAVar18 = 0x24;
+        *(undefined4 *)pRVar18 = 0x24;
       }
       local_28 = 0;
       local_24 = 0;
       uVar17 = local_20;
       if (0 < (int)local_14) {
         do {
+
           DArrayGetElement(local_1c,local_24,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
             local_28 = local_28 + 1;
@@ -357,7 +369,7 @@ LAB_0043c293:
           if (GVar8 == 0x100000) {
             pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
             /* ST_CALLSITE[0043C7F1]: CALL dword ptr [EDX + 0xc] */
-            dVar10 = pSVar7->slot_0C();
+            dVar10 = pSVar7->vfunc_C();
             switch(dVar10) {
             case 1:
             case 7:
@@ -376,7 +388,7 @@ LAB_0043c293:
             if (GVar8 == 0x20000) {
               pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
               /* ST_CALLSITE[0043C750]: CALL dword ptr [EDX + 0xc] */
-              dVar10 = pSVar7->slot_0C();
+              dVar10 = pSVar7->vfunc_C();
               switch(dVar10) {
               case 1:
               case 7:
@@ -396,7 +408,7 @@ LAB_0043c293:
             if (GVar8 == 0x2000) {
               pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
               /* ST_CALLSITE[0043C719]: CALL dword ptr [EDX + 0xc] */
-              dVar10 = pSVar7->slot_0C();
+              dVar10 = pSVar7->vfunc_C();
               switch(dVar10) {
               case 1:
               case 7:
@@ -418,7 +430,7 @@ LAB_0043c293:
             }
             pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
             /* ST_CALLSITE[0043C6EA]: CALL dword ptr [EDX + 0xc] */
-            dVar10 = pSVar7->slot_0C();
+            dVar10 = pSVar7->vfunc_C();
             switch(dVar10) {
             case 1:
             case 7:
@@ -438,7 +450,7 @@ LAB_0043c293:
           if (GVar8 == 0x40000) {
             pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
             /* ST_CALLSITE[0043C7C2]: CALL dword ptr [EDX + 0xc] */
-            dVar10 = pSVar7->slot_0C();
+            dVar10 = pSVar7->vfunc_C();
             switch(dVar10) {
             case 1:
             case 7:
@@ -458,7 +470,7 @@ LAB_0043c293:
           }
           pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
           /* ST_CALLSITE[0043C793]: CALL dword ptr [EDX + 0xc] */
-          dVar10 = pSVar7->slot_0C();
+          dVar10 = pSVar7->vfunc_C();
           switch(dVar10) {
           case 1:
           case 7:
@@ -477,7 +489,7 @@ LAB_0043c293:
           if (GVar8 == 0x800000) {
             pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
             /* ST_CALLSITE[0043C8BE]: CALL dword ptr [EDX + 0xc] */
-            dVar10 = pSVar7->slot_0C();
+            dVar10 = pSVar7->vfunc_C();
             switch(dVar10) {
             case 1:
             case 7:
@@ -495,7 +507,7 @@ LAB_0043c293:
           if (GVar8 == 0x200000) {
             pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
             /* ST_CALLSITE[0043C88F]: CALL dword ptr [EDX + 0xc] */
-            dVar10 = pSVar7->slot_0C();
+            dVar10 = pSVar7->vfunc_C();
             switch(dVar10) {
             case 1:
             case 7:
@@ -516,7 +528,7 @@ LAB_0043c293:
           }
           pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
           /* ST_CALLSITE[0043C846]: CALL dword ptr [EDX + 0xc] */
-          dVar10 = pSVar7->slot_0C();
+          dVar10 = pSVar7->vfunc_C();
           switch(dVar10) {
           case 1:
           case 7:
@@ -536,7 +548,7 @@ LAB_0043c293:
         if (GVar8 == 0x1000000) {
           pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
           /* ST_CALLSITE[0043C930]: CALL dword ptr [EDX + 0xc] */
-          dVar10 = pSVar7->slot_0C();
+          dVar10 = pSVar7->vfunc_C();
           switch(dVar10) {
           case 1:
           case 7:
@@ -554,7 +566,7 @@ LAB_0043c293:
         }
         pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
         /* ST_CALLSITE[0043C901]: CALL dword ptr [EDX + 0xc] */
-        dVar10 = pSVar7->slot_0C();
+        dVar10 = pSVar7->vfunc_C();
         switch(dVar10) {
         case 1:
         case 7:
@@ -575,7 +587,7 @@ LAB_0043c293:
           if (GVar8 == 0x400) {
             pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
             /* ST_CALLSITE[0043C65F]: CALL dword ptr [EDX + 0xc] */
-            dVar10 = pSVar7->slot_0C();
+            dVar10 = pSVar7->vfunc_C();
             switch(dVar10) {
             case 1:
             case 7:
@@ -598,7 +610,7 @@ LAB_0043c293:
           }
           pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
           /* ST_CALLSITE[0043C630]: CALL dword ptr [EDX + 0xc] */
-          dVar10 = pSVar7->slot_0C();
+          dVar10 = pSVar7->vfunc_C();
           switch(dVar10) {
           case 1:
           case 7:
@@ -618,7 +630,7 @@ LAB_0043c293:
         if (GVar8 == 0x200) {
           pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
           /* ST_CALLSITE[0043C5F4]: CALL dword ptr [EDX + 0xc] */
-          dVar10 = pSVar7->slot_0C();
+          dVar10 = pSVar7->vfunc_C();
           switch(dVar10) {
           case 1:
           case 7:
@@ -640,7 +652,7 @@ LAB_0043c293:
         }
         pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
         /* ST_CALLSITE[0043C5CC]: CALL dword ptr [EDX + 0xc] */
-        dVar10 = pSVar7->slot_0C();
+        dVar10 = pSVar7->vfunc_C();
         switch(dVar10) {
         case 1:
         case 7:
@@ -656,7 +668,7 @@ LAB_0043c293:
       if (GVar8 == 0x40) {
         pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
         /* ST_CALLSITE[0043C57F]: CALL dword ptr [EDX + 0xc] */
-        dVar10 = pSVar7->slot_0C();
+        dVar10 = pSVar7->vfunc_C();
         switch(dVar10) {
         case 1:
         case 7:
@@ -677,7 +689,7 @@ LAB_0043c293:
       case CASE_1:
         pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
         /* ST_CALLSITE[0043C4EC]: CALL dword ptr [EDX + 0xc] */
-        dVar10 = pSVar7->slot_0C();
+        dVar10 = pSVar7->vfunc_C();
         switch(dVar10) {
         case 1:
         case 7:
@@ -690,7 +702,7 @@ LAB_0043c293:
           goto cf_common_exit_0043C86F;
         case 0xf:
 cf_common_exit_0043C508:
-          pAVar18->field_0x14 = 3;
+          pRVar18->field_0x14 = 3;
           return;
         }
         break;
@@ -699,7 +711,7 @@ cf_common_exit_0043C508:
       case CASE_8:
         pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
         /* ST_CALLSITE[0043C528]: CALL dword ptr [EDX + 0xc] */
-        dVar10 = pSVar7->slot_0C();
+        dVar10 = pSVar7->vfunc_C();
         switch(dVar10) {
         case 1:
         case 7:
@@ -717,7 +729,7 @@ cf_common_exit_0043C508:
       case CASE_10:
         pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
         /* ST_CALLSITE[0043C557]: CALL dword ptr [EDX + 0xc] */
-        dVar10 = pSVar7->slot_0C();
+        dVar10 = pSVar7->vfunc_C();
         switch(dVar10) {
         case 1:
         case 7:
@@ -734,7 +746,7 @@ cf_common_exit_0043C508:
 switchD_0043c4d2_caseD_28:
         pSVar7 = thunk_FUN_0042b760(DAT_0080874d,uVar4);
         /* ST_CALLSITE[0043C68E]: CALL dword ptr [EDX + 0xc] */
-        dVar10 = pSVar7->slot_0C();
+        dVar10 = pSVar7->vfunc_C();
         switch(dVar10) {
         case 1:
         case 7:
@@ -743,15 +755,15 @@ cf_common_exit_0043C72D:
           return;
         case 2:
 cf_common_exit_0043C862:
-          pAVar18->field_0x10 = 3;
+          pRVar18->field_0x10 = 3;
           return;
         case 3:
 cf_common_exit_0043C95B:
-          pAVar18->field_0011 = 3;
+          pRVar18->field_0011 = 3;
           return;
         case 4:
 cf_common_exit_0043C86F:
-          pAVar18->field_0012 = 3;
+          pRVar18->field_0012 = 3;
           return;
         }
       }
@@ -769,6 +781,7 @@ cf_common_exit_0043C86F:
         else {
           if (iVar6 != 0x1b8) {
 LAB_0043ca5a:
+
             iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1d47,0,0,
                                        "%s","STAllPlayersC::GetPanelInfo (4) unknown game type");
             if (iVar5 == 0) {
@@ -809,6 +822,7 @@ LAB_0043ca5a:
         return;
       }
       while( true ) {
+
         DArrayGetElement(pDVar1,uVar15,local_c);
         uVar4 = STPiece<0,2>(local_c);
         if (uVar4 != 0xffff) break;
@@ -837,6 +851,7 @@ cf_common_exit_0043CA35:
           return;
         }
         if (g_packedRecords_A62x8[uVar17].field149_0x1b3 != 0x19a) {
+
           local_EAX_3449 =
                ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1d95,0,0,"%s",
                                   "STAllPlayersC::GetPanelInfo (6) unknown game type");
@@ -855,6 +870,7 @@ cf_common_exit_0043CA35:
           return;
         }
         do {
+
           DArrayGetElement(pDVar1,uVar15,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
             /* ST_CALLSITE[0043CC92]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -878,6 +894,7 @@ cf_common_exit_0043CA35:
           return;
         }
         if (g_packedRecords_A62x8[uVar17].field149_0x1b3 != 0x19a) {
+
           local_EAX_3685 =
                ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1db2,0,0,"%s",
                                   "STAllPlayersC::GetPanelInfo (7) unknown game type");
@@ -896,6 +913,7 @@ cf_common_exit_0043CA35:
           return;
         }
         do {
+
           DArrayGetElement(pDVar1,uVar15,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
             /* ST_CALLSITE[0043CD7E]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -920,6 +938,7 @@ cf_common_exit_0043CA35:
           return;
         }
         if (g_packedRecords_A62x8[uVar17].field96_0x163 != 0x3c) {
+
           local_EAX_3922 =
                ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1dd0,0,0,"%s",
                                   "STAllPlayersC::GetPanelInfo (8) unknown game type");
@@ -938,13 +957,14 @@ cf_common_exit_0043CA35:
           return;
         }
         do {
+
           DArrayGetElement(local_1c,uVar15,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
             /* ST_CALLSITE[0043CE6E]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar11 = GetObjPtr(local_10,g_packedRecords_A62x8[uVar17].field97_0x167,STPiece<0,2>(local_c),
                                 CASE_1);
             /* ST_CALLSITE[0043CE78]: CALL dword ptr [EDX + 0x40] */
-            (*pSVar11->vtable->vfunc_40)((short)pAVar18);
+            (*pSVar11->vtable->vfunc_40)((short)pRVar18);
             return;
           }
           uVar15 = uVar15 + 1;
@@ -957,6 +977,7 @@ cf_common_exit_0043CA35:
           return;
         }
         if (g_packedRecords_A62x8[uVar17].field149_0x1b3 != 0x19a) {
+
           local_EAX_4134 =
                ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1dec,0,0,"%s",
                                   "STAllPlayersC::GetPanelInfo (9) unknown game type");
@@ -975,6 +996,7 @@ cf_common_exit_0043CA35:
           return;
         }
         do {
+
           DArrayGetElement(pDVar1,uVar15,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
             /* ST_CALLSITE[0043CF3F]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -1004,6 +1026,7 @@ cf_common_exit_0043CA35:
           return;
         }
         do {
+
           DArrayGetElement(pDVar1,uVar17,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
             /* ST_CALLSITE[0043CFDE]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -1026,6 +1049,7 @@ cf_common_exit_0043CA35:
             return;
           }
           if (g_packedRecords_A62x8[uVar17].field149_0x1b3 != 0x19a) {
+
             local_EAX_5245 =
                  ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1ea3,0,0,
                                     "%s","STAllPlayersC::GetPanelInfo (12) unknown game type");
@@ -1044,6 +1068,7 @@ cf_common_exit_0043CA35:
             return;
           }
           do {
+
             DArrayGetElement(pDVar1,uVar15,local_c);
             if (STPiece<0,2>(local_c) != 0xffff) {
               /* ST_CALLSITE[0043D396]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -1059,24 +1084,25 @@ cf_common_exit_0043CA35:
         }
         if ((char)param_1 == '\x0e') {
           local_28 = 4;
-          pAVar13 = (AnonShape_0043BEB0_1C00EC12 *)
+          pRVar13 = (RecoveredRecordView_0043BEB0_8330D129 *)
                     &g_packedRecords_A62x8[DAT_0080874d].field107_0x17d;
           do {
-            iVar6 = *(int *)&pAVar13[-1].field_0012;
-            param_2 = pAVar13;
+            iVar6 = *(int *)&pRVar13[-1].field_0012;
+            param_2 = pRVar13;
             if (iVar6 == 0) {
 LAB_0043d41d:
-              *(undefined1 *)pAVar18 = 0;
+              *(undefined1 *)pRVar18 = 0;
             }
             else if (iVar6 == 0x3c) {
-              STPiece<0,1>(uVar4) = pAVar13->field_0004;
-              STPiece<1,1>(uVar4) = pAVar13->field_0005;
+              STPiece<0,1>(uVar4) = pRVar13->field_0004;
+              STPiece<1,1>(uVar4) = pRVar13->field_0005;
               if (uVar4 == 1) {
                 uVar17 = 0;
-                pDVar1 = *(DArrayTy **)pAVar13;
+                pDVar1 = *(DArrayTy **)pRVar13;
                 local_14 = pDVar1->count;
                 if (0 < (int)local_14) {
                   do {
+
                     DArrayGetElement(pDVar1,uVar17,local_c);
                     uVar4 = STPiece<0,2>(local_c);
                     if (uVar4 != 0xffff) {
@@ -1090,13 +1116,14 @@ LAB_0043d41d:
               }
               else {
                 if (uVar4 < 2) goto LAB_0043d41d;
-                *(undefined1 *)pAVar18 = 2;
-                pAVar18->field_0001 = 1;
-                pAVar18->field_0006 = g_packedRecords_A62x8[DAT_0080874d].field0_0x0;
+                *(undefined1 *)pRVar18 = 2;
+                pRVar18->field_0001 = 1;
+                pRVar18->field_0006 = g_packedRecords_A62x8[DAT_0080874d].field0_0x0;
               }
             }
             else {
               if (iVar6 != 0x1ae) {
+
                 local_EAX_5472 =
                      ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1ecc,0,0,
                                         "%s","STAllPlayersC::GetPanelInfo (14) unknown game type");
@@ -1105,17 +1132,17 @@ LAB_0043d41d:
                 }
                 goto LAB_0043d41d;
               }
-              uVar4 = *(ushort *)((int)&pAVar13[-1].field_0018 + 2);
+              uVar4 = *(ushort *)((int)&pRVar13[-1].field_0018 + 2);
               SVar20 = CASE_3;
               cVar19 = -1;
 LAB_0043d447:
               /* ST_CALLSITE[0043D44A]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar11 = GetObjPtr(local_10,cVar19,uVar4,SVar20);
               /* ST_CALLSITE[0043D454]: CALL dword ptr [EDX + 0x58] */
-              (*pSVar11->vtable->vfunc_58)((short)pAVar18);
+              (*pSVar11->vtable->vfunc_58)((short)pRVar18);
             }
-            pAVar13 = (AnonShape_0043BEB0_1C00EC12 *)&param_2->field_0x10;
-            pAVar18 = (AnonShape_0043BEB0_1C00EC12 *)&pAVar18->field_000B;
+            pRVar13 = (RecoveredRecordView_0043BEB0_8330D129 *)&param_2->field_0x10;
+            pRVar18 = (RecoveredRecordView_0043BEB0_8330D129 *)&pRVar18->field_000B;
             local_28 = local_28 + -1;
             if (local_28 == 0) {
               return;
@@ -1123,7 +1150,7 @@ LAB_0043d447:
           } while( true );
         }
         if ((char)param_1 == '\x0f') {
-          param_2 = (AnonShape_0043BEB0_1C00EC12 *)0x4;
+          param_2 = (RecoveredRecordView_0043BEB0_8330D129 *)0x4;
           puVar16 = &g_packedRecords_A62x8[DAT_0080874d].field159_0x1cb;
           do {
             iVar6 = *(int *)(puVar16 + -4);
@@ -1135,6 +1162,7 @@ LAB_0043d447:
                   local_14 = local_1c->count;
                   if (0 < (int)local_14) {
                     do {
+
                       DArrayGetElement(local_1c,uVar17,local_c);
                       uVar4 = STPiece<0,2>(local_c);
                       if (uVar4 != 0xffff) {
@@ -1159,7 +1187,7 @@ LAB_0043d447:
                 goto LAB_0043d5b1;
               }
 LAB_0043d5a6:
-              *(undefined1 *)pAVar18 = 0;
+              *(undefined1 *)pRVar18 = 0;
             }
             else {
               if (iVar6 == 0x1a4) {
@@ -1168,6 +1196,7 @@ LAB_0043d5a6:
               else {
                 if (iVar6 != 0x1b8) {
 LAB_0043d581:
+
                   local_EAX_5865 =
                        ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1efe,0,0,
                                           "%s","STAllPlayersC::GetPanelInfo (15) unknown game type");
@@ -1185,12 +1214,12 @@ LAB_0043d5b7:
               /* ST_CALLSITE[0043D5B7]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
               pSVar11 = GetObjPtr(local_10,cVar19,uVar4,SVar20);
               /* ST_CALLSITE[0043D5C1]: CALL dword ptr [EDX + 0x5c] */
-              (*pSVar11->vtable->vfunc_5C)((short)pAVar18);
+              (*pSVar11->vtable->vfunc_5C)((short)pRVar18);
             }
 LAB_0043d5c4:
             puVar16 = puVar16 + 8;
-            pAVar18 = (AnonShape_0043BEB0_1C00EC12 *)&pAVar18->field_000B;
-            param_2 = (AnonShape_0043BEB0_1C00EC12 *)((int)&param_2[-1].field_0018 + 3);
+            pRVar18 = (RecoveredRecordView_0043BEB0_8330D129 *)&pRVar18->field_000B;
+            param_2 = (RecoveredRecordView_0043BEB0_8330D129 *)((int)&param_2[-1].field_0018 + 3);
             if (param_2 == nullptr) {
               return;
             }
@@ -1203,6 +1232,7 @@ LAB_0043d5c4:
               return;
             }
             if (g_packedRecords_A62x8[uVar17].field96_0x163 != 0x3c) {
+
               local_EAX_6259 =
                    ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1f4c,0,0,
                                       "%s","STAllPlayersC::GetPanelInfo (17) invalid game type");
@@ -1220,6 +1250,7 @@ LAB_0043d5c4:
             local_14 = pDVar1->count;
             if (0 < (int)local_14) {
               do {
+
                 DArrayGetElement(pDVar1,uVar17,local_c);
                 if (STPiece<0,2>(local_c) != 0xffff) {
                   iVar6 = iVar6 + 1;
@@ -1240,7 +1271,7 @@ LAB_0043d5c4:
             }
             pSVar7 = thunk_FUN_0042b760(DAT_0080874d,(ushort)local_20);
             /* ST_CALLSITE[0043D7D1]: CALL dword ptr [EDX + 0x1c] */
-            dVar10 = pSVar7->slot_1C();
+            dVar10 = pSVar7->vfunc_1C();
             switch(dVar10) {
             case 0:
               param_2->field_0007 = 1;
@@ -1283,6 +1314,7 @@ LAB_0043d5c4:
             (*pSVar11->vtable->vfunc_64)((short)param_2);
             return;
           }
+
           local_EAX_6655 =
                ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1f5d,0,0,"%s",
                                   "STAllPlayersC::GetPanelInfo (18) unknown game type");
@@ -1300,6 +1332,7 @@ LAB_0043d5c4:
           if (iVar6 == 0x1ae) {
             return;
           }
+
           local_EAX_6027 =
                ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1f22,0,0,"%s",
                                   "STAllPlayersC::GetPanelInfo (16) unknown game type");
@@ -1316,6 +1349,7 @@ LAB_0043d5c4:
         local_14 = pDVar1->count;
         if (0 < (int)local_14) {
           do {
+
             DArrayGetElement(pDVar1,uVar15,local_c);
             if (STPiece<0,2>(local_c) != 0xffff) {
               /* ST_CALLSITE[0043D699]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -1344,6 +1378,7 @@ LAB_0043d5c4:
         return;
       }
       if (g_packedRecords_A62x8[uVar17].field96_0x163 != 0x3c) {
+
         local_EAX_4501 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1e85,0,0,"%s",
                                 "STAllPlayersC::GetPanelInfo (11) invalid game type");
@@ -1360,6 +1395,7 @@ LAB_0043d5c4:
           return;
         }
         do {
+
           DArrayGetElement(pDVar1,uVar15,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
             /* ST_CALLSITE[0043D0AD]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -1398,18 +1434,19 @@ LAB_0043d5c4:
       local_1c = pDVar1;
       if (0 < (int)local_14) {
         do {
+
           DArrayGetElement(pDVar1,uVar17,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
             /* ST_CALLSITE[0043D145]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             pSVar11 = GetObjPtr(local_10,DAT_0080874d,STPiece<0,2>(local_c),CASE_1);
             if (pSVar11->field_07E6 == 0) {
-              pAVar18->field_0011 = 3;
+              pRVar18->field_0011 = 3;
             }
             else {
-              pAVar18->field_0x10 = 3;
+              pRVar18->field_0x10 = 3;
             }
-            if ((pAVar18->field_0012 == '\x03') && (pSVar11->field_07EA == 0)) {
-              pAVar18->field_0012 = 1;
+            if ((pRVar18->field_0012 == '\x03') && (pSVar11->field_07EA == 0)) {
+              pRVar18->field_0012 = 1;
             }
           }
           uVar17 = uVar17 + 1;
@@ -1418,6 +1455,7 @@ LAB_0043d5c4:
       dVar10 = 0;
       if (0 < (int)local_14) {
         do {
+
           DArrayGetElement(pDVar1,dVar10,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
             /* ST_CALLSITE[0043D1A3]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -1445,16 +1483,17 @@ LAB_0043d5c4:
       }
 switchD_0043d1bf_caseD_a:
       if (dVar10 == local_14) {
-        pAVar18->field_000A = 0;
-        pAVar18->field_000B = 0;
-        pAVar18->field_0xc = 0;
-        pAVar18->field_000D = 0;
+        pRVar18->field_000A = 0;
+        pRVar18->field_000B = 0;
+        pRVar18->field_0xc = 0;
+        pRVar18->field_000D = 0;
       }
-      param_2 = (AnonShape_0043BEB0_1C00EC12 *)(uint)(dVar10 == local_14);
+      param_2 = (RecoveredRecordView_0043BEB0_8330D129 *)(uint)(dVar10 == local_14);
       iVar6 = 0;
       uVar17 = 0;
       if (0 < (int)local_14) {
         do {
+
           DArrayGetElement(local_1c,uVar17,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
             iVar6 = iVar6 + 1;
@@ -1470,7 +1509,7 @@ switchD_0043d1bf_caseD_a:
           uVar17 = uVar17 + 1;
         } while ((int)uVar17 < (int)local_14);
       }
-      if (param_2 == (AnonShape_0043BEB0_1C00EC12 *)0x1) {
+      if (param_2 == (RecoveredRecordView_0043BEB0_8330D129 *)0x1) {
         return;
       }
       if (local_20 == 0xffff) {
@@ -1478,21 +1517,21 @@ switchD_0043d1bf_caseD_a:
       }
       pSVar7 = thunk_FUN_0042b760(DAT_0080874d,(ushort)local_20);
       /* ST_CALLSITE[0043D27D]: CALL dword ptr [EDX + 0xc] */
-      dVar10 = pSVar7->slot_0C();
+      dVar10 = pSVar7->vfunc_C();
       switch(dVar10) {
       case 5:
-        pAVar18->field_0xc = 3;
+        pRVar18->field_0xc = 3;
         return;
       case 6:
-        pAVar18->field_000D = 3;
+        pRVar18->field_000D = 3;
         return;
       default:
         return;
       case 0x10:
-        pAVar18->field_000E = 3;
+        pRVar18->field_000E = 3;
         return;
       case 0x14:
-        pAVar18->field_000F = 3;
+        pRVar18->field_000F = 3;
         return;
       }
     }
@@ -1507,6 +1546,7 @@ switchD_0043d1bf_caseD_a:
       else {
         if (iVar6 != 0x1b8) {
 LAB_0043cb81:
+
           local_EAX_3303 =
                ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x1d78,0,0,"%s",
                                   "STAllPlayersC::GetPanelInfo (5) unknown game type");
@@ -1548,6 +1588,7 @@ LAB_0043cb81:
       return;
     }
     while( true ) {
+
       DArrayGetElement(pDVar1,uVar15,local_c);
       uVar4 = STPiece<0,2>(local_c);
       if (uVar4 != 0xffff) break;

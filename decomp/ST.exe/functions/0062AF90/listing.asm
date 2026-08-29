@@ -190,7 +190,7 @@ LAB_0062b186:
 0062B194  6A 00                     PUSH 0x0
 0062B196  6A 00                     PUSH 0x0
 0062B198  68 32 01 00 00            PUSH 0x132
-0062B19D  FF 52 08                  CALL dword ptr [EDX + 0x8]
+0062B19D  FF 52 08                  CALL dword ptr [EDX + 0x8]  ; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STPlaySystemC;/int;pointer:/undefined4;pointer:/int;/undefined2;/int
 LAB_0062b1a0:
 0062B1A0  5F                        POP EDI
 0062B1A1  5E                        POP ESI

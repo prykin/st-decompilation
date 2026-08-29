@@ -11,7 +11,7 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   MTaskTy *this_00;
   int iVar2;
   DArrayTy *pDVar2;
-  AnonShape_005E10A0_819783CC *pAVar3;
+  RecoveredRecordView_005E10A0_0590A448 *pRVar3;
   int iVar6;
   cMf32 *this_01;
   uint *puVar4;
@@ -25,9 +25,11 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",299,0,iVar2,"%s",
                                "MTaskTy::DoneMTask");
     if (iVar6 == 0) {
@@ -51,8 +53,11 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
     FUN_006b3bb0((int *)g_ddxContext_008075A8,this_00->field_063F);
     this_00->field_063F = 0xffffffff;
   }
+
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_048C);
+
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_051D);
+
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_05AE);
   if (this_00->field_0643 != nullptr) {
     FUN_006b5570(this_00->field_0643);
@@ -66,8 +71,11 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
     FUN_006b3bb0((int *)g_ddxContext_008075A8,this_00->field_0484);
     this_00->field_0484 = 0xffffffff;
   }
+
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_02D1);
+
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_0362);
+
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this_00->field_03F3);
   puVar4 = &this_00->field_02BD;
   iVar7 = 4;
@@ -114,6 +122,7 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
       do {
         this_02 = DArrayAt<SpriteClassTy>(pDVar2, uVar5);
 LAB_005e0672:
+
         SpriteClassTy::CloseSprite(this_02);
         if (*(int *)((int)&this_02[1].field_0008 + 1) != 0) {
           FreeAndNull((void *)((int)&this_02[1].field_0008 + 1));
@@ -130,14 +139,14 @@ LAB_005e0672:
     uVar5 = 0;
     if (pDVar2->count != 0) {
       if (pDVar2->count == 0) {
-        pAVar3 = nullptr;
+        pRVar3 = nullptr;
         goto LAB_005e06d9;
       }
       do {
-        pAVar3 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar2, uVar5);
+        pRVar3 = DArrayAt<RecoveredRecordView_005E10A0_0590A448>(pDVar2, uVar5);
 LAB_005e06d9:
         /* ST_CALLSITE[005E06DC]: CALL 0x0040555b; direct=0040555B MTaskTy::TTaskItemClose */
-        TTaskItemClose(this_00,pAVar3);
+        TTaskItemClose(this_00,pRVar3);
         pDVar2 = this_00->field_0647;
         uVar5 = uVar5 + 1;
       } while (uVar5 < pDVar2->count);
@@ -150,14 +159,14 @@ LAB_005e06d9:
     uVar5 = 0;
     if (pDVar2->count != 0) {
       if (pDVar2->count == 0) {
-        pAVar3 = nullptr;
+        pRVar3 = nullptr;
         goto LAB_005e072b;
       }
       do {
-        pAVar3 = DArrayAt<AnonShape_005E10A0_819783CC>(pDVar2, uVar5);
+        pRVar3 = DArrayAt<RecoveredRecordView_005E10A0_0590A448>(pDVar2, uVar5);
 LAB_005e072b:
         /* ST_CALLSITE[005E072E]: CALL 0x0040555b; direct=0040555B MTaskTy::TTaskItemClose */
-        TTaskItemClose(this_00,pAVar3);
+        TTaskItemClose(this_00,pRVar3);
         pDVar2 = this_00->field_064F;
         uVar5 = uVar5 + 1;
       } while (uVar5 < pDVar2->count);
@@ -208,6 +217,7 @@ LAB_005e072b:
   }
   this_00->field_0070 = nullptr;
   if (this_00->field_004D != 0) {
+
     AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&this_00->field_0x3d);
   }
   DAT_00807654 = 0x21;

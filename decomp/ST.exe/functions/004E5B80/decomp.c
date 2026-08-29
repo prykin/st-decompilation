@@ -7,6 +7,7 @@ void FUN_004e5b80(int param_1,uint param_2,int param_3)
   int iVar1;
 
   if ((((-1 < param_1) && (param_1 < 8)) && (0 < (int)param_2)) && ((int)param_2 < 0x9b)) {
+
     iVar1 = thunk_FUN_004e5f90(param_1,param_2);
     if (iVar1 == 0) {
       if ((*(char *)((int)&DAT_00798fd8 + param_2) == '\x01') || (param_3 < 2)) {

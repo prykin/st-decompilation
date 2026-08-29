@@ -16,7 +16,7 @@ void __thiscall st::fn_00566900(SoundManagerTy *this)
 
 {
   st::fn_00401CDA
-            ((AnonReceiver_00568940 *)&g_sound,CASE_B);
+            (reinterpret_cast<RecoveredReceiver_00568940 *>(&g_sound),CASE_B);
   if (this->field_0018 != nullptr) {
     st::fn_006F1170(this->field_0018);
   }
@@ -76,12 +76,14 @@ void __thiscall st::fn_00566970(SoundManagerTy *this,int param_1,int param_2)
       goto switchD_005669a6_default;
     }
     puVar3 = nullptr;
+    /* ST_CALLSITE[00566A0D]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/cMf32; source view only; no Ghidra override */
     pCVar1 = st::fn_006F2C00(text,3,iVar2);
-    iVar2 = st::fn_004010E6(&g_sound,this->field_0018,pCVar1,param_2,puVar3);
+
+    iVar2 = st::fn_004010E6(&g_sound,this->field_0018,reinterpret_cast<char *>(pCVar1),param_2,puVar3);
     if (iVar2 == 0) {
       if (this->field_0039 == param_1) {
         this->field_0039 = param_1;
-        this->field_003D = st::machine_word_boundary_cast<int>(this->field_003D + 1);
+        this->field_003D = this->field_003D + 1;
         return;
       }
       this->field_003D = 1;
@@ -130,23 +132,26 @@ void __thiscall st::fn_00566AA0(SoundManagerTy *this)
         st::fn_00401AC3(this,0,2000);
       }
       else {
-        uVar1 = st::fn_00404840(0x807658);
+
+        uVar1 = st::fn_00404840(reinterpret_cast<RecoveredRecord_0056A4D0_88DA6D2B *>(&g_sound));
         if (uVar1 == 0) {
           if (((int)uVar2 < 2) || ((this->field_0038 != CASE_1 && (this->field_0038 != CASE_3)))) {
+
             uVar1 = st::fn_0072E6C0();
             uVar1 = uVar1 % uVar2;
             if ((uVar1 == this->field_0039) && (1 < this->field_003D)) {
-              uVar1 = st::machine_word_boundary_cast<uint>(this->field_0039 + 1);
+              uVar1 = this->field_0039 + 1;
             }
             if ((int)uVar2 <= (int)uVar1) {
               uVar1 = 0;
             }
           }
           else {
+
             uVar1 = st::fn_0072E6C0();
             uVar1 = uVar1 % (uVar2 - 1) + 1;
             if ((uVar1 == this->field_0039) && (1 < this->field_003D)) {
-              uVar1 = st::machine_word_boundary_cast<uint>(this->field_0039 + 1);
+              uVar1 = this->field_0039 + 1;
             }
             if ((int)uVar2 <= (int)uVar1) {
               /* ST_CALLSITE[00566B35]: CALL 0x00401ac3; direct=00401AC3 SoundManagerTy::sub_00566970 */
@@ -172,18 +177,19 @@ switchD_00566ac8_default:
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
-void __thiscall st::fn_00566BD0(SoundManagerTy *this,int param_1)
+void __thiscall
+st::fn_00566BD0(SoundManagerTy *this,RecoveredRecord_00566BD0_FD8EB056 *param_1)
 
 {
   uint uVar1;
 
-  if ((param_1 != 0) && (g_sT3DSMAPContext_00807598 != nullptr)) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    uVar1 = st::fn_006EB310(g_sT3DSMAPContext_00807598,*(uint *)(param_1 + 0x1ed));
+  if ((param_1 != nullptr) &&
+     (g_sT3DSMAPContext_00807598 != nullptr)) {
+
+    uVar1 = st::fn_006EB310(g_sT3DSMAPContext_00807598,param_1->field_01ED);
     if (uVar1 != 0) {
       this->field_0024 = this->field_001C;
     }
   }
   return;
 }
-

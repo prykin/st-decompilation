@@ -91,22 +91,22 @@ LAB_004b32b3:
 004B32C1  85 C9                     TEST ECX,ECX
 004B32C3  74 52                     JZ 0x004b3317
 004B32C5  8B 11                     MOV EDX,dword ptr [ECX]
-004B32C7  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+004B32C7  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004B32CA  83 F8 32                  CMP EAX,0x32
 004B32CD  74 27                     JZ 0x004b32f6
 004B32CF  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]
 004B32D2  8B 01                     MOV EAX,dword ptr [ECX]
-004B32D4  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+004B32D4  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004B32D7  83 F8 40                  CMP EAX,0x40
 004B32DA  74 1A                     JZ 0x004b32f6
 004B32DC  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]
 004B32DF  8B 11                     MOV EDX,dword ptr [ECX]
-004B32E1  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+004B32E1  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004B32E4  83 F8 49                  CMP EAX,0x49
 004B32E7  74 0D                     JZ 0x004b32f6
 004B32E9  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]
 004B32EC  8B 01                     MOV EAX,dword ptr [ECX]
-004B32EE  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+004B32EE  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004B32F1  83 F8 5C                  CMP EAX,0x5c
 004B32F4  75 21                     JNZ 0x004b3317
 LAB_004b32f6:

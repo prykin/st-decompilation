@@ -21,9 +21,9 @@ STGameObjC * __thiscall st::fn_004158E0(STGameObjC *this)
   this->field_002C = 0;
   this->field_0030 = 0xffff;
   this->field_0032 = 0xffff;
-  puVar2 = (undefined4 *)&this->field_0x34;
+  puVar2 = reinterpret_cast<uint *>(&this->field_0x34);
   memset(puVar2, 0, 0x5f); /* compiler bulk-zero initialization */
-  puVar2 = (undefined4 *)((byte *)puVar2 + 0x5c);
+  puVar2 = reinterpret_cast<uint *>(((byte *)puVar2 + 0x5c));
   iVar1 = 0;
   this->field_005F = -1;
   this->field_005D = -1;
@@ -90,1281 +90,337 @@ STGameObjC * __thiscall st::fn_004158E0(STGameObjC *this)
   return this;
 }
 
-// 004845E0 STGameObjC::FUN_004845e0
-#line 4 "decomp/ST.exe/functions/004845E0/decomp.c"
-/* [STSwitchEnumApplier] Switch target param_1 uses
-   /SubmarineTitans/Recovered/Enums/Global_sub_004845E0_param_1Enum. Cases:
-   CASE_0=0;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_D=13;CASE_E=14;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_18=24;CASE_2B=43;CASE_2C=44;CASE_2D=45;CASE_48=72;CASE_4D=77
+// 00419C30 STGameObjC::sub_00419C30
+#line 4 "decomp/ST.exe/functions/00419C30/decomp.c"
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
+   decompilation contains no value return
 
-   [STSwitchEnumApplier] Switch target param_1 uses
-   /SubmarineTitans/Recovered/Enums/STGameObjC_sub_004845E0_param_1Enum. Cases:
-   CASE_0=0;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_D=13;CASE_E=14;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_18=24;CASE_2B=43;CASE_2C=44;CASE_2D=45;CASE_48=72;CASE_4D=77
-    */
+   [STPrototypeApplier] Propagated parameter 1.
+   Evidence: 00423850 -> 00419C30 @ 00423915; unproven partial register write at 0042390C | 00423C70
+   -> 00419C30 @ 00423CE1; literal 65535 at 00423CDA
 
-ushort __thiscall
-st::fn_004845E0(STGameObjC *this,STGameObjC_sub_004845E0_param_1Enum param_1,int *param_2)
+   [STMethodOwnerApplier] Structural method owner recovered as STGameObjC.
+   Evidence: this_call_owners=[STGameObjC]; agreed_this_calls=2; incoming_this_accesses=1;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate;
+   unique_primary_physical_vtable=true */
+
+void __thiscall st::fn_00419C30(STGameObjC *this,ushort param_1)
 
 {
-  byte bVar1;
-  byte bVar2;
-  int *this_00;
-  int iVar3;
-  int local_EAX_1102;
-  int local_EAX_2778;
-  int iVar4;
-  int local_EAX_2933;
-  int iVar5;
-  int local_EAX_4151;
-  int local_EAX_4220;
-  int local_EAX_4242;
-  int local_EAX_4800;
-  uint uVar6;
-  uint uVar7;
-  byte bVar8;
-  bool bVar9;
-  undefined1 local_10 [4];
-  int local_c;
-  undefined4 local_8;
-
-  this_00 = param_2;
-  if ((param_2 != nullptr) && (param_2[8] == 1000)) {
-    if (param_2[0x12d] != 0) {
-      return 0;
-    }
-    if (STField<int>(param_2,0x245) == 6) {
-      return 0;
-    }
-  }
-  switch(param_1) {
-  case CASE_0:
-    iVar5 = st::fn_0040226B(this);
-    if (iVar5 != 0) {
-      if (this_00 == nullptr) {
-        return 0;
-      }
-      if ((STGameObjC *)this_00 == this) {
-        return 3;
-      }
-      if (this->field_0024 != this_00[9]) {
-        return 0;
-      }
-      /* ST_CALLSITE[0048556C]: CALL dword ptr [EDX + 0xec] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      iVar5 = (**(code **)(*this_00 + 0xec))();
-      if (iVar5 != 0) {
-        iVar5 = this_00[8];
-        if (iVar5 == 1000) {
-          return 4;
-        }
-        if (iVar5 == 0x3e9) {
-          return 4;
-        }
-        if (iVar5 != 0x14) {
-          return 0;
-        }
-        return 3;
-      }
-      return 0;
-    }
-    if ((STGameObjC *)this_00 == this) {
-      return 3;
-    }
-    if (this_00 == nullptr) {
-      return 5;
-    }
-    iVar5 = this_00[8];
-    if ((((iVar5 != 0x14) && (iVar5 != 1000)) && (iVar5 != 0x3e9)) && (iVar5 != 0x1ae)) {
-      return 5;
-    }
-    iVar5 = this->field_06F7;
-    if ((((iVar5 != 9) && (iVar5 != 0x15)) &&
-        ((this->field_0716 < this->field_0712 &&
-         ((local_EAX_4151 = st::fn_00401F5A(iVar5), local_EAX_4151 != 3 &&
-          /* ST_CALLSITE[00485625]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-          (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 == 0x33)))))) &&
-       (this->field_0024 == this_00[9])) {
-      return 0x18;
-    }
-    /* ST_CALLSITE[00485648]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-    iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
-    if ((((iVar5 == 0x62) && (this->field_0024 == this_00[9])) &&
-        /* ST_CALLSITE[0048565C]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
-        (local_EAX_4220 = st::fn_00403594((TLOBaseTy *)this), 0 < local_EAX_4220)) &&
-       (local_EAX_4242 = st::fn_00401F5A(this->field_06F7), local_EAX_4242 == 3)) {
-      return 0x1b;
-    }
-    /* ST_CALLSITE[0048568D]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-    iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
-    if (((iVar5 == 0x37) ||
-        /* ST_CALLSITE[00485699]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-        (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 == 0x6c)) &&
-       (iVar5 = st::fn_00401EAB(this_00,this->field_0024), iVar5 == 1)) {
-      return 0x1d;
-    }
-    /* ST_CALLSITE[004856C9]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-    iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
-    if (((iVar5 == 0x16) ||
-        /* ST_CALLSITE[004856D5]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-        (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 == 0x25)) &&
-       (STField<int>(this_00,0x732) == 1)) {
-      bVar8 = ((byte *)this_00)[9];
-      bVar1 = (byte)this->field_0024;
-      /* ST_PSEUDO[stack_slot_reuse,packed_or_unaligned_piece]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable; expected named packed member, bit extract/compose, or unaligned load */
-      param_2 = (int *)CONCAT13(bVar1,STPiece<0,3>(param_2));
-      local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar1));
-      if (DAT_00808a8f == '\0') {
-        if (bVar8 == bVar1) {
-LAB_004857a5:
-          iVar5 = 0;
-        }
-        else {
-          bVar2 = g_playerRelationMatrix[bVar8][bVar1];
-          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-            iVar5 = -2;
-          }
-          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-            iVar5 = -1;
-          }
-          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
-            iVar5 = 1;
-          }
-          else {
-            if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_004857a5;
-            iVar5 = 2;
-          }
-        }
-        bVar9 = iVar5 < 0;
-      }
-      else {
-        bVar9 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
-                g_bulkInitializedRecords_008087C7[bVar8].field_0023;
-      }
-      if (bVar9) goto LAB_0048589a;
-      param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar1));
-      /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-      param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar8));
-      if (DAT_00808a8f == '\0') {
-        if (bVar1 == bVar8) {
-LAB_0048586d:
-          iVar5 = 0;
-        }
-        else {
-          bVar2 = g_playerRelationMatrix[bVar1][bVar8];
-          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar8][bVar1] == 0)) {
-            iVar5 = -2;
-          }
-          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar8][bVar1] == 0)) {
-            iVar5 = -1;
-          }
-          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar8][bVar1] == 1)) {
-            iVar5 = 1;
-          }
-          else {
-            if ((bVar2 != 1) || (g_playerRelationMatrix[bVar8][bVar1] != 1)) goto LAB_0048586d;
-            iVar5 = 2;
-          }
-        }
-        bVar9 = iVar5 < 0;
-      }
-      else {
-        bVar9 = g_bulkInitializedRecords_008087C7[bVar8].field_0023 !=
-                g_bulkInitializedRecords_008087C7[bVar1].field_0023;
-      }
-      if (!bVar9) {
-        /* ST_CALLSITE[00485881]: CALL dword ptr [EAX + 0xec] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar5 = (**(code **)(*this_00 + 0xec))();
-        return (-(ushort)(iVar5 != 1) & 0xfffd) + 3;
-      }
-LAB_0048589a:
-      param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar8));
-      local_EAX_4800 = st::fn_00405AE7(this_00,this->field_0024);
-      return (-(ushort)(local_EAX_4800 != 1) & 0xfff9) + 7;
-    }
-    iVar5 = this->field_06F7;
-    if (((iVar5 == 8) || (iVar5 == 0x14)) || (iVar5 == 0x1a)) {
-      /* ST_CALLSITE[004860BA]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-      iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
-      if (((iVar5 != 0x38) &&
-          /* ST_CALLSITE[004860CA]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-          (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x39)) &&
-         /* ST_CALLSITE[004860DA]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-         ((iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x4f &&
-          /* ST_CALLSITE[004860EA]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-          (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x5e)))) {
-        /* ST_CALLSITE[004860FA]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-        iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
-        if (((iVar5 == 0x3b) ||
-            /* ST_CALLSITE[00486106]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-            (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 == 0x60)) &&
-           ((this->field_0024 == this_00[9] &&
-            (0 < this->field_07DA + this->field_07D6 + this->field_07D2)))) {
-          return 0x13;
-        }
-        bVar8 = ((byte *)this_00)[9];
-        bVar1 = (byte)this->field_0024;
-        param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-        param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
-        if (DAT_00808a8f != '\0') {
-          iVar5 = (uint)bVar1 * 9;
-          goto LAB_00486163;
-        }
-        if (bVar8 == bVar1) {
-LAB_00485d4a:
-          iVar5 = 0;
-        }
-        else {
-          uVar6 = (uint)bVar8;
-          uVar7 = (uint)bVar1;
-          bVar8 = g_playerRelationMatrix[uVar6][uVar7];
-          if ((bVar8 == 0) && (g_playerRelationMatrix[uVar7][uVar6] == 0)) {
-            iVar5 = -2;
-          }
-          else if ((bVar8 == 1) && (g_playerRelationMatrix[uVar7][uVar6] == 0)) {
-            iVar5 = -1;
-          }
-          else if ((bVar8 == 0) && (g_playerRelationMatrix[uVar7][uVar6] == 1)) {
-            iVar5 = 1;
-          }
-          else {
-LAB_004861ee:
-            if ((bVar8 != 1) || (g_playerRelationMatrix[uVar7][uVar6] != 1)) goto LAB_00485d4a;
-            iVar5 = 2;
-          }
-        }
-LAB_00485d4c:
-        bVar9 = iVar5 < 0;
-LAB_00485d55:
-        if (bVar9) {
-          return 0;
-        }
-        if (this_00[8] == 0x14) {
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-LAB_00485d68:
-          /* ST_CALLSITE[00485D6C]: CALL dword ptr [EDX + 0xec] */
-          iVar5 = (**(code **)(*this_00 + 0xec))();
-          if (iVar5 == 1) {
-            return 3;
-          }
-        }
-        goto LAB_00485caa;
-      }
-      if (this->field_0024 != this_00[9]) {
-        return 0;
-      }
-      /* ST_CALLSITE[00486221]: CALL dword ptr [EDX + 0x88] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      iVar5 = (**(code **)(*this_00 + 0x88))(local_10);
-      if (0 < iVar5) {
-        return 0x12;
-      }
-/* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-LAB_00485f6a:
-      /* ST_CALLSITE[00485F6E]: CALL dword ptr [EDX + 0xec] */
-      iVar5 = (**(code **)(*this_00 + 0xec))();
-    }
-    else {
-      if (((iVar5 == 7) || (iVar5 == 0x13)) || (iVar5 == 0x1b)) {
-        if (this->field_07CA != nullptr) {
-          /* ST_CALLSITE[00485E18]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-          iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
-          if ((iVar5 == 0x52) || (iVar5 == 0x5f)) {
-            st::fn_006E62D0(g_playSystem_00802A38,this->field_07CA,&local_c);
-            if ((local_c != 0) && (STField<int>(local_c,0x20) == 0x1a4)) {
-              return 0x1e;
-            }
-          }
-          else if (iVar5 == 99) {
-            return 0x1e;
-          }
-          bVar8 = ((byte *)this_00)[9];
-          bVar1 = (byte)this->field_0024;
-          param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-          param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
-          if (DAT_00808a8f == '\0') {
-            if (bVar8 == bVar1) {
-LAB_00485f1f:
-              iVar5 = 0;
-            }
-            else {
-              bVar2 = g_playerRelationMatrix[bVar8][bVar1];
-              if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-                iVar5 = -2;
-              }
-              else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-                iVar5 = -1;
-              }
-              else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
-                iVar5 = 1;
-              }
-              else {
-                if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_00485f1f;
-                iVar5 = 2;
-              }
-            }
-            bVar9 = iVar5 < 0;
-          }
-          else {
-            bVar9 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
-                    g_bulkInitializedRecords_008087C7[bVar8].field_0023;
-          }
-          if (bVar9) {
-            return 0;
-          }
-          /* ST_CALLSITE[00485F3D]: CALL dword ptr [EAX + 0xec] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          if ((this_00[8] == 0x14) && (iVar5 = (**(code **)(*this_00 + 0xec))(), iVar5 == 1)) {
-            return 3;
-          }
-          if ((this_00[8] != 1000) && (this_00[8] != 0x3e9)) {
-            return 0;
-          }
-          goto LAB_00485f6a;
-        }
-        bVar8 = ((byte *)this_00)[9];
-        bVar1 = (byte)this->field_0024;
-        param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-        param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
-        if (DAT_00808a8f == '\0') {
-          if (bVar8 == bVar1) {
-LAB_0048602b:
-            iVar3 = 0;
-          }
-          else {
-            bVar2 = g_playerRelationMatrix[bVar8][bVar1];
-            if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-              iVar3 = -2;
-            }
-            else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-              iVar3 = -1;
-            }
-            else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
-              iVar3 = 1;
-            }
-            else {
-              if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_0048602b;
-              iVar3 = 2;
-            }
-          }
-          bVar9 = iVar3 < 0;
-        }
-        else {
-          bVar9 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
-                  g_bulkInitializedRecords_008087C7[bVar8].field_0023;
-        }
-        if (bVar9) {
-          return 0;
-        }
-        if (this_00[8] == 0x14) {
-          if (iVar5 != 0x1b) {
-            /* ST_CALLSITE[0048608A]: CALL dword ptr [EDX + 0xbc] */
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            iVar5 = (**(code **)(*this_00 + 0xbc))();
-            if ((iVar5 == 1) &&
-               /* ST_CALLSITE[0048609D]: CALL dword ptr [EAX + 0x7c]; [STIndirectCallsiteApplier] exact slot 0x7C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-               (iVar5 = ((STGameObjC *)this_00)->vfunc_7C(), iVar5 < 100)) {
-              return 0x17;
-            }
-            goto LAB_00485d68;
-          }
-          /* ST_CALLSITE[00486052]: CALL dword ptr [EDX + 0xbc] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar5 = (**(code **)(*this_00 + 0xbc))();
-          if (iVar5 == 1) {
-            return 0x1a;
-          }
-          /* ST_CALLSITE[0048606E]: CALL dword ptr [EAX + 0xec] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar5 = (**(code **)(*this_00 + 0xec))();
-          if (iVar5 == 1) {
-            return 3;
-          }
-        }
-LAB_00485caa:
-        iVar5 = this_00[8];
-      }
-      else {
-        if (((iVar5 == 0xc) || (iVar5 == 0x18)) || (iVar5 == 0x19)) {
-          bVar8 = ((byte *)this_00)[9];
-          bVar1 = (byte)this->field_0024;
-          param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-          param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
-          if (DAT_00808a8f == '\0') {
-            if (bVar8 == bVar1) goto LAB_00485d4a;
-            uVar6 = (uint)bVar8;
-            uVar7 = (uint)bVar1;
-            bVar8 = g_playerRelationMatrix[uVar6][uVar7];
-            if ((bVar8 == 0) && (g_playerRelationMatrix[uVar7][uVar6] == 0)) {
-              iVar5 = -2;
-            }
-            else if ((bVar8 == 1) && (g_playerRelationMatrix[uVar7][uVar6] == 0)) {
-              iVar5 = -1;
-            }
-            else {
-LAB_00485d2d:
-              if ((bVar8 != 0) || (g_playerRelationMatrix[uVar7][uVar6] != 1)) goto LAB_004861ee;
-              iVar5 = 1;
-            }
-            goto LAB_00485d4c;
-          }
-          iVar5 = (uint)bVar1 * 9;
-LAB_00486163:
-          bVar9 = (&g_bulkInitializedRecords_008087C7[0].field_0023)[iVar5 * 9] !=
-                  g_bulkInitializedRecords_008087C7[(uint)param_2 & 0xff].field_0023;
-          goto LAB_00485d55;
-        }
-        if (iVar5 == 9) {
-          bVar8 = ((byte *)this_00)[9];
-          bVar1 = (byte)this->field_0024;
-          param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-          param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
-          if (DAT_00808a8f != '\0') {
-            bVar9 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
-                    g_bulkInitializedRecords_008087C7[bVar8].field_0023;
-            goto LAB_004859d8;
-          }
-          if (bVar8 == bVar1) {
-LAB_004859cd:
-            iVar5 = 0;
-          }
-          else {
-            bVar2 = g_playerRelationMatrix[bVar8][bVar1];
-            if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-              iVar5 = -2;
-            }
-            else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-              iVar5 = -1;
-            }
-            else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
-              iVar5 = 1;
-            }
-            else {
-              if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_004859cd;
-              iVar5 = 2;
-            }
-          }
-          bVar9 = iVar5 < 0;
-LAB_004859d8:
-          if (!bVar9) {
-            iVar5 = this_00[8];
-            if (iVar5 == 0x14) {
-              /* ST_CALLSITE[004859E9]: CALL dword ptr [EAX + 0xec] */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-              iVar5 = (**(code **)(*this_00 + 0xec))();
-              return (-(ushort)(iVar5 != 1) & 0xfffd) + 3;
-            }
-            if ((iVar5 == 1000) || (iVar5 == 0x3e9)) {
-              /* ST_CALLSITE[00485A14]: CALL dword ptr [EDX + 0xec] */
-              /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-              iVar5 = (**(code **)(*this_00 + 0xec))();
-              return (-(ushort)(iVar5 != 1) & 0xfffc) + 4;
-            }
-          }
-          if ((this_00[8] != 1000) && (this_00[8] != 0x3e9)) {
-            return 0;
-          }
-          /* ST_CALLSITE[00485A46]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-          iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
-          if ((iVar5 != 0x3b) &&
-             /* ST_CALLSITE[00485A52]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-             (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x60)) {
-            return 0;
-          }
-          return 7;
-        }
-        if (iVar5 != 0x1d) {
-          if ((iVar5 != 0x24) && (iVar5 != 0x25)) {
-            bVar8 = ((byte *)this_00)[9];
-            bVar1 = (byte)this->field_0024;
-            param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-            param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
-            if (DAT_00808a8f == '\0') {
-              if (bVar8 == bVar1) {
-LAB_00485c58:
-                iVar3 = 0;
-              }
-              else {
-                bVar2 = g_playerRelationMatrix[bVar8][bVar1];
-                if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-                  iVar3 = -2;
-                }
-                else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-                  iVar3 = -1;
-                }
-                else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
-                  iVar3 = 1;
-                }
-                else {
-                  if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1))
-                  goto LAB_00485c58;
-                  iVar3 = 2;
-                }
-              }
-              bVar9 = iVar3 < 0;
-            }
-            else {
-              bVar9 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
-                      g_bulkInitializedRecords_008087C7[bVar8].field_0023;
-            }
-            if (bVar9) {
-              if (iVar5 == 0x15) {
-                return 7;
-              }
-              if (0 < this->field_07A2) {
-                return 7;
-              }
-              return 0;
-            }
-            /* ST_CALLSITE[00485C92]: CALL dword ptr [EDX + 0xec] */
-            /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-            if ((this_00[8] == 0x14) && (iVar5 = (**(code **)(*this_00 + 0xec))(), iVar5 == 1)) {
-              return 3;
-            }
-            goto LAB_00485caa;
-          }
-          bVar8 = ((byte *)this_00)[9];
-          bVar1 = (byte)this->field_0024;
-          param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-          param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
-          if (DAT_00808a8f == '\0') {
-            if (bVar8 == bVar1) goto LAB_00485d4a;
-            uVar6 = (uint)bVar8;
-            uVar7 = (uint)bVar1;
-            bVar8 = g_playerRelationMatrix[uVar6][uVar7];
-            if ((bVar8 == 0) && (g_playerRelationMatrix[uVar7][uVar6] == 0)) {
-              iVar5 = -2;
-            }
-            else {
-              if ((bVar8 != 1) || (g_playerRelationMatrix[uVar7][uVar6] != 0)) goto LAB_00485d2d;
-              iVar5 = -1;
-            }
-            goto LAB_00485d4c;
-          }
-          iVar5 = (uint)bVar1 * 9;
-          goto LAB_00486163;
-        }
-        bVar8 = ((byte *)this_00)[9];
-        bVar1 = (byte)this->field_0024;
-        param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-        param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
-        if (DAT_00808a8f == '\0') {
-          if (bVar8 == bVar1) {
-LAB_00485b29:
-            iVar5 = 0;
-          }
-          else {
-            bVar2 = g_playerRelationMatrix[bVar8][bVar1];
-            if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-              iVar5 = -2;
-            }
-            else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-              iVar5 = -1;
-            }
-            else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
-              iVar5 = 1;
-            }
-            else {
-              if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_00485b29;
-              iVar5 = 2;
-            }
-          }
-          bVar9 = iVar5 < 0;
-        }
-        else {
-          bVar9 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
-                  g_bulkInitializedRecords_008087C7[bVar8].field_0023;
-        }
-        if (bVar9) {
-          return 0;
-        }
-        /* ST_CALLSITE[00485B47]: CALL dword ptr [EDX + 0xec] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        if ((this_00[8] == 0x14) && (iVar5 = (**(code **)(*this_00 + 0xec))(), iVar5 == 1)) {
-          return 3;
-        }
-        iVar5 = this_00[8];
-      }
-      if ((iVar5 != 1000) && (iVar5 != 0x3e9)) {
-        return 0;
-      }
-      /* ST_CALLSITE[00485B78]: CALL dword ptr [EAX + 0xec] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      iVar5 = (**(code **)(*this_00 + 0xec))();
-    }
-    if (iVar5 == 1) {
-      return 4;
-    }
-    break;
-  case CASE_2:
-    iVar5 = st::fn_0040226B(this);
-    return (-(ushort)(iVar5 != 0) & 0xfffa) + 6;
-  case CASE_3:
-  case CASE_2B:
-    iVar5 = st::fn_0040226B(this);
-    if (iVar5 != 0) {
-      return 0;
-    }
-    if (this_00 == nullptr) {
-      return 1;
-    }
-    iVar5 = this_00[8];
-    if (((iVar5 != 0x14) && (iVar5 != 1000)) && ((iVar5 != 0x3e9 && (iVar5 != 0x1ae)))) {
-      return 1;
-    }
-    if ((STGameObjC *)this_00 == this) {
-      return 0;
-    }
-    iVar3 = this->field_06F7;
-    if (iVar3 == 7) {
-      return 1;
-    }
-    if (iVar3 == 0x13) {
-      return 1;
-    }
-    if (iVar3 == 8) {
-      return 1;
-    }
-    if (iVar3 == 0x14) {
-      return 1;
-    }
-    if (iVar3 == 0xc) {
-      return 1;
-    }
-    if (iVar3 == 0x18) {
-      return 1;
-    }
-    if (iVar3 == 0x19) {
-      return 1;
-    }
-    if (iVar3 == 0x1a) {
-      return 1;
-    }
-    if (iVar3 == 0x1b) {
-      return 1;
-    }
-    if (iVar3 == 0x25) {
-      return 1;
-    }
-    if (iVar3 != 9) {
-      if ((iVar3 != 0x15) && (this->field_07A2 < 1)) {
-        return 1;
-      }
-      /* ST_CALLSITE[00484867]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-      iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
-      if (((iVar5 != 0x16) &&
-          /* ST_CALLSITE[00484873]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-          (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x25)) ||
-         (STField<int>(this_00,0x732) != 1)) {
-        param_2 = (int *)(uint)((byte *)this_00)[9];
-        param_1 = (STGameObjC_sub_004845E0_param_1Enum)(byte)this->field_0024;
-        if (DAT_00808a8f != '\0') {
-          bVar9 = g_bulkInitializedRecords_008087C7[param_1].field_0023 !=
-                  g_bulkInitializedRecords_008087C7[(int)param_2].field_0023;
-          return (((ushort)bVar9 - (ushort)bVar9) - (ushort)bVar9 & 5) + 2;
-        }
-        if (((byte *)this_00)[9] != (byte)this->field_0024) {
-          bVar8 = g_playerRelationMatrix[(int)param_2][param_1];
-          if ((bVar8 == 0) &&
-             (*(char *)((int)param_2 + (int)(g_playerRelationMatrix + param_1)) == '\0')) {
-            iVar5 = -2;
-            goto cf_common_exit_00484B10;
-          }
-          if ((bVar8 == 1) &&
-             (*(char *)((int)param_2 + (int)(g_playerRelationMatrix + param_1)) == '\0')) {
-            iVar5 = -1;
-            goto cf_common_exit_00484B10;
-          }
-          if ((bVar8 == 0) &&
-             (*(char *)((int)param_2 + (int)(g_playerRelationMatrix + param_1)) == '\x01')) {
-            iVar5 = 1;
-            goto cf_common_exit_00484B10;
-          }
-          if ((bVar8 == 1) &&
-             (*(char *)((int)param_2 + (int)(g_playerRelationMatrix + param_1)) == '\x01')) {
-            iVar5 = 2;
-            goto cf_common_exit_00484B10;
-          }
-        }
-        iVar5 = 0;
-cf_common_exit_00484B10:
-        bVar9 = iVar5 < 0;
-        return (((ushort)bVar9 - (ushort)bVar9) - (ushort)bVar9 & 5) + 2;
-      }
-      bVar8 = ((byte *)this_00)[9];
-      bVar1 = (byte)this->field_0024;
-      /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-      param_2 = (int *)CONCAT13(bVar1,STPiece<0,3>(param_2));
-      local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar1));
-      if (DAT_00808a8f == '\0') {
-        if (bVar8 == bVar1) {
-LAB_00484943:
-          iVar5 = 0;
-        }
-        else {
-          bVar2 = g_playerRelationMatrix[bVar8][bVar1];
-          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-            iVar5 = -2;
-          }
-          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-            iVar5 = -1;
-          }
-          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
-            iVar5 = 1;
-          }
-          else {
-            if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_00484943;
-            iVar5 = 2;
-          }
-        }
-        bVar9 = iVar5 < 0;
-      }
-      else {
-        bVar9 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
-                g_bulkInitializedRecords_008087C7[bVar8].field_0023;
-      }
-      if (bVar9) goto LAB_00484a28;
-      param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar1));
-      if (DAT_00808a8f == '\0') {
-        if (bVar1 == bVar8) {
-LAB_00484a0b:
-          iVar5 = 0;
-        }
-        else {
-          bVar2 = g_playerRelationMatrix[bVar1][bVar8];
-          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar8][bVar1] == 0)) {
-            iVar5 = -2;
-          }
-          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar8][bVar1] == 0)) {
-            iVar5 = -1;
-          }
-          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar8][bVar1] == 1)) {
-            iVar5 = 1;
-          }
-          else {
-            if ((bVar2 != 1) || (g_playerRelationMatrix[bVar8][bVar1] != 1)) goto LAB_00484a0b;
-            iVar5 = 2;
-          }
-        }
-        bVar9 = iVar5 < 0;
-      }
-      else {
-        bVar9 = g_bulkInitializedRecords_008087C7[bVar8].field_0023 !=
-                g_bulkInitializedRecords_008087C7[bVar1].field_0023;
-      }
-      if (!bVar9) {
-        return 2;
-      }
-LAB_00484a28:
-      param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar8));
-      local_EAX_1102 = st::fn_00405AE7(this_00,this->field_0024);
-      return (-(ushort)(local_EAX_1102 != 1) & 0xfffa) + 7;
-    }
-    bVar8 = ((byte *)this_00)[9];
-    bVar1 = (byte)this->field_0024;
-    param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-    param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
-    if (DAT_00808a8f != '\0') {
-      bVar9 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
-              g_bulkInitializedRecords_008087C7[bVar8].field_0023;
-      goto LAB_004847df;
-    }
-    if (bVar8 == bVar1) {
-LAB_004847d4:
-      iVar3 = 0;
-    }
-    else {
-      bVar2 = g_playerRelationMatrix[bVar8][bVar1];
-      if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-        iVar3 = -2;
-      }
-      else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-        iVar3 = -1;
-      }
-      else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
-        iVar3 = 1;
-      }
-      else {
-        if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_004847d4;
-        iVar3 = 2;
-      }
-    }
-    bVar9 = iVar3 < 0;
-LAB_004847df:
-    if (!bVar9) {
-      if (iVar5 == 0x14) {
-        return 3;
-      }
-      if (iVar5 == 1000) {
-        return 4;
-      }
-      if (iVar5 == 0x3e9) {
-        return 4;
-      }
-    }
-    if (iVar5 != 1000) {
-      return 1;
-    }
-    /* ST_CALLSITE[0048481E]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-    iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
-    if ((iVar5 != 0x3b) &&
-       /* ST_CALLSITE[0048482E]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-       (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x60)) {
-      return 1;
-    }
-    return 7;
-  case CASE_4:
-    iVar5 = st::fn_0040226B(this);
-    if (iVar5 == 0) {
-      if (this_00 == nullptr) {
-        return 1;
-      }
-      if ((STGameObjC *)this_00 != this) {
-        if (this->field_06F7 == 9) {
-          return 1;
-        }
-        if (this->field_06F7 == 0x15) {
-          return 1;
-        }
-        if (this->field_0712 <= this->field_0716) {
-          return 1;
-        }
-        /* ST_CALLSITE[00484D19]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-        iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
-        if (iVar5 != 0x33) {
-          return 1;
-        }
-        if (this->field_0024 != this_00[9]) {
-          return 1;
-        }
-        return 0x18;
-      }
-    }
-    break;
-  case CASE_5:
-    iVar5 = st::fn_0040226B(this);
-    if (iVar5 == 0) {
-      if (this_00 == nullptr) {
-        return 1;
-      }
-      if ((STGameObjC *)this_00 != this) {
-        iVar5 = this_00[8];
-        if (((iVar5 != 0x14) && (iVar5 != 1000)) && (iVar5 != 0x3e9)) {
-          return 1;
-        }
-        if (this->field_0024 != this_00[9]) {
-          return 1;
-        }
-        iVar5 = st::fn_00404E58(this);
-        if (iVar5 != 1) {
-          return 1;
-        }
-        return 0xd;
-      }
-    }
-    break;
-  case CASE_6:
-    iVar5 = st::fn_0040226B(this);
-    return (-(ushort)(iVar5 != 0) & 0xfff1) + 0xf;
-  case CASE_7:
-    iVar5 = st::fn_0040226B(this);
-    if (iVar5 == 0) {
-      if (this_00 == nullptr) {
-        return 1;
-      }
-      if ((STGameObjC *)this_00 != this) {
-        iVar5 = this->field_06F7;
-        if (((iVar5 != 6) && (iVar5 != 0x12)) && (iVar5 != 0x22)) {
-          return 1;
-        }
-        /* ST_CALLSITE[004850A5]: CALL dword ptr [EAX + 0x108] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar5 = (**(code **)(*this_00 + 0x108))(this->field_0024);
-        if (iVar5 != 1) {
-          return 1;
-        }
-        local_EAX_2778 = st::fn_00403CEC(this_00,this->field_0024);
-        if (local_EAX_2778 != 1) {
-          if (local_EAX_2778 == 2) {
-            return 10;
-          }
-          if (local_EAX_2778 != 3) {
-            return 1;
-          }
-          return 0xb;
-        }
-        return 9;
-      }
-    }
-    break;
-  case CASE_8:
-    iVar5 = st::fn_0040226B(this);
-    return (-(ushort)(iVar5 != 0) & 0xffef) + 0x11;
-  case CASE_9:
-    iVar5 = st::fn_0040226B(this);
-    return (-(ushort)(iVar5 != 0) & 0xfff8) + 8;
-  case CASE_A:
-    iVar5 = st::fn_0040226B(this);
-    if (iVar5 != 0) {
-      return 0;
-    }
-    if (this_00 == nullptr) {
-      return 1;
-    }
-    if (this->field_06F7 != 0x17) {
-      return 1;
-    }
-    if (this_00[8] != 0x14) {
-      return 1;
-    }
-    if ((STGameObjC *)this_00 == this) {
-      return 0;
-    }
-    if (this->field_072A < 1) {
-      return 1;
-    }
-    /* ST_CALLSITE[004852EB]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-    iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
-    if ((iVar5 != 0x16) &&
-       /* ST_CALLSITE[004852F7]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-       (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x25)) {
-      return 0xc;
-    }
-    if (STField<int>(this_00,0x732) != 1) {
-      return 0xc;
-    }
-    bVar8 = ((byte *)this_00)[9];
-    bVar1 = (byte)this->field_0024;
-    param_1 = (STGameObjC_sub_004845E0_param_1Enum)bVar8;
-    local_8 = (uint)bVar1;
-    if (DAT_00808a8f != '\0') {
-      bVar9 = g_bulkInitializedRecords_008087C7[local_8].field_0023 !=
-              g_bulkInitializedRecords_008087C7[param_1].field_0023;
-      goto LAB_004853d2;
-    }
-    if (bVar8 == bVar1) {
-LAB_004853c7:
-      iVar5 = 0;
-    }
-    else {
-      bVar2 = g_playerRelationMatrix[param_1][local_8];
-      if ((bVar2 == 0) && (g_playerRelationMatrix[local_8][param_1] == 0)) {
-        iVar5 = -2;
-      }
-      else if ((bVar2 == 1) && (g_playerRelationMatrix[local_8][param_1] == 0)) {
-        iVar5 = -1;
-      }
-      else if ((bVar2 == 0) && (g_playerRelationMatrix[local_8][param_1] == 1)) {
-        iVar5 = 1;
-      }
-      else {
-        if ((bVar2 != 1) || (g_playerRelationMatrix[local_8][param_1] != 1)) goto LAB_004853c7;
-        iVar5 = 2;
-      }
-    }
-    bVar9 = iVar5 < 0;
-LAB_004853d2:
-    if (!bVar9) {
-      param_1 = (STGameObjC_sub_004845E0_param_1Enum)bVar8;
-      if (DAT_00808a8f != '\0') {
-        return 0xc;
-      }
-      if (bVar1 != bVar8) {
-        bVar8 = g_playerRelationMatrix[bVar1][param_1];
-        if ((bVar8 == 0) && (g_playerRelationMatrix[param_1][bVar1] == 0)) {
-          return 0xc;
-        }
-        if ((bVar8 == 1) && (g_playerRelationMatrix[param_1][bVar1] == 0)) {
-          return 0xc;
-        }
-        if ((bVar8 == 0) && (g_playerRelationMatrix[param_1][bVar1] == 1)) {
-          return 0xc;
-        }
-        if ((bVar8 == 1) && (g_playerRelationMatrix[param_1][bVar1] == 1)) {
-          return 0xc;
-        }
-      }
-    }
-    return 0xc;
-  case CASE_D:
-    iVar5 = st::fn_0040226B(this);
-    if (iVar5 != 0) {
-      return 0;
-    }
-    if (this->field_07CA != nullptr) {
-      return 0;
-    }
-    if (this_00 == nullptr) {
-      return 1;
-    }
-    if ((STGameObjC *)this_00 == this) {
-      return 0;
-    }
-    if (this_00[8] != 0x14) {
-      return 1;
-    }
-    /* ST_CALLSITE[00484F36]: CALL dword ptr [EAX + 0x7c]; [STIndirectCallsiteApplier] exact slot 0x7C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-    iVar5 = ((STGameObjC *)this_00)->vfunc_7C();
-    if (99 < iVar5) {
-      return 1;
-    }
-    bVar8 = ((byte *)this_00)[9];
-    bVar1 = (byte)this->field_0024;
-    param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-    param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
-    if (DAT_00808a8f != '\0') {
-      bVar9 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
-              g_bulkInitializedRecords_008087C7[bVar8].field_0023;
-      goto LAB_00485002;
-    }
-    if (bVar8 == bVar1) {
-LAB_00484ff7:
-      iVar5 = 0;
-    }
-    else {
-      bVar2 = g_playerRelationMatrix[bVar8][bVar1];
-      if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-        iVar5 = -2;
-      }
-      else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-        iVar5 = -1;
-      }
-      else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
-        iVar5 = 1;
-      }
-      else {
-        if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_00484ff7;
-        iVar5 = 2;
-      }
-    }
-    bVar9 = iVar5 < 0;
-LAB_00485002:
-    if (bVar9) {
-      return 1;
-    }
-    /* ST_CALLSITE[0048500E]: CALL dword ptr [EDX + 0xbc]; [STIndirectCallsiteApplier] exact slot 0xBC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-    iVar5 = ((STGameObjC *)this_00)->vfunc_BC();
-    if (iVar5 != 1) {
-      return 1;
-    }
-    return 0x17;
-  case CASE_E:
-    iVar5 = st::fn_0040226B(this);
-    if (iVar5 == 0) {
-      if ((g_tLOBldMark_007FB2AC != nullptr) && (g_tLOBldMark_007FB2AC->field_0024 != 0))
-      {
-        return 0x14;
-      }
-      return 0x15;
-    }
-    break;
-  case CASE_10:
-    iVar5 = st::fn_0040226B(this);
-    if (iVar5 != 0) {
-      return 0;
-    }
-    if ((STGameObjC *)this_00 == this) {
-      return 0;
-    }
-    if (this_00 == nullptr) {
-      return 1;
-    }
-    if (this_00[8] != 1000) {
-      return 1;
-    }
-    if (this_00[9] != this->field_0024) {
-      return 1;
-    }
-    iVar5 = st::fn_0040141A((AnonShape_004B9D90_4F3151F9 *)this_00);
-    if (iVar5 == 0) {
-      return 1;
-    }
-    /* ST_CALLSITE[00485252]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
-    st::fn_00405F0B
-              ((STFishC *)this_00,(short *)((int)&local_8 + 2),(short *)((int)&param_1 + 2),
-               (short *)((int)&param_2 + 2));
-    return (((int)STPiece<2,2>(param_2) <= g_worldGrid.sizeZ + -2) - 1 & 0xffeb) + 0x16;
-  case CASE_11:
-    iVar5 = st::fn_0040226B(this);
-    if (iVar5 == 0) {
-      if (this_00 == nullptr) {
-        return 1;
-      }
-      if ((STGameObjC *)this_00 != this) {
-        iVar5 = this->field_06F7;
-        if (((iVar5 != 8) && (iVar5 != 0x14)) && (iVar5 != 0x1a)) {
-          return 1;
-        }
-        /* ST_CALLSITE[00484B7A]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-        iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
-        if ((((iVar5 != 0x38) &&
-             /* ST_CALLSITE[00484B86]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-             (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x39)) &&
-            /* ST_CALLSITE[00484B92]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-            (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x4f)) &&
-           /* ST_CALLSITE[00484B9E]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-           (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x5e)) {
-          return 1;
-        }
-        if (this->field_0024 == this_00[9]) {
-          /* ST_CALLSITE[00484BD2]: CALL dword ptr [EDX + 0x88] */
-          /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar5 = (**(code **)(*this_00 + 0x88))(local_10);
-          return ((0 < iVar5) - 1 & 0xffef) + 0x12;
-        }
-        return 1;
-      }
-    }
-    break;
-  case CASE_12:
-    iVar5 = st::fn_0040226B(this);
-    if (iVar5 == 0) {
-      if (this_00 == nullptr) {
-        return 1;
-      }
-      if ((STGameObjC *)this_00 != this) {
-        iVar5 = this->field_06F7;
-        if (((iVar5 != 8) && (iVar5 != 0x14)) && (iVar5 != 0x1a)) {
-          return 1;
-        }
-        /* ST_CALLSITE[00484C37]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-        iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
-        if ((iVar5 != 0x3b) &&
-           /* ST_CALLSITE[00484C43]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-           (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x60)) {
-          return 1;
-        }
-        if (this->field_0024 != this_00[9]) {
-          return 1;
-        }
-        if (this->field_07DA + this->field_07D6 + this->field_07D2 < 1) {
-          return 1;
-        }
-        return 0x13;
-      }
-    }
-    break;
-  case CASE_13:
-    iVar5 = st::fn_0040226B(this);
-    if (iVar5 != 0) {
-      return 0;
-    }
-    if (this->field_07CA != nullptr) {
-      return 0;
-    }
-    if (this_00 == nullptr) {
-      return 1;
-    }
-    if ((STGameObjC *)this_00 == this) {
-      return 0;
-    }
-    if (this_00[8] == 0x14) {
-      bVar8 = ((byte *)this_00)[9];
-      bVar1 = (byte)this->field_0024;
-      param_2 = (int *)STReplaceLowByte((uint32_t)(param_2), (uint8_t)(bVar8));
-      param_1 = STReplaceLowByte((uint32_t)(param_1), (uint8_t)(bVar1));
-      if (DAT_00808a8f == '\0') {
-        if (bVar8 == bVar1) {
-LAB_00484e9f:
-          iVar5 = 0;
-        }
-        else {
-          bVar2 = g_playerRelationMatrix[bVar8][bVar1];
-          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-            iVar5 = -2;
-          }
-          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar1][bVar8] == 0)) {
-            iVar5 = -1;
-          }
-          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar1][bVar8] == 1)) {
-            iVar5 = 1;
-          }
-          else {
-            if ((bVar2 != 1) || (g_playerRelationMatrix[bVar1][bVar8] != 1)) goto LAB_00484e9f;
-            iVar5 = 2;
-          }
-        }
-        bVar9 = iVar5 < 0;
-      }
-      else {
-        bVar9 = g_bulkInitializedRecords_008087C7[bVar1].field_0023 !=
-                g_bulkInitializedRecords_008087C7[bVar8].field_0023;
-      }
-      /* ST_CALLSITE[00484EB2]: CALL dword ptr [EAX + 0x120] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      if ((!bVar9) || (iVar5 = (**(code **)(*this_00 + 0x120))(), iVar5 == 1)) goto LAB_00484ed2;
-    }
-    if ((this_00[8] != 0x172) && (this_00[8] != 0x1a4)) {
-      return 1;
-    }
-LAB_00484ed2:
-    /* ST_CALLSITE[00484ED6]: CALL dword ptr [EDX + 0xbc]; [STIndirectCallsiteApplier] exact slot 0xBC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-    iVar5 = ((STGameObjC *)this_00)->vfunc_BC();
-    if (iVar5 != 1) {
-      return 1;
-    }
-    return 0x1a;
-  case CASE_18:
-    iVar5 = st::fn_0040226B(this);
-    if (iVar5 == 0) {
-      return -(ushort)((STGameObjC *)this_00 != this) & 0x1d;
-    }
-    break;
-  case CASE_2C:
-    iVar5 = st::fn_0040226B(this);
-    return (ushort)(iVar5 == 0);
-  case CASE_2D:
-    iVar5 = st::fn_0040226B(this);
-    return (-(ushort)(iVar5 != 0) & 0xfff0) + 0x10;
-  case CASE_48:
-    iVar5 = st::fn_0040226B(this);
-    if (iVar5 == 0) {
-      if (this_00 == nullptr) {
-        return 1;
-      }
-      if ((STGameObjC *)this_00 != this) {
-        /* ST_CALLSITE[0048511F]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-        iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
-        if (iVar5 != 0x62) {
-          return 1;
-        }
-        if (this->field_0024 != this_00[9]) {
-          return 1;
-        }
-        /* ST_CALLSITE[0048513B]: CALL 0x00403594; direct=00403594 TLOBaseTy::sub_004D6DF0 */
-        iVar4 = st::fn_00403594((TLOBaseTy *)this);
-        if (iVar4 < 1) {
-          return 1;
-        }
-        local_EAX_2933 = st::fn_00401F5A(this->field_06F7);
-        if (local_EAX_2933 != 3) {
-          return 1;
-        }
-        return 0x1b;
-      }
-    }
-    break;
-  case CASE_4D:
-    iVar5 = st::fn_0040226B(this);
-    if (iVar5 == 0) {
-      if (this_00 == nullptr) {
-        return 1;
-      }
-      if ((STGameObjC *)this_00 != this) {
-        /* ST_CALLSITE[0048519C]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-        iVar5 = ((STGameObjC *)this_00)->vfunc_2C();
-        if ((iVar5 != 0x37) &&
-           /* ST_CALLSITE[004851A8]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-           (iVar5 = ((STGameObjC *)this_00)->vfunc_2C(), iVar5 != 0x6c)) {
-          return 1;
-        }
-        iVar5 = st::fn_00401EAB(this_00,this->field_0024);
-        if (iVar5 != 1) {
-          return 1;
-        }
-        return 0x1d;
-      }
-    }
-  }
-  return 0;
+  this->field_0030 = param_1;
+  return;
 }
 
+// 0045FF10 STGameObjC::sub_0045FF10
+#line 4 "decomp/ST.exe/functions/0045FF10/decomp.c"
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0049D750 -> 0045FF10 @ 0049D988
+
+   [STMethodOwnerApplier] Structural method owner recovered as STGameObjC.
+   Evidence: this_call_owners=[STGameObjC]; agreed_this_calls=34; incoming_this_accesses=1;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=22; owner_evidence_coverage=adequate;
+   unique_primary_physical_vtable=true
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (38), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00422E20 @ 00422E38 -> read as EAX on
+   every CFG path | 00422FF0 @ 00423008 -> read as EAX on every CFG path | 00436F20 @ 00437B65 ->
+   read as EAX on every CFG path | 00440AA0 @ 00440D5A -> read as EAX on every CFG path | 00442E50 @
+   00443306 -> read as EAX on every CFG path | 00448120 @ 00448525 -> read as EAX on every CFG path
+   | 00448120 @ 0044869A -> read as EAX on every CFG path | 00448120 @ 004487EE -> read as EAX on
+   every CFG path | 00448120 @ 00448BD2 -> read as EAX on every CFG path | 00448120 @ 00448BF2 ->
+   read as EAX on every CFG path | 00448120 @ 00448D61 -> read as EAX on every CFG path | 00448120 @
+   00448ED5 -> read as EAX on every CFG path | 00448120 @ 00449048 -> read as EAX on every CFG path
+   | 00448120 @ 004491C7 -> read as EAX on every CFG path | 00448120 @ 0044931B -> read as EAX on
+   every CFG path | 00491980 @ 00491983 -> read as EAX on every CFG path | 0049A620 @ 0049A7F9 ->
+   read as EAX on every CFG path | 0049A620 @ 0049A805 -> read as EAX on every CFG path | 0049B4C0 @
+   0049B688 -> read as EAX on every CFG path | 0049B4C0 @ 0049B694 -> read as EAX on every CFG path
+   | 0049C210 @ 0049C886 -> read as EAX on every CFG path | 0049CD30 @ 0049D080 -> read as EAX on
+   every CFG path | 0049D230 @ 0049D57D -> read as EAX on every CFG path | 0049D750 @ 0049D988 ->
+   read as EAX on every CFG path */
+
+int __thiscall st::fn_0045FF10(STGameObjC *this)
+
+{
+  return this->field_045D;
+}
+
+// 00486B40 STGameObjC::sub_00486B40
+#line 4 "decomp/ST.exe/functions/00486B40/decomp.c"
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 00440AA0 -> 00486B40 @ 00441236 | 00440AA0 -> 00486B40 @ 0044130B | 00440AA0 ->
+   00486B40 @ 0044137D | 00440AA0 -> 00486B40 @ 00441504 | 00440AA0 -> 00486B40 @ 004415C4 |
+   00440AA0 -> 00486B40 @ 00441636
+
+   [STMethodOwnerApplier] Structural method owner recovered as STGameObjC.
+   Evidence: this_call_owners=[STGameObjC]; agreed_this_calls=15; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=3; owner_evidence_coverage=adequate;
+   unique_primary_physical_vtable=true */
+
+int __thiscall st::fn_00486B40(STGameObjC *this)
+
+{
+  return this->field_0712 - this->field_0716;
+}
+
+// 0048DC90 STGameObjC::sub_0048DC90
+#line 4 "decomp/ST.exe/functions/0048DC90/decomp.c"
+/* [STReturnSemanticsApplier] machine_eax_return.
+   Evidence: every reachable RET has a full-width EAX definition established inside the callee; at
+   least two direct callers consume it and no caller-use path is unresolved; machine CFG audit:
+   used=3, ignored=0, unknown=0
+
+   [STReturnSemanticsApplier] returned_pointer_parameter.
+   Evidence: the complete machine CFG returns incoming pointer parameter param_1 (ordinal=1);
+   restore its exact formal pointer type after the obsolete void-pointer normalization
+
+   [STMethodOwnerApplier] Structural method owner recovered as STGameObjC.
+   Evidence: this_call_owners=[STGameObjC]; agreed_this_calls=3; incoming_this_accesses=0;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=3; owner_evidence_coverage=adequate;
+   unique_primary_physical_vtable=true */
+
+uint * __thiscall st::fn_0048DC90(STGameObjC *this,undefined4 *param_1)
+
+{
+  byte *puVar2;
+  byte *puVar3;
+
+  puVar2 = reinterpret_cast<byte *>(&this->field_0x49b);
+  puVar3 = reinterpret_cast<byte *>((param_1));
+  memmove(puVar3, puVar2, 0x42); /* compiler REP MOVS byte copy */
+  return param_1;
+}
+
+// 00492370 STGameObjC::sub_00492370
+#line 4 "decomp/ST.exe/functions/00492370/decomp.c"
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 0049DFA0 -> 00492370 @ 0049E11D | 0049DFA0 -> 00492370 @ 0049E318 | 004A0990 ->
+   00492370 @ 004A0B1B
+
+   [STMethodOwnerApplier] Structural method owner recovered as STGameObjC.
+   Evidence: this_call_owners=[STGameObjC]; agreed_this_calls=9; incoming_this_accesses=1;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=5; owner_evidence_coverage=adequate;
+   unique_primary_physical_vtable=true
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (9), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=0044D320 @ 0044DA53 -> read as EAX on
+   every CFG path | 0044D320 @ 0044DCA5 -> read as EAX on every CFG path | 0049DFA0 @ 0049E11D ->
+   read as EAX on every CFG path | 0049DFA0 @ 0049E318 -> read as EAX on every CFG path | 0049E510 @
+   0049E652 -> read as EAX on every CFG path | 004A0990 @ 004A0B1B -> read as EAX on every CFG path
+   | 004A0FA0 @ 004A1E0A -> read as EAX on every CFG path | 004A0FA0 @ 004A1FF2 -> read as EAX on
+   every CFG path | 004A0FA0 @ 004A2B46 -> read as EAX on every CFG path */
+
+int __thiscall st::fn_00492370(STGameObjC *this)
+
+{
+  return (int)this->field_07CA;
+}
+
+// 004956C0 STGameObjC::sub_004956C0
+#line 4 "decomp/ST.exe/functions/004956C0/decomp.c"
+/* [STReturnSemanticsApplier] ignored_eax_void.
+   Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
+   and decompilation contains no value return
+
+   [STMethodOwnerApplier] Structural method owner recovered as STGameObjC.
+   Evidence: this_call_owners=[STGameObjC]; agreed_this_calls=2; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate;
+   unique_primary_physical_vtable=true */
+
+void __thiscall st::fn_004956C0(STGameObjC *this,undefined4 param_1)
+
+{
+  if (this->field_06F7 == 0x17) {
+    *(undefined4 *)&this->field_0x7e2 = param_1;
+  }
+  return;
+}
+
+// 004C5350 STGameObjC::sub_004C5350
+#line 4 "decomp/ST.exe/functions/004C5350/decomp.c"
+/* [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 004C5350 -> 006ACF90 @ 004C552D | 0065E450 -> 004C5350 @ 0065E520; FUN_0065e450
+   parameter param_4 | 00664960 -> 004C5350 @ 00666F3E; MOVSX at 00666F2E establishes signed source
+   width 2
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 004C5350 -> 006ACF90 @ 004C552D | 0065E450 -> 004C5350 @ 0065E520; FUN_0065e450
+   parameter param_5 | 00664960 -> 004C5350 @ 00666F3E; MOVSX at 00666F27 establishes signed source
+   width 2
+
+   [STMethodOwnerApplier] Structural method owner recovered as STGameObjC.
+   Evidence: this_call_owners=[STGameObjC]; agreed_this_calls=2; incoming_this_accesses=3;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=22; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate;
+   unique_primary_physical_vtable=true
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (4), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=004C21A0 @ 004C242B -> read as EAX on
+   every CFG path | 004C21A0 @ 004C25A2 -> read as EAX on every CFG path | 0065E450 @ 0065E520 ->
+   read as EAX on every CFG path | 00664960 @ 00666F3E -> read as EAX on every CFG path */
+
+int __thiscall
+st::fn_004C5350
+          (STGameObjC *this,int param_1,int *param_2,int param_3,int param_4,undefined4 param_5,
+          int param_6,int param_7)
+
+{
+  uint32_t _local_10;
+
+  byte bVar1;
+  byte bVar2;
+  byte bVar3;
+  int *this_00;
+  int iVar5;
+  int iVar4;
+  int local_EAX_620;
+  uint uVar6;
+  bool bVar7;
+  uint local_1c;
+  int local_18;
+  int local_14;
+  byte local_10;
+  undefined3 uStack_f;
+  uint local_c;
+  short local_8;
+  short local_6;
+
+  this_00 = param_2;
+  local_c = 0;
+  if (*(int *)(&DAT_00792778 + this->field_0235 * 4) == 0) {
+    return 0;
+  }
+  if ((*(int *)(&this->field_0x261 + param_1 * 0x80) == 0) && (this->field_0245 != 5)) {
+    return 0;
+  }
+  if (param_2 == nullptr) {
+    local_18 = param_3;
+    local_14 = param_4;
+    local_1c = param_5;
+  }
+  else {
+    /* ST_CALLSITE[004C53B1]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
+    st::fn_004018C5
+              (reinterpret_cast<STFishC *>(param_2),reinterpret_cast<short *>(&local_18),reinterpret_cast<short *>(&local_14),reinterpret_cast<short *>(&local_1c));
+  }
+  if (*(int *)(&DAT_00792a90 + (param_1 + this->field_0235 * 2) * 4) == 1) {
+    if (this_00 == nullptr) {
+      return local_c;
+    }
+  }
+  else {
+    if (*(int *)(&DAT_00792a90 + (param_1 + this->field_0235 * 2) * 4) != 2) {
+      return local_c;
+    }
+    if (this_00 == nullptr) goto LAB_004c5515;
+  }
+  if (this_00[10] != 1) {
+    return local_c;
+  }
+  if (7 < (uint)this_00[9]) {
+    return local_c;
+  }
+  if ((g_playSystem_00802A38 != nullptr) &&
+     (7 < g_bulkInitializedRecords_008087C7[this_00[9]].field_0022)) {
+    return local_c;
+  }
+  /* ST_CALLSITE[004C5437]: CALL dword ptr [EDX + 0xf4]; [STIndirectCallsiteApplier] exact slot 0xF4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
+  iVar5 = STStructuralVirtualCall<undefined4>(this_00, 0xF4, this->field_0024);
+  if (iVar5 == 0) {
+    return local_c;
+  }
+  if (param_7 == 0) goto LAB_004c5515;
+  bVar1 = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)this_00)[9]));
+  bVar2 = (byte)this->field_0024;
+  param_7 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(param_7)), (uint8_t)(bVar1));
+  /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+  _local_10 = CONCAT31(uStack_f,bVar2);
+  if (DAT_00808a8f == '\0') {
+    if (bVar1 == bVar2) {
+LAB_004c5502:
+      iVar5 = 0;
+    }
+    else {
+      bVar3 = g_playerRelationMatrix[bVar1][bVar2];
+      if ((bVar3 == 0) && (g_playerRelationMatrix[bVar2][bVar1] == 0)) {
+        iVar5 = -2;
+      }
+      else if ((bVar3 == 1) && (g_playerRelationMatrix[bVar2][bVar1] == 0)) {
+        iVar5 = -1;
+      }
+      else if ((bVar3 == 0) && (g_playerRelationMatrix[bVar2][bVar1] == 1)) {
+        iVar5 = 1;
+      }
+      else {
+        if ((bVar3 != 1) || (g_playerRelationMatrix[bVar2][bVar1] != 1)) goto LAB_004c5502;
+        iVar5 = 2;
+      }
+    }
+    bVar7 = iVar5 < 0;
+  }
+  else {
+    bVar7 = g_bulkInitializedRecords_008087C7[bVar2].field_0023 !=
+            g_bulkInitializedRecords_008087C7[bVar1].field_0023;
+  }
+  if (!bVar7) {
+    return local_c;
+  }
+LAB_004c5515:
+
+  iVar4 = st::fn_006ACF90((short)local_18,(short)local_14,*(int *)&this->field_0x5b0,
+                       *(int *)&this->field_0x5b4);
+
+  iVar5 = st::fn_00405C45(this->field_0024,this->field_0235,param_1);
+  if ((((iVar4 <= iVar5) || (uVar6 = local_c, param_6 == 0)) &&
+      (uVar6 = 1, *(int *)(&DAT_00792a90 + (param_1 + this->field_0235 * 2) * 4) == 1)) &&
+     (param_6 != 0)) {
+    st::fn_004031E3(this_00,reinterpret_cast<uint *>(&local_8),&local_6,(short *)((int)&param_3 + 2));
+    st::fn_004031E3(this,(uint *)((int)&param_5 + 2),(short *)((int)&param_4 + 2),
+                       (short *)((int)&param_2 + 2));
+
+    local_EAX_620 =
+         st::fn_006ACF0D((int)local_8,(int)local_6,(int)STPiece<2,2>(param_3),(int)STPiece<2,2>(param_5),
+                      (int)STPiece<2,2>(param_4),(int)STPiece<2,2>(param_2));
+    uVar6 = (int)STPiece<2,2>(param_3) - (int)STPiece<2,2>(param_2) >> 0x1f;
+    uVar6 = st::storage_bit_cast<uint>(static_cast<uint32_t>((int)((((int)STPiece<2,2>(param_3) - (int)STPiece<2,2>(param_2) ^ uVar6) - uVar6) * 10) /
+                   local_EAX_620 <= *(int *)(&this->field_0x281 + param_1 * 0x80)));
+  }
+  local_c = uVar6;
+  return local_c;
+}
+
+// 004C93E0 STGameObjC::sub_004C93E0
+#line 4 "decomp/ST.exe/functions/004C93E0/decomp.c"
+/* [STMethodOwnerApplier] Structural method owner recovered as STGameObjC.
+   Evidence: this_call_owners=[STGameObjC]; agreed_this_calls=2; incoming_this_accesses=2;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate;
+   unique_primary_physical_vtable=true */
+
+int __thiscall st::fn_004C93E0(STGameObjC *this,int param_1)
+
+{
+  int iVar1;
+  int *piVar2;
+  int iVar3;
+
+  iVar3 = *(int *)&this->field_0x3d4;
+  iVar1 = 0;
+  if (((iVar3 != 0) && (piVar2 = *(int **)&this->field_0x607, piVar2 != nullptr)) && (0 < iVar3))
+  {
+    do {
+      if ((param_1 == 0) || (*piVar2 == param_1)) {
+        iVar1 = iVar1 + piVar2[2];
+      }
+      piVar2 = (int *)((int)piVar2 + 0x27);
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
+  }
+  return iVar1;
+}

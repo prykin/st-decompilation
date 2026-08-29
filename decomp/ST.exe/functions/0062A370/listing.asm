@@ -194,7 +194,7 @@ LAB_0062a514:
 0062A587  52                        PUSH EDX
 0062A588  8B 96 EF 00 00 00         MOV EDX,dword ptr [ESI + 0xef]
 0062A58E  52                        PUSH EDX
-0062A58F  FF 90 E0 00 00 00         CALL dword ptr [EAX + 0xe0]
+0062A58F  FF 90 E0 00 00 00         CALL dword ptr [EAX + 0xe0]  ; [STIndirectCallsiteApplier] exact slot 0xE0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 0062A595  85 C0                     TEST EAX,EAX
 0062A597  0F 85 B4 01 00 00         JNZ 0x0062a751
 0062A59D  8B 46 46                  MOV EAX,dword ptr [ESI + 0x46]

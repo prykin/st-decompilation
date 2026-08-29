@@ -22,7 +22,7 @@ VisibleClassTy::VisHoleCreate
   undefined *local_1c;
   int *local_18;
   uint local_14;
-  undefined4 local_10;
+  uint local_10;
   VisibleClassTy *local_c;
   uint local_8;
 

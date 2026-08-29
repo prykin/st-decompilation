@@ -25,9 +25,9 @@
 
 void __thiscall
 CPanelTy::SetButStruct
-          (CPanelTy *this,AnonShape_004F2E40_DC76A8C6 *param_1,byte param_2,undefined4 param_3,
-          int param_4,int param_5,byte param_6,LPSTR param_7,ushort param_8,ushort param_9,
-          undefined4 param_10,char *param_11)
+          (CPanelTy *this,RecoveredRecordView_004F2E40_41FE7B1E *param_1,byte param_2,
+          undefined4 param_3,int param_4,int param_5,byte param_6,LPSTR param_7,ushort param_8,
+          ushort param_9,undefined4 param_10,char *param_11)
 
 {
   char *text;
@@ -38,7 +38,7 @@ CPanelTy::SetButStruct
   int iVar4;
   int iVar5;
   int iVar6;
-  AnonShape_004F2E40_DC76A8C6 *pAVar7;
+  RecoveredRecordView_004F2E40_41FE7B1E *pRVar7;
   InternalExceptionFrame local_50;
   CPanelTy *local_c;
   ushort *local_8;
@@ -47,12 +47,13 @@ CPanelTy::SetButStruct
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   local_EAX_42 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (local_EAX_42 == 0) {
-    pAVar7 = param_1;
+    pRVar7 = param_1;
     for (iVar6 = 0x5f; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *(undefined4 *)pAVar7 = 0;
-      pAVar7 = (AnonShape_004F2E40_DC76A8C6 *)((int)&pAVar7->field_0001 + 3);
+      *(undefined4 *)pRVar7 = 0;
+      pRVar7 = (RecoveredRecordView_004F2E40_41FE7B1E *)((int)&pRVar7->field_0001 + 3);
     }
     *(undefined4 *)param_1 = param_3;
     uVar2 = (uint)param_2;
@@ -114,6 +115,7 @@ CPanelTy::SetButStruct
     if (param_11 != nullptr) {
       puVar4 = FUN_0070aa70(g_cMf32_00806790,param_11,0,1);
       param_1->field_0124 = puVar4;
+
       iVar4 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,param_11,1);
       param_1->field_0128 = iVar4;
     }
@@ -121,6 +123,7 @@ CPanelTy::SetButStruct
     return;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cp_sup.cpp",0x171,0,local_EAX_42,
                              "%s","CPanelTy::SetButStruct");
   if (iVar5 != 0) {

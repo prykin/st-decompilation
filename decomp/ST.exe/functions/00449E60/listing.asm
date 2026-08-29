@@ -34,7 +34,7 @@ STAllPlayersC::UnRegisterArtefact:
 00449EBF  68 04 60 7A 00            PUSH 0x7a6004
 00449EC4  50                        PUSH EAX
 00449EC5  68 07 00 FE AF            PUSH 0xaffe0007
-00449ECA  E8 71 BF 25 00            CALL 0x006a5e40
+00449ECA  E8 71 BF 25 00            CALL 0x006a5e40  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 LAB_00449ecf:
 00449ECF  8A 4F 24                  MOV CL,byte ptr [EDI + 0x24]
 00449ED2  8B 57 20                  MOV EDX,dword ptr [EDI + 0x20]

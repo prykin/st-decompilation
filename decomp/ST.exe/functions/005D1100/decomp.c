@@ -26,6 +26,7 @@ SettMapMTy::AddPlayerList(SettMapMTy *this,int param_1,uint param_2,int param_3,
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
+
     errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     this_00 = local_8;
     if (errorCode == 0) {
@@ -103,6 +104,7 @@ LAB_005d1245:
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
+
     iVar8 = ReportDebugMessage("E:\\__titans\\Start\\settmobj.cpp",0x62f,0,errorCode,
                                "%s","SettMapMTy::AddPlayerList");
     if (iVar8 != 0) {

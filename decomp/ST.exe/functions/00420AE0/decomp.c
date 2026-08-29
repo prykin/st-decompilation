@@ -276,6 +276,7 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this)
     pcVar9 = &CHAR_s_007a4fb4;
     break;
   default:
+
     iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0xce5,0,0,"%s",
                                "STSprGameObjC::LoadLifeFrame unknown object type");
     if (iVar6 == 0) {
@@ -491,6 +492,7 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this)
   /* ST_CALLSITE[00420D97]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
   STT3DSprC::LoadSequence((STT3DSprC *)this_00,1,PTR_00806774,local_24,CASE_1D);
   ST3DSMAPContext::sub_006EA5E0(this->field_0211,this->field_01ED,1,0);
+
   thunk_FUN_004ac610(this_00,'\x01');
   /* ST_CALLSITE[00420DCB]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
   STT3DSprC::StartShow((STT3DSprC *)this_00,1,g_playSystem_00802A38->field_00E4);
@@ -502,6 +504,7 @@ void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this)
   /* ST_CALLSITE[00420DED]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
   STT3DSprC::LoadSequence((STT3DSprC *)this_00,2,PTR_00806774,local_38,CASE_1D);
   ST3DSMAPContext::sub_006EA5E0(this->field_0211,this->field_01ED,2,0);
+
   thunk_FUN_004ac610(this_00,'\x02');
   /* ST_CALLSITE[00420E21]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
   STT3DSprC::StartShow((STT3DSprC *)this_00,2,g_playSystem_00802A38->field_00E4);

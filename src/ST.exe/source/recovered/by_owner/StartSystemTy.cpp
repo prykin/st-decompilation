@@ -19,13 +19,13 @@ StartSystemTy * __thiscall st::fn_005DA610(StartSystemTy *this,AppClassTy *param
 {
   int iVar1;
 
-  st::fn_006E51C0((SystemClassTy *)this,param_1,0x200);
-  st::fn_00715820((SpriteClassTy *)&this->field_02F8);
-  st::fn_00715820((SpriteClassTy *)&this->field_038D);
-  st::fn_00715820((SpriteClassTy *)&this->field_041E);
-  st::fn_00715820((SpriteClassTy *)&this->field_04AF);
-  st::fn_00715820((SpriteClassTy *)&this->field_055C);
-  st::fn_00715820((SpriteClassTy *)&this->field_05ED);
+  st::fn_006E51C0(reinterpret_cast<SystemClassTy *>(this),param_1,0x200);
+  st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_02F8));
+  st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_038D));
+  st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_041E));
+  st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_04AF));
+  st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_055C));
+  st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_05ED));
   this->vtable = &st_global_0079C1E8;
   g_startSystem_0081176C = this;
   this->field_0028 = DAT_00807332;
@@ -90,31 +90,77 @@ void __thiscall st::fn_005DA910(StartSystemTy *this)
 /* [STMethodOwnerApplier] Structural method owner recovered as StartSystemTy.
    Evidence: this_call_owners=[StartSystemTy]; agreed_this_calls=2; incoming_this_accesses=1;
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=005BC5E0 @ 005BC90F -> read as EAX on
+   every CFG path | 005BC5E0 @ 005BCCB0 -> read as EAX on every CFG path */
 
-undefined1 __thiscall st::fn_005DA940(StartSystemTy *this,int param_1)
+int __thiscall st::fn_005DA940(StartSystemTy *this,int param_1)
 
 {
   int iVar1;
-  int iVar2;
-  int iVar3;
-  int *piVar4;
-  int *piVar5;
+  int *piVar2;
+  int *piVar3;
+  bool bVar4;
 
-  iVar3 = 4;
-  piVar4 = (int *)(this->field_068A + 0xc + param_1 * 0x14);
-  piVar5 = reinterpret_cast<int *>(&DAT_007cd700);
+  iVar1 = 4;
+  bVar4 = true;
+  piVar2 = (int *)(this->field_068A + 0xc + param_1 * 0x14);
+  piVar3 = reinterpret_cast<int *>(&DAT_007cd700);
   do {
-    if (iVar3 == 0) {
-      return 1;
+    if (iVar1 == 0) break;
+    iVar1 = iVar1 + -1;
+    bVar4 = *piVar2 == *piVar3;
+    piVar2 = piVar2 + 1;
+    piVar3 = piVar3 + 1;
+  } while (bVar4);
+  return (uint)bVar4;
+}
+
+// 005DAA90 StartSystemTy::sub_005DAA90
+#line 4 "decomp/ST.exe/functions/005DAA90/decomp.c"
+/* [STReturnSemanticsApplier] machine_scalar_return.
+   Evidence: every reachable RET carries a machine-proven scalar domain; exact negative immediate
+   returns establish signed int while zero is a signedness-neutral member of that same domain;
+   machine CFG audit: used=3, ignored=0, unknown=0
+
+   [STMethodOwnerApplier] Structural method owner recovered as StartSystemTy.
+   Evidence: this_call_owners=[StartSystemTy]; agreed_this_calls=3; incoming_this_accesses=0;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; incoming_this_forward_calls=2;
+   entry_incoming_ecx_capture=true; ret_stack_matches_explicit_parameters=true;
+   direct_non_thunk_callers=0; incoming_ecx_receiver_callers=0; attributed_named_callers=2;
+   owner_evidence_coverage=adequate; unique_primary_physical_vtable=true;
+   callee_closed_hidden_ecx_receiver_transport */
+
+int __thiscall st::fn_005DAA90(StartSystemTy *this)
+
+{
+  StartSystemTy *pSVar1;
+  int iVar2;
+  InternalExceptionFrame local_4c;
+  StartSystemTy *local_8;
+
+  if (g_int_00811764 != nullptr) {
+    local_4c.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_4c;
+    local_8 = this;
+
+    iVar2 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
+    pSVar1 = local_8;
+    if (iVar2 == 0) {
+      /* ST_CALLSITE[005DAACB]: CALL 0x00402b30; direct=00402B30 StartSystemTy::sub_005DAB30 */
+      st::fn_00402B30(local_8);
+
+      st::fn_006B65F0(g_int_00811764,&pSVar1->field_068E);
+      g_currentExceptionFrame = local_4c.previous;
+      return 0;
     }
-    iVar3 = iVar3 + -1;
-    iVar2 = *piVar5;
-    iVar1 = *piVar4;
-    piVar4 = piVar4 + 1;
-    piVar5 = piVar5 + 1;
-  } while (iVar1 == iVar2);
-  return 0;
+    g_currentExceptionFrame = local_4c.previous;
+    /* ST_CALLSITE[005DAAFE]: CALL 0x00402b30; direct=00402B30 StartSystemTy::sub_005DAB30 */
+    st::fn_00402B30(local_8);
+  }
+  return -6;
 }
 
 // 005DAB30 StartSystemTy::sub_005DAB30
@@ -200,28 +246,31 @@ void __thiscall st::fn_005DB2A0(StartSystemTy *this)
 
   st::fn_00404304();
   if (this->field_002C != nullptr) {
-    st::fn_006F20E0(g_cMf32_00806780,(uint *)&this->field_002C);
+    st::fn_006F20E0(g_cMf32_00806780,reinterpret_cast<uint *>(&this->field_002C));
   }
   if (this->field_0030 != nullptr) {
-    st::fn_00710560((uint *)this->field_0030);
+    st::fn_00710560(reinterpret_cast<uint *>(this->field_0030));
     this->field_0030 = nullptr;
   }
   if (this->field_0034 != nullptr) {
-    st::fn_00710560((uint *)this->field_0034);
+    st::fn_00710560(reinterpret_cast<uint *>(this->field_0034));
     this->field_0034 = nullptr;
   }
   puVar2 = this->array_0244;
   iVar1 = 6;
   do {
-    st::fn_0070B1D0((int *)puVar2);
+    st::fn_0070B1D0(reinterpret_cast<int *>(puVar2));
     puVar2 = puVar2 + 1;
     iVar1 = iVar1 + -1;
   } while (iVar1 != 0);
-  st::fn_00715AB0((SpriteClassTy *)&this->field_038D);
-  st::fn_00715AB0((SpriteClassTy *)&this->field_041E);
-  st::fn_00715AB0((SpriteClassTy *)&this->field_04AF);
+
+  st::fn_00715AB0(reinterpret_cast<SpriteClassTy *>(&this->field_038D));
+
+  st::fn_00715AB0(reinterpret_cast<SpriteClassTy *>(&this->field_041E));
+
+  st::fn_00715AB0(reinterpret_cast<SpriteClassTy *>(&this->field_04AF));
   if (-1 < (int)this->field_02EC) {
-    st::fn_006B3BB0((int *)g_ddxContext_008075A8,this->field_02EC);
+    st::fn_006B3BB0(reinterpret_cast<int *>(g_ddxContext_008075A8),this->field_02EC);
     this->field_02EC = 0xffffffff;
   }
   if (this->field_02F0 != nullptr) {
@@ -230,13 +279,14 @@ void __thiscall st::fn_005DB2A0(StartSystemTy *this)
   if (this->field_02F4 != nullptr) {
     st::fn_006AB060(&this->field_02F4);
   }
-  st::fn_00715AB0((SpriteClassTy *)&this->field_02F8);
+
+  st::fn_00715AB0(reinterpret_cast<SpriteClassTy *>(&this->field_02F8));
   if ((DArrayTy *)this->field_0548 != nullptr) {
-    st::fn_006B5570((DArrayTy *)this->field_0548);
+    st::fn_006B5570(reinterpret_cast<DArrayTy *>(this->field_0548));
   }
   this->field_0548 = nullptr;
   if (-1 < this->field_0540) {
-    st::fn_006B3BB0((int *)g_ddxContext_008075A8,this->field_0540);
+    st::fn_006B3BB0(reinterpret_cast<int *>(g_ddxContext_008075A8),this->field_0540);
     this->field_0540 = -1;
   }
   if (this->field_0544 != nullptr) {
@@ -245,17 +295,19 @@ void __thiscall st::fn_005DB2A0(StartSystemTy *this)
   if (this->field_067E != nullptr) {
     st::fn_006AB060(&this->field_067E);
   }
-  st::fn_00715AB0((SpriteClassTy *)&this->field_055C);
-  st::fn_00715AB0((SpriteClassTy *)&this->field_05ED);
+
+  st::fn_00715AB0(reinterpret_cast<SpriteClassTy *>(&this->field_055C));
+
+  st::fn_00715AB0(reinterpret_cast<SpriteClassTy *>(&this->field_05ED));
   if (-1 < (int)this->field_0558) {
-    st::fn_006B3BB0((int *)g_ddxContext_008075A8,this->field_0558);
+    st::fn_006B3BB0(reinterpret_cast<int *>(g_ddxContext_008075A8),this->field_0558);
     this->field_0558 = 0xffffffff;
   }
   if (this->field_0682 != nullptr) {
     st::fn_006AB060(&this->field_0682);
   }
   if (-1 < (int)this->field_0554) {
-    st::fn_006B3BB0((int *)g_ddxContext_008075A8,this->field_0554);
+    st::fn_006B3BB0(reinterpret_cast<int *>(g_ddxContext_008075A8),this->field_0554);
     this->field_0554 = 0xffffffff;
   }
   if (this->field_0686 != nullptr) {
@@ -323,7 +375,7 @@ void __thiscall st::fn_005DCDB0(StartSystemTy *this)
   st::fn_0040550B();
   /* ST_CALLSITE[005DCE4A]: CALL 0x004055f6; direct=004055F6 StartSystemTy::sub_005DA910 */
   st::fn_004055F6(this);
-  st::fn_006E52D0((AnonShape_006E52D0_AF06BCD2 *)this);
+  st::fn_006E52D0(reinterpret_cast<AnonShape_006E52D0_AF06BCD2 *>(this));
   return;
 }
 
@@ -349,6 +401,7 @@ st::fn_006E5360(StartSystemTy *this,int param_1,int *param_2,undefined4 *param_3
 {
   int iVar1;
 
+
   iVar1 = st::fn_006E3450(this->field_0010,param_1,param_2,param_3);
   return iVar1;
 }
@@ -369,21 +422,23 @@ void __thiscall st::fn_006E56B0(StartSystemTy *this,uint param_1)
   AnonPointee_StartSystemTy_000C *pAVar1;
   uint uVar2;
   int iVar3;
-  undefined1 local_28 [16];
-  undefined4 local_18;
+  byte local_28 [16];
+  uint local_18;
   undefined4 *local_8;
 
   uVar2 = param_1;
   local_8 = nullptr;
-  iVar3 = st::fn_006E5360(this,param_1,(int *)&param_1,(undefined4 *)&local_8);
+
+  iVar3 = st::fn_006E5360(this,param_1,reinterpret_cast<int *>(&param_1),reinterpret_cast<undefined4 *>(&local_8));
   if (iVar3 == 0) {
     local_18 = 3;
-    /* ST_CALLSITE[006E56E8]: CALL dword ptr [EDX] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)*local_8)(local_28);
+    /* ST_CALLSITE[006E56E8]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4 */
+    STStructuralVirtualCall<void>(local_8, 0x0, local_28);
   }
-  iVar3 = st::fn_006E5360(this,uVar2,(int *)&param_1,(undefined4 *)&local_8);
+
+  iVar3 = st::fn_006E5360(this,uVar2,reinterpret_cast<int *>(&param_1),reinterpret_cast<undefined4 *>(&local_8));
   if (iVar3 == 0) {
+
     st::fn_006B0C70(this->field_0010,param_1);
     st::fn_006E3970(this->field_0018,uVar2);
     for (pAVar1 = this->field_000C; pAVar1 != nullptr;
@@ -396,4 +451,3 @@ void __thiscall st::fn_006E56B0(StartSystemTy *this,uint param_1)
   }
   return;
 }
-

@@ -78,7 +78,7 @@ LAB_005a3b63:
 005A3B9B  57                        PUSH EDI
 005A3B9C  68 A8 C1 7C 00            PUSH 0x7cc1a8
 005A3BA1  B9 90 2A 80 00            MOV ECX,0x802a90
-005A3BA6  E8 1C 03 E6 FF            CALL 0x00403ec7
+005A3BA6  E8 1C 03 E6 FF            CALL 0x00403ec7  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 005A3BAB  8B 75 F0                  MOV ESI,dword ptr [EBP + -0x10]
 005A3BAE  85 C0                     TEST EAX,EAX
 005A3BB0  74 33                     JZ 0x005a3be5
@@ -102,7 +102,7 @@ LAB_005a3be5:
 005A3BE6  57                        PUSH EDI
 005A3BE7  68 98 C1 7C 00            PUSH 0x7cc198
 005A3BEC  B9 90 2A 80 00            MOV ECX,0x802a90
-005A3BF1  E8 D1 02 E6 FF            CALL 0x00403ec7
+005A3BF1  E8 D1 02 E6 FF            CALL 0x00403ec7  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 005A3BF6  85 C0                     TEST EAX,EAX
 005A3BF8  74 33                     JZ 0x005a3c2d
 005A3BFA  8B 8E FC 1A 00 00         MOV ECX,dword ptr [ESI + 0x1afc]
@@ -125,7 +125,7 @@ LAB_005a3c2d:
 005A3C2E  57                        PUSH EDI
 005A3C2F  68 84 C1 7C 00            PUSH 0x7cc184
 005A3C34  B9 90 2A 80 00            MOV ECX,0x802a90
-005A3C39  E8 89 02 E6 FF            CALL 0x00403ec7
+005A3C39  E8 89 02 E6 FF            CALL 0x00403ec7  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 005A3C3E  85 C0                     TEST EAX,EAX
 005A3C40  74 33                     JZ 0x005a3c75
 005A3C42  8B 96 00 1B 00 00         MOV EDX,dword ptr [ESI + 0x1b00]
@@ -168,7 +168,7 @@ LAB_005a3ca0:
 005A3CB6  6A 01                     PUSH 0x1
 005A3CB8  6A 01                     PUSH 0x1
 005A3CBA  50                        PUSH EAX
-005A3CBB  E8 30 18 11 00            CALL 0x006b54f0
+005A3CBB  E8 30 18 11 00            CALL 0x006b54f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 005A3CC0  68 A0 16 80 00            PUSH 0x8016a0
 005A3CC5  50                        PUSH EAX
 005A3CC6  89 86 04 1B 00 00         MOV dword ptr [ESI + 0x1b04],EAX

@@ -62,32 +62,35 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
   byte local_188 [260];
   InternalExceptionFrame local_84;
   ChooseMapTy *local_40;
-  undefined4 local_3c;
-  undefined4 local_38;
-  undefined4 local_34;
-  undefined1 local_30;
-  undefined4 local_2c;
-  undefined4 local_28;
-  undefined4 local_24;
-  undefined1 local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined1 local_10;
+  uint local_3c;
+  uint local_38;
+  uint local_34;
+  byte local_30;
+  uint local_2c;
+  uint local_28;
+  uint local_24;
+  byte local_20;
+  uint local_1c;
+  uint local_18;
+  uint local_14;
+  byte local_10;
   char *local_c;
   byte *local_8;
   byte CVar2;
   char *pcVar19;
 
   local_40 = this;
+
   DVar9_mg0 = STAppC::sub_006E51B0(this->field_0010);
   this->field_0061 = DVar9_mg0;
   local_84.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_84;
+
   local_EAX_52 = Library::MSVCRT::__setjmp3(local_84.jumpBuffer,0);
   this_01 = local_40;
   if (local_EAX_52 != 0) {
     g_currentExceptionFrame = local_84.previous;
+
     iVar25 = ReportDebugMessage("E:\\__titans\\Start\\load_obj.cpp",0x6f7,0,local_EAX_52,
                                 "%s","ChooseMapTy::GetMessage");
     if (iVar25 != 0) {
@@ -106,6 +109,7 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
       this_01->field_0049 = 0;
       this_01->field_004D = 0x6102;
       this_01->field_0051 = message->arg0;
+
       thunk_FUN_005b66e0((MTaskTy *)this_01);
       goto cf_common_exit_005B2053;
     }
@@ -116,33 +120,35 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
           MMMObjTy::PaintSlBut
                     ((MMMObjTy *)this_01,
                      (RecoveredRecord_MMMObjTy_005B6560 *)
-                     (this_01->array_00BC[0xc].field_01DB + 0x55c),(int)message,0);
+                     (this_01->array_00BC[0xc].field_01DB + 0x55c),
+                     (RecoveredRecord_005B6560_90DC7408 *)message,0);
         }
         else {
           switch(SVar3) {
           case MESS_SHARED_6332:
             /* ST_CALLSITE[005B0EE5]: CALL 0x00404d72; direct=00404D72 StartSystemTy::PaintBinDesc */
             StartSystemTy::PaintBinDesc
-                      (g_startSystem_0081176C,(AnonShape_005DE050_5BD86458 *)message);
+                      (g_startSystem_0081176C,(RecoveredRecordView_005DE050_1F13B900 *)message);
             break;
           case MESS_WAITTY_6333:
             /* ST_CALLSITE[005B0F00]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
             MMMObjTy::PaintSlBut
                       ((MMMObjTy *)this_01,
                        (RecoveredRecord_MMMObjTy_005B6560 *)&g_startSystem_0081176C->field_038D,
-                       (int)message,0);
+                       (RecoveredRecord_005B6560_90DC7408 *)message,0);
             break;
           case MESS_SHARED_6334:
             /* ST_CALLSITE[005B0F1B]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
             MMMObjTy::PaintSlBut
                       ((MMMObjTy *)this_01,
                        (RecoveredRecord_MMMObjTy_005B6560 *)&g_startSystem_0081176C->field_041E,
-                       (int)message,0);
+                       (RecoveredRecord_005B6560_90DC7408 *)message,0);
             break;
           case MESS_WAITTY_6335:
             g_startSystem_0081176C->field_04CF =
                  *(int *)((message->arg1).u32 + 4) + (uint)(message->arg0).words.high;
             if (g_startSystem_0081176C->field_04B3 != 0xffffffff) {
+
               Library::DKW::DDX::FUN_006b3730
                         ((uint *)g_startSystem_0081176C->field_04F7,
                          g_startSystem_0081176C->field_04B3,g_startSystem_0081176C->field_04B7,
@@ -156,7 +162,8 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
         MMMObjTy::PaintSlBut
                   ((MMMObjTy *)this_01,
                    (RecoveredRecord_MMMObjTy_005B6560 *)
-                   (this_01->array_00BC[0xc].field_01DB + 0x5ed),(int)message,0);
+                   (this_01->array_00BC[0xc].field_01DB + 0x5ed),
+                   (RecoveredRecord_005B6560_90DC7408 *)message,0);
       }
       else if (SVar3 == MESS_PRIVIDERTY_693F) {
         /* ST_CALLSITE[005B0FB7]: CALL 0x00404d45; direct=00404D45 ChooseMapTy::sub_005AE840 */
@@ -196,6 +203,7 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
           resourceId = 0x233f;
         }
       }
+
       ccFntTy::SetSurf(g_startSystem_0081176C->field_0034,(int)this_01->field_1C8B,0,
                        *piVar4 * 0x7c + -0x7c,0,0x7a,
                        this_01->field_1C8B->field_0008 -
@@ -203,8 +211,11 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
       uVar27 = 2;
       iVar26 = -1;
       iVar24 = -1;
+      /* ST_CALLSITE[005B0E8D]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
       pcVar12 = LoadResourceString(resourceId,g_hINSTANCE_00807618);
+
       ccFntTy::WrStr(g_startSystem_0081176C->field_0034,pcVar12,iVar24,iVar26,uVar27);
+
       FUN_006b35d0((int *)g_ddxContext_008075A8,this_01->field_1C87);
       goto cf_common_exit_005B2053;
     }
@@ -215,6 +226,7 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
         this_01->field_004D = message->id;
         this_01->field_0051 = 0;
         this_01->field_0055 = 0;
+
         thunk_FUN_005b66e0((MTaskTy *)this_01);
       }
       else {
@@ -247,6 +259,7 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
           this_01->field_0049 = 0;
           this_01->field_004D = 0x610a;
           this_01->field_0051 = 7;
+
           thunk_FUN_005b66e0((MTaskTy *)this_01);
         }
       }
@@ -256,6 +269,7 @@ int __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,STMessage *message)
         this_01->field_004D = message->id;
         this_01->field_0051 = message->arg0;
         this_01->field_0055 = message->arg1;
+
         thunk_FUN_005b66e0((MTaskTy *)this_01);
       }
       goto cf_common_exit_005B2053;
@@ -363,19 +377,23 @@ LAB_005b1d83:
 LAB_005b1da4:
         pcVar15 = local_c;
         if (-1 < (int)uVar27) {
-          pBVar11 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_01->field_1C7F,uVar27);
+          /* ST_CALLSITE[005B1DB0]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+          pBVar11 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_01->field_1C7F,uVar27);
           pcVar15 = (char *)(pBVar11->bmiHeader).biWidth;
           /* ST_CALLSITE[005B1DDE]: CALL 0x00403229; direct=00403229 DibPut */
           DibPut((RecoveredSourceFamily_dibcopy *)this_01->field_1C7B,2,
                  (0x13 - (pBVar11->bmiHeader).biHeight) / 2 + (uint)(message->arg1).words.high,
-                 '\x06',(byte *)pBVar11);
+                 '\x06',(RecoveredRecordView_006B84D0_87AF9D9B *)pBVar11);
         }
+
         ccFntTy::SetSurf((ccFntTy *)g_startSystem_0081176C->field_0030,(int)this_01->field_1C7B,0,
                          (int)(pcVar15 + 4),(uint)(message->arg1).words.high,
                          (this_01->field_1C7B->field_0004 - (int)pcVar15) + -4,0x13);
+
         ccFntTy::WrStr((ccFntTy *)g_startSystem_0081176C->field_0030,(char *)local_8,2,-1,
                        (-(uint)((message->arg0).words.high != 0) & 2) + 1);
         uVar27 = (uint)(message->arg1).words.high;
+
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,(&this_01->field_1C23)[uVar27 / 0x13],0xfffffffe,
                    0x114,uVar27 + 0x3f);
@@ -510,18 +528,19 @@ LAB_005b1b6c:
         MMMObjTy::PaintSlBut
                   ((MMMObjTy *)this_01,
                    (RecoveredRecord_MMMObjTy_005B6560 *)&this_01->array_00BC[0xc].field_01F0,
-                   (int)message,0);
+                   (RecoveredRecord_005B6560_90DC7408 *)message,0);
         break;
       case MESS_OPTPANELTY_8165:
         /* ST_CALLSITE[005B1E95]: CALL 0x004031d4; direct=004031D4 MMMObjTy::PaintSlBut */
         MMMObjTy::PaintSlBut
                   ((MMMObjTy *)this_01,(RecoveredRecord_MMMObjTy_005B6560 *)&this_01->field_1B01,
-                   (int)message,0);
+                   (RecoveredRecord_005B6560_90DC7408 *)message,0);
         break;
       case MESS_SHARED_8166:
         uVar27 = *(int *)((message->arg1).u32 + 4) + (uint)(message->arg0).words.high;
         this_01->field_1BB2 = uVar27;
         if (this_01->field_1B96 != 0xffffffff) {
+
           Library::DKW::DDX::FUN_006b3730
                     ((uint *)this_01->field_1BDA,this_01->field_1B96,this_01->field_1B9A,
                      this_01->field_1BAE,uVar27);
@@ -529,7 +548,9 @@ LAB_005b1b6c:
       }
       goto cf_common_exit_005B2053;
     }
-    iVar24 = thunk_FUN_005ddb40(this_01->array_00BC[0xc].field_01DB);
+
+    iVar24 = thunk_FUN_005ddb40((RecoveredRecordView_005DDB40_9DCD82E5 *)
+                                this_01->array_00BC[0xc].field_01DB);
     if (iVar24 == 0) {
       if (DAT_008067a0 != '\0') {
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -607,10 +628,12 @@ LAB_005b1b6c:
       local_c = local_6a0;
       /* ST_CALLSITE[005B1FE8]: CALL 0x00402bbc; direct=00402BBC StartSystemTy::AddToChat */
       StartSystemTy::AddToChat(this_00,(int)local_6e0);
+
       FUN_00715360(g_int_00811764,0,'\x1b',local_6e0,0x451,1,0xffffffff);
     }
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_005b2011:
+
     Library::DKW::TBL::FUN_006b6020
               (*(DArrayTy **)(this_01->array_00BC[0xc].field_01DB + 0x686),0,&CHAR_00h_008016a0);
     iVar24 = this_01->array_00BC[0xc].field_01DB;
@@ -817,10 +840,12 @@ LAB_005b1644:
       this_01->field_004D = 0x7101;
       this_01->field_0051 = 3;
       this_01->field_0055 = 0;
+
       thunk_FUN_005b66e0((MTaskTy *)this_01);
     }
     else {
       this_01->field_004D = 0x60ff;
+
       thunk_FUN_005b66e0((MTaskTy *)this_01);
     }
     break;

@@ -27,7 +27,7 @@ LAB_00514f57:
 00514F57  6A 0A                     PUSH 0xa
 00514F59  6A 0A                     PUSH 0xa
 00514F5B  6A 00                     PUSH 0x0
-00514F5D  E8 8E 05 1A 00            CALL 0x006b54f0
+00514F5D  E8 8E 05 1A 00            CALL 0x006b54f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 00514F62  89 86 D3 01 00 00         MOV dword ptr [ESI + 0x1d3],EAX
 00514F68  8B 0D CB C4 80 00         MOV ECX,dword ptr [0x0080c4cb]
 00514F6E  33 FF                     XOR EDI,EDI
@@ -79,7 +79,7 @@ LAB_00514fe3:
 00514FED  6A 0A                     PUSH 0xa
 00514FEF  6A 0A                     PUSH 0xa
 00514FF1  57                        PUSH EDI
-00514FF2  E8 F9 04 1A 00            CALL 0x006b54f0
+00514FF2  E8 F9 04 1A 00            CALL 0x006b54f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 00514FF7  68 5C 3B 7C 00            PUSH 0x7c3b5c
 00514FFC  50                        PUSH EAX
 00514FFD  89 86 D3 01 00 00         MOV dword ptr [ESI + 0x1d3],EAX

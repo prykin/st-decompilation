@@ -31,7 +31,7 @@ LAB_005dc77f:
 005DC784  6A 00                     PUSH 0x0
 005DC786  50                        PUSH EAX
 005DC787  56                        PUSH ESI
-005DC788  E8 83 E2 13 00            CALL 0x0071aa10
+005DC788  E8 83 E2 13 00            CALL 0x0071aa10  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; source view only; no Ghidra override
 005DC78D  83 C4 0C                  ADD ESP,0xc
 005DC790  A3 C7 C4 80 00            MOV [0x0080c4c7],EAX
 005DC795  85 C0                     TEST EAX,EAX
@@ -55,7 +55,7 @@ LAB_005dc7bc:
 005DC7C3  6A 00                     PUSH 0x0
 005DC7C5  51                        PUSH ECX
 005DC7C6  56                        PUSH ESI
-005DC7C7  E8 44 E2 13 00            CALL 0x0071aa10
+005DC7C7  E8 44 E2 13 00            CALL 0x0071aa10  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; source view only; no Ghidra override
 005DC7CC  83 C4 0C                  ADD ESP,0xc
 005DC7CF  A3 CB C4 80 00            MOV [0x0080c4cb],EAX
 LAB_005dc7d4:
@@ -77,7 +77,7 @@ LAB_005dc7fa:
 005DC7FA  6A 0A                     PUSH 0xa
 005DC7FC  6A 0A                     PUSH 0xa
 005DC7FE  6A 00                     PUSH 0x0
-005DC800  E8 EB 8C 0D 00            CALL 0x006b54f0
+005DC800  E8 EB 8C 0D 00            CALL 0x006b54f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 005DC805  89 86 48 05 00 00         MOV dword ptr [ESI + 0x548],EAX
 005DC80B  8B 0D CB C4 80 00         MOV ECX,dword ptr [0x0080c4cb]
 005DC811  33 FF                     XOR EDI,EDI
@@ -135,7 +135,7 @@ LAB_005dc8a8:
 005DC8A8  6A 0A                     PUSH 0xa
 005DC8AA  6A 0A                     PUSH 0xa
 005DC8AC  6A 00                     PUSH 0x0
-005DC8AE  E8 3D 8C 0D 00            CALL 0x006b54f0
+005DC8AE  E8 3D 8C 0D 00            CALL 0x006b54f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 005DC8B3  89 86 48 05 00 00         MOV dword ptr [ESI + 0x548],EAX
 005DC8B9  8B 15 18 76 80 00         MOV EDX,dword ptr [0x00807618]
 005DC8BF  52                        PUSH EDX

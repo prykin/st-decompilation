@@ -114,7 +114,8 @@ LAB_0052c02e:
 0052C061  8B 0D 90 67 80 00         MOV ECX,dword ptr [0x00806790]
 0052C067  51                        PUSH ECX
 0052C068  68 9D 01 00 00            PUSH 0x19d
-0052C06D  E8 3E 0E 1E 00            CALL 0x0070ceb0
+MoneyTy::GetMessage::override::prt_52c06d_bcd42e10:
+0052C06D  E8 3E 0E 1E 00            CALL 0x0070ceb0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/cMf32;pointer:/char;/byte
 0052C072  BF 01 00 00 00            MOV EDI,0x1
 0052C077  89 46 6A                  MOV dword ptr [ESI + 0x6a],EAX
 0052C07A  89 78 58                  MOV dword ptr [EAX + 0x58],EDI
@@ -124,7 +125,8 @@ LAB_0052c02e:
 0052C087  68 2C 21 7C 00            PUSH 0x7c212c
 0052C08C  52                        PUSH EDX
 0052C08D  68 9D 01 00 00            PUSH 0x19d
-0052C092  E8 19 0E 1E 00            CALL 0x0070ceb0
+MoneyTy::GetMessage::override::prt_52c092_bcd42e10:
+0052C092  E8 19 0E 1E 00            CALL 0x0070ceb0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/cMf32;pointer:/char;/byte
 0052C097  83 C4 20                  ADD ESP,0x20
 0052C09A  89 46 6E                  MOV dword ptr [ESI + 0x6e],EAX
 0052C09D  89 78 58                  MOV dword ptr [EAX + 0x58],EDI
@@ -136,7 +138,7 @@ LAB_0052c02e:
 0052C0A7  6A FF                     PUSH -0x1
 0052C0A9  53                        PUSH EBX
 0052C0AA  68 78 20 7C 00            PUSH 0x7c2078
-0052C0AF  E8 C8 96 ED FF            CALL 0x0040577c
+0052C0AF  E8 C8 96 ED FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 0052C0B4  83 C4 08                  ADD ESP,0x8
 0052C0B7  50                        PUSH EAX
 0052C0B8  A1 94 67 80 00            MOV EAX,[0x00806794]

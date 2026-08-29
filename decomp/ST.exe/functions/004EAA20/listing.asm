@@ -9,7 +9,8 @@ TLOBaseTy::sub_004EAA20:
 004EAA2F  39 BE FF 05 00 00         CMP dword ptr [ESI + 0x5ff],EDI
 004EAA35  75 56                     JNZ 0x004eaa8d
 004EAA37  6A 40                     PUSH 0x40
-004EAA39  E8 F2 3A 24 00            CALL 0x0072e530
+TLOBaseTy::sub_004EAA20::override::prt_4eaa39_a7ad5ad2:
+004EAA39  E8 F2 3A 24 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint
 004EAA3E  83 C4 04                  ADD ESP,0x4
 004EAA41  3B C7                     CMP EAX,EDI
 004EAA43  74 09                     JZ 0x004eaa4e
@@ -69,7 +70,7 @@ switchD_004eaa98::caseD_5:
 004EAAF2  89 BE 6D 02 00 00         MOV dword ptr [ESI + 0x26d],EDI
 004EAAF8  8B 06                     MOV EAX,dword ptr [ESI]
 004EAAFA  8B CE                     MOV ECX,ESI
-004EAAFC  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]
+004EAAFC  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]  ; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4
 switchD_004eaa98::caseD_2:
 004EAB02  8B 86 D0 04 00 00         MOV EAX,dword ptr [ESI + 0x4d0]
 004EAB08  83 F8 01                  CMP EAX,0x1
@@ -110,7 +111,8 @@ LAB_004eab25:
 LAB_004eab73:
 004EAB73  6A 0A                     PUSH 0xa
 004EAB75  8D 8E D5 01 00 00         LEA ECX,[ESI + 0x1d5]
-004EAB7B  E8 4C A7 F1 FF            CALL 0x004052cc
+TLOBaseTy::sub_004EAA20::override::prt_4eab7b_4768c9e3:
+004EAB7B  E8 4C A7 F1 FF            CALL 0x004052cc  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC
 004EAB80  8B 8E FF 05 00 00         MOV ECX,dword ptr [ESI + 0x5ff]
 004EAB86  50                        PUSH EAX
 004EAB87  E8 40 A7 F1 FF            CALL 0x004052cc
@@ -186,7 +188,7 @@ LAB_004eab73:
 004EACA1  68 79 02 00 00            PUSH 0x279
 004EACA6  6A 03                     PUSH 0x3
 004EACA8  8B CE                     MOV ECX,ESI
-004EACAA  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]
+004EACAA  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]  ; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4
 LAB_004eacb0:
 004EACB0  5F                        POP EDI
 004EACB1  33 C0                     XOR EAX,EAX

@@ -8,14 +8,14 @@ FUN_0058cfe0:
 0058CFF4  C1 E0 02                  SHL EAX,0x2
 0058CFF7  50                        PUSH EAX
 0058CFF8  51                        PUSH ECX
-0058CFF9  E8 52 FF 11 00            CALL 0x006acf50
+0058CFF9  E8 52 FF 11 00            CALL 0x006acf50  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607; source view only; no Ghidra override
 0058CFFE  8B 15 20 17 81 00         MOV EDX,dword ptr [0x00811720]
 0058D004  8B 0D 1C 17 81 00         MOV ECX,dword ptr [0x0081171c]
 0058D00A  A3 18 17 81 00            MOV [0x00811718],EAX
 0058D00F  8D 04 95 00 00 00 00      LEA EAX,[EDX*0x4 + 0x0]
 0058D016  50                        PUSH EAX
 0058D017  51                        PUSH ECX
-0058D018  E8 33 FF 11 00            CALL 0x006acf50
+0058D018  E8 33 FF 11 00            CALL 0x006acf50  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607; source view only; no Ghidra override
 0058D01D  8B 0D 18 17 81 00         MOV ECX,dword ptr [0x00811718]
 0058D023  A3 1C 17 81 00            MOV [0x0081171c],EAX
 0058D028  85 C9                     TEST ECX,ECX

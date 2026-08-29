@@ -3,9 +3,14 @@
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=1; incoming_this_accesses=3;
-   incoming_edx_uses=0 */
+   incoming_edx_uses=0
 
-undefined4 __thiscall STBoatC::sub_00490570(STBoatC *this)
+   [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=12,
+   ignored=0, unknown=0 */
+
+int __thiscall STBoatC::sub_00490570(STBoatC *this)
 
 {
   short sVar1;

@@ -25,9 +25,11 @@ void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0xec,0,errorCode,
                                "%s","PrividerTy::PaintPrivider");
     if (iVar4 != 0) {
@@ -63,7 +65,7 @@ void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
   if ((pPVar2->field_1C9A == nullptr) && (param_1 == '\0')) {
     /* ST_CALLSITE[005BA9F1]: CALL 0x00402f13; direct=00402F13 MMMObjTy::OutEdProc */
     MMMObjTy::OutEdProc((MMMObjTy *)g_dDXContext_0080759C,
-                        (AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,0,0,0x79,0x197,
+                        (RecoveredGlobalRecordView_00854EB8 *)g_dDXContext_0080759C,0,0,0x79,0x197,
                         0x22e,0x2e,&(pPVar2->array_00BC[0xc].field_01DB)->field_0140);
   }
   g_currentExceptionFrame = local_4c.previous;

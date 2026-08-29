@@ -23,16 +23,21 @@ AllocationRecord_0065CD10 * __cdecl FUN_0065c9e0(char *source)
   local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   exceptionCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
+
     local_8 = Library::DKW::LIB::MemAllocClear(0x49f);
     local_8->field_0001 = 0x49f;
     local_8->field_0005 = 2;
     Library::MSVCRT::_strncpy(&local_8->field_0x6,source,0x3f);
+    /* ST_CALLSITE[0065CA48]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
     pDVar1 = Library::DKW::TBL::SArrayCreate(nullptr,5,5);
     local_8->field_0456 = &pDVar1->flags;
+    /* ST_CALLSITE[0065CA5D]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
     pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,5,0x1b,5);
     local_8->field_0462 = &pDVar1->flags;
+
     thunk_FUN_0064a6f0((int *)&local_8[1].field_0x6,10);
     g_currentExceptionFrame = local_4c.previous;
     return (AllocationRecord_0065CD10 *)local_8;

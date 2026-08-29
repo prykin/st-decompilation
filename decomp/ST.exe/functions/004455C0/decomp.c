@@ -31,9 +31,11 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_10 = this;
+
   local_EAX_40 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   if (local_EAX_40 != 0) {
     g_currentExceptionFrame = local_58.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x27df,0,local_EAX_40,
                                "%s","STAllPlayersC::CreateBoat");
     if (iVar4 != 0) {
@@ -44,6 +46,7 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
     return CONCAT22(extraout_var,(undefined2)local_14);
   }
   if (7 < (uint)param_1[1]) {
+
     iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x27b5,0,0,"%s",
                                "STAllPlayersC::CreateBoat - incorrect player number");
     if (iVar3 != 0) {
@@ -54,6 +57,7 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
                0x27b6);
   }
   if ((7 < (uint)param_1[5]) && (param_1[5] != 0xffffffff)) {
+
     local_EAX_166 =
          ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x27c2,0,0,"%s",
                             "STAllPlayersC::CreateBoat - incorrect player color");
@@ -68,6 +72,7 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
       (STField<short>(param_1,0x1e) < 0)) ||
      (((g_worldGrid.sizeY <= STField<short>(param_1,0x1e) || (*(short *)(param_1 + 8) < 0)) ||
       (g_worldGrid.sizeZ <= *(short *)(param_1 + 8))))) {
+
     local_EAX_284 =
          ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x27c8,0,0,"%s",
                             "STAllPlayersC::CreateBoat - incorrect position");
@@ -99,6 +104,7 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
   STPlaySystemC::CreateGameObject(g_playSystem_00802A38,0x14,0,&local_c,param_1,0);
   iVar5 = local_c;
   if (local_c == 0) {
+    /* ST_CALLSITE[004457B0]: CALL 0x006a5e40; direct=006A5E40 RaiseInternalException; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STGroupC; source view only; no Ghidra override */
     RaiseInternalException
               (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0x27db);

@@ -35,7 +35,7 @@ LAB_005de60d:
 005DE612  6A 10                     PUSH 0x10
 005DE614  50                        PUSH EAX
 005DE615  68 48 26 00 00            PUSH 0x2648
-005DE61A  E8 21 1B 0D 00            CALL 0x006b0140
+005DE61A  E8 21 1B 0D 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=/winnt.h/LPCSTR; source view only; no Ghidra override
 005DE61F  8B 15 78 6D 85 00         MOV EDX,dword ptr [0x00856d78]
 005DE625  8D 8D FC FE FF FF         LEA ECX,[EBP + 0xfffffefc]
 005DE62B  50                        PUSH EAX

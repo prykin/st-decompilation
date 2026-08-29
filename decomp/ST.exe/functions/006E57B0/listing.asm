@@ -29,7 +29,7 @@ LAB_006e57e0:
 006E57E8  8B 01                     MOV EAX,dword ptr [ECX]
 006E57EA  8D 55 E0                  LEA EDX,[EBP + -0x20]
 006E57ED  52                        PUSH EDX
-006E57EE  FF 10                     CALL dword ptr [EAX]
+006E57EE  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 006E57F0  8B 47 10                  MOV EAX,dword ptr [EDI + 0x10]
 006E57F3  56                        PUSH ESI
 006E57F4  50                        PUSH EAX

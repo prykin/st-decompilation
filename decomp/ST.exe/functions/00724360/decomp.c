@@ -8,10 +8,10 @@
 void __fastcall FUN_00724360(AnonShape_00724360_3CA25F92 *param_1)
 
 {
-  undefined4 local_24 [2];
+  uint local_24 [2];
   int local_1c;
   byte *local_18;
-  undefined4 local_14;
+  uint local_14;
   uint local_10;
 
   if (param_1->field_0048 == 0) {

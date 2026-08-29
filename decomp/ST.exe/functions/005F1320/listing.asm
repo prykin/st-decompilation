@@ -1,6 +1,7 @@
 CreateSTManBasis:
 005F1320  6A 48                     PUSH 0x48
-005F1322  E8 A9 F1 0B 00            CALL 0x006b04d0
+CreateSTManBasis::override::prt_5f1322_7f7a498d:
+005F1322  E8 A9 F1 0B 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STManBasisC; signature=__stdcall;pointer:/STManBasisC;/uint
 005F1327  85 C0                     TEST EAX,EAX
 005F1329  74 0D                     JZ 0x005f1338
 005F132B  8B C8                     MOV ECX,EAX

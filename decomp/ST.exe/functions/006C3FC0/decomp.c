@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void FUN_006c3fc0(AnonShape_006C3FC0_72DDFA27 *param_1,undefined4 param_2,undefined4 param_3,
+void FUN_006c3fc0(RecoveredSourceFamily_dvideo *param_1,undefined4 param_2,undefined4 param_3,
                  undefined4 param_4,undefined4 param_5)
 
 {

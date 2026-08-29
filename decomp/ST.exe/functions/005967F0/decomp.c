@@ -21,6 +21,7 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
     /* ST_CALLSITE[0059682A]: CALL dword ptr [0x0085c02c] */
@@ -30,6 +31,7 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
     if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
+
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
       else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
@@ -151,6 +153,7 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
     }
     this_01->field_1FB3 = nullptr;
     if (this_01->field_004D != 0) {
+
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&this_01->field_0x3d);
     }
     this_00 = (this_01->array_00BC[0xc].field_01DB)->field_02E6;
@@ -164,6 +167,7 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x197,0,errorCode,
                              "%s","FSGSTy::DoneFSGS");
   if (iVar3 != 0) {

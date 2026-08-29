@@ -1,3 +1,3 @@
-STBoatC::FUN_0048d110:
+STBoatC::vfunc_FC:
 0048D110  8B 81 A2 07 00 00         MOV EAX,dword ptr [ECX + 0x7a2]
 0048D116  C3                        RET

@@ -19,7 +19,8 @@ int __thiscall STBoatC::BackPatrol(STBoatC *this,int *param_1)
     return local_EAX_17;
   }
   if (this->field_0497 == 1) {
-    local_EAX_35 = thunk_FUN_004620f0(this);
+    /* ST_CALLSITE[00465C03]: CALL 0x0040493a; direct=0040493A STBoatC::sub_004620F0 */
+    local_EAX_35 = sub_004620F0(this);
     return local_EAX_35;
   }
   iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1c52,0,0,"%s",

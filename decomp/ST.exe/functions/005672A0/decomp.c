@@ -9,7 +9,7 @@ void __thiscall FUN_005672a0(void *this,HWND param_1)
 {
   thunk_FUN_00567180(this,param_1);
   if (STField<int>(this,0xf8b) != 0) {
-    thunk_FUN_00567330((int)this);
+    thunk_FUN_00567330(this);
   }
   return;
 }

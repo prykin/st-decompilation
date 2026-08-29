@@ -122,7 +122,7 @@ CreatePlrDataForWS:
 00649601  8D 85 88 FE FF FF         LEA EAX,[EBP + 0xfffffe88]
 00649607  52                        PUSH EDX
 00649608  50                        PUSH EAX
-00649609  E8 F5 AD DB FF            CALL 0x00404403
+00649609  E8 F5 AD DB FF            CALL 0x00404403  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D3B0; source view only; no Ghidra override
 0064960E  83 C4 14                  ADD ESP,0x14
 00649611  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
 00649614  85 C0                     TEST EAX,EAX
@@ -131,7 +131,7 @@ CreatePlrDataForWS:
 0064961E  8D 4D F0                  LEA ECX,[EBP + -0x10]
 00649621  51                        PUSH ECX
 00649622  52                        PUSH EDX
-00649623  E8 97 88 DB FF            CALL 0x00401ebf
+00649623  E8 97 88 DB FF            CALL 0x00401ebf  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override
 00649628  8B 55 F0                  MOV EDX,dword ptr [EBP + -0x10]
 0064962B  8D 4D EC                  LEA ECX,[EBP + -0x14]
 0064962E  51                        PUSH ECX

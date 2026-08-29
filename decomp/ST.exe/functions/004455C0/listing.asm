@@ -154,7 +154,7 @@ LAB_0044577d:
 004457A5  68 04 60 7A 00            PUSH 0x7a6004
 004457AA  51                        PUSH ECX
 004457AB  68 04 00 FE AF            PUSH 0xaffe0004
-004457B0  E8 8B 06 26 00            CALL 0x006a5e40
+004457B0  E8 8B 06 26 00            CALL 0x006a5e40  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STGroupC; source view only; no Ghidra override
 LAB_004457b5:
 004457B5  8B 55 F8                  MOV EDX,dword ptr [EBP + -0x8]
 004457B8  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]

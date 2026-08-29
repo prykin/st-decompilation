@@ -21,7 +21,7 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,und
   ProdPanelTy *local_14;
   int local_10;
   int local_c;
-  ushort *local_8;
+  RecoveredRecordView_006B84D0_87AF9D9B *local_8;
 
   pAVar1 = param_1->field_0014;
   local_8 = nullptr;
@@ -36,32 +36,35 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,und
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_14 = this;
-    piVar4 = (int *)Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
+
+    piVar4 = STPointerBoundaryCast<int *>(Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0));
     if (piVar4 == nullptr) {
       iVar9 = 1;
       /* ST_CALLSITE[0053FF61]: CALL dword ptr [EBP + 0xc] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar5 = (*(code *)param_2)(param_1);
       iVar8 = 2;
+      /* ST_CALLSITE[0053FF70]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       pCVar6 = thunk_FUN_00571240("BUT_MFTABS",0);
       pCVar6 = FUN_006f2c00(pCVar6,iVar8,uVar5);
+      /* ST_CALLSITE[0053FF8A]: CALL 0x006f1ce0; direct=006F1CE0 cMf32::RecGet; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int */
       local_8 = cMf32::RecGet(g_cMf32_00806790,1,pCVar6,piVar4,iVar9);
       iVar8 = local_c;
       pPVar3 = local_14;
       /* ST_CALLSITE[0053FFA4]: CALL 0x00403229; direct=00403229 DibPut */
-      DibPut((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_10,local_c,'\x01',
-             (byte *)local_8);
+      DibPut((RecoveredSourceFamily_dibcopy *)local_14->field_0068,local_10,local_c,'\x01',local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       if (param_1->field_0014->field_0004 == 3) {
         iVar9 = 1;
         piVar4 = nullptr;
         pCVar6 = thunk_FUN_00571240("BUT_MFFRAMES",0);
+        /* ST_CALLSITE[0053FFE0]: CALL 0x006f1ce0; direct=006F1CE0 cMf32::RecGet; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int */
         local_8 = cMf32::RecGet(g_cMf32_00806790,6,pCVar6,piVar4,iVar9);
         /* ST_CALLSITE[0053FFF4]: CALL 0x00403229; direct=00403229 DibPut */
-        DibPut((RecoveredSourceFamily_dibcopy *)pPVar3->field_0068,local_10,iVar8,'\x06',
-               (byte *)local_8);
+        DibPut((RecoveredSourceFamily_dibcopy *)pPVar3->field_0068,local_10,iVar8,'\x06',local_8);
         cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       }
+
       Library::DKW::DDX::FUN_006b3640
                 ((int *)g_ddxContext_008075A8,pPVar3->field_0060,0xffffffff,pPVar3->field_003C,
                  pPVar3->field_0044);
@@ -69,6 +72,7 @@ ProdPanelTy::PaintTab(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,und
       return;
     }
     g_currentExceptionFrame = local_58.previous;
+
     iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x270,0,(int)piVar4,
                                "%s","ProdPanelTy::PaintTab");
     if (iVar7 != 0) {

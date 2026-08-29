@@ -1,4 +1,4 @@
-FUN_005504f0:
+STPlaySystemC::sub_005504F0:
 005504F0  55                        PUSH EBP
 005504F1  8B EC                     MOV EBP,ESP
 005504F3  81 EC 08 01 00 00         SUB ESP,0x108

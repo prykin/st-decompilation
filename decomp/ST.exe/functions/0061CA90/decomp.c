@@ -30,7 +30,7 @@ undefined4 __thiscall FUN_0061ca90(void *this,int param_1,int param_2,int param_
   byte local_40;
   undefined3 uStack_3f;
   int local_3c;
-  undefined4 local_38;
+  uint local_38;
   int local_34;
   byte local_30;
   undefined3 uStack_2f;

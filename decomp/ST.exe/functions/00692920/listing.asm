@@ -26,7 +26,7 @@ FUN_00692920:
 0069295F  6A 08                     PUSH 0x8
 00692961  56                        PUSH ESI
 00692962  53                        PUSH EBX
-00692963  E8 58 27 02 00            CALL 0x006b50c0
+00692963  E8 58 27 02 00            CALL 0x006b50c0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006B4FA0_DAC3A217; source view only; no Ghidra override
 00692968  8B F8                     MOV EDI,EAX
 0069296A  57                        PUSH EDI
 0069296B  89 7D 14                  MOV dword ptr [EBP + 0x14],EDI

@@ -30,7 +30,7 @@ HelpPanelTy::DrawWeapon:
 00515951  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
 00515954  8B 88 44 02 00 00         MOV ECX,dword ptr [EAX + 0x244]
 0051595A  51                        PUSH ECX
-0051595B  E8 40 5A 1F 00            CALL 0x0070b3a0
+0051595B  E8 40 5A 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 00515960  8B F0                     MOV ESI,EAX
 00515962  83 C4 14                  ADD ESP,0x14
 00515965  85 F6                     TEST ESI,ESI

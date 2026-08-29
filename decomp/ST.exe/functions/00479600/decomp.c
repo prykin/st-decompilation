@@ -61,7 +61,7 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
   short sVar23;
   byte bVar24;
   uint uVar25;
-  undefined4 local_30 [2];
+  uint local_30 [2];
   uint local_28;
   short local_24;
   int local_20;
@@ -115,6 +115,7 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
     else {
       if (iVar11 != 1) {
         if (iVar11 != 2) {
+
           iVar10 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x351b,0,0,
                                       "%s","STBoatC::Teleport invalid type of teleportation");
           if (iVar10 == 0) {
@@ -126,6 +127,7 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
         psVar2 = &this->field_065B;
         this->field_001C = uVar25;
         psVar3 = &this->field_0657;
+
         thunk_FUN_004b2520(this->field_0024,this->field_06F7,(int)this->field_0643,
                            (int)this->field_0645,(int)this->field_0647,(undefined4 *)psVar3,
                            (undefined4 *)&this->field_0x659,(undefined4 *)psVar2,uVar25 >> 0x10,
@@ -143,6 +145,7 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
         this->field_063F = 0;
         this->field_0649 = 0;
         if (g_tLOFake_00800BCC == nullptr) {
+
           thunk_FUN_004d0f00();
         }
         /* ST_CALLSITE[0047B4D3]: CALL 0x00401582; direct=00401582 TLOFakeTy::sub_004D0970 */
@@ -254,6 +257,7 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
         }
         /* ST_CALLSITE[004797DA]: CALL 0x004029fa; direct=004029FA STBoatC::sub_004939B0 */
         local_EAX_474 = sub_004939B0(this,&this->field_0651,&this->field_0653,&this->field_0655);
+
         if ((local_EAX_474 != 1) || (iVar11 = thunk_FUN_004e91e0(local_8,this), iVar11 != 1)) {
 LAB_00479e39:
           *(undefined4 *)&this->field_0x663 = 1;
@@ -319,6 +323,7 @@ LAB_0047b2dc:
         iVar11 = this->field_063D + 1;
         break;
       case -1:
+
         local_EAX_102 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3525,0,0,"%s",
                                 "STBoatC::Teleport, TELEPORT_MOVEIN error");
@@ -400,6 +405,7 @@ LAB_00479ba6:
         if (local_EAX_1323 != 1) {
           return 2;
         }
+
         iVar11 = thunk_FUN_004e91e0(local_8,this);
         if (iVar11 != 1) {
           return 2;
@@ -414,6 +420,7 @@ LAB_00479ba6:
                 SVar5 = this->field_06F7;
                 if ((((SVar5 == CASE_7) || (SVar5 == CASE_13)) || (SVar5 == CASE_1B)) &&
                    ((this->field_07CA != nullptr &&
+
                     (iVar11_mgF = STPlaySystemC::sub_006E62D0
                                             (g_playSystem_00802A38,this->field_07CA,(int *)&local_8)
                     , iVar11_mgF != -4)))) {
@@ -422,6 +429,7 @@ LAB_00479ba6:
                   iVar14 = (int)this->field_0041;
                   uVar25 = 0;
                   iVar15 = 0;
+
                   uVar11 = thunk_FUN_004ad650((STT3DSprC *)((int)&local_8[0xd].vtable + 1));
                 }
                 else {
@@ -455,6 +463,7 @@ LAB_00479ba6:
                 TLOFakeTy::sub_004D0A80
                           (g_tLOFake_00800BCC,(int)this->field_0657,
                            (int)*(short *)&this->field_0x659,(int)this->field_065B);
+
                 thunk_FUN_00417a20(this,this->field_0657,*(short *)&this->field_0x659,
                                    this->field_065B,1);
                 sVar8 = (this->field_0643 + 1) * 0xc9;
@@ -475,6 +484,7 @@ LAB_00479ba6:
                 SVar5 = this->field_06F7;
                 if ((((SVar5 == CASE_7) || (SVar5 == CASE_13)) || (SVar5 == CASE_1B)) &&
                    ((this->field_07CA != nullptr &&
+
                     (iVar11_mg12 = STPlaySystemC::sub_006E62D0
                                              (g_playSystem_00802A38,this->field_07CA,(int *)&local_8
                                              ), iVar11_mg12 != -4)))) {
@@ -483,15 +493,18 @@ LAB_00479ba6:
                   iVar12 = (int)this->field_0041;
                   uVar25 = 0;
                   iVar15 = 0;
+
                   local_EAX_4422 = thunk_FUN_004ad650((STT3DSprC *)((int)&local_8[0xd].vtable + 1));
                   thunk_FUN_006377b0(local_EAX_4422,iVar15,iVar12,iVar11,iVar14,uVar25);
-                  thunk_FUN_004ad430((STT3DSprC *)((int)&local_8[0xd].vtable + 1));
+                  /* ST_CALLSITE[0047A75D]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+                  STT3DSprC::sub_004AD430((STT3DSprC *)((int)&local_8[0xd].vtable + 1));
                 }
                 else {
                   thunk_FUN_006377b0(this->field_01ED,0,(int)this->field_0041,(int)this->field_0043,
                                      (int)this->field_0045,0);
                 }
-                thunk_FUN_004ad430((STT3DSprC *)&this->field_01D5);
+                /* ST_CALLSITE[0047A788]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+                STT3DSprC::sub_004AD430((STT3DSprC *)&this->field_01D5);
               }
               if ((*(int *)&this->field_0x667 == 2) &&
                  (iVar11 = *(int *)&this->field_0x65d + 1, *(int *)&this->field_0x65d = iVar11,
@@ -501,6 +514,7 @@ LAB_00479ba6:
                 *(undefined4 *)&this->field_0x65d = 0;
                 if (((SVar5 == CASE_7) || ((SVar5 == CASE_13 || (SVar5 == CASE_1B)))) &&
                    ((this->field_07CA != nullptr &&
+
                     (iVar11_mg15 = STPlaySystemC::sub_006E62D0
                                              (g_playSystem_00802A38,this->field_07CA,(int *)&local_8
                                              ), iVar11_mg15 != -4)))) {
@@ -533,6 +547,7 @@ LAB_00479ba6:
                 SVar5 = this->field_06F7;
                 if ((((SVar5 == CASE_7) || (SVar5 == CASE_13)) || (SVar5 == CASE_1B)) &&
                    ((this->field_07CA != nullptr &&
+
                     (iVar11_mg1F = STPlaySystemC::sub_006E62D0
                                              (g_playSystem_00802A38,this->field_07CA,(int *)&local_8
                                              ), iVar11_mg1F != -4)))) {
@@ -541,6 +556,7 @@ LAB_00479ba6:
                   iVar14 = (int)this->field_0041;
                   uVar25 = 0;
                   iVar15 = 0;
+
                   local_EAX_4951 = thunk_FUN_004ad650((STT3DSprC *)((int)&local_8[0xd].vtable + 1));
                 }
                 else {
@@ -582,6 +598,7 @@ LAB_00479ba6:
                 TLOFakeTy::sub_004D0A80
                           (g_tLOFake_00800BCC,(int)this->field_0657,
                            (int)*(short *)&this->field_0x659,(int)this->field_065B);
+
                 thunk_FUN_00417a20(this,this->field_0657,*(short *)&this->field_0x659,
                                    this->field_065B,1);
                 local_20 = (int)this->field_0041;
@@ -596,6 +613,7 @@ LAB_00479ba6:
                 SVar5 = this->field_06F7;
                 if ((((SVar5 == CASE_7) || (SVar5 == CASE_13)) || (SVar5 == CASE_1B)) &&
                    ((this->field_07CA != nullptr &&
+
                     (iVar11_mg23 = STPlaySystemC::sub_006E62D0
                                              (g_playSystem_00802A38,this->field_07CA,(int *)&local_8
                                              ), iVar11_mg23 != -4)))) {
@@ -604,15 +622,18 @@ LAB_00479ba6:
                   iVar12 = (int)this->field_0041;
                   uVar25 = 0;
                   iVar15 = 0;
+
                   local_EAX_5437 = thunk_FUN_004ad650((STT3DSprC *)((int)&local_8[0xd].vtable + 1));
                   thunk_FUN_006377b0(local_EAX_5437,iVar15,iVar12,iVar11,iVar14,uVar25);
-                  thunk_FUN_004ad430((STT3DSprC *)((int)&local_8[0xd].vtable + 1));
+                  /* ST_CALLSITE[0047AB54]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+                  STT3DSprC::sub_004AD430((STT3DSprC *)((int)&local_8[0xd].vtable + 1));
                 }
                 else {
                   thunk_FUN_006377b0(this->field_01ED,0,(int)this->field_0041,(int)this->field_0043,
                                      (int)this->field_0045,0);
                 }
-                thunk_FUN_004ad430((STT3DSprC *)&this->field_01D5);
+                /* ST_CALLSITE[0047AB7F]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+                STT3DSprC::sub_004AD430((STT3DSprC *)&this->field_01D5);
               }
               if ((*(int *)&this->field_0x667 == 2) &&
                  (iVar11 = *(int *)&this->field_0x65d + 1, *(int *)&this->field_0x65d = iVar11,
@@ -622,6 +643,7 @@ LAB_00479ba6:
                 *(undefined4 *)&this->field_0x65d = 0;
                 if (((SVar5 == CASE_7) || ((SVar5 == CASE_13 || (SVar5 == CASE_1B)))) &&
                    ((this->field_07CA != nullptr &&
+
                     (iVar11_mg26 = STPlaySystemC::sub_006E62D0
                                              (g_playSystem_00802A38,this->field_07CA,(int *)&local_8
                                              ), iVar11_mg26 != -4)))) {
@@ -648,6 +670,7 @@ LAB_00479ba6:
                     (*(int *)&local_8->field_0x18 == this->field_063F)) &&
                    /* ST_CALLSITE[0047ACAF]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
                    (iVar11 = (*local_8->vtable[5].slots_00_28[2])(local_8), iVar11 != 0)) {
+
                   thunk_FUN_004e95c0(local_8,this);
                 }
                 /* ST_CALLSITE[0047ACC6]: CALL dword ptr [EAX + 0xd8] */
@@ -656,6 +679,7 @@ LAB_00479ba6:
                   return -1;
                 }
 LAB_0047acdc:
+
                 iVar11 = thunk_FUN_004b2d10((byte)this->field_0024,this->field_06F7,
                                             (int)this->field_005B,(int)this->field_005D);
                 if (iVar11 == 0) {
@@ -668,6 +692,7 @@ LAB_0047acdc:
             }
             if (iVar11 != 6) {
               if (iVar11 != 7) {
+
                 local_EAX_7456 =
                      ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3744,0,0,
                                         "%s","STBoatC::Teleport - incorrect entry");
@@ -706,11 +731,12 @@ LAB_0047acdc:
               *(undefined4 *)&this->field_0x667 = 1;
             }
             if (*(int *)&this->field_0x667 == 1) {
-              /* ST_CALLSITE[0047AD95]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+              /* ST_CALLSITE[0047AD95]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
               uVar12 = sub_004176C0(this,*(short *)&this->field_0x661);
               /* ST_CALLSITE[0047AD9D]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
               local_EAX_2622 = sub_00417910(this,(short)uVar12);
               if (local_EAX_2622 == 0xffffffff) {
+
                 local_EAX_6119 =
                      ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x36e3,0,0,
                                         "%s","STBoatC::Teleport TELEPORT_OMOVE 1");
@@ -743,6 +769,7 @@ LAB_0047acdc:
                (local_c = 0, this->field_02BF != '\0')) {
               local_10 = (undefined4 *)&this->field_0x2b3;
               do {
+
                 puVar13 = thunk_FUN_0041dc40(local_30,(short)*local_10,*(ushort *)(local_10 + 1),
                                              this->field_006C);
                 uVar4 = *puVar13;
@@ -787,6 +814,7 @@ LAB_0047acdc:
               } while (local_c < (int)(uint)(byte)this->field_02BF);
             }
             if (local_14 == -1) {
+
               local_EAX_7268 =
                    ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x370a,0,0,
                                       "%s","STBoatC::Teleport TELEPORT_OMOVE 2");
@@ -814,6 +842,7 @@ LAB_0047acdc:
               iVar12 = (*local_8->vtable[5].slots_00_28[2])(local_8);
               iVar11 = 0;
               if (iVar12 != 0) {
+
                 iVar11 = thunk_FUN_004e95c0(local_8,this);
               }
             }
@@ -900,11 +929,12 @@ cf_common_exit_0047ADB5:
             *(undefined4 *)&this->field_0x667 = 1;
           }
           if (*(int *)&this->field_0x667 == 1) {
-            /* ST_CALLSITE[0047A036]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+            /* ST_CALLSITE[0047A036]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
             local_EAX_2614 = sub_004176C0(this,*(short *)&this->field_0x661);
             /* ST_CALLSITE[0047A03E]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
             local_EAX_2622 = sub_00417910(this,(short)local_EAX_2614);
             if (local_EAX_2622 == 0xffffffff) {
+
               local_EAX_2667 =
                    ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x35f4,0,0,
                                       "%s","STBoatC::Teleport TELEPORT_PMOVE 1");
@@ -941,6 +971,7 @@ joined_r0x0047ada9:
              (local_c = 0, this->field_02BF != '\0')) {
             local_10 = (undefined4 *)&this->field_0x2b3;
             do {
+
               puVar13 = thunk_FUN_0041dc40(local_30,(short)*local_10,*(ushort *)(local_10 + 1),
                                            this->field_006C);
               uVar4 = *puVar13;
@@ -985,6 +1016,7 @@ joined_r0x0047ada9:
             } while (local_c < (int)(uint)(byte)this->field_02BF);
           }
           if (local_14 == -1) {
+
             local_EAX_3796 =
                  ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x361b,0,0,"%s"
                                     ,"STBoatC::Teleport TELEPORT_PMOVE 2");
@@ -1033,8 +1065,10 @@ LAB_0047a385:
                 ((*(int *)&local_8[0x21].field_0x10 == 0 && (*(int *)&local_8[0x10].field_0x5 != 6))
                 )))) {
               this->field_0742 = 1;
+
               thunk_FUN_004e9650(local_8,(undefined4 *)&this->field_0657,
                                  (undefined4 *)&this->field_0x659,(undefined4 *)&this->field_065B);
+
               thunk_FUN_004e96c0(local_8,(int *)this->field_0018);
               /* ST_CALLSITE[0047A479]: CALL 0x00401582; direct=00401582 TLOFakeTy::sub_004D0970 */
               TLOFakeTy::sub_004D0970
@@ -1110,6 +1144,7 @@ cf_common_exit_0047A369:
             *(undefined4 *)&this->field_0x667 = 0;
             return 2;
           }
+
           thunk_FUN_004e95c0(local_8,this);
           return 0;
         case 1:
@@ -1181,11 +1216,13 @@ cf_common_exit_0047A369:
             if (iVar11 == 0) {
               return 0;
             }
+
             thunk_FUN_004e95c0(local_8,this);
             goto LAB_00479e39;
           }
           break;
         case -1:
+
           local_EAX_1428 =
                ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3596,0,0,"%s",
                                   "STBoatC::Teleport, TELEPORT_MOVETELE error");

@@ -26,7 +26,7 @@ LAB_004dbb87:
 004DBB8C  8B 43 18                  MOV EAX,dword ptr [EBX + 0x18]
 004DBB8F  89 84 B7 D0 04 00 00      MOV dword ptr [EDI + ESI*0x4 + 0x4d0],EAX
 004DBB96  8B 13                     MOV EDX,dword ptr [EBX]
-004DBB98  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+004DBB98  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004DBB9B  89 84 B7 D8 04 00 00      MOV dword ptr [EDI + ESI*0x4 + 0x4d8],EAX
 004DBBA2  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]
 004DBBA5  83 F8 64                  CMP EAX,0x64

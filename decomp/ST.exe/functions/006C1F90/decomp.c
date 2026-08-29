@@ -6,8 +6,7 @@ undefined4 FUN_006c1f90(int param_1)
 {
   int *piVar1;
   int *piVar2;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0;
   if (DAT_008568b4 == 0) {
     return 0xffffffcc;

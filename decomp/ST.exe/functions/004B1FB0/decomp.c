@@ -3,9 +3,13 @@
 
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_004B1FB0_param_1Enum. Cases:
-   CASE_5E=94;CASE_61=97;CASE_DC=220;CASE_DD=221;CASE_DE=222 */
+   CASE_5E=94;CASE_61=97;CASE_DC=220;CASE_DD=221;CASE_DE=222
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=006777D0 @ 0067783D -> read as EAX on
+   every CFG path | 006778C0 @ 00677922 -> read as EAX on every CFG path */
 
-undefined4 __cdecl
+int __cdecl
 FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,int param_4,
             int param_5,int param_6,int param_7)
 
@@ -55,11 +59,12 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
   }
   else if (g_array_007FA150 != nullptr) {
     g_array_007FA150->iteratorIndex = 0;
+
     iVar4 = DArrayGetNext(g_array_007FA150,(byte *)&local_18);
     while (-1 < iVar4) {
       if (((local_18 != nullptr) &&
           /* ST_CALLSITE[004B209D]: CALL dword ptr [EDX + 0x2c] */
-          (GVar2 = local_18->slot_2C(), GVar2 == param_1)) &&
+          (GVar2 = local_18->vfunc_2C(), GVar2 == param_1)) &&
          /* ST_CALLSITE[004B20B8]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
          (((STFishC::sub_004162B0(local_18,&local_8,&local_6,&local_a), param_4 < 0 ||
            (((param_5 < 0 || (param_6 < 0)) || (param_7 < 0)))) ||
@@ -100,6 +105,7 @@ FUN_004b1fb0(Global_sub_004B1FB0_param_1Enum param_1,int *param_2,int *param_3,i
           local_14 = local_14 + iVar5;
         }
       }
+
       iVar4 = DArrayGetNext(g_array_007FA150,(byte *)&local_18);
     }
     if (param_2 != nullptr) {

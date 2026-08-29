@@ -1,4 +1,4 @@
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0:
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0054A9B0::FUN_0054a9b0:
 0054A9B0  55                        PUSH EBP
 0054A9B1  8B EC                     MOV EBP,ESP
 0054A9B3  83 EC 54                  SUB ESP,0x54
@@ -190,7 +190,8 @@ LAB_0054aba2:
 0054ABCB  C7 86 EB 04 00 00 00 00 00 00  MOV dword ptr [ESI + 0x4eb],0x0
 LAB_0054abd5:
 0054ABD5  68 91 00 00 00            PUSH 0x91
-0054ABDA  E8 51 39 1E 00            CALL 0x0072e530
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0054A9B0::FUN_0054a9b0::override::prt_54abda_594c09ab:
+0054ABDA  E8 51 39 1E 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SpriteClassTy; signature=__cdecl;pointer:/SpriteClassTy;/uint
 0054ABDF  83 C4 04                  ADD ESP,0x4
 0054ABE2  85 C0                     TEST EAX,EAX
 0054ABE4  74 09                     JZ 0x0054abef
@@ -220,7 +221,7 @@ LAB_0054abf1:
 0054AC2B  6A 00                     PUSH 0x0
 0054AC2D  6A 07                     PUSH 0x7
 0054AC2F  50                        PUSH EAX
-0054AC30  FF 52 04                  CALL dword ptr [EDX + 0x4]
+0054AC30  FF 52 04                  CALL dword ptr [EDX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 0054AC33  8B 8E EB 04 00 00         MOV ECX,dword ptr [ESI + 0x4eb]
 0054AC39  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]
 0054AC3C  C7 41 40 19 00 00 00      MOV dword ptr [ECX + 0x40],0x19
@@ -284,7 +285,7 @@ LAB_0054abf1:
 0054ACF7  8B E5                     MOV ESP,EBP
 0054ACF9  5D                        POP EBP
 0054ACFA  C2 0C 00                  RET 0xc
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0054A9B0::FUN_0054a9b0::cf_common_exit_0054ACFD:
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0054A9B0::FUN_0054a9b0::cf_common_exit_0054ACFD:
 0054ACFD  8B 7D F8                  MOV EDI,dword ptr [EBP + -0x8]
 0054AD00  C7 45 FC FF FF FF FF      MOV dword ptr [EBP + -0x4],0xffffffff
 0054AD07  6A 00                     PUSH 0x0

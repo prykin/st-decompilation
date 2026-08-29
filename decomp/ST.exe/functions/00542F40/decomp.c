@@ -16,13 +16,13 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
   STMessageId SVar1;
   int iVar3;
   uint uVar3;
-  LPSTR pCVar4;
-  uint uVar5;
-  BITMAPINFO *pBVar6;
+  char *pcVar4;
+  LPSTR text;
+  BITMAPINFO *pBVar5;
   int iVar12;
-  char *text;
-  char cVar7;
-  byte bVar8;
+  char cVar6;
+  byte bVar7;
+  int iVar8;
   int iVar9;
   int *piVar10;
   int iVar11;
@@ -35,9 +35,11 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar12 = ReportDebugMessage("E:\\__titans\\Andrey\\tintersys.cpp",0x11f,0,iVar3,
                                 "%s","InterSystemC::GetMessage");
     if (iVar12 != 0) {
@@ -46,6 +48,7 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
     RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\tintersys.cpp",0x11f);
     return 0xffff;
   }
+
   SystemClassTy::GetMessage((SystemClassTy *)local_8,message);
   SVar1 = message->id;
   if (SVar1 < MESS_INTERSYSTEMC_B904) {
@@ -73,10 +76,12 @@ int __thiscall InterSystemC::GetMessage(InterSystemC *this,STMessage *message)
           iVar13 = 1;
           uVar3 = _DAT_00807348 & 0xff;
           piVar10 = nullptr;
-          iVar9 = 1;
-          pCVar4 = thunk_FUN_00571240("PANEL_BKGND",0);
-          pCVar4 = FUN_006f2c00(pCVar4,iVar9,uVar3);
-          local_c = (tagBITMAPINFO *)cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar10,iVar13);
+          iVar8 = 1;
+          /* ST_CALLSITE[00543013]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;pointer:/char;/int */
+          pcVar4 = thunk_FUN_00571240("PANEL_BKGND",0);
+          text = FUN_006f2c00(pcVar4,iVar8,uVar3);
+          /* ST_CALLSITE[0054302D]: CALL 0x006f1ce0; direct=006F1CE0 cMf32::RecGet; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/wingdi.h/BITMAPINFO; signature=__thiscall;pointer:/wingdi.h/BITMAPINFO;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int */
+          local_c = cMf32::RecGet(g_cMf32_00806790,1,text,piVar10,iVar13);
           /* ST_CALLSITE[0054303C]: CALL 0x00403738; direct=00403738 PutDDX */
           PutDDX(0,0,'\x01',local_c);
           cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_c);
@@ -130,35 +135,38 @@ switchD_00543107_caseD_b904:
     FUN_006b5f80((int *)g_ddxContext_008075A8,*piVar10,piVar10[1],piVar10[2],piVar10[3]);
     SVar1 = message->id;
     if (SVar1 == MESS_INTERSYSTEMC_B900) {
-      text = "BUT_FILEOPT";
+      pcVar4 = "BUT_FILEOPT";
     }
     else if (SVar1 == MESS_INTERSYSTEMC_B902) {
-      text = "BUT_SETOPT";
+      pcVar4 = "BUT_SETOPT";
     }
     else if (SVar1 == MESS_INTERSYSTEMC_B904) {
-      text = "BUT_HELPOPT";
+      pcVar4 = "BUT_HELPOPT";
     }
     else {
-      text = "BUT_AIOPT";
+      pcVar4 = "BUT_AIOPT";
     }
     puVar14 = nullptr;
     iVar11 = 0;
-    iVar13 = 1;
-    bVar8 = 0;
-    uVar3 = 0xffffffff;
-    uVar5 = thunk_FUN_00529f90((int)message);
     iVar9 = 1;
-    pCVar4 = thunk_FUN_00571240(text,0);
-    pCVar4 = FUN_006f2c00(pCVar4,iVar9,uVar5);
-    pBVar6 = (BITMAPINFO *)
+    bVar7 = 0;
+    uVar3 = 0xffffffff;
+
+    iVar8 = thunk_FUN_00529f90((RecoveredRecord_00529F90_28CA9BE3 *)message);
+    iVar13 = 1;
+    /* ST_CALLSITE[005431F8]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;pointer:/char;/int */
+    pcVar4 = thunk_FUN_00571240(pcVar4,0);
+    /* ST_CALLSITE[00543201]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;pointer:/char;/int;/undefined4 */
+    pcVar4 = FUN_006f2c00(pcVar4,iVar13,iVar8);
+    pBVar5 = (BITMAPINFO *)
              Library::Ourlib::MFRLOAD::mfRLoad
-                       (PTR_00806794,CASE_1,pCVar4,uVar3,bVar8,iVar13,iVar11,puVar14);
-    iVar9 = piVar10[1];
+                       (PTR_00806794,CASE_1,pcVar4,uVar3,bVar7,iVar9,iVar11,puVar14);
+    iVar8 = piVar10[1];
     iVar13 = *piVar10;
-    cVar7 = '\x01';
+    cVar6 = '\x01';
 LAB_00543291:
     /* ST_CALLSITE[00543291]: CALL 0x00403738; direct=00403738 PutDDX */
-    PutDDX(iVar13,iVar9,cVar7,pBVar6);
+    PutDDX(iVar13,iVar8,cVar6,pBVar5);
   }
   else {
     switch(SVar1) {
@@ -196,19 +204,22 @@ LAB_00543291:
       FUN_006b5f80((int *)g_ddxContext_008075A8,*piVar10,piVar10[1],piVar10[2],piVar10[3]);
       puVar14 = nullptr;
       iVar11 = 0;
-      iVar13 = 1;
-      bVar8 = 0;
-      uVar3 = 0xffffffff;
-      uVar5 = thunk_FUN_00529f90((int)message);
       iVar9 = 1;
-      pCVar4 = thunk_FUN_00571240("BUT_OHELP",0);
-      pCVar4 = FUN_006f2c00(pCVar4,iVar9,uVar5);
-      pBVar6 = (BITMAPINFO *)
-               Library::Ourlib::MFRLOAD::mfRLoad
-                         (PTR_00806794,CASE_6,pCVar4,uVar3,bVar8,iVar13,iVar11,puVar14);
+      bVar7 = 0;
+      uVar3 = 0xffffffff;
+
+      iVar8 = thunk_FUN_00529f90((RecoveredRecord_00529F90_28CA9BE3 *)message);
+      iVar13 = 1;
+      /* ST_CALLSITE[00543267]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;pointer:/char;/int */
+      pcVar4 = thunk_FUN_00571240("BUT_OHELP",0);
+      /* ST_CALLSITE[00543270]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;pointer:/char;/int;/undefined4 */
+      pcVar4 = FUN_006f2c00(pcVar4,iVar13,iVar8);
+      /* ST_CALLSITE[00543282]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/wingdi.h/BITMAPINFO; signature=__cdecl;pointer:/wingdi.h/BITMAPINFO;pointer:/int;/SubmarineTitans/Recovered/Enums/Global_mfRLoad_param_2Enum;pointer:/char;/uint;/byte;/int;/int;pointer:/undefined4 */
+      pBVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+                         (PTR_00806794,CASE_6,pcVar4,uVar3,bVar7,iVar9,iVar11,puVar14);
       iVar13 = *piVar10;
-      iVar9 = piVar10[1];
-      cVar7 = '\x06';
+      iVar8 = piVar10[1];
+      cVar6 = '\x06';
       goto LAB_00543291;
     }
   }

@@ -2,7 +2,7 @@ apply	kind	owner	owner_type_path	offset	offset_hex	size	proposed_type	proposed_n
 0	zero_span	AiBossClassTy	/AiBossClassTy	1491	0x5D3	132			00647AD0	00647B00 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	AiBossClassTy	/AiBossClassTy	1623	0x657	1			00647AD0	00647B02 STOSB ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	AiEventClassTy	/AiEventClassTy	1327	0x52F	132			0064CC90	0064CCE3 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
-1	nested_struct	CGenerate	/CGenerate	28	0x1C	560	/SubmarineTitans/Recovered/PointerShapes/AnonShape_006952B0_7A982E30	aggregate_001C	006952B0	006952DB	high	exact REP MOVS source span=560, source_length=560
+1	nested_struct	CGenerate	/CGenerate	28	0x1C	560	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006952B0_2D9C9F03	aggregate_001C	006952B0	006952DB	high	exact REP MOVS source span=560, source_length=560
 0	zero_span	CPanelTy	/CPanelTy	24	0x18	32			004FA570	004FA5C0 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	CPanelTy	/CPanelTy	1076	0x434	280			00501A10	00501A24 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	CPanelTy	/CPanelTy	1356	0x54C	280			00506040	00506051 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
@@ -19,6 +19,7 @@ apply	kind	owner	owner_type_path	offset	offset_hex	size	proposed_type	proposed_n
 0	zero_span	PlayPanelTy	/PlayPanelTy	24	0x18	32			0053A540	0053A555 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	PlayPanelTy	/PlayPanelTy	24	0x18	32			0053AA50	0053AA79 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	ProdPanelTy	/ProdPanelTy	24	0x18	32			0053F780	0053F7A9 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
+0	nested_struct	STAllPlayersC	/STAllPlayersC	606	0x25E	264	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00622AB0_330E12AF	aggregate_025E	00622AB0	00622ACB	review	exact REP MOVS source span=264, source_length=269; destination outside owner; destination overlap is not automation-owned
 0	zero_span	STAppC	/STAppC	4502	0x1196	6552			0056A5F0	0056A77B STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	STAppC	/STAppC	9024	0x2340	32			0056EBE0	0056EC89 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	STAppC	/STAppC	11054	0x2B2E	1			0056A5F0	0056A77D STOSB ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
@@ -80,6 +81,7 @@ apply	kind	owner	owner_type_path	offset	offset_hex	size	proposed_type	proposed_n
 0	zero_span	STMineSetC	/STMineSetC	606	0x25E	264			00622600	0062262F STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	STMineSetC	/STMineSetC	870	0x366	1			00622600	00622631 STOSB ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	STOctopusC	/STOctopusC	645	0x285	40			00589990	005899C9 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
+0	nested_struct	STParticleC	/STParticleC	0	0x0	212	/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_0062AEF0_3223AFD1	aggregate_0000	0062AEF0	0062AF07	review	exact REP MOVS source span=212, source_length=3; destination overlap is not automation-owned
 0	zero_span	STSatC	/STSatC	629	0x275	36			0058BA30	0058BA81 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	STSharkC	/STSharkC	603	0x25B	52			0058D750	0058D787 STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields
 0	zero_span	STSprGameObjC	/STSprGameObjC	561	0x231	244			005EC7E0	005EC80F STOSD.REP ES:EDI	evidence	exact zero-init boundary; an independent indexed stride or typed copy is required before replacing fields

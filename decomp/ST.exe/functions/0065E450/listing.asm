@@ -35,7 +35,8 @@ switchD_0065e47b::caseD_a4:
 LAB_0065e4a0:
 0065E4A0  50                        PUSH EAX
 0065E4A1  8B CE                     MOV ECX,ESI
-0065E4A3  E8 0E 75 DA FF            CALL 0x004059b6
+FUN_0065e450::override::prt_65e4a3_1084745e:
+0065E4A3  E8 0E 75 DA FF            CALL 0x004059b6  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__fastcall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/AiFltClassTy;/undefined4;/int
 0065E4A8  8B F8                     MOV EDI,EAX
 0065E4AA  85 FF                     TEST EDI,EDI
 0065E4AC  0F 84 27 01 00 00         JZ 0x0065e5d9

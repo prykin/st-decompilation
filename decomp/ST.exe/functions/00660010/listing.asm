@@ -32,7 +32,8 @@ LAB_00660050:
 0066005F  8B CE                     MOV ECX,ESI
 00660061  52                        PUSH EDX
 00660062  50                        PUSH EAX
-00660063  E8 79 38 DA FF            CALL 0x004038e1
+FUN_00660010::override::prt_660063_275fe1ab:
+00660063  E8 79 38 DA FF            CALL 0x004038e1  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__thiscall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/AiFltClassTy;/int;/int;pointer:/short
 00660068  8B F8                     MOV EDI,EAX
 0066006A  85 FF                     TEST EDI,EDI
 0066006C  75 0B                     JNZ 0x00660079

@@ -19,18 +19,18 @@ CGenerate::sub_00698CA0
   int iVar1;
   int iVar2;
   uint uVar3;
-  undefined1 local_c [4];
-  uint local_8;
-
-  iVar1 = thunk_FUN_006a1370(this->field_0008,param_1,param_2,param_3,(int)local_c);
+  ulonglong local_c;
+  iVar1 = thunk_FUN_006a1370(this->field_0008,param_1,param_2,param_3,
+                             (RecoveredRecord_006A1370_30F34641 *)&local_c);
   *param_4 = -1;
   *param_5 = -1;
   *param_6 = 0;
+
   iVar2 = thunk_FUN_006a20e0(this->field_0008,param_1,param_2,param_3,0xff);
   if (iVar2 != 0) {
-    uVar3 = local_8 >> 8 & 0xf;
+    uVar3 = STPiece<4,4>(local_c) >> 8 & 0xf;
     if (uVar3 != 0) {
-      if ((local_8 & 0x1000) == 0) {
+      if ((STPiece<4,4>(local_c) & 0x1000) == 0) {
         *param_6 = 2;
       }
       else {

@@ -69,7 +69,7 @@ LAB_00413884:
 004138A1  50                        PUSH EAX
 004138A2  89 4D 14                  MOV dword ptr [EBP + 0x14],ECX
 004138A5  89 4D 0C                  MOV dword ptr [EBP + 0xc],ECX
-004138A8  E8 C3 73 29 00            CALL 0x006aac70
+004138A8  E8 C3 73 29 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonNested_AnonShape_004137F0_350C8AE0_0059_F07A8D99; source view only; no Ghidra override
 004138AD  8B 4D 10                  MOV ECX,dword ptr [EBP + 0x10]
 004138B0  89 46 59                  MOV dword ptr [ESI + 0x59],EAX
 004138B3  8D 78 0C                  LEA EDI,[EAX + 0xc]

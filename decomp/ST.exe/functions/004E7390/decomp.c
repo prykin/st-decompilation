@@ -2,9 +2,14 @@
 
 
 /* [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 004E7390 -> 004E6310 @ 004E755C */
+   Evidence: 004E7390 -> 004E6310 @ 004E755C
+   [STAbiConsistencyApplier] ecx_context_register target=function:-1: prototype=undefined __stdcall
+   FUN_004e7390(STAllPlayersC * context, byte * param_2, uint param_3, uint param_4, int param_5)
+   previous_return_type=/undefined Evidence: incoming ECX reaches only unadjusted __thiscall
+   receivers of /STAllPlayersC; receiver_calls=1; exact RET purge=16 matches declared stack
+   bytes=16; sites=004E755C -> STAllPlayersC::sub_004E6310 receiver=/STAllPlayersC */
 
-void FUN_004e7390(byte *param_1,uint param_2,uint param_3,int param_4)
+void FUN_004e7390(STAllPlayersC *context,byte *param_2,uint param_3,uint param_4,int param_5)
 
 {
   int *piVar1;
@@ -29,18 +34,18 @@ void FUN_004e7390(byte *param_1,uint param_2,uint param_3,int param_4)
   int local_c;
   char *local_8;
 
-  if ((-1 < (int)param_1) && ((int)param_1 < 8)) {
+  if ((-1 < (int)param_2) && ((int)param_2 < 8)) {
     /* ST_CALLSITE[004E73B1]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
-    bVar3 = LookupRecordByte((char)param_1);
+    bVar3 = LookupRecordByte((char)param_2);
     ppuVar13 = &PTR_00801020;
     for (iVar5 = 0xc3; iVar5 != 0; iVar5 = iVar5 + -1) {
       *ppuVar13 = nullptr;
       ppuVar13 = ppuVar13 + 1;
     }
     memset(&DAT_00800bd0, 0, 0x30c); /* compiler bulk-zero initialization */
-    STPiece<0,1>(DAT_00800bd4) = (undefined1)param_3;
+    STPiece<0,1>(DAT_00800bd4) = (undefined1)param_4;
     iVar5 = 0;
-    DAT_00800bd0 = param_2;
+    DAT_00800bd0 = param_3;
     iVar10 = 1;
     local_20 = 0;
     local_1c = 0;
@@ -112,8 +117,9 @@ void FUN_004e7390(byte *param_1,uint param_2,uint param_3,int param_4)
     if (-1 < iVar15 + -1) {
       puVar12 = (uint *)((int)&PTR_00801020 + (iVar15 + -1) * 5);
       do {
-        if (((param_4 != 0) || (*puVar12 != param_2)) || ((byte)puVar12[1] != param_3)) {
-          thunk_FUN_004e6310(param_1,*puVar12,(uint)(byte)puVar12[1]);
+        if (((param_5 != 0) || (*puVar12 != param_3)) || ((byte)puVar12[1] != param_4)) {
+          /* ST_CALLSITE[004E755C]: CALL 0x00402130; direct=00402130 STAllPlayersC::sub_004E6310 */
+          STAllPlayersC::sub_004E6310(context,param_2,*puVar12,(uint)(byte)puVar12[1]);
         }
         puVar12 = (uint *)((int)puVar12 + -5);
         iVar15 = iVar15 + -1;

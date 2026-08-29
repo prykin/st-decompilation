@@ -1,6 +1,7 @@
 FUN_00609920:
 00609920  68 58 02 00 00            PUSH 0x258
-00609925  E8 A6 6B 0A 00            CALL 0x006b04d0
+FUN_00609920::override::prt_609925_6fae859f:
+00609925  E8 A6 6B 0A 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STGroupBoatC; signature=__stdcall;pointer:/STGroupBoatC;/uint
 0060992A  85 C0                     TEST EAX,EAX
 0060992C  74 07                     JZ 0x00609935
 0060992E  8B C8                     MOV ECX,EAX

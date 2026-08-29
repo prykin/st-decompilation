@@ -169,24 +169,24 @@
    006ACC70 @ 00498F4A | 00498D20 -> 006ACC70 @ 00499021 | 00498D20 -> 006ACC70 @ 0049909E
 
    [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 102 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_66. The
-   carrier ABI remains pointer:/SubmarineTitans/Recovered/DArrayTy.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_66.
+   carrier=data; The carrier ABI remains pointer:/SubmarineTitans/Recovered/DArrayTy.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 103 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_67. The
-   carrier ABI remains pointer:/SubmarineTitans/Recovered/DArrayTy.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_67.
+   carrier=data; The carrier ABI remains pointer:/SubmarineTitans/Recovered/DArrayTy.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 104 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_68. The
-   carrier ABI remains pointer:/SubmarineTitans/Recovered/DArrayTy.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_68.
+   carrier=data; The carrier ABI remains pointer:/SubmarineTitans/Recovered/DArrayTy.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 105 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_69. The
-   carrier ABI remains pointer:/SubmarineTitans/Recovered/DArrayTy.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_69.
+   carrier=data; The carrier ABI remains pointer:/SubmarineTitans/Recovered/DArrayTy.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: orderType == 106 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_6A. The
-   carrier ABI remains pointer:/SubmarineTitans/Recovered/DArrayTy. */
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupBoatC_sub_00498D20_00498D20_Case_6A.
+   carrier=data; The carrier ABI remains pointer:/SubmarineTitans/Recovered/DArrayTy. */
 
 void __thiscall
 STGroupBoatC::sub_00498D20
@@ -213,10 +213,9 @@ STGroupBoatC::sub_00498D20
   uint uVar9;
   uint uVar10;
   dword *pdVar11;
-  undefined4 local_10;
-  undefined2 local_c;
-  undefined1 local_8 [4];
-
+  uint local_10;
+  ushort local_c;
+  byte local_8 [4];
   switch(orderType) {
   case CASE_1:
     this->field_0065 = 1;
@@ -240,7 +239,9 @@ STGroupBoatC::sub_00498D20
       this->field_00EF = local_EAX_149;
       if (0 < (int)uVar9) {
         do {
+
           DArrayGetElement(data,uVar10,local_8);
+
           Library::DKW::TBL::DArrayPut(this->field_00EF,uVar10,local_8);
           uVar10 = uVar10 + 1;
         } while ((int)uVar10 < (int)uVar9);
@@ -265,7 +266,9 @@ STGroupBoatC::sub_00498D20
       this->field_0160 = local_EAX_739;
       if (0 < (int)uVar9) {
         do {
+
           DArrayGetElement(data,uVar10,(byte *)((int)&orderType + 2));
+
           Library::DKW::TBL::DArrayPut(this->field_0160,uVar10,(byte *)((int)&orderType + 2));
           uVar10 = uVar10 + 1;
         } while ((int)uVar10 < (int)uVar9);
@@ -290,7 +293,9 @@ STGroupBoatC::sub_00498D20
       this->field_0168 = local_EAX_864;
       if (0 < (int)uVar9) {
         do {
+
           DArrayGetElement(data,uVar10,(byte *)((int)&orderType + 2));
+
           Library::DKW::TBL::DArrayPut(this->field_0168,uVar10,(byte *)((int)&orderType + 2));
           uVar10 = uVar10 + 1;
         } while ((int)uVar10 < (int)uVar9);
@@ -319,6 +324,7 @@ STGroupBoatC::sub_00498D20
         }
         local_10 = *puVar5;
         local_c = *(undefined2 *)(puVar5 + 1);
+
         Library::DKW::TBL::DArrayPut(*ppDVar7,uVar9,&local_10);
         uVar9 = uVar9 + 1;
       } while ((int)uVar9 < (int)data);
@@ -347,7 +353,9 @@ STGroupBoatC::sub_00498D20
       this->field_010F = local_EAX_438;
       if (0 < (int)uVar9) {
         do {
+
           DArrayGetElement(data,uVar10,(byte *)((int)&orderType + 2));
+
           Library::DKW::TBL::DArrayPut(this->field_010F,uVar10,(byte *)((int)&orderType + 2));
           uVar10 = uVar10 + 1;
         } while ((int)uVar10 < (int)uVar9);
@@ -361,7 +369,9 @@ STGroupBoatC::sub_00498D20
       this->field_0127 = local_EAX_524;
       if (0 < (int)uVar9) {
         do {
+
           DArrayGetElement(data,uVar10,(byte *)((int)&orderType + 2));
+
           Library::DKW::TBL::DArrayPut(this->field_0127,uVar10,(byte *)((int)&orderType + 2));
           uVar10 = uVar10 + 1;
         } while ((int)uVar10 < (int)uVar9);
@@ -392,7 +402,7 @@ STGroupBoatC::sub_00498D20
   case CASE_B:
     this->field_0065 = 1;
     this->field_00B1 = 1;
-    this->field_0178 = (AnonShape_005EFAE0_B406B78B *)data->flags;
+    this->field_0178 = (RecoveredRecordView_005EFAE0_855D930D *)data->flags;
     return;
   case CASE_C:
     this->field_0065 = 1;
@@ -476,7 +486,7 @@ LAB_00499129:
   case CASE_15:
     this->field_0065 = 1;
     this->field_00D9 = 1;
-    this->field_01C5 = (AnonShape_005EFAE0_B406B78B *)data->flags;
+    this->field_01C5 = (RecoveredRecordView_005EFAE0_855D930D *)data->flags;
     return;
   case CASE_65:
     this->field_0061 = 1;
@@ -490,6 +500,7 @@ LAB_00499129:
       local_EAX_1484 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
       this->field_01CA = local_EAX_1484;
     }
+
     Library::DKW::TBL::DArrayAppend(this->field_01CA,data);
     return;
   case CASE_67:
@@ -499,6 +510,7 @@ LAB_00499129:
       local_EAX_1547 = Library::DKW::TBL::DArrayCreate(nullptr,1,4,1);
       this->field_01CE = local_EAX_1547;
     }
+
     Library::DKW::TBL::DArrayAppend(this->field_01CE,data);
     return;
   case CASE_68:
@@ -508,6 +520,7 @@ LAB_00499129:
       local_EAX_1610 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
       this->field_01D2 = local_EAX_1610;
     }
+
     Library::DKW::TBL::DArrayAppend(this->field_01D2,data);
     return;
   case CASE_69:
@@ -517,6 +530,7 @@ LAB_00499129:
       pDVar3 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
       this->field_01D6 = pDVar3;
     }
+
     Library::DKW::TBL::DArrayAppend(this->field_01D6,data);
     return;
   case CASE_6A:
@@ -526,6 +540,7 @@ LAB_00499129:
       local_EAX_1739 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
       this->field_01DA = local_EAX_1739;
     }
+
     Library::DKW::TBL::DArrayAppend(this->field_01DA,data);
   }
   return;

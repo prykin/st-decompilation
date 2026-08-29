@@ -14,7 +14,8 @@ uint __fastcall FUN_004dd850(int param_1)
     *puVar2 = 0xffffffff;
     puVar2 = puVar2 + 1;
   }
-  thunk_FUN_004dd880((AnonShape_004DDCC0_33DEB43E *)param_1);
+
+  thunk_FUN_004dd880((RecoveredRecordView_004DDCC0_A8DE46ED *)param_1);
   return 0;
 }
 

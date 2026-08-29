@@ -45,7 +45,7 @@ FUN_005f1e40:
 005F1EBB  6A 5A                     PUSH 0x5a
 005F1EBD  51                        PUSH ECX
 005F1EBE  8B 0D 98 75 80 00         MOV ECX,dword ptr [0x00807598]
-005F1EC4  E8 37 71 0F 00            CALL 0x006e9000
+005F1EC4  E8 37 71 0F 00            CALL 0x006e9000  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override
 005F1EC9  5F                        POP EDI
 005F1ECA  5E                        POP ESI
 005F1ECB  5B                        POP EBX
@@ -80,7 +80,7 @@ LAB_005f1ed0:
 005F1F2D  6A 56                     PUSH 0x56
 005F1F2F  6A 78                     PUSH 0x78
 005F1F31  50                        PUSH EAX
-005F1F32  E8 C9 70 0F 00            CALL 0x006e9000
+005F1F32  E8 C9 70 0F 00            CALL 0x006e9000  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override
 005F1F37  5F                        POP EDI
 005F1F38  5E                        POP ESI
 005F1F39  5B                        POP EBX

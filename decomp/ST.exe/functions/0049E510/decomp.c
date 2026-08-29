@@ -21,9 +21,9 @@ uint * __thiscall STGroupBoatC::GrpUnLoadObj(STGroupBoatC *this,int param_1)
   DArrayTy *array;
   InternalExceptionFrame local_78;
   uint local_34;
-  undefined2 local_30;
-  undefined2 local_2e;
-  undefined2 local_2c;
+  ushort local_30;
+  ushort local_2e;
+  ushort local_2c;
   STGroupBoatC *local_28;
   int local_24;
   uint local_20;
@@ -32,10 +32,8 @@ uint * __thiscall STGroupBoatC::GrpUnLoadObj(STGroupBoatC *this,int param_1)
   dword local_14;
   DArrayTy *local_10;
   DArrayTy *local_c;
-  undefined1 local_8 [4];
-
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_14 = *(dword *)(this->field_0029 + 0xc);
+  byte local_8 [4];
+  local_14 = this->field_0029->count;
   local_10 = nullptr;
   local_c = nullptr;
   local_24 = 0;
@@ -43,6 +41,7 @@ uint * __thiscall STGroupBoatC::GrpUnLoadObj(STGroupBoatC *this,int param_1)
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
   local_28 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
   pSVar2 = local_28;
   if (iVar3 != 0) {
@@ -50,6 +49,7 @@ uint * __thiscall STGroupBoatC::GrpUnLoadObj(STGroupBoatC *this,int param_1)
     if (iVar3 == -0x5001fff7) {
       return &local_1c->flags;
     }
+
     iVar8 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0xb01,0,iVar3,"%s",
                                "STGroupBoatC::GrpUnLoadObj");
     if (iVar8 != 0) {
@@ -72,7 +72,8 @@ uint * __thiscall STGroupBoatC::GrpUnLoadObj(STGroupBoatC *this,int param_1)
   local_18 = local_34;
   if (0 < (int)local_14) {
     do {
-      DArrayGetElement((DArrayTy *)pSVar2->field_0029,local_20,local_8);
+
+      DArrayGetElement(pSVar2->field_0029,local_20,local_8);
       if (STPiece<0,2>(local_8) != 0xffff) {
         pSVar3 = (STBoatC *)
                  /* ST_CALLSITE[0049E602]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -83,13 +84,14 @@ uint * __thiscall STGroupBoatC::GrpUnLoadObj(STGroupBoatC *this,int param_1)
                     (-0x5001fffc,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp"
                      ,0xabe);
         }
-        /* ST_CALLSITE[0049E62C]: CALL dword ptr [EAX + 0xf8] */
+        /* ST_CALLSITE[0049E62C]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STBoatC */
         iVar9 = pSVar3->sub_004838B0();
         if (iVar9 != 0) {
-          /* ST_CALLSITE[0049E63E]: CALL dword ptr [EDX + 0x2c] */
+          /* ST_CALLSITE[0049E63E]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC */
           dVar4 = pSVar3->sub_0045EEE0();
           if ((((dVar4 == 7) || (dVar4 == 0x13)) || (dVar4 == 0x1b)) &&
-             (iVar9 = thunk_FUN_00492370((STGameObjC *)pSVar3), iVar9 != 0)) {
+             /* ST_CALLSITE[0049E652]: CALL 0x00402608; direct=00402608 STGameObjC::sub_00492370 */
+             (iVar9 = STGameObjC::sub_00492370((STGameObjC *)pSVar3), iVar9 != 0)) {
             /* ST_CALLSITE[0049E663]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
             STBoatC::CmdToObj(pSVar3,CASE_10,&local_34);
             if (((pSVar2->field_02AD != -1) || (pSVar2->field_02AF != -1)) ||
@@ -100,10 +102,12 @@ uint * __thiscall STGroupBoatC::GrpUnLoadObj(STGroupBoatC *this,int param_1)
                 local_10 = pDVar5;
               }
 LAB_0049e6f6:
+
               Library::DKW::TBL::DArrayAppend(pDVar5,local_8);
             }
           }
           else {
+
             iVar9 = thunk_FUN_00490d90((STGameObjC *)pSVar3);
             if (iVar9 == 0) {
               /* ST_CALLSITE[0049E6B6]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
@@ -134,10 +138,10 @@ LAB_0049e6f6:
         local_14 = dVar4;
         if (0 < (int)dVar4) {
           do {
+            /* ST_CALLSITE[0049E74C]: CALL 0x006acc70; direct=006ACC70 DArrayGetElement; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
             DArrayGetElement(local_c,uVar10,local_8);
-            pSVar3 = (STBoatC *)
-                     /* ST_CALLSITE[0049E761]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-                     STAllPlayersC::GetObjPtr
+            /* ST_CALLSITE[0049E761]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum */
+            pSVar3 = STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_8),CASE_1);
             /* ST_CALLSITE[0049E76E]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
             STBoatC::CmdToObj(pSVar3,CASE_3,&local_18);
@@ -176,7 +180,8 @@ LAB_0049e7c1:
   if (g_playSystem_00802A38->field_00E4 % 0x32 == 0) {
     if (0 < (int)local_14) {
       do {
-        DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar10,local_8);
+
+        DArrayGetElement(pSVar2->field_0029,uVar10,local_8);
         if (STPiece<0,2>(local_8) != 0xffff) {
           pSVar3 = (STBoatC *)
                    /* ST_CALLSITE[0049E80C]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -187,13 +192,14 @@ LAB_0049e7c1:
                       (-0x5001fffc,g_overwriteContext_007ED77C,
                        "E:\\__titans\\wlad\\to_grpb.cpp",0xaf1);
           }
-          /* ST_CALLSITE[0049E836]: CALL dword ptr [EDX + 0xf8] */
+          /* ST_CALLSITE[0049E836]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STBoatC */
           iVar9 = pSVar3->sub_004838B0();
           if ((iVar9 != 0) &&
-             /* ST_CALLSITE[0049E844]: CALL dword ptr [EAX + 0x2c] */
+             /* ST_CALLSITE[0049E844]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC */
              ((((dVar4 = pSVar3->sub_0045EEE0(), dVar4 == 7 || (dVar4 == 0x13)) ||
                (dVar4 == 0x1b)) &&
-              ((iVar9 = thunk_FUN_0045ff10((STGameObjC *)pSVar3), iVar9 == 0x10 ||
+              /* ST_CALLSITE[0049E858]: CALL 0x00402edc; direct=00402EDC STGameObjC::sub_0045FF10 */
+              ((iVar9 = STGameObjC::sub_0045FF10((STGameObjC *)pSVar3), iVar9 == 0x10 ||
                /* ST_CALLSITE[0049E866]: CALL 0x00404df9; direct=00404DF9 STBoatC::CheckPBoxCmd */
                (uVar6 = STBoatC::CheckPBoxCmd(pSVar3,CASE_10), uVar6 == 1)))))) {
             local_24 = 1;

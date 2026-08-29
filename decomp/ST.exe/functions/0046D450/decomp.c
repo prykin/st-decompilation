@@ -61,7 +61,7 @@ int __thiscall STBoatC::UnLoadRC(STBoatC *this,int param_1)
   int iVar25;
   short sVar26;
   byte bVar27;
-  undefined4 local_28 [2];
+  uint local_28 [2];
   uint local_20;
   short local_1c;
   uint local_18;
@@ -160,6 +160,7 @@ LAB_0046d72e:
         iVar13 = this->field_0530 + 1;
         goto cf_common_exit_0046E801;
       case -1:
+
         iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2638,0,0,"%s",
                                    "STBoatC::UnLoadRC, move to depot error");
         if (iVar6 != 0) {
@@ -207,9 +208,9 @@ LAB_0046e7ea:
            (((pSVar16 = (STBoatC *)
                         STGridAt3D(g_worldGrid, sVar19, sVar22, sVar18).objects[0],
              pSVar16 == nullptr || (pSVar16->field_0024 != this->field_0024)) ||
-            /* ST_CALLSITE[0046D932]: CALL dword ptr [EDX + 0x2c] */
+            /* ST_CALLSITE[0046D932]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC */
             ((dVar7 = pSVar16->sub_0045EEE0(), dVar7 != 0x3b &&
-             /* ST_CALLSITE[0046D93E]: CALL dword ptr [EAX + 0x2c] */
+             /* ST_CALLSITE[0046D93E]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC */
              (dVar7 = pSVar16->sub_0045EEE0(), dVar7 != 0x60)))))) {
           /* ST_CALLSITE[0046D9B5]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
           sub_004602B0(this);
@@ -217,13 +218,16 @@ LAB_0046e7ea:
           iVar13 = this->vfunc_D8();
           return -(uint)(iVar13 != 0);
         }
+
         iVar13 = thunk_FUN_004e1490(pSVar16);
         if ((iVar13 != 1) ||
+
            (local_EAX_1289 = thunk_FUN_0048d7c0(this,(STFishC *)pSVar16), local_EAX_1289 != 1))
         goto cf_common_exit_0046E811;
         /* ST_CALLSITE[0046D969]: CALL 0x00403855; direct=00403855 STBoatC::sub_004602B0 */
         sub_004602B0(this);
         this->field_0532 = pSVar16->field_0018;
+
         thunk_FUN_004e15f0(pSVar16,this->field_0018);
         iVar13 = (int)this->field_0540;
         iVar25 = (int)this->field_053E;
@@ -248,6 +252,7 @@ LAB_0046e7ea:
         sVar18 = this->field_0538;
         break;
       case -1:
+
         local_EAX_815 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2678,0,0,"%s",
                                 "STBoatC::UnLoadRC, correct move to depot error");
@@ -291,19 +296,22 @@ cf_common_exit_0046E811:
             ((pSVar16 = (STBoatC *)
                         STGridAt3D(g_worldGrid, sVar19, sVar22, sVar18).objects[0],
              pSVar16 != nullptr && (pSVar16->field_0024 == this->field_0024)))))) &&
-          /* ST_CALLSITE[0046DABF]: CALL dword ptr [EDX + 0x2c] */
+          /* ST_CALLSITE[0046DABF]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC */
           ((dVar7 = pSVar16->sub_0045EEE0(), dVar7 == 0x3b ||
-           /* ST_CALLSITE[0046DACB]: CALL dword ptr [EAX + 0x2c] */
+           /* ST_CALLSITE[0046DACB]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC */
            (dVar7 = pSVar16->sub_0045EEE0(), dVar7 == 0x60)))))) {
+
         iVar13 = thunk_FUN_004e1490(pSVar16);
         if (iVar13 != 1) {
           return 2;
         }
+
         local_EAX_1686 = thunk_FUN_0048d7c0(this,(STFishC *)pSVar16);
         if (local_EAX_1686 != 1) {
           return 2;
         }
         this->field_0532 = pSVar16->field_0018;
+
         thunk_FUN_004e15f0(pSVar16,this->field_0018);
         this->field_0544 = 0;
         this->field_054C = CASE_3;
@@ -332,11 +340,12 @@ cf_common_exit_0046E811:
           this->field_0550 = CASE_1;
         }
         if (this->field_0550 == CASE_1) {
-          /* ST_CALLSITE[0046DE6B]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+          /* ST_CALLSITE[0046DE6B]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
           uVar9 = sub_004176C0(this,this->field_0542);
           /* ST_CALLSITE[0046DE73]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
           uVar9 = sub_00417910(this,(short)uVar9);
           if (uVar9 == 0xffffffff) {
+
             local_EAX_2671 =
                  ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2712,0,0,"%s"
                                     ,"STBoatC::UnLoadRC, UNLOADRC_PDEPOT");
@@ -367,6 +376,7 @@ cf_common_exit_0046E811:
           if (this->field_02BF != '\0') {
             local_8 = (undefined4 *)&this->field_0x2b3;
             do {
+
               puVar10 = thunk_FUN_0041dc40(local_28,(short)*local_8,*(ushort *)(local_8 + 1),
                                            this->field_006C);
               local_20 = *puVar10;
@@ -424,6 +434,7 @@ cf_common_exit_0046E811:
             } while (param_1_after_write < (int)(uint)(byte)this->field_02BF);
           }
           if (local_c == -1) {
+
             local_EAX_3355 =
                  ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2738,0,0,"%s"
                                     ,"STBoatC::UnLoadRC, UNLOADRC_PDEPOT 2");
@@ -462,11 +473,12 @@ cf_common_exit_0046E811:
               this->field_0550 = CASE_1;
             }
             if (this->field_0550 == CASE_1) {
-              /* ST_CALLSITE[0046E441]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+              /* ST_CALLSITE[0046E441]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
               uVar9 = sub_004176C0(this,this->field_0542);
               /* ST_CALLSITE[0046E449]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
               uVar9 = sub_00417910(this,(short)uVar9);
               if (uVar9 == 0xffffffff) {
+
                 local_EAX_4165 =
                      ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x2798,0,0,
                                         "%s","STBoatC::UnLoadRC, UNLOADRC_ODEPOT");
@@ -495,6 +507,7 @@ cf_common_exit_0046E811:
                 if (this->field_02BF != '\0') {
                   local_8 = (undefined4 *)&this->field_0x2b3;
                   do {
+
                     puVar10 = thunk_FUN_0041dc40(local_28,(short)*local_8,*(ushort *)(local_8 + 1),
                                                  this->field_006C);
                     local_20 = *puVar10;
@@ -552,6 +565,7 @@ cf_common_exit_0046E811:
                   } while (param_1_after_write_2 < (int)(uint)(byte)this->field_02BF);
                 }
                 if (local_c == -1) {
+
                   local_EAX_4888 =
                        ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x27bd,0,0,
                                           "%s","STBoatC::UnLoadRC, UNLOADRC_ODEPOT 2");
@@ -584,6 +598,7 @@ cf_common_exit_0046E811:
           return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
         }
         if (SVar1 != CASE_7) {
+
           local_EAX_5187 =
                ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x27e8,0,0,"%s",
                                   "STBoatC::UnLoadRC - incorrect entry");
@@ -595,6 +610,7 @@ cf_common_exit_0046E811:
         /* ST_CALLSITE[0046E7AB]: CALL 0x004031de; direct=004031DE STBoatC::sub_00460260 */
         local_EAX_4955 = sub_00460260(this,2);
         if (local_EAX_4955 == -1) {
+
           local_EAX_5109 =
                ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x27d5,0,0,"%s",
                                   "STBoatC::UnLoadRC, UNLOADRC_MOVEWAITUNLOAD error");
@@ -658,6 +674,7 @@ LAB_0046e2c8:
                 iVar8 = iVar13;
               }
               thunk_FUN_004e1d70(pSVar3,0xde,iVar8 * 0x14);
+
               thunk_FUN_004e16d0(pSVar3,this->field_0018);
               this->field_07DA = this->field_07DA - iVar8;
             }
@@ -667,6 +684,7 @@ LAB_0046e2c8:
               iVar8 = iVar13;
             }
             thunk_FUN_004e1d70(pSVar3,0xdd,iVar8 * 3);
+
             thunk_FUN_004e16d0(pSVar3,this->field_0018);
             this->field_07D6 = this->field_07D6 - iVar8;
           }
@@ -676,6 +694,7 @@ LAB_0046e2c8:
             iVar8 = iVar13;
           }
           thunk_FUN_004e1d70(pSVar3,0xdc,iVar8 * 5);
+
           thunk_FUN_004e16d0(pSVar3,this->field_0018);
           this->field_07D2 = this->field_07D2 - iVar8;
         }
@@ -713,6 +732,7 @@ LAB_0046e2c8:
           iVar13 = this->vfunc_D8();
           return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
         }
+
         thunk_FUN_004e1690(pSVar3,this->field_0018);
         return 0;
       }
@@ -730,6 +750,7 @@ LAB_0046e2c8:
                  STGridAt3D(g_worldGrid, sVar19, sVar22, sVar18).objects[0];
 joined_r0x0046dd46:
         if (pSVar2 != nullptr) {
+
           thunk_FUN_0048d7c0(this,pSVar2);
         }
       }
@@ -748,6 +769,7 @@ joined_r0x0046dd46:
       }
       break;
     case -1:
+
       local_EAX_1854 =
            ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x26d9,0,0,"%s",
                               "STBoatC::UnLoadRC, move to depot 2 error");
@@ -786,10 +808,11 @@ switchD_0046d492_caseD_0:
   if (iVar13 == 1) {
     if (pSVar16 != nullptr) {
       if (((pSVar16->field_0024 == this->field_0024) &&
-          /* ST_CALLSITE[0046D57C]: CALL dword ptr [EAX + 0x2c] */
+          /* ST_CALLSITE[0046D57C]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC */
           ((dVar7 = pSVar16->sub_0045EEE0(), dVar7 == 0x3b ||
-           /* ST_CALLSITE[0046D588]: CALL dword ptr [EDX + 0x2c] */
+           /* ST_CALLSITE[0046D588]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC */
            (dVar7 = pSVar16->sub_0045EEE0(), dVar7 == 0x60)))) &&
+
          (iVar13 = thunk_FUN_004e1490(pSVar16), iVar13 != 1)) {
         /* ST_CALLSITE[0046D5DE]: CALL 0x00404908; direct=00404908 STBoatC::sub_0048DFD0 */
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
@@ -810,9 +833,9 @@ switchD_0046d492_caseD_0:
   else {
 LAB_0046d60c:
     if (((pSVar16 != nullptr) && (pSVar16->field_0024 == this->field_0024)) &&
-       /* ST_CALLSITE[0046D61E]: CALL dword ptr [EDX + 0x2c] */
+       /* ST_CALLSITE[0046D61E]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC */
        ((dVar7 = pSVar16->sub_0045EEE0(), dVar7 == 0x3b ||
-        /* ST_CALLSITE[0046D62A]: CALL dword ptr [EAX + 0x2c] */
+        /* ST_CALLSITE[0046D62A]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC */
         (dVar7 = pSVar16->sub_0045EEE0(), dVar7 == 0x60)))) {
       this->field_054C = CASE_2;
 LAB_0046d818:

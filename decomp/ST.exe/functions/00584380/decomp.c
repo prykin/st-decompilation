@@ -3,9 +3,14 @@
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STJellyGunC.
    Evidence: this_call_owners=[STJellyGunC]; agreed_this_calls=2; incoming_this_accesses=3;
-   incoming_edx_uses=0 */
+   incoming_edx_uses=0
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=005825C0 @ 0058276C -> read as EAX on
+   every CFG path | 005825C0 @ 00582C64 -> read as EAX on every CFG path | 00583270 @ 00583A46 ->
+   read as EAX on every CFG path */
 
-undefined4 __thiscall STJellyGunC::sub_00584380(STJellyGunC *this)
+int __thiscall STJellyGunC::sub_00584380(STJellyGunC *this)
 
 {
   undefined4 *this_00;
@@ -41,6 +46,6 @@ undefined4 __thiscall STJellyGunC::sub_00584380(STJellyGunC *this)
     this->field_0239 = 100;
     return 0;
   }
-  return 0xffffffff;
+  return -1;
 }
 

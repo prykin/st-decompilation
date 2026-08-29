@@ -30,7 +30,7 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
   InternalExceptionFrame local_5c;
   uint local_18;
   uint local_14;
-  undefined4 local_10;
+  uint local_10;
   OptPanelTy *local_c;
   int local_8;
 
@@ -40,10 +40,12 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_c = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   this_00 = local_c;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_5c.previous;
+
     iVar2 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0x125,0,errorCode,
                                "%s","OptPanelTy::SwitchOptPanel");
     if (iVar2 == 0) {
@@ -170,7 +172,8 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
     local_10 = 0;
     local_14 = (uint)(DAT_00808783 != '\x03');
     local_18 = 1;
-    thunk_FUN_0054edf0((undefined4 *)0x5,&local_18,1,0xffffffff);
+    /* ST_CALLSITE[0052F54F]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+    STPlaySystemC::sub_0054EDF0(g_playSystem_00802A38,(undefined4 *)0x5,&local_18,1,0xffffffff);
     DAT_0080878c = 1;
     if (g_cPanel_00801688 != nullptr) {
       /* ST_CALLSITE[0052F569]: CALL 0x00402ed2; direct=00402ED2 CPanelTy::ShiftControls */

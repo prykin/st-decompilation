@@ -6,7 +6,7 @@
    Evidence: all observed direct callers ignore the return register (ignored=3, used=0), and
    decompilation contains no value return */
 
-void __thiscall FUN_00726ce0(void *this,int param_1)
+void __thiscall FUN_00726ce0(void *this,RecoveredRecord_00726CE0_B9FB2C5D *param_1)
 
 {
   DAT_0085708c = STField<undefined4>(this,0xc);
@@ -14,11 +14,9 @@ void __thiscall FUN_00726ce0(void *this,int param_1)
   DAT_0085707c = STField<undefined4>(this,0x14);
   DAT_008570dc = STField<int>(this,0x30) << 0x10;
   DAT_0085705c = STField<int>(this,0x38) << 0x10;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  _DAT_00857100 = *(int *)(param_1 + 0xc);
+  _DAT_00857100 = param_1->field_000C;
   if (_DAT_00857100 == 0) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    _DAT_00857100 = *(int *)(param_1 + 0x10);
+    _DAT_00857100 = param_1->field_0010;
   }
   if (STField<int>(this,0x280) != 0) {
     DAT_0085709c = (uint)*(byte *)(STField<int>(this,0x280) + 4) << 1;

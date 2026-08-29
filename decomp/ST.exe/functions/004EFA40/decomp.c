@@ -13,8 +13,9 @@ BldLabPanelTy * __cdecl CreateBldLabPanel(void)
 {
   BldLabPanelTy *this;
   uint *puVar2;
-  this = (BldLabPanelTy *)FUN_006b04d0(0x27e);
+  this = STPointerBoundaryCast<BldLabPanelTy *>(FUN_006b04d0(0x27e));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;

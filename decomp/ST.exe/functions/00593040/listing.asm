@@ -91,12 +91,13 @@ LAB_0059310f:
 0059314B  52                        PUSH EDX
 0059314C  6A 01                     PUSH 0x1
 0059314E  68 10 BE 7C 00            PUSH 0x7cbe10
-00593153  E8 A8 FA 15 00            CALL 0x006f2c00
+00593153  E8 A8 FA 15 00            CALL 0x006f2c00  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 00593158  83 C4 0C                  ADD ESP,0xc
 0059315B  50                        PUSH EAX
 0059315C  A1 80 67 80 00            MOV EAX,[0x00806780]
 00593161  50                        PUSH EAX
-00593162  E8 89 78 17 00            CALL 0x0070a9f0
+CampaignTy::GetMessage::override::prt_593162_1cc576dc:
+00593162  E8 89 78 17 00            CALL 0x0070a9f0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/wingdi.h/BITMAPINFO; signature=__cdecl;pointer:/wingdi.h/BITMAPINFO;pointer:/cMf32;pointer:/char;/byte;/int
 00593167  50                        PUSH EAX
 00593168  6A 01                     PUSH 0x1
 0059316A  6A 37                     PUSH 0x37

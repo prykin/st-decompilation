@@ -1,4 +1,4 @@
-FUN_004d7570:
+STAllPlayersC::sub_004D7570:
 004D7570  55                        PUSH EBP
 004D7571  8B EC                     MOV EBP,ESP
 004D7573  0F BE 45 08               MOVSX EAX,byte ptr [EBP + 0x8]
@@ -72,7 +72,7 @@ LAB_004d7659:
 004D7666  52                        PUSH EDX
 004D7667  50                        PUSH EAX
 004D7668  E8 03 96 1D 00            CALL 0x006b0c70
-FUN_004d7570::cf_common_exit_004D766D:
+STAllPlayersC::sub_004D7570::cf_common_exit_004D766D:
 004D766D  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]
 004D7670  51                        PUSH ECX
 004D7671  8B CB                     MOV ECX,EBX

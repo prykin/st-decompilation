@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_005ccd00(AnonShape_005CCD00_F1FA07E9 *param_1)
+void __fastcall FUN_005ccd00(RecoveredRecordView_005CCD00_42E0A333 *param_1)
 
 {
   if (param_1->field_21FC != 0) {
@@ -22,7 +22,7 @@ void __fastcall FUN_005ccd00(AnonShape_005CCD00_F1FA07E9 *param_1)
     param_1->field_0031 = 0;
     FUN_006e6080(param_1,2,g_startSystem_0081176C->field_0550,(undefined4 *)&param_1->field_0x1d);
   }
-  thunk_FUN_005c5eb0((AnonShape_005C5EB0_D4E7C108 *)param_1);
+  thunk_FUN_005c5eb0((RecoveredRecordView_005C5EB0_6F980905 *)param_1);
   return;
 }
 

@@ -3,9 +3,26 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\mmsg_obj.cpp
-   MMsgTy::SetMessage */
+   MMsgTy::SetMessage
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00593040 @ 0059340E -> killed on
+   every CFG path | 005A1160 @ 005A12FF -> unknown: terminal before explicit accumulator kill |
+   005A1630 @ 005A17FC -> unknown: terminal before explicit accumulator kill | 005A32F0 @ 005A3461
+   -> unknown: terminal before explicit accumulator kill | 005A4350 @ 005A455B -> killed on every
+   CFG path | 005A4350 @ 005A4669 -> killed on every CFG path | 005A4350 @ 005A4685 -> killed on
+   every CFG path | 005A4350 @ 005A48B4 -> killed on every CFG path | 005A4350 @ 005A4B49 -> killed
+   on every CFG path | 005A4350 @ 005A4C72 -> killed on every CFG path | 005A4350 @ 005A4F4B ->
+   killed on every CFG path | 005A4350 @ 005A5131 -> killed on every CFG path | 005A4350 @ 005A52E6
+   -> killed on every CFG path | 005A4350 @ 005A65EC -> killed on every CFG path | 005A4350 @
+   005A6681 -> killed on every CFG path | 005A4350 @ 005A686C -> killed on every CFG path | 005AD390
+   @ 005ADBD4 -> killed on every CFG path | 005B4BB0 @ 005B4E77 -> read as EAX on every CFG path |
+   005BAE00 @ 005BB2D2 -> killed on every CFG path | 005BAE00 @ 005BB62A -> unknown: terminal before
+   explicit accumulator kill | 005BC5E0 @ 005BCD2D -> killed on every CFG path | 005CE0E0 @ 005CE367
+   -> killed on every CFG path | 005CE0E0 @ 005CE9C0 -> killed on every CFG path | 005CE0E0 @
+   005CEE8F -> killed on every CFG path */
 
-undefined4 __thiscall
+int __thiscall
 MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,undefined4 *param_4,
                   undefined4 *param_5,int param_6,UINT param_7)
 
@@ -28,7 +45,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
   int iVar16;
   int iVar17;
   int iVar18;
-  byte uVar19;
+  SpriteClassTy_SetImagesPtr_param_2Enum SVar19;
   uint uVar20;
   uint uVar21;
   uint uVar22;
@@ -45,6 +62,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
     local_78.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_78;
     local_14 = this;
+
     iVar3 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
     this_00 = local_14;
     if (iVar3 == 0) {
@@ -76,11 +94,9 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           }
           pMVar11 = this_00->array_00BC + uVar14;
           puVar6 = (byte *)((int)(this_00->array_00BC + 0xd) + uVar14 * 0x27 + 0xc);
-          for (iVar10 = 9; iVar10 != 0; iVar10 = iVar10 + -1) {
-            *puVar6 = pMVar11->field_0000;
-            pMVar11 = (MMsgTy_Record_00BC_01FB *)&pMVar11->field_0x4;
-            puVar6 = (byte *)(puVar6 + 1);
-          }
+          memmove(puVar6, pMVar11, 0x24); /* compiler REP MOVS byte copy */
+          puVar6 = (byte *)(puVar6 + 0x9);
+          pMVar11 = (MMsgTy_Record_00BC_01FB *)((byte *)pMVar11 + 0x24);
           *(undefined2 *)puVar6 = *(undefined2 *)&pMVar11->field_0000;
           STField<undefined1>(puVar6,2) = STField<undefined1>(pMVar11,0x2);
           bVar3 = (char)local_8 + 1;
@@ -99,7 +115,9 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         cVar15 = CASE_FFFFFFFE;
         iVar9 = 0x39;
         iVar10 = 0x158;
+        /* ST_CALLSITE[005B80E8]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
         pcVar4 = LoadResourceString(param_1,g_hINSTANCE_00807618);
+
         puVar6 = ccFntTy::CreateTypeSSpr
                            ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar10,iVar9,cVar15
                             ,uVar14,iVar16,iVar17,iVar18);
@@ -115,6 +133,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         iVar10 = this_00->field_1D88;
         uVar22 = 0xffffffff;
         uVar21 = 7;
+
         puVar6 = ccFntTy::CreateTypeSSpr
                            ((ccFntTy *)g_startSystem_0081176C->field_0030,local_478,0x158,0x39,
                             CASE_FFFFFFFE,0xffffffff,1,-1,-1);
@@ -154,7 +173,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           }
         }
         uVar20 = 0xffffffff;
-        uVar19 = 7;
+        SVar19 = CASE_7;
         iVar18 = -1;
         pSVar1 = this_00->array_00BC[2].field_00B8.vtable;
         iVar17 = -1;
@@ -163,12 +182,14 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         cVar15 = CASE_FFFFFFFE;
         iVar9 = 0x1e;
         iVar10 = 0x7d;
+        /* ST_CALLSITE[005B83F3]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
         pcVar4 = LoadResourceString(this_00->array_00BC[2].field_0000,g_hINSTANCE_00807618);
-        psVar7 = (short *)ccFntTy::CreateTypeSSpr
+
+        psVar7 = STPointerBoundaryCast<short *>(ccFntTy::CreateTypeSSpr
                                     ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar10,
-                                     iVar9,cVar15,uVar14,iVar16,iVar17,iVar18);
+                                     iVar9,cVar15,uVar14,iVar16,iVar17,iVar18));
         /* ST_CALLSITE[005B840A]: CALL dword ptr [ESI + 0x8] */
-        (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar7,uVar19,uVar20);
+        (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar7,SVar19,uVar20);
         this_00->array_00BC[2].field_00B8.field_0008 = 0;
       }
       else {
@@ -192,7 +213,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
             }
           }
           uVar20 = 0xffffffff;
-          uVar19 = 7;
+          SVar19 = CASE_7;
           iVar18 = -1;
           pSVar1 = this_00->array_00BC[2].field_00B8.vtable;
           iVar17 = -1;
@@ -201,12 +222,14 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           cVar15 = CASE_FFFFFFFE;
           iVar9 = 0x1e;
           iVar10 = 0x7d;
+          /* ST_CALLSITE[005B8357]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
           pcVar4 = LoadResourceString(this_00->array_00BC[2].field_0000,g_hINSTANCE_00807618);
-          psVar7 = (short *)ccFntTy::CreateTypeSSpr
+
+          psVar7 = STPointerBoundaryCast<short *>(ccFntTy::CreateTypeSSpr
                                       ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar10,
-                                       iVar9,cVar15,uVar14,iVar16,iVar17,iVar18);
+                                       iVar9,cVar15,uVar14,iVar16,iVar17,iVar18));
           /* ST_CALLSITE[005B836E]: CALL dword ptr [ESI + 0x8] */
-          (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar7,uVar19,uVar20);
+          (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar7,SVar19,uVar20);
           this_00->array_00BC[2].field_00B8.field_0008 = 0;
           this_00->array_00BC[1].field_0000 = 0x24ba;
           this_00->array_00BC[1].field_0025 = 1;
@@ -233,7 +256,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
             }
           }
           uVar20 = 0xffffffff;
-          uVar19 = 7;
+          SVar19 = CASE_7;
           iVar18 = -1;
           pSVar1 = this_00->array_00BC[3].field_00B8.vtable;
           iVar17 = -1;
@@ -242,12 +265,14 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           cVar15 = CASE_FFFFFFFE;
           iVar9 = 0x1e;
           iVar10 = 0x7d;
+          /* ST_CALLSITE[005B81CF]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
           pcVar4 = LoadResourceString(this_00->array_00BC[3].field_0000,g_hINSTANCE_00807618);
-          psVar7 = (short *)ccFntTy::CreateTypeSSpr
+
+          psVar7 = STPointerBoundaryCast<short *>(ccFntTy::CreateTypeSSpr
                                       ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar10,
-                                       iVar9,cVar15,uVar14,iVar16,iVar17,iVar18);
+                                       iVar9,cVar15,uVar14,iVar16,iVar17,iVar18));
           /* ST_CALLSITE[005B81E6]: CALL dword ptr [ESI + 0x8] */
-          (*pSVar1->SetImagesPtr)(&this_00->array_00BC[3].field_00B8,psVar7,uVar19,uVar20);
+          (*pSVar1->SetImagesPtr)(&this_00->array_00BC[3].field_00B8,psVar7,SVar19,uVar20);
           this_00->array_00BC[3].field_00B8.field_0008 = 0;
           this_00->array_00BC[2].field_0000 = 0x24ba;
           this_00->array_00BC[2].field_0025 = 1;
@@ -268,7 +293,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
             }
           }
           uVar20 = 0xffffffff;
-          uVar19 = 7;
+          SVar19 = CASE_7;
           iVar18 = -1;
           pSVar1 = this_00->array_00BC[2].field_00B8.vtable;
           iVar17 = -1;
@@ -277,12 +302,14 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           cVar15 = CASE_FFFFFFFE;
           iVar9 = 0x1e;
           iVar10 = 0x7d;
+          /* ST_CALLSITE[005B8250]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
           pcVar4 = LoadResourceString(this_00->array_00BC[2].field_0000,g_hINSTANCE_00807618);
-          psVar7 = (short *)ccFntTy::CreateTypeSSpr
+
+          psVar7 = STPointerBoundaryCast<short *>(ccFntTy::CreateTypeSSpr
                                       ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar10,
-                                       iVar9,cVar15,uVar14,iVar16,iVar17,iVar18);
+                                       iVar9,cVar15,uVar14,iVar16,iVar17,iVar18));
           /* ST_CALLSITE[005B8267]: CALL dword ptr [ESI + 0x8] */
-          (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar7,uVar19,uVar20);
+          (*pSVar1->SetImagesPtr)(&this_00->array_00BC[2].field_00B8,psVar7,SVar19,uVar20);
           this_00->array_00BC[2].field_00B8.field_0008 = 0;
           this_00->array_00BC[1].field_0000 = 0x24bb;
           this_00->array_00BC[1].field_0025 = 1;
@@ -304,7 +331,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
           }
         }
         uVar20 = 0xffffffff;
-        uVar19 = 7;
+        SVar19 = CASE_7;
         iVar18 = -1;
         pSVar1 = this_00->array_00BC[1].field_00B8.vtable;
         iVar17 = -1;
@@ -313,12 +340,14 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
         cVar15 = CASE_FFFFFFFE;
         iVar9 = 0x1e;
         iVar10 = 0x7d;
+        /* ST_CALLSITE[005B82D1]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
         pcVar4 = LoadResourceString(this_00->array_00BC[1].field_0000,g_hINSTANCE_00807618);
-        psVar7 = (short *)ccFntTy::CreateTypeSSpr
+
+        psVar7 = STPointerBoundaryCast<short *>(ccFntTy::CreateTypeSSpr
                                     ((ccFntTy *)g_startSystem_0081176C->field_0030,pcVar4,iVar10,
-                                     iVar9,cVar15,uVar14,iVar16,iVar17,iVar18);
+                                     iVar9,cVar15,uVar14,iVar16,iVar17,iVar18));
         /* ST_CALLSITE[005B82E8]: CALL dword ptr [ESI + 0x8] */
-        (*pSVar1->SetImagesPtr)(&this_00->array_00BC[1].field_00B8,psVar7,uVar19,uVar20);
+        (*pSVar1->SetImagesPtr)(&this_00->array_00BC[1].field_00B8,psVar7,SVar19,uVar20);
         this_00->array_00BC[1].field_00B8.field_0008 = 0;
       }
 LAB_005b8415:
@@ -382,6 +411,7 @@ LAB_005b8415:
       return 1;
     }
     g_currentExceptionFrame = local_78.previous;
+
     iVar8 = ReportDebugMessage("E:\\__titans\\Start\\mmsg_obj.cpp",0x14e,0,iVar3,"%s"
                                ,"MMsgTy::SetMessage");
     if (iVar8 != 0) {

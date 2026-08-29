@@ -32,10 +32,12 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   local_8 = this;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   this_00 = local_8;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_60.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\nick\\to_light.Cpp",0x7a,0,iVar5,"%s",
                                "STLightC::GetMessage");
     if (iVar6 != 0) {
@@ -55,6 +57,7 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
       return 0;
     }
     if (SVar3 == MESS_ID_NONE) {
+
       thunk_FUN_0061e7f0(local_8);
       if (this_00->field_004F == 5) {
         sVar2 = this_00->field_0030;
@@ -112,6 +115,7 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
       /* ST_CALLSITE[0061D402]: CALL 0x004033e1; direct=004033E1 STLightC::sub_0061E4F0 */
       sub_0061E4F0(this_00);
       if (this_00->field_00A7 == '\0') {
+
         uVar5 = thunk_FUN_0061e110(this_00);
         this_00->field_00A7 = (char)uVar5;
       }
@@ -142,11 +146,13 @@ int __thiscall STLightC::GetMessage(STLightC *this,STMessage *message)
       uVar1 = iVar7 * 0x41c64e6d + 0x3039;
       local_8->field_00AC = uVar1;
       local_8->field_003C = uVar1 >> 0x10 & 3;
+
       uVar5 = thunk_FUN_0061e110(local_8);
       this_00->field_00A7 = (char)uVar5;
       /* ST_CALLSITE[0061D23E]: CALL 0x00405d6c; direct=00405D6C STLightC::LoadNextLight */
       iVar7 = LoadNextLight(this_00);
       if (iVar7 != 0) {
+
         thunk_FUN_0061dd40((RecoveredRecord_STLightC_0061DD40 *)this_00);
         g_currentExceptionFrame = local_60.previous;
         return 0;
@@ -159,7 +165,7 @@ LAB_0061d434:
     }
   }
   else if (SVar3 == MESS_SHARED_010F) {
-    /* ST_CALLSITE[0061D482]: CALL 0x0040187a; direct=0040187A STLightC::sub_0061D710 */
+    /* ST_CALLSITE[0061D482]: CALL 0x0040187a; direct=0040187A STLightC::sub_0061D710; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
     local_10 = sub_0061D710(local_8,(int *)&local_c);
     /* ST_CALLSITE[0061D499]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     STPlaySystemC::SaveObjData(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);

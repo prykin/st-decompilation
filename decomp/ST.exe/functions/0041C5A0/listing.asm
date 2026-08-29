@@ -40,7 +40,7 @@ sub_0041C5A0:
 LAB_0041c614:
 0041C614  8B 06                     MOV EAX,dword ptr [ESI]
 0041C616  8B CE                     MOV ECX,ESI
-0041C618  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+0041C618  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0041C61B  83 C0 FB                  ADD EAX,-0x5
 0041C61E  83 F8 1E                  CMP EAX,0x1e
 0041C621  77 44                     JA 0x0041c667
@@ -68,7 +68,7 @@ switchD_0041c62b::caseD_b:
 switchD_0041c62b::caseD_5:
 0041C65D  8B 16                     MOV EDX,dword ptr [ESI]
 0041C65F  8B CE                     MOV ECX,ESI
-0041C661  FF 92 98 00 00 00         CALL dword ptr [EDX + 0x98]
+0041C661  FF 92 98 00 00 00         CALL dword ptr [EDX + 0x98]  ; [STIndirectCallsiteApplier] exact slot 0x98; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 switchD_0041c62b::caseD_6:
 0041C667  5E                        POP ESI
 0041C668  C3                        RET

@@ -18,14 +18,15 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
   uint index;
   InternalExceptionFrame local_54;
   STGroupBoatC *local_10;
-  undefined2 local_c;
-  undefined2 local_a;
+  ushort local_c;
+  ushort local_a;
   char local_8 [2];
   short local_6;
 
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (errorCode == 0) {
@@ -43,11 +44,13 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
     dVar1 = this_00->field_020E->count;
     if (0 < (int)dVar1) {
       do {
+
         DArrayGetElement(this_00->field_020E,index,local_8);
         if (((local_6 != -1) && (local_8[0] == param_1)) && (local_6 == param_2)) {
           array = Library::DKW::TBL::DArrayCreate(nullptr,1,4,1);
           local_c = 0xffff;
           local_a = (undefined2)index;
+
           Library::DKW::TBL::DArrayAppend(array,&local_c);
           /* ST_CALLSITE[00499AA8]: CALL 0x00404985; direct=00404985 STGroupBoatC::ReMakePVecAndTgtList */
           ReMakePVecAndTgtList(this_00,array);
@@ -62,6 +65,7 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
   else {
     g_currentExceptionFrame = local_54.previous;
     if (errorCode != -0x5001fff7) {
+
       iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x51c,0,errorCode,
                                  "%s","STGroupBoatC::ReMakePVecAndTgtListExt");
       if (iVar3 == 0) {

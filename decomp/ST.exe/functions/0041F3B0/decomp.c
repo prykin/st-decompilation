@@ -38,6 +38,7 @@ void __fastcall FUN_0041f3b0(STSprGameObjC *param_1)
       uVar3 = 1;
     }
     puVar1 = &param_1->field_01D5;
+
     uVar4 = thunk_FUN_004ac910(puVar1,'\x01');
     if (uVar3 != uVar4) {
       /* ST_CALLSITE[0041F45F]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
@@ -65,6 +66,7 @@ void __fastcall FUN_0041f3b0(STSprGameObjC *param_1)
       if (uVar3 == 0) {
         uVar3 = 1;
       }
+
       uVar4 = thunk_FUN_004ac910(puVar1,'\x02');
       if (uVar3 != uVar4) {
         /* ST_CALLSITE[0041F50C]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */

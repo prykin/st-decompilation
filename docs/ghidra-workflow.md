@@ -857,7 +857,7 @@ parameters. Layouts larger than `0x4000` bytes remain review-only.
 
 Ghidra derives the immutable automatic `this` datatype from a function's class
 namespace. The applier therefore creates a structurally named neutral
-`SubmarineTitans::Recovered::HiddenThis::AnonReceiver_<address>` class namespace
+`SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_<address>` class namespace
 that mirrors the datatype category. This is an ABI/type carrier, not a claim
 about the original semantic class or method name. Neutral vtables are created
 only when an indirect slot was actually observed.

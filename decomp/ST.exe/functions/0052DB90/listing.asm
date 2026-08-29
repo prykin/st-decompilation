@@ -31,7 +31,7 @@ LAB_0052dbe6:
 0052DBE6  6A 0A                     PUSH 0xa
 0052DBE8  6A 0A                     PUSH 0xa
 0052DBEA  6A 00                     PUSH 0x0
-0052DBEC  E8 FF 78 18 00            CALL 0x006b54f0
+0052DBEC  E8 FF 78 18 00            CALL 0x006b54f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 0052DBF1  89 83 98 00 00 00         MOV dword ptr [EBX + 0x98],EAX
 0052DBF7  8B 83 90 00 00 00         MOV EAX,dword ptr [EBX + 0x90]
 0052DBFD  8B 70 14                  MOV ESI,dword ptr [EAX + 0x14]

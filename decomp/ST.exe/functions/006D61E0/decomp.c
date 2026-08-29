@@ -24,7 +24,7 @@ void FUN_006d61e0(int *param_1)
     }
     STField<undefined4>(iVar1,0x6C) = 0;
   }
-  _DAT_008568fc = FUN_00748b48(param_1);
+  _DAT_008568fc = Library::Win32::COMSupport::FUN_00748b48(param_1);
   return;
 }
 

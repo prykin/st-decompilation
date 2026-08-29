@@ -25,19 +25,23 @@ STAppC::MainWindowProc
   uint uVar3;
   HCURSOR pHVar4;
   int iVar2;
+  int iVar5;
+  RecoveredRecord_006E3DB0_0F66DDCF *pRVar6;
   STMessage local_cc;
   tagPAINTSTRUCT local_ac;
-  undefined4 local_6c [4];
-  undefined4 local_5c;
+  RecoveredRecord_006E3DB0_0F66DDCF local_6c;
+  uint local_5c;
   InternalExceptionFrame local_4c;
   LRESULT local_8;
 
   local_8 = 0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   local_EAX_42 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (local_EAX_42 != 0) {
     g_currentExceptionFrame = local_4c.previous;
+
     iVar2 = ReportDebugMessage("E:\\__titans\\tapp.cpp",0x3aa,0,local_EAX_42,"%s",
                                "STAppC::MainWindowProc");
     if (iVar2 == 0) {
@@ -45,8 +49,10 @@ STAppC::MainWindowProc
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+
   local_EAX_76 = AppClassTy::DecodeMessage(g_app_00806728,param_2,param_3,param_4);
   if ((local_EAX_76 != 0) &&
+
      (local_EAX_112 =
            ReportDebugMessage("E:\\__titans\\tapp.cpp",0x330,0,-0x5001fff8,"%s",
                               "STAppC::MainWindowProc"), local_EAX_112 != 0)) {
@@ -63,9 +69,14 @@ STAppC::MainWindowProc
     }
     switch(param_2) {
     case CASE_5:
-      memset(local_6c, 0, 0x20); /* compiler bulk-zero initialization */
+      pRVar6 = &local_6c;
+      for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
+        *(undefined4 *)pRVar6 = 0;
+        pRVar6 = (RecoveredRecord_006E3DB0_0F66DDCF *)&pRVar6->field_0x4;
+      }
       local_5c = 0x66;
-      AppClassTy::SendMessage(g_app_00806728,3,1,(int)local_6c);
+
+      AppClassTy::SendMessage(g_app_00806728,3,1,&local_6c);
       g_currentExceptionFrame = local_4c.previous;
       return local_8;
     case CASE_F:
@@ -93,12 +104,13 @@ STAppC::MainWindowProc
     case CASE_1C:
       if (param_3 == 0) {
         if (g_dDXContext_0080759C != nullptr) {
-          FUN_006ba760((int)g_dDXContext_0080759C);
+          FUN_006ba760((RecoveredRecord_006BA760_C6EE148F *)g_dDXContext_0080759C);
         }
         if (g_sT3DSMAPContext_00807598 != nullptr) {
           FUN_006dc310();
         }
-        uVar3 = thunk_FUN_00567060(0x807658);
+
+        uVar3 = thunk_FUN_00567060((RecoveredRecord_00567060_20B54E08 *)&g_sound);
         if (uVar3 != 0) {
           thunk_FUN_005713b0(0x807620);
         }
@@ -114,10 +126,10 @@ STAppC::MainWindowProc
         return local_8;
       }
       if (g_dDXContext_0080759C != nullptr) {
-        FUN_006ba740((int)g_dDXContext_0080759C);
+        FUN_006ba740((RecoveredRecord_006BA740_A0A3FDA8 *)g_dDXContext_0080759C);
       }
       if (g_sT3DSMAPContext_00807598 != nullptr) {
-        FUN_006dc300((int)g_sT3DSMAPContext_00807598);
+        FUN_006dc300((RecoveredRecord_006DC300_711D9253 *)g_sT3DSMAPContext_00807598);
       }
       thunk_FUN_00573240();
       thunk_FUN_00571320(&DAT_00807620,hWnd);
@@ -169,23 +181,30 @@ STAppC::MainWindowProc
     }
   }
   else if (param_2 == 0x2660) {
-    Library::DKW::DV::FUN_006c4110(g_anonShape_006C3FC0_72DDFA27_008075A0);
-    if ((g_anonShape_006C3FC0_72DDFA27_008075A0->field_0004 & 0x40000000) != 0) {
-      FUN_006c3f00((int)g_anonShape_006C3FC0_72DDFA27_008075A0);
+
+    Library::DKW::DV::FUN_006c4110(g_recoveredSourceFamily_dvideo_008075A0);
+    if ((g_recoveredSourceFamily_dvideo_008075A0->field_0004 & 0x40000000) != 0) {
+
+      FUN_006c3f00(g_recoveredSourceFamily_dvideo_008075A0);
     }
     if (DAT_00806738 != 8) {
       DAT_00806738 = 8;
+
       Library::DKW::DDX::FUN_006b9b40
                 (g_dDXContext_0080759C,0x10000001,g_nWidth_00806730,DAT_00806734,8,g_nWidth_00806730
                  ,DAT_00806734,0,0,0);
+
       Library::DKW::DDX::FUN_006b1470((int *)g_ddxContext_008075A8);
     }
     FUN_006b5f80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
+
     Library::DKW::DDX::FUN_006bab60(g_dDXContext_0080759C,0x1000000);
+
     Library::DKW::DDX::FUN_006bb370(g_dDXContext_0080759C,0,0);
     g_app_00806728->field_4EFA = 0;
     thunk_FUN_00567180(&g_app_00806728->field_0x38,hWnd);
-    FUN_006e3db0((int)&g_app_00806728->field_0x113a);
+
+    FUN_006e3db0(g_app_00806728,(RecoveredRecord_006E3DB0_0F66DDCF *)&g_app_00806728->field_0x113a);
     g_currentExceptionFrame = local_4c.previous;
     return local_8;
   }

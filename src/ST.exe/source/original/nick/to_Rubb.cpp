@@ -34,7 +34,7 @@ int __thiscall st::fn_0062E740(STRubbishC *this,STMessage *message)
   int local_EAX_1038;
   int iVar9;
   int iVar11;
-  AnonShape_0062FA80_0B91B2B9 *pAVar12;
+  RecoveredRecordView_0062FA80_9D6D3E8C *pRVar12;
   InternalExceptionFrame local_58;
   STRubbishC *local_14;
   byte *local_10;
@@ -44,10 +44,12 @@ int __thiscall st::fn_0062E740(STRubbishC *this,STMessage *message)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
+
   local_EAX_35 = st::fn_0072D7F0(local_58.jumpBuffer,0);
   this_00 = local_14;
   if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_58.previous;
+
     iVar9 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_Rubb.cpp"),0xa6,0,local_EAX_35,
                                st::mutable_c_string("%s"),"STRubbishC::GetMessage");
     if (iVar9 == 0) {
@@ -57,17 +59,19 @@ int __thiscall st::fn_0062E740(STRubbishC *this,STMessage *message)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   /* ST_CALLSITE[0062E77E]: CALL 0x00403ebd; direct=00403EBD STGameObjC::GetMessage */
-  iVar6 = st::fn_00403EBD((STGameObjC *)local_14,message);
+  iVar6 = st::fn_00403EBD(reinterpret_cast<STGameObjC *>(local_14),message);
   if (iVar6 == 0xffff) {
     return 0xffff;
   }
   SVar3 = message->id;
   if (MESS_SHARED_0003 < SVar3) {
     if (SVar3 == MESS_SHARED_0108) {
+
       local_EAX_1038 = st::fn_0040581C();
       st::fn_00402E0A(this_00,local_EAX_1038);
     }
     else if (SVar3 == MESS_SHARED_010F) {
+      /* ST_CALLSITE[0062EB0F]: CALL 0x00404719; direct=00404719 thunk_FUN_0062f940; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
       local_10 = st::fn_00404719(this_00,&local_c);
       /* ST_CALLSITE[0062EB26]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
       st::fn_004025F9(g_playSystem_00802A38,(int *)this_00->field_0018,local_10,local_c);
@@ -79,7 +83,7 @@ int __thiscall st::fn_0062E740(STRubbishC *this,STMessage *message)
     return 0;
   }
   if (SVar3 == MESS_SHARED_0003) {
-    st::fn_00401D1B((AnonShape_0062F7A0_700302F7 *)this_00);
+    st::fn_00401D1B(reinterpret_cast<RecoveredRecordView_0062F7A0_F6CC2FA1 *>(this_00));
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
@@ -89,10 +93,10 @@ int __thiscall st::fn_0062E740(STRubbishC *this,STMessage *message)
          /* ST_CALLSITE[0062EAB0]: CALL 0x00401d39; direct=00401D39 STRubbishC::sub_0062FEA0 */
          (local_EAX_880 = st::fn_00401D39(this_00,this_00->field_01D5,this_00->field_01D9),
          local_EAX_880 != 0)) {
-        st::fn_00405533((STJellyGunC *)this_00);
+        st::fn_00405533(reinterpret_cast<STJellyGunC *>(this_00));
         this_00->field_01F9 = 1;
       }
-      st::fn_0040131B((RecoveredRecord_STRubbishC_0062F150 *)this_00);
+      st::fn_0040131B(reinterpret_cast<RecoveredRecord_STRubbishC_0062F150 *>(this_00));
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
@@ -109,28 +113,30 @@ int __thiscall st::fn_0062E740(STRubbishC *this,STMessage *message)
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  pAVar12 = static_cast<AnonShape_0062FA80_0B91B2B9 *>((message->arg0).ptr);
-  local_8 = (AnonShape_0062E740_213F21A8 *)pAVar12;
-  if (*(int *)&pAVar12->field_0xc == 2) {
-    st::fn_004032AB(this_00,pAVar12);
+  pRVar12 = static_cast<RecoveredRecordView_0062FA80_9D6D3E8C *>((message->arg0).ptr);
+  local_8 = reinterpret_cast<AnonShape_0062E740_213F21A8 *>(pRVar12);
+  if (*(int *)&pRVar12->field_0xc == 2) {
+
+    st::fn_004032AB(this_00,pRVar12);
     if (this_00->field_01F9 == '\0') {
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
-    st::fn_00405533((STJellyGunC *)this_00);
+    st::fn_00405533(reinterpret_cast<STJellyGunC *>(this_00));
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
   if (((this_00->field_01D5 < 0) || (this_00->field_01D9 < 0)) || (this_00->field_01DD < 0)) {
-    iVar7 = pAVar12->field_0014;
+    iVar7 = pRVar12->field_0014;
     iVar7 = STBiasedDiv16(iVar7, 0xc9); /* exact signed 16-bit grid-index division */
     this_00->field_01D5 = iVar7;
-    iVar7 = pAVar12->field_0018;
+    iVar7 = pRVar12->field_0018;
     iVar7 = STBiasedDiv16(iVar7, 0xc9); /* exact signed 16-bit grid-index division */
     this_00->field_01D9 = iVar7;
-    iVar7 = pAVar12->field_001C;
+    iVar7 = pRVar12->field_001C;
     iVar7 = STBiasedDiv16(iVar7, 200); /* exact signed 16-bit grid-index division */
     this_00->field_01DD = iVar7;
+
     local_EAX_339 =
          st::fn_00404D3B((short)this_00->field_01D5,(short)this_00->field_01D9,(short)iVar7);
     if (local_EAX_339 != 0) {
@@ -144,15 +150,15 @@ int __thiscall st::fn_0062E740(STRubbishC *this,STMessage *message)
       }
       else {
         pSVar8 = STGridAt3D(g_worldGrid, sVar5, sVar2, sVar1).objects[1];
-        pAVar12 = (AnonShape_0062FA80_0B91B2B9 *)local_8;
+        pRVar12 = reinterpret_cast<RecoveredRecordView_0062FA80_9D6D3E8C *>(local_8);
       }
       if ((pSVar8 == nullptr) &&
          /* ST_CALLSITE[0062E93E]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
          (iVar7 = st::fn_00401325
                             ((short)this_00->field_01D5,(short)this_00->field_01D9,
                              (short)this_00->field_01DD,1,
-                             (RecoveredRecord_DumpClassC_00495EC0 *)this_00),
-         pAVar12 = (AnonShape_0062FA80_0B91B2B9 *)local_8, iVar7 == 0)) {
+                             reinterpret_cast<RecoveredRecord_DumpClassC_00495EC0 *>(this_00)),
+         pRVar12 = reinterpret_cast<RecoveredRecordView_0062FA80_9D6D3E8C *>(local_8), iVar7 == 0)) {
         iVar7 = local_8->field_0014;
         iVar7 = STBiasedDiv16(iVar7, 0xc9); /* exact signed 16-bit grid-index division */
         this_00->field_01D5 = iVar7;
@@ -173,7 +179,7 @@ int __thiscall st::fn_0062E740(STRubbishC *this,STMessage *message)
   }
 LAB_0062ea02:
   /* ST_CALLSITE[0062EA05]: CALL 0x00403edb; direct=00403EDB STRubbishC::sub_0062FCA0 */
-  local_EAX_709 = st::fn_00403EDB(this_00,(AnonShape_0062FCA0_22A9EE35 *)pAVar12);
+  local_EAX_709 = st::fn_00403EDB(this_00,reinterpret_cast<RecoveredRecordView_0062FCA0_4CB838FB *>(pRVar12));
   if (local_EAX_709 == 0xffff) {
     return 0xffff;
   }
@@ -206,9 +212,11 @@ int __thiscall st::fn_0062ED90(STRubbishC *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar2 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_Rubb.cpp"),0xd9,0,iVar2,st::mutable_c_string("%s"),
                                "STRubbishC::RubbishCreatePart");
     if (iVar7 == 0) {
@@ -223,8 +231,9 @@ int __thiscall st::fn_0062ED90(STRubbishC *this)
   do {
     if (*piVar2 == 0) {
       local_8 = iVar5;
+
       puVar3 = static_cast<uint *>(st::fn_006AAC70(0x3e));
-      (&local_c->field_01E5)[iVar6] = puVar3;
+      (&local_c->field_01E5)[iVar6] = st::machine_word_boundary_cast<undefined4>(puVar3);
       if (puVar3 != nullptr) {
         for (iVar5 = 0xf; iVar5 != 0; iVar5 = iVar5 + -1) {
           *puVar3 = 0;
@@ -233,7 +242,8 @@ int __thiscall st::fn_0062ED90(STRubbishC *this)
         *(undefined2 *)puVar3 = 0;
         iVar5 = iVar6;
         if (local_c->field_01F9 != '\0') {
-          pSVar4 = (STT3DSprC *)st::fn_0072E530(0x40);
+          /* ST_CALLSITE[0062EE2E]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint */
+          pSVar4 = st::pointer_boundary_cast<STT3DSprC *>(st::fn_0072E530(0x40));
           if (pSVar4 == nullptr) {
             pSVar4 = nullptr;
           }
@@ -278,7 +288,7 @@ st::fn_0062F3B0
   int iVar3;
   uint uVar5;
   InternalExceptionFrame local_5c;
-  undefined4 local_18;
+  uint local_18;
   STT3DSprC *local_14;
   int local_10;
   int local_c;
@@ -322,6 +332,7 @@ LAB_0062f450:
   }
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
+
   iVar2 = st::fn_0072D7F0(local_5c.jumpBuffer,0);
   this_00 = local_14;
   if (iVar2 == 0) {
@@ -349,6 +360,7 @@ LAB_0062f450:
   }
   else {
     g_currentExceptionFrame = local_5c.previous;
+
     iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_Rubb.cpp"),0x189,0,iVar2,st::mutable_c_string("%s"),
                                "STRubbishC::LoadImagSpr");
     if (iVar3 != 0) {
@@ -358,4 +370,3 @@ LAB_0062f450:
   }
   return 0xffff;
 }
-

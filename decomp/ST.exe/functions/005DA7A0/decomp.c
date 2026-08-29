@@ -16,10 +16,12 @@ undefined4 FUN_005da7a0(void)
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar3 == 0) {
     puVar1 = &local_8->field_068A;
     if (local_8->field_068A == 0) {
+
       Library::DKW::DDX::FUN_006b62d0(puVar1);
       piVar2 = (int *)*puVar1;
       bVar5 = true;
@@ -38,9 +40,10 @@ undefined4 FUN_005da7a0(void)
         pcVar6 = FUN_006c8170(pcVar6);
         if (pcVar6 != nullptr) {
           iVar4 = *puVar1;
+
           Library::MSVCRT::FUN_0072da70
-                    ((undefined4 *)(iVar4 + 0x1c),(AnonPointee_TLOBaseTy_0607 *)(iVar4 + 8),
-                     STField<int>(iVar4,0x4) * 0x14);
+                    ((RecoveredRecord_006BFE70_3123BCE8 *)(iVar4 + 0x1c),
+                     (AnonPointee_TLOBaseTy_0607 *)(iVar4 + 8),STField<int>(iVar4,0x4) * 0x14);
           iVar4 = *puVar1;
           STField<undefined4>(iVar4,0xC) = DAT_007cd700;
           STField<undefined4>(iVar4,0x10) = DAT_007cd704;

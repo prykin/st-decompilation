@@ -13,9 +13,8 @@ undefined4 __thiscall FUN_00423d80(void *this,DArrayTy *groupContent)
   uint uVar3;
   uint index;
   uint uVar4;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_c;
+  uint local_8;
   uVar1 = groupContent->count;
   local_8 = 0;
   uVar3 = 0;
@@ -23,9 +22,8 @@ undefined4 __thiscall FUN_00423d80(void *this,DArrayTy *groupContent)
     index = 0;
     do {
       DArrayGetElement(groupContent,index,&local_c);
-      /* ST_CALLSITE[00423DB6]: CALL dword ptr [EDX + 0x4] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      iVar2 = (**(code **)(*(int *)this + 4))(local_c);
+      /* ST_CALLSITE[00423DB6]: CALL dword ptr [EDX + 0x4]; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
+      iVar2 = STStructuralVirtualCall<undefined4>(this, 0x4, local_c);
       if (iVar2 == 0) {
         local_8 = 1;
       }

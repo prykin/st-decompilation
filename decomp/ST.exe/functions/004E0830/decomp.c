@@ -66,7 +66,8 @@ undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
       if (uVar12 == 1) {
         if (param_1->field_04E0[1] == 0) {
           param_1->field_04E0[2] = 3;
-          thunk_FUN_004e04a0((AnonShape_004E04A0_3A5B2D2E *)param_1);
+
+          thunk_FUN_004e04a0((RecoveredRecordView_004E04A0_E5D04031 *)param_1);
           switch(param_1->field_05AC) {
           case CASE_39:
 switchD_004e08b2_caseD_39:
@@ -105,13 +106,15 @@ switchD_004e08b2_caseD_5e:
         else {
           param_1->field_04E0[2] = 2;
 LAB_004e0a1f:
-          thunk_FUN_004e04a0((AnonShape_004E04A0_3A5B2D2E *)param_1);
+
+          thunk_FUN_004e04a0((RecoveredRecordView_004E04A0_E5D04031 *)param_1);
         }
       }
       else if (uVar12 == 2) {
         if (param_1->field_04E0[1] == 0) {
           param_1->field_04E0[2] = 3;
-          thunk_FUN_004e04a0((AnonShape_004E04A0_3A5B2D2E *)param_1);
+
+          thunk_FUN_004e04a0((RecoveredRecordView_004E04A0_E5D04031 *)param_1);
           switch(param_1->field_05AC) {
           case CASE_39:
             goto switchD_004e08b2_caseD_39;
@@ -188,6 +191,7 @@ LAB_004e0a4f:
               param_1->field_04E0[5] = uVar12;
               param_1->field_04E0[6] = iVar8 + 1;
               if (g_tLOFake_00800BCC == nullptr) {
+
                 thunk_FUN_004cf430();
               }
               /* ST_CALLSITE[004E0BB2]: CALL 0x00401582; direct=00401582 TLOFakeTy::sub_004D0970 */
@@ -200,7 +204,8 @@ LAB_004e0a4f:
               iVar2 = param_1->field_05B8;
               param_1->field_04E0[8] = iVar8 * 0xc9 + 100;
               param_1->field_04E0[9] = iVar2 * 0xc9 - 0x28;
-              thunk_FUN_004ec0f0((AnonShape_004EC0F0_C371FA68 *)param_1);
+
+              thunk_FUN_004ec0f0((RecoveredRecordView_004EC0F0_2BA6D5E3 *)param_1);
               /* ST_CALLSITE[004E0C11]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
               TLOBaseTy::RotateSpr(param_1,0);
               if (param_1->field_05AC == CASE_52) {
@@ -224,6 +229,7 @@ LAB_004e0a4f:
     }
     break;
   case CASE_3:
+
     iVar8 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
     if (((int)param_1->field_01F5->field_020C <= iVar8) && (param_1->field_04DC != 0)) {
       pSVar3 = param_1->field_0010;
@@ -260,6 +266,7 @@ LAB_004e0a4f:
     param_1->field_04E0[3] = 0;
     /* ST_CALLSITE[004E0D6B]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar5 = LookupRecordByte(cVar23);
+
     thunk_FUN_005fd1b0(param_1->field_0024,(uint)bVar5,uVar15,uVar16,uVar17,uVar18,uVar19,uVar9,
                        uVar20,uVar12,pcVar21,piVar22,uVar25);
     if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
@@ -285,7 +292,8 @@ LAB_004e0de2:
       }
     }
     param_1->field_04D0 = CASE_5;
-    thunk_FUN_004cbf70(param_1);
+    /* ST_CALLSITE[004E0DF4]: CALL 0x00403616; direct=00403616 TLOBaseTy::sub_004CBF70 */
+    TLOBaseTy::sub_004CBF70(param_1);
     /* ST_CALLSITE[004E0DFC]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
     TLOBaseTy::RotateSpr(param_1,0);
     TVar1 = param_1->field_05AC;
@@ -304,12 +312,14 @@ LAB_004e0f14:
     pTVar10 = param_1->vtable;
     goto LAB_004e0e15;
   case CASE_5:
+
     iVar8 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
     if (iVar8 == param_1->field_01F5->field_020C) {
       param_1->field_04D0 = CASE_0;
       param_1->field_04DC = 0;
       param_1->field_04E0[10] = 0;
-      thunk_FUN_004cbf70(param_1);
+      /* ST_CALLSITE[004E0E7E]: CALL 0x00403616; direct=00403616 TLOBaseTy::sub_004CBF70 */
+      TLOBaseTy::sub_004CBF70(param_1);
       /* ST_CALLSITE[004E0E86]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
       TLOBaseTy::RotateSpr(param_1,0);
     }
@@ -333,14 +343,17 @@ LAB_004e0e15:
   }
 switchD_004e0aad_default:
   if ((param_1->field_05AC == CASE_61) && (param_1->field_04E0[0] != 0)) {
+
     iVar7 = thunk_FUN_004e4180((int)param_1->field_0024);
+
     uVar11 = thunk_FUN_004e41c0((int)param_1->field_0024);
     if (((int)uVar11 < iVar7) &&
        (param_1->field_04E0[0x12] + param_1->field_04E0[0x11] <= g_playSystem_00802A38->field_00E4))
     {
       param_1->field_04E0[0x11] = g_playSystem_00802A38->field_00E4;
       if ((int)DAT_007be8c4 <= (int)param_1->field_04E0[0xe]) {
-        thunk_FUN_004e1310((AnonShape_004E1310_4FD56DAE *)param_1);
+
+        thunk_FUN_004e1310((RecoveredRecordView_004E1310_CAFD722B *)param_1);
       }
       uVar12 = param_1->field_04E0[0] - 5;
       param_1->field_04E0[0] = uVar12;
@@ -352,8 +365,8 @@ switchD_004e0aad_default:
       if ((int)DAT_007be8c4 < (int)uVar12) {
         param_1->field_04E0[0xe] = DAT_007be8c4;
       }
-      this = (STResourceC *)
-             thunk_FUN_004d85e0(param_1->field_05B0,param_1->field_05B4,param_1->field_05B8);
+      /* ST_CALLSITE[004E0FF5]: CALL 0x00405e48; direct=00405E48 thunk_FUN_004d85e0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STResourceC; signature=__stdcall;pointer:/STResourceC;/int;/int;/int */
+      this = thunk_FUN_004d85e0(param_1->field_05B0,param_1->field_05B4,param_1->field_05B8);
       if (this != nullptr) {
         /* ST_CALLSITE[004E1009]: CALL 0x00402973; direct=00402973 STResourceC::SetResource */
         STResourceC::SetResource(this,param_1->field_04E0[0],1);

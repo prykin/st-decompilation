@@ -11,10 +11,17 @@
    Evidence: 006BFB90 -> EXTERNAL:0000004F @ 006BFBD0 | 006BFE70 -> 006BFB90 @ 006BFEB9
 
    [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 006BFB90 -> EXTERNAL:00000052 @ 006BFBA1 */
+   Evidence: 006BFB90 -> EXTERNAL:00000052 @ 006BFBA1
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (7), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=006BFE70 @ 006BFEB9 -> read as EAX on
+   every CFG path | 006BFE70 @ 006BFF61 -> read as EAX on every CFG path | 006BFE70 @ 006C003B ->
+   read as EAX on every CFG path | 006BFE70 @ 006C01DA -> read as EAX on every CFG path | 006BFE70 @
+   006C03CB -> read as EAX on every CFG path | 006BFE70 @ 006C04D5 -> read as EAX on every CFG path
+   | 006BFE70 @ 006C0604 -> read as EAX on every CFG path */
 
-DWORD FUN_006bfb90(HANDLE hFile,LPDWORD lpNumberOfBytesRead,LPVOID lpBuffer,
-                  DWORD nNumberOfBytesToRead)
+int FUN_006bfb90(HANDLE hFile,LPDWORD lpNumberOfBytesRead,LPVOID lpBuffer,DWORD nNumberOfBytesToRead
+                )
 
 {
   DWORD DVar1;
@@ -35,6 +42,6 @@ DWORD FUN_006bfb90(HANDLE hFile,LPDWORD lpNumberOfBytesRead,LPVOID lpBuffer,
   if (DVar1 != 0) {
     return DVar1;
   }
-  return 0xffffff03;
+  return -0xfd;
 }
 

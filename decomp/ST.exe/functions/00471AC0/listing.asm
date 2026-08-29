@@ -392,7 +392,7 @@ LAB_00471fab:
 00471FBF  50                        PUSH EAX
 00471FC0  51                        PUSH ECX
 00471FC1  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
-00471FC7  E8 EE 08 F9 FF            CALL 0x004028ba
+00471FC7  E8 EE 08 F9 FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override
 00471FCC  8B CE                     MOV ECX,ESI
 00471FCE  8B F8                     MOV EDI,EAX
 00471FD0  E8 13 FE F8 FF            CALL 0x00401de8
@@ -497,7 +497,7 @@ switchD_00471fe0::caseD_9:
 004720F6  0F BF C0                  MOVSX EAX,AX
 004720F9  50                        PUSH EAX
 004720FA  8B CE                     MOV ECX,ESI
-004720FC  E8 B1 0F F9 FF            CALL 0x004030b2
+004720FC  E8 B1 0F F9 FF            CALL 0x004030b2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override
 00472101  50                        PUSH EAX
 00472102  8B CE                     MOV ECX,ESI
 00472104  E8 F3 01 F9 FF            CALL 0x004022fc
@@ -1012,7 +1012,7 @@ LAB_0047278e:
 00472795  0F 85 15 05 00 00         JNZ 0x00472cb0
 0047279B  6A 02                     PUSH 0x2
 0047279D  8B CE                     MOV ECX,ESI
-0047279F  E8 61 33 F9 FF            CALL 0x00405b05
+0047279F  E8 61 33 F9 FF            CALL 0x00405b05  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 004727A4  85 C0                     TEST EAX,EAX
 004727A6  0F 85 04 05 00 00         JNZ 0x00472cb0
 004727AC  8B 8E 83 04 00 00         MOV ECX,dword ptr [ESI + 0x483]
@@ -1178,7 +1178,7 @@ LAB_004729bd:
 004729C4  0F 85 E6 02 00 00         JNZ 0x00472cb0
 004729CA  6A 01                     PUSH 0x1
 004729CC  8B CE                     MOV ECX,ESI
-004729CE  E8 32 31 F9 FF            CALL 0x00405b05
+004729CE  E8 32 31 F9 FF            CALL 0x00405b05  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 004729D3  85 C0                     TEST EAX,EAX
 004729D5  0F 85 D5 02 00 00         JNZ 0x00472cb0
 004729DB  8B 8E 83 04 00 00         MOV ECX,dword ptr [ESI + 0x483]
@@ -1230,7 +1230,7 @@ LAB_00472a3a:
 00472A63  0F BF C0                  MOVSX EAX,AX
 00472A66  50                        PUSH EAX
 00472A67  8B CE                     MOV ECX,ESI
-00472A69  E8 44 06 F9 FF            CALL 0x004030b2
+00472A69  E8 44 06 F9 FF            CALL 0x004030b2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override
 00472A6E  50                        PUSH EAX
 00472A6F  8B CE                     MOV ECX,ESI
 00472A71  E8 86 F8 F8 FF            CALL 0x004022fc

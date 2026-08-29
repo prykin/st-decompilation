@@ -23,6 +23,7 @@ void __thiscall HelpPanelTy::MObjProc(HelpPanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3_mg0 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3_mg0 == 0) {
@@ -57,11 +58,12 @@ void __thiscall HelpPanelTy::MObjProc(HelpPanelTy *this)
       StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_019C);
     }
     /* ST_CALLSITE[005163D7]: CALL 0x00402194; direct=00402194 HelpPanelTy::sub_00512BE0 */
-    sub_00512BE0(this_00,(int)this_00->field_01D3);
+    sub_00512BE0(this_00,(RecoveredRecord_00512BE0_263FD6FB *)this_00->field_01D3);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3_mg0_2 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x46e,0,iVar3_mg0,
                                    "%s","HelpPanelTy::MObjProc");
   if (iVar3_mg0_2 != 0) {

@@ -1,4 +1,4 @@
-FUN_00486af0:
+STBoatC::vfunc_80:
 00486AF0  55                        PUSH EBP
 00486AF1  8B EC                     MOV EBP,ESP
 00486AF3  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]

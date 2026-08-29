@@ -13,7 +13,8 @@ void * __cdecl FUN_0044e660(void)
 {
   STAllPlayersC *pSVar1;
 
-  pSVar1 = (STAllPlayersC *)FUN_006b04d0(0x20);
+  /* ST_CALLSITE[0044E662]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STAllPlayersC; signature=__stdcall;pointer:/STAllPlayersC;/uint */
+  pSVar1 = FUN_006b04d0(0x20);
   if (pSVar1 != nullptr) {
     pSVar1 = STAllPlayersC::STAllPlayersC(pSVar1);
     return pSVar1;

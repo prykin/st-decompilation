@@ -34,7 +34,8 @@ LAB_0055c06d:
 0055C09A  6A 00                     PUSH 0x0
 0055C09C  6A 00                     PUSH 0x0
 0055C09E  6A 00                     PUSH 0x0
-0055C0A0  E8 4B 95 15 00            CALL 0x006b55f0
+FUN_0055c050::override::prt_55c0a0_88e4d304:
+0055C0A0  E8 4B 95 15 00            CALL 0x006b55f0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy;/int;/int;/int;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;/int;/int;/int;/int;/int
 0055C0A5  5E                        POP ESI
 0055C0A6  5D                        POP EBP
 0055C0A7  C2 04 00                  RET 0x4

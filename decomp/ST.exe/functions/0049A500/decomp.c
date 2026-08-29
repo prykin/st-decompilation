@@ -23,15 +23,14 @@ STGroupBoatC::sub_0049A500
   int local_1c;
   int local_18;
   int local_14;
-  undefined1 local_10 [4];
+  byte local_10 [4];
   uint local_c;
   int local_8;
   int iVar3;
   int iVar5;
 
   index = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar1 = *(uint *)(this->field_0029 + 0xc);
+  uVar1 = this->field_0029->count;
   if (this->field_0027 != 0) {
     iVar3 = 0;
     sVar2 = 0;
@@ -41,9 +40,10 @@ STGroupBoatC::sub_0049A500
     local_c = 0;
     if (uVar1 != 0) {
       do {
-        DArrayGetElement((DArrayTy *)this->field_0029,index,local_10);
+
+        DArrayGetElement(this->field_0029,index,local_10);
         if (STPiece<0,2>(local_10) != 0xffff) {
-          /* ST_CALLSITE[0049A550]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
+          /* ST_CALLSITE[0049A550]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override */
           this_00 = STAllPlayersC::GetObjPtr
                               (g_allPlayers_007FA174,this->field_0024,STPiece<0,2>(local_10),CASE_1);
           /* ST_CALLSITE[0049A563]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */

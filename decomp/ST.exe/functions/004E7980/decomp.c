@@ -91,6 +91,7 @@ LAB_004e7b13:
               do {
                 if (3 < local_10) break;
                 puVar3 = (&PTR_DAT_007c0dc8)[iVar6];
+
                 iVar7 = thunk_FUN_004e60d0((int)puVar5,*(int *)(puVar3 + iVar9 + 5));
                 if (iVar7 < (int)(uint)(byte)puVar3[iVar9 + 9]) {
                   bVar4 = false;

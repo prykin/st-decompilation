@@ -2,10 +2,15 @@
 
 
 /* [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 0075C180 -> 0075B720 @ 0075C24F | 0075C180 -> 0075B720 @ 0075C2D3 */
+   Evidence: 0075C180 -> 0075B720 @ 0075C24F | 0075C180 -> 0075B720 @ 0075C2D3
 
-undefined4
-FUN_0075b720(undefined4 *param_1,AnonShape_0075C180_8EED234B *param_2,int param_3,int param_4)
+   [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=19,
+   ignored=0, unknown=0 */
+
+int FUN_0075b720(undefined4 *param_1,RecoveredRecordView_0075C180_C6DA97FC *param_2,int param_3,
+                int param_4)
 
 {
   int iVar1;
@@ -64,7 +69,7 @@ LAB_0075b7ac:
       }
       uVar3 = 0;
     }
-    param_2 = (AnonShape_0075C180_8EED234B *)((int)param_2 << 8 | uVar3);
+    param_2 = (RecoveredRecordView_0075C180_C6DA97FC *)((int)param_2 << 8 | uVar3);
   }
   param_1[4] = param_3;
   *param_1 = pbVar2;

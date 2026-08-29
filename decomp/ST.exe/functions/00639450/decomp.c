@@ -11,12 +11,13 @@
 void * __cdecl FUN_00639450(void)
 
 {
-  AnonShape_00639480_B53D0B0F *pAVar1;
+  RecoveredRecordView_00639480_D210DAC1 *pRVar1;
 
-  pAVar1 = (AnonShape_00639480_B53D0B0F *)FUN_006b04d0(0x2d8);
-  if (pAVar1 != nullptr) {
-    pAVar1 = thunk_FUN_00639480(pAVar1);
-    return pAVar1;
+  /* ST_CALLSITE[00639455]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00639480_B53D0B0F; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00639480_B53D0B0F;/uint */
+  pRVar1 = FUN_006b04d0(0x2d8);
+  if (pRVar1 != nullptr) {
+    pRVar1 = thunk_FUN_00639480(pRVar1);
+    return pRVar1;
   }
   return nullptr;
 }

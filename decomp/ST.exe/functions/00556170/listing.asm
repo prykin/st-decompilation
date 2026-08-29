@@ -29,7 +29,7 @@ TraksClassTy::PrepareAfterSave:
 005561C3  83 C0 5C                  ADD EAX,0x5c
 005561C6  50                        PUSH EAX
 005561C7  56                        PUSH ESI
-005561C8  E8 93 9E 15 00            CALL 0x006b0060
+005561C8  E8 93 9E 15 00            CALL 0x006b0060  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/TraksClassTy_field_0024DArray; source view only; no Ghidra override
 005561CD  89 43 24                  MOV dword ptr [EBX + 0x24],EAX
 005561D0  89 70 04                  MOV dword ptr [EAX + 0x4],ESI
 LAB_005561d3:
@@ -188,7 +188,7 @@ LAB_00556399:
 0055639B  6A 3C                     PUSH 0x3c
 0055639D  6A 32                     PUSH 0x32
 0055639F  6A 00                     PUSH 0x0
-005563A1  E8 EA 7E 15 00            CALL 0x006ae290
+005563A1  E8 EA 7E 15 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/TraksClassTy_field_0024DArray; source view only; no Ghidra override
 005563A6  89 43 24                  MOV dword ptr [EBX + 0x24],EAX
 LAB_005563a9:
 005563A9  8B 4D B0                  MOV ECX,dword ptr [EBP + -0x50]

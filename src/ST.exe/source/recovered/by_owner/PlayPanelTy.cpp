@@ -33,16 +33,16 @@ void __thiscall st::fn_0053A540(PlayPanelTy *this)
   }
   this->field_002C = (short)iVar4;
   this->field_002E = (short)((uint)iVar4 >> 0x10);
-  st::fn_006E6080(this,2,this->field_01C5,(undefined4 *)puVar1);
+  st::fn_006E6080(this,2,this->field_01C5,reinterpret_cast<undefined4 *>(puVar1));
   this->field_0028 = 0x20;
   bVar7 = 8 < DAT_00808aaf;
   this->field_002C = (short)(uint)bVar7;
   this->field_002E = (short)((uint)bVar7 >> 0x10);
-  st::fn_006E6080(this,2,this->field_01C5,(undefined4 *)puVar1);
+  st::fn_006E6080(this,2,this->field_01C5,reinterpret_cast<undefined4 *>(puVar1));
   this->field_0028 = 0x22;
   this->field_002C = 0;
   this->field_002E = 0;
-  st::fn_006E6080(this,2,this->field_01C5,(undefined4 *)puVar1);
+  st::fn_006E6080(this,2,this->field_01C5,reinterpret_cast<undefined4 *>(puVar1));
   bVar2 = 0;
   this->field_0028 = 0x20;
   piVar6 = reinterpret_cast<int *>(&this->field_01A1);
@@ -56,7 +56,7 @@ void __thiscall st::fn_0053A540(PlayPanelTy *this)
       }
       this->field_002C = (short)uVar3;
       this->field_002E = (short)((uint)uVar3 >> 0x10);
-      st::fn_006E6080(this,2,piVar6[-8],(undefined4 *)puVar1);
+      st::fn_006E6080(this,2,piVar6[-8],reinterpret_cast<undefined4 *>(puVar1));
       if ((bVar2 < DAT_00808aaf) && (DAT_00808783 == '\x03')) {
         uVar3 = 1;
       }
@@ -65,7 +65,7 @@ void __thiscall st::fn_0053A540(PlayPanelTy *this)
       }
       this->field_002C = (short)uVar3;
       this->field_002E = (short)((uint)uVar3 >> 0x10);
-      st::fn_006E6080(this,2,*piVar6,(undefined4 *)puVar1);
+      st::fn_006E6080(this,2,*piVar6,reinterpret_cast<undefined4 *>(puVar1));
     }
     bVar2 = bVar2 + 1;
     piVar6 = piVar6 + 1;
@@ -74,4 +74,3 @@ void __thiscall st::fn_0053A540(PlayPanelTy *this)
   st::fn_00403242(this);
   return;
 }
-

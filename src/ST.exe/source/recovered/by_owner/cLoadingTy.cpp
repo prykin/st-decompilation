@@ -11,9 +11,12 @@
 void __thiscall st::fn_00554A50(cLoadingTy *this)
 
 {
-  st::fn_006B5F80((int *)g_ddxContext_008075A8,0,0,g_nWidth_00806730,DAT_00806734);
+  st::fn_006B5F80(reinterpret_cast<int *>(g_ddxContext_008075A8),0,0,g_nWidth_00806730,DAT_00806734);
+
   st::fn_006B4640(g_dDXContext_0080759C,0,0,this->field_0000,nullptr);
-  st::fn_006B48A0((int *)g_dDXContext_0080759C,0,0,(BITMAPINFO *)this->field_0004,nullptr,0);
+
+  st::fn_006B48A0(reinterpret_cast<int *>(g_dDXContext_0080759C),0,0,reinterpret_cast<BITMAPINFO *>(this->field_0004),nullptr,0);
+
   st::fn_006BB370(g_dDXContext_0080759C,0,0);
   return;
 }
@@ -41,14 +44,14 @@ void __thiscall st::fn_00555570(cLoadingTy *this)
 
   if (this->field_0048 != 0) {
     /* ST_CALLSITE[00555594]: CALL ESI */
-    iVar1 = st::external_00000085(st::pointer_boundary_cast<LPMSG>(&local_20),g_hWnd_00806748,0,0,1);
+    iVar1 = st::external_00000085(reinterpret_cast<LPMSG>(&local_20),g_hWnd_00806748,0,0,1);
     while (iVar1 != 0) {
       /* ST_CALLSITE[005555AC]: CALL EDI */
-      st::external_00000083(st::pointer_boundary_cast<MSG *>(&local_20));
+      st::external_00000083(reinterpret_cast<MSG *>(&local_20));
       /* ST_CALLSITE[005555B2]: CALL EBX */
-      st::external_00000084(st::pointer_boundary_cast<MSG *>(&local_20));
+      st::external_00000084(reinterpret_cast<MSG *>(&local_20));
       /* ST_CALLSITE[005555C5]: CALL ESI */
-      iVar1 = st::external_00000085(st::pointer_boundary_cast<LPMSG>(&local_20),g_hWnd_00806748,0,0,1);
+      iVar1 = st::external_00000085(reinterpret_cast<LPMSG>(&local_20),g_hWnd_00806748,0,0,1);
     }
   }
   return;
@@ -70,4 +73,3 @@ void __thiscall st::fn_00555680(cLoadingTy *this,char *param_1)
   }
   return;
 }
-

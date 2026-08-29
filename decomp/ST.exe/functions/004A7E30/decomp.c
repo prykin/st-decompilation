@@ -3,9 +3,14 @@
 
 /* [STMethodOwnerApplier] Structural method owner recovered as STGroupBoatC.
    Evidence: this_call_owners=[STGroupBoatC]; agreed_this_calls=1; incoming_this_accesses=10;
-   incoming_edx_uses=0; incoming_stack_parameter_uses=1 */
+   incoming_edx_uses=0; incoming_stack_parameter_uses=1
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00497E00 @ 00497F66 -> killed on
+   every CFG path | 0049B7D0 @ 0049B806 -> read as EAX on every CFG path | 004A7AF0 @ 004A7B9B ->
+   read as EAX on every CFG path | 004A7AF0 @ 004A7C80 -> read as EAX on every CFG path */
 
-undefined4 __thiscall STGroupBoatC::sub_004A7E30(STGroupBoatC *this,int param_1)
+int __thiscall STGroupBoatC::sub_004A7E30(STGroupBoatC *this,int param_1)
 
 {
   dword dVar1;
@@ -14,7 +19,7 @@ undefined4 __thiscall STGroupBoatC::sub_004A7E30(STGroupBoatC *this,int param_1)
   int *piVar3;
   uint uVar4;
   int iVar5;
-  undefined1 local_14 [6];
+  byte local_14 [6];
   int local_e;
   int local_a;
 
@@ -48,6 +53,7 @@ undefined4 __thiscall STGroupBoatC::sub_004A7E30(STGroupBoatC *this,int param_1)
       this->field_0236 = 0;
       this->field_023E = 0;
       this->field_0232 = iVar5 - 1U;
+
       DArrayGetElement(array,iVar5 - 1U,local_14);
       bVar2 = thunk_FUN_00430750(CASE_8);
       uVar4 = (uint)bVar2;
@@ -56,6 +62,7 @@ undefined4 __thiscall STGroupBoatC::sub_004A7E30(STGroupBoatC *this,int param_1)
     else {
       this->field_023E = 0;
       this->field_0232 = iVar5 + 1U;
+
       DArrayGetElement(array,iVar5 + 1U,local_14);
       bVar2 = thunk_FUN_00430750(CASE_8);
       uVar4 = (uint)bVar2;
@@ -67,6 +74,7 @@ undefined4 __thiscall STGroupBoatC::sub_004A7E30(STGroupBoatC *this,int param_1)
       this->field_0232 = 1;
       this->field_0236 = 1;
       this->field_023E = 0;
+
       DArrayGetElement(this->field_022A,1,local_14);
       bVar2 = thunk_FUN_00430750(CASE_8);
     }
@@ -74,6 +82,7 @@ undefined4 __thiscall STGroupBoatC::sub_004A7E30(STGroupBoatC *this,int param_1)
       uVar4 = this->field_0232 - 1;
       this->field_0232 = uVar4;
       this->field_023E = 0;
+
       DArrayGetElement(this->field_022A,uVar4,local_14);
       bVar2 = thunk_FUN_00430750(CASE_8);
       local_a = local_e;

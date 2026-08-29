@@ -74,7 +74,7 @@ FUN_00613140:
 0061321F  C1 F9 10                  SAR ECX,0x10
 00613222  51                        PUSH ECX
 00613223  8B CE                     MOV ECX,ESI
-00613225  FF 52 14                  CALL dword ptr [EDX + 0x14]
+00613225  FF 52 14                  CALL dword ptr [EDX + 0x14]  ; [STIndirectCallsiteApplier] exact slot 0x14; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00613228  0F BF D0                  MOVSX EDX,AX
 0061322B  5E                        POP ESI
 0061322C  8B 04 95 38 21 7D 00      MOV EAX,dword ptr [EDX*0x4 + 0x7d2138]

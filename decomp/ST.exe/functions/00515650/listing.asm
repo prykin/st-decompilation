@@ -120,7 +120,7 @@ LAB_0051577b:
 0051578E  E8 62 FF EE FF            CALL 0x004056f5
 00515793  50                        PUSH EAX
 00515794  57                        PUSH EDI
-00515795  E8 06 5C 1F 00            CALL 0x0070b3a0
+00515795  E8 06 5C 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 0051579A  8B C8                     MOV ECX,EAX
 0051579C  83 C4 10                  ADD ESP,0x10
 0051579F  85 C9                     TEST ECX,ECX
@@ -144,7 +144,7 @@ LAB_0051577b:
 005157CA  8B 83 48 02 00 00         MOV EAX,dword ptr [EBX + 0x248]
 005157D0  6A 04                     PUSH 0x4
 005157D2  50                        PUSH EAX
-005157D3  E8 C8 5B 1F 00            CALL 0x0070b3a0
+005157D3  E8 C8 5B 1F 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 005157D8  8B 0E                     MOV ECX,dword ptr [ESI]
 005157DA  8B 93 18 02 00 00         MOV EDX,dword ptr [EBX + 0x218]
 005157E0  50                        PUSH EAX

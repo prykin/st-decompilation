@@ -739,7 +739,7 @@ LAB_005f3078:
 005F307B  8D 4D E8                  LEA ECX,[EBP + -0x18]
 005F307E  51                        PUSH ECX
 005F307F  8B CE                     MOV ECX,ESI
-005F3081  E8 B7 01 E1 FF            CALL 0x0040323d
+005F3081  E8 B7 01 E1 FF            CALL 0x0040323d  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 005F3086  8B 55 E8                  MOV EDX,dword ptr [EBP + -0x18]
 005F3089  8B 0D 38 2A 80 00         MOV ECX,dword ptr [0x00802a38]
 005F308F  52                        PUSH EDX

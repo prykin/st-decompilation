@@ -21,11 +21,10 @@ FUN_00660540(void *this,undefined4 param_1,short param_2,short param_3,short par
   short local_24;
   short local_22;
   short local_20;
-  undefined4 local_1e;
+  uint local_1e;
   int local_1a;
   char local_16 [15];
-  undefined2 local_7;
-
+  ushort local_7;
   psVar2 = &local_24;
   for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {
     psVar2[0] = 0;

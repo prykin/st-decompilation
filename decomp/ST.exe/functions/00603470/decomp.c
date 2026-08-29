@@ -12,7 +12,7 @@
    owner_type=/STDestC; current target parameter and return types retained when arity agrees;
    physical-slot geometry proves receiver/stack ABI only */
 
-void __thiscall STDestC::sub_00603470(STDestC *this,AnonShape_00603470_D413D02D *param_1)
+void __thiscall STDestC::sub_00603470(STDestC *this,RecoveredRecordView_00603470_1C45B4BC *param_1)
 
 {
   byte uVar1;

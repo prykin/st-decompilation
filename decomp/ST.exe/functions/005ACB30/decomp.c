@@ -21,6 +21,7 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pCVar3 = local_8;
   if (iVar4 == 0) {
@@ -28,6 +29,7 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
     if (((pCVar3->field_004D != 0x6121) && (g_int_00811764 != nullptr)) && (DAT_0080877e != '\0')
        ) {
+
       FUN_00715360(g_int_00811764,0,'\x10',nullptr,0,0,0xffffffff);
       thunk_FUN_005dac60();
     }
@@ -38,6 +40,7 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
     }
     if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
+
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
       else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
@@ -58,8 +61,11 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
       Library::MSVCRT::FUN_0072e2b0(pCVar3->field_20B8);
       pCVar3->field_20B8 = nullptr;
     }
+
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar3->array_00BC[0xc].field_01F0);
+
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar3->field_1B01);
+
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar3->field_1B92);
     puVar7 = &pCVar3->field_1C23;
     iVar6 = 0x16;
@@ -145,12 +151,14 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
       pCVar3->field_1C9F = nullptr;
     }
     if (pCVar3->field_004D != 0) {
+
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pCVar3->field_0x3d);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar5 = ReportDebugMessage("E:\\__titans\\Start\\load_obj.cpp",0x191,0,iVar4,"%s",
                              "ChooseMapTy::DoneChooseMap");
   if (iVar5 != 0) {

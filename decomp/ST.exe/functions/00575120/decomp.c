@@ -2,7 +2,7 @@
 
 
 void __thiscall
-FUN_00575120(void *this,AnonShape_005745E0_AF52CC75 *param_1,int param_2,int param_3)
+FUN_00575120(void *this,RecoveredRecordView_005745E0_17311247 *param_1,int param_2,int param_3)
 
 {
   uint *puVar1;
@@ -26,8 +26,9 @@ FUN_00575120(void *this,AnonShape_005745E0_AF52CC75 *param_1,int param_2,int par
     puVar4 = puVar4 + -iVar2;
     iVar3 = iVar3 + -1;
   } while (iVar3 != 0);
+  /* ST_CALLSITE[00575194]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override */
   local_8 = Library::DKW::LIB::MemAlloc((uint)param_1->field_0004 * (uint)param_1->field_0004);
-  thunk_FUN_00574920((AnonShape_00574920_7507981E *)param_1,param_2,param_3,local_8);
+  thunk_FUN_00574920((RecoveredRecordView_00574920_F0A9E3AD *)param_1,param_2,param_3,local_8);
   FreeAndNull(&local_8);
   return;
 }

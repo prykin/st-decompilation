@@ -371,7 +371,7 @@ LAB_004226cd:
 004226D4  74 3D                     JZ 0x00422713
 004226D6  8B 83 F5 01 00 00         MOV EAX,dword ptr [EBX + 0x1f5]
 004226DC  50                        PUSH EAX
-004226DD  E8 8E 85 28 00            CALL 0x006aac70
+004226DD  E8 8E 85 28 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_018D; source view only; no Ghidra override
 004226E2  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 004226E5  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]
 004226E8  8B F8                     MOV EDI,EAX
@@ -395,7 +395,7 @@ LAB_00422719:
 00422720  74 3D                     JZ 0x0042275f
 00422722  8B 83 FD 01 00 00         MOV EAX,dword ptr [EBX + 0x1fd]
 00422728  50                        PUSH EAX
-00422729  E8 42 85 28 00            CALL 0x006aac70
+00422729  E8 42 85 28 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_0191; source view only; no Ghidra override
 0042272E  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 00422731  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]
 00422734  8B F8                     MOV EDI,EAX
@@ -419,7 +419,7 @@ LAB_00422765:
 0042276C  74 3D                     JZ 0x004227ab
 0042276E  8B 83 05 02 00 00         MOV EAX,dword ptr [EBX + 0x205]
 00422774  50                        PUSH EAX
-00422775  E8 F6 84 28 00            CALL 0x006aac70
+00422775  E8 F6 84 28 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_0195; source view only; no Ghidra override
 0042277A  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 0042277D  8B 75 08                  MOV ESI,dword ptr [EBP + 0x8]
 00422780  8B F8                     MOV EDI,EAX
@@ -443,7 +443,7 @@ LAB_004227b1:
 004227B8  74 3D                     JZ 0x004227f7
 004227BA  8B 83 0D 02 00 00         MOV EAX,dword ptr [EBX + 0x20d]
 004227C0  50                        PUSH EAX
-004227C1  E8 AA 84 28 00            CALL 0x006aac70
+004227C1  E8 AA 84 28 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_0199; source view only; no Ghidra override
 004227C6  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 004227C9  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]
 004227CC  8B F8                     MOV EDI,EAX
@@ -493,7 +493,7 @@ LAB_00422847:
 0042284E  74 3D                     JZ 0x0042288d
 00422850  8B 83 25 02 00 00         MOV EAX,dword ptr [EBX + 0x225]
 00422856  50                        PUSH EAX
-00422857  E8 14 84 28 00            CALL 0x006aac70
+00422857  E8 14 84 28 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_01A5; source view only; no Ghidra override
 0042285C  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 0042285F  8B 75 08                  MOV ESI,dword ptr [EBP + 0x8]
 00422862  8B F8                     MOV EDI,EAX
@@ -517,7 +517,7 @@ LAB_00422893:
 0042289A  74 3D                     JZ 0x004228d9
 0042289C  8B 83 2D 02 00 00         MOV EAX,dword ptr [EBX + 0x22d]
 004228A2  50                        PUSH EAX
-004228A3  E8 C8 83 28 00            CALL 0x006aac70
+004228A3  E8 C8 83 28 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_01A9; source view only; no Ghidra override
 004228A8  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 004228AB  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]
 004228AE  8B F8                     MOV EDI,EAX
@@ -541,7 +541,7 @@ LAB_004228df:
 004228E6  74 3D                     JZ 0x00422925
 004228E8  8B 83 35 02 00 00         MOV EAX,dword ptr [EBX + 0x235]
 004228EE  50                        PUSH EAX
-004228EF  E8 7C 83 28 00            CALL 0x006aac70
+004228EF  E8 7C 83 28 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_01AD; source view only; no Ghidra override
 004228F4  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 004228F7  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]
 004228FA  8B F8                     MOV EDI,EAX
@@ -565,7 +565,7 @@ LAB_0042292b:
 00422932  74 3D                     JZ 0x00422971
 00422934  8B 83 3D 02 00 00         MOV EAX,dword ptr [EBX + 0x23d]
 0042293A  50                        PUSH EAX
-0042293B  E8 30 83 28 00            CALL 0x006aac70
+0042293B  E8 30 83 28 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_01B1; source view only; no Ghidra override
 00422940  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 00422943  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]
 00422946  8B F8                     MOV EDI,EAX
@@ -589,7 +589,7 @@ LAB_00422977:
 0042297E  74 3D                     JZ 0x004229bd
 00422980  8B 83 45 02 00 00         MOV EAX,dword ptr [EBX + 0x245]
 00422986  50                        PUSH EAX
-00422987  E8 E4 82 28 00            CALL 0x006aac70
+00422987  E8 E4 82 28 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_01B5; source view only; no Ghidra override
 0042298C  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 0042298F  8B 75 08                  MOV ESI,dword ptr [EBP + 0x8]
 00422992  8B F8                     MOV EDI,EAX
@@ -613,7 +613,7 @@ LAB_004229c3:
 004229CA  74 3D                     JZ 0x00422a09
 004229CC  8B 83 4D 02 00 00         MOV EAX,dword ptr [EBX + 0x24d]
 004229D2  50                        PUSH EAX
-004229D3  E8 98 82 28 00            CALL 0x006aac70
+004229D3  E8 98 82 28 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_01B9; source view only; no Ghidra override
 004229D8  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 004229DB  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]
 004229DE  8B F8                     MOV EDI,EAX
@@ -685,7 +685,7 @@ LAB_00422aa7:
 00422AAE  74 3D                     JZ 0x00422aed
 00422AB0  8B 83 65 02 00 00         MOV EAX,dword ptr [EBX + 0x265]
 00422AB6  50                        PUSH EAX
-00422AB7  E8 B4 81 28 00            CALL 0x006aac70
+00422AB7  E8 B4 81 28 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 00422ABC  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 00422ABF  8B 75 08                  MOV ESI,dword ptr [EBP + 0x8]
 00422AC2  8B F8                     MOV EDI,EAX
@@ -709,7 +709,7 @@ LAB_00422af3:
 00422AFA  74 47                     JZ 0x00422b43
 00422AFC  8B 83 6D 02 00 00         MOV EAX,dword ptr [EBX + 0x26d]
 00422B02  50                        PUSH EAX
-00422B03  E8 68 81 28 00            CALL 0x006aac70
+00422B03  E8 68 81 28 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 00422B08  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 00422B0B  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]
 00422B0E  8B F8                     MOV EDI,EAX

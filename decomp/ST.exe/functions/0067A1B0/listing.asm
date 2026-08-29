@@ -40,7 +40,7 @@ LAB_0067a1eb:
 0067A1FC  8B 10                     MOV EDX,dword ptr [EAX]
 0067A1FE  53                        PUSH EBX
 0067A1FF  8B C8                     MOV ECX,EAX
-0067A201  FF 12                     CALL dword ptr [EDX]
+0067A201  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 LAB_0067a203:
 0067A203  8B 8F 95 06 00 00         MOV ECX,dword ptr [EDI + 0x695]
 0067A209  46                        INC ESI

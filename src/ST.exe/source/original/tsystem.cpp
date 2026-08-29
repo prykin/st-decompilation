@@ -16,8 +16,7 @@ undefined4 __thiscall st::fn_00576AD0(BaseSystemC *this)
   uint uVar3;
   InternalExceptionFrame local_50;
   BaseSystemC *local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
@@ -59,9 +58,11 @@ void st::fn_00576BB0(void)
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
+
   errorCode = st::fn_0072D7F0(local_48.jumpBuffer,0);
   if (errorCode == 0) {
-    this = (BaseSystemC *)st::fn_0072E530(0x24);
+    /* ST_CALLSITE[00576BE2]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/BaseSystemC; signature=__cdecl;pointer:/BaseSystemC;/uint */
+    this = st::pointer_boundary_cast<BaseSystemC *>(st::fn_0072E530(0x24));
     if (this == nullptr) {
       g_baseSystem_00811638 = nullptr;
     }
@@ -74,14 +75,15 @@ void st::fn_00576BB0(void)
     }
     g_baseSystem_00811638->field_0020 = 0;
     /* ST_CALLSITE[00576C32]: CALL dword ptr [EAX] */
-    (*g_baseSystem_00811638->vtable->InitSystem)((SystemClassTy *)g_baseSystem_00811638);
+    (*g_baseSystem_00811638->vtable->InitSystem)(reinterpret_cast<SystemClassTy *>(g_baseSystem_00811638));
     /* ST_CALLSITE[00576C42]: CALL 0x006e4650; direct=006E4650 AppClassTy::AddSystem */
-    st::fn_006E4650((AppClassTy *)&DAT_00807620,(int *)g_baseSystem_00811638,0);
+    st::fn_006E4650(reinterpret_cast<AppClassTy *>(&DAT_00807620),reinterpret_cast<int *>(g_baseSystem_00811638),0);
     g_baseSystem_00811638->field_0020 = 1;
     g_currentExceptionFrame = local_48.previous;
     return;
   }
   g_currentExceptionFrame = local_48.previous;
+
   iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x40,0,errorCode,st::mutable_c_string("%s"),
                              "CreateBaseSystem");
   if (iVar2 != 0) {
@@ -107,21 +109,23 @@ void st::fn_00576CE0(void)
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
+
   errorCode = st::fn_0072D7F0(local_48.jumpBuffer,0);
   if (errorCode == 0) {
     if (g_baseSystem_00811638 != nullptr) {
       if (g_baseSystem_00811638->field_0020 == 1) {
-        st::fn_006E4B80(&DAT_00807620,(int)g_baseSystem_00811638);
+        st::fn_006E4B80(&DAT_00807620,reinterpret_cast<RecoveredRecord_006E4B80_A7B295CE *>(g_baseSystem_00811638));
       }
       /* ST_CALLSITE[00576D2F]: CALL dword ptr [EAX + 0x4] */
       g_baseSystem_00811638->vfunc_04();
-      st::fn_0072E2B0((HoloTy *)g_baseSystem_00811638);
+      st::fn_0072E2B0(reinterpret_cast<HoloTy *>(g_baseSystem_00811638));
       g_baseSystem_00811638 = nullptr;
     }
     g_currentExceptionFrame = local_48.previous;
     return;
   }
   g_currentExceptionFrame = local_48.previous;
+
   iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x4f,0,errorCode,st::mutable_c_string("%s"),
                              "DestroyBaseSystem");
   if (iVar2 != 0) {
@@ -194,33 +198,38 @@ undefined4 __thiscall st::fn_00576EF0(GameSystemC *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar4 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar4 == 0) {
     /* ST_CALLSITE[00576F31]: CALL 0x00402112; direct=00402112 LoadLand */
     PTR_00806750 = st::fn_00402112(g_cMf32_00806754,st::mutable_c_string("3D_MAP"));
-    pAVar5 = (AnonShape_006DBCA0_EF06575F *)st::fn_006B04D0(0x4f2);
+    /* ST_CALLSITE[00576F43]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F;/uint */
+    pAVar5 = st::pointer_boundary_cast<AnonShape_006DBCA0_EF06575F *>(st::fn_006B04D0(0x4f2));
     if (pAVar5 == nullptr) {
       pSVar6 = nullptr;
     }
     else {
-      pSVar6 = (ST3DSMAPContext *)st::fn_006DBCA0(pAVar5);
+      pSVar6 = reinterpret_cast<ST3DSMAPContext *>(st::fn_006DBCA0(pAVar5));
     }
     psVar2 = PTR_00806750;
     g_sT3DSMAPContext_00807598 = pSVar6;
-    pSVar6->field_0280 = (AnonPointee_ST3DSMAPContext_0280 *)PTR_00806750;
+    pSVar6->field_0280 = reinterpret_cast<AnonPointee_ST3DSMAPContext_0280 *>(PTR_00806750);
     iVar4 = (int)*psVar2 / 2;
     pSVar6->field_0284 = iVar4;
     pSVar6->field_0288 = iVar4 * iVar4;
-    st::fn_006E51F0((SystemClassTy *)local_8);
-    st::fn_006E8580(g_sT3DSMAPContext_00807598,(int *)g_ddxContext_008075A8);
-    PTR_00806724 = (AnonShape_GLOBAL_00806724_3210464F *)
-                   st::fn_0070AE60
-                             (PTR_00806770,st::mutable_c_string("scmask"),0,0,nullptr,1);
+
+    st::fn_006E51F0(reinterpret_cast<SystemClassTy *>(local_8));
+    st::fn_006E8580(g_sT3DSMAPContext_00807598,reinterpret_cast<int *>(g_ddxContext_008075A8));
+    /* ST_CALLSITE[00576FB0]: CALL 0x0070ae60; direct=0070AE60 Library::Ourlib::MFIMG::mfImtLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_00806724; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_00806724;pointer:/cMf32;pointer:/char;/byte;/int;pointer:/undefined4;/int */
+    PTR_00806724 = st::pointer_boundary_cast<RecoveredGlobalRecordView_00806724 *>(st::fn_0070AE60
+                             (PTR_00806770,st::mutable_c_string("scmask"),0,0,nullptr,1));
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;
+
     iVar4 = st::fn_0072D7F0(local_90.jumpBuffer,0);
     pGVar3 = local_8;
     if (iVar4 == 0) {
+
       puVar7 = st::fn_00725550(g_cMf32_00806760,PTR_s_ANIM_PALETTE_0079b1a8,0);
       pGVar3->field_0431 = puVar7;
     }
@@ -229,6 +238,7 @@ undefined4 __thiscall st::fn_00576EF0(GameSystemC *this)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x86,0,iVar4,st::mutable_c_string("%s"),
                              "GameSystemC::InitSystem");
   if (iVar8 != 0) {
@@ -265,38 +275,42 @@ void __thiscall st::fn_005770D0(GameSystemC *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   pGVar3 = local_8;
   if (errorCode == 0) {
     if (local_8->field_0431 != nullptr) {
-      st::fn_00725680((int *)&local_8->field_0431);
+      st::fn_00725680(reinterpret_cast<int *>(&local_8->field_0431));
     }
-    st::fn_0070B1D0((int *)&PTR_00806724);
+    st::fn_0070B1D0(reinterpret_cast<int *>(&PTR_00806724));
     if (g_interSystem_00802A28 != nullptr) {
-      st::fn_00401D3E(&DAT_00807620,(int *)&g_interSystem_00802A28);
+      /* ST_CALLSITE[00577147]: CALL 0x00401d3e; direct=00401D3E STAppC::sub_005711D0 */
+      st::fn_00401D3E(reinterpret_cast<STAppC *>(&DAT_00807620),reinterpret_cast<int *>(&g_interSystem_00802A28));
     }
     if (g_playSystem_00802A38 != nullptr) {
-      st::fn_00401D3E(&DAT_00807620,(int *)&g_playSystem_00802A38);
+      /* ST_CALLSITE[0057715F]: CALL 0x00401d3e; direct=00401D3E STAppC::sub_005711D0 */
+      st::fn_00401D3E(reinterpret_cast<STAppC *>(&DAT_00807620),reinterpret_cast<int *>(&g_playSystem_00802A38));
     }
     st::fn_004043BD();
     pSVar2 = g_sT3DSMAPContext_00807598;
     DAT_0080674c = 0;
     if (g_sT3DSMAPContext_00807598 != nullptr) {
       st::fn_006DBCF0(g_sT3DSMAPContext_00807598);
-      st::fn_0072E2B0((HoloTy *)pSVar2);
+      st::fn_0072E2B0(reinterpret_cast<HoloTy *>(pSVar2));
       g_sT3DSMAPContext_00807598 = nullptr;
     }
     st::fn_0040151E();
     if (PTR_00806750 != nullptr) {
-      st::fn_00401A50((int *)&PTR_00806750);
+      st::fn_00401A50(reinterpret_cast<int *>(&PTR_00806750));
     }
-    st::fn_006E52D0((AnonShape_006E52D0_AF06BCD2 *)pGVar3);
+    st::fn_006E52D0(reinterpret_cast<AnonShape_006E52D0_AF06BCD2 *>(pGVar3));
     /* ST_CALLSITE[005771BB]: CALL dword ptr [0x0085be40] */
     st::external_00000096(1);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0xa7,0,errorCode,st::mutable_c_string("%s"),
                              "GameSystemC::DoneSystem");
   if (iVar4 != 0) {
@@ -326,9 +340,11 @@ void st::fn_00577280(void)
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
+
   iVar2 = st::fn_0072D7F0(local_48.jumpBuffer,0);
   if (iVar2 == 0) {
-    this_00 = (GameSystemC *)st::fn_0072E530(0x435);
+    /* ST_CALLSITE[005772B5]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/GameSystemC; signature=__cdecl;pointer:/GameSystemC;/uint */
+    this_00 = st::pointer_boundary_cast<GameSystemC *>(st::fn_0072E530(0x435));
     if (this_00 == nullptr) {
       g_parentSystem_0081163C = nullptr;
     }
@@ -343,7 +359,7 @@ void st::fn_00577280(void)
     /* ST_CALLSITE[0057730B]: CALL dword ptr [EAX] */
     g_parentSystem_0081163C->InitSystem();
     /* ST_CALLSITE[0057731B]: CALL 0x006e4650; direct=006E4650 AppClassTy::AddSystem */
-    st::fn_006E4650((AppClassTy *)&DAT_00807620,(int *)g_parentSystem_0081163C,0);
+    st::fn_006E4650(reinterpret_cast<AppClassTy *>(&DAT_00807620),reinterpret_cast<int *>(g_parentSystem_0081163C),0);
     g_parentSystem_0081163C->field_0428 = 1;
     this = g_cursorClass_00802A30;
     iVar1 = g_cursorClass_00802A30->field_00C9;
@@ -360,6 +376,7 @@ void st::fn_00577280(void)
     return;
   }
   g_currentExceptionFrame = local_48.previous;
+
   iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0xbb,0,iVar2,st::mutable_c_string("%s"),
                              "CreateGameSystem");
   if (iVar3 != 0) {
@@ -383,12 +400,12 @@ void st::fn_00577280(void)
    [STDiscriminatedPayloadApplier] Case-local payload view: message->id == MESS_GAMESYSTEMC_43FF
    uses
    /SubmarineTitans/Recovered/DiscriminatedPayloads/GameSystemC_GetMessage_005776D0_MessagePayload_Case_MESS_GAMESYSTEMC_43FF.
-   The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage.
+   carrier=message; The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: message->id == MESS_GAMESYSTEMC_4400
    uses
    /SubmarineTitans/Recovered/DiscriminatedPayloads/GameSystemC_GetMessage_005776D0_MessagePayload_Case_MESS_GAMESYSTEMC_4400.
-   The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage. */
+   carrier=message; The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage. */
 
 int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
 
@@ -422,17 +439,17 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
   char local_2b4 [260];
   InternalExceptionFrame local_1b0;
   char local_16c [64];
-  undefined4 local_12c;
+  uint local_12c;
   byte local_128;
-  undefined1 local_127;
-  undefined1 local_126;
-  undefined1 local_125;
+  byte local_127;
+  byte local_126;
+  byte local_125;
   DWORD local_124;
   InternalExceptionFrame local_d0;
   InternalExceptionFrame local_8c;
   STMessage local_48;
   GameSystemC *local_28;
-  AnonShape_00648C10_30A1BBFD *local_24;
+  RecoveredRecordView_00648C10_4BE0A791 *local_24;
   char **local_20;
   cMf32 *local_1c;
   DArrayTy *local_18;
@@ -446,10 +463,12 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
   local_28 = this;
+
   local_EAX_51 = st::fn_0072D7F0(local_8c.jumpBuffer,0);
   pGVar4 = local_28;
   if (local_EAX_51 != 0) {
     g_currentExceptionFrame = local_8c.previous;
+
     iVar19 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x1c6,0,local_EAX_51,
                                 st::mutable_c_string("%s"),"GameSystemC::GetMessage");
     if (iVar19 == 0) {
@@ -458,7 +477,8 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006E5F00((SystemClassTy *)local_28,message);
+
+  st::fn_006E5F00(reinterpret_cast<SystemClassTy *>(local_28),message);
   if (message->id == MESS_GAMESYSTEMC_43FF) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     piVar13 = *(int **)((message->arg0).u32 + 0x17);
@@ -469,6 +489,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
         if (piVar13[2] != 0) {
           DAT_00808784 = piVar13[1];
           pGVar4->field_042C = DAT_00808784;
+
           st::fn_00725760
                     (g_sT3DSMAPContext_00807598,DAT_00808784,
                      -(uint)(DAT_00808784 != 0) & (uint)PTR_008032b4);
@@ -483,6 +504,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
       else if (piVar13[2] == 0) {
         if (pGVar4->field_042C == 0) {
           DAT_00808784 = piVar13[1];
+
           st::fn_00725760
                     (g_sT3DSMAPContext_00807598,DAT_00808784,
                      -(uint)(DAT_00808784 != 0) & (uint)PTR_008032b4);
@@ -493,6 +515,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
       else {
         if ((DAT_0080878c == 0) && (DAT_00808790 == 0)) {
           DAT_00808784 = piVar13[1];
+
           st::fn_00725760
                     (g_sT3DSMAPContext_00807598,DAT_00808784,
                      -(uint)(DAT_00808784 != 0) & (uint)PTR_008032b4);
@@ -534,11 +557,11 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
       local_c = &CHAR_00h_008016a0;
       local_10 = &CHAR_00h_008016a0;
       if (*piVar13 == 6) {
-        st::fn_00401212(&DAT_00807620,(byte)((uint)piVar13[1] >> 0x10),((byte *)piVar13)[1],
+        st::fn_00401212(&DAT_00807620,(byte)((uint)piVar13[1] >> 0x10),static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)piVar13)[1])),
                            (char)piVar13[2]);
       }
       else {
-        st::fn_004033A0(&DAT_00807620,(byte)((uint)piVar13[1] >> 0x10),((byte *)piVar13)[1]);
+        st::fn_004033A0(&DAT_00807620,(byte)((uint)piVar13[1] >> 0x10),static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)piVar13)[1])));
       }
       this_00 = g_playPanel_008016E4;
       if (g_playPanel_008016E4 != nullptr) {
@@ -547,7 +570,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
         local_14 = 8;
         do {
           if (*piVar14 != 0) {
-            st::fn_006E6080(this_00,2,*piVar14,(undefined4 *)&this_00->field_0x18);
+            st::fn_006E6080(this_00,2,*piVar14,reinterpret_cast<undefined4 *>(&this_00->field_0x18));
           }
           piVar14 = piVar14 + 1;
           local_14 = local_14 + -1;
@@ -583,7 +606,8 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
         /* ST_CALLSITE[00577CCA]: CALL dword ptr [0x0085bde8] */
         st::external_00000080((LPSTR)&DAT_0080f33a,local_EAX_1519,pcVar8,pcVar15);
         if (g_popUp_008016D8 != nullptr) {
-          st::fn_004014D8(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
+          /* ST_CALLSITE[00577CE8]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
+          st::fn_004014D8(g_popUp_008016D8,reinterpret_cast<char *>(&DAT_0080f33a),8);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
@@ -592,15 +616,17 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
     case 8:
       local_1b0.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_1b0;
+
       iVar5 = st::fn_0072D7F0(local_1b0.jumpBuffer,0);
       if (iVar5 == 0) {
         /* ST_CALLSITE[00577D50]: CALL dword ptr [0x0085bde8] */
         st::external_00000080((LPSTR)&DAT_0080f33a,st::mutable_c_string("%s%s%s"),&CHAR_00h_00807680,st_global_0079B190,
                   PTR_s_STRATEGS_0079b198);
-        pcVar6 = (cMf32 *)st::fn_006F0EC0(0x345,(byte *)&DAT_0080f33a,0,0,0);
+        /* ST_CALLSITE[00577D66]: CALL 0x006f0ec0; direct=006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint */
+        pcVar6 = st::pointer_boundary_cast<cMf32 *>(st::fn_006F0EC0(0x345,reinterpret_cast<byte *>(&DAT_0080f33a),0,0,0));
         local_1c = pcVar6;
         /* ST_CALLSITE[00577D7F]: CALL 0x00403f44; direct=00403F44 CreateOpponentList */
-        array = (DArrayTy *)st::fn_00403F44(pcVar6,local_8[1],DAT_0080995c);
+        array = reinterpret_cast<DArrayTy *>(st::fn_00403F44(pcVar6,local_8[1],DAT_0080995c));
         uVar10 = array->count;
         local_18 = array;
         if (uVar10 != 0) {
@@ -612,7 +638,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
             pcVar15 = nullptr;
           }
           if ((pcVar15 + 0x4c != nullptr) &&
-             (local_24 = (AnonShape_00648C10_30A1BBFD *)
+             (local_24 = (RecoveredRecordView_00648C10_4BE0A791 *)
                          /* ST_CALLSITE[00577DBF]: CALL 0x004012ad; direct=004012AD LoadStrategData */
                          st::fn_004012AD((int)pcVar6,pcVar15 + 0x4c,nullptr), piVar13 = local_8,
              local_24 != nullptr)) {
@@ -633,7 +659,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
               pcVar15 = pcVar15 + 4;
               pcVar8 = pcVar8 + 4;
             }
-            bVar2 = ((byte *)piVar13)[2];
+            bVar2 = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)piVar13)[2]));
             for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
               *pcVar8 = *pcVar15;
               pcVar15 = pcVar15 + 1;
@@ -678,7 +704,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
         pSVar16 = &local_48;
         for (iVar9 = 8; iVar9 != 0; iVar9 = iVar9 + -1) {
           pSVar16->unknown_00 = 0;
-          pSVar16 = (STMessage *)&pSVar16->unknown_04;
+          pSVar16 = reinterpret_cast<STMessage *>(&pSVar16->unknown_04);
         }
         local_48.id = MESS_AIBOSSCLASSTY_5DC5;
         local_48.arg0 = *(STMessageArg *)(piVar13 + 1);
@@ -692,7 +718,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
     pcVar15 = *(char **)((message->arg0).u32 + 0x17);
     cVar1 = *pcVar15;
     bVar2 = pcVar15[1];
-    local_14 = STReplaceLowByte((uint32_t)(local_14), (uint8_t)(bVar2));
+    local_14 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_14)), (uint8_t)(bVar2));
     if (cVar1 == '\0') {
       if (bVar2 == 0xff) {
         g_currentExceptionFrame = local_8c.previous;
@@ -718,20 +744,20 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
           pcVar15 = local_c;
           if ((int)local_c < 0) {
             /* ST_CALLSITE[005777DE]: CALL EBX */
-            st::external_00000080(st::pointer_boundary_cast<LPSTR>(&CHAR_00h_0080f022),st::mutable_c_string("%s%s%s\\%s%s%s"),&CHAR_00h_00807680,
+            st::external_00000080(reinterpret_cast<LPSTR>(&CHAR_00h_0080f022),st::mutable_c_string("%s%s%s\\%s%s%s"),&CHAR_00h_00807680,
                       st_global_0079B18C,&CHAR_00h_00807ddd,PTR_DAT_0079b19c,local_2b4,
                       st_global_0079B194);
           }
           else {
             /* ST_CALLSITE[00577816]: CALL EBX */
-            st::external_00000080(st::pointer_boundary_cast<LPSTR>(&CHAR_00h_0080f022),st::mutable_c_string("%s%s%s\\%s%s%d%s"),&CHAR_00h_00807680,
+            st::external_00000080(reinterpret_cast<LPSTR>(&CHAR_00h_0080f022),st::mutable_c_string("%s%s%s\\%s%s%d%s"),&CHAR_00h_00807680,
                       st_global_0079B18C,&CHAR_00h_00807ddd,PTR_DAT_0079b19c,local_2b4,local_c
                       ,st_global_0079B194);
           }
           local_c = (char *)((int)pcVar15 + 1);
           /* ST_CALLSITE[0057782B]: CALL dword ptr [0x0085bcec] */
-          pvVar5 = st::external_00000070(st::pointer_boundary_cast<LPCSTR>(&CHAR_00h_0080f022),st::pointer_boundary_cast<LPWIN32_FIND_DATAA>(&local_3f4));
-          local_8 = (int *)(uint)(pvVar5 != (HANDLE)0xffffffff);
+          pvVar5 = st::external_00000070(reinterpret_cast<LPCSTR>(&CHAR_00h_0080f022),reinterpret_cast<LPWIN32_FIND_DATAA>(&local_3f4));
+          local_8 = (int *)(uint)(st::machine_word_boundary_cast<uint>(pvVar5) != st::machine_word_boundary_cast<uint>((HANDLE)0xffffffff));
           if (local_8 == nullptr) {
             DAT_00808794 = 1;
             g_currentExceptionFrame = local_8c.previous;
@@ -740,23 +766,24 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
           local_10 = nullptr;
           local_d0.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &local_d0;
+
           iVar6_mg1 = st::fn_0072D7F0(local_d0.jumpBuffer,0);
           piVar13 = local_8;
           if (iVar6_mg1 == 0) {
-            pcVar6 = (cMf32 *)st::fn_006F0EC0
-                                        (0x345,(byte *)&CHAR_00h_0080f022,0,0,0);
+            /* ST_CALLSITE[0057788A]: CALL 0x006f0ec0; direct=006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint */
+            pcVar6 = st::pointer_boundary_cast<cMf32 *>(st::fn_006F0EC0(0x345,reinterpret_cast<byte *>(&CHAR_00h_0080f022),0,0,0));
             if (pcVar6 == nullptr) {
               local_8 = nullptr;
               piVar13 = (int *)0;
             }
             else {
               local_20 = local_1d90;
-              puVar7 = st::fn_006F1CE0(pcVar6,0,PTR_s_DESCRIPTOR_0079b1a4,(int *)&local_20,0);
+              puVar7 = st::fn_006F1CE0(pcVar6,0,PTR_s_DESCRIPTOR_0079b1a4,reinterpret_cast<int *>(&local_20),0);
               if (puVar7 != nullptr) {
                 local_20 = &local_10;
-                puVar7 = st::fn_006F1CE0(pcVar6,0x80,PTR_s_SAVE_DESC_0079b1a0,(int *)&local_20,0);
+                puVar7 = st::fn_006F1CE0(pcVar6,0x80,PTR_s_SAVE_DESC_0079b1a0,reinterpret_cast<int *>(&local_20),0);
                 if ((puVar7 != nullptr) &&
-                   ((local_1c != (cMf32 *)local_10 || ((DArrayTy *)local_1d88 != local_18)))) {
+                   ((st::machine_word_boundary_cast<uint>(local_1c) != st::machine_word_boundary_cast<uint>((cMf32 *)local_10) || (st::machine_word_boundary_cast<uint>((DArrayTy *)local_1d88) != st::machine_word_boundary_cast<uint>(local_18))))) {
                   local_8 = (int *)0x1;
                   st::fn_006F1170(pcVar6);
                   piVar13 = (int *)1;
@@ -783,7 +810,7 @@ LAB_00577956:
       }
       st::fn_004015D2((uint)bVar2);
       /* ST_CALLSITE[0057799C]: CALL 0x004018a7; direct=004018A7 StartStrateg */
-      st::fn_004018A7((AnonShape_00648C10_30A1BBFD *)(pcVar15 + 2),(uint)bVar2);
+      st::fn_004018A7(reinterpret_cast<RecoveredRecordView_00648C10_4BE0A791 *>((pcVar15 + 2)),(uint)bVar2);
     }
     if (g_optPanel_008016DC != nullptr) {
       /* ST_CALLSITE[005779B2]: CALL 0x00401cbc; direct=00401CBC OptPanelTy::sub_00532CE0 */
@@ -830,4 +857,3 @@ undefined4 __thiscall st::fn_00578200(DebugSystemC *this)
   st::fn_006A5E40(errorCode,0,st::mutable_c_string("E:\\__titans\\tsystem.cpp"),0x1e0);
   return 0xffffffff;
 }
-

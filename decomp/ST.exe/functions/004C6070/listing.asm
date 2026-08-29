@@ -4,7 +4,7 @@ FUN_004c6070:
 004C6079  8B 01                     MOV EAX,dword ptr [ECX]
 004C607B  68 FB 03 00 00            PUSH 0x3fb
 004C6080  6A 03                     PUSH 0x3
-004C6082  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]
+004C6082  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]  ; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4
 LAB_004c6088:
 004C6088  33 C0                     XOR EAX,EAX
 004C608A  C3                        RET

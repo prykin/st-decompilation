@@ -13,9 +13,8 @@ void __thiscall STPlaySystemC::sub_006E57B0(STPlaySystemC *this,int param_1)
   void *pvVar2;
   uint uVar3;
   uint index;
-  undefined1 local_24 [16];
-  undefined4 local_14;
-
+  byte local_24 [16];
+  uint local_14;
   pDVar1 = this->field_0010;
   if (pDVar1 != nullptr) {
     local_14 = 3;
@@ -30,7 +29,7 @@ void __thiscall STPlaySystemC::sub_006E57B0(STPlaySystemC *this,int param_1)
           pvVar2 = pDVar1->data;
         }
         if ((STField<undefined4 *>(pvVar2,4))[1] == param_1) {
-          /* ST_CALLSITE[006E57EE]: CALL dword ptr [EAX] */
+          /* ST_CALLSITE[006E57EE]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4 */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)*STField<undefined4 *>(pvVar2,4))(local_24);
           DArrayRemoveAt(this->field_0010,index);

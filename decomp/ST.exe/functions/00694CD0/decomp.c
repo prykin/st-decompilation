@@ -6,7 +6,8 @@
    incoming_edx_uses=2; incoming_stack_parameter_uses=4; direct_non_thunk_callers=0;
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
-void __thiscall CGenerate::sub_00694CD0(CGenerate *this,AnonShape_00694CD0_AC50FDB9 *param_1)
+void __thiscall
+CGenerate::sub_00694CD0(CGenerate *this,RecoveredRecordView_00694CD0_244EA14D *param_1)
 
 {
   char cVar1;
@@ -68,6 +69,7 @@ void __thiscall CGenerate::sub_00694CD0(CGenerate *this,AnonShape_00694CD0_AC50F
                                (*(int *)(psVar8 + 5) + -0xdd) * 3) * 4);
         }
         else if (cVar1 == '\x01') {
+
           uVar6 = Library::MSVCRT::FUN_0072e6c0();
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           puVar7[8] = (((int)uVar6 % 0x1a + 0x32) *
@@ -76,6 +78,7 @@ void __thiscall CGenerate::sub_00694CD0(CGenerate *this,AnonShape_00694CD0_AC50F
                               (*(int *)(psVar8 + 5) + -0xdd) * 3) * 4)) / 100;
         }
         else if (cVar1 == '\x02') {
+
           uVar6 = Library::MSVCRT::FUN_0072e6c0();
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           puVar7[8] = (((int)uVar6 % 0x15 + 0x1e) *
@@ -84,6 +87,7 @@ void __thiscall CGenerate::sub_00694CD0(CGenerate *this,AnonShape_00694CD0_AC50F
                               (*(int *)(psVar8 + 5) + -0xdd) * 3) * 4)) / 100;
         }
         else {
+
           uVar6 = Library::MSVCRT::FUN_0072e6c0();
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           puVar7[8] = (((int)uVar6 % 0x18 + 0xf) *

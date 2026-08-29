@@ -14,7 +14,8 @@ STPlaySystemC::sub_005505D0:
 005505EE  51                        PUSH ECX
 005505EF  52                        PUSH EDX
 005505F0  8B CE                     MOV ECX,ESI
-005505F2  E8 6C 42 EB FF            CALL 0x00404863
+STPlaySystemC::sub_005505D0::override::prt_5505f2_7f5aa9d1:
+005505F2  E8 6C 42 EB FF            CALL 0x00404863  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__thiscall;pointer:/char;pointer:/void;/int;pointer:/undefined4
 005505F7  85 C0                     TEST EAX,EAX
 005505F9  0F 84 81 01 00 00         JZ 0x00550780
 005505FF  8B 08                     MOV ECX,dword ptr [EAX]
@@ -65,7 +66,8 @@ STPlaySystemC::sub_005505D0:
 00550693  6A 09                     PUSH 0x9
 00550695  50                        PUSH EAX
 00550696  68 68 42 00 00            PUSH 0x4268
-0055069B  E8 A0 FA 15 00            CALL 0x006b0140
+STPlaySystemC::sub_005505D0::override::prt_55069b_ff626359:
+0055069B  E8 A0 FA 15 00            CALL 0x006b0140  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/PopUpTy; signature=__stdcall;pointer:/PopUpTy;/WinDef.h/UINT;/WinDef.h/HINSTANCE
 005506A0  8B 0D D8 16 80 00         MOV ECX,dword ptr [0x008016d8]
 005506A6  50                        PUSH EAX
 005506A7  E8 2C 0E EB FF            CALL 0x004014d8

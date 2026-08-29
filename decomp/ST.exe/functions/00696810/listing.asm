@@ -69,7 +69,7 @@ LAB_006968a6:
 006968C1  42                        INC EDX
 006968C2  52                        PUSH EDX
 006968C3  50                        PUSH EAX
-006968C4  E8 B4 B1 D6 FF            CALL 0x00401a7d
+006968C4  E8 B4 B1 D6 FF            CALL 0x00401a7d  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/CGenerate; source view only; no Ghidra override
 006968C9  8B F0                     MOV ESI,EAX
 006968CB  85 F6                     TEST ESI,ESI
 006968CD  7C 0B                     JL 0x006968da

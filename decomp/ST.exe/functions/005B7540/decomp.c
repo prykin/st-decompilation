@@ -30,8 +30,8 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
   int iVar18;
   int iVar19;
   int iVar20;
-  byte uVar21;
-  uint uVar22;
+  SpriteClassTy_SetImagesPtr_param_2Enum arg_2;
+  uint arg_3;
   InternalExceptionFrame local_bc;
   int local_78 [8];
   int local_58 [8];
@@ -46,10 +46,12 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
   local_bc.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_bc;
   local_18 = this;
+
   iVar6 = Library::MSVCRT::__setjmp3(local_bc.jumpBuffer,0);
   this_01 = local_18;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_bc.previous;
+
     iVar9 = ReportDebugMessage("E:\\__titans\\Start\\mmsg_obj.cpp",0xe4,0,iVar6,"%s",
                                "MMsgTy::NoneMMsg");
     if (iVar9 != 0) {
@@ -62,12 +64,14 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
   if (cVar1 == '\x01') {
     if ((local_18->field_1CD0 != 0) && (local_18->field_1D90 < local_18->field_1D94 + -3)) {
       if ((local_18->field_1D90 == 0) && (local_18->field_1D8C != 0xffffffff)) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)local_18->field_1DD0,local_18->field_1D8C,0xfffffffe,local_18->field_1DA4
                    ,local_18->field_1DA8);
       }
       this_01->field_1D90 = this_01->field_1D90 + 1;
       if (this_01->field_1D8C != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b3730
                   ((uint *)this_01->field_1DD0,this_01->field_1D8C,this_01->field_1D90,
                    this_01->field_1DA4,this_01->field_1DA8);
@@ -80,6 +84,7 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
       if (local_18->field_1CFF < local_18->field_1D03 + -1) {
         local_18->field_1CFF = local_18->field_1CFF + 1;
         if (local_18->field_1CFB != 0xffffffff) {
+
           Library::DKW::DDX::FUN_006b3730
                     ((uint *)local_18->field_1D3F,local_18->field_1CFB,local_18->field_1CFF,
                      local_18->field_1D13,local_18->field_1D17);
@@ -88,12 +93,14 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
       }
       else if (local_18->field_1D90 < local_18->field_1D94 + -3) {
         if ((local_18->field_1D90 == 0) && (local_18->field_1D8C != 0xffffffff)) {
+
           Library::DKW::DDX::FUN_006b34d0
                     ((uint *)local_18->field_1DD0,local_18->field_1D8C,0xfffffffe,
                      local_18->field_1DA4,local_18->field_1DA8);
         }
         this_01->field_1D90 = this_01->field_1D90 + 1;
         if (this_01->field_1D8C != 0xffffffff) {
+
           Library::DKW::DDX::FUN_006b3730
                     ((uint *)this_01->field_1DD0,this_01->field_1D8C,this_01->field_1D90,
                      this_01->field_1DA4,this_01->field_1DA8);
@@ -113,6 +120,7 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
               uVar6 = puVar12[-5] + 1;
               puVar12[-5] = uVar6;
               if (puVar12[-6] != 0xffffffff) {
+
                 Library::DKW::DDX::FUN_006b3730
                           ((uint *)puVar12[0xb],puVar12[-6],uVar6,*puVar12,puVar12[1]);
               }
@@ -122,6 +130,7 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
               goto LAB_005b7ad9;
               if ((STField<int>(puVar12,0x7d) == 0) &&
                  (STField<uint>(puVar12,0x79) != 0xffffffff)) {
+
                 Library::DKW::DDX::FUN_006b34d0
                           (STField<uint *>(puVar12,0xbd),STField<uint>(puVar12,0x79),0xfffffffe
                            ,STField<uint>(puVar12,0x91),STField<uint>(puVar12,0x95));
@@ -129,6 +138,7 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
               uVar6 = STField<int>(puVar12,0x7d) + 1;
               STField<uint>(puVar12,0x7d) = uVar6;
               if (STField<uint>(puVar12,0x79) != 0xffffffff) {
+
                 Library::DKW::DDX::FUN_006b3730
                           (STField<uint *>(puVar12,0xbd),STField<uint>(puVar12,0x79),uVar6,
                            STField<uint>(puVar12,0x91),STField<uint>(puVar12,0x95));
@@ -188,6 +198,7 @@ LAB_005b7ad9:
     if ((local_18->field_1CD0 != 0) && (0 < local_18->field_1CFF)) {
       local_18->field_1CFF = local_18->field_1CFF + -1;
       if (local_18->field_1CFB != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b3730
                   ((uint *)local_18->field_1D3F,local_18->field_1CFB,local_18->field_1CFF,
                    local_18->field_1D13,local_18->field_1D17);
@@ -211,6 +222,7 @@ LAB_005b7ad9:
             uVar6 = puVar12[-5] - 1;
             puVar12[-5] = uVar6;
             if (puVar12[-6] != 0xffffffff) {
+
               Library::DKW::DDX::FUN_006b3730
                         ((uint *)puVar12[0xb],puVar12[-6],uVar6,*puVar12,puVar12[1]);
             }
@@ -238,6 +250,7 @@ LAB_005b7655:
         }
         bVar2 = this_01->array_00BC[0xc].field_01DA;
         if ((bVar2 != 0xff) && (*(int *)&this_01->array_00BC[bVar2].field_0x15 != 0)) {
+
           AppClassTy::PostNextMessage
                     ((AppClassTy *)&DAT_00807620,(undefined4 *)&this_01->array_00BC[bVar2].field_0x5
                     );
@@ -271,8 +284,8 @@ LAB_005b7655:
               *(short *)&pMVar15->field_0000 = *psVar7;
               STField<undefined1>(pMVar15,0x2) = STField<undefined1>(psVar7,2);
               if (local_8->field_0000 != 0) {
-                uVar22 = 0xffffffff;
-                uVar21 = 7;
+                arg_3 = 0xffffffff;
+                arg_2 = CASE_7;
                 iVar20 = -1;
                 pSVar3 = (local_8->field_00B8).vtable;
                 iVar19 = -1;
@@ -282,13 +295,15 @@ LAB_005b7655:
                 iVar8 = 0x1e;
                 this_00 = &local_8->field_00B8;
                 iVar10 = 0x7d;
+                /* ST_CALLSITE[005B77E8]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
                 pcVar11_mg1 = LoadResourceString(local_8->field_0000,g_hINSTANCE_00807618);
-                psVar7 = (short *)ccFntTy::CreateTypeSSpr
+
+                psVar7 = STPointerBoundaryCast<short *>(ccFntTy::CreateTypeSSpr
                                             ((ccFntTy *)g_startSystem_0081176C->field_0030,
                                              pcVar11_mg1,iVar10,iVar8,cVar17,uVar6,iVar18,iVar19,
-                                             iVar20);
+                                             iVar20));
                 /* ST_CALLSITE[005B77FF]: CALL dword ptr [EDI + 0x8] */
-                (*pSVar3->SetImagesPtr)(this_00,psVar7,uVar21,uVar22);
+                (*pSVar3->SetImagesPtr)(this_00,psVar7,arg_2,arg_3);
                 (local_8->field_00B8).field_0008 = 0;
               }
               local_14 = local_14 + 1;
@@ -321,6 +336,7 @@ LAB_005b7655:
       }
       bVar2 = this_01->array_00BC[0xc].field_01DA;
       if ((bVar2 != 0xff) && (*(int *)&this_01->array_00BC[bVar2].field_0x15 != 0)) {
+
         AppClassTy::PostNextMessage
                   ((AppClassTy *)&DAT_00807620,(undefined4 *)&this_01->array_00BC[bVar2].field_0x5);
         g_currentExceptionFrame = local_bc.previous;

@@ -115,7 +115,7 @@ LAB_005a2024:
 005A2030  F7 D1                     NOT ECX
 005A2032  83 C1 04                  ADD ECX,0x4
 005A2035  51                        PUSH ECX
-005A2036  E8 D5 8B 10 00            CALL 0x006aac10
+005A2036  E8 D5 8B 10 00            CALL 0x006aac10  ; [STCallResultViewApplier] presentation_only; exact direct-call result=/winnt.h/LPSTR; source view only; no Ghidra override
 005A203B  8B F8                     MOV EDI,EAX
 005A203D  85 FF                     TEST EDI,EDI
 005A203F  89 7D F8                  MOV dword ptr [EBP + -0x8],EDI
@@ -173,7 +173,7 @@ LAB_005a2093:
 005A20D7  8B 8E 77 1A 00 00         MOV ECX,dword ptr [ESI + 0x1a77]
 005A20DD  68 D8 21 7C 00            PUSH 0x7c21d8
 005A20E2  53                        PUSH EBX
-005A20E3  E8 08 01 17 00            CALL 0x007121f0
+005A20E3  E8 08 01 17 00            CALL 0x007121f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; source view only; no Ghidra override
 005A20E8  8B F8                     MOV EDI,EAX
 005A20EA  8A 86 5F 1A 00 00         MOV AL,byte ptr [ESI + 0x1a5f]
 005A20F0  3C 06                     CMP AL,0x6

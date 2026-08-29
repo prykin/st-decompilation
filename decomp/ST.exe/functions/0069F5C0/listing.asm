@@ -30,7 +30,7 @@ LAB_0069f5f0:
 0069F605  51                        PUSH ECX
 0069F606  52                        PUSH EDX
 0069F607  C7 45 10 00 00 00 00      MOV dword ptr [EBP + 0x10],0x0
-0069F60E  E8 43 64 D6 FF            CALL 0x00405a56
+0069F60E  E8 43 64 D6 FF            CALL 0x00405a56  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/CGenerate; source view only; no Ghidra override
 0069F613  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]
 0069F616  8B 55 0C                  MOV EDX,dword ptr [EBP + 0xc]
 0069F619  83 C4 14                  ADD ESP,0x14

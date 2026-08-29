@@ -21,22 +21,24 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
   int iVar6;
   int iVar7;
   InternalExceptionFrame local_58;
-  undefined1 local_14;
+  byte local_14;
   undefined3 uStack_13;
-  undefined1 local_10;
+  byte local_10;
   short sStack_f;
   undefined1 uStack_d;
-  undefined2 local_c;
-  undefined1 local_a;
+  ushort local_c;
+  byte local_a;
   BldBoatPanelTy *local_8;
 
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_8 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_58.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\bldboat.cpp",0xec,0,iVar4,"%s",
                                "BldBoatPanelTy::GetMessage");
     if (iVar6 != 0) {
@@ -67,7 +69,7 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
       return 0;
     }
     if (SVar1 == MESS_SHARED_0003) {
-      thunk_FUN_004eef20((AnonShape_004EEF20_59DE1DA2 *)this_00);
+      thunk_FUN_004eef20((RecoveredRecordView_004EEF20_EAA30B4A *)this_00);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
@@ -117,7 +119,9 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
         uStack_d = 0xff;
         local_c = 0xffff;
         local_a = 0xff;
-        thunk_FUN_0054edf0((undefined4 *)0x1e,(uint *)&local_14,0,0xffffffff);
+        /* ST_CALLSITE[004EF8AA]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+        STPlaySystemC::sub_0054EDF0
+                  (g_playSystem_00802A38,(undefined4 *)0x1e,(uint *)&local_14,0,0xffffffff);
         thunk_FUN_005252c0(0xae);
         g_currentExceptionFrame = local_58.previous;
         return 0;
@@ -136,7 +140,7 @@ int __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,STMessage *messag
     case 0xc0b2:
     case MESS_BLDLABPANELTY_C0B3:
       /* ST_CALLSITE[004EF902]: CALL 0x004011ea; direct=004011EA BldBoatPanelTy::PaintBldBut */
-      PaintBldBut(this_00,(AnonShape_004EF320_444F9AB1 *)message);
+      PaintBldBut(this_00,(RecoveredRecordView_004EF320_A54422CD *)message);
     }
   }
   g_currentExceptionFrame = local_58.previous;

@@ -8,7 +8,7 @@
 void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
 
 {
-  ushort *puVar1;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar1;
   StartSystemTy *pSVar2;
   MMsgTy *this_00;
   CursorClassTy *this_01;
@@ -33,6 +33,7 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
     local_6c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_6c;
     local_8 = this;
+
     iVar4 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
     this_01 = g_cursorClass_00802A30;
     if (iVar4 == 0) {
@@ -53,17 +54,19 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
         DAT_0080fb76 = 1;
         local_8->field_004D = 0x7102;
         local_8->field_0049 = 1;
+
         FUN_006e6020(local_8,(undefined4 *)&local_8->field_0x3d);
         g_currentExceptionFrame = local_6c.previous;
         return;
       }
-      puVar1 = local_8->field_1AC0;
-      uVar6 = *(uint *)(puVar1 + 10);
+      pRVar1 = (RecoveredRecord_006B4FA0_DAC3A217 *)local_8->field_1AC0;
+      uVar6 = *(uint *)&pRVar1[1].field_0x4;
       if (uVar6 == 0) {
-        uVar6 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-                *(int *)(puVar1 + 4);
+        uVar6 = ((uint)pRVar1->field_000E * *(int *)&pRVar1->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+                *(int *)&pRVar1->field_0x8;
       }
-      puVar4 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
+
+      puVar4 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0(pRVar1));
       for (uVar5 = uVar6 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
         *puVar4 = 0xffffffff;
         puVar4 = puVar4 + 1;
@@ -72,6 +75,7 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
         *(undefined1 *)puVar4 = 0xff;
         puVar4 = (undefined4 *)((int)puVar4 + 1);
       }
+
       ccFntTy::SetSurf(this_02->array_00BC[0xc].field_01F3,(int)this_02->field_1AC0,0,0,0x16,0x1b8,
                        0xf0);
       iVar12 = -1;
@@ -79,9 +83,12 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
       uVar6 = 2;
       iVar10 = -1;
       iVar8 = -2;
+      /* ST_CALLSITE[005A179A]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
       resourceString = LoadResourceString(0x25b9,g_hINSTANCE_00807618);
+
       ccFntTy::WrTxt(this_02->array_00BC[0xc].field_01F3,resourceString,iVar8,iVar10,uVar6,iVar11,
                      iVar12);
+
       FUN_006b35d0((int *)g_ddxContext_008075A8,this_02->field_1ABC);
       pSVar2 = this_02->array_00BC[0xc].field_01DB;
       pSVar7 = &local_28;
@@ -106,6 +113,7 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_6c.previous;
+
     iVar9 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x95b,0,iVar4,"%s"
                                ,"FSGSTy::Finished");
     if (iVar9 != 0) {

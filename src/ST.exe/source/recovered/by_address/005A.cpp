@@ -18,10 +18,12 @@ FSGSTy * __cdecl st::fn_005AA2C0(void)
   FSGSTy_Record_00BC_01FB *pFVar3;
   int local_8;
 
-  this = (FSGSTy *)st::fn_006B04D0(0x20c3);
+
+  this = STPointerBoundaryCast<FSGSTy *>(st::fn_006B04D0(0x20c3));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
-    this->vtable = (FSGSTyVTable *)&st_global_0079C018;
+    this->vtable = reinterpret_cast<FSGSTyVTable *>(&st_global_0079C018);
     this->field_0018 = 0;
     this->field_005D = nullptr;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -35,10 +37,10 @@ FSGSTy * __cdecl st::fn_005AA2C0(void)
       st::fn_00715820(this_00 + -1);
       st::fn_00715820(this_00);
       st::fn_00715820(this_00 + 1);
-      this_00 = (SpriteClassTy *)&this_00[3].field_0048;
+      this_00 = reinterpret_cast<SpriteClassTy *>(&this_00[3].field_0048);
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    this->vtable = (FSGSTyVTable *)&st_global_0079C008;
+    this->vtable = reinterpret_cast<FSGSTyVTable *>(&st_global_0079C008);
     this->field_0065 = CASE_2;
     this->field_009A = 0;
     memset(&this->field_0x66, 0, 0x34); /* compiler bulk-zero initialization */
@@ -49,19 +51,19 @@ FSGSTy * __cdecl st::fn_005AA2C0(void)
       pFVar3 = pFVar2;
       for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
         *(undefined4 *)pFVar3 = 0;
-        pFVar3 = (FSGSTy_Record_00BC_01FB *)&pFVar3->field_0x4;
+        pFVar3 = reinterpret_cast<FSGSTy_Record_00BC_01FB *>(reinterpret_cast<byte *>(pFVar3) + 0x4);
       }
       *(undefined2 *)pFVar3 = 0;
       pFVar3->field_0x2 = 0;
       local_8 = local_8 + -1;
       pFVar2 = pFVar2 + 1;
     } while (local_8 != 0);
-    st::fn_00715820((SpriteClassTy *)&this->field_1B28);
-    st::fn_00715820((SpriteClassTy *)&this->field_1BB9);
-    st::fn_00715820((SpriteClassTy *)&this->field_1C4A);
-    st::fn_00715820((SpriteClassTy *)&this->field_1CDB);
-    st::fn_00715820((SpriteClassTy *)&this->field_1D6C);
-    st::fn_00715820((SpriteClassTy *)&this->field_1DFD);
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_1B28));
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_1BB9));
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_1C4A));
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_1CDB));
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_1D6C));
+    st::fn_00715820(reinterpret_cast<SpriteClassTy *>(&this->field_1DFD));
     this->vtable = &st_global_0079C02C;
     this->array_00BC[0xc].field_01EB = 1;
     this->field_0065 = CASE_1;
@@ -144,4 +146,3 @@ FSGSTy * __cdecl st::fn_005AA2C0(void)
   }
   return nullptr;
 }
-

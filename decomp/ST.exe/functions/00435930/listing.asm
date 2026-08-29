@@ -127,7 +127,7 @@ LAB_00435a6a:
 00435A81  75 1C                     JNZ 0x00435a9f
 00435A83  8B 07                     MOV EAX,dword ptr [EDI]
 00435A85  8B CF                     MOV ECX,EDI
-00435A87  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]
+00435A87  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 00435A8D  83 F8 01                  CMP EAX,0x1
 00435A90  75 0D                     JNZ 0x00435a9f
 00435A92  5F                        POP EDI
@@ -146,7 +146,7 @@ LAB_00435a9f:
 LAB_00435ab4:
 00435AB4  8B 17                     MOV EDX,dword ptr [EDI]
 00435AB6  8B CF                     MOV ECX,EDI
-00435AB8  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]
+00435AB8  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 00435ABE  83 F8 01                  CMP EAX,0x1
 00435AC1  0F 85 5B FF FF FF         JNZ 0x00435a22
 00435AC7  5F                        POP EDI

@@ -23,6 +23,7 @@ void __thiscall FUN_0055bf20(void *this,undefined4 param_1)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pCVar1 = local_c;
   if (iVar2 == 0) {
@@ -38,6 +39,7 @@ void __thiscall FUN_0055bf20(void *this,undefined4 param_1)
   if (local_8 != nullptr) {
     g_currentExceptionFrame = &local_94;
     local_94.previous = local_50.previous;
+
     iVar2 = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0);
     pCVar1 = local_c;
     if (iVar2 == 0) {

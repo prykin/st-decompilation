@@ -91,17 +91,17 @@ LAB_0049f1dd:
 LAB_0049f229:
 0049F229  8B 06                     MOV EAX,dword ptr [ESI]
 0049F22B  8B CE                     MOV ECX,ESI
-0049F22D  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+0049F22D  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 0049F230  83 F8 06                  CMP EAX,0x6
 0049F233  74 51                     JZ 0x0049f286
 0049F235  8B 16                     MOV EDX,dword ptr [ESI]
 0049F237  8B CE                     MOV ECX,ESI
-0049F239  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+0049F239  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 0049F23C  83 F8 12                  CMP EAX,0x12
 0049F23F  74 45                     JZ 0x0049f286
 0049F241  8B 06                     MOV EAX,dword ptr [ESI]
 0049F243  8B CE                     MOV ECX,ESI
-0049F245  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+0049F245  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 0049F248  83 F8 22                  CMP EAX,0x22
 0049F24B  74 39                     JZ 0x0049f286
 0049F24D  8B CE                     MOV ECX,ESI
@@ -299,7 +299,8 @@ LAB_0049f448:
 0049F462  50                        PUSH EAX
 0049F463  51                        PUSH ECX
 0049F464  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
-0049F46A  E8 4B 34 F6 FF            CALL 0x004028ba
+STGroupBoatC::Capture::override::prt_49f46a_6c9e7102:
+0049F46A  E8 4B 34 F6 FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 0049F46F  8B F0                     MOV ESI,EAX
 0049F471  85 F6                     TEST ESI,ESI
 0049F473  75 1B                     JNZ 0x0049f490

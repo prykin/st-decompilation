@@ -58,14 +58,9 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
               *(short *)(*piVar11 + 4) = (short)iVar10 + STField<short>(piVar5,0x45);
               puVar2 = (undefined2 *)*piVar11;
               uVar6 = (undefined2)((uint)puVar2 >> 0x10);
-              /* ST_CALLSITE[0057B445]: CALL dword ptr [EDX + 0x10] */
-              /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable or function-table callback call with the machine-proven calling convention; expected named packed member, bit extract/compose, or unaligned load */
-              uVar6 = (**(code **)(*piVar5 + 0x10))
-                                (CONCAT22(uVar9,STField<undefined2>(piVar5,0x41)),
-                                 CONCAT22(uVar6,STField<undefined2>(piVar5,0x43)),
-                                 CONCAT22(uVar9,STField<undefined2>(piVar5,0x45)),
-                                 CONCAT22(uVar6,*puVar2),CONCAT22(uVar9,puVar2[1]),
-                                 CONCAT22(uVar9,puVar2[2]));
+              /* ST_CALLSITE[0057B445]: CALL dword ptr [EDX + 0x10]; [STIndirectCallsiteApplier] exact slot 0x10; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+              uVar6 = STStructuralVirtualCall<undefined4>(piVar5, 0x10, CONCAT22(uVar9,STField<undefined2>(piVar5,0x41)), CONCAT22(uVar6,STField<undefined2>(piVar5,0x43)), CONCAT22(uVar9,STField<undefined2>(piVar5,0x45)), CONCAT22(uVar6,*puVar2), CONCAT22(uVar9,puVar2[1]), CONCAT22(uVar9,puVar2[2]));
               iVar3 = *piVar11;
               local_8 = local_8 + 1;
               piVar11 = piVar11 + 1;
@@ -102,14 +97,9 @@ undefined4 __cdecl FUN_0057b350(int *param_1,int param_2,int *param_3)
               *(short *)(*piVar11 + 4) = (short)iVar10 + STField<short>(piVar5,0x45);
               puVar2 = (undefined2 *)*piVar11;
               uVar6 = (undefined2)((uint)puVar2 >> 0x10);
-              /* ST_CALLSITE[0057B539]: CALL dword ptr [EDX + 0x10] */
-              /* ST_PSEUDO[raw_indirect_call,packed_or_unaligned_piece]: expected typed vtable or function-table callback call with the machine-proven calling convention; expected named packed member, bit extract/compose, or unaligned load */
-              uVar6 = (**(code **)(*piVar5 + 0x10))
-                                (CONCAT22(uVar9,STField<undefined2>(piVar5,0x41)),
-                                 CONCAT22(uVar6,STField<undefined2>(piVar5,0x43)),
-                                 CONCAT22(uVar9,STField<undefined2>(piVar5,0x45)),
-                                 CONCAT22(uVar6,*puVar2),CONCAT22(uVar9,puVar2[1]),
-                                 CONCAT22(uVar9,puVar2[2]));
+              /* ST_CALLSITE[0057B539]: CALL dword ptr [EDX + 0x10]; [STIndirectCallsiteApplier] exact slot 0x10; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
+              /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+              uVar6 = STStructuralVirtualCall<undefined4>(piVar5, 0x10, CONCAT22(uVar9,STField<undefined2>(piVar5,0x41)), CONCAT22(uVar6,STField<undefined2>(piVar5,0x43)), CONCAT22(uVar9,STField<undefined2>(piVar5,0x45)), CONCAT22(uVar6,*puVar2), CONCAT22(uVar9,puVar2[1]), CONCAT22(uVar9,puVar2[2]));
               iVar3 = *piVar11;
               local_8 = local_8 + 1;
               piVar11 = piVar11 + 1;

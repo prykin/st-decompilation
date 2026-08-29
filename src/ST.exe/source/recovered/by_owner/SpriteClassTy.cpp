@@ -43,4 +43,3 @@ SpriteClassTy * __thiscall st::fn_00715820(SpriteClassTy *this)
   this->field_003C = 0;
   return this;
 }
-

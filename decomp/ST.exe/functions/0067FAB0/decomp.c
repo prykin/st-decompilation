@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-uint __cdecl FUN_0067fab0(byte *param_1,undefined4 param_2)
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00683C70 @ 00689A57 -> read as EAX on
+   every CFG path | 00683C70 @ 00689BCB -> read as EAX on every CFG path */
+
+int __cdecl FUN_0067fab0(byte *param_1,undefined4 param_2)
 
 {
   uint uVar1;
@@ -16,6 +21,6 @@ uint __cdecl FUN_0067fab0(byte *param_1,undefined4 param_2)
     *puVar2 = param_2;
     return uVar1;
   }
-  return 0xfffffffc;
+  return -4;
 }
 

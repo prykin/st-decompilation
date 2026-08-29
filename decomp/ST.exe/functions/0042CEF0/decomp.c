@@ -35,9 +35,11 @@ STAllPlayersC::DelObjFromSaveTmps(STAllPlayersC *this,int param_1,char param_2,s
           iVar2 = *(int *)(*piVar4 + 0xc);
           if (0 < iVar2) {
             do {
+
               DArrayGetElement((DArrayTy *)*piVar4,uVar5,&param_1);
               if ((short)param_1 == param_3) {
                 param_1 = 0xffff;
+
                 Library::DKW::TBL::DArrayPut((DArrayTy *)*piVar4,uVar5,&param_1);
                 *(short *)(piVar4 + 1) = (short)piVar4[1] + -1;
                 if ((short)piVar4[1] == 0) {
@@ -59,6 +61,7 @@ STAllPlayersC::DelObjFromSaveTmps(STAllPlayersC *this,int param_1,char param_2,s
       } while( true );
     }
 LAB_0042cf42:
+
     iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3bb,0,0,"%s",
                                "STAllPlayersC::DelObjFromSaveTmps invalid game type");
     if (iVar2 == 0) {
@@ -76,9 +79,11 @@ LAB_0042cf42:
           iVar2 = *(int *)(*piVar4 + 0xc);
           if (0 < iVar2) {
             do {
+
               DArrayGetElement((DArrayTy *)*piVar4,uVar5,&param_1);
               if ((short)param_1 == param_3) {
                 param_1 = 0xffff;
+
                 Library::DKW::TBL::DArrayPut((DArrayTy *)*piVar4,uVar5,&param_1);
                 *(short *)(piVar4 + 1) = (short)piVar4[1] + -1;
                 if ((short)piVar4[1] == 0) {

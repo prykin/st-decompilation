@@ -46,10 +46,10 @@ TraksClassTy::TraksCreate
   short local_44;
   int local_42;
   short local_3e;
-  undefined2 local_3c;
-  undefined2 local_3a;
-  undefined2 local_38;
-  undefined2 local_36;
+  ushort local_3c;
+  ushort local_3a;
+  ushort local_38;
+  ushort local_36;
   uint local_34;
   uint local_30;
   short local_2c;
@@ -87,6 +87,7 @@ TraksClassTy::TraksCreate
       iVar4 = 0;
     }
     else {
+
       iVar4 = FUN_006ddbd0();
     }
     if (iVar4 == 0) {
@@ -128,9 +129,11 @@ LAB_00556926:
 LAB_0055693a:
   local_a8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a8;
+
   iVar7 = Library::MSVCRT::__setjmp3(local_a8.jumpBuffer,0);
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_a8.previous;
+
     iVar3 = ReportDebugMessage("E:\\__titans\\grig\\traks.cpp",0x1bc,0,iVar7,"%s",
                                "TraksClassTy::TraksCreate error ");
     if (iVar3 != 0) {
@@ -184,11 +187,13 @@ LAB_0055693a:
   puVar5 = Library::Ourlib::MFRLOAD::mfRLoad(piVar7,CASE_1D,text,uVar11,bVar12,iVar4,iVar13,puVar14);
   local_22 = *puVar5;
   iVar4 = local_58 * 0x18;
+
   ST3DSMAPContext::sub_006E8660
             (g_sT3DSMAPContext_00807598,(int *)&local_c,1,0,*(uint *)(&DAT_007c9000 + iVar4),
              *(uint *)(&DAT_007c9004 + iVar4),*(uint *)(&DAT_007c8ff8 + iVar4),
              *(uint *)(&DAT_007c8ffc + iVar4),0);
   local_26 = local_c;
+
   ST3DSMAPContext::sub_006E98E0
             (g_sT3DSMAPContext_00807598,local_c,0,(short)local_22,STField<int>(puVar5,0x21),
              1);
@@ -205,6 +210,7 @@ LAB_0055693a:
       Library::Ourlib::ST3DSMAP::SprSetLevBefore(g_sT3DSMAPContext_00807598,local_26,local_42);
     }
   }
+
   Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand
             (g_sT3DSMAPContext_00807598,local_26,1,*(int *)(&DAT_007c9000 + local_58 * 0x18) / 2,
              *(int *)(&DAT_007c9004 + local_58 * 0x18) / 2);
@@ -213,6 +219,7 @@ LAB_0055693a:
             (g_sT3DSMAPContext_00807598,local_26,(float)local_8 * _DAT_007904f8 * _DAT_007904f0,
              (float)(int)local_54 * _DAT_007904f8 * _DAT_007904f0,
              (float)(int)local_52 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+
   Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,local_26,0);
   local_36 = (undefined2)param_3;
   local_34 = local_60->field_0020;

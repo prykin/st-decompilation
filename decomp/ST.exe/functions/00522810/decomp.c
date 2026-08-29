@@ -19,6 +19,7 @@ void FUN_00522810(char *param_1)
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
@@ -60,68 +61,100 @@ void FUN_00522810(char *param_1)
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
+
   iVar3 = Library::MSVCRT::_strncmp(_Str1,"EXITON",6);
   if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
+
     thunk_FUN_004d88f0(DAT_0080874d,5000);
     if (DAT_0080874e == '\x03') {
+
       thunk_FUN_004e4380((uint)DAT_0080874d,10000);
     }
     else {
+
       thunk_FUN_004d87b0(DAT_0080874d,1000);
+
       thunk_FUN_004d8a30(DAT_0080874d,10000);
     }
-    thunk_FUN_004d8b70(DAT_0080874d);
+    /* ST_CALLSITE[0052294D]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+    STAllPlayersC::sub_004D8B70(g_allPlayers_007FA174,DAT_0080874d);
+
     thunk_FUN_004d78e0(DAT_0080874d);
   }
+
   iVar3 = Library::MSVCRT::_strncmp(_Str1,"CORIUM",6);
   if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
+
     thunk_FUN_004d88f0(DAT_0080874d,5000);
-    thunk_FUN_004d8b70(DAT_0080874d);
+    /* ST_CALLSITE[0052299F]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+    STAllPlayersC::sub_004D8B70(g_allPlayers_007FA174,DAT_0080874d);
+
     thunk_FUN_004d78e0(DAT_0080874d);
   }
   if (DAT_0080874e == '\x03') {
 LAB_00522a79:
+
     iVar3 = Library::MSVCRT::_strncmp(_Str1,"SILICON",7);
     if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
+
       thunk_FUN_004e4380((uint)DAT_0080874d,10000);
-      thunk_FUN_004d8b70(DAT_0080874d);
+      /* ST_CALLSITE[00522AB4]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+      STAllPlayersC::sub_004D8B70(g_allPlayers_007FA174,DAT_0080874d);
+
       thunk_FUN_004d78e0(DAT_0080874d);
     }
     if (DAT_0080874e != '\x03') goto LAB_00522ad4;
   }
   else {
+
     iVar3 = Library::MSVCRT::_strncmp(_Str1,&DAT_007c415c,4);
     if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
+
       thunk_FUN_004d87b0(DAT_0080874d,1000);
-      thunk_FUN_004d8b70(DAT_0080874d);
+      /* ST_CALLSITE[005229FE]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+      STAllPlayersC::sub_004D8B70(g_allPlayers_007FA174,DAT_0080874d);
+
       thunk_FUN_004d78e0(DAT_0080874d);
     }
     if (DAT_0080874e == '\x03') goto LAB_00522a79;
+
     iVar3 = Library::MSVCRT::_strncmp(_Str1,"METAL",5);
     if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
+
       thunk_FUN_004d8a30(DAT_0080874d,1000);
-      thunk_FUN_004d8b70(DAT_0080874d);
+      /* ST_CALLSITE[00522A59]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+      STAllPlayersC::sub_004D8B70(g_allPlayers_007FA174,DAT_0080874d);
+
       thunk_FUN_004d78e0(DAT_0080874d);
     }
     if (DAT_0080874e == '\x03') goto LAB_00522a79;
 LAB_00522ad4:
+    /* ST_CALLSITE[00522ADC]: CALL 0x0072e6f0; direct=0072E6F0 Library::MSVCRT::_strncmp; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
     iVar3 = Library::MSVCRT::_strncmp(_Str1,&DAT_007c4144,3);
     if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
-      thunk_FUN_004b7080((uint)DAT_0080874d,100);
-      thunk_FUN_004d8b70(DAT_0080874d);
+
+      thunk_FUN_004b7080(g_allPlayers_007FA174,(uint)DAT_0080874d,100);
+      /* ST_CALLSITE[00522B0C]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+      STAllPlayersC::sub_004D8B70(g_allPlayers_007FA174,DAT_0080874d);
     }
     if (DAT_0080874e != '\x03') goto LAB_00522b59;
   }
+
   iVar3 = Library::MSVCRT::_strncmp(_Str1,"ENERGY",6);
   if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
-    thunk_FUN_004e4270((uint)DAT_0080874d,100);
-    thunk_FUN_004d8b70(DAT_0080874d);
+    /* ST_CALLSITE[00522B43]: CALL 0x004053f3; direct=004053F3 STAllPlayersC::sub_004E4270; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
+    STAllPlayersC::sub_004E4270(g_allPlayers_007FA174,(uint)DAT_0080874d,100);
+    /* ST_CALLSITE[00522B54]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+    STAllPlayersC::sub_004D8B70(g_allPlayers_007FA174,DAT_0080874d);
   }
 LAB_00522b59:
+
   iVar3 = Library::MSVCRT::_strncmp(_Str1,&DAT_007c4134,4);
   if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
-    thunk_FUN_004e75f0((uint)DAT_0080874d);
+    /* ST_CALLSITE[00522B80]: CALL 0x00404ec6; direct=00404EC6 STAllPlayersC::sub_004E75F0 */
+    STAllPlayersC::sub_004E75F0(g_allPlayers_007FA174,(uint)DAT_0080874d);
   }
+
   iVar3 = Library::MSVCRT::_strncmp(_Str1,&DAT_007c4130,3);
   if ((iVar3 == 0) && (g_visibleClass_00802A88 != nullptr)) {
     if (g_visibleClass_00802A88->field_0114 == 0) {

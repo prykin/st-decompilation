@@ -4,7 +4,7 @@
 /* [STPrototypeApplier] Propagated return.
    Evidence: 004CD450 returns zeroed full register at 004CD45F @ 004CD461 */
 
-uint __fastcall FUN_004cd450(AnonShape_004CC900_31EE9CAA *param_1)
+uint __fastcall FUN_004cd450(RecoveredRecordView_004CC900_A43E8B7C *param_1)
 
 {
   *(undefined4 *)&param_1->field_0x45c = 0;

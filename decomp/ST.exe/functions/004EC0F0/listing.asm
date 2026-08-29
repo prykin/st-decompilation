@@ -23,7 +23,7 @@ FUN_004ec0f0:
 LAB_004ec135:
 004EC135  6A 0A                     PUSH 0xa
 004EC137  8D 8E D5 01 00 00         LEA ECX,[ESI + 0x1d5]
-004EC13D  E8 8A 91 F1 FF            CALL 0x004052cc
+004EC13D  E8 8A 91 F1 FF            CALL 0x004052cc  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STT3DSprC; source view only; no Ghidra override
 004EC142  8B 8E FF 05 00 00         MOV ECX,dword ptr [ESI + 0x5ff]
 004EC148  50                        PUSH EAX
 004EC149  E8 7E 91 F1 FF            CALL 0x004052cc

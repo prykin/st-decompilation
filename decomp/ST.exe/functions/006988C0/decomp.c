@@ -23,7 +23,7 @@ void __thiscall CGenerate::sub_006988C0(CGenerate *this)
   AnonShape_00697AF0_A94F4D28 *pAVar9;
   int iVar10;
   bool bVar11;
-  undefined1 local_3c [8];
+  RecoveredRecord_006A1370_30F34641 local_3c;
   dword local_34;
   uint local_30;
   uint local_2c;
@@ -55,6 +55,7 @@ void __thiscall CGenerate::sub_006988C0(CGenerate *this)
         pAVar9 = pAStack_8;
         if (((0 < *(int *)&pAStack_8->field_0x0) && (*(int *)&pAStack_8->field_0x9 == 4)) &&
            (*(int *)&pAStack_8->field_0xd == 2)) {
+
           iVar3 = thunk_FUN_00697af0(this,pAStack_8,(int *)&local_14,&local_18,(int *)&local_1c,
                                      &local_10);
           if (iVar3 != 0) {
@@ -126,6 +127,7 @@ LAB_00698a36:
                 bVar11 = uVar4 < uVar7;
               } while ((int)uVar4 < (int)uVar7);
             }
+
             uVar3 = Library::MSVCRT::FUN_0072e6c0();
             uVar4 = uVar3 & 0x80000001;
             if ((int)uVar4 < 0) {
@@ -153,16 +155,20 @@ LAB_00698a36:
                     local_20 = *(int *)(pbVar5 + 2) % this->field_5833;
                     pAVar9 = pAStack_8;
                     if (((*pbVar5 & 2) != 0) &&
+
                        (local_EAX_596 = Library::MSVCRT::FUN_0072e6c0(), pAVar9 = pAStack_8,
                        (int)local_EAX_596 % (local_c + 1) == 1)) {
+
                       local_EAX_615 = Library::MSVCRT::FUN_0072e6c0();
                       uVar4 = local_EAX_615 & 0x80000001;
                       if ((int)uVar4 < 0) {
                         uVar4 = (uVar4 - 1 | 0xfffffffe) + 1;
                       }
+
                       uVar7 = Library::MSVCRT::FUN_0072e6c0();
+
                       iVar2 = thunk_FUN_006a1370(this->field_0008,local_20,local_24,local_28,
-                                                 (int)local_3c);
+                                                 &local_3c);
                       pAVar9 = pAStack_8;
                       if ((int)((short)iVar2 + uVar4 + 1) < this->field_5847) {
                         thunk_FUN_006a0c90(local_20,local_24,*(int *)&pAStack_8->field_0x0 + 1,

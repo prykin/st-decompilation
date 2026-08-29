@@ -86,7 +86,8 @@ LAB_0057299a:
 00572A36  6A 02                     PUSH 0x2
 00572A38  51                        PUSH ECX
 00572A39  68 45 03 00 00            PUSH 0x345
-00572A3E  E8 7D E4 17 00            CALL 0x006f0ec0
+FUN_00572920::override::prt_572a3e_9d92389d:
+00572A3E  E8 7D E4 17 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 00572A43  8B F0                     MOV ESI,EAX
 00572A45  83 C4 14                  ADD ESP,0x14
 00572A48  85 F6                     TEST ESI,ESI

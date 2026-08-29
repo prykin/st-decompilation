@@ -10,7 +10,8 @@
    decompilation contains no value return */
 
 void __thiscall
-MTaskTy::PrepareTSurf(MTaskTy *this,AnonShape_005E11D0_D0F8BE03 *param_1,char param_2,char param_3)
+MTaskTy::PrepareTSurf
+          (MTaskTy *this,RecoveredRecordView_005E11D0_93326EAB *param_1,char param_2,char param_3)
 
 {
   int errorCode;
@@ -22,6 +23,7 @@ MTaskTy::PrepareTSurf(MTaskTy *this,AnonShape_005E11D0_D0F8BE03 *param_1,char pa
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
+
   errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (errorCode == 0) {
     uVar5 = param_1->field_0014;
@@ -29,7 +31,8 @@ MTaskTy::PrepareTSurf(MTaskTy *this,AnonShape_005E11D0_D0F8BE03 *param_1,char pa
       uVar5 = ((uint)param_1->field_000E * param_1->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
               param_1->field_0008;
     }
-    puVar2 = (undefined4 *)FUN_006b4fa0((int *)param_1);
+
+    puVar2 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0((RecoveredRecord_006B4FA0_DAC3A217 *)param_1));
     for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
       *puVar2 = 0xffffffff;
       puVar2 = puVar2 + 1;
@@ -48,6 +51,7 @@ MTaskTy::PrepareTSurf(MTaskTy *this,AnonShape_005E11D0_D0F8BE03 *param_1,char pa
     return;
   }
   g_currentExceptionFrame = local_48.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Start\\task_obj.cpp",0x1b9,0,errorCode,
                              "%s","MTaskTy::PrepareTSurf");
   if (iVar3 != 0) {

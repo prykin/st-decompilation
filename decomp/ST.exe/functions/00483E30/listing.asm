@@ -1,4 +1,4 @@
-FUN_00483e30:
+STBoatC::sub_00483E30:
 00483E30  55                        PUSH EBP
 00483E31  8B EC                     MOV EBP,ESP
 00483E33  83 EC 10                  SUB ESP,0x10

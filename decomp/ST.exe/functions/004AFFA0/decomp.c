@@ -17,7 +17,7 @@ FUN_004affa0(undefined4 param_1,Global_sub_004AFFA0_param_2Enum param_2,int *par
   int local_EAX_441;
   int iVar3;
   uint uVar4;
-  undefined4 local_18;
+  uint local_18;
   int local_14;
   STFishC *local_10;
   short local_a;
@@ -36,22 +36,22 @@ FUN_004affa0(undefined4 param_1,Global_sub_004AFFA0_param_2Enum param_2,int *par
         switch(param_2) {
         case CASE_38:
           /* ST_CALLSITE[004B0006]: CALL dword ptr [EAX + 0x2c] */
-          dVar1 = local_10->slot_2C();
+          dVar1 = local_10->vfunc_2C();
           if (dVar1 != 0xdc) break;
           goto LAB_004b004a;
         case CASE_39:
         case CASE_5E:
           /* ST_CALLSITE[004B0018]: CALL dword ptr [EDX + 0x2c] */
-          dVar1 = local_10->slot_2C();
+          dVar1 = local_10->vfunc_2C();
           if (dVar1 == 0xdd) goto LAB_004b004a;
           break;
         case CASE_4F:
           /* ST_CALLSITE[004B002A]: CALL dword ptr [EAX + 0x2c] */
-          dVar1 = local_10->slot_2C();
+          dVar1 = local_10->vfunc_2C();
           goto joined_r0x004b0044;
         case CASE_61:
           /* ST_CALLSITE[004B003C]: CALL dword ptr [EDX + 0x2c] */
-          dVar1 = local_10->slot_2C();
+          dVar1 = local_10->vfunc_2C();
 joined_r0x004b0044:
           if (dVar1 == 0xde) {
 LAB_004b004a:

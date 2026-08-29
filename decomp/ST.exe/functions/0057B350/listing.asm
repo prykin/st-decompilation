@@ -78,7 +78,7 @@ LAB_0057b3f3:
 0057B441  50                        PUSH EAX
 0057B442  51                        PUSH ECX
 0057B443  8B CE                     MOV ECX,ESI
-0057B445  FF 52 10                  CALL dword ptr [EDX + 0x10]
+0057B445  FF 52 10                  CALL dword ptr [EDX + 0x10]  ; [STIndirectCallsiteApplier] exact slot 0x10; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 0057B448  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 0057B44B  8B 17                     MOV EDX,dword ptr [EDI]
 0057B44D  41                        INC ECX
@@ -163,7 +163,7 @@ LAB_0057b4dc:
 0057B535  50                        PUSH EAX
 0057B536  51                        PUSH ECX
 0057B537  8B CE                     MOV ECX,ESI
-0057B539  FF 52 10                  CALL dword ptr [EDX + 0x10]
+0057B539  FF 52 10                  CALL dword ptr [EDX + 0x10]  ; [STIndirectCallsiteApplier] exact slot 0x10; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 0057B53C  8B 17                     MOV EDX,dword ptr [EDI]
 0057B53E  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 0057B541  41                        INC ECX

@@ -1,5 +1,5 @@
 program=ST.exe
-functions_scanned=5555
+functions_scanned=5035
 fixed_zero_spans=249
 fixed_zero_apply=0
 overlapping_stack_lifetimes=232

@@ -1,7 +1,18 @@
 #include "../../pseudocode_runtime.h"
 
 
-uint FUN_00496250(int param_1,int param_2,int param_3)
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (11), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00579350 @ 0057948B -> read as EAX on
+   every CFG path | 00579350 @ 005794C3 -> read as EAX on every CFG path | 005797B0 @ 00579C75 ->
+   read as EAX on every CFG path | 00586AF0 @ 0058733C -> read as EAX on every CFG path | 00586AF0 @
+   00587660 -> read as EAX on every CFG path | 00586AF0 @ 00587FAA -> read as EAX on every CFG path
+   | 00586AF0 @ 005882C2 -> read as EAX on every CFG path | 0058B190 @ 0058B519 -> read as EAX on
+   every CFG path | 0058B190 @ 0058B55C -> read as EAX; remaining paths kill EAX | 005FE5D0 @
+   005FE801 -> read as EAX on every CFG path | 0062A8B0 @ 0062A8C5 -> read as EAX on every CFG path
+    */
+
+int FUN_00496250(int param_1,int param_2,int param_3)
 
 {
   short sVar1;
@@ -62,14 +73,14 @@ switchD_0049655f_caseD_0:
           iVar11 = iVar11 + 1;
           piVar14 = piVar14 + iVar8;
           if (5 < iVar11) {
-            return 0xffffffff;
+            return -1;
           }
         }
         sVar1 = STField<short>(iVar3,0x8);
         iVar11 = (int)sVar1;
         iVar8 = iVar11 - (uint)STField<byte>(iVar3,0x48);
         if (iVar12 < iVar8) {
-          return 0xffffffff;
+          return -1;
         }
         uVar2 = STField<ushort>(iVar3,0x4E);
         if ((uVar2 & 0x4000) != 0) {
@@ -86,7 +97,7 @@ switchD_0049655f_caseD_0:
                             iVar4 * (((iVar4 * param_2) / 0xc9) % (iVar4 * 2)) * 2 +
                            ((iVar4 * param_1) / 0xc9) % (iVar4 * 2)) + 4 + iVar8) <
             ((param_3 + 400) * 0x100) / 0x640) {
-          return 0xffffffff;
+          return -1;
         }
         iVar8 = (uVar13 & 0xfffffffe) * -0xc9 + param_1;
         iVar6 = iVar8 / 100;
@@ -98,7 +109,7 @@ switchD_0049655f_caseD_0:
           bVar9 = ((char)sVar1 - (char)iVar12) - 1;
           uVar5 = *(uint *)(iVar3 + 0x2c + (uVar13 + uVar10 * 2) * 4);
           if ((uVar5 & 8 >> (bVar9 & 0x1f)) == 0) {
-            return 0xffffffff;
+            return -1;
           }
           if ((uVar5 & 0x80 >> (bVar9 & 0x1f)) != 0) {
             return 0x7f;
@@ -208,7 +219,7 @@ cf_common_exit_004965EF:
 switchD_00496785_caseD_2:
             return 1;
           default:
-            return 0xffffffff;
+            return -1;
           }
         case 1:
           switch(iVar6) {
@@ -224,7 +235,7 @@ switchD_00496785_caseD_1:
 cf_common_exit_004967AA:
             return 0;
           default:
-            return 0xffffffff;
+            return -1;
           }
         case 2:
           switch(iVar6) {
@@ -254,6 +265,6 @@ switchD_004967be_caseD_0:
     }
   }
 switchD_0049655f_default:
-  return 0xffffffff;
+  return -1;
 }
 

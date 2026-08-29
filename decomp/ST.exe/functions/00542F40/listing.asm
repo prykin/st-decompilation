@@ -64,7 +64,8 @@ LAB_00542fee:
 0054300A  6A 01                     PUSH 0x1
 0054300C  6A 00                     PUSH 0x0
 0054300E  68 C8 7C 7C 00            PUSH 0x7c7cc8
-00543013  E8 64 27 EC FF            CALL 0x0040577c
+InterSystemC::GetMessage::override::prt_543013_9ee3df7c:
+00543013  E8 64 27 EC FF            CALL 0x0040577c  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;pointer:/char;/int
 00543018  83 C4 08                  ADD ESP,0x8
 0054301B  50                        PUSH EAX
 0054301C  E8 DF FB 1A 00            CALL 0x006f2c00
@@ -72,7 +73,8 @@ LAB_00542fee:
 00543027  83 C4 0C                  ADD ESP,0xc
 0054302A  50                        PUSH EAX
 0054302B  6A 01                     PUSH 0x1
-0054302D  E8 AE EC 1A 00            CALL 0x006f1ce0
+InterSystemC::GetMessage::override::prt_54302d_e6387ef2:
+0054302D  E8 AE EC 1A 00            CALL 0x006f1ce0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/wingdi.h/BITMAPINFO; signature=__thiscall;pointer:/wingdi.h/BITMAPINFO;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int
 00543032  50                        PUSH EAX
 00543033  6A 01                     PUSH 0x1
 00543035  6A 00                     PUSH 0x0
@@ -239,10 +241,12 @@ LAB_005431df:
 005431F3  6A 01                     PUSH 0x1
 005431F5  6A 00                     PUSH 0x0
 005431F7  53                        PUSH EBX
-005431F8  E8 7F 25 EC FF            CALL 0x0040577c
+InterSystemC::GetMessage::override::prt_5431f8_9ee3df7c:
+005431F8  E8 7F 25 EC FF            CALL 0x0040577c  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;pointer:/char;/int
 005431FD  83 C4 08                  ADD ESP,0x8
 00543200  50                        PUSH EAX
-00543201  E8 FA F9 1A 00            CALL 0x006f2c00
+InterSystemC::GetMessage::override::prt_543201_c67451d8:
+00543201  E8 FA F9 1A 00            CALL 0x006f2c00  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;pointer:/char;/int;/undefined4
 00543206  83 C4 0C                  ADD ESP,0xc
 00543209  50                        PUSH EAX
 0054320A  A1 94 67 80 00            MOV EAX,[0x00806794]
@@ -284,16 +288,19 @@ switchD_00543107::caseD_b908:
 0054325E  6A 01                     PUSH 0x1
 00543260  6A 00                     PUSH 0x0
 00543262  68 90 7C 7C 00            PUSH 0x7c7c90
-00543267  E8 10 25 EC FF            CALL 0x0040577c
+InterSystemC::GetMessage::override::prt_543267_9ee3df7c:
+00543267  E8 10 25 EC FF            CALL 0x0040577c  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;pointer:/char;/int
 0054326C  83 C4 08                  ADD ESP,0x8
 0054326F  50                        PUSH EAX
-00543270  E8 8B F9 1A 00            CALL 0x006f2c00
+InterSystemC::GetMessage::override::prt_543270_c67451d8:
+00543270  E8 8B F9 1A 00            CALL 0x006f2c00  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;pointer:/char;/int;/undefined4
 00543275  8B 15 94 67 80 00         MOV EDX,dword ptr [0x00806794]
 0054327B  83 C4 0C                  ADD ESP,0xc
 0054327E  50                        PUSH EAX
 0054327F  6A 06                     PUSH 0x6
 00543281  52                        PUSH EDX
-00543282  E8 69 68 1C 00            CALL 0x00709af0
+InterSystemC::GetMessage::override::prt_543282_1844aece:
+00543282  E8 69 68 1C 00            CALL 0x00709af0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/wingdi.h/BITMAPINFO; signature=__cdecl;pointer:/wingdi.h/BITMAPINFO;pointer:/int;/SubmarineTitans/Recovered/Enums/Global_mfRLoad_param_2Enum;pointer:/char;/uint;/byte;/int;/int;pointer:/undefined4
 00543287  8B 0E                     MOV ECX,dword ptr [ESI]
 00543289  50                        PUSH EAX
 0054328A  8B 46 04                  MOV EAX,dword ptr [ESI + 0x4]

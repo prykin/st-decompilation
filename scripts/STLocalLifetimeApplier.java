@@ -184,6 +184,21 @@ public class STLocalLifetimeApplier extends GhidraScript {
                                 "anchor has no HighVariable");
                         Object symbol = high.getClass()
                             .getMethod("getSymbol").invoke(high);
+                        if (unt(row.get("anchor_kind")).equals(
+                                "indirect_receiver")) {
+                            Object durable = transparentPersistentOrigin(
+                                anchor.varnode, row,
+                                java.util.Collections.newSetFromMap(
+                                    new java.util.IdentityHashMap<>()), 0);
+                            if (durable != null) {
+                                anchor = new Anchor(anchor.op, durable,
+                                    anchor.kind);
+                                high = durable.getClass().getMethod("getHigh")
+                                    .invoke(durable);
+                                symbol = high == null ? null : high.getClass()
+                                    .getMethod("getSymbol").invoke(high);
+                            }
+                        }
                         if (symbol == null && unt(row.get("anchor_kind"))
                                 .equals("misattached_receiver_call_return")) {
                             Variable durable = uniqueMisattachedReceiverVariable(
@@ -271,6 +286,53 @@ public class STLocalLifetimeApplier extends GhidraScript {
             decompiler.dispose();
         }
         return result;
+    }
+
+    /**
+     * Map a receiver-aware call override back through only same-width,
+     * value-preserving p-code to the persistent Listing local named by the
+     * proposal.  The call input often belongs to a synthetic CAST HighVariable;
+     * updating that temporary reports success without changing the durable
+     * local.  Arithmetic, pointer adjustment, loads, PHIs, and ambiguous roots
+     * are hard stops.
+     */
+    private Object transparentPersistentOrigin(Object varnode,
+            Map<String, String> row, Set<Object> seen, int depth) {
+        if (varnode == null || depth > 6 || !seen.add(varnode)) return null;
+        try {
+            Object high = varnode.getClass().getMethod("getHigh").invoke(varnode);
+            Object symbol = high == null ? null : high.getClass()
+                .getMethod("getSymbol").invoke(high);
+            Variable variable = symbol == null ? null : functionVariable(symbol);
+            if (variable != null && variable.getName().equals(
+                    unt(row.get("original_name")))) return varnode;
+            Object definition = varnode.getClass().getMethod("getDef").invoke(varnode);
+            if (definition == null || !Set.of("COPY", "CAST", "INDIRECT")
+                    .contains(mnemonic(definition))) return null;
+            int size = ((Number)varnode.getClass().getMethod("getSize")
+                .invoke(varnode)).intValue();
+            int inputs = ((Number)definition.getClass()
+                .getMethod("getNumInputs").invoke(definition)).intValue();
+            Object selected = null;
+            for (int index = 0; index < inputs; index++) {
+                Object input = definition.getClass().getMethod("getInput", int.class)
+                    .invoke(definition, index);
+                if (input == null || (boolean)input.getClass()
+                        .getMethod("isConstant").invoke(input)) continue;
+                int inputSize = ((Number)input.getClass().getMethod("getSize")
+                    .invoke(input)).intValue();
+                if (inputSize != size) continue;
+                Object candidate = transparentPersistentOrigin(input, row,
+                    seen, depth + 1);
+                if (candidate == null) continue;
+                if (selected != null && selected != candidate) return null;
+                selected = candidate;
+            }
+            return selected;
+        }
+        catch (Exception ignored) {
+            return null;
+        }
     }
 
     /**
@@ -556,6 +618,7 @@ public class STLocalLifetimeApplier extends GhidraScript {
                 case "prior_script_repair_cast" -> "CAST";
                 case "prior_script_repair_multiequal" -> "MULTIEQUAL";
                 case "prior_script_repair_indirect" -> "INDIRECT";
+                case "indirect_receiver" -> "CALLIND";
                 default -> "CALL";
             };
         @SuppressWarnings("unchecked")
@@ -604,6 +667,11 @@ public class STLocalLifetimeApplier extends GhidraScript {
             int operand = integer(row.get("anchor_operand"));
             varnode = op.getClass().getMethod("getInput", int.class)
                 .invoke(op, operand + 1);
+        }
+        else if (kind.equals("indirect_receiver")) {
+            int operand = integer(row.get("anchor_operand"));
+            varnode = op.getClass().getMethod("getInput", int.class)
+                .invoke(op, operand);
         }
         else if (valueDomainRole) {
             int operand = integer(row.get("anchor_operand"));
@@ -854,6 +922,16 @@ public class STLocalLifetimeApplier extends GhidraScript {
                     !typeSpecification(type).equals(
                         unt(row.get("anchor_source")))) return null;
             return type;
+        }
+        if (anchor.kind.equals("indirect_receiver")) {
+            Function caller = function(unt(row.get("function_address")));
+            Address call = currentProgram.getAddressFactory().getAddress(
+                unt(row.get("anchor_address")));
+            DataType receiver = exactScriptCallReceiverType(caller, call);
+            Structure pointee = pointedStructure(receiver);
+            return receiver != null && pointee != null &&
+                pointee.getPathName().equals(unt(row.get("anchor_source"))) ?
+                    receiver : null;
         }
         Function direct = directTarget(anchor.op);
         if (direct == null) return null;
@@ -1109,6 +1187,29 @@ public class STLocalLifetimeApplier extends GhidraScript {
             "signature=[^;\\r\\n]*;(pointer:[^;\\s]+|/[^;\\s]+)")
             .matcher(comment);
         return marker.find() ? resolveType(marker.group(1)) : null;
+    }
+
+    private DataType exactScriptCallReceiverType(Function caller,
+            Address call) {
+        if (caller == null || call == null) return null;
+        String comment = text(currentProgram.getListing()
+            .getComment(CommentType.EOL, call));
+        if (!comment.contains("[STIndirectCallsiteApplier]")) return null;
+        Namespace root = HighFunction.findOverrideSpace(caller);
+        if (root == null) return null;
+        FunctionDefinition agreed = null;
+        for (Symbol symbol : currentProgram.getSymbolTable().getSymbols(call)) {
+            if (!root.equals(symbol.getParentNamespace())) continue;
+            DataTypeSymbol value = HighFunctionDBUtil.readOverride(symbol);
+            if (value == null || !(value.getDataType() instanceof
+                    FunctionDefinition definition) ||
+                    !"__thiscall".equals(
+                        definition.getCallingConventionName()) ||
+                    definition.getArguments().length < 1) continue;
+            if (agreed != null && !agreed.isEquivalent(definition)) return null;
+            agreed = definition;
+        }
+        return agreed == null ? null : agreed.getArguments()[0].getDataType();
     }
 
     private boolean machineControlIndex(Map<String, String> row, Object varnode) {
@@ -2158,13 +2259,14 @@ public class STLocalLifetimeApplier extends GhidraScript {
                 StandardCharsets.UTF_8)) {
             out.write("function_address\toriginal_name\tmerge_group\t" +
                 "anchor_address\tanchor_kind\tproposal_identity\t" +
-                "rejection_state\tstatus\tdetail\n");
+                "proposed_type\trejection_state\tstatus\tdetail\n");
             for (ReportRow row : report)
                 out.write(row.functionAddress + "\t" +
                     tsv(row.originalName) + "\t" + row.mergeGroup + "\t" +
                     row.anchorAddress + "\t" + row.anchorKind + "\t" +
-                    row.proposalIdentity + "\t" + row.rejectionState + "\t" +
-                    row.status + "\t" + tsv(row.detail) + "\n");
+                    row.proposalIdentity + "\t" + row.proposedType + "\t" +
+                    row.rejectionState + "\t" + row.status + "\t" +
+                    tsv(row.detail) + "\n");
         }
     }
 
@@ -2178,7 +2280,8 @@ public class STLocalLifetimeApplier extends GhidraScript {
         return new ReportRow(unt(row.get("function_address")),
             unt(row.get("original_name")), integer(row.get("merge_group")),
             unt(row.get("anchor_address")), unt(row.get("anchor_kind")),
-            proposalIdentity(row), rejectionState, status, detail);
+            proposalIdentity(row), unt(row.get("proposed_type")),
+            rejectionState, status, detail);
     }
 
     private void replaceReport(Map<String, String> row,
@@ -2327,6 +2430,6 @@ public class STLocalLifetimeApplier extends GhidraScript {
         Baseline baseline, String detail) {}
     private record ReportRow(String functionAddress, String originalName,
         int mergeGroup, String anchorAddress, String anchorKind,
-        String proposalIdentity, String rejectionState, String status,
-        String detail) {}
+        String proposalIdentity, String proposedType, String rejectionState,
+        String status, String detail) {}
 }

@@ -1,7 +1,8 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 * __cdecl FUN_0070c9e0(AnonShape_0070C9E0_7137F001 *param_1,char param_2,uint *param_3)
+undefined4 * __cdecl
+FUN_0070c9e0(RecoveredRecordView_0070C9E0_7D0EE2FF *param_1,char param_2,uint *param_3)
 
 {
   char cVar1;
@@ -40,6 +41,7 @@ undefined4 * __cdecl FUN_0070c9e0(AnonShape_0070C9E0_7137F001 *param_1,char para
     iVar2 = local_c + 8 + ((int)(local_c + 8) >> 0x1f & 7U);
   }
   uVar6 = (iVar2 >> 3) * local_10;
+
   puVar3 = Library::DKW::LIB::MemAllocClear(uVar6);
   if (puVar3 == nullptr) {
     return nullptr;

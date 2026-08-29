@@ -22,7 +22,8 @@ _AddAllGrpExch:
 0067601A  0F 84 9E 00 00 00         JZ 0x006760be
 00676020  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]
 00676023  50                        PUSH EAX
-00676024  E8 92 EA D8 FF            CALL 0x00404abb
+_AddAllGrpExch::override::prt_676024_76a29dd0:
+00676024  E8 92 EA D8 FF            CALL 0x00404abb  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArrayTy;/char
 00676029  8B F8                     MOV EDI,EAX
 0067602B  85 FF                     TEST EDI,EDI
 0067602D  0F 84 8B 00 00 00         JZ 0x006760be

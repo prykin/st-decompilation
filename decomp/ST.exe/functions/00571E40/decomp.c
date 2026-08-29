@@ -23,12 +23,12 @@ undefined4 __thiscall FUN_00571e40(void *this,LPDWORD lpcbData)
   char *pcVar13;
   bool bVar14;
   CHAR local_124 [260];
-  undefined4 local_20;
+  uint local_20;
   CHAR local_1c;
   undefined3 uStack_1b;
-  undefined4 local_18;
-  undefined2 local_14;
-  undefined1 local_11;
+  uint local_18;
+  ushort local_14;
+  byte local_11;
   DWORD local_10 [2];
   HKEY local_8;
 
@@ -279,7 +279,7 @@ LAB_005722ed:
           }
           FUN_006b78c0((char *)((int)this + 0x640),(char *)((int)this + 0x640));
         }
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00573260::thunk_FUN_00573260(this);
+        SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00573260::thunk_FUN_00573260(this);
       }
       /* ST_CALLSITE[00572379]: CALL dword ptr [0x0085b968] */
       RegCloseKey(local_8);

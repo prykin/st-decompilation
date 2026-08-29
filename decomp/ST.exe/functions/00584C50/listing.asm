@@ -35,7 +35,7 @@ FUN_00584c50:
 00584CB4  C7 45 E8 A3 00 00 00      MOV dword ptr [EBP + -0x18],0xa3
 00584CBB  C7 45 D0 02 00 00 00      MOV dword ptr [EBP + -0x30],0x2
 00584CC2  C7 45 D4 10 01 00 00      MOV dword ptr [EBP + -0x2c],0x110
-00584CC9  FF 12                     CALL dword ptr [EDX]
+00584CC9  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4
 00584CCB  5F                        POP EDI
 LAB_00584ccc:
 00584CCC  5E                        POP ESI

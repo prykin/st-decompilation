@@ -13,7 +13,7 @@ FUN_00575a10:
 00575A32  57                        PUSH EDI
 00575A33  89 65 E8                  MOV dword ptr [EBP + -0x18],ESP
 00575A36  68 FC AA 7C 00            PUSH 0x7caafc
-00575A3B  FF 15 4C BC 85 00         CALL dword ptr [0x0085bc4c]
+00575A3B  FF 15 4C BC 85 00         CALL dword ptr [0x0085bc4c]  ; [STCallResultViewApplier] presentation_only; exact direct-call result=/WinDef.h/HINSTANCE; source view only; no Ghidra override
 00575A41  A3 18 76 80 00            MOV [0x00807618],EAX
 00575A46  85 C0                     TEST EAX,EAX
 00575A48  75 16                     JNZ 0x00575a60

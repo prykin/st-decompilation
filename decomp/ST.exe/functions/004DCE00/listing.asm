@@ -8,7 +8,8 @@ FUN_004dce00:
 004DCE12  85 C0                     TEST EAX,EAX
 004DCE14  75 57                     JNZ 0x004dce6d
 004DCE16  6A 40                     PUSH 0x40
-004DCE18  E8 13 17 25 00            CALL 0x0072e530
+FUN_004dce00::override::prt_4dce18_a7ad5ad2:
+004DCE18  E8 13 17 25 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint
 004DCE1D  83 C4 04                  ADD ESP,0x4
 004DCE20  85 C0                     TEST EAX,EAX
 004DCE22  74 09                     JZ 0x004dce2d
@@ -74,7 +75,8 @@ LAB_004dcee8:
 004DCEEE  E8 9D 5B F2 FF            CALL 0x00402a90
 004DCEF3  6A 0A                     PUSH 0xa
 004DCEF5  8D 8E D5 01 00 00         LEA ECX,[ESI + 0x1d5]
-004DCEFB  E8 CC 83 F2 FF            CALL 0x004052cc
+FUN_004dce00::override::prt_4dcefb_4768c9e3:
+004DCEFB  E8 CC 83 F2 FF            CALL 0x004052cc  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC
 004DCF00  8B 8E FF 05 00 00         MOV ECX,dword ptr [ESI + 0x5ff]
 004DCF06  50                        PUSH EAX
 004DCF07  E8 C0 83 F2 FF            CALL 0x004052cc
@@ -123,7 +125,7 @@ LAB_004dcee8:
 004DCFC6  68 F4 03 00 00            PUSH 0x3f4
 004DCFCB  6A 03                     PUSH 0x3
 004DCFCD  8B CE                     MOV ECX,ESI
-004DCFCF  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]
+004DCFCF  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]  ; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4
 004DCFD5  33 C0                     XOR EAX,EAX
 004DCFD7  5E                        POP ESI
 004DCFD8  8B E5                     MOV ESP,EBP

@@ -8,8 +8,9 @@
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
    and decompilation contains no value return */
 
-void FUN_006d3300(uint *param_1,int param_2,byte *param_3,int param_4,int param_5,int param_6,
-                 byte *param_7,int param_8,byte *param_9,int param_10,int param_11,int param_12)
+void FUN_006d3300(uint *param_1,int param_2,RecoveredRecord_006D3300_0D49F2B9 *param_3,int param_4,
+                 int param_5,int param_6,byte *param_7,int param_8,byte *param_9,int param_10,
+                 int param_11,int param_12)
 
 {
   byte bVar1;
@@ -29,13 +30,12 @@ void FUN_006d3300(uint *param_1,int param_2,byte *param_3,int param_4,int param_
     param_9 = param_9 + param_10 * param_12 + (param_11 >> 3);
   }
   if (param_5 < 1) {
-    pbVar3 = param_3 + (param_3[0xd] >> 1 & 0xe) + 0x16;
+    pbVar3 = &param_3[1].field_0x2 + ((byte)param_3->field_0xd >> 1 & 0xe);
   }
   else {
-    pbVar3 = FUN_006cfe10(param_3,param_5);
+    pbVar3 = FUN_006cfe10((RecoveredRecord_006CFE10_B59F6D2D *)param_3,param_5);
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  sVar2 = *(short *)(param_3 + 0x12);
+  sVar2 = param_3->field_0012;
   bVar1 = (byte)param_11;
   if (param_6 == sVar2) {
     if (param_9 == nullptr) {
@@ -80,7 +80,7 @@ void FUN_006d3300(uint *param_1,int param_2,byte *param_3,int param_4,int param_
       do {
         uVar5 = (uint)*pbVar3;
         pbVar3 = pbVar3 + 1;
-        auto param_3_after_write = (byte *)param_6; /* compiler stack-slot lifetime split */
+        auto param_3_after_write = (RecoveredRecord_006D3300_0D49F2B9 *)param_6; /* compiler stack-slot lifetime split */
         uVar8 = 0x80 >> (bVar1 & 7);
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_7 = param_9;
@@ -90,7 +90,7 @@ void FUN_006d3300(uint *param_1,int param_2,byte *param_3,int param_4,int param_
         else {
           while( true ) {
             uVar4 = uVar5 & 0x7f;
-            param_3_after_write = param_3_after_write + -uVar4;
+            param_3_after_write = (RecoveredRecord_006D3300_0D49F2B9 *)((int)param_3_after_write - uVar4);
             if ((uVar5 & 0x80) == 0) {
               uVar8 = ((uVar8 & 0xff) << 8) >> ((byte)uVar4 & 7);
               param_1 = (uint *)((int)param_1 + uVar4 * 2);
@@ -158,12 +158,12 @@ void FUN_006d3300(uint *param_1,int param_2,byte *param_3,int param_4,int param_
         if ((uVar8 & 0x80) != 0) {
           pbVar3 = pbVar3 + iVar9;
         }
-        auto param_3_after_write_2 = (byte *)param_6; /* compiler stack-slot lifetime split */
+        auto param_3_after_write_2 = (RecoveredRecord_006D3300_0D49F2B9 *)param_6; /* compiler stack-slot lifetime split */
         if (param_9 == nullptr) {
           puVar10 = param_1;
           if ((int)puVar7 <= param_6) {
             do {
-              param_3_after_write_2 = (byte *)((int)param_3_after_write_2 - (int)puVar7);
+              param_3_after_write_2 = (RecoveredRecord_006D3300_0D49F2B9 *)((int)param_3_after_write_2 - (int)puVar7);
               if ((uVar8 & 0x80) == 0) {
                 puVar10 = (uint *)((int)param_1 + (int)puVar7 * 2);
               }
@@ -215,7 +215,7 @@ LAB_006d36c3:
           puVar10 = param_1;
           if ((int)puVar7 <= param_6) {
             do {
-              param_3_after_write_2 = (byte *)((int)param_3_after_write_2 - (int)puVar7);
+              param_3_after_write_2 = (RecoveredRecord_006D3300_0D49F2B9 *)((int)param_3_after_write_2 - (int)puVar7);
               if ((uVar8 & 0x80) == 0) {
                 puVar10 = (uint *)((int)puVar10 + (int)puVar7 * 2);
                 uVar5 = ((uVar5 & 0xff) << 8) >> ((byte)puVar7 & 7);
@@ -273,7 +273,7 @@ LAB_006d36c3:
                 uVar5 = 0x80;
                 param_7 = param_7 + 1;
               }
-              param_3_after_write_2 = param_3_after_write_2 + -1;
+              param_3_after_write_2 = (RecoveredRecord_006D3300_0D49F2B9 *)((int)&param_3_after_write_2[-1].field_0012 + 1);
               param_1 = puVar7_mg1;
             } while (param_3_after_write_2 != nullptr);
           }

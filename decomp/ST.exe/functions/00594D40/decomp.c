@@ -33,6 +33,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3
   if (param_8 != 0) {
     local_48.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_48;
+
     errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
     if (errorCode == 0) {
       /* ST_CALLSITE[00594DAA]: CALL 0x00403099; direct=00403099 MMMObjTy::OutRGlProc */
@@ -55,6 +56,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3
       return;
     }
     g_currentExceptionFrame = local_48.previous;
+
     iVar2 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x73,0,errorCode,
                                "%s","FSGSTy::OutTRGlProc");
     if (iVar2 != 0) {

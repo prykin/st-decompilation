@@ -32,6 +32,7 @@ FUN_006778c0(int param_1,int param_2,int param_3,undefined4 param_4,int param_5,
     iVar1 = (int)g_worldGrid.sizeY;
   }
   if ((0xdc < param_1) && (param_1 < 0xdf)) {
+
     iVar5 = thunk_FUN_004b1fb0(param_1,&param_2,&param_3,iVar5,iVar4,iVar2,iVar1);
     if (iVar5 == 0) {
       iVar3 = param_2;

@@ -39,7 +39,7 @@ LAB_0046cf90:
 0046CF9B  66 8B 86 22 05 00 00      MOV AX,word ptr [ESI + 0x522]
 0046CFA2  8B CE                     MOV ECX,ESI
 0046CFA4  50                        PUSH EAX
-0046CFA5  E8 08 61 F9 FF            CALL 0x004030b2
+0046CFA5  E8 08 61 F9 FF            CALL 0x004030b2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override
 0046CFAA  50                        PUSH EAX
 0046CFAB  8B CE                     MOV ECX,ESI
 0046CFAD  E8 4A 53 F9 FF            CALL 0x004022fc

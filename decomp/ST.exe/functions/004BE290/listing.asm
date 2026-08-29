@@ -1,4 +1,4 @@
-FUN_004be290:
+TLOBaseTy::vfunc_70:
 004BE290  55                        PUSH EBP
 004BE291  8B EC                     MOV EBP,ESP
 004BE293  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]

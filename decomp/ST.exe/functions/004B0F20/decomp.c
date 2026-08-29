@@ -32,16 +32,16 @@ FUN_004b0f20(int param_1,int param_2,int param_3,int param_4,int param_5,uint pa
 {
   int iVar1_mg1;
   uint *puVar2;
-  undefined4 local_74;
+  uint local_74;
   int local_70;
-  undefined4 local_6c;
-  undefined4 local_68;
-  undefined4 local_64;
-  undefined4 local_60;
+  uint local_6c;
+  uint local_68;
+  uint local_64;
+  uint local_60;
   int local_5c;
-  undefined4 local_58;
-  undefined4 local_54;
-  undefined4 local_50;
+  uint local_58;
+  uint local_54;
+  uint local_50;
   int local_4c;
   int local_48;
   int local_44;
@@ -49,11 +49,10 @@ FUN_004b0f20(int param_1,int param_2,int param_3,int param_4,int param_5,uint pa
   uint local_3c;
   int local_38;
   char local_34 [15];
-  undefined4 local_25;
-  undefined4 local_21;
-  undefined4 local_1d;
-  undefined4 local_9;
-
+  uint local_25;
+  uint local_21;
+  uint local_1d;
+  uint local_9;
   puVar2 = &local_74;
   memset(puVar2, 0, 0x6f); /* compiler bulk-zero initialization */
   puVar2 = (undefined4 *)((byte *)puVar2 + 0x6c);

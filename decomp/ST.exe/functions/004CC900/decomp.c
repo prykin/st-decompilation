@@ -16,9 +16,11 @@ undefined4 __thiscall TLOBaseTy::sub_004CC900(TLOBaseTy *this)
     this->field_0448 = 0;
     /* ST_CALLSITE[004CC92D]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
     STT3DSprC::StopShow(this->field_0603,0xe);
-    thunk_FUN_004ad430(this->field_0603);
+    /* ST_CALLSITE[004CC938]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+    STT3DSprC::sub_004AD430(this->field_0603);
+
     uVar1 = thunk_FUN_004ad650(this->field_0603);
-    Library::Ourlib::ST3DSMAP::SprRstLev((void *)this->field_0211,uVar1);
+    Library::Ourlib::ST3DSMAP::SprRstLev(this->field_0211,uVar1);
     /* ST_CALLSITE[004CC95C]: CALL 0x0040498a; direct=0040498A STT3DSprC::UnLoadSequence */
     STT3DSprC::UnLoadSequence(this->field_0603,0xe);
     this->field_044C = -1;

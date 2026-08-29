@@ -1,6 +1,7 @@
 CreateAiTact:
 00690E60  68 44 01 00 00            PUSH 0x144
-00690E65  E8 66 F6 01 00            CALL 0x006b04d0
+CreateAiTact::override::prt_690e65_866bce52:
+00690E65  E8 66 F6 01 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiTactClassTy; signature=__stdcall;pointer:/AiTactClassTy;/uint
 00690E6A  85 C0                     TEST EAX,EAX
 00690E6C  74 07                     JZ 0x00690e75
 00690E6E  8B C8                     MOV ECX,EAX

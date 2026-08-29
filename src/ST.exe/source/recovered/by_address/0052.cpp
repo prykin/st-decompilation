@@ -15,8 +15,10 @@ IntercomPanelTy * __cdecl st::fn_00521840(void)
 {
   IntercomPanelTy *this;
 
-  this = (IntercomPanelTy *)st::fn_006B04D0(0x1a5);
+
+  this = STPointerBoundaryCast<IntercomPanelTy *>(st::fn_006B04D0(0x1a5));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;
@@ -95,7 +97,7 @@ void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
   if (iVar10 != 0) {
     local_60.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_60;
-    local_14 = (AnonShape_00521CF0_4A42AA62 *)param_1;
+    local_14 = reinterpret_cast<AnonShape_00521CF0_4A42AA62 *>(param_1);
     local_EAX_69 = st::fn_0072D7F0(local_60.jumpBuffer,0);
     if (local_EAX_69 == 0) {
       if (DAT_00808783 == '\x03') {
@@ -118,11 +120,11 @@ void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
         } while (cVar1 != '\0');
         uVar8 = ~uVar8;
         pcVar13 = pcVar14 + -uVar8;
-        pcVar14 = st::pointer_boundary_cast<char *>(_Str1);
+        pcVar14 = reinterpret_cast<char *>(_Str1);
         memmove(pcVar14, pcVar13, uVar8); /* compiler REP MOVS byte copy */
-        st::fn_006B77E0(st::pointer_boundary_cast<char *>(_Str1),_Str1);
-        st::fn_006B7780(st::pointer_boundary_cast<char *>(_Str1),st::pointer_boundary_cast<char *>(_Str1));
-        iVar6 = st::fn_0072E6F0(st::pointer_boundary_cast<char *>(_Str1),st::mutable_c_string("/WAITING"),8);
+        st::fn_006B77E0(reinterpret_cast<char *>(_Str1),_Str1);
+        st::fn_006B7780(reinterpret_cast<char *>(_Str1),reinterpret_cast<char *>(_Str1));
+        iVar6 = st::fn_0072E6F0(reinterpret_cast<char *>(_Str1),st::mutable_c_string("/WAITING"),8);
         uVar8 = local_10;
         if ((iVar6 == 0) && (uVar8 = 0, g_playSystem_00802A38 != nullptr)) {
           g_playSystem_00802A38->field_00F0 = (uint)(g_playSystem_00802A38->field_00F0 == 0);
@@ -133,14 +135,16 @@ void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
           st::external_00000080((LPSTR)&DAT_0080f33a,st::mutable_c_string("%s %s"),pcVar7_mg2,pcVar6_mg2);
           if (g_popUp_008016D8 != nullptr) {
             if (DAT_0080874d == 0xff) {
-              st::fn_004014D8(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
+              /* ST_CALLSITE[00521E5A]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
+              st::fn_004014D8(g_popUp_008016D8,reinterpret_cast<char *>(&DAT_0080f33a),8);
             }
             else {
-              st::fn_004014D8(g_popUp_008016D8,(char *)&DAT_0080f33a,(uint)DAT_0080874d);
+              /* ST_CALLSITE[00521E46]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
+              st::fn_004014D8(g_popUp_008016D8,reinterpret_cast<char *>(&DAT_0080f33a),(uint)DAT_0080874d);
             }
           }
         }
-        local_EAX_380 = st::fn_0072E6F0(st::pointer_boundary_cast<char *>(_Str1),st::mutable_c_string("/FIXNETERRORS"),0xd);
+        local_EAX_380 = st::fn_0072E6F0(reinterpret_cast<char *>(_Str1),st::mutable_c_string("/FIXNETERRORS"),0xd);
         if (local_EAX_380 == 0) {
           DAT_0080735e = DAT_0080735e == '\0';
           uVar8 = 0;
@@ -155,10 +159,11 @@ void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
             else {
               uVar9 = (uint)DAT_0080874d;
             }
-            st::fn_004014D8(g_popUp_008016D8,(char *)&DAT_0080f33a,uVar9);
+            /* ST_CALLSITE[00521EEC]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
+            st::fn_004014D8(g_popUp_008016D8,reinterpret_cast<char *>(&DAT_0080f33a),uVar9);
           }
         }
-        local_EAX_521 = st::fn_0072E6F0(st::pointer_boundary_cast<char *>(_Str1),st::mutable_c_string("/NETGUARANTEE"),0xd);
+        local_EAX_521 = st::fn_0072E6F0(reinterpret_cast<char *>(_Str1),st::mutable_c_string("/NETGUARANTEE"),0xd);
         if (local_EAX_521 == 0) {
           DAT_0080733c = (uint)(DAT_0080733c == 0);
           uVar8 = 0;
@@ -176,24 +181,25 @@ void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
             else {
               uVar9 = (uint)DAT_0080874d;
             }
-            st::fn_004014D8(g_popUp_008016D8,(char *)&DAT_0080f33a,uVar9);
+            /* ST_CALLSITE[00521F94]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
+            st::fn_004014D8(g_popUp_008016D8,reinterpret_cast<char *>(&DAT_0080f33a),uVar9);
           }
         }
         if (uVar8 != 0) {
           local_c = local_c & 0xffffff00;
           local_5 = '\0';
-          local_EAX_705 = st::fn_0072E6F0(st::pointer_boundary_cast<char *>(_Str1),(char *)&DAT_007c40f4,4);
+          local_EAX_705 = st::fn_0072E6F0(reinterpret_cast<char *>(_Str1),reinterpret_cast<char *>(&DAT_007c40f4),4);
           if (local_EAX_705 == 0) {
-            local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(1));
+            local_c = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_c)), (uint8_t)(1));
           }
-          local_EAX_729 = st::fn_0072E6F0(st::pointer_boundary_cast<char *>(_Str1),st::mutable_c_string("/EALL"),5);
+          local_EAX_729 = st::fn_0072E6F0(reinterpret_cast<char *>(_Str1),st::mutable_c_string("/EALL"),5);
           if (local_EAX_729 == 0) {
-            local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(2));
+            local_c = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_c)), (uint8_t)(2));
           }
-          local_EAX_753 = st::fn_0072E6F0(st::pointer_boundary_cast<char *>(_Str1),st::mutable_c_string("/AALL"),5);
+          local_EAX_753 = st::fn_0072E6F0(reinterpret_cast<char *>(_Str1),st::mutable_c_string("/AALL"),5);
           pAVar4 = local_14;
           if (local_EAX_753 == 0) {
-            local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(3));
+            local_c = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_c)), (uint8_t)(3));
             bVar11 = 3;
           }
           else {
@@ -212,12 +218,12 @@ void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
               if (0 < pAVar4->field_0198->field_0008) {
                 /* ST_CALLSITE[00522044]: CALL dword ptr [0x0085c064] */
                 st::external_00000107
-                          ((CFsgsConnection *)&DAT_00802a90,(char *)*pAVar4->field_0198->field_0014);
+                          (reinterpret_cast<CFsgsConnection *>(&DAT_00802a90),(char *)*pAVar4->field_0198->field_0014);
                 g_currentExceptionFrame = local_60.previous;
                 return;
               }
               /* ST_CALLSITE[00522062]: CALL dword ptr [0x0085c064] */
-              st::external_00000107((CFsgsConnection *)&DAT_00802a90,nullptr);
+              st::external_00000107(reinterpret_cast<CFsgsConnection *>(&DAT_00802a90),nullptr);
               g_currentExceptionFrame = local_60.previous;
               return;
             }
@@ -252,7 +258,7 @@ void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
           uVar9 = 0;
           local_64 = DAT_0080874d;
           if ((bVar11 == 0) && (bVar2 = pAVar4[1].field_0x8, bVar2 != 0)) {
-            local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar2));
+            local_c = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_c)), (uint8_t)(bVar2));
             local_5 = '\x01';
             bVar11 = bVar2;
           }
@@ -297,7 +303,7 @@ void __fastcall st::fn_00521CF0(AnonShape_00521CF0_154649D2 *param_1)
                                local_4b4,0x451,1,0xffffffff);
                 }
                 bVar11 = bVar11 + 1;
-                local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar11));
+                local_10 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_10)), (uint8_t)(bVar11));
               } while (bVar11 < DAT_00808aaf);
             }
           }
@@ -369,7 +375,7 @@ joined_r0x0052240a:
                     iVar10 = (&DAT_00808af0)[(local_18 & 0xff) * 0x27];
                     if (iVar10 != DAT_0080877f) {
                       bVar2 = (&DAT_00808af4)[iVar12];
-                      local_10 = STReplaceLowByte((uint32_t)(local_10), (uint8_t)(bVar2));
+                      local_10 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_10)), (uint8_t)(bVar2));
                       if (DAT_00808a8f == '\0') {
                         if (bVar2 == DAT_0080874d) {
 LAB_005223b6:
@@ -411,7 +417,7 @@ LAB_005223b6:
                   iVar10 = (&DAT_00808af0)[(local_18 & 0xff) * 0x27];
                   if (iVar10 != DAT_0080877f) {
                     bVar2 = (&DAT_00808af4)[iVar12];
-                    local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar2));
+                    local_c = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_c)), (uint8_t)(bVar2));
                     if (DAT_00808a8f == '\0') {
                       if (bVar2 == DAT_0080874d) {
 LAB_00522294:
@@ -448,7 +454,7 @@ LAB_00522294:
                   }
                 }
                 bVar11 = bVar11 + 1;
-                local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)(bVar11));
+                local_18 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_18)), (uint8_t)(bVar11));
               } while (bVar11 < DAT_00808aaf);
             }
           }
@@ -456,11 +462,13 @@ LAB_00522294:
           st::external_00000080((LPSTR)&DAT_0080f33a,st::mutable_c_string("%s> %s"),local_4b4,local_474);
           if (g_popUp_008016D8 != nullptr) {
             if (DAT_0080874d != 0xff) {
-              st::fn_004014D8(g_popUp_008016D8,(char *)&DAT_0080f33a,(uint)DAT_0080874d);
+              /* ST_CALLSITE[00522536]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
+              st::fn_004014D8(g_popUp_008016D8,reinterpret_cast<char *>(&DAT_0080f33a),(uint)DAT_0080874d);
               g_currentExceptionFrame = local_60.previous;
               return;
             }
-            st::fn_004014D8(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
+            /* ST_CALLSITE[00522556]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
+            st::fn_004014D8(g_popUp_008016D8,reinterpret_cast<char *>(&DAT_0080f33a),8);
             g_currentExceptionFrame = local_60.previous;
             return;
           }
@@ -502,6 +510,7 @@ void st::fn_00522810(char *param_1)
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   iVar3 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
@@ -521,7 +530,7 @@ void st::fn_00522810(char *param_1)
   pcVar6 = pcVar6_mg0 + -uVar4;
   pcVar7 = _Str1;
   memmove(pcVar7, pcVar6, uVar4); /* compiler REP MOVS byte copy */
-  st::fn_006B77E0(_Str1,(byte *)_Str1);
+  st::fn_006B77E0(_Str1,reinterpret_cast<byte *>(_Str1));
   st::fn_006B7780(_Str1,_Str1);
   if (st_image_008087A1 != 0) {
     g_currentExceptionFrame = local_4c.previous;
@@ -543,69 +552,101 @@ void st::fn_00522810(char *param_1)
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
+
   iVar3 = st::fn_0072E6F0(_Str1,st::mutable_c_string("EXITON"),6);
   if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
+
     st::fn_00404412(DAT_0080874d,5000);
     if (DAT_0080874e == '\x03') {
+
       st::fn_00405E6B((uint)DAT_0080874d,10000);
     }
     else {
+
       st::fn_00404336(DAT_0080874d,1000);
+
       st::fn_004055E7(DAT_0080874d,10000);
     }
-    st::fn_00404B8D(DAT_0080874d);
+    /* ST_CALLSITE[0052294D]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+    st::fn_00404B8D(g_allPlayers_007FA174,DAT_0080874d);
+
     st::fn_004028F6(DAT_0080874d);
   }
+
   iVar3 = st::fn_0072E6F0(_Str1,st::mutable_c_string("CORIUM"),6);
   if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
+
     st::fn_00404412(DAT_0080874d,5000);
-    st::fn_00404B8D(DAT_0080874d);
+    /* ST_CALLSITE[0052299F]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+    st::fn_00404B8D(g_allPlayers_007FA174,DAT_0080874d);
+
     st::fn_004028F6(DAT_0080874d);
   }
   if (DAT_0080874e == '\x03') {
 LAB_00522a79:
+
     iVar3 = st::fn_0072E6F0(_Str1,st::mutable_c_string("SILICON"),7);
     if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
+
       st::fn_00405E6B((uint)DAT_0080874d,10000);
-      st::fn_00404B8D(DAT_0080874d);
+      /* ST_CALLSITE[00522AB4]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+      st::fn_00404B8D(g_allPlayers_007FA174,DAT_0080874d);
+
       st::fn_004028F6(DAT_0080874d);
     }
     if (DAT_0080874e != '\x03') goto LAB_00522ad4;
   }
   else {
-    iVar3 = st::fn_0072E6F0(_Str1,(char *)&DAT_007c415c,4);
+
+    iVar3 = st::fn_0072E6F0(_Str1,reinterpret_cast<char *>(&DAT_007c415c),4);
     if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
+
       st::fn_00404336(DAT_0080874d,1000);
-      st::fn_00404B8D(DAT_0080874d);
+      /* ST_CALLSITE[005229FE]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+      st::fn_00404B8D(g_allPlayers_007FA174,DAT_0080874d);
+
       st::fn_004028F6(DAT_0080874d);
     }
     if (DAT_0080874e == '\x03') goto LAB_00522a79;
+
     iVar3 = st::fn_0072E6F0(_Str1,st::mutable_c_string("METAL"),5);
     if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
+
       st::fn_004055E7(DAT_0080874d,1000);
-      st::fn_00404B8D(DAT_0080874d);
+      /* ST_CALLSITE[00522A59]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+      st::fn_00404B8D(g_allPlayers_007FA174,DAT_0080874d);
+
       st::fn_004028F6(DAT_0080874d);
     }
     if (DAT_0080874e == '\x03') goto LAB_00522a79;
 LAB_00522ad4:
-    iVar3 = st::fn_0072E6F0(_Str1,(char *)&DAT_007c4144,3);
+    /* ST_CALLSITE[00522ADC]: CALL 0x0072e6f0; direct=0072E6F0 Library::MSVCRT::_strncmp; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
+    iVar3 = st::fn_0072E6F0(_Str1,reinterpret_cast<char *>(&DAT_007c4144),3);
     if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
-      st::fn_00404106((uint)DAT_0080874d,100);
-      st::fn_00404B8D(DAT_0080874d);
+
+      st::fn_00404106(g_allPlayers_007FA174,(uint)DAT_0080874d,100);
+      /* ST_CALLSITE[00522B0C]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+      st::fn_00404B8D(g_allPlayers_007FA174,DAT_0080874d);
     }
     if (DAT_0080874e != '\x03') goto LAB_00522b59;
   }
+
   iVar3 = st::fn_0072E6F0(_Str1,st::mutable_c_string("ENERGY"),6);
   if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
-    st::fn_004053F3((uint)DAT_0080874d,100);
-    st::fn_00404B8D(DAT_0080874d);
+    /* ST_CALLSITE[00522B43]: CALL 0x004053f3; direct=004053F3 STAllPlayersC::sub_004E4270; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
+    st::fn_004053F3(g_allPlayers_007FA174,(uint)DAT_0080874d,100);
+    /* ST_CALLSITE[00522B54]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+    st::fn_00404B8D(g_allPlayers_007FA174,DAT_0080874d);
   }
 LAB_00522b59:
-  iVar3 = st::fn_0072E6F0(_Str1,(char *)&DAT_007c4134,4);
+
+  iVar3 = st::fn_0072E6F0(_Str1,reinterpret_cast<char *>(&DAT_007c4134),4);
   if ((iVar3 == 0) && (g_allPlayers_007FA174 != nullptr)) {
-    st::fn_00404EC6((uint)DAT_0080874d);
+    /* ST_CALLSITE[00522B80]: CALL 0x00404ec6; direct=00404EC6 STAllPlayersC::sub_004E75F0 */
+    st::fn_00404EC6(g_allPlayers_007FA174,(uint)DAT_0080874d);
   }
-  iVar3 = st::fn_0072E6F0(_Str1,(char *)&DAT_007c4130,3);
+
+  iVar3 = st::fn_0072E6F0(_Str1,reinterpret_cast<char *>(&DAT_007c4130),3);
   if ((iVar3 == 0) && (g_visibleClass_00802A88 != nullptr)) {
     if (g_visibleClass_00802A88->field_0114 == 0) {
       g_visibleClass_00802A88->field_00F8 = 0;
@@ -643,14 +684,31 @@ LAB_00522b59:
    HelpPanelTy::DrawTitle @ 00518D43 | 00523410 returns used as parameter 3 of
    HelpPanelTy::DrawTitle @ 0051A20E | 00523410 returns used as parameter 3 of
    HelpPanelTy::DrawTitle @ 0051CA96 | 00523410 returns used as parameter 3 of
-   HelpPanelTy::DrawTitle @ 0051D445 */
+   HelpPanelTy::DrawTitle @ 0051D445
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (32), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=004EF140 @ 004EF23B -> read as EAX on
+   every CFG path | 004EFE20 @ 004EFF00 -> read as EAX on every CFG path | 004F0C80 @ 004F0D7B ->
+   read as EAX on every CFG path | 004FE370 @ 004FE42B -> read as EAX on every CFG path | 005061C0 @
+   00506801 -> read as EAX on every CFG path | 005061C0 @ 00506FE0 -> read as EAX on every CFG path
+   | 0050A340 @ 0050A952 -> read as EAX on every CFG path | 0050A340 @ 0050AF10 -> read as EAX on
+   every CFG path | 0050A340 @ 0050B1C4 -> read as EAX on every CFG path | 00516A40 @ 00517403 ->
+   read as EAX on every CFG path | 00516A40 @ 00517564 -> read as EAX on every CFG path | 00517A50 @
+   00517CDB -> read as EAX on every CFG path | 00517A50 @ 00517F25 -> read as EAX on every CFG path
+   | 00517A50 @ 005180D4 -> read as EAX on every CFG path | 00517A50 @ 0051851E -> read as EAX on
+   every CFG path | 00517A50 @ 005186D5 -> read as EAX on every CFG path | 00518C20 @ 00518D2F ->
+   read as EAX on every CFG path | 00518C20 @ 00519C4B -> read as EAX on every CFG path | 0051A100 @
+   0051A1FD -> read as EAX on every CFG path | 0051A100 @ 0051B0F1 -> read as EAX on every CFG path
+   | 0051B5A0 @ 0051BE83 -> read as EAX on every CFG path | 0051B5A0 @ 0051C04B -> read as EAX on
+   every CFG path | 0051B5A0 @ 0051C1EB -> read as EAX on every CFG path | 0051B5A0 @ 0051C391 ->
+   read as EAX on every CFG path */
 
-UINT __cdecl st::fn_00523410(Global_sub_00523410_param_1Enum param_1,char param_2,byte param_3)
+int __cdecl st::fn_00523410(Global_sub_00523410_param_1Enum param_1,char param_2,byte param_3)
 
 {
-  UINT UVar1;
+  int iVar1;
 
-  UVar1 = 10000;
+  iVar1 = 10000;
   switch(param_1) {
   case CASE_1:
     if (param_3 == 1) {
@@ -1745,7 +1803,7 @@ UINT __cdecl st::fn_00523410(Global_sub_00523410_param_1Enum param_1,char param_
   case CASE_FA:
   case CASE_FB:
     if ((param_3 == 0) || (2 < param_3)) {
-      UVar1 = 0x2b97;
+      iVar1 = 0x2b97;
     }
     break;
   case CASE_FD:
@@ -1771,7 +1829,7 @@ UINT __cdecl st::fn_00523410(Global_sub_00523410_param_1Enum param_1,char param_
     }
     return 0x2b46;
   }
-  return UVar1;
+  return iVar1;
 }
 
 // 00524FE0 FUN_00524fe0
@@ -1781,14 +1839,21 @@ UINT __cdecl st::fn_00523410(Global_sub_00523410_param_1Enum param_1,char param_
    CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154;CASE_9C=156;CASE_9D=157;CASE_9E=158;CASE_9F=159;CASE_A0=160;CASE_A1=161;CASE_A3=163;CASE_A4=164;CASE_A6=166;CASE_A7=167;CASE_A8=168;CASE_A9=169;CASE_AB=171;CASE_AC=172;CASE_AD=173;CASE_AE=174;CASE_AF=175;CASE_B0=176;CASE_B2=178;CASE_B3=179;CASE_B5=181;CASE_B6=182;CASE_B7=183;CASE_B8=184;CASE_BA=186;CASE_BC=188;CASE_BD=189;CASE_BE=190;CASE_BF=191;CASE_C0=192;CASE_C1=193;CASE_DD=221;CASE_DE=222
 
    [STPrototypeApplier] Propagated return.
-   Evidence: 00524FE0 returns used as parameter 3 of HelpPanelTy::DrawTitle @ 0051B6BE */
+   Evidence: 00524FE0 returns used as parameter 3 of HelpPanelTy::DrawTitle @ 0051B6BE
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (7), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=004F2560 @ 004F272D -> read as EAX on
+   every CFG path | 004F2560 @ 004F2781 -> read as EAX on every CFG path | 004F2560 @ 004F2A26 ->
+   read as EAX on every CFG path | 004F2560 @ 004F2ACC -> read as EAX on every CFG path | 00515900 @
+   005159C4 -> read as EAX on every CFG path | 00515900 @ 005159F3 -> read as EAX on every CFG path
+   | 0051B5A0 @ 0051B6AD -> read as EAX on every CFG path */
 
-UINT __cdecl st::fn_00524FE0(Global_sub_00524FE0_param_1Enum param_1)
+int __cdecl st::fn_00524FE0(Global_sub_00524FE0_param_1Enum param_1)
 
 {
-  UINT UVar1;
+  int iVar1;
 
-  UVar1 = 0;
+  iVar1 = 0;
   switch(param_1) {
   case CASE_96:
     return 0x3138;
@@ -1837,7 +1902,7 @@ UINT __cdecl st::fn_00524FE0(Global_sub_00524FE0_param_1Enum param_1)
   case CASE_B0:
     return 0x314e;
   case CASE_B2:
-    UVar1 = 0x315c;
+    iVar1 = 0x315c;
     break;
   case CASE_B3:
     return 0x3151;
@@ -1868,7 +1933,7 @@ UINT __cdecl st::fn_00524FE0(Global_sub_00524FE0_param_1Enum param_1)
   case CASE_DE:
     return 0x271e;
   }
-  return UVar1;
+  return iVar1;
 }
 
 // 00525290 FUN_00525290
@@ -1913,7 +1978,7 @@ void __cdecl st::fn_005252C0(Global_sub_005252C0_param_1Enum param_1)
       }
       /* ST_CALLSITE[0052532C]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
       st::fn_00404BD8
-                ((SoundClassTy *)&g_sound,SOUND_MODE_5,nullptr,param_1,nullptr,
+                (reinterpret_cast<SoundClassTy *>(&g_sound),SOUND_MODE_5,nullptr,param_1,nullptr,
                  local_8);
       g_currentExceptionFrame = local_4c.previous;
       return;
@@ -2161,9 +2226,13 @@ undefined4 __cdecl st::fn_00525890(Global_sub_00525890_param_1Enum param_1)
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_005259B0_param_1Enum. Cases:
    CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154;CASE_9C=156;CASE_9D=157;CASE_9E=158;CASE_9F=159;CASE_A0=160;CASE_A3=163;CASE_A4=164;CASE_A6=166;CASE_A7=167;CASE_A8=168;CASE_A9=169;CASE_AB=171;CASE_AC=172;CASE_AD=173;CASE_AE=174;CASE_AF=175;CASE_B0=176;CASE_B2=178;CASE_B3=179;CASE_B5=181;CASE_B6=182;CASE_B7=183;CASE_B8=184;CASE_BA=186;CASE_BC=188;CASE_BD=189;CASE_BE=190;CASE_BF=191;CASE_FF=255
-    */
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (4), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=004F2560 @ 004F263A -> read as EAX on
+   every CFG path | 004F2560 @ 004F27C2 -> read as EAX on every CFG path | 00515900 @ 0051594B ->
+   read as EAX on every CFG path | 0051B5A0 @ 0051B6C8 -> read as EAX on every CFG path */
 
-uint __cdecl st::fn_005259B0(Global_sub_005259B0_param_1Enum param_1,ushort param_2,char param_3)
+int __cdecl st::fn_005259B0(Global_sub_005259B0_param_1Enum param_1,ushort param_2,char param_3)
 
 {
   uint uVar1;
@@ -2345,14 +2414,21 @@ UINT __cdecl st::fn_00525CA0(Global_sub_00525CA0_param_1Enum param_1)
 
    [STSwitchEnumApplier] Switch target param_2 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00525EF0_param_2Enum. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (5), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00507F60 @ 00508EC5 -> read as EAX on
+   every CFG path | 005097E0 @ 00509EF3 -> read as EAX on every CFG path | 0050C620 @ 0050DCC0 ->
+   read as EAX on every CFG path | 0050C620 @ 0050DD19 -> read as EAX on every CFG path | 0050E7D0 @
+   0050EEB5 -> read as EAX on every CFG path */
 
-undefined4 __cdecl
+int __cdecl
 st::fn_00525EF0(Global_sub_00525EF0_param_1Enum param_1,Global_sub_00525EF0_param_2Enum param_2)
 
 {
-  uint uVar1;
-  uVar1 = 0;
+  int iVar1;
+
+  iVar1 = 0;
   switch(param_1) {
   case CASE_1:
     switch(param_2) {
@@ -2394,7 +2470,7 @@ switchD_00525f56_caseD_0:
     case CASE_2:
       return 0x317a;
     case CASE_3:
-      uVar1 = 10000;
+      iVar1 = 10000;
     }
     break;
   case CASE_4:
@@ -2409,7 +2485,7 @@ switchD_00525f56_caseD_0:
       return 0x3177;
     }
   }
-  return uVar1;
+  return iVar1;
 }
 
 // 005260B0 FUN_005260b0
@@ -2418,41 +2494,40 @@ void __cdecl st::fn_005260B0(int param_1,undefined1 param_2,int param_3)
 
 {
   bool local_3c;
-  undefined1 local_3b;
+  byte local_3b;
   int local_39;
-  undefined1 local_35;
-
+  byte local_35;
   local_3c = param_1 != 0;
   if (local_3c) {
     local_39 = param_1;
     local_35 = param_2;
     local_3b = 1;
   }
-  st::fn_00403607((undefined1 *)&local_3c,param_3);
+  st::fn_00403607(reinterpret_cast<RecoveredRecord_00526100_020D84E3 *>(&local_3c),param_3);
   return;
 }
 
 // 00526100 FUN_00526100
 #line 4 "decomp/ST.exe/functions/00526100/decomp.c"
-char * __cdecl st::fn_00526100(undefined1 *param_1,int param_2)
+char * __cdecl st::fn_00526100(RecoveredRecord_00526100_020D84E3 *param_1,int param_2)
 
 {
   char cVar1;
   char *pcVar2;
 
-  pcVar2 = "TV_NONE";
+  pcVar2 = st::mutable_c_string("TV_NONE");
   if (param_1 == nullptr) {
     return "TV_ONOFF";
   }
   if (param_2 != 0) {
     return "TV_SWITCH";
   }
-  switch(*param_1) {
+  switch(*(undefined1 *)param_1) {
   case 1:
   case 3:
   case 4:
-    if (param_1[1] != '\0') {
-      switch(*(undefined4 *)(param_1 + 3)) {
+    if (param_1->field_0x1 != '\0') {
+      switch(param_1->field_0003) {
       case 1:
         return "TV_SENTINEL";
       case 2:
@@ -2532,73 +2607,73 @@ char * __cdecl st::fn_00526100(undefined1 *param_1,int param_2)
       case 0x26:
         return "TV_FLAGWS";
       case 0x32:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSDOCKYARD";
         }
         return "TV_BODOCKYARD";
       case 0x33:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSRDOCK";
         }
         return "TV_BORDOCK";
       case 0x34:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSMFACTORY";
         }
         return "TV_BOMFACTORY";
       case 0x35:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSREASLAB";
         }
         return "TV_BOREASLAB";
       case 0x36:
-        if (param_1[2] == '\x01') {
+        if (param_1->field_0x2 == '\x01') {
           return "TV_SWIM1";
         }
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSSONAR";
         }
         return "TV_BOSONAR";
       case 0x37:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSTELEPORT";
         }
         return "TV_BOTELEPORT";
       case 0x39:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSCMINE";
         }
         return "TV_BOCMINE";
       case 0x3a:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSGOLDPLANT";
         }
         return "TV_BOGOLDPLANT";
       case 0x3b:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSDEPOT";
         }
         return "TV_BODEPOT";
       case 0x3c:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSINFOCENTER";
         }
         return "TV_BOINFOCENTER";
       case 0x3d:
-        if (param_1[2] == '\x01') {
+        if (param_1->field_0x2 == '\x01') {
           return "TV_SWIM1";
         }
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSDISPERSER";
         }
         return "TV_BODISPERSER";
       case 0x3e:
-        if (param_1[2] == '\x01') {
+        if (param_1->field_0x2 == '\x01') {
           return "TV_SWIM1";
         }
         return "TV_HFCANNON";
       case 0x3f:
-        if (param_1[2] == '\x01') {
+        if (param_1->field_0x2 == '\x01') {
           return "TV_SWIM1";
         }
         return "TV_STOLP";
@@ -2615,12 +2690,12 @@ char * __cdecl st::fn_00526100(undefined1 *param_1,int param_2)
       case 0x45:
         return "TV_TLS";
       case 0x46:
-        if (param_1[2] == '\x01') {
+        if (param_1->field_0x2 == '\x01') {
           return "TV_SWIM2";
         }
         return "TV_LLASER";
       case 0x47:
-        if (param_1[2] == '\x01') {
+        if (param_1->field_0x2 == '\x01') {
           return "TV_SWIM1";
         }
         return "TV_CSCANNON";
@@ -2629,12 +2704,12 @@ char * __cdecl st::fn_00526100(undefined1 *param_1,int param_2)
       case 0x49:
         return "TV_CCENTERBO";
       case 0x4a:
-        if (param_1[2] == '\x01') {
+        if (param_1->field_0x2 == '\x01') {
           return "TV_SWIM1";
         }
         return "TV_HLASER";
       case 0x4b:
-        if (param_1[2] == '\x01') {
+        if (param_1->field_0x2 == '\x01') {
           return "TV_SWIM1";
         }
         return "TV_ELP";
@@ -2645,23 +2720,23 @@ char * __cdecl st::fn_00526100(undefined1 *param_1,int param_2)
       case 0x4e:
         return "TV_LBL";
       case 0x4f:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSMMINE";
         }
       case 0x38:
         return "TV_BOMMINE";
       case 0x50:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSAIRPLANT";
         }
         return "TV_BOAIRPLANT";
       case 0x51:
-        if (param_1[2] == '\x01') {
+        if (param_1->field_0x2 == '\x01') {
           return "TV_SWIM1";
         }
         return "TV_PLASMACANN";
       case 0x52:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_WSRCTELEPORT";
         }
         return "TV_BORCTELEPORT";
@@ -2736,7 +2811,7 @@ char * __cdecl st::fn_00526100(undefined1 *param_1,int param_2)
       case 0xa7:
         return "TV_LSNARE";
       case 0xaf:
-        pcVar2 = "TV_BEACON";
+        pcVar2 = st::mutable_c_string("TV_BEACON");
         break;
       case 0xbd:
         return "TV_AMINE";
@@ -2747,15 +2822,15 @@ char * __cdecl st::fn_00526100(undefined1 *param_1,int param_2)
       case 0xe0:
         return "TV_TERMOSRC";
       case 0xfd:
-        if (param_1[7] == '\x01') {
+        if (((char *)param_1)[1] == '\x01') {
           return "TV_ARTEFACTWS";
         }
-        if (param_1[7] != '\x02') {
+        if (((char *)param_1)[1] != '\x02') {
           return "TV_ARTEFACTSI";
         }
         return "TV_ARTEFACTBO";
       case 0xfe:
-        cVar1 = param_1[7];
+        cVar1 = static_cast<char>(st::machine_word_boundary_cast<uint>(((char *)param_1)[1]));
         if (cVar1 == '\x01') {
           return "TV_CONTAINER1";
         }
@@ -2769,8 +2844,8 @@ char * __cdecl st::fn_00526100(undefined1 *param_1,int param_2)
     }
     break;
   case 2:
-    if (param_1[1] != '\0') {
-      cVar1 = param_1[7];
+    if (param_1->field_0x1 != '\0') {
+      cVar1 = static_cast<char>(st::machine_word_boundary_cast<uint>(((char *)param_1)[1]));
       if (cVar1 == '\x01') {
         return "TV_GROUPWS";
       }
@@ -2798,9 +2873,26 @@ char * __cdecl st::fn_00526100(undefined1 *param_1,int param_2)
    0050A839 | 0050A340 -> 00526BA0 @ 0050ADF8 | 0050A340 -> 00526BA0 @ 0050B0AC | 0050A340 ->
    00526BA0 @ 0050BC20 | 0050C620 -> 00526BA0 @ 0050DE09 | 00517A50 -> 00526BA0 @ 00517D6A |
    00517A50 -> 00526BA0 @ 00517FB4 | 00517A50 -> 00526BA0 @ 00518165 | 00517A50 -> 00526BA0 @
-   005185BB | 00517A50 -> 00526BA0 @ 00518785 */
+   005185BB | 00517A50 -> 00526BA0 @ 00518785
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (27), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=004EF320 @ 004EF3C0 -> read as EAX on
+   every CFG path | 004EFFE0 @ 004F005D -> read as EAX on every CFG path | 004F0E60 @ 004F0EFD ->
+   read as EAX on every CFG path | 004FE960 @ 004FEB5A -> read as EAX on every CFG path | 004FF380 @
+   004FFA72 -> read as EAX on every CFG path | 005061C0 @ 005066E2 -> read as EAX on every CFG path
+   | 005061C0 @ 00506A4C -> read as EAX on every CFG path | 005061C0 @ 00506E6C -> read as EAX on
+   every CFG path | 0050A340 @ 0050A839 -> read as EAX on every CFG path | 0050A340 @ 0050ADF8 ->
+   read as EAX on every CFG path | 0050A340 @ 0050B0AC -> read as EAX on every CFG path | 0050A340 @
+   0050BC20 -> read as EAX on every CFG path | 0050C620 @ 0050DE09 -> read as EAX on every CFG path
+   | 00515650 @ 0051578E -> read as EAX on every CFG path | 00516A40 @ 00517490 -> read as EAX on
+   every CFG path | 00516A40 @ 005175EF -> read as EAX on every CFG path | 00517A50 @ 00517D6A ->
+   read as EAX on every CFG path | 00517A50 @ 00517FB4 -> read as EAX on every CFG path | 00517A50 @
+   00518165 -> read as EAX on every CFG path | 00517A50 @ 005185BB -> read as EAX on every CFG path
+   | 00517A50 @ 00518785 -> read as EAX on every CFG path | 0051B5A0 @ 0051BF10 -> read as EAX on
+   every CFG path | 0051B5A0 @ 0051C0D8 -> read as EAX on every CFG path | 0051B5A0 @ 0051C278 ->
+   read as EAX on every CFG path */
 
-uint __cdecl st::fn_00526BA0(Global_sub_00526BA0_param_1Enum param_1,char param_2)
+int __cdecl st::fn_00526BA0(Global_sub_00526BA0_param_1Enum param_1,char param_2)
 
 {
   switch(param_1) {
@@ -3019,9 +3111,13 @@ switchD_00526bcb_caseD_53:
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_005272B0_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40;CASE_29=41;CASE_2A=42;CASE_2B=43;CASE_2C=44;CASE_2D=45;CASE_2F=47;CASE_30=48;CASE_31=49;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82
-    */
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=004ED630 @ 004ED917 -> read as EAX on
+   every CFG path | 004EE0A0 @ 004EE184 -> read as EAX on every CFG path | 004F17D0 @ 004F1838 ->
+   read as EAX on every CFG path */
 
-undefined4 __cdecl st::fn_005272B0(Global_sub_005272B0_param_1Enum param_1)
+int __cdecl st::fn_005272B0(Global_sub_005272B0_param_1Enum param_1)
 
 {
   switch(param_1) {
@@ -3054,7 +3150,7 @@ undefined4 __cdecl st::fn_005272B0(Global_sub_005272B0_param_1Enum param_1)
   case CASE_E:
     return 0xf;
   default:
-    return 0xffffffff;
+    return -1;
   case CASE_10:
     return 0x10;
   case CASE_11:
@@ -3183,9 +3279,17 @@ undefined4 __cdecl st::fn_005272B0(Global_sub_005272B0_param_1Enum param_1)
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_005276E0_param_1Enum. Cases:
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40;CASE_29=41;CASE_2A=42;CASE_2B=43;CASE_2C=44;CASE_2D=45;CASE_2E=46;CASE_2F=47;CASE_30=48;CASE_31=49;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_65=101;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6B=107;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_71=113;CASE_72=114;CASE_73=115;CASE_74=116;CASE_75=117;CASE_76=118;CASE_77=119;CASE_78=120;CASE_79=121;CASE_7A=122;CASE_7B=123;CASE_7C=124;CASE_7D=125;CASE_7E=126;CASE_7F=127;CASE_80=128;CASE_81=129;CASE_82=130;CASE_83=131;CASE_84=132;CASE_85=133;CASE_86=134;CASE_87=135;CASE_88=136;CASE_89=137;CASE_8A=138;CASE_8B=139;CASE_8C=140;CASE_8D=141;CASE_8E=142;CASE_8F=143;CASE_90=144;CASE_91=145;CASE_92=146;CASE_93=147;CASE_94=148;CASE_95=149;CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154
-    */
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (11), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00504B80 @ 00504BC5 -> read as EAX on
+   every CFG path | 00504CF0 @ 00504D34 -> read as EAX on every CFG path | 00516480 @ 00516783 ->
+   read as EAX on every CFG path | 00516A40 @ 00516B8E -> read as EAX on every CFG path | 00518C20 @
+   005193C1 -> read as EAX on every CFG path | 0051A100 @ 0051A891 -> read as EAX on every CFG path
+   | 0051B5A0 @ 0051BA20 -> read as EAX on every CFG path | 0053C820 @ 0053C8AA -> read as EAX on
+   every CFG path | 00552BC0 @ 00552C39 -> read as EAX on every CFG path | 00552BC0 @ 00552CAB ->
+   read as EAX on every CFG path | 00552BC0 @ 00552D23 -> read as EAX on every CFG path */
 
-uint __cdecl st::fn_005276E0(Global_sub_005276E0_param_1Enum param_1,byte param_2)
+int __cdecl st::fn_005276E0(Global_sub_005276E0_param_1Enum param_1,byte param_2)
 
 {
   uint uVar1;
@@ -3531,9 +3635,17 @@ uint __cdecl st::fn_005276E0(Global_sub_005276E0_param_1Enum param_1,byte param_
    CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40;CASE_29=41;CASE_2A=42;CASE_2B=43;CASE_2C=44;CASE_2D=45;CASE_2E=46;CASE_2F=47;CASE_30=48;CASE_31=49;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_65=101;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6B=107;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_71=113;CASE_72=114;CASE_73=115;CASE_74=116;CASE_75=117;CASE_76=118;CASE_77=119;CASE_78=120;CASE_79=121;CASE_7A=122;CASE_7B=123;CASE_7C=124;CASE_7D=125;CASE_7E=126;CASE_7F=127;CASE_80=128;CASE_81=129;CASE_82=130;CASE_83=131;CASE_84=132;CASE_85=133;CASE_86=134;CASE_87=135;CASE_88=136;CASE_89=137;CASE_8A=138;CASE_8B=139;CASE_8C=140;CASE_8D=141;CASE_8E=142;CASE_8F=143;CASE_90=144;CASE_91=145;CASE_92=146;CASE_93=147;CASE_94=148;CASE_95=149;CASE_96=150;CASE_97=151;CASE_98=152;CASE_99=153;CASE_9A=154
 
    [STPrototypeApplier] Propagated return.
-   Evidence: 00528060 returns used as parameter 3 of HelpPanelTy::DrawTitle @ 00516B84 */
+   Evidence: 00528060 returns used as parameter 3 of HelpPanelTy::DrawTitle @ 00516B84
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (9), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00504B80 @ 00504C31 -> read as EAX on
+   every CFG path | 00504CF0 @ 00504D9A -> read as EAX on every CFG path | 00516A40 @ 00516B73 ->
+   read as EAX on every CFG path | 00518C20 @ 00519399 -> read as EAX on every CFG path | 0051A100 @
+   0051A869 -> read as EAX on every CFG path | 0051B5A0 @ 0051B9F4 -> read as EAX on every CFG path
+   | 0051DDD0 @ 0051E0CF -> read as EAX on every CFG path | 0053C620 @ 0053C72C -> read as EAX on
+   every CFG path | 005449B0 @ 00545BDB -> read as EAX on every CFG path */
 
-UINT __cdecl st::fn_00528060(Global_sub_00528060_param_1Enum param_1,char param_2)
+int __cdecl st::fn_00528060(Global_sub_00528060_param_1Enum param_1,char param_2)
 
 {
   switch(param_1) {
@@ -4306,18 +4418,23 @@ undefined4 __cdecl st::fn_005293C0(byte param_1)
    CASE_DC=220;CASE_DD=221;CASE_DE=222;CASE_DF=223;CASE_E0=224;CASE_E1=225;CASE_E2=226;CASE_E3=227
 
    [STPrototypeApplier] Propagated return.
-   Evidence: 005293F0 returns used as parameter 3 of HelpPanelTy::DrawTitle @ 00517BAD */
+   Evidence: 005293F0 returns used as parameter 3 of HelpPanelTy::DrawTitle @ 00517BAD
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=005061C0 @ 00506412 -> read as EAX on
+   every CFG path | 0050A340 @ 0050A5B9 -> read as EAX on every CFG path | 00517A50 @ 00517B9C ->
+   read as EAX on every CFG path */
 
-UINT __cdecl st::fn_005293F0(Global_sub_005293F0_param_1Enum param_1)
+int __cdecl st::fn_005293F0(Global_sub_005293F0_param_1Enum param_1)
 
 {
-  UINT UVar1;
+  int iVar1;
 
-  UVar1 = 10000;
+  iVar1 = 10000;
   switch(param_1) {
   case CASE_DC:
   case CASE_E1:
-    UVar1 = 0x271f;
+    iVar1 = 0x271f;
     break;
   case CASE_DD:
     return 0x271d;
@@ -4331,20 +4448,25 @@ UINT __cdecl st::fn_005293F0(Global_sub_005293F0_param_1Enum param_1)
   case CASE_E2:
     return 0x2731;
   }
-  return UVar1;
+  return iVar1;
 }
 
 // 00529480 FUN_00529480
 #line 4 "decomp/ST.exe/functions/00529480/decomp.c"
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00529480_param_1Enum. Cases:
-   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=005061C0 @ 0050640A -> read as EAX on
+   every CFG path | 0050A340 @ 0050A5B1 -> read as EAX on every CFG path */
 
-undefined4 __cdecl st::fn_00529480(Global_sub_00529480_param_1Enum param_1)
+int __cdecl st::fn_00529480(Global_sub_00529480_param_1Enum param_1)
 
 {
-  uint uVar1;
-  uVar1 = 10000;
+  int iVar1;
+
+  iVar1 = 10000;
   switch(param_1) {
   case CASE_0:
     return 0x271d;
@@ -4355,9 +4477,9 @@ undefined4 __cdecl st::fn_00529480(Global_sub_00529480_param_1Enum param_1)
   case CASE_3:
     return 0x2731;
   case CASE_4:
-    uVar1 = 0x2730;
+    iVar1 = 0x2730;
   }
-  return uVar1;
+  return iVar1;
 }
 
 // 00529500 FUN_00529500
@@ -4453,7 +4575,7 @@ st::fn_00529590(Global_sub_00529590_param_1Enum param_1,Global_sub_00529590_para
       return "BUT_MOVECONSTR";
     }
   default:
-    pcVar1 = "BUT_MOVEBOAT";
+    pcVar1 = st::mutable_c_string("BUT_MOVEBOAT");
     break;
   case CASE_3:
     if (DAT_0080874e == '\x03') {
@@ -4466,19 +4588,19 @@ st::fn_00529590(Global_sub_00529590_param_1Enum param_1,Global_sub_00529590_para
   case CASE_4:
     return "BUT_RETREPAIR";
   case CASE_5:
-    pcVar1 = "BUT_SIGUARD";
+    pcVar1 = st::mutable_c_string("BUT_SIGUARD");
     if (DAT_0080874e != '\x03') {
       return "BUT_GUARD";
     }
     break;
   case CASE_6:
-    pcVar1 = "BUT_SIPATROL";
+    pcVar1 = st::mutable_c_string("BUT_SIPATROL");
     if (DAT_0080874e != '\x03') {
       return "BUT_PATROL";
     }
     break;
   case CASE_7:
-    pcVar1 = "BUT_SICAPTURE";
+    pcVar1 = st::mutable_c_string("BUT_SICAPTURE");
     if (DAT_0080874e != '\x03') {
       return "BUT_CAPTURE";
     }
@@ -4497,7 +4619,7 @@ st::fn_00529590(Global_sub_00529590_param_1Enum param_1,Global_sub_00529590_para
   case CASE_9:
     return "BUT_ATTACKDC";
   case CASE_A:
-    pcVar1 = "BUT_SIPARSHELL";
+    pcVar1 = st::mutable_c_string("BUT_SIPARSHELL");
     if (DAT_0080874e != '\x03') {
       return "BUT_ATTACKRAYS";
     }
@@ -4509,7 +4631,7 @@ st::fn_00529590(Global_sub_00529590_param_1Enum param_1,Global_sub_00529590_para
   case CASE_D:
     return "BUT_REPSUBM";
   case CASE_E:
-    pcVar1 = "BUT_SIBUILD";
+    pcVar1 = st::mutable_c_string("BUT_SIBUILD");
     if (DAT_0080874e != '\x03') {
       return "BUT_BUILD";
     }
@@ -4519,25 +4641,25 @@ st::fn_00529590(Global_sub_00529590_param_1Enum param_1,Global_sub_00529590_para
   case CASE_10:
     return "BUT_DISMANTLING";
   case CASE_11:
-    pcVar1 = "BUT_SIRCLOAD";
+    pcVar1 = st::mutable_c_string("BUT_SIRCLOAD");
     if (DAT_0080874e != '\x03') {
       return "BUT_RCLOAD";
     }
     break;
   case CASE_12:
-    pcVar1 = "BUT_SIRCUNLOAD";
+    pcVar1 = st::mutable_c_string("BUT_SIRCUNLOAD");
     if (DAT_0080874e != '\x03') {
       return "BUT_RCUNLOAD";
     }
     break;
   case CASE_13:
-    pcVar1 = "BUT_SIREPLOAD";
+    pcVar1 = st::mutable_c_string("BUT_SIREPLOAD");
     if (DAT_0080874e != '\x03') {
       return "BUT_REPLOAD";
     }
     break;
   case CASE_14:
-    pcVar1 = "BUT_SIREPUNLOAD";
+    pcVar1 = st::mutable_c_string("BUT_SIREPUNLOAD");
     if (DAT_0080874e != '\x03') {
       return "BUT_REPUNLOAD";
     }
@@ -4549,7 +4671,7 @@ st::fn_00529590(Global_sub_00529590_param_1Enum param_1,Global_sub_00529590_para
   case CASE_17:
     return "BUT_TELEOBJ";
   case CASE_18:
-    pcVar1 = "BUT_SITELEPORT";
+    pcVar1 = st::mutable_c_string("BUT_SITELEPORT");
     if (DAT_0080874e != '\x03') goto switchD_005295a5_caseD_4d;
     break;
   case CASE_19:
@@ -4581,7 +4703,7 @@ st::fn_00529590(Global_sub_00529590_param_1Enum param_1,Global_sub_00529590_para
   case CASE_26:
     return "BUT_SETDESTINATION";
   case CASE_27:
-    pcVar1 = "BUT_SIDISSASSEMBLE";
+    pcVar1 = st::mutable_c_string("BUT_SIDISSASSEMBLE");
     if (DAT_0080874e != '\x03') {
       return "BUT_BREAKBUILD";
     }
@@ -4593,19 +4715,19 @@ st::fn_00529590(Global_sub_00529590_param_1Enum param_1,Global_sub_00529590_para
   case CASE_2A:
     return "BUT_VIEWZONE";
   case CASE_2B:
-    pcVar1 = "BUT_SIATTACKZONE";
+    pcVar1 = st::mutable_c_string("BUT_SIATTACKZONE");
     if (DAT_0080874e != '\x03') {
       return "BUT_ATTACKZONE";
     }
     break;
   case CASE_2C:
-    pcVar1 = "BUT_SIGUARDZONE";
+    pcVar1 = st::mutable_c_string("BUT_SIGUARDZONE");
     if (DAT_0080874e != '\x03') {
       return "BUT_GUARDZONE";
     }
     break;
   case CASE_2D:
-    pcVar1 = "BUT_SISCOUT";
+    pcVar1 = st::mutable_c_string("BUT_SISCOUT");
     if (DAT_0080874e != '\x03') {
       return "BUT_SCOUT";
     }
@@ -4613,7 +4735,7 @@ st::fn_00529590(Global_sub_00529590_param_1Enum param_1,Global_sub_00529590_para
   case CASE_2E:
     return "BUT_BREAKAWAY";
   case CASE_2F:
-    pcVar1 = "BUT_SIAI";
+    pcVar1 = st::mutable_c_string("BUT_SIAI");
     if (DAT_0080874e != '\x03') {
       return "BUT_BEHAVIOUR";
     }
@@ -4683,19 +4805,19 @@ switchD_005295a5_caseD_4d:
   case CASE_4F:
     return "BUT_VQB";
   case CASE_50:
-    pcVar1 = "BUT_SIHOLD";
+    pcVar1 = st::mutable_c_string("BUT_SIHOLD");
     if (DAT_0080874e != '\x03') {
       return "BUT_HOLDBUILD";
     }
     break;
   case CASE_51:
-    pcVar1 = "BUT_SIUNHOLD";
+    pcVar1 = st::mutable_c_string("BUT_SIUNHOLD");
     if (DAT_0080874e != '\x03') {
       return "BUT_UNHOLDBUILD";
     }
     break;
   case CASE_52:
-    pcVar1 = "BUT_SISFIRE";
+    pcVar1 = st::mutable_c_string("BUT_SISFIRE");
     if (DAT_0080874e != '\x03') goto switchD_005295a5_caseD_32;
   }
   return pcVar1;
@@ -4791,34 +4913,45 @@ undefined4 __cdecl st::fn_00529D80(Global_sub_00529D80_param_1Enum param_1,int p
 
 // 00529F90 FUN_00529f90
 #line 4 "decomp/ST.exe/functions/00529F90/decomp.c"
-undefined4 __cdecl st::fn_00529F90(int param_1)
+/* [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=2, ignored=0,
+   unknown=0 */
+
+int __cdecl st::fn_00529F90(RecoveredRecord_00529F90_28CA9BE3 *param_1)
 
 {
-  uint uVar1;
-  uVar1 = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(param_1 + 0x14)) {
+  int iVar1;
+
+  iVar1 = 0;
+  switch(param_1->field_0014) {
   case 0:
   case 1:
   case 3:
     return 0;
   case 2:
-    uVar1 = 1;
+    iVar1 = 1;
   }
-  return uVar1;
+  return iVar1;
 }
 
 // 00529FE0 FUN_00529fe0
 #line 4 "decomp/ST.exe/functions/00529FE0/decomp.c"
-undefined4 __cdecl st::fn_00529FE0(int param_1)
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (4), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00538DB0 @ 00538E52 -> read as EAX on
+   every CFG path | 00538DB0 @ 00538EB0 -> read as EAX on every CFG path | 0053DAF0 @ 0053DB65 ->
+   read as EAX on every CFG path | 0053DAF0 @ 0053DBC4 -> read as EAX on every CFG path */
+
+int __cdecl st::fn_00529FE0(RecoveredRecord_00529FE0_85E582CB *param_1)
 
 {
-  uint uVar1;
-  uVar1 = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(param_1 + 0x14)) {
+  int iVar1;
+
+  iVar1 = 0;
+  switch(param_1->field_0014) {
   case 0:
-    uVar1 = 2;
+    iVar1 = 2;
     break;
   case 1:
   case 3:
@@ -4826,18 +4959,17 @@ undefined4 __cdecl st::fn_00529FE0(int param_1)
   case 2:
     return 1;
   }
-  return uVar1;
+  return iVar1;
 }
 
 // 0052A030 FUN_0052a030
 #line 4 "decomp/ST.exe/functions/0052A030/decomp.c"
-undefined4 __cdecl st::fn_0052A030(int param_1)
+undefined4 __cdecl st::fn_0052A030(RecoveredRecord_0052A030_A4DBF22A *param_1)
 
 {
   uint uVar1;
   uVar1 = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(param_1 + 0x14)) {
+  switch(param_1->field_0014) {
   case 0:
     return 2;
   case 1:
@@ -4852,11 +4984,10 @@ undefined4 __cdecl st::fn_0052A030(int param_1)
 
 // 0052A080 FUN_0052a080
 #line 4 "decomp/ST.exe/functions/0052A080/decomp.c"
-undefined4 __cdecl st::fn_0052A080(int param_1)
+undefined4 __cdecl st::fn_0052A080(RecoveredRecord_0052A080_FE10D39B *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(param_1 + 0x14)) {
+  switch(param_1->field_0014) {
   case 0:
   case 1:
     break;
@@ -4869,13 +5000,12 @@ undefined4 __cdecl st::fn_0052A080(int param_1)
 
 // 0052A0D0 FUN_0052a0d0
 #line 4 "decomp/ST.exe/functions/0052A0D0/decomp.c"
-undefined4 __cdecl st::fn_0052A0D0(int param_1)
+undefined4 __cdecl st::fn_0052A0D0(RecoveredRecord_0052A0D0_AA895067 *param_1)
 
 {
   uint uVar1;
   uVar1 = 1;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(param_1 + 0x14)) {
+  switch(param_1->field_0014) {
   case 0:
     return 0;
   case 1:
@@ -4891,11 +5021,10 @@ undefined4 __cdecl st::fn_0052A0D0(int param_1)
 
 // 0052A140 FUN_0052a140
 #line 4 "decomp/ST.exe/functions/0052A140/decomp.c"
-undefined4 __cdecl st::fn_0052A140(int param_1)
+undefined4 __cdecl st::fn_0052A140(RecoveredRecord_0052A140_CB7DEA2A *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(param_1 + 0x14)) {
+  switch(param_1->field_0014) {
   case 0:
   case 1:
   case 3:
@@ -4907,11 +5036,10 @@ undefined4 __cdecl st::fn_0052A140(int param_1)
 
 // 0052A190 FUN_0052a190
 #line 4 "decomp/ST.exe/functions/0052A190/decomp.c"
-undefined4 __cdecl st::fn_0052A190(int param_1)
+undefined4 __cdecl st::fn_0052A190(RecoveredRecord_0052A190_200815B9 *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(param_1 + 0x14)) {
+  switch(param_1->field_0014) {
   case 0:
   case 1:
     return 0;
@@ -4923,11 +5051,10 @@ undefined4 __cdecl st::fn_0052A190(int param_1)
 
 // 0052A1E0 FUN_0052a1e0
 #line 4 "decomp/ST.exe/functions/0052A1E0/decomp.c"
-undefined4 __cdecl st::fn_0052A1E0(int param_1)
+undefined4 __cdecl st::fn_0052A1E0(RecoveredRecord_0052A1E0_8B1F7625 *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(param_1 + 0x14)) {
+  switch(param_1->field_0014) {
   case 0:
     return 2;
   case 1:
@@ -4941,13 +5068,12 @@ undefined4 __cdecl st::fn_0052A1E0(int param_1)
 
 // 0052A230 FUN_0052a230
 #line 4 "decomp/ST.exe/functions/0052A230/decomp.c"
-undefined4 __cdecl st::fn_0052A230(int param_1)
+undefined4 __cdecl st::fn_0052A230(RecoveredRecord_0052A230_82824298 *param_1)
 
 {
   uint uVar1;
   uVar1 = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(param_1 + 0x14)) {
+  switch(param_1->field_0014) {
   case 0:
     return 9;
   case 1:
@@ -4962,11 +5088,10 @@ undefined4 __cdecl st::fn_0052A230(int param_1)
 
 // 0052A280 FUN_0052a280
 #line 4 "decomp/ST.exe/functions/0052A280/decomp.c"
-undefined4 __cdecl st::fn_0052A280(int param_1)
+undefined4 __cdecl st::fn_0052A280(RecoveredRecord_0052A280_B7ADADEA *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(param_1 + 0x14)) {
+  switch(param_1->field_0014) {
   case 0:
     return 6;
   case 1:
@@ -4980,11 +5105,10 @@ undefined4 __cdecl st::fn_0052A280(int param_1)
 
 // 0052A2D0 FUN_0052a2d0
 #line 4 "decomp/ST.exe/functions/0052A2D0/decomp.c"
-undefined4 __cdecl st::fn_0052A2D0(int param_1)
+undefined4 __cdecl st::fn_0052A2D0(RecoveredRecord_0052A2D0_279FA866 *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(param_1 + 0x14)) {
+  switch(param_1->field_0014) {
   case 0:
   case 1:
     break;
@@ -4997,13 +5121,12 @@ undefined4 __cdecl st::fn_0052A2D0(int param_1)
 
 // 0052A320 FUN_0052a320
 #line 4 "decomp/ST.exe/functions/0052A320/decomp.c"
-undefined4 __cdecl st::fn_0052A320(int param_1)
+undefined4 __cdecl st::fn_0052A320(RecoveredRecord_0052A320_3DA6AF5F *param_1)
 
 {
   uint uVar1;
   uVar1 = 1;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined2 *)(param_1 + 0x14)) {
+  switch(param_1->field_0014) {
   case 0:
     return 0;
   case 1:
@@ -5019,11 +5142,10 @@ undefined4 __cdecl st::fn_0052A320(int param_1)
 
 // 0052A390 FUN_0052a390
 #line 4 "decomp/ST.exe/functions/0052A390/decomp.c"
-undefined4 __cdecl st::fn_0052A390(int param_1)
+undefined4 __cdecl st::fn_0052A390(RecoveredRecord_0052A390_F1ABEB26 *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(param_1 + 0x14)) {
+  switch(param_1->field_0014) {
   case 0:
   case 1:
     break;
@@ -5036,11 +5158,10 @@ undefined4 __cdecl st::fn_0052A390(int param_1)
 
 // 0052A3E0 FUN_0052a3e0
 #line 4 "decomp/ST.exe/functions/0052A3E0/decomp.c"
-undefined4 __cdecl st::fn_0052A3E0(int param_1)
+undefined4 __cdecl st::fn_0052A3E0(RecoveredRecord_0052A3E0_3ACAB03C *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(param_1 + 0x14)) {
+  switch(param_1->field_0014) {
   case 0:
   case 1:
     break;
@@ -5064,9 +5185,9 @@ int __cdecl st::fn_0052A430(AnonShape_0052A430_8E4D893F *param_1)
   switch(pAVar1->field_0004) {
   case 0:
   case 2:
-    return st::machine_word_boundary_cast<int>(pAVar1->field_0000 * 2 + -2);
+    return pAVar1->field_0000 * 2 + -2;
   case 1:
-    return st::machine_word_boundary_cast<int>(pAVar1->field_0000 * 2 + -1);
+    return pAVar1->field_0000 * 2 + -1;
   case 3:
     local_8 = (uint)(pAVar1->field_0008 != 0);
   }
@@ -5075,11 +5196,10 @@ int __cdecl st::fn_0052A430(AnonShape_0052A430_8E4D893F *param_1)
 
 // 0052A4D0 FUN_0052a4d0
 #line 4 "decomp/ST.exe/functions/0052A4D0/decomp.c"
-undefined4 __cdecl st::fn_0052A4D0(int param_1)
+undefined4 __cdecl st::fn_0052A4D0(RecoveredRecord_0052A4D0_11C787C1 *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(*(int *)(param_1 + 0x14) + 4)) {
+  switch(*(undefined4 *)(param_1->field_0014 + 4)) {
   case 0:
   case 2:
     return 1;
@@ -5091,14 +5211,12 @@ undefined4 __cdecl st::fn_0052A4D0(int param_1)
 
 // 0052A540 FUN_0052a540
 #line 4 "decomp/ST.exe/functions/0052A540/decomp.c"
-undefined4 __cdecl st::fn_0052A540(int param_1)
+undefined4 __cdecl st::fn_0052A540(RecoveredRecord_0052A540_7E2E1D84 *param_1)
 
 {
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(*(int *)(param_1 + 0x14) + 4)) {
+  switch(*(undefined4 *)(param_1->field_0014 + 4)) {
   case 0:
     return 0;
   case 1:
@@ -5113,14 +5231,12 @@ undefined4 __cdecl st::fn_0052A540(int param_1)
 
 // 0052A5C0 FUN_0052a5c0
 #line 4 "decomp/ST.exe/functions/0052A5C0/decomp.c"
-undefined4 __cdecl st::fn_0052A5C0(int param_1)
+undefined4 __cdecl st::fn_0052A5C0(RecoveredRecord_0052A5C0_7CB2979F *param_1)
 
 {
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 7;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(*(int *)(param_1 + 0x14) + 4)) {
+  switch(*(undefined4 *)(param_1->field_0014 + 4)) {
   case 0:
     return 7;
   case 1:
@@ -5135,14 +5251,12 @@ undefined4 __cdecl st::fn_0052A5C0(int param_1)
 
 // 0052A640 FUN_0052a640
 #line 4 "decomp/ST.exe/functions/0052A640/decomp.c"
-undefined4 __cdecl st::fn_0052A640(int param_1)
+undefined4 __cdecl st::fn_0052A640(RecoveredRecord_0052A640_D5301A8C *param_1)
 
 {
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 5;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined4 *)(*(int *)(param_1 + 0x14) + 4)) {
+  switch(*(undefined4 *)(param_1->field_0014 + 4)) {
   case 0:
     return 5;
   case 1:
@@ -5157,26 +5271,23 @@ undefined4 __cdecl st::fn_0052A640(int param_1)
 
 // 0052A6C0 FUN_0052a6c0
 #line 4 "decomp/ST.exe/functions/0052A6C0/decomp.c"
-uint __cdecl st::fn_0052A6C0(int param_1)
+uint __cdecl st::fn_0052A6C0(RecoveredRecord_0052A6C0_8EEA104A *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return (uint)(*(ushort *)(param_1 + 0x14) < 2);
+  return (uint)(param_1->field_0014 < 2);
 }
 
 // 0052A6F0 FUN_0052a6f0
 #line 4 "decomp/ST.exe/functions/0052A6F0/decomp.c"
-undefined4 __cdecl st::fn_0052A6F0(int param_1)
+undefined4 __cdecl st::fn_0052A6F0(RecoveredRecord_0052A6F0_8710A4D2 *param_1)
 
 {
   uint uVar1;
   uVar1 = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(short *)(param_1 + 0x14) == 0) {
+  if (param_1->field_0014 == 0) {
     uVar1 = 2;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  else if (*(short *)(param_1 + 0x14) == 2) {
+  else if (param_1->field_0014 == 2) {
     return 1;
   }
   return uVar1;
@@ -5184,17 +5295,15 @@ undefined4 __cdecl st::fn_0052A6F0(int param_1)
 
 // 0052A730 FUN_0052a730
 #line 4 "decomp/ST.exe/functions/0052A730/decomp.c"
-undefined4 __cdecl st::fn_0052A730(int param_1)
+undefined4 __cdecl st::fn_0052A730(RecoveredRecord_0052A730_7C85D1BF *param_1)
 
 {
   uint uVar1;
   uVar1 = 7;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(short *)(param_1 + 0x14) == 0) {
+  if (param_1->field_0014 == 0) {
     uVar1 = 9;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  else if (*(short *)(param_1 + 0x14) == 2) {
+  else if (param_1->field_0014 == 2) {
     return 8;
   }
   return uVar1;
@@ -5202,17 +5311,15 @@ undefined4 __cdecl st::fn_0052A730(int param_1)
 
 // 0052A770 FUN_0052a770
 #line 4 "decomp/ST.exe/functions/0052A770/decomp.c"
-undefined4 __cdecl st::fn_0052A770(int param_1)
+undefined4 __cdecl st::fn_0052A770(RecoveredRecord_0052A770_CB744C05 *param_1)
 
 {
   uint uVar1;
   uVar1 = 5;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(short *)(param_1 + 0x14) == 0) {
+  if (param_1->field_0014 == 0) {
     uVar1 = 6;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  else if (*(short *)(param_1 + 0x14) == 2) {
+  else if (param_1->field_0014 == 2) {
     return 4;
   }
   return uVar1;
@@ -5324,9 +5431,9 @@ undefined4 * __cdecl st::fn_0052A970(uint param_1,int param_2)
   } while (cVar1 != '\0');
   uVar3 = ~uVar3;
   pcVar2 = pcVar6 + -uVar3;
-  pcVar6 = (char *)&DAT_008016a4;
+  pcVar6 = reinterpret_cast<char *>(&DAT_008016a4);
   memmove(pcVar6, pcVar2, uVar3); /* compiler REP MOVS byte copy */
-  pcVar2 = (char *)((byte *)pcVar2 + uVar3);
+  pcVar2 = reinterpret_cast<char *>(((byte *)pcVar2 + uVar3));
   uVar4 = 0;
   if (param_2 != 0) {
     if (param_1 != 0) {
@@ -5377,7 +5484,7 @@ undefined4 * __cdecl st::fn_0052A970(uint param_1,int param_2)
     } while (cVar1 != '\0');
     uVar3 = ~uVar3;
     pcVar2 = pcVar2 + -uVar3;
-    pcVar6 = (char *)&DAT_008016a4;
+    pcVar6 = reinterpret_cast<char *>(&DAT_008016a4);
     memmove(pcVar6, pcVar2, uVar3); /* compiler REP MOVS byte copy */
   }
   return &DAT_008016a4;
@@ -5421,8 +5528,10 @@ MoneyTy * __cdecl st::fn_0052B670(void)
 {
   MoneyTy *this;
 
-  this = (MoneyTy *)st::fn_006B04D0(0xa6);
+
+  this = STPointerBoundaryCast<MoneyTy *>(st::fn_006B04D0(0xa6));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
     this->vtable = &st_global_0079ACE4;
     this->field_0048 = 0x24;
@@ -5485,11 +5594,11 @@ HDC __cdecl st::fn_0052CCE0(ushort *param_1,undefined *param_2,BYTE param_3)
   pLVar7 = &local_b0;
   for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
     pLVar7->lfHeight = 0;
-    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
+    pLVar7 = reinterpret_cast<LOGFONTA *>(&pLVar7->lfWidth);
   }
   local_b0.lfCharSet = param_3;
   uVar4 = 0xffffffff;
-  pcVar6 = "Verdana";
+  pcVar6 = st::mutable_c_string("Verdana");
   do {
     pcVar8 = pcVar6;
     if (uVar4 == 0) break;
@@ -5654,8 +5763,10 @@ PopUpTy * __cdecl st::fn_0052D020(void)
   uint *puVar1;
   int iVar2;
 
-  this = (PopUpTy *)st::fn_006B04D0(0xa1);
+
+  this = STPointerBoundaryCast<PopUpTy *>(st::fn_006B04D0(0xa1));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
     this->vtable = &st_global_0079ACE8;
     this->field_0090 = nullptr;
@@ -5675,29 +5786,6 @@ PopUpTy * __cdecl st::fn_0052D020(void)
   return nullptr;
 }
 
-// 0052D320 FUN_0052d320
-#line 4 "decomp/ST.exe/functions/0052D320/decomp.c"
-/* [STPrototypeApplier] Propagated parameter 1.
-   Evidence: 00571400 -> 0052D320 @ 00571603 | 00571400 -> 0052D320 @ 00571642 | 00571400 ->
-   0052D320 @ 00571654 */
-
-void __thiscall st::fn_0052D320(void *this,char *text,uint param_2)
-
-{
-  byte bVar1;
-
-  bVar1 = (byte)param_2;
-  if (STField<char>(this,0x9c) == '\0') {
-    /* ST_CALLSITE[0052D33A]: CALL 0x00402fea; direct=00402FEA PopUpTy::AddStr */
-    st::fn_00402FEA(static_cast<PopUpTy *>(this),&st_global_007C3B5C,bVar1);
-    /* ST_CALLSITE[0052D347]: CALL 0x00402fea; direct=00402FEA PopUpTy::AddStr */
-    st::fn_00402FEA(static_cast<PopUpTy *>(this),&st_global_007C3B5C,bVar1);
-  }
-  /* ST_CALLSITE[0052D353]: CALL 0x00402fea; direct=00402FEA PopUpTy::AddStr */
-  st::fn_00402FEA(static_cast<PopUpTy *>(this),text,bVar1);
-  return;
-}
-
 // 0052E3A0 CreateOptPanel
 #line 4 "decomp/ST.exe/functions/0052E3A0/decomp.c"
 /* [STUnclaimedCodeApplier] Exact function entry recovered from thunk_target.
@@ -5712,8 +5800,10 @@ OptPanelTy * __cdecl st::fn_0052E3A0(void)
 {
   OptPanelTy *this;
 
-  this = (OptPanelTy *)st::fn_006B04D0(0x306);
+
+  this = STPointerBoundaryCast<OptPanelTy *>(st::fn_006B04D0(0x306));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;
@@ -5755,4 +5845,3 @@ OptPanelTy * __cdecl st::fn_0052E3A0(void)
   }
   return nullptr;
 }
-

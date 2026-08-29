@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __thiscall FUN_0061c5f0(void *this,undefined4 *param_1)
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00619C70 @ 0061A266 -> read as EAX on
+   every CFG path | 00619C70 @ 0061A461 -> read as EAX on every CFG path */
+
+int __thiscall FUN_0061c5f0(void *this,undefined4 *param_1)
 
 {
   short sVar1;
@@ -21,8 +26,9 @@ undefined4 __thiscall FUN_0061c5f0(void *this,undefined4 *param_1)
 
   *param_1 = 0;
   if ((STField<char>(this,0x14b) != '\0') && (STField<short>(this,0x149) != -1)) {
+    /* ST_CALLSITE[0061C629]: CALL 0x00404052; direct=00404052 thunk_FUN_00601db0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
     SVar2 = thunk_FUN_00601db0(STField<Global_sub_00601DB0_param_1Enum>(this,0x123));
-    /* ST_CALLSITE[0061C644]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
+    /* ST_CALLSITE[0061C644]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override */
     this_00 = STAllPlayersC::GetObjPtr
                         (g_allPlayers_007FA174,STField<char>(this,0x11f),
                          STField<ushort>(this,0x149),SVar2);
@@ -40,6 +46,7 @@ undefined4 __thiscall FUN_0061c5f0(void *this,undefined4 *param_1)
       if ((((local_a - iVar3 <= iVar5) && (iVar5 < local_a + iVar3)) && (local_e - iVar3 <= iVar6))
          && (iVar6 < local_e + iVar3)) {
         thunk_FUN_00416270(this_00,(uint *)&local_8,&local_6,&local_c);
+
         FUN_006aced8(STField<int>(this,0x9f),STField<int>(this,0xa3),(int)local_8,(int)local_6
                     );
         STField<int>(this,0x127) = (int)local_8;
@@ -56,9 +63,11 @@ undefined4 __thiscall FUN_0061c5f0(void *this,undefined4 *param_1)
         /* ST_CALLSITE[0061C7EB]: CALL dword ptr [EDX + 0x2c] */
         uVar4 = this_00->vfunc_2C();
         STField<undefined4>(this,0x123) = uVar4;
+
         iVar5 = FUN_006acf0d(STField<int>(this,0x9f),STField<int>(this,0xa3),
                              STField<int>(this,0xa7),(int)local_8,(int)local_6,(int)local_c);
         STField<int>(this,0x13d) = iVar5;
+
         iVar5 = FUN_006aced8(STField<int>(this,0x9f),STField<int>(this,0xa3),(int)local_8,
                              (int)local_6);
         STField<int>(this,0x141) = iVar5;

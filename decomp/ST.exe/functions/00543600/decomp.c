@@ -14,8 +14,9 @@ void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1
   ushort *local_EAX_157;
   ushort *puVar4;
   uint uVar3;
-  ushort *puVar5;
+  int puVar5_mg1;
   int iVar3;
+  ushort *puVar5;
   int iVar6;
   InternalExceptionFrame local_50;
   CursorClassTy *local_c;
@@ -24,12 +25,15 @@ void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   local_EAX_34 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (local_EAX_34 == 0) {
+
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)&local_c->field_0018,(int *)g_ddxContext_008075A8,0,'\a',
                nullptr,0,0);
+
     Library::DKW::DDX::FUN_006b88d0
               (&this_00->field_00AD,g_dDXContext_0080759C,0,nullptr,0x8000000,0,
                nullptr,0);
@@ -46,11 +50,14 @@ void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1
     local_8 = cMf32::RecGet(g_cMf32_00806780,1,"CURSOR_PAL",nullptr,1);
     puVar5 = local_8 + 0x14;
     iVar6 = 1;
+
     uVar3 = FUN_006b4fe0(local_8);
-    puVar5 = (ushort *)FUN_006b50c0(800,0x96,(uint)local_8[7],uVar3,(undefined4 *)puVar5,iVar6);
-    this_00->field_04D2 = puVar5;
+    /* ST_CALLSITE[00543708]: CALL 0x006b50c0; direct=006B50C0 FUN_006b50c0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
+    puVar5_mg1 = FUN_006b50c0(800,0x96,(uint)local_8[7],uVar3,(undefined4 *)puVar5,iVar6);
+    this_00->field_04D2 = (ushort *)puVar5_mg1;
     cMf32::RecMemFree(g_cMf32_00806780,(uint *)&local_8);
     puVar1 = &this_00->field_04D6;
+
     FUN_006b2330(g_ddxContext_008075A8,puVar1,1,0x4047ff,0,0,this_00->field_04D2);
     FUN_006b28c0(g_ddxContext_008075A8,*puVar1,1);
     FUN_006b3af0((int *)g_ddxContext_008075A8,*puVar1);
@@ -58,6 +65,7 @@ void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1
     return;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\to_cursor.cpp",0x65,0,local_EAX_34,
                              "%s","CursorClassTy::InitCursor");
   if (iVar3 != 0) {

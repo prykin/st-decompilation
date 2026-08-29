@@ -34,10 +34,12 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_c = this;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_58.previous;
+
     iVar7 = ReportDebugMessage("E:\\__titans\\nick\\to_ruinm.cpp",0x94,0,iVar5,"%s",
                                "STManRuinC::GetMessage");
     if (iVar7 == 0) {
@@ -52,7 +54,7 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
-    /* ST_CALLSITE[006306E6]: CALL 0x004052ea; direct=004052EA STManRuinC::sub_00631220 */
+    /* ST_CALLSITE[006306E6]: CALL 0x004052ea; direct=004052EA STManRuinC::sub_00631220; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
     local_14 = (byte *)sub_00631220(local_c,(int *)&local_10);
     /* ST_CALLSITE[00630702]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
     STPlaySystemC::SaveObjData(g_playSystem_00802A38,PTR_DAT_0079d198,local_14,local_10,0xc);
@@ -78,34 +80,36 @@ int __thiscall STManRuinC::GetMessage(STManRuinC *this,STMessage *message)
           element_003c = nullptr;
         }
         if (element_003c != nullptr) {
-          if ((element_003c[1] == 1) && (element_003c[2] == 0)) {
+          if ((element_003c->state == 1) && (element_003c->statusFlag == 0)) {
+
             iVar8 = thunk_FUN_00630ff0();
-            element_003c[2] = iVar8;
+            element_003c->statusFlag = iVar8;
             if (iVar8 != 0) {
               /* ST_CALLSITE[00630604]: CALL 0x00405c9f; direct=00405C9F STManRuinC::sub_00630C50 */
-              puVar6 = sub_00630C50(this_00,*element_003c,element_003c[3],1,1,0);
+              puVar6 = sub_00630C50(this_00,*element_003c,element_003c->variant,1,1,0);
               if (puVar6 == nullptr) {
-                element_003c[2] = 0;
+                element_003c->statusFlag = 0;
               }
               else {
-                element_003c[1] = 2;
+                element_003c->state = 2;
               }
             }
           }
-          iVar8 = element_003c[1];
+          iVar8 = element_003c->state;
           if ((iVar8 == 2) || (iVar8 == 1)) {
-            if ((element_003c[2] != 0) || (iVar8 == 2)) {
+            if ((element_003c->statusFlag != 0) || (iVar8 == 2)) {
               Library::Ourlib::ST3DSMAP::SprSetMask
                         (g_sT3DSMAPContext_00807598,element_003c->spriteHandle,
-                         PTR_00806724->entries[((byte *)element_003c)[8]],(int)PTR_00806724->field_002C
+                         PTR_00806724->entries[element_003c->maskIndex],(int)PTR_00806724->field_002C
                         );
             }
             if (g_playSystem_00802A38->field_00E4 % 6 == 0) {
-              ((char *)element_003c)[8] = ((char *)element_003c)[8] + '\x01';
+              element_003c->maskIndex = element_003c->maskIndex + '\x01';
             }
-            if (PTR_00806724->entryCount <= (short)(ushort)((byte *)element_003c)[8]) {
+            if (PTR_00806724->entryCount <= (short)(ushort)element_003c->maskIndex) {
               Library::Ourlib::ST3DSMAP::SprClose
                         (g_sT3DSMAPContext_00807598,element_003c->spriteHandle);
+
               DArrayRemoveAt((DArrayTy *)this_00->field_003C,uVar2);
             }
           }
@@ -149,10 +153,12 @@ LAB_006304e7:
   }
   if (this_00->field_0034 == nullptr) {
     uVar2 = (int)g_worldGrid.sizeX * (int)g_worldGrid.sizeY * 5;
+
     pbVar5 = Library::DKW::LIB::MemAlloc(uVar2);
     this_00->field_0034 = pbVar5;
     if (pbVar5 == nullptr) {
-      thunk_FUN_006308b0(this_00);
+
+      thunk_FUN_006308b0((RecoveredRecord_006308B0_717D06CB *)this_00);
     }
     else {
       memset(pbVar5, 0, uVar2); /* compiler bulk-zero initialization */

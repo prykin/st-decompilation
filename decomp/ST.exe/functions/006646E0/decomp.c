@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_006646e0(int param_1)
+undefined4 __fastcall FUN_006646e0(RecoveredRecord_006646E0_797C098D *param_1)
 
 {
   dword dVar1;
@@ -10,8 +10,7 @@ undefined4 __fastcall FUN_006646e0(int param_1)
   uint index;
   bool bVar3;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  array = *(DArrayTy **)(param_1 + 0x217);
+  array = param_1->field_0217;
   dVar1 = array->count;
   if (dVar1 == 0) {
     return 0xffffffff;
@@ -27,15 +26,14 @@ undefined4 __fastcall FUN_006646e0(int param_1)
         puVar2 = nullptr;
       }
       if ((0x31 < *puVar2) && (*puVar2 < 100)) {
+
         DArrayRemoveAt(array,index);
       }
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      array = *(DArrayTy **)(param_1 + 0x217);
+      array = param_1->field_0217;
       index = index + 1;
       bVar3 = index < array->count;
     } while ((int)index < (int)array->count);
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return *(undefined4 *)(*(int *)(param_1 + 0x217) + 0xc);
+  return param_1->field_0217->count;
 }
 

@@ -62,7 +62,8 @@ CGenerate::CreateMap:
 006A028D  6A 01                     PUSH 0x1
 006A028F  52                        PUSH EDX
 006A0290  68 45 03 00 00            PUSH 0x345
-006A0295  E8 26 0C 05 00            CALL 0x006f0ec0
+CGenerate::CreateMap::override::prt_6a0295_9d92389d:
+006A0295  E8 26 0C 05 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 006A029A  83 C4 14                  ADD ESP,0x14
 006A029D  8B CB                     MOV ECX,EBX
 006A029F  89 43 18                  MOV dword ptr [EBX + 0x18],EAX

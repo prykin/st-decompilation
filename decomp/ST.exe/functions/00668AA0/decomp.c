@@ -10,56 +10,56 @@
    CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 2 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_2. The carrier
-   ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_2.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 4 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_4. The carrier
-   ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_4.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 6 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_6. The carrier
-   ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_6.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 7 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_7. The carrier
-   ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_7.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 8 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_8. The carrier
-   ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_8.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 11 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_B. The carrier
-   ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_B.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 2063 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_80F. The
-   carrier ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_80F.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 2064 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_810. The
-   carrier ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_810.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 2076 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_81C. The
-   carrier ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_81C.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 2077 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_81D. The
-   carrier ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_81D.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 2090 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_82A. The
-   carrier ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_82A.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 2091 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_82B. The
-   carrier ABI remains pointer:/undefined1.
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_82B.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1.
 
    [STDiscriminatedPayloadApplier] Case-local payload view: param_1 == 2092 uses
-   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_82C. The
-   carrier ABI remains pointer:/undefined1. */
+   /SubmarineTitans/Recovered/DiscriminatedPayloads/Global_FUN_00668aa0_00668AA0_Case_82C.
+   carrier=param_3; The carrier ABI remains pointer:/undefined1. */
 
 undefined4 __cdecl
 FUN_00668aa0(Global_sub_00668AA0_param_1Enum param_1,Global_sub_00668AA0_param_2Enum param_2,

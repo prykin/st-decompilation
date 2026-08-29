@@ -4,9 +4,14 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_GnBom.cpp
-   STGenBombC::LoadImagSpr */
+   STGenBombC::LoadImagSpr
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=0060EA30 @ 0060EAFB -> read as EAX on
+   every CFG path | 006101B0 @ 00611CF9 -> killed on every CFG path | 00615FD0 @ 00616113 -> read as
+   EAX on every CFG path | 00615FD0 @ 006161B5 -> read as EAX on every CFG path */
 
-undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int param_2)
+int __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int param_2)
 
 {
   short sVar2;
@@ -28,16 +33,18 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
   int local_14;
   STGenBombC *local_10;
   int local_c;
-  undefined4 local_8;
+  int local_8;
 
   local_8 = 0;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_10 = this;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   pSVar4 = local_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_5c.previous;
+
     iVar8 = ReportDebugMessage("E:\\__titans\\nick\\to_GnBom.cpp",0x54b,0,iVar5,"%s",
                                "STGenBombC::LoadImagSpr()");
     if (iVar8 == 0) {
@@ -47,7 +54,8 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   if (local_10->field_0252 == nullptr) {
-    pSVar5 = (STT3DSprC *)Library::MSVCRT::FUN_0072e530(0x40);
+    /* ST_CALLSITE[00613336]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint */
+    pSVar5 = Library::MSVCRT::FUN_0072e530(0x40);
     if (pSVar5 == nullptr) {
       pSVar5 = nullptr;
     }
@@ -57,7 +65,7 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
     }
     pSVar4->field_0252 = pSVar5;
     if (pSVar5 == nullptr) {
-      return 0xffffffff;
+      return -1;
     }
     /* ST_CALLSITE[0061337D]: CALL 0x0040537b; direct=0040537B STT3DSprC::Init */
     iVar6 = STT3DSprC::Init(pSVar5,PTR_008073cc,0x5a,0x45,nullptr,0xb4,0x8c,0x11);
@@ -90,14 +98,18 @@ undefined4 __thiscall STGenBombC::LoadImagSpr(STGenBombC *this,int param_1,int p
     uVar11 = 0x5a;
     iVar6 = 1;
     pSVar4->field_0251 = 1;
+
     uVar7 = thunk_FUN_004ad650(pSVar4->field_0252);
+
     Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand
               (g_sT3DSMAPContext_00807598,uVar7,iVar6,uVar11,uVar13);
+
     thunk_FUN_004ac700(pSVar4->field_0252,'\x0f');
     /* ST_CALLSITE[00613581]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     STT3DSprC::StartShow(pSVar4->field_0252,0xd,g_playSystem_00802A38->field_00E4);
     iVar6 = (int)PTR_00806724->field_002C;
     uVar12 = 0;
+
     uVar7 = thunk_FUN_004ad650(pSVar4->field_0252);
     Library::Ourlib::ST3DSMAP::SprSetMask(g_sT3DSMAPContext_00807598,uVar7,uVar12,iVar6);
     pSVar4->field_0250 = 1;
@@ -198,7 +210,8 @@ LAB_0061364b:
     }
   }
   else if (pSVar4->field_0250 != '\0') {
-    thunk_FUN_004ad430(pSVar4->field_0252);
+    /* ST_CALLSITE[006137D2]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+    STT3DSprC::sub_004AD430(pSVar4->field_0252);
     pSVar4->field_0250 = 0;
   }
   g_currentExceptionFrame = local_5c.previous;

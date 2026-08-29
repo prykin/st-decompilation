@@ -1,22 +1,25 @@
 #include "../../pseudocode_runtime.h"
 
 
-void FUN_0042a9f0(char param_1)
+/* [STAbiConsistencyApplier] ecx_context_register target=function:-1: prototype=undefined __stdcall
+   FUN_0042a9f0(STAllPlayersC * context, char param_2) previous_return_type=/undefined Evidence:
+   incoming ECX reaches only unadjusted __thiscall receivers of /STAllPlayersC; receiver_calls=2;
+   exact RET purge=4 matches declared stack bytes=4; sites=0042AA02 ->
+   STAllPlayersC::ResetActivityFromTmp receiver=/STAllPlayersC | 0042AA10 ->
+   STAllPlayersC::ResetActivityFromTmp receiver=/STAllPlayersC */
+
+void FUN_0042a9f0(STAllPlayersC *context,char param_2)
 
 {
   int iVar1;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  STAllPlayersC *in_ECX;
   uint *puVar2;
   /* ST_CALLSITE[0042AA02]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  STAllPlayersC::ResetActivityFromTmp(in_ECX,param_1,0,0,0);
+  STAllPlayersC::ResetActivityFromTmp(context,param_2,0,0,0);
   /* ST_CALLSITE[0042AA10]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  STAllPlayersC::ResetActivityFromTmp(in_ECX,param_1,1,0,0);
-  iVar1 = (int)param_1;
+  STAllPlayersC::ResetActivityFromTmp(context,param_2,1,0,0);
+  iVar1 = (int)param_2;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-  _param_1 = 5;
+  _param_2 = 5;
   puVar2 = &g_packedRecords_A62x8[iVar1].field102_0x16d;
   do {
     if ((DArrayTy *)*puVar2 != nullptr) {
@@ -30,8 +33,8 @@ void FUN_0042a9f0(char param_1)
     }
     STField<undefined4>(puVar2,0x46) = 0;
     puVar2 = puVar2 + 4;
-    _param_1 = _param_1 + -1;
-  } while (_param_1 != 0);
+    _param_2 = _param_2 + -1;
+  } while (_param_2 != 0);
   puVar2 = &g_packedRecords_A62x8[iVar1].field204_0x211;
   iVar1 = 10;
   do {

@@ -3,6 +3,7 @@ address	status	proposed_name	detail
 007C2B14	disabled		apply flags are 0
 007C2B20	disabled		apply flags are 0
 007C3B60	disabled		apply flags are 0
+007CE7A0	disabled		apply flags are 0
 007D03B8	disabled		apply flags are 0
 007D03BA	disabled		apply flags are 0
 007D03BC	disabled		apply flags are 0
@@ -18,6 +19,13 @@ address	status	proposed_name	detail
 007EE1B0	disabled		apply flags are 0
 007F4D00	disabled	g_runtimeRecord_007F4D3C_0014_007F4D00	apply flags are 0
 007F4D74	disabled		apply flags are 0
+007FA130	disabled	g_array_007FA130	apply flags are 0
+007FA154	disabled	g_array_007FA154	apply flags are 0
+007FA158	disabled	g_array_007FA158	apply flags are 0
+007FA15C	disabled	g_array_007FA15C	apply flags are 0
+007FA160	disabled	g_array_007FA160	apply flags are 0
+007FA164	disabled	g_array_007FA164	apply flags are 0
+007FA16C	disabled	g_array_007FA16C	apply flags are 0
 007FB230	disabled		apply flags are 0
 007FB240	disabled		apply flags are 0
 007FB278	disabled		apply flags are 0
@@ -94,7 +102,6 @@ address	status	proposed_name	detail
 00811AA0	disabled		apply flags are 0
 00811C80	disabled		apply flags are 0
 008489C8	disabled		apply flags are 0
-008489CC	disabled		apply flags are 0
 008489D0	disabled	g_cMf32_008489D0	apply flags are 0
 00848A04	disabled		apply flags are 0
 00854EE8	disabled	g_anonShape_006CEC40_BB23E716_00854EE8	apply flags are 0
@@ -102,6 +109,7 @@ address	status	proposed_name	detail
 00854F08	disabled		apply flags are 0
 00854F58	disabled		apply flags are 0
 008568D0	disabled		apply flags are 0
+00856FE4	disabled		apply flags are 0
 00857004	disabled		apply flags are 0
 00857028	disabled		apply flags are 0
 00857110	disabled		apply flags are 0

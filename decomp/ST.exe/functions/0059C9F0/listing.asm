@@ -73,7 +73,7 @@ FSGSTy::NewIDCtrls:
 0059CAE0  6A 01                     PUSH 0x1
 0059CAE2  6A 01                     PUSH 0x1
 0059CAE4  6A 00                     PUSH 0x0
-0059CAE6  E8 05 8A 11 00            CALL 0x006b54f0
+0059CAE6  E8 05 8A 11 00            CALL 0x006b54f0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 0059CAEB  68 A0 16 80 00            PUSH 0x8016a0
 0059CAF0  50                        PUSH EAX
 0059CAF1  89 86 04 1B 00 00         MOV dword ptr [ESI + 0x1b04],EAX

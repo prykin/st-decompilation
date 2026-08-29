@@ -9,13 +9,14 @@
    returns establish signed int while zero is a signedness-neutral member of that same domain;
    machine CFG audit: used=2, ignored=0, unknown=0 */
 
-int FUN_00754390(AnonShape_00753C80_4C8E695D *param_1,ushort *param_2,undefined4 *param_3,
+int FUN_00754390(RecoveredRecordView_00753C80_637B4E8C *param_1,ushort *param_2,undefined4 *param_3,
                 undefined4 *param_4)
 
 {
   int iVar2;
   int iVar1;
   int iVar3;
+
 
   iVar1 = FUN_00755970(param_1,param_2,1);
   if (0 < iVar1) {

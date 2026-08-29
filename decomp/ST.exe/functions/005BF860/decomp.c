@@ -27,10 +27,12 @@ void __thiscall MReportTy::NoneMReport(MReportTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar7 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x1f9,0,iVar5,"%s",
                                "MReportTy::NoneMReport");
     if (iVar7 != 0) {
@@ -104,6 +106,7 @@ LAB_005bfb27:
         PutDDXClip(0x1a,0x46,0x1a,0x46,this_00->field_0073->field_0004,
                    (byte *)this_00->field_0073->field_0008,'\x01',(BITMAPINFO *)this_00->field_005D);
         pAVar2 = this_00->field_0073;
+
         Library::DKW::DDX::FUN_006b48e0
                   ((int)g_dDXContext_0080759C,0x1a,0x46,pAVar2,0,0,0,pAVar2->field_0004,
                    pAVar2->field_0008,(ushort *)&this_00->field_00A3,0x4c,0x10000ff);
@@ -176,6 +179,7 @@ LAB_005bfb27:
     }
     if (local_8 != 0) {
       this_00->field_0065 = 2;
+
       thunk_FUN_005b66e0((MTaskTy *)this_00);
       g_currentExceptionFrame = local_50.previous;
       return;

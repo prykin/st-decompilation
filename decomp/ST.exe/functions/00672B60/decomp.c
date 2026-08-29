@@ -9,7 +9,7 @@
    [STPrototypeApplier] Propagated parameter 1.
    Evidence: 006736F0 -> 00672B60 @ 00673B35 */
 
-int FUN_00672b60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
+int FUN_00672b60(char *param_1,RecoveredGlobalRecordView_0081194C *param_2)
 
 {
   char cVar1;
@@ -39,12 +39,14 @@ int FUN_00672b60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
     DAT_00811908 = 0;
     DAT_007d2d24 = 0x600;
   }
+
   local_1c = Library::DKW::LIB::MemAllocClear(0x30);
   if (local_1c == nullptr) {
     return -2;
   }
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
+
   exceptionCode = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   if (exceptionCode != 0) {
     g_currentExceptionFrame = local_60.previous;
@@ -63,18 +65,22 @@ int FUN_00672b60(char *param_1,AnonShape_GLOBAL_0081194C_4D1525E6 *param_2)
     return exceptionCode;
   }
   if (PTR_0085755c == nullptr) {
+
     local_c = Library::DKW::LIB::MemAlloc(0x401);
     *(char *)local_c = '\0';
   }
   if (PTR_00857528 == nullptr) {
+
     local_10 = Library::DKW::LIB::MemAlloc(0x401);
     *(char *)local_10 = '\0';
   }
   if (PTR_00811948 == nullptr) {
+
     local_14 = Library::DKW::LIB::MemAlloc(0x401);
     *(char *)local_14 = '\0';
   }
   if (PTR_0085753c == nullptr) {
+
     local_8 = Library::DKW::LIB::MemAlloc(0x105);
     *local_8 = 0;
   }

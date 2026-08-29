@@ -1,4 +1,4 @@
-FUN_005c7800:
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0053F510::FUN_005c7800:
 005C7800  55                        PUSH EBP
 005C7801  8B EC                     MOV EBP,ESP
 005C7803  B8 7C 5A 00 00            MOV EAX,0x5a7c
@@ -21,7 +21,7 @@ FUN_005c7800:
 005C7843  8B 5D F8                  MOV EBX,dword ptr [EBP + -0x8]
 005C7846  8B CB                     MOV ECX,EBX
 005C7848  8B 03                     MOV EAX,dword ptr [EBX]
-005C784A  FF 50 24                  CALL dword ptr [EAX + 0x24]
+005C784A  FF 50 24                  CALL dword ptr [EAX + 0x24]  ; [STIndirectCallsiteApplier] exact slot 0x24; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/SettMapTy
 005C784D  A1 30 2A 80 00            MOV EAX,[0x00802a30]
 005C7852  85 C0                     TEST EAX,EAX
 005C7854  74 2A                     JZ 0x005c7880
@@ -65,7 +65,8 @@ LAB_005c7880:
 005C78C2  6A 00                     PUSH 0x0
 005C78C4  6A 00                     PUSH 0x0
 005C78C6  50                        PUSH EAX
-005C78C7  E8 B4 CF 0F 00            CALL 0x006c4880
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0053F510::FUN_005c7800::override::prt_5c78c7_be6936cb:
+005C78C7  E8 B4 CF 0F 00            CALL 0x006c4880  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; signature=__stdcall;pointer:/wingdi.h/tagBITMAPINFO;pointer:/SubmarineTitans/Recovered/LibraryContexts/DDXContext;/int;/int;/int;/WinDef.h/UINT;/uint
 005C78CC  8B 15 9C 75 80 00         MOV EDX,dword ptr [0x0080759c]
 005C78D2  8D 4D BC                  LEA ECX,[EBP + -0x44]
 005C78D5  51                        PUSH ECX
@@ -289,7 +290,8 @@ LAB_005c7b28:
 005C7B77  6A 00                     PUSH 0x0
 005C7B79  68 3A F3 80 00            PUSH 0x80f33a
 005C7B7E  68 45 03 00 00            PUSH 0x345
-005C7B83  E8 38 93 12 00            CALL 0x006f0ec0
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0053F510::FUN_005c7800::override::prt_5c7b83_9d92389d:
+005C7B83  E8 38 93 12 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 005C7B88  83 C4 28                  ADD ESP,0x28
 005C7B8B  A3 F8 3F 85 00            MOV [0x00853ff8],EAX
 005C7B90  85 C0                     TEST EAX,EAX
@@ -349,7 +351,8 @@ LAB_005c7c47:
 005C7C4B  6A 00                     PUSH 0x0
 005C7C4D  68 E4 3D 85 00            PUSH 0x853de4
 005C7C52  68 45 03 00 00            PUSH 0x345
-005C7C57  E8 64 92 12 00            CALL 0x006f0ec0
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0053F510::FUN_005c7800::override::prt_5c7c57_9d92389d:
+005C7C57  E8 64 92 12 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 005C7C5C  89 83 3F 1F 00 00         MOV dword ptr [EBX + 0x1f3f],EAX
 005C7C62  C7 05 B6 87 80 00 00 00 00 00  MOV dword ptr [0x008087b6],0x0
 005C7C6C  8B 83 3F 1F 00 00         MOV EAX,dword ptr [EBX + 0x1f3f]
@@ -435,7 +438,8 @@ LAB_005c7d8e:
 005C7D99  6A 00                     PUSH 0x0
 005C7D9B  50                        PUSH EAX
 005C7D9C  51                        PUSH ECX
-005C7D9D  E8 6E 2C 15 00            CALL 0x0071aa10
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0053F510::FUN_005c7800::override::prt_5c7d9d_8c81087f:
+005C7D9D  E8 6E 2C 15 00            CALL 0x0071aa10  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__cdecl;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/cMf32;pointer:/char;/int
 005C7DA2  83 C4 0C                  ADD ESP,0xc
 005C7DA5  A3 C7 C4 80 00            MOV [0x0080c4c7],EAX
 005C7DAA  85 C0                     TEST EAX,EAX
@@ -457,7 +461,8 @@ LAB_005c7dcc:
 005C7DD8  6A 00                     PUSH 0x0
 005C7DDA  52                        PUSH EDX
 005C7DDB  50                        PUSH EAX
-005C7DDC  E8 2F 2C 15 00            CALL 0x0071aa10
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0053F510::FUN_005c7800::override::prt_5c7ddc_8c81087f:
+005C7DDC  E8 2F 2C 15 00            CALL 0x0071aa10  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__cdecl;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/cMf32;pointer:/char;/int
 005C7DE1  83 C4 0C                  ADD ESP,0xc
 005C7DE4  A3 CB C4 80 00            MOV [0x0080c4cb],EAX
 005C7DE9  85 C0                     TEST EAX,EAX

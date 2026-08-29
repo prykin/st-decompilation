@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_0063cb30(AnonShape_0063CB30_3EF2BD1B *param_1)
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=0063C510 @ 0063C5FB -> read as EAX on
+   every CFG path | 0063C8F0 @ 0063C9C9 -> read as EAX on every CFG path */
+
+int __fastcall FUN_0063cb30(RecoveredRecordView_0063CB30_858879BF *param_1)
 
 {
   uint uVar1;

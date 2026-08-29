@@ -14,8 +14,10 @@ MAdvTy * __cdecl CreateMAdv(void)
   MAdvTy *this;
   int iVar1;
 
-  this = (MAdvTy *)FUN_006b04d0(0x62);
+
+  this = STPointerBoundaryCast<MAdvTy *>(FUN_006b04d0(0x62));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->vtable = &MAdvTyVTable;
     memset(&this->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */

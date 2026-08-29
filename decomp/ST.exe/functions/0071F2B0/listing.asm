@@ -1,4 +1,4 @@
-FUN_0071f2b0:
+ListClassTy::vfunc_8:
 0071F2B0  55                        PUSH EBP
 0071F2B1  8B EC                     MOV EBP,ESP
 0071F2B3  66 8B 45 08               MOV AX,word ptr [EBP + 0x8]

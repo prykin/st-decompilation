@@ -314,7 +314,7 @@ LAB_005f62a9:
 005F62AC  8D 55 EC                  LEA EDX,[EBP + -0x14]
 005F62AF  52                        PUSH EDX
 005F62B0  8B CE                     MOV ECX,ESI
-005F62B2  E8 A2 DB E0 FF            CALL 0x00403e59
+005F62B2  E8 A2 DB E0 FF            CALL 0x00403e59  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 005F62B7  8B 4D EC                  MOV ECX,dword ptr [EBP + -0x14]
 005F62BA  8B 56 18                  MOV EDX,dword ptr [ESI + 0x18]
 005F62BD  51                        PUSH ECX

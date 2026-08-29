@@ -13,10 +13,9 @@ FUN_006e4340(void *this,int *param_1,undefined4 param_2,undefined4 param_3,undef
 
 {
   int *local_14;
-  undefined4 local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_10;
+  uint local_c;
+  uint local_8;
   local_14 = param_1;
   local_c = param_3;
   local_10 = param_2;

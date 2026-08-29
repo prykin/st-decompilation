@@ -122,7 +122,8 @@ LAB_0054b03e:
 0054B058  2B D7                     SUB EDX,EDI
 0054B05A  50                        PUSH EAX
 0054B05B  52                        PUSH EDX
-0054B05C  E8 E8 AC EB FF            CALL 0x00405d49
+CursorClassTy::GCGameState::override::prt_54b05c_d2898987:
+0054B05C  E8 E8 AC EB FF            CALL 0x00405d49  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STFishC; signature=__stdcall;pointer:/STFishC;/int;/int
 0054B061  85 C0                     TEST EAX,EAX
 0054B063  89 83 9A 04 00 00         MOV dword ptr [EBX + 0x49a],EAX
 0054B069  74 18                     JZ 0x0054b083

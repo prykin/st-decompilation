@@ -15,7 +15,8 @@ int FUN_006d4ef0(undefined4 *param_1,undefined4 param_2,int param_3)
     puVar1 = nullptr;
   }
   else {
-    puVar1 = FUN_006d4ff0(this,0,0,&local_8,param_3);
+
+    puVar1 = FUN_006d4ff0(this,0,0,&local_8,(RecoveredRecord_006D4FF0_C0FB69E1 *)param_3);
   }
   *param_1 = puVar1;
   if (local_8 == 0) {

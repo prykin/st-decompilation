@@ -16,10 +16,11 @@ undefined4 __thiscall STAllPlayersC::RegisterTorpedo(STAllPlayersC *this,int par
   undefined2 extraout_var;
   uint index_00;
   InternalExceptionFrame local_4c;
-  int local_8;
+  STTorpC *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
     if (param_2 == -1) {
@@ -32,8 +33,9 @@ undefined4 __thiscall STAllPlayersC::RegisterTorpedo(STAllPlayersC *this,int par
       index = index_00;
       if (index_00 != 0) {
         while (index = index - 1, -1 < (int)index) {
-          DArrayGetElement(g_array_007FA130,index,&local_8);
-          if (local_8 == 0) {
+
+          DArrayGetElement((DArrayTy *)g_array_007FA130,index,&local_8);
+          if (local_8 == nullptr) {
             index_00 = index;
           }
         }
@@ -42,18 +44,22 @@ undefined4 __thiscall STAllPlayersC::RegisterTorpedo(STAllPlayersC *this,int par
     else {
       index_00 = (uint)param_2;
       if ((index_00 < g_array_007FA130->count) &&
-         (DArrayGetElement(g_array_007FA130,index_00,&local_8), local_8 != 0)) {
+
+         (DArrayGetElement((DArrayTy *)g_array_007FA130,index_00,&local_8),
+         local_8 != nullptr)) {
         RaiseInternalException
                   (-0x5001fffa,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                    0x7f0);
       }
     }
-    Library::DKW::TBL::DArrayPut(g_array_007FA130,index_00,&param_1);
+
+    Library::DKW::TBL::DArrayPut((DArrayTy *)g_array_007FA130,index_00,&param_1);
     DAT_007fa134 = DAT_007fa134 + 1;
     g_currentExceptionFrame = local_4c.previous;
     return STReplaceLowWord((uint32_t)(DAT_007fa134), (uint16_t)((short)index_00));
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x7f6,0,errorCode,
                              "%s","STAllPlayersC::RegisterTorpedo");
   if (iVar2 == 0) {

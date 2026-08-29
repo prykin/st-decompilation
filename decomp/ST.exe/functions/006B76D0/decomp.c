@@ -16,9 +16,8 @@ void FUN_006b76d0(int *param_1)
     if (piVar1 != nullptr) {
       iVar2 = param_1[0xe];
       if ((iVar2 != 0) && (iVar2 != -1)) {
-        /* ST_CALLSITE[006B76F1]: CALL dword ptr [EDX + 0x24] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(*piVar1 + 0x24))(piVar1,iVar2);
+        /* ST_CALLSITE[006B76F1]: CALL dword ptr [EDX + 0x24]; [STIndirectCallsiteApplier] exact slot 0x24; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4 */
+        STStructuralVirtualCall<void>(piVar1, 0x24, piVar1, iVar2);
         param_1[0xe] = -1;
       }
       /* ST_CALLSITE[006B7700]: CALL dword ptr [ECX + 0x10] */

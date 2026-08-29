@@ -1,4 +1,4 @@
-FUN_0054cf00:
+STPlaySystemC::vfunc_8:
 0054CF00  55                        PUSH EBP
 0054CF01  8B EC                     MOV EBP,ESP
 0054CF03  8B 45 18                  MOV EAX,dword ptr [EBP + 0x18]

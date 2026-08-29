@@ -154,13 +154,15 @@ LAB_005972cc:
 005972F1  50                        PUSH EAX
 005972F2  6A 02                     PUSH 0x2
 005972F4  68 58 C0 7C 00            PUSH 0x7cc058
-005972F9  E8 02 B9 15 00            CALL 0x006f2c00
+FSGSTy::NoneFSGS::override::prt_5972f9_c67451d8:
+005972F9  E8 02 B9 15 00            CALL 0x006f2c00  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;pointer:/char;/int;/undefined4
 005972FE  8B 0D 80 67 80 00         MOV ECX,dword ptr [0x00806780]
 00597304  83 C4 0C                  ADD ESP,0xc
 00597307  50                        PUSH EAX
 00597308  6A 06                     PUSH 0x6
 0059730A  51                        PUSH ECX
-0059730B  E8 90 32 17 00            CALL 0x0070a5a0
+FSGSTy::NoneFSGS::override::prt_59730b_f9313a7:
+0059730B  E8 90 32 17 00            CALL 0x0070a5a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;/byte;/int
 00597310  8B 96 97 1A 00 00         MOV EDX,dword ptr [ESI + 0x1a97]
 00597316  50                        PUSH EAX
 00597317  6A 06                     PUSH 0x6
@@ -339,13 +341,15 @@ LAB_00597528:
 0059754D  50                        PUSH EAX
 0059754E  6A 02                     PUSH 0x2
 00597550  68 58 C0 7C 00            PUSH 0x7cc058
-00597555  E8 A6 B6 15 00            CALL 0x006f2c00
+FSGSTy::NoneFSGS::override::prt_597555_c67451d8:
+00597555  E8 A6 B6 15 00            CALL 0x006f2c00  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;pointer:/char;/int;/undefined4
 0059755A  8B 0D 80 67 80 00         MOV ECX,dword ptr [0x00806780]
 00597560  83 C4 0C                  ADD ESP,0xc
 00597563  50                        PUSH EAX
 00597564  6A 06                     PUSH 0x6
 00597566  51                        PUSH ECX
-00597567  E8 34 30 17 00            CALL 0x0070a5a0
+FSGSTy::NoneFSGS::override::prt_597567_f9313a7:
+00597567  E8 34 30 17 00            CALL 0x0070a5a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;/byte;/int
 0059756C  8B 96 97 1A 00 00         MOV EDX,dword ptr [ESI + 0x1a97]
 00597572  50                        PUSH EAX
 00597573  6A 06                     PUSH 0x6

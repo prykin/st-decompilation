@@ -31,8 +31,10 @@ DWORD FUN_006c3630(LPDWORD lpThreadId)
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       DVar3 = (**(code **)(*piVar2 + 0x1c))(piVar2,lpParameter + 0x1d);
       if (-1 < (int)DVar3) {
+
         DVar3 = FUN_006d4ef0(lpParameter + 0x10,lpParameter + 0x12,(int)lpParameter);
         if (DVar3 == 0) {
+          /* ST_CALLSITE[006C36B3]: CALL 0x006d4f70; direct=006D4F70 FUN_006d4f70; [STCallResultViewApplier] presentation_only; exact direct-call result=/winbase.h/LPSECURITY_ATTRIBUTES; source view only; no Ghidra override */
           DVar3 = FUN_006d4f70(lpParameter + 0x11,lpParameter + 0x13,lpParameter);
           if (DVar3 == 0) {
             /* ST_CALLSITE[006C36CB]: CALL dword ptr [0x0085bb70] */

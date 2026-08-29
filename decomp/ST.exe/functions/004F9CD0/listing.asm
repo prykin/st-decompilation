@@ -24,7 +24,8 @@ CPanelTy::PlayBriefing:
 004F9D12  8B 75 08                  MOV ESI,dword ptr [EBP + 0x8]
 004F9D15  56                        PUSH ESI
 004F9D16  50                        PUSH EAX
-004F9D17  E8 34 B3 21 00            CALL 0x00715050
+CPanelTy::PlayBriefing::override::prt_4f9d17_8c81087f:
+004F9D17  E8 34 B3 21 00            CALL 0x00715050  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__cdecl;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/cMf32;pointer:/char;/int
 004F9D1C  8B F8                     MOV EDI,EAX
 004F9D1E  83 C4 0C                  ADD ESP,0xc
 004F9D21  85 FF                     TEST EDI,EDI
@@ -59,7 +60,8 @@ LAB_004f9d83:
 004F9D89  6A 00                     PUSH 0x0
 004F9D8B  6A 00                     PUSH 0x0
 004F9D8D  6A 00                     PUSH 0x0
-004F9D8F  E8 0E 99 F0 FF            CALL 0x004036a2
+CPanelTy::PlayBriefing::override::prt_4f9d8f_3ecbffe8:
+004F9D8F  E8 0E 99 F0 FF            CALL 0x004036a2  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;/int;/undefined1;/int
 004F9D94  8B 0D 90 67 80 00         MOV ECX,dword ptr [0x00806790]
 004F9D9A  83 C4 0C                  ADD ESP,0xc
 004F9D9D  50                        PUSH EAX

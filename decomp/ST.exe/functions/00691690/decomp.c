@@ -22,32 +22,33 @@ FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *par
   void *pvVar3;
   uint *puVar4;
   char *pcVar5;
-  AnonShape_006DBCA0_EF06575F *pAVar6;
+  RecoveredRecord_00692BA0_C4D2C982 *pRVar6;
+  AnonShape_006DBCA0_EF06575F *pAVar7;
   ST3DSMAPContext *this_00;
-  int iVar7;
+  int iVar8;
   int iVar15;
-  uint uVar8;
+  uint uVar9;
   ushort *puVar9_mg2;
   ushort *puVar9_mg3;
-  uint *puVar9;
+  uint *puVar10;
   ushort *puVar9_mg4;
   ushort *puVar9_mg5;
   ushort *puVar9_mg6;
   ushort *puVar9_mg7;
-  int iVar10;
-  ushort *puVar11;
-  RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar12;
-  byte bVar13;
-  uint uVar14;
+  int iVar11;
+  ushort *puVar12;
+  RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar13;
+  byte bVar14;
+  uint uVar15;
   int iVar16;
   uint uVar17;
   CHAR local_190 [260];
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 local_8c;
-  AnonShape_006B4B20_3D4F4412 *local_3c;
+  RecoveredRecordView_006B4B20_F20E56A6 *local_3c;
   ushort *local_38;
-  AnonShape_006B4B20_3D4F4412 *local_34;
+  RecoveredRecordView_006B4B20_F20E56A6 *local_34;
   ushort *local_30;
-  AnonShape_006B4B20_3D4F4412 *local_2c;
+  RecoveredRecordView_006B4B20_F20E56A6 *local_2c;
   int *local_28;
   char *local_24;
   int local_20;
@@ -61,11 +62,11 @@ FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *par
   local_14 = this;
   local_38 = Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,"2D_CLT",0,0);
   if (local_38 != nullptr) {
-    puVar11 = local_38;
+    puVar12 = local_38;
     puVar4 = (undefined4 *)((int)this + 0x37ac);
-    for (iVar10 = 0xf; iVar10 != 0; iVar10 = iVar10 + -1) {
-      *puVar4 = *(undefined4 *)puVar11;
-      puVar11 = puVar11 + 2;
+    for (iVar11 = 0xf; iVar11 != 0; iVar11 = iVar11 + -1) {
+      *puVar4 = *(undefined4 *)puVar12;
+      puVar12 = puVar12 + 2;
       puVar4 = puVar4 + 1;
     }
     cMf32::RecMemFree(param_1,(uint *)&local_38);
@@ -73,38 +74,40 @@ FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *par
   local_30 = Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,"CLR_COVER",0,0);
   if (local_30 != nullptr) {
     puVar4 = &DAT_007d5934;
-    puVar11 = local_30;
+    puVar12 = local_30;
     do {
-      uVar14 = *(undefined4 *)puVar11;
-      puVar11 = puVar11 + 2;
-      *puVar4 = uVar14;
+      uVar15 = *(undefined4 *)puVar12;
+      puVar12 = puVar12 + 2;
+      *puVar4 = uVar15;
       puVar4 = puVar4 + 2;
     } while ((int)puVar4 < 0x7d595c);
     cMf32::RecMemFree(param_1,(uint *)&local_30);
   }
   local_20 = 0;
   do {
-    iVar10 = local_20;
+    iVar11 = local_20;
     if (param_3 != 0) {
       iVar16 = 1;
-      bVar13 = 2;
+      bVar14 = 2;
       pcVar5 = thunk_FUN_00691650(&DAT_007d59a4,local_20);
-      pcVar5 = Library::Ourlib::MFSPR::mfSSprLoad(param_2,pcVar5,bVar13,iVar16);
-      *(char **)((int)this + iVar10 * 0x248 + 0x1950) = pcVar5;
-      thunk_FUN_00692ba0(pcVar5);
+      /* ST_CALLSITE[00691741]: CALL 0x00725c60; direct=00725C60 Library::Ourlib::MFSPR::mfSSprLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00692BA0_C4D2C982; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00692BA0_C4D2C982;pointer:/cMf32;pointer:/char;/byte;/int */
+      pRVar6 = Library::Ourlib::MFSPR::mfSSprLoad(param_2,pcVar5,bVar14,iVar16);
+      *(RecoveredRecord_00692BA0_C4D2C982 **)((int)this + iVar11 * 0x248 + 0x1950) = pRVar6;
+      thunk_FUN_00692ba0(pRVar6);
     }
-    pAVar6 = (AnonShape_006DBCA0_EF06575F *)FUN_006b04d0(0x4f2);
-    if (pAVar6 == nullptr) {
+    /* ST_CALLSITE[00691763]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F;/uint */
+    pAVar7 = FUN_006b04d0(0x4f2);
+    if (pAVar7 == nullptr) {
       this_00 = nullptr;
 LAB_0069177d:
       RaiseInternalException
                 (-2,g_overwriteContext_007ED77C,"E:\\__titans\\Maps\\CntLib.cpp",0x4e);
     }
     else {
-      this_00 = (ST3DSMAPContext *)FUN_006dbca0(pAVar6);
+      this_00 = (ST3DSMAPContext *)FUN_006dbca0(pAVar7);
       if (this_00 == nullptr) goto LAB_0069177d;
     }
-    iVar10 = local_20;
+    iVar11 = local_20;
     iVar16 = (int)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + local_20 * 4));
     ST3DSMAPContext::sub_006DC050
               (this_00,nullptr,0,0,iVar16,iVar16,-10.0,10.0,-10.0,10.0,10.0,
@@ -123,17 +126,18 @@ LAB_0069177d:
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             (*(code *)param_4)(0);
           }
-          uVar8 = local_8;
+          uVar9 = local_8;
           if (local_c == 0) {
-            uVar8 = local_8 + 1;
+            uVar9 = local_8 + 1;
           }
-          pcVar5 = thunk_FUN_006a2d00(1,local_c,uVar8,1,0);
+          pcVar5 = thunk_FUN_006a2d00(1,local_c,uVar9,1,0);
           puVar9_mg2 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
           if (puVar9_mg2 != nullptr) {
+
             puVar4 = Library::DKW::LIB::MemAlloc(0xa9);
             int scalar_local_1c = local_c * 6; /* split integer lifetime from pointer-typed SSA storage */
             local_28 = (int *)((int)local_14 +
-                              (scalar_local_1c + local_8 + iVar10 * 0x49) * 8 + 0x1954);
+                              (scalar_local_1c + local_8 + iVar11 * 0x49) * 8 + 0x1954);
             *local_28 = (int)puVar4;
             for (iVar16 = 0x2a; iVar16 != 0; iVar16 = iVar16 + -1) {
               *puVar4 = 0;
@@ -144,21 +148,21 @@ LAB_0069177d:
             local_18 = 0;
             local_24 = nullptr;
             *(short *)(*local_28 + 0x29) =
-                 (short)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar10 * 4));
+                 (short)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
             *(short *)(*local_28 + 0x2b) =
-                 (short)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar10 * 4));
+                 (short)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
             do {
               local_10 = nullptr;
               do {
-                uVar8 = local_8;
+                uVar9 = local_8;
                 if (local_c == 0) {
-                  uVar8 = local_8 + 1;
+                  uVar9 = local_8 + 1;
                 }
-                pcVar5 = thunk_FUN_006a2d00(1,local_c,uVar8,local_18 + 1,(uint)local_10);
-                pRVar12 = &local_8c;
+                pcVar5 = thunk_FUN_006a2d00(1,local_c,uVar9,local_18 + 1,(uint)local_10);
+                pRVar13 = &local_8c;
                 for (iVar16 = 0x14; iVar16 != 0; iVar16 = iVar16 + -1) {
-                  pRVar12->next = nullptr;
-                  pRVar12 = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)&pRVar12->field_0004;
+                  pRVar13->next = nullptr;
+                  pRVar13 = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)&pRVar13->field_0004;
                 }
                 puVar9_mg3 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
                 if (puVar9_mg3 == nullptr) {
@@ -198,10 +202,11 @@ LAB_00691a65:
                   this_00->field_0140 = nullptr;
                   this_00->field_013C = 0;
                   if (param_3 != 0) {
-                    puVar4 = (undefined4 *)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar10 * 4));
+                    puVar4 = (undefined4 *)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
                     local_3c = thunk_FUN_00692920(param_2,(undefined4 *)this_00->field_000C,puVar4,
-                                                  (int)puVar4,1);
+                                                  puVar4,1);
                     piVar2 = local_28;
+
                     FUN_006b4b20((int *)(*local_28 + 0x2d + (int)(local_24 + (int)local_10) * 4),
                                  local_3c,0,0);
                     FreeAndNull(&local_3c);
@@ -209,17 +214,18 @@ LAB_00691a65:
                     *psVar1 = *psVar1 + 1;
                     *(undefined4 *)(*piVar2 + 0x25) = 0;
                   }
-                  if (iVar10 == 0) {
-                    puVar9 = Library::DKW::LIB::MemAlloc(0x640);
+                  if (iVar11 == 0) {
+
+                    puVar10 = Library::DKW::LIB::MemAlloc(0x640);
                     *(undefined4 **)
                      ((int)local_14 +
-                     (int)local_10 * 4 + (local_18 + (scalar_local_1c + local_8) * 2) * 0x3c) = puVar9
-                    ;
+                     (int)local_10 * 4 + (local_18 + (scalar_local_1c + local_8) * 2) * 0x3c) =
+                         puVar10;
                     puVar4 = (undefined4 *)this_00->field_000C;
-                    for (iVar16 = 400; iVar10 = local_20, iVar16 != 0; iVar16 = iVar16 + -1) {
-                      *puVar9 = *puVar4;
+                    for (iVar16 = 400; iVar11 = local_20, iVar16 != 0; iVar16 = iVar16 + -1) {
+                      *puVar10 = *puVar4;
                       puVar4 = puVar4 + 1;
-                      puVar9 = puVar9 + 1;
+                      puVar10 = puVar10 + 1;
                     }
                   }
                 }
@@ -229,15 +235,16 @@ LAB_00691a65:
               local_24 = local_24 + 0xf;
             } while ((int)local_24 < 0x1e);
           }
-          uVar8 = local_8;
+          uVar9 = local_8;
           if (local_c == 0) {
-            uVar8 = local_8 + 1;
+            uVar9 = local_8 + 1;
           }
-          pcVar5 = thunk_FUN_006a2d00(0,local_c,uVar8,0,1);
+          pcVar5 = thunk_FUN_006a2d00(0,local_c,uVar9,0,1);
           puVar9_mg4 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
           if (puVar9_mg4 != nullptr) {
+
             puVar4 = Library::DKW::LIB::MemAlloc(0x59);
-            local_18 = local_c * 6 + iVar10 * 0x92;
+            local_18 = local_c * 6 + iVar11 * 0x92;
             piVar2 = (int *)((int)local_14 + (local_18 + local_8) * 4 + 0x1a74);
             *piVar2 = (int)puVar4;
             for (iVar16 = 0x16; iVar16 != 0; iVar16 = iVar16 + -1) {
@@ -248,21 +255,21 @@ LAB_00691a65:
             local_10 = nullptr;
             *(undefined2 *)(*piVar2 + 0x23) = 0;
             *(short *)(*piVar2 + 0x29) =
-                 (short)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar10 * 4));
+                 (short)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
             *(short *)(*piVar2 + 0x2b) =
-                 (short)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar10 * 4));
+                 (short)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
             *(undefined4 *)(*piVar2 + 0x25) = 0;
             do {
-              uVar8 = local_8;
+              uVar9 = local_8;
               if (local_c == 0) {
-                uVar8 = local_8 + 1;
+                uVar9 = local_8 + 1;
               }
               local_1c = (int *)((int)local_10 + 1);
-              pcVar5 = thunk_FUN_006a2d00(0,local_c,uVar8,0,(uint)local_1c);
-              pRVar12 = &local_8c;
+              pcVar5 = thunk_FUN_006a2d00(0,local_c,uVar9,0,(uint)local_1c);
+              pRVar13 = &local_8c;
               for (iVar16 = 0x14; iVar16 != 0; iVar16 = iVar16 + -1) {
-                pRVar12->next = nullptr;
-                pRVar12 = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)&pRVar12->field_0004;
+                pRVar13->next = nullptr;
+                pRVar13 = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)&pRVar13->field_0004;
               }
               puVar9_mg5 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
               if (puVar9_mg5 == nullptr) {
@@ -293,41 +300,44 @@ LAB_00691a65:
                 this_00->field_0140 = nullptr;
                 this_00->field_013C = 0;
                 if (param_3 != 0) {
-                  puVar4 = (undefined4 *)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar10 * 4));
+                  puVar4 = (undefined4 *)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
                   local_2c = thunk_FUN_00692920(param_2,(undefined4 *)this_00->field_000C,puVar4,
-                                                (int)puVar4,1);
+                                                puVar4,1);
                   iVar16 = local_18 + local_8;
+
                   FUN_006b4b20((int *)(*(int *)((int)pvVar3 + iVar16 * 4 + 0x1a74) + 0x2d +
                                       (int)local_10 * 4),local_2c,0,0);
                   FreeAndNull(&local_2c);
                   psVar1 = (short *)(*(int *)((int)pvVar3 + iVar16 * 4 + 0x1a74) + 0x23);
                   *psVar1 = *psVar1 + 1;
                 }
-                if (iVar10 == 0) {
-                  puVar9 = Library::DKW::LIB::MemAlloc(0x640);
+                if (iVar11 == 0) {
+
+                  puVar10 = Library::DKW::LIB::MemAlloc(0x640);
                   *(undefined4 **)
                    ((int)local_14 + ((int)local_10 + (local_8 + (local_c * 3 + 0x36) * 2) * 10) * 4)
-                       = puVar9;
+                       = puVar10;
                   puVar4 = (undefined4 *)this_00->field_000C;
-                  for (iVar16 = 400; iVar10 = local_20, iVar16 != 0; iVar16 = iVar16 + -1) {
-                    *puVar9 = *puVar4;
+                  for (iVar16 = 400; iVar11 = local_20, iVar16 != 0; iVar16 = iVar16 + -1) {
+                    *puVar10 = *puVar4;
                     puVar4 = puVar4 + 1;
-                    puVar9 = puVar9 + 1;
+                    puVar10 = puVar10 + 1;
                   }
                 }
               }
               local_10 = local_1c;
             } while ((int)local_1c < 10);
           }
-          uVar8 = local_8;
+          uVar9 = local_8;
           if (local_c == 0) {
-            uVar8 = local_8 + 1;
+            uVar9 = local_8 + 1;
           }
-          pcVar5 = thunk_FUN_006a2d00(3,local_c,uVar8,1,1);
+          pcVar5 = thunk_FUN_006a2d00(3,local_c,uVar9,1,1);
           puVar9_mg6 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
           if (puVar9_mg6 != nullptr) {
+
             puVar4 = Library::DKW::LIB::MemAlloc(0x45);
-            local_18 = local_c * 6 + iVar10 * 0x92;
+            local_18 = local_c * 6 + iVar11 * 0x92;
             local_1c = (int *)((int)local_14 + (local_18 + local_8) * 4 + 0x1b08);
             *local_1c = (int)puVar4;
             for (iVar16 = 0x11; iVar16 != 0; iVar16 = iVar16 + -1) {
@@ -338,21 +348,21 @@ LAB_00691a65:
             local_10 = nullptr;
             *(undefined2 *)(*local_1c + 0x23) = 0;
             *(short *)(*local_1c + 0x29) =
-                 (short)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar10 * 4));
+                 (short)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
             *(short *)(*local_1c + 0x2b) =
-                 (short)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar10 * 4));
+                 (short)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
             *(undefined4 *)(*local_1c + 0x25) = 0;
             do {
-              uVar8 = local_8;
+              uVar9 = local_8;
               if (local_c == 0) {
-                uVar8 = local_8 + 1;
+                uVar9 = local_8 + 1;
               }
-              pcVar5 = thunk_FUN_006a2d00(3,local_c,uVar8,1,(uint)local_10);
+              pcVar5 = thunk_FUN_006a2d00(3,local_c,uVar9,1,(uint)local_10);
               puVar9_mg7 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar5,0);
-              pRVar12 = &local_8c;
+              pRVar13 = &local_8c;
               for (iVar16 = 0x14; iVar16 != 0; iVar16 = iVar16 + -1) {
-                pRVar12->next = nullptr;
-                pRVar12 = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)&pRVar12->field_0004;
+                pRVar13->next = nullptr;
+                pRVar13 = (RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *)&pRVar13->field_0004;
               }
               if (puVar9_mg7 == nullptr) {
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -382,26 +392,28 @@ LAB_00691a65:
                 this_00->field_0140 = nullptr;
                 this_00->field_013C = 0;
                 if (param_3 != 0) {
-                  puVar4 = (undefined4 *)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar10 * 4));
+                  puVar4 = (undefined4 *)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
                   local_34 = thunk_FUN_00692920(param_2,(undefined4 *)this_00->field_000C,puVar4,
-                                                (int)puVar4,1);
+                                                puVar4,1);
                   iVar16 = local_18 + local_8;
+
                   FUN_006b4b20((int *)(*(int *)((int)pvVar3 + iVar16 * 4 + 0x1b08) + 0x2d +
                                       (int)local_10 * 4),local_34,0,0);
                   FreeAndNull(&local_34);
                   psVar1 = (short *)(*(int *)((int)pvVar3 + iVar16 * 4 + 0x1b08) + 0x23);
                   *psVar1 = *psVar1 + 1;
                 }
-                if (iVar10 == 0) {
-                  puVar9 = Library::DKW::LIB::MemAlloc(0x640);
+                if (iVar11 == 0) {
+
+                  puVar10 = Library::DKW::LIB::MemAlloc(0x640);
                   *(undefined4 **)
                    ((int)local_14 + ((int)local_10 + (local_8 + (local_c * 3 + 0x90) * 2) * 5) * 4)
-                       = puVar9;
+                       = puVar10;
                   puVar4 = (undefined4 *)this_00->field_000C;
-                  for (iVar16 = 400; iVar10 = local_20, iVar16 != 0; iVar16 = iVar16 + -1) {
-                    *puVar9 = *puVar4;
+                  for (iVar16 = 400; iVar11 = local_20, iVar16 != 0; iVar16 = iVar16 + -1) {
+                    *puVar10 = *puVar4;
                     puVar4 = puVar4 + 1;
-                    puVar9 = puVar9 + 1;
+                    puVar10 = puVar10 + 1;
                   }
                 }
               }
@@ -412,25 +424,30 @@ LAB_00691a65:
         else {
           iVar16 = 0;
           do {
-            local_24 = thunk_FUN_00692390(0,0,iVar16,iVar10);
-            iVar7 = cMf32::RecChk(param_2,7,local_24);
-            if (iVar7 != 0) break;
-            pcVar5 = Library::Ourlib::MFSPR::mfSSprLoad(param_2,local_24,2,1);
-            *(char **)((int)local_14 + (iVar16 + iVar10 * 0x92) * 4 + 0x1954) = pcVar5;
-            thunk_FUN_00692ba0(pcVar5);
+            local_24 = thunk_FUN_00692390(0,0,iVar16,iVar11);
+
+            iVar8 = cMf32::RecChk(param_2,7,local_24);
+            if (iVar8 != 0) break;
+            /* ST_CALLSITE[0069186C]: CALL 0x00725c60; direct=00725C60 Library::Ourlib::MFSPR::mfSSprLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00692BA0_C4D2C982; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00692BA0_C4D2C982;pointer:/cMf32;pointer:/char;/byte;/int */
+            pRVar6 = Library::Ourlib::MFSPR::mfSSprLoad(param_2,local_24,2,1);
+            *(RecoveredRecord_00692BA0_C4D2C982 **)
+             ((int)local_14 + (iVar16 + iVar11 * 0x92) * 4 + 0x1954) = pRVar6;
+            thunk_FUN_00692ba0(pRVar6);
             iVar16 = iVar16 + 1;
           } while (iVar16 < 2);
           pvVar3 = local_14;
           uVar17 = 0;
-          uVar14 = 0;
-          pcVar5 = thunk_FUN_00691650("STONE",iVar10);
+          uVar15 = 0;
+          pcVar5 = thunk_FUN_00691650("STONE",iVar11);
           /* ST_CALLSITE[006918B4]: CALL dword ptr [0x0085bde8] */
-          wsprintfA(local_190,"%s%u%u",pcVar5,uVar14,uVar17);
+          wsprintfA(local_190,"%s%u%u",pcVar5,uVar15,uVar17);
+
           iVar15 = cMf32::RecChk(param_2,7,local_190);
           if (iVar15 == 0) {
-            pcVar5 = Library::Ourlib::MFSPR::mfSSprLoad(param_2,local_190,2,1);
-            *(char **)((int)pvVar3 + iVar10 * 0x248 + 0x1a74) = pcVar5;
-            thunk_FUN_00692ba0(pcVar5);
+            /* ST_CALLSITE[006918E5]: CALL 0x00725c60; direct=00725C60 Library::Ourlib::MFSPR::mfSSprLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00692BA0_C4D2C982; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00692BA0_C4D2C982;pointer:/cMf32;pointer:/char;/byte;/int */
+            pRVar6 = Library::Ourlib::MFSPR::mfSSprLoad(param_2,local_190,2,1);
+            *(RecoveredRecord_00692BA0_C4D2C982 **)((int)pvVar3 + iVar11 * 0x248 + 0x1a74) = pRVar6;
+            thunk_FUN_00692ba0(pRVar6);
           }
         }
         pvVar3 = local_14;
@@ -440,17 +457,18 @@ LAB_00691a65:
     } while (local_c < 6);
     if (param_3 != 0) {
       iVar16 = 1;
-      bVar13 = 2;
-      pcVar5 = thunk_FUN_00691650("CRACK",iVar10);
-      pcVar5 = Library::Ourlib::MFSPR::mfSSprLoad(param_2,pcVar5,bVar13,iVar16);
-      *(char **)((int)pvVar3 + iVar10 * 0x248 + 0x1b04) = pcVar5;
-      thunk_FUN_00692ba0(pcVar5);
+      bVar14 = 2;
+      pcVar5 = thunk_FUN_00691650("CRACK",iVar11);
+      /* ST_CALLSITE[006920A0]: CALL 0x00725c60; direct=00725C60 Library::Ourlib::MFSPR::mfSSprLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00692BA0_C4D2C982; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00692BA0_C4D2C982;pointer:/cMf32;pointer:/char;/byte;/int */
+      pRVar6 = Library::Ourlib::MFSPR::mfSSprLoad(param_2,pcVar5,bVar14,iVar16);
+      *(RecoveredRecord_00692BA0_C4D2C982 **)((int)pvVar3 + iVar11 * 0x248 + 0x1b04) = pRVar6;
+      thunk_FUN_00692ba0(pRVar6);
     }
     if (this_00 != nullptr) {
       ST3DSMAPContext::sub_006DBCF0(this_00);
       Library::MSVCRT::FUN_0072e2b0((HoloTy *)this_00);
     }
-    local_20 = iVar10 + 1;
+    local_20 = iVar11 + 1;
     this = local_14;
     if (2 < local_20) {
       return;

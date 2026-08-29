@@ -20,7 +20,7 @@
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
    decompilation contains no value return */
 
-void __thiscall st::fn_0052B760(MoneyTy *this,AnonShape_0052B760_30F4E0D5 *param_1)
+void __thiscall st::fn_0052B760(MoneyTy *this,RecoveredRecordView_0052B760_26CB92BA *param_1)
 
 {
   ushort uVar1;
@@ -74,10 +74,10 @@ cf_common_exit_0052B7B9:
 void __thiscall st::fn_0052B8A0(MoneyTy *this)
 
 {
-  st::fn_006B5F80((int *)g_ddxContext_008075A8,this->field_0018,this->field_001C,this->field_0040,
+  st::fn_006B5F80(reinterpret_cast<int *>(g_ddxContext_008075A8),this->field_0018,this->field_001C,this->field_0040,
                this->field_0044);
   /* ST_CALLSITE[0052B8CD]: CALL 0x00403738; direct=00403738 PutDDX */
-  st::fn_00403738(this->field_0018,this->field_001C,'\x01',(BITMAPINFO *)this->field_0072);
+  st::fn_00403738(this->field_0018,this->field_001C,'\x01',reinterpret_cast<BITMAPINFO *>(this->field_0072));
   return;
 }
 
@@ -95,10 +95,10 @@ void __thiscall st::fn_0052B8A0(MoneyTy *this)
 void __thiscall st::fn_0052B8F0(MoneyTy *this)
 
 {
-  st::fn_006B5F80((int *)g_ddxContext_008075A8,this->field_0020,this->field_0024,this->field_0048,
+  st::fn_006B5F80(reinterpret_cast<int *>(g_ddxContext_008075A8),this->field_0020,this->field_0024,this->field_0048,
                this->field_004C);
   /* ST_CALLSITE[0052B91D]: CALL 0x00403738; direct=00403738 PutDDX */
-  st::fn_00403738(this->field_0020,this->field_0024,'\x01',(BITMAPINFO *)this->field_0076);
+  st::fn_00403738(this->field_0020,this->field_0024,'\x01',reinterpret_cast<BITMAPINFO *>(this->field_0076));
   return;
 }
 
@@ -116,10 +116,10 @@ void __thiscall st::fn_0052B8F0(MoneyTy *this)
 void __thiscall st::fn_0052B940(MoneyTy *this)
 
 {
-  st::fn_006B5F80((int *)g_ddxContext_008075A8,this->field_0028,this->field_002C,this->field_0050,
+  st::fn_006B5F80(reinterpret_cast<int *>(g_ddxContext_008075A8),this->field_0028,this->field_002C,this->field_0050,
                this->field_0054);
   /* ST_CALLSITE[0052B96D]: CALL 0x00403738; direct=00403738 PutDDX */
-  st::fn_00403738(this->field_0028,this->field_002C,'\x01',(BITMAPINFO *)this->field_007A);
+  st::fn_00403738(this->field_0028,this->field_002C,'\x01',reinterpret_cast<BITMAPINFO *>(this->field_007A));
   return;
 }
 
@@ -147,7 +147,7 @@ void __thiscall st::fn_0052B990(MoneyTy *this)
   uint local_8;
 
   bVar2 = ((DAT_0080874e == '\x03') - 1U & 0xf9) + 0x14;
-  st::fn_006B5F80((int *)g_ddxContext_008075A8,this->field_0030,this->field_0034,this->field_0058,
+  st::fn_006B5F80(reinterpret_cast<int *>(g_ddxContext_008075A8),this->field_0030,this->field_0034,this->field_0058,
                this->field_005C);
   if (this->field_00A4 == '\0') {
     uVar1 = (uint)bVar2;
@@ -155,9 +155,9 @@ void __thiscall st::fn_0052B990(MoneyTy *this)
     if (0 < (int)(uVar1 - (byte)this->field_00A2)) {
       uVar7 = 1;
       do {
-        pBVar3 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,0);
+        pBVar3 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(this->field_0082),0);
         /* ST_CALLSITE[0052BAD7]: CALL 0x00403738; direct=00403738 PutDDX */
-        st::fn_00403738(st::machine_word_boundary_cast<int>(this->field_0030 + -4 + uVar7 * 4),this->field_0034,'\x01',pBVar3);
+        st::fn_00403738(this->field_0030 + -4 + uVar7 * 4,this->field_0034,'\x01',pBVar3);
         STPiece<0,1>(local_8) = (byte)local_8 + 1;
         uVar7 = (uint)(byte)local_8;
       } while ((int)uVar7 <= (int)(uVar1 - (byte)this->field_00A2));
@@ -167,9 +167,9 @@ void __thiscall st::fn_0052B990(MoneyTy *this)
       iVar5 = (uint)bVar4 * 4;
       iVar6 = (uVar1 - bVar4) + 1;
       do {
-        pBVar3 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,4);
+        pBVar3 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(this->field_0082),4);
         /* ST_CALLSITE[0052BB45]: CALL 0x00403738; direct=00403738 PutDDX */
-        st::fn_00403738(st::machine_word_boundary_cast<int>(this->field_0030 + -4 + iVar5),this->field_0034,'\x01',pBVar3);
+        st::fn_00403738(this->field_0030 + -4 + iVar5,this->field_0034,'\x01',pBVar3);
         iVar5 = iVar5 + 4;
         iVar6 = iVar6 + -1;
       } while (iVar6 != 0);
@@ -180,10 +180,10 @@ void __thiscall st::fn_0052B990(MoneyTy *this)
     local_8 = 1;
     if (this->field_00A2 != '\0') {
       do {
-        pBVar3 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,
+        pBVar3 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(this->field_0082),
                               (-(uint)(DAT_0080874e != '\x03') & 2) + 1);
         /* ST_CALLSITE[0052BA1D]: CALL 0x00403738; direct=00403738 PutDDX */
-        st::fn_00403738(st::machine_word_boundary_cast<int>(this->field_0030 + -4 + local_8 * 4),this->field_0034,'\x01',pBVar3);
+        st::fn_00403738(this->field_0030 + -4 + local_8 * 4,this->field_0034,'\x01',pBVar3);
         bVar4 = bVar4 + 1;
         local_8 = (uint)bVar4;
       } while (bVar4 <= (byte)this->field_00A2);
@@ -193,9 +193,9 @@ void __thiscall st::fn_0052B990(MoneyTy *this)
       iVar5 = (uint)bVar4 * 4;
       iVar6 = ((uint)bVar2 - (uint)bVar4) + 1;
       do {
-        pBVar3 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this->field_0082,0);
+        pBVar3 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(this->field_0082),0);
         /* ST_CALLSITE[0052BA82]: CALL 0x00403738; direct=00403738 PutDDX */
-        st::fn_00403738(st::machine_word_boundary_cast<int>(this->field_0030 + -4 + iVar5),this->field_0034,'\x01',pBVar3);
+        st::fn_00403738(this->field_0030 + -4 + iVar5,this->field_0034,'\x01',pBVar3);
         iVar5 = iVar5 + 4;
         iVar6 = iVar6 + -1;
       } while (iVar6 != 0);
@@ -219,10 +219,10 @@ void __thiscall st::fn_0052B990(MoneyTy *this)
 void __thiscall st::fn_0052BBE0(MoneyTy *this)
 
 {
-  st::fn_006B5F80((int *)g_ddxContext_008075A8,this->field_0038,this->field_003C,this->field_0060,
+  st::fn_006B5F80(reinterpret_cast<int *>(g_ddxContext_008075A8),this->field_0038,this->field_003C,this->field_0060,
                this->field_0064);
   /* ST_CALLSITE[0052BC0D]: CALL 0x00403738; direct=00403738 PutDDX */
-  st::fn_00403738(this->field_0038,this->field_003C,'\x01',(BITMAPINFO *)this->field_007E);
+  st::fn_00403738(this->field_0038,this->field_003C,'\x01',reinterpret_cast<BITMAPINFO *>(this->field_007E));
   return;
 }
 
@@ -291,7 +291,7 @@ LAB_0052bc8f:
     this->field_00A5 = param_5;
   }
   if ((g_tradePanel_00802A44 != nullptr) && (g_tradePanel_00802A44->field_0172 == 1)) {
-    /* ST_CALLSITE[0052BD3F]: CALL dword ptr [EAX + 0x20] */
+    /* ST_CALLSITE[0052BD3F]: CALL dword ptr [EAX + 0x20]; [STIndirectCallsiteApplier] exact slot 0x20; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)&g_tradePanel_00802A44->field_0000[1].field_0xc)();
   }
@@ -313,7 +313,7 @@ void __thiscall st::fn_0052BDA0(MoneyTy *this,char param_1,int param_2)
 
 {
   byte uVar1;
-  ushort *puVar2;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar2;
   byte bVar3;
   uint *puVar4;
   uint uVar5;
@@ -327,7 +327,7 @@ void __thiscall st::fn_0052BDA0(MoneyTy *this,char param_1,int param_2)
     }
     this->field_009E = param_2;
     /* ST_CALLSITE[0052BDDC]: CALL dword ptr [0x0085bde8] */
-    st::external_00000080(local_c,st::mutable_c_string("%5d"),param_2);
+    st::external_00000080(reinterpret_cast<LPSTR>(local_c),st::mutable_c_string("%5d"),param_2);
     if (DAT_00808a97 == -1) {
       bVar3 = 0;
     }
@@ -337,14 +337,15 @@ void __thiscall st::fn_0052BDA0(MoneyTy *this,char param_1,int param_2)
     if (DAT_0080874e == '\x03') {
       bVar3 = bVar3 + 1;
     }
-    puVar2 = this->field_007E;
-    uVar5 = *(uint *)(puVar2 + 10);
+    pRVar2 = reinterpret_cast<RecoveredRecord_006B4FA0_DAC3A217 *>(this->field_007E);
+    uVar5 = *(uint *)&pRVar2[1].field_0x4;
     if (uVar5 == 0) {
-      uVar5 = ((uint)puVar2[7] * *(int *)(puVar2 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-              *(int *)(puVar2 + 4);
+      uVar5 = ((uint)pRVar2->field_000E * *(int *)&pRVar2->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+              *(int *)&pRVar2->field_0x8;
     }
     uVar1 = this->field_0069;
-    puVar4 = (undefined4 *)st::fn_006B4FA0((int *)puVar2);
+
+    puVar4 = STPointerBoundaryCast<undefined4 *>(st::fn_006B4FA0(pRVar2));
     for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
       *puVar4 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
       puVar4 = puVar4 + 1;
@@ -353,11 +354,12 @@ void __thiscall st::fn_0052BDA0(MoneyTy *this,char param_1,int param_2)
       *(undefined1 *)puVar4 = uVar1;
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
+
     st::fn_00710A90(this->field_006E,(int)this->field_007E,0,0,0,this->field_0060,this->field_0064);
-    st::fn_007119C0(this->field_006E,local_c,-1,-1,(uint)bVar3);
+
+    st::fn_007119C0(this->field_006E,reinterpret_cast<char *>(local_c),-1,-1,(uint)bVar3);
     /* ST_CALLSITE[0052BE9D]: CALL 0x004033cd; direct=004033CD MoneyTy::sub_0052BBE0 */
     st::fn_004033CD(this);
   }
   return;
 }
-

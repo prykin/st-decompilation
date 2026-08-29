@@ -21,10 +21,10 @@ int __thiscall OpticClassC::GetMessage(OpticClassC *this,STMessage *message)
   uint uVar5;
   longlong lVar6;
   InternalExceptionFrame local_6c;
-  undefined1 local_28 [12];
-  undefined4 local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
+  byte local_28 [12];
+  uint local_1c;
+  uint local_18;
+  uint local_14;
   OpticClassC *local_8;
 
   local_6c.previous = g_currentExceptionFrame;
@@ -171,8 +171,8 @@ LAB_004a8c49:
     uVar3 = DAT_0080743c & 0xff;
   }
 LAB_004a8c6a:
-  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::thunk_FUN_00567510
-            ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,uVar3);
+  SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00567510::thunk_FUN_00567510
+            ((RecoveredReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,uVar3);
 switchD_004a8b81_caseD_108:
   g_currentExceptionFrame = local_6c.previous;
   return 0;

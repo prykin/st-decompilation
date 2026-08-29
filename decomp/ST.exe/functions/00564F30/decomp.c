@@ -86,6 +86,7 @@ int FUN_00564f30(int param_1,int param_2,int param_3,int *param_4,int param_5,in
       param_4 = (int *)((int)param_4 + DAT_008033a4 * 2);
     } while (iVar16 < STField<int>(iVar9,0x10));
   }
+
   local_EAX_378 = thunk_FUN_0055de60(DAT_00803304,DAT_00803308,param_1,param_2);
   iVar9 = (DAT_00803384 + 2) * DAT_00803320;
   if (local_EAX_378 < iVar9) {
@@ -93,10 +94,13 @@ int FUN_00564f30(int param_1,int param_2,int param_3,int *param_4,int param_5,in
   }
   local_8 = (int)(local_EAX_378 * uVar11) / DAT_00803390;
   piVar15 = (int *)PTR_008033b0[param_3];
+
   iVar3 = FUN_006db6d0(iVar4);
+
   iVar7 = Library::DKW::STR::FUN_006db640(iVar4);
   local_28 = param_2 * 0x10000 - DAT_00803354 * -iVar7 >> 0x10;
   iVar9 = param_1 * 0x10000 - DAT_00803354 * iVar3 >> 0x10;
+
   iVar6 = FUN_006acf90(iVar9,local_28,DAT_00803304,DAT_00803308);
   if (iVar6 < DAT_00803358) {
     local_8 = local_8 * 2;
@@ -133,6 +137,7 @@ int FUN_00564f30(int param_1,int param_2,int param_3,int *param_4,int param_5,in
         param_4 = (int *)((int)param_4 + DAT_008033a4 * 2);
       } while (iVar16 < piVar15[4]);
     }
+
     local_EAX_737 = thunk_FUN_0055de60(DAT_00803304,DAT_00803308,local_18,local_14);
     iVar9 = (DAT_00803384 + 2) * DAT_00803320;
     if (local_EAX_737 < iVar9) {
@@ -170,6 +175,7 @@ int FUN_00564f30(int param_1,int param_2,int param_3,int *param_4,int param_5,in
       param_4 = (int *)((int)param_4 + DAT_008033a4 * 2);
     } while (iVar16 < piVar15[4]);
   }
+
   local_EAX_1016 = thunk_FUN_0055de60(DAT_00803304,DAT_00803308,local_18,local_14);
   iVar9 = (DAT_00803384 + 2) * DAT_00803320;
   if (local_EAX_1016 < iVar9) {
@@ -188,12 +194,14 @@ int FUN_00564f30(int param_1,int param_2,int param_3,int *param_4,int param_5,in
     uVar11 = local_2c - iVar16 >> 0x1f;
     iVar9 = 100 - (int)(((local_2c - iVar16 ^ uVar11) - uVar11) * 100) / iVar9;
   }
+
   iVar16 = thunk_FUN_0055de60(DAT_00803304,DAT_00803308,param_1,param_2);
   iVar13 = 0;
   sVar2 = PTR_008033b4[DAT_008033a4 * param_2 + param_1];
   if ((sVar2 != 0) && (sVar2 != -1)) {
     iVar13 = ((DAT_0080339c * DAT_00803320 + (int)sVar2) - iVar16) + -1;
   }
+
   iVar16 = FUN_00562cd0(param_1,param_2,param_3);
   iVar9 = ((DAT_00803388 * DAT_00803340 - DAT_0080333c * iVar13) - DAT_00803338 * local_38) +
           DAT_00803334 * iVar16 + DAT_00803330 * (local_8 + iVar8) + DAT_0080332c * iVar9;
@@ -282,8 +290,9 @@ int FUN_00564f30(int param_1,int param_2,int param_3,int *param_4,int param_5,in
         DAT_00803398 = 99;
       }
       if (iVar8 < iVar16) {
+
         Library::MSVCRT::FUN_0072da70
-                  (&local_1c_mg1[iVar8 + 1].field_0000,
+                  ((RecoveredRecord_006BFE70_3123BCE8 *)(local_1c_mg1 + iVar8 + 1),
                    (AnonPointee_TLOBaseTy_0607 *)(local_1c_mg1 + iVar8),
                    iVar16 * 0x14 + iVar8 * -0x14);
         iVar16 = DAT_00803398;

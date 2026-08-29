@@ -35,7 +35,8 @@ FUN_00572ba0:
 00572C0D  6A 02                     PUSH 0x2
 00572C0F  52                        PUSH EDX
 00572C10  68 45 03 00 00            PUSH 0x345
-00572C15  E8 A6 E2 17 00            CALL 0x006f0ec0
+FUN_00572ba0::override::prt_572c15_9d92389d:
+00572C15  E8 A6 E2 17 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 00572C1A  8B F0                     MOV ESI,EAX
 00572C1C  83 C4 14                  ADD ESP,0x14
 00572C1F  85 F6                     TEST ESI,ESI

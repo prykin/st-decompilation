@@ -20,7 +20,7 @@ LAB_005925bc:
 005925DD  8B 01                     MOV EAX,dword ptr [ECX]
 005925DF  8D 56 1D                  LEA EDX,[ESI + 0x1d]
 005925E2  52                        PUSH EDX
-005925E3  FF 50 18                  CALL dword ptr [EAX + 0x18]
+005925E3  FF 50 18                  CALL dword ptr [EAX + 0x18]  ; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 LAB_005925e6:
 005925E6  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
 005925E9  83 C7 04                  ADD EDI,0x4

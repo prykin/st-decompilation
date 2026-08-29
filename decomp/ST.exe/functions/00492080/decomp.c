@@ -28,8 +28,9 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
   short local_6;
 
   if ((((this->field_045D != CASE_F) && (this->field_045D != CASE_E)) ||
-      (*(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e != (AnonShape_005EFAE0_B406B78B *)param_1
-      )) || (this->field_0596 != CASE_2)) {
+      (*(RecoveredRecordView_005EFAE0_855D930D **)&this->field_0x58e !=
+       (RecoveredRecordView_005EFAE0_855D930D *)param_1)) || (this->field_0596 != CASE_2)) {
+
     iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x50db,0,0,"%s",
                                "STBoatC::NotReadyForLoading incorrect call");
     if (iVar2 == 0) {
@@ -37,8 +38,10 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
+
   iVar3_mg0 = STPlaySystemC::sub_006E62D0
-                        (g_playSystem_00802A38,*(AnonShape_005EFAE0_B406B78B **)&this->field_0x58e,
+                        (g_playSystem_00802A38,
+                         *(RecoveredRecordView_005EFAE0_855D930D **)&this->field_0x58e,
                          (int *)&local_14);
   if (iVar3_mg0 != -4) {
     /* ST_CALLSITE[0049211B]: CALL dword ptr [EDX + 0xac] */
@@ -66,6 +69,7 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
     this->field_0592 = 0;
     return;
   }
+
   local_EAX_104 =
        ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x50c8,0,0,"%s",
                           "STBoatC::NotReadyForLoading it`s impossible!");

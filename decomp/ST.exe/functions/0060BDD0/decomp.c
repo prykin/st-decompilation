@@ -8,17 +8,16 @@ undefined4 __thiscall FUN_0060bdd0(void *this,undefined4 *param_1)
   int iVar2;
   int **ppiVar3;
   int *local_58 [6];
-  undefined4 local_40;
+  uint local_40;
   int local_38 [3];
-  undefined2 local_2c;
-  undefined2 local_2a;
+  ushort local_2c;
+  ushort local_2a;
   int local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
+  uint local_18;
+  uint local_14;
   int local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_c;
+  uint local_8;
   ppiVar3 = local_58;
   for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
     *ppiVar3 = nullptr;
@@ -72,9 +71,8 @@ undefined4 __thiscall FUN_0060bdd0(void *this,undefined4 *param_1)
     local_58[4] = (int *)0x110;
     local_58[5] = local_38;
   }
-  /* ST_CALLSITE[0060BF48]: CALL dword ptr [EDX] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)*param_1)(local_58);
+  /* ST_CALLSITE[0060BF48]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4 */
+  STStructuralVirtualCall<void>(param_1, 0x0, local_58);
   return local_40;
 }
 

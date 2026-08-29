@@ -1,28 +1,28 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __thiscall FUN_00604fc0(void *this,AnonShape_00604A90_035626E6 *param_1)
+undefined4 __thiscall FUN_00604fc0(void *this,RecoveredRecordView_00604A90_D1F27465 *param_1)
 
 {
   DArrayTy *pDVar1;
   int *piVar2;
   int iVar3;
-  AnonShape_00604A90_035626E6 *pAVar5;
+  RecoveredRecordView_00604A90_D1F27465 *pRVar5;
   byte *puVar6;
   uint uVar7;
   byte *puVar8;
   int *piVar9;
   int *piVar10;
 
-  pAVar5 = param_1;
+  pRVar5 = param_1;
   puVar6 = (byte *)((int)this + 0x1d5);
-  memmove(puVar6, pAVar5, 0x40); /* compiler REP MOVS byte copy */
+  memmove(puVar6, pRVar5, 0x40); /* compiler REP MOVS byte copy */
   iVar3 = 0;
   STField<undefined4>(this,0x215) = *(undefined4 *)&param_1->field_0x40;
   puVar6 = (byte *)&param_1->field_0x44;
   puVar8 = (byte *)((int)this + 0x219);
   memmove(puVar8, puVar6, 0x50); /* compiler REP MOVS byte copy */
-  piVar9 = (undefined4 *)&param_1->field_0xe2;
+  piVar9 = (int *)&param_1->field_0xe2;
   STField<undefined4>(this,0x269) = *(undefined4 *)&param_1->field_0x94;
   STField<undefined1>(this,0x26d) = param_1->field_0x98;
   STField<undefined4>(this,0x26e) = param_1->field_0099;
@@ -34,7 +34,7 @@ undefined4 __thiscall FUN_00604fc0(void *this,AnonShape_00604A90_035626E6 *param
   STField<undefined4>(this,0x27e) = param_1->field_00A9;
   if (STField<int>(this,0x215) != 0) {
     iVar3 = *piVar9;
-    pDVar1 = FUN_006b0060(nullptr,(undefined4 *)&param_1[1].field_0x2);
+    pDVar1 = FUN_006b0060(nullptr,(uint *)&param_1[1].field_0x2);
     STField<DArrayTy *>(this,0x215) = pDVar1;
     piVar9 = (int *)(&param_1[1].field_0x2 + iVar3);
   }
@@ -53,6 +53,7 @@ undefined4 __thiscall FUN_00604fc0(void *this,AnonShape_00604A90_035626E6 *param
         iVar3 = iVar3 + -1;
       } while (iVar3 != 0);
       if (uVar7 != 0) {
+        /* ST_CALLSITE[006050A9]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
         piVar2 = Library::DKW::LIB::MemAlloc(uVar7);
         STField<int *>(this,0x2b3) = piVar2;
         memmove(piVar2, piVar9, uVar7); /* compiler REP MOVS byte copy */

@@ -1,13 +1,21 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 007905A0
+   Entries: 004028B0
+   Slots: 0xDC
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_physical_vtable_owner_and_slot;
+   receiver_extent=1862/2106; unique_owner_for_target */
+
 uint __thiscall
-FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,short param_5,
-            short param_6)
+STBoatC::vfunc_DC(STBoatC *this,short param_1,short param_2,short param_3,short param_4,
+                 short param_5,short param_6)
 
 {
   longlong lVar1;
-  void *pvVar2;
+  STBoatC *pSVar2;
   int uVar2;
   uint uVar3;
   uint uVar4;
@@ -63,7 +71,7 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
   longlong local_EDXEAX_2517;
   longlong local_EDXEAX_2551;
   longlong local_EDXEAX_2595;
-  undefined4 local_104 [2];
+  uint local_104 [2];
   int local_fc;
   int iStack_f8;
   longlong local_f4;
@@ -73,27 +81,27 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
   uint local_dc;
   int local_d8;
   longlong local_d4;
-  undefined8 local_cc;
+  ulonglong local_cc;
   uint local_c4;
   int local_c0;
-  undefined8 local_bc;
+  ulonglong local_bc;
   uint local_b4;
   int local_b0;
   double local_ac;
   undefined2 *local_a4;
-  undefined8 local_a0;
+  ulonglong local_a0;
   double local_98;
   uint local_90;
   int local_8c;
   uint local_88;
   int local_84;
   longlong local_80;
-  undefined8 local_78;
+  ulonglong local_78;
   longlong local_70;
-  undefined8 local_68;
-  void *local_60;
-  undefined8 local_5c;
-  undefined8 local_54;
+  ulonglong local_68;
+  STBoatC *local_60;
+  ulonglong local_5c;
+  ulonglong local_54;
   uint local_4c;
   int local_48;
   uint local_44;
@@ -114,15 +122,15 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
   uint local_c;
   ushort local_8;
 
-  local_90 = (uint)STField<short>(this,0x237);
+  local_90 = (uint)*(short *)&this->field_0x237;
   iVar11 = (int)local_90 >> 0x1f;
   STPiece<0,2>(local_c) = 0;
   STPiece<2,2>(local_c) = 0;
   local_8 = 0;
-  if ((STField<int>(this,0x455) != 1) && (STField<int>(this,0x742) != 1)) {
+  if ((this->field_0455 != 1) && (this->field_0742 != 1)) {
     local_60 = this;
-    uVar2 = FUN_006acf0d((int)STField<short>(this,0x41),(int)STField<short>(this,0x43),
-                         (int)STField<short>(this,0x45),(int)param_1,(int)param_2,(int)param_3);
+    uVar2 = FUN_006acf0d((int)this->field_0041,(int)this->field_0043,(int)this->field_0045,
+                         (int)param_1,(int)param_2,(int)param_3);
     if ((uVar2 >> 0x1f < iVar11) || ((uVar2 >> 0x1f <= iVar11 && ((uint)uVar2 <= local_90)))) {
       uVar3 = (int)param_4 - (int)param_1;
       iVar11 = 0;
@@ -153,20 +161,20 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
         uVar3 = 1;
       }
       local_40 = 0;
-      if (STField<char>(local_60,0x281) != '\0') {
-        local_a4 = (undefined2 *)((int)local_60 + 0x23b);
+      if (local_60->field_0281 != '\0') {
+        local_a4 = &local_60->field_023B;
         do {
           local_28 = 0;
           local_90 = (uint)(short)local_a4[2];
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           _local_2c = CONCAT22(*local_a4,local_a4[-1]);
           local_8c = (int)local_90 >> 0x1f;
-          puVar5 = thunk_FUN_0041dc40(local_104,local_a4[-1],0,STField<short>(local_60,0x6c));
+          puVar5 = thunk_FUN_0041dc40(local_104,local_a4[-1],0,local_60->field_006C);
           local_2c = (short)*puVar5;
-          local_2c = local_2c + STField<short>(local_60,0x41);
+          local_2c = local_2c + local_60->field_0041;
           sStack_2a = (short)((uint)*puVar5 >> 0x10);
-          local_28 = *(short *)(puVar5 + 1) + STField<short>(local_60,0x45);
-          sStack_2a = STField<short>(local_60,0x43) - sStack_2a;
+          local_28 = *(short *)(puVar5 + 1) + local_60->field_0045;
+          sStack_2a = local_60->field_0043 - sStack_2a;
           if (uVar3 == 0 && local_20 == 0) {
             local_4c = (int)param_3 - (int)local_28;
             local_EDXEAX_506 =
@@ -474,26 +482,24 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
               }
             }
           }
-          pvVar2 = local_60;
+          pSVar2 = local_60;
           local_40 = local_40 + 1;
           local_a4 = local_a4 + 4;
           uVar3 = local_24;
-        } while ((int)local_40 < (int)(uint)STField<byte>(local_60,0x281));
+        } while ((int)local_40 < (int)(uint)(byte)local_60->field_0281);
         if (local_44 != 0xffffffff) {
-          STPiece<0,2>(local_c) = (short)local_c - STField<short>(local_60,0x41);
-          local_8 = local_8 - STField<short>(local_60,0x45);
+          STPiece<0,2>(local_c) = (short)local_c - local_60->field_0041;
+          local_8 = local_8 - local_60->field_0045;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_c = CONCAT22(STField<short>(local_60,0x43) - STPiece<2,2>(local_c),(short)local_c);
-          puVar5 = thunk_FUN_0041dc40(local_104,(short)local_c,local_8,
-                                      0x168 - STField<short>(local_60,0x6c));
+          local_c = CONCAT22(local_60->field_0043 - STPiece<2,2>(local_c),(short)local_c);
+          puVar5 = thunk_FUN_0041dc40(local_104,(short)local_c,local_8,0x168 - local_60->field_006C);
           uVar4 = local_44;
           local_c = *puVar5;
           local_8 = *(ushort *)(puVar5 + 1);
-          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-          pDVar8 = *(DArrayTy **)((int)pvVar2 + local_44 * 4 + 0x282);
+          pDVar8 = (DArrayTy *)(&pSVar2->field_0282)[local_44];
           if (pDVar8 == nullptr) {
             pDVar8 = Library::DKW::TBL::DArrayCreate(nullptr,1,6,1);
-            *(DArrayTy **)((int)pvVar2 + uVar4 * 4 + 0x282) = pDVar8;
+            (&pSVar2->field_0282)[uVar4] = (int)pDVar8;
             iVar10 = Library::DKW::TBL::DArrayAppend(pDVar8,&local_c);
             return iVar10 << 0x10 | uVar4 & 0xffff;
           }

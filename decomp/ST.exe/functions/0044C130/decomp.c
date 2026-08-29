@@ -24,13 +24,12 @@ STAllPlayersC::GetTOBJImage
   Global_sub_004C2950_param_3Enum GVar8;
   char local_154 [256];
   int local_54 [12];
-  undefined4 local_24;
-  undefined4 local_20;
-  undefined4 local_1c;
+  uint local_24;
+  uint local_20;
+  uint local_1c;
   int *local_10;
   int *local_c;
-  undefined4 local_8;
-
+  uint local_8;
   SVar2 = param_2;
   memset(local_54, 0, 0x44); /* compiler bulk-zero initialization */
   switch(param_2) {
@@ -111,10 +110,12 @@ STAllPlayersC::GetTOBJImage
                           nullptr);
       local_24 = *(undefined4 *)(STField<int>(puVar3,0x21) + param_2 * 4);
     }
+
     local_EAX_379 =
          ST3DSMAPContext::sub_00709470(g_sT3DSMAPContext_00807598,local_54,0x11,1,10,0xff);
     return local_EAX_379;
   default:
+
     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x324e,0,0,"%s",
                                "STAllPlayersC::GetTOBJImage unknown TOBJ-type");
     if (iVar5 != 0) {
@@ -197,6 +198,7 @@ STAllPlayersC::GetTOBJImage
       param_2 = 0;
       thunk_FUN_004c2950(param_1,SVar2,GVar8,&local_c,local_154,(undefined1 *)&local_8,&param_2);
       if (local_154[0] != '\0') {
+        /* ST_CALLSITE[0044C312]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
         puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                            (local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
                             nullptr);
@@ -268,6 +270,7 @@ LAB_0044c44d:
     local_1c = *(undefined4 *)(STField<int>(puVar3,0x21) + param_2 * 4);
   }
 cf_common_exit_0044C477:
+
   uVar4 = ST3DSMAPContext::sub_00709470(g_sT3DSMAPContext_00807598,local_54,0x11,1,10,0xff);
   return uVar4;
 }

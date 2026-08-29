@@ -22,6 +22,9 @@ import java.util.regex.Pattern;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
+import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.FunctionDefinition;
+import ghidra.program.model.data.Pointer;
 import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.Instruction;
@@ -42,6 +45,11 @@ public class STLibraryAnalyzer extends GhidraScript {
     private static final long MAX_CRT_ANCHOR_GAP = 0x4000;
     private static final long MAX_CRT_TAIL_DISTANCE = 0x1000;
     private static final int MIN_CRT_ANCHORS = 8;
+    private static final long MAX_INTERFACE_RUNTIME_SPAN = 0x20000;
+    private static final int MIN_INTERFACE_RUNTIME_FUNCTIONS = 32;
+    private static final int MIN_INTERFACE_DISPATCH_FUNCTIONS = 12;
+    private static final int MIN_INTERFACE_DISPATCH_CALLS = 64;
+    private static final int MAX_INTERFACE_TAIL_STUB_BYTES = 16;
     private static final Pattern DKW_PATH = Pattern.compile(
         "(?i)(?:[A-Z]:\\\\)?D?KW\\\\([A-Z0-9_]+)\\\\");
     private static final Pattern OURLIB_PATH = Pattern.compile(
@@ -128,6 +136,7 @@ public class STLibraryAnalyzer extends GhidraScript {
 
         int intervalHelpers = inferSourceIntervalHelpers(found, sourceAnchors);
         int moduleCallbacks = inferStoredCallbackLibraryOwners(found, sourceAnchors);
+        int interfaceRuntime = inferLinkedInterfaceRuntime(found, sourceAnchors);
 
         List<Proposal> proposals = new ArrayList<>();
         int conflicts = 0;
@@ -155,6 +164,7 @@ public class STLibraryAnalyzer extends GhidraScript {
             "conflicts=" + conflicts,
             "source_interval_helpers=" + intervalHelpers,
             "module_callback_helpers=" + moduleCallbacks,
+            "linked_interface_runtime_functions=" + interfaceRuntime,
             "ourlib_proposals=" + proposals.stream()
                 .filter(proposal -> proposal.library.startsWith("OURLIB_")).count(),
             "note=Only rows with apply=1 are consumed by STLibraryApplier."),
@@ -399,6 +409,252 @@ public class STLibraryAnalyzer extends GhidraScript {
             inferred++;
         }
         return inferred;
+    }
+
+    /**
+     * Recover an opaque statically linked COM-style implementation block without relying on
+     * image addresses, source-library names, or a catalog of API symbols.  Old MSVC linkers
+     * keep one group of object files contiguous.  In this binary the group is otherwise easy
+     * to mistake for application code because most of its methods are unnamed and call through
+     * interface tables.
+     *
+     * A candidate must sit wholly between two already high-confidence linked-library anchors,
+     * begin at a direct external boundary whose imported prototype carries both HRESULT and an
+     * IID/IUnknown-family type, contain a dense population of machine-level indirect calls, and
+     * contain no exact recovered source anchor or semantic application namespace.  Its end is
+     * the final indirect-dispatch function, followed only by consecutive tiny leaf/RET stubs.
+     * This last rule prevents an adjacent source-less helper from being swallowed merely because
+     * the linker placed it before the next source-bearing object file.
+     *
+     * The result deliberately asserts only linked-library ownership.  It does not claim a
+     * DirectShow class name, interface identity, source file, vtable layout, or callback ABI.
+     */
+    private int inferLinkedInterfaceRuntime(Map<Address, Evidence> found,
+            Map<Address, Set<SourceAnchor>> sourceAnchors) throws Exception {
+        List<Function> functions = new ArrayList<>();
+        for (Function function : currentProgram.getFunctionManager().getFunctions(true))
+            if (!function.isExternal()) functions.add(function);
+        functions.sort(Comparator.comparing(Function::getEntryPoint));
+
+        boolean[] highAnchor = new boolean[functions.size()];
+        for (int index = 0; index < functions.size(); index++) {
+            Evidence evidence = found.get(functions.get(index).getEntryPoint());
+            highAnchor[index] = evidence != null && evidence.highConfidence &&
+                evidence.libraries.size() == 1 && evidence.namespaces.size() == 1;
+        }
+
+        int inferred = 0;
+        int left = -1;
+        for (int right = 0; right < functions.size(); right++) {
+            monitor.checkCancelled();
+            if (!highAnchor[right]) continue;
+            if (left >= 0 && right - left > MIN_INTERFACE_RUNTIME_FUNCTIONS) {
+                inferred += inferLinkedInterfaceRuntimeInterval(functions, left + 1,
+                    right, found, sourceAnchors);
+            }
+            left = right;
+        }
+        return inferred;
+    }
+
+    private int inferLinkedInterfaceRuntimeInterval(List<Function> functions,
+            int startInclusive, int endExclusive, Map<Address, Evidence> found,
+            Map<Address, Set<SourceAnchor>> sourceAnchors) throws Exception {
+        int firstBoundary = -1, lastDispatch = -1;
+        Address boundarySite = null;
+        int dispatchFunctions = 0, dispatchCalls = 0;
+        for (int index = startInclusive; index < endExclusive; index++) {
+            monitor.checkCancelled();
+            Function function = functions.get(index);
+            Address typedBoundary = importedInterfaceBoundary(function);
+            if (typedBoundary != null && firstBoundary < 0) {
+                firstBoundary = index;
+                boundarySite = typedBoundary;
+            }
+            int calls = indirectMachineCalls(function);
+            if (calls != 0) {
+                dispatchFunctions++;
+                dispatchCalls += calls;
+                lastDispatch = index;
+            }
+        }
+        if (endExclusive - startInclusive >= MIN_INTERFACE_RUNTIME_FUNCTIONS &&
+                (firstBoundary >= 0 || dispatchCalls >= MIN_INTERFACE_DISPATCH_CALLS)) {
+            println("Linked interface interval audit: " +
+                addr(functions.get(startInclusive).getEntryPoint()) + ".." +
+                addr(functions.get(endExclusive - 1).getEntryPoint()) +
+                ", imported_boundary=" +
+                (firstBoundary < 0 ? "none" :
+                    addr(functions.get(firstBoundary).getEntryPoint())) +
+                ", dispatch_functions=" + dispatchFunctions +
+                ", dispatch_calls=" + dispatchCalls);
+        }
+        if (firstBoundary < 0 || lastDispatch < firstBoundary ||
+                dispatchFunctions < MIN_INTERFACE_DISPATCH_FUNCTIONS ||
+                dispatchCalls < MIN_INTERFACE_DISPATCH_CALLS)
+            return 0;
+
+        int last = lastDispatch;
+        while (last + 1 < endExclusive && tinyInterfaceTailStub(functions.get(last + 1)))
+            last++;
+        if (last - firstBoundary + 1 < MIN_INTERFACE_RUNTIME_FUNCTIONS) return 0;
+        Address firstAddress = functions.get(firstBoundary).getEntryPoint();
+        Address lastAddress = functions.get(last).getBody().getMaxAddress();
+        if (lastAddress.subtract(firstAddress) > MAX_INTERFACE_RUNTIME_SPAN) return 0;
+
+        Set<String> enclosedNamedOwners = new TreeSet<>();
+        for (int index = firstBoundary; index <= last; index++) {
+            Function function = functions.get(index);
+            Address entry = function.getEntryPoint();
+            if (sourceAnchors.containsKey(entry)) return 0;
+            String namedOwner = semanticOwner(function);
+            if (namedOwner != null) enclosedNamedOwners.add(namedOwner);
+            Evidence existing = found.get(entry);
+            if (existing != null && existing.highConfidence &&
+                    (!existing.libraries.contains("WIN32_COM_SUPPORT") ||
+                        existing.libraries.size() != 1))
+                return 0;
+        }
+        // A real named class inside a linked runtime is useful evidence, not contamination,
+        // provided its complete function namespace is enclosed by this same candidate block.
+        // A namespace with any method outside the block is an application/source-boundary
+        // crossing and cancels the inference.
+        if (!enclosedNamedOwners.isEmpty()) {
+            for (int index = 0; index < functions.size(); index++) {
+                if (index >= firstBoundary && index <= last) continue;
+                String namedOwner = semanticOwner(functions.get(index));
+                if (namedOwner != null && enclosedNamedOwners.contains(namedOwner)) return 0;
+            }
+        }
+
+        String evidenceText = "machine-inferred opaque linked interface runtime between " +
+            "high-confidence library anchors; imported HRESULT/IID boundary at " +
+            addr(boundarySite) + "; functions=" + (last - firstBoundary + 1) +
+            "; indirect_dispatch_functions=" + dispatchFunctions +
+            "; indirect_dispatch_calls=" + dispatchCalls +
+            "; no exact source anchors or semantic application owners";
+        Classification classification = new Classification("WIN32_COM_SUPPORT",
+            "Library::Win32::COMSupport");
+        int inferred = 0;
+        for (int index = firstBoundary; index <= last; index++) {
+            Function function = functions.get(index);
+            Evidence evidence = found.computeIfAbsent(function.getEntryPoint(),
+                ignored -> new Evidence(function));
+            boolean already = evidence.libraries.size() == 1 &&
+                evidence.libraries.contains(classification.library) &&
+                evidence.namespaces.size() == 1 &&
+                evidence.namespaces.contains(classification.namespace);
+            evidence.add(classification, evidenceText, boundarySite, true);
+            if (!already) inferred++;
+        }
+        return inferred;
+    }
+
+    private Address importedInterfaceBoundary(Function function) throws Exception {
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            monitor.checkCancelled();
+            Instruction instruction = instructions.next();
+            if (!instruction.getFlowType().isCall()) continue;
+            Function target = directOrImportedCalledFunction(instruction);
+            if (target != null) {
+                Function resolved = target.getThunkedFunction(true);
+                if (resolved != null) target = resolved;
+                if (target.isExternal() && interfacePrototype(
+                        target.getPrototypeString(true, true)))
+                    return instruction.getAddress();
+            }
+            // The IAT cell itself normally carries the imported function-definition type
+            // even when Ghidra exposes no flow edge to the External function object.
+            for (Reference reference : instruction.getReferencesFrom()) {
+                Data data = currentProgram.getListing().getDataAt(reference.getToAddress());
+                if (data != null && interfacePrototype(data.getDataType()))
+                    return instruction.getAddress();
+            }
+        }
+        return null;
+    }
+
+    private boolean interfacePrototype(DataType dataType) {
+        DataType current = dataType;
+        for (int depth = 0; depth < 4 && current instanceof Pointer pointer; depth++)
+            current = pointer.getDataType();
+        if (!(current instanceof FunctionDefinition definition)) return false;
+        StringBuilder signature = new StringBuilder(
+            definition.getReturnType().getDisplayName());
+        for (ghidra.program.model.data.ParameterDefinition parameter :
+                definition.getArguments())
+            signature.append(' ').append(parameter.getDataType().getDisplayName());
+        return interfacePrototype(signature.toString());
+    }
+
+    private boolean interfacePrototype(String signature) {
+        String upper = signature.toUpperCase(Locale.ROOT);
+        return upper.contains("HRESULT") &&
+            (upper.contains("IID") || upper.contains("IUNKNOWN") ||
+                upper.contains("LPUNKNOWN") || upper.contains("REFIID"));
+    }
+
+    private Function directOrImportedCalledFunction(Instruction instruction) {
+        for (Address flow : instruction.getFlows()) {
+            Function function = currentProgram.getFunctionManager().getFunctionAt(flow);
+            if (function != null) return function;
+        }
+        // An x86 PE import call is CALL [IAT].  Ghidra records a DATA reference to the
+        // pointer cell rather than a call flow, so follow exactly one defined pointer value.
+        for (Reference reference : instruction.getReferencesFrom()) {
+            Data data = currentProgram.getListing().getDataAt(reference.getToAddress());
+            if (data == null || !(data.getValue() instanceof Address target)) continue;
+            Function function = currentProgram.getFunctionManager().getFunctionAt(target);
+            if (function != null) return function;
+        }
+        return null;
+    }
+
+    private int indirectMachineCalls(Function function) throws Exception {
+        int count = 0;
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            monitor.checkCancelled();
+            Instruction instruction = instructions.next();
+            if (!instruction.getFlowType().isCall()) continue;
+            boolean direct = false;
+            for (Reference reference : instruction.getReferencesFrom()) {
+                if (reference.getReferenceType().isCall() &&
+                        currentProgram.getFunctionManager().getFunctionAt(
+                            reference.getToAddress()) != null) {
+                    direct = true;
+                    break;
+                }
+            }
+            if (!direct) count++;
+        }
+        return count;
+    }
+
+    private boolean tinyInterfaceTailStub(Function function) throws Exception {
+        if (function.getBody().getNumAddresses() > MAX_INTERFACE_TAIL_STUB_BYTES)
+            return false;
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        boolean hasReturn = false;
+        while (instructions.hasNext()) {
+            monitor.checkCancelled();
+            Instruction instruction = instructions.next();
+            if (instruction.getFlowType().isCall()) return false;
+            hasReturn |= instruction.getFlowType().isTerminal();
+        }
+        return hasReturn;
+    }
+
+    private String semanticOwner(Function function) {
+        String namespace = function.getParentNamespace().getName(true);
+        if (function.getParentNamespace().isGlobal()) return null;
+        String upper = namespace.toUpperCase(Locale.ROOT);
+        return upper.startsWith("LIBRARY::") || upper.contains("::RECOVERED::") ||
+            upper.startsWith("RECOVERED") || upper.startsWith("ANON") ? null : namespace;
     }
 
     private Map<Address, List<StoredCallback>> collectStoredCallbacks() throws Exception {

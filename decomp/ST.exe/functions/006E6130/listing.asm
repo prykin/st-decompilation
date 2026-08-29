@@ -8,6 +8,6 @@ FUN_006e6130:
 006E613C  6A 00                     PUSH 0x0
 006E613E  6A 00                     PUSH 0x0
 006E6140  52                        PUSH EDX
-006E6141  FF 50 0C                  CALL dword ptr [EAX + 0xc]
+006E6141  FF 50 0C                  CALL dword ptr [EAX + 0xc]  ; [STIndirectCallsiteApplier] exact slot 0xC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 006E6144  5D                        POP EBP
 006E6145  C2 08 00                  RET 0x8

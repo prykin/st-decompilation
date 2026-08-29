@@ -1,7 +1,12 @@
 #include "../../pseudocode_runtime.h"
 
 
-uint __cdecl FUN_0067f5e0(byte *param_1)
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=0067F740 @ 0067F747 -> read as EAX on
+   every CFG path | 006829B0 @ 006829EE -> read as EAX on every CFG path */
+
+int __cdecl FUN_0067f5e0(byte *param_1)
 
 {
   byte bVar1;
@@ -14,16 +19,16 @@ uint __cdecl FUN_0067f5e0(byte *param_1)
   byte *pbVar6;
   bool bVar7;
   InternalExceptionFrame local_4c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   local_EAX_39 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (local_EAX_39 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     if (-1 < local_EAX_39) {
-      local_EAX_39 = 0xffffffff;
+      local_EAX_39 = -1;
     }
     return local_EAX_39;
   }
@@ -60,11 +65,13 @@ LAB_0067f665:
       uVar3 = uVar3 + 1;
     } while (uVar3 < (int)dVar2);
   }
-  uVar3 = 0xffffffff;
+  uVar3 = -1;
 LAB_0067f671:
   if (uVar3 < 0) {
+
     uVar3 = Library::DKW::TBL::FUN_006b5aa0(g_dArray_00848A2C,(char *)param_1);
     local_8 = 0;
+
     iVar4 = Library::DKW::TBL::DArrayAppend(g_array_00848A28,&local_8);
     if (iVar4 != uVar3) {
       RaiseInternalException(-5,g_overwriteContext_007ED77C,".\\ai\\ai_script_v.inl",0x126);

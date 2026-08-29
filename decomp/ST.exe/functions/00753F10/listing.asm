@@ -5,7 +5,8 @@ FUN_00753f10:
 00753F16  57                        PUSH EDI
 00753F17  B8 D2 C1 00 00            MOV EAX,0xc1d2
 00753F1C  50                        PUSH EAX
-00753F1D  E8 FF EB CA FF            CALL 0x00402b21
+FUN_00753f10::override::prt_753f1d_e51c3a7f:
+00753F1D  E8 FF EB CA FF            CALL 0x00402b21  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00754185_34BF31BE; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00754185_34BF31BE;/uint
 00753F22  83 C4 04                  ADD ESP,0x4
 00753F25  0B C0                     OR EAX,EAX
 00753F27  74 58                     JZ 0x00753f81

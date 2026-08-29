@@ -39,7 +39,7 @@ int __thiscall st::fn_0064CD80(AiEventClassTy *this,int *param_1)
       piVar13 = nullptr;
     }
     else {
-      piVar13 = (int *)&local_8->field_008C;
+      piVar13 = reinterpret_cast<int *>(&local_8->field_008C);
     }
     piVar9 = param_1;
     memmove(piVar13, piVar9, 0x49f); /* compiler REP MOVS byte copy */
@@ -72,7 +72,7 @@ int __thiscall st::fn_0064CD80(AiEventClassTy *this,int *param_1)
     else {
       uVar10 = *piVar13 * 5;
     }
-    puVar2 = (byte *)(st::fn_006AAC10(uVar10));
+    puVar2 = reinterpret_cast<byte *>((st::fn_006AAC10(uVar10)));
     this_00->field_0502 = puVar2;
     if (piVar13 == nullptr) {
       uVar10 = 0;
@@ -144,6 +144,7 @@ undefined4 * __thiscall st::fn_0064D000(AiEventClassTy *this,uint *param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   pAVar2 = local_8;
   if (errorCode == 0) {
@@ -151,9 +152,9 @@ undefined4 * __thiscall st::fn_0064D000(AiEventClassTy *this,uint *param_1)
       pAVar3 = nullptr;
     }
     else {
-      pAVar3 = (AllocationRecord_0065CD10 *)&local_8->field_008C;
+      pAVar3 = reinterpret_cast<AllocationRecord_0065CD10 *>(&local_8->field_008C);
     }
-    /* ST_CALLSITE[0064D045]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
+    /* ST_CALLSITE[0064D045]: CALL 0x00401ebf; direct=00401EBF EventDataPack; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override */
     pAVar3_mg1 = st::fn_00401EBF(pAVar3,param_1);
     *(undefined1 *)pAVar3_mg1 = 1;
     *(uint *)&pAVar3_mg1->field_0x4e = pAVar2->field_0088;
@@ -161,6 +162,7 @@ undefined4 * __thiscall st::fn_0064D000(AiEventClassTy *this,uint *param_1)
     return (undefined4 *)pAVar3_mg1;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0x66,0,errorCode,st::mutable_c_string("%s"),
                              "AiEventClassTy::PrepareToSave");
   if (iVar4 != 0) {
@@ -215,18 +217,18 @@ st::fn_0064D270
   uint local_a4 [5];
   uint local_90;
   int local_8c;
-  undefined2 local_88;
-  undefined2 local_86;
-  undefined2 local_84;
-  undefined2 local_82;
-  undefined2 local_80;
-  undefined4 local_7e;
+  ushort local_88;
+  ushort local_86;
+  ushort local_84;
+  ushort local_82;
+  ushort local_80;
+  uint local_7e;
   int local_7a;
   int local_76;
-  undefined4 local_72;
+  uint local_72;
   char local_6e [15];
-  undefined4 local_5f;
-  undefined4 local_5b;
+  uint local_5f;
+  uint local_5b;
   AiEventClassTy *local_38;
   short local_34 [2];
   uint local_30;
@@ -245,9 +247,11 @@ st::fn_0064D270
   local_e8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_e8;
   local_38 = this;
+
   local_EAX_54 = st::fn_0072D7F0(local_e8.jumpBuffer,0);
   if (local_EAX_54 != 0) {
     g_currentExceptionFrame = local_e8.previous;
+
     iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0xcb,0,local_EAX_54,
                                st::mutable_c_string("%s"),"AiEventClassTy::__CreateObjPl");
     if (iVar4 != 0) {
@@ -270,20 +274,22 @@ st::fn_0064D270
       local_28[1] = 0;
       local_1c[0] = 7;
       local_1c[1] = 0;
-      local_20 = STReplaceLowWord((uint32_t)(param_3), (uint16_t)((short)g_bulkInitializedRecords_008087C7[uVar7].field_0024 + -3));
+      local_20 = STReplaceLowWord(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(param_3)), (uint16_t)((short)g_bulkInitializedRecords_008087C7[uVar7].field_0024 + -3));
       /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
       local_30 = CONCAT22((short)(uVar7 * 9 >> 0x10),
                           (short)g_bulkInitializedRecords_008087C7[uVar7].field_0028 + -3);
-      st::fn_00401906((short *)&local_20,(short *)&local_30,local_28,local_1c);
-      local_38->field_0088 = st::machine_word_boundary_cast<uint>(local_38->field_0088 * 0x41c64e6d + 0x3039);
-      local_18 = st::machine_word_boundary_cast<uint>(local_38->field_0088 * 0x41c64e6d + 0x3039);
+      st::fn_00401906(reinterpret_cast<short *>(&local_20),reinterpret_cast<short *>(&local_30),local_28,local_1c);
+      local_38->field_0088 = local_38->field_0088 * 0x41c64e6d + 0x3039;
+      local_18 = local_38->field_0088 * 0x41c64e6d + 0x3039;
       local_38->field_0088 = local_18;
+
       iVar5 = st::fn_00401D9D((local_18 >> 0x10) % (uint)(int)local_28[0] + (short)local_20,
                                  (local_38->field_0088 >> 0x10) % (uint)(int)local_1c[0] +
-                                 (short)local_30,1,(short *)&param_3,(short *)&param_4,
-                                 (short *)&param_5,(int)param_2);
+                                 (short)local_30,1,reinterpret_cast<short *>(&param_3),reinterpret_cast<short *>(&param_4),
+                                 reinterpret_cast<short *>(&param_5),(int)param_2);
     }
     else {
+
       iVar3 = st::fn_00404D3B((short)param_3,(short)param_4,(short)param_5);
       if (iVar3 == 0) {
         local_2c = param_3 + -1;
@@ -291,14 +297,15 @@ st::fn_0064D270
         local_18 = 3;
         local_34[0] = 3;
         local_34[1] = 0;
-        st::fn_00401906((short *)&local_2c,(short *)&local_24,(short *)&local_18,local_34);
+        st::fn_00401906(reinterpret_cast<short *>(&local_2c),reinterpret_cast<short *>(&local_24),reinterpret_cast<short *>(&local_18),local_34);
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_3 = local_2c + 1;
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_4 = local_24 + 1;
       }
-      iVar5 = st::fn_00401D9D(param_3,param_4,(short)param_5,(short *)&param_3,(short *)&param_4,
-                                 (short *)&param_5,(int)param_2);
+
+      iVar5 = st::fn_00401D9D(param_3,param_4,(short)param_5,reinterpret_cast<short *>(&param_3),reinterpret_cast<short *>(&param_4),
+                                 reinterpret_cast<short *>(&param_5),(int)param_2);
     }
     uVar7 = param_7;
     if (iVar5 != 0) {
@@ -366,9 +373,11 @@ st::fn_0064D270
       iVar6 = 1;
       GVar10 = (Global_sub_004B1120_param_2Enum)param_2;
       uVar7 = param_1 & 0xffff;
+
       iVar5 = st::fn_00402829((short)param_3,local_c,local_10,GVar10,uVar7,nullptr,
                                  nullptr,nullptr,1,nullptr);
       if (iVar5 == 0) {
+
         iVar6 = st::fn_004019EC(uVar7,GVar10,&local_8,&local_c,&local_10,0,0);
       }
       if (iVar6 == 0) {
@@ -383,11 +392,13 @@ st::fn_0064D270
     }
     else {
       uVar8 = param_1 & 0xffff;
+
       local_EAX_1070 = st::fn_004019EC(uVar8,(int)param_2,&local_8,&local_c,&local_10,0,0);
       if (local_EAX_1070 != 0) {
         if (((int)uVar7 < 0) || (7 < (int)uVar7)) {
           uVar7 = uVar8;
         }
+
         st::fn_004018A2(uVar8,(int)param_2,local_8,local_c,local_10,param_6,uVar7,param_8,0,
                            param_9);
       }
@@ -462,12 +473,12 @@ st::fn_0064D890
         local_20[3] = 0;
         local_14 = param_3 + -1;
         local_18 = param_4 + -1;
-        st::fn_00401906((short *)&local_14,(short *)&local_18,local_20,local_20 + 2);
+        st::fn_00401906(reinterpret_cast<short *>(&local_14),reinterpret_cast<short *>(&local_18),local_20,local_20 + 2);
         local_c = local_14 + 1;
         local_8 = local_18 + 1;
       }
-      iVar5 = st::fn_00401D9D(local_c,local_8,(short)local_10,(short *)&local_c,(short *)&local_8
-                                 ,(short *)&local_10,0xfe);
+      iVar5 = st::fn_00401D9D(local_c,local_8,(short)local_10,reinterpret_cast<short *>(&local_c),reinterpret_cast<short *>(&local_8)
+                                 ,reinterpret_cast<short *>(&local_10),0xfe);
       if (iVar5 != 0) {
         if (param_7 == nullptr) {
           param_7 = &CHAR_00h_008016a0;
@@ -513,9 +524,11 @@ st::fn_0064DB00
   local_24 = -1;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
+
   local_EAX_38 = st::fn_0072D7F0(local_68.jumpBuffer,0);
   if (local_EAX_38 != 0) {
     g_currentExceptionFrame = local_68.previous;
+
     iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0x117,0,local_EAX_38,
                                st::mutable_c_string("%s"),"AiEventClassTy::_CreateArt");
     if (iVar4 != 0) {
@@ -535,6 +548,7 @@ st::fn_0064DB00
       local_c = param_3;
       local_8 = param_4;
       local_10 = param_5;
+
       iVar3 = st::fn_00404D3B((short)param_3,(short)param_4,(short)param_5);
       if (iVar3 == 0) {
         local_14 = param_3 + -1;
@@ -543,12 +557,13 @@ st::fn_0064DB00
         local_20[1] = 0;
         local_20[2] = 3;
         local_20[3] = 0;
-        st::fn_00401906((short *)&local_14,(short *)&local_18,local_20,local_20 + 2);
+        st::fn_00401906(reinterpret_cast<short *>(&local_14),reinterpret_cast<short *>(&local_18),local_20,local_20 + 2);
         local_c = local_14 + 1;
         local_8 = local_18 + 1;
       }
-      iVar5 = st::fn_00401D9D(local_c,local_8,(short)local_10,(short *)&local_c,(short *)&local_8
-                                 ,(short *)&local_10,0xfd);
+
+      iVar5 = st::fn_00401D9D(local_c,local_8,(short)local_10,reinterpret_cast<short *>(&local_c),reinterpret_cast<short *>(&local_8)
+                                 ,reinterpret_cast<short *>(&local_10),0xfd);
       if (iVar5 != 0) {
         if (param_7 == nullptr) {
           param_7 = &CHAR_00h_008016a0;
@@ -662,6 +677,7 @@ st::fn_0064DFA0
   local_24 = (uint)param_6;
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
+
   local_EAX_64 = st::fn_0072D7F0(local_6c.jumpBuffer,0);
   if (local_EAX_64 == 0) {
     if (g_allPlayers_007FA174 != nullptr) {
@@ -675,6 +691,7 @@ st::fn_0064DFA0
         local_c = param_3;
         local_8 = param_4;
         local_10 = param_5;
+
         iVar3 = st::fn_00404D3B((short)param_3,(short)param_4,(short)param_5);
         if (iVar3 == 0) {
           local_20[0] = 3;
@@ -683,12 +700,13 @@ st::fn_0064DFA0
           local_20[3] = 0;
           local_14 = param_3 + -1;
           local_18 = param_4 + -1;
-          st::fn_00401906((short *)&local_14,(short *)&local_18,local_20,local_20 + 2);
+          st::fn_00401906(reinterpret_cast<short *>(&local_14),reinterpret_cast<short *>(&local_18),local_20,local_20 + 2);
           local_c = local_14 + 1;
           local_8 = local_18 + 1;
         }
-        iVar5 = st::fn_00404D54(local_c,local_8,(short)local_10,(short *)&local_c,
-                                   (short *)&local_8,(short *)&local_10,1);
+
+        iVar5 = st::fn_00404D54(local_c,local_8,(short)local_10,reinterpret_cast<short *>(&local_c),
+                                   reinterpret_cast<short *>(&local_8),reinterpret_cast<short *>(&local_10),1);
         if (iVar5 != 0) {
           if (param_7 == nullptr) {
             param_7 = &CHAR_00h_008016a0;
@@ -704,6 +722,7 @@ st::fn_0064DFA0
     return local_28;
   }
   g_currentExceptionFrame = local_6c.previous;
+
   iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0x169,0,local_EAX_64,
                              st::mutable_c_string("%s"),"AiEventClassTy::_CreateMine");
   if (iVar4 != 0) {
@@ -751,11 +770,12 @@ uint st::fn_0064E300(int param_1,char *param_2,ushort param_3,char param_4,ushor
   local_14 = nullptr;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
+
   uVar1 = st::fn_0072D7F0(local_64.jumpBuffer,0);
   if (uVar1 != 0) {
     g_currentExceptionFrame = local_64.previous;
-    st::fn_00405BCD((int *)&local_8);
-    st::fn_00405BCD((int *)&local_c);
+    st::fn_00405BCD(reinterpret_cast<int *>(&local_8));
+    st::fn_00405BCD(reinterpret_cast<int *>(&local_c));
     st::fn_006A5E40(uVar1,0,st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0x1b8);
     return uVar1;
   }
@@ -775,10 +795,10 @@ uint st::fn_0064E300(int param_1,char *param_2,ushort param_3,char param_4,ushor
   *(uint *)&local_8->field_0x77 = uVar2;
   /* ST_CALLSITE[0064E3B2]: CALL 0x004014c4; direct=004014C4 FltDataPack */
   local_c = st::fn_004014C4(local_8,local_20);
-  st::fn_00405BCD((int *)&local_8);
+  st::fn_00405BCD(reinterpret_cast<int *>(&local_8));
   /* ST_CALLSITE[0064E3DE]: CALL 0x00401bc2; direct=00401BC2 STPlaySystemC::CreateGameObject */
   st::fn_00401BC2(g_playSystem_00802A38,900,st::machine_word_boundary_cast<undefined4>(local_20 + 1),st::machine_word_boundary_cast<undefined4>(&local_14),st::machine_word_boundary_cast<undefined4>(local_c),0);
-  st::fn_00405BCD((int *)&local_c);
+  st::fn_00405BCD(reinterpret_cast<int *>(&local_c));
   if (local_14 == nullptr) {
     st::fn_006A5E40
               (-0xab,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_event.cpp"),0x1b4);
@@ -787,8 +807,8 @@ uint st::fn_0064E300(int param_1,char *param_2,ushort param_3,char param_4,ushor
   else {
     uVar2 = (uint)STField<ushort>(local_14,0x7d);
     local_20[2] = uVar2;
-    /* ST_CALLSITE[0064E400]: CALL 0x00404da9; direct=00404DA9 _GetStaffGrpExch */
-    array = (DArrayTy *)st::fn_00404DA9(param_1);
+    /* ST_CALLSITE[0064E400]: CALL 0x00404da9; direct=00404DA9 _GetStaffGrpExch; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__cdecl;pointer:/SubmarineTitans/Recovered/DArrayTy;/undefined4 */
+    array = st::pointer_boundary_cast<DArrayTy *>(st::fn_00404DA9(param_1));
     if (array != nullptr) {
       st::fn_004020EA(local_14,array,0);
       st::fn_006AE110(array);
@@ -847,6 +867,8 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
   AiPlrClassTy *pAVar10;
   char *pcVar8_mg34;
   char *pcVar8_mg33;
+  int ppbVar11;
+  int ppbVar11_mg1;
   char *pcVar8_mg32;
   int local_EAX_2959;
   int iVar37_mgF4;
@@ -904,7 +926,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
   int local_EAX_11892;
   int local_EAX_11906;
   int local_EAX_12115;
-  STGroupBoatC *pSVar14;
+  RecoveredRecord_00423300_67884733 *pRVar14;
   int local_EAX_12727;
   char *pcVar8_mg3D;
   dword dVar15;
@@ -924,13 +946,14 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
   int iVar37_mg97;
   char *pcVar8_mg2C;
   int iVar37_mg94;
+  RecoveredRecordView_0067B260_B3B2F7BB *pRVar19;
   char *pcVar8_mg2B;
   int iVar37_mg8B;
   char *pcVar8_mg28;
   char *pcVar8_mg27;
   char *pcVar8_mg26;
   int iVar37_mg88;
-  AnonShape_00679600_B8E418A8 *pAVar19;
+  RecoveredRecordView_00679600_4B4DB6B6 *pRVar20;
   char *pcVar8_mg2A;
   int local_EAX_17905;
   int iVar37_mg85;
@@ -940,15 +963,17 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
   int local_EAX_18546;
   char *pcVar8_mg22;
   int local_EAX_18755;
-  AnonShape_0065DA10_8B0AA883 *pAVar20;
+  RecoveredRecordView_0065DA10_5A1C53AF *pRVar21;
   char *pcVar8_mg21;
   int local_EAX_18964;
   char *pcVar8_mg20;
   int local_EAX_19222;
   int local_EAX_19384;
+  STGroupBoatC *pSVar22;
   int local_EAX_19546;
   char *pcVar8_mg1F;
   int local_EAX_19855;
+  RecoveredRecordView_0065D590_F2A3738B *pRVar23;
   char *pcVar8_mg1E;
   char *pcVar8_mg1D;
   char *pcVar8_mg1B;
@@ -975,7 +1000,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
   char *pcVar8_mg8;
   char *pcVar8_mg13;
   int local_EAX_25481;
-  char *pcVar21;
+  char *pcVar24;
   char *pcVar8_mg11;
   int local_EAX_25882;
   char *pcVar8_mg10;
@@ -993,25 +1018,25 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
   char *pcVar8_mg4;
   int local_EAX_28574;
   char *pcVar8_mg3;
-  AiFltClassTy *pAVar22;
+  AiFltClassTy *pAVar25;
   char *pcVar8_mg0;
   char *pcVar8_mg23;
-  short sVar23;
-  CPanelTy *pCVar24;
+  short sVar26;
+  CPanelTy *pCVar27;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_ECX_00;
-  short sVar25;
-  ushort uVar29;
+  short sVar28;
+  ushort uVar32;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX;
-  uint uVar26;
+  uint uVar29;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_00;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   DArrayTy *extraout_EDX_01;
-  DArrayTy *pDVar27;
+  DArrayTy *pDVar30;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_02;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -1020,37 +1045,37 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
   undefined4 extraout_EDX_04;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   undefined4 extraout_EDX_05;
-  uint uVar28;
-  AnonShape_00652810_4F58F813 *pAVar30;
-  AnonNested_00652810_000F_9CE8027E *pAVar31;
-  STFishC *pSVar32;
-  uint uVar33;
-  uint **ppuVar35;
-  bool bVar36;
-  int iVar37;
-  AiFltClassTyVTable *pAVar38;
+  uint uVar31;
+  AnonShape_00652810_4F58F813 *pAVar33;
+  AnonNested_00652810_000F_9CE8027E *pAVar34;
+  STFishC *pSVar35;
+  uint uVar36;
+  uint **ppuVar38;
+  bool bVar39;
+  int iVar40;
+  AiFltClassTyVTable *pAVar41;
   byte local_484 [256];
   byte local_384 [256];
   InternalExceptionFrame local_284;
   uint local_240 [2];
-  undefined1 local_237;
+  byte local_237;
   uint **local_236;
   uint *local_20c;
-  undefined2 local_208;
-  undefined2 local_206;
-  undefined4 local_204;
-  undefined2 local_200;
+  ushort local_208;
+  ushort local_206;
+  uint local_204;
+  ushort local_200;
   int local_1fe;
-  undefined2 local_1f6;
-  undefined2 local_1f4;
-  undefined2 local_1f2;
-  undefined1 local_1f0;
+  ushort local_1f6;
+  ushort local_1f4;
+  ushort local_1f2;
+  byte local_1f0;
   char local_1ef [15];
   uint local_1e0;
-  undefined1 local_1ce;
-  undefined4 local_1c0 [4];
+  byte local_1ce;
+  uint local_1c0 [4];
   int local_1b0;
-  undefined4 local_1a0;
+  uint local_1a0;
   uint local_19c;
   int local_198;
   int local_194;
@@ -1059,7 +1084,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
   AiEventClassTy *local_188;
   uint *local_184;
   DArrayTy *local_180;
-  void *local_17c;
+  RecoveredRecordView_0068E690_5404D20D *local_17c;
   AnonShape_00652810_4F58F813 *local_178;
   int local_174;
   DArrayTy *local_170;
@@ -1079,7 +1104,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
   int local_134;
   char local_9c;
   uint local_68 [2];
-  undefined1 local_60;
+  byte local_60;
   undefined1 uStack_5f;
   undefined1 uStack_5e;
   undefined1 uStack_5d;
@@ -1087,7 +1112,7 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
   undefined1 uStack_5b;
   undefined1 uStack_5a;
   undefined1 uStack_59;
-  undefined1 local_58;
+  byte local_58;
   undefined1 uStack_57;
   undefined1 uStack_56;
   undefined1 uStack_55;
@@ -1097,11 +1122,11 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
   undefined1 uStack_51;
   undefined1 uStack_50;
   undefined1 uStack_4f;
-  undefined2 local_4e;
+  ushort local_4e;
   undefined1 uStack_4c;
   char cStack_4b;
-  undefined4 local_4a;
-  undefined2 local_3b;
+  uint local_4a;
+  ushort local_3b;
   int local_39;
   uint output_values_neg_34 [8];
   uint local_14;
@@ -1124,60 +1149,62 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
       local_19c = this->field_04E2[2];
       local_284.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_284;
+
       iVar7 = st::fn_0072D7F0(local_284.jumpBuffer,0);
       this_00 = local_188;
       if (iVar7 == 0) {
         local_14 = 0;
         pDVar17 = local_188->field_04EE;
-        bVar36 = pDVar17->count != 0;
+        bVar39 = pDVar17->count != 0;
         if (0 < (int)pDVar17->count) {
           do {
-            if (bVar36) {
-              pAVar30 = DArrayAt<AnonShape_00652810_4F58F813>(pDVar17, local_14);
+            if (bVar39) {
+              pAVar33 = DArrayAt<AnonShape_00652810_4F58F813>(pDVar17, local_14);
             }
             else {
-              pAVar30 = nullptr;
+              pAVar33 = nullptr;
             }
-            local_178 = pAVar30;
-            if (*(char *)pAVar30 == '\0') {
-              if (*(int *)&pAVar30->field_0x5 == local_194) {
+            local_178 = pAVar33;
+            if (*(char *)pAVar33 == '\0') {
+              if (*(int *)&pAVar33->field_0x5 == local_194) {
                 if (local_198 == 0) {
                   /* ST_CALLSITE[00652933]: CALL 0x0040371a; direct=0040371A AiEventClassTy::sub_0065BD70 */
                   st::fn_0040371A(this_00,message,1);
                   local_198 = 1;
                 }
+
                 local_EAX_327 =
-                     st::fn_00402923((AnonReceiver_0064A970 *)this_00,
-                                        (AnonShape_00683780_11EA4E23 *)&this_00->field_04FA,
-                                        (int)*(short *)&pAVar30->field_0x9,(short *)&local_16c);
-                uVar33 = local_14;
+                     st::fn_00402923(reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                        reinterpret_cast<RecoveredGlobalRecordView_00848A14 *>(&this_00->field_04FA),
+                                        (int)*(short *)&pAVar33->field_0x9,reinterpret_cast<short *>(&local_16c));
+                uVar36 = local_14;
                 if (local_EAX_327 < 0) {
-                  iVar37 = this_00->field_0084;
+                  iVar40 = this_00->field_0084;
                   pcVar8_mg40 = &this_00->field_0004;
                 }
                 else {
                   if (local_9c == '\b') {
                     if (pDStack_164 != nullptr) {
-                      *(char *)pAVar30 = '\x01';
-                      pAVar30->field_000B = 0;
-                      pAVar31 = pAVar30->field_000F;
+                      *(char *)pAVar33 = '\x01';
+                      pAVar33->field_000B = 0;
+                      pAVar34 = pAVar33->field_000F;
                       local_170 = nullptr;
                       local_174 = 0;
-                      pDVar17 = pAVar31->field_000C;
+                      pDVar17 = pAVar34->field_000C;
                       if (0 < (int)pDVar17) {
                         do {
                           if (local_170 < pDVar17) {
-                            psVar8 = (short *)(pAVar31->field_0008 * (int)local_170 +
-                                              pAVar31->field_001C);
+                            psVar8 = (short *)(pAVar34->field_0008 * (int)local_170 +
+                                              pAVar34->field_001C);
                           }
                           else {
                             psVar8 = nullptr;
                           }
+
                           local_EAX_488 =
-                               st::fn_00402923((AnonReceiver_0064A970 *)this_00,
-                                                  (AnonShape_00683780_11EA4E23 *)
-                                                  &this_00->field_04FA,(int)*psVar8,
-                                                  (short *)&local_16c);
+                               st::fn_00402923(reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                  reinterpret_cast<RecoveredGlobalRecordView_00848A14 *>(&this_00->field_04FA),(int)*psVar8,
+                                                  reinterpret_cast<short *>(&local_16c));
                           if (local_EAX_488 < 0) {
                             st::fn_00405042(this_00,local_EAX_488,&this_00->field_0004,local_14,
                                                -1);
@@ -1192,22 +1219,24 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                 if (local_EAX_488 != 0x76c) {
                                   switch(local_EAX_488) {
                                   case 0x5dc:
-                                    iVar37 = st::fn_00401C67((short *)&local_16c);
-                                    if (iVar37 != 0) {
+
+                                    iVar40 = st::fn_00401C67(reinterpret_cast<short *>(&local_16c));
+                                    if (iVar40 != 0) {
                                       /* ST_CALLSITE[00656FFE]: CALL dword ptr [EAX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[00657023]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[00657023]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            st::fn_00403003(*puVar12,(char *)local_15c,
+
+                                            st::fn_00403003(*puVar12,reinterpret_cast<char *>(local_15c),
                                                                (ushort)local_158,(char)local_154,
                                                                (ushort)local_150,(char)local_14c,
                                                                (uint)local_148);
@@ -1220,40 +1249,45 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                     }
                                     break;
                                   case 0x5dd:
-                                    local_EAX_18546 = st::fn_004048A4((int)&local_16c);
+
+                                    local_EAX_18546 =
+                                         st::fn_004048A4(reinterpret_cast<RecoveredRecord_00651120_F461859C *>(&local_16c));
                                     if (local_EAX_18546 != 0) {
                                       /* ST_CALLSITE[00657096]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[006570BB]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[006570BB]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            if (pSVar14 == nullptr) {
+                                            /* ST_CALLSITE[006570E4]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            if (pRVar14 == nullptr)
+                                            {
                                               st::fn_00405042(this_00,-0xaa,&CHAR_00h_008016a0,
                                                                  local_14,*puVar12);
                                             }
                                             else {
-                                              pAVar20 = (AnonShape_0065DA10_8B0AA883 *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (pAVar20 == nullptr) {
-                                                uVar33 = *puVar12;
-                                                uVar28 = local_14;
+                                              /* ST_CALLSITE[00657109]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_0065DA10_5A1C53AF; signature=__fastcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_0065DA10_5A1C53AF;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pRVar21 = st::pointer_boundary_cast<RecoveredRecordView_0065DA10_5A1C53AF *>(st::fn_00405902(pRVar14));
+                                              if (pRVar21 ==
+                                                  nullptr) {
+                                                uVar36 = *puVar12;
+                                                uVar31 = local_14;
                                                 pcVar8_mg22 = st::fn_004057DB(local_EAX_488);
-                                                st::fn_00405042(this_00,-0xab,pcVar8_mg22,uVar28,
-                                                                   uVar33);
+                                                st::fn_00405042(this_00,-0xab,pcVar8_mg22,uVar31,
+                                                                   uVar36);
                                               }
                                               else {
                                                 /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-                                                st::fn_0040130C(pAVar20,extraout_EDX_04);
+                                                st::fn_0040130C(pRVar21,extraout_EDX_04);
                                               }
                                             }
                                             puVar12 = puVar12 + 1;
@@ -1265,40 +1299,45 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                     }
                                     break;
                                   case 0x5de:
-                                    local_EAX_18755 = st::fn_00401FBE((int)&local_16c);
+
+                                    local_EAX_18755 =
+                                         st::fn_00401FBE(reinterpret_cast<RecoveredRecord_00651160_26346523 *>(&local_16c));
                                     if (local_EAX_18755 != 0) {
                                       /* ST_CALLSITE[00657167]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[0065718C]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[0065718C]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            if (pSVar14 == nullptr) {
+                                            /* ST_CALLSITE[006571B5]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            if (pRVar14 == nullptr)
+                                            {
                                               st::fn_00405042(this_00,-0xaa,&CHAR_00h_008016a0,
                                                                  local_14,*puVar12);
                                             }
                                             else {
-                                              pAVar20 = (AnonShape_0065DA10_8B0AA883 *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (pAVar20 == nullptr) {
-                                                uVar33 = *puVar12;
-                                                uVar28 = local_14;
+                                              /* ST_CALLSITE[006571DA]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_0065DA10_5A1C53AF; signature=__fastcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_0065DA10_5A1C53AF;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pRVar21 = st::pointer_boundary_cast<RecoveredRecordView_0065DA10_5A1C53AF *>(st::fn_00405902(pRVar14));
+                                              if (pRVar21 ==
+                                                  nullptr) {
+                                                uVar36 = *puVar12;
+                                                uVar31 = local_14;
                                                 pcVar8_mg21 = st::fn_004057DB(local_EAX_488);
-                                                st::fn_00405042(this_00,-0xab,pcVar8_mg21,uVar28,
-                                                                   uVar33);
+                                                st::fn_00405042(this_00,-0xab,pcVar8_mg21,uVar31,
+                                                                   uVar36);
                                               }
                                               else {
                                                 /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-                                                st::fn_00401EF1(pAVar20,extraout_EDX_05);
+                                                st::fn_00401EF1(pRVar21,extraout_EDX_05);
                                               }
                                             }
                                             puVar12 = puVar12 + 1;
@@ -1310,39 +1349,46 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                     }
                                     break;
                                   case 0x5df:
-                                    local_EAX_18964 = st::fn_00401FBE((int)&local_16c);
+
+                                    local_EAX_18964 =
+                                         st::fn_00401FBE(reinterpret_cast<RecoveredRecord_00651160_26346523 *>(&local_16c));
                                     if (local_EAX_18964 != 0) {
                                       /* ST_CALLSITE[00657238]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_8 = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[0065725D]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[0065725D]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_8) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            if (pSVar14 == nullptr) {
+                                            /* ST_CALLSITE[00657286]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            if (pRVar14 == nullptr)
+                                            {
                                               st::fn_00405042(this_00,-0xaa,&CHAR_00h_008016a0,
                                                                  local_14,*puVar12);
                                             }
                                             else {
-                                              local_17c = (void *)st::fn_00405902((int)pSVar14);
-                                              if (local_17c == nullptr) {
-                                                uVar33 = *puVar12;
-                                                uVar28 = local_14;
+                                              local_17c = (RecoveredRecordView_0068E690_5404D20D *)
+
+                                                          st::fn_00405902(pRVar14);
+                                              if (local_17c ==
+                                                  nullptr) {
+                                                uVar36 = *puVar12;
+                                                uVar31 = local_14;
                                                 pcVar8_mg20 = st::fn_004057DB(local_EAX_488);
-                                                st::fn_00405042(this_00,-0xab,pcVar8_mg20,uVar28,
-                                                                   uVar33);
+                                                st::fn_00405042(this_00,-0xab,pcVar8_mg20,uVar31,
+                                                                   uVar36);
                                               }
                                               else {
-                                                /* ST_CALLSITE[006572DC]: CALL 0x00404da9; direct=00404DA9 _GetStaffGrpExch */
-                                                pDVar17 = (DArrayTy *)st::fn_00404DA9(*puVar12);
+                                                /* ST_CALLSITE[006572DC]: CALL 0x00404da9; direct=00404DA9 _GetStaffGrpExch; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__cdecl;pointer:/SubmarineTitans/Recovered/DArrayTy;/undefined4 */
+                                                pDVar17 = st::pointer_boundary_cast<DArrayTy *>(st::fn_00404DA9(*puVar12));
                                                 if (pDVar17 != nullptr) {
                                                   st::fn_004020EA(local_17c,pDVar17,0);
                                                   st::fn_006AE110(pDVar17);
@@ -1358,29 +1404,31 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                     }
                                     break;
                                   case 0x5e0:
-                                    local_EAX_19222 = st::fn_00403AA3((int)&local_16c);
+
+                                    local_EAX_19222 =
+                                         st::fn_00403AA3(reinterpret_cast<RecoveredRecord_006511A0_EA666092 *>(&local_16c));
                                     if (local_EAX_19222 != 0) {
                                       /* ST_CALLSITE[0065733A]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[0065735F]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[0065735F]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
+                                            pSVar22 = st::fn_00405CF9((char)*puVar12,
                                                                          (ushort)local_15c);
-                                            if (pSVar14 == nullptr) {
+                                            if (pSVar22 == nullptr) {
                                               st::fn_00405042(this_00,-0xaa,&CHAR_00h_008016a0,
                                                                  local_14,*puVar12);
                                             }
                                             else {
-                                              st::fn_0040460B(pSVar14,(uint)local_158);
+                                              st::fn_0040460B(pSVar22,(uint)local_158);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -1391,29 +1439,31 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                     }
                                     break;
                                   case 0x5e1:
-                                    local_EAX_19384 = st::fn_00403AA3((int)&local_16c);
+
+                                    local_EAX_19384 =
+                                         st::fn_00403AA3(reinterpret_cast<RecoveredRecord_006511A0_EA666092 *>(&local_16c));
                                     if (local_EAX_19384 != 0) {
                                       /* ST_CALLSITE[006573DC]: CALL dword ptr [EAX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[00657401]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[00657401]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
+                                            pSVar22 = st::fn_00405CF9((char)*puVar12,
                                                                          (ushort)local_15c);
-                                            if (pSVar14 == nullptr) {
+                                            if (pSVar22 == nullptr) {
                                               st::fn_00405042(this_00,-0xaa,&CHAR_00h_008016a0,
                                                                  local_14,*puVar12);
                                             }
                                             else {
-                                              st::fn_00403788(pSVar14,(uint)local_158);
+                                              st::fn_00403788(pSVar22,(uint)local_158);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -1424,35 +1474,42 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                     }
                                     break;
                                   case 0x5e2:
-                                    local_EAX_19546 = st::fn_00405CB3((int)&local_16c);
+
+                                    local_EAX_19546 =
+                                         st::fn_00405CB3(reinterpret_cast<RecoveredRecord_006511E0_D143FD4C *>(&local_16c));
                                     if (local_EAX_19546 != 0) {
                                       /* ST_CALLSITE[0065747E]: CALL dword ptr [EAX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[006574A3]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[006574A3]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            if (pSVar14 == nullptr) {
+                                            /* ST_CALLSITE[006574CC]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            if (pRVar14 == nullptr)
+                                            {
                                               st::fn_00405042(this_00,-0xaa,&CHAR_00h_008016a0,
                                                                  local_14,*puVar12);
                                             }
                                             else {
-                                              local_17c = (void *)st::fn_00405902((int)pSVar14);
-                                              if (local_17c == nullptr) {
-                                                uVar33 = *puVar12;
-                                                uVar28 = local_14;
+                                              local_17c = (RecoveredRecordView_0068E690_5404D20D *)
+
+                                                          st::fn_00405902(pRVar14);
+                                              if (local_17c ==
+                                                  nullptr) {
+                                                uVar36 = *puVar12;
+                                                uVar31 = local_14;
                                                 pcVar8_mg1F = st::fn_004057DB(local_EAX_488);
-                                                st::fn_00405042(this_00,-0xab,pcVar8_mg1F,uVar28,
-                                                                   uVar33);
+                                                st::fn_00405042(this_00,-0xab,pcVar8_mg1F,uVar31,
+                                                                   uVar36);
                                               }
                                               else {
                                                 pAVar10 = nullptr;
@@ -1462,15 +1519,16 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                                 }
                                                 if (pAVar10 != nullptr) {
                                                   local_8 = (DArrayTy *)
-                                                            st::fn_00405A06(pAVar10,(byte *)
-                                                  local_158);
+
+                                                            st::fn_00405A06(pAVar10,reinterpret_cast<byte *>(local_158));
                                                 }
                                                 if (local_8 == nullptr) {
-                                                  st::fn_00405042(this_00,-4,(char *)local_158,
+                                                  st::fn_00405042(this_00,-4,reinterpret_cast<char *>(local_158),
                                                                      local_14,*puVar12);
                                                 }
                                                 else {
-                                                  st::fn_00405EC5(local_8,(int)local_17c);
+
+                                                  st::fn_00405EC5(local_8,local_17c);
                                                 }
                                               }
                                             }
@@ -1483,38 +1541,44 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                     }
                                     break;
                                   case 0x5e3:
-                                    local_EAX_19855 = st::fn_00404FED((int)&local_16c);
+
+                                    local_EAX_19855 =
+                                         st::fn_00404FED(reinterpret_cast<RecoveredRecord_00651250_A6EBE57F *>(&local_16c));
                                     if (local_EAX_19855 != 0) {
                                       /* ST_CALLSITE[006575B3]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[006575D8]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[006575D8]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            if (pSVar14 == nullptr) {
+                                            /* ST_CALLSITE[00657601]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            if (pRVar14 == nullptr)
+                                            {
                                               st::fn_00405042(this_00,-0xaa,&CHAR_00h_008016a0,
                                                                  local_14,*puVar12);
                                             }
                                             else {
-                                              iVar37 = st::fn_00405902((int)pSVar14);
-                                              if (iVar37 == 0) {
-                                                uVar33 = *puVar12;
-                                                uVar28 = local_14;
+                                              /* ST_CALLSITE[00657626]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_0065D590_F2A3738B; signature=__fastcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_0065D590_F2A3738B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pRVar23 = st::pointer_boundary_cast<RecoveredRecordView_0065D590_F2A3738B *>(st::fn_00405902(pRVar14));
+                                              if (pRVar23 ==
+                                                  nullptr) {
+                                                uVar36 = *puVar12;
+                                                uVar31 = local_14;
                                                 pcVar8_mg1E = st::fn_004057DB(local_EAX_488);
-                                                st::fn_00405042(this_00,-0xab,pcVar8_mg1E,uVar28,
-                                                                   uVar33);
+                                                st::fn_00405042(this_00,-0xab,pcVar8_mg1E,uVar31,
+                                                                   uVar36);
                                               }
                                               else {
-                                                st::fn_004037E7(iVar37);
+                                                st::fn_004037E7(pRVar23);
                                               }
                                             }
                                             puVar12 = puVar12 + 1;
@@ -1526,45 +1590,48 @@ void __thiscall st::fn_00652810(AiEventClassTy *this,STMessage *message)
                                     }
                                     break;
                                   case 0x5e4:
-                                    iVar37 = st::fn_0040155A((short *)&local_16c);
-                                    if (iVar37 != 0) {
+
+                                    iVar40 = st::fn_0040155A(reinterpret_cast<short *>(&local_16c));
+                                    if (iVar40 != 0) {
                                       /* ST_CALLSITE[00657684]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[006576A9]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[006576A9]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[006576D2]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg1D = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_006577ae:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg1D,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg1D,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (((pAVar22 == nullptr) ||
-                                                  (pAVar22->field_007B == 1)) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[006576F3]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if (((pAVar25 == nullptr) ||
+                                                  (pAVar25->field_007B == 1)) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg1D = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_006577ae;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -1577,7 +1644,7 @@ LAB_006577ae:
                                               uStack_59 = SUB41(local_14c,0);
                                               local_58 = (undefined1)((uint)local_14c >> 8);
                                               local_60 = STPiece<0,1>(local_158);
-                                              iVar37 = (int)local_144 * 0x19;
+                                              iVar40 = (int)local_144 * 0x19;
                                               uStack_5b = SUB41(local_150,0);
                                               uStack_5a = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 1;
@@ -1585,16 +1652,16 @@ LAB_006577ae:
                                               uStack_56 = (undefined1)((uint)local_148 >> 8);
                                               uStack_55 = (undefined1)((uint)local_148 >> 0x10);
                                               uStack_54 = (undefined1)((uint)local_148 >> 0x18);
-                                              uStack_53 = (undefined1)iVar37;
-                                              uStack_52 = (undefined1)((uint)iVar37 >> 8);
-                                              uStack_51 = (undefined1)((uint)iVar37 >> 0x10);
-                                              uStack_50 = (undefined1)((uint)iVar37 >> 0x18);
-                                              iVar37 = local_140 * 0x19;
-                                              uStack_4f = (undefined1)iVar37;
-                                              local_4e = (undefined2)((uint)iVar37 >> 8);
-                                              uStack_4c = (undefined1)((uint)iVar37 >> 0x18);
+                                              uStack_53 = (undefined1)iVar40;
+                                              uStack_52 = (undefined1)((uint)iVar40 >> 8);
+                                              uStack_51 = (undefined1)((uint)iVar40 >> 0x10);
+                                              uStack_50 = (undefined1)((uint)iVar40 >> 0x18);
+                                              iVar40 = local_140 * 0x19;
+                                              uStack_4f = (undefined1)iVar40;
+                                              local_4e = (undefined2)((uint)iVar40 >> 8);
+                                              uStack_4c = (undefined1)((uint)iVar40 >> 0x18);
                                               /* ST_CALLSITE[00657791]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -1605,45 +1672,48 @@ LAB_006577ae:
                                     }
                                     break;
                                   case 0x5e5:
-                                    local_EAX_20759 = st::fn_004013B6((short *)&local_16c);
+
+                                    local_EAX_20759 = st::fn_004013B6(reinterpret_cast<short *>(&local_16c));
                                     if (local_EAX_20759 != 0) {
                                       /* ST_CALLSITE[0065793B]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[00657960]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[00657960]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[00657989]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg1C = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_00657a41:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg1C,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg1C,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (((pAVar22 == nullptr) ||
-                                                  (pAVar22->field_007B == 1)) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[006579AA]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if (((pAVar25 == nullptr) ||
+                                                  (pAVar25->field_007B == 1)) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg1C = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_00657a41;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -1656,16 +1726,16 @@ LAB_00657a41:
                                               uStack_59 = SUB41(local_14c,0);
                                               local_58 = (undefined1)((uint)local_14c >> 8);
                                               local_60 = STPiece<0,1>(local_158);
-                                              iVar37 = (int)local_148 * 0x19;
+                                              iVar40 = (int)local_148 * 0x19;
                                               uStack_5b = SUB41(local_150,0);
                                               uStack_5a = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 2;
-                                              uStack_57 = (undefined1)iVar37;
-                                              uStack_56 = (undefined1)((uint)iVar37 >> 8);
-                                              uStack_55 = (undefined1)((uint)iVar37 >> 0x10);
-                                              uStack_54 = (undefined1)((uint)iVar37 >> 0x18);
+                                              uStack_57 = (undefined1)iVar40;
+                                              uStack_56 = (undefined1)((uint)iVar40 >> 8);
+                                              uStack_55 = (undefined1)((uint)iVar40 >> 0x10);
+                                              uStack_54 = (undefined1)((uint)iVar40 >> 0x18);
                                               /* ST_CALLSITE[00657A24]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -1676,45 +1746,48 @@ LAB_00657a41:
                                     }
                                     break;
                                   case 0x5e6:
-                                    iVar37 = st::fn_004015E6((short *)&local_16c);
-                                    if (iVar37 != 0) {
+
+                                    iVar40 = st::fn_004015E6(reinterpret_cast<short *>(&local_16c));
+                                    if (iVar40 != 0) {
                                       /* ST_CALLSITE[006577EB]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[00657810]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[00657810]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[00657839]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg1B = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_006578fe:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg1B,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg1B,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (((pAVar22 == nullptr) ||
-                                                  (pAVar22->field_007B == 1)) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[0065785A]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if (((pAVar25 == nullptr) ||
+                                                  (pAVar25->field_007B == 1)) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg1B = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_006578fe;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -1733,14 +1806,14 @@ LAB_006578fe:
                                               uStack_52 = (undefined1)((uint)local_148 >> 8);
                                               uStack_51 = (undefined1)((uint)local_148 >> 0x10);
                                               uStack_50 = (undefined1)((uint)local_148 >> 0x18);
-                                              iVar37 = (int)local_144 * 0x19;
+                                              iVar40 = (int)local_144 * 0x19;
                                               local_68[0] = 3;
-                                              uStack_57 = (undefined1)iVar37;
-                                              uStack_56 = (undefined1)((uint)iVar37 >> 8);
-                                              uStack_55 = (undefined1)((uint)iVar37 >> 0x10);
-                                              uStack_54 = (undefined1)((uint)iVar37 >> 0x18);
+                                              uStack_57 = (undefined1)iVar40;
+                                              uStack_56 = (undefined1)((uint)iVar40 >> 8);
+                                              uStack_55 = (undefined1)((uint)iVar40 >> 0x10);
+                                              uStack_54 = (undefined1)((uint)iVar40 >> 0x18);
                                               /* ST_CALLSITE[006578E1]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -1751,82 +1824,83 @@ LAB_006578fe:
                                     }
                                     break;
                                   case 0x5e7:
-                                    iVar37 = st::fn_00405966((
-                                                  RecoveredRecord_AiEventClassTy_006515B0 *)
-                                                  &local_16c);
-                                    if (iVar37 != 0) {
+
+                                    iVar40 = st::fn_00405966(reinterpret_cast<RecoveredRecord_AiEventClassTy_006515B0 *>(&local_16c));
+                                    if (iVar40 != 0) {
                                       /* ST_CALLSITE[00657A7E]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[00657AA3]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[00657AA3]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[00657ACC]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg19 = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_00657bce:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg19,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg19,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if ((pAVar22 == nullptr) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[00657AED]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if ((pAVar25 == nullptr) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg19 = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_00657bce;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
                                               }
-                                              uVar33 = (uint)local_158 & 0x3fffffff;
+                                              uVar36 = (uint)local_158 & 0x3fffffff;
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
-                                              local_60 = (undefined1)uVar33;
-                                              uStack_5f = (undefined1)(uVar33 >> 8);
-                                              uStack_5e = (undefined1)(uVar33 >> 0x10);
-                                              uStack_5d = (undefined1)(uVar33 >> 0x18);
-                                              uVar33 = (uint)local_154 & 0x3fffffff;
+                                              local_60 = (undefined1)uVar36;
+                                              uStack_5f = (undefined1)(uVar36 >> 8);
+                                              uStack_5e = (undefined1)(uVar36 >> 0x10);
+                                              uStack_5d = (undefined1)(uVar36 >> 0x18);
+                                              uVar36 = (uint)local_154 & 0x3fffffff;
                                               uStack_54 = SUB41(local_14c,0);
                                               uStack_53 = (undefined1)((uint)local_14c >> 8);
-                                              uStack_5c = (undefined1)uVar33;
-                                              uStack_5b = (undefined1)(uVar33 >> 8);
-                                              uStack_5a = (undefined1)(uVar33 >> 0x10);
-                                              uStack_59 = (undefined1)(uVar33 >> 0x18);
-                                              uVar33 = (uint)local_150 & 0x3fffffff;
+                                              uStack_5c = (undefined1)uVar36;
+                                              uStack_5b = (undefined1)(uVar36 >> 8);
+                                              uStack_5a = (undefined1)(uVar36 >> 0x10);
+                                              uStack_59 = (undefined1)(uVar36 >> 0x18);
+                                              uVar36 = (uint)local_150 & 0x3fffffff;
                                               local_4e = (undefined2)local_140;
-                                              local_58 = (undefined1)uVar33;
-                                              uStack_57 = (undefined1)(uVar33 >> 8);
-                                              uStack_56 = (undefined1)(uVar33 >> 0x10);
-                                              uStack_55 = (undefined1)(uVar33 >> 0x18);
+                                              local_58 = (undefined1)uVar36;
+                                              uStack_57 = (undefined1)(uVar36 >> 8);
+                                              uStack_56 = (undefined1)(uVar36 >> 0x10);
+                                              uStack_55 = (undefined1)(uVar36 >> 0x18);
                                               uStack_52 = SUB41(local_148,0);
                                               uStack_51 = (undefined1)((uint)local_148 >> 8);
                                               local_68[0] = 4;
                                               uStack_50 = SUB41(local_144,0);
                                               uStack_4f = (undefined1)((uint)local_144 >> 8);
                                               uStack_4c = (undefined1)local_13c;
-                                              pcVar21 = local_138;
+                                              pcVar24 = local_138;
                                               if (local_138 == nullptr) {
-                                                pcVar21 = &CHAR_00h_008016a0;
+                                                pcVar24 = &CHAR_00h_008016a0;
                                               }
-                                              st::fn_0072E340(&cStack_4b,pcVar21,0xe);
+                                              st::fn_0072E340(&cStack_4b,pcVar24,0xe);
                                               /* ST_CALLSITE[00657BB1]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -1837,44 +1911,48 @@ LAB_00657bce:
                                     }
                                     break;
                                   case 0x5e8:
-                                    local_EAX_21479 = st::fn_00401802((int)&local_16c);
+
+                                    local_EAX_21479 =
+                                         st::fn_00401802(reinterpret_cast<RecoveredRecord_00651730_E89B8086 *>(&local_16c));
                                     if (local_EAX_21479 != 0) {
                                       /* ST_CALLSITE[00657C0B]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[00657C30]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[00657C30]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[00657C59]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg18 = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_00657ccf:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg18,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg18,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if ((pAVar22 == nullptr) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[00657C77]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if ((pAVar25 == nullptr) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg18 = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_00657ccf;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -1882,7 +1960,7 @@ LAB_00657ccf:
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_68[0] = 5;
                                               /* ST_CALLSITE[00657CB2]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -1893,45 +1971,48 @@ LAB_00657ccf:
                                     }
                                     break;
                                   case 0x5e9:
-                                    iVar37 = st::fn_004054AC((AnonShape_00651770_8F77396F *)
-                                                                &local_16c);
-                                    if (iVar37 != 0) {
+
+                                    iVar40 = st::fn_004054AC(reinterpret_cast<RecoveredRecordView_00651770_AFECD81B *>(&local_16c)
+                                                  );
+                                    if (iVar40 != 0) {
                                       /* ST_CALLSITE[00657D0C]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[00657D31]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[00657D31]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[00657D5A]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg17 = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_00657dd9:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg17,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg17,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if ((pAVar22 == nullptr) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[00657D78]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if ((pAVar25 == nullptr) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg17 = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_00657dd9;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -1940,7 +2021,7 @@ LAB_00657dd9:
                                               local_60 = STPiece<0,1>(local_158);
                                               local_68[0] = 6;
                                               /* ST_CALLSITE[00657DBC]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -1951,45 +2032,48 @@ LAB_00657dd9:
                                     }
                                     break;
                                   case 0x5ea:
-                                    local_EAX_22002 = st::fn_00401226((short *)&local_16c);
+
+                                    local_EAX_22002 = st::fn_00401226(reinterpret_cast<short *>(&local_16c));
                                     if (local_EAX_22002 != 0) {
                                       /* ST_CALLSITE[00657E16]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[00657E3B]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[00657E3B]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[00657E64]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg16 = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_00657f1c:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg16,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg16,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (((pAVar22 == nullptr) ||
-                                                  (pAVar22->field_007B == 1)) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[00657E85]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if (((pAVar25 == nullptr) ||
+                                                  (pAVar25->field_007B == 1)) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg16 = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_00657f1c;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -2002,16 +2086,16 @@ LAB_00657f1c:
                                               uStack_59 = SUB41(local_14c,0);
                                               local_58 = (undefined1)((uint)local_14c >> 8);
                                               local_60 = STPiece<0,1>(local_158);
-                                              iVar37 = (int)local_148 * 0x19;
+                                              iVar40 = (int)local_148 * 0x19;
                                               uStack_5b = SUB41(local_150,0);
                                               uStack_5a = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 7;
-                                              uStack_57 = (undefined1)iVar37;
-                                              uStack_56 = (undefined1)((uint)iVar37 >> 8);
-                                              uStack_55 = (undefined1)((uint)iVar37 >> 0x10);
-                                              uStack_54 = (undefined1)((uint)iVar37 >> 0x18);
+                                              uStack_57 = (undefined1)iVar40;
+                                              uStack_56 = (undefined1)((uint)iVar40 >> 8);
+                                              uStack_55 = (undefined1)((uint)iVar40 >> 0x10);
+                                              uStack_54 = (undefined1)((uint)iVar40 >> 0x18);
                                               /* ST_CALLSITE[00657EFF]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -2022,45 +2106,49 @@ LAB_00657f1c:
                                     }
                                     break;
                                   case 0x5eb:
-                                    local_EAX_22325 = st::fn_00401429((int)&local_16c);
+
+                                    local_EAX_22325 =
+                                         st::fn_00401429(reinterpret_cast<RecoveredRecord_00651880_B0B7072C *>(&local_16c));
                                     if (local_EAX_22325 != 0) {
                                       /* ST_CALLSITE[00657F59]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[00657F7E]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[00657F7E]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[00657FA7]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg15 = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_0065806e:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg15,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg15,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (((pAVar22 == nullptr) ||
-                                                  (pAVar22->field_007B == 1)) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[00657FC8]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if (((pAVar25 == nullptr) ||
+                                                  (pAVar25->field_007B == 1)) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg15 = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_0065806e;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -2080,7 +2168,7 @@ LAB_0065806e:
                                               uStack_56 = SUB41(local_144,0);
                                               uStack_55 = (undefined1)((uint)local_144 >> 8);
                                               /* ST_CALLSITE[00658051]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -2091,45 +2179,49 @@ LAB_0065806e:
                                     }
                                     break;
                                   case 0x5ec:
-                                    local_EAX_22663 = st::fn_004047AA((int)&local_16c);
+
+                                    local_EAX_22663 =
+                                         st::fn_004047AA(reinterpret_cast<RecoveredRecord_006518C0_AF8C168C *>(&local_16c));
                                     if (local_EAX_22663 != 0) {
                                       /* ST_CALLSITE[006580AB]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[006580D0]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[006580D0]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[006580F9]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg14 = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_00658177:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg14,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg14,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (((pAVar22 == nullptr) ||
-                                                  (pAVar22->field_007B == 1)) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[00658117]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if (((pAVar25 == nullptr) ||
+                                                  (pAVar25->field_007B == 1)) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg14 = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_00658177;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -2137,7 +2229,7 @@ LAB_00658177:
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_68[0] = 9;
                                               /* ST_CALLSITE[0065815A]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -2148,45 +2240,48 @@ LAB_00658177:
                                     }
                                     break;
                                   case 0x5ed:
-                                    iVar37 = st::fn_00401C58((short *)&local_16c);
-                                    if (iVar37 != 0) {
+
+                                    iVar40 = st::fn_00401C58(reinterpret_cast<short *>(&local_16c));
+                                    if (iVar40 != 0) {
                                       /* ST_CALLSITE[00658A3B]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[00658A60]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[00658A60]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[00658A89]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg13 = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_00658b70:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg13,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg13,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (((pAVar22 == nullptr) ||
-                                                  (pAVar22->field_007B == 1)) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[00658AAA]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if (((pAVar25 == nullptr) ||
+                                                  (pAVar25->field_007B == 1)) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg13 = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_00658b70;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -2199,14 +2294,14 @@ LAB_00658b70:
                                               local_4e = (undefined2)((uint)local_14c >> 0x10);
                                               local_60 = SUB41(local_158,0);
                                               uStack_5f = (undefined1)((uint)local_158 >> 8);
-                                              iVar37 = (int)local_148 * 0x19;
+                                              iVar40 = (int)local_148 * 0x19;
                                               uStack_5c = SUB41(local_150,0);
                                               uStack_5b = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 0x34;
-                                              uStack_5a = (undefined1)iVar37;
-                                              uStack_59 = (undefined1)((uint)iVar37 >> 8);
-                                              local_58 = (undefined1)((uint)iVar37 >> 0x10);
-                                              uStack_57 = (undefined1)((uint)iVar37 >> 0x18);
+                                              uStack_5a = (undefined1)iVar40;
+                                              uStack_59 = (undefined1)((uint)iVar40 >> 8);
+                                              local_58 = (undefined1)((uint)iVar40 >> 0x10);
+                                              uStack_57 = (undefined1)((uint)iVar40 >> 0x18);
                                               uStack_54 = (undefined1)local_140;
                                               uStack_53 = (undefined1)(local_140 >> 8);
                                               uStack_56 = SUB41(local_144,0);
@@ -2214,7 +2309,7 @@ LAB_00658b70:
                                               uStack_52 = (undefined1)local_13c;
                                               uStack_51 = (undefined1)((uint)local_13c >> 8);
                                               /* ST_CALLSITE[00658B53]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -2225,47 +2320,50 @@ LAB_00658b70:
                                     }
                                     break;
                                   case 0x5ee:
+
                                     local_EAX_25481 =
                                          st::fn_004011B8((RecoveredRecord_AiEventClassTy_00651ED0
                                                              *)&local_16c);
                                     if (local_EAX_25481 != 0) {
                                       /* ST_CALLSITE[00658BAD]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[00658BD2]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[00658BD2]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[00658BFB]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg11 = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_00658d01:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg11,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg11,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (((pAVar22 == nullptr) ||
-                                                  (pAVar22->field_007B == 1)) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[00658C1C]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if (((pAVar25 == nullptr) ||
+                                                  (pAVar25->field_007B == 1)) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg11 = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_00658d01;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -2285,12 +2383,12 @@ LAB_00658d01:
                                               uStack_53 = (undefined1)((uint)local_150 >> 8);
                                               uStack_52 = (undefined1)((uint)local_150 >> 0x10);
                                               uStack_51 = (undefined1)((uint)local_150 >> 0x18);
-                                              pcVar21 = local_148;
+                                              pcVar24 = local_148;
                                               if (local_148 == nullptr) {
-                                                pcVar21 = &CHAR_00h_008016a0;
+                                                pcVar24 = &CHAR_00h_008016a0;
                                               }
                                               st::fn_0072E340
-                                                        ((char *)&local_4a,pcVar21,0xe);
+                                                        (reinterpret_cast<char *>(&local_4a),pcVar24,0xe);
                                               uStack_5b = (undefined1)(local_140 >> 8);
                                               uStack_5c = 0;
                                               uStack_5a = 0;
@@ -2302,7 +2400,7 @@ LAB_00658d01:
                                               uStack_5e = 0;
                                               uStack_5d = 0;
                                               /* ST_CALLSITE[00658CE4]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -2313,45 +2411,48 @@ LAB_00658d01:
                                     }
                                     break;
                                   case 0x5ef:
-                                    local_EAX_25882 = st::fn_0040566E((short *)&local_16c);
+
+                                    local_EAX_25882 = st::fn_0040566E(reinterpret_cast<short *>(&local_16c));
                                     if (local_EAX_25882 != 0) {
                                       /* ST_CALLSITE[00658D3E]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[00658D63]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[00658D63]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[00658D8C]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg10 = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_00658e8e:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg10,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg10,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (((pAVar22 == nullptr) ||
-                                                  (pAVar22->field_007B == 1)) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[00658DAD]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if (((pAVar25 == nullptr) ||
+                                                  (pAVar25->field_007B == 1)) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg10 = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_00658e8e;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -2381,7 +2482,7 @@ LAB_00658e8e:
                                               local_4a = (int)local_138 * 0x19;
                                               local_68[0] = 0x33;
                                               /* ST_CALLSITE[00658E71]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -2392,45 +2493,48 @@ LAB_00658e8e:
                                     }
                                     break;
                                   case 0x5f0:
-                                    local_EAX_26279 = st::fn_00404CAA((short *)&local_16c);
+
+                                    local_EAX_26279 = st::fn_00404CAA(reinterpret_cast<short *>(&local_16c));
                                     if (local_EAX_26279 != 0) {
                                       /* ST_CALLSITE[00658ECB]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[00658EF0]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[00658EF0]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[00658F19]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mgF = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_00658fc8:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mgF,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mgF,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (((pAVar22 == nullptr) ||
-                                                  (pAVar22->field_007B == 1)) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[00658F3A]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if (((pAVar25 == nullptr) ||
+                                                  (pAVar25->field_007B == 1)) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mgF = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_00658fc8;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -2444,14 +2548,14 @@ LAB_00658fc8:
                                               uStack_5f = (undefined1)((uint)local_150 >> 8);
                                               uStack_5e = (undefined1)((uint)local_150 >> 0x10);
                                               uStack_5d = (undefined1)((uint)local_150 >> 0x18);
-                                              iVar37 = (int)local_14c * 0x19;
+                                              iVar40 = (int)local_14c * 0x19;
                                               local_68[0] = 0x35;
-                                              local_58 = (undefined1)iVar37;
-                                              uStack_57 = (undefined1)((uint)iVar37 >> 8);
-                                              uStack_56 = (undefined1)((uint)iVar37 >> 0x10);
-                                              uStack_55 = (undefined1)((uint)iVar37 >> 0x18);
+                                              local_58 = (undefined1)iVar40;
+                                              uStack_57 = (undefined1)((uint)iVar40 >> 8);
+                                              uStack_56 = (undefined1)((uint)iVar40 >> 0x10);
+                                              uStack_55 = (undefined1)((uint)iVar40 >> 0x18);
                                               /* ST_CALLSITE[00658FAB]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -2462,44 +2566,47 @@ LAB_00658fc8:
                                     }
                                     break;
                                   case 0x5f1:
-                                    local_EAX_22928 = st::fn_004049B2((short *)&local_16c);
+
+                                    local_EAX_22928 = st::fn_004049B2(reinterpret_cast<short *>(&local_16c));
                                     if (local_EAX_22928 != 0) {
                                       /* ST_CALLSITE[006581B4]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[006581D9]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[006581D9]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[00658202]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mgE = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_006582b3:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mgE,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mgE,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if ((pAVar22 == nullptr) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[00658223]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if ((pAVar25 == nullptr) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mgE = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_006582b3;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -2524,7 +2631,7 @@ LAB_006582b3:
                                               uStack_51 = 0;
                                               uStack_50 = 0;
                                               /* ST_CALLSITE[00658296]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -2535,43 +2642,46 @@ LAB_006582b3:
                                     }
                                     break;
                                   case 0x5f2:
-                                    iVar37 = st::fn_00403E3B((short *)&local_16c);
-                                    if (iVar37 != 0) {
+
+                                    iVar40 = st::fn_00403E3B(reinterpret_cast<short *>(&local_16c));
+                                    if (iVar40 != 0) {
                                       /* ST_CALLSITE[006582F0]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[00658315]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[00658315]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[0065833E]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mgD = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_00658416:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mgD,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mgD,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (pAVar22 == nullptr) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[0065835F]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if (pAVar25 == nullptr) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mgD = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_00658416;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -2582,17 +2692,17 @@ LAB_00658416:
                                               uStack_5b = SUB41(local_14c,0);
                                               uStack_5a = (undefined1)((uint)local_14c >> 8);
                                               local_60 = STPiece<0,1>(local_158);
-                                              iVar37 = (int)local_144 * 0x19;
+                                              iVar40 = (int)local_144 * 0x19;
                                               uStack_5d = SUB41(local_150,0);
                                               uStack_5c = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 0xb;
                                               uStack_4f = SUB41(local_148,0);
                                               local_4e = (undefined2)((uint)local_148 >> 8);
                                               uStack_4c = (undefined1)((uint)local_148 >> 0x18);
-                                              uStack_59 = (undefined1)iVar37;
-                                              local_58 = (undefined1)((uint)iVar37 >> 8);
-                                              uStack_57 = (undefined1)((uint)iVar37 >> 0x10);
-                                              uStack_56 = (undefined1)((uint)iVar37 >> 0x18);
+                                              uStack_59 = (undefined1)iVar40;
+                                              local_58 = (undefined1)((uint)iVar40 >> 8);
+                                              uStack_57 = (undefined1)((uint)iVar40 >> 0x10);
+                                              uStack_56 = (undefined1)((uint)iVar40 >> 0x18);
                                               uStack_55 = (undefined1)local_140;
                                               uStack_54 = (undefined1)(local_140 >> 8);
                                               uStack_53 = (undefined1)local_13c;
@@ -2600,7 +2710,7 @@ LAB_00658416:
                                               uStack_51 = SUB41(local_138,0);
                                               uStack_50 = (undefined1)((uint)local_138 >> 8);
                                               /* ST_CALLSITE[006583F9]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -2611,45 +2721,48 @@ LAB_00658416:
                                     }
                                     break;
                                   case 0x5f3:
-                                    iVar37 = st::fn_00402BC1((short *)&local_16c);
-                                    if (iVar37 != 0) {
+
+                                    iVar40 = st::fn_00402BC1(reinterpret_cast<short *>(&local_16c));
+                                    if (iVar40 != 0) {
                                       /* ST_CALLSITE[00658453]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[00658478]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[00658478]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[006584A1]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mgC = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_00658543:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mgC,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mgC,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (((pAVar22 == nullptr) ||
-                                                  (pAVar22->field_007B == 1)) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[006584C2]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if (((pAVar25 == nullptr) ||
+                                                  (pAVar25->field_007B == 1)) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mgC = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_00658543;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -2661,13 +2774,13 @@ LAB_00658543:
                                               uStack_5c = (undefined1)((uint)local_154 >> 0x18);
                                               local_60 = STPiece<0,1>(local_158);
                                               local_68[0] = 0xc;
-                                              iVar37 = (int)local_150 * 0x19;
-                                              uStack_5b = (undefined1)iVar37;
-                                              uStack_5a = (undefined1)((uint)iVar37 >> 8);
-                                              uStack_59 = (undefined1)((uint)iVar37 >> 0x10);
-                                              local_58 = (undefined1)((uint)iVar37 >> 0x18);
+                                              iVar40 = (int)local_150 * 0x19;
+                                              uStack_5b = (undefined1)iVar40;
+                                              uStack_5a = (undefined1)((uint)iVar40 >> 8);
+                                              uStack_59 = (undefined1)((uint)iVar40 >> 0x10);
+                                              local_58 = (undefined1)((uint)iVar40 >> 0x18);
                                               /* ST_CALLSITE[00658526]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -2678,45 +2791,48 @@ LAB_00658543:
                                     }
                                     break;
                                   case 0x5f4:
-                                    iVar37 = st::fn_004026BC((short *)&local_16c);
-                                    if (iVar37 != 0) {
+
+                                    iVar40 = st::fn_004026BC(reinterpret_cast<short *>(&local_16c));
+                                    if (iVar40 != 0) {
                                       /* ST_CALLSITE[00658580]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[006585A5]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[006585A5]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[006585CE]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mgB = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_00658670:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mgB,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mgB,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (((pAVar22 == nullptr) ||
-                                                  (pAVar22->field_007B == 1)) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[006585EF]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if (((pAVar25 == nullptr) ||
+                                                  (pAVar25->field_007B == 1)) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mgB = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_00658670;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -2728,13 +2844,13 @@ LAB_00658670:
                                               uStack_5c = (undefined1)((uint)local_154 >> 0x18);
                                               local_60 = STPiece<0,1>(local_158);
                                               local_68[0] = 0xd;
-                                              iVar37 = (int)local_150 * 0x19;
-                                              uStack_5b = (undefined1)iVar37;
-                                              uStack_5a = (undefined1)((uint)iVar37 >> 8);
-                                              uStack_59 = (undefined1)((uint)iVar37 >> 0x10);
-                                              local_58 = (undefined1)((uint)iVar37 >> 0x18);
+                                              iVar40 = (int)local_150 * 0x19;
+                                              uStack_5b = (undefined1)iVar40;
+                                              uStack_5a = (undefined1)((uint)iVar40 >> 8);
+                                              uStack_59 = (undefined1)((uint)iVar40 >> 0x10);
+                                              local_58 = (undefined1)((uint)iVar40 >> 0x18);
                                               /* ST_CALLSITE[00658653]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -2745,45 +2861,48 @@ LAB_00658670:
                                     }
                                     break;
                                   case 0x5f5:
-                                    iVar37 = st::fn_004044C1((short *)&local_16c);
-                                    if (iVar37 != 0) {
+
+                                    iVar40 = st::fn_004044C1(reinterpret_cast<short *>(&local_16c));
+                                    if (iVar40 != 0) {
                                       /* ST_CALLSITE[006586AD]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[006586D2]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[006586D2]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[006586FB]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mgA = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_006587e2:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mgA,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mgA,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (((pAVar22 == nullptr) ||
-                                                  (pAVar22->field_007B == 1)) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[0065871C]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if (((pAVar25 == nullptr) ||
+                                                  (pAVar25->field_007B == 1)) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mgA = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_006587e2;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -2796,14 +2915,14 @@ LAB_006587e2:
                                               local_4e = (undefined2)((uint)local_14c >> 0x10);
                                               local_60 = SUB41(local_158,0);
                                               uStack_5f = (undefined1)((uint)local_158 >> 8);
-                                              iVar37 = (int)local_148 * 0x19;
+                                              iVar40 = (int)local_148 * 0x19;
                                               uStack_5c = SUB41(local_150,0);
                                               uStack_5b = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 0xe;
-                                              uStack_5a = (undefined1)iVar37;
-                                              uStack_59 = (undefined1)((uint)iVar37 >> 8);
-                                              local_58 = (undefined1)((uint)iVar37 >> 0x10);
-                                              uStack_57 = (undefined1)((uint)iVar37 >> 0x18);
+                                              uStack_5a = (undefined1)iVar40;
+                                              uStack_59 = (undefined1)((uint)iVar40 >> 8);
+                                              local_58 = (undefined1)((uint)iVar40 >> 0x10);
+                                              uStack_57 = (undefined1)((uint)iVar40 >> 0x18);
                                               uStack_54 = (undefined1)local_140;
                                               uStack_53 = (undefined1)(local_140 >> 8);
                                               uStack_56 = SUB41(local_144,0);
@@ -2811,7 +2930,7 @@ LAB_006587e2:
                                               uStack_52 = (undefined1)local_13c;
                                               uStack_51 = (undefined1)((uint)local_13c >> 8);
                                               /* ST_CALLSITE[006587C5]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -2822,45 +2941,49 @@ LAB_006587e2:
                                     }
                                     break;
                                   case 0x5f6:
-                                    local_EAX_24571 = st::fn_00405D71((int)&local_16c);
+
+                                    local_EAX_24571 =
+                                         st::fn_00405D71(reinterpret_cast<RecoveredRecord_00651DB0_B471A58B *>(&local_16c));
                                     if (local_EAX_24571 != 0) {
                                       /* ST_CALLSITE[0065881F]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[00658844]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[00658844]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[0065886D]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg9 = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_006588eb:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg9,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg9,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (((pAVar22 == nullptr) ||
-                                                  (pAVar22->field_007B == 1)) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[0065888B]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if (((pAVar25 == nullptr) ||
+                                                  (pAVar25->field_007B == 1)) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg9 = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_006588eb;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -2868,7 +2991,7 @@ LAB_006588eb:
                                               local_68[1] = g_playSystem_00802A38->field_00E4;
                                               local_68[0] = 0xf;
                                               /* ST_CALLSITE[006588CE]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -2879,44 +3002,47 @@ LAB_006588eb:
                                     }
                                     break;
                                   case 0x5f7:
-                                    iVar37 = st::fn_004046D3((short *)&local_16c);
-                                    if (iVar37 != 0) {
+
+                                    iVar40 = st::fn_004046D3(reinterpret_cast<short *>(&local_16c));
+                                    if (iVar40 != 0) {
                                       /* ST_CALLSITE[00658928]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[0065894D]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[0065894D]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[00658976]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg8 = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_006589fe:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg8,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg8,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if ((pAVar22 == nullptr) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[00658994]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if ((pAVar25 == nullptr) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg8 = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_006589fe;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -2929,7 +3055,7 @@ LAB_006589fe:
                                               uStack_5d = (undefined1)((uint)local_154 >> 0x10);
                                               uStack_5c = (undefined1)((uint)local_154 >> 0x18);
                                               /* ST_CALLSITE[006589E1]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -2940,45 +3066,48 @@ LAB_006589fe:
                                     }
                                     break;
                                   case 0x5f8:
-                                    local_EAX_26593 = st::fn_00402D65((short *)&local_16c);
+
+                                    local_EAX_26593 = st::fn_00402D65(reinterpret_cast<short *>(&local_16c));
                                     if (local_EAX_26593 != 0) {
                                       /* ST_CALLSITE[00659005]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[0065902A]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[0065902A]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[00659053]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg7 = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_00659143:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg7,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg7,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (((pAVar22 == nullptr) ||
-                                                  (pAVar22->field_007B == 1)) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[00659074]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if (((pAVar25 == nullptr) ||
+                                                  (pAVar25->field_007B == 1)) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg7 = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_00659143;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -3002,14 +3131,14 @@ LAB_00659143:
                                               uStack_5d = (undefined1)((uint)local_13c >> 0x18);
                                               uStack_52 = SUB41(local_148,0);
                                               uStack_51 = (undefined1)((uint)local_148 >> 8);
-                                              iVar37 = (int)local_138 * 0x19;
+                                              iVar40 = (int)local_138 * 0x19;
                                               local_4e = (undefined2)local_140;
                                               local_68[0] = 0x36;
-                                              uStack_4c = (undefined1)iVar37;
-                                              cStack_4b = (char)((uint)iVar37 >> 8);
-                                              STPiece<0,2>(local_4a) = (undefined2)((uint)iVar37 >> 0x10);
+                                              uStack_4c = (undefined1)iVar40;
+                                              cStack_4b = (char)((uint)iVar40 >> 8);
+                                              STPiece<0,2>(local_4a) = (undefined2)((uint)iVar40 >> 0x10);
                                               /* ST_CALLSITE[00659126]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -3020,47 +3149,50 @@ LAB_00659143:
                                     }
                                     break;
                                   case 0x5f9:
+
                                     local_EAX_27539 =
                                          st::fn_00402FC7((RecoveredRecord_AiEventClassTy_00652460
                                                              *)&local_16c);
                                     if (local_EAX_27539 != 0) {
                                       /* ST_CALLSITE[006593B7]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[006593DC]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[006593DC]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[00659405]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg6 = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_006594ec:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg6,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg6,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (((pAVar22 == nullptr) ||
-                                                  (pAVar22->field_007B == 1)) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[00659426]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if (((pAVar25 == nullptr) ||
+                                                  (pAVar25->field_007B == 1)) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg6 = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_006594ec;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -3082,13 +3214,13 @@ LAB_006594ec:
                                               uStack_5f = (undefined1)(local_140 >> 8);
                                               uStack_5e = (undefined1)(local_140 >> 0x10);
                                               uStack_5d = (undefined1)(local_140 >> 0x18);
-                                              iVar37 = local_13c * 0x19;
+                                              iVar40 = local_13c * 0x19;
                                               local_68[0] = 0x37;
-                                              uStack_50 = (undefined1)iVar37;
-                                              uStack_4f = (undefined1)((uint)iVar37 >> 8);
-                                              local_4e = (undefined2)((uint)iVar37 >> 0x10);
+                                              uStack_50 = (undefined1)iVar40;
+                                              uStack_4f = (undefined1)((uint)iVar40 >> 8);
+                                              local_4e = (undefined2)((uint)iVar40 >> 0x10);
                                               /* ST_CALLSITE[006594CF]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -3099,45 +3231,48 @@ LAB_006594ec:
                                     }
                                     break;
                                   case 0x5fa:
-                                    local_EAX_27909 = st::fn_004011C2((short *)&local_16c);
+
+                                    local_EAX_27909 = st::fn_004011C2(reinterpret_cast<short *>(&local_16c));
                                     if (local_EAX_27909 != 0) {
                                       /* ST_CALLSITE[00659529]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[0065954E]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[0065954E]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[00659577]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg5 = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_00659640:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg5,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg5,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (((pAVar22 == nullptr) ||
-                                                  (pAVar22->field_007B == 1)) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[00659598]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if (((pAVar25 == nullptr) ||
+                                                  (pAVar25->field_007B == 1)) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg5 = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_00659640;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -3155,14 +3290,14 @@ LAB_00659640:
                                               uStack_5f = (undefined1)((uint)local_148 >> 8);
                                               uStack_5e = (undefined1)((uint)local_148 >> 0x10);
                                               uStack_5d = (undefined1)((uint)local_148 >> 0x18);
-                                              iVar37 = (int)local_144 * 0x19;
+                                              iVar40 = (int)local_144 * 0x19;
                                               local_68[0] = 0x38;
-                                              uStack_54 = (undefined1)iVar37;
-                                              uStack_53 = (undefined1)((uint)iVar37 >> 8);
-                                              uStack_52 = (undefined1)((uint)iVar37 >> 0x10);
-                                              uStack_51 = (undefined1)((uint)iVar37 >> 0x18);
+                                              uStack_54 = (undefined1)iVar40;
+                                              uStack_53 = (undefined1)((uint)iVar40 >> 8);
+                                              uStack_52 = (undefined1)((uint)iVar40 >> 0x10);
+                                              uStack_51 = (undefined1)((uint)iVar40 >> 0x18);
                                               /* ST_CALLSITE[00659623]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -3173,47 +3308,49 @@ LAB_00659640:
                                     }
                                     break;
                                   case 0x5fb:
+
                                     local_EAX_28249 =
-                                         st::fn_0040395E((AnonShape_006525E0_52237033 *)
-                                                            &local_16c);
+                                         st::fn_0040395E(reinterpret_cast<RecoveredRecordView_006525E0_3E62F5FD *>(&local_16c));
                                     if (local_EAX_28249 != 0) {
                                       /* ST_CALLSITE[0065967D]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[006596A2]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[006596A2]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[006596CB]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg4 = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_00659785:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg4,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg4,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (((pAVar22 == nullptr) ||
-                                                  (pAVar22->field_007B == 1)) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[006596EC]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if (((pAVar25 == nullptr) ||
+                                                  (pAVar25->field_007B == 1)) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg4 = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_00659785;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -3227,16 +3364,16 @@ LAB_00659785:
                                               uStack_5d = (undefined1)((uint)local_14c >> 0x18);
                                               uStack_5c = SUB41(local_158,0);
                                               uStack_5b = (undefined1)((uint)local_158 >> 8);
-                                              iVar37 = (int)local_148 * 0x19;
+                                              iVar40 = (int)local_148 * 0x19;
                                               local_58 = SUB41(local_150,0);
                                               uStack_57 = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 0x39;
-                                              uStack_56 = (undefined1)iVar37;
-                                              uStack_55 = (undefined1)((uint)iVar37 >> 8);
-                                              uStack_54 = (undefined1)((uint)iVar37 >> 0x10);
-                                              uStack_53 = (undefined1)((uint)iVar37 >> 0x18);
+                                              uStack_56 = (undefined1)iVar40;
+                                              uStack_55 = (undefined1)((uint)iVar40 >> 8);
+                                              uStack_54 = (undefined1)((uint)iVar40 >> 0x10);
+                                              uStack_53 = (undefined1)((uint)iVar40 >> 0x18);
                                               /* ST_CALLSITE[00659768]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -3247,47 +3384,49 @@ LAB_00659785:
                                     }
                                     break;
                                   case 0x5fc:
+
                                     local_EAX_28574 =
-                                         st::fn_00401208((AnonShape_00652670_DFEA616F *)
-                                                            &local_16c);
+                                         st::fn_00401208(reinterpret_cast<RecoveredRecordView_00652670_3E62F5FD *>(&local_16c));
                                     if (local_EAX_28574 != 0) {
                                       /* ST_CALLSITE[006597C2]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[006597E7]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[006597E7]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[00659810]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg3 = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_006598ca:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg3,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg3,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if (((pAVar22 == nullptr) ||
-                                                  (pAVar22->field_007B == 1)) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[00659831]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if (((pAVar25 == nullptr) ||
+                                                  (pAVar25->field_007B == 1)) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg3 = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_006598ca;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -3301,16 +3440,16 @@ LAB_006598ca:
                                               uStack_5d = (undefined1)((uint)local_14c >> 0x18);
                                               uStack_5c = SUB41(local_158,0);
                                               uStack_5b = (undefined1)((uint)local_158 >> 8);
-                                              iVar37 = (int)local_148 * 0x19;
+                                              iVar40 = (int)local_148 * 0x19;
                                               local_58 = SUB41(local_150,0);
                                               uStack_57 = (undefined1)((uint)local_150 >> 8);
                                               local_68[0] = 0x3a;
-                                              uStack_56 = (undefined1)iVar37;
-                                              uStack_55 = (undefined1)((uint)iVar37 >> 8);
-                                              uStack_54 = (undefined1)((uint)iVar37 >> 0x10);
-                                              uStack_53 = (undefined1)((uint)iVar37 >> 0x18);
+                                              uStack_56 = (undefined1)iVar40;
+                                              uStack_55 = (undefined1)((uint)iVar40 >> 8);
+                                              uStack_54 = (undefined1)((uint)iVar40 >> 0x10);
+                                              uStack_53 = (undefined1)((uint)iVar40 >> 0x18);
                                               /* ST_CALLSITE[006598AD]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -3321,90 +3460,91 @@ LAB_006598ca:
                                     }
                                     break;
                                   case 0x5fd:
-                                    iVar36 = st::fn_0040106E((
-                                                  RecoveredRecord_AiEventClassTy_00652300 *)
-                                                  &local_16c);
+
+                                    iVar36 = st::fn_0040106E(reinterpret_cast<RecoveredRecord_AiEventClassTy_00652300 *>(&local_16c));
                                     if (iVar36 != 0) {
                                       /* ST_CALLSITE[00659180]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[006591A5]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[006591A5]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[006591CE]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg1 = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_0065937a:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg1,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg1,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              uVar28 = local_140;
-                                              if ((pAVar22 == nullptr) ||
-                                                 (pAVar22->field_007B == -0x8000)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[006591EF]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              uVar31 = local_140;
+                                              if ((pAVar25 == nullptr) ||
+                                                 (pAVar25->field_007B == -0x8000)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg1 = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_0065937a;
                                               }
-                                              ppuVar35 = &local_20c;
-                                              for (iVar37 = 0x12; puVar13 = local_158, iVar37 != 0;
-                                                  iVar37 = iVar37 + -1) {
-                                                *ppuVar35 = nullptr;
-                                                ppuVar35 = ppuVar35 + 1;
+                                              ppuVar38 = &local_20c;
+                                              for (iVar40 = 0x12; puVar13 = local_158, iVar40 != 0;
+                                                  iVar40 = iVar40 + -1) {
+                                                *ppuVar38 = nullptr;
+                                                ppuVar38 = ppuVar38 + 1;
                                               }
-                                              *(undefined2 *)ppuVar35 = 0;
+                                              *(undefined2 *)ppuVar38 = 0;
                                               local_20c = puVar13;
                                               local_208 = 0xffff;
                                               local_206 = 0x5622;
                                               local_204 = 0xfffffff0;
                                               local_200 = 0xfffe;
-                                              if (-1 < (int)uVar28) {
-                                                local_200 = (undefined2)uVar28;
+                                              if (-1 < (int)uVar31) {
+                                                local_200 = (undefined2)uVar31;
                                               }
                                               local_1fe = (int)local_138 * 0x19;
                                               local_1f6 = STPiece<0,2>(local_154);
                                               local_1f4 = STPiece<0,2>(local_150);
                                               local_1f2 = STPiece<0,2>(local_14c);
                                               if (((int)local_148 < 0) ||
-                                                 (pcVar21 = local_148, 7 < (int)local_148)) {
-                                                bVar1 = pAVar22->field_0081;
-                                                pcVar21 = (char *)(uint)bVar1;
+                                                 (pcVar24 = local_148, 7 < (int)local_148)) {
+                                                bVar1 = pAVar25->field_0081;
+                                                pcVar24 = (char *)(uint)bVar1;
                                                 if (((char)bVar1 < '\0') || ('\a' < (char)bVar1)) {
-                                                  pcVar21 = (char *)(uint)(byte)pAVar22->field_0024;
+                                                  pcVar24 = (char *)(uint)(byte)pAVar25->field_0024;
                                                 }
                                               }
-                                              local_1f0 = SUB41(pcVar21,0);
+                                              local_1f0 = SUB41(pcVar24,0);
                                               if (local_144 != nullptr) {
                                                 st::fn_0072E340
-                                                          (local_1ef,(char *)local_144,0xe);
-                                                uVar28 = local_140;
+                                                          (local_1ef,reinterpret_cast<char *>(local_144),0xe);
+                                                uVar31 = local_140;
                                               }
-                                              if ((((local_20c == (uint *)0xdd) ||
-                                                   (local_20c == (uint *)0xde)) ||
-                                                  (local_20c == (uint *)0xe2)) ||
-                                                 (local_20c == (uint *)0xdc)) {
+                                              if ((((st::machine_word_boundary_cast<uint>(local_20c) == st::machine_word_boundary_cast<uint>((uint *)0xdd)) ||
+                                                   (st::machine_word_boundary_cast<uint>(local_20c) == st::machine_word_boundary_cast<uint>((uint *)0xde))) ||
+                                                  (st::machine_word_boundary_cast<uint>(local_20c) == st::machine_word_boundary_cast<uint>((uint *)0xe2))) ||
+                                                 (st::machine_word_boundary_cast<uint>(local_20c) == st::machine_word_boundary_cast<uint>((uint *)0xdc))) {
                                                 bVar1 = 1;
                                               }
                                               else {
                                                 bVar1 = 0;
                                               }
-                                              local_1e0 = -(uint)bVar1 & uVar28;
+                                              local_1e0 = -(uint)bVar1 & uVar31;
                                               puVar13 = local_240;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -3414,7 +3554,7 @@ LAB_0065937a:
                                               local_240[0] = 0x68;
                                               local_237 = 1;
                                               /* ST_CALLSITE[0065935D]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_240);
+                                              st::fn_00401555(pAVar25,local_240);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -3425,46 +3565,47 @@ LAB_0065937a:
                                     }
                                     break;
                                   case 0x5fe:
-                                    iVar37 = st::fn_00402801((
-                                                  RecoveredRecord_AiEventClassTy_00652700 *)
-                                                  &local_16c);
-                                    if (iVar37 != 0) {
+
+                                    iVar40 = st::fn_00402801(reinterpret_cast<RecoveredRecord_AiEventClassTy_00652700 *>(&local_16c));
+                                    if (iVar40 != 0) {
                                       /* ST_CALLSITE[00659907]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                         local_c = (DArrayTy *)
-                                                                                          
-                                                  /* ST_CALLSITE[0065992C]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                                  /* ST_CALLSITE[0065992C]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                                   st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                         if (0 < (int)local_c) {
                                           puVar12 = output_values_neg_34;
                                           do {
-                                            pSVar14 = st::fn_00405CF9((char)*puVar12,
-                                                                         (ushort)local_15c);
-                                            uVar33 = local_14;
-                                            if (pSVar14 == nullptr) {
-                                              uVar28 = *puVar12;
+                                            /* ST_CALLSITE[00659955]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                            pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9((char)*puVar12,
+                                                                         (ushort)local_15c));
+                                            uVar36 = local_14;
+                                            if (pRVar14 == nullptr)
+                                            {
+                                              uVar31 = *puVar12;
                                               pcVar8_mg0 = &CHAR_00h_008016a0;
-                                              iVar37 = -0xaa;
+                                              iVar40 = -0xaa;
 LAB_00659a1c:
-                                              st::fn_00405042(this_00,iVar37,pcVar8_mg0,uVar33,
-                                                                 uVar28);
+                                              st::fn_00405042(this_00,iVar40,pcVar8_mg0,uVar36,
+                                                                 uVar31);
                                             }
                                             else {
-                                              pAVar22 = (AiFltClassTy *)
-                                                        st::fn_00405902((int)pSVar14);
-                                              if ((pAVar22 == nullptr) ||
-                                                 (pAVar22->field_007B != 1)) {
-                                                uVar28 = *puVar12;
+                                              /* ST_CALLSITE[00659976]: CALL 0x00405902; direct=00405902 thunk_FUN_00423300; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__fastcall;pointer:/AiFltClassTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733 */
+                                              pAVar25 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00405902(pRVar14));
+                                              if ((pAVar25 == nullptr) ||
+                                                 (pAVar25->field_007B != 1)) {
+                                                uVar31 = *puVar12;
                                                 pcVar8_mg0 = st::fn_004057DB(local_EAX_488);
-                                                iVar37 = -0xab;
+                                                iVar40 = -0xab;
                                                 goto LAB_00659a1c;
                                               }
                                               puVar13 = local_68;
-                                              for (iVar37 = 0xd; iVar37 != 0; iVar37 = iVar37 + -1)
+                                              for (iVar40 = 0xd; iVar40 != 0; iVar40 = iVar40 + -1)
                                               {
                                                 *puVar13 = 0;
                                                 puVar13 = puVar13 + 1;
@@ -3484,17 +3625,17 @@ LAB_00659a1c:
                                               uStack_5d = (undefined1)((uint)local_144 >> 0x18);
                                               uStack_56 = SUB41(local_150,0);
                                               uStack_55 = (undefined1)((uint)local_150 >> 8);
-                                              iVar37 = local_140 * 0x19;
+                                              iVar40 = local_140 * 0x19;
                                               uStack_52 = SUB41(local_148,0);
                                               uStack_51 = (undefined1)((uint)local_148 >> 8);
                                               uStack_50 = (undefined1)((uint)local_148 >> 0x10);
                                               uStack_4f = (undefined1)((uint)local_148 >> 0x18);
                                               local_68[0] = 0x3b;
-                                              local_4e = (undefined2)iVar37;
-                                              uStack_4c = (undefined1)((uint)iVar37 >> 0x10);
-                                              cStack_4b = (char)((uint)iVar37 >> 0x18);
+                                              local_4e = (undefined2)iVar40;
+                                              uStack_4c = (undefined1)((uint)iVar40 >> 0x10);
+                                              cStack_4b = (char)((uint)iVar40 >> 0x18);
                                               /* ST_CALLSITE[006599FF]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
-                                              st::fn_00401555(pAVar22,local_68);
+                                              st::fn_00401555(pAVar25,local_68);
                                             }
                                             puVar12 = puVar12 + 1;
                                             local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -3509,12 +3650,13 @@ LAB_00659a1c:
                                   }
                                   goto cf_common_join_00652A99;
                                 }
-                                iVar37 = st::fn_004051DC((int)&local_16c);
-                                if (iVar37 == 0) {
-                                  iVar37 = -1;
-                                  uVar33 = local_14;
+
+                                iVar40 = st::fn_004051DC((int)&local_16c);
+                                if (iVar40 == 0) {
+                                  iVar40 = -1;
+                                  uVar36 = local_14;
                                   pcVar8_mg23 = st::fn_004057DB(0x76c);
-                                  st::fn_00405042(this_00,-0x7d,pcVar8_mg23,uVar33,iVar37);
+                                  st::fn_00405042(this_00,-0x7d,pcVar8_mg23,uVar36,iVar40);
                                 }
                                 else {
                                   DAT_0080c51e = st::machine_word_boundary_cast<undefined4>(pDStack_164);
@@ -3523,29 +3665,30 @@ LAB_00659a1c:
                               goto cf_common_join_00659A73;
                             }
                             if (local_EAX_488 == 0x5c8) {
-                              iVar37 = st::fn_00403139((int)&local_16c);
-                              if (iVar37 == 0) {
-                                iVar37 = -1;
-                                uVar33 = local_14;
+
+                              iVar40 = st::fn_00403139((int)&local_16c);
+                              if (iVar40 == 0) {
+                                iVar40 = -1;
+                                uVar36 = local_14;
                                 pcVar8_mg25 = st::fn_004057DB(0x5c8);
-                                st::fn_00405042(this_00,-0x7d,pcVar8_mg25,uVar33,iVar37);
+                                st::fn_00405042(this_00,-0x7d,pcVar8_mg25,uVar36,iVar40);
                               }
                               else {
                                 /* ST_CALLSITE[00656EFD]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 == 8) && (pDStack_164 == (DArrayTy *)0x9)) {
-                                  iVar37 = -1;
-                                  uVar33 = local_14;
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 == 8) && (st::machine_word_boundary_cast<uint>(pDStack_164) == st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                  iVar40 = -1;
+                                  uVar36 = local_14;
                                   pcVar8_mg24 = st::fn_004057DB(0x5c8);
-                                  st::fn_00405042(this_00,-0x7d,pcVar8_mg24,uVar33,iVar37);
+                                  st::fn_00405042(this_00,-0x7d,pcVar8_mg24,uVar36,iVar40);
                                 }
                                 else {
                                   local_c = (DArrayTy *)
-                                                                                    
-                                            /* ST_CALLSITE[00656F3A]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                            /* ST_CALLSITE[00656F3A]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                             st::fn_00668F50
-                                                      ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)pDStack_164,(uint)local_160,
+                                                      (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                       reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                        output_values_neg_34);
                                   if (0 < (int)local_c) {
                                     puVar12 = output_values_neg_34;
@@ -3553,21 +3696,21 @@ LAB_00659a1c:
                                     do {
                                       puVar9 = (undefined1 *)0xffffffff;
                                       if (((int)pDVar17 < 1) || (0x28 < (int)pDVar17)) {
-                                        bVar36 = false;
+                                        bVar39 = false;
                                       }
                                       else {
-                                        bVar36 = true;
+                                        bVar39 = true;
                                       }
-                                      if (bVar36) {
+                                      if (bVar39) {
                                         puVar9 = (undefined1 *)((int)&pDVar17[2].flags + 1);
                                       }
                                       if (((int)pDVar17 < 0x32) || (0x73 < (int)pDVar17)) {
-                                        bVar36 = false;
+                                        bVar39 = false;
                                       }
                                       else {
-                                        bVar36 = true;
+                                        bVar39 = true;
                                       }
-                                      if (bVar36) {
+                                      if (bVar39) {
                                         puVar9 = (undefined1 *)((int)&pDVar17[-2].count + 2);
                                       }
                                       if (-1 < (int)puVar9) {
@@ -3584,41 +3727,45 @@ LAB_00659a1c:
                             }
                             switch(local_EAX_488) {
                             case 0x594:
-                              iVar37 = st::fn_004031ED((int)&local_16c);
-                              if (iVar37 == 0) break;
+
+                              iVar40 = st::fn_004031ED((int)&local_16c);
+                              if (iVar40 == 0) break;
                               if (local_160 != nullptr) {
                                 /* ST_CALLSITE[00655EE1]: CALL 0x00402932; direct=00402932 _EnumArt */
-                                st::fn_00402932(0,(byte *)pDStack_164,0,0,0,-1,-1,-1,st::function_address_boundary_cast<code *>(st::fn_0064DD70),
+                                st::fn_00402932(0,reinterpret_cast<byte *>(pDStack_164),0,0,0,-1,-1,-1,st::function_address_boundary_cast<code *>(st::fn_0064DD70),
                                          st::machine_word_boundary_cast<undefined4>(local_160));
                               }
                               goto cf_common_join_00659A73;
                             case 0x595:
-                              iVar37 = st::fn_00401C35((short *)&local_16c);
-                              if (iVar37 == 0) break;
-                              if (((pDStack_164 == (DArrayTy *)0xdd) ||
-                                  (pDStack_164 == (DArrayTy *)0xde)) ||
-                                 (pDStack_164 == (DArrayTy *)0xe0)) {
-                                bVar36 = true;
+
+                              iVar40 = st::fn_00401C35(reinterpret_cast<RecoveredRecord_0064FEF0_DD304A9A *>(&local_16c));
+                              if (iVar40 == 0) break;
+                              if (((st::machine_word_boundary_cast<uint>(pDStack_164) == st::machine_word_boundary_cast<uint>((DArrayTy *)0xdd)) ||
+                                  (st::machine_word_boundary_cast<uint>(pDStack_164) == st::machine_word_boundary_cast<uint>((DArrayTy *)0xde))) ||
+                                 (st::machine_word_boundary_cast<uint>(pDStack_164) == st::machine_word_boundary_cast<uint>((DArrayTy *)0xe0))) {
+                                bVar39 = true;
                               }
                               else {
-                                bVar36 = false;
+                                bVar39 = false;
                               }
-                              if (bVar36) {
+                              if (bVar39) {
                                 local_18c = local_160;
                                 local_190 = local_15c;
                                 local_184 = local_158;
+
                                 local_EAX_14486 =
-                                     st::fn_0040170D((int)pDStack_164,(int *)&local_18c,
-                                                        (int *)&local_190,(int *)&local_184);
+                                     st::fn_0040170D((int)pDStack_164,reinterpret_cast<int *>(&local_18c),
+                                                        reinterpret_cast<int *>(&local_190),reinterpret_cast<int *>(&local_184));
                                 if (local_EAX_14486 == 0) goto LAB_00655f4c;
+
                                 st::fn_00405E84(st::machine_word_boundary_cast<undefined4>(local_18c),st::machine_word_boundary_cast<undefined4>(local_190),st::machine_word_boundary_cast<undefined4>(local_184),st::machine_word_boundary_cast<undefined4>(pDStack_164),
                                                    st::machine_word_boundary_cast<undefined4>(local_154));
                               }
                               goto cf_common_join_00659A73;
                             case 0x596:
-                              iVar37 = st::fn_00405DAD((RecoveredRecord_AiEventClassTy_0064FF70 *
-                                                          )&local_16c);
-                              if (iVar37 == 0) break;
+
+                              iVar40 = st::fn_00405DAD(reinterpret_cast<RecoveredRecord_AiEventClassTy_0064FF70 *>(&local_16c));
+                              if (iVar40 == 0) break;
                               DAT_008118fc = 0;
                               /* ST_CALLSITE[0065614B]: CALL 0x00404142; direct=00404142 _EnumRCField */
                               st::fn_00404142((short)pDStack_164,(short)local_160,(short)local_15c,
@@ -3626,9 +3773,9 @@ LAB_00659a1c:
                                            (short)local_14c,st::function_address_boundary_cast<code *>(st::fn_0064E260),st::machine_word_boundary_cast<undefined4>(&local_148));
                               goto cf_common_join_00659A73;
                             case 0x597:
-                              iVar37 = st::fn_004018B6((RecoveredRecord_AiEventClassTy_00650090 *
-                                                          )&local_16c);
-                              if (iVar37 == 0) break;
+
+                              iVar40 = st::fn_004018B6(reinterpret_cast<RecoveredRecord_AiEventClassTy_00650090 *>(&local_16c));
+                              if (iVar40 == 0) break;
                               /* ST_CALLSITE[006561BC]: CALL 0x00404142; direct=00404142 _EnumRCField */
                               st::fn_00404142((short)local_15c,(short)local_158,(short)local_154,
                                            (short)local_150,(short)local_14c,(short)local_148,
@@ -3636,52 +3783,54 @@ LAB_00659a1c:
                                            (int)local_160 << 0x10 | (uint)pDStack_164 & 0xffff);
                               goto cf_common_join_00659A73;
                             case 0x598:
-                              iVar37 = st::fn_00402220((RecoveredRecord_AiEventClassTy_006501A0 *
-                                                          )&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_00402220(reinterpret_cast<RecoveredRecord_AiEventClassTy_006501A0 *>(&local_16c));
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[00655F3F]: CALL 0x0040341d; direct=0040341D AiEventClassTy::_CreateDest */
                                 local_EAX_13781 =
                                      st::fn_0040341D(this_00,(short)pDStack_164,(short)local_160,
                                                  (short)local_15c,(short)local_158,(short)local_154,
-                                                 (char *)local_150,local_14c,st::machine_word_boundary_cast<undefined4>(local_148));
+                                                 reinterpret_cast<char *>(local_150),local_14c,st::machine_word_boundary_cast<undefined4>(local_148));
                                 goto LAB_00655f44;
                               }
                               break;
                             case 0x599:
-                              iVar37 = st::fn_004047CD((RecoveredRecord_AiEventClassTy_00650240 *
-                                                          )&local_16c);
-                              if (iVar37 == 0) break;
+
+                              iVar40 = st::fn_004047CD(reinterpret_cast<RecoveredRecord_AiEventClassTy_00650240 *>(&local_16c));
+                              if (iVar40 == 0) break;
                               DAT_008118fc = 0;
                               /* ST_CALLSITE[00655FCC]: CALL 0x004013f2; direct=004013F2 _EnumDest */
-                              st::fn_004013F2((byte *)local_160,(char)pDStack_164,(short)local_15c,
+                              st::fn_004013F2(reinterpret_cast<byte *>(local_160),(char)pDStack_164,(short)local_15c,
                                         (short)local_158,(short)local_154,(short)local_150,
                                         (short)local_14c,(short)local_148,st::function_address_boundary_cast<code *>(st::fn_0064DF30),
                                         st::machine_word_boundary_cast<undefined4>(&local_144));
                               goto cf_common_join_00659A73;
                             case 0x59a:
-                              iVar37 = st::fn_00402027((int)&local_16c);
-                              if (iVar37 == 0) break;
+
+                              iVar40 = st::fn_00402027((int)&local_16c);
+                              if (iVar40 == 0) break;
                               if (local_160 != nullptr) {
                                 /* ST_CALLSITE[00656019]: CALL 0x004013f2; direct=004013F2 _EnumDest */
-                                st::fn_004013F2((byte *)pDStack_164,-1,0,0,0,-1,-1,-1,st::function_address_boundary_cast<code *>(st::fn_0064DF70),
+                                st::fn_004013F2(reinterpret_cast<byte *>(pDStack_164),-1,0,0,0,-1,-1,-1,st::function_address_boundary_cast<code *>(st::fn_0064DF70),
                                           st::machine_word_boundary_cast<undefined4>(local_160));
                               }
                               goto cf_common_join_00659A73;
                             case 0x59b:
-                              iVar37 = st::fn_00404502((short *)&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_00404502(reinterpret_cast<RecoveredRecord_006503B0_3B1FB22E *>(&local_16c));
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[006561E4]: CALL dword ptr [EAX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                   local_c = (DArrayTy *)
-                                                                                    
-                                            /* ST_CALLSITE[00656209]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                            /* ST_CALLSITE[00656209]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                             st::fn_00668F50
-                                                      ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)pDStack_164,(uint)local_160,
+                                                      (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                       reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                        output_values_neg_34);
                                   if (0 < (int)local_c) {
-                                    local_8 = (DArrayTy *)output_values_neg_34;
+                                    local_8 = reinterpret_cast<DArrayTy *>(output_values_neg_34);
                                     do {
                                       /* ST_CALLSITE[00656260]: CALL 0x0040434a; direct=0040434A AiEventClassTy::_CreateMine */
                                       local_EAX_14928 =
@@ -3691,11 +3840,11 @@ LAB_00659a1c:
                                                        local_148,st::machine_word_boundary_cast<undefined4>(local_144),local_140);
                                       if (local_EAX_14928 != 0) {
                                         dVar15 = local_8->flags;
-                                        uVar33 = local_14;
+                                        uVar36 = local_14;
                                         pcVar8_mg2E = st::fn_004057DB(local_EAX_488);
-                                        st::fn_00405042(this_00,-0xab,pcVar8_mg2E,uVar33,dVar15);
+                                        st::fn_00405042(this_00,-0xab,pcVar8_mg2E,uVar36,dVar15);
                                       }
-                                      local_8 = (DArrayTy *)&local_8->iteratorIndex;
+                                      local_8 = reinterpret_cast<DArrayTy *>(&local_8->iteratorIndex);
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != nullptr);
                                   }
@@ -3704,18 +3853,18 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x59c:
-                              iVar37 = st::fn_00401843((RecoveredRecord_AiEventClassTy_00650480 *
-                                                          )&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_00401843(reinterpret_cast<RecoveredRecord_AiEventClassTy_00650480 *>(&local_16c));
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[006562B5]: CALL dword ptr [EAX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                   local_c = (DArrayTy *)
-                                                                                    
-                                            /* ST_CALLSITE[006562DA]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                            /* ST_CALLSITE[006562DA]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                             st::fn_00668F50
-                                                      ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)pDStack_164,(uint)local_160,
+                                                      (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                       reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                        output_values_neg_34);
                                   if (0 < (int)local_c) {
                                     puVar12 = output_values_neg_34;
@@ -3735,18 +3884,18 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x59d:
-                              iVar37 = st::fn_00404890((RecoveredRecord_AiEventClassTy_00650600 *
-                                                          )&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_00404890(reinterpret_cast<RecoveredRecord_AiEventClassTy_00650600 *>(&local_16c));
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[00656379]: CALL dword ptr [EAX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                   local_c = (DArrayTy *)
-                                                                                    
-                                            /* ST_CALLSITE[0065639E]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                            /* ST_CALLSITE[0065639E]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                             st::fn_00668F50
-                                                      ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)pDStack_164,(uint)local_160,
+                                                      (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                       reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                        output_values_neg_34);
                                   if (0 < (int)local_c) {
                                     puVar12 = output_values_neg_34;
@@ -3768,21 +3917,23 @@ LAB_00659a1c:
                             default:
                               goto cf_common_join_00659A73;
                             case 0x5aa:
-                              iVar37 = st::fn_0040248C((short *)&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_0040248C(reinterpret_cast<short *>(&local_16c));
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[0065643D]: CALL dword ptr [EAX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                   local_c = (DArrayTy *)
-                                                                                    
-                                            /* ST_CALLSITE[00656462]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                            /* ST_CALLSITE[00656462]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                             st::fn_00668F50
-                                                      ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)pDStack_164,(uint)local_160,
+                                                      (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                       reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                        output_values_neg_34);
                                   if (0 < (int)local_c) {
                                     puVar12 = output_values_neg_34;
                                     do {
+
                                       st::fn_00402AAE(*puVar12,&local_15c->flags,(byte)local_158);
                                       puVar12 = puVar12 + 1;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -3793,21 +3944,23 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5ab:
-                              iVar37 = st::fn_0040248C((short *)&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_0040248C(reinterpret_cast<short *>(&local_16c));
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[006564BD]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                   local_c = (DArrayTy *)
-                                                                                    
-                                            /* ST_CALLSITE[006564E2]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                            /* ST_CALLSITE[006564E2]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                             st::fn_00668F50
-                                                      ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)pDStack_164,(uint)local_160,
+                                                      (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                       reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                        output_values_neg_34);
                                   if (0 < (int)local_c) {
                                     puVar12 = output_values_neg_34;
                                     do {
+
                                       st::fn_0040534E((uint *)*puVar12,(int)local_15c,
                                                          (byte)local_158);
                                       puVar12 = puVar12 + 1;
@@ -3819,25 +3972,26 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5ac:
-                              iVar37 = st::fn_004018CA((short *)&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_004018CA(reinterpret_cast<short *>(&local_16c));
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[00656621]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  /* ST_CALLSITE[00656646]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                  /* ST_CALLSITE[00656646]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                   iVar37_mg9E = st::fn_00668F50
-                                                          ((AnonReceiver_0064A970 *)this_00,
-                                                           (char *)pDStack_164,(uint)local_160,
+                                                          (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                           reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                            output_values_neg_34);
                                   if (0 < iVar37_mg9E) {
-                                    local_8 = (DArrayTy *)output_values_neg_34;
+                                    local_8 = reinterpret_cast<DArrayTy *>(output_values_neg_34);
                                     do {
                                       pAVar10 = st::fn_00401DC5((char)local_8->flags);
                                       if (pAVar10 == nullptr) {
                                         dVar15 = local_8->flags;
-                                        uVar33 = local_14;
+                                        uVar36 = local_14;
                                         pcVar8_mg2D = st::fn_004057DB(local_EAX_488);
-                                        st::fn_00405042(this_00,-0xab,pcVar8_mg2D,uVar33,dVar15);
+                                        st::fn_00405042(this_00,-0xab,pcVar8_mg2D,uVar36,dVar15);
                                       }
                                       else {
                                         /* ST_CALLSITE[0065668A]: CALL 0x00402e37; direct=00402E37 AiPlrClassTy::SetTech */
@@ -3845,7 +3999,7 @@ LAB_00659a1c:
                                                   (pAVar10,(int)local_15c,(int)local_158,
                                                    (int)local_154,-1);
                                       }
-                                      local_8 = (DArrayTy *)&local_8->iteratorIndex;
+                                      local_8 = reinterpret_cast<DArrayTy *>(&local_8->iteratorIndex);
                                       iVar37_mg9E = iVar37_mg9E + -1;
                                     } while (iVar37_mg9E != 0);
                                   }
@@ -3854,23 +4008,26 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5ad:
-                              iVar37 = st::fn_00404732((short *)&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_00404732(reinterpret_cast<short *>(&local_16c));
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[006566DD]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                   local_c = (DArrayTy *)
-                                                                                    
-                                            /* ST_CALLSITE[00656702]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                            /* ST_CALLSITE[00656702]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                             st::fn_00668F50
-                                                      ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)pDStack_164,(uint)local_160,
+                                                      (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                       reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                        output_values_neg_34);
                                   if (0 < (int)local_c) {
                                     puVar12 = output_values_neg_34;
                                     do {
-                                      st::fn_00402130((byte *)*puVar12,(uint)local_15c,
-                                                         (uint)local_158);
+                                      /* ST_CALLSITE[0065672C]: CALL 0x00402130; direct=00402130 STAllPlayersC::sub_004E6310 */
+                                      st::fn_00402130
+                                                (g_allPlayers_007FA174,(byte *)*puVar12,
+                                                 (uint)local_15c,(uint)local_158);
                                       puVar12 = puVar12 + 1;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != nullptr);
@@ -3880,22 +4037,24 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5ae:
-                              iVar37 = st::fn_0040385A((int)&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_0040385A((int)&local_16c);
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[006567E4]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                   local_c = (DArrayTy *)
-                                                                                    
-                                            /* ST_CALLSITE[00656809]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                            /* ST_CALLSITE[00656809]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                             st::fn_00668F50
-                                                      ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)pDStack_164,(uint)local_160,
+                                                      (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                       reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                        output_values_neg_34);
                                   if (0 < (int)local_c) {
                                     puVar12 = output_values_neg_34;
                                     do {
-                                      st::fn_00404EC6(*puVar12);
+                                      /* ST_CALLSITE[00656825]: CALL 0x00404ec6; direct=00404EC6 STAllPlayersC::sub_004E75F0 */
+                                      st::fn_00404EC6(g_allPlayers_007FA174,*puVar12);
                                       puVar12 = puVar12 + 1;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != nullptr);
@@ -3905,30 +4064,31 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5af:
-                              iVar37 = st::fn_004032EC((AnonShape_00650A20_4A198923 *)&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_004032EC(reinterpret_cast<RecoveredRecordView_00650A20_3149A900 *>(&local_16c));
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[00656856]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  /* ST_CALLSITE[0065687B]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                  /* ST_CALLSITE[0065687B]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                   iVar37_mg97 = st::fn_00668F50
-                                                          ((AnonReceiver_0064A970 *)this_00,
-                                                           (char *)pDStack_164,(uint)local_160,
+                                                          (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                           reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                            output_values_neg_34);
                                   if (0 < iVar37_mg97) {
-                                    local_8 = (DArrayTy *)output_values_neg_34;
+                                    local_8 = reinterpret_cast<DArrayTy *>(output_values_neg_34);
                                     do {
                                       pAVar10 = st::fn_00401DC5((char)local_8->flags);
                                       if (pAVar10 == nullptr) {
                                         dVar15 = local_8->flags;
-                                        uVar33 = local_14;
+                                        uVar36 = local_14;
                                         pcVar8_mg2C = st::fn_004057DB(local_EAX_488);
-                                        st::fn_00405042(this_00,-0xab,pcVar8_mg2C,uVar33,dVar15);
+                                        st::fn_00405042(this_00,-0xab,pcVar8_mg2C,uVar36,dVar15);
                                       }
                                       else {
                                         st::fn_00402A18(pAVar10,(int)local_15c,(int)local_158);
                                       }
-                                      local_8 = (DArrayTy *)&local_8->iteratorIndex;
+                                      local_8 = reinterpret_cast<DArrayTy *>(&local_8->iteratorIndex);
                                       iVar37_mg97 = iVar37_mg97 + -1;
                                     } while (iVar37_mg97 != 0);
                                   }
@@ -3937,30 +4097,32 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b0:
-                              iVar37 = st::fn_004035D0((int)&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_004035D0((int)&local_16c);
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[00656909]: CALL dword ptr [EAX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  /* ST_CALLSITE[0065692E]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                  /* ST_CALLSITE[0065692E]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                   iVar37_mg94 = st::fn_00668F50
-                                                          ((AnonReceiver_0064A970 *)this_00,
-                                                           (char *)pDStack_164,(uint)local_160,
+                                                          (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                           reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                            output_values_neg_34);
                                   if (0 < iVar37_mg94) {
-                                    local_8 = (DArrayTy *)output_values_neg_34;
+                                    local_8 = reinterpret_cast<DArrayTy *>(output_values_neg_34);
                                     do {
-                                      pAVar10 = st::fn_00401DC5((char)local_8->flags);
-                                      if (pAVar10 == nullptr) {
+                                      /* ST_CALLSITE[00656950]: CALL 0x00401dc5; direct=00401DC5 thunk_FUN_004357f0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_0067B260_B3B2F7BB; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_0067B260_B3B2F7BB;/char */
+                                      pRVar19 = st::pointer_boundary_cast<RecoveredRecordView_0067B260_B3B2F7BB *>(st::fn_00401DC5((char)local_8->flags));
+                                      if (pRVar19 == nullptr) {
                                         dVar15 = local_8->flags;
-                                        uVar33 = local_14;
+                                        uVar36 = local_14;
                                         pcVar8_mg2B = st::fn_004057DB(local_EAX_488);
-                                        st::fn_00405042(this_00,-0xab,pcVar8_mg2B,uVar33,dVar15);
+                                        st::fn_00405042(this_00,-0xab,pcVar8_mg2B,uVar36,dVar15);
                                       }
                                       else {
-                                        st::fn_00402CC5((int)pAVar10);
+                                        st::fn_00402CC5(pRVar19);
                                       }
-                                      local_8 = (DArrayTy *)&local_8->iteratorIndex;
+                                      local_8 = reinterpret_cast<DArrayTy *>(&local_8->iteratorIndex);
                                       iVar37_mg94 = iVar37_mg94 + -1;
                                     } while (iVar37_mg94 != 0);
                                   }
@@ -3969,21 +4131,23 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b1:
-                              iVar37 = st::fn_0040120D((int)&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_0040120D((int)&local_16c);
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[0065653D]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                   local_c = (DArrayTy *)
-                                                                                    
-                                            /* ST_CALLSITE[00656562]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                            /* ST_CALLSITE[00656562]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                             st::fn_00668F50
-                                                      ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)pDStack_164,(uint)local_160,
+                                                      (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                       reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                        output_values_neg_34);
                                   if (0 < (int)local_c) {
                                     puVar12 = output_values_neg_34;
                                     do {
+
                                       st::fn_00405349(*puVar12);
                                       puVar12 = puVar12 + 1;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -3994,21 +4158,23 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b2:
-                              iVar37 = st::fn_0040120D((int)&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_0040120D((int)&local_16c);
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[006565AF]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                   local_c = (DArrayTy *)
-                                                                                    
-                                            /* ST_CALLSITE[006565D4]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                            /* ST_CALLSITE[006565D4]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                             st::fn_00668F50
-                                                      ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)pDStack_164,(uint)local_160,
+                                                      (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                       reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                        output_values_neg_34);
                                   if (0 < (int)local_c) {
                                     puVar12 = output_values_neg_34;
                                     do {
+
                                       st::fn_004037F1((uint *)*puVar12);
                                       puVar12 = puVar12 + 1;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -4019,23 +4185,25 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b3:
-                              iVar37 = st::fn_00402478((short *)&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_00402478(reinterpret_cast<short *>(&local_16c));
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[0065675D]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                   local_c = (DArrayTy *)
-                                                                                    
-                                            /* ST_CALLSITE[00656782]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                            /* ST_CALLSITE[00656782]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                             st::fn_00668F50
-                                                      ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)pDStack_164,(uint)local_160,
+                                                      (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                       reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                        output_values_neg_34);
                                   if (0 < (int)local_c) {
                                     puVar12 = output_values_neg_34;
                                     do {
-                                      st::fn_00401A28((byte *)*puVar12,(uint)local_15c,
-                                                         (uint)local_158,(int)local_154);
+                                      st::fn_00401A28(g_allPlayers_007FA174,(byte *)*puVar12,
+                                                         (uint)local_15c,(uint)local_158,
+                                                         (int)local_154);
                                       puVar12 = puVar12 + 1;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != nullptr);
@@ -4045,16 +4213,16 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b4:
-                              iVar37 = st::fn_00401505((RecoveredRecord_AiEventClassTy_00650B10 *
-                                                          )&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_00401505(reinterpret_cast<RecoveredRecord_AiEventClassTy_00650B10 *>(&local_16c));
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[006569AE]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  /* ST_CALLSITE[006569D3]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                  /* ST_CALLSITE[006569D3]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                   iVar37_mg8B = st::fn_00668F50
-                                                          ((AnonReceiver_0064A970 *)this_00,
-                                                           (char *)pDStack_164,(uint)local_160,
+                                                          (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                           reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                            output_values_neg_34);
                                   if (0 < iVar37_mg8B) {
                                     puVar12 = output_values_neg_34;
@@ -4069,12 +4237,12 @@ LAB_00659a1c:
                                       if (pAVar10 != nullptr) {
                                         local_c = (DArrayTy *)
                                                   st::fn_00679120
-                                                            ((AnonReceiver_00678E00 *)pAVar10,
-                                                             (byte *)local_15c,(int)local_158,
+                                                            (reinterpret_cast<RecoveredReceiver_00678E00 *>(pAVar10),
+                                                             reinterpret_cast<byte *>(local_15c),(int)local_158,
                                                              (int)local_154,(int)local_150);
                                       }
                                       if ((int)local_c < 0) {
-                                        st::fn_00405042(this_00,-4,(char *)local_15c,local_14,
+                                        st::fn_00405042(this_00,-4,reinterpret_cast<char *>(local_15c),local_14,
                                                            *puVar12);
                                       }
                                       puVar12 = puVar12 + 1;
@@ -4086,38 +4254,38 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b5:
-                              iVar37 = st::fn_0040426E((int)&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_0040426E(reinterpret_cast<RecoveredRecord_00650F50_B7B27450 *>(&local_16c));
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[00656D50]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  /* ST_CALLSITE[00656D75]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                  /* ST_CALLSITE[00656D75]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                   iVar37_mg88 = st::fn_00668F50
-                                                          ((AnonReceiver_0064A970 *)this_00,
-                                                           (char *)pDStack_164,(uint)local_160,
+                                                          (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                           reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                            output_values_neg_34);
                                   if (0 < iVar37_mg88) {
-                                    local_8 = (DArrayTy *)output_values_neg_34;
+                                    local_8 = reinterpret_cast<DArrayTy *>(output_values_neg_34);
                                     do {
                                       if (g_allPlayers_007FA174 == nullptr) {
-                                        pAVar19 = nullptr;
+                                        pRVar20 = nullptr;
                                       }
                                       else {
-                                        pAVar19 = (AnonShape_00679600_B8E418A8 *)
-                                                  st::fn_00401DC5((char)local_8->flags);
+                                        pRVar20 = reinterpret_cast<RecoveredRecordView_00679600_4B4DB6B6 *>(st::fn_00401DC5((char)local_8->flags));
                                       }
-                                      if (pAVar19 == nullptr) {
+                                      if (pRVar20 == nullptr) {
                                         dVar15 = local_8->flags;
-                                        uVar33 = local_14;
+                                        uVar36 = local_14;
                                         pcVar8_mg2A = st::fn_004057DB(local_EAX_488);
-                                        st::fn_00405042(this_00,-0xab,pcVar8_mg2A,uVar33,dVar15);
+                                        st::fn_00405042(this_00,-0xab,pcVar8_mg2A,uVar36,dVar15);
                                       }
                                       else {
-                                        pAVar19->field_0644 = (char)local_15c;
-                                        pAVar19->field_0640 = st::machine_word_boundary_cast<undefined4>(local_158);
-                                        st::fn_00401DB6(pAVar19);
+                                        pRVar20->field_0644 = (char)local_15c;
+                                        pRVar20->field_0640 = st::machine_word_boundary_cast<undefined4>(local_158);
+                                        st::fn_00401DB6(pRVar20);
                                       }
-                                      local_8 = (DArrayTy *)&local_8->iteratorIndex;
+                                      local_8 = reinterpret_cast<DArrayTy *>(&local_8->iteratorIndex);
                                       iVar37_mg88 = iVar37_mg88 + -1;
                                     } while (iVar37_mg88 != 0);
                                   }
@@ -4126,18 +4294,19 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b6:
-                              local_EAX_17905 = st::fn_0040592F((short *)&local_16c);
+
+                              local_EAX_17905 = st::fn_0040592F(reinterpret_cast<short *>(&local_16c));
                               if (local_EAX_17905 != 0) {
                                 /* ST_CALLSITE[00656E15]: CALL dword ptr [EAX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  /* ST_CALLSITE[00656E3A]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                  /* ST_CALLSITE[00656E3A]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                   iVar37_mg85 = st::fn_00668F50
-                                                          ((AnonReceiver_0064A970 *)this_00,
-                                                           (char *)pDStack_164,(uint)local_160,
+                                                          (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                           reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                            output_values_neg_34);
                                   if (0 < iVar37_mg85) {
-                                    local_8 = (DArrayTy *)output_values_neg_34;
+                                    local_8 = reinterpret_cast<DArrayTy *>(output_values_neg_34);
                                     do {
                                       if (g_allPlayers_007FA174 == nullptr) {
                                         pAVar10 = nullptr;
@@ -4147,16 +4316,16 @@ LAB_00659a1c:
                                       }
                                       if (pAVar10 == nullptr) {
                                         dVar15 = local_8->flags;
-                                        uVar33 = local_14;
+                                        uVar36 = local_14;
                                         pcVar8_mg29 = st::fn_004057DB(local_EAX_488);
-                                        st::fn_00405042(this_00,-0xab,pcVar8_mg29,uVar33,dVar15);
+                                        st::fn_00405042(this_00,-0xab,pcVar8_mg29,uVar36,dVar15);
                                       }
                                       else {
                                         st::fn_00401CA8(pAVar10,(byte)local_15c,(ushort)local_158
                                                            ,(ushort)local_154,(ushort)local_150,
                                                            st::machine_word_boundary_cast<undefined4>(local_14c));
                                       }
-                                      local_8 = (DArrayTy *)&local_8->iteratorIndex;
+                                      local_8 = reinterpret_cast<DArrayTy *>(&local_8->iteratorIndex);
                                       iVar37_mg85 = iVar37_mg85 + -1;
                                     } while (iVar37_mg85 != 0);
                                   }
@@ -4165,41 +4334,41 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b7:
-                              iVar37 = st::fn_00405132((RecoveredRecord_AiEventClassTy_00650BD0 *
-                                                          )&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_00405132(reinterpret_cast<RecoveredRecord_AiEventClassTy_00650BD0 *>(&local_16c));
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[00656A74]: CALL dword ptr [EAX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                   local_8 = (DArrayTy *)
-                                                                                    
-                                            /* ST_CALLSITE[00656A99]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                            /* ST_CALLSITE[00656A99]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                             st::fn_00668F50
-                                                      ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)pDStack_164,(uint)local_160,
+                                                      (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                       reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                        output_values_neg_34);
                                   if (0 < (int)local_8) {
-                                    local_10 = (AiFltClassTy *)output_values_neg_34;
+                                    local_10 = reinterpret_cast<AiFltClassTy *>(output_values_neg_34);
                                     do {
-                                      pDVar17 = (DArrayTy *)
-                                                st::fn_004037D3(st::machine_word_boundary_cast<undefined4>(local_10->vtable),(uint)local_15c,
+                                      /* ST_CALLSITE[00656AEF]: CALL 0x004037d3; direct=004037D3 thunk_FUN_00677290; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__cdecl;pointer:/SubmarineTitans/Recovered/DArrayTy;/undefined4;/uint;/char;/short;/short;/short;/short;/short;/short;/int */
+                                      pDVar17 = st::pointer_boundary_cast<DArrayTy *>(st::fn_004037D3(st::machine_word_boundary_cast<undefined4>(local_10->vtable),(uint)local_15c,
                                                                    (char)local_158,(short)local_154,
                                                                    (short)local_150,(short)local_14c
                                                                    ,(short)local_148,
                                                                    (short)local_144,(short)local_140
-                                                                   ,1);
+                                                                   ,1));
                                       if (pDVar17 == nullptr) {
-                                        pAVar38 = local_10->vtable;
-                                        uVar33 = local_14;
+                                        pAVar41 = local_10->vtable;
+                                        uVar36 = local_14;
                                         pcVar8_mg28 = st::fn_004057DB(local_EAX_488);
-                                        st::fn_00405042(this_00,-0xab,pcVar8_mg28,uVar33,
-                                                           (int)pAVar38);
+                                        st::fn_00405042(this_00,-0xab,pcVar8_mg28,uVar36,
+                                                           (int)pAVar41);
                                       }
                                       else {
                                         st::fn_00402270((uint)local_10->vtable,pDVar17);
                                         st::fn_006AE110(pDVar17);
                                       }
-                                      local_10 = (AiFltClassTy *)&local_10->field_0x4;
+                                      local_10 = reinterpret_cast<AiFltClassTy *>(reinterpret_cast<byte *>(local_10) + 0x4);
                                       local_8 = (DArrayTy *)((int)&local_8[-1].data + 3);
                                     } while (local_8 != nullptr);
                                   }
@@ -4208,41 +4377,41 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b8:
-                              iVar37 = st::fn_0040158C((RecoveredRecord_AiEventClassTy_00650CF0 *
-                                                          )&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_0040158C(reinterpret_cast<RecoveredRecord_AiEventClassTy_00650CF0 *>(&local_16c));
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[00656B68]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                   local_8 = (DArrayTy *)
-                                                                                    
-                                            /* ST_CALLSITE[00656B8D]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                            /* ST_CALLSITE[00656B8D]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                             st::fn_00668F50
-                                                      ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)pDStack_164,(uint)local_160,
+                                                      (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                       reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                        output_values_neg_34);
                                   if (0 < (int)local_8) {
-                                    local_10 = (AiFltClassTy *)output_values_neg_34;
+                                    local_10 = reinterpret_cast<AiFltClassTy *>(output_values_neg_34);
                                     do {
-                                      pDVar17 = (DArrayTy *)
-                                                st::fn_0040533A(st::machine_word_boundary_cast<undefined4>(local_10->vtable),(uint)local_15c,
+                                      /* ST_CALLSITE[00656BE3]: CALL 0x0040533a; direct=0040533A thunk_FUN_006773b0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__cdecl;pointer:/SubmarineTitans/Recovered/DArrayTy;/undefined4;/uint;/char;/short;/short;/short;/short;/short;/short;/int */
+                                      pDVar17 = st::pointer_boundary_cast<DArrayTy *>(st::fn_0040533A(st::machine_word_boundary_cast<undefined4>(local_10->vtable),(uint)local_15c,
                                                                    (char)local_158,(short)local_154,
                                                                    (short)local_150,(short)local_14c
                                                                    ,(short)local_148,
                                                                    (short)local_144,(short)local_140
-                                                                   ,1);
+                                                                   ,1));
                                       if (pDVar17 == nullptr) {
-                                        pAVar38 = local_10->vtable;
-                                        uVar33 = local_14;
+                                        pAVar41 = local_10->vtable;
+                                        uVar36 = local_14;
                                         pcVar8_mg27 = st::fn_004057DB(local_EAX_488);
-                                        st::fn_00405042(this_00,-0xab,pcVar8_mg27,uVar33,
-                                                           (int)pAVar38);
+                                        st::fn_00405042(this_00,-0xab,pcVar8_mg27,uVar36,
+                                                           (int)pAVar41);
                                       }
                                       else {
                                         st::fn_00402270((uint)local_10->vtable,pDVar17);
                                         st::fn_006AE110(pDVar17);
                                       }
-                                      local_10 = (AiFltClassTy *)&local_10->field_0x4;
+                                      local_10 = reinterpret_cast<AiFltClassTy *>(reinterpret_cast<byte *>(local_10) + 0x4);
                                       local_8 = (DArrayTy *)((int)&local_8[-1].data + 3);
                                     } while (local_8 != nullptr);
                                   }
@@ -4251,42 +4420,42 @@ LAB_00659a1c:
                               }
                               break;
                             case 0x5b9:
-                              iVar37 = st::fn_004050DD((RecoveredRecord_AiEventClassTy_00650E10 *
-                                                          )&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_004050DD(reinterpret_cast<RecoveredRecord_AiEventClassTy_00650E10 *>(&local_16c));
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[00656C5C]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                   local_8 = (DArrayTy *)
-                                                                                    
-                                            /* ST_CALLSITE[00656C81]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                            /* ST_CALLSITE[00656C81]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                             st::fn_00668F50
-                                                      ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)pDStack_164,(uint)local_160,
+                                                      (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                       reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                        output_values_neg_34);
                                   if (0 < (int)local_8) {
-                                    local_10 = (AiFltClassTy *)output_values_neg_34;
+                                    local_10 = reinterpret_cast<AiFltClassTy *>(output_values_neg_34);
                                     do {
-                                      pDVar17 = (DArrayTy *)
-                                                st::fn_00403C2E(st::machine_word_boundary_cast<undefined4>(local_10->vtable),
-                                                                   (byte *)local_15c,(char)local_158
+                                      /* ST_CALLSITE[00656CD7]: CALL 0x00403c2e; direct=00403C2E thunk_FUN_006774c0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__cdecl;pointer:/SubmarineTitans/Recovered/DArrayTy;/undefined4;pointer:/byte;/char;/short;/short;/short;/short;/short;/short;/int */
+                                      pDVar17 = st::pointer_boundary_cast<DArrayTy *>(st::fn_00403C2E(st::machine_word_boundary_cast<undefined4>(local_10->vtable),
+                                                                   reinterpret_cast<byte *>(local_15c),(char)local_158
                                                                    ,(short)local_154,
                                                                    (short)local_150,(short)local_14c
                                                                    ,(short)local_148,
                                                                    (short)local_144,(short)local_140
-                                                                   ,1);
+                                                                   ,1));
                                       if (pDVar17 == nullptr) {
-                                        pAVar38 = local_10->vtable;
-                                        uVar33 = local_14;
+                                        pAVar41 = local_10->vtable;
+                                        uVar36 = local_14;
                                         pcVar8_mg26 = st::fn_004057DB(local_EAX_488);
-                                        st::fn_00405042(this_00,-0xab,pcVar8_mg26,uVar33,
-                                                           (int)pAVar38);
+                                        st::fn_00405042(this_00,-0xab,pcVar8_mg26,uVar36,
+                                                           (int)pAVar41);
                                       }
                                       else {
                                         st::fn_00402270((uint)local_10->vtable,pDVar17);
                                         st::fn_006AE110(pDVar17);
                                       }
-                                      local_10 = (AiFltClassTy *)&local_10->field_0x4;
+                                      local_10 = reinterpret_cast<AiFltClassTy *>(reinterpret_cast<byte *>(local_10) + 0x4);
                                       local_8 = (DArrayTy *)((int)&local_8[-1].data + 3);
                                     } while (local_8 != nullptr);
                                   }
@@ -4297,18 +4466,18 @@ LAB_00659a1c:
                             goto cf_common_join_00652A99;
                           }
                           if (local_EAX_488 == 0x593) {
-                            iVar37 = st::fn_00402F4A((RecoveredRecord_AiEventClassTy_0064FD80 *)
-                                                        &local_16c);
-                            if (iVar37 == 0) {
-                              iVar37 = -1;
-                              uVar33 = local_14;
+
+                            iVar40 = st::fn_00402F4A(reinterpret_cast<RecoveredRecord_AiEventClassTy_0064FD80 *>(&local_16c));
+                            if (iVar40 == 0) {
+                              iVar40 = -1;
+                              uVar36 = local_14;
                               pcVar8_mg2F = st::fn_004057DB(0x593);
-                              st::fn_00405042(this_00,-0x7d,pcVar8_mg2F,uVar33,iVar37);
+                              st::fn_00405042(this_00,-0x7d,pcVar8_mg2F,uVar36,iVar40);
                             }
                             else {
                               DAT_008118fc = 0;
                               /* ST_CALLSITE[00655E6C]: CALL 0x00402932; direct=00402932 _EnumArt */
-                              st::fn_00402932((short)pDStack_164,(byte *)local_160,(short)local_15c,
+                              st::fn_00402932((short)pDStack_164,reinterpret_cast<byte *>(local_160),(short)local_15c,
                                        (short)local_158,(short)local_154,(short)local_150,
                                        (short)local_14c,(short)local_148,st::function_address_boundary_cast<code *>(st::fn_0064DD30),
                                        st::machine_word_boundary_cast<undefined4>(&local_144));
@@ -4317,29 +4486,31 @@ LAB_00659a1c:
                           }
                           if (local_EAX_488 < 0x54e) {
                             if (local_EAX_488 == 0x54d) {
-                              iVar37 = st::fn_00402A1D((int)&local_16c);
-                              if (iVar37 == 0) {
-                                iVar37 = -1;
-                                uVar33 = local_14;
+
+                              iVar40 = st::fn_00402A1D(reinterpret_cast<RecoveredRecord_0064EF10_0181E150 *>(&local_16c));
+                              if (iVar40 == 0) {
+                                iVar40 = -1;
+                                uVar36 = local_14;
                                 pcVar8_mg31 = st::fn_004057DB(0x54d);
-                                st::fn_00405042(this_00,-0x7d,pcVar8_mg31,uVar33,iVar37);
+                                st::fn_00405042(this_00,-0x7d,pcVar8_mg31,uVar36,iVar40);
                               }
                               else {
                                 /* ST_CALLSITE[00653D4F]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 == 8) && (pDStack_164 == (DArrayTy *)0x9)) {
-                                  iVar37 = -1;
-                                  uVar33 = local_14;
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 == 8) && (st::machine_word_boundary_cast<uint>(pDStack_164) == st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                  iVar40 = -1;
+                                  uVar36 = local_14;
                                   pcVar8_mg30 = st::fn_004057DB(0x54d);
-                                  st::fn_00405042(this_00,-0x7d,pcVar8_mg30,uVar33,iVar37);
+                                  st::fn_00405042(this_00,-0x7d,pcVar8_mg30,uVar36,iVar40);
                                 }
                                 else {
-                                  /* ST_CALLSITE[00653D8C]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                                  /* ST_CALLSITE[00653D8C]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                   local_EAX_5500 =
-                                       st::fn_00668F50((AnonReceiver_0064A970 *)this_00,
-                                                      (char *)pDStack_164,(uint)local_160,
-                                                      output_values_neg_34);
-                                  iVar37 = 0;
+                                       st::fn_00668F50
+                                                 (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                  reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                                  output_values_neg_34);
+                                  iVar40 = 0;
                                   if (0 < local_EAX_5500) {
                                     puVar12 = output_values_neg_34;
                                     do {
@@ -4349,9 +4520,9 @@ LAB_00659a1c:
                                         }
                                         break;
                                       }
-                                      iVar37 = iVar37 + 1;
+                                      iVar40 = iVar40 + 1;
                                       puVar12 = puVar12 + 1;
-                                    } while (iVar37 < local_EAX_5500);
+                                    } while (iVar40 < local_EAX_5500);
                                   }
                                 }
                               }
@@ -4359,12 +4530,13 @@ LAB_00659a1c:
                             }
                             if (local_EAX_488 < 0x51b) {
                               if (local_EAX_488 == 0x51a) {
-                                iVar37 = st::fn_00404C32((int)&local_16c);
-                                if (iVar37 == 0) {
-                                  iVar37 = -1;
-                                  uVar33 = local_14;
+
+                                iVar40 = st::fn_00404C32(reinterpret_cast<RecoveredRecord_0064E960_781AC0FD *>(&local_16c));
+                                if (iVar40 == 0) {
+                                  iVar40 = -1;
+                                  uVar36 = local_14;
                                   pcVar8_mg32 = st::fn_004057DB(0x51a);
-                                  st::fn_00405042(this_00,-0x7d,pcVar8_mg32,uVar33,iVar37);
+                                  st::fn_00405042(this_00,-0x7d,pcVar8_mg32,uVar36,iVar40);
                                 }
                                 else {
                                   this_00->field_052F[(int)pDStack_164] = (uint)local_160;
@@ -4374,22 +4546,24 @@ LAB_00659a1c:
                               if (0x3e < local_EAX_488) {
                                 if (local_EAX_488 < 0x517) {
                                   if (local_EAX_488 == 0x516) {
-                                    iVar37 = st::fn_00402158((short *)&local_16c);
-                                    if (iVar37 == 0) {
-                                      iVar37 = -1;
-                                      uVar33 = local_14;
+
+                                    iVar40 = st::fn_00402158(reinterpret_cast<short *>(&local_16c));
+                                    if (iVar40 == 0) {
+                                      iVar40 = -1;
+                                      uVar36 = local_14;
                                       pcVar8_mg37 = st::fn_004057DB(0x516);
-                                      st::fn_00405042(this_00,-0x7d,pcVar8_mg37,uVar33,iVar37);
+                                      st::fn_00405042(this_00,-0x7d,pcVar8_mg37,uVar36,iVar40);
                                     }
                                     else {
-                                      if (pDStack_164 == (DArrayTy *)0x9) {
+                                      if (st::machine_word_boundary_cast<uint>(pDStack_164) == st::machine_word_boundary_cast<uint>((DArrayTy *)0x9)) {
                                         /* ST_CALLSITE[00652FD4]: CALL dword ptr [EDX + 0x18] */
-                                        iVar37 = this_00->vfunc_18();
-                                        if (iVar37 == 8) {
+                                        iVar40 = this_00->vfunc_18();
+                                        if (iVar40 == 8) {
                                           pDVar17 = local_15c;
                                           if ((int)local_15c <= (int)local_158) {
                                             do {
                                               puVar9 = (undefined1 *)
+
                                                        st::fn_004048E0(this_00,(int)pDVar17);
                                               if (puVar9 != nullptr) {
                                                 *puVar9 = 0;
@@ -4400,26 +4574,26 @@ LAB_00659a1c:
                                           goto cf_common_join_00659A73;
                                         }
                                       }
-                                      /* ST_CALLSITE[00653023]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                                      /* ST_CALLSITE[00653023]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                       iVar37_mgC4 = st::fn_00668F50
-                                                              ((AnonReceiver_0064A970 *)this_00,
-                                                               (char *)pDStack_164,(uint)local_160,
+                                                              (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00)
+                                                               ,reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                                output_values_neg_34);
                                       if (0 < iVar37_mgC4) {
-                                        local_8 = (DArrayTy *)output_values_neg_34;
+                                        local_8 = reinterpret_cast<DArrayTy *>(output_values_neg_34);
                                         do {
                                           if (g_allPlayers_007FA174 == nullptr) {
                                             local_10 = nullptr;
                                           }
                                           else {
-                                            local_10 = (AiFltClassTy *)
-                                                       st::fn_00401DC5((char)local_8->flags);
+                                            local_10 = reinterpret_cast<AiFltClassTy *>(st::fn_00401DC5((char)local_8->flags));
                                           }
                                           pDVar17 = local_15c;
                                           if ((int)local_15c <= (int)local_158) {
                                             do {
                                               if (local_10 != nullptr) {
                                                 puVar9 = (undefined1 *)
+
                                                          st::fn_004048E0(&local_10->field_001C,
                                                                             (int)pDVar17);
                                                 if (puVar9 != nullptr) {
@@ -4429,19 +4603,20 @@ LAB_00659a1c:
                                               pDVar17 = (DArrayTy *)((int)&pDVar17->flags + 1);
                                             } while ((int)pDVar17 <= (int)local_158);
                                           }
-                                          local_8 = (DArrayTy *)&local_8->iteratorIndex;
+                                          local_8 = reinterpret_cast<DArrayTy *>(&local_8->iteratorIndex);
                                           iVar37_mgC4 = iVar37_mgC4 + -1;
                                         } while (iVar37_mgC4 != 0);
                                       }
                                     }
                                   }
                                   else if (local_EAX_488 == 0x42) {
-                                    iVar37 = st::fn_0040199C((int)&local_16c);
-                                    if (iVar37 == 0) {
-                                      iVar37 = -1;
-                                      uVar33 = local_14;
+
+                                    iVar40 = st::fn_0040199C((int)&local_16c);
+                                    if (iVar40 == 0) {
+                                      iVar40 = -1;
+                                      uVar36 = local_14;
                                       pcVar8_mg38 = st::fn_004057DB(0x42);
-                                      st::fn_00405042(this_00,-0x7d,pcVar8_mg38,uVar33,iVar37);
+                                      st::fn_00405042(this_00,-0x7d,pcVar8_mg38,uVar36,iVar40);
                                     }
                                     else {
                                       pDVar17 = local_160;
@@ -4453,12 +4628,13 @@ LAB_00659a1c:
                                     local_174 = 1;
                                   }
                                   else if (local_EAX_488 == 0x515) {
-                                    iVar37 = st::fn_00404174((short *)&local_16c);
-                                    if (iVar37 == 0) {
-                                      iVar37 = -1;
-                                      uVar33 = local_14;
+
+                                    iVar40 = st::fn_00404174(reinterpret_cast<short *>(&local_16c));
+                                    if (iVar40 == 0) {
+                                      iVar40 = -1;
+                                      uVar36 = local_14;
                                       pcVar8_mg39 = st::fn_004057DB(0x515);
-                                      st::fn_00405042(this_00,-0x7d,pcVar8_mg39,uVar33,iVar37);
+                                      st::fn_00405042(this_00,-0x7d,pcVar8_mg39,uVar36,iVar40);
                                     }
                                     else if (pDStack_164 == nullptr) {
                                       *(undefined1 *)local_178 = 0;
@@ -4471,26 +4647,27 @@ LAB_00659a1c:
                                   }
                                 }
                                 else if (local_EAX_488 == 0x517) {
-                                  iVar37 = st::fn_0040339B((short *)&local_16c);
-                                  if (iVar37 == 0) {
-                                    iVar37 = -1;
-                                    uVar33 = local_14;
+
+                                  iVar40 = st::fn_0040339B(reinterpret_cast<short *>(&local_16c));
+                                  if (iVar40 == 0) {
+                                    iVar40 = -1;
+                                    uVar36 = local_14;
                                     pcVar8_mg33 = st::fn_004057DB(0x517);
-                                    st::fn_00405042(this_00,-0x7d,pcVar8_mg33,uVar33,iVar37);
+                                    st::fn_00405042(this_00,-0x7d,pcVar8_mg33,uVar36,iVar40);
                                   }
                                   else {
-                                    if (pDStack_164 == (DArrayTy *)0x9) {
+                                    if (st::machine_word_boundary_cast<uint>(pDStack_164) == st::machine_word_boundary_cast<uint>((DArrayTy *)0x9)) {
                                       /* ST_CALLSITE[0065321C]: CALL dword ptr [EDX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if (iVar37 == 8) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if (iVar40 == 8) {
                                         pDVar17 = local_15c;
                                         if ((int)local_15c <= (int)local_158) {
                                           do {
-                                            puVar9 = (undefined1 *)
-                                                     st::fn_004048E0(this_00,(int)pDVar17);
-                                            if (puVar9 != nullptr) {
-                                              *puVar9 = 1;
-                                              *(byte **)(puVar9 + 0xb) = local_154;
+
+                                            ppbVar11 = st::fn_004048E0(this_00,(int)pDVar17);
+                                            if (ppbVar11 != 0) {
+                                              *(undefined1 *)ppbVar11 = 1;
+                                              *(byte **)(ppbVar11 + 0xb) = local_154;
                                             }
                                             pDVar17 = (DArrayTy *)((int)&pDVar17->flags + 1);
                                           } while ((int)pDVar17 <= (int)local_158);
@@ -4499,65 +4676,66 @@ LAB_00659a1c:
                                       }
                                     }
                                     local_c = (DArrayTy *)
-                                                                                      
-                                              /* ST_CALLSITE[00653274]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                              /* ST_CALLSITE[00653274]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                               st::fn_00668F50
-                                                        ((AnonReceiver_0064A970 *)this_00,
-                                                         (char *)pDStack_164,(uint)local_160,
+                                                        (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                         reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                          output_values_neg_34);
                                     if (0 < (int)local_c) {
-                                      local_8 = (DArrayTy *)output_values_neg_34;
+                                      local_8 = reinterpret_cast<DArrayTy *>(output_values_neg_34);
                                       do {
                                         if (g_allPlayers_007FA174 == nullptr) {
                                           local_10 = nullptr;
                                         }
                                         else {
-                                          local_10 = (AiFltClassTy *)
-                                                     st::fn_00401DC5((char)local_8->flags);
+                                          local_10 = reinterpret_cast<AiFltClassTy *>(st::fn_00401DC5((char)local_8->flags));
                                         }
                                         pDVar17 = local_15c;
                                         if ((int)local_15c <= (int)local_158) {
                                           do {
                                             if (local_10 != nullptr) {
-                                              puVar9 = (undefined1 *)
-                                                       st::fn_004048E0(&local_10->field_001C,
-                                                                          (int)pDVar17);
-                                              if (puVar9 != nullptr) {
-                                                *puVar9 = 1;
-                                                *(byte **)(puVar9 + 0xb) = local_154;
+
+                                              ppbVar11_mg1 = st::fn_004048E0(&local_10->
+                                                                                 field_001C,
+                                                                                (int)pDVar17);
+                                              if (ppbVar11_mg1 != 0) {
+                                                *(undefined1 *)ppbVar11_mg1 = 1;
+                                                *(byte **)(ppbVar11_mg1 + 0xb) = local_154;
                                               }
                                             }
                                             pDVar17 = (DArrayTy *)((int)&pDVar17->flags + 1);
                                           } while ((int)pDVar17 <= (int)local_158);
                                         }
-                                        local_8 = (DArrayTy *)&local_8->iteratorIndex;
+                                        local_8 = reinterpret_cast<DArrayTy *>(&local_8->iteratorIndex);
                                         local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                       } while (local_c != nullptr);
                                     }
                                   }
                                 }
                                 else if (local_EAX_488 == 0x518) {
-                                  iVar37 = st::fn_00405588((int)&local_16c);
-                                  if (iVar37 == 0) {
-                                    iVar37 = -1;
-                                    uVar33 = local_14;
+
+                                  iVar40 = st::fn_00405588(reinterpret_cast<RecoveredRecord_0064E8C0_55D619B7 *>(&local_16c));
+                                  if (iVar40 == 0) {
+                                    iVar40 = -1;
+                                    uVar36 = local_14;
                                     pcVar8_mg35 = st::fn_004057DB(0x518);
-                                    st::fn_00405042(this_00,-0x7d,pcVar8_mg35,uVar33,iVar37);
+                                    st::fn_00405042(this_00,-0x7d,pcVar8_mg35,uVar36,iVar40);
                                   }
                                   else {
-                                    if (pDStack_164 == (DArrayTy *)0x9) {
+                                    if (st::machine_word_boundary_cast<uint>(pDStack_164) == st::machine_word_boundary_cast<uint>((DArrayTy *)0x9)) {
                                       /* ST_CALLSITE[0065313E]: CALL dword ptr [EAX + 0x18] */
-                                      iVar37 = this_00->vfunc_18();
-                                      if (iVar37 == 8) {
+                                      iVar40 = this_00->vfunc_18();
+                                      if (iVar40 == 8) {
                                         *(uint **)(&this_00->field_0xde + (int)local_15c * 4) =
                                              local_158;
                                         goto cf_common_join_00659A73;
                                       }
                                     }
-                                    /* ST_CALLSITE[00653172]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                                    /* ST_CALLSITE[00653172]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                     iVar37_mgBE = st::fn_00668F50
-                                                            ((AnonReceiver_0064A970 *)this_00,
-                                                             (char *)pDStack_164,(uint)local_160,
+                                                            (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                             reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                              output_values_neg_34);
                                     if (0 < iVar37_mgBE) {
                                       puVar12 = output_values_neg_34;
@@ -4569,10 +4747,10 @@ LAB_00659a1c:
                                           pAVar10 = st::fn_00401DC5((char)*puVar12);
                                         }
                                         if (pAVar10 == nullptr) {
-                                          uVar33 = *puVar12;
-                                          uVar28 = local_14;
+                                          uVar36 = *puVar12;
+                                          uVar31 = local_14;
                                           pcVar8_mg34 = st::fn_004057DB(0x518);
-                                          st::fn_00405042(this_00,-0xab,pcVar8_mg34,uVar28,uVar33
+                                          st::fn_00405042(this_00,-0xab,pcVar8_mg34,uVar31,uVar36
                                                             );
                                         }
                                         else {
@@ -4586,15 +4764,16 @@ LAB_00659a1c:
                                   }
                                 }
                                 else if (local_EAX_488 == 0x519) {
-                                  iVar37 = st::fn_00403832((int)&local_16c);
-                                  if (iVar37 == 0) {
-                                    iVar37 = -1;
-                                    uVar33 = local_14;
+
+                                  iVar40 = st::fn_00403832(reinterpret_cast<RecoveredRecord_0064E910_BEEF74E3 *>(&local_16c));
+                                  if (iVar40 == 0) {
+                                    iVar40 = -1;
+                                    uVar36 = local_14;
                                     pcVar8_mg36 = st::fn_004057DB(0x519);
-                                    st::fn_00405042(this_00,-0x7d,pcVar8_mg36,uVar33,iVar37);
+                                    st::fn_00405042(this_00,-0x7d,pcVar8_mg36,uVar36,iVar40);
                                   }
                                   else {
-                                    (&DAT_0080e43b)[(int)pDStack_164] = local_160;
+                                    (&DAT_0080e43b)[(int)pDStack_164] = st::machine_word_boundary_cast<undefined4>(local_160);
                                   }
                                 }
                                 goto cf_common_join_00659A73;
@@ -4603,8 +4782,9 @@ LAB_00659a1c:
 switchD_00652b42_switchD:
                                 switch(static_cast<uint32_t>(STRawWord(local_15c))) {
                                 case 0:
-                                  iVar37 = st::fn_004046A6((int)&local_16c);
-                                  if (iVar37 == 0) goto cf_common_join_00652A99;
+
+                                  iVar40 = st::fn_004046A6(reinterpret_cast<RecoveredRecord_0064EA10_A671C4A7 *>(&local_16c));
+                                  if (iVar40 == 0) goto cf_common_join_00652A99;
                                   switch(local_EAX_488) {
                                   case 2:
                                     *(int *)(&this_00->field_0xde + (int)pDStack_164 * 4) =
@@ -4649,15 +4829,16 @@ switchD_00652b42_switchD:
                                   }
                                   break;
                                 case 0x1:
-                                  iVar37 = st::fn_004046A6((int)&local_16c);
-                                  if (iVar37 == 0) goto cf_common_join_00652A99;
+
+                                  iVar40 = st::fn_004046A6(reinterpret_cast<RecoveredRecord_0064EA10_A671C4A7 *>(&local_16c));
+                                  if (iVar40 == 0) goto cf_common_join_00652A99;
                                   switch(local_EAX_488) {
                                   case 2:
                                     (&DAT_0080e43b)[(int)pDStack_164] =
                                          (int)&local_160->flags + (&DAT_0080e43b)[(int)pDStack_164];
                                     break;
                                   case 5:
-                                    (&DAT_0080e43b)[(int)pDStack_164] = local_160;
+                                    (&DAT_0080e43b)[(int)pDStack_164] = st::machine_word_boundary_cast<undefined4>(local_160);
                                     break;
                                   case 0x17:
                                     if (local_160 == nullptr) {
@@ -4681,16 +4862,17 @@ switchD_00652b42_switchD:
                                     break;
                                   case 0x31:
                                     (&DAT_0080e43b)[(int)pDStack_164] =
-                                         (&DAT_0080e43b)[(int)pDStack_164] * (int)local_160;
+                                         st::machine_word_boundary_cast<undefined4>((&DAT_0080e43b)[(int)pDStack_164] * (int)local_160);
                                     break;
                                   case 0x3e:
                                     (&DAT_0080e43b)[(int)pDStack_164] =
-                                         (&DAT_0080e43b)[(int)pDStack_164] - (int)local_160;
+                                         st::machine_word_boundary_cast<undefined4>((&DAT_0080e43b)[(int)pDStack_164] - (int)local_160);
                                   }
                                   break;
                                 case 0x2:
-                                  iVar37 = st::fn_0040378D((int)&local_16c);
-                                  if (iVar37 == 0) goto cf_common_join_00652A99;
+
+                                  iVar40 = st::fn_0040378D(reinterpret_cast<RecoveredRecord_0064EA60_9905C978 *>(&local_16c));
+                                  if (iVar40 == 0) goto cf_common_join_00652A99;
                                   switch(local_EAX_488) {
                                   case 2:
                                     this_00->field_052F[(int)pDStack_164] =
@@ -4723,21 +4905,23 @@ switchD_00652b42_switchD:
                                     }
                                     break;
                                   case 0x31:
-                                    this_00->field_052F[(int)pDStack_164] =st::machine_word_boundary_cast<uint>(
-                                         this_00->field_052F[(int)pDStack_164] * (int)local_160);
+                                    this_00->field_052F[(int)pDStack_164] =
+                                         st::machine_word_boundary_cast<uint>(this_00->field_052F[(int)pDStack_164] * (int)local_160);
                                     break;
                                   case 0x3e:
-                                    this_00->field_052F[(int)pDStack_164] =st::machine_word_boundary_cast<uint>(
-                                         this_00->field_052F[(int)pDStack_164] - (int)local_160);
+                                    this_00->field_052F[(int)pDStack_164] =
+                                         st::machine_word_boundary_cast<uint>(this_00->field_052F[(int)pDStack_164] - (int)local_160);
                                   }
                                   break;
                                 case 0x3:
-                                  iVar37 = st::fn_004023F1((int)&local_16c);
-                                  if (iVar37 == 0) goto cf_common_join_00652A99;
+
+                                  iVar40 = st::fn_004023F1(reinterpret_cast<RecoveredRecord_0064EAA0_C5553866 *>(&local_16c));
+                                  if (iVar40 == 0) goto cf_common_join_00652A99;
                                   if (local_EAX_488 == 5) {
+
                                     st::fn_006B6020
                                               (this_00->field_05B3,(uint)pDStack_164,
-                                               (char *)local_160);
+                                               reinterpret_cast<char *>(local_160));
                                   }
                                 }
                                 goto cf_common_join_00659A73;
@@ -4750,8 +4934,9 @@ switchD_00652b42_switchD:
                               case 0x31:
                                 goto switchD_00652b42_switchD;
                               case 0x19:
-                                iVar37 = st::fn_004020EF((int)&local_16c);
-                                if (iVar37 == 0) goto cf_common_join_00652A99;
+
+                                iVar40 = st::fn_004020EF((int)&local_16c);
+                                if (iVar40 == 0) goto cf_common_join_00652A99;
                                 if (local_174 != 0) {
                                   local_174 = 0;
                                   local_170 = pDStack_164;
@@ -4761,13 +4946,15 @@ switchD_00652b42_switchD:
                                 local_174 = 0;
                                 break;
                               case 0x21:
-                                iVar37 = st::fn_00405A65((int)&local_16c);
+
+                                iVar40 = st::fn_00405A65((int)&local_16c);
                                 pDVar17 = pDStack_164;
-                                if (iVar37 == 0) goto cf_common_join_00652A99;
+                                if (iVar40 == 0) goto cf_common_join_00652A99;
                                 goto cf_continue_loop_00659A80;
                               case 0x23:
-                                iVar37 = st::fn_004011CC((int)&local_16c);
-                                if (iVar37 == 0) goto cf_common_join_00652A99;
+
+                                iVar40 = st::fn_004011CC((int)&local_16c);
+                                if (iVar40 == 0) goto cf_common_join_00652A99;
                                 if (pDStack_164 == nullptr) {
                                   local_170 = local_160;
                                   pDVar17 = local_170;
@@ -4778,33 +4965,37 @@ switchD_00652b42_switchD:
                             }
                             switch(static_cast<uint32_t>(STRawWord(local_EAX_488))) {
                             case 0x51b:
-                              iVar37 = st::fn_00403CD3((int)&local_16c);
-                              if (iVar37 == 0) goto cf_common_join_00652A99;
+
+                              iVar40 = st::fn_00403CD3(reinterpret_cast<RecoveredRecord_0064E9A0_7C06081A *>(&local_16c));
+                              if (iVar40 == 0) goto cf_common_join_00652A99;
+
                               st::fn_006B6020
-                                        (this_00->field_05B3,(uint)pDStack_164,(char *)local_160);
+                                        (this_00->field_05B3,(uint)pDStack_164,reinterpret_cast<char *>(local_160));
                               break;
                             case 0x528:
-                              local_EAX_2959 = st::fn_004041C4((int)&local_16c);
+
+                              local_EAX_2959 =
+                                   st::fn_004041C4(reinterpret_cast<RecoveredRecord_0064EB20_CBD2CC1E *>(&local_16c));
                               if (local_EAX_2959 != 0) {
                                 /* ST_CALLSITE[006533B3]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                   local_c = (DArrayTy *)
-                                                                                    
-                                            /* ST_CALLSITE[006533D8]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                            /* ST_CALLSITE[006533D8]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                             st::fn_00668F50
-                                                      ((AnonReceiver_0064A970 *)this_00,
-                                                       (char *)pDStack_164,(uint)local_160,
+                                                      (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                       reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                        output_values_neg_34);
                                   if (0 < (int)local_c) {
                                     puVar12 = output_values_neg_34;
-                                    pCVar24 = g_cPanel_00801688;
+                                    pCVar27 = g_cPanel_00801688;
                                     do {
-                                      if (pCVar24 != nullptr) {
+                                      if (pCVar27 != nullptr) {
                                         /* ST_CALLSITE[00653401]: CALL 0x00401410; direct=00401410 CPanelTy::sub_004F9120 */
                                         st::fn_00401410
-                                                  (pCVar24,(byte)*puVar12,'\x01',st::machine_word_boundary_cast<undefined4>(local_15c));
-                                        pCVar24 = g_cPanel_00801688;
+                                                  (pCVar27,(byte)*puVar12,'\x01',st::machine_word_boundary_cast<undefined4>(local_15c));
+                                        pCVar27 = g_cPanel_00801688;
                                       }
                                       puVar12 = puVar12 + 1;
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -4815,24 +5006,26 @@ switchD_00652b42_switchD:
                               }
                               goto cf_common_join_00652A99;
                             case 0x529:
-                              iVar37 = st::fn_00404E3A((int)&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_00404E3A((int)&local_16c);
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[00653438]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  /* ST_CALLSITE[0065345D]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
-                                  iVar37_mgF4 = st::fn_00668F50
-                                                          ((AnonReceiver_0064A970 *)this_00,
-                                                           (char *)pDStack_164,(uint)local_160,
-                                                           output_values_neg_34);
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                  iVar37_mgF4 = (int)
+                                                     /* ST_CALLSITE[0065345D]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/CPanelTy; signature=__thiscall;pointer:/CPanelTy;pointer:/SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_0064A970;pointer:/char;/uint;pointer:/uint */
+                                                     st::fn_00668F50
+                                                               (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),reinterpret_cast<char *>(pDStack_164),
+                                                                (uint)local_160,output_values_neg_34
+                                                               );
                                   if (0 < iVar37_mgF4) {
                                     puVar12 = output_values_neg_34;
-                                    pCVar24 = g_cPanel_00801688;
+                                    pCVar27 = g_cPanel_00801688;
                                     do {
-                                      if (pCVar24 != nullptr) {
+                                      if (pCVar27 != nullptr) {
                                         /* ST_CALLSITE[00653481]: CALL 0x00401410; direct=00401410 CPanelTy::sub_004F9120 */
-                                        st::fn_00401410(pCVar24,(byte)*puVar12,'\0',0);
-                                        pCVar24 = g_cPanel_00801688;
+                                        st::fn_00401410(pCVar27,(byte)*puVar12,'\0',0);
+                                        pCVar27 = g_cPanel_00801688;
                                       }
                                       puVar12 = puVar12 + 1;
                                       iVar37_mgF4 = iVar37_mgF4 + -1;
@@ -4843,17 +5036,19 @@ switchD_00652b42_switchD:
                               }
                               goto cf_common_join_00652A99;
                             case 0x52a:
-                              iVar37 = st::fn_0040510A((int)&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_0040510A((int)&local_16c);
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[006534B8]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  /* ST_CALLSITE[006534DD]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                  /* ST_CALLSITE[006534DD]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                   local_EAX_3277 =
-                                       st::fn_00668F50((AnonReceiver_0064A970 *)this_00,
-                                                      (char *)pDStack_164,(uint)local_160,
-                                                      output_values_neg_34);
-                                  iVar37 = 0;
+                                       st::fn_00668F50
+                                                 (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                  reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                                  output_values_neg_34);
+                                  iVar40 = 0;
                                   if (0 < local_EAX_3277) {
                                     puVar12 = output_values_neg_34;
                                     do {
@@ -4863,66 +5058,75 @@ switchD_00652b42_switchD:
                                         }
                                         break;
                                       }
-                                      iVar37 = iVar37 + 1;
+                                      iVar40 = iVar40 + 1;
                                       puVar12 = puVar12 + 1;
-                                    } while (iVar37 < local_EAX_3277);
+                                    } while (iVar40 < local_EAX_3277);
                                   }
                                   break;
                                 }
                               }
                               goto cf_common_join_00652A99;
                             case 0x532:
-                              local_EAX_3358 = st::fn_00403D82((int)&local_16c);
+
+                              local_EAX_3358 =
+                                   st::fn_00403D82(reinterpret_cast<RecoveredRecord_0064EBE0_6039A486 *>(&local_16c));
                               if (local_EAX_3358 == 0) goto cf_common_join_00652A99;
                               if (g_popUp_008016D8 != nullptr) {
-                                if (pDStack_164 == (DArrayTy *)0x9) {
+                                if (st::machine_word_boundary_cast<uint>(pDStack_164) == st::machine_word_boundary_cast<uint>((DArrayTy *)0x9)) {
                                   /* ST_CALLSITE[00653558]: CALL dword ptr [EDX + 0x18] */
-                                  iVar37 = this_00->vfunc_18();
-                                  if (iVar37 == 8) {
-                                    st::fn_004014D8(g_popUp_008016D8,(char *)local_15c,8);
+                                  iVar40 = this_00->vfunc_18();
+                                  if (iVar40 == 8) {
+                                    /* ST_CALLSITE[0065356E]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
+                                    st::fn_004014D8(g_popUp_008016D8,reinterpret_cast<char *>(local_15c),8);
                                     break;
                                   }
                                 }
-                                /* ST_CALLSITE[0065358C]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                                /* ST_CALLSITE[0065358C]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                 local_EAX_3452 =
-                                     st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
-                                                  (char *)pDStack_164,(uint)local_160,
-                                                  output_values_neg_34);
-                                iVar37 = 0;
+                                     st::fn_00668F50
+                                               (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                                output_values_neg_34);
+                                iVar40 = 0;
                                 if (0 < local_EAX_3452) {
                                   puVar12 = output_values_neg_34;
                                   do {
                                     if (*puVar12 == (uint)DAT_0080874d) {
-                                      st::fn_004014D8(g_popUp_008016D8,(char *)local_15c,8);
+                                      /* ST_CALLSITE[006535C6]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
+                                      st::fn_004014D8(g_popUp_008016D8,reinterpret_cast<char *>(local_15c),8);
                                       break;
                                     }
-                                    iVar37 = iVar37 + 1;
+                                    iVar40 = iVar40 + 1;
                                     puVar12 = puVar12 + 1;
-                                  } while (iVar37 < local_EAX_3452);
+                                  } while (iVar40 < local_EAX_3452);
                                 }
                               }
                               break;
                             case 0x533:
-                              local_EAX_3527 = st::fn_00403AC1((int)&local_16c);
+
+                              local_EAX_3527 =
+                                   st::fn_00403AC1(reinterpret_cast<RecoveredRecord_0064EC30_383D4D00 *>(&local_16c));
                               if (local_EAX_3527 == 0) goto cf_common_join_00652A99;
-                              if (pDStack_164 == (DArrayTy *)0x9) {
+                              if (st::machine_word_boundary_cast<uint>(pDStack_164) == st::machine_word_boundary_cast<uint>((DArrayTy *)0x9)) {
                                 /* ST_CALLSITE[006535F4]: CALL dword ptr [EAX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if (iVar37 == 8) {
+                                iVar40 = this_00->vfunc_18();
+                                if (iVar40 == 8) {
                                   if (g_helpString_00801694 != nullptr) {
                                     /* ST_CALLSITE[0065362D]: CALL 0x00402045; direct=00402045 HelpStringTy::sub_0051FAC0 */
                                     st::fn_00402045
-                                              (g_helpString_00801694,(char *)local_154,2,
+                                              (g_helpString_00801694,reinterpret_cast<char *>(local_154),2,
                                                (char)local_158,(int)local_15c * 1000);
                                   }
                                   break;
                                 }
                               }
-                              /* ST_CALLSITE[0065364B]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                              /* ST_CALLSITE[0065364B]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                               local_EAX_3643 =
-                                   st::fn_004016B8((AnonReceiver_0064A970 *)this_00,(char *)pDStack_164
-                                                ,(uint)local_160,output_values_neg_34);
-                              iVar37 = 0;
+                                   st::fn_00668F50
+                                             (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                              reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                              output_values_neg_34);
+                              iVar40 = 0;
                               if (0 < local_EAX_3643) {
                                 puVar12 = output_values_neg_34;
                                 do {
@@ -4930,24 +5134,25 @@ switchD_00652b42_switchD:
                                     if (g_helpString_00801694 != nullptr) {
                                       /* ST_CALLSITE[006536A7]: CALL 0x00402045; direct=00402045 HelpStringTy::sub_0051FAC0 */
                                       st::fn_00402045
-                                                (g_helpString_00801694,(char *)local_154,2,
+                                                (g_helpString_00801694,reinterpret_cast<char *>(local_154),2,
                                                  (char)local_158,(int)local_15c * 1000);
                                     }
                                     break;
                                   }
-                                  iVar37 = iVar37 + 1;
+                                  iVar40 = iVar40 + 1;
                                   puVar12 = puVar12 + 1;
-                                } while (iVar37 < local_EAX_3643);
+                                } while (iVar40 < local_EAX_3643);
                               }
                               break;
                             case 0x534:
+
                               local_EAX_3752 =
-                                   st::fn_004014AB((AnonShape_0064EC80_53C284F2 *)&local_16c);
+                                   st::fn_004014AB(reinterpret_cast<RecoveredRecordView_0064EC80_78BCE981 *>(&local_16c));
                               if (local_EAX_3752 == 0) goto cf_common_join_00652A99;
-                              if (pDStack_164 == (DArrayTy *)0x9) {
+                              if (st::machine_word_boundary_cast<uint>(pDStack_164) == st::machine_word_boundary_cast<uint>((DArrayTy *)0x9)) {
                                 /* ST_CALLSITE[006536D5]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if (iVar37 == 8) {
+                                iVar40 = this_00->vfunc_18();
+                                if (iVar40 == 8) {
 LAB_006536dd:
                                   if (g_cPanel_00801688 != nullptr) {
                                     /* ST_CALLSITE[00653703]: CALL 0x00403152; direct=00403152 CPanelTy::OutText */
@@ -4958,129 +5163,145 @@ LAB_006536dd:
                                   break;
                                 }
                               }
-                              /* ST_CALLSITE[00653721]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                              /* ST_CALLSITE[00653721]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                               local_EAX_3857 =
-                                   st::fn_004016B8((AnonReceiver_0064A970 *)this_00,(char *)pDStack_164
-                                                ,(uint)local_160,output_values_neg_34);
-                              iVar37 = 0;
+                                   st::fn_00668F50
+                                             (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                              reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                              output_values_neg_34);
+                              iVar40 = 0;
                               if (0 < local_EAX_3857) {
                                 puVar12 = output_values_neg_34;
                                 do {
                                   if (*puVar12 == (uint)DAT_0080874d) goto LAB_006536dd;
-                                  iVar37 = iVar37 + 1;
+                                  iVar40 = iVar40 + 1;
                                   puVar12 = puVar12 + 1;
-                                } while (iVar37 < local_EAX_3857);
+                                } while (iVar40 < local_EAX_3857);
                               }
                               break;
                             case 0x535:
-                              local_EAX_3907 = st::fn_0040344F((int)&local_16c);
+
+                              local_EAX_3907 =
+                                   st::fn_0040344F(reinterpret_cast<RecoveredRecord_0064ECD0_D70CBA34 *>(&local_16c));
                               if (local_EAX_3907 == 0) goto cf_common_join_00652A99;
-                              if (pDStack_164 == (DArrayTy *)0x9) {
+                              if (st::machine_word_boundary_cast<uint>(pDStack_164) == st::machine_word_boundary_cast<uint>((DArrayTy *)0x9)) {
                                 /* ST_CALLSITE[00653770]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if (iVar37 == 8) {
+                                iVar40 = this_00->vfunc_18();
+                                if (iVar40 == 8) {
 LAB_00653778:
                                   if (g_cPanel_00801688 != nullptr) {
                                     /* ST_CALLSITE[00653794]: CALL 0x0040195b; direct=0040195B CPanelTy::OutText */
-                                    st::fn_0040195B(g_cPanel_00801688,(char *)local_158,st::machine_word_boundary_cast<undefined4>(local_15c));
+                                    st::fn_0040195B(g_cPanel_00801688,reinterpret_cast<char *>(local_158),st::machine_word_boundary_cast<undefined4>(local_15c));
                                   }
                                   break;
                                 }
                               }
-                              /* ST_CALLSITE[006537B2]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                              /* ST_CALLSITE[006537B2]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                               local_EAX_4002 =
-                                   st::fn_004016B8((AnonReceiver_0064A970 *)this_00,(char *)pDStack_164
-                                                ,(uint)local_160,output_values_neg_34);
-                              iVar37 = 0;
+                                   st::fn_00668F50
+                                             (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                              reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                              output_values_neg_34);
+                              iVar40 = 0;
                               if (0 < local_EAX_4002) {
                                 puVar12 = output_values_neg_34;
                                 do {
                                   if (*puVar12 == (uint)DAT_0080874d) goto LAB_00653778;
-                                  iVar37 = iVar37 + 1;
+                                  iVar40 = iVar40 + 1;
                                   puVar12 = puVar12 + 1;
-                                } while (iVar37 < local_EAX_4002);
+                                } while (iVar40 < local_EAX_4002);
                               }
                               break;
                             case 0x536:
-                              local_EAX_4052 = st::fn_00405E2A((int)&local_16c);
+
+                              local_EAX_4052 =
+                                   st::fn_00405E2A(reinterpret_cast<RecoveredRecord_0064ED20_BEFBD077 *>(&local_16c));
                               if (local_EAX_4052 == 0) goto cf_common_join_00652A99;
-                              if (pDStack_164 == (DArrayTy *)0x9) {
+                              if (st::machine_word_boundary_cast<uint>(pDStack_164) == st::machine_word_boundary_cast<uint>((DArrayTy *)0x9)) {
                                 /* ST_CALLSITE[00653801]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if (iVar37 == 8) {
+                                iVar40 = this_00->vfunc_18();
+                                if (iVar40 == 8) {
                                   /* ST_CALLSITE[0065381D]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
                                   st::fn_00404BD8
-                                            ((SoundClassTy *)&g_sound,SOUND_MODE_12,
-                                             (char *)local_15c,0,nullptr,0);
+                                            (reinterpret_cast<SoundClassTy *>(&g_sound),SOUND_MODE_12,
+                                             reinterpret_cast<char *>(local_15c),0,nullptr,0);
                                   break;
                                 }
                               }
-                              /* ST_CALLSITE[0065383B]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                              /* ST_CALLSITE[0065383B]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                               local_EAX_4139 =
-                                   st::fn_004016B8((AnonReceiver_0064A970 *)this_00,(char *)pDStack_164
-                                                ,(uint)local_160,output_values_neg_34);
-                              iVar37 = 0;
+                                   st::fn_00668F50
+                                             (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                              reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                              output_values_neg_34);
+                              iVar40 = 0;
                               if (0 < local_EAX_4139) {
                                 puVar12 = output_values_neg_34;
                                 do {
                                   if (*puVar12 == (uint)DAT_0080874d) {
                                     /* ST_CALLSITE[0065387A]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
                                     st::fn_00404BD8
-                                              ((SoundClassTy *)&g_sound,SOUND_MODE_12,
-                                               (char *)local_15c,0,nullptr,0);
+                                              (reinterpret_cast<SoundClassTy *>(&g_sound),SOUND_MODE_12,
+                                               reinterpret_cast<char *>(local_15c),0,nullptr,0);
                                     break;
                                   }
-                                  iVar37 = iVar37 + 1;
+                                  iVar40 = iVar40 + 1;
                                   puVar12 = puVar12 + 1;
-                                } while (iVar37 < local_EAX_4139);
+                                } while (iVar40 < local_EAX_4139);
                               }
                               break;
                             case 0x537:
-                              local_EAX_4219 = st::fn_004043C2((int)&local_16c);
+
+                              local_EAX_4219 =
+                                   st::fn_004043C2(reinterpret_cast<RecoveredRecord_0064ED70_6DBB3410 *>(&local_16c));
                               if (local_EAX_4219 == 0) goto cf_common_join_00652A99;
-                              if (pDStack_164 == (DArrayTy *)0x9) {
+                              if (st::machine_word_boundary_cast<uint>(pDStack_164) == st::machine_word_boundary_cast<uint>((DArrayTy *)0x9)) {
                                 /* ST_CALLSITE[006538A8]: CALL dword ptr [EAX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if (iVar37 == 8) {
+                                iVar40 = this_00->vfunc_18();
+                                if (iVar40 == 8) {
                                   if (g_cPanel_00801688 != nullptr) {
                                     /* ST_CALLSITE[006538C5]: CALL 0x00402c1b; direct=00402C1B CPanelTy::PlayBriefing */
-                                    st::fn_00402C1B(g_cPanel_00801688,(char *)local_15c);
+                                    st::fn_00402C1B(g_cPanel_00801688,reinterpret_cast<char *>(local_15c));
                                   }
                                   break;
                                 }
                               }
-                              /* ST_CALLSITE[006538E3]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                              /* ST_CALLSITE[006538E3]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                               local_EAX_4307 =
-                                   st::fn_004016B8((AnonReceiver_0064A970 *)this_00,(char *)pDStack_164
-                                                ,(uint)local_160,output_values_neg_34);
-                              iVar37 = 0;
+                                   st::fn_00668F50
+                                             (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                              reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                              output_values_neg_34);
+                              iVar40 = 0;
                               if (0 < local_EAX_4307) {
                                 puVar12 = output_values_neg_34;
                                 do {
                                   if (*puVar12 == (uint)DAT_0080874d) {
                                     if (g_cPanel_00801688 != nullptr) {
                                       /* ST_CALLSITE[00653923]: CALL 0x00402c1b; direct=00402C1B CPanelTy::PlayBriefing */
-                                      st::fn_00402C1B(g_cPanel_00801688,(char *)local_15c);
+                                      st::fn_00402C1B(g_cPanel_00801688,reinterpret_cast<char *>(local_15c));
                                     }
                                     break;
                                   }
-                                  iVar37 = iVar37 + 1;
+                                  iVar40 = iVar40 + 1;
                                   puVar12 = puVar12 + 1;
-                                } while (iVar37 < local_EAX_4307);
+                                } while (iVar40 < local_EAX_4307);
                               }
                               break;
                             case 0x546:
-                              iVar37 = st::fn_00405B4B((int)&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_00405B4B((int)&local_16c);
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[00653948]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  /* ST_CALLSITE[0065396D]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                  /* ST_CALLSITE[0065396D]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                   local_EAX_4445 =
-                                       st::fn_00668F50((AnonReceiver_0064A970 *)this_00,
-                                                      (char *)pDStack_164,(uint)local_160,
-                                                      output_values_neg_34);
-                                  iVar37 = 0;
+                                       st::fn_00668F50
+                                                 (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                  reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                                  output_values_neg_34);
+                                  iVar40 = 0;
                                   if (0 < local_EAX_4445) {
                                     puVar12 = output_values_neg_34;
                                     do {
@@ -5096,13 +5317,13 @@ LAB_00653778:
                                           st::fn_00401FD2
                                                     (g_visibleClass_00802A88,(int)local_15c,
                                                      (int)local_158,local_154,
-                                                     output_values_neg_34[iVar37],local_150,iVar11);
+                                                     output_values_neg_34[iVar40],local_150,iVar11);
                                         }
                                         break;
                                       }
-                                      iVar37 = iVar37 + 1;
+                                      iVar40 = iVar40 + 1;
                                       puVar12 = puVar12 + 1;
-                                    } while (iVar37 < local_EAX_4445);
+                                    } while (iVar40 < local_EAX_4445);
                                   }
                                   break;
                                 }
@@ -5110,17 +5331,18 @@ LAB_00653778:
                               goto cf_common_join_00652A99;
                             case 0x547:
                             case 0x548:
-                              iVar37 = st::fn_004018F7((int)&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_004018F7((int)&local_16c);
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[00653A04]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  /* ST_CALLSITE[00653A29]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                  /* ST_CALLSITE[00653A29]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                   iVar37_mgDF = st::fn_00668F50
-                                                          ((AnonReceiver_0064A970 *)this_00,
-                                                           (char *)pDStack_164,(uint)local_160,
+                                                          (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                           reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                            output_values_neg_34);
-                                  iVar37 = 0;
+                                  iVar40 = 0;
                                   if (0 < iVar37_mgDF) {
                                     puVar12 = output_values_neg_34;
                                     do {
@@ -5144,26 +5366,28 @@ LAB_00653778:
                                         pSVar4->field_02D8 = 1;
                                         break;
                                       }
-                                      iVar37 = iVar37 + 1;
+                                      iVar40 = iVar40 + 1;
                                       puVar12 = puVar12 + 1;
-                                    } while (iVar37 < iVar37_mgDF);
+                                    } while (iVar40 < iVar37_mgDF);
                                   }
                                   break;
                                 }
                               }
                               goto cf_common_join_00652A99;
                             case 0x549:
-                              iVar37 = st::fn_00401FE1((short *)&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_00401FE1(reinterpret_cast<short *>(&local_16c));
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[00653ADD]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  /* ST_CALLSITE[00653B02]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                  /* ST_CALLSITE[00653B02]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                   local_EAX_4850 =
-                                       st::fn_00668F50((AnonReceiver_0064A970 *)this_00,
-                                                      (char *)pDStack_164,(uint)local_160,
-                                                      output_values_neg_34);
-                                  iVar37 = 0;
+                                       st::fn_00668F50
+                                                 (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                  reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                                  output_values_neg_34);
+                                  iVar40 = 0;
                                   if (0 < local_EAX_4850) {
                                     puVar12 = output_values_neg_34;
                                     do {
@@ -5174,33 +5398,34 @@ LAB_00653778:
                                         }
                                         break;
                                       }
-                                      iVar37 = iVar37 + 1;
+                                      iVar40 = iVar40 + 1;
                                       puVar12 = puVar12 + 1;
-                                    } while (iVar37 < local_EAX_4850);
+                                    } while (iVar40 < local_EAX_4850);
                                   }
                                   break;
                                 }
                               }
                               goto cf_common_join_00652A99;
                             case 0x54a:
-                              iVar37 = st::fn_00401DED((int)&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_00401DED((int)&local_16c);
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[00653B75]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  /* ST_CALLSITE[00653B9A]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                  /* ST_CALLSITE[00653B9A]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                   iVar37_mgD7 = st::fn_00668F50
-                                                          ((AnonReceiver_0064A970 *)this_00,
-                                                           (char *)pDStack_164,(uint)local_160,
+                                                          (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                           reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                            output_values_neg_34);
-                                  iVar37 = 0;
+                                  iVar40 = 0;
                                   if (0 < iVar37_mgD7) {
                                     puVar12 = output_values_neg_34;
 LAB_00653bb7:
                                     if (*puVar12 != (uint)DAT_0080874d) goto code_r0x00653bbb;
                                     if (g_opticClass_007FB2A0 != nullptr) {
                                       memset(local_1c0, 0, 0x20); /* compiler bulk-zero initialization */
-                                      switch(local_15c) {
+                                      switch(st::machine_word_boundary_cast<uint>(local_15c)) {
                                       case 0:
                                         local_1b0 = 0x104;
                                         break;
@@ -5214,10 +5439,10 @@ LAB_00653bb7:
                                         local_1b0 = 0x107;
                                         break;
                                       default:
-                                        iVar37 = -1;
-                                        uVar33 = local_14;
+                                        iVar40 = -1;
+                                        uVar36 = local_14;
                                         pcVar8_mg3A = st::fn_004057DB(local_EAX_488);
-                                        st::fn_00405042(this_00,-0x7d,pcVar8_mg3A,uVar33,iVar37);
+                                        st::fn_00405042(this_00,-0x7d,pcVar8_mg3A,uVar36,iVar40);
                                         goto cf_common_join_00659A73;
                                       }
                                       /* ST_CALLSITE[00653C37]: CALL dword ptr [EAX + 0x30] */
@@ -5230,33 +5455,34 @@ LAB_00653bb7:
                               goto cf_common_join_00652A99;
                             case 0x54b:
                             case 0x54c:
-                              iVar37 = st::fn_00402568((int)&local_16c);
-                              if (iVar37 != 0) {
+
+                              iVar40 = st::fn_00402568((int)&local_16c);
+                              if (iVar40 != 0) {
                                 /* ST_CALLSITE[00653C7B]: CALL dword ptr [EDX + 0x18] */
-                                iVar37 = this_00->vfunc_18();
-                                if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                  /* ST_CALLSITE[00653CA0]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                                iVar40 = this_00->vfunc_18();
+                                if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                  /* ST_CALLSITE[00653CA0]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                   iVar37_mgD3 = st::fn_00668F50
-                                                          ((AnonReceiver_0064A970 *)this_00,
-                                                           (char *)pDStack_164,(uint)local_160,
+                                                          (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                           reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                            output_values_neg_34);
-                                  iVar37 = 0;
+                                  iVar40 = 0;
                                   if (0 < iVar37_mgD3) {
                                     puVar12 = output_values_neg_34;
                                     do {
                                       if (*puVar12 == (uint)DAT_0080874d) {
                                         if (g_opticClass_007FB2A0 != nullptr) {
                                           memset(local_1c0, 0, 0x20); /* compiler bulk-zero initialization */
-                                          iVar37 = 0;
+                                          iVar40 = 0;
                                           local_1b0 = (local_EAX_488 != 0x54b) + 0x100;
                                           /* ST_CALLSITE[00653D11]: CALL dword ptr [EDX + 0x30] */
                                           (*this_00->vtable->vfunc_30)(3,0x100,st::machine_word_boundary_cast<undefined4>(local_1c0));
                                         }
                                         break;
                                       }
-                                      iVar37 = iVar37 + 1;
+                                      iVar40 = iVar40 + 1;
                                       puVar12 = puVar12 + 1;
-                                    } while (iVar37 < iVar37_mgD3);
+                                    } while (iVar40 < iVar37_mgD3);
                                   }
                                   break;
                                 }
@@ -5267,17 +5493,19 @@ LAB_00653bb7:
                           }
                           switch(static_cast<uint32_t>(STRawWord(local_EAX_488))) {
                           case 0x54e:
-                            iVar37 = st::fn_00401AC8((int)&local_16c);
-                            if (iVar37 != 0) {
+
+                            iVar40 = st::fn_00401AC8((int)&local_16c);
+                            if (iVar40 != 0) {
                               /* ST_CALLSITE[00653E0F]: CALL dword ptr [EAX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                /* ST_CALLSITE[00653E34]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                /* ST_CALLSITE[00653E34]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                 local_EAX_5668 =
-                                     st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
-                                                  (char *)pDStack_164,(uint)local_160,
-                                                  output_values_neg_34);
-                                iVar37 = 0;
+                                     st::fn_00668F50
+                                               (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                                output_values_neg_34);
+                                iVar40 = 0;
                                 if (0 < local_EAX_5668) {
                                   puVar12 = output_values_neg_34;
                                   do {
@@ -5286,9 +5514,9 @@ LAB_00653bb7:
                                                          (int)local_154);
                                       break;
                                     }
-                                    iVar37 = iVar37 + 1;
+                                    iVar40 = iVar40 + 1;
                                     puVar12 = puVar12 + 1;
-                                  } while (iVar37 < local_EAX_5668);
+                                  } while (iVar40 < local_EAX_5668);
                                 }
                                 goto cf_common_join_00659A73;
                               }
@@ -5297,26 +5525,27 @@ LAB_00653bb7:
                           default:
                             goto cf_common_join_00659A73;
                           case 0x55a:
-                            iVar37 = st::fn_004029EB((int)&local_16c);
-                            if (iVar37 != 0) {
+
+                            iVar40 = st::fn_004029EB((int)&local_16c);
+                            if (iVar40 != 0) {
                               /* ST_CALLSITE[00653E9C]: CALL dword ptr [EDX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                 local_c = (DArrayTy *)
-                                                                                  
-                                          /* ST_CALLSITE[00653EC1]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                          /* ST_CALLSITE[00653EC1]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                           st::fn_00668F50
-                                                    ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)pDStack_164,(uint)local_160,
+                                                    (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                     reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                      output_values_neg_34);
                                 if (0 < (int)local_c) {
                                   puVar12 = output_values_neg_34;
                                   do {
-                                    uVar33 = *puVar12;
-                                    (&DAT_00809950)[uVar33] =
-                                         (local_15c != (DArrayTy *)0x1) + '\x01';
-                                    if (uVar33 == DAT_0080874d) {
-                                      DAT_0080c522 = (uint)(local_15c == (DArrayTy *)0x1);
+                                    uVar36 = *puVar12;
+                                    (&DAT_00809950)[uVar36] =
+                                         (st::machine_word_boundary_cast<uint>(local_15c) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x1)) + '\x01';
+                                    if (uVar36 == DAT_0080874d) {
+                                      DAT_0080c522 = (uint)(st::machine_word_boundary_cast<uint>(local_15c) == st::machine_word_boundary_cast<uint>((DArrayTy *)0x1));
                                     }
                                     puVar12 = puVar12 + 1;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -5327,17 +5556,20 @@ LAB_00653bb7:
                             }
                             break;
                           case 0x55b:
-                            local_EAX_5904 = st::fn_00402BD0((int)&local_16c);
+
+                            local_EAX_5904 =
+                                 st::fn_00402BD0(reinterpret_cast<RecoveredRecord_0064F0C0_EC627629 *>(&local_16c));
                             if (local_EAX_5904 != 0) {
                               /* ST_CALLSITE[00653F34]: CALL dword ptr [EDX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                /* ST_CALLSITE[00653F59]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                /* ST_CALLSITE[00653F59]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                 local_EAX_5961 =
-                                     st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
-                                                  (char *)pDStack_164,(uint)local_160,
-                                                  output_values_neg_34);
-                                iVar37 = 0;
+                                     st::fn_00668F50
+                                               (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                                output_values_neg_34);
+                                iVar40 = 0;
                                 if (0 < local_EAX_5961) {
                                   puVar12 = output_values_neg_34;
                                   do {
@@ -5346,59 +5578,64 @@ LAB_00653bb7:
                                          (((char)DAT_008087a0 == '\x03' ||
                                           ((char)DAT_008087a0 == '\b')))) {
                                         st::fn_0072E730
-                                                  ((byte *)&CHAR_00h_0080ef1e,nullptr,local_384,
+                                                  (reinterpret_cast<byte *>(&CHAR_00h_0080ef1e),nullptr,local_384,
                                                    nullptr,nullptr);
                                         st::fn_0072F110
-                                                  ((char *)&DAT_0080c632,nullptr,(char *)local_384,
-                                                   (char *)local_15c,nullptr);
+                                                  (reinterpret_cast<char *>(&DAT_0080c632),nullptr,reinterpret_cast<char *>(local_384),
+                                                   reinterpret_cast<char *>(local_15c),nullptr);
                                       }
                                       break;
                                     }
-                                    iVar37 = iVar37 + 1;
+                                    iVar40 = iVar40 + 1;
                                     puVar12 = puVar12 + 1;
-                                  } while (iVar37 < local_EAX_5961);
+                                  } while (iVar40 < local_EAX_5961);
                                 }
                                 goto cf_common_join_00659A73;
                               }
                             }
                             break;
                           case 0x55c:
-                            iVar37 = st::fn_0040274D((short *)&local_16c);
-                            if (iVar37 != 0) {
+
+                            iVar40 = st::fn_0040274D(reinterpret_cast<RecoveredRecord_0064F110_056D040B *>(&local_16c));
+                            if (iVar40 != 0) {
                               /* ST_CALLSITE[00653FFA]: CALL dword ptr [EDX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                /* ST_CALLSITE[0065401F]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                /* ST_CALLSITE[0065401F]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                 local_EAX_6159 =
-                                     st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
-                                                  (char *)pDStack_164,(uint)local_160,
-                                                  output_values_neg_34);
-                                iVar37 = 0;
+                                     st::fn_00668F50
+                                               (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                                output_values_neg_34);
+                                iVar40 = 0;
                                 if (0 < local_EAX_6159) {
                                   do {
-                                    (&DAT_0080c947)[iVar37] = local_158;
-                                    if (output_values_neg_34[iVar37] == (uint)DAT_0080874d) {
+                                    (&DAT_0080c947)[iVar40] = st::machine_word_boundary_cast<undefined4>(local_158);
+                                    if (output_values_neg_34[iVar40] == (uint)DAT_0080874d) {
                                       DAT_0080e301 = (char)local_15c;
                                     }
-                                    iVar37 = iVar37 + 1;
-                                  } while (iVar37 < local_EAX_6159);
+                                    iVar40 = iVar40 + 1;
+                                  } while (iVar40 < local_EAX_6159);
                                 }
                                 goto cf_common_join_00659A73;
                               }
                             }
                             break;
                           case 0x55d:
-                            local_EAX_6230 = st::fn_00401A55((int)&local_16c);
+
+                            local_EAX_6230 =
+                                 st::fn_00401A55(reinterpret_cast<RecoveredRecord_0064F160_1D0EC978 *>(&local_16c));
                             if (local_EAX_6230 != 0) {
                               /* ST_CALLSITE[0065407A]: CALL dword ptr [EDX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                /* ST_CALLSITE[0065409F]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                /* ST_CALLSITE[0065409F]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                 local_EAX_6287 =
-                                     st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
-                                                  (char *)pDStack_164,(uint)local_160,
-                                                  output_values_neg_34);
-                                iVar37 = 0;
+                                     st::fn_00668F50
+                                               (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                                output_values_neg_34);
+                                iVar40 = 0;
                                 if (0 < local_EAX_6287) {
                                   puVar12 = output_values_neg_34;
 LAB_006540b9:
@@ -5406,26 +5643,27 @@ LAB_006540b9:
                                   DAT_0080e300 = (char)local_15c;
                                   memset(&DAT_0080e303, 0, 0x20); /* compiler bulk-zero initialization */
                                   st::fn_0072E340
-                                            ((char *)&DAT_0080e303,(char *)local_158,0x1f);
+                                            (reinterpret_cast<char *>(&DAT_0080e303),reinterpret_cast<char *>(local_158),0x1f);
                                 }
                                 goto cf_common_join_00659A73;
                               }
                             }
                             break;
                           case 0x55e:
+
                             local_EAX_6392 =
-                                 st::fn_00401E60((RecoveredRecord_AiEventClassTy_0064F1B0 *)
-                                                    &local_16c);
+                                 st::fn_00401E60(reinterpret_cast<RecoveredRecord_AiEventClassTy_0064F1B0 *>(&local_16c));
                             if (local_EAX_6392 != 0) {
                               /* ST_CALLSITE[0065411C]: CALL dword ptr [EAX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                /* ST_CALLSITE[00654141]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                /* ST_CALLSITE[00654141]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                 local_EAX_6449 =
-                                     st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
-                                                  (char *)pDStack_164,(uint)local_160,
-                                                  output_values_neg_34);
-                                iVar37 = 0;
+                                     st::fn_00668F50
+                                               (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                                output_values_neg_34);
+                                iVar40 = 0;
                                 if (0 < local_EAX_6449) {
                                   puVar12 = output_values_neg_34;
                                   do {
@@ -5435,56 +5673,59 @@ LAB_006540b9:
                                       DAT_0080e428 = STPiece<0,1>(local_14c);
                                       DAT_0080e427 = STPiece<0,1>(local_150);
                                       _DAT_0080e432 = local_140;
-                                      _DAT_0080e42a = local_148;
-                                      _DAT_0080e42e = local_144;
+                                      _DAT_0080e42a = st::machine_word_boundary_cast<undefined4>(local_148);
+                                      _DAT_0080e42e = st::machine_word_boundary_cast<undefined4>(local_144);
                                       _DAT_0080e436 = local_13c;
                                       DAT_0080e43a = STPiece<0,1>(local_138);
                                       if ((char)DAT_008087a0 == '\x03') {
                                         st::fn_0072E730
-                                                  ((byte *)&CHAR_00h_0080ef1e,nullptr,local_484,
+                                                  (reinterpret_cast<byte *>(&CHAR_00h_0080ef1e),nullptr,local_484,
                                                    nullptr,nullptr);
                                         st::fn_0072F110
-                                                  ((char *)&DAT_0080f33a,nullptr,
-                                                   (char *)local_484,(char *)local_158,nullptr);
+                                                  (reinterpret_cast<char *>(&DAT_0080f33a),nullptr,
+                                                   reinterpret_cast<char *>(local_484),reinterpret_cast<char *>(local_158),nullptr);
                                         /* ST_CALLSITE[00654251]: CALL dword ptr [0x0085bde8] */
-                                        st::external_00000080(st::pointer_boundary_cast<LPSTR>(&DAT_0080e323),st::mutable_c_string("%s%s"),&CHAR_00h_00807784,
+                                        st::external_00000080(reinterpret_cast<LPSTR>(&DAT_0080e323),st::mutable_c_string("%s%s"),&CHAR_00h_00807784,
                                                   &DAT_0080f33a);
                                       }
                                       else if ((char)DAT_008087a0 == '\b') {
                                         /* ST_CALLSITE[006541FC]: CALL dword ptr [0x0085bde8] */
-                                        st::external_00000080(st::pointer_boundary_cast<LPSTR>(&DAT_0080e323),st::mutable_c_string("%s%s"),&CHAR_00h_00807784,
+                                        st::external_00000080(reinterpret_cast<LPSTR>(&DAT_0080e323),st::mutable_c_string("%s%s"),&CHAR_00h_00807784,
                                                   local_158);
                                       }
                                       break;
                                     }
-                                    iVar37 = iVar37 + 1;
+                                    iVar40 = iVar40 + 1;
                                     puVar12 = puVar12 + 1;
-                                  } while (iVar37 < local_EAX_6449);
+                                  } while (iVar40 < local_EAX_6449);
                                 }
                                 goto cf_common_join_00659A73;
                               }
                             }
                             break;
                           case 0x55f:
+
                             local_EAX_6742 =
-                                 st::fn_0040533F((AnonShape_0064EF90_4909407D *)&local_16c);
+                                 st::fn_0040533F(reinterpret_cast<RecoveredRecordView_0064EF90_AFECD81B *>(&local_16c));
                             if (local_EAX_6742 != 0) {
                               /* ST_CALLSITE[0065427A]: CALL dword ptr [EDX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                /* ST_CALLSITE[0065429F]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                /* ST_CALLSITE[0065429F]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                 local_EAX_6799 =
-                                     st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
-                                                  (char *)pDStack_164,(uint)local_160,
-                                                  output_values_neg_34);
-                                iVar37 = 0;
+                                     st::fn_00668F50
+                                               (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                                output_values_neg_34);
+                                iVar40 = 0;
                                 if (0 < local_EAX_6799) {
                                   puVar12 = output_values_neg_34;
                                   do {
                                     if (*puVar12 == (uint)DAT_0080874d) {
+
                                       local_EAX_6856 =
                                            st::fn_006B5AA0
-                                                     (g_dArray_0080C4CB,(char *)local_158);
+                                                     (g_dArray_0080C4CB,reinterpret_cast<char *>(local_158));
                                       if (g_optPanel_008016DC != nullptr) {
                                         /* ST_CALLSITE[006542E9]: CALL 0x00401587; direct=00401587 OptPanelTy::UpdateObjectives */
                                         st::fn_00401587(g_optPanel_008016DC);
@@ -5495,30 +5736,33 @@ LAB_006540b9:
                                       }
                                       break;
                                     }
-                                    iVar37 = iVar37 + 1;
+                                    iVar40 = iVar40 + 1;
                                     puVar12 = puVar12 + 1;
-                                  } while (iVar37 < local_EAX_6799);
+                                  } while (iVar40 < local_EAX_6799);
                                 }
                                 goto cf_common_join_00659A73;
                               }
                             }
                             break;
                           case 0x560:
-                            iVar37 = st::fn_00405EAC((int)&local_16c);
-                            if (iVar37 != 0) {
+
+                            iVar40 = st::fn_00405EAC((int)&local_16c);
+                            if (iVar40 != 0) {
                               /* ST_CALLSITE[00654323]: CALL dword ptr [EDX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                /* ST_CALLSITE[00654348]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                /* ST_CALLSITE[00654348]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                 local_EAX_6968 =
-                                     st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
-                                                  (char *)pDStack_164,(uint)local_160,
-                                                  output_values_neg_34);
-                                iVar37 = 0;
+                                     st::fn_00668F50
+                                               (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                                output_values_neg_34);
+                                iVar40 = 0;
                                 if (0 < local_EAX_6968) {
                                   puVar12 = output_values_neg_34;
 LAB_00654362:
                                   if (*puVar12 != (uint)DAT_0080874d) goto code_r0x00654366;
+
                                   st::fn_006C87C0(g_dArray_0080C4CB,(uint)local_15c);
 LAB_00654386:
                                   if (g_optPanel_008016DC != nullptr) {
@@ -5531,17 +5775,19 @@ LAB_00654386:
                             }
                             break;
                           case 0x561:
-                            iVar37 = st::fn_004055B0((int)&local_16c);
-                            if (iVar37 != 0) {
+
+                            iVar40 = st::fn_004055B0((int)&local_16c);
+                            if (iVar40 != 0) {
                               /* ST_CALLSITE[006543B9]: CALL dword ptr [EAX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                /* ST_CALLSITE[006543DE]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                /* ST_CALLSITE[006543DE]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                 local_EAX_7118 =
-                                     st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
-                                                  (char *)pDStack_164,(uint)local_160,
-                                                  output_values_neg_34);
-                                iVar37 = 0;
+                                     st::fn_00668F50
+                                               (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                                output_values_neg_34);
+                                iVar40 = 0;
                                 if (0 < local_EAX_7118) {
                                   puVar12 = output_values_neg_34;
                                   do {
@@ -5553,27 +5799,29 @@ LAB_00654386:
                                            st::fn_006B54F0(nullptr,10,10);
                                       goto LAB_00654386;
                                     }
-                                    iVar37 = iVar37 + 1;
+                                    iVar40 = iVar40 + 1;
                                     puVar12 = puVar12 + 1;
-                                  } while (iVar37 < local_EAX_7118);
+                                  } while (iVar40 < local_EAX_7118);
                                 }
                                 goto cf_common_join_00659A73;
                               }
                             }
                             break;
                           case 0x562:
+
                             local_EAX_7204 =
-                                 st::fn_0040533F((AnonShape_0064EF90_4909407D *)&local_16c);
+                                 st::fn_0040533F(reinterpret_cast<RecoveredRecordView_0064EF90_AFECD81B *>(&local_16c));
                             if (local_EAX_7204 != 0) {
                               /* ST_CALLSITE[00654448]: CALL dword ptr [EDX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                /* ST_CALLSITE[0065446D]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                /* ST_CALLSITE[0065446D]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                 local_EAX_7261 =
-                                     st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
-                                                  (char *)pDStack_164,(uint)local_160,
-                                                  output_values_neg_34);
-                                iVar37 = 0;
+                                     st::fn_00668F50
+                                               (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                                output_values_neg_34);
+                                iVar40 = 0;
                                 if (0 < local_EAX_7261) {
                                   puVar12 = output_values_neg_34;
                                   do {
@@ -5582,64 +5830,70 @@ LAB_00654386:
                                         g_dArray_0080C4C7 =
                                              st::fn_006B54F0(nullptr,10,10);
                                       }
+
                                       local_EAX_7336 =
                                            st::fn_006B5AA0
-                                                     (g_dArray_0080C4C7,(char *)local_158);
+                                                     (g_dArray_0080C4C7,reinterpret_cast<char *>(local_158));
                                       if (-1 < local_EAX_7336) {
                                         *(int *)(&this_00->field_0xde + (int)local_15c * 4) =
                                              local_EAX_7336;
                                       }
                                       break;
                                     }
-                                    iVar37 = iVar37 + 1;
+                                    iVar40 = iVar40 + 1;
                                     puVar12 = puVar12 + 1;
-                                  } while (iVar37 < local_EAX_7261);
+                                  } while (iVar40 < local_EAX_7261);
                                 }
                                 goto cf_common_join_00659A73;
                               }
                             }
                             break;
                           case 0x563:
-                            iVar37 = st::fn_00405EAC((int)&local_16c);
-                            if (iVar37 != 0) {
+
+                            iVar40 = st::fn_00405EAC((int)&local_16c);
+                            if (iVar40 != 0) {
                               /* ST_CALLSITE[006544F2]: CALL dword ptr [EDX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                /* ST_CALLSITE[00654517]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                /* ST_CALLSITE[00654517]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                 local_EAX_7431 =
-                                     st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
-                                                  (char *)pDStack_164,(uint)local_160,
-                                                  output_values_neg_34);
-                                iVar37 = 0;
+                                     st::fn_00668F50
+                                               (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                                output_values_neg_34);
+                                iVar40 = 0;
                                 if (0 < local_EAX_7431) {
                                   puVar12 = output_values_neg_34;
                                   do {
                                     if (*puVar12 == (uint)DAT_0080874d) {
                                       if (g_dArray_0080C4C7 != nullptr) {
+
                                         st::fn_006C87C0(g_dArray_0080C4C7,(uint)local_15c);
                                       }
                                       break;
                                     }
-                                    iVar37 = iVar37 + 1;
+                                    iVar40 = iVar40 + 1;
                                     puVar12 = puVar12 + 1;
-                                  } while (iVar37 < local_EAX_7431);
+                                  } while (iVar40 < local_EAX_7431);
                                 }
                                 goto cf_common_join_00659A73;
                               }
                             }
                             break;
                           case 0x564:
-                            iVar37 = st::fn_004055B0((int)&local_16c);
-                            if (iVar37 != 0) {
+
+                            iVar40 = st::fn_004055B0((int)&local_16c);
+                            if (iVar40 != 0) {
                               /* ST_CALLSITE[0065457C]: CALL dword ptr [EAX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                /* ST_CALLSITE[006545A1]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                /* ST_CALLSITE[006545A1]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                 local_EAX_7569 =
-                                     st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
-                                                  (char *)pDStack_164,(uint)local_160,
-                                                  output_values_neg_34);
-                                iVar37 = 0;
+                                     st::fn_00668F50
+                                               (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                                output_values_neg_34);
+                                iVar40 = 0;
                                 if (0 < local_EAX_7569) {
                                   puVar12 = output_values_neg_34;
                                   do {
@@ -5651,9 +5905,9 @@ LAB_00654386:
                                            st::fn_006B54F0(nullptr,10,10);
                                       break;
                                     }
-                                    iVar37 = iVar37 + 1;
+                                    iVar40 = iVar40 + 1;
                                     puVar12 = puVar12 + 1;
-                                  } while (iVar37 < local_EAX_7569);
+                                  } while (iVar40 < local_EAX_7569);
                                 }
                                 goto cf_common_join_00659A73;
                               }
@@ -5661,47 +5915,49 @@ LAB_00654386:
                             break;
                           case 0x565:
                           case 0x566:
-                            iVar37 = st::fn_0040292D((int)&local_16c);
-                            if (iVar37 != 0) {
+
+                            iVar40 = st::fn_0040292D((int)&local_16c);
+                            if (iVar40 != 0) {
                               /* ST_CALLSITE[0065460B]: CALL dword ptr [EDX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if (((iVar37 != 8) ||
-                                  ((local_15c != (DArrayTy *)0x9 && (pDStack_164 != (DArrayTy *)0x9)
-                                   ))) && (local_15c != (DArrayTy *)0xff)) {
-                                /* ST_CALLSITE[00654643]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                              iVar40 = this_00->vfunc_18();
+                              if (((iVar40 != 8) ||
+                                  ((st::machine_word_boundary_cast<uint>(local_15c) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9) && (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))
+                                   ))) && (st::machine_word_boundary_cast<uint>(local_15c) != st::machine_word_boundary_cast<uint>((DArrayTy *)0xff))) {
+                                /* ST_CALLSITE[00654643]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                 local_EAX_7731 =
-                                     st::fn_004016B8((AnonReceiver_0064A970 *)this_00,(char *)local_15c
-                                                  ,0,output_values_neg_34);
-                                uVar33 = output_values_neg_34[0];
+                                     st::fn_00668F50
+                                               (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                reinterpret_cast<char *>(local_15c),0,output_values_neg_34);
+                                uVar36 = output_values_neg_34[0];
                                 if (local_EAX_7731 == 1) {
-                                  /* ST_CALLSITE[0065466B]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                                  /* ST_CALLSITE[0065466B]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                   iVar37_mg118 = st::fn_00668F50
-                                                           ((AnonReceiver_0064A970 *)this_00,
-                                                            (char *)pDStack_164,(uint)local_160,
+                                                           (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                            reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                             output_values_neg_34);
                                   if (0 < iVar37_mg118) {
                                     puVar12 = output_values_neg_34;
-                                    local_1a0 = STReplaceLowByte((uint32_t)(local_1a0), (uint8_t)(local_EAX_488 == 0x565));
-                                    iVar37 = iVar37_mg118;
+                                    local_1a0 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_1a0)), (uint8_t)(local_EAX_488 == 0x565));
+                                    iVar40 = iVar37_mg118;
                                     do {
-                                      st::fn_00401212(&DAT_00807620,(byte)*puVar12,(byte)uVar33,
+                                      st::fn_00401212(&DAT_00807620,(byte)*puVar12,(byte)uVar36,
                                                          (char)local_1a0);
                                       puVar12 = puVar12 + 1;
-                                      iVar37 = iVar37 + -1;
-                                    } while (iVar37 != 0);
+                                      iVar40 = iVar40 + -1;
+                                    } while (iVar40 != 0);
                                   }
                                   pPVar3 = g_playPanel_008016E4;
                                   if ((g_playPanel_008016E4 != nullptr) &&
                                      (iVar37_mg118 != 0)) {
-                                    local_8 = (DArrayTy *)&g_playPanel_008016E4->field_0181;
+                                    local_8 = reinterpret_cast<DArrayTy *>(&g_playPanel_008016E4->field_0181);
                                     g_playPanel_008016E4->field_0028 = 5;
                                     local_c = (DArrayTy *)0x8;
                                     do {
                                       if (local_8->flags != 0) {
                                         st::fn_006E6080(pPVar3,2,local_8->flags,
-                                                     (undefined4 *)&pPVar3->field_0x18);
+                                                     reinterpret_cast<undefined4 *>(&pPVar3->field_0x18));
                                       }
-                                      local_8 = (DArrayTy *)&local_8->iteratorIndex;
+                                      local_8 = reinterpret_cast<DArrayTy *>(&local_8->iteratorIndex);
                                       local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     } while (local_c != nullptr);
                                   }
@@ -5711,17 +5967,18 @@ LAB_00654386:
                             }
                             break;
                           case 0x567:
-                            iVar37 = st::fn_004058DF((int)&local_16c);
-                            if (iVar37 != 0) {
+
+                            iVar40 = st::fn_004058DF(reinterpret_cast<RecoveredRecord_0064F360_F7C216AE *>(&local_16c));
+                            if (iVar40 != 0) {
                               /* ST_CALLSITE[00654727]: CALL dword ptr [EAX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                 pDVar17 = (DArrayTy *)
-                                                                                  
-                                          /* ST_CALLSITE[0065474C]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                          /* ST_CALLSITE[0065474C]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                           st::fn_00668F50
-                                                    ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)pDStack_164,(uint)local_160,
+                                                    (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                     reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                      output_values_neg_34);
                                 if (0 < (int)pDVar17) {
                                   puVar12 = output_values_neg_34;
@@ -5735,15 +5992,15 @@ LAB_00654386:
                                 pPVar3 = g_playPanel_008016E4;
                                 if ((g_playPanel_008016E4 != nullptr) &&
                                    (pDVar17 != nullptr)) {
-                                  local_8 = (DArrayTy *)&g_playPanel_008016E4->field_0181;
+                                  local_8 = reinterpret_cast<DArrayTy *>(&g_playPanel_008016E4->field_0181);
                                   g_playPanel_008016E4->field_0028 = 5;
                                   local_c = (DArrayTy *)0x8;
                                   do {
                                     if (local_8->flags != 0) {
                                       st::fn_006E6080(pPVar3,2,local_8->flags,
-                                                   (undefined4 *)&pPVar3->field_0x18);
+                                                   reinterpret_cast<undefined4 *>(&pPVar3->field_0x18));
                                     }
-                                    local_8 = (DArrayTy *)&local_8->iteratorIndex;
+                                    local_8 = reinterpret_cast<DArrayTy *>(&local_8->iteratorIndex);
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                   } while (local_c != nullptr);
                                 }
@@ -5752,17 +6009,19 @@ LAB_00654386:
                             }
                             break;
                           case 0x568:
-                            iVar37 = st::fn_00401B31((int)&local_16c);
-                            if (iVar37 != 0) {
+
+                            iVar40 = st::fn_00401B31((int)&local_16c);
+                            if (iVar40 != 0) {
                               /* ST_CALLSITE[006547F7]: CALL dword ptr [EDX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
-                                /* ST_CALLSITE[0065481C]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
+                                /* ST_CALLSITE[0065481C]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                 local_EAX_8204 =
-                                     st::fn_004016B8((AnonReceiver_0064A970 *)this_00,
-                                                  (char *)pDStack_164,(uint)local_160,
-                                                  output_values_neg_34);
-                                iVar37 = 0;
+                                     st::fn_00668F50
+                                               (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                reinterpret_cast<char *>(pDStack_164),(uint)local_160,
+                                                output_values_neg_34);
+                                iVar40 = 0;
                                 if (0 < local_EAX_8204) {
                                   puVar12 = output_values_neg_34;
                                   do {
@@ -5770,31 +6029,34 @@ LAB_00654386:
                                       DAT_00808790 = 1;
                                       break;
                                     }
-                                    iVar37 = iVar37 + 1;
+                                    iVar40 = iVar40 + 1;
                                     puVar12 = puVar12 + 1;
-                                  } while (iVar37 < local_EAX_8204);
+                                  } while (iVar40 < local_EAX_8204);
                                 }
                                 goto cf_common_join_00659A73;
                               }
                             }
                             break;
                           case 0x56a:
-                            iVar37 = st::fn_0040266C((int)&local_16c);
-                            if (iVar37 == 0) break;
-                            st::fn_00402B99(&DAT_00807620,(char *)pDStack_164);
+
+                            iVar40 = st::fn_0040266C((int)&local_16c);
+                            if (iVar40 == 0) break;
+                            st::fn_00402B99(&DAT_00807620,reinterpret_cast<char *>(pDStack_164));
                             goto cf_common_join_00659A73;
                           case 0x578:
-                            local_EAX_8314 = st::fn_00401F91((int)&local_16c);
+
+                            local_EAX_8314 =
+                                 st::fn_00401F91(reinterpret_cast<RecoveredRecord_0064F430_6891D71C *>(&local_16c));
                             if (local_EAX_8314 != 0) {
                               /* ST_CALLSITE[0065489E]: CALL dword ptr [EAX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                 local_c = (DArrayTy *)
-                                                                                  
-                                          /* ST_CALLSITE[006548C3]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                          /* ST_CALLSITE[006548C3]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                           st::fn_00668F50
-                                                    ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)pDStack_164,(uint)local_160,
+                                                    (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                     reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                      output_values_neg_34);
                                 if (0 < (int)local_c) {
                                   puVar12 = output_values_neg_34;
@@ -5803,7 +6065,8 @@ LAB_00654386:
                                     if ((int)local_15c < 0) {
                                       pDVar17 = (DArrayTy *)(DAT_00808a90 >> 8 & 0xff);
                                     }
-                                    st::fn_004030EE(*puVar12,(int)pDVar17);
+
+                                    st::fn_004030EE(g_allPlayers_007FA174,*puVar12,(int)pDVar17);
                                     puVar12 = puVar12 + 1;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                   } while (local_c != nullptr);
@@ -5813,17 +6076,19 @@ LAB_00654386:
                             }
                             break;
                           case 0x579:
-                            local_EAX_8446 = st::fn_00402AE5((int)&local_16c);
+
+                            local_EAX_8446 =
+                                 st::fn_00402AE5(reinterpret_cast<RecoveredRecord_0064F470_8E2B40ED *>(&local_16c));
                             if (local_EAX_8446 != 0) {
                               /* ST_CALLSITE[00654922]: CALL dword ptr [EDX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                 local_c = (DArrayTy *)
-                                                                                  
-                                          /* ST_CALLSITE[00654947]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                          /* ST_CALLSITE[00654947]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                           st::fn_00668F50
-                                                    ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)pDStack_164,(uint)local_160,
+                                                    (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                     reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                      output_values_neg_34);
                                 if (0 < (int)local_c) {
                                   puVar12 = output_values_neg_34;
@@ -5836,6 +6101,7 @@ LAB_00654386:
                                     if ((int)local_158 < 0) {
                                       puVar13 = (uint *)(DAT_00808a90 >> 0x18);
                                     }
+
                                     st::fn_004035EE((int *)*puVar12,&pDVar17->flags,puVar13);
                                     puVar12 = puVar12 + 1;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
@@ -5846,44 +6112,47 @@ LAB_00654386:
                             }
                             break;
                           case 0x57a:
-                            local_EAX_8597 = st::fn_0040265D((int)&local_16c);
+
+                            local_EAX_8597 =
+                                 st::fn_0040265D(reinterpret_cast<RecoveredRecord_0064F4C0_88F508D2 *>(&local_16c));
                             if (local_EAX_8597 == 0) break;
                             pDVar17 = pDStack_164;
                             if ((int)pDStack_164 < 0) {
                               pDVar17 = (DArrayTy *)(DAT_00808a90 & 0xff);
                             }
+
                             st::fn_00401F37((int)pDVar17);
                             goto cf_common_join_00659A73;
                           case 0x57b:
-                            iVar37 = st::fn_00405187((RecoveredRecord_AiEventClassTy_0064F500 *)
-                                                        &local_16c);
-                            if (iVar37 != 0) {
+
+                            iVar40 = st::fn_00405187(reinterpret_cast<RecoveredRecord_AiEventClassTy_0064F500 *>(&local_16c));
+                            if (iVar40 != 0) {
                               /* ST_CALLSITE[006549F5]: CALL dword ptr [EAX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                 local_8 = local_15c;
                                 if ((int)local_15c < 0) {
                                   local_8 = (DArrayTy *)(uint)DAT_00808a9b;
                                 }
                                 local_c = (DArrayTy *)
-                                                                                  
-                                          /* ST_CALLSITE[00654A32]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                          /* ST_CALLSITE[00654A32]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                           st::fn_00668F50
-                                                    ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)pDStack_164,(uint)local_160,
+                                                    (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                     reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                      output_values_neg_34);
                                 if (0 < (int)local_c) {
                                   puVar12 = output_values_neg_34;
                                   do {
-                                    uVar33 = *puVar12;
-                                    bVar1 = g_bulkInitializedRecords_008087C7[uVar33].field_0021;
-                                    uVar29 = (undefined2)((uint)local_150 >> 0x10);
+                                    uVar36 = *puVar12;
+                                    bVar1 = g_bulkInitializedRecords_008087C7[uVar36].field_0021;
+                                    uVar32 = (undefined2)((uint)local_150 >> 0x10);
                                     if (bVar1 == 1) {
                                       if ((int)local_8 < 3) {
-                                        if (local_8 == (DArrayTy *)0x2) {
+                                        if (st::machine_word_boundary_cast<uint>(local_8) == st::machine_word_boundary_cast<uint>((DArrayTy *)0x2)) {
                                           /* ST_CALLSITE[0065520D]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                          st::fn_00403C15(this_00,CONCAT22(uVar29,(short)*puVar12),0xc
+                                          st::fn_00403C15(this_00,CONCAT22(uVar32,(short)*puVar12),0xc
                                                         ,(int)local_158,(int)local_154,
                                                         (int)local_150,0xfffe,0xffffffff,nullptr
                                                         ,100,1,0,0);
@@ -5911,16 +6180,16 @@ LAB_00654386:
                                         else if (local_8 == nullptr) {
                                           /* ST_CALLSITE[006551D3]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                          st::fn_00403C15(this_00,CONCAT22(uVar29,(short)*puVar12),0xc
+                                          st::fn_00403C15(this_00,CONCAT22(uVar32,(short)*puVar12),0xc
                                                         ,(int)local_158,(int)local_154,
                                                         (int)local_150,0xfffe,0xffffffff,nullptr
                                                         ,100,1,0,0);
                                         }
                                         else {
-                                          if (local_8 != (DArrayTy *)0x1) goto LAB_00655324;
+                                          if (st::machine_word_boundary_cast<uint>(local_8) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x1)) goto LAB_00655324;
                                           /* ST_CALLSITE[006550FA]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                          st::fn_00403C15(this_00,CONCAT22(uVar29,(short)*puVar12),0xc
+                                          st::fn_00403C15(this_00,CONCAT22(uVar32,(short)*puVar12),0xc
                                                         ,(int)local_158,(int)local_154,
                                                         (int)local_150,0xfffe,0xffffffff,nullptr
                                                         ,100,1,0,0);
@@ -5940,21 +6209,21 @@ LAB_00654386:
                                       }
                                       else {
 joined_r0x00655322:
-                                        if (local_8 != (DArrayTy *)0xff) {
+                                        if (st::machine_word_boundary_cast<uint>(local_8) != st::machine_word_boundary_cast<uint>((DArrayTy *)0xff)) {
 LAB_00655324:
-                                          uVar28 = local_14;
+                                          uVar31 = local_14;
                                           pcVar8_mg3E = st::fn_004057DB(local_EAX_488);
-                                          st::fn_00405042(this_00,-0x7d,pcVar8_mg3E,uVar28,uVar33
+                                          st::fn_00405042(this_00,-0x7d,pcVar8_mg3E,uVar31,uVar36
                                                             );
                                         }
                                       }
                                     }
                                     else if (bVar1 == 2) {
                                       if (2 < (int)local_8) goto joined_r0x00655322;
-                                      if (local_8 == (DArrayTy *)0x2) {
+                                      if (st::machine_word_boundary_cast<uint>(local_8) == st::machine_word_boundary_cast<uint>((DArrayTy *)0x2)) {
                                         /* ST_CALLSITE[00654F85]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        st::fn_00403C15(this_00,CONCAT22(uVar29,(short)*puVar12),0x18,
+                                        st::fn_00403C15(this_00,CONCAT22(uVar32,(short)*puVar12),0x18,
                                                       (int)local_158,(int)local_154,(int)local_150,
                                                       0xfffe,0xffffffff,nullptr,100,1,0,0);
                                         /* ST_CALLSITE[00654FBA]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
@@ -5986,15 +6255,15 @@ LAB_00655324:
                                       else if (local_8 == nullptr) {
                                         /* ST_CALLSITE[00654F4B]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        st::fn_00403C15(this_00,CONCAT22(uVar29,(short)*puVar12),0x18,
+                                        st::fn_00403C15(this_00,CONCAT22(uVar32,(short)*puVar12),0x18,
                                                       (int)local_158,(int)local_154,(int)local_150,
                                                       0xfffe,0xffffffff,nullptr,100,1,0,0);
                                       }
                                       else {
-                                        if (local_8 != (DArrayTy *)0x1) goto LAB_00655324;
+                                        if (st::machine_word_boundary_cast<uint>(local_8) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x1)) goto LAB_00655324;
                                         /* ST_CALLSITE[00654E72]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        st::fn_00403C15(this_00,CONCAT22(uVar29,(short)*puVar12),0x18,
+                                        st::fn_00403C15(this_00,CONCAT22(uVar32,(short)*puVar12),0x18,
                                                       (int)local_158,(int)local_154,(int)local_150,
                                                       0xfffe,0xffffffff,nullptr,100,1,0,0);
                                         /* ST_CALLSITE[00654EA7]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
@@ -6016,10 +6285,10 @@ LAB_00655324:
                                     }
                                     else if (bVar1 == 3) {
                                       if (2 < (int)local_8) goto joined_r0x00655322;
-                                      if (local_8 == (DArrayTy *)0x2) {
+                                      if (st::machine_word_boundary_cast<uint>(local_8) == st::machine_word_boundary_cast<uint>((DArrayTy *)0x2)) {
                                         /* ST_CALLSITE[00654CA3]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        st::fn_00403C15(this_00,CONCAT22(uVar29,(short)*puVar12),0x19,
+                                        st::fn_00403C15(this_00,CONCAT22(uVar32,(short)*puVar12),0x19,
                                                       (int)local_158,(int)local_154,(int)local_150,
                                                       0xfffe,0xffffffff,nullptr,100,1,0,0);
                                         /* ST_CALLSITE[00654CD8]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
@@ -6061,7 +6330,7 @@ LAB_00655324:
                                       else if (local_8 == nullptr) {
                                         /* ST_CALLSITE[00654BFF]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        st::fn_00403C15(this_00,CONCAT22(uVar29,(short)*puVar12),0x19,
+                                        st::fn_00403C15(this_00,CONCAT22(uVar32,(short)*puVar12),0x19,
                                                       (int)local_158,(int)local_154,(int)local_150,
                                                       0xfffe,0xffffffff,nullptr,100,1,0,0);
                                         /* ST_CALLSITE[00654C34]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
@@ -6076,10 +6345,10 @@ LAB_00655324:
                                                       100,1,0,0);
                                       }
                                       else {
-                                        if (local_8 != (DArrayTy *)0x1) goto LAB_00655324;
+                                        if (st::machine_word_boundary_cast<uint>(local_8) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x1)) goto LAB_00655324;
                                         /* ST_CALLSITE[00654ABC]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
                                         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                                        st::fn_00403C15(this_00,CONCAT22(uVar29,(short)*puVar12),0x19,
+                                        st::fn_00403C15(this_00,CONCAT22(uVar32,(short)*puVar12),0x19,
                                                       (int)local_158,(int)local_154,(int)local_150,
                                                       0xfffe,0xffffffff,nullptr,100,1,0,0);
                                         /* ST_CALLSITE[00654AF1]: CALL 0x00403c15; direct=00403C15 AiEventClassTy::__CreateObjPl */
@@ -6118,68 +6387,84 @@ LAB_00655324:
                             }
                             break;
                           case 0x582:
-                            iVar37 = st::fn_0040164F((int)&local_16c);
-                            if (iVar37 != 0) {
+
+                            iVar40 = st::fn_0040164F((int)&local_16c);
+                            if (iVar40 != 0) {
                               /* ST_CALLSITE[0065536C]: CALL dword ptr [EDX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                 local_c = (DArrayTy *)
-                                                                                  
-                                          /* ST_CALLSITE[00655391]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                          /* ST_CALLSITE[00655391]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                           st::fn_00668F50
-                                                    ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)pDStack_164,(uint)local_160,
+                                                    (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                     reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                      output_values_neg_34);
                                 if (0 < (int)local_c) {
                                   puVar12 = output_values_neg_34;
                                   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                   uVar7 = extraout_ECX;
                                   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-                                  uVar26 = extraout_EDX;
+                                  uVar29 = extraout_EDX;
                                   do {
-                                    switch(local_15c) {
+                                    switch(st::machine_word_boundary_cast<uint>(local_15c)) {
                                     case 0xdc:
                                       if (local_158 == nullptr) {
+
                                         st::fn_00403625((char)*puVar12,st::machine_word_boundary_cast<undefined4>(local_154));
                                       }
                                       else if ((int)local_158 < 1) {
+
                                         st::fn_00403166((char)*puVar12,(int)local_154);
                                       }
                                       else {
+
                                         st::fn_00404336((char)*puVar12,(int)local_154);
                                       }
                                       break;
                                     case 0xdd:
                                       if (local_158 == nullptr) {
+
                                         st::fn_004018E8((char)*puVar12,st::machine_word_boundary_cast<undefined4>(local_154));
                                       }
                                       else if ((int)local_158 < 1) {
+
                                         st::fn_00403418((char)*puVar12,(int)local_154);
                                       }
                                       else {
+
                                         st::fn_00404412((char)*puVar12,(int)local_154);
                                       }
                                       break;
                                     case 0xde:
                                       if (local_158 == nullptr) {
+
                                         st::fn_00402685((char)*puVar12,st::machine_word_boundary_cast<undefined4>(local_154));
                                       }
                                       else if ((int)local_158 < 1) {
+
                                         st::fn_00405367((char)*puVar12,(int)local_154);
                                       }
                                       else {
+
                                         st::fn_004055E7((char)*puVar12,(int)local_154);
                                       }
                                       break;
                                     case 0xdf:
                                       if (local_158 == nullptr) {
-                                        st::fn_00401EDD(STReplaceLowByte((uint32_t)(uVar26), (uint8_t)((char)*puVar12)),(int)local_154);
+
+                                        st::fn_00401EDD(g_allPlayers_007FA174,
+                                                           STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(uVar29)), (uint8_t)((char)*puVar12)),(int)local_154);
                                       }
                                       else if ((int)local_158 < 1) {
-                                        st::fn_00401C30(STReplaceLowByte((uint32_t)(local_158), (uint8_t)((char)*puVar12)),(int)local_154);
+
+                                        st::fn_00401C30(g_allPlayers_007FA174,
+                                                           STReplaceLowByte((uint32_t)(local_158), (uint8_t)((char)*puVar12)),(int)local_154);
                                       }
                                       else {
-                                        st::fn_00404106(STReplaceLowByte((uint32_t)(uVar7), (uint8_t)((char)*puVar12)),(int)local_154);
+
+                                        st::fn_00404106(g_allPlayers_007FA174,
+                                                           STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(uVar7)), (uint8_t)((char)*puVar12)),(int)local_154);
                                       }
                                       break;
                                     case 0xe2:
@@ -6187,9 +6472,11 @@ LAB_00655324:
                                         st::fn_004030E9(*puVar12,st::machine_word_boundary_cast<undefined4>(local_154));
                                       }
                                       else if ((int)local_158 < 1) {
+
                                         st::fn_00403814(*puVar12,(int)local_154);
                                       }
                                       else {
+
                                         st::fn_00405E6B(*puVar12,(int)local_154);
                                       }
                                       break;
@@ -6198,22 +6485,28 @@ LAB_00655324:
                                         st::fn_00405024(*puVar12,st::machine_word_boundary_cast<undefined4>(local_154));
                                       }
                                       else if ((int)local_158 < 1) {
+
                                         st::fn_004043F9(*puVar12,(int)local_154);
                                       }
                                       else {
-                                        st::fn_004053F3(*puVar12,(int)local_154);
+                                        /* ST_CALLSITE[006555AB]: CALL 0x004053f3; direct=004053F3 STAllPlayersC::sub_004E4270 */
+                                        st::fn_004053F3
+                                                  (g_allPlayers_007FA174,*puVar12,(int)local_154);
                                       }
                                     }
                                     if (*puVar12 == (uint)DAT_0080874d) {
-                                      st::fn_00404B8D((char)*puVar12);
+                                      /* ST_CALLSITE[006555DE]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+                                      st::fn_00404B8D
+                                                (g_allPlayers_007FA174,(char)*puVar12);
                                     }
+
                                     st::fn_004028F6((char)*puVar12);
                                     puVar12 = puVar12 + 1;
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                     uVar7 = extraout_ECX_00;
                                     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-                                    uVar26 = extraout_EDX_00;
+                                    uVar29 = extraout_EDX_00;
                                   } while (local_c != nullptr);
                                 }
                                 goto cf_common_join_00659A73;
@@ -6221,102 +6514,111 @@ LAB_00655324:
                             }
                             break;
                           case 0x583:
-                            iVar37 = st::fn_00401E42((int)&local_16c);
+
+                            iVar40 = st::fn_00401E42((int)&local_16c);
                             pDVar17 = local_160;
-                            if (iVar37 == 0) break;
+                            if (iVar40 == 0) break;
                             if (pDStack_164 == nullptr) {
+
                               st::fn_0040557E(st::machine_word_boundary_cast<undefined4>(local_160));
                               goto cf_common_join_00659A73;
                             }
                             if ((int)pDStack_164 < 1) {
+
                               local_EAX_11892 = st::fn_00401177(0);
                               if ((int)pDVar17 < local_EAX_11892) {
+
                                 local_EAX_11906 = st::fn_00401177(0);
-                                iVar37 = local_EAX_11906 - (int)pDVar17;
+                                iVar40 = local_EAX_11906 - (int)pDVar17;
                                 goto LAB_0065565b;
                               }
                             }
                             else {
+
                               local_EAX_11843 = st::fn_00401177(0);
-                              iVar37 = (int)&pDVar17->flags + local_EAX_11843;
+                              iVar40 = (int)&pDVar17->flags + local_EAX_11843;
 LAB_0065565b:
-                              st::fn_0040557E(iVar37);
+
+                              st::fn_0040557E(iVar40);
                             }
+
                             st::fn_00401177(0);
                             goto cf_common_join_00659A73;
                           case 0x584:
-                            iVar37 = st::fn_004016EF((short *)&local_16c);
-                            if (iVar37 == 0) break;
+
+                            iVar40 = st::fn_004016EF(reinterpret_cast<RecoveredRecord_0064F620_E51BA62D *>(&local_16c));
+                            if (iVar40 == 0) break;
                             st::fn_00405F01((char)pDStack_164,(short)local_160,(short)local_15c,
                                                st::machine_word_boundary_cast<undefined4>(local_158),(int)local_154);
                             goto cf_common_join_00659A73;
                           case 0x585:
-                            iVar37 = st::fn_0040570E();
-                            if (iVar37 == 0) break;
-                            DAT_00808794 = st::fn_0040150A((AnonShape_0056F930_C6277D80 *)
-                                                              &DAT_00807620);
+
+                            iVar40 = st::fn_0040570E();
+                            if (iVar40 == 0) break;
+
+                            DAT_00808794 = st::fn_0040150A((RecoveredRecordView_0056F930_AC468BC6
+                                                               *)&DAT_00807620);
                             goto cf_common_join_00659A73;
                           case 0x58c:
-                            iVar37 = st::fn_00404C05((short *)&local_16c);
-                            if (iVar37 == 0) break;
-                            pSVar32 = nullptr;
-                            sVar25 = (short)local_160;
-                            sVar23 = (short)local_15c;
+
+                            iVar40 = st::fn_00404C05(reinterpret_cast<short *>(&local_16c));
+                            if (iVar40 == 0) break;
+                            pSVar35 = nullptr;
+                            sVar28 = (short)local_160;
+                            sVar26 = (short)local_15c;
                             sVar6 = (short)local_158;
                             if (local_154 == nullptr) {
-                              if ((((sVar25 < 0) || (g_worldGrid.sizeX <= sVar25)) ||
-                                  ((sVar23 < 0 || ((g_worldGrid.sizeY <= sVar23 || (sVar6 < 0))))))
+                              if ((((sVar28 < 0) || (g_worldGrid.sizeX <= sVar28)) ||
+                                  ((sVar26 < 0 || ((g_worldGrid.sizeY <= sVar26 || (sVar6 < 0))))))
                                  || (g_worldGrid.sizeZ <= sVar6)) {
 LAB_00655871:
-                                pSVar32 = nullptr;
+                                pSVar35 = nullptr;
                               }
                               else {
-                                pSVar32 = (STFishC *)
-                                          STGridAt3D(g_worldGrid, sVar25, sVar23, sVar6).
-                                          objects[0];
+                                pSVar35 = reinterpret_cast<STFishC *>(STGridAt3D(g_worldGrid, sVar28, sVar26, sVar6).
+                                          objects[0]);
                               }
                             }
-                            else if (local_154 == (byte *)0x1) {
-                              if (((((sVar25 < 0) || (g_worldGrid.sizeX <= sVar25)) || (sVar23 < 0))
-                                  || ((g_worldGrid.sizeY <= sVar23 || (sVar6 < 0)))) ||
+                            else if (st::machine_word_boundary_cast<uint>(local_154) == st::machine_word_boundary_cast<uint>((byte *)0x1)) {
+                              if (((((sVar28 < 0) || (g_worldGrid.sizeX <= sVar28)) || (sVar26 < 0))
+                                  || ((g_worldGrid.sizeY <= sVar26 || (sVar6 < 0)))) ||
                                  (g_worldGrid.sizeZ <= sVar6)) goto LAB_00655871;
-                              pSVar32 = (STFishC *)
-                                        STGridAt3D(g_worldGrid, sVar25, sVar23, sVar6).objects
-                                        [1];
+                              pSVar35 = reinterpret_cast<STFishC *>(STGridAt3D(g_worldGrid, sVar28, sVar26, sVar6).objects
+                                        [1]);
                             }
-                            else if (local_154 == (byte *)0x2) {
+                            else if (st::machine_word_boundary_cast<uint>(local_154) == st::machine_word_boundary_cast<uint>((byte *)0x2)) {
                               /* ST_CALLSITE[00655763]: CALL 0x004013f2; direct=004013F2 _EnumDest */
                               local_EAX_12115 =
-                                   st::fn_004013F2(nullptr,-1,sVar25,sVar23,sVar6,1,1,1,
+                                   st::fn_004013F2(nullptr,-1,sVar28,sVar26,sVar6,1,1,1,
                                              st::function_address_boundary_cast<code *>(st::fn_00678890),0);
                               if ((local_EAX_12115 == -1) && (g_fish_00811984 != nullptr)) {
-                                pSVar32 = g_fish_00811984;
+                                pSVar35 = g_fish_00811984;
                               }
                             }
-                            if ((pSVar32 != nullptr) && (pDStack_164 != nullptr)) {
+                            if ((pSVar35 != nullptr) && (pDStack_164 != nullptr)) {
                               /* ST_CALLSITE[0065588E]: CALL dword ptr [EDX + 0x70] */
-                              (*pSVar32->vtable->vfunc_70)(st::machine_word_boundary_cast<undefined4>(pDStack_164));
+                              (*pSVar35->vtable->vfunc_70)(st::machine_word_boundary_cast<undefined4>(pDStack_164));
                             }
                             goto cf_common_join_00659A73;
                           case 0x58d:
-                            iVar37 = st::fn_0040568C((RecoveredRecord_AiEventClassTy_0064F780 *)
-                                                        &local_16c);
-                            if (iVar37 != 0) {
+
+                            iVar40 = st::fn_0040568C(reinterpret_cast<RecoveredRecord_AiEventClassTy_0064F780 *>(&local_16c));
+                            if (iVar40 != 0) {
                               /* ST_CALLSITE[006558B1]: CALL dword ptr [EDX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                 local_8 = (DArrayTy *)
-                                                                                  
-                                          /* ST_CALLSITE[006558D6]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                          /* ST_CALLSITE[006558D6]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                           st::fn_00668F50
-                                                    ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)pDStack_164,(uint)local_160,
+                                                    (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                     reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                      output_values_neg_34);
                                 if (0 < (int)local_8) {
-                                  local_10 = (AiFltClassTy *)output_values_neg_34;
+                                  local_10 = reinterpret_cast<AiFltClassTy *>(output_values_neg_34);
                                   do {
                                     local_c = local_144;
-                                    uVar33 = local_14;
+                                    uVar36 = local_14;
                                     if ((int)local_144 < 0) {
                                       local_c = (DArrayTy *)0xfffe;
 LAB_00655972:
@@ -6329,42 +6631,44 @@ LAB_00655972:
                                                          local_13c,(int)local_138,local_134);
                                       if (local_EAX_12727 != 0) {
 LAB_006559d0:
-                                        pAVar38 = local_10->vtable;
+                                        pAVar41 = local_10->vtable;
 LAB_006559d6:
                                         pcVar8_mg3D = st::fn_004057DB(local_EAX_488);
-                                        iVar37 = -0xab;
+                                        iVar40 = -0xab;
                                         goto LAB_006559e3;
                                       }
                                     }
                                     else {
                                       if ((int)local_144 < 1) goto LAB_00655972;
-                                      pSVar14 = st::fn_00405CF9(*(char *)&local_10->vtable,
-                                                                   (ushort)local_144);
-                                      if (pSVar14 != nullptr) {
-                                        iVar37 = st::fn_00405902((int)pSVar14);
-                                        if (iVar37 != 0) {
+                                      /* ST_CALLSITE[00655911]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733;/char;/ushort */
+                                      pRVar14 = st::pointer_boundary_cast<RecoveredRecord_00423300_67884733 *>(st::fn_00405CF9(*(char *)&local_10->vtable,
+                                                                   (ushort)local_144));
+                                      if (pRVar14 != nullptr) {
+
+                                        iVar40 = st::fn_00405902(pRVar14);
+                                        if (iVar40 != 0) {
                                           if (((int)local_15c < 0x32) || (0x73 < (int)local_15c)) {
-                                            bVar36 = false;
+                                            bVar39 = false;
                                           }
                                           else {
-                                            bVar36 = true;
+                                            bVar39 = true;
                                           }
-                                          if (((!bVar36) || (STField<short>(iVar37,0x7B) == 1)) &&
-                                             (STField<short>(iVar37,0x7B) != -0x8000))
+                                          if (((!bVar39) || (STField<short>(iVar40,0x7B) == 1)) &&
+                                             (STField<short>(iVar40,0x7B) != -0x8000))
                                           goto LAB_00655972;
                                           goto LAB_006559d0;
                                         }
-                                        pAVar38 = local_10->vtable;
+                                        pAVar41 = local_10->vtable;
                                         goto LAB_006559d6;
                                       }
-                                      pAVar38 = local_10->vtable;
+                                      pAVar41 = local_10->vtable;
                                       pcVar8_mg3D = &CHAR_00h_008016a0;
-                                      iVar37 = -0xaa;
+                                      iVar40 = -0xaa;
 LAB_006559e3:
-                                      st::fn_00405042(this_00,iVar37,pcVar8_mg3D,uVar33,
-                                                         (int)pAVar38);
+                                      st::fn_00405042(this_00,iVar40,pcVar8_mg3D,uVar36,
+                                                         (int)pAVar41);
                                     }
-                                    local_10 = (AiFltClassTy *)&local_10->field_0x4;
+                                    local_10 = reinterpret_cast<AiFltClassTy *>(reinterpret_cast<byte *>(local_10) + 0x4);
                                     local_8 = (DArrayTy *)((int)&local_8[-1].data + 3);
                                   } while (local_8 != nullptr);
                                 }
@@ -6373,34 +6677,35 @@ LAB_006559e3:
                             }
                             break;
                           case 0x58e:
-                            iVar37 = st::fn_00401A82((short *)&local_16c);
-                            if (iVar37 != 0) {
+
+                            iVar40 = st::fn_00401A82(reinterpret_cast<short *>(&local_16c));
+                            if (iVar40 != 0) {
                               /* ST_CALLSITE[00655A20]: CALL dword ptr [EDX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                 local_c = (DArrayTy *)
-                                                                                  
-                                          /* ST_CALLSITE[00655A45]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                          /* ST_CALLSITE[00655A45]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                           st::fn_00668F50
-                                                    ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)pDStack_164,(uint)local_160,
+                                                    (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                     reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                      output_values_neg_34);
                                 if (0 < (int)local_c) {
-                                  local_10 = (AiFltClassTy *)output_values_neg_34;
+                                  local_10 = reinterpret_cast<AiFltClassTy *>(output_values_neg_34);
                                   do {
                                     /* ST_CALLSITE[00655A61]: CALL 0x00404da9; direct=00404DA9 _GetStaffGrpExch */
-                                    pDVar17 = (DArrayTy *)st::fn_00404DA9(st::machine_word_boundary_cast<undefined4>(local_10->vtable));
+                                    pDVar17 = reinterpret_cast<DArrayTy *>(st::fn_00404DA9(st::machine_word_boundary_cast<undefined4>(local_10->vtable)));
                                     if (pDVar17 != nullptr) {
-                                      uVar33 = 0;
+                                      uVar36 = 0;
                                       dVar15 = pDVar17->count;
                                       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-                                      pDVar27 = extraout_EDX_01;
+                                      pDVar30 = extraout_EDX_01;
                                       if (0 < (int)dVar15) {
                                         do {
-                                          if (uVar33 < dVar15) {
-                                            pDVar27 = static_cast<DArrayTy *>(pDVar17->data);
-                                            pdVar16 = (dword *)((int)&pDVar27->flags +
-                                                               pDVar17->elementSize * uVar33);
+                                          if (uVar36 < dVar15) {
+                                            pDVar30 = static_cast<DArrayTy *>(pDVar17->data);
+                                            pdVar16 = (dword *)((int)&pDVar30->flags +
+                                                               pDVar17->elementSize * uVar36);
                                           }
                                           else {
                                             pdVar16 = nullptr;
@@ -6409,15 +6714,15 @@ LAB_006559e3:
                                           st::fn_0040387D
                                                     (g_allPlayers_007FA174,
                                                      *(char *)&local_10->vtable,
-                                                     STReplaceLowWord((uint32_t)(pDVar27), (uint16_t)((short)*pdVar16)),CASE_1,st::machine_word_boundary_cast<undefined4>(local_15c));
-                                          uVar33 = uVar33 + 1;
+                                                     STReplaceLowWord((uint32_t)(pDVar30), (uint16_t)((short)*pdVar16)),CASE_1,st::machine_word_boundary_cast<undefined4>(local_15c));
+                                          uVar36 = uVar36 + 1;
                                           dVar15 = pDVar17->count;
-                                          pDVar27 = pDVar17;
-                                        } while ((int)uVar33 < (int)dVar15);
+                                          pDVar30 = pDVar17;
+                                        } while ((int)uVar36 < (int)dVar15);
                                       }
                                       st::fn_006AE110(pDVar17);
                                     }
-                                    local_10 = (AiFltClassTy *)&local_10->field_0x4;
+                                    local_10 = reinterpret_cast<AiFltClassTy *>(reinterpret_cast<byte *>(local_10) + 0x4);
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                   } while (local_c != nullptr);
                                 }
@@ -6426,21 +6731,21 @@ LAB_006559e3:
                             }
                             break;
                           case 0x58f:
-                            iVar37 = st::fn_00402D7E((RecoveredRecord_AiEventClassTy_0064F950 *)
-                                                        &local_16c);
-                            if (iVar37 != 0) {
+
+                            iVar40 = st::fn_00402D7E(reinterpret_cast<RecoveredRecord_AiEventClassTy_0064F950 *>(&local_16c));
+                            if (iVar40 != 0) {
                               /* ST_CALLSITE[00655AF7]: CALL dword ptr [EDX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                 local_c = (DArrayTy *)
-                                                                                  
-                                          /* ST_CALLSITE[00655B1C]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                          /* ST_CALLSITE[00655B1C]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                           st::fn_00668F50
-                                                    ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)pDStack_164,(uint)local_160,
+                                                    (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                     reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                      output_values_neg_34);
                                 if (0 < (int)local_c) {
-                                  local_10 = (AiFltClassTy *)output_values_neg_34;
+                                  local_10 = reinterpret_cast<AiFltClassTy *>(output_values_neg_34);
                                   do {
                                     if ((char)local_154 == '\b') {
                                       cVar5 = *(char *)&local_10->vtable;
@@ -6449,22 +6754,22 @@ LAB_006559e3:
                                             (cVar5 = (char)local_154, '\b' < (char)local_154)) {
                                       cVar5 = -1;
                                     }
-                                    pDVar17 = (DArrayTy *)
-                                              st::fn_00404705(st::machine_word_boundary_cast<undefined4>(local_10->vtable),(uint)local_158,
+                                    /* ST_CALLSITE[00655B98]: CALL 0x00404705; direct=00404705 thunk_FUN_006775e0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__cdecl;pointer:/SubmarineTitans/Recovered/DArrayTy;/undefined4;/uint;/uint;pointer:/byte;/char;/short;/short;/short;/short;/short;/short;/int */
+                                    pDVar17 = st::pointer_boundary_cast<DArrayTy *>(st::fn_00404705(st::machine_word_boundary_cast<undefined4>(local_10->vtable),(uint)local_158,
                                                                  (uint)local_15c,local_150,cVar5,
                                                                  (short)local_14c,(short)local_148,
                                                                  (short)local_144,(short)local_140,
                                                                  (short)local_13c,(short)local_138,1
-                                                                );
+                                                                ));
                                     if (pDVar17 != nullptr) {
-                                      uVar33 = 0;
+                                      uVar36 = 0;
                                       if (0 < (int)pDVar17->count) {
-                                        bVar36 = pDVar17->count != 0;
+                                        bVar39 = pDVar17->count != 0;
                                         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                         uVar7 = extraout_EDX_02;
                                         do {
-                                          if (bVar36) {
-                                            puVar18 = DArrayAt<undefined2>(pDVar17, uVar33);
+                                          if (bVar39) {
+                                            puVar18 = DArrayAt<undefined2>(pDVar17, uVar36);
                                           }
                                           else {
                                             puVar18 = nullptr;
@@ -6473,17 +6778,17 @@ LAB_006559e3:
                                           st::fn_0040387D
                                                     (g_allPlayers_007FA174,
                                                      *(char *)&local_10->vtable,
-                                                     STReplaceLowWord((uint32_t)(uVar7), (uint16_t)(*puVar18))
+                                                     STReplaceLowWord(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(uVar7)), (uint16_t)(*puVar18))
                                                      ,CASE_1,local_134);
-                                          uVar33 = uVar33 + 1;
-                                          bVar36 = uVar33 < pDVar17->count;
+                                          uVar36 = uVar36 + 1;
+                                          bVar39 = uVar36 < pDVar17->count;
                                           /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
                                           uVar7 = extraout_EDX_03;
-                                        } while ((int)uVar33 < (int)pDVar17->count);
+                                        } while ((int)uVar36 < (int)pDVar17->count);
                                       }
                                       st::fn_006AE110(pDVar17);
                                     }
-                                    local_10 = (AiFltClassTy *)&local_10->field_0x4;
+                                    local_10 = reinterpret_cast<AiFltClassTy *>(reinterpret_cast<byte *>(local_10) + 0x4);
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                   } while (local_c != nullptr);
                                 }
@@ -6492,20 +6797,21 @@ LAB_006559e3:
                             }
                             break;
                           case 0x590:
-                            iVar37 = st::fn_00405F1A((short *)&local_16c);
-                            if (iVar37 != 0) {
+
+                            iVar40 = st::fn_00405F1A(reinterpret_cast<RecoveredRecord_0064FB00_42E58B4A *>(&local_16c));
+                            if (iVar40 != 0) {
                               /* ST_CALLSITE[00655C27]: CALL dword ptr [EAX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                 local_c = (DArrayTy *)
-                                                                                  
-                                          /* ST_CALLSITE[00655C4C]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                          /* ST_CALLSITE[00655C4C]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                           st::fn_00668F50
-                                                    ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)pDStack_164,(uint)local_160,
+                                                    (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                     reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                      output_values_neg_34);
                                 if (0 < (int)local_c) {
-                                  local_8 = (DArrayTy *)output_values_neg_34;
+                                  local_8 = reinterpret_cast<DArrayTy *>(output_values_neg_34);
                                   do {
                                     /* ST_CALLSITE[00655C9C]: CALL 0x00401b27; direct=00401B27 AiEventClassTy::_CreateRCCont */
                                     local_EAX_13452 =
@@ -6515,11 +6821,11 @@ LAB_006559e3:
                                                        (int)local_144);
                                     if (local_EAX_13452 != 0) {
                                       dVar15 = local_8->flags;
-                                      uVar33 = local_14;
+                                      uVar36 = local_14;
                                       pcVar8_mg3C = st::fn_004057DB(local_EAX_488);
-                                      st::fn_00405042(this_00,-0xab,pcVar8_mg3C,uVar33,dVar15);
+                                      st::fn_00405042(this_00,-0xab,pcVar8_mg3C,uVar36,dVar15);
                                     }
-                                    local_8 = (DArrayTy *)&local_8->iteratorIndex;
+                                    local_8 = reinterpret_cast<DArrayTy *>(&local_8->iteratorIndex);
                                     local_c = (DArrayTy *)((int)&local_c[-1].data + 3);
                                   } while (local_c != nullptr);
                                 }
@@ -6528,25 +6834,25 @@ LAB_006559e3:
                             }
                             break;
                           case 0x591:
-                            iVar37 = st::fn_00403904((RecoveredRecord_AiEventClassTy_0064FB80 *)
-                                                        &local_16c);
-                            if (iVar37 != 0) {
+
+                            iVar40 = st::fn_00403904(reinterpret_cast<RecoveredRecord_AiEventClassTy_0064FB80 *>(&local_16c));
+                            if (iVar40 != 0) {
                               /* ST_CALLSITE[00655CF1]: CALL dword ptr [EDX + 0x18] */
-                              iVar37 = this_00->vfunc_18();
-                              if ((iVar37 != 8) || (pDStack_164 != (DArrayTy *)0x9)) {
+                              iVar40 = this_00->vfunc_18();
+                              if ((iVar40 != 8) || (st::machine_word_boundary_cast<uint>(pDStack_164) != st::machine_word_boundary_cast<uint>((DArrayTy *)0x9))) {
                                 local_c = (DArrayTy *)
-                                                                                  
-                                          /* ST_CALLSITE[00655D16]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::sub_00668F50 */
+
+                                          /* ST_CALLSITE[00655D16]: CALL 0x004016b8; direct=004016B8 SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::sub_00668F50 */
                                           st::fn_00668F50
-                                                    ((AnonReceiver_0064A970 *)this_00,
-                                                     (char *)pDStack_164,(uint)local_160,
+                                                    (reinterpret_cast<RecoveredReceiver_0064A970 *>(this_00),
+                                                     reinterpret_cast<char *>(pDStack_164),(uint)local_160,
                                                      output_values_neg_34);
                                 if (0 < (int)local_c) {
                                   puVar12 = output_values_neg_34;
                                   do {
                                     DAT_008118fc = 0;
                                     /* ST_CALLSITE[00655D7B]: CALL 0x00403882; direct=00403882 _EnumRCCont */
-                                    st::fn_00403882((short)*puVar12,(short)local_15c,(byte *)local_158,
+                                    st::fn_00403882((short)*puVar12,(short)local_15c,reinterpret_cast<byte *>(local_158),
                                                 (short)local_154,(short)local_150,(short)local_14c,
                                                 (short)local_148,(short)local_144,(short)local_140,
                                                 st::function_address_boundary_cast<code *>(st::fn_0064DAC0),st::machine_word_boundary_cast<undefined4>(&local_13c));
@@ -6559,70 +6865,72 @@ LAB_006559e3:
                             }
                             break;
                           case 0x592:
-                            iVar37 = st::fn_00403F9E((short *)&local_16c);
-                            if (iVar37 == 0) break;
+
+                            iVar40 = st::fn_00403F9E(reinterpret_cast<RecoveredRecord_0064FCE0_70CB9801 *>(&local_16c));
+                            if (iVar40 == 0) break;
                             /* ST_CALLSITE[00655DE5]: CALL 0x00402ba8; direct=00402BA8 AiEventClassTy::_CreateArt */
                             local_EAX_13781 =
                                  st::fn_00402BA8(this_00,(short)pDStack_164,(short)local_160,
                                             (int)local_15c,(int)local_158,st::machine_word_boundary_cast<undefined4>(local_154),
-                                            (char *)local_150,local_14c,st::machine_word_boundary_cast<undefined4>(local_148));
+                                            reinterpret_cast<char *>(local_150),local_14c,st::machine_word_boundary_cast<undefined4>(local_148));
 LAB_00655f44:
                             if (local_EAX_13781 != 0) {
 LAB_00655f4c:
-                              iVar37 = -1;
-                              uVar33 = local_14;
+                              iVar40 = -1;
+                              uVar36 = local_14;
                               pcVar8_mg3B = st::fn_004057DB(local_EAX_488);
-                              st::fn_00405042(this_00,-0xab,pcVar8_mg3B,uVar33,iVar37);
+                              st::fn_00405042(this_00,-0xab,pcVar8_mg3B,uVar36,iVar40);
                             }
                             goto cf_common_join_00659A73;
                           }
 cf_common_join_00652A99:
-                          iVar37 = -1;
-                          uVar33 = local_14;
+                          iVar40 = -1;
+                          uVar36 = local_14;
                           pcVar8_mg3F = st::fn_004057DB(local_EAX_488);
-                          st::fn_00405042(this_00,-0x7d,pcVar8_mg3F,uVar33,iVar37);
+                          st::fn_00405042(this_00,-0x7d,pcVar8_mg3F,uVar36,iVar40);
 cf_common_join_00659A73:
                           pDVar17 = (DArrayTy *)((int)&local_170->flags + 1);
 cf_continue_loop_00659A80:
                           local_170 = pDVar17;
-                          pAVar31 = local_178->field_000F;
-                          pDVar17 = pAVar31->field_000C;
+                          pAVar34 = local_178->field_000F;
+                          pDVar17 = pAVar34->field_000C;
                         } while ((int)local_170 < (int)pDVar17);
                       }
                     }
                     goto LAB_00659aae;
                   }
-                  iVar37 = -1;
+                  iVar40 = -1;
                   pcVar8_mg40 = st::fn_004057DB(local_EAX_327);
                   local_EAX_327 = -0x7d;
                 }
-                st::fn_00405042(this_00,local_EAX_327,pcVar8_mg40,uVar33,iVar37);
-                *(char *)pAVar30 = '\x01';
-                pAVar30->field_000B = 0;
+                st::fn_00405042(this_00,local_EAX_327,pcVar8_mg40,uVar36,iVar40);
+                *(char *)pAVar33 = '\x01';
+                pAVar33->field_000B = 0;
               }
             }
-            else if (pAVar30->field_000B != 0) {
-              if (pAVar30->field_000B == 1) {
-                *(char *)pAVar30 = '\0';
+            else if (pAVar33->field_000B != 0) {
+              if (pAVar33->field_000B == 1) {
+                *(char *)pAVar33 = '\0';
               }
-              pAVar30->field_000B = st::machine_word_boundary_cast<undefined4>(pAVar30->field_000B + -1);
+              pAVar33->field_000B = pAVar33->field_000B + -1;
             }
 LAB_00659aae:
             pDVar17 = this_00->field_04EE;
             local_14 = local_14 + 1;
-            bVar36 = local_14 < pDVar17->count;
+            bVar39 = local_14 < pDVar17->count;
           } while ((int)local_14 < (int)pDVar17->count);
         }
-        uVar33 = local_19c;
-        pAVar2 = (AnonShape_006B7830_769CA2DF *)this_00->field_04E2;
-        iVar37 = pAVar2->field_0008;
-        while ((int)uVar33 < iVar37) {
-          st::fn_006B7830(pAVar2,iVar37 - 1);
-          pAVar2 = (AnonShape_006B7830_769CA2DF *)this_00->field_04E2;
-          iVar37 = pAVar2->field_0008;
+        uVar36 = local_19c;
+        pAVar2 = reinterpret_cast<AnonShape_006B7830_769CA2DF *>(this_00->field_04E2);
+        iVar40 = pAVar2->field_0008;
+        while ((int)uVar36 < iVar40) {
+
+          st::fn_006B7830(pAVar2,iVar40 - 1);
+          pAVar2 = reinterpret_cast<AnonShape_006B7830_769CA2DF *>(this_00->field_04E2);
+          iVar40 = pAVar2->field_0008;
         }
         if (local_194 == 0x456) {
-          this_00->field_00D6 = st::machine_word_boundary_cast<undefined4>(this_00->field_00D6 + 1);
+          this_00->field_00D6 = this_00->field_00D6 + 1;
         }
         g_currentExceptionFrame = local_284.previous;
         return;
@@ -6637,19 +6945,18 @@ LAB_00659aae:
   }
   return;
 code_r0x00653bbb:
-  iVar37 = iVar37 + 1;
+  iVar40 = iVar40 + 1;
   puVar12 = puVar12 + 1;
-  if (iVar37_mgD7 <= iVar37) goto cf_common_join_00659A73;
+  if (iVar37_mgD7 <= iVar40) goto cf_common_join_00659A73;
   goto LAB_00653bb7;
 code_r0x00654366:
-  iVar37 = iVar37 + 1;
+  iVar40 = iVar40 + 1;
   puVar12 = puVar12 + 1;
-  if (local_EAX_6968 <= iVar37) goto cf_common_join_00659A73;
+  if (local_EAX_6968 <= iVar40) goto cf_common_join_00659A73;
   goto LAB_00654362;
 code_r0x006540bd:
-  iVar37 = iVar37 + 1;
+  iVar40 = iVar40 + 1;
   puVar12 = puVar12 + 1;
-  if (local_EAX_6287 <= iVar37) goto cf_common_join_00659A73;
+  if (local_EAX_6287 <= iVar40) goto cf_common_join_00659A73;
   goto LAB_006540b9;
 }
-

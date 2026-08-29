@@ -8,9 +8,14 @@
 
    [STMethodOwnerApplier] Structural method owner recovered as STJellyGunC.
    Evidence: this_call_owners=[STJellyGunC]; agreed_this_calls=1; incoming_this_accesses=2;
-   incoming_edx_uses=0; incoming_stack_parameter_uses=5 */
+   incoming_edx_uses=0; incoming_stack_parameter_uses=5
 
-undefined4 __thiscall STJellyGunC::sub_00415ED0(STJellyGunC *this,undefined4 *param_1,int *param_2)
+   [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=42,
+   ignored=0, unknown=0 */
+
+int __thiscall STJellyGunC::sub_00415ED0(STJellyGunC *this,undefined4 *param_1,int *param_2)
 
 {
   short sVar1;
@@ -23,8 +28,7 @@ undefined4 __thiscall STJellyGunC::sub_00415ED0(STJellyGunC *this,undefined4 *pa
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   puStack_c = &DAT_007901b0;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;

@@ -67,21 +67,23 @@ cf_common_exit_0052B581:
       if (this->field_0DB3 == nullptr) {
         return false;
       }
-      FUN_006e6540((int)this->field_0DB3,this->field_0DD6,this->field_0DDA,-1);
+      FUN_006e6540(this->field_0DB3,this->field_0DD6,this->field_0DDA,-1);
       return true;
     }
   }
   else if (!bVar1) goto cf_common_exit_0052B581;
   this->field_0DC7 = 2;
   if (this->field_0DB3 != nullptr) {
-    FUN_006e6580(g_sT3DSMAPContext_00807598,this->field_0DB3);
+    ST3DSMAPContext::sub_006E6580(g_sT3DSMAPContext_00807598,this->field_0DB3);
   }
   this->field_0DB3 = nullptr;
   this->field_0DC8 = 0;
+
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  FUN_006e65c0(g_sT3DSMAPContext_00807598,this->field_0DBF[(byte)this->field_0DCC],
-               (char)*(undefined2 *)(this->field_09C0[(byte)this->field_0DCC + 2] + 0x23),
-               this->field_0DD6,this->field_0DDA,5,5,1);
+  ST3DSMAPContext::sub_006E65C0
+            (g_sT3DSMAPContext_00807598,this->field_0DBF[(byte)this->field_0DCC],
+             (char)*(undefined2 *)(this->field_09C0[(byte)this->field_0DCC + 2] + 0x23),
+             this->field_0DD6,this->field_0DDA,5,5,1);
   thunk_FUN_005252c0((this->field_0DCC != '\0') + CASE_B6);
   return false;
 }

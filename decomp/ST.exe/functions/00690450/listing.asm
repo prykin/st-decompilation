@@ -31,7 +31,7 @@ LAB_0069046c:
 00690492  8B 10                     MOV EDX,dword ptr [EAX]
 00690494  53                        PUSH EBX
 00690495  8B C8                     MOV ECX,EAX
-00690497  FF 12                     CALL dword ptr [EDX]
+00690497  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 LAB_00690499:
 00690499  8B 8F A5 00 00 00         MOV ECX,dword ptr [EDI + 0xa5]
 0069049F  46                        INC ESI

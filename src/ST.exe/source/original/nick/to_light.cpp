@@ -34,10 +34,12 @@ int __thiscall st::fn_0061D190(STLightC *this,STMessage *message)
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   local_8 = this;
+
   iVar5 = st::fn_0072D7F0(local_60.jumpBuffer,0);
   this_00 = local_8;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_60.previous;
+
     iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_light.Cpp"),0x7a,0,iVar5,st::mutable_c_string("%s"),
                                "STLightC::GetMessage");
     if (iVar6 != 0) {
@@ -57,6 +59,7 @@ int __thiscall st::fn_0061D190(STLightC *this,STMessage *message)
       return 0;
     }
     if (SVar3 == MESS_ID_NONE) {
+
       st::fn_00402072(local_8);
       if (this_00->field_004F == 5) {
         sVar2 = this_00->field_0030;
@@ -103,17 +106,18 @@ int __thiscall st::fn_0061D190(STLightC *this,STMessage *message)
         iVar7 = 0x475;
       }
       /* ST_CALLSITE[0061D3D5]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
-      st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_2,nullptr,iVar7,&local_1c,0);
-      iVar7 = st::machine_word_boundary_cast<int>(this_00->field_004F + 1);
+      st::fn_00404BD8(reinterpret_cast<SoundClassTy *>(&g_sound),SOUND_MODE_2,nullptr,iVar7,&local_1c,0);
+      iVar7 = this_00->field_004F + 1;
       this_00->field_004F = iVar7;
       if (this_00->field_005F * 4 <= iVar7) {
         /* ST_CALLSITE[0061D3EF]: CALL 0x00401046; direct=00401046 STLightC::sub_0061D6D0 */
         st::fn_00401046(this_00);
       }
-      this_00->field_005B = st::machine_word_boundary_cast<int>(this_00->field_005B + 0x8fc);
+      this_00->field_005B = this_00->field_005B + 0x8fc;
       /* ST_CALLSITE[0061D402]: CALL 0x004033e1; direct=004033E1 STLightC::sub_0061E4F0 */
       st::fn_004033E1(this_00);
       if (this_00->field_00A7 == '\0') {
+
         uVar5 = st::fn_00403CF1(this_00);
         this_00->field_00A7 = (char)uVar5;
       }
@@ -122,14 +126,14 @@ int __thiscall st::fn_0061D190(STLightC *this,STMessage *message)
       if (iVar7 == 0) goto LAB_0061d434;
     }
     else if (SVar3 == MESS_ID_CREATE) {
-      puVar8 = (byte *)((message->arg0).ptr);
+      puVar8 = reinterpret_cast<byte *>(((message->arg0).ptr));
       if (puVar8[3] == 2) {
         /* ST_CALLSITE[0061D26C]: CALL 0x00403305; direct=00403305 STLightC::sub_0061D8F0 */
-        st::fn_00403305(local_8,st::pointer_boundary_cast<undefined4 *>(puVar8));
+        st::fn_00403305(local_8,reinterpret_cast<undefined4 *>(puVar8));
         pSVar10 = this_00 + 1;
         for (iVar7 = 0xb; iVar7 != 0; iVar7 = iVar7 + -1) {
           pSVar10->vtable = nullptr;
-          pSVar10 = (STLightC *)&pSVar10->field_0x4;
+          pSVar10 = reinterpret_cast<STLightC *>(reinterpret_cast<byte *>(pSVar10) + 0x4);
         }
         *(undefined1 *)&pSVar10->vtable = 0;
         this_00->field_00AC = this_00->field_00A8;
@@ -137,19 +141,21 @@ int __thiscall st::fn_0061D190(STLightC *this,STMessage *message)
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
-      puVar9 = (byte *)&local_8->field_0x1c;
+      puVar9 = reinterpret_cast<byte *>(&local_8->field_0x1c);
       memmove(puVar9, puVar8, 0x2a); /* compiler REP MOVS byte copy */
       iVar7 = DAT_00808754;
       local_8->field_00AC = DAT_00808754;
       uVar1 = iVar7 * 0x41c64e6d + 0x3039;
       local_8->field_00AC = uVar1;
       local_8->field_003C = uVar1 >> 0x10 & 3;
+
       uVar5 = st::fn_00403CF1(local_8);
       this_00->field_00A7 = (char)uVar5;
       /* ST_CALLSITE[0061D23E]: CALL 0x00405d6c; direct=00405D6C STLightC::LoadNextLight */
       iVar7 = st::fn_00405D6C(this_00);
       if (iVar7 != 0) {
-        st::fn_00402BAD((RecoveredRecord_STLightC_0061DD40 *)this_00);
+
+        st::fn_00402BAD(reinterpret_cast<RecoveredRecord_STLightC_0061DD40 *>(this_00));
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
@@ -161,8 +167,8 @@ LAB_0061d434:
     }
   }
   else if (SVar3 == MESS_SHARED_010F) {
-    /* ST_CALLSITE[0061D482]: CALL 0x0040187a; direct=0040187A STLightC::sub_0061D710 */
-    local_10 = st::fn_0040187A(local_8,(int *)&local_c);
+    /* ST_CALLSITE[0061D482]: CALL 0x0040187a; direct=0040187A STLightC::sub_0061D710; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
+    local_10 = st::fn_0040187A(local_8,reinterpret_cast<int *>(&local_c));
     /* ST_CALLSITE[0061D499]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
     st::fn_004025F9(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
     st::fn_006AB060(&local_10);
@@ -185,9 +191,9 @@ undefined4 __thiscall st::fn_0061DB80(STLightC *this)
   int iVar2;
   ushort *puVar3;
   uint *puVar4;
-  STLightC_field_00A3DArray *pSVar5;
+  DArrayTy *pSVar5;
   int iVar6;
-  uint uVar6;
+  uint uVar5;
   int iVar7;
   InternalExceptionFrame local_50;
   STLightC *local_c;
@@ -196,15 +202,18 @@ undefined4 __thiscall st::fn_0061DB80(STLightC *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar2 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar2 == 0) {
+    /* ST_CALLSITE[0061DBD2]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STLightC; source view only; no Ghidra override */
     puVar3 = st::fn_00709AF0
                        (PTR_00806774,CASE_0,(&PTR_s_light01_007d0164)[local_c->field_003C],
                         0xffffffff,0,1,0,nullptr);
     /* ST_CALLSITE[0061DBE3]: CALL 0x004050d3; direct=004050D3 STLightC::sub_0061D9C0 */
-    st::fn_004050D3(this_00,puVar3,(int *)&local_8,0);
-    puVar4 = static_cast<uint *>(st::fn_006AAC70(st::machine_word_boundary_cast<uint>(this_00->field_0093 << 4)));
+    st::fn_004050D3(this_00,puVar3,reinterpret_cast<int *>(&local_8),0);
+
+    puVar4 = static_cast<uint *>(st::fn_006AAC70(this_00->field_0093 << 4));
     this_00->field_0057 = puVar4;
     for (iVar7 = (this_00->field_0093 & 0xfffffffU) << 2; iVar7 != 0; iVar7 = iVar7 + -1) {
       *puVar4 = 0;
@@ -225,13 +234,14 @@ undefined4 __thiscall st::fn_0061DB80(STLightC *this)
     }
     *STField<undefined4 *>(this_00,0x57) = 0;
     *(undefined4 *)((int)this_00->field_0057 + this_00->field_0093 * 0xc) = 0;
-    pSVar5 = (STLightC_field_00A3DArray *)
-             st::fn_006AE290(nullptr,local_8,0x30,10);
-    this_00->field_00A3 = pSVar5;
+    /* ST_CALLSITE[0061DC71]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STLightC_field_00A3DArray; source view only; no Ghidra override */
+    pSVar5 = st::fn_006AE290(nullptr,local_8,0x30,10);
+    this_00->field_00A3 = reinterpret_cast<STLightC_field_00A3DArray *>(pSVar5);
     g_currentExceptionFrame = local_50.previous;
     return 1;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_light.Cpp"),0x13b,0,iVar2,st::mutable_c_string("%s"),
                              "STLightC::LoadNextLight");
   if (iVar6 != 0) {
@@ -240,4 +250,3 @@ undefined4 __thiscall st::fn_0061DB80(STLightC *this)
   st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\nick\\to_light.Cpp"),0x13d);
   return 0xffff;
 }
-

@@ -10,7 +10,9 @@
    decompilation contains no value return */
 
 void __thiscall
-MMObjTy::PaintSprBut(MMObjTy *this,int param_1,uint param_2,int param_3,int param_4,int param_5)
+MMObjTy::PaintSprBut
+          (MMObjTy *this,RecoveredRecord_005B5690_213E8178 *param_1,uint param_2,int param_3,
+          int param_4,int param_5)
 
 {
   uint uVar1;
@@ -26,10 +28,12 @@ MMObjTy::PaintSprBut(MMObjTy *this,int param_1,uint param_2,int param_3,int para
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pMVar3 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_4c.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\Start\\mmenuobj.cpp",0x8c,0,iVar4,"%s",
                                "MMObjTy::PaintSprBut");
     if (iVar5 != 0) {
@@ -38,8 +42,7 @@ MMObjTy::PaintSprBut(MMObjTy *this,int param_1,uint param_2,int param_3,int para
     RaiseInternalException(iVar4,0,"E:\\__titans\\Start\\mmenuobj.cpp",0x8c);
     return;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined2 *)(param_1 + 0x14)) {
+  switch(param_1->field_0014) {
   case 0:
   case 1:
   case 3:
@@ -59,14 +62,14 @@ switchD_005b56d4_default:
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   uVar8 = *(uint *)((int)local_8 + (param_2 & 0xff) * 0x1fb + 0xe7);
   if (uVar8 != 0xffffffff) {
+
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     Library::DKW::DDX::FUN_006b3730
               (*(uint **)((int)local_8 + iVar7 + 299),uVar8,*(uint *)((int)local_8 + iVar7 + 0xeb),
                *(uint *)((int)local_8 + iVar7 + 0xff),*(uint *)((int)local_8 + iVar7 + 0x103));
   }
   if (*(char *)((int)pMVar3 + iVar7 + 0xe2) != '\0') {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    switch(*(undefined2 *)(param_1 + 0x14)) {
+    switch(param_1->field_0014) {
     case 0:
     case 1:
     case 3:
@@ -83,6 +86,7 @@ switchD_005b56d4_default:
     }
     uVar8 = *(uint *)((int)pMVar3 + iVar7 + 0x209);
     if (uVar8 != 0xffffffff) {
+
       Library::DKW::DDX::FUN_006b3730
                 (*(uint **)((int)pMVar3 + iVar7 + 0x24d),uVar8,
                  *(uint *)((int)pMVar3 + iVar7 + 0x20d),*(uint *)((int)pMVar3 + iVar7 + 0x221),
@@ -91,8 +95,7 @@ switchD_005b56d4_default:
   }
   iVar6 = *(int *)((int)pMVar3 + iVar7 + 400);
   uVar1 = *(undefined4 *)((int)pMVar3 + iVar7 + 0x194);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  switch(*(undefined2 *)(param_1 + 0x14)) {
+  switch(param_1->field_0014) {
   case 0:
     *(int *)((int)pMVar3 + iVar7 + 0x17c) = *(int *)((int)pMVar3 + iVar7 + 0x180) + -1;
     break;
@@ -107,19 +110,18 @@ switchD_005b56d4_default:
   }
   uVar8 = *(uint *)((int)pMVar3 + iVar7 + 0x178);
   if (uVar8 != 0xffffffff) {
+
     Library::DKW::DDX::FUN_006b3730
               (*(uint **)((int)pMVar3 + iVar7 + 0x1bc),uVar8,*(uint *)((int)pMVar3 + iVar7 + 0x17c),
                *(uint *)((int)pMVar3 + iVar7 + 400),*(uint *)((int)pMVar3 + iVar7 + 0x194));
   }
   *(int *)((int)pMVar3 + iVar7 + 400) = iVar6;
   *(undefined4 *)((int)pMVar3 + iVar7 + 0x194) = uVar1;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if (*(short *)(param_1 + 0x14) == 2) {
+  if (param_1->field_0014 == 2) {
     uVar8 = 4;
   }
   else {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    if (*(short *)(param_1 + 0x14) != 3) {
+    if (param_1->field_0014 != 3) {
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

@@ -8,8 +8,8 @@ uint __thiscall FUN_00639670(void *this,int param_1)
   uint uVar2;
   int iVar3;
   int iVar4;
-  undefined4 local_10;
-  undefined4 local_c;
+  uint local_10;
+  uint local_c;
   short local_6;
 
   iVar4 = param_1 - STField<int>(this,0x2a3);
@@ -30,9 +30,10 @@ uint __thiscall FUN_00639670(void *this,int param_1)
           ((STField<int>(this,0x26b) * iVar4 * 10) / 0x1e - (iVar4 * iVar4 * 300) / 900) / 10;
   iVar4 = STField<int>(this,0x286);
   STField<int>(this,0x282) = iVar1;
-  uVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00601500::thunk_FUN_00601500
-                    ((AnonReceiver_00601500 *)((int)this + 0x2ab),local_c,iVar3,iVar1,iVar4,iVar4,
-                     iVar4,STField<int>(this,0x255),0x35c,STField<int>(this,0x25b),
+
+  uVar2 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00601500::thunk_FUN_00601500
+                    ((RecoveredReceiver_00601500 *)((int)this + 0x2ab),local_c,iVar3,iVar1,iVar4,
+                     iVar4,iVar4,STField<int>(this,0x255),0x35c,STField<int>(this,0x25b),
                      STField<ushort>(this,0x259),0x10c,0,0);
   if ((int)uVar2 < 1) {
     return 0;
@@ -48,12 +49,9 @@ uint __thiscall FUN_00639670(void *this,int param_1)
     if (uVar2 != 2) {
       return uVar2;
     }
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     if ((STField<int *>(this,0x2bf) != nullptr) &&
-       /* ST_CALLSITE[0063988B]: CALL dword ptr [EDX + 0xe0] */
-       (iVar4 = (**(code **)(*STField<int *>(this,0x2bf) + 0xe0))
-                          (STField<undefined4>(this,0x2c3),(int)&param_1_after_write + 2,&local_6,
-                           (int)&local_c + 2,&local_10), iVar4 != 0)) {
+       /* ST_CALLSITE[0063988B]: CALL dword ptr [EDX + 0xe0]; [STIndirectCallsiteApplier] exact slot 0xE0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
+       (iVar4 = STStructuralVirtualCall<undefined4>(STField<int *>(this,0x2bf), 0xE0, STField<undefined4>(this,0x2c3), (int)&param_1_after_write + 2, &local_6, (int)&local_c + 2, &local_10), iVar4 != 0)) {
       STField<int>(this,0x2cf) = (int)local_6;
       STField<int>(this,0x27e) = (int)local_6;
       STField<int>(this,0x2cb) = (int)STPiece<2,2>(param_1_after_write);
@@ -64,6 +62,7 @@ uint __thiscall FUN_00639670(void *this,int param_1)
       return 2;
     }
   }
+
   thunk_FUN_00639630(this);
   return uVar2;
 }

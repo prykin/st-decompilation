@@ -406,7 +406,7 @@ LAB_0058ea68:
 0058EB0F  50                        PUSH EAX
 0058EB10  8D 86 31 02 00 00         LEA EAX,[ESI + 0x231]
 0058EB16  50                        PUSH EAX
-0058EB17  E8 A9 2D E7 FF            CALL 0x004018c5
+0058EB17  E8 A9 2D E7 FF            CALL 0x004018c5  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 0058EB1C  66 8B 56 47               MOV DX,word ptr [ESI + 0x47]
 0058EB20  66 3B 96 31 02 00 00      CMP DX,word ptr [ESI + 0x231]
 0058EB27  0F 85 F8 FD FF FF         JNZ 0x0058e925

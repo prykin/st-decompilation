@@ -21,6 +21,7 @@ void __thiscall FSGSTy::CreateCtrls(FSGSTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pFVar2 = local_8;
   if (errorCode == 0) {
@@ -75,6 +76,7 @@ void __thiscall FSGSTy::CreateCtrls(FSGSTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x582,0,errorCode,
                              "%s","FSGSTy::CreateCtrls");
   if (iVar3 == 0) {

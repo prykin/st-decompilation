@@ -85,17 +85,17 @@ LAB_0049d2f6:
 LAB_0049d341:
 0049D341  8B 16                     MOV EDX,dword ptr [ESI]
 0049D343  8B CE                     MOV ECX,ESI
-0049D345  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+0049D345  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 0049D348  83 F8 08                  CMP EAX,0x8
 0049D34B  74 51                     JZ 0x0049d39e
 0049D34D  8B 06                     MOV EAX,dword ptr [ESI]
 0049D34F  8B CE                     MOV ECX,ESI
-0049D351  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+0049D351  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 0049D354  83 F8 14                  CMP EAX,0x14
 0049D357  74 45                     JZ 0x0049d39e
 0049D359  8B 16                     MOV EDX,dword ptr [ESI]
 0049D35B  8B CE                     MOV ECX,ESI
-0049D35D  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+0049D35D  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 0049D360  83 F8 1A                  CMP EAX,0x1a
 0049D363  74 39                     JZ 0x0049d39e
 0049D365  8B CE                     MOV ECX,ESI

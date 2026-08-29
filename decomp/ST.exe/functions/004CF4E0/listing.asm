@@ -21,7 +21,7 @@ LAB_004cf4f5:
 004CF517  8B 86 07 06 00 00         MOV EAX,dword ptr [ESI + 0x607]
 004CF51D  52                        PUSH EDX
 004CF51E  50                        PUSH EAX
-004CF51F  E8 2C DA 1D 00            CALL 0x006acf50
+004CF51F  E8 2C DA 1D 00            CALL 0x006acf50  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607; source view only; no Ghidra override
 004CF524  89 86 07 06 00 00         MOV dword ptr [ESI + 0x607],EAX
 LAB_004cf52a:
 004CF52A  8B 86 D4 03 00 00         MOV EAX,dword ptr [ESI + 0x3d4]

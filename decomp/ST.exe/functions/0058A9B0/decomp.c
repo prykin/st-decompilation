@@ -13,7 +13,8 @@ STOctopusC * __cdecl CreateSTOctopus(void)
 {
   STOctopusC *pSVar1;
 
-  pSVar1 = (STOctopusC *)FUN_006b04d0(0x2ad);
+  /* ST_CALLSITE[0058A9B5]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STOctopusC; signature=__stdcall;pointer:/STOctopusC;/uint */
+  pSVar1 = FUN_006b04d0(0x2ad);
   if (pSVar1 != nullptr) {
     pSVar1 = STOctopusC::STOctopusC(pSVar1);
     return pSVar1;

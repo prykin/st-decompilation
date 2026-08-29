@@ -27,10 +27,12 @@ int __thiscall STManRub3C::GetMessage(STManRub3C *this,STMessage *message)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_c = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\nick\\to_rab3m.cpp",0x4e,0,iVar3,"%s",
                                "STManRub3C::GetMessage");
     if (iVar4 == 0) {
@@ -73,7 +75,7 @@ int __thiscall STManRub3C::GetMessage(STManRub3C *this,STMessage *message)
       return 0;
     }
     if (SVar1 == MESS_SHARED_010F) {
-      /* ST_CALLSITE[0062CCFE]: CALL 0x00401cf8; direct=00401CF8 STManRub3C::sub_0062D670 */
+      /* ST_CALLSITE[0062CCFE]: CALL 0x00401cf8; direct=00401CF8 STManRub3C::sub_0062D670; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       local_14 = sub_0062D670(local_c,&local_10);
       /* ST_CALLSITE[0062CD19]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
       STPlaySystemC::SaveObjData

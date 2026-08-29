@@ -25,7 +25,7 @@ void __thiscall CGenerate::sub_00697390(CGenerate *this)
   uint uVar9;
   int local_60 [9];
   uint local_3c [4];
-  undefined4 local_2c;
+  uint local_2c;
   uint local_28;
   int local_24;
   int local_20;
@@ -68,7 +68,7 @@ LAB_00697505:
           /* ST_CALLSITE[0069751C]: CALL 0x004046e7; direct=004046E7 CGenerate::sub_00698CA0 */
           iVar1 = sub_00698CA0(this,local_20,local_1c,uVar5,(int *)(local_3c + 3),
                                (int *)(local_3c + 2),&local_2c);
-          /* ST_CALLSITE[00697531]: CALL 0x00401a7d; direct=00401A7D CGenerate::sub_00695C10 */
+          /* ST_CALLSITE[00697531]: CALL 0x00401a7d; direct=00401A7D CGenerate::sub_00695C10; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/CGenerate; source view only; no Ghidra override */
           uVar3 = sub_00695C10(this,uVar5,local_3c[2],local_3c[3],iVar1,local_2c);
           /* ST_CALLSITE[0069753B]: CALL 0x00404156; direct=00404156 CGenerate::sub_00695F70 */
           sub_00695F70(this,uVar3,iVar3,uVar5);
@@ -80,6 +80,7 @@ LAB_00697505:
             local_28 = (uint)(short)this->field_584F[uVar5 * this->field_582F + iVar3];
             if (-1 < (int)local_28) {
               local_24 = iVar3 % this->field_5833;
+
               iVar2 = thunk_FUN_00696eb0(this->field_0008,local_20,local_1c,local_24,
                                          iVar3 / this->field_5833,uVar5,0);
               iVar3 = local_8;
@@ -114,6 +115,7 @@ LAB_006974d2:
               uVar4 = local_3c[0];
               uVar9 = local_3c[1];
             }
+
             thunk_FUN_006961b0(this,uVar4,uVar9,uVar5,1);
           }
         }

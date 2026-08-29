@@ -1,28 +1,27 @@
 function_address	target	status	detail
 00413170	parameter:4	disabled	apply flags are 0
 00419CF0	parameter:1	disabled	apply flags are 0
+00423300	return:	disabled	apply flags are 0
 004354E0	parameter:2	disabled	apply flags are 0
 004354E0	parameter:3	disabled	apply flags are 0
 00435930	parameter:1	disabled	apply flags are 0
 004407A0	parameter:1	disabled	apply flags are 0
 004407A0	parameter:2	disabled	apply flags are 0
-0044E1B0	parameter:0	disabled	apply flags are 0
-004838E0	parameter:1	disabled	apply flags are 0
-00483E30	parameter:1	disabled	apply flags are 0
+00488D10	parameter:1	disabled	apply flags are 0
 00492550	parameter:4	disabled	apply flags are 0
 00492550	parameter:5	disabled	apply flags are 0
-00497370	parameter:4	disabled	apply flags are 0
 004AF080	parameter:7	disabled	apply flags are 0
+004AF080	parameter:8	disabled	apply flags are 0
 004B2520	parameter:5	disabled	apply flags are 0
 004B2520	parameter:7	disabled	apply flags are 0
-004B7140	parameter:0	disabled	apply flags are 0
-004B71F0	parameter:0	disabled	apply flags are 0
-004B7240	parameter:0	disabled	apply flags are 0
+004B7140	parameter:1	disabled	apply flags are 0
 004B9BB0	parameter:3	disabled	apply flags are 0
 004C7260	parameter:3	disabled	apply flags are 0
 004C7260	parameter:4	disabled	apply flags are 0
 004C7260	parameter:6	disabled	apply flags are 0
-004D7480	parameter:2	disabled	apply flags are 0
+004D7480	parameter:3	disabled	apply flags are 0
+004DBCC0	parameter:1	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
+004DBF30	parameter:1	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
 004E20D0	parameter:4	disabled	apply flags are 0
 004E2190	parameter:1	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
 004E5AF0	parameter:1	disabled	apply flags are 0
@@ -34,7 +33,14 @@ function_address	target	status	detail
 004E9960	parameter:3	disabled	apply flags are 0
 004F19D0	parameter:2	disabled	apply flags are 0
 004F19D0	parameter:3	disabled	apply flags are 0
+00523410	return:	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
+00524FE0	return:	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
 005260B0	parameter:1	disabled	apply flags are 0
+00528060	return:	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
+005293F0	return:	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
+0052AB40	parameter:0	disabled	apply flags are 0
+00538DB0	parameter:1	disabled	apply flags are 0
+0053DAF0	parameter:1	disabled	apply flags are 0
 0054CC20	parameter:5	disabled	apply flags are 0
 0054CF00	parameter:1	disabled	apply flags are 0
 0054E950	parameter:1	disabled	apply flags are 0
@@ -47,18 +53,16 @@ function_address	target	status	detail
 005AB300	parameter:1	disabled	apply flags are 0
 005B5510	parameter:2	disabled	apply flags are 0
 005BD7A0	parameter:1	disabled	apply flags are 0
-005DAB70	parameter:1	disabled	apply flags are 0
+005DAB70	parameter:2	disabled	apply flags are 0
 005DFA30	parameter:2	disabled	apply flags are 0
 005F05A0	parameter:2	disabled	apply flags are 0
 005F15F0	parameter:3	disabled	apply flags are 0
 005F15F0	parameter:4	disabled	apply flags are 0
 005F15F0	parameter:5	disabled	apply flags are 0
-005FD3A0	parameter:1	disabled	apply flags are 0
 00605B60	parameter:4	disabled	apply flags are 0
 00606050	parameter:9	disabled	apply flags are 0
 00607200	parameter:4	disabled	apply flags are 0
 00608B50	parameter:9	disabled	apply flags are 0
-00608E90	parameter:1	disabled	apply flags are 0
 00618B40	parameter:2	disabled	apply flags are 0
 0061FB70	parameter:4	disabled	apply flags are 0
 00620160	parameter:3	disabled	apply flags are 0
@@ -86,9 +90,12 @@ function_address	target	status	detail
 00690E90	parameter:2	disabled	apply flags are 0
 00692C10	parameter:2	disabled	apply flags are 0
 00695C10	parameter:4	disabled	apply flags are 0
+0069ECE0	parameter:2	disabled	apply flags are 0
 006B8F10	parameter:0	disabled	apply flags are 0
 006B9940	parameter:2	disabled	apply flags are 0
 006BA9E0	parameter:5	disabled	apply flags are 0
+006BFB90	return:	disabled	apply flags are 0
+006BFE70	parameter:2	disabled	repair row; use STPrototypeRepairAnalyzer/Applier first
 006C1530	parameter:0	disabled	apply flags are 0
 006C1CE0	parameter:1	disabled	apply flags are 0
 006C3570	parameter:0	disabled	apply flags are 0
@@ -97,14 +104,19 @@ function_address	target	status	detail
 006CE770	parameter:0	disabled	apply flags are 0
 006CE770	parameter:1	disabled	apply flags are 0
 006D26D0	parameter:1	disabled	apply flags are 0
+006D3300	parameter:2	disabled	apply flags are 0
+006D4EF0	parameter:2	disabled	apply flags are 0
 006D5CD0	parameter:2	disabled	apply flags are 0
 006D7830	parameter:5	disabled	apply flags are 0
+006D86E0	parameter:2	disabled	apply flags are 0
+006D8A60	parameter:2	disabled	apply flags are 0
+006DA1A0	parameter:4	disabled	apply flags are 0
 006DC050	parameter:3	disabled	apply flags are 0
 006DD050	parameter:1	disabled	apply flags are 0
 006E25D0	parameter:6	disabled	apply flags are 0
 006E2970	parameter:3	disabled	apply flags are 0
-006E3450	return:	disabled	apply flags are 0
 006E34C0	parameter:1	disabled	apply flags are 0
+006E5FE0	parameter:1	disabled	apply flags are 0
 006E6170	parameter:5	disabled	apply flags are 0
 006E6200	parameter:5	disabled	apply flags are 0
 006E6460	parameter:3	disabled	apply flags are 0
@@ -117,13 +129,16 @@ function_address	target	status	detail
 006EB4B0	parameter:0	disabled	apply flags are 0
 006EFC50	parameter:4	disabled	apply flags are 0
 006F1910	parameter:1	disabled	apply flags are 0
+00708D10	parameter:3	disabled	apply flags are 0
+00715360	parameter:4	disabled	apply flags are 0
 007192D0	parameter:0	disabled	apply flags are 0
-0074E337	parameter:1	disabled	apply flags are 0
-0074FC49	parameter:12	disabled	apply flags are 0
+0072DA70	parameter:2	disabled	apply flags are 0
 00750FB0	parameter:0	disabled	apply flags are 0
 00753300	parameter:2	disabled	apply flags are 0
-00753B80	parameter:2	disabled	apply flags are 0
 00753BC0	parameter:2	disabled	apply flags are 0
 00753F10	parameter:1	disabled	apply flags are 0
+00754360	return:	disabled	apply flags are 0
 007543F0	parameter:2	disabled	apply flags are 0
 007553F0	parameter:0	disabled	apply flags are 0
+00755E10	parameter:0	disabled	apply flags are 0
+0075EFE0	parameter:0	disabled	apply flags are 0

@@ -51,17 +51,17 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
   ushort *puVar12;
   bool bVar13;
   RecoveredRecord_STBoatC_00645880 local_64;
-  undefined4 local_3c [2];
+  uint local_3c [2];
   short local_34;
   short sStack_32;
-  undefined2 local_30;
+  ushort local_30;
   int local_2c [2];
   uint local_24;
   STTorpC *local_20;
   uint local_1c;
   uint local_18;
   uint local_14;
-  undefined4 local_10;
+  uint local_10;
   short local_c;
   short local_a;
   short local_8;
@@ -129,6 +129,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
       pSVar8 = STAllPlayersC::GetObjPtr
                          (g_allPlayers_007FA174,(char)this->field_0487,
                           (ushort)this->field_048B,this->field_0483);
+
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
       iVar9 = thunk_FUN_00483300((int *)this,extraout_EDX_00);
       switch(iVar9) {
@@ -147,6 +148,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
           if (this->field_07A2 < 1) {
             return 2;
           }
+
           puVar9 = thunk_FUN_0041dc40(local_3c,(short)*(undefined4 *)(puVar12 + -1),puVar12[1],
                                       this->field_006C);
           sStack_32 = (short)((uint)*puVar9 >> 0x10);
@@ -155,6 +157,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
           local_64.field_0012 = this->field_0045 + *(short *)(puVar9 + 1);
           sStack_32 = *puVar12;
           local_34 = 0;
+
           puVar9 = thunk_FUN_0041dc40(local_2c,0,0,this->field_006C);
           local_34 = (short)*puVar9;
           sStack_32 = (short)((uint)*puVar9 >> 0x10);
@@ -200,7 +203,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
                           (this->field_0041,this->field_0043,
                            STReplaceLowWord((uint32_t)(local_18), (uint16_t)(this->field_0045)),
                            (short)local_14,(short)local_18,local_1c);
-        /* ST_CALLSITE[0046138E]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+        /* ST_CALLSITE[0046138E]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
         uVar10 = sub_004176C0(this,sVar5);
         /* ST_CALLSITE[00461396]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
         sub_00417910(this,(short)uVar10);
@@ -208,7 +211,8 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
       }
     }
     if (SVar2 == CASE_2) {
-      iVar10 = thunk_FUN_00483f10(this);
+      /* ST_CALLSITE[00461551]: CALL 0x00405e57; direct=00405E57 STBoatC::sub_00483F10 */
+      iVar10 = sub_00483F10(this);
       if (iVar10 == 1) {
         sVar5 = this->field_0469;
         this->field_0469 = -sVar5;
@@ -236,12 +240,13 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
         }
         this->field_0469 = -this->field_0469;
       }
-      /* ST_CALLSITE[00461621]: CALL 0x00405b05; direct=00405B05 STBoatC::GetDefenceTarget */
+      /* ST_CALLSITE[00461621]: CALL 0x00405b05; direct=00405B05 STBoatC::GetDefenceTarget; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
       if ((this->field_082E == CASE_2) && (iVar10 = GetDefenceTarget(this,CASE_2), iVar10 == 0)) {
         /* ST_CALLSITE[0046164A]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         pSVar8 = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,(char)this->field_0487,
                             (ushort)this->field_048B,this->field_0483);
+
         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
         local_EAX_3491 = thunk_FUN_00483300((int *)this,extraout_EDX_01);
         switch(local_EAX_3491) {
@@ -256,6 +261,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
             puVar12 = (undefined2 *)&this->field_0x2a8;
             do {
               if (this->field_07A2 < 1) break;
+
               puVar9 = thunk_FUN_0041dc40(local_3c,(short)*(undefined4 *)(puVar12 + -1),puVar12[1],
                                           this->field_006C);
               sStack_32 = (short)((uint)*puVar9 >> 0x10);
@@ -264,6 +270,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
               local_64.field_0012 = this->field_0045 + *(short *)(puVar9 + 1);
               sStack_32 = *puVar12;
               local_34 = 0;
+
               puVar9 = thunk_FUN_0041dc40(local_2c,0,0,this->field_006C);
               local_34 = (short)*puVar9;
               sStack_32 = (short)((uint)*puVar9 >> 0x10);
@@ -309,7 +316,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
                             (this->field_0041,this->field_0043,
                              STReplaceLowWord((uint32_t)(local_18), (uint16_t)(this->field_0045)),
                              (short)local_14,(short)local_18,local_1c);
-          /* ST_CALLSITE[004616BC]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+          /* ST_CALLSITE[004616BC]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
           local_EAX_3596 = sub_004176C0(this,sVar5);
           /* ST_CALLSITE[004616C4]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
           sub_00417910(this,(short)local_EAX_3596);
@@ -330,12 +337,13 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
           this->field_0469 = 0;
           this->field_082E = ~CASE_FFFFFFFF;
         }
-        /* ST_CALLSITE[004618B6]: CALL 0x00405b05; direct=00405B05 STBoatC::GetDefenceTarget */
+        /* ST_CALLSITE[004618B6]: CALL 0x00405b05; direct=00405B05 STBoatC::GetDefenceTarget; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
         if ((this->field_082E == CASE_3) && (iVar10 = GetDefenceTarget(this,CASE_3), iVar10 == 0)) {
           /* ST_CALLSITE[004618DF]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           pSVar8 = STAllPlayersC::GetObjPtr
                              (g_allPlayers_007FA174,(char)this->field_0487,
                               (ushort)this->field_048B,this->field_0483);
+
           /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
           local_EAX_4152 = thunk_FUN_00483300((int *)this,extraout_EDX_02);
           switch(local_EAX_4152) {
@@ -349,6 +357,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
             if (this->field_02B2 != '\0') {
               puVar12 = (undefined2 *)&this->field_0x2a8;
               while (0 < this->field_07A2) {
+
                 puVar9 = thunk_FUN_0041dc40(local_3c,(short)*(undefined4 *)(puVar12 + -1),puVar12[1]
                                             ,this->field_006C);
                 sStack_32 = (short)((uint)*puVar9 >> 0x10);
@@ -357,6 +366,7 @@ int __thiscall STBoatC::Defence(STBoatC *this,int param_1)
                 local_64.field_0012 = this->field_0045 + *(short *)(puVar9 + 1);
                 sStack_32 = *puVar12;
                 local_34 = 0;
+
                 puVar9 = thunk_FUN_0041dc40(local_2c,0,0,this->field_006C);
                 local_34 = (short)*puVar9;
                 sStack_32 = (short)((uint)*puVar9 >> 0x10);
@@ -406,7 +416,7 @@ switchD_00461334_caseD_1:
                               (this->field_0041,this->field_0043,
                                STReplaceLowWord((uint32_t)(local_18), (uint16_t)(this->field_0045)),
                                (short)local_14,(short)local_18,local_1c);
-            /* ST_CALLSITE[00461942]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+            /* ST_CALLSITE[00461942]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
             local_EAX_4242 = sub_004176C0(this,sVar5);
             /* ST_CALLSITE[0046194A]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
             sub_00417910(this,(short)local_EAX_4242);
@@ -416,6 +426,7 @@ switchD_00461334_caseD_1:
         return 2;
       }
       if (SVar2 != CASE_4) {
+
         local_EAX_4798 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1808,0,0,"%s",
                                 "STBoatC::Defence - incorrect entry");
@@ -426,7 +437,8 @@ switchD_00461334_caseD_1:
       }
       iVar10 = this->field_00B7;
       this->field_00B7 = 0;
-      local_EAX_4703 = thunk_FUN_004601f0(this,2);
+      /* ST_CALLSITE[00461B0F]: CALL 0x00402266; direct=00402266 STBoatC::sub_004601F0 */
+      local_EAX_4703 = sub_004601F0(this,2);
       this->field_00B7 = iVar10;
       if (local_EAX_4703 == -1) {
         return -1;
@@ -454,11 +466,13 @@ switchD_0046166b_caseD_2:
     if ((dVar3 != 0) && (uVar11 = 0, iVar10 = DAT_007fa134, dVar3 != 0)) {
       do {
         if (iVar10 < 1) break;
-        DArrayGetElement(g_array_007FA130,uVar11,&local_20);
+
+        DArrayGetElement((DArrayTy *)g_array_007FA130,uVar11,&local_20);
         if (local_20 != nullptr) {
           iVar10 = iVar10 + -1;
           /* ST_CALLSITE[00460A3D]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
           STFishC::sub_004162B0((STFishC *)local_20,(short *)((int)&local_10 + 2),&local_c,&local_a);
+
           local_2c[0] = FUN_006aadd0((int)this->field_0047,(int)this->field_0049,
                                      (int)this->field_004B,(int)STPiece<2,2>(local_10),(int)local_c,
                                      (int)local_a);
@@ -466,20 +480,22 @@ switchD_0046166b_caseD_2:
              /* ST_CALLSITE[00460A94]: CALL 0x0040478c; direct=0040478C STTorpC::IsDangerous */
              (iVar6 = STTorpC::IsDangerous(local_20,this->field_0018,&local_24), iVar6 != 2)) {
             if (iVar6 == 0) {
-              iVar7 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::
-                      thunk_FUN_004838e0((AnonReceiver_004603B0 *)this,
+
+              iVar7 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_004603B0::
+                      thunk_FUN_004838e0((RecoveredReceiver_004603B0 *)this,
                                          (RecoveredRecord_STBoatC_004838E0 *)local_20);
               if (iVar7 == 1) {
                 /* ST_CALLSITE[00460ABD]: CALL 0x0040368e; direct=0040368E STTorpC::SetDangerous */
                 STTorpC::SetDangerous(local_20,this->field_0018,&local_24);
 LAB_00460adb:
-                iVar7 = thunk_FUN_00483e30(this,(RecoveredRecord_STBoatC_00482DB0 *)local_20);
+                /* ST_CALLSITE[00460AE1]: CALL 0x00401451; direct=00401451 STBoatC::sub_00483E30 */
+                iVar7 = sub_00483E30(this,(RecoveredRecord_STBoatC_00482DB0 *)local_20);
                 if (iVar7 == 1) {
                   /* ST_CALLSITE[00460B07]: CALL 0x0040282e; direct=0040282E STTorpC::ClearDangerous */
                   STTorpC::ClearDangerous(local_20,this->field_0018,local_24);
                   this->field_046B = (ushort *)local_20;
                   this->field_046F = local_20->field_026E;
-                  this->field_0471 = (AnonShape_005EFAE0_B406B78B *)local_20->field_0018;
+                  this->field_0471 = (RecoveredRecordView_005EFAE0_855D930D *)local_20->field_0018;
                   if (this->field_004B == 0) {
                     this->field_0469 = 1;
                     /* ST_CALLSITE[00460B56]: CALL dword ptr [EDX + 0x18] */
@@ -605,14 +621,15 @@ LAB_00460d94:
     this->field_047F = (uVar11 >> 0x10) % 0x15;
   }
   else {
-    /* ST_CALLSITE[00460DF0]: CALL 0x00405b05; direct=00405B05 STBoatC::GetDefenceTarget */
+    /* ST_CALLSITE[00460DF0]: CALL 0x00405b05; direct=00405B05 STBoatC::GetDefenceTarget; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
     iVar10 = GetDefenceTarget(this,CASE_0);
   }
   if (iVar10 == 0) {
-    /* ST_CALLSITE[00460E1B]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
+    /* ST_CALLSITE[00460E1B]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override */
     pSVar8 = STAllPlayersC::GetObjPtr
                        (g_allPlayers_007FA174,(char)this->field_0487,
                         (ushort)this->field_048B,this->field_0483);
+
     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
     local_EAX_1396 = thunk_FUN_00483300((int *)this,extraout_EDX);
     switch(local_EAX_1396) {
@@ -627,6 +644,7 @@ LAB_00460d94:
         puVar12 = (undefined2 *)&this->field_0x2a8;
         do {
           if (this->field_07A2 < 1) break;
+
           puVar9 = thunk_FUN_0041dc40(local_2c,(short)*(undefined4 *)(puVar12 + -1),puVar12[1],
                                       this->field_006C);
           sStack_32 = (short)((uint)*puVar9 >> 0x10);
@@ -635,6 +653,7 @@ LAB_00460d94:
           local_64.field_0012 = this->field_0045 + *(short *)(puVar9 + 1);
           sStack_32 = *puVar12;
           local_34 = 0;
+
           puVar9 = thunk_FUN_0041dc40(local_3c,0,0,this->field_006C);
           local_34 = (short)*puVar9;
           sStack_32 = (short)((uint)*puVar9 >> 0x10);
@@ -667,6 +686,7 @@ LAB_00460d94:
       }
       break;
     case 1:
+
       local_EAX_2367 =
            ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x16e0,0,-1,"%s",
                               "STBoatC::Defence NOT_ZONE_A");
@@ -686,7 +706,8 @@ LAB_00460fac:
       sub_00481520(this,(short)local_14,(short)local_18,(short)local_1c);
       iVar10 = this->field_00B7;
       this->field_00B7 = 0;
-      local_EAX_1830 = thunk_FUN_004601f0(this,0);
+      /* ST_CALLSITE[00460FD6]: CALL 0x00402266; direct=00402266 STBoatC::sub_004601F0 */
+      local_EAX_1830 = sub_004601F0(this,0);
       if (local_EAX_1830 == -1) {
         return -1;
       }
@@ -700,8 +721,9 @@ LAB_00460fac:
       this->field_0800 = local_6;
       this->field_0802 = local_8;
       this->field_0804 = STPiece<2,2>(param_1);
-      iVar10 = thunk_FUN_00484020(this,(short)local_EAX_1396,(short *)&local_14,(short *)&local_18,
-                                  (short *)&local_1c);
+      /* ST_CALLSITE[00460EA0]: CALL 0x00405e66; direct=00405E66 STBoatC::sub_00484020 */
+      iVar10 = sub_00484020(this,(short)local_EAX_1396,(short *)&local_14,(short *)&local_18,
+                            (short *)&local_1c);
       if (iVar10 != 0) {
         this->field_082E = CASE_4;
         goto LAB_00460fac;
@@ -717,7 +739,7 @@ LAB_00460fac:
                         (this->field_0041,this->field_0043,
                          STReplaceLowWord((uint32_t)(local_18), (uint16_t)(this->field_0045)),(short)local_14,
                          (short)local_18,local_1c);
-      /* ST_CALLSITE[00461031]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+      /* ST_CALLSITE[00461031]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
       local_EAX_1921 = sub_004176C0(this,sVar5);
       /* ST_CALLSITE[00461039]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       sub_00417910(this,(short)local_EAX_1921);
@@ -726,6 +748,7 @@ LAB_00460fac:
   if ((this->field_082E == ~CASE_FFFFFFFF) && (this->field_048B == 0xffff)) {
     if ((this->field_0475 != this->field_0047) ||
        ((this->field_0477 != this->field_0049 || (this->field_0479 != this->field_004B)))) {
+
       local_EAX_1668 =
            FUN_006aadd0((int)this->field_0047,(int)this->field_0049,(int)this->field_004B,
                         (int)this->field_0475,(int)this->field_0477,(int)this->field_0479);
@@ -735,7 +758,8 @@ LAB_00460fac:
         sub_00481520(this,(int)this->field_0475,(int)this->field_0477,(int)this->field_0479);
         iVar10 = this->field_00B7;
         this->field_00B7 = 0;
-        local_EAX_1752 = thunk_FUN_004601f0(this,0);
+        /* ST_CALLSITE[00460F88]: CALL 0x00402266; direct=00402266 STBoatC::sub_004601F0 */
+        local_EAX_1752 = sub_004601F0(this,0);
         if (local_EAX_1752 == -1) {
           return -1;
         }

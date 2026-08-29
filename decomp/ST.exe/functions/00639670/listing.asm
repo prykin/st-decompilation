@@ -177,7 +177,7 @@ LAB_00639863:
 00639883  50                        PUSH EAX
 00639884  8B 86 C3 02 00 00         MOV EAX,dword ptr [ESI + 0x2c3]
 0063988A  50                        PUSH EAX
-0063988B  FF 92 E0 00 00 00         CALL dword ptr [EDX + 0xe0]
+0063988B  FF 92 E0 00 00 00         CALL dword ptr [EDX + 0xe0]  ; [STIndirectCallsiteApplier] exact slot 0xE0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00639891  85 C0                     TEST EAX,EAX
 00639893  74 BC                     JZ 0x00639851
 00639895  0F BF 4D FE               MOVSX ECX,word ptr [EBP + -0x2]

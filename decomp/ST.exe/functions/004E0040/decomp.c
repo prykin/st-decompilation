@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_004e0040(AnonShape_004E0040_648F9827 *param_1)
+undefined4 __fastcall FUN_004e0040(RecoveredRecordView_004E0040_BB411413 *param_1)
 
 {
   uint *this;
@@ -15,9 +15,8 @@ undefined4 __fastcall FUN_004e0040(AnonShape_004E0040_648F9827 *param_1)
   param_1->field_04E8 = 0;
   this = thunk_FUN_004d85e0(param_1->field_05B0,param_1->field_05B4,param_1->field_05B8);
   if (this == nullptr) goto LAB_004e0119;
-  /* ST_CALLSITE[004E009D]: CALL dword ptr [EAX + 0x2c] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar1 = (**(code **)(*this + 0x2c))();
+  /* ST_CALLSITE[004E009D]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+  iVar1 = STStructuralVirtualCall<undefined4>(this, 0x2C);
   param_1->field_04DC = iVar1;
   switch(param_1->field_05AC) {
   case 0x38:
@@ -49,6 +48,7 @@ LAB_004e0119:
     if (param_1->field_04E0 != 0) {
       param_1->field_0528 = 6;
     }
+
     thunk_FUN_004e40c0(param_1->field_0024);
   }
   return 0;

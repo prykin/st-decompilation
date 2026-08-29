@@ -8,11 +8,11 @@ int FUN_006c52e0(AnonShape_006C52E0_B18BC6D0 *param_1,int param_2,undefined4 par
   int iVar1;
   uint uVar2;
   uint uVar3;
-  undefined4 local_78 [2];
-  undefined4 local_70;
-  undefined4 local_28;
+  uint local_78 [2];
+  uint local_70;
+  uint local_28;
   int local_14;
-  undefined4 local_10;
+  uint local_10;
   int local_c;
   int local_8;
 
@@ -32,7 +32,6 @@ int FUN_006c52e0(AnonShape_006C52E0_B18BC6D0 *param_1,int param_2,undefined4 par
     /* ST_CALLSITE[006C5349]: CALL dword ptr [EDX + 0x14] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar1 = (**(code **)(*param_1->field_0040 + 0x14))
-                      /* ST_CALLSITE[006C5349]: CALL dword ptr [EDX + 0x14] */
                       (param_1->field_0040,&local_14,0,0,uVar2 | 0x1000400,local_78);
     if (iVar1 == 0) break;
     if (iVar1 == -0x7789fe3e) {
@@ -40,6 +39,7 @@ int FUN_006c52e0(AnonShape_006C52E0_B18BC6D0 *param_1,int param_2,undefined4 par
     }
     else {
       if (((iVar1 != -0x7789ff60) && (iVar1 != -0x7789fe52)) || (uVar3 != 0)) break;
+      /* ST_CALLSITE[006C537B]: CALL dword ptr [0x0085bc6c] */
       Sleep(2);
     }
     uVar3 = uVar3 + 1;

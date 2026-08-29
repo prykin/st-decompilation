@@ -1,4 +1,4 @@
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::sub_006F31D0:
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_006F31D0::sub_006F31D0:
 006F31D0  55                        PUSH EBP
 006F31D1  8B EC                     MOV EBP,ESP
 006F31D3  83 EC 6C                  SUB ESP,0x6c

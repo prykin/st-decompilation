@@ -55,7 +55,7 @@ FUN_005f07a0:
 005F0879  0F 84 A9 00 00 00         JZ 0x005f0928
 005F087F  8B 17                     MOV EDX,dword ptr [EDI]
 005F0881  8B CF                     MOV ECX,EDI
-005F0883  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+005F0883  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STFishC
 005F0886  83 F8 63                  CMP EAX,0x63
 005F0889  0F 85 99 00 00 00         JNZ 0x005f0928
 005F088F  56                        PUSH ESI

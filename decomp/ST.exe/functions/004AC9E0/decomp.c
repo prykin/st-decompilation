@@ -18,8 +18,7 @@ undefined4 __thiscall FUN_004ac9e0(void *this,int param_1)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   puStack_c = &DAT_00790798;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
@@ -39,7 +38,7 @@ cf_continue_loop_004ACA23:
     if ((STField<uint>(this,0x1c) & local_20) != 0) {
       iVar6 = local_28 * 0x24;
       iVar4 = STField<int>(this,0x20) + iVar6;
-      if ((((byte *)iVar4)[0xe] & 1) == 0) {
+      if ((STField<byte>(iVar4,0xE) & 1) == 0) {
         uVar7 = param_1 - STField<int>(iVar4,0x1C);
         STField<int>(iVar4,0x1C) = param_1;
         bVar2 = false;
@@ -71,17 +70,17 @@ cf_continue_loop_004ACA23:
         *(undefined4 *)(piVar5[1] + piVar5[6] * 4) = *(undefined4 *)(piVar5[6] * 4 + 0x31 + *piVar5);
         iVar4 = STField<int>(this,0x20) + iVar6;
         if (STField<int>(iVar4,0x18) == STField<int>(iVar4,0x14)) {
-          if (((char *)iVar4)[0xd] == '\x02') {
+          if (STField<char>(iVar4,0xD) == '\x02') {
             /* ST_CALLSITE[004ACB1D]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
             STT3DSprC::StopShow(this,(byte)local_28);
             local_28 = local_28 + 1;
             local_20 = local_20 << 1;
             goto cf_continue_loop_004ACA23;
           }
-          if (((char *)iVar4)[0xd] == '\x01') goto LAB_004acbdc;
+          if (STField<char>(iVar4,0xD) == '\x01') goto LAB_004acbdc;
         }
         iVar8 = uVar7 - iVar8;
-        if ((iVar8 == 0) || ((((byte *)iVar4)[0xe] & 4) == 0)) {
+        if ((iVar8 == 0) || ((STField<byte>(iVar4,0xE) & 4) == 0)) {
           iVar3 = thunk_FUN_004ac950(this,local_28);
           *(int *)(STField<int>(this,0x20) + 0x18 + iVar6) = iVar3;
           if (local_28 == (int)STField<char>(this,0x13)) {

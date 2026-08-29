@@ -29,6 +29,7 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 == 0) {
@@ -40,6 +41,7 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
     uVar5 = 2;
     iVar4 = 0x31;
     g_upgPanel_00802A48 = local_8;
+    /* ST_CALLSITE[00552909]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SpecPanelTy; source view only; no Ghidra override */
     pCVar2 = thunk_FUN_00571240("BKG_UPDATESW",0);
     /* ST_CALLSITE[00552914]: CALL 0x00403800; direct=00403800 SpecPanelTy::InitPanel */
     SpecPanelTy::InitPanel
@@ -55,6 +57,7 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
     iVar4 = 1;
     bVar9 = 0;
     uVar8 = 0xffffffff;
+    /* ST_CALLSITE[00552972]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
     pCVar2 = thunk_FUN_00571240("FRAMES",0);
     puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
                        (PTR_00806794,CASE_B,pCVar2,uVar8,bVar9,iVar4,iVar7,puVar14);
@@ -63,6 +66,7 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\upginfo.cpp",0x1d,0,iVar2,"%s",
                              "UpgPanelTy::InitUpgPanel");
   if (iVar6 != 0) {

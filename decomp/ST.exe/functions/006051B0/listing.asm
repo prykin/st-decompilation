@@ -77,7 +77,8 @@ LAB_006052b2:
 006052B8  85 C0                     TEST EAX,EAX
 006052BA  75 1F                     JNZ 0x006052db
 006052BC  6A 40                     PUSH 0x40
-006052BE  E8 6D 92 12 00            CALL 0x0072e530
+STExplosionC::LoadImagSpr::override::prt_6052be_a7ad5ad2:
+006052BE  E8 6D 92 12 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint
 006052C3  83 C4 04                  ADD ESP,0x4
 006052C6  85 C0                     TEST EAX,EAX
 006052C8  74 09                     JZ 0x006052d3

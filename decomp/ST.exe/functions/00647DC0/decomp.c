@@ -38,7 +38,8 @@ int __thiscall AiBossClassTy::InitData(AiBossClassTy *this,undefined4 *param_1)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  thunk_FUN_00647ed0(local_8);
+  /* ST_CALLSITE[00647E49]: CALL 0x00401528; direct=00401528 AiBossClassTy::sub_00647ED0 */
+  sub_00647ED0(local_8);
   iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_boss.cpp",0x29,0,iVar2,"%s",
                              "AiBossClassTy::InitData");
   if (iVar3 != 0) {

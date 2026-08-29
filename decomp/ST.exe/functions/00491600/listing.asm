@@ -9,7 +9,7 @@ FUN_00491600:
 00491611  83 C9 0D                  OR ECX,0xd
 00491614  51                        PUSH ECX
 00491615  8B CE                     MOV ECX,ESI
-00491617  FF 90 00 01 00 00         CALL dword ptr [EAX + 0x100]
+00491617  FF 90 00 01 00 00         CALL dword ptr [EAX + 0x100]  ; [STIndirectCallsiteApplier] exact slot 0x100; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4
 0049161D  8B 56 18                  MOV EDX,dword ptr [ESI + 0x18]
 00491620  8A 86 8E 00 00 00         MOV AL,byte ptr [ESI + 0x8e]
 00491626  66 8B 4E 5F               MOV CX,word ptr [ESI + 0x5f]

@@ -8,14 +8,14 @@
    Diagnostic line evidence: 352 | 379 | 380 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-void __cdecl st::fn_005751F0(AnonShape_005751F0_0FFC949A *param_1)
+void __cdecl st::fn_005751F0(RecoveredRecordView_005751F0_4081B804 *param_1)
 
 {
   int iVar2;
   AnonShape_006DBCA0_EF06575F *pAVar2;
   DArrayTy *pDVar3;
   int iVar4;
-  AnonShape_005751F0_0FFC949A *pAVar5;
+  RecoveredRecordView_005751F0_4081B804 *pRVar5;
   int iVar6;
   InternalExceptionFrame local_54;
   int local_10;
@@ -25,14 +25,16 @@ void __cdecl st::fn_005751F0(AnonShape_005751F0_0FFC949A *param_1)
   iVar6 = 0;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
+
   iVar2 = st::fn_0072D7F0(local_54.jumpBuffer,0);
   if (iVar2 == 0) {
-    pAVar2 = (AnonShape_006DBCA0_EF06575F *)st::fn_006B04D0(0x4f2);
+    /* ST_CALLSITE[00575228]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006DBCA0_EF06575F;/uint */
+    pAVar2 = st::pointer_boundary_cast<AnonShape_006DBCA0_EF06575F *>(st::fn_006B04D0(0x4f2));
     if (pAVar2 == nullptr) {
       g_sT3DSMAPContext_0080760C = nullptr;
     }
     else {
-      g_sT3DSMAPContext_0080760C = (ST3DSMAPContext *)st::fn_006DBCA0(pAVar2);
+      g_sT3DSMAPContext_0080760C = reinterpret_cast<ST3DSMAPContext *>(st::fn_006DBCA0(pAVar2));
     }
     if (g_sT3DSMAPContext_0080760C == nullptr) {
       st::fn_006A5E40
@@ -49,26 +51,29 @@ void __cdecl st::fn_005751F0(AnonShape_005751F0_0FFC949A *param_1)
     pDVar3 = st::fn_006AE290(nullptr,0x14,0xc,0x14);
     param_1->field_0451 = pDVar3;
     if (0 < param_1->field_0455) {
-      pAVar5 = param_1 + 1;
+      pRVar5 = param_1 + 1;
       do {
-        if (*(undefined4 **)pAVar5 != nullptr) {
-          st::fn_004016C2((AnonShape_005745E0_AF52CC75 *)param_1,*(undefined4 **)pAVar5);
+        if (*(undefined4 **)pRVar5 != nullptr) {
+          st::fn_004016C2(reinterpret_cast<RecoveredRecordView_005745E0_17311247 *>(param_1),*(undefined4 **)pRVar5
+                            );
         }
         iVar6 = iVar6 + 1;
-        pAVar5 = (AnonShape_005751F0_0FFC949A *)&pAVar5->field_0004;
+        pRVar5 = reinterpret_cast<RecoveredRecordView_005751F0_4081B804 *>(&pRVar5->field_0004);
       } while (iVar6 < param_1->field_0455);
     }
     iVar4 = (int)param_1->field_0002 / 2;
     iVar6 = (int)param_1->field_0000 / 2;
     local_10 = iVar4;
-    local_8 = st::pointer_boundary_cast<undefined4 *>(st::fn_006AAC70((uint)param_1->field_0004 * (uint)param_1->field_0004));
+    /* ST_CALLSITE[00575340]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override */
+    local_8 = (undefined4 *)st::fn_006AAC70((uint)param_1->field_0004 * (uint)param_1->field_0004);
     local_c = 0;
     if (0 < iVar4) {
       do {
         iVar4 = 0;
         if (0 < iVar6) {
           do {
-            st::fn_00404B79((AnonShape_00574920_7507981E *)param_1,iVar4,local_c,local_8);
+            st::fn_00404B79(reinterpret_cast<RecoveredRecordView_00574920_F0A9E3AD *>(param_1),iVar4,local_c,
+                               local_8);
             iVar4 = iVar4 + 1;
           } while (iVar4 < iVar6);
         }
@@ -80,6 +85,7 @@ void __cdecl st::fn_005751F0(AnonShape_005751F0_0FFC949A *param_1)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
+
   iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\tinittxt.cpp"),0x17b,0,iVar2,st::mutable_c_string("%s"),
                              "LandInit");
   if (iVar6 != 0) {
@@ -88,4 +94,3 @@ void __cdecl st::fn_005751F0(AnonShape_005751F0_0FFC949A *param_1)
   st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\tinittxt.cpp"),0x17c);
   return;
 }
-

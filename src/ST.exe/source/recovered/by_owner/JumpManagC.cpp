@@ -89,47 +89,47 @@ byte * __thiscall st::fn_00617FB0(JumpManagC *this,int *param_1)
     iVar6 = 0;
   }
   else {
-    iVar6 = st::machine_word_boundary_cast<int>(pDVar1->count * pDVar1->elementSize + 0x1c);
+    iVar6 = pDVar1->count * pDVar1->elementSize + 0x1c;
   }
   pDVar1 = this->field_0062;
   if (pDVar1 == nullptr) {
     iVar4 = 0;
   }
   else {
-    iVar4 = st::machine_word_boundary_cast<int>(pDVar1->count * pDVar1->elementSize + 0x1c);
+    iVar4 = pDVar1->count * pDVar1->elementSize + 0x1c;
   }
   pDVar1 = this->field_0066;
   if (pDVar1 == nullptr) {
     iVar2 = 0;
   }
   else {
-    iVar2 = st::machine_word_boundary_cast<int>(pDVar1->count * pDVar1->elementSize + 0x1c);
+    iVar2 = pDVar1->count * pDVar1->elementSize + 0x1c;
   }
   size = iVar2 + iVar4 + 0x5e + iVar6;
-  pbVar3 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(size));
-  puVar8 = (undefined4 *)&this->field_0x1c;
+  pbVar3 = (byte *)st::fn_006AAC70(size);
+  puVar8 = reinterpret_cast<uint *>(&this->field_0x1c);
   pbVar10 = pbVar3;
   memmove(pbVar10, puVar8, 0x50); /* compiler REP MOVS byte copy */
   pbVar10 = pbVar10 + 0x50;
   puVar8 = puVar8 + 0x14;
-  puVar7 = (uint *)(pbVar3 + 0x52);
+  puVar7 = reinterpret_cast<uint *>((pbVar3 + 0x52));
   *(undefined2 *)pbVar10 = *(undefined2 *)puVar8;
   pbVar3[0xc] = 2;
   pbVar3[0xd] = 0;
   pbVar3[0xe] = 0;
   pbVar3[0xf] = 0;
   if (this->field_005E != nullptr) {
-    local_c = static_cast<uint *>(st::fn_006B0020(&this->field_005E->flags,(int *)&local_8));
+    local_c = static_cast<uint *>(st::fn_006B0020(&this->field_005E->flags,reinterpret_cast<int *>(&local_8)));
     *puVar7 = local_8;
     puVar7 = local_c;
-    puVar9 = (uint *)(pbVar3 + 0x56);
+    puVar9 = reinterpret_cast<uint *>((pbVar3 + 0x56));
     memmove(puVar9, puVar7, local_8); /* compiler REP MOVS byte copy */
     uVar5 = 0;
     puVar7 = (uint *)((int)(pbVar3 + 0x56) + local_8);
     st::fn_006AB060(&local_c);
   }
   if (this->field_0062 != nullptr) {
-    local_c = static_cast<uint *>(st::fn_006B0020(&this->field_0062->flags,(int *)&local_8));
+    local_c = static_cast<uint *>(st::fn_006B0020(&this->field_0062->flags,reinterpret_cast<int *>(&local_8)));
     *puVar7 = local_8;
     puVar9 = local_c;
     puVar11 = puVar7 + 1;
@@ -139,7 +139,7 @@ byte * __thiscall st::fn_00617FB0(JumpManagC *this,int *param_1)
     st::fn_006AB060(&local_c);
   }
   if (this->field_0066 != nullptr) {
-    local_c = static_cast<uint *>(st::fn_006B0020(&this->field_0066->flags,(int *)&local_8));
+    local_c = static_cast<uint *>(st::fn_006B0020(&this->field_0066->flags,reinterpret_cast<int *>(&local_8)));
     *puVar7 = local_8;
     puVar9 = local_c;
     for (uVar5 = local_8 >> 2; puVar7 = puVar7 + 1, uVar5 != 0; uVar5 = uVar5 - 1) {
@@ -176,8 +176,8 @@ int __thiscall st::fn_00618170(JumpManagC *this,undefined4 *param_1)
   byte *puVar5;
   int local_8;
 
-  puVar3 = (byte *)(param_1);
-  puVar5 = (byte *)&this->field_0x1c;
+  puVar3 = reinterpret_cast<byte *>((param_1));
+  puVar5 = reinterpret_cast<byte *>(&this->field_0x1c);
   memmove(puVar5, puVar3, 0x52); /* compiler REP MOVS byte copy */
   piVar4 = (int *)((int)param_1 + 0x52);
   local_8 = 0x52;
@@ -189,14 +189,14 @@ int __thiscall st::fn_00618170(JumpManagC *this,undefined4 *param_1)
     local_8 = local_8 + 0x52;
   }
   if (this->field_0062 != nullptr) {
-    pDVar1 = st::fn_006B0060(nullptr,(uint *)(piVar4 + 1));
+    pDVar1 = st::fn_006B0060(nullptr,reinterpret_cast<uint *>((piVar4 + 1)));
     this->field_0062 = pDVar1;
     iVar2 = *piVar4;
     piVar4 = (int *)((int)(piVar4 + 1) + iVar2);
     local_8 = local_8 + iVar2;
   }
   if (this->field_0066 != nullptr) {
-    pDVar1 = st::fn_006B0060(nullptr,(uint *)(piVar4 + 1));
+    pDVar1 = st::fn_006B0060(nullptr,reinterpret_cast<uint *>((piVar4 + 1)));
     this->field_0066 = pDVar1;
     return local_8 + *piVar4;
   }
@@ -240,4 +240,3 @@ void __thiscall st::fn_00618AD0(JumpManagC *this)
   }
   return;
 }
-

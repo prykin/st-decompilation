@@ -12,7 +12,7 @@ FUN_00637ae0:
 00637AF4  68 48 1C 7D 00            PUSH 0x7d1c48
 00637AF9  6A 1D                     PUSH 0x1d
 00637AFB  50                        PUSH EAX
-00637AFC  E8 EF 1F 0D 00            CALL 0x00709af0
+00637AFC  E8 EF 1F 0D 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 00637B01  8B F0                     MOV ESI,EAX
 00637B03  83 C4 20                  ADD ESP,0x20
 00637B06  85 F6                     TEST ESI,ESI

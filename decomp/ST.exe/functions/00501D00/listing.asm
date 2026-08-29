@@ -1,4 +1,4 @@
-FUN_00501d00:
+CPanelTy::sub_00501D00:
 00501D00  55                        PUSH EBP
 00501D01  8B EC                     MOV EBP,ESP
 00501D03  83 EC 08                  SUB ESP,0x8

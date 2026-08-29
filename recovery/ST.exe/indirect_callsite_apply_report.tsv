@@ -1,8 +1,423 @@
 target	action	status	detail
+00419BF0@00419C09	present	unchanged	exact structural dispatch presentation already present
+0041C5A0@0041C618	present	unchanged	exact structural dispatch presentation already present
+0041C5A0@0041C661	present	unchanged	exact structural dispatch presentation already present
+0041CE40@0041CE7C	present	unchanged	exact structural dispatch presentation already present
+0041CF50@0041CF86	present	unchanged	exact structural dispatch presentation already present
+0041CFF0@0041D02C	present	unchanged	exact structural dispatch presentation already present
+0041D100@0041D134	present	unchanged	exact structural dispatch presentation already present
+0041D3E0@0041D41C	present	unchanged	exact structural dispatch presentation already present
+0041D4F0@0041D524	present	unchanged	exact structural dispatch presentation already present
+0041DD00@0041DF5F	present	unchanged	exact structural dispatch presentation already present
+0041DD00@0041E141	present	unchanged	exact structural dispatch presentation already present
+0041DD00@0041E14D	present	unchanged	exact structural dispatch presentation already present
+0041DD00@0041E23C	present	unchanged	exact structural dispatch presentation already present
+0041F630@0041F7A5	present	unchanged	exact structural dispatch presentation already present
+00423320@00423339	present	unchanged	exact structural dispatch presentation already present
+00423850@00423958	present	unchanged	exact structural dispatch presentation already present
+00423850@00423A37	present	unchanged	exact structural dispatch presentation already present
+00423C70@00423D2F	present	unchanged	exact structural dispatch presentation already present
+00423D80@00423DB6	present	unchanged	exact structural dispatch presentation already present
+0042ABE0@0042AE48	present	unchanged	exact structural dispatch presentation already present
+0042ABE0@0042AE83	present	unchanged	exact structural dispatch presentation already present
+0042ABE0@0042AEA5	present	unchanged	exact structural dispatch presentation already present
+0042ABE0@0042AF10	present	unchanged	exact structural dispatch presentation already present
+0042ABE0@0042AF5B	present	unchanged	exact structural dispatch presentation already present
+0042ABE0@0042AF88	present	unchanged	exact structural dispatch presentation already present
+0042ABE0@0042AFAE	present	unchanged	exact structural dispatch presentation already present
+0042ABE0@0042AFD7	present	unchanged	exact structural dispatch presentation already present
+0042B1F0@0042B410	present	unchanged	exact structural dispatch presentation already present
+0042B7D0@0042B877	present	unchanged	exact structural dispatch presentation already present
+0042B7D0@0042B9AB	present	unchanged	exact structural dispatch presentation already present
+00433E90@00433ED9	present	unchanged	exact structural dispatch presentation already present
+00435930@00435A87	present	unchanged	exact structural dispatch presentation already present
+00435930@00435AB8	present	unchanged	exact structural dispatch presentation already present
+00436F20@00437BBC	present	unchanged	exact structural dispatch presentation already present
+0043E9A0@0043EAC1	present	unchanged	exact structural dispatch presentation already present
+0043E9A0@0043EACD	present	unchanged	exact structural dispatch presentation already present
+0043E9A0@0043EB05	present	unchanged	exact structural dispatch presentation already present
+0043E9A0@0043EB19	present	unchanged	exact structural dispatch presentation already present
+0043EC20@0043ED52	present	unchanged	exact structural dispatch presentation already present
+0043EC20@0043ED5E	present	unchanged	exact structural dispatch presentation already present
+0043EC20@0043ED96	present	unchanged	exact structural dispatch presentation already present
+0043EC20@0043EDAA	present	unchanged	exact structural dispatch presentation already present
+0043F380@0043F49B	present	unchanged	exact structural dispatch presentation already present
+0043F580@0043F6B6	present	unchanged	exact structural dispatch presentation already present
+0043F7B0@0043F9D1	present	unchanged	exact structural dispatch presentation already present
+0043F7B0@0043F9E2	present	unchanged	exact structural dispatch presentation already present
+0043F7B0@0043FAED	present	unchanged	exact structural dispatch presentation already present
+0043F7B0@0043FAFE	present	unchanged	exact structural dispatch presentation already present
+00440860@0044091B	present	unchanged	exact structural dispatch presentation already present
+00440990@004409F1	present	unchanged	exact structural dispatch presentation already present
+00440990@00440A35	present	unchanged	exact structural dispatch presentation already present
+00440AA0@00440CAB	present	unchanged	exact structural dispatch presentation already present
+00442E50@0044322C	present	unchanged	exact structural dispatch presentation already present
+00449B60@00449C30	present	unchanged	exact structural dispatch presentation already present
+0044B5F0@0044BA9C	present	unchanged	exact structural dispatch presentation already present
+0044C720@0044CA23	present	unchanged	exact structural dispatch presentation already present
+0044C720@0044CA3A	present	unchanged	exact structural dispatch presentation already present
+0044E260@0044E488	present	unchanged	exact structural dispatch presentation already present
+004603B0@0046058D	present	unchanged	exact structural dispatch presentation already present
+004603B0@004605FB	present	unchanged	exact structural dispatch presentation already present
+004603B0@00460669	present	unchanged	exact structural dispatch presentation already present
+004603B0@004606F9	present	unchanged	exact structural dispatch presentation already present
+004603B0@0046078E	present	unchanged	exact structural dispatch presentation already present
+00462180@004624EC	present	unchanged	exact structural dispatch presentation already present
+00462180@004627B4	present	unchanged	exact structural dispatch presentation already present
+00462180@0046354B	present	unchanged	exact structural dispatch presentation already present
+00462180@00463622	present	unchanged	exact structural dispatch presentation already present
+00462180@00463628	present	unchanged	exact structural dispatch presentation already present
+00462180@00463791	present	unchanged	exact structural dispatch presentation already present
+00462180@004637F3	present	unchanged	exact structural dispatch presentation already present
+00462180@00463831	present	unchanged	exact structural dispatch presentation already present
+00462180@0046383E	present	unchanged	exact structural dispatch presentation already present
+00462180@00463848	present	unchanged	exact structural dispatch presentation already present
+00462180@004647FB	present	unchanged	exact structural dispatch presentation already present
+00462180@0046484F	present	unchanged	exact structural dispatch presentation already present
+00462180@0046488D	present	unchanged	exact structural dispatch presentation already present
+004658D0@00465B0E	present	unchanged	exact structural dispatch presentation already present
+00474810@00474889	present	unchanged	exact structural dispatch presentation already present
+004758E0@00475B2B	present	unchanged	exact structural dispatch presentation already present
+0047DF00@0047F365	present	unchanged	exact structural dispatch presentation already present
+00482DB0@00482FAD	present	unchanged	exact structural dispatch presentation already present
+00482DB0@00482FC8	present	unchanged	exact structural dispatch presentation already present
+00483300@00483447	present	unchanged	exact structural dispatch presentation already present
+004836C0@004837C8	present	unchanged	exact structural dispatch presentation already present
+004845E0@00484BD2	present	unchanged	exact structural dispatch presentation already present
+004845E0@004850A5	present	unchanged	exact structural dispatch presentation already present
+004845E0@00486221	present	unchanged	exact structural dispatch presentation already present
+00486B60@00486BA1	present	unchanged	exact structural dispatch presentation already present
+00486B60@00486BAB	present	unchanged	exact structural dispatch presentation already present
+00486B60@00486C4A	present	unchanged	exact structural dispatch presentation already present
+00486B60@00486C6C	present	unchanged	exact structural dispatch presentation already present
+00486B60@00486C79	present	unchanged	exact structural dispatch presentation already present
+00486B60@00486C84	present	unchanged	exact structural dispatch presentation already present
+00486B60@00486CA9	present	unchanged	exact structural dispatch presentation already present
+00486E20@00486E71	present	unchanged	exact structural dispatch presentation already present
+00491600@00491617	present	unchanged	exact structural dispatch presentation already present
+00493110@004931A6	present	unchanged	exact structural dispatch presentation already present
+00494160@004941BC	present	unchanged	exact structural dispatch presentation already present
+00494160@004941DE	present	unchanged	exact structural dispatch presentation already present
+00494160@004944A3	present	unchanged	exact structural dispatch presentation already present
+00494160@004944C7	present	unchanged	exact structural dispatch presentation already present
+004B31C0@004B32C7	present	unchanged	exact structural dispatch presentation already present
+004B31C0@004B32D4	present	unchanged	exact structural dispatch presentation already present
+004B31C0@004B32E1	present	unchanged	exact structural dispatch presentation already present
+004B31C0@004B32EE	present	unchanged	exact structural dispatch presentation already present
+004B7750@004B77DD	present	unchanged	exact structural dispatch presentation already present
+004B7750@004B7807	present	unchanged	exact structural dispatch presentation already present
+004B7750@004B782C	present	unchanged	exact structural dispatch presentation already present
+004B7D90@004B7DBE	present	unchanged	exact structural dispatch presentation already present
+004B7DE0@004B7E11	present	unchanged	exact structural dispatch presentation already present
+004BE1A0@004BE1AB	present	unchanged	exact structural dispatch presentation already present
+004C21A0@004C2260	present	unchanged	exact structural dispatch presentation already present
+004C21A0@004C228C	present	unchanged	exact structural dispatch presentation already present
+004C21A0@004C245E	present	unchanged	exact structural dispatch presentation already present
+004C21A0@004C246A	present	unchanged	exact structural dispatch presentation already present
+004C21A0@004C253A	present	unchanged	exact structural dispatch presentation already present
+004C21A0@004C2546	present	unchanged	exact structural dispatch presentation already present
+004C21A0@004C260C	present	unchanged	exact structural dispatch presentation already present
+004C5350@004C5437	present	unchanged	exact structural dispatch presentation already present
+004C6070@004C6082	present	unchanged	exact structural dispatch presentation already present
+004CC370@004CC412	present	unchanged	exact structural dispatch presentation already present
+004CC370@004CC6CC	present	unchanged	exact structural dispatch presentation already present
+004CCC10@004CCD47	present	unchanged	exact structural dispatch presentation already present
+004CCC10@004CD1C4	present	unchanged	exact structural dispatch presentation already present
+004CD480@004CD593	present	unchanged	exact structural dispatch presentation already present
+004CD480@004CD604	present	unchanged	exact structural dispatch presentation already present
+004CD480@004CD61E	present	unchanged	exact structural dispatch presentation already present
+004CE060@004CE0A1	present	unchanged	exact structural dispatch presentation already present
+004D6360@004D6392	present	unchanged	exact structural dispatch presentation already present
+004D6C90@004D6CC3	present	unchanged	exact structural dispatch presentation already present
+004D6C90@004D6CE7	present	unchanged	exact structural dispatch presentation already present
+004D6EB0@004D6EC5	present	unchanged	exact structural dispatch presentation already present
+004D6EB0@004D6ED1	present	unchanged	exact structural dispatch presentation already present
+004D6EB0@004D6EE1	present	unchanged	exact structural dispatch presentation already present
+004D6EB0@004D6EED	present	unchanged	exact structural dispatch presentation already present
+004D6EB0@004D6EF9	present	unchanged	exact structural dispatch presentation already present
+004D6EB0@004D6F0B	present	unchanged	exact structural dispatch presentation already present
+004D6EB0@004D6F33	present	unchanged	exact structural dispatch presentation already present
+004D6F70@004D6FDB	present	unchanged	exact structural dispatch presentation already present
+004D7040@004D7069	present	unchanged	exact structural dispatch presentation already present
+004D7040@004D7075	present	unchanged	exact structural dispatch presentation already present
+004D7040@004D7081	present	unchanged	exact structural dispatch presentation already present
+004D7040@004D70AA	present	unchanged	exact structural dispatch presentation already present
+004D7040@004D70BA	present	unchanged	exact structural dispatch presentation already present
+004D7040@004D70CA	present	unchanged	exact structural dispatch presentation already present
+004D7040@004D70DA	present	unchanged	exact structural dispatch presentation already present
+004D7040@004D70FF	present	unchanged	exact structural dispatch presentation already present
+004D7040@004D7121	present	unchanged	exact structural dispatch presentation already present
+004D7040@004D7135	present	unchanged	exact structural dispatch presentation already present
+004D7040@004D71CD	present	unchanged	exact structural dispatch presentation already present
+004D7040@004D71D8	present	unchanged	exact structural dispatch presentation already present
+004D7040@004D71E4	present	unchanged	exact structural dispatch presentation already present
+004D7270@004D729D	present	unchanged	exact structural dispatch presentation already present
+004D7270@004D72B0	present	unchanged	exact structural dispatch presentation already present
+004D7270@004D733F	present	unchanged	exact structural dispatch presentation already present
+004D9000@004D925F	present	unchanged	exact structural dispatch presentation already present
+004D9C80@004D9EE7	present	unchanged	exact structural dispatch presentation already present
+004DBB60@004DBB98	present	unchanged	exact structural dispatch presentation already present
+004DCE00@004DCFCF	present	unchanged	exact structural dispatch presentation already present
+004DD770@004DD7A1	present	unchanged	exact structural dispatch presentation already present
+004DD800@004DD831	present	unchanged	exact structural dispatch presentation already present
+004DDD50@004DDE3B	present	unchanged	exact structural dispatch presentation already present
+004DE4F0@004DE57B	present	unchanged	exact structural dispatch presentation already present
+004DE4F0@004DE5A1	present	unchanged	exact structural dispatch presentation already present
+004DE4F0@004DE5B2	present	unchanged	exact structural dispatch presentation already present
+004DE4F0@004DE5C4	present	unchanged	exact structural dispatch presentation already present
+004DE4F0@004DE5DD	present	unchanged	exact structural dispatch presentation already present
+004DE4F0@004DE5F5	present	unchanged	exact structural dispatch presentation already present
+004DE820@004DE857	present	unchanged	exact structural dispatch presentation already present
+004DFC70@004DFCE1	present	unchanged	exact structural dispatch presentation already present
+004DFC70@004DFCFD	present	unchanged	exact structural dispatch presentation already present
+004DFC70@004DFD10	present	unchanged	exact structural dispatch presentation already present
+004DFC70@004DFD24	present	unchanged	exact structural dispatch presentation already present
+004DFC70@004DFD3C	present	unchanged	exact structural dispatch presentation already present
+004E0040@004E009D	present	unchanged	exact structural dispatch presentation already present
+004E0250@004E0291	present	unchanged	exact structural dispatch presentation already present
+004E16D0@004E1741	present	unchanged	exact structural dispatch presentation already present
+004E16D0@004E17AA	present	unchanged	exact structural dispatch presentation already present
+004E16D0@004E1808	present	unchanged	exact structural dispatch presentation already present
+004E1930@004E1A5C	present	unchanged	exact structural dispatch presentation already present
+004E1930@004E1A78	present	unchanged	exact structural dispatch presentation already present
+004E1930@004E1AB8	present	unchanged	exact structural dispatch presentation already present
+004E1930@004E1AD4	present	unchanged	exact structural dispatch presentation already present
+004E1930@004E1AF0	present	unchanged	exact structural dispatch presentation already present
+004E1930@004E1B2D	present	unchanged	exact structural dispatch presentation already present
+004E1930@004E1B64	present	unchanged	exact structural dispatch presentation already present
+004E1930@004E1B9B	present	unchanged	exact structural dispatch presentation already present
+004E1930@004E1BB7	present	unchanged	exact structural dispatch presentation already present
+004E1930@004E1BEE	present	unchanged	exact structural dispatch presentation already present
+004E1930@004E1C25	present	unchanged	exact structural dispatch presentation already present
+004E2340@004E23A5	present	unchanged	exact structural dispatch presentation already present
+004E2340@004E2428	present	unchanged	exact structural dispatch presentation already present
+004E2340@004E26B6	present	unchanged	exact structural dispatch presentation already present
+004E2340@004E26D6	present	unchanged	exact structural dispatch presentation already present
+004E3910@004E3EAD	present	unchanged	exact structural dispatch presentation already present
+004E46F0@004E4861	present	unchanged	exact structural dispatch presentation already present
+004E51B0@004E56EA	present	unchanged	exact structural dispatch presentation already present
+004E51B0@004E56F7	present	unchanged	exact structural dispatch presentation already present
+004E51B0@004E5710	present	unchanged	exact structural dispatch presentation already present
+004E51B0@004E571D	present	unchanged	exact structural dispatch presentation already present
+004E51B0@004E5736	present	unchanged	exact structural dispatch presentation already present
+004E51B0@004E5743	present	unchanged	exact structural dispatch presentation already present
+004E51B0@004E5750	present	unchanged	exact structural dispatch presentation already present
+004E6310@004E64DF	present	unchanged	exact structural dispatch presentation already present
+004E6310@004E64EC	present	unchanged	exact structural dispatch presentation already present
+004E6310@004E64F9	present	unchanged	exact structural dispatch presentation already present
+004E6310@004E656B	present	unchanged	exact structural dispatch presentation already present
+004E6310@004E6578	present	unchanged	exact structural dispatch presentation already present
+004E6310@004E6585	present	unchanged	exact structural dispatch presentation already present
+004E8B10@004E8B44	present	unchanged	exact structural dispatch presentation already present
+004E8B10@004E8B63	present	unchanged	exact structural dispatch presentation already present
+004E8DC0@004E8DF4	present	unchanged	exact structural dispatch presentation already present
+004E96C0@004E9732	present	unchanged	exact structural dispatch presentation already present
+004E96C0@004E973F	present	unchanged	exact structural dispatch presentation already present
+004E96C0@004E974C	present	unchanged	exact structural dispatch presentation already present
+004E96C0@004E975D	present	unchanged	exact structural dispatch presentation already present
+004E96C0@004E976A	present	unchanged	exact structural dispatch presentation already present
+004E96C0@004E9792	present	unchanged	exact structural dispatch presentation already present
+004E96C0@004E9874	present	unchanged	exact structural dispatch presentation already present
+004EA530@004EA5A9	present	unchanged	exact structural dispatch presentation already present
+004EA530@004EA5B5	present	unchanged	exact structural dispatch presentation already present
+004EAA20@004EAAFC	present	unchanged	exact structural dispatch presentation already present
+004EAA20@004EACAA	present	unchanged	exact structural dispatch presentation already present
+004EB6D0@004EB9A2	present	unchanged	exact structural dispatch presentation already present
+004EB6D0@004EB9B9	present	unchanged	exact structural dispatch presentation already present
+004EB6D0@004EB9D0	present	unchanged	exact structural dispatch presentation already present
+004EBCB0@004EBD43	present	unchanged	exact structural dispatch presentation already present
+004EBCB0@004EBD5F	present	unchanged	exact structural dispatch presentation already present
+004EBF10@004EBF6F	present	unchanged	exact structural dispatch presentation already present
+004EBF10@004EBF8B	present	unchanged	exact structural dispatch presentation already present
+004ECEA0@004ED10E	present	unchanged	exact structural dispatch presentation already present
+004EEA40@004EEDB2	present	unchanged	exact structural dispatch presentation already present
+004F05C0@004F0900	present	unchanged	exact structural dispatch presentation already present
+004FA870@004FA8C8	present	unchanged	exact structural dispatch presentation already present
+004FA870@004FA8E4	present	unchanged	exact structural dispatch presentation already present
+004FA870@004FA900	present	unchanged	exact structural dispatch presentation already present
+004FA870@004FA938	present	unchanged	exact structural dispatch presentation already present
+004FA870@004FA970	present	unchanged	exact structural dispatch presentation already present
+0052BC30@0052BD3F	present	unchanged	exact structural dispatch presentation already present
+005335E0@005336CB	present	unchanged	exact structural dispatch presentation already present
+00538690@005388C5	present	unchanged	exact structural dispatch presentation already present
+0053DEA0@0053E0B9	present	unchanged	exact structural dispatch presentation already present
+0053E1C0@0053E30F	present	unchanged	exact structural dispatch presentation already present
+0053E3F0@0053E552	present	unchanged	exact structural dispatch presentation already present
+0053EB70@0053ECBF	present	unchanged	exact structural dispatch presentation already present
+0053EB70@0053ECF4	present	unchanged	exact structural dispatch presentation already present
+005400F0@00540236	present	unchanged	exact structural dispatch presentation already present
+00543AD0@00543B3F	present	unchanged	exact structural dispatch presentation already present
+0054A9B0@0054AC30	present	unchanged	exact structural dispatch presentation already present
+005501D0@0055021A	present	unchanged	exact structural dispatch presentation already present
+005503C0@00550408	present	unchanged	exact structural dispatch presentation already present
+00551460@005515B9	present	unchanged	exact structural dispatch presentation already present
+005522A0@005523CB	present	unchanged	exact structural dispatch presentation already present
+0055C180@0055C220	present	unchanged	exact structural dispatch presentation already present
+005711D0@005711FE	present	unchanged	exact structural dispatch presentation already present
+00579350@005796C3	present	unchanged	exact structural dispatch presentation already present
+005797B0@00579E50	present	unchanged	exact structural dispatch presentation already present
+0057A2C0@0057ABDE	present	unchanged	exact structural dispatch presentation already present
+0057A2C0@0057AF75	present	unchanged	exact structural dispatch presentation already present
+0057B350@0057B445	present	unchanged	exact structural dispatch presentation already present
+0057B350@0057B539	present	unchanged	exact structural dispatch presentation already present
+00580DC0@00580EA0	present	unchanged	exact structural dispatch presentation already present
+00580DC0@00580EAC	present	unchanged	exact structural dispatch presentation already present
+00580DC0@00580EB8	present	unchanged	exact structural dispatch presentation already present
+00584B10@00584BB8	present	unchanged	exact structural dispatch presentation already present
+00584C50@00584CC9	present	unchanged	exact structural dispatch presentation already present
+00585020@005852CD	present	unchanged	exact structural dispatch presentation already present
+00585020@00585699	present	unchanged	exact structural dispatch presentation already present
+00585020@005856CA	present	unchanged	exact structural dispatch presentation already present
+00586AF0@00586E1B	present	unchanged	exact structural dispatch presentation already present
+00586AF0@005884DE	present	unchanged	exact structural dispatch presentation already present
+00589740@005897CB	present	unchanged	exact structural dispatch presentation already present
+0058A9E0@0058AE40	present	unchanged	exact structural dispatch presentation already present
+0058BD90@0058C3A2	present	unchanged	exact structural dispatch presentation already present
+00591BF0@0059208E	present	unchanged	exact structural dispatch presentation already present
+005925A0@005925E3	present	unchanged	exact structural dispatch presentation already present
+00592620@00592663	present	unchanged	exact structural dispatch presentation already present
+00595E40@0059627B	present	unchanged	exact structural dispatch presentation already present
+00595E40@005962C4	present	unchanged	exact structural dispatch presentation already present
+00595E40@0059630F	present	unchanged	exact structural dispatch presentation already present
+00595E40@00596358	present	unchanged	exact structural dispatch presentation already present
+00595E40@005963A3	present	unchanged	exact structural dispatch presentation already present
+00595E40@005963EC	present	unchanged	exact structural dispatch presentation already present
+005AB300@005AB835	present	unchanged	exact structural dispatch presentation already present
+005AB300@005AB881	present	unchanged	exact structural dispatch presentation already present
+005B47E0@005B4823	present	unchanged	exact structural dispatch presentation already present
+005B4860@005B48A3	present	unchanged	exact structural dispatch presentation already present
+005B5240@005B52CB	present	unchanged	exact structural dispatch presentation already present
+005B5240@005B5363	present	unchanged	exact structural dispatch presentation already present
+005B5240@005B5412	present	unchanged	exact structural dispatch presentation already present
+005B9B10@005B9D4F	present	unchanged	exact structural dispatch presentation already present
+005B9B10@005B9D9A	present	unchanged	exact structural dispatch presentation already present
+005BBA40@005BBA71	present	unchanged	exact structural dispatch presentation already present
+005C29B0@005C3362	present	unchanged	exact structural dispatch presentation already present
+005C29B0@005C33B7	present	unchanged	exact structural dispatch presentation already present
+005C29B0@005C3401	present	unchanged	exact structural dispatch presentation already present
+005C5CA0@005C5D5E	present	unchanged	exact structural dispatch presentation already present
+005C5CA0@005C5DBE	present	unchanged	exact structural dispatch presentation already present
+005C5CA0@005C5DD9	present	unchanged	exact structural dispatch presentation already present
+005C5CA0@005C5E04	present	unchanged	exact structural dispatch presentation already present
+005C5CA0@005C5E2C	present	unchanged	exact structural dispatch presentation already present
+005C5CA0@005C5E33	present	unchanged	exact structural dispatch presentation already present
+005C5EB0@005C5F0E	present	unchanged	exact structural dispatch presentation already present
+005C5EB0@005C5F88	present	unchanged	exact structural dispatch presentation already present
+005C5EB0@005C5FB0	present	unchanged	exact structural dispatch presentation already present
+005D4E90@005D5040	present	unchanged	exact structural dispatch presentation already present
+005D5560@005D5CFC	apply	disabled	apply=0
+005D5560@005D5E88	apply	disabled	apply=0
+005D7A50@005D7CD7	present	unchanged	exact structural dispatch presentation already present
+005D7A50@005D7D34	present	unchanged	exact structural dispatch presentation already present
+005D7A50@005D7D93	present	unchanged	exact structural dispatch presentation already present
+005DB4F0@005DB7BA	present	unchanged	exact structural dispatch presentation already present
+005DB4F0@005DB803	present	unchanged	exact structural dispatch presentation already present
+005DB4F0@005DB860	present	unchanged	exact structural dispatch presentation already present
+005DB4F0@005DB8BF	present	unchanged	exact structural dispatch presentation already present
+005DB4F0@005DBAC2	present	unchanged	exact structural dispatch presentation already present
+005DB4F0@005DBB0F	present	unchanged	exact structural dispatch presentation already present
+005DFA30@005DFE6B	present	unchanged	exact structural dispatch presentation already present
+005DFA30@005DFEC2	present	unchanged	exact structural dispatch presentation already present
+005DFA30@005DFF17	present	unchanged	exact structural dispatch presentation already present
+005DFA30@005DFFB2	present	unchanged	exact structural dispatch presentation already present
+005DFA30@005E0007	present	unchanged	exact structural dispatch presentation already present
+005DFA30@005E005E	present	unchanged	exact structural dispatch presentation already present
+005EDA50@005EDAF9	present	unchanged	exact structural dispatch presentation already present
+005EDA50@005EDB3B	present	unchanged	exact structural dispatch presentation already present
+005EDC20@005EDD5F	present	unchanged	exact structural dispatch presentation already present
+005EDC20@005EDD6A	present	unchanged	exact structural dispatch presentation already present
+005EEFF0@005EF149	present	unchanged	exact structural dispatch presentation already present
+005EEFF0@005EF308	present	unchanged	exact structural dispatch presentation already present
+005EFA90@005EFAA6	present	unchanged	exact structural dispatch presentation already present
+005F00B0@005F00D9	present	unchanged	exact structural dispatch presentation already present
+005F00B0@005F00ED	present	unchanged	exact structural dispatch presentation already present
+005F00B0@005F0106	present	unchanged	exact structural dispatch presentation already present
+005F0150@005F0165	present	unchanged	exact structural dispatch presentation already present
+005F0150@005F01A6	present	unchanged	exact structural dispatch presentation already present
+005F0150@005F01B3	present	unchanged	exact structural dispatch presentation already present
+005F0150@005F01C6	present	unchanged	exact structural dispatch presentation already present
+005F0150@005F01D3	present	unchanged	exact structural dispatch presentation already present
+005F0150@005F01E0	present	unchanged	exact structural dispatch presentation already present
+005F0240@005F025D	present	unchanged	exact structural dispatch presentation already present
+005F0280@005F029D	present	unchanged	exact structural dispatch presentation already present
+005F04B0@005F04DB	present	unchanged	exact structural dispatch presentation already present
+005F05A0@005F05C2	present	unchanged	exact structural dispatch presentation already present
+005F0BA0@005F0C27	present	unchanged	exact structural dispatch presentation already present
+005F0E20@005F0E55	present	unchanged	exact structural dispatch presentation already present
+005F0E20@005F0E79	present	unchanged	exact structural dispatch presentation already present
+005F5D10@005F5D91	present	unchanged	exact structural dispatch presentation already present
+005F9050@005F90FF	present	unchanged	exact structural dispatch presentation already present
+005FAF70@005FAF8D	present	unchanged	exact structural dispatch presentation already present
+006001E0@00600435	present	unchanged	exact structural dispatch presentation already present
+0060AEF0@0060B6EA	present	unchanged	exact structural dispatch presentation already present
+0060BCB0@0060BCF9	present	unchanged	exact structural dispatch presentation already present
+0060BD30@0060BDA7	present	unchanged	exact structural dispatch presentation already present
+0060BDD0@0060BF48	present	unchanged	exact structural dispatch presentation already present
+006101B0@00610A75	present	unchanged	exact structural dispatch presentation already present
+006101B0@00610EAB	present	unchanged	exact structural dispatch presentation already present
+006101B0@00611410	present	unchanged	exact structural dispatch presentation already present
+006101B0@00611A77	present	unchanged	exact structural dispatch presentation already present
+006101B0@00612565	present	unchanged	exact structural dispatch presentation already present
+00613140@00613225	present	unchanged	exact structural dispatch presentation already present
+00615FD0@0061602F	present	unchanged	exact structural dispatch presentation already present
+0061C910@0061C95B	present	unchanged	exact structural dispatch presentation already present
+00623600@0062388D	present	unchanged	exact structural dispatch presentation already present
+00623600@006238C6	present	unchanged	exact structural dispatch presentation already present
+006255B0@00625602	present	unchanged	exact structural dispatch presentation already present
+006264D0@00626798	present	unchanged	exact structural dispatch presentation already present
+006264D0@0062697A	present	unchanged	exact structural dispatch presentation already present
+0062A370@0062A58F	present	unchanged	exact structural dispatch presentation already present
+0062B830@0062B88C	present	unchanged	exact structural dispatch presentation already present
+00639670@0063988B	present	unchanged	exact structural dispatch presentation already present
+00639C90@0063B689	present	unchanged	exact structural dispatch presentation already present
+00639C90@0063B70A	present	unchanged	exact structural dispatch presentation already present
+0063C170@0063C2B0	present	unchanged	exact structural dispatch presentation already present
+006406D0@00642AC6	present	unchanged	exact structural dispatch presentation already present
+00643E20@00644154	present	unchanged	exact structural dispatch presentation already present
+00643E20@006441E9	present	unchanged	exact structural dispatch presentation already present
+00644410@006446F4	present	unchanged	exact structural dispatch presentation already present
+0064DD70@0064DD7C	present	unchanged	exact structural dispatch presentation already present
+0065D760@0065D7C0	present	unchanged	exact structural dispatch presentation already present
+0065D760@0065D7E5	present	unchanged	exact structural dispatch presentation already present
+0065D760@0065D821	present	unchanged	exact structural dispatch presentation already present
+00675EA0@00675EDC	present	unchanged	exact structural dispatch presentation already present
+00677BE0@00677CBC	present	unchanged	exact structural dispatch presentation already present
+00677EF0@00677EF8	present	unchanged	exact structural dispatch presentation already present
+00677F40@00678004	present	unchanged	exact structural dispatch presentation already present
+00678240@00678330	present	unchanged	exact structural dispatch presentation already present
+006785A0@00678660	present	unchanged	exact structural dispatch presentation already present
+0067A0C0@0067A103	present	unchanged	exact structural dispatch presentation already present
+0067A140@0067A15C	present	unchanged	exact structural dispatch presentation already present
+0067A1B0@0067A201	present	unchanged	exact structural dispatch presentation already present
+0067C180@0067C303	present	unchanged	exact structural dispatch presentation already present
+0067C180@0067C311	present	unchanged	exact structural dispatch presentation already present
+0067C180@0067C32C	present	unchanged	exact structural dispatch presentation already present
+00690330@00690369	present	unchanged	exact structural dispatch presentation already present
+006903A0@006903B8	present	unchanged	exact structural dispatch presentation already present
+006903E0@00690419	present	unchanged	exact structural dispatch presentation already present
+00690450@00690497	present	unchanged	exact structural dispatch presentation already present
+006B7140@006B7161	present	unchanged	exact structural dispatch presentation already present
+006B76D0@006B76F1	present	unchanged	exact structural dispatch presentation already present
+006D4F50@006D4F5E	present	unchanged	exact structural dispatch presentation already present
+006D4FD0@006D4FDE	present	unchanged	exact structural dispatch presentation already present
+006D71D0@006D72D8	present	unchanged	exact structural dispatch presentation already present
+006E52D0@006E5309	present	unchanged	exact structural dispatch presentation already present
+006E5670@006E5687	present	unchanged	exact structural dispatch presentation already present
+006E5690@006E56A3	present	unchanged	exact structural dispatch presentation already present
+006E56B0@006E56E8	present	unchanged	exact structural dispatch presentation already present
+006E5740@006E5778	present	unchanged	exact structural dispatch presentation already present
+006E57B0@006E57EE	present	unchanged	exact structural dispatch presentation already present
+006E6060@006E6078	present	unchanged	exact structural dispatch presentation already present
+006E6130@006E6141	present	unchanged	exact structural dispatch presentation already present
+006E6150@006E6167	present	unchanged	exact structural dispatch presentation already present
+0071F230@0071F268	present	unchanged	exact structural dispatch presentation already present
+0071F230@0071F283	present	unchanged	exact structural dispatch presentation already present
+0071F340@0071F36A	present	unchanged	exact structural dispatch presentation already present
 00423850@004239E6	apply	unchanged	exact call-site ABI already present
 00423850@004239F8	apply	unchanged	exact call-site ABI already present
 00424530@004245CE	apply	unchanged	exact call-site ABI already present
 00424620@004246BE	apply	unchanged	exact call-site ABI already present
+0042B7D0@0042B980	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 0042BB30@0042BCC7	apply	unchanged	exact call-site ABI already present
 0042BEA0@0042C089	apply	unchanged	exact call-site ABI already present
 0042C300@0042C40A	apply	unchanged	exact call-site ABI already present
@@ -20,85 +435,34 @@ target	action	status	detail
 0042D370@0042D3F5	apply	unchanged	exact call-site ABI already present
 0042D370@0042D465	apply	unchanged	exact call-site ABI already present
 0042D370@0042D48C	apply	unchanged	exact call-site ABI already present
-0042E210@0042E318	apply	unchanged	exact call-site ABI already present
-0042E210@0042E362	apply	unchanged	exact call-site ABI already present
-0042E210@0042E3A9	apply	unchanged	exact call-site ABI already present
-0042E210@0042E3FD	apply	unchanged	exact call-site ABI already present
-0042E210@0042E447	apply	unchanged	exact call-site ABI already present
-0042E210@0042E48E	apply	unchanged	exact call-site ABI already present
-0042E210@0042E4BB	apply	unchanged	exact call-site ABI already present
-0042E210@0042E548	apply	unchanged	exact call-site ABI already present
-0042E210@0042E559	apply	unchanged	exact call-site ABI already present
-0042E210@0042E5A6	apply	unchanged	exact call-site ABI already present
-0042E210@0042E5F3	apply	unchanged	exact call-site ABI already present
-0042E210@0042E640	apply	unchanged	exact call-site ABI already present
-0042E210@0042E68D	apply	unchanged	exact call-site ABI already present
-0042E210@0042E6DA	apply	unchanged	exact call-site ABI already present
-0042E210@0042E727	apply	unchanged	exact call-site ABI already present
-0042E210@0042E76D	apply	unchanged	exact call-site ABI already present
-0042E210@0042E81F	apply	unchanged	exact call-site ABI already present
-0042E210@0042E83F	apply	unchanged	exact call-site ABI already present
-0042E210@0042E88C	apply	unchanged	exact call-site ABI already present
-0042E210@0042E8D9	apply	unchanged	exact call-site ABI already present
-0042E210@0042E926	apply	unchanged	exact call-site ABI already present
-0042E210@0042E973	apply	unchanged	exact call-site ABI already present
-0042E210@0042E9C0	apply	unchanged	exact call-site ABI already present
-0042E210@0042EA0D	apply	unchanged	exact call-site ABI already present
-0042E210@0042EA5A	apply	unchanged	exact call-site ABI already present
-0042E210@0042EAA0	apply	unchanged	exact call-site ABI already present
-0042E210@0042EC32	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042F354	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042F39F	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042F3E7	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042F440	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042F48B	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042F4D3	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042F4FF	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042F593	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042F5A3	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042F625	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042F6A7	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042F729	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042F7AB	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042F82D	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042F8AF	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042F931	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042FA14	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042FA33	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042FAB5	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042FB37	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042FBB9	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042FC3B	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042FCBD	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042FD3F	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042FDC1	apply	unchanged	exact call-site ABI already present
-0042F2B0@0042FE43	apply	unchanged	exact call-site ABI already present
-0042F2B0@0043001C	apply	unchanged	exact call-site ABI already present
+0042E210@0042EBA5	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 004353B0@0043542C	apply	unchanged	exact call-site ABI already present
 004353B0@00435477	apply	unchanged	exact call-site ABI already present
-00435B90@00436581	apply	unchanged	exact call-site ABI already present
-00435B90@0043658D	apply	unchanged	exact call-site ABI already present
-00435B90@00436599	apply	unchanged	exact call-site ABI already present
-00435B90@00436739	apply	unchanged	exact call-site ABI already present
-00435B90@0043676F	apply	unchanged	exact call-site ABI already present
-00435B90@004367D6	apply	unchanged	exact call-site ABI already present
-00435B90@004367E2	apply	unchanged	exact call-site ABI already present
-00435B90@00436849	apply	unchanged	exact call-site ABI already present
-00435B90@00436855	apply	unchanged	exact call-site ABI already present
-00435B90@00436861	apply	unchanged	exact call-site ABI already present
-00435B90@0043686D	apply	unchanged	exact call-site ABI already present
-00435B90@004368D0	apply	unchanged	exact call-site ABI already present
-00435B90@00436907	apply	unchanged	exact call-site ABI already present
-00435B90@00436924	apply	unchanged	exact call-site ABI already present
 00436F20@0043719D	apply	unchanged	exact call-site ABI already present
+00436F20@0043777A	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00436F20@00437F05	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0043E460@0043E499	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0043E4E0@0043E570	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0043E640@0043E691	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0043E780@0043E80E	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 0043EED0@0043EF86	apply	unchanged	exact call-site ABI already present
 00440AA0@00440BA1	apply	unchanged	exact call-site ABI already present
 00440AA0@00440C0F	apply	unchanged	exact call-site ABI already present
 00440AA0@00440E61	apply	unchanged	exact call-site ABI already present
 00445A40@00445B10	apply	unchanged	exact call-site ABI already present
 00445A40@00445B8F	apply	unchanged	exact call-site ABI already present
+0044B5F0@0044B673	apply	unchanged	exact call-site ABI already present
+0044B5F0@0044B682	apply	unchanged	exact call-site ABI already present
 0044B5F0@0044B710	apply	unchanged	exact call-site ABI already present
 0044B5F0@0044B71E	apply	unchanged	exact call-site ABI already present
+0044B5F0@0044B7F5	apply	unchanged	exact call-site ABI already present
+0044B5F0@0044B804	apply	unchanged	exact call-site ABI already present
+0044B5F0@0044B8A2	apply	unchanged	exact call-site ABI already present
+0044B5F0@0044B8B1	apply	unchanged	exact call-site ABI already present
+0044B5F0@0044B94B	apply	unchanged	exact call-site ABI already present
+0044B5F0@0044B95A	apply	unchanged	exact call-site ABI already present
+0044B5F0@0044B9F4	apply	unchanged	exact call-site ABI already present
+0044B5F0@0044BA03	apply	unchanged	exact call-site ABI already present
 0044B5F0@0044BAF8	apply	unchanged	exact call-site ABI already present
 0044B5F0@0044BB06	apply	unchanged	exact call-site ABI already present
 0044B5F0@0044BBCC	apply	unchanged	exact call-site ABI already present
@@ -111,12 +475,51 @@ target	action	status	detail
 0044EE30@0045A06D	apply	unchanged	exact call-site ABI already present
 0044EE30@0045A8D2	apply	unchanged	exact call-site ABI already present
 0044EE30@0045A923	apply	unchanged	exact call-site ABI already present
+00462180@00462C61	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00462180@00462C6E	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00462180@00462FF5	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00462180@00463001	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00462180@00463662	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00462180@004637D2	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00462180@004639FE	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00462180@00463A52	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00462180@00463BB5	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00462180@00463C20	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00462180@00463D76	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00462180@00463F8B	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00462180@00464165	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 00462180@004644F9	apply	unchanged	exact call-site ABI already present
 00462180@00464518	apply	unchanged	exact call-site ABI already present
+00462180@0046465A	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00462180@004647CA	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00462180@00464887	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 00465C60@00467442	apply	unchanged	exact call-site ABI already present
 00465C60@004674A2	apply	unchanged	exact call-site ABI already present
 0046B100@0046BECB	apply	unchanged	exact call-site ABI already present
 0046B100@0046BF4D	apply	unchanged	exact call-site ABI already present
+0046D450@0046D57C	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0046D450@0046D588	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0046D450@0046D61E	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0046D450@0046D62A	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0046D450@0046D932	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0046D450@0046D93E	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0046D450@0046DABF	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0046D450@0046DACB	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0046F5C0@0046FB03	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0046F5C0@0046FC9A	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0046F5C0@0046FF78	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0046F5C0@0047005F	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004732F0@00473410	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004732F0@00473423	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004732F0@004735E4	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004732F0@004735F8	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004732F0@004737C3	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004732F0@004737D7	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004732F0@00473A09	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004732F0@00473A19	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004732F0@00473EF1	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004732F0@00473F05	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004732F0@00473F19	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 00476CE0@00476E10	apply	unchanged	exact call-site ABI already present
 00476CE0@00476EB4	apply	unchanged	exact call-site ABI already present
 00476CE0@00477422	apply	unchanged	exact call-site ABI already present
@@ -148,6 +551,14 @@ target	action	status	detail
 00479600@0047ACAF	apply	unchanged	exact call-site ABI already present
 00479600@0047B094	apply	unchanged	exact call-site ABI already present
 00479600@0047B131	apply	unchanged	exact call-site ABI already present
+0047C050@0047C172	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0047C050@0047C2AE	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0047C050@0047C3C3	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0047C050@0047C555	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0047C050@0047C66C	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0047C050@0047C73F	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0047C050@0047C832	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0047C050@0047CB8C	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 0047D080@0047D530	apply	unchanged	exact call-site ABI already present
 0047D080@0047D66B	apply	unchanged	exact call-site ABI already present
 0047D080@0047D789	apply	unchanged	exact call-site ABI already present
@@ -155,41 +566,6 @@ target	action	status	detail
 00483300@004833C6	apply	unchanged	exact call-site ABI already present
 00483300@004833D8	apply	unchanged	exact call-site ABI already present
 00483300@004833EE	apply	unchanged	exact call-site ABI already present
-004845E0@0048481E	apply	unchanged	exact call-site ABI already present
-004845E0@0048482E	apply	unchanged	exact call-site ABI already present
-004845E0@00484867	apply	unchanged	exact call-site ABI already present
-004845E0@00484873	apply	unchanged	exact call-site ABI already present
-004845E0@00484B7A	apply	unchanged	exact call-site ABI already present
-004845E0@00484B86	apply	unchanged	exact call-site ABI already present
-004845E0@00484B92	apply	unchanged	exact call-site ABI already present
-004845E0@00484B9E	apply	unchanged	exact call-site ABI already present
-004845E0@00484C37	apply	unchanged	exact call-site ABI already present
-004845E0@00484C43	apply	unchanged	exact call-site ABI already present
-004845E0@00484D19	apply	unchanged	exact call-site ABI already present
-004845E0@00484ED6	apply	unchanged	exact call-site ABI already present
-004845E0@00484F36	apply	unchanged	exact call-site ABI already present
-004845E0@0048500E	apply	unchanged	exact call-site ABI already present
-004845E0@0048511F	apply	unchanged	exact call-site ABI already present
-004845E0@0048519C	apply	unchanged	exact call-site ABI already present
-004845E0@004851A8	apply	unchanged	exact call-site ABI already present
-004845E0@004852EB	apply	unchanged	exact call-site ABI already present
-004845E0@004852F7	apply	unchanged	exact call-site ABI already present
-004845E0@00485625	apply	unchanged	exact call-site ABI already present
-004845E0@00485648	apply	unchanged	exact call-site ABI already present
-004845E0@0048568D	apply	unchanged	exact call-site ABI already present
-004845E0@00485699	apply	unchanged	exact call-site ABI already present
-004845E0@004856C9	apply	unchanged	exact call-site ABI already present
-004845E0@004856D5	apply	unchanged	exact call-site ABI already present
-004845E0@00485A46	apply	unchanged	exact call-site ABI already present
-004845E0@00485A52	apply	unchanged	exact call-site ABI already present
-004845E0@00485E18	apply	unchanged	exact call-site ABI already present
-004845E0@0048609D	apply	unchanged	exact call-site ABI already present
-004845E0@004860BA	apply	unchanged	exact call-site ABI already present
-004845E0@004860CA	apply	unchanged	exact call-site ABI already present
-004845E0@004860DA	apply	unchanged	exact call-site ABI already present
-004845E0@004860EA	apply	unchanged	exact call-site ABI already present
-004845E0@004860FA	apply	unchanged	exact call-site ABI already present
-004845E0@00486106	apply	unchanged	exact call-site ABI already present
 004899A0@00489A10	apply	unchanged	exact call-site ABI already present
 004899A0@00489A20	apply	unchanged	exact call-site ABI already present
 004899A0@00489A34	apply	unchanged	exact call-site ABI already present
@@ -211,6 +587,9 @@ target	action	status	detail
 00492B20@00492B70	apply	unchanged	exact call-site ABI already present
 00492FC0@0049300D	apply	unchanged	exact call-site ABI already present
 00493BC0@00493C59	apply	unchanged	exact call-site ABI already present
+00499DE0@00499ECC	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00499DE0@00499F14	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00499DE0@0049A010	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 0049AAF0@0049AC4D	apply	unchanged	exact call-site ABI already present
 0049AAF0@0049AC64	apply	unchanged	exact call-site ABI already present
 0049AAF0@0049AEEC	apply	unchanged	exact call-site ABI already present
@@ -218,18 +597,87 @@ target	action	status	detail
 0049AAF0@0049B092	apply	unchanged	exact call-site ABI already present
 0049AAF0@0049B0A6	apply	unchanged	exact call-site ABI already present
 0049C210@0049C96A	apply	unchanged	exact call-site ABI already present
+0049CD30@0049CE8B	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049CD30@0049CE97	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049CD30@0049CEA3	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049CD30@0049D05E	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049CD30@0049D06A	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049CD30@0049D076	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049D230@0049D345	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049D230@0049D351	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049D230@0049D35D	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049DFA0@0049E0E5	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049DFA0@0049E108	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049DFA0@0049E2ED	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049DFA0@0049E2FC	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049E510@0049E62C	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049E510@0049E63E	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049E510@0049E836	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049E510@0049E844	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049F100@0049F22D	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049F100@0049F239	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049F100@0049F245	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 0049F100@0049F33B	apply	unchanged	exact call-site ABI already present
+0049FBF0@0049FD09	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049FBF0@0049FD15	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0049FBF0@0049FD21	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0040@004A0251	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0040@004A025D	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0040@004A0269	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0040@004A039D	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0040@004A03A9	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0040@004A03B5	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0990@004A0AD5	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0990@004A0AF8	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0990@004A0CD8	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0990@004A0CE7	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A157C	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A1588	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A1594	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A1813	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A181F	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A182B	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A1A12	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A1A1E	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A1A2A	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A1DD5	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A1DF6	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A1FCC	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A1FDE	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A2638	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A2644	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A2650	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A2812	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A281E	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A282A	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A2B04	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A0FA0@004A2B25	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A3430@004A3540	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A3430@004A354C	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004A3430@004A3558	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 004B1FB0@004B21CD	apply	unchanged	exact call-site ABI already present
+004B33D0@004B42C6	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004B33D0@004B42D5	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004B33D0@004B42E4	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004B33D0@004B42F3	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004B33D0@004B434F	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004B33D0@004B4F13	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004B33D0@004B4F20	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 004B9BB0@004B9C85	apply	unchanged	exact call-site ABI already present
 004B9FA0@004BA64C	apply	unchanged	exact call-site ABI already present
 004B9FA0@004BB657	apply	unchanged	exact call-site ABI already present
 004B9FA0@004BBDD0	apply	unchanged	exact call-site ABI already present
+004C3C00@004C3DF8	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004C3C00@004C41A9	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+004C3C00@004C41F1	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 004CCC10@004CCDE7	apply	unchanged	exact call-site ABI already present
 004DA9C0@004DAE78	apply	unchanged	exact call-site ABI already present
+004E1930@004E19FF	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 004E2AD0@004E2BBB	apply	unchanged	exact call-site ABI already present
 004E2C30@004E2D46	apply	unchanged	exact call-site ABI already present
 004E2C30@004E2E4D	apply	unchanged	exact call-site ABI already present
 004E3120@004E31AB	apply	unchanged	exact call-site ABI already present
+004E46F0@004E4854	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 004EE4D0@004EE5B8	apply	unchanged	exact call-site ABI already present
 004F5690@004F70EB	apply	unchanged	exact call-site ABI already present
 004F96A0@004F9AEE	apply	unchanged	exact call-site ABI already present
@@ -263,6 +711,7 @@ target	action	status	detail
 005397F0@005399A0	apply	unchanged	exact call-site ABI already present
 0053E760@0053E839	apply	unchanged	exact call-site ABI already present
 005449B0@005464BF	apply	unchanged	exact call-site ABI already present
+0054C740@0054C7E3	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 0055BEB0@0055BEED	apply	unchanged	exact call-site ABI already present
 0055C500@0055C537	apply	unchanged	exact call-site ABI already present
 0055C550@0055C576	apply	unchanged	exact call-site ABI already present
@@ -272,6 +721,9 @@ target	action	status	detail
 0055C7E0@0055C816	apply	unchanged	exact call-site ABI already present
 0055C830@0055CFF8	apply	unchanged	exact call-site ABI already present
 0056CBD0@0056CEC0	apply	unchanged	exact call-site ABI already present
+0056DB80@0056E534	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0056FA60@00570C55	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0056FA60@00570C7A	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 005776D0@00577EF8	apply	unchanged	exact call-site ABI already present
 0057A2C0@0057A86C	apply	unchanged	exact call-site ABI already present
 0057A2C0@0057A982	apply	unchanged	exact call-site ABI already present
@@ -312,23 +764,31 @@ target	action	status	detail
 005C1A90@005C1C06	apply	unchanged	exact call-site ABI already present
 005C1A90@005C1C36	apply	unchanged	exact call-site ABI already present
 005C29B0@005C42BF	apply	unchanged	exact call-site ABI already present
+005C7800@005C784A	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+005C8200@005C85F3	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+005C8200@005C8678	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 005CE0E0@005CE379	apply	unchanged	exact call-site ABI already present
 005CE0E0@005CEA4B	apply	unchanged	exact call-site ABI already present
 005CE0E0@005CEDE7	apply	unchanged	exact call-site ABI already present
 005CE0E0@005CEE09	apply	unchanged	exact call-site ABI already present
 005CE0E0@005CEE22	apply	unchanged	exact call-site ABI already present
 005CE0E0@005CF38A	apply	unchanged	exact call-site ABI already present
+005D5160@005D5431	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+005D5560@005D5DBE	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 005D9470@005D9847	apply	unchanged	exact call-site ABI already present
 005E84D0@005E91FF	apply	unchanged	exact call-site ABI already present
 005E84D0@005E9293	apply	unchanged	exact call-site ABI already present
 005EBD80@005EC02D	apply	unchanged	exact call-site ABI already present
 005EBD80@005EC043	apply	unchanged	exact call-site ABI already present
 005EC6A0@005EC70F	apply	unchanged	exact call-site ABI already present
+005EDA50@005EDB11	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 005F05A0@005F05EF	apply	unchanged	exact call-site ABI already present
 005F0620@005F0690	apply	unchanged	exact call-site ABI already present
 005F06E0@005F0750	apply	unchanged	exact call-site ABI already present
+005F07A0@005F0883	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 005F0D00@005F0D68	apply	unchanged	exact call-site ABI already present
 005F0D90@005F0DF8	apply	unchanged	exact call-site ABI already present
+005FA8B0@005FA937	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 005FC4A0@005FC74D	apply	unchanged	exact call-site ABI already present
 005FC4A0@005FC763	apply	unchanged	exact call-site ABI already present
 005FCEB0@005FCF1B	apply	unchanged	exact call-site ABI already present
@@ -339,6 +799,13 @@ target	action	status	detail
 00601500@00601853	apply	unchanged	exact call-site ABI already present
 00601500@0060188B	apply	unchanged	exact call-site ABI already present
 00601500@00601A82	apply	unchanged	exact call-site ABI already present
+0060AEF0@0060B154	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0060AEF0@0060B16F	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0060AEF0@0060B2E5	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0060AEF0@0060B308	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0060AEF0@0060B389	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0060AEF0@0060B49E	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+0060AEF0@0060B61B	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 0060C320@0060C4F0	apply	unchanged	exact call-site ABI already present
 0060C320@0060C60C	apply	unchanged	exact call-site ABI already present
 0060C320@0060C62C	apply	unchanged	exact call-site ABI already present
@@ -354,15 +821,19 @@ target	action	status	detail
 0061CA90@0061CC76	apply	unchanged	exact call-site ABI already present
 0061CA90@0061CD78	apply	unchanged	exact call-site ABI already present
 00625730@006259D6	apply	unchanged	exact call-site ABI already present
+00625730@00625B8A	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00625730@00625CE3	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00625730@00625F13	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00625730@0062605C	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 006264D0@00626896	apply	unchanged	exact call-site ABI already present
+00627400@0062758D	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 00627700@00627768	apply	unchanged	exact call-site ABI already present
 00627790@00627816	apply	unchanged	exact call-site ABI already present
+0062AF90@0062B19D	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 00637350@0063751B	apply	unchanged	exact call-site ABI already present
 00637350@00637610	apply	unchanged	exact call-site ABI already present
 00637350@0063767C	apply	unchanged	exact call-site ABI already present
 006383E0@006385EE	apply	unchanged	exact call-site ABI already present
-00644410@006447C2	apply	unchanged	exact call-site ABI already present
-00644410@00644D35	apply	unchanged	exact call-site ABI already present
 00648030@006481BC	apply	unchanged	exact call-site ABI already present
 0064A970@0064ACD7	apply	unchanged	exact call-site ABI already present
 0064A970@0064ACE0	apply	unchanged	exact call-site ABI already present
@@ -383,10 +854,10 @@ target	action	status	detail
 0065DD30@0065DDCC	apply	unchanged	exact call-site ABI already present
 0065E070@0065E133	apply	unchanged	exact call-site ABI already present
 0065E3B0@0065E400	apply	unchanged	exact call-site ABI already present
+0065FE10@0065FF66	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+00660180@006602A8	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 0066ACC0@0066AF08	apply	unchanged	exact call-site ABI already present
 0066ACC0@0066B114	apply	unchanged	exact call-site ABI already present
-0066ACC0@0066B3D7	apply	unchanged	exact call-site ABI already present
-0066ACC0@0066B4B3	apply	unchanged	exact call-site ABI already present
 0066ACC0@0066B532	apply	unchanged	exact call-site ABI already present
 0066ACC0@0066B53E	apply	unchanged	exact call-site ABI already present
 0066ACC0@0066B556	apply	unchanged	exact call-site ABI already present
@@ -513,13 +984,16 @@ target	action	status	detail
 00671F10@006720CA	apply	unchanged	exact call-site ABI already present
 00671F10@00672201	apply	unchanged	exact call-site ABI already present
 00675B10@00675C12	apply	unchanged	exact call-site ABI already present
-00677BE0@00677C6F	apply	unchanged	exact call-site ABI already present
-00677BE0@00677C8F	apply	unchanged	exact call-site ABI already present
 0067C7E0@0067C8B4	apply	unchanged	exact call-site ABI already present
 0067C7E0@0067C9DD	apply	unchanged	exact call-site ABI already present
+006E3DD0@006E3FE4	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+006E3DD0@006E402B	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 006E4960@006E4A6A	apply	unchanged	exact call-site ABI already present
 006E4960@006E4AED	apply	unchanged	exact call-site ABI already present
 006E4FC0@006E512D	apply	unchanged	exact call-site ABI already present
+006E5970@006E59E5	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+006E5970@006E59F3	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
+006E5970@006E5B95	apply	presented	Ghidra retained raw syntax; use-site override rolled back and exact address-stable structural presentation retained
 006E5D90@006E5DE7	apply	unchanged	exact call-site ABI already present
 006E5D90@006E5E7C	apply	unchanged	exact call-site ABI already present
 0071F3A0@0071F655	apply	unchanged	exact call-site ABI already present

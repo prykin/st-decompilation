@@ -1,12 +1,13 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __thiscall FUN_005f09b0(void *this,AnonShape_005EFAE0_B406B78B *param_1)
+undefined4 __thiscall FUN_005f09b0(void *this,RecoveredRecordView_005EFAE0_855D930D *param_1)
 
 {
   uint uVar1;
   uVar1 = 0;
-  if ((STField<char>(this,0x24f) == '\0') && (param_1 != nullptr)) {
+  if ((STField<char>(this,0x24f) == '\0') &&
+     (param_1 != nullptr)) {
     STField<undefined4>(this,0x2a7) = param_1->field_0018;
     STField<undefined2>(this,0x2ab) = param_1->field_0032;
     STField<undefined4>(this,0x2a3) = param_1->field_0024;

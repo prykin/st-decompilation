@@ -36,9 +36,11 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\Start\\load_obj.cpp",0x1bb,0,errorCode,
                                "%s","ChooseMapTy::PaintChooseMap");
     if (iVar4 != 0) {
@@ -72,7 +74,7 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
     /* ST_CALLSITE[005AD199]: CALL 0x00403b61; direct=00403B61 ChatGlassTy::OutChGlProc */
     ChatGlassTy::OutChGlProc
               ((ChatGlassTy *)g_dDXContext_0080759C,
-               (AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,0,0,200,0x1f1,400,0x62,
+               (RecoveredGlobalRecordView_00854EB8 *)g_dDXContext_0080759C,0,0,200,0x1f1,400,0x62,
                (undefined4 *)(pCVar3->array_00BC[0xc].field_01DB + 0x140));
   }
   switch(pCVar3->array_00BC[0xc].field_01DF) {

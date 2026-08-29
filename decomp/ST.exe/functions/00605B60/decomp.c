@@ -20,8 +20,8 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
   char in_stack_00000020;
   int local_ec [20];
   STMessage local_9c;
-  undefined4 local_7c;
-  undefined4 local_78 [5];
+  uint local_7c;
+  uint local_78 [5];
   uint local_64;
   int local_5c;
   uint local_58;
@@ -30,7 +30,7 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
   int local_4c;
   uint local_48;
   int local_44;
-  undefined4 local_40;
+  uint local_40;
   byte local_37;
   int local_36;
   int local_30;
@@ -38,7 +38,7 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
   uint local_28; /* propagated scalar-only SSA alias */
   int local_24;
   uint local_20;
-  undefined4 local_1c;
+  uint local_1c;
   uint local_18;
   int local_14;
   undefined4 *local_10;
@@ -54,7 +54,9 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
   local_18 = param_2 & 0xffff;
   uVar1 = param_2 >> 0x10;
   local_20 = param_1 >> 0x10;
+
   local_2c = FUN_006acf0d(local_20,uVar1,uVar5,param_1 & 0xffff,local_18,local_c);
+
   thunk_FUN_00606fd0(param_4,&local_30,&local_7c,&local_1c,&local_14);
   if (param_4 == 0x15) {
     local_7c = 0;
@@ -65,7 +67,7 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
   piVar8 = ((uVar4 >> 0x10) % (local_30 - 1U) + 2);
   local_28 = piVar8;
   /* ST_CALLSITE[00605C27]: CALL 0x00403d8c; direct=00403D8C STExplosionC::CreateGroupPart */
-  piVar2 = (int *)STExplosionC::CreateGroupPart(this,(int)piVar8);
+  piVar2 = STPointerBoundaryCast<int *>(STExplosionC::CreateGroupPart(this,(int)piVar8));
   STField<int *>(this,0x269) = piVar2;
   if (piVar2 == piVar8) {
     if (0 < (int)piVar8) {
@@ -124,13 +126,16 @@ int __thiscall FUN_00605b60(void *this,uint param_1,uint param_2,int *param_3,in
         }
         local_36 = iVar6;
         if (local_2c != 0) {
+
           local_4c = FUN_006c82a3((void *)local_64,(int)((uVar5 - local_c) * 10000) / local_2c);
+
           uVar4 = FUN_006aff5b(local_4c);
           this_00 = (void *)((int)(uVar4 * iVar7) / 10000);
           if (this_00 == nullptr) {
             local_48 = 0;
           }
           else {
+
             local_48 = FUN_006c8290(this_00,(int)((uVar1 - local_18) * 10000) / (int)this_00);
           }
         }

@@ -27,10 +27,12 @@ void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
     if (g_cMf32_00806758 != nullptr) {
-      pDVar4 = (DArrayTy *)Library::Ourlib::MFDARR::mfDarLoad(g_cMf32_00806758,param_1,0);
+      /* ST_CALLSITE[004F9D17]: CALL 0x00715050; direct=00715050 Library::Ourlib::MFDARR::mfDarLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__cdecl;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/cMf32;pointer:/char;/int */
+      pDVar4 = Library::Ourlib::MFDARR::mfDarLoad(g_cMf32_00806758,param_1,0);
       if (pDVar4 != nullptr) {
         Library::MSVCRT::_strncpy(&DAT_0080c4d7,param_1,0x1f);
         pCVar3 = local_8;
@@ -48,7 +50,8 @@ void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
         psVar9 = (short *)0x1;
         bVar8 = 0;
         bVar7 = 6;
-        pcVar5 = (char *)thunk_FUN_005260b0(0,0,0);
+        /* ST_CALLSITE[004F9D8F]: CALL 0x004036a2; direct=004036A2 thunk_FUN_005260b0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;/int;/undefined1;/int */
+        pcVar5 = thunk_FUN_005260b0(0,0,0);
         psVar9 = Library::Ourlib::MFIMG::mfQmtLoad(g_cMf32_00806790,pcVar5,bVar7,bVar8,psVar9);
         *ppsVar1 = psVar9;
         pCVar3->field_0260 = CASE_1;
@@ -57,6 +60,7 @@ void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
         if ((DAT_0080c4f7 != 3) && (DAT_0080c4f7 != 1)) {
           pCVar3->field_0260 = CASE_3;
           DAT_0080c4f7 = 3;
+
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,pCVar3->field_017C);
         }
       }
@@ -65,6 +69,7 @@ void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel.cpp",0x3c8,0,errorCode,
                              "%s","CPanelTy::PlayBriefing");
   if (iVar6 != 0) {

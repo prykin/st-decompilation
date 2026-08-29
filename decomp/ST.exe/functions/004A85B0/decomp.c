@@ -20,20 +20,20 @@ void __thiscall STGroupBoatC::StartReceiveOrderSound(STGroupBoatC *this)
   int iVar4;
   uint index;
   uint uVar5;
-  undefined1 local_8 [4];
-
+  byte local_8 [4];
   uVar5 = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar1 = *(uint *)(this->field_0029 + 0xc);
+  uVar1 = this->field_0029->count;
   if (uVar1 != 0) {
     index = 0;
     do {
-      DArrayGetElement((DArrayTy *)this->field_0029,index,local_8);
+
+      DArrayGetElement(this->field_0029,index,local_8);
       if (STPiece<0,2>(local_8) != 0xffff) {
-        /* ST_CALLSITE[004A85F2]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
+        /* ST_CALLSITE[004A85F2]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/CallableReceivers/CallableReceiver_00493D10_P0; source view only; no Ghidra override */
         pSVar3 = STAllPlayersC::GetObjPtr
                            (g_allPlayers_007FA174,this->field_0024,STPiece<0,2>(local_8),CASE_1);
         if (pSVar3 == nullptr) {
+
           iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x172d,0,0,
                                      "%s","STGroupBoatC::StartReceiveOrderSound NULL");
           if (iVar4 != 0) {

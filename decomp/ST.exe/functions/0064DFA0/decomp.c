@@ -33,6 +33,7 @@ AiEventClassTy::_CreateMine
   local_24 = (uint)param_6;
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
+
   local_EAX_64 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   if (local_EAX_64 == 0) {
     if (g_allPlayers_007FA174 != nullptr) {
@@ -46,6 +47,7 @@ AiEventClassTy::_CreateMine
         local_c = param_3;
         local_8 = param_4;
         local_10 = param_5;
+
         iVar3 = thunk_FUN_004961b0((short)param_3,(short)param_4,(short)param_5);
         if (iVar3 == 0) {
           local_20[0] = 3;
@@ -58,6 +60,7 @@ AiEventClassTy::_CreateMine
           local_c = local_14 + 1;
           local_8 = local_18 + 1;
         }
+
         iVar5 = thunk_FUN_00675950(local_c,local_8,(short)local_10,(short *)&local_c,
                                    (short *)&local_8,(short *)&local_10,1);
         if (iVar5 != 0) {
@@ -75,6 +78,7 @@ AiEventClassTy::_CreateMine
     return local_28;
   }
   g_currentExceptionFrame = local_6c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0x169,0,local_EAX_64,
                              "%s","AiEventClassTy::_CreateMine");
   if (iVar4 != 0) {

@@ -62,7 +62,8 @@ void FUN_005335e0(void)
       pcVar9 = (char *)((int)puVar2 + 0xd);
       memmove(pcVar9, pcVar7, uVar4); /* compiler REP MOVS byte copy */
       uVar5 = 0;
-      thunk_FUN_0054edf0((undefined4 *)0x32,local_c,1,local_10);
+      /* ST_CALLSITE[005336A4]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+      STPlaySystemC::sub_0054EDF0(g_playSystem_00802A38,(undefined4 *)0x32,local_c,1,local_10);
       FreeAndNull(&local_c);
     }
   }
@@ -186,9 +187,8 @@ void FUN_005335e0(void)
   }
   local_8[10] = 0xc001;
   local_8[0xd] = 0;
-  /* ST_CALLSITE[005336CB]: CALL dword ptr [EAX] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)*local_8)(local_8 + 6);
+  /* ST_CALLSITE[005336CB]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
+  STStructuralVirtualCall<undefined4>(local_8, 0x0, local_8 + 6);
   g_currentExceptionFrame = local_54.previous;
   return;
 }

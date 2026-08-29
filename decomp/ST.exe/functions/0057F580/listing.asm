@@ -6,12 +6,12 @@ STDcResourcC::Init:
 0057F587  56                        PUSH ESI
 0057F588  8B D9                     MOV EBX,ECX
 0057F58A  6A 40                     PUSH 0x40
-0057F58C  E8 9F EF 1A 00            CALL 0x0072e530
+0057F58C  E8 9F EF 1A 00            CALL 0x0072e530  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STT3DSprC; source view only; no Ghidra override
 0057F591  83 C4 04                  ADD ESP,0x4
 0057F594  85 C0                     TEST EAX,EAX
 0057F596  74 10                     JZ 0x0057f5a8
 0057F598  8B C8                     MOV ECX,EAX
-0057F59A  E8 77 1D E8 FF            CALL 0x00401316
+0057F59A  E8 77 1D E8 FF            CALL 0x00401316  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/HoloTy; source view only; no Ghidra override
 0057F59F  8B F0                     MOV ESI,EAX
 0057F5A1  85 F6                     TEST ESI,ESI
 0057F5A3  89 75 F8                  MOV dword ptr [EBP + -0x8],ESI

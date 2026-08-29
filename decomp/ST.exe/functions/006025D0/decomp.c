@@ -21,6 +21,7 @@ byte * __thiscall STDestC::sub_006025D0(STDestC *this,undefined4 *param_1)
   byte *pbVar4;
 
   if (this->field_036E != CASE_3) {
+    /* ST_CALLSITE[006025EB]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/byte; source view only; no Ghidra override */
     pbVar1 = Library::DKW::LIB::MemAlloc(0x17e);
     if (this->field_036E == CASE_2) {
       this->field_036E = (uint)(this->field_039F < '\x01');

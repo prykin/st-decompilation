@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
+void __fastcall FUN_00585020(RecoveredRecordView_00585020_EFC427BB *param_1)
 
 {
   int iVar1;
@@ -32,13 +32,17 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
   sVar7 = STBiasedDiv16(sVar7, 200); /* exact signed 16-bit grid-index division */
   param_1->field_004B = sVar7;
   param_1->field_005F = sVar7;
-  iVar4 = thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)param_1);
+
+  iVar4 = thunk_FUN_0041c710((RecoveredRecordView_0041C710_A35B7121 *)param_1);
   this = &param_1->field_0x1d5;
   if (iVar4 == 0) {
     iVar4 = 0;
+
     uVar5 = thunk_FUN_004ad650((STT3DSprC *)this);
+
     Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar5,iVar4);
-    iVar3 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)param_1);
+
+    iVar3 = thunk_FUN_0041caf0((RecoveredRecordView_0041CAF0_18493751 *)param_1);
     if (iVar3 == 1) {
       iVar4 = 1;
     }
@@ -48,10 +52,13 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
   }
   else {
     iVar4 = 1;
+
     uVar5 = thunk_FUN_004ad650((STT3DSprC *)this);
+
     Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar5,iVar4);
     iVar4 = 1;
   }
+
   iVar5 = thunk_FUN_004ad650((STT3DSprC *)this);
   FUN_006e6870(param_1->field_0211,iVar5,iVar4);
   sVar7 = param_1->field_0041;
@@ -78,6 +85,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
   if (iVar8 == 0) {
     iVar6 = g_playSystem_00802A38->field_00E4 - param_1->field_023D;
     iVar4 = (param_1->field_024D * iVar6 * iVar6) / 22000;
+
     if ((local_14 < 5) && (iVar7 = thunk_FUN_004961b0(local_10,local_8,sVar7), iVar7 == 0)) {
       if ((((-1 < local_10) &&
            (((local_10 < g_worldGrid.sizeX && (-1 < local_8)) && (local_8 < g_worldGrid.sizeY)))) &&
@@ -89,7 +97,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
                            0x464);
       }
       param_1->field_0231 = 2;
-      thunk_FUN_00584b10((AnonShape_00584B10_33997544 *)param_1);
+      thunk_FUN_00584b10((RecoveredRecordView_00584B10_465CC529 *)param_1);
       return;
     }
     iVar8 = DAT_007cb8e4 >> 1;
@@ -131,9 +139,8 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
                    *(uint *)&param_1->field_0x24,(undefined *)0x5,500);
       }
       param_1->field_0231 = 1;
-      /* ST_CALLSITE[00585699]: CALL dword ptr [EAX + 0xd8] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(*(int *)param_1 + 0xd8))();
+      /* ST_CALLSITE[00585699]: CALL dword ptr [EAX + 0xd8]; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+      STStructuralVirtualCall<undefined4>(param_1, 0xD8);
       return;
     }
     uVar5 = (uint)(ushort)(param_1->field_0249 + sVar7 + param_1->field_0045);
@@ -143,6 +150,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
       if (iVar8 != 2) {
         return;
       }
+
       uVar5 = thunk_FUN_004ac910(this,'\b');
       if ((param_1->field_0255 != '\0') && (uVar5 == param_1->field_0256)) {
         /* ST_CALLSITE[00585231]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
@@ -164,6 +172,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
       if (param_1->field_0255 != '\0') {
         /* ST_CALLSITE[0058527B]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
         iVar4 = STT3DSprC::sub_004ACD30((STT3DSprC *)this,'\t');
+
         iVar6 = thunk_FUN_004ac910(this,'\t');
         if (iVar6 == iVar4 + -1) {
           /* ST_CALLSITE[00585294]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
@@ -174,12 +183,12 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
       /* ST_CALLSITE[005852A7]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar4 = STT3DSprC::sub_004ACD30((STT3DSprC *)this,'\b');
       if ((uVar5 == iVar4 - 1U) && (param_1->field_0255 == '\0')) {
-        thunk_FUN_00584ad0(param_1);
+
+        thunk_FUN_00584ad0((RecoveredRecord_00584AD0_6EDDB383 *)param_1);
         return;
       }
-      /* ST_CALLSITE[005852CD]: CALL dword ptr [EDX + 0xd8] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(*(int *)param_1 + 0xd8))();
+      /* ST_CALLSITE[005852CD]: CALL dword ptr [EDX + 0xd8]; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+      STStructuralVirtualCall<undefined4>(param_1, 0xD8);
       return;
     }
     iVar8 = g_playSystem_00802A38->field_00E4 - param_1->field_023D;
@@ -192,6 +201,7 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
       param_1->field_0241 = 0;
       /* ST_CALLSITE[00585354]: CALL 0x0040116d; direct=0040116D STT3DSprC::sub_004ACE30 */
       STT3DSprC::sub_004ACE30((STT3DSprC *)this,0,0);
+
       thunk_FUN_004aceb0(this,'\x0e');
     }
     else {
@@ -203,10 +213,11 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
     }
     uVar5 = (int)param_1->field_0045 - 5;
     if ((param_1->field_0045 < 0x44c) && (0x1b < (int)(param_1->field_0235 - uVar5))) {
-      thunk_FUN_00584d10((AnonShape_00584D10_AA6E9D03 *)param_1);
+      thunk_FUN_00584d10((RecoveredRecordView_00584D10_FD6C656C *)param_1);
       param_1->field_0235 = uVar5;
     }
     if ((local_14 < 5) &&
+
        (local_EAX_906 = thunk_FUN_004961b0(local_10,local_8,sVar7), local_EAX_906 == 0)) {
       if (((-1 < local_10) &&
           ((((local_10 < g_worldGrid.sizeX && (-1 < local_8)) && (local_8 < g_worldGrid.sizeY)) &&
@@ -216,14 +227,13 @@ void __fastcall FUN_00585020(AnonShape_00585020_1C9B1418 *param_1)
         thunk_FUN_00584c50(param_1,&pSVar2->vtable);
       }
       param_1->field_0231 = 2;
-      thunk_FUN_00584b10((AnonShape_00584B10_33997544 *)param_1);
+      thunk_FUN_00584b10((RecoveredRecordView_00584B10_465CC529 *)param_1);
     }
   }
   /* ST_CALLSITE[005856C1]: CALL 0x00403107; direct=00403107 sub_00416240 */
   sub_00416240(param_1,param_1->field_0041,param_1->field_0043,(ushort)uVar5);
-  /* ST_CALLSITE[005856CA]: CALL dword ptr [EAX + 0xd8] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)(*(int *)param_1 + 0xd8))();
+  /* ST_CALLSITE[005856CA]: CALL dword ptr [EAX + 0xd8]; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+  STStructuralVirtualCall<undefined4>(param_1, 0xD8);
   return;
 }
 

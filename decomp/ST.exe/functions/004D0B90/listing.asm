@@ -126,7 +126,7 @@ LAB_004d0cfa:
 004D0D1A  8D 14 40                  LEA EDX,[EAX + EAX*0x2]
 004D0D1D  C1 E2 02                  SHL EDX,0x2
 004D0D20  52                        PUSH EDX
-004D0D21  E8 4A 9F 1D 00            CALL 0x006aac70
+004D0D21  E8 4A 9F 1D 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 004D0D26  8B 55 FC                  MOV EDX,dword ptr [EBP + -0x4]
 004D0D29  89 83 4D 02 00 00         MOV dword ptr [EBX + 0x24d],EAX
 LAB_004d0d2f:

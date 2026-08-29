@@ -37,7 +37,7 @@ CursorClassTy::SetGCType
   int iVar7;
   InternalExceptionFrame local_58;
   CursorClassTy *local_14;
-  undefined4 local_10;
+  uint local_10;
   BITMAPINFO *local_c;
   uint local_8;
 

@@ -19,9 +19,11 @@ int FUN_004e6a80(byte *param_1,int param_2)
   if (*pbVar1 != 0) {
     while (iVar4 < 3) {
       if (iVar4 == 0) {
-        iVar3 = thunk_FUN_004e6010((int)param_1,(uint)*pbVar1);
+
+        iVar3 = thunk_FUN_004e6010(param_1,(uint)*pbVar1);
       }
       else {
+
         iVar3 = thunk_FUN_004e60d0((int)param_1,(uint)pbVar1[iVar4]);
       }
       if (iVar3 == 0) {

@@ -20,9 +20,8 @@ st::fn_006E6100
           (SystemWithNamedObjClassTy *this,AppClassTy *param_1,undefined4 param_2)
 
 {
-  st::fn_006E51C0((SystemClassTy *)this,param_1,param_2);
+  st::fn_006E51C0(reinterpret_cast<SystemClassTy *>(this),param_1,param_2);
   this->vtable = &st_global_0079E1B4;
   this->field_0020 = 1;
   return this;
 }
-

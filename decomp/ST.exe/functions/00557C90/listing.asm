@@ -38,7 +38,7 @@ LAB_00557cf4:
 00557D00  56                        PUSH ESI
 00557D01  6A 01                     PUSH 0x1
 00557D03  51                        PUSH ECX
-00557D04  E8 F7 AE 19 00            CALL 0x006f2c00
+00557D04  E8 F7 AE 19 00            CALL 0x006f2c00  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 00557D09  8B 15 70 67 80 00         MOV EDX,dword ptr [0x00806770]
 00557D0F  83 C4 0C                  ADD ESP,0xc
 00557D12  50                        PUSH EAX
@@ -73,7 +73,7 @@ LAB_00557d45:
 00557D70  56                        PUSH ESI
 00557D71  6A 01                     PUSH 0x1
 00557D73  51                        PUSH ECX
-00557D74  E8 87 AE 19 00            CALL 0x006f2c00
+00557D74  E8 87 AE 19 00            CALL 0x006f2c00  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 00557D79  8B 15 70 67 80 00         MOV EDX,dword ptr [0x00806770]
 00557D7F  83 C4 0C                  ADD ESP,0xc
 00557D82  50                        PUSH EAX

@@ -49,7 +49,7 @@ LAB_0061d906:
 0061D967  8D 44 0A 04               LEA EAX,[EDX + ECX*0x1 + 0x4]
 0061D96B  50                        PUSH EAX
 0061D96C  6A 00                     PUSH 0x0
-0061D96E  E8 ED 26 09 00            CALL 0x006b0060
+0061D96E  E8 ED 26 09 00            CALL 0x006b0060  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STLightC_field_00A3DArray; source view only; no Ghidra override
 0061D973  5F                        POP EDI
 0061D974  89 83 A3 00 00 00         MOV dword ptr [EBX + 0xa3],EAX
 0061D97A  8B 45 F8                  MOV EAX,dword ptr [EBP + -0x8]

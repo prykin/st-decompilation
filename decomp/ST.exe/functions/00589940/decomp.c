@@ -13,7 +13,8 @@ void * __cdecl FUN_00589940(void)
 {
   STMBombC *pSVar1;
 
-  pSVar1 = (STMBombC *)FUN_006b04d0(0x2a6);
+  /* ST_CALLSITE[00589945]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STMBombC; signature=__stdcall;pointer:/STMBombC;/uint */
+  pSVar1 = FUN_006b04d0(0x2a6);
   if (pSVar1 != nullptr) {
     pSVar1 = STMBombC::STMBombC(pSVar1);
     return pSVar1;

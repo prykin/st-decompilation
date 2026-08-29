@@ -34,7 +34,7 @@ STBoatC::GetExplosionInfo
   InternalExceptionFrame local_80;
   uint local_3c;
   int local_38;
-  undefined4 local_34;
+  uint local_34;
   ushort local_30;
   uint local_2c;
   uint local_28;
@@ -51,10 +51,12 @@ STBoatC::GetExplosionInfo
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_24 = this;
+
   local_EAX_54 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   pSVar3 = local_24;
   if (local_EAX_54 != 0) {
     g_currentExceptionFrame = local_80.previous;
+
     iVar9 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3d5f,0,local_EAX_54,
                                "%s","STBoatC::GetExplosionInfo");
     if (iVar9 == 0) {
@@ -69,12 +71,14 @@ STBoatC::GetExplosionInfo
               (-0x5001fff5,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
                0x3d4f);
   }
+
   iVar3 = DArrayGetElement((DArrayTy *)(&pSVar3->field_0282)[iVar10],local_28,&local_34);
   if (iVar3 == -4) {
     RaiseInternalException
               (-0x5001fff5,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\To_boat.cpp",
                0x3d50);
   }
+
   thunk_FUN_0041dc40(&local_3c,(short)local_34,local_30,pSVar3->field_006C);
   puVar4 = &local_3c;
   uVar9 = *puVar4;

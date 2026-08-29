@@ -18,16 +18,17 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
   uint uVar6;
   InternalExceptionFrame local_50;
   STMineSetC *local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   local_EAX_41 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pSVar2 = local_c;
   if (local_EAX_41 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\nick\\to_mine_set.cpp",0x2df,0,local_EAX_41,
                                "%s","STMineSetC::LoadImagMineSet");
     if (iVar4 != 0) {
@@ -37,6 +38,7 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
     return 0xffff;
   }
   this_00 = &local_c->field_01D5;
+
   iVar3 = thunk_FUN_004ad650((STT3DSprC *)this_00);
   pSVar2->field_02BA = iVar3;
   if (param_1 == 0) {
@@ -48,6 +50,7 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
       return local_8;
     }
     thunk_FUN_004ad380(this_00,0x5a,0x45);
+
     thunk_FUN_004ac610(this_00,'\x0e');
     /* ST_CALLSITE[0062321C]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\x0e',pSVar2->field_02CE);
@@ -69,6 +72,7 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
       }
       /* ST_CALLSITE[0062329E]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
       STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\f',pSVar2->field_02CE);
+
       thunk_FUN_004ac610(this_00,'\f');
       /* ST_CALLSITE[006232B0]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
       STT3DSprC::ShowCurFase((STT3DSprC *)this_00,'\f');
@@ -88,6 +92,7 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
     if (iVar5 != 0) {
       return local_8;
     }
+
     thunk_FUN_004ac610(this_00,'\x0e');
     /* ST_CALLSITE[00623331]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\x0e',pSVar2->field_02CE);
@@ -102,6 +107,7 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
     if (iVar5 != 0) {
       return local_8;
     }
+
     thunk_FUN_004ac610(this_00,'\n');
     /* ST_CALLSITE[0062339A]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\n',pSVar2->field_02E1);
@@ -121,6 +127,7 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
     if (iVar5 != 0) {
       return local_8;
     }
+
     thunk_FUN_004ac610(this_00,'\t');
     /* ST_CALLSITE[00623422]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\t',pSVar2->field_02DB);

@@ -8,7 +8,7 @@
    [STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT.
    Evidence: exact anonymous structure fingerprint shared across functions */
 
-void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
+void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,RecoveredRecord_005A2A60_B7FE2E93 *param_1)
 
 {
   byte bVar1;
@@ -17,12 +17,12 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
   int iVar5;
   int iVar4;
   uint uVar6;
-  byte *pbVar7;
+  RecoveredRecord_005A2A60_B7FE2E93 *pRVar7;
   char *pcVar8;
   bool bVar9;
   InternalExceptionFrame local_54;
   uint local_10;
-  AnonShape_00413AF0_B6B4EE9A *local_c;
+  RecoveredRecordView_00413AF0_B98DB3AE *local_c;
   FSGSTy *local_8;
 
   if (((this->array_00BC[0xc].field_01DF == '\x06') && (this->array_00BC[0xc].field_01E0 == '\0'))
@@ -30,10 +30,11 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_8 = this;
+
     iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
     if (iVar3 == 0) {
       uVar6 = 0;
-      local_c = (AnonShape_00413AF0_B6B4EE9A *)local_8->field_1EA6;
+      local_c = (RecoveredRecordView_00413AF0_B98DB3AE *)local_8->field_1EA6;
       local_10 = ((FSGSTy_field_1EA6DArray *)local_c)->count;
       if (local_10 != 0) {
         if (local_10 == 0) {
@@ -46,27 +47,27 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
                    ((FSGSTy_field_1EA6DArray *)local_c)->elementSize * uVar6;
 LAB_005a2aea:
           pcVar3 = pcVar8;
-          pbVar7 = param_1;
+          pRVar7 = param_1;
           if (pcVar8 != nullptr) {
             do {
               bVar1 = *pcVar3;
-              bVar9 = bVar1 < *pbVar7;
-              if (bVar1 != *pbVar7) {
+              bVar9 = bVar1 < *(byte *)pRVar7;
+              if (bVar1 != *(byte *)pRVar7) {
 LAB_005a2b17:
                 iVar5 = (1 - (uint)bVar9) - (uint)(bVar9 != 0);
                 goto LAB_005a2b1c;
               }
               if (bVar1 == 0) break;
               bVar1 = pcVar3[1];
-              bVar9 = bVar1 < pbVar7[1];
-              if (bVar1 != pbVar7[1]) goto LAB_005a2b17;
+              bVar9 = bVar1 < (byte)pRVar7->field_0x1;
+              if (bVar1 != pRVar7->field_0x1) goto LAB_005a2b17;
               pcVar3 = pcVar3 + 2;
-              pbVar7 = pbVar7 + 2;
+              pRVar7 = (RecoveredRecord_005A2A60_B7FE2E93 *)&pRVar7->field_0x2;
             } while (bVar1 != 0);
             iVar5 = 0;
 LAB_005a2b1c:
             if (iVar5 == 0) {
-              *(undefined4 *)(pcVar8 + 0x25) = *(undefined4 *)(param_1 + 0x25);
+              *(byte **)(pcVar8 + 0x25) = param_1->field_0025;
               break;
             }
           }
@@ -79,6 +80,7 @@ LAB_005a2b1c:
       return;
     }
     g_currentExceptionFrame = local_54.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xa50,0,iVar3,"%s"
                                ,"FSGSTy::ChangePlayer");
     if (iVar4 != 0) {

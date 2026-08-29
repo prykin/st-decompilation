@@ -62,7 +62,7 @@ LAB_005b2a30:
 005B2A34  57                        PUSH EDI
 005B2A35  6A 02                     PUSH 0x2
 005B2A37  68 38 C9 7C 00            PUSH 0x7cc938
-005B2A3C  E8 BF 01 14 00            CALL 0x006f2c00
+005B2A3C  E8 BF 01 14 00            CALL 0x006f2c00  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 005B2A41  83 C4 0C                  ADD ESP,0xc
 005B2A44  50                        PUSH EAX
 005B2A45  A1 80 67 80 00            MOV EAX,[0x00806780]

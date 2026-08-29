@@ -22,19 +22,18 @@
 
 void __cdecl
 FUN_0062b680(ushort param_1,ushort param_2,ushort param_3,ushort param_4,ushort param_5,
-            ushort param_6,undefined4 param_7,int param_8)
+            ushort param_6,undefined4 param_7,RecoveredRecord_0062B680_56737E74 *param_8)
 
 {
-  undefined4 local_44 [6];
-  undefined4 local_2c;
-  undefined4 local_28;
-  undefined4 local_24;
-  undefined4 local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-
+  uint local_44 [6];
+  uint local_2c;
+  uint local_28;
+  uint local_24;
+  uint local_20;
+  uint local_1c;
+  uint local_18;
+  uint local_14;
+  uint local_10;
   memset(local_44, 0, 0x40); /* compiler bulk-zero initialization */
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_28 = CONCAT22(param_1,param_4);
@@ -43,10 +42,8 @@ FUN_0062b680(ushort param_1,ushort param_2,ushort param_3,ushort param_4,ushort 
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_20 = CONCAT22(param_3,param_6);
   local_1c = param_7;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_18 = *(undefined4 *)(param_8 + 0x18);
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_14 = *(undefined4 *)(param_8 + 0x24);
+  local_18 = param_8->field_0018;
+  local_14 = param_8->field_0024;
   local_44[0] = 0xd2;
   local_44[1] = 0xff;
   local_44[2] = 0;
@@ -54,7 +51,7 @@ FUN_0062b680(ushort param_1,ushort param_2,ushort param_3,ushort param_4,ushort 
   local_2c = 3;
   local_10 = 0;
   /* ST_CALLSITE[0062B728]: CALL dword ptr [EAX + 0x8] */
-  g_playSystem_00802A38->vfunc_08(0x124,0,0,(short)local_44,0);
+  g_playSystem_00802A38->vfunc_8(0x124,nullptr,nullptr,(short)local_44,0);
   return;
 }
 

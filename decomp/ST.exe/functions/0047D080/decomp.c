@@ -44,16 +44,16 @@ int __thiscall STBoatC::Annih(STBoatC *this,uint param_1)
   short sVar21;
   byte bVar22;
   STMessage local_64;
-  undefined4 local_44;
-  undefined4 local_40;
-  undefined4 local_3c;
-  undefined4 local_30;
-  undefined4 local_2c;
-  undefined4 local_28 [2];
+  uint local_44;
+  uint local_40;
+  uint local_3c;
+  uint local_30;
+  uint local_2c;
+  uint local_28 [2];
   uint local_20;
   short local_1c;
   int local_18;
-  undefined4 local_14;
+  uint local_14;
   int local_10;
   int local_c;
   int local_8;
@@ -104,11 +104,12 @@ LAB_0047d831:
       this->field_06A5 = CASE_1;
     }
     if (this->field_06A5 == CASE_1) {
-      /* ST_CALLSITE[0047D221]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+      /* ST_CALLSITE[0047D221]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
       uVar7 = sub_004176C0(this,this->field_069B);
       /* ST_CALLSITE[0047D229]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       uVar7 = sub_00417910(this,(short)uVar7);
       if (uVar7 == 0xffffffff) {
+
         local_EAX_499 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3896,0,0,"%s",
                                 "STBoatC::Annih ANNIH_MOVE 1");
@@ -144,6 +145,7 @@ LAB_0047d831:
            (local_c = 0, this->field_02BF != '\0')) {
           auto param_1_after_write = (uint)&this->field_0x2b3; /* compiler stack-slot lifetime split */
           do {
+
             puVar8 = thunk_FUN_0041dc40(local_28,(short)*(undefined4 *)param_1_after_write,
                                         *(ushort *)(param_1_after_write + 4),this->field_006C);
             uVar3 = *puVar8;
@@ -188,6 +190,7 @@ LAB_0047d831:
           } while (local_c < (int)(uint)(byte)this->field_02BF);
         }
         if (local_18 == -1) {
+
           local_EAX_1310 =
                ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x38bd,0,0,"%s",
                                   "STBoatC::Annih ANNIH_MOVE 2");
@@ -212,6 +215,7 @@ LAB_0047d831:
               this->field_06A5 = CASE_0;
               this->field_06A1 = 1;
               this->field_069D = 0;
+
               thunk_FUN_004b7d90((int *)pSVar2);
               goto LAB_0047d241;
             }
@@ -258,6 +262,7 @@ LAB_0047d241:
   }
   else {
     if (iVar10 != 2) {
+
       iVar9 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3902,0,0,"%s",
                                  "STBoatC::Annih incorrect entry");
       if (iVar9 != 0) {
@@ -279,6 +284,7 @@ LAB_0047d241:
         /* ST_CALLSITE[0047D789]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
         iVar10 = (*pSVar2->vtable[5].slots_00_28[2])(pSVar2);
         if (iVar10 == 1) {
+
           thunk_FUN_004b7e30(pSVar2,this->field_06F7,0,0);
           thunk_FUN_004b7de0((int *)pSVar2);
           thunk_FUN_004b7d50(pSVar2,this);

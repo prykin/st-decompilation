@@ -60,7 +60,8 @@ LAB_005e7ca4:
 005E7CA9  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]
 005E7CAC  52                        PUSH EDX
 005E7CAD  8B 48 30                  MOV ECX,dword ptr [EAX + 0x30]
-005E7CB0  E8 CB B2 12 00            CALL 0x00712f80
+WaitTy::AddStr::override::prt_5e7cb0_3e850790:
+005E7CB0  E8 CB B2 12 00            CALL 0x00712f80  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__thiscall;pointer:/ccFntTy;pointer:/ccFntTy;pointer:/uint
 005E7CB5  8B F8                     MOV EDI,EAX
 005E7CB7  85 FF                     TEST EDI,EDI
 005E7CB9  74 2C                     JZ 0x005e7ce7

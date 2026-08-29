@@ -18,7 +18,7 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
   uint uVar1;
   int *piVar2;
   STMessageId SVar3;
-  AnonShape_00604A90_035626E6 *pAVar4;
+  RecoveredRecordView_00604A90_D1F27465 *pRVar4;
   short sVar6;
   STExplosion *this_00;
   STExplosion *this_01;
@@ -30,11 +30,11 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
   int local_EAX_859;
   int local_EAX_1048;
   int local_EAX_1235;
-  AnonReceiver_00636260 *this_02;
+  RecoveredReceiver_00636260 *this_02;
   int local_EAX_1496;
   int iVar8;
   int iVar9;
-  AnonShape_00604A90_035626E6 *pAVar10;
+  RecoveredRecordView_00604A90_D1F27465 *pRVar10;
   byte *puVar11;
   void **slotStorage;
   InternalExceptionFrame local_54;
@@ -45,10 +45,12 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
+
   local_EAX_36 = st::fn_0072D7F0(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (local_EAX_36 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_Expl.cpp"),0x1bb,0,local_EAX_36,
                                st::mutable_c_string("%s"),"STExplosion::GetMessage");
     if (iVar8 == 0) {
@@ -58,7 +60,7 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   /* ST_CALLSITE[0060377F]: CALL 0x00403ebd; direct=00403EBD STGameObjC::GetMessage */
-  iVar7 = st::fn_00403EBD((STGameObjC *)local_10,message);
+  iVar7 = st::fn_00403EBD(reinterpret_cast<STGameObjC *>(local_10),message);
   this_01 = local_10;
   if (iVar7 == 0xffff) {
     return 0xffff;
@@ -71,19 +73,20 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
           iVar9 = (g_playSystem_00802A38->field_00E4 - this_00->field_026E) + this_00->field_02B7;
           if ((iVar9 == 0xf) && (this_00->field_026D != '\0')) {
             if (this_00->field_02BB == nullptr) {
-              this_02 = (AnonReceiver_00636260 *)st::fn_00401E92();
-              this_00->field_02BB = (HoloTy *)this_02;
+
+              this_02 = STPointerBoundaryCast<RecoveredReceiver_00636260 *>(st::fn_00401E92());
+              this_00->field_02BB = reinterpret_cast<HoloTy *>(this_02);
               if (this_02 != nullptr) {
-                st::fn_00405790
-                          (this_02,this_00->field_01F1,this_00->field_01F5,
-                           st::machine_word_boundary_cast<int>(this_00->field_01F9 + -0x28),0x96,0x1e,5,0);
+                st::fn_00405790(this_02,this_00->field_01F1,this_00->field_01F5,
+                                   this_00->field_01F9 + -0x28,0x96,0x1e,5,0);
               }
             }
           }
           else if ((0xf < iVar9) &&
                   ((this_00->field_02BB != nullptr &&
-                   (iVar9 = st::fn_00403C4C((int *)this_00->field_02BB), iVar9 != 0)))) {
-            st::fn_00401B40((AnonShape_006366D0_80B1100F *)this_00->field_02BB);
+
+                   (iVar9 = st::fn_00403C4C(reinterpret_cast<int *>(this_00->field_02BB)), iVar9 != 0)))) {
+            st::fn_00401B40(reinterpret_cast<AnonShape_006366D0_80B1100F *>(this_00->field_02BB));
             st::fn_0072E2B0(this_00->field_02BB);
             this_00->field_02B7 = -1;
             this_00->field_02BB = nullptr;
@@ -93,32 +96,35 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
           /* ST_CALLSITE[00603D18]: CALL 0x00401e9c; direct=00401E9C STExplosion::sub_00604350 */
           local_EAX_1496 = st::fn_00401E9C(this_00);
           if (local_EAX_1496 != 0) {
-            st::fn_00404250((int)this_00);
+            st::fn_00404250(reinterpret_cast<RecoveredRecord_00604820_51E8C765 *>(this_00));
             this_00->field_026D = 1;
           }
         }
         else {
-          st::fn_00405D76((STExplosionC *)this_00);
+          st::fn_00405D76(reinterpret_cast<STExplosionC *>(this_00));
         }
-        st::fn_00404714((AnonShape_006048E0_C1705B76 *)this_00);
+
+        st::fn_00404714(reinterpret_cast<AnonShape_006048E0_C1705B76 *>(this_00));
+
         iVar9 = st::fn_0040470F(this_00,0);
         if (iVar9 != 0) {
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        st::fn_004054CF(this_00);
+
+        st::fn_004054CF(reinterpret_cast<RecoveredRecord_00604160_F1552931 *>(this_00));
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
       if (SVar3 == MESS_ID_CREATE) {
-        uVar1 = st::machine_word_boundary_cast<uint>(this_00->field_001C * 0x41c64e6d + 0x3039);
+        uVar1 = this_00->field_001C * 0x41c64e6d + 0x3039;
         this_00->field_001C = uVar1;
         _DAT_00811790 = (uVar1 >> 0x10) % 0x33;
-        pAVar4 = (AnonShape_00604A90_035626E6 *)(message->arg0).u32;
-        if (*(int *)&pAVar4->field_0xc == 0) {
-          pAVar10 = pAVar4;
-          puVar11 = (byte *)&this_00->field_0x1d5;
-          memmove(puVar11, pAVar10, 0x40); /* compiler REP MOVS byte copy */
+        pRVar4 = (RecoveredRecordView_00604A90_D1F27465 *)(message->arg0).u32;
+        if (*(int *)&pRVar4->field_0xc == 0) {
+          pRVar10 = pRVar4;
+          puVar11 = reinterpret_cast<byte *>(&this_00->field_0x1d5);
+          memmove(puVar11, pRVar10, 0x40); /* compiler REP MOVS byte copy */
           /* ST_CALLSITE[00603852]: CALL 0x004047a0; direct=004047A0 STExplosion::sub_00605130 */
           st::fn_004047A0(local_10);
           piVar2 = &this_01->field_0272;
@@ -127,76 +133,79 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
           if (local_EAX_288 != 0) {
             this_01->field_026D = 1;
           }
-          switch(*(undefined4 *)&pAVar4->field_0x18) {
+          switch(*(undefined4 *)&pRVar4->field_0x18) {
           case 0:
-            iVar9 = *(int *)&pAVar4->field_0x1c;
+            iVar9 = *(int *)&pRVar4->field_0x1c;
             iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
             *piVar2 = iVar9 + -2;
             this_01->field_027A = 5;
-            iVar9 = *(int *)&pAVar4->field_0x20;
+            iVar9 = *(int *)&pRVar4->field_0x20;
             iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
             this_01->field_0276 = iVar9 + -2;
             this_01->field_027E = 5;
             /* ST_CALLSITE[00603921]: CALL 0x00404ca0; direct=00404CA0 STExplosion::sub_00606050 */
             local_EAX_481 =
-                 st::fn_00404CA0(this_01,*(int *)&pAVar4->field_0x1c,*(int *)&pAVar4->field_0x20,
-                              *(int *)&pAVar4->field_0x24,*(int *)&pAVar4->field_0x28,
-                              *(uint **)&pAVar4->field_0x34,*(undefined4 *)&pAVar4->field_0x38,
-                              *(int *)&pAVar4->field_0x3c,*(undefined4 *)&pAVar4->field_0x30,
+                 st::fn_00404CA0(this_01,*(int *)&pRVar4->field_0x1c,*(int *)&pRVar4->field_0x20,
+                              *(int *)&pRVar4->field_0x24,*(int *)&pRVar4->field_0x28,
+                              *(uint **)&pRVar4->field_0x34,*(undefined4 *)&pRVar4->field_0x38,
+                              *(int *)&pRVar4->field_0x3c,*(undefined4 *)&pRVar4->field_0x30,
                               this_01->field_026D);
             this_01->field_0269 = local_EAX_481;
             g_currentExceptionFrame = local_54.previous;
             return 0;
           case 1:
-            iVar9 = *(int *)&pAVar4->field_0x1c;
+            iVar9 = *(int *)&pRVar4->field_0x1c;
             iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
             break;
           case 2:
-            iVar9 = *(int *)&pAVar4->field_0x1c;
+            iVar9 = *(int *)&pRVar4->field_0x1c;
             iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
             *piVar2 = iVar9 + -2;
             this_01->field_027A = 5;
-            iVar9 = *(int *)&pAVar4->field_0x20;
+            iVar9 = *(int *)&pRVar4->field_0x20;
             iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
             this_01->field_0276 = iVar9 + -2;
             this_01->field_027E = 5;
+
             local_EAX_859 =
-                 st::fn_00402824(this_01,*(int *)&pAVar4->field_0x1c,*(int *)&pAVar4->field_0x20,
-                                    *(int *)&pAVar4->field_0x24);
+                 st::fn_00402824(this_01,*(int *)&pRVar4->field_0x1c,*(int *)&pRVar4->field_0x20,
+                                    *(int *)&pRVar4->field_0x24);
             this_01->field_0269 = local_EAX_859;
             g_currentExceptionFrame = local_54.previous;
             return 0;
           case 3:
-            iVar9 = *(int *)&pAVar4->field_0x1c;
+            iVar9 = *(int *)&pRVar4->field_0x1c;
             iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
             *piVar2 = iVar9 + -2;
             this_01->field_027A = 5;
-            iVar9 = *(int *)&pAVar4->field_0x20;
+            iVar9 = *(int *)&pRVar4->field_0x20;
             iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
             this_01->field_0276 = iVar9 + -2;
             this_01->field_027E = 5;
+
             local_EAX_1048 =
-                 st::fn_0040453E(this_01,*(uint *)&pAVar4->field_0x1c,
-                                    *(uint *)&pAVar4->field_0x20,*(int **)&pAVar4->field_0x24,
-                                    *(int *)&pAVar4->field_0x28);
+                 st::fn_0040453E(this_01,*(uint *)&pRVar4->field_0x1c,
+                                    *(uint *)&pRVar4->field_0x20,*(int **)&pRVar4->field_0x24,
+                                    *(int *)&pRVar4->field_0x28);
             this_01->field_0269 = local_EAX_1048;
             g_currentExceptionFrame = local_54.previous;
             return 0;
           case 4:
-            iVar9 = *(int *)&pAVar4->field_0x1c;
+            iVar9 = *(int *)&pRVar4->field_0x1c;
             iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
             *piVar2 = iVar9 + -2;
             this_01->field_027A = 5;
-            iVar9 = *(int *)&pAVar4->field_0x20;
+            iVar9 = *(int *)&pRVar4->field_0x20;
             iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
             this_01->field_0276 = iVar9 + -2;
             this_01->field_027E = 5;
+
             local_EAX_1235 =
-                 st::fn_004028D3(this_01,*(uint *)&pAVar4->field_0x1c,
-                                    *(uint **)&pAVar4->field_0x20,*(uint *)&pAVar4->field_0x24,
-                                    *(undefined4 *)&pAVar4->field_0x28,
-                                    *(undefined4 *)&pAVar4->field_0x34,*(int *)&pAVar4->field_0x38,
-                                    *(undefined4 *)&pAVar4->field_0x3c,0,this_01->field_026D);
+                 st::fn_004028D3(this_01,*(uint *)&pRVar4->field_0x1c,
+                                    *(uint **)&pRVar4->field_0x20,*(uint *)&pRVar4->field_0x24,
+                                    *(undefined4 *)&pRVar4->field_0x28,
+                                    *(undefined4 *)&pRVar4->field_0x34,*(int *)&pRVar4->field_0x38,
+                                    *(undefined4 *)&pRVar4->field_0x3c,0,this_01->field_026D);
             this_01->field_0269 = local_EAX_1235;
             g_currentExceptionFrame = local_54.previous;
             return 0;
@@ -206,18 +215,20 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
           }
           *piVar2 = iVar9 + -2;
           this_01->field_027A = 5;
-          iVar9 = *(int *)&pAVar4->field_0x20;
+          iVar9 = *(int *)&pRVar4->field_0x20;
           iVar9 = STBiasedDiv16(iVar9, 0xc9); /* exact signed 16-bit grid-index division */
           this_01->field_0276 = iVar9 + -2;
           this_01->field_027E = 5;
+
           local_EAX_670 =
-               st::fn_00402E73(this_01,*(int *)&pAVar4->field_0x1c,*(int *)&pAVar4->field_0x20,
-                                  *(int *)&pAVar4->field_0x24,*(undefined4 *)&pAVar4->field_0x28);
+               st::fn_00402E73(this_01,*(int *)&pRVar4->field_0x1c,*(int *)&pRVar4->field_0x20,
+                                  *(int *)&pRVar4->field_0x24,*(undefined4 *)&pRVar4->field_0x28);
           this_01->field_0269 = local_EAX_670;
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        st::fn_00402C3E(this_00,pAVar4);
+
+        st::fn_00402C3E(this_00,pRVar4);
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
@@ -232,7 +243,7 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
         st::fn_0040514B(this_00);
       }
       if (this_00->field_02BB != nullptr) {
-        st::fn_00401B40((AnonShape_006366D0_80B1100F *)this_00->field_02BB);
+        st::fn_00401B40(reinterpret_cast<AnonShape_006366D0_80B1100F *>(this_00->field_02BB));
         st::fn_0072E2B0(this_00->field_02BB);
         this_00->field_02BB = nullptr;
       }
@@ -241,8 +252,8 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    /* ST_CALLSITE[00603D70]: CALL 0x0040565f; direct=0040565F STExplosionC::SaveObj */
-    local_c = (byte *)st::fn_0040565F((STExplosionC *)this_00,&local_8);
+    /* ST_CALLSITE[00603D70]: CALL 0x0040565f; direct=0040565F STExplosionC::SaveObj; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
+    local_c = STPointerBoundaryCast<byte *>(st::fn_0040565F(reinterpret_cast<STExplosionC *>(this_00),&local_8));
     if (local_c == nullptr) {
       g_currentExceptionFrame = local_54.previous;
       return 0;
@@ -254,6 +265,7 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
   else {
     if (SVar3 != MESS_ID_ALLCREATE) {
       if (SVar3 == MESS_STOCTOPUSC_0112) {
+
         st::fn_0040470F(this_00,0x112);
         g_currentExceptionFrame = local_54.previous;
         return 0;
@@ -262,6 +274,7 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
+
       st::fn_0040470F(this_00,0x113);
       g_currentExceptionFrame = local_54.previous;
       return 0;
@@ -271,6 +284,7 @@ int __thiscall st::fn_00603740(STExplosion *this,STMessage *message)
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
+
     st::fn_004031BB(this_00,static_cast<int *>(this_00->field_02B3));
   }
   st::fn_006AB060(slotStorage);
@@ -302,13 +316,15 @@ int __thiscall st::fn_006041A0(STExplosionC *this,int param_1)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar3 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   pSVar2 = local_c;
   if (iVar3 == 0) {
     if (0 < param_1) {
       ppHVar5 = &local_c->field_0219;
       do {
-        pHVar3 = (HoloTy *)st::fn_0040257C();
+        /* ST_CALLSITE[006041E3]: CALL 0x0040257c; direct=0040257C thunk_FUN_00629010; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/HoloTy; signature=__stdcall;pointer:/HoloTy */
+        pHVar3 = st::pointer_boundary_cast<HoloTy *>(st::fn_0040257C());
         *ppHVar5 = pHVar3;
         *(STExplosionC **)&pHVar3[4].field_0002 = pSVar2;
         pHVar3 = *ppHVar5;
@@ -331,6 +347,7 @@ int __thiscall st::fn_006041A0(STExplosionC *this,int param_1)
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
   }
+
   iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_Expl.cpp"),0x1f6,0,iVar3,st::mutable_c_string("%s"),
                              "STExplosionC::CreateGroupPart");
   if (iVar5 != 0) {
@@ -366,11 +383,11 @@ undefined4 * __thiscall st::fn_00604A90(STExplosionC *this,uint *param_1)
   uint uVar11;
   uint *puVar12;
   uint *puVar13;
-  AnonShape_00604A90_035626E6 *pAVar14;
+  RecoveredRecordView_00604A90_D1F27465 *pRVar14;
   uint *puVar15;
   HoloTy **local_b4;
   InternalExceptionFrame local_8c;
-  AnonShape_00604A90_035626E6 *local_48;
+  RecoveredRecordView_00604A90_D1F27465 *local_48;
   uint *local_44;
   uint *local_3c [3];
   int local_30;
@@ -381,8 +398,7 @@ undefined4 * __thiscall st::fn_00604A90(STExplosionC *this,uint *param_1)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_0079cc18;
   puStack_10 = (byte *)&st_image_0072D964;
@@ -392,21 +408,23 @@ undefined4 * __thiscall st::fn_00604A90(STExplosionC *this,uint *param_1)
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
   ExceptionList = &local_14;
+
   iVar3 = st::fn_0072D7F0(local_8c.jumpBuffer,2);
   local_1c = (st_stack_frame + 12);
   if (iVar3 == 0) {
     *param_1 = 0;
     local_1c = (st_stack_frame + 12);
-    local_48 = static_cast<AnonShape_00604A90_035626E6 *>(st::fn_006AAC70(0xe2));
+
+    local_48 = static_cast<RecoveredRecordView_00604A90_D1F27465 *>(st::fn_006AAC70(0xe2));
     *param_1 = 0xe2;
     this->field_01E1 = 1;
-    puVar8 = (byte *)&this->field_0x1d5;
-    pAVar14 = local_48;
-    memmove(pAVar14, puVar8, 0x40); /* compiler REP MOVS byte copy */
+    puVar8 = reinterpret_cast<byte *>(&this->field_0x1d5);
+    pRVar14 = local_48;
+    memmove(pRVar14, puVar8, 0x40); /* compiler REP MOVS byte copy */
     iVar9 = 0;
     *(undefined4 *)&local_48->field_0x40 = this->field_0215;
     ppHVar6 = &this->field_0219;
-    puVar8 = (byte *)&local_48->field_0x44;
+    puVar8 = reinterpret_cast<byte *>(&local_48->field_0x44);
     memmove(puVar8, ppHVar6, 0x50); /* compiler REP MOVS byte copy */
     *(int *)&local_48->field_0x94 = this->field_0269;
     local_48->field_0x98 = this->field_026D;
@@ -418,10 +436,12 @@ undefined4 * __thiscall st::fn_00604A90(STExplosionC *this,uint *param_1)
     local_48->field_00A9 = this->field_027E;
     if ((uint *)this->field_0215 != 0) {
       local_3c[0] = nullptr;
-      local_3c[0] = static_cast<uint *>(st::fn_006B0020((uint *)this->field_0215,(int *)&local_20));
+
+      local_3c[0] = static_cast<uint *>(st::fn_006B0020((uint *)this->field_0215,reinterpret_cast<int *>(&local_20)));
       uVar11 = *param_1 + local_20 + 4;
       *param_1 = uVar11;
-      local_48 = static_cast<AnonShape_00604A90_035626E6 *>(st::fn_006ACF50(local_48,uVar11));
+
+      local_48 = static_cast<RecoveredRecordView_00604A90_D1F27465 *>(st::fn_006ACF50(local_48,uVar11));
       *(uint *)((*param_1 - local_20) + -4 + (int)local_48) = local_20;
       puVar12 = local_3c[0];
       puVar7 = (uint *)((*param_1 - local_20) + (int)local_48);
@@ -432,7 +452,7 @@ undefined4 * __thiscall st::fn_00604A90(STExplosionC *this,uint *param_1)
     iVar1 = this->field_0269;
     if (iVar1 != 0) {
       iVar4 = iVar1 * -8;
-      puVar8 = (byte *)((st_stack_frame + 12) + iVar4);
+      puVar8 = reinterpret_cast<byte *>(((st_stack_frame + 12) + iVar4));
       local_1c = (st_stack_frame + 12) + iVar4;
       local_24 = (st_stack_frame + 12) + iVar4;
       local_8 = 0xffffffff;
@@ -444,29 +464,31 @@ undefined4 * __thiscall st::fn_00604A90(STExplosionC *this,uint *param_1)
           if (this_00 != nullptr) {
             *(int **)((st_stack_frame + 8) + iVar4) = local_2c;
             *(undefined4 *)((st_stack_frame + 4) + iVar4) = 0x604c70;
-            local_3c[0] = (uint *)st::fn_00403C7E(this_00,*(undefined4 **)
-                                                              ((st_stack_frame + 8) + iVar4));
+
+            local_3c[0] = STPointerBoundaryCast<uint *>(st::fn_00403C7E(this_00,*(undefined4 **)
+                                                              ((st_stack_frame + 8) + iVar4)));
             iVar9 = iVar9 + 4 + local_2c[0];
             puVar8[1] = local_2c[0];
-            *puVar8 = local_3c[0];
+            *puVar8 = static_cast<byte>(st::machine_word_boundary_cast<uint>(local_3c[0]));
           }
           local_30 = local_30 + 1;
           ppHVar6 = ppHVar6 + 1;
-          puVar8 = (byte *)(puVar8 + 2);
+          puVar8 = reinterpret_cast<byte *>((puVar8 + 2));
         } while (local_30 < this->field_0269);
       }
       uVar11 = *param_1;
       *param_1 = uVar11 + iVar9;
       *(uint *)((st_stack_frame + 8) + iVar4) = uVar11 + iVar9;
-      *(AnonShape_00604A90_035626E6 **)((st_stack_frame + 4) + iVar4) = local_48;
+      *(RecoveredRecordView_00604A90_D1F27465 **)((st_stack_frame + 4) + iVar4) = local_48;
       *(undefined4 *)((st_stack_frame + 0) + iVar4) = 0x604cbb;
-      local_48 = static_cast<AnonShape_00604A90_035626E6 *>(st::fn_006ACF50
+
+      local_48 = static_cast<RecoveredRecordView_00604A90_D1F27465 *>(st::fn_006ACF50
                            (*(void **)((st_stack_frame + 4) + iVar4),*(uint *)((st_stack_frame + 8) + iVar4)
                            ));
       puVar12 = (uint *)((*param_1 - iVar9) + (int)local_48);
       local_30 = 0;
       if (0 < this->field_0269) {
-        puVar7 = (uint *)(local_24 + 4);
+        puVar7 = reinterpret_cast<uint *>((local_24 + 4));
         local_b4 = &this->field_0219;
         do {
           if (*local_b4 != nullptr) {
@@ -498,6 +520,7 @@ undefined4 * __thiscall st::fn_00604A90(STExplosionC *this,uint *param_1)
       puVar5 = local_1c;
     }
     local_1c = puVar5;
+
     iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_Expl.cpp"),0x2df,0,iVar3,st::mutable_c_string("%s"));
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -530,7 +553,7 @@ st::fn_006051B0(STExplosionC *this,undefined4 param_1,undefined4 param_2,char pa
   uint uVar10;
   bool bVar11;
   InternalExceptionFrame local_68;
-  undefined4 local_24;
+  uint local_24;
   int local_20;
   int local_1c;
   STExplosionC *local_18;
@@ -546,10 +569,12 @@ st::fn_006051B0(STExplosionC *this,undefined4 param_1,undefined4 param_2,char pa
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_18 = this;
+
   iVar5 = st::fn_0072D7F0(local_68.jumpBuffer,0);
   pSVar4 = local_18;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_68.previous;
+
     iVar8 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_Expl.cpp"),0x38c,0,iVar5,st::mutable_c_string("%s"),
                                "STExplosionC::LoadImagSpr");
     if (iVar8 == 0) {
@@ -567,6 +592,7 @@ st::fn_006051B0(STExplosionC *this,undefined4 param_1,undefined4 param_2,char pa
     }
     /* ST_CALLSITE[0060525F]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     st::fn_00401064(pSVar4->field_02AF,'\x0f',pSVar4->field_029F);
+
     st::fn_00405AA6(pSVar4->field_02AF,'\x0f');
     /* ST_CALLSITE[00605286]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     st::fn_00405240(pSVar4->field_02AF,0xf,g_playSystem_00802A38->field_00E4);
@@ -577,7 +603,8 @@ st::fn_006051B0(STExplosionC *this,undefined4 param_1,undefined4 param_2,char pa
     return local_24;
   }
   if (local_18->field_02AF == nullptr) {
-    pSVar7 = (STT3DSprC *)st::fn_0072E530(0x40);
+    /* ST_CALLSITE[006052BE]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint */
+    pSVar7 = st::pointer_boundary_cast<STT3DSprC *>(st::fn_0072E530(0x40));
     if (pSVar7 == nullptr) {
       pSVar7 = nullptr;
     }
@@ -624,6 +651,7 @@ st::fn_006051B0(STExplosionC *this,undefined4 param_1,undefined4 param_2,char pa
               (pSVar4->field_02AF,(float)pSVar4->field_028A * _DAT_007904f8 * _DAT_007904f0,
                (float)pSVar4->field_028E * _DAT_007904f8 * _DAT_007904f0,
                (float)pSVar4->field_0292 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+
     st::fn_00405AA6(pSVar4->field_02AF,'\r');
     /* ST_CALLSITE[00605471]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     st::fn_00405240(pSVar4->field_02AF,0xd,g_playSystem_00802A38->field_00E4);
@@ -661,6 +689,7 @@ st::fn_006051B0(STExplosionC *this,undefined4 param_1,undefined4 param_2,char pa
         }
       }
       if (!bVar11) {
+        /* ST_CALLSITE[006055D1]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
         st::fn_00403D0F(pSVar4->field_02AF);
         pSVar4->field_0286 = 0;
       }
@@ -672,4 +701,3 @@ st::fn_006051B0(STExplosionC *this,undefined4 param_1,undefined4 param_2,char pa
   }
   return 0xffff;
 }
-

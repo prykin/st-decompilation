@@ -17,7 +17,8 @@
    MOV ECX,dword ptr [EBP + 0x10] | 006C06AA incoming load: MOV EBX,dword ptr [EBP + 0x10] |
    006C07A2 incoming load: MOV ECX,dword ptr [EBP + 0x10] */
 
-DWORD FUN_006bfe70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,int param_3)
+DWORD FUN_006bfe70(RecoveredRecord_006BFE70_3123BCE8 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,
+                  int param_3)
 
 {
   short *psVar1;
@@ -28,11 +29,11 @@ DWORD FUN_006bfe70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,int 
   int iVar6;
   DWORD DVar7;
   AnonShape_006BFE70_9EDC24A5 *pAVar8;
-  ushort uVar9;
+  short sVar9;
   uint uVar10;
   int iVar11;
-  uint *puVar12;
-  uint uVar13;
+  uint uVar12;
+  RecoveredRecord_006BFE70_3123BCE8 *pRVar13;
   byte *pbVar14;
   byte *pbVar15;
   int local_20;
@@ -41,7 +42,7 @@ DWORD FUN_006bfe70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,int 
   int local_14;
   int local_10;
   DWORD local_c;
-  undefined4 *local_8;
+  RecoveredRecord_006BFE70_3123BCE8 *local_8;
 
   pAVar5 = param_2;
   pbVar14 = g_lpBuffer_008568B0;
@@ -58,10 +59,12 @@ DWORD FUN_006bfe70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,int 
       if (iVar6 == 0) {
         iVar6 = (-(uint)(*psVar1 != 1) & 0x24) + 0x1a + (int)psVar1;
       }
+
       Library::MSVCRT::FUN_0072da70
                 (param_1,(AnonPointee_TLOBaseTy_0607 *)(param_2->field_0028 + iVar6),param_3);
     }
     else {
+
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_c = FUN_006bfb90(*(HANDLE *)(*(int *)(param_2->field_001C + 4) + 0xc),
                              (LPDWORD)param_2->field_0028,param_1,param_3);
@@ -77,15 +80,16 @@ DWORD FUN_006bfe70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,int 
       iVar6 = (-(uint)(*psVar1 != 1) & 0x24) + 0x1a + (int)psVar1;
     }
     pbVar14 = (byte *)(param_2->field_0028 + iVar6);
-    local_8 = (undefined4 *)(param_3 * 2);
+    local_8 = (RecoveredRecord_006BFE70_3123BCE8 *)(param_3 * 2);
   }
   else {
     local_18 = param_2->field_005E + 0x3e + param_2->field_0020;
     pDVar2 = (LPDWORD)param_2->field_0028;
     local_8 = DAT_00856878;
-    if (local_18 < (int)pDVar2 + (int)DAT_00856878) {
-      local_8 = (undefined4 *)(local_18 - (int)pDVar2);
+    if (local_18 < (int)((int)pDVar2 + (int)DAT_00856878)) {
+      local_8 = (RecoveredRecord_006BFE70_3123BCE8 *)(local_18 - (int)pDVar2);
     }
+
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_c = FUN_006bfb90(*(HANDLE *)(*(int *)(param_2->field_001C + 4) + 0xc),pDVar2,
                            g_lpBuffer_008568B0,(DWORD)local_8);
@@ -102,7 +106,7 @@ DWORD FUN_006bfe70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,int 
     }
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_2 = nullptr;
-    puVar12 = param_1;
+    pRVar13 = param_1;
     if (0 < param_3) {
       do {
         pvVar4 = g_lpBuffer_008568B0;
@@ -114,8 +118,9 @@ DWORD FUN_006bfe70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,int 
             /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
             param_1 = DAT_00856878;
             if (local_18 < (int)pDVar2 + (int)DAT_00856878) {
-              param_1 = (undefined4 *)(local_18 - (int)pDVar2);
+              param_1 = (RecoveredRecord_006BFE70_3123BCE8 *)(local_18 - (int)pDVar2);
             }
+
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             DVar7 = FUN_006bfb90(*(HANDLE *)(*(int *)(pAVar5->field_001C + 4) + 0xc),pDVar2,
                                  g_lpBuffer_008568B0,(DWORD)param_1);
@@ -143,23 +148,23 @@ DWORD FUN_006bfe70(undefined4 *param_1,AnonShape_006BFE70_9EDC24A5 *param_2,int 
           local_14 = (int)*(short *)(&pAVar5->field_0x70 + iVar6 * 4);
           local_1c = (uint)*(short *)(&pAVar5->field_0x6e + iVar11 * 4);
           local_20 = (int)*(short *)(&pAVar5->field_0x70 + iVar11 * 4);
-          local_8 = (undefined4 *)((int)local_8 - 0xe);
+          local_8 = (RecoveredRecord_006BFE70_3123BCE8 *)&local_8[-4].field_0002;
           pAVar5->field_0028 = pAVar5->field_0028 + 0xe;
           pAVar5->field_00BC = *(ushort *)&pAVar5->field_0x58 - 10;
-          *(undefined2 *)puVar12 = *(undefined2 *)&pAVar5->field_0xa8;
-          uVar9 = *(undefined2 *)&pAVar5->field_0xb8;
+          *(undefined2 *)pRVar13 = *(undefined2 *)&pAVar5->field_0xa8;
+          sVar9 = *(short *)&pAVar5->field_0xb8;
 LAB_006c0125:
-          STField<undefined2>(puVar12,2) = uVar9;
-          puVar12 = puVar12 + 1;
+          pRVar13->field_0002 = sVar9;
+          pRVar13 = pRVar13 + 1;
           param_2 = (AnonShape_006BFE70_9EDC24A5 *)&param_2->field_0004;
           pAVar5->field_00C0 = pAVar5->field_00C0 + -1;
-          param_1 = puVar12;
+          param_1 = pRVar13;
         }
         else {
           if (iVar6 == *(ushort *)&pAVar5->field_0x58 - 10) {
             pAVar5->field_00BC = iVar6 + -4;
-            *(undefined2 *)puVar12 = *(undefined2 *)&pAVar5->field_0xa4;
-            uVar9 = *(undefined2 *)&pAVar5->field_0xb4;
+            *(undefined2 *)pRVar13 = *(undefined2 *)&pAVar5->field_0xa4;
+            sVar9 = *(short *)&pAVar5->field_0xb4;
             goto LAB_006c0125;
           }
           while (((int)param_2 < param_3 &&
@@ -173,8 +178,9 @@ LAB_006c0125:
               pDVar2 = (LPDWORD)pAVar5->field_0028;
               local_8 = DAT_00856878;
               if (local_18 < (int)pDVar2 + (int)DAT_00856878) {
-                local_8 = (undefined4 *)(local_18 - (int)pDVar2);
+                local_8 = (RecoveredRecord_006BFE70_3123BCE8 *)(local_18 - (int)pDVar2);
               }
+
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_c = FUN_006bfb90(*(HANDLE *)(*(int *)(pAVar5->field_001C + 4) + 0xc),pDVar2,
                                      g_lpBuffer_008568B0,(DWORD)local_8);
@@ -185,8 +191,8 @@ LAB_006c0125:
             }
             pbVar14 = pbVar15 + 1;
             uVar10 = (uint)(*pbVar15 >> 4);
-            uVar13 = *pbVar15 & 0xf;
-            local_8 = (undefined4 *)((int)local_8 - 1);
+            uVar12 = *pbVar15 & 0xf;
+            local_8 = (RecoveredRecord_006BFE70_3123BCE8 *)((int)&local_8[-1].field_0002 + 1);
             pAVar5->field_0028 = pAVar5->field_0028 + 1;
             if (7 < uVar10) {
               uVar10 = uVar10 - 0x10;
@@ -209,12 +215,12 @@ LAB_006c0125:
             *(undefined4 *)&pAVar5->field_0xa8 = *(undefined4 *)&pAVar5->field_0xa4;
             *(int *)&pAVar5->field_0xa4 = iVar6;
             *(short *)param_1 = (short)iVar6;
-            if (7 < uVar13) {
-              uVar13 = uVar13 - 0x10;
+            if (7 < uVar12) {
+              uVar12 = uVar12 - 0x10;
             }
             iVar6 = ((int)(*(int *)&pAVar5->field_0xb4 * local_1c +
                           local_20 * *(int *)&pAVar5->field_0xb8) >> 8) +
-                    *(int *)&pAVar5->field_0xb0 * uVar13;
+                    *(int *)&pAVar5->field_0xb0 * uVar12;
             if (iVar6 < 0x8000) {
               if (iVar6 < -0x8000) {
                 iVar6 = -0x8000;
@@ -223,7 +229,7 @@ LAB_006c0125:
             else {
               iVar6 = 0x7fff;
             }
-            iVar11 = *(int *)(PTR_DAT_007ede0c + uVar13 * 4) * *(int *)&pAVar5->field_0xb0 >> 8;
+            iVar11 = *(int *)(PTR_DAT_007ede0c + uVar12 * 4) * *(int *)&pAVar5->field_0xb0 >> 8;
             *(int *)&pAVar5->field_0xb0 = iVar11;
             if (iVar11 < 0x10) {
               *(undefined4 *)&pAVar5->field_0xb0 = 0x10;
@@ -231,11 +237,11 @@ LAB_006c0125:
             uVar3 = *(undefined4 *)&pAVar5->field_0xb4;
             *(int *)&pAVar5->field_0xb4 = iVar6;
             *(undefined4 *)&pAVar5->field_0xb8 = uVar3;
-            STField<short>(param_1,2) = (short)iVar6;
-            puVar12 = param_1 + 1;
+            param_1->field_0002 = (short)iVar6;
+            pRVar13 = param_1 + 1;
             param_2 = (AnonShape_006BFE70_9EDC24A5 *)&param_2->field_0004;
             pAVar5->field_00C0 = pAVar5->field_00C0 + -1;
-            param_1 = puVar12;
+            param_1 = pRVar13;
           }
         }
         if (pAVar5->field_00C0 < 1) {
@@ -261,9 +267,10 @@ LAB_006c0125:
           if ((int)local_8 < 7) {
             pDVar2 = (LPDWORD)pAVar5->field_0028;
             local_8 = DAT_00856878;
-            if (local_18 < (int)pDVar2 + (int)DAT_00856878) {
-              local_8 = (undefined4 *)(local_18 - (int)pDVar2);
+            if (local_18 < (int)((int)pDVar2 + (int)DAT_00856878)) {
+              local_8 = (RecoveredRecord_006BFE70_3123BCE8 *)(local_18 - (int)pDVar2);
             }
+
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             local_c = FUN_006bfb90(*(HANDLE *)(*(int *)(pAVar5->field_001C + 4) + 0xc),pDVar2,
                                    g_lpBuffer_008568B0,(DWORD)local_8);
@@ -283,13 +290,13 @@ LAB_006c0125:
           }
           local_10 = (int)*(short *)(&pAVar5->field_0x6e + iVar6 * 4);
           local_14 = (int)*(short *)(&pAVar5->field_0x70 + iVar6 * 4);
-          local_8 = (undefined4 *)((int)local_8 - 7);
+          local_8 = (RecoveredRecord_006BFE70_3123BCE8 *)&local_8[-2].field_0x1;
           pAVar5->field_0028 = pAVar5->field_0028 + 7;
           pAVar5->field_00BC = (uint)*(ushort *)&pAVar5->field_0x58 * 2 + -0xc;
           *(undefined2 *)param_1 = *(undefined2 *)&pAVar5->field_0xa8;
 LAB_006c0455:
           pAVar5->field_00C0 = pAVar5->field_00C0 + -1;
-          puVar12 = (undefined4 *)((int)param_1 + 2);
+          pRVar13 = (RecoveredRecord_006BFE70_3123BCE8 *)&param_1->field_0002;
           pAVar8 = (AnonShape_006BFE70_9EDC24A5 *)&param_2->field_0x2;
         }
         else {
@@ -302,9 +309,10 @@ LAB_006c0455:
             if ((int)local_8 < 1) {
               pDVar2 = (LPDWORD)pAVar5->field_0028;
               local_8 = DAT_00856878;
-              if (local_18 < (int)pDVar2 + (int)DAT_00856878) {
-                local_8 = (undefined4 *)(local_18 - (int)pDVar2);
+              if (local_18 < (int)((int)pDVar2 + (int)DAT_00856878)) {
+                local_8 = (RecoveredRecord_006BFE70_3123BCE8 *)(local_18 - (int)pDVar2);
               }
+
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_c = FUN_006bfb90(*(HANDLE *)(*(int *)(pAVar5->field_001C + 4) + 0xc),pDVar2,
                                      g_lpBuffer_008568B0,(DWORD)local_8);
@@ -334,19 +342,19 @@ LAB_006c0455:
               *(undefined4 *)&pAVar5->field_0xa0 = 0x10;
             }
             *(undefined4 *)&pAVar5->field_0xa8 = *(undefined4 *)&pAVar5->field_0xa4;
-            local_8 = (undefined4 *)((int)local_8 - 1);
+            local_8 = (RecoveredRecord_006BFE70_3123BCE8 *)((int)&local_8[-1].field_0002 + 1);
             *(int *)&pAVar5->field_0xa4 = iVar6;
             pAVar5->field_0028 = pAVar5->field_0028 + 1;
             *(short *)param_1 = (short)iVar6;
-            param_1 = (undefined4 *)((int)param_1 + 2);
+            param_1 = (RecoveredRecord_006BFE70_3123BCE8 *)&param_1->field_0002;
             param_2 = (AnonShape_006BFE70_9EDC24A5 *)&param_2->field_0x2;
             pAVar5->field_00BC = pAVar5->field_00BC + -1;
             pAVar5->field_00C0 = pAVar5->field_00C0 + -1;
           }
-          puVar12 = param_1;
+          pRVar13 = param_1;
           pAVar8 = param_2;
           if ((int)param_2 < param_3) {
-            while (pvVar4 = g_lpBuffer_008568B0, puVar12 = param_1, pAVar8 = param_2,
+            while (pvVar4 = g_lpBuffer_008568B0, pRVar13 = param_1, pAVar8 = param_2,
                   0 < pAVar5->field_00BC) {
               if (pAVar5->field_00C0 < 1) {
                 return local_c;
@@ -354,9 +362,10 @@ LAB_006c0455:
               if ((int)local_8 < 1) {
                 pDVar2 = (LPDWORD)pAVar5->field_0028;
                 local_8 = DAT_00856878;
-                if (local_18 < (int)pDVar2 + (int)DAT_00856878) {
-                  local_8 = (undefined4 *)(local_18 - (int)pDVar2);
+                if (local_18 < (int)((int)pDVar2 + (int)DAT_00856878)) {
+                  local_8 = (RecoveredRecord_006BFE70_3123BCE8 *)(local_18 - (int)pDVar2);
                 }
+
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 local_c = FUN_006bfb90(*(HANDLE *)(*(int *)(pAVar5->field_001C + 4) + 0xc),pDVar2,
                                        g_lpBuffer_008568B0,(DWORD)local_8);
@@ -390,7 +399,7 @@ LAB_006c0455:
               *(int *)&pAVar5->field_0xa4 = iVar6;
               *(undefined4 *)&pAVar5->field_0xa8 = uVar3;
               *(short *)param_1 = (short)iVar6;
-              puVar12 = (undefined4 *)((int)param_1 + 2);
+              pRVar13 = (RecoveredRecord_006BFE70_3123BCE8 *)&param_1->field_0002;
               iVar6 = pAVar5->field_00C0 + -1;
               pAVar5->field_00BC = pAVar5->field_00BC + -1;
               pAVar5->field_00C0 = iVar6;
@@ -419,20 +428,20 @@ LAB_006c0455:
               pAVar5->field_0028 = pAVar5->field_0028 + 1;
               *(int *)&pAVar5->field_0xa8 = *(int *)&pAVar5->field_0xa4;
               *(int *)&pAVar5->field_0xa4 = iVar6;
-              *(short *)puVar12 = (short)iVar6;
-              local_8 = (undefined4 *)((int)local_8 - 1);
+              *(short *)pRVar13 = (short)iVar6;
+              local_8 = (RecoveredRecord_006BFE70_3123BCE8 *)((int)&local_8[-1].field_0002 + 1);
               param_1 = param_1 + 1;
               pAVar5->field_00BC = pAVar5->field_00BC + -1;
               param_2 = (AnonShape_006BFE70_9EDC24A5 *)&param_2->field_0004;
               pAVar5->field_00C0 = pAVar5->field_00C0 + -1;
-              puVar12 = param_1;
+              pRVar13 = param_1;
               pAVar8 = param_2;
               if (param_3 <= (int)param_2) break;
             }
           }
         }
         param_2 = pAVar8;
-        param_1 = puVar12;
+        param_1 = pRVar13;
         if (pAVar5->field_00C0 < 1) {
           return local_c;
         }

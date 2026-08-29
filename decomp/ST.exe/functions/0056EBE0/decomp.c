@@ -60,10 +60,12 @@ void __thiscall STAppC::sub_0056EBE0(STAppC *this)
   puVar2 = Library::Ourlib::MFSARR::mfSarLoad(g_cMf32_0080675C,PTR_s_DESCRIPTION_0079b074,0);
   this->field_4EA7 = puVar2;
   if (puVar2 == nullptr) {
+    /* ST_CALLSITE[0056ECB1]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
     pDVar3 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     this->field_4EA7 = &pDVar3->flags;
   }
   if (this->field_4EAB == nullptr) {
+    /* ST_CALLSITE[0056ECCC]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
     pDVar3 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
     this->field_4EAB = &pDVar3->flags;
   }

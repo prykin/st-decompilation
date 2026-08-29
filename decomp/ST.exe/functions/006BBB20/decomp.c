@@ -10,20 +10,20 @@ int FUN_006bbb20(DDXContext *param_1,int param_2)
 {
   int *piVar1;
   uint uVar2;
-  undefined4 local_428 [95];
-  undefined4 local_2ac;
+  uint local_428 [95];
+  uint local_2ac;
   byte local_2a8;
   byte local_200;
-  undefined4 local_130 [18];
-  undefined4 local_e8;
-  undefined4 local_e4;
-  undefined4 local_dc;
-  undefined4 local_c8;
-  undefined4 local_b4 [18];
-  undefined4 local_6c;
-  undefined4 local_68;
-  undefined4 local_60;
-  undefined4 local_4c;
+  uint local_130 [18];
+  uint local_e8;
+  uint local_e4;
+  uint local_dc;
+  uint local_c8;
+  uint local_b4 [18];
+  uint local_6c;
+  uint local_68;
+  uint local_60;
+  uint local_4c;
   uint local_38 [4];
   uint local_28 [4];
   int local_18;
@@ -75,8 +75,7 @@ LAB_006bbc85:
         local_60 = 8;
       }
       /* ST_CALLSITE[006BBD0F]: CALL dword ptr [EDX + 0x18] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      local_18 = (**(code **)(*param_1->field_0030 + 0x18))
+      local_18 = (*STField<code **>(param_1->field_0030,0x0000)[6])
                            (param_1->field_0030,local_b4,&local_14,0);
       if (local_18 != 0) goto LAB_006bbdfd;
       /* ST_CALLSITE[006BBD27]: CALL dword ptr [EDX + 0x38] */
@@ -116,8 +115,7 @@ LAB_006bbc85:
     local_2ac = 0x17c;
     local_428[0] = 0x17c;
     /* ST_CALLSITE[006BBDAB]: CALL dword ptr [EDX + 0x2c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*param_1->field_0030 + 0x2c))(param_1->field_0030,&local_2ac,local_428);
+    (*STField<code **>(param_1->field_0030,0x0000)[0xb])(param_1->field_0030,&local_2ac,local_428);
     uVar2 = param_1->field_000C & 0xfffffffd;
     param_1->field_000C = uVar2;
     if ((((local_28[0] & 0x4000) != 0) && ((local_2a8 & 0x40) != 0)) ||
@@ -154,8 +152,8 @@ LAB_006bbbce:
       local_dc = 8;
     }
     /* ST_CALLSITE[006BBC65]: CALL dword ptr [EDX + 0x18] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    local_18 = (**(code **)(*param_1->field_0030 + 0x18))(param_1->field_0030,local_130,&local_c,0);
+    local_18 = (*STField<code **>(param_1->field_0030,0x0000)[6])
+                         (param_1->field_0030,local_130,&local_c,0);
     if (local_18 == 0) {
       /* ST_CALLSITE[006BBC7D]: CALL dword ptr [EDX + 0x38] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */

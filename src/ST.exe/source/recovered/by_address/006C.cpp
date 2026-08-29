@@ -18,7 +18,7 @@ void st::fn_006C0800(short *param_1,byte param_2,undefined4 param_3,undefined4 p
   uint uVar4;
   int iVar5;
   uint *puVar6;
-  AnonShape_006BFBF0_13F73F95 *pAVar7;
+  RecoveredRecordView_006BFBF0_7F78587C *pRVar7;
 
   iVar5 = param_11 * 0xc4;
   (&DAT_00855024)[param_11 * 0x31] = (uint)param_2;
@@ -27,12 +27,12 @@ void st::fn_006C0800(short *param_1,byte param_2,undefined4 param_3,undefined4 p
   (&DAT_00854ffc)[param_11 * 0x31] = param_3;
   *(undefined4 *)(&DAT_00855030 + iVar5) = param_6;
   *(undefined4 *)(&DAT_00855034 + iVar5) = param_7;
-  (&DAT_0085501c)[param_11 * 0x31] = param_1;
+  (&DAT_0085501c)[param_11 * 0x31] = st::machine_word_boundary_cast<undefined4>(param_1);
   *(undefined4 *)(&DAT_00855038 + iVar5) = param_8;
   *(undefined4 *)(&DAT_0085503c + iVar5) = param_9;
   *(undefined4 *)(&DAT_00855040 + iVar5) = param_10;
   uVar3 = (-(uint)(*param_1 != 1) & 0x24) + 0x1a;
-  puVar6 = (undefined4 *)(&DAT_00855044 + iVar5);
+  puVar6 = reinterpret_cast<uint *>((&DAT_00855044 + iVar5));
   for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
     *puVar6 = *(undefined4 *)param_1;
     param_1 = param_1 + 2;
@@ -43,7 +43,8 @@ void st::fn_006C0800(short *param_1,byte param_2,undefined4 param_3,undefined4 p
     param_1 = (short *)((int)param_1 + 1);
     puVar6 = (undefined4 *)((int)puVar6 + 1);
   }
-  iVar2 = st::fn_006BFBF0((AnonShape_006BFBF0_13F73F95 *)(&DAT_00854ff8 + iVar5));
+
+  iVar2 = st::fn_006BFBF0(reinterpret_cast<RecoveredRecordView_006BFBF0_7F78587C *>((&DAT_00854ff8 + iVar5)));
   if (iVar2 != 0) {
     piVar1 = static_cast<int *>((&PTR_00855004)[param_11 * 0x31]);
     if (piVar1 != nullptr) {
@@ -61,10 +62,10 @@ void st::fn_006C0800(short *param_1,byte param_2,undefined4 param_3,undefined4 p
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (**(code **)(*(int *)(&PTR_00855004)[param_11 * 0x31] + 8))((&PTR_00855004)[param_11 * 0x31]);
     }
-    pAVar7 = (AnonShape_006BFBF0_13F73F95 *)(&DAT_00854ff8 + iVar5);
+    pRVar7 = reinterpret_cast<RecoveredRecordView_006BFBF0_7F78587C *>((&DAT_00854ff8 + iVar5));
     for (iVar2 = 0x31; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(undefined4 *)pAVar7 = 0;
-      pAVar7 = (AnonShape_006BFBF0_13F73F95 *)&pAVar7->field_0x4;
+      *(undefined4 *)pRVar7 = 0;
+      pRVar7 = reinterpret_cast<RecoveredRecordView_006BFBF0_7F78587C *>(reinterpret_cast<byte *>(pRVar7) + 0x4);
     }
   }
   return;
@@ -83,33 +84,34 @@ void st::fn_006C08E0(void)
   DWORD DVar5;
   DWORD DVar4;
   uint uVar6;
-  AnonShape_006BFBF0_13F73F95 *local_ECX_632;
+  RecoveredRecordView_006BFBF0_7F78587C *local_ECX_632;
   uint uVar7;
-  AnonShape_006BFBF0_13F73F95 *pAVar8;
+  RecoveredRecordView_006BFBF0_7F78587C *pRVar8;
   int iVar9;
   short *psVar10;
-  AnonShape_006BFBF0_13F73F95 *local_ESI_1151;
-  AnonShape_006BFBF0_13F73F95 *pAVar10;
-  uint *puVar11;
-  int *local_EDI_947;
+  RecoveredRecordView_006BFBF0_7F78587C *local_ESI_1151;
+  RecoveredRecordView_006BFBF0_7F78587C *pAVar10;
+  RecoveredRecord_006BFE70_3123BCE8 *pRVar11;
   uint *puVar12;
-  AnonShape_006BFE70_9EDC24A5 *pAVar13;
-  undefined1 local_3c [4];
+  int *local_EDI_947;
+  uint *puVar13;
+  AnonShape_006BFE70_9EDC24A5 *pAVar14;
+  byte local_3c [4];
   byte local_38 [4];
   int local_34;
-  undefined4 local_30;
-  undefined4 local_2c;
-  AnonShape_006BFBF0_13F73F95 *local_28;
-  AnonShape_006BFBF0_13F73F95 *local_24;
-  AnonShape_006BFBF0_13F73F95 *local_20;
+  uint local_30;
+  uint local_2c;
+  RecoveredRecordView_006BFBF0_7F78587C *local_28;
+  RecoveredRecordView_006BFBF0_7F78587C *local_24;
+  RecoveredRecordView_006BFBF0_7F78587C *local_20;
   uint local_1c;
   uint local_18;
-  AnonShape_006BFBF0_13F73F95 *local_14;
-  AnonShape_006BFBF0_13F73F95 *local_10;
+  RecoveredRecordView_006BFBF0_7F78587C *local_14;
+  RecoveredRecordView_006BFBF0_7F78587C *local_10;
   uint local_c;
-  uint *local_8;
-  AnonShape_006BFBF0_13F73F95 *pAVar9;
-  AnonShape_006BFBF0_13F73F95 *temp_5fcb5576f0;
+  RecoveredRecord_006BFE70_3123BCE8 *local_8;
+  RecoveredRecordView_006BFBF0_7F78587C *pAVar9;
+  RecoveredRecordView_006BFBF0_7F78587C *temp_5fcb5576f0;
 
   do {
     local_34 = 1;
@@ -121,12 +123,12 @@ void st::fn_006C08E0(void)
       bVar3 = 0;
       uVar6 = *(uint *)(&DAT_00854ff8 + local_c * 0xc4);
       iVar9 = local_c * 0xc4;
-      pAVar13 = (AnonShape_006BFE70_9EDC24A5 *)(&DAT_00854ff8 + iVar9);
+      pAVar14 = reinterpret_cast<AnonShape_006BFE70_9EDC24A5 *>((&DAT_00854ff8 + iVar9));
       if ((uVar6 & 3) == 1) {
         local_34 = 0;
         if ((uVar6 & 0x20) == 0) {
           local_18 = 0;
-          pAVar10 = (AnonShape_006BFBF0_13F73F95 *)(*(uint *)(&DAT_0085500c + iVar9) >> 1);
+          pAVar10 = (RecoveredRecordView_006BFBF0_7F78587C *)(*(uint *)(&DAT_0085500c + iVar9) >> 1);
           local_20 = pAVar10;
           /* ST_CALLSITE[006C0992]: CALL dword ptr [ECX + 0x24] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
@@ -138,17 +140,17 @@ void st::fn_006C08E0(void)
              (iVar4 = (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 0x10))
                                 ((&PTR_00855004)[uVar2 * 0x31],&local_14,local_3c), iVar4 != 0))
           goto cf_common_join_006C0E00;
-          pAVar9 = *(AnonShape_006BFBF0_13F73F95 **)(&DAT_00855010 + iVar9);
-          local_28 = *(AnonShape_006BFBF0_13F73F95 **)(&DAT_0085500c + iVar9);
+          pAVar9 = *(RecoveredRecordView_006BFBF0_7F78587C **)(&DAT_00855010 + iVar9);
+          local_28 = *(RecoveredRecordView_006BFBF0_7F78587C **)(&DAT_0085500c + iVar9);
           if (pAVar9 <= local_28) {
-            uVar6 = *(uint *)pAVar13;
+            uVar6 = *(uint *)pAVar14;
             if ((uVar6 & 0x10) == 0) {
-              temp_5fcb5576f0 = *(AnonShape_006BFBF0_13F73F95 **)(&DAT_00855010 + iVar9);
+              temp_5fcb5576f0 = *(RecoveredRecordView_006BFBF0_7F78587C **)(&DAT_00855010 + iVar9);
               if (local_14 < pAVar10) {
                 if (temp_5fcb5576f0 < pAVar10) {
 LAB_006c0af5:
                   if (local_14 < temp_5fcb5576f0) {
-                    *(uint *)pAVar13 = uVar6 | 0x10;
+                    *(uint *)pAVar14 = uVar6 | 0x10;
                   }
                   else {
                     if ((*(byte *)(&DAT_00854ffc + uVar2 * 0x31) & 1) == 0) {
@@ -175,7 +177,7 @@ LAB_006c0af5:
               }
               *(undefined4 *)(&DAT_00855010 + iVar9) = 0x7fffffff;
               local_18 = uVar6 & 8;
-              *(uint *)pAVar13 = uVar6 & 0xffffffef;
+              *(uint *)pAVar14 = uVar6 & 0xffffffef;
             }
           }
           iVar4 = *(int *)(&DAT_008550b8 + iVar9);
@@ -186,9 +188,10 @@ LAB_006c0af5:
           if (((&DAT_00854ffc)[uVar2 * 0x31] & 0x4000) == 0) {
             if (((&DAT_00854ffc)[uVar2 * 0x31] & 0x8000) == 0) {
               if (local_20 <= local_14) goto LAB_006c0b45;
-              if ((*(byte *)pAVar13 & 4) == 0) goto cf_common_join_006C0F07;
+              if ((*(byte *)pAVar14 & 4) == 0) goto cf_common_join_006C0F07;
               local_24 = local_20;
-              local_ECX_632 = (AnonShape_006BFBF0_13F73F95 *)((int)local_28 - (int)local_20);
+              local_ECX_632 =
+                   (RecoveredRecordView_006BFBF0_7F78587C *)((int)local_28 - (int)local_20);
             }
             else {
               if (local_14 < local_20) {
@@ -200,14 +203,16 @@ LAB_006c0af5:
                                    &local_2c,0);
                 if (iVar4 == 0) {
                   bVar3 = (*(short *)(&DAT_00855090 + iVar9) != 8) - 1;
-                  puVar11 = local_8;
+                  pRVar11 = local_8;
                   for (uVar6 = local_1c >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-                    *puVar11 = CONCAT22(CONCAT11(bVar3,bVar3),CONCAT11(bVar3,bVar3)) & 0x80808080;
-                    puVar11 = puVar11 + 1;
+                    *pRVar11 = (RecoveredRecord_006BFE70_3123BCE8)
+                               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
+                               (CONCAT22(CONCAT11(bVar3,bVar3),CONCAT11(bVar3,bVar3)) & 0x80808080);
+                    pRVar11 = pRVar11 + 1;
                   }
                   for (uVar6 = local_1c & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-                    *(byte *)puVar11 = bVar3 & 0x80;
-                    puVar11 = (uint *)((int)puVar11 + 1);
+                    *(byte *)pRVar11 = bVar3 & 0x80;
+                    pRVar11 = reinterpret_cast<RecoveredRecord_006BFE70_3123BCE8 *>(reinterpret_cast<byte *>(pRVar11) + 0x1);
                   }
                   /* ST_CALLSITE[006C0AC1]: CALL dword ptr [ECX + 0x4c] */
                   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
@@ -215,23 +220,23 @@ LAB_006c0af5:
                                     ((&PTR_00855004)[uVar2 * 0x31],local_8,local_1c,local_30,
                                      local_2c);
                   if (iVar4 == 0) {
-                    (&DAT_00854ffc)[uVar2 * 0x31] = (&DAT_00854ffc)[uVar2 * 0x31] & 0xffff7fff;
+                    (&DAT_00854ffc)[uVar2 * 0x31] = st::machine_word_boundary_cast<undefined4>((&DAT_00854ffc)[uVar2 * 0x31] & 0xffff7fff);
                     goto cf_common_join_006C0F07;
                   }
                 }
                 goto cf_common_join_006C0E00;
               }
 LAB_006c0b45:
-              if ((*(byte *)pAVar13 & 4) != 0) goto cf_common_join_006C0F07;
+              if ((*(byte *)pAVar14 & 4) != 0) goto cf_common_join_006C0F07;
               local_24 = nullptr;
               local_ECX_632 = local_20;
             }
             local_10 = local_ECX_632;
             if (local_ECX_632 != nullptr) {
               local_ESI_1151 = local_ECX_632;
-              if (iVar4 < (int)((uint)local_ECX_632 / (uint)*(ushort *)(&DAT_0085508e + iVar9))) {
+              if (iVar4 < st::storage_bit_cast<int>(static_cast<uint32_t>((uint)local_ECX_632 / (uint)*(ushort *)(&DAT_0085508e + iVar9)))) {
                 local_ESI_1151 =
-                     (AnonShape_006BFBF0_13F73F95 *)
+                     (RecoveredRecordView_006BFBF0_7F78587C *)
                      ((uint)*(ushort *)(&DAT_0085508e + iVar9) * iVar4);
               }
               local_28 = local_ESI_1151;
@@ -244,18 +249,19 @@ LAB_006c0b45:
                 if ((local_ESI_1151 < local_ECX_632) &&
                    ((*(byte *)(&DAT_00854ffc + uVar2 * 0x31) & 1) == 0)) {
                   bVar3 = (*(short *)(&DAT_00855090 + iVar9) != 8) - 1;
-                  puVar11 = (uint *)(&local_ESI_1151->field_0x0 + (int)local_8);
+                  puVar12 = reinterpret_cast<uint *>((&local_8->field_0x0 + (int)&local_ESI_1151->field_0x0));
                   for (uVar6 = local_1c - (int)local_ESI_1151 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-                    *puVar11 = CONCAT22(CONCAT11(bVar3,bVar3),CONCAT11(bVar3,bVar3)) & 0x80808080;
-                    puVar11 = puVar11 + 1;
+                    *puVar12 = CONCAT22(CONCAT11(bVar3,bVar3),CONCAT11(bVar3,bVar3)) & 0x80808080;
+                    puVar12 = puVar12 + 1;
                   }
                   for (uVar6 = local_1c - (int)local_ESI_1151 & 3; local_ESI_1151 = local_28,
                       local_ECX_632 = local_10, uVar6 != 0; uVar6 = uVar6 - 1) {
-                    *(byte *)puVar11 = bVar3 & 0x80;
-                    puVar11 = (uint *)((int)puVar11 + 1);
+                    *(byte *)puVar12 = bVar3 & 0x80;
+                    puVar12 = (uint *)((int)puVar12 + 1);
                   }
                 }
-                st::fn_006BFE70(local_8,pAVar13,(int)local_ESI_1151);
+
+                st::fn_006BFE70(local_8,pAVar14,(int)local_ESI_1151);
                 if (*(int *)(&DAT_008550b8 + iVar9) < 1) {
                   uVar6 = (&DAT_00854ffc)[uVar2 * 0x31];
                   *(undefined1 **)(&DAT_00855010 + iVar9) =
@@ -283,31 +289,32 @@ LAB_006c0c93:
                         *(undefined4 *)(&DAT_008550b4 + iVar9) = 0;
                         *(LPDWORD *)(&DAT_00855020 + iVar9) = lpNumberOfBytesRead;
                         if ((uVar6 & 0x2000) == 0) {
-                          uVar7 = (-(uint)(*(short *)(&DAT_0085501c)[uVar2 * 0x31] != 1) & 0x24) +
+                          uVar7 = (-st::storage_bit_cast<uint>(static_cast<uint32_t>(*(short *)(&DAT_0085501c)[uVar2 * 0x31] != 1)) & 0x24) +
                                   0x1a;
                           psVar10 = (short *)(&DAT_0085501c)[uVar2 * 0x31];
-                          puVar12 = (undefined4 *)(&DAT_00855044 + iVar9);
+                          puVar13 = reinterpret_cast<uint *>((&DAT_00855044 + iVar9));
                           for (uVar6 = uVar7 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-                            *puVar12 = *(undefined4 *)psVar10;
+                            *puVar13 = *(undefined4 *)psVar10;
                             psVar10 = psVar10 + 2;
-                            puVar12 = puVar12 + 1;
+                            puVar13 = puVar13 + 1;
                           }
                           for (uVar7 = uVar7 & 3; local_ESI_1151 = local_28, uVar7 != 0;
                               uVar7 = uVar7 - 1) {
-                            *(char *)puVar12 = (char)*psVar10;
+                            *(char *)puVar13 = (char)*psVar10;
                             psVar10 = (short *)((int)psVar10 + 1);
-                            puVar12 = (undefined4 *)((int)puVar12 + 1);
+                            puVar13 = (undefined4 *)((int)puVar13 + 1);
                           }
                         }
                         else {
+
                           DVar4 = st::fn_006D4930(*(AnonShape_006D4930_676532DD **)
                                                 ((&DAT_00855014)[uVar2 * 0x31] + 4),
                                                lpNumberOfBytesRead,
-                                               (undefined4 *)(&DAT_00855044 + iVar9),0x3e);
+                                               reinterpret_cast<undefined4 *>((&DAT_00855044 + iVar9)),0x3e);
                           if (DVar4 != 0) goto cf_common_join_006C0E00;
                           *(uint *)(&DAT_00855020 + iVar9) =
                                *(int *)(&DAT_00855020 + iVar9) +
-                               (-(uint)(*(short *)(&DAT_00855044 + iVar9) != 1) & 0x24) + 0x1a;
+                               (-st::storage_bit_cast<uint>(static_cast<uint32_t>(*(short *)(&DAT_00855044 + iVar9) != 1)) & 0x24) + 0x1a;
                         }
                         if (*(short *)(&DAT_00855044 + iVar9) == 2) {
                           uVar6 = *(uint *)(&DAT_0085505e + iVar9);
@@ -328,7 +335,7 @@ LAB_006c0c93:
                     *(int *)(&DAT_00855020 + iVar9) = iVar4;
                     if ((uVar6 & 0x2000) != 0) {
                       *(uint *)(&DAT_00855020 + iVar9) =
-                           (-(uint)(*(short *)(&DAT_00855044 + iVar9) != 1) & 0x24) + 0x1a + iVar4;
+                           (-st::storage_bit_cast<uint>(static_cast<uint32_t>(*(short *)(&DAT_00855044 + iVar9) != 1)) & 0x24) + 0x1a + iVar4;
                     }
                     if (*(short *)(&DAT_00855044 + iVar9) == 2) {
                       uVar6 = *(uint *)(&DAT_0085505e + iVar9);
@@ -341,8 +348,10 @@ LAB_006c0c93:
                     if (local_ESI_1151 < local_ECX_632) {
                       iVar4 = (int)local_ECX_632 - (int)local_ESI_1151;
 LAB_006c0d87:
-                      st::fn_006BFE70((undefined4 *)(&local_ESI_1151->field_0x0 + (int)local_8),pAVar13
-                                   ,iVar4);
+
+                      st::fn_006BFE70((RecoveredRecord_006BFE70_3123BCE8 *)
+                                   ((int)&local_8->field_0x0 + (int)&local_ESI_1151->field_0x0),
+                                   pAVar14,iVar4);
                     }
                   }
                 }
@@ -352,11 +361,11 @@ LAB_006c0d93:
                 iVar4 = (**(code **)(*(int *)(&PTR_00855004)[uVar2 * 0x31] + 0x4c))
                                   ((&PTR_00855004)[uVar2 * 0x31],local_8,local_1c,local_30,local_2c);
                 if (iVar4 == 0) {
-                  *(uint *)pAVar13 = *(uint *)pAVar13 ^ 4;
+                  *(uint *)pAVar14 = *(uint *)pAVar14 ^ 4;
                   if ((*(int *)(&DAT_008550b8 + iVar9) < 1) &&
                      (((&DAT_00854ffc)[uVar2 * 0x31] & 1) == 0)) {
                     if (local_20 < local_14) {
-                      (&DAT_00854ffc)[uVar2 * 0x31] = (&DAT_00854ffc)[uVar2 * 0x31] | 0x8000;
+                      (&DAT_00854ffc)[uVar2 * 0x31] = st::machine_word_boundary_cast<undefined4>((&DAT_00854ffc)[uVar2 * 0x31] | 0x8000);
                     }
                     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
                     if ((local_20 <= local_24) &&
@@ -380,8 +389,9 @@ cf_common_join_006C0F07:
           }
         }
         else {
-          *(uint *)pAVar13 = uVar6 & 0xffffffdf;
-          iVar4 = st::fn_006BFBF0((AnonShape_006BFBF0_13F73F95 *)pAVar13);
+          *(uint *)pAVar14 = uVar6 & 0xffffffdf;
+
+          iVar4 = st::fn_006BFBF0(reinterpret_cast<RecoveredRecordView_006BFBF0_7F78587C *>(pAVar14));
           if (iVar4 == 0) goto cf_continue_loop_006C0F40;
           piVar1 = static_cast<int *>((&PTR_00855004)[uVar2 * 0x31]);
           bVar3 = 1;
@@ -402,7 +412,7 @@ cf_common_join_006C0F07:
             (&PTR_00855004)[uVar2 * 0x31] = nullptr;
           }
 cf_common_join_006C0E05:
-          local_18 = *(uint *)pAVar13 & 8;
+          local_18 = *(uint *)pAVar14 & 8;
           piVar1 = static_cast<int *>((&PTR_00855008)[uVar2 * 0x31]);
           if (piVar1 != nullptr) {
             /* ST_CALLSITE[006C0E17]: CALL dword ptr [EDX + 0x8] */
@@ -417,30 +427,32 @@ cf_common_join_006C0E05:
             (**(code **)(*piVar1 + 8))(piVar1);
           }
           uVar6 = local_c;
-          local_28 = *(AnonShape_006BFBF0_13F73F95 **)(&DAT_00855028 + iVar9);
+          local_28 = *(RecoveredRecordView_006BFBF0_7F78587C **)(&DAT_00855028 + iVar9);
           iVar9 = *(int *)(&DAT_0085502c + iVar9);
           for (iVar4 = 0x31; piVar1 = st::pointer_boundary_cast<int *>(DAT_00854ff4), iVar4 != 0; iVar4 = iVar4 + -1) {
-            *(undefined4 *)pAVar13 = 0;
-            pAVar13 = (AnonShape_006BFE70_9EDC24A5 *)&pAVar13->field_0004;
+            *(undefined4 *)pAVar14 = 0;
+            pAVar14 = reinterpret_cast<AnonShape_006BFE70_9EDC24A5 *>(&pAVar14->field_0004);
           }
           for (; piVar1 != nullptr; piVar1 = (int *)*piVar1) {
             if ((piVar1[0xd] <= (int)local_c) && ((int)local_c <= piVar1[0xe])) {
               uVar2 = piVar1[5];
-              pAVar8 = local_28;
+              pRVar8 = local_28;
               if ((uVar2 & 0x10) == 0) {
-                pAVar8 = (AnonShape_006BFBF0_13F73F95 *)piVar1[6];
+                pRVar8 = (RecoveredRecordView_006BFBF0_7F78587C *)piVar1[6];
               }
               if ((uVar2 & 0x20) == 0) {
                 iVar9 = piVar1[7];
               }
               if ((uVar2 & 0x2000) == 0) {
-                st::fn_006C0800((short *)piVar1[3],((byte *)piVar1)[4],uVar2,st::machine_word_boundary_cast<undefined4>(pAVar8),iVar9,piVar1[8],
+                st::fn_006C0800((short *)piVar1[3],static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)piVar1)[4])),uVar2,st::machine_word_boundary_cast<undefined4>(pRVar8),iVar9,piVar1[8],
                              piVar1[9],piVar1[10],piVar1[0xb],piVar1[0xc],local_c);
               }
               else {
-                st::fn_006C2460(piVar1[1],piVar1[2],((byte *)piVar1)[4],uVar2,st::machine_word_boundary_cast<undefined4>(pAVar8),iVar9,local_c);
+                st::fn_006C2460((RecoveredRecord_006C2460_ADD01A02 *)piVar1[1],piVar1[2],
+                             static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)piVar1)[4])),uVar2,st::machine_word_boundary_cast<undefined4>(pRVar8),iVar9,local_c);
               }
               if (local_18 != 0) {
+
                 st::fn_006C18D0(uVar6);
               }
               piVar1[0xd] = -1;
@@ -601,8 +613,8 @@ void st::fn_006C1BA0(int param_1)
           while (piVar1 != nullptr) {
             if ((piVar1[0xe] < 0) || ((piVar1[0xd] <= param_1 && (param_1 <= piVar1[0xe])))) {
               piVar2 = (int *)*piVar1;
-              st::fn_006B98C0((int *)&DAT_00854ff4,piVar1);
-              st::fn_006A5E90((short *)piVar1);
+              st::fn_006B98C0(reinterpret_cast<int *>(&DAT_00854ff4),piVar1);
+              st::fn_006A5E90(reinterpret_cast<short *>(piVar1));
               piVar1 = piVar2;
             }
             else {
@@ -629,7 +641,7 @@ void st::fn_006C1C90(int param_1)
     /* ST_CALLSITE[006C1CA1]: CALL dword ptr [0x0085bb8c] */
     st::external_00000018((LPCRITICAL_SECTION)&DAT_00856898);
     if (((-1 < param_1) && (param_1 < 0x20)) && (((&DAT_00854ff8)[param_1 * 0xc4] & 1) != 0)) {
-      (&DAT_00854ffc)[param_1 * 0x31] = (&DAT_00854ffc)[param_1 * 0x31] & 0xfffffffe;
+      (&DAT_00854ffc)[param_1 * 0x31] = st::machine_word_boundary_cast<undefined4>((&DAT_00854ffc)[param_1 * 0x31] & 0xfffffffe);
     }
     /* ST_CALLSITE[006C1CD3]: CALL dword ptr [0x0085bb90] */
     st::external_00000019((LPCRITICAL_SECTION)&DAT_00856898);
@@ -651,7 +663,7 @@ void st::fn_006C1E20(void)
   void **ppvVar3;
   void **ppvVar4;
 
-  if ((DAT_008568b4 != 0) && (g_hThread_008568C0 != (HANDLE)0x0)) {
+  if ((DAT_008568b4 != 0) && (st::machine_word_boundary_cast<uint>(g_hThread_008568C0) != st::machine_word_boundary_cast<uint>((HANDLE)0x0))) {
     /* ST_CALLSITE[006C1E46]: CALL ESI */
     st::external_00000018((LPCRITICAL_SECTION)&DAT_00856880);
     if (DAT_008568c4 == 0) {
@@ -729,8 +741,7 @@ undefined4 st::fn_006C1F90(int param_1)
 {
   int *piVar1;
   int *piVar2;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0;
   if (DAT_008568b4 == 0) {
     return 0xffffffcc;
@@ -745,8 +756,8 @@ undefined4 st::fn_006C1F90(int param_1)
     do {
       if (piVar1[0xe] < 0) {
         piVar2 = (int *)*piVar1;
-        st::fn_006B98C0((int *)&DAT_00854ff4,piVar1);
-        st::fn_006A5E90((short *)piVar1);
+        st::fn_006B98C0(reinterpret_cast<int *>(&DAT_00854ff4),piVar1);
+        st::fn_006A5E90(reinterpret_cast<short *>(piVar1));
       }
       else {
         if ((piVar1[0xd] <= param_1) && (param_1 <= piVar1[0xe])) {
@@ -782,7 +793,7 @@ void st::fn_006C2050(void)
     /* ST_CALLSITE[006C2073]: CALL ESI */
     st::external_00000018((LPCRITICAL_SECTION)&DAT_00856898);
     st::fn_006B9890(reinterpret_cast<int *>(&DAT_00854ff4));
-    if (g_hThread_008568C0 != (HANDLE)0x0) {
+    if (st::machine_word_boundary_cast<uint>(g_hThread_008568C0) != st::machine_word_boundary_cast<uint>((HANDLE)0x0)) {
       /* ST_CALLSITE[006C208A]: CALL dword ptr [0x0085bb6c] */
       st::external_00000010(g_hThread_008568C0,0);
       g_hThread_008568C0 = (HANDLE)0x0;
@@ -916,34 +927,36 @@ undefined4 st::fn_006C23F0(short *param_1)
    entry-use width=/byte; unmasked_dword_reads=0; evidence=006C2476 MOV EAX,dword ptr [EBP + 0x10];
    first-use mask */
 
-void st::fn_006C2460(int param_1,DWORD param_2,byte param_3,uint param_4,undefined4 param_5,
-                 undefined4 param_6,int param_7)
+void st::fn_006C2460(RecoveredRecord_006C2460_ADD01A02 *param_1,DWORD param_2,byte param_3,uint param_4
+                 ,undefined4 param_5,undefined4 param_6,int param_7)
 
 {
   int *piVar1;
-  DWORD DVar2;
+  int iVar2;
   int iVar3;
-  AnonShape_006BFBF0_13F73F95 *pAVar4;
+  RecoveredRecordView_006BFBF0_7F78587C *pRVar4;
 
   iVar3 = param_7 * 0xc4;
-  pAVar4 = (AnonShape_006BFBF0_13F73F95 *)(&DAT_00854ff8 + iVar3);
+  pRVar4 = reinterpret_cast<RecoveredRecordView_006BFBF0_7F78587C *>((&DAT_00854ff8 + iVar3));
   *(undefined4 *)(&DAT_00855028 + iVar3) = param_5;
   (&DAT_00855024)[param_7 * 0x31] = (uint)param_3;
   *(undefined4 *)(&DAT_0085502c + iVar3) = param_6;
-  (&DAT_00855014)[param_7 * 0x31] = param_1;
+  (&DAT_00855014)[param_7 * 0x31] = st::machine_word_boundary_cast<undefined4>(param_1);
   (&DAT_00855018)[param_7 * 0x31] = param_2;
   (&DAT_00854ffc)[param_7 * 0x31] = param_4 | 0x2000;
-  DVar2 = st::fn_006D4930(*(AnonShape_006D4930_676532DD **)(param_1 + 4),(LPDWORD)param_2,
-                       (undefined4 *)(&DAT_00855044 + iVar3),0x3e);
-  if (DVar2 == 0) {
+
+  iVar2 = st::fn_006D4930(param_1->field_0004,(LPDWORD)param_2,reinterpret_cast<undefined4 *>((&DAT_00855044 + iVar3)),
+                       0x3e);
+  if (iVar2 == 0) {
     *(uint *)(&DAT_00855020 + iVar3) =
-         (-(uint)(*(short *)(&DAT_00855044 + iVar3) != 1) & 0x24) + 0x1a + param_2;
+         (-st::storage_bit_cast<uint>(static_cast<uint32_t>(*(short *)(&DAT_00855044 + iVar3) != 1)) & 0x24) + 0x1a + param_2;
     if ((param_4 & 4) != 0) {
-      *(uint *)pAVar4 = *(uint *)pAVar4 | 0x21;
+      *(uint *)pRVar4 = *(uint *)pRVar4 | 0x21;
       return;
     }
-    iVar3 = st::fn_006BFBF0(pAVar4);
-    if (iVar3 == 0) {
+
+    iVar2 = st::fn_006BFBF0(pRVar4);
+    if (iVar2 == 0) {
       return;
     }
   }
@@ -956,9 +969,9 @@ void st::fn_006C2460(int param_1,DWORD param_2,byte param_3,uint param_4,undefin
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)(&PTR_00855004)[param_7 * 0x31] + 8))((&PTR_00855004)[param_7 * 0x31]);
   }
-  for (iVar3 = 0x31; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(undefined4 *)pAVar4 = 0;
-    pAVar4 = (AnonShape_006BFBF0_13F73F95 *)&pAVar4->field_0x4;
+  for (iVar2 = 0x31; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *(undefined4 *)pRVar4 = 0;
+    pRVar4 = reinterpret_cast<RecoveredRecordView_006BFBF0_7F78587C *>(reinterpret_cast<byte *>(pRVar4) + 0x4);
   }
   return;
 }
@@ -1022,7 +1035,7 @@ undefined4 st::fn_006C2A00(LPVOID lpBuffer)
   uVar2 = 0;
   /* ST_CALLSITE[006C2A1B]: CALL dword ptr [0x0085bc80] */
   hFile = st::external_00000055(static_cast<LPCSTR>(lpBuffer),0x80000000,0,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
-  if (hFile == (HANDLE)0xffffffff) {
+  if (st::machine_word_boundary_cast<uint>(hFile) == st::machine_word_boundary_cast<uint>((HANDLE)0xffffffff)) {
     return 0;
   }
   /* ST_CALLSITE[006C2A3F]: CALL dword ptr [0x0085bc68] */
@@ -1053,6 +1066,7 @@ uint st::fn_006C2A80(int *param_1,DDXContext *param_2)
   void *pvVar1;
 
   *param_1 = 0;
+
   pvVar1 = st::fn_006AAC10(0xb8);
   if (pvVar1 == nullptr) {
     return 0xfffffffe;
@@ -1096,7 +1110,7 @@ void st::fn_006C2C80(int *param_1)
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*(int *)param_1[0xd] + 8))((int *)param_1[0xd]);
     param_1[0xd] = 0;
-    param_1[2] = st::machine_word_boundary_cast<int>(param_1[2] & 0xbfffffff);
+    param_1[2] = param_1[2] & 0xbfffffff;
   }
   return;
 }
@@ -1117,7 +1131,7 @@ void st::fn_006C3340(int param_1)
 
   iVar2 = param_1;
   /* ST_CALLSITE[006C3357]: CALL dword ptr [0x0085be58] */
-  st::external_0000009C(*(HWND *)(*(int *)(param_1 + 4) + 4),st::pointer_boundary_cast<LPRECT>(&local_18));
+  st::external_0000009C(*(HWND *)(*(int *)(param_1 + 4) + 4),reinterpret_cast<LPRECT>(&local_18));
   piVar1 = (int *)(param_1 + 4);
   iVar6 = *(int *)(*piVar1 + 0x18);
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -1236,14 +1250,14 @@ void st::fn_006C3500(AnonShape_006C3500_19C01617 *param_1)
 
 {
   int iVar1;
-  undefined4 local_80 [26];
+  uint local_80 [26];
   uint local_18;
 
   iVar1 = param_1->field_0028;
   if (((param_1->field_0004 & 1) != 0) && (STField<int>(iVar1,0x40) == 0)) {
     memset(local_80, 0, 0x7c); /* compiler bulk-zero initialization */
     local_80[0] = 0x7c;
-    local_18 = st::machine_word_boundary_cast<uint>(param_1->field_002C & 0x4840);
+    local_18 = param_1->field_002C & 0x4840;
     local_80[1] = 7;
     local_80[3] = STField<undefined4>(iVar1,0x18);
     local_80[2] = STField<undefined4>(iVar1,0x1C);
@@ -1269,12 +1283,14 @@ void st::fn_006C3570(AnonShape_006C3570_37024033 *param_1)
     /* ST_CALLSITE[006C358A]: CALL dword ptr [0x0085bb8c] */
     st::external_00000018((LPCRITICAL_SECTION)&param_1[9].field_0040);
     if ((param_1->field_0004 & 0x20000000) != 0) {
-      st::fn_006C4110((AnonShape_006C3FC0_72DDFA27 *)param_1);
+
+      st::fn_006C4110(reinterpret_cast<RecoveredSourceFamily_dvideo *>(param_1));
     }
     if ((param_1->field_0004 & 0x40000000) != 0) {
-      st::fn_006C3F00((int)param_1);
+
+      st::fn_006C3F00(param_1);
     }
-    if ((HANDLE)param_1->field_0084 != (HANDLE)0x0) {
+    if (st::machine_word_boundary_cast<uint>((HANDLE)param_1->field_0084) != st::machine_word_boundary_cast<uint>((HANDLE)0x0)) {
       /* ST_CALLSITE[006C35BA]: CALL dword ptr [0x0085bb6c] */
       st::external_00000010((HANDLE)param_1->field_0084,0);
       param_1->field_0084 = 0;
@@ -1302,7 +1318,7 @@ void st::fn_006C3570(AnonShape_006C3570_37024033 *param_1)
     }
     param_1->field_0044 = 0;
     param_1->field_0074 = 0;
-    param_1->field_0004 = st::machine_word_boundary_cast<uint>(param_1->field_0004 & 0x7ffffffe);
+    param_1->field_0004 = param_1->field_0004 & 0x7ffffffe;
     /* ST_CALLSITE[006C3616]: CALL dword ptr [0x0085bb90] */
     st::external_00000019((LPCRITICAL_SECTION)&param_1[9].field_0040);
   }
@@ -1325,11 +1341,11 @@ DWORD st::fn_006C3630(LPDWORD lpThreadId)
 
   lpParameter = lpThreadId;
   if ((lpThreadId[1] & 0x80000000) != 0) {
-    st::fn_006C3570((AnonShape_006C3570_37024033 *)lpThreadId);
+    st::fn_006C3570(reinterpret_cast<AnonShape_006C3570_37024033 *>(lpThreadId));
   }
   /* ST_CALLSITE[006C365A]: CALL dword ptr [0x0085c0e4] */
-  DVar3 = st::external_000000D0((IID *)&DAT_007a10e8,(LPUNKNOWN)0x0,1,(IID *)&DAT_007a10f8,
-                           (LPVOID *)(lpParameter + 0x15));
+  DVar3 = st::external_000000D0(reinterpret_cast<IID *>(&DAT_007a10e8),(LPUNKNOWN)0x0,1,reinterpret_cast<IID *>(&DAT_007a10f8),
+                           reinterpret_cast<LPVOID *>((lpParameter + 0x15)));
   if (-1 < (int)DVar3) {
     puVar1 = (undefined4 *)lpParameter[0x15];
     /* ST_CALLSITE[006C3678]: CALL dword ptr [ECX] */
@@ -1341,22 +1357,24 @@ DWORD st::fn_006C3630(LPDWORD lpThreadId)
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       DVar3 = (**(code **)(*piVar2 + 0x1c))(piVar2,lpParameter + 0x1d);
       if (-1 < (int)DVar3) {
-        DVar3 = st::fn_006D4EF0(st::pointer_boundary_cast<undefined4 *>(lpParameter + 0x10),st::machine_word_boundary_cast<undefined4>(lpParameter + 0x12),(int)lpParameter);
+
+        DVar3 = st::fn_006D4EF0(reinterpret_cast<undefined4 *>(lpParameter + 0x10),st::machine_word_boundary_cast<undefined4>(lpParameter + 0x12),(int)lpParameter);
         if (DVar3 == 0) {
-          DVar3 = st::fn_006D4F70(st::pointer_boundary_cast<undefined4 *>(lpParameter + 0x11),st::machine_word_boundary_cast<undefined4>(lpParameter + 0x13),st::machine_word_boundary_cast<undefined4>(lpParameter));
+          /* ST_CALLSITE[006C36B3]: CALL 0x006d4f70; direct=006D4F70 FUN_006d4f70; [STCallResultViewApplier] presentation_only; exact direct-call result=/winbase.h/LPSECURITY_ATTRIBUTES; source view only; no Ghidra override */
+          DVar3 = st::fn_006D4F70(reinterpret_cast<undefined4 *>(lpParameter + 0x11),st::machine_word_boundary_cast<undefined4>(lpParameter + 0x13),st::machine_word_boundary_cast<undefined4>(lpParameter));
           if (DVar3 == 0) {
             /* ST_CALLSITE[006C36CB]: CALL dword ptr [0x0085bb70] */
             pvVar4 = st::external_00000011((LPSECURITY_ATTRIBUTES)0x0,0,st::function_address_boundary_cast<LPTHREAD_START_ROUTINE>(st::fn_006C3720),lpParameter,0,
                                   (LPDWORD)&lpThreadId);
             lpParameter[0x21] = (DWORD)pvVar4;
-            if (pvVar4 != (HANDLE)0x0) {
+            if (st::machine_word_boundary_cast<uint>(pvVar4) != st::machine_word_boundary_cast<uint>((HANDLE)0x0)) {
               lpParameter[1] = lpParameter[1] | 0x80000000;
               return 0;
             }
             /* ST_CALLSITE[006C36DB]: CALL dword ptr [0x0085bbcc] */
             DVar3 = st::external_00000028();
             if (DVar3 == 0) {
-              st::fn_006C3570((AnonShape_006C3570_37024033 *)lpParameter);
+              st::fn_006C3570(reinterpret_cast<AnonShape_006C3570_37024033 *>(lpParameter));
               return 0xffffff03;
             }
           }
@@ -1364,7 +1382,7 @@ DWORD st::fn_006C3630(LPDWORD lpThreadId)
       }
     }
   }
-  st::fn_006C3570((AnonShape_006C3570_37024033 *)lpParameter);
+  st::fn_006C3570(reinterpret_cast<AnonShape_006C3570_37024033 *>(lpParameter));
   return DVar3;
 }
 
@@ -1378,7 +1396,7 @@ undefined4 st::fn_006C3720(WPARAM param_1)
   LPARAM lParam;
   DWORD DVar3;
   int iVar4;
-  undefined1 local_c [4];
+  byte local_c [4];
   LPARAM local_8;
 
   WVar2 = param_1;
@@ -1399,7 +1417,7 @@ undefined4 st::fn_006C3720(WPARAM param_1)
         param_1 = 0;
       }
       else {
-        st::fn_006C4110((AnonShape_006C3FC0_72DDFA27 *)WVar2);
+        st::fn_006C4110((RecoveredSourceFamily_dvideo *)WVar2);
         if ((param_1 != 0) && ((uVar1 & 0x20000000) != 0)) {
           /* ST_CALLSITE[006C379C]: CALL dword ptr [0x0085be5c] */
           st::external_0000009D(*(HWND *)(WVar2 + 0x78),*(UINT *)(WVar2 + 0x80),param_1,lParam);
@@ -1427,16 +1445,16 @@ void st::fn_006C3AA0(int *param_1)
 {
   int iVar1;
 
-  st::fn_006C3570((AnonShape_006C3570_37024033 *)param_1);
+  st::fn_006C3570(reinterpret_cast<AnonShape_006C3570_37024033 *>(param_1));
   /* ST_CALLSITE[006C3AB4]: CALL dword ptr [0x0085bb84] */
   st::external_00000016((LPCRITICAL_SECTION)(param_1 + 0x142));
-  st::fn_006B98C0((int *)&DAT_008568d0,param_1);
+  st::fn_006B98C0(reinterpret_cast<int *>(&DAT_008568d0),param_1);
   iVar1 = st::fn_006C38D0(st::pointer_boundary_cast<undefined4 *>(DAT_008568d0),param_1[0x1e]);
   if (iVar1 == 0) {
     /* ST_CALLSITE[006C3AE6]: CALL dword ptr [0x0085be60] */
     st::external_0000009E((HWND)param_1[0x1e],-4,param_1[0x22]);
   }
-  st::fn_006A5E90((short *)param_1);
+  st::fn_006A5E90(reinterpret_cast<short *>(param_1));
   /* ST_CALLSITE[006C3AF2]: CALL dword ptr [0x0085c0e0] */
   st::external_000000CF();
   return;
@@ -1444,49 +1462,56 @@ void st::fn_006C3AA0(int *param_1)
 
 // 006C3F00 FUN_006c3f00
 #line 4 "decomp/ST.exe/functions/006C3F00/decomp.c"
-undefined4 st::fn_006C3F00(int param_1)
+/* [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:0: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=1,
+   pointer_dereferences=10, scalar_uses=0; sites=006C3F16 dereference: MOV EAX,dword ptr [ESI +
+   0x64] | 006C3F25 dereference: MOV dword ptr [ESI + 0x64],EDI | 006C3F28 dereference: MOV
+   EAX,dword ptr [ESI + 0x60] | 006C3F35 dereference: MOV dword ptr [ESI + 0x60],EDI | 006C3F38
+   dereference: MOV EAX,dword ptr [ESI + 0x5c] | 006C3F45 dereference: MOV dword ptr [ESI +
+   0x5c],EDI | 006C3F48 dereference: MOV EAX,dword ptr [ESI + 0x50] | 006C3F55 dereference: MOV
+   dword ptr [ESI + 0x50],EDI | 006C3F5E dereference: MOV EDX,dword ptr [ESI + 0x4] | 006C3F68
+   dereference: MOV dword ptr [ESI + 0x4],EDX */
+
+undefined4 st::fn_006C3F00(void *param_1)
 
 {
   int *piVar1;
 
   /* ST_CALLSITE[006C3F10]: CALL dword ptr [0x0085bb8c] */
-  st::external_00000018((LPCRITICAL_SECTION)(param_1 + 0x508));
-  piVar1 = *(int **)(param_1 + 100);
+  st::external_00000018((LPCRITICAL_SECTION)((int)param_1 + 0x508));
+  piVar1 = STField<int *>(param_1,100);
   if (piVar1 != nullptr) {
     /* ST_CALLSITE[006C3F22]: CALL dword ptr [ECX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*piVar1 + 8))(piVar1);
-    *(undefined4 *)(param_1 + 100) = 0;
+    STField<undefined4>(param_1,100) = 0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  piVar1 = *(int **)(param_1 + 0x60);
+  piVar1 = STField<int *>(param_1,0x60);
   if (piVar1 != nullptr) {
     /* ST_CALLSITE[006C3F32]: CALL dword ptr [EDX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*piVar1 + 8))(piVar1);
-    *(undefined4 *)(param_1 + 0x60) = 0;
+    STField<undefined4>(param_1,0x60) = 0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  piVar1 = *(int **)(param_1 + 0x5c);
+  piVar1 = STField<int *>(param_1,0x5c);
   if (piVar1 != nullptr) {
     /* ST_CALLSITE[006C3F42]: CALL dword ptr [ECX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*piVar1 + 8))(piVar1);
-    *(undefined4 *)(param_1 + 0x5c) = 0;
+    STField<undefined4>(param_1,0x5c) = 0;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  piVar1 = *(int **)(param_1 + 0x50);
+  piVar1 = STField<int *>(param_1,0x50);
   if (piVar1 != nullptr) {
     /* ST_CALLSITE[006C3F52]: CALL dword ptr [EDX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*piVar1 + 8))(piVar1);
-    *(undefined4 *)(param_1 + 0x50) = 0;
+    STField<undefined4>(param_1,0x50) = 0;
   }
-  st::fn_006C3500((AnonShape_006C3500_19C01617 *)param_1);
-  *(uint *)(param_1 + 4) = *(uint *)(param_1 + 4) & 0xbffffffe;
-  st::fn_006C3570((AnonShape_006C3570_37024033 *)param_1);
+  st::fn_006C3500(static_cast<AnonShape_006C3500_19C01617 *>(param_1));
+  STField<uint>(param_1,4) = STField<uint>(param_1,4) & 0xbffffffe;
+  st::fn_006C3570(static_cast<AnonShape_006C3570_37024033 *>(param_1));
   /* ST_CALLSITE[006C3F71]: CALL dword ptr [0x0085bb90] */
-  st::external_00000019((LPCRITICAL_SECTION)(param_1 + 0x508));
+  st::external_00000019((LPCRITICAL_SECTION)((int)param_1 + 0x508));
   return 0;
 }
 
@@ -1501,15 +1526,15 @@ void st::fn_006C3F80(AnonShape_006C3F80_1EACF9F3 *param_1,undefined4 param_2,und
     param_1->field_000C = param_3;
     param_1->field_0010 = param_4;
     param_1->field_0014 = param_5;
-    param_1->field_0004 = st::machine_word_boundary_cast<uint>(param_1->field_0004 | 0x8000000);
-    st::fn_006C3D80((AnonShape_006C3D80_5E5410BE *)param_1);
+    param_1->field_0004 = param_1->field_0004 | 0x8000000;
+    st::fn_006C3D80(reinterpret_cast<AnonShape_006C3D80_5E5410BE *>(param_1));
   }
   return;
 }
 
 // 006C3FC0 FUN_006c3fc0
 #line 4 "decomp/ST.exe/functions/006C3FC0/decomp.c"
-void st::fn_006C3FC0(AnonShape_006C3FC0_72DDFA27 *param_1,undefined4 param_2,undefined4 param_3,
+void st::fn_006C3FC0(RecoveredSourceFamily_dvideo *param_1,undefined4 param_2,undefined4 param_3,
                  undefined4 param_4,undefined4 param_5)
 
 {
@@ -1519,8 +1544,8 @@ void st::fn_006C3FC0(AnonShape_006C3FC0_72DDFA27 *param_1,undefined4 param_2,und
     param_1->field_0020 = param_4;
     param_1->field_0024 = param_5;
   }
-  param_1->field_0004 = st::machine_word_boundary_cast<uint>(param_1->field_0004 | 0x4000000);
-  st::fn_006C3D80((AnonShape_006C3D80_5E5410BE *)param_1);
+  param_1->field_0004 = param_1->field_0004 | 0x4000000;
+  st::fn_006C3D80(reinterpret_cast<AnonShape_006C3D80_5E5410BE *>(param_1));
   return;
 }
 
@@ -1615,7 +1640,7 @@ void st::fn_006C4A70(undefined4 *param_1)
 {
   if (param_1 != nullptr) {
     st::fn_006D46A0((undefined4 *)param_1[7],0);
-    st::fn_006A5E90((short *)param_1);
+    st::fn_006A5E90(reinterpret_cast<short *>(param_1));
   }
   return;
 }
@@ -1644,10 +1669,10 @@ int st::fn_006C5210(AnonShape_006C5210_E9B30C00 *param_1,undefined4 param_2,int 
   int iVar1;
   uint uVar2;
   uint uVar3;
-  undefined4 local_78 [2];
-  undefined4 local_70;
-  undefined4 local_28;
-  undefined4 local_14;
+  uint local_78 [2];
+  uint local_70;
+  uint local_28;
+  uint local_14;
   int local_10;
   int local_c;
   int local_8;
@@ -1668,14 +1693,14 @@ int st::fn_006C5210(AnonShape_006C5210_E9B30C00 *param_1,undefined4 param_2,int 
     /* ST_CALLSITE[006C5279]: CALL dword ptr [ECX + 0x14] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar1 = (**(code **)(*param_1->field_0040 + 0x14))
-                      /* ST_CALLSITE[006C5279]: CALL dword ptr [ECX + 0x14] */
                       (param_1->field_0040,&local_14,0,0,uVar2 | 0x1000400,local_78);
     if (iVar1 == 0) break;
     if (iVar1 == -0x7789fe3e) {
-      st::fn_006CEC40((AnonShape_006CEC40_BB23E716 *)param_1);
+      st::fn_006CEC40(reinterpret_cast<AnonShape_006CEC40_BB23E716 *>(param_1));
     }
     else {
       if (((iVar1 != -0x7789ff60) && (iVar1 != -0x7789fe52)) || (uVar3 != 0)) break;
+      /* ST_CALLSITE[006C52AB]: CALL dword ptr [0x0085bc6c] */
       st::external_00000050(2);
     }
     uVar3 = uVar3 + 1;
@@ -1696,11 +1721,11 @@ int st::fn_006C52E0(AnonShape_006C52E0_B18BC6D0 *param_1,int param_2,undefined4 
   int iVar1;
   uint uVar2;
   uint uVar3;
-  undefined4 local_78 [2];
-  undefined4 local_70;
-  undefined4 local_28;
+  uint local_78 [2];
+  uint local_70;
+  uint local_28;
   int local_14;
-  undefined4 local_10;
+  uint local_10;
   int local_c;
   int local_8;
 
@@ -1720,14 +1745,14 @@ int st::fn_006C52E0(AnonShape_006C52E0_B18BC6D0 *param_1,int param_2,undefined4 
     /* ST_CALLSITE[006C5349]: CALL dword ptr [EDX + 0x14] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar1 = (**(code **)(*param_1->field_0040 + 0x14))
-                      /* ST_CALLSITE[006C5349]: CALL dword ptr [EDX + 0x14] */
                       (param_1->field_0040,&local_14,0,0,uVar2 | 0x1000400,local_78);
     if (iVar1 == 0) break;
     if (iVar1 == -0x7789fe3e) {
-      st::fn_006CEC40((AnonShape_006CEC40_BB23E716 *)param_1);
+      st::fn_006CEC40(reinterpret_cast<AnonShape_006CEC40_BB23E716 *>(param_1));
     }
     else {
       if (((iVar1 != -0x7789ff60) && (iVar1 != -0x7789fe52)) || (uVar3 != 0)) break;
+      /* ST_CALLSITE[006C537B]: CALL dword ptr [0x0085bc6c] */
       st::external_00000050(2);
     }
     uVar3 = uVar3 + 1;
@@ -2454,7 +2479,7 @@ LAB_006c63d8:
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 006B94E0 -> 006C6410 @ 006B9577 */
 
-int st::fn_006C6410(AnonShape_006B94E0_A7E74DF0 *param_1,int param_2)
+int st::fn_006C6410(RecoveredRecordView_006B94E0_92E1E144 *param_1,int param_2)
 
 {
   int iVar1;
@@ -2475,7 +2500,7 @@ int st::fn_006C6410(AnonShape_006B94E0_A7E74DF0 *param_1,int param_2)
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 006B94E0 -> 006C6450 @ 006B956D */
 
-undefined4 st::fn_006C6450(AnonShape_006B94E0_A7E74DF0 *param_1,undefined4 param_2)
+undefined4 st::fn_006C6450(RecoveredRecordView_006B94E0_92E1E144 *param_1,undefined4 param_2)
 
 {
   uint uVar1;
@@ -2532,7 +2557,7 @@ HPALETTE st::fn_006C6A60(ushort *param_1)
   HPALETTE pHVar1;
   LOGPALETTE local_408 [128];
 
-  st::fn_006BC360(param_1,st::pointer_boundary_cast<undefined4 *>(local_408[0].palPalEntry),nullptr);
+  st::fn_006BC360(param_1,reinterpret_cast<undefined4 *>(local_408[0].palPalEntry),nullptr);
   pHVar1 = st::fn_006D7CF0(local_408);
   return pHVar1;
 }
@@ -2570,7 +2595,7 @@ int st::fn_006C6AE0(AnonShape_006C6AE0_9C4F43C2 *param_1)
   short local_14;
   short local_12;
   byte local_10;
-  undefined1 local_f;
+  byte local_f;
   short local_c;
   short local_a;
   short local_8;
@@ -2658,7 +2683,8 @@ uint st::fn_006C6BE0(AnonShape_006C6BE0_5C8BBC13 *param_1)
     STPiece<3,1>(param_1) = (char)((uint)pAVar1 >> 0x18);
     param_1 = pAVar1;
     if (STPiece<3,1>(param_1) == '!') {
-      uVar3 = st::fn_006C6C80((int)pAVar2);
+
+      uVar3 = st::fn_006C6C80(reinterpret_cast<RecoveredRecord_006C6C80_604E9FE0 *>(pAVar2));
       if (uVar3 != 0) {
         return uVar3;
       }
@@ -2675,7 +2701,7 @@ uint st::fn_006C6BE0(AnonShape_006C6BE0_5C8BBC13 *param_1)
           *(uint *)&pAVar2->field_0x56 = uVar4 | 1;
           *(int *)&pAVar2->field_0x5a = iVar5;
           if (iVar5 == 0) {
-            *(uint *)&pAVar2->field_0x56 = STReplaceLowByte((uint32_t)(uVar4), (uint8_t)((char)(uVar4 | 1))) | 8;
+            *(uint *)&pAVar2->field_0x56 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(uVar4)), (uint8_t)((char)(uVar4 | 1))) | 8;
             return 0xffffffff;
           }
           if (iVar5 < 1) {
@@ -2693,21 +2719,20 @@ uint st::fn_006C6BE0(AnonShape_006C6BE0_5C8BBC13 *param_1)
 
 // 006C6C80 FUN_006c6c80
 #line 4 "decomp/ST.exe/functions/006C6C80/decomp.c"
-uint st::fn_006C6C80(int param_1)
+uint st::fn_006C6C80(RecoveredRecord_006C6C80_604E9FE0 *param_1)
 
 {
   bool bVar1;
-  int iVar2;
+  RecoveredRecord_006C6C80_604E9FE0 *pRVar2;
   uint uVar3;
   int iVar4;
   byte local_108;
-  undefined4 local_107;
+  uint local_107;
   uint local_8;
 
-  iVar2 = param_1;
+  pRVar2 = param_1;
   /* ST_CALLSITE[006C6C96]: CALL dword ptr [ESI + 0x42] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar3 = (**(code **)(param_1 + 0x42))(param_1,(int)&param_1 + 3,1);
+  uVar3 = (*STField<code *>(param_1,0x42))(param_1,(int)&param_1 + 3,1);
   if (uVar3 != 1) {
     if ((int)uVar3 < 0) {
       return uVar3;
@@ -2717,8 +2742,7 @@ uint st::fn_006C6C80(int param_1)
   bVar1 = false;
   if (STPiece<3,1>(param_1) == -1) {
     /* ST_CALLSITE[006C6CC8]: CALL dword ptr [ESI + 0x42] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    uVar3 = (**(code **)(iVar2 + 0x42))(iVar2,&local_8,1);
+    uVar3 = (*STField<code *>(pRVar2,0x42))(pRVar2,&local_8,1);
     if (uVar3 != 1) {
       if ((int)uVar3 < 0) {
         return uVar3;
@@ -2726,8 +2750,7 @@ uint st::fn_006C6C80(int param_1)
       return 0xfffffffb;
     }
     /* ST_CALLSITE[006C6CF8]: CALL dword ptr [ESI + 0x42] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    uVar3 = (**(code **)(iVar2 + 0x42))(iVar2,&local_108,local_8 & 0xff);
+    uVar3 = (*STField<code *>(pRVar2,0x42))(pRVar2,&local_108,local_8 & 0xff);
     if (uVar3 != (local_8 & 0xff)) {
       if ((int)uVar3 < 0) {
         return uVar3;
@@ -2735,7 +2758,8 @@ uint st::fn_006C6C80(int param_1)
       return 0xfffffffb;
     }
     if (((char)local_8 == '\v') &&
-       (iVar4 = st::fn_0072E6F0((char *)&local_108,st::mutable_c_string("NETSCAPE2.0"),0xb), iVar4 == 0
+
+       (iVar4 = st::fn_0072E6F0(reinterpret_cast<char *>(&local_108),st::mutable_c_string("NETSCAPE2.0"),0xb), iVar4 == 0
        )) {
       bVar1 = true;
     }
@@ -2744,8 +2768,7 @@ uint st::fn_006C6C80(int param_1)
     }
   }
   /* ST_CALLSITE[006C6D4F]: CALL dword ptr [ESI + 0x42] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar3 = (**(code **)(iVar2 + 0x42))(iVar2,&local_8,1);
+  uVar3 = (*STField<code *>(pRVar2,0x42))(pRVar2,&local_8,1);
   while( true ) {
     if (uVar3 != 1) {
       if ((int)uVar3 < 0) {
@@ -2757,24 +2780,22 @@ uint st::fn_006C6C80(int param_1)
       return 0;
     }
     /* ST_CALLSITE[006C6D74]: CALL dword ptr [ESI + 0x42] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    uVar3 = (**(code **)(iVar2 + 0x42))(iVar2,&local_108,local_8 & 0xff);
+    uVar3 = (*STField<code *>(pRVar2,0x42))(pRVar2,&local_108,local_8 & 0xff);
     if (uVar3 != (local_8 & 0xff)) break;
     if (((bVar1) && ((local_108 & 7) == 1)) && (2 < (byte)local_8)) {
-      STField<uint>(iVar2,0x56) = STField<uint>(iVar2,0x56) | 2;
-      STField<uint>(iVar2,0x5A) = local_107 & 0xffff;
+      *(uint *)&pRVar2[1].field_0x10 = *(uint *)&pRVar2[1].field_0x10 | 2;
+      *(uint *)&pRVar2[1].field_0x14 = local_107 & 0xffff;
     }
     if ((STPiece<3,1>(param_1) == -7) && (3 < (byte)local_8)) {
-      ((byte *)iVar2)[0x5e] = local_108;
-      STField<short>(iVar2,0x5F) = (short)local_107;
-      ((undefined1 *)iVar2)[0x61] = STPiece<2,1>(local_107);
+      pRVar2[1].field_0x18 = local_108;
+      *(short *)&pRVar2[1].field_0x19 = (short)local_107;
+      pRVar2[1].field_0x1b = STPiece<2,1>(local_107);
       if ((short)local_107 != 0) {
-        STField<uint>(iVar2,0x56) = STField<uint>(iVar2,0x56) | 2;
+        *(uint *)&pRVar2[1].field_0x10 = *(uint *)&pRVar2[1].field_0x10 | 2;
       }
     }
     /* ST_CALLSITE[006C6DEC]: CALL dword ptr [ESI + 0x42] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    uVar3 = (**(code **)(iVar2 + 0x42))(iVar2,&local_8,1);
+    uVar3 = (*STField<code *>(pRVar2,0x42))(pRVar2,&local_8,1);
   }
   if ((int)uVar3 < 0) {
     return uVar3;
@@ -2853,7 +2874,7 @@ uint st::fn_006C6F10(AnonShape_006C6F10_68E82598 *param_1,undefined *param_2,und
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       (*(code *)param_3)(param_1);
     }
-    uVar2 = st::fn_006D80C0((RecoveredRecord_FSGSTy_006C7D20 *)param_1);
+    uVar2 = st::fn_006D80C0(reinterpret_cast<RecoveredRecord_FSGSTy_006C7D20 *>(param_1));
     if (uVar2 != 0) {
       return uVar2;
     }
@@ -2876,9 +2897,9 @@ uint st::fn_006C6F10(AnonShape_006C6F10_68E82598 *param_1,undefined *param_2,und
     else {
       param_1->field_006A = 0xffffffff;
     }
-    uVar2 = st::fn_006D7D9A((AnonShape_006D7D9A_A5401417 *)param_1);
+    uVar2 = st::fn_006D7D9A(reinterpret_cast<AnonShape_006D7D9A_A5401417 *>(param_1));
     if (uVar2 != 0) break;
-    param_1->field_0056 = st::machine_word_boundary_cast<uint>(param_1->field_0056 & 0xfffffffb);
+    param_1->field_0056 = param_1->field_0056 & 0xfffffffb;
     if (param_1->field_005F != 0) {
       return 0;
     }
@@ -2903,7 +2924,7 @@ void st::fn_006C6FC0(AnonShape_006C6FC0_B2C34C14 *param_1)
     st::fn_006A5E90(param_1->field_002A);
     st::fn_006A5E90(param_1->field_0012);
     st::fn_006A5E90(param_1->field_0072);
-    st::fn_006A5E90((short *)param_1);
+    st::fn_006A5E90(reinterpret_cast<short *>(param_1));
   }
   return;
 }
@@ -2962,14 +2983,13 @@ void st::fn_006C72F0(AnonShape_006C72F0_54F06289 *param_1)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_0079da08;
   puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 0);
-  local_20 = st::machine_word_boundary_cast<int>(param_1->field_0062 + *(int *)param_1);
+  local_20 = param_1->field_0062 + *(int *)param_1;
   iVar6 = param_1->field_006A;
   iVar3 = *(int *)(param_1->field_003A + 4);
   if (iVar3 < iVar6 + local_20) {
@@ -2990,13 +3010,16 @@ void st::fn_006C72F0(AnonShape_006C72F0_54F06289 *param_1)
   if ((iVar6 == param_1->field_006A) && (iVar3 == param_1->field_006E)) {
     local_70.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_70;
+
     iVar5 = st::fn_0072D7F0
                       (local_70.jumpBuffer,2,st::fn_0072DA21,local_8);
     local_1c = (st_stack_frame + 0);
     if (iVar5 == 0) {
       local_8 = 0;
+
       puVar4 = st::fn_006B55F0
-                         (nullptr,0,0,0,(byte *)param_1->field_003A,
+                         (nullptr,0,0,0,
+                          (RecoveredRecordView_006B84D0_87AF9D9B *)param_1->field_003A,
                           param_1->field_003E,local_20,local_24,local_28,local_2c);
       param_1->field_0072 = st::machine_word_boundary_cast<undefined4>(puVar4);
       g_currentExceptionFrame = local_70.previous;
@@ -3036,7 +3059,7 @@ void st::fn_006C7430(AnonShape_006C7430_D1D36538 *param_1)
   puStack_10 = (byte *)&st_image_0072D964;
   local_14 = ExceptionList;
   local_1c = (st_stack_frame + 0);
-  local_20 = st::machine_word_boundary_cast<int>(param_1->field_0062 + *(int *)param_1);
+  local_20 = param_1->field_0062 + *(int *)param_1;
   local_28 = param_1->field_006A;
   iVar2 = *(int *)(param_1->field_003A + 4);
   if (iVar2 < local_28 + local_20) {
@@ -3053,19 +3076,23 @@ void st::fn_006C7430(AnonShape_006C7430_D1D36538 *param_1)
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   ExceptionList = &local_14;
+
   local_8 = st::fn_0072D7F0
                       (local_70.jumpBuffer,2,st::fn_0072DA21,0xffffffff);
   local_1c = (st_stack_frame + 0);
   if (local_8 == 0) {
-    if (param_1->field_0072 == nullptr) {
+    if ((RecoveredRecordView_006B84D0_87AF9D9B *)param_1->field_0072 ==
+        nullptr) {
       st::fn_006B4170((RecoveredSourceFamily_dibcopy *)param_1->field_003A,param_1->field_003E,local_20
                    ,local_24,local_28,local_2c,param_1->field_0011);
     }
     else {
       local_1c = (st_stack_frame + 0);
+
       st::fn_006B55F0
                 ((RecoveredSourceFamily_dibcopy *)param_1->field_003A,param_1->field_003E,local_20,
-                 local_24,param_1->field_0072,0,0,0,local_28,local_2c);
+                 local_24,reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(param_1->field_0072),0,0,0,
+                 local_28,local_2c);
     }
     g_currentExceptionFrame = local_70.previous;
     ExceptionList = local_14;
@@ -3097,7 +3124,8 @@ void st::fn_006C7570(RecoveredSourceFamily_dibcopy *param_1,int param_2,int para
 
   if (((param_7 != 0) && (param_7 * 2 <= (int)param_5)) && (param_7 * 2 <= param_6)) {
     if (param_2 == 0) {
-      param_2 = st::fn_006B4FA0((int *)param_1);
+
+      param_2 = st::fn_006B4FA0(reinterpret_cast<RecoveredRecord_006B4FA0_DAC3A217 *>(param_1));
     }
     uVar1 = (uint)param_1->field_000E * param_1->field_0004 + 0x1f >> 3 & 0x1ffffffc;
     st::fn_006D7830((undefined1 *)(((param_1->field_0008 - param_4) + -1) * uVar1 + param_2 + param_3),
@@ -3137,7 +3165,8 @@ void st::fn_006C7610(RecoveredSourceFamily_dibcopy *param_1,int param_2,int para
 
   if (((param_7 != 0) && (param_7 * 2 <= (int)param_5)) && (param_7 * 2 <= (int)param_6)) {
     if (param_2 == 0) {
-      param_2 = st::fn_006B4FA0((int *)param_1);
+
+      param_2 = st::fn_006B4FA0(reinterpret_cast<RecoveredRecord_006B4FA0_DAC3A217 *>(param_1));
     }
     uVar1 = (uint)param_1->field_000E * param_1->field_0004 + 0x1f >> 3 & 0x1ffffffc;
     st::fn_006D7A30(((param_1->field_0008 - param_4) + -1) * uVar1 + param_2 + param_3,-uVar1,param_5,
@@ -3196,7 +3225,7 @@ DWORD st::fn_006C7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
   short sStack_52;
   undefined1 uStack_50;
   undefined1 uStack_4f;
-  undefined4 local_14;
+  uint local_14;
   int local_10;
   int *local_c;
   char local_5;
@@ -3252,7 +3281,7 @@ DWORD st::fn_006C7700(AnonShape_006C7700_7DDC3CA1 *param_1,uint param_2)
     }
     if (0x380 < param_2) {
       if (param_1->field_0026 == 0) {
-        param_1->field_002A = st::machine_word_boundary_cast<undefined4>(param_1->field_002A + (param_2 - 0x381));
+        param_1->field_002A = param_1->field_002A + (param_2 - 0x381);
       }
       else {
         /* ST_CALLSITE[006C7854]: CALL dword ptr [0x0085bb64] */
@@ -3319,7 +3348,8 @@ LAB_006c78ff:
 }
 
 // 006C7980 FUN_006c7980
-#line 4 "decomp/ST.exe/functions/006C7980/decomp.c"
+#line 1 "decomp/ST.exe/functions/006C7980/decomp.c"
+
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 005A1920 -> 006C7980 @ 005A1CCC
 
@@ -3327,12 +3357,12 @@ LAB_006c78ff:
    Evidence: all observed direct callers ignore the return register (ignored=8, used=0), and
    decompilation contains no value return */
 
-void st::fn_006C7980(int *param_1)
+void st::fn_006C7980(RecoveredRecord_006C7980_0CF2A53F *param_1)
 
 {
   if (param_1 != nullptr) {
-    st::fn_006A5E90(STField<short *>(param_1,0x1e));
-    st::fn_006A5E90((short *)param_1);
+    st::fn_006A5E90(param_1->field_001E);
+    st::fn_006A5E90(reinterpret_cast<short *>(param_1));
   }
   return;
 }
@@ -3356,7 +3386,8 @@ void st::fn_006C7B90(int *param_1,int param_2,int param_3)
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 005A1920 -> 006C7BB0 @ 005A1C39 */
 
-undefined1 * st::fn_006C7BB0(int *param_1,undefined1 *param_2,int *param_3)
+undefined1 *
+st::fn_006C7BB0(RecoveredRecord_006C7BB0_7D90AE39 *param_1,undefined1 *param_2,int *param_3)
 
 {
   int iVar1;
@@ -3364,10 +3395,11 @@ undefined1 * st::fn_006C7BB0(int *param_1,undefined1 *param_2,int *param_3)
   byte *puVar3;
   int iVar4;
 
-  iVar1 = STField<int>(param_1,0x1a);
-  iVar4 = STField<int>(param_1,0x1e);
+  iVar1 = param_1->field_001A;
+  iVar4 = param_1->field_001E;
   if (param_2 == nullptr) {
-    param_2 = st::pointer_boundary_cast<undefined1 *>(st::fn_006AAC70(iVar1 * 4));
+
+    param_2 = (undefined1 *)st::fn_006AAC70(iVar1 * 4);
     if (param_2 == nullptr) {
       return nullptr;
     }
@@ -3470,40 +3502,37 @@ int st::fn_006C7D20(RecoveredRecord_FSGSTy_006C7D20 *param_1,int param_2,int *pa
 /* [STPrototypeApplier] Propagated parameter 2.
    Evidence: 006C7E30 -> EXTERNAL:0000000D @ 006C7E40 */
 
-uint st::fn_006C7E30(int param_1,undefined4 *param_2,UINT_PTR ucb)
+uint st::fn_006C7E30(RecoveredRecord_006C7E30_5B8C824D *param_1,undefined4 *param_2,UINT_PTR ucb)
 
 {
   BOOL BVar1;
   byte *puVar3;
 
   /* ST_CALLSITE[006C7E40]: CALL dword ptr [0x0085bb60] */
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  BVar1 = st::external_0000000D(*(void **)(param_1 + 0x36),ucb);
+  BVar1 = st::external_0000000D((void *)param_1->field_0036,ucb);
   if (BVar1 != 0) {
     return 0xfffffffb;
   }
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  puVar3 = (byte *)(*(undefined4 **)(param_1 + 0x36));
+  puVar3 = (byte *)param_1->field_0036;
   memmove(param_2, puVar3, ucb); /* compiler REP MOVS byte copy */
-  *(UINT_PTR *)(param_1 + 0x36) = *(int *)(param_1 + 0x36) + ucb;
+  param_1->field_0036 = param_1->field_0036 + ucb;
   return ucb;
 }
 
 // 006C7E80 FUN_006c7e80
 #line 4 "decomp/ST.exe/functions/006C7E80/decomp.c"
-undefined4 st::fn_006C7E80(int param_1)
+undefined4 st::fn_006C7E80(RecoveredRecord_006C7E80_DAB57774 *param_1)
 
 {
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  return *(undefined4 *)(param_1 + 0x36);
+  return param_1->field_0036;
 }
 
 // 006C7E90 FUN_006c7e90
 #line 4 "decomp/ST.exe/functions/006C7E90/decomp.c"
-void st::fn_006C7E90(int param_1,undefined4 param_2)
+void st::fn_006C7E90(RecoveredRecord_006C7E90_88CA822C *param_1,undefined4 param_2)
 
 {
-  *(undefined4 *)(param_1 + 0x36) = param_2;
+  param_1->field_0036 = param_2;
   return;
 }
 
@@ -3526,7 +3555,7 @@ void st::fn_006C7EA0(AnonPointee_MReportTy_0073 *param_1,undefined4 param_2,unde
 
 {
   AnonPointee_MReportTy_0073 *local_10;
-  undefined4 local_c;
+  uint local_c;
   uint local_8;
 
   local_10 = param_1;
@@ -3576,13 +3605,13 @@ void st::fn_006C7F10(RecoveredSourceFamily_dibcopy *param_1,int param_2,int *par
     piVar2 = param_3 + 1;
     auto param_3_after_write = (int *)(param_4 + -1); /* compiler stack-slot lifetime split */
     do {
-      st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,param_2,piVar2[-1],*piVar2,piVar2[1],
+      st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),param_2,piVar2[-1],*piVar2,piVar2[1],
                    piVar2[2],param_5,0xd);
       piVar2 = piVar2 + 2;
       param_3_after_write = (int *)((int)param_3_after_write + -1);
     } while (param_3_after_write != nullptr);
   }
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,param_2,piVar1[param_4 * 2 + -2],
+  st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),param_2,piVar1[param_4 * 2 + -2],
                piVar1[param_4 * 2 + -1],*piVar1,piVar1[1],param_5,0xd);
   return;
 }
@@ -3631,13 +3660,15 @@ void st::fn_006C7F90(ushort *param_1,byte *param_2,HPALETTE param_3,int param_4)
       local_110[param_4] = (byte)param_4;
     }
     if (param_2 == nullptr) {
-      param_2 = (byte *)st::fn_006B4FA0((int *)param_1);
+
+      param_2 = STPointerBoundaryCast<byte *>(st::fn_006B4FA0(reinterpret_cast<RecoveredRecord_006B4FA0_DAC3A217 *>(param_1)));
     }
     local_10 = *(int *)(param_1 + 4);
     puVar10 = param_1 + 0x14;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     uVar8 = *(int *)(param_1 + 2) * (uint)param_1[7] + 0x1f >> 3 & 0x1ffffffc;
     local_c = puVar10;
+
     iVar5 = st::fn_006B4FE0(param_1);
     /* ST_CALLSITE[006C800D]: CALL dword ptr [0x0085be4c] */
     hdc = st::external_00000099((HWND)0x0);
@@ -3646,7 +3677,7 @@ void st::fn_006C7F90(ushort *param_1,byte *param_2,HPALETTE param_3,int param_4)
     /* ST_CALLSITE[006C802D]: CALL dword ptr [0x0085be48] */
     st::external_00000098((HWND)0x0,hdc);
     /* ST_CALLSITE[006C8045]: CALL dword ptr [0x0085baa0] */
-    st::external_000000B0(param_3,0,0x100,local_514[0].palPalEntry);
+    st::external_000000B0(param_3,0,0x100,reinterpret_cast<LPPALETTEENTRY>(local_514[0].palPalEntry));
     iVar7 = 0;
     pPVar2 = local_514[0].palPalEntry;
     local_8 = 0;
@@ -3751,7 +3782,7 @@ char * st::fn_006C8170(char *resourceString)
         resourceString = pcVar6;
       } while (cVar1 != '\0');
       uVar3 = ~uVar3;
-      piVar5 = (int *)(pcVar6 + -uVar3);
+      piVar5 = reinterpret_cast<int *>((pcVar6 + -uVar3));
       piVar7 = piVar2;
       memmove(piVar7, piVar5, uVar3); /* compiler REP MOVS byte copy */
     }
@@ -3813,6 +3844,7 @@ uint __thiscall st::fn_006C8290(void *this,uint param_1)
 {
   uint uVar1;
 
+
   uVar1 = st::fn_006C82BB(st::machine_word_boundary_cast<undefined4>(this),param_1);
   return uVar1;
 }
@@ -3822,15 +3854,21 @@ uint __thiscall st::fn_006C8290(void *this,uint param_1)
 int __thiscall st::fn_006C82A3(void *this,uint param_1)
 
 {
-  uint uVar1;
+  int iVar1;
 
-  uVar1 = st::fn_006C82BB(st::machine_word_boundary_cast<undefined4>(this),param_1);
-  return 0x5a - uVar1;
+
+  iVar1 = st::fn_006C82BB(st::machine_word_boundary_cast<undefined4>(this),param_1);
+  return 0x5a - iVar1;
 }
 
 // 006C82BB FUN_006c82bb
 #line 4 "decomp/ST.exe/functions/006C82BB/decomp.c"
-uint __fastcall st::fn_006C82BB(undefined4 param_1,uint param_2)
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=006C8290 @ 006C8299 -> read as EAX on
+   every CFG path | 006C82A3 @ 006C82AC -> read as EAX on every CFG path */
+
+int __fastcall st::fn_006C82BB(undefined4 param_1,uint param_2)
 
 {
   uint uVar1;
@@ -3867,8 +3905,8 @@ uint __fastcall st::fn_006C82BB(undefined4 param_1,uint param_2)
       }
     }
     uVar2 = uVar5;
-    if (STReplaceLowWord((uint32_t)(iVar4), (uint16_t)(*(undefined2 *)(&DAT_006ce9a0 + uVar6 * 2))) - param_2
-        < STReplaceLowWord((uint32_t)(param_2), (uint16_t)(uVar3 - *(short *)(&DAT_006ce9a0 + uVar5 * 2)))) {
+    if (STReplaceLowWord(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(iVar4)), (uint16_t)(*(undefined2 *)(&DAT_006ce9a0 + uVar6 * 2))) - param_2
+        < STReplaceLowWord(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(param_2)), (uint16_t)(uVar3 - *(short *)(&DAT_006ce9a0 + uVar5 * 2)))) {
       uVar2 = uVar6 & 0x7fffffff;
     }
   }
@@ -3884,7 +3922,15 @@ LAB_006c832a:
 
 // 006C8334 FUN_006c8334
 #line 4 "decomp/ST.exe/functions/006C8334/decomp.c"
-uint __cdecl st::fn_006C8334(uint param_1)
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (6), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00615430 @ 006154C8 -> read as EAX on
+   every CFG path | 0061BDB0 @ 0061C2AA -> read as EAX on every CFG path | 0061BDB0 @ 0061C347 ->
+   read as EAX on every CFG path | 0062AB10 @ 0062AB3D -> read as EAX on every CFG path | 0062AB10 @
+   0062AC50 -> read as EAX on every CFG path | 0062AB10 @ 0062ACB1 -> read as EAX on every CFG path
+    */
+
+int __cdecl st::fn_006C8334(uint param_1)
 
 {
   ushort uVar1;
@@ -4066,7 +4112,7 @@ uint * st::fn_006C8840(uint *param_1,uint *param_2,int *param_3)
         pcVar10 = local_8;
         memmove(pcVar10, pcVar8, uVar6); /* compiler REP MOVS byte copy */
         local_8 = local_8 + uVar6;
-        pbVar2 = (byte *)((int)puVar7 + ((int)((uint)param_2_after_write ^ 7) >> 3));
+        pbVar2 = (byte *)((int)puVar7 + (st::storage_bit_cast<int>(static_cast<uint32_t>((uint)param_2_after_write ^ 7)) >> 3));
         *pbVar2 = *pbVar2 | '\x01' << (((uint)param_2_after_write ^ 7) & 7);
       }
       param_2_after_write = (uint *)((int)param_2_after_write + 1);
@@ -4090,7 +4136,9 @@ void st::fn_006C8910(uint *param_1,int *param_2)
   if (param_2 != nullptr) {
     *param_2 = 0;
   }
-  size = st::fn_006C87F0((DArrayTy *)param_1);
+
+  size = st::fn_006C87F0(reinterpret_cast<DArrayTy *>(param_1));
+  /* ST_CALLSITE[006C892C]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
   puVar1 = static_cast<uint *>(st::fn_006AAC70(size));
   if (puVar1 == nullptr) {
     return;
@@ -4137,7 +4185,7 @@ float10 st::fn_006C8990(byte *param_1,int *param_2,undefined4 *param_3)
   int iVar14;
   double local_30;
   uint local_28;
-  undefined4 local_24;
+  uint local_24;
   uint uStack_1c;
   uint local_18;
   int local_14;
@@ -4281,7 +4329,7 @@ LAB_006c8c04:
           iVar13 = 0;
           iVar14 = 0x100;
           if (0 < iVar12) {
-            pdVar11 = (double *)&DAT_007ee0fc;
+            pdVar11 = reinterpret_cast<double *>(&DAT_007ee0fc);
             do {
               if (iVar14 <= iVar12) {
                 do {
@@ -4300,7 +4348,7 @@ LAB_006c8c04:
             } while (0 < iVar12);
           }
           if (iVar12 < 0) {
-            pdVar11 = (double *)(&DAT_007ee0ac + iVar13);
+            pdVar11 = reinterpret_cast<double *>((&DAT_007ee0ac + iVar13));
             do {
               if (iVar12 <= -iVar14) {
                 do {
@@ -4339,14 +4387,15 @@ LAB_006c8bc4:
     local_30 = -local_30;
   }
   if (local_14 != 0) {
-    st::fn_006A5E40(local_14,g_overwriteContext_007ED77C,(char *)&DAT_007ee144,0xf0);
+    st::fn_006A5E40(local_14,g_overwriteContext_007ED77C,reinterpret_cast<char *>(&DAT_007ee144),0xf0);
   }
   return (float10)local_30;
 }
 
 // 006C8E60 FUN_006c8e60
-#line 4 "decomp/ST.exe/functions/006C8E60/decomp.c"
-void st::fn_006C8E60(int *param_1,byte param_2,byte param_3)
+#line 1 "decomp/ST.exe/functions/006C8E60/decomp.c"
+
+void st::fn_006C8E60(RecoveredRecord_006C8E60_3F75B164 *param_1,byte param_2,byte param_3)
 
 {
   byte bVar1;
@@ -4355,15 +4404,15 @@ void st::fn_006C8E60(int *param_1,byte param_2,byte param_3)
   byte *pbVar4;
   uint uVar5;
 
-  iVar2 = *param_1;
-  pbVar4 = (byte *)((STField<byte>(param_1,0xd) >> 1 & 0xe) + 0x16 + (int)param_1);
-  while (pbVar3 = pbVar4, pbVar3 < (byte *)(iVar2 + (int)param_1)) {
+  iVar2 = *(int *)param_1;
+  pbVar4 = &param_1[1].field_0x8 + (param_1->field_000D >> 1 & 0xe);
+  while (pbVar3 = pbVar4, st::machine_word_boundary_cast<uint>(pbVar3) < st::machine_word_boundary_cast<uint>(&param_1->field_0x0) + iVar2) {
     bVar1 = *pbVar3;
     pbVar4 = pbVar3 + 1;
     if ((bVar1 != 0) && ((bVar1 & 0x80) != 0)) {
       if ((bVar1 & 0x40) == 0) {
         uVar5 = bVar1 & 0x3f;
-        if (-1 < (int)(uVar5 - 1)) {
+        if (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar5 - 1))) {
           do {
             if (*pbVar4 == param_2) {
               *pbVar4 = param_3;
@@ -4398,9 +4447,8 @@ void st::fn_006C8E60(int *param_1,byte param_2,byte param_3)
    0x14] | 006C90B7 scalar operation: DEC ESI | 006C910C first slot write: MOV dword ptr [EBP +
    0x14],EAX | 006C933E derived scalar comparison: CMP ECX,dword ptr [EBP + -0x70]; JGE */
 
-undefined4
-st::fn_006C8EC0(int param_1,int param_2,Global_sub_006C8EC0_param_3Enum param_3,int param_4,int param_5
-            ,int param_6,int param_7,short *param_8,int param_9,int param_10)
+int st::fn_006C8EC0(int param_1,int param_2,Global_sub_006C8EC0_param_3Enum param_3,int param_4,
+                int param_5,int param_6,int param_7,short *param_8,int param_9,int param_10)
 
 {
   short *psVar1;
@@ -4418,82 +4466,83 @@ st::fn_006C8EC0(int param_1,int param_2,Global_sub_006C8EC0_param_3Enum param_3,
   bool bVar13;
   bool bVar14;
   short *psVar15;
-  uint uVar16;
   int *local_4c_mg2;
-  uint *puVar17;
+  uint *puVar16;
+  int iVar17;
   int iVar18;
   int iVar19;
   int iVar20;
-  int iVar21;
-  int *piVar22;
+  int *piVar21;
+  int iVar22;
   int iVar23;
   int iVar24;
-  int iVar25;
-  uint uVar26;
-  int iVar27;
+  uint uVar25;
+  int iVar26;
+  uint uVar27;
   uint uVar28;
-  uint uVar29;
-  short *psVar30;
-  Global_sub_006C8EC0_param_3Enum GVar31;
-  ushort *puVar32;
-  Global_sub_006C8EC0_param_3Enum GVar33;
-  ushort *puVar34;
+  short *psVar29;
+  Global_sub_006C8EC0_param_3Enum GVar30;
+  ushort *puVar31;
+  Global_sub_006C8EC0_param_3Enum GVar32;
+  ushort *puVar33;
+  int iVar34;
   int iVar35;
-  int iVar36;
+  int *piVar36;
   int *piVar37;
   int *piVar38;
-  int *piVar39;
-  ushort uVar40;
-  int iVar41;
-  uint uVar42;
+  ushort uVar39;
+  int iVar40;
+  uint uVar41;
+  bool bVar42;
   bool bVar43;
-  bool bVar44;
   int local_54;
   int *local_4c_mg0;
   int local_48;
   int local_40;
   int *local_3c;
-  undefined4 local_38;
+  uint local_38;
   int local_34;
-  undefined2 local_18;
+  ushort local_18;
   uint local_10;
 
   psVar15 = param_8;
   if ((((int)param_8 < 0) || (param_9 < 0)) || (param_10 < 0)) {
-    uVar16 = st::fn_006AB090(param_1,param_2,param_3,param_4,param_5,param_6,param_7,(int)param_8,
+
+    iVar17 = st::fn_006AB090(param_1,param_2,param_3,param_4,param_5,param_6,param_7,(int)param_8,
                           param_9,param_10);
-    return uVar16;
+    return iVar17;
   }
-  iVar18 = param_2 * param_3;
+  iVar17 = param_2 * param_3;
   local_4c_mg0 = nullptr;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_8 = &SHORT_007ed572;
-  while ((((iVar19 = (int)param_8[-1] + (int)psVar15, iVar19 < 0 || (param_2 <= iVar19)) ||
-          ((iVar41 = *param_8 + param_9, iVar41 < 0 ||
-           (((int)param_3 <= iVar41 || (iVar20 = st::machine_word_boundary_cast<int>(param_8[1] + param_10), iVar20 < 0)))))) ||
-         ((param_4 <= iVar20 ||
-          (*(short *)(param_1 + (iVar41 * param_2 + iVar19 + iVar20 * iVar18) * 2) != 0))))) {
+  while ((((iVar18 = (int)param_8[-1] + (int)psVar15, iVar18 < 0 || (param_2 <= iVar18)) ||
+          ((iVar40 = *param_8 + param_9, iVar40 < 0 ||
+           (((int)param_3 <= iVar40 || (iVar19 = param_8[1] + param_10, iVar19 < 0)))))) ||
+         ((param_4 <= iVar19 ||
+          (*(short *)(param_1 + (iVar40 * param_2 + iVar18 + iVar19 * iVar17) * 2) != 0))))) {
     param_8 = param_8 + 4;
     local_4c_mg0 = (int *)((int)local_4c_mg0 + 1);
     if (0x7ed641 < (int)param_8) {
 LAB_006c8f65:
-      uVar16 = st::fn_006AB090(param_1,param_2,param_3,param_4,param_5,param_6,param_7,(int)psVar15,
+
+      iVar17 = st::fn_006AB090(param_1,param_2,param_3,param_4,param_5,param_6,param_7,(int)psVar15,
                             param_9,param_10);
-      return uVar16;
+      return iVar17;
     }
   }
   if ((int)local_4c_mg0 < 0x1a) {
-    iVar19 = -param_9;
-    uVar42 = param_7 - param_10;
-    iVar41 = param_3 - param_9;
-    iVar20 = param_4 - param_10;
-    iVar21 = param_6 - param_9;
-    psVar1 = (short *)(param_1 + ((int)psVar15 + param_2 * param_9 + iVar18 * param_10) * 2);
+    iVar18 = -param_9;
+    uVar41 = param_7 - param_10;
+    iVar40 = param_3 - param_9;
+    iVar19 = param_4 - param_10;
+    iVar20 = param_6 - param_9;
+    psVar1 = (short *)(param_1 + ((int)psVar15 + param_2 * param_9 + iVar17 * param_10) * 2);
     local_38 = 0;
     local_4c_mg0 = nullptr;
-    psVar1[iVar21 * param_2 + (param_5 - (int)psVar15) + uVar42 * iVar18] = 1;
+    psVar1[iVar20 * param_2 + (param_5 - (int)psVar15) + uVar41 * iVar17] = 1;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    if ((((short *)param_5 == psVar15) && (param_6 == param_9)) && (param_7 == param_10)) {
+    if (((st::machine_word_boundary_cast<uint>((short *)param_5) == st::machine_word_boundary_cast<uint>(psVar15)) && (param_6 == param_9)) && (param_7 == param_10)) {
       return 0;
     }
     sVar3 = *psVar1;
@@ -4504,702 +4553,704 @@ LAB_006c8f65:
           (((param_2 + -1 <= (int)psVar15 || (psVar1[1] != 0)) &&
            ((param_9 < 1 || (psVar1[-param_2] != 0)))))) &&
          ((((int)(param_3 - CASE_1) <= param_9 || (psVar1[param_2] != 0)) &&
-          (((param_10 < 1 || (psVar1[-iVar18] != 0)) &&
-           ((param_4 + -1 <= param_10 || (psVar1[iVar18] != 0)))))))) {
+          (((param_10 < 1 || (psVar1[-iVar17] != 0)) &&
+           ((param_4 + -1 <= param_10 || (psVar1[iVar17] != 0)))))))) {
         bVar13 = true;
       }
       else {
         bVar13 = false;
       }
     }
+
     local_48 = st::fn_006AAE60(param_5,param_6,param_7,(int)psVar15,param_9,param_7);
-    local_48 = local_48 + ((uVar42 ^ (int)uVar42 >> 0x1f) - ((int)uVar42 >> 0x1f));
+    local_48 = local_48 + ((uVar41 ^ (int)uVar41 >> 0x1f) - ((int)uVar41 >> 0x1f));
     local_34 = local_48 * 2 + 10;
+
     param_4 = (int)st::fn_006B04D0(local_34 * 4);
-    piVar37 = local_4c_mg0;
+    piVar36 = local_4c_mg0;
     if (((undefined4 *)param_4 == 0) ||
        (local_4c_mg2 = st::fn_006BFB70(0x3e84), local_4c_mg2 == nullptr))
     goto cf_break_loop_006CE63A;
     *local_4c_mg2 = 0;
-    piVar37 = local_4c_mg2 + 1;
+    piVar36 = local_4c_mg2 + 1;
     local_3c = local_4c_mg2 + 5;
-    *piVar37 = 0;
+    *piVar36 = 0;
     local_40 = 999;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_9 = -1;
-    *piVar37 = *(int *)(param_4 + (local_48 + 1) * 4);
-    local_18 = (undefined2)iVar21;
-    *(int **)(param_4 + (local_48 + 1) * 4) = piVar37;
+    *piVar36 = *(int *)(param_4 + (local_48 + 1) * 4);
+    local_18 = (undefined2)iVar20;
+    *(int **)(param_4 + (local_48 + 1) * 4) = piVar36;
     *(short *)(local_4c_mg2 + 2) = (short)(param_5 - (int)psVar15);
     STField<undefined2>(local_4c_mg2,10) = local_18;
-    STPiece<0,2>(param_8) = (undefined2)uVar42;
+    STPiece<0,2>(param_8) = (undefined2)uVar41;
     STField<short>(local_4c_mg2,0xe) = (short)local_48;
     *(undefined2 *)(local_4c_mg2 + 3) = STPiece<0,2>(param_8);
     *(undefined2 *)(local_4c_mg2 + 4) = 1;
     bVar14 = false;
-    piVar38 = nullptr;
+    piVar37 = nullptr;
     local_4c_mg0 = local_4c_mg2;
     goto cf_continue_loop_006C9187;
   }
   goto LAB_006c8f65;
 cf_continue_loop_006C9187:
   if (local_34 <= local_48) goto cf_break_loop_006CE641;
-  puVar17 = (undefined4 *)(param_4 + local_48 * 4);
-  while (piVar11 = (int *)*puVar17, piVar11 == nullptr) {
+  puVar16 = (undefined4 *)(param_4 + local_48 * 4);
+  while (piVar11 = (int *)*puVar16, piVar11 == nullptr) {
     local_48 = local_48 + 1;
-    puVar17 = puVar17 + 1;
+    puVar16 = puVar16 + 1;
     if (local_34 <= local_48) goto cf_break_loop_006CE641;
   }
   if (local_34 <= local_48) goto cf_break_loop_006CE641;
   if (local_34 <= local_48 + 10) {
     param_4 = (int)st::fn_006BFB50((int *)param_4,local_34 * 4 + 400);
-    piVar37 = local_4c_mg0;
+    piVar36 = local_4c_mg0;
     if ((int *)param_4 == 0) goto cf_break_loop_006CE63A;
     memset((int *)(param_4 + local_34 * 4), 0, 0x190); /* compiler bulk-zero initialization */
     local_34 = local_34 + 100;
   }
   local_54 = 0;
   *(undefined4 *)(param_4 + local_48 * 4) = 0;
-  piVar37 = piVar11;
+  piVar36 = piVar11;
   do {
-    piVar22 = piVar37;
-    sVar4 = (short)piVar22[1];
-    iVar36 = (int)sVar4;
-    sVar5 = STField<short>(piVar22,6);
-    iVar21 = (int)sVar5;
-    sVar6 = (short)piVar22[2];
-    iVar23 = (int)sVar6;
-    psVar2 = psVar1 + iVar21 * param_2 + iVar36 + iVar23 * iVar18;
-    if ((short)piVar22[3] <= *psVar2) {
-      sVar7 = STField<short>(piVar22,10);
-      GVar33 = (Global_sub_006C8EC0_param_3Enum)sVar7;
-      iVar24 = (short)piVar22[3] + GVar33;
-      if (iVar24 < local_48) {
-        local_48 = iVar24;
+    piVar21 = piVar36;
+    sVar4 = (short)piVar21[1];
+    iVar35 = (int)sVar4;
+    sVar5 = STField<short>(piVar21,6);
+    iVar20 = (int)sVar5;
+    sVar6 = (short)piVar21[2];
+    iVar22 = (int)sVar6;
+    psVar2 = psVar1 + iVar20 * param_2 + iVar35 + iVar22 * iVar17;
+    if ((short)piVar21[3] <= *psVar2) {
+      sVar7 = STField<short>(piVar21,10);
+      GVar32 = (Global_sub_006C8EC0_param_3Enum)sVar7;
+      iVar23 = (short)piVar21[3] + GVar32;
+      if (iVar23 < local_48) {
+        local_48 = iVar23;
       }
       sVar8 = *psVar2;
-      iVar24 = (int)sVar8;
-      piVar37 = local_4c_mg0;
-      for (; local_4c_mg0 = piVar37, param_9 < 0x1a; param_9 = param_9 + 1) {
+      iVar23 = (int)sVar8;
+      piVar36 = local_4c_mg0;
+      for (; local_4c_mg0 = piVar36, param_9 < 0x1a; param_9 = param_9 + 1) {
         if (local_40 < 1) {
           local_4c_mg0 = st::fn_006BFB70(0x3e84);
           if (local_4c_mg0 == nullptr) goto cf_break_loop_006CE63A;
-          *local_4c_mg0 = (int)piVar37;
+          *local_4c_mg0 = (int)piVar36;
           local_3c = local_4c_mg0 + 1;
           local_40 = 1000;
         }
-        *local_3c = (int)piVar38;
+        *local_3c = (int)piVar37;
         local_40 = local_40 + -1;
-        piVar38 = local_3c;
-        piVar37 = local_4c_mg0;
+        piVar37 = local_3c;
+        piVar36 = local_4c_mg0;
         local_3c = local_3c + 4;
       }
       local_10 = 0xff;
       auto param_3_after_write = CASE_0; /* compiler stack-slot lifetime split */
-      if (iVar36 < 0) {
+      if (iVar35 < 0) {
         param_3_after_write = CASE_1;
         local_10 = 0xfe;
-        if (-(int)psVar15 < iVar36) {
+        if (-(int)psVar15 < iVar35) {
           local_10 = 0xee;
         }
       }
       else {
-        if (-(int)psVar15 < iVar36) {
+        if (-(int)psVar15 < iVar35) {
           local_10 = 0xef;
         }
-        if (iVar36 < (param_2 - (int)psVar15) + -1) {
+        if (iVar35 < (param_2 - (int)psVar15) + -1) {
           local_10 = local_10 & 0xfffffffe;
         }
       }
-      if (iVar21 < 0) {
-        uVar42 = local_10 & 0xfffffffd;
-        if (iVar19 < iVar21) {
-          uVar42 = local_10 & 0xffffffdd;
+      if (iVar20 < 0) {
+        uVar41 = local_10 & 0xfffffffd;
+        if (iVar18 < iVar20) {
+          uVar41 = local_10 & 0xffffffdd;
         }
       }
       else {
         param_3_after_write = param_3_after_write | CASE_2;
-        if (iVar19 < iVar21) {
+        if (iVar18 < iVar20) {
           local_10 = local_10 & 0xffffffdf;
         }
-        uVar42 = local_10;
-        if (iVar21 < iVar41 + -1) {
-          uVar42 = local_10 & 0xfffffffd;
+        uVar41 = local_10;
+        if (iVar20 < iVar40 + -1) {
+          uVar41 = local_10 & 0xfffffffd;
         }
       }
-      local_10 = uVar42;
-      bVar44 = iVar23 < iVar20 + -1;
-      if (bVar44) {
+      local_10 = uVar41;
+      bVar43 = iVar22 < iVar19 + -1;
+      if (bVar43) {
         local_10 = local_10 & 0xfffffffb;
       }
-      bVar12 = -param_10 < iVar23;
+      bVar12 = -param_10 < iVar22;
       if (bVar12) {
         local_10 = local_10 & 0xffffffbf;
       }
-      if (iVar23 < 1) {
-        if (iVar23 == 0) {
-          param_5 = GVar33 + CASE_1;
+      if (iVar22 < 1) {
+        if (iVar22 == 0) {
+          param_5 = GVar32 + CASE_1;
         }
         else {
-          param_5 = GVar33 - CASE_1;
+          param_5 = GVar32 - CASE_1;
         }
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-        param_1 = GVar33 + CASE_1;
+        param_1 = GVar32 + CASE_1;
       }
       else {
-        param_5 = GVar33 + CASE_1;
-        param_1 = GVar33 - CASE_1;
+        param_5 = GVar32 + CASE_1;
+        param_1 = GVar32 - CASE_1;
       }
       switch(param_3_after_write) {
       case CASE_0:
-        uVar42 = local_10 & 0x10;
-        piVar37 = piVar38;
-        if ((uVar42 == 0) && ((psVar2[-1] == 0 || (iVar24 + 3 < (int)psVar2[-1])))) {
-          psVar2[-1] = (short)(iVar24 + 3);
-          if (iVar36 == 0) {
-            if (iVar21 == 0) {
-              iVar35 = GVar33 + CASE_3;
+        uVar41 = local_10 & 0x10;
+        piVar36 = piVar37;
+        if ((uVar41 == 0) && ((psVar2[-1] == 0 || (iVar23 + 3 < (int)psVar2[-1])))) {
+          psVar2[-1] = (short)(iVar23 + 3);
+          if (iVar35 == 0) {
+            if (iVar20 == 0) {
+              iVar34 = GVar32 + CASE_3;
             }
             else {
-              iVar35 = GVar33 + CASE_1;
+              iVar34 = GVar32 + CASE_1;
             }
           }
-          else if (-iVar21 < iVar36) {
-            iVar35 = GVar33 - CASE_3;
+          else if (-iVar20 < iVar35) {
+            iVar34 = GVar32 - CASE_3;
           }
           else {
-            iVar35 = GVar33 - CASE_1;
+            iVar34 = GVar32 - CASE_1;
           }
           param_9 = param_9 + -1;
-          piVar37 = (int *)*piVar38;
-          piVar39 = (int *)(param_4 + (iVar35 + iVar24 + 3) * 4);
-          *piVar38 = *piVar39;
-          *piVar39 = (int)piVar38;
-          *(short *)(piVar38 + 1) = sVar4 + -1;
-          *(short *)(piVar38 + 2) = sVar6;
-          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-          STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-          STField<short>(piVar38,6) = sVar5;
-          *(short *)(piVar38 + 3) = sVar8 + 3;
-        }
-        uVar28 = local_10 & 1;
-        piVar38 = piVar37;
-        if ((uVar28 == 0) && ((psVar2[1] == 0 || (iVar24 + 3 < (int)psVar2[1])))) {
-          psVar2[1] = (short)(iVar24 + 3);
-          if (iVar36 < -iVar21) {
-            iVar35 = GVar33 + CASE_1;
-          }
-          else {
-            iVar35 = GVar33 + CASE_3;
-          }
-          param_9 = param_9 + -1;
-          piVar38 = (int *)*piVar37;
-          piVar39 = (int *)(param_4 + (iVar35 + iVar24 + 3) * 4);
-          *piVar37 = *piVar39;
-          *piVar39 = (int)piVar37;
-          *(short *)(piVar37 + 1) = sVar4 + 1;
+          piVar36 = (int *)*piVar37;
+          piVar38 = (int *)(param_4 + (iVar34 + iVar23 + 3) * 4);
+          *piVar37 = *piVar38;
+          *piVar38 = (int)piVar37;
+          *(short *)(piVar37 + 1) = sVar4 + -1;
           *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
           STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           STField<short>(piVar37,6) = sVar5;
           *(short *)(piVar37 + 3) = sVar8 + 3;
         }
-        uVar29 = local_10 & 0x20;
-        piVar37 = piVar38;
-        if (uVar29 == 0) {
-          sVar7 = psVar2[-param_2];
-          if ((sVar7 == 0) || (iVar24 + 3 < (int)sVar7)) {
-            psVar2[-param_2] = sVar8 + 3;
-            if (-iVar21 < iVar36) {
-              iVar35 = GVar33 + CASE_1;
-            }
-            else {
-              iVar35 = GVar33 + CASE_3;
-            }
-            param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + 0xc + (iVar35 + iVar24) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            STField<short>(piVar38,6) = sVar5 + -1;
-            *(short *)(piVar38 + 2) = sVar6;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar38 + 1) = sVar4;
-            *(short *)(piVar38 + 3) = sVar8 + 3;
-          }
-        }
-        if ((psVar2[param_2] == 0) || (piVar38 = piVar37, iVar24 + 3 < (int)psVar2[param_2])) {
-          psVar2[param_2] = sVar8 + 3;
-          if (-iVar36 == iVar21 || -iVar21 < iVar36) {
-            iVar35 = GVar33 - CASE_1;
+        uVar27 = local_10 & 1;
+        piVar37 = piVar36;
+        if ((uVar27 == 0) && ((psVar2[1] == 0 || (iVar23 + 3 < (int)psVar2[1])))) {
+          psVar2[1] = (short)(iVar23 + 3);
+          if (iVar35 < -iVar20) {
+            iVar34 = GVar32 + CASE_1;
           }
           else {
-            iVar35 = GVar33 - CASE_3;
+            iVar34 = GVar32 + CASE_3;
           }
           param_9 = param_9 + -1;
-          piVar38 = (int *)*piVar37;
-          piVar39 = (int *)(param_4 + 0xc + (iVar35 + iVar24) * 4);
-          *piVar37 = *piVar39;
-          *piVar39 = (int)piVar37;
-          STField<short>(piVar37,6) = sVar5 + 1;
-          *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-          STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-          *(short *)(piVar37 + 1) = sVar4;
-          *(short *)(piVar37 + 3) = sVar8 + 3;
+          piVar37 = (int *)*piVar36;
+          piVar38 = (int *)(param_4 + (iVar34 + iVar23 + 3) * 4);
+          *piVar36 = *piVar38;
+          *piVar38 = (int)piVar36;
+          *(short *)(piVar36 + 1) = sVar4 + 1;
+          *(short *)(piVar36 + 2) = sVar6;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+          STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+          STField<short>(piVar36,6) = sVar5;
+          *(short *)(piVar36 + 3) = sVar8 + 3;
         }
-        piVar37 = piVar38;
-        if (bVar12) {
-          sVar7 = psVar2[-iVar18];
-          if ((sVar7 == 0) || (iVar24 + 3 < (int)sVar7)) {
-            psVar2[-iVar18] = sVar8 + 3;
-            param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + 0xc + (param_1 + iVar24) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            *(short *)(piVar38 + 1) = sVar4;
-            *(short *)(piVar38 + 2) = sVar6 + -1;
-            STField<short>(piVar38,10) = (short)param_1;
-            STField<short>(piVar38,6) = sVar5;
-            *(short *)(piVar38 + 3) = sVar8 + 3;
-          }
-        }
-        piVar38 = piVar37;
-        if ((bVar44) && ((psVar2[iVar18] == 0 || (iVar24 + 3 < (int)psVar2[iVar18])))) {
-          psVar2[iVar18] = sVar8 + 3;
-          param_9 = param_9 + -1;
-          piVar38 = (int *)*piVar37;
-          piVar39 = (int *)(param_4 + 0xc + (param_5 + iVar24) * 4);
-          *piVar37 = *piVar39;
-          *piVar39 = (int)piVar37;
-          *(short *)(piVar37 + 2) = sVar6 + 1;
-          *(short *)(piVar37 + 1) = sVar4;
-          STField<short>(piVar37,10) = (short)param_5;
-          STField<short>(piVar37,6) = sVar5;
-          *(short *)(piVar37 + 3) = sVar8 + 3;
-        }
-        if ((bVar44) && (-1 < psVar2[iVar18])) {
-          piVar37 = piVar38;
-          if ((uVar42 == 0) &&
-             (((psVar2[iVar18 + -1] == 0 || (iVar24 + 4 < (int)psVar2[iVar18 + -1])) &&
-              ((psVar2[-1] & 0xc000U) != 0xc000)))) {
-            psVar2[iVar18 + -1] = sVar8 + 4;
-            if (iVar36 == 0) {
-              if (iVar21 == 0) {
-                iVar35 = param_5 + 3;
-              }
-              else {
-                iVar35 = param_5 + 1;
-              }
-            }
-            else if (-iVar21 < iVar36) {
-              iVar35 = param_5 + -3;
-            }
-            else {
-              iVar35 = param_5 + -1;
-            }
-            param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            *(short *)(piVar38 + 1) = sVar4 + -1;
-            STField<short>(piVar38,6) = sVar5;
-            *(short *)(piVar38 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar38 + 3) = sVar8 + 4;
-          }
-          piVar38 = piVar37;
-          if (((uVar28 == 0) &&
-              ((psVar2[iVar18 + 1] == 0 || (iVar24 + 4 < (int)psVar2[iVar18 + 1])))) &&
-             ((psVar2[1] & 0xc000U) != 0xc000)) {
-            psVar2[iVar18 + 1] = sVar8 + 4;
-            if (iVar36 < -iVar21) {
-              iVar35 = param_5 + 1;
-            }
-            else {
-              iVar35 = param_5 + 3;
-            }
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4 + 1;
-            STField<short>(piVar37,6) = sVar5;
-            *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar37 + 3) = sVar8 + 4;
-          }
-          piVar37 = piVar38;
-          if (uVar29 == 0) {
-            sVar7 = psVar2[iVar18 - param_2];
-            if (((sVar7 == 0) || (iVar24 + 4 < (int)sVar7)) &&
-               ((psVar2[-param_2] & 0xc000U) != 0xc000)) {
-              psVar2[iVar18 - param_2] = sVar8 + 4;
-              if (-iVar21 < iVar36) {
-                iVar35 = param_5 + 1;
-              }
-              else {
-                iVar35 = param_5 + 3;
-              }
-              param_9 = param_9 + -1;
-              piVar37 = (int *)*piVar38;
-              piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-              *piVar38 = *piVar39;
-              *piVar39 = (int)piVar38;
-              STField<short>(piVar38,6) = sVar5 + -1;
-              *(short *)(piVar38 + 1) = sVar4;
-              *(short *)(piVar38 + 2) = sVar6 + 1;
-              STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-              *(short *)(piVar38 + 3) = sVar8 + 4;
-            }
-          }
-          piVar38 = piVar37;
-          if (((psVar2[iVar18 + param_2] == 0) || (iVar24 + 4 < (int)psVar2[iVar18 + param_2])) &&
-             ((psVar2[param_2] & 0xc000U) != 0xc000)) {
-            psVar2[iVar18 + param_2] = sVar8 + 4;
-            if (-iVar36 == iVar21 || -iVar21 < iVar36) {
-              iVar35 = param_5 + -1;
-            }
-            else {
-              iVar35 = param_5 + -3;
-            }
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            STField<short>(piVar37,6) = sVar5 + 1;
-            *(short *)(piVar37 + 1) = sVar4;
-            *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar37 + 3) = sVar8 + 4;
-          }
-        }
-        if ((bVar12) && (psVar30 = psVar2 + -iVar18, -1 < *psVar30)) {
-          piVar37 = piVar38;
-          if (((uVar42 == 0) && ((psVar30[-1] == 0 || (iVar24 + 4 < (int)psVar30[-1])))) &&
-             ((psVar2[-1] & 0xc000U) != 0xc000)) {
-            psVar30[-1] = sVar8 + 4;
-            if (iVar36 == 0) {
-              if (iVar21 == 0) {
-                iVar35 = param_1 + 3;
-              }
-              else {
-                iVar35 = param_1 + 1;
-              }
-            }
-            else if (-iVar21 < iVar36) {
-              iVar35 = param_1 + -3;
-            }
-            else {
-              iVar35 = param_1 + -1;
-            }
-            param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            *(short *)(piVar38 + 1) = sVar4 + -1;
-            STField<short>(piVar38,6) = sVar5;
-            *(short *)(piVar38 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar38 + 3) = sVar8 + 4;
-          }
-          piVar38 = piVar37;
-          if ((uVar28 == 0) &&
-             (((psVar30[1] == 0 || (iVar24 + 4 < (int)psVar30[1])) &&
-              ((psVar2[1] & 0xc000U) != 0xc000)))) {
-            psVar30[1] = sVar8 + 4;
-            if (iVar36 < -iVar21) {
-              iVar35 = param_1 + 1;
-            }
-            else {
-              iVar35 = param_1 + 3;
-            }
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4 + 1;
-            STField<short>(piVar37,6) = sVar5;
-            *(short *)(piVar37 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar37 + 3) = sVar8 + 4;
-          }
-          piVar37 = piVar38;
-          if (uVar29 == 0) {
-            sVar7 = psVar30[-param_2];
-            if (((sVar7 == 0) || (iVar24 + 4 < (int)sVar7)) &&
-               ((psVar2[-param_2] & 0xc000U) != 0xc000)) {
-              psVar30[-param_2] = sVar8 + 4;
-              if (-iVar21 < iVar36) {
-                iVar35 = param_1 + 1;
-              }
-              else {
-                iVar35 = param_1 + 3;
-              }
-              param_9 = param_9 + -1;
-              piVar37 = (int *)*piVar38;
-              piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-              *piVar38 = *piVar39;
-              *piVar39 = (int)piVar38;
-              STField<short>(piVar38,6) = sVar5 + -1;
-              *(short *)(piVar38 + 1) = sVar4;
-              *(short *)(piVar38 + 2) = sVar6 + -1;
-              STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-              *(short *)(piVar38 + 3) = sVar8 + 4;
-            }
-          }
-          piVar38 = piVar37;
-          if (((psVar30[param_2] == 0) || (iVar24 + 4 < (int)psVar30[param_2])) &&
-             ((psVar2[param_2] & 0xc000U) != 0xc000)) {
-            psVar30[param_2] = sVar8 + 4;
-            if (-iVar36 == iVar21 || -iVar21 < iVar36) {
-              iVar35 = param_1 + -1;
-            }
-            else {
-              iVar35 = param_1 + -3;
-            }
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            STField<short>(piVar37,6) = sVar5 + 1;
-            *(short *)(piVar37 + 1) = sVar4;
-            *(short *)(piVar37 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar37 + 3) = sVar8 + 4;
-          }
-        }
-        uVar42 = local_10 & 0x30;
-        piVar37 = piVar38;
-        if (uVar42 == 0) {
-          psVar30 = (short *)((int)psVar2 - (param_2 * 2 + 2));
-          sVar7 = *psVar30;
-          if ((((sVar7 == 0) || (iVar24 + 4 < (int)sVar7)) &&
-              ((psVar2[-param_2] & 0xc000U) != 0xc000)) && ((psVar2[-1] & 0xc000U) != 0xc000)) {
-            *psVar30 = sVar8 + 4;
-            if (iVar36 == 0) {
-              GVar31 = GVar33 + 4;
-            }
-            else if (1 - iVar21 < iVar36) {
-              GVar31 = GVar33 - CASE_2;
-            }
-            else {
-              GVar31 = GVar33;
-              if (iVar36 != 1 - iVar21) {
-                GVar31 = GVar33 + CASE_2;
-              }
-            }
-            param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + 0x10 + (GVar31 + iVar24) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            *(short *)(piVar38 + 1) = sVar4 + -1;
-            STField<short>(piVar38,6) = sVar5 + -1;
-            *(short *)(piVar38 + 2) = sVar6;
-            STPiece<0,2>(param_3_after_write) = (undefined2)GVar31;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar38 + 3) = sVar8 + 4;
-          }
-        }
-        uVar28 = local_10 & 0x21;
-        piVar38 = piVar37;
+        uVar28 = local_10 & 0x20;
+        piVar36 = piVar37;
         if (uVar28 == 0) {
-          puVar34 = (ushort *)(psVar2 + -param_2);
-          if (((puVar34[1] == 0) || (iVar24 + 4 < (short)puVar34[1])) &&
-             (((*puVar34 & 0xc000) != 0xc000 && ((psVar2[1] & 0xc000U) != 0xc000)))) {
-            puVar34[1] = sVar8 + 4;
-            piVar38 = (int *)*piVar37;
+          sVar7 = psVar2[-param_2];
+          if ((sVar7 == 0) || (iVar23 + 3 < (int)sVar7)) {
+            psVar2[-param_2] = sVar8 + 3;
+            if (-iVar20 < iVar35) {
+              iVar34 = GVar32 + CASE_1;
+            }
+            else {
+              iVar34 = GVar32 + CASE_3;
+            }
             param_9 = param_9 + -1;
-            piVar39 = (int *)(param_4 + 0x10 + (GVar33 + 4 + iVar24) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4 + 1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + 0xc + (iVar34 + iVar23) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
             STField<short>(piVar37,6) = sVar5 + -1;
             *(short *)(piVar37 + 2) = sVar6;
-            STPiece<0,2>(param_3_after_write) = (undefined2)(GVar33 + 4);
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar37 + 1) = sVar4;
+            *(short *)(piVar37 + 3) = sVar8 + 3;
+          }
+        }
+        if ((psVar2[param_2] == 0) || (piVar37 = piVar36, iVar23 + 3 < (int)psVar2[param_2])) {
+          psVar2[param_2] = sVar8 + 3;
+          if (-iVar35 == iVar20 || -iVar20 < iVar35) {
+            iVar34 = GVar32 - CASE_1;
+          }
+          else {
+            iVar34 = GVar32 - CASE_3;
+          }
+          param_9 = param_9 + -1;
+          piVar37 = (int *)*piVar36;
+          piVar38 = (int *)(param_4 + 0xc + (iVar34 + iVar23) * 4);
+          *piVar36 = *piVar38;
+          *piVar38 = (int)piVar36;
+          STField<short>(piVar36,6) = sVar5 + 1;
+          *(short *)(piVar36 + 2) = sVar6;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+          STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+          *(short *)(piVar36 + 1) = sVar4;
+          *(short *)(piVar36 + 3) = sVar8 + 3;
+        }
+        piVar36 = piVar37;
+        if (bVar12) {
+          sVar7 = psVar2[-iVar17];
+          if ((sVar7 == 0) || (iVar23 + 3 < (int)sVar7)) {
+            psVar2[-iVar17] = sVar8 + 3;
+            param_9 = param_9 + -1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + 0xc + (param_1 + iVar23) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4;
+            *(short *)(piVar37 + 2) = sVar6 + -1;
+            STField<short>(piVar37,10) = (short)param_1;
+            STField<short>(piVar37,6) = sVar5;
+            *(short *)(piVar37 + 3) = sVar8 + 3;
+          }
+        }
+        piVar37 = piVar36;
+        if ((bVar43) && ((psVar2[iVar17] == 0 || (iVar23 + 3 < (int)psVar2[iVar17])))) {
+          psVar2[iVar17] = sVar8 + 3;
+          param_9 = param_9 + -1;
+          piVar37 = (int *)*piVar36;
+          piVar38 = (int *)(param_4 + 0xc + (param_5 + iVar23) * 4);
+          *piVar36 = *piVar38;
+          *piVar38 = (int)piVar36;
+          *(short *)(piVar36 + 2) = sVar6 + 1;
+          *(short *)(piVar36 + 1) = sVar4;
+          STField<short>(piVar36,10) = (short)param_5;
+          STField<short>(piVar36,6) = sVar5;
+          *(short *)(piVar36 + 3) = sVar8 + 3;
+        }
+        if ((bVar43) && (-1 < psVar2[iVar17])) {
+          piVar36 = piVar37;
+          if ((uVar41 == 0) &&
+             (((psVar2[iVar17 + -1] == 0 || (iVar23 + 4 < (int)psVar2[iVar17 + -1])) &&
+              ((psVar2[-1] & 0xc000U) != 0xc000)))) {
+            psVar2[iVar17 + -1] = sVar8 + 4;
+            if (iVar35 == 0) {
+              if (iVar20 == 0) {
+                iVar34 = param_5 + 3;
+              }
+              else {
+                iVar34 = param_5 + 1;
+              }
+            }
+            else if (-iVar20 < iVar35) {
+              iVar34 = param_5 + -3;
+            }
+            else {
+              iVar34 = param_5 + -1;
+            }
+            param_9 = param_9 + -1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4 + -1;
+            STField<short>(piVar37,6) = sVar5;
+            *(short *)(piVar37 + 2) = sVar6 + 1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar37 + 3) = sVar8 + 4;
+          }
+          piVar37 = piVar36;
+          if (((uVar27 == 0) &&
+              ((psVar2[iVar17 + 1] == 0 || (iVar23 + 4 < (int)psVar2[iVar17 + 1])))) &&
+             ((psVar2[1] & 0xc000U) != 0xc000)) {
+            psVar2[iVar17 + 1] = sVar8 + 4;
+            if (iVar35 < -iVar20) {
+              iVar34 = param_5 + 1;
+            }
+            else {
+              iVar34 = param_5 + 3;
+            }
+            param_9 = param_9 + -1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4 + 1;
+            STField<short>(piVar36,6) = sVar5;
+            *(short *)(piVar36 + 2) = sVar6 + 1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = sVar8 + 4;
+          }
+          piVar36 = piVar37;
+          if (uVar28 == 0) {
+            sVar7 = psVar2[iVar17 - param_2];
+            if (((sVar7 == 0) || (iVar23 + 4 < (int)sVar7)) &&
+               ((psVar2[-param_2] & 0xc000U) != 0xc000)) {
+              psVar2[iVar17 - param_2] = sVar8 + 4;
+              if (-iVar20 < iVar35) {
+                iVar34 = param_5 + 1;
+              }
+              else {
+                iVar34 = param_5 + 3;
+              }
+              param_9 = param_9 + -1;
+              piVar36 = (int *)*piVar37;
+              piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+              *piVar37 = *piVar38;
+              *piVar38 = (int)piVar37;
+              STField<short>(piVar37,6) = sVar5 + -1;
+              *(short *)(piVar37 + 1) = sVar4;
+              *(short *)(piVar37 + 2) = sVar6 + 1;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+              *(short *)(piVar37 + 3) = sVar8 + 4;
+            }
+          }
+          piVar37 = piVar36;
+          if (((psVar2[iVar17 + param_2] == 0) || (iVar23 + 4 < (int)psVar2[iVar17 + param_2])) &&
+             ((psVar2[param_2] & 0xc000U) != 0xc000)) {
+            psVar2[iVar17 + param_2] = sVar8 + 4;
+            if (-iVar35 == iVar20 || -iVar20 < iVar35) {
+              iVar34 = param_5 + -1;
+            }
+            else {
+              iVar34 = param_5 + -3;
+            }
+            param_9 = param_9 + -1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            STField<short>(piVar36,6) = sVar5 + 1;
+            *(short *)(piVar36 + 1) = sVar4;
+            *(short *)(piVar36 + 2) = sVar6 + 1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = sVar8 + 4;
+          }
+        }
+        if ((bVar12) && (psVar29 = psVar2 + -iVar17, -1 < *psVar29)) {
+          piVar36 = piVar37;
+          if (((uVar41 == 0) && ((psVar29[-1] == 0 || (iVar23 + 4 < (int)psVar29[-1])))) &&
+             ((psVar2[-1] & 0xc000U) != 0xc000)) {
+            psVar29[-1] = sVar8 + 4;
+            if (iVar35 == 0) {
+              if (iVar20 == 0) {
+                iVar34 = param_1 + 3;
+              }
+              else {
+                iVar34 = param_1 + 1;
+              }
+            }
+            else if (-iVar20 < iVar35) {
+              iVar34 = param_1 + -3;
+            }
+            else {
+              iVar34 = param_1 + -1;
+            }
+            param_9 = param_9 + -1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4 + -1;
+            STField<short>(piVar37,6) = sVar5;
+            *(short *)(piVar37 + 2) = sVar6 + -1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar37 + 3) = sVar8 + 4;
+          }
+          piVar37 = piVar36;
+          if ((uVar27 == 0) &&
+             (((psVar29[1] == 0 || (iVar23 + 4 < (int)psVar29[1])) &&
+              ((psVar2[1] & 0xc000U) != 0xc000)))) {
+            psVar29[1] = sVar8 + 4;
+            if (iVar35 < -iVar20) {
+              iVar34 = param_1 + 1;
+            }
+            else {
+              iVar34 = param_1 + 3;
+            }
+            param_9 = param_9 + -1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4 + 1;
+            STField<short>(piVar36,6) = sVar5;
+            *(short *)(piVar36 + 2) = sVar6 + -1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = sVar8 + 4;
+          }
+          piVar36 = piVar37;
+          if (uVar28 == 0) {
+            sVar7 = psVar29[-param_2];
+            if (((sVar7 == 0) || (iVar23 + 4 < (int)sVar7)) &&
+               ((psVar2[-param_2] & 0xc000U) != 0xc000)) {
+              psVar29[-param_2] = sVar8 + 4;
+              if (-iVar20 < iVar35) {
+                iVar34 = param_1 + 1;
+              }
+              else {
+                iVar34 = param_1 + 3;
+              }
+              param_9 = param_9 + -1;
+              piVar36 = (int *)*piVar37;
+              piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+              *piVar37 = *piVar38;
+              *piVar38 = (int)piVar37;
+              STField<short>(piVar37,6) = sVar5 + -1;
+              *(short *)(piVar37 + 1) = sVar4;
+              *(short *)(piVar37 + 2) = sVar6 + -1;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+              *(short *)(piVar37 + 3) = sVar8 + 4;
+            }
+          }
+          piVar37 = piVar36;
+          if (((psVar29[param_2] == 0) || (iVar23 + 4 < (int)psVar29[param_2])) &&
+             ((psVar2[param_2] & 0xc000U) != 0xc000)) {
+            psVar29[param_2] = sVar8 + 4;
+            if (-iVar35 == iVar20 || -iVar20 < iVar35) {
+              iVar34 = param_1 + -1;
+            }
+            else {
+              iVar34 = param_1 + -3;
+            }
+            param_9 = param_9 + -1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            STField<short>(piVar36,6) = sVar5 + 1;
+            *(short *)(piVar36 + 1) = sVar4;
+            *(short *)(piVar36 + 2) = sVar6 + -1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = sVar8 + 4;
+          }
+        }
+        uVar41 = local_10 & 0x30;
+        piVar36 = piVar37;
+        if (uVar41 == 0) {
+          psVar29 = (short *)((int)psVar2 - (param_2 * 2 + 2));
+          sVar7 = *psVar29;
+          if ((((sVar7 == 0) || (iVar23 + 4 < (int)sVar7)) &&
+              ((psVar2[-param_2] & 0xc000U) != 0xc000)) && ((psVar2[-1] & 0xc000U) != 0xc000)) {
+            *psVar29 = sVar8 + 4;
+            if (iVar35 == 0) {
+              GVar30 = GVar32 + 4;
+            }
+            else if (1 - iVar20 < iVar35) {
+              GVar30 = GVar32 - CASE_2;
+            }
+            else {
+              GVar30 = GVar32;
+              if (iVar35 != 1 - iVar20) {
+                GVar30 = GVar32 + CASE_2;
+              }
+            }
+            param_9 = param_9 + -1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + 0x10 + (GVar30 + iVar23) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4 + -1;
+            STField<short>(piVar37,6) = sVar5 + -1;
+            *(short *)(piVar37 + 2) = sVar6;
+            STPiece<0,2>(param_3_after_write) = (undefined2)GVar30;
             STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
         }
-        uVar29 = local_10 & 0x12;
-        piVar37 = piVar38;
-        if ((((uVar29 == 0) &&
-             ((psVar2[param_2 + -1] == 0 || (iVar24 + 4 < (int)psVar2[param_2 + -1])))) &&
+        uVar27 = local_10 & 0x21;
+        piVar37 = piVar36;
+        if (uVar27 == 0) {
+          puVar33 = reinterpret_cast<ushort *>((psVar2 + -param_2));
+          if (((puVar33[1] == 0) || (iVar23 + 4 < (short)puVar33[1])) &&
+             (((*puVar33 & 0xc000) != 0xc000 && ((psVar2[1] & 0xc000U) != 0xc000)))) {
+            puVar33[1] = sVar8 + 4;
+            piVar37 = (int *)*piVar36;
+            param_9 = param_9 + -1;
+            piVar38 = (int *)(param_4 + 0x10 + (GVar32 + 4 + iVar23) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4 + 1;
+            STField<short>(piVar36,6) = sVar5 + -1;
+            *(short *)(piVar36 + 2) = sVar6;
+            STPiece<0,2>(param_3_after_write) = (undefined2)(GVar32 + 4);
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = sVar8 + 4;
+          }
+        }
+        uVar28 = local_10 & 0x12;
+        piVar36 = piVar37;
+        if ((((uVar28 == 0) &&
+             ((psVar2[param_2 + -1] == 0 || (iVar23 + 4 < (int)psVar2[param_2 + -1])))) &&
             ((psVar2[param_2] & 0xc000U) != 0xc000)) && ((psVar2[-1] & 0xc000U) != 0xc000)) {
           psVar2[param_2 + -1] = sVar8 + 4;
-          if (iVar36 == 0) {
-            if (iVar21 == 0) {
-              param_3_after_write = GVar33 + 4;
+          if (iVar35 == 0) {
+            if (iVar20 == 0) {
+              param_3_after_write = GVar32 + 4;
             }
             else {
-              param_3_after_write = GVar33;
-              if (iVar21 != -1) {
-                param_3_after_write = GVar33 - CASE_2;
+              param_3_after_write = GVar32;
+              if (iVar20 != -1) {
+                param_3_after_write = GVar32 - CASE_2;
               }
             }
           }
           else {
-            param_3_after_write = GVar33 + ~CASE_3;
+            param_3_after_write = GVar32 + ~CASE_3;
           }
           param_9 = param_9 + -1;
-          piVar37 = (int *)*piVar38;
-          piVar39 = (int *)(param_4 + 0x10 + (param_3_after_write + iVar24) * 4);
-          *piVar38 = *piVar39;
-          *piVar39 = (int)piVar38;
-          *(short *)(piVar38 + 1) = sVar4 + -1;
-          STField<short>(piVar38,6) = sVar5 + 1;
-          *(short *)(piVar38 + 2) = sVar6;
-          STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-          *(short *)(piVar38 + 3) = sVar8 + 4;
-        }
-        local_10 = local_10 & 3;
-        piVar38 = piVar37;
-        if (((local_10 == 0) &&
-            (((psVar2[param_2 + 1] == 0 || (iVar24 + 4 < (int)psVar2[param_2 + 1])) &&
-             ((psVar2[param_2] & 0xc000U) != 0xc000)))) && ((psVar2[1] & 0xc000U) != 0xc000)) {
-          psVar2[param_2 + 1] = sVar8 + 4;
-          bVar43 = -(iVar36 + 1) == iVar21;
-          if (bVar43 || -iVar21 < iVar36 + 1) {
-            if (!bVar43) {
-              GVar33 = GVar33 + CASE_2;
-            }
-          }
-          else {
-            GVar33 = GVar33 - CASE_2;
-          }
-          param_9 = param_9 + -1;
-          piVar38 = (int *)*piVar37;
-          piVar39 = (int *)(param_4 + 0x10 + (GVar33 + iVar24) * 4);
-          *piVar37 = *piVar39;
-          *piVar39 = (int)piVar37;
-          *(short *)(piVar37 + 1) = sVar4 + 1;
+          piVar36 = (int *)*piVar37;
+          piVar38 = (int *)(param_4 + 0x10 + (param_3_after_write + iVar23) * 4);
+          *piVar37 = *piVar38;
+          *piVar38 = (int)piVar37;
+          *(short *)(piVar37 + 1) = sVar4 + -1;
           STField<short>(piVar37,6) = sVar5 + 1;
           *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3_after_write) = (undefined2)GVar33;
           STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           *(short *)(piVar37 + 3) = sVar8 + 4;
         }
-        iVar35 = iVar24 + 5;
-        uVar40 = (ushort)iVar35;
-        if ((bVar44) && (puVar34 = (ushort *)(psVar2 + iVar18), (*puVar34 & 0xc000) != 0xc000)) {
-          piVar37 = piVar38;
-          if (uVar42 == 0) {
-            puVar32 = (ushort *)((int)puVar34 - (param_2 * 2 + 2));
-            uVar10 = *puVar32;
-            if ((((uVar10 == 0) || (iVar35 < (short)uVar10)) &&
-                (((puVar34[-param_2] & 0xc000) != 0xc000 &&
-                 ((((puVar34[-1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000)) &&
+        local_10 = local_10 & 3;
+        piVar37 = piVar36;
+        if (((local_10 == 0) &&
+            (((psVar2[param_2 + 1] == 0 || (iVar23 + 4 < (int)psVar2[param_2 + 1])) &&
+             ((psVar2[param_2] & 0xc000U) != 0xc000)))) && ((psVar2[1] & 0xc000U) != 0xc000)) {
+          psVar2[param_2 + 1] = sVar8 + 4;
+          bVar42 = -(iVar35 + 1) == iVar20;
+          if (bVar42 || -iVar20 < iVar35 + 1) {
+            if (!bVar42) {
+              GVar32 = GVar32 + CASE_2;
+            }
+          }
+          else {
+            GVar32 = GVar32 - CASE_2;
+          }
+          param_9 = param_9 + -1;
+          piVar37 = (int *)*piVar36;
+          piVar38 = (int *)(param_4 + 0x10 + (GVar32 + iVar23) * 4);
+          *piVar36 = *piVar38;
+          *piVar38 = (int)piVar36;
+          *(short *)(piVar36 + 1) = sVar4 + 1;
+          STField<short>(piVar36,6) = sVar5 + 1;
+          *(short *)(piVar36 + 2) = sVar6;
+          STPiece<0,2>(param_3_after_write) = (undefined2)GVar32;
+          STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+          *(short *)(piVar36 + 3) = sVar8 + 4;
+        }
+        iVar34 = iVar23 + 5;
+        uVar39 = (ushort)iVar34;
+        if ((bVar43) && (puVar33 = reinterpret_cast<ushort *>((psVar2 + iVar17)), (*puVar33 & 0xc000) != 0xc000)) {
+          piVar36 = piVar37;
+          if (uVar41 == 0) {
+            puVar31 = (ushort *)((int)puVar33 - (param_2 * 2 + 2));
+            uVar10 = *puVar31;
+            if ((((uVar10 == 0) || (iVar34 < (short)uVar10)) &&
+                (((puVar33[-param_2] & 0xc000) != 0xc000 &&
+                 ((((puVar33[-1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000)) &&
                   ((psVar2[-1] & 0xc000U) != 0xc000)))))) &&
                ((*(ushort *)((int)psVar2 - (param_2 * 2 + 2)) & 0xc000) != 0xc000)) {
-              *puVar32 = uVar40;
-              if (iVar36 == 0) {
-                iVar27 = param_5 + 4;
+              *puVar31 = uVar39;
+              if (iVar35 == 0) {
+                iVar26 = param_5 + 4;
               }
-              else if (1 - iVar21 < iVar36) {
-                iVar27 = param_5 + -2;
+              else if (1 - iVar20 < iVar35) {
+                iVar26 = param_5 + -2;
               }
               else {
-                iVar27 = param_5;
-                if (iVar36 != 1 - iVar21) {
-                  iVar27 = param_5 + 2;
+                iVar26 = param_5;
+                if (iVar35 != 1 - iVar20) {
+                  iVar26 = param_5 + 2;
                 }
               }
               param_9 = param_9 + -1;
-              piVar37 = (int *)*piVar38;
-              piVar39 = (int *)(param_4 + (iVar27 + iVar35) * 4);
-              *piVar38 = *piVar39;
-              *piVar39 = (int)piVar38;
-              *(short *)(piVar38 + 1) = sVar4 + -1;
-              STField<short>(piVar38,6) = sVar5 + -1;
-              *(ushort *)(piVar38 + 3) = uVar40;
-              *(short *)(piVar38 + 2) = sVar6 + 1;
-              STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
+              piVar36 = (int *)*piVar37;
+              piVar38 = (int *)(param_4 + (iVar26 + iVar34) * 4);
+              *piVar37 = *piVar38;
+              *piVar38 = (int)piVar37;
+              *(short *)(piVar37 + 1) = sVar4 + -1;
+              STField<short>(piVar37,6) = sVar5 + -1;
+              *(ushort *)(piVar37 + 3) = uVar39;
+              *(short *)(piVar37 + 2) = sVar6 + 1;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar26;
+              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             }
           }
-          piVar38 = piVar37;
-          if (uVar28 == 0) {
-            puVar32 = puVar34 + -param_2;
-            if ((((puVar32[1] == 0) || (iVar35 < (short)puVar32[1])) &&
-                (((*puVar32 & 0xc000) != 0xc000 &&
-                 (((puVar34[1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000))))))
+          piVar37 = piVar36;
+          if (uVar27 == 0) {
+            puVar31 = puVar33 + -param_2;
+            if ((((puVar31[1] == 0) || (iVar34 < (short)puVar31[1])) &&
+                (((*puVar31 & 0xc000) != 0xc000 &&
+                 (((puVar33[1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000))))))
                && (((psVar2[1] & 0xc000U) != 0xc000 &&
                    (((psVar2 + -param_2)[1] & 0xc000U) != 0xc000)))) {
-              puVar32[1] = uVar40;
+              puVar31[1] = uVar39;
               param_9 = param_9 + -1;
-              piVar38 = (int *)*piVar37;
-              piVar39 = (int *)(param_4 + (param_5 + 4 + iVar35) * 4);
-              *piVar37 = *piVar39;
-              *piVar39 = (int)piVar37;
-              *(short *)(piVar37 + 1) = sVar4 + 1;
-              STField<short>(piVar37,6) = sVar5 + -1;
-              *(ushort *)(piVar37 + 3) = uVar40;
-              *(short *)(piVar37 + 2) = sVar6 + 1;
-              STField<short>(piVar37,10) = (short)param_5 + 4;
+              piVar37 = (int *)*piVar36;
+              piVar38 = (int *)(param_4 + (param_5 + 4 + iVar34) * 4);
+              *piVar36 = *piVar38;
+              *piVar38 = (int)piVar36;
+              *(short *)(piVar36 + 1) = sVar4 + 1;
+              STField<short>(piVar36,6) = sVar5 + -1;
+              *(ushort *)(piVar36 + 3) = uVar39;
+              *(short *)(piVar36 + 2) = sVar6 + 1;
+              STField<short>(piVar36,10) = (short)param_5 + 4;
             }
           }
-          piVar37 = piVar38;
-          if (((uVar29 == 0) &&
-              (((((puVar34[param_2 + -1] == 0 || (iVar35 < (short)puVar34[param_2 + -1])) &&
-                 ((puVar34[param_2] & 0xc000) != 0xc000)) &&
-                (((puVar34[-1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)))) &&
+          piVar36 = piVar37;
+          if (((uVar28 == 0) &&
+              (((((puVar33[param_2 + -1] == 0 || (iVar34 < (short)puVar33[param_2 + -1])) &&
+                 ((puVar33[param_2] & 0xc000) != 0xc000)) &&
+                (((puVar33[-1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)))) &&
                ((psVar2[-1] & 0xc000U) != 0xc000)))) && ((psVar2[param_2 + -1] & 0xc000U) != 0xc000)
              ) {
-            puVar34[param_2 + -1] = uVar40;
-            if (iVar36 == 0) {
-              if (iVar21 == 0) {
-                iVar27 = param_5 + 4;
+            puVar33[param_2 + -1] = uVar39;
+            if (iVar35 == 0) {
+              if (iVar20 == 0) {
+                iVar26 = param_5 + 4;
               }
               else {
-                iVar27 = param_5;
-                if (iVar21 != -1) {
-                  iVar27 = param_5 + -2;
+                iVar26 = param_5;
+                if (iVar20 != -1) {
+                  iVar26 = param_5 + -2;
                 }
               }
             }
             else {
-              iVar27 = param_5 + -4;
+              iVar26 = param_5 + -4;
             }
             param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + (iVar27 + iVar35) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            *(short *)(piVar38 + 1) = sVar4 + -1;
-            STField<short>(piVar38,6) = sVar5 + 1;
-            *(ushort *)(piVar38 + 3) = uVar40;
-            *(short *)(piVar38 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + (iVar26 + iVar34) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4 + -1;
+            STField<short>(piVar37,6) = sVar5 + 1;
+            *(ushort *)(piVar37 + 3) = uVar39;
+            *(short *)(piVar37 + 2) = sVar6 + 1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar26;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           }
-          piVar38 = piVar37;
+          piVar37 = piVar36;
           if (((local_10 == 0) &&
-              ((puVar34[param_2 + 1] == 0 || (iVar35 < (short)puVar34[param_2 + 1])))) &&
-             ((((puVar34[param_2] & 0xc000) != 0xc000 &&
-               ((((puVar34[1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)) &&
+              ((puVar33[param_2 + 1] == 0 || (iVar34 < (short)puVar33[param_2 + 1])))) &&
+             ((((puVar33[param_2] & 0xc000) != 0xc000 &&
+               ((((puVar33[1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)) &&
                 ((psVar2[1] & 0xc000U) != 0xc000)))) && ((psVar2[param_2 + 1] & 0xc000U) != 0xc000))
              )) {
-            puVar34[param_2 + 1] = uVar40;
-            bVar44 = -(iVar36 + 1) == iVar21;
-            if (bVar44 || -iVar21 < iVar36 + 1) {
-              if (!bVar44) {
+            puVar33[param_2 + 1] = uVar39;
+            bVar43 = -(iVar35 + 1) == iVar20;
+            if (bVar43 || -iVar20 < iVar35 + 1) {
+              if (!bVar43) {
                 param_5 = param_5 + 2;
               }
             }
@@ -5207,123 +5258,123 @@ cf_continue_loop_006C9187:
               param_5 = param_5 + -2;
             }
             param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + (param_5 + iVar35) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4 + 1;
-            STField<short>(piVar37,6) = sVar5 + 1;
-            *(ushort *)(piVar37 + 3) = uVar40;
-            *(short *)(piVar37 + 2) = sVar6 + 1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + (param_5 + iVar34) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4 + 1;
+            STField<short>(piVar36,6) = sVar5 + 1;
+            *(ushort *)(piVar36 + 3) = uVar39;
+            *(short *)(piVar36 + 2) = sVar6 + 1;
             STPiece<0,2>(param_3_after_write) = (undefined2)param_5;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
           }
         }
-        if ((bVar12) && (puVar34 = (ushort *)(psVar2 + -iVar18), (*puVar34 & 0xc000) != 0xc000)) {
-          piVar37 = piVar38;
-          if (uVar42 == 0) {
-            puVar32 = (ushort *)((int)puVar34 - (param_2 * 2 + 2));
-            uVar10 = *puVar32;
-            if ((((uVar10 == 0) || (iVar35 < (short)uVar10)) &&
-                (((puVar34[-param_2] & 0xc000) != 0xc000 &&
-                 ((((puVar34[-1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000)) &&
+        if ((bVar12) && (puVar33 = reinterpret_cast<ushort *>((psVar2 + -iVar17)), (*puVar33 & 0xc000) != 0xc000)) {
+          piVar36 = piVar37;
+          if (uVar41 == 0) {
+            puVar31 = (ushort *)((int)puVar33 - (param_2 * 2 + 2));
+            uVar10 = *puVar31;
+            if ((((uVar10 == 0) || (iVar34 < (short)uVar10)) &&
+                (((puVar33[-param_2] & 0xc000) != 0xc000 &&
+                 ((((puVar33[-1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000)) &&
                   ((psVar2[-1] & 0xc000U) != 0xc000)))))) &&
                ((*(ushort *)((int)psVar2 - (param_2 * 2 + 2)) & 0xc000) != 0xc000)) {
-              *puVar32 = uVar40;
-              if (iVar36 == 0) {
-                iVar27 = param_1 + 4;
+              *puVar31 = uVar39;
+              if (iVar35 == 0) {
+                iVar26 = param_1 + 4;
               }
-              else if (1 - iVar21 < iVar36) {
-                iVar27 = param_1 + -2;
+              else if (1 - iVar20 < iVar35) {
+                iVar26 = param_1 + -2;
               }
               else {
-                iVar27 = param_1;
-                if (iVar36 != 1 - iVar21) {
-                  iVar27 = param_1 + 2;
+                iVar26 = param_1;
+                if (iVar35 != 1 - iVar20) {
+                  iVar26 = param_1 + 2;
                 }
               }
               param_9 = param_9 + -1;
-              piVar37 = (int *)*piVar38;
-              piVar39 = (int *)(param_4 + (iVar27 + iVar35) * 4);
-              *piVar38 = *piVar39;
-              *piVar39 = (int)piVar38;
-              *(short *)(piVar38 + 1) = sVar4 + -1;
-              STField<short>(piVar38,6) = sVar5 + -1;
-              *(ushort *)(piVar38 + 3) = uVar40;
-              *(short *)(piVar38 + 2) = sVar6 + -1;
-              STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-            }
-          }
-          piVar39 = piVar37;
-          if (uVar28 == 0) {
-            puVar32 = puVar34 + -param_2;
-            if ((((puVar32[1] == 0) || (iVar35 < (short)puVar32[1])) &&
-                (((*puVar32 & 0xc000) != 0xc000 &&
-                 (((puVar34[1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000))))))
-               && (((psVar2[1] & 0xc000U) != 0xc000 &&
-                   (((psVar2 + -param_2)[1] & 0xc000U) != 0xc000)))) {
-              puVar32[1] = uVar40;
-              param_9 = param_9 + -1;
-              piVar39 = (int *)*piVar37;
-              piVar38 = (int *)(param_4 + (param_1 + 4 + iVar35) * 4);
+              piVar36 = (int *)*piVar37;
+              piVar38 = (int *)(param_4 + (iVar26 + iVar34) * 4);
               *piVar37 = *piVar38;
               *piVar38 = (int)piVar37;
-              *(short *)(piVar37 + 1) = sVar4 + 1;
+              *(short *)(piVar37 + 1) = sVar4 + -1;
               STField<short>(piVar37,6) = sVar5 + -1;
-              *(ushort *)(piVar37 + 3) = uVar40;
+              *(ushort *)(piVar37 + 3) = uVar39;
               *(short *)(piVar37 + 2) = sVar6 + -1;
-              STField<short>(piVar37,10) = (short)param_1 + 4;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar26;
+              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             }
           }
-          piVar38 = piVar39;
-          if ((((uVar29 == 0) &&
-               ((((puVar34[param_2 + -1] == 0 || (iVar35 < (short)puVar34[param_2 + -1])) &&
-                 ((puVar34[param_2] & 0xc000) != 0xc000)) &&
-                (((puVar34[-1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000))))))
+          piVar38 = piVar36;
+          if (uVar27 == 0) {
+            puVar31 = puVar33 + -param_2;
+            if ((((puVar31[1] == 0) || (iVar34 < (short)puVar31[1])) &&
+                (((*puVar31 & 0xc000) != 0xc000 &&
+                 (((puVar33[1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000))))))
+               && (((psVar2[1] & 0xc000U) != 0xc000 &&
+                   (((psVar2 + -param_2)[1] & 0xc000U) != 0xc000)))) {
+              puVar31[1] = uVar39;
+              param_9 = param_9 + -1;
+              piVar38 = (int *)*piVar36;
+              piVar37 = (int *)(param_4 + (param_1 + 4 + iVar34) * 4);
+              *piVar36 = *piVar37;
+              *piVar37 = (int)piVar36;
+              *(short *)(piVar36 + 1) = sVar4 + 1;
+              STField<short>(piVar36,6) = sVar5 + -1;
+              *(ushort *)(piVar36 + 3) = uVar39;
+              *(short *)(piVar36 + 2) = sVar6 + -1;
+              STField<short>(piVar36,10) = (short)param_1 + 4;
+            }
+          }
+          piVar37 = piVar38;
+          if ((((uVar28 == 0) &&
+               ((((puVar33[param_2 + -1] == 0 || (iVar34 < (short)puVar33[param_2 + -1])) &&
+                 ((puVar33[param_2] & 0xc000) != 0xc000)) &&
+                (((puVar33[-1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000))))))
               && ((psVar2[-1] & 0xc000U) != 0xc000)) && ((psVar2[param_2 + -1] & 0xc000U) != 0xc000)
              ) {
-            puVar34[param_2 + -1] = uVar40;
-            if (iVar36 == 0) {
-              if (iVar21 == 0) {
-                iVar27 = param_1 + 4;
+            puVar33[param_2 + -1] = uVar39;
+            if (iVar35 == 0) {
+              if (iVar20 == 0) {
+                iVar26 = param_1 + 4;
               }
               else {
-                iVar27 = param_1;
-                if (iVar21 != -1) {
-                  iVar27 = param_1 + -2;
+                iVar26 = param_1;
+                if (iVar20 != -1) {
+                  iVar26 = param_1 + -2;
                 }
               }
             }
             else {
-              iVar27 = param_1 + -4;
+              iVar26 = param_1 + -4;
             }
             param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar39;
-            piVar37 = (int *)(param_4 + (iVar27 + iVar35) * 4);
-            *piVar39 = *piVar37;
-            *piVar37 = (int)piVar39;
-            *(short *)(piVar39 + 1) = sVar4 + -1;
-            STField<short>(piVar39,6) = sVar5 + 1;
-            *(ushort *)(piVar39 + 3) = uVar40;
-            *(short *)(piVar39 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
-            STField<undefined2>(piVar39,10) = (undefined2)param_3_after_write;
+            piVar37 = (int *)*piVar38;
+            piVar36 = (int *)(param_4 + (iVar26 + iVar34) * 4);
+            *piVar38 = *piVar36;
+            *piVar36 = (int)piVar38;
+            *(short *)(piVar38 + 1) = sVar4 + -1;
+            STField<short>(piVar38,6) = sVar5 + 1;
+            *(ushort *)(piVar38 + 3) = uVar39;
+            *(short *)(piVar38 + 2) = sVar6 + -1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar26;
+            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
           }
           if (((local_10 == 0) &&
-              ((puVar34[param_2 + 1] == 0 || (iVar35 < (short)puVar34[param_2 + 1])))) &&
-             (((puVar34[param_2] & 0xc000) != 0xc000 &&
-              (((((puVar34[1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)) &&
+              ((puVar33[param_2 + 1] == 0 || (iVar34 < (short)puVar33[param_2 + 1])))) &&
+             (((puVar33[param_2] & 0xc000) != 0xc000 &&
+              (((((puVar33[1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)) &&
                 ((psVar2[1] & 0xc000U) != 0xc000)) && ((psVar2[param_2 + 1] & 0xc000U) != 0xc000))))
              )) {
-            puVar34[param_2 + 1] = uVar40;
-            iVar27 = iVar21;
-            iVar35 = iVar36;
+            puVar33[param_2 + 1] = uVar39;
+            iVar26 = iVar20;
+            iVar34 = iVar35;
 LAB_006ce561:
-            bVar44 = -(iVar35 + 1) == iVar27;
-            piVar37 = piVar38;
-            if (bVar44 || -iVar27 < iVar35 + 1) {
-              if (!bVar44) {
+            bVar43 = -(iVar34 + 1) == iVar26;
+            piVar36 = piVar37;
+            if (bVar43 || -iVar26 < iVar34 + 1) {
+              if (!bVar43) {
                 param_1 = param_1 + 2;
               }
             }
@@ -5332,1893 +5383,1893 @@ LAB_006ce561:
             }
 LAB_006ce57c:
             param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + (param_1 + iVar24 + 5) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4 + 1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + (param_1 + iVar23 + 5) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4 + 1;
             STPiece<0,2>(param_3_after_write) = (undefined2)param_1;
-            STField<short>(piVar37,6) = sVar5 + 1;
-            *(short *)(piVar37 + 2) = sVar6 + -1;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar37 + 3) = (short)(iVar24 + 5);
+            STField<short>(piVar36,6) = sVar5 + 1;
+            *(short *)(piVar36 + 2) = sVar6 + -1;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = (short)(iVar23 + 5);
           }
         }
         break;
       case CASE_1:
-        uVar42 = local_10 & 0x10;
-        piVar37 = piVar38;
-        if ((uVar42 == 0) && ((psVar2[-1] == 0 || (iVar24 + 3 < (int)psVar2[-1])))) {
-          psVar2[-1] = (short)(iVar24 + 3);
-          if (iVar21 < iVar36) {
-            iVar35 = GVar33 + CASE_1;
+        uVar41 = local_10 & 0x10;
+        piVar36 = piVar37;
+        if ((uVar41 == 0) && ((psVar2[-1] == 0 || (iVar23 + 3 < (int)psVar2[-1])))) {
+          psVar2[-1] = (short)(iVar23 + 3);
+          if (iVar20 < iVar35) {
+            iVar34 = GVar32 + CASE_1;
           }
           else {
-            iVar35 = GVar33 + CASE_3;
+            iVar34 = GVar32 + CASE_3;
           }
           param_9 = param_9 + -1;
-          piVar37 = (int *)*piVar38;
-          piVar39 = (int *)(param_4 + (iVar35 + iVar24 + 3) * 4);
-          *piVar38 = *piVar39;
-          *piVar39 = (int)piVar38;
-          *(short *)(piVar38 + 1) = sVar4 + -1;
-          *(short *)(piVar38 + 2) = sVar6;
-          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-          STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-          STField<short>(piVar38,6) = sVar5;
-          *(short *)(piVar38 + 3) = sVar8 + 3;
-        }
-        if ((psVar2[1] == 0) || (piVar38 = piVar37, iVar24 + 3 < (int)psVar2[1])) {
-          psVar2[1] = (short)(iVar24 + 3);
-          if (iVar36 < iVar21) {
-            iVar35 = GVar33 - CASE_3;
-          }
-          else {
-            iVar35 = GVar33 - CASE_1;
-          }
-          param_9 = param_9 + -1;
-          piVar38 = (int *)*piVar37;
-          piVar39 = (int *)(param_4 + (iVar35 + iVar24 + 3) * 4);
-          *piVar37 = *piVar39;
-          *piVar39 = (int)piVar37;
-          *(short *)(piVar37 + 1) = sVar4 + 1;
+          piVar36 = (int *)*piVar37;
+          piVar38 = (int *)(param_4 + (iVar34 + iVar23 + 3) * 4);
+          *piVar37 = *piVar38;
+          *piVar38 = (int)piVar37;
+          *(short *)(piVar37 + 1) = sVar4 + -1;
           *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
           STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           STField<short>(piVar37,6) = sVar5;
           *(short *)(piVar37 + 3) = sVar8 + 3;
         }
-        uVar28 = local_10 & 0x20;
-        piVar37 = piVar38;
-        if (uVar28 == 0) {
+        if ((psVar2[1] == 0) || (piVar37 = piVar36, iVar23 + 3 < (int)psVar2[1])) {
+          psVar2[1] = (short)(iVar23 + 3);
+          if (iVar35 < iVar20) {
+            iVar34 = GVar32 - CASE_3;
+          }
+          else {
+            iVar34 = GVar32 - CASE_1;
+          }
+          param_9 = param_9 + -1;
+          piVar37 = (int *)*piVar36;
+          piVar38 = (int *)(param_4 + (iVar34 + iVar23 + 3) * 4);
+          *piVar36 = *piVar38;
+          *piVar38 = (int)piVar36;
+          *(short *)(piVar36 + 1) = sVar4 + 1;
+          *(short *)(piVar36 + 2) = sVar6;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+          STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+          STField<short>(piVar36,6) = sVar5;
+          *(short *)(piVar36 + 3) = sVar8 + 3;
+        }
+        uVar27 = local_10 & 0x20;
+        piVar36 = piVar37;
+        if (uVar27 == 0) {
           sVar9 = psVar2[-param_2];
-          if ((sVar9 == 0) || (iVar24 + 3 < (int)sVar9)) {
+          if ((sVar9 == 0) || (iVar23 + 3 < (int)sVar9)) {
             psVar2[-param_2] = sVar8 + 3;
-            if (iVar36 < iVar21) {
-              iVar35 = GVar33 + CASE_1;
+            if (iVar35 < iVar20) {
+              iVar34 = GVar32 + CASE_1;
             }
             else {
-              iVar35 = GVar33 + CASE_3;
+              iVar34 = GVar32 + CASE_3;
             }
             param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + 0xc + (iVar35 + iVar24) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            STField<short>(piVar38,6) = sVar5 + -1;
-            *(short *)(piVar38 + 2) = sVar6;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar38 + 1) = sVar4;
-            *(short *)(piVar38 + 3) = sVar8 + 3;
-          }
-        }
-        if ((psVar2[param_2] == 0) || (piVar38 = piVar37, iVar24 + 3 < (int)psVar2[param_2])) {
-          psVar2[param_2] = sVar8 + 3;
-          if (iVar21 < iVar36) {
-            iVar35 = GVar33 - CASE_3;
-          }
-          else {
-            iVar35 = GVar33 - CASE_1;
-          }
-          param_9 = param_9 + -1;
-          piVar38 = (int *)*piVar37;
-          piVar39 = (int *)(param_4 + 0xc + (iVar35 + iVar24) * 4);
-          *piVar37 = *piVar39;
-          *piVar39 = (int)piVar37;
-          STField<short>(piVar37,6) = sVar5 + 1;
-          *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-          STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-          *(short *)(piVar37 + 1) = sVar4;
-          *(short *)(piVar37 + 3) = sVar8 + 3;
-        }
-        piVar37 = piVar38;
-        if (bVar12) {
-          sVar9 = psVar2[-iVar18];
-          if ((sVar9 == 0) || (iVar24 + 3 < (int)sVar9)) {
-            psVar2[-iVar18] = sVar8 + 3;
-            param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + 0xc + (param_1 + iVar24) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            *(short *)(piVar38 + 1) = sVar4;
-            STField<short>(piVar38,6) = sVar5;
-            *(short *)(piVar38 + 2) = sVar6 + -1;
-            STField<short>(piVar38,10) = (short)param_1;
-            *(short *)(piVar38 + 3) = sVar8 + 3;
-          }
-        }
-        piVar38 = piVar37;
-        if ((bVar44) && ((psVar2[iVar18] == 0 || (iVar24 + 3 < (int)psVar2[iVar18])))) {
-          psVar2[iVar18] = sVar8 + 3;
-          param_9 = param_9 + -1;
-          piVar38 = (int *)*piVar37;
-          piVar39 = (int *)(param_4 + 0xc + (param_5 + iVar24) * 4);
-          *piVar37 = *piVar39;
-          *piVar39 = (int)piVar37;
-          *(short *)(piVar37 + 1) = sVar4;
-          STField<short>(piVar37,6) = sVar5;
-          *(short *)(piVar37 + 2) = sVar6 + 1;
-          STField<short>(piVar37,10) = (short)param_5;
-          *(short *)(piVar37 + 3) = sVar8 + 3;
-        }
-        if ((bVar44) && (-1 < psVar2[iVar18])) {
-          piVar37 = piVar38;
-          if ((uVar42 == 0) &&
-             (((psVar2[iVar18 + -1] == 0 || (iVar24 + 4 < (int)psVar2[iVar18 + -1])) &&
-              ((psVar2[-1] & 0xc000U) != 0xc000)))) {
-            psVar2[iVar18 + -1] = sVar8 + 4;
-            if (iVar21 < iVar36) {
-              iVar35 = param_5 + 1;
-            }
-            else {
-              iVar35 = param_5 + 3;
-            }
-            param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            *(short *)(piVar38 + 1) = sVar4 + -1;
-            STField<short>(piVar38,6) = sVar5;
-            *(short *)(piVar38 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar38 + 3) = sVar8 + 4;
-          }
-          piVar38 = piVar37;
-          if (((psVar2[iVar18 + 1] == 0) || (iVar24 + 4 < (int)psVar2[iVar18 + 1])) &&
-             ((psVar2[1] & 0xc000U) != 0xc000)) {
-            psVar2[iVar18 + 1] = sVar8 + 4;
-            if (iVar36 < iVar21) {
-              iVar35 = param_5 + -3;
-            }
-            else {
-              iVar35 = param_5 + -1;
-            }
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4 + 1;
-            STField<short>(piVar37,6) = sVar5;
-            *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar37 + 3) = sVar8 + 4;
-          }
-          piVar37 = piVar38;
-          if (uVar28 == 0) {
-            sVar9 = psVar2[iVar18 - param_2];
-            if (((sVar9 == 0) || (iVar24 + 4 < (int)sVar9)) &&
-               ((psVar2[-param_2] & 0xc000U) != 0xc000)) {
-              psVar2[iVar18 - param_2] = sVar8 + 4;
-              if (iVar36 < iVar21) {
-                iVar35 = param_5 + 1;
-              }
-              else {
-                iVar35 = param_5 + 3;
-              }
-              param_9 = param_9 + -1;
-              piVar37 = (int *)*piVar38;
-              piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-              *piVar38 = *piVar39;
-              *piVar39 = (int)piVar38;
-              *(short *)(piVar38 + 1) = sVar4;
-              STField<short>(piVar38,6) = sVar5 + -1;
-              *(short *)(piVar38 + 2) = sVar6 + 1;
-              STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-              *(short *)(piVar38 + 3) = sVar8 + 4;
-            }
-          }
-          piVar38 = piVar37;
-          if (((psVar2[iVar18 + param_2] == 0) || (iVar24 + 4 < (int)psVar2[iVar18 + param_2])) &&
-             ((psVar2[param_2] & 0xc000U) != 0xc000)) {
-            psVar2[iVar18 + param_2] = sVar8 + 4;
-            if (iVar21 < iVar36) {
-              iVar35 = param_5 + -3;
-            }
-            else {
-              iVar35 = param_5 + -1;
-            }
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4;
-            STField<short>(piVar37,6) = sVar5 + 1;
-            *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar37 + 3) = sVar8 + 4;
-          }
-        }
-        if ((bVar12) && (psVar30 = psVar2 + -iVar18, -1 < *psVar30)) {
-          piVar37 = piVar38;
-          if (((uVar42 == 0) && ((psVar30[-1] == 0 || (iVar24 + 4 < (int)psVar30[-1])))) &&
-             ((psVar2[-1] & 0xc000U) != 0xc000)) {
-            psVar30[-1] = sVar8 + 4;
-            if (iVar21 < iVar36) {
-              iVar35 = param_1 + 1;
-            }
-            else {
-              iVar35 = param_1 + 3;
-            }
-            param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            *(short *)(piVar38 + 1) = sVar4 + -1;
-            STField<short>(piVar38,6) = sVar5;
-            *(short *)(piVar38 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar38 + 3) = sVar8 + 4;
-          }
-          piVar38 = piVar37;
-          if (((psVar30[1] == 0) || (iVar24 + 4 < (int)psVar30[1])) &&
-             ((psVar2[1] & 0xc000U) != 0xc000)) {
-            psVar30[1] = sVar8 + 4;
-            if (iVar36 < iVar21) {
-              iVar35 = param_1 + -3;
-            }
-            else {
-              iVar35 = param_1 + -1;
-            }
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4 + 1;
-            STField<short>(piVar37,6) = sVar5;
-            *(short *)(piVar37 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar37 + 3) = sVar8 + 4;
-          }
-          piVar37 = piVar38;
-          if (uVar28 == 0) {
-            sVar9 = psVar30[-param_2];
-            if (((sVar9 == 0) || (iVar24 + 4 < (int)sVar9)) &&
-               ((psVar2[-param_2] & 0xc000U) != 0xc000)) {
-              psVar30[-param_2] = sVar8 + 4;
-              if (iVar36 < iVar21) {
-                iVar35 = param_1 + 1;
-              }
-              else {
-                iVar35 = param_1 + 3;
-              }
-              param_9 = param_9 + -1;
-              piVar37 = (int *)*piVar38;
-              piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-              *piVar38 = *piVar39;
-              *piVar39 = (int)piVar38;
-              *(short *)(piVar38 + 1) = sVar4;
-              STField<short>(piVar38,6) = sVar5 + -1;
-              *(short *)(piVar38 + 2) = sVar6 + -1;
-              STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-              *(short *)(piVar38 + 3) = sVar8 + 4;
-            }
-          }
-          piVar38 = piVar37;
-          if (((psVar30[param_2] == 0) || (iVar24 + 4 < (int)psVar30[param_2])) &&
-             ((psVar2[param_2] & 0xc000U) != 0xc000)) {
-            psVar30[param_2] = sVar8 + 4;
-            if (iVar21 < iVar36) {
-              iVar35 = param_1 + -3;
-            }
-            else {
-              iVar35 = param_1 + -1;
-            }
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4;
-            STField<short>(piVar37,6) = sVar5 + 1;
-            *(short *)(piVar37 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar37 + 3) = sVar8 + 4;
-          }
-        }
-        uVar42 = local_10 & 0x30;
-        piVar37 = piVar38;
-        if (uVar42 == 0) {
-          psVar30 = (short *)((int)psVar2 - (param_2 * 2 + 2));
-          sVar9 = *psVar30;
-          if ((((sVar9 == 0) || (iVar24 + 4 < (int)sVar9)) &&
-              ((psVar2[-param_2] & 0xc000U) != 0xc000)) && ((psVar2[-1] & 0xc000U) != 0xc000)) {
-            *psVar30 = sVar8 + 4;
-            param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + 0x10 + (GVar33 + 4 + iVar24) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            *(short *)(piVar38 + 1) = sVar4 + -1;
-            STField<short>(piVar38,6) = sVar5 + -1;
-            *(short *)(piVar38 + 2) = sVar6;
-            STField<short>(piVar38,10) = sVar7 + 4;
-            *(short *)(piVar38 + 3) = sVar8 + 4;
-          }
-        }
-        uVar28 = local_10 & 0x21;
-        piVar38 = piVar37;
-        if (uVar28 == 0) {
-          puVar34 = (ushort *)(psVar2 + -param_2);
-          if (((puVar34[1] == 0) || (iVar24 + 4 < (short)puVar34[1])) &&
-             (((*puVar34 & 0xc000) != 0xc000 && ((psVar2[1] & 0xc000U) != 0xc000)))) {
-            puVar34[1] = sVar8 + 4;
-            if (iVar36 < iVar21 + -1) {
-              GVar31 = GVar33 - CASE_2;
-            }
-            else {
-              GVar31 = GVar33;
-              if (iVar36 != iVar21 + -1) {
-                GVar31 = GVar33 + CASE_2;
-              }
-            }
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + 0x10 + (GVar31 + iVar24) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4 + 1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + 0xc + (iVar34 + iVar23) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
             STField<short>(piVar37,6) = sVar5 + -1;
             *(short *)(piVar37 + 2) = sVar6;
-            STPiece<0,2>(param_3_after_write) = (undefined2)GVar31;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar37 + 1) = sVar4;
+            *(short *)(piVar37 + 3) = sVar8 + 3;
+          }
+        }
+        if ((psVar2[param_2] == 0) || (piVar37 = piVar36, iVar23 + 3 < (int)psVar2[param_2])) {
+          psVar2[param_2] = sVar8 + 3;
+          if (iVar20 < iVar35) {
+            iVar34 = GVar32 - CASE_3;
+          }
+          else {
+            iVar34 = GVar32 - CASE_1;
+          }
+          param_9 = param_9 + -1;
+          piVar37 = (int *)*piVar36;
+          piVar38 = (int *)(param_4 + 0xc + (iVar34 + iVar23) * 4);
+          *piVar36 = *piVar38;
+          *piVar38 = (int)piVar36;
+          STField<short>(piVar36,6) = sVar5 + 1;
+          *(short *)(piVar36 + 2) = sVar6;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+          STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+          *(short *)(piVar36 + 1) = sVar4;
+          *(short *)(piVar36 + 3) = sVar8 + 3;
+        }
+        piVar36 = piVar37;
+        if (bVar12) {
+          sVar9 = psVar2[-iVar17];
+          if ((sVar9 == 0) || (iVar23 + 3 < (int)sVar9)) {
+            psVar2[-iVar17] = sVar8 + 3;
+            param_9 = param_9 + -1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + 0xc + (param_1 + iVar23) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4;
+            STField<short>(piVar37,6) = sVar5;
+            *(short *)(piVar37 + 2) = sVar6 + -1;
+            STField<short>(piVar37,10) = (short)param_1;
+            *(short *)(piVar37 + 3) = sVar8 + 3;
+          }
+        }
+        piVar37 = piVar36;
+        if ((bVar43) && ((psVar2[iVar17] == 0 || (iVar23 + 3 < (int)psVar2[iVar17])))) {
+          psVar2[iVar17] = sVar8 + 3;
+          param_9 = param_9 + -1;
+          piVar37 = (int *)*piVar36;
+          piVar38 = (int *)(param_4 + 0xc + (param_5 + iVar23) * 4);
+          *piVar36 = *piVar38;
+          *piVar38 = (int)piVar36;
+          *(short *)(piVar36 + 1) = sVar4;
+          STField<short>(piVar36,6) = sVar5;
+          *(short *)(piVar36 + 2) = sVar6 + 1;
+          STField<short>(piVar36,10) = (short)param_5;
+          *(short *)(piVar36 + 3) = sVar8 + 3;
+        }
+        if ((bVar43) && (-1 < psVar2[iVar17])) {
+          piVar36 = piVar37;
+          if ((uVar41 == 0) &&
+             (((psVar2[iVar17 + -1] == 0 || (iVar23 + 4 < (int)psVar2[iVar17 + -1])) &&
+              ((psVar2[-1] & 0xc000U) != 0xc000)))) {
+            psVar2[iVar17 + -1] = sVar8 + 4;
+            if (iVar20 < iVar35) {
+              iVar34 = param_5 + 1;
+            }
+            else {
+              iVar34 = param_5 + 3;
+            }
+            param_9 = param_9 + -1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4 + -1;
+            STField<short>(piVar37,6) = sVar5;
+            *(short *)(piVar37 + 2) = sVar6 + 1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
             STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
+          }
+          piVar37 = piVar36;
+          if (((psVar2[iVar17 + 1] == 0) || (iVar23 + 4 < (int)psVar2[iVar17 + 1])) &&
+             ((psVar2[1] & 0xc000U) != 0xc000)) {
+            psVar2[iVar17 + 1] = sVar8 + 4;
+            if (iVar35 < iVar20) {
+              iVar34 = param_5 + -3;
+            }
+            else {
+              iVar34 = param_5 + -1;
+            }
+            param_9 = param_9 + -1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4 + 1;
+            STField<short>(piVar36,6) = sVar5;
+            *(short *)(piVar36 + 2) = sVar6 + 1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = sVar8 + 4;
+          }
+          piVar36 = piVar37;
+          if (uVar27 == 0) {
+            sVar9 = psVar2[iVar17 - param_2];
+            if (((sVar9 == 0) || (iVar23 + 4 < (int)sVar9)) &&
+               ((psVar2[-param_2] & 0xc000U) != 0xc000)) {
+              psVar2[iVar17 - param_2] = sVar8 + 4;
+              if (iVar35 < iVar20) {
+                iVar34 = param_5 + 1;
+              }
+              else {
+                iVar34 = param_5 + 3;
+              }
+              param_9 = param_9 + -1;
+              piVar36 = (int *)*piVar37;
+              piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+              *piVar37 = *piVar38;
+              *piVar38 = (int)piVar37;
+              *(short *)(piVar37 + 1) = sVar4;
+              STField<short>(piVar37,6) = sVar5 + -1;
+              *(short *)(piVar37 + 2) = sVar6 + 1;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+              *(short *)(piVar37 + 3) = sVar8 + 4;
+            }
+          }
+          piVar37 = piVar36;
+          if (((psVar2[iVar17 + param_2] == 0) || (iVar23 + 4 < (int)psVar2[iVar17 + param_2])) &&
+             ((psVar2[param_2] & 0xc000U) != 0xc000)) {
+            psVar2[iVar17 + param_2] = sVar8 + 4;
+            if (iVar20 < iVar35) {
+              iVar34 = param_5 + -3;
+            }
+            else {
+              iVar34 = param_5 + -1;
+            }
+            param_9 = param_9 + -1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4;
+            STField<short>(piVar36,6) = sVar5 + 1;
+            *(short *)(piVar36 + 2) = sVar6 + 1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = sVar8 + 4;
+          }
+        }
+        if ((bVar12) && (psVar29 = psVar2 + -iVar17, -1 < *psVar29)) {
+          piVar36 = piVar37;
+          if (((uVar41 == 0) && ((psVar29[-1] == 0 || (iVar23 + 4 < (int)psVar29[-1])))) &&
+             ((psVar2[-1] & 0xc000U) != 0xc000)) {
+            psVar29[-1] = sVar8 + 4;
+            if (iVar20 < iVar35) {
+              iVar34 = param_1 + 1;
+            }
+            else {
+              iVar34 = param_1 + 3;
+            }
+            param_9 = param_9 + -1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4 + -1;
+            STField<short>(piVar37,6) = sVar5;
+            *(short *)(piVar37 + 2) = sVar6 + -1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar37 + 3) = sVar8 + 4;
+          }
+          piVar37 = piVar36;
+          if (((psVar29[1] == 0) || (iVar23 + 4 < (int)psVar29[1])) &&
+             ((psVar2[1] & 0xc000U) != 0xc000)) {
+            psVar29[1] = sVar8 + 4;
+            if (iVar35 < iVar20) {
+              iVar34 = param_1 + -3;
+            }
+            else {
+              iVar34 = param_1 + -1;
+            }
+            param_9 = param_9 + -1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4 + 1;
+            STField<short>(piVar36,6) = sVar5;
+            *(short *)(piVar36 + 2) = sVar6 + -1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = sVar8 + 4;
+          }
+          piVar36 = piVar37;
+          if (uVar27 == 0) {
+            sVar9 = psVar29[-param_2];
+            if (((sVar9 == 0) || (iVar23 + 4 < (int)sVar9)) &&
+               ((psVar2[-param_2] & 0xc000U) != 0xc000)) {
+              psVar29[-param_2] = sVar8 + 4;
+              if (iVar35 < iVar20) {
+                iVar34 = param_1 + 1;
+              }
+              else {
+                iVar34 = param_1 + 3;
+              }
+              param_9 = param_9 + -1;
+              piVar36 = (int *)*piVar37;
+              piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+              *piVar37 = *piVar38;
+              *piVar38 = (int)piVar37;
+              *(short *)(piVar37 + 1) = sVar4;
+              STField<short>(piVar37,6) = sVar5 + -1;
+              *(short *)(piVar37 + 2) = sVar6 + -1;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+              *(short *)(piVar37 + 3) = sVar8 + 4;
+            }
+          }
+          piVar37 = piVar36;
+          if (((psVar29[param_2] == 0) || (iVar23 + 4 < (int)psVar29[param_2])) &&
+             ((psVar2[param_2] & 0xc000U) != 0xc000)) {
+            psVar29[param_2] = sVar8 + 4;
+            if (iVar20 < iVar35) {
+              iVar34 = param_1 + -3;
+            }
+            else {
+              iVar34 = param_1 + -1;
+            }
+            param_9 = param_9 + -1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4;
+            STField<short>(piVar36,6) = sVar5 + 1;
+            *(short *)(piVar36 + 2) = sVar6 + -1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = sVar8 + 4;
+          }
+        }
+        uVar41 = local_10 & 0x30;
+        piVar36 = piVar37;
+        if (uVar41 == 0) {
+          psVar29 = (short *)((int)psVar2 - (param_2 * 2 + 2));
+          sVar9 = *psVar29;
+          if ((((sVar9 == 0) || (iVar23 + 4 < (int)sVar9)) &&
+              ((psVar2[-param_2] & 0xc000U) != 0xc000)) && ((psVar2[-1] & 0xc000U) != 0xc000)) {
+            *psVar29 = sVar8 + 4;
+            param_9 = param_9 + -1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + 0x10 + (GVar32 + 4 + iVar23) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4 + -1;
+            STField<short>(piVar37,6) = sVar5 + -1;
+            *(short *)(piVar37 + 2) = sVar6;
+            STField<short>(piVar37,10) = sVar7 + 4;
+            *(short *)(piVar37 + 3) = sVar8 + 4;
+          }
+        }
+        uVar27 = local_10 & 0x21;
+        piVar37 = piVar36;
+        if (uVar27 == 0) {
+          puVar33 = reinterpret_cast<ushort *>((psVar2 + -param_2));
+          if (((puVar33[1] == 0) || (iVar23 + 4 < (short)puVar33[1])) &&
+             (((*puVar33 & 0xc000) != 0xc000 && ((psVar2[1] & 0xc000U) != 0xc000)))) {
+            puVar33[1] = sVar8 + 4;
+            if (iVar35 < iVar20 + -1) {
+              GVar30 = GVar32 - CASE_2;
+            }
+            else {
+              GVar30 = GVar32;
+              if (iVar35 != iVar20 + -1) {
+                GVar30 = GVar32 + CASE_2;
+              }
+            }
+            param_9 = param_9 + -1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + 0x10 + (GVar30 + iVar23) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4 + 1;
+            STField<short>(piVar36,6) = sVar5 + -1;
+            *(short *)(piVar36 + 2) = sVar6;
+            STPiece<0,2>(param_3_after_write) = (undefined2)GVar30;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = sVar8 + 4;
           }
         }
         local_10 = local_10 & 0x12;
-        piVar37 = piVar38;
+        piVar36 = piVar37;
         if (((local_10 == 0) &&
-            ((psVar2[param_2 + -1] == 0 || (iVar24 + 4 < (int)psVar2[param_2 + -1])))) &&
+            ((psVar2[param_2 + -1] == 0 || (iVar23 + 4 < (int)psVar2[param_2 + -1])))) &&
            (((psVar2[param_2] & 0xc000U) != 0xc000 && ((psVar2[-1] & 0xc000U) != 0xc000)))) {
           psVar2[param_2 + -1] = sVar8 + 4;
-          if (iVar21 < iVar36 + -1) {
-            GVar31 = GVar33 - CASE_2;
+          if (iVar20 < iVar35 + -1) {
+            GVar30 = GVar32 - CASE_2;
           }
           else {
-            GVar31 = GVar33;
-            if (iVar21 != iVar36 + -1) {
-              GVar31 = GVar33 + CASE_2;
+            GVar30 = GVar32;
+            if (iVar20 != iVar35 + -1) {
+              GVar30 = GVar32 + CASE_2;
             }
           }
           param_9 = param_9 + -1;
-          piVar37 = (int *)*piVar38;
-          piVar39 = (int *)(param_4 + 0x10 + (GVar31 + iVar24) * 4);
-          *piVar38 = *piVar39;
-          *piVar39 = (int)piVar38;
-          *(short *)(piVar38 + 1) = sVar4 + -1;
-          STField<short>(piVar38,6) = sVar5 + 1;
-          *(short *)(piVar38 + 2) = sVar6;
-          STPiece<0,2>(param_3_after_write) = (undefined2)GVar31;
-          STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-          *(short *)(piVar38 + 3) = sVar8 + 4;
-        }
-        iVar35 = param_2 * 2 + 2;
-        piVar38 = piVar37;
-        if ((((psVar2[param_2 + 1] == 0) || (iVar24 + 4 < (int)psVar2[param_2 + 1])) &&
-            ((psVar2[param_2] & 0xc000U) != 0xc000)) && ((psVar2[1] & 0xc000U) != 0xc000)) {
-          psVar2[param_2 + 1] = sVar8 + 4;
-          piVar38 = (int *)*piVar37;
-          param_9 = param_9 + -1;
-          piVar39 = (int *)(param_4 + 0x10 + (GVar33 + ~CASE_3 + iVar24) * 4);
-          *piVar37 = *piVar39;
-          *piVar39 = (int)piVar37;
-          *(short *)(piVar37 + 1) = sVar4 + 1;
+          piVar36 = (int *)*piVar37;
+          piVar38 = (int *)(param_4 + 0x10 + (GVar30 + iVar23) * 4);
+          *piVar37 = *piVar38;
+          *piVar38 = (int)piVar37;
+          *(short *)(piVar37 + 1) = sVar4 + -1;
           STField<short>(piVar37,6) = sVar5 + 1;
           *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3_after_write) = (undefined2)(GVar33 + ~CASE_3);
+          STPiece<0,2>(param_3_after_write) = (undefined2)GVar30;
           STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           *(short *)(piVar37 + 3) = sVar8 + 4;
         }
-        iVar27 = iVar24 + 5;
-        uVar40 = (ushort)iVar27;
-        if ((bVar44) && (puVar34 = (ushort *)(psVar2 + iVar18), (*puVar34 & 0xc000) != 0xc000)) {
-          piVar37 = piVar38;
-          if (uVar42 == 0) {
-            uVar10 = *(ushort *)((int)puVar34 - iVar35);
-            if ((((uVar10 == 0) || (iVar27 < (short)uVar10)) &&
-                (((puVar34[-param_2] & 0xc000) != 0xc000 &&
-                 ((((puVar34[-1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000)) &&
+        iVar34 = param_2 * 2 + 2;
+        piVar37 = piVar36;
+        if ((((psVar2[param_2 + 1] == 0) || (iVar23 + 4 < (int)psVar2[param_2 + 1])) &&
+            ((psVar2[param_2] & 0xc000U) != 0xc000)) && ((psVar2[1] & 0xc000U) != 0xc000)) {
+          psVar2[param_2 + 1] = sVar8 + 4;
+          piVar37 = (int *)*piVar36;
+          param_9 = param_9 + -1;
+          piVar38 = (int *)(param_4 + 0x10 + (GVar32 + ~CASE_3 + iVar23) * 4);
+          *piVar36 = *piVar38;
+          *piVar38 = (int)piVar36;
+          *(short *)(piVar36 + 1) = sVar4 + 1;
+          STField<short>(piVar36,6) = sVar5 + 1;
+          *(short *)(piVar36 + 2) = sVar6;
+          STPiece<0,2>(param_3_after_write) = (undefined2)(GVar32 + ~CASE_3);
+          STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+          *(short *)(piVar36 + 3) = sVar8 + 4;
+        }
+        iVar26 = iVar23 + 5;
+        uVar39 = (ushort)iVar26;
+        if ((bVar43) && (puVar33 = reinterpret_cast<ushort *>((psVar2 + iVar17)), (*puVar33 & 0xc000) != 0xc000)) {
+          piVar36 = piVar37;
+          if (uVar41 == 0) {
+            uVar10 = *(ushort *)((int)puVar33 - iVar34);
+            if ((((uVar10 == 0) || (iVar26 < (short)uVar10)) &&
+                (((puVar33[-param_2] & 0xc000) != 0xc000 &&
+                 ((((puVar33[-1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000)) &&
                   ((psVar2[-1] & 0xc000U) != 0xc000)))))) &&
-               ((*(ushort *)((int)psVar2 - iVar35) & 0xc000) != 0xc000)) {
-              *(ushort *)((int)puVar34 - iVar35) = uVar40;
+               ((*(ushort *)((int)psVar2 - iVar34) & 0xc000) != 0xc000)) {
+              *(ushort *)((int)puVar33 - iVar34) = uVar39;
               param_9 = param_9 + -1;
-              piVar37 = (int *)*piVar38;
-              piVar39 = (int *)(param_4 + (param_5 + 4 + iVar27) * 4);
-              *piVar38 = *piVar39;
-              *piVar39 = (int)piVar38;
-              *(short *)(piVar38 + 1) = sVar4 + -1;
-              STField<short>(piVar38,6) = sVar5 + -1;
-              *(short *)(piVar38 + 2) = sVar6 + 1;
-              STField<short>(piVar38,10) = (short)param_5 + 4;
-              *(ushort *)(piVar38 + 3) = uVar40;
+              piVar36 = (int *)*piVar37;
+              piVar38 = (int *)(param_4 + (param_5 + 4 + iVar26) * 4);
+              *piVar37 = *piVar38;
+              *piVar38 = (int)piVar37;
+              *(short *)(piVar37 + 1) = sVar4 + -1;
+              STField<short>(piVar37,6) = sVar5 + -1;
+              *(short *)(piVar37 + 2) = sVar6 + 1;
+              STField<short>(piVar37,10) = (short)param_5 + 4;
+              *(ushort *)(piVar37 + 3) = uVar39;
             }
           }
-          piVar38 = piVar37;
-          if (uVar28 == 0) {
-            puVar32 = puVar34 + -param_2;
-            if (((puVar32[1] == 0) || (iVar27 < (short)puVar32[1])) &&
-               (((((*puVar32 & 0xc000) != 0xc000 &&
-                  (((puVar34[1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000))))
+          piVar37 = piVar36;
+          if (uVar27 == 0) {
+            puVar31 = puVar33 + -param_2;
+            if (((puVar31[1] == 0) || (iVar26 < (short)puVar31[1])) &&
+               (((((*puVar31 & 0xc000) != 0xc000 &&
+                  (((puVar33[1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000))))
                  && ((psVar2[1] & 0xc000U) != 0xc000)) &&
                 (((psVar2 + -param_2)[1] & 0xc000U) != 0xc000)))) {
-              puVar32[1] = uVar40;
-              if (iVar36 < iVar21 + -1) {
-                iVar25 = param_5 + -2;
+              puVar31[1] = uVar39;
+              if (iVar35 < iVar20 + -1) {
+                iVar24 = param_5 + -2;
               }
               else {
-                iVar25 = param_5;
-                if (iVar36 != iVar21 + -1) {
-                  iVar25 = param_5 + 2;
+                iVar24 = param_5;
+                if (iVar35 != iVar20 + -1) {
+                  iVar24 = param_5 + 2;
                 }
               }
               param_9 = param_9 + -1;
-              piVar38 = (int *)*piVar37;
-              piVar39 = (int *)(param_4 + (iVar25 + iVar27) * 4);
-              *piVar37 = *piVar39;
-              *piVar39 = (int)piVar37;
-              *(short *)(piVar37 + 1) = sVar4 + 1;
+              piVar37 = (int *)*piVar36;
+              piVar38 = (int *)(param_4 + (iVar24 + iVar26) * 4);
+              *piVar36 = *piVar38;
+              *piVar38 = (int)piVar36;
+              *(short *)(piVar36 + 1) = sVar4 + 1;
+              STField<short>(piVar36,6) = sVar5 + -1;
+              *(short *)(piVar36 + 2) = sVar6 + 1;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar24;
+              STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+              *(ushort *)(piVar36 + 3) = uVar39;
+            }
+          }
+          piVar36 = piVar37;
+          if (((local_10 == 0) &&
+              (((((puVar33[param_2 + -1] == 0 || (iVar26 < (short)puVar33[param_2 + -1])) &&
+                 ((puVar33[param_2] & 0xc000) != 0xc000)) &&
+                (((puVar33[-1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)))) &&
+               ((psVar2[-1] & 0xc000U) != 0xc000)))) && ((psVar2[param_2 + -1] & 0xc000U) != 0xc000)
+             ) {
+            puVar33[param_2 + -1] = uVar39;
+            if (iVar20 < iVar35 + -1) {
+              iVar24 = param_5 + -2;
+            }
+            else {
+              iVar24 = param_5;
+              if (iVar20 != iVar35 + -1) {
+                iVar24 = param_5 + 2;
+              }
+            }
+            param_9 = param_9 + -1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + (iVar24 + iVar26) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4 + -1;
+            STField<short>(piVar37,6) = sVar5 + 1;
+            *(short *)(piVar37 + 2) = sVar6 + 1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar24;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+            *(ushort *)(piVar37 + 3) = uVar39;
+          }
+          piVar37 = piVar36;
+          if ((((puVar33[param_2 + 1] == 0) || (iVar26 < (short)puVar33[param_2 + 1])) &&
+              (((puVar33[param_2] & 0xc000) != 0xc000 &&
+               ((((puVar33[1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)) &&
+                ((psVar2[1] & 0xc000U) != 0xc000)))))) &&
+             ((psVar2[param_2 + 1] & 0xc000U) != 0xc000)) {
+            puVar33[param_2 + 1] = uVar39;
+            param_9 = param_9 + -1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + (param_5 + -4 + iVar26) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4 + 1;
+            STField<short>(piVar36,6) = sVar5 + 1;
+            *(short *)(piVar36 + 2) = sVar6 + 1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)(param_5 + -4);
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(ushort *)(piVar36 + 3) = uVar39;
+          }
+        }
+        if ((bVar12) && (puVar33 = reinterpret_cast<ushort *>((psVar2 + -iVar17)), (*puVar33 & 0xc000) != 0xc000)) {
+          piVar36 = piVar37;
+          if (uVar41 == 0) {
+            uVar10 = *(ushort *)((int)puVar33 - iVar34);
+            if ((((uVar10 == 0) || (iVar26 < (short)uVar10)) &&
+                (((puVar33[-param_2] & 0xc000) != 0xc000 &&
+                 ((((puVar33[-1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000)) &&
+                  ((psVar2[-1] & 0xc000U) != 0xc000)))))) &&
+               ((*(ushort *)((int)psVar2 - iVar34) & 0xc000) != 0xc000)) {
+              *(ushort *)((int)puVar33 - iVar34) = uVar39;
+              param_9 = param_9 + -1;
+              piVar36 = (int *)*piVar37;
+              piVar38 = (int *)(param_4 + (param_1 + 4 + iVar26) * 4);
+              *piVar37 = *piVar38;
+              *piVar38 = (int)piVar37;
+              *(short *)(piVar37 + 1) = sVar4 + -1;
               STField<short>(piVar37,6) = sVar5 + -1;
-              *(short *)(piVar37 + 2) = sVar6 + 1;
-              STPiece<0,2>(param_3_after_write) = (undefined2)iVar25;
-              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-              *(ushort *)(piVar37 + 3) = uVar40;
+              *(short *)(piVar37 + 2) = sVar6 + -1;
+              STField<short>(piVar37,10) = (short)param_1 + 4;
+              *(ushort *)(piVar37 + 3) = uVar39;
+            }
+          }
+          piVar38 = piVar36;
+          if (uVar27 == 0) {
+            puVar31 = puVar33 + -param_2;
+            if ((((puVar31[1] == 0) || (iVar26 < (short)puVar31[1])) &&
+                (((*puVar31 & 0xc000) != 0xc000 &&
+                 (((puVar33[1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000))))))
+               && (((psVar2[1] & 0xc000U) != 0xc000 &&
+                   (((psVar2 + -param_2)[1] & 0xc000U) != 0xc000)))) {
+              puVar31[1] = uVar39;
+              if (iVar35 < iVar20 + -1) {
+                iVar34 = param_1 + -2;
+              }
+              else {
+                iVar34 = param_1;
+                if (iVar35 != iVar20 + -1) {
+                  iVar34 = param_1 + 2;
+                }
+              }
+              param_9 = param_9 + -1;
+              piVar38 = (int *)*piVar36;
+              piVar37 = (int *)(param_4 + (iVar34 + iVar26) * 4);
+              *piVar36 = *piVar37;
+              *piVar37 = (int)piVar36;
+              *(short *)(piVar36 + 1) = sVar4 + 1;
+              STField<short>(piVar36,6) = sVar5 + -1;
+              *(short *)(piVar36 + 2) = sVar6 + -1;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+              STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+              *(ushort *)(piVar36 + 3) = uVar39;
             }
           }
           piVar37 = piVar38;
-          if (((local_10 == 0) &&
-              (((((puVar34[param_2 + -1] == 0 || (iVar27 < (short)puVar34[param_2 + -1])) &&
-                 ((puVar34[param_2] & 0xc000) != 0xc000)) &&
-                (((puVar34[-1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)))) &&
-               ((psVar2[-1] & 0xc000U) != 0xc000)))) && ((psVar2[param_2 + -1] & 0xc000U) != 0xc000)
+          if ((((local_10 == 0) &&
+               ((((puVar33[param_2 + -1] == 0 || (iVar26 < (short)puVar33[param_2 + -1])) &&
+                 ((puVar33[param_2] & 0xc000) != 0xc000)) &&
+                (((puVar33[-1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000))))))
+              && ((psVar2[-1] & 0xc000U) != 0xc000)) && ((psVar2[param_2 + -1] & 0xc000U) != 0xc000)
              ) {
-            puVar34[param_2 + -1] = uVar40;
-            if (iVar21 < iVar36 + -1) {
-              iVar25 = param_5 + -2;
+            puVar33[param_2 + -1] = uVar39;
+            if (iVar20 < iVar35 + -1) {
+              iVar34 = param_1 + -2;
             }
             else {
-              iVar25 = param_5;
-              if (iVar21 != iVar36 + -1) {
-                iVar25 = param_5 + 2;
+              iVar34 = param_1;
+              if (iVar20 != iVar35 + -1) {
+                iVar34 = param_1 + 2;
               }
             }
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + (iVar25 + iVar27) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
+            piVar36 = (int *)(param_4 + (iVar34 + iVar26) * 4);
+            *piVar38 = *piVar36;
+            *piVar36 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5 + 1;
-            *(short *)(piVar38 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar25;
+            *(short *)(piVar38 + 2) = sVar6 + -1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
             STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-            *(ushort *)(piVar38 + 3) = uVar40;
+            *(ushort *)(piVar38 + 3) = uVar39;
           }
-          piVar38 = piVar37;
-          if ((((puVar34[param_2 + 1] == 0) || (iVar27 < (short)puVar34[param_2 + 1])) &&
-              (((puVar34[param_2] & 0xc000) != 0xc000 &&
-               ((((puVar34[1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)) &&
+          if ((((puVar33[param_2 + 1] == 0) || (iVar26 < (short)puVar33[param_2 + 1])) &&
+              (((puVar33[param_2] & 0xc000) != 0xc000 &&
+               ((((puVar33[1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)) &&
                 ((psVar2[1] & 0xc000U) != 0xc000)))))) &&
              ((psVar2[param_2 + 1] & 0xc000U) != 0xc000)) {
-            puVar34[param_2 + 1] = uVar40;
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + (param_5 + -4 + iVar27) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4 + 1;
-            STField<short>(piVar37,6) = sVar5 + 1;
-            *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)(param_5 + -4);
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-            *(ushort *)(piVar37 + 3) = uVar40;
-          }
-        }
-        if ((bVar12) && (puVar34 = (ushort *)(psVar2 + -iVar18), (*puVar34 & 0xc000) != 0xc000)) {
-          piVar37 = piVar38;
-          if (uVar42 == 0) {
-            uVar10 = *(ushort *)((int)puVar34 - iVar35);
-            if ((((uVar10 == 0) || (iVar27 < (short)uVar10)) &&
-                (((puVar34[-param_2] & 0xc000) != 0xc000 &&
-                 ((((puVar34[-1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000)) &&
-                  ((psVar2[-1] & 0xc000U) != 0xc000)))))) &&
-               ((*(ushort *)((int)psVar2 - iVar35) & 0xc000) != 0xc000)) {
-              *(ushort *)((int)puVar34 - iVar35) = uVar40;
-              param_9 = param_9 + -1;
-              piVar37 = (int *)*piVar38;
-              piVar39 = (int *)(param_4 + (param_1 + 4 + iVar27) * 4);
-              *piVar38 = *piVar39;
-              *piVar39 = (int)piVar38;
-              *(short *)(piVar38 + 1) = sVar4 + -1;
-              STField<short>(piVar38,6) = sVar5 + -1;
-              *(short *)(piVar38 + 2) = sVar6 + -1;
-              STField<short>(piVar38,10) = (short)param_1 + 4;
-              *(ushort *)(piVar38 + 3) = uVar40;
-            }
-          }
-          piVar39 = piVar37;
-          if (uVar28 == 0) {
-            puVar32 = puVar34 + -param_2;
-            if ((((puVar32[1] == 0) || (iVar27 < (short)puVar32[1])) &&
-                (((*puVar32 & 0xc000) != 0xc000 &&
-                 (((puVar34[1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000))))))
-               && (((psVar2[1] & 0xc000U) != 0xc000 &&
-                   (((psVar2 + -param_2)[1] & 0xc000U) != 0xc000)))) {
-              puVar32[1] = uVar40;
-              if (iVar36 < iVar21 + -1) {
-                iVar35 = param_1 + -2;
-              }
-              else {
-                iVar35 = param_1;
-                if (iVar36 != iVar21 + -1) {
-                  iVar35 = param_1 + 2;
-                }
-              }
-              param_9 = param_9 + -1;
-              piVar39 = (int *)*piVar37;
-              piVar38 = (int *)(param_4 + (iVar35 + iVar27) * 4);
-              *piVar37 = *piVar38;
-              *piVar38 = (int)piVar37;
-              *(short *)(piVar37 + 1) = sVar4 + 1;
-              STField<short>(piVar37,6) = sVar5 + -1;
-              *(short *)(piVar37 + 2) = sVar6 + -1;
-              STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-              *(ushort *)(piVar37 + 3) = uVar40;
-            }
-          }
-          piVar38 = piVar39;
-          if ((((local_10 == 0) &&
-               ((((puVar34[param_2 + -1] == 0 || (iVar27 < (short)puVar34[param_2 + -1])) &&
-                 ((puVar34[param_2] & 0xc000) != 0xc000)) &&
-                (((puVar34[-1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000))))))
-              && ((psVar2[-1] & 0xc000U) != 0xc000)) && ((psVar2[param_2 + -1] & 0xc000U) != 0xc000)
-             ) {
-            puVar34[param_2 + -1] = uVar40;
-            if (iVar21 < iVar36 + -1) {
-              iVar35 = param_1 + -2;
-            }
-            else {
-              iVar35 = param_1;
-              if (iVar21 != iVar36 + -1) {
-                iVar35 = param_1 + 2;
-              }
-            }
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar39;
-            piVar37 = (int *)(param_4 + (iVar35 + iVar27) * 4);
-            *piVar39 = *piVar37;
-            *piVar37 = (int)piVar39;
-            *(short *)(piVar39 + 1) = sVar4 + -1;
-            STField<short>(piVar39,6) = sVar5 + 1;
-            *(short *)(piVar39 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar39,10) = (undefined2)param_3_after_write;
-            *(ushort *)(piVar39 + 3) = uVar40;
-          }
-          if ((((puVar34[param_2 + 1] == 0) || (iVar27 < (short)puVar34[param_2 + 1])) &&
-              (((puVar34[param_2] & 0xc000) != 0xc000 &&
-               ((((puVar34[1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)) &&
-                ((psVar2[1] & 0xc000U) != 0xc000)))))) &&
-             ((psVar2[param_2 + 1] & 0xc000U) != 0xc000)) {
-            puVar34[param_2 + 1] = uVar40;
+            puVar33[param_2 + 1] = uVar39;
             param_1 = param_1 + -4;
-            piVar37 = piVar38;
+            piVar36 = piVar37;
             goto LAB_006ce57c;
           }
         }
         break;
       case CASE_2:
-        uVar42 = local_10 & 0x10;
-        piVar37 = piVar38;
-        if ((uVar42 == 0) && ((psVar2[-1] == 0 || (iVar24 + 3 < (int)psVar2[-1])))) {
-          psVar2[-1] = (short)(iVar24 + 3);
-          if (iVar36 == 0) {
-            if (iVar21 == 0) {
-              iVar35 = GVar33 + CASE_3;
+        uVar41 = local_10 & 0x10;
+        piVar36 = piVar37;
+        if ((uVar41 == 0) && ((psVar2[-1] == 0 || (iVar23 + 3 < (int)psVar2[-1])))) {
+          psVar2[-1] = (short)(iVar23 + 3);
+          if (iVar35 == 0) {
+            if (iVar20 == 0) {
+              iVar34 = GVar32 + CASE_3;
             }
             else {
-              iVar35 = GVar33 + CASE_1;
+              iVar34 = GVar32 + CASE_1;
             }
           }
-          else if (iVar21 < iVar36) {
-            iVar35 = GVar33 - CASE_3;
+          else if (iVar20 < iVar35) {
+            iVar34 = GVar32 - CASE_3;
           }
           else {
-            iVar35 = GVar33 - CASE_1;
+            iVar34 = GVar32 - CASE_1;
           }
           param_9 = param_9 + -1;
-          piVar37 = (int *)*piVar38;
-          piVar39 = (int *)(param_4 + (iVar35 + iVar24 + 3) * 4);
-          *piVar38 = *piVar39;
-          *piVar39 = (int)piVar38;
-          *(short *)(piVar38 + 1) = sVar4 + -1;
-          STField<short>(piVar38,6) = sVar5;
-          *(short *)(piVar38 + 2) = sVar6;
-          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-          STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-          *(short *)(piVar38 + 3) = sVar8 + 3;
-        }
-        uVar28 = local_10 & 1;
-        piVar38 = piVar37;
-        if ((uVar28 == 0) && ((psVar2[1] == 0 || (iVar24 + 3 < (int)psVar2[1])))) {
-          psVar2[1] = (short)(iVar24 + 3);
-          if (iVar36 < iVar21) {
-            iVar35 = GVar33 + CASE_1;
-          }
-          else {
-            iVar35 = GVar33 + CASE_3;
-          }
-          param_9 = param_9 + -1;
-          piVar38 = (int *)*piVar37;
-          piVar39 = (int *)(param_4 + (iVar35 + iVar24 + 3) * 4);
-          *piVar37 = *piVar39;
-          *piVar39 = (int)piVar37;
-          *(short *)(piVar37 + 1) = sVar4 + 1;
+          piVar36 = (int *)*piVar37;
+          piVar38 = (int *)(param_4 + (iVar34 + iVar23 + 3) * 4);
+          *piVar37 = *piVar38;
+          *piVar38 = (int)piVar37;
+          *(short *)(piVar37 + 1) = sVar4 + -1;
           STField<short>(piVar37,6) = sVar5;
           *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
           STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           *(short *)(piVar37 + 3) = sVar8 + 3;
         }
-        uVar29 = local_10 & 0x20;
-        piVar37 = piVar38;
-        if (uVar29 == 0) {
-          sVar7 = psVar2[-param_2];
-          if ((sVar7 == 0) || (iVar24 + 3 < (int)sVar7)) {
-            psVar2[-param_2] = sVar8 + 3;
-            if (iVar21 == 0) {
-              if (iVar36 == 0) {
-                iVar35 = GVar33 + CASE_3;
-              }
-              else {
-                iVar35 = GVar33 + CASE_1;
-              }
-            }
-            else if (iVar36 < iVar21) {
-              iVar35 = GVar33 - CASE_3;
-            }
-            else {
-              iVar35 = GVar33 - CASE_1;
-            }
-            param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + 0xc + (iVar35 + iVar24) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            *(short *)(piVar38 + 1) = sVar4;
-            STField<short>(piVar38,6) = sVar5 + -1;
-            *(short *)(piVar38 + 2) = sVar6;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar38 + 3) = sVar8 + 3;
-          }
-        }
-        uVar26 = local_10 & 2;
-        piVar38 = piVar37;
-        if ((uVar26 == 0) && ((psVar2[param_2] == 0 || (iVar24 + 3 < (int)psVar2[param_2])))) {
-          psVar2[param_2] = sVar8 + 3;
-          if (iVar21 < iVar36) {
-            iVar35 = GVar33 + CASE_1;
+        uVar27 = local_10 & 1;
+        piVar37 = piVar36;
+        if ((uVar27 == 0) && ((psVar2[1] == 0 || (iVar23 + 3 < (int)psVar2[1])))) {
+          psVar2[1] = (short)(iVar23 + 3);
+          if (iVar35 < iVar20) {
+            iVar34 = GVar32 + CASE_1;
           }
           else {
-            iVar35 = GVar33 + CASE_3;
+            iVar34 = GVar32 + CASE_3;
           }
           param_9 = param_9 + -1;
-          piVar38 = (int *)*piVar37;
-          piVar39 = (int *)(param_4 + 0xc + (iVar35 + iVar24) * 4);
-          *piVar37 = *piVar39;
-          *piVar39 = (int)piVar37;
-          *(short *)(piVar37 + 1) = sVar4;
-          STField<short>(piVar37,6) = sVar5 + 1;
-          *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-          STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-          *(short *)(piVar37 + 3) = sVar8 + 3;
+          piVar37 = (int *)*piVar36;
+          piVar38 = (int *)(param_4 + (iVar34 + iVar23 + 3) * 4);
+          *piVar36 = *piVar38;
+          *piVar38 = (int)piVar36;
+          *(short *)(piVar36 + 1) = sVar4 + 1;
+          STField<short>(piVar36,6) = sVar5;
+          *(short *)(piVar36 + 2) = sVar6;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+          STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+          *(short *)(piVar36 + 3) = sVar8 + 3;
         }
-        piVar37 = piVar38;
-        if (bVar12) {
-          sVar7 = psVar2[-iVar18];
-          if ((sVar7 == 0) || (iVar24 + 3 < (int)sVar7)) {
-            psVar2[-iVar18] = sVar8 + 3;
-            param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + 0xc + (param_1 + iVar24) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            *(short *)(piVar38 + 1) = sVar4;
-            STField<short>(piVar38,6) = sVar5;
-            *(short *)(piVar38 + 2) = sVar6 + -1;
-            STField<short>(piVar38,10) = (short)param_1;
-            *(short *)(piVar38 + 3) = sVar8 + 3;
-          }
-        }
-        piVar38 = piVar37;
-        if ((bVar44) && ((psVar2[iVar18] == 0 || (iVar24 + 3 < (int)psVar2[iVar18])))) {
-          psVar2[iVar18] = sVar8 + 3;
-          param_9 = param_9 + -1;
-          piVar38 = (int *)*piVar37;
-          piVar39 = (int *)(param_4 + 0xc + (param_5 + iVar24) * 4);
-          *piVar37 = *piVar39;
-          *piVar39 = (int)piVar37;
-          *(short *)(piVar37 + 1) = sVar4;
-          STField<short>(piVar37,6) = sVar5;
-          *(short *)(piVar37 + 2) = sVar6 + 1;
-          STField<short>(piVar37,10) = (short)param_5;
-          *(short *)(piVar37 + 3) = sVar8 + 3;
-        }
-        if ((bVar44) && (-1 < psVar2[iVar18])) {
-          piVar37 = piVar38;
-          if ((uVar42 == 0) &&
-             (((psVar2[iVar18 + -1] == 0 || (iVar24 + 4 < (int)psVar2[iVar18 + -1])) &&
-              ((psVar2[-1] & 0xc000U) != 0xc000)))) {
-            psVar2[iVar18 + -1] = sVar8 + 4;
-            if (iVar36 == 0) {
-              if (iVar21 == 0) {
-                iVar35 = param_5 + 3;
-              }
-              else {
-                iVar35 = param_5 + 1;
-              }
-            }
-            else if (iVar21 < iVar36) {
-              iVar35 = param_5 + -3;
-            }
-            else {
-              iVar35 = param_5 + -1;
-            }
-            param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            *(short *)(piVar38 + 1) = sVar4 + -1;
-            STField<short>(piVar38,6) = sVar5;
-            *(short *)(piVar38 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar38 + 3) = sVar8 + 4;
-          }
-          piVar38 = piVar37;
-          if (((uVar28 == 0) &&
-              ((psVar2[iVar18 + 1] == 0 || (iVar24 + 4 < (int)psVar2[iVar18 + 1])))) &&
-             ((psVar2[1] & 0xc000U) != 0xc000)) {
-            psVar2[iVar18 + 1] = sVar8 + 4;
-            if (iVar36 < iVar21) {
-              iVar35 = param_5 + 1;
-            }
-            else {
-              iVar35 = param_5 + 3;
-            }
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4 + 1;
-            STField<short>(piVar37,6) = sVar5;
-            *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar37 + 3) = sVar8 + 4;
-          }
-          piVar37 = piVar38;
-          if (uVar29 == 0) {
-            sVar7 = psVar2[iVar18 - param_2];
-            if (((sVar7 == 0) || (iVar24 + 4 < (int)sVar7)) &&
-               ((psVar2[-param_2] & 0xc000U) != 0xc000)) {
-              psVar2[iVar18 - param_2] = sVar8 + 4;
-              if (iVar21 == 0) {
-                if (iVar36 == 0) {
-                  iVar35 = param_5 + 3;
-                }
-                else {
-                  iVar35 = param_5 + 1;
-                }
-              }
-              else if (iVar36 < iVar21) {
-                iVar35 = param_5 + -3;
-              }
-              else {
-                iVar35 = param_5 + -1;
-              }
-              param_9 = param_9 + -1;
-              piVar37 = (int *)*piVar38;
-              piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-              *piVar38 = *piVar39;
-              *piVar39 = (int)piVar38;
-              *(short *)(piVar38 + 1) = sVar4;
-              STField<short>(piVar38,6) = sVar5 + -1;
-              *(short *)(piVar38 + 2) = sVar6 + 1;
-              STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-              *(short *)(piVar38 + 3) = sVar8 + 4;
-            }
-          }
-          piVar38 = piVar37;
-          if ((uVar26 == 0) &&
-             (((psVar2[iVar18 + param_2] == 0 || (iVar24 + 4 < (int)psVar2[iVar18 + param_2])) &&
-              ((psVar2[param_2] & 0xc000U) != 0xc000)))) {
-            psVar2[iVar18 + param_2] = sVar8 + 4;
-            if (iVar21 < iVar36) {
-              iVar35 = param_5 + 1;
-            }
-            else {
-              iVar35 = param_5 + 3;
-            }
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4;
-            STField<short>(piVar37,6) = sVar5 + 1;
-            *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar37 + 3) = sVar8 + 4;
-          }
-        }
-        if ((bVar12) && (psVar30 = psVar2 + -iVar18, -1 < *psVar30)) {
-          piVar37 = piVar38;
-          if (((uVar42 == 0) && ((psVar30[-1] == 0 || (iVar24 + 4 < (int)psVar30[-1])))) &&
-             ((psVar2[-1] & 0xc000U) != 0xc000)) {
-            psVar30[-1] = sVar8 + 4;
-            if (iVar36 == 0) {
-              if (iVar21 == 0) {
-                iVar35 = param_1 + 3;
-              }
-              else {
-                iVar35 = param_1 + 1;
-              }
-            }
-            else if (iVar21 < iVar36) {
-              iVar35 = param_1 + -3;
-            }
-            else {
-              iVar35 = param_1 + -1;
-            }
-            param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            *(short *)(piVar38 + 1) = sVar4 + -1;
-            STField<short>(piVar38,6) = sVar5;
-            *(short *)(piVar38 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar38 + 3) = sVar8 + 4;
-          }
-          piVar38 = piVar37;
-          if ((uVar28 == 0) &&
-             (((psVar30[1] == 0 || (iVar24 + 4 < (int)psVar30[1])) &&
-              ((psVar2[1] & 0xc000U) != 0xc000)))) {
-            psVar30[1] = sVar8 + 4;
-            if (iVar36 < iVar21) {
-              iVar35 = param_1 + 1;
-            }
-            else {
-              iVar35 = param_1 + 3;
-            }
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4 + 1;
-            STField<short>(piVar37,6) = sVar5;
-            *(short *)(piVar37 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar37 + 3) = sVar8 + 4;
-          }
-          piVar37 = piVar38;
-          if (uVar29 == 0) {
-            sVar7 = psVar30[-param_2];
-            if (((sVar7 == 0) || (iVar24 + 4 < (int)sVar7)) &&
-               ((psVar2[-param_2] & 0xc000U) != 0xc000)) {
-              psVar30[-param_2] = sVar8 + 4;
-              if (iVar21 == 0) {
-                if (iVar36 == 0) {
-                  iVar35 = param_1 + 3;
-                }
-                else {
-                  iVar35 = param_1 + 1;
-                }
-              }
-              else if (iVar36 < iVar21) {
-                iVar35 = param_1 + -3;
-              }
-              else {
-                iVar35 = param_1 + -1;
-              }
-              param_9 = param_9 + -1;
-              piVar37 = (int *)*piVar38;
-              piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-              *piVar38 = *piVar39;
-              *piVar39 = (int)piVar38;
-              *(short *)(piVar38 + 1) = sVar4;
-              STField<short>(piVar38,6) = sVar5 + -1;
-              *(short *)(piVar38 + 2) = sVar6 + -1;
-              STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-              *(short *)(piVar38 + 3) = sVar8 + 4;
-            }
-          }
-          piVar38 = piVar37;
-          if (((uVar26 == 0) && ((psVar30[param_2] == 0 || (iVar24 + 4 < (int)psVar30[param_2]))))
-             && ((psVar2[param_2] & 0xc000U) != 0xc000)) {
-            psVar30[param_2] = sVar8 + 4;
-            if (iVar21 < iVar36) {
-              iVar35 = param_1 + 1;
-            }
-            else {
-              iVar35 = param_1 + 3;
-            }
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4;
-            STField<short>(piVar37,6) = sVar5 + 1;
-            *(short *)(piVar37 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar37 + 3) = sVar8 + 4;
-          }
-        }
-        uVar42 = local_10 & 0x30;
-        piVar37 = piVar38;
-        if (uVar42 == 0) {
-          psVar30 = (short *)((int)psVar2 - (param_2 * 2 + 2));
-          sVar7 = *psVar30;
-          if ((((sVar7 == 0) || (iVar24 + 4 < (int)sVar7)) &&
-              ((psVar2[-param_2] & 0xc000U) != 0xc000)) && ((psVar2[-1] & 0xc000U) != 0xc000)) {
-            *psVar30 = sVar8 + 4;
-            GVar31 = GVar33;
-            if (iVar21 == 0) {
-              if (iVar36 == 0) {
-                GVar31 = GVar33 + 4;
-              }
-              else if (iVar36 != 1) {
-                GVar31 = GVar33 - CASE_2;
-              }
-            }
-            else if (iVar36 == 0) {
-              if (iVar21 != 1) {
-                GVar31 = GVar33 - CASE_2;
-              }
-            }
-            else {
-              GVar31 = GVar33 + ~CASE_3;
-            }
-            param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + 0x10 + (GVar31 + iVar24) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            *(short *)(piVar38 + 1) = sVar4 + -1;
-            STField<short>(piVar38,6) = sVar5 + -1;
-            *(short *)(piVar38 + 2) = sVar6;
-            STPiece<0,2>(param_3_after_write) = (undefined2)GVar31;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar38 + 3) = sVar8 + 4;
-          }
-        }
-        uVar28 = local_10 & 0x21;
-        piVar38 = piVar37;
+        uVar28 = local_10 & 0x20;
+        piVar36 = piVar37;
         if (uVar28 == 0) {
-          puVar34 = (ushort *)(psVar2 + -param_2);
-          if (((puVar34[1] == 0) || (iVar24 + 4 < (short)puVar34[1])) &&
-             (((*puVar34 & 0xc000) != 0xc000 && ((psVar2[1] & 0xc000U) != 0xc000)))) {
-            puVar34[1] = sVar8 + 4;
-            if (iVar21 == 0) {
-              GVar31 = GVar33 + 4;
-            }
-            else if (iVar36 + 1 < iVar21) {
-              GVar31 = GVar33 - CASE_2;
-            }
-            else {
-              GVar31 = GVar33;
-              if (iVar21 != iVar36 + 1) {
-                GVar31 = GVar33 + CASE_2;
+          sVar7 = psVar2[-param_2];
+          if ((sVar7 == 0) || (iVar23 + 3 < (int)sVar7)) {
+            psVar2[-param_2] = sVar8 + 3;
+            if (iVar20 == 0) {
+              if (iVar35 == 0) {
+                iVar34 = GVar32 + CASE_3;
+              }
+              else {
+                iVar34 = GVar32 + CASE_1;
               }
             }
+            else if (iVar35 < iVar20) {
+              iVar34 = GVar32 - CASE_3;
+            }
+            else {
+              iVar34 = GVar32 - CASE_1;
+            }
             param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + 0x10 + (GVar31 + iVar24) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4 + 1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + 0xc + (iVar34 + iVar23) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4;
             STField<short>(piVar37,6) = sVar5 + -1;
             *(short *)(piVar37 + 2) = sVar6;
-            STPiece<0,2>(param_3_after_write) = (undefined2)GVar31;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar37 + 3) = sVar8 + 3;
+          }
+        }
+        uVar25 = local_10 & 2;
+        piVar37 = piVar36;
+        if ((uVar25 == 0) && ((psVar2[param_2] == 0 || (iVar23 + 3 < (int)psVar2[param_2])))) {
+          psVar2[param_2] = sVar8 + 3;
+          if (iVar20 < iVar35) {
+            iVar34 = GVar32 + CASE_1;
+          }
+          else {
+            iVar34 = GVar32 + CASE_3;
+          }
+          param_9 = param_9 + -1;
+          piVar37 = (int *)*piVar36;
+          piVar38 = (int *)(param_4 + 0xc + (iVar34 + iVar23) * 4);
+          *piVar36 = *piVar38;
+          *piVar38 = (int)piVar36;
+          *(short *)(piVar36 + 1) = sVar4;
+          STField<short>(piVar36,6) = sVar5 + 1;
+          *(short *)(piVar36 + 2) = sVar6;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+          STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+          *(short *)(piVar36 + 3) = sVar8 + 3;
+        }
+        piVar36 = piVar37;
+        if (bVar12) {
+          sVar7 = psVar2[-iVar17];
+          if ((sVar7 == 0) || (iVar23 + 3 < (int)sVar7)) {
+            psVar2[-iVar17] = sVar8 + 3;
+            param_9 = param_9 + -1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + 0xc + (param_1 + iVar23) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4;
+            STField<short>(piVar37,6) = sVar5;
+            *(short *)(piVar37 + 2) = sVar6 + -1;
+            STField<short>(piVar37,10) = (short)param_1;
+            *(short *)(piVar37 + 3) = sVar8 + 3;
+          }
+        }
+        piVar37 = piVar36;
+        if ((bVar43) && ((psVar2[iVar17] == 0 || (iVar23 + 3 < (int)psVar2[iVar17])))) {
+          psVar2[iVar17] = sVar8 + 3;
+          param_9 = param_9 + -1;
+          piVar37 = (int *)*piVar36;
+          piVar38 = (int *)(param_4 + 0xc + (param_5 + iVar23) * 4);
+          *piVar36 = *piVar38;
+          *piVar38 = (int)piVar36;
+          *(short *)(piVar36 + 1) = sVar4;
+          STField<short>(piVar36,6) = sVar5;
+          *(short *)(piVar36 + 2) = sVar6 + 1;
+          STField<short>(piVar36,10) = (short)param_5;
+          *(short *)(piVar36 + 3) = sVar8 + 3;
+        }
+        if ((bVar43) && (-1 < psVar2[iVar17])) {
+          piVar36 = piVar37;
+          if ((uVar41 == 0) &&
+             (((psVar2[iVar17 + -1] == 0 || (iVar23 + 4 < (int)psVar2[iVar17 + -1])) &&
+              ((psVar2[-1] & 0xc000U) != 0xc000)))) {
+            psVar2[iVar17 + -1] = sVar8 + 4;
+            if (iVar35 == 0) {
+              if (iVar20 == 0) {
+                iVar34 = param_5 + 3;
+              }
+              else {
+                iVar34 = param_5 + 1;
+              }
+            }
+            else if (iVar20 < iVar35) {
+              iVar34 = param_5 + -3;
+            }
+            else {
+              iVar34 = param_5 + -1;
+            }
+            param_9 = param_9 + -1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4 + -1;
+            STField<short>(piVar37,6) = sVar5;
+            *(short *)(piVar37 + 2) = sVar6 + 1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar37 + 3) = sVar8 + 4;
+          }
+          piVar37 = piVar36;
+          if (((uVar27 == 0) &&
+              ((psVar2[iVar17 + 1] == 0 || (iVar23 + 4 < (int)psVar2[iVar17 + 1])))) &&
+             ((psVar2[1] & 0xc000U) != 0xc000)) {
+            psVar2[iVar17 + 1] = sVar8 + 4;
+            if (iVar35 < iVar20) {
+              iVar34 = param_5 + 1;
+            }
+            else {
+              iVar34 = param_5 + 3;
+            }
+            param_9 = param_9 + -1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4 + 1;
+            STField<short>(piVar36,6) = sVar5;
+            *(short *)(piVar36 + 2) = sVar6 + 1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = sVar8 + 4;
+          }
+          piVar36 = piVar37;
+          if (uVar28 == 0) {
+            sVar7 = psVar2[iVar17 - param_2];
+            if (((sVar7 == 0) || (iVar23 + 4 < (int)sVar7)) &&
+               ((psVar2[-param_2] & 0xc000U) != 0xc000)) {
+              psVar2[iVar17 - param_2] = sVar8 + 4;
+              if (iVar20 == 0) {
+                if (iVar35 == 0) {
+                  iVar34 = param_5 + 3;
+                }
+                else {
+                  iVar34 = param_5 + 1;
+                }
+              }
+              else if (iVar35 < iVar20) {
+                iVar34 = param_5 + -3;
+              }
+              else {
+                iVar34 = param_5 + -1;
+              }
+              param_9 = param_9 + -1;
+              piVar36 = (int *)*piVar37;
+              piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+              *piVar37 = *piVar38;
+              *piVar38 = (int)piVar37;
+              *(short *)(piVar37 + 1) = sVar4;
+              STField<short>(piVar37,6) = sVar5 + -1;
+              *(short *)(piVar37 + 2) = sVar6 + 1;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+              *(short *)(piVar37 + 3) = sVar8 + 4;
+            }
+          }
+          piVar37 = piVar36;
+          if ((uVar25 == 0) &&
+             (((psVar2[iVar17 + param_2] == 0 || (iVar23 + 4 < (int)psVar2[iVar17 + param_2])) &&
+              ((psVar2[param_2] & 0xc000U) != 0xc000)))) {
+            psVar2[iVar17 + param_2] = sVar8 + 4;
+            if (iVar20 < iVar35) {
+              iVar34 = param_5 + 1;
+            }
+            else {
+              iVar34 = param_5 + 3;
+            }
+            param_9 = param_9 + -1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4;
+            STField<short>(piVar36,6) = sVar5 + 1;
+            *(short *)(piVar36 + 2) = sVar6 + 1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = sVar8 + 4;
+          }
+        }
+        if ((bVar12) && (psVar29 = psVar2 + -iVar17, -1 < *psVar29)) {
+          piVar36 = piVar37;
+          if (((uVar41 == 0) && ((psVar29[-1] == 0 || (iVar23 + 4 < (int)psVar29[-1])))) &&
+             ((psVar2[-1] & 0xc000U) != 0xc000)) {
+            psVar29[-1] = sVar8 + 4;
+            if (iVar35 == 0) {
+              if (iVar20 == 0) {
+                iVar34 = param_1 + 3;
+              }
+              else {
+                iVar34 = param_1 + 1;
+              }
+            }
+            else if (iVar20 < iVar35) {
+              iVar34 = param_1 + -3;
+            }
+            else {
+              iVar34 = param_1 + -1;
+            }
+            param_9 = param_9 + -1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4 + -1;
+            STField<short>(piVar37,6) = sVar5;
+            *(short *)(piVar37 + 2) = sVar6 + -1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar37 + 3) = sVar8 + 4;
+          }
+          piVar37 = piVar36;
+          if ((uVar27 == 0) &&
+             (((psVar29[1] == 0 || (iVar23 + 4 < (int)psVar29[1])) &&
+              ((psVar2[1] & 0xc000U) != 0xc000)))) {
+            psVar29[1] = sVar8 + 4;
+            if (iVar35 < iVar20) {
+              iVar34 = param_1 + 1;
+            }
+            else {
+              iVar34 = param_1 + 3;
+            }
+            param_9 = param_9 + -1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4 + 1;
+            STField<short>(piVar36,6) = sVar5;
+            *(short *)(piVar36 + 2) = sVar6 + -1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = sVar8 + 4;
+          }
+          piVar36 = piVar37;
+          if (uVar28 == 0) {
+            sVar7 = psVar29[-param_2];
+            if (((sVar7 == 0) || (iVar23 + 4 < (int)sVar7)) &&
+               ((psVar2[-param_2] & 0xc000U) != 0xc000)) {
+              psVar29[-param_2] = sVar8 + 4;
+              if (iVar20 == 0) {
+                if (iVar35 == 0) {
+                  iVar34 = param_1 + 3;
+                }
+                else {
+                  iVar34 = param_1 + 1;
+                }
+              }
+              else if (iVar35 < iVar20) {
+                iVar34 = param_1 + -3;
+              }
+              else {
+                iVar34 = param_1 + -1;
+              }
+              param_9 = param_9 + -1;
+              piVar36 = (int *)*piVar37;
+              piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+              *piVar37 = *piVar38;
+              *piVar38 = (int)piVar37;
+              *(short *)(piVar37 + 1) = sVar4;
+              STField<short>(piVar37,6) = sVar5 + -1;
+              *(short *)(piVar37 + 2) = sVar6 + -1;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+              *(short *)(piVar37 + 3) = sVar8 + 4;
+            }
+          }
+          piVar37 = piVar36;
+          if (((uVar25 == 0) && ((psVar29[param_2] == 0 || (iVar23 + 4 < (int)psVar29[param_2]))))
+             && ((psVar2[param_2] & 0xc000U) != 0xc000)) {
+            psVar29[param_2] = sVar8 + 4;
+            if (iVar20 < iVar35) {
+              iVar34 = param_1 + 1;
+            }
+            else {
+              iVar34 = param_1 + 3;
+            }
+            param_9 = param_9 + -1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4;
+            STField<short>(piVar36,6) = sVar5 + 1;
+            *(short *)(piVar36 + 2) = sVar6 + -1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = sVar8 + 4;
+          }
+        }
+        uVar41 = local_10 & 0x30;
+        piVar36 = piVar37;
+        if (uVar41 == 0) {
+          psVar29 = (short *)((int)psVar2 - (param_2 * 2 + 2));
+          sVar7 = *psVar29;
+          if ((((sVar7 == 0) || (iVar23 + 4 < (int)sVar7)) &&
+              ((psVar2[-param_2] & 0xc000U) != 0xc000)) && ((psVar2[-1] & 0xc000U) != 0xc000)) {
+            *psVar29 = sVar8 + 4;
+            GVar30 = GVar32;
+            if (iVar20 == 0) {
+              if (iVar35 == 0) {
+                GVar30 = GVar32 + 4;
+              }
+              else if (iVar35 != 1) {
+                GVar30 = GVar32 - CASE_2;
+              }
+            }
+            else if (iVar35 == 0) {
+              if (iVar20 != 1) {
+                GVar30 = GVar32 - CASE_2;
+              }
+            }
+            else {
+              GVar30 = GVar32 + ~CASE_3;
+            }
+            param_9 = param_9 + -1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + 0x10 + (GVar30 + iVar23) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4 + -1;
+            STField<short>(piVar37,6) = sVar5 + -1;
+            *(short *)(piVar37 + 2) = sVar6;
+            STPiece<0,2>(param_3_after_write) = (undefined2)GVar30;
             STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
         }
-        uVar29 = local_10 & 0x12;
-        piVar37 = piVar38;
-        if (((uVar29 == 0) &&
-            ((psVar2[param_2 + -1] == 0 || (iVar24 + 4 < (int)psVar2[param_2 + -1])))) &&
+        uVar27 = local_10 & 0x21;
+        piVar37 = piVar36;
+        if (uVar27 == 0) {
+          puVar33 = reinterpret_cast<ushort *>((psVar2 + -param_2));
+          if (((puVar33[1] == 0) || (iVar23 + 4 < (short)puVar33[1])) &&
+             (((*puVar33 & 0xc000) != 0xc000 && ((psVar2[1] & 0xc000U) != 0xc000)))) {
+            puVar33[1] = sVar8 + 4;
+            if (iVar20 == 0) {
+              GVar30 = GVar32 + 4;
+            }
+            else if (iVar35 + 1 < iVar20) {
+              GVar30 = GVar32 - CASE_2;
+            }
+            else {
+              GVar30 = GVar32;
+              if (iVar20 != iVar35 + 1) {
+                GVar30 = GVar32 + CASE_2;
+              }
+            }
+            param_9 = param_9 + -1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + 0x10 + (GVar30 + iVar23) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4 + 1;
+            STField<short>(piVar36,6) = sVar5 + -1;
+            *(short *)(piVar36 + 2) = sVar6;
+            STPiece<0,2>(param_3_after_write) = (undefined2)GVar30;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = sVar8 + 4;
+          }
+        }
+        uVar28 = local_10 & 0x12;
+        piVar36 = piVar37;
+        if (((uVar28 == 0) &&
+            ((psVar2[param_2 + -1] == 0 || (iVar23 + 4 < (int)psVar2[param_2 + -1])))) &&
            (((psVar2[param_2] & 0xc000U) != 0xc000 && ((psVar2[-1] & 0xc000U) != 0xc000)))) {
           psVar2[param_2 + -1] = sVar8 + 4;
-          if (iVar36 == 0) {
-            GVar31 = GVar33 + 4;
+          if (iVar35 == 0) {
+            GVar30 = GVar32 + 4;
           }
-          else if (iVar21 + 1 < iVar36) {
-            GVar31 = GVar33 - CASE_2;
+          else if (iVar20 + 1 < iVar35) {
+            GVar30 = GVar32 - CASE_2;
           }
           else {
-            GVar31 = GVar33;
-            if (iVar36 != iVar21 + 1) {
-              GVar31 = GVar33 + CASE_2;
+            GVar30 = GVar32;
+            if (iVar35 != iVar20 + 1) {
+              GVar30 = GVar32 + CASE_2;
             }
           }
           param_9 = param_9 + -1;
-          piVar37 = (int *)*piVar38;
-          piVar39 = (int *)(param_4 + 0x10 + (GVar31 + iVar24) * 4);
-          *piVar38 = *piVar39;
-          *piVar39 = (int)piVar38;
-          *(short *)(piVar38 + 1) = sVar4 + -1;
-          STField<short>(piVar38,6) = sVar5 + 1;
-          *(short *)(piVar38 + 2) = sVar6;
-          STPiece<0,2>(param_3_after_write) = (undefined2)GVar31;
-          STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-          *(short *)(piVar38 + 3) = sVar8 + 4;
-        }
-        local_10 = local_10 & 3;
-        piVar38 = piVar37;
-        if (((local_10 == 0) &&
-            (((psVar2[param_2 + 1] == 0 || (iVar24 + 4 < (int)psVar2[param_2 + 1])) &&
-             ((psVar2[param_2] & 0xc000U) != 0xc000)))) && ((psVar2[1] & 0xc000U) != 0xc000)) {
-          psVar2[param_2 + 1] = sVar8 + 4;
-          piVar38 = (int *)*piVar37;
-          param_9 = param_9 + -1;
-          piVar39 = (int *)(param_4 + 0x10 + (GVar33 + 4 + iVar24) * 4);
-          *piVar37 = *piVar39;
-          *piVar39 = (int)piVar37;
-          *(short *)(piVar37 + 1) = sVar4 + 1;
+          piVar36 = (int *)*piVar37;
+          piVar38 = (int *)(param_4 + 0x10 + (GVar30 + iVar23) * 4);
+          *piVar37 = *piVar38;
+          *piVar38 = (int)piVar37;
+          *(short *)(piVar37 + 1) = sVar4 + -1;
           STField<short>(piVar37,6) = sVar5 + 1;
           *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3_after_write) = (undefined2)(GVar33 + 4);
+          STPiece<0,2>(param_3_after_write) = (undefined2)GVar30;
           STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           *(short *)(piVar37 + 3) = sVar8 + 4;
         }
-        iVar35 = iVar24 + 5;
-        uVar40 = (ushort)iVar35;
-        if ((bVar44) && (puVar34 = (ushort *)(psVar2 + iVar18), (*puVar34 & 0xc000) != 0xc000)) {
-          piVar37 = piVar38;
-          if (uVar42 == 0) {
-            puVar32 = (ushort *)((int)puVar34 - (param_2 * 2 + 2));
-            uVar10 = *puVar32;
-            if ((((uVar10 == 0) || (iVar35 < (short)uVar10)) &&
-                (((puVar34[-param_2] & 0xc000) != 0xc000 &&
-                 ((((puVar34[-1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000)) &&
+        local_10 = local_10 & 3;
+        piVar37 = piVar36;
+        if (((local_10 == 0) &&
+            (((psVar2[param_2 + 1] == 0 || (iVar23 + 4 < (int)psVar2[param_2 + 1])) &&
+             ((psVar2[param_2] & 0xc000U) != 0xc000)))) && ((psVar2[1] & 0xc000U) != 0xc000)) {
+          psVar2[param_2 + 1] = sVar8 + 4;
+          piVar37 = (int *)*piVar36;
+          param_9 = param_9 + -1;
+          piVar38 = (int *)(param_4 + 0x10 + (GVar32 + 4 + iVar23) * 4);
+          *piVar36 = *piVar38;
+          *piVar38 = (int)piVar36;
+          *(short *)(piVar36 + 1) = sVar4 + 1;
+          STField<short>(piVar36,6) = sVar5 + 1;
+          *(short *)(piVar36 + 2) = sVar6;
+          STPiece<0,2>(param_3_after_write) = (undefined2)(GVar32 + 4);
+          STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+          *(short *)(piVar36 + 3) = sVar8 + 4;
+        }
+        iVar34 = iVar23 + 5;
+        uVar39 = (ushort)iVar34;
+        if ((bVar43) && (puVar33 = reinterpret_cast<ushort *>((psVar2 + iVar17)), (*puVar33 & 0xc000) != 0xc000)) {
+          piVar36 = piVar37;
+          if (uVar41 == 0) {
+            puVar31 = (ushort *)((int)puVar33 - (param_2 * 2 + 2));
+            uVar10 = *puVar31;
+            if ((((uVar10 == 0) || (iVar34 < (short)uVar10)) &&
+                (((puVar33[-param_2] & 0xc000) != 0xc000 &&
+                 ((((puVar33[-1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000)) &&
                   ((psVar2[-1] & 0xc000U) != 0xc000)))))) &&
                ((*(ushort *)((int)psVar2 - (param_2 * 2 + 2)) & 0xc000) != 0xc000)) {
-              *puVar32 = uVar40;
-              iVar27 = param_5;
-              if (iVar21 == 0) {
-                if (iVar36 == 0) {
-                  iVar27 = param_5 + 4;
+              *puVar31 = uVar39;
+              iVar26 = param_5;
+              if (iVar20 == 0) {
+                if (iVar35 == 0) {
+                  iVar26 = param_5 + 4;
                 }
-                else if (iVar36 != 1) {
-                  iVar27 = param_5 + -2;
+                else if (iVar35 != 1) {
+                  iVar26 = param_5 + -2;
                 }
               }
-              else if (iVar36 == 0) {
-                if (iVar21 != 1) {
-                  iVar27 = param_5 + -2;
+              else if (iVar35 == 0) {
+                if (iVar20 != 1) {
+                  iVar26 = param_5 + -2;
                 }
               }
               else {
-                iVar27 = param_5 + -4;
+                iVar26 = param_5 + -4;
               }
               param_9 = param_9 + -1;
-              piVar37 = (int *)*piVar38;
-              piVar39 = (int *)(param_4 + (iVar27 + iVar35) * 4);
-              *piVar38 = *piVar39;
-              *piVar39 = (int)piVar38;
-              *(short *)(piVar38 + 1) = sVar4 + -1;
-              STField<short>(piVar38,6) = sVar5 + -1;
-              *(short *)(piVar38 + 2) = sVar6 + 1;
-              STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-              *(ushort *)(piVar38 + 3) = uVar40;
-            }
-          }
-          piVar38 = piVar37;
-          if (uVar28 == 0) {
-            puVar32 = puVar34 + -param_2;
-            if (((puVar32[1] == 0) || (iVar35 < (short)puVar32[1])) &&
-               (((((*puVar32 & 0xc000) != 0xc000 &&
-                  (((puVar34[1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000))))
-                 && ((psVar2[1] & 0xc000U) != 0xc000)) &&
-                (((psVar2 + -param_2)[1] & 0xc000U) != 0xc000)))) {
-              puVar32[1] = uVar40;
-              if (iVar21 == 0) {
-                iVar27 = param_5 + 4;
-              }
-              else if (iVar36 + 1 < iVar21) {
-                iVar27 = param_5 + -2;
-              }
-              else {
-                iVar27 = param_5;
-                if (iVar21 != iVar36 + 1) {
-                  iVar27 = param_5 + 2;
-                }
-              }
-              param_9 = param_9 + -1;
-              piVar38 = (int *)*piVar37;
-              piVar39 = (int *)(param_4 + (iVar27 + iVar35) * 4);
-              *piVar37 = *piVar39;
-              *piVar39 = (int)piVar37;
-              *(short *)(piVar37 + 1) = sVar4 + 1;
+              piVar36 = (int *)*piVar37;
+              piVar38 = (int *)(param_4 + (iVar26 + iVar34) * 4);
+              *piVar37 = *piVar38;
+              *piVar38 = (int)piVar37;
+              *(short *)(piVar37 + 1) = sVar4 + -1;
               STField<short>(piVar37,6) = sVar5 + -1;
               *(short *)(piVar37 + 2) = sVar6 + 1;
-              STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar26;
               STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-              *(ushort *)(piVar37 + 3) = uVar40;
+              *(ushort *)(piVar37 + 3) = uVar39;
+            }
+          }
+          piVar37 = piVar36;
+          if (uVar27 == 0) {
+            puVar31 = puVar33 + -param_2;
+            if (((puVar31[1] == 0) || (iVar34 < (short)puVar31[1])) &&
+               (((((*puVar31 & 0xc000) != 0xc000 &&
+                  (((puVar33[1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000))))
+                 && ((psVar2[1] & 0xc000U) != 0xc000)) &&
+                (((psVar2 + -param_2)[1] & 0xc000U) != 0xc000)))) {
+              puVar31[1] = uVar39;
+              if (iVar20 == 0) {
+                iVar26 = param_5 + 4;
+              }
+              else if (iVar35 + 1 < iVar20) {
+                iVar26 = param_5 + -2;
+              }
+              else {
+                iVar26 = param_5;
+                if (iVar20 != iVar35 + 1) {
+                  iVar26 = param_5 + 2;
+                }
+              }
+              param_9 = param_9 + -1;
+              piVar37 = (int *)*piVar36;
+              piVar38 = (int *)(param_4 + (iVar26 + iVar34) * 4);
+              *piVar36 = *piVar38;
+              *piVar38 = (int)piVar36;
+              *(short *)(piVar36 + 1) = sVar4 + 1;
+              STField<short>(piVar36,6) = sVar5 + -1;
+              *(short *)(piVar36 + 2) = sVar6 + 1;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar26;
+              STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+              *(ushort *)(piVar36 + 3) = uVar39;
+            }
+          }
+          piVar36 = piVar37;
+          if ((uVar28 == 0) &&
+             ((((((puVar33[param_2 + -1] == 0 || (iVar34 < (short)puVar33[param_2 + -1])) &&
+                 ((puVar33[param_2] & 0xc000) != 0xc000)) &&
+                (((puVar33[-1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)))) &&
+               ((psVar2[-1] & 0xc000U) != 0xc000)) && ((psVar2[param_2 + -1] & 0xc000U) != 0xc000)))
+             ) {
+            puVar33[param_2 + -1] = uVar39;
+            if (iVar35 == 0) {
+              iVar26 = param_5 + 4;
+            }
+            else if (iVar20 + 1 < iVar35) {
+              iVar26 = param_5 + -2;
+            }
+            else {
+              iVar26 = param_5;
+              if (iVar35 != iVar20 + 1) {
+                iVar26 = param_5 + 2;
+              }
+            }
+            param_9 = param_9 + -1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + (iVar26 + iVar34) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4 + -1;
+            STField<short>(piVar37,6) = sVar5 + 1;
+            *(short *)(piVar37 + 2) = sVar6 + 1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar26;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+            *(ushort *)(piVar37 + 3) = uVar39;
+          }
+          piVar37 = piVar36;
+          if ((((local_10 == 0) &&
+               ((puVar33[param_2 + 1] == 0 || (iVar34 < (short)puVar33[param_2 + 1])))) &&
+              (((puVar33[param_2] & 0xc000) != 0xc000 &&
+               ((((puVar33[1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)) &&
+                ((psVar2[1] & 0xc000U) != 0xc000)))))) &&
+             ((psVar2[param_2 + 1] & 0xc000U) != 0xc000)) {
+            puVar33[param_2 + 1] = uVar39;
+            piVar37 = (int *)*piVar36;
+            param_9 = param_9 + -1;
+            piVar38 = (int *)(param_4 + (param_5 + 4 + iVar34) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4 + 1;
+            STField<short>(piVar36,6) = sVar5 + 1;
+            *(short *)(piVar36 + 2) = sVar6 + 1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)(param_5 + 4);
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(ushort *)(piVar36 + 3) = uVar39;
+          }
+        }
+        if ((bVar12) && (puVar33 = reinterpret_cast<ushort *>((psVar2 + -iVar17)), (*puVar33 & 0xc000) != 0xc000)) {
+          piVar36 = piVar37;
+          if (uVar41 == 0) {
+            puVar31 = (ushort *)((int)puVar33 - (param_2 * 2 + 2));
+            uVar10 = *puVar31;
+            if ((((uVar10 == 0) || (iVar34 < (short)uVar10)) &&
+                (((puVar33[-param_2] & 0xc000) != 0xc000 &&
+                 ((((puVar33[-1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000)) &&
+                  ((psVar2[-1] & 0xc000U) != 0xc000)))))) &&
+               ((*(ushort *)((int)psVar2 - (param_2 * 2 + 2)) & 0xc000) != 0xc000)) {
+              *puVar31 = uVar39;
+              iVar26 = param_1;
+              if (iVar20 == 0) {
+                if (iVar35 == 0) {
+                  iVar26 = param_1 + 4;
+                }
+                else if (iVar35 != 1) {
+                  iVar26 = param_1 + -2;
+                }
+              }
+              else if (iVar35 == 0) {
+                if (iVar20 != 1) {
+                  iVar26 = param_1 + -2;
+                }
+              }
+              else {
+                iVar26 = param_1 + -4;
+              }
+              param_9 = param_9 + -1;
+              piVar36 = (int *)*piVar37;
+              piVar38 = (int *)(param_4 + (iVar26 + iVar34) * 4);
+              *piVar37 = *piVar38;
+              *piVar38 = (int)piVar37;
+              *(short *)(piVar37 + 1) = sVar4 + -1;
+              STField<short>(piVar37,6) = sVar5 + -1;
+              *(short *)(piVar37 + 2) = sVar6 + -1;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar26;
+              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+              *(ushort *)(piVar37 + 3) = uVar39;
+            }
+          }
+          piVar38 = piVar36;
+          if (uVar27 == 0) {
+            puVar31 = puVar33 + -param_2;
+            if ((((puVar31[1] == 0) || (iVar34 < (short)puVar31[1])) &&
+                ((((*puVar31 & 0xc000) != 0xc000 &&
+                  (((puVar33[1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000))))
+                 && ((psVar2[1] & 0xc000U) != 0xc000)))) &&
+               (((psVar2 + -param_2)[1] & 0xc000U) != 0xc000)) {
+              puVar31[1] = uVar39;
+              if (iVar20 == 0) {
+                iVar26 = param_1 + 4;
+              }
+              else if (iVar35 + 1 < iVar20) {
+                iVar26 = param_1 + -2;
+              }
+              else {
+                iVar26 = param_1;
+                if (iVar20 != iVar35 + 1) {
+                  iVar26 = param_1 + 2;
+                }
+              }
+              param_9 = param_9 + -1;
+              piVar38 = (int *)*piVar36;
+              piVar37 = (int *)(param_4 + (iVar26 + iVar34) * 4);
+              *piVar36 = *piVar37;
+              *piVar37 = (int)piVar36;
+              *(short *)(piVar36 + 1) = sVar4 + 1;
+              STField<short>(piVar36,6) = sVar5 + -1;
+              *(short *)(piVar36 + 2) = sVar6 + -1;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar26;
+              STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+              *(ushort *)(piVar36 + 3) = uVar39;
             }
           }
           piVar37 = piVar38;
-          if ((uVar29 == 0) &&
-             ((((((puVar34[param_2 + -1] == 0 || (iVar35 < (short)puVar34[param_2 + -1])) &&
-                 ((puVar34[param_2] & 0xc000) != 0xc000)) &&
-                (((puVar34[-1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)))) &&
-               ((psVar2[-1] & 0xc000U) != 0xc000)) && ((psVar2[param_2 + -1] & 0xc000U) != 0xc000)))
-             ) {
-            puVar34[param_2 + -1] = uVar40;
-            if (iVar36 == 0) {
-              iVar27 = param_5 + 4;
+          if (((uVar28 == 0) &&
+              ((((puVar33[param_2 + -1] == 0 || (iVar34 < (short)puVar33[param_2 + -1])) &&
+                ((puVar33[param_2] & 0xc000) != 0xc000)) &&
+               (((puVar33[-1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)))))) &&
+             (((psVar2[-1] & 0xc000U) != 0xc000 && ((psVar2[param_2 + -1] & 0xc000U) != 0xc000)))) {
+            puVar33[param_2 + -1] = uVar39;
+            if (iVar35 == 0) {
+              iVar26 = param_1 + 4;
             }
-            else if (iVar21 + 1 < iVar36) {
-              iVar27 = param_5 + -2;
+            else if (iVar20 + 1 < iVar35) {
+              iVar26 = param_1 + -2;
             }
             else {
-              iVar27 = param_5;
-              if (iVar36 != iVar21 + 1) {
-                iVar27 = param_5 + 2;
+              iVar26 = param_1;
+              if (iVar35 != iVar20 + 1) {
+                iVar26 = param_1 + 2;
               }
             }
             param_9 = param_9 + -1;
             piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + (iVar27 + iVar35) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
+            piVar36 = (int *)(param_4 + (iVar26 + iVar34) * 4);
+            *piVar38 = *piVar36;
+            *piVar36 = (int)piVar38;
             *(short *)(piVar38 + 1) = sVar4 + -1;
             STField<short>(piVar38,6) = sVar5 + 1;
-            *(short *)(piVar38 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
+            *(short *)(piVar38 + 2) = sVar6 + -1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar26;
             STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-            *(ushort *)(piVar38 + 3) = uVar40;
-          }
-          piVar38 = piVar37;
-          if ((((local_10 == 0) &&
-               ((puVar34[param_2 + 1] == 0 || (iVar35 < (short)puVar34[param_2 + 1])))) &&
-              (((puVar34[param_2] & 0xc000) != 0xc000 &&
-               ((((puVar34[1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)) &&
-                ((psVar2[1] & 0xc000U) != 0xc000)))))) &&
-             ((psVar2[param_2 + 1] & 0xc000U) != 0xc000)) {
-            puVar34[param_2 + 1] = uVar40;
-            piVar38 = (int *)*piVar37;
-            param_9 = param_9 + -1;
-            piVar39 = (int *)(param_4 + (param_5 + 4 + iVar35) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4 + 1;
-            STField<short>(piVar37,6) = sVar5 + 1;
-            *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)(param_5 + 4);
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-            *(ushort *)(piVar37 + 3) = uVar40;
-          }
-        }
-        if ((bVar12) && (puVar34 = (ushort *)(psVar2 + -iVar18), (*puVar34 & 0xc000) != 0xc000)) {
-          piVar37 = piVar38;
-          if (uVar42 == 0) {
-            puVar32 = (ushort *)((int)puVar34 - (param_2 * 2 + 2));
-            uVar10 = *puVar32;
-            if ((((uVar10 == 0) || (iVar35 < (short)uVar10)) &&
-                (((puVar34[-param_2] & 0xc000) != 0xc000 &&
-                 ((((puVar34[-1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000)) &&
-                  ((psVar2[-1] & 0xc000U) != 0xc000)))))) &&
-               ((*(ushort *)((int)psVar2 - (param_2 * 2 + 2)) & 0xc000) != 0xc000)) {
-              *puVar32 = uVar40;
-              iVar27 = param_1;
-              if (iVar21 == 0) {
-                if (iVar36 == 0) {
-                  iVar27 = param_1 + 4;
-                }
-                else if (iVar36 != 1) {
-                  iVar27 = param_1 + -2;
-                }
-              }
-              else if (iVar36 == 0) {
-                if (iVar21 != 1) {
-                  iVar27 = param_1 + -2;
-                }
-              }
-              else {
-                iVar27 = param_1 + -4;
-              }
-              param_9 = param_9 + -1;
-              piVar37 = (int *)*piVar38;
-              piVar39 = (int *)(param_4 + (iVar27 + iVar35) * 4);
-              *piVar38 = *piVar39;
-              *piVar39 = (int)piVar38;
-              *(short *)(piVar38 + 1) = sVar4 + -1;
-              STField<short>(piVar38,6) = sVar5 + -1;
-              *(short *)(piVar38 + 2) = sVar6 + -1;
-              STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-              *(ushort *)(piVar38 + 3) = uVar40;
-            }
-          }
-          piVar39 = piVar37;
-          if (uVar28 == 0) {
-            puVar32 = puVar34 + -param_2;
-            if ((((puVar32[1] == 0) || (iVar35 < (short)puVar32[1])) &&
-                ((((*puVar32 & 0xc000) != 0xc000 &&
-                  (((puVar34[1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000))))
-                 && ((psVar2[1] & 0xc000U) != 0xc000)))) &&
-               (((psVar2 + -param_2)[1] & 0xc000U) != 0xc000)) {
-              puVar32[1] = uVar40;
-              if (iVar21 == 0) {
-                iVar27 = param_1 + 4;
-              }
-              else if (iVar36 + 1 < iVar21) {
-                iVar27 = param_1 + -2;
-              }
-              else {
-                iVar27 = param_1;
-                if (iVar21 != iVar36 + 1) {
-                  iVar27 = param_1 + 2;
-                }
-              }
-              param_9 = param_9 + -1;
-              piVar39 = (int *)*piVar37;
-              piVar38 = (int *)(param_4 + (iVar27 + iVar35) * 4);
-              *piVar37 = *piVar38;
-              *piVar38 = (int)piVar37;
-              *(short *)(piVar37 + 1) = sVar4 + 1;
-              STField<short>(piVar37,6) = sVar5 + -1;
-              *(short *)(piVar37 + 2) = sVar6 + -1;
-              STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
-              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-              *(ushort *)(piVar37 + 3) = uVar40;
-            }
-          }
-          piVar38 = piVar39;
-          if (((uVar29 == 0) &&
-              ((((puVar34[param_2 + -1] == 0 || (iVar35 < (short)puVar34[param_2 + -1])) &&
-                ((puVar34[param_2] & 0xc000) != 0xc000)) &&
-               (((puVar34[-1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)))))) &&
-             (((psVar2[-1] & 0xc000U) != 0xc000 && ((psVar2[param_2 + -1] & 0xc000U) != 0xc000)))) {
-            puVar34[param_2 + -1] = uVar40;
-            if (iVar36 == 0) {
-              iVar27 = param_1 + 4;
-            }
-            else if (iVar21 + 1 < iVar36) {
-              iVar27 = param_1 + -2;
-            }
-            else {
-              iVar27 = param_1;
-              if (iVar36 != iVar21 + 1) {
-                iVar27 = param_1 + 2;
-              }
-            }
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar39;
-            piVar37 = (int *)(param_4 + (iVar27 + iVar35) * 4);
-            *piVar39 = *piVar37;
-            *piVar37 = (int)piVar39;
-            *(short *)(piVar39 + 1) = sVar4 + -1;
-            STField<short>(piVar39,6) = sVar5 + 1;
-            *(short *)(piVar39 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
-            STField<undefined2>(piVar39,10) = (undefined2)param_3_after_write;
-            *(ushort *)(piVar39 + 3) = uVar40;
+            *(ushort *)(piVar38 + 3) = uVar39;
           }
           if (((local_10 == 0) &&
-              ((puVar34[param_2 + 1] == 0 || (iVar35 < (short)puVar34[param_2 + 1])))) &&
-             (((puVar34[param_2] & 0xc000) != 0xc000 &&
-              (((((puVar34[1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)) &&
+              ((puVar33[param_2 + 1] == 0 || (iVar34 < (short)puVar33[param_2 + 1])))) &&
+             (((puVar33[param_2] & 0xc000) != 0xc000 &&
+              (((((puVar33[1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)) &&
                 ((psVar2[1] & 0xc000U) != 0xc000)) && ((psVar2[param_2 + 1] & 0xc000U) != 0xc000))))
              )) {
-            puVar34[param_2 + 1] = uVar40;
+            puVar33[param_2 + 1] = uVar39;
             param_1 = param_1 + 4;
-            piVar37 = piVar38;
+            piVar36 = piVar37;
             goto LAB_006ce57c;
           }
         }
         break;
       case CASE_3:
-        uVar42 = local_10 & 0x10;
-        piVar37 = piVar38;
-        if ((uVar42 == 0) && ((psVar2[-1] == 0 || (iVar24 + 3 < (int)psVar2[-1])))) {
-          psVar2[-1] = (short)(iVar24 + 3);
-          if (-iVar36 < iVar21) {
-            iVar35 = GVar33 + CASE_1;
+        uVar41 = local_10 & 0x10;
+        piVar36 = piVar37;
+        if ((uVar41 == 0) && ((psVar2[-1] == 0 || (iVar23 + 3 < (int)psVar2[-1])))) {
+          psVar2[-1] = (short)(iVar23 + 3);
+          if (-iVar35 < iVar20) {
+            iVar34 = GVar32 + CASE_1;
           }
           else {
-            iVar35 = GVar33 + CASE_3;
+            iVar34 = GVar32 + CASE_3;
           }
           param_9 = param_9 + -1;
-          piVar37 = (int *)*piVar38;
-          piVar39 = (int *)(param_4 + (iVar35 + iVar24 + 3) * 4);
-          *piVar38 = *piVar39;
-          *piVar39 = (int)piVar38;
-          *(short *)(piVar38 + 1) = sVar4 + -1;
-          STField<short>(piVar38,6) = sVar5;
-          *(short *)(piVar38 + 2) = sVar6;
-          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-          STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-          *(short *)(piVar38 + 3) = sVar8 + 3;
-        }
-        if ((psVar2[1] == 0) || (piVar38 = piVar37, iVar24 + 3 < (int)psVar2[1])) {
-          psVar2[1] = (short)(iVar24 + 3);
-          if (-iVar21 == iVar36 || -iVar36 < iVar21) {
-            iVar35 = GVar33 - CASE_1;
-          }
-          else {
-            iVar35 = GVar33 - CASE_3;
-          }
-          param_9 = param_9 + -1;
-          piVar38 = (int *)*piVar37;
-          piVar39 = (int *)(param_4 + (iVar35 + iVar24 + 3) * 4);
-          *piVar37 = *piVar39;
-          *piVar39 = (int)piVar37;
-          *(short *)(piVar37 + 1) = sVar4 + 1;
+          piVar36 = (int *)*piVar37;
+          piVar38 = (int *)(param_4 + (iVar34 + iVar23 + 3) * 4);
+          *piVar37 = *piVar38;
+          *piVar38 = (int)piVar37;
+          *(short *)(piVar37 + 1) = sVar4 + -1;
           STField<short>(piVar37,6) = sVar5;
           *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
           STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           *(short *)(piVar37 + 3) = sVar8 + 3;
         }
-        uVar28 = local_10 & 0x20;
-        piVar37 = piVar38;
-        if (uVar28 == 0) {
+        if ((psVar2[1] == 0) || (piVar37 = piVar36, iVar23 + 3 < (int)psVar2[1])) {
+          psVar2[1] = (short)(iVar23 + 3);
+          if (-iVar20 == iVar35 || -iVar35 < iVar20) {
+            iVar34 = GVar32 - CASE_1;
+          }
+          else {
+            iVar34 = GVar32 - CASE_3;
+          }
+          param_9 = param_9 + -1;
+          piVar37 = (int *)*piVar36;
+          piVar38 = (int *)(param_4 + (iVar34 + iVar23 + 3) * 4);
+          *piVar36 = *piVar38;
+          *piVar38 = (int)piVar36;
+          *(short *)(piVar36 + 1) = sVar4 + 1;
+          STField<short>(piVar36,6) = sVar5;
+          *(short *)(piVar36 + 2) = sVar6;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+          STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+          *(short *)(piVar36 + 3) = sVar8 + 3;
+        }
+        uVar27 = local_10 & 0x20;
+        piVar36 = piVar37;
+        if (uVar27 == 0) {
           sVar7 = psVar2[-param_2];
-          if ((sVar7 == 0) || (iVar24 + 3 < (int)sVar7)) {
+          if ((sVar7 == 0) || (iVar23 + 3 < (int)sVar7)) {
             psVar2[-param_2] = sVar8 + 3;
-            if (iVar21 == 0) {
-              if (iVar36 == 0) {
-                iVar35 = GVar33 + CASE_3;
+            if (iVar20 == 0) {
+              if (iVar35 == 0) {
+                iVar34 = GVar32 + CASE_3;
               }
               else {
-                iVar35 = GVar33 + CASE_1;
+                iVar34 = GVar32 + CASE_1;
               }
             }
-            else if (-iVar36 < iVar21) {
-              iVar35 = GVar33 - CASE_3;
+            else if (-iVar35 < iVar20) {
+              iVar34 = GVar32 - CASE_3;
             }
             else {
-              iVar35 = GVar33 - CASE_1;
+              iVar34 = GVar32 - CASE_1;
             }
             param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + 0xc + (iVar35 + iVar24) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            *(short *)(piVar38 + 1) = sVar4;
-            STField<short>(piVar38,6) = sVar5 + -1;
-            *(short *)(piVar38 + 2) = sVar6;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar38 + 3) = sVar8 + 3;
-          }
-        }
-        uVar29 = local_10 & 2;
-        piVar38 = piVar37;
-        if ((uVar29 == 0) && ((psVar2[param_2] == 0 || (iVar24 + 3 < (int)psVar2[param_2])))) {
-          psVar2[param_2] = sVar8 + 3;
-          if (iVar21 < -iVar36) {
-            iVar35 = GVar33 + CASE_1;
-          }
-          else {
-            iVar35 = GVar33 + CASE_3;
-          }
-          param_9 = param_9 + -1;
-          piVar38 = (int *)*piVar37;
-          piVar39 = (int *)(param_4 + 0xc + (iVar35 + iVar24) * 4);
-          *piVar37 = *piVar39;
-          *piVar39 = (int)piVar37;
-          *(short *)(piVar37 + 1) = sVar4;
-          STField<short>(piVar37,6) = sVar5 + 1;
-          *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-          STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-          *(short *)(piVar37 + 3) = sVar8 + 3;
-        }
-        piVar37 = piVar38;
-        if (bVar12) {
-          sVar7 = psVar2[-iVar18];
-          if ((sVar7 == 0) || (iVar24 + 3 < (int)sVar7)) {
-            psVar2[-iVar18] = sVar8 + 3;
-            param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + 0xc + (param_1 + iVar24) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            *(short *)(piVar38 + 1) = sVar4;
-            STField<short>(piVar38,6) = sVar5;
-            *(short *)(piVar38 + 2) = sVar6 + -1;
-            STField<short>(piVar38,10) = (short)param_1;
-            *(short *)(piVar38 + 3) = sVar8 + 3;
-          }
-        }
-        piVar38 = piVar37;
-        if ((bVar44) && ((psVar2[iVar18] == 0 || (iVar24 + 3 < (int)psVar2[iVar18])))) {
-          psVar2[iVar18] = sVar8 + 3;
-          param_9 = param_9 + -1;
-          piVar38 = (int *)*piVar37;
-          piVar39 = (int *)(param_4 + 0xc + (param_5 + iVar24) * 4);
-          *piVar37 = *piVar39;
-          *piVar39 = (int)piVar37;
-          *(short *)(piVar37 + 1) = sVar4;
-          STField<short>(piVar37,6) = sVar5;
-          *(short *)(piVar37 + 2) = sVar6 + 1;
-          STField<short>(piVar37,10) = (short)param_5;
-          *(short *)(piVar37 + 3) = sVar8 + 3;
-        }
-        if ((bVar44) && (-1 < psVar2[iVar18])) {
-          piVar37 = piVar38;
-          if ((uVar42 == 0) &&
-             (((psVar2[iVar18 + -1] == 0 || (iVar24 + 4 < (int)psVar2[iVar18 + -1])) &&
-              ((psVar2[-1] & 0xc000U) != 0xc000)))) {
-            psVar2[iVar18 + -1] = sVar8 + 4;
-            if (-iVar36 < iVar21) {
-              iVar35 = param_5 + 1;
-            }
-            else {
-              iVar35 = param_5 + 3;
-            }
-            param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            *(short *)(piVar38 + 1) = sVar4 + -1;
-            STField<short>(piVar38,6) = sVar5;
-            *(short *)(piVar38 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar38 + 3) = sVar8 + 4;
-          }
-          piVar38 = piVar37;
-          if (((psVar2[iVar18 + 1] == 0) || (iVar24 + 4 < (int)psVar2[iVar18 + 1])) &&
-             ((psVar2[1] & 0xc000U) != 0xc000)) {
-            psVar2[iVar18 + 1] = sVar8 + 4;
-            if (-iVar21 == iVar36 || -iVar36 < iVar21) {
-              iVar35 = param_5 + -1;
-            }
-            else {
-              iVar35 = param_5 + -3;
-            }
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4 + 1;
-            STField<short>(piVar37,6) = sVar5;
-            *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar37 + 3) = sVar8 + 4;
-          }
-          piVar37 = piVar38;
-          if (uVar28 == 0) {
-            sVar7 = psVar2[iVar18 - param_2];
-            if (((sVar7 == 0) || (iVar24 + 4 < (int)sVar7)) &&
-               ((psVar2[-param_2] & 0xc000U) != 0xc000)) {
-              psVar2[iVar18 - param_2] = sVar8 + 4;
-              if (iVar21 == 0) {
-                if (iVar36 == 0) {
-                  iVar35 = param_5 + 3;
-                }
-                else {
-                  iVar35 = param_5 + 1;
-                }
-              }
-              else if (-iVar36 < iVar21) {
-                iVar35 = param_5 + -3;
-              }
-              else {
-                iVar35 = param_5 + -1;
-              }
-              param_9 = param_9 + -1;
-              piVar37 = (int *)*piVar38;
-              piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-              *piVar38 = *piVar39;
-              *piVar39 = (int)piVar38;
-              *(short *)(piVar38 + 1) = sVar4;
-              STField<short>(piVar38,6) = sVar5 + -1;
-              *(short *)(piVar38 + 2) = sVar6 + 1;
-              STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-              *(short *)(piVar38 + 3) = sVar8 + 4;
-            }
-          }
-          piVar38 = piVar37;
-          if ((uVar29 == 0) &&
-             (((psVar2[iVar18 + param_2] == 0 || (iVar24 + 4 < (int)psVar2[iVar18 + param_2])) &&
-              ((psVar2[param_2] & 0xc000U) != 0xc000)))) {
-            psVar2[iVar18 + param_2] = sVar8 + 4;
-            if (iVar21 < -iVar36) {
-              iVar35 = param_5 + 1;
-            }
-            else {
-              iVar35 = param_5 + 3;
-            }
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + 0xc + (iVar34 + iVar23) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
             *(short *)(piVar37 + 1) = sVar4;
-            STField<short>(piVar37,6) = sVar5 + 1;
-            *(short *)(piVar37 + 2) = sVar6 + 1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar37 + 3) = sVar8 + 4;
-          }
-        }
-        if ((bVar12) && (psVar30 = psVar2 + -iVar18, -1 < *psVar30)) {
-          piVar37 = piVar38;
-          if (((uVar42 == 0) && ((psVar30[-1] == 0 || (iVar24 + 4 < (int)psVar30[-1])))) &&
-             ((psVar2[-1] & 0xc000U) != 0xc000)) {
-            psVar30[-1] = sVar8 + 4;
-            if (-iVar36 < iVar21) {
-              iVar35 = param_1 + 1;
-            }
-            else {
-              iVar35 = param_1 + 3;
-            }
-            param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            *(short *)(piVar38 + 1) = sVar4 + -1;
-            STField<short>(piVar38,6) = sVar5;
-            *(short *)(piVar38 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar38 + 3) = sVar8 + 4;
-          }
-          piVar38 = piVar37;
-          if (((psVar30[1] == 0) || (iVar24 + 4 < (int)psVar30[1])) &&
-             ((psVar2[1] & 0xc000U) != 0xc000)) {
-            psVar30[1] = sVar8 + 4;
-            if (-iVar21 == iVar36 || -iVar36 < iVar21) {
-              iVar35 = param_1 + -1;
-            }
-            else {
-              iVar35 = param_1 + -3;
-            }
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4 + 1;
-            STField<short>(piVar37,6) = sVar5;
-            *(short *)(piVar37 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar37 + 3) = sVar8 + 4;
-          }
-          piVar37 = piVar38;
-          if (uVar28 == 0) {
-            sVar7 = psVar30[-param_2];
-            if (((sVar7 == 0) || (iVar24 + 4 < (int)sVar7)) &&
-               ((psVar2[-param_2] & 0xc000U) != 0xc000)) {
-              psVar30[-param_2] = sVar8 + 4;
-              if (iVar21 == 0) {
-                if (iVar36 == 0) {
-                  iVar35 = param_1 + 3;
-                }
-                else {
-                  iVar35 = param_1 + 1;
-                }
-              }
-              else if (-iVar36 < iVar21) {
-                iVar35 = param_1 + -3;
-              }
-              else {
-                iVar35 = param_1 + -1;
-              }
-              param_9 = param_9 + -1;
-              piVar37 = (int *)*piVar38;
-              piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-              *piVar38 = *piVar39;
-              *piVar39 = (int)piVar38;
-              *(short *)(piVar38 + 1) = sVar4;
-              STField<short>(piVar38,6) = sVar5 + -1;
-              *(short *)(piVar38 + 2) = sVar6 + -1;
-              STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-              *(short *)(piVar38 + 3) = sVar8 + 4;
-            }
-          }
-          piVar38 = piVar37;
-          if (((uVar29 == 0) && ((psVar30[param_2] == 0 || (iVar24 + 4 < (int)psVar30[param_2]))))
-             && ((psVar2[param_2] & 0xc000U) != 0xc000)) {
-            psVar30[param_2] = sVar8 + 4;
-            if (iVar21 < -iVar36) {
-              iVar35 = param_1 + 1;
-            }
-            else {
-              iVar35 = param_1 + 3;
-            }
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + 0x10 + (iVar35 + iVar24) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4;
-            STField<short>(piVar37,6) = sVar5 + 1;
-            *(short *)(piVar37 + 2) = sVar6 + -1;
-            STPiece<0,2>(param_3_after_write) = (undefined2)iVar35;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar37 + 3) = sVar8 + 4;
-          }
-        }
-        uVar42 = local_10 & 0x30;
-        piVar37 = piVar38;
-        if (uVar42 == 0) {
-          psVar30 = (short *)((int)psVar2 - (param_2 * 2 + 2));
-          sVar7 = *psVar30;
-          if ((((sVar7 == 0) || (iVar24 + 4 < (int)sVar7)) &&
-              ((psVar2[-param_2] & 0xc000U) != 0xc000)) && ((psVar2[-1] & 0xc000U) != 0xc000)) {
-            *psVar30 = sVar8 + 4;
-            if (iVar21 == 0) {
-              GVar31 = GVar33 + 4;
-            }
-            else if (1 - iVar36 < iVar21) {
-              GVar31 = GVar33 - CASE_2;
-            }
-            else {
-              GVar31 = GVar33;
-              if (iVar21 != 1 - iVar36) {
-                GVar31 = GVar33 + CASE_2;
-              }
-            }
-            param_9 = param_9 + -1;
-            piVar37 = (int *)*piVar38;
-            piVar39 = (int *)(param_4 + 0x10 + (GVar31 + iVar24) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            *(short *)(piVar38 + 1) = sVar4 + -1;
-            STField<short>(piVar38,6) = sVar5 + -1;
-            *(short *)(piVar38 + 2) = sVar6;
-            STPiece<0,2>(param_3_after_write) = (undefined2)GVar31;
-            STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-            *(short *)(piVar38 + 3) = sVar8 + 4;
-          }
-        }
-        uVar28 = local_10 & 0x21;
-        piVar38 = piVar37;
-        if (uVar28 == 0) {
-          puVar34 = (ushort *)(psVar2 + -param_2);
-          if (((puVar34[1] == 0) || (iVar24 + 4 < (short)puVar34[1])) &&
-             (((*puVar34 & 0xc000) != 0xc000 && ((psVar2[1] & 0xc000U) != 0xc000)))) {
-            puVar34[1] = sVar8 + 4;
-            if (iVar21 == 0) {
-              if (iVar36 == 0) {
-                GVar31 = GVar33 + 4;
-              }
-              else {
-                GVar31 = GVar33;
-                if (iVar36 != -1) {
-                  GVar31 = GVar33 - CASE_2;
-                }
-              }
-            }
-            else {
-              GVar31 = GVar33 + ~CASE_3;
-            }
-            param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + 0x10 + (GVar31 + iVar24) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4 + 1;
             STField<short>(piVar37,6) = sVar5 + -1;
             *(short *)(piVar37 + 2) = sVar6;
-            STPiece<0,2>(param_3_after_write) = (undefined2)GVar31;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar37 + 3) = sVar8 + 3;
+          }
+        }
+        uVar28 = local_10 & 2;
+        piVar37 = piVar36;
+        if ((uVar28 == 0) && ((psVar2[param_2] == 0 || (iVar23 + 3 < (int)psVar2[param_2])))) {
+          psVar2[param_2] = sVar8 + 3;
+          if (iVar20 < -iVar35) {
+            iVar34 = GVar32 + CASE_1;
+          }
+          else {
+            iVar34 = GVar32 + CASE_3;
+          }
+          param_9 = param_9 + -1;
+          piVar37 = (int *)*piVar36;
+          piVar38 = (int *)(param_4 + 0xc + (iVar34 + iVar23) * 4);
+          *piVar36 = *piVar38;
+          *piVar38 = (int)piVar36;
+          *(short *)(piVar36 + 1) = sVar4;
+          STField<short>(piVar36,6) = sVar5 + 1;
+          *(short *)(piVar36 + 2) = sVar6;
+          STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+          STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+          *(short *)(piVar36 + 3) = sVar8 + 3;
+        }
+        piVar36 = piVar37;
+        if (bVar12) {
+          sVar7 = psVar2[-iVar17];
+          if ((sVar7 == 0) || (iVar23 + 3 < (int)sVar7)) {
+            psVar2[-iVar17] = sVar8 + 3;
+            param_9 = param_9 + -1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + 0xc + (param_1 + iVar23) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4;
+            STField<short>(piVar37,6) = sVar5;
+            *(short *)(piVar37 + 2) = sVar6 + -1;
+            STField<short>(piVar37,10) = (short)param_1;
+            *(short *)(piVar37 + 3) = sVar8 + 3;
+          }
+        }
+        piVar37 = piVar36;
+        if ((bVar43) && ((psVar2[iVar17] == 0 || (iVar23 + 3 < (int)psVar2[iVar17])))) {
+          psVar2[iVar17] = sVar8 + 3;
+          param_9 = param_9 + -1;
+          piVar37 = (int *)*piVar36;
+          piVar38 = (int *)(param_4 + 0xc + (param_5 + iVar23) * 4);
+          *piVar36 = *piVar38;
+          *piVar38 = (int)piVar36;
+          *(short *)(piVar36 + 1) = sVar4;
+          STField<short>(piVar36,6) = sVar5;
+          *(short *)(piVar36 + 2) = sVar6 + 1;
+          STField<short>(piVar36,10) = (short)param_5;
+          *(short *)(piVar36 + 3) = sVar8 + 3;
+        }
+        if ((bVar43) && (-1 < psVar2[iVar17])) {
+          piVar36 = piVar37;
+          if ((uVar41 == 0) &&
+             (((psVar2[iVar17 + -1] == 0 || (iVar23 + 4 < (int)psVar2[iVar17 + -1])) &&
+              ((psVar2[-1] & 0xc000U) != 0xc000)))) {
+            psVar2[iVar17 + -1] = sVar8 + 4;
+            if (-iVar35 < iVar20) {
+              iVar34 = param_5 + 1;
+            }
+            else {
+              iVar34 = param_5 + 3;
+            }
+            param_9 = param_9 + -1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4 + -1;
+            STField<short>(piVar37,6) = sVar5;
+            *(short *)(piVar37 + 2) = sVar6 + 1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar37 + 3) = sVar8 + 4;
+          }
+          piVar37 = piVar36;
+          if (((psVar2[iVar17 + 1] == 0) || (iVar23 + 4 < (int)psVar2[iVar17 + 1])) &&
+             ((psVar2[1] & 0xc000U) != 0xc000)) {
+            psVar2[iVar17 + 1] = sVar8 + 4;
+            if (-iVar20 == iVar35 || -iVar35 < iVar20) {
+              iVar34 = param_5 + -1;
+            }
+            else {
+              iVar34 = param_5 + -3;
+            }
+            param_9 = param_9 + -1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4 + 1;
+            STField<short>(piVar36,6) = sVar5;
+            *(short *)(piVar36 + 2) = sVar6 + 1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = sVar8 + 4;
+          }
+          piVar36 = piVar37;
+          if (uVar27 == 0) {
+            sVar7 = psVar2[iVar17 - param_2];
+            if (((sVar7 == 0) || (iVar23 + 4 < (int)sVar7)) &&
+               ((psVar2[-param_2] & 0xc000U) != 0xc000)) {
+              psVar2[iVar17 - param_2] = sVar8 + 4;
+              if (iVar20 == 0) {
+                if (iVar35 == 0) {
+                  iVar34 = param_5 + 3;
+                }
+                else {
+                  iVar34 = param_5 + 1;
+                }
+              }
+              else if (-iVar35 < iVar20) {
+                iVar34 = param_5 + -3;
+              }
+              else {
+                iVar34 = param_5 + -1;
+              }
+              param_9 = param_9 + -1;
+              piVar36 = (int *)*piVar37;
+              piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+              *piVar37 = *piVar38;
+              *piVar38 = (int)piVar37;
+              *(short *)(piVar37 + 1) = sVar4;
+              STField<short>(piVar37,6) = sVar5 + -1;
+              *(short *)(piVar37 + 2) = sVar6 + 1;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+              *(short *)(piVar37 + 3) = sVar8 + 4;
+            }
+          }
+          piVar37 = piVar36;
+          if ((uVar28 == 0) &&
+             (((psVar2[iVar17 + param_2] == 0 || (iVar23 + 4 < (int)psVar2[iVar17 + param_2])) &&
+              ((psVar2[param_2] & 0xc000U) != 0xc000)))) {
+            psVar2[iVar17 + param_2] = sVar8 + 4;
+            if (iVar20 < -iVar35) {
+              iVar34 = param_5 + 1;
+            }
+            else {
+              iVar34 = param_5 + 3;
+            }
+            param_9 = param_9 + -1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4;
+            STField<short>(piVar36,6) = sVar5 + 1;
+            *(short *)(piVar36 + 2) = sVar6 + 1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = sVar8 + 4;
+          }
+        }
+        if ((bVar12) && (psVar29 = psVar2 + -iVar17, -1 < *psVar29)) {
+          piVar36 = piVar37;
+          if (((uVar41 == 0) && ((psVar29[-1] == 0 || (iVar23 + 4 < (int)psVar29[-1])))) &&
+             ((psVar2[-1] & 0xc000U) != 0xc000)) {
+            psVar29[-1] = sVar8 + 4;
+            if (-iVar35 < iVar20) {
+              iVar34 = param_1 + 1;
+            }
+            else {
+              iVar34 = param_1 + 3;
+            }
+            param_9 = param_9 + -1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4 + -1;
+            STField<short>(piVar37,6) = sVar5;
+            *(short *)(piVar37 + 2) = sVar6 + -1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar37 + 3) = sVar8 + 4;
+          }
+          piVar37 = piVar36;
+          if (((psVar29[1] == 0) || (iVar23 + 4 < (int)psVar29[1])) &&
+             ((psVar2[1] & 0xc000U) != 0xc000)) {
+            psVar29[1] = sVar8 + 4;
+            if (-iVar20 == iVar35 || -iVar35 < iVar20) {
+              iVar34 = param_1 + -1;
+            }
+            else {
+              iVar34 = param_1 + -3;
+            }
+            param_9 = param_9 + -1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4 + 1;
+            STField<short>(piVar36,6) = sVar5;
+            *(short *)(piVar36 + 2) = sVar6 + -1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = sVar8 + 4;
+          }
+          piVar36 = piVar37;
+          if (uVar27 == 0) {
+            sVar7 = psVar29[-param_2];
+            if (((sVar7 == 0) || (iVar23 + 4 < (int)sVar7)) &&
+               ((psVar2[-param_2] & 0xc000U) != 0xc000)) {
+              psVar29[-param_2] = sVar8 + 4;
+              if (iVar20 == 0) {
+                if (iVar35 == 0) {
+                  iVar34 = param_1 + 3;
+                }
+                else {
+                  iVar34 = param_1 + 1;
+                }
+              }
+              else if (-iVar35 < iVar20) {
+                iVar34 = param_1 + -3;
+              }
+              else {
+                iVar34 = param_1 + -1;
+              }
+              param_9 = param_9 + -1;
+              piVar36 = (int *)*piVar37;
+              piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+              *piVar37 = *piVar38;
+              *piVar38 = (int)piVar37;
+              *(short *)(piVar37 + 1) = sVar4;
+              STField<short>(piVar37,6) = sVar5 + -1;
+              *(short *)(piVar37 + 2) = sVar6 + -1;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+              *(short *)(piVar37 + 3) = sVar8 + 4;
+            }
+          }
+          piVar37 = piVar36;
+          if (((uVar28 == 0) && ((psVar29[param_2] == 0 || (iVar23 + 4 < (int)psVar29[param_2]))))
+             && ((psVar2[param_2] & 0xc000U) != 0xc000)) {
+            psVar29[param_2] = sVar8 + 4;
+            if (iVar20 < -iVar35) {
+              iVar34 = param_1 + 1;
+            }
+            else {
+              iVar34 = param_1 + 3;
+            }
+            param_9 = param_9 + -1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + 0x10 + (iVar34 + iVar23) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4;
+            STField<short>(piVar36,6) = sVar5 + 1;
+            *(short *)(piVar36 + 2) = sVar6 + -1;
+            STPiece<0,2>(param_3_after_write) = (undefined2)iVar34;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = sVar8 + 4;
+          }
+        }
+        uVar41 = local_10 & 0x30;
+        piVar36 = piVar37;
+        if (uVar41 == 0) {
+          psVar29 = (short *)((int)psVar2 - (param_2 * 2 + 2));
+          sVar7 = *psVar29;
+          if ((((sVar7 == 0) || (iVar23 + 4 < (int)sVar7)) &&
+              ((psVar2[-param_2] & 0xc000U) != 0xc000)) && ((psVar2[-1] & 0xc000U) != 0xc000)) {
+            *psVar29 = sVar8 + 4;
+            if (iVar20 == 0) {
+              GVar30 = GVar32 + 4;
+            }
+            else if (1 - iVar35 < iVar20) {
+              GVar30 = GVar32 - CASE_2;
+            }
+            else {
+              GVar30 = GVar32;
+              if (iVar20 != 1 - iVar35) {
+                GVar30 = GVar32 + CASE_2;
+              }
+            }
+            param_9 = param_9 + -1;
+            piVar36 = (int *)*piVar37;
+            piVar38 = (int *)(param_4 + 0x10 + (GVar30 + iVar23) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4 + -1;
+            STField<short>(piVar37,6) = sVar5 + -1;
+            *(short *)(piVar37 + 2) = sVar6;
+            STPiece<0,2>(param_3_after_write) = (undefined2)GVar30;
             STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
             *(short *)(piVar37 + 3) = sVar8 + 4;
           }
         }
-        uVar29 = local_10 & 0x12;
-        piVar37 = piVar38;
-        if ((((uVar29 == 0) &&
-             ((psVar2[param_2 + -1] == 0 || (iVar24 + 4 < (int)psVar2[param_2 + -1])))) &&
+        uVar27 = local_10 & 0x21;
+        piVar37 = piVar36;
+        if (uVar27 == 0) {
+          puVar33 = reinterpret_cast<ushort *>((psVar2 + -param_2));
+          if (((puVar33[1] == 0) || (iVar23 + 4 < (short)puVar33[1])) &&
+             (((*puVar33 & 0xc000) != 0xc000 && ((psVar2[1] & 0xc000U) != 0xc000)))) {
+            puVar33[1] = sVar8 + 4;
+            if (iVar20 == 0) {
+              if (iVar35 == 0) {
+                GVar30 = GVar32 + 4;
+              }
+              else {
+                GVar30 = GVar32;
+                if (iVar35 != -1) {
+                  GVar30 = GVar32 - CASE_2;
+                }
+              }
+            }
+            else {
+              GVar30 = GVar32 + ~CASE_3;
+            }
+            param_9 = param_9 + -1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + 0x10 + (GVar30 + iVar23) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4 + 1;
+            STField<short>(piVar36,6) = sVar5 + -1;
+            *(short *)(piVar36 + 2) = sVar6;
+            STPiece<0,2>(param_3_after_write) = (undefined2)GVar30;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(short *)(piVar36 + 3) = sVar8 + 4;
+          }
+        }
+        uVar28 = local_10 & 0x12;
+        piVar36 = piVar37;
+        if ((((uVar28 == 0) &&
+             ((psVar2[param_2 + -1] == 0 || (iVar23 + 4 < (int)psVar2[param_2 + -1])))) &&
             ((psVar2[param_2] & 0xc000U) != 0xc000)) && ((psVar2[-1] & 0xc000U) != 0xc000)) {
           psVar2[param_2 + -1] = sVar8 + 4;
           param_9 = param_9 + -1;
-          piVar37 = (int *)*piVar38;
-          piVar39 = (int *)(param_4 + 0x10 + (GVar33 + 4 + iVar24) * 4);
-          *piVar38 = *piVar39;
-          *piVar39 = (int)piVar38;
-          *(short *)(piVar38 + 1) = sVar4 + -1;
-          STField<short>(piVar38,6) = sVar5 + 1;
-          *(short *)(piVar38 + 2) = sVar6;
-          STPiece<0,2>(param_3_after_write) = (undefined2)(GVar33 + 4);
-          STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-          *(short *)(piVar38 + 3) = sVar8 + 4;
-        }
-        local_10 = local_10 & 3;
-        piVar38 = piVar37;
-        if (((local_10 == 0) &&
-            (((psVar2[param_2 + 1] == 0 || (iVar24 + 4 < (int)psVar2[param_2 + 1])) &&
-             ((psVar2[param_2] & 0xc000U) != 0xc000)))) && ((psVar2[1] & 0xc000U) != 0xc000)) {
-          psVar2[param_2 + 1] = sVar8 + 4;
-          bVar43 = -(iVar21 + 1) == iVar36;
-          if (bVar43 || -iVar36 < iVar21 + 1) {
-            if (!bVar43) {
-              GVar33 = GVar33 + CASE_2;
-            }
-          }
-          else {
-            GVar33 = GVar33 - CASE_2;
-          }
-          param_9 = param_9 + -1;
-          piVar38 = (int *)*piVar37;
-          piVar39 = (int *)(param_4 + 0x10 + (GVar33 + iVar24) * 4);
-          *piVar37 = *piVar39;
-          *piVar39 = (int)piVar37;
-          *(short *)(piVar37 + 1) = sVar4 + 1;
+          piVar36 = (int *)*piVar37;
+          piVar38 = (int *)(param_4 + 0x10 + (GVar32 + 4 + iVar23) * 4);
+          *piVar37 = *piVar38;
+          *piVar38 = (int)piVar37;
+          *(short *)(piVar37 + 1) = sVar4 + -1;
           STField<short>(piVar37,6) = sVar5 + 1;
           *(short *)(piVar37 + 2) = sVar6;
-          STPiece<0,2>(param_3_after_write) = (undefined2)GVar33;
+          STPiece<0,2>(param_3_after_write) = (undefined2)(GVar32 + 4);
           STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
           *(short *)(piVar37 + 3) = sVar8 + 4;
         }
-        iVar35 = iVar24 + 5;
-        uVar40 = (ushort)iVar35;
-        if ((bVar44) && (puVar34 = (ushort *)(psVar2 + iVar18), (*puVar34 & 0xc000) != 0xc000)) {
-          piVar37 = piVar38;
-          if (uVar42 == 0) {
-            puVar32 = (ushort *)((int)puVar34 - (param_2 * 2 + 2));
-            uVar10 = *puVar32;
-            if ((((uVar10 == 0) || (iVar35 < (short)uVar10)) &&
-                (((puVar34[-param_2] & 0xc000) != 0xc000 &&
-                 ((((puVar34[-1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000)) &&
+        local_10 = local_10 & 3;
+        piVar37 = piVar36;
+        if (((local_10 == 0) &&
+            (((psVar2[param_2 + 1] == 0 || (iVar23 + 4 < (int)psVar2[param_2 + 1])) &&
+             ((psVar2[param_2] & 0xc000U) != 0xc000)))) && ((psVar2[1] & 0xc000U) != 0xc000)) {
+          psVar2[param_2 + 1] = sVar8 + 4;
+          bVar42 = -(iVar20 + 1) == iVar35;
+          if (bVar42 || -iVar35 < iVar20 + 1) {
+            if (!bVar42) {
+              GVar32 = GVar32 + CASE_2;
+            }
+          }
+          else {
+            GVar32 = GVar32 - CASE_2;
+          }
+          param_9 = param_9 + -1;
+          piVar37 = (int *)*piVar36;
+          piVar38 = (int *)(param_4 + 0x10 + (GVar32 + iVar23) * 4);
+          *piVar36 = *piVar38;
+          *piVar38 = (int)piVar36;
+          *(short *)(piVar36 + 1) = sVar4 + 1;
+          STField<short>(piVar36,6) = sVar5 + 1;
+          *(short *)(piVar36 + 2) = sVar6;
+          STPiece<0,2>(param_3_after_write) = (undefined2)GVar32;
+          STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+          *(short *)(piVar36 + 3) = sVar8 + 4;
+        }
+        iVar34 = iVar23 + 5;
+        uVar39 = (ushort)iVar34;
+        if ((bVar43) && (puVar33 = reinterpret_cast<ushort *>((psVar2 + iVar17)), (*puVar33 & 0xc000) != 0xc000)) {
+          piVar36 = piVar37;
+          if (uVar41 == 0) {
+            puVar31 = (ushort *)((int)puVar33 - (param_2 * 2 + 2));
+            uVar10 = *puVar31;
+            if ((((uVar10 == 0) || (iVar34 < (short)uVar10)) &&
+                (((puVar33[-param_2] & 0xc000) != 0xc000 &&
+                 ((((puVar33[-1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000)) &&
                   ((psVar2[-1] & 0xc000U) != 0xc000)))))) &&
                ((*(ushort *)((int)psVar2 - (param_2 * 2 + 2)) & 0xc000) != 0xc000)) {
-              *puVar32 = uVar40;
-              if (iVar21 == 0) {
-                iVar27 = param_5 + 4;
+              *puVar31 = uVar39;
+              if (iVar20 == 0) {
+                iVar26 = param_5 + 4;
               }
-              else if (1 - iVar36 < iVar21) {
-                iVar27 = param_5 + -2;
+              else if (1 - iVar35 < iVar20) {
+                iVar26 = param_5 + -2;
               }
               else {
-                iVar27 = param_5;
-                if (iVar21 != 1 - iVar36) {
-                  iVar27 = param_5 + 2;
+                iVar26 = param_5;
+                if (iVar20 != 1 - iVar35) {
+                  iVar26 = param_5 + 2;
                 }
               }
               param_9 = param_9 + -1;
-              piVar37 = (int *)*piVar38;
-              piVar39 = (int *)(param_4 + (iVar27 + iVar35) * 4);
-              *piVar38 = *piVar39;
-              *piVar39 = (int)piVar38;
-              *(short *)(piVar38 + 1) = sVar4 + -1;
-              STField<short>(piVar38,6) = sVar5 + -1;
-              *(short *)(piVar38 + 2) = sVar6 + 1;
-              STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-              *(ushort *)(piVar38 + 3) = uVar40;
+              piVar36 = (int *)*piVar37;
+              piVar38 = (int *)(param_4 + (iVar26 + iVar34) * 4);
+              *piVar37 = *piVar38;
+              *piVar38 = (int)piVar37;
+              *(short *)(piVar37 + 1) = sVar4 + -1;
+              STField<short>(piVar37,6) = sVar5 + -1;
+              *(short *)(piVar37 + 2) = sVar6 + 1;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar26;
+              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+              *(ushort *)(piVar37 + 3) = uVar39;
             }
           }
-          piVar38 = piVar37;
-          if (uVar28 == 0) {
-            puVar32 = puVar34 + -param_2;
-            if ((((puVar32[1] == 0) || (iVar35 < (short)puVar32[1])) &&
-                (((*puVar32 & 0xc000) != 0xc000 &&
-                 (((puVar34[1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000))))))
+          piVar37 = piVar36;
+          if (uVar27 == 0) {
+            puVar31 = puVar33 + -param_2;
+            if ((((puVar31[1] == 0) || (iVar34 < (short)puVar31[1])) &&
+                (((*puVar31 & 0xc000) != 0xc000 &&
+                 (((puVar33[1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000))))))
                && (((psVar2[1] & 0xc000U) != 0xc000 &&
                    (((psVar2 + -param_2)[1] & 0xc000U) != 0xc000)))) {
-              puVar32[1] = uVar40;
-              if (iVar21 == 0) {
-                if (iVar36 == 0) {
-                  iVar27 = param_5 + 4;
+              puVar31[1] = uVar39;
+              if (iVar20 == 0) {
+                if (iVar35 == 0) {
+                  iVar26 = param_5 + 4;
                 }
                 else {
-                  iVar27 = param_5;
-                  if (iVar36 != -1) {
-                    iVar27 = param_5 + -2;
+                  iVar26 = param_5;
+                  if (iVar35 != -1) {
+                    iVar26 = param_5 + -2;
                   }
                 }
               }
               else {
-                iVar27 = param_5 + -4;
+                iVar26 = param_5 + -4;
               }
               param_9 = param_9 + -1;
-              piVar38 = (int *)*piVar37;
-              piVar39 = (int *)(param_4 + (iVar27 + iVar35) * 4);
-              *piVar37 = *piVar39;
-              *piVar39 = (int)piVar37;
-              *(short *)(piVar37 + 1) = sVar4 + 1;
-              STField<short>(piVar37,6) = sVar5 + -1;
-              *(short *)(piVar37 + 2) = sVar6 + 1;
-              STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
-              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-              *(ushort *)(piVar37 + 3) = uVar40;
+              piVar37 = (int *)*piVar36;
+              piVar38 = (int *)(param_4 + (iVar26 + iVar34) * 4);
+              *piVar36 = *piVar38;
+              *piVar38 = (int)piVar36;
+              *(short *)(piVar36 + 1) = sVar4 + 1;
+              STField<short>(piVar36,6) = sVar5 + -1;
+              *(short *)(piVar36 + 2) = sVar6 + 1;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar26;
+              STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+              *(ushort *)(piVar36 + 3) = uVar39;
             }
           }
-          piVar37 = piVar38;
-          if (((uVar29 == 0) &&
-              (((((puVar34[param_2 + -1] == 0 || (iVar35 < (short)puVar34[param_2 + -1])) &&
-                 ((puVar34[param_2] & 0xc000) != 0xc000)) &&
-                (((puVar34[-1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)))) &&
+          piVar36 = piVar37;
+          if (((uVar28 == 0) &&
+              (((((puVar33[param_2 + -1] == 0 || (iVar34 < (short)puVar33[param_2 + -1])) &&
+                 ((puVar33[param_2] & 0xc000) != 0xc000)) &&
+                (((puVar33[-1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)))) &&
                ((psVar2[-1] & 0xc000U) != 0xc000)))) && ((psVar2[param_2 + -1] & 0xc000U) != 0xc000)
              ) {
-            puVar34[param_2 + -1] = uVar40;
-            piVar37 = (int *)*piVar38;
+            puVar33[param_2 + -1] = uVar39;
+            piVar36 = (int *)*piVar37;
             param_9 = param_9 + -1;
-            piVar39 = (int *)(param_4 + (param_5 + 4 + iVar35) * 4);
-            *piVar38 = *piVar39;
-            *piVar39 = (int)piVar38;
-            *(short *)(piVar38 + 1) = sVar4 + -1;
-            STField<short>(piVar38,6) = sVar5 + 1;
-            *(short *)(piVar38 + 2) = sVar6 + 1;
-            STField<short>(piVar38,10) = (short)param_5 + 4;
-            *(ushort *)(piVar38 + 3) = uVar40;
+            piVar38 = (int *)(param_4 + (param_5 + 4 + iVar34) * 4);
+            *piVar37 = *piVar38;
+            *piVar38 = (int)piVar37;
+            *(short *)(piVar37 + 1) = sVar4 + -1;
+            STField<short>(piVar37,6) = sVar5 + 1;
+            *(short *)(piVar37 + 2) = sVar6 + 1;
+            STField<short>(piVar37,10) = (short)param_5 + 4;
+            *(ushort *)(piVar37 + 3) = uVar39;
           }
-          piVar38 = piVar37;
+          piVar37 = piVar36;
           if (((local_10 == 0) &&
-              ((puVar34[param_2 + 1] == 0 || (iVar35 < (short)puVar34[param_2 + 1])))) &&
-             (((puVar34[param_2] & 0xc000) != 0xc000 &&
-              (((((puVar34[1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)) &&
+              ((puVar33[param_2 + 1] == 0 || (iVar34 < (short)puVar33[param_2 + 1])))) &&
+             (((puVar33[param_2] & 0xc000) != 0xc000 &&
+              (((((puVar33[1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)) &&
                 ((psVar2[1] & 0xc000U) != 0xc000)) && ((psVar2[param_2 + 1] & 0xc000U) != 0xc000))))
              )) {
-            puVar34[param_2 + 1] = uVar40;
-            bVar44 = -(iVar21 + 1) == iVar36;
-            if (bVar44 || -iVar36 < iVar21 + 1) {
-              if (!bVar44) {
+            puVar33[param_2 + 1] = uVar39;
+            bVar43 = -(iVar20 + 1) == iVar35;
+            if (bVar43 || -iVar35 < iVar20 + 1) {
+              if (!bVar43) {
                 param_5 = param_5 + 2;
               }
             }
@@ -7226,138 +7277,138 @@ LAB_006ce57c:
               param_5 = param_5 + -2;
             }
             param_9 = param_9 + -1;
-            piVar38 = (int *)*piVar37;
-            piVar39 = (int *)(param_4 + (param_5 + iVar35) * 4);
-            *piVar37 = *piVar39;
-            *piVar39 = (int)piVar37;
-            *(short *)(piVar37 + 1) = sVar4 + 1;
-            STField<short>(piVar37,6) = sVar5 + 1;
-            *(short *)(piVar37 + 2) = sVar6 + 1;
+            piVar37 = (int *)*piVar36;
+            piVar38 = (int *)(param_4 + (param_5 + iVar34) * 4);
+            *piVar36 = *piVar38;
+            *piVar38 = (int)piVar36;
+            *(short *)(piVar36 + 1) = sVar4 + 1;
+            STField<short>(piVar36,6) = sVar5 + 1;
+            *(short *)(piVar36 + 2) = sVar6 + 1;
             STPiece<0,2>(param_3_after_write) = (undefined2)param_5;
-            STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-            *(ushort *)(piVar37 + 3) = uVar40;
+            STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+            *(ushort *)(piVar36 + 3) = uVar39;
           }
         }
-        if ((bVar12) && (puVar34 = (ushort *)(psVar2 + -iVar18), (*puVar34 & 0xc000) != 0xc000)) {
-          piVar37 = piVar38;
-          if (uVar42 == 0) {
-            puVar32 = (ushort *)((int)puVar34 - (param_2 * 2 + 2));
-            uVar10 = *puVar32;
-            if ((((uVar10 == 0) || (iVar35 < (short)uVar10)) &&
-                (((puVar34[-param_2] & 0xc000) != 0xc000 &&
-                 ((((puVar34[-1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000)) &&
+        if ((bVar12) && (puVar33 = reinterpret_cast<ushort *>((psVar2 + -iVar17)), (*puVar33 & 0xc000) != 0xc000)) {
+          piVar36 = piVar37;
+          if (uVar41 == 0) {
+            puVar31 = (ushort *)((int)puVar33 - (param_2 * 2 + 2));
+            uVar10 = *puVar31;
+            if ((((uVar10 == 0) || (iVar34 < (short)uVar10)) &&
+                (((puVar33[-param_2] & 0xc000) != 0xc000 &&
+                 ((((puVar33[-1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000)) &&
                   ((psVar2[-1] & 0xc000U) != 0xc000)))))) &&
                ((*(ushort *)((int)psVar2 - (param_2 * 2 + 2)) & 0xc000) != 0xc000)) {
-              *puVar32 = uVar40;
-              if (iVar21 == 0) {
-                iVar27 = param_1 + 4;
+              *puVar31 = uVar39;
+              if (iVar20 == 0) {
+                iVar26 = param_1 + 4;
               }
-              else if (1 - iVar36 < iVar21) {
-                iVar27 = param_1 + -2;
+              else if (1 - iVar35 < iVar20) {
+                iVar26 = param_1 + -2;
               }
               else {
-                iVar27 = param_1;
-                if (iVar21 != 1 - iVar36) {
-                  iVar27 = param_1 + 2;
+                iVar26 = param_1;
+                if (iVar20 != 1 - iVar35) {
+                  iVar26 = param_1 + 2;
                 }
               }
               param_9 = param_9 + -1;
-              piVar37 = (int *)*piVar38;
-              piVar39 = (int *)(param_4 + (iVar27 + iVar35) * 4);
-              *piVar38 = *piVar39;
-              *piVar39 = (int)piVar38;
-              *(short *)(piVar38 + 1) = sVar4 + -1;
-              STField<short>(piVar38,6) = sVar5 + -1;
-              *(short *)(piVar38 + 2) = sVar6 + -1;
-              STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
-              STField<undefined2>(piVar38,10) = (undefined2)param_3_after_write;
-              *(ushort *)(piVar38 + 3) = uVar40;
+              piVar36 = (int *)*piVar37;
+              piVar38 = (int *)(param_4 + (iVar26 + iVar34) * 4);
+              *piVar37 = *piVar38;
+              *piVar38 = (int)piVar37;
+              *(short *)(piVar37 + 1) = sVar4 + -1;
+              STField<short>(piVar37,6) = sVar5 + -1;
+              *(short *)(piVar37 + 2) = sVar6 + -1;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar26;
+              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
+              *(ushort *)(piVar37 + 3) = uVar39;
             }
           }
-          piVar39 = piVar37;
-          if (uVar28 == 0) {
-            puVar32 = puVar34 + -param_2;
-            if ((((puVar32[1] == 0) || (iVar35 < (short)puVar32[1])) &&
-                (((*puVar32 & 0xc000) != 0xc000 &&
-                 (((puVar34[1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000))))))
+          piVar38 = piVar36;
+          if (uVar27 == 0) {
+            puVar31 = puVar33 + -param_2;
+            if ((((puVar31[1] == 0) || (iVar34 < (short)puVar31[1])) &&
+                (((*puVar31 & 0xc000) != 0xc000 &&
+                 (((puVar33[1] & 0xc000) != 0xc000 && ((psVar2[-param_2] & 0xc000U) != 0xc000))))))
                && (((psVar2[1] & 0xc000U) != 0xc000 &&
                    (((psVar2 + -param_2)[1] & 0xc000U) != 0xc000)))) {
-              puVar32[1] = uVar40;
-              if (iVar21 == 0) {
-                if (iVar36 == 0) {
-                  iVar27 = param_1 + 4;
+              puVar31[1] = uVar39;
+              if (iVar20 == 0) {
+                if (iVar35 == 0) {
+                  iVar26 = param_1 + 4;
                 }
                 else {
-                  iVar27 = param_1;
-                  if (iVar36 != -1) {
-                    iVar27 = param_1 + -2;
+                  iVar26 = param_1;
+                  if (iVar35 != -1) {
+                    iVar26 = param_1 + -2;
                   }
                 }
               }
               else {
-                iVar27 = param_1 + -4;
+                iVar26 = param_1 + -4;
               }
               param_9 = param_9 + -1;
-              piVar39 = (int *)*piVar37;
-              piVar38 = (int *)(param_4 + (iVar27 + iVar35) * 4);
-              *piVar37 = *piVar38;
-              *piVar38 = (int)piVar37;
-              *(short *)(piVar37 + 1) = sVar4 + 1;
-              STField<short>(piVar37,6) = sVar5 + -1;
-              *(short *)(piVar37 + 2) = sVar6 + -1;
-              STPiece<0,2>(param_3_after_write) = (undefined2)iVar27;
-              STField<undefined2>(piVar37,10) = (undefined2)param_3_after_write;
-              *(ushort *)(piVar37 + 3) = uVar40;
+              piVar38 = (int *)*piVar36;
+              piVar37 = (int *)(param_4 + (iVar26 + iVar34) * 4);
+              *piVar36 = *piVar37;
+              *piVar37 = (int)piVar36;
+              *(short *)(piVar36 + 1) = sVar4 + 1;
+              STField<short>(piVar36,6) = sVar5 + -1;
+              *(short *)(piVar36 + 2) = sVar6 + -1;
+              STPiece<0,2>(param_3_after_write) = (undefined2)iVar26;
+              STField<undefined2>(piVar36,10) = (undefined2)param_3_after_write;
+              *(ushort *)(piVar36 + 3) = uVar39;
             }
           }
-          piVar38 = piVar39;
-          if ((((uVar29 == 0) &&
-               ((((puVar34[param_2 + -1] == 0 || (iVar35 < (short)puVar34[param_2 + -1])) &&
-                 ((puVar34[param_2] & 0xc000) != 0xc000)) &&
-                (((puVar34[-1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000))))))
+          piVar37 = piVar38;
+          if ((((uVar28 == 0) &&
+               ((((puVar33[param_2 + -1] == 0 || (iVar34 < (short)puVar33[param_2 + -1])) &&
+                 ((puVar33[param_2] & 0xc000) != 0xc000)) &&
+                (((puVar33[-1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000))))))
               && ((psVar2[-1] & 0xc000U) != 0xc000)) && ((psVar2[param_2 + -1] & 0xc000U) != 0xc000)
              ) {
-            puVar34[param_2 + -1] = uVar40;
-            piVar38 = (int *)*piVar39;
+            puVar33[param_2 + -1] = uVar39;
+            piVar37 = (int *)*piVar38;
             param_9 = param_9 + -1;
-            piVar37 = (int *)(param_4 + (param_1 + 4 + iVar35) * 4);
-            *piVar39 = *piVar37;
-            *piVar37 = (int)piVar39;
-            *(short *)(piVar39 + 1) = sVar4 + -1;
-            STField<short>(piVar39,6) = sVar5 + 1;
-            *(short *)(piVar39 + 2) = sVar6 + -1;
-            STField<short>(piVar39,10) = (short)param_1 + 4;
-            *(ushort *)(piVar39 + 3) = uVar40;
+            piVar36 = (int *)(param_4 + (param_1 + 4 + iVar34) * 4);
+            *piVar38 = *piVar36;
+            *piVar36 = (int)piVar38;
+            *(short *)(piVar38 + 1) = sVar4 + -1;
+            STField<short>(piVar38,6) = sVar5 + 1;
+            *(short *)(piVar38 + 2) = sVar6 + -1;
+            STField<short>(piVar38,10) = (short)param_1 + 4;
+            *(ushort *)(piVar38 + 3) = uVar39;
           }
           if (((local_10 == 0) &&
-              ((puVar34[param_2 + 1] == 0 || (iVar35 < (short)puVar34[param_2 + 1])))) &&
-             ((((puVar34[param_2] & 0xc000) != 0xc000 &&
-               ((((puVar34[1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)) &&
+              ((puVar33[param_2 + 1] == 0 || (iVar34 < (short)puVar33[param_2 + 1])))) &&
+             ((((puVar33[param_2] & 0xc000) != 0xc000 &&
+               ((((puVar33[1] & 0xc000) != 0xc000 && ((psVar2[param_2] & 0xc000U) != 0xc000)) &&
                 ((psVar2[1] & 0xc000U) != 0xc000)))) && ((psVar2[param_2 + 1] & 0xc000U) != 0xc000))
              )) {
-            puVar34[param_2 + 1] = uVar40;
-            iVar27 = iVar36;
-            iVar35 = iVar21;
+            puVar33[param_2 + 1] = uVar39;
+            iVar26 = iVar35;
+            iVar34 = iVar20;
             goto LAB_006ce561;
           }
         }
       }
       if (0 < *psVar1) goto cf_break_loop_006CE641;
-      if ((((bVar13) && (-2 < iVar36)) && ((iVar36 < 2 && ((-2 < iVar21 && (iVar21 < 2)))))) &&
-         ((-2 < iVar23 && (iVar23 < 2)))) {
+      if ((((bVar13) && (-2 < iVar35)) && ((iVar35 < 2 && ((-2 < iVar20 && (iVar20 < 2)))))) &&
+         ((-2 < iVar22 && (iVar22 < 2)))) {
         bVar14 = true;
       }
     }
     local_54 = local_54 + 1;
-    piVar37 = (int *)*piVar22;
-  } while ((int *)*piVar22 != nullptr);
-  *piVar22 = (int)piVar38;
+    piVar36 = (int *)*piVar21;
+  } while ((int *)*piVar21 != nullptr);
+  *piVar21 = (int)piVar37;
   param_9 = param_9 + local_54;
-  piVar38 = piVar11;
+  piVar37 = piVar11;
   if (bVar14) goto cf_break_loop_006CE641;
   goto cf_continue_loop_006C9187;
 cf_break_loop_006CE63A:
-  local_4c_mg0 = piVar37;
+  local_4c_mg0 = piVar36;
   local_38 = 0xfffffffe;
 cf_break_loop_006CE641:
   if (sVar3 < 0) {
@@ -7365,9 +7416,9 @@ cf_break_loop_006CE641:
   }
   st::fn_006A5E90((short *)param_4);
   while (local_4c_mg0 != nullptr) {
-    piVar37 = (int *)*local_4c_mg0;
-    st::fn_006A5E90((short *)local_4c_mg0);
-    local_4c_mg0 = piVar37;
+    piVar36 = (int *)*local_4c_mg0;
+    st::fn_006A5E90(reinterpret_cast<short *>(local_4c_mg0));
+    local_4c_mg0 = piVar36;
   }
   return local_38;
 }
@@ -7689,7 +7740,8 @@ void st::fn_006CEC40(AnonShape_006CEC40_BB23E716 *param_1)
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar2 = (**(code **)(*piVar1 + 0x6c))(piVar1);
       if (iVar2 == -0x7789fdb5) {
-        st::fn_006CECB0((AnonShape_006CECB0_97249119 *)param_1,1);
+
+        st::fn_006CECB0(reinterpret_cast<AnonShape_006CECB0_97249119 *>(param_1),1);
       }
     }
     piVar1 = param_1->field_0044;
@@ -7698,7 +7750,8 @@ void st::fn_006CEC40(AnonShape_006CEC40_BB23E716 *param_1)
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar2 = (**(code **)(*piVar1 + 0x6c))(piVar1);
       if (iVar2 == -0x7789fdb5) {
-        st::fn_006CECB0((AnonShape_006CECB0_97249119 *)param_1,0);
+
+        st::fn_006CECB0(reinterpret_cast<AnonShape_006CECB0_97249119 *>(param_1),0);
       }
     }
     piVar1 = param_1->field_0048;
@@ -7719,15 +7772,15 @@ int st::fn_006CECB0(AnonShape_006CECB0_97249119 *param_1,int param_2)
   int *piVar1;
   uint uVar2;
   int iVar3;
-  undefined4 local_38c [95];
-  undefined4 local_210;
+  uint local_38c [95];
+  uint local_210;
   byte local_20c;
   byte local_164;
-  undefined4 local_94 [18];
-  undefined4 local_4c;
-  undefined4 local_48;
-  undefined4 local_40;
-  undefined4 local_2c;
+  uint local_94 [18];
+  uint local_4c;
+  uint local_48;
+  uint local_40;
+  uint local_2c;
   uint local_18 [4];
   int *local_8;
 
@@ -7749,8 +7802,7 @@ int st::fn_006CECB0(AnonShape_006CECB0_97249119 *param_1,int param_2)
     local_40 = 8;
   }
   /* ST_CALLSITE[006CED5A]: CALL dword ptr [EDX + 0x18] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar3 = (**(code **)(*param_1->field_0030 + 0x18))(param_1->field_0030,local_94,&local_8,0);
+  iVar3 = (*STField<code **>(param_1->field_0030,0x0000)[6])(param_1->field_0030,local_94,&local_8,0);
   if (iVar3 == 0) {
     if (param_2 == 0) {
       piVar1 = (int *)param_1->field_0044;
@@ -7777,9 +7829,8 @@ int st::fn_006CECB0(AnonShape_006CECB0_97249119 *param_1,int param_2)
       local_210 = 0x17c;
       local_38c[0] = 0x17c;
       /* ST_CALLSITE[006CEDB3]: CALL dword ptr [ECX + 0x2c] */
-      /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(*param_1->field_0030 + 0x2c))(param_1->field_0030,&local_210,local_38c);
-      uVar2 = st::machine_word_boundary_cast<uint>(param_1->field_000C & 0xfffffffd);
+      (*STField<code **>(param_1->field_0030,0x0000)[0xb])(param_1->field_0030,&local_210,local_38c);
+      uVar2 = param_1->field_000C & 0xfffffffd;
       param_1->field_000C = uVar2;
       if ((((local_18[0] & 0x4000) != 0) && ((local_20c & 0x40) != 0)) ||
          (((local_18[0] & 0x800) != 0 && ((local_164 & 0x40) != 0)))) {
@@ -7794,7 +7845,7 @@ int st::fn_006CECB0(AnonShape_006CECB0_97249119 *param_1,int param_2)
 // 006CEE10 FUN_006cee10
 #line 1 "decomp/ST.exe/functions/006CEE10/decomp.c"
 
-int st::fn_006CEE10(int param_1,int param_2)
+int st::fn_006CEE10(int param_1,RecoveredRecord_006CEE10_585981DD *param_2)
 
 {
   int iVar1;
@@ -7802,8 +7853,7 @@ int st::fn_006CEE10(int param_1,int param_2)
   int iVar3;
   int *piVar4;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar2 = *(int *)(param_2 + 0x4c);
+  iVar2 = param_2->field_004C;
   if (iVar2 < 0) {
     if ((iVar2 != -2) && (iVar2 != -1)) {
       return 10;
@@ -7812,8 +7862,7 @@ int st::fn_006CEE10(int param_1,int param_2)
     piVar4 = (int *)(param_1 + 0xc4);
     do {
       iVar1 = iVar3;
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      if (*piVar4 == *(int *)(param_2 + 0x44)) break;
+      if (*piVar4 == param_2->field_0044) break;
       iVar3 = iVar3 + 1;
       piVar4 = piVar4 + 1;
       iVar1 = iVar2;
@@ -7882,17 +7931,18 @@ int st::fn_006CEEE0(AnonShape_006CEEE0_CDA60BFB *param_1,int *param_2,int param_
   int local_1c;
   int local_18;
   int local_14;
-  undefined4 local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_10;
+  uint local_c;
+  uint local_8;
   iVar2 = param_3 * 0x10;
   local_14 = *(int *)(&param_1->field_0x14 + iVar2);
   local_10 = *(undefined4 *)(&param_1->field_0x18 + iVar2);
   local_c = *(undefined4 *)(&param_1->field_0x1c + iVar2);
   local_8 = *(undefined4 *)(&param_1->field_0x20 + iVar2);
+
   iVar2 = st::fn_006CFEB0(&local_24,param_2,&local_14);
   if (iVar2 != 0) {
+
     iVar1 = st::fn_006D1AD0(param_1->field_01C0,100,local_24,local_20,local_1c,local_18,
                          param_1->field_000C,param_1->field_0010,1);
     return iVar1;
@@ -7913,9 +7963,9 @@ int st::fn_006CEEE0(AnonShape_006CEEE0_CDA60BFB *param_1,int *param_2,int param_
    Evidence: one script-owned pointer shape is anchored by one library source basename, multiple
    semantic function names, and exact first-argument call flow */
 
-int st::fn_006CEF60(int *param_1,AnonShape_006D86E0_D6D32C07 *param_2,
-                RecoveredSourceFamily_dibcopy *param_3,int param_4,
-                AnonShape_006D86E0_768BB816 *param_5,char *param_6,int param_7,int param_8,
+int st::fn_006CEF60(int *param_1,RecoveredGlobalRecordView_00854F00 *param_2,
+                RecoveredSourceFamily_dibcopy *param_3,RecoveredRecord_006CEF60_5CD59663 *param_4,
+                RecoveredGlobalRecordView_00854F68 *param_5,char *param_6,int param_7,int param_8,
                 int *param_9,int param_10,int param_11,uint param_12,undefined1 *param_13)
 
 {
@@ -7923,17 +7973,17 @@ int st::fn_006CEF60(int *param_1,AnonShape_006D86E0_D6D32C07 *param_2,
 
   int *piVar1;
   byte *pbVar2;
-  int *piVar3;
-  int iVar4;
+  RecoveredRecord_006CEF60_5CD59663 *pRVar3;
+  int *piVar4;
   int iVar5;
-  AnonShape_006D86E0_768BB816 *pAVar6;
-  int iVar7;
+  int iVar6;
+  RecoveredGlobalRecordView_00854F68 *pRVar7;
   uint uVar8;
   int iVar9;
   uint uVar10;
   int iVar11;
   int iVar12;
-  AnonShape_006D86E0_D6D32C07 *pAVar13;
+  RecoveredGlobalRecordView_00854F00 *pRVar13;
   uint uVar14;
   int local_a0;
   int local_90;
@@ -7958,9 +8008,8 @@ int st::fn_006CEF60(int *param_1,AnonShape_006D86E0_D6D32C07 *param_2,
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
-  piVar3 = param_9;
+  uint local_8;
+  piVar4 = param_9;
   local_8 = 0xffffffff;
   puStack_c = (undefined *)&DAT_0079da38;
   puStack_10 = (byte *)&st_image_0072D964;
@@ -7978,75 +8027,78 @@ int st::fn_006CEF60(int *param_1,AnonShape_006D86E0_D6D32C07 *param_2,
   local_30 = param_9[2];
   local_2c = (byte *)param_9[3];
   ExceptionList = &local_14;
-  iVar4 = st::fn_006CFEB0(&local_38,&local_38,&local_48);
+
+  iVar5 = st::fn_006CFEB0(&local_38,&local_38,&local_48);
   pbVar2 = local_2c;
   uVar8 = local_30;
-  iVar7 = local_34;
-  iVar5 = local_38;
-  pAVar6 = param_5;
-  iVar11 = param_4;
-  if (iVar4 == 0) goto LAB_006cf911;
+  iVar6 = local_34;
+  iVar11 = local_38;
+  pRVar7 = param_5;
+  pRVar3 = param_4;
+  if (iVar5 == 0) goto LAB_006cf911;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  if ((*(int *)(*param_1 + 0x20) == 0x10) && (local_24 = *(int *)(param_4 + 0xb4), local_24 == 0)) {
+  if ((*(int *)(*param_1 + 0x20) == 0x10) && (local_24 = param_4->field_00B4, local_24 == 0)) {
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_24 = *(int *)(*param_1 + 0x4c0);
   }
   if ((param_12 & 0xa0000000) != 0) {
     local_30 = local_30 + local_38;
     local_2c = local_2c + local_34;
-    local_60 = (*piVar3 - param_7) + local_38;
-    local_5c = (piVar3[1] - param_8) + local_34;
+    local_60 = (*piVar4 - param_7) + local_38;
+    local_5c = (piVar4[1] - param_8) + local_34;
     local_58 = (local_60 - local_38) + local_30;
     local_54 = local_2c + (local_5c - local_34);
     iVar11 = 0;
     /* ST_CALLSITE[006CF06F]: CALL dword ptr [ECX + 0x14] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    while (iVar5 = (**(code **)(**(int **)(*param_1 + 0x44) + 0x14))
-                             /* ST_CALLSITE[006CF06F]: CALL dword ptr [ECX + 0x14] */
+    while (iVar6 = (**(code **)(**(int **)(*param_1 + 0x44) + 0x14))
                              (*(int **)(*param_1 + 0x44),&local_38,param_5,&local_60,0x1008000,0),
-          iVar5 != 0) {
-      if (iVar5 == -0x7789fe3e) {
+          iVar6 != 0) {
+      if (iVar6 == -0x7789fe3e) {
         st::fn_006CEC40((AnonShape_006CEC40_BB23E716 *)*param_1);
         st::fn_006CEE60((int)param_1);
       }
       else {
-        if (((iVar5 != -0x7789ff60) && (iVar5 != -0x7789fe52)) || (iVar11 != 0)) break;
+        if (((iVar6 != -0x7789ff60) && (iVar6 != -0x7789fe52)) || (iVar11 != 0)) break;
+        /* ST_CALLSITE[006CF0A6]: CALL dword ptr [0x0085bc6c] */
         st::external_00000050(2);
       }
       iVar11 = iVar11 + 1;
       if (1 < iVar11) break;
     }
-    if ((iVar5 == -0x7789ff60) || (local_28 = iVar5, iVar5 == -0x7789fe52)) {
+    if ((iVar6 == -0x7789ff60) || (local_28 = iVar6, iVar6 == -0x7789fe52)) {
       local_28 = 0;
     }
     goto LAB_006cf911;
   }
   if ((param_12 & 0xc0000000) != 0) {
     if (param_6 == nullptr) {
-      param_6 = (char *)st::fn_006B4FA0((int *)param_5);
+      /* ST_CALLSITE[006CF0E3]: CALL 0x006b4fa0; direct=006B4FA0 FUN_006b4fa0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__stdcall;pointer:/char;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006B4FA0_DAC3A217 */
+      param_6 = st::pointer_boundary_cast<char *>(st::fn_006B4FA0(reinterpret_cast<RecoveredRecord_006B4FA0_DAC3A217 *>(param_5)));
     }
-    uVar8 = (uint)*(ushort *)&pAVar6->field_0xe * *(int *)&pAVar6->field_0x4 + 0x1f >> 3 &
+    uVar8 = (uint)*(ushort *)&pRVar7->field_0xe * *(int *)&pRVar7->field_0x4 + 0x1f >> 3 &
             0x1ffffffc;
-    param_6 = param_6 + ((*(int *)&pAVar6->field_0x8 - ((param_9[1] - param_8) + local_34)) -
+    param_6 = param_6 + ((*(int *)&pRVar7->field_0x8 - ((param_9[1] - param_8) + local_34)) -
                         (int)local_2c) * uVar8 + (*param_9 - param_7) + local_38;
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
-    param_2 = (AnonShape_006D86E0_D6D32C07 *)
-              (&param_2->field_0x0 + (int)(local_2c + local_34 + -1) * (int)param_3 + local_38);
+    param_2 = reinterpret_cast<RecoveredGlobalRecordView_00854F00 *>((&param_2->field_0x0 + (int)(local_2c + local_34 + -1) * (int)param_3 + local_38));
     local_8 = 0;
-    st::fn_006CEBE0((char *)param_2,-(int)param_3,param_6,uVar8,local_30,(int)local_2c,
-                 ((char *)iVar11)[0x54]);
+    st::fn_006CEBE0(reinterpret_cast<char *>(param_2),-(int)param_3,param_6,uVar8,local_30,(int)local_2c,
+                 pRVar3->field_0x54);
     goto LAB_006cf911;
   }
   if ((param_12 & 0x5000000) != 0) {
     local_8c = 0;
     if ((char)param_12 == '\x02') {
+
       local_28 = st::fn_006D9F30(param_1,local_38,local_34,local_30,(int)local_2c);
       if (local_28 != 0) goto LAB_006cf911;
       local_4c = 0;
       local_28 = 0;
       do {
+
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        iVar12 = st::fn_006BBE40(*(int **)(*param_1 + 0x44),(uint *)&param_2,(int *)&param_3,0x20);
+        iVar12 = st::fn_006BBE40(*(int **)(*param_1 + 0x44),reinterpret_cast<uint *>(&param_2),reinterpret_cast<int *>(&param_3),0x20);
         local_28 = iVar12;
         if (iVar12 == 0) goto LAB_006cf209;
         if (iVar12 != -0x7789fe3e) break;
@@ -8059,98 +8111,104 @@ LAB_006cf209:
     local_30 = local_30 + local_38;
     local_2c = local_2c + local_34;
     local_a0 = 0;
-    for (pAVar6 = param_5; (local_a0 < param_10 && (iVar5 = *(int *)&pAVar6->field_0x6, iVar5 != 0))
-        ; pAVar6 = (AnonShape_006D86E0_768BB816 *)&pAVar6->field_0xa) {
-      if (-1 < *(short *)&pAVar6->field_0x4) {
-        iVar7 = ((int)*(short *)pAVar6 - STField<int>(iVar11,0x28)) + STField<int>(iVar11,0x18);
-        iVar12 = ((int)*(short *)&pAVar6->field_0002 - STField<int>(iVar11,0x2C)) +
-                 STField<int>(iVar11,0x1C);
-        iVar4 = ((int)STField<short>(iVar5,0xE) - *param_9) + iVar7 + param_7;
-        iVar9 = ((int)STField<short>(iVar5,0x10) - param_9[1]) + iVar12 + param_8;
-        local_58 = (uint)STField<short>(iVar5,0x12);
-        local_54 = (byte *)(int)STField<short>(iVar5,0x14);
-        local_60 = iVar4;
+    for (pRVar7 = param_5;
+        (local_a0 < param_10 && (iVar11 = *(int *)&pRVar7->field_0x6, iVar11 != 0));
+        pRVar7 = reinterpret_cast<RecoveredGlobalRecordView_00854F68 *>(reinterpret_cast<byte *>(pRVar7) + 0xA)) {
+      if (-1 < *(short *)&pRVar7->field_0x4) {
+        iVar6 = ((int)*(short *)pRVar7 - *(int *)&pRVar3->field_0x28) + *(int *)&pRVar3->field_0x18;
+        iVar12 = ((int)*(short *)&pRVar7->field_0002 - *(int *)&pRVar3->field_0x2c) +
+                 *(int *)&pRVar3->field_0x1c;
+        iVar5 = ((int)STField<short>(iVar11,0xE) - *param_9) + iVar6 + param_7;
+        iVar9 = ((int)STField<short>(iVar11,0x10) - param_9[1]) + iVar12 + param_8;
+        local_58 = (uint)STField<short>(iVar11,0x12);
+        local_54 = (byte *)(int)STField<short>(iVar11,0x14);
+        local_60 = iVar5;
         local_5c = iVar9;
-        iVar5 = st::fn_006CFEB0(&local_60,&local_60,&local_38);
-        if (iVar5 != 0) {
-          iVar4 = local_60 - iVar4;
+
+        iVar11 = st::fn_006CFEB0(&local_60,&local_60,&local_38);
+        if (iVar11 != 0) {
+          iVar5 = local_60 - iVar5;
           uVar8 = local_5c - iVar9;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
           if (*(int *)(*param_1 + 0x20) == 0x10) {
-            pAVar13 = (AnonShape_006D86E0_D6D32C07 *)
-                      (&param_2->field_0x0 + local_60 * 2 + local_5c * (int)param_3);
+            pRVar13 = reinterpret_cast<RecoveredGlobalRecordView_00854F00 *>((&param_2->field_0x0 + local_60 * 2 + local_5c * (int)param_3));
           }
           else {
-            pAVar13 = (AnonShape_006D86E0_D6D32C07 *)
-                      (&param_2->field_0x0 + local_5c * (int)param_3 + local_60);
+            pRVar13 = reinterpret_cast<RecoveredGlobalRecordView_00854F00 *>((&param_2->field_0x0 + local_5c * (int)param_3 + local_60));
           }
           uVar10 = param_12 & 0xff;
           if (uVar10 == 0) {
             local_8 = 1;
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             if (*(int *)(*param_1 + 0x20) == 0x10) {
-              iVar5 = STField<int>(iVar11,0xBC) + 7;
-              st::fn_006D3300((uint *)pAVar13,(int)param_3,*(byte **)&pAVar6->field_0x6,iVar4,uVar8,
-                           local_58,local_54,local_24,*(byte **)(iVar11 + 0xb8),
-                           (int)(iVar5 + (iVar5 >> 0x1f & 7U)) >> 3,
-                           ((*param_9 - STField<int>(iVar11,0x18)) - param_7) +
-                           STField<int>(iVar11,0x28) + local_60,
-                           ((param_9[1] - param_8) - STField<int>(iVar11,0x1C)) + local_5c +
-                           STField<int>(iVar11,0x2C));
+              iVar11 = *(int *)&pRVar3[1].field_0x4 + 7;
+              st::fn_006D3300(reinterpret_cast<uint *>(pRVar13),(int)param_3,
+                           *(RecoveredRecord_006D3300_0D49F2B9 **)&pRVar7->field_0x6,iVar5,uVar8,
+                           local_58,local_54,local_24,*(byte **)(pRVar3 + 1),
+                           st::storage_bit_cast<int>(static_cast<uint32_t>(iVar11 + (iVar11 >> 0x1f & 7U))) >> 3,
+                           ((*param_9 - *(int *)&pRVar3->field_0x18) - param_7) +
+                           *(int *)&pRVar3->field_0x28 + local_60,
+                           ((param_9[1] - param_8) - *(int *)&pRVar3->field_0x1c) + local_5c +
+                           *(int *)&pRVar3->field_0x2c);
             }
             else {
-              iVar5 = STField<int>(iVar11,0xBC) + 7;
-              st::fn_006D2820((byte *)pAVar13,param_3,*(byte **)&pAVar6->field_0x6,iVar4,uVar8,local_58
-                           ,(uint)local_54,STField<int>(iVar11,0xB0),*(byte **)(iVar11 + 0xb8),
-                           (int)(iVar5 + (iVar5 >> 0x1f & 7U)) >> 3,
-                           ((*param_9 - STField<int>(iVar11,0x18)) - param_7) +
-                           STField<int>(iVar11,0x28) + local_60,
-                           (byte *)(((param_9[1] - param_8) - STField<int>(iVar11,0x1C)) + local_5c +
-                                   STField<int>(iVar11,0x2C)));
+              iVar11 = *(int *)&pRVar3[1].field_0x4 + 7;
+              st::fn_006D2820(reinterpret_cast<byte *>(pRVar13),param_3,
+                           *(RecoveredRecord_006D2820_5C2BCC8C **)&pRVar7->field_0x6,iVar5,uVar8,
+                           local_58,(uint)local_54,*(int *)&pRVar3->field_0xb0,
+                           *(byte **)(pRVar3 + 1),st::storage_bit_cast<int>(static_cast<uint32_t>(iVar11 + (iVar11 >> 0x1f & 7U))) >> 3,
+                           ((*param_9 - *(int *)&pRVar3->field_0x18) - param_7) +
+                           *(int *)&pRVar3->field_0x28 + local_60,
+                           (byte *)(((param_9[1] - param_8) - *(int *)&pRVar3->field_0x1c) +
+                                    local_5c + *(int *)&pRVar3->field_0x2c));
             }
 LAB_006cf37b:
             local_8 = 0xffffffff;
           }
           else if (uVar10 == 2) {
-            pbVar2 = *(byte **)&pAVar6->field_0x6;
-            local_90 = (int)*(short *)pAVar6 + iVar7 + (*(short *)(pbVar2 + 0xe) - local_38) +
+            pbVar2 = *(byte **)&pRVar7->field_0x6;
+            local_90 = (int)*(short *)pRVar7 + iVar6 + (*(short *)(pbVar2 + 0xe) - local_38) +
                        param_7;
             if (local_90 < 0) {
               local_90 = 0;
             }
-            iVar5 = (int)*(short *)&pAVar6->field_0002 +
-                    iVar12 + (*(short *)(pbVar2 + 0x10) - local_34) + param_8;
-            if (iVar5 < 0) {
-              iVar5 = 0;
+            iVar11 = (int)*(short *)&pRVar7->field_0002 +
+                     iVar12 + (*(short *)(pbVar2 + 0x10) - local_34) + param_8;
+            if (iVar11 < 0) {
+              iVar11 = 0;
             }
-            local_8c = st::fn_006DA080(param_1,(uint *)pAVar13,(int)param_3,local_90,iVar5,pbVar2,iVar4
-                                    ,uVar8,local_58,local_54,param_13);
+
+            local_8c = st::fn_006DA080(param_1,reinterpret_cast<uint *>(pRVar13),(int)param_3,local_90,iVar11,pbVar2,
+                                    iVar5,uVar8,local_58,local_54,param_13);
           }
           else if (uVar10 == 1) {
             if ((param_1[0x74] == 0) ||
-               (((*(AnonShape_006D86E0_768BB816 **)&pAVar6->field_0x6)->field_000D & 3) != 1)) {
-              local_20 = STField<uint>(iVar11,0x5C);
-              if ((STField<int>(iVar11,0x64) == 1) && (local_20 == 0)) {
+               (((*(RecoveredGlobalRecordView_00854F68 **)&pRVar7->field_0x6)->field_000D & 3) != 1)
+               ) {
+              local_20 = *(uint *)&pRVar3->field_0x5c;
+              if ((*(int *)&pRVar3->field_0x64 == 1) && (local_20 == 0)) {
                 local_20 = param_1[0x75];
               }
               local_8 = 2;
-              iVar5 = STField<int>(iVar11,0xBC) + 7;
-              st::fn_006D8A60((byte *)pAVar13,(int)param_3,
-                           *(byte **)&pAVar6->field_0x6,iVar4,uVar8,local_58,(int)local_54,
+              iVar11 = *(int *)&pRVar3[1].field_0x4 + 7;
+              st::fn_006D8A60(reinterpret_cast<byte *>(pRVar13),(int)param_3,
+                           *(RecoveredRecord_006D8A60_0D169E12 **)&pRVar7->field_0x6,iVar5,uVar8,
+                           local_58,(int)local_54,
                            (undefined *)(-(uint)((param_12 & 0x100) != 0) & local_20),
-                           STField<uint>(iVar11,0x60),STField<int>(iVar11,0x64),
-                           *(undefined **)(iVar11 + 0xb0),*(byte **)(iVar11 + 0xb8),
-                           (int)(iVar5 + (iVar5 >> 0x1f & 7U)) >> 3,
-                           ((*param_9 - STField<int>(iVar11,0x18)) - param_7) +
-                           STField<int>(iVar11,0x28) + local_60,
-                           ((param_9[1] - param_8) - STField<int>(iVar11,0x1C)) + local_5c +
-                           STField<int>(iVar11,0x2C));
+                           *(uint *)&pRVar3->field_0x60,*(int *)&pRVar3->field_0x64,
+                           *(undefined **)&pRVar3->field_0xb0,*(byte **)(pRVar3 + 1),
+                           st::storage_bit_cast<int>(static_cast<uint32_t>(iVar11 + (iVar11 >> 0x1f & 7U))) >> 3,
+                           ((*param_9 - *(int *)&pRVar3->field_0x18) - param_7) +
+                           *(int *)&pRVar3->field_0x28 + local_60,
+                           ((param_9[1] - param_8) - *(int *)&pRVar3->field_0x1c) + local_5c +
+                           *(int *)&pRVar3->field_0x2c);
             }
             else {
               local_8 = 3;
-              st::fn_006D86E0(pAVar13,(int)param_3,*(AnonShape_006D86E0_768BB816 **)&pAVar6->field_0x6,
-                           iVar4,uVar8,local_58,(uint)local_54,(byte)STField<undefined4>(iVar11,0x60),
-                           (char)STField<undefined4>(iVar11,0x64));
+              st::fn_006D86E0(pRVar13,(int)param_3,
+                           *(RecoveredGlobalRecordView_00854F68 **)&pRVar7->field_0x6,iVar5,uVar8,
+                           local_58,(uint)local_54,(byte)*(undefined4 *)&pRVar3->field_0x60,
+                           (char)*(undefined4 *)&pRVar3->field_0x64);
             }
             goto LAB_006cf37b;
           }
@@ -8171,13 +8229,15 @@ LAB_006cf37b:
   }
   uVar10 = param_12 & 0xff;
   if (uVar10 == 2) {
+
     local_28 = st::fn_006D9F30(param_1,local_38,local_34,local_30,(int)local_2c);
     if (local_28 != 0) goto LAB_006cf911;
     local_4c = 0;
     local_28 = 0;
     do {
+
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      iVar12 = st::fn_006BBE40(*(int **)(*param_1 + 0x44),(uint *)&param_2,(int *)&param_3,0x20);
+      iVar12 = st::fn_006BBE40(*(int **)(*param_1 + 0x44),reinterpret_cast<uint *>(&param_2),reinterpret_cast<int *>(&param_3),0x20);
       local_28 = iVar12;
       if (iVar12 == 0) goto LAB_006cf695;
       if (iVar12 != -0x7789fe3e) break;
@@ -8189,58 +8249,62 @@ LAB_006cf37b:
 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
 LAB_006cf695:
   if (*(int *)(*param_1 + 0x20) == 0x10) {
-    param_2 = (AnonShape_006D86E0_D6D32C07 *)
-              (&param_2->field_0x0 + iVar5 * 2 + iVar7 * (int)param_3);
+    param_2 = reinterpret_cast<RecoveredGlobalRecordView_00854F00 *>((&param_2->field_0x0 + iVar11 * 2 + iVar6 * (int)param_3));
   }
   else {
-    param_2 = (AnonShape_006D86E0_D6D32C07 *)(&param_2->field_0x0 + iVar7 * (int)param_3 + iVar5);
+    param_2 = reinterpret_cast<RecoveredGlobalRecordView_00854F00 *>((&param_2->field_0x0 + iVar6 * (int)param_3 + iVar11));
   }
-  iVar5 = (*param_9 - param_7) + iVar5;
-  uVar14 = (param_9[1] - param_8) + iVar7;
+  iVar11 = (*param_9 - param_7) + iVar11;
+  uVar14 = (param_9[1] - param_8) + iVar6;
   if (uVar10 == 0) {
     local_8 = 4;
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     if (*(int *)(*param_1 + 0x20) == 0x10) {
-      iVar7 = STField<int>(iVar11,0xBC) + 7;
-      st::fn_006D3300((uint *)param_2,(int)param_3,(byte *)param_5,iVar5,uVar14,uVar8,pbVar2,local_24,
-                   *(byte **)(iVar11 + 0xb8),(int)(iVar7 + (iVar7 >> 0x1f & 7U)) >> 3,
-                   (STField<int>(iVar11,0x28) - STField<int>(iVar11,0x18)) + iVar5,
-                   (STField<int>(iVar11,0x2C) - STField<int>(iVar11,0x1C)) + uVar14);
+      iVar6 = *(int *)&pRVar3[1].field_0x4 + 7;
+      st::fn_006D3300(reinterpret_cast<uint *>(param_2),(int)param_3,reinterpret_cast<RecoveredRecord_006D3300_0D49F2B9 *>(param_5),iVar11,
+                   uVar14,uVar8,pbVar2,local_24,*(byte **)(pRVar3 + 1),
+                   st::storage_bit_cast<int>(static_cast<uint32_t>(iVar6 + (iVar6 >> 0x1f & 7U))) >> 3,
+                   (*(int *)&pRVar3->field_0x28 - *(int *)&pRVar3->field_0x18) + iVar11,
+                   (*(int *)&pRVar3->field_0x2c - *(int *)&pRVar3->field_0x1c) + uVar14);
     }
     else {
-      iVar7 = STField<int>(iVar11,0xBC) + 7;
-      st::fn_006D2820((byte *)param_2,param_3,(byte *)param_5,iVar5,uVar14,uVar8,(uint)pbVar2,
-                   STField<int>(iVar11,0xB0),*(byte **)(iVar11 + 0xb8),
-                   (int)(iVar7 + (iVar7 >> 0x1f & 7U)) >> 3,
-                   (STField<int>(iVar11,0x28) - STField<int>(iVar11,0x18)) + iVar5,
-                   (byte *)((STField<int>(iVar11,0x2C) - STField<int>(iVar11,0x1C)) + uVar14));
+      iVar6 = *(int *)&pRVar3[1].field_0x4 + 7;
+      st::fn_006D2820(reinterpret_cast<byte *>(param_2),param_3,reinterpret_cast<RecoveredRecord_006D2820_5C2BCC8C *>(param_5),iVar11,
+                   uVar14,uVar8,(uint)pbVar2,*(int *)&pRVar3->field_0xb0,*(byte **)(pRVar3 + 1),
+                   st::storage_bit_cast<int>(static_cast<uint32_t>(iVar6 + (iVar6 >> 0x1f & 7U))) >> 3,
+                   (*(int *)&pRVar3->field_0x28 - *(int *)&pRVar3->field_0x18) + iVar11,
+                   (byte *)((*(int *)&pRVar3->field_0x2c - *(int *)&pRVar3->field_0x1c) + uVar14));
     }
 LAB_006cf8ee:
     local_8 = 0xffffffff;
   }
   else if (uVar10 == 2) {
-    local_28 = st::fn_006DA080(param_1,(uint *)param_2,(int)param_3,0,0,(byte *)param_5,iVar5,uVar14,
+
+    local_28 = st::fn_006DA080(param_1,reinterpret_cast<uint *>(param_2),(int)param_3,0,0,reinterpret_cast<byte *>(param_5),iVar11,uVar14,
                             uVar8,pbVar2,param_13);
   }
   else if (uVar10 == 1) {
     if ((param_1[0x74] == 0) || ((param_5->field_000D & 3) != 1)) {
-      local_20 = STField<uint>(iVar11,0x5C);
-      if ((STField<int>(iVar11,0x64) == 1) && (local_20 == 0)) {
+      local_20 = *(uint *)&pRVar3->field_0x5c;
+      if ((*(int *)&pRVar3->field_0x64 == 1) && (local_20 == 0)) {
         local_20 = param_1[0x75];
       }
       local_8 = 5;
-      iVar7 = STField<int>(iVar11,0xBC) + 7;
-      st::fn_006D8A60((byte *)param_2,(int)param_3,(byte *)param_5,iVar5,uVar14,
-                   uVar8,(int)pbVar2,(undefined *)(-(uint)((param_12 & 0x100) != 0) & local_20),
-                   STField<uint>(iVar11,0x60),STField<int>(iVar11,0x64),*(undefined **)(iVar11 + 0xb0),
-                   *(byte **)(iVar11 + 0xb8),(int)(iVar7 + (iVar7 >> 0x1f & 7U)) >> 3,
-                   (STField<int>(iVar11,0x28) - STField<int>(iVar11,0x18)) + iVar5,
-                   (STField<int>(iVar11,0x2C) - STField<int>(iVar11,0x1C)) + uVar14);
+      iVar6 = *(int *)&pRVar3[1].field_0x4 + 7;
+      st::fn_006D8A60(reinterpret_cast<byte *>(param_2),(int)param_3,reinterpret_cast<RecoveredRecord_006D8A60_0D169E12 *>(param_5),iVar11,
+                   uVar14,uVar8,(int)pbVar2,
+                   (undefined *)(-(uint)((param_12 & 0x100) != 0) & local_20),
+                   *(uint *)&pRVar3->field_0x60,*(int *)&pRVar3->field_0x64,
+                   *(undefined **)&pRVar3->field_0xb0,*(byte **)(pRVar3 + 1),
+                   st::storage_bit_cast<int>(static_cast<uint32_t>(iVar6 + (iVar6 >> 0x1f & 7U))) >> 3,
+                   (*(int *)&pRVar3->field_0x28 - *(int *)&pRVar3->field_0x18) + iVar11,
+                   (*(int *)&pRVar3->field_0x2c - *(int *)&pRVar3->field_0x1c) + uVar14);
     }
     else {
       local_8 = 6;
-      st::fn_006D86E0(param_2,(int)param_3,param_5,iVar5,uVar14,uVar8,(uint)pbVar2,
-                   (byte)STField<undefined4>(iVar11,0x60),(char)STField<undefined4>(iVar11,0x64));
+      st::fn_006D86E0(param_2,(int)param_3,param_5,iVar11,uVar14,uVar8,(uint)pbVar2,
+                   (byte)*(undefined4 *)&pRVar3->field_0x60,(char)*(undefined4 *)&pRVar3->field_0x64
+                  );
     }
     goto LAB_006cf8ee;
   }
@@ -8366,8 +8430,8 @@ void st::fn_006CF950(uint *param_1)
   int iVar5;
   int iVar6;
   short *psVar7;
-  undefined4 local_a0;
-  undefined4 local_9c;
+  uint local_a0;
+  uint local_9c;
   uint local_98;
   uint local_94;
   int local_20;
@@ -8432,8 +8496,8 @@ void st::fn_006CF950(uint *param_1)
               local_1c = local_1c - 1;
             } while (local_1c != 0);
           }
-          param_1[10] = st::machine_word_boundary_cast<uint>(param_1[6] + local_10);
-          param_1[0xb] = st::machine_word_boundary_cast<uint>(param_1[7] + local_8);
+          param_1[10] = param_1[6] + local_10;
+          param_1[0xb] = param_1[7] + local_8;
           param_1[0xd] = iVar3 - local_8;
           param_1[0xc] = iVar6 - local_10;
           param_1[8] = local_c;
@@ -8516,8 +8580,8 @@ void st::fn_006CFBE0(uint *param_1)
   uint uVar3;
   uint uVar4;
   int iVar5;
-  undefined4 local_8c;
-  undefined4 local_88;
+  uint local_8c;
+  uint local_88;
   uint local_84;
   uint local_80;
   uint local_10;
@@ -8643,7 +8707,7 @@ undefined4 st::fn_006CFD90(byte *param_1,int param_2,int param_3)
     pbVar1 = param_1 + (param_1[0xd] >> 1 & 0xe) + 0x16;
   }
   else {
-    pbVar1 = st::fn_006CFE10(param_1,param_3);
+    pbVar1 = st::fn_006CFE10(reinterpret_cast<RecoveredRecord_006CFE10_B59F6D2D *>(param_1),param_3);
   }
   uVar3 = (uint)*pbVar1;
   pbVar2 = pbVar1 + 1;
@@ -8676,7 +8740,7 @@ undefined4 st::fn_006CFD90(byte *param_1,int param_2,int param_3)
 // 006CFE10 FUN_006cfe10
 #line 1 "decomp/ST.exe/functions/006CFE10/decomp.c"
 
-byte * st::fn_006CFE10(byte *param_1,int param_2)
+byte * st::fn_006CFE10(RecoveredRecord_006CFE10_B59F6D2D *param_1,int param_2)
 
 {
   byte bVar1;
@@ -8686,56 +8750,72 @@ byte * st::fn_006CFE10(byte *param_1,int param_2)
   int iVar5;
   int iVar6;
   byte *pbVar7_mg1;
-  byte *pbVar7;
+  RecoveredRecord_006CFE10_B59F6D2D *pRVar7;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  iVar2 = (int)*(short *)(param_1 + 0x12);
-  uVar4 = (param_1[0xd] & 0x1c) >> 2;
-  uVar3 = (int)(param_2 + (param_2 >> 0x1f & 0xfU)) >> 4;
-  pbVar7 = param_1 + uVar4 * 2 + 0x16;
+  iVar2 = (int)param_1->field_0012;
+  uVar4 = ((byte)param_1->field_0xd & 0x1c) >> 2;
+  uVar3 = st::storage_bit_cast<int>(static_cast<uint32_t>(param_2 + (param_2 >> 0x1f & 0xfU))) >> 4;
+  pRVar7 = reinterpret_cast<RecoveredRecord_006CFE10_B59F6D2D *>((&param_1[1].field_0x2 + uVar4 * 2));
   if ((0 < (int)uVar3) && (uVar4 != 0)) {
     if ((int)uVar4 < (int)uVar3) {
       uVar3 = uVar4;
     }
     param_2 = param_2 + uVar3 * -0x10;
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    pbVar7 = param_1 + *(ushort *)(param_1 + uVar3 * 2 + 0x14) + 0x16;
+    pRVar7 = reinterpret_cast<RecoveredRecord_006CFE10_B59F6D2D *>((&param_1[1].field_0x2 + *(ushort *)(&param_1[1].field_0x0 + uVar3 * 2)));
   }
-  auto param_1_after_write = pbVar7; /* compiler stack-slot lifetime split */
+  auto param_1_after_write = pRVar7; /* compiler stack-slot lifetime split */
   uVar3 = 0;
   iVar6 = param_2 * iVar2;
-  pbVar7 = param_1_after_write;
+  pRVar7 = param_1_after_write;
   do {
     while( true ) {
-      pbVar7_mg1 = pbVar7;
+      pbVar7_mg1 = reinterpret_cast<byte *>(pRVar7);
       iVar5 = iVar6 - uVar3;
       if (iVar5 == 0 || iVar6 < (int)uVar3) {
         return pbVar7_mg1;
       }
       bVar1 = *pbVar7_mg1;
       uVar3 = (uint)bVar1;
-      pbVar7 = pbVar7_mg1 + 1;
+      pRVar7 = reinterpret_cast<RecoveredRecord_006CFE10_B59F6D2D *>((pbVar7_mg1 + 1));
       if (uVar3 == 0) break;
       iVar6 = iVar5;
       if ((bVar1 & 0x80) != 0) {
         if ((bVar1 & 0x40) == 0) {
           uVar3 = bVar1 & 0xffffff3f;
-          pbVar7 = pbVar7 + uVar3;
+          pRVar7 = (RecoveredRecord_006CFE10_B59F6D2D *)((int)pRVar7 + uVar3);
         }
         else {
           uVar3 = bVar1 & 0xffffff3f;
-          pbVar7 = pbVar7_mg1 + 2;
+          pRVar7 = reinterpret_cast<RecoveredRecord_006CFE10_B59F6D2D *>((pbVar7_mg1 + 2));
         }
       }
     }
     iVar6 = iVar5 - iVar2;
   } while (iVar6 != 0 && iVar2 <= iVar5);
-  return pbVar7;
+  return (byte *)pRVar7;
 }
 
 // 006CFEB0 FUN_006cfeb0
 #line 4 "decomp/ST.exe/functions/006CFEB0/decomp.c"
-undefined4 __cdecl st::fn_006CFEB0(int *param_1,int *param_2,int *param_3)
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (29), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=006B3930 @ 006B3A1A -> read as EAX on
+   every CFG path | 006B3F80 @ 006B3FE6 -> read as EAX on every CFG path | 006B4030 @ 006B4096 ->
+   read as EAX on every CFG path | 006B42D0 @ 006B43AC -> read as EAX on every CFG path | 006B4680 @
+   006B4785 -> read as EAX on every CFG path | 006B48E0 @ 006B4993 -> read as EAX on every CFG path
+   | 006B82E0 @ 006B8376 -> read as EAX on every CFG path | 006B82E0 @ 006B83A6 -> read as EAX on
+   every CFG path | 006B84D0 @ 006B8564 -> read as EAX on every CFG path | 006BC970 @ 006BC9D0 ->
+   read as EAX on every CFG path | 006BCD10 @ 006BCDA3 -> read as EAX on every CFG path | 006BCD10 @
+   006BCEC8 -> read as EAX on every CFG path | 006BD4B0 @ 006BD5F3 -> read as EAX on every CFG path
+   | 006BD740 @ 006BDA55 -> read as EAX on every CFG path | 006BD740 @ 006BDD27 -> read as EAX on
+   every CFG path | 006BD740 @ 006BDE52 -> read as EAX on every CFG path | 006BD740 @ 006BE45D ->
+   killed on every CFG path | 006BEA40 @ 006BEDB3 -> read as EAX on every CFG path | 006BEA40 @
+   006BEF9A -> read as EAX on every CFG path | 006BF9F0 @ 006BFA4C -> read as EAX on every CFG path
+   | 006C5000 @ 006C50B1 -> read as EAX on every CFG path | 006C6470 @ 006C64E3 -> read as EAX on
+   every CFG path | 006C6660 @ 006C66D3 -> read as EAX on every CFG path | 006C68F0 @ 006C6984 ->
+   read as EAX on every CFG path */
+
+int __cdecl st::fn_006CFEB0(int *param_1,int *param_2,int *param_3)
 
 {
   int iVar1;
@@ -8749,7 +8829,7 @@ undefined4 __cdecl st::fn_006CFEB0(int *param_1,int *param_2,int *param_3)
   if (iVar1 <= *param_3) {
     iVar5 = *param_3;
   }
-  iVar4 = st::machine_word_boundary_cast<int>(param_2[2] + iVar1);
+  iVar4 = param_2[2] + iVar1;
   if (param_3[2] <= param_2[2] + iVar1) {
     iVar4 = param_3[2];
   }
@@ -8759,7 +8839,7 @@ undefined4 __cdecl st::fn_006CFEB0(int *param_1,int *param_2,int *param_3)
     if (iVar1 <= param_3[1]) {
       iVar2 = param_3[1];
     }
-    iVar3 = st::machine_word_boundary_cast<int>(param_2[3] + iVar1);
+    iVar3 = param_2[3] + iVar1;
     if (param_3[3] <= param_2[3] + iVar1) {
       iVar3 = param_3[3];
     }
@@ -8773,4 +8853,3 @@ undefined4 __cdecl st::fn_006CFEB0(int *param_1,int *param_2,int *param_3)
   }
   return 0;
 }
-

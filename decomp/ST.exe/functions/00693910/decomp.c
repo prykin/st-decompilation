@@ -6,23 +6,24 @@
    structure /SubmarineTitans/Recovered/PointerShapes/AnonShape_00693910_1CC6632C (current recovered
    extent=6560) */
 
-AnonShape_00693910_1CC6632C * __fastcall FUN_00693910(AnonShape_00693910_1CC6632C *param_1)
+RecoveredRecordView_00693910_0CDC4AE1 * __fastcall
+FUN_00693910(RecoveredRecordView_00693910_0CDC4AE1 *param_1)
 
 {
   int iVar1;
   uint *puVar2;
   byte *puVar3;
-  AnonShape_00693910_1CC6632C *pAVar4;
+  RecoveredRecordView_00693910_0CDC4AE1 *pRVar4;
   byte *puVar5;
   int local_8;
 
   puVar2 = (undefined4 *)&param_1->field_0x4a;
-  pAVar4 = param_1;
+  pRVar4 = param_1;
   for (iVar1 = 0x666; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(undefined4 *)pAVar4 = 0;
-    pAVar4 = (AnonShape_00693910_1CC6632C *)&pAVar4->field_0x4;
+    *(undefined4 *)pRVar4 = 0;
+    pRVar4 = (RecoveredRecordView_00693910_0CDC4AE1 *)&pRVar4->field_0x4;
   }
-  *(undefined1 *)pAVar4 = 0;
+  *(undefined1 *)pRVar4 = 0;
   *(undefined4 *)&param_1->field_0x4 = 0x8f000205;
   param_1->field_02DA = 1;
   param_1->field_02DB = 1;

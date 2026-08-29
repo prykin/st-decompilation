@@ -18,7 +18,7 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
   char *pcVar6;
   int iVar7;
   float *pfVar8;
-  undefined1 local_10;
+  byte local_10;
   float local_f;
   short *local_8;
 
@@ -41,17 +41,20 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
       }
       if (pfVar3 == pfVar8) {
         local_8 = (short *)(pcVar2 + (int)pfVar8 * 5 + 1);
+
         iVar4 = thunk_FUN_006686f0((int)*(short *)(pcVar2 + (int)pfVar8 * 5 + 1));
+
         if ((iVar4 < 0) || (iVar4 = thunk_FUN_00668a70((int)*local_8), iVar4 != 0)) {
           auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
-          param_2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::
-                    thunk_FUN_0064a970((AnonReceiver_0064A970 *)&DAT_00847820,pcVar2,(int)pfVar8,
-                                       &param_1_after_write);
+          param_2 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::
+                    thunk_FUN_0064a970((RecoveredReceiver_0064A970 *)&DAT_00847820,pcVar2,
+                                       (int)pfVar8,&param_1_after_write);
           if (param_2 == nullptr) {
             thunk_FUN_006802a0(param_1_after_write,&DAT_00847824);
             return;
           }
           if (param_1_after_write == 1) {
+
             iVar7 = thunk_FUN_0064a940(g_anonShape_00683780_11EA4E23_00848A14,iVar7);
             if (iVar7 == 0) {
               RaiseInternalException
@@ -62,6 +65,7 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
             local_f = *param_2;
           }
           else if (param_1_after_write == 2) {
+
             iVar7 = thunk_FUN_0064a940(g_anonShape_00683780_11EA4E23_00848A14,iVar7);
             if (iVar7 == 0) {
               RaiseInternalException
@@ -80,6 +84,7 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
               FreeAndNull(&param_2);
               return;
             }
+
             iVar7 = thunk_FUN_0064a940(g_anonShape_00683780_11EA4E23_00848A14,iVar7);
             if (iVar7 == 0) {
               RaiseInternalException
@@ -88,6 +93,7 @@ void __cdecl FUN_006823e0(int param_1,float *param_2)
             }
             pfVar8 = param_2;
             pbVar5 = thunk_FUN_0067eca0();
+
             iVar7 = thunk_FUN_0067f180(pbVar5,(char *)pfVar8);
             if (iVar7 < 0) {
               RaiseInternalException

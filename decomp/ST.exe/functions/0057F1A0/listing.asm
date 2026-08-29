@@ -1,6 +1,7 @@
 CreateSTDcResourc:
 0057F1A0  68 77 02 00 00            PUSH 0x277
-0057F1A5  E8 26 13 13 00            CALL 0x006b04d0
+CreateSTDcResourc::override::prt_57f1a5_6e692789:
+0057F1A5  E8 26 13 13 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STDcResourcC; signature=__stdcall;pointer:/STDcResourcC;/uint
 0057F1AA  85 C0                     TEST EAX,EAX
 0057F1AC  74 07                     JZ 0x0057f1b5
 0057F1AE  8B C8                     MOV ECX,EAX

@@ -39,16 +39,16 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
   STMessage *pSVar13;
   UINT UVar14;
   char local_c8 [2];
-  undefined1 local_c6;
+  byte local_c6;
   InternalExceptionFrame local_a0;
   STMessage local_5c;
   int local_3c;
   char local_38;
-  undefined4 local_37;
-  undefined4 local_33;
+  uint local_37;
+  uint local_33;
   char local_2c;
-  undefined4 local_2b;
-  undefined4 local_27;
+  uint local_2b;
+  uint local_27;
   PrividerTy *local_20;
   uint local_1c;
   short *local_18;
@@ -64,10 +64,12 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
   this->field_0061 = DVar8;
   local_a0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a0;
+
   local_EAX_66 = Library::MSVCRT::__setjmp3(local_a0.jumpBuffer,0);
   this_01 = local_20;
   if (local_EAX_66 != 0) {
     g_currentExceptionFrame = local_a0.previous;
+
     iVar9 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0x1bc,0,local_EAX_66,
                                "%s","PrividerTy::NonePrivider");
     if (iVar9 == 0) {
@@ -95,6 +97,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
       pcVar12[0] = '\0';
       pcVar12[1] = '\0';
       local_c6 = 4;
+
       FUN_00715360(g_int_00811764,1,'\x1a',local_c8,0x26,1,0xffffffff);
     }
     iVar10 = this_01->array_00BC[0xc].field_01ED + 1;
@@ -102,6 +105,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
     if (iVar10 == 0xf) {
       this_01->array_00BC[0xc].field_01ED = 0;
     }
+
     iVar10 = Library::Ourlib::CONNECT::FUN_00715630
                        (g_int_00811764,-1,&local_1c,&local_3c,&local_10,nullptr,-1,0);
     psVar7 = local_10;
@@ -133,6 +137,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
                 local_2c = *pcVar12;
                 local_2b = STField<undefined4>(psVar7,3);
                 local_27 = 0;
+
                 local_EAX_1381 =
                      FUN_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,&local_2c,0);
                 local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)((local_EAX_1381 != -0x70) + '\x01'));
@@ -145,6 +150,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this)
                 local_38 = *pcVar12;
                 local_37 = STField<undefined4>(psVar7,3);
                 local_33 = STField<undefined4>(psVar7,7);
+
                 iVar8 = FUN_00725910(&DAT_0080f33a,"*.DKD",0,thunk_FUN_005db030,&local_38,0
                                     );
                 local_c = STReplaceLowByte((uint32_t)(local_c), (uint8_t)(iVar8 == -0x70));
@@ -301,16 +307,19 @@ LAB_005bb532:
         this_01->field_1C9A = nullptr;
       }
       if (this_01->field_1A7B != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)this_01->field_1ABF,this_01->field_1A7B,0xfffffffe,this_01->field_1A93,
                    this_01->field_1A97);
       }
       if (this_01->field_1B0C != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)this_01->field_1B50,this_01->field_1B0C,0xfffffffe,this_01->field_1B24,
                    this_01->field_1B28);
       }
       if (this_01->field_1B9D != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)this_01->field_1BE1,this_01->field_1B9D,0xfffffffe,this_01->field_1BB5,
                    this_01->field_1BB9);
@@ -318,11 +327,13 @@ LAB_005bb532:
       puVar11 = this_01->field_1C2A;
       iVar10 = 0x16;
       do {
+
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*puVar11);
         puVar11 = puVar11 + 1;
         iVar10 = iVar10 + -1;
       } while (iVar10 != 0);
       if (this_01->array_00BC[0xc].field_01DF == '\0') {
+
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_01->field_1C8A);
       }
       this_01->field_0065 = CASE_1;
@@ -369,6 +380,7 @@ LAB_005bb532:
       bVar1 = this_01->array_00BC[0xc].field_01DA;
       this_01->field_0065 = 2;
       if ((bVar1 != 0xff) && (*(int *)&this_01->array_00BC[bVar1].field_0x15 != 0)) {
+
         AppClassTy::PostNextMessage
                   ((AppClassTy *)&DAT_00807620,(undefined4 *)&this_01->array_00BC[bVar1].field_0x5);
         g_currentExceptionFrame = local_a0.previous;
@@ -402,6 +414,7 @@ LAB_005bb532:
         this_01->field_1C9A = nullptr;
       }
       if (this_01->array_00BC[0xc].field_01E0 == '\0') {
+
         Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,this_01->field_1C8A);
       }
       /* ST_CALLSITE[005BB168]: CALL 0x00403bc5; direct=00403BC5 PrividerTy::SetMode */

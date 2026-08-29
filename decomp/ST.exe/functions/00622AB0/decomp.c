@@ -1,27 +1,28 @@
 #include "../../pseudocode_runtime.h"
 
 
-int __thiscall STAllPlayersC::FUN_00622ab0(STAllPlayersC *this,undefined4 *param_1)
+int __thiscall
+STAllPlayersC::FUN_00622ab0(STAllPlayersC *this,RecoveredRecord_00622AB0_330E12AF *param_1)
 
 {
   int iVar1;
   int iVar2;
-  byte *puVar3;
+  RecoveredRecord_00622AB0_330E12AF *pRVar3;
   int *piVar4;
   byte *puVar5;
   void *local_20;
-  undefined4 local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
-  puVar3 = (byte *)(param_1);
+  uint local_1c;
+  uint local_18;
+  uint local_14;
+  uint local_10;
+  uint local_c;
+  uint local_8;
+  pRVar3 = param_1;
   puVar5 = (byte *)&this->field_0x25e;
-  memmove(puVar5, puVar3, 0x109); /* compiler REP MOVS byte copy */
+  memmove(puVar5, pRVar3, 0x109); /* compiler REP MOVS byte copy */
   this->field_02BA = 0xffffffff;
-  iVar2 = STField<int>(param_1,0x109);
+  iVar2 = param_1->field_0109;
+
   local_20 = Library::DKW::LIB::MemAlloc(0x44);
   iVar1 = 0;
   do {
@@ -38,9 +39,9 @@ int __thiscall STAllPlayersC::FUN_00622ab0(STAllPlayersC *this,undefined4 *param
   /* ST_CALLSITE[00622B3B]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
   STT3DSprC::RestoreSpr
             ((STT3DSprC *)&this->field_0x1d5,(int *)&local_20,
-             (AnonShape_004AD790_77673787 *)((int)param_1 + 0x10d));
+             (RecoveredRecordView_004AD790_D4DB5A31 *)(param_1 + 1));
   FreeAndNull(&local_20);
-  piVar4 = (int *)(&((AnonShape_004AD790_77673787 *)((int)param_1 + 0x10d))->field_0x0 + iVar2);
+  piVar4 = (int *)(&param_1[1].field_0x0 + iVar2);
   iVar1 = *piVar4;
   /* ST_CALLSITE[00622B53]: CALL 0x0040551f; direct=0040551F STAllPlayersC::RestoreGObjData */
   RestoreGObjData(this,piVar4 + 1);

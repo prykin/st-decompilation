@@ -20,53 +20,53 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
   int *piVar7;
   int *piVar8;
   int local_520 [4];
-  undefined4 local_510;
-  undefined4 local_50c;
+  uint local_510;
+  uint local_50c;
   dword local_508;
-  undefined4 local_504;
-  undefined4 local_4f8;
-  undefined4 local_4f4;
-  undefined4 local_4f0;
-  undefined4 local_4d8;
-  undefined4 local_4d4;
-  undefined4 local_4d0;
-  undefined4 local_4b8;
-  undefined4 local_4b4;
-  undefined4 local_4b0;
-  undefined4 local_498;
-  undefined4 local_494;
-  undefined4 local_490;
-  undefined4 local_3f4;
+  uint local_504;
+  uint local_4f8;
+  uint local_4f4;
+  uint local_4f0;
+  uint local_4d8;
+  uint local_4d4;
+  uint local_4d0;
+  uint local_4b8;
+  uint local_4b4;
+  uint local_4b0;
+  uint local_498;
+  uint local_494;
+  uint local_490;
+  uint local_3f4;
   int local_3f0 [4];
-  undefined4 local_3e0;
-  undefined4 local_3dc;
-  undefined4 local_390;
-  undefined4 local_38c;
-  undefined4 local_388;
-  undefined4 local_2e8;
-  undefined4 local_2e4;
-  undefined4 local_2e0;
-  undefined4 local_2dc;
+  uint local_3e0;
+  uint local_3dc;
+  uint local_390;
+  uint local_38c;
+  uint local_388;
+  uint local_2e8;
+  uint local_2e4;
+  uint local_2e0;
+  uint local_2dc;
   ushort *local_2cc;
   int local_2c8;
-  undefined4 local_274;
+  uint local_274;
   int local_270 [26];
-  undefined4 local_208;
+  uint local_208;
   ushort *local_14c;
   int local_148;
-  undefined4 local_f4;
-  undefined4 local_f0;
-  undefined4 local_e8;
+  uint local_f4;
+  uint local_f0;
+  uint local_e8;
   int local_e4;
   int local_e0;
-  undefined4 local_dc;
-  undefined4 local_d8;
-  undefined4 local_d4;
-  undefined4 local_a0;
-  undefined4 local_9c;
-  undefined4 local_98;
-  undefined4 local_60;
-  undefined4 local_5c;
+  uint local_dc;
+  uint local_d8;
+  uint local_d4;
+  uint local_a0;
+  uint local_9c;
+  uint local_98;
+  uint local_60;
+  uint local_5c;
   InternalExceptionFrame local_4c;
   HelpPanelTy *local_8;
 
@@ -78,15 +78,17 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 == 0) {
     if (local_8->field_019C != 0) {
       StartSystemTy::sub_006E56B0(local_8->field_000C,local_8->field_019C);
     }
+
     Library::DKW::WGR::FUN_006b55f0
               ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x21,0x16,
-               (byte *)this_00->field_01DC,0,0x21,0x16,0x19c,0x118);
+               (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_01DC,0,0x21,0x16,0x19c,0x118);
     local_520[0] = 0;
     local_520[2] = this_00->field_003C + 0x21;
     if (this_00->field_005C == 0) {
@@ -134,6 +136,7 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     local_4b8 = local_4f8;
     local_498 = local_4f8;
     local_2cc = FUN_0070aa70(g_cMf32_00806790,"BUT_MSLUP",0,1);
+
     local_2c8 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,"BUT_MSLUP",1);
     local_390 = this_00->field_0008;
     iVar5 = this_00->field_005C;
@@ -153,6 +156,7 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     }
     local_270[3] = local_270[3] + 0x109;
     local_14c = FUN_0070aa70(g_cMf32_00806790,"BUT_MSLDN",0,1);
+
     local_148 = Library::Ourlib::MFIMG::mfImgGetWidth(g_cMf32_00806790,0x12,"BUT_MSLDN",1);
     local_e4 = this_00->field_003C + 0x1c3;
     local_208 = 0x8165;
@@ -187,6 +191,7 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x1a5,0,iVar3,"%s",
                              "HelpPanelTy::CreateList");
   if (iVar4 != 0) {

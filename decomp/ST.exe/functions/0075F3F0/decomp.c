@@ -53,8 +53,8 @@ int FUN_0075f3f0(int *param_1,int param_2,int param_3,int param_4)
         piVar1[5] = iVar5;
         piVar4[1] = iVar5 + 1;
       }
-      FUN_0075efe0(param_1,piVar1);
-      FUN_0075efe0(param_1,piVar4 + -3);
+      FUN_0075efe0((RecoveredRecord_0075EFE0_EBB05E23 *)param_1,piVar1);
+      FUN_0075efe0((RecoveredRecord_0075EFE0_EBB05E23 *)param_1,piVar4 + -3);
       param_3 = param_3 + 1;
       local_8 = local_8 + 2;
       piVar4 = piVar4 + 8;

@@ -20,6 +20,7 @@ byte * __thiscall FUN_0062f940(void *this,uint *param_1)
   local_8 = 0;
   *param_1 = 0;
   local_c = 0x3d;
+
   allocation = Library::DKW::LIB::MemAlloc(0x3d);
   if (allocation != nullptr) {
     allocation[0] = 0xbe;
@@ -59,6 +60,7 @@ byte * __thiscall FUN_0062f940(void *this,uint *param_1)
     *(undefined4 *)(allocation + 0x39) = STField<undefined4>(this,0x1fa);
     if (local_8 != 0) {
       local_c = local_8 * 0x3e + 0x3d;
+      /* ST_CALLSITE[0062F9F6]: CALL 0x006acf50; direct=006ACF50 Library::DKW::LIB::MemRealloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/byte; source view only; no Ghidra override */
       allocation = Library::DKW::LIB::MemRealloc(allocation,local_c);
       if (allocation == nullptr) {
         return nullptr;

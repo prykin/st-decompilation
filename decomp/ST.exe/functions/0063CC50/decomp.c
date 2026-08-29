@@ -11,13 +11,13 @@ undefined4 __thiscall FUN_0063cc50(void *this,int param_1)
   int iVar5;
   int iVar6;
   int iVar7;
-  undefined4 local_48 [5];
-  undefined2 local_34;
-  undefined2 local_32;
-  undefined2 local_30;
+  uint local_48 [5];
+  ushort local_34;
+  ushort local_32;
+  ushort local_30;
   short local_2e;
   short local_2c;
-  undefined2 local_2a;
+  ushort local_2a;
   uint local_28;
   int local_18;
   int local_14;
@@ -41,7 +41,7 @@ undefined4 __thiscall FUN_0063cc50(void *this,int param_1)
   if (param_1 == 0) {
     local_2a = 0;
     /* ST_CALLSITE[0063CCDD]: CALL dword ptr [EDX + 0x8] */
-    g_playSystem_00802A38->vfunc_08(0x10c,0,0,(short)local_48,0);
+    g_playSystem_00802A38->vfunc_8(0x10c,nullptr,nullptr,(short)local_48,0);
     return 1;
   }
   local_10 = STField<int>(this,0x286) - param_1;
@@ -63,7 +63,7 @@ undefined4 __thiscall FUN_0063cc50(void *this,int param_1)
   }
   local_2a = 0;
   /* ST_CALLSITE[0063CD7A]: CALL dword ptr [EDX + 0x8] */
-  g_playSystem_00802A38->vfunc_08(0x10c,0,0,(short)local_48,0);
+  g_playSystem_00802A38->vfunc_8(0x10c,nullptr,nullptr,(short)local_48,0);
   iVar7 = iVar5;
   if (iVar5 < local_8) {
     do {
@@ -112,7 +112,7 @@ undefined4 __thiscall FUN_0063cc50(void *this,int param_1)
             }
             local_2a = 0;
             /* ST_CALLSITE[0063CF06]: CALL dword ptr [EDX + 0x8] */
-            g_playSystem_00802A38->vfunc_08(0x10c,0,0,(short)local_48,0);
+            g_playSystem_00802A38->vfunc_8(0x10c,nullptr,nullptr,(short)local_48,0);
           }
 LAB_0063cf09:
           iVar7 = iVar7 + 1;

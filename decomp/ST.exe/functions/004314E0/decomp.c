@@ -179,6 +179,7 @@ STAllPlayersC::FramePick
   local_48 = nullptr;
   local_90.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_90;
+
   local_EAX_96 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
   if (local_EAX_96 != 0) {
     g_currentExceptionFrame = local_90.previous;
@@ -223,6 +224,7 @@ STAllPlayersC::FramePick
       SelfCheckObjControl(this);
       return;
     }
+
     iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xdd1,0,local_EAX_96,
                                "%s","STAllPlayersC::FramePick");
     if (iVar3 == 0) {
@@ -311,6 +313,7 @@ LAB_004318b5:
         }
       }
       else {
+
         iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xa60,0,0,"%s",
                                    "STAllPlayersC::FramePick GAMETYPE_BOAT ACT_LEFT");
         if (iVar2 != 0) {
@@ -351,6 +354,7 @@ cf_error_exit_004318A9:
           ActivateTV(this,playerId,0,local_EAX_410);
         }
         else {
+
           local_EAX_374 =
                ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xa88,0,0,"%s",
                                   "STAllPlayersC::FramePick GAMETYPE_BOAT ACT_RIGHT");
@@ -361,6 +365,7 @@ cf_error_exit_004318A9:
       }
     }
     else {
+
       local_EAX_268 =
            ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xa8c,0,0,"%s",
                               "STAllPlayersC::FramePick GAMETYPE_BOAT wrong panel number");
@@ -378,8 +383,10 @@ cf_error_exit_004318A9:
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xa92);
     }
+
     DArrayGetElement(local_34,0,&local_8);
     local_34->count = 0;
+
     Library::DKW::TBL::DArrayAppend(local_34,&local_8);
     /* ST_CALLSITE[00431937]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar5 = GetObjPtr(this,'\0',(ushort)local_8,CASE_3);
@@ -442,6 +449,7 @@ LAB_00431c38:
         }
       }
       else {
+
         local_EAX_1808 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xaba,0,0,"%s",
                                 "STAllPlayersC::FramePick GAMETYPE_MINESET ACT_LEFT");
@@ -491,6 +499,7 @@ LAB_00431a3f:
         ActivateTV(this,playerId,0,local_EAX_1353);
       }
       else {
+
         local_EAX_1319 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xade,0,0,"%s",
                                 "STAllPlayersC::FramePick GAMETYPE_MINESET ACT_RIGHT");
@@ -500,6 +509,7 @@ LAB_00431a3f:
       }
     }
     else {
+
       local_EAX_1213 =
            ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xae2,0,0,"%s",
                               "STAllPlayersC::FramePick GAMETYPE_MINESET wrong panel number");
@@ -517,8 +527,10 @@ LAB_00431a3f:
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xae8);
     }
+
     DArrayGetElement(local_28,0,&local_8);
     local_28->count = 0;
+
     Library::DKW::TBL::DArrayAppend(local_28,&local_8);
     /* ST_CALLSITE[00431ADA]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar5 = GetObjPtr(this,-1,(ushort)local_8,CASE_2);
@@ -588,6 +600,7 @@ LAB_00431edd:
       }
       else {
 LAB_00431e77:
+
         local_EAX_2479 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb3a,0,0,"%s",
                                 "STAllPlayersC::FramePick GAMETYPE_ARTEFACT ACT_LEFT");
@@ -653,6 +666,7 @@ LAB_00431d70:
       }
       else {
 LAB_00431d42:
+
         local_EAX_2170 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb13,0,0,"%s",
                                 "STAllPlayersC::FramePick GAMETYPE_ARTEFACT ACT_RIGHT");
@@ -662,6 +676,7 @@ LAB_00431d42:
       }
     }
     else {
+
       local_EAX_1636 =
            ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb3e,0,0,"%s",
                               "STAllPlayersC::FramePick GAMETYPE_ARTEFACT wrong panel number");
@@ -679,8 +694,10 @@ LAB_00431d42:
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xb44);
     }
+
     DArrayGetElement(local_30,0,&local_8);
     local_30->count = 0;
+
     Library::DKW::TBL::DArrayAppend(local_30,&local_8);
     /* ST_CALLSITE[00431F61]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar5 = GetObjPtr(this,-1,(ushort)local_8,CASE_5);
@@ -748,6 +765,7 @@ LAB_00432209:
       }
       else {
 LAB_004321a3:
+
         local_EAX_3291 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb96,0,0,"%s",
                                 "STAllPlayersC::FramePick GAMETYPE_CONTAINER ACT_LEFT");
@@ -813,6 +831,7 @@ LAB_0043209c:
       }
       else {
 LAB_0043206e:
+
         local_EAX_2982 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb6f,0,0,"%s",
                                 "STAllPlayersC::FramePick GAMETYPE_CONTAINER ACT_RIGHT");
@@ -822,6 +841,7 @@ LAB_0043206e:
       }
     }
     else {
+
       local_EAX_2791 =
            ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xb9a,0,0,"%s",
                               "STAllPlayersC::FramePick GAMETYPE_CONTAINER wrong panel number");
@@ -839,8 +859,10 @@ LAB_0043206e:
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xba0);
     }
+
     DArrayGetElement(local_14,0,&local_8);
     local_14->count = 0;
+
     Library::DKW::TBL::DArrayAppend(local_14,&local_8);
     if (g_packedRecords_A62x8[playerId].field200_0x203 == 0) {
       g_packedRecords_A62x8[playerId].field200_0x203 = 1;
@@ -890,6 +912,7 @@ LAB_00432536:
       }
       else {
 LAB_0043250f:
+
         local_EAX_4167 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xbfb,0,0,"%s",
                                 "STAllPlayersC::FramePick GAMETYPE_OBJECT ACT_LEFT");
@@ -941,6 +964,7 @@ LAB_0043250f:
           }
           if ((iVar4 == 0x5a) || (iVar4 == 0x172)) goto LAB_0043240a;
 LAB_004323dc:
+
           local_EAX_3860 =
                ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xbd1,0,0,"%s",
                                   "STAllPlayersC::FramePick GAMETYPE_OBJECT ACT_RIGHT");
@@ -966,6 +990,7 @@ LAB_0043240a:
       }
     }
     else {
+
       local_EAX_3553 =
            ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xbff,0,0,"%s",
                               "STAllPlayersC::FramePick GAMETYPE_OBJECT wrong panel number");
@@ -984,8 +1009,10 @@ LAB_00432582:
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xc05);
     }
+
     DArrayGetElement(local_20,0,&local_8);
     local_20->count = 0;
+
     Library::DKW::TBL::DArrayAppend(local_20,&local_8);
     /* ST_CALLSITE[004325FA]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar5 = GetObjPtr(this,-1,(ushort)local_8,CASE_4);
@@ -1055,6 +1082,7 @@ LAB_004328a1:
       }
       else {
 LAB_0043283b:
+
         local_EAX_4979 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xc57,0,0,"%s",
                                 "STAllPlayersC::FramePick GAMETYPE_RESOURCE ACT_LEFT");
@@ -1120,6 +1148,7 @@ LAB_00432734:
       }
       else {
 LAB_00432706:
+
         local_EAX_4670 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xc30,0,0,"%s",
                                 "STAllPlayersC::FramePick GAMETYPE_RESOURCE ACT_RIGHT");
@@ -1129,6 +1158,7 @@ LAB_00432706:
       }
     }
     else {
+
       local_EAX_4479 =
            ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xc5b,0,0,"%s",
                               "STAllPlayersC::FramePick GAMETYPE_RESOURCE wrong panel number");
@@ -1146,8 +1176,10 @@ LAB_00432706:
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xc61);
     }
+
     DArrayGetElement(local_38,0,&local_8);
     local_38->count = 0;
+
     Library::DKW::TBL::DArrayAppend(local_38,&local_8);
     /* ST_CALLSITE[00432925]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar5 = GetObjPtr(this,-1,(ushort)local_8,CASE_6);
@@ -1215,6 +1247,7 @@ LAB_00432bcd:
       }
       else {
 LAB_00432b67:
+
         local_EAX_5791 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xcb3,0,0,"%s",
                                 "STAllPlayersC::FramePick GAMETYPE_BLOT ACT_LEFT");
@@ -1280,6 +1313,7 @@ LAB_00432a60:
       }
       else {
 LAB_00432a32:
+
         local_EAX_5482 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xc8c,0,0,"%s",
                                 "STAllPlayersC::FramePick GAMETYPE_BLOT ACT_RIGHT");
@@ -1289,6 +1323,7 @@ LAB_00432a32:
       }
     }
     else {
+
       local_EAX_5291 =
            ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xcb7,0,0,"%s",
                               "STAllPlayersC::FramePick GAMETYPE_BLOT wrong panel number");
@@ -1306,11 +1341,15 @@ LAB_00432a32:
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xcbd);
     }
+
     DArrayGetElement(local_18,0,&local_8);
     local_18->count = 0;
+
     Library::DKW::TBL::DArrayAppend(local_18,&local_8);
+
     DArrayGetElement(local_3c,0,local_c);
     local_3c->count = 0;
+
     Library::DKW::TBL::DArrayAppend(local_3c,local_c);
     if (g_packedRecords_A62x8[playerId].field200_0x203 == 0) {
       iVar4 = g_packedRecords_A62x8[playerId].field96_0x163;
@@ -1360,6 +1399,7 @@ cf_error_exit_00432EAE:
         ActivateTV(this,playerId,0,local_EAX_6425);
       }
       else {
+
         local_EAX_6386 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xce7,0,0,"%s",
                                 "STAllPlayersC::FramePick GAMETYPE_BOAT (enemy) ACT_LEFT");
@@ -1397,6 +1437,7 @@ cf_error_exit_00432EAE:
         ActivateTV(this,playerId,0,local_EAX_6219);
       }
       else {
+
         local_EAX_6180 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd0e,0,0,"%s",
                                 "STAllPlayersC::FramePick GAMETYPE_BOAT (enemy) ACT_RIGHT");
@@ -1406,6 +1447,7 @@ cf_error_exit_00432EAE:
       }
     }
     else {
+
       local_EAX_6084 =
            ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd12,0,0,"%s",
                               "STAllPlayersC::FramePick GAMETYPE_BOAT (enemy) wrong panel number");
@@ -1423,8 +1465,10 @@ cf_error_exit_00432EAE:
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0xd18);
     }
+
     DArrayGetElement(local_2c,0,&local_8);
     local_2c->count = 0;
+
     Library::DKW::TBL::DArrayAppend(local_2c,&local_8);
     /* ST_CALLSITE[00432F3C]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar5 = GetObjPtr(this,'\0',(ushort)local_8,CASE_3);
@@ -1487,6 +1531,7 @@ LAB_0043322b:
         }
       }
       else {
+
         local_EAX_7427 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd40,0,0,"%s",
                                 "STAllPlayersC::FramePick GAMETYPE_MINESET (enemy) ACT_LEFT");
@@ -1540,6 +1585,7 @@ LAB_00433046:
         }
       }
       else {
+
         local_EAX_6956 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd66,0,0,"%s",
                                 "STAllPlayersC::FramePick GAMETYPE_MINESET (enemy) ACT_RIGHT");
@@ -1549,6 +1595,7 @@ LAB_00433046:
       }
     }
     else {
+
       local_EAX_6850 =
            ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd6a,0,0,"%s",
                               "STAllPlayersC::FramePick GAMETYPE_MINESET (enemy) wrong panel number");
@@ -1566,14 +1613,19 @@ LAB_00433046:
               (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                0xd70);
   }
+
   DArrayGetElement(local_1c,0,&local_8);
   local_1c->count = 0;
+
   Library::DKW::TBL::DArrayAppend(local_1c,&local_8);
+
   DArrayGetElement(local_40,0,local_c);
   local_40->count = 0;
+
   Library::DKW::TBL::DArrayAppend(local_40,local_c);
   if (g_packedRecords_A62x8[playerId].field200_0x203 != 0) {
     if (g_packedRecords_A62x8[playerId].field200_0x203 != 1) {
+
       local_EAX_7255 =
            ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xdcb,0,0,"%s",
                               "STAllPlayersC::FramePick GAMETYPE_OBJECT (enemy) wrong panel number");
@@ -1617,6 +1669,7 @@ LAB_00433363:
       ResetActivityFromTmp(this,playerId,1,1,0);
       goto cf_error_exit_004334DF;
     }
+
     local_EAX_7789 =
          ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xd9d,0,0,"%s",
                             "STAllPlayersC::FramePick GAMETYPE_OBJECT (enemy) ACT_RIGHT");
@@ -1656,6 +1709,7 @@ LAB_004333f5:
   else {
     if ((iVar4 != 0x1a4) && (iVar4 != 0x1b8)) {
 LAB_0043347c:
+
       local_EAX_8116 =
            ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0xdc7,0,0,"%s",
                               "STAllPlayersC::FramePick GAMETYPE_OBJECT (enemy) ACT_LEFT");

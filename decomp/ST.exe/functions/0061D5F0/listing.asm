@@ -1,6 +1,7 @@
 FUN_0061d5f0:
 0061D5F0  68 DD 00 00 00            PUSH 0xdd
-0061D5F5  E8 D6 2E 09 00            CALL 0x006b04d0
+FUN_0061d5f0::override::prt_61d5f5_2f6cfab6:
+0061D5F5  E8 D6 2E 09 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STLightC; signature=__stdcall;pointer:/STLightC;/uint
 0061D5FA  85 C0                     TEST EAX,EAX
 0061D5FC  74 07                     JZ 0x0061d605
 0061D5FE  8B C8                     MOV ECX,EAX

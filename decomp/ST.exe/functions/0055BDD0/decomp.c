@@ -57,7 +57,8 @@ void FUN_0055bdd0(char *param_1,char *source)
   }
   DAT_0080fb6d = 0;
   if (g_popUp_008016D8 != nullptr) {
-    thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
+    /* ST_CALLSITE[0055BE75]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
+    PopUpTy::sub_0052D320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
   }
   return;
 }

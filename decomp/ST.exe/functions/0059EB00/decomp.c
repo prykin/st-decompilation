@@ -14,82 +14,82 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
   int local_EAX_168;
   LPBITMAPINFO ptVar3;
   DArrayTy *pDVar4;
-  FSGSTy_field_1EBEDArray *pFVar5;
-  uint uVar6;
+  DArrayTy *pFVar5;
   int iVar7;
-  int iVar9;
-  byte *puVar10;
-  byte *puVar12;
-  ccFntTy **ppcVar13;
-  ushort *puVar14;
+  int iVar5;
+  byte *puVar6;
+  byte *puVar8;
+  ccFntTy **ppcVar9;
+  ushort *puVar10;
   ccFntTy *local_dac [8];
   DArrayTy *local_d8c;
-  undefined4 local_d80;
-  undefined4 local_d7c;
-  undefined4 local_d78;
-  undefined4 local_d60;
-  undefined4 local_d5c;
-  undefined4 local_d58;
-  undefined4 local_d20;
-  undefined4 local_d1c;
-  undefined4 local_d18;
-  undefined4 local_53c;
-  undefined4 local_538;
-  undefined4 local_534;
+  uint local_d80;
+  uint local_d7c;
+  uint local_d78;
+  uint local_d60;
+  uint local_d5c;
+  uint local_d58;
+  uint local_d20;
+  uint local_d1c;
+  uint local_d18;
+  uint local_53c;
+  uint local_538;
+  uint local_534;
   int local_520 [5];
-  undefined4 local_50c;
-  undefined4 local_508;
-  undefined4 local_504;
-  undefined4 local_4f8;
-  undefined4 local_4f4;
-  undefined4 local_4f0;
-  undefined4 local_4d8;
-  undefined4 local_4d4;
-  undefined4 local_4d0;
-  undefined4 local_4b8;
-  undefined4 local_4b4;
-  undefined4 local_4b0;
-  undefined4 local_498;
-  undefined4 local_494;
-  undefined4 local_490;
-  undefined4 local_3f4;
-  undefined4 local_3f0 [4];
+  uint local_50c;
+  uint local_508;
+  uint local_504;
+  uint local_4f8;
+  uint local_4f4;
+  uint local_4f0;
+  uint local_4d8;
+  uint local_4d4;
+  uint local_4d0;
+  uint local_4b8;
+  uint local_4b4;
+  uint local_4b0;
+  uint local_498;
+  uint local_494;
+  uint local_490;
+  uint local_3f4;
+  uint local_3f0 [4];
   int local_3e0;
-  undefined4 local_3dc;
-  undefined4 local_390;
-  undefined4 local_38c;
-  undefined4 local_388;
-  undefined4 local_2e0;
-  undefined4 local_2dc;
-  undefined4 local_274;
-  undefined4 local_270 [4];
-  undefined4 local_260;
-  undefined4 local_25c;
-  undefined4 local_208;
-  undefined4 local_f4;
-  undefined4 local_f0;
-  undefined4 local_e8;
-  undefined4 local_e4;
-  undefined4 local_e0;
-  undefined4 local_dc;
-  undefined4 local_d8;
-  undefined4 local_d4;
-  undefined4 local_a0;
-  undefined4 local_9c;
-  undefined4 local_98;
-  undefined4 local_50;
+  uint local_3dc;
+  uint local_390;
+  uint local_38c;
+  uint local_388;
+  uint local_2e0;
+  uint local_2dc;
+  uint local_274;
+  uint local_270 [4];
+  uint local_260;
+  uint local_25c;
+  uint local_208;
+  uint local_f4;
+  uint local_f0;
+  uint local_e8;
+  uint local_e4;
+  uint local_e0;
+  uint local_dc;
+  uint local_d8;
+  uint local_d4;
+  uint local_a0;
+  uint local_9c;
+  uint local_98;
+  uint local_50;
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
 
-  ppcVar13 = local_dac;
+  ppcVar9 = local_dac;
   local_8 = this;
-  for (iVar9 = 0x223; iVar9 != 0; iVar9 = iVar9 + -1) {
-    *ppcVar13 = nullptr;
-    ppcVar13 = ppcVar13 + 1;
+  for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
+    *ppcVar9 = nullptr;
+    ppcVar9 = ppcVar9 + 1;
   }
   memset(local_520, 0, 0x4d4); /* compiler bulk-zero initialization */
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   iVar8 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar8 == 0) {
@@ -99,25 +99,31 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     if (this_00->field_1E92 != nullptr) {
       FreeAndNull(&this_00->field_1E92);
     }
-    iVar9 = 1;
-    puVar14 = this_00->field_005D + 0x14;
+    iVar5 = 1;
+    puVar10 = this_00->field_005D + 0x14;
+
     uVar2 = FUN_006b4fe0(this_00->field_005D);
+
     local_EAX_168 =
-         FUN_006b50c0(0x174,0x175,(uint)this_00->field_005D[7],uVar2,(undefined4 *)puVar14,iVar9);
+         FUN_006b50c0(0x174,0x175,(uint)this_00->field_005D[7],uVar2,(undefined4 *)puVar10,iVar5);
     this_00->field_1E8E = local_EAX_168;
+    /* ST_CALLSITE[0059EBCD]: CALL 0x006c4880; direct=006C4880 Library::DKW::DDX::FUN_006c4880; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override */
     ptVar3 = Library::DKW::DDX::FUN_006c4880(g_dDXContext_0080759C,0x199,0x5e,0x174,0x175,8);
     this_00->field_1E92 = ptVar3;
+    /* ST_CALLSITE[0059EBEB]: CALL 0x006c4880; direct=006C4880 Library::DKW::DDX::FUN_006c4880; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override */
     ptVar3 = Library::DKW::DDX::FUN_006c4880(g_dDXContext_0080759C,0x13,0x5e,0x174,0x175,8);
     this_00->field_1E9A = ptVar3;
     pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AE8 = pDVar4;
+
     Library::DKW::TBL::FUN_006b5aa0(pDVar4,&CHAR_00h_008016a0);
     pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_1AEC = pDVar4;
+
     Library::DKW::TBL::FUN_006b5aa0(pDVar4,&CHAR_00h_008016a0);
-    pFVar5 = (FSGSTy_field_1EBEDArray *)
-             Library::DKW::TBL::DArrayCreate(nullptr,0x14,0x25c,10);
-    this_00->field_1EBE = pFVar5;
+    /* ST_CALLSITE[0059EC36]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/FSGSTy_field_1EBEDArray; source view only; no Ghidra override */
+    pFVar5 = Library::DKW::TBL::DArrayCreate(nullptr,0x14,0x25c,10);
+    this_00->field_1EBE = (FSGSTy_field_1EBEDArray *)pFVar5;
     local_520[4] = 0x15b - this_00->field_1CFF;
     local_4f8 = this_00->field_0008;
     local_520[0] = 0;
@@ -150,10 +156,10 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     local_38c = 2;
     local_388 = 0x8164;
     local_274 = 2;
-    puVar10 = (byte *)(local_3f0);
-    puVar12 = (byte *)(local_270);
-    memmove(puVar12, puVar10, 0x17c); /* compiler REP MOVS byte copy */
-    iVar9 = 0;
+    puVar6 = (byte *)(local_3f0);
+    puVar8 = (byte *)(local_270);
+    memmove(puVar8, puVar6, 0x17c); /* compiler REP MOVS byte copy */
+    iVar5 = 0;
     local_270[2] = this_00->field_1D88;
     local_270[3] = this_00->field_1D8C;
     local_260 = this_00->field_1D90;
@@ -177,25 +183,28 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     (*this_00->field_000C->vtable->CreateObject)
               ((SystemClassTy *)this_00->field_000C,7,&this_00->field_1B20,nullptr,local_520,0);
     if (this_00->field_1CDF != 0xffffffff) {
+
       Library::DKW::DDX::FUN_006b34d0
                 ((uint *)this_00->field_1D23,this_00->field_1CDF,0xfffffffe,this_00->field_1CF7,
                  this_00->field_1CFB);
     }
     if (this_00->field_1D70 != 0xffffffff) {
+
       Library::DKW::DDX::FUN_006b34d0
                 ((uint *)this_00->field_1DB4,this_00->field_1D70,0xfffffffe,this_00->field_1D88,
                  this_00->field_1D8C);
     }
     if (this_00->field_1E01 != 0xffffffff) {
+
       Library::DKW::DDX::FUN_006b34d0
                 ((uint *)this_00->field_1E45,this_00->field_1E01,0xfffffffe,this_00->field_1E19,
                  this_00->field_1E1D);
     }
     local_d8c = this_00->field_1AE8;
-    ppcVar13 = local_dac;
-    for (iVar9 = 0x223; iVar9 != 0; iVar9 = iVar9 + -1) {
-      *ppcVar13 = nullptr;
-      ppcVar13 = ppcVar13 + 1;
+    ppcVar9 = local_dac;
+    for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
+      *ppcVar9 = nullptr;
+      ppcVar9 = ppcVar9 + 1;
     }
     local_dac[2] = this_00->array_00BC[0xc].field_01F3;
     local_d80 = this_00->field_0008;
@@ -231,14 +240,14 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     this_00->field_1EC6 = 0xffffffff;
     this_00->field_1ECA = 0;
     /* ST_CALLSITE[0059F00B]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
-    uVar6 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x230,0x17a,0xd3,0x19,0x6904,0x6989);
-    this_00->field_1EB6 = uVar6;
+    iVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x230,0x17a,0xd3,0x19,0x6904,0x6989);
+    this_00->field_1EB6 = iVar5;
     /* ST_CALLSITE[0059F036]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
-    uVar6 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,0,0x1a3,0x196,0x160,0x19,0x6905,0x698a);
-    this_00->field_1EBA = uVar6;
+    iVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,0,0x1a3,0x196,0x160,0x19,0x6905,0x698a);
+    this_00->field_1EBA = iVar5;
     /* ST_CALLSITE[0059F062]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
-    uVar6 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1fd,0x1b5,0xab,0x19,0x6903,0x698d);
-    this_00->field_1B24 = uVar6;
+    iVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1fd,0x1b5,0xab,0x19,0x6903,0x698d);
+    this_00->field_1B24 = iVar5;
     this_00->field_002D = 0x61;
     this_00->field_0035 = 0;
     this_00->field_0037 = 0;
@@ -247,6 +256,7 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar7 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x7f0,0,iVar8,"%s",
                              "FSGSTy::JoinGameCtrls");
   if (iVar7 != 0) {

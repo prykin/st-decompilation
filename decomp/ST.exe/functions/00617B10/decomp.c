@@ -10,14 +10,14 @@ FUN_00617b10(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   uint uVar2;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
-  undefined4 local_28;
-  undefined2 local_24;
+  uint local_28;
+  ushort local_24;
   uint local_22;
-  undefined2 local_1e;
-  undefined2 local_1c;
-  undefined2 local_1a;
-  undefined4 local_18;
-  undefined4 local_14;
+  ushort local_1e;
+  ushort local_1c;
+  ushort local_1a;
+  uint local_18;
+  uint local_14;
   int local_8;
 
   if (STField<int>(this,0x5e) == 0) {
@@ -39,7 +39,9 @@ FUN_00617b10(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   local_1e = (undefined2)local_28;
   local_1c = STPiece<2,2>(local_28);
   local_1a = local_24;
+
   uVar2 = Library::DKW::TBL::DArrayAppend(STField<DArrayTy *>(this,0x5e),&local_28);
+
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   thunk_FUN_0061d0c0(param_1,param_2,param_3,param_4,param_5,param_6,
                      STField<undefined4>(this,0x20),STField<undefined4>(this,0x54),

@@ -153,17 +153,17 @@ LAB_004a0202:
 LAB_004a024d:
 004A024D  8B 17                     MOV EDX,dword ptr [EDI]
 004A024F  8B CF                     MOV ECX,EDI
-004A0251  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+004A0251  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 004A0254  83 F8 0C                  CMP EAX,0xc
 004A0257  74 51                     JZ 0x004a02aa
 004A0259  8B 07                     MOV EAX,dword ptr [EDI]
 004A025B  8B CF                     MOV ECX,EDI
-004A025D  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+004A025D  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 004A0260  83 F8 18                  CMP EAX,0x18
 004A0263  74 45                     JZ 0x004a02aa
 004A0265  8B 17                     MOV EDX,dword ptr [EDI]
 004A0267  8B CF                     MOV ECX,EDI
-004A0269  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+004A0269  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 004A026C  83 F8 1D                  CMP EAX,0x1d
 004A026F  74 39                     JZ 0x004a02aa
 004A0271  8B CF                     MOV ECX,EDI
@@ -282,17 +282,17 @@ LAB_004a0351:
 LAB_004a0399:
 004A0399  8B 07                     MOV EAX,dword ptr [EDI]
 004A039B  8B CF                     MOV ECX,EDI
-004A039D  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+004A039D  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 004A03A0  83 F8 0C                  CMP EAX,0xc
 004A03A3  74 18                     JZ 0x004a03bd
 004A03A5  8B 17                     MOV EDX,dword ptr [EDI]
 004A03A7  8B CF                     MOV ECX,EDI
-004A03A9  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+004A03A9  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 004A03AC  83 F8 18                  CMP EAX,0x18
 004A03AF  74 0C                     JZ 0x004a03bd
 004A03B1  8B 07                     MOV EAX,dword ptr [EDI]
 004A03B3  8B CF                     MOV ECX,EDI
-004A03B5  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+004A03B5  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 004A03B8  83 F8 1D                  CMP EAX,0x1d
 004A03BB  75 0C                     JNZ 0x004a03c9
 LAB_004a03bd:

@@ -94,11 +94,11 @@ LAB_005edd15:
 005EDD5B  51                        PUSH ECX
 005EDD5C  52                        PUSH EDX
 005EDD5D  8B CE                     MOV ECX,ESI
-005EDD5F  FF 90 38 01 00 00         CALL dword ptr [EAX + 0x138]
+005EDD5F  FF 90 38 01 00 00         CALL dword ptr [EAX + 0x138]  ; [STIndirectCallsiteApplier] exact slot 0x138; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4
 005EDD65  8B 16                     MOV EDX,dword ptr [ESI]
 005EDD67  50                        PUSH EAX
 005EDD68  8B CE                     MOV ECX,ESI
-005EDD6A  FF 92 30 01 00 00         CALL dword ptr [EDX + 0x130]
+005EDD6A  FF 92 30 01 00 00         CALL dword ptr [EDX + 0x130]  ; [STIndirectCallsiteApplier] exact slot 0x130; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 005EDD70  50                        PUSH EAX
 005EDD71  8B 46 18                  MOV EAX,dword ptr [ESI + 0x18]
 005EDD74  50                        PUSH EAX

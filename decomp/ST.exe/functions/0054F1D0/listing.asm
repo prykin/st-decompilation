@@ -327,7 +327,8 @@ LAB_0054f571:
 0054F571  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
 0054F574  6A 00                     PUSH 0x0
 0054F576  6A 06                     PUSH 0x6
-0054F578  E8 70 64 EB FF            CALL 0x004059ed
+STPlaySystemC::PrepareMail::override::prt_54f578_d3ef3daf:
+0054F578  E8 70 64 EB FF            CALL 0x004059ed  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/undefined4; signature=__stdcall;pointer:/undefined4;/byte
 0054F57D  8B 4D 8C                  MOV ECX,dword ptr [EBP + -0x74]
 0054F580  89 0D F8 8D 85 00         MOV dword ptr [0x00858df8],ECX
 0054F586  5F                        POP EDI
@@ -381,7 +382,8 @@ LAB_0054f5f5:
 0054F5FA  8B 56 3D                  MOV EDX,dword ptr [ESI + 0x3d]
 0054F5FD  57                        PUSH EDI
 0054F5FE  52                        PUSH EDX
-0054F5FF  E8 4C D9 15 00            CALL 0x006acf50
+STPlaySystemC::PrepareMail::override::prt_54f5ff_749744f9:
+0054F5FF  E8 4C D9 15 00            CALL 0x006acf50  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STPlaySystemC_003D; signature=__stdcall;pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STPlaySystemC_003D;pointer:/void;/uint
 0054F604  89 46 3D                  MOV dword ptr [ESI + 0x3d],EAX
 0054F607  89 7E 45                  MOV dword ptr [ESI + 0x45],EDI
 LAB_0054f60a:
@@ -451,7 +453,8 @@ LAB_0054f65a:
 0054F6C4  6A 07                     PUSH 0x7
 LAB_0054f6c6:
 0054F6C6  8B CE                     MOV ECX,ESI
-0054F6C8  E8 20 63 EB FF            CALL 0x004059ed
+STPlaySystemC::PrepareMail::override::prt_54f6c8_d3ef3daf:
+0054F6C8  E8 20 63 EB FF            CALL 0x004059ed  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/undefined4; signature=__stdcall;pointer:/undefined4;/byte
 0054F6CD  8B 4D 8C                  MOV ECX,dword ptr [EBP + -0x74]
 0054F6D0  89 0D F8 8D 85 00         MOV dword ptr [0x00858df8],ECX
 0054F6D6  5F                        POP EDI
@@ -516,7 +519,8 @@ LAB_0054f71a:
 0054F76C  6A 0A                     PUSH 0xa
 STPlaySystemC::PrepareMail::cf_common_exit_0054F76E:
 0054F76E  8B CB                     MOV ECX,EBX
-0054F770  E8 78 62 EB FF            CALL 0x004059ed
+STPlaySystemC::PrepareMail::override::prt_54f770_d3ef3daf:
+0054F770  E8 78 62 EB FF            CALL 0x004059ed  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/undefined4; signature=__stdcall;pointer:/undefined4;/byte
 LAB_0054f775:
 0054F775  8B 4D 8C                  MOV ECX,dword ptr [EBP + -0x74]
 0054F778  89 0D F8 8D 85 00         MOV dword ptr [0x00858df8],ECX
@@ -644,10 +648,12 @@ LAB_0054f863:
 0054F8EE  6A 09                     PUSH 0x9
 0054F8F0  52                        PUSH EDX
 0054F8F1  68 68 42 00 00            PUSH 0x4268
-0054F8F6  E8 45 08 16 00            CALL 0x006b0140
+STPlaySystemC::PrepareMail::override::prt_54f8f6_ff626359:
+0054F8F6  E8 45 08 16 00            CALL 0x006b0140  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/PopUpTy; signature=__stdcall;pointer:/PopUpTy;/WinDef.h/UINT;/WinDef.h/HINSTANCE
 0054F8FB  8B 0D D8 16 80 00         MOV ECX,dword ptr [0x008016d8]
 0054F901  50                        PUSH EAX
-0054F902  E8 D1 1B EB FF            CALL 0x004014d8
+STPlaySystemC::PrepareMail::override::prt_54f902_c0256178:
+0054F902  E8 D1 1B EB FF            CALL 0x004014d8  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/undefined4; signature=__thiscall;pointer:/undefined4;pointer:/PopUpTy;pointer:/char;/uint
 LAB_0054f907:
 0054F907  8B 4D 8C                  MOV ECX,dword ptr [EBP + -0x74]
 0054F90A  C6 83 BB 00 00 00 00      MOV byte ptr [EBX + 0xbb],0x0
@@ -689,7 +695,8 @@ LAB_0054f95a:
 0054F972  6A 08                     PUSH 0x8
 0054F974  52                        PUSH EDX
 0054F975  68 6C 42 00 00            PUSH 0x426c
-0054F97A  E8 C1 07 16 00            CALL 0x006b0140
+STPlaySystemC::PrepareMail::override::prt_54f97a_ff626359:
+0054F97A  E8 C1 07 16 00            CALL 0x006b0140  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/PopUpTy; signature=__stdcall;pointer:/PopUpTy;/WinDef.h/UINT;/WinDef.h/HINSTANCE
 0054F97F  8B 0D D8 16 80 00         MOV ECX,dword ptr [0x008016d8]
 0054F985  50                        PUSH EAX
 0054F986  E8 4D 1B EB FF            CALL 0x004014d8
@@ -879,7 +886,8 @@ switchD_0054fb75::caseD_31:
 0054FB86  8B 43 3D                  MOV EAX,dword ptr [EBX + 0x3d]
 0054FB89  51                        PUSH ECX
 0054FB8A  50                        PUSH EAX
-0054FB8B  E8 C0 D3 15 00            CALL 0x006acf50
+STPlaySystemC::PrepareMail::override::prt_54fb8b_749744f9:
+0054FB8B  E8 C0 D3 15 00            CALL 0x006acf50  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STPlaySystemC_003D; signature=__stdcall;pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STPlaySystemC_003D;pointer:/void;/uint
 0054FB90  8B 4D EC                  MOV ECX,dword ptr [EBP + -0x14]
 0054FB93  89 43 3D                  MOV dword ptr [EBX + 0x3d],EAX
 0054FB96  89 4B 45                  MOV dword ptr [EBX + 0x45],ECX
@@ -1029,7 +1037,8 @@ LAB_0054fd34:
 0054FD39  68 30 84 7C 00            PUSH 0x7c8430
 0054FD3E  57                        PUSH EDI
 0054FD3F  56                        PUSH ESI
-0054FD40  E8 FB 60 15 00            CALL 0x006a5e40
+STPlaySystemC::PrepareMail::override::prt_54fd40_9107a500:
+0054FD40  E8 FB 60 15 00            CALL 0x006a5e40  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/undefined4; signature=__stdcall;pointer:/undefined4;/int;/int;pointer:/char;/int
 0054FD45  5F                        POP EDI
 0054FD46  5E                        POP ESI
 0054FD47  5B                        POP EBX

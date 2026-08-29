@@ -32,9 +32,10 @@ undefined4 __thiscall TLOFakeTy::sub_004D0A80(TLOFakeTy *this,int param_1,int pa
         return 0;
       }
     }
+
     exceptionCode =
          thunk_FUN_00495ff0(puVar4[iVar3 * 6],puVar4[iVar3 * 6 + 2],puVar4[iVar3 * 6 + 4],0,
-                            (AnonShape_00495FF0_59081BDD *)this);
+                            (RecoveredRecordView_00495FF0_A2A90B23 *)this);
     if (exceptionCode != 0) {
       RaiseInternalException
                 (exceptionCode,g_overwriteContext_007ED77C,"E:\\__titans\\Artem\\TLO_dock.cpp"

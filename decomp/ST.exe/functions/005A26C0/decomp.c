@@ -31,6 +31,7 @@ void __thiscall FSGSTy::DelPlayer(FSGSTy *this,byte *param_1)
     local_84.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_84;
     local_10 = this;
+
     iVar4 = Library::MSVCRT::__setjmp3(local_84.jumpBuffer,0);
     this_00 = local_10;
     if (iVar4 == 0) {
@@ -84,6 +85,7 @@ LAB_005a27ba:
 LAB_005a27bf:
             uVar7 = local_c;
             if (iVar6 == 0) {
+
               DArrayRemoveAt((DArrayTy *)this_00->field_1EA6,index);
               break;
             }
@@ -161,6 +163,7 @@ LAB_005a28ee:
       return;
     }
     g_currentExceptionFrame = local_84.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xa3c,0,iVar4,"%s"
                                ,"FSGSTy::DelPlayer");
     if (iVar5 != 0) {

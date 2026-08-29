@@ -17,6 +17,7 @@ void __thiscall STPlaySystemC::DoneSystem(STPlaySystemC *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pSVar2 = local_8;
   if (iVar3 == 0) {
@@ -49,6 +50,7 @@ void __thiscall STPlaySystemC::DoneSystem(STPlaySystemC *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\tplaysys.cpp",0x1b1,0,iVar3,"%s",
                              "STPlaySystemC::DoneSystem");
   if (iVar4 != 0) {

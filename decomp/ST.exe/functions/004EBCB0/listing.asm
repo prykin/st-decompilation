@@ -40,7 +40,7 @@ FUN_004ebcb0:
 004EBD3B  05 5E 03 00 00            ADD EAX,0x35e
 004EBD40  50                        PUSH EAX
 004EBD41  6A 03                     PUSH 0x3
-004EBD43  FF 97 90 00 00 00         CALL dword ptr [EDI + 0x90]
+004EBD43  FF 97 90 00 00 00         CALL dword ptr [EDI + 0x90]  ; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4
 004EBD49  5F                        POP EDI
 004EBD4A  5E                        POP ESI
 004EBD4B  5D                        POP EBP
@@ -52,7 +52,7 @@ LAB_004ebd4f:
 004EBD56  68 B1 03 00 00            PUSH 0x3b1
 004EBD5B  6A 03                     PUSH 0x3
 004EBD5D  8B CE                     MOV ECX,ESI
-004EBD5F  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]
+004EBD5F  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]  ; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4
 LAB_004ebd65:
 004EBD65  5E                        POP ESI
 004EBD66  5D                        POP EBP

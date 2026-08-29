@@ -28,11 +28,11 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
   int iVar9;
   int iVar8;
   int iVar10;
-  byte *puVar11;
+  RecoveredRecord_0062AEF0_3223AFD1 *pRVar11;
   STParticleC *pSVar12;
-  VisibleClassTy *pVVar13;
-  uint uVar14;
-  bool bVar15;
+  VisibleClassTy *pVVar14;
+  uint uVar15;
+  bool bVar16;
   InternalExceptionFrame local_7c;
   int local_38;
   int local_34;
@@ -42,8 +42,8 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
   int local_24;
   int local_20;
   int local_1c;
-  undefined4 local_18;
-  undefined4 local_14;
+  uint local_18;
+  uint local_14;
   STParticleC *local_10;
   float local_c;
   float local_8;
@@ -51,10 +51,12 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
   local_7c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_7c;
   local_10 = this;
+
   local_EAX_36 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0);
   this_00 = local_10;
   if (local_EAX_36 != 0) {
     g_currentExceptionFrame = local_7c.previous;
+
     iVar8 = ReportDebugMessage("E:\\__titans\\nick\\to_Part.Cpp",0x218,0,local_EAX_36,
                                "%s","STParticleC::GetMessage");
     if (iVar8 != 0) {
@@ -69,6 +71,7 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
     return 0;
   }
   if (SVar2 == MESS_SHARED_010F) {
+
     local_14 = thunk_FUN_0062af40(local_10,&local_18);
     FreeAndNull(&local_14);
     g_currentExceptionFrame = local_7c.previous;
@@ -89,10 +92,15 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
-    puVar11 = (byte *)((message->arg0).ptr);
-    if (puVar11[3] != 2) {
+    pRVar11 = (message->arg0).ptr;
+    if (*(int *)(pRVar11 + 4) != 2) {
       pSVar12 = local_10;
-      memmove(pSVar12, puVar11, 0x46); /* compiler REP MOVS byte copy */
+      for (iVar10 = 0x11; iVar10 != 0; iVar10 = iVar10 + -1) {
+        *(undefined4 *)pSVar12 = *(undefined4 *)pRVar11;
+        pRVar11 = (RecoveredRecord_0062AEF0_3223AFD1 *)&pRVar11[1].field_0x1;
+        pSVar12 = (STParticleC *)&pSVar12->field_0x4;
+      }
+      *(undefined2 *)pSVar12 = *(undefined2 *)pRVar11;
       /* ST_CALLSITE[00627F75]: CALL 0x004012e4; direct=004012E4 STParticleC::sub_00629F90 */
       sub_00629F90(local_10,local_10,g_playSystem_00802A38->field_00E4);
       /* ST_CALLSITE[00627F85]: CALL 0x00405727; direct=00405727 STParticleC::InitVisibelFlight */
@@ -113,13 +121,14 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
         g_currentExceptionFrame = local_7c.previous;
         return 0;
       }
+
       Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,this_00->field_00C6,0);
       this_00->field_00C1 = 1;
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
     /* ST_CALLSITE[00628014]: CALL 0x0040396d; direct=0040396D STParticleC::sub_0062AEF0 */
-    sub_0062AEF0(local_10,puVar11);
+    sub_0062AEF0(local_10,pRVar11);
     memset(&this_00->field_0xd7, 0, 0x2d); /* compiler bulk-zero initialization */
     if (this_00->field_00C2 == CASE_3) {
       /* ST_CALLSITE[00628036]: CALL 0x004030cb; direct=004030CB STParticleC::sub_0062A860 */
@@ -170,6 +179,7 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
+
     Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,this_00->field_00C6,0);
     this_00->field_00C1 = 1;
     ST3DSMAPContext::sub_006EA270
@@ -182,7 +192,7 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
     this_00->field_0072 = fVar5;
     Library::Ourlib::ST3DSMAP::SprMove
               (g_sT3DSMAPContext_00807598,this_00->field_00C6,local_c,local_8,fVar5 + _DAT_007904fc);
-    pVVar13 = g_visibleClass_00802A88;
+    pVVar14 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == nullptr) {
       g_currentExceptionFrame = local_7c.previous;
       return 0;
@@ -208,21 +218,21 @@ int __thiscall STParticleC::GetMessage(STParticleC *this,STMessage *message)
                     &local_1c,&local_20), (int)local_c < 0 ||
         (local_24 = local_1c, local_28 = local_20, 4 < (int)local_c)))) goto LAB_006282e0;
 LAB_00628286:
-    if (((local_24 < 0) || (pVVar13->field_0030 <= local_24)) ||
+    if (((local_24 < 0) || (pVVar14->field_0030 <= local_24)) ||
        ((g_centeredOffsets5[(int)local_c] + local_28 < 0 ||
-        (pVVar13->field_0034 <= g_centeredOffsets5[(int)local_c] + local_28)))) {
-      bVar15 = false;
+        (pVVar14->field_0034 <= g_centeredOffsets5[(int)local_c] + local_28)))) {
+      bVar16 = false;
     }
     else {
-      bVar15 = true;
+      bVar16 = true;
     }
-    if ((bVar15) && (pVVar13->field_004C != nullptr)) {
-      bVar15 = pVVar13->field_004C
-               [local_24 + (g_centeredOffsets5[(int)local_c] + local_28) * pVVar13->field_0030] != 0
+    if ((bVar16) && (pVVar14->field_004C != nullptr)) {
+      bVar16 = pVVar14->field_004C
+               [local_24 + (g_centeredOffsets5[(int)local_c] + local_28) * pVVar14->field_0030] != 0
       ;
     }
     else {
-      bVar15 = true;
+      bVar16 = true;
     }
     break;
   case CASE_2:
@@ -255,7 +265,7 @@ LAB_00628286:
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
-    uVar14 = g_playSystem_00802A38->field_00E4 - this_00->field_00AA;
+    uVar15 = g_playSystem_00802A38->field_00E4 - this_00->field_00AA;
     if ((this_00->field_00D6 != '\0') && ((g_playSystem_00802A38->field_00E4 & 1) == 0)) {
       if ((this_00->field_0014 & 0xff00) == 0x400) {
         iVar10 = this_00->field_004E;
@@ -270,11 +280,11 @@ LAB_00628286:
                  0,0,-1,0,0);
     }
 LAB_0062838a:
-    if (uVar14 < 0x19) {
+    if (uVar15 < 0x19) {
 LAB_006283bd:
       this_00->field_00B2 = this_00->field_00B2 + 1;
     }
-    else if (uVar14 < 0x2d) {
+    else if (uVar15 < 0x2d) {
       if ((g_playSystem_00802A38->field_00E4 & 1) == 0) goto LAB_006283bd;
     }
     else if (g_playSystem_00802A38->field_00E4 % 3 == 0) goto LAB_006283bd;
@@ -295,7 +305,7 @@ LAB_006283bd:
     this_00->field_0072 = fVar5;
     Library::Ourlib::ST3DSMAP::SprMove
               (g_sT3DSMAPContext_00807598,this_00->field_00C6,local_c,local_8,fVar5 + _DAT_007904fc);
-    pVVar13 = g_visibleClass_00802A88;
+    pVVar14 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == nullptr) {
       g_currentExceptionFrame = local_7c.previous;
       return 0;
@@ -321,7 +331,7 @@ LAB_006283bd:
                     &local_24,&local_28), -1 < (int)local_c)) && ((int)local_c < 5))
     goto LAB_00628286;
 LAB_006282e0:
-    bVar15 = true;
+    bVar16 = true;
     break;
   case CASE_3:
     iVar10 = this_00->field_00B2 + 1;
@@ -334,12 +344,14 @@ LAB_006282e0:
        (-1 < this_00->field_00C6)) {
       ST3DSMAPContext::sub_006E9D40(g_sT3DSMAPContext_00807598,(uint *)this_00->field_00C6,0);
     }
-    if (((this_00->field_00B2 == 5) && (iVar10 = thunk_FUN_0062b300((int)this_00), iVar10 != 0)) &&
-       (this_00->field_0076 != 2)) {
+    if (((this_00->field_00B2 == 5) &&
+
+        (iVar10 = thunk_FUN_0062b300((RecoveredRecordView_0062B300_D23B876C *)this_00), iVar10 != 0)
+        ) && (this_00->field_0076 != 2)) {
       thunk_FUN_0062af90(this_00,this_00->field_0046,this_00->field_004A,this_00->field_004E);
     }
-    uVar14 = this_00->field_00B2;
-    if (this_00->field_00BA <= (int)uVar14) {
+    uVar15 = this_00->field_00B2;
+    if (this_00->field_00BA <= (int)uVar15) {
       /* ST_CALLSITE[00628676]: CALL 0x004030cb; direct=004030CB STParticleC::sub_0062A860 */
       sub_0062A860(this_00);
       this_00->field_00C2 = CASE_0;
@@ -350,8 +362,8 @@ LAB_006282e0:
       g_currentExceptionFrame = local_7c.previous;
       return 0;
     }
-    if ((int)uVar14 < this_00->field_00B6) {
-      ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,this_00->field_00C6,0,uVar14);
+    if ((int)uVar15 < this_00->field_00B6) {
+      ST3DSMAPContext::sub_006EA270(g_sT3DSMAPContext_00807598,this_00->field_00C6,0,uVar15);
       local_c = (float)this_00->field_0046 * _DAT_007904f8 * _DAT_007904f0;
       this_00->field_006A = local_c;
       local_8 = (float)this_00->field_004A * _DAT_007904f8 * _DAT_007904f0;
@@ -361,7 +373,7 @@ LAB_006282e0:
       Library::Ourlib::ST3DSMAP::SprMove
                 (g_sT3DSMAPContext_00807598,this_00->field_00C6,local_c,local_8,
                  fVar5 + _DAT_007904fc);
-      pVVar13 = g_visibleClass_00802A88;
+      pVVar14 = g_visibleClass_00802A88;
       if (g_visibleClass_00802A88 != nullptr) {
         iVar10 = this_00->field_004E;
         sVar4 = (short)(iVar10 >> 0x1f);
@@ -382,28 +394,29 @@ LAB_006282e0:
             (VisibleClassTy::sub_00558C00
                        (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar10,
                         &local_2c,&local_30), (int)local_c < 0)) || (4 < (int)local_c)) {
-          bVar15 = true;
+          bVar16 = true;
         }
         else {
-          if (((local_2c < 0) || (pVVar13->field_0030 <= local_2c)) ||
+          if (((local_2c < 0) || (pVVar14->field_0030 <= local_2c)) ||
              ((g_centeredOffsets5[(int)local_c] + local_30 < 0 ||
-              (pVVar13->field_0034 <= g_centeredOffsets5[(int)local_c] + local_30)))) {
-            bVar15 = false;
+              (pVVar14->field_0034 <= g_centeredOffsets5[(int)local_c] + local_30)))) {
+            bVar16 = false;
           }
           else {
-            bVar15 = true;
+            bVar16 = true;
           }
-          if ((bVar15) && (pVVar13->field_004C != nullptr)) {
-            bVar15 = pVVar13->field_004C
-                     [local_2c + (g_centeredOffsets5[(int)local_c] + local_30) * pVVar13->field_0030
+          if ((bVar16) && (pVVar14->field_004C != nullptr)) {
+            bVar16 = pVVar14->field_004C
+                     [local_2c + (g_centeredOffsets5[(int)local_c] + local_30) * pVVar14->field_0030
                      ] != 0;
           }
           else {
-            bVar15 = true;
+            bVar16 = true;
           }
         }
-        if (bVar15) {
+        if (bVar16) {
           if (this_00->field_00C1 == '\0') {
+
             Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,this_00->field_00C6,0);
             this_00->field_00C1 = 1;
           }
@@ -447,7 +460,7 @@ LAB_006282e0:
     this_00->field_0072 = fVar5;
     Library::Ourlib::ST3DSMAP::SprMove
               (g_sT3DSMAPContext_00807598,this_00->field_00C6,local_c,local_8,fVar5 + _DAT_007904fc);
-    pVVar13 = g_visibleClass_00802A88;
+    pVVar14 = g_visibleClass_00802A88;
     if (g_visibleClass_00802A88 == nullptr) {
       g_currentExceptionFrame = local_7c.previous;
       return 0;
@@ -471,24 +484,24 @@ LAB_006282e0:
         (VisibleClassTy::sub_00558C00
                    (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,iVar9,iVar10,
                     &local_34,&local_38), (int)local_c < 0)) || (4 < (int)local_c)) {
-      bVar15 = true;
+      bVar16 = true;
     }
     else {
-      if (((local_34 < 0) || (pVVar13->field_0030 <= local_34)) ||
+      if (((local_34 < 0) || (pVVar14->field_0030 <= local_34)) ||
          ((g_centeredOffsets5[(int)local_c] + local_38 < 0 ||
-          (pVVar13->field_0034 <= g_centeredOffsets5[(int)local_c] + local_38)))) {
-        bVar15 = false;
+          (pVVar14->field_0034 <= g_centeredOffsets5[(int)local_c] + local_38)))) {
+        bVar16 = false;
       }
       else {
-        bVar15 = true;
+        bVar16 = true;
       }
-      if ((bVar15) && (pVVar13->field_004C != nullptr)) {
-        bVar15 = pVVar13->field_004C
-                 [(g_centeredOffsets5[(int)local_c] + local_38) * pVVar13->field_0030 + local_34] !=
+      if ((bVar16) && (pVVar14->field_004C != nullptr)) {
+        bVar16 = pVVar14->field_004C
+                 [(g_centeredOffsets5[(int)local_c] + local_38) * pVVar14->field_0030 + local_34] !=
                  0;
       }
       else {
-        bVar15 = true;
+        bVar16 = true;
       }
     }
     cVar1 = this_00->field_00C1;
@@ -498,8 +511,9 @@ LAB_006282e0:
   }
   cVar1 = this_00->field_00C1;
 joined_r0x00628af1:
-  if (bVar15) {
+  if (bVar16) {
     if (cVar1 == '\0') {
+
       Library::Ourlib::ST3DSMAP::SprShow(g_sT3DSMAPContext_00807598,this_00->field_00C6,0);
       this_00->field_00C1 = 1;
       g_currentExceptionFrame = local_7c.previous;

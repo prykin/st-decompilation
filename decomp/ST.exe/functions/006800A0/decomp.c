@@ -17,18 +17,22 @@ int __cdecl FUN_006800a0(byte *param_1)
   byte *pbVar7;
   bool bVar8;
 
+
   iVar3 = thunk_FUN_0067ff00((char *)param_1);
   if (-1 < iVar3) {
     return 5;
   }
+
   iVar3 = thunk_FUN_0067ff50((char *)param_1);
   if (-1 < iVar3) {
     return 6;
   }
+
   iVar3 = thunk_FUN_0067ffa0((char *)param_1);
   if (-1 < iVar3) {
     return 7;
   }
+
   iVar3 = thunk_FUN_0067fff0((char *)param_1);
   if (-1 < iVar3) {
     return 8;
@@ -111,6 +115,7 @@ LAB_006801d2:
       iVar3 = iVar3 + 1;
     } while (iVar3 < (int)dVar2);
   }
+
   iVar3 = thunk_FUN_0067fc10(param_1);
   return (iVar3 < 0) - 1 & 4;
 }

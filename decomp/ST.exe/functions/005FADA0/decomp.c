@@ -31,7 +31,7 @@ undefined4 __thiscall FUN_005fada0(void *this,int param_1,uint param_2,int param
     }
     uVar3 = 1;
     if (STField<char>(this,0x2b6) != '\0') {
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00416270::thunk_FUN_005faa10
+      SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00416270::thunk_FUN_005faa10
                 (this,param_3);
       uVar1 = *(uint *)(STField<int>(this,0x2e6) + 4);
       if (-1 < (int)uVar1) {

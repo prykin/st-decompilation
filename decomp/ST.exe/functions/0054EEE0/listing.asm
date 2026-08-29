@@ -74,7 +74,7 @@ switchD_0054ef0e::caseD_6:
 0054EF9C  89 7D F4                  MOV dword ptr [EBP + -0xc],EDI
 0054EF9F  8D 47 1B                  LEA EAX,[EDI + 0x1b]
 0054EFA2  50                        PUSH EAX
-0054EFA3  E8 68 BC 15 00            CALL 0x006aac10
+0054EFA3  E8 68 BC 15 00            CALL 0x006aac10  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 0054EFA8  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 0054EFAB  8B 91 E4 00 00 00         MOV EDX,dword ptr [ECX + 0xe4]
 0054EFB1  89 50 04                  MOV dword ptr [EAX + 0x4],EDX

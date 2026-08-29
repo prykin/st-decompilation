@@ -9,7 +9,7 @@
    Evidence: slot_family_has_no_named_method; unique_owner_for_target;
    receiver_only_leaf_virtual_signature */
 
-dword __thiscall STContainerC::FUN_005fcda0(STContainerC *this)
+dword __thiscall STContainerC::vfunc_130(STContainerC *this)
 
 {
   return this->field_0346;

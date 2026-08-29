@@ -13,7 +13,8 @@ STColl3C * __cdecl CreateSTColl3(void)
 {
   STColl3C *pSVar1;
 
-  pSVar1 = (STColl3C *)FUN_006b04d0(0x2f3);
+  /* ST_CALLSITE[005F65D5]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STColl3C; signature=__stdcall;pointer:/STColl3C;/uint */
+  pSVar1 = FUN_006b04d0(0x2f3);
   if (pSVar1 != nullptr) {
     pSVar1 = STColl3C::STColl3C(pSVar1);
     return pSVar1;

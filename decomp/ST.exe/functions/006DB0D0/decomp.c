@@ -3,9 +3,14 @@
 
 /* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
 /* WARNING: Unable to track spacebase fully for stack */
+/* [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:8: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=1,
+   pointer_dereferences=4, scalar_uses=0; sites=006DB160 dereference: MOV AX,word ptr [EBP +
+   EAX*0x2] | 006DB17B dereference: MOV AX,word ptr [EBP + EAX*0x2] | 006DB18A dereference: MOV
+   AX,word ptr [EBP + EDX*0x2] | 006DB1AB dereference: MOV AX,word ptr [EBP + EAX*0x2] */
 
 void FUN_006db0d0(undefined4 *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
-                 int param_7,uint param_8,int param_9)
+                 int param_7,uint param_8,void *param_9)
 
 {
   int *piVar1;

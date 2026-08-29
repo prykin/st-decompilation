@@ -93,4 +93,3 @@ int __cdecl st::fn_0055DA40(cMf32 *param_1,byte param_2)
   st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\pal_tbl.CPP"),0x7d);
   return iVar2;
 }
-

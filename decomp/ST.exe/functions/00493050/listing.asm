@@ -1,4 +1,4 @@
-FUN_00493050:
+STBoatC::vfunc_114:
 00493050  55                        PUSH EBP
 00493051  8B EC                     MOV EBP,ESP
 00493053  83 B9 5D 04 00 00 03      CMP dword ptr [ECX + 0x45d],0x3

@@ -360,7 +360,7 @@ LAB_0058adf2:
 0058AE37  40                        INC EAX
 0058AE38  8B CE                     MOV ECX,ESI
 0058AE3A  89 86 4D 02 00 00         MOV dword ptr [ESI + 0x24d],EAX
-0058AE40  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]
+0058AE40  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]  ; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0058AE46  5F                        POP EDI
 0058AE47  5E                        POP ESI
 0058AE48  5B                        POP EBX

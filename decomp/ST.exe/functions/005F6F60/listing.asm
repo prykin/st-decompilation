@@ -1115,7 +1115,7 @@ LAB_005f7d45:
 005F7D58  6A 00                     PUSH 0x0
 005F7D5A  6A 01                     PUSH 0x1
 005F7D5C  6A 0E                     PUSH 0xe
-005F7D5E  E8 69 D5 E0 FF            CALL 0x004052cc
+005F7D5E  E8 69 D5 E0 FF            CALL 0x004052cc  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/LibraryContexts/ST3DSMAPContext; source view only; no Ghidra override
 005F7D63  8B 8B 11 02 00 00         MOV ECX,dword ptr [EBX + 0x211]
 005F7D69  50                        PUSH EAX
 005F7D6A  E8 81 21 0F 00            CALL 0x006e9ef0

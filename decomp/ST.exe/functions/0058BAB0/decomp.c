@@ -9,11 +9,11 @@ FUN_0058bab0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
             undefined4 param_5,ushort param_6)
 
 {
-  undefined4 local_2c [5];
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-  undefined4 local_c;
+  uint local_2c [5];
+  uint local_18;
+  uint local_14;
+  uint local_10;
+  uint local_c;
   ushort local_8;
 
   memset(local_2c, 0, 0x26); /* compiler bulk-zero initialization */
@@ -27,7 +27,7 @@ FUN_0058bab0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   local_2c[3] = 1;
   local_10 = param_3;
   /* ST_CALLSITE[0058BB19]: CALL dword ptr [EAX + 0x8] */
-  g_playSystem_00802A38->vfunc_08(0x14d,0,(short)&param_4,(short)local_2c,0);
+  g_playSystem_00802A38->vfunc_8(0x14d,nullptr,&param_4,(short)local_2c,0);
   return param_4;
 }
 

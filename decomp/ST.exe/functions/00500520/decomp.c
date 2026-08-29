@@ -52,6 +52,7 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
     local_70.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_70;
     local_1c = this;
+
     iVar4 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
     pCVar2 = local_1c;
     if (iVar4 == 0) {
@@ -72,7 +73,7 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
             if (*pcVar7 != '\0') {
               iVar10 = local_28;
             }
-            pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02A2,
+            pBVar4 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)pCVar2->field_02A2,
                                   (int)(pcVar7 + iVar10));
             cVar3 = '\x06';
             iVar10 = local_10;
@@ -82,7 +83,7 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
           if (*pcVar7 == '\0') {
             iVar10 = local_2c;
           }
-          pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02A2,
+          pBVar4 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)pCVar2->field_02A2,
                                 (int)(pcVar7 + iVar10));
           cVar3 = '\x06';
           iVar10 = iVar6 + 0x7c;
@@ -95,7 +96,8 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
           else {
             uVar5 = -(uint)(local_c[2] != '\x01') & 3;
           }
-          pBVar4 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_02A2,uVar5);
+          /* ST_CALLSITE[0050067B]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+          pBVar4 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)pCVar2->field_02A2,uVar5);
           cVar3 = '\x01';
           iVar10 = 7;
           iVar11 = local_14;
@@ -103,7 +105,7 @@ LAB_00500689:
           pRVar8 = (RecoveredSourceFamily_dibcopy *)pCVar2->field_0148[(local_8 & 0xff) + 0xe];
         }
         /* ST_CALLSITE[00500699]: CALL 0x00403229; direct=00403229 DibPut */
-        DibPut(pRVar8,iVar10,iVar11,cVar3,(byte *)pBVar4);
+        DibPut(pRVar8,iVar10,iVar11,cVar3,(RecoveredRecordView_006B84D0_87AF9D9B *)pBVar4);
         local_10 = local_10 + -0xb;
         iVar6 = iVar6 + 0xb;
         pcVar7 = pcVar7 + 1;
@@ -116,6 +118,7 @@ LAB_00500689:
       } while( true );
     }
     g_currentExceptionFrame = local_70.previous;
+
     iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0x1da,0,iVar4,"%s"
                                ,"CPanelTy::PaintDeep");
     if (iVar9 != 0) {

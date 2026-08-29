@@ -11,7 +11,7 @@
    [STTypeFamilyApplier] EXACT_NAMED_LAYOUT.
    Evidence: anonymous structure has an exact full-layout match to one unique named type */
 
-int FUN_00623040(AnonReceiver_004248D0 *param_1,undefined4 param_2,int *param_3,
+int FUN_00623040(RecoveredReceiver_004248D0 *param_1,undefined4 param_2,int *param_3,
                 AnonShape_00623040_D312340A *param_4)
 
 {
@@ -25,14 +25,14 @@ int FUN_00623040(AnonReceiver_004248D0 *param_1,undefined4 param_2,int *param_3,
   if ((iVar1 != 0) && (iVar3 = *(int *)(iVar1 + param_4->field_0070 * 4), iVar3 != 0)) {
     if (param_4->field_004F != '\0') {
       local_EAX_124 =
-           SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::thunk_FUN_00424e10
+           SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_004248D0::thunk_FUN_00424e10
                      (param_1,iVar3,
                       (float)param_4->field_0064 * _DAT_007904f8 * _DAT_007904f0 - _DAT_007907a8,
                       (float)param_4->field_0068 * _DAT_007904f8 * _DAT_007904f0 - _DAT_007907a8,
                       (float)param_4->field_006C * _DAT_007904f8 * _DAT_007904f0,0x20,0x20,param_3);
       return local_EAX_124;
     }
-    iVar2 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004248D0::thunk_FUN_00424e10
+    iVar2 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_004248D0::thunk_FUN_00424e10
                       (param_1,*(int *)(iVar1 + (uint)param_4->field_0078 * 4),
                        (float)param_4->field_0064 * _DAT_007904f8 * _DAT_007904f0 - _DAT_007907a8,
                        (float)param_4->field_0068 * _DAT_007904f8 * _DAT_007904f0 - _DAT_007907a8,

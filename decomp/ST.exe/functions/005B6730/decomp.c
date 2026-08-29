@@ -12,8 +12,8 @@ void __thiscall FUN_005b6730(void *this,uint param_1,char param_2,int param_3)
     STField<undefined4>(this,0x18) = 1;
   }
   if ((STPiece<1,1>(DAT_00807300) & 8) != 0) {
-    SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0056A130::thunk_FUN_0056a130
-              ((AnonReceiver_0056A130 *)&g_sound,param_1,param_2,param_3,nullptr);
+    SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0056A130::thunk_FUN_0056a130
+              ((RecoveredReceiver_0056A130 *)&g_sound,param_1,param_2,param_3,nullptr);
   }
   return;
 }

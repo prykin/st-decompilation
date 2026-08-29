@@ -22,8 +22,8 @@ undefined4 __thiscall FUN_00572d30(void *this,BYTE *param_1,BYTE *param_2)
   char *pcVar9;
   code *pcVar10;
   char *pcVar11;
-  undefined4 local_1c [2];
-  undefined2 local_14;
+  uint local_1c [2];
+  ushort local_14;
   char *local_10;
   char *local_c;
   HKEY local_8;
@@ -51,6 +51,7 @@ undefined4 __thiscall FUN_00572d30(void *this,BYTE *param_1,BYTE *param_2)
         local_1c[0] = DAT_007ca690;
         local_1c[1] = 0;
         local_14 = 0;
+
         uVar4 = thunk_FUN_00571dc0();
         local_1c[0] = STReplaceLowByte((uint32_t)(local_1c[0]), (uint8_t)((char)uVar4));
         /* ST_CALLSITE[00572E26]: CALL dword ptr [0x0085bc64] */

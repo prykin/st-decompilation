@@ -24,7 +24,8 @@ STGenBombC::LoadImagSpr:
 0061332C  39 9E 52 02 00 00         CMP dword ptr [ESI + 0x252],EBX
 00613332  75 78                     JNZ 0x006133ac
 00613334  6A 40                     PUSH 0x40
-00613336  E8 F5 B1 11 00            CALL 0x0072e530
+STGenBombC::LoadImagSpr::override::prt_613336_a7ad5ad2:
+00613336  E8 F5 B1 11 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint
 0061333B  83 C4 04                  ADD ESP,0x4
 0061333E  3B C3                     CMP EAX,EBX
 00613340  74 09                     JZ 0x0061334b

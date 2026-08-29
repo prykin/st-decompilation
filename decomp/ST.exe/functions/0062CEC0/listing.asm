@@ -1,6 +1,7 @@
 CreateSTManRub3:
 0062CEC0  68 B8 00 00 00            PUSH 0xb8
-0062CEC5  E8 06 36 08 00            CALL 0x006b04d0
+CreateSTManRub3::override::prt_62cec5_6b3d55cc:
+0062CEC5  E8 06 36 08 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STManRub3C; signature=__stdcall;pointer:/STManRub3C;/uint
 0062CECA  85 C0                     TEST EAX,EAX
 0062CECC  74 0D                     JZ 0x0062cedb
 0062CECE  8B C8                     MOV ECX,EAX

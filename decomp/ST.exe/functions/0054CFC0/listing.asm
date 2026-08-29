@@ -27,7 +27,7 @@ STPlaySystemC::InitSystem:
 0054D00A  6A 07                     PUSH 0x7
 0054D00C  89 5E 39                  MOV dword ptr [ESI + 0x39],EBX
 0054D00F  C7 46 45 07 00 00 00      MOV dword ptr [ESI + 0x45],0x7
-0054D016  E8 55 DC 15 00            CALL 0x006aac70
+0054D016  E8 55 DC 15 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STPlaySystemC_003D; source view only; no Ghidra override
 0054D01B  68 00 14 00 00            PUSH 0x1400
 0054D020  89 46 3D                  MOV dword ptr [ESI + 0x3d],EAX
 0054D023  C7 46 53 00 14 00 00      MOV dword ptr [ESI + 0x53],0x1400

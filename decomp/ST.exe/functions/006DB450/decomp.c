@@ -5,8 +5,8 @@
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
    and decompilation contains no value return */
 
-void FUN_006db450(undefined4 *param_1,int param_2,undefined2 *param_3,int param_4,int param_5,
-                 int param_6)
+void FUN_006db450(undefined4 *param_1,int param_2,RecoveredRecord_006DB450_97F2DDBC *param_3,
+                 int param_4,int param_5,int param_6)
 
 {
   byte *puVar1;
@@ -32,7 +32,7 @@ LAB_006db553:
         iVar5 = iVar6;
         if (iVar6 != 0 && 0 < iVar4) {
           do {
-            puVar9 = (undefined1 *)((int)param_3 + 1);
+            puVar9 = &param_3->field_0001;
             uVar7 = *(undefined1 *)param_3;
             param_3 = param_3 + 1;
             *param_1 = CONCAT22(CONCAT11(*puVar9,*puVar9),CONCAT11(uVar7,uVar7));
@@ -45,14 +45,14 @@ LAB_006db553:
         }
         if (bVar12 == iVar6 < 0) {
           uVar7 = *(undefined1 *)param_3;
-          param_3 = (undefined2 *)((int)param_3 + 1);
+          param_3 = (RecoveredRecord_006DB450_97F2DDBC *)&param_3->field_0001;
           *(ushort *)param_1 = CONCAT11(uVar7,uVar7);
           param_1 = (undefined4 *)((int)param_1 + 2);
         }
       }
       else {
         uVar7 = *(undefined1 *)param_3;
-        param_3 = (undefined2 *)((int)param_3 + 1);
+        param_3 = (RecoveredRecord_006DB450_97F2DDBC *)&param_3->field_0001;
         *(ushort *)param_1 = CONCAT11(uVar7,uVar7);
         param_1 = (undefined4 *)((int)param_1 + 2);
         iVar4 = param_5 + -1;
@@ -95,7 +95,7 @@ LAB_006db59d:
         if (iVar4 != 0 && 0 < param_5) goto LAB_006db59d;
       }
       param_1 = (undefined4 *)((int)puVar10 + param_5 * -2 + param_2);
-      param_3 = (undefined2 *)(puVar9 + (param_4 - param_5));
+      param_3 = (RecoveredRecord_006DB450_97F2DDBC *)(puVar9 + (param_4 - param_5));
       iVar4 = param_6 + -1;
       bVar12 = 0 < param_6;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -107,7 +107,7 @@ LAB_006db59d:
       iVar4 = param_5;
       if (((uint)param_1 & 2) == 0) {
         uVar7 = *(undefined1 *)param_3;
-        param_3 = (undefined2 *)((int)param_3 + 1);
+        param_3 = (RecoveredRecord_006DB450_97F2DDBC *)&param_3->field_0001;
         *(ushort *)param_1 = CONCAT11(uVar7,uVar7);
         param_1 = (undefined4 *)((int)param_1 + 2);
         iVar4 = param_5 + -1;
@@ -116,7 +116,7 @@ LAB_006db59d:
       else {
 LAB_006db484:
         uVar7 = *(undefined1 *)param_3;
-        param_3 = (undefined2 *)((int)param_3 + 1);
+        param_3 = (RecoveredRecord_006DB450_97F2DDBC *)&param_3->field_0001;
         *(undefined1 *)param_1 = uVar7;
         puVar10 = (undefined4 *)((int)param_1 + 1);
         iVar5 = iVar4 + -2;
@@ -136,7 +136,7 @@ LAB_006db484:
         param_1 = (undefined4 *)((int)puVar10 + 1);
         if (SBORROW4(iVar4,2) == iVar5 < 0) {
           uVar7 = *(undefined1 *)param_3;
-          param_3 = (undefined2 *)((int)param_3 + 1);
+          param_3 = (RecoveredRecord_006DB450_97F2DDBC *)((int)param_3 + 1);
           *(ushort *)param_1 = CONCAT11(uVar7,uVar7);
           param_1 = (undefined4 *)((int)puVar10 + 3);
         }
@@ -181,7 +181,7 @@ LAB_006db4e1:
         }
       }
       param_1 = (undefined4 *)((int)puVar11 + param_5 * -2 + param_2);
-      param_3 = (undefined2 *)((int)puVar8 + (param_4 - param_5));
+      param_3 = (RecoveredRecord_006DB450_97F2DDBC *)((int)puVar8 + (param_4 - param_5));
       iVar4 = param_6 + -1;
       bVar12 = 0 < param_6;
       param_6 = iVar4;

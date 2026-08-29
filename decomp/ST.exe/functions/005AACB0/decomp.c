@@ -17,8 +17,9 @@
    first-use mask */
 
 uint __thiscall
-HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_3,int param_4,
-            int param_5,byte param_6,char param_7,uint param_8)
+HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_3,
+            RecoveredRecord_005AACB0_2533FD69 *param_4,int param_5,byte param_6,char param_7,
+            uint param_8)
 
 {
   byte *puVar1;
@@ -37,10 +38,12 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_14;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
+
     iVar3 = ReportDebugMessage("E:\\__titans\\Start\\hologram.cpp",0x9a,0,iVar3,"%s",
                                "HoloTy::Init");
     if (iVar3 == 0) {
@@ -49,13 +52,13 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  local_14->field_0007 = (void *)param_4;
-  if (param_4 != 0) {
+  local_14->field_0007 = param_4;
+  if (param_4 != nullptr) {
     local_14->field_0023 = param_2;
     local_14->field_0027 = param_3;
     local_14->field_0001 = param_1;
-    local_14->field_002B = *(undefined4 *)(param_4 + 4);
-    uVar5 = *(uint *)(param_4 + 8);
+    local_14->field_002B = param_4->field_0004;
+    uVar5 = param_4->field_0008;
     local_14->field_002F = uVar5;
     switch(param_1) {
     case CASE_1:
@@ -82,6 +85,7 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
     this_00->field_000B = puVar4;
     if (puVar4 != nullptr) {
       puVar1 = &this_00->field_0x3;
+
       FUN_006b2330(g_ddxContext_008075A8,(uint *)puVar1,10,0x402842,0,0,(ushort *)this_00);
       uVar5 = *(uint *)puVar1;
       if (-1 < (int)uVar5) {
@@ -101,6 +105,7 @@ HoloTy::Init(HoloTy *this,HoloTy_Init_param_1Enum param_1,int param_2,int param_
         default:
           goto switchD_005aadcd_default;
         }
+
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,*(uint *)puVar1,0xffffffff,uVar5,uVar6);
 switchD_005aadcd_default:

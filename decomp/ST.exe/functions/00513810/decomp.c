@@ -28,6 +28,7 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this)
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;
+
     iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     this_00 = local_c;
     if (iVar3 == 0) {
@@ -61,9 +62,11 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this)
       }
       this_00->field_01A1 = HVar1;
       this_00->field_01A3 = local_8;
+
       Library::DKW::WGR::FUN_006b55f0
                 ((RecoveredSourceFamily_dibcopy *)this_00->field_0068,0,0x21,0x16,
-                 (byte *)this_00->field_01DC,0,0x21,0x16,0x1b8,0x118);
+                 (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_01DC,0,0x21,0x16,0x1b8,
+                 0x118);
       /* ST_CALLSITE[0051390D]: CALL 0x00401acd; direct=00401ACD HelpPanelTy::CreateList */
       CreateList(this_00);
       if (this_00->field_01A2 == '\0') {
@@ -84,6 +87,7 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this)
       return;
     }
     g_currentExceptionFrame = local_50.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x2b3,0,iVar3,"%s"
                                ,"HelpPanelTy::BackBut");
     if (iVar4 != 0) {

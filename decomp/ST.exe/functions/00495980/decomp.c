@@ -29,14 +29,17 @@ int __thiscall DumpClassC::GetMessage(DumpClassC *this,STMessage *message)
   DumpClassC *local_8;
 
   local_8 = this;
+
   FUN_006e5fd0(this,message);
   switch(message->id) {
   case MESS_ID_CREATE:
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
+
     iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     if (iVar3 != 0) {
       g_currentExceptionFrame = local_4c.previous;
+
       iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_dump.cpp",0x3d,0,iVar3,"%s",
                                  "DumpClassC::GetMessage - MESS_ID_CREATE");
       if (iVar5 != 0) {
@@ -51,6 +54,7 @@ LAB_00495c27:
     g_pathingGrid.sizeY = PTR_00806750[1];
     g_pathingGrid.sizeZ = 5;
     g_pathingGrid.planeStride = *PTR_00806750 * PTR_00806750[1];
+
     g_pathingGrid.cells =
          Library::DKW::LIB::MemAlloc((int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX * 10);
     if (g_pathingGrid.cells == nullptr) {
@@ -72,6 +76,7 @@ LAB_00495c27:
     g_pathingScratchGrid.sizeZ = g_pathingGrid.sizeZ;
     g_pathingScratchGrid.sizeX = g_pathingGrid.sizeX;
     g_pathingScratchGrid.planeStride = g_pathingGrid.planeStride;
+
     g_pathingScratchGrid.cells =
          Library::DKW::LIB::MemAlloc
                    ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX *
@@ -84,6 +89,7 @@ LAB_00495c27:
     g_worldGrid.sizeZ = g_pathingGrid.sizeZ;
     g_worldGrid.sizeX = g_pathingGrid.sizeX;
     g_worldGrid.planeStride = g_pathingGrid.planeStride;
+
     g_worldGrid.cells =
          Library::DKW::LIB::MemAlloc
                    ((int)g_pathingGrid.sizeZ * (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX *
@@ -103,6 +109,7 @@ LAB_00495c27:
       *(undefined1 *)ppSVar9 = 0;
       ppSVar9 = (STWorldObject **)((int)ppSVar9 + 1);
     }
+
     DAT_007fb26c = Library::DKW::LIB::MemAlloc
                              ((int)g_pathingScratchGrid.sizeY * (int)g_pathingScratchGrid.sizeX);
     iVar4 = (int)g_pathingScratchGrid.sizeY;
@@ -119,14 +126,17 @@ LAB_00495c27:
     g_array_007FB270 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x18,10);
     thunk_FUN_00495e50();
     g_currentExceptionFrame = local_4c.previous;
+
     FUN_006e4d40((void *)local_8->field_0010,local_8->field_000C);
     break;
   case MESS_SHARED_0003:
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;
+
     iVar3 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
     if (iVar3 != 0) {
       g_currentExceptionFrame = local_90.previous;
+
       local_EAX_923 =
            ReportDebugMessage("E:\\__titans\\wlad\\To_dump.cpp",0x58,0,iVar3,"%s",
                               "DumpClassC::GetMessage - MESS_ID_DONE");
@@ -151,6 +161,7 @@ LAB_00495c27:
     if (g_array_007FB270 != nullptr) {
       DArrayDestroy(g_array_007FB270);
     }
+
     uVar4 = FUN_006e4d40((void *)pDVar2->field_0010,pDVar2->field_000C);
     if (uVar4 == 1) {
       g_currentExceptionFrame = local_90.previous;

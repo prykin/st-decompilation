@@ -38,7 +38,8 @@ undefined4 __fastcall FUN_004c91a0(TLOBaseTy *param_1)
       TLOBaseTy::sub_004C7460(param_1);
       thunk_FUN_004d78e0(*(char *)&param_1->field_0024);
       if (param_1->field_0024 == (byte *)(uint)(byte)param_1->field_0010->field_112D) {
-        thunk_FUN_004d8b70((char)param_1->field_0024);
+        /* ST_CALLSITE[004C9302]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+        STAllPlayersC::sub_004D8B70(g_allPlayers_007FA174,(char)param_1->field_0024);
       }
     }
   }

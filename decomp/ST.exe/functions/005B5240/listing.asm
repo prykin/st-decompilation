@@ -51,7 +51,7 @@ MMObjTy::InitSprBut:
 005B52C6  6A 07                     PUSH 0x7
 005B52C8  51                        PUSH ECX
 005B52C9  8B CF                     MOV ECX,EDI
-005B52CB  FF 52 04                  CALL dword ptr [EDX + 0x4]
+005B52CB  FF 52 04                  CALL dword ptr [EDX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 005B52CE  8B 55 10                  MOV EDX,dword ptr [EBP + 0x10]
 005B52D1  8B 45 14                  MOV EAX,dword ptr [EBP + 0x14]
 005B52D4  89 56 64                  MOV dword ptr [ESI + 0x64],EDX
@@ -105,7 +105,7 @@ LAB_005b52ff:
 005B535E  6A 07                     PUSH 0x7
 005B5360  51                        PUSH ECX
 005B5361  8B CF                     MOV ECX,EDI
-005B5363  FF 52 04                  CALL dword ptr [EDX + 0x4]
+005B5363  FF 52 04                  CALL dword ptr [EDX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 005B5366  8B 55 10                  MOV EDX,dword ptr [EBP + 0x10]
 005B5369  8B 45 38                  MOV EAX,dword ptr [EBP + 0x38]
 005B536C  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
@@ -162,13 +162,13 @@ LAB_005b5392:
 005B53FE  52                        PUSH EDX
 005B53FF  51                        PUSH ECX
 005B5400  50                        PUSH EAX
-005B5401  E8 3A AD 0F 00            CALL 0x006b0140
+005B5401  E8 3A AD 0F 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 005B5406  8B 4D 50                  MOV ECX,dword ptr [EBP + 0x50]
 005B5409  50                        PUSH EAX
 005B540A  E8 71 E0 15 00            CALL 0x00713480
 005B540F  50                        PUSH EAX
 005B5410  8B CF                     MOV ECX,EDI
-005B5412  FF 53 08                  CALL dword ptr [EBX + 0x8]
+005B5412  FF 53 08                  CALL dword ptr [EBX + 0x8]  ; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 LAB_005b5415:
 005B5415  8B 55 BC                  MOV EDX,dword ptr [EBP + -0x44]
 005B5418  C7 86 E1 00 00 00 00 00 00 00  MOV dword ptr [ESI + 0xe1],0x0

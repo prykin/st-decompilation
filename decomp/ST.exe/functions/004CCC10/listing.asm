@@ -103,7 +103,7 @@ LAB_004ccd3f:
 LAB_004ccd43:
 004CCD43  6A 06                     PUSH 0x6
 004CCD45  8B CE                     MOV ECX,ESI
-004CCD47  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]
+004CCD47  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]  ; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4
 LAB_004ccd4d:
 004CCD4D  A1 BC 17 81 00            MOV EAX,[0x008117bc]
 004CCD52  85 C0                     TEST EAX,EAX
@@ -469,7 +469,7 @@ LAB_004cd1b3:
 LAB_004cd1c0:
 004CD1C0  8B 16                     MOV EDX,dword ptr [ESI]
 004CD1C2  8B CE                     MOV ECX,ESI
-004CD1C4  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+004CD1C4  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004CD1C7  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 004CD1CD  50                        PUSH EAX
 004CD1CE  8A 46 24                  MOV AL,byte ptr [ESI + 0x24]

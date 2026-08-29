@@ -6,18 +6,23 @@
    incoming_edx_uses=0; incoming_stack_parameter_uses=1; direct_non_thunk_callers=0;
    incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
 
-void __thiscall STParticleC::sub_0062AEF0(STParticleC *this,undefined4 *param_1)
+void __thiscall
+STParticleC::sub_0062AEF0(STParticleC *this,RecoveredRecord_0062AEF0_3223AFD1 *param_1)
 
 {
   uint uVar1;
+  int iVar2;
   STParticleC *pSVar3;
 
   uVar1 = this->field_00CE;
   pSVar3 = this;
-  memmove(pSVar3, param_1, 0xd6); /* compiler REP MOVS byte copy */
-  pSVar3 = (STParticleC *)((byte *)pSVar3 + 0xd4);
-  param_1 = param_1 + 0x35;
-  pSVar3->field_0x2 = STField<undefined1>(param_1,2);
+  for (iVar2 = 0x35; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *(undefined4 *)pSVar3 = *(undefined4 *)param_1;
+    param_1 = (RecoveredRecord_0062AEF0_3223AFD1 *)&param_1[1].field_0x1;
+    pSVar3 = (STParticleC *)&pSVar3->field_0x4;
+  }
+  *(undefined2 *)pSVar3 = *(undefined2 *)param_1;
+  pSVar3->field_0x2 = param_1->field_0002;
   this->field_00CE = uVar1;
   this->field_00CA = nullptr;
   this->field_00C6 = -1;

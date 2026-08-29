@@ -5,7 +5,7 @@ int __thiscall FUN_007115e0(void *this,AnonShape_007115E0_FC3147FF *param_1,int 
 
 {
   int iVar1;
-  char *resourceString;
+  RecoveredRecord_007111C0_C04D120D *resourceString;
   int iVar2;
   int local_8;
 
@@ -22,11 +22,13 @@ int __thiscall FUN_007115e0(void *this,AnonShape_007115E0_FC3147FF *param_1,int 
       iVar1 = param_2 + param_3;
       for (; param_2 < iVar1; param_2 = param_2 + 1) {
         if (param_2 < param_1->field_0008) {
-          resourceString = *(char **)(param_1->field_0014 + param_2 * 4);
+          resourceString =
+               *(RecoveredRecord_007111C0_C04D120D **)(param_1->field_0014 + param_2 * 4);
         }
         else {
           resourceString = nullptr;
         }
+
         iVar2 = FUN_007111c0(this,resourceString);
         local_8 = local_8 + iVar2;
       }

@@ -53,12 +53,12 @@ undefined4 __thiscall st::fn_004C6210(TLOBldMark *this,int param_1,int *param_2)
   STT3DSprC *pSVar1;
   int iVar2;
   uint uVar3;
-  DWORD DVar4;
 
   this->field_0018 = 0;
   this->field_001C = param_1;
-  this->field_0020 = st::pointer_boundary_cast<int *>(param_2);
-  pSVar1 = (STT3DSprC *)st::fn_0072E530(0x40);
+  this->field_0020 = param_2;
+  /* ST_CALLSITE[004C622B]: CALL 0x0072e530; direct=0072E530 Library::MSVCRT::FUN_0072e530; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint */
+  pSVar1 = st::pointer_boundary_cast<STT3DSprC *>(st::fn_0072E530(0x40));
   if (pSVar1 == nullptr) {
     pSVar1 = nullptr;
   }
@@ -82,6 +82,7 @@ undefined4 __thiscall st::fn_004C6210(TLOBldMark *this,int param_1,int *param_2)
       st::fn_006A5E40
                 (iVar2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_BldMark.cpp"),0x49);
     }
+
     uVar3 = st::fn_004052CC(this->field_002C);
     st::fn_006E9210(g_sT3DSMAPContext_00807598,uVar3);
   }
@@ -95,13 +96,16 @@ undefined4 __thiscall st::fn_004C6210(TLOBldMark *this,int param_1,int *param_2)
     st::fn_006A5E40
               (iVar2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_BldMark.cpp"),0x4c);
   }
+
   st::fn_00401EBA(this->field_002C,0,*(int *)(&DAT_00790f84 + this->field_001C * 4),
                      *(int *)(&DAT_00790f84 + this->field_001C * 4),'\0');
   /* ST_CALLSITE[004C6357]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   st::fn_00401064(this->field_002C,'\0',*(uint *)(&DAT_00790f84 + this->field_001C * 4));
-  DVar4 = st::fn_006E51B0(this->field_0010);
+
+  uVar3 = st::fn_006E51B0(this->field_0010);
   /* ST_CALLSITE[004C636A]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
-  st::fn_00405240(this->field_002C,0,DVar4);
+  st::fn_00405240(this->field_002C,0,uVar3);
+  /* ST_CALLSITE[004C6372]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
   st::fn_00403D0F(this->field_002C);
   this->field_0024 = 0;
   this->field_0028 = 0;
@@ -130,16 +134,15 @@ st::fn_004C6440
   float fVar3;
   VisibleClassTy *pVVar4;
   int iVar5;
-  DWORD DVar6;
+  uint uVar6;
   uint uVar7;
   int *piVar8;
   int iVar9;
-  uint uVar10;
-  longlong lVar11;
-  float fVar12;
+  longlong lVar10;
+  float fVar11;
   int local_34;
   int local_30;
-  undefined4 local_2c;
+  uint local_2c;
   int local_28;
   int local_24;
   int *local_20;
@@ -155,25 +158,26 @@ st::fn_004C6440
   local_20 = g_centeredOffsets5 + 3;
   while( true ) {
     piVar8 = local_20;
+
     st::fn_006E1C20
               (g_sT3DSMAPContext_00807598,param_1,param_2,(float)local_c * _DAT_00790504,&local_14,
                &local_18);
     if (local_14 < _DAT_0079034c) {
-      lVar11 = st::fn_0072E288();
-      iVar9 = (short)lVar11 + -1;
+      lVar10 = st::fn_0072E288();
+      iVar9 = (short)lVar10 + -1;
     }
     else {
-      lVar11 = st::fn_0072E288();
-      iVar9 = (short)lVar11;
+      lVar10 = st::fn_0072E288();
+      iVar9 = (short)lVar10;
     }
     local_10 = iVar9;
     if (local_18 < _DAT_0079034c) {
-      lVar11 = st::fn_0072E288();
-      local_8 = (short)lVar11 + -1;
+      lVar10 = st::fn_0072E288();
+      local_8 = (short)lVar10 + -1;
     }
     else {
-      lVar11 = st::fn_0072E288();
-      local_8 = (short)lVar11;
+      lVar10 = st::fn_0072E288();
+      local_8 = (short)lVar10;
     }
     pVVar4 = g_visibleClass_00802A88;
     if (((((-1 < iVar9) && (iVar9 < g_worldGrid.sizeX)) && (-1 < local_8)) &&
@@ -192,6 +196,7 @@ st::fn_004C6440
          ((pVVar4->field_004C == nullptr ||
           (pVVar4->field_004C[local_30 + iVar9 * pVVar4->field_0030] != 0)))) &&
         (iVar9 = local_10,
+
         st::fn_00402829((short)local_10,local_8,local_c,this->field_001C,(uint)DAT_0080874d,
                            &local_2c,&local_24,&local_1c,0,this->field_0020), local_24 != 0))))
     break;
@@ -200,6 +205,7 @@ st::fn_004C6440
     if ((int)local_20 < 0x79aed0) {
 cf_common_exit_004C6899:
       if (((this->field_0024 != 0) || (this->field_0028 != 0)) && (local_28 == 0)) {
+        /* ST_CALLSITE[004C68AF]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
         st::fn_00403D0F(this->field_002C);
         this->field_0024 = 0;
         this->field_0028 = 0;
@@ -227,29 +233,31 @@ cf_common_exit_004C6899:
                   (iVar9,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_BldMark.cpp"),
                    0x82);
       }
-      uVar10 = 0;
+      uVar6 = 0;
       cVar1 = this->field_0010->field_112E;
       if ((cVar1 == '\x01') || (cVar1 == '\x02')) {
         iVar9 = this->field_001C;
         if (iVar9 == 0x4f) {
-          uVar10 = 1;
+          uVar6 = 1;
         }
         else if (iVar9 == 0x4d) {
-          uVar10 = 2;
+          uVar6 = 2;
         }
         else if (iVar9 == 0x43) {
-          uVar10 = 3;
+          uVar6 = 3;
         }
       }
       else {
-        uVar10 = *(uint *)(&DAT_00790f84 + this->field_001C * 4);
+        uVar6 = *(uint *)(&DAT_00790f84 + this->field_001C * 4);
       }
-      st::fn_00401EBA(this->field_002C,0,uVar10,uVar10,'\0');
+
+      st::fn_00401EBA(this->field_002C,0,uVar6,uVar6,'\0');
       /* ST_CALLSITE[004C676F]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
-      st::fn_00401064(this->field_002C,'\0',uVar10);
-      DVar6 = st::fn_006E51B0(this->field_0010);
+      st::fn_00401064(this->field_002C,'\0',uVar6);
+
+      uVar6 = st::fn_006E51B0(this->field_0010);
       /* ST_CALLSITE[004C6781]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
-      st::fn_00405240(this->field_002C,0,DVar6);
+      st::fn_00405240(this->field_002C,0,uVar6);
       iVar9 = local_10;
     }
   }
@@ -263,30 +271,33 @@ cf_common_exit_004C6899:
       st::fn_006A5E40
                 (iVar5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_BldMark.cpp"),0x77);
     }
+
     st::fn_00401EBA(this->field_002C,0,*(int *)(&DAT_00790f84 + this->field_001C * 4),
                        *(int *)(&DAT_00790f84 + this->field_001C * 4),'\0');
     /* ST_CALLSITE[004C6678]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     st::fn_00401064(this->field_002C,'\0',*(uint *)(&DAT_00790f84 + this->field_001C * 4));
-    DVar6 = st::fn_006E51B0(this->field_0010);
+
+    uVar6 = st::fn_006E51B0(this->field_0010);
     /* ST_CALLSITE[004C668A]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
-    st::fn_00405240(this->field_002C,0,DVar6);
+    st::fn_00405240(this->field_002C,0,uVar6);
   }
   st::fn_00402982(this->field_002C,0);
   if (*(int *)(&DAT_00791d68 + this->field_001C * 4) == 0) {
-    fVar12 = (float)local_8 * _DAT_007904f8 + _DAT_007904f4;
+    fVar11 = (float)local_8 * _DAT_007904f8 + _DAT_007904f4;
     fVar3 = (float)local_10 * _DAT_007904f8 + _DAT_007904f4;
 LAB_004c6848:
     /* ST_CALLSITE[004C684F]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
     st::fn_004045D9
-              (this->field_002C,fVar3,fVar12,
+              (this->field_002C,fVar3,fVar11,
                (float)local_c * _DAT_00790504 + _DAT_00790500 + _DAT_007904fc);
   }
   else {
     if (*(int *)(&DAT_00791d68 + this->field_001C * 4) == 1) {
-      fVar12 = (float)(local_8 + 1) * _DAT_007904f8;
+      fVar11 = (float)(local_8 + 1) * _DAT_007904f8;
       fVar3 = (float)(iVar9 + 1) * _DAT_007904f8;
       goto LAB_004c6848;
     }
+
     iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Artem\\TLO_BldMark.cpp"),0x98,0,0,st::mutable_c_string("%s"),
                                "error");
     if (iVar5 != 0) {
@@ -372,4 +383,3 @@ int __thiscall st::fn_004C6A00(TLOBldMark *this,STMessage *message)
   g_currentExceptionFrame = local_4c.previous;
   return 0;
 }
-

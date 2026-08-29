@@ -10,17 +10,19 @@ FUN_006a0da0(void *this,uint param_1,int param_2,uint param_3,int param_4,int pa
 
 {
   uint uVar1;
-  ushort local_c [4];
+  RecoveredRecord_006A2700_663AFE5D local_c;
 
   if (param_5 == 0) {
-    local_c[0] = 0;
-    local_c[1] = 0;
-    local_c[2] = 0;
+    STPiece<0,4>(local_c) = 0;
+    STPiece<4,1>(local_c) = 0;
+    local_c.field_0005 = 0;
+
     uVar1 = thunk_FUN_006a29b0(0,1,param_6,2,0);
-    local_c[0] = (short)uVar1;
+    STPiece<0,2>(local_c) = (short)uVar1;
+
     uVar1 = thunk_FUN_006a2bf0(2,0,1,param_6,param_6);
-    local_c[2] = (ushort)uVar1;
-    thunk_FUN_006a2700(STField<int *>(this,8),param_1,param_2,0,param_3,param_4,local_c,
+    STPiece<4,2>(local_c) = SUB42(uVar1,0);
+    thunk_FUN_006a2700(STField<int *>(this,8),param_1,param_2,0,param_3,param_4,&local_c,
                        nullptr,0);
   }
   return;

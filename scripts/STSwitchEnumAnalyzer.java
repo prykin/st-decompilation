@@ -49,7 +49,12 @@ import ghidra.util.task.TaskMonitor;
 
 public class STSwitchEnumAnalyzer extends GhidraScript {
     private static final int DECOMPILE_TIMEOUT = 600;
-    private static final String CASE_NAME = "CASE_(?:NEG_)?[0-9A-Fa-f]+";
+    // Ghidra may qualify every enumerator in raw decompiler output even though
+    // the exporter later shortens it to CASE_N.  Accept an optional enum/type
+    // qualifier on each OR operand; typedCompositionValue() strips it and still
+    // requires one exact generated enum domain.
+    private static final String CASE_NAME =
+        "(?:[A-Za-z_][A-Za-z0-9_:]*::)?CASE_(?:NEG_)?[0-9A-Fa-f]+";
     private static final String CASE_ATOM =
         "-?(?:0[xX][0-9a-fA-F]+|[0-9]+)|[A-Za-z_][A-Za-z0-9_:]*";
     private static final Pattern CASE = Pattern.compile(
@@ -81,6 +86,7 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
         "^\\[([A-Z][A-Z0-9]{1,3})(?:([+-])(0X[0-9A-F]+|[0-9]+))?\\]$");
     private static final String CLASS_MARKER = "[STClassLayoutApplier]";
     private static final String ENUM_MARKER = "[STSwitchEnumApplier]";
+    private final List<CompositionAudit> compositionAudit = new ArrayList<>();
 
 
     @Override
@@ -144,6 +150,7 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
         writeTsv(directory.resolve("switch_enum_proposals.tsv"), proposals);
         writeRetries(directory.resolve("switch_enum_decompile_retries.tsv"), retries);
         writeFailures(directory.resolve("switch_enum_decompile_failures.tsv"), failures);
+        writeCompositionAudit(directory.resolve("switch_enum_composition_audit.tsv"));
         writeSummary(directory.resolve("switch_enum_summary.txt"), proposals,
             candidateFunctions, rawSwitches, decompileRetries, decompileFailures);
         long auto = proposals.stream().filter(proposal -> proposal.apply).count();
@@ -749,8 +756,23 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
                     if (fits(candidate, value))
                         exact.add(new EnumValueCandidate(candidate, value));
                 }
-                if (exact.size() != 1) continue;
+                if (exact.size() != 1) {
+                    compositionAudit.add(new CompositionAudit(
+                        addr(function.getEntryPoint()), composition.expression,
+                        String.join("|", variables.keySet()),
+                        String.join("|", candidates.keySet()),
+                        exact.stream().map(value -> value.type.getPathName() + "=" +
+                            value.value).collect(java.util.stream.Collectors.joining("|")),
+                        exact.isEmpty() ? "no_exact_generated_enum" :
+                            "ambiguous_generated_enum"));
+                    continue;
+                }
                 EnumValueCandidate value = exact.get(0);
+                compositionAudit.add(new CompositionAudit(
+                    addr(function.getEntryPoint()), composition.expression,
+                    String.join("|", variables.keySet()),
+                    String.join("|", candidates.keySet()),
+                    value.type.getPathName() + "=" + value.value, "selected"));
                 ObservedEnumDomain domain = observed.computeIfAbsent(
                     value.type.getPathName(), ignored -> new ObservedEnumDomain(value.type));
                 domain.values.add(value.value);
@@ -1147,6 +1169,17 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
         }
     }
 
+    private void writeCompositionAudit(Path path) throws Exception {
+        try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            out.write("function_address\texpression\ttyped_variables\tcandidate_enums" +
+                "\texact_values\tresult\n");
+            for (CompositionAudit row : compositionAudit)
+                out.write(row.functionAddress + "\t" + tsv(row.expression) + "\t" +
+                    tsv(row.typedVariables) + "\t" + tsv(row.candidateEnums) + "\t" +
+                    tsv(row.exactValues) + "\t" + row.result + "\n");
+        }
+    }
+
     private void writeTsv(Path path, List<Proposal> rows) throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             out.write("apply\tfunction_address\texpected_function\texpected_signature\t" +
@@ -1400,6 +1433,9 @@ public class STSwitchEnumAnalyzer extends GhidraScript {
             return scope + "\u0000" + kind + "\u0000" + identity;
         }
     }
+    private record CompositionAudit(String functionAddress, String expression,
+            String typedVariables, String candidateEnums, String exactValues,
+            String result) { }
     private record MachineField(long offset, int width) { }
     private static class ComparisonDomain {
         final Function anchor;

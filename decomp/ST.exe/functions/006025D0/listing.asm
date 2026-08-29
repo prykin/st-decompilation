@@ -11,7 +11,7 @@ STDestC::sub_006025D0:
 006025E4  BB 7E 01 00 00            MOV EBX,0x17e
 006025E9  57                        PUSH EDI
 006025EA  53                        PUSH EBX
-006025EB  E8 80 86 0A 00            CALL 0x006aac70
+006025EB  E8 80 86 0A 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/byte; source view only; no Ghidra override
 006025F0  8B 8E 6E 03 00 00         MOV ECX,dword ptr [ESI + 0x36e]
 006025F6  BF 02 00 00 00            MOV EDI,0x2
 006025FB  3B CF                     CMP ECX,EDI

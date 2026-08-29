@@ -57,7 +57,8 @@ FUN_005db030:
 005DB0EC  50                        PUSH EAX
 005DB0ED  52                        PUSH EDX
 005DB0EE  68 45 03 00 00            PUSH 0x345
-005DB0F3  E8 C8 5D 11 00            CALL 0x006f0ec0
+FUN_005db030::override::prt_5db0f3_9d92389d:
+005DB0F3  E8 C8 5D 11 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 005DB0F8  8B 0D D8 C1 79 00         MOV ECX,dword ptr [0x0079c1d8]
 005DB0FE  83 C4 14                  ADD ESP,0x14
 005DB101  8B D8                     MOV EBX,EAX

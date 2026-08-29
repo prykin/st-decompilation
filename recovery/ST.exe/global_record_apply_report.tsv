@@ -1,2 +1,2 @@
 record_id	base_address	status	typed_fields	named_fields	detail
-record_a62x8	007F4E20	unchanged	106	0	record=/SubmarineTitans/Recovered/GlobalRecords/PackedRecord_A62x8; array=g_packedRecords_A62x8[8]; stride=0xA62; fields=223; updated unchanged script-owned structure; existing script-owned record array
+record_a62x8	007F4E20	unchanged	108	0	record=/SubmarineTitans/Recovered/GlobalRecords/PackedRecord_A62x8; array=g_packedRecords_A62x8[8]; stride=0xA62; fields=223; updated unchanged script-owned structure; existing script-owned record array

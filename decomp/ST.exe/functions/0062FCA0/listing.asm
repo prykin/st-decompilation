@@ -4,7 +4,7 @@ STRubbishC::sub_0062FCA0:
 0062FCA3  56                        PUSH ESI
 0062FCA4  57                        PUSH EDI
 0062FCA5  8B F1                     MOV ESI,ECX
-0062FCA7  E8 47 1B DD FF            CALL 0x004017f3
+0062FCA7  E8 47 1B DD FF            CALL 0x004017f3  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STRubbishC; source view only; no Ghidra override
 0062FCAC  8B F8                     MOV EDI,EAX
 0062FCAE  8B 86 E1 01 00 00         MOV EAX,dword ptr [ESI + 0x1e1]
 0062FCB4  85 FF                     TEST EDI,EDI

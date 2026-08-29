@@ -68,6 +68,7 @@ st::fn_00568DD0
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_8 = this;
+
   local_EAX_49 = st::fn_0072D7F0(local_64.jumpBuffer,0);
   pSVar14 = local_8;
   if (local_EAX_49 != 0) {
@@ -79,6 +80,7 @@ st::fn_00568DD0
     if (((STPiece<1,1>(DAT_00807300) & 4) != 0) &&
        (local_EAX_3338 = st::fn_0071A990(st::pointer_boundary_cast<AnonShape_0071A990_7656000F *>(local_8->field_0DF3),soundId,-1,nullptr),
        local_EAX_3338 != nullptr)) {
+
       st::fn_006C1390(local_EAX_3338,0,1,DAT_0080730e,0,2,3);
       g_currentExceptionFrame = local_64.previous;
       return;
@@ -92,9 +94,9 @@ st::fn_00568DD0
     uVar10 = local_c >> 8;
     local_c = local_c & 0xffffff00;
     if ((-1 < position->x) && (-1 < position->y)) {
-      uVar7 = st::machine_word_boundary_cast<uint>(local_8->field_10DD - position->y);
+      uVar7 = local_8->field_10DD - position->y;
       uVar13 = (int)uVar7 >> 0x1f;
-      uVar8 = st::machine_word_boundary_cast<uint>(local_8->field_10D9 - position->x);
+      uVar8 = local_8->field_10D9 - position->x;
       iVar6 = (uVar7 ^ uVar13) - uVar13;
       uVar7 = (int)uVar8 >> 0x1f;
       iVar9 = (uVar8 ^ uVar7) - uVar7;
@@ -126,6 +128,7 @@ st::fn_00568DD0
       iVar9 = 10;
       iVar6 = 4;
 LAB_0056959b:
+
       local_EAX_508 = st::fn_006C1390(local_EAX_332,0,0,DAT_0080730e,0,iVar6,iVar9);
     }
     else if (DAT_00807363 == '\0') {
@@ -133,8 +136,8 @@ LAB_0056959b:
       iVar9 = pSVar14->field_10ED;
       uVar10 = (iVar6 * local_14 - local_10) + iVar9;
       uVar7 = (int)uVar10 >> 0x1f;
-      iVar2 = (int)(((uVar10 ^ uVar7) - uVar7) * 7) / 10;
-      iVar12 = st::machine_word_boundary_cast<int>(pSVar14->field_10E1 * 0x10);
+      iVar2 = st::storage_bit_cast<int>(static_cast<uint32_t>(((uVar10 ^ uVar7) - uVar7) * 7)) / 10;
+      iVar12 = pSVar14->field_10E1 * 0x10;
       pSVar14->field_10F1 = iVar2;
       iVar11 = *(int *)(&DAT_007c9788 + iVar12);
       if (iVar2 <= *(int *)(&DAT_007c9788 + iVar12)) {
@@ -143,7 +146,7 @@ LAB_0056959b:
       if (iVar11 < *(int *)(&DAT_007c9790 + iVar12)) {
         uVar10 = (iVar6 * position->x - position->y) + iVar9;
         uVar7 = (int)uVar10 >> 0x1f;
-        iVar2 = (int)(((uVar10 ^ uVar7) - uVar7) * 7) / 10;
+        iVar2 = st::storage_bit_cast<int>(static_cast<uint32_t>(((uVar10 ^ uVar7) - uVar7) * 7)) / 10;
         pSVar14->field_10F1 = iVar2;
         local_18 = *(int *)(&DAT_007c9788 + iVar12);
         if (iVar2 <= *(int *)(&DAT_007c9788 + iVar12)) {
@@ -174,11 +177,11 @@ LAB_0056959b:
       if (iVar6 < (int)local_18) {
         iVar9 = *(int *)(&DAT_007c978c + iVar12);
         if (iVar9 < (int)local_18) {
-          uVar10 = (((int)(*(int *)(&DAT_007c9794 + iVar12) * (DAT_0080730e + 4000)) / 100) * 2 +
+          uVar10 = ((st::storage_bit_cast<int>(static_cast<uint32_t>(*(int *)(&DAT_007c9794 + iVar12) * (DAT_0080730e + 4000))) / 100) * 2 +
                    -16000) / 3;
         }
         else {
-          iVar2 = (int)(*(int *)(&DAT_007c9794 + iVar12) * (DAT_0080730e + 4000)) / 100;
+          iVar2 = st::storage_bit_cast<int>(static_cast<uint32_t>(*(int *)(&DAT_007c9794 + iVar12) * (DAT_0080730e + 4000))) / 100;
           iVar6 = *(int *)(&DAT_007c9790 + iVar12);
           uVar10 = (iVar2 * 2 + -16000) / 3 +
                    (int)((((8000 - iVar2) * 2) / 3 + -4000 + iVar2) * (iVar9 - local_18)) /
@@ -187,7 +190,7 @@ LAB_0056959b:
         }
       }
       else {
-        uVar10 = (int)(*(int *)(&DAT_007c9794 + iVar12) * (DAT_0080730e + 4000)) / 100 - 4000;
+        uVar10 = st::storage_bit_cast<int>(static_cast<uint32_t>(*(int *)(&DAT_007c9794 + iVar12) * (DAT_0080730e + 4000))) / 100 - 4000;
       }
       if (iVar6 < (int)local_18) {
         iVar6 = *(int *)(&DAT_007c9788 + iVar12);
@@ -195,16 +198,17 @@ LAB_0056959b:
           bVar3 = 0;
         }
         else {
-          bVar3 = (byte)((int)((iVar6 - local_18) * 0xff) / iVar6);
+          bVar3 = (byte)(st::storage_bit_cast<int>(static_cast<uint32_t>((iVar6 - local_18) * 0xff)) / iVar6);
         }
       }
       else {
         bVar3 = 0xff;
       }
+
       local_EAX_508 = st::fn_006C1390(local_EAX_332,bVar3,4,uVar10,local_14 * local_10,4,10);
     }
     else {
-      iVar6 = st::machine_word_boundary_cast<int>(pSVar14->field_10E1 * 0x10);
+      iVar6 = pSVar14->field_10E1 * 0x10;
       uVar10 = local_c & 0xff;
       local_c = *(uint *)(&DAT_007c9790 + iVar6);
       if ((int)local_c < (int)uVar10) {
@@ -213,12 +217,13 @@ LAB_0056959b:
           bVar3 = 0;
         }
         else {
-          bVar3 = (byte)((int)((iVar9 - uVar10) * 0xff) / iVar9);
+          bVar3 = (byte)(st::storage_bit_cast<int>(static_cast<uint32_t>((iVar9 - uVar10) * 0xff)) / iVar9);
         }
       }
       else {
         bVar3 = 0xff;
       }
+
       local_EAX_508 =
            st::fn_006C21E0(local_EAX_332,bVar3,4,DAT_0080730e,(uint)(float)(int)local_14,
                         (uint)(float)local_10,0,(uint)(float)(int)local_c,
@@ -231,9 +236,9 @@ LAB_0056959b:
       return;
     }
     if ((-1 < position->x) && (-1 < position->y)) {
-      uVar10 = st::machine_word_boundary_cast<uint>(local_8->field_10DD - position->y);
+      uVar10 = local_8->field_10DD - position->y;
       uVar8 = (int)uVar10 >> 0x1f;
-      uVar7 = st::machine_word_boundary_cast<uint>(local_8->field_10D9 - position->x);
+      uVar7 = local_8->field_10D9 - position->x;
       iVar6 = (uVar10 ^ uVar8) - uVar8;
       uVar10 = (int)uVar7 >> 0x1f;
       iVar9 = (uVar7 ^ uVar10) - uVar10;
@@ -242,12 +247,12 @@ LAB_0056959b:
       }
       iVar6 = iVar6 + 1;
       local_8->field_10F1 = iVar6;
-      iVar9 = st::machine_word_boundary_cast<int>(local_8->field_10E1 * 0x10);
+      iVar9 = local_8->field_10E1 * 0x10;
       bVar3 = (byte)*(int *)(&DAT_007c9788 + iVar9);
       if (iVar6 <= *(int *)(&DAT_007c9788 + iVar9)) {
         bVar3 = (byte)iVar6;
       }
-      local_18 = STReplaceLowByte((uint32_t)(local_18), (uint8_t)(bVar3));
+      local_18 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_18)), (uint8_t)(bVar3));
       if (*(int *)(&DAT_007c978c + iVar9) <= (int)(uint)bVar3) {
         g_currentExceptionFrame = local_64.previous;
         return;
@@ -270,8 +275,8 @@ LAB_0056959b:
       iVar9 = pSVar14->field_10ED;
       uVar10 = (iVar6 * local_14 - local_10) + iVar9;
       uVar7 = (int)uVar10 >> 0x1f;
-      iVar2 = (int)(((uVar10 ^ uVar7) - uVar7) * 7) / 10;
-      iVar12 = st::machine_word_boundary_cast<int>(pSVar14->field_10E1 * 0x10);
+      iVar2 = st::storage_bit_cast<int>(static_cast<uint32_t>(((uVar10 ^ uVar7) - uVar7) * 7)) / 10;
+      iVar12 = pSVar14->field_10E1 * 0x10;
       pSVar14->field_10F1 = iVar2;
       iVar11 = *(int *)(&DAT_007c9788 + iVar12);
       if (iVar2 <= *(int *)(&DAT_007c9788 + iVar12)) {
@@ -280,7 +285,7 @@ LAB_0056959b:
       if (iVar11 < *(int *)(&DAT_007c9790 + iVar12)) {
         uVar10 = (iVar6 * position->x - position->y) + iVar9;
         uVar7 = (int)uVar10 >> 0x1f;
-        iVar2 = (int)(((uVar10 ^ uVar7) - uVar7) * 7) / 10;
+        iVar2 = st::storage_bit_cast<int>(static_cast<uint32_t>(((uVar10 ^ uVar7) - uVar7) * 7)) / 10;
         pSVar14->field_10F1 = iVar2;
         local_14 = *(int *)(&DAT_007c9788 + iVar12);
         if (iVar2 <= *(int *)(&DAT_007c9788 + iVar12)) {
@@ -311,11 +316,11 @@ LAB_0056959b:
       if (iVar6 < (int)local_14) {
         iVar9 = *(int *)(&DAT_007c978c + iVar12);
         if (iVar9 < (int)local_14) {
-          uVar10 = (((int)(*(int *)(&DAT_007c9794 + iVar12) * (DAT_0080730e + 4000)) / 100) * 2 +
+          uVar10 = ((st::storage_bit_cast<int>(static_cast<uint32_t>(*(int *)(&DAT_007c9794 + iVar12) * (DAT_0080730e + 4000))) / 100) * 2 +
                    -16000) / 3;
         }
         else {
-          iVar2 = (int)(*(int *)(&DAT_007c9794 + iVar12) * (DAT_0080730e + 4000)) / 100;
+          iVar2 = st::storage_bit_cast<int>(static_cast<uint32_t>(*(int *)(&DAT_007c9794 + iVar12) * (DAT_0080730e + 4000))) / 100;
           iVar6 = *(int *)(&DAT_007c9790 + iVar12);
           uVar10 = (iVar2 * 2 + -16000) / 3 +
                    (int)((((8000 - iVar2) * 2) / 3 + -4000 + iVar2) * (iVar9 - local_14)) /
@@ -324,7 +329,7 @@ LAB_0056959b:
         }
       }
       else {
-        uVar10 = (int)(*(int *)(&DAT_007c9794 + iVar12) * (DAT_0080730e + 4000)) / 100 - 4000;
+        uVar10 = st::storage_bit_cast<int>(static_cast<uint32_t>(*(int *)(&DAT_007c9794 + iVar12) * (DAT_0080730e + 4000))) / 100 - 4000;
       }
       if (iVar6 < (int)local_14) {
         iVar6 = *(int *)(&DAT_007c9788 + iVar12);
@@ -332,16 +337,17 @@ LAB_0056959b:
           bVar3 = 0;
         }
         else {
-          bVar3 = (byte)((int)((iVar6 - local_14) * 0xff) / iVar6);
+          bVar3 = (byte)(st::storage_bit_cast<int>(static_cast<uint32_t>((iVar6 - local_14) * 0xff)) / iVar6);
         }
       }
       else {
         bVar3 = 0xff;
       }
+
       local_EAX_508 = st::fn_006C1390(local_EAX_332,bVar3,4,uVar10,local_10 * local_c,0xb,0x11);
     }
     else {
-      iVar6 = st::machine_word_boundary_cast<int>(pSVar14->field_10E1 * 0x10);
+      iVar6 = pSVar14->field_10E1 * 0x10;
       uVar10 = local_18 & 0xff;
       local_c = *(uint *)(&DAT_007c9790 + iVar6);
       if ((int)local_c < (int)uVar10) {
@@ -350,12 +356,13 @@ LAB_0056959b:
           bVar3 = 0;
         }
         else {
-          bVar3 = (byte)((int)((iVar9 - uVar10) * 0xff) / iVar9);
+          bVar3 = (byte)(st::storage_bit_cast<int>(static_cast<uint32_t>((iVar9 - uVar10) * 0xff)) / iVar9);
         }
       }
       else {
         bVar3 = 0xff;
       }
+
       local_EAX_508 =
            st::fn_006C21E0(local_EAX_332,bVar3,4,DAT_0080730e,(uint)(float)(int)local_14,
                         (uint)(float)local_10,0,(uint)(float)(int)local_c,
@@ -372,13 +379,14 @@ LAB_005695ae:
     break;
   case SOUND_MODE_4:
     if (((STPiece<1,1>(DAT_00807300) & 1) != 0) &&
+
        (iVar6 = st::fn_0040352B(local_8,0x12,0x14), iVar6 != 0)) {
       uVar10 = local_c >> 8;
       local_c = local_c & 0xffffff00;
       if ((-1 < position->x) && (-1 < position->y)) {
-        uVar7 = st::machine_word_boundary_cast<uint>(pSVar14->field_10DD - position->y);
+        uVar7 = pSVar14->field_10DD - position->y;
         uVar13 = (int)uVar7 >> 0x1f;
-        uVar8 = st::machine_word_boundary_cast<uint>(pSVar14->field_10D9 - position->x);
+        uVar8 = pSVar14->field_10D9 - position->x;
         iVar6 = (uVar7 ^ uVar13) - uVar13;
         uVar7 = (int)uVar8 >> 0x1f;
         iVar9 = (uVar8 ^ uVar7) - uVar7;
@@ -403,6 +411,7 @@ LAB_005695ae:
       if (local_1c_mg0 != nullptr) {
         local_14 = position->x;
         if (((int)local_14 < 0) || (local_10 = position->y, local_10 < 0)) {
+
           local_EAX_2404 = st::fn_006C1390(local_1c_mg0,0,2,DAT_0080730e,0,0x12,0x14);
         }
         else if (DAT_00807363 == '\0') {
@@ -410,8 +419,8 @@ LAB_005695ae:
           iVar9 = pSVar14->field_10ED;
           uVar10 = (iVar6 * local_14 - local_10) + iVar9;
           uVar7 = (int)uVar10 >> 0x1f;
-          iVar2 = (int)(((uVar10 ^ uVar7) - uVar7) * 7) / 10;
-          iVar12 = st::machine_word_boundary_cast<int>(pSVar14->field_10E1 * 0x10);
+          iVar2 = st::storage_bit_cast<int>(static_cast<uint32_t>(((uVar10 ^ uVar7) - uVar7) * 7)) / 10;
+          iVar12 = pSVar14->field_10E1 * 0x10;
           pSVar14->field_10F1 = iVar2;
           iVar11 = *(int *)(&DAT_007c9788 + iVar12);
           if (iVar2 <= *(int *)(&DAT_007c9788 + iVar12)) {
@@ -420,7 +429,7 @@ LAB_005695ae:
           if (iVar11 < *(int *)(&DAT_007c9790 + iVar12)) {
             uVar10 = (iVar6 * position->x - position->y) + iVar9;
             uVar7 = (int)uVar10 >> 0x1f;
-            iVar2 = (int)(((uVar10 ^ uVar7) - uVar7) * 7) / 10;
+            iVar2 = st::storage_bit_cast<int>(static_cast<uint32_t>(((uVar10 ^ uVar7) - uVar7) * 7)) / 10;
             pSVar14->field_10F1 = iVar2;
             local_18 = *(int *)(&DAT_007c9788 + iVar12);
             if (iVar2 <= *(int *)(&DAT_007c9788 + iVar12)) {
@@ -448,24 +457,25 @@ LAB_005695ae:
           if (iVar6 < (int)local_20) {
             iVar9 = *(int *)(&DAT_007c978c + iVar12);
             if (iVar9 < (int)local_20) {
-              uVar10 = (((int)(*(int *)(&DAT_007c9794 + iVar12) * (DAT_0080730e + 4000)) / 100) * 2
+              uVar10 = ((st::storage_bit_cast<int>(static_cast<uint32_t>(*(int *)(&DAT_007c9794 + iVar12) * (DAT_0080730e + 4000))) / 100) * 2
                        + -16000) / 3;
             }
             else {
-              iVar2 = (int)(*(int *)(&DAT_007c9794 + iVar12) * (DAT_0080730e + 4000)) / 100;
+              iVar2 = st::storage_bit_cast<int>(static_cast<uint32_t>(*(int *)(&DAT_007c9794 + iVar12) * (DAT_0080730e + 4000))) / 100;
               uVar10 = (iVar2 * 2 + -16000) / 3 +
                        ((((8000 - iVar2) * 2) / 3 + -4000 + iVar2) * (iVar9 - (int)local_20)) /
                        (iVar9 - iVar6);
             }
           }
           else {
-            uVar10 = (int)(*(int *)(&DAT_007c9794 + iVar12) * (DAT_0080730e + 4000)) / 100 - 4000;
+            uVar10 = st::storage_bit_cast<int>(static_cast<uint32_t>(*(int *)(&DAT_007c9794 + iVar12) * (DAT_0080730e + 4000))) / 100 - 4000;
           }
           local_c = iVar6;
+
           local_EAX_2404 = st::fn_006C1390(local_1c_mg0,0,6,uVar10,local_18 * local_14,0x12,0x14);
         }
         else {
-          iVar6 = st::machine_word_boundary_cast<int>(pSVar14->field_10E1 * 0x10);
+          iVar6 = pSVar14->field_10E1 * 0x10;
           uVar10 = local_c & 0xff;
           local_c = *(uint *)(&DAT_007c9790 + iVar6);
           if ((int)local_c < (int)uVar10) {
@@ -474,12 +484,13 @@ LAB_005695ae:
               bVar3 = 0;
             }
             else {
-              bVar3 = (byte)((int)((iVar9 - uVar10) * 0xff) / iVar9);
+              bVar3 = (byte)(st::storage_bit_cast<int>(static_cast<uint32_t>((iVar9 - uVar10) * 0xff)) / iVar9);
             }
           }
           else {
             bVar3 = 0xff;
           }
+
           local_EAX_2404 =
                st::fn_006C21E0(local_1c_mg0,bVar3,6,DAT_0080730e,(uint)(float)(int)local_14,
                             (uint)(float)local_10,0,(uint)(float)(int)local_c,
@@ -499,6 +510,7 @@ LAB_005695ae:
     if (((STPiece<1,1>(DAT_00807300) & 8) != 0) &&
        (local_EAX_3150 = st::fn_0071A990(st::pointer_boundary_cast<AnonShape_0071A990_7656000F *>(local_8->field_0DF3),soundId,-1,nullptr),
        local_EAX_3150 != nullptr)) {
+
       st::fn_006C1390(local_EAX_3150,0,(-(uint)(flags != 0) & 0xfffffffe) + 2,DAT_0080730e,0,0x15,0x19);
       g_currentExceptionFrame = local_64.previous;
       return;
@@ -508,6 +520,7 @@ LAB_005695ae:
     if (((STPiece<1,1>(DAT_00807300) & 1) != 0) &&
        (local_EAX_3062 = st::fn_0071A990(st::pointer_boundary_cast<AnonShape_0071A990_7656000F *>(local_8->field_0DF3),soundId,-1,nullptr),
        local_EAX_3062 != nullptr)) {
+
       st::fn_006C1390(local_EAX_3062,0,2,DAT_0080730e,0,0x1b,0x1d);
       g_currentExceptionFrame = local_64.previous;
       return;
@@ -517,6 +530,7 @@ LAB_005695ae:
     if (((STPiece<1,1>(DAT_00807300) & 4) != 0) &&
        (local_EAX_3250 = st::fn_0071A990(st::pointer_boundary_cast<AnonShape_0071A990_7656000F *>(local_8->field_0DF3),soundId,-1,nullptr),
        local_EAX_3250 != nullptr)) {
+
       st::fn_006C1390(local_EAX_3250,0,2,DAT_0080730e,0,0x1e,0x1f);
       g_currentExceptionFrame = local_64.previous;
       return;
@@ -533,6 +547,7 @@ LAB_005695ae:
     }
     local_EAX_3431 = st::fn_0071A990(pAVar15,temp_3f2752d387,-1,nullptr);
     if (local_EAX_3431 != nullptr) {
+
       st::fn_006C1390(local_EAX_3431,0,(-(uint)(soundId != 0) & 0xfffffff7) + 9,DAT_0080730e,0,0,0);
       g_currentExceptionFrame = local_64.previous;
       return;
@@ -549,6 +564,7 @@ LAB_005695ae:
     }
     local_EAX_3533 = st::fn_0071A990(pAVar15,temp_3fa1c25070,-1,nullptr);
     if (local_EAX_3533 != nullptr) {
+
       st::fn_006C1390(local_EAX_3533,0,(-(uint)(soundId != 0) & 0xfffffff7) + 9,DAT_0080730e,0,0,0);
       g_currentExceptionFrame = local_64.previous;
       return;
@@ -565,16 +581,18 @@ LAB_005695ae:
     }
     puVar11 = st::fn_0071A990(pAVar15,temp_3f1879c533,-1,nullptr);
     if (puVar11 != nullptr) {
+
       st::fn_006C1390(puVar11,0,(-(uint)(soundId != 0) & 0xfffffff7) + 9,DAT_0080730e,0,0,0);
       g_currentExceptionFrame = local_64.previous;
       return;
     }
     break;
   case SOUND_MODE_11:
-    puVar4 = (uint *)st::fn_00719D00
-                               (st::pointer_boundary_cast<cMf32 *>(local_8->field_0DEF),soundName,0,nullptr);
+    /* ST_CALLSITE[00568E3C]: CALL 0x00719d00; direct=00719D00 Library::Ourlib::MFWAV::mfWavLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__cdecl;pointer:/uint;pointer:/cMf32;pointer:/char;/byte;pointer:/ushort */
+    puVar4 = st::pointer_boundary_cast<uint *>(st::fn_00719D00(st::pointer_boundary_cast<cMf32 *>(local_8->field_0DEF),soundName,0,nullptr));
     if (puVar4 != nullptr) {
       pSVar14->field_0E03 = pSVar14->field_0E07;
+
       iVar4 = st::fn_006C1390(puVar4,0,1,DAT_0080730a,0,0,1);
       pSVar14->field_0E07 = iVar4;
       /* ST_CALLSITE[00568E75]: CALL dword ptr [0x0085bedc] */
@@ -602,26 +620,26 @@ LAB_00569cc6:
     }
     else {
       if (g_cMf32_00806758 != nullptr) {
-        puVar12_mg0 = (uint *)st::fn_00719D00
-                                        (g_cMf32_00806758,soundName,0,nullptr);
+        puVar12_mg0 = reinterpret_cast<uint *>(st::fn_00719D00
+                                        (g_cMf32_00806758,soundName,0,nullptr));
       }
       if (puVar12_mg0 == nullptr) {
         if (g_cMf32_00806798 != nullptr) {
-          puVar12_mg0 = (uint *)st::fn_00719D00
-                                          (g_cMf32_00806798,soundName,0,nullptr);
+          puVar12_mg0 = reinterpret_cast<uint *>(st::fn_00719D00
+                                          (g_cMf32_00806798,soundName,0,nullptr));
         }
         if (puVar12_mg0 == nullptr) {
-          puVar12_mg0 = (uint *)st::fn_00719D00
-                                          (st::pointer_boundary_cast<cMf32 *>(local_8->field_0DEF),soundName,0,nullptr);
+          puVar12_mg0 = reinterpret_cast<uint *>(st::fn_00719D00
+                                          (st::pointer_boundary_cast<cMf32 *>(local_8->field_0DEF),soundName,0,nullptr));
           goto LAB_00569cc6;
         }
       }
     }
     bVar3 = DAT_008033f4;
     DAT_008033f4 = DAT_008033f4 + 1;
+
     st::fn_006C1390(puVar12_mg0,bVar3,2,DAT_0080730e,0,0x1a,0x1a);
   }
   g_currentExceptionFrame = local_64.previous;
   return;
 }
-

@@ -33,7 +33,7 @@ LAB_00695c40:
 00695C5B  6A 1D                     PUSH 0x1d
 00695C5D  6A 0A                     PUSH 0xa
 00695C5F  6A 00                     PUSH 0x0
-00695C61  E8 2A 86 01 00            CALL 0x006ae290
+00695C61  E8 2A 86 01 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/CGenerate_field_5853DArray; source view only; no Ghidra override
 00695C66  89 86 53 58 00 00         MOV dword ptr [ESI + 0x5853],EAX
 LAB_00695c6c:
 00695C6C  8B B6 53 58 00 00         MOV ESI,dword ptr [ESI + 0x5853]

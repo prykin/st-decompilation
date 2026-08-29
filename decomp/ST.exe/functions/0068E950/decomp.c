@@ -20,6 +20,7 @@ void __thiscall AiTactClassTy::ClaimSave(AiTactClassTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pAVar2 = local_8;
   if (errorCode == 0) {
@@ -28,6 +29,7 @@ void __thiscall AiTactClassTy::ClaimSave(AiTactClassTy *this)
       FreeAndNull(slotStorage);
     }
     if (pAVar2->field_00BD != nullptr) {
+
       pvVar3 = FUN_006b0020(&pAVar2->field_00BD->flags,&local_c);
       *slotStorage = pvVar3;
     }
@@ -35,6 +37,7 @@ void __thiscall AiTactClassTy::ClaimSave(AiTactClassTy *this)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x16d,0,errorCode,"%s",
                              "AiTactClassTy::ClaimSave");
   if (iVar4 != 0) {

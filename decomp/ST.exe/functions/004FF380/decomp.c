@@ -61,10 +61,12 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   local_90.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_90;
   local_4c = this;
+
   iVar6 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
   this_00 = local_4c;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_90.previous;
+
     iVar10 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0x167,0,iVar6,
                                 "%s","CPanelTy::Update1Panel");
     if (iVar10 == 0) {
@@ -78,12 +80,13 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   memmove(pcVar16, puVar14, 0x36); /* compiler REP MOVS byte copy */
   memset(&local_4c->field_0B63, 0, 0x32); /* compiler bulk-zero initialization */
   local_16 = local_4c->field_0B4B;
+
   Library::DKW::TBL::FUN_006afe40((int *)&local_16,&local_4c->field_0B95->flags);
   this_00->field_0B95->count = 0;
   this_00->field_0B4B = local_16;
   /* ST_CALLSITE[004FF41F]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
   STAllPlayersC::GetPanelInfo
-            (g_allPlayers_007FA174,1,(AnonShape_0043BEB0_1C00EC12 *)&this_00->field_0B63);
+            (g_allPlayers_007FA174,1,(RecoveredRecordView_0043BEB0_8330D129 *)&this_00->field_0B63);
   if (local_48 != this_00->field_0B63) {
     if (g_bldObjPanel_00801684 != nullptr) {
       /* ST_CALLSITE[004FF439]: CALL 0x00401a73; direct=00401A73 ProdPanelTy::SetPanel */
@@ -157,25 +160,33 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
       local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar5));
       if (bVar5 < 0xb) {
         if (-1 < (int)this_00->field_0148[bVar5]) {
+
           Library::DKW::DDX::FUN_006b3640
                     ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[bVar5],0xffffffff,
                      (&this_00->field_003C)[bVar5],(&this_00->field_0094)[bVar5]);
         }
       }
     }
+
     local_EAX_550 = FUN_006b5a50(local_16,(AnonShape_006B5A50_BD82F60D *)this_00->field_0B95);
     if (local_EAX_550 != 0) {
+
       Library::DKW::WGR::FUN_006b55f0
                 ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,0,0,
-                 (byte *)this_00->field_0958,0,0,0,*(int *)(this_00->field_0958 + 2),0x3c);
+                 (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0958,0,0,0,
+                 *(int *)&((RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0958)->field_0x4,
+                 0x3c);
       dVar20 = this_00->field_0B95->count;
       pcVar6_mg2 = LoadResourceString(0x36b9,g_hINSTANCE_00807618);
       /* ST_CALLSITE[004FF5FF]: CALL dword ptr [0x0085bde8] */
       wsprintfA(*(LPSTR *)&this_00->field_0x213,"&1%s&0%d",pcVar6_mg2,dVar20);
+
       ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0184,0,2,0xf,
                        *(int *)(this_00->field_0958 + 2) + -4,0x2d);
+
       ccFntTy::WrTxt(this_00->field_01B8,*(char **)&this_00->field_0x213,-2,-1,0,-1,-1);
       if (-1 < (int)this_00->field_0148[1]) {
+
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[1],0xffffffff,
                    this_00->field_0040,this_00->field_0098);
@@ -261,12 +272,14 @@ LAB_004ff723:
       PaintInfoBoat(this_00);
     }
     else {
+
       Library::DKW::WGR::FUN_006b55f0
                 ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,1,0,
-                 (byte *)this_00->field_0958,0,1,0,0x4e,0x20);
+                 (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0958,0,1,0,0x4e,0x20);
       /* ST_CALLSITE[004FF813]: CALL 0x004048c7; direct=004048C7 CPanelTy::PaintName */
       PaintName(this_00,1);
       if (-1 < (int)this_00->field_0148[1]) {
+
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[1],0xffffffff,
                    this_00->field_0040,this_00->field_0098);
@@ -293,24 +306,28 @@ LAB_004ff875:
   iVar11 = 0;
 LAB_004ff87a:
   if (iVar11 != 0) {
+
     Library::DKW::WGR::FUN_006b55f0
               ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,1,0,
-               (byte *)this_00->field_0958,0,1,0,0x4e,0x20);
+               (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0958,0,1,0,0x4e,0x20);
     /* ST_CALLSITE[004FF8A5]: CALL 0x004048c7; direct=004048C7 CPanelTy::PaintName */
     PaintName(this_00,1);
     if (-1 < (int)this_00->field_0148[1]) {
+
       Library::DKW::DDX::FUN_006b3640
                 ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[1],0xffffffff,
                  this_00->field_0040,this_00->field_0098);
     }
   }
   if (local_2d != this_00->field_0B7E) {
+
     Library::DKW::WGR::FUN_006b55f0
               ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,1,0x1f,
-               (byte *)this_00->field_0958,0,1,0x1f,0x4e,0x11);
+               (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0958,0,1,0x1f,0x4e,0x11);
     /* ST_CALLSITE[004FF902]: CALL 0x004019c4; direct=004019C4 CPanelTy::PaintLife */
     PaintLife(this_00,1);
     if (-1 < (int)this_00->field_0148[1]) {
+
       Library::DKW::DDX::FUN_006b3640
                 ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[1],0xffffffff,
                  this_00->field_0040,this_00->field_0098);
@@ -324,10 +341,12 @@ LAB_004ff87a:
   iVar11 = this_00->field_0B66;
   if (((iVar11 == 7) || (iVar11 == 0x13)) || (iVar11 == 0x1b)) {
     if (*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xb81 != local_2a) {
+
       Library::DKW::WGR::FUN_006b55f0
                 ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,1,0x2f,
-                 (byte *)this_00->field_0958,0,1,0x2f,0x4e,0x24);
+                 (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0958,0,1,0x2f,0x4e,0x24);
       if (-1 < (int)this_00->field_0148[1]) {
+
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[1],0xffffffff,
                    this_00->field_0040,this_00->field_0098);
@@ -336,14 +355,20 @@ LAB_004ff87a:
     GVar3 = *(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xb81;
     if (GVar3 == 0) goto cf_common_exit_004FFB91;
     if (GVar3 != local_2a) {
+
       uVar7 = thunk_FUN_00526ba0(GVar3,this_00->field_0xb85);
-      pBVar8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02BE,uVar7);
+      /* ST_CALLSITE[004FFA7F]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+      pBVar8 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02BE,uVar7);
       /* ST_CALLSITE[004FFA92]: CALL 0x00403229; direct=00403229 DibPut */
-      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0xb,0x31,'\x01',(byte *)pBVar8);
-      pBVar8 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_02CA,1);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0xb,0x31,'\x01',
+             (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar8);
+      /* ST_CALLSITE[004FFAA0]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+      pBVar8 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02CA,1);
       /* ST_CALLSITE[004FFAB3]: CALL 0x00403229; direct=00403229 DibPut */
-      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0184,10,0x30,'\x06',(byte *)pBVar8);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0184,10,0x30,'\x06',
+             (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar8);
       if (-1 < (int)this_00->field_0148[1]) {
+
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[1],0xffffffff,
                    this_00->field_0040,this_00->field_0098);
@@ -363,10 +388,12 @@ LAB_004ff87a:
       iVar11 = 0;
     }
     uVar9 = local_8 & 0xff;
+
     Library::DKW::WGR::FUN_006b55f0
               ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,0x3c,0x52 - uVar9,
-               (byte *)this_00->field_028A,0,iVar11,*(int *)(this_00->field_028A + 4) - uVar9,5,
-               uVar9);
+               (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_028A,0,iVar11,
+               *(int *)&((RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_028A)->field_0x8 -
+               uVar9,5,uVar9);
     puVar2 = this_00->field_0148[1];
   }
   else {
@@ -374,14 +401,16 @@ LAB_004ff87a:
           (local_26 == *(short *)&this_00->field_0xb85)) && (local_22 == this_00->field_0B89)) &&
         ((STPiece<2,2>(local_2a) == *(short *)&this_00->field_0xb83 && (local_24 == this_00->field_0B87))))
        && (local_20 == this_00->field_0B8B)) goto cf_common_exit_004FFB91;
+
     Library::DKW::WGR::FUN_006b55f0
               ((RecoveredSourceFamily_dibcopy *)this_00->field_0184,0,1,0x2f,
-               (byte *)this_00->field_0958,0,1,0x2f,0x4e,0x24);
+               (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0958,0,1,0x2f,0x4e,0x24);
     /* ST_CALLSITE[004FF9EC]: CALL 0x00402694; direct=00402694 CPanelTy::PaintWeap */
     PaintWeap(this_00,1);
     puVar2 = this_00->field_0148[1];
   }
   if (-1 < (int)puVar2) {
+
     Library::DKW::DDX::FUN_006b3640
               ((int *)g_ddxContext_008075A8,(uint)puVar2,0xffffffff,this_00->field_0040,
                this_00->field_0098);
@@ -405,6 +434,7 @@ cf_common_exit_004FFB91:
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(bVar5));
     if (bVar5 < 0xb) {
       if (-1 < (int)this_00->field_0148[bVar5]) {
+
         Library::DKW::DDX::FUN_006b3640
                   ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[bVar5],0xffffffff,
                    (&this_00->field_003C)[bVar5],(&this_00->field_0094)[bVar5]);

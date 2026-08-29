@@ -36,7 +36,7 @@ InfocPanelTy::InitInfocPanel:
 0051FFC7  50                        PUSH EAX
 0051FFC8  68 18 3F 7C 00            PUSH 0x7c3f18
 0051FFCD  89 35 98 16 80 00         MOV dword ptr [0x00801698],ESI
-0051FFD3  E8 A4 57 EE FF            CALL 0x0040577c
+0051FFD3  E8 A4 57 EE FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SpecPanelTy; source view only; no Ghidra override
 0051FFD8  83 C4 08                  ADD ESP,0x8
 0051FFDB  8B CE                     MOV ECX,ESI
 0051FFDD  50                        PUSH EAX
@@ -72,7 +72,7 @@ InfocPanelTy::InitInfocPanel:
 00520035  6A FF                     PUSH -0x1
 00520037  6A 00                     PUSH 0x0
 00520039  68 78 20 7C 00            PUSH 0x7c2078
-0052003E  E8 39 57 EE FF            CALL 0x0040577c
+0052003E  E8 39 57 EE FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 00520043  8B 15 94 67 80 00         MOV EDX,dword ptr [0x00806794]
 00520049  83 C4 08                  ADD ESP,0x8
 0052004C  50                        PUSH EAX
@@ -85,7 +85,8 @@ InfocPanelTy::InitInfocPanel:
 00520062  68 1C 21 7C 00            PUSH 0x7c211c
 00520067  50                        PUSH EAX
 00520068  68 9D 01 00 00            PUSH 0x19d
-0052006D  E8 3E CE 1E 00            CALL 0x0070ceb0
+InfocPanelTy::InitInfocPanel::override::prt_52006d_bcd42e10:
+0052006D  E8 3E CE 1E 00            CALL 0x0070ceb0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/cMf32;pointer:/char;/byte
 00520072  89 86 D5 03 00 00         MOV dword ptr [ESI + 0x3d5],EAX
 00520078  89 78 58                  MOV dword ptr [EAX + 0x58],EDI
 0052007B  C7 40 5C 00 00 00 00      MOV dword ptr [EAX + 0x5c],0x0

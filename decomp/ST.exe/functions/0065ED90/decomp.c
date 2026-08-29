@@ -2,14 +2,14 @@
 
 
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
-   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0065ED90.
+   /SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_0065ED90.
    Evidence: incoming_receiver_captures=1; receiver_accesses=4; incoming_edx_uses=0; calls=7;
    ecx_pointer_setup=7; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
    expected_stack=12; receiver_family_members=1; adopt_untyped_existing_thiscall */
 
 int __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065ED90::FUN_0065ed90
-          (AnonReceiver_0065ED90 *this,short *param_1,short *param_2,int param_3)
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0065ED90::FUN_0065ed90
+          (RecoveredReceiver_0065ED90 *this,short *param_1,short *param_2,int param_3)
 
 {
   short *psVar1;
@@ -22,7 +22,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065ED90::FUN_0065ed90
   int local_1c;
   int local_18;
   int local_14;
-  AnonReceiver_0065ED90 *local_10;
+  RecoveredReceiver_0065ED90 *local_10;
   int local_c;
   int local_8;
 
@@ -44,15 +44,15 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0065ED90::FUN_0065ed90
   param_2[3] = 3;
   param_2[4] = 3;
   param_2[5] = 5;
-  uVar5 = *(int *)&local_10->field_0x1c * 0x41c64e6d + 0x3039;
-  *(uint *)&local_10->field_0x1c = uVar5;
+  uVar5 = local_10->field_001C * 0x41c64e6d + 0x3039;
+  local_10->field_001C = uVar5;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   param_2 = (short *)param_3;
   iVar6 = (uVar5 >> 0x10) % 6 + 0x14;
   if (param_3 != 0x200) {
     if (param_3 != 0x400) {
-      uVar5 = *(int *)&local_10->field_0x1c * 0x41c64e6d + 0x3039;
-      *(uint *)&local_10->field_0x1c = uVar5;
+      uVar5 = local_10->field_001C * 0x41c64e6d + 0x3039;
+      local_10->field_001C = uVar5;
       param_3 = (-(uint)((uVar5 & 0x10000) != 0) & 0x200) + 0x200;
     }
     param_2 = (short *)param_3;

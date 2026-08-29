@@ -20,8 +20,10 @@ FUN_00677290(undefined4 param_1,uint param_2,char param_3,short param_4,short pa
   local_8 = nullptr;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   exceptionCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (exceptionCode == 0) {
+    /* ST_CALLSITE[006772CA]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
     pDVar1 = Library::DKW::TBL::DArrayCreate(nullptr,10,2,10);
     pcVar2 = thunk_FUN_00677250;
     if (param_10 == 0) {

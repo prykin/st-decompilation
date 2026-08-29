@@ -449,7 +449,7 @@ LAB_005eec9d:
 005EECB2  85 C0                     TEST EAX,EAX
 005EECB4  74 61                     JZ 0x005eed17
 005EECB6  8B CE                     MOV ECX,ESI
-005EECB8  E8 3D 2E E1 FF            CALL 0x00401afa
+005EECB8  E8 3D 2E E1 FF            CALL 0x00401afa  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 005EECBD  66 8B 46 32               MOV AX,word ptr [ESI + 0x32]
 005EECC1  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 005EECC7  33 D2                     XOR EDX,EDX

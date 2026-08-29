@@ -27,6 +27,7 @@ void __thiscall STDestC::sub_00602BE0(STDestC *this)
   int local_c;
   int local_8;
 
+
   if ((this->field_039B < 0) && (iVar2 = thunk_FUN_006029c0(), iVar2 == 0)) {
     return;
   }
@@ -47,7 +48,8 @@ void __thiscall STDestC::sub_00602BE0(STDestC *this)
     }
     else if (((int)PTR_00806724->entryCount <= this->field_0397) &&
             (this->field_036E = CASE_0, this->field_037A == '\x01')) {
-      thunk_FUN_004ad430((STT3DSprC *)&this->field_01D5);
+      /* ST_CALLSITE[00602C99]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+      STT3DSprC::sub_004AD430((STT3DSprC *)&this->field_01D5);
       this->field_037A = 0;
     }
   }
@@ -77,7 +79,8 @@ void __thiscall STDestC::sub_00602BE0(STDestC *this)
       if (this->field_037A == '\0') {
         return;
       }
-      thunk_FUN_004ad430((STT3DSprC *)&this->field_01D5);
+      /* ST_CALLSITE[00602DE6]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+      STT3DSprC::sub_004AD430((STT3DSprC *)&this->field_01D5);
       this->field_037A = 0;
       return;
     }

@@ -10,7 +10,10 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.ArrayDeque;
 import java.util.Comparator;
+import java.util.Deque;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -63,10 +66,32 @@ public class STCallsiteConventionAnalyzer extends GhidraScript {
             "signature_source", "evidence");
         listing = currentProgram.getListing();
 
+        Map<Address, Map<String, String>> candidates = new TreeMap<>();
+        for (Map<String, String> row : review.rows)
+            candidates.put(address(row.get("address")), row);
+        // The debug-symbol review is intentionally narrow.  Audit every remaining
+        // global __thiscall boundary as well: Ghidra can retain that convention even
+        // when the complete callee CFG never consumes the incoming ECX value.
+        FunctionIterator allFunctions = currentProgram.getFunctionManager().getFunctions(true);
+        while (allFunctions.hasNext()) {
+            Function function = allFunctions.next();
+            if (function.isExternal() || !function.getParentNamespace().isGlobal() ||
+                    !"__thiscall".equals(function.getCallingConventionName())) continue;
+            candidates.computeIfAbsent(function.getEntryPoint(), ignored -> {
+                Map<String, String> row = new LinkedHashMap<>();
+                row.put("address", addr(function.getEntryPoint()));
+                row.put("function", function.getName(true));
+                row.put("current_calling_convention", function.getCallingConventionName());
+                row.put("signature_source", function.getSignatureSource().toString());
+                row.put("evidence", "whole-program ownerless __thiscall audit");
+                return row;
+            });
+        }
+
         Map<Address, Set<Function>> thunks = thunkIndex();
         List<Proposal> proposals = new ArrayList<>();
         List<Callsite> callsites = new ArrayList<>();
-        for (Map<String, String> row : review.rows) {
+        for (Map<String, String> row : candidates.values()) {
             monitor.checkCancelled();
             Address address = address(row.get("address"));
             Function function = currentProgram.getFunctionManager().getFunctionAt(address);
@@ -131,18 +156,27 @@ public class STCallsiteConventionAnalyzer extends GhidraScript {
                 sameOwnerCalls++;
         }
         int expectedStack = expectedStackBytes(target);
+        boolean incomingEcxUsed = hasIncomingEcxUse(target);
+        int exactStackCalls = 0;
+        for (Callsite call : calls)
+            if ((long)call.pushes * currentProgram.getDefaultPointerSize() +
+                    call.stackReservation == expectedStack) exactStackCalls++;
         Decision decision = decide(calls.size(), pointerSetup, scalarSetup, liveEcx, noEcx,
-            cleanupCalls, cleanupValues, retPops, expectedStack, sameOwnerCalls);
-        boolean apply = "static_cdecl_candidate".equals(decision.classification) &&
-            "__cdecl".equals(decision.suggestedConvention) &&
+            cleanupCalls, cleanupValues, retPops, expectedStack, sameOwnerCalls,
+            incomingEcxUsed, exactStackCalls);
+        boolean automaticConvention =
+            "static_cdecl_candidate".equals(decision.classification) ||
+            "static_stdcall_candidate".equals(decision.classification);
+        boolean apply = automaticConvention &&
             "high".equals(decision.confidence) &&
             "__thiscall".equals(target.getCallingConventionName()) &&
-            target.getSignatureSource() != ghidra.program.model.symbol.SourceType.IMPORTED;
+            !protectedSource(target.getSignatureSource());
         return new Proposal(target.getEntryPoint(), target.getName(true),
             target.getSignature().getPrototypeString(true), target.getCallingConventionName(),
             target.getSignatureSource().toString(), calls.size(), directCalls, thunkCalls,
             pointerSetup, scalarSetup, liveEcx, noEcx, cleanupCalls, cleanupValues, retPops,
-            expectedStack, decision.classification, decision.suggestedConvention,
+            expectedStack, incomingEcxUsed, exactStackCalls,
+            decision.classification, decision.suggestedConvention,
             decision.confidence, decision.reason, apply, "");
     }
 
@@ -234,7 +268,8 @@ public class STCallsiteConventionAnalyzer extends GhidraScript {
 
     private Decision decide(int calls, int pointer, int scalar, int live, int noEcx,
             int cleanupCalls, Set<Long> cleanupValues, Set<Long> retPops,
-            int expectedStack, int sameOwnerCalls) {
+            int expectedStack, int sameOwnerCalls, boolean incomingEcxUsed,
+            int exactStackCalls) {
         boolean calleePops = retPops.stream().anyMatch(value -> value > 0);
         if (calls == 0)
             return new Decision("unreferenced", "", "review",
@@ -252,13 +287,21 @@ public class STCallsiteConventionAnalyzer extends GhidraScript {
         // cdecl call.  When every observed caller reclaims the stack and no caller explicitly
         // prepares a pointer receiver, the stack discipline is the stronger signal.
         if (calls >= 2 && cleanupCalls == calls && pointer == 0 && !calleePops &&
-                expectedStack > 0 && cleanupValues.equals(Set.of((long)expectedStack)))
+                expectedStack > 0 && cleanupValues.equals(Set.of((long)expectedStack)) &&
+                !incomingEcxUsed && exactStackCalls == calls)
             return new Decision("static_cdecl_candidate", "__cdecl", "high",
                 "all " + cleanupCalls + " callers reclaim stack arguments " + cleanupValues +
                 " matching the explicit parameter width; no explicit ECX pointer receiver " +
                 "setup observed" +
                 ((live + scalar) > 0 ? "; incidental ECX observations ignored (live=" + live +
                     ", scalar=" + scalar + ")" : ""));
+        if (calls >= 2 && pointer == 0 && cleanupCalls == 0 && !incomingEcxUsed &&
+                expectedStack > 0 && retPops.equals(Set.of((long)expectedStack)) &&
+                exactStackCalls == calls)
+            return new Decision("static_stdcall_candidate", "__stdcall", "high",
+                "all " + calls + " direct/thunk callsites prepare exactly " + expectedStack +
+                    " stack bytes, no caller reclaims them, every RET pops that exact width, " +
+                    "and complete callee CFG dataflow finds no incoming ECX consumption");
         if (cleanupCalls >= 1 && pointer == 0 && live == 0 && !calleePops)
             return new Decision("static_cdecl_candidate", "__cdecl", "medium",
                 "caller reclaims stack arguments " + cleanupValues +
@@ -279,7 +322,95 @@ public class STCallsiteConventionAnalyzer extends GhidraScript {
                 scalar + " callsites place an immediate/zero value in ECX");
         return new Decision("ambiguous", "", "review",
             "calls=" + calls + ", pointer_ecx=" + pointer + ", live_ecx=" + live +
-            ", no_ecx=" + noEcx + ", expected_stack=" + expectedStack);
+                ", no_ecx=" + noEcx + ", expected_stack=" + expectedStack +
+                ", incoming_ecx_used=" + incomingEcxUsed +
+                ", exact_stack_calls=" + exactStackCalls);
+    }
+
+    /**
+     * Conservatively follow the incoming ECX value and its register copies over the complete
+     * instruction CFG. Any memory/address/arithmetic use, stack capture, comparison, or
+     * receiver call keeps __thiscall plausible. Branch joins union origins, deliberately
+     * preferring a missed repair over an ABI-changing false positive.
+     */
+    private boolean hasIncomingEcxUse(Function function) {
+        Instruction entry = listing.getInstructionAt(function.getEntryPoint());
+        if (entry == null) return true;
+        Map<Address, Set<String>> reached = new TreeMap<>();
+        Deque<EcxState> pending = new ArrayDeque<>();
+        pending.add(new EcxState(entry.getAddress(), Set.of("ECX")));
+        int states = 0;
+        while (!pending.isEmpty()) {
+            EcxState state = pending.removeFirst();
+            if (++states > 65536) return true;
+            if (!function.getBody().contains(state.address)) continue;
+            Set<String> prior = reached.computeIfAbsent(state.address,
+                ignored -> new TreeSet<>());
+            if (prior.containsAll(state.origins)) continue;
+            prior.addAll(state.origins);
+            Set<String> origins = new TreeSet<>(prior);
+            Instruction instruction = listing.getInstructionAt(state.address);
+            if (instruction == null) return true;
+            String mnemonic = upper(instruction.getMnemonicString());
+            String[] values = operands(instruction);
+            String destination = values.length == 0 ? null : standaloneRegister(values[0]);
+            String source = values.length < 2 ? null : standaloneRegister(values[1]);
+            boolean transparentCopy = "MOV".equals(mnemonic) && destination != null &&
+                source != null && origins.contains(source);
+
+            for (int index = 0; index < values.length; index++) {
+                for (String origin : origins) {
+                    if (!word(values[index], origin)) continue;
+                    if (transparentCopy && index == 1 && origin.equals(source)) continue;
+                    if (index == 0 && destination != null && origin.equals(destination) &&
+                            writesFullRegister(mnemonic, values, destination) &&
+                            Set.of("MOV", "MOVSX", "MOVZX", "LEA", "POP").contains(mnemonic))
+                        continue;
+                    if (mnemonic.startsWith("RET")) continue;
+                    return true;
+                }
+            }
+            if (instruction.getFlowType().isCall()) {
+                Function called = directCalledFunction(instruction);
+                if (called != null && "__thiscall".equals(
+                        called.getCallingConventionName()) && origins.contains("ECX"))
+                    return true;
+                origins.remove("EAX");
+                origins.remove("ECX");
+                origins.remove("EDX");
+            }
+            else if (destination != null && writesFullRegister(mnemonic, values, destination)) {
+                if (transparentCopy) origins.add(destination);
+                else origins.remove(destination);
+            }
+
+            Address fallthrough = instruction.getFallThrough();
+            if (fallthrough != null && function.getBody().contains(fallthrough))
+                pending.addLast(new EcxState(fallthrough, Set.copyOf(origins)));
+            for (Address flow : instruction.getFlows())
+                if (function.getBody().contains(flow))
+                    pending.addLast(new EcxState(flow, Set.copyOf(origins)));
+        }
+        return false;
+    }
+
+    private String standaloneRegister(String value) {
+        String result = value == null ? "" : value.trim().toUpperCase(Locale.ROOT);
+        return Set.of("EAX", "EBX", "ECX", "EDX", "ESI", "EDI", "EBP", "ESP")
+            .contains(result) ? result : null;
+    }
+
+    private boolean protectedSource(ghidra.program.model.symbol.SourceType source) {
+        return source == ghidra.program.model.symbol.SourceType.IMPORTED ||
+            source == ghidra.program.model.symbol.SourceType.USER_DEFINED;
+    }
+
+    private Function directCalledFunction(Instruction instruction) {
+        for (Address flow : instruction.getFlows()) {
+            Function function = currentProgram.getFunctionManager().getFunctionAt(flow);
+            if (function != null) return function;
+        }
+        return null;
     }
 
     private Map<Address, Set<Function>> thunkIndex() {
@@ -361,6 +492,7 @@ public class STCallsiteConventionAnalyzer extends GhidraScript {
                 "signature_source\tcalls\tdirect_calls\tthunk_calls\tecx_pointer_setup\t" +
                 "ecx_scalar_setup\tecx_live_prior\tecx_unknown\tcaller_cleanup_calls\t" +
                 "caller_cleanup_bytes\tcallee_ret_pop_bytes\texpected_stack_bytes\t" +
+                "incoming_ecx_used\texact_stack_argument_calls\t" +
                 "classification\tsuggested_calling_convention\tconfidence\treason\terror\n");
             for (Proposal row : rows) out.write(bit(row.apply) + "\t" + addr(row.address) + "\t" +
                 tsv(row.function) + "\t" + tsv(row.signature) + "\t" +
@@ -369,6 +501,7 @@ public class STCallsiteConventionAnalyzer extends GhidraScript {
                 row.pointerSetup + "\t" + row.scalarSetup + "\t" + row.liveEcx + "\t" +
                 row.noEcx + "\t" + row.cleanupCalls + "\t" + set(row.cleanupValues) +
                 "\t" + set(row.retPops) + "\t" + row.expectedStack + "\t" +
+                bit(row.incomingEcxUsed) + "\t" + row.exactStackCalls + "\t" +
                 row.classification + "\t" + row.suggestedConvention + "\t" +
                 row.confidence + "\t" + tsv(row.reason) + "\t" +
                 tsv(row.error.isBlank() ? "-" : row.error) + "\n");
@@ -410,17 +543,21 @@ public class STCallsiteConventionAnalyzer extends GhidraScript {
             .filter(row -> "__thiscall".equals(row.suggestedConvention)).count();
         long suggestedCdecl = proposals.stream()
             .filter(row -> "__cdecl".equals(row.suggestedConvention)).count();
+        long suggestedStdcall = proposals.stream()
+            .filter(row -> "__stdcall".equals(row.suggestedConvention)).count();
         long automatic = proposals.stream().filter(row -> row.apply).count();
         Files.write(path, List.of("program=" + currentProgram.getName(),
             "candidates=" + proposals.size(), "candidates_with_direct_calls=" + called,
             "callsites=" + calls.size(), "suggested_thiscall=" + suggestedThis,
             "suggested_cdecl=" + suggestedCdecl,
-            "automatic_cdecl=" + automatic,
+            "suggested_stdcall=" + suggestedStdcall,
+            "automatic_convention_repairs=" + automatic,
             "classifications=" + classifications(proposals),
             "note=Direct references to the function and every thunk resolving to it are audited.",
             "note_limit=Indirect virtual calls cannot be attributed to one concrete target here.",
-            "note_safety=Only repeatable all-caller cleanup with no pointer ECX and no RET pop " +
-                "is enabled; the transactional applier rechecks the exact signature baseline."),
+            "note_safety=Only repeatable exact stack discipline plus complete absence of " +
+                "incoming ECX consumption is enabled; the transactional applier rechecks " +
+                "the exact signature baseline."),
             StandardCharsets.UTF_8);
     }
 
@@ -590,13 +727,14 @@ public class STCallsiteConventionAnalyzer extends GhidraScript {
         final String function, signature, currentConvention, signatureSource, classification,
             suggestedConvention, confidence, reason, error;
         final int calls, directCalls, thunkCalls, pointerSetup, scalarSetup, liveEcx, noEcx,
-            cleanupCalls, expectedStack;
+            cleanupCalls, expectedStack, exactStackCalls;
         final Set<Long> cleanupValues, retPops;
-        final boolean apply;
+        final boolean apply, incomingEcxUsed;
         Proposal(Address address, String function, String signature, String currentConvention,
                 String signatureSource, int calls, int directCalls, int thunkCalls,
                 int pointerSetup, int scalarSetup, int liveEcx, int noEcx, int cleanupCalls,
                 Set<Long> cleanupValues, Set<Long> retPops, int expectedStack,
+                boolean incomingEcxUsed, int exactStackCalls,
                 String classification, String suggestedConvention, String confidence,
                 String reason, boolean apply, String error) {
             this.address = address; this.function = function; this.signature = signature;
@@ -605,7 +743,8 @@ public class STCallsiteConventionAnalyzer extends GhidraScript {
             this.pointerSetup = pointerSetup; this.scalarSetup = scalarSetup;
             this.liveEcx = liveEcx; this.noEcx = noEcx; this.cleanupCalls = cleanupCalls;
             this.cleanupValues = cleanupValues; this.retPops = retPops;
-            this.expectedStack = expectedStack; this.classification = classification;
+            this.expectedStack = expectedStack; this.incomingEcxUsed = incomingEcxUsed;
+            this.exactStackCalls = exactStackCalls; this.classification = classification;
             this.suggestedConvention = suggestedConvention; this.confidence = confidence;
             this.reason = reason; this.apply = apply; this.error = error;
         }
@@ -613,9 +752,11 @@ public class STCallsiteConventionAnalyzer extends GhidraScript {
             return new Proposal(address, row.getOrDefault("function", ""), "",
                 row.getOrDefault("current_calling_convention", ""),
                 row.getOrDefault("signature_source", ""), 0, 0, 0, 0, 0, 0, 0, 0,
-                Set.of(), Set.of(), 0, "missing_function", "", "review",
+                Set.of(), Set.of(), 0, true, 0, "missing_function", "", "review",
                 "function no longer exists at reviewed address", false,
                 row.getOrDefault("address", ""));
         }
     }
+
+    private record EcxState(Address address, Set<String> origins) { }
 }

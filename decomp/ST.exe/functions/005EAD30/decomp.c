@@ -17,8 +17,10 @@ WaitTy * __cdecl CreateWait(void)
   uint *puVar5;
   int local_8;
 
-  this = (WaitTy *)FUN_006b04d0(0x1b04);
+
+  this = STPointerBoundaryCast<WaitTy *>(FUN_006b04d0(0x1b04));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->vtable = (WaitTyVTable *)&VTable_0079C018;
     this->field_0018 = 0;

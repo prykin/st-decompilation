@@ -56,7 +56,7 @@ LAB_0059a37d:
 0059A3C1  6A 00                     PUSH 0x0
 0059A3C3  51                        PUSH ECX
 0059A3C4  68 4F 25 00 00            PUSH 0x254f
-0059A3C9  E8 72 5D 11 00            CALL 0x006b0140
+0059A3C9  E8 72 5D 11 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 0059A3CE  8B 8E 73 1A 00 00         MOV ECX,dword ptr [ESI + 0x1a73]
 0059A3D4  50                        PUSH EAX
 0059A3D5  E8 E6 75 17 00            CALL 0x007119c0
@@ -85,7 +85,7 @@ LAB_0059a37d:
 0059A420  6A 00                     PUSH 0x0
 0059A422  51                        PUSH ECX
 0059A423  68 56 25 00 00            PUSH 0x2556
-0059A428  E8 13 5D 11 00            CALL 0x006b0140
+0059A428  E8 13 5D 11 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 0059A42D  8B 8E 73 1A 00 00         MOV ECX,dword ptr [ESI + 0x1a73]
 0059A433  50                        PUSH EAX
 0059A434  E8 87 75 17 00            CALL 0x007119c0
@@ -114,7 +114,7 @@ LAB_0059a37d:
 0059A47E  8B 0D 18 76 80 00         MOV ECX,dword ptr [0x00807618]
 0059A484  51                        PUSH ECX
 0059A485  68 55 25 00 00            PUSH 0x2555
-0059A48A  E8 B1 5C 11 00            CALL 0x006b0140
+0059A48A  E8 B1 5C 11 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 0059A48F  8B 8E 73 1A 00 00         MOV ECX,dword ptr [ESI + 0x1a73]
 0059A495  50                        PUSH EAX
 0059A496  E8 25 75 17 00            CALL 0x007119c0
@@ -143,7 +143,7 @@ LAB_0059a37d:
 0059A4E7  6A 00                     PUSH 0x0
 0059A4E9  51                        PUSH ECX
 0059A4EA  68 54 25 00 00            PUSH 0x2554
-0059A4EF  E8 4C 5C 11 00            CALL 0x006b0140
+0059A4EF  E8 4C 5C 11 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 0059A4F4  8B 8E 73 1A 00 00         MOV ECX,dword ptr [ESI + 0x1a73]
 0059A4FA  50                        PUSH EAX
 0059A4FB  E8 C0 74 17 00            CALL 0x007119c0

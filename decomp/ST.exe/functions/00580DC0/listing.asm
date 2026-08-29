@@ -66,17 +66,17 @@ LAB_00580e13:
 00580E9A  74 2B                     JZ 0x00580ec7
 00580E9C  8B 06                     MOV EAX,dword ptr [ESI]
 00580E9E  8B CE                     MOV ECX,ESI
-00580EA0  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+00580EA0  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 00580EA3  83 F8 39                  CMP EAX,0x39
 00580EA6  74 18                     JZ 0x00580ec0
 00580EA8  8B 16                     MOV EDX,dword ptr [ESI]
 00580EAA  8B CE                     MOV ECX,ESI
-00580EAC  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+00580EAC  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 00580EAF  83 F8 4F                  CMP EAX,0x4f
 00580EB2  74 0C                     JZ 0x00580ec0
 00580EB4  8B 06                     MOV EAX,dword ptr [ESI]
 00580EB6  8B CE                     MOV ECX,ESI
-00580EB8  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+00580EB8  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 00580EBB  83 F8 5E                  CMP EAX,0x5e
 00580EBE  75 07                     JNZ 0x00580ec7
 LAB_00580ec0:

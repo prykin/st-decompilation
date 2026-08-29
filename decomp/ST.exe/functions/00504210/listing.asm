@@ -78,7 +78,8 @@ LAB_005042e8:
 0050430F  6A 06                     PUSH 0x6
 00504311  52                        PUSH EDX
 00504312  8B CB                     MOV ECX,EBX
-00504314  E8 9C E0 EF FF            CALL 0x004023b5
+CPanelTy::UpdateStackPanel::override::prt_504314_9e902bc8:
+00504314  E8 9C E0 EF FF            CALL 0x004023b5  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__stdcall;pointer:/char;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_004F1D20_D68BC0B9
 00504319  50                        PUSH EAX
 0050431A  A1 94 67 80 00            MOV EAX,[0x00806794]
 0050431F  6A 1F                     PUSH 0x1f

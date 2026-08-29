@@ -22,20 +22,22 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
   uint *puVar8;
   InternalExceptionFrame local_58;
   uint local_14;
-  undefined1 local_10;
+  byte local_10;
   undefined2 uStack_f;
   undefined1 uStack_d;
-  undefined2 local_c;
-  undefined1 local_a;
+  ushort local_c;
+  byte local_a;
   ResearchPanelTy *local_8;
 
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\research.cpp",200,0,iVar3,"%s",
                                "ResearchPanelTy::GetMessage");
     if (iVar4 != 0) {
@@ -105,7 +107,8 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
         local_14 = (uint)CONCAT11(*puVar6,2);
         local_10 = 0;
         uStack_f = 1;
-        thunk_FUN_0054edf0((undefined4 *)0x1e,&local_14,0,0xffffffff);
+        /* ST_CALLSITE[0053CC2B]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+        STPlaySystemC::sub_0054EDF0(g_playSystem_00802A38,(undefined4 *)0x1e,&local_14,0,0xffffffff);
         /* ST_CALLSITE[0053CC34]: CALL 0x00401a73; direct=00401A73 ProdPanelTy::SetPanel */
         ProdPanelTy::SetPanel((ProdPanelTy *)this_00,'\0');
         thunk_FUN_005252c0(0xae);
@@ -129,7 +132,7 @@ int __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,STMessage *mess
     case 0xc0b2:
     case MESS_BLDLABPANELTY_C0B3:
       /* ST_CALLSITE[0053CCA5]: CALL 0x00405ebb; direct=00405EBB ResearchPanelTy::PaintUpdBut */
-      PaintUpdBut(this_00,(AnonShape_004EF320_444F9AB1 *)message);
+      PaintUpdBut(this_00,(RecoveredRecordView_004EF320_A54422CD *)message);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     case MESS_RESEARCHPANELTY_C0B4:

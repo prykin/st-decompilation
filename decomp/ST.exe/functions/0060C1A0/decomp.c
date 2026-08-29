@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-int __thiscall STFieldC::FUN_0060c1a0(STFieldC *this,undefined4 *param_1)
+int __thiscall STFieldC::FUN_0060c1a0(STFieldC *this,RecoveredRecord_0060C1A0_C56C5993 *param_1)
 
 {
   int iVar1;
@@ -10,8 +10,8 @@ int __thiscall STFieldC::FUN_0060c1a0(STFieldC *this,undefined4 *param_1)
   int *piVar4;
   int iVar5;
   uint uVar6;
-  byte *puVar7;
-  byte *puVar8;
+  RecoveredRecord_0060C1A0_C56C5993 *pRVar7;
+  uint *puVar8;
   bool bVar9;
 
   iVar1 = 0;
@@ -20,16 +20,20 @@ int __thiscall STFieldC::FUN_0060c1a0(STFieldC *this,undefined4 *param_1)
       puVar8 = nullptr;
     }
     else {
-      puVar8 = (byte *)&this->field_0x1d5;
+      puVar8 = (undefined4 *)&this->field_0x1d5;
     }
-    puVar7 = (byte *)(param_1);
-    memmove(puVar8, puVar7, 0x83); /* compiler REP MOVS byte copy */
+    pRVar7 = param_1;
+    memmove(puVar8, pRVar7, 0x82); /* compiler REP MOVS byte copy */
+    puVar8 = puVar8 + 0x20;
+    pRVar7 = (RecoveredRecord_0060C1A0_C56C5993 *)((byte *)pRVar7 + 0x80);
+    STField<undefined1>(puVar8,2) = pRVar7->field_0x2;
     iVar1 = 0x83;
     if (this->field_0234 == nullptr) {
-      piVar4 = (int *)((int)param_1 + 0x83);
+      piVar4 = &param_1->field_0083;
     }
     else {
-      pSVar2 = (STFieldC_field_0234DArray *)FUN_006b0060(nullptr,(uint *)((int)param_1 + 0x87));
+      /* ST_CALLSITE[0060C1E8]: CALL 0x006b0060; direct=006B0060 FUN_006b0060; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STFieldC_field_0234DArray; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArraySpecializations/STFieldC_field_0234DArray;pointer:/uint;pointer:/uint */
+      pSVar2 = FUN_006b0060(nullptr,(uint *)(param_1 + 1));
       this->field_0234 = pSVar2;
       if ((this->field_0225 != '\0') || (pSVar2 != nullptr)) {
         uVar6 = 0;
@@ -54,7 +58,7 @@ int __thiscall STFieldC::FUN_0060c1a0(STFieldC *this,undefined4 *param_1)
         }
       }
       iVar1 = 0x10a;
-      piVar4 = (int *)((int)param_1 + STField<int>(param_1,0x83) + 0x8b);
+      piVar4 = (int *)(&param_1[1].field_0x4 + param_1->field_0083);
     }
     if ((this->field_023C != 0) && (this->field_0244 != nullptr)) {
       /* ST_CALLSITE[0060C27B]: CALL 0x0040234c; direct=0040234C STFieldC::sub_0060D660 */

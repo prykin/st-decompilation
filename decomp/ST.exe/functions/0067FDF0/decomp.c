@@ -4,7 +4,7 @@
 /* [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 0067FDF0 -> 0067FD20 @ 0067FE36 | 00683C70 -> 0067FDF0 @ 00689D7E; data at 00848A14 */
 
-uint __cdecl FUN_0067fdf0(AnonShape_00683780_11EA4E23 *param_1,byte *param_2)
+uint __cdecl FUN_0067fdf0(RecoveredGlobalRecordView_00848A14 *param_1,byte *param_2)
 
 {
   int local_EAX_31;
@@ -15,6 +15,7 @@ uint __cdecl FUN_0067fdf0(AnonShape_00683780_11EA4E23 *param_1,byte *param_2)
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
+
   local_EAX_31 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (local_EAX_31 != 0) {
     g_currentExceptionFrame = local_48.previous;
@@ -23,8 +24,10 @@ uint __cdecl FUN_0067fdf0(AnonShape_00683780_11EA4E23 *param_1,byte *param_2)
     }
     return local_EAX_31;
   }
+
   uVar1 = thunk_FUN_0067fc10(param_2);
   if (uVar1 < 0) {
+
     uVar2 = thunk_FUN_0067fd20(param_1,(char *)param_2);
     g_currentExceptionFrame = local_48.previous;
     return uVar2;

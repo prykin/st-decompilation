@@ -6,18 +6,18 @@
    [EBP + 0x14] */
 
 void __cdecl
-FUN_0057b990(undefined4 param_1,undefined4 param_2,int param_3,ushort param_4,undefined2 param_5,
-            undefined4 param_6,undefined4 param_7)
+FUN_0057b990(undefined4 param_1,undefined4 param_2,RecoveredRecord_0057B990_72164111 *param_3,
+            ushort param_4,undefined2 param_5,undefined4 param_6,undefined4 param_7)
 
 {
   int iVar1;
-  undefined4 local_40 [5];
+  uint local_40 [5];
   undefined4 *local_2c;
-  undefined4 local_20 [3];
-  undefined2 local_14;
+  uint local_20 [3];
+  ushort local_14;
   ushort local_12;
 
-  if (param_3 != 0) {
+  if (param_3 != nullptr) {
     memset(local_40, 0, 0x20); /* compiler bulk-zero initialization */
     iVar1 = 0;
     memset(local_20, 0, 0x1c); /* compiler bulk-zero initialization */
@@ -25,7 +25,7 @@ FUN_0057b990(undefined4 param_1,undefined4 param_2,int param_3,ushort param_4,un
     local_20[0] = param_2;
     local_14 = param_5;
     local_12 = param_4;
-    local_40[2] = *(undefined4 *)(param_3 + 8);
+    local_40[2] = param_3->field_0008;
     local_20[1] = param_6;
     local_2c = local_20;
     local_40[3] = 2;

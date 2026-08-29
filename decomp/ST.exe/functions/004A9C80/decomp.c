@@ -8,11 +8,10 @@ void FUN_004a9c80(int param_1)
 {
   char cVar1;
   uint uVar2;
-  undefined1 local_24 [12];
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-
+  byte local_24 [12];
+  uint local_18;
+  uint local_14;
+  uint local_10;
   if (param_1 == 0) {
     uVar2 = DAT_0080743c & 0xff;
     if (uVar2 == 0) {

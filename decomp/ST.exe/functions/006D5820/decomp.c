@@ -15,7 +15,7 @@ int FUN_006d5820(AnonShape_006D5820_330472AB *param_1,undefined4 *param_2)
   EnterCriticalSection(lpCriticalSection);
   iVar1 = param_1->field_0048;
   if (STField<int>(iVar1,0x30C) == 0) {
-    iVar2 = FUN_0074862e((int)param_1,param_2);
+    iVar2 = Library::Win32::COMSupport::FUN_0074862e((int)param_1,param_2);
     /* ST_CALLSITE[006D584C]: CALL dword ptr [0x0085bb90] */
     LeaveCriticalSection(lpCriticalSection);
     return iVar2;

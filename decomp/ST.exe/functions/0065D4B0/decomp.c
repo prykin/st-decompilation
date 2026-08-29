@@ -23,6 +23,7 @@ byte * __thiscall AiFltClassTy::PrepareToSave(AiFltClassTy *this,uint *param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pAVar2 = local_8;
   if (errorCode == 0) {
@@ -32,7 +33,7 @@ byte * __thiscall AiFltClassTy::PrepareToSave(AiFltClassTy *this,uint *param_1)
     else {
       pAVar3 = (AllocationRecord_006684E0 *)&local_8->field_0020;
     }
-    /* ST_CALLSITE[0065D4F2]: CALL 0x004014c4; direct=004014C4 FltDataPack */
+    /* ST_CALLSITE[0065D4F2]: CALL 0x004014c4; direct=004014C4 FltDataPack; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/byte; source view only; no Ghidra override */
     pAVar3_mg1 = FltDataPack(pAVar3,param_1);
     *(undefined4 *)pAVar3_mg1 = 900;
     *(undefined4 *)&pAVar3_mg1->field_0xc = 1;
@@ -41,6 +42,7 @@ byte * __thiscall AiFltClassTy::PrepareToSave(AiFltClassTy *this,uint *param_1)
     return (byte *)pAVar3_mg1;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_flt.cpp",0x4f,0,errorCode,"%s",
                              "AiFltClassTy::PrepareToSave");
   if (iVar4 != 0) {

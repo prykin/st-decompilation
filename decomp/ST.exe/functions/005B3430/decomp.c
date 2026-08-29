@@ -22,7 +22,7 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this)
   DWORD DVar5;
   int iVar4;
   uint uVar6;
-  DWORD *pDVar7;
+  int *piVar7;
   int iVar7;
   int iVar8;
   uint *puVar9;
@@ -39,10 +39,12 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this)
   this->field_0061 = DVar5;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar7 = ReportDebugMessage("E:\\__titans\\Start\\main_obj.cpp",0xd2,0,iVar4,"%s",
                                "MainMenuTy::NoneMainMenu");
     if (iVar7 != 0) {
@@ -70,6 +72,7 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this)
             puVar9[-5] = 0;
           }
           if (puVar9[-6] != 0xffffffff) {
+
             Library::DKW::DDX::FUN_006b3730
                       ((uint *)puVar9[0xb],puVar9[-6],puVar9[-5],*puVar9,puVar9[1]);
           }
@@ -90,13 +93,13 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this)
             iVar8 = 0;
             local_8 = 0;
             if (uVar6 != 0) {
-              pDVar7 = &this_00->field_00BB[0].field_014A.field_0044;
+              piVar7 = &this_00->field_00BB[0].field_014A.field_0044;
               do {
-                if (*(char *)((int)pDVar7 + -0x167) != '\0') {
-                  *pDVar7 = this_00->field_0061;
+                if (*(char *)((int)piVar7 + -0x167) != '\0') {
+                  *piVar7 = this_00->field_0061;
                 }
                 iVar8 = iVar8 + 1;
-                pDVar7 = (DWORD *)((int)pDVar7 + 0x1fb);
+                piVar7 = (int *)((int)piVar7 + 0x1fb);
               } while (iVar8 < (int)(uint)this_00->field_009A);
             }
           }
@@ -105,6 +108,7 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this)
             if (iVar3 < this_00->field_00BB[iVar8].field_0028.field_000C + -1) {
               if ((iVar3 == 0) &&
                  (uVar6 = this_00->field_00BB[iVar8].field_0028.field_0004, uVar6 != 0xffffffff)) {
+
                 Library::DKW::DDX::FUN_006b34d0
                           ((uint *)this_00->field_00BB[iVar8].field_0028.field_0048,uVar6,0xfffffffe
                            ,this_00->field_00BB[iVar8].field_0028.field_001C,
@@ -114,6 +118,7 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this)
                    this_00->field_00BB[iVar8].field_0028.field_0008 + 1;
               uVar6 = this_00->field_00BB[iVar8].field_0028.field_0004;
               if (uVar6 != 0xffffffff) {
+
                 Library::DKW::DDX::FUN_006b3730
                           ((uint *)this_00->field_00BB[iVar8].field_0028.field_0048,uVar6,
                            this_00->field_00BB[iVar8].field_0028.field_0008,
@@ -128,6 +133,7 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this)
                 if (iVar3 == 0) {
                   uVar6 = this_00->field_00BB[iVar8].field_00B9.field_0004;
                   if (uVar6 != 0xffffffff) {
+
                     Library::DKW::DDX::FUN_006b34d0
                               ((uint *)this_00->field_00BB[iVar8].field_00B9.field_0048,uVar6,
                                0xfffffffe,this_00->field_00BB[iVar8].field_00B9.field_001C,
@@ -136,6 +142,7 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this)
                   if ((this_00->field_00BB[iVar8].field_0027 != '\0') &&
                      (uVar6 = this_00->field_00BB[iVar8].field_014A.field_0004, uVar6 != 0xffffffff)
                      ) {
+
                     Library::DKW::DDX::FUN_006b34d0
                               ((uint *)this_00->field_00BB[iVar8].field_014A.field_0048,uVar6,
                                0xfffffffe,this_00->field_00BB[iVar8].field_014A.field_001C,
@@ -146,6 +153,7 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this)
                      this_00->field_00BB[iVar8].field_00B9.field_0008 + 1;
                 uVar6 = this_00->field_00BB[iVar8].field_00B9.field_0004;
                 if (uVar6 != 0xffffffff) {
+
                   Library::DKW::DDX::FUN_006b3730
                             ((uint *)this_00->field_00BB[iVar8].field_00B9.field_0048,uVar6,
                              this_00->field_00BB[iVar8].field_00B9.field_0008,
@@ -189,7 +197,9 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this)
       iVar8 = this_00->field_00BB[0xc].field_01F0;
       this_00->field_0065 = 1;
       if (iVar8 != 0) {
-        FUN_006e3db0((int)&this_00->field_00BB[0xc].field_0x1e0);
+
+        FUN_006e3db0((AppClassTy *)&DAT_00807620,
+                     (RecoveredRecord_006E3DB0_0F66DDCF *)&this_00->field_00BB[0xc].field_0x1e0);
         this_00->field_00BB[0xc].field_01F0 = 0;
         g_currentExceptionFrame = local_54.previous;
         return;
@@ -220,6 +230,7 @@ LAB_005b353c:
             uVar6 = *(int *)((int)puVar9 + -0x8d) - 1;
             *(uint *)((int)puVar9 + -0x8d) = uVar6;
             if (*(uint *)((int)puVar9 + -0x91) != 0xffffffff) {
+
               Library::DKW::DDX::FUN_006b3730
                         (*(uint **)((int)puVar9 + -0x4d),*(uint *)((int)puVar9 + -0x91),uVar6,
                          *(uint *)((int)puVar9 + -0x79),*(uint *)((int)puVar9 + -0x75));
@@ -250,6 +261,7 @@ LAB_005b353c:
       }
       bVar2 = this_00->field_00BB[0xc].field_01DB;
       if (this_00->field_00BB[bVar2].field_0016 != 0) {
+
         AppClassTy::PostNextMessage
                   ((AppClassTy *)&DAT_00807620,(undefined4 *)&this_00->field_00BB[bVar2].field_0x6);
         g_currentExceptionFrame = local_54.previous;

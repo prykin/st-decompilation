@@ -45,7 +45,7 @@ LAB_004f217c:
 004F21A6  6A 00                     PUSH 0x0
 004F21A8  50                        PUSH EAX
 004F21A9  68 B3 36 00 00            PUSH 0x36b3
-004F21AE  E8 8D DF 1B 00            CALL 0x006b0140
+004F21AE  E8 8D DF 1B 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 004F21B3  8B 8E B8 01 00 00         MOV ECX,dword ptr [ESI + 0x1b8]
 004F21B9  50                        PUSH EAX
 004F21BA  E8 B1 F9 21 00            CALL 0x00711b70

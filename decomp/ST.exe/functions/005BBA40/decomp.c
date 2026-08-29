@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_005bba40(AnonShape_005BB9F0_E38C41BB *param_1)
+void __fastcall FUN_005bba40(RecoveredRecordView_005BB9F0_C0A10156 *param_1)
 
 {
   param_1->field_1A65 = 0;
@@ -10,7 +10,7 @@ void __fastcall FUN_005bba40(AnonShape_005BB9F0_E38C41BB *param_1)
   if (param_1->field_1A73 != 0) {
     param_1->field_0025 = param_1->field_1A73;
     param_1->field_0031 = 0;
-    /* ST_CALLSITE[005BBA71]: CALL dword ptr [EDX + 0x18] */
+    /* ST_CALLSITE[005BBA71]: CALL dword ptr [EDX + 0x18]; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)(*param_1->field_000C + 0x18))(&param_1->field_0x1d);
   }

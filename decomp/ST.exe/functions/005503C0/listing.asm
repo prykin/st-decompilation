@@ -20,7 +20,7 @@ LAB_005503f5:
 005503F7  8D 81 C0 00 00 00         LEA EAX,[ECX + 0xc0]
 005503FD  50                        PUSH EAX
 005503FE  C7 81 D0 00 00 00 FF 44 00 00  MOV dword ptr [ECX + 0xd0],0x44ff
-00550408  FF 52 20                  CALL dword ptr [EDX + 0x20]
+00550408  FF 52 20                  CALL dword ptr [EDX + 0x20]  ; [STIndirectCallsiteApplier] exact slot 0x20; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 LAB_0055040b:
 0055040B  5D                        POP EBP
 0055040C  C2 04 00                  RET 0x4

@@ -124,7 +124,8 @@ LAB_0057781b:
 0057787F  50                        PUSH EAX
 00577880  68 22 F0 80 00            PUSH 0x80f022
 00577885  68 45 03 00 00            PUSH 0x345
-0057788A  E8 31 96 17 00            CALL 0x006f0ec0
+GameSystemC::GetMessage::override::prt_57788a_9d92389d:
+0057788A  E8 31 96 17 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 0057788F  8B F8                     MOV EDI,EAX
 00577891  83 C4 14                  ADD ESP,0x14
 00577894  85 FF                     TEST EDI,EDI
@@ -531,7 +532,8 @@ switchD_00577a01::caseD_8:
 00577D5A  6A 00                     PUSH 0x0
 00577D5C  68 3A F3 80 00            PUSH 0x80f33a
 00577D61  68 45 03 00 00            PUSH 0x345
-00577D66  E8 55 91 17 00            CALL 0x006f0ec0
+GameSystemC::GetMessage::override::prt_577d66_9d92389d:
+00577D66  E8 55 91 17 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 00577D6B  8B 55 FC                  MOV EDX,dword ptr [EBP + -0x4]
 00577D6E  8B 0D 5C 99 80 00         MOV ECX,dword ptr [0x0080995c]
 00577D74  8B D8                     MOV EBX,EAX

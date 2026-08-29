@@ -1,7 +1,8 @@
 program=ST.exe
-proposals=1045
+proposals=1566
 conflicts=0
 source_interval_helpers=110
 module_callback_helpers=61
+linked_interface_runtime_functions=521
 ourlib_proposals=305
 note=Only rows with apply=1 are consumed by STLibraryApplier.

@@ -230,7 +230,7 @@ LAB_00618ea9:
 00618EAC  8D 4D F8                  LEA ECX,[EBP + -0x8]
 00618EAF  51                        PUSH ECX
 00618EB0  8B CE                     MOV ECX,ESI
-00618EB2  E8 56 BA DE FF            CALL 0x0040490d
+00618EB2  E8 56 BA DE FF            CALL 0x0040490d  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 00618EB7  8B 55 F8                  MOV EDX,dword ptr [EBP + -0x8]
 00618EBA  8B 0D 38 2A 80 00         MOV ECX,dword ptr [0x00802a38]
 00618EC0  52                        PUSH EDX

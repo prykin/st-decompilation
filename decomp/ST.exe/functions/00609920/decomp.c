@@ -13,8 +13,10 @@ void * __cdecl FUN_00609920(void)
 {
   STGroupBoatC *pSVar1;
   uint *puVar2;
-  pSVar1 = (STGroupBoatC *)FUN_006b04d0(600);
+  /* ST_CALLSITE[00609925]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STGroupBoatC; signature=__stdcall;pointer:/STGroupBoatC;/uint */
+  pSVar1 = FUN_006b04d0(600);
   if (pSVar1 != nullptr) {
+
     puVar2 = thunk_FUN_00609950(pSVar1);
     return puVar2;
   }

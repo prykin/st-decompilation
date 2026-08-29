@@ -1,9 +1,15 @@
 #include "../../pseudocode_runtime.h"
 
 
+/* [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:8: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=4,
+   pointer_dereferences=3, scalar_uses=0; sites=004AFA16 dereference: CMP EAX,dword ptr [EDX + 0x18]
+   | 004AFA3E dereference: CMP EAX,dword ptr [EDX + 0x18] | 004AFA84 dereference: MOV EAX,dword ptr
+   [EDX + 0x18] */
+
 undefined4 __cdecl
 FUN_004af080(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int param_6,int param_7
-            ,undefined4 param_8,int param_9)
+            ,undefined4 param_8,RecoveredRecord_004AF080_5D31BF96 *param_9)
 
 {
   int iVar1;
@@ -31,7 +37,7 @@ FUN_004af080(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   short sVar22;
   int iVar23;
   bool bVar24;
-  undefined4 local_50;
+  uint local_50;
   int local_40;
   char *local_3c;
   char *local_30;
@@ -59,6 +65,7 @@ FUN_004af080(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
     local_28 = 2;
     local_2c = 2;
   }
+
   psVar8 = Library::DKW::LIB::MemAlloc(g_worldGrid.planeStride * 5);
   local_14 = 0;
   do {
@@ -149,6 +156,7 @@ LAB_004af325:
   } while (local_14 < 4);
   if (g_array_007FA150 != nullptr) {
     g_array_007FA150->iteratorIndex = 0;
+
     iVar9 = DArrayGetNext(g_array_007FA150,(byte *)&local_10);
     while (-1 < iVar9) {
       if (local_10 != nullptr) {
@@ -159,6 +167,7 @@ LAB_004af325:
          (int)local_6 +
          (int)local_a * (int)g_worldGrid.planeStride + (int)local_8 * (int)g_worldGrid.sizeX) = 2;
       }
+
       iVar9 = DArrayGetNext(g_array_007FA150,(byte *)&local_10);
     }
   }
@@ -241,6 +250,7 @@ LAB_004af325:
                   uVar21 = 0;
                   if (0 < (int)pDVar15->count) {
                     do {
+
                       DArrayGetElement(pDVar15,uVar21,&local_10);
                       /* ST_CALLSITE[004AF6E9]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                       STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
@@ -263,6 +273,7 @@ LAB_004af325:
                   uVar21 = 0;
                   if (0 < (int)pDVar15->count) {
                     do {
+
                       DArrayGetElement(pDVar15,uVar21,&local_10);
                       /* ST_CALLSITE[004AF78E]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                       STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
@@ -285,6 +296,7 @@ LAB_004af325:
                   uVar21 = 0;
                   if (0 < (int)pDVar15->count) {
                     do {
+
                       DArrayGetElement(pDVar15,uVar21,&local_10);
                       /* ST_CALLSITE[004AF833]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                       STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
@@ -307,6 +319,7 @@ LAB_004af325:
                   uVar21 = 0;
                   if (0 < (int)pDVar15->count) {
                     do {
+
                       DArrayGetElement(pDVar15,uVar21,&local_10);
                       /* ST_CALLSITE[004AF8D8]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                       STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
@@ -322,11 +335,13 @@ LAB_004af325:
                 }
                 goto cf_common_join_004AFA95;
               }
-              if (((param_2 < 0x54) || (0x5a < param_2)) || (param_9 == 0)) {
+              if (((param_2 < 0x54) || (0x5a < param_2)) ||
+                 (param_9 == nullptr)) {
                 if (((param_2 == 0x3a) && (g_array_007FA16C != nullptr)) &&
                    (uVar21 = 0, 0 < (int)g_array_007FA16C->count)) {
                   do {
-                    DArrayGetElement(g_array_007FA16C,uVar21,&local_10);
+
+                    DArrayGetElement((DArrayTy *)g_array_007FA16C,uVar21,&local_10);
                     /* ST_CALLSITE[004AFB68]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                     STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
                     uVar18 = local_6 - local_18 >> 0x1f;
@@ -355,7 +370,6 @@ LAB_004af325:
                       local_3c = (char *)(iVar12 + (int)psVar8);
                       iVar12 = iVar1;
                       do {
-                        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                         if (((((-1 < iVar12) && (iVar12 < g_worldGrid.sizeX)) &&
                              ((iVar11 != iVar10 ||
                               ((iVar12 != iVar1 && ((iVar11 != iVar10 || (iVar12 != iVar16))))))))
@@ -366,22 +380,19 @@ LAB_004af325:
                                              ((int)(g_worldGrid.cells)->objects + iVar19),
                                 local_10 != nullptr)) &&
                                /* ST_CALLSITE[004AFA05]: CALL dword ptr [EDX + 0x2c] */
-                               (((dVar13 = local_10->slot_2C(), dVar13 == 0x53 &&
-                                 (local_10->field_0018 == *(int *)(param_9 + 0x18))) ||
+                               (((dVar13 = local_10->vfunc_2C(), dVar13 == 0x53
+                                 && (local_10->field_0018 == param_9->field_0018)) ||
                                 /* ST_CALLSITE[004AFA1D]: CALL dword ptr [EAX + 0x2c] */
-                                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                                ((dVar13 = local_10->slot_2C(),
+                                ((dVar13 = local_10->vfunc_2C(),
                                  0x53 < (int)dVar13 &&
                                  /* ST_CALLSITE[004AFA2A]: CALL dword ptr [EDX + 0x2c] */
-                                 ((dVar13 = local_10->slot_2C(),
+                                 ((dVar13 = local_10->vfunc_2C(),
                                   (int)dVar13 < 0x5b &&
-                                  (*(int *)&local_10[2].field_0xfd == *(int *)(param_9 + 0x18)))))))
-                               )))) {
+                                  (*(int *)&local_10[2].field_0xfd == param_9->field_0018))))))))))
+                        {
                           /* ST_CALLSITE[004AFA73]: CALL dword ptr [EDX + 0x2c] */
-                          dVar13 = local_10->slot_2C();
-                          /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-                          if ((dVar13 == 0x53) && (local_10->field_0018 == *(int *)(param_9 + 0x18))
-                             ) {
+                          dVar13 = local_10->vfunc_2C();
+                          if ((dVar13 == 0x53) && (local_10->field_0018 == param_9->field_0018)) {
                             bVar4 = true;
                           }
                           goto cf_common_join_004AFA95;
@@ -400,6 +411,7 @@ LAB_004af325:
             pDVar15 = g_packedRecords_A62x8[param_1].field1968_0x9d6;
             if ((pDVar15 != nullptr) && (uVar21 = 0, 0 < (int)pDVar15->count)) {
               do {
+
                 DArrayGetElement(pDVar15,uVar21,&local_10);
                 /* ST_CALLSITE[004AF645]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                 STFishC::sub_004162B0(local_10,&local_6,&local_8,&local_a);
@@ -438,6 +450,7 @@ cf_common_join_004AFA95:
               } while (iVar10 < local_1c + 1 + local_28);
             }
 LAB_004afbad:
+
             local_EAX_2874 = FUN_006aced8(local_18,local_1c,param_6,param_7);
             if ((local_40 < 0) || ((((0x53 < param_2 && (param_2 < 0x5b)) && (bVar4)) && (!bVar5))))
             {

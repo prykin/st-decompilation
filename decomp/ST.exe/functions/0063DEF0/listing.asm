@@ -30,7 +30,7 @@ STTmMineC::LoadImagNuclear:
 0063DF4A  68 50 1F 7D 00            PUSH 0x7d1f50
 0063DF4F  6A 1D                     PUSH 0x1d
 0063DF51  50                        PUSH EAX
-0063DF52  E8 99 BB 0C 00            CALL 0x00709af0
+0063DF52  E8 99 BB 0C 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 0063DF57  83 C4 20                  ADD ESP,0x20
 0063DF5A  8B F8                     MOV EDI,EAX
 0063DF5C  8D 45 FC                  LEA EAX,[EBP + -0x4]

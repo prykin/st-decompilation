@@ -20,7 +20,7 @@ FUN_00677290:
 006772C5  6A 02                     PUSH 0x2
 006772C7  6A 0A                     PUSH 0xa
 006772C9  50                        PUSH EAX
-006772CA  E8 C1 6F 03 00            CALL 0x006ae290
+006772CA  E8 C1 6F 03 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 006772CF  8B F0                     MOV ESI,EAX
 006772D1  8B 45 2C                  MOV EAX,dword ptr [EBP + 0x2c]
 006772D4  85 C0                     TEST EAX,EAX

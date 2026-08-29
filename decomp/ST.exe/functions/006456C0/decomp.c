@@ -23,6 +23,7 @@ void __thiscall STTorpC::RestoreTorpData(STTorpC *this,int param_1)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pSVar3 = local_c;
   if (iVar3 == 0) {
@@ -41,6 +42,7 @@ void __thiscall STTorpC::RestoreTorpData(STTorpC *this,int param_1)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\nick\\to_torp.cpp",0x4e5,0,iVar3,"%s",
                              "STTorpC::RestoreTorpData");
   if (iVar4 != 0) {

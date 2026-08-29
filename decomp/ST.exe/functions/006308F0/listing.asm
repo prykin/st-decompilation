@@ -45,7 +45,7 @@ LAB_0063096f:
 00630978  6A 75                     PUSH 0x75
 0063097A  6A 0A                     PUSH 0xa
 0063097C  6A 00                     PUSH 0x0
-0063097E  E8 0D D9 07 00            CALL 0x006ae290
+0063097E  E8 0D D9 07 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STManRuinC_field_0038DArray; source view only; no Ghidra override
 00630983  89 43 38                  MOV dword ptr [EBX + 0x38],EAX
 LAB_00630986:
 00630986  8B 53 38                  MOV EDX,dword ptr [EBX + 0x38]

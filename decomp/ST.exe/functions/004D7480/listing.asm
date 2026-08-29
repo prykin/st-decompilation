@@ -1,4 +1,4 @@
-FUN_004d7480:
+STAllPlayersC::sub_004D7480:
 004D7480  55                        PUSH EBP
 004D7481  8B EC                     MOV EBP,ESP
 004D7483  83 EC 14                  SUB ESP,0x14

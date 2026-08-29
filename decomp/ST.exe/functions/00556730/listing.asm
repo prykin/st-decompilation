@@ -1,6 +1,7 @@
 CreateTraks:
 00556730  68 2C 08 00 00            PUSH 0x82c
-00556735  E8 96 9D 15 00            CALL 0x006b04d0
+CreateTraks::override::prt_556735_8bfba588:
+00556735  E8 96 9D 15 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/TraksClassTy; signature=__stdcall;pointer:/TraksClassTy;/uint
 0055673A  85 C0                     TEST EAX,EAX
 0055673C  74 07                     JZ 0x00556745
 0055673E  8B C8                     MOV ECX,EAX

@@ -13,6 +13,6 @@ FUN_005bba40:
 005BBA6B  83 C0 1D                  ADD EAX,0x1d
 005BBA6E  8B 11                     MOV EDX,dword ptr [ECX]
 005BBA70  50                        PUSH EAX
-005BBA71  FF 52 18                  CALL dword ptr [EDX + 0x18]
+005BBA71  FF 52 18                  CALL dword ptr [EDX + 0x18]  ; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 LAB_005bba74:
 005BBA74  C3                        RET

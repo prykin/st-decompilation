@@ -5,9 +5,13 @@
    Evidence: 005FF3A0 -> 00416270 @ 005FF3EB
 
    [STPrototypeApplier] Propagated parameter 2.
-   Evidence: 005FF3A0 -> 00416270 @ 005FF3EB */
+   Evidence: 005FF3A0 -> 00416270 @ 005FF3EB
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=005FD3A0 @ 005FD453 -> read as EAX on
+   every CFG path | 005FFF60 @ 005FFF84 -> read as EAX on every CFG path */
 
-undefined4 __thiscall FUN_005ff3a0(void *this,uint *param_1,short *param_2,short *param_3)
+int __thiscall FUN_005ff3a0(void *this,uint *param_1,short *param_2,short *param_3)
 
 {
   STGameObjC *this_00;

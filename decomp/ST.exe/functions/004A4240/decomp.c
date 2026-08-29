@@ -32,7 +32,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
   int *local_20;
   int local_1c;
   STGameObjC *local_18;
-  undefined1 local_14 [4];
+  byte local_14 [4];
   uint local_10;
   short local_a;
   short local_8;
@@ -46,11 +46,13 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
   local_24 = this;
+
   local_EAX_70 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
   this_00 = local_24;
   if (local_EAX_70 != 0) {
     g_currentExceptionFrame = local_78.previous;
     if (local_EAX_70 != -0x5001fff7) {
+
       iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x126a,0,local_EAX_70,
                                  "%s","STGroupBoatC::ChangeMDNotify");
       if (iVar4 != 0) {
@@ -79,15 +81,16 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         dVar1 = this_00->field_0266->count;
         if (0 < (int)dVar1) {
           do {
+
             DArrayGetElement(this_00->field_0266,uVar10,&local_10);
             if ((short)local_10 == -1) break;
             uVar10 = uVar10 + 1;
           } while ((int)uVar10 < (int)dVar1);
         }
+
         Library::DKW::TBL::DArrayPut(this_00->field_0266,uVar10,&param_2);
         /* ST_CALLSITE[004A4508]: CALL 0x0040143d; direct=0040143D STGroupBoatC::DistributeMD */
-        DistributeMD(this_00,0,this_00->field_024E,this_00->field_0266,
-                     (DArrayTy *)this_00->field_0029);
+        DistributeMD(this_00,0,this_00->field_024E,this_00->field_0266,this_00->field_0029);
         this_01 = local_18;
       }
       if (this_00->field_0262 != 2) {
@@ -129,6 +132,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       dVar1 = this_00->field_0266->count;
       if (0 < (int)dVar1) {
         do {
+
           DArrayGetElement(this_00->field_0266,uVar10,&local_10);
           if ((short)local_10 == -1) break;
           uVar10 = uVar10 + 1;
@@ -150,6 +154,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         } while (iVar5 < local_1c);
       }
       if (iVar5 == local_1c) {
+
         local_EAX_228 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x120a,0,0,"%s",
                                 "STGroupBoatC::ChangeMDNotify invalid type");
@@ -211,6 +216,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       dVar1 = this_00->field_024E->count;
       if (0 < (int)dVar1) {
         do {
+
           DArrayGetElement(this_00->field_024E,uVar10,&local_10);
           if ((short)local_10 == -1) break;
           uVar10 = uVar10 + 1;
@@ -218,8 +224,9 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       }
       pDVar8 = this_00->field_024E;
     }
+
     Library::DKW::TBL::DArrayPut(pDVar8,uVar10,&param_2);
-    pDVar8 = (DArrayTy *)this_00->field_0029;
+    pDVar8 = this_00->field_0029;
     pDVar13 = this_00->field_0266;
     pDVar12 = this_00->field_024E;
     goto LAB_004a4aab;
@@ -239,9 +246,11 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       dVar1 = this_00->field_0266->count;
       if (0 < (int)dVar1) {
         do {
+
           DArrayGetElement(this_00->field_0266,uVar10,&local_10);
           if ((short)local_10 == (short)param_2) {
             local_10 = 0xffff;
+
             Library::DKW::TBL::DArrayPut(this_00->field_0266,uVar10,&local_10);
             break;
           }
@@ -249,8 +258,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         } while ((int)uVar10 < (int)dVar1);
       }
       /* ST_CALLSITE[004A4938]: CALL 0x0040143d; direct=0040143D STGroupBoatC::DistributeMD */
-      DistributeMD(this_00,0,this_00->field_024E,this_00->field_0266,(DArrayTy *)this_00->field_0029
-                  );
+      DistributeMD(this_00,0,this_00->field_024E,this_00->field_0266,this_00->field_0029);
       this_01 = local_18;
     }
     if (this_00->field_0262 != 2) {
@@ -292,9 +300,11 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     uVar10 = this_00->field_0266->count;
     if (0 < (int)uVar10) {
       do {
+
         DArrayGetElement(this_00->field_0266,uVar11,&local_10);
         if ((short)local_10 == (short)param_2) {
           local_10 = 0xffff;
+
           Library::DKW::TBL::DArrayPut(this_00->field_0266,uVar11,&local_10);
           break;
         }
@@ -302,6 +312,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       } while ((int)uVar11 < (int)uVar10);
     }
     if (uVar11 == uVar10) {
+
       iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x123b,0,0,"%s",
                                  "STGroupBoatC::ChangeMDNotify depot is absent");
       if (iVar3 != 0) {
@@ -324,6 +335,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       } while (iVar6 < iVar5);
     }
     if (iVar6 == iVar5) {
+
       local_EAX_1110 =
            ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1246,0,0,"%s",
                               "STGroupBoatC::ChangeMDNotify invalid type");
@@ -344,9 +356,11 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       dVar1 = this_00->field_024E->count;
       if (0 < (int)dVar1) {
         do {
+
           DArrayGetElement(this_00->field_024E,uVar10,&local_10);
           if ((short)local_10 == (short)param_2) {
             local_10 = 0xffff;
+
             Library::DKW::TBL::DArrayPut(this_00->field_024E,uVar10,&local_10);
             break;
           }
@@ -354,8 +368,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         } while ((int)uVar10 < (int)dVar1);
       }
       /* ST_CALLSITE[004A474F]: CALL 0x0040143d; direct=0040143D STGroupBoatC::DistributeMD */
-      DistributeMD(this_00,0,this_00->field_024E,this_00->field_0266,(DArrayTy *)this_00->field_0029
-                  );
+      DistributeMD(this_00,0,this_00->field_024E,this_00->field_0266,this_00->field_0029);
     }
     if (this_00->field_024A != 2) {
       g_currentExceptionFrame = local_78.previous;
@@ -396,9 +409,11 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     uVar10 = this_00->field_024E->count;
     if (0 < (int)uVar10) {
       do {
+
         DArrayGetElement(this_00->field_024E,uVar11,&local_10);
         if ((short)local_10 == (short)param_2) {
           local_10 = 0xffff;
+
           Library::DKW::TBL::DArrayPut(this_00->field_024E,uVar11,&local_10);
           break;
         }
@@ -406,6 +421,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       } while ((int)uVar11 < (int)uVar10);
     }
     if (uVar11 == uVar10) {
+
       local_EAX_1610 =
            ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1260,0,0,"%s",
                               "STGroupBoatC::ChangeMDNotify mine is absent");
@@ -419,7 +435,7 @@ LAB_004a4a83:
                  iVar5);
     }
   }
-  pDVar8 = (DArrayTy *)this_00->field_0029;
+  pDVar8 = this_00->field_0029;
   pDVar13 = this_00->field_0266;
   pDVar12 = this_00->field_024E;
 LAB_004a4aab:

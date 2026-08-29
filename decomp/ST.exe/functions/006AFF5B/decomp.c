@@ -18,9 +18,11 @@ uint __cdecl FUN_006aff5b(int param_1)
     uVar2 = uVar2 + 0x168;
   }
   if (uVar2 < 0xb5) {
+
     uVar1 = FUN_006aff93();
   }
   else {
+
     local_EAX_38 = FUN_006aff93();
     uVar1 = -local_EAX_38;
   }

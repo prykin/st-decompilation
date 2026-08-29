@@ -26,6 +26,7 @@ void __thiscall OptPanelTy::Question(OptPanelTy *this,char param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 == 0) {
@@ -61,6 +62,7 @@ void __thiscall OptPanelTy::Question(OptPanelTy *this,char param_1)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0x490,0,iVar2,"%s",
                              "OptPanelTy::Question");
   if (iVar3 == 0) {

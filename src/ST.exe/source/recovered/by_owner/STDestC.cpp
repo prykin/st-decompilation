@@ -16,9 +16,9 @@ STDestC * __thiscall st::fn_006023F0(STDestC *this)
 {
 
   /* ST_CALLSITE[006023F4]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
-  st::fn_00401933((STGameObjC *)this);
+  st::fn_00401933(reinterpret_cast<STGameObjC *>(this));
   /* ST_CALLSITE[00602401]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
-  st::fn_00401316((STT3DSprC *)&this->field_01D5);
+  st::fn_00401316(reinterpret_cast<STT3DSprC *>(&this->field_01D5));
   this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079CB10);
   this->vtable = &st_global_0079C9B0;
   memset(&this->field_0x231, 0, 0x17e); /* compiler bulk-zero initialization */
@@ -47,11 +47,10 @@ STDestC * __thiscall st::fn_006023F0(STDestC *this)
 void __thiscall st::fn_00602440(STDestC *this)
 
 {
-  undefined4 local_24 [3];
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-
+  uint local_24 [3];
+  uint local_18;
+  uint local_14;
+  uint local_10;
   local_18 = 0;
   local_10 = this->field_0008;
   local_14 = 10;
@@ -117,12 +116,13 @@ byte * __thiscall st::fn_006025D0(STDestC *this,undefined4 *param_1)
   byte *pbVar4;
 
   if (this->field_036E != CASE_3) {
-    pbVar1 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(0x17e));
+    /* ST_CALLSITE[006025EB]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/byte; source view only; no Ghidra override */
+    pbVar1 = (byte *)st::fn_006AAC70(0x17e);
     if (this->field_036E == CASE_2) {
       this->field_036E = (uint)(this->field_039F < '\x01');
     }
     this->field_023D = 2;
-    puVar3 = (byte *)&this->field_0x231;
+    puVar3 = reinterpret_cast<byte *>(&this->field_0x231);
     pbVar4 = pbVar1;
     memmove(pbVar4, puVar3, 0x17e); /* compiler REP MOVS byte copy */
     *param_1 = 0x17e;
@@ -144,7 +144,7 @@ undefined4 __thiscall st::fn_00602660(STDestC *this,undefined4 *param_1)
 {
   byte *puVar2;
 
-  puVar2 = (byte *)&this->field_0x231;
+  puVar2 = reinterpret_cast<byte *>(&this->field_0x231);
   memmove(puVar2, param_1, 0x17e); /* compiler REP MOVS byte copy */
   this->field_039B = -1;
   if (this->field_0241 == 1) {
@@ -156,6 +156,91 @@ undefined4 __thiscall st::fn_00602660(STDestC *this,undefined4 *param_1)
   this->field_0043 = (short)this->field_037F;
   this->field_0045 = (short)this->field_0383;
   return 0x17e;
+}
+
+// 00602700 STDestC::sub_00602700
+#line 4 "decomp/ST.exe/functions/00602700/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079C9B0
+   Entries: 00404EF3
+   Slots: 0x74
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_physical_vtable_owner_and_slot;
+   receiver_extent=607/943; unique_owner_for_target; unique physical vtable owner and slot type only
+   the existing __thiscall receiver; explicit parameters and return are retained */
+
+void __thiscall st::fn_00602700(STDestC *this,char *param_1)
+
+{
+  char cVar1;
+  uint uVar2;
+  char *pcVar4;
+  char *pcVar5;
+
+  uVar2 = 0xffffffff;
+  pcVar4 = &this->field_025B;
+  do {
+    pcVar5 = pcVar4;
+    if (uVar2 == 0) break;
+    uVar2 = uVar2 - 1;
+    pcVar5 = pcVar4 + 1;
+    cVar1 = *pcVar4;
+    pcVar4 = pcVar5;
+  } while (cVar1 != '\0');
+  uVar2 = ~uVar2;
+  pcVar4 = pcVar5 + -uVar2;
+  memmove(param_1, pcVar4, uVar2); /* compiler REP MOVS byte copy */
+  return;
+}
+
+// 00602740 STDestC::vfunc_70
+#line 4 "decomp/ST.exe/functions/00602740/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079C9B0
+   Entries: 00403B93
+   Slots: 0x70
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_physical_vtable_owner_and_slot;
+   receiver_extent=607/943; unique_owner_for_target; unique physical vtable owner and slot type only
+   the existing __thiscall receiver; explicit parameters and return are retained */
+
+void __thiscall st::fn_00602740(STDestC *this,char *param_1)
+
+{
+  char cVar1;
+  uint uVar2;
+  char *pcVar4;
+  char *pcVar5;
+  char *pcVar4_mg1;
+  char *pcVar4_mg0;
+
+  uVar2 = 0xffffffff;
+  pcVar4_mg0 = param_1;
+  do {
+    if (uVar2 == 0) break;
+    uVar2 = uVar2 - 1;
+    cVar1 = *pcVar4_mg0;
+    pcVar4_mg0 = pcVar4_mg0 + 1;
+  } while (cVar1 != '\0');
+  if (0xe < ~uVar2 - 1) {
+    st::fn_0072E340(&this->field_025B,param_1,0xe);
+    this->field_0269 = 0;
+    return;
+  }
+  uVar2 = 0xffffffff;
+  do {
+    pcVar4_mg1 = param_1;
+    if (uVar2 == 0) break;
+    uVar2 = uVar2 - 1;
+    pcVar4_mg1 = param_1 + 1;
+    cVar1 = *param_1;
+    param_1 = pcVar4_mg1;
+  } while (cVar1 != '\0');
+  uVar2 = ~uVar2;
+  pcVar4 = pcVar4_mg1 + -uVar2;
+  pcVar5 = &this->field_025B;
+  memmove(pcVar5, pcVar4, uVar2); /* compiler REP MOVS byte copy */
+  return;
 }
 
 // 00602BE0 STDestC::sub_00602BE0
@@ -186,6 +271,7 @@ void __thiscall st::fn_00602BE0(STDestC *this)
   int local_c;
   int local_8;
 
+
   if ((this->field_039B < 0) && (iVar2 = st::fn_004013ED(), iVar2 == 0)) {
     return;
   }
@@ -206,7 +292,8 @@ void __thiscall st::fn_00602BE0(STDestC *this)
     }
     else if (((int)PTR_00806724->entryCount <= this->field_0397) &&
             (this->field_036E = CASE_0, this->field_037A == '\x01')) {
-      st::fn_00403D0F((STT3DSprC *)&this->field_01D5);
+      /* ST_CALLSITE[00602C99]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+      st::fn_00403D0F(reinterpret_cast<STT3DSprC *>(&this->field_01D5));
       this->field_037A = 0;
     }
   }
@@ -215,7 +302,7 @@ void __thiscall st::fn_00602BE0(STDestC *this)
     puVar3 = st::fn_00405D30(this);
     this->field_03AB = puVar3;
     if (puVar3 != nullptr) {
-      st::fn_004021D5((STT3DSprC *)&this->field_01D5);
+      st::fn_004021D5(reinterpret_cast<STT3DSprC *>(&this->field_01D5));
       this->field_039B = -1;
       this->field_036E = CASE_4;
     }
@@ -236,7 +323,8 @@ void __thiscall st::fn_00602BE0(STDestC *this)
       if (this->field_037A == '\0') {
         return;
       }
-      st::fn_00403D0F((STT3DSprC *)&this->field_01D5);
+      /* ST_CALLSITE[00602DE6]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+      st::fn_00403D0F(reinterpret_cast<STT3DSprC *>(&this->field_01D5));
       this->field_037A = 0;
       return;
     }
@@ -382,27 +470,27 @@ undefined4 __thiscall st::fn_00603120(STDestC *this)
    owner_type=/STDestC; current target parameter and return types retained when arity agrees;
    physical-slot geometry proves receiver/stack ABI only */
 
-void __thiscall st::fn_006033D0(STDestC *this,undefined1 *param_1)
+void __thiscall st::fn_006033D0(STDestC *this,RecoveredRecord_006033D0_8A1D4BAE *param_1)
 
 {
   byte bVar1;
   uint uVar2;
   if (this->field_036E != CASE_0) {
-    *param_1 = 4;
-    param_1[1] = this->field_021D;
-    param_1[2] = 1;
+    *(undefined1 *)param_1 = 4;
+    param_1->field_0x1 = this->field_021D;
+    param_1->field_0x2 = 1;
     /* ST_CALLSITE[006033F6]: CALL dword ptr [EDX + 0x2c] */
     uVar2 = this->vfunc_2C();
-    *(undefined4 *)(param_1 + 3) = uVar2;
+    param_1->field_0003 = uVar2;
     /* ST_CALLSITE[00603406]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar1 = st::fn_004049B7(this->field_0024);
-    param_1[7] = bVar1;
-    *(int **)(param_1 + 8) = this->field_0018;
+    param_1->field_0x7 = bVar1;
+    param_1->field_0008 = this->field_0018;
   }
-  st::fn_0072E340(st::pointer_boundary_cast<char *>(param_1 + 0xc),&this->field_025B,0xe);
-  param_1[0x1b] = 100;
+  st::fn_0072E340(reinterpret_cast<char *>((param_1 + 1)),&this->field_025B,0xe);
+  *(undefined1 *)&param_1[2].field_0003 = 100;
   if (this->field_036E != CASE_0) {
-    param_1[0x1d] = 1;
+    *(undefined1 *)((int)&param_1[2].field_0003 + 2) = 1;
   }
   return;
 }
@@ -420,7 +508,7 @@ void __thiscall st::fn_006033D0(STDestC *this,undefined1 *param_1)
    owner_type=/STDestC; current target parameter and return types retained when arity agrees;
    physical-slot geometry proves receiver/stack ABI only */
 
-void __thiscall st::fn_00603470(STDestC *this,AnonShape_00603470_D413D02D *param_1)
+void __thiscall st::fn_00603470(STDestC *this,RecoveredRecordView_00603470_1C45B4BC *param_1)
 
 {
   byte uVar1;
@@ -441,4 +529,3 @@ void __thiscall st::fn_00603470(STDestC *this,AnonShape_00603470_D413D02D *param
   }
   return;
 }
-

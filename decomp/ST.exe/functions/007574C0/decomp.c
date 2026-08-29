@@ -11,7 +11,8 @@
    Evidence: all observed direct callers ignore the return register (ignored=5, used=0, unknown=0),
    and decompilation contains no value return */
 
-void FUN_007574c0(AnonShape_00753C80_4C8E695D *param_1,int param_2,uint *param_3,int param_4)
+void FUN_007574c0(RecoveredRecordView_00753C80_637B4E8C *param_1,
+                 RecoveredRecord_007574C0_96B4D703 *param_2,uint *param_3,int param_4)
 
 {
   uint uVar1;
@@ -30,10 +31,12 @@ void FUN_007574c0(AnonShape_00753C80_4C8E695D *param_1,int param_2,uint *param_3
     iVar3 = (int)sVar2;
   }
   uVar1 = iVar3 + 8;
-  pAVar5 = (AnonPointee_TLOBaseTy_0607 *)(param_2 + 0x10 + param_4);
+
   Library::MSVCRT::FUN_0072da70
-            ((undefined4 *)(uVar1 + param_2 + 0x10 + param_4),pAVar5,
-             *(short *)(param_2 + 8) - param_4);
+            ((RecoveredRecord_006BFE70_3123BCE8 *)(&param_2[2].field_0x4 + param_4 + iVar3),
+             (AnonPointee_TLOBaseTy_0607 *)(&param_2[1].field_0x6 + param_4),
+             param_2->field_0008 - param_4);
+  pAVar5 = (AnonPointee_TLOBaseTy_0607 *)(&param_2[1].field_0x6 + param_4);
   for (uVar4 = uVar1 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
     pAVar5->field_0000 = *param_3;
     param_3 = param_3 + 1;
@@ -44,7 +47,7 @@ void FUN_007574c0(AnonShape_00753C80_4C8E695D *param_1,int param_2,uint *param_3
     param_3 = (uint *)((int)param_3 + 1);
     pAVar5 = (AnonPointee_TLOBaseTy_0607 *)((int)&pAVar5->field_0000 + 1);
   }
-  *(short *)(param_2 + 8) = *(short *)(param_2 + 8) + (short)uVar1;
+  param_2->field_0008 = param_2->field_0008 + (short)uVar1;
   return;
 }
 

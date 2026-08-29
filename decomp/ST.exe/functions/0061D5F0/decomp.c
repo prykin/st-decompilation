@@ -13,7 +13,8 @@ void * __cdecl FUN_0061d5f0(void)
 {
   STLightC *pSVar1;
 
-  pSVar1 = (STLightC *)FUN_006b04d0(0xdd);
+  /* ST_CALLSITE[0061D5F5]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STLightC; signature=__stdcall;pointer:/STLightC;/uint */
+  pSVar1 = FUN_006b04d0(0xdd);
   if (pSVar1 != nullptr) {
     pSVar1 = STLightC::STLightC(pSVar1);
     return pSVar1;

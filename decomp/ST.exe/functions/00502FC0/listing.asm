@@ -77,7 +77,7 @@ LAB_005030c2:
 005030C2  8B 93 B6 02 00 00         MOV EDX,dword ptr [EBX + 0x2b6]
 005030C8  6A 03                     PUSH 0x3
 005030CA  52                        PUSH EDX
-005030CB  E8 D0 82 20 00            CALL 0x0070b3a0
+005030CB  E8 D0 82 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 005030D0  8B 93 8C 01 00 00         MOV EDX,dword ptr [EBX + 0x18c]
 005030D6  50                        PUSH EAX
 005030D7  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
@@ -108,7 +108,7 @@ LAB_00503127:
 00503127  8B 93 B6 02 00 00         MOV EDX,dword ptr [EBX + 0x2b6]
 0050312D  6A 00                     PUSH 0x0
 0050312F  52                        PUSH EDX
-00503130  E8 6B 82 20 00            CALL 0x0070b3a0
+00503130  E8 6B 82 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 00503135  50                        PUSH EAX
 00503136  8B 83 8C 01 00 00         MOV EAX,dword ptr [EBX + 0x18c]
 0050313C  6A 01                     PUSH 0x1
@@ -155,7 +155,7 @@ LAB_005031a9:
 005031A9  8B 8B B6 02 00 00         MOV ECX,dword ptr [EBX + 0x2b6]
 005031AF  6A 01                     PUSH 0x1
 005031B1  51                        PUSH ECX
-005031B2  E8 E9 81 20 00            CALL 0x0070b3a0
+005031B2  E8 E9 81 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 005031B7  8B 55 FC                  MOV EDX,dword ptr [EBP + -0x4]
 005031BA  8B 8B 8C 01 00 00         MOV ECX,dword ptr [EBX + 0x18c]
 005031C0  81 E2 FF 00 00 00         AND EDX,0xff
@@ -185,7 +185,7 @@ LAB_0050320d:
 0050320D  8B 93 B6 02 00 00         MOV EDX,dword ptr [EBX + 0x2b6]
 00503213  6A 00                     PUSH 0x0
 00503215  52                        PUSH EDX
-00503216  E8 85 81 20 00            CALL 0x0070b3a0
+00503216  E8 85 81 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 0050321B  50                        PUSH EAX
 0050321C  8B 83 8C 01 00 00         MOV EAX,dword ptr [EBX + 0x18c]
 00503222  6A 01                     PUSH 0x1

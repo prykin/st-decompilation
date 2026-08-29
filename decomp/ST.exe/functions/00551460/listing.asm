@@ -114,7 +114,7 @@ LAB_0055155b:
 005515B0  68 E5 00 00 00            PUSH 0xe5
 005515B5  6A 01                     PUSH 0x1
 005515B7  6A 00                     PUSH 0x0
-005515B9  FF 57 04                  CALL dword ptr [EDI + 0x4]
+005515B9  FF 57 04                  CALL dword ptr [EDI + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 005515BC  89 86 CC 01 00 00         MOV dword ptr [ESI + 0x1cc],EAX
 LAB_005515c2:
 005515C2  8B CE                     MOV ECX,ESI

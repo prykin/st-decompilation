@@ -344,11 +344,40 @@ public class STExportRegressionGate extends GhidraScript {
                 if (entry.getValue() > oldValue)
                     increases.add(entry.getKey() + " " + oldValue + "->" + entry.getValue());
             }
-            add(increases.isEmpty() ? "info" : "error",
+            boolean analysisSchemaTransition =
+                now.number("function_analysis_schema") >
+                    before.number("function_analysis_schema");
+            boolean accountingKind = Set.of("raw_pointer_offset",
+                "unresolved_register_input").contains(kind);
+            boolean aggregateNonincreasing = afterTotal <= beforeTotal;
+            boolean legacyAccountingTransition = !increases.isEmpty() &&
+                analysisSchemaTransition && accountingKind && aggregateNonincreasing &&
+                before.functionTextHashes.isEmpty();
+            boolean exactAccountingTransition = !increases.isEmpty() &&
+                analysisSchemaTransition && accountingKind && aggregateNonincreasing &&
+                !before.functionTextHashes.isEmpty() && increases.stream().allMatch(value -> {
+                    String address = value.substring(0, Math.min(8, value.length()));
+                    String oldHash = before.functionTextHashes.get(address);
+                    String newHash = now.functionTextHashes.get(address);
+                    return oldHash != null && oldHash.equals(newHash);
+                });
+            boolean accountingTransition = legacyAccountingTransition ||
+                exactAccountingTransition;
+            add(increases.isEmpty() ? "info" : accountingTransition ? "warning" : "error",
                 "readability_by_function:" + kind, beforeTotal, afterTotal,
                 increases.isEmpty() ? afterTotal < beforeTotal ? "improved" : "ok" :
-                    "regressed", increases.isEmpty() ?
+                    accountingTransition ? "analysis_transition" : "regressed",
+                increases.isEmpty() ?
                     "policy=per-address nonincreasing; cross-function compensation forbidden" :
+                accountingTransition ?
+                    "Function-analysis schema " +
+                        before.number("function_analysis_schema") + " -> " +
+                        now.number("function_analysis_schema") +
+                        (legacyAccountingTransition ?
+                            " changed detector accounting before text hashes were retained" :
+                            " changed detector accounting for byte-identical function bodies") +
+                        "; whole-corpus occurrences did not increase; subsequent exports " +
+                        "use the normal address-exact policy. recounted=" + sample(increases) :
                     "Existing functions degraded: " + sample(increases));
         }
     }
@@ -415,7 +444,30 @@ public class STExportRegressionGate extends GhidraScript {
                 "pseudocode_idioms.snapshot");
             if (Files.isRegularFile(idioms)) readQualityByFunction(idioms, result);
         }
+        Path textHashes = root.resolve("function_text_hashes.snapshot");
+        if (Files.isRegularFile(textHashes)) readFunctionTextHashes(textHashes, result);
+        else readFunctionTextHashesFromCorpus(root, result);
         return result;
+    }
+
+    private void readFunctionTextHashes(Path path, CorpusMetrics result) throws Exception {
+        for (String line : Files.readAllLines(path, StandardCharsets.UTF_8)) {
+            String[] fields = line.split("\\t", -1);
+            if (fields.length == 2 && fields[0].matches("[0-9A-Fa-f]{8}") &&
+                    HEX64.matcher(fields[1]).matches())
+                result.functionTextHashes.put(fields[0].toUpperCase(Locale.ROOT), fields[1]);
+        }
+    }
+
+    private void readFunctionTextHashesFromCorpus(Path root, CorpusMetrics result)
+            throws Exception {
+        Path functions = root.resolve("functions");
+        if (!Files.isDirectory(functions)) return;
+        for (String address : result.bodyFunctions) {
+            Path body = functions.resolve(address).resolve("decomp.c");
+            if (Files.isRegularFile(body))
+                result.functionTextHashes.put(address, sha256(body));
+        }
     }
 
     private Path regressionArtifact(Path root, String primary, String snapshot) {
@@ -670,7 +722,7 @@ public class STExportRegressionGate extends GhidraScript {
         String value = name.toLowerCase(Locale.ROOT);
         return value.startsWith("fun_") || value.startsWith("sub_") ||
             value.startsWith("thunk_fun_") || value.startsWith("thunk_sub_") ||
-            value.startsWith("lab_");
+            value.startsWith("lab_") || value.matches("(?:thunk_)?vfunc_[0-9a-f]+");
     }
 
     private String sample(Set<String> values) {
@@ -793,6 +845,7 @@ public class STExportRegressionGate extends GhidraScript {
         final Map<String, String> names = new HashMap<>();
         final Map<String, Long> quality = new HashMap<>();
         final Map<String, Map<String, Long>> qualityByFunction = new HashMap<>();
+        final Map<String, String> functionTextHashes = new HashMap<>();
         final Map<String, String> vtableSlots = new HashMap<>();
         final Map<String, String> thunkTargets = new HashMap<>();
         final Set<String> taggedMessageHandlers = new TreeSet<>();

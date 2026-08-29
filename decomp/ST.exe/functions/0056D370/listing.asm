@@ -47,7 +47,8 @@ STAppC::OpenGameDBs:
 0056D3FB  6A 00                     PUSH 0x0
 0056D3FD  56                        PUSH ESI
 0056D3FE  68 45 03 00 00            PUSH 0x345
-0056D403  E8 B8 3A 18 00            CALL 0x006f0ec0
+STAppC::OpenGameDBs::override::prt_56d403_9d92389d:
+0056D403  E8 B8 3A 18 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 0056D408  83 C4 4C                  ADD ESP,0x4c
 0056D40B  A3 70 67 80 00            MOV [0x00806770],EAX
 0056D410  50                        PUSH EAX
@@ -78,7 +79,8 @@ STAppC::OpenGameDBs:
 0056D45C  6A 00                     PUSH 0x0
 0056D45E  56                        PUSH ESI
 0056D45F  68 45 03 00 00            PUSH 0x345
-0056D464  E8 57 3A 18 00            CALL 0x006f0ec0
+STAppC::OpenGameDBs::override::prt_56d464_9d92389d:
+0056D464  E8 57 3A 18 00            CALL 0x006f0ec0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint
 0056D469  83 C4 50                  ADD ESP,0x50
 0056D46C  A3 90 67 80 00            MOV [0x00806790],EAX
 0056D471  50                        PUSH EAX

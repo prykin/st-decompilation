@@ -23,10 +23,12 @@ void __thiscall FrmPanelTy::Update(FrmPanelTy *this)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\frmpanel.cpp",0x70,0,iVar2,"%s"
                                ,"FrmPanelTy::Update");
     if (iVar3 != 0) {
@@ -41,7 +43,8 @@ void __thiscall FrmPanelTy::Update(FrmPanelTy *this)
   *piVar5 = 0;
   local_8->field_01AF = 0;
   /* ST_CALLSITE[00510509]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
-  STAllPlayersC::GetPanelInfo(g_allPlayers_007FA174,0x11,(AnonShape_0043BEB0_1C00EC12 *)piVar5);
+  STAllPlayersC::GetPanelInfo
+            (g_allPlayers_007FA174,0x11,(RecoveredRecordView_0043BEB0_8330D129 *)piVar5);
   iVar4 = 2;
   bVar8 = true;
   piVar7 = local_10;

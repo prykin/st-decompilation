@@ -47,6 +47,7 @@ LAB_0062f208:
           }
           *(char *)(*piVar3 + 0x34) = *(char *)(*piVar3 + 0x34) + '\x01';
           if (PTR_00806724->entryCount <= (short)(ushort)*(byte *)(*piVar3 + 0x34)) {
+
             thunk_FUN_0062f6c0(param_1,local_8);
           }
         }
@@ -61,7 +62,8 @@ LAB_0062f208:
       iVar1 = *piVar3;
       if (local_c == 0) {
         if (((iVar1 != 0) && (STField<char>(iVar1,0x3D) != '\0')) && (this != nullptr)) {
-          thunk_FUN_004ad430(this);
+          /* ST_CALLSITE[0062F2FF]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+          STT3DSprC::sub_004AD430(this);
           *(undefined1 *)(*piVar3 + 0x3d) = 0;
         }
       }

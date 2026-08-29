@@ -82,7 +82,7 @@ LAB_005336b5:
 005336BB  8B CA                     MOV ECX,EDX
 005336BD  C7 42 28 01 C0 00 00      MOV dword ptr [EDX + 0x28],0xc001
 005336C4  C7 42 34 00 00 00 00      MOV dword ptr [EDX + 0x34],0x0
-005336CB  FF 10                     CALL dword ptr [EAX]
+005336CB  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 005336CD  8B 55 B0                  MOV EDX,dword ptr [EBP + -0x50]
 005336D0  89 15 F8 8D 85 00         MOV dword ptr [0x00858df8],EDX
 005336D6  5F                        POP EDI

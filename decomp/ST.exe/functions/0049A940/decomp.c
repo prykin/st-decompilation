@@ -17,15 +17,15 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   uint uVar7;
   InternalExceptionFrame local_58;
   STGroupBoatC *local_14;
-  uint local_10;
-  undefined1 local_c [4];
+  dword local_10;
+  byte local_c [4];
   uint local_8;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_10 = *(uint *)(this->field_0029 + 0xc);
+  local_10 = this->field_0029->count;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   pSVar2 = local_14;
   if (iVar3 == 0) {
@@ -37,11 +37,11 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
       if (local_10 != 0) {
         index = 0;
         do {
-          DArrayGetElement((DArrayTy *)pSVar2->field_0029,index,local_c);
+
+          DArrayGetElement(pSVar2->field_0029,index,local_c);
           if (STPiece<0,2>(local_c) != 0xffff) {
-            this_00 = (STBoatC *)
-                      /* ST_CALLSITE[0049A9DF]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-                      STAllPlayersC::GetObjPtr
+            /* ST_CALLSITE[0049A9DF]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum */
+            this_00 = STAllPlayersC::GetObjPtr
                                 (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_c),CASE_1);
             if (this_00 == nullptr) {
               RaiseInternalException
@@ -60,6 +60,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
     return 2;
   }
   g_currentExceptionFrame = local_58.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x665,0,iVar3,"%s",
                              "STGroupBoatC::GrpMove");
   if (iVar4 != 0) {

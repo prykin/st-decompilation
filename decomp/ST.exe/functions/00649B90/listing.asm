@@ -138,7 +138,7 @@ CreateBossData:
 00649D16  8D 85 88 FE FF FF         LEA EAX,[EBP + 0xfffffe88]
 00649D1C  52                        PUSH EDX
 00649D1D  50                        PUSH EAX
-00649D1E  E8 E0 A6 DB FF            CALL 0x00404403
+00649D1E  E8 E0 A6 DB FF            CALL 0x00404403  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_00648620; source view only; no Ghidra override
 00649D23  83 C4 14                  ADD ESP,0x14
 00649D26  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
 00649D29  85 C0                     TEST EAX,EAX
@@ -147,7 +147,7 @@ CreateBossData:
 00649D30  8D 4D F0                  LEA ECX,[EBP + -0x10]
 00649D33  51                        PUSH ECX
 00649D34  52                        PUSH EDX
-00649D35  E8 85 81 DB FF            CALL 0x00401ebf
+00649D35  E8 85 81 DB FF            CALL 0x00401ebf  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override
 00649D3A  8B 55 F0                  MOV EDX,dword ptr [EBP + -0x10]
 00649D3D  8D 4D EC                  LEA ECX,[EBP + -0x14]
 00649D40  51                        PUSH ECX

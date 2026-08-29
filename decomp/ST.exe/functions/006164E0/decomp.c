@@ -25,6 +25,7 @@ undefined4 __thiscall FUN_006164e0(void *this,int *param_1,int *param_2,int *par
   int local_c;
   int local_8;
 
+
   iVar4 = thunk_FUN_00616280(this,&local_10,&local_14,&local_18);
   if (iVar4 < 0) {
     return 0xffffffff;
@@ -43,8 +44,10 @@ undefined4 __thiscall FUN_006164e0(void *this,int *param_1,int *param_2,int *par
     if ((local_18 - iVar4) * STField<int>(this,0x284) +
         (local_14 - local_c) * STField<int>(this,0x280) +
         (local_10 - local_8) * STField<int>(this,0x27c) < 0) {
+
       iVar7 = thunk_FUN_006173a0(this,iVar8,param_1,param_2,param_3);
       if (iVar7 < 1) {
+
         thunk_FUN_0060ec00(this);
         STField<undefined4>(this,0x20c) = 9;
       }
@@ -68,6 +71,7 @@ undefined4 __thiscall FUN_006164e0(void *this,int *param_1,int *param_2,int *par
         lVar12 = Library::MSVCRT::__ftol();
         local_c = (int)STField<short>(this,0x25e);
         lVar13 = Library::MSVCRT::__ftol();
+
         iVar2 = FUN_006acf0d((int)sVar1,local_8,local_c,local_10,local_14,local_18);
         iVar4 = (iVar2 << 3) / STField<int>(this,0x288);
         if (iVar4 != 0) {
@@ -122,6 +126,7 @@ undefined4 __thiscall FUN_006164e0(void *this,int *param_1,int *param_2,int *par
           STField<undefined1>(this,0x29c) = 1;
           iVar4 = iVar4 + 10;
         }
+
         iVar3 = FUN_006acf0d((int)STField<short>(this,0x25a),(int)STField<short>(this,0x25c),
                              (int)STField<short>(this,0x25e),local_8,local_c,iVar4);
         if (iVar3 != 0) {

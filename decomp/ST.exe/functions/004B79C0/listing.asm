@@ -1,4 +1,4 @@
-FUN_004b79c0:
+STAllPlayersC::sub_004B79C0:
 004B79C0  55                        PUSH EBP
 004B79C1  8B EC                     MOV EBP,ESP
 004B79C3  83 EC 0C                  SUB ESP,0xc

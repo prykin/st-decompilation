@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_005edc20(AnonShape_005EDC20_3D37DB9E *param_1)
+undefined4 __fastcall FUN_005edc20(RecoveredRecordView_005EDC20_AE493B38 *param_1)
 
 {
   short sVar1;
@@ -30,15 +30,16 @@ undefined4 __fastcall FUN_005edc20(AnonShape_005EDC20_3D37DB9E *param_1)
       if ((iVar4 == 0x52) || (iVar4 == 0x5f)) {
         if ((*(int *)&this[0x23].field_0x1c == *(int *)&param_1->field_0x18) &&
            ((*(int *)&this[0x22].field_0x8 == 3 &&
+
             (iVar4 = thunk_FUN_004ac910((void *)((int)&this[0xd].vtable + 1),'\x0e'),
             iVar4 == *(int *)(*(int *)((int)&this[0xd].value_20 + 1) + 0x20c))))) {
           uVar12 = param_1->field_02C6;
           uVar10 = param_1->field_02C2;
           uVar8 = param_1->field_02BE;
-          /* ST_CALLSITE[005EDD5F]: CALL dword ptr [EAX + 0x138] */
+          /* ST_CALLSITE[005EDD5F]: CALL dword ptr [EAX + 0x138]; [STIndirectCallsiteApplier] exact slot 0x138; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4 */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar4 = (**(code **)(*(int *)param_1 + 0x138))();
-          /* ST_CALLSITE[005EDD6A]: CALL dword ptr [EDX + 0x130] */
+          /* ST_CALLSITE[005EDD6A]: CALL dword ptr [EDX + 0x130]; [STIndirectCallsiteApplier] exact slot 0x130; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           iVar6 = (**(code **)(*(int *)param_1 + 0x130))();
           thunk_FUN_004ebda0(this,*(int *)&param_1->field_0x18,iVar6,iVar4,uVar8,uVar10,uVar12);
@@ -55,6 +56,7 @@ undefined4 __fastcall FUN_005edc20(AnonShape_005EDC20_3D37DB9E *param_1)
         iVar7 = -100;
         iVar6 = -100;
         iVar4 = 1;
+
         uVar5 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
         thunk_FUN_006377b0(uVar5,iVar4,iVar6,iVar7,iVar9,uVar11);
         return 2;

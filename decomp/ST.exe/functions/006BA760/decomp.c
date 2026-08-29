@@ -1,8 +1,8 @@
 
-void FUN_006ba760(int param_1)
+void FUN_006ba760(RecoveredRecord_006BA760_C6EE148F *param_1)
 
 {
-  *(uint *)(param_1 + 0xc) = *(uint *)(param_1 + 0xc) | 0x100;
+  param_1->field_000C = param_1->field_000C | 0x100;
   return;
 }
 

@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-int __thiscall STBoatC::FUN_004803d0(STBoatC *this,AnonShape_004803D0_350EB461 *param_1)
+int __thiscall STBoatC::FUN_004803d0(STBoatC *this,RecoveredRecordView_004803D0_06C5639A *param_1)
 
 {
   int local_EAX_141;
@@ -11,7 +11,7 @@ int __thiscall STBoatC::FUN_004803d0(STBoatC *this,AnonShape_004803D0_350EB461 *
   int iVar2;
 
   if ((param_1 == nullptr) ||
-     (param_1 == (AnonShape_004803D0_350EB461 *)0x1)) {
+     (param_1 == (RecoveredRecordView_004803D0_06C5639A *)0x1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
     this->field_02C4 = 0;
     if (this->field_07CA != nullptr) {
@@ -27,7 +27,7 @@ int __thiscall STBoatC::FUN_004803d0(STBoatC *this,AnonShape_004803D0_350EB461 *
   iVar2 = this->field_06EF;
   if (iVar2 == 0) {
     /* ST_CALLSITE[0048045D]: CALL 0x00404e1c; direct=00404E1C STBoatC::LoadObj */
-    local_EAX_141 = LoadObj(this,(AnonShape_005EFAE0_B406B78B *)param_1);
+    local_EAX_141 = LoadObj(this,(RecoveredRecordView_005EFAE0_855D930D *)param_1);
     if (local_EAX_141 == -1) {
       return -1;
     }
@@ -47,6 +47,7 @@ int __thiscall STBoatC::FUN_004803d0(STBoatC *this,AnonShape_004803D0_350EB461 *
       return -1;
     }
     if (g_playSystem_00802A38->field_00E4 % 0x25 == 0) {
+
       iVar2_mg3 = STPlaySystemC::sub_006E62D0
                             (g_playSystem_00802A38,this->field_07CA,(int *)&param_1);
       if (iVar2_mg3 == -4) {

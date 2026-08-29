@@ -33,10 +33,12 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pCVar3 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel.cpp",0x2fc,0,errorCode,
                                "%s","CPanelTy::PaintSMap");
     if (iVar6 != 0) {
@@ -72,12 +74,14 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
   puVar5 = (g_playSystem_00802A38->field_00E4 * 0x51eb851f);
   uVar4 = g_playSystem_00802A38->field_00E4 / 0x19;
   if (300 < uVar4 - DAT_0080c4cf) {
-    puVar5 = thunk_FUN_0056f930((AnonShape_0056F930_C6277D80 *)&DAT_00807620);
+
+    puVar5 = STPointerBoundaryCast<ushort *>(thunk_FUN_0056f930((RecoveredRecordView_0056F930_AC468BC6 *)&DAT_00807620));
     DAT_00808794 = puVar5;
     DAT_0080c4cf = uVar4;
   }
   if (uVar4 != pCVar3->field_09A0) {
     pCVar3->field_09A0 = uVar4;
+
     ccFntTy::SetSurf(pCVar3->field_01BC,pCVar3->field_0190,0,(DAT_0080874e == '\x03') + 7,0x10,0x28,
                      0xb);
     uVar4 = (uint)DAT_0080874d;
@@ -145,6 +149,7 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
       puVar5 = ccFntTy::WrTxt(pCVar3->field_01BC,&pCVar3->field_01E1,0,0,
                               (DAT_0080874e == '\x03') + 2,-1,-1);
       if (DAT_0080c4d3 != 2) {
+
         ccFntTy::WrTxt(pCVar3->field_01CC,&pCVar3->field_01E1,0xd,10,0,-1,-1);
         puVar5 = Library::DKW::DDX::FUN_006b3640
                            ((int *)g_ddxContext_008075A8,pCVar3->field_0174,0xffffffff,

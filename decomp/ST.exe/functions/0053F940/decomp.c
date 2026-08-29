@@ -22,40 +22,40 @@ ProdPanelTy::CreateSlider
   int *piVar7;
   int iVar9;
   int local_42c [6];
-  undefined4 local_414;
-  undefined4 local_410;
-  undefined4 local_3c4;
-  undefined4 local_3c0;
-  undefined4 local_3bc;
-  undefined4 local_3a4;
-  undefined4 local_3a0;
-  undefined4 local_39c;
-  undefined2 local_398;
-  undefined2 local_396;
-  undefined4 local_394;
-  undefined4 local_38c;
-  undefined4 local_380;
-  undefined4 local_37c;
-  undefined4 local_378;
-  undefined2 local_374;
-  undefined2 local_372;
-  undefined4 local_370;
-  undefined4 local_368;
-  undefined4 local_31c;
-  undefined4 local_318;
-  undefined4 local_314;
-  undefined4 local_310;
-  undefined4 local_2a8;
+  uint local_414;
+  uint local_410;
+  uint local_3c4;
+  uint local_3c0;
+  uint local_3bc;
+  uint local_3a4;
+  uint local_3a0;
+  uint local_39c;
+  ushort local_398;
+  ushort local_396;
+  uint local_394;
+  uint local_38c;
+  uint local_380;
+  uint local_37c;
+  uint local_378;
+  ushort local_374;
+  ushort local_372;
+  uint local_370;
+  uint local_368;
+  uint local_31c;
+  uint local_318;
+  uint local_314;
+  uint local_310;
+  uint local_2a8;
   int local_2a4 [26];
-  undefined4 local_23c;
-  undefined4 local_214;
-  undefined4 local_1f0;
-  undefined4 local_84;
-  undefined4 local_80;
-  undefined4 local_7c;
-  undefined4 local_6c;
-  undefined4 local_68;
-  undefined4 local_64;
+  uint local_23c;
+  uint local_214;
+  uint local_1f0;
+  uint local_84;
+  uint local_80;
+  uint local_7c;
+  uint local_6c;
+  uint local_68;
+  uint local_64;
   InternalExceptionFrame local_54;
   ProdPanelTy *local_10;
   ushort *local_c;
@@ -65,6 +65,7 @@ ProdPanelTy::CreateSlider
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_10;
   if (iVar2 == 0) {
@@ -88,6 +89,7 @@ ProdPanelTy::CreateSlider
     local_42c[3] = 2;
     local_318 = 1;
     local_31c = 1;
+    /* ST_CALLSITE[0053FA02]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
     pCVar2 = thunk_FUN_00571240("BUT_SLLT",0);
     pCVar2 = FUN_006f2c00(pCVar2,iVar3,uVar6);
     local_c = cMf32::RecGet(g_cMf32_00806790,1,pCVar2,piVar7,iVar9);
@@ -147,6 +149,7 @@ ProdPanelTy::CreateSlider
     return local_8;
   }
   g_currentExceptionFrame = local_54.previous;
+
   iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\specpan.cpp",0x239,0,iVar2,"%s",
                              "ProdPanelTy::CreateSlider");
   if (iVar8 != 0) {

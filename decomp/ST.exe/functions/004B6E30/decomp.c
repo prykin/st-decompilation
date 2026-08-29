@@ -72,7 +72,10 @@ undefined4 __thiscall FUN_004b6e30(void *this,int param_1,Global_sub_004B6E30_pa
     iVar2 = STField<int>(this,0x24);
     *(undefined4 *)(iVar4 + STRecordByteAddress(g_packedRecords_A62x8, iVar2, 0x97A)) = 0;
   }
-  thunk_FUN_004b7750(STReplaceLowByte((uint32_t)(iVar2), (uint8_t)(STField<undefined1>(this,0x24))));
+  /* ST_CALLSITE[004B6F30]: CALL 0x00401893; direct=00401893 STAllPlayersC::sub_004B7750 */
+  STAllPlayersC::sub_004B7750
+            (g_allPlayers_007FA174,
+             STReplaceLowByte((uint32_t)(iVar2), (uint8_t)(STField<undefined1>(this,0x24))));
   return 0;
 }
 

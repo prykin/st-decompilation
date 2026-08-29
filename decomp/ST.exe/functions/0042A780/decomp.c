@@ -28,6 +28,7 @@ void __cdecl FUN_0042a780(int *param_1)
         } while (STField<int>(iVar2,0x40) != *piVar3);
         if (piVar3 == nullptr) {
 LAB_0042a7e7:
+
           Library::DKW::TBL::DArrayAppend(array,(void *)(iVar2 + 0x40));
           FreeAndNull((void *)(iVar2 + 0x40));
         }
@@ -37,7 +38,7 @@ LAB_0042a7e7:
     } while (iVar4 < STField<int>(iVar2,0x455));
   }
   DArrayDestroy(array);
-  thunk_FUN_00575460((AnonShape_00575460_06C413C6 *)*param_1);
+  thunk_FUN_00575460((RecoveredRecordView_00575460_D990C64A *)*param_1);
   Library::Ourlib::MFSTMAP::mfTMapErase(param_1);
   return;
 }

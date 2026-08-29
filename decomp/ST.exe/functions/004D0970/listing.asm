@@ -15,7 +15,7 @@ TLOFakeTy::sub_004D0970:
 004D0999  C1 E2 02                  SHL EDX,0x2
 004D099C  52                        PUSH EDX
 004D099D  50                        PUSH EAX
-004D099E  E8 AD C5 1D 00            CALL 0x006acf50
+004D099E  E8 AD C5 1D 00            CALL 0x006acf50  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 004D09A3  89 86 4D 02 00 00         MOV dword ptr [ESI + 0x24d],EAX
 LAB_004d09a9:
 004D09A9  8B 86 45 02 00 00         MOV EAX,dword ptr [ESI + 0x245]

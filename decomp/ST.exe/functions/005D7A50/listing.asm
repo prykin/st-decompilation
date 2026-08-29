@@ -216,7 +216,7 @@ LAB_005d7c31:
 005D7CD2  6A 07                     PUSH 0x7
 005D7CD4  51                        PUSH ECX
 005D7CD5  8B CF                     MOV ECX,EDI
-005D7CD7  FF 50 04                  CALL dword ptr [EAX + 0x4]
+005D7CD7  FF 50 04                  CALL dword ptr [EAX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 005D7CDA  C7 86 1D 1B 00 00 2B 02 00 00  MOV dword ptr [ESI + 0x1b1d],0x22b
 005D7CE4  C7 86 21 1B 00 00 BE 01 00 00  MOV dword ptr [ESI + 0x1b21],0x1be
 005D7CEE  89 9E 09 1B 00 00         MOV dword ptr [ESI + 0x1b09],EBX
@@ -246,7 +246,7 @@ LAB_005d7d06:
 005D7D2F  6A 07                     PUSH 0x7
 005D7D31  50                        PUSH EAX
 005D7D32  8B CF                     MOV ECX,EDI
-005D7D34  FF 52 04                  CALL dword ptr [EDX + 0x4]
+005D7D34  FF 52 04                  CALL dword ptr [EDX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 005D7D37  C7 86 AE 1B 00 00 2B 02 00 00  MOV dword ptr [ESI + 0x1bae],0x22b
 005D7D41  C7 86 B2 1B 00 00 11 02 00 00  MOV dword ptr [ESI + 0x1bb2],0x211
 005D7D4B  89 9E 9A 1B 00 00         MOV dword ptr [ESI + 0x1b9a],EBX
@@ -276,7 +276,7 @@ LAB_005d7d63:
 005D7D8E  6A 07                     PUSH 0x7
 005D7D90  51                        PUSH ECX
 005D7D91  8B CF                     MOV ECX,EDI
-005D7D93  FF 50 04                  CALL dword ptr [EAX + 0x4]
+005D7D93  FF 50 04                  CALL dword ptr [EAX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 005D7D96  C7 86 3F 1C 00 00 2F 02 00 00  MOV dword ptr [ESI + 0x1c3f],0x22f
 005D7DA0  C7 86 43 1C 00 00 D3 01 00 00  MOV dword ptr [ESI + 0x1c43],0x1d3
 005D7DAA  89 9E 2B 1C 00 00         MOV dword ptr [ESI + 0x1c2b],EBX
@@ -310,7 +310,7 @@ LAB_005d7dc2:
 005D7DFD  50                        PUSH EAX
 005D7DFE  6A 0E                     PUSH 0xe
 005D7E00  68 56 01 00 00            PUSH 0x156
-005D7E05  E8 B6 D2 0D 00            CALL 0x006b50c0
+005D7E05  E8 B6 D2 0D 00            CALL 0x006b50c0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 005D7E0A  6A FF                     PUSH -0x1
 005D7E0C  53                        PUSH EBX
 005D7E0D  6A 01                     PUSH 0x1

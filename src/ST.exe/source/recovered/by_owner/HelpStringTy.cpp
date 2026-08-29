@@ -17,10 +17,10 @@ st::fn_0051FAC0(HelpStringTy *this,char *param_1,byte param_2,char param_3,uint 
 
 {
   char cVar1;
-  DWORD DVar2;
+  int iVar2;
   uint uVar3;
+  char *pcVar5;
   char *pcVar6;
-  char *pcVar7;
   char *pcVar6_mg0;
 
   if (this->field_011C <= param_2) {
@@ -35,17 +35,18 @@ st::fn_0051FAC0(HelpStringTy *this,char *param_1,byte param_2,char param_3,uint 
         param_1 = pcVar6_mg0;
       } while (cVar1 != '\0');
       uVar3 = ~uVar3;
-      pcVar6 = pcVar6_mg0 + -uVar3;
-      pcVar7 = &this->field_0018;
-      memmove(pcVar7, pcVar6, uVar3); /* compiler REP MOVS byte copy */
+      pcVar5 = pcVar6_mg0 + -uVar3;
+      pcVar6 = &this->field_0018;
+      memmove(pcVar6, pcVar5, uVar3); /* compiler REP MOVS byte copy */
       this->field_011C = param_2;
       this->field_011D = param_3 - 1U;
       if (1 < (byte)(param_3 - 1U)) {
         this->field_011D = 0;
       }
       this->field_0126 = param_4;
-      DVar2 = st::fn_006E51B0(this->field_0010);
-      this->field_0122 = DVar2;
+
+      iVar2 = st::fn_006E51B0(this->field_0010);
+      this->field_0122 = iVar2;
       this->field_012E = 1;
       /* ST_CALLSITE[0051FB42]: CALL 0x004015fa; direct=004015FA HelpStringTy::OutStr */
       st::fn_004015FA(this);
@@ -58,4 +59,3 @@ st::fn_0051FAC0(HelpStringTy *this,char *param_1,byte param_2,char param_3,uint 
   }
   return;
 }
-

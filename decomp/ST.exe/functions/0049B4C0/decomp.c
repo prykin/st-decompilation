@@ -3,47 +3,52 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
-   STGroupBoatC::GrpGoToDeep */
+   STGroupBoatC::GrpGoToDeep
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00497E00 @ 00498116 -> read as EAX on
+   every CFG path | 00497E00 @ 00498123 -> read as EAX on every CFG path | 00497E00 @ 00498556 ->
+   read as EAX on every CFG path */
 
-undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
+int __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
 
 {
   STGroupBoatC *pSVar2;
   int iVar3;
   STBoatC *this_00;
-  STGameObjC *objPtr;
+  STGameObjC *this_01;
   int iVar4;
-  uint uVar3;
   int iVar5;
   uint uVar6;
   uint uVar8;
   InternalExceptionFrame local_6c;
   uint local_28;
-  undefined2 local_24;
-  undefined2 local_22;
-  undefined2 local_20;
+  ushort local_24;
+  ushort local_22;
+  ushort local_20;
   STGroupBoatC *local_1c;
-  uint local_18;
-  undefined1 local_14 [4];
-  undefined4 local_10;
+  dword local_18;
+  byte local_14 [4];
+  int local_10;
   short local_a;
   short local_8;
   short local_6;
 
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_18 = *(uint *)(this->field_0029 + 0xc);
+  local_18 = this->field_0029->count;
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
   local_1c = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0);
   pSVar2 = local_1c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_6c.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x73c,0,iVar3,"%s",
                                "STGroupBoatC::GrpGoToDeep");
     if (iVar4 == 0) {
       RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0x73d);
-      return 0xffffffff;
+      return -1;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
@@ -55,7 +60,8 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
     if (local_18 != 0) {
       uVar6 = 0;
       do {
-        DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar6,local_14);
+
+        DArrayGetElement(pSVar2->field_0029,uVar6,local_14);
         if (STPiece<0,2>(local_14) != 0xffff) {
           this_00 = (STBoatC *)
                     /* ST_CALLSITE[0049B564]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -83,28 +89,32 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
     }
     local_10 = 2;
   }
-  uVar3 = local_10;
+  iVar5 = local_10;
   if (param_1 == 2) {
     if (g_playSystem_00802A38->field_00E4 % 3 == 0) {
       uVar6 = 0;
       uVar8 = 0;
       local_10 = 0;
-      uVar3 = 0;
+      iVar5 = 0;
       if (local_18 != 0) {
         do {
-          DArrayGetElement((DArrayTy *)pSVar2->field_0029,uVar8,local_14);
+
+          DArrayGetElement(pSVar2->field_0029,uVar8,local_14);
           if (STPiece<0,2>(local_14) != 0xffff) {
-            /* ST_CALLSITE[0049B655]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-            objPtr = STAllPlayersC::GetObjPtr
-                               (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_14),CASE_1);
-            if (objPtr == nullptr) {
+            /* ST_CALLSITE[0049B655]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_0045FF30_A86BE482; source view only; no Ghidra override */
+            this_01 = STAllPlayersC::GetObjPtr
+                                (g_allPlayers_007FA174,pSVar2->field_0024,STPiece<0,2>(local_14),CASE_1);
+            if (this_01 == nullptr) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0x732);
             }
-            iVar5 = thunk_FUN_0045ff30((int)objPtr);
-            if (((iVar5 != 0) || (iVar5 = thunk_FUN_0045ff10(objPtr), iVar5 == 1)) ||
-               (iVar5 = thunk_FUN_0045ff10(objPtr), iVar5 == 0)) goto LAB_0049b6c1;
+
+            iVar5 = thunk_FUN_0045ff30((RecoveredRecord_0045FF30_A86BE482 *)this_01);
+            /* ST_CALLSITE[0049B688]: CALL 0x00402edc; direct=00402EDC STGameObjC::sub_0045FF10 */
+            if (((iVar5 != 0) || (iVar5 = STGameObjC::sub_0045FF10(this_01), iVar5 == 1)) ||
+               /* ST_CALLSITE[0049B694]: CALL 0x00402edc; direct=00402EDC STGameObjC::sub_0045FF10 */
+               (iVar5 = STGameObjC::sub_0045FF10(this_01), iVar5 == 0)) goto LAB_0049b6c1;
           }
           uVar6 = uVar6 + 1;
           uVar8 = uVar6 & 0xffff;
@@ -118,10 +128,10 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
     else {
 LAB_0049b6c1:
       local_10 = 2;
-      uVar3 = local_10;
+      iVar5 = local_10;
     }
   }
-  local_10 = uVar3;
+  local_10 = iVar5;
   g_currentExceptionFrame = local_6c.previous;
   return local_10;
 }

@@ -11,7 +11,7 @@ FUN_00660700(void *this,short param_1,short param_2,short param_3,int param_4,in
   int iVar2;
   STGroupBoatC *this_01;
   short sVar3;
-  undefined4 local_14;
+  uint local_14;
   uint local_10;
   short local_c;
   short sStack_a;
@@ -72,6 +72,7 @@ FUN_00660700(void *this,short param_1,short param_2,short param_3,int param_4,in
         return 0xffffffff;
       }
       local_14 = 1;
+
       thunk_FUN_004e9960(this_00,(undefined4 *)&param_1,(undefined4 *)&param_2,
                          (undefined4 *)&param_3);
       sStack_a = param_1;

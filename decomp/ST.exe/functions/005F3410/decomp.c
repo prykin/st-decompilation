@@ -13,7 +13,8 @@ STBHEShellC * __cdecl CreateSTBHEShell(void)
 {
   STBHEShellC *pSVar1;
 
-  pSVar1 = (STBHEShellC *)FUN_006b04d0(0x175);
+  /* ST_CALLSITE[005F3415]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBHEShellC; signature=__stdcall;pointer:/STBHEShellC;/uint */
+  pSVar1 = FUN_006b04d0(0x175);
   if (pSVar1 != nullptr) {
     pSVar1 = STBHEShellC::STBHEShellC(pSVar1);
     return pSVar1;

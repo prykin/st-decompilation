@@ -83,7 +83,8 @@ LAB_005a19b6:
 005A1A2A  F3 A4                     MOVSB.REP ES:EDI,ESI
 005A1A2C  8B 8B 9B 1A 00 00         MOV ECX,dword ptr [EBX + 0x1a9b]
 005A1A32  51                        PUSH ECX
-005A1A33  E8 88 63 12 00            CALL 0x006c7dc0
+FSGSTy::SetBanner::override::prt_5a1a33_fd5e5f74:
+005A1A33  E8 88 63 12 00            CALL 0x006c7dc0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_FSGSTy_006C7D20; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_FSGSTy_006C7D20;/undefined4
 005A1A38  8B D0                     MOV EDX,EAX
 005A1A3A  85 D2                     TEST EDX,EDX
 005A1A3C  89 93 9F 1A 00 00         MOV dword ptr [EBX + 0x1a9f],EDX

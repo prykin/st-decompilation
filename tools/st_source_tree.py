@@ -99,6 +99,8 @@ READABILITY_METRIC_KINDS = frozenset({
     "dangling_qualified_address_prefix",
     "machine_word_nullptr",
     "pointer_boundary_cast",
+    "raw_machine_field_projection",
+    "raw_pointer_field_projection",
     "opaque_decompiler_storage",
 })
 EXACT_INDIRECT_CALLSITE_RE = re.compile(
@@ -795,6 +797,56 @@ class TypeEmitter:
             callee_expression=callee_expression,
         ))
         return member_name
+
+    def physical_vtable_callee_expression(
+        self, receiver_display: str, slot: int
+    ) -> str | None:
+        """Spell one exact byte slot through the exported physical vtable.
+
+        Derived dispatch slots can lie beyond the first physical table record.
+        Ghidra then renders, for example, byte slot ``0xF8`` of a ``0xD4``
+        table as ``vtable[1].vfunc_24``.  Reconstruct that expression only from
+        the owner's offset-zero vptr, the table's exact length, and one named
+        component at the remainder; never manufacture a synthetic tail member.
+        """
+        owner_paths = self._display_record_paths(
+            receiver_display, True, allow_name_fallback=True
+        )
+        if len(owner_paths) != 1:
+            return None
+        owner = self.by_path.get(next(iter(owner_paths)))
+        if owner is None or owner["class"] != "StructureDB":
+            return None
+        vptrs = [
+            item for item in owner["detail"].get("components", ())
+            if int(item.get("offset", -1)) == 0 and
+            str(item.get("field_name") or "") == "vtable"
+        ]
+        if len(vptrs) != 1:
+            return None
+        pointer = self.by_path.get(str(vptrs[0].get("type") or ""))
+        if pointer is None or pointer["class"] != "PointerDB":
+            return None
+        table_path = self._unwrap_typedef_path(
+            str(pointer["detail"].get("points_to") or ""), set()
+        )
+        table = self.by_path.get(table_path or "")
+        if table is None or table["class"] != "StructureDB":
+            return None
+        table_length = int(table.get("length", 0))
+        if table_length <= 0 or slot < 0:
+            return None
+        table_index, remainder = divmod(slot, table_length)
+        members = [
+            str(item.get("field_name") or "")
+            for item in table["detail"].get("components", ())
+            if int(item.get("offset", -1)) == remainder and
+            IDENTIFIER_RE.fullmatch(str(item.get("field_name") or ""))
+        ]
+        if len(set(members)) != 1:
+            return None
+        access = "vtable" if table_index == 0 else f"vtable[{table_index}]"
+        return access + ("->" if table_index == 0 else ".") + members[0]
 
     def exact_indirect_member_wrapper(
         self,
@@ -1555,6 +1607,21 @@ class TypeEmitter:
         pointee = self.display_pointee_type(display_name)
         if pointee is None:
             return None
+        # Prefer the emitted C++ identity.  Ghidra's concrete byte/word classes
+        # are named ByteDataType/ShortDataType rather than IntegerDataType, but
+        # they still emit the same exact primitive storage types as byte,
+        # undefined1, WORD, and their Win32 typedefs.
+        key = self.cpp_type_key(pointee)
+        widths = {
+            "uint8_t": 1, "int8_t": 1, "char": 1,
+            "uint16_t": 2, "int16_t": 2, "short": 2,
+            "uint32_t": 4, "int32_t": 4, "int": 4,
+            "unsigned_long": 4, "long": 4,
+            "size_t": 4,
+            "uint64_t": 8, "int64_t": 8,
+        }
+        if key in widths:
+            return widths[key]
         candidates = self.paths_by_display_name.get(pointee, set())
         if candidates:
             widths: set[int] = set()
@@ -1572,16 +1639,19 @@ class TypeEmitter:
                     return None
                 widths.add(width)
             return next(iter(widths)) if len(widths) == 1 else None
-        key = self.cpp_type_key(pointee)
-        widths = {
+        return widths.get(key)
+
+    @functools.lru_cache(maxsize=None)
+    def display_integer_scalar_width(self, display_name: str) -> int | None:
+        """Return the exact emitted primitive-integer width, if any."""
+        key = self.cpp_type_key(display_name)
+        return {
             "uint8_t": 1, "int8_t": 1, "char": 1,
             "uint16_t": 2, "int16_t": 2, "short": 2,
             "uint32_t": 4, "int32_t": 4, "int": 4,
-            "unsigned_long": 4, "long": 4,
-            "size_t": 4,
+            "unsigned_long": 4, "long": 4, "size_t": 4,
             "uint64_t": 8, "int64_t": 8,
-        }
-        return widths.get(key)
+        }.get(key)
 
     @functools.lru_cache(maxsize=None)
     def display_pointee_type(self, display_name: str) -> str | None:
@@ -2293,6 +2363,7 @@ class TypeEmitter:
         lines = [
             "#pragma once",
             "",
+            "#include <ctime>",
             "#include \"st/pseudocode_runtime.hpp\"",
             "",
             "// Exact-width leaf spellings absent from the exporter runtime.",
@@ -2587,6 +2658,10 @@ class SourceTreeGenerator:
         self.body_declarations: dict[str, str] = {}
         self.neutral_callable_parameters: dict[str, set[int]] = defaultdict(set)
         self.neutral_callable_boundary_casts: Counter[str] = Counter()
+        self.exact_call_result_boundary_casts: Counter[str] = Counter()
+        self.exact_address_storage_boundary_casts: Counter[str] = Counter()
+        self.exact_existing_pointer_view_casts: Counter[str] = Counter()
+        self.promoted_slot_boundary_casts: Counter[str] = Counter()
         self.machine_callsite_slots: dict[str, dict[str, int]] = {}
         self.previous_readability_by_address: dict[str, dict[str, int]] = {}
         self.readability_by_address: dict[str, dict[str, int]] = {}
@@ -2871,6 +2946,13 @@ class SourceTreeGenerator:
             "                std::remove_const_t<TargetPointee>,\n"
             "                std::remove_const_t<SourcePointee>>)\n"
             "            return const_cast<Target>(value);\n"
+            "        else if constexpr (std::is_const_v<SourcePointee> &&\n"
+            "                           !std::is_const_v<TargetPointee>) {\n"
+            "            using MutableSource = std::add_pointer_t<\n"
+            "                std::remove_const_t<SourcePointee>>;\n"
+            "            return reinterpret_cast<Target>(\n"
+            "                const_cast<MutableSource>(value));\n"
+            "        }\n"
             "        else\n"
             "            return reinterpret_cast<Target>(value);\n"
             "    }\n"
@@ -2880,11 +2962,23 @@ class SourceTreeGenerator:
             "template <typename Target, typename Source>\n"
             "inline Target machine_word_boundary_cast(Source value) noexcept {\n"
             "    static_assert(std::is_integral_v<Target>);\n"
-            "    static_assert(std::is_pointer_v<Source> || std::is_integral_v<Source>);\n"
-            "    if constexpr (std::is_pointer_v<Source>)\n"
+            "    static_assert(std::is_pointer_v<Source> || std::is_integral_v<Source> || "
+            "std::is_null_pointer_v<Source>);\n"
+            "    if constexpr (std::is_null_pointer_v<Source>)\n"
+            "        return static_cast<Target>(0);\n"
+            "    else if constexpr (std::is_pointer_v<Source>)\n"
             "        return static_cast<Target>(reinterpret_cast<uintptr_t>(value));\n"
             "    else\n"
             "        return static_cast<Target>(value);\n"
+            "}\n"
+            "template <typename Target, typename Source>\n"
+            "inline Target storage_bit_cast(const Source &value) noexcept {\n"
+            "    static_assert(sizeof(Target) == sizeof(Source));\n"
+            "    static_assert(std::is_trivially_copyable_v<Target>);\n"
+            "    static_assert(std::is_trivially_copyable_v<Source>);\n"
+            "    Target result{};\n"
+            "    ::memcpy(&result, &value, sizeof(result));\n"
+            "    return result;\n"
             "}\n"
             "template <typename Target, typename Source>\n"
             "inline Target function_address_boundary_cast(Source value) noexcept {\n"
@@ -2926,6 +3020,15 @@ class SourceTreeGenerator:
             "    else\n"
             "        return reinterpret_cast<Target>(static_cast<uintptr_t>(value));\n"
             "}\n"
+            "// Exact direct-call result override for a physical declaration\n"
+            "// whose shared return remains void.  The selected function type\n"
+            "// comes from the address-local machine callsite marker.\n"
+            "template <typename Target, typename Source>\n"
+            "inline Target exact_call_result_callee(Source value) noexcept {\n"
+            "    static_assert(std::is_pointer_v<Target>);\n"
+            "    static_assert(std::is_pointer_v<Source>);\n"
+            "    return reinterpret_cast<Target>(value);\n"
+            "}\n"
             "}\n",
             encoding="utf-8",
         )
@@ -2942,13 +3045,23 @@ class SourceTreeGenerator:
                 entries, key=lambda item: item[0]["address"]
             ):
                 address = function["address"].upper()
+                # Decompiler line wrapping can leave indentation after a cast
+                # whose operand starts on the following line.  Trailing space
+                # has no storage or ABI meaning and makes the generated tree
+                # fail repository hygiene checks, so normalize it only at the
+                # final presentation boundary.
+                clean_body = "\n".join(
+                    line.rstrip() for line in body.rstrip().splitlines()
+                )
                 chunks.append(
                     f"// {address} {function['qualified_name']}\n"
                     f"#line {body_line_origin} "
                     f"\"decomp/ST.exe/functions/{address}/decomp.c\"\n"
-                    f"{body.rstrip()}\n\n"
+                    f"{clean_body}\n\n"
                 )
-            target.write_text("".join(chunks), encoding="utf-8")
+            target.write_text(
+                "".join(chunks).rstrip() + "\n", encoding="utf-8"
+            )
             source_files.append(relative)
         self.stats["translation_units"] = len(source_files)
         self.stats["body_functions"] = sum(len(items) for items in groups.values())
@@ -2989,7 +3102,7 @@ class SourceTreeGenerator:
             readability_totals.update(metrics)
         readability = {
             "schema": "st-source-readability",
-            "schema_version": 1,
+            "schema_version": 3,
             "policy": "per-address-nonincreasing",
             "metric_kinds": sorted(READABILITY_METRIC_KINDS),
             "totals": dict(sorted(readability_totals.items())),
@@ -3026,9 +3139,13 @@ class SourceTreeGenerator:
                 r"\b(?:undefined(?:1|2|3|4|5|6|8)?|void|code)\s*\*{3,}"
                 r"\s*[A-Za-z_][A-Za-z0-9_]*", code
             )),
+            # Count declarations by token boundary rather than rendered line.
+            # Ghidra is free to wrap a long parameter list before any one
+            # parameter; a line-anchored expression made that harmless layout
+            # change look like a newly introduced generic type.
             "generic_undefined_declaration": len(re.findall(
-                r"(?m)^\s*undefined(?:1|2|3|4|5|6|8)?\s+\*{0,2}\s*"
-                r"[A-Za-z_][A-Za-z0-9_]*\s*(?:[;=,\[])", code
+                r"\bundefined(?:1|2|3|4|5|6|8)?\s+\*{0,2}\s*"
+                r"[A-Za-z_][A-Za-z0-9_]*\s*(?=[;=,\[\)])", code
             )),
             "unaff_or_extraout": len(set(re.findall(
                 r"\b(?:unaff|extraout)_[A-Za-z0-9_]+\b", code
@@ -3052,6 +3169,22 @@ class SourceTreeGenerator:
             )),
             "pointer_boundary_cast": len(re.findall(
                 r"\bst::pointer_boundary_cast\s*<", code
+            )) + len(re.findall(
+                r"\bst::exact_call_result_callee\s*<", code
+            )) + len(re.findall(
+                r"\(\s*[A-Za-z_][A-Za-z0-9_:<> ]*\s*\*+\s*\)\s*"
+                r"(?:st::fn_[0-9A-F]{8}|(?:[A-Za-z_][A-Za-z0-9_]*::)*"
+                r"[A-Za-z_][A-Za-z0-9_]*)\s*\(",
+                code,
+            )),
+            "raw_machine_field_projection": len(re.findall(
+                r"\bSTField\s*<", code
+            )),
+            "raw_pointer_field_projection": len(re.findall(
+                r"\*\s*\(\s*[A-Za-z_][A-Za-z0-9_:<> ]*\s*\*{1,}\s*\)"
+                r"\s*&?\s*(?:\([^\n;]+\)\s*)?[A-Za-z_][A-Za-z0-9_]*"
+                r"(?:(?:->|\.)field_(?:0x)?[0-9A-Fa-f]+)?",
+                code,
             )),
             "opaque_decompiler_storage": len(
                 OPAQUE_DECOMPILER_STORAGE_RE.findall(code)
@@ -3085,6 +3218,7 @@ class SourceTreeGenerator:
         if report.is_file():
             value = read_json(report)
             if (value.get("schema") == "st-source-readability" and
+                    int(value.get("schema_version", 0)) == 3 and
                     set(value.get("metric_kinds") or ()) ==
                     READABILITY_METRIC_KINDS and
                     isinstance(value.get("by_address"), dict)):
@@ -3143,6 +3277,17 @@ class SourceTreeGenerator:
             for kind in sorted(set(previous) | set(current)):
                 before = int(previous.get(kind, 0))
                 after = int(current.get(kind, 0))
+                # STField is an exact compile-time projection used while a
+                # scalar/pointer lifetime is still unresolved.  Its presence is
+                # useful debt accounting, but it can legitimately increase when
+                # an unbuildable raw dereference becomes expressible.  Use its
+                # reduction as a local budget for a new explicit pointer
+                # boundary, without treating the projection itself as a hard
+                # readability regression.
+                if kind == "raw_machine_field_projection":
+                    continue
+                if kind == "raw_pointer_field_projection":
+                    continue
                 allowed_after = before
                 if kind == "pointer_boundary_cast":
                     # One explicit boundary cast may replace one invalid stale
@@ -3158,6 +3303,28 @@ class SourceTreeGenerator:
                         0,
                         int(previous.get("raw_duplicated_vtable_call", 0)) -
                         int(current.get("raw_duplicated_vtable_call", 0)),
+                    )
+                    allowed_after += max(
+                        0,
+                        int(previous.get("raw_machine_field_projection", 0)) -
+                        int(current.get("raw_machine_field_projection", 0)),
+                    )
+                    allowed_after += max(
+                        0,
+                        int(previous.get("raw_pointer_field_projection", 0)) -
+                        int(current.get("raw_pointer_field_projection", 0)),
+                    )
+                    allowed_after += self.exact_call_result_boundary_casts.get(
+                        address, 0
+                    )
+                    allowed_after += self.exact_address_storage_boundary_casts.get(
+                        address, 0
+                    )
+                    allowed_after += self.exact_existing_pointer_view_casts.get(
+                        address, 0
+                    )
+                    allowed_after += self.promoted_slot_boundary_casts.get(
+                        address, 0
                     )
                     if callable_cast_exchange_valid:
                         allowed_after += callable_cast_demand.get(address, 0)
@@ -3672,6 +3839,9 @@ class SourceTreeGenerator:
             address, function, transformed
         )
         transformed = self._repair_exact_field_names(address, function, transformed)
+        transformed = self._repair_missing_field_addresses(
+            address, function, transformed
+        )
         transformed = self._repair_exact_indirect_calls(
             address, function, transformed
         )
@@ -3687,10 +3857,34 @@ class SourceTreeGenerator:
         transformed = self._repair_message_arg_facets(
             address, function, transformed
         )
+        transformed = self._repair_pointer_float_storage_views(
+            address, function, transformed
+        )
+        transformed = self._repair_cancelled_unary_negation(
+            address, transformed
+        )
+        transformed = self._repair_exact_storage_casts(
+            address, function, transformed
+        )
+        transformed = self._repair_raw_global_pointer_uses(
+            address, function, transformed
+        )
         transformed = self._materialize_opaque_decompiler_storage(
             address, function, transformed
         )
+        transformed = self._repair_scalarized_word_arrays(
+            address, function, transformed
+        )
         transformed = self._repair_exact_pointer_boundaries(
+            address, function, transformed
+        )
+        transformed = self._repair_void_call_assignments(
+            address, function, transformed
+        )
+        transformed = self._repair_exact_return_boundaries(
+            address, function, transformed
+        )
+        transformed = self._repair_exact_storage_comparisons(
             address, function, transformed
         )
         transformed = self._repair_machine_word_null_literals(
@@ -4023,6 +4217,7 @@ class SourceTreeGenerator:
                         for index, display in enumerate(parameters)
                     )
                 return parameters, variadic
+        function = self._thunk_signature_owner(function)
         parameters, variadic = (
             tuple(str(item.get("type") or "") for item in function.get("parameters", ())),
             bool(function.get("varargs")),
@@ -4035,9 +4230,37 @@ class SourceTreeGenerator:
             )
         return parameters, variadic
 
-    @staticmethod
+    def _thunk_signature_owner(
+        self, function: Mapping[str, Any]
+    ) -> Mapping[str, Any]:
+        """Return the final metadata ABI owner of a transparent thunk.
+
+        This intentionally does not consult the target's rendered body
+        declaration: that declaration may contain address-local presentation
+        types which are stronger than the physical thunk ABI.  The exported
+        target metadata is the same layer used for the thunk declaration.
+        """
+        current = function
+        seen: set[str] = set()
+        while current.get("thunk"):
+            address = str(current.get("address") or "").upper()
+            if not address or address in seen:
+                break
+            seen.add(address)
+            target_match = re.match(
+                r"([0-9A-Fa-f]{8})\b",
+                str(current.get("thunk_target") or ""),
+            )
+            if target_match is None:
+                break
+            target = self.function_by_address.get(target_match.group(1).upper())
+            if target is None:
+                break
+            current = target
+        return current
+
     def _declared_types(
-        function: Mapping[str, Any], body: str
+        self, function: Mapping[str, Any], body: str
     ) -> dict[str, str]:
         result: dict[str, str] = {}
         for parameter in function.get("parameters", ()):
@@ -4045,24 +4268,55 @@ class SourceTreeGenerator:
             display = str(parameter.get("type") or "")
             if name and display:
                 result[name] = display
+        # Export presentation can refine a generic Listing word to an exact
+        # pointer without mutating the Program ABI (for example a proven local
+        # receiver boundary).  Use that body declaration only to type the same
+        # named parameter while assembling C++; never replace a concrete scalar,
+        # pointer, imported declaration, or parameter name from metadata.
+        address = str(function.get("address") or "").upper()
+        brace = body.find("{")
+        body_parameters = None if not address or brace < 0 else \
+            TypeEmitter._body_parameters(body[:brace], address)
+        if body_parameters is not None:
+            for item in body_parameters:
+                named = TypeEmitter._declaration_name(item)
+                if named is None:
+                    continue
+                name, span = named
+                display = re.sub(
+                    r"\s+", " ", (item[:span[0]] + item[span[1]:]).strip()
+                )
+                if (result.get(name) in {"undefined4", "undefined"} and
+                        "*" in display):
+                    result[name] = display
         masked = code_mask(body)
         declaration = re.compile(
-            r"(?m)^[ \t]*(?P<base>(?:const\s+)?[A-Za-z_][A-Za-z0-9_:]*)"
+            r"(?m)^[ \t]*(?:alignas\s*\([^\n)]*\)\s*)?"
+            r"(?P<base>(?:const\s+)?[A-Za-z_][A-Za-z0-9_:]*)"
             r"[ \t]+(?P<stars>\*+)?[ \t]*(?P<name>[A-Za-z_][A-Za-z0-9_]*)"
             r"(?P<array>[ \t]*\[[^\]\n]+\])?[ \t]*(?:;|=)"
         )
         for match in declaration.finditer(masked):
-            if match.group("base") in DECLARATION_NON_TYPES:
+            base = match.group("base")
+            name = match.group("name")
+            if base in DECLARATION_NON_TYPES or base == name:
                 continue
             stars = match.group("stars") or ""
+            candidate = base + (" " + stars if stars else "")
+            # Line-wrapped arithmetic such as ``local_34 * local_34;``
+            # is lexically indistinguishable from a declaration unless the
+            # leading token is validated against the exported type graph.
+            # Accept only actual source types; otherwise a scalar expression
+            # can poison every later boundary decision in the function.
+            if self.type_emitter is not None and \
+                    self.type_emitter.display_type_expression(candidate) is None:
+                continue
             # An array identifier decays to its element pointer at a call or
             # assignment boundary.  Pointer-to-array cases retain an explicit
             # '&' and are handled as address-storage evidence below.
             if match.group("array"):
                 stars += "*"
-            result[match.group("name")] = (
-                match.group("base") + (" " + stars if stars else "")
-            )
+            result[name] = base + (" " + stars if stars else "")
         # Exporter-owned lifetime splits deliberately use ``auto`` so they do
         # not restate an ABI parameter type.  When the initializer starts with
         # one exact ordinary pointer cast, C++ itself fixes that local's type;
@@ -4075,6 +4329,16 @@ class SourceTreeGenerator:
             r"[ \t]*(?P<stars>\*+)[ \t]*\)"
         )
         for match in auto_pointer.finditer(masked):
+            result[match.group("name")] = (
+                match.group("base") + " " + match.group("stars")
+            )
+        auto_cpp_pointer = re.compile(
+            r"(?m)^[ \t]*auto[ \t]+(?P<name>[A-Za-z_][A-Za-z0-9_]*)"
+            r"[ \t]*=[ \t]*(?:reinterpret|static)_cast[ \t]*<[ \t]*"
+            r"(?P<base>(?:const\s+)?[A-Za-z_][A-Za-z0-9_:]*)"
+            r"[ \t]*(?P<stars>\*+)[ \t]*>\s*\("
+        )
+        for match in auto_cpp_pointer.finditer(masked):
             result[match.group("name")] = (
                 match.group("base") + " " + match.group("stars")
             )
@@ -4167,6 +4431,15 @@ class SourceTreeGenerator:
         text = expression.strip()
         if not text:
             return None
+        st_field = re.fullmatch(
+            r"STField\s*<\s*(?P<type>[^>]+)\s*>\s*\(.+\)",
+            text,
+            re.DOTALL,
+        )
+        if st_field is not None:
+            # STField is emitted only from an exact width/address projection;
+            # its template argument is already the complete C++ lvalue type.
+            return re.sub(r"\s+", " ", st_field.group("type")).strip()
         if text.startswith("*"):
             operand = text[1:].strip()
             cast = re.match(
@@ -4204,7 +4477,9 @@ class SourceTreeGenerator:
         if base is None:
             return None
         name = base.group(0)
-        display = declared_types.get(name) or self.global_display_types.get(name)
+        display = declared_types.get(name) or getattr(
+            self, "global_display_types", {}
+        ).get(name)
         if not display:
             return None
         return self._apply_display_postfix(
@@ -4228,6 +4503,13 @@ class SourceTreeGenerator:
             return BoundaryValue(
                 display, "four_byte_record", storage_member=storage_member
             )
+        # A four-byte record can be a complete packed partition (for example
+        # byte, byte, short) rather than one named dword member.  It is still
+        # one exact x86 storage word at an assignment boundary.  Keep the
+        # nominal record type and let the boundary emitter use a bit-preserving
+        # copy; selecting one contained field would discard bytes.
+        if self.type_emitter.display_record_length(display) == 4:
+            return BoundaryValue(display, "four_byte_record")
         return BoundaryValue(display, "scalar")
 
     def _boundary_expression(
@@ -4254,7 +4536,8 @@ class SourceTreeGenerator:
                 r'"(?:\\.|[^"\\])*"\s*[+-]\s*.+', compact, re.DOTALL):
             return BoundaryValue("const char *", "const_char_pointer", True)
         helper = re.match(
-            r"^st::(?:pointer_boundary_cast|machine_word_boundary_cast)"
+            r"^(?:st::(?:pointer_boundary_cast|machine_word_boundary_cast|storage_bit_cast)|"
+            r"STPointerBoundaryCast)"
             r"\s*<\s*([^>]+)\s*>\s*\(", compact
         )
         if helper:
@@ -4265,6 +4548,17 @@ class SourceTreeGenerator:
             parsed = call_argument_count(compact, compact.find("("))
             if parsed is not None and not compact[parsed[1] + 1:].strip():
                 return BoundaryValue("char *", "concrete_pointer")
+        # STGridAt3D is emitted only after the exporter has proven the exact
+        # world-grid aggregate.  Its objects[] member therefore retains the
+        # declared STWorldObject pointer domain even though the expression
+        # contains a helper call which the generic simple-expression parser
+        # intentionally refuses.  This lets an already explicit Ghidra
+        # ``(RecoveredRecord *)`` consumer view become ordinary C++ pointer
+        # syntax without inventing either endpoint.
+        if re.fullmatch(
+                r"STGridAt3D\s*\([^;]+\)\s*\.\s*objects\s*"
+                r"\[[^\]\r\n]+\]", compact, re.DOTALL):
+            return BoundaryValue("STWorldObject *", "concrete_pointer")
         indexed_address = re.fullmatch(
             r"\(\s*&\s*(?P<base>[A-Za-z_][A-Za-z0-9_]*"
             r"(?:(?:->|\.)[A-Za-z_][A-Za-z0-9_]*)*)\s*\)"
@@ -4282,6 +4576,37 @@ class SourceTreeGenerator:
         exact_display = self._simple_expression_display(compact, declared_types)
         if exact_display:
             return self._boundary_value_for_display(exact_display)
+        # One exact pointer-plus-word expression still has pointer storage in
+        # the decompiler even when the pointer local is a compiler-reused loop
+        # word.  Keep this deliberately to one top-level +/- operation: it is
+        # enough to classify the representation for a comparison, but it does
+        # not claim an array element type or simplify general arithmetic.
+        binary = re.fullmatch(
+            r"(?P<left>[A-Za-z_][A-Za-z0-9_]*)\s*(?P<op>[+-])\s*"
+            r"(?P<right>[A-Za-z_][A-Za-z0-9_]*|-?(?:0x[0-9A-Fa-f]+|[0-9]+))",
+            compact,
+        )
+        if binary:
+            left = self._boundary_expression(binary.group("left"), declared_types)
+            right_text = binary.group("right")
+            right = (
+                BoundaryValue("int", "generic_word")
+                if re.fullmatch(r"-?(?:0x[0-9A-Fa-f]+|[0-9]+)", right_text)
+                else self._boundary_expression(right_text, declared_types)
+            )
+            if left is not None and right is not None:
+                left_pointer = left.kind.endswith("_pointer")
+                right_pointer = right.kind.endswith("_pointer")
+                left_word = self.type_emitter.display_machine_word_scalar(
+                    left.display_type
+                )
+                right_word = self.type_emitter.display_machine_word_scalar(
+                    right.display_type
+                )
+                if left_pointer and right_word:
+                    return BoundaryValue(left.display_type, left.kind)
+                if (binary.group("op") == "+" and right_pointer and left_word):
+                    return BoundaryValue(right.display_type, right.kind)
         address = re.fullmatch(r"&\s*(.+)", compact, re.DOTALL)
         if address:
             value = address.group(1).strip()
@@ -4342,6 +4667,17 @@ class SourceTreeGenerator:
                 source = st_field.group(1).strip() + " *"
                 kind = self.type_emitter.display_pointer_kind(source) or "concrete"
                 return BoundaryValue(source, kind + "_pointer", True)
+        if compact.startswith("("):
+            closing = self._matching_delimiter(compact, 0, "(", ")")
+            if (closing is not None and closing < len(compact) - 1 and
+                    self._safe_boundary_arithmetic_tail(compact[closing + 1:])):
+                grouped = self._boundary_expression(
+                    compact[1:closing], declared_types
+                )
+                if grouped is not None and (
+                        grouped.kind.endswith("_pointer") or
+                        grouped.kind == "generic_word"):
+                    return grouped
         cast = re.match(
             r"^\(\s*((?:const\s+)?[A-Za-z_][A-Za-z0-9_:]*"
             r"(?:[ \t]*\*+)?)\s*\)",
@@ -4352,6 +4688,10 @@ class SourceTreeGenerator:
             kind = self.type_emitter.display_pointer_kind(display)
             if kind:
                 return BoundaryValue(display, kind + "_pointer")
+            if self.type_emitter.display_machine_word_scalar(display):
+                return BoundaryValue(display, "generic_word")
+            if self.type_emitter.display_storage_length(display) is not None:
+                return BoundaryValue(display, "scalar")
         field = re.match(
             r"^STField\s*<\s*([^>]+)\s*>",
             compact,
@@ -4384,18 +4724,26 @@ class SourceTreeGenerator:
         if unresolved_member:
             return BoundaryValue("unresolved field word", "generic_word")
         arithmetic = re.match(
-            r"^(?P<base>[A-Za-z_][A-Za-z0-9_]*)\b(?P<tail>.+)$",
+            r"^(?P<base>[A-Za-z_][A-Za-z0-9_]*"
+            r"(?:(?:->|\.)[A-Za-z_][A-Za-z0-9_]*)*)"
+            r"(?P<tail>[ \t]*[+\-*/%<>&|^].+)$",
             compact,
             re.DOTALL,
         )
         if arithmetic and self._safe_boundary_arithmetic_tail(
                 arithmetic.group("tail")):
             base = arithmetic.group("base")
-            display = declared_types.get(base) or self.global_display_types.get(base)
+            # The arithmetic root is the complete typed member chain, not its
+            # first identifier.  Treating ``object->bytes + index`` as
+            # arithmetic on ``object`` manufactured a false Owner * -> byte *
+            # boundary and hundreds of noisy pointer_boundary_cast helpers.
+            display = self._simple_expression_display(
+                base, declared_types, allow_record_name_fallback=True
+            )
             if display:
-                pointer_kind = self.type_emitter.display_pointer_kind(display)
-                if pointer_kind:
-                    return BoundaryValue(display, pointer_kind + "_pointer")
+                value = self._boundary_value_for_display(display)
+                if value.kind.endswith("_pointer"):
+                    return value
                 # Arithmetic rooted in any target-width machine word is still
                 # a machine-word value.  Exporter recovery deliberately spells
                 # proven scalar lifetimes as uint rather than undefined4; do
@@ -4413,9 +4761,14 @@ class SourceTreeGenerator:
         excluded.  Brackets and dots are needed for exact array-index terms
         such as ``base + index[1] * 4`` which Ghidra commonly emits.
         """
-        if not re.fullmatch(r"[\s+\-*/%<>&|^().\[\]0-9A-Za-z_]+", tail):
+        normalized = re.sub(
+            r"STField\s*<[^>]+>\s*\([^()]*\)", "st_field", tail
+        )
+        if not re.fullmatch(r"[\s+\-*/%<>&|^~().\[\]0-9A-Za-z_]+", normalized):
             return False
-        return re.search(r"\b[A-Za-z_][A-Za-z0-9_]*\s*\(", tail) is None
+        return re.search(
+            r"\b[A-Za-z_][A-Za-z0-9_]*\s*\(", normalized
+        ) is None
 
     def _boundary_replacement(
         self, target_display: str, source: BoundaryValue,
@@ -4433,6 +4786,26 @@ class SourceTreeGenerator:
             if source.kind == "null_pointer":
                 return None
             if not source.kind.endswith("_pointer") and source.kind != "generic_word":
+                source_width = self.type_emitter.display_integer_scalar_width(
+                    source.display_type
+                )
+                source_storage = self.type_emitter.display_storage_length(
+                    source.display_type
+                )
+                if source_width is not None and source_width <= 4:
+                    return (
+                        f"reinterpret_cast<{target_type}>(static_cast<uintptr_t>"
+                        f"({expression}))",
+                        f"integer address word {source.display_type} -> "
+                        f"{target_display}",
+                    )
+                if source_storage == 4:
+                    return (
+                        f"reinterpret_cast<{target_type}>(static_cast<uintptr_t>("
+                        f"st::storage_bit_cast<uint32_t>({expression})))",
+                        f"four-byte storage {source.display_type} -> "
+                        f"{target_display}",
+                    )
                 return None
             # Every object pointer converts to void * implicitly in C++ just as
             # it does in the decompiler's C dialect.  Emitting a helper there
@@ -4461,7 +4834,12 @@ class SourceTreeGenerator:
             # than wrapping a readable constructor/base-initializer call in a project helper.
             if (source.kind.endswith("_pointer") and
                     self.type_emitter.display_is_void_pointer(
-                        source.display_type) and target_pointer == "concrete"):
+                        source.display_type)):
+                if target_pointer != "concrete":
+                    return (
+                        f"({target_type}){expression}",
+                        f"void storage pointer -> {target_display}",
+                    )
                 return (
                     f"static_cast<{target_type}>({expression})",
                     f"void storage pointer -> {target_display}",
@@ -4507,6 +4885,17 @@ class SourceTreeGenerator:
                     f"equal-width integer storage {source.display_type} -> "
                     f"{target_display}",
                 )
+            # Two already typed object-storage pointers carry the same x86
+            # address even when their recovered record views differ.  Keep the
+            # discrepancy explicit at this one assignment/call boundary; do
+            # not merge either datatype or invent an inheritance relation.
+            if (source.kind in {"concrete_pointer", "generic_pointer"} and
+                    target_pointer in {"concrete", "generic"}):
+                return (
+                    f"reinterpret_cast<{target_type}>({expression})",
+                    f"object storage view {source.display_type} -> "
+                    f"{target_display}",
+                )
             zero_member = self.type_emitter.display_zero_member_for_pointer_conversion(
                 source.display_type, target_display
             )
@@ -4542,11 +4931,261 @@ class SourceTreeGenerator:
                 f"{source.display_type} -> {target_display}",
             )
         if target_word and source.kind == "four_byte_record":
+            if not source.storage_member:
+                return (
+                    f"st::storage_bit_cast<{target_type}>({expression})",
+                    f"four-byte packed {source.display_type} -> {target_display}",
+                )
+            member_suffix = re.compile(
+                rf"(?:->|\.){re.escape(source.storage_member)}\s*$"
+            )
+            if member_suffix.search(expression.strip()):
+                # The decompiler already selected the exact scalar facet of
+                # this four-byte union/record.  Its nominal High type can still
+                # be the enclosing record, but adding a cast to undefined4 is
+                # neither necessary C++ nor useful recovered information.
+                return None
             return (
-                f"static_cast<{target_type}>(({expression}).{source.storage_member})",
+                f"(({expression}).{source.storage_member})",
                 f"four-byte {source.display_type} -> {target_display}",
             )
+        target_integer_width = self.type_emitter.display_integer_scalar_width(
+            target_display
+        )
+        if (target_integer_width in {1, 2} and
+                source.kind.endswith("_pointer")):
+            word = f"st::machine_word_boundary_cast<uint>({expression})"
+            narrowed = (
+                f"({target_type})({word})"
+                if re.fullmatch(r"undefined(?:[12])?", normalized_target)
+                else f"static_cast<{target_type}>({word})"
+            )
+            return (
+                narrowed,
+                f"pointer word {source.display_type} -> narrow {target_display}",
+            )
+        target_storage = self.type_emitter.display_storage_length(target_display)
+        if target_storage == 4 and source.kind.endswith("_pointer"):
+            return (
+                f"st::storage_bit_cast<{target_type}>({expression})",
+                f"pointer bits {source.display_type} -> four-byte {target_display}",
+            )
         return None
+
+    def _equivalent_outer_pointer_cast(
+        self,
+        target_display: str,
+        expression: str,
+        declared_types: Mapping[str, str],
+    ) -> tuple[str, str] | None:
+        """Normalize one already-explicit Ghidra pointer-view cast.
+
+        A stronger callee or local type can make Ghidra change an old
+        pointer-to-integer transport into ``(Target *)pointer``.  Leaving that
+        C-style cast in generated C++ is both noisy and easy to mistake for a
+        newly inferred conversion.  When the outer cast is exactly the proven
+        destination type and the operand is independently pointer-shaped,
+        retain the boundary as ordinary C++ ``reinterpret_cast`` syntax.  This
+        never turns a scalar into a pointer and never chooses a target type.
+        """
+        assert self.type_emitter is not None
+        target_pointer = self.type_emitter.display_pointer_kind(target_display)
+        target_type = self.type_emitter.display_type_expression(target_display)
+        if target_pointer is None or target_type is None:
+            return None
+        outer = re.fullmatch(
+            r"\s*\(\s*(?P<cast>(?:const\s+)?[A-Za-z_]"
+            r"[A-Za-z0-9_:<> ]*\s*\*+)\s*\)\s*(?P<operand>.+?)\s*",
+            expression,
+            re.DOTALL,
+        )
+        if outer is None:
+            return None
+        cast_display = re.sub(r"\s+", " ", outer.group("cast")).strip()
+        if not (
+            re.sub(r"\s+", "", cast_display) ==
+                re.sub(r"\s+", "", target_display) or
+            self.type_emitter.display_cpp_equivalent(
+                cast_display, target_display
+            )
+        ):
+            return None
+        operand = outer.group("operand").strip()
+        source = self._boundary_expression(operand, declared_types)
+        if source is None or not source.kind.endswith("_pointer"):
+            return None
+        if (source.kind == "const_char_pointer" and
+                not re.sub(r"\s+", "", target_display).startswith("const")):
+            return (
+                f"st::pointer_boundary_cast<{target_type}>({operand})",
+                f"explicit pointer view {source.display_type} -> "
+                f"{target_display}",
+            )
+        return (
+            f"reinterpret_cast<{target_type}>({operand})",
+            f"explicit pointer view {source.display_type} -> {target_display}",
+        )
+
+    def _repair_exact_storage_comparisons(
+        self,
+        address: str,
+        function: Mapping[str, Any],
+        body: str,
+    ) -> str:
+        """Make exact x86 pointer/word tests legal without changing recovery.
+
+        Ghidra legitimately reuses a 32-bit storage word for pointer and scalar
+        lifetimes.  C accepts several comparisons and switches which C++
+        rejects, even though the x86 operation tests the same four bits.  This
+        pass is deliberately limited to simple, independently typed operands:
+        it does not infer a pointee, merge records, or hide arithmetic.  The
+        generated helper documents the one address-local representation
+        boundary while the audit row keeps the unresolved lifetime visible.
+        """
+        assert self.type_emitter is not None
+        declared = self._declared_types(function, body)
+        simple_operand = (
+            r"[A-Za-z_][A-Za-z0-9_]*"
+            r"(?:(?:->|\.)[A-Za-z_][A-Za-z0-9_]*|\[[^\]\r\n]+\])*"
+        )
+        # Keep the cast together with the value it qualifies.  Treating only
+        # ``(uint)`` as the right operand in ``ptr < (uint)*word`` left the
+        # actual dereference outside the comparison and made the exact x86
+        # word boundary invisible.  This grammar is intentionally limited to
+        # one ordinary C cast followed by dereferences and one postfix-only
+        # value (or an integer literal); arbitrary parenthesized arithmetic is
+        # still rejected below.
+        casted_operand = (
+            r"\(\s*(?:const\s+)?[A-Za-z_][A-Za-z0-9_:]*"
+            r"(?:[ \t]*\*+)?\s*\)[ \t]*\**[ \t]*"
+            rf"(?:{simple_operand}|-?(?:0x[0-9A-Fa-f]+|[0-9]+))"
+        )
+        arithmetic_operand = (
+            rf"{simple_operand}[ \t]*[+-][ \t]*"
+            rf"(?:{simple_operand}|-?(?:0x[0-9A-Fa-f]+|[0-9]+))"
+        )
+        dereferenced_casted_operand = rf"\*[ \t]*{casted_operand}"
+        operand = (
+            rf"(?:{dereferenced_casted_operand}|{casted_operand}|"
+            rf"{arithmetic_operand}|&[ \t]*{simple_operand}|"
+            rf"\([^(),;\r\n]+\)|{simple_operand})"
+        )
+        comparison = re.compile(
+            rf"(?<![A-Za-z0-9_>.)\]*&])(?P<left>{operand})"
+            rf"(?P<space1>[ \t]*)(?P<op>==|!=|<=|>=|<|>)"
+            rf"(?P<space2>[ \t]*)(?P<right>{operand})"
+            rf"(?![A-Za-z0-9_(.\[])",
+        )
+        edits: list[tuple[int, int, str, str]] = []
+        masked = code_mask(body)
+        for match in comparison.finditer(masked):
+            left_text = body[match.start("left"):match.end("left")]
+            right_text = body[match.start("right"):match.end("right")]
+            left = self._boundary_expression(left_text, declared)
+            right = self._boundary_expression(right_text, declared)
+            if left is None or right is None:
+                continue
+            left_pointer = (
+                left.kind.endswith("_pointer") and left.kind != "null_pointer"
+            )
+            right_pointer = (
+                right.kind.endswith("_pointer") and right.kind != "null_pointer"
+            )
+            left_word = self.type_emitter.display_machine_word_scalar(
+                left.display_type
+            )
+            right_word = self.type_emitter.display_machine_word_scalar(
+                right.display_type
+            )
+            replacement_left = left_text
+            replacement_right = right_text
+            detail = ""
+            if left_pointer and right_word:
+                converted = self._boundary_replacement(
+                    right.display_type, left, left_text
+                )
+                if converted is None:
+                    continue
+                replacement_left, transition = converted
+                detail = f"comparison left: {transition}"
+            elif right_pointer and left_word:
+                converted = self._boundary_replacement(
+                    left.display_type, right, right_text
+                )
+                if converted is None:
+                    continue
+                replacement_right, transition = converted
+                detail = f"comparison right: {transition}"
+            elif left_pointer and right_pointer:
+                left_kind = self.type_emitter.display_pointer_kind(
+                    left.display_type
+                )
+                right_kind = self.type_emitter.display_pointer_kind(
+                    right.display_type
+                )
+                exact_left = self._simple_expression_display(
+                    left_text, declared
+                )
+                exact_right = self._simple_expression_display(
+                    right_text, declared
+                )
+                if (exact_left is not None and exact_right is not None and
+                        self.type_emitter.display_cpp_equivalent(
+                            left.display_type, right.display_type)):
+                    continue
+                replacement_left = (
+                    f"st::machine_word_boundary_cast<uint>({left_text})"
+                )
+                replacement_right = (
+                    f"st::machine_word_boundary_cast<uint>({right_text})"
+                )
+                detail = (
+                    "comparison: distinct pointer storage views -> common x86 word"
+                )
+            else:
+                continue
+            replacement = (
+                replacement_left + match.group("space1") + match.group("op") +
+                match.group("space2") + replacement_right
+            )
+            edits.append((match.start(), match.end(), replacement, detail))
+
+        for start, end, replacement, detail in sorted(edits, reverse=True):
+            body = body[:start] + replacement + body[end:]
+            self.issues.append(Issue(
+                "exact_storage_comparison_boundary", detail, address
+            ))
+        self.stats["exact_storage_comparison_boundaries"] += len(edits)
+
+        # A pointer-valued Listing lifetime in a switch is the same machine
+        # boundary, but there is no second operand from which to derive a word
+        # type.  x86 switch selectors are 32-bit here; use the fixed-width
+        # corpus word rather than guessing signedness.
+        declared = self._declared_types(function, body)
+        switch_pattern = re.compile(
+            rf"\bswitch(?P<prefix>[ \t]*\([ \t]*)"
+            rf"(?P<value>{operand})(?P<suffix>[ \t]*\))"
+        )
+        switch_edits: list[tuple[int, int, str, str]] = []
+        for match in switch_pattern.finditer(code_mask(body)):
+            value_text = body[match.start("value"):match.end("value")]
+            value = self._boundary_expression(value_text, declared)
+            if value is None or not value.kind.endswith("_pointer"):
+                continue
+            replacement = (
+                "st::machine_word_boundary_cast<uint>(" + value_text + ")"
+            )
+            switch_edits.append((
+                match.start("value"), match.end("value"), replacement,
+                f"switch selector: {value.display_type} -> uint",
+            ))
+        for start, end, replacement, detail in sorted(switch_edits, reverse=True):
+            body = body[:start] + replacement + body[end:]
+            self.issues.append(Issue(
+                "exact_pointer_switch_boundary", detail, address
+            ))
+        self.stats["exact_pointer_switch_boundaries"] += len(switch_edits)
+        return body
 
     def _function_result_type(self, function: Mapping[str, Any]) -> str | None:
         address = str(function.get("address") or "").upper()
@@ -4555,7 +5194,15 @@ class SourceTreeGenerator:
             result = self._signature_result_type({"signature": declaration})
             if result:
                 return result
-        return self._signature_result_type(function)
+        owner = self._thunk_signature_owner(function)
+        result = self._signature_result_type(owner)
+        # Ghidra's bare DefaultDataType is rendered as ``undefined`` but is not
+        # evidence for an AL-sized return.  At an excluded/external x86
+        # boundary the only source-safe transport is the complete EAX word;
+        # genuinely proven narrow returns are concrete byte/char/undefined1.
+        if (result == "undefined" and not owner.get("body_exported")):
+            return "undefined4"
+        return result
 
     def _repair_exact_field_names(
         self, address: str, function: Mapping[str, Any], body: str
@@ -4623,6 +5270,66 @@ class SourceTreeGenerator:
                 body = body[:start] + replacement + body[end:]
                 self.issues.append(Issue("exact_field_name_rewrite", detail, address))
             self.stats["exact_field_name_rewrites"] += len(edits)
+        return body
+
+    def _repair_missing_field_addresses(
+        self, address: str, function: Mapping[str, Any], body: str
+    ) -> str:
+        """Spell an unnamed in-record byte address without a fake member.
+
+        Pointer-shape records intentionally emit gaps as byte arrays rather
+        than one member at every observed cursor position.  Ghidra can still
+        render ``&record->field_0xNN`` for an address strictly inside such a
+        gap.  Once the base record and its exact extent are known, byte
+        arithmetic is the faithful C++ spelling; inventing a member would turn
+        a transient cursor into persistent layout evidence.
+        """
+        assert self.type_emitter is not None
+        if "field_" not in body or "&" not in body:
+            return body
+        declared = self._declared_types(function, body)
+        pattern = re.compile(
+            r"(?m)^[ \t]*(?P<lhs>[A-Za-z_][A-Za-z0-9_]*)[ \t]*=[ \t]*"
+            r"(?P<rhs>\(\s*(?P<target>(?:const\s+)?[A-Za-z_]"
+            r"[A-Za-z0-9_:<>]*\s*\*+)\s*\)\s*&\s*"
+            r"(?P<base>(?P=lhs))\s*->\s*field_(?:0x)?"
+            r"(?P<offset>[0-9A-Fa-f]+))"
+        )
+        edits: list[tuple[int, int, str, str]] = []
+        for match in pattern.finditer(code_mask(body)):
+            base = body[match.start("base"):match.end("base")]
+            display = self._simple_expression_display(
+                base, declared, allow_record_name_fallback=True
+            )
+            target = body[match.start("target"):match.end("target")].strip()
+            if (display and not
+                    self.type_emitter.display_cpp_equivalent(target, display)):
+                continue
+            display = display or target
+            offset = int(match.group("offset"), 16)
+            record_display = (
+                self.type_emitter.display_pointee_type(display) or display
+            )
+            extent = self.type_emitter.display_record_length(record_display)
+            if extent is None or offset < 0 or offset >= extent:
+                continue
+            if self.type_emitter.display_member_name_at_offset(
+                    display, offset, True):
+                continue
+            replacement = (
+                f"reinterpret_cast<{target}>("
+                f"reinterpret_cast<byte *>({base}) + 0x{offset:X})"
+            )
+            edits.append((
+                match.start("rhs"), match.end("rhs"), replacement,
+                f"{display} unnamed byte address +0x{offset:X}",
+            ))
+        for start, end, replacement, detail in sorted(edits, reverse=True):
+            body = body[:start] + replacement + body[end:]
+            self.issues.append(Issue(
+                "unnamed_record_byte_address", detail, address
+            ))
+        self.stats["unnamed_record_byte_addresses"] += len(edits)
         return body
 
     def _observe_exact_nested_gap_fields(
@@ -4720,10 +5427,123 @@ class SourceTreeGenerator:
         if not specification.startswith("/"):
             return None
         record = self.type_emitter.by_path.get(specification)
+        # Hidden-this records used to be published as AnonReceiver_ADDRESS and
+        # were later identity-preservingly promoted to
+        # RecoveredReceiver_ADDRESS. Existing exact callsite comments retain
+        # the older serialized path by design. Resolve only that deterministic
+        # same-address lifecycle rename; arbitrary missing paths stay missing.
+        if record is None:
+            migrated = re.fullmatch(
+                r"(?P<prefix>.*/HiddenThis/)AnonReceiver_(?P<address>[0-9A-Fa-f]+)",
+                specification,
+            )
+            if migrated is not None:
+                candidate = (
+                    migrated.group("prefix") + "RecoveredReceiver_" +
+                    migrated.group("address").upper()
+                )
+                if candidate in self.type_emitter.by_path:
+                    specification = candidate
+                    record = self.type_emitter.by_path[candidate]
         if record is None:
             return None
         result = self.type_emitter.type_name(specification)
         return result + (" *" * pointer_depth)
+
+    def _exact_call_result_evidence(
+        self, body: str, start: int, end: int
+    ) -> tuple[str, str] | None:
+        """Return one exact direct-call result and function-pointer ABI.
+
+        The exporter keeps the address-authoritative ST_CALLSITE marker directly
+        before the statement.  Ghidra may deliberately retain the transport
+        return ABI because installing the concrete High override would merge an
+        unrelated local lifetime.  At the C++ boundary the same exact proof is
+        sufficient for one explicit cast around that direct call, but for no
+        other expression.
+        """
+        compact = body[start:end].strip()
+        call = re.match(r"^st::fn_(?P<target>[0-9A-F]{8})\s*\(", compact)
+        if call is None:
+            return None
+        parsed = call_argument_count(compact, compact.find("(", call.start()))
+        if parsed is None or compact[parsed[1] + 1:].strip():
+            return None
+        prefix = body[max(0, start - 8192):start]
+        marker_start = prefix.rfind("/* ST_CALLSITE[")
+        if marker_start < 0:
+            return None
+        marker_end = prefix.find("*/", marker_start)
+        if marker_end < 0:
+            return None
+        marker = prefix[marker_start:marker_end + 2]
+        if "[STCallResultViewApplier]" not in marker:
+            return None
+        direct = re.search(r"\bdirect=(?P<target>[0-9A-F]{8})\b", marker)
+        if direct is None or direct.group("target") != call.group("target"):
+            return None
+        result = re.search(
+            r"\bexact direct-call result=(?P<type>pointer:[^;\r\n]+)",
+            marker,
+        )
+        if result is None:
+            return None
+        returned = self._serialized_type_expression(result.group("type").strip())
+        signature = re.search(
+            r"\bsignature=(?P<signature>[^*\r\n]+?)\s*(?:\*/)?$",
+            marker,
+        )
+        if returned is None:
+            return None
+        if signature is None:
+            return returned, ""
+        parts = [part.strip() for part in signature.group("signature").split(";")]
+        if len(parts) < 2 or parts[0] not in {
+                "__thiscall", "__stdcall", "__cdecl"}:
+            return None
+        abi_returned = self._serialized_type_expression(parts[1])
+        parameters = tuple(
+            value for item in parts[2:]
+            if (value := self._serialized_type_expression(item)) is not None
+        )
+        if (abi_returned is None or abi_returned != returned or
+                len(parameters) != len(parts) - 2):
+            return None
+        function_pointer = (
+            f"{returned} ({parts[0]} *)"
+            f"({', '.join(parameters) if parameters else 'void'})"
+        )
+        return returned, function_pointer
+
+    def _exact_call_result_view(
+        self, body: str, start: int, end: int
+    ) -> str | None:
+        evidence = self._exact_call_result_evidence(body, start, end)
+        return None if evidence is None else evidence[0]
+
+    def _exact_call_result_expression(
+        self, body: str, start: int, end: int
+    ) -> str | None:
+        """Render a call through its exact instruction-local result ABI.
+
+        This is needed only when the physical source declaration is ``void``:
+        C++ cannot pass a void expression through an ordinary boundary cast.
+        The durable callsite marker contains the independently recovered x86
+        ABI, so use that one address-local view without changing the shared
+        declaration of the callee.
+        """
+        evidence = self._exact_call_result_evidence(body, start, end)
+        if evidence is None or not evidence[1]:
+            return None
+        expression = body[start:end].strip()
+        call = re.match(r"^st::fn_(?P<target>[0-9A-F]{8})\s*\(", expression)
+        if call is None:
+            return None
+        callee = f"st::fn_{call.group('target')}"
+        replacement = (
+            f"st::exact_call_result_callee<{evidence[1]}>(&{callee})"
+        )
+        return replacement + expression[call.end() - 1:]
 
     def _exact_callsite_abis(
         self, function: Mapping[str, Any]
@@ -4977,8 +5797,14 @@ class SourceTreeGenerator:
                 receiver_display is not None
                 and first_argument.strip() == receiver.strip()
             )
-            if (abi is not None and len(spans) == len(abi[2]) and
-                    duplicated_receiver):
+            implicit_receiver = (
+                abi is not None and receiver_display is not None and
+                bool(abi[2]) and len(spans) + 1 == len(abi[2])
+            )
+            receiver_call = duplicated_receiver or implicit_receiver
+            if (abi is not None and receiver_call and (
+                    (duplicated_receiver and len(spans) == len(abi[2])) or
+                    implicit_receiver)):
                 abi_receiver = abi[2][0] if abi[2] else None
                 if (abi_receiver is not None and
                         self.type_emitter._display_type_key(abi_receiver) !=
@@ -5008,16 +5834,31 @@ class SourceTreeGenerator:
                             )
                             transported_receiver = True
                 else:
-                    wrapper = (
-                        self.type_emitter.register_exact_indirect_member_wrapper(
-                            receiver_display=receiver_display,
-                            slot=slot,
-                            return_type=abi[1],
-                            function_pointer_type=abi[0],
-                            parameter_types=abi[2],
-                            callee_expression=site[2],
-                        )
+                    explicit_count = (
+                        len(spans) if implicit_receiver else len(spans) - 1
                     )
+                    # A readable folded call may already have registered this
+                    # exact owner/slot ABI using the physical member spelling.
+                    # Reuse that wrapper before considering the decompiler's
+                    # alternate `vtable[index].member` spelling; otherwise the
+                    # same slot can look like two competing callees and regress
+                    # back to an exact_indirect_callee cast.
+                    wrapper = self.type_emitter.exact_indirect_member_wrapper(
+                        receiver_display=receiver_display,
+                        slot=slot,
+                        explicit_argument_count=explicit_count,
+                    )
+                    if wrapper is None:
+                        wrapper = (
+                            self.type_emitter.register_exact_indirect_member_wrapper(
+                                receiver_display=receiver_display,
+                                slot=slot,
+                                return_type=abi[1],
+                                function_pointer_type=abi[0],
+                                parameter_types=abi[2],
+                                callee_expression=site[2],
+                            )
+                        )
             if abi is None and duplicated_receiver:
                 wrapper = self.type_emitter.exact_indirect_member_wrapper(
                     receiver_display=receiver_display,
@@ -5056,7 +5897,10 @@ class SourceTreeGenerator:
             if register_only:
                 continue
             if wrapper is not None:
-                remaining_values = [body[start:end] for start, end in spans[1:]]
+                argument_spans = spans if implicit_receiver else spans[1:]
+                remaining_values = [
+                    body[start:end] for start, end in argument_spans
+                ]
                 if abi is not None:
                     remaining_values = self._exact_member_argument_boundaries(
                         address, slot, remaining_values, abi[2][1:], declared_types
@@ -5077,6 +5921,32 @@ class SourceTreeGenerator:
                     detail,
                     "exact_indirect_member_call"))
                 continue
+            if (abi is None and marker_index is not None and not spans and
+                    receiver_display is not None):
+                callee_display = self._simple_expression_display(
+                    callee, declared_types
+                )
+                line_start = masked.rfind("\n", 0, match.start()) + 1
+                statement_only = (
+                    not masked[line_start:match.start()].strip() and
+                    masked[closing + 1:].lstrip().startswith(";")
+                )
+                void_storage = (
+                    callee_display == "void" or
+                    (callee_display is not None and
+                     self.type_emitter.display_is_void_pointer(callee_display))
+                )
+                if (void_storage and statement_only):
+                    replacement = (
+                        f"STStructuralVirtualCall<void>({receiver}, 0x{slot:X})"
+                    )
+                    edits.append((
+                        match.start(), closing + 1, replacement,
+                        f"slot 0x{slot:X}: exact statement-only CALLIND over "
+                        "a void-typed physical member; return is ignored",
+                        "exact_structural_void_call",
+                    ))
+                    continue
             if abi is None or len(spans) != len(abi[2]):
                 continue
             replacement = f"st::exact_indirect_callee<{abi[0]}>({callee})"
@@ -5228,7 +6098,7 @@ class SourceTreeGenerator:
         declared_types = self._declared_types(function, body)
         pattern = re.compile(
             r"(?<![A-Za-z0-9_])(?P<receiver>[A-Za-z_][A-Za-z0-9_]*)"
-            r"->(?P<member>slot_(?P<slot>[0-9A-Fa-f]+))\s*\("
+            r"->(?P<member>(?:slot|vfunc)_(?P<slot>[0-9A-Fa-f]+))\s*\("
         )
         masked = code_mask(body)
         edits: list[tuple[int, int, str, str]] = []
@@ -5250,13 +6120,18 @@ class SourceTreeGenerator:
             )
             if receiver_display is None:
                 continue
+            callee_expression = self.type_emitter.physical_vtable_callee_expression(
+                receiver_display, slot
+            )
+            if callee_expression is None:
+                continue
             wrapper = self.type_emitter.register_exact_indirect_member_wrapper(
                 receiver_display=receiver_display,
                 slot=slot,
                 return_type=abi[1],
                 function_pointer_type=abi[0],
                 parameter_types=abi[2],
-                callee_expression=f"vtable->{match.group('member')}",
+                callee_expression=callee_expression,
             )
             if register_only or wrapper is None:
                 continue
@@ -5443,6 +6318,436 @@ class SourceTreeGenerator:
         self.stats["message_arg_exact_facets"] += count
         return rewritten
 
+    def _repair_exact_storage_casts(
+        self,
+        address: str,
+        function: Mapping[str, Any],
+        body: str,
+    ) -> str:
+        """Translate C aggregate casts into explicit equal-width storage views.
+
+        Ghidra emits C casts both for a four-byte union facet and for equal-size
+        POD records such as the Winsock ``in_addr`` transport.  Neither form is
+        a C++ conversion.  The datatype graph already proves both exact widths,
+        so select a named scalar member when one exists, otherwise use a
+        byte-preserving bit copy.  This is source assembly only and never merges
+        the two recovered datatype identities.
+        """
+        assert self.type_emitter is not None
+        declared = self._declared_types(function, body)
+        operand = (
+            r"[A-Za-z_][A-Za-z0-9_]*"
+            r"(?:(?:->|\.)[A-Za-z_][A-Za-z0-9_]*|\[[^\]\r\n]+\])*"
+        )
+        grouped_operand = (
+            r"\([^(),;\r\n]+\)"
+            r"(?:(?:->|\.)[A-Za-z_][A-Za-z0-9_]*|\[[^\]\r\n]+\])+"
+        )
+        pattern = re.compile(
+            rf"\(\s*(?P<target>(?:const\s+)?[A-Za-z_]"
+            rf"[A-Za-z0-9_:]*)\s*\)\s*(?P<value>{grouped_operand}|{operand}|"
+            rf"-?(?:0x[0-9A-Fa-f]+|[0-9]+))"
+        )
+        edits: list[tuple[int, int, str, str]] = []
+        for match in pattern.finditer(code_mask(body)):
+            target = match.group("target").strip()
+            value_text = body[match.start("value"):match.end("value")]
+            target_type = self.type_emitter.display_type_expression(target)
+            if target_type is None:
+                continue
+            if re.fullmatch(r"-?(?:0x[0-9A-Fa-f]+|[0-9]+)", value_text):
+                if self.type_emitter.display_record_length(target) == 4:
+                    edits.append((
+                        match.start(), match.end(),
+                        f"st::storage_bit_cast<{target_type}>("
+                        f"static_cast<uint32_t>({value_text}))",
+                        f"four-byte literal storage -> {target}",
+                    ))
+                continue
+            source_display = self._simple_expression_display(
+                value_text, declared, allow_record_name_fallback=True
+            )
+            if source_display is None:
+                continue
+            source = self._boundary_value_for_display(source_display)
+            if source.kind == "four_byte_record" and \
+                    self.type_emitter.display_machine_word_scalar(target):
+                member = f"({value_text}).{source.storage_member}"
+                replacement = member if re.fullmatch(
+                    r"(?:undefined4|dword|uint|uint32_t)",
+                    re.sub(r"\s+", "", target_type),
+                ) else f"static_cast<{target_type}>({member})"
+                edits.append((
+                    match.start(), match.end(), replacement,
+                    f"{source_display}.{source.storage_member} -> {target}",
+                ))
+                continue
+            target_length = self.type_emitter.display_record_length(target)
+            source_length = self.type_emitter.display_storage_length(source_display)
+            if (target_length is None or source_length is None or
+                    target_length <= 0 or target_length != source_length or
+                    self.type_emitter.display_pointer_kind(source_display) is not None):
+                continue
+            replacement = (
+                f"st::storage_bit_cast<{target_type}>({value_text})"
+            )
+            edits.append((
+                match.start(), match.end(), replacement,
+                f"equal-width POD storage {source_display} -> {target}",
+            ))
+        masked = code_mask(body)
+        grouped_cast = re.compile(
+            r"\(\s*(?P<target>(?:const\s+)?[A-Za-z_]"
+            r"[A-Za-z0-9_:]*)\s*\)\s*(?P<open>\()"
+        )
+        for match in grouped_cast.finditer(masked):
+            opening = match.start("open")
+            closing = self._matching_delimiter(masked, opening, "(", ")")
+            if closing is None:
+                continue
+            # In ``(uint)(record).member`` the postfix member belongs to the
+            # complete cast operand.  Rewriting only the parenthesized record
+            # would produce ``storage_bit_cast<uint>(record).member`` and make
+            # the scalar helper result look like a structure.  The ordinary
+            # grouped-operand pass above owns such postfix expressions.
+            if re.match(r"[ \t]*(?:\.|->|\[)", masked[closing + 1:]):
+                continue
+            if any(match.start() < old_end and closing + 1 > old_start
+                    for old_start, old_end, _, _ in edits):
+                continue
+            target = match.group("target").strip()
+            target_type = self.type_emitter.display_type_expression(target)
+            target_length = self.type_emitter.display_record_length(target)
+            target_scalar_width = self.type_emitter.display_integer_scalar_width(
+                target
+            )
+            if (target_type is None or
+                    target_length != 4 and target_scalar_width != 4):
+                continue
+            value_text = body[opening + 1:closing].strip()
+            source = self._boundary_expression(value_text, declared)
+            if source is None or source.kind.endswith("_pointer"):
+                continue
+            if source.kind == "four_byte_record" and target_scalar_width == 4:
+                edits.append((
+                    match.start(), closing + 1,
+                    f"st::storage_bit_cast<{target_type}>({value_text})",
+                    f"four-byte POD storage {source.display_type} -> {target}",
+                ))
+                continue
+            source_record_length = self.type_emitter.display_record_length(
+                source.display_type
+            )
+            if (target_scalar_width == 4 and
+                    source_record_length is not None and
+                    source_record_length > target_scalar_width):
+                # Ghidra's C printer uses ``(uint32_t)(record)`` for the low
+                # machine word of a wider packed local.  C++ cannot convert a
+                # record to an integer, and bit-casting the complete record is
+                # impossible when its extent is larger than the destination.
+                # Preserve the exact little-endian storage operation instead
+                # of guessing a semantic member or truncating the datatype.
+                edits.append((
+                    match.start(), closing + 1,
+                    f"static_cast<{target_type}>(STPiece<0,4>({value_text}))",
+                    f"low four-byte POD view {source.display_type} -> {target}",
+                ))
+                continue
+            source_width = self.type_emitter.display_integer_scalar_width(
+                source.display_type
+            )
+            if source_width is None or source_width > 4:
+                continue
+            replacement = (
+                f"st::storage_bit_cast<{target_type}>("
+                f"static_cast<uint32_t>({value_text}))"
+            )
+            edits.append((
+                match.start(), closing + 1, replacement,
+                f"four-byte arithmetic storage {source.display_type} -> {target}",
+            ))
+        for start, end, replacement, detail in sorted(edits, reverse=True):
+            body = body[:start] + replacement + body[end:]
+            self.issues.append(Issue(
+                "exact_storage_bit_cast", detail, address
+            ))
+        self.stats["exact_storage_bit_casts"] += len(edits)
+        return body
+
+    def _repair_cancelled_unary_negation(self, address: str, body: str) -> str:
+        """Fold Ghidra's ``--(rvalue)`` spelling for two x87 FCHS operations.
+
+        Prefix decrement is impossible on an arithmetic rvalue in both C and
+        C++.  In this corpus the only emitted instances are the decompiler's
+        tokenization of two consecutive unary negations.  Require a complete
+        parenthesized expression with an arithmetic operator so a real
+        ``--(lvalue)`` can never be touched.
+        """
+        masked = code_mask(body)
+        edits: list[tuple[int, int]] = []
+        for match in re.finditer(r"--(?P<open>\()", masked):
+            opening = match.start("open")
+            closing = self._matching_delimiter(masked, opening, "(", ")")
+            if closing is None:
+                continue
+            expression = masked[opening + 1:closing]
+            if not re.search(r"[+\-*/]", expression):
+                continue
+            edits.append((match.start(), opening))
+        for start, end in reversed(edits):
+            body = body[:start] + body[end:]
+            self.issues.append(Issue(
+                "cancelled_unary_negation", "two unary negations cancel", address
+            ))
+        self.stats["cancelled_unary_negations"] += len(edits)
+        return body
+
+    def _repair_raw_global_pointer_uses(
+        self, address: str, function: Mapping[str, Any], body: str
+    ) -> str:
+        """Make unresolved four-byte global pointer storage expressible.
+
+        This does not promote the global in Ghidra.  It is an exact ILP32
+        storage view at the use site and leaves the address in the stable audit
+        queue until producer/consumer evidence proves a persistent pointee.
+        """
+        assert self.type_emitter is not None
+        generic_globals = {
+            name for name, display in self.global_display_types.items()
+            if self.type_emitter.display_machine_word_scalar(display)
+        }
+        if not generic_globals:
+            return body
+        names = "|".join(sorted(map(re.escape, generic_globals), key=len,
+                                  reverse=True))
+        masked = code_mask(body)
+        edits: list[tuple[int, int, str, str]] = []
+        callback = re.compile(
+            rf"\(\s*\*\s*(?P<name>{names})\s*\)(?=\s*\()"
+        )
+        for match in callback.finditer(masked):
+            name = match.group("name")
+            edits.append((
+                match.start(), match.end(),
+                f"(*st::storage_bit_cast<code *>({name}))",
+                f"callback stored in unresolved global {name}",
+            ))
+        for start, end, replacement, detail in sorted(edits, reverse=True):
+            body = body[:start] + replacement + body[end:]
+            self.issues.append(Issue("global_pointer_storage_view", detail, address))
+        self.stats["global_pointer_storage_views"] += len(edits)
+        return body
+
+    def _repair_exact_return_boundaries(
+        self, address: str, function: Mapping[str, Any], body: str
+    ) -> str:
+        """Apply the same exact storage conversion to a return boundary."""
+        target_display = self._function_result_type(function)
+        if not target_display or target_display == "void":
+            return body
+        declared = self._declared_types(function, body)
+        masked = code_mask(body)
+        pattern = re.compile(r"\breturn[ \t]+(?P<value>[^;\r\n]+)(?P<semi>;)")
+        edits: list[tuple[int, int, str, str]] = []
+        for match in pattern.finditer(masked):
+            expression = body[match.start("value"):match.end("value")]
+            source = self._boundary_expression(expression, declared)
+            if source is None:
+                continue
+            converted = self._boundary_replacement(
+                target_display, source, expression
+            )
+            if converted is None:
+                continue
+            replacement, transition = converted
+            edits.append((match.start("value"), match.end("value"), replacement,
+                          f"return: {transition}"))
+        for start, end, replacement, detail in sorted(edits, reverse=True):
+            body = body[:start] + replacement + body[end:]
+            self.issues.append(Issue("exact_return_boundary", detail, address))
+        self.stats["exact_return_boundaries"] += len(edits)
+        return body
+
+    def _repair_void_call_assignments(
+        self, address: str, function: Mapping[str, Any], body: str
+    ) -> str:
+        """Discard a phantom assignment from a proven void direct call.
+
+        Ghidra may merge the post-call EAX clobber into a local and render an
+        assignment even though the physical callee has a concrete void ABI.
+        Only a whole standalone assignment statement is reduced; nested/comma
+        expressions and non-void/unsized callees remain untouched.
+        """
+        masked = code_mask(body)
+        line = re.compile(
+            r"(?m)^(?P<indent>[ \t]*)(?P<lhs>[A-Za-z_][A-Za-z0-9_]*)"
+            r"[ \t]*=[ \t]*(?P<cast>\([^;\n]+?\)[ \t]*)?"
+            r"(?P<call>st::fn_(?P<target>[0-9A-F]{8})\s*\([^;\n]*\))"
+            r"[ \t]*;"
+        )
+        edits: list[tuple[int, int, str, str]] = []
+        for match in line.finditer(masked):
+            target = self.function_by_address.get(match.group("target"))
+            if target is None or self._function_result_type(target) != "void":
+                continue
+            call = body[match.start("call"):match.end("call")]
+            replacement = match.group("indent") + call + ";"
+            edits.append((match.start(), match.end(), replacement,
+                          f"discard phantom void result assigned to {match.group('lhs')}"))
+        for start, end, replacement, detail in sorted(edits, reverse=True):
+            body = body[:start] + replacement + body[end:]
+            self.issues.append(Issue("void_call_phantom_assignment", detail, address))
+        self.stats["void_call_phantom_assignments"] += len(edits)
+        return body
+
+    def _repair_pointer_float_storage_views(
+        self,
+        address: str,
+        function: Mapping[str, Any],
+        body: str,
+    ) -> str:
+        """Expose exact 32-bit pointer/float SSA storage reuse to C++.
+
+        Ghidra can keep one Listing local pointer-typed after the compiler has
+        reused the same four bytes as an x87 ``float`` value (or conversely).
+        C accepted the resulting casts as representation conversions; C++ does
+        not.  A byte-preserving four-byte view is the only fact available here:
+        it neither changes the Program datatype nor claims a numeric
+        pointer/float conversion.
+        """
+        assert self.type_emitter is not None
+        declared = self._declared_types(function, body)
+        simple = (
+            r"[A-Za-z_][A-Za-z0-9_]*"
+            r"(?:(?:->|\.)[A-Za-z_][A-Za-z0-9_]*|\[[^\]\r\n]+\])*"
+        )
+        masked = code_mask(body)
+        edits: list[tuple[int, int, str, str]] = []
+
+        pointer_to_float = re.compile(
+            rf"\(\s*float\s*\)\s*(?P<value>{simple})"
+        )
+        for match in pointer_to_float.finditer(masked):
+            if masked[match.end():].lstrip().startswith("("):
+                continue
+            value_text = body[match.start("value"):match.end("value")]
+            value = self._boundary_expression(value_text, declared)
+            if value is None or not value.kind.endswith("_pointer"):
+                continue
+            edits.append((
+                match.start(), match.end(),
+                f"st::storage_bit_cast<float>({value_text})",
+                f"pointer bits {value.display_type} -> float",
+            ))
+
+        float_to_pointer = re.compile(
+            rf"\(\s*(?P<target>(?:const\s+)?[A-Za-z_]"
+            rf"[A-Za-z0-9_:]*\s*\*+)\s*\)\s*(?P<value>{simple})"
+        )
+        for match in float_to_pointer.finditer(masked):
+            if any(match.start() < end and match.end() > start
+                    for start, end, _, _ in edits):
+                continue
+            value_text = body[match.start("value"):match.end("value")]
+            value_display = self._simple_expression_display(
+                value_text, declared, allow_record_name_fallback=True
+            )
+            if re.sub(r"\s+", "", value_display or "") != "float":
+                continue
+            target = match.group("target").strip()
+            target_type = self.type_emitter.display_type_expression(target)
+            if target_type is None or self.type_emitter.display_pointer_kind(
+                    target) is None:
+                continue
+            edits.append((
+                match.start(), match.end(),
+                f"st::storage_bit_cast<{target_type}>({value_text})",
+                f"float bits -> pointer storage {target}",
+            ))
+
+        # A complete parenthesized float expression may occupy the same four
+        # physical bytes as a later pointer lifetime.  The simple matcher above
+        # deliberately cannot consume arithmetic.  Accept it only when every
+        # identifier/member leaf is independently typed as float and the
+        # expression contains no call, assignment, comma, or conditional.
+        pointer_cast = re.compile(
+            r"\(\s*(?P<target>(?:const\s+)?[A-Za-z_]"
+            r"[A-Za-z0-9_:]*\s*\*+)\s*\)\s*\("
+        )
+        for match in pointer_cast.finditer(masked):
+            if any(match.start() < end and match.end() > start
+                    for start, end, _, _ in edits):
+                continue
+            opening = masked.rfind("(", match.start(), match.end())
+            closing = self._matching_delimiter(masked, opening, "(", ")")
+            if closing is None:
+                continue
+            expression = body[opening + 1:closing].strip()
+            if not re.fullmatch(r"[\s+\-*/().0-9A-Za-z_>]+", expression) or \
+                    re.search(r"\b[A-Za-z_][A-Za-z0-9_]*\s*\(", expression):
+                continue
+            leaves = re.findall(
+                r"[A-Za-z_][A-Za-z0-9_]*"
+                r"(?:(?:->|\.)[A-Za-z_][A-Za-z0-9_]*)*",
+                expression,
+            )
+            if not leaves:
+                continue
+            displays = [
+                self._simple_expression_display(
+                    leaf, declared, allow_record_name_fallback=True
+                )
+                for leaf in leaves
+            ]
+            if any(re.sub(r"\s+", "", display or "") not in
+                   {"float", "double", "float10"} for display in displays):
+                continue
+            target = match.group("target").strip()
+            target_type = self.type_emitter.display_type_expression(target)
+            if target_type is None or self.type_emitter.display_pointer_kind(
+                    target) is None:
+                continue
+            edits.append((
+                match.start(), closing + 1,
+                f"st::storage_bit_cast<{target_type}>(static_cast<float>("
+                f"{expression}))",
+                f"four-byte floating expression -> pointer storage {target}",
+            ))
+
+        # STPiece<0,4> is the exact little-endian four-byte view of an
+        # overlapping aggregate.  Its proxy is not itself a pointer and a C
+        # cast therefore fails in C++; first materialize the proven word, then
+        # expose the address-valued lifetime.  Other offsets/widths stay raw.
+        piece_to_pointer = re.compile(
+            r"\(\s*(?P<target>(?:const\s+)?[A-Za-z_]"
+            r"[A-Za-z0-9_:]*\s*\*+)\s*\)\s*"
+            r"(?P<piece>STPiece\s*<\s*0\s*,\s*4\s*>\s*\([^;\r\n]+?\))"
+        )
+        for match in piece_to_pointer.finditer(masked):
+            if any(match.start() < end and match.end() > start
+                    for start, end, _, _ in edits):
+                continue
+            target = match.group("target").strip()
+            target_type = self.type_emitter.display_type_expression(target)
+            if target_type is None or self.type_emitter.display_pointer_kind(
+                    target) is None:
+                continue
+            piece = body[match.start("piece"):match.end("piece")]
+            edits.append((
+                match.start(), match.end(),
+                f"reinterpret_cast<{target_type}>(static_cast<uintptr_t>("
+                f"static_cast<uint32_t>({piece})))",
+                f"exact low-word aggregate piece -> pointer storage {target}",
+            ))
+
+        for start, end, replacement, detail in sorted(edits, reverse=True):
+            body = body[:start] + replacement + body[end:]
+            self.issues.append(Issue(
+                "exact_pointer_float_storage_view", detail, address
+            ))
+        self.stats["exact_pointer_float_storage_views"] += len(edits)
+        return body
+
     def _materialize_opaque_decompiler_storage(
         self,
         address: str,
@@ -5586,6 +6891,10 @@ class SourceTreeGenerator:
                     converted = self._boundary_replacement(
                         target_display, source, body[start:end]
                     )
+                    if converted is None:
+                        converted = self._equivalent_outer_pointer_cast(
+                            target_display, body[start:end], declared_types
+                        )
                     if converted is not None:
                         replacement, transition = converted
                         neutral_callable_boundary = (
@@ -5625,6 +6934,10 @@ class SourceTreeGenerator:
                     converted = self._boundary_replacement(
                         target_display, source, body[start:end]
                     )
+                    if converted is None:
+                        converted = self._equivalent_outer_pointer_cast(
+                            target_display, body[start:end], declared_types
+                        )
                     if converted is not None:
                         replacement, transition = converted
                         edits.append((start, end, replacement,
@@ -5661,6 +6974,10 @@ class SourceTreeGenerator:
                     converted = self._boundary_replacement(
                         target_display, source, body[start:end]
                     )
+                    if converted is None:
+                        converted = self._equivalent_outer_pointer_cast(
+                            target_display, body[start:end], declared_types
+                        )
                     if converted is not None:
                         replacement, transition = converted
                         edits.append((start, end, replacement,
@@ -5683,6 +7000,8 @@ class SourceTreeGenerator:
                 self.issues.append(Issue(
                     "exact_pointer_boundary_cast", detail, address
                 ))
+                if "explicit pointer view " in detail:
+                    self.exact_existing_pointer_view_casts[address] += 1
                 if neutral_callable:
                     self.neutral_callable_boundary_casts[address] += 1
             self.stats["exact_pointer_boundary_casts"] += len(selected)
@@ -5692,6 +7011,29 @@ class SourceTreeGenerator:
 
         assignment_patterns = (
             re.compile(r"(?m)^[ \t]*(?P<lhs>[^=\n]+?)[ \t]*=[ \t]*(?!=)"),
+            re.compile(
+                # A member/index lvalue may live inside a comma expression or
+                # condition, so the line-oriented matcher above cannot safely
+                # own it.  Keep this grammar deliberately postfix-only: no
+                # arithmetic, calls, casts, or dereference expressions.
+                r"(?<![A-Za-z0-9_*&.>\])])(?P<lhs>"
+                r"[A-Za-z_][A-Za-z0-9_]*"
+                r"(?:(?:->|\.)[A-Za-z_][A-Za-z0-9_]*|\[[^\]\n]+\])+"
+                r")[ \t]*=[ \t]*(?!=)"
+            ),
+            re.compile(
+                # Ghidra's unresolved writable global arrays are commonly
+                # rendered as ``(&DAT_address)[index]``.  The image word is a
+                # real 32-bit destination even though no semantic element type
+                # has yet been recovered.
+                r"(?P<lhs>\(\s*&\s*_?(?:DAT|PTR)_[0-9A-Fa-f]{8}\s*\)"
+                r"\s*\[[^\]\n]+\])[ \t]*=[ \t]*(?!=)"
+            ),
+            re.compile(
+                r"(?P<lhs>\(\s*&\s*[A-Za-z_][A-Za-z0-9_]*"
+                r"(?:(?:->|\.)[A-Za-z_][A-Za-z0-9_]*)*\s*\)"
+                r"\s*\[[^\]\n]+\])[ \t]*=[ \t]*(?!=)"
+            ),
             re.compile(
                 # Do not begin inside a casted dereference such as
                 # `*(undefined4 *)local = ...`.  The closing parenthesis is as
@@ -5703,31 +7045,150 @@ class SourceTreeGenerator:
             ),
         )
         claimed_assignments: set[tuple[int, int]] = set()
-        for assignment in assignment_patterns:
+        for pattern_index, assignment in enumerate(assignment_patterns):
             for match in assignment.finditer(masked):
                 lhs = match.group("lhs").strip()
+                # The line-oriented form exists for complex lvalues, but it
+                # must never consume a comparison and reinterpret the final
+                # ``=`` of ``!=``/``<=``/``>=`` as an assignment.  This is
+                # especially important for comma expressions whose final
+                # operand compares a recovered pointer with ``nullptr``.
+                if (re.search(r"(?:==|!=|<=|>=)", lhs) or
+                        lhs.endswith(("!", "<", ">")) or
+                        re.search(r"\b(?:if|while|for|switch)\s*\(", lhs)):
+                    continue
                 target_display = self._simple_expression_display(
                     lhs, declared_types, allow_record_name_fallback=True
                 )
+                if not target_display and pattern_index == 2:
+                    global_name = re.search(
+                        r"_?(?:DAT|PTR)_[0-9A-Fa-f]{8}", lhs
+                    )
+                    if global_name is not None:
+                        target_display = self.global_display_types.get(
+                            global_name.group(0)
+                        )
+                    if not target_display:
+                        target_display = "undefined4"
+                if not target_display and pattern_index == 3:
+                    target_value = self._boundary_expression(lhs, declared_types)
+                    if target_value is not None and target_value.kind == "generic_word":
+                        target_display = target_value.display_type
+                if (not target_display and re.fullmatch(
+                        r"_?(?:DAT|PTR)_[0-9A-Fa-f]{8}", lhs)):
+                    target_display = "undefined4"
                 if not target_display:
                     continue
-                start = match.end()
+                equal = masked.rfind("=", match.start(), match.end())
+                if equal < 0:
+                    continue
+                start = equal + 1
+                while start < len(body) and body[start].isspace():
+                    start += 1
                 end = statement_expression_end(masked, start)
                 if end is None or (start, end) in claimed_assignments:
                     continue
-                source = self._boundary_expression(
-                    body[start:end], declared_types
-                )
+                exact_result = self._exact_call_result_view(body, start, end)
+                source = self._boundary_expression(body[start:end], declared_types)
+                if source is None and exact_result is not None:
+                    direct = re.match(
+                        r"^st::fn_(?P<target>[0-9A-F]{8})\s*\(",
+                        body[start:end].strip(),
+                    )
+                    target = None if direct is None else \
+                        self.function_by_address.get(direct.group("target"))
+                    actual_result = None if target is None else \
+                        self._function_result_type(target)
+                    if (actual_result and actual_result != "void" and
+                            (self.type_emitter.display_integer_scalar_width(
+                                actual_result) is not None or
+                             self.type_emitter.display_storage_length(
+                                actual_result) is not None)):
+                        source = BoundaryValue(actual_result, "scalar")
+                if source is None and exact_result is None:
+                    continue
+                # The two new embedded-lvalue forms exist only to make a
+                # pointer stored in an independently known machine word legal
+                # C++.  Applying the full boundary lattice here would rewrite
+                # ordinary scalar/union assignments which were already valid,
+                # and can even match a member nested inside a casted outer
+                # dereference.  Broader line/local assignments retain their
+                # established behavior above.
+                if pattern_index in {1, 2, 3} and (source is None or not (
+                        self.type_emitter.display_machine_word_scalar(
+                            target_display
+                        ) and source.kind.endswith("_pointer"))):
+                    continue
+                if exact_result is not None:
+                    target_type = self.type_emitter.display_type_expression(
+                        target_display
+                    )
+                    target_pointer = self.type_emitter.display_pointer_kind(
+                        target_display
+                    )
+                    exact_matches_target = (
+                        re.sub(r"\s+", "", exact_result) ==
+                            re.sub(r"\s+", "", target_display) or
+                        self.type_emitter.display_cpp_equivalent(
+                            exact_result, target_display
+                        )
+                    )
+                    actual_matches_target = source is not None and (
+                        re.sub(r"\s+", "", source.display_type) ==
+                            re.sub(r"\s+", "", target_display) or
+                        self.type_emitter.display_cpp_equivalent(
+                            source.display_type, target_display
+                        )
+                    )
+                    if (target_type is not None and target_pointer and
+                            exact_matches_target and not actual_matches_target):
+                        expression = body[start:end].strip()
+                        if source is None:
+                            replacement = self._exact_call_result_expression(
+                                body, start, end
+                            )
+                            if replacement is None:
+                                continue
+                        elif (source.kind.endswith("_pointer") and
+                                self.type_emitter.display_is_void_pointer(
+                                    source.display_type)):
+                            # Preserve the established generic-storage spelling.
+                            # ``static_cast<undefinedN *>`` exposes recovery
+                            # scaffolding and is a readability regression; the
+                            # exact call-result marker still records why this
+                            # one C boundary is required.
+                            if target_pointer == "generic":
+                                replacement = f"({target_type}){expression}"
+                            else:
+                                replacement = f"static_cast<{target_type}>({expression})"
+                        else:
+                            replacement = (
+                                f"st::pointer_boundary_cast<{target_type}>"
+                                f"({expression})"
+                            )
+                        edits.append((start, end,
+                            replacement,
+                            f"assignment {lhs}: exact call-result view "
+                            f"{source.display_type if source is not None else 'void'} "
+                            f"-> {target_display}"))
+                        claimed_assignments.add((start, end))
+                        continue
                 if source is None:
                     continue
                 converted = self._boundary_replacement(
                     target_display, source, body[start:end]
                 )
                 if converted is None:
+                    converted = self._equivalent_outer_pointer_cast(
+                        target_display, body[start:end], declared_types
+                    )
+                if converted is None:
                     continue
                 replacement, transition = converted
                 detail = f"assignment {lhs}: {transition}"
                 edits.append((start, end, replacement, detail))
+                if source.address_storage:
+                    self.exact_address_storage_boundary_casts[address] += 1
                 claimed_assignments.add((start, end))
 
         for start, end, replacement, detail in sorted(edits, reverse=True):
@@ -5735,6 +7196,8 @@ class SourceTreeGenerator:
             self.issues.append(Issue(
                 "exact_pointer_boundary_cast", detail, address
             ))
+            if "explicit pointer view " in detail:
+                self.exact_existing_pointer_view_casts[address] += 1
         self.stats["exact_pointer_boundary_casts"] += len(edits)
 
         declaration = self.body_declarations.get(address)
@@ -5766,6 +7229,37 @@ class SourceTreeGenerator:
                     "exact_pointer_boundary_cast", detail, address
                 ))
             self.stats["exact_pointer_boundary_casts"] += len(return_edits)
+        # Every durable STCallResultViewApplier marker denotes an exact,
+        # address-local machine result view.  Older revisions added the
+        # auxiliary ``readability_validated`` token only after a targeted
+        # migration run, while the normal fixed-point applier deliberately
+        # emits the same proof without that token.  Requiring the auxiliary
+        # spelling made a freshly accepted full proposal look like an
+        # unrelated new cast in the generated source.  Count the actual proof
+        # payload instead; the budget remains confined to this one function
+        # and to helper casts directly wrapped around a recovered direct call.
+        validated_call_results = len(re.findall(
+            r"\[STCallResultViewApplier\][^\r\n]*"
+            r"\bexact direct-call result=pointer:",
+            body,
+        ))
+        rendered_call_result_boundaries = len(re.findall(
+            r"\bst::pointer_boundary_cast\s*<[^;\r\n>]+\*\s*>\s*\(\s*"
+            r"st::fn_[0-9A-F]{8}\s*\(",
+            code_mask(body),
+        )) + len(re.findall(
+            r"\bst::exact_call_result_callee\s*<[^;\r\n]+?>\s*\(\s*"
+            r"&st::fn_[0-9A-F]{8}\s*\)\s*\(",
+            code_mask(body),
+        )) + len(re.findall(
+            r"\(\s*[A-Za-z_][A-Za-z0-9_:<> ]*\s*\*+\s*\)\s*"
+            r"st::fn_[0-9A-F]{8}\s*\(",
+            code_mask(body),
+        ))
+        if validated_call_results and rendered_call_result_boundaries:
+            self.exact_call_result_boundary_casts[address] = min(
+                validated_call_results, rendered_call_result_boundaries
+            )
         return body
 
     def _exact_receiver_transport_replacement(
@@ -6555,6 +8049,33 @@ class SourceTreeGenerator:
             ))
         if not declarations:
             return body
+        slot_address_rewrites = 0
+        for parameter_name in sorted(claimed):
+            original = parameter_name[1:]
+            pattern = re.compile(
+                rf"\(\s*(?:int|uint|dword|DWORD|undefined4|int32_t|uint32_t)"
+                rf"\s*\*\s*\)\s*&\s*{re.escape(original)}\b"
+                rf"(?!\s*(?:->|\.|\[))"
+            )
+
+            def replace_slot_address(piece: str, *, _pattern: re.Pattern[str] = pattern,
+                    _synthetic: str = parameter_name) -> str:
+                nonlocal slot_address_rewrites
+                piece, count = _pattern.subn(f"&{_synthetic}", piece)
+                slot_address_rewrites += count
+                return piece
+
+            body = transform_code(body, replace_slot_address)
+        if slot_address_rewrites:
+            self.stats["promoted_parameter_slot_address_repairs"] += \
+                slot_address_rewrites
+            self.promoted_slot_boundary_casts[address] += slot_address_rewrites
+            self.issues.append(Issue(
+                "promoted_parameter_slot_address_repair",
+                f"{slot_address_rewrites} exact machine-word output address(es) "
+                "redirected from narrow formal storage to the materialized x86 slot",
+                address,
+            ))
         opening = code_mask(body).find("{")
         if opening < 0:
             return body
@@ -6722,6 +8243,91 @@ class SourceTreeGenerator:
             address,
         ))
         return rewritten
+
+    def _repair_scalarized_word_arrays(
+        self, address: str, function: Mapping[str, Any], body: str
+    ) -> str:
+        """Restore a four-byte scalar lifetime misrendered as a byte array.
+
+        A High-variable pointer use can make Ghidra display one ordinary dword
+        stack slot as ``byte local[4]`` even though the same lifetime receives
+        whole-word scalar assignments.  C accepts a few array-cast spellings
+        which C++ rejects.  Scalarize only when a complete array-typed
+        assignment proves the conflict, there is no indexed element use, and
+        every remaining read is explicitly cast or addressed.  Pointer casts
+        then receive ``&local`` so the machine stack address is preserved.
+        """
+        masked = code_mask(body)
+        declaration = re.compile(
+            r"(?m)^(?P<indent>[ \t]*)(?:byte|undefined1)[ \t]+"
+            r"(?P<name>[A-Za-z_][A-Za-z0-9_]*)[ \t]*\[[ \t]*4[ \t]*\]"
+            r"[ \t]*;"
+        )
+        edits: list[tuple[int, int, str]] = []
+        repaired: list[str] = []
+        for item in declaration.finditer(masked):
+            name = item.group("name")
+            if re.search(rf"\b{re.escape(name)}\s*\[", masked[item.end():]):
+                continue
+            assignment = re.compile(
+                rf"(?m)^(?P<indent>[ \t]*)(?P<lhs>{re.escape(name)})"
+                rf"[ \t]*=[ \t]*"
+                rf"\(\s*(?:byte|undefined1)\s*\[\s*4\s*\]\s*\)"
+                rf"(?P<value>[^;\r\n]+);"
+            )
+            assignments = list(assignment.finditer(masked))
+            if not assignments:
+                continue
+            pointer_cast = re.compile(
+                rf"\(\s*(?P<type>(?:const\s+)?[A-Za-z_]"
+                rf"[A-Za-z0-9_:<>]*\s*\*+)\s*\)\s*{re.escape(name)}\b"
+            )
+            pointer_casts = list(pointer_cast.finditer(masked))
+            covered: list[tuple[int, int]] = [(item.start("name"), item.end("name"))]
+            covered.extend(
+                (match.start("lhs"), match.end("lhs"))
+                for match in assignments
+            )
+            covered.extend(
+                (match.end() - len(name), match.end())
+                for match in pointer_casts
+            )
+            for match in re.finditer(
+                    rf"(?:\(\s*[A-Za-z_][A-Za-z0-9_:<>]*\s*\)|&)\s*"
+                    rf"(?P<name>{re.escape(name)})\b", masked):
+                covered.append((match.start("name"), match.end("name")))
+            occurrences = list(re.finditer(rf"\b{re.escape(name)}\b", masked))
+            if any(not any(start <= match.start() and match.end() <= end
+                           for start, end in covered)
+                    for match in occurrences):
+                continue
+            edits.append((
+                item.start(), item.end(),
+                f"{item.group('indent')}uint {name};",
+            ))
+            for match in assignments:
+                value = body[match.start("value"):match.end("value")]
+                edits.append((
+                    match.start(), match.end(),
+                    f"{match.group('indent')}{name} = {value};",
+                ))
+            for match in pointer_casts:
+                pointer_type = body[match.start("type"):match.end("type")]
+                edits.append((
+                    match.start(), match.end(),
+                    f"({pointer_type})&{name}",
+                ))
+            repaired.append(name)
+        for start, end, replacement in sorted(edits, reverse=True):
+            body = body[:start] + replacement + body[end:]
+        for name in repaired:
+            self.issues.append(Issue(
+                "scalarized_word_array",
+                f"{name}: exact four-byte scalar assignment and address uses",
+                address,
+            ))
+        self.stats["scalarized_word_arrays"] += len(repaired)
+        return body
 
     def _materialize_exact_output_lifetimes(
         self,
@@ -7061,12 +8667,37 @@ class SourceTreeGenerator:
                 lines.append(provenance)
                 lines.append(self.body_declarations[address] + ";")
                 continue
-            signature = str(function["signature"])
+            signature_owner = self._thunk_signature_owner(function)
+            # A transparent thunk is one address identity with the exact ABI of
+            # its final target.  Ghidra can temporarily retain the old
+            # ``unknown f(void)`` presentation on the thunk until the next
+            # propagation pass.  Source assembly must not discard the already
+            # recovered target prototype during that window.
+            signature = str(signature_owner["signature"])
             signature = re.sub(r"^noreturn\s+", "[[noreturn]] ", signature)
+            if (not signature_owner.get("body_exported") and
+                    int(signature_owner.get("parameter_count") or
+                        len(signature_owner.get("parameters", ()))) > 0 and
+                    re.match(r"^\s*undefined\s+", signature)):
+                # Bare ``undefined`` is Ghidra's unknown/default return, not a
+                # proven one-byte ABI.  Preserve the complete x86 EAX
+                # transport in the standalone source declaration.  A real
+                # narrow return is exported as byte/char/undefined1 and is not
+                # touched here.
+                signature = re.sub(
+                    r"^(\s*)undefined(?=\s+)", r"\1undefined4", signature,
+                    count=1,
+                )
+                self.issues.append(Issue(
+                    "default_return_transport",
+                    f"{address}: unknown DefaultDataType return retained as "
+                    "full x86 EAX word",
+                    address,
+                ))
             signature = self._rewrite_neutral_callable_parameter_declarations(
-                address, function, signature
+                address, signature_owner, signature
             )
-            name = str(function["name"])
+            name = str(signature_owner["name"])
             replacement = f"fn_{function['address'].upper()}"
             signature, count = re.subn(
                 re.escape(name) + r"(?=\s*\()", replacement, signature, count=1
@@ -7083,6 +8714,26 @@ class SourceTreeGenerator:
                     for index, item in enumerate(function.get("parameters", ()))
                 ) or "void"
                 signature = f"undefined4 {replacement}({parameters})"
+            elif (not function.get("body_exported") and
+                    re.match(r"^\s*undefined\s+", signature) and
+                    int(signature_owner.get("parameter_count") or 0) == 0):
+                # An unresolved imported/external boundary is not source-level
+                # void merely because Ghidra uses DefaultDataType.  Preserve a
+                # callable machine-word result and unknown argument tail until
+                # an imported prototype is recovered.  This is declaration
+                # assembly only; the address remains in the explicit audit.
+                signature = re.sub(
+                    r"^\s*undefined\s+.*$",
+                    f"undefined4 {replacement}(...)",
+                    signature,
+                    flags=re.DOTALL,
+                )
+                self.issues.append(Issue(
+                    "unresolved_external_prototype_boundary",
+                    f"{address}: unsized external/thunk prototype retained as "
+                    "machine-word variadic declaration",
+                    address,
+                ))
             lines.append(provenance)
             lines.append(signature + ";")
         for address in sorted(self.external_signatures):

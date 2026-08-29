@@ -1,9 +1,12 @@
-#include "../../pseudocode_runtime.h"
 
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=006A8270 @ 006A848D -> read as EAX on
+   every CFG path | 006A88F0 @ 006A8A87 -> read as EAX on every CFG path | 006AFBA0 @ 006AFD66 ->
+   read as EAX on every CFG path */
 
-undefined4
-FUN_006a76d0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,
-            int param_8,int param_9,int *param_10,int *param_11,int *param_12)
+int FUN_006a76d0(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7
+                ,int param_8,int param_9,int *param_10,int *param_11,int *param_12)
 
 {
   short sVar1;
@@ -17,7 +20,7 @@ FUN_006a76d0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   int iVar9;
   short *psVar10;
   short *local_30;
-  undefined4 local_28;
+  int local_28;
   int local_24;
   int local_20;
   int local_1c;
@@ -77,6 +80,7 @@ FUN_006a76d0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
         iVar7 = local_14;
         if (local_1c <= local_14 - param_5) {
           psVar8 = (short *)(param_1 + (iVar9 * param_2 + iVar6 + local_14) * 2);
+
           iVar7 = FUN_006aae60(local_14,iVar9,(int)psVar10,param_5,param_6,param_7);
           for (; local_24 <= iVar9; iVar9 = iVar9 + -1) {
             sVar1 = *psVar8;
@@ -103,6 +107,7 @@ FUN_006a76d0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
           iVar9 = local_24;
           if (local_1c <= param_6 - local_24) {
             psVar8 = (short *)(param_1 + (local_24 * param_2 + iVar6 + iVar7) * 2);
+
             iVar9 = FUN_006aae60(iVar7,local_24,(int)psVar10,param_5,param_6,param_7);
             for (; local_20 <= iVar7; iVar7 = iVar7 + -1) {
               if ((((0 < *psVar8) && (iVar9 <= local_c)) &&
@@ -128,6 +133,7 @@ FUN_006a76d0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
           iVar7 = local_20;
           if (local_1c <= param_5 - local_20) {
             psVar8 = (short *)(param_1 + (iVar9 * param_2 + iVar6 + local_20) * 2);
+
             iVar7 = FUN_006aae60(local_20,iVar9,(int)psVar10,param_5,param_6,param_7);
             for (; iVar9 <= local_18; iVar9 = iVar9 + 1) {
               sVar1 = *psVar8;
@@ -152,6 +158,7 @@ FUN_006a76d0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
           }
           if (local_1c <= local_18 - param_6) {
             psVar8 = (short *)(param_1 + (local_18 * param_2 + iVar6 + iVar7) * 2);
+
             iVar9 = FUN_006aae60(iVar7,local_18,(int)psVar10,param_5,param_6,param_7);
             for (; iVar7 <= local_14; iVar7 = iVar7 + 1) {
               sVar1 = *psVar8;
@@ -184,6 +191,7 @@ FUN_006a76d0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
         psVar10 = (short *)(param_1 + (local_24 * param_2 + (int)local_30 * iVar2 + local_20) * 2);
         iVar4 = local_24;
         do {
+
           iVar5 = FUN_006aae60(local_20,iVar4,(int)local_30,param_5,param_6,param_7);
           psVar8 = psVar10;
           for (iVar6 = local_20; iVar6 <= local_14; iVar6 = iVar6 + 1) {
@@ -212,6 +220,7 @@ FUN_006a76d0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
       if ((local_1c <= iVar3 - param_7) && (local_24 <= local_18)) {
         local_30 = (short *)(param_1 + (local_24 * param_2 + iVar3 * iVar2 + local_20) * 2);
         do {
+
           iVar4 = FUN_006aae60(local_20,local_24,iVar3,param_5,param_6,param_7);
           psVar10 = local_30;
           for (iVar6 = local_20; iVar6 <= local_14; iVar6 = iVar6 + 1) {

@@ -22,6 +22,7 @@ void __thiscall STAllPlayersC::DeletePGPairs(STAllPlayersC *this,char param_1)
   local_58.previous = g_currentExceptionFrame;
   local_8 = (DArrayTy *)g_packedRecords_A62x8[param_1].field1976_0x9f6;
   g_currentExceptionFrame = &local_58;
+
   exceptionCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   array = local_8;
   if (exceptionCode == 0) {
@@ -29,6 +30,7 @@ void __thiscall STAllPlayersC::DeletePGPairs(STAllPlayersC *this,char param_1)
       dVar1 = local_8->count;
       if ((dVar1 != 0) && (index = 0, 0 < (int)dVar1)) {
         do {
+
           DArrayGetElement(array,index,&local_14);
           DArrayDestroy(local_14);
           DArrayDestroy(local_10);
@@ -44,6 +46,7 @@ void __thiscall STAllPlayersC::DeletePGPairs(STAllPlayersC *this,char param_1)
   }
   g_currentExceptionFrame = local_58.previous;
   if (exceptionCode != -0x5001fff7) {
+
     iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x29b3,0,0,"%s",
                                "STAllPlayersC::DeletePGPairs");
     if (iVar3 != 0) {

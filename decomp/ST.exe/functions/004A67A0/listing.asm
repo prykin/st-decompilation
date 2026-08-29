@@ -559,7 +559,7 @@ LAB_004a7050:
 004A705F  3B F7                     CMP ESI,EDI
 004A7061  7E 32                     JLE 0x004a7095
 004A7063  56                        PUSH ESI
-004A7064  E8 07 3C 20 00            CALL 0x006aac70
+004A7064  E8 07 3C 20 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 004A7069  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 004A706C  8B F8                     MOV EDI,EAX
 004A706E  89 81 1E 02 00 00         MOV dword ptr [ECX + 0x21e],EAX

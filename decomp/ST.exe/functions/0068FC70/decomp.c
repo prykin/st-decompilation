@@ -7,7 +7,7 @@
    [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: 0068FC70 -> 00662240 @ 0068FCB8 */
 
-int __thiscall FUN_0068fc70(void *this,AnonShape_0068FD00_A5257008 *aiMess,short param_2)
+int __thiscall FUN_0068fc70(void *this,RecoveredRecordView_0068FD00_630BE91E *aiMess,short param_2)
 
 {
   AiFltClassTy *this_00;

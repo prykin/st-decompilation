@@ -24,8 +24,9 @@ void __thiscall SndUnderAttMenegC::sub_00621580(SndUnderAttMenegC *this,byte *pa
     return;
   }
   if ((this->field_010A == nullptr) ||
+
      (uVar1 = thunk_FUN_00621640(this,param_2,&local_8), (int)uVar1 < 0)) {
-    /* ST_CALLSITE[006215BD]: CALL 0x00405b37; direct=00405B37 SndUnderAttMenegC::sub_006216E0 */
+    /* ST_CALLSITE[006215BD]: CALL 0x00405b37; direct=00405B37 SndUnderAttMenegC::sub_006216E0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SndUnderAttMenegC; source view only; no Ghidra override */
     uVar1 = sub_006216E0(this,param_2);
   }
   if ((local_8 != 0) && (-1 < (int)uVar1)) {

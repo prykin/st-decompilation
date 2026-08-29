@@ -44,16 +44,18 @@ STGroupBoatC::GetDepotForAttack
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_14 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   pSVar6 = local_14;
   if (iVar2 == 0) {
     *param_3 = -1;
     if ((local_14->field_01E6 != CASE_2) || (local_14->field_020E == nullptr)) {
+      /* ST_CALLSITE[004A83B2]: CALL 0x006a5e40; direct=006A5E40 RaiseInternalException; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
       RaiseInternalException
                 (-0x5001fff7,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_grpb.cpp",
                  0x1708);
     }
-    /* ST_CALLSITE[004A83C7]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
+    /* ST_CALLSITE[004A83C7]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override */
     pSVar3 = STAllPlayersC::GetObjPtr
                        (g_allPlayers_007FA174,pSVar6->field_0024,(ushort)param_1,CASE_1);
     /* ST_CALLSITE[004A83DA]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
@@ -63,6 +65,7 @@ STGroupBoatC::GetDepotForAttack
     iVar2 = local_18;
     if (0 < (int)local_1c) {
       do {
+
         DArrayGetElement(pSVar6->field_020E,index,&local_24);
         if (uStack_22 != 0xffff) {
           /* ST_CALLSITE[004A8426]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
@@ -74,6 +77,7 @@ STGroupBoatC::GetDepotForAttack
              (iVar5 = pSVar3->vfunc_2C(), pSVar6 = local_14, iVar5 == 0x60)) {
             /* ST_CALLSITE[004A8453]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
             STFishC::sub_004162B0((STFishC *)pSVar3,&local_8,&local_6,&local_a);
+
             local_EAX_310 =
                  FUN_006aadd0((int)local_10,(int)local_e,(int)local_c,(int)local_8,(int)local_6,
                               (int)local_a);
@@ -97,6 +101,7 @@ STGroupBoatC::GetDepotForAttack
   }
   g_currentExceptionFrame = local_68.previous;
   if (iVar2 != -0x5001fff7) {
+
     iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x171b,0,iVar2,"%s",
                                "STGroupBoatC::GetDepotForAttack");
     if (iVar4 != 0) {

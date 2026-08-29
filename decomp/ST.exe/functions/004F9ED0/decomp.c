@@ -43,13 +43,16 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
       local_54.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_54;
       local_10 = this;
+
       iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
       this_00 = local_10;
       if (iVar3 == 0) {
         switch(local_10->field_023F) {
         case CASE_1:
-          thunk_FUN_004a9b60(local_10->field_011C,local_10->field_0120,local_10->field_0124,
-                             local_10->field_0128);
+          /* ST_CALLSITE[004F9F7B]: CALL 0x00401b6d; direct=00401B6D OpticClassC::sub_004A9B60 */
+          OpticClassC::sub_004A9B60
+                    (g_opticClass_007FB2A0,local_10->field_011C,local_10->field_0120,
+                     local_10->field_0124,local_10->field_0128);
           this_00->field_023F = CASE_6;
           if (g_researchPanel_008016E8 != nullptr) {
             /* ST_CALLSITE[004F9F95]: CALL 0x00401a73; direct=00401A73 ProdPanelTy::SetPanel */
@@ -214,6 +217,7 @@ switchD_004f9f52_caseD_3:
         }
       }
       g_currentExceptionFrame = local_54.previous;
+
       iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel.cpp",0x40f,0,iVar3,
                                  "%s","CPanelTy::SwitchCPanel");
       if (iVar6 != 0) {

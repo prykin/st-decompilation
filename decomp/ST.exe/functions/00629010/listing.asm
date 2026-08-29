@@ -1,6 +1,7 @@
 FUN_00629010:
 00629010  68 08 01 00 00            PUSH 0x108
-00629015  E8 16 55 10 00            CALL 0x0072e530
+FUN_00629010::override::prt_629015_7f719fbd:
+00629015  E8 16 55 10 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00629040_09AFDC96; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00629040_09AFDC96;/uint
 0062901A  83 C4 04                  ADD ESP,0x4
 0062901D  85 C0                     TEST EAX,EAX
 0062901F  74 07                     JZ 0x00629028

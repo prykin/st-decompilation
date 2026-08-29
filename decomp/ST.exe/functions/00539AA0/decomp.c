@@ -13,8 +13,10 @@ PlayPanelTy * __cdecl CreatePlayPanel(void)
 {
   PlayPanelTy *this;
 
-  this = (PlayPanelTy *)FUN_006b04d0(0x1e1);
+
+  this = STPointerBoundaryCast<PlayPanelTy *>(FUN_006b04d0(0x1e1));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->field_005C = 0;
     this->field_0044 = 0;

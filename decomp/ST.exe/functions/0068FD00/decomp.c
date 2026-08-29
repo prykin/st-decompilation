@@ -5,7 +5,8 @@
    E:\__titans\ai\ai_tact.cpp
    AiTactClassTy::GetAiMess */
 
-int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A5257008 *param_1)
+int __thiscall
+AiTactClassTy::GetAiMess(AiTactClassTy *this,RecoveredRecordView_0068FD00_630BE91E *param_1)
 
 {
   uint uVar1;
@@ -21,7 +22,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
   bool bVar11;
   InternalExceptionFrame local_80;
   uint local_3c [3];
-  undefined1 local_30;
+  byte local_30;
   undefined1 uStack_2f;
   undefined2 uStack_2e;
   undefined2 uStack_2c;
@@ -30,10 +31,12 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_8 = this;
+
   local_EAX_35 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   this_00 = local_8;
   if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_80.previous;
+
     iVar7 = ReportDebugMessage("E:\\__titans\\ai\\ai_tact.cpp",0x36a,0,local_EAX_35,
                                "%s","AiTactClassTy::GetAiMess");
     if (iVar7 == 0) {
@@ -72,6 +75,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
       g_currentExceptionFrame = local_80.previous;
       return 0;
     case 0x6f:
+
       iVar4 = thunk_FUN_0068e850(local_8,STField<int>(param_1,0xC));
       iVar8 = STField<int>(param_1,0xC);
       *(int *)&param_1->field_0x8 = *(int *)&param_1->field_0x8 + iVar4;
@@ -133,7 +137,9 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,AnonShape_0068FD00_A
              (element_00a5->field_0004 != nullptr)) {
             /* ST_CALLSITE[0068FF0E]: CALL 0x00401555; direct=00401555 AiFltClassTy::GetAiMess */
             AiFltClassTy::GetAiMess(element_00a5->field_0004,(uint *)param_1);
-            thunk_FUN_0054cf70(g_playSystem_00802A38,*(uint *)(element_00a5->field_0004 + 8));
+            /* ST_CALLSITE[0068FF20]: CALL 0x0040432c; direct=0040432C STPlaySystemC::sub_0054CF70 */
+            STPlaySystemC::sub_0054CF70(g_playSystem_00802A38,*(uint *)(element_00a5->field_0004 + 8));
+
             DArrayRemoveAt((DArrayTy *)this_00->field_00A5,uVar9);
           }
           uVar9 = uVar9 - 1;

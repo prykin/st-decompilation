@@ -35,7 +35,8 @@ switchD_00568e23::caseD_b:
 00568E34  8B 96 EF 0D 00 00         MOV EDX,dword ptr [ESI + 0xdef]
 00568E3A  51                        PUSH ECX
 00568E3B  52                        PUSH EDX
-00568E3C  E8 BF 0E 1B 00            CALL 0x00719d00
+SoundClassTy::PlaySound::override::prt_568e3c_6cc56844:
+00568E3C  E8 BF 0E 1B 00            CALL 0x00719d00  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__cdecl;pointer:/uint;pointer:/cMf32;pointer:/char;/byte;pointer:/ushort
 00568E41  83 C4 10                  ADD ESP,0x10
 00568E44  85 C0                     TEST EAX,EAX
 00568E46  0F 84 A4 0E 00 00         JZ 0x00569cf0

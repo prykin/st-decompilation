@@ -475,7 +475,7 @@ FUN_0058bd90::cf_common_exit_0058C391:
 0058C399  E8 1E 6D E7 FF            CALL 0x004030bc
 0058C39E  8B 06                     MOV EAX,dword ptr [ESI]
 0058C3A0  8B CE                     MOV ECX,ESI
-0058C3A2  FF 90 D8 00 00 00         CALL dword ptr [EAX + 0xd8]
+0058C3A2  FF 90 D8 00 00 00         CALL dword ptr [EAX + 0xd8]  ; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0058C3A8  5F                        POP EDI
 0058C3A9  5B                        POP EBX
 LAB_0058c3aa:

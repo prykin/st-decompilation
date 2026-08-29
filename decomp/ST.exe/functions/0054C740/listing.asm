@@ -17,7 +17,8 @@ CreatePlaySystem:
 0054C769  85 F6                     TEST ESI,ESI
 0054C76B  0F 85 C9 01 00 00         JNZ 0x0054c93a
 0054C771  68 F8 00 00 00            PUSH 0xf8
-0054C776  E8 B5 1D 1E 00            CALL 0x0072e530
+CreatePlaySystem::override::prt_54c776_35c03140:
+0054C776  E8 B5 1D 1E 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STPlaySystemC; signature=__cdecl;pointer:/STPlaySystemC;/uint
 0054C77B  83 C4 04                  ADD ESP,0x4
 0054C77E  85 C0                     TEST EAX,EAX
 0054C780  74 10                     JZ 0x0054c792
@@ -51,7 +52,7 @@ LAB_0054c7b7:
 0054C7DA  8B 11                     MOV EDX,dword ptr [ECX]
 0054C7DC  6A 00                     PUSH 0x0
 0054C7DE  68 00 11 00 00            PUSH 0x1100
-0054C7E3  FF 52 08                  CALL dword ptr [EDX + 0x8]
+0054C7E3  FF 52 08                  CALL dword ptr [EDX + 0x8]  ; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STPlaySystemC;/int;pointer:/undefined4;pointer:/int;/undefined2;/int
 0054C7E6  8B 0D 38 2A 80 00         MOV ECX,dword ptr [0x00802a38]
 0054C7EC  6A 00                     PUSH 0x0
 0054C7EE  6A 00                     PUSH 0x0

@@ -24,10 +24,11 @@ undefined4 * CreateDefaultBossData(void)
   local_10 = nullptr;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
+
   errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (errorCode == 0) {
     local_8 = thunk_FUN_00648400("Default Arbiter",1);
-    /* ST_CALLSITE[00649F08]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
+    /* ST_CALLSITE[00649F08]: CALL 0x00401ebf; direct=00401EBF EventDataPack; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override */
     local_10 = EventDataPack(*(AllocationRecord_0065CD10 **)&local_8->field_0x4e,&local_14);
     /* ST_CALLSITE[00649F1D]: CALL 0x00405a24; direct=00405A24 BossDataPack */
     local_c = BossDataPack(local_8,(undefined4 *)local_10,local_14,&local_18);
@@ -40,6 +41,7 @@ undefined4 * CreateDefaultBossData(void)
   thunk_FUN_0065d0f0((int *)&local_10);
   thunk_FUN_006484f0((int *)&local_8);
   thunk_FUN_006484f0((int *)&local_c);
+
   iVar2 = ReportDebugMessage("E:\\__titans\\ai\\ai_creat.cpp",0x1c1,0,errorCode,"%s",
                              "CreateDefaultBossData");
   if (iVar2 != 0) {

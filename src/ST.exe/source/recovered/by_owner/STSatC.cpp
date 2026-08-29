@@ -16,9 +16,9 @@ STSatC * __thiscall st::fn_0058BA30(STSatC *this)
 {
 
   /* ST_CALLSITE[0058BA34]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
-  st::fn_00401933((STGameObjC *)this);
+  st::fn_00401933(reinterpret_cast<STGameObjC *>(this));
   /* ST_CALLSITE[0058BA41]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
-  st::fn_00401316((STT3DSprC *)&this->field_01D5);
+  st::fn_00401316(reinterpret_cast<STT3DSprC *>(&this->field_01D5));
   this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079BE7C);
   this->vtable = &st_global_0079BD1C;
   this->field_0231 = 1;
@@ -29,4 +29,3 @@ STSatC * __thiscall st::fn_0058BA30(STSatC *this)
   memset(&this->field_0x275, 0, 0x26); /* compiler bulk-zero initialization */
   return this;
 }
-

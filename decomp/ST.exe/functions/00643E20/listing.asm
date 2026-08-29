@@ -132,7 +132,7 @@ LAB_00643f62:
 00643F68  84 C0                     TEST AL,AL
 00643F6A  75 0B                     JNZ 0x00643f77
 00643F6C  8D 8E D5 01 00 00         LEA ECX,[ESI + 0x1d5]
-00643F72  E8 98 FD DB FF            CALL 0x00403d0f
+00643F72  E8 98 FD DB FF            CALL 0x00403d0f  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 LAB_00643f77:
 00643F77  8B 5D F8                  MOV EBX,dword ptr [EBP + -0x8]
 LAB_00643f7a:
@@ -312,7 +312,7 @@ LAB_00644138:
 0064414C  50                        PUSH EAX
 0064414D  8B 86 78 02 00 00         MOV EAX,dword ptr [ESI + 0x278]
 00644153  50                        PUSH EAX
-00644154  FF 92 E0 00 00 00         CALL dword ptr [EDX + 0xe0]
+00644154  FF 92 E0 00 00 00         CALL dword ptr [EDX + 0xe0]  ; [STIndirectCallsiteApplier] exact slot 0xE0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 0064415A  85 C0                     TEST EAX,EAX
 0064415C  74 0A                     JZ 0x00644168
 0064415E  5F                        POP EDI
@@ -367,7 +367,7 @@ LAB_006441dd:
 006441E0  8B 96 78 02 00 00         MOV EDX,dword ptr [ESI + 0x278]
 006441E6  52                        PUSH EDX
 006441E7  8B 01                     MOV EAX,dword ptr [ECX]
-006441E9  FF 90 E4 00 00 00         CALL dword ptr [EAX + 0xe4]
+006441E9  FF 90 E4 00 00 00         CALL dword ptr [EAX + 0xe4]  ; [STIndirectCallsiteApplier] exact slot 0xE4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 LAB_006441ef:
 006441EF  33 C0                     XOR EAX,EAX
 006441F1  8D BE D5 01 00 00         LEA EDI,[ESI + 0x1d5]

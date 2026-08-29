@@ -13,6 +13,7 @@ FUN_005ecfe0(void *this,int param_1,int param_2,int param_3,int param_4,int para
   if ((param_1 < 0) || (4 < param_1)) {
     if ((param_2 != -1) &&
        (((param_3 != -1 && (param_4 != -1)) &&
+
         (iVar3 = thunk_FUN_005ecd70(this,param_2,param_3,param_4,param_5,'\0',0x1e), iVar3 != 0))))
     {
       STField<undefined4>(this,0x23a) = 2;
@@ -38,6 +39,7 @@ FUN_005ecfe0(void *this,int param_1,int param_2,int param_3,int param_4,int para
          ((((g_worldGrid.sizeY <= sVar1 || (sVar4 < 0)) || (g_worldGrid.sizeZ <= sVar4)) ||
           ((STGridAt3D(g_worldGrid, sVar2, sVar1, sVar4).objects[0] == nullptr ||
            (STGridAt3D(g_worldGrid, sVar2, sVar1, sVar4).objects[0] == this)))))))) &&
+
        (iVar3 = thunk_FUN_005ecd70(this,(short)(sVar2 * 0xc9 + 100),
                                    (short)(sVar1 * 0xc9 + 100),
                                    (short)((short)param_1 * 200 + 100),param_5,'\0',0x1e),

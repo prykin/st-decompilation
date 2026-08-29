@@ -1,4 +1,4 @@
-FUN_00589a20:
+STOctopusC::vfunc_DC:
 00589A20  55                        PUSH EBP
 00589A21  8B EC                     MOV EBP,ESP
 00589A23  83 EC 08                  SUB ESP,0x8

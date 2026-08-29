@@ -142,7 +142,7 @@ LAB_004c6e87:
 004C6EB0  83 F8 0A                  CMP EAX,0xa
 004C6EB3  7C 1B                     JL 0x004c6ed0
 004C6EB5  8B CE                     MOV ECX,ESI
-004C6EB7  E8 E2 DF F3 FF            CALL 0x00404e9e
+004C6EB7  E8 E2 DF F3 FF            CALL 0x00404e9e  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_004167A0; source view only; no Ghidra override
 004C6EBC  85 C0                     TEST EAX,EAX
 004C6EBE  74 10                     JZ 0x004c6ed0
 004C6EC0  C7 86 FC 03 00 00 01 00 00 00  MOV dword ptr [ESI + 0x3fc],0x1

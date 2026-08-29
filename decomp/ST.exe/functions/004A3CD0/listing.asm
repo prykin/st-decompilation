@@ -142,14 +142,15 @@ LAB_004a3e44:
 004A3E47  8B D7                     MOV EDX,EDI
 004A3E49  51                        PUSH ECX
 004A3E4A  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
-004A3E4D  E8 1E 8E 20 00            CALL 0x006acc70
+004A3E4D  E8 1E 8E 20 00            CALL 0x006acc70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 004A3E52  8B 55 FC                  MOV EDX,dword ptr [EBP + -0x4]
 004A3E55  8A 46 24                  MOV AL,byte ptr [ESI + 0x24]
 004A3E58  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 004A3E5E  6A 01                     PUSH 0x1
 004A3E60  52                        PUSH EDX
 004A3E61  50                        PUSH EAX
-004A3E62  E8 53 EA F5 FF            CALL 0x004028ba
+STGroupBoatC::DistributeDock::override::prt_4a3e62_6c9e7102:
+004A3E62  E8 53 EA F5 FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 004A3E67  8D 4D F4                  LEA ECX,[EBP + -0xc]
 004A3E6A  51                        PUSH ECX
 004A3E6B  6A 03                     PUSH 0x3
@@ -222,7 +223,8 @@ LAB_004a3f15:
 004A3F33  50                        PUSH EAX
 004A3F34  51                        PUSH ECX
 004A3F35  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
-004A3F3B  E8 7A E9 F5 FF            CALL 0x004028ba
+STGroupBoatC::DistributeDock::override::prt_4a3f3b_6c9e7102:
+004A3F3B  E8 7A E9 F5 FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 004A3F40  8D 55 F4                  LEA EDX,[EBP + -0xc]
 004A3F43  8B C8                     MOV ECX,EAX
 004A3F45  52                        PUSH EDX
@@ -238,7 +240,8 @@ LAB_004a3f52:
 004A3F5D  8A 46 24                  MOV AL,byte ptr [ESI + 0x24]
 004A3F60  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 004A3F66  50                        PUSH EAX
-004A3F67  E8 4E E9 F5 FF            CALL 0x004028ba
+STGroupBoatC::DistributeDock::override::prt_4a3f67_81281cbb:
+004A3F67  E8 4E E9 F5 FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STFishC; signature=__thiscall;pointer:/STFishC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 004A3F6C  8D 4D F0                  LEA ECX,[EBP + -0x10]
 004A3F6F  8D 55 EC                  LEA EDX,[EBP + -0x14]
 004A3F72  51                        PUSH ECX
@@ -246,7 +249,7 @@ LAB_004a3f52:
 004A3F76  52                        PUSH EDX
 004A3F77  51                        PUSH ECX
 004A3F78  8B C8                     MOV ECX,EAX
-004A3F7A  E8 46 D9 F5 FF            CALL 0x004018c5
+004A3F7A  E8 46 D9 F5 FF            CALL 0x004018c5  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 004A3F7F  66 8B 55 E8               MOV DX,word ptr [EBP + -0x18]
 004A3F83  66 8B 45 EC               MOV AX,word ptr [EBP + -0x14]
 004A3F87  66 8B 4D F0               MOV CX,word ptr [EBP + -0x10]
@@ -259,7 +262,8 @@ LAB_004a3f52:
 004A3F9F  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 004A3FA5  52                        PUSH EDX
 004A3FA6  50                        PUSH EAX
-004A3FA7  E8 0E E9 F5 FF            CALL 0x004028ba
+STGroupBoatC::DistributeDock::override::prt_4a3fa7_6c9e7102:
+004A3FA7  E8 0E E9 F5 FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 004A3FAC  8D 4D C0                  LEA ECX,[EBP + -0x40]
 004A3FAF  51                        PUSH ECX
 004A3FB0  6A 04                     PUSH 0x4
@@ -270,7 +274,8 @@ LAB_004a3fbb:
 004A3FBB  8A 56 24                  MOV DL,byte ptr [ESI + 0x24]
 004A3FBE  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 004A3FC4  52                        PUSH EDX
-004A3FC5  E8 F0 E8 F5 FF            CALL 0x004028ba
+STGroupBoatC::DistributeDock::override::prt_4a3fc5_81281cbb:
+004A3FC5  E8 F0 E8 F5 FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STFishC; signature=__thiscall;pointer:/STFishC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 004A3FCA  8D 4D F0                  LEA ECX,[EBP + -0x10]
 004A3FCD  8D 55 EC                  LEA EDX,[EBP + -0x14]
 004A3FD0  51                        PUSH ECX
@@ -278,7 +283,7 @@ LAB_004a3fbb:
 004A3FD4  52                        PUSH EDX
 004A3FD5  51                        PUSH ECX
 004A3FD6  8B C8                     MOV ECX,EAX
-004A3FD8  E8 E8 D8 F5 FF            CALL 0x004018c5
+004A3FD8  E8 E8 D8 F5 FF            CALL 0x004018c5  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 004A3FDD  8B 55 CC                  MOV EDX,dword ptr [EBP + -0x34]
 004A3FE0  8A 46 24                  MOV AL,byte ptr [ESI + 0x24]
 004A3FE3  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
@@ -320,7 +325,8 @@ LAB_004a4024:
 004A403A  51                        PUSH ECX
 004A403B  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 004A4041  52                        PUSH EDX
-004A4042  E8 73 E8 F5 FF            CALL 0x004028ba
+STGroupBoatC::DistributeDock::override::prt_4a4042_6c9e7102:
+004A4042  E8 73 E8 F5 FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 004A4047  8D 4D F4                  LEA ECX,[EBP + -0xc]
 004A404A  51                        PUSH ECX
 004A404B  6A 03                     PUSH 0x3

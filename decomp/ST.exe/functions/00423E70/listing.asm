@@ -1,4 +1,4 @@
-FUN_00423e70:
+STGroupBoatC::sub_00423E70:
 00423E70  55                        PUSH EBP
 00423E71  8B EC                     MOV EBP,ESP
 00423E73  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

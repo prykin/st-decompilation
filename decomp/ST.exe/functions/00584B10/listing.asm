@@ -52,7 +52,7 @@ FUN_00584b10:
 00584BAF  E8 8C 06 E8 FF            CALL 0x00405240
 00584BB4  8B 17                     MOV EDX,dword ptr [EDI]
 00584BB6  8B CF                     MOV ECX,EDI
-00584BB8  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]
+00584BB8  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]  ; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/void;pointer:/void
 00584BBE  A1 64 67 80 00            MOV EAX,[0x00806764]
 00584BC3  6A 1D                     PUSH 0x1d
 00584BC5  68 D4 B8 7C 00            PUSH 0x7cb8d4

@@ -13,7 +13,8 @@ STDestC * __cdecl CreateSTDest(void)
 {
   STDestC *pSVar1;
 
-  pSVar1 = (STDestC *)FUN_006b04d0(0x3af);
+  /* ST_CALLSITE[006023C5]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STDestC; signature=__stdcall;pointer:/STDestC;/uint */
+  pSVar1 = FUN_006b04d0(0x3af);
   if (pSVar1 != nullptr) {
     pSVar1 = STDestC::STDestC(pSVar1);
     return pSVar1;

@@ -30,7 +30,7 @@ void __fastcall ST3DSMAPContext::sub_006E1050(ST3DSMAPContext *param_1)
   int local_24;
   float local_18;
   float local_14;
-  undefined4 local_10;
+  uint local_10;
   int local_c;
   int local_8;
 
@@ -50,6 +50,7 @@ void __fastcall ST3DSMAPContext::sub_006E1050(ST3DSMAPContext *param_1)
   iVar3 = iVar3 * uVar1;
   if (iVar3 - param_1->field_02B4 != 0 && param_1->field_02B4 <= iVar3) {
     param_1->field_02B4 = iVar3;
+    /* ST_CALLSITE[006E1100]: CALL 0x006acf50; direct=006ACF50 Library::DKW::LIB::MemRealloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
     puVar4 = Library::DKW::LIB::MemRealloc(param_1->field_02B0,iVar3 * 2);
     param_1->field_02B0 = puVar4;
   }
@@ -64,6 +65,7 @@ void __fastcall ST3DSMAPContext::sub_006E1050(ST3DSMAPContext *param_1)
   local_18 = ((float)local_8 + (float)_DAT_007901c0) * (float)param_1->field_00C8;
   local_10 = 0;
   local_14 = ((float)local_c + (float)_DAT_007901c0) * (float)param_1->field_00C8;
+
   sub_006E25D0(param_1,&local_28,&local_18,0.0,0.0,0.0,1);
   iVar3 = (local_28 >> 0x10) % param_1->field_02C0;
   param_1->field_02C8 = iVar3;
@@ -75,7 +77,9 @@ void __fastcall ST3DSMAPContext::sub_006E1050(ST3DSMAPContext *param_1)
   if (iVar3 != 0) {
     param_1->field_02CC = iVar3 - param_1->field_02C4;
   }
+
   FUN_006ce6c0(param_1->field_02B0,param_1->field_02B4,30000);
+
   sub_006DE9C0(param_1);
   if (param_1->field_0358 != 0) {
     *(AnonPointee_ST3DSMAPContext_0280 **)(param_1->field_0358 + 0x280) = param_1->field_0280;
@@ -100,6 +104,7 @@ void __fastcall ST3DSMAPContext::sub_006E1050(ST3DSMAPContext *param_1)
                  ((double)param_1->field_0378 + _DAT_0079b168) * param_1->field_0368 +
                  *(double *)&this->field_0x78);
     sub_006DDBE0((ST3DSMAPContext *)param_1->field_0358);
+
     sub_006DE9C0((ST3DSMAPContext *)param_1->field_0358);
     *(undefined4 *)(param_1->field_0358 + 0x134) = 0;
     param_1->field_0140 = nullptr;

@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_0060dab0(AnonShape_0060DAB0_7A3B9916 *param_1)
+undefined4 __fastcall FUN_0060dab0(RecoveredRecordView_0060DAB0_E9F1DDF5 *param_1)
 
 {
   short *psVar1;
@@ -70,6 +70,7 @@ undefined4 __fastcall FUN_0060dab0(AnonShape_0060DAB0_7A3B9916 *param_1)
               if (iVar4 - (iVar5 * sVar2) / 10000 < param_1->field_01F9) {
                 if ((STField<int>(iVar11,0x4) == 0) && (-1 < (int)STField<uint>(iVar11,0x3C))) {
                   STField<int>(iVar11,0x24) = param_1->field_0244->field_0020 + local_c;
+
                   Library::Ourlib::ST3DSMAP::SprShow
                             (g_sT3DSMAPContext_00807598,STField<uint>(iVar11,0x3C),0);
                   STField<undefined4>(iVar11,0x4) = 1;

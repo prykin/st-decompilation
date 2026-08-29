@@ -19,7 +19,7 @@ STColl3C::CreateAddSpr:
 005F94F3  85 F6                     TEST ESI,ESI
 005F94F5  75 3D                     JNZ 0x005f9534
 005F94F7  6A 6C                     PUSH 0x6c
-005F94F9  E8 72 17 0B 00            CALL 0x006aac70
+005F94F9  E8 72 17 0B 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 005F94FE  8B 55 FC                  MOV EDX,dword ptr [EBP + -0x4]
 005F9501  8B F8                     MOV EDI,EAX
 005F9503  B9 1B 00 00 00            MOV ECX,0x1b

@@ -42,7 +42,7 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,ushort param
   int local_78;
   undefined4 *local_74 [9];
   int local_50;
-  undefined4 local_48 [3];
+  uint local_48 [3];
   ushort local_3c;
   ushort local_3a;
   int local_20;
@@ -50,7 +50,7 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,ushort param
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
+  uint local_8;
   uint *puVar13;
   puStack_c = &DAT_0079d1c8;
   puStack_10 = &LAB_0072d964;

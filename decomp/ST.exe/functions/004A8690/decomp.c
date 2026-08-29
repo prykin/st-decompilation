@@ -18,20 +18,20 @@ void __thiscall STGroupBoatC::GenSwitch(STGroupBoatC *this,int param_1)
   int iVar4;
   uint index;
   uint uVar5;
-  undefined1 local_8 [4];
-
+  byte local_8 [4];
   uVar5 = 0;
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  uVar1 = *(uint *)(this->field_0029 + 0xc);
+  uVar1 = this->field_0029->count;
   if (uVar1 != 0) {
     index = 0;
     do {
-      DArrayGetElement((DArrayTy *)this->field_0029,index,local_8);
+
+      DArrayGetElement(this->field_0029,index,local_8);
       if (STPiece<0,2>(local_8) != 0xffff) {
         /* ST_CALLSITE[004A86D2]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
         this_00 = STAllPlayersC::GetObjPtr
                             (g_allPlayers_007FA174,this->field_0024,STPiece<0,2>(local_8),CASE_1);
         if (this_00 == nullptr) {
+
           iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0x1742,0,0,
                                      "%s","STGroupBoatC::GenSwitch NULL");
           if (iVar3 != 0) {

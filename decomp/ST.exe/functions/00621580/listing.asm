@@ -25,7 +25,7 @@ SndUnderAttMenegC::sub_00621580:
 LAB_006215ba:
 006215BA  57                        PUSH EDI
 006215BB  8B CE                     MOV ECX,ESI
-006215BD  E8 75 45 DE FF            CALL 0x00405b37
+006215BD  E8 75 45 DE FF            CALL 0x00405b37  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SndUnderAttMenegC; source view only; no Ghidra override
 LAB_006215c2:
 006215C2  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 006215C5  85 C9                     TEST ECX,ECX

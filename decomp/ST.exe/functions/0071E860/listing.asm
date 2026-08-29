@@ -1,4 +1,4 @@
-FUN_0071e860:
+ViewerClassTy::vfunc_8:
 0071E860  55                        PUSH EBP
 0071E861  8B EC                     MOV EBP,ESP
 0071E863  66 8B 45 08               MOV AX,word ptr [EBP + 0x8]

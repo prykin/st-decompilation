@@ -12,7 +12,7 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
   uint uVar4;
   short sVar5;
   uint index;
-  undefined1 local_c [4];
+  byte local_c [4];
   STAllPlayersC *local_8;
 
   uVar4 = 0;
@@ -22,6 +22,7 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
   local_8 = param_1;
   if (0 < (int)dVar1) {
     do {
+
       DArrayGetElement(array,index,local_c);
       if ((STPiece<0,2>(local_c) != 0xffff) &&
          /* ST_CALLSITE[0044CEA0]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */

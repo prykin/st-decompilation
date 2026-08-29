@@ -50,7 +50,8 @@ LAB_004ee393:
 004EE3D5  83 C4 0C                  ADD ESP,0xc
 004EE3D8  50                        PUSH EAX
 004EE3D9  6A 01                     PUSH 0x1
-004EE3DB  E8 00 39 20 00            CALL 0x006f1ce0
+BehPanelTy::PaintBBut::override::prt_4ee3db_6752cf82:
+004EE3DB  E8 00 39 20 00            CALL 0x006f1ce0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int
 004EE3E0  8B 75 F0                  MOV ESI,dword ptr [EBP + -0x10]
 004EE3E3  8B 55 F8                  MOV EDX,dword ptr [EBP + -0x8]
 004EE3E6  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX

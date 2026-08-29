@@ -47,52 +47,52 @@ STAllPlayersC::PutOnPlaceGuardBoats
   char objPtr;
   int local_104 [8];
   int local_e4 [7];
-  undefined4 local_c8;
+  uint local_c8;
   short sStack_c6;
   int local_c4;
-  undefined2 local_c0;
-  undefined2 local_be;
-  undefined2 local_bc;
-  undefined2 local_ba;
-  undefined2 local_b8;
-  undefined2 local_b6;
-  undefined2 local_b4;
-  undefined2 local_b2;
-  undefined2 local_b0;
-  undefined2 local_ae;
-  undefined2 local_ac;
-  undefined2 local_aa;
-  undefined2 local_a8;
-  undefined2 local_a6;
-  undefined2 local_a4;
-  undefined2 local_a2;
-  undefined2 local_a0;
-  undefined2 local_9e;
-  undefined2 local_9c;
-  undefined2 local_9a;
-  undefined2 local_98;
-  undefined2 local_96;
-  undefined2 local_94;
-  undefined2 local_92;
-  undefined2 local_90;
-  undefined2 local_8e;
-  undefined2 local_8c;
-  undefined2 local_8a;
-  undefined2 local_88;
-  undefined2 local_86;
-  undefined2 local_84;
-  undefined2 local_82;
-  undefined2 local_80;
-  undefined2 local_7e;
-  undefined2 local_7c;
-  undefined2 local_7a;
-  undefined2 local_78;
-  undefined2 local_76;
-  undefined2 local_74;
-  undefined2 local_72;
-  undefined2 local_70;
-  undefined2 local_6e;
-  undefined2 local_6c;
+  ushort local_c0;
+  ushort local_be;
+  ushort local_bc;
+  ushort local_ba;
+  ushort local_b8;
+  ushort local_b6;
+  ushort local_b4;
+  ushort local_b2;
+  ushort local_b0;
+  ushort local_ae;
+  ushort local_ac;
+  ushort local_aa;
+  ushort local_a8;
+  ushort local_a6;
+  ushort local_a4;
+  ushort local_a2;
+  ushort local_a0;
+  ushort local_9e;
+  ushort local_9c;
+  ushort local_9a;
+  ushort local_98;
+  ushort local_96;
+  ushort local_94;
+  ushort local_92;
+  ushort local_90;
+  ushort local_8e;
+  ushort local_8c;
+  ushort local_8a;
+  ushort local_88;
+  ushort local_86;
+  ushort local_84;
+  ushort local_82;
+  ushort local_80;
+  ushort local_7e;
+  ushort local_7c;
+  ushort local_7a;
+  ushort local_78;
+  ushort local_76;
+  ushort local_74;
+  ushort local_72;
+  ushort local_70;
+  ushort local_6e;
+  ushort local_6c;
   short local_6a [33];
   STAllPlayersC *local_28;
   STBoatC *local_24;
@@ -198,6 +198,7 @@ STAllPlayersC::PutOnPlaceGuardBoats
     }
     else {
       sVar4 = (short)param_6;
+
       iVar5 = FUN_006acf0d((short)(sVar3 * 0xc9 + 100),(short)(sVar2 * 0xc9 + 100),0,
                            (short)((short)param_5 * 0xc9 + 100),
                            (short)(sVar4 * 0xc9 + 100),0);
@@ -248,10 +249,12 @@ STAllPlayersC::PutOnPlaceGuardBoats
               local_8 = local_1c;
               do {
                 psVar14 = psVar14 + 3;
+
                 DArrayGetElement(param_8,local_8,&param_5);
-                /* ST_CALLSITE[00448D10]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-                pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
+                /* ST_CALLSITE[00448D10]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum */
+                pSVar8 = GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                 if (pSVar8 == nullptr) {
+
                   local_EAX_3288 =
                        ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d64,0,0,
                                           "%s","STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_135");
@@ -273,7 +276,8 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 local_10 = CONCAT22(sVar11,(undefined2)local_10);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_c = CONCAT22(psVar14[1],sVar4);
-                iVar9 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
+                /* ST_CALLSITE[00448D61]: CALL 0x00402edc; direct=00402EDC STGameObjC::sub_0045FF10 */
+                iVar9 = STGameObjC::sub_0045FF10((STGameObjC *)pSVar8);
                 if (iVar9 == 5) {
                   /* ST_CALLSITE[00448D89]: CALL 0x00401cfd; direct=00401CFD STBoatC::sub_00490CD0 */
                   STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
@@ -310,10 +314,12 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 puVar13 = &local_be;
                 uVar15 = local_8;
                 do {
+
                   DArrayGetElement(param_8,uVar15,&param_5);
                   /* ST_CALLSITE[004487BC]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                   pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                   if (pSVar8 == nullptr) {
+
                     local_EAX_1893 =
                          ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d83,0,0,
                                             "%s",
@@ -327,7 +333,8 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   local_10 = CONCAT22((short)local_24 + 3 + sVar3,(undefined2)local_10);
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_c = CONCAT22(*puVar13,puVar13[-1] + sVar2);
-                  iVar6 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
+                  /* ST_CALLSITE[004487EE]: CALL 0x00402edc; direct=00402EDC STGameObjC::sub_0045FF10 */
+                  iVar6 = STGameObjC::sub_0045FF10((STGameObjC *)pSVar8);
                   if (iVar6 == 5) {
                     /* ST_CALLSITE[00448816]: CALL 0x00401cfd; direct=00401CFD STBoatC::sub_00490CD0 */
                     STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
@@ -364,10 +371,12 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 local_8 = local_1c;
                 do {
                   psVar14 = psVar14 + 3;
+
                   DArrayGetElement(param_8,local_8,&param_5);
-                  /* ST_CALLSITE[00448643]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-                  pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
+                  /* ST_CALLSITE[00448643]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum */
+                  pSVar8 = GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                   if (pSVar8 == nullptr) {
+
                     local_EAX_1553 =
                          ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d45,0,0,
                                             "%s",
@@ -390,7 +399,8 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   local_10 = CONCAT22(sVar11 + sVar3,(undefined2)local_10);
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_c = CONCAT22(psVar14[1],sVar4);
-                  iVar9 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
+                  /* ST_CALLSITE[0044869A]: CALL 0x00402edc; direct=00402EDC STGameObjC::sub_0045FF10 */
+                  iVar9 = STGameObjC::sub_0045FF10((STGameObjC *)pSVar8);
                   if (iVar9 == 5) {
                     /* ST_CALLSITE[004486C2]: CALL 0x00401cfd; direct=00401CFD STBoatC::sub_00490CD0 */
                     STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
@@ -426,10 +436,12 @@ STAllPlayersC::PutOnPlaceGuardBoats
                 puVar13 = &local_be;
                 uVar15 = local_1c;
                 do {
+
                   DArrayGetElement(param_8,uVar15,&param_5);
                   /* ST_CALLSITE[004484F2]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                   pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                   if (pSVar8 == nullptr) {
+
                     local_EAX_1180 =
                          ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d2c,0,0,
                                             "%s",
@@ -443,7 +455,8 @@ STAllPlayersC::PutOnPlaceGuardBoats
                   local_10 = CONCAT22(puVar13[-1] + sVar3,(undefined2)local_10);
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   local_c = CONCAT22(*puVar13,(sVar2 - (short)local_24) + -3);
-                  iVar6 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
+                  /* ST_CALLSITE[00448525]: CALL 0x00402edc; direct=00402EDC STGameObjC::sub_0045FF10 */
+                  iVar6 = STGameObjC::sub_0045FF10((STGameObjC *)pSVar8);
                   if (iVar6 == 5) {
                     /* ST_CALLSITE[0044854D]: CALL 0x00401cfd; direct=00401CFD STBoatC::sub_00490CD0 */
                     STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
@@ -485,10 +498,12 @@ STAllPlayersC::PutOnPlaceGuardBoats
               uVar15 = local_8;
               if (0 < (int)_param_4) {
                 do {
+
                   DArrayGetElement(param_8,uVar15,&param_5);
                   /* ST_CALLSITE[00448922]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                   local_24 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                   if (local_24 == nullptr) {
+
                     local_EAX_2921 =
                          ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2e0b,0,0,
                                             "%s",
@@ -534,6 +549,7 @@ LAB_00448aaf:
                         break;
                       default:
 switchD_004489a9_caseD_1:
+
                         iVar8 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2e63,0
                                                    ,0,"%s",
                                                    "STAllPlayersC::PutOnPlaceGuardBoats incorrect direction");
@@ -614,10 +630,12 @@ LAB_00448bc0:
                     local_c = CONCAT22(sVar11,sVar4);
                   }
                   pSVar8 = local_24;
-                  iVar9 = thunk_FUN_0045ff10((STGameObjC *)local_24);
+                  /* ST_CALLSITE[00448BD2]: CALL 0x00402edc; direct=00402EDC STGameObjC::sub_0045FF10 */
+                  iVar9 = STGameObjC::sub_0045FF10((STGameObjC *)local_24);
                   /* ST_CALLSITE[00448BE0]: CALL 0x00404df9; direct=00404DF9 STBoatC::CheckPBoxCmd */
                   if (((iVar9 == 5) && (uVar7 = STBoatC::CheckPBoxCmd(pSVar8,CASE_3), uVar7 == 1))
-                     || (iVar9 = thunk_FUN_0045ff10((STGameObjC *)pSVar8), iVar9 != 5)) {
+                     /* ST_CALLSITE[00448BF2]: CALL 0x00402edc; direct=00402EDC STGameObjC::sub_0045FF10 */
+                     || (iVar9 = STGameObjC::sub_0045FF10((STGameObjC *)pSVar8), iVar9 != 5)) {
                     /* ST_CALLSITE[00448C29]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
                     STBoatC::CmdToObj(pSVar8,CASE_5,&local_18);
                   }
@@ -657,10 +675,12 @@ LAB_00448bc0:
               puVar13 = &local_be;
               uVar15 = local_8;
               do {
+
                 DArrayGetElement(param_8,uVar15,&param_5);
                 /* ST_CALLSITE[00448EA2]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                 pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                 if (pSVar8 == nullptr) {
+
                   local_EAX_3660 =
                        ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2d9b,0,0,
                                           "%s","STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_180");
@@ -673,7 +693,8 @@ LAB_00448bc0:
                 local_10 = CONCAT22((sVar3 - (short)local_24) + -3,(undefined2)local_10);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_c = CONCAT22(*puVar13,puVar13[-1] + sVar2);
-                iVar6 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
+                /* ST_CALLSITE[00448ED5]: CALL 0x00402edc; direct=00402EDC STGameObjC::sub_0045FF10 */
+                iVar6 = STGameObjC::sub_0045FF10((STGameObjC *)pSVar8);
                 if (iVar6 == 5) {
                   /* ST_CALLSITE[00448EFD]: CALL 0x00401cfd; direct=00401CFD STBoatC::sub_00490CD0 */
                   STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
@@ -710,10 +731,12 @@ LAB_00448bc0:
               local_8 = local_1c;
               do {
                 psVar14 = psVar14 + 3;
+
                 DArrayGetElement(param_8,local_8,&param_5);
-                /* ST_CALLSITE[00449166]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-                pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
+                /* ST_CALLSITE[00449166]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum */
+                pSVar8 = GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                 if (pSVar8 == nullptr) {
+
                   local_EAX_4414 =
                        ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2dd2,0,0,
                                           "%s","STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_225");
@@ -737,7 +760,8 @@ LAB_00448bc0:
                 }
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_10 = CONCAT22(sVar11,(undefined2)local_10);
-                iVar9 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
+                /* ST_CALLSITE[004491C7]: CALL 0x00402edc; direct=00402EDC STGameObjC::sub_0045FF10 */
+                iVar9 = STGameObjC::sub_0045FF10((STGameObjC *)pSVar8);
                 if (iVar9 == 5) {
                   /* ST_CALLSITE[004491EF]: CALL 0x00401cfd; direct=00401CFD STBoatC::sub_00490CD0 */
                   STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
@@ -772,10 +796,12 @@ LAB_00448bc0:
               puVar13 = &local_be;
               uVar15 = local_8;
               do {
+
                 DArrayGetElement(param_8,uVar15,&param_5);
                 /* ST_CALLSITE[004492E9]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                 pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                 if (pSVar8 == nullptr) {
+
                   local_EAX_4754 =
                        ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2df1,0,0,
                                           "%s","STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_270");
@@ -788,7 +814,8 @@ LAB_00448bc0:
                 local_10 = CONCAT22(puVar13[-1] + sVar3,(undefined2)local_10);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_c = CONCAT22(*puVar13,(short)local_24 + 3 + sVar2);
-                iVar6 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
+                /* ST_CALLSITE[0044931B]: CALL 0x00402edc; direct=00402EDC STGameObjC::sub_0045FF10 */
+                iVar6 = STGameObjC::sub_0045FF10((STGameObjC *)pSVar8);
                 if (iVar6 == 5) {
                   /* ST_CALLSITE[00449343]: CALL 0x00401cfd; direct=00401CFD STBoatC::sub_00490CD0 */
                   STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);
@@ -825,10 +852,12 @@ LAB_00448bc0:
               local_8 = local_1c;
               do {
                 psVar14 = psVar14 + 3;
+
                 DArrayGetElement(param_8,local_8,&param_5);
-                /* ST_CALLSITE[00448FF3]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-                pSVar8 = (STBoatC *)GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
+                /* ST_CALLSITE[00448FF3]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum */
+                pSVar8 = GetObjPtr(local_28,objPtr,(ushort)param_5,CASE_1);
                 if (pSVar8 == nullptr) {
+
                   local_EAX_4031 =
                        ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2db3,0,0,
                                           "%s","STAllPlayersC::PutOnPlaceGuardBoats NULL DIR_315");
@@ -850,7 +879,8 @@ LAB_00448bc0:
                 local_10 = CONCAT22(sVar11 + sVar3,(undefined2)local_10);
                 /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                 local_c = CONCAT22(psVar14[1],sVar4);
-                iVar9 = thunk_FUN_0045ff10((STGameObjC *)pSVar8);
+                /* ST_CALLSITE[00449048]: CALL 0x00402edc; direct=00402EDC STGameObjC::sub_0045FF10 */
+                iVar9 = STGameObjC::sub_0045FF10((STGameObjC *)pSVar8);
                 if (iVar9 == 5) {
                   /* ST_CALLSITE[00449070]: CALL 0x00401cfd; direct=00401CFD STBoatC::sub_00490CD0 */
                   STBoatC::sub_00490CD0(pSVar8,local_18,local_14,local_10,local_c);

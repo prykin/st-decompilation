@@ -1,6 +1,6 @@
 program=ST.exe
-functions_scanned=1544
-exact_copy_candidates=1
+functions_scanned=1659
+exact_copy_candidates=3
 nested_struct_apply=1
 zero_spans=94
 note=Zero spans are extent evidence, not proof that the entire range has one element type.

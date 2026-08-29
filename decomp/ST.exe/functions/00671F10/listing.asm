@@ -91,7 +91,7 @@ LAB_00671fd8:
 00672011  52                        PUSH EDX
 00672012  56                        PUSH ESI
 00672013  50                        PUSH EAX
-00672014  E8 60 17 D9 FF            CALL 0x00403779
+00672014  E8 60 17 D9 FF            CALL 0x00403779  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_0064A970; source view only; no Ghidra override
 00672019  83 C4 08                  ADD ESP,0x8
 0067201C  8B CB                     MOV ECX,EBX
 0067201E  50                        PUSH EAX
@@ -106,7 +106,7 @@ LAB_00672029:
 00672034  52                        PUSH EDX
 00672035  56                        PUSH ESI
 00672036  50                        PUSH EAX
-00672037  E8 3D 17 D9 FF            CALL 0x00403779
+00672037  E8 3D 17 D9 FF            CALL 0x00403779  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_0064A970; source view only; no Ghidra override
 0067203C  83 C4 08                  ADD ESP,0x8
 0067203F  8B CB                     MOV ECX,EBX
 00672041  50                        PUSH EAX

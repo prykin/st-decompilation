@@ -8,7 +8,7 @@
 void __thiscall FSGSTy::Download(FSGSTy *this,undefined4 param_1,undefined4 param_2)
 
 {
-  ushort *puVar1;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar1;
   FSGSTy *pFVar3;
   int errorCode;
   uint *puVar4;
@@ -25,16 +25,18 @@ void __thiscall FSGSTy::Download(FSGSTy *this,undefined4 param_1,undefined4 para
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
+
     errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
     pFVar3 = local_8;
     if (errorCode == 0) {
-      puVar1 = local_8->field_1AC0;
-      uVar9 = *(uint *)(puVar1 + 10);
+      pRVar1 = (RecoveredRecord_006B4FA0_DAC3A217 *)local_8->field_1AC0;
+      uVar9 = *(uint *)&pRVar1[1].field_0x4;
       if (uVar9 == 0) {
-        uVar9 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-                *(int *)(puVar1 + 4);
+        uVar9 = ((uint)pRVar1->field_000E * *(int *)&pRVar1->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+                *(int *)&pRVar1->field_0x8;
       }
-      puVar4 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
+
+      puVar4 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0(pRVar1));
       for (uVar8 = uVar9 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
         *puVar4 = 0xffffffff;
         puVar4 = puVar4 + 1;
@@ -43,18 +45,22 @@ void __thiscall FSGSTy::Download(FSGSTy *this,undefined4 param_1,undefined4 para
         *(undefined1 *)puVar4 = 0xff;
         puVar4 = (undefined4 *)((int)puVar4 + 1);
       }
+
       ccFntTy::SetSurf(pFVar3->array_00BC[0xc].field_01F3,(int)pFVar3->field_1AC0,0,0,0x16,0x1b8,
                        0xf0);
       pcVar5 = LoadResourceString(0x25bb,g_hINSTANCE_00807618);
       pcVar6 = LoadResourceString(0x25ba,g_hINSTANCE_00807618);
       /* ST_CALLSITE[005A152A]: CALL dword ptr [0x0085bde8] */
       wsprintfA((LPSTR)&DAT_0080f33a,"%s %d%%\n(%d %s)",pcVar6,param_1,param_2,pcVar5);
+
       ccFntTy::WrTxt(pFVar3->array_00BC[0xc].field_01F3,(char *)&DAT_0080f33a,-2,-1,2,-1,-1);
+
       FUN_006b35d0((int *)g_ddxContext_008075A8,pFVar3->field_1ABC);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
     g_currentExceptionFrame = local_4c.previous;
+
     iVar7 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x941,0,errorCode,
                                "%s","FSGSTy::Download");
     if (iVar7 != 0) {

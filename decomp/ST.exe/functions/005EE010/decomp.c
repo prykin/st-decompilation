@@ -10,7 +10,7 @@ FUN_005ee010(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   STField<undefined4>(this,0x27f) = param_3;
   if (STField<byte>(this,0x251) != param_4) {
     STField<char>(this,0x251) = (char)param_4;
-    thunk_FUN_005ef5f0((int)this);
+    thunk_FUN_005ef5f0(this);
   }
   return STField<undefined4>(this,0x23a);
 }

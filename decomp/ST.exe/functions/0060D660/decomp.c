@@ -25,11 +25,13 @@ int __thiscall STFieldC::sub_0060D660(STFieldC *this,int *param_1)
 
   iVar6 = this->field_023C;
   size = iVar6 * 0x44;
+
   pvVar1 = Library::DKW::LIB::MemAlloc(size);
   this->field_0244 = pvVar1;
   if (pvVar1 == nullptr) {
     return 0;
   }
+
   iVar2 = thunk_FUN_0062ca00();
   piVar6 = param_1;
   piVar7 = this->field_0244;
@@ -56,6 +58,7 @@ int __thiscall STFieldC::sub_0060D660(STFieldC *this,int *param_1)
       if (((iVar6 != 0) || (*(int *)((int)pvVar1 + local_14 + 8) != 0)) && (*piVar7 != 0)) {
         piVar7 = piVar7 + 1;
         if (iVar6 != 0) {
+
           uVar3 = thunk_FUN_0062ca70((undefined4 *)((int)pvVar1 + local_14 + 0x40),piVar7);
           if (uVar3 != 0) {
             local_8 = local_8 + iVar2;
@@ -63,6 +66,7 @@ int __thiscall STFieldC::sub_0060D660(STFieldC *this,int *param_1)
           piVar7 = (int *)((int)piVar7 + iVar2);
         }
         if (*(int *)(local_14 + 8 + (int)this->field_0244) != 0) {
+
           pvVar1 = Library::DKW::LIB::MemAlloc(*(int *)((int)this->field_0244 + local_14 + 4) << 2);
           *(void **)(local_14 + 8 + (int)this->field_0244) = pvVar1;
           piVar8 = *(int **)((int)this->field_0244 + local_14 + 8);

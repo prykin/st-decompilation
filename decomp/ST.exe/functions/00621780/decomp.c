@@ -126,8 +126,10 @@ void __thiscall SndUnderAttMenegC::sub_00621780(SndUnderAttMenegC *this,uint par
       break;
     case 8:
       uVar3 = 8;
+      /* ST_CALLSITE[0062191A]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/PopUpTy; source view only; no Ghidra override */
       text = LoadResourceString(0x274a,g_hINSTANCE_00807618);
-      thunk_FUN_0052d320(g_popUp_008016D8,text,uVar3);
+      /* ST_CALLSITE[00621926]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
+      PopUpTy::sub_0052D320(g_popUp_008016D8,text,uVar3);
       if (DAT_0080874e == '\x01') {
         soundId = 0xba;
       }

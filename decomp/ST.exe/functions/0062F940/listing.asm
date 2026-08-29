@@ -57,7 +57,7 @@ LAB_0062f9c4:
 0062F9F1  51                        PUSH ECX
 0062F9F2  50                        PUSH EAX
 0062F9F3  89 4D F8                  MOV dword ptr [EBP + -0x8],ECX
-0062F9F6  E8 55 D5 07 00            CALL 0x006acf50
+0062F9F6  E8 55 D5 07 00            CALL 0x006acf50  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/byte; source view only; no Ghidra override
 0062F9FB  85 C0                     TEST EAX,EAX
 0062F9FD  74 35                     JZ 0x0062fa34
 0062F9FF  8B 5D F4                  MOV EBX,dword ptr [EBP + -0xc]

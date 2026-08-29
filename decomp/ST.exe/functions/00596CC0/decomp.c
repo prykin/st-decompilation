@@ -32,9 +32,11 @@ void __thiscall FSGSTy::PaintFSGS(FSGSTy *this,char param_1)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar2 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x1c8,0,errorCode,
                                "%s","FSGSTy::PaintFSGS");
     if (iVar2 != 0) {
@@ -94,7 +96,7 @@ LAB_00596d7a:
   case 6:
     if ((this_00->field_1F27 == nullptr) && (param_1 == '\0')) {
       /* ST_CALLSITE[00596E99]: CALL 0x004023b0; direct=004023B0 FSGSTy::OutChSlProc */
-      OutChSlProc(this_01,(AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,0,0,0x13,0x5e,
+      OutChSlProc(this_01,(RecoveredGlobalRecordView_00854EB8 *)g_dDXContext_0080759C,0,0,0x13,0x5e,
                   0x1bf,0x175,&(this_00->array_00BC[0xc].field_01DB)->field_0140);
     }
     if (this_00->field_1F2B != nullptr) {
@@ -107,7 +109,7 @@ LAB_00596d7a:
     }
     this_02 = &(this_00->array_00BC[0xc].field_01DB)->field_0140;
     /* ST_CALLSITE[00596EDD]: CALL 0x0040303f; direct=0040303F FSGSTy::OutTRGlProc */
-    OutTRGlProc((FSGSTy *)this_02,(AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,
+    OutTRGlProc((FSGSTy *)this_02,(RecoveredGlobalRecordView_00854EB8 *)g_dDXContext_0080759C,
                 nullptr,nullptr,(StartServTy *)0x1e9,0x5e,0x124,0x175,(int)this_02);
     g_currentExceptionFrame = local_50.previous;
     return;
@@ -123,7 +125,7 @@ LAB_00596d8b:
     if ((this_00->field_1F2F == nullptr) && (param_1 == '\0')) {
       /* ST_CALLSITE[00596F2C]: CALL 0x00403981; direct=00403981 FSGSTy::OutSGlProc */
       OutSGlProc((FSGSTy *)g_dDXContext_0080759C,
-                 (AnonShape_GLOBAL_0080759C_9638EF10 *)g_dDXContext_0080759C,nullptr,
+                 (RecoveredGlobalRecordView_00854EB8 *)g_dDXContext_0080759C,nullptr,
                  nullptr,0x199,0x5e,0x174,0x175,
                  (int)&(this_00->array_00BC[0xc].field_01DB)->field_0140);
       /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */

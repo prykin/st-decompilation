@@ -42,7 +42,7 @@ LAB_0067f33a:
 0067F342  68 8C 86 84 00            PUSH 0x84868c
 0067F347  50                        PUSH EAX
 0067F348  A3 24 8A 84 00            MOV [0x00848a24],EAX
-0067F34D  E8 53 27 D8 FF            CALL 0x00401aa5
+0067F34D  E8 53 27 D8 FF            CALL 0x00401aa5  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 0067F352  83 C4 04                  ADD ESP,0x4
 0067F355  50                        PUSH EAX
 0067F356  E8 E5 3B D8 FF            CALL 0x00402f40

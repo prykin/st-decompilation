@@ -19,9 +19,11 @@ undefined4 __thiscall TLOEmbryoTy::sub_004D10A0(TLOEmbryoTy *this,int param_1)
     uVar2 = (*(int *)(this->field_01F5 + 0x18 + this->field_02F0 * 0x24) -
             *(int *)(this->field_01F5 + this->field_02F0 * 0x24 + 0x10)) + uVar1;
   }
+
   thunk_FUN_004abce0(&this->vtable_at_1d5,(byte)this->field_02F0,uVar1,uVar1 + 8,'\0');
   /* ST_CALLSITE[004D1149]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   STT3DSprC::SetCurFase((STT3DSprC *)&this->vtable_at_1d5,(char)this->field_02F0,uVar2);
+
   thunk_FUN_004abce0(&this->vtable_at_1d5,(char)this->field_02F0 - 1,uVar1,uVar1 + 8,'\0');
   /* ST_CALLSITE[004D1177]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   STT3DSprC::SetCurFase((STT3DSprC *)&this->vtable_at_1d5,(char)this->field_02F0 + -1,uVar2);

@@ -14,9 +14,11 @@ undefined4 __fastcall FUN_0045f980(STBoatC *param_1)
   short local_8 [2];
 
   if (param_1->field_00E8 == 1) {
-    thunk_FUN_00417830((AnonShape_00417830_9254190A *)param_1);
+
+    thunk_FUN_00417830((RecoveredRecordView_00417830_39C1D071 *)param_1);
     return 0;
   }
+
   local_EAX_34 = thunk_FUN_00416400((STJellyGunC *)param_1);
   if (local_EAX_34 == 1) {
     return 0;
@@ -45,8 +47,9 @@ undefined4 __fastcall FUN_0045f980(STBoatC *param_1)
     sub_0041C5A0(param_1);
     param_1->field_00FA = 0;
     param_1->field_00FC = 0;
+
     iVar3 = thunk_FUN_00495ff0(param_1->field_005B,param_1->field_005D,param_1->field_005F,
-                               param_1->field_008E,(AnonShape_00495FF0_59081BDD *)param_1);
+                               param_1->field_008E,(RecoveredRecordView_00495FF0_A2A90B23 *)param_1);
     if ((iVar3 == 0) &&
        /* ST_CALLSITE[0045FA4F]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
        (iVar3 = DumpClassC::WritePtr
@@ -54,7 +57,7 @@ undefined4 __fastcall FUN_0045f980(STBoatC *param_1)
                            (RecoveredRecord_DumpClassC_00495EC0 *)param_1), iVar3 == 0)) {
       /* ST_CALLSITE[0045FA65]: CALL 0x004023a1; direct=004023A1 TLOEmbryoTy::sub_0041C3F0 */
       TLOEmbryoTy::sub_0041C3F0((TLOEmbryoTy *)param_1,(undefined *)param_1->field_070A);
-      thunk_FUN_004168b0((int)param_1);
+      thunk_FUN_004168b0((RecoveredRecord_004168B0_1FFF2915 *)param_1);
       return 0;
     }
   }
@@ -62,19 +65,22 @@ undefined4 __fastcall FUN_0045f980(STBoatC *param_1)
     if (local_EAX_34 == 3) {
       uVar1 = param_1->field_0097[param_1->field_00D3 * 4 + 3];
       if (((uVar1 & 0xfff) != 0xffe) && (uVar1 != param_1->field_006C)) {
+
         thunk_FUN_00417740(param_1,param_1->field_006C,uVar1);
       }
       if (param_1->field_008F == -1) {
         param_1->field_008F = 0;
       }
-      thunk_FUN_004168b0((int)param_1);
+      thunk_FUN_004168b0((RecoveredRecord_004168B0_1FFF2915 *)param_1);
       return 0;
     }
     if (local_EAX_34 == 0) {
       /* ST_CALLSITE[0045FB4D]: CALL 0x00405952; direct=00405952 sub_004167A0 */
       sub_004167A0(param_1);
+      /* ST_CALLSITE[0045FB61]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_0040D540_1BB7A4CF; source view only; no Ghidra override */
       this = thunk_FUN_0042b760((char)param_1->field_0024,param_1->field_0030);
       if (this != nullptr) {
+
         iVar2 = thunk_FUN_0040d540((AnonShape_0040D540_1BB7A4CF *)this,
                                    (uint)(ushort)param_1->field_0032);
         switch(iVar2) {
@@ -83,7 +89,8 @@ undefined4 __fastcall FUN_0045f980(STBoatC *param_1)
             param_1->field_008F = 0;
           }
           param_1->field_00FD = 1;
-          thunk_FUN_0040cdb0(this,(uint)(ushort)param_1->field_0032);
+          /* ST_CALLSITE[0045FC28]: CALL 0x00404ff2; direct=00404FF2 STGroupBoatC::sub_0040CDB0 */
+          STGroupBoatC::sub_0040CDB0(this,(uint)(ushort)param_1->field_0032);
           return 1;
         case 1:
           param_1->field_00FA = 0;
@@ -100,7 +107,8 @@ undefined4 __fastcall FUN_0045f980(STBoatC *param_1)
             param_1->field_00FC = param_1->field_00FC + '\x01';
             param_1->field_00FA = 0;
             param_1->field_00FD = 1;
-            thunk_FUN_0040cdb0(this,(uint)(ushort)param_1->field_0032);
+            /* ST_CALLSITE[0045FBF5]: CALL 0x00404ff2; direct=00404FF2 STGroupBoatC::sub_0040CDB0 */
+            STGroupBoatC::sub_0040CDB0(this,(uint)(ushort)param_1->field_0032);
             return 2;
           }
           break;

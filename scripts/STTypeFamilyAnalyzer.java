@@ -37,6 +37,7 @@ import ghidra.program.model.data.TypeDef;
 import ghidra.program.model.data.Undefined;
 import ghidra.program.model.lang.Register;
 import ghidra.program.model.listing.Data;
+import ghidra.program.model.listing.CommentType;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.Instruction;
@@ -51,11 +52,12 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
     private static final String POINTER_SHAPES = "/SubmarineTitans/Recovered/PointerShapes/";
     private static final String CLASS_POINTEES = "/SubmarineTitans/Recovered/ClassPointees/";
     private static final String VIEW_MARKER = "[ST_VIEW_ONLY]";
+    private static final String IDENTITY_VIEW_MARKER = "[ST_IDENTITY_VIEW]";
     private static final String ANCHOR_MARKER = "[ST_SEMANTIC_ANCHOR]";
     private static final Pattern AUDIT_POINTER_ARGUMENT = Pattern.compile(
-        "^p([0-9]+)=pointer:(/\\S*(?:AnonShape|AnonPointee|AnonReceiver)\\S*)\\b");
+        "^p([0-9]+)=pointer:(/\\S*(?:AnonShape|AnonPointee|AnonReceiver|RecoveredReceiver)\\S*)\\b");
     private static final Pattern AUDIT_FIRST_POINTER_ARGUMENT = Pattern.compile(
-        "^p0=pointer:(/\\S*(?:AnonShape|AnonPointee|AnonReceiver)\\S*)\\b");
+        "^p0=pointer:(/\\S*(?:AnonShape|AnonPointee|AnonReceiver|RecoveredReceiver)\\S*)\\b");
     private static final Pattern ANON_ADDRESS =
         Pattern.compile("(?i)Anon(?:Shape|Receiver)_([0-9a-f]{8})");
     private static final Pattern SOURCE_BASENAME = Pattern.compile(
@@ -92,14 +94,23 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
             List<Structure> anchors = new ArrayList<>(anchorSet);
             boolean uniqueNamed = named.size() == 1;
             boolean uniqueAnchor = anchors.size() == 1;
-            List<Structure> receiverAnchors = anonymous.stream()
+            // Every generated HiddenThis namespace with at least one owned receiver
+            // function is already an independent identity.  A larger sibling namespace
+            // does not subsume it merely because their current sparse layouts happen to
+            // match.  Automatic consolidation is valid only when exactly one member has
+            // any namespace ownership, and that sole member is corroborated by multiple
+            // functions.  This also prevents TypeFamily from fighting an exact typed-call
+            // boundary recovered by PointerShape on every fixed-point pass.
+            List<Structure> receiverIdentities = anonymous.stream()
                 .filter(this::hiddenThisStructure)
-                .filter(type -> ownedReceiverFunctions(type) >= 2).toList();
+                .filter(type -> ownedReceiverFunctions(type) >= 1).toList();
             boolean hiddenThisGroup = named.isEmpty() && anonymous.stream()
                 .allMatch(this::hiddenThisStructure);
-            boolean uniqueReceiverAnchor = hiddenThisGroup && receiverAnchors.size() == 1;
+            boolean uniqueReceiverAnchor = hiddenThisGroup &&
+                receiverIdentities.size() == 1 &&
+                ownedReceiverFunctions(receiverIdentities.get(0)) >= 2;
             Structure canonical = uniqueAnchor ? anchors.get(0) :
-                uniqueReceiverAnchor ? receiverAnchors.get(0) : anonymous.get(0);
+                uniqueReceiverAnchor ? receiverIdentities.get(0) : anonymous.get(0);
             int fields = meaningfulFields(canonical);
             int concrete = concreteFields(canonical);
             // Equal offsets and widths alone do not prove type identity.  Earlier versions
@@ -157,6 +168,9 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
             redirects, contextualPromotions));
         contextualPromotions.addAll(sourceFunctionFamilyPromotions(directory,
             redirects, contextualPromotions));
+        StableViewResult stableViews = stableRecordViewPromotions(redirects,
+            contextualPromotions);
+        contextualPromotions.addAll(stableViews.promotions);
         contextualPromotions.sort(
             Comparator.comparing(row -> row.sourceType));
         for (ContextualPromotion promotion : contextualPromotions)
@@ -171,6 +185,8 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         writeAnonymousAudit(directory.resolve("anonymous_type_audit.tsv"), anonymousAudit);
         writeContextualPromotions(directory.resolve(
             "contextual_record_promotions.tsv"), contextualPromotions);
+        writeRecordIdentityViewAudit(directory.resolve(
+            "record_identity_view_audit.tsv"), stableViews.audit);
         writeRows(directory.resolve("type_family_proposals.tsv"), rows);
         writePolymorphicReceiverCallsites(directory.resolve(
             "polymorphic_receiver_callsites.tsv"));
@@ -184,7 +200,7 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
 
     private boolean hiddenThisStructure(Structure structure) {
         return structure.getPathName().startsWith(
-            "/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_") &&
+            "/SubmarineTitans/Recovered/HiddenThis/") &&
             structure.getDescription() != null &&
             structure.getDescription().contains("[STHiddenThisApplier generated]");
     }
@@ -274,7 +290,8 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
     private boolean semanticAnchor(Structure structure) {
         String path = structure.getPathName();
         String description = structure.getDescription();
-        if (description != null && description.contains(VIEW_MARKER)) return false;
+        if (description != null && (description.contains(VIEW_MARKER) ||
+                description.contains(IDENTITY_VIEW_MARKER))) return false;
         if (description != null && description.contains(ANCHOR_MARKER)) return true;
         if (!path.matches("/[A-Za-z_][A-Za-z0-9_]*")) return false;
         DataTypeComponent first = structure.getComponentAt(0);
@@ -521,13 +538,21 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
             variable.getSource() != SourceType.IMPORTED;
         boolean sourceFamily = canonical.startsWith(
             POINTER_SHAPES + "RecoveredSourceFamily_");
+        boolean identityView = canonical.startsWith(
+            POINTER_SHAPES + "RecoveredRecordView_") || canonical.startsWith(
+                POINTER_SHAPES + "RecoveredGlobalRecordView_");
         boolean contextual = sourceFamily || canonical.startsWith(
             POINTER_SHAPES + "RecoveredRecord_");
         String family = sourceFamily ? "SOURCE_FUNCTION_FAMILY" :
+            identityView ? "RECOVERED_RECORD_VIEW" :
             contextual ? "CONTEXTUAL_GENERATED_RECORD" : "EXACT_NAMED_LAYOUT";
         String evidence = sourceFamily ?
             "one script-owned pointer shape is anchored by one library source basename, " +
                 "multiple semantic function names, and exact first-argument call flow" :
+            identityView ?
+                "one hash-intact script-owned pointer-shape identity crosses at least two " +
+                "function boundaries; rename it as an explicitly partial structural view " +
+                "without merging layouts or claiming semantic identity" :
             contextual ?
                 "one script-owned pointer shape is used only by functions with one unique " +
                 "class-owner context; promote its stable machine layout to a generated " +
@@ -576,7 +601,6 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
                     existingRedirects.containsKey(source) ||
                     structure.getLength() < 2 || structure.getLength() > 0x200 ||
                     concreteFields(structure) < 3 || targets.functions < 2 ||
-                    targets.globals != 0 || targets.fields != 0 ||
                     description == null ||
                     !description.contains("[STPointerShapeApplier]") ||
                     !description.contains("generated_layout_sha256="))
@@ -604,11 +628,39 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
                 continue;
             rows.add(new ContextualPromotion(source, target, owner, addr(anchor),
                 structure.getLength(), concreteFields(structure), targets.functions,
-                "unique owner context across every function-typed use; no global or " +
-                "containing-field aliases"));
+                "unique owner context across every function-typed use; the exact " +
+                "script-owned type identity is renamed atomically, so its existing " +
+                "global/containing-field aliases remain the same record rather than " +
+                "acting as independent geometry evidence; global_aliases=" +
+                targets.globals + "; field_aliases=" + targets.fields));
         }
-        rows.sort(Comparator.comparing(row -> row.sourceType));
-        return rows;
+        Map<String, Long> targetCounts = rows.stream().collect(
+            java.util.stream.Collectors.groupingBy(row -> row.targetType,
+                TreeMap::new, java.util.stream.Collectors.counting()));
+        List<ContextualPromotion> disambiguated = new ArrayList<>();
+        for (ContextualPromotion row : rows) {
+            if (targetCounts.getOrDefault(row.targetType, 0L) < 2) {
+                disambiguated.add(row);
+                continue;
+            }
+            // One optimized function can expose several unrelated complete pointer
+            // shapes.  Their origin address is consequently identical, so the owner
+            // and address alone do not form a unique datatype key.  Preserve each
+            // already proven identity by adding its analyzer-generated shape digest;
+            // this is deterministic disambiguation, not a geometry merge.
+            String leaf = row.sourceType.substring(
+                row.sourceType.lastIndexOf('/') + 1);
+            int split = leaf.lastIndexOf('_');
+            String digest = split >= 0 ? leaf.substring(split + 1) :
+                String.format("%08X", row.sourceType.hashCode());
+            disambiguated.add(new ContextualPromotion(row.sourceType,
+                row.targetType + "_" + digest, row.owner, row.anchorFunction,
+                row.length, row.concreteFields, row.functionTargets,
+                row.evidence + "; same-origin sibling shapes disambiguated by the " +
+                    "existing generated shape digest"));
+        }
+        disambiguated.sort(Comparator.comparing(row -> row.sourceType));
+        return disambiguated;
     }
 
     /**
@@ -771,7 +823,7 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
             Structure structure = iterator.next();
             if (scriptOwnedPointerShape(structure) &&
                     structure.getLength() >= 2 && structure.getLength() <= 0x400 &&
-                    concreteFields(structure) >= 3)
+                    structure.getDefinedComponents().length >= 2)
                 structures.put(structure.getPathName(), structure);
         }
         if (structures.isEmpty()) return List.of();
@@ -781,8 +833,10 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
             already.add(promotion.sourceType);
         Map<String, SourceFamilyEvidence> evidence = new TreeMap<>();
 
-        // A source basename is accepted only from a library-owned function whose
-        // first explicit formal already has this exact pointer identity.
+        // A source basename is accepted only from a function whose first explicit
+        // formal already has this exact pointer identity.  Source provenance and
+        // library ownership are independent facts; requiring a LIBRARY tag here
+        // incorrectly excluded application translation units.
         FunctionIterator functions =
             currentProgram.getFunctionManager().getFunctions(true);
         while (functions.hasNext()) {
@@ -790,7 +844,7 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
             Function function = functions.next();
             Parameter first = firstExplicitParameter(function);
             String source = pointedPath(first == null ? null : first.getDataType());
-            if (!structures.containsKey(source) || !libraryFunction(function)) continue;
+            if (!structures.containsKey(source)) continue;
             for (String basename : sourceBasenames(function))
                 evidence.computeIfAbsent(source, ignored -> new SourceFamilyEvidence())
                     .basenames.add(basename);
@@ -798,18 +852,23 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
 
         for (Map<String, String> row : readTsv(audit)) {
             if (!"exact_address_match".equals(safeText(row.get("status")))) continue;
-            String arguments = safeText(row.get("stack_arguments"));
-            Matcher firstArgument = AUDIT_FIRST_POINTER_ARGUMENT.matcher(arguments);
-            if (!firstArgument.find()) continue;
-            String source = firstArgument.group(1);
-            if (!structures.containsKey(source)) continue;
-
             Address targetAddress = currentProgram.getAddressFactory()
                 .getAddress(safeText(row.get("resolved_address")));
             Function target = targetAddress == null ? null :
                 currentProgram.getFunctionManager().getFunctionAt(targetAddress);
             Parameter targetFirst = target == null ? null : firstExplicitParameter(target);
-            if (targetFirst == null ||
+            if (targetFirst == null) continue;
+            String source = "";
+            for (String value : safeText(row.get("stack_arguments"))
+                    .split("\\s*\\|\\s*")) {
+                Matcher argument = AUDIT_POINTER_ARGUMENT.matcher(value);
+                if (argument.find() &&
+                        Integer.parseInt(argument.group(1)) == targetFirst.getOrdinal()) {
+                    source = argument.group(2);
+                    break;
+                }
+            }
+            if (!structures.containsKey(source) ||
                     !source.equals(pointedPath(targetFirst.getDataType()))) continue;
 
             SourceFamilyEvidence item = evidence.computeIfAbsent(source,
@@ -859,7 +918,7 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
                 "source:" + basename, anchor, structure.getLength(),
                 concreteFields(structure),
                 anonymousUsage().getOrDefault(source, new Usage()).functions,
-                "library source basename=" + basename +
+                "source basename=" + basename +
                     "; exact first-argument flows=" + item.exactFlows +
                     "; distinct destinations=" + item.targets.size() +
                     "; semantic functions=" + String.join("|", item.namedFunctions) +
@@ -867,6 +926,166 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
             redirects.put(source, target);
         }
         return result;
+    }
+
+    /**
+     * Once one exact generated pointer-shape datatype is present at several function
+     * boundaries, it is no longer function-local even when its original noun is unknown.
+     * Rename that same managed datatype to an explicitly partial RecordView identity.
+     *
+     * This pass never compares two layouts and never merges types.  The source must still
+     * carry PointerShape provenance and its stored layout hash, and at least two distinct
+     * functions must use that exact managed pointee.  A sole exact global pointer root gives
+     * the view a global-root identity; otherwise the analyzer's own origin address and layout
+     * digest form the deterministic key.  The result deliberately is not a semantic anchor.
+     */
+    private StableViewResult stableRecordViewPromotions(
+            Map<String, String> redirects,
+            List<ContextualPromotion> existingPromotions) throws Exception {
+        Map<String, Set<String>> functionUses = new TreeMap<>();
+        FunctionIterator functions = currentProgram.getFunctionManager().getFunctions(true);
+        while (functions.hasNext()) {
+            monitor.checkCancelled();
+            Function function = functions.next();
+            String address = addr(function.getEntryPoint());
+            addIdentityFunctionUse(functionUses, function.getReturn().getDataType(), address);
+            for (Parameter parameter : function.getParameters())
+                addIdentityFunctionUse(functionUses, parameter.getDataType(), address);
+            for (Variable local : function.getLocalVariables())
+                addIdentityFunctionUse(functionUses, local.getDataType(), address);
+        }
+
+        Map<String, Set<String>> globalRoots = new TreeMap<>();
+        Map<String, Set<String>> globalReferenceFunctions = new TreeMap<>();
+        for (Data data : currentProgram.getListing().getDefinedData(true)) {
+            Structure structure = directPointedStructure(data.getDataType());
+            if (structure != null) {
+                globalRoots.computeIfAbsent(structure.getPathName(), ignored -> new TreeSet<>())
+                    .add(addr(data.getAddress()));
+                var references = currentProgram.getReferenceManager()
+                    .getReferencesTo(data.getAddress());
+                while (references.hasNext()) {
+                    Reference reference = references.next();
+                    Function owner = currentProgram.getFunctionManager()
+                        .getFunctionContaining(reference.getFromAddress());
+                    if (owner != null)
+                        globalReferenceFunctions.computeIfAbsent(structure.getPathName(),
+                            ignored -> new TreeSet<>()).add(addr(owner.getEntryPoint()));
+                }
+            }
+        }
+        Map<String, Integer> fieldUses = new TreeMap<>();
+        Iterator<Structure> parents = currentProgram.getDataTypeManager().getAllStructures();
+        while (parents.hasNext()) {
+            Structure parent = parents.next();
+            for (DataTypeComponent component : parent.getDefinedComponents()) {
+                Structure structure = directPointedStructure(component.getDataType());
+                if (structure != null)
+                    fieldUses.merge(structure.getPathName(), 1, Integer::sum);
+            }
+        }
+
+        Set<String> already = new TreeSet<>(redirects.keySet());
+        for (ContextualPromotion promotion : existingPromotions)
+            already.add(promotion.sourceType);
+        List<ContextualPromotion> promotions = new ArrayList<>();
+        List<RecordIdentityViewAudit> audit = new ArrayList<>();
+        Iterator<Structure> iterator = currentProgram.getDataTypeManager().getAllStructures();
+        while (iterator.hasNext()) {
+            monitor.checkCancelled();
+            Structure structure = iterator.next();
+            if (!structure.getPathName().startsWith(POINTER_SHAPES) ||
+                    !structure.getName().startsWith("AnonShape_")) continue;
+            String source = structure.getPathName();
+            Set<String> usedBy = functionUses.getOrDefault(source, Set.of());
+            Set<String> roots = globalRoots.getOrDefault(source, Set.of());
+            Set<String> globalUsers = globalReferenceFunctions.getOrDefault(source, Set.of());
+            int contained = fieldUses.getOrDefault(source, 0);
+            String status;
+            String target = "";
+            String evidence;
+            boolean apply = false;
+            String description = safeText(structure.getDescription());
+            if (already.contains(source)) {
+                status = "already_has_stronger_identity";
+                evidence = "an earlier semantic/source/contextual promotion owns this exact type";
+            }
+            else if (!scriptOwnedPointerShape(structure) ||
+                    !storedLayoutHashMatches(structure, description)) {
+                status = "stale_or_foreign_generated_baseline";
+                evidence = "PointerShape provenance or stored layout hash is absent/stale";
+            }
+            else if (structure.getDefinedComponents().length < 2) {
+                status = "insufficient_structural_shape";
+                evidence = "fewer than two exact offset/width components do not establish a useful record view";
+            }
+            else if (usedBy.size() < 2 && !(roots.size() == 1 &&
+                    globalUsers.size() >= 2)) {
+                status = "function_local_or_unreferenced";
+                evidence = "exact managed pointee reaches fewer than two distinct function " +
+                    "boundaries and has no unique global root referenced by two functions";
+            }
+            else {
+                String fingerprint = fingerprint(structure).substring(0, 8)
+                    .toUpperCase(Locale.ROOT);
+                String anchor = anonymousAddress(source);
+                String functionAnchor = !usedBy.isEmpty() ? usedBy.iterator().next() :
+                    globalUsers.iterator().next();
+                if (anchor.isBlank()) anchor = functionAnchor;
+                target = roots.size() == 1 ?
+                    POINTER_SHAPES + "RecoveredGlobalRecordView_" + roots.iterator().next() :
+                    POINTER_SHAPES + "RecoveredRecordView_" + anchor + "_" + fingerprint;
+                DataType occupied = currentProgram.getDataTypeManager().getDataType(target);
+                if (occupied != null && (!(occupied instanceof Structure existing) ||
+                        !existing.isEquivalent(structure))) {
+                    status = "target_identity_conflict";
+                    evidence = "deterministic target path is occupied by a different datatype";
+                }
+                else {
+                    apply = true;
+                    status = roots.size() == 1 ?
+                        "unique_global_root_view" : "cross_function_record_view";
+                    evidence = "same hash-intact generated datatype is used by " +
+                        usedBy.size() + " distinct function declarations; global_pointer_roots=" +
+                        roots.size() + "; global_reference_functions=" + globalUsers.size() +
+                        "; containing_pointer_fields=" + contained +
+                        "; this is an identity-preserving rename only—no geometry merge, " +
+                        "complete-layout claim, or semantic noun";
+                    promotions.add(new ContextualPromotion(source, target,
+                        roots.size() == 1 ? "global:" + roots.iterator().next() :
+                            "structural-view", functionAnchor,
+                        structure.getLength(), concreteFields(structure),
+                        Math.max(usedBy.size(), globalUsers.size()), evidence));
+                    redirects.put(source, target);
+                }
+            }
+            audit.add(new RecordIdentityViewAudit(apply, source, target,
+                structure.getLength(), structure.getDefinedComponents().length,
+                concreteFields(structure), usedBy.size(), globalUsers.size(),
+                String.join("|", roots), contained, status, evidence));
+        }
+        promotions.sort(Comparator.comparing(row -> row.sourceType));
+        audit.sort(Comparator.comparing(row -> row.sourceType));
+        return new StableViewResult(promotions, audit);
+    }
+
+    private void addIdentityFunctionUse(Map<String, Set<String>> uses,
+            DataType type, String functionAddress) {
+        Structure structure = directPointedStructure(type);
+        if (structure == null) return;
+        uses.computeIfAbsent(structure.getPathName(), ignored -> new TreeSet<>())
+            .add(functionAddress);
+    }
+
+    private Structure directPointedStructure(DataType type) {
+        Set<DataType> seen = new HashSet<>();
+        while (type instanceof TypeDef alias && seen.add(type))
+            type = alias.getBaseDataType();
+        if (!(type instanceof Pointer pointer) || pointer.getDataType() == null) return null;
+        type = pointer.getDataType();
+        while (type instanceof TypeDef alias && seen.add(type))
+            type = alias.getBaseDataType();
+        return type instanceof Structure structure ? structure : null;
     }
 
     private Parameter firstExplicitParameter(Function function) {
@@ -1091,6 +1310,7 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
             Set<String> callerOwners = directCallerOwners.getOrDefault(
                 addr(function.getEntryPoint()), Set.of());
             List<PolymorphicBase> matches = bases.stream().filter(base ->
+                base.relatedTables >= 2 &&
                 sites.stream().allMatch(site -> compatible(base, site)) &&
                 callerOwners.size() >= 2 && callerOwners.stream().allMatch(owner ->
                     ownerCarriesBase(vtables, owner, base.owner))).toList();
@@ -1132,6 +1352,7 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
             List<ReceiverSite> acceptedSites = comparedWithThis ? sites.stream()
                 .filter(site -> compatible(base, site)).toList() : sites;
             for (ReceiverSite site : acceptedSites)
+                if (!scriptOwnedCallsiteOverride(site.call))
                 polymorphicReceiverCallsites.add(new PolymorphicReceiverCallsite(
                     addr(function.getEntryPoint()), function.getName(true),
                     addr(site.call), site.slot, parameter.getOrdinal(), parameter.getName(),
@@ -1191,6 +1412,11 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         }
     }
 
+    private boolean scriptOwnedCallsiteOverride(Address call) {
+        String comment = currentProgram.getListing().getComment(CommentType.EOL, call);
+        return comment != null && comment.contains("[STIndirectCallsiteApplier]");
+    }
+
     private List<PolymorphicBase> polymorphicBases(List<Map<String, String>> rows) {
         List<PolymorphicBase> result = new ArrayList<>();
         for (Map<String, String> row : rows) {
@@ -1213,7 +1439,6 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
                         ownerToken(candidate.get("slot_owners"), owner) &&
                         !safeText(candidate.get("table_address")).equals(
                             safeText(row.get("table_address")))) related++;
-            if (related < 2) continue;
             result.add(new PolymorphicBase(owner, ownerStructure.getPathName(),
                 table.getPathName(), table, slots, related));
         }
@@ -1853,6 +2078,23 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
         }
     }
 
+    private void writeRecordIdentityViewAudit(Path path,
+            List<RecordIdentityViewAudit> rows) throws Exception {
+        try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+            out.write("apply\tsource_type\ttarget_type\tlength\tconcrete_fields\t" +
+                "defined_components\tdistinct_function_targets\tglobal_reference_functions\t" +
+                "global_pointer_roots\tcontaining_pointer_fields\t" +
+                "status\tevidence\n");
+            for (RecordIdentityViewAudit row : rows)
+                out.write((row.apply ? "1" : "0") + "\t" + row.sourceType + "\t" +
+                    row.targetType + "\t" + row.length + "\t" + row.concreteFields +
+                    "\t" + row.definedComponents + "\t" + row.distinctFunctionTargets +
+                    "\t" + row.globalReferenceFunctions + "\t" +
+                    clean(row.globalPointerRoots) + "\t" + row.containingPointerFields +
+                    "\t" + row.status + "\t" + clean(row.evidence) + "\n");
+        }
+    }
+
     private void writeRows(Path path, List<Row> rows) throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             out.write("apply\tfunction_address\texpected_function\ttarget_kind\ttarget_ordinal\t" +
@@ -1948,6 +2190,12 @@ public class STTypeFamilyAnalyzer extends GhidraScript {
     private record ContextualPromotion(String sourceType, String targetType,
         String owner, String anchorFunction, int length, int concreteFields,
         int functionTargets, String evidence) {}
+    private record RecordIdentityViewAudit(boolean apply, String sourceType,
+        String targetType, int length, int definedComponents, int concreteFields,
+        int distinctFunctionTargets, int globalReferenceFunctions, String globalPointerRoots,
+        int containingPointerFields, String status, String evidence) {}
+    private record StableViewResult(List<ContextualPromotion> promotions,
+        List<RecordIdentityViewAudit> audit) {}
     private record PolymorphicBase(String owner, String ownerPath, String vtablePath,
         Structure table, int slots, int relatedTables) {}
     private record ReceiverSite(Function function, Address call, int slot, int arity,

@@ -6,7 +6,7 @@
    Diagnostic line evidence: 895 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
+undefined4 __fastcall FUN_004cc370(RecoveredRecordView_004CC370_A3AEA85C *param_1)
 
 {
   AnonPointee_STT3DSprC_0020 *pAVar1;
@@ -29,9 +29,11 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
     if ((int)pAVar1->field_020C <= (int)pAVar1->field_0210) {
       /* ST_CALLSITE[004CC3BA]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)param_1->field_0603,0xe);
-      thunk_FUN_004ad430((STT3DSprC *)param_1->field_0603);
+      /* ST_CALLSITE[004CC3C5]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+      STT3DSprC::sub_004AD430((STT3DSprC *)param_1->field_0603);
       /* ST_CALLSITE[004CC3D2]: CALL 0x0040498a; direct=0040498A STT3DSprC::UnLoadSequence */
       STT3DSprC::UnLoadSequence((STT3DSprC *)param_1->field_0603,0xe);
+
       uVar3 = thunk_FUN_004ad650((STT3DSprC *)param_1->field_0603);
       Library::Ourlib::ST3DSMAP::SprRstLev(param_1->field_0211,uVar3);
       *(undefined4 *)&param_1->field_0x44c = 0xffffffff;
@@ -39,7 +41,7 @@ undefined4 __fastcall FUN_004cc370(AnonShape_004CC370_02CE3D17 *param_1)
     }
     goto cf_common_exit_004CC6D2;
   }
-  /* ST_CALLSITE[004CC412]: CALL dword ptr [EDX + 0x7c] */
+  /* ST_CALLSITE[004CC412]: CALL dword ptr [EDX + 0x7c]; [STIndirectCallsiteApplier] exact slot 0x7C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
   iVar5 = (*STField<code *>(param_1->field_0000,0x007C))();
   if ((3 < iVar5 / 0x14) && (*(int *)&param_1->field_0x43c == 1)) {
     /* ST_CALLSITE[004CC438]: CALL 0x00405768; direct=00405768 TLOBaseTy::sub_004CC900 */
@@ -86,7 +88,9 @@ cf_error_exit_004CC50A:
     }
   }
   uVar3 = 6;
+  /* ST_CALLSITE[004CC520]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STT3DSprC; source view only; no Ghidra override */
   iVar4 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
+
   uVar2 = thunk_FUN_004ad650((STT3DSprC *)param_1->field_0603);
   FUN_006ea340(param_1->field_0211,uVar2,iVar4,uVar3);
   /* ST_CALLSITE[004CC558]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
@@ -113,12 +117,12 @@ cf_error_exit_004CC50A:
     }
     uVar3 = (param_1->field_0617 - *(int *)(&DAT_00797750 + uVar3 * 8 + iVar8)) + iVar7;
   }
-  thunk_FUN_004ad380((void *)param_1->field_0603,uVar6,uVar3);
+  thunk_FUN_004ad380(param_1->field_0603,uVar6,uVar3);
   /* ST_CALLSITE[004CC614]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   STT3DSprC::SetCurFase((STT3DSprC *)param_1->field_0603,'\x0e',0);
   /* ST_CALLSITE[004CC62D]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
   STT3DSprC::StartShow((STT3DSprC *)param_1->field_0603,0xe,g_playSystem_00802A38->field_00E4);
-  thunk_FUN_004ad460((void *)param_1->field_0603,1);
+  thunk_FUN_004ad460(param_1->field_0603,1);
   if ((*(int *)&param_1->field_0x43c == 3) || (*(int *)&param_1->field_0x43c == 4)) {
     /* ST_CALLSITE[004CC65A]: CALL dword ptr [EDX + 0x90] */
     (*STField<code *>(param_1->field_0000,0x0090))(3,0x363);
@@ -130,14 +134,15 @@ cf_error_exit_004CC50A:
       pAVar2 = param_1->field_0000;
       /* ST_CALLSITE[004CC6A8]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_824 = LookupRecordByte(param_1->field_023D);
-      /* ST_CALLSITE[004CC6CC]: CALL dword ptr [EDI + 0x90] */
+      /* ST_CALLSITE[004CC6CC]: CALL dword ptr [EDI + 0x90]; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4 */
       (*STField<code *>(pAVar2,0x90))
                 (3,*(undefined4 *)
                     (&DAT_00795f18 + ((uint)(byte)local_EAX_824 + param_1->field_0235 * 3) * 4));
     }
   }
 cf_common_exit_004CC6D2:
-  thunk_FUN_004ac9e0((void *)param_1->field_0603,g_playSystem_00802A38->field_00E4);
+
+  thunk_FUN_004ac9e0(param_1->field_0603,g_playSystem_00802A38->field_00E4);
   return 0;
 }
 

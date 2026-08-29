@@ -7,7 +7,8 @@ FUN_006e4620:
 006E4629  8B 48 14                  MOV ECX,dword ptr [EAX + 0x14]
 006E462C  51                        PUSH ECX
 006E462D  8B CE                     MOV ECX,ESI
-006E462F  E8 6C FF FF FF            CALL 0x006e45a0
+FUN_006e4620::override::prt_6e462f_63f8cf0e:
+006E462F  E8 6C FF FF FF            CALL 0x006e45a0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E45C0_FB272364; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006E45C0_FB272364;pointer:/void;/int
 006E4634  50                        PUSH EAX
 006E4635  8B CE                     MOV ECX,ESI
 006E4637  E8 84 FF FF FF            CALL 0x006e45c0

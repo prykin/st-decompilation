@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_00584b10(AnonShape_00584B10_33997544 *param_1)
+void __fastcall FUN_00584b10(RecoveredRecordView_00584B10_465CC529 *param_1)
 
 {
   byte *this;
@@ -20,7 +20,9 @@ void __fastcall FUN_00584b10(AnonShape_00584B10_33997544 *param_1)
   uVar4 = 0x45;
   uVar3 = 0x5a;
   iVar2 = 1;
+
   uVar1 = thunk_FUN_004ad650((STT3DSprC *)this);
+
   Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand(param_1->field_0211,uVar1,iVar2,uVar3,uVar4);
   /* ST_CALLSITE[00584B74]: CALL 0x00403233; direct=00403233 STT3DSprC::sub_004ACFE0 */
   STT3DSprC::sub_004ACFE0((STT3DSprC *)this,'\n');
@@ -30,9 +32,8 @@ void __fastcall FUN_00584b10(AnonShape_00584B10_33997544 *param_1)
   STT3DSprC::StartShow((STT3DSprC *)this,10,g_playSystem_00802A38->field_00E4);
   /* ST_CALLSITE[00584BAF]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
   STT3DSprC::StartShow((STT3DSprC *)this,8,g_playSystem_00802A38->field_00E4);
-  /* ST_CALLSITE[00584BB8]: CALL dword ptr [EDX + 0xd8] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)(param_1->field_0000 + 0xd8))();
+  /* ST_CALLSITE[00584BB8]: CALL dword ptr [EDX + 0xd8]; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/void;pointer:/void */
+  STStructuralVirtualCall<void>(param_1, 0xD8);
   /* ST_CALLSITE[00584BCF]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
   iVar2 = STT3DSprC::LoadSequence((STT3DSprC *)this,9,PTR_00806764,"expl_bbt0",CASE_1D);
   if (iVar2 == 0) {

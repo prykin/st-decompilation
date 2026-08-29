@@ -46,6 +46,7 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
     local_5c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_5c;
     local_18 = this;
+
     iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
     pRVar2 = local_14;
     this_00 = local_18;
@@ -62,8 +63,10 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
       else {
         iVar4 = 0;
       }
+
       Library::DKW::WGR::FUN_006b55f0
-                (local_14,0,5,0x1f,(byte *)local_18->field_0286,0,0,iVar4,local_10 & 0xff,6);
+                (local_14,0,5,0x1f,(RecoveredRecordView_006B84D0_87AF9D9B *)local_18->field_0286,0,0
+                 ,iVar4,local_10 & 0xff,6);
       if ((param_1 == 0) && (local_5 == '\x02')) {
         UVar8 = 0x36ba;
         uVar7 = local_c;
@@ -78,6 +81,7 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
       return;
     }
     g_currentExceptionFrame = local_5c.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel1.cpp",0x2f,0,iVar4,"%s",
                                "CPanelTy::PaintLife");
     if (iVar5 != 0) {

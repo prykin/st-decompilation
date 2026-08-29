@@ -21,10 +21,11 @@ void __fastcall FUN_0067be20(int param_1,undefined4 param_2,DArrayTy *param_3)
     if ((index < param_3->count) &&
        (puVar1 = DArrayAt<ushort>(param_3, index),
        puVar1 != nullptr)) {
-      /* ST_CALLSITE[0067BE5F]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
+      /* ST_CALLSITE[0067BE5F]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override */
       objPtr = STAllPlayersC::GetObjPtr
-                         (g_allPlayers_007FA174,((char *)local_8)[0x640],*puVar1,CASE_1);
+                         (g_allPlayers_007FA174,STField<char>(local_8,0x640),*puVar1,CASE_1);
       if (objPtr == nullptr) {
+
         DArrayRemoveAt(param_3,index);
       }
       else {

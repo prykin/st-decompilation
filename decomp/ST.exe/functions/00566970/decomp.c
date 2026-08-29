@@ -46,7 +46,9 @@ void __thiscall SoundManagerTy::sub_00566970(SoundManagerTy *this,int param_1,in
       goto switchD_005669a6_default;
     }
     puVar3 = nullptr;
+    /* ST_CALLSITE[00566A0D]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/cMf32; source view only; no Ghidra override */
     pCVar1 = FUN_006f2c00(text,3,iVar2);
+
     iVar2 = thunk_FUN_0056a2a0(&g_sound,this->field_0018,pCVar1,param_2,puVar3);
     if (iVar2 == 0) {
       if (this->field_0039 == param_1) {

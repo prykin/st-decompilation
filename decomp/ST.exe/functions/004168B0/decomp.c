@@ -6,11 +6,11 @@
    misclassified as reading the call result; every resolved caller now proves an exact EAX kill;
    machine CFG audit: used=0, ignored=6, unknown=0 */
 
-void __fastcall FUN_004168b0(int param_1)
+void __fastcall FUN_004168b0(RecoveredRecord_004168B0_1FFF2915 *param_1)
 
 {
-  ((undefined1 *)param_1)[0xe3] = 1;
-  *(undefined4 *)(param_1 + 0x7e) = 1;
+  param_1->field_00E3 = 1;
+  param_1->field_007E = 1;
   return;
 }
 

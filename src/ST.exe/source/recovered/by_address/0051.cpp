@@ -15,7 +15,8 @@ HelpPanelTy * __cdecl st::fn_00510C50(void)
 {
   HelpPanelTy *pHVar1;
 
-  pHVar1 = (HelpPanelTy *)st::fn_006B04D0(0x254);
+  /* ST_CALLSITE[00510C55]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/HelpPanelTy; signature=__stdcall;pointer:/HelpPanelTy;/uint */
+  pHVar1 = st::pointer_boundary_cast<HelpPanelTy *>(st::fn_006B04D0(0x254));
   if (pHVar1 != nullptr) {
     pHVar1 = st::fn_00403035(pHVar1);
     return pHVar1;
@@ -123,8 +124,10 @@ HelpStringTy * __cdecl st::fn_0051F860(void)
   HelpStringTy *this;
   char *pcVar2;
 
-  this = (HelpStringTy *)st::fn_006B04D0(0x132);
+
+  this = STPointerBoundaryCast<HelpStringTy *>(st::fn_006B04D0(0x132));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
     this->vtable = &st_global_0079AC6C;
     this->field_011D = 0;
@@ -155,8 +158,10 @@ InfocPanelTy * __cdecl st::fn_0051FE40(void)
   InfocPanelTy *this;
   int iVar1;
 
-  this = (InfocPanelTy *)st::fn_006B04D0(0x3d9);
+
+  this = STPointerBoundaryCast<InfocPanelTy *>(st::fn_006B04D0(0x3d9));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;
@@ -187,4 +192,3 @@ InfocPanelTy * __cdecl st::fn_0051FE40(void)
   }
   return nullptr;
 }
-

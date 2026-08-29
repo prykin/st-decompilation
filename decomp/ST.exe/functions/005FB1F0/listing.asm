@@ -1,4 +1,4 @@
-FUN_005fb1f0:
+STColl3C::vfunc_DC:
 005FB1F0  55                        PUSH EBP
 005FB1F1  8B EC                     MOV EBP,ESP
 005FB1F3  83 EC 30                  SUB ESP,0x30

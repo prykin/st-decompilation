@@ -29,7 +29,7 @@ STJumpMineC::LoadImagJMine:
 0061962B  68 D4 00 7D 00            PUSH 0x7d00d4
 00619630  6A 1D                     PUSH 0x1d
 00619632  50                        PUSH EAX
-00619633  E8 B8 04 0F 00            CALL 0x00709af0
+00619633  E8 B8 04 0F 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 00619638  8B 7D FC                  MOV EDI,dword ptr [EBP + -0x4]
 0061963B  83 C4 20                  ADD ESP,0x20
 0061963E  8B D8                     MOV EBX,EAX
@@ -104,7 +104,7 @@ LAB_006196ff:
 0061970E  68 DC 00 7D 00            PUSH 0x7d00dc
 00619713  6A 1D                     PUSH 0x1d
 00619715  50                        PUSH EAX
-00619716  E8 D5 03 0F 00            CALL 0x00709af0
+00619716  E8 D5 03 0F 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 0061971B  83 C4 20                  ADD ESP,0x20
 0061971E  8B D8                     MOV EBX,EAX
 00619720  8B 4B 0D                  MOV ECX,dword ptr [EBX + 0xd]
@@ -147,7 +147,7 @@ LAB_006196ff:
 00619785  68 E4 00 7D 00            PUSH 0x7d00e4
 0061978A  6A 1D                     PUSH 0x1d
 0061978C  50                        PUSH EAX
-0061978D  E8 5E 03 0F 00            CALL 0x00709af0
+0061978D  E8 5E 03 0F 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 00619792  8B D8                     MOV EBX,EAX
 00619794  8B 06                     MOV EAX,dword ptr [ESI]
 00619796  83 C4 20                  ADD ESP,0x20
@@ -192,7 +192,7 @@ LAB_006196ff:
 0061980F  68 F0 00 7D 00            PUSH 0x7d00f0
 00619814  6A 1D                     PUSH 0x1d
 00619816  51                        PUSH ECX
-00619817  E8 D4 02 0F 00            CALL 0x00709af0
+00619817  E8 D4 02 0F 00            CALL 0x00709af0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 0061981C  8B 0E                     MOV ECX,dword ptr [ESI]
 0061981E  8B D8                     MOV EBX,EAX
 00619820  83 C4 20                  ADD ESP,0x20

@@ -28,15 +28,15 @@ void __thiscall FSGSTy::InfoCtrls(FSGSTy *this)
   bool bVar10;
   ccFntTy *local_8dc [8];
   DArrayTy *local_8bc;
-  undefined4 local_8b0;
-  undefined4 local_8ac;
-  undefined4 local_8a8;
-  undefined4 local_890;
-  undefined4 local_88c;
-  undefined4 local_888;
-  undefined4 local_6c;
-  undefined4 local_68;
-  undefined4 local_64;
+  uint local_8b0;
+  uint local_8ac;
+  uint local_8a8;
+  uint local_890;
+  uint local_88c;
+  uint local_888;
+  uint local_6c;
+  uint local_68;
+  uint local_64;
   InternalExceptionFrame local_50;
   FSGSTy *local_c;
   int local_8;
@@ -69,20 +69,26 @@ LAB_0059d77b:
 LAB_0059d780:
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
+
     iVar6 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     if (iVar6 == 0) {
       pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
       this_00 = local_c;
       local_c->field_1AF8 = pDVar5;
+
       Library::DKW::TBL::FUN_006b5aa0(pDVar5,&CHAR_00h_008016a0);
       pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
       this_00->field_1AFC = pDVar5;
+
       Library::DKW::TBL::FUN_006b5aa0(pDVar5,&CHAR_00h_008016a0);
       pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
       this_00->field_1B00 = pDVar5;
+
       Library::DKW::TBL::FUN_006b5aa0(pDVar5,&CHAR_00h_008016a0);
+      /* ST_CALLSITE[0059D808]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
       pDVar5 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
       this_00->field_1B04 = &pDVar5->flags;
+
       Library::DKW::TBL::FUN_006b5aa0(pDVar5,&CHAR_00h_008016a0);
       ppcVar9 = local_8dc;
       for (iVar7 = 0x223; iVar3 = local_8, iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -144,6 +150,7 @@ LAB_0059d780:
       return;
     }
     g_currentExceptionFrame = local_50.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x69c,0,iVar6,"%s"
                                ,"FSGSTy::InfoCtrls");
     if (iVar5 != 0) {

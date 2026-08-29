@@ -5,7 +5,7 @@
    Evidence: all observed direct callers ignore the return register (ignored=7, used=0, unknown=0),
    and decompilation contains no value return */
 
-void __fastcall FUN_0041f630(AnonShape_0041F630_B1BEE81C *param_1)
+void __fastcall FUN_0041f630(RecoveredRecordView_0041F630_FBFD9742 *param_1)
 
 {
   byte bVar1;
@@ -16,9 +16,8 @@ void __fastcall FUN_0041f630(AnonShape_0041F630_B1BEE81C *param_1)
   uint uVar5;
   bool bVar6;
   int iVar7;
-  undefined1 local_c;
-  undefined1 local_8;
-
+  byte local_c;
+  byte local_8;
   if (7 < *(uint *)&param_1->field_0x24) {
     return;
   }
@@ -122,9 +121,8 @@ switchD_0041f763_caseD_9:
   local_c = 4;
 LAB_0041f793:
   if (param_1->field_0211 != 0) {
-    /* ST_CALLSITE[0041F7A5]: CALL dword ptr [EDX + 0x6c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    uVar4 = (**(code **)(param_1->field_0000 + 0x6c))();
+    /* ST_CALLSITE[0041F7A5]: CALL dword ptr [EDX + 0x6c]; [STIndirectCallsiteApplier] exact slot 0x6C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+    uVar4 = STStructuralVirtualCall<undefined4>(param_1, 0x6C);
     switch(uVar4) {
     case 0:
       local_8 = 10;
@@ -153,9 +151,11 @@ LAB_0041f793:
     default:
       local_8 = 0xff;
     }
+
     Library::Ourlib::ST3DSMAP::FUN_006e6630
               ((void *)param_1->field_0211,param_1->field_01ED,local_c,local_8,0);
     iVar7 = 0;
+
     iVar4 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
     FUN_006e6870((void *)param_1->field_0211,iVar4,iVar7);
     param_1->field_0229 = 1;

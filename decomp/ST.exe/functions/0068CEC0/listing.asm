@@ -216,7 +216,7 @@ LAB_0068d17e:
 0068D184  53                        PUSH EBX
 0068D185  68 8C 86 84 00            PUSH 0x84868c
 0068D18A  51                        PUSH ECX
-0068D18B  E8 15 49 D7 FF            CALL 0x00401aa5
+0068D18B  E8 15 49 D7 FF            CALL 0x00401aa5  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 0068D190  83 C4 04                  ADD ESP,0x4
 0068D193  50                        PUSH EAX
 0068D194  E8 A7 5D D7 FF            CALL 0x00402f40

@@ -24,9 +24,11 @@ void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_18 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_5c.previous;
+
     iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\To_optic.cpp",0x13c,0,errorCode,
                                "%s");
     if (iVar3 == 0) {
@@ -79,7 +81,8 @@ void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
   ST3DSMAPContext::sub_006DD800
             (g_sT3DSMAPContext_00807598,
              _DAT_0080742c * _DAT_00790784 + local_8 * (float)_DAT_00790770 + (float)_DAT_00790760);
-  thunk_FUN_004a9b60(DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c);
+  /* ST_CALLSITE[004A97C6]: CALL 0x00401b6d; direct=00401B6D OpticClassC::sub_004A9B60 */
+  sub_004A9B60(local_18,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c);
   thunk_FUN_004a8f20(1);
   DAT_0080674c = 2;
   DAT_0080745d = 0;
@@ -96,8 +99,8 @@ void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
     thunk_FUN_004a9c80(1);
     thunk_FUN_004a9c80(1);
   }
-  SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00567510::thunk_FUN_00567510
-            ((AnonReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
+  SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00567510::thunk_FUN_00567510
+            ((RecoveredReceiver_00567510 *)&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,
              DAT_0080743c & 0xff);
   g_currentExceptionFrame = local_5c.previous;
   return;

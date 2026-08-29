@@ -366,6 +366,18 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
         boolean ignoredReturnCandidate = mutable && genericUnknown(currentType) &&
             body.hasRet && observed != null && observed.used == 0 &&
             observed.unknown == 0 && observed.ignored >= 2;
+        // This proof recovers a concrete machine-word predicate from Ghidra's neutral
+        // transport type.  It does not prove signedness and must never replace an existing
+        // int/uint ABI merely to prefer one spelling over another.
+        if (mutable && currentType.equals("/undefined4") && observed != null &&
+                observed.used >= 2 && observed.unknown == 0 &&
+                allReturnsDefineBooleanWord(function))
+            return row(function, currentType, "/int", function.hasNoReturn(), false,
+                true, "machine_word_predicate", "high",
+                "every reachable RET is immediately dominated by an exact full-EAX " +
+                    "definition of 0 or 1, and at least two resolved callers consume the " +
+                    "machine word" + observedEvidence(observed));
+
         if (!mutable || (!pointerCandidate && !booleanCandidate && !ignoredReturnCandidate) ||
                 function.getBody().getNumAddresses() > 0x800) return null;
 
@@ -1651,6 +1663,51 @@ public class STReturnSemanticsAnalyzer extends GhidraScript {
             if (value.equals("1") || value.equals("true")) one = true;
         }
         return zero && one;
+    }
+
+    private boolean allReturnsDefineBooleanWord(Function function) {
+        boolean sawZero = false, sawOne = false, sawReturn = false;
+        InstructionIterator iterator = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (iterator.hasNext()) {
+            Instruction instruction = iterator.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            if (!mnemonic.startsWith("RET")) continue;
+            sawReturn = true;
+            Instruction cursor = currentProgram.getListing().getInstructionBefore(
+                instruction.getAddress());
+            boolean resolved = false;
+            for (int count = 0; cursor != null && count < 12 &&
+                    function.getBody().contains(cursor.getAddress()); count++) {
+                String rendered = cursor.toString().replace(" ", "")
+                    .toUpperCase(Locale.ROOT);
+                if (rendered.equals("MOVEAX,0X1") || rendered.equals("MOVEAX,1")) {
+                    sawOne = true; resolved = true; break;
+                }
+                if (rendered.equals("MOVEAX,0X0") || rendered.equals("MOVEAX,0") ||
+                        rendered.equals("XOREAX,EAX") || rendered.equals("SUBEAX,EAX")) {
+                    sawZero = true; resolved = true; break;
+                }
+                if (cursor.getFlowType().isCall() || cursor.getFlowType().isJump() ||
+                        accumulatorResultWidth(cursor) > 0) return false;
+                cursor = currentProgram.getListing().getInstructionBefore(
+                    cursor.getAddress());
+            }
+            if (!resolved) return false;
+        }
+        return sawReturn && sawZero && sawOne;
+    }
+
+    private int accumulatorResultWidth(Instruction instruction) {
+        int width = 0;
+        for (Object value : instruction.getResultObjects()) {
+            if (!(value instanceof Register register)) continue;
+            String name = register.getName().toUpperCase(Locale.ROOT);
+            if ("EAX".equals(name)) width = Math.max(width, 4);
+            else if ("AX".equals(name)) width = Math.max(width, 2);
+            else if (Set.of("AL", "AH").contains(name)) width = Math.max(width, 1);
+        }
+        return width;
     }
     private boolean genericUnknown(String type) {
         return type.equals("/undefined") || type.equals("/undefined4");

@@ -84,7 +84,7 @@ LAB_004238e9:
 0042392F  6A 02                     PUSH 0x2
 00423931  6A 05                     PUSH 0x5
 00423933  6A 00                     PUSH 0x0
-00423935  E8 56 A9 28 00            CALL 0x006ae290
+00423935  E8 56 A9 28 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 0042393A  89 47 2D                  MOV dword ptr [EDI + 0x2d],EAX
 LAB_0042393d:
 0042393D  8B 4F 2D                  MOV ECX,dword ptr [EDI + 0x2d]
@@ -98,7 +98,7 @@ LAB_0042393d:
 00423950  6A 65                     PUSH 0x65
 00423952  8B CF                     MOV ECX,EDI
 00423954  C6 45 FF FF               MOV byte ptr [EBP + -0x1],0xff
-00423958  FF 52 08                  CALL dword ptr [EDX + 0x8]
+00423958  FF 52 08                  CALL dword ptr [EDX + 0x8]  ; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4
 LAB_0042395b:
 0042395B  8B CE                     MOV ECX,ESI
 0042395D  E8 3D 1E FE FF            CALL 0x0040579f
@@ -196,7 +196,7 @@ LAB_00423a0f:
 00423A31  8B 11                     MOV EDX,dword ptr [ECX]
 00423A33  8D 45 C8                  LEA EAX,[EBP + -0x38]
 00423A36  50                        PUSH EAX
-00423A37  FF 12                     CALL dword ptr [EDX]
+00423A37  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 LAB_00423a39:
 00423A39  8B 4D 84                  MOV ECX,dword ptr [EBP + -0x7c]
 00423A3C  8B C3                     MOV EAX,EBX

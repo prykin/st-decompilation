@@ -25,7 +25,7 @@ LAB_0060bccf:
 0060BCF3  8B 01                     MOV EAX,dword ptr [ECX]
 0060BCF5  8D 55 E0                  LEA EDX,[EBP + -0x20]
 0060BCF8  52                        PUSH EDX
-0060BCF9  FF 10                     CALL dword ptr [EAX]
+0060BCF9  FF 10                     CALL dword ptr [EAX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 LAB_0060bcfb:
 0060BCFB  8B E5                     MOV ESP,EBP
 0060BCFD  5D                        POP EBP

@@ -30,6 +30,7 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;
+
     local_EAX_63 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     this_00 = g_cursorClass_00802A30;
     if (local_EAX_63 == 0) {
@@ -48,6 +49,7 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
       this_01 = local_c;
       local_c->field_1EAA->count = 0;
       for (; param_1 != 0; param_1 = param_1 + -1) {
+
         Library::DKW::TBL::DArrayAppend((DArrayTy *)this_01->field_1EAA,param_2);
         param_2 = param_2 + 0x1a;
       }
@@ -71,9 +73,11 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
             else {
               element_1eaa = nullptr;
             }
+
             iVar3 = Library::MSVCRT::__strcmpi(element_1eaa_2,element_1eaa);
             if (0 < iVar3) {
-              FUN_006b0cd0((AnonShape_00413AF0_B6B4EE9A *)this_01->field_1EAA,uVar9,uVar1);
+
+              FUN_006b0cd0((RecoveredRecordView_00413AF0_B98DB3AE *)this_01->field_1EAA,uVar9,uVar1);
               local_8 = 1;
             }
             pFVar6 = this_01->field_1EAA;
@@ -102,6 +106,7 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
       return;
     }
     g_currentExceptionFrame = local_50.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0xa9d,0,local_EAX_63,
                                "%s","FSGSTy::SetChannelList");
     if (iVar6 != 0) {

@@ -12,8 +12,7 @@ FUN_00631e00(void *this,uint param_1,int param_2,undefined4 *param_3,undefined4 
   uint uVar4;
   int iVar5;
   bool bVar6;
-  undefined4 local_8;
-
+  uint local_8;
   iVar5 = STField<int>(this,0x69);
   local_8 = 0;
   uVar2 = 0;

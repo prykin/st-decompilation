@@ -66,13 +66,17 @@ int __thiscall STBHEShellC::sub_005F5700(STBHEShellC *this,int param_1,int param
                        (int)sVar3].objects[0], this_00 != nullptr)))))) {
         thunk_FUN_00416270(this_00,(uint *)&local_6,(short *)((int)&param_1 + 2),&local_8);
         if (*(int *)&this_00[1].field_0x8 == 1) {
+
           iVar4 = FUN_006aced8((int)local_6,(int)STPiece<2,2>(param_1),this->field_0111,this->field_0115);
           if (param_2 <= iVar4) {
+
             iVar4 = FUN_006aced8(local_6 + 100,(int)STPiece<2,2>(param_1),this->field_0111,this->field_0115);
             if (param_2 <= iVar4) {
+
               iVar4 = FUN_006aced8((int)local_6,STPiece<2,2>(param_1) + 100,this->field_0111,
                                    this->field_0115);
               if (param_2 <= iVar4) {
+
                 iVar4 = FUN_006aced8(local_6 + 100,STPiece<2,2>(param_1) + 100,this->field_0111,
                                      this->field_0115);
                 if (param_2 <= iVar4) goto cf_continue_loop_005F5985;
@@ -81,12 +85,14 @@ int __thiscall STBHEShellC::sub_005F5700(STBHEShellC *this,int param_1,int param
           }
         }
         else {
+
           iVar4 = FUN_006aced8((int)local_6,(int)STPiece<2,2>(param_1),this->field_0111,this->field_0115);
           if (param_2 <= iVar4) goto cf_continue_loop_005F5985;
         }
         local_c = local_c + 1;
-        thunk_FUN_00601d10(this->field_0051,(int)(this->field_007D << 2) / (8 - iVar2),(int)this_00,
-                           (short)this->field_0081,this->field_0085,0xb5,0x110);
+        thunk_FUN_00601d10(this->field_0051,(int)(this->field_007D << 2) / (8 - iVar2),
+                           (RecoveredRecord_00601D10_11B39116 *)this_00,(short)this->field_0081,
+                           this->field_0085,0xb5,0x110);
       }
 cf_continue_loop_005F5985:
       sVar2 = g_worldGrid.sizeX;

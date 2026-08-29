@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void __fastcall FUN_0058bd90(AnonShape_0058BD90_DCBCF849 *param_1)
+void __fastcall FUN_0058bd90(RecoveredRecordView_0058BD90_5921842F *param_1)
 
 {
   byte *puVar1;
@@ -32,13 +32,17 @@ void __fastcall FUN_0058bd90(AnonShape_0058BD90_DCBCF849 *param_1)
   sVar6 = STBiasedDiv16(sVar6, 200); /* exact signed 16-bit grid-index division */
   param_1->field_004B = sVar6;
   param_1->field_005F = sVar6;
-  iVar3 = thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)param_1);
+
+  iVar3 = thunk_FUN_0041c710((RecoveredRecordView_0041C710_A35B7121 *)param_1);
   puVar1 = &param_1->field_0x1d5;
   if (iVar3 == 0) {
     iVar3 = 0;
+
     uVar4 = thunk_FUN_004ad650((STT3DSprC *)puVar1);
+
     Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar4,iVar3);
-    iVar2 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)param_1);
+
+    iVar2 = thunk_FUN_0041caf0((RecoveredRecordView_0041CAF0_18493751 *)param_1);
     if (iVar2 == 1) {
       iVar3 = 1;
     }
@@ -48,10 +52,13 @@ void __fastcall FUN_0058bd90(AnonShape_0058BD90_DCBCF849 *param_1)
   }
   else {
     iVar3 = 1;
+
     uVar4 = thunk_FUN_004ad650((STT3DSprC *)puVar1);
+
     Library::Ourlib::ST3DSMAP::SprSetVisible(param_1->field_0211,uVar4,iVar3);
     iVar3 = 1;
   }
+
   iVar4 = thunk_FUN_004ad650((STT3DSprC *)puVar1);
   FUN_006e6870(param_1->field_0211,iVar4,iVar3);
   switch(param_1->field_0231) {
@@ -64,6 +71,7 @@ void __fastcall FUN_0058bd90(AnonShape_0058BD90_DCBCF849 *param_1)
     goto switchD_0058bec9_caseD_2;
   case 4:
     puVar1 = &param_1->field_0x1d5;
+
     iVar3 = thunk_FUN_004ac910(puVar1,'\x0e');
     local_8 = iVar3 + 1;
     if ((int)local_8 < 0x23) {
@@ -76,7 +84,7 @@ void __fastcall FUN_0058bd90(AnonShape_0058BD90_DCBCF849 *param_1)
       param_1->field_0231 = 2;
     }
     if (local_8 == 0x20) {
-      thunk_FUN_0058bb90((AnonShape_0058BB90_CF74AF20 *)param_1);
+      thunk_FUN_0058bb90((RecoveredRecordView_0058BB90_A8C58367 *)param_1);
     }
 switchD_0058bec9_caseD_2:
     if (param_1->field_0231 == 2) {
@@ -108,6 +116,7 @@ switchD_0058bec9_caseD_2:
         if (iVar5 < 1) {
           param_1->field_0239 = 0;
           param_1->field_0235 = 0;
+
           thunk_FUN_004aceb0(&param_1->field_0x1d5,'\x0e');
           param_1->field_0241 = -param_1->field_023D;
         }
@@ -144,9 +153,11 @@ switchD_0058bec9_caseD_2:
   }
   /* ST_CALLSITE[0058BEDA]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
   iVar3 = STT3DSprC::sub_004ACD30((STT3DSprC *)&param_1->field_0x1d5,'\b');
+
   iVar5 = thunk_FUN_004ac910(&param_1->field_0x1d5,'\b');
   if (iVar3 + -1 <= iVar5) {
-    thunk_FUN_0058bb50(param_1);
+
+    thunk_FUN_0058bb50((RecoveredRecord_0058BB50_29AADF52 *)param_1);
   }
 switchD_0058bec9_caseD_0:
   sVar6 = param_1->field_0041;
@@ -181,6 +192,7 @@ switchD_0058bec9_caseD_0:
                  (int)PTR_00806724->field_002C);
     }
     if ((g_playSystem_00802A38->field_00E4 & 1) == 0) {
+
       iVar3 = thunk_FUN_004ac910(&param_1->field_0x1d5,'\x0e');
       local_8 = iVar3 + 1;
       if (0x18 < (int)local_8) {
@@ -207,9 +219,8 @@ LAB_0058c38c:
 cf_common_exit_0058C391:
   /* ST_CALLSITE[0058C399]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
   STT3DSprC::ShowCurFase((STT3DSprC *)&param_1->field_0x1d5,'\x0e');
-  /* ST_CALLSITE[0058C3A2]: CALL dword ptr [EAX + 0xd8] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  (**(code **)(param_1->field_0000 + 0xd8))();
+  /* ST_CALLSITE[0058C3A2]: CALL dword ptr [EAX + 0xd8]; [STIndirectCallsiteApplier] exact slot 0xD8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+  STStructuralVirtualCall<undefined4>(param_1, 0xD8);
   return;
 }
 

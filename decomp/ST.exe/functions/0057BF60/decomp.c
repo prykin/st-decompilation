@@ -36,12 +36,12 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
   byte *pbVar13;
   InternalExceptionFrame local_80;
   void *local_3c;
-  undefined4 local_38;
-  undefined4 local_34;
+  uint local_38;
+  uint local_34;
   ushort *local_30;
-  undefined4 local_2c;
-  undefined4 local_28;
-  undefined4 local_24;
+  uint local_2c;
+  uint local_28;
+  uint local_24;
   undefined4 *local_20;
   STFishC *local_1c;
   byte *local_18;
@@ -56,10 +56,12 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_1c = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0);
   this_00 = local_1c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_80.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\Igor\\To_fish.cpp",0x663,0,iVar4,"%s",
                                "STFishC::GetMessage");
     if (iVar5 == 0) {
@@ -93,6 +95,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
         g_currentExceptionFrame = local_80.previous;
         return 0;
       }
+
       uVar7 = thunk_FUN_004ad650((STT3DSprC *)&this_00->field_01D5);
       Library::Ourlib::ST3DSMAP::SprHide((void *)this_00->field_0211,uVar7);
       /* ST_CALLSITE[0057C7DD]: CALL 0x004032ba; direct=004032BA STFishC::sub_0057BF20 */
@@ -125,9 +128,10 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
       return 0;
     }
     /* ST_CALLSITE[0057C4B9]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
-    local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8);
+    local_14 = STPointerBoundaryCast<byte *>(STT3DSprC::SaveSpr((STT3DSprC *)&this_00->field_01D5,&local_8));
     /* ST_CALLSITE[0057C4C7]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
-    local_18 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
+    local_18 = STPointerBoundaryCast<byte *>(STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10));
+
     local_c = Library::DKW::LIB::MemAlloc(local_10 + 0x46 + local_8);
     if (local_14 == nullptr) {
       g_currentExceptionFrame = local_80.previous;
@@ -170,8 +174,10 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
   if (SVar2 == MESS_SHARED_0003) {
     /* ST_CALLSITE[0057C44F]: CALL 0x00405952; direct=00405952 sub_004167A0 */
     sub_004167A0(this_00);
+
     thunk_FUN_00495ff0(this_00->field_005B,this_00->field_005D,this_00->field_005F,
-                       this_00->field_008E,(AnonShape_00495FF0_59081BDD *)this_00);
+                       this_00->field_008E,(RecoveredRecordView_00495FF0_A2A90B23 *)this_00);
+
     thunk_FUN_0058d080(this_00->field_0018);
     thunk_FUN_004ad310((STT3DSprC *)&this_00->field_01D5);
     g_currentExceptionFrame = local_80.previous;
@@ -210,6 +216,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
       this_00->field_0237 = STField<short>(local_20,0x32);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       this_00->field_0239 = *(short *)(local_20 + 0xd);
+
       local_3c = Library::DKW::LIB::MemAlloc(0x44);
       if (local_3c != nullptr) {
         iVar6 = 0;
@@ -231,7 +238,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
         /* ST_CALLSITE[0057C0D4]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
         STT3DSprC::RestoreSpr
                   ((STT3DSprC *)&this_00->field_01D5,(int *)&local_3c,
-                   (AnonShape_004AD790_77673787 *)((int)puVar9 + 0x42));
+                   (RecoveredRecordView_004AD790_D4DB5A31 *)((int)puVar9 + 0x42));
         FreeAndNull(&local_3c);
         /* ST_CALLSITE[0057C0FE]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
         DumpClassC::WritePtr
@@ -250,7 +257,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
   puVar11 = (byte *)&this_00->field_0x243;
   memmove(puVar11, puVar9, 0x28); /* compiler REP MOVS byte copy */
   iVar6 = 0;
-  thunk_FUN_0057cb30((AnonShape_0057CB30_71092CE7 *)this_00);
+  thunk_FUN_0057cb30((RecoveredRecordView_0057CB30_39CFDDE6 *)this_00);
   thunk_FUN_00417a00(this_00,1);
   this_00->field_005F = -1;
   this_00->field_005D = -1;
@@ -259,9 +266,12 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
          ((int)g_worldGrid.sizeX <= *(int *)&this_00->field_0x257)) || (this_00->field_025B < 0)) ||
        (((int)g_worldGrid.sizeY <= this_00->field_025B || (iVar6 = this_00->field_025F, iVar6 < 0)))
        ) || ((g_worldGrid.sizeZ <= iVar6 ||
+
              ((iVar6 = thunk_FUN_00417a20(this_00,*(short *)&this_00->field_0x257,
                                           (short)this_00->field_025B,(short)iVar6,1), iVar6 != 0 ||
+
               (iVar6 = thunk_FUN_00417e70(this_00,8), iVar6 != 0)))))) ||
+
      (iVar6 = thunk_FUN_00417ee0(this_00,this_00->field_0263), iVar6 != 0)) {
     /* ST_CALLSITE[0057C3D5]: CALL 0x004032ba; direct=004032BA STFishC::sub_0057BF20 */
     sub_0057BF20(this_00);
@@ -277,6 +287,7 @@ int __thiscall STFishC::GetMessage(STFishC *this,STMessage *message)
       RaiseInternalException
                 (-1,g_overwriteContext_007ED77C,"E:\\__titans\\Igor\\To_fish.cpp",0xf6);
     }
+
     thunk_FUN_004ac610(puVar9,'\x0e');
     /* ST_CALLSITE[0057C2C7]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase((STT3DSprC *)puVar9,'\x0e',0);
@@ -323,6 +334,7 @@ cf_error_exit_0057C332:
   default:
     goto switchD_0057c210_default;
   }
+
   thunk_FUN_004ac610(&this_00->field_01D5,'\x0e');
 switchD_0057c210_default:
   /* ST_CALLSITE[0057C358]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
@@ -338,7 +350,9 @@ switchD_0057c210_default:
   this_00->field_0239 = this_00->field_004B;
   this_00->field_023B = CASE_0;
 cf_common_exit_0057C3E4:
-  if ((this_00->field_023B != CASE_6) && (iVar6 = thunk_FUN_0058cfe0((int)this_00), iVar6 == 0)) {
+  if ((this_00->field_023B != CASE_6) &&
+
+     (iVar6 = thunk_FUN_0058cfe0((RecoveredRecord_0058CFE0_6E80059E *)this_00), iVar6 == 0)) {
     /* ST_CALLSITE[0057C404]: CALL 0x004032ba; direct=004032BA STFishC::sub_0057BF20 */
     sub_0057BF20(this_00);
     this_00->field_023B = CASE_3;
@@ -350,7 +364,9 @@ cf_common_exit_0057C3E4:
 switchD_0057c669_caseD_127:
   psVar1 = &this_00->field_0235;
   int scalar_local_20 = (short)((message->arg1).words.low * 0xc9 + 100); /* split integer lifetime from pointer-typed SSA storage */
-  iVar6 = thunk_FUN_0058d160(0,0,g_worldGrid.sizeX + -1,g_worldGrid.sizeY + -1,(int)this_00,
+
+  iVar6 = thunk_FUN_0058d160(0,0,g_worldGrid.sizeX + -1,g_worldGrid.sizeY + -1,
+                             (RecoveredRecord_0058D160_4B53BB8A *)this_00,
                              (short)((message->arg0).words.low * 0xc9 + 100),scalar_local_20,
                              (short)((message->arg0).words.high * 0xc9 + 100),
                              (short)((message->arg1).words.high * 0xc9 + 100),psVar1,psVar1,

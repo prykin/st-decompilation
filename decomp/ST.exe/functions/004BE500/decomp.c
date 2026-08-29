@@ -21,11 +21,12 @@ void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
 
   local_8 = this;
   /* ST_CALLSITE[004BE514]: CALL dword ptr [EAX + 0xf8] */
-  if ((param_1 != 0) && (dVar4 = this->slot_F8(), dVar4 == 0)) {
+  if ((param_1 != 0) && (dVar4 = this->vfunc_F8(), dVar4 == 0)) {
     return;
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar4 == 0) {
@@ -53,6 +54,7 @@ void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar5 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bcomm.cpp",0x2f,0,iVar4,"%s",
                              "TLOBaseTy::SetActivity");
   if (iVar5 == 0) {

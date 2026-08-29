@@ -346,7 +346,7 @@ LAB_00625b06:
 00625B84  74 27                     JZ 0x00625bad
 00625B86  8B 16                     MOV EDX,dword ptr [ESI]
 00625B88  8B CE                     MOV ECX,ESI
-00625B8A  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+00625B8A  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STMineSetC
 00625B8D  05 5A FF FF FF            ADD EAX,0xffffff5a
 00625B92  83 F8 17                  CMP EAX,0x17
 00625B95  77 16                     JA 0x00625bad
@@ -448,7 +448,7 @@ LAB_00625c00:
 00625CD9  0F 84 81 00 00 00         JZ 0x00625d60
 00625CDF  8B 06                     MOV EAX,dword ptr [ESI]
 00625CE1  8B CE                     MOV ECX,ESI
-00625CE3  FF 90 F0 00 00 00         CALL dword ptr [EAX + 0xf0]
+00625CE3  FF 90 F0 00 00 00         CALL dword ptr [EAX + 0xf0]  ; [STIndirectCallsiteApplier] exact slot 0xF0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STMineSetC
 00625CE9  85 C0                     TEST EAX,EAX
 00625CEB  0F 84 8E 03 00 00         JZ 0x0062607f
 00625CF1  8B 45 14                  MOV EAX,dword ptr [EBP + 0x14]
@@ -631,7 +631,7 @@ LAB_00625f07:
 00625F09  0F 84 70 01 00 00         JZ 0x0062607f
 00625F0F  8B 16                     MOV EDX,dword ptr [ESI]
 00625F11  8B CE                     MOV ECX,ESI
-00625F13  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+00625F13  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STMineSetC
 00625F19  85 C0                     TEST EAX,EAX
 00625F1B  0F 84 5E 01 00 00         JZ 0x0062607f
 00625F21  8B 45 E4                  MOV EAX,dword ptr [EBP + -0x1c]
@@ -756,7 +756,7 @@ LAB_00626054:
 00626056  74 27                     JZ 0x0062607f
 00626058  8B 06                     MOV EAX,dword ptr [ESI]
 0062605A  8B CE                     MOV ECX,ESI
-0062605C  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+0062605C  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STMineSetC
 0062605F  05 5A FF FF FF            ADD EAX,0xffffff5a
 00626064  83 F8 17                  CMP EAX,0x17
 00626067  77 16                     JA 0x0062607f

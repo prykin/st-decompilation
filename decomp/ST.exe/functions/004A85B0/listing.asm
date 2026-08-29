@@ -26,7 +26,7 @@ LAB_004a85d0:
 004A85EE  6A 01                     PUSH 0x1
 004A85F0  50                        PUSH EAX
 004A85F1  52                        PUSH EDX
-004A85F2  E8 C3 A2 F5 FF            CALL 0x004028ba
+004A85F2  E8 C3 A2 F5 FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/CallableReceivers/CallableReceiver_00493D10_P0; source view only; no Ghidra override
 004A85F7  8B F0                     MOV ESI,EAX
 004A85F9  85 F6                     TEST ESI,ESI
 004A85FB  75 3D                     JNZ 0x004a863a

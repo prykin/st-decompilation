@@ -30,16 +30,18 @@ void CreateAi(void)
   int local_14;
   char *local_10;
   cMf32 *local_c;
-  AnonShape_00648C10_30A1BBFD *local_8;
+  RecoveredRecordView_00648C10_4BE0A791 *local_8;
 
   local_c = nullptr;
   local_8 = nullptr;
   local_10 = nullptr;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_64.previous;
+
     iVar12 = ReportDebugMessage("E:\\__titans\\ai\\ai_creat.cpp",0x10a,0,iVar3,"%s",
                                 "CreateAi");
     if (iVar12 != 0) {
@@ -147,10 +149,11 @@ void CreateAi(void)
           pcVar7 = PTR_s_AIPLAYER_0079d660;
           uVar4 = local_1c;
 LAB_00649255:
+          /* ST_CALLSITE[00649255]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
           local_10 = FUN_006f2c00(pcVar7,iVar13,uVar4);
         }
         if ((local_10 != nullptr) &&
-           (local_8 = (AnonShape_00648C10_30A1BBFD *)
+           (local_8 = (RecoveredRecordView_00648C10_4BE0A791 *)
                       /* ST_CALLSITE[00649271]: CALL 0x004012ad; direct=004012AD LoadStrategData */
                       LoadStrategData((int)pcVar6,local_10,nullptr),
            local_8 != nullptr)) {

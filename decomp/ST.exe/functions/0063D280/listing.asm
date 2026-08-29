@@ -28,7 +28,7 @@ STTmMineC::CreatePart:
 0063D2D1  6A 3C                     PUSH 0x3c
 0063D2D3  50                        PUSH EAX
 0063D2D4  56                        PUSH ESI
-0063D2D5  E8 B6 0F 07 00            CALL 0x006ae290
+0063D2D5  E8 B6 0F 07 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STTmMineC_field_0336DArray; source view only; no Ghidra override
 0063D2DA  85 C0                     TEST EAX,EAX
 0063D2DC  89 83 36 03 00 00         MOV dword ptr [EBX + 0x336],EAX
 0063D2E2  74 79                     JZ 0x0063d35d

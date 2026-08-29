@@ -11,7 +11,7 @@ undefined4 FUN_006939f0(void)
   cMf32 *in_stack_00000004;
   InternalExceptionFrame local_54;
   byte *local_10;
-  undefined4 local_c;
+  uint local_c;
   undefined4 *local_8;
 
   local_8 = nullptr;

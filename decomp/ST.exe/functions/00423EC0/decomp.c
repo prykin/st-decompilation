@@ -11,14 +11,14 @@
 
    [STDiscriminatedPayloadApplier] Case-local payload view: message->id == MESS_ID_CREATE uses
    /SubmarineTitans/Recovered/DiscriminatedPayloads/STGroupC_GetMessage_00423EC0_MessagePayload_Case_MESS_ID_CREATE.
-   The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage. */
+   carrier=message; The carrier ABI remains pointer:/SubmarineTitans/Recovered/STMessage. */
 
 int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
 
 {
   STGroupC *this_00;
   int iVar2;
-  uint *puVar2;
+  DArrayTy *pDVar2;
   int iVar3;
   int iVar4;
   uint index;
@@ -31,10 +31,12 @@ int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\tc_grp.cpp",0x17c,0,iVar2,"%s",
                                "STGroupC::GetMessage");
     if (iVar3 != 0) {
@@ -43,20 +45,23 @@ int __thiscall STGroupC::GetMessage(STGroupC *this,STMessage *message)
     RaiseInternalException(iVar2,0,"E:\\__titans\\wlad\\tc_grp.cpp",0x17d);
     return 0xffff;
   }
+
   FUN_006e5fd0(local_8,message);
   if (message->id == MESS_ID_CREATE) {
     iVar4 = (message->arg0).i32;
     if (STField<uint>(iVar4,0xC) < 2) {
       this_00->field_0020 = STField<undefined4>(iVar4,0x20);
-      this_00->field_0024 = ((char *)iVar4)[4];
+      this_00->field_0024 = STField<char>(iVar4,0x4);
       this_00->field_0025 = STField<undefined2>(iVar4,0x14);
       this_00->field_0027 = STField<undefined2>(iVar4,0x18);
-      puVar2 = Library::DKW::TBL::FUN_006ae310(nullptr,5,2,5,0x4045c5);
-      this_00->field_0029 = puVar2;
+      /* ST_CALLSITE[00423FD0]: CALL 0x006ae310; direct=006AE310 Library::DKW::TBL::DArrayCreateTracked; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
+      pDVar2 = Library::DKW::TBL::DArrayCreateTracked(nullptr,5,2,5,0x4045c5);
+      this_00->field_0029 = &pDVar2->flags;
       local_c = STField<int>(iVar4,0x1C);
       if (0 < local_c) {
         element = (void *)(iVar4 + 0x24);
         do {
+
           Library::DKW::TBL::DArrayPut((DArrayTy *)this_00->field_0029,index,element);
           index = index + 1;
           element = (void *)((int)element + 4);

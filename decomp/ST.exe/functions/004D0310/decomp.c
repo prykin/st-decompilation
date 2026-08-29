@@ -79,9 +79,12 @@ undefined4 __fastcall FUN_004d0310(TLOBaseTy *param_1)
     }
   }
   uVar10 = 10;
+  /* ST_CALLSITE[004D0430]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STT3DSprC; source view only; no Ghidra override */
   iVar4 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_01D5);
+
   uVar3 = thunk_FUN_004ad650((STT3DSprC *)param_1->field_05FF);
-  FUN_006ea340((void *)param_1->field_0211,uVar3,iVar4,uVar10);
+  FUN_006ea340(param_1->field_0211,uVar3,iVar4,uVar10);
+
   local_EAX_323 = thunk_FUN_004ab050();
   switch(local_EAX_323) {
   case 0:
@@ -101,7 +104,9 @@ undefined4 __fastcall FUN_004d0310(TLOBaseTy *param_1)
     local_8 = DAT_007a9444;
   }
   thunk_FUN_004ad460(param_1->field_05FF,0);
+
   thunk_FUN_004abce0(param_1->field_05FF,0xe,uVar6,uVar6,'\0');
+
   thunk_FUN_004abce0(param_1->field_05FF,0xc,uVar6,uVar6,'\0');
   /* ST_CALLSITE[004D04FE]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   STT3DSprC::SetCurFase((STT3DSprC *)param_1->field_05FF,'\x0e',uVar6);
@@ -121,6 +126,7 @@ undefined4 __fastcall FUN_004d0310(TLOBaseTy *param_1)
     pcVar9 = pcVar9 + 1;
   } while (cVar1 != '\0');
   if (iVar5 != -2) {
+
     thunk_FUN_004abce0(param_1->field_05FF,0xd,local_8,local_8,'\0');
     /* ST_CALLSITE[004D057D]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase((STT3DSprC *)param_1->field_05FF,'\r',uVar6);

@@ -2062,7 +2062,8 @@ LAB_0066380f:
 0066381D  8B CE                     MOV ECX,ESI
 0066381F  52                        PUSH EDX
 00663820  50                        PUSH EAX
-00663821  E8 BB 00 DA FF            CALL 0x004038e1
+AiFltClassTy::GetAiMess::override::prt_663821_275fe1ab:
+00663821  E8 BB 00 DA FF            CALL 0x004038e1  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__thiscall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/AiFltClassTy;/int;/int;pointer:/short
 00663826  3B C3                     CMP EAX,EBX
 00663828  74 0A                     JZ 0x00663834
 0066382A  50                        PUSH EAX
@@ -2099,7 +2100,8 @@ switchD_00662290::caseD_12:
 00663878  66 81 79 7B 00 80         CMP word ptr [ECX + 0x7b],0x8000
 0066387E  0F 85 B3 04 00 00         JNZ 0x00663d37
 00663884  66 C7 47 0F 00 00         MOV word ptr [EDI + 0xf],0x0
-0066388A  E8 40 E0 D9 FF            CALL 0x004018cf
+AiFltClassTy::GetAiMess::override::prt_66388a_a0e5684e:
+0066388A  E8 40 E0 D9 FF            CALL 0x004018cf  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__fastcall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/AiFltClassTy;/undefined4
 0066388F  8B D8                     MOV EBX,EAX
 00663891  85 DB                     TEST EBX,EBX
 00663893  0F 84 9E 04 00 00         JZ 0x00663d37
@@ -2422,7 +2424,8 @@ LAB_00663c5d:
 00663C5D  66 39 9E 57 01 00 00      CMP word ptr [ESI + 0x157],BX
 00663C64  0F 8E CD 00 00 00         JLE 0x00663d37
 00663C6A  8B CE                     MOV ECX,ESI
-00663C6C  E8 CA F7 D9 FF            CALL 0x0040343b
+AiFltClassTy::GetAiMess::override::prt_663c6c_ff0b9859:
+00663C6C  E8 CA F7 D9 FF            CALL 0x0040343b  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STAllPlayersC; signature=__thiscall;pointer:/STAllPlayersC;pointer:/AiFltClassTy
 00663C71  0F BF 8E 57 01 00 00      MOVSX ECX,word ptr [ESI + 0x157]
 00663C78  3B C1                     CMP EAX,ECX
 00663C7A  0F 8C B7 00 00 00         JL 0x00663d37

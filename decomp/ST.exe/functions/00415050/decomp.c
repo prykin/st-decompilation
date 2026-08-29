@@ -24,8 +24,9 @@ void FUN_00415050(undefined4 param_1,undefined4 param_2,undefined4 param_3,int p
   }
   iVar3 = iVar2 + 1;
   if (iVar3 < DAT_007f4d44) {
+
     Library::MSVCRT::FUN_0072da70
-              ((undefined4 *)(DAT_007f4d18 + (iVar2 + 4 + iVar3 * 2) * 8),
+              ((RecoveredRecord_006BFE70_3123BCE8 *)(DAT_007f4d18 + (iVar2 + 4 + iVar3 * 2) * 8),
                (AnonPointee_TLOBaseTy_0607 *)(iVar3 * 0x18 + DAT_007f4d18),
                DAT_007f4d44 * 0x18 + iVar3 * -0x18);
   }

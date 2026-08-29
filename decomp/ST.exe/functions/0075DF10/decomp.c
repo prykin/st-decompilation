@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-void FUN_0075df10(AnonShape_0075DF10_BA4C6604 *param_1)
+void FUN_0075df10(RecoveredRecordView_0075DF10_5D45A386 *param_1)
 
 {
   AnonNested_0075DF10_01B2_1F0F9C79 *pAVar1;

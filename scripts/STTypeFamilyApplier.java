@@ -46,9 +46,21 @@ public class STTypeFamilyApplier extends GhidraScript {
             "target_ordinal", "expected_name", "expected_storage", "expected_type",
             "expected_source", "proposed_type", "allow_manual_override", "family_id", "evidence");
         dataTypes = currentProgram.getDataTypeManager();
+        Path promotionPath = file.toPath().toAbsolutePath().getParent()
+            .resolve("contextual_record_promotions.tsv");
+        Tsv promotions = Files.isRegularFile(promotionPath) ?
+            read(promotionPath) : new Tsv(List.of(), List.of());
+        if (!promotions.rows.isEmpty())
+            require(promotions, "source_type", "target_type", "owner",
+                "anchor_function", "length", "concrete_fields",
+                "function_targets", "evidence");
         int tx = currentProgram.startTransaction("Apply cross-function type families");
         boolean commit = false;
         try {
+            for (Map<String, String> row : promotions.rows) {
+                monitor.checkCancelled();
+                applyPromotion(row);
+            }
             for (Map<String, String> row : input.rows) {
                 monitor.checkCancelled(); apply(row);
             }
@@ -61,6 +73,63 @@ public class STTypeFamilyApplier extends GhidraScript {
             count("unchanged") + ", preserved=" + count("preserved") + ", conflicts=" +
             count("conflict") + ", disabled=" + count("disabled"));
         println("Apply report: " + output);
+    }
+
+    /**
+     * A contextual promotion renames one already unique generated datatype; it
+     * does not merge two geometrically similar records.  Replace the source
+     * datatype atomically so function variables, globals and containing fields
+     * cannot retain parallel AnonShape aliases after the function-level rows
+     * have converged.
+     */
+    private void applyPromotion(Map<String, String> row) {
+        String sourcePath = row.get("source_type");
+        String targetPath = row.get("target_type");
+        String target = "type:" + sourcePath;
+        try {
+            DataType sourceType = dataTypes.getDataType(sourcePath);
+            DataType targetType = dataTypes.getDataType(targetPath);
+            if (sourceType == null) {
+                if (targetType instanceof Structure)
+                    report.add(new Report("TYPE", target, "unchanged",
+                        "source identity already replaced by " + targetPath));
+                else
+                    report.add(new Report("TYPE", target, "conflict",
+                        "source and target types are missing"));
+                return;
+            }
+            if (!(sourceType instanceof Structure source) ||
+                    !source.getPathName().startsWith(
+                        "/SubmarineTitans/Recovered/PointerShapes/") ||
+                    !source.getName().startsWith("AnonShape_")) {
+                report.add(new Report("TYPE", target, "preserved",
+                    "promotion source is not one generated pointer shape"));
+                return;
+            }
+            String description = source.getDescription();
+            if (description == null ||
+                    !description.contains("[STPointerShapeApplier]") ||
+                    !description.contains("generated_layout_sha256=") ||
+                    source.getLength() != Integer.parseInt(row.get("length"))) {
+                report.add(new Report("TYPE", target, "preserved",
+                    "generated source baseline is stale"));
+                return;
+            }
+            if (targetType == null)
+                targetType = materializeContextualStructure(source, targetPath,
+                    promotionFamily(targetPath), row.get("evidence"));
+            if (!(targetType instanceof Structure targetStructure) ||
+                    !source.isEquivalent(targetStructure)) {
+                report.add(new Report("TYPE", target, "conflict",
+                    "target is missing or not exactly equivalent: " + targetPath));
+                return;
+            }
+            dataTypes.replaceDataType(source, targetStructure, false);
+            report.add(new Report("TYPE", target, "replaced", targetPath));
+        }
+        catch (Exception exception) {
+            report.add(new Report("TYPE", target, "conflict", message(exception)));
+        }
     }
 
     private void apply(Map<String, String> row) {
@@ -107,7 +176,8 @@ public class STTypeFamilyApplier extends GhidraScript {
             DataType proposed = resolve(row.get("proposed_type"));
             if (proposed == null &&
                     ("CONTEXTUAL_GENERATED_RECORD".equals(row.get("family_id")) ||
-                     "SOURCE_FUNCTION_FAMILY".equals(row.get("family_id"))))
+                     "SOURCE_FUNCTION_FAMILY".equals(row.get("family_id")) ||
+                     "RECOVERED_RECORD_VIEW".equals(row.get("family_id"))))
                 proposed = materializeContextualRecord(row, variable.getDataType());
             if (proposed == null) { conflict(row, target, "proposed type missing"); return; }
             if (variable.getDataType().isEquivalent(proposed)) {
@@ -137,6 +207,14 @@ public class STTypeFamilyApplier extends GhidraScript {
                 !source.getPathName().contains("/Recovered/PointerShapes/"))
             return null;
 
+        Structure materialized = materializeContextualStructure(source,
+            targetPath, row.get("family_id"), row.get("evidence"));
+        return materialized == null ? null : new PointerDataType(materialized,
+            currentProgram.getDefaultPointerSize(), dataTypes);
+    }
+
+    private Structure materializeContextualStructure(Structure source,
+            String targetPath, String family, String evidence) throws Exception {
         StructureDataType desired = new StructureDataType(category(targetPath),
             leaf(targetPath), source.getLength(), dataTypes);
         for (DataTypeComponent component : source.getDefinedComponents())
@@ -145,10 +223,11 @@ public class STTypeFamilyApplier extends GhidraScript {
         String sourceDescription = source.getDescription();
         String inherited = sourceDescription == null ? "" : sourceDescription.trim();
         if (!inherited.isBlank() && !inherited.endsWith(";")) inherited += ";";
-        String family = row.get("family_id");
         desired.setDescription((inherited.isBlank() ? "" : inherited + " ") +
             MARKER + " Generated " + family + " record; promoted_from=" +
-            source.getPathName() + "; [ST_SEMANTIC_ANCHOR]");
+            source.getPathName() + "; evidence=" + clean(evidence) +
+            "; " + ("RECOVERED_RECORD_VIEW".equals(family) ?
+                "[ST_IDENTITY_VIEW]" : "[ST_SEMANTIC_ANCHOR]"));
 
         DataType existing = dataTypes.getDataType(targetPath);
         if (existing == null) {
@@ -173,8 +252,16 @@ public class STTypeFamilyApplier extends GhidraScript {
             }
             structure.setDescription(desired.getDescription());
         }
-        return new PointerDataType(existing, currentProgram.getDefaultPointerSize(),
-            dataTypes);
+        return existing instanceof Structure structure ? structure : null;
+    }
+
+    private String promotionFamily(String targetPath) {
+        String name = leaf(targetPath);
+        return name.startsWith("RecoveredRecordView_") ||
+            name.startsWith("RecoveredGlobalRecordView_") ?
+                "RECOVERED_RECORD_VIEW" :
+            name.startsWith("RecoveredSourceFamily_") ?
+                "SOURCE_FUNCTION_FAMILY" : "CONTEXTUAL_GENERATED_RECORD";
     }
 
     private CategoryPath category(String path) {

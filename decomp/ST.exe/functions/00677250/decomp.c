@@ -9,8 +9,10 @@ undefined4 __cdecl FUN_00677250(undefined4 param_1,undefined4 param_2,int param_
 
   array = param_4;
   if (param_4 != nullptr) {
-    uVar1 = thunk_FUN_00423120(param_3);
+
+    uVar1 = thunk_FUN_00423120((RecoveredRecord_00423120_79B5B62D *)param_3);
     if ((uVar1 & 8) == 0) {
+
       Library::DKW::TBL::DArrayAppend((DArrayTy *)array,&param_2);
     }
   }

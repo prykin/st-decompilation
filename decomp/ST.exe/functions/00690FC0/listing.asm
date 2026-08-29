@@ -54,7 +54,7 @@ LAB_00691057:
 00691069  6A 08                     PUSH 0x8
 0069106B  6A 0A                     PUSH 0xa
 0069106D  57                        PUSH EDI
-0069106E  E8 1D D2 01 00            CALL 0x006ae290
+0069106E  E8 1D D2 01 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 00691073  8B 55 FC                  MOV EDX,dword ptr [EBP + -0x4]
 00691076  89 82 85 00 00 00         MOV dword ptr [EDX + 0x85],EAX
 0069107C  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]

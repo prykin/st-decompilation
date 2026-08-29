@@ -6,7 +6,7 @@
    Diagnostic line evidence: 195 (metadata/report site, not the function definition)
    [STSourceProvenanceApplier end] */
 
-undefined4 __fastcall FUN_004e04a0(AnonShape_004E04A0_3A5B2D2E *param_1)
+undefined4 __fastcall FUN_004e04a0(RecoveredRecordView_004E04A0_E5D04031 *param_1)
 
 {
   byte *this;
@@ -105,31 +105,28 @@ LAB_004e05d3:
   }
   iVar1 = param_1->field_04E8;
   if (iVar1 == 1) {
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar2 = **(int **)(param_1->field_01F5 + 0x18c);
+    iVar2 = *param_1->field_01F5->field_018C;
   }
   else {
     if (iVar1 != 2) {
       if (iVar1 == 3) {
-        /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-        uVar3 = **(int **)(param_1->field_01F5 + 0x18c) - 1;
+        uVar3 = *param_1->field_01F5->field_018C - 1;
         iVar2 = 0;
       }
       goto cf_common_exit_004E068C;
     }
     iVar1 = param_1->field_05AC;
     if (((iVar1 != 0x3b) && (iVar1 != 0x60)) && (iVar1 != 0x52)) {
-      /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-      uVar3 = **(int **)(param_1->field_01F5 + 0x18c) - 1;
+      uVar3 = *param_1->field_01F5->field_018C - 1;
       iVar2 = 0;
       goto cf_common_exit_004E068C;
     }
-    /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    iVar2 = **(int **)(param_1->field_01F5 + 0x18c);
+    iVar2 = *param_1->field_01F5->field_018C;
   }
   uVar3 = 0;
   iVar2 = iVar2 + -1;
 cf_common_exit_004E068C:
+
   thunk_FUN_004abce0(this,0xb,uVar3,iVar2,'\0');
   /* ST_CALLSITE[004E06A1]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   STT3DSprC::SetCurFase((STT3DSprC *)this,'\v',uVar3);

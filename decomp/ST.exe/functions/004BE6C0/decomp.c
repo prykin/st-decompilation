@@ -92,6 +92,7 @@ void __thiscall TLOBaseTy::sub_004BE6C0(TLOBaseTy *this,undefined4 *param_1)
     pbVar9 = this->field_0024;
     iVar7 = 0x83;
 LAB_004be7fb:
+
     uVar5 = thunk_FUN_004e60d0((int)pbVar9,iVar7);
     STField<short>(param_1,0x22) = (short)uVar5;
   }
@@ -140,6 +141,7 @@ LAB_004be80a:
     pbVar9 = this->field_0024;
     iVar7 = 0x83;
 LAB_004be91c:
+
     uVar5 = thunk_FUN_004e60d0((int)pbVar9,iVar7);
     *(short *)(param_1 + 9) = (short)uVar5;
   }

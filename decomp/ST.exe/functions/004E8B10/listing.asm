@@ -18,7 +18,7 @@ FUN_004e8b10:
 LAB_004e8b40:
 004E8B40  8B 06                     MOV EAX,dword ptr [ESI]
 004E8B42  8B CE                     MOV ECX,ESI
-004E8B44  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+004E8B44  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004E8B47  83 F8 37                  CMP EAX,0x37
 004E8B4A  75 13                     JNZ 0x004e8b5f
 004E8B4C  3B 5E 24                  CMP EBX,dword ptr [ESI + 0x24]
@@ -35,7 +35,7 @@ LAB_004e8b56:
 LAB_004e8b5f:
 004E8B5F  8B 16                     MOV EDX,dword ptr [ESI]
 004E8B61  8B CE                     MOV ECX,ESI
-004E8B63  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+004E8B63  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004E8B66  83 F8 6C                  CMP EAX,0x6c
 004E8B69  75 EB                     JNZ 0x004e8b56
 004E8B6B  8B CE                     MOV ECX,ESI

@@ -8,7 +8,8 @@ FUN_0067eea0:
 0067EEAF  85 C0                     TEST EAX,EAX
 0067EEB1  7C 0D                     JL 0x0067eec0
 0067EEB3  50                        PUSH EAX
-0067EEB4  E8 81 46 D8 FF            CALL 0x0040353a
+FUN_0067eea0::override::prt_67eeb4_da09c969:
+0067EEB4  E8 81 46 D8 FF            CALL 0x0040353a  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;/int
 0067EEB9  83 C4 04                  ADD ESP,0x4
 0067EEBC  5D                        POP EBP
 0067EEBD  C2 04 00                  RET 0x4

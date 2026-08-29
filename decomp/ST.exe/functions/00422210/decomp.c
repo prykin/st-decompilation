@@ -40,10 +40,12 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pAVar2 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar16 = ReportDebugMessage("E:\\__titans\\wlad\\Tc_gobj.cpp",0xf0b,0,iVar3,"%s",
                                 "STAllPlayersC::RestoreGObjData");
     if (iVar16 == 0) {
@@ -91,6 +93,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     local_8->field_0097 = nullptr;
   }
   else {
+
     puVar3 = (byte *)(Library::DKW::LIB::MemAlloc(local_10->field_0275));
     local_8->field_0097 = puVar3;
     uVar19 = pAVar2->field_0275;
@@ -102,6 +105,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     local_8->field_009F = nullptr;
   }
   else {
+
     puVar3 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2[1].field_0001));
     local_8->field_009F = puVar3;
     uVar19 = *(uint *)&pAVar2[1].field_0001;
@@ -113,6 +117,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     local_8->field_011D = nullptr;
   }
   else {
+
     puVar3 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x115));
     local_8->field_011D = puVar3;
     uVar19 = *(uint *)&pAVar2->field_0x115;
@@ -124,6 +129,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     local_8->field_0121 = nullptr;
   }
   else {
+
     puVar3 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x11d));
     local_8->field_0121 = puVar3;
     uVar19 = *(uint *)&pAVar2->field_0x11d;
@@ -135,6 +141,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     local_8->field_0125 = nullptr;
   }
   else {
+
     puVar3 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x125));
     local_8->field_0125 = puVar3;
     uVar19 = *(uint *)&pAVar2->field_0x125;
@@ -146,6 +153,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     local_8->field_0129 = nullptr;
   }
   else {
+
     puVar3 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x12d));
     local_8->field_0129 = puVar3;
     uVar19 = *(uint *)&pAVar2->field_0x12d;
@@ -223,6 +231,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     local_8->field_0185 = nullptr;
   }
   else {
+
     puVar3 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x1e5));
     local_8->field_0185 = puVar3;
     uVar19 = *(uint *)&pAVar2->field_0x1e5;
@@ -234,6 +243,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     local_8->field_0189 = nullptr;
   }
   else {
+
     puVar3 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x1ed));
     local_8->field_0189 = puVar3;
     uVar19 = *(uint *)&pAVar2->field_0x1ed;
@@ -245,6 +255,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     local_8->field_018D = nullptr;
   }
   else {
+    /* ST_CALLSITE[004226DD]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_018D; source view only; no Ghidra override */
     pAVar5 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x1f5);
     local_8->field_018D = pAVar5;
     uVar19 = *(uint *)&pAVar2->field_0x1f5;
@@ -264,6 +275,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     local_8->field_0191 = nullptr;
   }
   else {
+    /* ST_CALLSITE[00422729]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_0191; source view only; no Ghidra override */
     pAVar6 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x1fd);
     local_8->field_0191 = pAVar6;
     uVar19 = *(uint *)&pAVar2->field_0x1fd;
@@ -283,6 +295,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     local_8->field_0195 = nullptr;
   }
   else {
+    /* ST_CALLSITE[00422775]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_0195; source view only; no Ghidra override */
     pAVar7 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x205);
     local_8->field_0195 = pAVar7;
     uVar19 = *(uint *)&pAVar2->field_0x205;
@@ -302,6 +315,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     local_8->field_0199 = nullptr;
   }
   else {
+    /* ST_CALLSITE[004227C1]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_0199; source view only; no Ghidra override */
     pAVar8 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x20d);
     local_8->field_0199 = pAVar8;
     uVar19 = *(uint *)&pAVar2->field_0x20d;
@@ -336,6 +350,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     pSVar21->field_01A5 = nullptr;
   }
   else {
+    /* ST_CALLSITE[00422857]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_01A5; source view only; no Ghidra override */
     pAVar9 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x225);
     local_8->field_01A5 = pAVar9;
     uVar19 = *(uint *)&pAVar2->field_0x225;
@@ -355,6 +370,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     pSVar21->field_01A9 = nullptr;
   }
   else {
+    /* ST_CALLSITE[004228A3]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_01A9; source view only; no Ghidra override */
     pAVar10 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x22d);
     local_8->field_01A9 = pAVar10;
     uVar19 = *(uint *)&pAVar2->field_0x22d;
@@ -374,6 +390,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     pSVar21->field_01AD = nullptr;
   }
   else {
+    /* ST_CALLSITE[004228EF]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_01AD; source view only; no Ghidra override */
     pAVar11 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x235);
     local_8->field_01AD = pAVar11;
     uVar19 = *(uint *)&pAVar2->field_0x235;
@@ -393,6 +410,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     pSVar21->field_01B1 = nullptr;
   }
   else {
+    /* ST_CALLSITE[0042293B]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_01B1; source view only; no Ghidra override */
     pAVar12 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x23d);
     local_8->field_01B1 = pAVar12;
     uVar19 = *(uint *)&pAVar2->field_0x23d;
@@ -412,6 +430,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     pSVar21->field_01B5 = nullptr;
   }
   else {
+    /* ST_CALLSITE[00422987]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_01B5; source view only; no Ghidra override */
     pAVar13 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x245);
     local_8->field_01B5 = pAVar13;
     uVar19 = *(uint *)&pAVar2->field_0x245;
@@ -431,6 +450,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     pSVar21->field_01B9 = nullptr;
   }
   else {
+    /* ST_CALLSITE[004229D3]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STAllPlayersC_01B9; source view only; no Ghidra override */
     pAVar14 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x24d);
     local_8->field_01B9 = pAVar14;
     uVar19 = *(uint *)&pAVar2->field_0x24d;
@@ -450,6 +470,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     pSVar21->field_01BD = nullptr;
   }
   else {
+
     puVar3 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x255));
     local_8->field_01BD = puVar3;
     uVar19 = *(uint *)&pAVar2->field_0x255;
@@ -469,6 +490,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     pSVar21->field_01C1 = nullptr;
   }
   else {
+
     puVar3 = (byte *)(Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x25d));
     local_8->field_01C1 = puVar3;
     uVar19 = *(uint *)&pAVar2->field_0x25d;
@@ -488,6 +510,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     pSVar21->field_01C5 = nullptr;
   }
   else {
+    /* ST_CALLSITE[00422AB7]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
     puVar15 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x265);
     local_8->field_01C5 = puVar15;
     uVar19 = *(uint *)&pAVar2->field_0x265;
@@ -508,6 +531,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     g_currentExceptionFrame = local_54.previous;
     return;
   }
+  /* ST_CALLSITE[00422B03]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
   puVar15 = Library::DKW::LIB::MemAlloc(*(uint *)&pAVar2->field_0x26d);
   local_8->field_01C9 = puVar15;
   uVar19 = *(uint *)&pAVar2->field_0x26d;

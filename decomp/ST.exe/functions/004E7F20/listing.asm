@@ -1,4 +1,4 @@
-FUN_004e7f20:
+STAllPlayersC::sub_004E7F20:
 004E7F20  55                        PUSH EBP
 004E7F21  8B EC                     MOV EBP,ESP
 004E7F23  53                        PUSH EBX

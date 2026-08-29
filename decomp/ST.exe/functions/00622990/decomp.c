@@ -8,7 +8,6 @@ byte * __thiscall STAllPlayersC::FUN_00622990(STAllPlayersC *this,uint *param_1)
 
 {
   uint newSize;
-  int iVar1;
   uint uVar2;
   AnonShape_00622990_E4CFDE96 *pAVar3;
   uint *puVar4;
@@ -24,11 +23,9 @@ byte * __thiscall STAllPlayersC::FUN_00622990(STAllPlayersC *this,uint *param_1)
   local_10 = Library::DKW::LIB::MemAlloc(0x109);
   puVar4 = (undefined4 *)&this->field_0x25e;
   pAVar6 = local_10;
-  for (iVar1 = 0x42; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pAVar6->field_0000 = *puVar4;
-    puVar4 = puVar4 + 1;
-    pAVar6 = (AnonShape_00622990_E4CFDE96 *)&pAVar6->field_0004;
-  }
+  memmove(pAVar6, puVar4, 0x108); /* compiler REP MOVS byte copy */
+  pAVar6 = (AnonShape_00622990_E4CFDE96 *)((byte *)pAVar6 + 0x108);
+  puVar4 = puVar4 + 0x42;
   *(undefined1 *)&pAVar6->field_0000 = *(undefined1 *)puVar4;
   local_10->field_000C = 2;
   /* ST_CALLSITE[006229C9]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */

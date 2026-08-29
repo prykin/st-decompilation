@@ -11,8 +11,8 @@
 
 void __thiscall
 OptPanelTy::PaintDblBut
-          (OptPanelTy *this,AnonShape_0052EFB0_CC661192 *param_1,char *param_2,UINT param_3,
-          undefined *param_4,undefined *param_5,int param_6)
+          (OptPanelTy *this,RecoveredRecordView_0052EFB0_FCA27FA7 *param_1,char *param_2,
+          UINT param_3,undefined *param_4,undefined *param_5,int param_6)
 
 {
   OptPanelTy *pOVar2;
@@ -32,8 +32,8 @@ OptPanelTy::PaintDblBut
   int local_18;
   uint local_14;
   AnonNested_0052EFB0_0018_CB007E0D *local_10;
-  AnonShape_0052EFB0_8161B92D *local_c;
-  ushort *local_8;
+  RecoveredRecordView_0052EFB0_569FB924 *local_c;
+  RecoveredRecordView_006B84D0_87AF9D9B *local_8;
 
   local_10 = param_1->field_0018;
   local_c = param_1->field_0014;
@@ -66,15 +66,16 @@ OptPanelTy::PaintDblBut
     local_60.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_60;
     local_1c = this;
+
     iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
     if (iVar3 == 0) {
+      /* ST_CALLSITE[0052F066]: CALL 0x006f1ce0; direct=006F1CE0 cMf32::RecGet; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int */
       local_8 = cMf32::RecGet(g_cMf32_00806790,1,param_2,nullptr,1);
       uVar5 = local_14;
       iVar6 = local_18;
       pOVar2 = local_1c;
       /* ST_CALLSITE[0052F080]: CALL 0x00403229; direct=00403229 DibPut */
-      DibPut((RecoveredSourceFamily_dibcopy *)local_1c->field_0068,local_18,local_14,'\x01',
-             (byte *)local_8);
+      DibPut((RecoveredSourceFamily_dibcopy *)local_1c->field_0068,local_18,local_14,'\x01',local_8);
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       iVar10 = 1;
       piVar9 = nullptr;
@@ -82,8 +83,10 @@ OptPanelTy::PaintDblBut
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       uVar3 = (*(code *)param_4)(param_1);
       iVar8 = 1;
+      /* ST_CALLSITE[0052F0AF]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       pCVar4 = thunk_FUN_00571240("BUT_SWITCH",0);
       pCVar4 = FUN_006f2c00(pCVar4,iVar8,uVar3);
+      /* ST_CALLSITE[0052F0C9]: CALL 0x006f1ce0; direct=006F1CE0 cMf32::RecGet; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int */
       local_8 = cMf32::RecGet(g_cMf32_00806790,1,pCVar4,piVar9,iVar10);
       if (param_6 == 0) {
         iVar8 = local_10->field_000C;
@@ -93,8 +96,8 @@ OptPanelTy::PaintDblBut
       }
       /* ST_CALLSITE[0052F102]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut((RecoveredSourceFamily_dibcopy *)pOVar2->field_0068,iVar6 + 5,
-             (iVar8 - *(int *)(local_8 + 4)) / 2 + 1 + uVar5,'\x01',(byte *)local_8);
-      iVar6 = *(int *)(local_8 + 2);
+             (iVar8 - *(int *)&local_8->field_0x8) / 2 + 1 + uVar5,'\x01',local_8);
+      iVar6 = *(int *)&local_8->field_0x4;
       cMf32::RecMemFree(g_cMf32_00806790,(uint *)&local_8);
       if (param_6 == 0) {
         iVar8 = local_10->field_000C;
@@ -104,6 +107,7 @@ OptPanelTy::PaintDblBut
         iVar8 = local_c->field_0018;
         iVar10 = local_c->field_0014;
       }
+
       ccFntTy::SetSurf(pOVar2->field_0180,pOVar2->field_0068,0,iVar6 + 10 + local_18,uVar5,
                        (iVar10 - iVar6) + -10,iVar8);
       iVar11 = -1;
@@ -113,8 +117,11 @@ OptPanelTy::PaintDblBut
       uVar5 = (*(code *)param_5)(param_1);
       iVar8 = -1;
       iVar6 = 0;
+      /* ST_CALLSITE[0052F185]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
       resourceString = LoadResourceString(param_3,g_hINSTANCE_00807618);
+
       ccFntTy::WrTxt(pOVar2->field_0180,resourceString,iVar6,iVar8,uVar5,iVar10,iVar11);
+
       Library::DKW::DDX::FUN_006b3640
                 ((int *)g_ddxContext_008075A8,pOVar2->field_0060,0xffffffff,pOVar2->field_003C,
                  pOVar2->field_0044);
@@ -122,6 +129,7 @@ OptPanelTy::PaintDblBut
       return;
     }
     g_currentExceptionFrame = local_60.previous;
+
     iVar7 = ReportDebugMessage("E:\\__titans\\Andrey\\optpanel.cpp",0xca,0,iVar3,"%s"
                                ,"OptPanelTy::PaintDblBut");
     if (iVar7 != 0) {

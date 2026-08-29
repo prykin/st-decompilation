@@ -25,10 +25,9 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,byte param_1)
   InternalExceptionFrame local_54;
   CPanelTy *local_10;
   uint local_c;
-  undefined1 local_8;
+  byte local_8;
   bool local_6;
-  undefined1 local_5;
-
+  byte local_5;
   if (DAT_00808784 != 0) {
     return;
   }
@@ -44,9 +43,11 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,byte param_1)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel2.cpp",0x2ff,0,iVar4,"%s"
                                ,"CPanelTy::SetCmdBoat");
     if (iVar5 == 0) {
@@ -110,7 +111,9 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,byte param_1)
   switch((uint)bVar1) {
   case 1:
     local_5 = 0;
-    thunk_FUN_0054edf0((undefined4 *)0xa,(uint *)&stack0xfffffffb,0,0xffffffff);
+    /* ST_CALLSITE[00503D51]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+    STPlaySystemC::sub_0054EDF0
+              (g_playSystem_00802A38,(undefined4 *)0xa,(uint *)&stack0xfffffffb,0,0xffffffff);
     g_currentExceptionFrame = local_54.previous;
     return;
   case 2:
@@ -135,13 +138,16 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,byte param_1)
   case 4:
     memset(local_78, 0, 0x21); /* compiler bulk-zero initialization */
     STPiece<0,1>(local_78[0]) = 10;
-    thunk_FUN_0054edf0((undefined4 *)0x17,local_78,0,0xffffffff);
+    /* ST_CALLSITE[00503DF7]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+    STPlaySystemC::sub_0054EDF0(g_playSystem_00802A38,(undefined4 *)0x17,local_78,0,0xffffffff);
     g_currentExceptionFrame = local_54.previous;
     return;
   case 0xb:
   case 0xc:
     local_6 = bVar1 == 0xb;
-    thunk_FUN_0054edf0((undefined4 *)0x28,(uint *)&local_6,0,0xffffffff);
+    /* ST_CALLSITE[00503E97]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+    STPlaySystemC::sub_0054EDF0
+              (g_playSystem_00802A38,(undefined4 *)0x28,(uint *)&local_6,0,0xffffffff);
     g_currentExceptionFrame = local_54.previous;
     return;
   case 0xe:
@@ -154,7 +160,8 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,byte param_1)
   case 0x14:
     local_8 = 0;
     local_c = 3;
-    thunk_FUN_0054edf0((undefined4 *)0x21,&local_c,0,0xffffffff);
+    /* ST_CALLSITE[00503E68]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+    STPlaySystemC::sub_0054EDF0(g_playSystem_00802A38,(undefined4 *)0x21,&local_c,0,0xffffffff);
     g_currentExceptionFrame = local_54.previous;
     return;
   default:
@@ -168,7 +175,8 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,byte param_1)
   case 0x48:
     memset(local_9c, 0, 0x21); /* compiler bulk-zero initialization */
     STPiece<0,1>(local_9c[0]) = 0x14;
-    thunk_FUN_0054edf0((undefined4 *)0x17,local_9c,0,0xffffffff);
+    /* ST_CALLSITE[00503E37]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+    STPlaySystemC::sub_0054EDF0(g_playSystem_00802A38,(undefined4 *)0x17,local_9c,0,0xffffffff);
     g_currentExceptionFrame = local_54.previous;
     return;
   case 0x4c:

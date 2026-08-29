@@ -1,2 +1,3 @@
 enabled	transition_id	subject	baseline_sha256	candidate_sha256	rationale
 # Add only an exact subject/hash pair printed by abi_regression_report.tsv after independent machine-evidence review; remove it after acceptance.
+1	boat_stopmove_remove_phantom_parameter	vtable:table:007905A0@20	b71502301cdcbf06a9825e973f843f1424c0247d736abdb8a36d7c69f3ba82f6	6704db2f3c1ed644de417455cf5a9a5591cec5541fd87b1501fbc824fa68a7f9	Every RET in STBoatC::StopMove purges zero explicit stack bytes and the removed incoming slot is never referenced; retain only the __thiscall receiver.

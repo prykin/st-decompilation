@@ -29,4 +29,3 @@ st::fn_006E51C0(SystemClassTy *this,AppClassTy *param_1,int param_2)
   this->nextMessages = nullptr;
   return this;
 }
-

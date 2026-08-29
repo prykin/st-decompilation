@@ -136,7 +136,8 @@ LAB_005cc9c4:
 005CC9E5  68 F1 01 00 00            PUSH 0x1f1
 005CC9EA  68 C8 00 00 00            PUSH 0xc8
 005CC9EF  50                        PUSH EAX
-005CC9F0  E8 FB 2F 0F 00            CALL 0x006bf9f0
+SettMapMTy::DeleteCtrls::override::prt_5cc9f0_84f22ef4:
+005CC9F0  E8 FB 2F 0F 00            CALL 0x006bf9f0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69;pointer:/int;/undefined4;/undefined4;/undefined4;/undefined4
 005CC9F5  8B 8E F8 21 00 00         MOV ECX,dword ptr [ESI + 0x21f8]
 005CC9FB  50                        PUSH EAX
 005CC9FC  68 F1 01 00 00            PUSH 0x1f1

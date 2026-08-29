@@ -36,7 +36,7 @@ BehPanelTy::InitBehPanel:
 004ED6A4  50                        PUSH EAX
 004ED6A5  68 04 17 7C 00            PUSH 0x7c1704
 004ED6AA  89 3D 78 16 80 00         MOV dword ptr [0x00801678],EDI
-004ED6B0  E8 C7 80 F1 FF            CALL 0x0040577c
+004ED6B0  E8 C7 80 F1 FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SpecPanelTy; source view only; no Ghidra override
 004ED6B5  83 C4 08                  ADD ESP,0x8
 004ED6B8  8B CF                     MOV ECX,EDI
 004ED6BA  50                        PUSH EAX
@@ -160,7 +160,7 @@ LAB_004ed839:
 004ED874  E8 1A 7C F1 FF            CALL 0x00405493
 004ED879  83 C4 08                  ADD ESP,0x8
 004ED87C  50                        PUSH EAX
-004ED87D  E8 FA 7E F1 FF            CALL 0x0040577c
+004ED87D  E8 FA 7E F1 FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 004ED882  83 C4 08                  ADD ESP,0x8
 004ED885  50                        PUSH EAX
 004ED886  E8 75 53 20 00            CALL 0x006f2c00
@@ -176,10 +176,10 @@ LAB_004ed89a:
 004ED8A2  E8 EC 7B F1 FF            CALL 0x00405493
 004ED8A7  83 C4 08                  ADD ESP,0x8
 004ED8AA  50                        PUSH EAX
-004ED8AB  E8 CC 7E F1 FF            CALL 0x0040577c
+004ED8AB  E8 CC 7E F1 FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 004ED8B0  83 C4 08                  ADD ESP,0x8
 004ED8B3  50                        PUSH EAX
-004ED8B4  E8 47 53 20 00            CALL 0x006f2c00
+004ED8B4  E8 47 53 20 00            CALL 0x006f2c00  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 004ED8B9  83 C4 0C                  ADD ESP,0xc
 004ED8BC  50                        PUSH EAX
 004ED8BD  A1 94 67 80 00            MOV EAX,[0x00806794]

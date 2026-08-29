@@ -9,8 +9,8 @@ int __thiscall FUN_00711110(void *this,char *resourceString)
 {
   char *pcVar1;
   bool bVar2;
-  int iVar3;
-  uint uVar4;
+  ushort uVar3;
+  int iVar4;
   int iVar5;
   int local_8;
 
@@ -24,17 +24,19 @@ int __thiscall FUN_00711110(void *this,char *resourceString)
     do {
       if (bVar2) {
         bVar2 = false;
-        iVar3 = FUN_0070cdc0((byte *)resourceString);
-        if (iVar3 < 0) {
+
+        iVar4 = FUN_0070cdc0((byte *)resourceString);
+        if (iVar4 < 0) {
 LAB_00711153:
-          uVar4 = FUN_00710fb0(this,(byte *)resourceString);
-          local_8 = local_8 + *(short *)(STField<int>(this,0x9a) + 0x6a + (uVar4 & 0xffff) * 10);
+          uVar3 = FUN_00710fb0(this,(byte *)resourceString);
+          local_8 = local_8 + *(short *)(STField<int>(this,0x9a) + 0x6a + (uint)uVar3 * 10);
           iVar5 = iVar5 + 1;
         }
       }
       else {
-        iVar3 = FUN_0070cd90((char *)((int)this + 0x9e),(uint *)resourceString);
-        if ((iVar3 != 0) || (STField<int>(this,0x7e) == 0)) goto LAB_00711153;
+
+        iVar4 = FUN_0070cd90((char *)((int)this + 0x9e),(uint *)resourceString);
+        if ((iVar4 != 0) || (STField<int>(this,0x7e) == 0)) goto LAB_00711153;
         bVar2 = true;
       }
       pcVar1 = (char *)((int)resourceString + 1);

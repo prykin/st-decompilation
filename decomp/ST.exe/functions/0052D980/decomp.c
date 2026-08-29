@@ -27,10 +27,12 @@ void __thiscall PopUpTy::ChangeState(PopUpTy *this)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_18 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   pPVar3 = local_18;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_5c.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\mpopup.cpp",0x95,0,iVar4,"%s",
                                "PopUpTy::ChangeState");
     if (iVar6 == 0) {
@@ -67,13 +69,16 @@ LAB_0052da81:
       else {
         resourceString = nullptr;
       }
+
       uVar6 = FUN_00711110(pPVar3->field_0094,resourceString);
       if ((int)*(uint *)(pPVar3->field_0090 + 2) <= (int)uVar6) {
         uVar6 = *(uint *)(pPVar3->field_0090 + 2);
       }
       puVar8[0xf] = uVar6;
       FUN_006b2800(g_ddxContext_008075A8,*puVar8,uVar6,0x13);
+
       Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar8,0xffffffff,0xd,local_c);
+
       Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*puVar8);
     }
     local_5 = local_5 + 1;

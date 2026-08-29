@@ -15,8 +15,7 @@ void __thiscall CGenerate::sub_006964F0(CGenerate *this,uint param_1,int param_2
   byte *puVar4;
   int *piVar5;
   int local_54 [9];
-  undefined1 local_30 [4];
-  uint local_2c;
+  ulonglong local_30;
   int local_28;
   ushort *local_24;
   int local_20;
@@ -69,17 +68,20 @@ void __thiscall CGenerate::sub_006964F0(CGenerate *this,uint param_1,int param_2
               if ((short)local_24[iVar2] == param_1) {
                 local_14 = local_14 + 1;
                 if (param_2 != 0) {
+
                   thunk_FUN_006a1370(this->field_0008,iVar2 % this->field_5833,
-                                     iVar2 / this->field_5833,local_8,(int)local_30);
-                  uVar3 = local_2c & 0xf;
+                                     iVar2 / this->field_5833,local_8,
+                                     (RecoveredRecord_006A1370_30F34641 *)&local_30);
+                  uVar3 = STPiece<4,4>(local_30) & 0xf;
                   piVar5 = local_1c;
-                  if (((local_2c & 0x2000) == 0x2000) &&
+                  if (((STPiece<4,4>(local_30) & 0x2000) == 0x2000) &&
                      (((8 < uVar3 && (uVar3 < 0xf)) || (uVar3 == 0)))) {
                     local_10 = local_10 + 1;
                   }
                 }
               }
               else {
+
                 thunk_FUN_006960d0(this,param_1,(short)local_24[iVar2]);
               }
               local_c = local_c + 1;

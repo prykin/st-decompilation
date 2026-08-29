@@ -46,7 +46,7 @@ LAB_00575181:
 0057518E  8B C8                     MOV ECX,EAX
 00575190  0F AF C8                  IMUL ECX,EAX
 00575193  51                        PUSH ECX
-00575194  E8 D7 5A 13 00            CALL 0x006aac70
+00575194  E8 D7 5A 13 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override
 00575199  8B 55 10                  MOV EDX,dword ptr [EBP + 0x10]
 0057519C  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
 0057519F  50                        PUSH EAX

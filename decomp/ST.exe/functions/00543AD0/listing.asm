@@ -37,7 +37,7 @@ CursorClassTy::SetImages:
 00543B3A  6A 07                     PUSH 0x7
 00543B3C  52                        PUSH EDX
 00543B3D  8B CF                     MOV ECX,EDI
-00543B3F  FF 50 04                  CALL dword ptr [EAX + 0x4]
+00543B3F  FF 50 04                  CALL dword ptr [EAX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00543B42  8B 46 69                  MOV EAX,dword ptr [ESI + 0x69]
 00543B45  8B 4D 18                  MOV ECX,dword ptr [EBP + 0x18]
 00543B48  51                        PUSH ECX

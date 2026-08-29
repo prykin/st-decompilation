@@ -14,8 +14,10 @@ MReportTy * __cdecl CreateMReport(void)
   MReportTy *this;
   int iVar1;
 
-  this = (MReportTy *)FUN_006b04d0(0x45b);
+
+  this = STPointerBoundaryCast<MReportTy *>(FUN_006b04d0(0x45b));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->field_0018 = 0;
     this->field_005D = nullptr;

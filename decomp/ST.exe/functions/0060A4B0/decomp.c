@@ -15,7 +15,7 @@ undefined4 __fastcall FUN_0060a4b0(AnonShape_0060A4B0_7BF9A20C *param_1)
   int iVar7;
   int local_20;
   int local_1c;
-  undefined4 local_18;
+  uint local_18;
   uint local_14;
   AnonShape_0060A4B0_7BF9A20C *local_10;
   int local_c;

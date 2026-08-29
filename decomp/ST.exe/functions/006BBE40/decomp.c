@@ -17,7 +17,7 @@ undefined4 FUN_006bbe40(int *param_1,uint *param_2,int *param_3,uint param_4)
 {
   bool bVar1;
   int iVar2;
-  undefined4 local_80 [4];
+  uint local_80 [4];
   int local_70;
   uint local_5c;
 

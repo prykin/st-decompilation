@@ -29,6 +29,7 @@ void __thiscall CGenerate::sub_006A0470(CGenerate *this)
   this->field_5703 = iVar6;
   iVar2 = this->field_0008[1] * 0x28;
   this->field_5707 = iVar2;
+
   puVar3 = Library::DKW::LIB::MemAlloc(iVar6 * iVar2);
   uVar7 = this->field_5703 * this->field_5707;
   this->field_56FF = puVar3;
@@ -59,10 +60,11 @@ void __thiscall CGenerate::sub_006A0470(CGenerate *this)
               if ((uVar1 & 0x2000) == 0x2000) {
                 uVar8 = (uVar1 & 0xf00) >> 8;
                 local_14 = (byte)uVar1;
-                pcVar5 = (char *)thunk_FUN_00692530(&this->field_0x1c03,
+
+                pcVar5 = STPointerBoundaryCast<char *>(thunk_FUN_00692530(&this->field_0x1c03,
                                                     (uint)(local_14 >> 4) * 0xf + -0xe +
                                                     (uint)(local_14 & 0xf),(iVar6 - uVar8) + 1,uVar8
-                                                   );
+                                                   ));
                 if (pcVar5 != nullptr) {
                   uVar11 = this->field_5707;
                   iVar9 = this->field_5703;
@@ -73,8 +75,9 @@ LAB_006a05f8:
               }
               else {
                 uVar8 = uVar1 >> 8 & 0xf;
-                pcVar5 = (char *)thunk_FUN_00692570(&this->field_0x1c03,(uVar1 & 0xff) - 1,
-                                                    (iVar6 - uVar8) + 1,uVar8);
+                /* ST_CALLSITE[006A05D0]: CALL 0x00402e96; direct=00402E96 thunk_FUN_00692570; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__thiscall;pointer:/char;pointer:/void;/int;/int;/int */
+                pcVar5 = thunk_FUN_00692570(&this->field_0x1c03,(uVar1 & 0xff) - 1,
+                                            (iVar6 - uVar8) + 1,uVar8);
                 if (pcVar5 != nullptr) {
                   iVar9 = this->field_5703;
                   uVar11 = this->field_5707;

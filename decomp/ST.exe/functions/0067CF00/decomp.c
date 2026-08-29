@@ -13,7 +13,8 @@ AiPlrClassTy * __cdecl CreateAiPlr(void)
 {
   AiPlrClassTy *pAVar1;
 
-  pAVar1 = (AiPlrClassTy *)FUN_006b04d0(0x702);
+  /* ST_CALLSITE[0067CF05]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiPlrClassTy; signature=__stdcall;pointer:/AiPlrClassTy;/uint */
+  pAVar1 = FUN_006b04d0(0x702);
   if (pAVar1 != nullptr) {
     pAVar1 = AiPlrClassTy::AiPlrClassTy(pAVar1);
     return pAVar1;

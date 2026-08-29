@@ -20,8 +20,7 @@ int __fastcall FUN_007295f0(AnonShape_007295F0_722683CC *param_1)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   puStack_c = &DAT_0079e320;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;

@@ -9,7 +9,7 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
 
 {
   char cVar1;
-  ushort *puVar2;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar2;
   MMsgTy *this_00;
   FSGSTy *this_01;
   int iVar4;
@@ -34,9 +34,11 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   local_90.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_90;
   local_c = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_90.previous;
+
     iVar11 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x935,0,iVar4,
                                 "%s","FSGSTy::CheckUpdate");
     if (iVar11 != 0) {
@@ -48,7 +50,8 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   /* ST_CALLSITE[005A11BD]: CALL dword ptr [0x0085bde8] */
   wsprintfA((LPSTR)&DAT_0080f33a,"%s%s%s",&CHAR_00h_00807680,PTR_s_UPDATES__0079c020,
             PTR_s_ST_INF_0079c024);
-  pcVar4 = (char *)thunk_FUN_00649ff0(&DAT_0080f33a,&local_8,nullptr,nullptr);
+
+  pcVar4 = STPointerBoundaryCast<char *>(thunk_FUN_00649ff0(&DAT_0080f33a,&local_8,nullptr,nullptr));
   this_01 = local_c;
   if (pcVar4 == nullptr) {
     /* ST_CALLSITE[005A1337]: CALL 0x00402ced; direct=00402CED FSGSTy::DoLogon */
@@ -70,12 +73,14 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   pcVar8 = (char *)&DAT_0080f126;
   memmove(pcVar8, pcVar4, uVar6); /* compiler REP MOVS byte copy */
   uVar7 = 0;
-  puVar2 = local_c->field_1AC0;
-  uVar6 = *(uint *)(puVar2 + 10);
+  pRVar2 = (RecoveredRecord_006B4FA0_DAC3A217 *)local_c->field_1AC0;
+  uVar6 = *(uint *)&pRVar2[1].field_0x4;
   if (uVar6 == 0) {
-    uVar6 = ((uint)puVar2[7] * *(int *)(puVar2 + 2) + 0x1f >> 3 & 0x1ffffffc) * *(int *)(puVar2 + 4);
+    uVar6 = ((uint)pRVar2->field_000E * *(int *)&pRVar2->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+            *(int *)&pRVar2->field_0x8;
   }
-  puVar5 = (undefined4 *)FUN_006b4fa0((int *)puVar2);
+
+  puVar5 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0(pRVar2));
   for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
     *puVar5 = 0xffffffff;
     puVar5 = puVar5 + 1;
@@ -84,14 +89,18 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
     *(undefined1 *)puVar5 = 0xff;
     puVar5 = (undefined4 *)((int)puVar5 + 1);
   }
+
   ccFntTy::SetSurf(this_01->array_00BC[0xc].field_01F3,(int)this_01->field_1AC0,0,0,0x16,0x1b8,0xf0);
   iVar15 = -1;
   iVar14 = -1;
   uVar6 = 2;
   iVar13 = -1;
   iVar12 = -2;
+  /* ST_CALLSITE[005A127F]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
   pcVar4 = LoadResourceString(0x25bd,g_hINSTANCE_00807618);
+
   ccFntTy::WrTxt(this_01->array_00BC[0xc].field_01F3,pcVar4,iVar12,iVar13,uVar6,iVar14,iVar15);
+
   FUN_006b35d0((int *)g_ddxContext_008075A8,this_01->field_1ABC);
   pSVar9 = &local_2c;
   for (iVar12 = 8; iVar12 != 0; iVar12 = iVar12 + -1) {

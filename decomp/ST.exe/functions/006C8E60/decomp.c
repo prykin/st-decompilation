@@ -1,7 +1,5 @@
-#include "../../pseudocode_runtime.h"
 
-
-void FUN_006c8e60(int *param_1,byte param_2,byte param_3)
+void FUN_006c8e60(RecoveredRecord_006C8E60_3F75B164 *param_1,byte param_2,byte param_3)
 
 {
   byte bVar1;
@@ -10,9 +8,9 @@ void FUN_006c8e60(int *param_1,byte param_2,byte param_3)
   byte *pbVar4;
   uint uVar5;
 
-  iVar2 = *param_1;
-  pbVar4 = (byte *)((STField<byte>(param_1,0xd) >> 1 & 0xe) + 0x16 + (int)param_1);
-  while (pbVar3 = pbVar4, pbVar3 < (byte *)(iVar2 + (int)param_1)) {
+  iVar2 = *(int *)param_1;
+  pbVar4 = &param_1[1].field_0x8 + (param_1->field_000D >> 1 & 0xe);
+  while (pbVar3 = pbVar4, pbVar3 < &param_1->field_0x0 + iVar2) {
     bVar1 = *pbVar3;
     pbVar4 = pbVar3 + 1;
     if ((bVar1 != 0) && ((bVar1 & 0x80) != 0)) {

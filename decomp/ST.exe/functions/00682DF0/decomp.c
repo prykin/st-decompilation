@@ -32,6 +32,7 @@ void FUN_00682df0(void)
     thunk_FUN_00682d70();
     return;
   }
+
   iVar1 = thunk_FUN_006686f0(DAT_007d2d18);
   if (-1 < iVar1) {
     thunk_FUN_00682850();

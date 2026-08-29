@@ -30,7 +30,7 @@ FUN_00615fd0:
 00616027  52                        PUSH EDX
 00616028  8B 96 03 03 00 00         MOV EDX,dword ptr [ESI + 0x303]
 0061602E  52                        PUSH EDX
-0061602F  FF 90 E0 00 00 00         CALL dword ptr [EAX + 0xe0]
+0061602F  FF 90 E0 00 00 00         CALL dword ptr [EAX + 0xe0]  ; [STIndirectCallsiteApplier] exact slot 0xE0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 00616035  85 C0                     TEST EAX,EAX
 00616037  0F 85 9A 01 00 00         JNZ 0x006161d7
 0061603D  83 BE F7 01 00 00 02      CMP dword ptr [ESI + 0x1f7],0x2

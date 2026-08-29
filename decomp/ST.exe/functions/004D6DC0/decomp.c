@@ -13,7 +13,8 @@ TLOEmbryoTy * __cdecl CreateTLOEmbryo(void)
 {
   TLOEmbryoTy *pTVar1;
 
-  pTVar1 = (TLOEmbryoTy *)FUN_006b04d0(0x374);
+  /* ST_CALLSITE[004D6DC5]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/TLOEmbryoTy; signature=__stdcall;pointer:/TLOEmbryoTy;/uint */
+  pTVar1 = FUN_006b04d0(0x374);
   if (pTVar1 != nullptr) {
     pTVar1 = TLOEmbryoTy::TLOEmbryoTy(pTVar1);
     return pTVar1;

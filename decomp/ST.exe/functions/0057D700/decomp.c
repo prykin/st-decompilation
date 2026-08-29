@@ -239,6 +239,7 @@ cf_continue_loop_0057DBE9:
     sVar1 = (short)uVar11;
     sVar13 = (short)uVar10;
     sVar14 = (short)local_18;
+
     iVar6 = thunk_FUN_004961b0(sVar1,sVar13,sVar14);
     if (((iVar6 != 0) &&
         (((sVar1 < 0 || (g_worldGrid.sizeX <= sVar1)) ||

@@ -24,7 +24,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,STMessage *message)
   dword *pdVar9;
   InternalExceptionFrame local_8c;
   dword local_48 [8];
-  undefined4 local_28 [8];
+  uint local_28 [8];
   StartSystemTy *local_8;
 
   local_8c.previous = g_currentExceptionFrame;

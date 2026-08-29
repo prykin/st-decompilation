@@ -76,7 +76,7 @@ LAB_0065d360:
 0065D36C  6A 14                     PUSH 0x14
 0065D36E  6A 0A                     PUSH 0xa
 0065D370  6A 00                     PUSH 0x0
-0065D372  E8 19 0F 05 00            CALL 0x006ae290
+0065D372  E8 19 0F 05 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_0223; source view only; no Ghidra override
 0065D377  89 83 23 02 00 00         MOV dword ptr [EBX + 0x223],EAX
 LAB_0065d37d:
 0065D37D  8B 83 2F 02 00 00         MOV EAX,dword ptr [EBX + 0x22f]
@@ -86,7 +86,7 @@ LAB_0065d37d:
 0065D389  6A 0C                     PUSH 0xc
 0065D38B  6A 0A                     PUSH 0xa
 0065D38D  6A 00                     PUSH 0x0
-0065D38F  E8 FC 0E 05 00            CALL 0x006ae290
+0065D38F  E8 FC 0E 05 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_AiFltClassTy_022F; source view only; no Ghidra override
 0065D394  89 83 2F 02 00 00         MOV dword ptr [EBX + 0x22f],EAX
 LAB_0065d39a:
 0065D39A  8B 83 3B 02 00 00         MOV EAX,dword ptr [EBX + 0x23b]

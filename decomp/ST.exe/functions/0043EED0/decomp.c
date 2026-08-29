@@ -11,7 +11,7 @@
 
 uint * __thiscall
 STAllPlayersC::GetTOBJListFromDArr
-          (STAllPlayersC *this,uint param_1,AnonShape_0043EED0_93C25F9A *param_2,
+          (STAllPlayersC *this,uint param_1,RecoveredRecordView_0043EED0_30C6163F *param_2,
           STAllPlayersC_GetTOBJListFromDArr_param_3Enum param_3,int param_4,char param_5)
 
 {
@@ -25,19 +25,20 @@ STAllPlayersC::GetTOBJListFromDArr
   int iVar6;
   uint *puVar8;
   InternalExceptionFrame local_5c;
-  undefined1 local_18 [4];
+  byte local_18 [4];
   STAllPlayersC *local_14;
   int local_10;
   DArrayTy *local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_10 = param_2->field_000C;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_14 = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_5c.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2049,0,iVar4,"%s"
                                ,"STAllPlayersC::GetTOBJListFromDArr");
     if (iVar6 == 0) {
@@ -89,6 +90,7 @@ LAB_0043efd8:
         if ((bVar3) &&
            /* ST_CALLSITE[0043EFE7]: CALL dword ptr [EDX + 0x6c] */
            ((param_5 == -1 || (iVar7 = this_01->vfunc_6C(), iVar7 == param_5)))) {
+
           Library::DKW::TBL::DArrayAppend(local_c,&local_8);
         }
       }

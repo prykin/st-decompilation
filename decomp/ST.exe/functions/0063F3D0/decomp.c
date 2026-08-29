@@ -16,7 +16,7 @@ undefined4 __thiscall STTmMineC::LoadImagVacuum(STTmMineC *this,int param_1)
   int iVar5;
   uint uVar6;
   InternalExceptionFrame local_54;
-  undefined4 local_10;
+  uint local_10;
   STTmMineC *local_c;
   uint local_8;
 
@@ -24,16 +24,20 @@ undefined4 __thiscall STTmMineC::LoadImagVacuum(STTmMineC *this,int param_1)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_c = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pSVar3 = local_c;
   if (errorCode == 0) {
     if (local_c->field_033A == -1) {
+      /* ST_CALLSITE[0063F434]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
       puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                          (PTR_00806774,CASE_1D,"expl_vc0",0xffffffff,0,1,0,
                           nullptr);
+
       ST3DSMAPContext::sub_006E8660
                 (pSVar3->field_0211,(int *)&local_8,1,0,STField<uint>(puVar4,9),
                  STField<uint>(puVar4,0xd),(int)STField<uint>(puVar4,9) / 2,0xa9,0);
+
       ST3DSMAPContext::sub_006E98E0
                 (pSVar3->field_0211,local_8,0,*(int *)puVar4,STField<int>(puVar4,0x21),1);
       ST3DSMAPContext::sub_006EA270(pSVar3->field_0211,local_8,0,pSVar3->field_033E);
@@ -42,6 +46,7 @@ undefined4 __thiscall STTmMineC::LoadImagVacuum(STTmMineC *this,int param_1)
                  (float)pSVar3->field_0266 * _DAT_007904f8 * _DAT_007904f0,
                  (float)pSVar3->field_026A * _DAT_007904f8 * _DAT_007904f0,
                  (float)pSVar3->field_026E * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+
       Library::Ourlib::ST3DSMAP::SprShow(pSVar3->field_0211,local_8,0);
       Library::Ourlib::ST3DSMAP::SprHide(pSVar3->field_0211,local_8);
       pSVar3->field_033A = local_8;
@@ -56,13 +61,16 @@ undefined4 __thiscall STTmMineC::LoadImagVacuum(STTmMineC *this,int param_1)
     }
     puVar1 = &pSVar3->field_0363;
     if ((pSVar3->field_0363 == 0xffffffff) && (param_1 != 0)) {
+      /* ST_CALLSITE[0063F596]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
       puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
                          (PTR_00806774,CASE_1D,"expl_vc1",0xffffffff,0,1,0,
                           nullptr);
       pSVar3->field_035F = puVar4;
+
       ST3DSMAPContext::sub_006E8660
                 (pSVar3->field_0211,(int *)puVar1,1,0,STField<uint>(puVar4,9),
                  STField<uint>(puVar4,0xd),0xa8,0x43,0);
+
       ST3DSMAPContext::sub_006E98E0
                 (pSVar3->field_0211,*puVar1,0,*(int *)puVar4,STField<int>(puVar4,0x21),1);
       ST3DSMAPContext::sub_006EA270(pSVar3->field_0211,*puVar1,0,pSVar3->field_0367);
@@ -71,6 +79,7 @@ undefined4 __thiscall STTmMineC::LoadImagVacuum(STTmMineC *this,int param_1)
                  (float)pSVar3->field_0266 * _DAT_007904f8 * _DAT_007904f0,
                  (float)pSVar3->field_026A * _DAT_007904f8 * _DAT_007904f0,
                  (float)pSVar3->field_026E * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+
       Library::Ourlib::ST3DSMAP::SprShow(pSVar3->field_0211,*puVar1,0);
       pSVar3->field_036B = *(undefined4 *)puVar4;
     }
@@ -78,6 +87,7 @@ undefined4 __thiscall STTmMineC::LoadImagVacuum(STTmMineC *this,int param_1)
     return local_10;
   }
   g_currentExceptionFrame = local_54.previous;
+
   iVar5 = ReportDebugMessage("E:\\__titans\\nick\\to_TmMin.cpp",0x794,0,errorCode,
                              "%s","STTmMineC::LoadImagVacuum");
   if (iVar5 != 0) {

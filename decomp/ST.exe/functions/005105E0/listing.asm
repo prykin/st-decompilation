@@ -71,7 +71,8 @@ switchD_00510661::default:
 005106A7  83 C4 0C                  ADD ESP,0xc
 005106AA  50                        PUSH EAX
 005106AB  6A 01                     PUSH 0x1
-005106AD  E8 2E 16 1E 00            CALL 0x006f1ce0
+FrmPanelTy::PaintBut::override::prt_5106ad_6752cf82:
+005106AD  E8 2E 16 1E 00            CALL 0x006f1ce0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;pointer:/int;/int
 005106B2  8B 4D F4                  MOV ECX,dword ptr [EBP + -0xc]
 005106B5  8B 55 EC                  MOV EDX,dword ptr [EBP + -0x14]
 005106B8  50                        PUSH EAX

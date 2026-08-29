@@ -2,10 +2,17 @@
 
 
 /* [STPrototypeApplier] Propagated parameter 4.
-   Evidence: 004B9FA0 -> 005F23D0 @ 004BA77A | 004D32C0 -> 005F23D0 @ 004D3487 */
+   Evidence: 004B9FA0 -> 005F23D0 @ 004BA77A | 004D32C0 -> 005F23D0 @ 004D3487
+
+   [STMethodOwnerApplier] Structural method owner recovered as STManBasisC.
+   Evidence: this_call_owners=[STManBasisC]; agreed_this_calls=2; incoming_this_accesses=0;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=23; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
 
 undefined4 __thiscall
-FUN_005f23d0(void *this,int param_1,int param_2,int param_3,uint param_4,int param_5,int param_6)
+STManBasisC::sub_005F23D0
+          (STManBasisC *this,int param_1,int param_2,int param_3,uint param_4,int param_5,
+          int param_6)
 
 {
   VisibleClassTy *pVVar1;
@@ -20,8 +27,7 @@ FUN_005f23d0(void *this,int param_1,int param_2,int param_3,uint param_4,int par
   int local_14;
   int local_10;
   STManBasisC *local_c;
-  undefined4 local_8;
-
+  uint local_8;
   iVar4 = param_2;
   iVar6 = param_1;
   local_8 = 0;
@@ -95,7 +101,7 @@ cf_common_exit_005F26AF:
       if (iVar4 == 0) goto cf_common_exit_005F26AF;
     }
     /* ST_CALLSITE[005F2693]: CALL 0x00401465; direct=00401465 STManBasisC::sub_005F14B0 */
-    local_EAX_707 = STManBasisC::sub_005F14B0(local_c,(short)iVar6,(short)param_2,0,(byte)param_4,0);
+    local_EAX_707 = sub_005F14B0(local_c,(short)iVar6,(short)param_2,0,(byte)param_4,0);
     if (-1 < local_EAX_707) {
       return 1;
     }

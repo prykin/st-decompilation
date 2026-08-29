@@ -1,6 +1,7 @@
 CreateSTExplosion:
 00604050  68 BF 02 00 00            PUSH 0x2bf
-00604055  E8 76 C4 0A 00            CALL 0x006b04d0
+CreateSTExplosion::override::prt_604055_38a48fc2:
+00604055  E8 76 C4 0A 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STExplosion; signature=__stdcall;pointer:/STExplosion;/uint
 0060405A  85 C0                     TEST EAX,EAX
 0060405C  74 07                     JZ 0x00604065
 0060405E  8B C8                     MOV ECX,EAX

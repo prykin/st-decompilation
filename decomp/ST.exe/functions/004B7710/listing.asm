@@ -1,4 +1,4 @@
-FUN_004b7710:
+STAllPlayersC::sub_004B7710:
 004B7710  55                        PUSH EBP
 004B7711  8B EC                     MOV EBP,ESP
 004B7713  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]

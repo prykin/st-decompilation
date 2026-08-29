@@ -12,7 +12,7 @@
 void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
 
 {
-  AnonShape_GLOBAL_0081175C_57F682DD *pAVar1;
+  RecoveredGlobalRecordView_0081175C *pRVar1;
   CampaignTy *this_00;
   int iVar3;
   BITMAPINFO *pBVar3;
@@ -32,10 +32,12 @@ void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\Start\\camp_obj.cpp",0x1b3,0,iVar3,"%s"
                                ,"CampaignTy::AnimationCampaign");
     if (iVar5 != 0) {
@@ -315,9 +317,9 @@ LAB_00592b82:
   local_24[5] = 0x2e;
   local_24[6] = 0x24c;
   do {
-    pAVar1 = *(AnonShape_GLOBAL_0081175C_57F682DD **)
+    pRVar1 = *(RecoveredGlobalRecordView_0081175C **)
               ((int)&g_startSystem_0081176C->vtable + local_24[6]);
-    if (pAVar1 != nullptr) {
+    if (pRVar1 != nullptr) {
       piVar9 = (int *)((int)g_startSystem_0081176C->array_0244 + local_24[5] + 0x18);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       if (*(char *)((int)g_startSystem_0081176C->array_0244 + local_24[5] + 0x2c) == '\0') {
@@ -327,9 +329,9 @@ LAB_00592b82:
         uVar10 = piVar9[3];
       }
       if (uVar10 <= local_8->field_0061 - piVar9[4]) {
-        pBVar3 = FUN_0070b3a0(pAVar1,(short)pAVar1->field_0029);
-        FUN_006b5f80((int *)g_ddxContext_008075A8,*piVar9,piVar9[1],(int)*(short *)(pAVar1 + 1),
-                     (int)*(short *)&pAVar1[1].field_0x2);
+        pBVar3 = FUN_0070b3a0(pRVar1,(short)pRVar1->field_0029);
+        FUN_006b5f80((int *)g_ddxContext_008075A8,*piVar9,piVar9[1],(int)*(short *)(pRVar1 + 1),
+                     (int)*(short *)&pRVar1[1].field_0x2);
         /* ST_CALLSITE[00592C0A]: CALL 0x00403738; direct=00403738 PutDDX */
         PutDDX(*piVar9,piVar9[1],'\x01',pBVar3);
         if ((char)piVar9[5] != '\0') {
@@ -338,31 +340,31 @@ LAB_00592b82:
         piVar9[4] = local_8->field_0061;
         switch(STField<undefined2>(piVar9,0x15)) {
         case 0:
-          pAVar1->field_0029 = pAVar1->field_0029 + 1;
-          if (pAVar1->field_0023 <= (short)pAVar1->field_0029) {
-            pAVar1->field_0029 = 0;
+          pRVar1->field_0029 = pRVar1->field_0029 + 1;
+          if (pRVar1->field_0023 <= (short)pRVar1->field_0029) {
+            pRVar1->field_0029 = 0;
             ((undefined1 *)piVar9)[5] = 1;
           }
           break;
         case 1:
-          pAVar1->field_0029 = pAVar1->field_0029 + -1;
-          if ((short)pAVar1->field_0029 < 0) {
-            pAVar1->field_0029 = pAVar1->field_0023 + -1;
+          pRVar1->field_0029 = pRVar1->field_0029 + -1;
+          if ((short)pRVar1->field_0029 < 0) {
+            pRVar1->field_0029 = pRVar1->field_0023 + -1;
             ((undefined1 *)piVar9)[5] = 1;
           }
           break;
         case 2:
-          pAVar1->field_0029 = pAVar1->field_0029 + 1;
-          if (pAVar1->field_0023 <= (short)pAVar1->field_0029) {
-            pAVar1->field_0029 = pAVar1->field_0023 + -1;
+          pRVar1->field_0029 = pRVar1->field_0029 + 1;
+          if (pRVar1->field_0023 <= (short)pRVar1->field_0029) {
+            pRVar1->field_0029 = pRVar1->field_0023 + -1;
             ((undefined1 *)piVar9)[5] = 1;
             STField<undefined2>(piVar9,0x15) = 3;
           }
           break;
         case 3:
-          pAVar1->field_0029 = pAVar1->field_0029 + -1;
-          if ((short)pAVar1->field_0029 < 0) {
-            pAVar1->field_0029 = 0;
+          pRVar1->field_0029 = pRVar1->field_0029 + -1;
+          if ((short)pRVar1->field_0029 < 0) {
+            pRVar1->field_0029 = 0;
             ((undefined1 *)piVar9)[5] = 1;
             STField<undefined2>(piVar9,0x15) = 2;
           }

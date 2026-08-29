@@ -16,28 +16,30 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
   int local_EAX_36;
   ccFntTy *pcVar2;
   int uVar4;
-  ushort *puVar3;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar3;
   byte *puVar4;
-  DWORD DVar5;
   int iVar2;
   int iVar6;
-  int iVar7;
-  uint uVar9;
-  char *pcVar10;
+  int iVar5;
+  uint uVar7;
+  char *pcVar8;
+  ushort *puVar9;
   InternalExceptionFrame local_4c;
   HelpStringTy *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   local_EAX_36 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (local_EAX_36 == 0) {
     switch(message->id) {
     case MESS_ID_NONE:
       if ((local_8->field_012E != 0) &&
-         (DVar5 = STAppC::sub_006E51B0(local_8->field_0010),
-         this_00->field_0126 <= DVar5 - this_00->field_0122)) {
+
+         (iVar5 = STAppC::sub_006E51B0(local_8->field_0010),
+         this_00->field_0126 <= (uint)(iVar5 - this_00->field_0122))) {
         memset(&this_00->field_0018, 0, 0x104); /* compiler bulk-zero initialization */
         /* ST_CALLSITE[0051FD19]: CALL 0x004015fa; direct=004015FA HelpStringTy::OutStr */
         OutStr(this_00);
@@ -46,26 +48,29 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
       }
       break;
     case MESS_ID_CREATE:
-      /* ST_CALLSITE[0051FBFE]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new */
-      pcVar2 = (ccFntTy *)ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0030);
+      /* ST_CALLSITE[0051FBFE]: CALL 0x0070df00; direct=0070DF00 ccFntTy::operator_new; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/ccFntTy */
+      pcVar2 = ccFntTy::operator_new(0x19d,(ccFntTy *)g_interSystem_00802A28->field_0030);
       this_00->field_011E = pcVar2;
       pcVar2->field_0058 = 0;
       pcVar2->field_005C = 0;
-      puVar3 = PTR_0080679c + 0x14;
-      iVar7 = 1;
+      puVar9 = PTR_0080679c + 0x14;
+      iVar5 = 1;
+
       uVar4 = FUN_006b4fe0(PTR_0080679c);
-      puVar3 = (ushort *)
+      pRVar3 = (RecoveredRecord_006B4FA0_DAC3A217 *)
+
                FUN_006b50c0((g_nWidth_00806730 -
                             ((-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e)) + -0x87,0x12,
-                            (uint)PTR_0080679c[7],uVar4,(undefined4 *)puVar3,iVar7);
-      this_00->field_012A = puVar3;
-      uVar9 = *(uint *)(puVar3 + 10);
-      if (uVar9 == 0) {
-        uVar9 = ((uint)puVar3[7] * *(int *)(puVar3 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-                *(int *)(puVar3 + 4);
+                            (uint)PTR_0080679c[7],uVar4,(undefined4 *)puVar9,iVar5);
+      this_00->field_012A = (ushort *)pRVar3;
+      uVar7 = *(uint *)&pRVar3[1].field_0x4;
+      if (uVar7 == 0) {
+        uVar7 = ((uint)pRVar3->field_000E * *(int *)&pRVar3->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+                *(int *)&pRVar3->field_0x8;
       }
-      puVar4 = (byte *)FUN_006b4fa0((int *)puVar3);
-      memset(puVar4, 0, uVar9); /* compiler bulk-zero initialization */
+
+      puVar4 = STPointerBoundaryCast<byte *>(FUN_006b4fa0(pRVar3));
+      memset(puVar4, 0, uVar7); /* compiler bulk-zero initialization */
       g_helpString_00801694 = this_00;
       break;
     case MESS_SHARED_0003:
@@ -83,10 +88,12 @@ int __thiscall HelpStringTy::GetMessage(HelpStringTy *this,STMessage *message)
       OutStr(local_8);
     }
     g_currentExceptionFrame = local_4c.previous;
+
     iVar2 = FUN_006e5fd0(this_00,message);
     return iVar2;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\helpstr.cpp",0x4d,0,local_EAX_36,
                              "%s","HelpStringTy::GetMessage");
   if (iVar6 != 0) {

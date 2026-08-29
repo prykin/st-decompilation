@@ -9,11 +9,10 @@
 STAppC * __thiscall STAppC::STAppC(STAppC *this,undefined4 param_1)
 
 {
-  DWORD DVar1;
-  int iVar2;
+  int iVar1;
 
   AppClassTy::AppClassTy((AppClassTy *)this,0,param_1);
-  thunk_FUN_00571cd0((AnonShape_00571CD0_C1ECCB3F *)&this->field_0038);
+  thunk_FUN_00571cd0((RecoveredRecordView_00571CD0_140859AA *)&this->field_0038);
   this->field_1111 = 10;
   this->field_1115 = 10;
   this->field_0FC7 = 0;
@@ -62,14 +61,15 @@ STAppC * __thiscall STAppC::STAppC(STAppC *this,undefined4 param_1)
   this->field_4EFA = 0;
   this->field_1138 = 0;
   this->field_7D0E = 0;
-  DVar1 = sub_006E51B0(this);
-  this->field_1134 = DVar1;
+
+  iVar1 = sub_006E51B0(this);
+  this->field_1134 = iVar1;
   this->field_76F2 = nullptr;
   this->field_854E = 0;
   this->field_8552 = 0;
   this->field_8556 = 0;
   memset(&this->field_0x1196, 0, 0x1999); /* compiler bulk-zero initialization */
-  iVar2 = 0;
+  iVar1 = 0;
   memset(&this->field_4DA3, 0, 0x104); /* compiler bulk-zero initialization */
   this->field_4EA7 = nullptr;
   this->field_4EAB = nullptr;

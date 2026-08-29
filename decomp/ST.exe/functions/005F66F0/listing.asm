@@ -92,7 +92,7 @@ LAB_005f67dc:
 005F67E6  56                        PUSH ESI
 005F67E7  52                        PUSH EDX
 005F67E8  89 75 FC                  MOV dword ptr [EBP + -0x4],ESI
-005F67EB  E8 60 67 0B 00            CALL 0x006acf50
+005F67EB  E8 60 67 0B 00            CALL 0x006acf50  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/byte; source view only; no Ghidra override
 005F67F0  2B F3                     SUB ESI,EBX
 005F67F2  B9 1B 00 00 00            MOV ECX,0x1b
 005F67F7  85 DB                     TEST EBX,EBX

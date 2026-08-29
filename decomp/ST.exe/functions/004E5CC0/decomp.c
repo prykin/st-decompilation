@@ -1,7 +1,15 @@
 #include "../../pseudocode_runtime.h"
 
 
-int FUN_004e5cc0(int param_1,uint param_2,int param_3)
+/* [STMethodOwnerApplier] Structural method owner recovered as STAllPlayersC.
+   Evidence: this_call_owners=[STAllPlayersC]; agreed_this_calls=3; incoming_this_accesses=0;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=4; incoming_this_forward_calls=2;
+   entry_incoming_ecx_capture=true; ret_stack_matches_explicit_parameters=true;
+   direct_non_thunk_callers=0; incoming_ecx_receiver_callers=0; attributed_named_callers=3;
+   owner_evidence_coverage=adequate; unique_primary_physical_vtable=true;
+   callee_closed_hidden_ecx_receiver_transport */
+
+int __thiscall STAllPlayersC::sub_004E5CC0(STAllPlayersC *this,int param_1,uint param_2,int param_3)
 
 {
   bool bVar1;

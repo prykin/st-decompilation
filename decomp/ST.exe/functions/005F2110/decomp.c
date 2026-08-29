@@ -10,43 +10,44 @@ undefined4 __thiscall STManBasisC::sub_005F2110(STManBasisC *this,undefined4 *pa
 
 {
   DArrayTy *pDVar1;
-  STManBasisC_field_0038DArray *pSVar2;
+  DArrayTy *pSVar2;
   DArrayTy *pDVar2;
-  void *pvVar3;
-  int iVar4;
-  uint uVar5;
-  uint *puVar6;
-  int *piVar7;
-  ushort **ppuVar8;
+  void *pvVar2;
+  int iVar3;
+  uint uVar4;
+  uint *puVar5;
+  int *piVar6;
+  ushort **ppuVar7;
 
-  puVar6 = param_1;
-  ppuVar8 = &this->field_0020;
-  for (iVar4 = 10; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *ppuVar8 = (ushort *)*puVar6;
-    puVar6 = puVar6 + 1;
-    ppuVar8 = ppuVar8 + 1;
+  puVar5 = param_1;
+  ppuVar7 = &this->field_0020;
+  for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
+    *ppuVar7 = (ushort *)*puVar5;
+    puVar5 = puVar5 + 1;
+    ppuVar7 = ppuVar7 + 1;
   }
   DAT_00811788 = this->field_0034;
-  piVar7 = param_1 + 10;
+  piVar6 = param_1 + 10;
   if (this->field_0038 != nullptr) {
-    pSVar2 = (STManBasisC_field_0038DArray *)FUN_006b0060(nullptr,param_1 + 0xb);
-    this->field_0038 = pSVar2;
-    piVar7 = (int *)((int)(param_1 + 0xb) + *piVar7);
+    /* ST_CALLSITE[005F2142]: CALL 0x006b0060; direct=006B0060 FUN_006b0060; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STManBasisC_field_0038DArray; source view only; no Ghidra override */
+    pSVar2 = FUN_006b0060(nullptr,param_1 + 0xb);
+    this->field_0038 = (STManBasisC_field_0038DArray *)pSVar2;
+    piVar6 = (int *)((int)(param_1 + 0xb) + *piVar6);
   }
   if (this->field_003C != nullptr) {
-    pDVar2 = FUN_006b0060(nullptr,(uint *)(piVar7 + 1));
+    pDVar2 = FUN_006b0060(nullptr,(uint *)(piVar6 + 1));
     this->field_003C = pDVar2;
-    uVar5 = 0;
+    uVar4 = 0;
     if (0 < (int)pDVar2->count) {
       do {
         pDVar1 = this->field_003C;
-        if ((uVar5 < pDVar1->count) &&
-           (pvVar3 = DArrayAt<void>(pDVar1, uVar5),
-           pvVar3 != nullptr)) {
-          STField<undefined4>(pvVar3,0x18) = 0xffffffff;
+        if ((uVar4 < pDVar1->count) &&
+           (pvVar2 = DArrayAt<void>(pDVar1, uVar4),
+           pvVar2 != nullptr)) {
+          STField<undefined4>(pvVar2,0x18) = 0xffffffff;
         }
-        uVar5 = uVar5 + 1;
-      } while ((int)uVar5 < (int)this->field_003C->count);
+        uVar4 = uVar4 + 1;
+      } while ((int)uVar4 < (int)this->field_003C->count);
     }
   }
   return 0x28;

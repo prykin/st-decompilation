@@ -27,9 +27,11 @@ void __thiscall CursorClassTy::sub_0054B540(CursorClassTy *this)
         Library::Ourlib::ST3DSMAP::SprClose(g_sT3DSMAPContext_00807598,uVar1);
       }
       if (this->field_00A9 == 0) {
+
         Library::DKW::DDX::FUN_006b8a60((byte *)this->field_00AD);
       }
       else if (this->field_001C != 0xffffffff) {
+
         Library::DKW::DDX::FUN_006b34d0
                   ((uint *)this->field_0060,this->field_001C,0xfffffffe,this->field_0034,
                    this->field_0038);

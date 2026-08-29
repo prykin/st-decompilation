@@ -6,7 +6,8 @@
    structure /SubmarineTitans/Recovered/PointerShapes/AnonShape_0063BFA0_2C9DA96E (current recovered
    extent=888) */
 
-AnonShape_0063BFA0_2C9DA96E * __fastcall FUN_0063bfa0(AnonShape_0063BFA0_2C9DA96E *param_1)
+RecoveredRecordView_0063BFA0_AD17F044 * __fastcall
+FUN_0063bfa0(RecoveredRecordView_0063BFA0_AD17F044 *param_1)
 
 {
   /* ST_CALLSITE[0063BFA4]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */

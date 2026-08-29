@@ -32,10 +32,12 @@ void __thiscall STBoatC::RestoreBoatData(STBoatC *this,int param_1)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pAVar3 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x4ed4,0,iVar3,"%s",
                                "STBoatC::RestoreBoatData");
     if (iVar5 != 0) {
@@ -58,7 +60,7 @@ void __thiscall STBoatC::RestoreBoatData(STBoatC *this,int param_1)
   local_8->field_0461 = local_10->field_0368;
   local_8->field_0469 = local_10->field_036C;
   local_8->field_046F = local_10->field_036E;
-  local_8->field_0471 = (AnonShape_005EFAE0_B406B78B *)local_10->field_0370;
+  local_8->field_0471 = (RecoveredRecordView_005EFAE0_855D930D *)local_10->field_0370;
   local_8->field_0475 = local_10->field_0374;
   local_8->field_0477 = local_10->field_0376;
   local_8->field_0479 = local_10->field_0378;

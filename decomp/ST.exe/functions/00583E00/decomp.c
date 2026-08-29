@@ -13,7 +13,8 @@ void * __cdecl FUN_00583e00(void)
 {
   STJellyGunC *pSVar1;
 
-  pSVar1 = (STJellyGunC *)FUN_006b04d0(0x294);
+  /* ST_CALLSITE[00583E05]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STJellyGunC; signature=__stdcall;pointer:/STJellyGunC;/uint */
+  pSVar1 = FUN_006b04d0(0x294);
   if (pSVar1 != nullptr) {
     pSVar1 = STJellyGunC::STJellyGunC(pSVar1);
     return pSVar1;

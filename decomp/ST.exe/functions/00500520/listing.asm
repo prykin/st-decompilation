@@ -126,7 +126,7 @@ LAB_00500673:
 00500673  8B 8E A2 02 00 00         MOV ECX,dword ptr [ESI + 0x2a2]
 00500679  50                        PUSH EAX
 0050067A  51                        PUSH ECX
-0050067B  E8 20 AD 20 00            CALL 0x0070b3a0
+0050067B  E8 20 AD 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 00500680  8B 55 F0                  MOV EDX,dword ptr [EBP + -0x10]
 00500683  50                        PUSH EAX
 00500684  6A 01                     PUSH 0x1

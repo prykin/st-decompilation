@@ -10,34 +10,37 @@
    Evidence: all observed direct callers ignore the return register (ignored=5, used=0), and
    decompilation contains no value return */
 
-void __thiscall CPanelTy::sub_004F4570(CPanelTy *this,char param_1,int param_2,int param_3)
+void __thiscall
+CPanelTy::sub_004F4570
+          (CPanelTy *this,char param_1,RecoveredRecord_004F4570_07A3F315 *param_2,
+          RecoveredRecord_004F4570_D72BA975 *param_3)
 
 {
   uint uVar1;
   short sVar2;
-  byte *pbVar3;
+  char *pcVar3;
   int local_8;
 
   sVar2 = -1;
-  pbVar3 = (byte *)(param_2 + 0xf);
+  pcVar3 = &param_2[1].field_0007;
   local_8 = 6;
   do {
-    if ((pbVar3[-6] != 0) &&
-       ((sVar2 = sVar2 + 1, *pbVar3 != pbVar3[param_3 - param_2] ||
-        (((char *)param_2)[7] != ((char *)param_3)[7])))) {
+    if ((pcVar3[-6] != 0) &&
+       ((sVar2 = sVar2 + 1, *pcVar3 != pcVar3[(int)param_3 - (int)param_2] ||
+        (param_2->field_0007 != param_3->field_0007)))) {
       this->field_0028 = 0x54;
-      if (((char *)param_2)[7] == '\0') {
+      if (param_2->field_0007 == '\0') {
         uVar1 = 0;
       }
       else {
-        uVar1 = (uint)*pbVar3;
+        uVar1 = (uint)(byte)*pcVar3;
       }
       *(uint *)&this->field_0x2c = uVar1;
       this->field_0030 = (int)sVar2;
       FUN_006e6080(this,2,*(undefined4 *)((int)this->field_0308 + (uint)(param_1 == '\0') * 4 + -10)
                    ,(undefined4 *)&this->field_0x18);
     }
-    pbVar3 = pbVar3 + 1;
+    pcVar3 = pcVar3 + 1;
     local_8 = local_8 + -1;
   } while (local_8 != 0);
   return;

@@ -1,4 +1,4 @@
-FUN_004c5bd0:
+TLOBaseTy::vfunc_E0:
 004C5BD0  55                        PUSH EBP
 004C5BD1  8B EC                     MOV EBP,ESP
 004C5BD3  51                        PUSH ECX

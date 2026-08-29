@@ -2,8 +2,13 @@
 
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00616A80 @ 00616D22 -> read as EAX on
+   every CFG path | 0062BBC0 @ 0062BDF0 -> read as EAX on every CFG path | 0062BFF0 @ 0062C1EE ->
+   read as EAX on every CFG path */
 
-undefined4 __cdecl FUN_0062ba50(float *param_1,float *param_2)
+int __cdecl FUN_0062ba50(float *param_1,float *param_2)
 
 {
   float fVar1;

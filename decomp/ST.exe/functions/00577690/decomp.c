@@ -15,14 +15,15 @@
 int __thiscall GameSystemC::sub_00577690(GameSystemC *this)
 
 {
-  DWORD DVar1;
-  int iVar2;
+  int iVar1;
 
   this->field_0430 = 1;
-  DVar1 = STAppC::sub_006E51B0(this->field_0018);
-  this->field_0020 = DVar1;
+
+  iVar1 = STAppC::sub_006E51B0(this->field_0018);
+  this->field_0020 = iVar1;
   this->field_0024 = 0;
-  iVar2 = FUN_006bc360(PTR_0080679c,(undefined4 *)&this->field_0x28,nullptr);
-  return iVar2;
+
+  iVar1 = FUN_006bc360(PTR_0080679c,(undefined4 *)&this->field_0x28,nullptr);
+  return iVar1;
 }
 

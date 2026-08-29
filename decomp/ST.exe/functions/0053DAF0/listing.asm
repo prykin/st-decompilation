@@ -52,13 +52,15 @@ LAB_0053db2e:
 0053DB6B  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]
 0053DB6E  6A 01                     PUSH 0x1
 0053DB70  50                        PUSH EAX
-0053DB71  E8 8A 50 1B 00            CALL 0x006f2c00
+UPanelTy::PaintIBut::override::prt_53db71_c67451d8:
+0053DB71  E8 8A 50 1B 00            CALL 0x006f2c00  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;pointer:/char;/int;/undefined4
 0053DB76  8B 0D 94 67 80 00         MOV ECX,dword ptr [0x00806794]
 0053DB7C  83 C4 10                  ADD ESP,0x10
 0053DB7F  50                        PUSH EAX
 0053DB80  6A 01                     PUSH 0x1
 0053DB82  51                        PUSH ECX
-0053DB83  E8 68 BF 1C 00            CALL 0x00709af0
+UPanelTy::PaintIBut::override::prt_53db83_46f798ab:
+0053DB83  E8 68 BF 1C 00            CALL 0x00709af0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/int;/SubmarineTitans/Recovered/Enums/Global_mfRLoad_param_2Enum;pointer:/char;/uint;/byte;/int;/int;pointer:/undefined4
 0053DB88  8B 5D FC                  MOV EBX,dword ptr [EBP + -0x4]
 0053DB8B  8B 55 F8                  MOV EDX,dword ptr [EBP + -0x8]
 0053DB8E  50                        PUSH EAX
@@ -93,7 +95,8 @@ LAB_0053db2e:
 0053DBD7  6A FE                     PUSH -0x2
 0053DBD9  50                        PUSH EAX
 0053DBDA  51                        PUSH ECX
-0053DBDB  E8 60 25 17 00            CALL 0x006b0140
+UPanelTy::PaintIBut::override::prt_53dbdb_b09bf718:
+0053DBDB  E8 60 25 17 00            CALL 0x006b0140  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__stdcall;pointer:/ccFntTy;/WinDef.h/UINT;/WinDef.h/HINSTANCE
 0053DBE0  8B 15 28 2A 80 00         MOV EDX,dword ptr [0x00802a28]
 0053DBE6  50                        PUSH EAX
 0053DBE7  8B 4A 24                  MOV ECX,dword ptr [EDX + 0x24]

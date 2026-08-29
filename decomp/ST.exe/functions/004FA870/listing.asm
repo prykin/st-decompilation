@@ -29,7 +29,7 @@ LAB_004fa8a4:
 004FA8BE  85 C9                     TEST ECX,ECX
 004FA8C0  0F 84 89 01 00 00         JZ 0x004faa4f
 004FA8C6  8B 11                     MOV EDX,dword ptr [ECX]
-004FA8C8  FF 52 1C                  CALL dword ptr [EDX + 0x1c]
+004FA8C8  FF 52 1C                  CALL dword ptr [EDX + 0x1c]  ; [STIndirectCallsiteApplier] exact slot 0x1C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004FA8CB  5E                        POP ESI
 004FA8CC  5D                        POP EBP
 004FA8CD  C2 04 00                  RET 0x4
@@ -40,7 +40,7 @@ LAB_004fa8d0:
 004FA8DA  85 C9                     TEST ECX,ECX
 004FA8DC  0F 84 6D 01 00 00         JZ 0x004faa4f
 004FA8E2  8B 01                     MOV EAX,dword ptr [ECX]
-004FA8E4  FF 50 1C                  CALL dword ptr [EAX + 0x1c]
+004FA8E4  FF 50 1C                  CALL dword ptr [EAX + 0x1c]  ; [STIndirectCallsiteApplier] exact slot 0x1C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004FA8E7  5E                        POP ESI
 004FA8E8  5D                        POP EBP
 004FA8E9  C2 04 00                  RET 0x4
@@ -51,7 +51,7 @@ LAB_004fa8ec:
 004FA8F6  85 C9                     TEST ECX,ECX
 004FA8F8  0F 84 51 01 00 00         JZ 0x004faa4f
 004FA8FE  8B 11                     MOV EDX,dword ptr [ECX]
-004FA900  FF 52 1C                  CALL dword ptr [EDX + 0x1c]
+004FA900  FF 52 1C                  CALL dword ptr [EDX + 0x1c]  ; [STIndirectCallsiteApplier] exact slot 0x1C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004FA903  5E                        POP ESI
 004FA904  5D                        POP EBP
 004FA905  C2 04 00                  RET 0x4
@@ -73,7 +73,7 @@ LAB_004fa924:
 004FA92E  85 C9                     TEST ECX,ECX
 004FA930  0F 84 19 01 00 00         JZ 0x004faa4f
 004FA936  8B 11                     MOV EDX,dword ptr [ECX]
-004FA938  FF 52 20                  CALL dword ptr [EDX + 0x20]
+004FA938  FF 52 20                  CALL dword ptr [EDX + 0x20]  ; [STIndirectCallsiteApplier] exact slot 0x20; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004FA93B  5E                        POP ESI
 004FA93C  5D                        POP EBP
 004FA93D  C2 04 00                  RET 0x4
@@ -95,7 +95,7 @@ LAB_004fa95c:
 004FA966  85 C9                     TEST ECX,ECX
 004FA968  0F 84 E1 00 00 00         JZ 0x004faa4f
 004FA96E  8B 11                     MOV EDX,dword ptr [ECX]
-004FA970  FF 52 1C                  CALL dword ptr [EDX + 0x1c]
+004FA970  FF 52 1C                  CALL dword ptr [EDX + 0x1c]  ; [STIndirectCallsiteApplier] exact slot 0x1C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 004FA973  5E                        POP ESI
 004FA974  5D                        POP EBP
 004FA975  C2 04 00                  RET 0x4

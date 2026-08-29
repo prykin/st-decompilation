@@ -35,6 +35,7 @@ void __thiscall CursorClassTy::sub_0054B700(CursorClassTy *this,int param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
@@ -58,7 +59,7 @@ void __thiscall CursorClassTy::sub_0054B700(CursorClassTy *this,int param_1)
   if (DAT_0080874e == '\x01') {
     iVar3 = 1;
 LAB_0054b7e0:
-    pBVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_8->field_04E3,iVar3);
+    pBVar2 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)local_8->field_04E3,iVar3);
     iVar3 = pCVar1->field_04DF * -0x1d + 0x115;
     iVar4 = g_nWidth_00806730 + -0x18;
   }
@@ -68,7 +69,7 @@ LAB_0054b7e0:
       goto LAB_0054b7e0;
     }
     if (DAT_0080874e != '\x03') goto LAB_0054b81b;
-    pBVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)local_8->field_04E3,5);
+    pBVar2 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)local_8->field_04E3,5);
     iVar3 = pCVar1->field_04DF * -0x13 + 0x136;
     iVar4 = g_nWidth_00806730 + -0x15;
   }
@@ -78,12 +79,12 @@ LAB_0054b81b:
   pCVar1->field_04DF = param_1;
   if (-1 < param_1) {
     if (DAT_0080874e == '\x01') {
-      pBVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar1->field_04E3,0);
+      pBVar2 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)pCVar1->field_04E3,0);
       iVar4 = pCVar1->field_04DF * -0x1d + 0x115;
       iVar3 = g_nWidth_00806730 + -0x18;
     }
     else if (DAT_0080874e == '\x02') {
-      pBVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar1->field_04E3,2);
+      pBVar2 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)pCVar1->field_04E3,2);
       iVar4 = pCVar1->field_04DF * -0x1d + 0x115;
       iVar3 = g_nWidth_00806730 + -0x18;
     }
@@ -92,7 +93,7 @@ LAB_0054b81b:
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
-      pBVar2 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar1->field_04E3,4);
+      pBVar2 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)pCVar1->field_04E3,4);
       iVar4 = pCVar1->field_04DF * -0x13 + 0x136;
       iVar3 = g_nWidth_00806730 + -0x15;
     }

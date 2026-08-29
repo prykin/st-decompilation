@@ -12,7 +12,7 @@
    Evidence: 0065E450 -> 004C5350 @ 0065E520 */
 
 int __fastcall
-FUN_0065e450(AnonShape_0065E360_B94C37CB *param_1,undefined4 param_2,
+FUN_0065e450(RecoveredRecordView_0065E360_071C1E69 *param_1,undefined4 param_2,
             Global_sub_0065E450_param_3Enum param_3,int param_4,int param_5)
 
 {
@@ -23,7 +23,6 @@ FUN_0065e450(AnonShape_0065E360_B94C37CB *param_1,undefined4 param_2,
   Global_sub_0065E450_param_3Enum GVar4;
   ushort *puVar5;
   STGameObjC *this;
-  uint uVar8;
   int uVar6;
   int uVar7;
   int local_8;
@@ -46,8 +45,8 @@ FUN_0065e450(AnonShape_0065E360_B94C37CB *param_1,undefined4 param_2,
   case CASE_BE:
     iVar3 = 0x72;
   }
-  /* ST_CALLSITE[0065E4A3]: CALL 0x004059b6; direct=004059B6 AiFltClassTy::sub_0065E360 */
-  array = (DArrayTy *)AiFltClassTy::sub_0065E360((AiFltClassTy *)param_1,param_2,iVar3);
+  /* ST_CALLSITE[0065E4A3]: CALL 0x004059b6; direct=004059B6 AiFltClassTy::sub_0065E360; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__fastcall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/AiFltClassTy;/undefined4;/int */
+  array = AiFltClassTy::sub_0065E360((AiFltClassTy *)param_1,param_2,iVar3);
   if (array == nullptr) {
     return 0;
   }
@@ -68,8 +67,9 @@ FUN_0065e450(AnonShape_0065E360_B94C37CB *param_1,undefined4 param_2,
       case 5:
       case 0x1b:
                     /* WARNING: This code block may not be properly labeled as switch case */
-        uVar8 = thunk_FUN_004c5350(this,0,nullptr,param_4,param_5,0,0,0);
-        local_8 = local_8 + (uint)(uVar8 != 0);
+        /* ST_CALLSITE[0065E520]: CALL 0x004012c1; direct=004012C1 STGameObjC::sub_004C5350 */
+        iVar3 = STGameObjC::sub_004C5350(this,0,nullptr,param_4,param_5,0,0,0);
+        local_8 = local_8 + (uint)(iVar3 != 0);
         break;
       case 0xf:
                     /* WARNING: This code block may not be properly labeled as switch case */

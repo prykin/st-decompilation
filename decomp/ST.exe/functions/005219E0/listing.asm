@@ -56,7 +56,7 @@ IntercomPanelTy::InitIntercomPanel:
 00521A97  6A 14                     PUSH 0x14
 00521A99  81 C2 BC 02 00 00         ADD EDX,0x2bc
 00521A9F  52                        PUSH EDX
-00521AA0  E8 1B 36 19 00            CALL 0x006b50c0
+00521AA0  E8 1B 36 19 00            CALL 0x006b50c0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 00521AA5  8B 4E 68                  MOV ECX,dword ptr [ESI + 0x68]
 00521AA8  89 86 9C 01 00 00         MOV dword ptr [ESI + 0x19c],EAX
 00521AAE  8B 86 84 01 00 00         MOV EAX,dword ptr [ESI + 0x184]

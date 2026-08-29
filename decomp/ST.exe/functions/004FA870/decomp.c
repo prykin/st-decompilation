@@ -24,21 +24,21 @@ void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_para
   if ((((param_1 == 0) || (CASE_5 < param_1)) && (param_1 != CASE_E)) && (param_1 != CASE_F)) {
     if (param_1 == CASE_6) {
       if (g_researchPanel_008016E8 != nullptr) {
-        /* ST_CALLSITE[004FA8C8]: CALL dword ptr [EDX + 0x1c] */
+        /* ST_CALLSITE[004FA8C8]: CALL dword ptr [EDX + 0x1c]; [STIndirectCallsiteApplier] exact slot 0x1C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
         (*STField<code *>(g_researchPanel_008016E8->field_0000,0x001C))();
         return;
       }
     }
     else if (param_1 == CASE_7) {
       if (g_bldBoatPanel_0080167C != nullptr) {
-        /* ST_CALLSITE[004FA8E4]: CALL dword ptr [EAX + 0x1c] */
+        /* ST_CALLSITE[004FA8E4]: CALL dword ptr [EAX + 0x1c]; [STIndirectCallsiteApplier] exact slot 0x1C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
         (*STField<code *>(g_bldBoatPanel_0080167C->field_0000,0x001C))();
         return;
       }
     }
     else if (param_1 == 8) {
       if (g_bldObjPanel_00801684 != nullptr) {
-        /* ST_CALLSITE[004FA900]: CALL dword ptr [EDX + 0x1c] */
+        /* ST_CALLSITE[004FA900]: CALL dword ptr [EDX + 0x1c]; [STIndirectCallsiteApplier] exact slot 0x1C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
         (*STField<code *>(g_bldObjPanel_00801684->field_0000,0x001C))();
         return;
       }
@@ -52,7 +52,7 @@ void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_para
     }
     else if (param_1 == 10) {
       if (g_tradePanel_00802A44 != nullptr) {
-        /* ST_CALLSITE[004FA938]: CALL dword ptr [EDX + 0x20] */
+        /* ST_CALLSITE[004FA938]: CALL dword ptr [EDX + 0x20]; [STIndirectCallsiteApplier] exact slot 0x20; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)&g_tradePanel_00802A44->field_0000[1].field_0xc)();
         return;
@@ -67,7 +67,7 @@ void __thiscall CPanelTy::sub_004FA870(CPanelTy *this,CPanelTy_sub_004FA870_para
     }
     else if (param_1 == 0xc) {
       if (g_bldLabPanel_00801680 != nullptr) {
-        /* ST_CALLSITE[004FA970]: CALL dword ptr [EDX + 0x1c] */
+        /* ST_CALLSITE[004FA970]: CALL dword ptr [EDX + 0x1c]; [STIndirectCallsiteApplier] exact slot 0x1C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
         (*STField<code *>(g_bldLabPanel_00801680->field_0000,0x001C))();
         return;
       }

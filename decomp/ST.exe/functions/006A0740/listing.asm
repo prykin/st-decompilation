@@ -109,14 +109,16 @@ LAB_006a0864:
 006A086A  8B 4B 0C                  MOV ECX,dword ptr [EBX + 0xc]
 006A086D  50                        PUSH EAX
 006A086E  51                        PUSH ECX
-006A086F  E8 5F 39 D6 FF            CALL 0x004041d3
+CGenerate::SaveMap::override::prt_6a086f_26c1d07c:
+006A086F  E8 5F 39 D6 FF            CALL 0x004041d3  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B5050_99986F91; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B5050_99986F91;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006A2ED0_9EFE711B
 006A0874  83 C4 08                  ADD ESP,0x8
 006A0877  89 45 F8                  MOV dword ptr [EBP + -0x8],EAX
 006A087A  56                        PUSH ESI
 006A087B  56                        PUSH ESI
 006A087C  56                        PUSH ESI
 006A087D  50                        PUSH EAX
-006A087E  E8 CD 47 01 00            CALL 0x006b5050
+CGenerate::SaveMap::override::prt_6a087e_cb77943b:
+006A087E  E8 CD 47 01 00            CALL 0x006b5050  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/byte; signature=__stdcall;pointer:/byte;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B5050_99986F91
 006A0883  8B 55 F8                  MOV EDX,dword ptr [EBP + -0x8]
 006A0886  8B 4B 18                  MOV ECX,dword ptr [EBX + 0x18]
 006A0889  50                        PUSH EAX

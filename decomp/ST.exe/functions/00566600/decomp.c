@@ -13,17 +13,16 @@ int FUN_00566600(int param_1)
   int iVar2;
   cMf32 *pcVar2;
   uint *puVar3;
-  LPSTR pCVar4;
+  char *pcVar4;
   uint uVar5;
   uint uVar6;
   int iVar7;
   byte *pbVar8;
-  char *pcVar9;
-  byte *pbVar10;
-  char *pcVar11;
-  byte bVar12;
-  int iVar13;
-  undefined1 local_368;
+  byte *pbVar9;
+  char *pcVar10;
+  byte bVar11;
+  int iVar12;
+  byte local_368;
   char local_367 [515];
   byte local_164 [260];
   InternalExceptionFrame local_60;
@@ -39,6 +38,7 @@ int FUN_00566600(int param_1)
   local_1c = 0;
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_60.previous;
@@ -51,81 +51,84 @@ int FUN_00566600(int param_1)
     return local_1c;
   }
   uVar5 = 0xffffffff;
-  pcVar9 = &CHAR_00h_0080798c;
+  pcVar4 = &CHAR_00h_0080798c;
   do {
-    pcVar11 = pcVar9;
+    pcVar10 = pcVar4;
     if (uVar5 == 0) break;
     uVar5 = uVar5 - 1;
-    pcVar11 = pcVar9 + 1;
-    cVar1 = *pcVar9;
-    pcVar9 = pcVar11;
+    pcVar10 = pcVar4 + 1;
+    cVar1 = *pcVar4;
+    pcVar4 = pcVar10;
   } while (cVar1 != '\0');
   uVar5 = ~uVar5;
-  pbVar8 = (byte *)(pcVar11 + -uVar5);
-  pbVar10 = local_164;
-  memmove(pbVar10, pbVar8, uVar5); /* compiler REP MOVS byte copy */
+  pbVar8 = (byte *)(pcVar10 + -uVar5);
+  pbVar9 = local_164;
+  memmove(pbVar9, pbVar8, uVar5); /* compiler REP MOVS byte copy */
   uVar6 = 0;
   FUN_006b8280((char *)local_164,(char *)local_164);
   uVar5 = 0xffffffff;
   pcVar9_mg1 = PTR_s_music_0079b00c;
   do {
-    pcVar9 = pcVar9_mg1;
+    pcVar4 = pcVar9_mg1;
     if (uVar5 == 0) break;
     uVar5 = uVar5 - 1;
-    pcVar9 = pcVar9_mg1 + 1;
+    pcVar4 = pcVar9_mg1 + 1;
     cVar1 = *pcVar9_mg1;
-    pcVar9_mg1 = pcVar9;
+    pcVar9_mg1 = pcVar4;
   } while (cVar1 != '\0');
   uVar5 = ~uVar5;
   iVar7 = -1;
   pbVar8 = local_164;
   do {
-    pbVar10 = pbVar8;
+    pbVar9 = pbVar8;
     if (iVar7 == 0) break;
     iVar7 = iVar7 + -1;
-    pbVar10 = pbVar8 + 1;
-    bVar12 = *pbVar8;
-    pbVar8 = pbVar10;
-  } while (bVar12 != 0);
-  pbVar8 = (byte *)(pcVar9 + -uVar5);
-  pbVar10 = pbVar10 + -1;
-  memmove(pbVar10, pbVar8, uVar5); /* compiler REP MOVS byte copy */
+    pbVar9 = pbVar8 + 1;
+    bVar11 = *pbVar8;
+    pbVar8 = pbVar9;
+  } while (bVar11 != 0);
+  pbVar8 = (byte *)(pcVar4 + -uVar5);
+  pbVar9 = pbVar9 + -1;
+  memmove(pbVar9, pbVar8, uVar5); /* compiler REP MOVS byte copy */
   uVar6 = 0;
-  pcVar2 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_164,3,0,0);
+  /* ST_CALLSITE[005666C9]: CALL 0x006f0ec0; direct=006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint */
+  pcVar2 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_164,3,0,0);
   uVar5 = 0xffffffff;
   local_10->field_0018 = pcVar2;
   pcVar9_mg2 = PTR_s_GM_SET_0079b010;
   do {
-    pcVar9 = pcVar9_mg2;
+    pcVar4 = pcVar9_mg2;
     if (uVar5 == 0) break;
     uVar5 = uVar5 - 1;
-    pcVar9 = pcVar9_mg2 + 1;
+    pcVar4 = pcVar9_mg2 + 1;
     cVar1 = *pcVar9_mg2;
-    pcVar9_mg2 = pcVar9;
+    pcVar9_mg2 = pcVar4;
   } while (cVar1 != '\0');
   uVar5 = ~uVar5;
   local_368 = 0xc;
-  pcVar9 = pcVar9 + -uVar5;
-  pcVar11 = local_367;
+  pcVar4 = pcVar4 + -uVar5;
+  pcVar10 = local_367;
   for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-    *(undefined4 *)pcVar11 = *(undefined4 *)pcVar9;
-    pcVar9 = pcVar9 + 4;
-    pcVar11 = pcVar11 + 4;
+    *(undefined4 *)pcVar10 = *(undefined4 *)pcVar4;
+    pcVar4 = pcVar4 + 4;
+    pcVar10 = pcVar10 + 4;
   }
   local_c = 0;
   for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-    *pcVar11 = *pcVar9;
-    pcVar9 = pcVar9 + 1;
-    pcVar11 = pcVar11 + 1;
+    *pcVar10 = *pcVar4;
+    pcVar4 = pcVar4 + 1;
+    pcVar10 = pcVar10 + 1;
   }
   local_18 = local_367;
   local_14 = pcVar2;
   cMf32::ToBeg(pcVar2,FUN_006f2d10,&local_368);
   pcVar2 = local_14;
+
   puVar3 = cMf32::RecNameGetNext(local_14);
   uVar5 = local_c;
   while (puVar3 != nullptr) {
     local_c = uVar5 + 1;
+
     puVar3 = cMf32::RecNameGetNext(pcVar2);
     uVar5 = local_c;
   }
@@ -134,6 +137,7 @@ int FUN_00566600(int param_1)
     RaiseInternalException(-4,g_overwriteContext_007ED77C,"E:\\__titans\\snd_mngr.cpp",0x25);
   }
   if ((param_1 == 0) || ((param_1 < 0 && ((int)local_10->field_0028 < 1)))) {
+
     uVar6 = Library::MSVCRT::FUN_0072e6c0();
     local_10->field_0028 = uVar6 % uVar5 + 1;
   }
@@ -141,17 +145,20 @@ int FUN_00566600(int param_1)
     local_10->field_0028 = param_1;
   }
   iVar7 = 0;
-  bVar12 = 0;
-  pCVar4 = FUN_006f2c00(PTR_s_GM_SET_0079b010,1,local_10->field_0028);
-  local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(local_10->field_0018,pCVar4,bVar12,iVar7);
+  bVar11 = 0;
+  /* ST_CALLSITE[00566798]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;pointer:/char;/int;/undefined4 */
+  pcVar4 = FUN_006f2c00(PTR_s_GM_SET_0079b010,1,local_10->field_0028);
+  local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(local_10->field_0018,pcVar4,bVar11,iVar7);
   if (local_8 == nullptr) {
+
     uVar6 = Library::MSVCRT::FUN_0072e6c0();
-    iVar13 = 0;
-    bVar12 = 0;
+    iVar12 = 0;
+    bVar11 = 0;
     iVar7 = uVar6 % uVar5 + 1;
     local_10->field_0028 = iVar7;
-    pCVar4 = FUN_006f2c00(PTR_s_GM_SET_0079b010,1,iVar7);
-    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(local_10->field_0018,pCVar4,bVar12,iVar13);
+    /* ST_CALLSITE[005667E8]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;pointer:/char;/int;/undefined4 */
+    pcVar4 = FUN_006f2c00(PTR_s_GM_SET_0079b010,1,iVar7);
+    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(local_10->field_0018,pcVar4,bVar11,iVar12);
     if (local_8 == nullptr) {
       RaiseInternalException
                 (-4,g_overwriteContext_007ED77C,"E:\\__titans\\snd_mngr.cpp",0x32);

@@ -14,19 +14,20 @@ int __thiscall PanelTy::GetMessage(PanelTy *this,STMessage *message)
 {
   STMessageId SVar1;
   PanelTy *this_00;
-  DWORD DVar3;
+  int iVar3;
   int local_EAX_47;
   int iVar4;
   int iVar5;
-  int iVar6;
   InternalExceptionFrame local_4c;
   PanelTy *local_8;
 
   local_8 = this;
-  DVar3 = STAppC::sub_006E51B0(this->field_0010);
-  this->field_0038 = DVar3;
+
+  iVar3 = STAppC::sub_006E51B0(this->field_0010);
+  this->field_0038 = iVar3;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
+
   local_EAX_47 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (local_EAX_47 == 0) {
@@ -40,15 +41,18 @@ int __thiscall PanelTy::GetMessage(PanelTy *this,STMessage *message)
       DonePanel(local_8);
     }
     else if (SVar1 == MESS_SHARED_0005) {
+
       Library::DKW::DDX::FUN_006b3640
                 ((int *)g_ddxContext_008075A8,local_8->field_0060,0xffffffff,local_8->field_003C,
                  local_8->field_0044);
     }
     g_currentExceptionFrame = local_4c.previous;
+
     iVar4 = FUN_006e5fd0(this_00,message);
     return iVar4;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\panel.cpp",0x52,0,local_EAX_47,
                              "%s","PanelTy::GetMessage");
   if (iVar5 != 0) {

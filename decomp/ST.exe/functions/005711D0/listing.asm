@@ -1,4 +1,4 @@
-FUN_005711d0:
+STAppC::sub_005711D0:
 005711D0  55                        PUSH EBP
 005711D1  8B EC                     MOV EBP,ESP
 005711D3  56                        PUSH ESI
@@ -20,7 +20,7 @@ FUN_005711d0:
 005711F5  E8 26 3B 17 00            CALL 0x006e4d20
 005711FA  8B 0E                     MOV ECX,dword ptr [ESI]
 005711FC  8B 11                     MOV EDX,dword ptr [ECX]
-005711FE  FF 52 04                  CALL dword ptr [EDX + 0x4]
+005711FE  FF 52 04                  CALL dword ptr [EDX + 0x4]  ; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void
 00571201  8B 06                     MOV EAX,dword ptr [ESI]
 00571203  50                        PUSH EAX
 00571204  E8 A7 D0 1B 00            CALL 0x0072e2b0

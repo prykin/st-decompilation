@@ -4,10 +4,10 @@
 /* [STPrototypeRepairApplier] Propagated parameter 0.
    Evidence: 004E51B0 -> 004DD880 @ 004E569A */
 
-undefined4 __fastcall FUN_004dd880(AnonShape_004DDCC0_33DEB43E *param_1)
+undefined4 __fastcall FUN_004dd880(RecoveredRecordView_004DDCC0_A8DE46ED *param_1)
 
 {
-  AnonShape_004DDCC0_33DEB43E *pAVar1;
+  RecoveredRecordView_004DDCC0_A8DE46ED *pRVar1;
   byte bVar2;
   byte bVar3;
   int iVar4;
@@ -17,10 +17,10 @@ undefined4 __fastcall FUN_004dd880(AnonShape_004DDCC0_33DEB43E *param_1)
   int *piVar8;
   int *piVar9;
   int local_104 [4];
-  undefined4 local_f4 [51];
+  uint local_f4 [51];
   int local_28;
   int local_24;
-  AnonShape_004DDCC0_33DEB43E *local_20;
+  RecoveredRecordView_004DDCC0_A8DE46ED *local_20;
   int *local_1c;
   int *local_18;
   undefined4 *local_14;
@@ -59,19 +59,20 @@ undefined4 __fastcall FUN_004dd880(AnonShape_004DDCC0_33DEB43E *param_1)
   piVar8 = local_104;
   local_18 = &DAT_007bf67c;
   do {
-    pAVar1 = local_20;
+    pRVar1 = local_20;
     iVar6 = local_28;
     if (local_18[-1] == local_24) {
       iVar4 = *local_18;
       if (((iVar4 < 0) || (iVar4 == 0)) ||
+
          (iVar4 = thunk_FUN_004e60d0(*(int *)&local_20->field_0024,iVar4), local_18[1] <= iVar4)) {
-        iVar4 = pAVar1->field_04D0;
-        piVar7 = &pAVar1->field_04D0;
+        iVar4 = pRVar1->field_04D0;
+        piVar7 = &pRVar1->field_04D0;
         iVar5 = 0;
         if (-1 < iVar4) {
 LAB_004dd9b3:
           if (iVar4 != iVar6) goto code_r0x004dd9bb;
-          piVar7 = &pAVar1->field_04D0 + iVar5 * 5;
+          piVar7 = &pRVar1->field_04D0 + iVar5 * 5;
           piVar9 = piVar8;
           memmove(piVar9, piVar7, 0x14); /* compiler REP MOVS byte copy */
           piVar8 = piVar8 + 5;
@@ -106,6 +107,7 @@ LAB_004dda3a:
   piVar8 = local_104;
   piVar7 = &param_1->field_04D0;
   memmove(piVar7, piVar8, 0xdc); /* compiler REP MOVS byte copy */
+
   thunk_FUN_004ddcc0(param_1);
   return 0;
 code_r0x004dd9bb:

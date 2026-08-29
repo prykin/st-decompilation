@@ -26,7 +26,8 @@ FUN_006809f0:
 00680A3A  50                        PUSH EAX
 00680A3B  8B 48 08                  MOV ECX,dword ptr [EAX + 0x8]
 00680A3E  89 4D EC                  MOV dword ptr [EBP + -0x14],ECX
-00680A41  E8 CA 7E 04 00            CALL 0x006c8910
+FUN_006809f0::override::prt_680a41_7120f57f:
+00680A41  E8 CA 7E 04 00            CALL 0x006c8910  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/byte; signature=__stdcall;pointer:/byte;pointer:/uint;pointer:/int
 00680A46  8B 55 F8                  MOV EDX,dword ptr [EBP + -0x8]
 00680A49  8D 4D EC                  LEA ECX,[EBP + -0x14]
 00680A4C  51                        PUSH ECX

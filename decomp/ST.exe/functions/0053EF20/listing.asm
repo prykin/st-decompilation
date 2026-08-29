@@ -23,7 +23,8 @@ ProdPanelTy::InitProdPanel:
 0053EF5B  8B 48 28                  MOV ECX,dword ptr [EAX + 0x28]
 0053EF5E  51                        PUSH ECX
 0053EF5F  68 9D 01 00 00            PUSH 0x19d
-0053EF64  E8 97 EF 1C 00            CALL 0x0070df00
+ProdPanelTy::InitProdPanel::override::prt_53ef64_bb1a54ff:
+0053EF64  E8 97 EF 1C 00            CALL 0x0070df00  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/uint;pointer:/ccFntTy
 0053EF69  8B 75 F0                  MOV ESI,dword ptr [EBP + -0x10]
 0053EF6C  83 C4 08                  ADD ESP,0x8
 0053EF6F  57                        PUSH EDI
@@ -36,7 +37,7 @@ ProdPanelTy::InitProdPanel:
 0053EF7D  68 5C 20 7C 00            PUSH 0x7c205c
 0053EF82  89 78 58                  MOV dword ptr [EAX + 0x58],EDI
 0053EF85  89 78 5C                  MOV dword ptr [EAX + 0x5c],EDI
-0053EF88  E8 EF 67 EC FF            CALL 0x0040577c
+0053EF88  E8 EF 67 EC FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 0053EF8D  8B 15 94 67 80 00         MOV EDX,dword ptr [0x00806794]
 0053EF93  83 C4 08                  ADD ESP,0x8
 0053EF96  50                        PUSH EAX
@@ -97,7 +98,7 @@ LAB_0053efcc:
 0053F02E  6A FE                     PUSH -0x2
 0053F030  51                        PUSH ECX
 0053F031  52                        PUSH EDX
-0053F032  E8 09 11 17 00            CALL 0x006b0140
+0053F032  E8 09 11 17 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 0053F037  8B 8E 7C 01 00 00         MOV ECX,dword ptr [ESI + 0x17c]
 0053F03D  50                        PUSH EAX
 0053F03E  E8 7D 29 1D 00            CALL 0x007119c0

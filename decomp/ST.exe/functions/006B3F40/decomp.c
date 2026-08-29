@@ -9,7 +9,8 @@ void FUN_006b3f40(AnonShape_006B3F40_BF05F5FE *param_1,int param_2,int param_3)
     param_1->field_020C = param_3;
     return;
   }
-  iVar1 = FUN_006b4fa0((int *)param_2);
+
+  iVar1 = FUN_006b4fa0((RecoveredRecord_006B4FA0_DAC3A217 *)param_2);
   param_1->field_020C = iVar1;
   return;
 }

@@ -11,7 +11,7 @@ int FUN_006c6ae0(AnonShape_006C6AE0_9C4F43C2 *param_1)
   short local_14;
   short local_12;
   byte local_10;
-  undefined1 local_f;
+  byte local_f;
   short local_c;
   short local_a;
   short local_8;

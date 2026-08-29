@@ -34,19 +34,24 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
   EnterCriticalSection(local_14);
   pAVar1 = STField<AnonShape_00749A79_05F12707 *>(this,0x284);
   pAVar2 = (AnonShape_00749A79_05F12707 *)param_1[0x11];
-  if (((uint)param_1[0x10] < 0x59) || (iVar5 = FUN_00749a5e((int)pAVar2), iVar5 == 0)) {
+  if (((uint)param_1[0x10] < 0x59) ||
+
+     (iVar5 = Library::Win32::COMSupport::FUN_00749a5e((int)pAVar2), iVar5 == 0)) {
     local_8 = nullptr;
   }
   else {
     local_8 = (undefined4 *)0x1;
     if ((pAVar1 != nullptr) &&
-       (iVar5 = FUN_00749a5e((int)pAVar1), iVar5 != 0)) {
+
+       (iVar5 = Library::Win32::COMSupport::FUN_00749a5e((int)pAVar1), iVar5 != 0)) {
       iVar5 = *(int *)&pAVar1[1].field_0xc;
       if ((*(int *)&pAVar2[1].field_0xc == iVar5) ||
          ((*(int *)&pAVar2[1].field_0xc == 0 && (iVar5 == 1 << (pAVar2->field_0x3e & 0x1f))))) {
-        pcVar6 = (char *)FUN_00749a79(pAVar1);
+
+        pcVar6 = STPointerBoundaryCast<char *>(Library::Win32::COMSupport::FUN_00749a79(pAVar1));
         local_10 = iVar5 * 4;
-        pcVar7 = (char *)FUN_00749a79(pAVar2);
+
+        pcVar7 = STPointerBoundaryCast<char *>(Library::Win32::COMSupport::FUN_00749a79(pAVar2));
         bVar13 = true;
         iVar5 = local_10;
         do {
@@ -63,7 +68,8 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
       }
     }
   }
-  FUN_0074b98a((void *)((int)this + 0x240),param_1);
+
+  Library::Win32::COMSupport::FUN_0074b98a((void *)((int)this + 0x240),param_1);
   pAVar1 = STField<AnonShape_00749A79_05F12707 *>(this,0x284);
   bVar3 = (byte)*(ushort *)&pAVar1->field_0x3e;
   if ((*(ushort *)&pAVar1->field_0x3e < 9) && (*(int *)&pAVar1[1].field_0xc == 0)) {
@@ -73,11 +79,14 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
     *(int *)&pAVar1[1].field_0x10 = 1 << (bVar3 & 0x1f);
   }
   if (*(int *)(pAVar1 + 1) == 0) {
-    iVar4 = FUN_00749841((RecoveredSourceFamily_dibcopy *)&pAVar1->field_0030);
+
+    iVar4 = Library::Win32::COMSupport::FUN_00749841
+                      ((RecoveredSourceFamily_dibcopy *)&pAVar1->field_0030);
     *(int *)(pAVar1 + 1) = iVar4;
   }
   if (local_8 != nullptr) {
-    local_EAX_263 = FUN_00749a79(pAVar1);
+
+    local_EAX_263 = Library::Win32::COMSupport::FUN_00749a79(pAVar1);
     auto param_1_after_write = *(undefined4 **)&pAVar1[1].field_0xc; /* compiler stack-slot lifetime split */
     local_8 = param_1_after_write;
     if (param_1_after_write != nullptr) {
@@ -133,10 +142,12 @@ undefined4 __thiscall FUN_006d5260(void *this,undefined4 *param_1)
     /* ST_CALLSITE[006D5462]: CALL dword ptr [0x0085be48] */
     ReleaseDC((HWND)0x0,hdc);
     this = local_c;
+
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    FUN_006b0a20(*(AnonShape_GLOBAL_0080759C_9638EF10 **)(STField<int>(local_c,0x288) + 0x28),
+    FUN_006b0a20(*(RecoveredGlobalRecordView_00854EB8 **)(STField<int>(local_c,0x288) + 0x28),
                  (int)(&local_414 + iStart_00),iStart_00,(int)iStart - iStart_00,0);
-    FUN_00747406(this,9,nullptr,0);
+
+    Library::Win32::COMSupport::FUN_00747406(this,9,nullptr,0);
   }
   FUN_006d6110((void *)((int)this + 0x294),(int)this + 0x240);
   /* ST_CALLSITE[006D54AD]: CALL dword ptr [0x0085bb90] */

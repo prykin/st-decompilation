@@ -45,6 +45,7 @@ void __thiscall FSGSTy::PaintLadder(FSGSTy *this)
     local_8c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_8c;
     local_10 = this;
+
     iVar4 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0);
     if (iVar4 == 0) {
       FUN_006b5f80((int *)g_ddxContext_008075A8,0x22,0x5e,0x2e1,0x175);
@@ -133,6 +134,7 @@ void __thiscall FSGSTy::PaintLadder(FSGSTy *this)
       return;
     }
     g_currentExceptionFrame = local_8c.previous;
+
     iVar6 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x49b,0,iVar4,"%s"
                                ,"FSGSTy::PaintLadder");
     if (iVar6 != 0) {

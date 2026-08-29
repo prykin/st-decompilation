@@ -27,6 +27,7 @@ ST3DSMAPContext::sub_006E98E0
       return 0;
     }
     if (pAVar1->field_00A0 == nullptr) {
+      /* ST_CALLSITE[006E9939]: CALL 0x006aac10; direct=006AAC10 Library::DKW::LIB::MemAllocClear; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
       piVar3 = Library::DKW::LIB::MemAllocClear(pAVar1->field_0094 * 8);
       pAVar1->field_00A0 = piVar3;
       if (piVar3 == nullptr) {

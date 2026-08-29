@@ -59,7 +59,7 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
   uint uVar3;
   uint uVar4;
   int iVar6;
-  uint *puVar7;
+  RecoveredRecord_006BFE70_3123BCE8 *pRVar7;
   uint uVar8;
   AnonPointee_TLOBaseTy_0607 *pAVar10;
   AnonPointee_TLOBaseTy_0607 *pAVar9;
@@ -69,6 +69,7 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
   }
   else {
     if (param_2 != 1) {
+
       iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3042,0,0,"%s",
                                  "STAllPlayersC::ActivateTV invalid panel number");
       if (iVar6 == 0) {
@@ -81,13 +82,14 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
   pAVar9 = (AnonPointee_TLOBaseTy_0607 *)(int)param_1;
   if (0 < objPtr) {
     if (pAVar10->field_0000 == 0) {
-      puVar7 = &pAVar10->field_0000 + objPtr * 4;
-      pAVar10->field_0000 = *puVar7;
-      pAVar10->field_0004 = puVar7[1];
-      pAVar10->field_0008 = puVar7[2];
-      pAVar10->field_000C = puVar7[3];
+      pRVar7 = (RecoveredRecord_006BFE70_3123BCE8 *)(&pAVar10->field_0000 + objPtr * 4);
+      pAVar10->field_0000 = *pRVar7;
+      pAVar10->field_0004 = pRVar7[1];
+      pAVar10->field_0008 = pRVar7[2];
+      pAVar10->field_000C = pRVar7[3];
+
       Library::MSVCRT::FUN_0072da70
-                (puVar7,(AnonPointee_TLOBaseTy_0607 *)(&pAVar10->field_0010 + objPtr * 4),
+                (pRVar7,(AnonPointee_TLOBaseTy_0607 *)(&pAVar10->field_0010 + objPtr * 4),
                  objPtr * -0x10 + 0x40);
       pAVar10[2].field_0010 = 0;
       pAVar10[2].field_0014 = 0xff;
@@ -101,7 +103,9 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
       uVar2 = (&pAVar10->field_0004)[objPtr * 4];
       uVar3 = (&pAVar10->field_0008)[objPtr * 4];
       uVar4 = (&pAVar10->field_000C)[objPtr * 4];
-      Library::MSVCRT::FUN_0072da70(&pAVar10->field_0010,pAVar10,objPtr * 0x10);
+
+      Library::MSVCRT::FUN_0072da70
+                ((RecoveredRecord_006BFE70_3123BCE8 *)&pAVar10->field_0010,pAVar10,objPtr * 0x10);
       pAVar10->field_0000 = uVar1;
       pAVar10->field_0004 = uVar2;
       pAVar10->field_0008 = uVar3;

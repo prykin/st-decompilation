@@ -120,7 +120,7 @@ LAB_0053eca8:
 0053ECB1  8B CE                     MOV ECX,ESI
 0053ECB3  89 46 44                  MOV dword ptr [ESI + 0x44],EAX
 0053ECB6  66 C7 86 72 01 00 00 01 00  MOV word ptr [ESI + 0x172],0x1
-0053ECBF  FF 52 18                  CALL dword ptr [EDX + 0x18]
+0053ECBF  FF 52 18                  CALL dword ptr [EDX + 0x18]  ; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 LAB_0053ecc2:
 0053ECC2  8B 46 44                  MOV EAX,dword ptr [ESI + 0x44]
 0053ECC5  8B 4E 3C                  MOV ECX,dword ptr [ESI + 0x3c]
@@ -145,7 +145,7 @@ LAB_0053ecee:
 0053ECEE  8B 16                     MOV EDX,dword ptr [ESI]
 0053ECF0  6A 00                     PUSH 0x0
 0053ECF2  8B CE                     MOV ECX,ESI
-0053ECF4  FF 52 1C                  CALL dword ptr [EDX + 0x1c]
+0053ECF4  FF 52 1C                  CALL dword ptr [EDX + 0x1c]  ; [STIndirectCallsiteApplier] exact slot 0x1C; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4
 0053ECF7  68 AE 00 00 00            PUSH 0xae
 0053ECFC  E8 2E 71 EC FF            CALL 0x00405e2f
 0053ED01  8B 45 B8                  MOV EAX,dword ptr [EBP + -0x48]

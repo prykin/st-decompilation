@@ -21,7 +21,7 @@ bool __thiscall FUN_005ef7a0(void *this,short param_1,short param_2,short param_
          ((param_3 < g_worldGrid.sizeZ &&
           (STGridAt3D(g_worldGrid, sVar1, param_2, param_3).objects[0] != nullptr)))))) ||
        /* ST_CALLSITE[005EF89E]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
-       (_param_1 = (STWorldObject *)DumpClassC::WritePtr(sVar1,param_2,param_3,0,this),
+       (_param_1 = STPointerBoundaryCast<STWorldObject *>(DumpClassC::WritePtr(sVar1,param_2,param_3,0,this)),
        _param_1 != nullptr)) goto cf_common_exit_005EF8D0;
     STField<char>(this,0x252) = STField<char>(this,0x252) + '\x01';
   }

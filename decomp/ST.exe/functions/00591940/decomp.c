@@ -33,9 +33,11 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\Start\\camp_obj.cpp",0xb5,0,errorCode,
                                "%s","CampaignTy::PaintCampaign");
     if (iVar5 != 0) {
@@ -60,8 +62,10 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
   if (g_startSystem_0081176C->field_0028 == 0) {
     iVar4 = 0;
     bVar10 = 0;
+    /* ST_CALLSITE[00591ADE]: CALL 0x006f2c00; direct=006F2C00 FUN_006f2c00; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
     text = FUN_006f2c00("CMPG_BKG",1,(uint)DAT_0080874e);
-    pBVar3 = (BITMAPINFO *)FUN_0070a9f0(g_cMf32_00806780,text,bVar10,iVar4);
+    /* ST_CALLSITE[00591AEE]: CALL 0x0070a9f0; direct=0070A9F0 FUN_0070a9f0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/wingdi.h/BITMAPINFO; signature=__cdecl;pointer:/wingdi.h/BITMAPINFO;pointer:/cMf32;pointer:/char;/byte;/int */
+    pBVar3 = FUN_0070a9f0(g_cMf32_00806780,text,bVar10,iVar4);
     /* ST_CALLSITE[00591AFD]: CALL 0x00403738; direct=00403738 PutDDX */
     PutDDX(0xa5,0x37,'\x01',pBVar3);
   }
@@ -94,10 +98,12 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
       puVar6 = &pCVar2->field_00BB[0].field_0028.field_001C;
       do {
         if (puVar6[-6] != 0xffffffff) {
+
           Library::DKW::DDX::FUN_006b3730
                     ((uint *)puVar6[0xb],puVar6[-6],puVar6[-5],*puVar6,puVar6[1]);
         }
         if ((pCVar2->field_0065 == '\x01') && (STField<uint>(puVar6,0x79) != 0xffffffff)) {
+
           Library::DKW::DDX::FUN_006b3730
                     (STField<uint *>(puVar6,0xbd),STField<uint>(puVar6,0x79),
                      STField<uint>(puVar6,0x7d),STField<uint>(puVar6,0x91),

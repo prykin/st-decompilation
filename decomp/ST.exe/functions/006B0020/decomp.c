@@ -13,6 +13,7 @@ void * FUN_006b0020(uint *param_1,int *param_2)
   if (param_2 != nullptr) {
     *param_2 = 0;
   }
+  /* ST_CALLSITE[006B0040]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
   puVar1 = Library::DKW::LIB::MemAlloc(param_1[3] * param_1[2] + 0x1c);
   if (puVar1 == nullptr) {
     return nullptr;

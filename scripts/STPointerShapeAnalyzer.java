@@ -84,6 +84,13 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         "(0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\+\\s*" +
         "([^;\\r\\n]{1,240}?)\\s*\\*\\s*" +
         "(0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\)");
+    private static final Pattern RAW_RECORD_INDEXED_ACCESS = Pattern.compile(
+        "\\*\\s*\\(\\s*([^()\\r\\n]{1,80}?)\\s*\\*\\s*\\)\\s*" +
+        "\\(\\s*(?:\\(\\s*[^()\\r\\n]{1,40}\\s*\\)\\s*)?" +
+        "([A-Za-z_$][A-Za-z0-9_$:]*)\\s*\\+\\s*" +
+        "([^;\\r\\n]{1,240}?)\\s*\\*\\s*" +
+        "(0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\+\\s*" +
+        "(0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\)");
     private static final Pattern NESTED_ACCESS = Pattern.compile(
         "\\*\\s*\\(\\s*([^()\\r\\n]{1,80}?)\\s*\\*\\s*\\)\\s*" +
         "\\(\\s*\\*\\s*\\(\\s*([^()\\r\\n]{1,80}?)\\s*\\*\\s*\\)\\s*" +
@@ -405,6 +412,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             functionTargets);
         collectRawIndexedAccesses(function, c, locals, stableStorages, functionTargets,
             renderedPointerWidths);
+        collectRawRecordIndexedAccesses(function, c, locals, stableStorages,
+            functionTargets, renderedPointerWidths);
         Matcher matcher = RAW_ACCESS.matcher(c);
         while (matcher.find()) {
             monitor.checkCancelled();
@@ -831,11 +840,15 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         List<Integer> caseStarts = new ArrayList<>();
         while (labels.find()) caseStarts.add(labels.start());
         if (caseStarts.size() < 4 || discriminators.isEmpty()) return;
+        String functionComment = function.getComment();
+        if (functionComment == null || !functionComment.contains(
+                "[STDiscriminatedPayloadApplier] Case-local payload view:")) return;
 
         for (Parameter parameter : function.getParameters()) {
             String name = parameter.getName();
             if (name == null || name.isBlank() || "this".equals(name) ||
                     discriminators.contains(name)) continue;
+            if (!functionComment.contains("carrier=" + name + ";")) continue;
             int occurrences = identifierOccurrences(c, name);
             if (occurrences < 6) continue;
             int caseRegions = 0;
@@ -1009,6 +1022,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                         "pointer:" + machineScalarType(memory.width),
                         "machine-loaded child reused as memory base " +
                         addr(instruction.getAddress()));
+                    nestedEvidence(value.member.parent,
+                        value.member.parentOffset).pointerReuseCount++;
                     machineNestedPointerFields++;
                 }
             }
@@ -1178,13 +1193,9 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     }
 
     private String machineScalarType(int width) {
-        return switch (width) {
-            case 1 -> "/byte";
-            case 2 -> "/ushort";
-            case 4 -> "/uint";
-            case 8 -> "/ulonglong";
-            default -> "/undefined" + width;
-        };
+        // A dereference width proves storage geometry only.  Signedness and a
+        // semantic scalar domain require an independent typed boundary.
+        return "/undefined" + width;
     }
 
     private String machineRegisterOperand(Instruction instruction, int operand) {
@@ -1525,6 +1536,61 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             field.sites.add(addr(function.getEntryPoint()) + " indexed " + name +
                 "+0x" + Long.toHexString(offset).toUpperCase(Locale.ROOT) +
                 " stride=" + scale);
+            target.accessCount++;
+            target.functions.add(addr(function.getEntryPoint()));
+            rawAccesses++;
+        }
+    }
+
+    /**
+     * Recover an array-of-record view from the complementary affine spelling
+     * which MSVC/Ghidra commonly emits:
+     *
+     * <pre>
+     *     *(T *)((int)base + index * stride + fieldOffset)
+     * </pre>
+     *
+     * This is deliberately stricter than an ordinary indexed byte access.  A
+     * record stride is accepted only when it is larger than the accessed field,
+     * the field lies wholly inside one record, and the same target later has one
+     * unique stride with at least two non-overlapping members and three exact
+     * sites.  The target remains one address-local generated identity; no named
+     * type or fixed array bound is inferred from geometry.
+     */
+    private void collectRawRecordIndexedAccesses(Function function, String c,
+            Map<String, Variable> locals, Set<String> stableStorages,
+            Map<String, TargetEvidence> functionTargets,
+            Map<String, Integer> renderedPointerWidths) {
+        Matcher matcher = RAW_RECORD_INDEXED_ACCESS.matcher(c);
+        while (matcher.find()) {
+            String valueType = matcher.group(1).trim();
+            String name = matcher.group(2);
+            long renderedScale = parseUnsigned(matcher.group(4));
+            long renderedOffset = parseUnsigned(matcher.group(5));
+            int elementWidth = integerCastBefore(matcher.group(), name) ? 1 :
+                renderedPointerWidths.getOrDefault(name, 1);
+            long effectiveScale = renderedScale * elementWidth;
+            long offset = renderedOffset * elementWidth;
+            int stride = effectiveScale > Integer.MAX_VALUE ? -1 :
+                (int)effectiveScale;
+            int width = accessWidth(valueType);
+            if (name.equals("this") || name.startsWith("this_") || width < 1 ||
+                    width > 16 || stride <= width || stride > MAX_SHAPE_SIZE ||
+                    offset < 0 || offset + width > stride) continue;
+            TargetEvidence target = canonicalTarget(function, locals,
+                stableStorages, functionTargets, name);
+            if (target == null) continue;
+            if (elementWidth > 1) target.scaledPointerEvidence = true;
+            FieldEvidence field = target.fields.computeIfAbsent(offset,
+                FieldEvidence::new);
+            field.widths.merge(width, 1, Integer::sum);
+            String type = valueTypeSpecification(valueType, width);
+            if (!type.isBlank()) field.types.merge(type, 1, Integer::sum);
+            field.indexedStrides.merge(stride, 1, Integer::sum);
+            field.sites.add(addr(function.getEntryPoint()) + " record-index " +
+                name + "+0x" + Long.toHexString(offset).toUpperCase(Locale.ROOT) +
+                " stride=" + stride);
+            target.recordStrides.merge(stride, 1, Integer::sum);
             target.accessCount++;
             target.functions.add(addr(function.getEntryPoint()));
             rawAccesses++;
@@ -2565,6 +2631,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private void mergeNested(NestedEvidence destination, NestedEvidence source) {
         destination.accessCount += source.accessCount;
         destination.dArrayIndexEvidence += source.dArrayIndexEvidence;
+        destination.pointerReuseCount += source.pointerReuseCount;
         destination.pointerDepth = Math.max(destination.pointerDepth, source.pointerDepth);
         mergeFields(destination.fields, source.fields);
     }
@@ -2766,6 +2833,32 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             generatedRefinablePath(currentStructure);
         boolean currentRecoveredConstructor =
             recoveredConstructorPath.equals(currentStructure);
+        /*
+         * A one-byte Listing local can be only the root symbol Ghidra chose for
+         * a larger inferred stack object.  Replacing that root with a pointer
+         * destroys the inferred inline array and makes the decompiler scale
+         * the original byte offsets by four.  Persistent pointer typing is
+         * therefore valid only for pointer-sized storage.  The aggregate/stack
+         * object analyzers own larger inline extents.
+         */
+        if (!target.kind.equals("global") && !pointerSizedStorage(target) &&
+                !target.expectedType.startsWith("pointer:"))
+            return new TargetDecision(false, false, "", "review",
+                "non-pointer-sized Listing storage is an inline stack/scalar root; " +
+                "pointer-shape evidence is retained for aggregate recovery only");
+        /*
+         * Data has no SourceType.  In particular, an image-backed T * is already
+         * a concrete storage-width decision even when T is still undefined.  The
+         * applier intentionally preserves such unowned globals, so emitting an
+         * automatic proposal here can never reach a fixed point.  Another global
+         * analyzer may first establish ownership; until then retain the geometry
+         * as review evidence only.
+         */
+        if (target.kind.equals("global") && !target.scriptOwned &&
+                target.expectedType.startsWith("pointer:"))
+            return new TargetDecision(false, false, "", "review",
+                "unowned image-backed pointer is concrete global data; fixed-offset " +
+                "geometry is retained for review until an owning global analyzer proves it");
         if (currentRecoveredConstructor && target.constructorThisAnchor) {
             if (!validFields(target)) return new TargetDecision(false, false,
                 currentStructure, "review",
@@ -2802,7 +2895,43 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                     "anonymous helper views remain partial aliases");
         }
 
+        /*
+         * Exact intraprocedural machine use outranks disagreement between several
+         * helper-local whole-record views.  A word loaded from one member and then
+         * reused as the base of two or more fixed child accesses proves that this
+         * member is a pointer even when the containing value is passed to helpers
+         * whose partial AnonShape identities differ.  Refine only the existing
+         * hash-owned target identity; never select, merge, or widen to one of those
+         * competing helper types.
+         */
+        if (generatedAnonymous && hasIntrinsicNestedRefinement(target)) {
+            Structure current = structureFromPointer("pointer:" + currentStructure);
+            boolean covered = current != null && coversGeneratedFields(current, target);
+            boolean refine = covered && validFields(target) &&
+                needsGeneratedRefinement(current, target);
+            boolean apply = refine && automaticTarget(target) && !autoThis(target);
+            if (covered)
+                return new TargetDecision(apply, apply, currentStructure,
+                    apply ? "refine" : "existing",
+                    "exact machine child-base reuse refines nested pointer members of " +
+                    "the current generated identity; conflicting helper-local whole-record " +
+                    "views remain address-local and are not merged");
+        }
+
         if (!target.typeEvidence.isEmpty()) {
+            /*
+             * A typed consumer proves the view required at that call boundary,
+             * not one persistent type for a Listing local.  With no independent
+             * member access or producer anchor, whole-local typing can force casts
+             * around otherwise readable call results when several definitions are
+             * merged by SSA.  Leave this to use-site overrides or the local-lifetime
+             * analyzer instead of making PointerShape oscillate on every pass.
+             */
+            if (target.kind.equals("local") && target.fields.isEmpty() &&
+                    target.accessCount == 0)
+                return new TargetDecision(false, false, "", "review",
+                    "consumer-only typed-call evidence has no independent storage " +
+                    "geometry or producer anchor; keep the persistent local neutral");
             if (generatedAnonymous && consolidateGlobalAnonymousViews(target,
                     currentStructure)) {
                 Structure current = structureFromPointer("pointer:" + currentStructure);
@@ -2952,13 +3081,42 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                     "script-owned anonymous structure already covers the observed extent and fields");
         }
 
-        Structure matched = matchExisting(target);
-        if (matched != null) {
-            return new TargetDecision(false, false, matched.getPathName(),
-                "review", "field layout alone matches existing structure; manual confirmation required");
+        boolean recordStrideConflict = !target.recordStrides.isEmpty() &&
+            provenRecordStride(target) < 0;
+        /*
+         * An explicit parameter which is dereferenced at one or more exact
+         * fixed offsets already has a machine-proven pointer role even when
+         * only one member is visible in this helper.  Earlier versions
+         * required two fields and three accesses, leaving hundreds of tiny
+         * accessors as `*(T *)(param + offset)`.  A target-local generated
+         * record does not claim a semantic class or merge geometry across
+         * functions, so it is safe under the narrower one-owner proof when:
+         *
+         *  - the complete target profile has no conflicting widths/stride;
+         *  - the ABI storage is pointer-sized and not a reused scalar slot;
+         *  - the parameter is neither auto-this nor a discriminated payload;
+         *  - no existing concrete/manual pointee would be replaced.
+         *
+         * The deterministic RecoveredRecord identity deliberately remains
+         * structural.  Later exact call flow may refine or replace it, but
+         * layout similarity alone can never merge it with another record.
+         */
+        boolean oneOwnerParameterShape = target.kind.equals("parameter") &&
+            !autoThis(target) && !target.discriminatedPayload &&
+            target.fields.size() >= 1 && target.accessCount >= 1 &&
+            target.recordStrides.isEmpty() && !target.scaledPointerEvidence &&
+            validFields(target) && pointerSizedStorage(target) &&
+            (replaceable(target.expectedType) || target.scriptOwned) &&
+            automaticTarget(target);
+        if (oneOwnerParameterShape) {
+            String recovered = recoveredRecordPath(target);
+            return new TargetDecision(true, true, recovered, "layout",
+                "complete one-owner fixed-offset parameter profile; exact machine " +
+                "dereference proves pointer role and target-local record geometry " +
+                "without semantic identity or cross-function merging");
         }
-
-        boolean multiField = target.fields.size() >= 2 && target.accessCount >= 3;
+        boolean multiField = target.fields.size() >= 2 && target.accessCount >= 3 &&
+            !recordStrideConflict;
         boolean callResultView = target.callResultView &&
             target.genericPointerConsumers >= 1 && target.accessCount >= 1;
         boolean strongNested = target.nested.values().stream().anyMatch(nested -> {
@@ -2969,11 +3127,22 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         boolean replaceable = replaceable(target.expectedType) || target.scriptOwned;
         boolean apply = (multiField || strongNested || callResultView) && replaceable && automaticTarget(target) &&
             !autoThis(target);
+        Structure matched = matchExisting(target);
+        if (matched != null && !apply) {
+            return new TargetDecision(false, false, matched.getPathName(),
+                "review", "field layout alone matches existing structure; manual confirmation required");
+        }
         String reason = multiField ? "multiple consistent fixed offsets in one persistent target" :
             strongNested ? "consistent nested offsets through a pointer field in one persistent target" :
             callResultView ? "single-call consumer-local record view with fixed-offset evidence" :
             "single/weak fixed-offset profile retained for review";
+        if (matched != null && apply)
+            reason += "; equal geometry to " + matched.getPathName() +
+                " is ignored because no independent identity flow exists; a target-local " +
+                "generated shape preserves the proven offsets without claiming that named type";
         if (!replaceable) reason += "; concrete target type preserved";
+        else if (recordStrideConflict)
+            reason += "; affine record access lacks one unique stride with two fields and three sites";
         else if (!target.databaseBacked)
             reason += "; transient decompiler symbol requires review";
         else if (unsettledLocal(target))
@@ -3551,6 +3720,12 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         return source == SourceType.USER_DEFINED || source == SourceType.IMPORTED;
     }
 
+    private boolean pointerSizedStorage(TargetEvidence target) {
+        Matcher matcher = Pattern.compile(":(\\d+)(?:\\s.*)?$").matcher(target.locator);
+        return matcher.find() && Integer.parseInt(matcher.group(1)) ==
+            currentProgram.getDefaultPointerSize();
+    }
+
     private boolean typeFamilyOwned(String comment) {
         return comment != null && comment.contains(
             "[STTypeFamilyApplier] EXACT_ANONYMOUS_LAYOUT");
@@ -3585,6 +3760,15 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         String hash = sha256(target.key + "|" + profile(target)).substring(0, 8)
             .toUpperCase(Locale.ROOT);
         return ANON_ROOT + "AnonShape_" + owner + "_" + hash;
+    }
+
+    private String recoveredRecordPath(TargetEvidence target) {
+        String owner = target.kind.equals("global") ? "GLOBAL_" + target.locator :
+            addr(target.functionAddress);
+        owner = owner.replaceAll("[^A-Za-z0-9_]", "_");
+        String hash = sha256(target.key + "|" + profile(target)).substring(0, 8)
+            .toUpperCase(Locale.ROOT);
+        return ANON_ROOT + "RecoveredRecord_" + owner + "_" + hash;
     }
 
     private Structure matchExisting(TargetEvidence target) {
@@ -3694,8 +3878,23 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     }
 
     private boolean usableNested(NestedEvidence nested, List<FieldEvidence> selected) {
-        return nested != null && nested.accessCount >= 2 && selected.size() >= 2 &&
-            nestedLength(selected) <= MAX_SHAPE_SIZE;
+        if (nested == null || nested.accessCount < 2 || selected.isEmpty() ||
+                nestedLength(selected) > MAX_SHAPE_SIZE) return false;
+        if (selected.size() >= 2) return true;
+        // One repeated field is sufficient only for the stronger machine chain
+        // in which that loaded word is itself reused as a memory base.  This
+        // proves a nested pointer member, not merely an arbitrary byte buffer.
+        return nested.pointerReuseCount >= 2;
+    }
+
+    private boolean hasIntrinsicNestedRefinement(TargetEvidence target) {
+        for (Map.Entry<Long, NestedEvidence> entry : target.nested.entrySet()) {
+            if (!target.fields.containsKey(entry.getKey())) continue;
+            NestedEvidence nested = entry.getValue();
+            if (knownNestedType(nested) != null ||
+                    usableNested(nested, selectedNestedFields(nested))) return true;
+        }
+        return false;
     }
 
     private Structure knownNestedType(NestedEvidence nested) {
@@ -3881,6 +4080,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         StringBuilder result = new StringBuilder();
         for (FieldEvidence field : target.fields.values())
             result.append(field.offset).append(':').append(uniqueWidth(field)).append(';');
+        int stride = provenRecordStride(target);
+        if (stride > 0) result.append("stride:").append(stride).append(';');
         return result.toString();
     }
 
@@ -3894,10 +4095,30 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private int proposalLength(TargetEvidence target, TargetDecision decision) {
         if (target.constructorThisAnchor && target.constructorAllocationExtent > 0)
             return (int)target.constructorAllocationExtent;
-        int observed = shapeLength(target);
+        int observed = Math.max(shapeLength(target), provenRecordStride(target));
         DataType existing = dataTypes.getDataType(decision.typePath);
         return existing instanceof Structure structure ?
             Math.max(observed, structure.getLength()) : observed;
+    }
+
+    private int provenRecordStride(TargetEvidence target) {
+        if (target == null || target.recordStrides.size() != 1 ||
+                target.fields.size() < 2) return -1;
+        Map.Entry<Integer, Integer> only = target.recordStrides.entrySet()
+            .iterator().next();
+        int stride = only.getKey();
+        if (stride < 2 || stride > MAX_SHAPE_SIZE || only.getValue() < 3)
+            return -1;
+        int witnessedFields = 0;
+        long end = -1;
+        for (FieldEvidence field : target.fields.values()) {
+            int width = uniqueWidth(field);
+            if (width < 1 || field.offset < end || field.offset + width > stride ||
+                    !field.indexedStrides.containsKey(stride)) continue;
+            witnessedFields++;
+            end = field.offset + width;
+        }
+        return witnessedFields >= 2 ? stride : -1;
     }
 
     /**
@@ -4385,6 +4606,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         final Map<Long, FieldEvidence> fields = new TreeMap<>();
         final Map<Long, NestedEvidence> nested = new TreeMap<>();
         final Map<String, Integer> typeEvidence = new TreeMap<>();
+        final Map<Integer, Integer> recordStrides = new TreeMap<>();
         final Map<String, Set<String>> incomingNamedTypes = new TreeMap<>();
         final Set<String> typeSites = new TreeSet<>();
         final Set<String> functions = new TreeSet<>();
@@ -4448,7 +4670,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private static class NestedEvidence {
         final long parentOffset;
         final Map<Long, FieldEvidence> fields = new TreeMap<>();
-        int accessCount, dArrayIndexEvidence, pointerDepth = 1;
+        int accessCount, dArrayIndexEvidence, pointerDepth = 1, pointerReuseCount;
         NestedEvidence(long parentOffset) { this.parentOffset = parentOffset; }
     }
     private static class MergedGeneratedEvidence {

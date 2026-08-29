@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 FUN_0075be40(AnonShape_0075BE40_B9FD5FDF *param_1)
+undefined4 FUN_0075be40(RecoveredRecordView_0075BE40_98313CE4 *param_1)
 
 {
   int iVar1;

@@ -28,6 +28,7 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
     ppuVar1 = &param_1->field_05A6;
     local_2c.id = MESS_AIBOSSCLASSTY_5DD0|MESS_SHARED_0003;
     if ((*ppuVar1 == nullptr) &&
+
        (iVar3 = STPlaySystemC::sub_006E62D0
                           (g_playSystem_00802A38,param_1->field_05A2,(int *)ppuVar1), iVar3 == -4))
     {
@@ -39,7 +40,7 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
     /* ST_CALLSITE[004917AA]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/int;pointer:/AiBossClassTy;pointer:/SubmarineTitans/Recovered/STMessage */
     g_aiBossClass_008117BC->GetMessage(&local_2c);
   }
-  param_1->field_05C0 = 0;
+  param_1->field_05C0 = CASE_0;
   param_1->field_07C2 = 0;
   param_1->field_05A6 = nullptr;
   /* ST_CALLSITE[004917E1]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
@@ -47,6 +48,7 @@ void __fastcall FUN_00491720(STBoatC *param_1,undefined4 param_2)
             (param_1->field_005B,param_1->field_005D,param_1->field_005F,param_1->field_008E,
              (RecoveredRecord_DumpClassC_00495EC0 *)param_1);
   pSVar4 = thunk_FUN_0042b760((char)param_1->field_0024,param_1->field_0030);
+
   uVar5 = thunk_FUN_00424790(pSVar4);
   uVar2 = param_1->field_01D1;
   uVar6 = local_8;

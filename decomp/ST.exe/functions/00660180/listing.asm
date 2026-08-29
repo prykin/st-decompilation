@@ -1,4 +1,4 @@
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00660180::FUN_00660180:
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00660180::FUN_00660180:
 00660180  55                        PUSH EBP
 00660181  8B EC                     MOV EBP,ESP
 00660183  83 EC 74                  SUB ESP,0x74
@@ -109,7 +109,7 @@ LAB_0066029a:
 006602A3  51                        PUSH ECX
 006602A4  6A 06                     PUSH 0x6
 006602A6  8B C8                     MOV ECX,EAX
-006602A8  FF 52 08                  CALL dword ptr [EDX + 0x8]
+006602A8  FF 52 08                  CALL dword ptr [EDX + 0x8]  ; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STGroupBoatC;/undefined2;/undefined2
 006602AB  EB 18                     JMP 0x006602c5
 LAB_006602ad:
 006602AD  8B 15 7C D7 7E 00         MOV EDX,dword ptr [0x007ed77c]

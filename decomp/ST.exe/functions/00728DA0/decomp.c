@@ -46,8 +46,7 @@ FUN_00728da0(void *this,int param_1,int param_2,short *param_3,uint param_4,int 
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   puStack_c = &DAT_0079e2f8;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
@@ -424,8 +423,8 @@ LAB_007294f8:
         *(int *)(puVar13 + -8) = param_2;
         *(int *)(puVar13 + -0xc) = param_1;
         *(undefined4 *)(puVar13 + -0x10) = 0x729571;
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640::FUN_00728a80
-                  (this,*(int *)(puVar13 + -0xc),*(int *)(puVar13 + -8),*(int *)(puVar13 + -4));
+        SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00728640::FUN_00728a80
+                  (this,*(int *)(puVar13 + -0xc),*(int *)(puVar13 + -8),*(void **)(puVar13 + -4));
       }
       else if (((local_9c < STField<int>(this,0x30)) || (STField<int>(this,0x38) <= local_44))
               || ((local_a0 < STField<int>(this,0x34) || (STField<int>(this,0x3c) <= local_50)
@@ -434,14 +433,14 @@ LAB_007294f8:
         *(int *)(puVar13 + -8) = param_2;
         *(int *)(puVar13 + -0xc) = param_1;
         *(undefined4 *)(puVar13 + -0x10) = 0x729558;
-        FUN_007288a0(this,*(int *)(puVar13 + -0xc),*(int *)(puVar13 + -8),*(int *)(puVar13 + -4));
+        FUN_007288a0(this,*(int *)(puVar13 + -0xc),*(int *)(puVar13 + -8),*(void **)(puVar13 + -4));
       }
       else {
         *(int *)(puVar13 + -4) = param_6;
         *(int *)(puVar13 + -8) = param_2;
         *(int *)(puVar13 + -0xc) = param_1;
         *(undefined4 *)(puVar13 + -0x10) = 0x729545;
-        FUN_00728640(this,*(int *)(puVar13 + -0xc),*(int *)(puVar13 + -8),*(int *)(puVar13 + -4));
+        FUN_00728640(this,*(int *)(puVar13 + -0xc),*(int *)(puVar13 + -8),*(void **)(puVar13 + -4));
       }
     }
     local_94 = local_94 + -1;

@@ -25,6 +25,7 @@ undefined4 STAllPlayersC::PushTV(char param_1,int param_2,int param_3,char param
   }
   else {
     if (param_2 != 1) {
+
       iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x36a,0,0,"%s",
                                  "STAllPlayersC::PushTV");
       if (iVar3 == 0) {
@@ -41,6 +42,7 @@ undefined4 STAllPlayersC::PushTV(char param_1,int param_2,int param_3,char param
     dVar1 = array->count;
     if (0 < (int)dVar1) {
       do {
+
         DArrayGetElement(array,index,&stack0x00000006);
         /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         if (in_stack_00000006 == param_5) {

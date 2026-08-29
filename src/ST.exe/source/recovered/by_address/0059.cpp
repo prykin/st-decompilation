@@ -33,8 +33,10 @@ MAdvTy * __cdecl st::fn_00590AD0(void)
   MAdvTy *this;
   int iVar1;
 
-  this = (MAdvTy *)st::fn_006B04D0(0x62);
+
+  this = STPointerBoundaryCast<MAdvTy *>(st::fn_006B04D0(0x62));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
     this->vtable = &st_global_0079BFE4;
     memset(&this->field_0x18, 0, 0x20); /* compiler bulk-zero initialization */
@@ -58,7 +60,7 @@ MAdvTy * __cdecl st::fn_00590AD0(void)
 void st::fn_005926A0(int *param_1)
 
 {
-  st::fn_006B5F80((int *)g_ddxContext_008075A8,*param_1,param_1[1],param_1[2],param_1[3]);
+  st::fn_006B5F80(reinterpret_cast<int *>(g_ddxContext_008075A8),*param_1,param_1[1],param_1[2],param_1[3]);
   st::fn_006C4AC0(param_1);
   return;
 }
@@ -81,10 +83,11 @@ CampaignTy * __cdecl st::fn_00593860(void)
   uint *puVar3;
   SpriteClassTy *this_00;
   uint *puVar5;
-  this = (CampaignTy *)st::fn_006B04D0(0x2000);
+  this = STPointerBoundaryCast<CampaignTy *>(st::fn_006B04D0(0x2000));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
-    this->vtable = (CampaignTyVTable *)&st_global_0079C018;
+    this->vtable = reinterpret_cast<CampaignTyVTable *>(&st_global_0079C018);
     this->field_0018 = 0;
     this->field_005D = 0;
     memset(&this->field_0x1d, 0, 0x20); /* compiler bulk-zero initialization */
@@ -97,10 +100,10 @@ CampaignTy * __cdecl st::fn_00593860(void)
       st::fn_00715820(this_00 + -1);
       st::fn_00715820(this_00);
       st::fn_00715820(this_00 + 1);
-      this_00 = (SpriteClassTy *)&this_00[3].field_0048;
+      this_00 = reinterpret_cast<SpriteClassTy *>(&this_00[3].field_0048);
       iVar1 = iVar1 + -1;
     } while (iVar1 != 0);
-    this->vtable = (CampaignTyVTable *)&st_global_0079C008;
+    this->vtable = reinterpret_cast<CampaignTyVTable *>(&st_global_0079C008);
     this->field_0065 = 2;
     this->field_009A = 0;
     memset(this->field_0066, 0, 0x34); /* compiler bulk-zero initialization */
@@ -109,7 +112,7 @@ CampaignTy * __cdecl st::fn_00593860(void)
     do {
       puVar5 = puVar3;
       memset(puVar5, 0, 0x27); /* compiler bulk-zero initialization */
-      puVar5 = (undefined4 *)((byte *)puVar5 + 0x24);
+      puVar5 = reinterpret_cast<uint *>(((byte *)puVar5 + 0x24));
       iVar1 = iVar1 + -1;
       puVar3 = (undefined4 *)((int)puVar3 + 0x1fb);
     } while (iVar1 != 0);
@@ -147,8 +150,10 @@ Visible * __cdecl st::fn_005947D0(void)
 {
   Visible *this;
 
-  this = (Visible *)st::fn_006B04D0(0x118);
+
+  this = STPointerBoundaryCast<Visible *>(st::fn_006B04D0(0x118));
   if (this != nullptr) {
+
     st::fn_006E5FB0(this);
     this->vtable = &st_global_0079C01C;
     memset(&this->field_0x88, 0, 0x80); /* compiler bulk-zero initialization */
@@ -188,11 +193,11 @@ HDC __cdecl st::fn_00594850(int param_1,undefined *param_2,BYTE param_3)
   pLVar7 = &local_b0;
   for (iVar3 = 0xf; iVar3 != 0; iVar3 = iVar3 + -1) {
     pLVar7->lfHeight = 0;
-    pLVar7 = (LOGFONTA *)&pLVar7->lfWidth;
+    pLVar7 = reinterpret_cast<LOGFONTA *>(&pLVar7->lfWidth);
   }
   local_b0.lfCharSet = param_3;
   uVar4 = 0xffffffff;
-  pcVar6 = "Verdana";
+  pcVar6 = st::mutable_c_string("Verdana");
   do {
     pcVar8 = pcVar6;
     if (uVar4 == 0) break;
@@ -340,4 +345,3 @@ HDC __cdecl st::fn_00594850(int param_1,undefined *param_2,BYTE param_3)
                       param_2);
   return pHVar2;
 }
-

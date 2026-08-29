@@ -60,7 +60,7 @@ LAB_004780de:
 004780E6  66 8B 96 0F 06 00 00      MOV DX,word ptr [ESI + 0x60f]
 004780ED  8B CE                     MOV ECX,ESI
 004780EF  52                        PUSH EDX
-004780F0  E8 BD AF F8 FF            CALL 0x004030b2
+004780F0  E8 BD AF F8 FF            CALL 0x004030b2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override
 004780F5  50                        PUSH EAX
 004780F6  8B CE                     MOV ECX,ESI
 004780F8  E8 FF A1 F8 FF            CALL 0x004022fc
@@ -257,7 +257,7 @@ LAB_00478341:
 00478349  66 8B 96 0F 06 00 00      MOV DX,word ptr [ESI + 0x60f]
 00478350  8B CE                     MOV ECX,ESI
 00478352  52                        PUSH EDX
-00478353  E8 5A AD F8 FF            CALL 0x004030b2
+00478353  E8 5A AD F8 FF            CALL 0x004030b2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override
 00478358  50                        PUSH EAX
 00478359  8B CE                     MOV ECX,ESI
 0047835B  E8 9C 9F F8 FF            CALL 0x004022fc

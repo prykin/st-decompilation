@@ -1,4 +1,4 @@
-FUN_005daa90:
+StartSystemTy::sub_005DAA90:
 005DAA90  55                        PUSH EBP
 005DAA91  8B EC                     MOV EBP,ESP
 005DAA93  83 EC 48                  SUB ESP,0x48

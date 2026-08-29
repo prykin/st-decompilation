@@ -583,7 +583,7 @@ LAB_0060960f:
 0060960F  8D 45 FC                  LEA EAX,[EBP + -0x4]
 00609612  8B CB                     MOV ECX,EBX
 00609614  50                        PUSH EAX
-00609615  E8 54 89 DF FF            CALL 0x00401f6e
+00609615  E8 54 89 DF FF            CALL 0x00401f6e  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 0060961A  85 C0                     TEST EAX,EAX
 0060961C  89 45 F8                  MOV dword ptr [EBP + -0x8],EAX
 0060961F  74 1D                     JZ 0x0060963e

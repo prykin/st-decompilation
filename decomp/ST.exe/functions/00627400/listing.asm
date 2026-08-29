@@ -128,7 +128,7 @@ LAB_00627573:
 00627587  74 35                     JZ 0x006275be
 00627589  8B 17                     MOV EDX,dword ptr [EDI]
 0062758B  8B CF                     MOV ECX,EDI
-0062758D  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+0062758D  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STFishC
 00627590  3D E6 00 00 00            CMP EAX,0xe6
 00627595  74 1E                     JZ 0x006275b5
 00627597  7E 25                     JLE 0x006275be

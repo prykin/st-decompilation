@@ -1,4 +1,4 @@
-FUN_00602740:
+STDestC::vfunc_70:
 00602740  55                        PUSH EBP
 00602741  8B EC                     MOV EBP,ESP
 00602743  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]

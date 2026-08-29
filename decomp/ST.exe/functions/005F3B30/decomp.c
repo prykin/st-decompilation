@@ -1,9 +1,11 @@
-#include "../../pseudocode_runtime.h"
-
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=005F3BF0 @ 005F3EC5 -> read as EAX on
+   every CFG path | 005F3BF0 @ 005F4096 -> read as EAX on every CFG path */
 
-undefined4 FUN_005f3b30(float param_1,float param_2,float param_3,float param_4,float *param_5)
+int FUN_005f3b30(float param_1,float param_2,float param_3,float param_4,float *param_5)
 
 {
   float fVar1;

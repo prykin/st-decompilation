@@ -32,7 +32,7 @@ STAllPlayersC::PointPick:
 LAB_00433ed5:
 00433ED5  8B 06                     MOV EAX,dword ptr [ESI]
 00433ED7  8B CE                     MOV ECX,ESI
-00433ED9  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]
+00433ED9  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 00433EDF  3B C3                     CMP EAX,EBX
 00433EE1  0F 85 DD 0D 00 00         JNZ 0x00434cc4
 00433EE7  8B 46 20                  MOV EAX,dword ptr [ESI + 0x20]
@@ -363,7 +363,7 @@ LAB_0043423e:
 00434270  6A 00                     PUSH 0x0
 00434272  53                        PUSH EBX
 00434273  8B CF                     MOV ECX,EDI
-00434275  E8 5C DE FC FF            CALL 0x004020d6
+00434275  E8 5C DE FC FF            CALL 0x004020d6  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 0043427A  8B 55 FC                  MOV EDX,dword ptr [EBP + -0x4]
 0043427D  8A 46 24                  MOV AL,byte ptr [ESI + 0x24]
 00434280  6A 00                     PUSH 0x0

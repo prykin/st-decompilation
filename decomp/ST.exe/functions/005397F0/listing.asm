@@ -133,7 +133,7 @@ LAB_0053994f:
 00539957  75 49                     JNZ 0x005399a2
 00539959  6A 00                     PUSH 0x0
 0053995B  68 94 38 7C 00            PUSH 0x7c3894
-00539960  E8 17 BE EC FF            CALL 0x0040577c
+00539960  E8 17 BE EC FF            CALL 0x0040577c  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_00538DB0_574DDCD0; source view only; no Ghidra override
 00539965  83 C4 08                  ADD ESP,0x8
 00539968  8B CE                     MOV ECX,ESI
 0053996A  6A 00                     PUSH 0x0

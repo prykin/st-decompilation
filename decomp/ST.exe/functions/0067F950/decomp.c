@@ -14,8 +14,7 @@ uint __cdecl FUN_0067f950(byte *param_1)
   byte *pbVar6;
   bool bVar7;
   InternalExceptionFrame local_4c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;

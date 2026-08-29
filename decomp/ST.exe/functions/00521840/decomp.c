@@ -13,8 +13,10 @@ IntercomPanelTy * __cdecl CreateIntercomPanel(void)
 {
   IntercomPanelTy *this;
 
-  this = (IntercomPanelTy *)FUN_006b04d0(0x1a5);
+
+  this = STPointerBoundaryCast<IntercomPanelTy *>(FUN_006b04d0(0x1a5));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->field_005C = 0;
     this->field_0060 = 0xffffffff;

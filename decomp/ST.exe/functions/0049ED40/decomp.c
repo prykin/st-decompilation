@@ -3,9 +3,14 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_grpb.cpp
-   STGroupBoatC::DCBomb */
+   STGroupBoatC::DCBomb
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00497E00 @ 0049833E -> read as EAX on
+   every CFG path | 00497E00 @ 0049834B -> read as EAX on every CFG path | 00497E00 @ 004985F0 ->
+   read as EAX on every CFG path */
 
-undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
+int __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
 
 {
   ushort uVar2;
@@ -16,26 +21,23 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
   DArrayTy *array_00;
   uint uVar5;
   int iVar6;
-  uint uVar6;
   int iVar7;
   uint index;
   InternalExceptionFrame local_78;
   uint local_34;
-  undefined2 local_30;
-  undefined2 local_2e;
-  undefined2 local_2c;
+  ushort local_30;
+  ushort local_2e;
+  ushort local_2c;
   STGroupBoatC *local_28;
-  undefined4 local_24;
+  int local_24;
   uint local_20;
   uint local_1c;
   int local_18;
   DArrayTy *local_14;
-  int local_10;
+  dword local_10;
   DArrayTy *local_c;
-  undefined1 local_8 [4];
-
-  /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  local_10 = *(int *)(this->field_0029 + 0xc);
+  byte local_8 [4];
+  local_10 = this->field_0029->count;
   local_c = nullptr;
   local_14 = nullptr;
   local_24 = 2;
@@ -43,6 +45,7 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
   local_28 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0);
   pSVar3 = local_28;
   if (iVar3 == 0) {
@@ -60,13 +63,13 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
       local_2e = local_28->field_02BF;
       array_00 = local_14;
       local_1c = local_34;
-      if (0 < local_10) {
+      if (0 < (int)local_10) {
         do {
-          DArrayGetElement((DArrayTy *)pSVar3->field_0029,local_20,local_8);
+
+          DArrayGetElement(pSVar3->field_0029,local_20,local_8);
           if (STPiece<0,2>(local_8) != 0xffff) {
-            pSVar4 = (STBoatC *)
-                     /* ST_CALLSITE[0049EE36]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-                     STAllPlayersC::GetObjPtr
+            /* ST_CALLSITE[0049EE36]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum */
+            pSVar4 = STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,pSVar3->field_0024,STPiece<0,2>(local_8),CASE_1);
             if (pSVar4 == nullptr) {
               RaiseInternalException
@@ -78,11 +81,13 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
                 array_00 = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
                 local_14 = array_00;
               }
+
               Library::DKW::TBL::DArrayAppend(array_00,local_8);
               /* ST_CALLSITE[0049EE95]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
               STBoatC::CmdToObj(pSVar4,CASE_A,&local_34);
             }
             else {
+
               iVar7 = thunk_FUN_00490d90((STGameObjC *)pSVar4);
               if (iVar7 == 0) {
                 /* ST_CALLSITE[0049EEAF]: CALL 0x00402126; direct=00402126 STBoatC::CmdToObj */
@@ -92,12 +97,13 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
                 if (local_c == nullptr) {
                   local_c = Library::DKW::TBL::DArrayCreate(nullptr,1,2,1);
                 }
+
                 Library::DKW::TBL::DArrayAppend(local_c,local_8);
               }
             }
           }
           local_20 = local_20 + 1;
-        } while ((int)local_20 < local_10);
+        } while ((int)local_20 < (int)local_10);
       }
       array = local_c;
       /* ST_CALLSITE[0049EEFB]: CALL 0x00403d9b; direct=00403D9B STAllPlayersC::RegisterPGPair */
@@ -116,20 +122,21 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
     }
     index = 0;
     if (g_playSystem_00802A38->field_00E4 % 0x1e == 10) {
-      if (0 < local_10) {
+      if (0 < (int)local_10) {
         do {
-          DArrayGetElement((DArrayTy *)pSVar3->field_0029,index,local_8);
+
+          DArrayGetElement(pSVar3->field_0029,index,local_8);
           if (STPiece<0,2>(local_8) != 0xffff) {
-            pSVar4 = (STBoatC *)
-                     /* ST_CALLSITE[0049EF7A]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-                     STAllPlayersC::GetObjPtr
+            /* ST_CALLSITE[0049EF7A]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum */
+            pSVar4 = STAllPlayersC::GetObjPtr
                                (g_allPlayers_007FA174,pSVar3->field_0024,STPiece<0,2>(local_8),CASE_1);
             if (pSVar4 == nullptr) {
               RaiseInternalException
                         (-0x5001fffc,g_overwriteContext_007ED77C,
                          "E:\\__titans\\wlad\\to_grpb.cpp",0xb8b);
             }
-            iVar7 = thunk_FUN_0045ff10((STGameObjC *)pSVar4);
+            /* ST_CALLSITE[0049EFA2]: CALL 0x00402edc; direct=00402EDC STGameObjC::sub_0045FF10 */
+            iVar7 = STGameObjC::sub_0045FF10((STGameObjC *)pSVar4);
             /* ST_CALLSITE[0049EFB0]: CALL 0x00404df9; direct=00404DF9 STBoatC::CheckPBoxCmd */
             if ((iVar7 == 10) || (uVar5 = STBoatC::CheckPBoxCmd(pSVar4,CASE_A), uVar5 == 1)) {
               local_18 = local_18 + 1;
@@ -137,7 +144,7 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
             }
           }
           index = index + 1;
-        } while ((int)index < local_10);
+        } while ((int)index < (int)local_10);
       }
       if (local_18 == 0) {
         local_24 = 0;
@@ -148,11 +155,12 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
   else {
     g_currentExceptionFrame = local_78.previous;
     if (iVar3 != -0x5001fff7) {
+
       iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_grpb.cpp",0xb94,0,iVar3,"%s"
                                  ,"STGroupBoatC::DCBomb");
       if (iVar6 == 0) {
         RaiseInternalException(iVar3,0,"E:\\__titans\\wlad\\to_grpb.cpp",0xb95);
-        return 0xffffffff;
+        return -1;
       }
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }

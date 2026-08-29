@@ -13,9 +13,10 @@ void __thiscall STParticleC::sub_00629F20(STParticleC *this)
   AnonPointee_STParticleC_00EB *local_8;
 
   local_8 = (AnonPointee_STParticleC_00EB *)this;
+
   iVar1_mg0 = STPlaySystemC::sub_006E62D0
-                        (g_playSystem_00802A38,(AnonShape_005EFAE0_B406B78B *)this->field_00E7,
-                         (int *)&local_8);
+                        (g_playSystem_00802A38,
+                         (RecoveredRecordView_005EFAE0_855D930D *)this->field_00E7,(int *)&local_8);
   if (iVar1_mg0 != -4) {
     this->field_00EB = local_8;
     return;

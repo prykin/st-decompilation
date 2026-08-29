@@ -3,15 +3,25 @@
 
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
-   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_00728640.
+   /SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_00728640.
    Evidence: incoming_receiver_captures=1; receiver_accesses=11; incoming_edx_uses=0; calls=1;
    ecx_pointer_setup=1; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
    expected_stack=12; receiver_family_members=3; adopt_untyped_existing_thiscall;
-   single_call_corroborated_by_receiver_family */
+   single_call_corroborated_by_receiver_family
+   [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:3: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=2,
+   pointer_dereferences=11, scalar_uses=0; sites=00728C27 dereference: MOV AL,byte ptr [EBP +
+   EDX*0x1] | 00728C40 dereference: MOV BL,byte ptr [EBP + EDX*0x1] | 00728C47 dereference: MOV
+   BH,byte ptr [EBP + EAX*0x1] | 00728C5C dereference: MOV BL,byte ptr [EBP + EDX*0x1] | 00728C63
+   dereference: MOV BH,byte ptr [EBP + EAX*0x1] | 00728C6D dereference: MOV BL,byte ptr [EBP +
+   EDX*0x1] | 00728C74 dereference: MOV BH,byte ptr [EBP + EAX*0x1] | 00728C8D dereference: MOV
+   AL,byte ptr [EBP + EDX*0x1] | 00728C99 dereference: MOV AL,byte ptr [EBP + EDX*0x1] | 00728CA6
+   dereference: MOV AL,byte ptr [EBP + EDX*0x1] | 00728CD7 dereference: MOV AL,byte ptr [EBP +
+   EAX*0x1] */
 
 void __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640::FUN_00728a80
-          (AnonReceiver_00728640 *this,int param_1,int param_2,int param_3)
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00728640::FUN_00728a80
+          (RecoveredReceiver_00728640 *this,int param_1,int param_2,void *param_3)
 
 {
   byte *pbVar1;
@@ -49,31 +59,33 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640::FUN_00728a80
   int local_1c;
   uint local_18;
   int local_14;
-  AnonShape_00728A80_F2811CDB *local_10;
+  RecoveredReceiver_00728640 *local_10;
   int local_c;
   int local_8;
 
   iVar15 = (int)g_runtimeRecords_00857110[g_runtimeRecordCount_00857114].field_0002;
-  iVar14 = *(int *)&this->field_0x28;
+  iVar14 = this->field_0028;
   auto param_1_after_write = param_1 + iVar15 * param_2; /* compiler stack-slot lifetime split */
-  local_8 = *(int *)&this->field_0xc + iVar15 * iVar14;
-  local_c = *(int *)&this->field_0x14 + iVar15 * iVar14 * 2;
+  local_8 = this->field_000C + iVar15 * iVar14;
+  local_c = this->field_0014 + iVar15 * iVar14 * 2;
   local_38 = 1;
   local_1c = iVar14;
   local_14 = iVar15;
-  local_10 = (AnonShape_00728A80_F2811CDB *)this;
+  local_10 = this;
+
   iVar6 = FUN_007287e0(&local_38,g_runtimeRecordCount_00857114);
   if (iVar6 != 0) {
     local_54 = -1;
+
     iVar6 = FUN_007287e0(&local_54,g_runtimeRecordCount_00857114);
-    if ((iVar6 != 0) && (iVar15 < *(int *)&this->field_0x3c)) {
+    if ((iVar6 != 0) && (iVar15 < this->field_003C)) {
       do {
-        if (*(int *)&this->field_0x34 <= iVar15) {
+        if (this->field_0034 <= iVar15) {
           iVar6 = local_48 >> 0x10;
           iVar7 = local_2c >> 0x10;
           iVar14 = local_1c;
           iVar15 = local_14;
-          this = (AnonReceiver_00728640 *)local_10;
+          this = local_10;
           if (iVar6 - iVar7 != 0 && iVar7 <= iVar6) {
             local_18 = local_24;
             DAT_00857108 = (int)(local_40 - local_24) / (iVar6 - iVar7);
@@ -108,7 +120,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640::FUN_00728a80
                   uVar11 = (uint)*pbVar16;
                   if (((uint)puVar13 & 1) != 0) {
                     pbVar16 = pbVar16 + 1;
-                    *(undefined1 *)puVar13 = *(undefined1 *)(param_3 + uVar11);
+                    *(undefined1 *)puVar13 = *(undefined1 *)((int)param_3 + uVar11);
                     puVar13 = (uint *)((int)puVar13 + 1);
                     iVar8 = iVar8 + -1;
                     uVar11 = (uint)*pbVar16;
@@ -119,23 +131,24 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640::FUN_00728a80
                     iVar8 = iVar8 + -2;
                     *(ushort *)puVar13 =
                          /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                         CONCAT11(*(undefined1 *)(param_3 + (uint)*pbVar1),
-                                  *(undefined1 *)(param_3 + uVar11));
+                         CONCAT11(*(undefined1 *)((int)param_3 + (uint)*pbVar1),
+                                  *(undefined1 *)((int)param_3 + uVar11));
                     uVar11 = (uint)*pbVar16;
                     puVar13 = (uint *)((int)puVar13 + 2);
                   }
                   while (3 < iVar8) {
                     pbVar1 = pbVar16 + 2;
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                    uVar12 = CONCAT11(*(undefined1 *)(param_3 + (uint)pbVar16[1]),
-                                      *(undefined1 *)(param_3 + uVar11));
+                    uVar12 = CONCAT11(*(undefined1 *)((int)param_3 + (uint)pbVar16[1]),
+                                      *(undefined1 *)((int)param_3 + uVar11));
                     pbVar2 = pbVar16 + 3;
                     pbVar16 = pbVar16 + 4;
                     *puVar13 = (uint)uVar12 |
                                /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-                               CONCAT22(uVar12,CONCAT11(*(undefined1 *)(param_3 + (uint)*pbVar2),
-                                                        *(undefined1 *)(param_3 + (uint)*pbVar1)))
-                               << 0x10;
+                               CONCAT22(uVar12,CONCAT11(*(undefined1 *)
+                                                         ((int)param_3 + (uint)*pbVar2),
+                                                        *(undefined1 *)
+                                                         ((int)param_3 + (uint)*pbVar1))) << 0x10;
                     uVar11 = (uint)*pbVar16;
                     puVar13 = puVar13 + 1;
                     iVar8 = iVar8 + -4;
@@ -143,12 +156,12 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_00728640::FUN_00728a80
                   if (iVar8 == 0) goto LAB_00728cf9;
                 }
                 bVar4 = pbVar16[1];
-                *(undefined1 *)puVar13 = *(undefined1 *)(param_3 + uVar11);
+                *(undefined1 *)puVar13 = *(undefined1 *)((int)param_3 + uVar11);
                 if (iVar8 != 1) {
                   bVar3 = pbVar16[2];
-                  STField<undefined1>(puVar13,1) = *(undefined1 *)(param_3 + (uint)bVar4);
+                  STField<undefined1>(puVar13,1) = *(undefined1 *)((int)param_3 + (uint)bVar4);
                   if (iVar8 != 2) {
-                    STField<undefined1>(puVar13,2) = *(undefined1 *)(param_3 + (uint)bVar3);
+                    STField<undefined1>(puVar13,2) = *(undefined1 *)((int)param_3 + (uint)bVar3);
                   }
                 }
               }
@@ -188,7 +201,7 @@ LAB_00728cb0:
                   pbVar16 = pbVar16 + 1;
                   puVar13 = (uint *)((int)puVar13 + 2);
                   iVar8 = iVar6 + -1;
-                  *puVar18 = *(undefined1 *)(param_3 + (uint)bVar4);
+                  *puVar18 = *(undefined1 *)((int)param_3 + (uint)bVar4);
                 } while (iVar8 != 0 && 0 < iVar6);
               }
             }
@@ -197,6 +210,7 @@ LAB_00728cb0:
 LAB_00728cf9:
         local_34 = local_34 + -1;
         if (local_34 == 0) {
+
           iVar6 = FUN_007287e0(&local_38,local_30);
           if (iVar6 == 0) {
             return;
@@ -208,6 +222,7 @@ LAB_00728cf9:
         }
         local_50 = local_50 + -1;
         if (local_50 == 0) {
+
           iVar6 = FUN_007287e0(&local_54,local_4c);
           if (iVar6 == 0) {
             return;
@@ -222,7 +237,7 @@ LAB_00728cf9:
         iVar15 = iVar15 + 1;
         local_c = local_c + iVar14 * 2;
         local_14 = iVar15;
-      } while (iVar15 < *(int *)&this->field_0x3c);
+      } while (iVar15 < this->field_003C);
     }
   }
   return;

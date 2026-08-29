@@ -27,11 +27,13 @@ void __fastcall FUN_00624000(STMineSetC *param_1)
       STT3DSprC::StopShow((STT3DSprC *)this,0xc);
     }
   }
+  /* ST_CALLSITE[00624064]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
   puVar2 = Library::Ourlib::MFRLOAD::mfRLoad
                      (PTR_00806774,CASE_1D,(&PTR_s_expdeep_007d0354)[param_1->field_02AD],0xffffffff
                       ,0,1,0,nullptr);
   param_1->field_02CE = 0;
   param_1->field_02D2 = *(int *)puVar2;
+  /* ST_CALLSITE[0062409D]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
   puVar2 = Library::Ourlib::MFRLOAD::mfRLoad
                      (PTR_00806764,CASE_1D,(&PTR_CHAR_e_007d0374)[param_1->field_02AD],0xffffffff,0,
                       1,0,nullptr);

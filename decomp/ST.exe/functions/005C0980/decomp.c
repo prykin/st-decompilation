@@ -3,9 +3,15 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Start\rpt_obj.cpp
-   MReportTy::CreateBut */
+   MReportTy::CreateBut
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (5), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=005C0230 @ 005C041E -> read as EAX on
+   every CFG path | 005C0230 @ 005C0447 -> read as EAX on every CFG path | 005C0230 @ 005C0475 ->
+   read as EAX on every CFG path | 005C0E00 @ 005C115E -> read as EAX on every CFG path | 005C0E00 @
+   005C118E -> read as EAX on every CFG path */
 
-undefined4 __thiscall
+int __thiscall
 MReportTy::CreateBut
           (MReportTy *this,undefined4 param_1,undefined4 param_2,undefined4 param_3,
           undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,
@@ -14,31 +20,31 @@ MReportTy::CreateBut
 {
   int iVar4;
   int iVar3;
-  uint uVar2;
-  int iVar5;
-  uint *puVar6;
-  undefined4 local_1cc [4];
-  undefined4 local_1bc;
-  undefined4 local_1b8;
-  undefined4 local_1ac;
-  undefined4 local_1a8;
-  undefined4 local_1a4;
-  undefined4 local_16c;
-  undefined4 local_168;
-  undefined4 local_164;
+  int iVar2;
+  uint *puVar3;
+  uint local_1cc [4];
+  uint local_1bc;
+  uint local_1b8;
+  uint local_1ac;
+  uint local_1a8;
+  uint local_1a4;
+  uint local_16c;
+  uint local_168;
+  uint local_164;
   InternalExceptionFrame local_50;
   MReportTy *local_c;
-  undefined4 local_8;
+  int local_8;
 
-  puVar6 = local_1cc;
+  puVar3 = local_1cc;
   local_c = this;
-  for (iVar5 = 0x5f; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar6 = 0;
-    puVar6 = puVar6 + 1;
+  for (iVar2 = 0x5f; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar3 = 0;
+    puVar3 = puVar3 + 1;
   }
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar4 == 0) {
     local_1cc[0] = param_2;
@@ -61,6 +67,7 @@ MReportTy::CreateBut
     return local_8;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x29f,0,iVar4,"%s",
                              "MReportTy::CreateBut");
   if (iVar3 != 0) {

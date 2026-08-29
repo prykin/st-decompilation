@@ -19,7 +19,7 @@ void __thiscall FUN_0060bcb0(void *this,int param_1)
     local_24[3] = 4;
     local_24[4] = 0x123;
     local_24[5] = param_1;
-    /* ST_CALLSITE[0060BCF9]: CALL dword ptr [EAX] */
+    /* ST_CALLSITE[0060BCF9]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4 */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     (**(code **)*STField<undefined4 *>(this,0x221))(local_24);
   }

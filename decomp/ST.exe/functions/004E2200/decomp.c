@@ -15,6 +15,7 @@ undefined4 __thiscall FUN_004e2200(void *this,int param_1,int param_2,undefined4
     *(undefined4 *)((int)this + param_1 * 0x28 + 0x4ec) = 0;
     *(undefined4 *)((int)this + param_1 * 0x28 + 0x4f0) = 0;
     *(undefined4 *)((int)this + param_1 * 0x28 + 0x4f4) = 0;
+
     thunk_FUN_004e2040(this);
     uVar1 = 1;
   }

@@ -37,10 +37,12 @@ int __thiscall st::fn_00618C00(STJumpMineC *this,STMessage *message)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_8 = this;
+
   local_EAX_35 = st::fn_0072D7F0(local_58.jumpBuffer,0);
   this_00 = local_8;
   if (local_EAX_35 != 0) {
     g_currentExceptionFrame = local_58.previous;
+
     iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_jump_mine.cpp"),0xad,0,local_EAX_35,
                                st::mutable_c_string("%s"),"STJumpMineC::GetMessage");
     if (iVar5 == 0) {
@@ -52,7 +54,7 @@ int __thiscall st::fn_00618C00(STJumpMineC *this,STMessage *message)
   SVar1 = message->id;
   if (SVar1 < MESS_TORPHIT) {
     if (SVar1 == MESS_SHARED_010F) {
-      /* ST_CALLSITE[00618EB2]: CALL 0x0040490d; direct=0040490D STJumpMineC::sub_00619350 */
+      /* ST_CALLSITE[00618EB2]: CALL 0x0040490d; direct=0040490D STJumpMineC::sub_00619350; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
       local_10 = st::fn_0040490D(local_8,&local_c);
       /* ST_CALLSITE[00618EC9]: CALL 0x004025f9; direct=004025F9 STPlaySystemC::SaveObjData */
       st::fn_004025F9(g_playSystem_00802A38,this_00->field_0018,local_10,local_c);
@@ -84,12 +86,13 @@ int __thiscall st::fn_00618C00(STJumpMineC *this,STMessage *message)
       }
     }
     else if (SVar1 == MESS_ID_CREATE) {
-      puVar7 = (byte *)((message->arg0).ptr);
+      puVar7 = reinterpret_cast<byte *>(((message->arg0).ptr));
       if (puVar7[3] == 2) {
-        st::fn_00401F55(local_8,st::pointer_boundary_cast<undefined4 *>(puVar7));
-        puVar7 = (byte *)&this_00->field_0x20;
+
+        st::fn_00401F55(local_8,reinterpret_cast<undefined4 *>(puVar7));
+        puVar7 = reinterpret_cast<byte *>(&this_00->field_0x20);
         memset(puVar7, 0, 0x2d); /* compiler bulk-zero initialization */
-        puVar7 = (byte *)((byte *)puVar7 + 0x2c);
+        puVar7 = reinterpret_cast<byte *>(((byte *)puVar7 + 0x2c));
         iVar6 = 0;
         this_00->field_001C = this_00->field_014C;
         if ((this_00->field_0150 != '\0') && (this_00->field_0093 != CASE_5)) {
@@ -105,7 +108,7 @@ int __thiscall st::fn_00618C00(STJumpMineC *this,STMessage *message)
         }
       }
       else {
-        puVar8 = (byte *)&local_8->field_0x4d;
+        puVar8 = reinterpret_cast<byte *>(&local_8->field_0x4d);
         memmove(puVar8, puVar7, 0x42); /* compiler REP MOVS byte copy */
         local_8->field_001C = DAT_00808754;
         /* ST_CALLSITE[00618CD7]: CALL 0x00402f90; direct=00402F90 STJumpMineC::sub_006193E0 */
@@ -117,11 +120,13 @@ LAB_00618ce0:
           g_currentExceptionFrame = local_58.previous;
           return 0;
         }
+        /* ST_CALLSITE[00618D14]: CALL 0x00403e6d; direct=00403E6D STJumpMineC::sub_0061BDB0 */
         iVar6 = st::fn_00403E6D(this_00,CASE_0,this_00->field_00E7,this_00->field_00EB,
-                                   this_00->field_00EF);
+                             this_00->field_00EF);
         if (iVar6 == 0) {
+          /* ST_CALLSITE[00618D42]: CALL 0x00403e6d; direct=00403E6D STJumpMineC::sub_0061BDB0 */
           iVar6 = st::fn_00403E6D(this_00,CASE_1,this_00->field_00E7,this_00->field_00EB,
-                                     this_00->field_00EF);
+                               this_00->field_00EF);
           if (iVar6 == 0) goto LAB_00618ce0;
           this_00->field_0093 = CASE_1;
         }
@@ -132,6 +137,7 @@ LAB_00618ce0:
         bVar3 = st::fn_00401181(this_00,(int)this_00->field_00C9,(int)this_00->field_00CB);
         this_00->field_0150 = bVar3;
         if ((void *)this_00->field_007D != 0) {
+
           st::fn_00401E47((void *)this_00->field_007D,this_00->field_008B,st::machine_word_boundary_cast<undefined4>(this_00->field_0018),
                              st::machine_word_boundary_cast<undefined4>(this_00));
         }
@@ -146,21 +152,24 @@ LAB_00618ce0:
     else if (SVar1 == MESS_SHARED_0003) {
       if ((void *)local_8->field_007D != 0) {
         if (local_8->field_014B != '\0') {
+
           st::fn_00405C59((void *)local_8->field_007D,local_8->field_0145,0);
         }
         this_00->field_014B = 0;
         st::fn_00403193((void *)this_00->field_007D,(int)this_00->field_0018);
       }
-      st::fn_00404534((int)this_00);
+      st::fn_00404534(reinterpret_cast<RecoveredRecord_00619320_830454A8 *>(this_00));
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
   }
   else if (SVar1 == MESS_ID_ALLCREATE) {
     if (((local_8->field_007D != 0) &&
+
         (iVar6_mg1 = st::fn_006E62D0
-                               (g_playSystem_00802A38,local_8->field_0079,(int *)&local_14),
-        iVar6_mg1 != -4)) && (this_00->field_007D = local_14, local_14 != nullptr)) {
+                               (g_playSystem_00802A38,local_8->field_0079,reinterpret_cast<int *>(&local_14)),
+        iVar6_mg1 != -4)) && (this_00->field_007D = st::machine_word_boundary_cast<undefined4>(local_14), local_14 != nullptr)) {
+
       st::fn_00401E47(local_14,this_00->field_008B,st::machine_word_boundary_cast<undefined4>(this_00->field_0018),st::machine_word_boundary_cast<undefined4>(this_00));
     }
   }
@@ -188,16 +197,22 @@ LAB_00618ce0:
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_jump_mine.cpp
-   STJumpMineC::LoadImagJMine */
+   STJumpMineC::LoadImagJMine
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=00618C00 @ 00618DA4 -> killed on
+   every CFG path | 00618C00 @ 00618DF5 -> killed on every CFG path | 00618C00 @ 00618E7B -> killed
+   on every CFG path | 00619A20 @ 00619A3C -> killed on every CFG path | 00619C70 @ 00619FEB -> read
+   as EAX on every CFG path | 00619C70 @ 0061AB87 -> read as EAX on every CFG path | 0061C910 @
+   0061C999 -> read as EAX on every CFG path */
 
-undefined4 __thiscall st::fn_006195E0(STJumpMineC *this,int param_1)
+int __thiscall st::fn_006195E0(STJumpMineC *this,int param_1)
 
 {
-  int iVar1;
   int iVar2;
-  ushort *puVar3;
+  ushort *puVar2;
   int iVar3;
-  uint uVar4;
+  int iVar4;
   int *piVar5;
   STJumpMineC *pSVar6;
   InternalExceptionFrame local_4c;
@@ -206,24 +221,28 @@ undefined4 __thiscall st::fn_006195E0(STJumpMineC *this,int param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar2 = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   pSVar6 = local_8;
   if (iVar2 == 0) {
     if (param_1 == 1) {
-      puVar3 = st::fn_00709AF0
+      /* ST_CALLSITE[00619633]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
+      puVar2 = st::fn_00709AF0
                          (PTR_00806774,CASE_1D,st::mutable_c_string("jmpmine"),0xffffffff,0,1,0,nullptr
                          );
       pSVar6 = local_8;
       piVar5 = &local_8->field_0097;
+
       st::fn_006E8660
-                (g_sT3DSMAPContext_00807598,piVar5,1,0,STField<uint>(puVar3,9),
-                 STField<uint>(puVar3,0xd),0x5a,0x45,0);
+                (g_sT3DSMAPContext_00807598,piVar5,1,0,STField<uint>(puVar2,9),
+                 STField<uint>(puVar2,0xd),0x5a,0x45,0);
+
       st::fn_006E98E0
-                (g_sT3DSMAPContext_00807598,*piVar5,0,*(int *)puVar3,STField<int>(puVar3,0x21),1);
+                (g_sT3DSMAPContext_00807598,*piVar5,0,*(int *)puVar2,STField<int>(puVar2,0x21),1);
       st::fn_006EA270(g_sT3DSMAPContext_00807598,*piVar5,0,pSVar6->field_00AB);
-      iVar1 = *(int *)puVar3;
-      pSVar6->field_009B = puVar3;
-      pSVar6->field_00AF = iVar1;
+      iVar4 = *(int *)puVar2;
+      pSVar6->field_009B = puVar2;
+      pSVar6->field_00AF = iVar4;
       if (DAT_00807326 != '\0') {
         st::fn_006E9520
                   (g_sT3DSMAPContext_00807598,*piVar5,0,0x401109,(uint)&pSVar6->field_0x4d);
@@ -236,46 +255,55 @@ undefined4 __thiscall st::fn_006195E0(STJumpMineC *this,int param_1)
                   (g_sT3DSMAPContext_00807598,local_8->field_0097,0,0,(uint)local_8);
         st::fn_006E8BA0(g_sT3DSMAPContext_00807598,*piVar5);
       }
-      puVar3 = st::fn_00709AF0
+      /* ST_CALLSITE[00619716]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
+      puVar2 = st::fn_00709AF0
                          (PTR_00806774,CASE_1D,st::mutable_c_string("exptme"),0xffffffff,0,1,0,nullptr);
+
       st::fn_006E8660
-                (g_sT3DSMAPContext_00807598,piVar5,3,0,STField<uint>(puVar3,9),
-                 STField<uint>(puVar3,0xd),0x5a,0x45,0);
+                (g_sT3DSMAPContext_00807598,piVar5,3,0,STField<uint>(puVar2,9),
+                 STField<uint>(puVar2,0xd),0x5a,0x45,0);
+
       st::fn_006E98E0
-                (g_sT3DSMAPContext_00807598,*piVar5,0,*(int *)puVar3,STField<int>(puVar3,0x21),1);
+                (g_sT3DSMAPContext_00807598,*piVar5,0,*(int *)puVar2,STField<int>(puVar2,0x21),1);
       st::fn_006EA270(g_sT3DSMAPContext_00807598,*piVar5,0,pSVar6->field_00AB);
-      pSVar6->field_00AF = *(int *)puVar3;
-      puVar3 = st::fn_00709AF0
+      pSVar6->field_00AF = *(int *)puVar2;
+      /* ST_CALLSITE[0061978D]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
+      puVar2 = st::fn_00709AF0
                          (PTR_00806774,CASE_1D,st::mutable_c_string("expmask2"),0xffffffff,0,1,0,
                           nullptr);
+
       st::fn_006E98E0
-                (g_sT3DSMAPContext_00807598,*piVar5,1,*(int *)puVar3,STField<int>(puVar3,0x21),1);
+                (g_sT3DSMAPContext_00807598,*piVar5,1,*(int *)puVar2,STField<int>(puVar2,0x21),1);
       st::fn_006EA270(g_sT3DSMAPContext_00807598,*piVar5,1,pSVar6->field_00BC);
       st::fn_006EA800(g_sT3DSMAPContext_00807598,*piVar5,1,1);
       st::fn_006EA790
                 (g_sT3DSMAPContext_00807598,*piVar5,PTR_008032b8,0x10);
-      pSVar6->field_00C0 = *(undefined4 *)puVar3;
+      pSVar6->field_00C0 = *(undefined4 *)puVar2;
       pSVar6->field_00BB = 1;
-      puVar3 = st::fn_00709AF0
+      /* ST_CALLSITE[00619817]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
+      puVar2 = st::fn_00709AF0
                          (PTR_00806764,CASE_1D,st::mutable_c_string("bulb_n4"),0xffffffff,0,1,0,nullptr
                          );
+
       st::fn_006E98E0
-                (g_sT3DSMAPContext_00807598,*piVar5,2,*(int *)puVar3,STField<int>(puVar3,0x21),1);
+                (g_sT3DSMAPContext_00807598,*piVar5,2,*(int *)puVar2,STField<int>(puVar2,0x21),1);
       st::fn_006EA270(g_sT3DSMAPContext_00807598,*piVar5,2,pSVar6->field_00B7);
       st::fn_006E9D40(g_sT3DSMAPContext_00807598,(uint *)*piVar5,2);
-      pSVar6->field_00B3 = *(int *)puVar3;
+      pSVar6->field_00B3 = *(int *)puVar2;
     }
     st::fn_006EA960
               (g_sT3DSMAPContext_00807598,*piVar5,
                (float)pSVar6->field_009F * _DAT_007904f8 * _DAT_007904f0,
                (float)pSVar6->field_00A3 * _DAT_007904f8 * _DAT_007904f0,
                (float)pSVar6->field_00A7 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+
     st::fn_006EAAA0(g_sT3DSMAPContext_00807598,*piVar5,0);
     pSVar6->field_00C4 = 1;
     g_currentExceptionFrame = local_4c.previous;
     return 1;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_jump_mine.cpp"),0x151,0,iVar2,st::mutable_c_string("%s")
                              ,"STJumpMineC::LoadImagJMine");
   if (iVar3 != 0) {
@@ -284,4 +312,3 @@ undefined4 __thiscall st::fn_006195E0(STJumpMineC *this,int param_1)
   st::fn_006A5E40(iVar2,0,st::mutable_c_string("E:\\__titans\\nick\\to_jump_mine.cpp"),0x153);
   return 0xffff;
 }
-

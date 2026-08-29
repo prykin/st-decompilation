@@ -1,14 +1,23 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __thiscall FUN_004911b0(void *this,undefined4 param_1)
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 007905A0
+   Entries: 004053A3
+   Slots: 0xA8
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_physical_vtable_owner_and_slot;
+   receiver_extent=1476/2106; unique_owner_for_target */
+
+undefined4 __thiscall
+STBoatC::vfunc_A8(STBoatC *this,RecoveredRecordView_005EFAE0_855D930D *param_1)
 
 {
   uint uVar1;
   uVar1 = 0;
-  if (((STField<int>(this,0x45d) == 0x14) && (STField<int>(this,0x5c0) != 2)) &&
-     (STField<int>(this,0x5a2) == 0)) {
-    STField<undefined4>(this,0x5a2) = param_1;
+  if (((this->field_045D == CASE_14) && (this->field_05C0 != CASE_2)) &&
+     (this->field_05A2 == nullptr)) {
+    this->field_05A2 = param_1;
     uVar1 = 1;
   }
   return uVar1;

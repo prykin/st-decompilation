@@ -53,7 +53,7 @@ LAB_0043e564:
 0043E56A  85 C9                     TEST ECX,ECX
 0043E56C  74 17                     JZ 0x0043e585
 0043E56E  8B 11                     MOV EDX,dword ptr [ECX]
-0043E570  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+0043E570  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0043E576  83 F8 01                  CMP EAX,0x1
 0043E579  75 0A                     JNZ 0x0043e585
 0043E57B  8D 45 FC                  LEA EAX,[EBP + -0x4]

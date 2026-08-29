@@ -85,7 +85,7 @@ LAB_00690c93:
 00690C96  8B CF                     MOV ECX,EDI
 00690C98  52                        PUSH EDX
 00690C99  89 5D F8                  MOV dword ptr [EBP + -0x8],EBX
-00690C9C  E8 70 38 D7 FF            CALL 0x00404511
+00690C9C  E8 70 38 D7 FF            CALL 0x00404511  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 00690CA1  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
 00690CA4  8B 57 18                  MOV EDX,dword ptr [EDI + 0x18]
 00690CA7  51                        PUSH ECX

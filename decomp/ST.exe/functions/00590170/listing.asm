@@ -47,7 +47,7 @@ LAB_005901d8:
 005901E9  52                        PUSH EDX
 005901EA  6A 01                     PUSH 0x1
 005901EC  68 5C BC 7C 00            PUSH 0x7cbc5c
-005901F1  E8 0A 2A 16 00            CALL 0x006f2c00
+005901F1  E8 0A 2A 16 00            CALL 0x006f2c00  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override
 005901F6  83 C4 0C                  ADD ESP,0xc
 005901F9  50                        PUSH EAX
 005901FA  A1 80 67 80 00            MOV EAX,[0x00806780]

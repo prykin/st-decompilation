@@ -45,8 +45,10 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
                      (iVar12 = STField<int>(iVar12,0x8) * uVar9 + STField<int>(iVar12,0x1C), iVar12 != 0))
                   {
                     if (iVar2 < 300) {
+
                       uVar3 = Library::MSVCRT::FUN_0072e6c0();
                       uVar3 = uVar3 % ((uVar11 * 3 >> 1) + 0x1f);
+
                       uVar4 = Library::MSVCRT::FUN_0072e6c0();
                       uVar5 = uVar4 & 0x80000001;
                       if ((int)uVar5 < 0) {
@@ -74,6 +76,7 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
                       sVar7 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
                       iVar6 = STField<int>(iVar12,0x16);
                       sVar8 = STBiasedDiv16(iVar6, 200); /* exact signed 16-bit grid-index division */
+
                       iVar5 = thunk_FUN_004961b0(local_10,sVar7,sVar8);
                       if (iVar5 == 0) {
                         STField<undefined4>(iVar12,0x8) = 0;
@@ -146,8 +149,10 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
               if ((uVar9 < STField<uint>(iVar12,0xC)) &&
                  (iVar12 = STField<int>(iVar12,0x8) * uVar9 + STField<int>(iVar12,0x1C), iVar12 != 0)) {
                 if (iVar2 < 500) {
+
                   uVar3 = Library::MSVCRT::FUN_0072e6c0();
                   uVar3 = uVar3 % ((uVar11 * 3 >> 1) + 0x1f);
+
                   local_EAX_994 = Library::MSVCRT::FUN_0072e6c0();
                   uVar5 = local_EAX_994 & 0x80000001;
                   if ((int)uVar5 < 0) {
@@ -182,6 +187,7 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
                   sVar7 = STBiasedDiv16(iVar6, 0xc9); /* exact signed 16-bit grid-index division */
                   iVar6 = STField<int>(iVar12,0x16);
                   sVar8 = STBiasedDiv16(iVar6, 200); /* exact signed 16-bit grid-index division */
+
                   local_EAX_1400 = thunk_FUN_004961b0(local_10,sVar7,sVar8);
                   if (local_EAX_1400 == 0) {
                     STField<undefined4>(iVar12,0x8) = 0;

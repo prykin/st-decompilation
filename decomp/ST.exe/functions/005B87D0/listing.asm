@@ -94,7 +94,7 @@ LAB_005b88ce:
 005B88F4  50                        PUSH EAX
 005B88F5  56                        PUSH ESI
 005B88F6  89 55 FC                  MOV dword ptr [EBP + -0x4],EDX
-005B88F9  E8 42 78 0F 00            CALL 0x006b0140
+005B88F9  E8 42 78 0F 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 005B88FE  8B 0D 6C 17 81 00         MOV ECX,dword ptr [0x0081176c]
 005B8904  50                        PUSH EAX
 005B8905  8B 49 30                  MOV ECX,dword ptr [ECX + 0x30]
@@ -143,7 +143,7 @@ LAB_005b893e:
 005B898F  8B 15 18 76 80 00         MOV EDX,dword ptr [0x00807618]
 005B8995  52                        PUSH EDX
 005B8996  51                        PUSH ECX
-005B8997  E8 A4 77 0F 00            CALL 0x006b0140
+005B8997  E8 A4 77 0F 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 005B899C  50                        PUSH EAX
 005B899D  A1 6C 17 81 00            MOV EAX,[0x0081176c]
 005B89A2  8B 48 30                  MOV ECX,dword ptr [EAX + 0x30]

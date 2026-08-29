@@ -29,7 +29,8 @@ LAB_0060c1c4:
 0060C1DF  8D BA 87 00 00 00         LEA EDI,[EDX + 0x87]
 0060C1E5  57                        PUSH EDI
 0060C1E6  6A 00                     PUSH 0x0
-0060C1E8  E8 73 3E 0A 00            CALL 0x006b0060
+STFieldC::FUN_0060c1a0::override::prt_60c1e8_8e0499b4:
+0060C1E8  E8 73 3E 0A 00            CALL 0x006b0060  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STFieldC_field_0234DArray; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArraySpecializations/STFieldC_field_0234DArray;pointer:/uint;pointer:/uint
 0060C1ED  8A 8B 25 02 00 00         MOV CL,byte ptr [EBX + 0x225]
 0060C1F3  89 83 34 02 00 00         MOV dword ptr [EBX + 0x234],EAX
 0060C1F9  84 C9                     TEST CL,CL

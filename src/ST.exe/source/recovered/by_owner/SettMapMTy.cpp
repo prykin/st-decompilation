@@ -16,38 +16,38 @@ st::fn_005B5F00(SettMapMTy *this,RecoveredSourceFamily_dibcopy *param_1,int *par
   int iVar2;
 
   iVar2 = (*param_2 + -1) * param_2[5];
-  st::fn_006B4170(param_1,0,iVar2,0,st::machine_word_boundary_cast<int>(param_2[5] + -2),param_1->field_0008,0xff);
+  st::fn_006B4170(param_1,0,iVar2,0,param_2[5] + -2,param_1->field_0008,0xff);
   if (param_2[1] == 1) {
-    st::fn_006B4170(param_1,0,iVar2,3,st::machine_word_boundary_cast<int>(param_2[5] + -2),st::machine_word_boundary_cast<int>(param_2[6] + -3),0);
-    st::fn_006B4170(param_1,0,iVar2 + 2,1,st::machine_word_boundary_cast<int>(param_2[5] + -6),2,0);
-    st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,param_2[6] - ((*param_2 != 1) + 1),
+    st::fn_006B4170(param_1,0,iVar2,3,param_2[5] + -2,param_2[6] + -3,0);
+    st::fn_006B4170(param_1,0,iVar2 + 2,1,param_2[5] + -6,2,0);
+    st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,iVar2,param_2[6] - ((*param_2 != 1) + 1),
                  iVar2,3,(byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
-    st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,3,iVar2 + 3,0,
+    st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,iVar2,3,iVar2 + 3,0,
                  (byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
-    st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2 + 3,0,st::machine_word_boundary_cast<int>(param_2[5] + -6 + iVar2),0,
+    st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,iVar2 + 3,0,param_2[5] + -6 + iVar2,0,
                  (byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
-    st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -6),0,
-                 st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -3),3,(byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
-    iVar2 = st::machine_word_boundary_cast<int>(param_2[5] + -3 + iVar2);
-    st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,3,iVar2,st::machine_word_boundary_cast<int>(param_2[6] + -2),
+    st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,param_2[5] + iVar2 + -6,0,
+                 param_2[5] + iVar2 + -3,3,(byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
+    iVar2 = param_2[5] + -3 + iVar2;
+    st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,iVar2,3,iVar2,param_2[6] + -2,
                  (byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
     return;
   }
-  st::fn_006B4170(param_1,0,iVar2 + 1,4,st::machine_word_boundary_cast<int>(param_2[5] + -4),st::machine_word_boundary_cast<int>(param_2[6] + -5),0);
-  st::fn_006B4170(param_1,0,iVar2 + 2,2,st::machine_word_boundary_cast<int>(param_2[5] + -6),2,0);
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,st::machine_word_boundary_cast<int>(param_2[6] + -1),iVar2,4,
+  st::fn_006B4170(param_1,0,iVar2 + 1,4,param_2[5] + -4,param_2[6] + -5,0);
+  st::fn_006B4170(param_1,0,iVar2 + 2,2,param_2[5] + -6,2,0);
+  st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,iVar2,param_2[6] + -1,iVar2,4,
                (byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,4,iVar2 + 3,1,
+  st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,iVar2,4,iVar2 + 3,1,
                (byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2 + 3,1,st::machine_word_boundary_cast<int>(param_2[5] + -6 + iVar2),1,
+  st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,iVar2 + 3,1,param_2[5] + -6 + iVar2,1,
                (byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -6),1,
-               st::machine_word_boundary_cast<int>(param_2[5] + iVar2 + -3),4,(byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
-  iVar1 = st::machine_word_boundary_cast<int>(param_2[5] + -3 + iVar2);
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar1,4,iVar1,st::machine_word_boundary_cast<int>(param_2[6] + -1),
+  st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,param_2[5] + iVar2 + -6,1,
+               param_2[5] + iVar2 + -3,4,(byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
+  iVar1 = param_2[5] + -3 + iVar2;
+  st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,iVar1,4,iVar1,param_2[6] + -1,
                (byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
-  st::fn_006B5B10((AnonShape_006E6FB0_BC494FEA *)param_1,0,iVar2,st::machine_word_boundary_cast<int>(param_2[6] + -1),
-               st::machine_word_boundary_cast<int>(param_2[5] + -3 + iVar2),st::machine_word_boundary_cast<int>(param_2[6] + -1),
+  st::fn_006B5B10(reinterpret_cast<AnonShape_006E6FB0_BC494FEA *>(param_1),0,iVar2,param_2[6] + -1,
+               param_2[5] + -3 + iVar2,param_2[6] + -1,
                (byte)(this->array_00BC[0xc].field_01DB)->field_0140,0xd);
   return;
 }
@@ -64,25 +64,26 @@ st::fn_005B5F00(SettMapMTy *this,RecoveredSourceFamily_dibcopy *param_1,int *par
    decompilation contains no value return */
 
 void __thiscall
-st::fn_005D00B0(SettMapMTy *this,AnonShape_005D00B0_9E7CC102 *param_1,uint param_2)
+st::fn_005D00B0
+          (SettMapMTy *this,RecoveredRecordView_005D00B0_4C4B9991 *param_1,uint param_2)
 
 {
   uint *puVar1;
-  undefined4 local_64;
-  undefined1 local_60;
-  undefined1 local_1a;
-  undefined4 local_19;
-  undefined1 local_15;
+  uint local_64;
+  byte local_60;
+  byte local_1a;
+  uint local_19;
+  byte local_15;
   int local_14;
-  undefined4 local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  uint local_10;
+  uint local_c;
+  uint local_8;
   puVar1 = param_1->field_0050;
   memset(&local_64, 0, 0x60); /* compiler bulk-zero initialization */
   STPiece<3,1>(local_64) = param_1->field_0003;
   STPiece<2,1>(local_64) = param_1->field_0002;
   local_60 = 1;
+
   st::fn_006AFE40(&local_14,puVar1);
   local_10 = param_1->field_0054;
   local_1a = param_1->field_004A;
@@ -90,6 +91,7 @@ st::fn_005D00B0(SettMapMTy *this,AnonShape_005D00B0_9E7CC102 *param_1,uint param
   local_8 = param_1->field_005C;
   local_19 = 0;
   local_15 = 0;
+
   st::fn_006B11D0(&this->field_1F84->flags,param_2,&local_64);
   return;
 }
@@ -138,4 +140,3 @@ void __thiscall st::fn_005D1380(SettMapMTy *this)
   }
   return;
 }
-

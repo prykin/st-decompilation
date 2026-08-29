@@ -14,13 +14,14 @@ void __thiscall SAMPanelTy::Update(SAMPanelTy *this)
   int iVar4;
   int *piVar5;
   InternalExceptionFrame local_54;
-  undefined4 local_10;
-  undefined2 local_c;
+  uint local_10;
+  ushort local_c;
   SAMPanelTy *local_8;
 
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 == 0) {
@@ -28,7 +29,8 @@ void __thiscall SAMPanelTy::Update(SAMPanelTy *this)
     local_c = local_8->field_01AF;
     /* ST_CALLSITE[0053D402]: CALL 0x004035bc; direct=004035BC STAllPlayersC::GetPanelInfo */
     STAllPlayersC::GetPanelInfo
-              (g_allPlayers_007FA174,0x12,(AnonShape_0043BEB0_1C00EC12 *)&local_8->field_01AB);
+              (g_allPlayers_007FA174,0x12,
+               (RecoveredRecordView_0043BEB0_8330D129 *)&local_8->field_01AB);
     this_00->field_0028 = 5;
     piVar5 = &this_00->field_01B5;
     iVar4 = 6;
@@ -43,6 +45,7 @@ void __thiscall SAMPanelTy::Update(SAMPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\setamine.cpp",0x57,0,iVar2,"%s",
                              "SAMPanelTy::Update");
   if (iVar3 != 0) {

@@ -571,7 +571,8 @@ LAB_005701d1:
 00570202  85 C0                     TEST EAX,EAX
 00570204  75 34                     JNZ 0x0057023a
 00570206  68 B6 06 00 00            PUSH 0x6b6
-0057020B  E8 20 E3 1B 00            CALL 0x0072e530
+STAppC::GetMessage::override::prt_57020b_a996e55:
+0057020B  E8 20 E3 1B 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/StartSystemTy; signature=__cdecl;pointer:/StartSystemTy;/uint
 00570210  83 C4 04                  ADD ESP,0x4
 00570213  85 C0                     TEST EAX,EAX
 00570215  74 08                     JZ 0x0057021f
@@ -652,7 +653,8 @@ switchD_0056fad2::caseD_6105:
 005702E4  3B C7                     CMP EAX,EDI
 005702E6  75 33                     JNZ 0x0057031b
 005702E8  68 B6 06 00 00            PUSH 0x6b6
-005702ED  E8 3E E2 1B 00            CALL 0x0072e530
+STAppC::GetMessage::override::prt_5702ed_a996e55:
+005702ED  E8 3E E2 1B 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/StartSystemTy; signature=__cdecl;pointer:/StartSystemTy;/uint
 005702F2  83 C4 04                  ADD ESP,0x4
 005702F5  3B C7                     CMP EAX,EDI
 005702F7  74 08                     JZ 0x00570301
@@ -1449,7 +1451,7 @@ LAB_00570c2f:
 00570C4F  8D 4D C0                  LEA ECX,[EBP + -0x40]
 00570C52  51                        PUSH ECX
 00570C53  8B CB                     MOV ECX,EBX
-00570C55  FF 50 18                  CALL dword ptr [EAX + 0x18]
+00570C55  FF 50 18                  CALL dword ptr [EAX + 0x18]  ; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STAppC;/int
 00570C58  8B 8D 60 FF FF FF         MOV ECX,dword ptr [EBP + 0xffffff60]
 00570C5E  33 C0                     XOR EAX,EAX
 00570C60  89 0D F8 8D 85 00         MOV dword ptr [0x00858df8],ECX
@@ -1465,7 +1467,7 @@ LAB_00570c6f:
 LAB_00570c77:
 00570C77  50                        PUSH EAX
 00570C78  8B CB                     MOV ECX,EBX
-00570C7A  FF 52 18                  CALL dword ptr [EDX + 0x18]
+00570C7A  FF 52 18                  CALL dword ptr [EDX + 0x18]  ; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STAppC;/int
 switchD_0056fad2::caseD_6101:
 00570C7D  8B 8D 60 FF FF FF         MOV ECX,dword ptr [EBP + 0xffffff60]
 00570C83  33 C0                     XOR EAX,EAX

@@ -24,6 +24,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pSVar2 = local_8;
   if (iVar3 == 0) {
@@ -39,6 +40,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     pSVar2->field_1F43 = nullptr;
     if (g_cursorClass_00802A30 != nullptr) {
       if (g_cursorClass_00802A30->field_00A9 == 0) {
+
         Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
       }
       else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
@@ -135,8 +137,11 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
       DArrayDestroy(pSVar2->field_1E2F);
     }
     pSVar2->field_1E2F = nullptr;
+
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_0x1c6b);
+
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_0x1cfc);
+
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_0x1d8d);
     slotStorage = pSVar2->field_20F4;
     iVar6 = 10;
@@ -161,12 +166,14 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
       *(undefined4 *)(*(int *)(pSVar2->array_00BC[0xc].field_01DB + 0x2e6) + 0x1cab) = 0;
     }
     if (pSVar2->field_004D != 0) {
+
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pSVar2->field_0x3d);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar5 = ReportDebugMessage("E:\\__titans\\Start\\sett_obj.cpp",0x1ce,0,iVar3,"%s",
                              "SettMapTy::DoneSettMap");
   if (iVar5 != 0) {

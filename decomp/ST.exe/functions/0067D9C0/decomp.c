@@ -22,24 +22,27 @@ int __cdecl SavePlrEdit(int param_1,char *param_2,AnonShape_0067D9C0_2E8A2257 *p
   local_c = nullptr;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   if (iVar2 == 0) {
     if (((param_1 == 0) || (param_2 == nullptr)) || (param_3->field_0x18 != '\x02')) {
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0x10b);
     }
-    /* ST_CALLSITE[0067DA32]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
+    /* ST_CALLSITE[0067DA32]: CALL 0x00401ebf; direct=00401EBF EventDataPack; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override */
     local_c = EventDataPack((AllocationRecord_0065CD10 *)param_3->field_0106,&local_14);
     /* ST_CALLSITE[0067DA44]: CALL 0x00405204; direct=00405204 PlrDataPack */
     local_8 = PlrDataPack((AllocationRecord_0067D3B0 *)param_3,(undefined4 *)local_c,local_14,
                           &local_10);
     thunk_FUN_0065d0f0((int *)&local_c);
+
     Library::Ourlib::MFAOBJ::mfAObjSave(param_1,param_2,(byte *)local_8,local_10,param_4);
     thunk_FUN_0067d160((int *)&local_8);
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
   g_currentExceptionFrame = local_58.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0x112,0,iVar2,"%s",
                              "SavePlrEdit");
   if (iVar3 != 0) {

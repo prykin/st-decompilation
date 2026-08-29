@@ -57,6 +57,7 @@ void __thiscall AiFltClassTy::sub_00664760(AiFltClassTy *this)
         psVar3 = nullptr;
       }
       psVar1 = psVar3 + 1;
+
       thunk_FUN_00675950(STReplaceLowWord((uint32_t)(psVar3), (uint16_t)(*psVar3)),
                          STReplaceLowWord((uint32_t)(psVar1), (uint16_t)(*psVar1)),psVar3[2],psVar3,psVar1,
                          psVar3 + 2,0);

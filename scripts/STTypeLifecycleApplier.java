@@ -360,7 +360,7 @@ public class STTypeLifecycleApplier extends GhidraScript {
     private boolean hiddenThis(DataType type) {
         return type instanceof Structure &&
             type.getPathName().startsWith(
-                "/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_") &&
+                "/SubmarineTitans/Recovered/HiddenThis/") &&
             text(type.getDescription()).contains("[STHiddenThisApplier generated]");
     }
     private int ownedReceiverFunctions(DataType type) {

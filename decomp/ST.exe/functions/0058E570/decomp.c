@@ -59,25 +59,33 @@ void __thiscall STSharkC::LifeShark(STSharkC *this)
   AnonShape_0041AF40_F59F8577 *pAVar12;
   AnonShape_0041AF40_F59F8577 local_30;
   uint local_10;
-  undefined4 local_c;
+  uint local_c;
   STGameObjC *local_8;
 
-  iVar6 = thunk_FUN_0041c710((AnonShape_0041C710_C4D46939 *)this);
+
+  iVar6 = thunk_FUN_0041c710((RecoveredRecordView_0041C710_A35B7121 *)this);
   this_00 = &this->field_01D5;
   if (iVar6 == 0) {
     iVar6 = 0;
+
     uVar7 = thunk_FUN_004ad650((STT3DSprC *)this_00);
+
     Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this->field_0211,uVar7,iVar6);
-    iVar5 = thunk_FUN_0041caf0((AnonShape_0041CAF0_1630B9E0 *)this);
+
+    iVar5 = thunk_FUN_0041caf0((RecoveredRecordView_0041CAF0_18493751 *)this);
     uVar7 = (uint)(iVar5 == 1);
+
     local_EAX_112 = thunk_FUN_004ad650((STT3DSprC *)this_00);
     FUN_006e6870((void *)this->field_0211,local_EAX_112,uVar7);
   }
   else {
     iVar6 = 1;
+
     uVar7 = thunk_FUN_004ad650((STT3DSprC *)this_00);
+
     Library::Ourlib::ST3DSMAP::SprSetVisible((void *)this->field_0211,uVar7,iVar6);
     iVar6 = 1;
+
     local_EAX_51 = thunk_FUN_004ad650((STT3DSprC *)this_00);
     FUN_006e6870((void *)this->field_0211,local_EAX_51,iVar6);
   }
@@ -88,6 +96,7 @@ void __thiscall STSharkC::LifeShark(STSharkC *this)
                (int)PTR_00806724->field_002C);
     if ((g_playSystem_00802A38->field_00E4 % 3 == 0) &&
        (iVar6 = this->field_0241 + -1, this->field_0241 = iVar6, iVar6 < 1)) {
+
       thunk_FUN_004aceb0(this_00,'\x0e');
     }
     goto cf_common_exit_0058E925;
@@ -98,6 +107,7 @@ void __thiscall STSharkC::LifeShark(STSharkC *this)
     /* ST_CALLSITE[0058EBC5]: CALL dword ptr [EDX + 0x20] */
     iVar6 = this->vfunc_20();
     if (iVar6 == -1) {
+
       local_EAX_1706 =
            ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0x2dc,0,-5,"%s",
                               "stop move error");
@@ -147,7 +157,7 @@ LAB_0058ea68:
            ((((this_01 = (STGameObjC *)
                          STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0],
               local_8 = this_01, this_01 != nullptr &&
-              /* ST_CALLSITE[0058EB17]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
+              /* ST_CALLSITE[0058EB17]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
               (STFishC::sub_004162B0
                          ((STFishC *)this_01,&this->field_0231,&this->field_0233,&this->field_0235),
               this->field_0047 == this->field_0231)) && (this->field_0049 == this->field_0233)) &&
@@ -161,6 +171,7 @@ LAB_0058ea68:
     else {
       if (iVar6 != 1) {
         if (iVar6 != 2) {
+
           local_EAX_514 =
                ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0x2d3,0,0,"%s",
                                   "STSharkC::LifeShark Error Move");
@@ -204,9 +215,10 @@ LAB_0058ea68:
           (pSVar8 = STAllPlayersC::GetObjPtr
                               (g_allPlayers_007FA174,(char)this->field_0249,this->field_024D,
                                CASE_1), local_8 != pSVar8)))) {
-        iVar6 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030
-                          ((AnonReceiver_004167A0 *)this,this->field_0231,this->field_0233,
-                           this->field_0235);
+
+        iVar6 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_004167A0::
+                thunk_FUN_00418030((RecoveredReceiver_004167A0 *)this,this->field_0231,
+                                   this->field_0233,this->field_0235);
         thunk_FUN_00417ff0(this,8);
         thunk_FUN_00418010(this,6);
         if (iVar6 != 0) {
@@ -252,6 +264,7 @@ LAB_0058e87e:
   case CASE_4:
     /* ST_CALLSITE[0058E688]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
     iVar6 = STT3DSprC::sub_004ACD30((STT3DSprC *)this_00,'\b');
+
     iVar8 = thunk_FUN_004ac910(this_00,'\b');
     if (iVar8 == iVar6 + -1) {
       this->field_0257 = CASE_7;
@@ -265,6 +278,7 @@ LAB_0058e87e:
     /* ST_CALLSITE[0058E6C4]: CALL dword ptr [EDX + 0x20] */
     iVar6 = this->vfunc_20();
     if (iVar6 == -1) {
+
       local_EAX_443 =
            ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0x265,0,0,"%s",
                               "stop move error");
@@ -275,13 +289,16 @@ LAB_0058e87e:
     else if (iVar6 == 1) {
       thunk_FUN_00417ff0(this,10);
       thunk_FUN_00418010(this,8);
-      SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004167A0::thunk_FUN_00418030
-                ((AnonReceiver_004167A0 *)this,this->field_0231,this->field_0233,this->field_0235);
+
+      SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_004167A0::thunk_FUN_00418030
+                ((RecoveredReceiver_004167A0 *)this,this->field_0231,this->field_0233,
+                 this->field_0235);
       this->field_0257 = CASE_2;
     }
     break;
   case CASE_6:
-    iVar6 = thunk_FUN_00417830((AnonShape_00417830_9254190A *)this);
+
+    iVar6 = thunk_FUN_00417830((RecoveredRecordView_00417830_39C1D071 *)this);
     if (iVar6 == 0) {
       /* ST_CALLSITE[0058EC8F]: CALL 0x004056fa; direct=004056FA STSharkC::sub_0058FF70 */
       uVar6 = sub_0058FF70(this);
@@ -291,6 +308,7 @@ LAB_0058e87e:
       return;
     }
     if (((iVar6 < 2) || (3 < iVar6)) &&
+
        (local_EAX_1797 =
              ReportDebugMessage("E:\\__titans\\Igor\\To_shark.cpp",0x2f8,0,0,"%s",
                                 "STSharkC::LifeShark Error Move"), local_EAX_1797 != 0)) {

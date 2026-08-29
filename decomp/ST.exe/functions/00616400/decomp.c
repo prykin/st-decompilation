@@ -4,7 +4,7 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 float10 __thiscall
-FUN_00616400(AnonShape_00616400_B4BF5EEF *param_1,int param_2,int param_3,int param_4)
+FUN_00616400(RecoveredRecordView_00616400_C5EF2A75 *param_1,int param_2,int param_3,int param_4)
 
 {
   float fVar1;

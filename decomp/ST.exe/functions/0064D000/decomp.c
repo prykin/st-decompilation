@@ -20,6 +20,7 @@ undefined4 * __thiscall AiEventClassTy::PrepareToSave(AiEventClassTy *this,uint 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pAVar2 = local_8;
   if (errorCode == 0) {
@@ -29,7 +30,7 @@ undefined4 * __thiscall AiEventClassTy::PrepareToSave(AiEventClassTy *this,uint 
     else {
       pAVar3 = (AllocationRecord_0065CD10 *)&local_8->field_008C;
     }
-    /* ST_CALLSITE[0064D045]: CALL 0x00401ebf; direct=00401EBF EventDataPack */
+    /* ST_CALLSITE[0064D045]: CALL 0x00401ebf; direct=00401EBF EventDataPack; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override */
     pAVar3_mg1 = EventDataPack(pAVar3,param_1);
     *(undefined1 *)pAVar3_mg1 = 1;
     *(uint *)&pAVar3_mg1->field_0x4e = pAVar2->field_0088;
@@ -37,6 +38,7 @@ undefined4 * __thiscall AiEventClassTy::PrepareToSave(AiEventClassTy *this,uint 
     return (undefined4 *)pAVar3_mg1;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_event.cpp",0x66,0,errorCode,"%s",
                              "AiEventClassTy::PrepareToSave");
   if (iVar4 != 0) {

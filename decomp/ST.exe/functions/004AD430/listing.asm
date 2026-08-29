@@ -1,4 +1,4 @@
-FUN_004ad430:
+STT3DSprC::sub_004AD430:
 004AD430  56                        PUSH ESI
 004AD431  8B F1                     MOV ESI,ECX
 004AD433  8B 46 18                  MOV EAX,dword ptr [ESI + 0x18]

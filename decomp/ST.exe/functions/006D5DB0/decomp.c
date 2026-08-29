@@ -20,7 +20,7 @@ void __fastcall FUN_006d5db0(undefined4 *param_1)
     (**(code **)(*piVar1 + 8))(piVar1);
     param_1[0x19] = 0;
   }
-  FUN_00749091((int)param_1);
+  Library::Win32::COMSupport::FUN_00749091((int)param_1);
   return;
 }
 

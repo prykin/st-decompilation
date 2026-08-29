@@ -25,7 +25,7 @@ FUN_00607200(void *this,int param_1,int param_2,int param_3,Global_sub_00606CD0_
   uint local_74;
   uint local_70;
   int local_6c;
-  undefined4 local_68 [5];
+  uint local_68 [5];
   uint local_54;
   Global_sub_00606CD0_param_1Enum local_50;
   int local_4c;
@@ -35,7 +35,7 @@ FUN_00607200(void *this,int param_1,int param_2,int param_3,Global_sub_00606CD0_
   uint local_3c;
   uint local_38;
   uint local_34;
-  undefined4 local_30;
+  uint local_30;
   uint local_2c;
   byte local_27;
   int local_26;

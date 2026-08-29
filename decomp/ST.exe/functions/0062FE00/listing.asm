@@ -13,7 +13,8 @@ LAB_0062fe0d:
 0062FE16  85 C9                     TEST ECX,ECX
 0062FE18  75 1E                     JNZ 0x0062fe38
 0062FE1A  6A 40                     PUSH 0x40
-0062FE1C  E8 0F E7 0F 00            CALL 0x0072e530
+FUN_0062fe00::override::prt_62fe1c_a7ad5ad2:
+0062FE1C  E8 0F E7 0F 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint
 0062FE21  83 C4 04                  ADD ESP,0x4
 0062FE24  85 C0                     TEST EAX,EAX
 0062FE26  74 09                     JZ 0x0062fe31

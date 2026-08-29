@@ -122,7 +122,7 @@ owner_vptr	MAdvTy+0x0	already_present	MAdvTy	owner already points to /SubmarineT
 table	0079BFE4	already_present	MAdvTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/MAdvTyVTable; 1 slots; vptr references materialized=0
 owner_vptr	CampaignTy+0x0	already_present	CampaignTy	owner already points to /SubmarineTitans/Recovered/VTables/CampaignTyVTable
 table	0079BFF8	already_present	CampaignTyVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/CampaignTyVTable; 3 slots; vptr references materialized=0
-table	0079C008	applied	VTable_0079C008	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079C008; 3 slots; vptr references materialized=0; retained prior type because it is referenced, modified, or lacks a baseline
+table	0079C008	already_present	MMObjTyVTable	retained stronger semantic table for the same physical bytes; layout-only alias VTable_0079C008 suppressed
 table	0079C018	already_present	VTable_0079C018	used unchanged generated type /SubmarineTitans/Recovered/VTables/VTable_0079C018; 1 slots; vptr references materialized=0
 owner_vptr	Visible+0x0	already_present	Visible	owner already points to /SubmarineTitans/Recovered/VTables/VisibleVTable
 table	0079C01C	already_present	VisibleVTable	used unchanged generated type /SubmarineTitans/Recovered/VTables/VisibleVTable; 1 slots; vptr references materialized=0

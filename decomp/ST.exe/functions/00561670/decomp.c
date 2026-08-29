@@ -40,6 +40,7 @@ undefined4 * __cdecl FUN_00561670(int param_1,int param_2,int param_3,int *param
   if (param_5 < 1) {
     return nullptr;
   }
+
   puVar5 = Library::DKW::LIB::MemAllocClear(param_2 * param_3 * 2);
   if (puVar5 == nullptr) {
     return nullptr;
@@ -128,8 +129,9 @@ LAB_00561bff:
           }
           piVar11 = local_1c + param_5 * 2;
           local_24 = piVar7_mg0;
+
           Library::MSVCRT::FUN_0072da70
-                    ((undefined4 *)(local_28 + 0x800 + (int)piVar7_mg0),
+                    ((RecoveredRecord_006BFE70_3123BCE8 *)(local_28 + 0x800 + (int)piVar7_mg0),
                      (AnonPointee_TLOBaseTy_0607 *)(uVar7 + (int)piVar7_mg0),uVar7);
           local_28 = uVar7;
         }

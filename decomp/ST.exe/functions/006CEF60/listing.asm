@@ -138,7 +138,8 @@ LAB_006cf0cd:
 006CF0DD  8B 5D 18                  MOV EBX,dword ptr [EBP + 0x18]
 006CF0E0  75 09                     JNZ 0x006cf0eb
 006CF0E2  53                        PUSH EBX
-006CF0E3  E8 B8 5E FE FF            CALL 0x006b4fa0
+FUN_006cef60::override::prt_6cf0e3_881d846d:
+006CF0E3  E8 B8 5E FE FF            CALL 0x006b4fa0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__stdcall;pointer:/char;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006B4FA0_DAC3A217
 006CF0E8  89 45 1C                  MOV dword ptr [EBP + 0x1c],EAX
 LAB_006cf0eb:
 006CF0EB  8B 45 28                  MOV EAX,dword ptr [EBP + 0x28]

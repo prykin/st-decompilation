@@ -13,7 +13,8 @@ void * __cdecl FUN_0048a640(void)
 {
   STBoatC *pSVar1;
 
-  pSVar1 = (STBoatC *)FUN_006b04d0(0x85e);
+  /* ST_CALLSITE[0048A645]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__stdcall;pointer:/STBoatC;/uint */
+  pSVar1 = FUN_006b04d0(0x85e);
   if (pSVar1 != nullptr) {
     pSVar1 = STBoatC::STBoatC(pSVar1);
     return pSVar1;

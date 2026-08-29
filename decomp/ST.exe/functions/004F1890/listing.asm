@@ -1,4 +1,4 @@
-FUN_004f1890:
+CPanelTy::sub_004F1890:
 004F1890  55                        PUSH EBP
 004F1891  8B EC                     MOV EBP,ESP
 004F1893  A0 4E 87 80 00            MOV AL,[0x0080874e]
@@ -31,7 +31,8 @@ LAB_004f18c2:
 004F18D2  8B 84 86 E2 02 00 00      MOV EAX,dword ptr [ESI + EAX*0x4 + 0x2e2]
 004F18D9  52                        PUSH EDX
 004F18DA  50                        PUSH EAX
-004F18DB  E8 70 9D 21 00            CALL 0x0070b650
+CPanelTy::sub_004F1890::override::prt_4f18db_92e7e0d4:
+004F18DB  E8 70 9D 21 00            CALL 0x0070b650  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/short;/int
 004F18E0  8A 15 4E 87 80 00         MOV DL,byte ptr [0x0080874e]
 004F18E6  33 C9                     XOR ECX,ECX
 004F18E8  80 FA 03                  CMP DL,0x3

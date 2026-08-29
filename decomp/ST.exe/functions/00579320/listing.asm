@@ -1,6 +1,7 @@
 CreateSTCrab:
 00579320  68 81 02 00 00            PUSH 0x281
-00579325  E8 A6 71 13 00            CALL 0x006b04d0
+CreateSTCrab::override::prt_579325_468426f2:
+00579325  E8 A6 71 13 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STCrabC; signature=__stdcall;pointer:/STCrabC;/uint
 0057932A  85 C0                     TEST EAX,EAX
 0057932C  74 07                     JZ 0x00579335
 0057932E  8B C8                     MOV ECX,EAX

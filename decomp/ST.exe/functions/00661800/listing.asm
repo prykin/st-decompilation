@@ -7,7 +7,8 @@ AiFltClassTy::sub_00661800:
 00661809  57                        PUSH EDI
 0066180A  89 4D F8                  MOV dword ptr [EBP + -0x8],ECX
 0066180D  89 75 FC                  MOV dword ptr [EBP + -0x4],ESI
-00661810  E8 BA 00 DA FF            CALL 0x004018cf
+AiFltClassTy::sub_00661800::override::prt_661810_a0e5684e:
+00661810  E8 BA 00 DA FF            CALL 0x004018cf  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__fastcall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/AiFltClassTy;/undefined4
 00661815  8B F8                     MOV EDI,EAX
 00661817  85 FF                     TEST EDI,EDI
 00661819  0F 84 89 00 00 00         JZ 0x006618a8

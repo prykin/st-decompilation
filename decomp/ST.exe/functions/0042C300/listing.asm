@@ -1,4 +1,4 @@
-FUN_0042c300:
+STAllPlayersC::sub_0042C300:
 0042C300  55                        PUSH EBP
 0042C301  8B EC                     MOV EBP,ESP
 0042C303  51                        PUSH ECX
@@ -112,7 +112,7 @@ LAB_0042c3f5:
 0042C404  8B 10                     MOV EDX,dword ptr [EAX]
 0042C406  6A 00                     PUSH 0x0
 0042C408  8B C8                     MOV ECX,EAX
-FUN_0042c300::override::prt_42c40a_a0bf87f6:
+STAllPlayersC::sub_0042C300::override::prt_42c40a_a0bf87f6:
 0042C40A  FF 92 E8 00 00 00         CALL dword ptr [EDX + 0xe8]  ; [STIndirectCallsiteApplier] exact slot 0xE8; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined2
 0042C410  8D 45 08                  LEA EAX,[EBP + 0x8]
 0042C413  C7 45 08 FF FF 00 00      MOV dword ptr [EBP + 0x8],0xffff

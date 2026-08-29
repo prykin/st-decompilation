@@ -14,8 +14,10 @@ MTestTy * __cdecl CreateMTest(void)
   MTestTy *this;
   int iVar1;
 
-  this = (MTestTy *)FUN_006b04d0(0xb4);
+
+  this = STPointerBoundaryCast<MTestTy *>(FUN_006b04d0(0xb4));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->field_0018 = 0;
     this->field_005D = nullptr;

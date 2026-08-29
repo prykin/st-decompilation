@@ -1,5 +1,10 @@
 
-uint FUN_006aff93(void)
+/* [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=006AFF5B @ 006AFF81 -> read as EAX on
+   every CFG path | 006AFF5B @ 006AFF8A -> read as EAX on every CFG path */
+
+int FUN_006aff93(void)
 
 {
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */

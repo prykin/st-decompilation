@@ -21,7 +21,7 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
   uint uVar5;
   uint uVar6;
   bool bVar7;
-  undefined4 local_c;
+  uint local_c;
   uint local_8;
 
   array = Library::DKW::TBL::DArrayCreate(nullptr,0x14,2,0x14);
@@ -41,10 +41,9 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
         iVar2 = 0;
       }
       if ((*(AiFltClassTy **)(iVar2 + 4) != nullptr) &&
-         (array_00 = (DArrayTy *)
-                     /* ST_CALLSITE[0068E543]: CALL 0x004059b6; direct=004059B6 AiFltClassTy::sub_0065E360 */
-                     /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
-                     AiFltClassTy::sub_0065E360(*(AiFltClassTy **)(iVar2 + 4),iVar4,param_1),
+         /* ST_CALLSITE[0068E543]: CALL 0x004059b6; direct=004059B6 AiFltClassTy::sub_0065E360; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__fastcall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/AiFltClassTy;/undefined4;/int */
+         /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
+         (array_00 = AiFltClassTy::sub_0065E360(*(AiFltClassTy **)(iVar2 + 4),iVar4,param_1),
          iVar4 = extraout_EDX_00, array_00 != nullptr)) {
         dVar1 = array_00->count;
         if ((dVar1 != 0) && (uVar5 = 0, uVar6 = local_8, 0 < (int)dVar1)) {
@@ -59,6 +58,7 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
               puVar3 = nullptr;
             }
             local_c = STReplaceLowWord((uint32_t)(iVar2), (uint16_t)(*puVar3));
+
             Library::DKW::TBL::DArrayAppend(array,&local_c);
             uVar5 = uVar5 + 1;
             bVar7 = uVar5 < array_00->count;

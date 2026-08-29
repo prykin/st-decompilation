@@ -88,7 +88,7 @@ LAB_004fef02:
 004FEF02  8B 8E 9E 02 00 00         MOV ECX,dword ptr [ESI + 0x29e]
 004FEF08  6A 00                     PUSH 0x0
 004FEF0A  51                        PUSH ECX
-004FEF0B  E8 90 C4 20 00            CALL 0x0070b3a0
+004FEF0B  E8 90 C4 20 00            CALL 0x0070b3a0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override
 004FEF10  8B 96 98 01 00 00         MOV EDX,dword ptr [ESI + 0x198]
 004FEF16  50                        PUSH EAX
 004FEF17  6A 01                     PUSH 0x1

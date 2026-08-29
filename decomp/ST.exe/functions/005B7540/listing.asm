@@ -214,7 +214,7 @@ LAB_005b77aa:
 005B77E4  6A 7D                     PUSH 0x7d
 005B77E6  51                        PUSH ECX
 005B77E7  50                        PUSH EAX
-005B77E8  E8 53 89 0F 00            CALL 0x006b0140
+005B77E8  E8 53 89 0F 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 005B77ED  8B 15 6C 17 81 00         MOV EDX,dword ptr [0x0081176c]
 005B77F3  50                        PUSH EAX
 005B77F4  8B 4A 30                  MOV ECX,dword ptr [EDX + 0x30]

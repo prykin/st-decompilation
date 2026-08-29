@@ -1,4 +1,4 @@
-FUN_006e65c0:
+ST3DSMAPContext::sub_006E65C0:
 006E65C0  55                        PUSH EBP
 006E65C1  8B EC                     MOV EBP,ESP
 006E65C3  56                        PUSH ESI

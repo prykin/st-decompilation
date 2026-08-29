@@ -35,7 +35,7 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
   short local_18;
   short local_16;
   short local_14 [2];
-  undefined4 local_10;
+  uint local_10;
   int local_c;
   void *local_8;
 
@@ -64,6 +64,7 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
       /* ST_CALLSITE[0046D07A]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
       iVar7 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_10,&local_c);
       if (iVar7 == -1) {
+
         local_EAX_688 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x25c7,0,0,"%s",
                                 "STBoatC::CreateGame, CREATEGAME_MOVE 2");
@@ -75,14 +76,18 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
       }
       if (iVar7 == 0) {
         uVar10 = 0;
-        if (((AnonShape_005EFAE0_B406B78B *)this->field_0524 != nullptr)
-           && (iVar7_mg4 = STPlaySystemC::sub_006E62D0
-                                     (g_playSystem_00802A38,
-                                      (AnonShape_005EFAE0_B406B78B *)this->field_0524,
-                                      (int *)&local_8), iVar7_mg4 != -4)) {
+        if (((RecoveredRecordView_005EFAE0_855D930D *)this->field_0524 !=
+             nullptr) &&
+
+           (iVar7_mg4 = STPlaySystemC::sub_006E62D0
+                                  (g_playSystem_00802A38,
+                                   (RecoveredRecordView_005EFAE0_855D930D *)this->field_0524,
+                                   (int *)&local_8), iVar7_mg4 != -4)) {
+
           thunk_FUN_004cf3e0(local_8,this->field_0018);
           Library::Ourlib::ST3DSMAP::SprRstLev(this->field_0211,this->field_01ED);
         }
+
         iVar7 = thunk_FUN_0048fa80(this);
         if (iVar7 == 1) {
           if ((((this->field_051C < 0) || (this->field_051E < 0)) ||
@@ -136,7 +141,8 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
         }
         else {
           this_00 = thunk_FUN_0042b760((char)this->field_0024,this->field_0030);
-          local_EAX_928 = thunk_FUN_0040ae40(this_00,(uint)(ushort)this->field_0032,'\0');
+          /* ST_CALLSITE[0046D2C0]: CALL 0x00402b26; direct=00402B26 STGroupBoatC::sub_0040AE40 */
+          local_EAX_928 = STGroupBoatC::sub_0040AE40(this_00,(uint)(ushort)this->field_0032,'\0');
           uVar10 = -(uint)(local_EAX_928 != -4) & 2;
         }
       }
@@ -148,7 +154,7 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
     }
     return uVar10;
   }
-  /* ST_CALLSITE[0046CFA5]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+  /* ST_CALLSITE[0046CFA5]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
   uVar8 = sub_004176C0(this,this->field_0522);
   /* ST_CALLSITE[0046CFAD]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
   local_EAX_141 = sub_00417910(this,(short)uVar8);
@@ -160,6 +166,7 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
     iVar7 = this->vfunc_D8();
     return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
   }
+
   iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x25a8,0,0,"%s",
                              "STBoatC::CreateGame, CREATEGAME_ROT");
   if (iVar6 != 0) {

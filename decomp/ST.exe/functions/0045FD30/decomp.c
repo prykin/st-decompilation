@@ -26,6 +26,7 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this)
   }
   if (this->field_00E8 == 1) {
     if (this->field_004D == '\x01') {
+
       iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x1498,0,0,"%s",
                                  "STBoatC::StopMove() ZONE_B");
       if (iVar5 != 0) {
@@ -36,7 +37,8 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this)
     /* ST_CALLSITE[0045FDA6]: CALL 0x00405952; direct=00405952 sub_004167A0 */
     sub_004167A0(this);
     this->field_00FD = 1;
-    thunk_FUN_0040cdb0(this_00,(uint)(ushort)this->field_0032);
+    /* ST_CALLSITE[0045FDBA]: CALL 0x00404ff2; direct=00404FF2 STGroupBoatC::sub_0040CDB0 */
+    STGroupBoatC::sub_0040CDB0(this_00,(uint)(ushort)this->field_0032);
     return 1;
   }
   if ((this->field_0040 == '\0') && (this->field_004D == '\0')) {
@@ -56,16 +58,18 @@ undefined4 __thiscall STBoatC::StopMove(STBoatC *this)
       /* ST_CALLSITE[0045FE54]: CALL 0x00405952; direct=00405952 sub_004167A0 */
       sub_004167A0(this);
       this->field_00FD = 1;
-      thunk_FUN_0040cdb0(this_00,(uint)(ushort)this->field_0032);
+      /* ST_CALLSITE[0045FE6C]: CALL 0x00404ff2; direct=00404FF2 STGroupBoatC::sub_0040CDB0 */
+      STGroupBoatC::sub_0040CDB0(this_00,(uint)(ushort)this->field_0032);
       return 1;
     }
   }
+
   iVar5 = thunk_FUN_00416400((STJellyGunC *)this);
   if (iVar5 == -1) {
     return 0xffffffff;
   }
   if (iVar5 == 2) {
-    thunk_FUN_004168b0((int)this);
+    thunk_FUN_004168b0((RecoveredRecord_004168B0_1FFF2915 *)this);
   }
   return 0;
 }

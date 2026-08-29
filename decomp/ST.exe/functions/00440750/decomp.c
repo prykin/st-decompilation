@@ -1,11 +1,10 @@
-#include "../../pseudocode_runtime.h"
 
 
 void FUN_00440750(int param_1)
 
 {
-  undefined1 local_24 [12];
-  undefined4 local_18;
+  byte local_24 [12];
+  uint local_18;
   int local_14;
 
   local_18 = 0xf;

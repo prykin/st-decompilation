@@ -24,11 +24,13 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (iVar3 == 0) {
     puVar1 = &local_c->field_0x18;
     local_c->field_0028 = 0x4404;
+
     FUN_006e6000(local_c,0xf,0,(undefined4 *)puVar1);
     slotStorage = (int *)&this_00->field_0x217;
     local_8 = 4;
@@ -42,6 +44,7 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     memset((void *)puVar1, 0, 0x20); /* compiler bulk-zero initialization */
     this_00->field_0028 = 0x14;
     *(undefined4 *)&this_00->field_0x2c = this_00->field_0008;
+
     FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
     if (this_00->field_095C != 0) {
       StartSystemTy::sub_006E56B0(this_00->field_000C,this_00->field_095C);
@@ -167,7 +170,7 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     } while (iVar5 != 0);
     if ((g_sT3DSMAPContext_00807598 != nullptr) &&
        (this_00->field_0DB3 != nullptr)) {
-      FUN_006e6580(g_sT3DSMAPContext_00807598,this_00->field_0DB3);
+      ST3DSMAPContext::sub_006E6580(g_sT3DSMAPContext_00807598,this_00->field_0DB3);
     }
     this_00->field_0DB3 = nullptr;
     if (g_sT3DSMAPContext_00807598 != nullptr) {
@@ -299,6 +302,7 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel.cpp",0x213,0,iVar3,"%s",
                              "CPanelTy::DoneCPanel");
   if (iVar4 != 0) {

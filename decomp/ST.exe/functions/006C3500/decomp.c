@@ -9,7 +9,7 @@ void FUN_006c3500(AnonShape_006C3500_19C01617 *param_1)
 
 {
   int iVar1;
-  undefined4 local_80 [26];
+  uint local_80 [26];
   uint local_18;
 
   iVar1 = param_1->field_0028;

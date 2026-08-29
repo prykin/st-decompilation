@@ -16,8 +16,7 @@ void FUN_00682850(void)
   float *pfVar5;
   char *pcVar6;
   char local_8c [128];
-  undefined4 local_c [2];
-
+  uint local_c [2];
   GVar2 = DAT_007d2d18;
   pcVar6 = local_8c;
   for (iVar4 = 0x20; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -28,7 +27,8 @@ void FUN_00682850(void)
     pcVar6 = pcVar6 + 4;
   }
   Library::MSVCRT::_strncpy(local_8c,PTR_00857528,0x7f);
-  pfVar3 = (float *)thunk_FUN_006686f0(GVar2);
+
+  pfVar3 = STPointerBoundaryCast<float *>(thunk_FUN_006686f0(GVar2));
   pfVar5 = nullptr;
   thunk_FUN_006827a0();
   thunk_FUN_00682810(0x29);
@@ -44,10 +44,12 @@ void FUN_00682850(void)
     }
   }
   pfVar1 = pfVar5;
+
   if (((int)pfVar3 < (int)pfVar5) && (iVar4 = thunk_FUN_00668a30(GVar2), iVar4 == 0)) {
     thunk_FUN_006802a0(-0x79,local_8c);
   }
   for (; (int)pfVar5 < (int)pfVar3; pfVar5 = (float *)((int)pfVar5 + CASE_1)) {
+
     iVar4 = thunk_FUN_00668aa0(GVar2,(Global_sub_00668AA0_param_2Enum)pfVar5,(undefined1 *)local_c);
     if (iVar4 == 0) {
       thunk_FUN_006802a0(-0x7a,local_8c);

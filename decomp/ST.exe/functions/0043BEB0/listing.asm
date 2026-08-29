@@ -132,7 +132,7 @@ LAB_0043c00c:
 0043C025  50                        PUSH EAX
 0043C026  51                        PUSH ECX
 0043C027  8B 4D F4                  MOV ECX,dword ptr [EBP + -0xc]
-0043C02A  E8 8B 68 FC FF            CALL 0x004028ba
+0043C02A  E8 8B 68 FC FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override
 0043C02F  8B F8                     MOV EDI,EAX
 0043C031  8D 55 0A                  LEA EDX,[EBP + 0xa]
 0043C034  8D 45 FC                  LEA EAX,[EBP + -0x4]
@@ -372,7 +372,7 @@ LAB_0043c293:
 LAB_0043c297:
 0043C297  8B CB                     MOV ECX,EBX
 0043C299  C6 46 07 01               MOV byte ptr [ESI + 0x7],0x1
-0043C29D  E8 01 96 FC FF            CALL 0x004058a3
+0043C29D  E8 01 96 FC FF            CALL 0x004058a3  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 0043C2A2  8B F8                     MOV EDI,EAX
 0043C2A4  8B CB                     MOV ECX,EBX
 0043C2A6  57                        PUSH EDI

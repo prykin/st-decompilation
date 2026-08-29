@@ -65,11 +65,12 @@ int __thiscall STBoatC::BackCapture(STBoatC *this,int *param_1)
       this->field_0615 = 4;
     }
     if (this->field_0615 == 4) {
-      /* ST_CALLSITE[004780F0]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+      /* ST_CALLSITE[004780F0]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
       uVar4 = sub_004176C0(this,this->field_060F);
       /* ST_CALLSITE[004780F8]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       uVar4 = sub_00417910(this,(short)uVar4);
       if (uVar4 == 0xffffffff) {
+
         local_EAX_253 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3336,0,0,"%s",
                                 "STBoatC::BackCapture, CAPTURE_PMOVE");
@@ -97,6 +98,7 @@ LAB_00478373:
       /* ST_CALLSITE[004781BF]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
       iVar6 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
       if (iVar6 == -1) {
+
         local_EAX_463 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x334b,0,0,"%s",
                                 "STBoatC::BackCapture, CAPTURE_PMOVE 2");
@@ -122,8 +124,9 @@ LAB_0047848a:
                         (g_allPlayers_007FA174,this->field_05FC,this->field_05FD,CASE_1);
     if (((this_00 != nullptr) && (this_00->field_0018 == *(int *)&this->field_0x5ff)) &&
        /* ST_CALLSITE[00478257]: CALL dword ptr [EAX + 0x108]; [STIndirectCallsiteApplier] exact slot 0x108; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4 */
-       (iVar6 = (*this_00->vtable[1].vfunc_34)(this_00,this->field_0024), iVar6 != 0)) {
-      thunk_FUN_004cd450((AnonShape_004CC900_31EE9CAA *)this_00);
+       (iVar6 = this_00->vfunc_108(this->field_0024), iVar6 != 0)) {
+
+      thunk_FUN_004cd450((RecoveredRecordView_004CC900_A43E8B7C *)this_00);
     }
     if (((int)this->field_0041 != (this->field_0609 + 1) * 0xc9) ||
        ((int)this->field_0043 != (this->field_060B + 1) * 0xc9)) {
@@ -148,11 +151,12 @@ LAB_0047848a:
       this->field_0615 = 1;
     }
     if (this->field_0615 == 1) {
-      /* ST_CALLSITE[00478353]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+      /* ST_CALLSITE[00478353]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
       uVar4 = sub_004176C0(this,this->field_060F);
       /* ST_CALLSITE[0047835B]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
       uVar4 = sub_00417910(this,(short)uVar4);
       if (uVar4 == 0xffffffff) {
+
         iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3373,0,0,"%s",
                                    "STBoatC::BackCapture, CAPTURE_OMOVE");
         if (iVar5 == 0) {
@@ -176,6 +180,7 @@ LAB_0047848a:
       /* ST_CALLSITE[00478438]: CALL 0x00402847; direct=00402847 STJellyGunC::sub_00415ED0 */
       iVar6 = STJellyGunC::sub_00415ED0((STJellyGunC *)this,&local_8,(int *)&param_1);
       if (iVar6 == -1) {
+
         local_EAX_1096 =
              ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3388,0,0,"%s",
                                 "STBoatC::BackCapture, CAPTURE_OMOVE 2");
@@ -193,6 +198,7 @@ LAB_0047848a:
     }
     break;
   default:
+
     local_EAX_1172 =
          ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3396,0,0,"%s",
                             "STBoatC::BackCapture - incorrect entry");

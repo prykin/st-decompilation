@@ -205,10 +205,12 @@ undefined4 __thiscall FUN_0063d660(void *this,char param_1)
         iVar1 = local_8 - 0x3b;
         local_8 = local_8 + 1;
       } while (iVar1 < 300);
+
       puVar6 = Library::DKW::LIB::MemAlloc(0x1b);
       STField<undefined4 *>(this,0x37f) = puVar6;
       if (puVar6 != nullptr) {
         *puVar6 = 0xffffffff;
+
         iVar5 = thunk_FUN_00640170(this,STField<int>(this,0x2a4),STField<int>(this,0x2a8),
                                    STField<undefined4>(this,0x2b4));
         if (iVar5 != 0) {

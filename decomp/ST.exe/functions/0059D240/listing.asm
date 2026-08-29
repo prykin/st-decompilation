@@ -62,7 +62,7 @@ LAB_0059d2b6:
 0059D2FC  6A 72                     PUSH 0x72
 0059D2FE  6A 22                     PUSH 0x22
 0059D300  52                        PUSH EDX
-0059D301  E8 7A 75 12 00            CALL 0x006c4880
+0059D301  E8 7A 75 12 00            CALL 0x006c4880  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override
 0059D306  8B 16                     MOV EDX,dword ptr [ESI]
 0059D308  33 C9                     XOR ECX,ECX
 0059D30A  3B D1                     CMP EDX,ECX

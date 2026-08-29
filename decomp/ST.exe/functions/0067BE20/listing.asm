@@ -26,7 +26,7 @@ LAB_0067be35:
 0067BE52  8A 91 40 06 00 00         MOV DL,byte ptr [ECX + 0x640]
 0067BE58  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 0067BE5E  52                        PUSH EDX
-0067BE5F  E8 56 6A D8 FF            CALL 0x004028ba
+0067BE5F  E8 56 6A D8 FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override
 0067BE64  85 C0                     TEST EAX,EAX
 0067BE66  74 3F                     JZ 0x0067bea7
 0067BE68  50                        PUSH EAX

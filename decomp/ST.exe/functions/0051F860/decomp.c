@@ -14,8 +14,10 @@ HelpStringTy * __cdecl CreateHelpString(void)
   HelpStringTy *this;
   char *pcVar2;
 
-  this = (HelpStringTy *)FUN_006b04d0(0x132);
+
+  this = STPointerBoundaryCast<HelpStringTy *>(FUN_006b04d0(0x132));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->vtable = &HelpStringTyVTable;
     this->field_011D = 0;

@@ -39,7 +39,7 @@ FUN_005411a0:
 005411FC  49                        DEC ECX
 005411FD  8D 44 0A 04               LEA EAX,[EDX + ECX*0x1 + 0x4]
 00541201  50                        PUSH EAX
-00541202  E8 69 9A 16 00            CALL 0x006aac70
+00541202  E8 69 9A 16 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=/winnt.h/LPSTR; source view only; no Ghidra override
 00541207  85 C0                     TEST EAX,EAX
 00541209  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
 0054120C  74 43                     JZ 0x00541251

@@ -16,6 +16,7 @@ byte * __thiscall STVolcanoC::sub_00646D40(STVolcanoC *this,undefined4 *param_1)
   byte *pbVar3;
   byte *pbVar4;
 
+  /* ST_CALLSITE[00646D4C]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/byte; source view only; no Ghidra override */
   pbVar1 = Library::DKW::LIB::MemAlloc(0x95);
   this->field_0028 = 2;
   this->field_00AD = this->field_00B1;

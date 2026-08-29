@@ -243,7 +243,7 @@ LAB_004f08ae:
 004F08FC  53                        PUSH EBX
 004F08FD  56                        PUSH ESI
 004F08FE  6A 05                     PUSH 0x5
-004F0900  FF 52 08                  CALL dword ptr [EDX + 0x8]
+004F0900  FF 52 08                  CALL dword ptr [EDX + 0x8]  ; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 004F0903  8B 8D 4C FF FF FF         MOV ECX,dword ptr [EBP + 0xffffff4c]
 004F0909  89 0D F8 8D 85 00         MOV dword ptr [0x00858df8],ECX
 004F090F  5F                        POP EDI

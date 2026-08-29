@@ -40,17 +40,16 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
   int iVar20;
   short sVar21;
   byte bVar22;
-  undefined4 local_30 [2];
+  uint local_30 [2];
   uint local_28;
   short local_24;
   int local_20;
   uint local_1c;
-  undefined4 local_18;
+  uint local_18;
   int local_14;
   int local_10;
   AnonShape_004758E0_51E65DA0 *local_c;
-  undefined1 local_5;
-
+  byte local_5;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if ((param_1 == 0) || (param_1 == 1)) {
     memset(&this->field_02CC, 0, 0x5c); /* compiler bulk-zero initialization */
@@ -86,6 +85,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     /* ST_CALLSITE[00475912]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
     iVar6 = sub_0045FF50(this,2);
     if (iVar6 == -1) {
+
       local_EAX_246 =
            ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x3079,0,0,"%s",
                               "STBoatC::UnLoadObj, 5");
@@ -116,6 +116,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     return 2;
   }
   if (SVar3 == 0) {
+
     iVar6 = thunk_FUN_00492550(this,this->field_005B,this->field_005D,this->field_005F,
                                &this->field_05D0,&this->field_05D2,&this->field_05D4);
     if (iVar6 == 0) {
@@ -132,13 +133,14 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
                        this->field_05D0 * 0xc9 + 100,(short)iVar10,
                        STReplaceLowWord((uint32_t)(iVar6), (uint16_t)(this->field_05D4 * 200)) + 100);
     this->field_05DA = sVar5;
-    /* ST_CALLSITE[00475A85]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0 */
+    /* ST_CALLSITE[00475A85]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
     uVar7 = sub_004176C0(this,sVar5);
     /* ST_CALLSITE[00475A8D]: CALL 0x004022fc; direct=004022FC STBoatC::sub_00417910 */
     uVar7 = sub_00417910(this,(short)uVar7);
     if (uVar7 != 0xffffffff) {
       if (uVar7 == 0) {
         this->field_05D6 = CASE_1;
+
         STPlaySystemC::sub_006E62D0(g_playSystem_00802A38,this->field_07CA,(int *)&local_c);
         uVar1 = local_c->field_0062;
         uVar2 = local_c->field_0061;
@@ -157,11 +159,11 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
         local_c->field_0063 = local_5;
         /* ST_CALLSITE[00475AFF]: CALL 0x0040464c; direct=0040464C sub_0041C5A0 */
         sub_0041C5A0(this);
+
         thunk_FUN_00495ff0(this->field_005B,this->field_005D,this->field_005F,0,
-                           (AnonShape_00495FF0_59081BDD *)this);
-        /* ST_CALLSITE[00475B2B]: CALL dword ptr [EAX + 0xb8] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(*(int *)local_c + 0xb8))();
+                           (RecoveredRecordView_00495FF0_A2A90B23 *)this);
+        /* ST_CALLSITE[00475B2B]: CALL dword ptr [EAX + 0xb8]; [STIndirectCallsiteApplier] exact slot 0xB8; mode=structural-presentation; signature=__thiscall;/void;pointer:/void */
+        STStructuralVirtualCall<void>(local_c, 0xB8);
         /* ST_CALLSITE[00475B55]: CALL 0x00401325; direct=00401325 DumpClassC::WritePtr */
         DumpClassC::WritePtr
                   (this->field_05D0,this->field_05D2,this->field_05D4,0,
@@ -175,6 +177,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
       iVar6 = this->vfunc_D8();
       return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
     }
+
     local_EAX_712 =
          ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x309b,0,0,"%s",
                             "STBoatC::UnLoadObj RotateCheat");
@@ -197,6 +200,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
     if (this->field_02BF != '\0') {
       auto param_1_after_write = (int)&this->field_0x2b3; /* compiler stack-slot lifetime split */
       do {
+
         puVar8 = thunk_FUN_0041dc40(local_30,(short)*(undefined4 *)param_1_after_write,*(ushort *)(param_1_after_write + 4),
                                     this->field_006C);
         local_28 = *puVar8;
@@ -253,6 +257,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,int param_1)
       } while (local_10 < (int)(uint)(byte)this->field_02BF);
     }
     if (local_20 == -1) {
+
       iVar5 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x30d2,0,0,"%s",
                                  "STBoatC::UnLoadObj LLMoveStep");
       if (iVar5 != 0) {

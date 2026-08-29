@@ -34,7 +34,7 @@ uint __fastcall FUN_006d5ed0(AnonShape_006D5ED0_5EF510E8 *param_1)
   local_8 = lpCriticalSection;
   /* ST_CALLSITE[006D5EF9]: CALL dword ptr [0x0085bb8c] */
   EnterCriticalSection(lpCriticalSection);
-  uVar3 = FUN_00749415((AnonShape_00749415_513CA2B2 *)param_1);
+  uVar3 = Library::Win32::COMSupport::FUN_00749415((AnonShape_00749415_513CA2B2 *)param_1);
   local_18 = uVar3;
   if ((int)uVar3 < 0) {
     /* ST_CALLSITE[006D5F10]: CALL dword ptr [0x0085bb90] */

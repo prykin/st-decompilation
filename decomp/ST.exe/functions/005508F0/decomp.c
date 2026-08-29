@@ -3,9 +3,14 @@
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=4, used=0, unknown=0),
-   and decompilation contains no value return */
+   and decompilation contains no value return
 
-void __thiscall FUN_005508f0(void *this,int param_1)
+   [STMethodOwnerApplier] Structural method owner recovered as STPlaySystemC.
+   Evidence: this_call_owners=[STPlaySystemC]; agreed_this_calls=3; incoming_this_accesses=0;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=3; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=3; owner_evidence_coverage=adequate */
+
+void __thiscall STPlaySystemC::sub_005508F0(STPlaySystemC *this,int param_1)
 
 {
   HINSTANCE module;
@@ -22,7 +27,7 @@ void __thiscall FUN_005508f0(void *this,int param_1)
   uint local_1c;
   uint local_18;
   uint local_14;
-  void *local_10;
+  STPlaySystemC *local_10;
   uint local_c;
   byte local_5;
 
@@ -72,7 +77,8 @@ void __thiscall FUN_005508f0(void *this,int param_1)
           /* ST_CALLSITE[005509EE]: CALL dword ptr [0x0085bde8] */
           wsprintfA((LPSTR)&DAT_0080f33a,"%s %s",pcVar2,pcVar9);
           if (g_popUp_008016D8 != nullptr) {
-            thunk_FUN_0052d320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
+            /* ST_CALLSITE[00550A08]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
+            PopUpTy::sub_0052D320(g_popUp_008016D8,(char *)&DAT_0080f33a,8);
           }
         }
         uVar8 = uVar8 + 1;
@@ -82,7 +88,8 @@ void __thiscall FUN_005508f0(void *this,int param_1)
     local_18 = (uint)g_bulkInitializedRecords_008087C7[uVar1].field_0021;
     local_1c = 8;
     local_14 = uVar1;
-    thunk_FUN_0054edf0((undefined4 *)0x5,&local_1c,1,0xffffffff);
+    /* ST_CALLSITE[00550A45]: CALL 0x00403c33; direct=00403C33 STPlaySystemC::sub_0054EDF0 */
+    sub_0054EDF0(local_10,(undefined4 *)0x5,&local_1c,1,0xffffffff);
   }
   if ((&DAT_00809950)[local_c & 0xff] == '\0') {
     uVar1 = 0;

@@ -9,7 +9,7 @@
    Evidence: 00596CC0 -> 00594B90 @ 00596E99 */
 
 void __thiscall
-FSGSTy::OutChSlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,undefined4 param_2,
+FSGSTy::OutChSlProc(FSGSTy *this,RecoveredGlobalRecordView_00854EB8 *param_1,undefined4 param_2,
                    undefined4 param_3,int param_4,int param_5,int param_6,int param_7,
                    undefined4 *param_8)
 
@@ -25,20 +25,26 @@ FSGSTy::OutChSlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,und
     local_8 = param_8;
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
+
     errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
     puVar2 = local_8;
     if (errorCode == 0) {
+
       Library::DKW::DDX::FUN_006c68f0(param_1,param_4,param_5,param_6,param_7,(int)(local_8 + 1));
       FUN_006c6850((int)param_1,param_4,param_5,param_6,param_7,*puVar2);
+
       Library::DKW::DDX::FUN_006c6660
                 ((DDXContext *)param_1,param_4 + -0x15 + param_6,param_5 + 0x26,7,param_7 - 0x62,3,0
                 );
+
       Library::DKW::DDX::FUN_006c6470
                 ((int)param_1,param_4 + -0x15 + param_6,param_5 + 0x26,(undefined4 *)0x7,
                  param_7 + -0x62,3,*puVar2);
       local_c = param_5 + -0x16 + param_7;
+
       Library::DKW::DDX::FUN_006c53b0
                 ((int)param_1,param_4,local_c,param_4 + -1 + param_6,local_c,*puVar2);
+
       Library::DKW::DDX::FUN_006c53b0
                 ((int)param_1,param_4 + 0x168,local_c,param_4 + 0x168,param_5 + -1 + param_7,*puVar2
                 );
@@ -46,6 +52,7 @@ FSGSTy::OutChSlProc(FSGSTy *this,AnonShape_GLOBAL_0080759C_9638EF10 *param_1,und
       return;
     }
     g_currentExceptionFrame = local_50.previous;
+
     iVar3 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x66,0,errorCode,
                                "%s","FSGSTy::OutChSlProc");
     if (iVar3 != 0) {

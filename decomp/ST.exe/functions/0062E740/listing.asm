@@ -347,7 +347,7 @@ LAB_0062eafd:
 0062EB09  8D 4D F8                  LEA ECX,[EBP + -0x8]
 0062EB0C  51                        PUSH ECX
 0062EB0D  8B CE                     MOV ECX,ESI
-0062EB0F  E8 05 5C DD FF            CALL 0x00404719
+0062EB0F  E8 05 5C DD FF            CALL 0x00404719  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 0062EB14  8B 55 F8                  MOV EDX,dword ptr [EBP + -0x8]
 0062EB17  8B 0D 38 2A 80 00         MOV ECX,dword ptr [0x00802a38]
 0062EB1D  52                        PUSH EDX

@@ -1,7 +1,7 @@
 CreateSTContainer:
 005FC3A0  56                        PUSH ESI
 005FC3A1  68 7B 04 00 00            PUSH 0x47b
-005FC3A6  E8 25 41 0B 00            CALL 0x006b04d0
+005FC3A6  E8 25 41 0B 00            CALL 0x006b04d0  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STSprGameObjC; source view only; no Ghidra override
 005FC3AB  8B F0                     MOV ESI,EAX
 005FC3AD  85 F6                     TEST ESI,ESI
 005FC3AF  74 1B                     JZ 0x005fc3cc

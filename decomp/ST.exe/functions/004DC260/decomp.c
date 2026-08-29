@@ -7,6 +7,7 @@ undefined4 __fastcall FUN_004dc260(TLOBaseTy *param_1)
   uint uVar1;
   int iVar2;
 
+
   iVar2 = thunk_FUN_004ac910(&param_1->field_01D5,'\x0e');
   if (iVar2 == param_1->field_01F5->field_020C) {
     if (param_1->field_04D0 == CASE_2) {
@@ -33,6 +34,7 @@ undefined4 __fastcall FUN_004dc260(TLOBaseTy *param_1)
       }
     }
     uVar1 = g_playSystem_00802A38->field_00E4;
+
     iVar2 = thunk_FUN_004e8230((int)param_1->field_0024,param_1->field_0235,0);
     if (((uint)(iVar2 + param_1->field_0271) <= uVar1) && (199 < param_1->field_04D4)) {
       param_1->field_0271 = uVar1;

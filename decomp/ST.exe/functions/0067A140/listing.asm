@@ -12,7 +12,7 @@ FUN_0067a140:
 0067A157  8B 10                     MOV EDX,dword ptr [EAX]
 0067A159  51                        PUSH ECX
 0067A15A  8B C8                     MOV ECX,EAX
-0067A15C  FF 12                     CALL dword ptr [EDX]
+0067A15C  FF 12                     CALL dword ptr [EDX]  ; [STIndirectCallsiteApplier] exact slot 0x0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 0067A15E  5D                        POP EBP
 0067A15F  C2 08 00                  RET 0x8
 LAB_0067a162:

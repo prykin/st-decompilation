@@ -15,16 +15,16 @@ STAllPlayersC::SelectObjects
           uint param_3)
 
 {
-  int iVar1;
+  DArrayOf_STGameObjCPtr *pDVar1;
+  dword dVar2;
   byte objPtr;
-  uint uVar3;
-  int iVar4;
-  int *piVar5;
-  STAllPlayersC_GetTOBJListFromDArr_param_3Enum SVar6;
+  uint uVar4;
+  int piVar5_mg0;
+  STAllPlayersC_GetTOBJListFromDArr_param_3Enum SVar5;
   int iVar8;
   STGroupBoatC *this_00;
-  STGameObjC *pSVar7;
-  int iVar9;
+  STGameObjC *pSVar6;
+  int iVar7;
   int local_EAX_1560;
   int local_EAX_1656;
   int local_EAX_1752;
@@ -36,14 +36,14 @@ STAllPlayersC::SelectObjects
   int local_EAX_2100;
   int local_EAX_2243;
   uint index;
-  char cVar10;
-  undefined1 local_14 [4];
+  char cVar8;
+  byte local_14 [4];
   DArrayTy *local_10;
   DArrayTy *local_c;
   DArrayTy *local_8;
 
   objPtr = DAT_0080874d;
-  uVar3 = (uint)DAT_0080874d;
+  uVar4 = (uint)DAT_0080874d;
   local_8 = nullptr;
   local_10 = nullptr;
   local_c = nullptr;
@@ -52,21 +52,21 @@ STAllPlayersC::SelectObjects
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   case CASE_0:
     param_3 = 0;
-    iVar9 = g_packedRecords_A62x8[uVar3].field3_0x9;
-    iVar1 = STField<int>(iVar9,0xC);
-    if (0 < iVar1) {
+    pDVar1 = g_packedRecords_A62x8[uVar4].field3_0x9;
+    dVar2 = pDVar1->count;
+    if (0 < (int)dVar2) {
       do {
-        piVar5 = *(int **)(STField<int>(iVar9,0x1C) + param_3 * 4);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
-           /* ST_CALLSITE[0044B673]: CALL dword ptr [EDX + 0xf8] */
-           ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
-            /* ST_CALLSITE[0044B682]: CALL dword ptr [EAX + 0xec] */
-            (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))) {
-          Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
+        pSVar6 = pDVar1->data[param_3];
+        if (((pSVar6 != nullptr) && (pSVar6->field_0020 == 0x14)) &&
+           /* ST_CALLSITE[0044B673]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+           ((iVar7 = pSVar6->vfunc_F8(), iVar7 == 1 &&
+            /* ST_CALLSITE[0044B682]: CALL dword ptr [EAX + 0xec]; [STIndirectCallsiteApplier] exact slot 0xEC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+            (iVar7 = pSVar6->vfunc_EC(), iVar7 == 1)))) {
+
+          Library::DKW::TBL::DArrayAppend(local_8,&pSVar6->field_0032);
         }
         param_3 = param_3 + 1;
-      } while ((int)param_3 < iVar1);
+      } while ((int)param_3 < (int)dVar2);
     }
     break;
   case CASE_1:
@@ -79,12 +79,13 @@ STAllPlayersC::SelectObjects
     if (0 < (int)param_2) {
       do {
         /* ST_CALLSITE[0044B6FB]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-        pSVar7 = GetObjPtr(this,objPtr,*(ushort *)((int)local_8->data + param_3 * 2),CASE_1);
-        if ((((pSVar7 == nullptr) || (pSVar7->field_0020 != 0x14)) ||
+        pSVar6 = GetObjPtr(this,objPtr,STFixedStrideAt<ushort>(local_8->data, param_3),CASE_1);
+        if ((((pSVar6 == nullptr) || (pSVar6->field_0020 != 0x14)) ||
             /* ST_CALLSITE[0044B710]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-            (iVar9 = (*pSVar7->vtable[1].vfunc_24)(pSVar7), iVar9 == 0)) ||
+            (iVar7 = (*pSVar6->vtable[1].vfunc_24)(pSVar6), iVar7 == 0)) ||
            /* ST_CALLSITE[0044B71E]: CALL dword ptr [EDX + 0xec]; [STIndirectCallsiteApplier] exact slot 0xEC; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-           (iVar9 = (*pSVar7->vtable[1].vfunc_18)(pSVar7), iVar9 == 0)) {
+           (iVar7 = (*pSVar6->vtable[1].vfunc_18)(pSVar6), iVar7 == 0)) {
+
           DArrayRemoveAt(local_8,param_3);
           param_2 = param_2 - 1;
           param_3 = param_3 - 1;
@@ -95,123 +96,126 @@ STAllPlayersC::SelectObjects
     break;
   case CASE_2:
     param_3 = 0;
-    iVar9 = g_packedRecords_A62x8[uVar3].field3_0x9;
-    iVar1 = STField<int>(iVar9,0xC);
-    if (0 < iVar1) {
+    pDVar1 = g_packedRecords_A62x8[uVar4].field3_0x9;
+    dVar2 = pDVar1->count;
+    if (0 < (int)dVar2) {
       do {
-        piVar5 = *(int **)(STField<int>(iVar9,0x1C) + param_3 * 4);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
+        pSVar6 = pDVar1->data[param_3];
+        if (((pSVar6 != nullptr) && (pSVar6->field_0020 == 0x14)) &&
            /* ST_CALLSITE[0044B79D]: CALL dword ptr [EDX + 0x2c] */
-           (((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
-             (STBitTest(g_bitset_00800F10, iVar4 + 0x41U)) != 0 ||
+           (((iVar7 = pSVar6->vfunc_2C(),
+             (STBitTest(g_bitset_00800F10, iVar7 + 0x41U)) != 0 ||
              /* ST_CALLSITE[0044B7C9]: CALL dword ptr [EAX + 0x2c] */
-             (iVar4 = (**(code **)(*piVar5 + 0x2c))(),
-             (STBitTest(g_bitset_00800F00, iVar4 + 0x41U)) != 0)) &&
-            /* ST_CALLSITE[0044B7F5]: CALL dword ptr [EAX + 0xf8] */
-            ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
-             /* ST_CALLSITE[0044B804]: CALL dword ptr [EDX + 0xec] */
-             (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))))) {
-          Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
+             (iVar7 = pSVar6->vfunc_2C(),
+             (STBitTest(g_bitset_00800F00, iVar7 + 0x41U)) != 0)) &&
+            /* ST_CALLSITE[0044B7F5]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+            ((iVar7 = pSVar6->vfunc_F8(), iVar7 == 1 &&
+             /* ST_CALLSITE[0044B804]: CALL dword ptr [EDX + 0xec]; [STIndirectCallsiteApplier] exact slot 0xEC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+             (iVar7 = pSVar6->vfunc_EC(), iVar7 == 1)))))) {
+
+          Library::DKW::TBL::DArrayAppend(local_8,&pSVar6->field_0032);
         }
         param_3 = param_3 + 1;
-      } while ((int)param_3 < iVar1);
+      } while ((int)param_3 < (int)dVar2);
     }
     break;
   case CASE_3:
     param_3 = 0;
-    iVar9 = g_packedRecords_A62x8[uVar3].field3_0x9;
-    iVar1 = STField<int>(iVar9,0xC);
-    if (0 < iVar1) {
+    pDVar1 = g_packedRecords_A62x8[uVar4].field3_0x9;
+    dVar2 = pDVar1->count;
+    if (0 < (int)dVar2) {
       do {
-        piVar5 = *(int **)(STField<int>(iVar9,0x1C) + param_3 * 4);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
+        pSVar6 = pDVar1->data[param_3];
+        if (((pSVar6 != nullptr) && (pSVar6->field_0020 == 0x14)) &&
            /* ST_CALLSITE[0044B876]: CALL dword ptr [EDX + 0x2c] */
-           ((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
-            (STBitTest(g_bitset_00801000, iVar4 + 0x41U)) != 0 &&
-            /* ST_CALLSITE[0044B8A2]: CALL dword ptr [EAX + 0xf8] */
-            ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
-             /* ST_CALLSITE[0044B8B1]: CALL dword ptr [EDX + 0xec] */
-             (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))))) {
-          Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
+           ((iVar7 = pSVar6->vfunc_2C(),
+            (STBitTest(g_bitset_00801000, iVar7 + 0x41U)) != 0 &&
+            /* ST_CALLSITE[0044B8A2]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+            ((iVar7 = pSVar6->vfunc_F8(), iVar7 == 1 &&
+             /* ST_CALLSITE[0044B8B1]: CALL dword ptr [EDX + 0xec]; [STIndirectCallsiteApplier] exact slot 0xEC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+             (iVar7 = pSVar6->vfunc_EC(), iVar7 == 1)))))) {
+
+          Library::DKW::TBL::DArrayAppend(local_8,&pSVar6->field_0032);
         }
         param_3 = param_3 + 1;
-      } while ((int)param_3 < iVar1);
+      } while ((int)param_3 < (int)dVar2);
     }
     break;
   case CASE_4:
     param_3 = 0;
-    iVar9 = g_packedRecords_A62x8[uVar3].field3_0x9;
-    iVar1 = STField<int>(iVar9,0xC);
-    if (0 < iVar1) {
+    pDVar1 = g_packedRecords_A62x8[uVar4].field3_0x9;
+    dVar2 = pDVar1->count;
+    if (0 < (int)dVar2) {
       do {
-        piVar5 = *(int **)(STField<int>(iVar9,0x1C) + param_3 * 4);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        if ((((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
+        pSVar6 = pDVar1->data[param_3];
+        if ((((pSVar6 != nullptr) && (pSVar6->field_0020 == 0x14)) &&
             /* ST_CALLSITE[0044B91F]: CALL dword ptr [EDX + 0x2c] */
-            (iVar4 = (**(code **)(*piVar5 + 0x2c))(),
-            (STBitTest(g_bitset_00800FA0, iVar4 + 0x41U)) != 0)) &&
-           /* ST_CALLSITE[0044B94B]: CALL dword ptr [EAX + 0xf8] */
-           ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
-            /* ST_CALLSITE[0044B95A]: CALL dword ptr [EDX + 0xec] */
-            (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))) {
-          Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
+            (iVar7 = pSVar6->vfunc_2C(),
+            (STBitTest(g_bitset_00800FA0, iVar7 + 0x41U)) != 0)) &&
+           /* ST_CALLSITE[0044B94B]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+           ((iVar7 = pSVar6->vfunc_F8(), iVar7 == 1 &&
+            /* ST_CALLSITE[0044B95A]: CALL dword ptr [EDX + 0xec]; [STIndirectCallsiteApplier] exact slot 0xEC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+            (iVar7 = pSVar6->vfunc_EC(), iVar7 == 1)))) {
+
+          Library::DKW::TBL::DArrayAppend(local_8,&pSVar6->field_0032);
         }
         param_3 = param_3 + 1;
-      } while ((int)param_3 < iVar1);
+      } while ((int)param_3 < (int)dVar2);
     }
     break;
   case CASE_5:
     param_3 = 0;
-    iVar9 = g_packedRecords_A62x8[uVar3].field3_0x9;
-    iVar1 = STField<int>(iVar9,0xC);
-    if (0 < iVar1) {
+    pDVar1 = g_packedRecords_A62x8[uVar4].field3_0x9;
+    dVar2 = pDVar1->count;
+    if (0 < (int)dVar2) {
       do {
-        piVar5 = *(int **)(STField<int>(iVar9,0x1C) + param_3 * 4);
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        if (((piVar5 != nullptr) && (piVar5[8] == 0x14)) &&
+        pSVar6 = pDVar1->data[param_3];
+        if (((pSVar6 != nullptr) && (pSVar6->field_0020 == 0x14)) &&
            /* ST_CALLSITE[0044B9C8]: CALL dword ptr [EDX + 0x2c] */
-           ((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
-            (STBitTest(g_bitset_00801010, iVar4 + 0x41U)) != 0 &&
-            /* ST_CALLSITE[0044B9F4]: CALL dword ptr [EAX + 0xf8] */
-            ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
-             /* ST_CALLSITE[0044BA03]: CALL dword ptr [EDX + 0xec] */
-             (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))))) {
-          Library::DKW::TBL::DArrayAppend(local_8,(void *)((int)piVar5 + 0x32));
+           ((iVar7 = pSVar6->vfunc_2C(),
+            (STBitTest(g_bitset_00801010, iVar7 + 0x41U)) != 0 &&
+            /* ST_CALLSITE[0044B9F4]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+            ((iVar7 = pSVar6->vfunc_F8(), iVar7 == 1 &&
+             /* ST_CALLSITE[0044BA03]: CALL dword ptr [EDX + 0xec]; [STIndirectCallsiteApplier] exact slot 0xEC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
+             (iVar7 = pSVar6->vfunc_EC(), iVar7 == 1)))))) {
+
+          Library::DKW::TBL::DArrayAppend(local_8,&pSVar6->field_0032);
         }
         param_3 = param_3 + 1;
-      } while ((int)param_3 < iVar1);
+      } while ((int)param_3 < (int)dVar2);
     }
     break;
   case CASE_6:
-    piVar5 = (int *)ST3DSMAPContext::sub_006EB350(g_sT3DSMAPContext_00807598,param_2,param_3,0xe,1);
-    if (((piVar5 != nullptr) && (piVar5[9] == uVar3)) && (piVar5[8] == 0x14)) {
+    /* ST_CALLSITE[0044BA40]: CALL 0x006eb350; direct=006EB350 ST3DSMAPContext::sub_006EB350; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
+    piVar5_mg0 = ST3DSMAPContext::sub_006EB350(g_sT3DSMAPContext_00807598,param_2,param_3,0xe,1);
+    if (((piVar5_mg0 != 0) && (STField<uint>(piVar5_mg0,0x24) == uVar4)) &&
+       (STField<int>(piVar5_mg0,0x20) == 0x14)) {
       DArrayDestroy(local_8);
       /* ST_CALLSITE[0044BA8F]: CALL 0x00405227; direct=00405227 STAllPlayersC::GetGObjFromZone */
       GetGObjFromZone(this,objPtr,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c,
                       (int *)&local_c,nullptr);
-      cVar10 = -1;
-      iVar9 = 0;
-      /* ST_CALLSITE[0044BA9C]: CALL dword ptr [EAX + 0x2c] */
+      cVar8 = -1;
+      iVar7 = 0;
+      /* ST_CALLSITE[0044BA9C]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4 */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      SVar6 = (**(code **)(*piVar5 + 0x2c))();
+      SVar5 = (**(code **)(*(int *)piVar5_mg0 + 0x2c))();
       local_8 = (DArrayTy *)
                 /* ST_CALLSITE[0044BAA7]: CALL 0x004050b0; direct=004050B0 STAllPlayersC::GetTOBJListFromDArr */
-                GetTOBJListFromDArr(this,uVar3,(AnonShape_0043EED0_93C25F9A *)local_c,SVar6,iVar9,
-                                    cVar10);
+                GetTOBJListFromDArr(this,uVar4,(RecoveredRecordView_0043EED0_30C6163F *)local_c,
+                                    SVar5,iVar7,cVar8);
       DArrayDestroy(local_c);
       param_3 = 0;
       param_2 = local_8->count;
       if (0 < (int)param_2) {
         do {
           /* ST_CALLSITE[0044BAE3]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-          pSVar7 = GetObjPtr(this,objPtr,*(ushort *)((int)local_8->data + param_3 * 2),CASE_1);
-          if ((((pSVar7 == nullptr) || (pSVar7->field_0020 != 0x14)) ||
+          pSVar6 = GetObjPtr(this,objPtr,STFixedStrideAt<ushort>(local_8->data, param_3),CASE_1);
+          if ((((pSVar6 == nullptr) || (pSVar6->field_0020 != 0x14)) ||
               /* ST_CALLSITE[0044BAF8]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-              (iVar9 = (*pSVar7->vtable[1].vfunc_24)(pSVar7), iVar9 == 0)) ||
+              (iVar7 = (*pSVar6->vtable[1].vfunc_24)(pSVar6), iVar7 == 0)) ||
              /* ST_CALLSITE[0044BB06]: CALL dword ptr [EAX + 0xec]; [STIndirectCallsiteApplier] exact slot 0xEC; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-             (iVar9 = (*pSVar7->vtable[1].vfunc_18)(pSVar7), iVar9 == 0)) {
+             (iVar7 = (*pSVar6->vtable[1].vfunc_18)(pSVar6), iVar7 == 0)) {
+
             DArrayRemoveAt(local_8,param_3);
             param_2 = param_2 - 1;
             param_3 = param_3 - 1;
@@ -222,9 +226,11 @@ STAllPlayersC::SelectObjects
     }
     break;
   case CASE_7:
+
     iVar8 = ST3DSMAPContext::sub_006EB350(g_sT3DSMAPContext_00807598,param_2,param_3,0xe,1);
-    if ((((iVar8 != 0) && (STField<uint>(iVar8,0x24) == uVar3)) && (STField<int>(iVar8,0x20) == 0x14))
+    if ((((iVar8 != 0) && (STField<uint>(iVar8,0x24) == uVar4)) && (STField<int>(iVar8,0x20) == 0x14))
        && ((STField<ushort>(iVar8,0x30) != 0xffff &&
+           /* ST_CALLSITE[0044BB7E]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STGroupC; source view only; no Ghidra override */
            (this_00 = thunk_FUN_0042b760(objPtr,STField<ushort>(iVar8,0x30)),
            this_00 != nullptr)))) {
       DArrayDestroy(local_8);
@@ -234,12 +240,14 @@ STAllPlayersC::SelectObjects
       index = 0;
       if (0 < (int)param_2) {
         do {
+
           DArrayGetElement(local_8,index,local_14);
           /* ST_CALLSITE[0044BBC3]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-          pSVar7 = GetObjPtr(this,objPtr,STPiece<0,2>(local_14),CASE_1);
+          pSVar6 = GetObjPtr(this,objPtr,STPiece<0,2>(local_14),CASE_1);
           /* ST_CALLSITE[0044BBCC]: CALL dword ptr [EDX + 0xec]; [STIndirectCallsiteApplier] exact slot 0xEC; signature=__thiscall;/undefined4;pointer:/STGameObjC */
-          iVar9 = (*pSVar7->vtable[1].vfunc_18)(pSVar7);
-          if (iVar9 == 0) {
+          iVar7 = (*pSVar6->vtable[1].vfunc_18)(pSVar6);
+          if (iVar7 == 0) {
+
             DArrayRemoveAt(local_8,index);
             param_2 = param_2 - 1;
             index = index - 1;
@@ -250,6 +258,7 @@ STAllPlayersC::SelectObjects
     }
     break;
   default:
+
     local_EAX_1560 =
          ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3123,0,0,"%s",
                             "STAllPlayersC::SelectObjects invalid type");
@@ -261,10 +270,10 @@ STAllPlayersC::SelectObjects
     DArrayDestroy(local_8);
     return;
   }
-  if (g_packedRecords_A62x8[uVar3].field200_0x203 == 0) {
-    iVar9 = g_packedRecords_A62x8[uVar3].field96_0x163;
-    if (iVar9 != 0) {
-      if (iVar9 == 0x3c) {
+  if (g_packedRecords_A62x8[uVar4].field200_0x203 == 0) {
+    iVar7 = g_packedRecords_A62x8[uVar4].field96_0x163;
+    if (iVar7 != 0) {
+      if (iVar7 == 0x3c) {
         /* ST_CALLSITE[0044BE24]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
         local_EAX_2100 = CheckTmps(objPtr,0,0x3c,objPtr,local_8,0);
         if (0 < local_EAX_2100) {
@@ -275,11 +284,11 @@ STAllPlayersC::SelectObjects
         if (-1 < local_EAX_2100) goto cf_common_exit_0044BD53;
         /* ST_CALLSITE[0044BE48]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
         PushTV(objPtr,0);
-        if (g_packedRecords_A62x8[uVar3].field105_0x177 == uVar3) {
+        if (g_packedRecords_A62x8[uVar4].field105_0x177 == uVar4) {
           /* ST_CALLSITE[0044BE6A]: CALL 0x004020d6; direct=004020D6 STAllPlayersC::CalibrateTmp */
           CalibrateTmp(this,objPtr,0,1,&local_8->flags,(int *)&local_10,nullptr,nullptr);
           /* ST_CALLSITE[0044BE7C]: CALL 0x004027c0; direct=004027C0 STAllPlayersC::ResetActivityFromObjs */
-          ResetActivityFromObjs(this,uVar3,0x3c,local_10,0,0);
+          ResetActivityFromObjs(this,uVar4,0x3c,local_10,0,0);
           DArrayDestroy(local_10);
         }
         else {
@@ -288,7 +297,8 @@ STAllPlayersC::SelectObjects
         }
       }
       else {
-        if (iVar9 != 0x1ae) {
+        if (iVar7 != 0x1ae) {
+
           local_EAX_2006 =
                ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3152,0,0,"%s",
                                   "STAllPlayersC::SelectObjects GAMETYPE_BOAT ACT_LEFT");
@@ -318,7 +328,8 @@ STAllPlayersC::SelectObjects
     ActivateTV(this,objPtr,0,local_EAX_2243);
   }
   else {
-    if (g_packedRecords_A62x8[uVar3].field200_0x203 != 1) {
+    if (g_packedRecords_A62x8[uVar4].field200_0x203 != 1) {
+
       local_EAX_1656 =
            ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x317d,0,0,"%s",
                               "STAllPlayersC::SelectObjects GAMETYPE_BOAT wrong panel number");
@@ -327,11 +338,11 @@ STAllPlayersC::SelectObjects
       }
       goto cf_common_exit_0044BD53;
     }
-    g_packedRecords_A62x8[uVar3].field200_0x203 = 0;
+    g_packedRecords_A62x8[uVar4].field200_0x203 = 0;
     /* ST_CALLSITE[0044BC91]: CALL 0x004032e7; direct=004032E7 STAllPlayersC::ResetActivityFromTmp */
     ResetActivityFromTmp(this,objPtr,1,0,0);
-    iVar9 = g_packedRecords_A62x8[uVar3].field96_0x163;
-    if (iVar9 == 0) {
+    iVar7 = g_packedRecords_A62x8[uVar4].field96_0x163;
+    if (iVar7 == 0) {
       /* ST_CALLSITE[0044BD7A]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
       local_EAX_1930 = CheckTmps(objPtr,0,0x3c,objPtr,local_8,0);
       if (0 < local_EAX_1930) {
@@ -340,7 +351,7 @@ STAllPlayersC::SelectObjects
         goto LAB_0044bd49;
       }
     }
-    else if (iVar9 == 0x3c) {
+    else if (iVar7 == 0x3c) {
       /* ST_CALLSITE[0044BD19]: CALL 0x0040196f; direct=0040196F STAllPlayersC::CheckTmps */
       local_EAX_1833 = CheckTmps(objPtr,0,0x3c,objPtr,local_8,0);
       if (-1 < local_EAX_1833) {
@@ -352,7 +363,8 @@ STAllPlayersC::SelectObjects
       PushTV(objPtr,0);
     }
     else {
-      if (iVar9 != 0x1ae) {
+      if (iVar7 != 0x1ae) {
+
         local_EAX_1752 =
              ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3179,0,0,"%s",
                                 "STAllPlayersC::SelectObjects GAMETYPE_BOAT ACT_RIGHT");
@@ -373,10 +385,10 @@ STAllPlayersC::SelectObjects
     }
 cf_common_exit_0044BD3D:
     /* ST_CALLSITE[0044BD44]: CALL 0x00405bbe; direct=00405BBE STAllPlayersC::AddObjsToTmp */
-    AddObjsToTmp(this,uVar3,0,0,local_8);
+    AddObjsToTmp(this,uVar4,0,0,local_8);
   }
 LAB_0044bd49:
-  g_packedRecords_A62x8[uVar3].field96_0x163 = 0x3c;
+  g_packedRecords_A62x8[uVar4].field96_0x163 = 0x3c;
 cf_common_exit_0044BD53:
   DArrayDestroy(local_8);
   /* ST_CALLSITE[0044BD5E]: CALL 0x004027de; direct=004027DE STAllPlayersC::SelfCheckObjControl */

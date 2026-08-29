@@ -42,8 +42,8 @@ undefined4 __thiscall STMineSetC::sub_00627400(STMineSetC *this,undefined4 param
       return this->field_02AE;
     }
     if ((int)(((ulonglong)(this->field_0315 - g_playSystem_00802A38->field_00E4) % 200) / 3) != 0) {
-      /* ST_CALLSITE[0062758D]: CALL dword ptr [EDX + 0x2c] */
-      dVar5 = this_00->slot_2C();
+      /* ST_CALLSITE[0062758D]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STFishC */
+      dVar5 = this_00->vfunc_2C();
       if (dVar5 == 0xe6) {
         thunk_FUN_0058f1e0(this_00,0);
       }

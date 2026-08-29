@@ -73,7 +73,7 @@ LAB_00440905:
 00440915  85 C9                     TEST ECX,ECX
 00440917  74 1A                     JZ 0x00440933
 00440919  8B 01                     MOV EAX,dword ptr [ECX]
-0044091B  FF 50 0C                  CALL dword ptr [EAX + 0xc]
+0044091B  FF 50 0C                  CALL dword ptr [EAX + 0xc]  ; [STIndirectCallsiteApplier] exact slot 0xC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 0044091E  83 F8 08                  CMP EAX,0x8
 00440921  75 10                     JNZ 0x00440933
 00440923  8B 45 10                  MOV EAX,dword ptr [EBP + 0x10]

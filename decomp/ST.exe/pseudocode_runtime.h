@@ -61,6 +61,28 @@ using code = uintptr_t(...);
 #define __fastcall
 #endif
 #endif
+#if defined(__cplusplus)
+template <typename Value>
+static inline uintptr_t STMachineAddress(Value value) {
+    using Plain = std::remove_cv_t<std::remove_reference_t<Value>>;
+    if constexpr (std::is_pointer_v<Plain>)
+        return reinterpret_cast<uintptr_t>(value);
+    else return static_cast<uintptr_t>(value);
+}
+template <typename Return, typename Receiver, typename... Args>
+static inline Return STStructuralVirtualCall(Receiver receiver, size_t byteSlot, Args... args) {
+    uintptr_t address = STMachineAddress(receiver);
+    uintptr_t *table = *reinterpret_cast<uintptr_t **>(address);
+    using Callee = Return (__thiscall *)(uintptr_t, Args...);
+    Callee callee = reinterpret_cast<Callee>(table[byteSlot / sizeof(uintptr_t)]);
+    if constexpr (std::is_void_v<Return>) callee(address, args...);
+    else return callee(address, args...);
+}
+template <typename Target, typename Source>
+static inline Target STPointerBoundaryCast(Source value) {
+    return reinterpret_cast<Target>(STMachineAddress(value));
+}
+#endif
 static inline uint32_t STPackTagged24(uint32_t tag, uint32_t value) {
     return (value & 0x00ffffffu) | ((tag & 0xffu) << 24);
 }
@@ -83,7 +105,15 @@ static inline uint64_t STRawWord(Value value) {
     using Plain = std::remove_cv_t<std::remove_reference_t<Value>>;
     if constexpr (std::is_pointer_v<Plain>)
         return static_cast<uint64_t>(reinterpret_cast<uintptr_t>(value));
-    else return static_cast<uint64_t>(value);
+    else if constexpr (std::is_arithmetic_v<Plain> || std::is_enum_v<Plain>)
+        return static_cast<uint64_t>(value);
+    else {
+        static_assert(std::is_trivially_copyable_v<Plain>);
+        static_assert(sizeof(Plain) <= sizeof(uint64_t));
+        uint64_t result = 0;
+        memcpy(&result, &value, sizeof(Plain));
+        return result;
+    }
 }
 template <size_t Bytes>
 static constexpr uint64_t STByteMask() {
@@ -242,6 +272,10 @@ template <typename Record, typename Offset>
 static inline Record &STObjectAtByteOffset(Record *base, Offset byteOffset) {
     return *reinterpret_cast<Record *>(
         reinterpret_cast<uintptr_t>(base) + static_cast<intptr_t>(byteOffset));
+}
+template <typename Element, typename Base, typename Index>
+static inline Element &STFixedStrideAt(Base base, Index index) {
+    return reinterpret_cast<Element *>(base)[static_cast<intptr_t>(index)];
 }
 template <typename High, typename Low> static inline auto CONCAT11(High high, Low low) { return STConcat<1, 1>(high, low); }
 template <typename High, typename Low> static inline auto CONCAT12(High high, Low low) { return STConcat<1, 2>(high, low); }

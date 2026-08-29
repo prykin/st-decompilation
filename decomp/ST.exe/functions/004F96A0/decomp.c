@@ -21,7 +21,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this)
   DArrayTy *pDVar5;
   DArrayTy *pDVar4;
   cTypingTy *this_01;
-  byte *pbVar6;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar6;
   char *pcVar7;
   cMf32 *pcVar8;
   int iVar9;
@@ -41,6 +41,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this)
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_10 = this;
+
     iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
     this_00 = local_10;
     if (iVar3 == 0) {
@@ -104,12 +105,15 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this)
             }
             local_8 = pDVar4;
             if (puVar12[5] == '\0') {
-              pbVar6 = (byte *)ccFntTy::CreateSurf(this_00->field_01D4,(int)this_00->field_01B4,0,
-                                                   100,5,0x226,0x55,0);
-              if (pbVar6 != nullptr) {
+              /* ST_CALLSITE[004F9910]: CALL 0x00710ba0; direct=00710BA0 ccFntTy::CreateSurf; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/ccFntTy;/int;/uint;/int;/int;/int;/int;/int */
+              pRVar6 = ccFntTy::CreateSurf(this_00->field_01D4,(int)this_00->field_01B4,0,100,5,
+                                           0x226,0x55,0);
+              if (pRVar6 != nullptr) {
+
                 ccFntTy::WrSarr(this_00->field_01D4,(int)local_8,0,-1,0,0,0);
                 /* ST_CALLSITE[004F9942]: CALL 0x00403229; direct=00403229 DibPut */
-                DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_01B4,100,5,'\x01',pbVar6);
+                DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_01B4,100,5,'\x01',pRVar6);
+
                 ccFntTy::EraseSufr(this_00->field_01D4);
                 if (puVar12[0xe] != '\0') {
                   thunk_FUN_005252c0(0x1e);
@@ -118,6 +122,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this)
               FUN_006b5570(local_8);
             }
             else {
+
               ccFntTy::SetSurf(this_00->field_01D4,(int)this_00->field_01B4,0,100,5,0x226,0x55);
               this_01 = (cTypingTy *)Library::MSVCRT::FUN_0072e530(0xb4);
               if (this_01 == nullptr) {
@@ -128,6 +133,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this)
                 this_01->field_0088 = 0;
               }
               this_00->field_01D8 = (HoloTy *)this_01;
+
               iVar3 = cTypingTy::TypingInitSarr
                                 (this_01,local_8,this_00->field_01D4,0,0,0,0x226,0x55,0,0,0,1,2,0xff
                                 );
@@ -147,7 +153,8 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this)
                 psVar15 = (short *)0x1;
                 bVar13 = 0;
                 bVar14 = 6;
-                pcVar7 = (char *)thunk_FUN_005260b0(*(int *)(puVar12 + 5),puVar12[9],0);
+                /* ST_CALLSITE[004F9A7C]: CALL 0x004036a2; direct=004036A2 thunk_FUN_005260b0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;/int;/undefined1;/int */
+                pcVar7 = thunk_FUN_005260b0(*(int *)(puVar12 + 5),puVar12[9],0);
                 pcVar8 = g_cMf32_00806790;
 LAB_004f9a8a:
                 psVar15 = Library::Ourlib::MFIMG::mfQmtLoad(pcVar8,pcVar7,bVar14,bVar13,psVar15);
@@ -170,7 +177,8 @@ LAB_004f9a8a:
                 psVar15 = (short *)0x1;
                 bVar14 = 0;
                 bVar13 = 6;
-                pcVar7 = (char *)thunk_FUN_005260b0(0,0,0);
+                /* ST_CALLSITE[004F9AA6]: CALL 0x004036a2; direct=004036A2 thunk_FUN_005260b0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;/int;/undefined1;/int */
+                pcVar7 = thunk_FUN_005260b0(0,0,0);
                 psVar15 = Library::Ourlib::MFIMG::mfQmtLoad
                                     (g_cMf32_00806790,pcVar7,bVar13,bVar14,psVar15);
                 *ppsVar1 = psVar15;
@@ -183,7 +191,8 @@ LAB_004f9a8a:
               psVar15 = (short *)0x1;
               bVar14 = 0;
               bVar13 = 6;
-              pcVar7 = (char *)thunk_FUN_005260b0(0,0,1);
+              /* ST_CALLSITE[004F99A6]: CALL 0x004036a2; direct=004036A2 thunk_FUN_005260b0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;/int;/undefined1;/int */
+              pcVar7 = thunk_FUN_005260b0(0,0,1);
               psVar15 = Library::Ourlib::MFIMG::mfQmtLoad
                                   (g_cMf32_00806790,pcVar7,bVar13,bVar14,psVar15);
               *ppsVar1 = psVar15;
@@ -191,7 +200,8 @@ LAB_004f9a8a:
               this_00->field_025F = 0;
               _Count = 0x1f;
               if (puVar12[10] == '\0') {
-                pcVar7 = (char *)thunk_FUN_005260b0(*(int *)(puVar12 + 5),puVar12[9],0);
+                /* ST_CALLSITE[004F99FC]: CALL 0x004036a2; direct=004036A2 thunk_FUN_005260b0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;/int;/undefined1;/int */
+                pcVar7 = thunk_FUN_005260b0(*(int *)(puVar12 + 5),puVar12[9],0);
                 Library::MSVCRT::_strncpy(&this_00->field_0265,pcVar7,_Count);
                 this_00->field_0285 = 1;
               }
@@ -223,6 +233,7 @@ LAB_004f9a8a:
       return;
     }
     g_currentExceptionFrame = local_54.previous;
+
     iVar9 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel.cpp",0x3b0,0,iVar3,"%s",
                                "CPanelTy::PlayBrief");
     if (iVar9 != 0) {

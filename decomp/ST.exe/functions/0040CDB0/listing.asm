@@ -1,4 +1,4 @@
-FUN_0040cdb0:
+STGroupBoatC::sub_0040CDB0:
 0040CDB0  55                        PUSH EBP
 0040CDB1  8B EC                     MOV EBP,ESP
 0040CDB3  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

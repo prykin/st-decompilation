@@ -1,7 +1,15 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 FUN_004d8b70(char param_1)
+/* [STMethodOwnerApplier] Structural method owner recovered as STAllPlayersC.
+   Evidence: this_call_owners=[STAllPlayersC]; agreed_this_calls=45; incoming_this_accesses=0;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=3; incoming_this_forward_calls=1;
+   entry_incoming_ecx_capture=true; ret_stack_matches_explicit_parameters=true;
+   direct_non_thunk_callers=0; incoming_ecx_receiver_callers=0; attributed_named_callers=29;
+   owner_evidence_coverage=adequate; unique_primary_physical_vtable=true;
+   callee_closed_hidden_ecx_receiver_transport */
+
+undefined4 __thiscall STAllPlayersC::sub_004D8B70(STAllPlayersC *this,char param_1)
 
 {
   byte bVar1;
@@ -21,7 +29,9 @@ undefined4 FUN_004d8b70(char param_1)
   }
   if ((uVar6 == DAT_0080874d) && (g_money_008016D4 != nullptr)) {
     if (g_packedRecords_A62x8[uVar6].field0_0x0 == '\x03') {
+
       uVar2 = thunk_FUN_004e41c0(uVar6);
+
       iVar3 = thunk_FUN_004e4180(uVar6);
       iVar2 = (int)(uVar2 * 0x14) / iVar3;
       if (0x14 < iVar2) {
@@ -32,6 +42,7 @@ undefined4 FUN_004d8b70(char param_1)
       iVar2 = 0;
       bVar9 = 1;
       uVar8 = g_packedRecords_A62x8[uVar6].field1951_0x99e;
+      /* ST_CALLSITE[004D8C0C]: CALL 0x004036a7; direct=004036A7 thunk_FUN_004e41c0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/MoneyTy; source view only; no Ghidra override */
       uVar5 = thunk_FUN_004e41c0(uVar6);
       /* ST_CALLSITE[004D8C18]: CALL 0x00401e83; direct=00401E83 MoneyTy::sub_0052BC30 */
       MoneyTy::sub_0052BC30(g_money_008016D4,uVar5,uVar7,uVar8,bVar1,bVar9,iVar2);

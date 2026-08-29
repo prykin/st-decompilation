@@ -10,14 +10,13 @@ undefined2 FUN_00416db0(short param_1,short param_2,undefined4 param_3,short par
   float10 fVar2;
   float local_30;
   float local_2c;
-  undefined4 local_28;
-  undefined2 local_24;
+  uint local_28;
+  ushort local_24;
   byte *local_1c;
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   puStack_c = &DAT_007904e0;
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;

@@ -22,7 +22,7 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
   uint uVar8;
   byte *_Source;
   char *pcVar11;
-  undefined1 local_2ec [516];
+  byte local_2ec [516];
   char local_e8 [64];
   char local_a8 [12];
   char local_9c [36];
@@ -40,9 +40,11 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
   local_8 = nullptr;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
+
   iVar6 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar5 = ReportDebugMessage("E:\\__titans\\ai\\ai_plr_d.cpp",0x156,0,iVar6,"%s",
                                "_CreateStgListByRoot");
     if (iVar5 != 0) {
@@ -74,7 +76,8 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
   pcVar11 = local_2ec + 1;
   memmove(pcVar11, pcVar3, uVar8); /* compiler REP MOVS byte copy */
   cMf32::ToBeg(param_1,FUN_006f2d10,local_2ec);
-  pcVar3 = (char *)cMf32::RecNameGetNext(param_1);
+
+  pcVar3 = STPointerBoundaryCast<char *>(cMf32::RecNameGetNext(param_1));
   while (pcVar3 != nullptr) {
     local_8 = (AnonShape_0067DC20_B265FC02 *)Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,pcVar3,0,1);
     uVar8 = *(uint *)&local_8[1].field_0x7e;
@@ -98,11 +101,13 @@ uint * __cdecl _CreateStgListByRoot(cMf32 *param_1,int param_2,char *param_3,uin
         Library::MSVCRT::_strncpy(local_78,PTR_s_OBJECTIVES_0079d718,0x1f);
         local_54 = (int)local_8->field_0019;
         local_58 = uVar8;
+
         Library::DKW::TBL::DArrayAppend(local_c,local_e8);
       }
       cMf32::RecMemFree(param_1,(uint *)&local_8);
     }
-    pcVar3 = (char *)cMf32::RecNameGetNext(param_1);
+
+    pcVar3 = STPointerBoundaryCast<char *>(cMf32::RecNameGetNext(param_1));
   }
   g_currentExceptionFrame = local_50.previous;
   return &local_c->flags;

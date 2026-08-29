@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_0060d070(AnonShape_0060D070_1487100A *param_1)
+undefined4 __fastcall FUN_0060d070(RecoveredRecordView_0060D070_8A22D3DD *param_1)
 
 {
   int iVar1;
@@ -26,6 +26,7 @@ undefined4 __fastcall FUN_0060d070(AnonShape_0060D070_1487100A *param_1)
           if (((param_1->field_022F == '\0') && (local_8 == 0)) &&
              (uVar3 = iVar6 - STField<int>(iVar1,0x4) / 2, uVar4 = (int)uVar3 >> 0x1f,
              (int)((uVar3 ^ uVar4) - uVar4) < STField<int>(iVar1,0x38))) {
+
             thunk_FUN_0060aef0(param_1);
             param_1->field_022F = 1;
           }
@@ -36,14 +37,15 @@ undefined4 __fastcall FUN_0060d070(AnonShape_0060D070_1487100A *param_1)
             iVar5 = iVar5 + -0x168;
           }
           iVar2 = STField<int>(iVar1,0x4);
-          thunk_FUN_0062cac0(*(AnonShape_0062CAC0_4BF74422 **)(iVar1 + 0x40),
+
+          thunk_FUN_0062cac0(*(RecoveredRecordView_0062CAC0_558776B8 **)(iVar1 + 0x40),
                              (STField<int>(iVar1,0x24) * iVar6) / iVar2 + STField<int>(iVar1,0x18),
                              (STField<int>(iVar1,0x28) * iVar6) / iVar2 + STField<int>(iVar1,0x1C),
                              (STField<int>(iVar1,0x2C) * iVar6) / iVar2 + STField<int>(iVar1,0x20),iVar5
                              ,STField<int>(iVar1,0x8),iVar6,local_24);
         }
         else {
-          thunk_FUN_0060d220((int)param_1);
+          thunk_FUN_0060d220((RecoveredRecordView_0060D220_EC588C54 *)param_1);
           *(undefined4 *)(iVar5 + param_1->field_0244) = 0;
         }
       }

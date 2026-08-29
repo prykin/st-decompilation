@@ -13,7 +13,8 @@ SndUnderAttMenegC * __cdecl CreateSndUnderAttMeneg(void)
 {
   SndUnderAttMenegC *this;
 
-  this = (SndUnderAttMenegC *)FUN_006b04d0(0x10e);
+
+  this = STPointerBoundaryCast<SndUnderAttMenegC *>(FUN_006b04d0(0x10e));
   if (this != nullptr) {
     sub_006E60E0(this);
     this->field_0000 = &VTable_0079CED8;

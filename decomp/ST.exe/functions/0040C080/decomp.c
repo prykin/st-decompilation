@@ -31,7 +31,7 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,DArrayTy *param_2)
   void *pvVar12;
   uint *puVar13;
   Global_sub_006C8EC0_param_3Enum aGStackY_f8 [9];
-  undefined4 uStackY_d4;
+  uint uStackY_d4;
   int local_b8;
   int local_ac;
   int local_a8;
@@ -66,8 +66,7 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,DArrayTy *param_2)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0xffffffff;
   puStack_c = &DAT_00790020;
   puStack_10 = &LAB_0072d964;
@@ -79,16 +78,19 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,DArrayTy *param_2)
     uStackY_d4 = 0x40c0c5;
     ExceptionList = &local_14;
     local_1c = &stack0xffffff34;
+    /* ST_CALLSITE[0040C0C0]: CALL 0x006aac70; direct=006AAC70 Library::DKW::LIB::MemAlloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override */
     puVar4 = Library::DKW::LIB::MemAlloc(4);
     *puVar4 = 0xfffffffc;
   }
   else {
     uStackY_d4 = 0x40c0dd;
     ExceptionList = &local_14;
+
     puVar4 = Library::DKW::LIB::MemAlloc(dVar8 * 4);
     if (puVar4 != nullptr) {
       uStackY_d4 = 0x40c0f8;
-      pSVar5 = thunk_FUN_00423e70(this,(ushort)param_1);
+      /* ST_CALLSITE[0040C0F3]: CALL 0x0040286f; direct=0040286F STGroupBoatC::sub_00423E70 */
+      pSVar5 = STGroupBoatC::sub_00423E70(this,(ushort)param_1);
       if (pSVar5 == nullptr) {
         puVar13 = puVar4;
         if (0 < (int)dVar8) {
@@ -113,6 +115,7 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,DArrayTy *param_2)
           do {
             *(STFishC ***)(&stack0xffffff30 + iVar3) = &local_90;
             aGStackY_f8[dVar8 * -3 + 9] = 0x40c171;
+
             DArrayGetElement(param_2,index,*(void **)(&stack0xffffff30 + iVar3));
             *(short **)(&stack0xffffff30 + iVar3) = local_78;
             aGStackY_f8[dVar8 * -3 + 9] = (Global_sub_006C8EC0_param_3Enum)local_4c;
@@ -209,6 +212,7 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,DArrayTy *param_2)
         local_84 = iVar11;
         *(int *)(&stack0xffffff30 + iVar3) = local_64 * local_68 * 2;
         aGStackY_f8[dVar8 * -3 + 9] = 0x40c329;
+
         local_54 = Library::DKW::LIB::MemAlloc(*(uint *)(&stack0xffffff30 + iVar3));
         local_8c = iVar9;
         while (local_8c < local_5c) {
@@ -252,6 +256,7 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,DArrayTy *param_2)
                     aGStackY_f8[dVar8 * -3 + 8] = iVar9;
                     aGStackY_f8[dVar8 * -3 + 7] = (Global_sub_006C8EC0_param_3Enum)pSVar5;
                     aGStackY_f8[dVar8 * -3 + 6] = 0x40c4bf;
+
                     iVar8 = thunk_FUN_00497920((RecoveredRecord_STBoatC_0040AE40 *)
                                                aGStackY_f8[dVar8 * -3 + 7],
                                                aGStackY_f8[dVar8 * -3 + 8],
@@ -313,6 +318,7 @@ LAB_0040c4d0:
         pvVar12 = local_54;
         aGStackY_f8[dVar8 * -3 + 1] = (Global_sub_006C8EC0_param_3Enum)local_54;
         aGStackY_f8[dVar8 * -3] = 0x40c669;
+
         iVar11 = FUN_006ab090(aGStackY_f8[dVar8 * -3 + 1],aGStackY_f8[dVar8 * -3 + 2],
                               aGStackY_f8[dVar8 * -3 + 3],aGStackY_f8[dVar8 * -3 + 4],
                               aGStackY_f8[dVar8 * -3 + 5],aGStackY_f8[dVar8 * -3 + 6],

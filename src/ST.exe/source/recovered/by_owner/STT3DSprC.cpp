@@ -138,7 +138,7 @@ int __thiscall st::fn_004ACE60(STT3DSprC *this,char param_1)
   iVar3 = (int)param_1;
   st::fn_006E9490(this->field_003C,(uint *)this->field_0018,iVar3,1);
   pAVar2 = this->field_0020;
-  puVar1 = (ushort *)(&pAVar2->field_0xe + iVar3 * 0x24);
+  puVar1 = reinterpret_cast<ushort *>((&pAVar2->field_0xe + iVar3 * 0x24));
   *puVar1 = *puVar1 & 0xffdf;
   return (int)(&pAVar2->field_0xe + iVar3 * 0x24);
 }
@@ -230,7 +230,7 @@ int __thiscall st::fn_004ACF90(STT3DSprC *this,char param_1)
   iVar3 = (int)param_1;
   st::fn_006EA6D0(this->field_003C,this->field_0018,iVar3,0);
   pAVar2 = this->field_0020;
-  puVar1 = (ushort *)(&pAVar2->field_0xe + iVar3 * 0x24);
+  puVar1 = reinterpret_cast<ushort *>((&pAVar2->field_0xe + iVar3 * 0x24));
   *puVar1 = *puVar1 & 0xffbf;
   return (int)(&pAVar2->field_0xe + iVar3 * 0x24);
 }
@@ -274,7 +274,7 @@ int __thiscall st::fn_004AD020(STT3DSprC *this,char param_1)
   iVar3 = (int)param_1;
   st::fn_006EA800(this->field_003C,this->field_0018,iVar3,0);
   pAVar2 = this->field_0020;
-  puVar1 = (ushort *)(&pAVar2->field_0xe + iVar3 * 0x24);
+  puVar1 = reinterpret_cast<ushort *>((&pAVar2->field_0xe + iVar3 * 0x24));
   *puVar1 = *puVar1 & 0xff7f;
   return (int)(&pAVar2->field_0xe + iVar3 * 0x24);
 }
@@ -321,3 +321,22 @@ void __thiscall st::fn_004AD3C0(STT3DSprC *this,float param_1,float param_2,floa
   return;
 }
 
+// 004AD430 STT3DSprC::sub_004AD430
+#line 4 "decomp/ST.exe/functions/004AD430/decomp.c"
+/* [STPrototypeApplier] Propagated parameter 0.
+   Evidence: 004C6210 -> 004AD430 @ 004C6372; /TLOBldMark+0x2c | 004C6440 -> 004AD430 @ 004C68AF;
+   /TLOBldMark+0x2c | 004CC900 -> 004AD430 @ 004CC938; /TLOBaseTy+0x603
+
+   [STMethodOwnerApplier] Structural method owner recovered as STT3DSprC.
+   Evidence: this_call_owners=[STT3DSprC]; agreed_this_calls=2; incoming_this_accesses=3;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=0; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate;
+   unique_primary_physical_vtable=true */
+
+void __thiscall st::fn_004AD430(STT3DSprC *this)
+
+{
+  st::fn_006EAB60(this->field_003C,this->field_0018);
+  this->field_0012 = 1;
+  return;
+}

@@ -96,17 +96,22 @@ LAB_004c7d8c:
           /* ST_CALLSITE[004C7E2D]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
           bVar5 = LookupRecordByte(*(char *)&this->field_0024);
           if ((bVar5 != 3) && (this->field_03A8 != 0)) {
+
             thunk_FUN_004d87b0(*(char *)&this->field_0024,this->field_03A8);
           }
           if (this->field_03AC != 0) {
+
             thunk_FUN_004d88f0(*(char *)&this->field_0024,this->field_03AC);
           }
           if (this->field_03B0 != 0) {
+
             thunk_FUN_004d8a30(*(char *)&this->field_0024,this->field_03B0);
           }
           if (this->field_03B4 != 0) {
+
             thunk_FUN_004e4380((int)this->field_0024,this->field_03B4);
           }
+
           thunk_FUN_004d78e0(*(char *)&this->field_0024);
         }
       }
@@ -118,6 +123,7 @@ LAB_004c7d8c:
     if (iVar6 != 0) {
       /* ST_CALLSITE[004C7EDA]: CALL 0x00405ace; direct=00405ACE TLOBaseTy::sub_004C7860 */
       local_EAX_538 = sub_004C7860(this,param_1,param_2,param_3,1,0);
+
       if ((local_EAX_538 == 0) || (local_EAX_559 = thunk_FUN_004c7c20(this), local_EAX_559 == 0)) {
         if (param_4 != 0) {
           /* ST_CALLSITE[004C8126]: CALL 0x00401b59; direct=00401B59 TLOBaseTy::sub_004C9370 */
@@ -129,6 +135,7 @@ LAB_004c7d8c:
             if (this->field_03D8 <= this->field_03D4 + 1) {
               iVar7 = this->field_03D8 + 0x14;
               this->field_03D8 = iVar7;
+              /* ST_CALLSITE[004C8179]: CALL 0x006acf50; direct=006ACF50 Library::DKW::LIB::MemRealloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_TLOBaseTy_0607; source view only; no Ghidra override */
               pAVar8 = Library::DKW::LIB::MemRealloc(this->field_0607,iVar7 * 0x27);
               this->field_0607 = pAVar8;
             }
@@ -160,6 +167,7 @@ LAB_004c7d8c:
           *(int *)&this->field_0x361 = param_1;
           *(uint *)&this->field_0x369 = param_2;
           this->field_038C = g_playSystem_00802A38->field_00E4;
+
           uVar11 = thunk_FUN_004c7730(this,param_1,param_2);
           this->field_0390 = uVar11;
           this->field_0394 = 0;
@@ -199,6 +207,7 @@ LAB_004c7d8c:
         case CASE_40:
         case CASE_49:
         case CASE_5C:
+
           thunk_FUN_004ce770(this,param_1);
           break;
         case CASE_35:
@@ -245,7 +254,8 @@ LAB_004c7d8c:
   }
 cf_common_exit_004C8287:
   if (this->field_0024 == (byte *)(uint)(byte)this->field_0010->field_112D) {
-    thunk_FUN_004d8b70((char)this->field_0024);
+    /* ST_CALLSITE[004C82A0]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
+    STAllPlayersC::sub_004D8B70(g_allPlayers_007FA174,(char)this->field_0024);
   }
   return 0;
 LAB_004c7d2b:

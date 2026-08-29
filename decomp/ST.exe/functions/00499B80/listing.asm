@@ -42,7 +42,7 @@ LAB_00499bf2:
 00499BFE  89 83 1A 02 00 00         MOV dword ptr [EBX + 0x21a],EAX
 00499C04  8D 34 C5 00 00 00 00      LEA ESI,[EAX*0x8 + 0x0]
 00499C0B  56                        PUSH ESI
-00499C0C  E8 5F 10 21 00            CALL 0x006aac70
+00499C0C  E8 5F 10 21 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 00499C11  8B D0                     MOV EDX,EAX
 00499C13  8B CE                     MOV ECX,ESI
 00499C15  89 17                     MOV dword ptr [EDI],EDX

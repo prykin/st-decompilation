@@ -200,7 +200,7 @@ LAB_00440c90:
 00440CA1  85 C9                     TEST ECX,ECX
 00440CA3  0F 84 49 02 00 00         JZ 0x00440ef2
 00440CA9  8B 01                     MOV EAX,dword ptr [ECX]
-00440CAB  FF 50 0C                  CALL dword ptr [EAX + 0xc]
+00440CAB  FF 50 0C                  CALL dword ptr [EAX + 0xc]  ; [STIndirectCallsiteApplier] exact slot 0xC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 00440CAE  83 F8 04                  CMP EAX,0x4
 00440CB1  0F 85 3B 02 00 00         JNZ 0x00440ef2
 00440CB7  8B 45 88                  MOV EAX,dword ptr [EBP + -0x78]
@@ -446,7 +446,7 @@ LAB_00440f4f:
 00440F68  51                        PUSH ECX
 00440F69  8B 4D C4                  MOV ECX,dword ptr [EBP + -0x3c]
 00440F6C  52                        PUSH EDX
-00440F6D  E8 48 19 FC FF            CALL 0x004028ba
+00440F6D  E8 48 19 FC FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override
 00440F72  8D 4D EE                  LEA ECX,[EBP + -0x12]
 00440F75  8D 55 F0                  LEA EDX,[EBP + -0x10]
 00440F78  51                        PUSH ECX
@@ -517,7 +517,7 @@ LAB_0044102a:
 00441040  50                        PUSH EAX
 00441041  51                        PUSH ECX
 00441042  8B CB                     MOV ECX,EBX
-00441044  E8 71 18 FC FF            CALL 0x004028ba
+00441044  E8 71 18 FC FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override
 00441049  8B F8                     MOV EDI,EAX
 0044104B  8D 55 EE                  LEA EDX,[EBP + -0x12]
 0044104E  8D 45 F0                  LEA EAX,[EBP + -0x10]
@@ -586,7 +586,7 @@ LAB_004410ed:
 00441106  52                        PUSH EDX
 00441107  50                        PUSH EAX
 00441108  8B CB                     MOV ECX,EBX
-0044110A  E8 AB 17 FC FF            CALL 0x004028ba
+0044110A  E8 AB 17 FC FF            CALL 0x004028ba  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override
 0044110F  8D 4D EE                  LEA ECX,[EBP + -0x12]
 00441112  8B F0                     MOV ESI,EAX
 00441114  8D 55 F0                  LEA EDX,[EBP + -0x10]

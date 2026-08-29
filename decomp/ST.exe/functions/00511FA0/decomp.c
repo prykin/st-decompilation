@@ -21,6 +21,7 @@ undefined4 __thiscall HelpPanelTy::SetPanel(HelpPanelTy *this,char param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (errorCode == 0) {
@@ -89,6 +90,7 @@ undefined4 __thiscall HelpPanelTy::SetPanel(HelpPanelTy *this,char param_1)
     return 1;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar2 = ReportDebugMessage("E:\\__titans\\Andrey\\helppan.cpp",0x12e,0,errorCode,
                              "%s","HelpPanelTy::SetPanel");
   if (iVar2 != 0) {

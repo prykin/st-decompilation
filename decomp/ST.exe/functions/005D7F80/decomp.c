@@ -17,6 +17,7 @@ void __thiscall SIDTy::DoneSID(SIDTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pSVar2 = local_8;
   if (errorCode == 0) {
@@ -30,9 +31,13 @@ void __thiscall SIDTy::DoneSID(SIDTy *this)
       FUN_006b5570(pSVar2->field_1CCC);
     }
     pSVar2->field_1CCC = nullptr;
+
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->array_00BC[0xc].field_01E0);
+
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_1B01);
+
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_1B92);
+
     SpriteClassTy::CloseSprite((SpriteClassTy *)&pSVar2->field_1C23);
     if (pSVar2->field_1CB4 != 0xffffffff) {
       FUN_006b3bb0((int *)g_ddxContext_008075A8,pSVar2->field_1CB4);
@@ -51,12 +56,14 @@ void __thiscall SIDTy::DoneSID(SIDTy *this)
       FreeAndNull(&pSVar2->field_1CC0);
     }
     if (pSVar2->field_004D != 0) {
+
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pSVar2->field_0x3d);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Start\\sid_obj.cpp",0x62,0,errorCode,"%s"
                              ,"SIDTy::DoneSID");
   if (iVar3 != 0) {

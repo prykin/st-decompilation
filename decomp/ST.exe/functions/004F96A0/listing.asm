@@ -215,7 +215,8 @@ LAB_004f98f4:
 004F9907  6A 00                     PUSH 0x0
 004F9909  51                        PUSH ECX
 004F990A  8B 8E D4 01 00 00         MOV ECX,dword ptr [ESI + 0x1d4]
-004F9910  E8 8B 72 21 00            CALL 0x00710ba0
+CPanelTy::PlayBrief::override::prt_4f9910_b177932a:
+004F9910  E8 8B 72 21 00            CALL 0x00710ba0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/ccFntTy;/int;/uint;/int;/int;/int;/int;/int
 004F9915  8B D8                     MOV EBX,EAX
 004F9917  85 DB                     TEST EBX,EBX
 004F9919  74 4B                     JZ 0x004f9966
@@ -267,7 +268,8 @@ LAB_004f998d:
 004F99A0  6A 01                     PUSH 0x1
 004F99A2  6A 00                     PUSH 0x0
 004F99A4  6A 00                     PUSH 0x0
-004F99A6  E8 F7 9C F0 FF            CALL 0x004036a2
+CPanelTy::PlayBrief::override::prt_4f99a6_3ecbffe8:
+004F99A6  E8 F7 9C F0 FF            CALL 0x004036a2  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;/int;/undefined1;/int
 004F99AB  8B 15 90 67 80 00         MOV EDX,dword ptr [0x00806790]
 004F99B1  83 C4 0C                  ADD ESP,0xc
 004F99B4  50                        PUSH EAX
@@ -295,7 +297,8 @@ LAB_004f99f2:
 004F99F8  6A 00                     PUSH 0x0
 004F99FA  51                        PUSH ECX
 004F99FB  52                        PUSH EDX
-004F99FC  E8 A1 9C F0 FF            CALL 0x004036a2
+CPanelTy::PlayBrief::override::prt_4f99fc_3ecbffe8:
+004F99FC  E8 A1 9C F0 FF            CALL 0x004036a2  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;/int;/undefined1;/int
 004F9A01  83 C4 0C                  ADD ESP,0xc
 004F9A04  50                        PUSH EAX
 004F9A05  8D 86 65 02 00 00         LEA EAX,[ESI + 0x265]
@@ -342,7 +345,8 @@ LAB_004f9a6c:
 004F9A78  6A 00                     PUSH 0x0
 004F9A7A  51                        PUSH ECX
 004F9A7B  52                        PUSH EDX
-004F9A7C  E8 21 9C F0 FF            CALL 0x004036a2
+CPanelTy::PlayBrief::override::prt_4f9a7c_3ecbffe8:
+004F9A7C  E8 21 9C F0 FF            CALL 0x004036a2  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;/int;/undefined1;/int
 004F9A81  83 C4 0C                  ADD ESP,0xc
 004F9A84  50                        PUSH EAX
 004F9A85  A1 90 67 80 00            MOV EAX,[0x00806790]
@@ -360,7 +364,8 @@ LAB_004f9a95:
 004F9AA0  6A 00                     PUSH 0x0
 004F9AA2  6A 00                     PUSH 0x0
 004F9AA4  6A 00                     PUSH 0x0
-004F9AA6  E8 F7 9B F0 FF            CALL 0x004036a2
+CPanelTy::PlayBrief::override::prt_4f9aa6_3ecbffe8:
+004F9AA6  E8 F7 9B F0 FF            CALL 0x004036a2  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/char; signature=__cdecl;pointer:/char;/int;/undefined1;/int
 004F9AAB  8B 0D 90 67 80 00         MOV ECX,dword ptr [0x00806790]
 004F9AB1  83 C4 0C                  ADD ESP,0xc
 004F9AB4  50                        PUSH EAX

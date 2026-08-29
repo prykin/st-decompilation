@@ -50,16 +50,16 @@ LAB_00419e84:
 00419EAD  89 50 08                  MOV dword ptr [EAX + 0x8],EDX
 00419EB0  89 50 0C                  MOV dword ptr [EAX + 0xc],EDX
 00419EB3  89 50 10                  MOV dword ptr [EAX + 0x10],EDX
-00419EB6  E8 B5 0D 29 00            CALL 0x006aac70
+00419EB6  E8 B5 0D 29 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_0195; source view only; no Ghidra override
 00419EBB  6A 13                     PUSH 0x13
 00419EBD  89 83 95 01 00 00         MOV dword ptr [EBX + 0x195],EAX
-00419EC3  E8 A8 0D 29 00            CALL 0x006aac70
+00419EC3  E8 A8 0D 29 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_0199; source view only; no Ghidra override
 00419EC8  6A 0B                     PUSH 0xb
 00419ECA  89 83 99 01 00 00         MOV dword ptr [EBX + 0x199],EAX
-00419ED0  E8 9B 0D 29 00            CALL 0x006aac70
+00419ED0  E8 9B 0D 29 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_01AD; source view only; no Ghidra override
 00419ED5  6A 0B                     PUSH 0xb
 00419ED7  89 83 AD 01 00 00         MOV dword ptr [EBX + 0x1ad],EAX
-00419EDD  E8 8E 0D 29 00            CALL 0x006aac70
+00419EDD  E8 8E 0D 29 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_01B1; source view only; no Ghidra override
 00419EE2  68 40 02 00 00            PUSH 0x240
 00419EE7  89 83 B1 01 00 00         MOV dword ptr [EBX + 0x1b1],EAX
 00419EED  E8 7E 0D 29 00            CALL 0x006aac70
@@ -74,16 +74,16 @@ LAB_00419f0d:
 00419F18  EB 52                     JMP 0x00419f6c
 LAB_00419f1a:
 00419F1A  6A 0B                     PUSH 0xb
-00419F1C  E8 4F 0D 29 00            CALL 0x006aac70
+00419F1C  E8 4F 0D 29 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_01AD; source view only; no Ghidra override
 00419F21  6A 0B                     PUSH 0xb
 00419F23  89 83 AD 01 00 00         MOV dword ptr [EBX + 0x1ad],EAX
-00419F29  E8 42 0D 29 00            CALL 0x006aac70
+00419F29  E8 42 0D 29 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_01B1; source view only; no Ghidra override
 00419F2E  6A 06                     PUSH 0x6
 00419F30  89 83 B1 01 00 00         MOV dword ptr [EBX + 0x1b1],EAX
-00419F36  E8 35 0D 29 00            CALL 0x006aac70
+00419F36  E8 35 0D 29 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 00419F3B  6A 06                     PUSH 0x6
 00419F3D  89 83 C5 01 00 00         MOV dword ptr [EBX + 0x1c5],EAX
-00419F43  E8 28 0D 29 00            CALL 0x006aac70
+00419F43  E8 28 0D 29 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 00419F48  89 83 C9 01 00 00         MOV dword ptr [EBX + 0x1c9],EAX
 00419F4E  E9 02 01 00 00            JMP 0x0041a055
 LAB_00419f53:
@@ -147,10 +147,10 @@ LAB_00419f97:
 0041A030  E8 3B 0C 29 00            CALL 0x006aac70
 0041A035  6A 0B                     PUSH 0xb
 0041A037  89 83 A9 01 00 00         MOV dword ptr [EBX + 0x1a9],EAX
-0041A03D  E8 2E 0C 29 00            CALL 0x006aac70
+0041A03D  E8 2E 0C 29 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_01B5; source view only; no Ghidra override
 0041A042  6A 0B                     PUSH 0xb
 0041A044  89 83 B5 01 00 00         MOV dword ptr [EBX + 0x1b5],EAX
-0041A04A  E8 21 0C 29 00            CALL 0x006aac70
+0041A04A  E8 21 0C 29 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_STGameObjC_01B9; source view only; no Ghidra override
 0041A04F  89 83 B9 01 00 00         MOV dword ptr [EBX + 0x1b9],EAX
 LAB_0041a055:
 0041A055  8B 8B 21 01 00 00         MOV ECX,dword ptr [EBX + 0x121]

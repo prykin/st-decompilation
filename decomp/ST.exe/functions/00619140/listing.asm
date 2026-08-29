@@ -1,6 +1,7 @@
 CreateSTJumpMine:
 00619140  68 51 01 00 00            PUSH 0x151
-00619145  E8 86 73 09 00            CALL 0x006b04d0
+CreateSTJumpMine::override::prt_619145_6a394155:
+00619145  E8 86 73 09 00            CALL 0x006b04d0  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STJumpMineC; signature=__stdcall;pointer:/STJumpMineC;/uint
 0061914A  85 C0                     TEST EAX,EAX
 0061914C  74 07                     JZ 0x00619155
 0061914E  8B C8                     MOV ECX,EAX

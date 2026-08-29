@@ -12,27 +12,27 @@ SndUnderAttMenegC::sub_006208B0
           undefined4 param_4)
 
 {
-  SndUnderAttMenegC_field_00DDDArray *pSVar1;
-  uint uVar2;
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-  undefined4 local_c;
-  undefined4 local_8;
-
+  DArrayTy *pSVar1;
+  uint uVar1;
+  uint local_18;
+  uint local_14;
+  uint local_10;
+  uint local_c;
+  uint local_8;
   local_14 = param_1;
   local_18 = param_1;
   local_10 = param_2;
   local_c = param_3;
   local_8 = param_4;
   if (this->field_00DD == nullptr) {
-    pSVar1 = (SndUnderAttMenegC_field_00DDDArray *)
-             Library::DKW::TBL::DArrayCreate(nullptr,10,0x14,10);
-    this->field_00DD = pSVar1;
+    /* ST_CALLSITE[006208EA]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/SndUnderAttMenegC_field_00DDDArray; source view only; no Ghidra override */
+    pSVar1 = Library::DKW::TBL::DArrayCreate(nullptr,10,0x14,10);
+    this->field_00DD = (SndUnderAttMenegC_field_00DDDArray *)pSVar1;
   }
   if (this->field_00DD != nullptr) {
-    uVar2 = Library::DKW::TBL::DArrayAppend((DArrayTy *)this->field_00DD,&local_18);
-    return uVar2;
+
+    uVar1 = Library::DKW::TBL::DArrayAppend((DArrayTy *)this->field_00DD,&local_18);
+    return uVar1;
   }
   return 0xffffffff;
 }

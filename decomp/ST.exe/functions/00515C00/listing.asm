@@ -39,7 +39,7 @@ HelpPanelTy::DrawDescription:
 00515C74  6A FF                     PUSH -0x1
 00515C76  52                        PUSH EDX
 00515C77  68 F5 55 00 00            PUSH 0x55f5
-00515C7C  E8 BF A4 19 00            CALL 0x006b0140
+00515C7C  E8 BF A4 19 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 00515C81  8B 8B E0 01 00 00         MOV ECX,dword ptr [EBX + 0x1e0]
 00515C87  50                        PUSH EAX
 00515C88  E8 33 BD 1F 00            CALL 0x007119c0

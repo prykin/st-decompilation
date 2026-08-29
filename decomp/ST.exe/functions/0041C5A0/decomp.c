@@ -21,16 +21,14 @@ void __thiscall sub_0041C5A0(void *this)
                  STField<undefined *>(this,0x24),STField<int>(this,0x105),
                  STField<int>(this,0x18),0xffffffff);
     }
-    /* ST_CALLSITE[0041C618]: CALL dword ptr [EAX + 0x2c] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    uVar1 = (**(code **)(*(int *)this + 0x2c))();
+    /* ST_CALLSITE[0041C618]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+    uVar1 = STStructuralVirtualCall<undefined4>(this, 0x2C);
     switch(uVar1) {
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     case 5:
     case 0x11:
     case 0x21:
-      /* ST_CALLSITE[0041C661]: CALL dword ptr [EDX + 0x98] */
-      (**(code **)(*(int *)this + 0x98))();
+      /* ST_CALLSITE[0041C661]: CALL dword ptr [EDX + 0x98]; [STIndirectCallsiteApplier] exact slot 0x98; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
+      STStructuralVirtualCall<undefined4>(this, 0x98);
       break;
     case 0xb:
     case 0x23:

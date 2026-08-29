@@ -47,7 +47,7 @@ LAB_005f5d6f:
 005F5D8C  52                        PUSH EDX
 005F5D8D  8B 56 38                  MOV EDX,dword ptr [ESI + 0x38]
 005F5D90  52                        PUSH EDX
-005F5D91  FF 90 E0 00 00 00         CALL dword ptr [EAX + 0xe0]
+005F5D91  FF 90 E0 00 00 00         CALL dword ptr [EAX + 0xe0]  ; [STIndirectCallsiteApplier] exact slot 0xE0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 005F5D97  85 C0                     TEST EAX,EAX
 005F5D99  75 2F                     JNZ 0x005f5dca
 005F5D9B  0F BF 45 0A               MOVSX EAX,word ptr [EBP + 0xa]

@@ -1,4 +1,4 @@
-FUN_00490e90:
+STBoatC::vfunc_74:
 00490E90  55                        PUSH EBP
 00490E91  8B EC                     MOV EBP,ESP
 00490E93  56                        PUSH ESI

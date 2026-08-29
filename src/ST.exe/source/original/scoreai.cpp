@@ -10,11 +10,24 @@
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\scoreai.cpp
    Diagnostic line evidence: 2390 | 2408 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:3: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=2,
+   pointer_dereferences=6, scalar_uses=0; sites=0055F525 dereference: MOV dword ptr [EAX + -0x4],EDX
+   | 0055F528 dereference: MOV dword ptr [EAX],EDX | 0055F52A dereference: MOV dword ptr [EAX +
+   0x4],ECX | 0055F52D dereference: MOV dword ptr [EAX + 0x8],ECX | 0055F530 dereference: MOV dword
+   ptr [EAX + 0xc],ECX | 0055F739 dereference: MOV EAX,dword ptr [EAX]
+   [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:5: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=2,
+   pointer_dereferences=7, scalar_uses=0; sites=005600E1 dereference: MOV EBX,dword ptr [EAX + 0x4]
+   | 005600F8 dereference: MOV ECX,dword ptr [EAX + 0x8] | 0056011B dereference: MOV ECX,dword ptr
+   [EAX + 0xc] | 0056012B dereference: MOV ECX,dword ptr [EAX + 0x10] | 0056014A dereference: MOV
+   EDX,dword ptr [EAX + 0x10] | 00560159 dereference: MOV EDX,dword ptr [EAX + 0x10] | 00560171
+   dereference: MOV EAX,dword ptr [EAX] */
 
 void st::fn_0055F410
-               (uint param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7
-               ,int param_8,int param_9,uint param_10)
+               (uint param_1,int param_2,int param_3,void *param_4,int param_5,void *param_6,
+               int param_7,int param_8,int param_9,uint param_10)
 
 {
   alignas(4) byte st_stack_frame[540];
@@ -58,16 +71,16 @@ void st::fn_0055F410
   RuntimeRecord_008032F4_0014 aRStackY_188c [99];
   int iStackY_10c0;
   AnonPointee_TLOBaseTy_0607 aAStackY_10bc [16];
-  undefined4 uStackY_f30;
+  uint uStackY_f30;
   undefined4 auStackY_f2c [15];
-  undefined4 uStackY_ef0;
+  uint uStackY_ef0;
   undefined4 auStackY_eec [16];
   undefined4 auStackY_eac [15];
-  undefined4 uStackY_e70;
+  uint uStackY_e70;
   int aiStackY_e6c [639];
-  undefined4 uStackY_470;
+  uint uStackY_470;
   byte abStackY_46c [608];
-  undefined4 uStackY_20c;
+  uint uStackY_20c;
   InternalExceptionFrame local_1b8;
   int local_170;
   STWorldCell *local_168;
@@ -118,7 +131,7 @@ void st::fn_0055F410
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
+  uint local_8;
   RuntimeRecord_008032F8_0014 *temp_3fb0403402;
   RuntimeRecord_008032F4_0014 *temp_203fd2ac8a80;
 
@@ -129,7 +142,7 @@ void st::fn_0055F410
   local_1c = (st_stack_frame + 44);
   local_6c[0] = nullptr;
   local_70 = 0;
-  if ((param_4 != 0) && (0 < param_5)) {
+  if ((param_4 != nullptr) && (0 < param_5)) {
     _DAT_00803318 = 0;
     _DAT_0080331c = 3;
     DAT_00803320 = 2;
@@ -158,7 +171,7 @@ void st::fn_0055F410
     g_runtimeRecords_00803300 = nullptr;
     DAT_00803314 = 0;
     DAT_0080337c = 0;
-    puVar9 = (undefined4 *)(param_4 + 8);
+    puVar9 = (undefined4 *)((int)param_4 + 8);
     iVar18 = param_5;
     ExceptionList = &local_14;
     do {
@@ -194,12 +207,15 @@ void st::fn_0055F410
     DAT_00803308 = param_3 - DAT_008033c0;
     local_1b8.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_1b8;
+
     iVar15 = st::fn_0072D7F0(local_1b8.jumpBuffer,2);
     local_1c = (st_stack_frame + 44);
     if (iVar15 == 0) {
       local_1c = (st_stack_frame + 44);
+
       local_60[0] = st::fn_006AAC10(DAT_008033ac * 2);
-      PTR_00803380 = st::pointer_boundary_cast<undefined1 *>(st::fn_006AAC10(DAT_008033ac * 2));
+
+      PTR_00803380 = (undefined1 *)st::fn_006AAC10(DAT_008033ac * 2);
       local_a4 = abStackY_46c;
       uStackY_470 = 0x55f648;
       local_84 = aiStackY_e6c;
@@ -208,7 +224,7 @@ void st::fn_0055F410
       uStackY_ef0 = 0x55f671;
       PTR_008033b0 = auStackY_f2c;
       uStackY_f30 = 0x55f685;
-      local_164 = (int *)aAStackY_10bc;
+      local_164 = reinterpret_cast<int *>(aAStackY_10bc);
       iStackY_10c0 = 0x55f6a4;
       iVar18 = param_5 * -4;
       local_80 = (undefined4 *)((int)aAStackY_10bc + iVar18);
@@ -216,7 +232,7 @@ void st::fn_0055F410
       g_runtimeRecords_008032F8 = (RuntimeRecord_008032F8_0014 *)((int)aRStackY_205c + iVar18);
       g_runtimeRecords_00803300 = (RuntimeRecord_00803300_0014 *)((int)aRStackY_205c + iVar18);
       (&uStackY_2060)[-param_5] = 0x55f6d5;
-      g_runtimeRecords_00803310 = (RuntimeRecord_00803310_0014 *)(st_stack_frame + 44);
+      g_runtimeRecords_00803310 = reinterpret_cast<RuntimeRecord_00803310_0014 *>((st_stack_frame + 44));
       local_1c = (st_stack_frame + 44);
       local_8 = 0xffffffff;
       memset(auStackY_eec, 0, 0x80); /* compiler bulk-zero initialization */
@@ -229,11 +245,11 @@ void st::fn_0055F410
       pRVar6 = (RuntimeRecord_008032F8_0014 *)((int)aRStackY_205c + iVar18);
       puVar9 = auStackY_eec;
       pRVar25 = (RuntimeRecord_00803300_0014 *)((int)aRStackY_205c + iVar18);
-      pRVar7 = (RuntimeRecord_00803310_0014 *)(st_stack_frame + 44);
+      pRVar7 = reinterpret_cast<RuntimeRecord_00803310_0014 *>((st_stack_frame + 44));
       puVar8 = auStackY_f2c;
       if (0 < param_5) {
         do {
-          piVar16 = (int *)(param_4 + local_78 * 0x18);
+          piVar16 = (int *)((int)param_4 + local_78 * 0x18);
           iVar13 = *piVar16;
           if (0 < iVar13) {
             iVar19 = 0;
@@ -244,8 +260,10 @@ void st::fn_0055F410
               } while (iVar19 < (int)uVar23);
             }
             if (iVar19 < (int)uVar23) {
+
               st::fn_0072DA70
-                        ((undefined4 *)((int)aAStackY_10bc + iVar19 * 4 + iVar18 + 4),
+                        ((RecoveredRecord_006BFE70_3123BCE8 *)
+                         ((int)aAStackY_10bc + iVar19 * 4 + iVar18 + 4),
                          (AnonPointee_TLOBaseTy_0607 *)((int)aAStackY_10bc + iVar19 * 4 + iVar18),
                          (iVar19 * 0x3fffffff + uVar23) * 4);
             }
@@ -268,7 +286,7 @@ void st::fn_0055F410
       iVar18 = -1;
       iVar13 = -1;
       local_98 = -1;
-      local_48 = (uint)(*(int *)local_80[uVar23 - 1] < 0x15);
+      local_48 = st::storage_bit_cast<uint>(static_cast<uint32_t>(*(int *)local_80[uVar23 - 1] < 0x15));
       for (iVar19 = uVar23 - 2; -1 < iVar19; iVar19 = iVar19 + -1) {
         iVar21 = *(int *)local_80[iVar19];
         if ((10 < iVar21) &&
@@ -547,9 +565,9 @@ LAB_0055fc71:
           piVar16 = (int *)(param_8 + local_78 * 0x18);
           iVar13 = *piVar16;
           if (0 < iVar13) {
-            local_88 = st::machine_word_boundary_cast<int>(piVar16[1] - DAT_008033bc);
+            local_88 = piVar16[1] - DAT_008033bc;
             if ((-1 < local_88) && (local_88 < iVar18)) {
-              iVar19 = st::machine_word_boundary_cast<int>(piVar16[2] - DAT_008033c0);
+              iVar19 = piVar16[2] - DAT_008033c0;
               local_c0 = iVar19;
               if ((-1 < iVar19) && (iVar19 < DAT_008033a8)) {
                 iVar18 = piVar16[3];
@@ -572,15 +590,15 @@ LAB_0055fc71:
                   local_b0 = 0;
                   if (0 < local_d0_mg1[4]) {
                     do {
-                      iVar13 = st::machine_word_boundary_cast<int>(local_d0_mg1[3] + iVar19 + local_b0);
+                      iVar13 = local_d0_mg1[3] + iVar19 + local_b0;
                       if ((-1 < iVar13) && (iVar13 < DAT_008033a8)) {
-                        local_ac = st::machine_word_boundary_cast<int>(local_d0_mg1[local_b0 * 2 + 6] + local_88);
-                        for (iVar13 = st::machine_word_boundary_cast<int>(local_d0_mg1[local_b0 * 2 + 5] + local_88); iVar13 <= local_ac;
+                        local_ac = local_d0_mg1[local_b0 * 2 + 6] + local_88;
+                        for (iVar13 = local_d0_mg1[local_b0 * 2 + 5] + local_88; iVar13 <= local_ac;
                             iVar13 = iVar13 + 1) {
                           if (((-1 < iVar13) && (iVar13 < DAT_008033a4)) &&
                              (iVar18 = iVar18 + local_144, 0x10000 < iVar18)) {
                             bVar2 = puVar24[iVar13 * 2];
-                            if ((int)((uint)(bVar2 >> 4) + (iVar18 >> 0x10)) < 0xf) {
+                            if (st::storage_bit_cast<int>(static_cast<uint32_t>((uint)(bVar2 >> 4) + (iVar18 >> 0x10))) < 0xf) {
                               puVar24[iVar13 * 2] = (char)((uint)iVar18 >> 0x10) * '\x10' + bVar2;
                             }
                             else {
@@ -605,16 +623,16 @@ LAB_0055fc71:
       }
       iVar13 = 0;
       g_runtimeRecordCount_0080338C = 0;
-      if ((param_6 != 0) && (0 < param_7)) {
+      if ((param_6 != nullptr) && (0 < param_7)) {
         iVar19 = (*(int *)local_80[uVar23 - 1] * 0x32) / DAT_0080330c;
         local_7c = iVar19;
         local_78 = 0;
         if (0 < param_7) {
           do {
-            piVar16 = (int *)(param_6 + local_78 * 0x18);
-            iVar21 = st::machine_word_boundary_cast<int>(piVar16[1] - DAT_008033bc);
+            piVar16 = (int *)((int)param_6 + local_78 * 0x18);
+            iVar21 = piVar16[1] - DAT_008033bc;
             if ((-1 < iVar21) && (iVar21 < iVar18)) {
-              iVar10 = st::machine_word_boundary_cast<int>(piVar16[2] - DAT_008033c0);
+              iVar10 = piVar16[2] - DAT_008033c0;
               local_b0 = iVar10;
               if ((-1 < iVar10) && (iVar10 < DAT_008033a8)) {
                 iVar14 = piVar16[3];
@@ -671,6 +689,7 @@ LAB_0056016e:
       if (0 < iVar13) {
         iVar18 = (iVar19 + iVar13 / 2) / iVar13;
         iVar21 = (local_e4 + iVar13 / 2) / iVar13;
+
         local_EAX_3726 = st::fn_006ACF90(iVar18,iVar21,DAT_00803304,DAT_00803308);
         if (5 < local_EAX_3726) {
           iVar18 = ((local_EAX_3726 + -5) * DAT_00803304 + iVar18 * 5) / local_EAX_3726;
@@ -686,6 +705,7 @@ LAB_0056016e:
         piVar16 = piVar16 + 1;
       }
       for (; local_84 = piVar4, iVar13 < 0xd; iVar13 = iVar13 + 1) {
+
         local_28_mg1 = st::fn_0055EE70(pbVar5,iVar13,1);
         iVar18 = 0;
         if (0 < local_28_mg1) {
@@ -695,7 +715,7 @@ LAB_0056016e:
             if ((((-1 < iVar21) && (iVar21 < DAT_008033a4)) && (-1 < iVar19)) &&
                ((iVar19 < DAT_008033a8 &&
                 ((PTR_00803380[(iVar19 * DAT_008033a4 + iVar21) * 2] & 0xf0) != 0)))) {
-              local_13c[iVar13] = st::machine_word_boundary_cast<int>(local_13c[iVar13] + 1);
+              local_13c[iVar13] = local_13c[iVar13] + 1;
             }
             iVar18 = iVar18 + 1;
           } while (iVar18 < local_28_mg1);
@@ -720,12 +740,13 @@ LAB_0056016e:
       }
       *piVar4 = DAT_00803304;
       piVar4[1] = DAT_00803308;
-      PTR_008033b4 = (undefined2 *)st::fn_00561670((int)local_60[0],DAT_008033a4,DAT_008033a8,piVar4,1);
+
+      PTR_008033b4 = STPointerBoundaryCast<undefined2 *>(st::fn_00561670((int)local_60[0],DAT_008033a4,DAT_008033a8,piVar4,1));
       st::fn_006AB060(local_60);
       st::fn_00402441(pbVar5);
       iVar18 = 0;
       do {
-        iVar13 = (int)(iVar18 * 0x168 + (iVar18 * 0x168 >> 0x1f & 0xfU)) >> 4;
+        iVar13 = st::storage_bit_cast<int>(static_cast<uint32_t>(iVar18 * 0x168 + (iVar18 * 0x168 >> 0x1f & 0xfU))) >> 4;
         local_EAX_4178 = st::fn_00561240(DAT_008032f0,DAT_008032ec,iVar13);
         PTR_008032fc[iVar18] = st::machine_word_boundary_cast<undefined4>(local_EAX_4178);
         piVar10 = st::fn_00561240(DAT_00803374,DAT_00803378,iVar13);
@@ -737,6 +758,7 @@ LAB_0056016e:
         piVar16 = local_164;
       } while (iVar18 < 0x10);
       for (; local_164 = piVar16, local_8c = iVar13, iVar13 < 0x14; iVar13 = iVar13 + 2) {
+
         local_28_mg1 = st::fn_0055EE70(pbVar5,iVar13,1);
         iVar19 = DAT_00803384 - DAT_0080339c;
         iVar18 = 0x14 - DAT_00803384;
@@ -770,6 +792,7 @@ LAB_0056016e:
                   if (pRVar7->field_0010 <= DAT_008032ec) {
                     iVar19 = DAT_008032ec;
                   }
+
                   iVar17 = st::fn_006ACF90(pRVar7->field_0000,pRVar7->field_0004,local_94,iVar18);
                   if (iVar17 < iVar19 / 2) {
                     local_148 = 1;
@@ -780,10 +803,12 @@ LAB_0056016e:
               }
               if (local_148 == 0) {
                 iVar13 = 0x10;
+
                 uVar12 = st::fn_006DB910(DAT_00803304,DAT_00803308,local_94,iVar18);
-                local_74 = (int *)st::fn_006DB990(uVar12,iVar13);
-                iVar13 = (int)local_74 - 3;
-                if (iVar13 <= (int)((int)local_74 + 3U)) {
+
+                local_74 = STPointerBoundaryCast<int *>(st::fn_006DB990(uVar12,iVar13));
+                iVar13 = (int)local_74 + -3;
+                if (iVar13 <= (int)local_74 + 3) {
                   do {
                     if (iVar13 < 0) {
                       iVar19 = iVar13 + 0x10;
@@ -794,13 +819,16 @@ LAB_0056016e:
                         iVar19 = iVar13;
                       }
                     }
+
                     iVar20 = st::fn_00561DC0(local_94,iVar18,iVar19);
+
                     st::fn_005623C0(local_94,iVar18,iVar20,local_74,DAT_0080330c);
                     if (-1 < local_98) {
+
                       st::fn_005623C0(local_94,iVar18,iVar20,local_74,DAT_008032e8);
                     }
                     iVar13 = iVar13 + 3;
-                  } while (iVar13 <= (int)((int)local_74 + 3U));
+                  } while (iVar13 <= (int)local_74 + 3);
                 }
               }
             }
@@ -839,12 +867,12 @@ LAB_0056016e:
             iVar13 = iVar13 + 1;
           } while (iVar13 < DAT_00803314);
         }
-        iVar18 = (int)(iVar18 * 0xf + (iVar18 * 0xf >> 0x1f & 0xfU)) >> 4;
+        iVar18 = st::storage_bit_cast<int>(static_cast<uint32_t>(iVar18 * 0xf + (iVar18 * 0xf >> 0x1f & 0xfU))) >> 4;
         iVar13 = 0;
         if (0 < DAT_0080337c) {
           do {
-            g_runtimeRecords_008032F8[iVar13].field_000C =st::machine_word_boundary_cast<int>(
-                 g_runtimeRecords_008032F8[iVar13].field_000C - iVar18);
+            g_runtimeRecords_008032F8[iVar13].field_000C =
+                 g_runtimeRecords_008032F8[iVar13].field_000C - iVar18;
             piVar16[iVar13] = g_runtimeRecords_008032F8[iVar13].field_000C;
             iVar13 = iVar13 + 1;
           } while (iVar13 < DAT_0080337c);
@@ -852,8 +880,8 @@ LAB_0056016e:
         iVar13 = 0;
         if (0 < DAT_00803314) {
           do {
-            g_runtimeRecords_008032F4[iVar13].field_000C =st::machine_word_boundary_cast<int>(
-                 g_runtimeRecords_008032F4[iVar13].field_000C - iVar18);
+            g_runtimeRecords_008032F4[iVar13].field_000C =
+                 g_runtimeRecords_008032F4[iVar13].field_000C - iVar18;
             piVar16[DAT_0080337c + iVar13] = g_runtimeRecords_008032F4[iVar13].field_000C;
             iVar13 = iVar13 + 1;
           } while (iVar13 < DAT_00803314);
@@ -862,8 +890,8 @@ LAB_0056016e:
         for (uVar15 = DAT_00803314 * 5 & 0x3fffffff; uVar15 != 0; uVar15 = uVar15 - 1) {
           pRVar25->field_0000 = g_runtimeRecords_008032F4->field_0000;
           g_runtimeRecords_008032F4 =
-               (RuntimeRecord_008032F4_0014 *)&g_runtimeRecords_008032F4->field_0004;
-          pRVar25 = (RuntimeRecord_00803300_0014 *)&pRVar25->field_0004;
+               reinterpret_cast<RuntimeRecord_008032F4_0014 *>(&g_runtimeRecords_008032F4->field_0004);
+          pRVar25 = reinterpret_cast<RuntimeRecord_00803300_0014 *>(&pRVar25->field_0004);
         }
         for (iVar18 = 0; iVar18 != 0; iVar18 = iVar18 + -1) {
           *(char *)&pRVar25->field_0000 = (char)g_runtimeRecords_008032F4->field_0000;
@@ -872,21 +900,21 @@ LAB_0056016e:
           pRVar25 = (RuntimeRecord_00803300_0014 *)((int)&pRVar25->field_0000 + 1);
         }
         g_runtimeRecords_008032F4 =
-             (RuntimeRecord_008032F4_0014 *)(g_runtimeRecords_00803300 + DAT_0080337c);
+             reinterpret_cast<RuntimeRecord_008032F4_0014 *>((g_runtimeRecords_00803300 + DAT_0080337c));
         uStackY_20c = 0x56084e;
         local_6c[0] = st::fn_00403044(piVar16,DAT_00803398,uVar23,10,param_10,st::function_address_boundary_cast<STFnType_callback_0055F0C0_p5_7e883f49 *>(st::fn_00562170),
                                          st::function_address_boundary_cast<STFnType_callback_0055F0C0_p6_32c552e1 *>(st::fn_00562E10));
         local_40 = local_6c[0];
         if (local_6c[0] == nullptr) {
           local_1c = (st_stack_frame + 44);
-          local_40 = (int *)(st_stack_frame + 44);
-          piVar16 = (int *)(st_stack_frame + 44);
+          local_40 = reinterpret_cast<int *>((st_stack_frame + 44));
+          piVar16 = reinterpret_cast<int *>((st_stack_frame + 44));
           local_8 = 0xffffffff;
           local_15c = 0;
           local_78 = 0;
           iVar13 = local_54;
           temp_203fd2ac8a80 = g_runtimeRecords_008032F4;
-          piVar4 = (int *)(st_stack_frame + 44);
+          piVar4 = reinterpret_cast<int *>((st_stack_frame + 44));
           puVar24 = (st_stack_frame + 44);
           iVar18 = local_98;
           if (-1 < local_98) {
@@ -902,6 +930,7 @@ LAB_0056016e:
                     iVar13 = 0;
                     if (0 < local_15c) {
                       do {
+
                         local_EAX_5398 =
                              st::fn_006ACF90(g_runtimeRecords_00803300[local_40[iVar13]].field_0000,
                                           g_runtimeRecords_00803300[local_40[iVar13]].field_0004,
@@ -951,6 +980,7 @@ LAB_0056016e:
                   iVar13 = 0;
                   if (0 < local_15c) {
                     do {
+
                       local_EAX_5637 =
                            st::fn_006ACF90(g_runtimeRecords_00803300[local_40[iVar13]].field_0000,
                                         g_runtimeRecords_00803300[local_40[iVar13]].field_0004,
@@ -1009,6 +1039,7 @@ LAB_0056016e:
     }
     else {
       g_currentExceptionFrame = local_1b8.previous;
+
       iVar16 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\scoreai.cpp"),0x956,0,iVar15,st::mutable_c_string("%s"));
       if (iVar16 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -1080,6 +1111,7 @@ undefined4 * __cdecl st::fn_00561670(int param_1,int param_2,int param_3,int *pa
   if (param_5 < 1) {
     return nullptr;
   }
+
   puVar5 = static_cast<uint *>(st::fn_006AAC10(param_2 * param_3 * 2));
   if (puVar5 == nullptr) {
     return nullptr;
@@ -1168,8 +1200,9 @@ LAB_00561bff:
           }
           piVar11 = local_1c + param_5 * 2;
           local_24 = piVar7_mg0;
+
           st::fn_0072DA70
-                    ((undefined4 *)(local_28 + 0x800 + (int)piVar7_mg0),
+                    ((RecoveredRecord_006BFE70_3123BCE8 *)(local_28 + 0x800 + (int)piVar7_mg0),
                      (AnonPointee_TLOBaseTy_0607 *)(uVar7 + (int)piVar7_mg0),uVar7);
           local_28 = uVar7;
         }
@@ -1188,7 +1221,7 @@ LAB_00561bff:
         }
         piVar11 = piVar10;
         if ((0 < local_10) &&
-           ((psVar9 = st::pointer_boundary_cast<short *>(local_c + -param_2), *psVar9 == 0 ||
+           ((psVar9 = reinterpret_cast<short *>(local_c + -param_2), *psVar9 == 0 ||
             (*(short *)(iVar13 + param_2 * -2) + DAT_00803320 + iVar8 < (int)*psVar9)))) {
           piVar11 = piVar10 + 2;
           *psVar9 = *(short *)(iVar13 + param_2 * -2) + (short)DAT_00803320 + sVar2;
@@ -1223,7 +1256,7 @@ LAB_00561bff:
         if (0 < local_10) {
           piVar10 = piVar11;
           if ((local_8 < param_2 + -1) &&
-             ((psVar9 = st::pointer_boundary_cast<short *>(local_c + (1 - param_2)), *psVar9 == 0 ||
+             ((psVar9 = reinterpret_cast<short *>(local_c + (1 - param_2)), *psVar9 == 0 ||
               (*(short *)(iVar13 + param_2 * -2 + 2) + DAT_00803324 + iVar8 < (int)*psVar9)))) {
             piVar10 = piVar11 + 2;
             *psVar9 = *(short *)(iVar13 + param_2 * -2 + 2) + (short)DAT_00803324 + sVar2;
@@ -1303,9 +1336,18 @@ LAB_00561bff:
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\scoreai.cpp
    Diagnostic line evidence: 3522 | 3540 (metadata/report site, not the function definition)
-   [STSourceProvenanceApplier end] */
+   [STSourceProvenanceApplier end]
+   [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:3: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=2,
+   pointer_dereferences=10, scalar_uses=0; sites=00563071 dereference: MOV dword ptr [ECX +
+   -0x8],EDI | 00563074 dereference: MOV dword ptr [ECX + -0x4],EDI | 00563077 dereference: MOV
+   dword ptr [ECX + 0x8],EBX | 0056307A dereference: CMP dword ptr [ECX + -0xc],EBX | 0056307F
+   dereference: MOV EDX,dword ptr [ECX] | 00563085 dereference: MOV EAX,dword ptr [ECX + 0x4] |
+   0056309B dereference: MOV dword ptr [ECX + -0xc],EAX | 0056309E dereference: MOV dword ptr
+   [ECX],EBX | 005630A0 dereference: MOV dword ptr [ECX + 0x4],EBX | 005632AC dereference: MOV
+   EAX,dword ptr [EAX] */
 
-void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
+void st::fn_00562F50(uint param_1,int param_2,int param_3,void *param_4,int param_5,int param_6,
                         int param_7,int param_8,int param_9,uint param_10)
 
 {
@@ -1349,16 +1391,16 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
   RuntimeRecord_008032F4_0014 aRStackY_19c8 [99];
   int iStackY_11fc;
   AnonPointee_TLOBaseTy_0607 aAStackY_11f8 [16];
-  undefined4 uStackY_106c;
+  uint uStackY_106c;
   undefined4 auStackY_1068 [15];
-  undefined4 uStackY_102c;
+  uint uStackY_102c;
   undefined4 auStackY_1028 [16];
   undefined4 auStackY_fe8 [15];
-  undefined4 uStackY_fac;
+  uint uStackY_fac;
   int aiStackY_fa8 [703];
-  undefined4 uStackY_4ac;
+  uint uStackY_4ac;
   byte abStackY_4a8 [672];
-  undefined4 uStackY_208;
+  uint uStackY_208;
   InternalExceptionFrame local_1b8;
   undefined4 *local_174;
   int local_16c;
@@ -1408,7 +1450,7 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
+  uint local_8;
   RuntimeRecord_008032F4_0014 *temp_203f9621b1d8;
   RuntimeRecord_008032F8_0014 *temp_3f50488dac;
 
@@ -1419,7 +1461,7 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
   local_1c = (st_stack_frame + 44);
   local_6c[0] = nullptr;
   local_70 = 0;
-  if ((param_4 != 0) && (0 < param_5)) {
+  if ((param_4 != nullptr) && (0 < param_5)) {
     _DAT_00803318 = 0;
     _DAT_0080331c = 1;
     DAT_00803320 = 2;
@@ -1448,7 +1490,7 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
     g_runtimeRecords_00803300 = nullptr;
     DAT_00803314 = 0;
     DAT_0080337c = 0;
-    piVar12 = (int *)(param_4 + 0xc);
+    piVar12 = (int *)((int)param_4 + 0xc);
     iVar18 = param_5;
     ExceptionList = &local_14;
     do {
@@ -1487,12 +1529,15 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
     DAT_00803308 = param_3 - DAT_008033c0;
     local_1b8.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_1b8;
+
     iVar14 = st::fn_0072D7F0(local_1b8.jumpBuffer,2);
     local_1c = (st_stack_frame + 44);
     if (iVar14 == 0) {
       local_1c = (st_stack_frame + 44);
+
       local_60[0] = st::fn_006AAC10(DAT_008033ac * 2);
-      PTR_00803380 = st::pointer_boundary_cast<undefined1 *>(st::fn_006AAC10(DAT_008033ac * 2));
+
+      PTR_00803380 = (undefined1 *)st::fn_006AAC10(DAT_008033ac * 2);
       local_a0 = abStackY_4a8;
       uStackY_4ac = 0x5631b8;
       local_80 = aiStackY_fa8;
@@ -1501,7 +1546,7 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
       uStackY_102c = 0x5631e1;
       PTR_008033b0 = auStackY_1068;
       uStackY_106c = 0x5631f5;
-      local_160 = (int *)aAStackY_11f8;
+      local_160 = reinterpret_cast<int *>(aAStackY_11f8);
       iStackY_11fc = 0x563214;
       iVar18 = param_5 * -4;
       local_174 = (undefined4 *)((int)aAStackY_11f8 + iVar18);
@@ -1509,7 +1554,7 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
       g_runtimeRecords_008032F8 = (RuntimeRecord_008032F8_0014 *)((int)aRStackY_2198 + iVar18);
       g_runtimeRecords_00803300 = (RuntimeRecord_00803300_0014 *)((int)aRStackY_2198 + iVar18);
       (&uStackY_219c)[-param_5] = 0x563248;
-      g_runtimeRecords_00803310 = (RuntimeRecord_00803310_0014 *)(st_stack_frame + 44);
+      g_runtimeRecords_00803310 = reinterpret_cast<RuntimeRecord_00803310_0014 *>((st_stack_frame + 44));
       local_1c = (st_stack_frame + 44);
       local_8 = 0xffffffff;
       memset(auStackY_1028, 0, 0x80); /* compiler bulk-zero initialization */
@@ -1522,11 +1567,11 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
       pRVar6 = (RuntimeRecord_008032F8_0014 *)((int)aRStackY_2198 + iVar18);
       puVar22 = auStackY_1028;
       pRVar25 = (RuntimeRecord_00803300_0014 *)((int)aRStackY_2198 + iVar18);
-      pRVar7 = (RuntimeRecord_00803310_0014 *)(st_stack_frame + 44);
+      pRVar7 = reinterpret_cast<RuntimeRecord_00803310_0014 *>((st_stack_frame + 44));
       puVar8 = auStackY_1068;
       if (0 < param_5) {
         do {
-          piVar12 = (int *)(param_4 + local_78 * 0x18);
+          piVar12 = (int *)((int)param_4 + local_78 * 0x18);
           iVar13 = *piVar12;
           if (0 < iVar13) {
             iVar20 = 0;
@@ -1537,8 +1582,10 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
               } while (iVar20 < (int)uVar23);
             }
             if (iVar20 < (int)uVar23) {
+
               st::fn_0072DA70
-                        ((undefined4 *)((int)aAStackY_11f8 + iVar20 * 4 + iVar18 + 4),
+                        ((RecoveredRecord_006BFE70_3123BCE8 *)
+                         ((int)aAStackY_11f8 + iVar20 * 4 + iVar18 + 4),
                          (AnonPointee_TLOBaseTy_0607 *)((int)aAStackY_11f8 + iVar20 * 4 + iVar18),
                          (iVar20 * 0x3fffffff + uVar23) * 4);
             }
@@ -1561,7 +1608,7 @@ void st::fn_00562F50(uint param_1,int param_2,int param_3,int param_4,int param_
       iVar18 = -1;
       iVar13 = -1;
       local_8c = -1;
-      local_48 = (uint)(*(int *)local_174[uVar23 - 1] < 0x1f);
+      local_48 = st::storage_bit_cast<uint>(static_cast<uint32_t>(*(int *)local_174[uVar23 - 1] < 0x1f));
       for (iVar20 = uVar23 - 2; -1 < iVar20; iVar20 = iVar20 + -1) {
         iVar16 = *(int *)local_174[iVar20];
         if ((0xf < iVar16) &&
@@ -1839,9 +1886,9 @@ LAB_005637bc:
           iVar13 = *piVar12;
           if (0 < iVar13) {
             iVar20 = piVar12[5];
-            local_84 = st::machine_word_boundary_cast<int>(piVar12[1] - DAT_008033bc);
+            local_84 = piVar12[1] - DAT_008033bc;
             if ((-1 < local_84) && (local_84 < iVar18)) {
-              iVar16 = st::machine_word_boundary_cast<int>(piVar12[2] - DAT_008033c0);
+              iVar16 = piVar12[2] - DAT_008033c0;
               local_b8 = iVar16;
               if ((-1 < iVar16) && (iVar16 < DAT_008033a8)) {
                 switch(piVar12[3]) {
@@ -1878,15 +1925,15 @@ LAB_005637bc:
                   local_ac = 0;
                   if (0 < local_c8_mg1[4]) {
                     do {
-                      iVar13 = st::machine_word_boundary_cast<int>(local_c8_mg1[3] + iVar16 + local_ac);
+                      iVar13 = local_c8_mg1[3] + iVar16 + local_ac;
                       if ((-1 < iVar13) && (iVar13 < DAT_008033a8)) {
-                        local_a8 = st::machine_word_boundary_cast<int>(local_c8_mg1[local_ac * 2 + 6] + local_84);
-                        for (iVar13 = st::machine_word_boundary_cast<int>(local_c8_mg1[local_ac * 2 + 5] + local_84); iVar13 <= local_a8;
+                        local_a8 = local_c8_mg1[local_ac * 2 + 6] + local_84;
+                        for (iVar13 = local_c8_mg1[local_ac * 2 + 5] + local_84; iVar13 <= local_a8;
                             iVar13 = iVar13 + 1) {
                           if (((-1 < iVar13) && (iVar13 < DAT_008033a4)) &&
                              (iVar18 = iVar18 + local_13c, 0x10000 < iVar18)) {
                             bVar2 = puVar24[iVar13 * 2];
-                            if ((int)((uint)(bVar2 >> 4) + (iVar18 >> 0x10)) < 0xf) {
+                            if (st::storage_bit_cast<int>(static_cast<uint32_t>((uint)(bVar2 >> 4) + (iVar18 >> 0x10))) < 0xf) {
                               puVar24[iVar13 * 2] = (char)((uint)iVar18 >> 0x10) * '\x10' + bVar2;
                             }
                             else {
@@ -1918,12 +1965,12 @@ LAB_005637bc:
         if (0 < param_9) {
           do {
             piVar12 = (int *)(param_8 + local_78 * 0x18);
-            iVar16 = st::machine_word_boundary_cast<int>(piVar12[1] - DAT_008033bc);
+            iVar16 = piVar12[1] - DAT_008033bc;
             if ((-1 < iVar16) && (iVar16 < iVar18)) {
-              iVar9 = st::machine_word_boundary_cast<int>(piVar12[2] - DAT_008033c0);
+              iVar9 = piVar12[2] - DAT_008033c0;
               local_ac = iVar9;
               if ((-1 < iVar9) && (iVar9 < DAT_008033a8)) {
-                local_4c = st::machine_word_boundary_cast<int>(piVar12[3] * piVar12[4]);
+                local_4c = piVar12[3] * piVar12[4];
                 if ((0 < local_4c) && (iVar20 <= (*piVar12 * 100) / local_4c)) {
                   g_runtimeRecords_00803310[iVar13].field_0000 = iVar16;
                   g_runtimeRecords_00803310[g_runtimeRecordCount_0080338C].field_0004 = iVar9;
@@ -1959,6 +2006,7 @@ LAB_005637bc:
       if (0 < iVar13) {
         iVar18 = (iVar20 + iVar13 / 2) / iVar13;
         iVar16 = (local_dc + iVar13 / 2) / iVar13;
+
         local_EAX_3741 = st::fn_006ACF90(iVar18,iVar16,DAT_00803304,DAT_00803308);
         if (5 < local_EAX_3741) {
           iVar18 = ((local_EAX_3741 + -5) * DAT_00803304 + iVar18 * 5) / local_EAX_3741;
@@ -1974,6 +2022,7 @@ LAB_005637bc:
         piVar12 = piVar12 + 1;
       }
       for (; local_80 = piVar4, iVar13 < 0xe; iVar13 = iVar13 + 1) {
+
         local_28_mg1 = st::fn_0055EE70(pbVar5,iVar13,1);
         iVar18 = 0;
         if (0 < local_28_mg1) {
@@ -1983,7 +2032,7 @@ LAB_005637bc:
             if ((((-1 < iVar16) && (iVar16 < DAT_008033a4)) && (-1 < iVar20)) &&
                ((iVar20 < DAT_008033a8 &&
                 ((PTR_00803380[(iVar20 * DAT_008033a4 + iVar16) * 2] & 0xf0) != 0)))) {
-              local_134[iVar13] = st::machine_word_boundary_cast<int>(local_134[iVar13] + 1);
+              local_134[iVar13] = local_134[iVar13] + 1;
             }
             iVar18 = iVar18 + 1;
           } while (iVar18 < local_28_mg1);
@@ -2008,12 +2057,13 @@ LAB_005637bc:
       }
       *piVar4 = DAT_00803304;
       piVar4[1] = DAT_00803308;
-      PTR_008033b4 = (undefined2 *)st::fn_00561670((int)local_60[0],DAT_008033a4,DAT_008033a8,piVar4,1);
+
+      PTR_008033b4 = STPointerBoundaryCast<undefined2 *>(st::fn_00561670((int)local_60[0],DAT_008033a4,DAT_008033a8,piVar4,1));
       st::fn_006AB060(local_60);
       st::fn_00402441(local_a0);
       iVar18 = 0;
       do {
-        iVar13 = (int)(iVar18 * 0x168 + (iVar18 * 0x168 >> 0x1f & 0xfU)) >> 4;
+        iVar13 = st::storage_bit_cast<int>(static_cast<uint32_t>(iVar18 * 0x168 + (iVar18 * 0x168 >> 0x1f & 0xfU))) >> 4;
         local_EAX_4198 = st::fn_00561240(DAT_008032f0,DAT_008032ec,iVar13);
         PTR_008032fc[iVar18] = st::machine_word_boundary_cast<undefined4>(local_EAX_4198);
         piVar9 = st::fn_00561240(DAT_00803374,DAT_00803378,iVar13);
@@ -2024,6 +2074,7 @@ LAB_005637bc:
         iVar13 = DAT_0080339c;
       } while (iVar18 < 0x10);
       while (local_88 = iVar13, iVar13 < 0x16) {
+
         local_28_mg1 = st::fn_0055EE70(local_a0,iVar13,1);
         iVar18 = DAT_00803384 - DAT_0080339c;
         iVar20 = 0x16 - DAT_00803384;
@@ -2055,6 +2106,7 @@ LAB_005637bc:
                   if (pRVar7->field_0010 <= DAT_008032ec) {
                     iVar20 = DAT_008032ec;
                   }
+
                   iVar10 = st::fn_006ACF90(pRVar7->field_0000,pRVar7->field_0004,iVar18,iVar13);
                   if (iVar10 < iVar20 / 2) {
                     local_140 = 1;
@@ -2065,10 +2117,12 @@ LAB_005637bc:
               }
               if (local_140 == 0) {
                 iVar20 = 0x10;
+
                 uVar11 = st::fn_006DB910(DAT_00803304,DAT_00803308,iVar18,iVar13);
-                local_74 = (int *)st::fn_006DB990(uVar11,iVar20);
-                local_b0 = (int)local_74 - 3;
-                if (local_b0 <= (int)((int)local_74 + 3U)) {
+
+                local_74 = STPointerBoundaryCast<int *>(st::fn_006DB990(uVar11,iVar20));
+                local_b0 = (int)local_74 + -3;
+                if (local_b0 <= (int)local_74 + 3) {
                   do {
                     if (local_b0 < 0) {
                       iVar20 = local_b0 + 0x10;
@@ -2079,13 +2133,16 @@ LAB_005637bc:
                         iVar20 = local_b0 + -0x10;
                       }
                     }
+
                     iVar19 = st::fn_00561DC0(iVar18,iVar13,iVar20);
+
                     st::fn_00564F30(iVar18,iVar13,iVar19,local_74,DAT_0080330c,local_88);
                     if (-1 < local_8c) {
+
                       st::fn_00564F30(iVar18,iVar13,iVar19,local_74,DAT_008032e8,local_88);
                     }
                     local_b0 = local_b0 + 3;
-                  } while (local_b0 <= (int)((int)local_74 + 3U));
+                  } while (local_b0 <= (int)local_74 + 3);
                 }
               }
             }
@@ -2122,12 +2179,12 @@ LAB_005637bc:
             iVar13 = iVar13 + 1;
           } while (iVar13 < DAT_00803314);
         }
-        iVar18 = (int)(iVar18 * 0xf + (iVar18 * 0xf >> 0x1f & 0xfU)) >> 4;
+        iVar18 = st::storage_bit_cast<int>(static_cast<uint32_t>(iVar18 * 0xf + (iVar18 * 0xf >> 0x1f & 0xfU))) >> 4;
         iVar13 = 0;
         if (0 < DAT_0080337c) {
           do {
-            g_runtimeRecords_008032F8[iVar13].field_000C =st::machine_word_boundary_cast<int>(
-                 g_runtimeRecords_008032F8[iVar13].field_000C - iVar18);
+            g_runtimeRecords_008032F8[iVar13].field_000C =
+                 g_runtimeRecords_008032F8[iVar13].field_000C - iVar18;
             local_160[iVar13] = g_runtimeRecords_008032F8[iVar13].field_000C;
             iVar13 = iVar13 + 1;
           } while (iVar13 < DAT_0080337c);
@@ -2135,8 +2192,8 @@ LAB_005637bc:
         iVar13 = 0;
         if (0 < DAT_00803314) {
           do {
-            g_runtimeRecords_008032F4[iVar13].field_000C =st::machine_word_boundary_cast<int>(
-                 g_runtimeRecords_008032F4[iVar13].field_000C - iVar18);
+            g_runtimeRecords_008032F4[iVar13].field_000C =
+                 g_runtimeRecords_008032F4[iVar13].field_000C - iVar18;
             local_160[DAT_0080337c + iVar13] = g_runtimeRecords_008032F4[iVar13].field_000C;
             iVar13 = iVar13 + 1;
           } while (iVar13 < DAT_00803314);
@@ -2145,8 +2202,8 @@ LAB_005637bc:
         for (uVar17 = DAT_00803314 * 5 & 0x3fffffff; uVar17 != 0; uVar17 = uVar17 - 1) {
           pRVar25->field_0000 = g_runtimeRecords_008032F4->field_0000;
           g_runtimeRecords_008032F4 =
-               (RuntimeRecord_008032F4_0014 *)&g_runtimeRecords_008032F4->field_0004;
-          pRVar25 = (RuntimeRecord_00803300_0014 *)&pRVar25->field_0004;
+               reinterpret_cast<RuntimeRecord_008032F4_0014 *>(&g_runtimeRecords_008032F4->field_0004);
+          pRVar25 = reinterpret_cast<RuntimeRecord_00803300_0014 *>(&pRVar25->field_0004);
         }
         for (iVar18 = 0; iVar18 != 0; iVar18 = iVar18 + -1) {
           *(char *)&pRVar25->field_0000 = (char)g_runtimeRecords_008032F4->field_0000;
@@ -2155,21 +2212,21 @@ LAB_005637bc:
           pRVar25 = (RuntimeRecord_00803300_0014 *)((int)&pRVar25->field_0000 + 1);
         }
         g_runtimeRecords_008032F4 =
-             (RuntimeRecord_008032F4_0014 *)(g_runtimeRecords_00803300 + DAT_0080337c);
+             reinterpret_cast<RuntimeRecord_008032F4_0014 *>((g_runtimeRecords_00803300 + DAT_0080337c));
         uStackY_208 = 0x56439f;
         local_6c[0] = st::fn_00403044(local_160,DAT_00803398,uVar23,10,param_10,st::function_address_boundary_cast<STFnType_callback_0055F0C0_p5_7e883f49 *>(st::fn_00562170),
                                          st::function_address_boundary_cast<STFnType_callback_0055F0C0_p6_32c552e1 *>(st::fn_00564DD0));
         local_40 = local_6c[0];
         if (local_6c[0] == nullptr) {
           local_1c = (st_stack_frame + 44);
-          local_40 = (int *)(st_stack_frame + 44);
-          piVar12 = (int *)(st_stack_frame + 44);
+          local_40 = reinterpret_cast<int *>((st_stack_frame + 44));
+          piVar12 = reinterpret_cast<int *>((st_stack_frame + 44));
           local_8 = 0xffffffff;
           local_158 = 0;
           local_78 = 0;
           iVar13 = local_54;
           temp_203f9621b1d8 = g_runtimeRecords_008032F4;
-          piVar4 = (int *)(st_stack_frame + 44);
+          piVar4 = reinterpret_cast<int *>((st_stack_frame + 44));
           puVar24 = (st_stack_frame + 44);
           iVar18 = local_8c;
           if (-1 < local_8c) {
@@ -2185,6 +2242,7 @@ LAB_005637bc:
                     iVar13 = 0;
                     if (0 < local_158) {
                       do {
+
                         local_EAX_5415 =
                              st::fn_006ACF90(g_runtimeRecords_00803300[local_40[iVar13]].field_0000,
                                           g_runtimeRecords_00803300[local_40[iVar13]].field_0004,
@@ -2234,6 +2292,7 @@ LAB_005637bc:
                   iVar13 = 0;
                   if (0 < local_158) {
                     do {
+
                       local_EAX_5654 =
                            st::fn_006ACF90(g_runtimeRecords_00803300[local_40[iVar13]].field_0000,
                                         g_runtimeRecords_00803300[local_40[iVar13]].field_0004,
@@ -2295,6 +2354,7 @@ LAB_005637bc:
     }
     else {
       g_currentExceptionFrame = local_1b8.previous;
+
       iVar15 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\scoreai.cpp"),0xdc2,0,iVar14,st::mutable_c_string("%s"));
       if (iVar15 != 0) {
         STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -2376,7 +2436,7 @@ uint * st::fn_00565820(uint param_1,int param_2,int param_3,int param_4,int para
   int local_44;
   short local_40;
   short local_3e;
-  undefined2 local_3c;
+  ushort local_3c;
   int local_38;
   DArrayTy *local_34;
   int local_30;
@@ -2411,7 +2471,7 @@ uint * st::fn_00565820(uint param_1,int param_2,int param_3,int param_4,int para
   if (iVar5 == 0) {
     local_14 = st::fn_00561240(param_4,param_5,param_6);
     iVar10 = local_14[2];
-    iVar15 = st::machine_word_boundary_cast<int>(local_14[4] + 2);
+    iVar15 = local_14[4] + 2;
     iVar18 = iVar10 + 2;
     iVar13 = iVar15 * iVar18;
     local_28 = iVar15;
@@ -2419,17 +2479,17 @@ uint * st::fn_00565820(uint param_1,int param_2,int param_3,int param_4,int para
     local_48 = st::fn_006AAC10(iVar13 * 7);
     local_20 = nullptr;
     local_2c = nullptr;
-    local_30 = st::machine_word_boundary_cast<int>(local_14[1] + -1 + param_2);
+    local_30 = local_14[1] + -1 + param_2;
     if (local_30 < 0) {
       local_20 = (DArrayTy *)-local_30;
       local_c = local_30 + iVar18;
       local_30 = 0;
     }
-    iVar8 = st::machine_word_boundary_cast<int>(local_14[2] + local_14[1] + param_2);
+    iVar8 = local_14[2] + local_14[1] + param_2;
     if (g_pathingGrid.sizeX <= iVar8) {
       local_c = local_c + -1 + (g_pathingGrid.sizeX - iVar8);
     }
-    iVar8 = st::machine_word_boundary_cast<int>(local_14[3] + -1 + param_3);
+    iVar8 = local_14[3] + -1 + param_3;
     local_44 = iVar8;
     if (iVar8 < 0) {
       local_44 = 0;
@@ -2437,7 +2497,7 @@ uint * st::fn_00565820(uint param_1,int param_2,int param_3,int param_4,int para
       iVar15 = iVar15 + iVar8;
       local_28 = iVar15;
     }
-    iVar8 = st::machine_word_boundary_cast<int>(local_14[4] + local_14[3] + param_3);
+    iVar8 = local_14[4] + local_14[3] + param_3;
     if (g_pathingGrid.sizeY <= iVar8) {
       iVar15 = iVar15 + -1 + (g_pathingGrid.sizeY - iVar8);
       local_28 = iVar15;
@@ -2450,8 +2510,7 @@ uint * st::fn_00565820(uint param_1,int param_2,int param_3,int param_4,int para
         local_18 = pDVar5;
         local_54 = g_pathingGrid.cells + (int)g_pathingGrid.sizeX * (local_44 + local_10) + local_30
         ;
-        local_1c = (DArrayTy *)
-                   (g_worldGrid.cells + (int)g_worldGrid.sizeX * (local_44 + local_10) + local_30);
+        local_1c = reinterpret_cast<DArrayTy *>((g_worldGrid.cells + (int)g_worldGrid.sizeX * (local_44 + local_10) + local_30));
         local_8 = 0;
         if (0 < local_c) {
           do {
@@ -2601,12 +2660,12 @@ LAB_00565c6c:
               }
               pbVar16 = pbVar16 + iVar13;
               local_5c = local_5c + g_pathingGrid.planeStride;
-              local_50 = (DArrayTy *)(&local_50->flags + g_worldGrid.planeStride * 2);
+              local_50 = reinterpret_cast<DArrayTy *>((&local_50->flags + g_worldGrid.planeStride * 2));
               local_38 = local_38 + -1;
             } while (local_38 != 0);
             local_8 = local_8 + 1;
             local_54 = local_54 + 1;
-            local_1c = (DArrayTy *)&local_1c->elementSize;
+            local_1c = reinterpret_cast<DArrayTy *>(&local_1c->elementSize);
           } while (local_8 < local_c);
         }
         local_18 = (DArrayTy *)((int)&local_18->flags + iVar18);
@@ -2729,8 +2788,8 @@ LAB_00565c6c:
         do {
           if (((int)dVar17 < (int)*local_2c) ||
              ((dVar17 == *local_2c &&
-              (uVar11 = (int)(iVar15 + 3U) >> 0x1f, uVar12 = (int)(iVar10 + 3U) >> 0x1f,
-              (int)((iVar10 + 3U ^ uVar12) - uVar12) < (int)((iVar15 + 3U ^ uVar11) - uVar11))))) {
+              (uVar11 = st::storage_bit_cast<int>(static_cast<uint32_t>(iVar15 + 3U)) >> 0x1f, uVar12 = st::storage_bit_cast<int>(static_cast<uint32_t>(iVar10 + 3U)) >> 0x1f,
+              st::storage_bit_cast<int>(static_cast<uint32_t>((iVar10 + 3U ^ uVar12) - uVar12)) < st::storage_bit_cast<int>(static_cast<uint32_t>((iVar15 + 3U ^ uVar11) - uVar11)))))) {
             local_58 = local_18;
             dVar17 = *local_2c;
             iVar15 = iVar10;
@@ -2740,7 +2799,7 @@ LAB_00565c6c:
           local_2c = local_2c + 1;
         } while (-5 < iVar10);
         if ((int)dVar17 < 1) goto cf_common_exit_0056623F;
-        dVar3 = local_94[(int)((int)&local_58->iteratorIndex + 1)];
+        dVar3 = local_94[st::storage_bit_cast<int>(static_cast<uint32_t>((int)&local_58->iteratorIndex + 1))];
         if ((int)param_7 < (int)dVar17) break;
         iVar15 = 0;
         if (0 < (int)dVar17) {
@@ -2755,7 +2814,7 @@ LAB_00565c6c:
         /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
         param_7 = param_7 - dVar17;
         if ((int)param_7 < 1) goto cf_common_exit_0056623F;
-        local_94[(int)((int)&local_58->iteratorIndex + 1)] = 0;
+        local_94[st::storage_bit_cast<int>(static_cast<uint32_t>((int)&local_58->iteratorIndex + 1))] = 0;
       }
       iVar15 = param_7 + 1;
       iVar10 = dVar3 * 0x10000 + -0x10000;
@@ -2796,4 +2855,3 @@ cf_common_exit_0056623F:
             (iVar15,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\scoreai.cpp"),0xf0f);
   return nullptr;
 }
-

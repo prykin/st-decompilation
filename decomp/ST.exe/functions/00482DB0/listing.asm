@@ -149,7 +149,7 @@ LAB_00482f8a:
 LAB_00482fa9:
 00482FA9  8B 17                     MOV EDX,dword ptr [EDI]
 00482FAB  8B CF                     MOV ECX,EDI
-00482FAD  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
+00482FAD  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]  ; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 00482FB3  85 C0                     TEST EAX,EAX
 00482FB5  74 C7                     JZ 0x00482f7e
 00482FB7  81 7F 20 AE 01 00 00      CMP dword ptr [EDI + 0x20],0x1ae
@@ -158,7 +158,7 @@ LAB_00482fa9:
 00482FC3  8B 07                     MOV EAX,dword ptr [EDI]
 00482FC5  51                        PUSH ECX
 00482FC6  8B CF                     MOV ECX,EDI
-00482FC8  FF 90 F4 00 00 00         CALL dword ptr [EAX + 0xf4]
+00482FC8  FF 90 F4 00 00 00         CALL dword ptr [EAX + 0xf4]  ; [STIndirectCallsiteApplier] exact slot 0xF4; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 00482FCE  85 C0                     TEST EAX,EAX
 00482FD0  74 AC                     JZ 0x00482f7e
 LAB_00482fd2:

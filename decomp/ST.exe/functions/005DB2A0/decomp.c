@@ -34,8 +34,11 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
     puVar2 = puVar2 + 1;
     iVar1 = iVar1 + -1;
   } while (iVar1 != 0);
+
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_038D);
+
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_041E);
+
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_04AF);
   if (-1 < (int)this->field_02EC) {
     FUN_006b3bb0((int *)g_ddxContext_008075A8,this->field_02EC);
@@ -47,6 +50,7 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
   if (this->field_02F4 != nullptr) {
     FreeAndNull(&this->field_02F4);
   }
+
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_02F8);
   if ((DArrayTy *)this->field_0548 != nullptr) {
     FUN_006b5570((DArrayTy *)this->field_0548);
@@ -62,7 +66,9 @@ void __thiscall StartSystemTy::sub_005DB2A0(StartSystemTy *this)
   if (this->field_067E != nullptr) {
     FreeAndNull(&this->field_067E);
   }
+
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_055C);
+
   SpriteClassTy::CloseSprite((SpriteClassTy *)&this->field_05ED);
   if (-1 < (int)this->field_0558) {
     FUN_006b3bb0((int *)g_ddxContext_008075A8,this->field_0558);

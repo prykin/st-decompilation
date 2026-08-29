@@ -51,6 +51,7 @@ int STAllPlayersC::CheckTmps
   }
   else {
     if (tempGroup != 1) {
+
       local_EAX_52 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2fde,0,0,
                                         "%s","STAllPlayersC::CheckTmps invalid panel number");
       if (local_EAX_52 == 0) {
@@ -75,12 +76,15 @@ LAB_0044ac57:
       return -1;
     }
     dword tempGroup_after_write = dVar6; /* compiler stack-slot lifetime split */
+
     Library::DKW::TBL::FUN_006afe40((int *)&local_c,&objectIds->flags);
     if (0 < (int)dVar6) {
       do {
+
         DArrayGetElement(local_c,uVar7,&stack0x0000001a);
         /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
         if (in_stack_0000001a == -1) {
+
           DArrayRemoveAt(local_c,uVar7);
           dVar6 = dVar6 - 1;
           uVar7 = uVar7 - 1;
@@ -96,14 +100,18 @@ LAB_0044ac57:
           if (((*(int *)((int)piVar5 + -10) == iVar2) &&
               (*(int *)((int)piVar5 + -6) == (int)ownerPlayerId)) &&
              (iVar3 = *(int *)(*piVar5 + 0xc), iVar3 != 0)) {
+
             Library::DKW::TBL::FUN_006afe40((int *)&local_10,&array->flags);
+
             Library::DKW::TBL::FUN_006afe40((int *)&local_8,(uint *)*piVar5);
             uVar7 = 0;
             if (0 < iVar3) {
               do {
+
                 DArrayGetElement(local_8,uVar7,&stack0x00000006);
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                 if (in_stack_00000006 == -1) {
+
                   DArrayRemoveAt(local_8,uVar7);
                   iVar3 = iVar3 + -1;
                   uVar7 = uVar7 - 1;
@@ -112,17 +120,21 @@ LAB_0044ac57:
               } while ((int)uVar7 < iVar3);
               if ((iVar3 != 0) && (0 < (int)tempGroup_after_write)) {
                 while( true ) {
+
                   DArrayGetElement(local_10,0,&stack0x0000001a);
                   uVar7 = 0;
                   if (iVar3 < 1) break;
+
                   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
                   while (DArrayGetElement(local_8,uVar7,&stack0x00000006),
                         in_stack_0000001a != in_stack_00000006) {
                     uVar7 = uVar7 + 1;
                     if (iVar3 <= (int)uVar7) goto LAB_0044ada0;
                   }
+
                   DArrayRemoveAt(local_10,0);
                   tempGroup_after_write = tempGroup_after_write - 1;
+
                   DArrayRemoveAt(local_8,uVar7);
                   iVar3 = iVar3 + -1;
                   if ((int)tempGroup_after_write < 1) break;
@@ -176,6 +188,7 @@ LAB_0044ae50:
   }
   else if (objectType == 0x172) goto LAB_0044ae50;
 LAB_0044ae21:
+
   local_EAX_679 =
        ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x3019,0,0,"%s",
                           "STAllPlayersC::CheckTmps invalid type");

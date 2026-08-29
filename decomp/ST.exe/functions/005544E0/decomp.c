@@ -22,6 +22,7 @@ void __cdecl cLoadingTy::delete(uint *param_1)
 
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
+
   errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0);
   if (errorCode == 0) {
     if (param_1 != nullptr) {
@@ -29,13 +30,14 @@ void __cdecl cLoadingTy::delete(uint *param_1)
       if ((uint *)param_1[2] != nullptr) {
         ccFntTy::operator_delete((uint *)param_1[2]);
       }
-      thunk_FUN_00555650((int)param_1);
+      thunk_FUN_00555650((RecoveredRecord_00555650_8E7D0F7D *)param_1);
       FUN_006a5e90((short *)param_1);
     }
     g_currentExceptionFrame = local_48.previous;
     return;
   }
   g_currentExceptionFrame = local_48.previous;
+
   iVar2 = ReportDebugMessage("E:\\__titans\\grig\\loading.cpp",0x52,0,errorCode,"%s",
                              "cLoadingTy::delete");
   if (iVar2 != 0) {

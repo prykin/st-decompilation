@@ -29,8 +29,8 @@ int __fastcall FUN_00708650(undefined4 *param_1)
   int local_3c;
   uint local_38;
   uint local_34;
-  undefined4 local_30;
-  undefined4 local_2c;
+  uint local_30;
+  uint local_2c;
   uint *local_28;
   uint *local_24;
   uint local_20;
@@ -38,8 +38,7 @@ int __fastcall FUN_00708650(undefined4 *param_1)
   void *local_14;
   byte *puStack_10;
   undefined *puStack_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0xffffffff;
   puStack_c = &DAT_0079e200;
   puStack_10 = &LAB_0072d964;
@@ -48,6 +47,7 @@ int __fastcall FUN_00708650(undefined4 *param_1)
   iVar7 = 0;
   ExceptionList = &local_14;
   do {
+
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     iVar4 = FUN_006bbe40(*(int **)(param_1[1] + 0x40),(uint *)&DAT_00857004,(int *)&DAT_00857028,
                          0x20);
@@ -88,12 +88,12 @@ int __fastcall FUN_00708650(undefined4 *param_1)
           iVar7 = -1;
         }
         else {
-          SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::sub_006F31D0
-                    ((AnonReceiver_006F31D0 *)param_1,uVar8,0,0xffffffff,1);
+          SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_006F31D0::sub_006F31D0
+                    ((RecoveredReceiver_006F31D0 *)param_1,uVar8,0,0xffffffff,1);
           iVar7 = 1;
         }
-        SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::sub_006F31D0
-                  ((AnonReceiver_006F31D0 *)param_1,uVar8,iVar7,0xffffffff,1);
+        SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_006F31D0::sub_006F31D0
+                  ((RecoveredReceiver_006F31D0 *)param_1,uVar8,iVar7,0xffffffff,1);
         *puVar3 = *puVar3 & 0xffffff7f;
         iVar4 = local_3c;
       }
@@ -124,6 +124,7 @@ int __fastcall FUN_00708650(undefined4 *param_1)
               local_40 = uVar5 / uVar8;
               uVar5 = uVar5 % uVar8;
               local_54 = uVar8 / 10;
+
               iVar7 = FUN_006b0460(&local_70,(int *)&local_38,(int *)local_28);
               uVar8 = uVar8 / 10;
               if (iVar7 != 0) {
@@ -152,15 +153,15 @@ int __fastcall FUN_00708650(undefined4 *param_1)
             }
             if (local_78 != 0) {
               if ((uVar5 & 2) == 0) {
-                SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::sub_006F31D0
-                          ((AnonReceiver_006F31D0 *)param_1,local_5c,-1,0xffffffff,0);
+                SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_006F31D0::sub_006F31D0
+                          ((RecoveredReceiver_006F31D0 *)param_1,local_5c,-1,0xffffffff,0);
                 *puVar3 = **(uint **)(iVar4 + 100 + param_1[0xcc]) & 0xffffff7d | 1;
               }
               else {
-                SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::sub_006F31D0
-                          ((AnonReceiver_006F31D0 *)param_1,local_5c,0,0xffffffff,0);
-                SubmarineTitans::Recovered::HiddenThis::AnonReceiver_006F31D0::sub_006F31D0
-                          ((AnonReceiver_006F31D0 *)param_1,local_5c,1,0xffffffff,0);
+                SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_006F31D0::sub_006F31D0
+                          ((RecoveredReceiver_006F31D0 *)param_1,local_5c,0,0xffffffff,0);
+                SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_006F31D0::sub_006F31D0
+                          ((RecoveredReceiver_006F31D0 *)param_1,local_5c,1,0xffffffff,0);
                 *puVar3 = **(uint **)(iVar4 + 100 + param_1[0xcc]) & 0xffffff7d | 1;
               }
             }
@@ -184,9 +185,10 @@ int __fastcall FUN_00708650(undefined4 *param_1)
             local_48 = local_28[2] + *local_28;
             local_44 = local_28[3] + local_28[1];
             uVar5 = puVar3[0x28];
+
             FUN_0072ac20(param_1,DAT_00857004,DAT_00857028,(uint *)(uVar5 + 0x25),
                          STField<int>(uVar5,0x4),(int *)&local_50,STField<int>(uVar5,0x14),
-                         ((byte *)uVar5)[0x18],0,0,0xffffffff);
+                         STField<byte>(uVar5,0x18),0,0,0xffffffff);
             iVar7 = param_1[0xcc];
             if (*(int *)(iVar7 + 0x18 + iVar4) <= local_7c + 1) break;
             local_28 = (uint *)((local_7c + 3) * 0x10 + iVar7 + iVar4);
@@ -215,9 +217,10 @@ int __fastcall FUN_00708650(undefined4 *param_1)
           local_48 = local_28[2] + *local_28;
           local_44 = local_28[3] + local_28[1];
           uVar5 = puVar3[0x28];
+
           FUN_007297e0(param_1,DAT_00857004,DAT_00857028,(uint *)(uVar5 + 0x29),
                        (uint *)(uVar5 + 0x39),(int *)&local_50,STField<int>(uVar5,0x18),
-                       ((byte *)uVar5)[0x1c],STField<int>(uVar5,0x1D),STField<int>(uVar5,0x21),
+                       STField<byte>(uVar5,0x1C),STField<int>(uVar5,0x1D),STField<int>(uVar5,0x21),
                        STField<uint>(uVar5,0x25));
           iVar7 = param_1[0xcc];
           if (*(int *)(iVar7 + 0x18 + iVar4) <= local_7c + 1) break;

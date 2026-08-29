@@ -97,7 +97,6 @@ LAB_00555e34:
       bVar8 = uVar6 < uVar3;
     } while ((int)uVar6 < (int)uVar3);
   }
-  uVar2 = st::fn_006AE1C0((DArrayTy *)pTVar1,param_1);
+  uVar2 = st::fn_006AE1C0(reinterpret_cast<DArrayTy *>(pTVar1),param_1);
   return uVar2;
 }
-

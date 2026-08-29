@@ -1,4 +1,4 @@
-STGameObjC::FUN_004845e0:
+STBoatC::vfunc_28:
 004845E0  55                        PUSH EBP
 004845E1  8B EC                     MOV EBP,ESP
 004845E3  83 EC 0C                  SUB ESP,0xc
@@ -191,13 +191,13 @@ LAB_0048480e:
 00484814  0F 85 C0 0A 00 00         JNZ 0x004852da
 0048481A  8B 07                     MOV EAX,dword ptr [EDI]
 0048481C  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_48481e_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_48481e_d4e0dbd9:
 0048481E  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00484821  83 F8 3B                  CMP EAX,0x3b
 00484824  0F 84 51 14 00 00         JZ 0x00485c7b
 0048482A  8B 17                     MOV EDX,dword ptr [EDI]
 0048482C  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_48482e_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_48482e_d4e0dbd9:
 0048482E  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00484831  83 F8 60                  CMP EAX,0x60
 00484834  0F 84 41 14 00 00         JZ 0x00485c7b
@@ -224,13 +224,13 @@ LAB_00484847:
 LAB_00484863:
 00484863  8B 07                     MOV EAX,dword ptr [EDI]
 00484865  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_484867_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_484867_d4e0dbd9:
 00484867  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0048486A  83 F8 16                  CMP EAX,0x16
 0048486D  74 10                     JZ 0x0048487f
 0048486F  8B 17                     MOV EDX,dword ptr [EDI]
 00484871  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_484873_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_484873_d4e0dbd9:
 00484873  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00484876  83 F8 25                  CMP EAX,0x25
 00484879  0F 85 C7 01 00 00         JNZ 0x00484a46
@@ -461,7 +461,7 @@ LAB_00484af8:
 00484B0C  EB 02                     JMP 0x00484b10
 LAB_00484b0e:
 00484B0E  33 C0                     XOR EAX,EAX
-STGameObjC::FUN_004845e0::cf_common_exit_00484B10:
+STBoatC::vfunc_28::cf_common_exit_00484B10:
 00484B10  33 C9                     XOR ECX,ECX
 00484B12  5F                        POP EDI
 00484B13  85 C0                     TEST EAX,EAX
@@ -510,25 +510,25 @@ LAB_00484b4c:
 LAB_00484b76:
 00484B76  8B 17                     MOV EDX,dword ptr [EDI]
 00484B78  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_484b7a_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_484b7a_d4e0dbd9:
 00484B7A  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00484B7D  83 F8 38                  CMP EAX,0x38
 00484B80  74 31                     JZ 0x00484bb3
 00484B82  8B 07                     MOV EAX,dword ptr [EDI]
 00484B84  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_484b86_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_484b86_d4e0dbd9:
 00484B86  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00484B89  83 F8 39                  CMP EAX,0x39
 00484B8C  74 25                     JZ 0x00484bb3
 00484B8E  8B 17                     MOV EDX,dword ptr [EDI]
 00484B90  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_484b92_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_484b92_d4e0dbd9:
 00484B92  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00484B95  83 F8 4F                  CMP EAX,0x4f
 00484B98  74 19                     JZ 0x00484bb3
 00484B9A  8B 07                     MOV EAX,dword ptr [EDI]
 00484B9C  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_484b9e_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_484b9e_d4e0dbd9:
 00484B9E  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00484BA1  83 F8 5E                  CMP EAX,0x5e
 00484BA4  74 0D                     JZ 0x00484bb3
@@ -556,7 +556,7 @@ LAB_00484bca:
 00484BCC  8D 45 F4                  LEA EAX,[EBP + -0xc]
 00484BCF  50                        PUSH EAX
 00484BD0  8B CF                     MOV ECX,EDI
-00484BD2  FF 92 88 00 00 00         CALL dword ptr [EDX + 0x88]
+00484BD2  FF 92 88 00 00 00         CALL dword ptr [EDX + 0x88]  ; [STIndirectCallsiteApplier] exact slot 0x88; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 00484BD8  33 C9                     XOR ECX,ECX
 00484BDA  5F                        POP EDI
 00484BDB  85 C0                     TEST EAX,EAX
@@ -597,13 +597,13 @@ LAB_00484c12:
 LAB_00484c33:
 00484C33  8B 17                     MOV EDX,dword ptr [EDI]
 00484C35  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_484c37_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_484c37_d4e0dbd9:
 00484C37  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00484C3A  83 F8 3B                  CMP EAX,0x3b
 00484C3D  74 10                     JZ 0x00484c4f
 00484C3F  8B 07                     MOV EAX,dword ptr [EDI]
 00484C41  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_484c43_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_484c43_d4e0dbd9:
 00484C43  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00484C46  83 F8 60                  CMP EAX,0x60
 00484C49  0F 85 8B 06 00 00         JNZ 0x004852da
@@ -680,7 +680,7 @@ LAB_00484ce1:
 00484D0F  0F 8D C5 05 00 00         JGE 0x004852da
 00484D15  8B 17                     MOV EDX,dword ptr [EDI]
 00484D17  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_484d19_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_484d19_d4e0dbd9:
 00484D19  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00484D1C  83 F8 33                  CMP EAX,0x33
 00484D1F  0F 85 B5 05 00 00         JNZ 0x004852da
@@ -825,7 +825,8 @@ LAB_00484eaa:
 00484EAC  74 24                     JZ 0x00484ed2
 00484EAE  8B 07                     MOV EAX,dword ptr [EDI]
 00484EB0  8B CF                     MOV ECX,EDI
-00484EB2  FF 90 20 01 00 00         CALL dword ptr [EAX + 0x120]
+STBoatC::vfunc_28::override::prt_484eb2_db63cafc:
+00484EB2  FF 90 20 01 00 00         CALL dword ptr [EAX + 0x120]  ; [STIndirectCallsiteApplier] exact slot 0x120; mode=dispatch; signature=__thiscall;/dword;pointer:/STBoatC
 00484EB8  83 F8 01                  CMP EAX,0x1
 00484EBB  74 15                     JZ 0x00484ed2
 LAB_00484ebd:
@@ -837,7 +838,7 @@ LAB_00484ebd:
 LAB_00484ed2:
 00484ED2  8B 17                     MOV EDX,dword ptr [EDI]
 00484ED4  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_484ed6_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_484ed6_d4e0dbd9:
 00484ED6  FF 92 BC 00 00 00         CALL dword ptr [EDX + 0xbc]  ; [STIndirectCallsiteApplier] exact slot 0xBC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00484EDC  83 F8 01                  CMP EAX,0x1
 00484EDF  0F 85 F5 03 00 00         JNZ 0x004852da
@@ -872,7 +873,7 @@ LAB_00484f20:
 00484F2C  0F 85 A8 03 00 00         JNZ 0x004852da
 00484F32  8B 07                     MOV EAX,dword ptr [EDI]
 00484F34  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_484f36_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_484f36_d4e0dbd9:
 00484F36  FF 50 7C                  CALL dword ptr [EAX + 0x7c]  ; [STIndirectCallsiteApplier] exact slot 0x7C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00484F39  83 F8 64                  CMP EAX,0x64
 00484F3C  0F 8D 98 03 00 00         JGE 0x004852da
@@ -944,7 +945,7 @@ LAB_00485002:
 00485004  0F 85 D0 02 00 00         JNZ 0x004852da
 0048500A  8B 17                     MOV EDX,dword ptr [EDI]
 0048500C  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_48500e_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_48500e_d4e0dbd9:
 0048500E  FF 92 BC 00 00 00         CALL dword ptr [EDX + 0xbc]  ; [STIndirectCallsiteApplier] exact slot 0xBC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00485014  83 F8 01                  CMP EAX,0x1
 00485017  0F 85 BD 02 00 00         JNZ 0x004852da
@@ -1010,7 +1011,7 @@ LAB_0048509d:
 004850A0  8B 07                     MOV EAX,dword ptr [EDI]
 004850A2  51                        PUSH ECX
 004850A3  8B CF                     MOV ECX,EDI
-004850A5  FF 90 08 01 00 00         CALL dword ptr [EAX + 0x108]
+004850A5  FF 90 08 01 00 00         CALL dword ptr [EAX + 0x108]  ; [STIndirectCallsiteApplier] exact slot 0x108; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 004850AB  83 F8 01                  CMP EAX,0x1
 004850AE  0F 85 26 02 00 00         JNZ 0x004852da
 004850B4  8B 56 24                  MOV EDX,dword ptr [ESI + 0x24]
@@ -1065,7 +1066,7 @@ LAB_00485113:
 00485115  0F 84 21 11 00 00         JZ 0x0048623c
 0048511B  8B 07                     MOV EAX,dword ptr [EDI]
 0048511D  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_48511f_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_48511f_d4e0dbd9:
 0048511F  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00485122  83 F8 62                  CMP EAX,0x62
 00485125  0F 85 AF 01 00 00         JNZ 0x004852da
@@ -1109,13 +1110,13 @@ LAB_00485190:
 00485192  0F 84 A4 10 00 00         JZ 0x0048623c
 00485198  8B 07                     MOV EAX,dword ptr [EDI]
 0048519A  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_48519c_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_48519c_d4e0dbd9:
 0048519C  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0048519F  83 F8 37                  CMP EAX,0x37
 004851A2  74 10                     JZ 0x004851b4
 004851A4  8B 17                     MOV EDX,dword ptr [EDI]
 004851A6  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_4851a8_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_4851a8_d4e0dbd9:
 004851A8  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 004851AB  83 F8 6C                  CMP EAX,0x6c
 004851AE  0F 85 26 01 00 00         JNZ 0x004852da
@@ -1246,13 +1247,13 @@ LAB_004852da:
 LAB_004852e7:
 004852E7  8B 07                     MOV EAX,dword ptr [EDI]
 004852E9  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_4852eb_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_4852eb_d4e0dbd9:
 004852EB  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 004852EE  83 F8 16                  CMP EAX,0x16
 004852F1  74 10                     JZ 0x00485303
 004852F3  8B 17                     MOV EDX,dword ptr [EDI]
 004852F5  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_4852f7_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_4852f7_d4e0dbd9:
 004852F7  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 004852FA  83 F8 25                  CMP EAX,0x25
 004852FD  0F 85 F8 01 00 00         JNZ 0x004854fb
@@ -1490,7 +1491,8 @@ LAB_0048555a:
 00485562  0F 85 D4 0C 00 00         JNZ 0x0048623c
 00485568  8B 17                     MOV EDX,dword ptr [EDI]
 0048556A  8B CF                     MOV ECX,EDI
-0048556C  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]
+STBoatC::vfunc_28::override::prt_48556c_9c2fb867:
+0048556C  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STBoatC
 00485572  85 C0                     TEST EAX,EAX
 00485574  0F 84 C2 0C 00 00         JZ 0x0048623c
 0048557A  8B 7F 20                  MOV EDI,dword ptr [EDI + 0x20]
@@ -1561,7 +1563,7 @@ LAB_004855f0:
 0048561F  74 23                     JZ 0x00485644
 00485621  8B 17                     MOV EDX,dword ptr [EDI]
 00485623  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_485625_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_485625_d4e0dbd9:
 00485625  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00485628  83 F8 33                  CMP EAX,0x33
 0048562B  75 17                     JNZ 0x00485644
@@ -1579,7 +1581,7 @@ STGameObjC::FUN_004845e0::override::prt_485625_d4e0dbd9:
 LAB_00485644:
 00485644  8B 17                     MOV EDX,dword ptr [EDI]
 00485646  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_485648_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_485648_d4e0dbd9:
 00485648  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0048564B  83 F8 62                  CMP EAX,0x62
 0048564E  75 39                     JNZ 0x00485689
@@ -1607,13 +1609,13 @@ STGameObjC::FUN_004845e0::override::prt_485648_d4e0dbd9:
 LAB_00485689:
 00485689  8B 17                     MOV EDX,dword ptr [EDI]
 0048568B  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_48568d_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_48568d_d4e0dbd9:
 0048568D  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00485690  83 F8 37                  CMP EAX,0x37
 00485693  74 0C                     JZ 0x004856a1
 00485695  8B 07                     MOV EAX,dword ptr [EDI]
 00485697  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_485699_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_485699_d4e0dbd9:
 00485699  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 0048569C  83 F8 6C                  CMP EAX,0x6c
 0048569F  75 24                     JNZ 0x004856c5
@@ -1637,13 +1639,13 @@ LAB_004856a1:
 LAB_004856c5:
 004856C5  8B 07                     MOV EAX,dword ptr [EDI]
 004856C7  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_4856c9_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_4856c9_d4e0dbd9:
 004856C9  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 004856CC  83 F8 16                  CMP EAX,0x16
 004856CF  74 10                     JZ 0x004856e1
 004856D1  8B 17                     MOV EDX,dword ptr [EDI]
 004856D3  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_4856d5_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_4856d5_d4e0dbd9:
 004856D5  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 004856D8  83 F8 25                  CMP EAX,0x25
 004856DB  0F 85 D7 01 00 00         JNZ 0x004858b8
@@ -1784,7 +1786,8 @@ LAB_00485878:
 0048587B  74 1D                     JZ 0x0048589a
 0048587D  8B 07                     MOV EAX,dword ptr [EDI]
 0048587F  8B CF                     MOV ECX,EDI
-00485881  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]
+STBoatC::vfunc_28::override::prt_485881_9c2fb867:
+00485881  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STBoatC
 00485887  48                        DEC EAX
 00485888  5F                        POP EDI
 00485889  F7 D8                     NEG EAX
@@ -1905,7 +1908,8 @@ LAB_004859d8:
 004859E3  75 1D                     JNZ 0x00485a02
 004859E5  8B 07                     MOV EAX,dword ptr [EDI]
 004859E7  8B CF                     MOV ECX,EDI
-004859E9  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]
+STBoatC::vfunc_28::override::prt_4859e9_9c2fb867:
+004859E9  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STBoatC
 004859EF  48                        DEC EAX
 004859F0  5F                        POP EDI
 004859F1  F7 D8                     NEG EAX
@@ -1925,7 +1929,8 @@ LAB_00485a02:
 LAB_00485a10:
 00485A10  8B 17                     MOV EDX,dword ptr [EDI]
 00485A12  8B CF                     MOV ECX,EDI
-00485A14  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]
+STBoatC::vfunc_28::override::prt_485a14_9c2fb867:
+00485A14  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STBoatC
 00485A1A  48                        DEC EAX
 00485A1B  5F                        POP EDI
 00485A1C  F7 D8                     NEG EAX
@@ -1946,13 +1951,13 @@ LAB_00485a2d:
 LAB_00485a42:
 00485A42  8B 07                     MOV EAX,dword ptr [EDI]
 00485A44  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_485a46_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_485a46_d4e0dbd9:
 00485A46  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00485A49  83 F8 3B                  CMP EAX,0x3b
 00485A4C  74 10                     JZ 0x00485a5e
 00485A4E  8B 17                     MOV EDX,dword ptr [EDI]
 00485A50  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_485a52_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_485a52_d4e0dbd9:
 00485A52  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00485A55  83 F8 60                  CMP EAX,0x60
 00485A58  0F 85 DE 07 00 00         JNZ 0x0048623c
@@ -2037,7 +2042,8 @@ LAB_00485b34:
 00485B41  75 1C                     JNZ 0x00485b5f
 00485B43  8B 17                     MOV EDX,dword ptr [EDI]
 00485B45  8B CF                     MOV ECX,EDI
-00485B47  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]
+STBoatC::vfunc_28::override::prt_485b47_9c2fb867:
+00485B47  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STBoatC
 00485B4D  83 F8 01                  CMP EAX,0x1
 00485B50  75 0D                     JNZ 0x00485b5f
 00485B52  5F                        POP EDI
@@ -2057,7 +2063,8 @@ LAB_00485b69:
 LAB_00485b74:
 00485B74  8B 07                     MOV EAX,dword ptr [EDI]
 00485B76  8B CF                     MOV ECX,EDI
-00485B78  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]
+STBoatC::vfunc_28::override::prt_485b78_9c2fb867:
+00485B78  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STBoatC
 LAB_00485b7e:
 00485B7E  83 F8 01                  CMP EAX,0x1
 00485B81  0F 85 B5 06 00 00         JNZ 0x0048623c
@@ -2156,7 +2163,8 @@ LAB_00485c88:
 00485C8C  75 1C                     JNZ 0x00485caa
 00485C8E  8B 17                     MOV EDX,dword ptr [EDI]
 00485C90  8B CF                     MOV ECX,EDI
-00485C92  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]
+STBoatC::vfunc_28::override::prt_485c92_9c2fb867:
+00485C92  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STBoatC
 00485C98  83 F8 01                  CMP EAX,0x1
 00485C9B  75 0D                     JNZ 0x00485caa
 00485C9D  5F                        POP EDI
@@ -2229,7 +2237,8 @@ LAB_00485d55:
 LAB_00485d68:
 00485D68  8B 17                     MOV EDX,dword ptr [EDI]
 00485D6A  8B CF                     MOV ECX,EDI
-00485D6C  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]
+STBoatC::vfunc_28::override::prt_485d6c_9c2fb867:
+00485D6C  FF 92 EC 00 00 00         CALL dword ptr [EDX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STBoatC
 00485D72  83 F8 01                  CMP EAX,0x1
 00485D75  0F 85 2F FF FF FF         JNZ 0x00485caa
 00485D7B  5F                        POP EDI
@@ -2281,7 +2290,7 @@ LAB_00485e06:
 00485E0E  0F 84 65 01 00 00         JZ 0x00485f79
 00485E14  8B 17                     MOV EDX,dword ptr [EDI]
 00485E16  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_485e18_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_485e18_d4e0dbd9:
 00485E18  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00485E1B  83 F8 52                  CMP EAX,0x52
 00485E1E  74 17                     JZ 0x00485e37
@@ -2386,7 +2395,8 @@ LAB_00485f2a:
 00485F37  75 1C                     JNZ 0x00485f55
 00485F39  8B 07                     MOV EAX,dword ptr [EDI]
 00485F3B  8B CF                     MOV ECX,EDI
-00485F3D  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]
+STBoatC::vfunc_28::override::prt_485f3d_9c2fb867:
+00485F3D  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STBoatC
 00485F43  83 F8 01                  CMP EAX,0x1
 00485F46  75 0D                     JNZ 0x00485f55
 00485F48  5F                        POP EDI
@@ -2491,7 +2501,8 @@ LAB_00486036:
 LAB_0048606a:
 0048606A  8B 07                     MOV EAX,dword ptr [EDI]
 0048606C  8B CF                     MOV ECX,EDI
-0048606E  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]
+STBoatC::vfunc_28::override::prt_48606e_9c2fb867:
+0048606E  FF 90 EC 00 00 00         CALL dword ptr [EAX + 0xec]  ; [STIndirectCallsiteApplier] exact slot 0xEC; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STBoatC
 00486074  83 F8 01                  CMP EAX,0x1
 00486077  0F 85 2D FC FF FF         JNZ 0x00485caa
 0048607D  5F                        POP EDI
@@ -2507,7 +2518,7 @@ LAB_0048608a:
 00486093  0F 85 CF FC FF FF         JNZ 0x00485d68
 00486099  8B 07                     MOV EAX,dword ptr [EDI]
 0048609B  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_48609d_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_48609d_d4e0dbd9:
 0048609D  FF 50 7C                  CALL dword ptr [EAX + 0x7c]  ; [STIndirectCallsiteApplier] exact slot 0x7C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 004860A0  83 F8 64                  CMP EAX,0x64
 004860A3  0F 8D BF FC FF FF         JGE 0x00485d68
@@ -2521,37 +2532,37 @@ STGameObjC::FUN_004845e0::override::prt_48609d_d4e0dbd9:
 LAB_004860b6:
 004860B6  8B 17                     MOV EDX,dword ptr [EDI]
 004860B8  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_4860ba_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_4860ba_d4e0dbd9:
 004860BA  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 004860BD  83 F8 38                  CMP EAX,0x38
 004860C0  0F 84 49 01 00 00         JZ 0x0048620f
 004860C6  8B 07                     MOV EAX,dword ptr [EDI]
 004860C8  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_4860ca_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_4860ca_d4e0dbd9:
 004860CA  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 004860CD  83 F8 39                  CMP EAX,0x39
 004860D0  0F 84 39 01 00 00         JZ 0x0048620f
 004860D6  8B 17                     MOV EDX,dword ptr [EDI]
 004860D8  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_4860da_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_4860da_d4e0dbd9:
 004860DA  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 004860DD  83 F8 4F                  CMP EAX,0x4f
 004860E0  0F 84 29 01 00 00         JZ 0x0048620f
 004860E6  8B 07                     MOV EAX,dword ptr [EDI]
 004860E8  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_4860ea_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_4860ea_d4e0dbd9:
 004860EA  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 004860ED  83 F8 5E                  CMP EAX,0x5e
 004860F0  0F 84 19 01 00 00         JZ 0x0048620f
 004860F6  8B 17                     MOV EDX,dword ptr [EDI]
 004860F8  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_4860fa_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_4860fa_d4e0dbd9:
 004860FA  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 004860FD  83 F8 3B                  CMP EAX,0x3b
 00486100  74 0C                     JZ 0x0048610e
 00486102  8B 07                     MOV EAX,dword ptr [EDI]
 00486104  8B CF                     MOV ECX,EDI
-STGameObjC::FUN_004845e0::override::prt_486106_d4e0dbd9:
+STBoatC::vfunc_28::override::prt_486106_d4e0dbd9:
 00486106  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC
 00486109  83 F8 60                  CMP EAX,0x60
 0048610C  75 31                     JNZ 0x0048613f
@@ -2641,7 +2652,7 @@ LAB_0048620f:
 0048621B  8D 45 F4                  LEA EAX,[EBP + -0xc]
 0048621E  50                        PUSH EAX
 0048621F  8B CF                     MOV ECX,EDI
-00486221  FF 92 88 00 00 00         CALL dword ptr [EDX + 0x88]
+00486221  FF 92 88 00 00 00         CALL dword ptr [EDX + 0x88]  ; [STIndirectCallsiteApplier] exact slot 0x88; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4
 00486227  85 C0                     TEST EAX,EAX
 00486229  0F 8E 3B FD FF FF         JLE 0x00485f6a
 0048622F  5F                        POP EDI

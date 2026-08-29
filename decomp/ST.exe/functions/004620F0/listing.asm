@@ -1,4 +1,4 @@
-FUN_004620f0:
+STBoatC::sub_004620F0:
 004620F0  55                        PUSH EBP
 004620F1  8B EC                     MOV EBP,ESP
 004620F3  56                        PUSH ESI

@@ -7,12 +7,12 @@
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
    decompilation contains no value return */
 
-void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
+void __fastcall FUN_00572510(RecoveredRecordView_00572510_EB02076B *param_1)
 
 {
   char cVar1;
   byte bVar2;
-  AnonShape_00572510_F06DC155 *this;
+  RecoveredRecordView_00572510_EB02076B *this;
   HANDLE hFindFile;
   BOOL BVar3;
   int iVar4;
@@ -30,7 +30,7 @@ void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
   byte local_15c [260];
   InternalExceptionFrame local_58;
   cMf32 *local_14;
-  AnonShape_00572510_F06DC155 *local_10;
+  RecoveredRecordView_00572510_EB02076B *local_10;
   int local_c;
   char *local_8;
 
@@ -64,15 +64,17 @@ void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
                 local_8,PTR_s_PL_LOG_0079b0d0);
       local_58.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_58;
+
       iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
       if (iVar4 == 0) {
-        this_00 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_15c,0,0,0);
+        /* ST_CALLSITE[0057261E]: CALL 0x006f0ec0; direct=006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cMf32; signature=__cdecl;pointer:/cMf32;/uint;pointer:/byte;/int;/uint;/uint */
+        this_00 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_15c,0,0,0);
         this = local_10;
         if (this_00 != nullptr) {
           local_8 = &DAT_008072f8;
           local_14 = this_00;
           cMf32::RecGet(this_00,0xc,PTR_s_OPTIONS_PLAYER_0079b0d4,(int *)&local_8,1);
-          thunk_FUN_005739a0((AnonShape_005739A0_A4724D00 *)this);
+          thunk_FUN_005739a0((RecoveredRecordView_005739A0_CFCAF2B5 *)this);
           local_8 = &this->field_0x80e;
           cMf32::RecGet(this_00,0xc,PTR_s_ACCKEYS_PLAYER_0079b0d8,(int *)&local_8,1);
           local_8 = &this->field_0xd86;
@@ -88,7 +90,8 @@ void __fastcall FUN_00572510(AnonShape_00572510_F06DC155 *param_1)
           *(undefined4 *)&this->field_0x809 = 0;
           this->field_0x80d = 0;
           puVar4 = cMf32::RecGet(this_00,0xc,PTR_s_LASTLOG_0079b0e8,(int *)&local_8,0);
-          if (((puVar4 == nullptr) && (this != (AnonShape_00572510_F06DC155 *)0xfffff83b)) &&
+          if (((puVar4 == nullptr) &&
+              (this != (RecoveredRecordView_00572510_EB02076B *)0xfffff83b)) &&
              (&this->field_0785 != nullptr)) {
             uVar7 = 0xffffffff;
             pcVar5 = &this->field_0785;

@@ -41,7 +41,7 @@ LAB_0067da27:
 0067DA2D  8D 4D F0                  LEA ECX,[EBP + -0x10]
 0067DA30  51                        PUSH ECX
 0067DA31  52                        PUSH EDX
-0067DA32  E8 88 44 D8 FF            CALL 0x00401ebf
+0067DA32  E8 88 44 D8 FF            CALL 0x00401ebf  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override
 0067DA37  8B 55 F0                  MOV EDX,dword ptr [EBP + -0x10]
 0067DA3A  8D 4D F4                  LEA ECX,[EBP + -0xc]
 0067DA3D  51                        PUSH ECX

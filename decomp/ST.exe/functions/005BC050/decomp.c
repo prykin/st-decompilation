@@ -8,11 +8,11 @@
 void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
 
 {
-  ushort *puVar1;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar1;
   PrividerTy *pPVar3;
   int iVar4;
   HoloTy *pHVar4;
-  int iVar5;
+  RecoveredRecord_005AACB0_2533FD69 *pRVar5;
   uint uVar11;
   byte *puVar6;
   uint local_EAX_845;
@@ -29,9 +29,11 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar8 = ReportDebugMessage("E:\\__titans\\Start\\prov_obj.cpp",0x279,0,iVar4,"%s"
                                ,"PrividerTy::DeleteCtrls");
     if (iVar8 != 0) {
@@ -42,6 +44,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
   }
   if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {
+
       Library::DKW::DDX::FUN_006b8b10((int *)g_cursorClass_00802A30->field_00AD);
     }
     else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
@@ -89,15 +92,17 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
       cVar11 = '\x01';
       bVar10 = 0x10;
       iVar9 = 1;
-      iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x79,0x51,0x22e,0x145);
+      /* ST_CALLSITE[005BC199]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69;pointer:/int;/undefined4;/undefined4;/undefined4;/undefined4 */
+      pRVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x79,0x51,0x22e,0x145);
       /* ST_CALLSITE[005BC1AB]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
-      uVar11 = HoloTy::Init(pPVar3->field_1C96,CASE_2,0x79,0x51,iVar5,iVar9,bVar10,cVar11,uVar12);
+      uVar11 = HoloTy::Init(pPVar3->field_1C96,CASE_2,0x79,0x51,pRVar5,iVar9,bVar10,cVar11,uVar12);
       if (uVar11 != 0) {
         pHVar4 = pPVar3->field_1C96;
         pHVar4->field_0002 = 0;
         pHVar4->field_0017 = -1;
         uVar12 = *(uint *)&pPVar3->field_1C96->field_0x3;
         if (-1 < (int)uVar12) {
+
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar12);
         }
         /* ST_CALLSITE[005BC1E4]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
@@ -124,13 +129,14 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
       local_8 = local_8 + -1;
     } while (local_8 != 0);
   }
-  puVar1 = pPVar3->field_1C82;
-  local_8 = *(uint *)(puVar1 + 10);
+  pRVar1 = (RecoveredRecord_006B4FA0_DAC3A217 *)pPVar3->field_1C82;
+  local_8 = *(uint *)&pRVar1[1].field_0x4;
   if (local_8 == 0) {
-    local_8 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-              *(int *)(puVar1 + 4);
+    local_8 = ((uint)pRVar1->field_000E * *(int *)&pRVar1->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+              *(int *)&pRVar1->field_0x8;
   }
-  puVar6 = (byte *)FUN_006b4fa0((int *)puVar1);
+
+  puVar6 = STPointerBoundaryCast<byte *>(FUN_006b4fa0(pRVar1));
   memset(puVar6, 0, local_8); /* compiler bulk-zero initialization */
   if (pPVar3->field_1C86 != 0) {
     StartSystemTy::sub_006E56B0(pPVar3->field_000C,pPVar3->field_1C86);
@@ -168,16 +174,18 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
       cVar11 = '\x01';
       bVar10 = 0x10;
       iVar9 = 1;
-      iVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x79,0x197,0x22e,0x2e);
+      /* ST_CALLSITE[005BC389]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69;pointer:/int;/undefined4;/undefined4;/undefined4;/undefined4 */
+      pRVar5 = Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x79,0x197,0x22e,0x2e);
       /* ST_CALLSITE[005BC39D]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       local_EAX_845 =
-           HoloTy::Init(pPVar3->field_1C9A,CASE_1,0x79,0x197,iVar5,iVar9,bVar10,cVar11,uVar12);
+           HoloTy::Init(pPVar3->field_1C9A,CASE_1,0x79,0x197,pRVar5,iVar9,bVar10,cVar11,uVar12);
       if (local_EAX_845 != 0) {
         pHVar4 = pPVar3->field_1C9A;
         pHVar4->field_0002 = 0;
         pHVar4->field_0017 = -1;
         uVar12 = *(uint *)&pPVar3->field_1C9A->field_0x3;
         if (-1 < (int)uVar12) {
+
           Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,uVar12);
         }
         /* ST_CALLSITE[005BC3D5]: CALL 0x004055f1; direct=004055F1 HoloTy::NextFas */
@@ -191,9 +199,11 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
   }
   if (g_cursorClass_00802A30 != nullptr) {
     if (g_cursorClass_00802A30->field_00A9 == 0) {
+
       Library::DKW::DDX::FUN_006b8a60((byte *)g_cursorClass_00802A30->field_00AD);
     }
     else if (g_cursorClass_00802A30->field_001C != 0xffffffff) {
+
       Library::DKW::DDX::FUN_006b34d0
                 ((uint *)g_cursorClass_00802A30->field_0060,g_cursorClass_00802A30->field_001C,
                  0xfffffffe,g_cursorClass_00802A30->field_0034,g_cursorClass_00802A30->field_0038);

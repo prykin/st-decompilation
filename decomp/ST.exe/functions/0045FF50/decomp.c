@@ -4,29 +4,47 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=4; incoming_this_accesses=5;
-   incoming_edx_uses=0 */
+   incoming_edx_uses=0
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (42), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=004601F0 @ 00460206 -> read as EAX on
+   every CFG path | 00460260 @ 00460276 -> read as EAX on every CFG path | 004602E0 @ 00460334 ->
+   unknown: terminal before explicit accumulator kill | 004603B0 @ 00460516 -> read as EAX on every
+   CFG path | 004603B0 @ 004605C2 -> read as EAX on every CFG path | 004603B0 @ 0046072D -> read as
+   EAX on every CFG path | 004603B0 @ 0046076D -> read as EAX on every CFG path | 004608B0 @
+   00460B95 -> read as EAX on every CFG path | 004608B0 @ 00460C2F -> read as EAX on every CFG path
+   | 004608B0 @ 00460CEC -> read as EAX on every CFG path | 004608B0 @ 00460D7B -> read as EAX on
+   every CFG path | 004608B0 @ 00461299 -> read as EAX on every CFG path | 004608B0 @ 004615C3 ->
+   read as EAX on every CFG path | 004608B0 @ 0046187B -> read as EAX on every CFG path | 0046B100 @
+   0046B258 -> read as EAX on every CFG path | 0046B100 @ 0046B278 -> read as EAX on every CFG path
+   | 0046B100 @ 0046B633 -> read as EAX on every CFG path | 0046B100 @ 0046BF9E -> read as EAX on
+   every CFG path | 0046B100 @ 0046C310 -> read as EAX on every CFG path | 0046B100 @ 0046C384 ->
+   read as EAX on every CFG path | 0046B100 @ 0046C3C0 -> killed on every CFG path | 0046CF20 @
+   0046D17F -> read as EAX on every CFG path | 0046CF20 @ 0046D215 -> read as EAX on every CFG path
+   | 00471AC0 @ 00471DE4 -> read as EAX on every CFG path */
 
-undefined4 __thiscall STBoatC::sub_0045FF50(STBoatC *this,int param_1)
+int __thiscall STBoatC::sub_0045FF50(STBoatC *this,int param_1)
 
 {
   STGroupBoatC *this_00;
   int iVar1;
   uint uVar1;
   int iVar2;
-  /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
-  void *unaff_EDI;
 
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == 0) {
     this_00 = thunk_FUN_0042b760((char)this->field_0024,this->field_0030);
     if (this_00 != nullptr) {
-      thunk_FUN_0040ae40(this_00,(uint)(ushort)this->field_0032,'\0');
+      /* ST_CALLSITE[0045FF8B]: CALL 0x00402b26; direct=00402B26 STGroupBoatC::sub_0040AE40 */
+      STGroupBoatC::sub_0040AE40(this_00,(uint)(ushort)this->field_0032,'\0');
+
       iVar1 = thunk_FUN_0040d540((AnonShape_0040D540_1BB7A4CF *)this_00,
                                  (uint)(ushort)this->field_0032);
       switch(iVar1) {
       case 0:
         this->field_00FD = 1;
-        thunk_FUN_0040cdb0(this_00,(uint)(ushort)this->field_0032);
+        /* ST_CALLSITE[0045FFF0]: CALL 0x00404ff2; direct=00404FF2 STGroupBoatC::sub_0040CDB0 */
+        STGroupBoatC::sub_0040CDB0(this_00,(uint)(ushort)this->field_0032);
         break;
       case 1:
         this->field_00FA = 0;
@@ -76,14 +94,13 @@ switchD_00460024_caseD_1:
         return 2;
       case 1:
         goto switchD_00460024_caseD_1;
-      /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       case 2:
         /* ST_CALLSITE[00460106]: CALL dword ptr [EDX + 0x20] */
-        this->StopMove(unaff_EDI);
+        this->StopMove();
         return 3;
       }
     }
   }
-  return 0xffffffff;
+  return -1;
 }
 

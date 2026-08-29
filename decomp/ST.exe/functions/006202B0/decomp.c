@@ -33,6 +33,7 @@ SndUnderAttMenegC::sub_006202B0
     if (DAT_0080874e != '\x03') goto LAB_0062030e;
     iVar3 = 0x4d;
   }
+
   thunk_FUN_004e60d0((uint)DAT_0080874d,iVar3);
 LAB_0062030e:
   /* ST_CALLSITE[0062031A]: CALL 0x00404e8f; direct=00404E8F SndUnderAttMenegC::sub_006203F0 */

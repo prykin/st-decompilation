@@ -14,12 +14,12 @@ void __thiscall CPanelTy::PaintNameResSI(CPanelTy *this)
 {
   CPanelTy *pCVar2;
   int iVar3;
-  uint uVar4;
-  BITMAPINFO *pBVar5;
+  BITMAPINFO *pBVar4;
   UINT resourceId;
   char *resourceString;
   HINSTANCE module;
-  int iVar6;
+  int iVar5;
+  uint uVar6;
   int iVar7;
   int iVar8;
   InternalExceptionFrame local_4c;
@@ -28,30 +28,39 @@ void __thiscall CPanelTy::PaintNameResSI(CPanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pCVar2 = local_8;
   if (iVar3 == 0) {
-    uVar4 = thunk_FUN_005276e0(local_8->field_0C31,local_8->field_0C32);
-    pBVar5 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)pCVar2->field_029A,uVar4);
+
+    iVar3 = thunk_FUN_005276e0(local_8->field_0C31,local_8->field_0C32);
+    /* ST_CALLSITE[00504D41]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+    pBVar4 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)pCVar2->field_029A,iVar3);
     /* ST_CALLSITE[00504D54]: CALL 0x00403229; direct=00403229 DibPut */
-    DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,0x26,0x50,'\x01',(byte *)pBVar5);
+    DibPut((RecoveredSourceFamily_dibcopy *)pCVar2->field_0194,0x26,0x50,'\x01',
+           (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar4);
+
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,0x15,0x6c,0xc3,0xb);
     iVar8 = -1;
     iVar7 = -1;
-    uVar4 = 5;
-    iVar6 = -1;
+    uVar6 = 5;
+    iVar5 = -1;
     iVar3 = -2;
     module = g_hINSTANCE_00807618;
+
     resourceId = thunk_FUN_00528060(pCVar2->field_0C31,pCVar2->field_0C32);
+    /* ST_CALLSITE[00504DA3]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     resourceString = LoadResourceString(resourceId,module);
-    ccFntTy::WrTxt(pCVar2->field_01B8,resourceString,iVar3,iVar6,uVar4,iVar7,iVar8);
+
+    ccFntTy::WrTxt(pCVar2->field_01B8,resourceString,iVar3,iVar5,uVar6,iVar7,iVar8);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar6 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0x84,0,iVar3,"%s",
+
+  iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel4.cpp",0x84,0,iVar3,"%s",
                              "CPanelTy::PaintNameResSI");
-  if (iVar6 != 0) {
+  if (iVar5 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
   RaiseInternalException(iVar3,0,"E:\\__titans\\Andrey\\cpanel4.cpp",0x84);

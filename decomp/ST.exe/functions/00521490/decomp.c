@@ -29,16 +29,18 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
   InternalExceptionFrame local_58;
   uint local_14;
   InfocPanelTy *local_10;
-  undefined4 local_c;
+  uint local_c;
   uint local_8;
 
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_10 = this;
+
   iVar8 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0);
   this_00 = local_10;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_58.previous;
+
     iVar11 = ReportDebugMessage("E:\\__titans\\Andrey\\infocen.cpp",0x11e,0,iVar8,
                                 "%s","InfocPanelTy::GetMessage");
     if (iVar11 != 0) {
@@ -144,10 +146,12 @@ int __thiscall InfocPanelTy::GetMessage(InfocPanelTy *this,STMessage *message)
     else if ((piVar3[1] == 1) && (bVar8 != 0xff)) {
       uVar11 = bVar8 + 9;
     }
-    pBVar10 = FUN_0070b3a0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_03C4,uVar11);
+    /* ST_CALLSITE[005216B9]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+    pBVar10 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_03C4,uVar11);
     /* ST_CALLSITE[005216C7]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0068,iVar12 - iVar2,iVar4 - iVar7,'\x01',
-           (byte *)pBVar10);
+           (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar10);
+
     Library::DKW::DDX::FUN_006b3640
               ((int *)g_ddxContext_008075A8,this_00->field_0060,0xffffffff,this_00->field_003C,
                this_00->field_0044);

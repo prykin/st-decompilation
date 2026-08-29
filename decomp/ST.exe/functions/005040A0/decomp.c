@@ -21,21 +21,26 @@ void __thiscall CPanelTy::PaintMap(CPanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pCVar2 = local_8;
   if (iVar3 == 0) {
     /* ST_CALLSITE[005040EA]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)local_8->field_0190,0,0,'\x01',
-           (byte *)local_8->field_0994);
+           (RecoveredRecordView_006B84D0_87AF9D9B *)local_8->field_0994);
+
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0190,0,5,6,0x2a,10);
     iVar7 = -1;
     iVar6 = -1;
     uVar4 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 5;
     iVar5 = -1;
     iVar3 = -2;
+    /* ST_CALLSITE[00504133]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
     resourceString = LoadResourceString(0x2712,g_hINSTANCE_00807618);
+
     ccFntTy::WrTxt(pCVar2->field_01B8,resourceString,iVar3,iVar5,uVar4,iVar6,iVar7);
     if (-1 < (int)pCVar2->field_0148[4]) {
+
       Library::DKW::DDX::FUN_006b3640
                 ((int *)g_ddxContext_008075A8,(uint)pCVar2->field_0148[4],0xffffffff,
                  pCVar2->field_004C,pCVar2->field_00A4);
@@ -44,6 +49,7 @@ void __thiscall CPanelTy::PaintMap(CPanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar5 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel3.cpp",0x13,0,iVar3,"%s",
                              "CPanelTy::PaintMap");
   if (iVar5 != 0) {

@@ -18,4 +18,3 @@ RadioClassTy * __thiscall st::fn_0071E040(RadioClassTy *this)
   this->field_0024 = 0xffffffff;
   return this;
 }
-

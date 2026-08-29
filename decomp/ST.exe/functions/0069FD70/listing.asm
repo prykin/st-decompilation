@@ -11,7 +11,8 @@ FUN_0069fd70:
 0069FD88  56                        PUSH ESI
 0069FD89  68 98 1D 7D 00            PUSH 0x7d1d98
 0069FD8E  68 3C 86 7D 00            PUSH 0x7d863c
-0069FD93  E8 D8 EC 08 00            CALL 0x0072ea70
+FUN_0069fd70::override::prt_69fd93_c1311782:
+0069FD93  E8 D8 EC 08 00            CALL 0x0072ea70  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/int; signature=__cdecl;pointer:/int;/winnt.h/LPCSTR;pointer:/char
 0069FD98  8B F0                     MOV ESI,EAX
 0069FD9A  83 C4 08                  ADD ESP,0x8
 0069FD9D  85 F6                     TEST ESI,ESI

@@ -268,7 +268,7 @@ LAB_0061b632:
 0061B67B  57                        PUSH EDI
 0061B67C  53                        PUSH EBX
 0061B67D  8D 4E 20                  LEA ECX,[ESI + 0x20]
-0061B680  E8 91 8E DE FF            CALL 0x00404516
+0061B680  E8 91 8E DE FF            CALL 0x00404516  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STJumpMineC; source view only; no Ghidra override
 0061B685  83 F8 02                  CMP EAX,0x2
 0061B688  74 09                     JZ 0x0061b693
 0061B68A  83 F8 03                  CMP EAX,0x3

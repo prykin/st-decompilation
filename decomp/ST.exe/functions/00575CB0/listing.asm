@@ -572,7 +572,7 @@ LAB_00576308:
 0057632C  C1 E1 02                  SHL ECX,0x2
 0057632F  51                        PUSH ECX
 00576330  52                        PUSH EDX
-00576331  E8 1A 6C 13 00            CALL 0x006acf50
+00576331  E8 1A 6C 13 00            CALL 0x006acf50  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override
 00576336  83 C7 0A                  ADD EDI,0xa
 00576339  89 43 48                  MOV dword ptr [EBX + 0x48],EAX
 0057633C  89 7D DC                  MOV dword ptr [EBP + -0x24],EDI
@@ -785,7 +785,7 @@ LAB_005765a4:
 005765BB  C1 E0 02                  SHL EAX,0x2
 005765BE  50                        PUSH EAX
 005765BF  51                        PUSH ECX
-005765C0  E8 8B 69 13 00            CALL 0x006acf50
+005765C0  E8 8B 69 13 00            CALL 0x006acf50  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/GlobalAggregates/RuntimeRecord_007F4D3C_0014; source view only; no Ghidra override
 005765C5  83 C7 0A                  ADD EDI,0xa
 005765C8  89 43 40                  MOV dword ptr [EBX + 0x40],EAX
 005765CB  89 7D D4                  MOV dword ptr [EBP + -0x2c],EDI

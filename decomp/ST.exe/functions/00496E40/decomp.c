@@ -3,9 +3,18 @@
 
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0, unknown=0),
-   and decompilation contains no value return */
+   and decompilation contains no value return
 
-void FUN_00496e40(int param_1,int param_2,undefined4 param_3,int param_4)
+   [STMethodOwnerApplier] Structural method owner recovered as DumpClassC.
+   Evidence: this_call_owners=[DumpClassC]; agreed_this_calls=2; incoming_this_accesses=0;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=5; incoming_this_forward_calls=3;
+   entry_incoming_ecx_capture=true; ret_stack_matches_explicit_parameters=true;
+   direct_non_thunk_callers=0; incoming_ecx_receiver_callers=0; attributed_named_callers=2;
+   owner_evidence_coverage=adequate; unique_primary_physical_vtable=true;
+   callee_closed_hidden_ecx_receiver_transport */
+
+void __thiscall
+DumpClassC::sub_00496E40(DumpClassC *this,int param_1,int param_2,undefined4 param_3,int param_4)
 
 {
   int iVar1;

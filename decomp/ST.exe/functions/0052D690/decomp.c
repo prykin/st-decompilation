@@ -8,7 +8,7 @@
 void __thiscall PopUpTy::ChangeNumStr(PopUpTy *this)
 
 {
-  ushort *puVar1;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar1;
   uint *puVar2;
   PopUpTy *this_00;
   byte bVar4;
@@ -32,10 +32,12 @@ void __thiscall PopUpTy::ChangeNumStr(PopUpTy *this)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_18 = this;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0);
   this_00 = local_18;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_5c.previous;
+
     iVar8 = ReportDebugMessage("E:\\__titans\\Andrey\\mpopup.cpp",0x7e,0,iVar5,"%s",
                                "PopUpTy::ChangeNumStr");
     if (iVar8 == 0) {
@@ -44,13 +46,14 @@ void __thiscall PopUpTy::ChangeNumStr(PopUpTy *this)
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  puVar1 = local_18->field_0090;
-  uVar10 = *(uint *)(puVar1 + 10);
+  pRVar1 = (RecoveredRecord_006B4FA0_DAC3A217 *)local_18->field_0090;
+  uVar10 = *(uint *)&pRVar1[1].field_0x4;
   if (uVar10 == 0) {
-    uVar10 = ((uint)puVar1[7] * *(int *)(puVar1 + 2) + 0x1f >> 3 & 0x1ffffffc) *
-             *(int *)(puVar1 + 4);
+    uVar10 = ((uint)pRVar1->field_000E * *(int *)&pRVar1->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
+             *(int *)&pRVar1->field_0x8;
   }
-  puVar5 = (undefined4 *)FUN_006b4fa0((int *)puVar1);
+
+  puVar5 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0(pRVar1));
   for (uVar7 = uVar10 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
     *puVar5 = 0x89898989;
     puVar5 = puVar5 + 1;
@@ -87,13 +90,16 @@ LAB_0052d7d4:
       else {
         resourceString = nullptr;
       }
+
       uVar9 = FUN_00711110(this_00->field_0094,resourceString);
       if ((int)*(uint *)(this_00->field_0090 + 2) <= uVar9) {
         uVar9 = *(uint *)(this_00->field_0090 + 2);
       }
       puVar11[0xf] = uVar9;
       FUN_006b2800(g_ddxContext_008075A8,*puVar11,uVar9,0x13);
+
       Library::DKW::DDX::FUN_006b3640((int *)g_ddxContext_008075A8,*puVar11,0xffffffff,0xd,local_c);
+
       Library::DKW::DDX::FUN_006b3430((int *)g_ddxContext_008075A8,*puVar11);
     }
     bVar4 = (byte)local_8 + 1;

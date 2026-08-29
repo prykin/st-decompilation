@@ -54,7 +54,8 @@ LAB_0049a9bd:
 0049A9DB  6A 01                     PUSH 0x1
 0049A9DD  50                        PUSH EAX
 0049A9DE  52                        PUSH EDX
-0049A9DF  E8 D6 7E F6 FF            CALL 0x004028ba
+STGroupBoatC::GrpMove::override::prt_49a9df_6c9e7102:
+0049A9DF  E8 D6 7E F6 FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 0049A9E4  8B F0                     MOV ESI,EAX
 0049A9E6  85 F6                     TEST ESI,ESI
 0049A9E8  75 1A                     JNZ 0x0049aa04

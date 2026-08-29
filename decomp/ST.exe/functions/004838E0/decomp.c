@@ -3,14 +3,22 @@
 
 /* WARNING: Removing unreachable block (ram,0x00483caa) */
 /* [STHiddenThisApplier] Anonymous hidden receiver recovered as
-   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_004603B0.
+   /SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_004603B0.
    Evidence: incoming_receiver_captures=1; receiver_accesses=4; incoming_edx_uses=0; calls=3;
    ecx_pointer_setup=3; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[4];
-   expected_stack=4; receiver_family_members=3; adopt_untyped_existing_thiscall */
+   expected_stack=4; receiver_family_members=3; adopt_untyped_existing_thiscall
 
-undefined4 __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::FUN_004838e0
-          (AnonReceiver_004603B0 *this,RecoveredRecord_STBoatC_004838E0 *param_1)
+   [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
+   Evidence: this_call_owners=[STBoatC]; agreed_this_calls=2; incoming_this_accesses=4;
+   incoming_edx_uses=16; incoming_stack_parameter_uses=2; direct_non_thunk_callers=0;
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate
+
+   [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=3, ignored=0,
+   unknown=0 */
+
+int __thiscall STBoatC::sub_004838E0(STBoatC *this,RecoveredRecord_STBoatC_004838E0 *param_1)
 
 {
   short sVar1;
@@ -62,8 +70,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::FUN_004838e0
   longlong local_EDXEAX_932;
   longlong local_EDXEAX_948;
   longlong local_60;
-  undefined8 local_48;
-
+  ulonglong local_48;
   sVar1 = param_1->field_003A;
   uVar18 = (uint)param_1->field_0034;
   uVar6 = (int)sVar1 - uVar18;
@@ -76,9 +83,9 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_004603B0::FUN_004838e0
   uVar22 = (uint)param_1->field_0038;
   uVar8 = (int)sVar3 - uVar22;
   uVar23 = (int)uVar8 >> 0x1f;
-  uVar9 = (uint)*(short *)&this->field_0x45;
-  uVar10 = (uint)*(short *)&this->field_0x43;
-  uVar11 = (uint)*(short *)&this->field_0x41;
+  uVar9 = (uint)this->field_0045;
+  uVar10 = (uint)this->field_0043;
+  uVar11 = (uint)this->field_0041;
   local_EDXEAX_136 = Library::MSVCRT::__allmul(uVar11,(int)uVar11 >> 0x1f,uVar6,uVar19);
   local_EDXEAX_163 = Library::MSVCRT::__allmul(uVar10,(int)uVar10 >> 0x1f,uVar7,uVar21);
   local_EDXEAX_197 = Library::MSVCRT::__allmul(uVar9,(int)uVar9 >> 0x1f,uVar8,uVar23);

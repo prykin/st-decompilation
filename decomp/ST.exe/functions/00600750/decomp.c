@@ -3,7 +3,7 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-undefined4 __fastcall FUN_00600750(AnonShape_00600750_A7773F7A *param_1)
+undefined4 __fastcall FUN_00600750(RecoveredRecordView_00600750_34156DAE *param_1)
 
 {
   short sVar1;
@@ -39,6 +39,7 @@ undefined4 __fastcall FUN_00600750(AnonShape_00600750_A7773F7A *param_1)
       local_c = (STT3DSprC *)iVar8;
       switch(*(undefined4 *)(iVar8 + 0x39 + param_1->field_0233)) {
       case 1:
+
         uVar8 = thunk_FUN_006001e0(param_1,local_8);
         pVVar3 = g_visibleClass_00802A88;
         if (uVar8 == 0) {
@@ -74,7 +75,8 @@ undefined4 __fastcall FUN_00600750(AnonShape_00600750_A7773F7A *param_1)
                 }
               }
               else if (*(char *)(iVar8 + 0x41 + param_1->field_0233) != '\0') {
-                thunk_FUN_004ad430(local_c);
+                /* ST_CALLSITE[00600AAC]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+                STT3DSprC::sub_004AD430(local_c);
                 *(undefined1 *)(iVar8 + 0x41 + param_1->field_0233) = 0;
               }
             }
@@ -91,9 +93,12 @@ undefined4 __fastcall FUN_00600750(AnonShape_00600750_A7773F7A *param_1)
         else {
           *(undefined4 *)(iVar8 + 0x39 + param_1->field_0233) = 3;
           if ((param_1->field_0232 == '\0') ||
-             (iVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::
-                      thunk_FUN_005fdb50((AnonReceiver_005FDB50 *)param_1,1,iVar6), iVar5 != 0)) {
+
+             (iVar5 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_005FDB50::
+                      thunk_FUN_005fdb50((RecoveredReceiver_005FDB50 *)param_1,1,iVar6), iVar5 != 0)
+             ) {
 LAB_00600928:
+
             thunk_FUN_005fd940(param_1,iVar6);
           }
           else {
@@ -118,7 +123,9 @@ LAB_00600928:
             uVar11 = 0x53;
             uVar10 = 0x5a;
             iVar5 = 1;
+
             uVar9 = thunk_FUN_004ad650(pSVar2);
+
             Library::Ourlib::ST3DSMAP::SprSetLevBeforeLand
                       (g_sT3DSMAPContext_00807598,uVar9,iVar5,uVar10,uVar11);
           }
@@ -126,27 +133,34 @@ LAB_00600928:
         break;
       case 2:
         if (((STField<uint>(iVar5,0x3D) <= g_playSystem_00802A38->field_00E4) &&
+
             (iVar4 = thunk_FUN_005ff1f0(param_1,local_8,3,param_1->field_022E), -1 < iVar4)) &&
+
            (iVar5 = thunk_FUN_005fff60(param_1,local_8,iVar4), iVar6 = local_8, iVar5 != 0)) {
-          iVar5 = SubmarineTitans::Recovered::HiddenThis::AnonReceiver_005FDB50::thunk_FUN_005fdb50
-                            ((AnonReceiver_005FDB50 *)param_1,0,local_8);
+
+          iVar5 = SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_005FDB50::
+                  thunk_FUN_005fdb50((RecoveredReceiver_005FDB50 *)param_1,0,local_8);
           if (iVar5 != 0) goto LAB_00600928;
           *(undefined4 *)(iVar8 + 0x39 + param_1->field_0233) = 1;
         }
         break;
       case 3:
         if (param_1->field_0232 == '\0') {
+
           thunk_FUN_005fd940(param_1,local_8);
         }
         else {
           pSVar2 = *(STT3DSprC **)(iVar5 + 0x42);
+
           local_14 = thunk_FUN_004ac910(pSVar2,'\r');
+
           local_28 = thunk_FUN_004ac910(pSVar2,'\x0e');
           if (0x15 < (int)local_14) {
             if (local_14 == 0x16) {
               /* ST_CALLSITE[00600B6C]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
               STT3DSprC::StartShow(pSVar2,0xf,g_playSystem_00802A38->field_00E4);
             }
+
             local_10 = thunk_FUN_004ac910(pSVar2,'\x0f');
             /* ST_CALLSITE[00600B81]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
             STT3DSprC::ShowCurFase(pSVar2,'\x0f');
@@ -161,6 +175,7 @@ LAB_00600928:
           if (*(char *)(iVar8 + 0x28 + param_1->field_0233) != '\0') {
             /* ST_CALLSITE[00600BBB]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
             iVar5 = STT3DSprC::sub_004ACD30(pSVar2,'\x0e');
+
             iVar8 = thunk_FUN_004ac910(pSVar2,'\x0e');
             if (iVar5 + -1 == iVar8) {
               /* ST_CALLSITE[00600BD4]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
@@ -169,6 +184,7 @@ LAB_00600928:
           }
           /* ST_CALLSITE[00600BDD]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
           iVar5 = STT3DSprC::sub_004ACD30(pSVar2,'\r');
+
           iVar8 = thunk_FUN_004ac910(pSVar2,'\r');
           if (iVar5 + -1 == iVar8) {
             /* ST_CALLSITE[00600BF6]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
@@ -176,6 +192,7 @@ LAB_00600928:
           }
           /* ST_CALLSITE[00600BFF]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
           iVar5 = STT3DSprC::sub_004ACD30(pSVar2,'\x0f');
+
           iVar8 = thunk_FUN_004ac910(pSVar2,'\x0f');
           if (iVar5 + -1 == iVar8) {
             *(undefined4 *)((int)local_c + 0x39 + param_1->field_0233) = 4;
@@ -243,13 +260,15 @@ LAB_00600928:
             }
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             else if (*(char *)((int)local_c + 0x41 + param_1->field_0233) != '\0') {
-              thunk_FUN_004ad430(pSVar2);
+              /* ST_CALLSITE[00600E43]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
+              STT3DSprC::sub_004AD430(pSVar2);
               *(undefined1 *)((int)local_c + 0x41 + param_1->field_0233) = 0;
             }
           }
         }
         break;
       case 4:
+
         thunk_FUN_005fd940(param_1,local_8);
         break;
       case 5:

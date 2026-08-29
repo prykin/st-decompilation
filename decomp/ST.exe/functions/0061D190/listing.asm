@@ -276,7 +276,7 @@ LAB_0061d472:
 0061D47C  8D 45 F8                  LEA EAX,[EBP + -0x8]
 0061D47F  50                        PUSH EAX
 0061D480  8B CE                     MOV ECX,ESI
-0061D482  E8 F3 43 DE FF            CALL 0x0040187a
+0061D482  E8 F3 43 DE FF            CALL 0x0040187a  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 0061D487  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]
 0061D48A  8B 56 18                  MOV EDX,dword ptr [ESI + 0x18]
 0061D48D  51                        PUSH ECX

@@ -52,9 +52,11 @@ _EnumPlObj(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param
   }
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
+
     iVar4 = ReportDebugMessage("E:\\__titans\\ai\\ai_mdef.cpp",0x295,0,iVar3,"%s",
                                "_EnumPlObj");
     if (iVar4 != 0) {
@@ -63,7 +65,8 @@ _EnumPlObj(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param
     RaiseInternalException(iVar3,0,"E:\\__titans\\ai\\ai_mdef.cpp",0x296);
     return iVar3;
   }
-  local_1c = (DArrayTy *)thunk_FUN_0042a990((char)param_1);
+
+  local_1c = STPointerBoundaryCast<DArrayTy *>(thunk_FUN_0042a990((char)param_1));
   if (local_1c == nullptr) {
     RaiseInternalException
               (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_mdef.cpp",0x293);
@@ -84,13 +87,13 @@ LAB_00676e12:
         if ((this != nullptr) && (iVar5 = this->vfunc_F8(), iVar5 != 0)) {
           local_10 = 1;
           /* ST_CALLSITE[00676E39]: CALL dword ptr [EAX + 0x2c] */
-          dVar6 = this->slot_2C();
+          dVar6 = this->vfunc_2C();
           if (param_2 != 0) {
             if (dVar6 == 0x78) {
               if ((param_2 & 0x80000000) == 0) {
                 if ((param_2 & 0x3fffffff) != 0) {
                   /* ST_CALLSITE[00676E5F]: CALL dword ptr [EDX + 0x2c] */
-                  dVar7 = this->slot_2C();
+                  dVar7 = this->vfunc_2C();
                   if (dVar7 == 0x78) {
                     uVar10 = *(uint *)&this->field_0x259;
                   }
@@ -121,7 +124,7 @@ LAB_00677024:
               if (dVar6 == 0x78) {
                 if ((param_3 & 0x80000000) == 0) {
                   /* ST_CALLSITE[00676EB6]: CALL dword ptr [EAX + 0x2c] */
-                  dVar6 = this->slot_2C();
+                  dVar6 = this->vfunc_2C();
                   if (dVar6 == 0x78) {
                     iVar5 = *(int *)&this->field_0x259;
                   }

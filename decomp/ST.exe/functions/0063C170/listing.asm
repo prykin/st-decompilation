@@ -106,7 +106,7 @@ LAB_0063c288:
 0063C2A8  52                        PUSH EDX
 0063C2A9  8B 96 9B 03 00 00         MOV EDX,dword ptr [ESI + 0x39b]
 0063C2AF  52                        PUSH EDX
-0063C2B0  FF 90 E0 00 00 00         CALL dword ptr [EAX + 0xe0]
+0063C2B0  FF 90 E0 00 00 00         CALL dword ptr [EAX + 0xe0]  ; [STIndirectCallsiteApplier] exact slot 0xE0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 0063C2B6  85 C0                     TEST EAX,EAX
 0063C2B8  75 43                     JNZ 0x0063c2fd
 0063C2BA  0F BF 45 0A               MOVSX EAX,word ptr [EBP + 0xa]

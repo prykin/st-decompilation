@@ -28,6 +28,7 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
+
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   pFVar2 = local_10;
   if (iVar3 == 0) {
@@ -45,9 +46,10 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
     }
     iVar7 = 1;
     puVar3 = pFVar2->field_005D + 0x14;
+
     uVar4 = FUN_006b4fe0(pFVar2->field_005D);
-    puVar3 = (ushort *)
-             FUN_006b50c0(local_c,local_8,(uint)pFVar2->field_005D[7],uVar4,(undefined4 *)puVar3,
+    /* ST_CALLSITE[00599A76]: CALL 0x006b50c0; direct=006B50C0 FUN_006b50c0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ushort; signature=__stdcall;pointer:/ushort;/int;/int;/int;/uint;pointer:/undefined4;/int */
+    puVar3 = FUN_006b50c0(local_c,local_8,(uint)pFVar2->field_005D[7],uVar4,(undefined4 *)puVar3,
                           iVar7);
     uVar5 = pFVar2->field_1ABC;
     *slotStorage = puVar3;
@@ -60,6 +62,7 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
     else {
       uVar5 = (-(uint)(param_1 != '\x01') & 0xffffff6e) + 0xb4;
     }
+
     Library::DKW::DDX::FUN_006b3640
               ((int *)g_ddxContext_008075A8,pFVar2->field_1ABC,0xffffffff,uVar5,
                (-(uint)(param_1 != '\0') & 0xffffffb4) + 0xaa);
@@ -69,6 +72,7 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
+
   iVar6 = ReportDebugMessage("E:\\__titans\\Start\\fsgs_obj.cpp",0x3a8,0,iVar3,"%s",
                              "FSGSTy::PrepBkgMess");
   if (iVar6 == 0) {

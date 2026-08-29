@@ -9,13 +9,12 @@
 uint __thiscall SndUnderAttMenegC::sub_006216E0(SndUnderAttMenegC *this,undefined4 param_1)
 
 {
-  SndUnderAttMenegC_field_010ADArray *pSVar1;
-  uint uVar2;
-  undefined4 local_14;
+  DArrayTy *pSVar1;
+  uint uVar1;
+  uint local_14;
   int local_10;
-  undefined4 local_c;
-  undefined1 local_8;
-
+  uint local_c;
+  byte local_8;
   local_14 = 0;
   local_8 = (undefined1)((uint)param_1 >> 0x18);
   local_10 = g_playSystem_00802A38->field_00E4 << 8;
@@ -23,13 +22,14 @@ uint __thiscall SndUnderAttMenegC::sub_006216E0(SndUnderAttMenegC *this,undefine
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
   local_c = CONCAT31((int3)param_1,(undefined1)local_c);
   if (this->field_010A == nullptr) {
-    pSVar1 = (SndUnderAttMenegC_field_010ADArray *)
-             Library::DKW::TBL::DArrayCreate(nullptr,10,0xd,10);
-    this->field_010A = pSVar1;
+    /* ST_CALLSITE[00621722]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/SndUnderAttMenegC_field_010ADArray; source view only; no Ghidra override */
+    pSVar1 = Library::DKW::TBL::DArrayCreate(nullptr,10,0xd,10);
+    this->field_010A = (SndUnderAttMenegC_field_010ADArray *)pSVar1;
   }
   if (this->field_010A != nullptr) {
-    uVar2 = Library::DKW::TBL::DArrayAppend((DArrayTy *)this->field_010A,&local_14);
-    return uVar2;
+
+    uVar1 = Library::DKW::TBL::DArrayAppend((DArrayTy *)this->field_010A,&local_14);
+    return uVar1;
   }
   return 0xffffffff;
 }

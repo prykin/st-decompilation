@@ -10,7 +10,7 @@ FUN_005f0150:
 005F015F  8B CE                     MOV ECX,ESI
 005F0161  89 07                     MOV dword ptr [EDI],EAX
 005F0163  8B 16                     MOV EDX,dword ptr [ESI]
-005F0165  FF 52 0C                  CALL dword ptr [EDX + 0xc]
+005F0165  FF 52 0C                  CALL dword ptr [EDX + 0xc]  ; [STIndirectCallsiteApplier] exact slot 0xC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 005F0168  B9 01 00 00 00            MOV ECX,0x1
 005F016D  88 47 04                  MOV byte ptr [EDI + 0x4],AL
 005F0170  C6 47 05 04               MOV byte ptr [EDI + 0x5],0x4
@@ -33,11 +33,11 @@ LAB_005f018f:
 005F01A0  74 20                     JZ 0x005f01c2
 005F01A2  8B 06                     MOV EAX,dword ptr [ESI]
 005F01A4  8B CE                     MOV ECX,ESI
-005F01A6  FF 90 34 01 00 00         CALL dword ptr [EAX + 0x134]
+005F01A6  FF 90 34 01 00 00         CALL dword ptr [EAX + 0x134]  ; [STIndirectCallsiteApplier] exact slot 0x134; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 005F01AC  88 47 1C                  MOV byte ptr [EDI + 0x1c],AL
 005F01AF  8B 16                     MOV EDX,dword ptr [ESI]
 005F01B1  8B CE                     MOV ECX,ESI
-005F01B3  FF 92 3C 01 00 00         CALL dword ptr [EDX + 0x13c]
+005F01B3  FF 92 3C 01 00 00         CALL dword ptr [EDX + 0x13c]  ; [STIndirectCallsiteApplier] exact slot 0x13C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 005F01B9  89 47 21                  MOV dword ptr [EDI + 0x21],EAX
 005F01BC  5F                        POP EDI
 005F01BD  5E                        POP ESI
@@ -46,15 +46,15 @@ LAB_005f018f:
 LAB_005f01c2:
 005F01C2  8B 16                     MOV EDX,dword ptr [ESI]
 005F01C4  8B CE                     MOV ECX,ESI
-005F01C6  FF 92 34 01 00 00         CALL dword ptr [EDX + 0x134]
+005F01C6  FF 92 34 01 00 00         CALL dword ptr [EDX + 0x134]  ; [STIndirectCallsiteApplier] exact slot 0x134; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 005F01CC  88 47 1C                  MOV byte ptr [EDI + 0x1c],AL
 005F01CF  8B 06                     MOV EAX,dword ptr [ESI]
 005F01D1  8B CE                     MOV ECX,ESI
-005F01D3  FF 90 38 01 00 00         CALL dword ptr [EAX + 0x138]
+005F01D3  FF 90 38 01 00 00         CALL dword ptr [EAX + 0x138]  ; [STIndirectCallsiteApplier] exact slot 0x138; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 005F01D9  89 47 1D                  MOV dword ptr [EDI + 0x1d],EAX
 005F01DC  8B 16                     MOV EDX,dword ptr [ESI]
 005F01DE  8B CE                     MOV ECX,ESI
-005F01E0  FF 92 3C 01 00 00         CALL dword ptr [EDX + 0x13c]
+005F01E0  FF 92 3C 01 00 00         CALL dword ptr [EDX + 0x13c]  ; [STIndirectCallsiteApplier] exact slot 0x13C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void
 005F01E6  89 47 21                  MOV dword ptr [EDI + 0x21],EAX
 005F01E9  5F                        POP EDI
 005F01EA  5E                        POP ESI

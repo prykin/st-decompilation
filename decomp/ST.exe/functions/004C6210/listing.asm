@@ -9,7 +9,8 @@ TLOBldMark::sub_004C6210:
 004C621E  C7 46 18 00 00 00 00      MOV dword ptr [ESI + 0x18],0x0
 004C6225  89 46 1C                  MOV dword ptr [ESI + 0x1c],EAX
 004C6228  89 4E 20                  MOV dword ptr [ESI + 0x20],ECX
-004C622B  E8 00 83 26 00            CALL 0x0072e530
+TLOBldMark::sub_004C6210::override::prt_4c622b_a7ad5ad2:
+004C622B  E8 00 83 26 00            CALL 0x0072e530  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__cdecl;pointer:/STT3DSprC;/uint
 004C6230  83 C4 04                  ADD ESP,0x4
 004C6233  85 C0                     TEST EAX,EAX
 004C6235  74 0B                     JZ 0x004c6242

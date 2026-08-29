@@ -24,7 +24,7 @@ void __thiscall FUN_00444e70(void *this,ushort *param_1)
   DArrayTy *local_18;
   AnonShape_00444E70_8EFB8E54 *local_14;
   AnonShape_00444E70_523E22DE *local_10;
-  undefined4 local_c;
+  uint local_c;
   AnonShape_00444E70_E59ECBC3 *local_8;
 
   iVar4 = 0;
@@ -35,11 +35,13 @@ void __thiscall FUN_00444e70(void *this,ushort *param_1)
     iVar5 = *(int *)((int)&pAVar10[-1].field_0A73 + 1);
     local_8 = pAVar10;
     if (0 < iVar5) {
+
       Library::DKW::TBL::DArrayPut
                 (*(DArrayTy **)((int)&g_packedRecords_A62x8[0].field2_0x5 + iVar4),iVar5 - 1,
                  &local_c);
     }
     if (0 < *(int *)pAVar10) {
+
       Library::DKW::TBL::DArrayPut
                 (*(DArrayTy **)((int)&g_packedRecords_A62x8[0].field3_0x9 + iVar4),
                  *(int *)pAVar10 - 1,&local_c);
@@ -284,6 +286,7 @@ void __thiscall FUN_00444e70(void *this,ushort *param_1)
           if (*piVar6 != -1) {
             local_18 = FUN_006b0060(nullptr,(uint *)(*piVar6 + (int)param_1));
           }
+
           Library::DKW::TBL::DArrayPut
                     (*(DArrayTy **)((int)&g_packedRecords_A62x8[0].field1976_0x9f6 + iVar4),
                      (uint)local_10,&local_20);
@@ -306,29 +309,40 @@ void __thiscall FUN_00444e70(void *this,ushort *param_1)
   local_8 = pAVar10;
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (0 < *(int *)(param_1 + 0x2aba)) {
+
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    Library::DKW::TBL::DArrayPut(g_array_007FA154,*(int *)(param_1 + 0x2aba) - 1,&local_c);
+    Library::DKW::TBL::DArrayPut
+              ((DArrayTy *)g_array_007FA154,*(int *)(param_1 + 0x2aba) - 1,&local_c);
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (0 < *(int *)(param_1 + 0x2abc)) {
+
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    Library::DKW::TBL::DArrayPut(g_array_007FA158,*(int *)(param_1 + 0x2abc) - 1,&local_c);
+    Library::DKW::TBL::DArrayPut
+              ((DArrayTy *)g_array_007FA158,*(int *)(param_1 + 0x2abc) - 1,&local_c);
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (0 < *(int *)(param_1 + 0x2abe)) {
+
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    Library::DKW::TBL::DArrayPut(g_array_007FA15C,*(int *)(param_1 + 0x2abe) - 1,&local_c);
+    Library::DKW::TBL::DArrayPut
+              ((DArrayTy *)g_array_007FA15C,*(int *)(param_1 + 0x2abe) - 1,&local_c);
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (0 < *(int *)(param_1 + 0x2ac0)) {
+
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    Library::DKW::TBL::DArrayPut(g_array_007FA160,*(int *)(param_1 + 0x2ac0) - 1,&local_c);
+    Library::DKW::TBL::DArrayPut
+              ((DArrayTy *)g_array_007FA160,*(int *)(param_1 + 0x2ac0) - 1,&local_c);
   }
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   if (0 < *(int *)(param_1 + 0x2ac2)) {
+
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    Library::DKW::TBL::DArrayPut(g_array_007FA164,*(int *)(param_1 + 0x2ac2) - 1,&local_c);
+    Library::DKW::TBL::DArrayPut
+              ((DArrayTy *)g_array_007FA164,*(int *)(param_1 + 0x2ac2) - 1,&local_c);
   }
+
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   DAT_007fa168 = Library::DKW::LIB::MemAlloc(*(uint *)(param_1 + 0x2ac6));
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */

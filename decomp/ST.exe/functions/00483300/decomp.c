@@ -23,13 +23,13 @@ int __fastcall FUN_00483300(int *param_1,undefined4 param_2)
   short sVar7;
   short sVar8;
   short sVar9;
-  undefined4 local_38 [2];
-  undefined4 local_30 [2];
+  uint local_38 [2];
+  uint local_30 [2];
   short local_28;
   short sStack_26;
-  undefined2 local_24;
+  ushort local_24;
   int local_20;
-  undefined4 local_1c;
+  uint local_1c;
   int local_18;
   uint local_14;
   uint local_10;
@@ -46,6 +46,7 @@ LAB_00483342:
                       STField<ushort>(param_1,0x48b),
                       STField<STAllPlayersC_GetObjPtr_param_3Enum>(param_1,0x483));
     thunk_FUN_00416270(this,&local_10,(short *)&local_14,(short *)&local_8);
+
     iVar2 = FUN_006acf0d((int)STField<short>(param_1,0x41),(int)STField<short>(param_1,0x43),
                          (int)STField<short>(param_1,0x45),(short)local_10,
                          (short)local_14,(short)local_8);
@@ -57,7 +58,7 @@ LAB_00483342:
     /* ST_CALLSITE[004833D8]: CALL dword ptr [EAX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; signature=__thiscall;/undefined4;pointer:/STGameObjC */
     if (((iVar3 == 0) || (iVar3 = (*this->vtable[1].MoveStep)(this), iVar3 == 0)) ||
        /* ST_CALLSITE[004833EE]: CALL dword ptr [EDX + 0xf4]; [STIndirectCallsiteApplier] exact slot 0xF4; mode=machine-word; signature=__thiscall;/undefined4;pointer:/STGameObjC;/undefined4 */
-       (iVar3 = (*this->vtable[1].vfunc_20)(this,param_1[9]), iVar3 == 0)) {
+       (iVar3 = this->vfunc_F4(param_1[9]), iVar3 == 0)) {
       return 3;
     }
     sVar1 = STField<short>(param_1,0x45);
@@ -66,17 +67,15 @@ LAB_00483342:
     if (3 < (int)(((uVar4 ^ uVar6) - uVar6) * 10) / iVar2) {
       return ((short)local_8 <= sVar1) + 6;
     }
-    /* ST_CALLSITE[00483447]: CALL dword ptr [EAX + 0x10] */
-    /* ST_PSEUDO[return_width_artifact,raw_indirect_call]: candidate call-output artifact: verify return width, clobbers, or x87 state; expected typed vtable or function-table callback call with the machine-proven calling convention */
-    sVar1 = (**(code **)(*param_1 + 0x10))
-                      (STField<undefined2>(param_1,0x41),
-                       CONCAT22(extraout_var,STField<undefined2>(param_1,0x43)),
-                       CONCAT22(extraout_var,sVar1),local_10,local_14,local_8);
+    /* ST_CALLSITE[00483447]: CALL dword ptr [EAX + 0x10]; [STIndirectCallsiteApplier] exact slot 0x10; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
+    /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
+    sVar1 = STStructuralVirtualCall<undefined4>(param_1, 0x10, STField<undefined2>(param_1,0x41), CONCAT22(extraout_var,STField<undefined2>(param_1,0x43)), CONCAT22(extraout_var,sVar1), local_10, local_14, local_8);
     local_18 = (int)sVar1;
     local_20 = 0;
     if (STField<char>(param_1,0x2b2) != '\0') {
       local_c = param_1 + 0xaa;
       do {
+
         puVar5 = thunk_FUN_0041dc40(local_30,(short)*(undefined4 *)((int)local_c + -2),
                                     STField<ushort>(local_c,2),(short)local_18);
         sStack_26 = (short)((uint)*puVar5 >> 0x10);
@@ -85,6 +84,7 @@ LAB_00483342:
         sVar7 = STField<short>(param_1,0x41) + (short)*puVar5;
         sStack_26 = (short)*local_c;
         local_28 = 0;
+
         puVar5 = thunk_FUN_0041dc40(local_38,0,0,(short)local_18);
         local_28 = (short)*puVar5;
         sStack_26 = (short)((uint)*puVar5 >> 0x10);

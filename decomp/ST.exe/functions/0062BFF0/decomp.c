@@ -17,7 +17,7 @@ FUN_0062bff0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   float local_7c [9];
   float local_58 [5];
   float local_44;
-  undefined4 local_40;
+  uint local_40;
   float local_3c;
   float local_38;
   float local_34 [4];
@@ -82,6 +82,7 @@ FUN_0062bff0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
     pfVar4 = local_34;
     memmove(pfVar4, pfVar3, 0x24); /* compiler REP MOVS byte copy */
   }
+
   iVar2 = thunk_FUN_0062ba50(local_34,param_7);
   if (iVar2 == 0) {
     return 0;

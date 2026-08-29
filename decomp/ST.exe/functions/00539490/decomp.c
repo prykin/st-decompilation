@@ -17,6 +17,7 @@ void __thiscall PausePanelTy::DonePausePanel(PausePanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pPVar2 = local_8;
   if (errorCode == 0) {
@@ -36,6 +37,7 @@ void __thiscall PausePanelTy::DonePausePanel(PausePanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\pause.cpp",0x3b,0,errorCode,"%s",
                              "PausePanelTy::DonePausePanel");
   if (iVar3 != 0) {

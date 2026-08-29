@@ -39,7 +39,7 @@ public class STClassLayoutApplier extends GhidraScript {
     private static final String OVERLAY_HASH_MARKER = "; generated_overlay_sha256=";
     private static final String SWITCH_ENUM_MARKER = "[STSwitchEnumApplier]";
     private static final Set<String> COOPERATING_LAYOUT_MARKERS = Set.of(
-        MARKER, "[STGlobalDataApplier]");
+        MARKER, "[STGlobalDataApplier]", "[STHiddenThisApplier generated]");
     private final List<ReportRow> report = new ArrayList<>();
     private DataTypeManager dataTypes;
 
@@ -53,6 +53,7 @@ public class STClassLayoutApplier extends GhidraScript {
         }
         File classFile = inputFile();
         if (classFile == null) return;
+        String selectedOwner = selectedOwner();
         File directory = classFile.getAbsoluteFile().getParentFile();
         File fieldFile = new File(directory, "class_field_proposals.tsv");
         File nestedTypeFile = new File(directory, "class_nested_type_proposals.tsv");
@@ -95,11 +96,15 @@ public class STClassLayoutApplier extends GhidraScript {
         try {
             for (Map<String, String> row : nestedTypes.rows) {
                 monitor.checkCancelled();
+                if (selectedOwner != null &&
+                        !selectedOwner.equals(unt(row.get("owner")))) continue;
                 applyNestedType(row, nestedByType.getOrDefault(
                     unt(row.get("type_path")), List.of()));
             }
             for (Map<String, String> row : classes.rows) {
                 monitor.checkCancelled();
+                if (selectedOwner != null &&
+                        !selectedOwner.equals(unt(row.get("owner")))) continue;
                 applyClass(row, fieldsByOwner.getOrDefault(unt(row.get("owner")), List.of()));
             }
             commit = true;
@@ -123,6 +128,17 @@ public class STClassLayoutApplier extends GhidraScript {
             ", conflicts=" + conflicts + ", disabled=" + disabled +
             ", typed_fields=" + typed + ", named_fields=" + named);
         println("Apply report: " + reportPath.toAbsolutePath().normalize());
+        if (selectedOwner != null) println("Owner filter: " + selectedOwner);
+    }
+
+    private String selectedOwner() {
+        String[] args = getScriptArgs();
+        for (int index = 1; index < args.length; index++) {
+            String value = args[index];
+            if (value != null && value.startsWith("owner=") && value.length() > 6)
+                return value.substring(6);
+        }
+        return null;
     }
 
     private void applyNestedType(Map<String, String> row,
@@ -263,10 +279,17 @@ public class STClassLayoutApplier extends GhidraScript {
                 if (!typeEvidence.isBlank()) comment += "; type_evidence=" + typeEvidence;
                 if (!nameEvidence.isBlank()) comment += "; name_evidence=" + nameEvidence;
                 DataTypeComponent enriched = existing.getComponentAt(offset);
+                boolean protectedGeneratedVptr = enriched != null &&
+                    generatedPhysicalVptr(enriched, offset, size);
                 boolean protectedRecursivePointee = enriched != null &&
                     enriched.getOffset() == offset && enriched.getLength() == size &&
                     hashOwnedRecursivePointee(enriched.getDataType());
-                if (protectedRecursivePointee) {
+                if (protectedGeneratedVptr) {
+                    fieldType = enriched.getDataType();
+                    fieldName = enriched.getFieldName();
+                    comment = enriched.getComment();
+                }
+                else if (protectedRecursivePointee) {
                     String currentType = typeSpecification(enriched.getDataType());
                     if (!typeSpecification.equals(currentType) &&
                             !genericPointerSpecification(typeSpecification))
@@ -328,6 +351,19 @@ public class STClassLayoutApplier extends GhidraScript {
         catch (Exception exception) {
             report.add(new ReportRow(owner, path, "conflict", message(exception)));
         }
+    }
+
+    private boolean generatedPhysicalVptr(DataTypeComponent component, int offset, int size) {
+        if (offset != 0 || size != currentProgram.getDefaultPointerSize() ||
+                component.getOffset() != 0 || component.getLength() != size ||
+                !"vtable".equals(component.getFieldName()) ||
+                !(untypedef(component.getDataType()) instanceof Pointer pointer)) return false;
+        DataType pointed = untypedef(pointer.getDataType());
+        if (!(pointed instanceof Structure vtable)) return false;
+        String description = vtable.getDescription();
+        return description != null &&
+            (description.contains("[STHiddenThisApplier generated]") ||
+                description.contains("[STVTableApplier]"));
     }
 
     private void applySurgicalClass(Map<String, String> row,
@@ -531,6 +567,9 @@ public class STClassLayoutApplier extends GhidraScript {
             (description == null || description.isBlank() ||
                 description.contains("PlaceHolder Class Structure"));
         if (placeholder) return new Safety(true, true, "replaced placeholder structure");
+        if (pristineHiddenReceiverSkeleton(structure))
+            return new Safety(true, true,
+                "adopted pristine structural receiver skeleton");
         if (description == null || COOPERATING_LAYOUT_MARKERS.stream()
                 .noneMatch(description::contains))
             return new Safety(false, false, "existing manual/unowned structure");
@@ -544,6 +583,27 @@ public class STClassLayoutApplier extends GhidraScript {
         return new Safety(true, false, stored.equals(current) ?
             "updated unchanged generated structure" :
             "updated legacy canonicalized generated structure");
+    }
+
+    private boolean pristineHiddenReceiverSkeleton(Structure structure) {
+        String description = structure.getDescription();
+        if (!structure.getPathName().startsWith(
+                "/SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_") ||
+                description == null ||
+                !description.contains("[STHiddenThisApplier generated]")) return false;
+        DataTypeComponent[] components = structure.getDefinedComponents();
+        if (components.length == 0) return true;
+        if (components.length != 1) return false;
+        DataTypeComponent component = components[0];
+        DataType componentType = untypedef(component.getDataType());
+        if (component.getOffset() != 0 || !"vtable".equals(component.getFieldName()) ||
+                !(componentType instanceof Pointer pointer)) return false;
+        DataType pointed = untypedef(pointer.getDataType());
+        return pointed instanceof Structure vtable &&
+            vtable.getPathName().startsWith(
+                "/SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_") &&
+            vtable.getName().endsWith("VTable") && vtable.getDescription() != null &&
+            vtable.getDescription().contains("[STHiddenThisApplier generated]");
     }
 
     private String transientLayoutHash(Structure structure) {

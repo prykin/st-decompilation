@@ -13,8 +13,10 @@ PausePanelTy * __cdecl CreatePausePanel(void)
 {
   PausePanelTy *this;
 
-  this = (PausePanelTy *)FUN_006b04d0(0x188);
+
+  this = STPointerBoundaryCast<PausePanelTy *>(FUN_006b04d0(0x188));
   if (this != nullptr) {
+
     sub_006E5FB0(this);
     this->field_005C = 0;
     this->field_003C = 0;

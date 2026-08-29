@@ -92,12 +92,12 @@ LAB_0046d552:
 0046D572  0F 85 94 00 00 00         JNZ 0x0046d60c
 0046D578  8B 07                     MOV EAX,dword ptr [EDI]
 0046D57A  8B CF                     MOV ECX,EDI
-0046D57C  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+0046D57C  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 0046D57F  83 F8 3B                  CMP EAX,0x3b
 0046D582  74 0C                     JZ 0x0046d590
 0046D584  8B 17                     MOV EDX,dword ptr [EDI]
 0046D586  8B CF                     MOV ECX,EDI
-0046D588  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+0046D588  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 0046D58B  83 F8 60                  CMP EAX,0x60
 0046D58E  75 7C                     JNZ 0x0046d60c
 LAB_0046d590:
@@ -145,12 +145,12 @@ LAB_0046d60c:
 0046D618  75 27                     JNZ 0x0046d641
 0046D61A  8B 17                     MOV EDX,dword ptr [EDI]
 0046D61C  8B CF                     MOV ECX,EDI
-0046D61E  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+0046D61E  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 0046D621  83 F8 3B                  CMP EAX,0x3b
 0046D624  74 0C                     JZ 0x0046d632
 0046D626  8B 07                     MOV EAX,dword ptr [EDI]
 0046D628  8B CF                     MOV ECX,EDI
-0046D62A  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+0046D62A  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 0046D62D  83 F8 60                  CMP EAX,0x60
 0046D630  75 0F                     JNZ 0x0046d641
 LAB_0046d632:
@@ -390,12 +390,12 @@ switchD_0046d760::caseD_1:
 0046D928  0F 85 85 00 00 00         JNZ 0x0046d9b3
 0046D92E  8B 17                     MOV EDX,dword ptr [EDI]
 0046D930  8B CF                     MOV ECX,EDI
-0046D932  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+0046D932  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 0046D935  83 F8 3B                  CMP EAX,0x3b
 0046D938  74 0C                     JZ 0x0046d946
 0046D93A  8B 07                     MOV EAX,dword ptr [EDI]
 0046D93C  8B CF                     MOV ECX,EDI
-0046D93E  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+0046D93E  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 0046D941  83 F8 60                  CMP EAX,0x60
 0046D944  75 6D                     JNZ 0x0046d9b3
 LAB_0046d946:
@@ -503,12 +503,12 @@ LAB_0046d9ff:
 0046DAB5  0F 85 62 FC FF FF         JNZ 0x0046d71d
 0046DABB  8B 17                     MOV EDX,dword ptr [EDI]
 0046DABD  8B CF                     MOV ECX,EDI
-0046DABF  FF 52 2C                  CALL dword ptr [EDX + 0x2c]
+0046DABF  FF 52 2C                  CALL dword ptr [EDX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 0046DAC2  83 F8 3B                  CMP EAX,0x3b
 0046DAC5  74 10                     JZ 0x0046dad7
 0046DAC7  8B 07                     MOV EAX,dword ptr [EDI]
 0046DAC9  8B CF                     MOV ECX,EDI
-0046DACB  FF 50 2C                  CALL dword ptr [EAX + 0x2c]
+0046DACB  FF 50 2C                  CALL dword ptr [EAX + 0x2c]  ; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/dword;pointer:/STBoatC
 0046DACE  83 F8 60                  CMP EAX,0x60
 0046DAD1  0F 85 46 FC FF FF         JNZ 0x0046d71d
 LAB_0046dad7:
@@ -775,7 +775,7 @@ LAB_0046de59:
 0046DE61  66 8B 96 42 05 00 00      MOV DX,word ptr [ESI + 0x542]
 0046DE68  8B CE                     MOV ECX,ESI
 0046DE6A  52                        PUSH EDX
-0046DE6B  E8 42 52 F9 FF            CALL 0x004030b2
+0046DE6B  E8 42 52 F9 FF            CALL 0x004030b2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override
 0046DE70  50                        PUSH EAX
 0046DE71  8B CE                     MOV ECX,ESI
 0046DE73  E8 84 44 F9 FF            CALL 0x004022fc
@@ -1239,7 +1239,7 @@ LAB_0046e42d:
 0046E437  66 8B 96 42 05 00 00      MOV DX,word ptr [ESI + 0x542]
 0046E43E  8B CE                     MOV ECX,ESI
 0046E440  52                        PUSH EDX
-0046E441  E8 6C 4C F9 FF            CALL 0x004030b2
+0046E441  E8 6C 4C F9 FF            CALL 0x004030b2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override
 0046E446  50                        PUSH EAX
 0046E447  8B CE                     MOV ECX,ESI
 0046E449  E8 AE 3E F9 FF            CALL 0x004022fc

@@ -13,27 +13,32 @@ undefined4 __thiscall TLOBaseTy::sub_00417D30(TLOBaseTy *this)
   int iVar2;
 
   if (this->field_002C == 0) {
+
     uVar1 = thunk_FUN_00495ff0(this->field_0047,this->field_0049,this->field_004B,this->field_008E,
-                               (AnonShape_00495FF0_59081BDD *)this);
+                               (RecoveredRecordView_00495FF0_A2A90B23 *)this);
     return uVar1;
   }
+
   iVar2 = thunk_FUN_00495ff0(this->field_0047,this->field_0049,this->field_004B,this->field_008E,
-                             (AnonShape_00495FF0_59081BDD *)this);
+                             (RecoveredRecordView_00495FF0_A2A90B23 *)this);
   if (iVar2 != 0) {
     return 0xffffffff;
   }
+
   iVar2 = thunk_FUN_00495ff0(this->field_0047 + 1,this->field_0049,this->field_004B,this->field_008E
-                             ,(AnonShape_00495FF0_59081BDD *)this);
+                             ,(RecoveredRecordView_00495FF0_A2A90B23 *)this);
   if (iVar2 != 0) {
     return 0xffffffff;
   }
+
   iVar2 = thunk_FUN_00495ff0(this->field_0047,this->field_0049 + 1,this->field_004B,this->field_008E
-                             ,(AnonShape_00495FF0_59081BDD *)this);
+                             ,(RecoveredRecordView_00495FF0_A2A90B23 *)this);
   if (iVar2 != 0) {
     return 0xffffffff;
   }
+
   uVar1 = thunk_FUN_00495ff0(this->field_0047 + 1,this->field_0049 + 1,this->field_004B,
-                             this->field_008E,(AnonShape_00495FF0_59081BDD *)this);
+                             this->field_008E,(RecoveredRecordView_00495FF0_A2A90B23 *)this);
   return uVar1;
 }
 

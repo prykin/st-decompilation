@@ -1,5 +1,11 @@
 
-void FUN_006d1250(uint *param_1,int param_2,int param_3,uint *param_4)
+/* [STAbiConsistencyApplier] machine_parameter_pointer_role target=parameter:1: parameter=/void *32
+   Evidence: generic machine-word parameter reaches only unscaled address bases: direct_reads=1,
+   pointer_dereferences=3, scalar_uses=0; sites=006D12F9 dereference: MOV CL,byte ptr [EAX + -0x2] |
+   006D130E dereference: MOV CL,byte ptr [EAX + -0x5] | 006D1324 dereference: MOV CL,byte ptr [EAX +
+   -0x4] */
+
+void FUN_006d1250(uint *param_1,void *param_2,int param_3,uint *param_4)
 
 {
   byte bVar1;
@@ -35,7 +41,7 @@ void FUN_006d1250(uint *param_1,int param_2,int param_3,uint *param_4)
     bVar7 = bVar7 + 1;
   }
   if (0 < param_3) {
-    pbVar3 = (byte *)(param_2 + 2);
+    pbVar3 = (byte *)((int)param_2 + 2);
     do {
       param_3 = param_3 + -1;
       *param_1 = ((uint)pbVar3[-2] << 0x10) >> (bVar7 & 0x1f) & uVar5 |

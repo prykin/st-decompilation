@@ -131,6 +131,33 @@ advisory lock under ignored `.st-local/docker/` prevents two Compose writers.
 Ghidra's own project locks remain authoritative: close every GUI or other
 headless writer before running a recovery command.
 
+For a multi-hour pass which must survive a Codex or terminal session ending,
+put the container under the Docker daemon rather than a shell background job:
+
+```sh
+./docker/run.sh background-start full-export
+./docker/run.sh background-status
+./docker/run.sh background-logs 120
+./docker/run.sh background-clean
+```
+
+Only one fixed-name background container is allowed. It is retained after exit
+so the exit code and complete log remain inspectable; `background-clean`
+refuses to remove a running container. The normal project-writer lock still
+prevents another mutating pipeline from starting.
+
+For a bounded analyzer/applier experiment, run one repository script without
+path dialogs while retaining the same project lock and outer log discipline:
+
+```sh
+./docker/run.sh run-script STHiddenThisAnalyzer.java /workspace/recovery
+./docker/run.sh run-script STHiddenThisApplier.java /workspace/recovery/ST.exe/hidden_this_proposals.tsv
+```
+
+The script name is restricted to a basename present under `scripts/`; arguments
+are passed verbatim after it. The normal pipeline remains authoritative for a
+complete accepted recovery/export pass.
+
 The image build and every non-interactive container command retain only their
 latest and previous outer console logs under `.st-local/docker/`. Recovery logs
 are named

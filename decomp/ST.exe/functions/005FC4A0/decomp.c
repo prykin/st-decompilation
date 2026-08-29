@@ -1,7 +1,7 @@
 #include "../../pseudocode_runtime.h"
 
 
-undefined4 __fastcall FUN_005fc4a0(AnonShape_005FC4A0_70B17F95 *param_1)
+undefined4 __fastcall FUN_005fc4a0(RecoveredRecordView_005FC4A0_75D5CD83 *param_1)
 
 {
   uint uVar1;
@@ -109,6 +109,7 @@ undefined4 __fastcall FUN_005fc4a0(AnonShape_005FC4A0_70B17F95 *param_1)
   param_1->field_02C2 = (int)param_1->field_0350;
   param_1->field_02C6 = (int)param_1->field_0352;
   param_1->field_0231 = 0xfe;
+
   uVar7 = thunk_FUN_005fcd40(param_1->field_033E);
   param_1->field_02B1 = uVar7;
   param_1->field_0235 = param_1->field_0332;
@@ -116,11 +117,13 @@ undefined4 __fastcall FUN_005fc4a0(AnonShape_005FC4A0_70B17F95 *param_1)
   param_1->field_023E = 2000;
   if (bVar4) {
     if (param_1->field_0342 == 1) {
+
       thunk_FUN_005ef4b0(param_1,(uint)param_1->field_0251);
       param_1->field_023A = 2;
       param_1->field_02E9 = 1;
     }
     else if (bVar5) {
+
       iVar6 = thunk_FUN_005ecd70(param_1,(short)(param_1->field_0242 * 0xc9 + 100),
                                  (short)(param_1->field_0244 * 0xc9 + 100),
                                  (short)(param_1->field_0246 * 200 + 100),param_1->field_0354,
@@ -132,6 +135,7 @@ undefined4 __fastcall FUN_005fc4a0(AnonShape_005FC4A0_70B17F95 *param_1)
     else {
       uVar1 = param_1->field_001C * 0x41c64e6d + 0x3039;
       param_1->field_001C = uVar1;
+
       thunk_FUN_005ecd70(param_1,param_1->field_0277,param_1->field_027B,param_1->field_027F + -0x1e
                          ,param_1->field_0354,'\0',0x1e - (uVar1 >> 0x10) % 0xb);
       param_1->field_023A = 1;

@@ -28,7 +28,7 @@ undefined4 * __cdecl st::fn_00690E90(char *source,undefined2 param_2,undefined2 
     *(undefined4 *)local_8 = 0x38e;
     *(undefined4 *)&local_8->field_0x14 = 0x10c;
     STField<undefined1>(local_8,0x18) = 2;
-    st::fn_0072E340((char *)&local_8->field_0x1b,source,0x3f);
+    st::fn_0072E340(reinterpret_cast<char *>(&local_8->field_0x1b),source,0x3f);
     local_8->field_0019 = param_2;
     *(undefined2 *)&local_8->field_0x5c = param_3;
     if (local_8->field_0085 == 0) {
@@ -39,7 +39,7 @@ undefined4 * __cdecl st::fn_00690E90(char *source,undefined2 param_2,undefined2 
     return (undefined4 *)local_8;
   }
   g_currentExceptionFrame = local_4c.previous;
-  st::fn_00402E00((int *)&local_8);
+  st::fn_00402E00(reinterpret_cast<int *>(&local_8));
   st::fn_006A5E40(exceptionCode,0,st::mutable_c_string("E:\\__titans\\ai\\ai_tact_d.cpp"),0x21);
   return nullptr;
 }
@@ -67,15 +67,17 @@ AllocationRecord_00690FC0 * __cdecl st::fn_00690FC0(AllocationRecord_00690FC0 *p
   AllocationRecord_00668330 *pAVar6;
   AllocationRecord_00690FC0 *pAVar7;
   InternalExceptionFrame local_54;
-  undefined4 local_10;
+  uint local_10;
   byte *local_c;
   AnonShape_00690FC0_955C4112 *local_8;
 
   local_8 = nullptr;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
+
   iVar1 = st::fn_0072D7F0(local_54.jumpBuffer,0);
   if (iVar1 == 0) {
+
     pAVar1 = static_cast<AllocationRecord_00690FC0 *>(st::fn_006AAC10(0x10c));
     pAVar5 = param_1;
     pAVar7 = pAVar1;
@@ -83,27 +85,28 @@ AllocationRecord_00690FC0 * __cdecl st::fn_00690FC0(AllocationRecord_00690FC0 *p
     iVar4 = 0;
     pAVar1->field_0014 = 0x10c;
     pAVar1->field_0018 = 2;
-    local_8 = (AnonShape_00690FC0_955C4112 *)pAVar1;
+    local_8 = reinterpret_cast<AnonShape_00690FC0_955C4112 *>(pAVar1);
     do {
       if (STObjectAtByteOffset(pAVar1, iVar4).field_0085 != 0) {
         pDVar2 = st::fn_006B0060(nullptr,
-                              (uint *)(&param_1->field_0x10b + *(int *)(&pAVar1->field_0x89 + iVar4)
-                                      ));
+                              reinterpret_cast<uint *>((&param_1->field_0x10b + *(int *)(&pAVar1->field_0x89 + iVar4)
+                                      )));
         *(DArrayTy **)((int)&local_8->field_0085 + iVar4) = pDVar2;
-        pAVar1 = (AllocationRecord_00690FC0 *)local_8;
+        pAVar1 = reinterpret_cast<AllocationRecord_00690FC0 *>(local_8);
       }
       iVar4 = iVar4 + 0xc;
     } while (iVar4 < 0x60);
     if (pAVar1->field_0085 == 0) {
+      /* ST_CALLSITE[0069106E]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
       pDVar2 = st::fn_006AE290(nullptr,10,8,10);
       local_8->field_0085 = &pDVar2->flags;
-      pAVar1 = (AllocationRecord_00690FC0 *)local_8;
+      pAVar1 = reinterpret_cast<AllocationRecord_00690FC0 *>(local_8);
     }
     if (0 < (short)pAVar1->field_0105) {
       *(undefined4 *)(pAVar1->field_0085 + 0xc) = 0;
-      pAVar6 = (AllocationRecord_00668330 *)(&param_1->field_0x10b + *(int *)&param_1->field_0x107);
+      pAVar6 = reinterpret_cast<AllocationRecord_00668330 *>((&param_1->field_0x10b + *(int *)&param_1->field_0x107));
       iVar4 = 0;
-      pAVar1 = (AllocationRecord_00690FC0 *)local_8;
+      pAVar1 = reinterpret_cast<AllocationRecord_00690FC0 *>(local_8);
       if (0 < local_8->field_0105) {
         do {
           local_10 = 0;
@@ -115,10 +118,11 @@ AllocationRecord_00690FC0 * __cdecl st::fn_00690FC0(AllocationRecord_00690FC0 *p
           else {
             local_c = &pAVar3[-1].field_0x240;
           }
-          st::fn_006AE1C0((DArrayTy *)local_8->field_0085,&local_10);
-          pAVar6 = (AllocationRecord_00668330 *)(&pAVar6->field_0x0 + pAVar6->field_0014);
+
+          st::fn_006AE1C0(reinterpret_cast<DArrayTy *>(local_8->field_0085),&local_10);
+          pAVar6 = reinterpret_cast<AllocationRecord_00668330 *>((&pAVar6->field_0x0 + pAVar6->field_0014));
           iVar4 = iVar4 + 1;
-          pAVar1 = (AllocationRecord_00690FC0 *)local_8;
+          pAVar1 = reinterpret_cast<AllocationRecord_00690FC0 *>(local_8);
         } while (iVar4 < local_8->field_0105);
       }
     }
@@ -126,7 +130,7 @@ AllocationRecord_00690FC0 * __cdecl st::fn_00690FC0(AllocationRecord_00690FC0 *p
     return pAVar1;
   }
   g_currentExceptionFrame = local_54.previous;
-  st::fn_00402E00((int *)&local_8);
+  st::fn_00402E00(reinterpret_cast<int *>(&local_8));
   st::fn_006A5E40(iVar1,0,st::mutable_c_string("E:\\__titans\\ai\\ai_tact_d.cpp"),0x51);
   return nullptr;
 }
@@ -189,17 +193,17 @@ byte * __cdecl st::fn_00691190(undefined4 *param_1,uint *param_2)
     } while (iVar7 != 0);
     *param_2 = local_c + 0x10cU;
     pAVar2 = static_cast<AnonShape_00691190_783A1B6D *>(st::fn_006AAC10(local_c + 0x10cU));
-    puVar8 = (byte *)(param_1);
+    puVar8 = reinterpret_cast<byte *>((param_1));
     pAVar11 = pAVar2;
     for (iVar7 = 0x43; iVar7 != 0; iVar7 = iVar7 + -1) {
       *(undefined4 *)pAVar11 = *puVar8;
-      puVar8 = (byte *)(puVar8 + 1);
-      pAVar11 = (AnonShape_00691190_783A1B6D *)&pAVar11->field_0x4;
+      puVar8 = reinterpret_cast<byte *>((puVar8 + 1));
+      pAVar11 = reinterpret_cast<AnonShape_00691190_783A1B6D *>(reinterpret_cast<byte *>(pAVar11) + 0x4);
     }
     iVar10 = 0;
     pAVar2->field_0014 = *param_2;
     pAVar2->field_0x18 = 0;
-    puVar12 = (uint *)&pAVar2[1].field_0x3;
+    puVar12 = reinterpret_cast<uint *>(&pAVar2[1].field_0x3);
     iVar7 = local_18;
     local_8 = pAVar2;
     do {
@@ -237,12 +241,12 @@ byte * __cdecl st::fn_00691190(undefined4 *param_1,uint *param_2)
           if (pAVar3 != nullptr) {
             /* ST_CALLSITE[006912DC]: CALL 0x004014c4; direct=004014C4 FltDataPack */
             local_1c = st::fn_004014C4(pAVar3,&local_10);
-            local_8 = static_cast<AnonShape_00691190_783A1B6D *>(st::fn_006ACF50(local_8,st::machine_word_boundary_cast<uint>(local_8->field_0014 + local_10)));
+            local_8 = static_cast<AnonShape_00691190_783A1B6D *>(st::fn_006ACF50(local_8,local_8->field_0014 + local_10));
             pAVar3 = local_1c;
-            puVar8 = (byte *)(&local_8[1].field_0x3 + iVar7);
+            puVar8 = reinterpret_cast<byte *>((&local_8[1].field_0x3 + iVar7));
             memmove(puVar8, pAVar3, local_10); /* compiler REP MOVS byte copy */
             iVar7 = iVar7 + local_10;
-            local_8->field_0014 = st::machine_word_boundary_cast<uint>(local_8->field_0014 + local_10);
+            local_8->field_0014 = local_8->field_0014 + local_10;
             local_8->field_0105 = local_8->field_0105 + 1;
             local_18 = iVar7;
             if (local_1c != nullptr) {
@@ -275,4 +279,3 @@ byte * __cdecl st::fn_00691190(undefined4 *param_1,uint *param_2)
   }
   STDebugBreak(); /* noreturn in standalone pseudocode */
 }
-

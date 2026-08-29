@@ -2,7 +2,8 @@ FUN_0065e6c0:
 0065E6C0  56                        PUSH ESI
 0065E6C1  57                        PUSH EDI
 0065E6C2  8B F9                     MOV EDI,ECX
-0065E6C4  E8 06 32 DA FF            CALL 0x004018cf
+FUN_0065e6c0::override::prt_65e6c4_a0e5684e:
+0065E6C4  E8 06 32 DA FF            CALL 0x004018cf  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__fastcall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/AiFltClassTy;/undefined4
 0065E6C9  8B F0                     MOV ESI,EAX
 0065E6CB  85 F6                     TEST ESI,ESI
 0065E6CD  74 1A                     JZ 0x0065e6e9

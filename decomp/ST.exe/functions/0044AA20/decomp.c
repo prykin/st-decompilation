@@ -6,7 +6,8 @@
    STAllPlayersC::UnRegisterBlot */
 
 undefined4 __thiscall
-STAllPlayersC::UnRegisterBlot(STAllPlayersC *this,uint param_1,AnonShape_0044AA20_1EE9340C *param_2)
+STAllPlayersC::UnRegisterBlot
+          (STAllPlayersC *this,uint param_1,RecoveredRecordView_0044AA20_60F0F4F3 *param_2)
 
 {
   STAllPlayersC *this_00;
@@ -16,18 +17,19 @@ STAllPlayersC::UnRegisterBlot(STAllPlayersC *this,uint param_1,AnonShape_0044AA2
   uint uVar4;
   InternalExceptionFrame local_50;
   STAllPlayersC *local_c;
-  undefined4 local_8;
-
+  uint local_8;
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (errorCode == 0) {
     /* ST_CALLSITE[0044AA69]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar2 = GetObjPtr(local_c,-1,(ushort)param_1,CASE_6);
     if (pSVar2 != (STGameObjC *)param_2) {
+      /* ST_CALLSITE[0044AA8A]: CALL 0x006a5e40; direct=006A5E40 RaiseInternalException; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
       RaiseInternalException
                 (-0x5001fff9,g_overwriteContext_007ED77C,"E:\\__titans\\wlad\\to_allpl.cpp",
                  0x2fb8);
@@ -36,12 +38,14 @@ STAllPlayersC::UnRegisterBlot(STAllPlayersC *this,uint param_1,AnonShape_0044AA2
     DelObjFromTmps(this_00,DAT_0080874d,param_2->field_0020,param_2->field_0024,param_1);
     /* ST_CALLSITE[0044AAB0]: CALL 0x00403643; direct=00403643 STAllPlayersC::DelObjFromSaveTmps */
     DelObjFromSaveTmps(this_00,param_2->field_0020,param_2->field_0024,(ushort)param_1);
-    Library::DKW::TBL::DArrayPut(g_array_007FA164,param_1 & 0xffff,&local_8);
+
+    Library::DKW::TBL::DArrayPut((DArrayTy *)g_array_007FA164,param_1 & 0xffff,&local_8);
     g_currentExceptionFrame = local_50.previous;
   }
   else {
     g_currentExceptionFrame = local_50.previous;
     if (errorCode != -0x5001fff7) {
+
       iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2fc1,0,errorCode,
                                  "%s","STAllPlayersC::UnRegisterBlot");
       if (iVar3 != 0) {

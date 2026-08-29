@@ -35,11 +35,10 @@ STBHEShellC * __thiscall st::fn_005F3440(STBHEShellC *this)
 void __thiscall st::fn_005F3470(STBHEShellC *this)
 
 {
-  undefined4 local_24 [3];
-  undefined4 local_18;
-  undefined4 local_14;
-  undefined4 local_10;
-
+  uint local_24 [3];
+  uint local_18;
+  uint local_14;
+  uint local_10;
   local_10 = this->field_0008;
   local_18 = 0;
   local_14 = 10;
@@ -92,7 +91,7 @@ undefined4 __thiscall st::fn_005F35F0(STBHEShellC *this,int param_1)
   int iVar3;
   ushort *puVar4;
   InternalExceptionFrame local_54;
-  undefined4 local_10;
+  uint local_10;
   char **local_c;
   AnonShape_005F35F0_EF2A6FDB *local_8;
 
@@ -100,18 +99,22 @@ undefined4 __thiscall st::fn_005F35F0(STBHEShellC *this,int param_1)
   local_c = &PTR_s_adcbo_007ce5a0;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  local_8 = (AnonShape_005F35F0_EF2A6FDB *)this;
+  local_8 = reinterpret_cast<AnonShape_005F35F0_EF2A6FDB *>(this);
+
   iVar3 = st::fn_0072D7F0(local_54.jumpBuffer,0);
   pAVar2 = local_8;
   if (iVar3 == 0) {
     if (param_1 == 1) {
+      /* ST_CALLSITE[005F365D]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
       puVar4 = st::fn_00709AF0
                          (PTR_00806774,CASE_1D,local_c[local_8->field_0087],0xffffffff,0,1,0,
                           nullptr);
       puVar1 = &pAVar2->field_008F;
+
       st::fn_006E8660
-                (g_sT3DSMAPContext_00807598,(int *)puVar1,1,0,STField<uint>(puVar4,9),
+                (g_sT3DSMAPContext_00807598,reinterpret_cast<int *>(puVar1),1,0,STField<uint>(puVar4,9),
                  STField<uint>(puVar4,0xd),0x5a,0x45,0);
+
       st::fn_006E98E0
                 (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar4,STField<int>(puVar4,0x21),1);
       st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,pAVar2->field_00AB);
@@ -128,18 +131,23 @@ undefined4 __thiscall st::fn_005F35F0(STBHEShellC *this,int param_1)
                   (g_sT3DSMAPContext_00807598,local_8->field_008F,0,0,(uint)local_8);
         st::fn_006E8BA0(g_sT3DSMAPContext_00807598,*puVar1);
       }
+      /* ST_CALLSITE[005F3733]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
       puVar4 = st::fn_00709AF0
                          (PTR_00806774,CASE_1D,st::mutable_c_string("expl_i13"),0xffffffff,0,1,0,
                           nullptr);
+
       st::fn_006E8660
-                (g_sT3DSMAPContext_00807598,(int *)puVar1,3,0,STField<uint>(puVar4,9),
+                (g_sT3DSMAPContext_00807598,reinterpret_cast<int *>(puVar1),3,0,STField<uint>(puVar4,9),
                  STField<uint>(puVar4,0xd),0x5a,0x45,0);
+
       st::fn_006E98E0
                 (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar4,STField<int>(puVar4,0x21),1);
       st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,pAVar2->field_00AB);
+      /* ST_CALLSITE[005F37A2]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
       puVar4 = st::fn_00709AF0
                          (PTR_00806764,CASE_1D,st::mutable_c_string("expl_s0"),0xffffffff,0,1,0,nullptr
                          );
+
       st::fn_006E98E0
                 (g_sT3DSMAPContext_00807598,*puVar1,2,*(int *)puVar4,STField<int>(puVar4,0x21),1);
       st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar1,2,pAVar2->field_00C0);
@@ -150,6 +158,7 @@ undefined4 __thiscall st::fn_005F35F0(STBHEShellC *this,int param_1)
                (float)pAVar2->field_0093 * _DAT_007904f8 * _DAT_007904f0,
                (float)pAVar2->field_0097 * _DAT_007904f8 * _DAT_007904f0,
                (float)pAVar2->field_009B * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+
     st::fn_006EAAA0(g_sT3DSMAPContext_00807598,pAVar2->field_008F,0);
     pAVar2->field_00C4 = 1;
     g_currentExceptionFrame = local_54.previous;
@@ -165,9 +174,14 @@ undefined4 __thiscall st::fn_005F35F0(STBHEShellC *this,int param_1)
 /* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
    Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=3; incoming_this_accesses=12;
    incoming_edx_uses=2; incoming_stack_parameter_uses=32; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=005F27C0 @ 005F2904 -> killed on
+   every CFG path | 005F27C0 @ 005F2AB0 -> read as EAX on every CFG path | 005F27C0 @ 005F2BB0 ->
+   read as EAX on every CFG path | 005F3BF0 @ 005F41C4 -> read as EAX on every CFG path */
 
-undefined4 __thiscall
+int __thiscall
 st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,char param_4)
 
 {
@@ -188,7 +202,7 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
   float local_14_mg0;
   int local_10;
   int local_c;
-  undefined4 local_8;
+  int local_8;
 
   local_8 = 0;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -215,6 +229,7 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
     }
   }
   else if (param_4 == '\x01') {
+
     iVar4 = st::fn_006ACED8(this->field_0093,this->field_0097,param_1,param_2);
     this->field_00EF = iVar4;
     local_14_mg0 = (float)iVar4;
@@ -239,6 +254,7 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
         this->field_00CD = (int)lVar10;
         lVar10 = st::fn_0072E288();
         local_18 = -this->field_00DF;
+
         iVar7 = st::fn_00405B19((float)local_10,(float)(int)this->field_00DF,
                                    (float)(0x4b0 - iVar7),(float)local_18,local_20);
         if (iVar7 != 0) {
@@ -274,6 +290,7 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
         local_10 = ((local_c / 100) * (local_c / 100)) / ((int)pAVar5 * 2);
         iVar9 = (int)((ulonglong)((longlong)iVar6 * -0x68db8bad) >> 0x20);
         local_18 = (iVar9 >> 0xc) - (iVar9 >> 0x1f);
+
         iVar7 = st::fn_00405B19((float)local_c / (float)local_10,(float)iVar7,
                                    (float)((int)pAVar5 +
                                           (-(short)this->field_009B - (iVar6 * iVar8) / 20000)
@@ -299,17 +316,17 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
     uVar3 = this->field_00FF;
     this->field_00C9 = 2;
     if (uVar3 < g_playSystem_00802A38->field_00E4) {
-      this->field_00FB = st::machine_word_boundary_cast<int>(g_playSystem_00802A38->field_00E4 - uVar3);
+      this->field_00FB = g_playSystem_00802A38->field_00E4 - uVar3;
       if (0x1f6 < iVar7) {
         this->field_00D5 = 0x44c;
-        iVar6 = st::machine_word_boundary_cast<int>(this->field_00E3 * 0x1b9f);
+        iVar6 = this->field_00E3 * 0x1b9f;
         this->field_00DF = iVar6;
         this->field_00E3 = iVar6;
         this->field_00D7 = ((param_1 - this->field_00D1) * iVar6) / iVar7;
         this->field_00DB = ((param_2 - this->field_00D3) * iVar6) / iVar7;
         return 1;
       }
-      this->field_00DF = st::machine_word_boundary_cast<undefined4>(this->field_00F7 * uVar3);
+      this->field_00DF = this->field_00F7 * uVar3;
       iVar6 = this->field_00CD;
       this->field_00D5 = 0x4b0 - (short)((this->field_00F7 * uVar3 * uVar3) / 20000);
       this->field_00E3 = iVar6;
@@ -326,9 +343,14 @@ st::fn_005F3BF0(STBHEShellC *this,int param_1,int param_2,undefined4 param_3,cha
 /* [STMethodOwnerApplier] Structural method owner recovered as STBHEShellC.
    Evidence: this_call_owners=[STBHEShellC]; agreed_this_calls=3; incoming_this_accesses=22;
    incoming_edx_uses=0; incoming_stack_parameter_uses=12; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+   [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
+   callers consume full EAX (3), none consume AL/AX, and every RET path defines full EAX; generic
+   void/unsized transport requires at least two callers; sites=005F27C0 @ 005F29E2 -> read as EAX on
+   every CFG path | 005F27C0 @ 005F2AD8 -> read as EAX on every CFG path | 005F27C0 @ 005F2BD8 ->
+   read as EAX on every CFG path */
 
-uint __thiscall
+int __thiscall
 st::fn_005F4370(STBHEShellC *this,int *param_1,int *param_2,int *param_3,int param_4)
 
 {
@@ -342,7 +364,7 @@ st::fn_005F4370(STBHEShellC *this,int *param_1,int *param_2,int *param_3,int par
     *param_1 = (int)this->field_00D1;
     *param_2 = (int)this->field_00D3;
     iVar2 = (g_playSystem_00802A38->field_00E4 - this->field_00FB) * this->field_00DF;
-    *param_3 = st::machine_word_boundary_cast<int>(this->field_00D5 + iVar2);
+    *param_3 = this->field_00D5 + iVar2;
     uVar1 = (uint)(this->field_00EF <= iVar2);
   }
   else {
@@ -355,7 +377,7 @@ st::fn_005F4370(STBHEShellC *this,int *param_1,int *param_2,int *param_3,int par
       *param_1 = (this->field_00D7 * iVar3) / 20000 + (int)this->field_00D1;
       *param_2 = (this->field_00DB * iVar3) / 20000 + (int)this->field_00D3;
       if (0x1f6 < this->field_00EF) {
-        return (uint)((int)((int)&this->field_00F3[-1].field_00FB + 2) <= (iVar2 * iVar3) / 20000);
+        return st::storage_bit_cast<uint>(static_cast<uint32_t>((int)((int)&this->field_00F3[-1].field_00FB + 2) <= (iVar2 * iVar3) / 20000));
       }
       return (uint)(iVar4 == this->field_00E7);
     }
@@ -420,7 +442,7 @@ void __thiscall st::fn_005F4680(STBHEShellC *this)
       this->field_00C4 = 0;
       return;
     }
-    iVar5 = st::machine_word_boundary_cast<int>(this->field_00AB + 1);
+    iVar5 = this->field_00AB + 1;
     this->field_00AB = iVar5;
     if (this->field_00AF <= iVar5) {
       this->field_00AB = 0;
@@ -468,22 +490,23 @@ st::fn_005F4C50
           int param_6)
 
 {
-  int iVar1;
-  STBHEShellC_field_0169DArray *pSVar2;
+  STBHEShellC_field_0169DArray *pSVar1;
+  int iVar2;
+  DArrayTy *pSVar2_mg0;
   STBHEShellC_field_0169Element *element_0169;
   uint *puVar4;
   uint uVar5;
   int iVar6;
   int iVar7;
   longlong lVar8;
-  undefined1 local_2c [6];
+  byte local_2c [6];
   int local_26;
-  undefined4 local_22;
-  undefined4 local_1e;
+  uint local_22;
+  uint local_1e;
   int local_1a;
   int local_16;
-  undefined4 local_12;
-  undefined4 local_d;
+  uint local_12;
+  uint local_d;
   float local_8;
 
   iVar6 = param_4;
@@ -502,30 +525,30 @@ st::fn_005F4C50
     do {
       puVar4[-4] = this->field_011D;
       *puVar4 = this->field_0119;
-      iVar1 = iVar7 / this->field_0121;
+      iVar2 = iVar7 / this->field_0121;
       iVar7 = iVar7 + -0x96;
-      puVar4[4] = iVar1 + g_playSystem_00802A38->field_00E4 + param_6;
+      puVar4[4] = iVar2 + g_playSystem_00802A38->field_00E4 + param_6;
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_4 = param_4 + -1;
       puVar4 = puVar4 + 1;
     } while (param_4 != 0);
   }
   if (this->field_0169 != nullptr) {
-    st::fn_006AE110((DArrayTy *)this->field_0169);
+    st::fn_006AE110(reinterpret_cast<DArrayTy *>(this->field_0169));
   }
-  pSVar2 = (STBHEShellC_field_0169DArray *)
-           st::fn_006AE290(nullptr,iVar6 * param_5,0x23,10);
-  this->field_0169 = pSVar2;
-  if ((pSVar2 != nullptr) && (param_4 = 0, 0 < this->field_010D)) {
+  /* ST_CALLSITE[005F4D1C]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STBHEShellC_field_0169DArray; source view only; no Ghidra override */
+  pSVar2_mg0 = st::fn_006AE290(nullptr,iVar6 * param_5,0x23,10);
+  this->field_0169 = reinterpret_cast<STBHEShellC_field_0169DArray *>(pSVar2_mg0);
+  if ((pSVar2_mg0 != nullptr) && (param_4 = 0, 0 < this->field_010D)) {
     do {
       auto param_1_after_write = 0.0; /* compiler stack-slot lifetime split */
       auto param_3_after_write = 0; /* compiler stack-slot lifetime split */
-      iVar6 = st::machine_word_boundary_cast<int>(this->field_0109 * param_4);
+      iVar6 = this->field_0109 * param_4;
       if (0 < this->field_0109) {
         do {
-          puVar4 = (undefined4 *)local_2c;
+          puVar4 = reinterpret_cast<uint *>(local_2c);
           memset(puVar4, 0, 0x23); /* compiler bulk-zero initialization */
-          puVar4 = (undefined4 *)((byte *)puVar4 + 0x20);
+          puVar4 = reinterpret_cast<uint *>(((byte *)puVar4 + 0x20));
           if (param_4 == 0) {
             fcos((float10)param_1_after_write);
             lVar8 = st::fn_0072E288();
@@ -537,9 +560,9 @@ st::fn_005F4C50
             param_1_after_write = param_1_after_write + local_8;
           }
           else {
-            pSVar2 = this->field_0169;
-            if ((uint)(iVar6 - param_5) < pSVar2->count) {
-              element_0169 = DArrayAt<STBHEShellC_field_0169Element>(pSVar2, iVar6 - param_5);
+            pSVar1 = this->field_0169;
+            if (st::storage_bit_cast<uint>(static_cast<uint32_t>(iVar6 - param_5)) < pSVar1->count) {
+              element_0169 = DArrayAt<STBHEShellC_field_0169Element>(pSVar1, iVar6 - param_5);
             }
             else {
               element_0169 = nullptr;
@@ -549,7 +572,7 @@ st::fn_005F4C50
             local_1a = iVar7;
           }
           STPiece<2,4>(local_2c) = ((&this->field_0139)[param_4] * iVar7) / 10000 + this->field_0111;
-          local_26 = ((&this->field_0139)[param_4] * local_16) / 10000 + this->field_0115;
+          local_26 = st::machine_word_boundary_cast<int>(((&this->field_0139)[param_4] * local_16) / 10000 + this->field_0115);
           local_12 = DAT_007ce5ec;
           local_22 = this->field_0119;
           local_1e = 0;
@@ -557,10 +580,12 @@ st::fn_005F4C50
           local_d = 0xffffffff;
           uVar5 = (uint)((&this->field_0159)[param_4] != 0);
           if (this->field_0103 != '\0') {
+
             st::fn_00403247((int)local_2c,3,uVar5);
           }
           local_2c[0] = uVar5 == 0;
-          st::fn_006AE1C0((DArrayTy *)this->field_0169,local_2c);
+
+          st::fn_006AE1C0(reinterpret_cast<DArrayTy *>(this->field_0169),local_2c);
           param_3_after_write = param_3_after_write + 1;
           iVar6 = iVar6 + 1;
         } while (param_3_after_write < this->field_0109);
@@ -611,8 +636,8 @@ int __thiscall st::fn_005F4FA0(STBHEShellC *this)
         local_c = 1;
       }
       else {
-        (&this->field_0139)[local_8] = (&this->field_0139)[local_8] + this->field_0125;
-        iVar6 = (&this->field_0149)[local_8] + this->field_0121;
+        (&this->field_0139)[local_8] = st::machine_word_boundary_cast<undefined4>((&this->field_0139)[local_8] + this->field_0125);
+        iVar6 = st::machine_word_boundary_cast<int>((&this->field_0149)[local_8] + this->field_0121);
         (&this->field_0149)[local_8] = iVar6;
         if ((local_8 == 0) && (iVar6 = iVar6 / 200, iVar6 != this->field_0129)) {
           this->field_0129 = iVar6;
@@ -643,6 +668,7 @@ int __thiscall st::fn_005F4FA0(STBHEShellC *this)
               if ((((iVar6 < 0) || (g_worldGrid.sizeX <= iVar6)) ||
                   ((*(int *)(pcVar9 + 6) < 0 ||
                    (((int)g_worldGrid.sizeY <= *(int *)(pcVar9 + 6) || (iVar2 < 0)))))) ||
+
                  (iVar5 = st::fn_00404D3B(local_18,local_14,sVar7), iVar5 == 0)) {
                 st::fn_006E3210
                           (g_sT3DSMAPContext_00807598,
@@ -661,6 +687,7 @@ int __thiscall st::fn_005F4FA0(STBHEShellC *this)
               }
               if (*pcVar9 == '\0') {
                 if ((*(uint *)(pcVar9 + 0x1f) == 0xffffffff) && (this->field_0103 != '\0')) {
+
                   st::fn_00403247((int)pcVar9,pcVar9[1],0);
                 }
                 *pcVar9 = '\x01';
@@ -716,7 +743,7 @@ void __thiscall st::fn_005F53A0(STBHEShellC *this)
         uVar4 = uVar4 + 1;
       } while ((int)uVar4 < (int)dVar1);
     }
-    st::fn_006AE110((DArrayTy *)this->field_0169);
+    st::fn_006AE110(reinterpret_cast<DArrayTy *>(this->field_0169));
     this->field_0169 = nullptr;
   }
   return;
@@ -787,15 +814,19 @@ int __thiscall st::fn_005F5700(STBHEShellC *this,int param_1,int param_2)
            (this_00 = g_worldGrid.cells
                       [(int)sVar6 * (int)sVar2 + (int)g_worldGrid.planeStride * (int)sVar7 +
                        (int)sVar3].objects[0], this_00 != nullptr)))))) {
-        st::fn_004031E3(this_00,(uint *)&local_6,(short *)((int)&param_1 + 2),&local_8);
+        st::fn_004031E3(this_00,reinterpret_cast<uint *>(&local_6),(short *)((int)&param_1 + 2),&local_8);
         if (*(int *)&this_00[1].field_0x8 == 1) {
+
           iVar4 = st::fn_006ACED8((int)local_6,(int)STPiece<2,2>(param_1),this->field_0111,this->field_0115);
           if (param_2 <= iVar4) {
+
             iVar4 = st::fn_006ACED8(local_6 + 100,(int)STPiece<2,2>(param_1),this->field_0111,this->field_0115);
             if (param_2 <= iVar4) {
+
               iVar4 = st::fn_006ACED8((int)local_6,STPiece<2,2>(param_1) + 100,this->field_0111,
                                    this->field_0115);
               if (param_2 <= iVar4) {
+
                 iVar4 = st::fn_006ACED8(local_6 + 100,STPiece<2,2>(param_1) + 100,this->field_0111,
                                      this->field_0115);
                 if (param_2 <= iVar4) goto cf_continue_loop_005F5985;
@@ -804,12 +835,14 @@ int __thiscall st::fn_005F5700(STBHEShellC *this,int param_1,int param_2)
           }
         }
         else {
+
           iVar4 = st::fn_006ACED8((int)local_6,(int)STPiece<2,2>(param_1),this->field_0111,this->field_0115);
           if (param_2 <= iVar4) goto cf_continue_loop_005F5985;
         }
         local_c = local_c + 1;
-        st::fn_00403E22(this->field_0051,(int)(this->field_007D << 2) / (8 - iVar2),(int)this_00,
-                           (short)this->field_0081,this->field_0085,0xb5,0x110);
+        st::fn_00403E22(this->field_0051,st::storage_bit_cast<int>(static_cast<uint32_t>(this->field_007D << 2)) / (8 - iVar2),
+                           reinterpret_cast<RecoveredRecord_00601D10_11B39116 *>(this_00),(short)this->field_0081,
+                           this->field_0085,0xb5,0x110);
       }
 cf_continue_loop_005F5985:
       sVar2 = g_worldGrid.sizeX;
@@ -838,9 +871,9 @@ byte * __thiscall st::fn_005F5A90(STBHEShellC *this,int *param_1)
   byte *local_c;
   uint local_8;
 
-  pbVar1 = st::pointer_boundary_cast<byte *>(st::fn_006AAC70(0x128));
+  pbVar1 = (byte *)st::fn_006AAC70(0x128);
   this->field_016D = this->field_001C;
-  puVar5 = (byte *)&this->field_0x4d;
+  puVar5 = reinterpret_cast<byte *>(&this->field_0x4d);
   pbVar6 = pbVar1;
   memmove(pbVar6, puVar5, 0x128); /* compiler REP MOVS byte copy */
   pbVar1[0xc] = 2;
@@ -848,8 +881,8 @@ byte * __thiscall st::fn_005F5A90(STBHEShellC *this,int *param_1)
   pbVar1[0xe] = 0;
   pbVar1[0xf] = 0;
   if (this->field_0169 != nullptr) {
-    local_c = st::pointer_boundary_cast<byte *>(st::fn_006B0020(&this->field_0169->flags,(int *)&local_8));
-    pbVar2 = st::pointer_boundary_cast<byte *>(st::fn_006ACF50(pbVar1,local_8 + 300));
+    local_c = (byte *)st::fn_006B0020(&this->field_0169->flags,reinterpret_cast<int *>(&local_8));
+    pbVar2 = (byte *)st::fn_006ACF50(pbVar1,local_8 + 300);
     *(uint *)(pbVar2 + 0x128) = local_8;
     pbVar6 = local_c;
     pbVar1 = pbVar2 + 300;
@@ -876,20 +909,22 @@ int __thiscall st::fn_005F5B80(STBHEShellC *this,undefined4 *param_1)
 {
   dword dVar1;
   STBHEShellC_field_0169DArray *pSVar2;
+  DArrayTy *pSVar2_mg0;
   int iVar3;
   char *pcVar4;
   byte *puVar5;
   uint uVar6;
   byte *puVar7;
 
-  puVar5 = (byte *)(param_1);
-  puVar7 = (byte *)&this->field_0x4d;
+  puVar5 = reinterpret_cast<byte *>((param_1));
+  puVar7 = reinterpret_cast<byte *>(&this->field_0x4d);
   memmove(puVar7, puVar5, 0x128); /* compiler REP MOVS byte copy */
   iVar3 = 0x128;
   if (this->field_0169 != nullptr) {
-    pSVar2 = (STBHEShellC_field_0169DArray *)st::fn_006B0060(nullptr,param_1 + 0x4b);
-    this->field_0169 = pSVar2;
-    iVar3 = st::machine_word_boundary_cast<int>(param_1[0x4a] + 300);
+    /* ST_CALLSITE[005F5BAF]: CALL 0x006b0060; direct=006B0060 FUN_006b0060; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STBHEShellC_field_0169DArray; source view only; no Ghidra override */
+    pSVar2_mg0 = st::fn_006B0060(nullptr,param_1 + 0x4b);
+    this->field_0169 = reinterpret_cast<STBHEShellC_field_0169DArray *>(pSVar2_mg0);
+    iVar3 = param_1[0x4a] + 300;
   }
   this->field_008F = 0xffffffff;
   if (this->field_0169 != nullptr) {
@@ -947,7 +982,7 @@ void __thiscall st::fn_005F5C40(STBHEShellC *this,int param_1,int param_2,int so
   }
   local_10.unknown = (int)this->field_0018;
   /* ST_CALLSITE[005F5CC6]: CALL 0x00404bd8; direct=00404BD8 SoundClassTy::PlaySound */
-  st::fn_00404BD8((SoundClassTy *)&g_sound,SOUND_MODE_2,nullptr,soundId,&local_10,0);
+  st::fn_00404BD8(reinterpret_cast<SoundClassTy *>(&g_sound),SOUND_MODE_2,nullptr,soundId,&local_10,0);
   return;
 }
 
@@ -962,7 +997,7 @@ void __thiscall st::fn_005F5D10(STBHEShellC *this,int param_1)
 
 {
   int iVar1;
-  undefined4 local_c;
+  uint local_c;
   short local_8;
   short local_6;
 
@@ -980,10 +1015,8 @@ LAB_005f5d4b:
     }
     if (param_1 == 2) {
       if ((int *)this->field_0034 != 0) {
-        /* ST_CALLSITE[005F5D91]: CALL dword ptr [EAX + 0xe0] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        iVar1 = (**(code **)(*STField<int *>(this,0x34) + 0xe0))
-                          (this->field_0038,(int)&param_1 + 2,&local_6,&local_8,&local_c);
+        /* ST_CALLSITE[005F5D91]: CALL dword ptr [EAX + 0xe0]; [STIndirectCallsiteApplier] exact slot 0xE0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
+        iVar1 = STStructuralVirtualCall<undefined4>(STField<int *>(this,0x34), 0xE0, this->field_0038, (int)&param_1 + 2, &local_6, &local_8, &local_c);
         if (iVar1 == 0) {
           this->field_0040 = (int)STPiece<2,2>(param_1);
           this->field_0093 = (int)STPiece<2,2>(param_1);
@@ -1033,4 +1066,3 @@ void __thiscall st::fn_005F5E30(STBHEShellC *this,int param_1,int param_2,int pa
   st::fn_0040264E(this,this->field_0093,this->field_0097,0x48a);
   return;
 }
-

@@ -22,10 +22,10 @@ void __thiscall TLOBaseTy::sub_004CE0F0(TLOBaseTy *this,int *param_1)
   int local_EAX_200;
   int iVar3;
   int local_38 [2];
-  undefined1 local_30;
-  undefined2 local_2e;
-  undefined2 local_2c;
-  undefined2 local_2a;
+  byte local_30;
+  ushort local_2e;
+  ushort local_2c;
+  ushort local_2a;
   int local_8;
 
   if (*param_1 == 0) {
@@ -37,7 +37,8 @@ void __thiscall TLOBaseTy::sub_004CE0F0(TLOBaseTy *this,int *param_1)
     local_8 = 0x54;
     iVar3 = 0xfc;
     do {
-      iVar2 = thunk_FUN_004e6010((int)this->field_0024,local_8 + -0x32);
+
+      iVar2 = thunk_FUN_004e6010(this->field_0024,local_8 + -0x32);
       if (iVar2 != 0) {
         memset(local_38, 0, 0x30); /* compiler bulk-zero initialization */
         local_38[0] = local_8;
@@ -54,6 +55,7 @@ void __thiscall TLOBaseTy::sub_004CE0F0(TLOBaseTy *this,int *param_1)
         local_EAX_200 = LookupRecordByte(*(char *)&this->field_0024);
         local_EAX_200 = (int)(byte)local_EAX_200;
         local_2c = *(undefined2 *)(&DAT_007e2f04 + (local_EAX_200 + iVar3) * 4);
+
         Library::DKW::TBL::DArrayAppend((DArrayTy *)*param_1,local_38);
       }
       iVar3 = iVar3 + 3;

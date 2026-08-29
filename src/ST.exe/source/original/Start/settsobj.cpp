@@ -59,7 +59,7 @@ void __thiscall st::fn_005D4E90(SettMapSTy *this)
       if ((&pSVar5->field_0000)[iVar8 + iVar10] != nullptr) {
         pDVar1 = pSVar5->field_1F84;
         if ((pDVar1 == nullptr) ||
-           (uVar9 = st::machine_word_boundary_cast<uint>(pSVar5->field_1F88 + local_c), pDVar1->count <= uVar9)) {
+           (uVar9 = pSVar5->field_1F88 + local_c, pDVar1->count <= uVar9)) {
           pcVar11 = nullptr;
         }
         else {
@@ -115,9 +115,8 @@ LAB_005d5030:
             }
           }
         }
-        /* ST_CALLSITE[005D5040]: CALL dword ptr [EDX + 0x18] */
-        /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-        (**(code **)(*STField<int *>(pSVar5,0xC) + 0x18))(&pSVar5->field_0x1d);
+        /* ST_CALLSITE[005D5040]: CALL dword ptr [EDX + 0x18]; [STIndirectCallsiteApplier] exact slot 0x18; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4 */
+        STStructuralVirtualCall<void>(STField<int *>(pSVar5,0xC), 0x18, &pSVar5->field_0x1d);
         iVar8 = local_10;
       }
       iVar10 = iVar10 + 1;
@@ -164,17 +163,17 @@ void __thiscall st::fn_005D5160(SettMapSTy *this)
   SettMapTy *this_00;
   bool bVar14;
   InternalExceptionFrame local_b8;
-  undefined1 local_74;
-  undefined1 local_73;
+  byte local_74;
+  byte local_73;
   byte local_72;
   byte bStack_71;
   undefined1 uStack_70;
   undefined1 uStack_6f;
-  undefined4 local_6e;
+  uint local_6e;
   char local_6a [64];
   byte local_2a;
-  undefined4 local_29;
-  undefined1 local_25;
+  uint local_29;
+  byte local_25;
   uint *local_24;
   uint local_20;
   uint local_1c;
@@ -188,10 +187,12 @@ void __thiscall st::fn_005D5160(SettMapSTy *this)
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
   local_8 = this;
+
   iVar4 = st::fn_0072D7F0(local_b8.jumpBuffer,0);
-  this_00 = (SettMapTy *)local_8;
+  this_00 = reinterpret_cast<SettMapTy *>(local_8);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_b8.previous;
+
     iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\settsobj.cpp"),0x86,0,iVar4,st::mutable_c_string("%s"),
                                "SettMapSTy::PrepPlList");
     if (iVar5 == 0) {
@@ -221,12 +222,12 @@ void __thiscall st::fn_005D5160(SettMapSTy *this)
         if ((pvVar4 != nullptr) && (STField<DArrayTy *>(pvVar4,0x50) != nullptr)) {
           st::fn_006AE110(STField<DArrayTy *>(pvVar4,0x50));
         }
-        pDVar8 = st::pointer_boundary_cast<DArrayTy *>(((SettMapSTy *)this_00)->field_1F84);
+        pDVar8 = reinterpret_cast<DArrayTy *>(((SettMapSTy *)this_00)->field_1F84);
         uVar10 = uVar10 + 1;
         bVar14 = uVar10 < pDVar8->count;
       } while ((int)uVar10 < (int)pDVar8->count);
     }
-    st::fn_006AE110(st::pointer_boundary_cast<DArrayTy *>(((SettMapSTy *)this_00)->field_1F84));
+    st::fn_006AE110(reinterpret_cast<DArrayTy *>(((SettMapSTy *)this_00)->field_1F84));
   }
   pDVar6 = st::fn_006AE290(nullptr,8,0x60,8);
   ((SettMapSTy *)this_00)->field_1F84 = pDVar6;
@@ -294,7 +295,7 @@ void __thiscall st::fn_005D5160(SettMapSTy *this)
             local_14 = pbVar11 + -0x20;
             do {
               if (uVar9 < uVar10) {
-                iVar6 = st::machine_word_boundary_cast<int>(local_24[2] * uVar9 + local_24[7]);
+                iVar6 = local_24[2] * uVar9 + local_24[7];
               }
               else {
                 iVar6 = 0;
@@ -335,8 +336,9 @@ LAB_005d5350:
       local_18 = *(uint *)(pbVar11 + 0xb);
       local_29 = 0;
       local_25 = 1;
+
       st::fn_006AE1C0(local_8->field_1F84,&local_74);
-      this_00 = (SettMapTy *)local_8;
+      this_00 = reinterpret_cast<SettMapTy *>(local_8);
     }
     local_c = pbVar11 + 0x51;
   } while ((int)local_c < 0x808a70);
@@ -383,7 +385,7 @@ code_r0x005d540b:
     pcVar12 = pcVar12 + 4;
     pcVar13 = pcVar13 + 4;
   }
-  for (uVar10 = uVar10 & 3; this_00 = (SettMapTy *)local_8, uVar10 != 0; uVar10 = uVar10 - 1) {
+  for (uVar10 = uVar10 & 3; this_00 = reinterpret_cast<SettMapTy *>(local_8), uVar10 != 0; uVar10 = uVar10 - 1) {
     *pcVar13 = *pcVar12;
     pcVar12 = pcVar12 + 1;
     pcVar13 = pcVar13 + 1;
@@ -391,7 +393,7 @@ code_r0x005d540b:
 LAB_005d5426:
   /* ST_CALLSITE[005D5428]: CALL 0x00402a9a; direct=00402A9A SettMapTy::PaintSC */
   st::fn_00402A9A(this_00);
-  /* ST_CALLSITE[005D5431]: CALL dword ptr [EDX + 0x20] */
+  /* ST_CALLSITE[005D5431]: CALL dword ptr [EDX + 0x20]; [STIndirectCallsiteApplier] exact slot 0x20; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/SettMapTy */
   this_00->vfunc_20();
   g_currentExceptionFrame = local_b8.previous;
   return;
@@ -419,17 +421,16 @@ int __thiscall st::fn_005D5560(SettMapSTy *this,STMessage *message)
   MMsgTy *pMVar6;
   MMMObjTy *pMVar7;
   dword dVar8;
-  ccFntTy *pcVar9;
-  int *piVar10;
-  StartSystemTy *pSVar12;
+  int *piVar9;
+  StartSystemTy *pSVar11;
   SettMapTy *this_00;
-  DWORD DVar13;
+  int iVar12;
   int iVar13;
-  void *pvVar14;
-  char *pcVar16;
-  byte *pbVar17;
-  DArrayTy *pDVar18;
-  void *pvVar19;
+  void *pvVar13;
+  char *pcVar14;
+  byte *pbVar15;
+  DArrayTy *pDVar16;
+  void *pvVar17;
   char *local_EAX_3231;
   uint *puVar18_mg0;
   char *local_EAX_3347;
@@ -438,41 +439,41 @@ int __thiscall st::fn_005D5560(SettMapSTy *this,STMessage *message)
   uint *puVar18_mg2;
   char *local_EAX_3868;
   char *local_EAX_3994;
-  AnonNested_005D5560_0050_EBFA0A51 *pAVar20;
+  AnonNested_005D5560_0050_EBFA0A51 *pAVar18;
   char *pcVar15;
-  uint uVar21;
+  uint uVar19;
+  ccFntTy *pcVar20;
   char *local_EAX_6384;
-  BITMAPINFO *pBVar22;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar21;
   int iVar22;
-  byte bVar23;
-  int iVar24;
-  int iVar25;
-  byte *puVar26;
-  char cVar27;
-  SettMapTy_field_2179State SVar28;
-  uint uVar29;
-  uint uVar30;
-  byte *puVar31;
-  BulkInitializedRecord_008087C7 *pBVar32;
-  char *pcVar33;
-  char *pcVar34;
-  AnonShape_005CBBE0_2D1CAA09 *pAVar35;
-  uint *puVar36;
-  bool bVar37;
-  int iVar38;
+  byte bVar22;
+  int iVar23;
+  byte *puVar24;
+  char cVar25;
+  SettMapTy_field_2179State SVar26;
+  uint uVar27;
+  uint uVar28;
+  byte *puVar29;
+  BulkInitializedRecord_008087C7 *pBVar30;
+  char *pcVar31;
+  char *pcVar32;
+  AnonShape_005CBBE0_2D1CAA09 *pAVar33;
+  uint *puVar34;
+  bool bVar35;
+  int iVar36;
   InternalExceptionFrame local_c8;
-  undefined4 local_84 [2];
-  undefined4 local_7c;
+  uint local_84 [2];
+  uint local_7c;
   undefined1 uStack_79;
-  undefined4 local_78;
-  undefined4 local_74;
-  undefined4 local_64 [8];
+  uint local_78;
+  uint local_74;
+  uint local_64 [8];
   SettMapTy *local_44;
-  undefined4 local_40;
-  undefined4 local_3c;
-  undefined4 local_38;
-  undefined4 local_34;
-  undefined4 local_30;
+  uint local_40;
+  uint local_3c;
+  uint local_38;
+  uint local_34;
+  uint local_30;
   byte *local_2c;
   uint local_28;
   int local_24;
@@ -486,15 +487,18 @@ int __thiscall st::fn_005D5560(SettMapSTy *this,STMessage *message)
   uint SVar3;
   uint temp_5fb73ea9b4;
 
-  local_44 = (SettMapTy *)this;
-  DVar13 = st::fn_006E51B0(this->field_0010);
-  this->field_0061 = DVar13;
+  local_44 = reinterpret_cast<SettMapTy *>(this);
+
+  iVar12 = st::fn_006E51B0(this->field_0010);
+  this->field_0061 = iVar12;
   local_c8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c8;
+
   iVar13 = st::fn_0072D7F0(local_c8.jumpBuffer,0);
   this_00 = local_44;
   if (iVar13 != 0) {
     g_currentExceptionFrame = local_c8.previous;
+
     iVar22 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\settsobj.cpp"),0x27d,0,iVar13,
                                 st::mutable_c_string("%s"),"SettMapSTy::GetMessage");
     if (iVar22 != 0) {
@@ -508,220 +512,220 @@ int __thiscall st::fn_005D5560(SettMapSTy *this,STMessage *message)
   SVar4 = message->id;
   if (SVar4 < MESS_SETTMAPSTY_6505) {
     if (SVar4 == MESS_SHARED_6504) {
-      uVar30 = (message->arg0).u32;
-      if ((uVar30 != 0xffffffff) && (pDVar18 = this_00->field_1F84, pDVar18 != nullptr)) {
+      uVar28 = (message->arg0).u32;
+      if ((uVar28 != 0xffffffff) && (pDVar16 = this_00->field_1F84, pDVar16 != nullptr)) {
         pDVar5 = this_00->field_1E2F;
-        if (uVar30 < pDVar5->count) {
-          pvVar14 = DArrayAt<void>(pDVar5, uVar30);
+        if (uVar28 < pDVar5->count) {
+          pvVar13 = DArrayAt<void>(pDVar5, uVar28);
         }
         else {
-          pvVar14 = nullptr;
+          pvVar13 = nullptr;
         }
-        cVar27 = STField<char>(pvVar14,0x104);
-        if ((message->arg1).u32 < pDVar18->count) {
-          pvVar14 = DArrayAt<void>(pDVar18, (message->arg1).u32);
+        cVar25 = STField<char>(pvVar13,0x104);
+        if ((message->arg1).u32 < pDVar16->count) {
+          pvVar13 = DArrayAt<void>(pDVar16, (message->arg1).u32);
         }
         else {
-          pvVar14 = nullptr;
+          pvVar13 = nullptr;
         }
-        if (pvVar14 != nullptr) {
-          STField<char>(pvVar14,3) = cVar27;
+        if (pvVar13 != nullptr) {
+          STField<char>(pvVar13,3) = cVar25;
         }
-        pDVar18 = this_00->field_1F84;
-        uVar30 = (message->arg1).u32 + 1;
-        bVar37 = uVar30 < pDVar18->count;
-        if ((int)uVar30 < (int)pDVar18->count) {
+        pDVar16 = this_00->field_1F84;
+        uVar28 = (message->arg1).u32 + 1;
+        bVar35 = uVar28 < pDVar16->count;
+        if ((int)uVar28 < (int)pDVar16->count) {
           do {
-            if (bVar37) {
-              pcVar16 = DArrayAt<char>(pDVar18, uVar30);
+            if (bVar35) {
+              pcVar14 = DArrayAt<char>(pDVar16, uVar28);
             }
             else {
-              pcVar16 = nullptr;
+              pcVar14 = nullptr;
             }
-            if ((pcVar16 == nullptr) || (*pcVar16 != '\0')) break;
-            pcVar16[3] = cVar27;
-            pDVar18 = this_00->field_1F84;
-            uVar30 = uVar30 + 1;
-            bVar37 = uVar30 < pDVar18->count;
-          } while ((int)uVar30 < (int)pDVar18->count);
+            if ((pcVar14 == nullptr) || (*pcVar14 != '\0')) break;
+            pcVar14[3] = cVar25;
+            pDVar16 = this_00->field_1F84;
+            uVar28 = uVar28 + 1;
+            bVar35 = uVar28 < pDVar16->count;
+          } while ((int)uVar28 < (int)pDVar16->count);
         }
         /* ST_CALLSITE[005D57EF]: CALL dword ptr [EDX + 0x2c] */
-        (*this_00->vtable->SetListCtrls)((SettMapSTy *)this_00);
+        (*this_00->vtable->SetListCtrls)(reinterpret_cast<SettMapSTy *>(this_00));
       }
     }
     else if (SVar4 == MESS_SHARED_6501) {
-      uVar30 = (message->arg0).u32;
-      if ((uVar30 != 0xffffffff) && (pDVar18 = this_00->field_1F84, pDVar18 != nullptr)) {
+      uVar28 = (message->arg0).u32;
+      if ((uVar28 != 0xffffffff) && (pDVar16 = this_00->field_1F84, pDVar16 != nullptr)) {
         pDVar5 = this_00->field_1E2F;
-        if (uVar30 < pDVar5->count) {
-          pvVar14 = DArrayAt<void>(pDVar5, uVar30);
+        if (uVar28 < pDVar5->count) {
+          pvVar13 = DArrayAt<void>(pDVar5, uVar28);
         }
         else {
-          pvVar14 = nullptr;
+          pvVar13 = nullptr;
         }
-        cVar27 = STField<char>(pvVar14,0x104);
-        if ((message->arg1).u32 < pDVar18->count) {
-          pvVar14 = DArrayAt<void>(pDVar18, (message->arg1).u32);
+        cVar25 = STField<char>(pvVar13,0x104);
+        if ((message->arg1).u32 < pDVar16->count) {
+          pvVar13 = DArrayAt<void>(pDVar16, (message->arg1).u32);
         }
         else {
-          pvVar14 = nullptr;
+          pvVar13 = nullptr;
         }
-        if (pvVar14 != nullptr) {
-          STField<char>(pvVar14,0x4a) = cVar27;
+        if (pvVar13 != nullptr) {
+          STField<char>(pvVar13,0x4a) = cVar25;
         }
-        pDVar18 = this_00->field_1F84;
-        uVar30 = (message->arg1).u32 + 1;
-        bVar37 = uVar30 < pDVar18->count;
-        if ((int)uVar30 < (int)pDVar18->count) {
+        pDVar16 = this_00->field_1F84;
+        uVar28 = (message->arg1).u32 + 1;
+        bVar35 = uVar28 < pDVar16->count;
+        if ((int)uVar28 < (int)pDVar16->count) {
           do {
-            if (bVar37) {
-              pcVar16 = DArrayAt<char>(pDVar18, uVar30);
+            if (bVar35) {
+              pcVar14 = DArrayAt<char>(pDVar16, uVar28);
             }
             else {
-              pcVar16 = nullptr;
+              pcVar14 = nullptr;
             }
-            if ((pcVar16 == nullptr) || (*pcVar16 != '\0')) break;
-            pcVar16[0x4a] = cVar27;
-            pDVar18 = this_00->field_1F84;
-            uVar30 = uVar30 + 1;
-            bVar37 = uVar30 < pDVar18->count;
-          } while ((int)uVar30 < (int)pDVar18->count);
+            if ((pcVar14 == nullptr) || (*pcVar14 != '\0')) break;
+            pcVar14[0x4a] = cVar25;
+            pDVar16 = this_00->field_1F84;
+            uVar28 = uVar28 + 1;
+            bVar35 = uVar28 < pDVar16->count;
+          } while ((int)uVar28 < (int)pDVar16->count);
         }
         /* ST_CALLSITE[005D574C]: CALL dword ptr [EAX + 0x2c] */
-        (*this_00->vtable->SetListCtrls)((SettMapSTy *)this_00);
+        (*this_00->vtable->SetListCtrls)(reinterpret_cast<SettMapSTy *>(this_00));
       }
     }
     else if (((SVar4 == MESS_PRIVIDERTY_6502) &&
-             (uVar30 = (message->arg0).u32, uVar30 != 0xffffffff)) &&
-            (pDVar18 = this_00->field_1F84, pDVar18 != nullptr)) {
+             (uVar28 = (message->arg0).u32, uVar28 != 0xffffffff)) &&
+            (pDVar16 = this_00->field_1F84, pDVar16 != nullptr)) {
       pDVar5 = this_00->field_1E2F;
-      if (uVar30 < pDVar5->count) {
-        pvVar14 = DArrayAt<void>(pDVar5, uVar30);
+      if (uVar28 < pDVar5->count) {
+        pvVar13 = DArrayAt<void>(pDVar5, uVar28);
       }
       else {
-        pvVar14 = nullptr;
+        pvVar13 = nullptr;
       }
-      local_d = STField<byte>(pvVar14,0x104);
-      if ((message->arg1).u32 < pDVar18->count) {
-        pvVar14 = DArrayAt<void>(pDVar18, (message->arg1).u32);
+      local_d = STField<byte>(pvVar13,0x104);
+      if ((message->arg1).u32 < pDVar16->count) {
+        pvVar13 = DArrayAt<void>(pDVar16, (message->arg1).u32);
       }
       else {
-        pvVar14 = nullptr;
+        pvVar13 = nullptr;
       }
-      if (pvVar14 != nullptr) {
-        if (STField<byte>(pvVar14,2) != 0xff) {
-          st::fn_00403F67(&DAT_00807620,STField<byte>(pvVar14,2));
+      if (pvVar13 != nullptr) {
+        if (STField<byte>(pvVar13,2) != 0xff) {
+          st::fn_00403F67(&DAT_00807620,STField<byte>(pvVar13,2));
         }
-        STField<byte>(pvVar14,2) = local_d;
-        if (STField<char>(pvVar14,4) == '\x02') {
+        STField<byte>(pvVar13,2) = local_d;
+        if (STField<char>(pvVar13,4) == '\x02') {
           DAT_0080874d = local_d;
         }
-        pDVar18 = this_00->field_1F84;
-        uVar30 = (message->arg1).u32 + 1;
-        bVar37 = uVar30 < pDVar18->count;
-        if ((int)uVar30 < (int)pDVar18->count) {
+        pDVar16 = this_00->field_1F84;
+        uVar28 = (message->arg1).u32 + 1;
+        bVar35 = uVar28 < pDVar16->count;
+        if ((int)uVar28 < (int)pDVar16->count) {
           do {
-            if (bVar37) {
-              pcVar16 = DArrayAt<char>(pDVar18, uVar30);
+            if (bVar35) {
+              pcVar14 = DArrayAt<char>(pDVar16, uVar28);
             }
             else {
-              pcVar16 = nullptr;
+              pcVar14 = nullptr;
             }
-            if ((pcVar16 == nullptr) || (*pcVar16 != '\0')) break;
-            pcVar16[2] = local_d;
-            pDVar18 = this_00->field_1F84;
-            uVar30 = uVar30 + 1;
-            bVar37 = uVar30 < pDVar18->count;
-          } while ((int)uVar30 < (int)pDVar18->count);
+            if ((pcVar14 == nullptr) || (*pcVar14 != '\0')) break;
+            pcVar14[2] = local_d;
+            pDVar16 = this_00->field_1F84;
+            uVar28 = uVar28 + 1;
+            bVar35 = uVar28 < pDVar16->count;
+          } while ((int)uVar28 < (int)pDVar16->count);
         }
         /* ST_CALLSITE[005D56A9]: CALL dword ptr [EDX + 0x2c] */
-        (*this_00->vtable->SetListCtrls)((SettMapSTy *)this_00);
+        (*this_00->vtable->SetListCtrls)(reinterpret_cast<SettMapSTy *>(this_00));
         goto LAB_005d5ff8;
       }
     }
   }
   else if (SVar4 == MESS_SETTMAPSTY_6505) {
-    uVar30 = (message->arg0).u32;
-    if ((uVar30 != 0xffffffff) && (pDVar18 = this_00->field_1F84, pDVar18 != nullptr)) {
+    uVar28 = (message->arg0).u32;
+    if ((uVar28 != 0xffffffff) && (pDVar16 = this_00->field_1F84, pDVar16 != nullptr)) {
       pDVar5 = this_00->field_1E2F;
-      if (uVar30 < pDVar5->count) {
-        pvVar14 = DArrayAt<void>(pDVar5, uVar30);
+      if (uVar28 < pDVar5->count) {
+        pvVar13 = DArrayAt<void>(pDVar5, uVar28);
       }
       else {
-        pvVar14 = nullptr;
+        pvVar13 = nullptr;
       }
-      uVar30 = pDVar18->count;
-      if ((message->arg1).u32 < uVar30) {
-        pvVar19 = DArrayAt<void>(pDVar18, (message->arg1).u32);
+      uVar28 = pDVar16->count;
+      if ((message->arg1).u32 < uVar28) {
+        pvVar17 = DArrayAt<void>(pDVar16, (message->arg1).u32);
       }
       else {
-        pvVar19 = nullptr;
+        pvVar17 = nullptr;
       }
-      if (pvVar19 != nullptr) {
-        if ((STField<int>(pvVar14,0x104) == 2) && (uVar29 = 0, 0 < (int)uVar30)) {
-          bVar37 = uVar30 != 0;
+      if (pvVar17 != nullptr) {
+        if ((STField<int>(pvVar13,0x104) == 2) && (uVar27 = 0, 0 < (int)uVar28)) {
+          bVar35 = uVar28 != 0;
           do {
-            if (bVar37) {
-              pvVar19 = DArrayAt<void>(pDVar18, uVar29);
+            if (bVar35) {
+              pvVar17 = DArrayAt<void>(pDVar16, uVar27);
             }
             else {
-              pvVar19 = nullptr;
+              pvVar17 = nullptr;
             }
-            if ((pvVar19 != nullptr) && (STField<char>(pvVar19,4) == '\x02')) {
+            if ((pvVar17 != nullptr) && (STField<char>(pvVar17,4) == '\x02')) {
               SVar1 = this_00->field_1E26;
               if ((SVar1 == CASE_6) || ((SVar1 == CASE_1 || (SVar1 == CASE_2)))) {
-                STField<undefined1>(pvVar19,4) = 4;
-                STField<undefined1>(pvVar19,5) = 0;
+                STField<undefined1>(pvVar17,4) = 4;
+                STField<undefined1>(pvVar17,5) = 0;
               }
               else {
-                STField<undefined1>(pvVar19,4) = 1;
+                STField<undefined1>(pvVar17,4) = 1;
               }
               break;
             }
-            uVar29 = uVar29 + 1;
-            bVar37 = uVar29 < uVar30;
-          } while ((int)uVar29 < (int)uVar30);
+            uVar27 = uVar27 + 1;
+            bVar35 = uVar27 < uVar28;
+          } while ((int)uVar27 < (int)uVar28);
         }
-        pDVar18 = this_00->field_1F84;
-        if ((message->arg1).u32 < pDVar18->count) {
-          pvVar19 = DArrayAt<void>(pDVar18, (message->arg1).u32);
+        pDVar16 = this_00->field_1F84;
+        if ((message->arg1).u32 < pDVar16->count) {
+          pvVar17 = DArrayAt<void>(pDVar16, (message->arg1).u32);
         }
         else {
-          pvVar19 = nullptr;
+          pvVar17 = nullptr;
         }
-        cVar27 = STField<char>(pvVar14,0x104);
-        STField<char>(pvVar19,4) = cVar27;
-        STField<undefined1>(pvVar19,5) = STField<undefined1>(pvVar14,0x108);
-        if (cVar27 == '\0') {
-          if (STField<byte>(pvVar19,2) != 0xff) {
-            st::fn_00403F67(&DAT_00807620,STField<byte>(pvVar19,2));
+        cVar25 = STField<char>(pvVar13,0x104);
+        STField<char>(pvVar17,4) = cVar25;
+        STField<undefined1>(pvVar17,5) = STField<undefined1>(pvVar13,0x108);
+        if (cVar25 == '\0') {
+          if (STField<byte>(pvVar17,2) != 0xff) {
+            st::fn_00403F67(&DAT_00807620,STField<byte>(pvVar17,2));
           }
-          STField<undefined1>(pvVar19,2) = 0xff;
+          STField<undefined1>(pvVar17,2) = 0xff;
         }
         DAT_0080874d = 0xff;
-        pDVar18 = this_00->field_1F84;
-        uVar29 = 0;
-        uVar30 = pDVar18->count;
-        if (0 < (int)uVar30) {
-          bVar37 = uVar30 != 0;
+        pDVar16 = this_00->field_1F84;
+        uVar27 = 0;
+        uVar28 = pDVar16->count;
+        if (0 < (int)uVar28) {
+          bVar35 = uVar28 != 0;
           do {
-            if (bVar37) {
-              pvVar14 = DArrayAt<void>(pDVar18, uVar29);
+            if (bVar35) {
+              pvVar13 = DArrayAt<void>(pDVar16, uVar27);
             }
             else {
-              pvVar14 = nullptr;
+              pvVar13 = nullptr;
             }
-            if (((pvVar14 != nullptr) && (STField<char>(pvVar14,4) == '\x02')) &&
-               (STField<int>(pvVar14,6) == DAT_0080877f)) {
-              DAT_0080874d = STField<byte>(pvVar14,2);
+            if (((pvVar13 != nullptr) && (STField<char>(pvVar13,4) == '\x02')) &&
+               (STField<int>(pvVar13,6) == DAT_0080877f)) {
+              DAT_0080874d = STField<byte>(pvVar13,2);
               break;
             }
-            uVar29 = uVar29 + 1;
-            bVar37 = uVar29 < uVar30;
-          } while ((int)uVar29 < (int)uVar30);
+            uVar27 = uVar27 + 1;
+            bVar35 = uVar27 < uVar28;
+          } while ((int)uVar27 < (int)uVar28);
         }
         /* ST_CALLSITE[005D5FF5]: CALL dword ptr [EAX + 0x2c] */
-        (*this_00->vtable->SetListCtrls)((SettMapSTy *)this_00);
+        (*this_00->vtable->SetListCtrls)(reinterpret_cast<SettMapSTy *>(this_00));
 LAB_005d5ff8:
         /* ST_CALLSITE[005D5FFA]: CALL 0x00402a9a; direct=00402A9A SettMapTy::PaintSC */
         st::fn_00402A9A(this_00);
@@ -735,254 +739,253 @@ LAB_005d5ff8:
       DAT_00808aa9 = 1;
       DAT_008087c6 = '\0';
       DAT_0080874f = 0;
-      pBVar32 = g_bulkInitializedRecords_008087C7;
-      for (iVar24 = 0xa2; iVar24 != 0; iVar24 = iVar24 + -1) {
-        *(undefined4 *)pBVar32 = 0;
-        pBVar32 = (BulkInitializedRecord_008087C7 *)&pBVar32->field_0x4;
+      pBVar30 = g_bulkInitializedRecords_008087C7;
+      for (iVar12 = 0xa2; iVar12 != 0; iVar12 = iVar12 + -1) {
+        *(undefined4 *)pBVar30 = 0;
+        pBVar30 = reinterpret_cast<BulkInitializedRecord_008087C7 *>(reinterpret_cast<byte *>(pBVar30) + 0x4);
       }
-      pbVar17 = &g_bulkInitializedRecords_008087C7[0].field_0022;
+      pbVar15 = &g_bulkInitializedRecords_008087C7[0].field_0022;
       do {
-        pbVar17[-1] = 0;
-        *pbVar17 = 0xff;
-        pbVar17 = pbVar17 + 0x51;
-      } while ((int)pbVar17 < 0x808a71);
-      pDVar18 = this_00->field_1F84;
-      uVar29 = 0;
-      uVar30 = pDVar18->count;
-      if (0 < (int)uVar30) {
-        bVar37 = uVar30 != 0;
+        pbVar15[-1] = 0;
+        *pbVar15 = 0xff;
+        pbVar15 = pbVar15 + 0x51;
+      } while ((int)pbVar15 < 0x808a71);
+      pDVar16 = this_00->field_1F84;
+      uVar27 = 0;
+      uVar28 = pDVar16->count;
+      if (0 < (int)uVar28) {
+        bVar35 = uVar28 != 0;
         do {
-          if (bVar37) {
-            pcVar16 = DArrayAt<char>(pDVar18, uVar29);
+          if (bVar35) {
+            pcVar14 = DArrayAt<char>(pDVar16, uVar27);
           }
           else {
-            pcVar16 = nullptr;
+            pcVar14 = nullptr;
           }
-          if (((pcVar16 != nullptr) && (*pcVar16 != '\0')) && (pcVar16[2] != 0xff)) {
-            *(undefined1 *)((int)&local_30 + (uint)(byte)pcVar16[2]) = 0;
+          if (((pcVar14 != nullptr) && (*pcVar14 != '\0')) && (pcVar14[2] != 0xff)) {
+            *(undefined1 *)((int)&local_30 + (uint)(byte)pcVar14[2]) = 0;
           }
-          uVar29 = uVar29 + 1;
-          bVar37 = uVar29 < uVar30;
-        } while ((int)uVar29 < (int)uVar30);
+          uVar27 = uVar27 + 1;
+          bVar35 = uVar27 < uVar28;
+        } while ((int)uVar27 < (int)uVar28);
       }
       local_c = 0;
-      if (0 < (int)uVar30) {
-        bVar37 = uVar30 != 0;
+      if (0 < (int)uVar28) {
+        bVar35 = uVar28 != 0;
         do {
-          if (bVar37) {
-            pcVar16 = DArrayAt<char>(pDVar18, local_c);
+          if (bVar35) {
+            pcVar14 = DArrayAt<char>(pDVar16, local_c);
           }
           else {
-            pcVar16 = nullptr;
+            pcVar14 = nullptr;
           }
-          if (((pcVar16 != nullptr) && (*pcVar16 != '\0')) &&
-             ((pcVar16[4] != '\0' && ((pcVar16[4] != '\x01' || (this_00->field_1E26 == CASE_2))))))
+          if (((pcVar14 != nullptr) && (*pcVar14 != '\0')) &&
+             ((pcVar14[4] != '\0' && ((pcVar14[4] != '\x01' || (this_00->field_1E26 == CASE_2))))))
           {
-            iVar24 = *(int *)(pcVar16 + 0x50);
-            if ((uint)(byte)pcVar16[5] < STField<uint>(iVar24,0xC)) {
-              local_8 = (char *)(STField<int>(iVar24,0x8) * (uint)(byte)pcVar16[5] +
-                                STField<int>(iVar24,0x1C));
+            iVar12 = *(int *)(pcVar14 + 0x50);
+            if ((uint)(byte)pcVar14[5] < STField<uint>(iVar12,0xC)) {
+              local_8 = (char *)(STField<int>(iVar12,0x8) * (uint)(byte)pcVar14[5] +
+                                STField<int>(iVar12,0x1C));
             }
             else {
               local_8 = nullptr;
             }
             DAT_008087c6 = DAT_008087c6 + '\x01';
-            if (pcVar16[2] == -1) {
-              iVar24 = 0;
+            if (pcVar14[2] == -1) {
+              iVar12 = 0;
               do {
-                if (*(char *)((int)&local_30 + iVar24) != '\0') {
-                  pcVar16[2] = (char)iVar24;
-                  *(undefined1 *)((int)&local_30 + iVar24) = 0;
+                if (*(char *)((int)&local_30 + iVar12) != '\0') {
+                  pcVar14[2] = (char)iVar12;
+                  *(undefined1 *)((int)&local_30 + iVar12) = 0;
                   break;
                 }
-                iVar24 = iVar24 + 1;
-              } while (iVar24 < 8);
+                iVar12 = iVar12 + 1;
+              } while (iVar12 < 8);
             }
-            g_bulkInitializedRecords_008087C7[(byte)pcVar16[2]].field_0022 = pcVar16[2];
-            g_bulkInitializedRecords_008087C7[(byte)pcVar16[2]].field_0021 = pcVar16[3];
-            uVar30 = 0xffffffff;
-            pcVar34 = &CHAR_00h_008016a0;
+            g_bulkInitializedRecords_008087C7[(byte)pcVar14[2]].field_0022 = pcVar14[2];
+            g_bulkInitializedRecords_008087C7[(byte)pcVar14[2]].field_0021 = pcVar14[3];
+            uVar28 = 0xffffffff;
+            pcVar32 = &CHAR_00h_008016a0;
             do {
-              pcVar33 = pcVar34;
-              if (uVar30 == 0) break;
-              uVar30 = uVar30 - 1;
-              pcVar33 = pcVar34 + 1;
-              cVar27 = *pcVar34;
-              pcVar34 = pcVar33;
-            } while (cVar27 != '\0');
-            uVar30 = ~uVar30;
-            local_14 = (AnonShape_005D5560_9031BF1B *)
-                       &g_bulkInitializedRecords_008087C7[(byte)pcVar16[2]].field_0x1;
-            pcVar34 = pcVar33 + -uVar30;
-            pcVar33 = (char *)&g_bulkInitializedRecords_008087C7[(byte)pcVar16[2]].field_0x1;
-            memmove(pcVar33, pcVar34, uVar30); /* compiler REP MOVS byte copy */
-            uVar29 = 0;
-            if (pcVar16[4] == '\x02') {
-              if (*pcVar16 != '\0') {
-                *(undefined1 *)(g_bulkInitializedRecords_008087C7 + (byte)pcVar16[2]) = 0;
-                DAT_0080874d = pcVar16[2];
-                DAT_0080874e = pcVar16[3];
+              pcVar31 = pcVar32;
+              if (uVar28 == 0) break;
+              uVar28 = uVar28 - 1;
+              pcVar31 = pcVar32 + 1;
+              cVar25 = *pcVar32;
+              pcVar32 = pcVar31;
+            } while (cVar25 != '\0');
+            uVar28 = ~uVar28;
+            local_14 = reinterpret_cast<AnonShape_005D5560_9031BF1B *>(&g_bulkInitializedRecords_008087C7[(byte)pcVar14[2]].field_0x1);
+            pcVar32 = pcVar31 + -uVar28;
+            pcVar31 = (char *)&g_bulkInitializedRecords_008087C7[(byte)pcVar14[2]].field_0x1;
+            memmove(pcVar31, pcVar32, uVar28); /* compiler REP MOVS byte copy */
+            uVar27 = 0;
+            if (pcVar14[4] == '\x02') {
+              if (*pcVar14 != '\0') {
+                *(undefined1 *)(g_bulkInitializedRecords_008087C7 + (byte)pcVar14[2]) = 0;
+                DAT_0080874d = pcVar14[2];
+                DAT_0080874e = pcVar14[3];
               }
             }
-            else if (pcVar16[4] == '\x04') {
-              *(undefined1 *)(g_bulkInitializedRecords_008087C7 + (byte)pcVar16[2]) = 1;
+            else if (pcVar14[4] == '\x04') {
+              *(undefined1 *)(g_bulkInitializedRecords_008087C7 + (byte)pcVar14[2]) = 1;
               if (local_8 == nullptr) {
-                uVar30 = 0xffffffff;
-                local_8 = (char *)&g_bulkInitializedRecords_008087C7[(byte)pcVar16[2]].field_0x1;
-                pcVar34 = &CHAR_00h_008016a0;
+                uVar28 = 0xffffffff;
+                local_8 = (char *)&g_bulkInitializedRecords_008087C7[(byte)pcVar14[2]].field_0x1;
+                pcVar32 = &CHAR_00h_008016a0;
                 do {
-                  pcVar33 = pcVar34;
-                  if (uVar30 == 0) break;
-                  uVar30 = uVar30 - 1;
-                  pcVar33 = pcVar34 + 1;
-                  cVar27 = *pcVar34;
-                  pcVar34 = pcVar33;
-                } while (cVar27 != '\0');
-                uVar30 = ~uVar30;
-                pcVar34 = pcVar33 + -uVar30;
-                pcVar33 = local_8;
-                memmove(pcVar33, pcVar34, uVar30); /* compiler REP MOVS byte copy */
-                uVar29 = 0;
+                  pcVar31 = pcVar32;
+                  if (uVar28 == 0) break;
+                  uVar28 = uVar28 - 1;
+                  pcVar31 = pcVar32 + 1;
+                  cVar25 = *pcVar32;
+                  pcVar32 = pcVar31;
+                } while (cVar25 != '\0');
+                uVar28 = ~uVar28;
+                pcVar32 = pcVar31 + -uVar28;
+                pcVar31 = local_8;
+                memmove(pcVar31, pcVar32, uVar28); /* compiler REP MOVS byte copy */
+                uVar27 = 0;
               }
               else {
-                pcVar34 = local_8 + 0x4c;
-                uVar30 = 0xffffffff;
-                local_8 = (char *)&g_bulkInitializedRecords_008087C7[(byte)pcVar16[2]].field_0x1;
+                pcVar32 = local_8 + 0x4c;
+                uVar28 = 0xffffffff;
+                local_8 = (char *)&g_bulkInitializedRecords_008087C7[(byte)pcVar14[2]].field_0x1;
                 do {
-                  pcVar33 = pcVar34;
-                  if (uVar30 == 0) break;
-                  uVar30 = uVar30 - 1;
-                  pcVar33 = pcVar34 + 1;
-                  cVar27 = *pcVar34;
-                  pcVar34 = pcVar33;
-                } while (cVar27 != '\0');
-                uVar30 = ~uVar30;
-                pcVar34 = pcVar33 + -uVar30;
-                pcVar33 = local_8;
-                memmove(pcVar33, pcVar34, uVar30); /* compiler REP MOVS byte copy */
-                uVar29 = 0;
+                  pcVar31 = pcVar32;
+                  if (uVar28 == 0) break;
+                  uVar28 = uVar28 - 1;
+                  pcVar31 = pcVar32 + 1;
+                  cVar25 = *pcVar32;
+                  pcVar32 = pcVar31;
+                } while (cVar25 != '\0');
+                uVar28 = ~uVar28;
+                pcVar32 = pcVar31 + -uVar28;
+                pcVar31 = local_8;
+                memmove(pcVar31, pcVar32, uVar28); /* compiler REP MOVS byte copy */
+                uVar27 = 0;
               }
             }
-            g_bulkInitializedRecords_008087C7[(byte)pcVar16[2]].field_0023 = pcVar16[0x4a];
-            g_bulkInitializedRecords_008087C7[(byte)pcVar16[2]].field_0024 =
-                 *(uint *)(pcVar16 + 0x54);
-            g_bulkInitializedRecords_008087C7[(byte)pcVar16[2]].field_0028 =
-                 *(uint *)(pcVar16 + 0x58);
-            g_bulkInitializedRecords_008087C7[(byte)pcVar16[2]].field_002C =
-                 *(uint *)(pcVar16 + 0x5c);
+            g_bulkInitializedRecords_008087C7[(byte)pcVar14[2]].field_0023 = pcVar14[0x4a];
+            g_bulkInitializedRecords_008087C7[(byte)pcVar14[2]].field_0024 =
+                 *(uint *)(pcVar14 + 0x54);
+            g_bulkInitializedRecords_008087C7[(byte)pcVar14[2]].field_0028 =
+                 *(uint *)(pcVar14 + 0x58);
+            g_bulkInitializedRecords_008087C7[(byte)pcVar14[2]].field_002C =
+                 *(uint *)(pcVar14 + 0x5c);
           }
-          pDVar18 = this_00->field_1F84;
+          pDVar16 = this_00->field_1F84;
           local_c = local_c + 1;
-          bVar37 = local_c < pDVar18->count;
-        } while ((int)local_c < (int)pDVar18->count);
+          bVar35 = local_c < pDVar16->count;
+        } while ((int)local_c < (int)pDVar16->count);
       }
       /* ST_CALLSITE[005D5AC0]: CALL 0x0040591b; direct=0040591B STAppC::sub_0056EE90 */
-      st::fn_0040591B((STAppC *)&DAT_00807620);
-      pcVar16 = &CHAR_00h_00808ab0;
-      for (iVar24 = 0x3a8; iVar24 != 0; iVar24 = iVar24 + -1) {
-        pcVar16[0] = '\0';
-        pcVar16[1] = '\0';
-        pcVar16[2] = '\0';
-        pcVar16[3] = '\0';
-        pcVar16 = pcVar16 + 4;
+      st::fn_0040591B(reinterpret_cast<STAppC *>(&DAT_00807620));
+      pcVar14 = &CHAR_00h_00808ab0;
+      for (iVar12 = 0x3a8; iVar12 != 0; iVar12 = iVar12 + -1) {
+        pcVar14[0] = '\0';
+        pcVar14[1] = '\0';
+        pcVar14[2] = '\0';
+        pcVar14[3] = '\0';
+        pcVar14 = pcVar14 + 4;
       }
       DAT_00808aaf = 0;
-      pDVar18 = this_00->field_1F84;
+      pDVar16 = this_00->field_1F84;
       local_c = 0;
-      if (0 < (int)pDVar18->count) {
-        bVar37 = pDVar18->count != 0;
+      if (0 < (int)pDVar16->count) {
+        bVar35 = pDVar16->count != 0;
         do {
-          if (bVar37) {
-            pvVar14 = DArrayAt<void>(pDVar18, local_c);
+          if (bVar35) {
+            pvVar13 = DArrayAt<void>(pDVar16, local_c);
           }
           else {
-            pvVar14 = nullptr;
+            pvVar13 = nullptr;
           }
-          if (pvVar14 != nullptr) {
-            local_d = STField<byte>(pvVar14,4);
+          if (pvVar13 != nullptr) {
+            local_d = STField<byte>(pvVar13,4);
             if ((local_d != 1) && (local_d != 0)) {
               if (local_d == 4) {
-                iVar24 = STField<int>(pvVar14,0x50);
-                if ((uint)STField<byte>(pvVar14,5) < STField<uint>(iVar24,0xC)) {
-                  pcVar16 = (char *)(STField<int>(iVar24,0x8) * (uint)STField<byte>(pvVar14,5) +
-                                    STField<int>(iVar24,0x1C));
+                iVar12 = STField<int>(pvVar13,0x50);
+                if ((uint)STField<byte>(pvVar13,5) < STField<uint>(iVar12,0xC)) {
+                  pcVar14 = (char *)(STField<int>(iVar12,0x8) * (uint)STField<byte>(pvVar13,5) +
+                                    STField<int>(iVar12,0x1C));
                 }
                 else {
-                  pcVar16 = nullptr;
+                  pcVar14 = nullptr;
                 }
-                if (pcVar16 != nullptr) {
-                  uVar30 = 0xffffffff;
+                if (pcVar14 != nullptr) {
+                  uVar28 = 0xffffffff;
                   do {
-                    pcVar34 = pcVar16;
-                    if (uVar30 == 0) break;
-                    uVar30 = uVar30 - 1;
-                    pcVar34 = pcVar16 + 1;
-                    cVar27 = *pcVar16;
-                    pcVar16 = pcVar34;
-                  } while (cVar27 != '\0');
-                  uVar30 = ~uVar30;
-                  pcVar34 = pcVar34 + -uVar30;
-                  local_8 = (st_stack_frame + 8);
+                    pcVar32 = pcVar14;
+                    if (uVar28 == 0) break;
+                    uVar28 = uVar28 - 1;
+                    pcVar32 = pcVar14 + 1;
+                    cVar25 = *pcVar14;
+                    pcVar14 = pcVar32;
+                  } while (cVar25 != '\0');
+                  uVar28 = ~uVar28;
+                  pcVar32 = pcVar32 + -uVar28;
+                  local_8 = reinterpret_cast<char *>((st_stack_frame + 8));
                   goto LAB_005d5b7e;
                 }
               }
               else {
-                uVar30 = 0xffffffff;
-                pcVar16 = (char *)((int)pvVar14 + 10);
+                uVar28 = 0xffffffff;
+                pcVar14 = (char *)((int)pvVar13 + 10);
                 do {
-                  pcVar34 = pcVar16;
-                  if (uVar30 == 0) break;
-                  uVar30 = uVar30 - 1;
-                  pcVar34 = pcVar16 + 1;
-                  cVar27 = *pcVar16;
-                  pcVar16 = pcVar34;
-                } while (cVar27 != '\0');
-                uVar30 = ~uVar30;
-                pcVar34 = pcVar34 + -uVar30;
-                local_8 = (st_stack_frame + 8);
+                  pcVar32 = pcVar14;
+                  if (uVar28 == 0) break;
+                  uVar28 = uVar28 - 1;
+                  pcVar32 = pcVar14 + 1;
+                  cVar25 = *pcVar14;
+                  pcVar14 = pcVar32;
+                } while (cVar25 != '\0');
+                uVar28 = ~uVar28;
+                pcVar32 = pcVar32 + -uVar28;
+                local_8 = reinterpret_cast<char *>((st_stack_frame + 8));
 LAB_005d5b7e:
-                pcVar16 = (st_stack_frame + 8);
-                for (uVar29 = uVar30 >> 2; uVar29 != 0; uVar29 = uVar29 - 1) {
-                  *(undefined4 *)pcVar16 = *(undefined4 *)pcVar34;
-                  pcVar34 = pcVar34 + 4;
-                  pcVar16 = pcVar16 + 4;
+                pcVar14 = reinterpret_cast<char *>((st_stack_frame + 8));
+                for (uVar27 = uVar28 >> 2; uVar27 != 0; uVar27 = uVar27 - 1) {
+                  *(undefined4 *)pcVar14 = *(undefined4 *)pcVar32;
+                  pcVar32 = pcVar32 + 4;
+                  pcVar14 = pcVar14 + 4;
                 }
-                for (uVar30 = uVar30 & 3; local_8 = (st_stack_frame + 8), uVar30 != 0;
-                    uVar30 = uVar30 - 1) {
-                  *pcVar16 = *pcVar34;
-                  pcVar34 = pcVar34 + 1;
-                  pcVar16 = pcVar16 + 1;
+                for (uVar28 = uVar28 & 3; local_8 = reinterpret_cast<char *>((st_stack_frame + 8)), uVar28 != 0;
+                    uVar28 = uVar28 - 1) {
+                  *pcVar14 = *pcVar32;
+                  pcVar32 = pcVar32 + 1;
+                  pcVar14 = pcVar14 + 1;
                 }
               }
-              bVar23 = STField<byte>(pvVar14,2);
-              puVar31 = (byte *)(st_stack_frame + 8);
-              pcVar16 = &CHAR_00h_00808ab0 + (uint)DAT_00808aaf * 0x9c;
-              memmove(pcVar16, puVar31, 0x9c); /* compiler REP MOVS byte copy */
-              if (bVar23 < 8) {
-                iVar25 = 0;
-                iVar24 = (uint)bVar23 * 0x51 + 0x808800;
+              bVar22 = STField<byte>(pvVar13,2);
+              puVar29 = reinterpret_cast<byte *>((st_stack_frame + 8));
+              pcVar14 = &CHAR_00h_00808ab0 + (uint)DAT_00808aaf * 0x9c;
+              memmove(pcVar14, puVar29, 0x9c); /* compiler REP MOVS byte copy */
+              if (bVar22 < 8) {
+                iVar23 = 0;
+                iVar12 = (uint)bVar22 * 0x51 + 0x808800;
                 do {
-                  if (*(char *)(iVar24 + iVar25) == '\0') {
-                    *(byte *)(iVar24 + iVar25) = DAT_00808aaf;
+                  if (*(char *)(iVar12 + iVar23) == '\0') {
+                    *(byte *)(iVar12 + iVar23) = DAT_00808aaf;
                     break;
                   }
-                  iVar25 = iVar25 + 1;
-                } while (iVar25 < 0x18);
+                  iVar23 = iVar23 + 1;
+                } while (iVar23 < 0x18);
               }
               DAT_00808aaf = DAT_00808aaf + 1;
             }
           }
-          pDVar18 = this_00->field_1F84;
+          pDVar16 = this_00->field_1F84;
           local_c = local_c + 1;
-          bVar37 = local_c < pDVar18->count;
-        } while ((int)local_c < (int)pDVar18->count);
+          bVar35 = local_c < pDVar16->count;
+        } while ((int)local_c < (int)pDVar16->count);
       }
       if (this_00->field_1E26 == CASE_6) {
         if ((this_00->field_1F47 == 0) && ((message->arg0).u32 == 0)) {
           pMVar7 = this_00->array_00BC[0xc].field_01DB;
           if (*(int *)(pMVar7 + 0x2e6) != 0) {
             memset(local_64, 0, 0x20); /* compiler bulk-zero initialization */
-            iVar24 = 0;
+            iVar12 = 0;
             memset(local_84, 0, 0x20); /* compiler bulk-zero initialization */
             local_7c = this_00->field_0008;
             local_64[3] = 2;
@@ -992,69 +995,69 @@ LAB_005d5b7e:
             local_74 = 0x693f;
             local_64[2] = local_7c;
             /* ST_CALLSITE[005D5DAD]: CALL 0x00403fa8; direct=00403FA8 MMsgTy::SetMessage */
-            iVar24 = st::fn_00403FA8(*(MMsgTy **)(pMVar7 + 0x2e6),0x251f,'\x01',local_64,local_84
+            iVar12 = st::fn_00403FA8(*(MMsgTy **)(pMVar7 + 0x2e6),0x251f,'\x01',local_64,local_84
                                         ,nullptr,0,0);
-            if (iVar24 != 0) {
-              /* ST_CALLSITE[005D5DBE]: CALL dword ptr [EDX + 0x24] */
+            if (iVar12 != 0) {
+              /* ST_CALLSITE[005D5DBE]: CALL dword ptr [EDX + 0x24]; [STIndirectCallsiteApplier] exact slot 0x24; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/SettMapTy */
               this_00->vfunc_24();
             }
           }
         }
         else {
-          uVar30 = 0xffffffff;
+          uVar28 = 0xffffffff;
           STPiece<0,1>(DAT_008087a0) = CASE_6;
-          pcVar16 = &CHAR_00h_00853de4;
+          pcVar14 = &CHAR_00h_00853de4;
           do {
-            pcVar34 = pcVar16;
-            if (uVar30 == 0) break;
-            uVar30 = uVar30 - 1;
-            pcVar34 = pcVar16 + 1;
-            cVar27 = *pcVar16;
-            pcVar16 = pcVar34;
-          } while (cVar27 != '\0');
-          uVar30 = ~uVar30;
+            pcVar32 = pcVar14;
+            if (uVar28 == 0) break;
+            uVar28 = uVar28 - 1;
+            pcVar32 = pcVar14 + 1;
+            cVar25 = *pcVar14;
+            pcVar14 = pcVar32;
+          } while (cVar25 != '\0');
+          uVar28 = ~uVar28;
           DAT_00808783 = 2;
-          pcVar16 = pcVar34 + -uVar30;
-          pcVar34 = &CHAR_00h_0080ed16;
-          memmove(pcVar34, pcVar16, uVar30); /* compiler REP MOVS byte copy */
-          uVar29 = 0;
-          uVar30 = 0xffffffff;
-          pcVar16 = &CHAR_00h_0080ed16;
+          pcVar14 = pcVar32 + -uVar28;
+          pcVar32 = &CHAR_00h_0080ed16;
+          memmove(pcVar32, pcVar14, uVar28); /* compiler REP MOVS byte copy */
+          uVar27 = 0;
+          uVar28 = 0xffffffff;
+          pcVar14 = &CHAR_00h_0080ed16;
           do {
-            pcVar34 = pcVar16;
-            if (uVar30 == 0) break;
-            uVar30 = uVar30 - 1;
-            pcVar34 = pcVar16 + 1;
-            cVar27 = *pcVar16;
-            pcVar16 = pcVar34;
-          } while (cVar27 != '\0');
-          uVar30 = ~uVar30;
-          pcVar16 = pcVar34 + -uVar30;
-          pcVar34 = (char *)&DAT_0080ee1a;
-          memmove(pcVar34, pcVar16, uVar30); /* compiler REP MOVS byte copy */
-          uVar30 = 0xffffffff;
-          pcVar16 = &CHAR_00h_00807680;
+            pcVar32 = pcVar14;
+            if (uVar28 == 0) break;
+            uVar28 = uVar28 - 1;
+            pcVar32 = pcVar14 + 1;
+            cVar25 = *pcVar14;
+            pcVar14 = pcVar32;
+          } while (cVar25 != '\0');
+          uVar28 = ~uVar28;
+          pcVar14 = pcVar32 + -uVar28;
+          pcVar32 = reinterpret_cast<char *>(&DAT_0080ee1a);
+          memmove(pcVar32, pcVar14, uVar28); /* compiler REP MOVS byte copy */
+          uVar28 = 0xffffffff;
+          pcVar14 = &CHAR_00h_00807680;
           do {
-            if (uVar30 == 0) break;
-            uVar30 = uVar30 - 1;
-            cVar27 = *pcVar16;
-            pcVar16 = pcVar16 + 1;
-          } while (cVar27 != '\0');
-          uVar29 = 0xffffffff;
-          pcVar16 = (char *)((int)&DAT_0080ed12 + ~uVar30 + 3);
+            if (uVar28 == 0) break;
+            uVar28 = uVar28 - 1;
+            cVar25 = *pcVar14;
+            pcVar14 = pcVar14 + 1;
+          } while (cVar25 != '\0');
+          uVar27 = 0xffffffff;
+          pcVar14 = (char *)((int)&DAT_0080ed12 + ~uVar28 + 3);
           do {
-            pcVar34 = pcVar16;
-            if (uVar29 == 0) break;
-            uVar29 = uVar29 - 1;
-            pcVar34 = pcVar16 + 1;
-            cVar27 = *pcVar16;
-            pcVar16 = pcVar34;
-          } while (cVar27 != '\0');
-          uVar29 = ~uVar29;
-          pcVar16 = pcVar34 + -uVar29;
-          pcVar34 = &CHAR_00h_0080ef1e;
-          memmove(pcVar34, pcVar16, uVar29); /* compiler REP MOVS byte copy */
-          uVar29 = 0;
+            pcVar32 = pcVar14;
+            if (uVar27 == 0) break;
+            uVar27 = uVar27 - 1;
+            pcVar32 = pcVar14 + 1;
+            cVar25 = *pcVar14;
+            pcVar14 = pcVar32;
+          } while (cVar25 != '\0');
+          uVar27 = ~uVar27;
+          pcVar14 = pcVar32 + -uVar27;
+          pcVar32 = &CHAR_00h_0080ef1e;
+          memmove(pcVar32, pcVar14, uVar27); /* compiler REP MOVS byte copy */
+          uVar27 = 0;
           st::fn_004036C0(this_00,0x6948,0,0);
           this_00->field_21E5 = 1;
           this_00->field_21E4 = 1;
@@ -1072,45 +1075,45 @@ LAB_005d5b7e:
         }
       }
       else {
-        uVar30 = 0xffffffff;
+        uVar28 = 0xffffffff;
         DAT_00808783 = 2;
-        pcVar16 = &CHAR_00h_0080ed16;
+        pcVar14 = &CHAR_00h_0080ed16;
         do {
-          pcVar34 = pcVar16;
-          if (uVar30 == 0) break;
-          uVar30 = uVar30 - 1;
-          pcVar34 = pcVar16 + 1;
-          cVar27 = *pcVar16;
-          pcVar16 = pcVar34;
-        } while (cVar27 != '\0');
-        uVar30 = ~uVar30;
-        pcVar16 = pcVar34 + -uVar30;
-        pcVar34 = (char *)&DAT_0080ee1a;
+          pcVar32 = pcVar14;
+          if (uVar28 == 0) break;
+          uVar28 = uVar28 - 1;
+          pcVar32 = pcVar14 + 1;
+          cVar25 = *pcVar14;
+          pcVar14 = pcVar32;
+        } while (cVar25 != '\0');
+        uVar28 = ~uVar28;
+        pcVar14 = pcVar32 + -uVar28;
+        pcVar32 = reinterpret_cast<char *>(&DAT_0080ee1a);
         STPiece<0,1>(DAT_008087a0) = this_00->field_1E26;
-        memmove(pcVar34, pcVar16, uVar30); /* compiler REP MOVS byte copy */
-        uVar30 = 0xffffffff;
-        pcVar16 = &CHAR_00h_00807680;
+        memmove(pcVar32, pcVar14, uVar28); /* compiler REP MOVS byte copy */
+        uVar28 = 0xffffffff;
+        pcVar14 = &CHAR_00h_00807680;
         do {
-          if (uVar30 == 0) break;
-          uVar30 = uVar30 - 1;
-          cVar27 = *pcVar16;
-          pcVar16 = pcVar16 + 1;
-        } while (cVar27 != '\0');
-        uVar29 = 0xffffffff;
-        pcVar16 = (char *)((int)&DAT_0080ed12 + ~uVar30 + 3);
+          if (uVar28 == 0) break;
+          uVar28 = uVar28 - 1;
+          cVar25 = *pcVar14;
+          pcVar14 = pcVar14 + 1;
+        } while (cVar25 != '\0');
+        uVar27 = 0xffffffff;
+        pcVar14 = (char *)((int)&DAT_0080ed12 + ~uVar28 + 3);
         do {
-          pcVar34 = pcVar16;
-          if (uVar29 == 0) break;
-          uVar29 = uVar29 - 1;
-          pcVar34 = pcVar16 + 1;
-          cVar27 = *pcVar16;
-          pcVar16 = pcVar34;
-        } while (cVar27 != '\0');
-        uVar29 = ~uVar29;
-        pcVar16 = pcVar34 + -uVar29;
-        pcVar34 = &CHAR_00h_0080ef1e;
-        memmove(pcVar34, pcVar16, uVar29); /* compiler REP MOVS byte copy */
-        uVar30 = 0;
+          pcVar32 = pcVar14;
+          if (uVar27 == 0) break;
+          uVar27 = uVar27 - 1;
+          pcVar32 = pcVar14 + 1;
+          cVar25 = *pcVar14;
+          pcVar14 = pcVar32;
+        } while (cVar25 != '\0');
+        uVar27 = ~uVar27;
+        pcVar14 = pcVar32 + -uVar27;
+        pcVar32 = &CHAR_00h_0080ef1e;
+        memmove(pcVar32, pcVar14, uVar27); /* compiler REP MOVS byte copy */
+        uVar28 = 0;
         st::fn_004036C0(this_00,0x6948,0,0);
         this_00->field_21E5 = 1;
         this_00->field_21E4 = 1;
@@ -1130,62 +1133,64 @@ LAB_005d5b7e:
   }
   SVar3 = message->id;
   if (((0x69fe < SVar3) && (SVar3 < 0x6a7f)) && (this_00->field_0065 == '\x01')) {
-    pDVar18 = this_00->field_1F84;
+    pDVar16 = this_00->field_1F84;
     local_c = SVar3 - 0x69ff >> 3;
-    if ((pDVar18 == nullptr) ||
-       (uVar30 = st::machine_word_boundary_cast<uint>(this_00->field_1F88 + local_c), pDVar18->count <= uVar30)) {
+    if ((pDVar16 == nullptr) ||
+       (uVar28 = this_00->field_1F88 + local_c, pDVar16->count <= uVar28)) {
       local_14 = nullptr;
     }
     else {
-      local_14 = DArrayAt<AnonShape_005D5560_9031BF1B>(pDVar18, uVar30);
+      local_14 = DArrayAt<AnonShape_005D5560_9031BF1B>(pDVar16, uVar28);
     }
-    uVar30 = 0;
+    uVar28 = 0;
     if (local_14 != nullptr) {
       switch(SVar3 + 1 & 7) {
       case 1:
-        uVar29 = 0;
+        uVar27 = 0;
         local_40 = 0x1010101;
         local_3c = 0x1010101;
-        uVar30 = pDVar18->count;
-        if (0 < (int)uVar30) {
-          bVar37 = uVar30 != 0;
+        uVar28 = pDVar16->count;
+        if (0 < (int)uVar28) {
+          bVar35 = uVar28 != 0;
           do {
-            if (bVar37) {
-              pcVar16 = DArrayAt<char>(pDVar18, uVar29);
+            if (bVar35) {
+              pcVar14 = DArrayAt<char>(pDVar16, uVar27);
             }
             else {
-              pcVar16 = nullptr;
+              pcVar14 = nullptr;
             }
-            if ((*pcVar16 != '\0') && (pcVar16[2] != 0xff)) {
-              *(undefined1 *)((int)&local_40 + (uint)(byte)pcVar16[2]) = 0;
+            if ((*pcVar14 != '\0') && (pcVar14[2] != 0xff)) {
+              *(undefined1 *)((int)&local_40 + (uint)(byte)pcVar14[2]) = 0;
             }
-            uVar29 = uVar29 + 1;
-            bVar37 = uVar29 < uVar30;
-          } while ((int)uVar29 < (int)uVar30);
+            uVar27 = uVar27 + 1;
+            bVar35 = uVar27 < uVar28;
+          } while ((int)uVar27 < (int)uVar28);
         }
-        bVar23 = local_14->field_0x2;
-        SVar28 = st::machine_word_boundary_cast<SettMapTy_field_2179State>(this_00->field_1F88 + local_c);
-        uVar30 = 0;
+        bVar22 = local_14->field_0x2;
+        SVar26 = this_00->field_1F88 + local_c;
+        uVar28 = 0;
         this_00->field_2171 = 0x6502;
-        *(undefined1 *)((int)&local_40 + (uint)bVar23) = 1;
-        this_00->field_2179 = SVar28;
+        *(undefined1 *)((int)&local_40 + (uint)bVar22) = 1;
+        this_00->field_2179 = SVar26;
         this_00->field_2191 = 0x6503;
         this_00->field_21A1 = 0;
         this_00->field_1E2F->count = 0;
         this_00->field_1F37 = 0xff;
+
         st::fn_006AE1C0(this_00->field_1E2F,&this_00->field_1E33);
         local_8 = (char *)STReplaceLowByte((uint32_t)(local_8), (uint8_t)(1));
         do {
-          if (*(char *)((int)&local_40 + uVar30) != '\0') {
-            this_00->field_1F37 = uVar30;
+          if (*(char *)((int)&local_40 + uVar28) != '\0') {
+            this_00->field_1F37 = uVar28;
+
             st::fn_006AE1C0(this_00->field_1E2F,&this_00->field_1E33);
-            if ((byte)local_14->field_0x2 == uVar30) {
+            if ((byte)local_14->field_0x2 == uVar28) {
               this_00->field_21A1 = (uint)local_8 & 0xff;
             }
             local_8 = (char *)STReplaceLowByte((uint32_t)(local_8), (uint8_t)((char)local_8 + '\x01'));
           }
-          uVar30 = uVar30 + 1;
-        } while ((int)uVar30 < 8);
+          uVar28 = uVar28 + 1;
+        } while ((int)uVar28 < 8);
         this_00->field_21A9 = this_00->field_1E2F->count;
         this_00->field_21C5 = 0x124;
         this_00->field_21CD = 0x1e;
@@ -1194,239 +1199,245 @@ LAB_005d5b7e:
 LAB_005d619b:
         /* ST_CALLSITE[005D61B2]: CALL dword ptr [EAX + 0x8] */
         (*this_00->field_000C->vtable->CreateObject)
-                  ((SystemClassTy *)this_00->field_000C,0x100ef,nullptr,nullptr,
+                  (reinterpret_cast<SystemClassTy *>(this_00->field_000C),0x100ef,nullptr,nullptr,
                    st::machine_word_boundary_cast<undefined4>(&this_00->field_0x2161),0);
         break;
       case 2:
         this_00->field_2171 = 0x6504;
-        this_00->field_2179 = st::machine_word_boundary_cast<SettMapTy_field_2179State>(this_00->field_1F88 + local_c);
+        this_00->field_2179 = this_00->field_1F88 + local_c;
         this_00->field_2191 = 0x6500;
         this_00->field_1E2F->count = 0;
         local_28 = 1;
         local_EAX_3231 = st::fn_006B0140(0x23f1,g_hINSTANCE_00807618);
-        uVar30 = 0xffffffff;
+        uVar28 = 0xffffffff;
         do {
-          pcVar16 = local_EAX_3231;
-          if (uVar30 == 0) break;
-          uVar30 = uVar30 - 1;
-          pcVar16 = local_EAX_3231 + 1;
-          cVar27 = *local_EAX_3231;
-          local_EAX_3231 = pcVar16;
-        } while (cVar27 != '\0');
-        uVar30 = ~uVar30;
-        pcVar16 = pcVar16 + -uVar30;
-        pcVar34 = &this_00->field_1E33;
-        memmove(pcVar34, pcVar16, uVar30); /* compiler REP MOVS byte copy */
-        uVar29 = 0;
-        for (puVar18_mg0 = st::fn_0072E560((uint *)&this_00->field_1E33,'\n');
+          pcVar14 = local_EAX_3231;
+          if (uVar28 == 0) break;
+          uVar28 = uVar28 - 1;
+          pcVar14 = local_EAX_3231 + 1;
+          cVar25 = *local_EAX_3231;
+          local_EAX_3231 = pcVar14;
+        } while (cVar25 != '\0');
+        uVar28 = ~uVar28;
+        pcVar14 = pcVar14 + -uVar28;
+        pcVar32 = &this_00->field_1E33;
+        memmove(pcVar32, pcVar14, uVar28); /* compiler REP MOVS byte copy */
+        uVar27 = 0;
+        for (puVar18_mg0 = st::fn_0072E560(reinterpret_cast<uint *>(&this_00->field_1E33),'\n');
             puVar18_mg0 != nullptr;
             puVar18_mg0 = st::fn_0072E560(puVar18_mg0,'\n')) {
           *(undefined1 *)puVar18_mg0 = 0x20;
         }
         this_00->field_1F37 = 1;
+
         st::fn_006AE1C0(this_00->field_1E2F,&this_00->field_1E33);
         local_EAX_3347 = st::fn_006B0140(0x23f0,g_hINSTANCE_00807618);
-        uVar30 = 0xffffffff;
+        uVar28 = 0xffffffff;
         do {
-          pcVar16 = local_EAX_3347;
-          if (uVar30 == 0) break;
-          uVar30 = uVar30 - 1;
-          pcVar16 = local_EAX_3347 + 1;
-          cVar27 = *local_EAX_3347;
-          local_EAX_3347 = pcVar16;
-        } while (cVar27 != '\0');
-        uVar30 = ~uVar30;
-        pcVar16 = pcVar16 + -uVar30;
-        pcVar34 = &this_00->field_1E33;
-        memmove(pcVar34, pcVar16, uVar30); /* compiler REP MOVS byte copy */
-        uVar29 = 0;
-        for (puVar18_mg1 = st::fn_0072E560((uint *)&this_00->field_1E33,'\n');
+          pcVar14 = local_EAX_3347;
+          if (uVar28 == 0) break;
+          uVar28 = uVar28 - 1;
+          pcVar14 = local_EAX_3347 + 1;
+          cVar25 = *local_EAX_3347;
+          local_EAX_3347 = pcVar14;
+        } while (cVar25 != '\0');
+        uVar28 = ~uVar28;
+        pcVar14 = pcVar14 + -uVar28;
+        pcVar32 = &this_00->field_1E33;
+        memmove(pcVar32, pcVar14, uVar28); /* compiler REP MOVS byte copy */
+        uVar27 = 0;
+        for (puVar18_mg1 = st::fn_0072E560(reinterpret_cast<uint *>(&this_00->field_1E33),'\n');
             puVar18_mg1 != nullptr;
             puVar18_mg1 = st::fn_0072E560(puVar18_mg1,'\n')) {
           *(undefined1 *)puVar18_mg1 = 0x20;
         }
         this_00->field_1F37 = 2;
+
         st::fn_006AE1C0(this_00->field_1E2F,&this_00->field_1E33);
-        uVar30 = local_28;
+        uVar28 = local_28;
         if ((DAT_00807dd1 & 0xffff0000) == 0xd0dd0000) {
-          uVar30 = (uint)(local_14->field_0x4 != '\x02');
+          uVar28 = (uint)(local_14->field_0x4 != '\x02');
         }
-        if (uVar30 != 0) {
+        if (uVar28 != 0) {
           local_EAX_3503 = st::fn_006B0140(0x23f2,g_hINSTANCE_00807618);
-          uVar30 = 0xffffffff;
+          uVar28 = 0xffffffff;
           do {
-            pcVar16 = local_EAX_3503;
-            if (uVar30 == 0) break;
-            uVar30 = uVar30 - 1;
-            pcVar16 = local_EAX_3503 + 1;
-            cVar27 = *local_EAX_3503;
-            local_EAX_3503 = pcVar16;
-          } while (cVar27 != '\0');
-          uVar30 = ~uVar30;
-          pcVar16 = pcVar16 + -uVar30;
-          pcVar34 = &this_00->field_1E33;
-          memmove(pcVar34, pcVar16, uVar30); /* compiler REP MOVS byte copy */
-          for (puVar18_mg2 = st::fn_0072E560((uint *)&this_00->field_1E33,'\n');
+            pcVar14 = local_EAX_3503;
+            if (uVar28 == 0) break;
+            uVar28 = uVar28 - 1;
+            pcVar14 = local_EAX_3503 + 1;
+            cVar25 = *local_EAX_3503;
+            local_EAX_3503 = pcVar14;
+          } while (cVar25 != '\0');
+          uVar28 = ~uVar28;
+          pcVar14 = pcVar14 + -uVar28;
+          pcVar32 = &this_00->field_1E33;
+          memmove(pcVar32, pcVar14, uVar28); /* compiler REP MOVS byte copy */
+          for (puVar18_mg2 = st::fn_0072E560(reinterpret_cast<uint *>(&this_00->field_1E33),'\n');
               puVar18_mg2 != nullptr;
               puVar18_mg2 = st::fn_0072E560(puVar18_mg2,'\n')) {
             *(undefined1 *)puVar18_mg2 = 0x20;
           }
           this_00->field_1F37 = 3;
+
           st::fn_006AE1C0(this_00->field_1E2F,&this_00->field_1E33);
         }
         this_00->field_21A9 = this_00->field_1E2F->count;
-        bVar23 = local_14->field_0x3;
+        bVar22 = local_14->field_0x3;
         this_00->field_21C5 = 0x143;
         this_00->field_21CD = 0x78;
-        this_00->field_21A1 = bVar23 - 1;
+        this_00->field_21A1 = bVar22 - 1;
         this_00->field_21C9 = local_c * 0x19 + 0x41;
-        pcVar9 = g_startSystem_0081176C->field_0034;
-        if (pcVar9->field_00A0 != 0) {
-          st::fn_00710790((AnonShape_00710790_4CBB90D4 *)pcVar9);
+        pcVar20 = g_startSystem_0081176C->field_0034;
+        if (pcVar20->field_00A0 != 0) {
+          st::fn_00710790(reinterpret_cast<RecoveredRecordView_00710790_7768A573 *>(pcVar20));
         }
-        this_00->field_21A5 = *(undefined4 *)&pcVar9->field_0x8a;
+        this_00->field_21A5 = *(undefined4 *)&pcVar20->field_0x8a;
 LAB_005d6676:
         /* ST_CALLSITE[005D668D]: CALL dword ptr [EDX + 0x8] */
         (*this_00->field_000C->vtable->CreateObject)
-                  ((SystemClassTy *)this_00->field_000C,0x100ef,nullptr,nullptr,
+                  (reinterpret_cast<SystemClassTy *>(this_00->field_000C),0x100ef,nullptr,nullptr,
                    st::machine_word_boundary_cast<undefined4>(&this_00->field_0x2161),0);
         break;
       case 3:
         this_00->field_2171 = 0x6505;
-        this_00->field_2179 = st::machine_word_boundary_cast<SettMapTy_field_2179State>(this_00->field_1F88 + local_c);
+        this_00->field_2179 = this_00->field_1F88 + local_c;
         this_00->field_2191 = 0x6500;
         this_00->field_1E2F->count = 0;
         if (*(char *)local_14 != '\0') {
-          uVar30 = 0;
+          uVar28 = 0;
           local_8 = nullptr;
           if ((this_00->field_1E26 == CASE_2) && (local_14->field_0x4 == '\x02')) break;
-          pDVar18 = this_00->field_1F84;
-          uVar29 = pDVar18->count;
-          bVar37 = uVar29 != 0;
-          if (0 < (int)uVar29) {
+          pDVar16 = this_00->field_1F84;
+          uVar27 = pDVar16->count;
+          bVar35 = uVar27 != 0;
+          if (0 < (int)uVar27) {
             do {
-              if (bVar37) {
-                pcVar16 = DArrayAt<char>(pDVar18, uVar30);
+              if (bVar35) {
+                pcVar14 = DArrayAt<char>(pDVar16, uVar28);
               }
               else {
-                pcVar16 = nullptr;
+                pcVar14 = nullptr;
               }
-              if ((*pcVar16 != '\0') && (pcVar16[4] != '\0')) {
+              if ((*pcVar14 != '\0') && (pcVar14[4] != '\0')) {
                 local_8 = local_8 + 1;
               }
-              uVar30 = uVar30 + 1;
-              bVar37 = uVar30 < uVar29;
-            } while ((int)uVar30 < (int)uVar29);
+              uVar28 = uVar28 + 1;
+              bVar35 = uVar28 < uVar27;
+            } while ((int)uVar28 < (int)uVar27);
           }
           if ((this_00->field_1E26 != CASE_2) && (2 < (int)local_8)) {
             local_EAX_3868 = st::fn_006B0140(8000,g_hINSTANCE_00807618);
-            uVar30 = 0xffffffff;
+            uVar28 = 0xffffffff;
             do {
-              pcVar16 = local_EAX_3868;
-              if (uVar30 == 0) break;
-              uVar30 = uVar30 - 1;
-              pcVar16 = local_EAX_3868 + 1;
-              cVar27 = *local_EAX_3868;
-              local_EAX_3868 = pcVar16;
-            } while (cVar27 != '\0');
-            uVar30 = ~uVar30;
-            pcVar16 = pcVar16 + -uVar30;
-            pcVar34 = &this_00->field_1E33;
-            memmove(pcVar34, pcVar16, uVar30); /* compiler REP MOVS byte copy */
-            uVar29 = 0;
+              pcVar14 = local_EAX_3868;
+              if (uVar28 == 0) break;
+              uVar28 = uVar28 - 1;
+              pcVar14 = local_EAX_3868 + 1;
+              cVar25 = *local_EAX_3868;
+              local_EAX_3868 = pcVar14;
+            } while (cVar25 != '\0');
+            uVar28 = ~uVar28;
+            pcVar14 = pcVar14 + -uVar28;
+            pcVar32 = &this_00->field_1E33;
+            memmove(pcVar32, pcVar14, uVar28); /* compiler REP MOVS byte copy */
+            uVar27 = 0;
             this_00->field_1F37 = 0;
+
             st::fn_006AE1C0(this_00->field_1E2F,&this_00->field_1E33);
           }
           if (this_00->field_1E26 != CASE_2) {
-            bVar37 = true;
+            bVar35 = true;
             if ((DAT_00807dd1 & 0xffff0000) == 0xd0dd0000) {
-              bVar37 = local_14->field_0x3 != '\x03';
+              bVar35 = local_14->field_0x3 != '\x03';
             }
-            if (bVar37) {
+            if (bVar35) {
               local_EAX_3994 = st::fn_006B0140(0x1f42,g_hINSTANCE_00807618);
-              uVar30 = 0xffffffff;
+              uVar28 = 0xffffffff;
               do {
-                pcVar16 = local_EAX_3994;
-                if (uVar30 == 0) break;
-                uVar30 = uVar30 - 1;
-                pcVar16 = local_EAX_3994 + 1;
-                cVar27 = *local_EAX_3994;
-                local_EAX_3994 = pcVar16;
-              } while (cVar27 != '\0');
-              uVar30 = ~uVar30;
-              pcVar16 = pcVar16 + -uVar30;
-              pcVar34 = &this_00->field_1E33;
-              memmove(pcVar34, pcVar16, uVar30); /* compiler REP MOVS byte copy */
-              uVar29 = 0;
+                pcVar14 = local_EAX_3994;
+                if (uVar28 == 0) break;
+                uVar28 = uVar28 - 1;
+                pcVar14 = local_EAX_3994 + 1;
+                cVar25 = *local_EAX_3994;
+                local_EAX_3994 = pcVar14;
+              } while (cVar25 != '\0');
+              uVar28 = ~uVar28;
+              pcVar14 = pcVar14 + -uVar28;
+              pcVar32 = &this_00->field_1E33;
+              memmove(pcVar32, pcVar14, uVar28); /* compiler REP MOVS byte copy */
+              uVar27 = 0;
               this_00->field_1F37 = 2;
+
               st::fn_006AE1C0(this_00->field_1E2F,&this_00->field_1E33);
             }
           }
           local_8 = nullptr;
-          pAVar20 = local_14->field_0050;
-          pcVar16 = (char *)pAVar20->field_000C;
-          if (0 < (int)pcVar16) {
+          pAVar18 = local_14->field_0050;
+          pcVar14 = (char *)pAVar18->field_000C;
+          if (0 < (int)pcVar14) {
             do {
-              if (local_8 < pcVar16) {
-                iVar24 = pAVar20->field_0008 * (int)local_8 + pAVar20->field_001C;
+              if (local_8 < pcVar14) {
+                iVar12 = pAVar18->field_0008 * (int)local_8 + pAVar18->field_001C;
               }
               else {
-                iVar24 = 0;
+                iVar12 = 0;
               }
-              uVar30 = 0xffffffff;
-              pcVar16 = (char *)(iVar24 + 0x40);
+              uVar28 = 0xffffffff;
+              pcVar14 = (char *)(iVar12 + 0x40);
               do {
-                pcVar34 = pcVar16;
-                if (uVar30 == 0) break;
-                uVar30 = uVar30 - 1;
-                pcVar34 = pcVar16 + 1;
-                cVar27 = *pcVar16;
-                pcVar16 = pcVar34;
-              } while (cVar27 != '\0');
-              uVar30 = ~uVar30;
-              pcVar16 = pcVar34 + -uVar30;
-              pcVar34 = &this_00->field_1E33;
-              memmove(pcVar34, pcVar16, uVar30); /* compiler REP MOVS byte copy */
+                pcVar32 = pcVar14;
+                if (uVar28 == 0) break;
+                uVar28 = uVar28 - 1;
+                pcVar32 = pcVar14 + 1;
+                cVar25 = *pcVar14;
+                pcVar14 = pcVar32;
+              } while (cVar25 != '\0');
+              uVar28 = ~uVar28;
+              pcVar14 = pcVar32 + -uVar28;
+              pcVar32 = &this_00->field_1E33;
+              memmove(pcVar32, pcVar14, uVar28); /* compiler REP MOVS byte copy */
               this_00->field_1F37 = 4;
               *(char **)&this_00->field_0x1f3b = local_8;
+
               st::fn_006AE1C0(this_00->field_1E2F,&this_00->field_1E33);
               local_8 = local_8 + 1;
-              pAVar20 = local_14->field_0050;
-              pcVar16 = (char *)pAVar20->field_000C;
-            } while ((int)local_8 < (int)pcVar16);
+              pAVar18 = local_14->field_0050;
+              pcVar14 = (char *)pAVar18->field_000C;
+            } while ((int)local_8 < (int)pcVar14);
           }
         }
-        pDVar18 = this_00->field_1E2F;
-        uVar30 = 0;
-        if (0 < (int)pDVar18->count) {
-          bVar37 = pDVar18->count != 0;
+        pDVar16 = this_00->field_1E2F;
+        uVar28 = 0;
+        if (0 < (int)pDVar16->count) {
+          bVar35 = pDVar16->count != 0;
           local_28 = (uint)(byte)local_14->field_0x4;
           do {
-            if (bVar37) {
-              pvVar14 = DArrayAt<void>(pDVar18, uVar30);
+            if (bVar35) {
+              pvVar13 = DArrayAt<void>(pDVar16, uVar28);
             }
             else {
-              pvVar14 = nullptr;
+              pvVar13 = nullptr;
             }
-            if ((STField<uint>(pvVar14,0x104) == local_28) &&
-               (STField<uint>(pvVar14,0x108) == (uint)(byte)local_14->field_0x5)) {
-              this_00->field_21A1 = uVar30;
+            if ((STField<uint>(pvVar13,0x104) == local_28) &&
+               (STField<uint>(pvVar13,0x108) == (uint)(byte)local_14->field_0x5)) {
+              this_00->field_21A1 = uVar28;
               break;
             }
-            uVar30 = uVar30 + 1;
-            bVar37 = uVar30 < pDVar18->count;
-          } while ((int)uVar30 < (int)pDVar18->count);
+            uVar28 = uVar28 + 1;
+            bVar35 = uVar28 < pDVar16->count;
+          } while ((int)uVar28 < (int)pDVar16->count);
         }
-        dVar8 = pDVar18->count;
+        dVar8 = pDVar16->count;
         this_00->field_21C5 = 0x15d;
         this_00->field_21A9 = dVar8;
         this_00->field_21CD = 0x5f;
         this_00->field_21C9 = local_c * 0x19 + 0x41;
-        pcVar9 = g_startSystem_0081176C->field_0034;
-        if (pcVar9->field_00A0 != 0) {
-          st::fn_00710790((AnonShape_00710790_4CBB90D4 *)pcVar9);
+        pcVar20 = g_startSystem_0081176C->field_0034;
+        if (pcVar20->field_00A0 != 0) {
+          st::fn_00710790(reinterpret_cast<RecoveredRecordView_00710790_7768A573 *>(pcVar20));
         }
-        this_00->field_21A5 = *(undefined4 *)&pcVar9->field_0x8a;
+        this_00->field_21A5 = *(undefined4 *)&pcVar20->field_0x8a;
         if (1 < (int)this_00->field_21A9) goto LAB_005d6676;
         break;
       case 5:
@@ -1434,176 +1445,177 @@ LAB_005d6676:
           local_8 = (char *)0x1;
           local_38 = 0;
           local_34 = 0;
-          uVar29 = pDVar18->count;
-          if (0 < (int)uVar29) {
-            bVar37 = uVar29 != 0;
+          uVar27 = pDVar16->count;
+          if (0 < (int)uVar27) {
+            bVar35 = uVar27 != 0;
             do {
-              if (bVar37) {
-                pvVar14 = DArrayAt<void>(pDVar18, uVar30);
+              if (bVar35) {
+                pvVar13 = DArrayAt<void>(pDVar16, uVar28);
               }
               else {
-                pvVar14 = nullptr;
+                pvVar13 = nullptr;
               }
-              if ((pvVar14 != nullptr) && (STField<byte>(pvVar14,0x4a) < 8)) {
-                *(undefined1 *)((int)&local_38 + (uint)STField<byte>(pvVar14,0x4a)) = 1;
+              if ((pvVar13 != nullptr) && (STField<byte>(pvVar13,0x4a) < 8)) {
+                *(undefined1 *)((int)&local_38 + (uint)STField<byte>(pvVar13,0x4a)) = 1;
               }
-              uVar30 = uVar30 + 1;
-              bVar37 = uVar30 < uVar29;
-            } while ((int)uVar30 < (int)uVar29);
+              uVar28 = uVar28 + 1;
+              bVar35 = uVar28 < uVar27;
+            } while ((int)uVar28 < (int)uVar27);
           }
-          bVar23 = 0;
-          iVar24 = 0;
+          bVar22 = 0;
+          iVar12 = 0;
           do {
-            if (*(char *)((int)&local_38 + iVar24) != '\0') {
-              bVar23 = bVar23 + 1;
+            if (*(char *)((int)&local_38 + iVar12) != '\0') {
+              bVar22 = bVar22 + 1;
             }
-            iVar24 = iVar24 + 1;
-          } while (iVar24 < 8);
+            iVar12 = iVar12 + 1;
+          } while (iVar12 < 8);
           bVar2 = this_00->field_0x211c;
 joined_r0x005d6701:
-          if (bVar23 < bVar2) {
-            iVar24 = 0;
+          if (bVar22 < bVar2) {
+            iVar12 = 0;
             do {
-              if (*(char *)((int)&local_38 + iVar24) == '\0') {
-                *(undefined1 *)((int)&local_38 + iVar24) = 1;
-                bVar23 = bVar23 + 1;
+              if (*(char *)((int)&local_38 + iVar12) == '\0') {
+                *(undefined1 *)((int)&local_38 + iVar12) = 1;
+                bVar22 = bVar22 + 1;
                 break;
               }
-              iVar24 = iVar24 + 1;
-            } while (iVar24 < 8);
+              iVar12 = iVar12 + 1;
+            } while (iVar12 < 8);
             goto joined_r0x005d6701;
           }
-          uVar30 = 0;
-          cVar27 = (char)local_28;
-          if (0 < (int)pDVar18->count) {
+          uVar28 = 0;
+          cVar25 = (char)local_28;
+          if (0 < (int)pDVar16->count) {
             local_2c = (undefined1 *)(this_00->field_1F88 + local_c);
-            bVar37 = pDVar18->count != 0;
+            bVar35 = pDVar16->count != 0;
             do {
-              if (bVar37) {
-                pcVar16 = DArrayAt<char>(pDVar18, uVar30);
+              if (bVar35) {
+                pcVar14 = DArrayAt<char>(pDVar16, uVar28);
               }
               else {
-                pcVar16 = nullptr;
+                pcVar14 = nullptr;
               }
-              if (local_2c == (undefined1 *)uVar30) {
+              if (st::machine_word_boundary_cast<uint>(local_2c) == st::machine_word_boundary_cast<uint>((undefined1 *)uVar28)) {
 LAB_005d6784:
-                if ((*pcVar16 != '\0') && ((pcVar16[4] == '\0' || (pcVar16[4] == '\x01')))) {
-                  *(undefined1 *)((int)&local_38 + (uint)(byte)pcVar16[0x4a]) = 0;
+                if ((*pcVar14 != '\0') && ((pcVar14[4] == '\0' || (pcVar14[4] == '\x01')))) {
+                  *(undefined1 *)((int)&local_38 + (uint)(byte)pcVar14[0x4a]) = 0;
                 }
               }
-              else if (*pcVar16 != '\0') {
-                if ((pcVar16[4] != '\0') && (pcVar16[4] != '\x01')) {
+              else if (*pcVar14 != '\0') {
+                if ((pcVar14[4] != '\0') && (pcVar14[4] != '\x01')) {
                   if (local_8 == nullptr) {
-                    if (cVar27 != pcVar16[0x4a]) {
-                      cVar27 = -1;
+                    if (cVar25 != pcVar14[0x4a]) {
+                      cVar25 = -1;
                     }
                   }
                   else {
-                    cVar27 = pcVar16[0x4a];
+                    cVar25 = pcVar14[0x4a];
                     local_8 = nullptr;
                   }
                 }
                 goto LAB_005d6784;
               }
-              uVar30 = uVar30 + 1;
-              bVar37 = uVar30 < pDVar18->count;
-            } while ((int)uVar30 < (int)pDVar18->count);
-            local_28 = STReplaceLowByte((uint32_t)(local_28), (uint8_t)(cVar27));
+              uVar28 = uVar28 + 1;
+              bVar35 = uVar28 < pDVar16->count;
+            } while ((int)uVar28 < (int)pDVar16->count);
+            local_28 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_28)), (uint8_t)(cVar25));
           }
-          if (cVar27 != -1) {
+          if (cVar25 != -1) {
             *(undefined1 *)((int)&local_38 + (local_28 & 0xff)) = 0;
           }
-          uVar30 = 0;
+          uVar28 = 0;
           this_00->field_2171 = 0x6501;
-          this_00->field_2179 = st::machine_word_boundary_cast<SettMapTy_field_2179State>(this_00->field_1F88 + local_c);
+          this_00->field_2179 = this_00->field_1F88 + local_c;
           this_00->field_2191 = 0x6500;
           this_00->field_21A1 = 0;
           this_00->field_1E2F->count = 0;
           local_8 = (char *)((uint)local_8 & 0xffffff00);
-          puVar26 = &uStack_79;
-          local_2c = puVar26;
+          puVar24 = &uStack_79;
+          local_2c = puVar24;
           do {
-            iVar24 = uVar30 + 0x41;
-            if (puVar26[uVar30 + 0x41] != '\0') {
+            iVar12 = uVar28 + 0x41;
+            if (puVar24[uVar28 + 0x41] != '\0') {
               pcVar15 = st::fn_006B0140(0x1f4a,g_hINSTANCE_00807618);
               /* ST_CALLSITE[005D682A]: CALL dword ptr [0x0085bde8] */
-              st::external_00000080(st::pointer_boundary_cast<LPSTR>(&this_00->field_1E33),st::mutable_c_string("%s%c"),pcVar15,iVar24);
-              this_00->field_1F37 = uVar30;
+              st::external_00000080(reinterpret_cast<LPSTR>(&this_00->field_1E33),st::mutable_c_string("%s%c"),pcVar15,iVar12);
+              this_00->field_1F37 = uVar28;
+
               st::fn_006AE1C0(this_00->field_1E2F,&this_00->field_1E33);
-              if ((byte)local_14->field_0x4a == uVar30) {
+              if ((byte)local_14->field_0x4a == uVar28) {
                 this_00->field_21A1 = (uint)local_8 & 0xff;
               }
               local_8 = (char *)STReplaceLowByte((uint32_t)(local_8), (uint8_t)((char)local_8 + '\x01'));
-              puVar26 = local_2c;
+              puVar24 = local_2c;
             }
-            uVar30 = uVar30 + 1;
-          } while ((int)uVar30 < 8);
+            uVar28 = uVar28 + 1;
+          } while ((int)uVar28 < 8);
           SVar1 = this_00->field_1E26;
           this_00->field_21A9 = this_00->field_1E2F->count;
-          if (((SVar1 == CASE_6) || (SVar1 == CASE_1)) || (uVar21 = 0x26b, SVar1 == CASE_2)) {
-            uVar21 = 0x2ab;
+          if (((SVar1 == CASE_6) || (SVar1 == CASE_1)) || (uVar19 = 0x26b, SVar1 == CASE_2)) {
+            uVar19 = 0x2ab;
           }
-          this_00->field_21C5 = uVar21;
+          this_00->field_21C5 = uVar19;
           this_00->field_21CD = 0x46;
           this_00->field_21C9 = local_c * 0x19 + 0x41;
-          pcVar9 = g_startSystem_0081176C->field_0034;
-          if (pcVar9->field_00A0 != 0) {
-            st::fn_00710790((AnonShape_00710790_4CBB90D4 *)pcVar9);
+          pcVar20 = g_startSystem_0081176C->field_0034;
+          if (pcVar20->field_00A0 != 0) {
+            st::fn_00710790(reinterpret_cast<RecoveredRecordView_00710790_7768A573 *>(pcVar20));
           }
-          this_00->field_21A5 = *(undefined4 *)&pcVar9->field_0x8a;
+          this_00->field_21A5 = *(undefined4 *)&pcVar20->field_0x8a;
           goto LAB_005d619b;
         }
         if (DAT_0080874d != 0xff) {
-          bVar23 = local_14->field_0x2;
+          bVar22 = local_14->field_0x2;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-          local_c = CONCAT31((uint3)(SVar3 - 0x69ff >> 0xb),bVar23);
-          if ((bVar23 != 0xff) && (DAT_0080874d != bVar23)) {
+          local_c = CONCAT31((uint3)(SVar3 - 0x69ff >> 0xb),bVar22);
+          if ((bVar22 != 0xff) && (DAT_0080874d != bVar22)) {
             if (local_14->field_0x4 == '\x04') {
-              local_2c = (undefined1 *)STReplaceLowByte((uint32_t)(local_2c), (uint8_t)(bVar23));
-              if (DAT_0080874d == bVar23) {
-                uVar21 = 0;
-                uVar30 = (uint)bVar23;
+              local_2c = (undefined1 *)STReplaceLowByte((uint32_t)(local_2c), (uint8_t)(bVar22));
+              if (DAT_0080874d == bVar22) {
+                uVar19 = 0;
+                uVar28 = (uint)bVar22;
               }
               else {
-                uVar29 = (uint)DAT_0080874d;
-                bVar2 = g_playerRelationMatrix[uVar29][bVar23];
-                uVar30 = local_c;
-                if ((bVar2 == 0) && (g_playerRelationMatrix[bVar23][uVar29] == 0)) {
-                  uVar21 = 0xfffffffe;
+                uVar27 = (uint)DAT_0080874d;
+                bVar2 = g_playerRelationMatrix[uVar27][bVar22];
+                uVar28 = local_c;
+                if ((bVar2 == 0) && (g_playerRelationMatrix[bVar22][uVar27] == 0)) {
+                  uVar19 = 0xfffffffe;
                 }
-                else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar23][uVar29] == 0)) {
-                  uVar21 = 0xffffffff;
+                else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar22][uVar27] == 0)) {
+                  uVar19 = 0xffffffff;
                 }
-                else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar23][uVar29] == 1)) {
-                  uVar21 = 1;
+                else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar22][uVar27] == 1)) {
+                  uVar19 = 1;
                 }
-                else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar23][uVar29] == 1)) {
-                  uVar21 = 2;
+                else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar22][uVar27] == 1)) {
+                  uVar19 = 2;
                 }
                 else {
-                  uVar21 = 0;
+                  uVar19 = 0;
                 }
               }
-              bVar23 = (byte)uVar30;
-              switch(uVar21) {
+              bVar22 = (byte)uVar28;
+              switch(uVar19) {
               case 1:
-                st::fn_00401212(&DAT_00807620,bVar23,DAT_0080874d,'\0');
+                st::fn_00401212(&DAT_00807620,bVar22,DAT_0080874d,'\0');
                 break;
               case 2:
-                st::fn_00401212(&DAT_00807620,DAT_0080874d,bVar23,'\0');
+                st::fn_00401212(&DAT_00807620,DAT_0080874d,bVar22,'\0');
                 break;
               case 0xfffffffe:
-                st::fn_00401212(&DAT_00807620,DAT_0080874d,bVar23,'\x01');
+                st::fn_00401212(&DAT_00807620,DAT_0080874d,bVar22,'\x01');
                 break;
               case 0xffffffff:
-                st::fn_00401212(&DAT_00807620,bVar23,DAT_0080874d,'\x01');
+                st::fn_00401212(&DAT_00807620,bVar22,DAT_0080874d,'\x01');
               }
             }
             else {
-              st::fn_004033A0(&DAT_00807620,DAT_0080874d,bVar23);
+              st::fn_004033A0(&DAT_00807620,DAT_0080874d,bVar22);
             }
             /* ST_CALLSITE[005D69FA]: CALL dword ptr [EDX + 0x2c] */
-            (*this_00->vtable->SetListCtrls)((SettMapSTy *)this_00);
+            (*this_00->vtable->SetListCtrls)(reinterpret_cast<SettMapSTy *>(this_00));
           }
         }
       }
@@ -1618,234 +1630,242 @@ LAB_005d6784:
     g_currentExceptionFrame = local_c8.previous;
     return 0;
   }
-  uVar30 = temp_5fb73ea9b4 - 0x6a7f >> 3;
+  uVar28 = temp_5fb73ea9b4 - 0x6a7f >> 3;
   local_2c = (undefined1 *)(temp_5fb73ea9b4 + 1 & 7);
-  piVar10 = static_cast<int *>((message->arg1).ptr);
-  local_1c = piVar10[2];
-  local_18 = piVar10[3];
-  pDVar18 = this_00->field_1F84;
-  local_24 = *piVar10 + -0x113;
+  piVar9 = static_cast<int *>((message->arg1).ptr);
+  local_1c = piVar9[2];
+  local_18 = piVar9[3];
+  pDVar16 = this_00->field_1F84;
+  local_24 = *piVar9 + -0x113;
   local_20 = 0;
-  if ((pDVar18 == nullptr) ||
-     (uVar29 = st::machine_word_boundary_cast<uint>(this_00->field_1F88 + uVar30), pDVar18->count <= uVar29)) {
-    pAVar35 = nullptr;
+  if ((pDVar16 == nullptr) ||
+     (uVar27 = this_00->field_1F88 + uVar28, pDVar16->count <= uVar27)) {
+    pAVar33 = nullptr;
   }
   else {
-    pAVar35 = DArrayAt<AnonShape_005CBBE0_2D1CAA09>(pDVar18, uVar29);
+    pAVar33 = DArrayAt<AnonShape_005CBBE0_2D1CAA09>(pDVar16, uVar27);
   }
-  local_28 = uVar30;
-  st::fn_006B4170(static_cast<RecoveredSourceFamily_dibcopy *>(this_00->field_20F4[uVar30]),0,*piVar10 + -0x113,0,piVar10[2],piVar10[3],0xff);
-  if (pAVar35 == nullptr) goto switchD_005d6abd_default;
+  local_28 = uVar28;
+  st::fn_006B4170(static_cast<RecoveredSourceFamily_dibcopy *>(this_00->field_20F4[uVar28]),0,*piVar9 + -0x113,0,piVar9[2],piVar9[3],0xff);
+  if (pAVar33 == nullptr) goto switchD_005d6abd_default;
   switch(static_cast<uint32_t>(STRawWord(local_2c))) {
   case 0x1:
-    if (*(char *)pAVar35 != '\0') {
+    if (*(char *)pAVar33 != '\0') {
       local_24 = local_24 + 1;
       local_20 = local_20 + 1;
       local_1c = local_1c + -2;
       local_18 = local_18 + -2;
       /* ST_CALLSITE[005D6B15]: CALL 0x00404c5f; direct=00404C5F MMObjTy::PaintButDib */
       st::fn_00404C5F
-                ((MMObjTy *)this_00,(int)this_00->field_20F4[uVar30],&local_24,0,
+                (reinterpret_cast<MMObjTy *>(this_00),(int)this_00->field_20F4[uVar28],&local_24,0,
                  (-((message->arg0).words.low != 0) & 0xfcU) + 0x23,0xffffffff);
-      if (pAVar35->field_0x2 != -1) {
-        switch(pAVar35->field_0x2) {
+      if (pAVar33->field_0x2 != -1) {
+        switch(pAVar33->field_0x2) {
         case 0:
-          bVar23 = 0xfc;
+          bVar22 = 0xfc;
           break;
         case 1:
-          bVar23 = 0xfa;
+          bVar22 = 0xfa;
           break;
         case 2:
-          bVar23 = 0xfb;
+          bVar22 = 0xfb;
           break;
         case 3:
-          bVar23 = 0xf9;
+          bVar22 = 0xf9;
           break;
         case 4:
-          bVar23 = 0xfd;
+          bVar22 = 0xfd;
           break;
         case 5:
-          bVar23 = 0xfe;
+          bVar22 = 0xfe;
           break;
         case 6:
-          bVar23 = 0xf3;
+          bVar22 = 0xf3;
           break;
         case 7:
-          bVar23 = 7;
+          bVar22 = 7;
           break;
         default:
-          bVar23 = 0xff;
+          bVar22 = 0xff;
         }
-        st::fn_006B4170(static_cast<RecoveredSourceFamily_dibcopy *>(this_00->field_20F4[uVar30]),0,local_24 + 2,local_20 + 2,local_1c + -4,
-                     local_18 + -4,bVar23);
+        st::fn_006B4170(static_cast<RecoveredSourceFamily_dibcopy *>(this_00->field_20F4[uVar28]),0,local_24 + 2,local_20 + 2,local_1c + -4,
+                     local_18 + -4,bVar22);
       }
     }
     break;
   case 0x2:
-    if (*(char *)pAVar35 == '\0') break;
+    if (*(char *)pAVar33 == '\0') break;
     /* ST_CALLSITE[005D6BD2]: CALL 0x00404c5f; direct=00404C5F MMObjTy::PaintButDib */
     st::fn_00404C5F
-              ((MMObjTy *)this_00,(int)this_00->field_20F4[uVar30],&local_24,2,
+              (reinterpret_cast<MMObjTy *>(this_00),(int)this_00->field_20F4[uVar28],&local_24,2,
                (-((message->arg0).words.low != 0) & 0xfcU) + 0x23,0x67);
-    st::fn_00710A90(g_startSystem_0081176C->field_0034,(int)this_00->field_20F4[uVar30],0,local_24,
+
+    st::fn_00710A90(g_startSystem_0081176C->field_0034,(int)this_00->field_20F4[uVar28],0,local_24,
                      local_20,local_1c,local_18);
-    if (pAVar35->field_0x3 == '\x01') {
-      pcVar16 = &CHAR_W_007ca250;
+    if (pAVar33->field_0x3 == '\x01') {
+      pcVar14 = &CHAR_W_007ca250;
 LAB_005d6c37:
-      uVar30 = 0xffffffff;
+      uVar28 = 0xffffffff;
       do {
-        pcVar34 = pcVar16;
-        if (uVar30 == 0) break;
-        uVar30 = uVar30 - 1;
-        pcVar34 = pcVar16 + 1;
-        cVar27 = *pcVar16;
-        pcVar16 = pcVar34;
-      } while (cVar27 != '\0');
-      uVar30 = ~uVar30;
-      pcVar16 = pcVar34 + -uVar30;
-      pcVar34 = (char *)&DAT_0080f33a;
-      for (uVar29 = uVar30 >> 2; uVar29 != 0; uVar29 = uVar29 - 1) {
-        *(undefined4 *)pcVar34 = *(undefined4 *)pcVar16;
-        pcVar16 = pcVar16 + 4;
-        pcVar34 = pcVar34 + 4;
+        pcVar32 = pcVar14;
+        if (uVar28 == 0) break;
+        uVar28 = uVar28 - 1;
+        pcVar32 = pcVar14 + 1;
+        cVar25 = *pcVar14;
+        pcVar14 = pcVar32;
+      } while (cVar25 != '\0');
+      uVar28 = ~uVar28;
+      pcVar14 = pcVar32 + -uVar28;
+      pcVar32 = reinterpret_cast<char *>(&DAT_0080f33a);
+      for (uVar27 = uVar28 >> 2; uVar27 != 0; uVar27 = uVar27 - 1) {
+        *(undefined4 *)pcVar32 = *(undefined4 *)pcVar14;
+        pcVar14 = pcVar14 + 4;
+        pcVar32 = pcVar32 + 4;
       }
     }
     else {
-      if (pAVar35->field_0x3 != '\x02') {
-        pcVar16 = &CHAR_S_007ca24c;
+      if (pAVar33->field_0x3 != '\x02') {
+        pcVar14 = &CHAR_S_007ca24c;
         goto LAB_005d6c37;
       }
-      uVar30 = 0xffffffff;
-      pcVar16 = &CHAR_B_007ca248;
+      uVar28 = 0xffffffff;
+      pcVar14 = &CHAR_B_007ca248;
       do {
-        pcVar34 = pcVar16;
-        if (uVar30 == 0) break;
-        uVar30 = uVar30 - 1;
-        pcVar34 = pcVar16 + 1;
-        cVar27 = *pcVar16;
-        pcVar16 = pcVar34;
-      } while (cVar27 != '\0');
-      uVar30 = ~uVar30;
-      pcVar16 = pcVar34 + -uVar30;
-      pcVar34 = (char *)&DAT_0080f33a;
-      for (uVar29 = uVar30 >> 2; uVar29 != 0; uVar29 = uVar29 - 1) {
-        *(undefined4 *)pcVar34 = *(undefined4 *)pcVar16;
-        pcVar16 = pcVar16 + 4;
-        pcVar34 = pcVar34 + 4;
+        pcVar32 = pcVar14;
+        if (uVar28 == 0) break;
+        uVar28 = uVar28 - 1;
+        pcVar32 = pcVar14 + 1;
+        cVar25 = *pcVar14;
+        pcVar14 = pcVar32;
+      } while (cVar25 != '\0');
+      uVar28 = ~uVar28;
+      pcVar14 = pcVar32 + -uVar28;
+      pcVar32 = reinterpret_cast<char *>(&DAT_0080f33a);
+      for (uVar27 = uVar28 >> 2; uVar27 != 0; uVar27 = uVar27 - 1) {
+        *(undefined4 *)pcVar32 = *(undefined4 *)pcVar14;
+        pcVar14 = pcVar14 + 4;
+        pcVar32 = pcVar32 + 4;
       }
     }
-    pSVar12 = g_startSystem_0081176C;
-    for (uVar30 = uVar30 & 3; uVar30 != 0; uVar30 = uVar30 - 1) {
-      *pcVar34 = *pcVar16;
-      pcVar16 = pcVar16 + 1;
-      pcVar34 = pcVar34 + 1;
+    pSVar11 = g_startSystem_0081176C;
+    for (uVar28 = uVar28 & 3; uVar28 != 0; uVar28 = uVar28 - 1) {
+      *pcVar32 = *pcVar14;
+      pcVar14 = pcVar14 + 1;
+      pcVar32 = pcVar32 + 1;
     }
-    st::fn_007119C0(pSVar12->field_0034,(char *)&DAT_0080f33a,-1,-1,2);
-    uVar30 = local_28;
+
+    st::fn_007119C0(pSVar11->field_0034,reinterpret_cast<char *>(&DAT_0080f33a),-1,-1,2);
+    uVar28 = local_28;
     break;
   case 0x3:
     /* ST_CALLSITE[005D6C9C]: CALL 0x00404c5f; direct=00404C5F MMObjTy::PaintButDib */
     st::fn_00404C5F
-              ((MMObjTy *)this_00,(int)this_00->field_20F4[uVar30],&local_24,2,
+              (reinterpret_cast<MMObjTy *>(this_00),(int)this_00->field_20F4[uVar28],&local_24,2,
                (-((message->arg0).words.low != 0) & 0xfcU) + 0x23,0x67);
-    st::fn_00710A90(g_startSystem_0081176C->field_0034,(int)this_00->field_20F4[uVar30],0,local_24,
+
+    st::fn_00710A90(g_startSystem_0081176C->field_0034,(int)this_00->field_20F4[uVar28],0,local_24,
                      local_20,local_1c,local_18);
-    uVar29 = 2;
-    iVar38 = -1;
-    iVar25 = -1;
-    pcVar16 = (char *)&DAT_007c2310;
-    iVar24 = local_1c;
-    puVar36 = (uint *)st::fn_00401C0D(this_00,pAVar35);
+    uVar27 = 2;
+    iVar36 = -1;
+    iVar23 = -1;
+    pcVar14 = (char *)&DAT_007c2310;
+    iVar12 = local_1c;
+
+    puVar34 = STPointerBoundaryCast<uint *>(st::fn_00401C0D(this_00,pAVar33));
     goto LAB_005d6d70;
   case 0x4:
     /* ST_CALLSITE[005D6CFA]: CALL 0x00404c5f; direct=00404C5F MMObjTy::PaintButDib */
-    st::fn_00404C5F((MMObjTy *)this_00,(int)this_00->field_20F4[uVar30],&local_24,2,0x67,0x67);
-    if (pAVar35->field_0x4 == '\x02') {
-      st::fn_00710A90(g_startSystem_0081176C->field_0034,(int)this_00->field_20F4[uVar30],0,
+    st::fn_00404C5F(reinterpret_cast<MMObjTy *>(this_00),(int)this_00->field_20F4[uVar28],&local_24,2,0x67,0x67);
+    if (pAVar33->field_0x4 == '\x02') {
+
+      st::fn_00710A90(g_startSystem_0081176C->field_0034,(int)this_00->field_20F4[uVar28],0,
                        local_24,local_20,local_1c,local_18);
-      uVar29 = 2;
-      iVar25 = -1;
-      iVar24 = -1;
-      pcVar16 = (char *)st::fn_0040326F(g_startSystem_0081176C->field_0034,
-                                           (uint *)&pAVar35->field_0xa,(uint *)&st_global_007C7274,
-                                           local_1c);
-      st::fn_007119C0(g_startSystem_0081176C->field_0034,pcVar16,iVar24,iVar25,uVar29);
+      uVar27 = 2;
+      iVar23 = -1;
+      iVar12 = -1;
+      /* ST_CALLSITE[005D6DDA]: CALL 0x0040326f; direct=0040326F thunk_FUN_00540c40; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00540C40_D825DD02;pointer:/uint;pointer:/uint;/int */
+      pcVar20 = st::pointer_boundary_cast<ccFntTy *>(st::fn_0040326F(reinterpret_cast<RecoveredRecord_00540C40_D825DD02 *>(g_startSystem_0081176C->field_0034),reinterpret_cast<uint *>(&pAVar33->field_0xa),
+                                   reinterpret_cast<uint *>(&st_global_007C7274),local_1c));
+
+      st::fn_007119C0(g_startSystem_0081176C->field_0034,reinterpret_cast<char *>(pcVar20),iVar12,iVar23,uVar27);
       break;
     }
-    if (pAVar35->field_0x4 != '\x04') break;
-    pDVar18 = pAVar35->field_0050;
-    if ((uint)(byte)pAVar35->field_0x5 < pDVar18->count) {
-      puVar36 = DArrayAt<uint>(pDVar18, (uint)(byte)pAVar35->field_0x5);
+    if (pAVar33->field_0x4 != '\x04') break;
+    pDVar16 = pAVar33->field_0050;
+    if ((uint)(byte)pAVar33->field_0x5 < pDVar16->count) {
+      puVar34 = DArrayAt<uint>(pDVar16, (uint)(byte)pAVar33->field_0x5);
     }
     else {
-      puVar36 = nullptr;
+      puVar34 = nullptr;
     }
-    if (puVar36 == nullptr) break;
-    st::fn_00710A90(g_startSystem_0081176C->field_0034,(int)this_00->field_20F4[uVar30],0,local_24,
+    if (puVar34 == nullptr) break;
+
+    st::fn_00710A90(g_startSystem_0081176C->field_0034,(int)this_00->field_20F4[uVar28],0,local_24,
                      local_20,local_1c,local_18);
-    uVar29 = 2;
-    iVar38 = -1;
-    iVar25 = -1;
-    pcVar16 = &st_global_007C7274;
-    iVar24 = local_1c;
+    uVar27 = 2;
+    iVar36 = -1;
+    iVar23 = -1;
+    pcVar14 = &st_global_007C7274;
+    iVar12 = local_1c;
 LAB_005d6d70:
-    pcVar16 = (char *)st::fn_0040326F(g_startSystem_0081176C->field_0034,puVar36,(uint *)pcVar16,
-                                         iVar24);
-    st::fn_007119C0(g_startSystem_0081176C->field_0034,pcVar16,iVar25,iVar38,uVar29);
+    /* ST_CALLSITE[005D6D79]: CALL 0x0040326f; direct=0040326F thunk_FUN_00540c40; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00540C40_D825DD02;pointer:/uint;pointer:/uint;/int */
+    pcVar20 = st::pointer_boundary_cast<ccFntTy *>(st::fn_0040326F(reinterpret_cast<RecoveredRecord_00540C40_D825DD02 *>(g_startSystem_0081176C->field_0034),puVar34,reinterpret_cast<uint *>(pcVar14),iVar12));
+
+    st::fn_007119C0(g_startSystem_0081176C->field_0034,reinterpret_cast<char *>(pcVar20),iVar23,iVar36,uVar27);
     break;
   case 0x5:
-    if ((*(char *)pAVar35 != '\0') &&
+    if ((*(char *)pAVar33 != '\0') &&
        /* ST_CALLSITE[005D6E23]: CALL 0x00404c5f; direct=00404C5F MMObjTy::PaintButDib */
        (st::fn_00404C5F
-                  ((MMObjTy *)this_00,(int)this_00->field_20F4[uVar30],&local_24,2,
+                  (reinterpret_cast<MMObjTy *>(this_00),(int)this_00->field_20F4[uVar28],&local_24,2,
                    (-((message->arg0).words.low != 0) & 0xfcU) + 0x23,0x67),
-       pAVar35->field_0x4 != '\0')) {
+       pAVar33->field_0x4 != '\0')) {
       if (DAT_00808a8f == '\0') {
-        if (((DAT_0080874d != 0xff) && (bVar23 = pAVar35->field_0x2, bVar23 != 0xff)) &&
-           (DAT_0080874d != bVar23)) {
+        if (((DAT_0080874d != 0xff) && (bVar22 = pAVar33->field_0x2, bVar22 != 0xff)) &&
+           (DAT_0080874d != bVar22)) {
           local_28 = 0xffffffff;
-          local_2c = (undefined1 *)STReplaceLowByte((uint32_t)(local_2c), (uint8_t)(bVar23));
-          uVar29 = (uint)DAT_0080874d;
-          bVar2 = g_playerRelationMatrix[uVar29][bVar23];
-          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar23][uVar29] == 0)) {
-            uVar21 = 0xfffffffe;
+          local_2c = (undefined1 *)STReplaceLowByte((uint32_t)(local_2c), (uint8_t)(bVar22));
+          uVar27 = (uint)DAT_0080874d;
+          bVar2 = g_playerRelationMatrix[uVar27][bVar22];
+          if ((bVar2 == 0) && (g_playerRelationMatrix[bVar22][uVar27] == 0)) {
+            uVar19 = 0xfffffffe;
           }
-          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar23][uVar29] == 0)) {
-            uVar21 = 0xffffffff;
+          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar22][uVar27] == 0)) {
+            uVar19 = 0xffffffff;
           }
-          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar23][uVar29] == 1)) {
-            uVar21 = 1;
+          else if ((bVar2 == 0) && (g_playerRelationMatrix[bVar22][uVar27] == 1)) {
+            uVar19 = 1;
           }
-          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar23][uVar29] == 1)) {
-            uVar21 = 2;
+          else if ((bVar2 == 1) && (g_playerRelationMatrix[bVar22][uVar27] == 1)) {
+            uVar19 = 2;
           }
           else {
-            uVar21 = 0;
+            uVar19 = 0;
           }
-          switch(uVar21) {
+          switch(uVar19) {
           default:
-            iVar24 = -1;
+            iVar12 = -1;
             break;
           case 1:
-            iVar24 = 1;
+            iVar12 = 1;
             break;
           case 2:
-            iVar24 = 3;
+            iVar12 = 3;
             break;
           case 0xfffffffe:
-            iVar24 = 0;
+            iVar12 = 0;
             break;
           case 0xffffffff:
-            iVar24 = 2;
+            iVar12 = 2;
           }
-          if (-1 < iVar24 + -1) {
-            pBVar22 = st::fn_0070B3A0((AnonShape_GLOBAL_0081175C_57F682DD *)this_00->field_1F4B,
-                                   iVar24 + -1);
+          if (-1 < iVar12 + -1) {
+            /* ST_CALLSITE[005D6F7E]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
+            pRVar21 = st::pointer_boundary_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(st::fn_0070B3A0((RecoveredGlobalRecordView_0081175C *)this_00->field_1F4B,
+                                   iVar12 + -1));
             /* ST_CALLSITE[005D6FB6]: CALL 0x00403229; direct=00403229 DibPut */
-            st::fn_00403229(static_cast<RecoveredSourceFamily_dibcopy *>(this_00->field_20F4[uVar30]),
-                   (local_1c - (pBVar22->bmiHeader).biWidth) / 2 + local_24,
-                   (local_18 - (pBVar22->bmiHeader).biHeight) / 2 + 1 + local_20,'\x06',
-                   (byte *)pBVar22);
+            st::fn_00403229(static_cast<RecoveredSourceFamily_dibcopy *>(this_00->field_20F4[uVar28]),
+                   (local_1c - *(int *)&pRVar21->field_0x4) / 2 + local_24,
+                   (local_18 - *(int *)&pRVar21->field_0x8) / 2 + 1 + local_20,'\x06',pRVar21);
           }
         }
       }
@@ -1853,18 +1873,20 @@ LAB_005d6d70:
         local_EAX_6384 = st::fn_006B0140(0x1f4a,g_hINSTANCE_00807618);
         /* ST_CALLSITE[005D6E60]: CALL dword ptr [0x0085bde8] */
         st::external_00000080((LPSTR)&DAT_0080f33a,st::mutable_c_string("%s%c"),local_EAX_6384);
-        st::fn_00710A90(g_startSystem_0081176C->field_0034,(int)this_00->field_20F4[uVar30],0,
+
+        st::fn_00710A90(g_startSystem_0081176C->field_0034,(int)this_00->field_20F4[uVar28],0,
                          local_24,local_20,local_1c,local_18);
-        st::fn_007119C0(g_startSystem_0081176C->field_0034,(char *)&DAT_0080f33a,-1,-1,2);
+
+        st::fn_007119C0(g_startSystem_0081176C->field_0034,reinterpret_cast<char *>(&DAT_0080f33a),-1,-1,2);
       }
     }
   }
 switchD_005d6abd_default:
-  st::fn_006B35D0((int *)g_ddxContext_008075A8,this_00->field_20CC[uVar30]);
+
+  st::fn_006B35D0(reinterpret_cast<int *>(g_ddxContext_008075A8),this_00->field_20CC[uVar28]);
   if ((message->arg0).words.low == 3) {
     st::fn_00404BF1(this_00,9,'\x01',-1);
   }
   g_currentExceptionFrame = local_c8.previous;
   return 0;
 }
-

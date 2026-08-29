@@ -51,6 +51,64 @@ else
 fi
 
 cd "$repo"
+background_name=st-decompilation-background
+if [[ ${1:-} == background-start ]]; then
+    shift
+    (( $# > 0 )) || {
+        echo "background-start requires one st-command and optional arguments" >&2
+        exit 1
+    }
+    if docker inspect "$background_name" >/dev/null 2>&1; then
+        echo "background container already exists: $background_name" >&2
+        echo "inspect it with: docker/run.sh background-status" >&2
+        exit 1
+    fi
+    # Use the workspace copy so detached jobs run the exact checked-out wrapper
+    # without requiring an image rebuild.  Retain the stopped container until
+    # explicit cleanup so its exit status and complete terminal log survive a
+    # desktop or tool-session interruption.
+    "${compose[@]}" run --detach --name "$background_name" ghidra \
+        shell /workspace/docker/st-command.sh "$@"
+    exit 0
+fi
+if [[ ${1:-} == background-status ]]; then
+    shift
+    (( $# == 0 )) || {
+        echo "background-status accepts no additional arguments" >&2
+        exit 1
+    }
+    docker inspect "$background_name" \
+        --format 'name={{.Name}} status={{.State.Status}} running={{.State.Running}} exit_code={{.State.ExitCode}}'
+    exit 0
+fi
+if [[ ${1:-} == background-logs ]]; then
+    shift
+    (( $# <= 1 )) || {
+        echo "background-logs accepts an optional line count" >&2
+        exit 1
+    }
+    lines=${1:-120}
+    [[ "$lines" =~ ^[1-9][0-9]*$ ]] || {
+        echo "background-logs line count must be a positive integer" >&2
+        exit 1
+    }
+    docker logs --tail "$lines" "$background_name"
+    exit 0
+fi
+if [[ ${1:-} == background-clean ]]; then
+    shift
+    (( $# == 0 )) || {
+        echo "background-clean accepts no additional arguments" >&2
+        exit 1
+    }
+    state=$(docker inspect "$background_name" --format '{{.State.Status}}')
+    [[ "$state" != running ]] || {
+        echo "refusing to remove running background container $background_name" >&2
+        exit 1
+    }
+    docker rm "$background_name"
+    exit 0
+fi
 if [[ ${1:-} == build-image ]]; then
     shift
     latest="$log_root/image-build.latest.log"
@@ -65,4 +123,14 @@ if [[ ${1:-} == build-image ]]; then
     mv -f "$current" "$latest"
     exit "$status"
 fi
+# Keep every repository command tied to the checked-out command wrapper.  The
+# image may legitimately predate a newly added internal recovery mode, while
+# /workspace/docker/st-command.sh is always the current source.  An explicit
+# shell remains passed to the image entry point unchanged.
+case ${1:-} in
+    core|deep|abi-refresh|callable-refresh|call-result-refresh|corpus-export|full|export|full-export|build-scripts|source-tree|compile-audit|compile-audit-baseline|source-audit|import|doctor|version|headless-smoke|indirect-callsite-audit|run-script|snapshot|snapshot-verify|snapshot-publish|project-hydrate)
+        exec "${compose[@]}" run --rm ghidra \
+            shell /workspace/docker/st-command.sh "$@"
+        ;;
+esac
 exec "${compose[@]}" run --rm ghidra "$@"

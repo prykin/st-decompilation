@@ -20,7 +20,7 @@ FUN_0040c080:
 0040C0BA  85 F6                     TEST ESI,ESI
 0040C0BC  75 12                     JNZ 0x0040c0d0
 0040C0BE  6A 04                     PUSH 0x4
-0040C0C0  E8 AB EB 29 00            CALL 0x006aac70
+0040C0C0  E8 AB EB 29 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined4; source view only; no Ghidra override
 0040C0C5  C7 00 FC FF FF FF         MOV dword ptr [EAX],0xfffffffc
 0040C0CB  E9 1A 09 00 00            JMP 0x0040c9ea
 LAB_0040c0d0:

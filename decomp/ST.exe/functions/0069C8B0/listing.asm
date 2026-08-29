@@ -11,7 +11,7 @@ FUN_0069c8b0:
 0069C8BF  6A 0A                     PUSH 0xa
 0069C8C1  89 4D FC                  MOV dword ptr [EBP + -0x4],ECX
 0069C8C4  56                        PUSH ESI
-0069C8C5  E8 C6 19 01 00            CALL 0x006ae290
+0069C8C5  E8 C6 19 01 00            CALL 0x006ae290  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override
 0069C8CA  8B D8                     MOV EBX,EAX
 0069C8CC  3B DE                     CMP EBX,ESI
 0069C8CE  0F 84 E1 01 00 00         JZ 0x0069cab5

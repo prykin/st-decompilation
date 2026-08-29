@@ -59,7 +59,7 @@ switchD_005669a6::caseD_3:
 00566A0A  6A 03                     PUSH 0x3
 LAB_00566a0c:
 00566A0C  51                        PUSH ECX
-00566A0D  E8 EE C1 18 00            CALL 0x006f2c00
+00566A0D  E8 EE C1 18 00            CALL 0x006f2c00  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/cMf32; source view only; no Ghidra override
 00566A12  8B 56 18                  MOV EDX,dword ptr [ESI + 0x18]
 00566A15  83 C4 0C                  ADD ESP,0xc
 00566A18  B9 58 76 80 00            MOV ECX,0x807658

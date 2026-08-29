@@ -29,17 +29,19 @@ void __thiscall CPanelTy::PaintCtrlBoat(CPanelTy *this)
   int iVar3;
   RecoveredSourceFamily_dibcopy *pRVar3;
   int iVar4;
-  byte *pbVar5;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar5;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
 
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   this_00 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
+
     iVar3 = ReportDebugMessage("E:\\__titans\\Andrey\\cpanel2.cpp",0x95,0,iVar2,"%s",
                                "CPanelTy::PaintCtrlBoat");
     if (iVar3 != 0) {
@@ -51,55 +53,62 @@ void __thiscall CPanelTy::PaintCtrlBoat(CPanelTy *this)
   switch(local_8->field_0B9E) {
   case CASE_0:
   case CASE_4:
-    pbVar5 = (byte *)local_8->field_0974[0];
+    pRVar5 = (RecoveredRecordView_006B84D0_87AF9D9B *)local_8->field_0974[0];
     pRVar3 = local_8->field_018C;
     iVar4 = 0;
     iVar2 = 0;
     goto LAB_00501758;
   case CASE_1:
     if ((local_8->field_0B99 == CASE_9) || (local_8->field_0B99 == CASE_15)) {
-      pbVar5 = (byte *)local_8->field_0974[1];
+      pRVar5 = (RecoveredRecordView_006B84D0_87AF9D9B *)local_8->field_0974[1];
       pRVar3 = local_8->field_018C;
       iVar4 = 0;
       iVar2 = 0;
       goto LAB_00501758;
     }
     /* ST_CALLSITE[00501659]: CALL 0x00403229; direct=00403229 DibPut */
-    DibPut(local_8->field_018C,0,0,'\x01',(byte *)local_8->field_0974[2]);
+    DibPut(local_8->field_018C,0,0,'\x01',
+           (RecoveredRecordView_006B84D0_87AF9D9B *)local_8->field_0974[2]);
     /* ST_CALLSITE[0050167E]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(this_00->field_018C,
-           (this_00->field_018C->field_0004 - *(int *)((byte *)this_00->field_0974[4] + 4)) / 2,0x61
-           ,'\x01',(byte *)this_00->field_0974[4]);
+           (this_00->field_018C->field_0004 -
+           *(int *)&((RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0974[4])->field_0x4) /
+           2,0x61,'\x01',(RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0974[4]);
     /* ST_CALLSITE[005016A3]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut(this_00->field_018C,
-           (this_00->field_018C->field_0004 - *(int *)((byte *)this_00->field_0974[5] + 4)) / 2,0x7c
-           ,'\x01',(byte *)this_00->field_0974[5]);
+           (this_00->field_018C->field_0004 -
+           *(int *)&((RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0974[5])->field_0x4) /
+           2,0x7c,'\x01',(RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0974[5]);
     break;
   case CASE_2:
     if ((local_8->field_0B99 == CASE_9) || (local_8->field_0B99 == CASE_15)) {
       /* ST_CALLSITE[00501730]: CALL 0x00403229; direct=00403229 DibPut */
-      DibPut(local_8->field_018C,0,0,'\x01',(byte *)local_8->field_0974[1]);
+      DibPut(local_8->field_018C,0,0,'\x01',
+             (RecoveredRecordView_006B84D0_87AF9D9B *)local_8->field_0974[1]);
     }
     else {
       /* ST_CALLSITE[005016ED]: CALL 0x00403229; direct=00403229 DibPut */
-      DibPut(local_8->field_018C,0,0,'\x01',(byte *)local_8->field_0974[2]);
+      DibPut(local_8->field_018C,0,0,'\x01',
+             (RecoveredRecordView_006B84D0_87AF9D9B *)local_8->field_0974[2]);
       /* ST_CALLSITE[00501712]: CALL 0x00403229; direct=00403229 DibPut */
       DibPut(this_00->field_018C,
-             (this_00->field_018C->field_0004 - *(int *)((byte *)this_00->field_0974[5] + 4)) / 2,
-             0x7c,'\x01',(byte *)this_00->field_0974[5]);
+             (this_00->field_018C->field_0004 -
+             *(int *)&((RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0974[5])->field_0x4)
+             / 2,0x7c,'\x01',(RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0974[5]);
     }
 switchD_0050162e_caseD_a:
-    pbVar5 = (byte *)this_00->field_0974[4];
+    pRVar5 = (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_0974[4];
     pRVar3 = this_00->field_018C;
     iVar4 = 0x61;
-    iVar2 = (pRVar3->field_0004 - *(int *)(pbVar5 + 4)) / 2;
+    iVar2 = (pRVar3->field_0004 - *(int *)&pRVar5->field_0x4) / 2;
 LAB_00501758:
     /* ST_CALLSITE[00501758]: CALL 0x00403229; direct=00403229 DibPut */
-    DibPut(pRVar3,iVar2,iVar4,'\x01',pbVar5);
+    DibPut(pRVar3,iVar2,iVar4,'\x01',pRVar5);
     break;
   case CASE_3:
     /* ST_CALLSITE[0050160A]: CALL 0x00403229; direct=00403229 DibPut */
-    DibPut(local_8->field_018C,0,0,'\x01',(byte *)local_8->field_0974[0]);
+    DibPut(local_8->field_018C,0,0,'\x01',
+           (RecoveredRecordView_006B84D0_87AF9D9B *)local_8->field_0974[0]);
     switch(this_00->field_0B99) {
     case CASE_9:
     case CASE_15:
@@ -134,6 +143,7 @@ switchD_0050179b_caseD_16:
   }
 switchD_0050179b_caseD_9:
   if (-1 < (int)this_00->field_0148[3]) {
+
     Library::DKW::DDX::FUN_006b3640
               ((int *)g_ddxContext_008075A8,(uint)this_00->field_0148[3],0xffffffff,
                this_00->field_0048,this_00->field_00A0);

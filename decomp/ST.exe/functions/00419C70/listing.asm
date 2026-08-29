@@ -14,7 +14,7 @@ TLOEmbryoTy::sub_00419C70:
 00419C8A  51                        PUSH ECX
 00419C8B  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 00419C91  52                        PUSH EDX
-00419C92  E8 2B B6 FE FF            CALL 0x004052c2
+00419C92  E8 2B B6 FE FF            CALL 0x004052c2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override
 00419C97  8B 4E 24                  MOV ECX,dword ptr [ESI + 0x24]
 00419C9A  8B F8                     MOV EDI,EAX
 00419C9C  66 8B 46 32               MOV AX,word ptr [ESI + 0x32]

@@ -113,7 +113,7 @@ LAB_0053e2b9:
 0053E30A  6A 00                     PUSH 0x0
 0053E30C  50                        PUSH EAX
 0053E30D  6A 05                     PUSH 0x5
-0053E30F  FF 52 08                  CALL dword ptr [EDX + 0x8]
+0053E30F  FF 52 08                  CALL dword ptr [EDX + 0x8]  ; [STIndirectCallsiteApplier] exact slot 0x8; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 0053E312  8B 8D 54 FF FF FF         MOV ECX,dword ptr [EBP + 0xffffff54]
 0053E318  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
 0053E31B  89 0D F8 8D 85 00         MOV dword ptr [0x00858df8],ECX

@@ -449,7 +449,7 @@ LAB_004e3e30:
 004E3EA4  68 5D 02 00 00            PUSH 0x25d
 004E3EA9  6A 03                     PUSH 0x3
 004E3EAB  8B CB                     MOV ECX,EBX
-004E3EAD  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]
+004E3EAD  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]  ; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4
 004E3EB3  8B 7D FC                  MOV EDI,dword ptr [EBP + -0x4]
 LAB_004e3eb6:
 004E3EB6  57                        PUSH EDI

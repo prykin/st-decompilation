@@ -13,10 +13,9 @@
 void __thiscall STParticleC::sub_0062A860(STParticleC *this)
 
 {
-  undefined4 local_24 [4];
-  undefined4 local_14;
-  undefined4 local_10;
-
+  uint local_24 [4];
+  uint local_14;
+  uint local_10;
   memset(local_24, 0, 0x20); /* compiler bulk-zero initialization */
   local_10 = this->field_00D2;
   local_14 = 10;

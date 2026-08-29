@@ -69,10 +69,12 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   iVar9 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_01 = local_c;
   if (iVar9 != 0) {
     g_currentExceptionFrame = local_50.previous;
+
     iVar10 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_base.cpp",0xe1,0,iVar9,
                                 "TLOBaseTy::SetState error _state == %i",param_1);
     if (iVar10 != 0) {
@@ -87,10 +89,12 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
     this_01->field_024D = this_01->field_0245;
     this_01->field_0245 = param_1;
     if (((param_1 == 0) || (param_1 == 5)) || (param_1 == 6)) {
-      thunk_FUN_004cc7f0((int)this_01);
+
+      thunk_FUN_004cc7f0((RecoveredRecord_004CC7F0_1C8F1109 *)this_01);
     }
     else {
-      thunk_FUN_004cc810((AnonShape_004CC900_31EE9CAA *)this_01);
+
+      thunk_FUN_004cc810((RecoveredRecordView_004CC900_A43E8B7C *)this_01);
     }
     /* ST_CALLSITE[004B8241]: CALL 0x004022a7; direct=004022A7 TLOBaseTy::LoadImages */
     LoadImages(this_01);
@@ -151,6 +155,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
             iVar14 = this_01->field_05B0;
             if (iVar14 < iVar14 + iVar11) {
               do {
+
                 iVar12 = thunk_FUN_004960d0((short)iVar14,(short)local_8,(short)this_01->field_05B8);
                 if (iVar12 != 0) {
                   RaiseInternalException
@@ -192,6 +197,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
             iVar14 = this_01->field_05B0;
             if (iVar14 < iVar14 + iVar11) {
               do {
+
                 iVar12 = thunk_FUN_00496140((short)iVar14,(short)local_8,(short)this_01->field_05B8);
                 if (iVar12 != 0) {
                   RaiseInternalException
@@ -213,15 +219,17 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         case CASE_40:
         case CASE_49:
         case CASE_5C:
-          thunk_FUN_004ce720((AnonShape_004CE720_8639BE44 *)this_01);
+          thunk_FUN_004ce720((RecoveredRecordView_004CE720_02135BB0 *)this_01);
           break;
         case CASE_34:
         case CASE_5B:
-          thunk_FUN_004de000((int)this_01);
+
+          thunk_FUN_004de000((RecoveredRecord_004DE000_A2D9992B *)this_01);
           break;
         case CASE_37:
         case CASE_6C:
-          thunk_FUN_004e8f90((AnonShape_004E8F90_6386CD4A *)this_01);
+
+          thunk_FUN_004e8f90((RecoveredRecordView_004E8F90_77A5C19A *)this_01);
           break;
         case CASE_38:
         case CASE_39:
@@ -232,23 +240,28 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         case CASE_5F:
         case CASE_60:
         case CASE_61:
-          thunk_FUN_004e03e0((AnonShape_004E03E0_57EF73A1 *)this_01);
+
+          thunk_FUN_004e03e0((RecoveredRecordView_004E03E0_0D470130 *)this_01);
           break;
         case CASE_41:
+
           thunk_FUN_004e4070();
           break;
         case CASE_48:
+
           thunk_FUN_004df8f0();
           break;
         case CASE_4C:
+
           thunk_FUN_004dc700((int)this_01);
           break;
         case CASE_50:
-          thunk_FUN_004b6d70((int)this_01,
-                             (uint)*(byte *)((int)&PTR_caseD_50_004b88dc + TVar5 + CASE_2));
+
+          thunk_FUN_004b6d70(this_01,(uint)*(byte *)((int)&PTR_caseD_50_004b88dc + TVar5 + CASE_2));
           break;
         case CASE_53:
-          thunk_FUN_004cd6f0((int)this_01);
+
+          thunk_FUN_004cd6f0((RecoveredRecord_004CD6F0_B6FC69DC *)this_01);
           break;
         case CASE_54:
         case CASE_55:
@@ -257,43 +270,56 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         case CASE_58:
         case CASE_59:
         case CASE_5A:
-          thunk_FUN_004ce670((AnonShape_004CE670_5D83C685 *)this_01);
+
+          thunk_FUN_004ce670((RecoveredRecordView_004CE670_E8CA8BFA *)this_01);
         case CASE_35:
+
           thunk_FUN_004e2ab0((int)this_01);
           break;
         case CASE_63:
+
           thunk_FUN_004b7a80();
           break;
         case CASE_64:
+
           thunk_FUN_004e48d0();
           break;
         case CASE_68:
+
           thunk_FUN_004dc220();
           break;
         case CASE_69:
-          thunk_FUN_004dcc80((int)this_01);
+
+          thunk_FUN_004dcc80((RecoveredRecord_004DCC80_51520547 *)this_01);
           break;
         case CASE_6A:
-          thunk_FUN_004c5e60((int)this_01);
+
+          thunk_FUN_004c5e60((RecoveredRecord_004C5E60_EA3D928C *)this_01);
           break;
         case CASE_6D:
-          thunk_FUN_004dba70((int)this_01);
+
+          thunk_FUN_004dba70(this_01);
           break;
         case CASE_6E:
-          thunk_FUN_004dd690((int)this_01);
+
+          thunk_FUN_004dd690((RecoveredRecord_004DD690_445B44C4 *)this_01);
           break;
         case CASE_6F:
         case CASE_73:
+
           thunk_FUN_004eccc0((int *)this_01);
           break;
         case CASE_70:
-          thunk_FUN_004d8d40((int)this_01);
+
+          thunk_FUN_004d8d40((RecoveredRecord_004D8D40_E38296AE *)this_01);
         }
       }
       if (*(int *)(&DAT_00794d94 + this_01->field_0235 * 4) != 0) {
+
         thunk_FUN_004c3000((int)this_01);
       }
-      thunk_FUN_004e9c20((AnonShape_004E9C20_50FC91C6 *)this_01);
+
+      thunk_FUN_004e9c20((RecoveredRecordView_004E9C20_2DA6BDD3 *)this_01);
       /* ST_CALLSITE[004B877E]: CALL 0x00405425; direct=00405425 TLOBaseTy::sub_004DC150 */
       sub_004DC150(this_01);
       this_00 = &this_01->field_01D5;
@@ -322,6 +348,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         sVar13 = STGridAt3D(g_pathingGrid, sVar8, sVar13, sVar1);
       }
       if (sVar13 != 0) {
+
         iVar11 = thunk_FUN_00496140(sVar8,(short)this_01->field_05B4,sVar1);
         if (iVar11 != 0) {
           RaiseInternalException
@@ -341,29 +368,38 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
     case CASE_36:
     case CASE_3D:
     case CASE_5D:
+
       thunk_FUN_004e4b60((STMineSetC *)this_01);
       break;
     case CASE_45:
-      thunk_FUN_004ea7e0((AnonShape_004D9BD0_B3B50583 *)this_01);
+
+      thunk_FUN_004ea7e0((RecoveredRecordView_004D9BD0_719E5213 *)this_01);
       break;
     case CASE_4E:
-      thunk_FUN_004d9bd0((AnonShape_004D9BD0_B3B50583 *)this_01);
+
+      thunk_FUN_004d9bd0((RecoveredRecordView_004D9BD0_719E5213 *)this_01);
       break;
     case CASE_68:
-      thunk_FUN_004dc470((AnonShape_004DC470_71C75079 *)this_01);
+
+      thunk_FUN_004dc470((RecoveredRecordView_004DC470_6F5B3736 *)this_01);
       break;
     case CASE_6A:
-      thunk_FUN_004c6070((int *)this_01);
+
+      thunk_FUN_004c6070((RecoveredRecord_004C6070_F5B707F0 *)this_01);
       break;
     case CASE_70:
-      thunk_FUN_004d8db0((AnonShape_004D8DB0_597A2A4F *)this_01);
+
+      thunk_FUN_004d8db0((RecoveredRecordView_004D8DB0_DB767380 *)this_01);
       break;
     case CASE_72:
-      thunk_FUN_004ecdf0((AnonShape_004D9BD0_B3B50583 *)this_01);
+
+      thunk_FUN_004ecdf0((RecoveredRecordView_004D9BD0_719E5213 *)this_01);
     }
     if (*(int *)(&DAT_00794d94 + this_01->field_0235 * 4) != 0) {
-      thunk_FUN_004c2e60((int)this_01);
+
+      thunk_FUN_004c2e60(this_01);
     }
+
     thunk_FUN_004ea6c0((int)this_01);
     /* ST_CALLSITE[004B883E]: CALL 0x00402cf7; direct=00402CF7 TLOBaseTy::RotateSpr */
     RotateSpr(this_01,1);

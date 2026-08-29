@@ -29,10 +29,12 @@ int __thiscall st::fn_0062CCA0(STManRub3C *this,STMessage *message)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_c = this;
+
   iVar3 = st::fn_0072D7F0(local_58.jumpBuffer,0);
   this_00 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
+
     iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\nick\\to_rab3m.cpp"),0x4e,0,iVar3,st::mutable_c_string("%s"),
                                "STManRub3C::GetMessage");
     if (iVar4 == 0) {
@@ -44,8 +46,7 @@ int __thiscall st::fn_0062CCA0(STManRub3C *this,STMessage *message)
   SVar1 = message->id;
   if (SVar1 == MESS_ID_CREATE) {
     if (g_cMf32_00806754 != nullptr) {
-      local_8 = (AnonShape_0062CCA0_BAB34A07 *)
-                st::fn_006F2D90(g_cMf32_00806754,PTR_s_RUBBISH_3_0079d080,0,0);
+      local_8 = reinterpret_cast<AnonShape_0062CCA0_BAB34A07 *>(st::fn_006F2D90(g_cMf32_00806754,PTR_s_RUBBISH_3_0079d080,0,0));
     }
     if ((local_8 == nullptr) || (local_8->field_000C != 2)) {
       local_c->field_001C = 0;
@@ -56,10 +57,10 @@ int __thiscall st::fn_0062CCA0(STManRub3C *this,STMessage *message)
     }
     else {
       /* ST_CALLSITE[0062CDA2]: CALL 0x00401d34; direct=00401D34 STManRub3C::sub_0062D840 */
-      st::fn_00401D34(local_c,(undefined4 *)local_8);
+      st::fn_00401D34(local_c,reinterpret_cast<undefined4 *>(local_8));
     }
     if ((local_8 != nullptr) && (g_cMf32_00806754 != nullptr)) {
-      st::fn_006F20E0(g_cMf32_00806754,(uint *)&local_8);
+      st::fn_006F20E0(g_cMf32_00806754,reinterpret_cast<uint *>(&local_8));
     }
   }
   else {
@@ -75,7 +76,7 @@ int __thiscall st::fn_0062CCA0(STManRub3C *this,STMessage *message)
       return 0;
     }
     if (SVar1 == MESS_SHARED_010F) {
-      /* ST_CALLSITE[0062CCFE]: CALL 0x00401cf8; direct=00401CF8 STManRub3C::sub_0062D670 */
+      /* ST_CALLSITE[0062CCFE]: CALL 0x00401cf8; direct=00401CF8 STManRub3C::sub_0062D670; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       local_14 = st::fn_00401CF8(local_c,&local_10);
       /* ST_CALLSITE[0062CD19]: CALL 0x00401078; direct=00401078 STPlaySystemC::SaveObjData */
       st::fn_00401078
@@ -197,8 +198,8 @@ st::fn_0062D910
   ushort local_32;
   ushort local_30;
   ushort local_2e;
-  undefined4 local_2c;
-  undefined4 local_18;
+  uint local_2c;
+  uint local_18;
   uint local_10;
   int local_c;
   STManRub3C *local_8;
@@ -349,4 +350,3 @@ st::fn_0062DD80(STManRub3C *this,int param_1,int param_2,int param_3,int param_4
   g_currentExceptionFrame = local_60.previous;
   return local_10;
 }
-

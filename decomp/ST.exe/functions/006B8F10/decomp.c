@@ -12,8 +12,8 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
   int iVar6;
   int iVar4;
   int iVar3;
-  undefined4 local_b4;
-  undefined4 local_b0;
+  uint local_b4;
+  uint local_b0;
   byte *local_ac;
   uint local_a8;
   int local_38;
@@ -43,6 +43,7 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
     param_2[3] = param_1->field_001C;
   }
   if (((param_1->field_0004 & 0x4000) != 0) &&
+
      (local_EAX_86 = FUN_006b8e30((int *)param_1), local_EAX_86 != 0)) {
     return local_EAX_86;
   }
@@ -81,6 +82,7 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
     local_c = param_1->field_0004;
     local_8 = (byte *)param_1->field_0008;
   }
+
   iVar4 = FUN_006b91a0((int *)pAVar3,&local_14);
   if (iVar4 == 0) {
     pAVar3->field_0010 = local_14;
@@ -91,6 +93,7 @@ int FUN_006b8f10(AnonShape_006B8F10_41B61BA9 *param_1,int *param_2)
       local_28 = local_14 - iVar5;
       local_24 = local_10 - local_18;
       if ((pAVar3->field_0004 & 0x8000000) != 0) {
+
         iVar3 = Library::DKW::DDX::FUN_006b82e0
                           ((DDXContext *)pAVar3->field_0000,local_14,local_10,(byte *)param_1,
                            local_28,local_24,local_c,local_8);

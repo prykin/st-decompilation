@@ -82,6 +82,7 @@ void __thiscall STAllPlayersC::DistributeGuardBoats(STAllPlayersC *this,char par
     local_e4.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_e4;
     local_6c = this;
+
     iVar5 = Library::MSVCRT::__setjmp3(local_e4.jumpBuffer,0);
     pDVar3 = local_48;
     if (iVar5 == 0) {
@@ -90,6 +91,7 @@ void __thiscall STAllPlayersC::DistributeGuardBoats(STAllPlayersC *this,char par
         local_8 = 0;
         if (0 < (int)dVar5) {
           do {
+
             DArrayGetElement(pDVar3,local_8,&local_c);
             DArrayDestroy(local_c);
             local_8 = local_8 + 1;
@@ -112,12 +114,16 @@ joined_r0x0044707d:
         local_8 = 0;
         if (0 < (int)pDVar3) {
           do {
+
             DArrayGetElement(pDVar7,local_8,&local_54);
             if (local_4e != 1) {
               local_4e = 1;
+
               Library::DKW::TBL::DArrayPut(pDVar7,local_8,&local_54);
               local_c = Library::DKW::TBL::DArrayCreate(nullptr,1,4,1);
+
               Library::DKW::TBL::DArrayAppend(local_c,&local_8);
+
               local_58 = Library::DKW::TBL::DArrayAppend(local_48,&local_c);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               local_40 = *(DArrayTy **)(CONCAT22(uStack_50,uStack_52) + 0xc);
@@ -136,6 +142,7 @@ LAB_0044738a:
         dVar5 = local_64->count;
         if ((dVar5 != 0) && (local_8 = 0, 0 < (int)dVar5)) {
           do {
+
             DArrayGetElement(pDVar3,local_8,&local_c);
             if (local_c != nullptr) {
               DArrayDestroy(local_c);
@@ -155,6 +162,7 @@ LAB_0044738a:
       if (0 < (int)uVar4) {
         do {
           local_c = Library::DKW::TBL::DArrayCreate(nullptr,0,2,1);
+
           Library::DKW::TBL::DArrayAppend(pDVar3_mg3,&local_c);
           local_8 = local_8 + 1;
         } while ((int)local_8 < (int)uVar4);
@@ -163,6 +171,7 @@ LAB_0044738a:
       local_8 = 0;
       if (0 < (int)local_40) {
         do {
+
           DArrayGetElement(local_7c,local_8,&local_78);
           uVar4 = 0;
           /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -172,6 +181,7 @@ LAB_0044738a:
           local_14 = nullptr;
           if (0 < (int)local_1c) {
             do {
+
               DArrayGetElement(local_70,(uint)local_14,&local_24);
               local_2c = (uStack_22 * dVar5 * 10) / (uint)local_30;
               local_30 = (DArrayTy *)((int)local_30 - (uint)uStack_22);
@@ -181,12 +191,15 @@ LAB_0044738a:
                 }
                 local_2c = (int)local_2c / 10;
                 dVar5 = dVar5 - local_2c;
+
                 DArrayGetElement(local_64,(uint)local_24,&local_c);
                 uVar8 = uVar4;
                 if ((int)uVar4 < (int)(uVar4 + local_2c)) {
                   do {
+
                     local_EAX_1391 = DArrayGetElement(local_74,uVar8,&local_34);
                     if (local_EAX_1391 == -4) break;
+
                     Library::DKW::TBL::DArrayAppend(local_c,&local_34);
                     uVar8 = uVar8 + 1;
                   } while ((int)uVar8 < (int)(uVar4 + local_2c));
@@ -207,6 +220,7 @@ LAB_0044738a:
       if (0 < (int)uVar4) {
         do {
           local_c = Library::DKW::TBL::DArrayCreate(nullptr,0,0x18,1);
+
           Library::DKW::TBL::DArrayAppend(pDVar3_mg4,&local_c);
           local_8 = local_8 + 1;
         } while ((int)local_8 < (int)uVar4);
@@ -214,16 +228,21 @@ LAB_0044738a:
       local_8 = 0;
       if (0 < (int)uVar4) {
         do {
+
           DArrayGetElement(local_64,local_8,&local_c);
           if (local_c->count != 0) {
+
             DArrayGetElement(local_48,local_8,&local_c);
+
             DArrayGetElement(local_c,0,&local_34);
+
             DArrayGetElement(local_60,local_34 & 0xffff,&local_54);
-            /* ST_CALLSITE[004475EB]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-            local_28 = (STFishC *)GetObjPtr(local_6c,param_1,local_54,CASE_1);
-            if ((STGameObjC *)local_28 != nullptr) {
+            /* ST_CALLSITE[004475EB]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STFishC; signature=__thiscall;pointer:/STFishC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum */
+            local_28 = GetObjPtr(local_6c,param_1,local_54,CASE_1);
+            if (local_28 != nullptr) {
               /* ST_CALLSITE[00447609]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
               STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
+
               DArrayGetElement(local_40,local_8,&local_c);
               pDVar3_mg5 = (DArrayTy *)
                            thunk_FUN_0043f7b0(param_1,nullptr,(uint *)(int)local_e,(int)local_10,
@@ -236,14 +255,16 @@ LAB_0044738a:
                 local_14 = pDVar3;
                 if (0 < (int)pDVar3) {
                   do {
+
                     DArrayGetElement(pDVar3_mg5,uVar4,&local_28);
-                    /* ST_CALLSITE[00447670]: CALL dword ptr [EDX + 0xf8] */
+                    /* ST_CALLSITE[00447670]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STFishC */
                     iVar2 = local_28->vfunc_F8();
                     if (((iVar2 == 0) ||
-                        /* ST_CALLSITE[0044767F]: CALL dword ptr [EAX + 0xf0] */
+                        /* ST_CALLSITE[0044767F]: CALL dword ptr [EAX + 0xf0]; [STIndirectCallsiteApplier] exact slot 0xF0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/STFishC */
                         (iVar2 = local_28->vfunc_F0(), iVar2 == 0)) ||
                        /* ST_CALLSITE[00447695]: CALL dword ptr [EDX + 0xf4] */
                        (iVar2 = (*local_28->vtable->vfunc_F4)(local_a0), iVar2 == 0)) {
+
                       DArrayRemoveAt(pDVar3_mg5,uVar4);
                       uVar4 = uVar4 - 1;
                       local_14 = (DArrayTy *)((int)&local_14[-1].data + 3);
@@ -256,6 +277,7 @@ LAB_0044738a:
                 pDVar3 = local_14;
                 if (pDVar3_mg5->count != 0) {
                   pDVar3_mg5 = Library::DKW::TBL::DArrayCreate(nullptr,(uint)local_14,4,1);
+
                   Library::DKW::TBL::DArrayPut
                             (pDVar3_mg5,(uint)((int)&pDVar3[-1].data + 3),&local_44);
                   puVar9 = pDVar3_mg5->data;
@@ -268,10 +290,13 @@ LAB_0044738a:
                     uVar4 = 0;
                     if (0 < (int)pDVar7) {
                       do {
+
                         DArrayGetElement(pDVar3_mg5,uVar4,&local_44);
                         if (local_44 != 1) {
                           local_44 = 1;
+
                           Library::DKW::TBL::DArrayPut(pDVar3_mg5,uVar4,&local_44);
+
                           DArrayGetElement(local_30,uVar4,&local_28);
                           /* ST_CALLSITE[0044791D]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                           STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
@@ -281,6 +306,7 @@ LAB_0044738a:
                           local_90 = 1;
                           local_8c = *(int *)&local_28->field_0x219;
                           local_88 = nullptr;
+
                           local_58 = Library::DKW::TBL::DArrayAppend(local_c,&local_9c);
                           local_1c = (DArrayTy *)((int)&local_1c[-1].data + 3);
                           break;
@@ -294,8 +320,10 @@ LAB_0044738a:
                     pDVar7 = local_14;
                     if ((int)uVar4 < (int)local_14) {
                       do {
+
                         DArrayGetElement(pDVar3_mg5,uVar4,&local_44);
                         if (local_44 != 1) {
+
                           DArrayGetElement(local_30,uVar4,&local_28);
                           /* ST_CALLSITE[0044776A]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                           STFishC::sub_004162B0(local_28,&local_38,&local_36,&local_66);
@@ -304,9 +332,11 @@ LAB_0044738a:
                              (uVar8 = (int)local_36 - (int)local_10 >> 0x1f,
                              (int)(((int)local_36 - (int)local_10 ^ uVar8) - uVar8) < 3)) {
                             local_44 = 1;
+
                             Library::DKW::TBL::DArrayPut(pDVar3_mg5,uVar4,&local_44);
                             local_90 = local_90 + 1;
                             local_8c = local_8c + *(int *)&local_28->field_0x219;
+
                             Library::DKW::TBL::DArrayPut(local_c,local_58,&local_9c);
                             pDVar10 = (DArrayTy *)((int)&pDVar10[-1].data + 3);
                           }
@@ -328,18 +358,23 @@ LAB_0044738a:
       local_8 = 0;
       if (0 < (int)local_3c) {
         do {
+
           DArrayGetElement(local_64,local_8,&local_84);
           local_30 = (DArrayTy *)local_84->count;
           if (local_30 != nullptr) {
+
             DArrayGetElement(local_40,local_8,&local_c);
             local_1c = (DArrayTy *)local_c->count;
             if (local_1c == nullptr) {
+
               DArrayGetElement(local_48,local_8,&local_80);
+
               DArrayGetElement(local_80,0,&local_34);
+
               DArrayGetElement(local_60,local_34 & 0xffff,&local_54);
-              /* ST_CALLSITE[004478A6]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-              local_28 = (STFishC *)GetObjPtr(local_6c,param_1,local_54,CASE_1);
-              if ((STGameObjC *)local_28 != nullptr) {
+              /* ST_CALLSITE[004478A6]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STFishC; signature=__thiscall;pointer:/STFishC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum */
+              local_28 = GetObjPtr(local_6c,param_1,local_54,CASE_1);
+              if (local_28 != nullptr) {
                 /* ST_CALLSITE[004478C4]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                 STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
                 /* ST_CALLSITE[004478E3]: CALL 0x00401c53; direct=00401C53 STAllPlayersC::PutOnPlaceGuardBoats */
@@ -353,17 +388,21 @@ LAB_0044738a:
               uVar8 = 0;
               if (0 < (int)local_1c) {
                 do {
+
                   DArrayGetElement(local_c,uVar8,&local_9c);
                   uVar4 = uVar4 + local_8c;
                   uVar8 = uVar8 + 1;
                 } while ((int)uVar8 < (int)local_1c);
               }
+
               DArrayGetElement(local_48,local_8,&local_80);
+
               DArrayGetElement(local_80,0,&local_34);
+
               DArrayGetElement(local_60,local_34 & 0xffff,&local_54);
-              /* ST_CALLSITE[004479E6]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-              local_28 = (STFishC *)GetObjPtr(local_6c,param_1,local_54,CASE_1);
-              if ((STGameObjC *)local_28 != nullptr) {
+              /* ST_CALLSITE[004479E6]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STFishC; signature=__thiscall;pointer:/STFishC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum */
+              local_28 = GetObjPtr(local_6c,param_1,local_54,CASE_1);
+              if (local_28 != nullptr) {
                 /* ST_CALLSITE[00447A04]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
                 STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
                 uVar8 = 0;
@@ -371,6 +410,7 @@ LAB_0044738a:
                 if (0 < (int)local_1c) {
                   do {
                     if (uVar4 != 0) {
+
                       DArrayGetElement(local_c,(uint)local_14,&local_9c);
                       local_2c = (uint)(local_8c * (int)local_30 * 10) / uVar4;
                       uVar4 = uVar4 - local_8c;
@@ -386,8 +426,10 @@ LAB_0044738a:
                         uVar6 = uVar8;
                         if ((int)uVar8 < (int)(uVar8 + local_2c)) {
                           do {
+
                             local_EAX_2865 = DArrayGetElement(local_84,uVar6,&local_34);
                             if (local_EAX_2865 == -4) break;
+
                             Library::DKW::TBL::DArrayAppend(local_88,&local_34);
                             uVar6 = uVar6 + 1;
                           } while ((int)uVar6 < (int)(uVar8 + local_2c));
@@ -420,10 +462,12 @@ LAB_0044738a:
         local_8 = 0;
         if (0 < (int)dVar5) {
           do {
+
             DArrayGetElement(pDVar3,local_8,&local_78);
             if (local_70 != nullptr) {
               DArrayDestroy(local_70);
               local_70 = Library::DKW::TBL::DArrayCreate(nullptr,1,4,1);
+
               Library::DKW::TBL::DArrayPut(pDVar3,local_8,&local_78);
             }
             local_8 = local_8 + 1;
@@ -436,6 +480,7 @@ LAB_0044738a:
         local_8 = 0;
         if (0 < (int)dVar5) {
           do {
+
             DArrayGetElement(pDVar3,local_8,&local_54);
             /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
             if ((DArrayTy *)CONCAT22(uStack_50,uStack_52) != nullptr) {
@@ -455,6 +500,7 @@ LAB_0044738a:
         local_8 = 0;
         if (0 < (int)local_3c) {
           do {
+
             DArrayGetElement(pDVar3,local_8,&local_c);
             if (local_c != nullptr) {
               DArrayDestroy(local_c);
@@ -472,6 +518,7 @@ LAB_0044738a:
         local_8 = 0;
         if (0 < (int)local_3c) {
           do {
+
             DArrayGetElement(pDVar3,local_8,&local_c);
             if (local_c != nullptr) {
               DArrayDestroy(local_c);
@@ -488,11 +535,13 @@ LAB_0044738a:
         pDVar3 = local_40;
         if (0 < (int)local_3c) {
           do {
+
             DArrayGetElement(pDVar3,local_8,&local_c);
             if (local_c != nullptr) {
               dVar5 = local_c->count;
               if ((dVar5 != 0) && (uVar4 = 0, 0 < (int)dVar5)) {
                 do {
+
                   DArrayGetElement(local_c,uVar4,&local_9c);
                   if (local_88 != nullptr) {
                     DArrayDestroy(local_88);
@@ -514,6 +563,7 @@ LAB_0044738a:
     }
     g_currentExceptionFrame = local_e4.previous;
     if (iVar5 != -0x5001fff7) {
+
       iVar4 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2b90,0,0,"%s",
                                  "STAllPlayersC::DistributeGuardBoats");
       if (iVar4 != 0) {
@@ -525,8 +575,10 @@ LAB_0044738a:
   return;
 LAB_00447106:
   do {
+
     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
     DArrayGetElement((DArrayTy *)CONCAT22(uStack_50,uStack_52),(uint)local_14,&local_2c);
+
     DArrayGetElement(local_7c,local_2c,&local_78);
     uVar8 = local_58;
     uVar4 = local_70->count;
@@ -534,15 +586,18 @@ LAB_00447106:
       local_24 = (ushort)local_58;
 LAB_00447196:
       uStack_22 = 1;
+
       Library::DKW::TBL::DArrayAppend(local_70,&local_24);
     }
     else {
       uVar6 = 0;
       if (0 < (int)uVar4) {
         do {
+
           DArrayGetElement(local_70,uVar6,&local_24);
           if (local_24 == uVar8) {
             uStack_22 = uStack_22 + 1;
+
             Library::DKW::TBL::DArrayPut(local_70,uVar6,&local_24);
             break;
           }
@@ -563,35 +618,39 @@ LAB_004471ad:
   pDVar3 = local_30;
 LAB_004471bd:
   if (local_1c == nullptr) goto LAB_0044738a;
-  /* ST_CALLSITE[004471D5]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-  local_28 = (STFishC *)GetObjPtr(local_6c,param_1,local_54,CASE_1);
-  if ((STGameObjC *)local_28 != nullptr) {
+  /* ST_CALLSITE[004471D5]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STFishC; signature=__thiscall;pointer:/STFishC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum */
+  local_28 = GetObjPtr(local_6c,param_1,local_54,CASE_1);
+  if (local_28 != nullptr) {
     /* ST_CALLSITE[004471F3]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
     STFishC::sub_004162B0(local_28,&local_e,&local_10,&local_16);
     local_8 = local_8 + 1;
     if ((int)local_8 < (int)pDVar3) {
       do {
+
         DArrayGetElement(pDVar7,local_8,&local_54);
         if ((((local_4e != 1) &&
-             /* ST_CALLSITE[00447229]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
-             (local_28 = (STFishC *)GetObjPtr(local_6c,param_1,local_54,CASE_1),
-             (STGameObjC *)local_28 != nullptr)) &&
+             /* ST_CALLSITE[00447229]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STFishC; signature=__thiscall;pointer:/STFishC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum */
+             (local_28 = GetObjPtr(local_6c,param_1,local_54,CASE_1), local_28 != nullptr))
             /* ST_CALLSITE[00447247]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
-            (STFishC::sub_004162B0(local_28,&local_38,&local_36,&local_66),
-            uVar4 = (int)local_38 - (int)local_e >> 0x1f,
-            (int)(((int)local_38 - (int)local_e ^ uVar4) - uVar4) < 3)) &&
+            && (STFishC::sub_004162B0(local_28,&local_38,&local_36,&local_66),
+               uVar4 = (int)local_38 - (int)local_e >> 0x1f,
+               (int)(((int)local_38 - (int)local_e ^ uVar4) - uVar4) < 3)) &&
            (uVar4 = (int)local_36 - (int)local_10 >> 0x1f,
            (int)(((int)local_36 - (int)local_10 ^ uVar4) - uVar4) < 3)) {
           local_4e = 1;
+
           Library::DKW::TBL::DArrayPut(pDVar7,local_8,&local_54);
+
           Library::DKW::TBL::DArrayAppend(local_c,&local_8);
           local_14 = nullptr;
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           local_40 = *(DArrayTy **)(CONCAT22(uStack_50,uStack_52) + 0xc);
           if (0 < (int)local_40) {
             do {
+
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               DArrayGetElement((DArrayTy *)CONCAT22(uStack_50,uStack_52),(uint)local_14,&local_2c);
+
               DArrayGetElement(local_7c,local_2c,&local_78);
               uVar8 = local_58;
               uVar4 = local_70->count;
@@ -599,15 +658,18 @@ LAB_004471bd:
                 local_24 = (ushort)local_58;
 LAB_00447348:
                 uStack_22 = 1;
+
                 Library::DKW::TBL::DArrayAppend(local_70,&local_24);
               }
               else {
                 uVar6 = 0;
                 if (0 < (int)uVar4) {
                   do {
+
                     DArrayGetElement(local_70,uVar6,&local_24);
                     if (local_24 == uVar8) {
                       uStack_22 = uStack_22 + 1;
+
                       Library::DKW::TBL::DArrayPut(local_70,uVar6,&local_24);
                       break;
                     }

@@ -28,6 +28,7 @@ void __fastcall FUN_00621a70(AnonShape_00621A70_2531BB4B *param_1)
           index = index + 1;
         }
         else {
+
           DArrayRemoveAt((DArrayTy *)param_1->field_010A,index);
         }
         if (*pcVar2 != '\0') {

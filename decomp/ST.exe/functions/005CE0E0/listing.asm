@@ -1389,7 +1389,7 @@ LAB_005cf18a:
 005CF1AE  8B 40 1C                  MOV EAX,dword ptr [EAX + 0x1c]
 005CF1B1  51                        PUSH ECX
 005CF1B2  50                        PUSH EAX
-005CF1B3  E8 98 DD 0D 00            CALL 0x006acf50
+005CF1B3  E8 98 DD 0D 00            CALL 0x006acf50  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayElements/SettMapMTy_field_1F84Element; source view only; no Ghidra override
 005CF1B8  8B 8B 84 1F 00 00         MOV ECX,dword ptr [EBX + 0x1f84]
 005CF1BE  89 41 1C                  MOV dword ptr [ECX + 0x1c],EAX
 005CF1C1  8B 93 84 1F 00 00         MOV EDX,dword ptr [EBX + 0x1f84]

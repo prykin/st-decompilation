@@ -27,7 +27,7 @@ LAB_006313a3:
 006313CA  83 C6 04                  ADD ESI,0x4
 006313CD  56                        PUSH ESI
 006313CE  6A 00                     PUSH 0x0
-006313D0  E8 8B EC 07 00            CALL 0x006b0060
+006313D0  E8 8B EC 07 00            CALL 0x006b0060  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/STManRuinC_field_0038DArray; source view only; no Ghidra override
 006313D5  89 43 38                  MOV dword ptr [EBX + 0x38],EAX
 006313D8  8B 07                     MOV EAX,dword ptr [EDI]
 006313DA  03 F0                     ADD ESI,EAX

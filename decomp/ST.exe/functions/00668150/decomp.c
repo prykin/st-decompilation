@@ -13,7 +13,8 @@ AiFltClassTy * __cdecl CreateAiFlt(void)
 {
   AiFltClassTy *pAVar1;
 
-  pAVar1 = (AiFltClassTy *)FUN_006b04d0(0x288);
+  /* ST_CALLSITE[00668155]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__stdcall;pointer:/AiFltClassTy;/uint */
+  pAVar1 = FUN_006b04d0(0x288);
   if (pAVar1 != nullptr) {
     pAVar1 = AiFltClassTy::AiFltClassTy(pAVar1);
     return pAVar1;

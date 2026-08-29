@@ -30,7 +30,8 @@ undefined4 __fastcall FUN_005f8d10(int *param_1)
         }
       }
       else {
-        iVar3 = thunk_FUN_005fa180((AnonShape_005FA180_2D8671A3 *)param_1);
+
+        iVar3 = thunk_FUN_005fa180((RecoveredRecordView_005FA180_30990B79 *)param_1);
         if (PTR_00806724->entryCount <= iVar3) {
           STField<undefined4>(param_1,0x2dd) = 2;
           return 5;

@@ -49,7 +49,7 @@ CPanelTy::PaintMap:
 0050412B  6A FE                     PUSH -0x2
 0050412D  51                        PUSH ECX
 0050412E  68 12 27 00 00            PUSH 0x2712
-00504133  E8 08 C0 1A 00            CALL 0x006b0140
+00504133  E8 08 C0 1A 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override
 00504138  8B 8E B8 01 00 00         MOV ECX,dword ptr [ESI + 0x1b8]
 0050413E  50                        PUSH EAX
 0050413F  E8 2C DA 20 00            CALL 0x00711b70

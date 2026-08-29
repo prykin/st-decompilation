@@ -12,14 +12,14 @@
    [STSourceProvenanceApplier end]
 
    [STHiddenThisApplier] Anonymous hidden receiver recovered as
-   /SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970.
+   /SubmarineTitans/Recovered/HiddenThis/RecoveredReceiver_0064A970.
    Evidence: incoming_receiver_captures=1; receiver_accesses=3; incoming_edx_uses=0; calls=2;
    ecx_pointer_setup=2; ecx_scalar_setup=0; caller_cleanup_calls=0; callee_ret_pop=[12];
    expected_stack=12; receiver_family_members=4 */
 
 float * __thiscall
-SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0064a970
-          (AnonReceiver_0064A970 *this,char *param_1,int param_2,int *param_3)
+SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::FUN_0064a970
+          (RecoveredReceiver_0064A970 *this,char *param_1,int param_2,int *param_3)
 
 {
   float float_local_28_1;
@@ -34,7 +34,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0064a970
   byte bVar2;
   char cVar3;
   short sVar4;
-  AnonReceiver_0064A970 *this_00;
+  RecoveredReceiver_0064A970 *this_00;
   int iVar5;
   int iVar6;
   byte *pbVar7;
@@ -75,7 +75,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0064a970
   float10 fVar19;
   longlong lVar20;
   InternalExceptionFrame local_c0;
-  undefined4 local_7c;
+  uint local_7c;
   char *local_78;
   int local_74;
   int local_70;
@@ -92,7 +92,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0064a970
   int local_44;
   int local_40;
   int local_3c;
-  AnonReceiver_0064A970 *local_38;
+  RecoveredReceiver_0064A970 *local_38;
   float local_34;
   int local_30;
   int local_2c;
@@ -111,6 +111,7 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0064a970
   local_c0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c0;
   local_38 = this;
+
   iVar5 = Library::MSVCRT::__setjmp3(local_c0.jumpBuffer,0);
   this_00 = local_38;
   if (iVar5 != 0) {
@@ -129,8 +130,8 @@ SubmarineTitans::Recovered::HiddenThis::AnonReceiver_0064A970::FUN_0064a970
     }
     return nullptr;
   }
-  Library::MSVCRT::_strncpy(&local_38->field_0x4,&CHAR_00h_008016a0,0x7f);
-  *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+  Library::MSVCRT::_strncpy(&local_38->field_0004,&CHAR_00h_008016a0,0x7f);
+  this_00->field_0084 = 0xffffffff;
   cVar3 = *param_1;
   local_ECX_128 = param_1;
   for (iVar6 = 0; (cVar3 != '\a' && (iVar6 < param_2)); iVar6 = iVar6 + 1) {
@@ -182,6 +183,7 @@ switchD_0064aa67_caseD_1:
             cVar3 = *pcVar13;
             pcVar13 = pcVar13 + 1;
           } while (cVar3 != '\0');
+
           local_8 = Library::DKW::LIB::MemAllocClear(~uVar14 + ~uVar15 + 2);
           if ((local_8 != nullptr) && (pcVar8 != nullptr)) {
             uVar14 = 0xffffffff;
@@ -249,6 +251,7 @@ cf_common_exit_0064BBB1:
           iVar6 = this_00->slot_00(param_1);
           /* ST_CALLSITE[0064B2C7]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
           iVar10 = this_00->slot_00(param_1 + 5);
+
           local_8 = Library::DKW::LIB::MemAllocClear(4);
           switch(*(undefined2 *)(local_10 + 1)) {
           case 1:
@@ -287,8 +290,8 @@ cf_error_exit_0064B35D:
         if ((cVar3 != '\x05') && (cVar3 != '\x02')) {
           local_EAX_2068 = thunk_FUN_00674af0((int)sVar4);
           if (local_EAX_2068 != nullptr) {
-            Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_2068,0x7f);
-            *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+            Library::MSVCRT::_strncpy(&this_00->field_0004,local_EAX_2068,0x7f);
+            this_00->field_0084 = 0xffffffff;
             iVar6 = -0x76;
             goto cf_error_exit_0064C2A4;
           }
@@ -299,6 +302,7 @@ cf_error_exit_0064B35D:
         float_local_c_5 = (float)(int)local_18; /* split floating lifetime from pointer-typed SSA storage */
         /* ST_CALLSITE[0064B1D4]: CALL dword ptr [EDX + 0x4] */
         local_14 = this_00->slot_04(param_1 + 5);
+
         local_8 = Library::DKW::LIB::MemAllocClear(4);
         switch((int)*(short *)(local_10 + 1)) {
         case 1:
@@ -328,8 +332,8 @@ cf_error_exit_0064B35D:
           if ((cVar3 != '\x05') && (cVar3 != '\x02')) {
             local_EAX_2633 = thunk_FUN_00674af0((int)sVar4);
             if (local_EAX_2633 != nullptr) {
-              Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_2633,0x7f);
-              *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+              Library::MSVCRT::_strncpy(&this_00->field_0004,local_EAX_2633,0x7f);
+              this_00->field_0084 = 0xffffffff;
               iVar6 = -0x76;
               goto cf_error_exit_0064C2A4;
             }
@@ -339,6 +343,7 @@ cf_error_exit_0064B35D:
           float_local_c_6 = this_00->slot_04(param_1); /* split floating lifetime from pointer-typed SSA storage */
           /* ST_CALLSITE[0064B404]: CALL dword ptr [EDX + 0x4] */
           local_14 = this_00->slot_04(param_1 + 5);
+
           local_8 = Library::DKW::LIB::MemAllocClear(4);
           iVar6 = (int)*(short *)(local_10 + 1);
           switch(iVar6) {
@@ -368,6 +373,7 @@ cf_error_exit_0064B35D:
         /* ST_CALLSITE[0064B4B5]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
         local_18 = (byte *)this_00->slot_00(param_1 + 5);
         local_14 = (float)(int)local_18;
+
         local_8 = Library::DKW::LIB::MemAllocClear(4);
         iVar6 = (int)*(short *)(local_10 + 1);
         switch(iVar6) {
@@ -379,9 +385,9 @@ switchD_0064b42d_caseD_2:
           local_EAX_2282 = thunk_FUN_00674af0(iVar6);
 joined_r0x0064b49a:
           if (local_EAX_2282 != nullptr) {
-            Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_2282,0x7f);
+            Library::MSVCRT::_strncpy(&this_00->field_0004,local_EAX_2282,0x7f);
           }
-          *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+          this_00->field_0084 = 0xffffffff;
           RaiseInternalException(-0x76,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
           break;
         case 0x16:
@@ -401,8 +407,8 @@ joined_r0x0064b49a:
       default:
         local_EAX_3036 = thunk_FUN_00674af0((int)sVar4);
         if (local_EAX_3036 != nullptr) {
-          Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_3036,0x7f);
-          *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+          Library::MSVCRT::_strncpy(&this_00->field_0004,local_EAX_3036,0x7f);
+          this_00->field_0084 = 0xffffffff;
           iVar6 = -0x76;
           goto cf_error_exit_0064C2A4;
         }
@@ -438,6 +444,7 @@ switchD_0064aa67_caseD_3:
           iVar6 = this_00->slot_00(param_1);
           /* ST_CALLSITE[0064B741]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
           iVar10 = this_00->slot_00(param_1 + 5);
+
           local_8 = Library::DKW::LIB::MemAllocClear(4);
           sVar4 = *(short *)(local_10 + 1);
           if (sVar4 == 3) {
@@ -470,10 +477,10 @@ LAB_0064b78b:
       }
       local_EAX_3468 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
       if (local_EAX_3468 != nullptr) {
-        Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_3468,0x7f);
+        Library::MSVCRT::_strncpy(&this_00->field_0004,local_EAX_3468,0x7f);
       }
 cf_error_exit_0064B714:
-      *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+      this_00->field_0084 = 0xffffffff;
       iVar6 = -0x76;
       goto cf_error_exit_0064C2A4;
     case 8:
@@ -487,9 +494,9 @@ cf_error_exit_0064B714:
 LAB_0064ae25:
         local_EAX_1213 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
         if (local_EAX_1213 != nullptr) {
-          Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_1213,0x7f);
+          Library::MSVCRT::_strncpy(&this_00->field_0004,local_EAX_1213,0x7f);
         }
-        *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+        this_00->field_0084 = 0xffffffff;
         iVar6 = -0x76;
         goto cf_error_exit_0064C2A4;
       }
@@ -498,6 +505,7 @@ LAB_0064ae25:
       uVar14 = this_00->slot_00(param_1);
       /* ST_CALLSITE[0064AE72]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
       uVar15 = this_00->slot_00(param_1 + 5);
+
       local_8 = Library::DKW::LIB::MemAllocClear(4);
       sVar4 = *(short *)(local_10 + 1);
       if (sVar4 == 8) {
@@ -524,6 +532,7 @@ cf_error_exit_0064B368:
                   (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",0x164);
       }
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
+
         local_8 = Library::DKW::LIB::MemAllocClear(4);
         /* ST_CALLSITE[0064AEFE]: CALL dword ptr [EDX] */
         uVar14 = this_00->slot_00();
@@ -533,7 +542,7 @@ cf_error_exit_0064B368:
 cf_common_exit_0064B7EA:
       local_EAX_3714 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
       if (local_EAX_3714 != nullptr) {
-        Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_3714,0x7f);
+        Library::MSVCRT::_strncpy(&this_00->field_0004,local_EAX_3714,0x7f);
       }
       break;
     case 0x13:
@@ -548,6 +557,7 @@ cf_common_exit_0064B7EA:
         pcVar8 = param_1 + iVar6 * 5;
         cVar3 = param_1[iVar6 * 5];
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
+
           local_8 = Library::DKW::LIB::MemAllocClear(4);
           /* ST_CALLSITE[0064B03C]: CALL dword ptr [EDX] */
           fVar11 = (float)this_00->slot_00(pcVar8);
@@ -555,6 +565,7 @@ cf_common_exit_0064B7EA:
           goto cf_common_exit_0064B36F;
         }
         if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
+
           local_8 = Library::DKW::LIB::MemAllocClear(4);
           /* ST_CALLSITE[0064B020]: CALL dword ptr [EDX + 0x4] */
           *local_8 = this_00->slot_04(pcVar8);
@@ -575,6 +586,7 @@ cf_common_exit_0064B7EA:
             cVar3 = *pcVar13;
             pcVar13 = pcVar13 + 1;
           } while (cVar3 != '\0');
+
           local_8 = Library::DKW::LIB::MemAllocClear(~uVar14 + 1);
           uVar14 = 0xffffffff;
           do {
@@ -594,9 +606,9 @@ cf_common_exit_0064B7EA:
       }
       local_EAX_1546 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
       if (local_EAX_1546 != nullptr) {
-        Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_1546,0x7f);
+        Library::MSVCRT::_strncpy(&this_00->field_0004,local_EAX_1546,0x7f);
       }
-      *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+      this_00->field_0084 = 0xffffffff;
       iVar6 = -0x76;
       goto cf_error_exit_0064C2A4;
     case 0x1e:
@@ -618,6 +630,7 @@ LAB_0064aaac:
             local_20 = this_00->slot_04(param_1);
             /* ST_CALLSITE[0064ABF1]: CALL dword ptr [EAX + 0x4] */
             local_24 = this_00->slot_04(param_1 + 5);
+
             local_8 = Library::DKW::LIB::MemAllocClear(4);
             switch(*(undefined2 *)(local_10 + 1)) {
             case 0x1e:
@@ -675,6 +688,7 @@ LAB_0064aaac:
                         (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",
                          0x11c);
             }
+
             local_8 = Library::DKW::LIB::MemAllocClear(4);
             do {
               bVar2 = *pbVar9;
@@ -725,6 +739,7 @@ LAB_0064ab59:
       iVar6 = this_00->slot_00(param_1);
       /* ST_CALLSITE[0064ACE0]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
       iVar10 = this_00->slot_00(param_1 + 5);
+
       local_8 = Library::DKW::LIB::MemAllocClear(4);
       switch(*(undefined2 *)(local_10 + 1)) {
       case 0x1e:
@@ -757,12 +772,13 @@ LAB_0064ab59:
       if ((*param_1 != '\x04') && (*param_1 != '\x01')) {
         pcVar12 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
         if (pcVar12 != nullptr) {
-          Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar12,0x7f);
+          Library::MSVCRT::_strncpy(&this_00->field_0004,pcVar12,0x7f);
         }
-        *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+        this_00->field_0084 = 0xffffffff;
         iVar6 = -0x76;
         goto cf_error_exit_0064C2A4;
       }
+
       local_8 = Library::DKW::LIB::MemAllocClear(4);
       /* ST_CALLSITE[0064ADDF]: CALL dword ptr [EDX] */
       iVar6 = this_00->slot_00();
@@ -770,7 +786,7 @@ LAB_0064ab59:
       goto cf_common_exit_0064B36F;
     }
 LAB_0064b80a:
-    *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+    this_00->field_0084 = 0xffffffff;
     iVar6 = -0x76;
     goto cf_error_exit_0064C2A4;
   }
@@ -790,6 +806,7 @@ LAB_0064b80a:
                         (-0x6b,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_erc.cpp",
                          0x192);
             }
+
             local_8 = Library::DKW::LIB::MemAllocClear(4);
             fVar11 = (float)Library::MSVCRT::FUN_0072ff00(pbVar9);
             *local_8 = fVar11;
@@ -806,9 +823,9 @@ LAB_0064b80a:
             if ((*param_1 != '\x06') && (*param_1 != '\x03')) {
               local_EAX_4301 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
               if (local_EAX_4301 != nullptr) {
-                Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_4301,0x7f);
+                Library::MSVCRT::_strncpy(&this_00->field_0004,local_EAX_4301,0x7f);
               }
-              *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+              this_00->field_0084 = 0xffffffff;
               iVar6 = -0x78;
               goto cf_error_exit_0064C2A4;
             }
@@ -820,6 +837,7 @@ LAB_0064b80a:
                          0x1a0);
             }
             local_18 = nullptr;
+
             local_8 = Library::DKW::LIB::MemAllocClear(4);
             fVar19 = Library::MSVCRT::FUN_00730310(pbVar9,(int *)&local_18);
             *local_8 = (float)fVar19;
@@ -842,6 +860,7 @@ LAB_0064b80a:
               if (0x24 < iVar10) {
                 iVar10 = 0x24;
               }
+              /* ST_CALLSITE[0064B9F6]: CALL 0x006aac10; direct=006AAC10 Library::DKW::LIB::MemAllocClear; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
               local_8 = Library::DKW::LIB::MemAllocClear(0x40);
               Library::MSVCRT::__itoa(iVar6,(char *)local_8,iVar10);
               goto cf_common_exit_0064BBB1;
@@ -850,9 +869,9 @@ LAB_0064b80a:
         }
         local_EAX_4136 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
         if (local_EAX_4136 != nullptr) {
-          Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_4136,0x7f);
+          Library::MSVCRT::_strncpy(&this_00->field_0004,local_EAX_4136,0x7f);
         }
-        *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+        this_00->field_0084 = 0xffffffff;
         iVar6 = -0x78;
         goto cf_error_exit_0064C2A4;
       }
@@ -885,9 +904,9 @@ LAB_0064b901:
               }
               local_EAX_3904 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
               if (local_EAX_3904 != nullptr) {
-                Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_3904,0x7f);
+                Library::MSVCRT::_strncpy(&this_00->field_0004,local_EAX_3904,0x7f);
               }
-              *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+              this_00->field_0084 = 0xffffffff;
               RaiseInternalException
                         (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
             }
@@ -896,6 +915,7 @@ LAB_0064b901:
             iVar6 = iVar6 + -1;
           } while (iVar6 != 0);
         }
+
         local_8 = Library::DKW::LIB::MemAllocClear(4);
         *local_8 = float_local_28_1 / (float)param_2;
         goto cf_common_exit_0064B291;
@@ -907,6 +927,7 @@ LAB_0064b901:
         }
         cVar3 = *param_1;
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
+
           local_8 = Library::DKW::LIB::MemAllocClear(4);
           /* ST_CALLSITE[0064B855]: CALL dword ptr [EDX] */
           iVar6 = this_00->slot_00();
@@ -914,6 +935,7 @@ LAB_0064b901:
           goto cf_common_exit_0064B36F;
         }
         if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
+
           local_8 = Library::DKW::LIB::MemAllocClear(4);
           /* ST_CALLSITE[0064B837]: CALL dword ptr [EDX + 0x4] */
           this_00->slot_04(param_1);
@@ -956,9 +978,9 @@ LAB_0064b663:
               }
               local_EAX_3240 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
               if (local_EAX_3240 != nullptr) {
-                Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_3240,0x7f);
+                Library::MSVCRT::_strncpy(&this_00->field_0004,local_EAX_3240,0x7f);
               }
-              *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+              this_00->field_0084 = 0xffffffff;
               RaiseInternalException
                         (-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
             }
@@ -967,6 +989,7 @@ LAB_0064b663:
             local_14 = (float)((int)local_14 + -1);
           } while (local_14 != 0.0);
         }
+
         local_8 = Library::DKW::LIB::MemAllocClear(4);
         *local_8 = (float)((int)local_28 / param_2);
         goto cf_common_exit_0064B36F;
@@ -989,6 +1012,7 @@ LAB_0064b663:
       if (0x40 < iVar6) {
         iVar6 = 0x40;
       }
+
       local_8 = Library::DKW::LIB::MemAllocClear(iVar6 + 10);
       Library::MSVCRT::FUN_007301e0
                 (SUB84((double)float_local_18_2,0),(int)((ulonglong)(double)float_local_18_2 >> 0x20),
@@ -998,9 +1022,9 @@ LAB_0064b663:
 LAB_0064bd33:
     local_EAX_5067 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
     if (local_EAX_5067 != nullptr) {
-      Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_5067,0x7f);
+      Library::MSVCRT::_strncpy(&this_00->field_0004,local_EAX_5067,0x7f);
     }
-    *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+    this_00->field_0084 = 0xffffffff;
     iVar6 = -0x78;
     goto cf_error_exit_0064C2A4;
   }
@@ -1013,15 +1037,16 @@ LAB_0064bd33:
     if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
       /* ST_CALLSITE[0064BC5A]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
       local_18 = (byte *)this_00->slot_00(param_1);
+
       local_8 = Library::DKW::LIB::MemAllocClear(4);
       *local_8 = (float)(int)local_18;
       goto cf_common_exit_0064B291;
     }
     local_EAX_4782 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
     if (local_EAX_4782 != nullptr) {
-      Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_4782,0x7f);
+      Library::MSVCRT::_strncpy(&this_00->field_0004,local_EAX_4782,0x7f);
     }
-    *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+    this_00->field_0084 = 0xffffffff;
     iVar6 = -0x78;
     break;
   case 0x38b:
@@ -1032,6 +1057,7 @@ LAB_0064bd33:
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
       /* ST_CALLSITE[0064BCDC]: CALL dword ptr [EDX + 0x4] */
       float_local_18_3 = this_00->slot_04(param_1); /* split floating lifetime from pointer-typed SSA storage */
+
       local_8 = Library::DKW::LIB::MemAllocClear(4);
       Library::MSVCRT::FUN_0072e150
                 (SUB84((double)float_local_18_3,0),(uint)((ulonglong)(double)float_local_18_3 >> 0x20)
@@ -1042,9 +1068,9 @@ LAB_0064bd33:
     }
     local_EAX_4913 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
     if (local_EAX_4913 != nullptr) {
-      Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_4913,0x7f);
+      Library::MSVCRT::_strncpy(&this_00->field_0004,local_EAX_4913,0x7f);
     }
-    *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+    this_00->field_0084 = 0xffffffff;
     iVar6 = -0x78;
     break;
   case 0x38c:
@@ -1055,6 +1081,7 @@ LAB_0064bd33:
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
       /* ST_CALLSITE[0064BD77]: CALL dword ptr [EAX + 0x4] */
       float_local_18_4 = this_00->slot_04(param_1); /* split floating lifetime from pointer-typed SSA storage */
+
       local_8 = Library::DKW::LIB::MemAllocClear(4);
       Library::MSVCRT::FUN_00730450
                 (SUB84((double)float_local_18_4,0),(uint)((ulonglong)(double)float_local_18_4 >> 0x20)
@@ -1072,9 +1099,9 @@ LAB_0064bd33:
     if ((*param_1 != '\x06') && (*param_1 != '\x03')) {
       local_EAX_5222 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
       if (local_EAX_5222 != nullptr) {
-        Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_5222,0x7f);
+        Library::MSVCRT::_strncpy(&this_00->field_0004,local_EAX_5222,0x7f);
       }
-      *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+      this_00->field_0084 = 0xffffffff;
       RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
     }
     /* ST_CALLSITE[0064BE12]: CALL dword ptr [EAX + 0x8] */
@@ -1094,6 +1121,7 @@ LAB_0064bd33:
     local_20 = (float)(~uVar14 + 1);
     local_14 = 0.0;
     local_28 = (char *)0x200;
+
     local_1c = Library::DKW::LIB::MemAlloc(0x200);
     if (1 < param_2) {
       local_c = (int *)(param_1 + 5);
@@ -1113,6 +1141,7 @@ LAB_0064bd33:
           }
           if ((int)pcVar8 <= local_2c) {
             local_28 = (char *)((int)pcVar8 + 0x200);
+
             local_1c = Library::DKW::LIB::MemRealloc(local_1c,(uint)local_28);
           }
           puVar1 = (undefined4 *)((int)local_14 + (int)local_1c);
@@ -1137,6 +1166,7 @@ LAB_0064bd33:
           if ((int)pcVar8 <= local_2c) {
             pcVar8 = (char *)((int)pcVar8 + 0x200);
             local_28 = pcVar8;
+
             local_1c = Library::DKW::LIB::MemRealloc(local_1c,(uint)pcVar8);
           }
           puVar1 = (undefined4 *)((int)local_14 + (int)local_1c);
@@ -1152,6 +1182,7 @@ LAB_0064bd33:
           if ((int)pcVar8 <= (int)local_24) {
             pcVar8 = (char *)((int)pcVar8 + 0x200);
             local_28 = pcVar8;
+
             local_1c = Library::DKW::LIB::MemRealloc(local_1c,(uint)pcVar8);
           }
           *(double *)((int)local_14 + (int)local_1c) = (double)local_34;
@@ -1163,9 +1194,9 @@ LAB_0064bd33:
         else {
           pcVar13_mg5 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
           if (pcVar13_mg5 != nullptr) {
-            Library::MSVCRT::_strncpy(&this_00->field_0x4,pcVar13_mg5,0x7f);
+            Library::MSVCRT::_strncpy(&this_00->field_0004,pcVar13_mg5,0x7f);
           }
-          *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+          this_00->field_0084 = 0xffffffff;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         local_c = (int *)((int)local_c + 5);
@@ -1173,7 +1204,9 @@ LAB_0064bd33:
       } while (local_30 != 0);
     }
     fVar11 = local_20;
+    /* ST_CALLSITE[0064C054]: CALL 0x006aac10; direct=006AAC10 Library::DKW::LIB::MemAllocClear; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined1; source view only; no Ghidra override */
     local_8 = Library::DKW::LIB::MemAllocClear((uint)local_20);
+
     Library::MSVCRT::FUN_007300e0((undefined1 *)local_8,(int)fVar11,local_18,local_1c);
     if (param_3 != nullptr) {
       *param_3 = 3;
@@ -1201,9 +1234,9 @@ LAB_0064bd33:
         else {
           local_EAX_6215 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
           if (local_EAX_6215 != nullptr) {
-            Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_6215,0x7f);
+            Library::MSVCRT::_strncpy(&this_00->field_0004,local_EAX_6215,0x7f);
           }
-          *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+          this_00->field_0084 = 0xffffffff;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         param_1 = param_1 + 5;
@@ -1211,6 +1244,7 @@ LAB_0064bd33:
         param_2 = param_2 + -1;
       } while (param_2 != 0);
     }
+
     local_8 = Library::DKW::LIB::MemAllocClear(4);
     if (((local_68 <= local_74) && (local_74 < local_5c + local_68)) &&
        ((local_64 <= local_70 &&
@@ -1236,9 +1270,9 @@ LAB_0064bd33:
         else {
           local_EAX_5998 = thunk_FUN_00674af0((int)*(short *)(local_10 + 1));
           if (local_EAX_5998 != nullptr) {
-            Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_5998,0x7f);
+            Library::MSVCRT::_strncpy(&this_00->field_0004,local_EAX_5998,0x7f);
           }
-          *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+          this_00->field_0084 = 0xffffffff;
           RaiseInternalException(-0x78,g_overwriteContext_007ED77C,".\\ai\\ai_erc.h",0x79);
         }
         param_1 = param_1 + 5;
@@ -1246,6 +1280,7 @@ LAB_0064bd33:
         param_2 = param_2 + -1;
       } while (param_2 != 0);
     }
+
     local_8 = Library::DKW::LIB::MemAllocClear(4);
     if ((((local_48 <= local_50) && (local_50 < local_40 + local_48)) && (local_44 <= local_4c)) &&
        (local_4c < local_3c + local_44)) {
@@ -1266,9 +1301,9 @@ cf_common_exit_0064B36F:
 cf_common_exit_0064C271:
     local_EAX_6402 = thunk_FUN_00674af0(iVar6);
     if (local_EAX_6402 != nullptr) {
-      Library::MSVCRT::_strncpy(&this_00->field_0x4,local_EAX_6402,0x7f);
+      Library::MSVCRT::_strncpy(&this_00->field_0004,local_EAX_6402,0x7f);
     }
-    *(undefined4 *)&this_00->field_0x84 = 0xffffffff;
+    this_00->field_0084 = 0xffffffff;
     iVar6 = -0x75;
   }
 cf_error_exit_0064C2A4:

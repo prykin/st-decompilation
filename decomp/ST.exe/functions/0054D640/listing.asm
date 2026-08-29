@@ -325,7 +325,7 @@ LAB_0054d999:
 0054D9B1  6A 08                     PUSH 0x8
 0054D9B3  50                        PUSH EAX
 0054D9B4  68 6A 42 00 00            PUSH 0x426a
-0054D9B9  E8 82 27 16 00            CALL 0x006b0140
+0054D9B9  E8 82 27 16 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/PopUpTy; source view only; no Ghidra override
 0054D9BE  8B 0D D8 16 80 00         MOV ECX,dword ptr [0x008016d8]
 0054D9C4  50                        PUSH EAX
 0054D9C5  E8 0E 3B EB FF            CALL 0x004014d8
@@ -347,7 +347,7 @@ LAB_0054d9e9:
 0054D9F7  6A 08                     PUSH 0x8
 0054D9F9  50                        PUSH EAX
 0054D9FA  68 69 42 00 00            PUSH 0x4269
-0054D9FF  E8 3C 27 16 00            CALL 0x006b0140
+0054D9FF  E8 3C 27 16 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/PopUpTy; source view only; no Ghidra override
 0054DA04  8B 0D D8 16 80 00         MOV ECX,dword ptr [0x008016d8]
 0054DA0A  50                        PUSH EAX
 0054DA0B  E8 C8 3A EB FF            CALL 0x004014d8
@@ -929,7 +929,7 @@ LAB_0054dfd2:
 0054E000  6A 08                     PUSH 0x8
 0054E002  51                        PUSH ECX
 0054E003  68 75 42 00 00            PUSH 0x4275
-0054E008  E8 33 21 16 00            CALL 0x006b0140
+0054E008  E8 33 21 16 00            CALL 0x006b0140  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/PopUpTy; source view only; no Ghidra override
 0054E00D  8B 0D D8 16 80 00         MOV ECX,dword ptr [0x008016d8]
 0054E013  50                        PUSH EAX
 0054E014  E8 BF 34 EB FF            CALL 0x004014d8

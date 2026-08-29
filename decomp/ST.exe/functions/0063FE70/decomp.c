@@ -33,6 +33,7 @@ void __thiscall FUN_0063fe70(void *this,char param_1)
                          (float)STField<int>(iVar5,0x8) * _DAT_007904f8 * _DAT_007904f0,
                          (float)STField<int>(iVar5,0xC) * _DAT_007904f8 * _DAT_007904f0,
                          STField<float>(iVar5,0x10) + _DAT_007904fc);
+
               Library::Ourlib::ST3DSMAP::SprShow
                         (STField<void *>(this,0x211),STField<uint>(iVar5,0x38),0);
             }

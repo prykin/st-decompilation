@@ -64,7 +64,8 @@ LAB_004a05e8:
 004A066C  51                        PUSH ECX
 004A066D  52                        PUSH EDX
 004A066E  56                        PUSH ESI
-004A066F  E8 56 35 F6 FF            CALL 0x00403bca
+STGroupBoatC::Scout::override::prt_4a066f_c756791d:
+004A066F  E8 56 35 F6 FF            CALL 0x00403bca  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/STGroupBoatC;pointer:/SubmarineTitans/Recovered/DArrayTy;/int;/int;/undefined4;/int;/int;/int
 004A0674  85 C0                     TEST EAX,EAX
 004A0676  89 45 F4                  MOV dword ptr [EBP + -0xc],EAX
 004A0679  75 09                     JNZ 0x004a0684
@@ -138,7 +139,8 @@ LAB_004a06f1:
 004A0728  50                        PUSH EAX
 004A0729  51                        PUSH ECX
 004A072A  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
-004A0730  E8 85 21 F6 FF            CALL 0x004028ba
+STGroupBoatC::Scout::override::prt_4a0730_6c9e7102:
+004A0730  E8 85 21 F6 FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 004A0735  8B D8                     MOV EBX,EAX
 004A0737  85 DB                     TEST EBX,EBX
 004A0739  75 1B                     JNZ 0x004a0756
@@ -204,7 +206,8 @@ LAB_004a07d8:
 004A07F7  50                        PUSH EAX
 004A07F8  8A 46 24                  MOV AL,byte ptr [ESI + 0x24]
 004A07FB  50                        PUSH EAX
-004A07FC  E8 B9 20 F6 FF            CALL 0x004028ba
+STGroupBoatC::Scout::override::prt_4a07fc_6c9e7102:
+004A07FC  E8 B9 20 F6 FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 004A0801  8B F8                     MOV EDI,EAX
 004A0803  85 FF                     TEST EDI,EDI
 004A0805  75 1B                     JNZ 0x004a0822

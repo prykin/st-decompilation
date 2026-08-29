@@ -30,7 +30,7 @@ LAB_00494183:
 004941AE  6A 03                     PUSH 0x3
 004941B0  8B CB                     MOV ECX,EBX
 004941B2  C7 83 2E 07 00 00 01 00 00 00  MOV dword ptr [EBX + 0x72e],0x1
-004941BC  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]
+004941BC  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]  ; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4
 004941C2  5B                        POP EBX
 004941C3  8B E5                     MOV ESP,EBP
 004941C5  5D                        POP EBP
@@ -41,7 +41,7 @@ LAB_004941c9:
 004941D0  6A 03                     PUSH 0x3
 004941D2  8B CB                     MOV ECX,EBX
 004941D4  C7 83 2E 07 00 00 00 00 00 00  MOV dword ptr [EBX + 0x72e],0x0
-004941DE  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]
+004941DE  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]  ; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4
 004941E4  5B                        POP EBX
 004941E5  8B E5                     MOV ESP,EBP
 004941E7  5D                        POP EBP
@@ -270,7 +270,7 @@ LAB_00494498:
 0049449A  68 6C 01 00 00            PUSH 0x16c
 0049449F  6A 03                     PUSH 0x3
 004944A1  8B CB                     MOV ECX,EBX
-004944A3  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]
+004944A3  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]  ; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4
 004944A9  5F                        POP EDI
 004944AA  5E                        POP ESI
 004944AB  5B                        POP EBX
@@ -283,7 +283,7 @@ LAB_004944b2:
 004944B9  6A 03                     PUSH 0x3
 004944BB  8B CB                     MOV ECX,EBX
 004944BD  C7 83 32 07 00 00 00 00 00 00  MOV dword ptr [EBX + 0x732],0x0
-004944C7  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]
+004944C7  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]  ; [STIndirectCallsiteApplier] exact slot 0x90; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4
 LAB_004944cd:
 004944CD  5B                        POP EBX
 004944CE  8B E5                     MOV ESP,EBP

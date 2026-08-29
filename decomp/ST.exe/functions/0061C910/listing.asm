@@ -1,4 +1,4 @@
-FUN_0061c910:
+STJumpMineC::sub_0061C910:
 0061C910  55                        PUSH EBP
 0061C911  8B EC                     MOV EBP,ESP
 0061C913  51                        PUSH ECX
@@ -28,7 +28,7 @@ FUN_0061c910:
 0061C956  52                        PUSH EDX
 0061C957  8B 56 38                  MOV EDX,dword ptr [ESI + 0x38]
 0061C95A  52                        PUSH EDX
-0061C95B  FF 90 E0 00 00 00         CALL dword ptr [EAX + 0xe0]
+0061C95B  FF 90 E0 00 00 00         CALL dword ptr [EAX + 0xe0]  ; [STIndirectCallsiteApplier] exact slot 0xE0; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4
 0061C961  85 C0                     TEST EAX,EAX
 0061C963  75 49                     JNZ 0x0061c9ae
 0061C965  0F BF 4D 0A               MOVSX ECX,word ptr [EBP + 0xa]

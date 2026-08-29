@@ -5,7 +5,7 @@ STJumpMineC::sub_00619350:
 00619354  57                        PUSH EDI
 00619355  8B F1                     MOV ESI,ECX
 00619357  68 04 01 00 00            PUSH 0x104
-0061935C  E8 0F 19 09 00            CALL 0x006aac70
+0061935C  E8 0F 19 09 00            CALL 0x006aac70  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/byte; source view only; no Ghidra override
 00619361  8B 4E 1C                  MOV ECX,dword ptr [ESI + 0x1c]
 00619364  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]
 00619367  89 8E 4C 01 00 00         MOV dword ptr [ESI + 0x14c],ECX

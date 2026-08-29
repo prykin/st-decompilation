@@ -13,7 +13,8 @@ STManRuinC * __cdecl CreateSTManRuin(void)
 {
   STManRuinC *this;
 
-  this = (STManRuinC *)FUN_006b04d0(0x75);
+  /* ST_CALLSITE[00630842]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STManRuinC; signature=__stdcall;pointer:/STManRuinC;/uint */
+  this = FUN_006b04d0(0x75);
   if (this != nullptr) {
     /* ST_CALLSITE[0063084D]: CALL 0x00403d0a; direct=00403D0A STManRuinC::STManRuinC */
     g_manRuin_008117B0 = STManRuinC::STManRuinC(this);

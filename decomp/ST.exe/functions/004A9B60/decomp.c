@@ -1,10 +1,21 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=5, used=0), and
-   decompilation contains no value return */
+   decompilation contains no value return
 
-void FUN_004a9b60(int param_1,int param_2,int param_3,int param_4)
+   [STMethodOwnerApplier] Structural method owner recovered as OpticClassC.
+   Evidence: this_call_owners=[OpticClassC]; agreed_this_calls=6; incoming_this_accesses=0;
+   incoming_edx_uses=0; incoming_stack_parameter_uses=10; incoming_this_forward_calls=1;
+   entry_incoming_ecx_capture=true; ret_stack_matches_explicit_parameters=true;
+   direct_non_thunk_callers=0; incoming_ecx_receiver_callers=0; attributed_named_callers=6;
+   owner_evidence_coverage=adequate; unique_primary_physical_vtable=true;
+   callee_closed_hidden_ecx_receiver_transport */
+
+void __thiscall
+OpticClassC::sub_004A9B60(OpticClassC *this,int param_1,int param_2,int param_3,int param_4)
 
 {
   int iVar1;

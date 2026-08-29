@@ -42,6 +42,7 @@ int __thiscall TLOBaseTy::AddSprInit(TLOBaseTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (iVar2 == 0) {
     switch(local_8->field_05AC) {
@@ -49,32 +50,38 @@ int __thiscall TLOBaseTy::AddSprInit(TLOBaseTy *this)
     case CASE_40:
     case CASE_49:
     case CASE_5C:
-      thunk_FUN_004d01f0(local_8);
+
+      thunk_FUN_004d01f0((RecoveredRecord_004D01F0_A7BA5910 *)local_8);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     case CASE_45:
       /* ST_CALLSITE[004CBC67]: CALL 0x00404886; direct=00404886 TLOBaseTy::sub_004EAA20 */
-      sub_004EAA20((AnonShape_004D9C80_80F657D3 *)local_8);
+      sub_004EAA20((RecoveredRecordView_004D9C80_63C53606 *)local_8);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     case CASE_4E:
-      thunk_FUN_004d9c80((AnonShape_004D9C80_80F657D3 *)local_8);
+
+      thunk_FUN_004d9c80((RecoveredRecordView_004D9C80_63C53606 *)local_8);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     case CASE_52:
     case CASE_5F:
-      thunk_FUN_004ec050((int)local_8);
+
+      thunk_FUN_004ec050((RecoveredRecord_004EC050_2F5ECB40 *)local_8);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     case CASE_69:
-      thunk_FUN_004dce00((int *)local_8);
+
+      thunk_FUN_004dce00((RecoveredRecordView_004DCE00_6036DD04 *)local_8);
       break;
     case CASE_70:
-      thunk_FUN_004d9000((AnonShape_004D9000_7AA66E43 *)local_8);
+
+      thunk_FUN_004d9000((RecoveredRecordView_004D9000_7F89BF8E *)local_8);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     case CASE_72:
-      thunk_FUN_004ecea0((AnonShape_004D9C80_80F657D3 *)local_8);
+
+      thunk_FUN_004ecea0((RecoveredRecordView_004D9C80_63C53606 *)local_8);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
@@ -82,6 +89,7 @@ int __thiscall TLOBaseTy::AddSprInit(TLOBaseTy *this)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\Artem\\TLO_bspr.cpp",0x2c5,0,iVar2,"%s",
                              "TLOBaseTy::AddSprInit error");
   if (iVar3 != 0) {

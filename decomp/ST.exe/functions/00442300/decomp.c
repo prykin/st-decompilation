@@ -29,13 +29,13 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
   STAllPlayersC_GetTOBJList_param_2Enum SVar13;
   STAllPlayersC_GetTOBJList_param_2Enum SVar14;
   InternalExceptionFrame local_d4;
-  undefined1 local_90 [6];
+  byte local_90 [6];
   short local_8a;
   short local_82;
   STAllPlayersC_GetTOBJList_param_2Enum local_6c [4];
   STAllPlayersC *local_5c;
   STAllPlayersC_GetTOBJList_param_2Enum local_58;
-  undefined1 local_54 [4];
+  byte local_54 [4];
   uint local_50;
   int local_4c;
   dword local_48;
@@ -43,18 +43,18 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
   short local_40;
   short local_3e;
   short local_3c;
-  undefined2 local_3a;
+  ushort local_3a;
   short local_38;
   short local_36;
   short local_34;
-  undefined2 local_32;
+  ushort local_32;
   int local_30;
-  undefined4 local_2c;
-  undefined4 local_28;
-  undefined1 local_1c [4];
+  uint local_2c;
+  uint local_28;
+  byte local_1c [4];
   uint local_18;
   int local_14;
-  undefined4 local_10;
+  uint local_10;
   DArrayTy *local_c;
   DArrayTy *local_8;
 
@@ -71,11 +71,13 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
   local_10 = 0;
   local_d4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_d4;
+
   iVar4 = Library::MSVCRT::__setjmp3(local_d4.jumpBuffer,0);
   iVar5 = local_4c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_d4.previous;
     if (iVar4 != -0x5001fff7) {
+
       iVar6 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2454,0,iVar4,
                                  "%s","STAllPlayersC::_AddMDPairs");
       if (iVar6 != 0) {
@@ -117,6 +119,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
       psVar10 = (short *)((int)psVar10 + 1);
       psVar12 = (short *)((int)psVar12 + 1);
     }
+
     FUN_006ab090((int)g_pathingScratchGrid.cells,(int)g_pathingGrid.sizeX,(int)g_pathingGrid.sizeY,
                  (int)g_pathingGrid.sizeZ,(int)local_38,(int)local_36,(int)local_34,-1,-1,-1);
     pSVar2 = local_5c;
@@ -132,8 +135,9 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
           local_18 = 0;
           if (0 < (int)local_48) {
             do {
+
               DArrayGetElement(local_c,local_18,local_1c);
-              /* ST_CALLSITE[0044279F]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
+              /* ST_CALLSITE[0044279F]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override */
               pSVar4_mg1 = GetObjPtr(pSVar2,param_1,STPiece<0,2>(local_1c),CASE_1);
               local_44 = pSVar4_mg1;
               /* ST_CALLSITE[004427B1]: CALL dword ptr [EDX + 0x88] */
@@ -160,8 +164,10 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
                 local_2c = local_28;
                 if (0 < (int)uVar7) {
                   do {
+
                     DArrayGetElement(local_8,uVar8,local_90);
                     if ((local_8a == -1) && (local_82 == -1)) {
+
                       Library::DKW::TBL::DArrayPut(local_8,uVar8,&local_40);
                       local_10 = 1;
                       break;
@@ -170,6 +176,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
                   } while ((int)uVar8 < (int)uVar7);
                 }
                 if (uVar8 == uVar7) {
+
                   Library::DKW::TBL::DArrayAppend(local_8,&local_40);
                   local_10 = 1;
                 }
@@ -219,6 +226,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
               psVar10 = (short *)((int)psVar10 + 1);
               psVar12 = (short *)((int)psVar12 + 1);
             }
+
             FUN_006ab090((int)g_pathingScratchGrid.cells,(int)g_pathingGrid.sizeX,
                          (int)g_pathingGrid.sizeY,(int)g_pathingGrid.sizeZ,(int)local_40,
                          (int)local_3e,(int)local_3c,-1,-1,-1);
@@ -228,8 +236,9 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
             SVar13 = local_58;
             if (0 < (int)local_48) {
               do {
+
                 DArrayGetElement(local_c,local_18,local_1c);
-                /* ST_CALLSITE[00442517]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
+                /* ST_CALLSITE[00442517]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STFishC; source view only; no Ghidra override */
                 pSVar4_mg3 = GetObjPtr(pSVar2,param_1,STPiece<0,2>(local_1c),CASE_1);
                 local_44 = pSVar4_mg3;
                 /* ST_CALLSITE[0044252F]: CALL 0x004018c5; direct=004018C5 STFishC::sub_004162B0 */
@@ -253,8 +262,10 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
                 local_2c = local_28;
                 if (0 < (int)uVar7) {
                   do {
+
                     DArrayGetElement(local_8,uVar8,local_90);
                     if ((local_8a == -1) && (local_82 == -1)) {
+
                       Library::DKW::TBL::DArrayPut(local_8,uVar8,&local_40);
                       local_10 = 1;
                       break;
@@ -263,6 +274,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,char param_
                   } while ((int)uVar8 < (int)uVar7);
                 }
                 if (uVar8 == uVar7) {
+
                   Library::DKW::TBL::DArrayAppend(local_8,&local_40);
                   local_10 = 1;
                 }

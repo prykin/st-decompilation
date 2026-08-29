@@ -29,6 +29,7 @@ void FUN_006cec40(AnonShape_006CEC40_BB23E716 *param_1)
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar2 = (**(code **)(*piVar1 + 0x6c))(piVar1);
       if (iVar2 == -0x7789fdb5) {
+
         FUN_006cecb0((AnonShape_006CECB0_97249119 *)param_1,1);
       }
     }
@@ -38,6 +39,7 @@ void FUN_006cec40(AnonShape_006CEC40_BB23E716 *param_1)
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
       iVar2 = (**(code **)(*piVar1 + 0x6c))(piVar1);
       if (iVar2 == -0x7789fdb5) {
+
         FUN_006cecb0((AnonShape_006CECB0_97249119 *)param_1,0);
       }
     }

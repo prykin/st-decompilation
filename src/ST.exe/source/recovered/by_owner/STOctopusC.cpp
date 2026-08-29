@@ -19,14 +19,89 @@ STOctopusC * __thiscall st::fn_00589990(STOctopusC *this)
 {
 
   /* ST_CALLSITE[00589994]: CALL 0x00401933; direct=00401933 STGameObjC::STGameObjC */
-  st::fn_00401933((STGameObjC *)this);
+  st::fn_00401933(reinterpret_cast<STGameObjC *>(this));
   /* ST_CALLSITE[005899A1]: CALL 0x00401316; direct=00401316 STT3DSprC::STT3DSprC */
-  st::fn_00401316((STT3DSprC *)&this->field_01D5);
+  st::fn_00401316(reinterpret_cast<STT3DSprC *>(&this->field_01D5));
   this->field_01D5 = st::machine_word_boundary_cast<undefined4>(&st_global_0079BD18);
   this->vtable = &st_global_0079BBB8;
   this->field_0249 = CASE_0;
   memset(&this->field_0x285, 0, 0x28); /* compiler bulk-zero initialization */
   return this;
+}
+
+// 00589A20 STOctopusC::vfunc_DC
+#line 4 "decomp/ST.exe/functions/00589A20/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079BBB8
+   Entries: 004027D9
+   Slots: 0xDC
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_physical_vtable_owner_and_slot;
+   receiver_extent=71/685; unique_owner_for_target */
+
+undefined4 __thiscall
+st::fn_00589A20
+          (STOctopusC *this,short param_1,short param_2,short param_3,short param_4,short param_5,
+          short param_6)
+
+{
+  short sVar1;
+  short sVar2;
+  short sVar3;
+  short sVar4;
+  short sVar5;
+  short sVar6;
+
+  sVar1 = this->field_0045 + -0x1c;
+  sVar4 = this->field_0045 + 0x1c;
+  sVar6 = this->field_0041 + -0x1c;
+  sVar2 = this->field_0043 + -0x1c;
+  sVar3 = this->field_0041 + 0x1c;
+  sVar5 = this->field_0043 + 0x1c;
+  if ((((((sVar6 <= param_1) && (param_1 <= sVar3)) || ((sVar6 <= param_4 && (param_4 <= sVar3))))
+       || ((param_1 <= sVar6 && (sVar3 <= param_4)))) &&
+      (((sVar2 <= param_2 && (param_2 <= sVar5)) ||
+       (((sVar2 <= param_5 && (param_5 <= sVar5)) || ((param_2 <= sVar2 && (sVar5 <= param_5))))))))
+     && ((((sVar1 <= param_3 && (param_3 <= sVar4)) || ((sVar1 <= param_6 && (param_6 <= sVar4))))
+         || ((param_3 <= sVar1 && (sVar4 <= param_6)))))) {
+    return 0;
+  }
+  return 0xffffffff;
+}
+
+// 00589B10 STOctopusC::vfunc_E0
+#line 4 "decomp/ST.exe/functions/00589B10/decomp.c"
+/* [STVirtualMethodApplier] Recovered from virtual table slot family.
+   Tables: 0079BBB8
+   Entries: 00403742
+   Slots: 0xE0
+   Anchor:
+   Evidence: slot_family_has_no_named_method; unique_physical_vtable_owner_and_slot;
+   receiver_extent=71/685; unique_owner_for_target
+
+   [STPrototypeApplier] Propagated parameter 2.
+   Evidence: 00589B1A exact 2-byte output store from /STOctopusC+0x41; exact partial-width MOV at
+   00589B16
+
+   [STPrototypeApplier] Propagated parameter 3.
+   Evidence: 00589B24 exact 2-byte output store from /STOctopusC+0x43; exact partial-width MOV at
+   00589B20
+
+   [STPrototypeApplier] Propagated parameter 4.
+   Evidence: 00589B31 exact 2-byte output store from /STOctopusC+0x45; exact partial-width MOV at
+   00589B27 */
+
+undefined4 __thiscall
+st::fn_00589B10
+          (STOctopusC *this,undefined4 param_1,short *param_2,short *param_3,short *param_4,
+          undefined4 *param_5)
+
+{
+  *param_2 = this->field_0041;
+  *param_3 = this->field_0043;
+  *param_4 = this->field_0045;
+  *param_5 = 0;
+  return 0;
 }
 
 // 0058AF70 STOctopusC::sub_0058AF70
@@ -56,8 +131,10 @@ st::fn_0058AF70(STOctopusC *this,short param_1,short param_2,short param_3)
   iVar5 = (int)param_3 - (int)this->field_0045;
   this->field_026D = iVar4;
   this->field_0271 = iVar5;
+
   iVar2 = st::fn_006ACF0D(0,0,0,iVar3,iVar4,iVar5);
   this->field_0239 = iVar2;
+
   local_EAX_118 = st::fn_006ACF0D(0,0,0,this->field_0269,this->field_026D,0);
   SVar1 = this->field_02A5;
   this->field_023D = local_EAX_118;
@@ -65,13 +142,13 @@ st::fn_0058AF70(STOctopusC *this,short param_1,short param_2,short param_3)
     iVar3 = this->field_0239;
     this->field_0251 = (this->field_0269 << 8) / iVar3;
     this->field_0255 = (this->field_026D << 8) / iVar3;
-    iVar4 = st::machine_word_boundary_cast<int>(this->field_0271 << 8);
+    iVar4 = this->field_0271 << 8;
   }
   else {
     iVar3 = this->field_0239;
     this->field_0251 = (this->field_0269 << 9) / iVar3;
     this->field_0255 = (this->field_026D << 9) / iVar3;
-    iVar4 = st::machine_word_boundary_cast<int>(this->field_0271 << 9);
+    iVar4 = this->field_0271 << 9;
   }
   this->field_0275 = (int)this->field_0041;
   this->field_0265 = 0;
@@ -104,9 +181,14 @@ st::fn_0058AF70(STOctopusC *this,short param_1,short param_2,short param_3)
 /* [STMethodOwnerApplier] Structural method owner recovered as STOctopusC.
    Evidence: this_call_owners=[STOctopusC]; agreed_this_calls=1; incoming_this_accesses=59;
    incoming_edx_uses=17; incoming_stack_parameter_uses=5; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
 
-undefined4 __thiscall
+   [STReturnSemanticsApplier] machine_word_predicate.
+   Evidence: every reachable RET is immediately dominated by an exact full-EAX definition of 0 or 1,
+   and at least two resolved callers consume the machine word; machine CFG audit: used=3, ignored=0,
+   unknown=0 */
+
+int __thiscall
 st::fn_0058B190
           (STOctopusC *this,short *param_1,short *param_2,short *param_3,short *param_4)
 
@@ -175,7 +257,7 @@ st::fn_0058B190
   }
   if ((((this->field_02A5 == CASE_F8) || (this->field_02A5 == CASE_F9)) && (sVar9 < 4)) &&
      (((byte)g_playSystem_00802A38->field_00E4 & 7) == 1)) {
-    uVar12 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
+    uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
     this->field_001C = uVar12;
     this->field_0281 = 1;
     local_c = (uVar12 >> 0x10) % 0x66 + 100 + (int)this->field_0045;
@@ -207,12 +289,12 @@ st::fn_0058B190
   }
 LAB_0058b3ab:
   if (bVar14 < 2) {
-    uVar12 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
+    uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
     this->field_001C = uVar12;
     iVar6 = ((uVar12 >> 0x10) % 3 - 1) + (int)this->field_006C;
   }
   else {
-    uVar12 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
+    uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
     this->field_001C = uVar12;
     iVar6 = ((uVar12 >> 0x10) % 5 - 2) + (int)this->field_006C;
   }
@@ -227,34 +309,34 @@ LAB_0058b3ab:
   switch(iVar6) {
   case 0:
     iVar7 = (int)this->field_0049;
-    iVar13 = st::machine_word_boundary_cast<int>(this->field_0047 + 1);
+    iVar13 = this->field_0047 + 1;
     break;
   case 1:
-    iVar13 = st::machine_word_boundary_cast<int>(this->field_0047 + 1);
-    iVar7 = st::machine_word_boundary_cast<int>(this->field_0049 + -1);
+    iVar13 = this->field_0047 + 1;
+    iVar7 = this->field_0049 + -1;
     break;
   case 2:
     iVar13 = (int)this->field_0047;
-    iVar7 = st::machine_word_boundary_cast<int>(this->field_0049 + -1);
+    iVar7 = this->field_0049 + -1;
     break;
   case 3:
-    iVar13 = st::machine_word_boundary_cast<int>(this->field_0047 + -1);
-    iVar7 = st::machine_word_boundary_cast<int>(this->field_0049 + -1);
+    iVar13 = this->field_0047 + -1;
+    iVar7 = this->field_0049 + -1;
     break;
   case 4:
     iVar7 = (int)this->field_0049;
-    iVar13 = st::machine_word_boundary_cast<int>(this->field_0047 + -1);
+    iVar13 = this->field_0047 + -1;
     break;
   case 5:
-    iVar13 = st::machine_word_boundary_cast<int>(this->field_0047 + -1);
+    iVar13 = this->field_0047 + -1;
     goto LAB_0058b466;
   case 6:
     iVar13 = (int)this->field_0047;
     goto LAB_0058b466;
   case 7:
-    iVar13 = st::machine_word_boundary_cast<int>(this->field_0047 + 1);
+    iVar13 = this->field_0047 + 1;
 LAB_0058b466:
-    iVar7 = st::machine_word_boundary_cast<int>(this->field_0049 + 1);
+    iVar7 = this->field_0049 + 1;
   }
   iVar6 = iVar13;
   if (iVar3 < iVar13) {
@@ -276,16 +358,18 @@ LAB_0058b466:
   }
 LAB_0058b499:
   local_c = (int)this->field_0045;
-  uVar12 = st::machine_word_boundary_cast<uint>(this->field_001C * 0x41c64e6d + 0x3039);
+  uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
   this->field_001C = uVar12;
   local_8 = (uVar12 >> 0x10) % 0x65;
-  if ((int)((int)this->field_0045 + local_8) < 900) {
+  if (st::storage_bit_cast<int>(static_cast<uint32_t>((int)this->field_0045 + local_8)) < 900) {
     iVar3 = local_c - local_8;
     if (0x31 < iVar3) {
       iVar3 = STBiasedDiv16(iVar3, 200); /* exact signed 16-bit grid-index division */
+
       uVar11 = st::fn_00404A3E(iVar6,iVar5,iVar3);
       iVar3 = local_8 + local_c;
       iVar3 = STBiasedDiv16(iVar3, 200); /* exact signed 16-bit grid-index division */
+
       uVar10 = st::fn_00404A3E(iVar6,iVar5,iVar3);
       if (((int)uVar11 < 0) && ((int)uVar10 < 0)) {
         if ((local_8 & 1) != 0) {
@@ -320,7 +404,7 @@ LAB_0058b5ac:
   do {
     while( true ) {
       local_14 = local_8;
-      if ((int)local_8 < (int)(local_8 + 5)) {
+      if ((int)local_8 < st::storage_bit_cast<int>(static_cast<uint32_t>(local_8 + 5))) {
         do {
           iVar3 = local_14;
           if (4 < local_14) {
@@ -328,6 +412,7 @@ LAB_0058b5ac:
           }
           sVar8 = (short)iVar6;
           sVar9 = (short)iVar5;
+
           iVar4 = st::fn_00404D3B(sVar8,sVar9,(short)iVar3);
           if ((iVar4 != 0) &&
              ((((sVar8 < 0 || (g_worldGrid.sizeX <= sVar8)) || (sVar9 < 0)) ||
@@ -341,7 +426,7 @@ LAB_0058b5ac:
             goto LAB_0058b6f6;
           }
           local_14 = local_14 + 1;
-        } while (local_14 < (int)(local_8 + 5));
+        } while (local_14 < st::storage_bit_cast<int>(static_cast<uint32_t>(local_8 + 5)));
       }
       bVar15 = -1 < iVar6 - this->field_0047;
       if (iVar6 != this->field_0047 && bVar15) break;
@@ -374,7 +459,7 @@ LAB_0058b6f6:
     /* ST_CALLSITE[0058B758]: CALL dword ptr [EDX + 0x10] */
     sVar2 = (*this->vtable->vfunc_10)
                       (this->field_0041,this->field_0043,
-                       STReplaceLowWord((uint32_t)(local_c), (uint16_t)(this->field_0045)),sVar8,sVar9,local_c
+                       STReplaceLowWord(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_c)), (uint16_t)(this->field_0045)),sVar8,sVar9,local_c
                       );
     *param_4 = sVar2 / 0x2d - (short)((int)sVar2 / -0x4c000000);
     /* ST_CALLSITE[0058B77F]: CALL 0x004024f5; direct=004024F5 STOctopusC::sub_0058AF70 */
@@ -389,7 +474,7 @@ LAB_0058b6f6:
   return 0;
 }
 
-// 0058BA10 STOctopusC::FUN_0058ba10
+// 0058BA10 STOctopusC::vfunc_2C
 #line 4 "decomp/ST.exe/functions/0058BA10/decomp.c"
 /* [STVirtualMethodApplier] Recovered from virtual table slot family.
    Tables: 0079BBB8
@@ -404,4 +489,3 @@ dword __thiscall st::fn_0058BA10(STOctopusC *this)
 {
   return this->field_02A5;
 }
-

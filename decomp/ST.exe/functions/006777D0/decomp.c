@@ -40,12 +40,14 @@ FUN_006777d0(Global_sub_006777D0_param_1Enum param_1,int param_2,int param_3,und
   case CASE_DD:
   case CASE_DE:
   case CASE_E2:
+
     iVar3 = thunk_FUN_004b1fb0(param_1,&param_3,&param_2,iVar3,iVar1,iVar4,iVar2);
     if (iVar3 == 0) {
       return param_2;
     }
     break;
   case CASE_E1:
+
     local_8 = thunk_FUN_004d82b0(0);
   }
   return local_8;

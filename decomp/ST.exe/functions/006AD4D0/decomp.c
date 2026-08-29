@@ -48,6 +48,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
   local_34c[0] = '\0';
   local_74c = local_74c & 0xffffff00;
   if ((format != nullptr) &&
+
      (local_EAX_79 = Library::MSVCRT::FUN_007300e0
                                (local_34c,0x200,(byte *)format,(undefined4 *)&stack0x00000018),
      local_EAX_79 < 0)) {
@@ -78,6 +79,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
     uVar6 = 0;
   }
   if ((DAT_007ed79c != 0) && (g_int_00854EB4 != nullptr)) {
+
     Library::MSVCRT::FUN_00733f70(g_int_00854EB4,"\n%d ========================================  %02d.%02d.%d  %d:%02d:%02d.%03d\n");
     DAT_007ed79c = 0;
   }
@@ -94,6 +96,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
     local_744 = (char)STLiteralPiece<8,2>("Program: ");
     STPiece<0,1>(uStack_743) = SUB21(STLiteralPiece<8,2>("Program: "),1);
     pcVar8 = local_14c;
+    /* ST_CALLSITE[006AD627]: CALL dword ptr [0x0085bb94] */
     DVar2 = GetModuleFileNameA((HMODULE)0x0,local_14c,0x104);
     if (DVar2 == 0) {
       STPiece<0,1>(uStack_743) = "unknown"[0];
@@ -200,17 +203,23 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
     }
     pcVar10 = pcVar10 + 1;
     if (0 < sourceLine) {
+
       iVar5 = Library::MSVCRT::FUN_00730c40(pcVar10,0x7ed884);
       pcVar10 = pcVar10 + iVar5;
     }
+    /* ST_CALLSITE[006AD78D]: CALL EDI */
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     if (((g_int_00854EB4 != nullptr) && (BVar3 = IsBadReadPtr(&stack0xfffffffc,4), BVar3 == 0))
+       /* ST_CALLSITE[006AD798]: CALL EDI */
        && (BVar3 = IsBadReadPtr(unaff_EBP,8), BVar3 == 0)) {
+
       iVar5 = Library::MSVCRT::FUN_00730c40(pcVar10,0x7ed87c);
       pcVar10 = pcVar10 + iVar5;
+      /* ST_CALLSITE[006AD7B7]: CALL EDI */
       /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
       BVar3 = IsBadReadPtr((void *)*unaff_EBP,8);
       if (BVar3 == 0) {
+
         iVar5 = Library::MSVCRT::FUN_00730c40(pcVar10,0x7ed874);
         pcVar10 = pcVar10 + iVar5;
       }
@@ -270,12 +279,14 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       iVar5 = 0x36;
     }
     pcVar10 = pcVar10 + iVar5;
+
     iVar5 = Library::MSVCRT::FUN_00730c40(pcVar10,0x7ed864);
     pcVar10[iVar5] = '\n';
     pcVar9 = pcVar10 + iVar5 + 1;
   }
   g_exceptionSourceFile = nullptr;
   if (errorCode != 0) {
+
     iVar5 = Library::MSVCRT::FUN_00730c40(pcVar9,0x7ed848);
     pcVar9 = pcVar9 + iVar5;
   }
@@ -347,6 +358,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
         puVar11 = nullptr;
       }
       else {
+
         Library::DKW::DDX::FUN_006ce8c0
                   ((int)g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8,(HDC)*puVar11);
         uVar4 = 0xffffffff;
@@ -383,15 +395,14 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
         /* ST_CALLSITE[006ADAD6]: CALL dword ptr [EDX + 0x50] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030 + 0x50))
-                  /* ST_CALLSITE[006ADAD6]: CALL dword ptr [EDX + 0x50] */
                   (g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030,
-                   /* ST_CALLSITE[006ADAD6]: CALL dword ptr [EDX + 0x50] */
                    *(undefined4 *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x4,8);
         /* ST_CALLSITE[006ADAE5]: CALL dword ptr [ECX + 0x4c] */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(*g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030 + 0x4c))
                   (g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030);
       }
+
       iVar2 = FUN_006ad3a0((LPCSTR)&local_74c,debugMessage,2);
       if (iVar2 == 4) {
         iVar5 = 1;
@@ -403,10 +414,9 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
           /* ST_CALLSITE[006ADB37]: CALL dword ptr [EDX + 0x50] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
           (**(code **)(*g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030 + 0x50))
-                    /* ST_CALLSITE[006ADB37]: CALL dword ptr [EDX + 0x50] */
                     (g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0030,
-                     /* ST_CALLSITE[006ADB37]: CALL dword ptr [EDX + 0x50] */
                      *(undefined4 *)&g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8->field_0x4,8);
+
           FUN_006b08f0(g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8,0x854aa4,0,0x100);
         }
       }
@@ -417,6 +427,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
         iVar5 = 0;
         if ((g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8 !=
              nullptr) && (puVar11 != nullptr)) {
+
           Library::DKW::DDX::FUN_006ce770
                     ((uint)g_anonShape_GLOBAL_0080759C_9638EF10_00854EB8,puVar11);
         }
@@ -426,10 +437,12 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
   }
   else {
     *pcVar10 = '\0';
+
     Library::MSVCRT::FUN_0072eb70((char *)&local_74c,g_int_00854EB4);
     uVar4 = 0;
     if (0 < DAT_00858ddc) {
       do {
+
         Library::MSVCRT::FUN_00733f70(g_int_00854EB4,"%08X  ");
         uVar4 = uVar4 + 1;
         uVar6 = uVar4 & 0x80000007;
@@ -438,6 +451,7 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
           bVar15 = (uVar6 - 1 | 0xfffffff8) == 0xffffffff;
         }
         if (bVar15) {
+
           Library::MSVCRT::FUN_00733f70(g_int_00854EB4,&CHAR_0Ah_007c8ff4);
         }
       } while ((int)uVar4 < DAT_00858ddc);
@@ -448,8 +462,10 @@ ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,cha
       bVar15 = (uVar4 - 1 | 0xfffffff8) == 0xffffffff;
     }
     if (!bVar15) {
+
       Library::MSVCRT::FUN_00733f70(g_int_00854EB4,&CHAR_0Ah_007c8ff4);
     }
+
     Library::MSVCRT::FUN_00733d60(g_int_00854EB4);
   }
   iVar5 = -(uint)(isFatal != 0);
@@ -459,6 +475,7 @@ LAB_006ad9d3:
     return iVar5;
   }
   FUN_006ad250();
+
   Library::MSVCRT::FUN_00733b40(0x16);
                     /* WARNING: Subroutine does not return */
   Library::MSVCRT::__exit(-1);

@@ -20,8 +20,11 @@ int FUN_0066ac80(char param_1,ushort param_2)
   STGroupBoatC *pSVar1;
   int iVar2;
 
+  /* ST_CALLSITE[0066AC91]: CALL 0x00405cf9; direct=00405CF9 thunk_FUN_0042b760; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; source view only; no Ghidra override */
   pSVar1 = thunk_FUN_0042b760(param_1,param_2);
-  if ((pSVar1 != nullptr) && (iVar2 = thunk_FUN_00423300((int)pSVar1), iVar2 != 0)) {
+  if ((pSVar1 != nullptr) &&
+
+     (iVar2 = thunk_FUN_00423300((RecoveredRecord_00423300_67884733 *)pSVar1), iVar2 != 0)) {
     return iVar2;
   }
   return 0;

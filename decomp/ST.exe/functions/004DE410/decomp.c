@@ -15,13 +15,17 @@ int FUN_004de410(void *param_1,int param_2,int param_3)
   array = pPVar1->field1966_0x9ce;
   if ((array != nullptr) && (index = 0, 0 < (int)array->count)) {
     do {
+
       DArrayGetElement(array,index,&param_1);
+
       iVar3 = thunk_FUN_004ddb30(param_1,iVar2);
       if (iVar3 != 0) {
         if (param_3 - local_8 <= iVar3) {
+
           thunk_FUN_004ddc30(param_1,iVar2,param_3 - local_8);
           return param_3;
         }
+
         thunk_FUN_004ddc30(param_1,iVar2,iVar3);
         local_8 = local_8 + iVar3;
       }

@@ -6,7 +6,7 @@ FUN_0066ac80:
 0066AC89  50                        PUSH EAX
 0066AC8A  51                        PUSH ECX
 0066AC8B  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
-0066AC91  E8 63 B0 D9 FF            CALL 0x00405cf9
+0066AC91  E8 63 B0 D9 FF            CALL 0x00405cf9  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_00423300_67884733; source view only; no Ghidra override
 0066AC96  85 C0                     TEST EAX,EAX
 0066AC98  74 0B                     JZ 0x0066aca5
 0066AC9A  8B C8                     MOV ECX,EAX

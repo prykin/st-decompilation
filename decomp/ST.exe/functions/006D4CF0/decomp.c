@@ -46,12 +46,14 @@ undefined4 __cdecl FUN_006d4cf0(AnonShape_006D4CF0_8A8947BE *param_1,int *param_
       piVar8 = (int *)param_2[0x11];
       if ((((((piVar8[0xc] == 0x28) && (0 < piVar8[0xd])) && (piVar8[0xe] != 0)) &&
            (((short)piVar8[0xf] == 1 &&
-            (uVar4 = FUN_00749989((char *)(param_2 + 4)), (short)uVar4 != -1)))) &&
+            (uVar4 = Library::Win32::COMSupport::FUN_00749989((char *)(param_2 + 4)),
+            (short)uVar4 != -1)))) &&
           ((piVar8[0x10] == 0 ||
            ((piVar8[0x10] == 3 &&
             ((STField<short>(piVar8,0x3e) == 0x10 || (STField<short>(piVar8,0x3e) == 0x20)))))
            ))) && ((piVar8[0x11] == 0 ||
-                   (iVar5 = FUN_00749841((RecoveredSourceFamily_dibcopy *)(piVar8 + 0xc)),
+                   (iVar5 = Library::Win32::COMSupport::FUN_00749841
+                                      ((RecoveredSourceFamily_dibcopy *)(piVar8 + 0xc)),
                    piVar8[0x11] == iVar5)))) {
         uVar3 = STField<ushort>(piVar8,0x3e);
         iVar6 = param_1->field_0028;

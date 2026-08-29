@@ -137,7 +137,8 @@ LAB_0049b934:
 0049B951  50                        PUSH EAX
 0049B952  51                        PUSH ECX
 0049B953  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
-0049B959  E8 5C 6F F6 FF            CALL 0x004028ba
+STGroupBoatC::GrpPatrol::override::prt_49b959_81281cbb:
+0049B959  E8 5C 6F F6 FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STFishC; signature=__thiscall;pointer:/STFishC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 0049B95E  8B F8                     MOV EDI,EAX
 0049B960  85 FF                     TEST EDI,EDI
 0049B962  75 1B                     JNZ 0x0049b97f
@@ -365,7 +366,8 @@ LAB_0049bb9a:
 0049BBBE  6A 01                     PUSH 0x1
 0049BBC0  50                        PUSH EAX
 0049BBC1  52                        PUSH EDX
-0049BBC2  E8 F3 6C F6 FF            CALL 0x004028ba
+STGroupBoatC::GrpPatrol::override::prt_49bbc2_81281cbb:
+0049BBC2  E8 F3 6C F6 FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STFishC; signature=__thiscall;pointer:/STFishC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 0049BBC7  8B F0                     MOV ESI,EAX
 0049BBC9  85 F6                     TEST ESI,ESI
 0049BBCB  75 1A                     JNZ 0x0049bbe7
@@ -472,7 +474,8 @@ LAB_0049bcec:
 0049BD0C  6A 01                     PUSH 0x1
 0049BD0E  50                        PUSH EAX
 0049BD0F  52                        PUSH EDX
-0049BD10  E8 A5 6B F6 FF            CALL 0x004028ba
+STGroupBoatC::GrpPatrol::override::prt_49bd10_81281cbb:
+0049BD10  E8 A5 6B F6 FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STFishC; signature=__thiscall;pointer:/STFishC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 0049BD15  8B F0                     MOV ESI,EAX
 0049BD17  85 F6                     TEST ESI,ESI
 0049BD19  75 1A                     JNZ 0x0049bd35
@@ -652,7 +655,8 @@ LAB_0049bf00:
 0049BF1B  51                        PUSH ECX
 0049BF1C  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 0049BF22  52                        PUSH EDX
-0049BF23  E8 92 69 F6 FF            CALL 0x004028ba
+STGroupBoatC::GrpPatrol::override::prt_49bf23_6c9e7102:
+0049BF23  E8 92 69 F6 FF            CALL 0x004028ba  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STBoatC; signature=__thiscall;pointer:/STBoatC;pointer:/STAllPlayersC;/char;/ushort;/SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
 0049BF28  8B F8                     MOV EDI,EAX
 0049BF2A  85 FF                     TEST EDI,EDI
 0049BF2C  75 3D                     JNZ 0x0049bf6b

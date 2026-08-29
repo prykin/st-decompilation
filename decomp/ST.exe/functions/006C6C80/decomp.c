@@ -1,21 +1,20 @@
 #include "../../pseudocode_runtime.h"
 
 
-uint FUN_006c6c80(int param_1)
+uint FUN_006c6c80(RecoveredRecord_006C6C80_604E9FE0 *param_1)
 
 {
   bool bVar1;
-  int iVar2;
+  RecoveredRecord_006C6C80_604E9FE0 *pRVar2;
   uint uVar3;
   int iVar4;
   byte local_108;
-  undefined4 local_107;
+  uint local_107;
   uint local_8;
 
-  iVar2 = param_1;
+  pRVar2 = param_1;
   /* ST_CALLSITE[006C6C96]: CALL dword ptr [ESI + 0x42] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar3 = (**(code **)(param_1 + 0x42))(param_1,(int)&param_1 + 3,1);
+  uVar3 = (*STField<code *>(param_1,0x42))(param_1,(int)&param_1 + 3,1);
   if (uVar3 != 1) {
     if ((int)uVar3 < 0) {
       return uVar3;
@@ -25,8 +24,7 @@ uint FUN_006c6c80(int param_1)
   bVar1 = false;
   if (STPiece<3,1>(param_1) == -1) {
     /* ST_CALLSITE[006C6CC8]: CALL dword ptr [ESI + 0x42] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    uVar3 = (**(code **)(iVar2 + 0x42))(iVar2,&local_8,1);
+    uVar3 = (*STField<code *>(pRVar2,0x42))(pRVar2,&local_8,1);
     if (uVar3 != 1) {
       if ((int)uVar3 < 0) {
         return uVar3;
@@ -34,8 +32,7 @@ uint FUN_006c6c80(int param_1)
       return 0xfffffffb;
     }
     /* ST_CALLSITE[006C6CF8]: CALL dword ptr [ESI + 0x42] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    uVar3 = (**(code **)(iVar2 + 0x42))(iVar2,&local_108,local_8 & 0xff);
+    uVar3 = (*STField<code *>(pRVar2,0x42))(pRVar2,&local_108,local_8 & 0xff);
     if (uVar3 != (local_8 & 0xff)) {
       if ((int)uVar3 < 0) {
         return uVar3;
@@ -43,6 +40,7 @@ uint FUN_006c6c80(int param_1)
       return 0xfffffffb;
     }
     if (((char)local_8 == '\v') &&
+
        (iVar4 = Library::MSVCRT::_strncmp((char *)&local_108,"NETSCAPE2.0",0xb), iVar4 == 0
        )) {
       bVar1 = true;
@@ -52,8 +50,7 @@ uint FUN_006c6c80(int param_1)
     }
   }
   /* ST_CALLSITE[006C6D4F]: CALL dword ptr [ESI + 0x42] */
-  /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  uVar3 = (**(code **)(iVar2 + 0x42))(iVar2,&local_8,1);
+  uVar3 = (*STField<code *>(pRVar2,0x42))(pRVar2,&local_8,1);
   while( true ) {
     if (uVar3 != 1) {
       if ((int)uVar3 < 0) {
@@ -65,24 +62,22 @@ uint FUN_006c6c80(int param_1)
       return 0;
     }
     /* ST_CALLSITE[006C6D74]: CALL dword ptr [ESI + 0x42] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    uVar3 = (**(code **)(iVar2 + 0x42))(iVar2,&local_108,local_8 & 0xff);
+    uVar3 = (*STField<code *>(pRVar2,0x42))(pRVar2,&local_108,local_8 & 0xff);
     if (uVar3 != (local_8 & 0xff)) break;
     if (((bVar1) && ((local_108 & 7) == 1)) && (2 < (byte)local_8)) {
-      STField<uint>(iVar2,0x56) = STField<uint>(iVar2,0x56) | 2;
-      STField<uint>(iVar2,0x5A) = local_107 & 0xffff;
+      *(uint *)&pRVar2[1].field_0x10 = *(uint *)&pRVar2[1].field_0x10 | 2;
+      *(uint *)&pRVar2[1].field_0x14 = local_107 & 0xffff;
     }
     if ((STPiece<3,1>(param_1) == -7) && (3 < (byte)local_8)) {
-      ((byte *)iVar2)[0x5e] = local_108;
-      STField<short>(iVar2,0x5F) = (short)local_107;
-      ((undefined1 *)iVar2)[0x61] = STPiece<2,1>(local_107);
+      pRVar2[1].field_0x18 = local_108;
+      *(short *)&pRVar2[1].field_0x19 = (short)local_107;
+      pRVar2[1].field_0x1b = STPiece<2,1>(local_107);
       if ((short)local_107 != 0) {
-        STField<uint>(iVar2,0x56) = STField<uint>(iVar2,0x56) | 2;
+        *(uint *)&pRVar2[1].field_0x10 = *(uint *)&pRVar2[1].field_0x10 | 2;
       }
     }
     /* ST_CALLSITE[006C6DEC]: CALL dword ptr [ESI + 0x42] */
-    /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    uVar3 = (**(code **)(iVar2 + 0x42))(iVar2,&local_8,1);
+    uVar3 = (*STField<code *>(pRVar2,0x42))(pRVar2,&local_8,1);
   }
   if ((int)uVar3 < 0) {
     return uVar3;

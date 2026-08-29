@@ -26,8 +26,10 @@ STOctopusC::sub_0058AF70(STOctopusC *this,short param_1,short param_2,short para
   iVar5 = (int)param_3 - (int)this->field_0045;
   this->field_026D = iVar4;
   this->field_0271 = iVar5;
+
   iVar2 = FUN_006acf0d(0,0,0,iVar3,iVar4,iVar5);
   this->field_0239 = iVar2;
+
   local_EAX_118 = FUN_006acf0d(0,0,0,this->field_0269,this->field_026D,0);
   SVar1 = this->field_02A5;
   this->field_023D = local_EAX_118;

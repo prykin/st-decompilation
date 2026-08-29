@@ -39,7 +39,9 @@ int FUN_006ae3b0(int param_1,int param_2,int param_3,int param_4,int param_5,int
   local_20 = 0;
   local_24 = 0;
   local_30 = param_8;
+
   uVar5 = FUN_006a6360(param_5,param_6,param_7,param_8,param_9,param_10);
+
   local_3c = FUN_006a6320(uVar5);
   local_28 = local_3c;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -53,7 +55,9 @@ int FUN_006ae3b0(int param_1,int param_2,int param_3,int param_4,int param_5,int
     do {
       local_38 = 30000;
       iVar1 = param_1 + (param_9 * param_2 + local_30 + param_10 * iVar4) * 2;
+
       uVar5 = FUN_006a6360(param_5,param_6,param_7,local_30,param_9,param_10);
+
       uVar5 = FUN_006a6320(uVar5);
       auto param_8_after_write = 0; /* compiler stack-slot lifetime split */
       local_18 = (ushort *)&SHORT_007ed576;
@@ -136,6 +140,7 @@ joined_r0x006ae66d:
       *(short *)(local_2c + -3) = (short)local_1c;
       *(short *)((int)local_2c + -10) = (short)local_20;
       *(short *)puVar10 = (short)local_24;
+
       uVar5 = FUN_006a6320(local_3c);
       STField<short>(local_2c,2) = (short)uVar5;
       param_9 = local_20;

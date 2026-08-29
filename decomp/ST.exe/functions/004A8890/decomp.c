@@ -13,7 +13,8 @@ STGroupBoatC * __cdecl CreateSTGroupBoat(void)
 {
   STGroupBoatC *pSVar1;
 
-  pSVar1 = (STGroupBoatC *)FUN_006b04d0(0x312);
+  /* ST_CALLSITE[004A8895]: CALL 0x006b04d0; direct=006B04D0 FUN_006b04d0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STGroupBoatC; signature=__stdcall;pointer:/STGroupBoatC;/uint */
+  pSVar1 = FUN_006b04d0(0x312);
   if (pSVar1 != nullptr) {
     pSVar1 = STGroupBoatC::STGroupBoatC(pSVar1);
     return pSVar1;

@@ -4,6 +4,7 @@ function_address	status	detail
 00423EC0	disabled	already_typed
 00430A90	disabled	already_typed
 0044EE30	disabled	already_typed
+00495750	disabled	already_typed
 00495980	disabled	already_typed
 00497E00	disabled	already_typed
 004A8920	disabled	already_typed
@@ -75,8 +76,10 @@ function_address	status	detail
 005F27C0	disabled	already_typed
 005F5F20	disabled	already_typed
 005FB640	disabled	already_typed
+005FD3A0	disabled	already_typed
 00601F80	disabled	already_typed
 00603740	disabled	already_typed
+00608E90	disabled	already_typed
 00617640	disabled	already_typed
 00618C00	disabled	already_typed
 0061D190	disabled	already_typed
@@ -86,6 +89,8 @@ function_address	status	detail
 0062CCA0	disabled	already_typed
 0062E740	disabled	already_typed
 00630430	disabled	already_typed
+00638CA0	disabled	already_typed
+00639C90	disabled	already_typed
 006406D0	disabled	already_typed
 006461E0	disabled	already_typed
 00648030	disabled	already_typed
