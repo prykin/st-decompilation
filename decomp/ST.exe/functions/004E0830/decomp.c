@@ -44,7 +44,7 @@ undefined4 __fastcall FUN_004e0830(TLOBaseTy *param_1)
   int uVar10;
   TLOBaseTyVTable *pTVar10;
   int iVar7;
-  uint uVar11;
+  int uVar11;
   uint uVar12;
   STResourceC *this;
   short sVar13;
@@ -347,7 +347,7 @@ switchD_004e0aad_default:
     iVar7 = thunk_FUN_004e4180((int)param_1->field_0024);
 
     uVar11 = thunk_FUN_004e41c0((int)param_1->field_0024);
-    if (((int)uVar11 < iVar7) &&
+    if ((uVar11 < iVar7) &&
        (param_1->field_04E0[0x12] + param_1->field_04E0[0x11] <= g_playSystem_00802A38->field_00E4))
     {
       param_1->field_04E0[0x11] = g_playSystem_00802A38->field_00E4;

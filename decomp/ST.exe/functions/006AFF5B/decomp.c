@@ -9,8 +9,8 @@
 uint __cdecl FUN_006aff5b(int param_1)
 
 {
-  uint local_EAX_38;
-  uint uVar1;
+  int local_EAX_38;
+  int uVar1;
   uint uVar2;
 
   uVar2 = param_1 % 0x168;

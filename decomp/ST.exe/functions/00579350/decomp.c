@@ -9,8 +9,8 @@ void __fastcall FUN_00579350(RecoveredRecordView_00579350_91ECCCD1 *param_1)
   uint uVar3;
   int iVar1;
   int iVar4;
-  uint local_EAX_315;
-  uint uVar2;
+  int local_EAX_315;
+  int uVar2;
   short sVar5;
 
   sVar5 = param_1->field_0041;
@@ -58,7 +58,7 @@ void __fastcall FUN_00579350(RecoveredRecordView_00579350_91ECCCD1 *param_1)
 
     uVar2 = thunk_FUN_00496250((int)param_1->field_0041,(int)param_1->field_0043,
                                (int)param_1->field_0045);
-    if ((int)uVar2 < 0) {
+    if (uVar2 < 0) {
       if (0x81 < param_1->field_0045) {
         param_1->field_0045 = param_1->field_0045 + -1;
       }
@@ -72,7 +72,7 @@ void __fastcall FUN_00579350(RecoveredRecordView_00579350_91ECCCD1 *param_1)
     local_EAX_315 =
          thunk_FUN_00496250((int)param_1->field_0041,(int)param_1->field_0043,
                             (int)param_1->field_0045);
-    if ((int)local_EAX_315 < 0) {
+    if (local_EAX_315 < 0) {
       if (0x27 < param_1->field_0045) {
         param_1->field_0045 = param_1->field_0045 + -2;
       }

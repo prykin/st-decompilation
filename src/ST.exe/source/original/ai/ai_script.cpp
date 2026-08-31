@@ -473,7 +473,7 @@ int __cdecl st::fn_00683780(int *param_1,RecoveredGlobalRecordView_00848A14 *par
       local_c = (char)uVar2;
       sStack_b = (short)((uint)uVar2 >> 8);
       uStack_9 = (undefined1)((uint)uVar2 >> 0x18);
-      uStack_8 = (undefined1)(st::machine_word_boundary_cast<uint>(((undefined1 *)puVar3)[1]));
+      uStack_8 = ((undefined1 *)puVar3)[1];
       if ((local_c == '\x06') || (local_c == '\x03')) {
         /* ST_CALLSITE[006837E8]: CALL 0x0040353a; direct=0040353A thunk_FUN_0067ee40; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/byte; signature=__cdecl;pointer:/byte;/int */
         pbVar4 = st::pointer_boundary_cast<byte *>(st::fn_0040353A((int)sStack_b));
@@ -574,6 +574,8 @@ int __cdecl
 st::fn_006839D0(RecoveredRecord_006839D0_1EDE16BA *param_1,int *param_2,ushort param_3,int param_4)
 
 {
+  int param_4_after_write;
+
   char cVar1;
   int iVar2;
   int iVar3;
@@ -598,8 +600,8 @@ st::fn_006839D0(RecoveredRecord_006839D0_1EDE16BA *param_1,int *param_2,ushort p
               (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x3e5);
   }
   iVar2 = param_2[1];
-  auto param_4_after_write = 0; /* compiler stack-slot lifetime split */
-  if (0 < (int)(&DAT_00813bc4)[DAT_008488b0 * 0xac5]) {
+  param_4_after_write = 0; /* compiler stack-slot lifetime split */
+  if (0 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00813bc4)[DAT_008488b0 * 0xac5]))) {
     do {
       cVar1 = (&DAT_00813bc8)[param_4_after_write + DAT_008488b0 * 0x2b14];
       switch(cVar1) {
@@ -632,7 +634,7 @@ st::fn_006839D0(RecoveredRecord_006839D0_1EDE16BA *param_1,int *param_2,ushort p
                   (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x3f6);
       }
       param_4_after_write = param_4_after_write + 1;
-    } while (param_4_after_write < (int)(&DAT_00813bc4)[DAT_008488b0 * 0xac5]);
+    } while (param_4_after_write < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00813bc4)[DAT_008488b0 * 0xac5])));
   }
   local_17 = param_3;
   local_18 = 0xb;
@@ -680,9 +682,9 @@ uint * st::fn_00683C70(LPCSTR lpFileName,RecoveredRecordView_00683C70_9F6EAF4E *
   char cVar2;
   int local_EAX_119;
   int iVar2;
-  uint uVar8;
-  uint local_EAX_619;
-  uint local_EAX_667;
+  int uVar8;
+  int local_EAX_619;
+  int local_EAX_667;
   byte *pbVar3_mg0;
   int local_EAX_907;
   int local_EAX_1897;
@@ -960,19 +962,19 @@ uint * st::fn_00683C70(LPCSTR lpFileName,RecoveredRecordView_00683C70_9F6EAF4E *
       }
 
       uVar8 = st::fn_00404B1F(st::mutable_c_string("_env_var0"),param_2->field_030C);
-      if ((int)uVar8 < 0) {
+      if (uVar8 < 0) {
         st::fn_006A5E40
                   (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x46b);
       }
 
       local_EAX_619 = st::fn_00404B1F(st::mutable_c_string("_env_var1"),param_2->field_0310);
-      if ((int)local_EAX_619 < 0) {
+      if (local_EAX_619 < 0) {
         st::fn_006A5E40
                   (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x46c);
       }
 
       local_EAX_667 = st::fn_00404B1F(st::mutable_c_string("_env_var2"),param_2->field_0314);
-      if ((int)local_EAX_667 < 0) {
+      if (local_EAX_667 < 0) {
         st::fn_006A5E40
                   (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0x46d);
       }
@@ -1138,7 +1140,7 @@ cf_common_join_0068A687:
       switch((&DAT_00811a90)[DAT_008488b0 * 0xac5]) {
       case 0:
         if (DAT_007d2d18 == 0x3b7) {
-          if ((int)(&DAT_0081458c)[DAT_008488b0 * 0xac5] < 1) {
+          if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_0081458c)[DAT_008488b0 * 0xac5])) < 1) {
             st::fn_006A5E40
                       (-0x6e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x494);
@@ -1166,7 +1168,7 @@ LAB_006842d6:
           st::fn_00403B98(pvVar14,bVar24);
         }
         else if (DAT_007d2d18 == 0x3b8) {
-          if ((int)(&DAT_0081458c)[DAT_008488b0 * 0xac5] < 1) {
+          if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_0081458c)[DAT_008488b0 * 0xac5])) < 1) {
             st::fn_006A5E40
                       (-0x6e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x49f);
@@ -3015,7 +3017,7 @@ cf_common_join_006895D5:
           }
           if (0x42 < iVar8) {
             if (iVar8 == 0x3b6) {
-              if ((iVar7 < 1) || ((int)(&DAT_00811a78)[iVar7 * 0xac5] < 1)) {
+              if ((iVar7 < 1) || (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811a78)[iVar7 * 0xac5])) < 1)) {
                 st::fn_006A5E40
                           (-0x6e,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp")
                            ,0x66c);
@@ -3354,11 +3356,9 @@ cf_common_join_006895D5:
                       (-0x8c,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),
                        0x70e);
           }
-          DAT_008489c8 = st::machine_word_boundary_cast<undefined4>((AllocationRecord_0065CD10 *)
-
-                         st::fn_0040506A((&PTR_00811aec)[DAT_008488b0 * 0xac5],
+          DAT_008489c8 = st::machine_word_boundary_cast<undefined4>(STPointerBoundaryCast<AllocationRecord_0065CD10 *>(st::fn_0040506A((&PTR_00811aec)[DAT_008488b0 * 0xac5],
                                             *(undefined2 *)(&DAT_00811c80 + DAT_008488b0 * 0xac5),
-                                            *(undefined2 *)(&DAT_00811c84 + DAT_008488b0 * 0xac5)));
+                                            *(undefined2 *)(&DAT_00811c84 + DAT_008488b0 * 0xac5))));
           DAT_008488b0 = DAT_008488b0 + -1;
           goto switchD_006841b6_default;
         case 0x41b:
@@ -3387,7 +3387,7 @@ cf_common_join_006895D5:
             local_e4 = st::pointer_boundary_cast<AllocationRecord_0065CD10 *>(DAT_008489c8);
             local_e0 = 0;
             local_dc = 0;
-            local_d8 = *(uint *)&DAT_008489c8->field_0x14;
+            local_d8 = STField<uint>(st::storage_bit_cast<AllocationRecord_0065CD10 *>(DAT_008489c8),0x14);
 
             st::fn_006AE1C0
                       (g_allocationRecord_0067D3B0_008489B8->field_00C2,&local_e4);
@@ -3431,7 +3431,7 @@ cf_common_join_006895D5:
             local_a8 = (undefined1 *)((int)&g_allocationRecord_006684E0_008489C4[-1].field_023F + 1);
           }
 
-          st::fn_006AE1C0(*(DArrayTy **)&DAT_008489c8->field_0x85,&local_ac);
+          st::fn_006AE1C0(STField<DArrayTy *>(st::storage_bit_cast<AllocationRecord_0065CD10 *>(DAT_008489c8),0x85),&local_ac);
           g_allocationRecord_006684E0_008489C4 = nullptr;
           DAT_008488b0 = DAT_008488b0 + -1;
         }
@@ -5088,9 +5088,9 @@ st::fn_0068CEC0(LPCSTR lpFileName,RecoveredRecordView_00683C70_9F6EAF4E *param_2
   int local_EAX_114;
   int iVar3;
   int iVar4;
-  uint uVar7;
-  uint local_EAX_499;
-  uint local_EAX_547;
+  int uVar7;
+  int local_EAX_499;
+  int local_EAX_547;
   byte *pbVar5_mg0;
   DArrayTy *pDVar5;
   int iVar6;
@@ -5198,19 +5198,19 @@ st::fn_0068CEC0(LPCSTR lpFileName,RecoveredRecordView_00683C70_9F6EAF4E *param_2
       }
 
       uVar7 = st::fn_00404B1F(st::mutable_c_string("_env_var0"),param_2->field_030C);
-      if ((int)uVar7 < 0) {
+      if (uVar7 < 0) {
         st::fn_006A5E40
                   (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa59);
       }
 
       local_EAX_499 = st::fn_00404B1F(st::mutable_c_string("_env_var1"),param_2->field_0310);
-      if ((int)local_EAX_499 < 0) {
+      if (local_EAX_499 < 0) {
         st::fn_006A5E40
                   (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa5a);
       }
 
       local_EAX_547 = st::fn_00404B1F(st::mutable_c_string("_env_var2"),param_2->field_0314);
-      if ((int)local_EAX_547 < 0) {
+      if (local_EAX_547 < 0) {
         st::fn_006A5E40
                   (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_script.cpp"),0xa5b);
       }

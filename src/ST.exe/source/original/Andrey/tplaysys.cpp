@@ -1594,8 +1594,9 @@ undefined4 * __thiscall st::fn_0054F1D0(STPlaySystemC *this)
   int local_EAX_1257;
   int iVar8;
   int local_EAX_1662;
-  char *local_EAX_1830;
-  char *local_EAX_1962;
+  PopUpTy *local_EAX_1830;
+  int uVar11_mg8;
+  PopUpTy *local_EAX_1962;
   int local_EAX_2157;
   int local_EAX_2233;
   int iVar9;
@@ -2025,12 +2026,12 @@ cf_common_exit_0054F76E:
         st::fn_006B6500(g_int_00811764,DAT_0080733c);
         if (pSVar21->field_00BB < 5) {
 
-          uVar11 = st::fn_006E51B0(reinterpret_cast<STAppC *>(&DAT_00807620));
-          (&pSVar21->field_00A7)[pSVar21->field_00BB] = uVar11;
+          uVar11_mg8 = st::fn_006E51B0(reinterpret_cast<STAppC *>(&DAT_00807620));
+          (&pSVar21->field_00A7)[pSVar21->field_00BB] = uVar11_mg8;
           bVar7 = pSVar21->field_00BB + 1;
           pSVar21->field_00BB = bVar7;
           g_currentExceptionFrame = local_78.previous;
-          return (undefined4 *)STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(uVar11)), (uint8_t)(bVar7));
+          return (undefined4 *)STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(uVar11_mg8)), (uint8_t)(bVar7));
         }
         pSVar21->field_00A7 = pSVar21->field_00AB;
         pSVar21->field_00AB = pSVar21->field_00AF;
@@ -2052,9 +2053,9 @@ cf_common_exit_0054F76E:
         if (g_popUp_008016D8 != nullptr) {
           uVar11 = 9;
           /* ST_CALLSITE[0054F8F6]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/PopUpTy; signature=__stdcall;pointer:/PopUpTy;/WinDef.h/UINT;/WinDef.h/HINSTANCE */
-          local_EAX_1830 = reinterpret_cast<char *>(st::fn_006B0140(17000,g_hINSTANCE_00807618));
+          local_EAX_1830 = st::pointer_boundary_cast<PopUpTy *>(st::fn_006B0140(17000,g_hINSTANCE_00807618));
           /* ST_CALLSITE[0054F902]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/undefined4; signature=__thiscall;pointer:/undefined4;pointer:/PopUpTy;pointer:/char;/uint */
-          puVar19 = st::pointer_boundary_cast<uint *>(st::fn_004014D8(g_popUp_008016D8,local_EAX_1830,uVar11));
+          puVar19 = st::pointer_boundary_cast<uint *>(st::fn_004014D8(g_popUp_008016D8,reinterpret_cast<char *>(local_EAX_1830),uVar11));
         }
         pSVar21->field_00BB = 0;
         g_currentExceptionFrame = local_78.previous;
@@ -2067,9 +2068,9 @@ cf_common_exit_0054F76E:
   if ((DAT_0080735e != '\0') && (g_popUp_008016D8 != nullptr)) {
     uVar11 = 8;
     /* ST_CALLSITE[0054F97A]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/PopUpTy; signature=__stdcall;pointer:/PopUpTy;/WinDef.h/UINT;/WinDef.h/HINSTANCE */
-    local_EAX_1962 = reinterpret_cast<char *>(st::fn_006B0140(0x426c,g_hINSTANCE_00807618));
+    local_EAX_1962 = st::pointer_boundary_cast<PopUpTy *>(st::fn_006B0140(0x426c,g_hINSTANCE_00807618));
     /* ST_CALLSITE[0054F986]: CALL 0x004014d8; direct=004014D8 PopUpTy::sub_0052D320 */
-    st::fn_004014D8(g_popUp_008016D8,local_EAX_1962,uVar11);
+    st::fn_004014D8(g_popUp_008016D8,reinterpret_cast<char *>(local_EAX_1962),uVar11);
   }
 LAB_0054f98b:
   local_10 = 1;

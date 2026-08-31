@@ -1561,9 +1561,7 @@ int __cdecl st::fn_0054CA10(int *param_1,undefined4 param_2,cMf32 *param_3,int p
     cVar1 = *pcVar6;
     pcVar6 = pcVar6 + 1;
   } while (cVar1 != '\0');
-  puVar3 = (undefined4 *)
-
-           st::fn_006B9770((byte *)((~uVar5 - 1) + param_4),nullptr,10);
+  puVar3 = STPointerBoundaryCast<undefined4 *>(st::fn_006B9770((byte *)((~uVar5 - 1) + param_4),nullptr,10));
   DAT_00802a3c = DAT_00802a3c + 1;
   if (g_cLoading_00802A58 != nullptr) {
     /* ST_CALLSITE[0054CA9C]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */

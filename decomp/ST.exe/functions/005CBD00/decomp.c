@@ -65,10 +65,8 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
 
     uVar6 = FUN_006b4fe0(puVar1);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    pRVar4 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-             FUN_006b50c0(0xfa,0x16,(uint)*(ushort *)(this_00->field_005D + 0xe),uVar6,
-                          (undefined4 *)puVar13,iVar14);
+    pRVar4 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(FUN_006b50c0(0xfa,0x16,(uint)*(ushort *)(this_00->field_005D + 0xe),uVar6,
+                          (undefined4 *)puVar13,iVar14));
     this_00->field_2204 = (AnonPointee_SettMapMTy_2204 *)pRVar4;
     uVar10 = *(uint *)&pRVar4[1].field_0x4;
     if (uVar10 == 0) {
@@ -140,9 +138,8 @@ void __thiscall SettMapMTy::InitSettMap(SettMapMTy *this,char param_1)
         cVar12 = '\x01';
         bVar11 = 0x10;
         iVar14 = 1;
-        pRVar7 = (RecoveredRecord_005AACB0_2533FD69 *)
-                 /* ST_CALLSITE[005CBFD2]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; source view only; no Ghidra override */
-                 Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,200,0x1f1,400,0x62);
+        pRVar7 = /* ST_CALLSITE[005CBFD2]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; source view only; no Ghidra override */
+        STPointerBoundaryCast<RecoveredRecord_005AACB0_2533FD69 *>(Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,200,0x1f1,400,0x62));
         /* ST_CALLSITE[005CBFE9]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
         uVar9 = HoloTy::Init(this_00->field_21F8,CASE_1,200,0x1f1,pRVar7,iVar14,bVar11,cVar12,uVar10
                             );

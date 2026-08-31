@@ -1,7 +1,7 @@
 ST utility-function semantics
 
-Rules: 18
-Verified: 18
+Rules: 19
+Verified: 19
 
 0072DA40 __alloca_probe: apply - body pattern verified
 006AB060 FreeAndNull: apply - body pattern verified
@@ -18,6 +18,7 @@ Verified: 18
 006B0C70 DArrayRemoveAt: apply - body pattern verified
 006B1190 DArrayGetNext: apply - body pattern verified
 006CEA60 CopyRows: apply - body pattern verified
+006F2D90 mfAObjLoad: apply - body pattern verified
 006AAC10 MemAllocClear: apply - body pattern verified
 006AAC70 MemAlloc: apply - body pattern verified
 006ACF50 MemRealloc: apply - body pattern verified

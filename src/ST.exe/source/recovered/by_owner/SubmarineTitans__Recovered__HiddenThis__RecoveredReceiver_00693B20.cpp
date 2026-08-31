@@ -108,6 +108,8 @@ st::fn_00693EB0
           (RecoveredReceiver_00693B20 *this,int param_1,int param_2)
 
 {
+  int param_2_after_write;
+
   int iVar1;
   byte uVar2;
   byte uVar3;
@@ -158,7 +160,7 @@ st::fn_00693EB0
   } while (iVar7 < 8);
   iVar7 = param_2 + param_1 * 8;
   iVar1 = param_1 + param_2 * 8;
-  auto param_2_after_write = 8; /* compiler stack-slot lifetime split */
+  param_2_after_write = 8; /* compiler stack-slot lifetime split */
   uVar2 = *(undefined1 *)((int)auStack_1713 + iVar7);
   *(undefined1 *)((int)&this[0x37].field_0004 + iVar1 + 1) = uVar2;
   puVar6 = (undefined1 *)((int)&this[0x37].field_0004 + param_1 + 1);

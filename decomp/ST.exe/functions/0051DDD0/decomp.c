@@ -516,11 +516,9 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
                 bVar24 = true;
               }
               if ((bVar24) && ((int)local_c < this_00->field_0044 + 300)) {
-                local_10 = (undefined4 *)
-
-                           thunk_FUN_00528060(*(Global_sub_00528060_param_1Enum *)
+                local_10 = STPointerBoundaryCast<undefined4 *>(thunk_FUN_00528060(*(Global_sub_00528060_param_1Enum *)
                                                ((int)local_8_mg0 + (uint)uVar21 * 0xd),
-                                              *(char *)((int)local_8_mg0 + (uint)uVar21 * 0xd + 4));
+                                              *(char *)((int)local_8_mg0 + (uint)uVar21 * 0xd + 4)));
                 if (local_10 != (undefined4 *)0x2711) goto LAB_0051e1b2;
                 local_10 = nullptr;
                 break;

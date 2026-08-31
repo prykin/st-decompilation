@@ -855,6 +855,8 @@ uint __fastcall st::fn_0044CE40(STAllPlayersC *param_1)
 byte * st::fn_0044D320(STAllPlayersC *context,Global_sub_0044D320_param_2Enum param_2)
 
 {
+  int param_2_after_write;
+
   short sVar1;
   Global_sub_0044D320_param_2Enum GVar2;
   byte *pbVar3;
@@ -1193,7 +1195,7 @@ LAB_0044d6f8:
     pbVar3[0xb] = 0x18;
   }
 LAB_0044d710:
-  auto param_2_after_write = 0; /* compiler stack-slot lifetime split */
+  param_2_after_write = 0; /* compiler stack-slot lifetime split */
   if (0 < (int)local_10) {
     do {
 
@@ -1558,6 +1560,8 @@ void st::fn_0044E220(void)
 void st::fn_0044E260(STAllPlayersC *context,uint param_2,uint param_3,uint param_4,int *param_5)
 
 {
+  int param_2_after_write;
+
   STGameObjCVTable *pSVar1;
   int *piVar2;
   int iVar3;
@@ -1618,7 +1622,7 @@ void st::fn_0044E260(STAllPlayersC *context,uint param_2,uint param_3,uint param
         local_8 = 10000;
         local_c = 0;
         local_14 = static_cast<STGameObjC *>(local_18->data);
-        auto param_2_after_write = 10000; /* compiler stack-slot lifetime split */
+        param_2_after_write = 10000; /* compiler stack-slot lifetime split */
         local_10 = 0;
         uVar12 = param_3_after_write;
         pSVar13 = local_14;

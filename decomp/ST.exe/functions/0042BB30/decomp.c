@@ -6,7 +6,14 @@
    STAllPlayersC::AddObjToTmp
    [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
    unmasked_dword_reads=0; evidence=0042BC1A MOVSX ECX,byte ptr [EBP + 0x14] | 0042BC42 MOVSX
-   EDX,byte ptr [EBP + 0x14] */
+   EDX,byte ptr [EBP + 0x14]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:4: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:4: parameter=/char
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 undefined4 __thiscall
 STAllPlayersC::AddObjToTmp

@@ -21,8 +21,8 @@ STOctopusC::sub_0058B190
   int iVar3;
   int iVar4;
   int iVar5;
-  uint uVar11;
-  uint uVar10;
+  int uVar11;
+  int uVar10;
   int iVar6;
   int iVar7;
   short sVar8;
@@ -194,16 +194,16 @@ LAB_0058b499:
       iVar3 = STBiasedDiv16(iVar3, 200); /* exact signed 16-bit grid-index division */
 
       uVar10 = thunk_FUN_00496250(iVar6,iVar5,iVar3);
-      if (((int)uVar11 < 0) && ((int)uVar10 < 0)) {
+      if ((uVar11 < 0) && (uVar10 < 0)) {
         if ((local_8 & 1) != 0) {
           local_8 = -local_8;
         }
       }
       else {
-        if ((local_8 != 0) && (-1 < (int)uVar10)) {
+        if ((local_8 != 0) && (-1 < uVar10)) {
           local_8 = -local_8;
         }
-        if (((int)local_8 < 0) && (-1 < (int)uVar11)) {
+        if (((int)local_8 < 0) && (-1 < uVar11)) {
           local_8 = -local_8;
         }
       }

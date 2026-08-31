@@ -206,7 +206,7 @@ joined_r0x005f19be:
   }
 LAB_005f1c4c:
   /* ST_CALLSITE[005F1C66]: CALL 0x00401465; direct=00401465 STManBasisC::sub_005F14B0 */
-  iVar7 = st::fn_00401465(local_14,*psVar6,psVar6[1],psVar6[2],static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)psVar6)[3])),
+  iVar7 = st::fn_00401465(local_14,*psVar6,psVar6[1],psVar6[2],((byte *)psVar6)[3],
                        STField<short>(psVar6,7));
   pVVar4 = g_visibleClass_00802A88;
   if (-1 < iVar7) {
@@ -386,7 +386,7 @@ int __thiscall st::fn_005F21D0(STManBasisC *this)
         if ((uVar6 < pSVar2->count) &&
            (psVar5 = (short *)((int)&pSVar2->data->field_0000 + pSVar2->elementSize * uVar6),
            psVar5 != nullptr)) {
-          puVar4 = st::fn_0040335F((uint)((byte *)psVar5)[3],(int)STField<short>(psVar5,7),
+          puVar4 = st::fn_0040335F(st::storage_bit_cast<uint>(static_cast<uint32_t>(((byte *)psVar5)[3])),(int)STField<short>(psVar5,7),
                                       (short)(*psVar5 * 0xc9 + 100),
                                       (short)(psVar5[1] * 0xc9 + 100),
                                       (short)(psVar5[2] * 200 + 100));
@@ -405,7 +405,7 @@ int __thiscall st::fn_005F21D0(STManBasisC *this)
         if (((uVar6 < pDVar3->count) &&
             (psVar5 = DArrayAt<short>(pDVar3, uVar6),
             psVar5 != nullptr)) && (*(int *)(psVar5 + 0xc) != -1)) {
-          st::fn_0040169F((uint)((byte *)psVar5)[3],(int)STField<short>(psVar5,7),0,
+          st::fn_0040169F(st::storage_bit_cast<uint>(static_cast<uint32_t>(((byte *)psVar5)[3])),(int)STField<short>(psVar5,7),0,
                              (short)(*psVar5 * 0xc9 + 100),(short)(psVar5[1] * 0xc9 + 100)
                              ,(short)(psVar5[2] * 200 + 100),uVar6);
         }

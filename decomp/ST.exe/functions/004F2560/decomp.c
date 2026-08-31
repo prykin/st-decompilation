@@ -17,9 +17,9 @@ void __thiscall CPanelTy::PaintWeap(CPanelTy *this,int param_1)
   Global_sub_005259B0_param_1Enum GVar3;
   CPanelTy *pCVar5;
   int iVar6;
-  uint local_EAX_218;
+  int local_EAX_218;
   int iVar7;
-  uint uVar7;
+  int uVar7;
   char *pcVar7_mg0;
   int iVar16;
   int iVar8;

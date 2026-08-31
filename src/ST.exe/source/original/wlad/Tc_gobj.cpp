@@ -873,10 +873,10 @@ int __thiscall st::fn_0041AF40(STGameObjC *this,STMessage *message)
           pAVar25 = (AnonPointee_STGameObjC_01AD *)((int)&pAVar25->field_0000 + 1);
         } while (bVar31);
         if (!bVar31) {
-          pAVar4->field_0000 = st::machine_word_boundary_cast<undefined4>(((AnonPointee_STGameObjC_01B1 *)local_8)->field_0000);
-          pAVar4->field_0004 = st::machine_word_boundary_cast<undefined4>(((AnonPointee_STGameObjC_01B1 *)local_8)->field_0004);
-          pAVar4->field_0008 = (undefined2)(st::machine_word_boundary_cast<uint>(((AnonPointee_STGameObjC_01B1 *)local_8)->field_0008));
-          pAVar4->field_000A = (undefined1)(st::machine_word_boundary_cast<uint>(((AnonPointee_STGameObjC_01B1 *)local_8)->field_000A));
+          pAVar4->field_0000 = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_0000;
+          pAVar4->field_0004 = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_0004;
+          pAVar4->field_0008 = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_0008;
+          pAVar4->field_000A = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_000A;
           st::fn_00404C55(CASE_E,0);
         }
       }
@@ -1200,10 +1200,10 @@ LAB_0041b308:
               pAVar25 = (AnonPointee_STGameObjC_01AD *)((int)&pAVar25->field_0000 + 1);
             } while (bVar31);
             if (!bVar31) {
-              pAVar4->field_0000 = st::machine_word_boundary_cast<undefined4>(((AnonPointee_STGameObjC_01B1 *)local_8)->field_0000);
-              pAVar4->field_0004 = st::machine_word_boundary_cast<undefined4>(((AnonPointee_STGameObjC_01B1 *)local_8)->field_0004);
-              pAVar4->field_0008 = (undefined2)(st::machine_word_boundary_cast<uint>(((AnonPointee_STGameObjC_01B1 *)local_8)->field_0008));
-              pAVar4->field_000A = (undefined1)(st::machine_word_boundary_cast<uint>(((AnonPointee_STGameObjC_01B1 *)local_8)->field_000A));
+              pAVar4->field_0000 = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_0000;
+              pAVar4->field_0004 = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_0004;
+              pAVar4->field_0008 = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_0008;
+              pAVar4->field_000A = ((AnonPointee_STGameObjC_01B1 *)local_8)->field_000A;
               st::fn_00404C55(CASE_E,0);
             }
           }

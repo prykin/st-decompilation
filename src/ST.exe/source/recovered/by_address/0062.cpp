@@ -942,6 +942,7 @@ undefined4 st::fn_006263B0(Global_sub_006263B0_param_1Enum param_1)
 undefined4 __thiscall st::fn_006264D0(void *this,int *param_1,int param_2)
 
 {
+  int param_2_after_write;
   uint32_t _local_44;
   uint32_t _local_50;
 
@@ -1031,7 +1032,7 @@ undefined4 __thiscall st::fn_006264D0(void *this,int *param_1,int param_2)
   if (local_10 < 1) {
     local_10 = 1;
   }
-  auto param_2_after_write = 1; /* compiler stack-slot lifetime split */
+  param_2_after_write = 1; /* compiler stack-slot lifetime split */
   piVar9 = local_18;
   local_1c = (short)local_20;
   local_14 = iVar14;
@@ -1089,7 +1090,7 @@ undefined4 __thiscall st::fn_006264D0(void *this,int *param_1,int param_2)
                ((g_playSystem_00802A38 == nullptr ||
                 (g_bulkInitializedRecords_008087C7[param_1[9]].field_0022 < 8)))) {
               bVar3 = *(byte *)&this_00[1].vtable;
-              bVar1 = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)piVar9)[9]));
+              bVar1 = ((byte *)piVar9)[9];
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
               _local_50 = CONCAT31(uStack_4f,bVar3);
               /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

@@ -9,7 +9,7 @@ FUN_00693b20(void *param_1,int param_2,undefined1 param_3,undefined4 param_4,und
   uint *puVar1;
   char cVar2;
   int iVar3;
-  uint uVar4;
+  int uVar4;
   uint uVar5;
   byte *puVar7;
   char *pcVar8;
@@ -34,7 +34,7 @@ FUN_00693b20(void *param_1,int param_2,undefined1 param_3,undefined4 param_4,und
   *(undefined4 *)((int)param_1 + param_2 * 0x51 + 0x39) = param_5;
   *(undefined4 *)((int)param_1 + param_2 * 0x51 + 0x3d) = param_6;
   *(undefined1 *)puVar1 = param_7;
-  if (-1 < (int)uVar4) {
+  if (-1 < uVar4) {
     *(char *)((int)param_1 + param_2 * 0x51 + 0x34) = (char)uVar4;
   }
   if (param_8 != nullptr) {

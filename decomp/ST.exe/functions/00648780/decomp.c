@@ -27,7 +27,7 @@ undefined4 * __cdecl LoadBossEdit(int param_1,char *param_2)
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_boss_d.cpp",0x7f);
     }
-    /* ST_CALLSITE[006487E3]: CALL 0x006f2d90; direct=006F2D90 Library::Ourlib::MFAOBJ::mfAObjLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_00648530; signature=__cdecl;pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_00648530;pointer:/cMf32;pointer:/char;/byte;/int */
+    /* ST_CALLSITE[006487E3]: CALL 0x006f2d90; direct=006F2D90 Library::Ourlib::MFAOBJ::mfAObjLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_00648530; signature=__cdecl;pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_00648530;pointer:/cMf32;pointer:/char;/byte;/int [STUtilityFunctionApplier] heterogeneous_payload_consumer_view; target=006F2D90; signature=__cdecl;pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_00648530;pointer:/cMf32;pointer:/char;/byte;/int */
     local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad((cMf32 *)param_1,param_2,1,0);
     if (local_8 != nullptr) {
       local_c = thunk_FUN_00648530(local_8);

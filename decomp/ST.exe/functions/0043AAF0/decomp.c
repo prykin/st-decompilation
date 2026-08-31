@@ -10,7 +10,14 @@
    0043AAF0 @ 0043B82D | 0043AE40 -> 0043AAF0 @ 0043BAA0
    [STAbiConsistencyApplier] stack_parameter_width: parameter=/short Evidence: entry-use
    width=/short; unmasked_dword_reads=0; evidence=0043AC63 MOVSX EDX,word ptr [EBP + 0x8] | 0043AC7B
-   MOVSX EDX,word ptr [EBP + 0x8] | 0043AD55 MOVSX ECX,word ptr [EBP + 0x8] */
+   MOVSX EDX,word ptr [EBP + 0x8] | 0043AD55 MOVSX ECX,word ptr [EBP + 0x8]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:0: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:0: parameter=/short
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 undefined4
 STAllPlayersC::GetCamPoint

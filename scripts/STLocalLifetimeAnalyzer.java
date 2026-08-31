@@ -117,6 +117,7 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             }
         }
         analyzeParallel(candidates);
+        collectPersistentCallResultViewRepairs(candidates);
         collectPersistentReceiverCallReturnRepairs(candidates);
 
         rows.sort(Comparator.comparing((Row row) -> row.functionAddress)
@@ -1144,6 +1145,79 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         }
     }
 
+    /**
+     * Revalidate durable locals created by an older lifetime pass against the
+     * exact address-local return ABI currently installed at their CALL.  This
+     * is the persistent counterpart of collectCallReturn(): once a merge group
+     * has been split, Ghidra may no longer expose that Listing local through
+     * the ordinary local-symbol iterator even though it still renders it and
+     * keeps its script marker.  The marker supplies only stable storage/group
+     * identity; the current call override supplies the type proof.
+     */
+    private void collectPersistentCallResultViewRepairs(
+            List<Function> functions) {
+        Pattern marker = Pattern.compile(
+            "\\[STLocalLifetimeApplier\\]\\s+(?:split merge group|" +
+            "typed local lifetime)\\s+(\\d+)\\s+at\\s+" +
+            "([0-9A-Fa-f]{8});\\s*type=([^;\\s]+)");
+        Set<String> existing = new HashSet<>();
+        for (Row row : rows)
+            existing.add(row.functionAddress + "|" + row.originalName + "|" +
+                row.mergeGroup + "|" + row.anchor.address);
+        for (Function function : functions) {
+            for (Variable variable : function.getLocalVariables()) {
+                if (variable.getSource() == SourceType.USER_DEFINED ||
+                        variable.getSource() == SourceType.IMPORTED) continue;
+                java.util.regex.Matcher match = marker.matcher(
+                    text(variable.getComment()));
+                while (match.find()) {
+                    // A durable variable created by splitOutMergeGroup owns a
+                    // fresh one-group HighVariable on subsequent decompiles.
+                    // Its name/comment retain the historical parent group for
+                    // provenance, but the current anchor group is necessarily
+                    // zero.  Reusing the historical number makes every repair
+                    // except the old group zero fail the applier's fresh
+                    // p-code baseline check.
+                    int group = 0;
+                    Address address = currentProgram.getAddressFactory()
+                        .getAddress(match.group(2));
+                    Instruction call = address == null ? null :
+                        currentProgram.getListing().getInstructionAt(address);
+                    if (call == null || !"CALL".equalsIgnoreCase(
+                            call.getMnemonicString())) continue;
+                    DataType proposed = exactScriptCallReturnType(function,
+                        address);
+                    if (!usableType(proposed, variable.getLength()) ||
+                            equivalentLifetimeType(proposed,
+                                variable.getDataType())) continue;
+                    Function direct = directCalledFunction(call);
+                    Function resolved = resolveThunk(direct);
+                    if (resolved == null) resolved = direct;
+                    String functionAddress = addr(function.getEntryPoint());
+                    String callAddress = addr(address);
+                    String key = functionAddress + "|" + variable.getName() +
+                        "|" + group + "|" + callAddress;
+                    if (!existing.add(key)) continue;
+                    String specification = typeSpecification(proposed);
+                    Evidence anchor = new Evidence(callAddress, 0,
+                        "call_return", -1,
+                        direct == null ? "" : addr(direct.getEntryPoint()),
+                        resolved == null ? "" : addr(resolved.getEntryPoint()),
+                        "USE_SITE_OVERRIDE");
+                    rows.add(new Row(true, function, variable.getName(),
+                        (short)group, 1,
+                        typeSpecification(variable.getDataType()),
+                        variable.getSource().toString(), specification, anchor,
+                        1, "high", "automation-owned persistent call-result " +
+                            "lifetime conflicts with the exact current " +
+                            "address-local return override; prior marker=" +
+                            match.group(3)));
+                    singleGroupProposals++;
+                }
+            }
+        }
+    }
+
     private Function directCalledFunction(Instruction instruction) {
         if (instruction == null) return null;
         for (Address flow : instruction.getFlows()) {
@@ -1277,12 +1351,26 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
 
     private boolean scriptOwnedPersistentLocal(Object highSymbol) {
         try {
-            Variable variable = persistentVariable(highSymbol);
+            Variable variable = symbolVariable(highSymbol);
+            if (variable == null) variable = persistentVariable(highSymbol);
             return variable != null &&
                 text(variable.getComment()).contains(APPLIER_MARKER);
         }
         catch (Exception ignored) {
             return false;
+        }
+    }
+
+    private Variable symbolVariable(Object highSymbol) {
+        try {
+            Symbol symbol = (Symbol)highSymbol.getClass()
+                .getMethod("getSymbol").invoke(highSymbol);
+            Object object = symbol == null ? null : symbol.getObject();
+            return object instanceof Variable variable &&
+                !(variable instanceof Parameter) ? variable : null;
+        }
+        catch (Exception ignored) {
+            return null;
         }
     }
 
@@ -1938,7 +2026,9 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         String comment = text(currentProgram.getListing()
             .getComment(CommentType.EOL, call));
         if (!comment.contains(
-                "[STUtilityFunctionApplier] heterogeneous_payload_consumer_view"))
+                "[STUtilityFunctionApplier] heterogeneous_payload_consumer_view") &&
+                !comment.contains(
+                    "[STCallResultViewApplier] readability_validated"))
             return null;
         Namespace root = HighFunction.findOverrideSpace(caller);
         if (root != null) {

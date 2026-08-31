@@ -23,6 +23,7 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
   uint uVar8;
   uint local_EAX_141;
   int iVar6;
+  uint uVar6;
   int iVar7_mg4;
   int local_EAX_688;
   STGroupBoatC *this_00;
@@ -31,7 +32,7 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
   undefined4 in_EDX;
   int iVar7;
   uint uVar9;
-  uint uVar10;
+  int uVar10_mg0;
   short local_18;
   short local_16;
   short local_14 [2];
@@ -39,7 +40,7 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
   int local_c;
   void *local_8;
 
-  uVar10 = 2;
+  uVar10_mg0 = 2;
   if (this->field_0528 == 0) {
     /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
     iVar7 = STReplaceLowWord((uint32_t)(in_EDX), (uint16_t)(this->field_0512 * 0xc9)) + 100;
@@ -75,7 +76,7 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
         goto LAB_0046d1e2;
       }
       if (iVar7 == 0) {
-        uVar10 = 0;
+        uVar10_mg0 = 0;
         if (((RecoveredRecordView_005EFAE0_855D930D *)this->field_0524 !=
              nullptr) &&
 
@@ -122,28 +123,28 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
     }
     if (this->field_0528 == CASE_4) {
       /* ST_CALLSITE[0046D215]: CALL 0x00403b34; direct=00403B34 STBoatC::sub_0045FF50 */
-      uVar10 = sub_0045FF50(this,2);
-      if (uVar10 == 0xffffffff) {
+      uVar10_mg0 = sub_0045FF50(this,2);
+      if (uVar10_mg0 == 0xffffffff) {
         return 0xffffffff;
       }
-      if (uVar10 == 3) {
+      if (uVar10_mg0 == 3) {
         if (((this->field_00B3 == 0) &&
-            (uVar10 = this->field_00BB - (int)this->field_005B, uVar9 = (int)uVar10 >> 0x1f,
-            (int)((uVar10 ^ uVar9) - uVar9) < 2)) &&
-           ((uVar10 = this->field_00BF - (int)this->field_005D, uVar9 = (int)uVar10 >> 0x1f,
-            (int)((uVar10 ^ uVar9) - uVar9) < 2 &&
-            ((uVar10 = this->field_00C3 - (int)this->field_005F, uVar9 = (int)uVar10 >> 0x1f,
-             (int)((uVar10 ^ uVar9) - uVar9) < 2 &&
+            (uVar6 = this->field_00BB - (int)this->field_005B, uVar9 = (int)uVar6 >> 0x1f,
+            (int)((uVar6 ^ uVar9) - uVar9) < 2)) &&
+           ((uVar6 = this->field_00BF - (int)this->field_005D, uVar9 = (int)uVar6 >> 0x1f,
+            (int)((uVar6 ^ uVar9) - uVar9) < 2 &&
+            ((uVar6 = this->field_00C3 - (int)this->field_005F, uVar9 = (int)uVar6 >> 0x1f,
+             (int)((uVar6 ^ uVar9) - uVar9) < 2 &&
              /* ST_CALLSITE[0046D296]: CALL dword ptr [EDX + 0x18] */
              (iVar7 = this->vfunc_18((short)this->field_00BB,(short)this->field_00BF,
                                  (short)this->field_00C3), iVar7 == 0)))))) {
-          uVar10 = 0;
+          uVar10_mg0 = 0;
         }
         else {
           this_00 = thunk_FUN_0042b760((char)this->field_0024,this->field_0030);
           /* ST_CALLSITE[0046D2C0]: CALL 0x00402b26; direct=00402B26 STGroupBoatC::sub_0040AE40 */
           local_EAX_928 = STGroupBoatC::sub_0040AE40(this_00,(uint)(ushort)this->field_0032,'\0');
-          uVar10 = -(uint)(local_EAX_928 != -4) & 2;
+          uVar10_mg0 = -(uint)(local_EAX_928 != -4) & 2;
         }
       }
     }
@@ -152,7 +153,7 @@ uint __thiscall STBoatC::CreateGame(STBoatC *this,int *param_1)
     if (iVar7 != 0) {
       return 0xffffffff;
     }
-    return uVar10;
+    return uVar10_mg0;
   }
   /* ST_CALLSITE[0046CFA5]: CALL 0x004030b2; direct=004030B2 STBoatC::sub_004176C0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STBoatC; source view only; no Ghidra override */
   uVar8 = sub_004176C0(this,this->field_0522);

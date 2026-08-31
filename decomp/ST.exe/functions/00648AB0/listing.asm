@@ -38,7 +38,8 @@ LAB_00648b07:
 00648B08  6A 01                     PUSH 0x1
 00648B0A  57                        PUSH EDI
 00648B0B  56                        PUSH ESI
-00648B0C  E8 7F A2 0A 00            CALL 0x006f2d90
+LoadStrategData::override::prt_648b0c_8e1779b8:
+00648B0C  E8 7F A2 0A 00            CALL 0x006f2d90  ; [STUtilityFunctionApplier] heterogeneous_payload_consumer_view; target=006F2D90; signature=__cdecl;pointer:/ushort;pointer:/cMf32;pointer:/char;/byte;/int
 00648B11  83 C4 10                  ADD ESP,0x10
 00648B14  3B C3                     CMP EAX,EBX
 00648B16  89 45 F8                  MOV dword ptr [EBP + -0x8],EAX

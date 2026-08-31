@@ -726,7 +726,14 @@ st::fn_0042B7D0
    STAllPlayersC::AddObjToTmp
    [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
    unmasked_dword_reads=0; evidence=0042BC1A MOVSX ECX,byte ptr [EBP + 0x14] | 0042BC42 MOVSX
-   EDX,byte ptr [EBP + 0x14] */
+   EDX,byte ptr [EBP + 0x14]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:4: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:4: parameter=/char
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 undefined4 __thiscall
 st::fn_0042BB30
@@ -1009,6 +1016,7 @@ st::fn_0042C1C0
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_c = this;
+
   errorCode = st::fn_0072D7F0(local_54.jumpBuffer,0);
   if (errorCode == 0) {
     if (param_4 == nullptr) {
@@ -1020,6 +1028,7 @@ st::fn_0042C1C0
     index = 0;
     if (0 < (int)local_10) {
       do {
+
         st::fn_006ACC70(param_4,index,&local_8);
         if ((short)local_8 != -1) {
           /* ST_CALLSITE[0042C245]: CALL 0x00404098; direct=00404098 STAllPlayersC::AddObjToTmp */
@@ -1033,6 +1042,7 @@ st::fn_0042C1C0
   else {
     g_currentExceptionFrame = local_54.previous;
     if (errorCode != -0x5001fff7) {
+
       iVar2 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x26e,0,errorCode,
                                  st::mutable_c_string("%s"),"STAllPlayersC::AddObjsToTmp");
       if (iVar2 == 0) {
@@ -1215,7 +1225,14 @@ st::fn_0042C4B0
    STAllPlayersC::DelObjFromTmps
    [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
    unmasked_dword_reads=0; evidence=0042C7D0 MOVSX EDX,byte ptr [EBP + 0x10] | 0042CB31 MOVSX
-   EDX,byte ptr [EBP + 0x10] */
+   EDX,byte ptr [EBP + 0x10]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:3: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:3: parameter=/char
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 undefined4 __thiscall
 st::fn_0042C5F0
@@ -2369,7 +2386,14 @@ uint __thiscall st::fn_0042DFE0(STAllPlayersC *this,undefined4 *param_1,uint *pa
    STAllPlayersC::RegisterObject
    [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
    unmasked_dword_reads=0; evidence=0042E21D MOVSX ECX,byte ptr [EBP + 0x8] | 0042EB6F MOVSX
-   EAX,byte ptr [EBP + 0x8] | 0042EC4D MOVSX ECX,byte ptr [EBP + 0x8] */
+   EAX,byte ptr [EBP + 0x8] | 0042EC4D MOVSX ECX,byte ptr [EBP + 0x8]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:1: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/char
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 undefined4 __thiscall
 st::fn_0042E210
@@ -2963,7 +2987,14 @@ st::fn_0042F140(STAllPlayersC *this,char param_1,ushort param_2,int param_3)
    unmasked_dword_reads=0; evidence=0042F2BA MOVSX ECX,byte ptr [EBP + 0x8] | 0042F37C MOVSX
    ECX,byte ptr [EBP + 0x8] | 0042F3C7 MOVSX ECX,byte ptr [EBP + 0x8] | 0042F40F MOVSX ECX,byte ptr
    [EBP + 0x8] | 0042F468 MOVSX ECX,byte ptr [EBP + 0x8] | 0042F4B3 MOVSX ECX,byte ptr [EBP + 0x8] |
-   0042F527 MOVSX ECX,byte ptr [EBP + 0x8] */
+   0042F527 MOVSX ECX,byte ptr [EBP + 0x8]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:1: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/char
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 undefined4 __thiscall
 st::fn_0042F2B0
@@ -3391,7 +3422,7 @@ LAB_0042f547:
   this_00 = local_18;
   /* ST_CALLSITE[0042FEEA]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
   pSVar7 = st::fn_004028BA(local_18,param_1,(ushort)param_3,CASE_1);
-  if (st::machine_word_boundary_cast<uint>(pSVar7) != st::machine_word_boundary_cast<uint>((STGameObjC *)param_4)) {
+  if (pSVar7 != (STGameObjC *)param_4) {
     st::fn_006A5E40
               (-0x5001fff9,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                0x7a3);
@@ -3414,9 +3445,9 @@ LAB_0042f547:
   /* ST_CALLSITE[0042FF76]: CALL 0x00402653; direct=00402653 thunk_FUN_00440820; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
   st::fn_00402653(_param_1,param_3);
   /* ST_CALLSITE[0042FF8C]: CALL 0x004021a3; direct=004021A3 STAllPlayersC::DelObjFromTmps */
-  st::fn_004021A3(this_00,DAT_0080874d,st::machine_word_boundary_cast<int>(((STGameObjC *)param_4)->field_0020),param_1,param_3);
+  st::fn_004021A3(this_00,DAT_0080874d,((STGameObjC *)param_4)->field_0020,param_1,param_3);
   /* ST_CALLSITE[0042FF9C]: CALL 0x00403643; direct=00403643 STAllPlayersC::DelObjFromSaveTmps */
-  st::fn_00403643(this_00,st::machine_word_boundary_cast<int>(((STGameObjC *)param_4)->field_0020),param_1,(ushort)param_3);
+  st::fn_00403643(this_00,((STGameObjC *)param_4)->field_0020,param_1,(ushort)param_3);
   this_01 = local_10;
   array_00 = local_14;
   uVar9 = param_3;
@@ -3583,7 +3614,7 @@ st::fn_00430620
                 (-0x5001fff7,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x806);
     }
-    if (st::machine_word_boundary_cast<uint>((RecoveredRecordView_005EFAE0_855D930D *)local_8->field_0018) == st::machine_word_boundary_cast<uint>(param_2)) {
+    if ((RecoveredRecordView_005EFAE0_855D930D *)local_8->field_0018 == param_2) {
       g_currentExceptionFrame = local_50.previous;
       return 1;
     }
@@ -3716,7 +3747,7 @@ st::fn_00430960(STAllPlayersC *this,short param_1,int param_2)
     if (g_array_007FA130 != nullptr) {
 
       st::fn_006ACC70(reinterpret_cast<DArrayTy *>(g_array_007FA130),(int)param_1,&local_8);
-      if (st::machine_word_boundary_cast<uint>(local_8) != st::machine_word_boundary_cast<uint>((STTorpC *)param_2)) {
+      if (local_8 != (STTorpC *)param_2) {
         st::fn_006A5E40
                   (-0x5001fffe,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                    0x883);
@@ -3755,22 +3786,24 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
 {
   byte bVar1;
   STMessageId SVar2;
+  DArrayOf_STGameObjCPtr *array;
   dword dVar3;
   DArrayOf_STGameObjCPtr **ppDVar5;
   STAllPlayersC *this_00;
   int iVar5;
   byte *pbVar6;
-  DArrayOf_STGameObjCPtr *pDVar7;
-  DArrayTy *pDVar8;
+  DArrayOf_STGameObjCPtr *pDVar7_mg1;
+  DArrayTy *pDVar7;
+  DArrayOf_STGameObjCPtr *pDVar7_mg2;
   int iVar11;
-  PackedRecord_A62x8 *pPVar9;
+  PackedRecord_A62x8 *pPVar8;
+  uint uVar9;
   uint uVar10;
-  uint uVar11;
-  DArrayTy **ppDVar12;
-  int iVar13;
-  uint *puVar14;
-  int *piVar15;
-  char cVar16;
+  DArrayTy **ppDVar11;
+  int iVar12;
+  uint *puVar13;
+  int *piVar14;
+  char cVar15;
   InternalExceptionFrame local_6c;
   DArrayOf_STGameObjCPtr *local_28;
   dword local_24;
@@ -3809,130 +3842,130 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
       local_20 = 0;
       local_14 = &g_packedRecords_A62x8[0].field3_0x9;
       do {
-        uVar11 = 0;
-        pDVar8 = reinterpret_cast<DArrayTy *>(local_14[-1]);
-        pDVar7 = *local_14;
-        local_24 = pDVar8->count;
-        local_28 = pDVar7;
+        uVar10 = 0;
+        pDVar7 = reinterpret_cast<DArrayTy *>(local_14[-1]);
+        array = *local_14;
+        local_24 = pDVar7->count;
+        local_28 = array;
         if (0 < (int)local_24) {
           do {
 
-            st::fn_006ACC70(pDVar8,uVar11,&local_18);
+            st::fn_006ACC70(pDVar7,uVar10,&local_18);
             if (local_18 != 0) {
               /* ST_CALLSITE[00430E35]: CALL 0x0040432c; direct=0040432C STPlaySystemC::sub_0054CF70 */
               st::fn_0040432C(g_playSystem_00802A38,STField<uint>(local_18,0x8));
               local_18 = 0;
 
-              st::fn_006AE140(pDVar8,uVar11,&local_18);
+              st::fn_006AE140(pDVar7,uVar10,&local_18);
             }
-            uVar11 = uVar11 + 1;
-          } while ((int)uVar11 < (int)local_24);
+            uVar10 = uVar10 + 1;
+          } while ((int)uVar10 < (int)local_24);
         }
-        dVar3 = pDVar7->count;
-        uVar11 = 0;
+        dVar3 = array->count;
+        uVar10 = 0;
         if (0 < (int)dVar3) {
           do {
 
-            st::fn_006ACC70(reinterpret_cast<DArrayTy *>(pDVar7),uVar11,&local_8);
+            st::fn_006ACC70(reinterpret_cast<DArrayTy *>(array),uVar10,&local_8);
             if (local_8 != 0) {
               /* ST_CALLSITE[00430E7B]: CALL 0x0040432c; direct=0040432C STPlaySystemC::sub_0054CF70 */
               st::fn_0040432C(g_playSystem_00802A38,STField<uint>(local_8,0x8));
               local_8 = 0;
 
-              st::fn_006AE140(reinterpret_cast<DArrayTy *>(pDVar7),uVar11,&local_8);
+              st::fn_006AE140(reinterpret_cast<DArrayTy *>(array),uVar10,&local_8);
             }
-            uVar11 = uVar11 + 1;
-          } while ((int)uVar11 < (int)dVar3);
+            uVar10 = uVar10 + 1;
+          } while ((int)uVar10 < (int)dVar3);
         }
-        iVar13 = local_20;
-        cVar16 = (char)local_20;
+        iVar12 = local_20;
+        cVar15 = (char)local_20;
 
-        st::fn_0040299B(cVar16);
+        st::fn_0040299B(cVar15);
 
-        st::fn_00403071(cVar16);
-        local_20 = iVar13 + 1;
+        st::fn_00403071(cVar15);
+        local_20 = iVar12 + 1;
         /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
         local_14 = (DArrayOf_STGameObjCPtr **)((int)local_14 + 0xa62);
       } while ((int)local_14 < 0x7fa139);
-      uVar11 = 0;
+      uVar10 = 0;
       dVar3 = g_array_007FA154->count;
       if (0 < (int)dVar3) {
         do {
 
-          st::fn_006ACC70(reinterpret_cast<DArrayTy *>(g_array_007FA154),uVar11,&local_8);
+          st::fn_006ACC70(reinterpret_cast<DArrayTy *>(g_array_007FA154),uVar10,&local_8);
           if (local_8 != 0) {
             /* ST_CALLSITE[00430EF8]: CALL 0x0040432c; direct=0040432C STPlaySystemC::sub_0054CF70 */
             st::fn_0040432C(g_playSystem_00802A38,STField<uint>(local_8,0x8));
             local_8 = 0;
 
-            st::fn_006AE140(reinterpret_cast<DArrayTy *>(pDVar7),uVar11,&local_8);
+            st::fn_006AE140(reinterpret_cast<DArrayTy *>(array),uVar10,&local_8);
           }
-          uVar11 = uVar11 + 1;
-        } while ((int)uVar11 < (int)dVar3);
+          uVar10 = uVar10 + 1;
+        } while ((int)uVar10 < (int)dVar3);
       }
-      uVar11 = 0;
+      uVar10 = 0;
       dVar3 = g_array_007FA158->count;
       if (0 < (int)dVar3) {
         do {
 
-          st::fn_006ACC70(reinterpret_cast<DArrayTy *>(g_array_007FA158),uVar11,&local_8);
+          st::fn_006ACC70(reinterpret_cast<DArrayTy *>(g_array_007FA158),uVar10,&local_8);
           if (local_8 != 0) {
             /* ST_CALLSITE[00430F44]: CALL 0x0040432c; direct=0040432C STPlaySystemC::sub_0054CF70 */
             st::fn_0040432C(g_playSystem_00802A38,STField<uint>(local_8,0x8));
             local_8 = 0;
 
-            st::fn_006AE140(reinterpret_cast<DArrayTy *>(pDVar7),uVar11,&local_8);
+            st::fn_006AE140(reinterpret_cast<DArrayTy *>(array),uVar10,&local_8);
           }
-          uVar11 = uVar11 + 1;
-        } while ((int)uVar11 < (int)dVar3);
+          uVar10 = uVar10 + 1;
+        } while ((int)uVar10 < (int)dVar3);
       }
-      uVar11 = 0;
+      uVar10 = 0;
       dVar3 = g_array_007FA15C->count;
       if (0 < (int)dVar3) {
         do {
 
-          st::fn_006ACC70(reinterpret_cast<DArrayTy *>(g_array_007FA15C),uVar11,&local_8);
+          st::fn_006ACC70(reinterpret_cast<DArrayTy *>(g_array_007FA15C),uVar10,&local_8);
           if (local_8 != 0) {
             /* ST_CALLSITE[00430F91]: CALL 0x0040432c; direct=0040432C STPlaySystemC::sub_0054CF70 */
             st::fn_0040432C(g_playSystem_00802A38,STField<uint>(local_8,0x8));
             local_8 = 0;
 
-            st::fn_006AE140(reinterpret_cast<DArrayTy *>(pDVar7),uVar11,&local_8);
+            st::fn_006AE140(reinterpret_cast<DArrayTy *>(array),uVar10,&local_8);
           }
-          uVar11 = uVar11 + 1;
-        } while ((int)uVar11 < (int)dVar3);
+          uVar10 = uVar10 + 1;
+        } while ((int)uVar10 < (int)dVar3);
       }
-      uVar11 = 0;
+      uVar10 = 0;
       dVar3 = g_array_007FA160->count;
       if (0 < (int)dVar3) {
         do {
 
-          st::fn_006ACC70(reinterpret_cast<DArrayTy *>(g_array_007FA160),uVar11,&local_8);
+          st::fn_006ACC70(reinterpret_cast<DArrayTy *>(g_array_007FA160),uVar10,&local_8);
           if (local_8 != 0) {
             /* ST_CALLSITE[00430FDE]: CALL 0x0040432c; direct=0040432C STPlaySystemC::sub_0054CF70 */
             st::fn_0040432C(g_playSystem_00802A38,STField<uint>(local_8,0x8));
             local_8 = 0;
 
-            st::fn_006AE140(reinterpret_cast<DArrayTy *>(pDVar7),uVar11,&local_8);
+            st::fn_006AE140(reinterpret_cast<DArrayTy *>(array),uVar10,&local_8);
           }
-          uVar11 = uVar11 + 1;
-        } while ((int)uVar11 < (int)dVar3);
+          uVar10 = uVar10 + 1;
+        } while ((int)uVar10 < (int)dVar3);
       }
-      uVar11 = 0;
+      uVar10 = 0;
       dVar3 = g_array_007FA164->count;
       if (0 < (int)dVar3) {
         do {
 
-          st::fn_006ACC70(reinterpret_cast<DArrayTy *>(g_array_007FA164),uVar11,&local_8);
+          st::fn_006ACC70(reinterpret_cast<DArrayTy *>(g_array_007FA164),uVar10,&local_8);
           if (local_8 != 0) {
             /* ST_CALLSITE[0043102A]: CALL 0x0040432c; direct=0040432C STPlaySystemC::sub_0054CF70 */
             st::fn_0040432C(g_playSystem_00802A38,STField<uint>(local_8,0x8));
             local_8 = 0;
 
-            st::fn_006AE140(reinterpret_cast<DArrayTy *>(pDVar7),uVar11,&local_8);
+            st::fn_006AE140(reinterpret_cast<DArrayTy *>(array),uVar10,&local_8);
           }
-          uVar11 = uVar11 + 1;
-        } while ((int)uVar11 < (int)dVar3);
+          uVar10 = uVar10 + 1;
+        } while ((int)uVar10 < (int)dVar3);
       }
       local_14 = reinterpret_cast<DArrayOf_STGameObjCPtr **>(&g_packedRecords_A62x8[0].field2_0x5);
       do {
@@ -3940,41 +3973,41 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
         st::fn_006AE110(reinterpret_cast<DArrayTy *>(local_14[1]));
         st::fn_006AE110(reinterpret_cast<DArrayTy *>(*ppDVar5));
         st::fn_006AE110(STField<DArrayTy *>(ppDVar5,0x2e2));
-        puVar14 = (undefined4 *)((int)ppDVar5 + 10);
-        iVar13 = 4;
+        puVar13 = (undefined4 *)((int)ppDVar5 + 10);
+        iVar12 = 4;
         do {
-          st::fn_006AE110((DArrayTy *)*puVar14);
-          *puVar14 = 0;
-          puVar14 = puVar14 + 1;
-          iVar13 = iVar13 + -1;
-        } while (iVar13 != 0);
-        iVar13 = 5;
-        puVar14 = reinterpret_cast<uint *>(local_14 + 0x5a);
+          st::fn_006AE110((DArrayTy *)*puVar13);
+          *puVar13 = 0;
+          puVar13 = puVar13 + 1;
+          iVar12 = iVar12 + -1;
+        } while (iVar12 != 0);
+        iVar12 = 5;
+        puVar13 = reinterpret_cast<uint *>(local_14 + 0x5a);
         do {
-          if ((DArrayTy *)*puVar14 != nullptr) {
-            st::fn_006AE110((DArrayTy *)*puVar14);
-            *puVar14 = 0;
-            *(undefined4 *)((int)puVar14 + -10) = 0;
+          if ((DArrayTy *)*puVar13 != nullptr) {
+            st::fn_006AE110((DArrayTy *)*puVar13);
+            *puVar13 = 0;
+            *(undefined4 *)((int)puVar13 + -10) = 0;
           }
-          if ((DArrayTy *)puVar14[0x14] != 0) {
-            st::fn_006AE110((DArrayTy *)puVar14[0x14]);
-            puVar14[0x14] = 0;
-            STField<undefined4>(puVar14,0x46) = 0;
+          if ((DArrayTy *)puVar13[0x14] != 0) {
+            st::fn_006AE110((DArrayTy *)puVar13[0x14]);
+            puVar13[0x14] = 0;
+            STField<undefined4>(puVar13,0x46) = 0;
           }
-          puVar14 = puVar14 + 4;
-          iVar13 = iVar13 + -1;
-        } while (iVar13 != 0);
-        iVar13 = 10;
-        puVar14 = reinterpret_cast<uint *>(local_14 + 0x83);
+          puVar13 = puVar13 + 4;
+          iVar12 = iVar12 + -1;
+        } while (iVar12 != 0);
+        iVar12 = 10;
+        puVar13 = reinterpret_cast<uint *>(local_14 + 0x83);
         do {
-          if ((DArrayTy *)*puVar14 != nullptr) {
-            st::fn_006AE110((DArrayTy *)*puVar14);
-            *puVar14 = 0;
-            *(undefined4 *)((int)puVar14 + -10) = 0;
+          if ((DArrayTy *)*puVar13 != nullptr) {
+            st::fn_006AE110((DArrayTy *)*puVar13);
+            *puVar13 = 0;
+            *(undefined4 *)((int)puVar13 + -10) = 0;
           }
-          puVar14 = puVar14 + 4;
-          iVar13 = iVar13 + -1;
-        } while (iVar13 != 0);
+          puVar13 = puVar13 + 4;
+          iVar12 = iVar12 + -1;
+        } while (iVar12 != 0);
         /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
         local_14 = (DArrayOf_STGameObjCPtr **)((int)local_14 + 0xa62);
       } while ((int)local_14 < 0x7fa135);
@@ -4002,28 +4035,28 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
       return 0;
     }
     if (SVar2 == MESS_ID_NONE) {
-      iVar13 = 0;
+      iVar12 = 0;
       local_14 = reinterpret_cast<DArrayOf_STGameObjCPtr **>(&g_bulkInitializedRecords_008087C7[0].field_0022);
-      piVar15 = reinterpret_cast<int *>(&g_packedRecords_A62x8[0].field1981_0xa0a);
+      piVar14 = reinterpret_cast<int *>(&g_packedRecords_A62x8[0].field1981_0xa0a);
       do {
-        cVar16 = (char)iVar13;
-        if (0x18 < g_playSystem_00802A38->field_00E4 - *piVar15) {
+        cVar15 = (char)iVar12;
+        if (0x18 < g_playSystem_00802A38->field_00E4 - *piVar14) {
           /* ST_CALLSITE[00430D78]: CALL 0x004017fd; direct=004017FD STAllPlayersC::OptimizeGuardBoats */
-          st::fn_004017FD(this_00,cVar16);
+          st::fn_004017FD(this_00,cVar15);
           /* ST_CALLSITE[00430D80]: CALL 0x0040100a; direct=0040100A STAllPlayersC::DistributeGuardBoats */
-          st::fn_0040100A(this_00,cVar16);
+          st::fn_0040100A(this_00,cVar15);
         }
         if ((*(byte *)local_14 != 0xff) &&
 
-           (st::fn_004059C5(this_00,iVar13), g_playSystem_00802A38->field_00E4 % 10 == 0)) {
+           (st::fn_004059C5(this_00,iVar12), g_playSystem_00802A38->field_00E4 % 10 == 0)) {
 
-          st::fn_004028F6(cVar16);
+          st::fn_004028F6(cVar15);
         }
         /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-        piVar15 = (int *)((int)piVar15 + 0xa62);
-        iVar13 = iVar13 + 1;
+        piVar14 = (int *)((int)piVar14 + 0xa62);
+        iVar12 = iVar12 + 1;
         local_14 = (DArrayOf_STGameObjCPtr **)((int)local_14 + 0x51);
-      } while ((int)piVar15 < 0x7fab3a);
+      } while ((int)piVar14 < 0x7fab3a);
 
       st::fn_004050E7(st::machine_word_boundary_cast<undefined4>(this_00));
 
@@ -4032,13 +4065,13 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
       return 0;
     }
     if (SVar2 == MESS_ID_CREATE) {
-      pPVar9 = g_packedRecords_A62x8;
+      pPVar8 = g_packedRecords_A62x8;
       pbVar6 = &g_bulkInitializedRecords_008087C7[0].field_0021;
       do {
         bVar1 = *pbVar6;
         pbVar6 = pbVar6 + 0x51;
-        pPVar9->field0_0x0 = bVar1;
-        pPVar9 = pPVar9 + 1;
+        pPVar8->field0_0x0 = bVar1;
+        pPVar8 = pPVar8 + 1;
       } while ((int)pbVar6 < 0x808a70);
       /* ST_CALLSITE[00430B25]: CALL 0x006ae310; direct=006AE310 Library::DKW::TBL::DArrayCreateTracked; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint;/uint;/uint */
       g_array_007FA154 = st::pointer_boundary_cast<DArrayOf_STGameObjCPtr *>(st::fn_006AE310(nullptr,0,4,1,0x40307b));
@@ -4054,73 +4087,73 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
       g_array_007FA130 = st::pointer_boundary_cast<DArrayOf_STTorpCPtr *>(st::fn_006AE310(nullptr,0,4,1,0x40307b));
       DAT_007fa134 = 0;
       if (g_cMf32_00806754 != nullptr) {
-        local_c = st::fn_006F2D90(g_cMf32_00806754,st::mutable_c_string("allplsave"),0,0);
+        local_c = reinterpret_cast<ushort *>(st::fn_006F2D90(g_cMf32_00806754,st::mutable_c_string("allplsave"),0,0));
       }
       if (local_c == nullptr) {
-        piVar15 = nullptr;
+        piVar14 = nullptr;
         pbVar6 = &g_bulkInitializedRecords_008087C7[0].field_0022;
-        ppDVar12 = &g_packedRecords_A62x8[0].field2_0x5;
+        ppDVar11 = &g_packedRecords_A62x8[0].field2_0x5;
         do {
           /* ST_CALLSITE[00430C5F]: CALL 0x006ae310; direct=006AE310 Library::DKW::TBL::DArrayCreateTracked; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint;/uint;/uint */
-          pDVar7 = st::pointer_boundary_cast<DArrayOf_STGameObjCPtr *>(st::fn_006AE310(nullptr,0xf,4,5,0x40307b));
-          ppDVar12[1] = reinterpret_cast<DArrayTy *>(pDVar7);
-          pDVar8 = st::fn_006AE310(nullptr,0xf,4,5,0x40307b);
-          *ppDVar12 = pDVar8;
+          pDVar7_mg2 = st::pointer_boundary_cast<DArrayOf_STGameObjCPtr *>(st::fn_006AE310(nullptr,0xf,4,5,0x40307b));
+          ppDVar11[1] = reinterpret_cast<DArrayTy *>(pDVar7_mg2);
+          pDVar7 = st::fn_006AE310(nullptr,0xf,4,5,0x40307b);
+          *ppDVar11 = pDVar7;
           if (*pbVar6 != 0xff) {
-            st::fn_004045C0((int)piVar15);
+            st::fn_004045C0((int)piVar14);
             /* ST_CALLSITE[00430C8E]: CALL 0x00401fc8; direct=00401FC8 STAllPlayersC::sub_004EB010 */
-            st::fn_00401FC8(local_10,(int)piVar15);
-            cVar16 = (char)piVar15;
+            st::fn_00401FC8(local_10,(int)piVar14);
+            cVar15 = (char)piVar14;
 
-            st::fn_0040517D(cVar16);
+            st::fn_0040517D(cVar15);
 
-            st::fn_00403E90(cVar16);
+            st::fn_00403E90(cVar15);
 
-            st::fn_004035EE(piVar15,(uint *)(DAT_00808a90 >> 0x10 & 0xff),
+            st::fn_004035EE(piVar14,(uint *)(DAT_00808a90 >> 0x10 & 0xff),
                                (uint *)(DAT_00808a90 >> 0x18));
 
-            st::fn_004030EE(local_10,(uint)piVar15,DAT_00808a90 >> 8 & 0xff);
+            st::fn_004030EE(local_10,(uint)piVar14,DAT_00808a90 >> 8 & 0xff);
 
-            st::fn_004028F6(cVar16);
+            st::fn_004028F6(cVar15);
           }
           /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-          ppDVar12 = (DArrayTy **)((int)ppDVar12 + 0xa62);
-          piVar15 = (int *)((int)piVar15 + 1);
+          ppDVar11 = (DArrayTy **)((int)ppDVar11 + 0xa62);
+          piVar14 = (int *)((int)piVar14 + 1);
           pbVar6 = pbVar6 + 0x51;
-        } while ((int)ppDVar12 < 0x7fa135);
+        } while ((int)ppDVar11 < 0x7fa135);
 
         st::fn_00403364(0);
 
         st::fn_00401F37(DAT_00808a90 & 0xff);
 
         DAT_007fa168 = st::machine_word_boundary_cast<undefined4>(st::fn_006AAC70((int)g_worldGrid.planeStride));
-        uVar10 = (uint)g_worldGrid.planeStride;
-        puVar14 = st::pointer_boundary_cast<uint *>(DAT_007fa168);
-        for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-          *puVar14 = 0x50505050;
-          puVar14 = puVar14 + 1;
+        uVar9 = (uint)g_worldGrid.planeStride;
+        puVar13 = st::pointer_boundary_cast<uint *>(DAT_007fa168);
+        for (uVar10 = uVar9 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+          *puVar13 = 0x50505050;
+          puVar13 = puVar13 + 1;
         }
-        for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-          *(undefined1 *)puVar14 = 0x50;
-          puVar14 = (undefined4 *)((int)puVar14 + 1);
+        for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
+          *(undefined1 *)puVar13 = 0x50;
+          puVar13 = (undefined4 *)((int)puVar13 + 1);
         }
         g_currentExceptionFrame = local_6c.previous;
         return 0;
       }
-      cVar16 = '\0';
-      ppDVar12 = &g_packedRecords_A62x8[0].field2_0x5;
+      cVar15 = '\0';
+      ppDVar11 = &g_packedRecords_A62x8[0].field2_0x5;
       do {
         /* ST_CALLSITE[00430BE5]: CALL 0x006ae310; direct=006AE310 Library::DKW::TBL::DArrayCreateTracked; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArraySpecializations/DArrayOf_STGameObjCPtr;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint;/uint;/uint */
-        pDVar7 = st::pointer_boundary_cast<DArrayOf_STGameObjCPtr *>(st::fn_006AE310(nullptr,0xf,4,5,0x40307b));
-        ppDVar12[1] = reinterpret_cast<DArrayTy *>(pDVar7);
-        pDVar8 = st::fn_006AE310(nullptr,0xf,4,5,0x40307b);
-        *ppDVar12 = pDVar8;
+        pDVar7_mg1 = st::pointer_boundary_cast<DArrayOf_STGameObjCPtr *>(st::fn_006AE310(nullptr,0xf,4,5,0x40307b));
+        ppDVar11[1] = reinterpret_cast<DArrayTy *>(pDVar7_mg1);
+        pDVar7 = st::fn_006AE310(nullptr,0xf,4,5,0x40307b);
+        *ppDVar11 = pDVar7;
 
-        st::fn_00403E90(cVar16);
+        st::fn_00403E90(cVar15);
         /* ST_PSEUDO[flattened_global_record_array]: expected typedRecordArray[index].field after inferred base/stride proof */
-        ppDVar12 = (DArrayTy **)((int)ppDVar12 + 0xa62);
-        cVar16 = cVar16 + '\x01';
-      } while ((int)ppDVar12 < 0x7fa135);
+        ppDVar11 = (DArrayTy **)((int)ppDVar11 + 0xa62);
+        cVar15 = cVar15 + '\x01';
+      } while ((int)ppDVar11 < 0x7fa135);
       st::fn_00405A92(this_00,local_c);
       st::fn_006F20E0(g_cMf32_00806754,reinterpret_cast<uint *>(&local_c));
       g_currentExceptionFrame = local_6c.previous;
@@ -4137,22 +4170,22 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
   }
   else if (SVar2 == MESS_ID_ALLCREATE) {
     if (g_cMf32_00806754 == nullptr) {
-      iVar13 = 0;
+      iVar12 = 0;
       do {
         /* ST_CALLSITE[00431201]: CALL 0x00405cc2; direct=00405CC2 STAllPlayersC::_MakeMDPairs; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STAllPlayersC; signature=__thiscall;pointer:/STAllPlayersC;pointer:/STAllPlayersC;/char */
-        st::fn_00405CC2(this_00,(char)iVar13);
-        iVar13 = iVar13 + 1;
-      } while (iVar13 < 8);
+        st::fn_00405CC2(this_00,(char)iVar12);
+        iVar12 = iVar12 + 1;
+      } while (iVar12 < 8);
     }
     else {
-      local_c = st::fn_006F2D90(g_cMf32_00806754,st::mutable_c_string("allplsave"),0,0);
+      local_c = reinterpret_cast<ushort *>(st::fn_006F2D90(g_cMf32_00806754,st::mutable_c_string("allplsave"),0,0));
       if (local_c == nullptr) {
-        iVar13 = 0;
+        iVar12 = 0;
         do {
           /* ST_CALLSITE[004311EF]: CALL 0x00405cc2; direct=00405CC2 STAllPlayersC::_MakeMDPairs */
-          st::fn_00405CC2(this_00,(char)iVar13);
-          iVar13 = iVar13 + 1;
-        } while (iVar13 < 8);
+          st::fn_00405CC2(this_00,(char)iVar12);
+          iVar12 = iVar12 + 1;
+        } while (iVar12 < 8);
       }
       else {
         st::fn_006F20E0(g_cMf32_00806754,reinterpret_cast<uint *>(&local_c));
@@ -4161,12 +4194,12 @@ int __thiscall st::fn_00430A90(STAllPlayersC *this,STMessage *message)
     /* ST_CALLSITE[00431218]: CALL 0x00404b8d; direct=00404B8D STAllPlayersC::sub_004D8B70 */
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     st::fn_00404B8D(this_00,*(char *)(this_00->field_0010 + 0x112d));
-    uVar11 = 0;
+    uVar10 = 0;
     do {
       /* ST_CALLSITE[00431222]: CALL 0x00401893; direct=00401893 STAllPlayersC::sub_004B7750 */
-      st::fn_00401893(this_00,uVar11);
-      uVar11 = uVar11 + 1;
-    } while ((int)uVar11 < 8);
+      st::fn_00401893(this_00,uVar10);
+      uVar10 = uVar10 + 1;
+    } while ((int)uVar10 < 8);
     g_currentExceptionFrame = local_6c.previous;
     return 0;
   }
@@ -6891,7 +6924,14 @@ LAB_00435287:
    STAllPlayersC::ReplaceObject
    [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
    unmasked_dword_reads=0; evidence=0043553B MOVSX ECX,byte ptr [EBP + 0x8] | 00435596 MOVSX
-   EAX,byte ptr [EBP + 0x8] */
+   EAX,byte ptr [EBP + 0x8]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:1: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/char
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 void __thiscall
 st::fn_004354E0(STAllPlayersC *this,char param_1,undefined4 param_2,undefined4 param_3)
@@ -8952,7 +8992,7 @@ LAB_0043953a:
           if (-1 < local_EAX_937) goto cf_common_join_0043A107;
           /* ST_CALLSITE[004394D3]: CALL 0x00405920; direct=00405920 STAllPlayersC::PushTV */
           st::fn_00405920((char)local_8,0);
-          if ((st::machine_word_boundary_cast<uint>((STGameObjC *)g_packedRecords_A62x8[(int)pSVar3].field105_0x177) == st::machine_word_boundary_cast<uint>(local_20_mg0)) &&
+          if (((STGameObjC *)g_packedRecords_A62x8[(int)pSVar3].field105_0x177 == local_20_mg0) &&
              (*(STGameObjC **)&pAVar1->field_0x4 == local_20_mg0)) {
             /* ST_CALLSITE[00439504]: CALL 0x004020d6; direct=004020D6 STAllPlayersC::CalibrateTmp */
             st::fn_004020D6(this_00,(char)local_8,0,1,&pAVar1->field_000A->flags,reinterpret_cast<int *>(&local_c),
@@ -9656,7 +9696,14 @@ cf_common_exit_0043A47C:
    0043AAF0 @ 0043B82D | 0043AE40 -> 0043AAF0 @ 0043BAA0
    [STAbiConsistencyApplier] stack_parameter_width: parameter=/short Evidence: entry-use
    width=/short; unmasked_dword_reads=0; evidence=0043AC63 MOVSX EDX,word ptr [EBP + 0x8] | 0043AC7B
-   MOVSX EDX,word ptr [EBP + 0x8] | 0043AD55 MOVSX ECX,word ptr [EBP + 0x8] */
+   MOVSX EDX,word ptr [EBP + 0x8] | 0043AD55 MOVSX ECX,word ptr [EBP + 0x8]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:0: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:0: parameter=/short
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 undefined4
 st::fn_0043AAF0
@@ -12363,7 +12410,14 @@ void st::fn_00440990(STAllPlayersC *context,undefined4 param_2,int *param_3,uint
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::_AssignDocks
    [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
-   unmasked_dword_reads=0; evidence=00440AA9 MOVSX EAX,byte ptr [EBP + 0x8] */
+   unmasked_dword_reads=0; evidence=00440AA9 MOVSX EAX,byte ptr [EBP + 0x8]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:1: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/char
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 uint * __thiscall
 st::fn_00440AA0(STAllPlayersC *this,char param_1,DArrayTy *param_2,DArrayTy *param_3)
@@ -13376,7 +13430,14 @@ LAB_00441e92:
    STAllPlayersC::_AddMDPairs
    [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
    unmasked_dword_reads=0; evidence=0044238E MOVSX EAX,byte ptr [EBP + 0x8] | 004424C4 MOVSX
-   EAX,byte ptr [EBP + 0x8] | 0044275F MOVSX EAX,byte ptr [EBP + 0x8] */
+   EAX,byte ptr [EBP + 0x8] | 0044275F MOVSX EAX,byte ptr [EBP + 0x8]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:1: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/char
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 undefined4 __thiscall st::fn_00442300(STAllPlayersC *this,char param_1,uint param_2)
 
@@ -13803,7 +13864,14 @@ undefined4 st::fn_00442B40(STAllPlayersC *context,undefined4 *param_2,uint param
    STAllPlayersC::_AssignMDPairs
    [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
    unmasked_dword_reads=0; evidence=00442F42 MOVSX EAX,byte ptr [EBP + 0x8] | 0044319E MOVSX
-   EAX,byte ptr [EBP + 0x8] */
+   EAX,byte ptr [EBP + 0x8]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:1: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/char
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 uint * __thiscall
 st::fn_00442E50
@@ -14675,7 +14743,8 @@ byte * __thiscall st::fn_00443F30(STAllPlayersC *this,int *param_1)
       local_20 = &local_14->field_0839->field_0000;
       local_10 = nullptr;
       if (((AnonNested_00443F30_0839_FB957E77 *)local_20 != nullptr
-          ) && (local_24 = reinterpret_cast<AnonShape_00443F30_5DF553AC *>((((AnonNested_00443F30_0839_FB957E77 *)local_20)->field_0000).count),
+          ) && (local_24 = (AnonShape_00443F30_5DF553AC *)
+                           (((AnonNested_00443F30_0839_FB957E77 *)local_20)->field_0000).count,
                local_24 != nullptr)) {
         uVar16 = 0;
         iVar9 = iVar9 + (int)local_24 * 0x18;
@@ -14719,7 +14788,7 @@ byte * __thiscall st::fn_00443F30(STAllPlayersC *this,int *param_1)
     ppDVar7 = &g_packedRecords_A62x8[0].field3_0x9;
     do {
       local_10 = (AnonShape_00443F30_9F0248D4 *)0x5;
-      pdVar3[-1] = st::storage_bit_cast<dword>(((DArrayTy *)ppDVar7[-1])->count);
+      pdVar3[-1] = ((DArrayTy *)ppDVar7[-1])->count;
       *pdVar3 = (*ppDVar7)->count;
       pdVar3[9] = STField<dword>(ppDVar7,0x16);
       pdVar3[10] = STField<dword>(ppDVar7,0x1a);
@@ -15298,9 +15367,9 @@ uint __thiscall st::fn_004455C0(STAllPlayersC *this,undefined4 *param_1)
   if (param_1[5] == -1) {
     param_1[5] = param_1[1];
   }
-  local_8 = reinterpret_cast<STGroupC *>(st::fn_00405CF9(static_cast<char>(st::machine_word_boundary_cast<uint>(((char *)param_1)[1])),*(ushort *)(param_1 + 9)));
+  local_8 = reinterpret_cast<STGroupC *>(st::fn_00405CF9(((char *)param_1)[1],*(ushort *)(param_1 + 9)));
   if ((STGroupBoatC *)local_8 == nullptr) {
-    uVar2 = st::fn_00401E97(static_cast<char>(st::machine_word_boundary_cast<uint>(((char *)param_1)[1])),0,reinterpret_cast<int *>(&local_8));
+    uVar2 = st::fn_00401E97(((char *)param_1)[1],0,reinterpret_cast<int *>(&local_8));
     *(ushort *)(param_1 + 9) = uVar2;
     if (local_8 == nullptr) {
       st::fn_006A5E40
@@ -15718,7 +15787,14 @@ LAB_00445e36:
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::_DeleteGuardBoat
    [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
-   unmasked_dword_reads=0; evidence=004461B6 MOVSX EAX,byte ptr [EBP + 0x8] */
+   unmasked_dword_reads=0; evidence=004461B6 MOVSX EAX,byte ptr [EBP + 0x8]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:1: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/char
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 undefined4 __thiscall
 st::fn_004461B0(STAllPlayersC *this,char param_1,short param_2,int param_3)
@@ -15883,7 +15959,14 @@ st::fn_004461B0(STAllPlayersC *this,char param_1,short param_2,int param_3)
    00446520 @ 0045AAC8 | 0044EE30 -> 00446520 @ 0045AADD | 0045EF00 -> 00446520 @ 0045EF2A |
    00490E00 -> 00446520 @ 00490E46
    [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
-   unmasked_dword_reads=0; evidence=00446526 MOVSX EAX,byte ptr [EBP + 0x8] */
+   unmasked_dword_reads=0; evidence=00446526 MOVSX EAX,byte ptr [EBP + 0x8]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:1: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/char
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 void __thiscall
 st::fn_00446520(STAllPlayersC *this,char param_1,short param_2,int param_3)
@@ -16335,7 +16418,14 @@ void __thiscall st::fn_00446AA0(STAllPlayersC *this,char param_1)
    STAllPlayersC::DistributeGuardBoats
    [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
    unmasked_dword_reads=0; evidence=00446F8D MOVSX ECX,byte ptr [EBP + 0x8] | 0044704C MOVSX
-   EAX,byte ptr [EBP + 0x8] */
+   EAX,byte ptr [EBP + 0x8]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:1: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/char
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 void __thiscall st::fn_00446F80(STAllPlayersC *this,char param_1)
 
@@ -18032,9 +18122,14 @@ st::fn_00449B60
    [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
    callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
    void/unsized transport requires at least two callers; sites=005EAF10 @ 005EB061 -> read as EAX on
-   every CFG path | 005EAF10 @ 005EB2E7 -> read as EAX on every CFG path */
+   every CFG path | 005EAF10 @ 005EB2E7 -> read as EAX on every CFG path
 
-int __thiscall st::fn_00449CE0(STAllPlayersC *this,ushort param_1,void *param_2)
+   [STCallsiteConventionApplier] __stdcall inferred from complete caller/callee stack and ECX
+   dataflow. Evidence: all 2 direct/thunk callsites prepare exactly 8 stack bytes, no caller
+   reclaims them, every RET pops that exact width, and complete callee CFG dataflow finds no
+   incoming ECX consumption */
+
+int st::fn_00449CE0(ushort param_1,void *param_2)
 
 {
   int iVar2;
@@ -18110,7 +18205,7 @@ st::fn_00449E60
   if (errorCode == 0) {
     /* ST_CALLSITE[00449EA9]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar2 = st::fn_004028BA(local_c,-1,(ushort)param_1,CASE_2);
-    if (st::machine_word_boundary_cast<uint>(pSVar2) != st::machine_word_boundary_cast<uint>((STGameObjC *)param_2)) {
+    if (pSVar2 != (STGameObjC *)param_2) {
       /* ST_CALLSITE[00449ECA]: CALL 0x006a5e40; direct=006A5E40 RaiseInternalException; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
       st::fn_006A5E40
                 (-0x5001fff9,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
@@ -18222,12 +18317,13 @@ st::fn_0044A150(STAllPlayersC *this,uint param_1,uint param_2,STMineSetC *param_
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   errorCode = st::fn_0072D7F0(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (errorCode == 0) {
     /* ST_CALLSITE[0044A19B]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar2 = st::fn_004028BA(local_c,(char)param_1,(ushort)param_2,CASE_3);
-    if (st::machine_word_boundary_cast<uint>(pSVar2) != st::machine_word_boundary_cast<uint>((STGameObjC *)param_3)) {
+    if (pSVar2 != (STGameObjC *)param_3) {
       st::fn_006A5E40
                 (-0x5001fff9,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
                  0x2f1d);
@@ -18236,12 +18332,14 @@ st::fn_0044A150(STAllPlayersC *this,uint param_1,uint param_2,STMineSetC *param_
     st::fn_004021A3(this_00,DAT_0080874d,param_3->field_0020,(char)param_3->field_0024,param_2);
     /* ST_CALLSITE[0044A1E4]: CALL 0x00403643; direct=00403643 STAllPlayersC::DelObjFromSaveTmps */
     st::fn_00403643(this_00,param_3->field_0020,(char)param_1,(ushort)param_2);
+
     st::fn_006AE140(reinterpret_cast<DArrayTy *>(g_array_007FA158),param_2 & 0xffff,&local_8);
     g_currentExceptionFrame = local_50.previous;
   }
   else {
     g_currentExceptionFrame = local_50.previous;
     if (errorCode != -0x5001fff7) {
+
       iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),0x2f26,0,errorCode,
                                  st::mutable_c_string("%s"),"STAllPlayersC::UnRegisterMine");
       if (iVar3 != 0) {
@@ -18343,7 +18441,7 @@ st::fn_0044A440(STAllPlayersC *this,uint param_1,STResourceC *param_2)
   if (errorCode == 0) {
     /* ST_CALLSITE[0044A489]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar2 = st::fn_004028BA(local_c,-1,(ushort)param_1,CASE_4);
-    if (st::machine_word_boundary_cast<uint>(pSVar2) != st::machine_word_boundary_cast<uint>((STGameObjC *)param_2)) {
+    if (pSVar2 != (STGameObjC *)param_2) {
       /* ST_CALLSITE[0044A4AA]: CALL 0x006a5e40; direct=006A5E40 RaiseInternalException; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
       st::fn_006A5E40
                 (-0x5001fff9,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
@@ -18381,9 +18479,14 @@ st::fn_0044A440(STAllPlayersC *this,uint param_1,STResourceC *param_2)
    [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
    callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
    void/unsized transport requires at least two callers; sites=005FB640 @ 005FB7DF -> read as EAX on
-   every CFG path | 005FB640 @ 005FBA7B -> read as EAX on every CFG path */
+   every CFG path | 005FB640 @ 005FBA7B -> read as EAX on every CFG path
 
-int __thiscall st::fn_0044A5B0(STAllPlayersC *this,ushort param_1,void *param_2)
+   [STCallsiteConventionApplier] __stdcall inferred from complete caller/callee stack and ECX
+   dataflow. Evidence: all 2 direct/thunk callsites prepare exactly 8 stack bytes, no caller
+   reclaims them, every RET pops that exact width, and complete callee CFG dataflow finds no
+   incoming ECX consumption */
+
+int st::fn_0044A5B0(ushort param_1,void *param_2)
 
 {
   int iVar2;
@@ -18459,7 +18562,7 @@ st::fn_0044A730
   if (errorCode == 0) {
     /* ST_CALLSITE[0044A779]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar2 = st::fn_004028BA(local_c,-1,(ushort)param_1,CASE_5);
-    if (st::machine_word_boundary_cast<uint>(pSVar2) != st::machine_word_boundary_cast<uint>((STGameObjC *)param_2)) {
+    if (pSVar2 != (STGameObjC *)param_2) {
       /* ST_CALLSITE[0044A79A]: CALL 0x006a5e40; direct=006A5E40 RaiseInternalException; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
       st::fn_006A5E40
                 (-0x5001fff9,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
@@ -18497,9 +18600,14 @@ st::fn_0044A730
    [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
    callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
    void/unsized transport requires at least two callers; sites=00601F80 @ 006020A9 -> read as EAX on
-   every CFG path | 00601F80 @ 00602155 -> read as EAX on every CFG path */
+   every CFG path | 00601F80 @ 00602155 -> read as EAX on every CFG path
 
-int __thiscall st::fn_0044A8A0(STAllPlayersC *this,ushort param_1,void *param_2)
+   [STCallsiteConventionApplier] __stdcall inferred from complete caller/callee stack and ECX
+   dataflow. Evidence: all 2 direct/thunk callsites prepare exactly 8 stack bytes, no caller
+   reclaims them, every RET pops that exact width, and complete callee CFG dataflow finds no
+   incoming ECX consumption */
+
+int st::fn_0044A8A0(ushort param_1,void *param_2)
 
 {
   int iVar2;
@@ -18575,7 +18683,7 @@ st::fn_0044AA20
   if (errorCode == 0) {
     /* ST_CALLSITE[0044AA69]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
     pSVar2 = st::fn_004028BA(local_c,-1,(ushort)param_1,CASE_6);
-    if (st::machine_word_boundary_cast<uint>(pSVar2) != st::machine_word_boundary_cast<uint>((STGameObjC *)param_2)) {
+    if (pSVar2 != (STGameObjC *)param_2) {
       /* ST_CALLSITE[0044AA8A]: CALL 0x006a5e40; direct=006A5E40 RaiseInternalException; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
       st::fn_006A5E40
                 (-0x5001fff9,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\to_allpl.cpp"),
@@ -19551,9 +19659,9 @@ st::fn_0044C130
 
 {
   STAllPlayersC_GetTOBJImage_param_2Enum SVar2;
-  uint local_EAX_379;
+  int local_EAX_379;
   ushort *puVar3;
-  uint uVar4;
+  int uVar4;
   int iVar5;
   uint uVar5;
   Global_sub_004C2950_param_3Enum GVar8;
@@ -19907,7 +20015,7 @@ LAB_0044c950:
                 if (((uint)piVar4[9] < 8) &&
                    ((g_playSystem_00802A38 == nullptr ||
                     (g_bulkInitializedRecords_008087C7[piVar4[9]].field_0022 < 8)))) {
-                  bVar1 = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)piVar4)[9]));
+                  bVar1 = ((byte *)piVar4)[9];
                   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                   _local_24 = CONCAT31(uStack_23,bVar1);
                   if (DAT_00808a8f == '\0') {

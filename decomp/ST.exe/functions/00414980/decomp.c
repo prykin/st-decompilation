@@ -1,3 +1,5 @@
+#include "../../pseudocode_runtime.h"
+
 
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\Grpway3d.cpp
@@ -10,8 +12,9 @@ void FUN_00414980(int param_1)
 {
   uint uVar1;
 
-  Library::MSVCRT::thunk_FUN_006a49c0(PTR_007f4d50,2);
+  Library::MSVCRT::thunk_FUN_006a49c0((int *)PTR_007f4d50,2);
   uVar1 = param_1 * 4 + 8;
+  /* ST_CALLSITE[004149A9]: CALL 0x00401104; direct=00401104 thunk_FUN_006a3c10; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_007F4D50_A5847219; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_007F4D50_A5847219;/uint;/uint;pointer:/char;/int */
   PTR_007f4d50 = thunk_FUN_006a3c10(uVar1,2,"E:\\__titans\\wlad\\Grpway3d.cpp",0x55d);
   if (PTR_007f4d50 == nullptr) {
     RaiseInternalException

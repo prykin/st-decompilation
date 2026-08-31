@@ -197,7 +197,7 @@ SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::FUN_0066acc0
   char *local_EAX_19697;
   int local_EAX_19764;
   char *local_EAX_19783;
-  int pAVar17_mg1;
+  AiFltClassTy *pAVar17_mg1;
   char *local_EAX_19936;
   char *local_EAX_20049;
   int local_EAX_20116;
@@ -209,7 +209,7 @@ SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0064A970::FUN_0066acc0
   char *local_EAX_20615;
   int local_EAX_20682;
   char *local_EAX_20701;
-  int pAVar17;
+  AiFltClassTy *pAVar17;
   char *local_EAX_20943;
   char *local_EAX_21031;
   char *local_EAX_21131;
@@ -3500,18 +3500,17 @@ cf_common_exit_0066DCED:
     /* ST_CALLSITE[0066FA4D]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
     uVar13 = this_00->slot_00(param_1 + 5);
     /* ST_CALLSITE[0066FA56]: CALL 0x00402496; direct=00402496 thunk_FUN_0066ac80; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__stdcall;pointer:/AiFltClassTy;/char;/ushort */
-    pAVar17_mg1 = (int)thunk_FUN_0066ac80((char)local_50[0],(ushort)uVar13);
+    pAVar17_mg1 = thunk_FUN_0066ac80((char)local_50[0],(ushort)uVar13);
     pAVar7 = local_50[0];
     pcVar21 = local_c;
-    if (pAVar17_mg1 != 0) {
+    if (pAVar17_mg1 != nullptr) {
       /* ST_CALLSITE[0066FA6D]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
       uVar13 = this_00->slot_00(param_1 + 0xf);
       cVar3 = (char)uVar13;
       /* ST_CALLSITE[0066FA78]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/ulonglong;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
       uVar22 = this_00->slot_00(param_1 + 10);
 
-      pcVar21 = STPointerBoundaryCast<char *>(thunk_FUN_0065dc00((AiFltClassTy *)pAVar17_mg1,(int)(uVar22 >> 0x20),
-                                           (uint)uVar22,cVar3));
+      pcVar21 = STPointerBoundaryCast<char *>(thunk_FUN_0065dc00(pAVar17_mg1,(int)(uVar22 >> 0x20),(uint)uVar22,cVar3));
       pAVar7 = local_50[0];
       local_c = pcVar21;
     }
@@ -3629,10 +3628,10 @@ cf_common_exit_0066DCED:
     /* ST_CALLSITE[0066FDE3]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
     uVar13 = this_00->slot_00(param_1 + 5);
     /* ST_CALLSITE[0066FDEC]: CALL 0x00402496; direct=00402496 thunk_FUN_0066ac80; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__stdcall;pointer:/AiFltClassTy;/char;/ushort */
-    pAVar17 = (int)thunk_FUN_0066ac80((char)local_50[0],(ushort)uVar13);
+    pAVar17 = thunk_FUN_0066ac80((char)local_50[0],(ushort)uVar13);
     pAVar7 = local_50[0];
     pcVar21 = local_c;
-    if (pAVar17 != 0) {
+    if (pAVar17 != nullptr) {
       /* ST_CALLSITE[0066FE03]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
       uVar13 = this_00->slot_00(param_1 + 0x37);
       sVar29 = (short)uVar13;
@@ -3661,9 +3660,8 @@ cf_common_exit_0066DCED:
       /* ST_CALLSITE[0066FE67]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/ulonglong;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
       uVar22 = this_00->slot_00(param_1 + 10);
 
-      pcVar21 = STPointerBoundaryCast<char *>(thunk_FUN_0065dd30((AiFltClassTy *)pAVar17,(int)(uVar22 >> 0x20),
-                                           (uint)uVar22,uVar5,cVar3,pbVar14,sVar24,sVar25,sVar26,
-                                           sVar27,sVar28,sVar29));
+      pcVar21 = STPointerBoundaryCast<char *>(thunk_FUN_0065dd30(pAVar17,(int)(uVar22 >> 0x20),(uint)uVar22,uVar5,cVar3,
+                                           pbVar14,sVar24,sVar25,sVar26,sVar27,sVar28,sVar29));
       pAVar7 = local_50[0];
       local_c = pcVar21;
     }

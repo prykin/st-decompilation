@@ -1600,7 +1600,7 @@ void st::fn_00753260(undefined4 *param_1)
 
   if (param_1 != nullptr) {
     if ((param_1[2] & 0x800000) != 0) {
-      param_1[7] = st::machine_word_boundary_cast<undefined4>(((undefined4 *)param_1[0xd])[3]);
+      param_1[7] = ((undefined4 *)param_1[0xd])[3];
       puVar2 = reinterpret_cast<byte *>((param_1 + 4));
       puVar3 = (byte *)param_1[0xd];
       memmove(puVar3, puVar2, 0x20); /* compiler REP MOVS byte copy */
@@ -1927,7 +1927,7 @@ void st::fn_00753CE0(AnonShape_00753CE0_1943F9C2 *param_1,uint param_2)
       puVar4 = puVar5;
       uVar3 = puVar5[1];
     }
-    if ((puVar4 == (uint *)(iVar2 + 8)) || ((uint *)(*puVar4 + (int)puVar4) != puVar6)) {
+    if ((st::machine_word_boundary_cast<uint>(puVar4) == st::machine_word_boundary_cast<uint>((uint *)(iVar2 + 8))) || ((uint *)(*puVar4 + (int)puVar4) != puVar6)) {
       puVar4[1] = (int)puVar6 - iVar2;
       puVar6[1] = (int)puVar5 - param_1->field_0034;
     }
@@ -2520,7 +2520,7 @@ int st::fn_007543F0(AnonShape_007543F0_E9DD5DAA *param_1,undefined4 *param_2,und
                                     (int)param_1->field_000C->field_001C);
 
       iVar4 = st::fn_00753C80(reinterpret_cast<RecoveredRecordView_00753C80_637B4E8C *>(param_1),
-                           (int)((RecoveredRecord_00755D40_97E6B3C8 *)iVar3_mg1)->field_0008);
+                           st::storage_bit_cast<int>(static_cast<uint32_t>(((RecoveredRecord_00755D40_97E6B3C8 *)iVar3_mg1)->field_0008)));
       iVar2 = *(int *)(&((RecoveredRecord_00755D40_97E6B3C8 *)(iVar3_mg1 + 10))->field_0x6 + iVar4);
     }
     pAVar3 = param_1->field_000C;
@@ -2969,7 +2969,7 @@ int st::fn_00755180(AnonShape_00755180_CB9F7747 *param_1,LPCSTR param_2,undefine
     }
     slotStorage = &param_1->field_0008;
     g_currentExceptionFrame = local_4c.previous;
-    if ((uint)(*slotStorage)[0xe] < 0x20) {
+    if (st::storage_bit_cast<uint>(static_cast<uint32_t>((*slotStorage)[0xe])) < 0x20) {
       st::fn_006D46A0(*slotStorage,0);
       st::fn_006AB060(slotStorage);
       return -5;
@@ -3199,19 +3199,15 @@ int st::fn_00755560(RecoveredRecordView_00753C80_637B4E8C *param_1,ushort *param
 
     iVar9 = st::fn_00753C80(pRVar7,(STField<short>(iVar17,0x8) >> 1) + 4);
     if (iVar8 == iVar9) {
-      param_1 = (RecoveredRecordView_00753C80_637B4E8C *)
-
-                st::fn_00757530(reinterpret_cast<AnonShape_00757530_EEED7D69 *>(pRVar7),0,
-                             reinterpret_cast<undefined4 *>(pRVar7[1].field_0008));
+      param_1 = STPointerBoundaryCast<RecoveredRecordView_00753C80_637B4E8C *>(st::fn_00757530(reinterpret_cast<AnonShape_00757530_EEED7D69 *>(pRVar7),0,
+                             reinterpret_cast<undefined4 *>(pRVar7[1].field_0008)));
       if (param_1 == nullptr) {
         return -2;
       }
     }
     else {
-      param_1 = (RecoveredRecordView_00753C80_637B4E8C *)
-
-                st::fn_00757530(reinterpret_cast<AnonShape_00757530_EEED7D69 *>(pRVar7),0,
-                             (undefined4 *)(iVar9 + 0x10 + iVar17));
+      param_1 = STPointerBoundaryCast<RecoveredRecordView_00753C80_637B4E8C *>(st::fn_00757530(reinterpret_cast<AnonShape_00757530_EEED7D69 *>(pRVar7),0,
+                             (undefined4 *)(iVar9 + 0x10 + iVar17)));
       if (param_1 == nullptr) {
         return -2;
       }
@@ -3230,7 +3226,7 @@ int st::fn_00755560(RecoveredRecordView_00753C80_637B4E8C *param_1,ushort *param
 
     DVar10 = st::fn_006D4C50
                        (reinterpret_cast<AnonNested_00757670_0008_104EC36D *>(pRVar7->field_0008),uVar11,
-                        (int)((AnonNested_00757670_0008_104EC36D *)pRVar7->field_0008)->field_0016);
+                        st::storage_bit_cast<int>(static_cast<uint32_t>(((AnonNested_00757670_0008_104EC36D *)pRVar7->field_0008)->field_0016)));
     if (DVar10 != 0) {
       return DVar10;
     }
@@ -3258,10 +3254,8 @@ int st::fn_00755560(RecoveredRecordView_00753C80_637B4E8C *param_1,ushort *param
       *(int *)(&pAVar4[1].field_0xe + (int)pAVar4->field_001C * 8) =
            *(int *)(&pAVar4[1].field_0xe + (int)pAVar4->field_001C * 8) - iVar9;
     }
-    param_1 = (RecoveredRecordView_00753C80_637B4E8C *)
-
-              st::fn_00757530(reinterpret_cast<AnonShape_00757530_EEED7D69 *>(pRVar7),1,
-                           *(undefined4 **)&pRVar7[1].field_0x4);
+    param_1 = STPointerBoundaryCast<RecoveredRecordView_00753C80_637B4E8C *>(st::fn_00757530(reinterpret_cast<AnonShape_00757530_EEED7D69 *>(pRVar7),1,
+                           *(undefined4 **)&pRVar7[1].field_0x4));
     if (param_1 == nullptr) {
       return -2;
     }
@@ -3319,7 +3313,7 @@ uint st::fn_00755830(RecoveredRecordView_00753C80_637B4E8C *param_1,uint *param_
 
     uVar4 = st::fn_006D4C50
                       (reinterpret_cast<AnonNested_00757670_0008_104EC36D *>(param_1->field_0008),uVar3,
-                       (int)((AnonNested_00757670_0008_104EC36D *)param_1->field_0008)->field_0016);
+                       st::storage_bit_cast<int>(static_cast<uint32_t>(((AnonNested_00757670_0008_104EC36D *)param_1->field_0008)->field_0016)));
     if (uVar4 == 0) {
       *(uint *)&param_1->field_0008->field_0x8 = *(uint *)&param_1->field_0008->field_0x8 | 0x10;
       iVar4 = param_1->field_0008->field_0034;
@@ -3887,7 +3881,7 @@ int st::fn_00757360(AnonShape_00757360_9C23D284 *param_1,AnonShape_00757360_9B46
 
     st::fn_006D4C50
               (reinterpret_cast<AnonNested_00757670_0008_104EC36D *>(param_1->field_0008),param_2->field_0024,
-               (int)((AnonNested_00757670_0008_104EC36D *)param_1->field_0008)->field_0016);
+               st::storage_bit_cast<int>(static_cast<uint32_t>(((AnonNested_00757670_0008_104EC36D *)param_1->field_0008)->field_0016)));
     param_2->field_0014 = 0;
     g_currentExceptionFrame = local_4c.previous;
     return local_8;
@@ -5400,6 +5394,8 @@ void st::fn_0075E890(RecoveredRecordView_0075E890_53B4743B *param_1,int param_2,
                  )
 
 {
+  int param_2_after_write;
+
   uint uVar1;
   short *psVar2;
   byte *pbVar3;
@@ -5422,7 +5418,7 @@ void st::fn_0075E890(RecoveredRecordView_0075E890_53B4743B *param_1,int param_2,
   pbVar3 = local_88;
   piVar6 = (int *)(local_8 + (param_2 >> 2) * 0x10);
   do {
-    auto param_2_after_write = 8; /* compiler stack-slot lifetime split */
+    param_2_after_write = 8; /* compiler stack-slot lifetime split */
     iVar4 = ((param_3 >> 3) * 0x100 + (param_4 >> 2) * 4) * 2;
     do {
       iVar5 = 4;

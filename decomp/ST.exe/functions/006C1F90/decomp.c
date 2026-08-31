@@ -8,7 +8,7 @@ undefined4 FUN_006c1f90(int param_1)
   int *piVar2;
   uint local_8;
   local_8 = 0;
-  if (DAT_008568b4 == 0) {
+  if (PTR_008568b4 == nullptr) {
     return 0xffffffcc;
   }
   if ((param_1 < 0) || (0x1f < param_1)) {
@@ -21,6 +21,7 @@ undefined4 FUN_006c1f90(int param_1)
     do {
       if (piVar1[0xe] < 0) {
         piVar2 = (int *)*piVar1;
+
         FUN_006b98c0((int *)&DAT_00854ff4,piVar1);
         FUN_006a5e90((short *)piVar1);
       }

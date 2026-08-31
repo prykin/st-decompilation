@@ -318,10 +318,8 @@ void __thiscall st::fn_005B9B10(PrividerTy *this,char param_1,char param_2)
     this_02->field_1BA1 = 0;
 
     local_EAX_689 = st::fn_006B4FE0(this_02->field_005D);
-    pRVar5 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-             st::fn_006B50C0(0x208,0x143,(uint)this_02->field_005D[7],local_EAX_689,
-                          reinterpret_cast<undefined4 *>(puVar16),iVar18);
+    pRVar5 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(st::fn_006B50C0(0x208,0x143,(uint)this_02->field_005D[7],local_EAX_689,
+                          reinterpret_cast<undefined4 *>(puVar16),iVar18));
     this_02->field_1C82 = reinterpret_cast<ushort *>(pRVar5);
     uVar11 = *(uint *)&pRVar5[1].field_0x4;
     if (uVar11 == 0) {
@@ -353,10 +351,8 @@ void __thiscall st::fn_005B9B10(PrividerTy *this,char param_1,char param_2)
     puVar16 = this_02->field_005D + 0x14;
 
     uVar5 = st::fn_006B4FE0(this_02->field_005D);
-    pRVar5 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-             st::fn_006B50C0(0x22e,0x2e,(uint)this_02->field_005D[7],uVar5,reinterpret_cast<undefined4 *>(puVar16),iVar18
-                         );
+    pRVar5 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(st::fn_006B50C0(0x22e,0x2e,(uint)this_02->field_005D[7],uVar5,reinterpret_cast<undefined4 *>(puVar16),iVar18
+                         ));
     this_02->field_1C8E = reinterpret_cast<AnonPointee_PrividerTy_1C8E *>(pRVar5);
     uVar11 = *(uint *)&pRVar5[1].field_0x4;
     if (uVar11 == 0) {
@@ -2048,7 +2044,7 @@ LAB_005bccb9:
     case MESS_SIDTY_8161:
       st::fn_006B4170(reinterpret_cast<RecoveredSourceFamily_dibcopy *>(this_00->field_1C82),0,0,
                    (uint)(message->arg1).words.high,
-                   st::machine_word_boundary_cast<int>(((RecoveredSourceFamily_dibcopy *)this_00->field_1C82)->field_0004),0x13,0);
+                   ((RecoveredSourceFamily_dibcopy *)this_00->field_1C82)->field_0004,0x13,0);
 
       st::fn_00710A90(reinterpret_cast<ccFntTy *>(g_startSystem_0081176C->field_0030),(int)this_00->field_1C82,0,4,
                        (uint)(message->arg1).words.high,*(int *)(this_00->field_1C82 + 2) + -4,0x13);

@@ -1,7 +1,7 @@
 Direct-call result view summary
 Candidate generic-return calls: 37704
 Functions decompiled: 4607
-Apply: 1844
+Apply: 1843
 Cleanup: 0
 Conflicts: 101
 Failures: 0

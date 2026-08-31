@@ -6,7 +6,14 @@
    STAllPlayersC::DistributeGuardBoats
    [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
    unmasked_dword_reads=0; evidence=00446F8D MOVSX ECX,byte ptr [EBP + 0x8] | 0044704C MOVSX
-   EAX,byte ptr [EBP + 0x8] */
+   EAX,byte ptr [EBP + 0x8]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:1: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/char
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 void __thiscall STAllPlayersC::DistributeGuardBoats(STAllPlayersC *this,char param_1)
 

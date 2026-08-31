@@ -263,7 +263,6 @@ struct AnonPointee_STT3DSprC_0020;
 struct AnonPointee_SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00416270_02E6;
 struct AnonPointee_SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_0054A9B0_04E7;
 struct AnonPointee_SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_00573260_0004;
-struct AnonPointee_SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_0060EF40_02DD;
 struct AnonPointee_SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_006CEC40_0288;
 struct AnonPointee_TLOBaseTy_01F5;
 struct AnonPointee_TLOBaseTy_0291;
@@ -304,9 +303,7 @@ struct AnonShape_004EF5F0_1FA558EC;
 struct AnonShape_004F2560_DB98CB49;
 struct AnonShape_004F2560_E9671A44;
 struct AnonShape_004F3FE0_1578D6B9;
-struct AnonShape_00503450_F0FC3E6B;
 struct AnonShape_00505960_269BEFC9;
-struct AnonShape_0050E7D0_3FBA6721;
 struct AnonShape_00515650_BBDC7053;
 struct AnonShape_00517A50_98726C61;
 struct AnonShape_00518C20_0B2995D2;
@@ -336,6 +333,7 @@ struct AnonShape_00575CB0_065D0A66;
 struct AnonShape_00575CB0_C367735D;
 struct AnonShape_00578630_C5BC66E1;
 struct AnonShape_0057A2C0_ED849BD2;
+struct AnonShape_0057B670_357441D5;
 struct AnonShape_0057BF60_C1393638;
 struct AnonShape_00581200_BFD82E5E;
 struct AnonShape_00583270_0B8831C2;
@@ -381,6 +379,7 @@ struct AnonShape_006029C0_E1371936;
 struct AnonShape_006048E0_C1705B76;
 struct AnonShape_0060A4B0_7BF9A20C;
 struct AnonShape_0060A940_933574B2;
+struct AnonShape_0060AEF0_F338F36E;
 struct AnonShape_0060C020_72526BDF;
 struct AnonShape_00618240_21BDD5D4;
 struct AnonShape_00621A70_2531BB4B;
@@ -410,6 +409,7 @@ struct AnonShape_0065EF70_EB9B857D;
 struct AnonShape_00660D40_F4300C26;
 struct AnonShape_00668180_E8377840;
 struct AnonShape_00668330_F270680B;
+struct AnonShape_006747E0_C06E010E;
 struct AnonShape_0067CF30_CDCAC01F;
 struct AnonShape_0067D0A0_8092D907;
 struct AnonShape_0067D1D0_21940C5B;
@@ -423,8 +423,11 @@ struct AnonShape_00696D00_CB3CB395;
 struct AnonShape_00697AF0_A94F4D28;
 struct AnonShape_00697CF0_0C230C1C;
 struct AnonShape_00697CF0_36737CA3;
+struct AnonShape_006991C0_8449B3A8;
 struct AnonShape_0069CB50_791EEE4D;
+struct AnonShape_0069CB50_7B374C54;
 struct AnonShape_0069CB50_B339E56A;
+struct AnonShape_0069CB50_F11C5D8F;
 struct AnonShape_0069FD70_008BB09C;
 struct AnonShape_006A58B0_8049417A;
 struct AnonShape_006A58B0_CDE73679;
@@ -682,7 +685,6 @@ struct AnonShape_00760970_DF0E462C;
 struct AnonShape_00760DF0_41372EAE;
 struct AnonShape_007611C0_0B5C7A2E;
 struct AnonShape_007611C0_979BF099;
-struct AnonShape_GLOBAL_007BB198_664F92C9;
 struct AnonShape_GLOBAL_00856FE4_DDA5DC8B;
 struct AppClassTy;
 struct AppClassTy_sub_006E5150_006E5150_MessagePayload_Case_4;
@@ -901,6 +903,7 @@ struct RecoveredClass_0074CDC5;
 struct RecoveredClass_0074CFC0;
 struct RecoveredClass_0074E7B1;
 struct RecoveredClass_0074EEF3;
+struct RecoveredGlobalRecordView_007F4D50;
 struct RecoveredGlobalRecordView_00806724;
 struct RecoveredGlobalRecordView_0081175C;
 struct RecoveredGlobalRecordView_0081194C;
@@ -1519,7 +1522,6 @@ struct RecoveredRecordView_005FF150_0B034029;
 struct RecoveredRecordView_00600750_34156DAE;
 struct RecoveredRecordView_00603470_1C45B4BC;
 struct RecoveredRecordView_00604A90_D1F27465;
-struct RecoveredRecordView_00608E90_14D8A7E9;
 struct RecoveredRecordView_0060A000_E5492323;
 struct RecoveredRecordView_0060A470_1D73D583;
 struct RecoveredRecordView_0060AA00_20917E81;
@@ -1595,6 +1597,8 @@ struct RecoveredRecordView_00693910_0CDC4AE1;
 struct RecoveredRecordView_00694CD0_244EA14D;
 struct RecoveredRecordView_006952B0_2D9C9F03;
 struct RecoveredRecordView_006991C0_C443ACC2;
+struct RecoveredRecordView_006991C0_C51A57AA;
+struct RecoveredRecordView_0069BDC0_C51A57AA;
 struct RecoveredRecordView_0069E4D0_513816DF;
 struct RecoveredRecordView_006A00B0_C4D66491;
 struct RecoveredRecordView_006B2020_4DD6C4AD;
@@ -2017,7 +2021,6 @@ using Global_sub_0043E640_param_2Enum = uint32_t;
 using Global_sub_0043E9A0_param_2Enum = uint32_t;
 using Global_sub_0043EC20_param_2Enum = uint32_t;
 using Global_sub_0043FC50_param_1Enum = uint8_t;
-using Global_sub_0044D320_param_1Enum = uint32_t;
 using Global_sub_0044D320_param_2Enum = uint32_t;
 using Global_sub_00498D20_param_1Enum = uint32_t;
 using Global_sub_004AE0B0_param_4Enum = uint32_t;
@@ -2033,7 +2036,6 @@ using Global_sub_004C7730_param_1Enum = uint32_t;
 using Global_sub_004CFBE0_param_1Enum = uint32_t;
 using Global_sub_004DE1E0_param_1Enum = uint32_t;
 using Global_sub_004DE300_param_1Enum = uint32_t;
-using Global_sub_004E80F0_param_2Enum = uint32_t;
 using Global_sub_004EC700_param_1Enum = uint32_t;
 using Global_sub_004EC900_param_1Enum = uint32_t;
 using Global_sub_004F19D0_param_2Enum = uint8_t;
@@ -6304,6 +6306,7 @@ using STFnType_dt_402d9138_6bdd8b5a = float10 __thiscall(RecoveredReceiver_0064A
 using STFnType_dt_4047aaec_abd4f45e = undefined4 __thiscall(CampaignTy *st_this);
 using STFnType_dt_40d23a11_28343873 = undefined4 __thiscall(TLOBaseTy *st_this, undefined4 arg_1);
 using STFnType_dt_42971bf0_79b8eabf = cLoadingTy * __stdcall(UINT resourceId, HINSTANCE module);
+using STFnType_dt_4384a1f0_5cc4dd3c = RecoveredGlobalRecordView_007F4D50 * __cdecl(uint param_1, uint param_2, char *text, int param_4);
 using STFnType_dt_43b7677c_6ecc373b = STAllPlayersC * __fastcall(DArrayTy *array, byte *outElement);
 using STFnType_dt_43fa3302_6825d146 = RecoveredRecordView_004F4F90_9FDA4667 * __stdcall(uint param_1);
 using STFnType_dt_445d4c6c_c5870e8a = undefined4 __thiscall(MMsgTy *st_this);
@@ -6412,10 +6415,10 @@ using STFnType_dt_8bc11e05_3fc6be6b = STAllPlayersC * __fastcall(DArrayTy *array
 using STFnType_dt_8bfba588_e7b9dd25 = TraksClassTy * __stdcall(uint param_1);
 using STFnType_dt_8c81087f_7fd91488 = DArrayTy * __cdecl(cMf32 *param_1, char *param_2, int param_3);
 using STFnType_dt_8e0499b4_8bd9a314 = STFieldC_field_0234DArray * __stdcall(uint *param_1, uint *param_2);
+using STFnType_dt_8e1779b8_820d78c8 = ushort * __cdecl(cMf32 *param_1, char *text, byte param_3, int param_4);
 using STFnType_dt_8e65d476_4fd4e6ef = undefined4 __thiscall(ListClassTy *st_this);
 using STFnType_dt_8ff5363f_daebe73b = RecoveredRecord_006B4FA0_DAC3A217 * __thiscall(ccFntTy *st_this, int param_1, uint param_2, int param_3, int param_4, int param_5, int param_6, int param_7);
 using STFnType_dt_9107a500_be057b18 = undefined4 * __stdcall(int exceptionCode, int overwriteContext, char *sourceFile, int sourceLine);
-using STFnType_dt_922257b1_f31bad53 = STAllPlayersC * __thiscall(STAllPlayersC *st_this, char param_1, uint param_2, uint param_3, int *param_4, int param_5, int param_6);
 using STFnType_dt_92e7e0d4_15f988c6 = RecoveredRecordView_006B84D0_87AF9D9B * __cdecl(short *param_1, int param_2);
 using STFnType_dt_932048ab_28af486b = int __thiscall(AiPlrClassTy *st_this, STMessage *arg_1);
 using STFnType_dt_9354d98a_3453568c = undefined4 __thiscall(STGroupBoatC *st_this, undefined4 arg_1);
@@ -6519,6 +6522,7 @@ using STFnType_dt_e26f9dee_06cd771d = HoloTy * __stdcall(void);
 using STFnType_dt_e2dc1d50_2510e3e5 = STManRuinC * __stdcall(uint param_1);
 using STFnType_dt_e30b319_4aeb19a2 = undefined4 __thiscall(AiPlrClassTy *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_dt_e3dcabdd_1ac24689 = int __thiscall(FSGSTy *st_this, STMessage *arg_1);
+using STFnType_dt_e4410f50_cc38c530 = Visible * __cdecl(cMf32 *param_1, char *text, byte param_3, int param_4);
 using STFnType_dt_e4808ecf_f5c0cc78 = DebugSystemC * __cdecl(uint param_1);
 using STFnType_dt_e4a0ab50_524d95f8 = undefined4 __thiscall(STSprGameObjC *st_this);
 using STFnType_dt_e51c3a7f_427b9287 = AnonShape_00754185_34BF31BE * __cdecl(uint param_1);
@@ -6534,6 +6538,7 @@ using STFnType_dt_ed5d1114_923e7850 = void * __stdcall(uint *param_1, uint *para
 using STFnType_dt_ee0127f6_bf00e648 = RecoveredRecord_006B4FA0_DAC3A217 * __stdcall(DDXContext *param_1, int param_2, int param_3, int param_4, UINT param_5, uint param_6);
 using STFnType_dt_ee0785ed_0fdfd118 = DArrayTy * __cdecl(undefined4 param_1, byte *param_2, char param_3, short param_4, short param_5, short param_6, short param_7, short param_8, short param_9, int param_10);
 using STFnType_dt_eefce329_d88df7af = void __thiscall(RecoveredReceiver_0064A970 *st_this, undefined4 arg_1, undefined4 arg_2);
+using STFnType_dt_f190fab6_1d13e3ce = TraksClassTy * __cdecl(cMf32 *param_1, char *text, byte param_3, int param_4);
 using STFnType_dt_f2dc8dba_693fd24d = STGameObjC * __stdcall(uint param_1);
 using STFnType_dt_f302c17c_213616ba = STLBombC * __stdcall(uint param_1);
 using STFnType_dt_f308fe78_adb45e51 = undefined4 __thiscall(TLOEmbryoTy *st_this, undefined4 arg_1, undefined4 arg_2);
@@ -6541,7 +6546,6 @@ using STFnType_dt_f4036465_bd27aac8 = AiFltClassTy * __thiscall(AiTactClassTy *s
 using STFnType_dt_f467b1a9_4e86ee4f = STBoatC * __stdcall(uint param_1);
 using STFnType_dt_f60f8a1f_a772bc08 = undefined4 * __stdcall(undefined4 *param_1, int param_2, int param_3, int param_4, RecoveredRecordView_0070B770_23BC3DC8 *param_5, int param_6, int param_7, int param_8, int param_9, int param_10);
 using STFnType_dt_f66396ce_24ff9602 = AiTactClassTy * __thiscall(void *st_this, int param_1);
-using STFnType_dt_f6917a45_0f854046 = STAllPlayersC * __thiscall(STAllPlayersC *st_this, char param_1, short param_2, int param_3);
 using STFnType_dt_f6a4d8ed_e39a582e = undefined4 __thiscall(TLOBaseTy *st_this, undefined4 arg_1, undefined4 arg_2);
 using STFnType_dt_f70bbd4a_7437aad7 = short * __cdecl(int param_1, int param_2, cMf32 *param_3, int param_4, undefined1 param_5);
 using STFnType_dt_f9313a7_d4604217 = RecoveredRecordView_006B84D0_87AF9D9B * __cdecl(cMf32 *param_1, byte param_2, char *text, byte param_4, int param_5);
@@ -6766,6 +6770,7 @@ using dt_402d9138 = STFnType_dt_402d9138_6bdd8b5a;
 using dt_4047aaec = STFnType_dt_4047aaec_abd4f45e;
 using dt_40d23a11 = STFnType_dt_40d23a11_28343873;
 using dt_42971bf0 = STFnType_dt_42971bf0_79b8eabf;
+using dt_4384a1f0 = STFnType_dt_4384a1f0_5cc4dd3c;
 using dt_43b7677c = STFnType_dt_43b7677c_6ecc373b;
 using dt_43fa3302 = STFnType_dt_43fa3302_6825d146;
 using dt_445d4c6c = STFnType_dt_445d4c6c_c5870e8a;
@@ -6878,10 +6883,10 @@ using dt_8bc11e05 = STFnType_dt_8bc11e05_3fc6be6b;
 using dt_8bfba588 = STFnType_dt_8bfba588_e7b9dd25;
 using dt_8c81087f = STFnType_dt_8c81087f_7fd91488;
 using dt_8e0499b4 = STFnType_dt_8e0499b4_8bd9a314;
+using dt_8e1779b8 = STFnType_dt_8e1779b8_820d78c8;
 using dt_8e65d476 = STFnType_dt_8e65d476_4fd4e6ef;
 using dt_8ff5363f = STFnType_dt_8ff5363f_daebe73b;
 using dt_9107a500 = STFnType_dt_9107a500_be057b18;
-using dt_922257b1 = STFnType_dt_922257b1_f31bad53;
 using dt_92e7e0d4 = STFnType_dt_92e7e0d4_15f988c6;
 using dt_932048ab = STFnType_dt_932048ab_28af486b;
 using dt_9354d98a = STFnType_dt_9354d98a_3453568c;
@@ -6991,6 +6996,7 @@ using dt_e26f9dee = STFnType_dt_e26f9dee_06cd771d;
 using dt_e2dc1d50 = STFnType_dt_e2dc1d50_2510e3e5;
 using dt_e30b319 = STFnType_dt_e30b319_4aeb19a2;
 using dt_e3dcabdd = STFnType_dt_e3dcabdd_1ac24689;
+using dt_e4410f50 = STFnType_dt_e4410f50_cc38c530;
 using dt_e4808ecf = STFnType_dt_e4808ecf_f5c0cc78;
 using dt_e4a0ab50 = STFnType_dt_e4a0ab50_524d95f8;
 using dt_e51c3a7f = STFnType_dt_e51c3a7f_427b9287;
@@ -7007,6 +7013,7 @@ using dt_ed5d1114 = STFnType_dt_ed5d1114_923e7850;
 using dt_ee0127f6 = STFnType_dt_ee0127f6_bf00e648;
 using dt_ee0785ed = STFnType_dt_ee0785ed_0fdfd118;
 using dt_eefce329 = STFnType_dt_eefce329_d88df7af;
+using dt_f190fab6 = STFnType_dt_f190fab6_1d13e3ce;
 using dt_f2dc8dba = STFnType_dt_f2dc8dba_693fd24d;
 using dt_f302c17c = STFnType_dt_f302c17c_213616ba;
 using dt_f308fe78 = STFnType_dt_f308fe78_adb45e51;
@@ -7014,7 +7021,6 @@ using dt_f4036465 = STFnType_dt_f4036465_bd27aac8;
 using dt_f467b1a9 = STFnType_dt_f467b1a9_4e86ee4f;
 using dt_f60f8a1f = STFnType_dt_f60f8a1f_a772bc08;
 using dt_f66396ce = STFnType_dt_f66396ce_24ff9602;
-using dt_f6917a45 = STFnType_dt_f6917a45_0f854046;
 using dt_f6a4d8ed = STFnType_dt_f6a4d8ed_e39a582e;
 using dt_f70bbd4a = STFnType_dt_f70bbd4a_7437aad7;
 using dt_f9313a7 = STFnType_dt_f9313a7_d4604217;
@@ -11526,7 +11532,6 @@ struct CPanelTy {
 };
 
 struct ChatGlassTy {
-    byte _pad_0000[1];
     byte _storage[1];
     void OutChGlProc(RecoveredGlobalRecordView_00854EB8 *param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5, int param_6, int param_7, undefined4 *param_8);
 };
@@ -11780,19 +11785,16 @@ struct DebugSystemC {
 };
 
 struct CBaseRenderer {
-    byte _pad_0000[1];
     byte _storage[1];
     long BeginFlush();
     long EndOfStream();
 };
 
 struct CFsgsConnection {
-    byte _pad_0000[1];
     byte _storage[1];
 };
 
 struct descHelpTy {
-    byte _pad_0000[1];
     byte _storage[1];
 };
 
@@ -12388,7 +12390,6 @@ struct MAdvTy {
 };
 
 struct MMMObjTy {
-    byte _pad_0000[1];
     byte _storage[1];
     void OutBSlProc(DDXContext *param_1, MMMObjTy *param_2, MMMObjTy *param_3, int param_4, int param_5, int param_6, int param_7, undefined4 *param_8);
     void OutEdProc(RecoveredGlobalRecordView_00854EB8 *param_1, undefined4 param_2, undefined4 param_3, int param_4, int param_5, int param_6, int param_7, undefined4 *param_8);
@@ -13516,9 +13517,6 @@ struct STAllPlayersC {
     void PointPick(DArrayTy *objectIds, int param_2, int param_3, int param_4);
     uint PrepareToCmd(undefined4 *param_1, uint *param_2);
     void PutOnPlaceGuardBoats(uint param_1, uint param_2, int param_3, short param_4, uint param_5, int param_6, int param_7, DArrayTy *param_8);
-    int RegisterArtefact(ushort param_1, void *param_2);
-    int RegisterBlot(ushort param_1, void *param_2);
-    int RegisterContainer(ushort param_1, void *param_2);
     int RegisterDeposit(ushort param_1, void *param_2);
     undefined4 RegisterGroup(char param_1, ushort param_2, int param_3);
     int RegisterMine(ushort param_1, void *param_2);
@@ -18197,7 +18195,6 @@ struct SpriteClassTy {
 };
 
 struct StartServTy {
-    byte _pad_0000[1];
     byte _storage[1];
     void WrSarrDDX(int param_1, int param_2, int param_3, int param_4, int param_5, int param_6, uint param_7, uint param_8, ccFntTy *param_9, undefined4 param_10);
     void WrTextDDX(int param_1, int param_2, int param_3, int param_4, int param_5, char *resourceString, uint param_7, uint param_8, ccFntTy *param_9, uint param_10);
@@ -19092,20 +19089,6 @@ struct AnonPointee_SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_005
     undefined4 field_0068; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
     byte _unknown_006C[20];
     undefined4 field_0080; // [STClassLayoutApplier] nested evidence_count=2; nested reads=2, writes=0
-};
-
-struct AnonPointee_SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_0060EF40_02DD {
-    undefined2 field_0000; // [STClassLayoutApplier] nested evidence_count=1; nested reads=0, writes=2
-    undefined2 field_0002; // [STClassLayoutApplier] nested evidence_count=1; nested reads=0, writes=2
-    undefined2 field_0004; // [STClassLayoutApplier] nested evidence_count=1; nested reads=0, writes=2
-    short field_0006; // [STClassLayoutApplier] nested evidence_count=1; nested reads=2, writes=1; type_evidence=/short <= 0060F5B5 MOVSX establishes /short; 0060F5FD MOVSX establishes /short
-    undefined4 field_0008; // [STClassLayoutApplier] nested evidence_count=1; nested reads=0, writes=1
-    byte _unknown_000C[12];
-    undefined4 field_0018; // [STClassLayoutApplier] nested evidence_count=1; nested reads=0, writes=1
-    short field_001C; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0; type_evidence=/short <= 0060F68D MOVSX establishes /short
-    short field_001E; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0; type_evidence=/short <= 0060F66E MOVSX establishes /short
-    short field_0020; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0; type_evidence=/short <= 0060F651 MOVSX establishes /short
-    short field_0022; // [STClassLayoutApplier] nested evidence_count=1; nested reads=1, writes=0; type_evidence=/short <= 0060F5F8 MOVSX establishes /short
 };
 
 struct AnonPointee_SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_006CEC40_0288 {
@@ -25066,29 +25049,11 @@ struct AnonShape_004F3FE0_1578D6B9 {
     AnonNested_AnonShape_004F3FE0_1578D6B9_0018_7B0E2AAD *field_0018; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={pointer:/int=1}; exact_widths={}; indexed_strides={}; semantic_roles={}
 };
 
-struct AnonShape_00503450_F0FC3E6B {
-    byte _unknown_0000[272];
-    undefined4 field_0110; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={380=1}; semantic_roles={}
-    byte _unknown_0114[16];
-    BITMAPINFO *field_0124; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/wingdi.h/BITMAPINFO=1}; exact_widths={}; indexed_strides={380=1}; semantic_roles={}
-    undefined4 field_0128; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={380=1}; semantic_roles={}
-    byte _unknown_012C[80];
-};
-
 struct AnonShape_00505960_269BEFC9 {
     byte _unknown_0000[2];
     ushort field_0002; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=2}
     ushort field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/ushort=1}
     byte _unknown_0006[2];
-};
-
-struct AnonShape_0050E7D0_3FBA6721 {
-    byte _unknown_0000[272];
-    undefined4 field_0110; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={380=1}; semantic_roles={}
-    byte _unknown_0114[16];
-    BITMAPINFO *field_0124; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/wingdi.h/BITMAPINFO=1}; exact_widths={}; indexed_strides={380=1}; semantic_roles={}
-    undefined4 field_0128; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={380=1}; semantic_roles={}
-    byte _unknown_012C[80];
 };
 
 struct AnonShape_00515650_BBDC7053 {
@@ -25342,6 +25307,13 @@ struct AnonShape_0057A2C0_ED849BD2 {
     byte _unknown_0027[3];
     undefined1 field_0x2a; // exact unnamed-byte view referenced by exported code
     byte _unknown_002B[1];
+};
+
+struct AnonShape_0057B670_357441D5 {
+    short field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={8=1}; semantic_roles={}
+    short field_0002; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={8=1}; semantic_roles={}
+    short field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={8=1}; semantic_roles={}
+    undefined2 field_0006; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined2=1}; exact_widths={}; indexed_strides={8=1}; semantic_roles={}
 };
 
 struct AnonShape_0057BF60_C1393638 {
@@ -26145,6 +26117,13 @@ struct AnonShape_0060A940_933574B2 {
     AnonNested_0060A940_0234_EAD23A7B *field_0234; // [STPointerShapeApplier] evidence_count=7; fixed-offset dereference; observed_types={/int=3}
 };
 
+struct AnonShape_0060AEF0_F338F36E {
+    STFishC *field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/STFishC=1}; exact_widths={}; indexed_strides={12=1}; semantic_roles={}
+    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0005[3];
+    int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={12=1}; semantic_roles={}
+};
+
 struct AnonShape_0060C020_72526BDF {
     byte _unknown_0000[564];
     uint *field_0234; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/uint=2}
@@ -26481,6 +26460,11 @@ struct AnonShape_00668330_F270680B {
     byte _unknown_0213[1];
 };
 
+struct AnonShape_006747E0_C06E010E {
+    undefined4 field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={8=1}; semantic_roles={}
+    undefined4 field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined4=1}; exact_widths={}; indexed_strides={8=1}; semantic_roles={}
+};
+
 struct AnonShape_0067CF30_CDCAC01F {
     byte _unknown_0000[6];
     undefined1 field_0006; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=1}
@@ -26645,6 +26629,15 @@ struct AnonShape_00697CF0_36737CA3 {
     byte _unknown_0019[3];
 };
 
+struct AnonShape_006991C0_8449B3A8 {
+    short field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=2}; exact_widths={}; indexed_strides={10=2}; semantic_roles={}
+    undefined1 field_0x2; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0003[1];
+    undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0005[1];
+    int field_0006; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /undefined4=2}; exact_widths={}; indexed_strides={10=3}; semantic_roles={}
+};
+
 struct AnonShape_0069CB50_791EEE4D {
     byte _unknown_0000[1];
     byte field_0001; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/byte=2}; exact_widths={}; indexed_strides={14=2}; semantic_roles={}
@@ -26653,9 +26646,19 @@ struct AnonShape_0069CB50_791EEE4D {
     int field_000A; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}; exact_widths={}; indexed_strides={14=1}; semantic_roles={}
 };
 
+struct AnonShape_0069CB50_7B374C54 {
+    int field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=5}; exact_widths={}; indexed_strides={8=5}; semantic_roles={}
+    int field_0004; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=2, /undefined4=3}; exact_widths={}; indexed_strides={8=5}; semantic_roles={}
+};
+
 struct AnonShape_0069CB50_B339E56A {
     byte _unknown_0000[12];
     DArrayTy *field_000C; // [STPointerShapeApplier] evidence_count=5; fixed-offset dereference; observed_types={/int=2}
+};
+
+struct AnonShape_0069CB50_F11C5D8F {
+    short field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=5}; exact_widths={}; indexed_strides={4=5}; semantic_roles={}
+    short field_0002; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=9}; exact_widths={}; indexed_strides={4=9}; semantic_roles={}
 };
 
 struct AnonShape_0069FD70_008BB09C {
@@ -29351,12 +29354,6 @@ struct AnonShape_007611C0_979BF099 {
     undefined1 field_0003; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/undefined1=2}
 };
 
-struct AnonShape_GLOBAL_007BB198_664F92C9 {
-    byte _unknown_0000[4];
-    int field_0004; // [STPointerShapeApplier] evidence_count=2; fixed-offset dereference; observed_types={/int=6}; exact_widths={}; indexed_strides={12=6}; semantic_roles={}
-    char *field_0008; // [STPointerShapeApplier] evidence_count=3; fixed-offset dereference; observed_types={/int=1, pointer:/char=3}; exact_widths={}; indexed_strides={12=4}; semantic_roles={}
-};
-
 struct AnonShape_GLOBAL_00856FE4_DDA5DC8B {
     byte _unknown_0000[4];
     undefined1 field_0x4; // exact unnamed-byte view referenced by exported code
@@ -29377,6 +29374,13 @@ struct CallableReceiver_00493D10_P0 {
 struct CallableReceiver_00493D10_P0VTable {
     byte _unknown_0000[144];
     undefined4 __thiscall (*vfunc_90)(CallableReceiver_00493D10_P0 *st_this, undefined4 arg_1, undefined4 arg_2); // [STCallableReceiverApplier] exact dense CALLIND family; sites=00493D31 | 00493D42 | 00493D53 | 00493D64 | 00493D75 | 00493D86 | 00493D97 | 00493DA8 | 00493DB9 | 00493DCA | 00493DDB | 00493DEC | 00493DFD | 00493E0E | 00493E1F | 00493E30 | 00493E41 | 00493E52 | 00493E63 | 00493E74 | 00493E85 | 00493E96 | 00493EA7 | 00493EB8 | 00493EC9 | 00493EDA | 00493EEB | 00493EFC | 00493F0D | 00493F1E | 00493F2F | 00493F40 | 00493F51 | 00493F62 | 00493F73 | 00493F84 | 00493F95 | 00493FA6 | 00493FB7 | 00493FC8 | 00493FD6
+};
+
+struct RecoveredGlobalRecordView_007F4D50 {
+    byte _unknown_0000[1];
+    char field_0001; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; exact_widths={}; indexed_strides={4=1}; semantic_roles={}
+    char field_0002; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/char=1}; exact_widths={}; indexed_strides={4=1}; semantic_roles={}
+    undefined1 field_0x3; // exact unnamed-byte view referenced by exported code
 };
 
 struct RecoveredGlobalRecordView_00806724 {
@@ -33160,12 +33164,6 @@ struct RecoveredRecordView_00604A90_D1F27465 {
     byte _unknown_00E3[1];
 };
 
-struct RecoveredRecordView_00608E90_14D8A7E9 {
-    byte _unknown_0000[16];
-    uint field_0010; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/uint=1}
-    undefined4 *field_0014; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={pointer:/undefined4=2}
-};
-
 struct RecoveredRecordView_0060A000_E5492323 {
     byte _unknown_0000[28];
     undefined4 field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, /uint=1}
@@ -34285,11 +34283,11 @@ struct CGenerate {
     int sub_00697C50(int param_1, int param_2, int param_3);
     void sub_006988C0();
     int sub_00698CA0(int param_1, int param_2, int param_3, int *param_4, int *param_5, undefined4 *param_6);
-    int sub_006991C0(int param_1, int param_2, int param_3, int param_4, uint param_5, int param_6, int param_7, RecoveredRecordView_006991C0_C443ACC2 *param_8);
+    int sub_006991C0(int param_1, int param_2, int param_3, int param_4, uint param_5, RecoveredRecordView_006991C0_C51A57AA *param_6, int param_7, RecoveredRecordView_006991C0_C443ACC2 *param_8);
     void sub_0069ADA0(int param_1, int param_2);
     int sub_0069B190(int param_1, int param_2, int param_3);
     int sub_0069B400(int param_1, int param_2, int param_3, int param_4, int param_5);
-    int sub_0069BDC0(int param_1, int param_2, int param_3, int param_4, int param_5, int param_6, RecoveredRecord_CGenerate_0069BDC0 *param_7);
+    int sub_0069BDC0(int param_1, int param_2, int param_3, int param_4, int param_5, RecoveredRecordView_0069BDC0_C51A57AA *param_6, RecoveredRecord_CGenerate_0069BDC0 *param_7);
     void sub_0069FF90();
     undefined4 sub_006A0150();
     void sub_006A0470();
@@ -34302,6 +34300,16 @@ struct RecoveredRecordView_006991C0_C443ACC2 {
     int field_0008; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1}
     byte _unknown_000C[16];
     undefined4 field_001C; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/int=1, pointer:/uint=5}
+};
+
+struct RecoveredRecordView_006991C0_C51A57AA {
+    short field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=12}; exact_widths={}; indexed_strides={4=12}; semantic_roles={}
+    short field_0002; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=4}; exact_widths={}; indexed_strides={4=4}; semantic_roles={}
+};
+
+struct RecoveredRecordView_0069BDC0_C51A57AA {
+    short field_0000; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={4=1}; semantic_roles={}
+    short field_0002; // [STPointerShapeApplier] evidence_count=1; fixed-offset dereference; observed_types={/short=1}; exact_widths={}; indexed_strides={4=1}; semantic_roles={}
 };
 
 struct RecoveredRecordView_0069E4D0_513816DF {
@@ -42711,7 +42719,9 @@ struct TradePanelTy {
 
 struct TraksClassTy {
     TraksClassTyVTable *vtable; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=1
-    byte _unknown_0004[24];
+    byte _unknown_0004[16];
+    undefined1 field_0x14; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0015[7];
     undefined4 field_001C; // [STClassLayoutApplier] reads=58, writes=38; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=48
     uint field_0020; // [STClassLayoutApplier] reads=10, writes=2; type_confidence=existing; name_confidence=none; consistent_this_relative_access; compatible_subwidth_views=1x1|4x12; concrete_type_already_present; typed_cross_class_recovery=7; exact_copy_subfield_views=1; type_evidence=/uint <= 00555961 CMP/JNC establishes /uint through a field-derived value in TraksClassTy::DrawTrakSprite; 00555961 CMP/JNC through typed class pointer in TraksClassTy::DrawTrakSprite
     TraksClassTy_field_0024DArray *field_0024; // [STClassLayoutApplier] reads=15, writes=8; type_confidence=existing; name_confidence=medium; consistent_this_relative_access; compatible_DArray_element_specialization_preserved; concrete_type_already_present; typed_cross_class_recovery=12; type_evidence=pointer:/SubmarineTitans/Recovered/DArrayTy <= 005561CD generic pointer-return assignment in TraksClassTy::PrepareAfterSave; 005563A6 generic pointer-return assignment in TraksClassTy::PrepareAfterSave; 0055657A generic pointer-return assignment in TraksClassTy::GetMessage; nested layout has DArray fields +0x8/+0xC/+0x1C
@@ -42827,7 +42837,9 @@ struct ViewerClassTy {
 
 struct Visible {
     VisibleVTable *vtable; // [STClassLayoutApplier] reads=0, writes=1; type_confidence=existing; name_confidence=none; owner_vtable_pointer; concrete_type_already_present; typed_cross_class_recovery=1
-    byte _unknown_0004[24];
+    byte _unknown_0004[16];
+    undefined1 field_0x14; // exact unnamed-byte view referenced by exported code
+    byte _unknown_0015[7];
     undefined4 field_001C; // [STClassLayoutApplier] reads=0, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=1
     undefined4 field_0020; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2
     undefined4 field_0024; // [STClassLayoutApplier] reads=2, writes=2; type_confidence=none; name_confidence=none; consistent_this_relative_access; typed_cross_class_recovery=2

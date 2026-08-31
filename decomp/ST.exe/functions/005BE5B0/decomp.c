@@ -124,9 +124,7 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
     local_EAX_2562 = LoadResourceString(0x2440,g_hINSTANCE_00807618);
 
     ccFntTy::WrStr(this_00->field_0083,local_EAX_2562,iVar6,iVar15,uVar12);
-    local_18 = (RecoveredRecordView_006B84D0_87AF9D9B *)
-
-               ccFntTy::CreateSurf(this_00->field_0083,(int)this_00->field_0073,0,0,0,0x136,0x22,0);
+    local_18 = STPointerBoundaryCast<RecoveredRecordView_006B84D0_87AF9D9B *>(ccFntTy::CreateSurf(this_00->field_0083,(int)this_00->field_0073,0,0,0,0x136,0x22,0));
     if (local_18 != nullptr) {
       local_10 = local_10 & 0xffffff00;
       if (DAT_0080c83e != 0xffffffff) {
@@ -226,10 +224,8 @@ LAB_005bf156:
     /* ST_CALLSITE[005BE716]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0073,0x2e,1,'\x06',
            (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar7);
-    local_c = (RecoveredRecord_MReportTy_005BD4B0 *)
-
-              ccFntTy::CreateSurf(this_00->field_0083,(int)this_00->field_0073,0,0x2f,2,0x2b7,0x1e,0
-                                 );
+    local_c = STPointerBoundaryCast<RecoveredRecord_MReportTy_005BD4B0 *>(ccFntTy::CreateSurf(this_00->field_0083,(int)this_00->field_0073,0,0x2f,2,0x2b7,0x1e,0
+                                 ));
     if (local_c != nullptr) {
       local_11 = '\x01';
       STPiece<0,1>(DAT_0080f33a) = 0;
@@ -570,9 +566,7 @@ LAB_005bef6c:
   puVar24 = this_00->field_005D + 0x14;
 
   uVar11 = FUN_006b4fe0(this_00->field_005D);
-  local_c = (RecoveredRecord_MReportTy_005BD4B0 *)
-
-            FUN_006b50c0(400,0x32,(uint)this_00->field_005D[7],uVar11,(undefined4 *)puVar24,iVar6);
+  local_c = STPointerBoundaryCast<RecoveredRecord_MReportTy_005BD4B0 *>(FUN_006b50c0(400,0x32,(uint)this_00->field_005D[7],uVar11,(undefined4 *)puVar24,iVar6));
   uVar12 = local_c->field_0014;
   if (uVar12 == 0) {
     uVar12 = ((uint)local_c->field_000E * local_c->field_0004 + 0x1f >> 3 & 0x1ffffffc) *

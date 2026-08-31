@@ -67,10 +67,8 @@ void __thiscall st::fn_005CBD00(SettMapMTy *this,char param_1)
 
     uVar6 = st::fn_006B4FE0(puVar1);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    pRVar4 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-             st::fn_006B50C0(0xfa,0x16,(uint)*(ushort *)(this_00->field_005D + 0xe),uVar6,
-                          reinterpret_cast<undefined4 *>(puVar13),iVar14);
+    pRVar4 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(st::fn_006B50C0(0xfa,0x16,(uint)*(ushort *)(this_00->field_005D + 0xe),uVar6,
+                          reinterpret_cast<undefined4 *>(puVar13),iVar14));
     this_00->field_2204 = reinterpret_cast<AnonPointee_SettMapMTy_2204 *>(pRVar4);
     uVar10 = *(uint *)&pRVar4[1].field_0x4;
     if (uVar10 == 0) {
@@ -142,9 +140,8 @@ void __thiscall st::fn_005CBD00(SettMapMTy *this,char param_1)
         cVar12 = '\x01';
         bVar11 = 0x10;
         iVar14 = 1;
-        pRVar7 = (RecoveredRecord_005AACB0_2533FD69 *)
-                 /* ST_CALLSITE[005CBFD2]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; source view only; no Ghidra override */
-                 st::fn_006BF9F0(reinterpret_cast<int *>(g_ddxContext_008075A8),200,0x1f1,400,0x62);
+        pRVar7 = /* ST_CALLSITE[005CBFD2]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; source view only; no Ghidra override */
+        STPointerBoundaryCast<RecoveredRecord_005AACB0_2533FD69 *>(st::fn_006BF9F0(reinterpret_cast<int *>(g_ddxContext_008075A8),200,0x1f1,400,0x62));
         /* ST_CALLSITE[005CBFE9]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
         uVar9 = st::fn_0040459D(this_00->field_21F8,CASE_1,200,0x1f1,pRVar7,iVar14,bVar11,cVar12,uVar10
                             );
@@ -2853,7 +2850,7 @@ LAB_005d0391:
       local_5 = '\0';
       local_10 = 0;
       local_18 = reinterpret_cast<RecoveredRecordView_00413AF0_B98DB3AE *>(local_c->field_1F84);
-      uVar12 = st::machine_word_boundary_cast<uint>(((SettMapMTy_field_1F84DArray *)local_18)->count);
+      uVar12 = ((SettMapMTy_field_1F84DArray *)local_18)->count;
       if (uVar12 != 0) {
         do {
           if (local_10 < uVar12) {
@@ -2912,7 +2909,7 @@ LAB_005d048e:
           }
           local_10 = local_10 + 1;
           local_18 = reinterpret_cast<RecoveredRecordView_00413AF0_B98DB3AE *>(local_c->field_1F84);
-          uVar12 = st::machine_word_boundary_cast<uint>(((SettMapMTy_field_1F84DArray *)local_18)->count);
+          uVar12 = ((SettMapMTy_field_1F84DArray *)local_18)->count;
         } while (local_10 < uVar12);
       }
       g_currentExceptionFrame = local_5c.previous;
@@ -3727,7 +3724,7 @@ int __thiscall st::fn_005D1400(SettMapMTy *this,STMessage *message)
         else {
           puVar18 = nullptr;
         }
-        bVar23 = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)puVar18)[0x41]));
+        bVar23 = ((byte *)puVar18)[0x41];
         local_c = (AnonShape_005D1400_891386BF *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar23));
         if (DAT_0080877e == '\0') {
           /* ST_CALLSITE[005D1841]: CALL 0x00402d4c; direct=00402D4C SettMapMTy::ChgPlList */
@@ -3819,7 +3816,7 @@ int __thiscall st::fn_005D1400(SettMapMTy *this,STMessage *message)
           else {
             puVar18 = nullptr;
           }
-          bVar23 = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)puVar18)[0x41]));
+          bVar23 = ((byte *)puVar18)[0x41];
           local_c = (AnonShape_005D1400_891386BF *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar23));
           if (DAT_0080877e == '\0') {
             /* ST_CALLSITE[005D1735]: CALL 0x00402d4c; direct=00402D4C SettMapMTy::ChgPlList */
@@ -3856,7 +3853,7 @@ int __thiscall st::fn_005D1400(SettMapMTy *this,STMessage *message)
       else {
         puVar18 = nullptr;
       }
-      bVar23 = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)puVar18)[0x41]));
+      bVar23 = ((byte *)puVar18)[0x41];
       local_c = (AnonShape_005D1400_891386BF *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar23));
       if (DAT_0080877e == '\0') {
         /* ST_CALLSITE[005D17C0]: CALL 0x00402d4c; direct=00402D4C SettMapMTy::ChgPlList */
@@ -5191,7 +5188,7 @@ LAB_005d3188:
             else {
               puVar18 = nullptr;
             }
-            if ((st::machine_word_boundary_cast<uint>((char *)puVar18[0x41]) == st::machine_word_boundary_cast<uint>(local_10)) &&
+            if (((char *)puVar18[0x41] == local_10) &&
                (puVar18[0x42] == (uint)(byte)local_18->field_0x5)) {
               this_00->field_21A1 = uVar30;
               break;

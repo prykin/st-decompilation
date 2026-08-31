@@ -7,7 +7,14 @@
    [STMethodOwnerApplier] Structural method owner recovered as STJumpMineC.
    Evidence: this_call_owners=[STJumpMineC]; agreed_this_calls=1; incoming_this_accesses=5;
    incoming_edx_uses=4; incoming_stack_parameter_uses=56; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:1: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/short
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 undefined4 __thiscall
 STJumpMineC::sub_0061B340

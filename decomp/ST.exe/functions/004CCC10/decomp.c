@@ -149,9 +149,7 @@ LAB_004ccd43:
     puVar3 = (undefined *)0x5;
   }
   else {
-    puVar3 = (undefined *)
-
-             thunk_FUN_004e81b0(STField<int>(this,0x24),STField<int>(this,0x235),0);
+    puVar3 = STPointerBoundaryCast<undefined *>(thunk_FUN_004e81b0(STField<int>(this,0x24),STField<int>(this,0x235),0));
   }
   /* ST_CALLSITE[004CCE75]: CALL 0x004023a1; direct=004023A1 TLOEmbryoTy::sub_0041C3F0 */
   TLOEmbryoTy::sub_0041C3F0(this,puVar3);

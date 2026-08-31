@@ -38,9 +38,7 @@ int __cdecl FUN_0054ca10(int *param_1,undefined4 param_2,cMf32 *param_3,int para
     cVar1 = *pcVar6;
     pcVar6 = pcVar6 + 1;
   } while (cVar1 != '\0');
-  puVar3 = (undefined4 *)
-
-           Library::DKW::STR::FUN_006b9770((byte *)((~uVar5 - 1) + param_4),nullptr,10);
+  puVar3 = STPointerBoundaryCast<undefined4 *>(Library::DKW::STR::FUN_006b9770((byte *)((~uVar5 - 1) + param_4),nullptr,10));
   DAT_00802a3c = DAT_00802a3c + 1;
   if (g_cLoading_00802A58 != nullptr) {
     /* ST_CALLSITE[0054CA9C]: CALL 0x00403472; direct=00403472 cLoadingTy::SetState */

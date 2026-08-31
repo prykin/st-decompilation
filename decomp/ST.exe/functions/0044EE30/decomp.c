@@ -446,7 +446,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       }
       /* ST_CALLSITE[0045AAB2]: CALL 0x004042a0; direct=004042A0 STBoatC::sub_004952E0 */
       sub_004952E0(this_00);
-      /* ST_CALLSITE[0045AAC8]: CALL 0x00401028; direct=00401028 STAllPlayersC::DeleteGuardBoat; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STAllPlayersC; signature=__thiscall;pointer:/STAllPlayersC;pointer:/STAllPlayersC;/char;/short;/int */
+      /* ST_CALLSITE[0045AAC8]: CALL 0x00401028; direct=00401028 STAllPlayersC::DeleteGuardBoat; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
       STAllPlayersC::DeleteGuardBoat
                 (g_allPlayers_007FA174,(char)this_00->field_0024,this_00->field_0032,1);
       /* ST_CALLSITE[0045AADD]: CALL 0x00401028; direct=00401028 STAllPlayersC::DeleteGuardBoat */
@@ -855,9 +855,7 @@ LAB_00459f59:
     this_00->field_0716 = this_00->field_0716 - (int)pSVar31->vtable;
     pSVar23 = g_sndUnderAttMeneg_00811798;
     if ((((g_sndUnderAttMeneg_00811798 != nullptr) && (pSVar31->field_0008 != 0xff)
-         ) && (pSVar23 = (SndUnderAttMenegC *)
-
-                         thunk_FUN_0041c710((RecoveredRecordView_0041C710_A35B7121 *)this_00),
+         ) && (pSVar23 = STPointerBoundaryCast<SndUnderAttMenegC *>(thunk_FUN_0041c710((RecoveredRecordView_0041C710_A35B7121 *)this_00)),
               pSVar23 != nullptr)) && (*(int *)&pSVar31->field_0x14 == 0)) {
       /* ST_CALLSITE[00459FC4]: CALL 0x004028c4; direct=004028C4 SndUnderAttMenegC::sub_0061F8B0 */
       SndUnderAttMenegC::sub_0061F8B0
@@ -1038,7 +1036,7 @@ LAB_00459f59:
       }
       /* ST_CALLSITE[0045A2A9]: CALL 0x004042a0; direct=004042A0 STBoatC::sub_004952E0 */
       sub_004952E0(this_00);
-      /* ST_CALLSITE[0045A2BF]: CALL 0x00401028; direct=00401028 STAllPlayersC::DeleteGuardBoat; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STAllPlayersC; signature=__thiscall;pointer:/STAllPlayersC;pointer:/STAllPlayersC;/char;/short;/int */
+      /* ST_CALLSITE[0045A2BF]: CALL 0x00401028; direct=00401028 STAllPlayersC::DeleteGuardBoat; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
       STAllPlayersC::DeleteGuardBoat
                 (g_allPlayers_007FA174,(char)this_00->field_0024,this_00->field_0032,1);
       /* ST_CALLSITE[0045A2D4]: CALL 0x00401028; direct=00401028 STAllPlayersC::DeleteGuardBoat */
@@ -8038,7 +8036,7 @@ cf_error_exit_0045AEE3:
     thunk_FUN_00417e70(this_00,sVar41);
 
     iVar14 = thunk_FUN_00417ee0(this_00,0x5a);
-    /* ST_CALLSITE[0044F611]: CALL 0x004052c2; direct=004052C2 STAllPlayersC::RegisterObject; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STAllPlayersC; signature=__thiscall;pointer:/STAllPlayersC;pointer:/STAllPlayersC;/char;/uint;/uint;pointer:/int;/int;/int */
+    /* ST_CALLSITE[0044F611]: CALL 0x004052c2; direct=004052C2 STAllPlayersC::RegisterObject; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
     STAllPlayersC::RegisterObject
               (g_allPlayers_007FA174,(char)this_00->field_0024,
                STReplaceLowWord((uint32_t)(iVar14), (uint16_t)(STField<undefined2>(dVar15,0x2A))),0xffff,

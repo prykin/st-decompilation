@@ -144,7 +144,7 @@ LAB_0060211e:
 00602128  85 C0                     TEST EAX,EAX
 0060212A  74 07                     JZ 0x00602133
 0060212C  8B CE                     MOV ECX,ESI
-0060212E  E8 BF 0B E0 FF            CALL 0x00402cf2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
+0060212E  E8 BF 0B E0 FF            CALL 0x00402cf2
 LAB_00602133:
 00602133  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 00602139  85 C9                     TEST ECX,ECX

@@ -9,6 +9,8 @@ int FUN_006ae3b0(int param_1,int param_2,int param_3,int param_4,int param_5,int
   ushort uVar2;
   ushort uVar3;
   int iVar4;
+  int uVar5_mg0;
+  int uVar5_mg1;
   uint uVar5;
   uint uVar6;
   int iVar7;
@@ -40,9 +42,9 @@ int FUN_006ae3b0(int param_1,int param_2,int param_3,int param_4,int param_5,int
   local_24 = 0;
   local_30 = param_8;
 
-  uVar5 = FUN_006a6360(param_5,param_6,param_7,param_8,param_9,param_10);
+  uVar5_mg0 = FUN_006a6360(param_5,param_6,param_7,param_8,param_9,param_10);
 
-  local_3c = FUN_006a6320(uVar5);
+  local_3c = FUN_006a6320(uVar5_mg0);
   local_28 = local_3c;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (((param_8 == param_5) && (param_9 == param_6)) && (param_10 == param_7)) {
@@ -56,9 +58,9 @@ int FUN_006ae3b0(int param_1,int param_2,int param_3,int param_4,int param_5,int
       local_38 = 30000;
       iVar1 = param_1 + (param_9 * param_2 + local_30 + param_10 * iVar4) * 2;
 
-      uVar5 = FUN_006a6360(param_5,param_6,param_7,local_30,param_9,param_10);
+      uVar5_mg1 = FUN_006a6360(param_5,param_6,param_7,local_30,param_9,param_10);
 
-      uVar5 = FUN_006a6320(uVar5);
+      uVar5 = FUN_006a6320(uVar5_mg1);
       auto param_8_after_write = 0; /* compiler stack-slot lifetime split */
       local_18 = (ushort *)&SHORT_007ed576;
       local_14 = &DAT_007ed640;

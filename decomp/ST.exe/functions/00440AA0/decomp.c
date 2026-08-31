@@ -5,7 +5,14 @@
    E:\__titans\wlad\to_allpl.cpp
    STAllPlayersC::_AssignDocks
    [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
-   unmasked_dword_reads=0; evidence=00440AA9 MOVSX EAX,byte ptr [EBP + 0x8] */
+   unmasked_dword_reads=0; evidence=00440AA9 MOVSX EAX,byte ptr [EBP + 0x8]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:1: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/char
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 uint * __thiscall
 STAllPlayersC::_AssignDocks(STAllPlayersC *this,char param_1,DArrayTy *param_2,DArrayTy *param_3)

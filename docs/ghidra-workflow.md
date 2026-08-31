@@ -111,6 +111,7 @@ Only one mode is selected; no file or directory dialogs follow:
 | `full` | Run `core` and then `deep`; does not start the expensive corpus export. |
 | `export` | Stabilize script-owned parameter storage, repair stale return rollbacks, stabilize the final indirect/vtable ABI layer, record and verify the current Program plus recovery artifacts, snapshot the last accepted corpus, transactionally export into `<repo>/decomp`, and run the regression gate. |
 | `full-export` | Run the complete recovery pipeline, perform the same final ABI synchronization/evidence checkpoint, transactionally export, and run the regression gate. |
+| `q059-audit` | After source generation and a zero-error compile audit, verify the accepted corpus/source/Program identity and regenerate complete address-stable Q-059 residual review queues without mutating Ghidra. |
 
 `full` and `full-export` maintain a semantic analyzer cache for expensive
 read-only nodes. A cache hit requires the exact analyzer source, semantic
@@ -2068,6 +2069,13 @@ a new conflict is what requires another iteration.
 | `STLibraryAnalyzer/Applier` | Classify linked CRT, DKW, and internal Ourlib implementations; close same-source object-file intervals over exact direct callers and exact instruction-owned callback-address references without crossing source boundaries. Exact address-installed callbacks at a boundary between different files may inherit only a unanimously bounded common library module, never a fabricated source basename. |
 | `STExportRegressionGate` | Compare a fresh corpus with the prior central-index snapshot, report per-function quality deltas, reject exact structural/critical regressions, require zero standalone hard-text blockers, and write a reproducible export receipt. Casted call results are compared as comment-free logical expressions so Ghidra line wrapping cannot fabricate either an improvement or a regression. |
 | `STDecompExport` | Transactionally stage and promote the address-stable, dependency-fingerprinted LLM corpus so a failed long export cannot partially overwrite the accepted tree; export resolved thunk/call relations and executable coverage gaps; inline proven immutable strings; normalize terminal traps, compiler bulk-zero and `REP MOVS` loops (including exact structural field-based pointer advances and trailing byte stores), split safely dominated post-overwrite parameter lifetimes, split integer-only lifetimes from pointer-typed SSA names, remove dead opaque-code-pointer declarations, reproduce observable live-out state, exact packed-bit test/set/clear, signed divide-by-four and 16.16 rounding, exact recovered row-major three-dimensional grid indexing through `STGridAt3D`, exact same-base affine cancellation, ABI-proven narrow-return piece assignments, exact low-byte/word composition, exact generated global-record interior addresses, and byte-induction access to an already typed structure through `STObjectAtByteOffset` when the named member and access width agree. It also folds exact C++ virtual-call sugar and recovered DArray element lifetimes/addresses without persistently typing reused SSA storage; migrates exporter-owned cached syntax after normalization changes and forces a fresh decompile when an older pass destroyed the original SSA lifetime; emits the C++17 compatibility boundary plus address-stable compile-readiness summary/sites; fingerprints only composite members actually rendered by each cached body and catalogues stage-aware pseudocode/quality debt. |
+
+`tools/st_q059_closure.py` is the final offline Q-059 acceptance layer. It binds
+the passed export receipt to the generated source and pinned compile audit,
+requires an empty safe pointer/type-family frontier and a no-mutation aggregate
+confirmation, and writes `q059_*_review.tsv` plus
+`q059_closure_summary.json`. Residual classifications are evidence-preserving
+review outcomes, not permission to weaken layout, ABI, or manual-data policy.
 
 ## Git and Ghidra database hygiene
 

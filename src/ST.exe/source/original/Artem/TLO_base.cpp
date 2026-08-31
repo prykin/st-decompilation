@@ -512,9 +512,9 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
   AnonPointee_TLOBaseTy_0607 *pAVar17;
   int uVar18;
   STT3DSprC *pSVar18;
-  int local_EAX_2922;
+  STT3DSprC *local_EAX_2922;
   int local_EAX_2934;
-  int local_EAX_3194;
+  STT3DSprC *local_EAX_3194;
   int local_EAX_3206;
   int iVar17;
   HoloTy *pHVar19;
@@ -665,7 +665,7 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
         case CASE_6E:
 
           st::fn_004026DF(reinterpret_cast<RecoveredRecordView_004DD500_68A792EC *>(this_00),
-                             (uint)(&BYTE_004bd2b1)[TVar6]);
+                             st::storage_bit_cast<uint>(static_cast<uint32_t>((&BYTE_004bd2b1)[TVar6])));
         }
       }
       if (*(int *)(&DAT_00794d94 + this_00->field_0235 * 4) == 0) {
@@ -1239,9 +1239,7 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
             puVar16 = (undefined *)0x5;
           }
           else {
-            puVar16 = (undefined *)
-
-                      st::fn_00405C45((int)this_00->field_0024,this_00->field_0235,0);
+            puVar16 = STPointerBoundaryCast<undefined *>(st::fn_00405C45((int)this_00->field_0024,this_00->field_0235,0));
           }
           /* ST_CALLSITE[004BA5D4]: CALL 0x004023a1; direct=004023A1 TLOEmbryoTy::sub_0041C3F0 */
           st::fn_004023A1(reinterpret_cast<TLOEmbryoTy *>(this_00),puVar16);
@@ -1460,10 +1458,10 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
                        reinterpret_cast<RecoveredRecordView_004AD790_D4DB5A31 *>((&local_c->field_0x0 + local_c->field_03E2)));
             uVar27 = 10;
             /* ST_CALLSITE[004BAB0A]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC */
-            local_EAX_2922 = (int)st::fn_004052CC(reinterpret_cast<STT3DSprC *>(&this_00->field_01D5));
+            local_EAX_2922 = st::pointer_boundary_cast<STT3DSprC *>(st::fn_004052CC(reinterpret_cast<STT3DSprC *>(&this_00->field_01D5)));
 
             local_EAX_2934 = st::fn_004052CC(reinterpret_cast<STT3DSprC *>(this_00->field_05FF));
-            st::fn_006EA340(this_00->field_0211,local_EAX_2934,local_EAX_2922,uVar27);
+            st::fn_006EA340(this_00->field_0211,local_EAX_2934,(int)local_EAX_2922,uVar27);
             pAVar23 = local_c;
           }
           if (*(int *)&pAVar23->field_0x3ee != 0) {
@@ -1506,10 +1504,10 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
               st::fn_0040498A(reinterpret_cast<STT3DSprC *>(&this_00->field_01D5),6);
               uVar27 = 6;
               /* ST_CALLSITE[004BAC1A]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC */
-              local_EAX_3194 = (int)st::fn_004052CC(reinterpret_cast<STT3DSprC *>(&this_00->field_01D5));
+              local_EAX_3194 = st::pointer_boundary_cast<STT3DSprC *>(st::fn_004052CC(reinterpret_cast<STT3DSprC *>(&this_00->field_01D5)));
 
               local_EAX_3206 = st::fn_004052CC(this_00->field_0603);
-              st::fn_006EA340(this_00->field_0211,local_EAX_3206,local_EAX_3194,uVar27);
+              st::fn_006EA340(this_00->field_0211,local_EAX_3206,(int)local_EAX_3194,uVar27);
             }
           }
           st::fn_006AB060(&local_34);
@@ -1992,7 +1990,7 @@ LAB_004bb5dd:
     if (SVar5 != MESS_SHARED_0121) {
       if (SVar5 == MESS_SHARED_0122) {
         piVar32 = static_cast<int *>((message->arg0).ptr);
-        if (st::machine_word_boundary_cast<uint>((byte *)*piVar32) != st::machine_word_boundary_cast<uint>(this_00->field_0024)) {
+        if ((byte *)*piVar32 != this_00->field_0024) {
           g_currentExceptionFrame = local_c4.previous;
           return 0;
         }
@@ -2137,7 +2135,7 @@ LAB_004bbcb2:
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }
-    if (st::machine_word_boundary_cast<uint>(this_00->field_0024) == st::machine_word_boundary_cast<uint>((byte *)this_00->field_023D)) {
+    if (this_00->field_0024 == (byte *)this_00->field_023D) {
 LAB_004bc117:
       bVar42 = true;
     }
@@ -2659,7 +2657,7 @@ LAB_004bbfe9:
     if (TVar6 == CASE_50) {
 
       st::fn_0040268A(this_00,(uint)**(byte **)(dVar20 + 0x17),
-                         (uint)(*(byte **)(dVar20 + 0x17))[1]);
+                         st::storage_bit_cast<uint>(static_cast<uint32_t>((*(byte **)(dVar20 + 0x17))[1])));
       g_currentExceptionFrame = local_c4.previous;
       return 0;
     }

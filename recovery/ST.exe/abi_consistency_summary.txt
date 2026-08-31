@@ -1,8 +1,8 @@
 ST x86 ABI consistency
 
 Functions scanned: 5035
-Proposals: 207
-Automatic: 207
+Proposals: 184
+Automatic: 184
 known_setjmp3: 0
 known_load_resource_string: 0
 ebp_context_register: 0
@@ -12,7 +12,7 @@ x87_double_parameter_slots: 0
 x87_stack_storage_migration: 0
 full_eax_return: 184
 narrow_accumulator_return: 0
-stack_parameter_width: 3
+stack_parameter_width: 0
 stack_parameter_scalar_role: 0
 pointer_return_element_width: 0
 note=USER_DEFINED and IMPORTED target types are never selected for automatic repair.

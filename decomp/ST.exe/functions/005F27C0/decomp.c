@@ -24,10 +24,10 @@ int __thiscall STBHEShellC::GetMessage(STBHEShellC *this,STMessage *message)
   STBHEShellC *this_00;
   int local_EAX_35;
   int iVar5;
-  uint local_EAX_546;
-  uint uVar7;
-  uint local_EAX_792;
-  uint uVar9;
+  int local_EAX_546;
+  int uVar7;
+  int local_EAX_792;
+  int uVar9;
   int iVar7;
   int local_EAX_2142;
   int local_EAX_2201;
@@ -192,7 +192,7 @@ int __thiscall STBHEShellC::GetMessage(STBHEShellC *this,STMessage *message)
                       ((RecoveredReceiver_00601500 *)&this_00->field_0x20,local_8,local_10,local_c,
                        this_00->field_0093,this_00->field_0097,this_00->field_009B,
                        this_00->field_0051,0x1e,this_00->field_0081,this_00->field_0085,0xb5,0,0);
-    if (0 < (int)uVar7) {
+    if (0 < uVar7) {
       if (uVar7 == 5) {
         /* ST_CALLSITE[005F2A3E]: CALL 0x004014c9; direct=004014C9 STBHEShellC::sub_005F3470 */
         sub_005F3470(this_00);
@@ -203,7 +203,7 @@ LAB_005f2b3a:
       sub_005F5D10(this_00,uVar7);
       goto switchD_005f29cb_default;
     }
-    if (local_EAX_546 == 0xffffffff) goto LAB_005f3027;
+    if (local_EAX_546 == -1) goto LAB_005f3027;
     if (local_EAX_546 != 0) {
       if (local_EAX_546 == 1) {
         this_00->field_009F = this_00->field_0093;
@@ -228,11 +228,11 @@ LAB_005f2b3a:
                       ((RecoveredReceiver_00601500 *)&this_00->field_0x20,local_8,local_10,local_c,
                        this_00->field_0093,this_00->field_0097,this_00->field_009B,
                        this_00->field_0051,0x1e,this_00->field_0081,this_00->field_0085,0xb5,0,0);
-    if (0 < (int)uVar7) {
+    if (0 < uVar7) {
       if (uVar7 != 5) goto LAB_005f2b3a;
       goto switchD_005f29cb_caseD_5;
     }
-    if (local_EAX_792 == 0xffffffff) goto LAB_005f3027;
+    if (local_EAX_792 == -1) goto LAB_005f3027;
     if (local_EAX_792 != 0) {
       if (local_EAX_792 == 1) {
         this_00->field_009F = this_00->field_0093;
@@ -252,7 +252,7 @@ LAB_005f2b3a:
   case CASE_2:
     /* ST_CALLSITE[005F2BD8]: CALL 0x0040123a; direct=0040123A STBHEShellC::sub_005F4370 */
     uVar9 = sub_005F4370(local_14,&local_8,&local_10,&local_c,2);
-    if (uVar9 == 0xffffffff) {
+    if (uVar9 == -1) {
 LAB_005f3027:
       this_00->field_0104 = CASE_5;
       goto switchD_005f29cb_default;

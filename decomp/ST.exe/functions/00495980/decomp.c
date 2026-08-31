@@ -15,7 +15,7 @@ int __thiscall DumpClassC::GetMessage(DumpClassC *this,STMessage *message)
   DumpClassC *pDVar2;
   int iVar5;
   int iVar3;
-  uint uVar4;
+  int uVar4;
   int local_EAX_923;
   int iVar4;
   uint uVar5;

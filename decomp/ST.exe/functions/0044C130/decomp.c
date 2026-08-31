@@ -16,9 +16,9 @@ STAllPlayersC::GetTOBJImage
 
 {
   STAllPlayersC_GetTOBJImage_param_2Enum SVar2;
-  uint local_EAX_379;
+  int local_EAX_379;
   ushort *puVar3;
-  uint uVar4;
+  int uVar4;
   int iVar5;
   uint uVar5;
   Global_sub_004C2950_param_3Enum GVar8;

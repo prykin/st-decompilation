@@ -958,7 +958,7 @@ int st::fn_0040F270(int *param_1,int *param_2,int *param_3,int param_4,int param
   int iVar1;
   int iVar2;
   int iVar3;
-  int *piVar4;
+  RecoveredGlobalRecordView_007F4D50 *pRVar4;
   uint uVar5;
   int iVar6;
   int iVar7;
@@ -979,34 +979,36 @@ int st::fn_0040F270(int *param_1,int *param_2,int *param_3,int param_4,int param
   local_14 = 30000;
   local_10 = -1;
   local_c = 1;
-  piVar4 = PTR_007f4d50;
+  pRVar4 = PTR_007f4d50;
   if (1 < DAT_007f4d44) {
     do {
-      if ((-1 < local_10) && (local_30 < STField<char>(piVar4,7))) break;
-      iVar10 = STField<char>(piVar4,5) + iVar2;
-      iVar9 = (char)piVar4[1] + iVar1;
-      iVar8 = STField<char>(piVar4,6) + iVar3;
+      if ((-1 < local_10) && (local_30 < (char)pRVar4[1].field_0x3)) break;
+      iVar10 = pRVar4[1].field_0001 + iVar2;
+      iVar9 = st::machine_word_boundary_cast<int>(((char *)pRVar4)[1] + iVar1);
+      iVar8 = pRVar4[1].field_0002 + iVar3;
       if ((((-1 < iVar8) &&
            ((((iVar8 < DAT_007f4d34 && (-1 < iVar9)) && (iVar9 < DAT_007f4d2c)) &&
             ((-1 < iVar10 && (iVar10 < DAT_007f4d30)))))) &&
           (uVar5 = iVar8 * iVar7 + iVar9 + DAT_007f4d2c * iVar10, PTR_007f4cf0[uVar5] == 0)) &&
          (uVar5 = uVar5 ^ 7, (STBitTest(g_bitset_007F4CFC, uVar5)) == 0)) {
+
         iVar6 = st::fn_006AADD0(iVar9,iVar10,iVar8,param_7,param_8,param_9);
+
         iVar8 = st::fn_006AADD0(iVar9,iVar10,iVar8,param_4,param_5,param_6);
         if ((iVar8 < local_14) || ((iVar8 == local_14 && (iVar6 < local_1c)))) {
           local_10 = local_c;
-          local_30 = (int)STField<char>(piVar4,7);
+          local_30 = (int)(char)pRVar4[1].field_0x3;
           local_1c = iVar6;
           local_14 = iVar8;
         }
       }
       local_c = local_c + 1;
-      piVar4 = piVar4 + 1;
+      pRVar4 = pRVar4 + 1;
     } while (local_c < DAT_007f4d44);
     if (-1 < local_10) {
-      *param_1 = (char)PTR_007f4d50[local_10] + iVar1;
-      *param_2 = *(char *)((int)PTR_007f4d50 + local_10 * 4 + 1) + iVar2;
-      *param_3 = *(char *)((int)PTR_007f4d50 + local_10 * 4 + 2) + iVar3;
+      *param_1 = *(char *)(PTR_007f4d50 + local_10) + iVar1;
+      *param_2 = PTR_007f4d50[local_10].field_0001 + iVar2;
+      *param_3 = PTR_007f4d50[local_10].field_0002 + iVar3;
       return 0;
     }
   }
@@ -1205,6 +1207,8 @@ void st::fn_0040F4D0(byte *param_1,uint param_2,int param_3,int param_4)
 int st::fn_0040F840(byte *param_1,int param_2,int param_3,uint param_4)
 
 {
+  int param_4_after_write;
+
   int iVar1;
   int iVar2;
   uint uVar3;
@@ -1227,7 +1231,7 @@ int st::fn_0040F840(byte *param_1,int param_2,int param_3,uint param_4)
   if (param_4 == 0) {
     local_14 = 0;
     uVar4 = (uint)*param_1;
-    auto param_4_after_write = 30000; /* compiler stack-slot lifetime split */
+    param_4_after_write = 30000; /* compiler stack-slot lifetime split */
     iVar11 = 1;
     local_c = 1;
     uVar3 = 30000;

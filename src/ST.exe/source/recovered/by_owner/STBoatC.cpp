@@ -1843,7 +1843,14 @@ int __thiscall st::fn_00483F10(STBoatC *this)
    [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=2; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=12; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:1: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/short
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 undefined4 __thiscall
 st::fn_00484020(STBoatC *this,short param_1,short *param_2,short *param_3,short *param_4)
@@ -1952,6 +1959,7 @@ st::fn_00484020(STBoatC *this,short param_1,short *param_2,short *param_3,short 
                 iVar10 = CONCAT22(sVar4 >> 0xf,sVar2) * 200 + 100;
                 local_40 = iVar13;
                 local_3c = iVar10;
+
                 iVar6 = st::fn_006ACF0D((short)iVar13,(short)local_c,(short)iVar10,
                                      (int)local_14[0],(int)local_18[0],(int)param_1);
                 if ((iVar6 <= this->field_0814) &&
@@ -1969,6 +1977,7 @@ st::fn_00484020(STBoatC *this,short param_1,short *param_2,short *param_3,short 
                   }
                   puVar12 = &this->field_0x2a8;
                   do {
+
                     piVar8 = reinterpret_cast<int *>(st::fn_0040342C(local_48,(short)*(undefined4 *)(puVar12 + -2),
                                                 *(ushort *)(puVar12 + 2),(short)local_20));
                     sStack_56 = (short)((uint)*piVar8 >> 0x10);
@@ -1976,6 +1985,7 @@ st::fn_00484020(STBoatC *this,short param_1,short *param_2,short *param_3,short 
                     sVar3 = (short)local_c - sStack_56;
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     local_24 = CONCAT22(uStack_52,(short)piVar8[1]) + local_3c;
+
                     puVar9 = st::fn_0040342C(local_50,0,0,(short)local_20);
                     sStack_56 = (short)((uint)*puVar9 >> 0x10);
                     sVar4 = local_14[0] + (short)*puVar9;
@@ -2084,7 +2094,7 @@ st::fn_004845E0(STBoatC *this,STBoatC_vfunc_28_param_1Enum param_1,
       if (this_00 == nullptr) {
         return 0;
       }
-      if (st::machine_word_boundary_cast<uint>((STBoatC *)this_00) == st::machine_word_boundary_cast<uint>(this)) {
+      if ((STBoatC *)this_00 == this) {
         return 3;
       }
       if (this->field_0024 != *(int *)&this_00->field_0x24) {
@@ -2107,7 +2117,7 @@ st::fn_004845E0(STBoatC *this,STBoatC_vfunc_28_param_1Enum param_1,
       }
       return 0;
     }
-    if (st::machine_word_boundary_cast<uint>((STBoatC *)this_00) == st::machine_word_boundary_cast<uint>(this)) {
+    if ((STBoatC *)this_00 == this) {
       return 3;
     }
     if (this_00 == nullptr) {
@@ -2654,7 +2664,7 @@ LAB_00485b29:
     if (((iVar7 != 0x14) && (iVar7 != 1000)) && ((iVar7 != 0x3e9 && (iVar7 != 0x1ae)))) {
       return 1;
     }
-    if (st::machine_word_boundary_cast<uint>((STBoatC *)this_00) == st::machine_word_boundary_cast<uint>(this)) {
+    if ((STBoatC *)this_00 == this) {
       return 0;
     }
     SVar3 = this->field_06F7;
@@ -2859,7 +2869,7 @@ LAB_004847df:
       if (this_00 == nullptr) {
         return 1;
       }
-      if (st::machine_word_boundary_cast<uint>((STBoatC *)this_00) != st::machine_word_boundary_cast<uint>(this)) {
+      if ((STBoatC *)this_00 != this) {
         if (this->field_06F7 == CASE_9) {
           return 1;
         }
@@ -2888,7 +2898,7 @@ LAB_004847df:
       if (this_00 == nullptr) {
         return 1;
       }
-      if (st::machine_word_boundary_cast<uint>((STBoatC *)this_00) != st::machine_word_boundary_cast<uint>(this)) {
+      if ((STBoatC *)this_00 != this) {
         iVar7 = *(int *)&this_00->field_0x20;
         if (((iVar7 != 0x14) && (iVar7 != 1000)) && (iVar7 != 0x3e9)) {
           return 1;
@@ -2916,7 +2926,7 @@ LAB_004847df:
       if (this_00 == nullptr) {
         return 1;
       }
-      if (st::machine_word_boundary_cast<uint>((STBoatC *)this_00) != st::machine_word_boundary_cast<uint>(this)) {
+      if ((STBoatC *)this_00 != this) {
         SVar3 = this->field_06F7;
         if (((SVar3 != CASE_6) && (SVar3 != CASE_12)) && (SVar3 != CASE_22)) {
           return 1;
@@ -2964,7 +2974,7 @@ LAB_004847df:
     if (*(int *)&this_00->field_0x20 != 0x14) {
       return 1;
     }
-    if (st::machine_word_boundary_cast<uint>((STBoatC *)this_00) == st::machine_word_boundary_cast<uint>(this)) {
+    if ((STBoatC *)this_00 == this) {
       return 0;
     }
     if (this->field_072A < 1) {
@@ -3045,7 +3055,7 @@ LAB_004853d2:
     if (this_00 == nullptr) {
       return 1;
     }
-    if (st::machine_word_boundary_cast<uint>((STBoatC *)this_00) == st::machine_word_boundary_cast<uint>(this)) {
+    if ((STBoatC *)this_00 == this) {
       return 0;
     }
     if (*(int *)&this_00->field_0x20 != 0x14) {
@@ -3113,7 +3123,7 @@ LAB_00485002:
     if (iVar7 != 0) {
       return 0;
     }
-    if (st::machine_word_boundary_cast<uint>((STBoatC *)this_00) == st::machine_word_boundary_cast<uint>(this)) {
+    if ((STBoatC *)this_00 == this) {
       return 0;
     }
     if (this_00 == nullptr) {
@@ -3142,7 +3152,7 @@ LAB_00485002:
       if (this_00 == nullptr) {
         return 1;
       }
-      if (st::machine_word_boundary_cast<uint>((STBoatC *)this_00) != st::machine_word_boundary_cast<uint>(this)) {
+      if ((STBoatC *)this_00 != this) {
         SVar3 = this->field_06F7;
         if (((SVar3 != CASE_8) && (SVar3 != CASE_14)) && (SVar3 != CASE_1A)) {
           return 1;
@@ -3175,7 +3185,7 @@ LAB_00485002:
       if (this_00 == nullptr) {
         return 1;
       }
-      if (st::machine_word_boundary_cast<uint>((STBoatC *)this_00) != st::machine_word_boundary_cast<uint>(this)) {
+      if ((STBoatC *)this_00 != this) {
         SVar3 = this->field_06F7;
         if (((SVar3 != CASE_8) && (SVar3 != CASE_14)) && (SVar3 != CASE_1A)) {
           return 1;
@@ -3209,7 +3219,7 @@ LAB_00485002:
     if (this_00 == nullptr) {
       return 1;
     }
-    if (st::machine_word_boundary_cast<uint>((STBoatC *)this_00) == st::machine_word_boundary_cast<uint>(this)) {
+    if ((STBoatC *)this_00 == this) {
       return 0;
     }
     if (*(int *)&this_00->field_0x20 == 0x14) {
@@ -3263,7 +3273,7 @@ LAB_00484ed2:
 
     iVar7 = st::fn_0040226B(reinterpret_cast<STGameObjC *>(this));
     if (iVar7 == 0) {
-      return -(ushort)(st::machine_word_boundary_cast<uint>((STBoatC *)this_00) != st::machine_word_boundary_cast<uint>(this)) & 0x1d;
+      return -(ushort)((STBoatC *)this_00 != this) & 0x1d;
     }
     break;
   case CASE_2C:
@@ -3281,7 +3291,7 @@ LAB_00484ed2:
       if (this_00 == nullptr) {
         return 1;
       }
-      if (st::machine_word_boundary_cast<uint>((STBoatC *)this_00) != st::machine_word_boundary_cast<uint>(this)) {
+      if ((STBoatC *)this_00 != this) {
         /* ST_CALLSITE[0048511F]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
         iVar7 = ((STGameObjC *)this_00)->vfunc_2C();
         if (iVar7 != 0x62) {
@@ -3311,7 +3321,7 @@ LAB_00484ed2:
       if (this_00 == nullptr) {
         return 1;
       }
-      if (st::machine_word_boundary_cast<uint>((STBoatC *)this_00) != st::machine_word_boundary_cast<uint>(this)) {
+      if ((STBoatC *)this_00 != this) {
         /* ST_CALLSITE[0048519C]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC */
         iVar7 = ((STGameObjC *)this_00)->vfunc_2C();
         if ((iVar7 != 0x37) &&
@@ -3939,7 +3949,14 @@ void __thiscall st::fn_0048DBA0(STBoatC *this)
    [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=2; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=379; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:1: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/short
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 undefined4 __thiscall
 st::fn_0048DFD0
@@ -4846,7 +4863,7 @@ st::fn_00490B30(STBoatC *this,RecoveredRecord_STBoatC_00490B30 *param_1,short pa
       param_1 = reinterpret_cast<RecoveredRecord_STBoatC_00490B30 *>(STGridAt3D(g_worldGrid, sVar1, sVar3, sVar2).objects[0]);
     }
     if ((((param_1 != nullptr) &&
-         (st::machine_word_boundary_cast<uint>((RecoveredRecordView_005EFAE0_855D930D *)param_1->field_0018) == st::machine_word_boundary_cast<uint>(this->field_07F4))) ||
+         ((RecoveredRecordView_005EFAE0_855D930D *)param_1->field_0018 == this->field_07F4)) ||
 
         (iVar4 = st::fn_006E62D0(g_playSystem_00802A38,this->field_07F4,reinterpret_cast<int *>(&param_1))
         , iVar4 != -4)) &&
@@ -5044,7 +5061,7 @@ undefined4 __thiscall st::fn_00491200(STBoatC *this,int param_1)
   uint uVar1;
   uVar1 = 0;
   if ((this->field_045D == CASE_14) &&
-     (st::machine_word_boundary_cast<uint>(this->field_05A2) == st::machine_word_boundary_cast<uint>((RecoveredRecordView_005EFAE0_855D930D *)param_1))) {
+     (this->field_05A2 == (RecoveredRecordView_005EFAE0_855D930D *)param_1)) {
     this->field_05A2 = nullptr;
     uVar1 = 1;
   }

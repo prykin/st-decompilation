@@ -128,7 +128,7 @@ fi
 # /workspace/docker/st-command.sh is always the current source.  An explicit
 # shell remains passed to the image entry point unchanged.
 case ${1:-} in
-    core|deep|abi-refresh|callable-refresh|call-result-refresh|corpus-export|full|export|full-export|build-scripts|source-tree|compile-audit|compile-audit-baseline|source-audit|import|doctor|version|headless-smoke|indirect-callsite-audit|run-script|snapshot|snapshot-verify|snapshot-publish|project-hydrate)
+    core|deep|abi-refresh|callable-refresh|call-result-refresh|corpus-export|full|export|full-export|build-scripts|source-tree|compile-audit|compile-audit-baseline|source-audit|q059-audit|import|doctor|version|headless-smoke|indirect-callsite-audit|run-script|snapshot|snapshot-verify|snapshot-publish|project-hydrate)
         exec "${compose[@]}" run --rm ghidra \
             shell /workspace/docker/st-command.sh "$@"
         ;;

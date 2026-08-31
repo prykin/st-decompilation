@@ -13,7 +13,7 @@ void FUN_006c1e20(void)
   void **ppvVar3;
   void **ppvVar4;
 
-  if ((DAT_008568b4 != 0) && (g_hThread_008568C0 != (HANDLE)0x0)) {
+  if ((PTR_008568b4 != nullptr) && (g_hThread_008568C0 != (HANDLE)0x0)) {
     /* ST_CALLSITE[006C1E46]: CALL ESI */
     EnterCriticalSection((LPCRITICAL_SECTION)&DAT_00856880);
     if (DAT_008568c4 == 0) {

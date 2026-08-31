@@ -91,6 +91,12 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         "([^;\\r\\n]{1,240}?)\\s*\\*\\s*" +
         "(0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\+\\s*" +
         "(0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\)");
+    private static final Pattern RAW_RECORD_INDEXED_ZERO_ACCESS = Pattern.compile(
+        "\\*\\s*\\(\\s*([^()\\r\\n]{1,80}?)\\s*\\*\\s*\\)\\s*" +
+        "\\(\\s*(?:\\(\\s*[^()\\r\\n]{1,40}\\s*\\)\\s*)?" +
+        "([A-Za-z_$][A-Za-z0-9_$:]*)\\s*\\+\\s*" +
+        "([^+;\\r\\n]{1,240}?)\\s*\\*\\s*" +
+        "(0[xX][0-9A-Fa-f]+|[0-9]+)\\s*\\)");
     private static final Pattern NESTED_ACCESS = Pattern.compile(
         "\\*\\s*\\(\\s*([^()\\r\\n]{1,80}?)\\s*\\*\\s*\\)\\s*" +
         "\\(\\s*\\*\\s*\\(\\s*([^()\\r\\n]{1,80}?)\\s*\\*\\s*\\)\\s*" +
@@ -184,6 +190,15 @@ public class STPointerShapeAnalyzer extends GhidraScript {
     private static final Pattern FIELD_ASSIGNMENT = Pattern.compile(
         "(?m)^\\s*([A-Za-z_$][A-Za-z0-9_$]*)\\.field_(?:0[xX])?" +
         "([0-9A-Fa-f]+)\\s*=\\s*([^;\\r\\n]+);");
+    private static final Pattern INDEXED_WHOLE_SCALAR_VIEW = Pattern.compile(
+        "\\(\\s*((?:u?int|long|ulong|dword|word|u?short|u?char|byte|char|" +
+        "undefined[1248]?))\\s*\\)\\s*" +
+        "([A-Za-z_$][A-Za-z0-9_$:]*)\\s*\\[[^\\]\\r\\n]+\\]",
+        Pattern.CASE_INSENSITIVE);
+    private static final Pattern MACHINE_INDEXED_WHOLE_ACCESS = Pattern.compile(
+        "(?i)^(BYTE|WORD|DWORD|QWORD)\\s+PTR\\s*\\[\\s*" +
+        "([A-Z][A-Z0-9]*)\\s*\\+\\s*[A-Z][A-Z0-9]*\\s*\\*\\s*" +
+        "(0X[0-9A-F]+|[0-9]+)\\s*\\]$");
     private static final Pattern LEADING_CAST = Pattern.compile(
         "^\\(\\s*([^()\\r\\n]{1,80})\\s*\\)\\s*(.+)$");
     private static final Pattern VTABLE_TARGET = Pattern.compile(
@@ -414,6 +429,9 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             renderedPointerWidths);
         collectRawRecordIndexedAccesses(function, c, locals, stableStorages,
             functionTargets, renderedPointerWidths);
+        collectMachineIndexedWholeScalarViews(function);
+        collectIndexedWholeScalarViews(function, c, locals, stableStorages,
+            functionTargets);
         Matcher matcher = RAW_ACCESS.matcher(c);
         while (matcher.find()) {
             monitor.checkCancelled();
@@ -1521,7 +1539,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             int scale = effectiveScale > Integer.MAX_VALUE ? -1 : (int)effectiveScale;
             int width = accessWidth(valueType);
             if (offset < 0 || offset >= MAX_SHAPE_SIZE || width < 1 ||
-                    width > 16 || scale != width || offset + width > MAX_SHAPE_SIZE ||
+                    width > 16 || scale < width || offset + width > MAX_SHAPE_SIZE ||
                     name.equals("this") || name.startsWith("this_")) continue;
             TargetEvidence target = canonicalTarget(function, locals, stableStorages,
                 functionTargets, name);
@@ -1532,8 +1550,10 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             String type = valueTypeSpecification(valueType, width);
             if (!type.isBlank()) field.types.merge(type, 1, Integer::sum);
             field.indexedStrides.merge(scale, 1, Integer::sum);
-            field.roles.merge("entries", 1, Integer::sum);
-            field.sites.add(addr(function.getEntryPoint()) + " indexed " + name +
+            if (scale == width) field.roles.merge("entries", 1, Integer::sum);
+            else target.recordStrides.merge(scale, 1, Integer::sum);
+            field.sites.add(addr(function.getEntryPoint()) +
+                (scale == width ? " indexed " : " record-index-prefix ") + name +
                 "+0x" + Long.toHexString(offset).toUpperCase(Locale.ROOT) +
                 " stride=" + scale);
             target.accessCount++;
@@ -1553,8 +1573,8 @@ public class STPointerShapeAnalyzer extends GhidraScript {
      * This is deliberately stricter than an ordinary indexed byte access.  A
      * record stride is accepted only when it is larger than the accessed field,
      * the field lies wholly inside one record, and the same target later has one
-     * unique stride with at least two non-overlapping members and three exact
-     * sites.  The target remains one address-local generated identity; no named
+     * unique stride with at least two non-overlapping members.  The target
+     * remains one address-local generated identity; no named
      * type or fixed array bound is inferred from geometry.
      */
     private void collectRawRecordIndexedAccesses(Function function, String c,
@@ -1595,6 +1615,199 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             target.functions.add(addr(function.getEntryPoint()));
             rawAccesses++;
         }
+
+        // Offset zero has no trailing `+ 0`, so it cannot match the suffix
+        // form above.  Record it separately; a second non-overlapping member
+        // with the same stride is still required before a record is proven.
+        matcher = RAW_RECORD_INDEXED_ZERO_ACCESS.matcher(c);
+        while (matcher.find()) {
+            String valueType = matcher.group(1).trim();
+            String name = matcher.group(2);
+            long renderedScale = parseUnsigned(matcher.group(4));
+            int elementWidth = integerCastBefore(matcher.group(), name) ? 1 :
+                renderedPointerWidths.getOrDefault(name, 1);
+            long effectiveScale = renderedScale * elementWidth;
+            int stride = effectiveScale > Integer.MAX_VALUE ? -1 :
+                (int)effectiveScale;
+            int width = accessWidth(valueType);
+            if (name.equals("this") || name.startsWith("this_") || width < 1 ||
+                    width > 16 || stride < width || stride > MAX_SHAPE_SIZE)
+                continue;
+            TargetEvidence target = canonicalTarget(function, locals,
+                stableStorages, functionTargets, name);
+            if (target == null) continue;
+            if (stride == width) {
+                String type = valueTypeSpecification(valueType, width);
+                if (type.isBlank() || typeLength(type) != width)
+                    type = machineScalarType(width);
+                target.wholeElementScalarTypes.merge(type, 1, Integer::sum);
+                target.wholeElementScalarSites.add(addr(function.getEntryPoint()) +
+                    " complete raw indexed scalar view " + matcher.group().trim());
+                target.functions.add(addr(function.getEntryPoint()));
+                continue;
+            }
+            if (elementWidth > 1) target.scaledPointerEvidence = true;
+            FieldEvidence field = target.fields.computeIfAbsent(0L,
+                FieldEvidence::new);
+            field.widths.merge(width, 1, Integer::sum);
+            String type = valueTypeSpecification(valueType, width);
+            if (!type.isBlank()) field.types.merge(type, 1, Integer::sum);
+            field.indexedStrides.merge(stride, 1, Integer::sum);
+            field.sites.add(addr(function.getEntryPoint()) + " record-index " +
+                name + "+0x0 stride=" + stride);
+            target.recordStrides.merge(stride, 1, Integer::sum);
+            target.accessCount++;
+            target.functions.add(addr(function.getEntryPoint()));
+            rawAccesses++;
+        }
+    }
+
+    /**
+     * Detect a scalar view of one complete element after an earlier generated
+     * record type made Ghidra render the original full-width machine load as:
+     *
+     * <pre>
+     *     (uint)generatedTable[index]
+     * </pre>
+     *
+     * This is lifecycle repair evidence, not a semantic cast invented by the
+     * analyzer.  A repeated exact-width view of the complete generated extent
+     * proves that contained byte/word accesses are subpiece views of one scalar
+     * array element.  It therefore outranks a shape inferred only from those
+     * contained subpieces.
+     */
+    private void collectIndexedWholeScalarViews(Function function, String c,
+            Map<String, Variable> locals, Set<String> stableStorages,
+            Map<String, TargetEvidence> functionTargets) {
+        Matcher matcher = INDEXED_WHOLE_SCALAR_VIEW.matcher(c);
+        while (matcher.find()) {
+            String scalar = matcher.group(1).trim();
+            int width = accessWidth(scalar);
+            if (width < 1 || width > 8) continue;
+            TargetEvidence target = canonicalTarget(function, locals, stableStorages,
+                functionTargets, matcher.group(2));
+            if (target == null) continue;
+            if (!target.kind.equals("global")) continue;
+            Structure current = structureFromPointer(target.expectedType);
+            if (current == null || !generatedAnonymousOwned(current) ||
+                    current.getLength() != width ||
+                    !containedScalarViewsOnly(current, width)) continue;
+            String specification = valueTypeSpecification(scalar, width);
+            if (specification.isBlank() || typeLength(specification) != width)
+                specification = width == 1 ? "/byte" : width == 2 ? "/ushort" :
+                    width == 4 ? "/uint" : "/undefined8";
+            target.wholeElementScalarTypes.merge(specification, 1, Integer::sum);
+            target.wholeElementScalarSites.add(addr(function.getEntryPoint()) +
+                " complete indexed scalar view " + matcher.group().trim());
+            target.functions.add(addr(function.getEntryPoint()));
+        }
+    }
+
+    /**
+     * Machine-side counterpart of {@link #collectIndexedWholeScalarViews}.
+     * Follow one exact load of a generated global pointer through register
+     * copies inside a basic block and count complete stride-sized memory
+     * accesses.  This remains valid even when High C first assigns the loaded
+     * record to a temporary and only later casts that temporary to a word.
+     */
+    private void collectMachineIndexedWholeScalarViews(Function function) {
+        Map<String, TargetEvidence> roots = new HashMap<>();
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            for (int operand = 0; operand < instruction.getNumOperands(); operand++) {
+                String rendered = instruction.getDefaultOperandRepresentation(operand);
+                if (rendered == null) continue;
+                Matcher memory = MACHINE_INDEXED_WHOLE_ACCESS.matcher(
+                    rendered.trim().toUpperCase(Locale.ROOT));
+                if (!memory.matches()) continue;
+                TargetEvidence target = roots.get(rootRegister(memory.group(2)));
+                if (target == null) continue;
+                int width = machineMemoryWidth(memory.group(1) + " PTR");
+                int stride;
+                try { stride = (int)parseUnsigned(memory.group(3)); }
+                catch (RuntimeException exception) { continue; }
+                Structure current = structureFromPointer(target.expectedType);
+                boolean generatedSubpieces = current != null &&
+                    generatedAnonymousOwned(current) && current.getLength() == width &&
+                    containedScalarViewsOnly(current, width);
+                boolean currentScalar = current == null &&
+                    pointedTypeLength(target.expectedType) == width;
+                if (width != stride || !generatedSubpieces && !currentScalar) continue;
+                String type = machineScalarType(width);
+                target.wholeElementScalarTypes.merge(type, 1, Integer::sum);
+                target.wholeElementScalarSites.add(addr(instruction.getAddress()) +
+                    " complete indexed machine-word access " + rendered.trim());
+                target.functions.add(addr(function.getEntryPoint()));
+            }
+
+            String destination = registerOperand(instruction, 0);
+            String source = registerOperand(instruction, 1);
+            if (destination != null && instruction.getResultObjects().length > 0) {
+                destination = rootRegister(destination);
+                TargetEvidence copied = source == null ? null :
+                    roots.get(rootRegister(source));
+                TargetEvidence loaded = "MOV".equalsIgnoreCase(
+                    instruction.getMnemonicString()) ?
+                    exactGeneratedGlobalPointerLoad(instruction) : null;
+                roots.remove(destination);
+                if (loaded != null) roots.put(destination, loaded);
+                else if (copied != null) roots.put(destination, copied);
+            }
+            if (instruction.getFlowType().isCall())
+                for (String register : Set.of("EAX", "ECX", "EDX")) roots.remove(register);
+            if (instruction.getFlowType().isJump() ||
+                    instruction.getFlowType().isTerminal()) roots.clear();
+        }
+    }
+
+    private TargetEvidence exactGeneratedGlobalPointerLoad(Instruction instruction) {
+        if (instruction.getNumOperands() < 2 ||
+                !"MOV".equalsIgnoreCase(instruction.getMnemonicString())) return null;
+        String source = instruction.getDefaultOperandRepresentation(1);
+        if (source == null || !source.contains("["))
+            return null;
+        TargetEvidence found = null;
+        for (Reference reference : instruction.getReferencesFrom()) {
+            if (reference.getOperandIndex() != 1 || reference.getToAddress() == null ||
+                    !reference.getToAddress().isMemoryAddress()) continue;
+            Address address = reference.getToAddress();
+            Data data = currentProgram.getListing().getDefinedDataAt(address);
+            Symbol symbol = currentProgram.getSymbolTable().getPrimarySymbol(address);
+            if (data == null || symbol == null || data.getLength() !=
+                    currentProgram.getDefaultPointerSize()) continue;
+            String comment = currentProgram.getListing().getComment(
+                ghidra.program.model.listing.CommentType.PLATE, address);
+            TargetEvidence candidate = new TargetEvidence("global|" + addr(address),
+                "global", null, "", symbol.getName(), addr(address),
+                typeSpecification(data.getDataType()), "DATA",
+                scriptOwnedPointer(comment), typeFamilyOwned(comment), true);
+            Structure structure = structureFromPointer(candidate.expectedType);
+            boolean generated = structure != null && generatedAnonymousOwned(structure);
+            boolean scalar = structure == null &&
+                pointedTypeLength(candidate.expectedType) > 0;
+            if (!candidate.scriptOwned || !generated && !scalar) continue;
+            TargetEvidence canonical = targets.computeIfAbsent(candidate.key,
+                ignored -> candidate);
+            if (found != null && found != canonical) return null;
+            found = canonical;
+        }
+        return found;
+    }
+
+    private boolean containedScalarViewsOnly(Structure structure, int width) {
+        if (structure.getLength() != width || structure.getNumDefinedComponents() == 0)
+            return false;
+        for (DataTypeComponent component : structure.getDefinedComponents()) {
+            if (component.getOffset() < 0 ||
+                    component.getOffset() + component.getLength() > width)
+                return false;
+            DataType type = untypedef(component.getDataType());
+            if (type instanceof Pointer || type instanceof Structure || type instanceof Array)
+                return false;
+        }
+        return true;
     }
 
     private void collectCountedPointerTableRole(Function function, String c,
@@ -2833,6 +3046,19 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             generatedRefinablePath(currentStructure);
         boolean currentRecoveredConstructor =
             recoveredConstructorPath.equals(currentStructure);
+        String wholeElementScalar = dominantWholeElementScalar(target);
+        if (target.kind.equals("global") && !wholeElementScalar.isBlank()) {
+            String currentPointed = target.expectedType.startsWith("pointer:") ?
+                target.expectedType.substring("pointer:".length()) : "";
+            if (generatedAnonymous)
+                return new TargetDecision(true, false, wholeElementScalar, "repair",
+                    "repeated complete indexed scalar views supersede contained narrow " +
+                    "subpiece fields in the script-owned generated element; sites=" +
+                    target.wholeElementScalarSites.size());
+            if (currentPointed.equals(wholeElementScalar))
+                return new TargetDecision(false, false, wholeElementScalar, "existing",
+                    "current scalar pointee matches every complete indexed element view");
+        }
         /*
          * A one-byte Listing local can be only the root symbol Ghidra chose for
          * a larger inferred stack object.  Replacing that root with a pointer
@@ -3115,7 +3341,9 @@ public class STPointerShapeAnalyzer extends GhidraScript {
                 "dereference proves pointer role and target-local record geometry " +
                 "without semantic identity or cross-function merging");
         }
-        boolean multiField = target.fields.size() >= 2 && target.accessCount >= 3 &&
+        int exactRecordStride = provenRecordStride(target);
+        boolean multiField = target.fields.size() >= 2 &&
+            (target.accessCount >= 3 || exactRecordStride > 0) &&
             !recordStrideConflict;
         boolean callResultView = target.callResultView &&
             target.genericPointerConsumers >= 1 && target.accessCount >= 1;
@@ -3132,7 +3360,9 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             return new TargetDecision(false, false, matched.getPathName(),
                 "review", "field layout alone matches existing structure; manual confirmation required");
         }
-        String reason = multiField ? "multiple consistent fixed offsets in one persistent target" :
+        String reason = exactRecordStride > 0 ?
+            "one affine record stride with multiple non-overlapping exact fields" :
+            multiField ? "multiple consistent fixed offsets in one persistent target" :
             strongNested ? "consistent nested offsets through a pointer field in one persistent target" :
             callResultView ? "single-call consumer-local record view with fixed-offset evidence" :
             "single/weak fixed-offset profile retained for review";
@@ -4107,7 +4337,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         Map.Entry<Integer, Integer> only = target.recordStrides.entrySet()
             .iterator().next();
         int stride = only.getKey();
-        if (stride < 2 || stride > MAX_SHAPE_SIZE || only.getValue() < 3)
+        if (stride < 2 || stride > MAX_SHAPE_SIZE || only.getValue() < 2)
             return -1;
         int witnessedFields = 0;
         long end = -1;
@@ -4119,6 +4349,24 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             end = field.offset + width;
         }
         return witnessedFields >= 2 ? stride : -1;
+    }
+
+    private String dominantWholeElementScalar(TargetEvidence target) {
+        if (target.wholeElementScalarTypes.isEmpty() ||
+                target.wholeElementScalarSites.size() < 3) return "";
+        int width = -1;
+        for (String specification : target.wholeElementScalarTypes.keySet()) {
+            int current = typeLength(specification);
+            if (current < 1 || width >= 0 && width != current) return "";
+            width = current;
+        }
+        if (width < 1) return "";
+        if (target.wholeElementScalarTypes.size() == 1)
+            return target.wholeElementScalarTypes.keySet().iterator().next();
+        // Signedness and typedef spelling may differ between the machine load
+        // and its High-C consumers.  Agreement on the complete physical width
+        // still proves a scalar element, but only a neutral machine-word type.
+        return machineScalarType(width);
     }
 
     /**
@@ -4391,6 +4639,11 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         return type == null ? -1 : type.getLength();
     }
 
+    private int pointedTypeLength(String specification) {
+        if (specification == null || !specification.startsWith("pointer:")) return -1;
+        return typeLength(specification.substring("pointer:".length()));
+    }
+
     private String typeSpecification(DataType type) {
         type = untypedef(type);
         if (type instanceof Pointer pointer && pointer.getDataType() != null)
@@ -4607,8 +4860,10 @@ public class STPointerShapeAnalyzer extends GhidraScript {
         final Map<Long, NestedEvidence> nested = new TreeMap<>();
         final Map<String, Integer> typeEvidence = new TreeMap<>();
         final Map<Integer, Integer> recordStrides = new TreeMap<>();
+        final Map<String, Integer> wholeElementScalarTypes = new TreeMap<>();
         final Map<String, Set<String>> incomingNamedTypes = new TreeMap<>();
         final Set<String> typeSites = new TreeSet<>();
+        final Set<String> wholeElementScalarSites = new TreeSet<>();
         final Set<String> functions = new TreeSet<>();
         boolean discriminatedPayload, callResultView, scaledPointerEvidence,
             constructorThisCandidate, constructorThisAnchor;
@@ -4752,6 +5007,7 @@ public class STPointerShapeAnalyzer extends GhidraScript {
             this.typeEvidence = target.typeEvidence.toString();
             Set<String> allSites = new LinkedHashSet<>();
             allSites.addAll(target.typeSites);
+            allSites.addAll(target.wholeElementScalarSites);
             for (FieldEvidence field : target.fields.values()) allSites.addAll(field.sites);
             this.sites = String.join(" | ", allSites);
             this.reason = decision.reason;

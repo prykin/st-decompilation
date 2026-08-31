@@ -54,7 +54,8 @@ LAB_005588e4:
 005588F5  A1 C4 AE 79 00            MOV EAX,[0x0079aec4]
 005588FA  50                        PUSH EAX
 005588FB  51                        PUSH ECX
-005588FC  E8 8F A4 19 00            CALL 0x006f2d90  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/Visible; source view only; no Ghidra override
+VisibleClassTy::GetMessage::override::prt_5588fc_e4410f50:
+005588FC  E8 8F A4 19 00            CALL 0x006f2d90  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/Visible; signature=__cdecl;pointer:/Visible;pointer:/cMf32;pointer:/char;/byte;/int
 00558901  83 C4 10                  ADD ESP,0x10
 00558904  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
 LAB_00558907:

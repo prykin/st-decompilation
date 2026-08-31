@@ -2796,7 +2796,7 @@ uint __thiscall st::fn_0049B7D0(STGroupBoatC *this,int param_1)
   uVar13 = 1;
   if (1 < (int)local_28) {
     local_34 = reinterpret_cast<RecoveredRecordView_00413AF0_B98DB3AE *>(this->field_0103);
-    local_2c = st::machine_word_boundary_cast<uint>(((DArrayTy *)local_34)->count);
+    local_2c = ((DArrayTy *)local_34)->count;
     do {
       if (uVar13 < local_2c) {
         /* ST_PSEUDO[dynamic_array_indexing]: expected DArrayAt<T>(array, index) (runtime elementSize cannot be a static C array) */
@@ -9895,7 +9895,7 @@ void __thiscall st::fn_004A67A0(STGroupBoatC *this,undefined4 *param_1)
   local_8->field_0156 = (short)uVar1;
   local_8->field_0158 = (short)((uint)uVar1 >> 0x10);
   local_8->field_015A = STField<undefined2>(local_c,0x12d);
-  local_8->field_01C9 = (undefined1)(st::machine_word_boundary_cast<uint>(((undefined1 *)local_c)[0x69]));
+  local_8->field_01C9 = ((undefined1 *)local_c)[0x69];
   local_8->field_015C = STField<undefined4>(local_c,0x12f);
   local_8->field_0164 = STField<undefined4>(local_c,0x13b);
   local_8->field_016C = STField<undefined2>(local_c,0x147);
@@ -10020,7 +10020,7 @@ void __thiscall st::fn_004A67A0(STGroupBoatC *this,undefined4 *param_1)
   *(undefined4 *)&local_8->field_0x2c3 = STField<undefined4>(local_c,0x2d2);
   *(undefined4 *)&local_8->field_0x2c7 = STField<undefined4>(local_c,0x2d6);
   local_8->field_02CB = STField<undefined2>(local_c,0x2da);
-  local_8->field_02CD = (undefined1)(st::machine_word_boundary_cast<uint>(((undefined1 *)local_c)[0xb7]));
+  local_8->field_02CD = ((undefined1 *)local_c)[0xb7];
   local_8->field_02CE = STField<undefined4>(local_c,0x2dd);
   uVar1 = STField<undefined4>(local_c,0x2e1);
   local_8->field_02D2 = (short)uVar1;

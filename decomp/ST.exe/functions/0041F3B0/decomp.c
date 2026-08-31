@@ -7,8 +7,9 @@ void __fastcall FUN_0041f3b0(STSprGameObjC *param_1)
   uint *puVar1;
   int iVar2;
   uint uVar3;
-  uint uVar4;
-  STSprGameObjC_field_0259State SVar5;
+  int uVar4;
+  STSprGameObjC_field_0259State SVar4;
+  int uVar4_mg1;
 
   iVar2 = param_1->field_0221;
   if (iVar2 == -1) {
@@ -49,14 +50,14 @@ void __fastcall FUN_0041f3b0(STSprGameObjC *param_1)
     uVar3 = param_1->field_0020;
     if ((((uVar3 == 0x14) || (uVar3 == 1000)) || (uVar3 == 0x172)) || (uVar3 == 0x1a4)) {
       /* ST_CALLSITE[0041F4A1]: CALL dword ptr [EDX + 0x2c] */
-      SVar5 = param_1->slot_2C();
+      SVar4 = param_1->slot_2C();
     }
     else {
       if (uVar3 != 0x3e9) goto LAB_0041f51a;
-      SVar5 = param_1->field_0259;
+      SVar4 = param_1->field_0259;
     }
     /* ST_CALLSITE[0041F4AD]: CALL dword ptr [EAX + 0xc] */
-    if (((SVar5 != 0xffffffff) && (iVar2 = param_1->vfunc_0C(), iVar2 == 3)) &&
+    if (((SVar4 != 0xffffffff) && (iVar2 = param_1->vfunc_0C(), iVar2 == 3)) &&
        ((param_1->field_0020 != 0x172 && (param_1->field_0020 != 0x1a4)))) {
       /* ST_CALLSITE[0041F4CA]: CALL dword ptr [EDX + 0xc4] */
       uVar3 = param_1->vfunc_C4();
@@ -67,8 +68,8 @@ void __fastcall FUN_0041f3b0(STSprGameObjC *param_1)
         uVar3 = 1;
       }
 
-      uVar4 = thunk_FUN_004ac910(puVar1,'\x02');
-      if (uVar3 != uVar4) {
+      uVar4_mg1 = thunk_FUN_004ac910(puVar1,'\x02');
+      if (uVar3 != uVar4_mg1) {
         /* ST_CALLSITE[0041F50C]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
         STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\x02',uVar3);
         /* ST_CALLSITE[0041F515]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */
@@ -90,14 +91,14 @@ LAB_0041f51a:
   uVar3 = param_1->field_0020;
   if (((uVar3 == 0x14) || (uVar3 == 1000)) || ((uVar3 == 0x172 || (uVar3 == 0x1a4)))) {
     /* ST_CALLSITE[0041F578]: CALL dword ptr [EDX + 0x2c] */
-    SVar5 = param_1->slot_2C();
+    SVar4 = param_1->slot_2C();
   }
   else {
     if (uVar3 != 0x3e9) goto LAB_0041f5a0;
-    SVar5 = param_1->field_0259;
+    SVar4 = param_1->field_0259;
   }
   /* ST_CALLSITE[0041F584]: CALL dword ptr [EAX + 0xc] */
-  if ((SVar5 != 0xffffffff) && (iVar2 = param_1->vfunc_0C(), iVar2 == 3)) {
+  if ((SVar4 != 0xffffffff) && (iVar2 = param_1->vfunc_0C(), iVar2 == 3)) {
     /* ST_CALLSITE[0041F592]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\x02',0);
     /* ST_CALLSITE[0041F59B]: CALL 0x004030bc; direct=004030BC STT3DSprC::ShowCurFase */

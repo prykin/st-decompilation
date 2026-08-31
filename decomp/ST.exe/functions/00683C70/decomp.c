@@ -34,9 +34,9 @@ uint * FUN_00683c70(LPCSTR lpFileName,RecoveredRecordView_00683C70_9F6EAF4E *par
   char cVar2;
   int local_EAX_119;
   int iVar2;
-  uint uVar8;
-  uint local_EAX_619;
-  uint local_EAX_667;
+  int uVar8;
+  int local_EAX_619;
+  int local_EAX_667;
   byte *pbVar3_mg0;
   int local_EAX_907;
   int local_EAX_1897;
@@ -314,19 +314,19 @@ uint * FUN_00683c70(LPCSTR lpFileName,RecoveredRecordView_00683C70_9F6EAF4E *par
       }
 
       uVar8 = thunk_FUN_0067f740("_env_var0",param_2->field_030C);
-      if ((int)uVar8 < 0) {
+      if (uVar8 < 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x46b);
       }
 
       local_EAX_619 = thunk_FUN_0067f740("_env_var1",param_2->field_0310);
-      if ((int)local_EAX_619 < 0) {
+      if (local_EAX_619 < 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x46c);
       }
 
       local_EAX_667 = thunk_FUN_0067f740("_env_var2",param_2->field_0314);
-      if ((int)local_EAX_667 < 0) {
+      if (local_EAX_667 < 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0x46d);
       }
@@ -2708,11 +2708,9 @@ cf_common_join_006895D5:
                       (-0x8c,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",
                        0x70e);
           }
-          DAT_008489c8 = (AllocationRecord_0065CD10 *)
-
-                         thunk_FUN_00690e90((&PTR_00811aec)[DAT_008488b0 * 0xac5],
+          DAT_008489c8 = STPointerBoundaryCast<AllocationRecord_0065CD10 *>(thunk_FUN_00690e90((&PTR_00811aec)[DAT_008488b0 * 0xac5],
                                             *(undefined2 *)(&DAT_00811c80 + DAT_008488b0 * 0xac5),
-                                            *(undefined2 *)(&DAT_00811c84 + DAT_008488b0 * 0xac5));
+                                            *(undefined2 *)(&DAT_00811c84 + DAT_008488b0 * 0xac5)));
           DAT_008488b0 = DAT_008488b0 + -1;
           goto switchD_006841b6_default;
         case 0x41b:

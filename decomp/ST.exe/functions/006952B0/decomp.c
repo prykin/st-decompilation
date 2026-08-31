@@ -41,7 +41,7 @@ CGenerate::FUN_006952b0
   int local_14;
   int local_10;
   int local_c;
-  void *local_8;
+  RecoveredRecordView_0069BDC0_C51A57AA *local_8;
 
   local_c = 0;
   local_4c = this;
@@ -186,7 +186,7 @@ CGenerate::FUN_006952b0
 
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       /* ST_CALLSITE[0069563A]: CALL 0x00405335; direct=00405335 CGenerate::sub_0069BDC0 */
-      iStack_60 = sub_0069BDC0(this,local_38.field_0010,10,10,4,0x23,(int)local_8,
+      iStack_60 = sub_0069BDC0(this,local_38.field_0010,10,10,4,0x23,local_8,
                                (RecoveredRecord_CGenerate_0069BDC0 *)&local_6c);
       /* ST_CALLSITE[00695644]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
       sub_0069FF90(this);
@@ -194,7 +194,9 @@ CGenerate::FUN_006952b0
       _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       /* ST_CALLSITE[0069567C]: CALL 0x00403ff3; direct=00403FF3 CGenerate::sub_006991C0 */
       iStack_64 = sub_006991C0(this,*this->field_0008 << 1,this->field_0008[1] << 1,local_1c,
-                               local_18,local_38.field_0010,(int)local_8,local_38.field_0004 - 1,
+                               local_18,local_38.field_0010,
+                               (RecoveredRecordView_006991C0_C51A57AA *)local_8,
+                               local_38.field_0004 - 1,
                                (RecoveredRecordView_006991C0_C443ACC2 *)&local_6c);
       /* ST_CALLSITE[00695686]: CALL 0x00404a43; direct=00404A43 CGenerate::sub_0069FF90 */
       sub_0069FF90(this);

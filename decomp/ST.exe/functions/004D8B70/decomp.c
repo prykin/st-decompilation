@@ -13,10 +13,10 @@ undefined4 __thiscall STAllPlayersC::sub_004D8B70(STAllPlayersC *this,char param
 
 {
   byte bVar1;
-  uint uVar2;
+  int uVar2;
   int iVar3;
   int iVar2;
-  uint uVar5;
+  int uVar5;
   int iVar4;
   uint uVar6;
   uint uVar7;
@@ -33,7 +33,7 @@ undefined4 __thiscall STAllPlayersC::sub_004D8B70(STAllPlayersC *this,char param
       uVar2 = thunk_FUN_004e41c0(uVar6);
 
       iVar3 = thunk_FUN_004e4180(uVar6);
-      iVar2 = (int)(uVar2 * 0x14) / iVar3;
+      iVar2 = (uVar2 * 0x14) / iVar3;
       if (0x14 < iVar2) {
         iVar2 = 0x14;
       }

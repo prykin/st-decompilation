@@ -31,7 +31,7 @@ int __thiscall AiFltClassTy::GetAiMess(AiFltClassTy *this,uint *param_1)
   IMAGE_DOS_HEADER *pIVar11;
   int local_EAX_225;
   int local_EAX_1152;
-  uint local_EAX_1361;
+  int local_EAX_1361;
   int local_EAX_1968;
   int iVar13;
   int local_EAX_2335;
@@ -571,7 +571,7 @@ LAB_0066263e:
       local_EAX_1361 =
            SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_0065DA50::thunk_FUN_0065da50
                      ((RecoveredReceiver_0065DA50 *)this_00,iVar20,-1);
-      if ((int)local_EAX_1361 < 1) {
+      if (local_EAX_1361 < 1) {
         g_currentExceptionFrame = local_74.previous;
         return 0;
       }

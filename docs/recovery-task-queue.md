@@ -819,7 +819,9 @@ Accepted source-only state:
 
 ### Q-057 Separate value-domain lifetimes and close return ABI contradictions
 
-Status: planned; follows Q-056.
+Status: in progress as the next independent acceptance layer. Q-058 and Q-059
+are complete, but neither the successful Q-059 aggregate pass nor its zero-error
+C++ compile is by itself evidence that Q-057 is closed.
 
 Use normalized compiler diagnostics only as an address-stable discovery queue.
 For every enabled repair, re-prove the machine/p-code anchor in Ghidra. Extend
@@ -846,11 +848,46 @@ the C++ compiler's signed-char rules are not semantic evidence.
 
 Completion criteria:
 
-- zero pointer-to-float, float-to-pointer, pointer-as-switch, and void-value
-  compiler families;
-- no increase in unresolved register inputs, return-width artifacts, stack-slot
-  reuse, generic pointer towers, or canonical casted call results at any address;
-- all ABI fixture and export gates pass after a confirming no-change pipeline.
+- the final source tree contains no machine-proven pointer-to-float,
+  float-to-pointer, pointer-as-scalar/switch, void-value consumption,
+  integer/EAX-versus-x87 return, wrong-width EAX/AX/AL return, incoming-parameter
+  retyping, or merged pointer/scalar/DArray/output-buffer/post-call lifetime
+  contradiction;
+- a dedicated address-stable Q-057 closure audit checks the live Ghidra Program,
+  machine/p-code anchors, call boundaries, and generated C++. Each row records
+  function, storage/local/parameter, conflicting value domains, definitions and
+  consumers, the selected repair or exact rejection reason, and one of
+  `resolved`, `neutralized`, `review`, or `conflict`;
+- compiler diagnostics are discovery input only. Every Program mutation is
+  supported by instruction/p-code, calling convention, storage, and complete
+  required caller/callee coverage;
+- distinct machine lifetimes are split by `STLocalLifetimeAnalyzer/Applier`
+  only at a stable anchor. An exporter-only lifetime is allowed only with exact
+  dominance, no crossing label, and no stable Ghidra representation. One late
+  use never licenses whole-local typing;
+- an unknown semantic type remains neutral machine-word storage with exact
+  per-use views. Neutralization is acceptable; an invented pointer, scalar,
+  class, or container type is not;
+- return ABI changes retain the existing all-reachable-return-path,
+  accumulator/x87-definition, and complete caller-consumption requirements and
+  must pass the ABI regression gate without recursive proof through generic
+  signatures;
+- representative families `0064A970`, `00548C40`, `00605B60`, `00652810`, all
+  current void-value consumers, and all compiler pointer-indirection/return
+  diagnostics caused by merged lifetimes or return ABI are resolved or honestly
+  neutralized;
+- arbitrary generator casts, address allow-lists, whole-local retyping,
+  compiler-driven prototype edits, zero/stub substitutions, deletion of the
+  expression, and bare `USER_DEFINED` provenance cannot close a row;
+- the only permitted residue is machine-correct neutral storage, an explicit
+  review-only conflict with no safe automatic action, or an honest unresolved
+  register/SEH live-in which has no false type and no contradictory source
+  lifetime;
+- the closure audit has no unresolved machine-proven contradiction, all safe
+  proposals are exhausted, a confirming pass changes nothing, the final
+  manifest compiles without Q-057 diagnostic families, and ABI, export,
+  readability, and compiler gates pass without source casts masking a lifetime
+  or return problem.
 
 ### Q-058 Recover callable ownership and indirect-call families
 
@@ -945,7 +982,8 @@ rejection evidence and move forward as Q-059 or later semantic debt.
 
 ### Q-059 Consolidate aggregates, executable coverage, and semantic identities
 
-Status: in progress; Q-058 is complete.
+Status: complete; Q-058 is complete and Q-057 remains a separate acceptance
+layer.
 
 After ABI and ownership stabilize, consolidate exact pointer layouts and
 anonymous records through cross-function flow, complete copy/zero spans,
@@ -962,15 +1000,67 @@ evidence agrees. Control-flow restructuring and semantic field/function naming
 are the final presentation layer; optimized shared tails and genuinely unknown
 names may remain explicit review debt.
 
-Completion targets:
+Acceptance criteria and work order:
 
-- all 322 translation units compile independently under the fixed audit; linking
-  and image-backed runtime definitions remain a separate later milestone;
-- raw pointer offsets fall below 500 and anonymous-shape occurrences below 1,000;
-- every remaining generic name, ambiguous shape, and unclaimed range is retained
-  in an address-stable review queue with an explicit rejection reason;
-- no semantic name, inheritance relation, array extent, or record merge is based
-  on an image address allow-list or hand-authored game-type list.
+1. Every translation unit in the final accepted manifest compiles independently
+   with zero errors. The current 328-TU count is descriptive, not fixed; linking
+   and image-backed runtime definitions remain a later milestone.
+2. No raw pointer offset or anonymous shape may block compilation, violate the
+   ABI, or require an unproved public type.
+3. All automatically provable aggregate/layout candidates are exhausted. A
+   confirming analyzer pass must propose no further safe application.
+4. Every residual raw pointer offset is classified by stable function/address
+   and exact reason: proven field not yet applied, packed/unaligned or union
+   view, intentional byte cursor, dynamic DArray/runtime stride, array/pointer
+   walk, or insufficient independent evidence.
+5. Every residual anonymous shape records owner/provenance and the reason a
+   merge is rejected. No pair which satisfies the current strict identity and
+   compatibility rules may remain separate.
+6. Geometry, source basename, image address, and metric reduction are never type
+   or merge evidence. Manual/imported/`USER_DEFINED` protection, ABI/readability
+   gates, and per-address nonincreasing policy remain mandatory; no address
+   allow-list, hand-authored game type, arbitrary cast, or stub is permitted.
+7. Every residual generic name, ambiguous layout, and meaningful unclaimed
+   executable range is present in a complete address-stable review queue with an
+   explicit rejection reason.
+8. Q-057 lifetime/return contradictions which cause a compiler blocker are
+   closed through the separate Q-057 evidence policy, never hidden by a
+   source-generator cast.
+9. After the last change, run a confirming no-change pass, ABI/export/readability
+   gates, source generation, the full zero-error compile audit, snapshot creation
+   and verification, and only then mark Q-059 complete.
+
+The historical `<500` raw-pointer-offset and `<1000` anonymous-shape figures are
+progress indicators only. Record the final achieved counts, but never tune the
+corpus or weaken evidence policy to cross them. Work priority is: close current
+compiler errors; recover the largest proven aggregate/layout clusters; exhaust
+safe raw-offset and anonymous-shape proposals; then materialize the complete
+review queues for the legitimate or unprovable residue.
+
+Accepted Q-059 result:
+
+- all 328 translation units in the final manifest compile independently with
+  zero errors, and the compiler regression gate passes;
+- the confirming full recovery pass has zero aggregate/layout mutations and no
+  enabled safe pointer-shape or type-family proposal;
+- 1,103 residual raw pointer offsets are fully classified by stable address:
+  334 array/pointer walks, 21 dynamic DArray/runtime strides, 165 intentional
+  byte cursors, 218 packed/unaligned or union views, and 365 sites without
+  sufficient independent evidence. None blocks compilation or ABI recovery;
+- 1,337 residual anonymous-shape occurrences have owner/provenance and explicit
+  rejection evidence; the closure audit finds zero remaining safe merge pair;
+- 123,594 residual generic identities and 1,843 meaningful unclaimed ranges
+  (67,361 bytes) are present in complete review queues rather than being hidden
+  behind invented names or types;
+- the accepted Program fingerprint is
+  `0c968ea8b4bda3df00f8692b19201788db1b245d22c1256efa238b38287c927c`,
+  the corpus manifest is
+  `37981da755a051f0da39ba7ef9c9da083f498265c27540a9bb8bc9dc64981c2b`,
+  and the generated source manifest is
+  `66671e3355a0513cdfad1e9c38576169725de4cf6ada0b5756dfc3176862d039`;
+- export, ABI, per-address readability, Q-059 closure, snapshot round-trip, and
+  compiler regression gates pass. The canonical packed snapshot is the verified
+  deterministic image of that same semantic Program.
 
 ## Definition of done for one queue item
 

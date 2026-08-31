@@ -90,10 +90,10 @@ st::fn_005AB300
   HANDLE pvVar5;
   ushort *local_EAX_619;
   ushort *puVar7;
-  ushort *local_EAX_770;
-  uint *puVar6;
+  RecoveredRecordView_006B84D0_87AF9D9B *local_EAX_770;
+  uint *puVar6_mg0;
   int uVar14;
-  RecoveredRecord_006B4FA0_DAC3A217 *pRVar7;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar6;
   uint *puVar8;
   HoloTy *pHVar9;
   RecoveredRecord_005AACB0_2533FD69 *pRVar10;
@@ -106,12 +106,13 @@ st::fn_005AB300
   uint uVar12;
   int iVar13;
   char *pcVar14;
-  char *pcVar15;
+  uint *puVar15;
   char *pcVar18;
-  byte bVar19;
-  char cVar20;
-  ushort *puVar21;
-  int iVar22;
+  char *pcVar19;
+  byte bVar20;
+  char cVar21;
+  ushort *puVar22;
+  int iVar23;
   uint local_86c [256];
   char local_46c [32];
   byte local_44c;
@@ -179,19 +180,19 @@ st::fn_005AB300
   }
   uVar11 = 0xffffffff;
   pcVar14 = (char *)&this_01->field_1CA3;
-  pcVar18 = &CHAR_00h_00807680;
+  pcVar19 = &CHAR_00h_00807680;
   do {
-    pcVar15 = pcVar18;
+    pcVar18 = pcVar19;
     if (uVar11 == 0) break;
     uVar11 = uVar11 - 1;
-    pcVar15 = pcVar18 + 1;
-    cVar20 = *pcVar18;
-    pcVar18 = pcVar15;
-  } while (cVar20 != '\0');
+    pcVar18 = pcVar19 + 1;
+    cVar21 = *pcVar19;
+    pcVar19 = pcVar18;
+  } while (cVar21 != '\0');
   uVar11 = ~uVar11;
-  pcVar18 = pcVar15 + -uVar11;
-  pcVar15 = pcVar14;
-  memmove(pcVar15, pcVar18, uVar11); /* compiler REP MOVS byte copy */
+  pcVar19 = pcVar18 + -uVar11;
+  pcVar18 = pcVar14;
+  memmove(pcVar18, pcVar19, uVar11); /* compiler REP MOVS byte copy */
   uVar12 = 0;
   switch(this_01->array_00BC[0xc].field_01DF) {
   case 1:
@@ -201,52 +202,52 @@ st::fn_005AB300
     local_c = 0xffffffff;
     temp_3f2c6d1691 = st_global_0079C050;
     do {
-      pcVar18 = temp_3f2c6d1691;
+      pcVar19 = temp_3f2c6d1691;
       if (local_c == 0) break;
       local_c = local_c - 1;
-      pcVar18 = temp_3f2c6d1691 + 1;
-      cVar20 = *temp_3f2c6d1691;
-      temp_3f2c6d1691 = pcVar18;
-    } while (cVar20 != '\0');
+      pcVar19 = temp_3f2c6d1691 + 1;
+      cVar21 = *temp_3f2c6d1691;
+      temp_3f2c6d1691 = pcVar19;
+    } while (cVar21 != '\0');
     local_c = ~local_c;
-    pcVar18 = pcVar18 + -local_c;
-    iVar22 = -1;
-    pcVar15 = pcVar14;
+    pcVar19 = pcVar19 + -local_c;
+    iVar23 = -1;
+    pcVar18 = pcVar14;
     do {
-      pcVar14 = pcVar15;
-      if (iVar22 == 0) break;
-      iVar22 = iVar22 + -1;
-      pcVar14 = pcVar15 + 1;
-      cVar20 = *pcVar15;
-      pcVar15 = pcVar14;
-    } while (cVar20 != '\0');
+      pcVar14 = pcVar18;
+      if (iVar23 == 0) break;
+      iVar23 = iVar23 + -1;
+      pcVar14 = pcVar18 + 1;
+      cVar21 = *pcVar18;
+      pcVar18 = pcVar14;
+    } while (cVar21 != '\0');
     goto LAB_005ab4dc;
   case 3:
     uVar11 = 0xffffffff;
     temp_3ff82dc6a0 = st_global_0079C054;
     do {
-      pcVar18 = temp_3ff82dc6a0;
+      pcVar19 = temp_3ff82dc6a0;
       if (uVar11 == 0) break;
       uVar11 = uVar11 - 1;
-      pcVar18 = temp_3ff82dc6a0 + 1;
-      cVar20 = *temp_3ff82dc6a0;
-      temp_3ff82dc6a0 = pcVar18;
-    } while (cVar20 != '\0');
+      pcVar19 = temp_3ff82dc6a0 + 1;
+      cVar21 = *temp_3ff82dc6a0;
+      temp_3ff82dc6a0 = pcVar19;
+    } while (cVar21 != '\0');
     uVar11 = ~uVar11;
-    iVar22 = -1;
+    iVar23 = -1;
     do {
-      pcVar15 = pcVar14;
-      if (iVar22 == 0) break;
-      iVar22 = iVar22 + -1;
-      pcVar15 = pcVar14 + 1;
-      cVar20 = *pcVar14;
-      pcVar14 = pcVar15;
-    } while (cVar20 != '\0');
-    pcVar18 = pcVar18 + -uVar11;
-    pcVar14 = pcVar15 + -1;
+      pcVar18 = pcVar14;
+      if (iVar23 == 0) break;
+      iVar23 = iVar23 + -1;
+      pcVar18 = pcVar14 + 1;
+      cVar21 = *pcVar14;
+      pcVar14 = pcVar18;
+    } while (cVar21 != '\0');
+    pcVar19 = pcVar19 + -uVar11;
+    pcVar14 = pcVar18 + -1;
     for (uVar12 = uVar11 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
-      *(undefined4 *)pcVar14 = *(undefined4 *)pcVar18;
-      pcVar18 = pcVar18 + 4;
+      *(undefined4 *)pcVar14 = *(undefined4 *)pcVar19;
+      pcVar19 = pcVar19 + 4;
       pcVar14 = pcVar14 + 4;
     }
     goto LAB_005ab4e5;
@@ -262,48 +263,48 @@ switchD_005ab3e3_caseD_9:
       if (uVar11 == 0) break;
       uVar11 = uVar11 - 1;
       pcVar14 = pcVar16 + 1;
-      cVar20 = *pcVar16;
+      cVar21 = *pcVar16;
       pcVar16 = pcVar14;
-    } while (cVar20 != '\0');
+    } while (cVar21 != '\0');
     uVar11 = ~uVar11;
-    iVar22 = -1;
-    pcVar18 = (char *)&this_01->field_1CA3;
+    iVar23 = -1;
+    pcVar19 = (char *)&this_01->field_1CA3;
     do {
-      pcVar15 = pcVar18;
-      if (iVar22 == 0) break;
-      iVar22 = iVar22 + -1;
-      pcVar15 = pcVar18 + 1;
-      cVar20 = *pcVar18;
-      pcVar18 = pcVar15;
-    } while (cVar20 != '\0');
+      pcVar18 = pcVar19;
+      if (iVar23 == 0) break;
+      iVar23 = iVar23 + -1;
+      pcVar18 = pcVar19 + 1;
+      cVar21 = *pcVar19;
+      pcVar19 = pcVar18;
+    } while (cVar21 != '\0');
     pcVar14 = pcVar14 + -uVar11;
-    pcVar18 = pcVar15 + -1;
-    memmove(pcVar18, pcVar14, uVar11); /* compiler REP MOVS byte copy */
+    pcVar19 = pcVar18 + -1;
+    memmove(pcVar19, pcVar14, uVar11); /* compiler REP MOVS byte copy */
     uVar12 = 0;
     uVar11 = 0xffffffff;
     pcVar14 = &CHAR_00h_00807ddd;
     do {
-      pcVar18 = pcVar14;
+      pcVar19 = pcVar14;
       if (uVar11 == 0) break;
       uVar11 = uVar11 - 1;
-      pcVar18 = pcVar14 + 1;
-      cVar20 = *pcVar14;
-      pcVar14 = pcVar18;
-    } while (cVar20 != '\0');
+      pcVar19 = pcVar14 + 1;
+      cVar21 = *pcVar14;
+      pcVar14 = pcVar19;
+    } while (cVar21 != '\0');
     uVar11 = ~uVar11;
-    iVar22 = -1;
+    iVar23 = -1;
     pcVar14 = (char *)&this_01->field_1CA3;
     do {
-      pcVar15 = pcVar14;
-      if (iVar22 == 0) break;
-      iVar22 = iVar22 + -1;
-      pcVar15 = pcVar14 + 1;
-      cVar20 = *pcVar14;
-      pcVar14 = pcVar15;
-    } while (cVar20 != '\0');
-    pcVar14 = pcVar18 + -uVar11;
-    pcVar18 = pcVar15 + -1;
-    memmove(pcVar18, pcVar14, uVar11); /* compiler REP MOVS byte copy */
+      pcVar18 = pcVar14;
+      if (iVar23 == 0) break;
+      iVar23 = iVar23 + -1;
+      pcVar18 = pcVar14 + 1;
+      cVar21 = *pcVar14;
+      pcVar14 = pcVar18;
+    } while (cVar21 != '\0');
+    pcVar14 = pcVar19 + -uVar11;
+    pcVar19 = pcVar18 + -1;
+    memmove(pcVar19, pcVar14, uVar11); /* compiler REP MOVS byte copy */
     pcVar14 = reinterpret_cast<char *>(((byte *)pcVar14 + uVar11));
     uVar12 = 0;
     uVar11 = 0;
@@ -314,52 +315,52 @@ switchD_005ab3e3_caseD_9:
     local_c = 0xffffffff;
     pcVar17 = st_global_0079C050;
     do {
-      pcVar18 = pcVar17;
+      pcVar19 = pcVar17;
       if (local_c == 0) break;
       local_c = local_c - 1;
-      pcVar18 = pcVar17 + 1;
-      cVar20 = *pcVar17;
-      pcVar17 = pcVar18;
-    } while (cVar20 != '\0');
+      pcVar19 = pcVar17 + 1;
+      cVar21 = *pcVar17;
+      pcVar17 = pcVar19;
+    } while (cVar21 != '\0');
     local_c = ~local_c;
-    pcVar18 = pcVar18 + -local_c;
-    iVar22 = -1;
+    pcVar19 = pcVar19 + -local_c;
+    iVar23 = -1;
     do {
-      if (iVar22 == 0) break;
-      iVar22 = iVar22 + -1;
-      pcVar15 = pcVar14 + 1;
-      cVar20 = *pcVar14;
-      pcVar14 = pcVar15;
-    } while (cVar20 != '\0');
+      if (iVar23 == 0) break;
+      iVar23 = iVar23 + -1;
+      pcVar18 = pcVar14 + 1;
+      cVar21 = *pcVar14;
+      pcVar14 = pcVar18;
+    } while (cVar21 != '\0');
 LAB_005ab4dc:
     pcVar14 = pcVar14 + -1;
     for (uVar12 = local_c >> 2; uVar11 = local_c, uVar12 != 0; uVar12 = uVar12 - 1) {
-      *(undefined4 *)pcVar14 = *(undefined4 *)pcVar18;
-      pcVar18 = pcVar18 + 4;
+      *(undefined4 *)pcVar14 = *(undefined4 *)pcVar19;
+      pcVar19 = pcVar19 + 4;
       pcVar14 = pcVar14 + 4;
     }
 LAB_005ab4e5:
     for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
-      *pcVar14 = *pcVar18;
-      pcVar18 = pcVar18 + 1;
+      *pcVar14 = *pcVar19;
+      pcVar19 = pcVar19 + 1;
       pcVar14 = pcVar14 + 1;
     }
   }
   uVar11 = 0xffffffff;
   pcVar14 = &this_01->field_1DA7;
-  pcVar18 = (char *)&this_01->field_1CA3;
+  pcVar19 = (char *)&this_01->field_1CA3;
   do {
-    pcVar15 = pcVar18;
+    pcVar18 = pcVar19;
     if (uVar11 == 0) break;
     uVar11 = uVar11 - 1;
-    pcVar15 = pcVar18 + 1;
-    cVar20 = *pcVar18;
-    pcVar18 = pcVar15;
-  } while (cVar20 != '\0');
+    pcVar18 = pcVar19 + 1;
+    cVar21 = *pcVar19;
+    pcVar19 = pcVar18;
+  } while (cVar21 != '\0');
   uVar11 = ~uVar11;
-  pcVar18 = pcVar15 + -uVar11;
-  pcVar15 = pcVar14;
-  memmove(pcVar15, pcVar18, uVar11); /* compiler REP MOVS byte copy */
+  pcVar19 = pcVar18 + -uVar11;
+  pcVar18 = pcVar14;
+  memmove(pcVar18, pcVar19, uVar11); /* compiler REP MOVS byte copy */
   uVar12 = 0;
   st::fn_006B78C0(pcVar14,pcVar14);
   /* ST_CALLSITE[005AB525]: CALL dword ptr [0x0085bcfc] */
@@ -383,12 +384,11 @@ LAB_005ab4e5:
   puVar7 = st::fn_00709AF0
                      (PTR_00806784,CASE_B,st::mutable_c_string("FILE_LIST"),0xffffffff,0,1,0,nullptr);
   this_01->field_1C7F = puVar7;
-  local_EAX_770 =
-       /* ST_CALLSITE[005AB602]: CALL 0x0070a5a0; direct=0070A5A0 Library::Ourlib::MFIMG::mfImgLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;/byte;/int */
-       (ushort *)st::fn_0070A5A0(g_cMf32_00806780,1,st::mutable_c_string("MM_MAPB"),0,1);
+  /* ST_CALLSITE[005AB602]: CALL 0x0070a5a0; direct=0070A5A0 Library::Ourlib::MFIMG::mfImgLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/cMf32;/byte;pointer:/char;/byte;/int */
+  local_EAX_770 = st::pointer_boundary_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(st::fn_0070A5A0(g_cMf32_00806780,1,st::mutable_c_string("MM_MAPB"),0,1));
   /* ST_CALLSITE[005AB61C]: CALL 0x00403229; direct=00403229 DibPut */
   st::fn_00403229(reinterpret_cast<RecoveredSourceFamily_dibcopy *>(g_startSystem_0081176C->field_02F0),0,0,'\x01',
-         reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(local_EAX_770));
+         local_EAX_770);
   this_01->field_20B3 = 1;
   this_01->field_20B4 = 1;
   this_01->field_20B5 = 1;
@@ -432,8 +432,8 @@ switchD_005ab66b_caseD_6:
           st::fn_006B5570(reinterpret_cast<DArrayTy *>(g_startSystem_0081176C->field_0548));
         }
         /* ST_CALLSITE[005AB6E0]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint */
-        puVar6 = st::pointer_boundary_cast<uint *>(st::fn_006B54F0(nullptr,10,10));
-        g_startSystem_0081176C->field_0548 = puVar6;
+        puVar6_mg0 = st::pointer_boundary_cast<uint *>(st::fn_006B54F0(nullptr,10,10));
+        g_startSystem_0081176C->field_0548 = puVar6_mg0;
         uVar11 = param_2 - 1;
         if (g_startSystem_0081176C->field_0389 != 0) {
           this_01->field_002D = 0x28;
@@ -502,30 +502,28 @@ switchD_005ab66b_caseD_6:
         /* ST_CALLSITE[005AB881]: CALL dword ptr [EDX + 0x4]; [STIndirectCallsiteApplier] exact slot 0x4; mode=structural-presentation; signature=__thiscall;/void;pointer:/void;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
         /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
         (**(code **)(this_01->field_1B92 + 4))(PTR_00806784,7,0,"MM_SLDT",0xffffffff);
-        iVar22 = 1;
+        iVar23 = 1;
         this_01->field_1BAE = 0x2fe;
         this_01->field_1BB2 = 0x5c;
-        puVar21 = this_01->field_005D + 0x14;
+        puVar22 = this_01->field_005D + 0x14;
         this_01->field_1B9A = 0;
 
         uVar14 = st::fn_006B4FE0(this_01->field_005D);
-        pRVar7 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-                 st::fn_006B50C0(0x1e4,399,(uint)this_01->field_005D[7],uVar14,reinterpret_cast<undefined4 *>(puVar21),
-                              iVar22);
-        this_01->field_1C7B = reinterpret_cast<AnonPointee_ChooseMapTy_1C7B *>(pRVar7);
-        uVar11 = *(uint *)&pRVar7[1].field_0x4;
+        pRVar6 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(st::fn_006B50C0(0x1e4,399,(uint)this_01->field_005D[7],uVar14,reinterpret_cast<undefined4 *>(puVar22),
+                              iVar23));
+        this_01->field_1C7B = reinterpret_cast<AnonPointee_ChooseMapTy_1C7B *>(pRVar6);
+        uVar11 = *(uint *)&pRVar6[1].field_0x4;
         if (uVar11 == 0) {
-          uVar11 = ((uint)pRVar7->field_000E * *(int *)&pRVar7->field_0x4 + 0x1f >> 3 & 0x1ffffffc)
-                   * *(int *)&pRVar7->field_0x8;
+          uVar11 = ((uint)pRVar6->field_000E * *(int *)&pRVar6->field_0x4 + 0x1f >> 3 & 0x1ffffffc)
+                   * *(int *)&pRVar6->field_0x8;
         }
 
-        puVar8 = STPointerBoundaryCast<undefined4 *>(st::fn_006B4FA0(pRVar7));
+        puVar8 = STPointerBoundaryCast<undefined4 *>(st::fn_006B4FA0(pRVar6));
         for (uVar12 = uVar11 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
           *puVar8 = 0;
           puVar8 = puVar8 + 1;
         }
-        puVar6 = &this_01->field_1C23;
+        puVar15 = &this_01->field_1C23;
         for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
           *(undefined1 *)puVar8 = 0;
           puVar8 = (undefined4 *)((int)puVar8 + 1);
@@ -533,13 +531,13 @@ switchD_005ab66b_caseD_6:
         uVar11 = 0x3f;
         do {
 
-          st::fn_006B2330(g_ddxContext_008075A8,puVar6,0x31,0x40213a,this_01->field_1C7B->field_0004,
+          st::fn_006B2330(g_ddxContext_008075A8,puVar15,0x31,0x40213a,this_01->field_1C7B->field_0004,
                        0x13,reinterpret_cast<ushort *>(this_01));
 
           st::fn_006B3640
-                    (reinterpret_cast<int *>(g_ddxContext_008075A8),*puVar6,0xffffffff,0x114,uVar11);
+                    (reinterpret_cast<int *>(g_ddxContext_008075A8),*puVar15,0xffffffff,0x114,uVar11);
           uVar11 = uVar11 + 0x13;
-          puVar6 = puVar6 + 1;
+          puVar15 = puVar15 + 1;
         } while ((int)uVar11 < 0x1e1);
         /* ST_CALLSITE[005AB95E]: CALL 0x0040175d; direct=0040175D ChooseMapTy::CreateCtrls */
         st::fn_0040175D(this_01,'\0');
@@ -573,14 +571,14 @@ switchD_005ab66b_caseD_6:
         this_01->field_20B8 = pHVar9;
         if (pHVar9 != nullptr) {
           uVar11 = 0;
-          cVar20 = '\x01';
-          bVar19 = 0x10;
-          iVar22 = 1;
+          cVar21 = '\x01';
+          bVar20 = 0x10;
+          iVar23 = 1;
           /* ST_CALLSITE[005ABA29]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69;pointer:/int;/undefined4;/undefined4;/undefined4;/undefined4 */
           pRVar10 = st::pointer_boundary_cast<RecoveredRecord_005AACB0_2533FD69 *>(st::fn_006BF9F0
                               (reinterpret_cast<int *>(g_ddxContext_008075A8),0x112,0x38,0x204,0x19d));
           /* ST_CALLSITE[005ABA3E]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
-          uVar13 = st::fn_0040459D(this_01->field_20B8,CASE_2,0x112,0x38,pRVar10,iVar22,bVar19,cVar20,
+          uVar13 = st::fn_0040459D(this_01->field_20B8,CASE_2,0x112,0x38,pRVar10,iVar23,bVar20,cVar21,
                                 uVar11);
           if (uVar13 != 0) {
             pHVar9 = this_01->field_20B8;
@@ -600,13 +598,13 @@ switchD_005ab66b_caseD_6:
             if (this_01->field_1B96 != 0xffffffff) {
               st::fn_006B3AF0((int *)this_01->field_1BDA,this_01->field_1B96);
             }
-            puVar6 = &this_01->field_1C23;
-            iVar22 = 0x16;
+            puVar15 = &this_01->field_1C23;
+            iVar23 = 0x16;
             do {
-              st::fn_006B3AF0(reinterpret_cast<int *>(g_ddxContext_008075A8),*puVar6);
-              puVar6 = puVar6 + 1;
-              iVar22 = iVar22 + -1;
-            } while (iVar22 != 0);
+              st::fn_006B3AF0(reinterpret_cast<int *>(g_ddxContext_008075A8),*puVar15);
+              puVar15 = puVar15 + 1;
+              iVar23 = iVar23 + -1;
+            } while (iVar23 != 0);
           }
         }
         if (local_8 != 0xffffffff) {
@@ -668,15 +666,15 @@ switchD_005ab66b_caseD_6:
           this_01->field_20BC = pHVar9;
           if (pHVar9 != nullptr) {
             uVar11 = 0;
-            cVar20 = '\x01';
-            bVar19 = 0x10;
-            iVar22 = 1;
+            cVar21 = '\x01';
+            bVar20 = 0x10;
+            iVar23 = 1;
             /* ST_CALLSITE[005ABBB9]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69;pointer:/int;/undefined4;/undefined4;/undefined4;/undefined4 */
             pRVar10 = st::pointer_boundary_cast<RecoveredRecord_005AACB0_2533FD69 *>(st::fn_006BF9F0
                                 (reinterpret_cast<int *>(g_ddxContext_008075A8),10,0xb4,0xf9,0x121));
             /* ST_CALLSITE[005ABBCE]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
             local_EAX_2254 =
-                 st::fn_0040459D(this_01->field_20BC,CASE_4,10,0xb4,pRVar10,iVar22,bVar19,cVar20,uVar11
+                 st::fn_0040459D(this_01->field_20BC,CASE_4,10,0xb4,pRVar10,iVar23,bVar20,cVar21,uVar11
                              );
             if (local_EAX_2254 != 0) {
               pHVar9 = this_01->field_20BC;
@@ -707,8 +705,8 @@ switchD_005ab66b_caseD_6:
           }
         }
         if (this_01->field_20B7 == '\0') {
-          cVar20 = this_01->array_00BC[0xc].field_01DF;
-          if ((((cVar20 == '\f') || (cVar20 == '\x04')) || (cVar20 == '\x05')) || (cVar20 == '\x13')
+          cVar21 = this_01->array_00BC[0xc].field_01DF;
+          if ((((cVar21 == '\f') || (cVar21 == '\x04')) || (cVar21 == '\x05')) || (cVar21 == '\x13')
              ) {
             if (g_startSystem_0081176C->field_0560 != 0xffffffff) {
 
@@ -787,15 +785,15 @@ switchD_005ab66b_caseD_6:
           this_01->field_20C0 = pHVar9;
           if (pHVar9 != nullptr) {
             uVar11 = 0;
-            cVar20 = '\x01';
-            bVar19 = 0x10;
-            iVar22 = 1;
+            cVar21 = '\x01';
+            bVar20 = 0x10;
+            iVar23 = 1;
             /* ST_CALLSITE[005ABE48]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69;pointer:/int;/undefined4;/undefined4;/undefined4;/undefined4 */
             pRVar10 = st::pointer_boundary_cast<RecoveredRecord_005AACB0_2533FD69 *>(st::fn_006BF9F0
                                 (reinterpret_cast<int *>(g_ddxContext_008075A8),200,0x1f1,400,0x62));
             /* ST_CALLSITE[005ABE60]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
             local_EAX_2912 =
-                 st::fn_0040459D(this_01->field_20C0,CASE_1,200,0x1f1,pRVar10,iVar22,bVar19,cVar20,
+                 st::fn_0040459D(this_01->field_20C0,CASE_1,200,0x1f1,pRVar10,iVar23,bVar20,cVar21,
                               uVar11);
             if (local_EAX_2912 != 0) {
               pHVar9 = this_01->field_20C0;
@@ -822,22 +820,20 @@ switchD_005ab66b_caseD_6:
             local_8 = 0xffffffff;
           }
         }
-        iVar22 = 1;
-        puVar21 = this_01->field_005D + 0x14;
+        iVar23 = 1;
+        puVar22 = this_01->field_005D + 0x14;
 
         local_EAX_3379 = st::fn_006B4FE0(this_01->field_005D);
-        pRVar7 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-                 st::fn_006B50C0(0x172,0x18,(uint)this_01->field_005D[7],local_EAX_3379,
-                              reinterpret_cast<undefined4 *>(puVar21),iVar22);
-        this_01->field_1C8B = reinterpret_cast<AnonPointee_ChooseMapTy_1C8B *>(pRVar7);
-        uVar11 = *(uint *)&pRVar7[1].field_0x4;
+        pRVar6 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(st::fn_006B50C0(0x172,0x18,(uint)this_01->field_005D[7],local_EAX_3379,
+                              reinterpret_cast<undefined4 *>(puVar22),iVar23));
+        this_01->field_1C8B = reinterpret_cast<AnonPointee_ChooseMapTy_1C8B *>(pRVar6);
+        uVar11 = *(uint *)&pRVar6[1].field_0x4;
         if (uVar11 == 0) {
-          uVar11 = ((uint)pRVar7->field_000E * *(int *)&pRVar7->field_0x4 + 0x1f >> 3 & 0x1ffffffc)
-                   * *(int *)&pRVar7->field_0x8;
+          uVar11 = ((uint)pRVar6->field_000E * *(int *)&pRVar6->field_0x4 + 0x1f >> 3 & 0x1ffffffc)
+                   * *(int *)&pRVar6->field_0x8;
         }
 
-        puVar8 = STPointerBoundaryCast<undefined4 *>(st::fn_006B4FA0(pRVar7));
+        puVar8 = STPointerBoundaryCast<undefined4 *>(st::fn_006B4FA0(pRVar6));
         for (uVar12 = uVar11 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
           *puVar8 = 0xffffffff;
           puVar8 = puVar8 + 1;
@@ -851,13 +847,14 @@ switchD_005ab66b_caseD_6:
                      st::machine_word_boundary_cast<int>(((AnonShape_006E6FB0_BC494FEA *)this_01->field_1C8B)->field_0004 + -1),1,
                      (byte)*(undefined4 *)(this_01->array_00BC[0xc].field_01DB + 0x140),0xd);
         pAVar3 = this_01->field_1C8B;
-        puVar6 = &this_01->field_1C87;
+        puVar15 = &this_01->field_1C87;
 
-        st::fn_006B2330(g_ddxContext_008075A8,puVar6,0x31,0x404acf,pAVar3->field_0004,
+        st::fn_006B2330(g_ddxContext_008075A8,puVar15,0x31,0x404acf,pAVar3->field_0004,
                      pAVar3->field_0008,reinterpret_cast<ushort *>(pAVar3));
 
-        st::fn_006B3640(reinterpret_cast<int *>(g_ddxContext_008075A8),*puVar6,0xffffffff,0x112,0x1d3);
-        st::fn_006B3AF0(reinterpret_cast<int *>(g_ddxContext_008075A8),*puVar6);
+        st::fn_006B3640
+                  (reinterpret_cast<int *>(g_ddxContext_008075A8),*puVar15,0xffffffff,0x112,0x1d3);
+        st::fn_006B3AF0(reinterpret_cast<int *>(g_ddxContext_008075A8),*puVar15);
         switch(local_c) {
         case 0:
         case 1:
@@ -893,12 +890,12 @@ switchD_005ab66b_caseD_6:
         }
         this_02 = g_cursorClass_00802A30;
         if (g_cursorClass_00802A30 != nullptr) {
-          iVar22 = g_cursorClass_00802A30->field_00C9;
+          iVar23 = g_cursorClass_00802A30->field_00C9;
           iVar13 = g_cursorClass_00802A30->field_00C5;
           g_cursorClass_00802A30->field_0493 = CASE_1;
           this_02->field_0494 = 0xffff;
           /* ST_CALLSITE[005AC1D5]: CALL 0x0040507e; direct=0040507E CursorClassTy::SetGCType */
-          st::fn_0040507E(this_02,CASE_0,iVar13,iVar22);
+          st::fn_0040507E(this_02,CASE_0,iVar13,iVar23);
           /* ST_CALLSITE[005AC1EA]: CALL 0x0040241e; direct=0040241E CursorClassTy::DrawSprite */
           st::fn_0040241E(this_02,this_02->field_00C5,this_02->field_00C9);
           this_02->field_00D2 = 0;
@@ -991,9 +988,9 @@ switchD_005ab66b_caseD_6:
         local_1d0 = 0x694e;
         local_1d8 = local_13c;
       }
-      iVar22 = this_01->array_00BC[0xc].field_01DB;
+      iVar23 = this_01->array_00BC[0xc].field_01DB;
       local_115 = local_13c;
-      if (STField<int>(iVar22,0x2E6) != 0) {
+      if (STField<int>(iVar23,0x2E6) != 0) {
         puVar8 = local_26c;
         for (iVar13 = 6; iVar13 != 0; iVar13 = iVar13 + -1) {
           *puVar8 = 0xffffffff;
@@ -1001,7 +998,7 @@ switchD_005ab66b_caseD_6:
         }
         *(undefined2 *)puVar8 = 0xffff;
         /* ST_CALLSITE[005AC45E]: CALL 0x00401717; direct=00401717 MMsgTy::SetPanel */
-        st::fn_00401717(*(MMsgTy **)(iVar22 + 0x2e6),0,(int)&local_20c,0,0);
+        st::fn_00401717(*(MMsgTy **)(iVar23 + 0x2e6),0,(int)&local_20c,0,0);
         /* ST_CALLSITE[005AC476]: CALL 0x00404b51; direct=00404B51 MMsgTy::StatePanel */
         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
         st::fn_00404B51(*(MMsgTy **)(this_01->array_00BC[0xc].field_01DB + 0x2e6),(int)local_26c);
@@ -1785,13 +1782,16 @@ void __thiscall st::fn_005AE050(ChooseMapTy *this,uint param_1)
   int iVar5;
   int local_EAX_38;
   RecoveredRecordView_006B84D0_87AF9D9B *pRVar7;
-  uint *puVar8;
-  char *pcVar9;
+  uint *puVar8_mg0;
+  char *pcVar8;
   int iVar7;
   int local_EAX_816;
-  cMf32 *pcVar10;
-  ushort *puVar11;
-  byte *puVar12;
+  cMf32 *pcVar9;
+  ushort *puVar10;
+  byte *puVar11;
+  uint *puVar12;
+  uint *puVar8_mg3;
+  uint *puVar8_mg1;
   int iVar16;
   uint uVar13;
   uint uVar14;
@@ -1839,85 +1839,85 @@ void __thiscall st::fn_005AE050(ChooseMapTy *this,uint param_1)
     st::fn_006B5570(reinterpret_cast<DArrayTy *>(g_startSystem_0081176C->field_0548));
   }
   /* ST_CALLSITE[005AE0F3]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint */
-  puVar8 = st::pointer_boundary_cast<uint *>(st::fn_006B54F0(nullptr,10,10));
+  puVar8_mg0 = st::pointer_boundary_cast<uint *>(st::fn_006B54F0(nullptr,10,10));
   pCVar18 = local_10;
-  g_startSystem_0081176C->field_0548 = puVar8;
+  g_startSystem_0081176C->field_0548 = puVar8_mg0;
   uVar13 = local_10->field_1C9F->elementSize;
   if ((0 < (int)(local_10->field_1C97->elementSize + uVar13)) && (uVar13 <= param_1)) {
     uVar13 = 0xffffffff;
     local_18 = &local_10->field_1FAF;
-    pcVar9 = &local_10->field_1DA7;
+    pcVar8 = &local_10->field_1DA7;
     do {
-      pcVar19 = pcVar9;
+      pcVar19 = pcVar8;
       if (uVar13 == 0) break;
       uVar13 = uVar13 - 1;
-      pcVar19 = pcVar9 + 1;
-      cVar1 = *pcVar9;
-      pcVar9 = pcVar19;
+      pcVar19 = pcVar8 + 1;
+      cVar1 = *pcVar8;
+      pcVar8 = pcVar19;
     } while (cVar1 != '\0');
     uVar13 = ~uVar13;
-    pcVar9 = pcVar19 + -uVar13;
+    pcVar8 = pcVar19 + -uVar13;
     pcVar19 = local_18;
-    memmove(pcVar19, pcVar9, uVar13); /* compiler REP MOVS byte copy */
+    memmove(pcVar19, pcVar8, uVar13); /* compiler REP MOVS byte copy */
     uVar14 = 0;
     bVar2 = local_10->array_00BC[0xc].field_01DF;
     if ((8 < bVar2) && ((bVar2 < 0xd || ((bVar2 == 0x13 && (DAT_00803400 == '\f')))))) {
       uVar13 = 0xffffffff;
-      pcVar9 = reinterpret_cast<char *>(PTR_DAT_0079c06c);
+      pcVar8 = reinterpret_cast<char *>(PTR_DAT_0079c06c);
       do {
-        pcVar19 = pcVar9;
+        pcVar19 = pcVar8;
         if (uVar13 == 0) break;
         uVar13 = uVar13 - 1;
-        pcVar19 = pcVar9 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar19;
+        pcVar19 = pcVar8 + 1;
+        cVar1 = *pcVar8;
+        pcVar8 = pcVar19;
       } while (cVar1 != '\0');
       uVar13 = ~uVar13;
       iVar15 = -1;
-      pcVar9 = local_18;
+      pcVar8 = local_18;
       do {
-        pcVar21 = pcVar9;
+        pcVar21 = pcVar8;
         if (iVar15 == 0) break;
         iVar15 = iVar15 + -1;
-        pcVar21 = pcVar9 + 1;
-        cVar1 = *pcVar9;
-        pcVar9 = pcVar21;
+        pcVar21 = pcVar8 + 1;
+        cVar1 = *pcVar8;
+        pcVar8 = pcVar21;
       } while (cVar1 != '\0');
-      pcVar9 = pcVar19 + -uVar13;
+      pcVar8 = pcVar19 + -uVar13;
       pcVar19 = pcVar21 + -1;
-      memmove(pcVar19, pcVar9, uVar13); /* compiler REP MOVS byte copy */
+      memmove(pcVar19, pcVar8, uVar13); /* compiler REP MOVS byte copy */
       uVar14 = 0;
     }
     iVar15 = param_1 - local_10->field_1C9F->elementSize;
     if (iVar15 < (int)local_10->field_1C97->elementSize) {
-      pcVar9 = *(char **)(local_10->field_1C97->growCapacity + iVar15 * 4);
+      pcVar8 = *(char **)(local_10->field_1C97->growCapacity + iVar15 * 4);
     }
     else {
-      pcVar9 = nullptr;
+      pcVar8 = nullptr;
     }
     uVar13 = 0xffffffff;
     do {
-      pcVar19 = pcVar9;
+      pcVar19 = pcVar8;
       if (uVar13 == 0) break;
       uVar13 = uVar13 - 1;
-      pcVar19 = pcVar9 + 1;
-      cVar1 = *pcVar9;
-      pcVar9 = pcVar19;
+      pcVar19 = pcVar8 + 1;
+      cVar1 = *pcVar8;
+      pcVar8 = pcVar19;
     } while (cVar1 != '\0');
     uVar13 = ~uVar13;
     iVar15 = -1;
-    pcVar9 = local_18;
+    pcVar8 = local_18;
     do {
-      pcVar21 = pcVar9;
+      pcVar21 = pcVar8;
       if (iVar15 == 0) break;
       iVar15 = iVar15 + -1;
-      pcVar21 = pcVar9 + 1;
-      cVar1 = *pcVar9;
-      pcVar9 = pcVar21;
+      pcVar21 = pcVar8 + 1;
+      cVar1 = *pcVar8;
+      pcVar8 = pcVar21;
     } while (cVar1 != '\0');
-    pcVar9 = pcVar19 + -uVar13;
+    pcVar8 = pcVar19 + -uVar13;
     pcVar19 = pcVar21 + -1;
-    memmove(pcVar19, pcVar9, uVar13); /* compiler REP MOVS byte copy */
+    memmove(pcVar19, pcVar8, uVar13); /* compiler REP MOVS byte copy */
     uVar14 = 0;
     local_bc.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_bc;
@@ -1929,13 +1929,13 @@ void __thiscall st::fn_005AE050(ChooseMapTy *this,uint param_1)
       local_14 = STPointerBoundaryCast<cMf32 *>(st::fn_006F0EC0
                                     (0x345,reinterpret_cast<byte *>(&local_10->field_1FAF),0,0,0));
     }
-    pcVar10 = local_14;
+    pcVar9 = local_14;
     g_currentExceptionFrame = local_bc.previous;
     if (local_14 != nullptr) {
       /* ST_CALLSITE[005AE271]: CALL 0x00402716; direct=00402716 StartSystemTy::LoadMapData */
       st::fn_00402716
                 (g_startSystem_0081176C,local_14,pCVar18->array_00BC[0xc].field_01DF);
-      st::fn_006F1170(pcVar10);
+      st::fn_006F1170(pcVar9);
     }
     goto LAB_005ae602;
   }
@@ -1943,32 +1943,32 @@ void __thiscall st::fn_005AE050(ChooseMapTy *this,uint param_1)
   DAT_008087be = 0xffffffff;
   if ((local_10->array_00BC[0xc].field_01DF == '\x03') &&
      (0 < (int)(local_10->field_1C97->elementSize + local_10->field_1C9F->elementSize))) {
-    pcVar9 = &local_10->field_1DA7;
+    pcVar8 = &local_10->field_1DA7;
     do {
-      pcVar19 = pcVar9;
+      pcVar19 = pcVar8;
       if (uVar13 == 0) break;
       uVar13 = uVar13 - 1;
-      pcVar19 = pcVar9 + 1;
-      cVar1 = *pcVar9;
-      pcVar9 = pcVar19;
+      pcVar19 = pcVar8 + 1;
+      cVar1 = *pcVar8;
+      pcVar8 = pcVar19;
     } while (cVar1 != '\0');
     uVar13 = ~uVar13;
     local_18 = &local_10->field_1FAF;
-    pcVar9 = pcVar19 + -uVar13;
+    pcVar8 = pcVar19 + -uVar13;
     pcVar19 = local_18;
     for (uVar14 = uVar13 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
-      *(undefined4 *)pcVar19 = *(undefined4 *)pcVar9;
-      pcVar9 = pcVar9 + 4;
+      *(undefined4 *)pcVar19 = *(undefined4 *)pcVar8;
+      pcVar8 = pcVar8 + 4;
       pcVar19 = pcVar19 + 4;
     }
     local_c = 1;
     for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
-      *pcVar19 = *pcVar9;
-      pcVar9 = pcVar9 + 1;
+      *pcVar19 = *pcVar8;
+      pcVar8 = pcVar8 + 1;
       pcVar19 = pcVar19 + 1;
     }
     st::fn_006B8280(local_18,local_18);
-    pcVar9 = local_18;
+    pcVar8 = local_18;
     if ((int)param_1 < (int)pCVar18->field_1C9F->elementSize) {
       pcVar19 = *(char **)(pCVar18->field_1C9F->growCapacity + param_1 * 4);
     }
@@ -2013,16 +2013,16 @@ void __thiscall st::fn_005AE050(ChooseMapTy *this,uint param_1)
     uVar13 = ~uVar13;
     iVar15 = -1;
     do {
-      pcVar21 = pcVar9;
+      pcVar21 = pcVar8;
       if (iVar15 == 0) break;
       iVar15 = iVar15 + -1;
-      pcVar21 = pcVar9 + 1;
-      cVar1 = *pcVar9;
-      pcVar9 = pcVar21;
+      pcVar21 = pcVar8 + 1;
+      cVar1 = *pcVar8;
+      pcVar8 = pcVar21;
     } while (cVar1 != '\0');
-    pcVar9 = pcVar19 + -uVar13;
+    pcVar8 = pcVar19 + -uVar13;
     pcVar19 = pcVar21 + -1;
-    memmove(pcVar19, pcVar9, uVar13); /* compiler REP MOVS byte copy */
+    memmove(pcVar19, pcVar8, uVar13); /* compiler REP MOVS byte copy */
     local_100.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_100;
 
@@ -2030,57 +2030,57 @@ void __thiscall st::fn_005AE050(ChooseMapTy *this,uint param_1)
     pCVar18 = local_10;
     if (local_EAX_816 == 0) {
 
-      pcVar10 = STPointerBoundaryCast<cMf32 *>(st::fn_006F0EC0
-                                   (0x345,reinterpret_cast<byte *>(&local_10->field_1FAF),0,0,0));
-      local_14 = pcVar10;
+      pcVar9 = STPointerBoundaryCast<cMf32 *>(st::fn_006F0EC0
+                                  (0x345,reinterpret_cast<byte *>(&local_10->field_1FAF),0,0,0));
+      local_14 = pcVar9;
       if (g_dArray_0080C4CB != nullptr) {
         st::fn_006B5570(g_dArray_0080C4CB);
       }
       /* ST_CALLSITE[005AE3C8]: CALL 0x0071aa10; direct=0071AA10 Library::Ourlib::MFSARR::mfSarLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; signature=__cdecl;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/cMf32;pointer:/char;/int */
-      g_dArray_0080C4CB = st::pointer_boundary_cast<DArrayTy *>(st::fn_0071AA10(pcVar10,PTR_s_OBJECTIVES_0079c074,0));
-      pcVar9 = &CHAR_00h_0080ed16;
+      g_dArray_0080C4CB = st::pointer_boundary_cast<DArrayTy *>(st::fn_0071AA10(pcVar9,PTR_s_OBJECTIVES_0079c074,0));
+      pcVar8 = &CHAR_00h_0080ed16;
       for (iVar15 = 0x41; iVar15 != 0; iVar15 = iVar15 + -1) {
-        pcVar9[0] = '\0';
-        pcVar9[1] = '\0';
-        pcVar9[2] = '\0';
-        pcVar9[3] = '\0';
-        pcVar9 = pcVar9 + 4;
+        pcVar8[0] = '\0';
+        pcVar8[1] = '\0';
+        pcVar8[2] = '\0';
+        pcVar8[3] = '\0';
+        pcVar8 = pcVar8 + 4;
       }
       local_8 = &CHAR_00h_0080ed16;
-      puVar11 = st::fn_006F1CE0(pcVar10,0xc,PTR_s_MISSION_0079c064,reinterpret_cast<int *>(&local_8),0);
-      pcVar10 = local_14;
-      if (puVar11 == nullptr) {
+      puVar10 = st::fn_006F1CE0(pcVar9,0xc,PTR_s_MISSION_0079c064,reinterpret_cast<int *>(&local_8),0);
+      pcVar9 = local_14;
+      if (puVar10 == nullptr) {
         local_c = 0;
       }
       iVar15 = local_c;
       local_8 = (char *)&DAT_0080874e;
       st::fn_006F1CE0(local_14,0xc,reinterpret_cast<char *>(PTR_DAT_0079c068),reinterpret_cast<int *>(&local_8),0);
-      st::fn_006F1170(pcVar10);
+      st::fn_006F1170(pcVar9);
       if ((DArrayTy *)g_startSystem_0081176C->field_0548 != nullptr) {
         st::fn_006B5570(reinterpret_cast<DArrayTy *>(g_startSystem_0081176C->field_0548));
       }
       if (g_dArray_0080C4CB == nullptr) {
         g_dArray_0080C4CB = st::fn_006B54F0(nullptr,10,10);
         /* ST_CALLSITE[005AE501]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint */
-        puVar8 = st::pointer_boundary_cast<uint *>(st::fn_006B54F0(nullptr,10,10));
-        g_startSystem_0081176C->field_0548 = puVar8;
+        puVar8_mg1 = st::pointer_boundary_cast<uint *>(st::fn_006B54F0(nullptr,10,10));
+        g_startSystem_0081176C->field_0548 = puVar8_mg1;
       }
       else {
         pcVar4 = g_startSystem_0081176C->field_0034;
         pcVar4->field_007E = 1;
-        puVar12 = &pcVar4->field_0x9e;
-        *(undefined2 *)puVar12 = 0;
-        *puVar12 = DAT_007cc854;
-        puVar8 = st::fn_007126E0
-                           (g_startSystem_0081176C->field_0034,g_dArray_0080C4CB,
-                            st::mutable_c_string(" ,.;:!?/\\()[]{}"),reinterpret_cast<uint *>(&DAT_007c21ec),
-                            g_startSystem_0081176C->field_0544->field_0004 + -0x14,0,0xffffffff,
-                            nullptr,1);
-        g_startSystem_0081176C->field_0548 = puVar8;
+        puVar11 = &pcVar4->field_0x9e;
+        *(undefined2 *)puVar11 = 0;
+        *puVar11 = DAT_007cc854;
+        puVar12 = st::fn_007126E0
+                            (g_startSystem_0081176C->field_0034,g_dArray_0080C4CB,
+                             st::mutable_c_string(" ,.;:!?/\\()[]{}"),reinterpret_cast<uint *>(&DAT_007c21ec),
+                             g_startSystem_0081176C->field_0544->field_0004 + -0x14,0,0xffffffff,
+                             nullptr,1);
+        g_startSystem_0081176C->field_0548 = puVar12;
         if (g_startSystem_0081176C->field_0548 == nullptr) {
           /* ST_CALLSITE[005AE4CD]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint */
-          puVar8 = st::pointer_boundary_cast<uint *>(st::fn_006B54F0(nullptr,10,10));
-          g_startSystem_0081176C->field_0548 = puVar8;
+          puVar8_mg3 = st::pointer_boundary_cast<uint *>(st::fn_006B54F0(nullptr,10,10));
+          g_startSystem_0081176C->field_0548 = puVar8_mg3;
           g_currentExceptionFrame = local_100.previous;
           goto LAB_005ae53a;
         }
@@ -2100,17 +2100,17 @@ void __thiscall st::fn_005AE050(ChooseMapTy *this,uint param_1)
 LAB_005ae53a:
   pCVar18->field_002D = 0x28;
   pCVar18->field_0031 = 1;
-  puVar12 = &pCVar18->field_0x1d;
+  puVar11 = &pCVar18->field_0x1d;
   pCVar18->field_0033 = (short)g_startSystem_0081176C->field_0548[2];
-  st::fn_006E6080(pCVar18,2,g_startSystem_0081176C->field_0389,reinterpret_cast<undefined4 *>(puVar12));
+  st::fn_006E6080(pCVar18,2,g_startSystem_0081176C->field_0389,reinterpret_cast<undefined4 *>(puVar11));
   pCVar18->field_002D = 0x22;
   pCVar18->field_0031 = 0;
   pCVar18->field_0033 = 0;
-  st::fn_006E6080(pCVar18,2,g_startSystem_0081176C->field_0389,reinterpret_cast<undefined4 *>(puVar12));
+  st::fn_006E6080(pCVar18,2,g_startSystem_0081176C->field_0389,reinterpret_cast<undefined4 *>(puVar11));
   pCVar18->field_002D = 0x20;
   pCVar18->field_0031 = (short)(uint)(iVar15 != 0);
   pCVar18->field_0033 = (short)((uint)(iVar15 != 0) >> 0x10);
-  st::fn_006E6080(pCVar18,2,g_startSystem_0081176C->field_0389,reinterpret_cast<undefined4 *>(puVar12));
+  st::fn_006E6080(pCVar18,2,g_startSystem_0081176C->field_0389,reinterpret_cast<undefined4 *>(puVar11));
   iVar5 = pCVar18->array_00BC[0xc].field_01DB;
   if (STField<int>(iVar5,0x2E6) != 0) {
     psVar22 = local_34;
@@ -2503,10 +2503,11 @@ void __thiscall st::fn_005AF350(ChooseMapTy *this)
   HoloTy *pHVar3;
   RecoveredRecord_005AACB0_2533FD69 *pRVar4;
   uint uVar10;
-  uint *puVar5;
+  uint *puVar5_mg1;
   uint local_EAX_970;
   uint local_EAX_1506;
   int iVar7;
+  uint *puVar5;
   int iVar6;
   byte bVar7;
   char cVar8;
@@ -2645,8 +2646,8 @@ void __thiscall st::fn_005AF350(ChooseMapTy *this)
       st::fn_006B5570(reinterpret_cast<DArrayTy *>(g_startSystem_0081176C->field_0548));
     }
     /* ST_CALLSITE[005AF65C]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint */
-    puVar5 = st::pointer_boundary_cast<uint *>(st::fn_006B54F0(nullptr,10,10));
-    g_startSystem_0081176C->field_0548 = puVar5;
+    puVar5_mg1 = st::pointer_boundary_cast<uint *>(st::fn_006B54F0(nullptr,10,10));
+    g_startSystem_0081176C->field_0548 = puVar5_mg1;
     if (this_00->field_20BC != nullptr) {
       /* ST_CALLSITE[005AF677]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       st::fn_0040128A(this_00->field_20BC);
@@ -3943,7 +3944,7 @@ cf_common_exit_005B0DCE:
         local_c = nullptr;
         st::fn_006B4170(reinterpret_cast<RecoveredSourceFamily_dibcopy *>(this_01->field_1C7B),0,0,
                      (uint)(message->arg1).words.high,
-                     st::machine_word_boundary_cast<int>(((RecoveredSourceFamily_dibcopy *)this_01->field_1C7B)->field_0004),0x13,0);
+                     ((RecoveredSourceFamily_dibcopy *)this_01->field_1C7B)->field_0004,0x13,0);
         if ((int)(uint)(message->arg0).words.low < (int)this_01->field_1C9F->elementSize) {
           pbVar17 = &DAT_007cc8b4;
           pbVar16 = local_8;

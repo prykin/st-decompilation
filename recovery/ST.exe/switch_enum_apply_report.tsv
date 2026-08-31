@@ -465,7 +465,7 @@ function_address	enum_name	status	detail
 005D4E90	SettMapSTy_SetListCtrls_iVar10Enum	disabled	apply=0
 005D5560	SettMapSTy_GetMessage_switch_0Enum	disabled	apply=0
 005D5560	SettMapSTy_GetMessage_switch_3Enum	disabled	apply=0
-005D5560	SettMapSTy_GetMessage_uVar21Enum	disabled	apply=0
+005D5560	SettMapSTy_GetMessage_uVar19Enum	disabled	apply=0
 005DB4F0	StartSystemTy_LoadGraph_iVar14Enum	disabled	apply=0
 005DFA30	MTaskTy_field_006DState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/MTaskTy_field_006DState; field already uses enum
 005E0AC0	MTaskTy_NoneMTask_switch_0Enum	disabled	apply=0

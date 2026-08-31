@@ -133,9 +133,8 @@ LAB_0056f325:
           puVar14 = PTR_0080679c + 0x14;
 
           uVar4 = FUN_006b4fe0(PTR_0080679c);
-          local_c = (AnonShape_006B5050_99986F91 *)
-                    /* ST_CALLSITE[0056F521]: CALL 0x006b50c0; direct=006B50C0 FUN_006b50c0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy; source view only; no Ghidra override */
-                    FUN_006b50c0(0x8b,0x8b,(uint)PTR_0080679c[7],uVar4,(undefined4 *)puVar14,iVar15);
+          local_c = /* ST_CALLSITE[0056F521]: CALL 0x006b50c0; direct=006B50C0 FUN_006b50c0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy; source view only; no Ghidra override */
+          STPointerBoundaryCast<AnonShape_006B5050_99986F91 *>(FUN_006b50c0(0x8b,0x8b,(uint)PTR_0080679c[7],uVar4,(undefined4 *)puVar14,iVar15));
           if (local_c != nullptr) {
             FUN_006b4170((RecoveredSourceFamily_dibcopy *)local_c,0,0,0,local_c->field_0004,
                          local_c->field_0008,0);

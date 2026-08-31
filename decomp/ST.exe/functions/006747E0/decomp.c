@@ -5,7 +5,7 @@
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
    decompilation contains no value return */
 
-void FUN_006747e0(int param_1,int param_2)
+void FUN_006747e0(AnonShape_006747E0_C06E010E *param_1,int param_2)
 
 {
   char cVar1;
@@ -27,10 +27,10 @@ void FUN_006747e0(int param_1,int param_2)
     /* ST_CALLSITE[00674822]: CALL dword ptr [0x007d2d1c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar2 = (*(code *)PTR_thunk_FUN_00673160_007d2d1c)
-                      (PTR_0085755c + DAT_0081190c,*(undefined4 *)(param_1 + iVar4 * 8));
+                      (PTR_0085755c + DAT_0081190c,param_1[iVar4].field_0000);
     if (iVar2 < 1) {
       if (-1 < iVar2) {
-        DAT_007d2d18 = *(undefined4 *)(param_1 + 4 + iVar4 * 8);
+        DAT_007d2d18 = param_1[iVar4].field_0004;
         PTR_0085755c[DAT_00811914] = cVar1;
         return;
       }

@@ -355,7 +355,7 @@ st::fn_004D7570(STAllPlayersC *this,char param_1,int param_2,int *param_3)
                     (&g_packedRecords_A62x8[iVar2].field1625_0x80a)[param_2 * 0x11]));
     (&g_packedRecords_A62x8[iVar2].field1610_0x7f2)[param_2 * 0x11] = uVar1 + 1;
     if (piVar3 == nullptr) goto cf_common_exit_004D766D;
-  } while (st::machine_word_boundary_cast<uint>((int *)*piVar3) != st::machine_word_boundary_cast<uint>(param_3));
+  } while ((int *)*piVar3 != param_3);
   (&g_packedRecords_A62x8[iVar2].field1626_0x80e)[param_2 * 0x11] =
        (&g_packedRecords_A62x8[iVar2].field1626_0x80e)[param_2 * 0x11] - piVar3[1];
   (&g_packedRecords_A62x8[iVar2].field1627_0x812)[param_2 * 0x11] =
@@ -416,7 +416,7 @@ st::fn_004D76E0
                     (&g_packedRecords_A62x8[iVar2].field1625_0x80a)[param_2 * 0x11]));
     (&g_packedRecords_A62x8[iVar2].field1610_0x7f2)[param_2 * 0x11] = uVar1 + 1;
     if (piVar3 == nullptr) break;
-    if (st::machine_word_boundary_cast<uint>((int *)*piVar3) == st::machine_word_boundary_cast<uint>(param_3)) {
+    if ((int *)*piVar3 == param_3) {
       (&g_packedRecords_A62x8[iVar2].field1626_0x80e)[param_2 * 0x11] =
            (&g_packedRecords_A62x8[iVar2].field1626_0x80e)[param_2 * 0x11] - piVar3[1];
       (&g_packedRecords_A62x8[iVar2].field1627_0x812)[param_2 * 0x11] =
@@ -473,10 +473,10 @@ undefined4 __thiscall st::fn_004D8B70(STAllPlayersC *this,char param_1)
 
 {
   byte bVar1;
-  uint uVar2;
+  int uVar2;
   int iVar3;
   int iVar2;
-  uint uVar5;
+  int uVar5;
   int iVar4;
   uint uVar6;
   uint uVar7;
@@ -493,7 +493,7 @@ undefined4 __thiscall st::fn_004D8B70(STAllPlayersC *this,char param_1)
       uVar2 = st::fn_004036A7(uVar6);
 
       iVar3 = st::fn_00405D80(uVar6);
-      iVar2 = st::storage_bit_cast<int>(static_cast<uint32_t>(uVar2 * 0x14)) / iVar3;
+      iVar2 = (uVar2 * 0x14) / iVar3;
       if (0x14 < iVar2) {
         iVar2 = 0x14;
       }
@@ -551,7 +551,7 @@ st::fn_004DA390(STAllPlayersC *this,uint param_1,byte *param_2,int param_3)
   int iVar7;
   byte *pbVar8;
   int iVar9;
-  uint uVar10;
+  int uVar10;
   int iVar6;
   byte *puVar10;
   int iVar11;
@@ -670,7 +670,7 @@ LAB_004da4d3:
           uVar10 = st::fn_004036A7(param_1);
 
           iVar6 = st::fn_00405D80(param_1);
-          iVar7 = st::storage_bit_cast<int>(static_cast<uint32_t>(uVar10 * 0x14)) / iVar6;
+          iVar7 = (uVar10 * 0x14) / iVar6;
           if (0x14 < iVar7) {
             iVar7 = 0x14;
           }
@@ -813,7 +813,7 @@ st::fn_004DB160
        ((sVar9 < g_worldGrid.sizeY && (sVar7 = (short)*param_5, -1 < sVar7)))) &&
       ((sVar7 < g_worldGrid.sizeZ &&
        ((this_00 = STGridAt3D(g_worldGrid, sVar2, sVar9, sVar7).objects[0], this_00 != nullptr &&
-        (st::machine_word_boundary_cast<uint>(this_00[1].vtable) != st::machine_word_boundary_cast<uint>((STWorldObjectVTable *)param_1))))))) &&
+        (this_00[1].vtable != (STWorldObjectVTable *)param_1)))))) &&
      /* ST_CALLSITE[004DB201]: CALL dword ptr [EAX + 0x2c] */
      ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x3c ||
       /* ST_CALLSITE[004DB20D]: CALL dword ptr [EDX + 0x2c] */
@@ -943,7 +943,7 @@ LAB_004db257:
                  (((sVar7 < g_worldGrid.sizeZ &&
                    (this_00 = STGridAt3D(g_worldGrid, sVar2, sVar9, sVar7).objects[0],
                    this_00 != nullptr)) &&
-                  ((st::machine_word_boundary_cast<uint>(this_00[1].vtable) != st::machine_word_boundary_cast<uint>((STWorldObjectVTable *)param_1) &&
+                  ((this_00[1].vtable != (STWorldObjectVTable *)param_1 &&
                    /* ST_CALLSITE[004DB343]: CALL dword ptr [EDX + 0x2c] */
                    ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x3c ||
                     /* ST_CALLSITE[004DB34F]: CALL dword ptr [EAX + 0x2c] */
@@ -976,11 +976,9 @@ LAB_004db257:
 LAB_004db3e4:
               iVar12 = *param_4 + (int)param_5_after_write;
               if ((((-1 < iVar12) && (iVar12 < g_worldGrid.sizeY)) &&
-                  (this_00 = (STWorldObject *)
-
-                             st::fn_00401442(sVar2,(short)iVar12,(short)local_8,0),
+                  (this_00 = STPointerBoundaryCast<STWorldObject *>(st::fn_00401442(sVar2,(short)iVar12,(short)local_8,0)),
                   this_00 != nullptr)) &&
-                 ((st::machine_word_boundary_cast<uint>(this_00[1].vtable) != st::machine_word_boundary_cast<uint>((STWorldObjectVTable *)param_1) &&
+                 ((this_00[1].vtable != (STWorldObjectVTable *)param_1 &&
                   /* ST_CALLSITE[004DB42A]: CALL dword ptr [EAX + 0x2c] */
                   ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x3c ||
                    /* ST_CALLSITE[004DB436]: CALL dword ptr [EDX + 0x2c] */
@@ -1022,11 +1020,9 @@ LAB_004db497:
               iVar11 = *param_3 - (int)param_5_after_write;
               if ((-1 < iVar11) &&
                  ((((iVar11 < g_worldGrid.sizeX &&
-                    (this_00 = (STWorldObject *)
-
-                               st::fn_00401442((short)iVar11,(short)iVar12,(short)local_8,0),
+                    (this_00 = STPointerBoundaryCast<STWorldObject *>(st::fn_00401442((short)iVar11,(short)iVar12,(short)local_8,0)),
                     this_00 != nullptr)) &&
-                   (st::machine_word_boundary_cast<uint>(this_00[1].vtable) != st::machine_word_boundary_cast<uint>((STWorldObjectVTable *)param_1))) &&
+                   (this_00[1].vtable != (STWorldObjectVTable *)param_1)) &&
                   /* ST_CALLSITE[004DB520]: CALL dword ptr [EDX + 0x2c] */
                   ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x3c ||
                    /* ST_CALLSITE[004DB52C]: CALL dword ptr [EAX + 0x2c] */
@@ -1059,11 +1055,9 @@ LAB_004db497:
 LAB_004db58d:
               iVar11 = *param_3 + (int)param_5_after_write;
               if ((((-1 < iVar11) && (iVar11 < g_worldGrid.sizeX)) &&
-                  ((this_00 = (STWorldObject *)
-
-                              st::fn_00401442((short)iVar11,(short)iVar12,(short)local_8,0),
+                  ((this_00 = STPointerBoundaryCast<STWorldObject *>(st::fn_00401442((short)iVar11,(short)iVar12,(short)local_8,0)),
                    this_00 != nullptr &&
-                   (st::machine_word_boundary_cast<uint>(this_00[1].vtable) != st::machine_word_boundary_cast<uint>((STWorldObjectVTable *)param_1))))) &&
+                   (this_00[1].vtable != (STWorldObjectVTable *)param_1)))) &&
                  /* ST_CALLSITE[004DB5D3]: CALL dword ptr [EAX + 0x2c] */
                  ((iVar4 = this_00->GetObjectTypeId(), iVar4 == 0x3c ||
                   /* ST_CALLSITE[004DB5DF]: CALL dword ptr [EDX + 0x2c] */
@@ -1459,6 +1453,8 @@ int __thiscall st::fn_004E6FE0(STAllPlayersC *this,int param_1)
 void __thiscall st::fn_004E75F0(STAllPlayersC *this,int param_1)
 
 {
+  int param_1_after_write;
+
   int *piVar1;
   int iVar2;
   byte bVar3;
@@ -1469,7 +1465,7 @@ void __thiscall st::fn_004E75F0(STAllPlayersC *this,int param_1)
   if ((-1 < param_1) && (param_1 < 8)) {
     /* ST_CALLSITE[004E760D]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar3 = st::fn_004049B7((char)param_1);
-    auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
+    param_1_after_write = 0; /* compiler stack-slot lifetime split */
     if (0 < *(int *)(&DAT_007995bc + (bVar3 - 1) * 0x4bf)) {
       puVar5 = reinterpret_cast<uint *>((&DAT_007995bc + (bVar3 - 1) * 0x4bf));
       do {
@@ -1573,7 +1569,7 @@ st::fn_004E80F0
     iVar2 = (&DAT_007bf67c)[iVar1];
     if (((iVar2 < 0) || (iVar2 == 0)) ||
 
-       (iVar2 = st::fn_0040186B(param_1,iVar2), (int)(&DAT_007bf680)[iVar1] <= iVar2)) {
+       (iVar2 = st::fn_0040186B(param_1,iVar2), st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_007bf680)[iVar1])) <= iVar2)) {
       iVar3 = 1;
     }
   }

@@ -290,9 +290,7 @@ int __thiscall st::fn_005EAF10(STArtiafactC *this,STMessage *message)
           }
           if ((g_allPlayers_007FA174 != nullptr) &&
              /* ST_CALLSITE[005EB2E7]: CALL 0x0040440d; direct=0040440D STAllPlayersC::RegisterArtefact */
-             (iVar13 = st::fn_0040440D
-                                 (g_allPlayers_007FA174,this_00->field_0032,this_00), iVar13 != 0))
-          {
+             (iVar13 = st::fn_0040440D(this_00->field_0032,this_00), iVar13 != 0)) {
             /* ST_CALLSITE[005EB2F2]: CALL 0x00404462; direct=00404462 STArtiafactC::sub_005EBCB0 */
             st::fn_00404462(this_00);
           }
@@ -331,7 +329,7 @@ int __thiscall st::fn_005EAF10(STArtiafactC *this,STMessage *message)
         st::fn_00401F2D(0);
         if (g_allPlayers_007FA174 != nullptr) {
           /* ST_CALLSITE[005EB061]: CALL 0x0040440d; direct=0040440D STAllPlayersC::RegisterArtefact */
-          iVar13 = st::fn_0040440D(g_allPlayers_007FA174,0xffff,this_00);
+          iVar13 = st::fn_0040440D(0xffff,this_00);
           if (iVar13 != 0) {
             /* ST_CALLSITE[005EB06C]: CALL 0x00404462; direct=00404462 STArtiafactC::sub_005EBCB0 */
             st::fn_00404462(this_00);

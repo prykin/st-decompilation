@@ -166,7 +166,7 @@ cf_common_exit_00601B38:
       iVar4 = this_00->vfunc_DC(param_1, param_2, param_3, param_4, param_5, param_6);
       iVar8 = local_8;
       if (0 < iVar4) {
-        if ((param_13 != 0) && (st::machine_word_boundary_cast<uint>(this_00[1].vtable) == st::machine_word_boundary_cast<uint>((STWorldObjectVTable *)param_7))) {
+        if ((param_13 != 0) && (this_00[1].vtable == (STWorldObjectVTable *)param_7)) {
           return local_c;
         }
         local_10->field_0000 = iVar10;
@@ -273,7 +273,7 @@ LAB_006018c7:
            /* ST_CALLSITE[00601A82]: CALL dword ptr [EDX + 0xdc]; [STIndirectCallsiteApplier] exact slot 0xDC; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4;/undefined4 */
            (iVar4 = this_00->vfunc_DC(param_1, param_2, param_3, param_4, param_5, param_6),
            iVar8 = local_1c, 0 < iVar4)))) &&
-         ((param_13 == 0 || (st::machine_word_boundary_cast<uint>(this_00[1].vtable) != st::machine_word_boundary_cast<uint>((STWorldObjectVTable *)param_7))))) {
+         ((param_13 == 0 || (this_00[1].vtable != (STWorldObjectVTable *)param_7)))) {
         local_10->field_0000 = local_8;
         local_10->field_0004 = iVar7;
         local_10->field_0008 = iVar10;

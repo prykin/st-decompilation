@@ -10,7 +10,7 @@ void __thiscall TradePanelTy::sub_00551800(TradePanelTy *this)
 
 {
   int iVar1;
-  uint uVar2;
+  int uVar2;
   int iVar2;
   uint uVar3;
   uint uVar4;
@@ -55,7 +55,7 @@ LAB_0055194f:
 
         uVar2 = thunk_FUN_004d8870(DAT_0080874d);
       }
-      if ((int)uVar2 < iVar2) goto LAB_0055198e;
+      if (uVar2 < iVar2) goto LAB_0055198e;
       iVar2 = 1;
     }
     else {

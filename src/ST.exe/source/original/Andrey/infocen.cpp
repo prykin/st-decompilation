@@ -915,9 +915,9 @@ int __thiscall st::fn_00521490(InfocPanelTy *this,STMessage *message)
         local_8 = local_8 & 0xffffff00;
         do {
           uVar9 = local_8 & 0xff;
-          if (((((int)uVar11 < (int)(&this_00->field_02D4)[uVar9 * 5]) ||
+          if (((((int)uVar11 < st::storage_bit_cast<int>(static_cast<uint32_t>((&this_00->field_02D4)[uVar9 * 5]))) ||
                ((int)((&this_00->field_02DC)[uVar9 * 5] + (&this_00->field_02D4)[uVar9 * 5]) <=
-                (int)uVar11)) || ((int)local_14 < (int)(&this_00->field_02D8)[uVar9 * 5])) ||
+                (int)uVar11)) || ((int)local_14 < st::storage_bit_cast<int>(static_cast<uint32_t>((&this_00->field_02D8)[uVar9 * 5])))) ||
              ((int)((&this_00->field_02E0)[uVar9 * 5] + (&this_00->field_02D8)[uVar9 * 5]) <=
               (int)local_14)) {
             bVar6 = false;

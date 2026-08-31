@@ -13,7 +13,8 @@ FUN_00414980:
 0041499F  6A 02                     PUSH 0x2
 004149A1  8D 34 BD 08 00 00 00      LEA ESI,[EDI*0x4 + 0x8]
 004149A8  56                        PUSH ESI
-004149A9  E8 56 C7 FE FF            CALL 0x00401104
+FUN_00414980::override::prt_4149a9_4384a1f0:
+004149A9  E8 56 C7 FE FF            CALL 0x00401104  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_007F4D50_A5847219; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_007F4D50_A5847219;/uint;/uint;pointer:/char;/int
 004149AE  83 C4 18                  ADD ESP,0x18
 004149B1  A3 50 4D 7F 00            MOV [0x007f4d50],EAX
 004149B6  85 C0                     TEST EAX,EAX

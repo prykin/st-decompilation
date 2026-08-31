@@ -145,10 +145,8 @@ LAB_0052e184:
     puVar12 = PTR_0080679c + 0x14;
 
     uVar12 = FUN_006b4fe0(PTR_0080679c);
-    pRVar5 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-             FUN_006b50c0((&DAT_00807570)[(_DAT_00807348 & 0xff) * 4],0x11d,(uint)PTR_0080679c[7],
-                          uVar12,(undefined4 *)puVar12,iVar8);
+    pRVar5 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(FUN_006b50c0((&DAT_00807570)[(_DAT_00807348 & 0xff) * 4],0x11d,(uint)PTR_0080679c[7],
+                          uVar12,(undefined4 *)puVar12,iVar8));
     this_00->field_0090 = (ushort *)pRVar5;
     uVar10 = *(uint *)&pRVar5[1].field_0x4;
     if (uVar10 == 0) {

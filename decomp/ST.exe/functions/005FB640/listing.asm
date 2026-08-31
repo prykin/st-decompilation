@@ -331,7 +331,7 @@ LAB_005fba57:
 005FBA59  E8 A5 8E E0 FF            CALL 0x00404903
 005FBA5E  6A 00                     PUSH 0x0
 005FBA60  8B CE                     MOV ECX,ESI
-005FBA62  E8 A7 60 E0 FF            CALL 0x00401b0e  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
+005FBA62  E8 A7 60 E0 FF            CALL 0x00401b0e
 005FBA67  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 005FBA6D  85 C9                     TEST ECX,ECX
 005FBA6F  0F 84 DA 05 00 00         JZ 0x005fc04f

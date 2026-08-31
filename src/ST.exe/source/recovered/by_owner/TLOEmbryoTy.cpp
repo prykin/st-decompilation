@@ -454,7 +454,7 @@ undefined4 __thiscall st::fn_004D6C90(TLOEmbryoTy *this,undefined4 param_1,int *
 {
   int iVar1;
 
-  if (st::machine_word_boundary_cast<uint>((TLOEmbryoTy *)param_2) == st::machine_word_boundary_cast<uint>(this)) {
+  if ((TLOEmbryoTy *)param_2 == this) {
     return 4;
   }
   if ((param_2 != nullptr) && (param_2[9] == this->field_0024)) {

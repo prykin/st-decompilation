@@ -281,6 +281,7 @@ void __thiscall st::fn_005505D0(STPlaySystemC *this,int param_1,int *param_2)
   char *pcVar2;
   int iVar3;
   PopUpTy *text;
+  int uVar5_mg0;
   char *pcVar1;
   byte bVar4;
   uint uVar5;
@@ -301,8 +302,8 @@ void __thiscall st::fn_005505D0(STPlaySystemC *this,int param_1,int *param_2)
       st::fn_00715360(g_int_00811764,param_1,'1',pcVar2,local_8,1,*(undefined4 *)pcVar2);
       if (this->field_00BB < 5) {
 
-        uVar5 = st::fn_006E51B0(reinterpret_cast<STAppC *>(&DAT_00807620));
-        (&this->field_00A7)[this->field_00BB] = uVar5;
+        uVar5_mg0 = st::fn_006E51B0(reinterpret_cast<STAppC *>(&DAT_00807620));
+        (&this->field_00A7)[this->field_00BB] = uVar5_mg0;
         this->field_00BB = this->field_00BB + 1;
       }
       else {

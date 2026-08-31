@@ -16,10 +16,10 @@ int __thiscall STJumpMineC::sub_00619C70(STJumpMineC *this)
 {
   VisibleClassTy *pVVar1;
   uint uVar2;
-  uint local_EAX_444;
+  int local_EAX_444;
   int iVar3;
   int iVar4;
-  uint uVar11;
+  int uVar11;
   STJumpMineC_field_0093State SVar5;
   int iVar6;
   short sVar7;
@@ -73,7 +73,7 @@ int __thiscall STJumpMineC::sub_00619C70(STJumpMineC *this)
             (*(char *)(iVar3 * iVar12 + (&DAT_007fb24c)[this->field_0051] + iVar11) == '\0')) &&
 
            (local_EAX_444 = thunk_FUN_00497030(iVar11,iVar12,this->field_0051,1,DAT_007e66ac),
-           -1 < (int)local_EAX_444)) {
+           -1 < local_EAX_444)) {
           this->field_00A7 = local_c;
           this->field_00AF = 0;
           thunk_FUN_00637ae0(this->field_009F,this->field_00A3,local_c);
@@ -218,7 +218,7 @@ LAB_0061a4fd:
                   (*(char *)(iVar4 * this->field_00CB + local_2c + iVar6) != '\0')))))) ||
 
          (uVar11 = thunk_FUN_00497030(iVar6,(int)this->field_00CB,this->field_0051,1,DAT_007e66ac),
-         (int)uVar11 < 0)) {
+         uVar11 < 0)) {
         this->field_001C = this->field_001C * 0x41c64e6d + 0x3039;
         this->field_0113 = 0xf;
         uVar10 = this->field_001C * 0x41c64e6d + 0x3039;

@@ -254,10 +254,10 @@ int __thiscall st::fn_00619C70(STJumpMineC *this)
 {
   VisibleClassTy *pVVar1;
   uint uVar2;
-  uint local_EAX_444;
+  int local_EAX_444;
   int iVar3;
   int iVar4;
-  uint uVar11;
+  int uVar11;
   STJumpMineC_field_0093State SVar5;
   int iVar6;
   short sVar7;
@@ -311,7 +311,7 @@ int __thiscall st::fn_00619C70(STJumpMineC *this)
             (*(char *)(iVar3 * iVar12 + (&DAT_007fb24c)[this->field_0051] + iVar11) == '\0')) &&
 
            (local_EAX_444 = st::fn_00403B66(iVar11,iVar12,this->field_0051,1,DAT_007e66ac),
-           -1 < (int)local_EAX_444)) {
+           -1 < local_EAX_444)) {
           this->field_00A7 = local_c;
           this->field_00AF = 0;
           st::fn_00405B82(this->field_009F,this->field_00A3,local_c);
@@ -456,7 +456,7 @@ LAB_0061a4fd:
                   (*(char *)(iVar4 * this->field_00CB + local_2c + iVar6) != '\0')))))) ||
 
          (uVar11 = st::fn_00403B66(iVar6,(int)this->field_00CB,this->field_0051,1,DAT_007e66ac),
-         (int)uVar11 < 0)) {
+         uVar11 < 0)) {
         this->field_001C = this->field_001C * 0x41c64e6d + 0x3039;
         this->field_0113 = 0xf;
         uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
@@ -833,7 +833,14 @@ cf_common_exit_0061AB3A:
    [STMethodOwnerApplier] Structural method owner recovered as STJumpMineC.
    Evidence: this_call_owners=[STJumpMineC]; agreed_this_calls=1; incoming_this_accesses=5;
    incoming_edx_uses=4; incoming_stack_parameter_uses=56; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=1; owner_evidence_coverage=adequate
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:1: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/short
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 undefined4 __thiscall
 st::fn_0061B340
@@ -1178,7 +1185,7 @@ st::fn_0061BDB0
   int iVar5;
   int iVar2;
   uint uVar4;
-  uint uVar3;
+  int uVar3;
   int iVar6;
   int iVar7;
   longlong lVar8;
@@ -1336,7 +1343,7 @@ LAB_0061c0e4:
 
           uVar3 = st::fn_006C8334(uVar4);
         }
-        iVar2 = st::storage_bit_cast<int>(static_cast<uint32_t>(uVar3 + this->field_0113 * -1000)) / iVar2;
+        iVar2 = (uVar3 + this->field_0113 * -1000) / iVar2;
         if (0 < iVar2) {
           this->field_0113 = this->field_0113 * 10000;
           param_2_after_write = iVar6;

@@ -45,7 +45,7 @@ int __thiscall st::fn_006406D0(STTorpC *this,STMessage *message)
   int *piVar13_mg1;
   short sVar10;
   uint uVar18;
-  uint uVar17;
+  int uVar17;
   int iVar10;
   STGameObjC *this_01;
   uint uVar19;
@@ -1009,7 +1009,7 @@ switchD_00640c2d_caseD_a2:
 
       uVar17 = st::fn_00403B66((int)this_00->field_0047,(int)this_00->field_0049,
                                   this_00->field_0024,1,iVar14);
-      if ((int)uVar17 < 0) {
+      if (uVar17 < 0) {
         local_18 = 0;
       }
       else {

@@ -18,7 +18,7 @@ STAllPlayersC::sub_004DA390(STAllPlayersC *this,uint param_1,byte *param_2,int p
   int iVar7;
   byte *pbVar8;
   int iVar9;
-  uint uVar10;
+  int uVar10;
   int iVar6;
   byte *puVar10;
   int iVar11;
@@ -137,7 +137,7 @@ LAB_004da4d3:
           uVar10 = thunk_FUN_004e41c0(param_1);
 
           iVar6 = thunk_FUN_004e4180(param_1);
-          iVar7 = (int)(uVar10 * 0x14) / iVar6;
+          iVar7 = (uVar10 * 0x14) / iVar6;
           if (0x14 < iVar7) {
             iVar7 = 0x14;
           }

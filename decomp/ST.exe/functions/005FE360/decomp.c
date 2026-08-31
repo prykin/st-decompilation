@@ -2,7 +2,14 @@
 
 
 /* [STAbiConsistencyApplier] stack_parameter_width: parameter=/short Evidence: entry-use
-   width=/short; unmasked_dword_reads=0; evidence=005FE3A0 MOVSX EDI,word ptr [EBP + 0x1c] */
+   width=/short; unmasked_dword_reads=0; evidence=005FE3A0 MOVSX EDI,word ptr [EBP + 0x1c]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:5: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:5: parameter=/short
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 undefined4
 FUN_005fe360(short *param_1,int param_2,int param_3,short param_4,int param_5,short param_6,
@@ -25,6 +32,7 @@ FUN_005fe360(short *param_1,int param_2,int param_3,short param_4,int param_5,sh
   *(int *)(param_1 + 0xc) = (short)param_5 - (short)param_2;
   param_1[6] = (short)param_5;
   *(int *)(param_1 + 0xe) = (int)param_6 - (short)param_3;
+
   iVar2 = FUN_006aced8(param_2,param_3,param_5,_param_6);
   *(int *)(param_1 + 0x10) = iVar2;
   param_1[0x12] = 0x11;

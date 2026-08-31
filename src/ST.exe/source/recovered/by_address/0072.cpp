@@ -1689,8 +1689,8 @@ int st::fn_00727C80(int *param_1,int param_2)
       else {
         iVar1 = 0;
       }
-      iVar2 = ((int)(&DAT_008570ac)[iVar1 * 4] >> 0x10) -
-              ((int)(&DAT_008570ac)[param_2 * 4] >> 0x10);
+      iVar2 = (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_008570ac)[iVar1 * 4])) >> 0x10) -
+              (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_008570ac)[param_2 * 4])) >> 0x10);
       param_1[1] = iVar2;
       if (0 < iVar2) {
         param_1[2] = iVar1;
@@ -1739,7 +1739,7 @@ void __cdecl st::fn_00728170(AnonShape_00728170_E57D1DF1 *param_1,AnonShape_0072
 
 {
   byte uVar1;
-  uint uVar2;
+  int uVar2;
   uint uVar3;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_ECX;
@@ -3811,12 +3811,14 @@ st::fn_0072AC20(void *this,byte *param_1,byte *param_2,uint *param_3,int param_4
             int param_6,byte param_7,int param_8,int param_9,uint param_10)
 
 {
+  int param_4_after_write;
+
   int iVar1;
   int iVar2;
 
   if (1 < param_4) {
     iVar1 = param_4 + -1;
-    auto param_4_after_write = 0; /* compiler stack-slot lifetime split */
+    param_4_after_write = 0; /* compiler stack-slot lifetime split */
     if (0 < iVar1) {
       do {
         iVar2 = st::fn_007297E0(this,param_1,param_2,param_3,param_3 + 4,param_5,param_6,param_7,

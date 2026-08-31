@@ -23,6 +23,7 @@ undefined4 __fastcall FUN_004d32c0(TLOBaseTy *param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   ushort uVar5;
+  int uVar13_mg3;
   int local_EAX_3601;
   uint uVar3;
   uint uVar4;
@@ -49,7 +50,6 @@ undefined4 __fastcall FUN_004d32c0(TLOBaseTy *param_1)
   int *piVar14;
   int iVar15;
   char *text;
-  uint uVar16;
   CHAR local_7c [64];
   uint local_3c [2];
   int local_34;
@@ -556,7 +556,7 @@ LAB_004d3f76:
           puVar12 = &param_1->field_01D5;
           *(undefined4 *)&param_1->field_0x2e0 = 1;
 
-          uVar13 = thunk_FUN_004ac910(puVar12,(char)param_1->field_02F0);
+          uVar13_mg3 = thunk_FUN_004ac910(puVar12,(char)param_1->field_02F0);
           /* ST_CALLSITE[004D4007]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STT3DSprC; source view only; no Ghidra override */
           STT3DSprC::StopShow((STT3DSprC *)puVar12,(byte)param_1->field_02F0);
           /* ST_CALLSITE[004D4015]: CALL 0x0040498a; direct=0040498A STT3DSprC::UnLoadSequence */
@@ -582,12 +582,12 @@ LAB_004d3f76:
           param_1->field_02F4 = iVar11;
           /* ST_CALLSITE[004D40C3]: CALL 0x0040498a; direct=0040498A STT3DSprC::UnLoadSequence */
           STT3DSprC::UnLoadSequence((STT3DSprC *)puVar12,(byte)iVar11);
-          uVar16 = param_1->field_02F4;
+          uVar13 = param_1->field_02F4;
           /* ST_CALLSITE[004D40D1]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STT3DSprC; source view only; no Ghidra override */
           local_EAX_3601 = thunk_FUN_004ad650((STT3DSprC *)puVar12);
 
           uVar3 = thunk_FUN_004ad650(param_1->field_035C);
-          FUN_006ea340(param_1->field_0211,uVar3,local_EAX_3601,uVar16);
+          FUN_006ea340(param_1->field_0211,uVar3,local_EAX_3601,uVar13);
           param_1->field_02F0 = (-(uint)(*(int *)&param_1->field_0x370 != 0) & 4) + 7;
           iVar11 = param_1->field_0259;
           if (((iVar11 != 0x6c) || (param_1->field_0251 != 3)) &&
@@ -667,7 +667,7 @@ cf_error_exit_004D428D:
                                *(int *)(*(int *)&param_1->field_0x364 + iVar11 * 8),
                                *(int *)(*(int *)&param_1->field_0x364 + 4 + iVar11 * 8),'\0');
             /* ST_CALLSITE[004D42E7]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
-            STT3DSprC::SetCurFase((STT3DSprC *)puVar12,(char)param_1->field_02F0,uVar13);
+            STT3DSprC::SetCurFase((STT3DSprC *)puVar12,(char)param_1->field_02F0,uVar13_mg3);
             /* ST_CALLSITE[004D4301]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
             STT3DSprC::StartShow
                       ((STT3DSprC *)puVar12,(byte)param_1->field_02F0,
@@ -681,7 +681,8 @@ cf_error_exit_004D428D:
                                  *(int *)(*(int *)&param_1->field_0x364 + iVar11 * 8),
                                  *(int *)(*(int *)&param_1->field_0x364 + 4 + iVar11 * 8),'\0');
               /* ST_CALLSITE[004D435E]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
-              STT3DSprC::SetCurFase((STT3DSprC *)puVar12,(char)param_1->field_02F0 + -1,uVar13);
+              STT3DSprC::SetCurFase
+                        ((STT3DSprC *)puVar12,(char)param_1->field_02F0 + -1,uVar13_mg3);
               cVar1 = (char)param_1->field_02F0;
               uVar13 = g_playSystem_00802A38->field_00E4;
               goto LAB_004d4378;

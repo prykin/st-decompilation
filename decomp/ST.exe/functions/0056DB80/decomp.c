@@ -25,8 +25,10 @@ void __thiscall STAppC::StartGame(STAppC *this)
   int local_EAX_1075;
   char *pcVar8_mg2;
   uint *puVar8;
+  uint *puVar8_mg1;
+  uint *puVar8_mg3;
   char *pcVar8_mg1;
-  char *pcVar8_mg3;
+  cLoadingTy *pcVar8_mg3;
   int local_EAX_2834;
   int iVar9;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -286,8 +288,8 @@ void __thiscall STAppC::StartGame(STAppC *this)
       pSVar10->field_4EA7 = puVar8;
       if (puVar8 == nullptr) {
         /* ST_CALLSITE[0056E1C5]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint */
-        puVar8 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
-        pSVar10->field_4EA7 = puVar8;
+        puVar8_mg1 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
+        pSVar10->field_4EA7 = puVar8_mg1;
       }
       if ((DArrayTy *)pSVar10->field_4EAB != nullptr) {
         FUN_006b5570((DArrayTy *)pSVar10->field_4EAB);
@@ -296,8 +298,8 @@ void __thiscall STAppC::StartGame(STAppC *this)
       pSVar10->field_4EAB = puVar8;
       if (puVar8 == nullptr) {
         /* ST_CALLSITE[0056E205]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint */
-        puVar8 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
-        pSVar10->field_4EAB = puVar8;
+        puVar8_mg3 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
+        pSVar10->field_4EAB = puVar8_mg3;
       }
       if ((pSVar10->field_117C == 0) &&
          ((SVar1 = pSVar10->field_1180, SVar1 == CASE_8 || (SVar1 == CASE_3)))) {
@@ -360,9 +362,9 @@ void __thiscall STAppC::StartGame(STAppC *this)
     g_cMf32_00806754 = nullptr;
     if (g_cLoading_00802A58 != nullptr) {
       /* ST_CALLSITE[0056E4B8]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cLoadingTy; signature=__stdcall;pointer:/cLoadingTy;/WinDef.h/UINT;/WinDef.h/HINSTANCE */
-      pcVar8_mg3 = (char *)LoadResourceString(0x2680,g_hINSTANCE_00807618);
+      pcVar8_mg3 = LoadResourceString(0x2680,g_hINSTANCE_00807618);
       /* ST_CALLSITE[0056E4C4]: CALL 0x00401230; direct=00401230 cLoadingTy::DrawLineCR */
-      cLoadingTy::DrawLineCR(g_cLoading_00802A58,pcVar8_mg3);
+      cLoadingTy::DrawLineCR(g_cLoading_00802A58,(char *)pcVar8_mg3);
       if ((pSVar10->field_115E != '\0') && (pSVar10->field_1163 == '\x03')) {
         /* ST_CALLSITE[0056E4DF]: CALL dword ptr [0x0085bc6c] */
         Sleep(2000);

@@ -84,7 +84,8 @@ LAB_0067e8cf:
 0067E8D4  6A 00                     PUSH 0x0
 0067E8D6  53                        PUSH EBX
 0067E8D7  52                        PUSH EDX
-0067E8D8  E8 B3 44 07 00            CALL 0x006f2d90
+CreateArbList::override::prt_67e8d8_8e1779b8:
+0067E8D8  E8 B3 44 07 00            CALL 0x006f2d90  ; [STUtilityFunctionApplier] heterogeneous_payload_consumer_view; target=006F2D90; signature=__cdecl;pointer:/ushort;pointer:/cMf32;pointer:/char;/byte;/int
 0067E8DD  8B D0                     MOV EDX,EAX
 0067E8DF  83 C4 10                  ADD ESP,0x10
 0067E8E2  85 D2                     TEST EDX,EDX

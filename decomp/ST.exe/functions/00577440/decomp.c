@@ -13,7 +13,7 @@ void __fastcall FUN_00577440(void *param_1)
 
 {
   bool bVar1;
-  uint uVar2;
+  int uVar2;
   DWORD DVar3;
   uint uVar3;
   int iVar4;

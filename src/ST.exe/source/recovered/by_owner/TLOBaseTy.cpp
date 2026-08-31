@@ -966,12 +966,12 @@ bool __thiscall st::fn_004BEA70(TLOBaseTy *this,int *param_1)
   int local_EAX_8404;
   uint uVar15;
   byte *puVar16;
-  uint local_EAX_9086;
+  int local_EAX_9086;
   int local_EAX_9104;
   uint *puVar17;
   AnonPointee_TLOBaseTy_061B *pAVar18;
   int local_EAX_9757;
-  uint uVar17;
+  int uVar17;
   int local_EAX_10456;
   short sVar19;
   int iVar21;
@@ -1076,7 +1076,7 @@ LAB_004beb63:
   switch(this->field_05AC) {
   case CASE_32:
     STField<undefined1>(param_1,10) = 0x1d;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) == st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bf427:
       if (this->field_0245 != CASE_0) goto LAB_004bf438;
       uVar5 = 1;
@@ -1095,7 +1095,7 @@ LAB_004bf438:
     }
     ((undefined1 *)param_1)[4] = uVar5;
     STField<undefined1>(param_1,0xb) = 0x26;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BF457]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2535 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1110,7 +1110,7 @@ LAB_004bf438:
     break;
   case CASE_33:
     STField<undefined1>(param_1,10) = 0x26;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BF37E]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2318 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1124,7 +1124,7 @@ LAB_004bf438:
     goto joined_r0x004bfcb7;
   case CASE_35:
     STField<undefined1>(param_1,10) = 0x21;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BF0BD]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_1613 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1144,7 +1144,7 @@ LAB_004bef54:
     goto switchD_004bec4d_caseD_36;
   case CASE_37:
     STField<undefined1>(param_1,10) = 0x26;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BF30F]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2207 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1158,7 +1158,7 @@ LAB_004bef54:
     goto cf_common_join_004BEF5A;
   case CASE_3A:
     STField<undefined1>(param_1,10) = 0x22;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BF2A2]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2098 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1173,7 +1173,7 @@ LAB_004bef54:
   case CASE_3C:
     STField<undefined1>(param_1,10) = 0x28;
     if (this->field_0245 == CASE_0) {
-      if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+      if (this->field_0024 != (byte *)this->field_023D) {
         /* ST_CALLSITE[004BF746]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         local_EAX_3286 = st::fn_004049B7((char)(byte *)this->field_023D);
         iVar21 = this->field_0235;
@@ -1193,7 +1193,7 @@ LAB_004bf7a5:
     ((undefined1 *)param_1)[4] = uVar5;
     STField<undefined1>(param_1,0xb) = 0x29;
     if (this->field_0245 != CASE_0) goto cf_common_join_004C01F3;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BF7D0]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_3424 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1353,7 +1353,7 @@ LAB_004bee65:
     break;
   case CASE_40:
     STField<undefined1>(param_1,10) = 0x1e;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) == st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bf5fe:
       if ((this->field_0245 != CASE_0) ||
          /* ST_CALLSITE[004BF614]: CALL 0x00405ace; direct=00405ACE TLOBaseTy::sub_004C7860 */
@@ -1374,7 +1374,7 @@ LAB_004bf624:
     }
     ((undefined1 *)param_1)[4] = uVar5;
     STField<undefined1>(param_1,0xb) = 0x26;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BF643]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_3027 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1389,7 +1389,7 @@ LAB_004bf624:
     break;
   case CASE_43:
     STField<undefined1>(param_1,10) = 0x23;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BF225]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_1973 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1407,7 +1407,7 @@ joined_r0x004bf200:
     goto cf_common_join_004C0278;
   case CASE_44:
     STField<undefined1>(param_1,10) = 0x1b;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BF6B8]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_3144 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1427,7 +1427,7 @@ LAB_004bf708:
     goto cf_common_join_004C0278;
   case CASE_45:
     STField<undefined1>(param_1,10) = 0x1a;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BEEFF]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_1167 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1444,7 +1444,7 @@ LAB_004bf708:
     goto cf_common_join_004C0278;
   case CASE_49:
     STField<undefined1>(param_1,10) = 0x1f;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) == st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bf508:
       if ((this->field_0245 != CASE_0) ||
          /* ST_CALLSITE[004BF51E]: CALL 0x00405ace; direct=00405ACE TLOBaseTy::sub_004C7860 */
@@ -1465,7 +1465,7 @@ LAB_004bf52e:
     }
     ((undefined1 *)param_1)[4] = uVar5;
     STField<undefined1>(param_1,0xb) = 0x26;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BF54D]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_2781 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1481,7 +1481,7 @@ LAB_004bf52e:
   case CASE_4C:
     if (this->field_04D0 != CASE_1) {
       STField<undefined1>(param_1,10) = 0x24;
-      if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+      if (this->field_0024 != (byte *)this->field_023D) {
         /* ST_CALLSITE[004BF1A8]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         local_EAX_1848 = st::fn_004049B7((char)(byte *)this->field_023D);
         iVar21 = this->field_0235;
@@ -1496,7 +1496,7 @@ LAB_004bf52e:
       goto joined_r0x004bf200;
     }
     STField<undefined1>(param_1,10) = 0x25;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BF13B]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_1739 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1511,7 +1511,7 @@ LAB_004bf17b:
     goto joined_r0x004bfcb7;
   case CASE_4E:
     STField<undefined1>(param_1,10) = 0x1c;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) == st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004beff1:
       if (((this->field_0245 != CASE_0) ||
 
@@ -1533,7 +1533,7 @@ LAB_004bf02b:
     }
     ((undefined1 *)param_1)[4] = uVar5;
     STField<undefined1>(param_1,0xb) = 0x19;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BF048]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_1496 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1548,7 +1548,7 @@ LAB_004bf02b:
     break;
   case CASE_52:
     STField<undefined1>(param_1,10) = 0x30;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) == st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bf873:
       if (this->field_0245 != CASE_0) goto LAB_004bf884;
       uVar5 = 1;
@@ -1567,7 +1567,7 @@ LAB_004bf884:
     }
     ((undefined1 *)param_1)[4] = uVar5;
     STField<undefined1>(param_1,0xb) = 0x31;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BF8A3]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_3635 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1582,7 +1582,7 @@ LAB_004bf884:
     break;
   case CASE_53:
     STField<undefined1>(param_1,10) = 0x44;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) == st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bf954:
       if (this->field_0245 != CASE_0) goto LAB_004bf965;
       uVar5 = 1;
@@ -1601,7 +1601,7 @@ LAB_004bf965:
     }
     ((undefined1 *)param_1)[4] = uVar5;
     STField<undefined1>(param_1,0xb) = 0x39;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) == st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bf9c0:
       if (((this->field_0245 != CASE_0) || (*(int *)&this->field_0x361 != 0)) ||
          (g_packedRecords_A62x8[(int)this->field_0024].field1982_0xa0e != 0)) goto LAB_004bf9f7;
@@ -1621,7 +1621,7 @@ LAB_004bf9f7:
     }
     STField<undefined1>(param_1,0x11) = uVar5;
     ((undefined1 *)param_1)[3] = 0x46;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BFA14]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_4004 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1642,7 +1642,7 @@ LAB_004bf9f7:
   case CASE_59:
   case CASE_5A:
     STField<undefined1>(param_1,10) = 0x41;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BFDC3]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_4947 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1659,7 +1659,7 @@ LAB_004bf9f7:
     goto cf_common_join_004C0278;
   case CASE_5C:
     STField<undefined1>(param_1,10) = 0x3d;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) == st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bfbca:
       if (this->field_0245 != CASE_0) goto LAB_004bfbdb;
       uVar5 = 1;
@@ -1678,7 +1678,7 @@ LAB_004bfbdb:
     }
     ((undefined1 *)param_1)[4] = uVar5;
     STField<undefined1>(param_1,0xb) = 0x37;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BFBFA]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_4490 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1693,7 +1693,7 @@ LAB_004bfbdb:
     break;
   case CASE_5D:
     STField<undefined1>(param_1,10) = 0x43;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BFCDC]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_4716 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1710,7 +1710,7 @@ LAB_004bfbdb:
     goto cf_common_join_004C0278;
   case CASE_5F:
     STField<undefined1>(param_1,10) = 0x3f;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) == st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004c0170:
       if (this->field_0245 != CASE_0) goto LAB_004c0181;
       uVar5 = 1;
@@ -1729,7 +1729,7 @@ LAB_004c0181:
     }
     ((undefined1 *)param_1)[4] = uVar5;
     STField<undefined1>(param_1,0xb) = 0x31;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004C01A0]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_5936 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1744,7 +1744,7 @@ LAB_004c0181:
     break;
   case CASE_61:
     STField<undefined1>(param_1,10) = 0x3b;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BFD56]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_4838 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1758,7 +1758,7 @@ LAB_004c0181:
     goto cf_common_join_004C0278;
   case CASE_64:
     STField<undefined1>(param_1,10) = 0x40;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BFC6F]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_4607 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1802,7 +1802,7 @@ LAB_004c0261:
     goto LAB_004bef5f;
   case CASE_6C:
     STField<undefined1>(param_1,10) = 0x3e;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 != (byte *)this->field_023D) {
       /* ST_CALLSITE[004BFE36]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
       local_EAX_5062 = st::fn_004049B7((char)(byte *)this->field_023D);
       iVar21 = this->field_0235;
@@ -1819,7 +1819,7 @@ LAB_004c0261:
     goto cf_common_join_004C0278;
   case CASE_6D:
     STField<undefined1>(param_1,10) = 0x42;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) == st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bfee5:
       if ((this->field_0245 != CASE_0) || ((this->field_04D0 != CASE_0 && (this->field_04D4 != 0))))
       goto LAB_004bff0a;
@@ -1839,7 +1839,7 @@ LAB_004bff0a:
     }
     ((undefined1 *)param_1)[4] = uVar5;
     STField<undefined1>(param_1,0xb) = 0x38;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) == st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bff65:
       if ((this->field_0245 != CASE_0) || (this->field_04D0 == CASE_0)) goto LAB_004bff80;
       uVar5 = 1;
@@ -1858,7 +1858,7 @@ LAB_004bff80:
     }
     STField<undefined1>(param_1,0x11) = uVar5;
     ((undefined1 *)param_1)[3] = 0x45;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) == st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004bffdb:
       if ((this->field_0245 == CASE_0) && (this->field_04D4 != 0)) {
         STField<undefined1>(param_1,0x12) = 1;
@@ -1881,7 +1881,7 @@ LAB_004bfffc:
   case CASE_70:
     if (this->field_04E0[4] == 0) {
       STField<undefined1>(param_1,10) = 0x36;
-      if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+      if (this->field_0024 != (byte *)this->field_023D) {
         /* ST_CALLSITE[004BFB1B]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         local_EAX_4267 = st::fn_004049B7((char)(byte *)this->field_023D);
         iVar21 = this->field_0235;
@@ -1896,7 +1896,7 @@ LAB_004bfffc:
     }
     else {
       STField<undefined1>(param_1,10) = 0x34;
-      if (st::machine_word_boundary_cast<uint>(this->field_0024) != st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+      if (this->field_0024 != (byte *)this->field_023D) {
         /* ST_CALLSITE[004BFAA1]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
         local_EAX_4145 = st::fn_004049B7((char)(byte *)this->field_023D);
         iVar21 = this->field_0235;
@@ -1916,7 +1916,7 @@ LAB_004bef5f:
     break;
   case CASE_72:
     STField<undefined1>(param_1,10) = 0x34;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) == st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004c005c:
       if (this->field_0261 == 0) goto LAB_004c006d;
       uVar5 = 1;
@@ -1935,7 +1935,7 @@ LAB_004c006d:
     }
     ((undefined1 *)param_1)[4] = uVar5;
     STField<undefined1>(param_1,0xb) = 0x4f;
-    if (st::machine_word_boundary_cast<uint>(this->field_0024) == st::machine_word_boundary_cast<uint>((byte *)this->field_023D)) {
+    if (this->field_0024 == (byte *)this->field_023D) {
 LAB_004c00cc:
       if ((((this->field_0245 == CASE_0) &&
 
@@ -2458,7 +2458,7 @@ switchD_004bef7c_caseD_52:
   case CASE_62:
 
     local_EAX_9086 = st::fn_004036A7((int)this->field_0024);
-    STField<uint>(param_1,0x1d) = local_EAX_9086;
+    STField<int>(param_1,0x1d) = local_EAX_9086;
 
     local_EAX_9104 = st::fn_00405D80((int)this->field_0024);
     STField<int>(param_1,0x21) = local_EAX_9104;
@@ -4916,7 +4916,7 @@ undefined4 __thiscall st::fn_004CC900(TLOBaseTy *this)
 undefined4 __thiscall st::fn_004CC9C0(TLOBaseTy *this,int param_1)
 
 {
-  if ((st::machine_word_boundary_cast<uint>((byte *)param_1) != st::machine_word_boundary_cast<uint>(this->field_0024)) &&
+  if (((byte *)param_1 != this->field_0024) &&
      ((this->field_0245 == CASE_0 || (this->field_0245 == CASE_5)))) {
     return 1;
   }

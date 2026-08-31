@@ -15,6 +15,8 @@ st::fn_00668F50
           (RecoveredReceiver_0064A970 *this,char *param_1,uint param_2,uint *param_3)
 
 {
+  int param_2_after_write;
+
   byte bVar1;
   uint uVar2;
   byte *pbVar3;
@@ -349,7 +351,7 @@ st::fn_00668F50
         uVar2 = this->slot_18();
         if (((-1 < (int)uVar2) && ((int)uVar2 < 8)) &&
            (g_bulkInitializedRecords_008087C7[uVar2].field_0022 != 0xff)) {
-          auto param_2_after_write = 0; /* compiler stack-slot lifetime split */
+          param_2_after_write = 0; /* compiler stack-slot lifetime split */
           pbVar3 = &g_bulkInitializedRecords_008087C7[0].field_0022;
           do {
             if (*pbVar3 != 0xff) {
@@ -682,7 +684,7 @@ LAB_0066a08e:
         param_2 = 0;
         pbVar3 = &g_bulkInitializedRecords_008087C7[0].field_0022;
         do {
-          if ((st::machine_word_boundary_cast<uint>((char *)param_2) != st::machine_word_boundary_cast<uint>(param_1)) && (*pbVar3 != 0xff)) {
+          if (((char *)param_2 != param_1) && (*pbVar3 != 0xff)) {
             if (DAT_00808a8f == '\0') {
               if ((byte)param_2 == bVar5) {
 LAB_00669e52:
@@ -886,7 +888,7 @@ LAB_0066a598:
         param_2 = 0;
         pbVar3 = &g_bulkInitializedRecords_008087C7[0].field_0022;
         do {
-          if ((st::machine_word_boundary_cast<uint>((char *)param_2) != st::machine_word_boundary_cast<uint>(param_1)) && (*pbVar3 != 0xff)) {
+          if (((char *)param_2 != param_1) && (*pbVar3 != 0xff)) {
             if (DAT_00808a8f == '\0') {
               if ((byte)param_2 == bVar5) {
 LAB_0066a341:

@@ -42,7 +42,8 @@ LAB_00648edf:
 00648EE1  6A 01                     PUSH 0x1
 00648EE3  50                        PUSH EAX
 00648EE4  56                        PUSH ESI
-00648EE5  E8 A6 9E 0A 00            CALL 0x006f2d90
+CreateArbiter::override::prt_648ee5_8e1779b8:
+00648EE5  E8 A6 9E 0A 00            CALL 0x006f2d90  ; [STUtilityFunctionApplier] heterogeneous_payload_consumer_view; target=006F2D90; signature=__cdecl;pointer:/ushort;pointer:/cMf32;pointer:/char;/byte;/int
 00648EEA  83 C4 10                  ADD ESP,0x10
 00648EED  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
 00648EF0  85 C0                     TEST EAX,EAX

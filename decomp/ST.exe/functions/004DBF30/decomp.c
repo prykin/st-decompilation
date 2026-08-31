@@ -1,7 +1,6 @@
 #include "../../pseudocode_runtime.h"
 
 
-/* WARNING: Unable to use type for symbol piVar1 */
 /* [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: incoming stack slot is read as a uint before its address is passed as a distinct output
    lifetime */

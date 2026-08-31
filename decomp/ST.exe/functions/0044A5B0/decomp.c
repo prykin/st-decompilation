@@ -7,9 +7,14 @@
    [STAbiConsistencyApplier] full_eax_return target=return:-1: return=/int Evidence: all observed
    callers consume full EAX (2), none consume AL/AX, and every RET path defines full EAX; generic
    void/unsized transport requires at least two callers; sites=005FB640 @ 005FB7DF -> read as EAX on
-   every CFG path | 005FB640 @ 005FBA7B -> read as EAX on every CFG path */
+   every CFG path | 005FB640 @ 005FBA7B -> read as EAX on every CFG path
 
-int __thiscall STAllPlayersC::RegisterContainer(STAllPlayersC *this,ushort param_1,void *param_2)
+   [STCallsiteConventionApplier] __stdcall inferred from complete caller/callee stack and ECX
+   dataflow. Evidence: all 2 direct/thunk callsites prepare exactly 8 stack bytes, no caller
+   reclaims them, every RET pops that exact width, and complete callee CFG dataflow finds no
+   incoming ECX consumption */
+
+int STAllPlayersC::RegisterContainer(ushort param_1,void *param_2)
 
 {
   int iVar2;

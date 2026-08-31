@@ -1143,7 +1143,7 @@ switchD_00544d44_default:
           uVar16 = (*piVar23 - this_00->field_04B6) - this_00->field_00E3;
           this_00->field_00E7 = uVar19;
           this_00->field_00EB = uVar16;
-          if ((uVar20 == uVar19) && (st::machine_word_boundary_cast<uint>(local_14) == st::machine_word_boundary_cast<uint>((cMf32 *)uVar16))) {
+          if ((uVar20 == uVar19) && (local_14 == (cMf32 *)uVar16)) {
             local_c = 0.0;
           }
         }

@@ -14,7 +14,7 @@ uint __fastcall CGenerate::sub_0069CB50(CGenerate *param_1)
   int iVar1;
   uint uVar2;
   dword dVar3;
-  byte *puVar4;
+  AnonShape_0069CB50_F11C5D8F *pAVar4;
   uint *puVar5_mg0;
   int *piVar5;
   uint local_EAX_492;
@@ -77,7 +77,7 @@ uint __fastcall CGenerate::sub_0069CB50(CGenerate *param_1)
   uint local_178;
   int local_174;
   int local_170;
-  byte *local_16c;
+  AnonShape_0069CB50_F11C5D8F *local_16c;
   int local_164;
   int local_15c;
   int local_158;
@@ -102,7 +102,7 @@ uint __fastcall CGenerate::sub_0069CB50(CGenerate *param_1)
   undefined4 *local_c0;
   int local_bc;
   int local_b8;
-  void *local_b4;
+  AnonShape_0069CB50_7B374C54 *local_b4;
   int local_b0;
   int local_ac;
   int aiStack_a8 [9];
@@ -150,7 +150,7 @@ uint __fastcall CGenerate::sub_0069CB50(CGenerate *param_1)
 
   local_c0 = Library::DKW::LIB::MemAlloc(iVar19 * 4);
   iVar9 = iVar19 * -0x10;
-  local_16c = &stack0xfffffe68 + iVar9;
+  local_16c = (AnonShape_0069CB50_F11C5D8F *)(&stack0xfffffe68 + iVar9);
   *(undefined4 *)(&stack0xfffffe64 + iVar9) = 0x69cc0e;
   local_74 = &stack0xfffffe68 + iVar19 * -0x20;
   *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x20) = 0x69cc22;
@@ -277,9 +277,9 @@ uint __fastcall CGenerate::sub_0069CB50(CGenerate *param_1)
                   do {
                     *(int *)(&stack0xfffffe64 + iVar19 * -0x30) = iVar14;
                     aiStackY_1b0[iVar19 * -0xc + 4] = iVar6;
-                    puVar4 = local_16c;
-                    aiStackY_1b0[iVar19 * -0xc + 3] = (int)*(short *)(local_16c + iVar17 * 4 + 2);
-                    aiStackY_1b0[iVar19 * -0xc + 2] = (int)*(short *)(puVar4 + iVar17 * 4);
+                    pAVar4 = local_16c;
+                    aiStackY_1b0[iVar19 * -0xc + 3] = (int)local_16c[iVar17].field_0002;
+                    aiStackY_1b0[iVar19 * -0xc + 2] = (int)pAVar4[iVar17].field_0000;
                     aiStackY_1b0[iVar19 * -0xc + 1] = 0x69ce41;
 
                     iVar10 = FUN_006acf90(aiStackY_1b0[iVar19 * -0xc + 2],
@@ -293,9 +293,9 @@ LAB_0069ce71:
                     }
                     *(int *)(&stack0xfffffe64 + iVar19 * -0x30) = iVar14 + 1;
                     aiStackY_1b0[iVar19 * -0xc + 4] = iVar6 + 1;
-                    puVar4 = local_16c;
-                    aiStackY_1b0[iVar19 * -0xc + 3] = (int)*(short *)(local_16c + iVar17 * 4 + 2);
-                    aiStackY_1b0[iVar19 * -0xc + 2] = (int)*(short *)(puVar4 + iVar17 * 4);
+                    pAVar4 = local_16c;
+                    aiStackY_1b0[iVar19 * -0xc + 3] = (int)local_16c[iVar17].field_0002;
+                    aiStackY_1b0[iVar19 * -0xc + 2] = (int)pAVar4[iVar17].field_0000;
                     aiStackY_1b0[iVar19 * -0xc + 1] = 0x69ce64;
 
                     local_EAX_783 =
@@ -311,8 +311,8 @@ LAB_0069ce71:
                 iVar17 = local_144;
                 pAVar20 = local_30;
                 if (local_c4 != 0) {
-                  *(short *)(local_16c + local_40 * 4) = (short)iVar6;
-                  *(short *)(local_16c + local_40 * 4 + 2) = (short)iVar14;
+                  local_16c[local_40].field_0000 = (short)iVar6;
+                  local_16c[local_40].field_0002 = (short)iVar14;
                   local_6c = local_6c + 1;
                   *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69cec3;
 
@@ -447,9 +447,9 @@ LAB_0069ce71:
                   do {
                     if ((local_78[local_68[iVar14]].field_0002 == 0) &&
                        (*(char *)(iVar6 + (int)local_c0) == '\0')) {
-                      *(short *)(local_16c + iVar6 * 4 + 2) =
+                      local_16c[iVar6].field_0002 =
                            (short)(local_68[iVar14] / (*param_1->field_0008 << 1));
-                      *(short *)(local_16c + iVar6 * 4) =
+                      local_16c[iVar6].field_0000 =
                            (short)(local_68[iVar14] % (*param_1->field_0008 << 1));
                       *(undefined1 *)(local_68[iVar14] + (int)local_c0) = 1;
                       iVar6 = iVar6 + 1;
@@ -486,9 +486,8 @@ LAB_0069ce71:
             if (0 < iVar6) {
 LAB_0069d203:
               if (local_24 < 0) {
-                local_dc = (int)*(short *)(local_16c + local_178 * 4) +
-                           (int)*(short *)(local_16c + local_178 * 4 + 2) * *param_1->field_0008 * 2
-                ;
+                local_dc = (int)local_16c[local_178].field_0000 +
+                           (int)local_16c[local_178].field_0002 * *param_1->field_0008 * 2;
               }
               else {
                 local_dc = local_24;
@@ -500,8 +499,8 @@ LAB_0069d203:
                   if (local_164 <= (int)uVar16) {
                     uVar16 = 0;
                   }
-                  local_dc = (int)*(short *)(local_16c + uVar16 * 4) +
-                             (int)*(short *)(local_16c + uVar16 * 4 + 2) * *param_1->field_0008 * 2;
+                  local_dc = (int)local_16c[uVar16].field_0000 +
+                             (int)local_16c[uVar16].field_0002 * *param_1->field_0008 * 2;
                 } while ((1 < *(byte *)(local_dc + (int)local_c0)) &&
                         (local_154 = local_154 + 1, (int)local_154 < local_164));
               }
@@ -591,16 +590,16 @@ LAB_0069d203:
                 local_b8 = -1;
                 local_24 = -1;
                 if (local_44 == 0) {
-                  *(int *)((int)local_b4 + local_178 * 8) = iVar17;
-                  *(undefined4 *)((int)local_b4 + local_178 * 8 + 4) = 0xffffffff;
+                  local_b4[local_178].field_0000 = iVar17;
+                  local_b4[local_178].field_0004 = -1;
                   *local_28 = 0x10000;
                   local_44 = 1;
                   local_158 = 0;
                   uVar16 = 1;
                 }
                 else {
-                  *(int *)((int)local_b4 + local_178 * 8) = iVar17;
-                  *(undefined4 *)((int)local_b4 + local_178 * 8 + 4) = 0xffffffff;
+                  local_b4[local_178].field_0000 = iVar17;
+                  local_b4[local_178].field_0004 = -1;
                   if (local_158 == 1) {
                     local_28[local_44] =
                          (local_178 + 1) * 0x10000 | (uint)*(ushort *)(local_28 + local_44);
@@ -653,8 +652,8 @@ LAB_0069d684:
                     do {
                       if (iVar14 == 0) {
 LAB_0069d7b2:
-                        iVar17 = *(int *)((int)local_b4 + local_154 * 8);
-                        iVar14 = *(int *)((int)local_b4 + local_154 * 8 + 4);
+                        iVar17 = local_b4[local_154].field_0000;
+                        iVar14 = local_b4[local_154].field_0004;
                         if ((-1 < iVar17) &&
                            ((local_78[iVar17].field_0006 < 0 ||
                             (local_78[iVar17].field_0006 != 0x3ed)))) {
@@ -847,7 +846,8 @@ LAB_0069d7b2:
             *(undefined4 *)(local_70 + local_15c * 4) = 0;
             local_17c = local_17c + 1;
             local_140 = local_140 + -1;
-            *(void ***)(&stack0xfffffe64 + iVar19 * -0x20 + iVar9 + -0x198 + 0x198) = &local_b4;
+            *(AnonShape_0069CB50_7B374C54 ***)
+             (&stack0xfffffe64 + iVar19 * -0x20 + iVar9 + -0x198 + 0x198) = &local_b4;
             aiStackY_1b0[iVar19 * -0xc + 4] = 0x69da93;
             FreeAndNull(*(void **)(&stack0xfffffe64 + iVar19 * -0x20 + iVar9 + -0x198 + 0x198));
             *(undefined4 ***)(&stack0xfffffe64 + iVar19 * -0x20 + iVar9 + -0x198 + 0x198) =
@@ -945,9 +945,9 @@ LAB_0069d7b2:
                   do {
                     *(int *)(&stack0xfffffe64 + iVar19 * -0x30) = iVar17;
                     aiStackY_1b0[iVar19 * -0xc + 4] = iVar14;
-                    puVar4 = local_16c;
-                    aiStackY_1b0[iVar19 * -0xc + 3] = (int)*(short *)(local_16c + iVar6 * 4 + 2);
-                    aiStackY_1b0[iVar19 * -0xc + 2] = (int)*(short *)(puVar4 + iVar6 * 4);
+                    pAVar4 = local_16c;
+                    aiStackY_1b0[iVar19 * -0xc + 3] = (int)local_16c[iVar6].field_0002;
+                    aiStackY_1b0[iVar19 * -0xc + 2] = (int)pAVar4[iVar6].field_0000;
                     aiStackY_1b0[iVar19 * -0xc + 1] = 0x69dc8c;
 
                     local_EAX_4407 =
@@ -962,9 +962,9 @@ LAB_0069dcbc:
                     }
                     *(int *)(&stack0xfffffe64 + iVar19 * -0x30) = iVar17 + 1;
                     aiStackY_1b0[iVar19 * -0xc + 4] = iVar14 + 1;
-                    puVar4 = local_16c;
-                    aiStackY_1b0[iVar19 * -0xc + 3] = (int)*(short *)(local_16c + iVar6 * 4 + 2);
-                    aiStackY_1b0[iVar19 * -0xc + 2] = (int)*(short *)(puVar4 + iVar6 * 4);
+                    pAVar4 = local_16c;
+                    aiStackY_1b0[iVar19 * -0xc + 3] = (int)local_16c[iVar6].field_0002;
+                    aiStackY_1b0[iVar19 * -0xc + 2] = (int)pAVar4[iVar6].field_0000;
                     aiStackY_1b0[iVar19 * -0xc + 1] = 0x69dcaf;
 
                     local_EAX_4442 =
@@ -978,8 +978,8 @@ LAB_0069dcbc:
                 }
                 pAVar20 = local_30;
                 if (local_c4 != 0) {
-                  *(short *)(local_16c + local_40 * 4) = (short)iVar14;
-                  *(short *)(local_16c + local_40 * 4 + 2) = (short)iVar17;
+                  local_16c[local_40].field_0000 = (short)iVar14;
+                  local_16c[local_40].field_0002 = (short)iVar17;
                   local_b0 = local_b0 + 1;
                   *(undefined4 *)(&stack0xfffffe64 + iVar19 * -0x30) = 0x69dd0b;
 
@@ -1166,8 +1166,8 @@ LAB_0069d454:
   }
 LAB_0069d4ca:
   if (local_24 == -1) {
-    *(int *)((int)local_b4 + local_178 * 8) = iVar17;
-    *(undefined4 *)((int)local_b4 + local_178 * 8 + 4) = 0xffffffff;
+    local_b4[local_178].field_0000 = iVar17;
+    local_b4[local_178].field_0004 = -1;
     *(char *)(iVar17 + (int)local_c0) = (char)local_44 + '\x02';
     local_178 = local_178 + 1;
     if (local_158 != 0) {
@@ -1177,8 +1177,8 @@ LAB_0069d4ca:
     }
   }
   else if (-1 < local_b8) {
-    *(int *)((int)local_b4 + local_178 * 8) = iVar17;
-    *(int *)((int)local_b4 + local_178 * 8 + 4) = local_b8;
+    local_b4[local_178].field_0000 = iVar17;
+    local_b4[local_178].field_0004 = local_b8;
     uVar16 = local_44 & 0xff;
 LAB_0069d5f2:
     *(char *)(iVar17 + (int)local_c0) = (char)uVar16 + '\x02';

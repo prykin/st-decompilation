@@ -80,8 +80,9 @@ void __thiscall st::fn_00593B50(ComboTy *this,undefined4 *param_1)
   RecoveredSourceFamily_dibcopy *pRVar4;
   byte *puVar5;
   int uVar4;
-  RecoveredRecord_006B4FA0_DAC3A217 *pRVar6;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar6_mg0;
   int local_EAX_427;
+  RecoveredRecord_006B4FA0_DAC3A217 *pRVar6;
   int iVar10;
   int iVar7;
   uint uVar8;
@@ -142,11 +143,9 @@ void __thiscall st::fn_00593B50(ComboTy *this,undefined4 *param_1)
 
     local_EAX_159 = st::fn_006B4FE0(puVar13);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    pRVar4 = (RecoveredSourceFamily_dibcopy *)
-
-             st::fn_006B50C0(this_00->field_00F4,this_00->field_00F8,
+    pRVar4 = STPointerBoundaryCast<RecoveredSourceFamily_dibcopy *>(st::fn_006B50C0(this_00->field_00F4,this_00->field_00F8,
                           (uint)*(ushort *)(this_00->field_00D4 + 0xe),local_EAX_159,
-                          reinterpret_cast<undefined4 *>(puVar12),iVar14);
+                          reinterpret_cast<undefined4 *>(puVar12),iVar14));
     this_00->field_00FC = pRVar4;
     uVar9 = pRVar4[1].field_0004;
     if (uVar9 == 0) {
@@ -170,18 +169,18 @@ void __thiscall st::fn_00593B50(ComboTy *this,undefined4 *param_1)
     uVar4 = st::fn_006B4FE0((ushort *)this_00->field_00D4);
     /* ST_CALLSITE[00593C96]: CALL 0x006b50c0; direct=006B50C0 FUN_006b50c0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006B4FA0_DAC3A217; signature=__stdcall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006B4FA0_DAC3A217;/int;/int;/int;/uint;pointer:/undefined4;/int */
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    pRVar6 = st::pointer_boundary_cast<RecoveredRecord_006B4FA0_DAC3A217 *>(st::fn_006B50C0(this_00->field_00F4,this_00->field_00F8,
-                          (uint)*(ushort *)(this_00->field_00D4 + 0xe),uVar4,reinterpret_cast<undefined4 *>(puVar13),
-                          iVar7));
-    this_00->field_0100 = pRVar6;
-    uVar9 = *(uint *)&pRVar6[1].field_0x4;
+    pRVar6_mg0 = st::pointer_boundary_cast<RecoveredRecord_006B4FA0_DAC3A217 *>(st::fn_006B50C0(this_00->field_00F4,this_00->field_00F8,
+                              (uint)*(ushort *)(this_00->field_00D4 + 0xe),uVar4,
+                              reinterpret_cast<undefined4 *>(puVar13),iVar7));
+    this_00->field_0100 = pRVar6_mg0;
+    uVar9 = *(uint *)&pRVar6_mg0[1].field_0x4;
     if (uVar9 == 0) {
-      uVar9 = ((uint)pRVar6->field_000E * *(int *)&pRVar6->field_0x4 + 0x1f >> 3 & 0x1ffffffc) *
-              *(int *)&pRVar6->field_0x8;
+      uVar9 = ((uint)pRVar6_mg0->field_000E * *(int *)&pRVar6_mg0->field_0x4 + 0x1f >> 3 &
+              0x1ffffffc) * *(int *)&pRVar6_mg0->field_0x8;
     }
     local_5 = this_00->field_00E0;
 
-    puVar5 = STPointerBoundaryCast<byte *>(st::fn_006B4FA0(pRVar6));
+    puVar5 = STPointerBoundaryCast<byte *>(st::fn_006B4FA0(pRVar6_mg0));
     iVar7 = 1;
     for (uVar8 = uVar9 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
       *puVar5 = CONCAT22(CONCAT11(local_5,local_5),CONCAT11(local_5,local_5));

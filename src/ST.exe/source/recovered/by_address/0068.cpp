@@ -464,7 +464,7 @@ undefined4 st::fn_00680B50(void)
      ((&DAT_00813bc8)[DAT_008488b0 * 0x2b14] != '\x04')) {
     return 0;
   }
-  if ((int)(&DAT_00813bc4)[DAT_008488b0 * 0xac5] < 2) {
+  if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00813bc4)[DAT_008488b0 * 0xac5])) < 2) {
     (&DAT_00811c84)[DAT_008488b0 * 0xac5] = 0xffffffff;
   }
   else if ((&DAT_00813bc9)[DAT_008488b0 * 0x2b14] != '\x02') {
@@ -555,7 +555,7 @@ undefined4 st::fn_00680D40(void)
     if (*(int *)(&DAT_00811c7c + iVar1 * 0x2b14) < 2) {
       (&DAT_00811c84)[iVar1 * 0xac5] = 0xffffffff;
     }
-    if ((0 < (int)(&DAT_00811c80)[iVar1 * 0xac5]) && ((int)(&DAT_00811c80)[iVar1 * 0xac5] < 4)) {
+    if ((0 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5]))) && (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5])) < 4)) {
       return 1;
     }
   }
@@ -568,8 +568,8 @@ undefined4 st::fn_00680E00(void)
 
 {
   if (((0 < *(int *)(&DAT_00811c7c + DAT_008488b0 * 0x2b14)) &&
-      (-1 < (int)(&DAT_00811c80)[DAT_008488b0 * 0xac5])) &&
-     ((int)(&DAT_00811c80)[DAT_008488b0 * 0xac5] < 3)) {
+      (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[DAT_008488b0 * 0xac5])))) &&
+     (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[DAT_008488b0 * 0xac5])) < 3)) {
     return 1;
   }
   return 0;
@@ -594,13 +594,13 @@ int st::fn_00680E50(void)
   if (*(int *)(&DAT_00811c7c + DAT_008488b0 * 0x2b14) < 5) {
     (&DAT_00811c90)[DAT_008488b0 * 0xac5] = 0;
   }
-  if ((int)(&DAT_00811c84)[iVar1 * 0xac5] < 0) {
+  if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c84)[iVar1 * 0xac5])) < 0) {
     return 0;
   }
-  if ((int)(&DAT_00811c88)[iVar1 * 0xac5] < 0) {
+  if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c88)[iVar1 * 0xac5])) < 0) {
     return 0;
   }
-  return (uint)(-1 < (int)(&DAT_00811c8c)[iVar1 * 0xac5]);
+  return (uint)(-1 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c8c)[iVar1 * 0xac5])));
 }
 
 // 00680EE0 FUN_00680ee0
@@ -616,11 +616,11 @@ undefined4 st::fn_00680EE0(void)
     if (*(int *)(&DAT_00811c7c + DAT_008488b0 * 0x2b14) < 2) {
       (&DAT_00811c84)[DAT_008488b0 * 0xac5] = 10;
     }
-    if ((0 < (int)(&DAT_00811c80)[iVar1 * 0xac5]) && ((int)(&DAT_00811c80)[iVar1 * 0xac5] < 4)) {
-      if ((int)(&DAT_00811c84)[iVar1 * 0xac5] < 0) {
+    if ((0 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5]))) && (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5])) < 4)) {
+      if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c84)[iVar1 * 0xac5])) < 0) {
         (&DAT_00811c84)[iVar1 * 0xac5] = 0;
       }
-      if (0x13 < (int)(&DAT_00811c84)[iVar1 * 0xac5]) {
+      if (0x13 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c84)[iVar1 * 0xac5]))) {
         (&DAT_00811c84)[iVar1 * 0xac5] = 0x14;
       }
       return 1;
@@ -674,11 +674,11 @@ undefined4 st::fn_00681070(void)
     if (*(int *)(&DAT_00811c7c + iVar2) < 4) {
       (&DAT_00811c8c)[iVar1 * 0xac5] = 8;
     }
-    if ((0 < (int)(&DAT_00811c80)[iVar1 * 0xac5]) && ((int)(&DAT_00811c80)[iVar1 * 0xac5] < 4)) {
-      if ((int)(&DAT_00811c88)[iVar1 * 0xac5] < 0) {
+    if ((0 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5]))) && (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5])) < 4)) {
+      if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c88)[iVar1 * 0xac5])) < 0) {
         (&DAT_00811c88)[iVar1 * 0xac5] = 0;
       }
-      if (0x13 < (int)(&DAT_00811c88)[iVar1 * 0xac5]) {
+      if (0x13 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c88)[iVar1 * 0xac5]))) {
         (&DAT_00811c88)[iVar1 * 0xac5] = 0x14;
       }
       return 1;
@@ -726,10 +726,10 @@ undefined4 st::fn_00681140(void)
     pcVar2 = st::fn_00403E36(reinterpret_cast<byte *>(PTR_s___EMPTY___0079d734));
     (&PTR_00811aec)[iVar1 * 0xac5] = pcVar2;
   }
-  if ((int)(&DAT_00811c8c)[iVar1 * 0xac5] < 0) {
+  if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c8c)[iVar1 * 0xac5])) < 0) {
     (&DAT_00811c8c)[iVar1 * 0xac5] = 0;
   }
-  if (0x31 < (int)(&DAT_00811c8c)[iVar1 * 0xac5]) {
+  if (0x31 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c8c)[iVar1 * 0xac5]))) {
     (&DAT_00811c8c)[iVar1 * 0xac5] = 0x32;
   }
   return 1;
@@ -741,8 +741,8 @@ undefined4 st::fn_00681280(void)
 
 {
   if (((0 < *(int *)(&DAT_00811c7c + DAT_008488b0 * 0x2b14)) &&
-      (-1 < (int)(&DAT_00811c80)[DAT_008488b0 * 0xac5])) &&
-     ((int)(&DAT_00811c80)[DAT_008488b0 * 0xac5] < 3)) {
+      (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[DAT_008488b0 * 0xac5])))) &&
+     (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[DAT_008488b0 * 0xac5])) < 3)) {
     return 1;
   }
   return 0;
@@ -785,7 +785,7 @@ undefined4 st::fn_006812D0(void)
   if (*(int *)(&DAT_00811c7c + iVar2) < 9) {
     *(undefined4 *)(&DAT_00811ca0 + iVar1 * 0x158a) = 0;
   }
-  if ((((-1 < (int)(&DAT_00811c80)[iVar1 * 0xac5]) && ((int)(&DAT_00811c80)[iVar1 * 0xac5] < 3)) &&
+  if ((((-1 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5]))) && (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5])) < 3)) &&
       (-1 < *(int *)(&DAT_00811c98 + iVar1 * 0x158a))) &&
      (((*(int *)(&DAT_00811c98 + iVar1 * 0x158a) < 6 && (-1 < *(int *)(&DAT_00811c9c + iVar2))) &&
       (*(int *)(&DAT_00811c9c + iVar2) < 10)))) {
@@ -813,8 +813,8 @@ undefined4 st::fn_00681400(void)
   if (*(int *)(&DAT_00811c7c + iVar2) < 3) {
     (&DAT_00811c88)[iVar1 * 0xac5] = 0;
   }
-  if ((-1 < (int)(&DAT_00811c80)[iVar1 * 0xac5]) && ((int)(&DAT_00811c80)[iVar1 * 0xac5] < 3)) {
-    if ((int)(&DAT_00811c88)[iVar1 * 0xac5] < 0) {
+  if ((-1 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5]))) && (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5])) < 3)) {
+    if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c88)[iVar1 * 0xac5])) < 0) {
       (&DAT_00811c88)[iVar1 * 0xac5] = 0;
     }
     return 1;
@@ -841,8 +841,8 @@ undefined4 st::fn_006814A0(void)
   if (*(int *)(&DAT_00811c7c + iVar2) < 3) {
     (&DAT_00811c88)[iVar1 * 0xac5] = 0;
   }
-  if ((-1 < (int)(&DAT_00811c80)[iVar1 * 0xac5]) && ((int)(&DAT_00811c80)[iVar1 * 0xac5] < 3)) {
-    if ((int)(&DAT_00811c88)[iVar1 * 0xac5] < 0) {
+  if ((-1 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5]))) && (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5])) < 3)) {
+    if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c88)[iVar1 * 0xac5])) < 0) {
       (&DAT_00811c88)[iVar1 * 0xac5] = 0;
     }
     return 1;
@@ -884,13 +884,13 @@ undefined4 st::fn_00681540(void)
   if (*(int *)(&DAT_00811c7c + iVar2) < 8) {
     *(undefined4 *)(&DAT_00811c9c + iVar2) = 0;
   }
-  if ((int)(&DAT_00811c80)[iVar1 * 0xac5] < 0) {
+  if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5])) < 0) {
     (&DAT_00811c80)[iVar1 * 0xac5] = 0;
   }
-  if ((int)(&DAT_00811c84)[iVar1 * 0xac5] < 0) {
+  if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c84)[iVar1 * 0xac5])) < 0) {
     (&DAT_00811c84)[iVar1 * 0xac5] = 0;
   }
-  if ((int)(&DAT_00811c88)[iVar1 * 0xac5] < 0) {
+  if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c88)[iVar1 * 0xac5])) < 0) {
     (&DAT_00811c88)[iVar1 * 0xac5] = 0;
   }
   if ((((-1 < *(int *)(&DAT_00811c94 + iVar1 * 0x158a)) &&
@@ -935,17 +935,17 @@ undefined4 st::fn_00681670(void)
   if (*(int *)(&DAT_00811c7c + iVar3) < 7) {
     *(undefined4 *)(&DAT_00811c98 + iVar1 * 0x158a) = 0;
   }
-  if (((int)(&DAT_00811c80)[iVar1 * 0xac5] < 0) || (2 < (int)(&DAT_00811c80)[iVar1 * 0xac5])) {
+  if ((st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5])) < 0) || (2 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5])))) {
     uVar2 = 0;
   }
   else {
-    if ((int)(&DAT_00811c88)[iVar1 * 0xac5] < 0) {
+    if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c88)[iVar1 * 0xac5])) < 0) {
       (&DAT_00811c88)[iVar1 * 0xac5] = 1;
     }
-    if ((int)(&DAT_00811c8c)[iVar1 * 0xac5] < 0) {
+    if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c8c)[iVar1 * 0xac5])) < 0) {
       (&DAT_00811c8c)[iVar1 * 0xac5] = 0;
     }
-    if ((int)(&DAT_00811c90)[iVar1 * 0xac5] < 0) {
+    if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c90)[iVar1 * 0xac5])) < 0) {
       (&DAT_00811c90)[iVar1 * 0xac5] = 1;
     }
     if (*(int *)(&DAT_00811c94 + iVar1 * 0x158a) < 0) {
@@ -989,17 +989,17 @@ undefined4 st::fn_006817A0(void)
   if (*(int *)(&DAT_00811c7c + iVar3) < 6) {
     *(undefined4 *)(&DAT_00811c94 + iVar1 * 0x158a) = 0;
   }
-  if (((int)(&DAT_00811c80)[iVar1 * 0xac5] < 0) || (2 < (int)(&DAT_00811c80)[iVar1 * 0xac5])) {
+  if ((st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5])) < 0) || (2 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5])))) {
     uVar2 = 0;
   }
   else {
-    if ((int)(&DAT_00811c88)[iVar1 * 0xac5] < 0) {
+    if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c88)[iVar1 * 0xac5])) < 0) {
       (&DAT_00811c88)[iVar1 * 0xac5] = 1;
     }
-    if ((int)(&DAT_00811c8c)[iVar1 * 0xac5] < 0) {
+    if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c8c)[iVar1 * 0xac5])) < 0) {
       (&DAT_00811c8c)[iVar1 * 0xac5] = 0;
     }
-    if ((int)(&DAT_00811c90)[iVar1 * 0xac5] < 0) {
+    if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c90)[iVar1 * 0xac5])) < 0) {
       (&DAT_00811c90)[iVar1 * 0xac5] = 1;
     }
     if (*(int *)(&DAT_00811c94 + iVar1 * 0x158a) < 0) {
@@ -1037,17 +1037,17 @@ undefined4 st::fn_006818B0(void)
   if (*(int *)(&DAT_00811c7c + iVar3) < 5) {
     (&DAT_00811c90)[iVar1 * 0xac5] = 0;
   }
-  if (((int)(&DAT_00811c80)[iVar1 * 0xac5] < 0) || (2 < (int)(&DAT_00811c80)[iVar1 * 0xac5])) {
+  if ((st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5])) < 0) || (2 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5])))) {
     uVar2 = 0;
   }
   else {
-    if ((int)(&DAT_00811c88)[iVar1 * 0xac5] < 0) {
+    if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c88)[iVar1 * 0xac5])) < 0) {
       (&DAT_00811c88)[iVar1 * 0xac5] = 1;
     }
-    if ((int)(&DAT_00811c8c)[iVar1 * 0xac5] < 0) {
+    if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c8c)[iVar1 * 0xac5])) < 0) {
       (&DAT_00811c8c)[iVar1 * 0xac5] = 0;
     }
-    if ((int)(&DAT_00811c90)[iVar1 * 0xac5] < 0) {
+    if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c90)[iVar1 * 0xac5])) < 0) {
       (&DAT_00811c90)[iVar1 * 0xac5] = 0;
       return uVar2;
     }
@@ -1083,19 +1083,19 @@ undefined4 st::fn_006819A0(void)
   if (*(int *)(&DAT_00811c7c + iVar2) < 6) {
     *(undefined4 *)(&DAT_00811c94 + iVar1 * 0x158a) = 5;
   }
-  if ((int)(&DAT_00811c80)[iVar1 * 0xac5] < 0) {
+  if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5])) < 0) {
     (&DAT_00811c80)[iVar1 * 0xac5] = 0;
   }
-  if ((int)(&DAT_00811c84)[iVar1 * 0xac5] < 0) {
+  if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c84)[iVar1 * 0xac5])) < 0) {
     (&DAT_00811c84)[iVar1 * 0xac5] = 0;
   }
-  if ((int)(&DAT_00811c88)[iVar1 * 0xac5] < 0) {
+  if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c88)[iVar1 * 0xac5])) < 0) {
     (&DAT_00811c88)[iVar1 * 0xac5] = 0;
   }
-  if ((int)(&DAT_00811c8c)[iVar1 * 0xac5] < 1) {
+  if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c8c)[iVar1 * 0xac5])) < 1) {
     (&DAT_00811c8c)[iVar1 * 0xac5] = 7;
   }
-  if ((int)(&DAT_00811c90)[iVar1 * 0xac5] < 1) {
+  if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c90)[iVar1 * 0xac5])) < 1) {
     (&DAT_00811c90)[iVar1 * 0xac5] = 7;
   }
   if (*(int *)(&DAT_00811c94 + iVar1 * 0x158a) < 1) {
@@ -1131,10 +1131,10 @@ undefined4 st::fn_00681AD0(void)
   if (*(int *)(&DAT_00811c7c + iVar3) < 5) {
     (&DAT_00811c90)[iVar1 * 0xac5] = 0x3fffffff;
   }
-  if (((int)(&DAT_00811c80)[iVar1 * 0xac5] < 0) || (2 < (int)(&DAT_00811c80)[iVar1 * 0xac5])) {
+  if ((st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5])) < 0) || (2 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5])))) {
     uVar2 = 0;
   }
-  else if (99 < (int)(&DAT_00811c84)[iVar1 * 0xac5]) {
+  else if (99 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c84)[iVar1 * 0xac5]))) {
     (&DAT_00811c84)[iVar1 * 0xac5] = 99;
     return uVar2;
   }
@@ -1168,14 +1168,14 @@ undefined4 st::fn_00681BB0(void)
   if (*(int *)(&DAT_00811c7c + iVar3) < 5) {
     (&DAT_00811c90)[iVar1 * 0xac5] = 0;
   }
-  if (((int)(&DAT_00811c80)[iVar1 * 0xac5] < 0) || (2 < (int)(&DAT_00811c80)[iVar1 * 0xac5])) {
+  if ((st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5])) < 0) || (2 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5])))) {
     uVar2 = 0;
   }
   else {
-    if ((int)(&DAT_00811c88)[iVar1 * 0xac5] < 0) {
+    if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c88)[iVar1 * 0xac5])) < 0) {
       (&DAT_00811c88)[iVar1 * 0xac5] = 1;
     }
-    if ((int)(&DAT_00811c8c)[iVar1 * 0xac5] < 0) {
+    if (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c8c)[iVar1 * 0xac5])) < 0) {
       (&DAT_00811c8c)[iVar1 * 0xac5] = 0;
     }
     if (*(int *)(&DAT_00811c94 + iVar1 * 0x158a) < 0) {
@@ -1202,7 +1202,7 @@ undefined4 st::fn_00681CA0(void)
   if (*(int *)(&DAT_00811c7c + iVar2) < 2) {
     (&DAT_00811c84)[iVar1 * 0xac5] = 0x3fffffff;
   }
-  if ((-1 < (int)(&DAT_00811c80)[iVar1 * 0xac5]) && ((int)(&DAT_00811c80)[iVar1 * 0xac5] < 3)) {
+  if ((-1 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5]))) && (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5])) < 3)) {
     return 1;
   }
   return 0;
@@ -1247,10 +1247,10 @@ int st::fn_00681D20(void)
     if (*(int *)(&DAT_00811c7c + iVar2) < 8) {
       *(undefined4 *)(&DAT_00811c9c + iVar2) = 0;
     }
-    if ((((-1 < (int)(&DAT_00811c80)[iVar1 * 0xac5]) && ((int)(&DAT_00811c80)[iVar1 * 0xac5] < 2))
-        && (-1 < (int)(&DAT_00811c84)[iVar1 * 0xac5])) &&
-       ((((int)(&DAT_00811c84)[iVar1 * 0xac5] < 3 && (-1 < (int)(&DAT_00811c88)[iVar1 * 0xac5])) &&
-        (((int)(&DAT_00811c88)[iVar1 * 0xac5] < 3 && (0 < *(int *)(&DAT_00811c94 + iVar1 * 0x158a)))
+    if ((((-1 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5]))) && (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[iVar1 * 0xac5])) < 2))
+        && (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c84)[iVar1 * 0xac5])))) &&
+       (((st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c84)[iVar1 * 0xac5])) < 3 && (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c88)[iVar1 * 0xac5])))) &&
+        ((st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c88)[iVar1 * 0xac5])) < 3 && (0 < *(int *)(&DAT_00811c94 + iVar1 * 0x158a)))
         )))) {
       return (uint)(0 < *(int *)(&DAT_00811c98 + iVar1 * 0x158a));
     }
@@ -1265,12 +1265,12 @@ undefined4 st::fn_00681E60(void)
 {
   if (((((1 < *(int *)(&DAT_00811ae8 + DAT_008488b0 * 0x2b14)) &&
         (3 < *(int *)(&DAT_00811c7c + DAT_008488b0 * 0x2b14))) &&
-       (-1 < (int)(&DAT_00811c80)[DAT_008488b0 * 0xac5])) &&
-      (((int)(&DAT_00811c80)[DAT_008488b0 * 0xac5] < 0x100 &&
-       (-1 < (int)(&DAT_00811c88)[DAT_008488b0 * 0xac5])))) &&
-     (((int)(&DAT_00811c88)[DAT_008488b0 * 0xac5] < 0x100 &&
-      ((-1 < (int)(&DAT_00811c8c)[DAT_008488b0 * 0xac5] &&
-       ((int)(&DAT_00811c8c)[DAT_008488b0 * 0xac5] < 0x100)))))) {
+       (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[DAT_008488b0 * 0xac5])))) &&
+      ((st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c80)[DAT_008488b0 * 0xac5])) < 0x100 &&
+       (-1 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c88)[DAT_008488b0 * 0xac5])))))) &&
+     ((st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c88)[DAT_008488b0 * 0xac5])) < 0x100 &&
+      ((-1 < st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c8c)[DAT_008488b0 * 0xac5])) &&
+       (st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_00811c8c)[DAT_008488b0 * 0xac5])) < 0x100)))))) {
     return 1;
   }
   return 0;

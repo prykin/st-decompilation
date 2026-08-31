@@ -531,7 +531,7 @@ LAB_0042678e:
         *local_dc = *local_dc | 0x100;
         do {
           if (200 < local_90) {
-            if (st::machine_word_boundary_cast<uint>((RecoveredRecordView_004248D0_552B02F1 *)local_a8[local_d0 * 3 + -1]) != st::machine_word_boundary_cast<uint>(local_a0)) {
+            if ((RecoveredRecordView_004248D0_552B02F1 *)local_a8[local_d0 * 3 + -1] != local_a0) {
               *(RecoveredRecordView_004248D0_552B02F1 ***)((st_stack_frame + 36) + iVar23) = &local_a0;
               *(undefined4 *)((st_stack_frame + 32) + iVar23) = 0x42674b;
               st::fn_006AB060(*(void **)((st_stack_frame + 36) + iVar23));

@@ -20,16 +20,16 @@ int __thiscall st::fn_004D11D0(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy_004
   int local_EAX_1470;
   STT3DSprC *pSVar5;
   uint uVar6;
-  int iVar4;
+  STT3DSprC *iVar4;
   int local_EAX_1989;
-  int local_EAX_2184;
+  STT3DSprC *local_EAX_2184;
   uint uVar7;
-  int local_EAX_2619;
+  STT3DSprC *local_EAX_2619;
   int uVar8;
   int uVar4;
-  int local_EAX_3446;
+  STT3DSprC *local_EAX_3446;
   int local_EAX_3458;
-  int local_EAX_4060;
+  STT3DSprC *local_EAX_4060;
   int local_EAX_4068;
   int iVar10;
   int iVar8;
@@ -334,10 +334,10 @@ cf_common_join_004D1763:
                  reinterpret_cast<RecoveredRecordView_004AD790_D4DB5A31 *>((&param_1->field_0x0 + param_1->field_0133)));
       uVar6 = this_01->field_02F4;
       /* ST_CALLSITE[004D1989]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC */
-      iVar4 = (int)st::fn_004052CC(reinterpret_cast<STT3DSprC *>(&this_01->vtable_at_1d5));
+      iVar4 = st::pointer_boundary_cast<STT3DSprC *>(st::fn_004052CC(reinterpret_cast<STT3DSprC *>(&this_01->vtable_at_1d5)));
 
       local_EAX_1989 = st::fn_004052CC(this_01->field_035C);
-      st::fn_006EA340(this_01->field_0211,local_EAX_1989,iVar4,uVar6);
+      st::fn_006EA340(this_01->field_0211,local_EAX_1989,(int)iVar4,uVar6);
       memset(local_28, 0, 0x44); /* compiler bulk-zero initialization */
       local_28[0xe] = st::machine_word_boundary_cast<undefined4>(PTR_0080678c);
       local_24 = 0;
@@ -368,10 +368,10 @@ cf_common_join_004D1763:
           }
           uVar18 = uVar6;
           /* ST_CALLSITE[004D1A58]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC */
-          local_EAX_2184 = (int)st::fn_004052CC(reinterpret_cast<STT3DSprC *>(&this_01->vtable_at_1d5));
+          local_EAX_2184 = st::pointer_boundary_cast<STT3DSprC *>(st::fn_004052CC(reinterpret_cast<STT3DSprC *>(&this_01->vtable_at_1d5)));
 
           uVar7 = st::fn_004052CC(*ppSVar15);
-          st::fn_006EA340(this_01->field_0211,uVar7,local_EAX_2184,uVar18);
+          st::fn_006EA340(this_01->field_0211,uVar7,(int)local_EAX_2184,uVar18);
           /* ST_CALLSITE[004D1A82]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
           st::fn_00404CA5
                     (*ppSVar15,reinterpret_cast<int *>(&local_28),
@@ -450,10 +450,10 @@ LAB_004d1bda:
   uVar6 = (-(uint)(this_01->field_0370 != 0) & 4) + 7;
   this_01->field_02F4 = uVar6;
   /* ST_CALLSITE[004D1C0B]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC */
-  local_EAX_2619 = (int)st::fn_004052CC(reinterpret_cast<STT3DSprC *>(this_00));
+  local_EAX_2619 = st::pointer_boundary_cast<STT3DSprC *>(st::fn_004052CC(reinterpret_cast<STT3DSprC *>(this_00)));
 
   uVar8 = st::fn_004052CC(this_01->field_035C);
-  st::fn_006EA340(this_01->field_0211,uVar8,local_EAX_2619,uVar6);
+  st::fn_006EA340(this_01->field_0211,uVar8,(int)local_EAX_2619,uVar6);
   /* ST_CALLSITE[004D1C43]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
   st::fn_004045D9
             (this_01->field_035C,(float)this_01->field_01F9,(float)this_01->field_01FD,
@@ -542,10 +542,10 @@ LAB_004d204d:
       }
       pTVar19 = local_8;
       /* ST_CALLSITE[004D21AC]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC */
-      local_EAX_4060 = (int)st::fn_004052CC(reinterpret_cast<STT3DSprC *>(this_00));
+      local_EAX_4060 = st::pointer_boundary_cast<STT3DSprC *>(st::fn_004052CC(reinterpret_cast<STT3DSprC *>(this_00)));
 
       local_EAX_4068 = st::fn_004052CC(*ppSVar15);
-      st::fn_006EA340(this_01->field_0211,local_EAX_4068,local_EAX_4060,(uint)pTVar19);
+      st::fn_006EA340(this_01->field_0211,local_EAX_4068,(int)local_EAX_4060,(uint)pTVar19);
       /* ST_CALLSITE[004D21DC]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
       st::fn_004045D9
                 (*ppSVar15,(float)this_01->field_01F9,(float)this_01->field_01FD,
@@ -594,10 +594,10 @@ LAB_004d1f0b:
       st::fn_0040498A(reinterpret_cast<STT3DSprC *>(this_00),(byte)iVar8);
       uVar6 = this_01->field_02F4;
       /* ST_CALLSITE[004D1F46]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC */
-      local_EAX_3446 = (int)st::fn_004052CC(reinterpret_cast<STT3DSprC *>(this_00));
+      local_EAX_3446 = st::pointer_boundary_cast<STT3DSprC *>(st::fn_004052CC(reinterpret_cast<STT3DSprC *>(this_00)));
 
       local_EAX_3458 = st::fn_004052CC(this_01->field_035C);
-      st::fn_006EA340(this_01->field_0211,local_EAX_3458,local_EAX_3446,uVar6);
+      st::fn_006EA340(this_01->field_0211,local_EAX_3458,(int)local_EAX_3446,uVar6);
       /* ST_CALLSITE[004D1F79]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       st::fn_00405240
                 (reinterpret_cast<STT3DSprC *>(this_00),(byte)this_01->field_02F0,
@@ -732,6 +732,7 @@ undefined4 __fastcall st::fn_004D32C0(TLOBaseTy *param_1)
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var;
   ushort uVar5;
+  int uVar13_mg3;
   int local_EAX_3601;
   uint uVar3;
   uint uVar4;
@@ -758,7 +759,6 @@ undefined4 __fastcall st::fn_004D32C0(TLOBaseTy *param_1)
   int *piVar14;
   int iVar15;
   char *text;
-  uint uVar16;
   CHAR local_7c [64];
   uint local_3c [2];
   int local_34;
@@ -1265,7 +1265,7 @@ LAB_004d3f76:
           puVar12 = &param_1->field_01D5;
           *(undefined4 *)&param_1->field_0x2e0 = 1;
 
-          uVar13 = st::fn_004042AF(puVar12,(char)param_1->field_02F0);
+          uVar13_mg3 = st::fn_004042AF(puVar12,(char)param_1->field_02F0);
           /* ST_CALLSITE[004D4007]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STT3DSprC; source view only; no Ghidra override */
           st::fn_00404264(reinterpret_cast<STT3DSprC *>(puVar12),(byte)param_1->field_02F0);
           /* ST_CALLSITE[004D4015]: CALL 0x0040498a; direct=0040498A STT3DSprC::UnLoadSequence */
@@ -1291,12 +1291,12 @@ LAB_004d3f76:
           param_1->field_02F4 = iVar11;
           /* ST_CALLSITE[004D40C3]: CALL 0x0040498a; direct=0040498A STT3DSprC::UnLoadSequence */
           st::fn_0040498A(reinterpret_cast<STT3DSprC *>(puVar12),(byte)iVar11);
-          uVar16 = param_1->field_02F4;
+          uVar13 = param_1->field_02F4;
           /* ST_CALLSITE[004D40D1]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STT3DSprC; source view only; no Ghidra override */
           local_EAX_3601 = st::fn_004052CC(reinterpret_cast<STT3DSprC *>(puVar12));
 
           uVar3 = st::fn_004052CC(param_1->field_035C);
-          st::fn_006EA340(param_1->field_0211,uVar3,local_EAX_3601,uVar16);
+          st::fn_006EA340(param_1->field_0211,uVar3,local_EAX_3601,uVar13);
           param_1->field_02F0 = (-st::storage_bit_cast<uint>(static_cast<uint32_t>(*(int *)&param_1->field_0x370 != 0)) & 4) + 7;
           iVar11 = param_1->field_0259;
           if (((iVar11 != 0x6c) || (param_1->field_0251 != 3)) &&
@@ -1376,7 +1376,7 @@ cf_error_exit_004D428D:
                                *(int *)(*(int *)&param_1->field_0x364 + iVar11 * 8),
                                *(int *)(*(int *)&param_1->field_0x364 + 4 + iVar11 * 8),'\0');
             /* ST_CALLSITE[004D42E7]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
-            st::fn_00401064(reinterpret_cast<STT3DSprC *>(puVar12),(char)param_1->field_02F0,uVar13);
+            st::fn_00401064(reinterpret_cast<STT3DSprC *>(puVar12),(char)param_1->field_02F0,uVar13_mg3);
             /* ST_CALLSITE[004D4301]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
             st::fn_00405240
                       (reinterpret_cast<STT3DSprC *>(puVar12),(byte)param_1->field_02F0,
@@ -1390,7 +1390,8 @@ cf_error_exit_004D428D:
                                  *(int *)(*(int *)&param_1->field_0x364 + iVar11 * 8),
                                  *(int *)(*(int *)&param_1->field_0x364 + 4 + iVar11 * 8),'\0');
               /* ST_CALLSITE[004D435E]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
-              st::fn_00401064(reinterpret_cast<STT3DSprC *>(puVar12),(char)param_1->field_02F0 + -1,uVar13);
+              st::fn_00401064
+                        (reinterpret_cast<STT3DSprC *>(puVar12),(char)param_1->field_02F0 + -1,uVar13_mg3);
               cVar1 = (char)param_1->field_02F0;
               uVar13 = g_playSystem_00802A38->field_00E4;
               goto LAB_004d4378;

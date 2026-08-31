@@ -24,9 +24,36 @@ void __thiscall CPanelTy::Update4PanelSI(CPanelTy *this)
   byte bVar5;
   int iVar6;
   uint uVar6;
-  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7;
-  uint uVar8;
-  char *pcVar18;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg0;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg1;
+  uint uVar7;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg1F;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg20;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg1D;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg1E;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg5;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg6;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg11;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg12;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg18;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg19;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg1B;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg1C;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg2;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg3;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar8;
+  ccFntTy *pcVar18;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg16;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg17;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mgB;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mgC;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mgD;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mgE;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mgF;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg10;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg7;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg8;
+  RecoveredRecordView_006B84D0_87AF9D9B *pRVar7_mg9;
   int iVar13;
   char cVar9;
   int iVar10;
@@ -203,9 +230,9 @@ cf_common_exit_0050E007:
       else {
         uVar6 = (uint)(byte)this_00->field_0C0A;
       }
-      uVar8 = this_00->field_09C0[1];
+      uVar7 = this_00->field_09C0[1];
       *(uint *)&this_00->field_0x2c = uVar6;
-      FUN_006e6080(this_00,2,uVar8,(undefined4 *)&this_00->field_0x18);
+      FUN_006e6080(this_00,2,uVar7,(undefined4 *)&this_00->field_0x18);
     }
     if (*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12 == local_5b) {
       if (this_00->field_0C24 != local_49[0]) {
@@ -216,9 +243,10 @@ cf_common_exit_0050E007:
           local_8 = uVar6;
           do {
             /* ST_CALLSITE[0050C882]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-            pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
+            pRVar7_mg0 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
             /* ST_CALLSITE[0050C894]: CALL 0x00403229; direct=00403229 DibPut */
-            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7);
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',
+                   pRVar7_mg0);
             iVar10 = iVar10 + 4;
             uVar6 = uVar6 - 1;
           } while (uVar6 != 0);
@@ -227,9 +255,10 @@ cf_common_exit_0050E007:
           iVar10 = local_8 * 4 + 0x35;
           do {
             /* ST_CALLSITE[0050C8BA]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-            pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
+            pRVar7_mg1 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
             /* ST_CALLSITE[0050C8CC]: CALL 0x00403229; direct=00403229 DibPut */
-            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7);
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',
+                   pRVar7_mg1);
             iVar10 = iVar10 + 4;
           } while (iVar10 < 0xb9);
         }
@@ -369,9 +398,9 @@ cf_common_exit_0050E007:
     else {
       uVar6 = (uint)(byte)this_00->field_0C0A;
     }
-    uVar8 = this_00->field_09C0[1];
+    uVar7 = this_00->field_09C0[1];
     *(uint *)&this_00->field_0x2c = uVar6;
-    FUN_006e6080(this_00,2,uVar8,(undefined4 *)&this_00->field_0x18);
+    FUN_006e6080(this_00,2,uVar7,(undefined4 *)&this_00->field_0x18);
   }
   iVar10 = 3;
   bVar20 = true;
@@ -391,12 +420,12 @@ cf_common_exit_0050E007:
       if (*puVar16 != 0) {
         this_00->field_0028 = 0x20;
         if (this_00->field_0BFC == '\0') {
-          uVar8 = 0;
+          uVar7 = 0;
         }
         else {
-          uVar8 = (uint)(byte)(&this_00->field_0C0B)[uVar6];
+          uVar7 = (uint)(byte)(&this_00->field_0C0B)[uVar6];
         }
-        *(uint *)&this_00->field_0x2c = uVar8;
+        *(uint *)&this_00->field_0x2c = uVar7;
         FUN_006e6080(this_00,2,*puVar16,(undefined4 *)&this_00->field_0x18);
       }
       uVar6 = uVar6 + 1;
@@ -422,9 +451,10 @@ cf_common_exit_0050E007:
           local_8 = uVar6;
           do {
             /* ST_CALLSITE[0050CDA9]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-            pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
+            pRVar7_mg1F = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
             /* ST_CALLSITE[0050CDBB]: CALL 0x00403229; direct=00403229 DibPut */
-            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7);
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',
+                   pRVar7_mg1F);
             iVar10 = iVar10 + 4;
             uVar6 = uVar6 - 1;
           } while (uVar6 != 0);
@@ -433,9 +463,10 @@ cf_common_exit_0050E007:
           iVar10 = local_8 * 4 + 0x35;
           do {
             /* ST_CALLSITE[0050CDE1]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-            pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
+            pRVar7_mg20 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
             /* ST_CALLSITE[0050CDF3]: CALL 0x00403229; direct=00403229 DibPut */
-            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7);
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',
+                   pRVar7_mg20);
             iVar10 = iVar10 + 4;
           } while (iVar10 < 0xb9);
         }
@@ -540,7 +571,7 @@ LAB_0050ce3f:
             this_00->field_0AA2 = 0;
             this_00->field_0028 = 0x20;
             *(undefined4 *)&this_00->field_0x2c = 0;
-            uVar8 = this_00->field_0A15[3];
+            uVar7 = this_00->field_0A15[3];
           }
           else {
             this_00->field_0AA2 = 2;
@@ -549,12 +580,12 @@ LAB_0050ce3f:
             this_00->field_0AA3 = iVar10;
             if (this_00->field_0BFC == local_78.field_0007) {
               this_00->field_0028 = 5;
-              uVar8 = this_00->field_0A15[3];
+              uVar7 = this_00->field_0A15[3];
             }
             else {
               this_00->field_0028 = 0x20;
               *(uint *)&this_00->field_0x2c = (uint)(this_00->field_0BFC != '\0');
-              uVar8 = this_00->field_0A15[3];
+              uVar7 = this_00->field_0A15[3];
             }
           }
         }
@@ -565,15 +596,15 @@ LAB_0050ce3f:
           *(int *)((int)this_00->field_0A15 + uVar6 * 0x27 + 0x19) = iVar10;
           if (this_00->field_0BFC == local_78.field_0007) {
             this_00->field_0028 = 5;
-            uVar8 = this_00->field_0A15[uVar6];
+            uVar7 = this_00->field_0A15[uVar6];
           }
           else {
             this_00->field_0028 = 0x20;
             *(uint *)&this_00->field_0x2c = (uint)(this_00->field_0BFC != '\0');
-            uVar8 = this_00->field_0A15[uVar6];
+            uVar7 = this_00->field_0A15[uVar6];
           }
         }
-        FUN_006e6080(this_00,2,uVar8,(undefined4 *)&this_00->field_0x18);
+        FUN_006e6080(this_00,2,uVar7,(undefined4 *)&this_00->field_0x18);
       }
       uVar6 = uVar6 + 1;
     } while (uVar6 < 4);
@@ -594,9 +625,10 @@ LAB_0050ce3f:
           local_8 = uVar6;
           do {
             /* ST_CALLSITE[0050D00F]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-            pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
+            pRVar7_mg1D = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
             /* ST_CALLSITE[0050D021]: CALL 0x00403229; direct=00403229 DibPut */
-            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7);
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',
+                   pRVar7_mg1D);
             iVar10 = iVar10 + 4;
             uVar6 = uVar6 - 1;
           } while (uVar6 != 0);
@@ -605,9 +637,10 @@ LAB_0050ce3f:
           iVar10 = local_8 * 4 + 0x35;
           do {
             /* ST_CALLSITE[0050D047]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-            pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
+            pRVar7_mg1E = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
             /* ST_CALLSITE[0050D059]: CALL 0x00403229; direct=00403229 DibPut */
-            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7);
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',
+                   pRVar7_mg1E);
             iVar10 = iVar10 + 4;
           } while (iVar10 < 0xb9);
         }
@@ -665,9 +698,10 @@ LAB_0050ce3f:
         local_8 = uVar6;
         do {
           /* ST_CALLSITE[0050D506]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-          pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
+          pRVar7_mg18 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
           /* ST_CALLSITE[0050D518]: CALL 0x00403229; direct=00403229 DibPut */
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x5d,'\x01',pRVar7);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x5d,'\x01',pRVar7_mg18
+                );
           iVar10 = iVar10 + 4;
           uVar6 = uVar6 - 1;
         } while (uVar6 != 0);
@@ -676,22 +710,23 @@ LAB_0050ce3f:
         iVar10 = local_8 * 4 + 0x35;
         do {
           /* ST_CALLSITE[0050D53E]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-          pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
+          pRVar7_mg19 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
           /* ST_CALLSITE[0050D550]: CALL 0x00403229; direct=00403229 DibPut */
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x5d,'\x01',pRVar7);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x5d,'\x01',pRVar7_mg19
+                );
           iVar10 = iVar10 + 4;
         } while (iVar10 < 0xb9);
       }
       /* ST_CALLSITE[0050D57F]: CALL 0x00710ba0; direct=00710BA0 ccFntTy::CreateSurf; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/ccFntTy;/int;/uint;/int;/int;/int;/int;/int */
-      pRVar7 = ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[2],0,0x15,0x22,0xc3,0xc,0
+      pRVar8 = ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[2],0,0x15,0x22,0xc3,0xc,0
                                   );
-      if (pRVar7 != nullptr) {
+      if (pRVar8 != nullptr) {
         /* ST_CALLSITE[0050D59D]: CALL dword ptr [0x0085bde8] */
         wsprintfA((LPSTR)&DAT_0080f33a,"%d%%",(uint)(byte)this_00->field_0C2A);
 
         ccFntTy::WrStr(this_00->field_01B8,(char *)&DAT_0080f33a,-1,-1,5);
         /* ST_CALLSITE[0050D5CA]: CALL 0x00403229; direct=00403229 DibPut */
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x15,0x68,'\x01',pRVar7);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x15,0x68,'\x01',pRVar8);
 
         ccFntTy::EraseSufr(this_00->field_01B8);
       }
@@ -710,9 +745,10 @@ LAB_0050ce3f:
         local_8 = uVar6;
         do {
           /* ST_CALLSITE[0050D633]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-          pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
+          pRVar7_mg1B = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
           /* ST_CALLSITE[0050D645]: CALL 0x00403229; direct=00403229 DibPut */
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7_mg1B
+                );
           iVar10 = iVar10 + 4;
           uVar6 = uVar6 - 1;
         } while (uVar6 != 0);
@@ -721,9 +757,10 @@ LAB_0050ce3f:
         iVar10 = local_8 * 4 + 0x35;
         do {
           /* ST_CALLSITE[0050D66B]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-          pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
+          pRVar7_mg1C = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
           /* ST_CALLSITE[0050D67D]: CALL 0x00403229; direct=00403229 DibPut */
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7_mg1C
+                );
           iVar10 = iVar10 + 4;
         } while (iVar10 < 0xb9);
       }
@@ -739,27 +776,27 @@ LAB_0050ce3f:
     if ((*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12 != local_5b) ||
        (this_00->field_0C16 != local_57)) {
       /* ST_CALLSITE[0050D82F]: CALL 0x00710ba0; direct=00710BA0 ccFntTy::CreateSurf; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/ccFntTy;/int;/uint;/int;/int;/int;/int;/int */
-      pRVar7 = ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09D9[7],0,0x7f,0x20,0x24,0xb,0
+      pRVar8 = ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09D9[7],0,0x7f,0x20,0x24,0xb,0
                                   );
-      if (pRVar7 != nullptr) {
+      if (pRVar8 != nullptr) {
         /* ST_CALLSITE[0050D851]: CALL EDI */
         wsprintfA((LPSTR)&DAT_0080f33a,"%d",*(undefined4 *)&this_00->field_0xc12);
 
         ccFntTy::WrStr(this_00->field_01C4,(char *)&DAT_0080f33a,-1,-1,5);
         /* ST_CALLSITE[0050D87A]: CALL 0x00403229; direct=00403229 DibPut */
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x7f,0x66,'\x01',pRVar7);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x7f,0x66,'\x01',pRVar8);
 
         ccFntTy::EraseSufr(this_00->field_01C4);
       }
       /* ST_CALLSITE[0050D8A9]: CALL 0x00710ba0; direct=00710BA0 ccFntTy::CreateSurf; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/ccFntTy;/int;/uint;/int;/int;/int;/int;/int */
-      pRVar7 = ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09D9[7],0,0xa5,9,0x24,0xb,0);
-      if (pRVar7 != nullptr) {
+      pRVar8 = ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09D9[7],0,0xa5,9,0x24,0xb,0);
+      if (pRVar8 != nullptr) {
         /* ST_CALLSITE[0050D8C5]: CALL EDI */
         wsprintfA((LPSTR)&DAT_0080f33a,"%d",this_00->field_0C16);
 
         ccFntTy::WrStr(this_00->field_01C4,(char *)&DAT_0080f33a,-1,-1,4);
         /* ST_CALLSITE[0050D8F1]: CALL 0x00403229; direct=00403229 DibPut */
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0xa5,0x4f,'\x01',pRVar7);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0xa5,0x4f,'\x01',pRVar8);
 
         ccFntTy::EraseSufr(this_00->field_01C4);
       }
@@ -779,9 +816,10 @@ LAB_0050ce3f:
         local_8 = uVar6;
         do {
           /* ST_CALLSITE[0050D94A]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-          pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
+          pRVar7_mg16 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
           /* ST_CALLSITE[0050D95C]: CALL 0x00403229; direct=00403229 DibPut */
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7_mg16
+                );
           iVar10 = iVar10 + 4;
           uVar6 = uVar6 - 1;
         } while (uVar6 != 0);
@@ -790,9 +828,10 @@ LAB_0050ce3f:
         iVar10 = local_8 * 4 + 0x35;
         do {
           /* ST_CALLSITE[0050D982]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-          pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
+          pRVar7_mg17 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
           /* ST_CALLSITE[0050D994]: CALL 0x00403229; direct=00403229 DibPut */
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7_mg17
+                );
           iVar10 = iVar10 + 4;
         } while (iVar10 < 0xb9);
       }
@@ -824,9 +863,10 @@ LAB_0050ce3f:
         local_8 = uVar6;
         do {
           /* ST_CALLSITE[0050D2FE]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-          pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
+          pRVar7_mg11 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
           /* ST_CALLSITE[0050D310]: CALL 0x00403229; direct=00403229 DibPut */
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7_mg11
+                );
           iVar10 = iVar10 + 4;
           uVar6 = uVar6 - 1;
         } while (uVar6 != 0);
@@ -835,9 +875,10 @@ LAB_0050ce3f:
         iVar10 = local_8 * 4 + 0x35;
         do {
           /* ST_CALLSITE[0050D336]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-          pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
+          pRVar7_mg12 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
           /* ST_CALLSITE[0050D348]: CALL 0x00403229; direct=00403229 DibPut */
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7_mg12
+                );
           iVar10 = iVar10 + 4;
         } while (iVar10 < 0xb9);
       }
@@ -850,8 +891,8 @@ LAB_0050ce3f:
     }
     if (((this_00->field_0C1C == local_51) && (this_00->field_0C20 == local_4d)) ||
        /* ST_CALLSITE[0050D3B5]: CALL 0x00710ba0; direct=00710BA0 ccFntTy::CreateSurf; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/ccFntTy;/int;/uint;/int;/int;/int;/int;/int */
-       (pRVar7 = ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09D9[1],0,100,0x13,0x18,0xc,
-                                     0), pRVar7 == nullptr))
+       (pRVar8 = ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09D9[1],0,100,0x13,0x18,0xc,
+                                     0), pRVar8 == nullptr))
     break;
     if (this_00->field_0C1C != local_51) {
       /* ST_CALLSITE[0050D3E7]: CALL EDI */
@@ -859,7 +900,7 @@ LAB_0050ce3f:
 
       ccFntTy::WrStr(this_00->field_01C4,(char *)&DAT_0080f33a,-1,-1,7);
       /* ST_CALLSITE[0050D410]: CALL 0x00403229; direct=00403229 DibPut */
-      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,100,0x59,'\x01',pRVar7);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,100,0x59,'\x01',pRVar8);
       if (-1 < (int)this_00->field_0148[5]) {
 
         Library::DKW::DDX::FUN_006b3640
@@ -873,7 +914,7 @@ LAB_0050ce3f:
 
       ccFntTy::WrStr(this_00->field_01C4,(char *)&DAT_0080f33a,-1,-1,5);
       /* ST_CALLSITE[0050D485]: CALL 0x00403229; direct=00403229 DibPut */
-      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0xaf,0x59,'\x01',pRVar7);
+      DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0xaf,0x59,'\x01',pRVar8);
       if (-1 < (int)this_00->field_0148[5]) {
 
         Library::DKW::DDX::FUN_006b3640
@@ -905,9 +946,9 @@ LAB_0050ce3f:
         local_8 = uVar6;
         do {
           /* ST_CALLSITE[0050DBD2]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-          pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
+          pRVar7_mgF = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
           /* ST_CALLSITE[0050DBE4]: CALL 0x00403229; direct=00403229 DibPut */
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7_mgF);
           iVar10 = iVar10 + 4;
           uVar6 = uVar6 - 1;
         } while (uVar6 != 0);
@@ -916,9 +957,10 @@ LAB_0050ce3f:
         iVar10 = local_8 * 4 + 0x35;
         do {
           /* ST_CALLSITE[0050DC0A]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-          pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
+          pRVar7_mg10 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
           /* ST_CALLSITE[0050DC1C]: CALL 0x00403229; direct=00403229 DibPut */
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7_mg10
+                );
           iVar10 = iVar10 + 4;
         } while (iVar10 < 0xb9);
       }
@@ -938,9 +980,9 @@ LAB_0050ce3f:
         iVar10 = 0x35;
         do {
           /* ST_CALLSITE[0050D9F8]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-          pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
+          pRVar7_mgB = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
           /* ST_CALLSITE[0050DA0A]: CALL 0x00403229; direct=00403229 DibPut */
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x52,'\x01',pRVar7);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x52,'\x01',pRVar7_mgB);
           uVar6 = uVar6 + 1;
           iVar10 = iVar10 + 4;
         } while (uVar6 < this_00->field_0C11);
@@ -949,9 +991,9 @@ LAB_0050ce3f:
         iVar10 = uVar6 * 4 + 0x35;
         do {
           /* ST_CALLSITE[0050DA37]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-          pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
+          pRVar7_mgC = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
           /* ST_CALLSITE[0050DA49]: CALL 0x00403229; direct=00403229 DibPut */
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x52,'\x01',pRVar7);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x52,'\x01',pRVar7_mgC);
           iVar10 = iVar10 + 4;
         } while (iVar10 < 0xb9);
       }
@@ -968,9 +1010,9 @@ LAB_0050ce3f:
         iVar10 = 0x35;
         do {
           /* ST_CALLSITE[0050DAA4]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-          pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
+          pRVar7_mgD = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
           /* ST_CALLSITE[0050DAB6]: CALL 0x00403229; direct=00403229 DibPut */
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x73,'\x01',pRVar7);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x73,'\x01',pRVar7_mgD);
           uVar6 = uVar6 + 1;
           iVar10 = iVar10 + 4;
         } while (uVar6 < *(uint *)&this_00->field_0xc12);
@@ -979,9 +1021,9 @@ LAB_0050ce3f:
         iVar10 = uVar6 * 4 + 0x35;
         do {
           /* ST_CALLSITE[0050DAE1]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-          pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
+          pRVar7_mgE = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
           /* ST_CALLSITE[0050DAF3]: CALL 0x00403229; direct=00403229 DibPut */
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x73,'\x01',pRVar7);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x73,'\x01',pRVar7_mgE);
           iVar10 = iVar10 + 4;
         } while (iVar10 < 0xb9);
       }
@@ -1000,18 +1042,18 @@ LAB_0050ce3f:
     local_1c = &local_5b;
     local_10 = (Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12;
     do {
-      uVar8 = local_8;
+      uVar7 = local_8;
       uVar6 = local_14;
       if (*local_1c != *local_10) {
         /* ST_CALLSITE[0050DDF6]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,local_14 - 2,0x55,'\x01',
                (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_09D9[0xe]);
 
-        iVar10 = thunk_FUN_00526ba0(*local_10,(&this_00->field_0C1A)[uVar8]);
+        iVar10 = thunk_FUN_00526ba0(*local_10,(&this_00->field_0C1A)[uVar7]);
         /* ST_CALLSITE[0050DE16]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-        pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02C2,iVar10);
+        pRVar7_mg7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02C2,iVar10);
         /* ST_CALLSITE[0050DE28]: CALL 0x00403229; direct=00403229 DibPut */
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,uVar6,0x57,'\x01',pRVar7);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,uVar6,0x57,'\x01',pRVar7_mg7);
         if (-1 < (int)this_00->field_0148[5]) {
 
           Library::DKW::DDX::FUN_006b3640
@@ -1019,18 +1061,18 @@ LAB_0050ce3f:
                      this_00->field_0050,this_00->field_00A8);
         }
       }
-      if (local_49[uVar8] != (&this_00->field_0C24)[uVar8]) {
+      if (local_49[uVar7] != (&this_00->field_0C24)[uVar7]) {
         local_18 = 0;
-        uVar6 = (byte)(&this_00->field_0C24)[uVar8] / 10;
+        uVar6 = (byte)(&this_00->field_0C24)[uVar7] / 10;
         if (uVar6 != 0) {
           iVar10 = 0x7e;
           local_18 = uVar6;
           do {
             /* ST_CALLSITE[0050DE9A]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-            pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,7);
+            pRVar7_mg8 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,7);
             /* ST_CALLSITE[0050DEAE]: CALL 0x00403229; direct=00403229 DibPut */
-            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,local_c,iVar10,'\x01',pRVar7
-                  );
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,local_c,iVar10,'\x01',
+                   pRVar7_mg8);
             iVar10 = iVar10 + -4;
             uVar6 = uVar6 - 1;
           } while (uVar6 != 0);
@@ -1040,10 +1082,10 @@ LAB_0050ce3f:
           iVar11 = 10 - local_18;
           do {
             /* ST_CALLSITE[0050DEE2]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-            pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,8);
+            pRVar7_mg9 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,8);
             /* ST_CALLSITE[0050DEF6]: CALL 0x00403229; direct=00403229 DibPut */
-            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,local_c,iVar10,'\x01',pRVar7
-                  );
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,local_c,iVar10,'\x01',
+                   pRVar7_mg9);
             iVar10 = iVar10 + -4;
             iVar11 = iVar11 + -1;
           } while (iVar11 != 0);
@@ -1065,12 +1107,12 @@ LAB_0050ce3f:
     wsprintfA((LPSTR)&DAT_0080f33a,"%d %% %d",(uint)(byte)this_00->field_0C24,
               (uint)(byte)this_00->field_0C25);
     /* ST_CALLSITE[0050DF9F]: CALL 0x00710ba0; direct=00710BA0 ccFntTy::CreateSurf; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/ccFntTy;/int;/uint;/int;/int;/int;/int;/int */
-    pRVar7 = ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[1],0,0x5f,7,0x2f,0xb,0);
-    if (pRVar7 == nullptr) break;
+    pRVar8 = ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[1],0,0x5f,7,0x2f,0xb,0);
+    if (pRVar8 == nullptr) break;
 
     ccFntTy::WrStr(this_00->field_01B8,(char *)&DAT_0080f33a,-1,-1,5);
     /* ST_CALLSITE[0050DFCE]: CALL 0x00403229; direct=00403229 DibPut */
-    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x5f,0x4d,'\x01',pRVar7);
+    DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x5f,0x4d,'\x01',pRVar8);
     this_01 = this_00->field_01B8;
 LAB_0050dfdc:
 
@@ -1094,9 +1136,10 @@ LAB_0050dfdc:
           local_8 = uVar6;
           do {
             /* ST_CALLSITE[0050D181]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-            pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
+            pRVar7_mg5 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
             /* ST_CALLSITE[0050D193]: CALL 0x00403229; direct=00403229 DibPut */
-            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7);
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',
+                   pRVar7_mg5);
             iVar10 = iVar10 + 4;
             uVar6 = uVar6 - 1;
           } while (uVar6 != 0);
@@ -1105,9 +1148,10 @@ LAB_0050dfdc:
           iVar10 = local_8 * 4 + 0x35;
           do {
             /* ST_CALLSITE[0050D1B9]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-            pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
+            pRVar7_mg6 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
             /* ST_CALLSITE[0050D1CB]: CALL 0x00403229; direct=00403229 DibPut */
-            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7);
+            DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',
+                   pRVar7_mg6);
             iVar10 = iVar10 + 4;
           } while (iVar10 < 0xb9);
         }
@@ -1142,9 +1186,9 @@ LAB_0050dfdc:
         local_8 = uVar6;
         do {
           /* ST_CALLSITE[0050D6F2]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-          pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
+          pRVar7_mg2 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,1);
           /* ST_CALLSITE[0050D704]: CALL 0x00403229; direct=00403229 DibPut */
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7_mg2);
           iVar10 = iVar10 + 4;
           uVar6 = uVar6 - 1;
         } while (uVar6 != 0);
@@ -1153,26 +1197,26 @@ LAB_0050dfdc:
         iVar10 = local_8 * 4 + 0x35;
         do {
           /* ST_CALLSITE[0050D730]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredGlobalRecordView_0081175C;/int */
-          pRVar7 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
+          pRVar7_mg3 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_02B6,0);
           /* ST_CALLSITE[0050D742]: CALL 0x00403229; direct=00403229 DibPut */
-          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7);
+          DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar10,0x7d,'\x01',pRVar7_mg3);
           iVar10 = iVar10 + 4;
         } while (iVar10 < 0xb9);
       }
       /* ST_CALLSITE[0050D771]: CALL 0x00710ba0; direct=00710BA0 ccFntTy::CreateSurf; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__thiscall;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/ccFntTy;/int;/uint;/int;/int;/int;/int;/int */
-      pRVar7 = ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[2],0,0x24,6,0xa4,0x2b,0);
-      if (pRVar7 != nullptr) {
+      pRVar8 = ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[2],0,0x24,6,0xa4,0x2b,0);
+      if (pRVar8 != nullptr) {
         iVar22 = -1;
         iVar21 = -1;
         uVar6 = 5;
         iVar11 = -1;
         iVar10 = -1;
         /* ST_CALLSITE[0050D79A]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__stdcall;pointer:/ccFntTy;/WinDef.h/UINT;/WinDef.h/HINSTANCE */
-        pcVar18 = (char *)LoadResourceString(0x36c4 - (local_14 < 0x21),g_hINSTANCE_00807618);
+        pcVar18 = LoadResourceString(0x36c4 - (local_14 < 0x21),g_hINSTANCE_00807618);
 
-        ccFntTy::WrTxt(this_00->field_01B8,pcVar18,iVar10,iVar11,uVar6,iVar21,iVar22);
+        ccFntTy::WrTxt(this_00->field_01B8,(char *)pcVar18,iVar10,iVar11,uVar6,iVar21,iVar22);
         /* ST_CALLSITE[0050D7B9]: CALL 0x00403229; direct=00403229 DibPut */
-        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x24,0x4c,'\x01',pRVar7);
+        DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0x24,0x4c,'\x01',pRVar8);
 
         ccFntTy::EraseSufr(this_00->field_01B8);
       }

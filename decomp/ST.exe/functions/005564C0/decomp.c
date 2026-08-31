@@ -22,7 +22,7 @@ int __thiscall TraksClassTy::GetMessage(TraksClassTy *this,STMessage *message)
   TraksClassTy *local_14;
   byte *local_10;
   uint local_c;
-  ushort *local_8;
+  TraksClassTy *local_8;
 
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
@@ -61,10 +61,10 @@ int __thiscall TraksClassTy::GetMessage(TraksClassTy *this,STMessage *message)
     if (SVar1 == MESS_ID_CREATE) {
       local_8 = nullptr;
       if (g_cMf32_00806754 != nullptr) {
-        /* ST_CALLSITE[0055654D]: CALL 0x006f2d90; direct=006F2D90 Library::Ourlib::MFAOBJ::mfAObjLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/TraksClassTy; source view only; no Ghidra override */
+        /* ST_CALLSITE[0055654D]: CALL 0x006f2d90; direct=006F2D90 Library::Ourlib::MFAOBJ::mfAObjLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/TraksClassTy; signature=__cdecl;pointer:/TraksClassTy;pointer:/cMf32;pointer:/char;/byte;/int */
         local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(g_cMf32_00806754,PTR_s_TRACKS_0079aebc,0,0);
       }
-      if ((local_8 == nullptr) || (*(int *)(local_8 + 10) == 0)) {
+      if ((local_8 == nullptr) || (*(int *)&local_8->field_0x14 == 0)) {
         /* ST_CALLSITE[00556575]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/TraksClassTy_field_0024DArray; source view only; no Ghidra override */
         pTVar3 = Library::DKW::TBL::DArrayCreate(nullptr,0x32,0x3c,0x32);
         this_00->field_0024 = (TraksClassTy_field_0024DArray *)pTVar3;
@@ -72,7 +72,7 @@ int __thiscall TraksClassTy::GetMessage(TraksClassTy *this,STMessage *message)
       }
       else {
         /* ST_CALLSITE[00556566]: CALL 0x0040359e; direct=0040359E TraksClassTy::PrepareAfterSave */
-        PrepareAfterSave(this_00,local_8);
+        PrepareAfterSave(this_00,(ushort *)local_8);
       }
       /* ST_CALLSITE[00556590]: CALL 0x00403701; direct=00403701 TraksClassTy::CreateDate */
       CreateDate(this_00);

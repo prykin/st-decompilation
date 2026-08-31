@@ -222,12 +222,12 @@ void __thiscall st::fn_005D5160(SettMapSTy *this)
         if ((pvVar4 != nullptr) && (STField<DArrayTy *>(pvVar4,0x50) != nullptr)) {
           st::fn_006AE110(STField<DArrayTy *>(pvVar4,0x50));
         }
-        pDVar8 = reinterpret_cast<DArrayTy *>(((SettMapSTy *)this_00)->field_1F84);
+        pDVar8 = ((SettMapSTy *)this_00)->field_1F84;
         uVar10 = uVar10 + 1;
         bVar14 = uVar10 < pDVar8->count;
       } while ((int)uVar10 < (int)pDVar8->count);
     }
-    st::fn_006AE110(reinterpret_cast<DArrayTy *>(((SettMapSTy *)this_00)->field_1F84));
+    st::fn_006AE110(((SettMapSTy *)this_00)->field_1F84);
   }
   pDVar6 = st::fn_006AE290(nullptr,8,0x60,8);
   ((SettMapSTy *)this_00)->field_1F84 = pDVar6;
@@ -1496,7 +1496,7 @@ joined_r0x005d6701:
               else {
                 pcVar14 = nullptr;
               }
-              if (st::machine_word_boundary_cast<uint>(local_2c) == st::machine_word_boundary_cast<uint>((undefined1 *)uVar28)) {
+              if (local_2c == (undefined1 *)uVar28) {
 LAB_005d6784:
                 if ((*pcVar14 != '\0') && ((pcVar14[4] == '\0' || (pcVar14[4] == '\x01')))) {
                   *(undefined1 *)((int)&local_38 + (uint)(byte)pcVar14[0x4a]) = 0;

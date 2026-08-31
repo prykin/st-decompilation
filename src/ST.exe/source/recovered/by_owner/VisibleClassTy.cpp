@@ -291,6 +291,9 @@ st::fn_00558DC0
           ,int *param_6,uint param_7)
 
 {
+  int param_5_after_write;
+  int param_7_after_write;
+
   int iVar1;
   int iVar2;
   byte bVar3;
@@ -363,12 +366,12 @@ st::fn_00558DC0
           /* ST_CALLSITE[00558F93]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
           st::fn_00403F53(this,this->field_010C,param_1,param_2,reinterpret_cast<int *>(&param_6_after_write),reinterpret_cast<int *>(&param_4_after_write));
           param_6_after_write = (int *)((int)param_6_after_write - uVar10);
-          auto param_5_after_write = 0; /* compiler stack-slot lifetime split */
+          param_5_after_write = 0; /* compiler stack-slot lifetime split */
           param_4_after_write = (int *)((int)param_4_after_write + (g_centeredOffsets5[(int)param_3] - uVar10));
           auto param_3_after_write = pbVar5; /* compiler stack-slot lifetime split */
           if (0 < iVar2) {
             do {
-              auto param_7_after_write = 0; /* compiler stack-slot lifetime split */
+              param_7_after_write = 0; /* compiler stack-slot lifetime split */
               do {
                 if (param_3_after_write[param_7_after_write] != '\0') {
                   iVar8 = param_7_after_write + (int)param_6_after_write;
@@ -413,6 +416,9 @@ st::fn_00559110
           int param_6,uint param_7)
 
 {
+  int param_5_after_write;
+  int param_7_after_write;
+
   int iVar1;
   int iVar2;
   byte bVar3;
@@ -470,13 +476,13 @@ st::fn_00559110
            ((param_7 & 0x4000) != 0)) {
           /* ST_CALLSITE[0055926D]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
           st::fn_00403F53(this,this->field_010C,param_1,(int)param_2,(int *)&param_4_after_write,&param_6_after_write);
-          auto param_5_after_write = 0; /* compiler stack-slot lifetime split */
+          param_5_after_write = 0; /* compiler stack-slot lifetime split */
           param_4_after_write = param_4_after_write - iVar10;
           param_6_after_write = param_6_after_write + (g_centeredOffsets5[param_3] - iVar10);
           auto param_2_after_write = pbVar7; /* compiler stack-slot lifetime split */
           if (0 < iVar9) {
             do {
-              auto param_7_after_write = 0; /* compiler stack-slot lifetime split */
+              param_7_after_write = 0; /* compiler stack-slot lifetime split */
               do {
                 if (param_2_after_write[param_7_after_write] != '\0') {
                   iVar10 = param_7_after_write + param_4_after_write;
@@ -1309,7 +1315,7 @@ void __thiscall st::fn_0055B7F0(VisibleClassTy *this,int param_1,undefined *para
           element_0110 = nullptr;
         }
         piVar3 = (int *)(uint)(byte)element_0110->field_0001;
-        if (st::machine_word_boundary_cast<uint>(piVar3) == st::machine_word_boundary_cast<uint>((int *)param_2)) {
+        if (piVar3 == (int *)param_2) {
           if (element_0110->field_0000 == '\0') {
             if (param_1 == 0) {
               /* ST_CALLSITE[0055B949]: CALL 0x004018f2; direct=004018F2 VisibleClassTy::sub_00559110 */

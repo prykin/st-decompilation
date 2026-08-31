@@ -327,7 +327,7 @@ int st::fn_004B33D0(uint param_1,int *param_2)
           }
         }
         else {
-          if ((st::machine_word_boundary_cast<uint>(this[1].vtable) != st::machine_word_boundary_cast<uint>((STWorldObjectVTable *)param_1)) ||
+          if ((this[1].vtable != (STWorldObjectVTable *)param_1) ||
              (((this->value_20 != 1000 ||
                /* ST_CALLSITE[004B3716]: CALL dword ptr [EAX + 0x2c] */
                (iVar20 = this->GetObjectTypeId(),

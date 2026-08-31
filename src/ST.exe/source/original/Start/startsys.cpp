@@ -315,10 +315,8 @@ undefined4 __thiscall st::fn_005DB4F0(StartSystemTy *this)
     puVar15 = pSVar4->field_02F0 + 0x14;
 
     local_EAX_1035 = st::fn_006B4FE0(pSVar4->field_02F0);
-    pRVar7 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-             st::fn_006B50C0(0xd5,0x119,(uint)pSVar4->field_02F0[7],local_EAX_1035,
-                          reinterpret_cast<undefined4 *>(puVar15),iVar14);
+    pRVar7 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(st::fn_006B50C0(0xd5,0x119,(uint)pSVar4->field_02F0[7],local_EAX_1035,
+                          reinterpret_cast<undefined4 *>(puVar15),iVar14));
     pSVar4->field_0544 = reinterpret_cast<AnonPointee_StartSystemTy_0544 *>(pRVar7);
     local_8 = *(uint *)&pRVar7[1].field_0x4;
     if (local_8 == 0) {
@@ -347,9 +345,7 @@ undefined4 __thiscall st::fn_005DB4F0(StartSystemTy *this)
     puVar15 = pSVar4->field_02F0 + 0x14;
 
     uVar8 = st::fn_006B4FE0(pSVar4->field_02F0);
-    pRVar7 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-             st::fn_006B50C0(0x186,0x14,(uint)pSVar4->field_02F0[7],uVar8,reinterpret_cast<undefined4 *>(puVar15),iVar14);
+    pRVar7 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(st::fn_006B50C0(0x186,0x14,(uint)pSVar4->field_02F0[7],uVar8,reinterpret_cast<undefined4 *>(puVar15),iVar14));
     pSVar4->field_0682 = reinterpret_cast<ushort *>(pRVar7);
     local_8 = *(uint *)&pRVar7[1].field_0x4;
     if (local_8 == 0) {
@@ -402,10 +398,8 @@ undefined4 __thiscall st::fn_005DB4F0(StartSystemTy *this)
     pSVar4->field_05F5 = 0;
 
     local_EAX_1618 = st::fn_006B4FE0(pSVar4->field_02F0);
-    pRVar7 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-             st::fn_006B50C0(0x16d,0x49,(uint)pSVar4->field_02F0[7],local_EAX_1618,
-                          reinterpret_cast<undefined4 *>(puVar15),iVar14);
+    pRVar7 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(st::fn_006B50C0(0x16d,0x49,(uint)pSVar4->field_02F0[7],local_EAX_1618,
+                          reinterpret_cast<undefined4 *>(puVar15),iVar14));
     pSVar4->field_067E = reinterpret_cast<ushort *>(pRVar7);
     uVar11 = *(uint *)&pRVar7[1].field_0x4;
     if (uVar11 == 0) {
@@ -545,7 +539,7 @@ void __thiscall st::fn_005DC050(StartSystemTy *this,cMf32 *param_1,char param_2)
   int iVar3;
   ushort *puVar4;
   byte *puVar6;
-  DArrayTy *pDVar5_mg0;
+  uint *pDVar5_mg0;
   char *pcVar6_mg1;
   uint uVar7;
   char *pcVar6_mg2;
@@ -665,8 +659,8 @@ LAB_005dc22d:
         st::fn_006B5570(reinterpret_cast<DArrayTy *>(this_01->field_0548));
       }
       /* ST_CALLSITE[005DC2B3]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint */
-      pDVar5_mg0 = reinterpret_cast<DArrayTy *>(st::fn_006B54F0(nullptr,10,10));
-      this_01->field_0548 = reinterpret_cast<uint *>(pDVar5_mg0);
+      pDVar5_mg0 = st::pointer_boundary_cast<uint *>(st::fn_006B54F0(nullptr,10,10));
+      this_01->field_0548 = pDVar5_mg0;
       puVar5 = &this_01->field_003C;
       pcVar6_mg1 = st::fn_006B0140(0x2347,g_hINSTANCE_00807618);
       /* ST_CALLSITE[005DC2DF]: CALL EBX */

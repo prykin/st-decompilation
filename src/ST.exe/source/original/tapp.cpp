@@ -1881,8 +1881,10 @@ void __thiscall st::fn_0056DB80(STAppC *this)
   int local_EAX_1075;
   char *pcVar8_mg2;
   uint *puVar8;
+  uint *puVar8_mg1;
+  uint *puVar8_mg3;
   char *pcVar8_mg1;
-  char *pcVar8_mg3;
+  cLoadingTy *pcVar8_mg3;
   int local_EAX_2834;
   int iVar9;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
@@ -2142,8 +2144,8 @@ void __thiscall st::fn_0056DB80(STAppC *this)
       pSVar10->field_4EA7 = puVar8;
       if (puVar8 == nullptr) {
         /* ST_CALLSITE[0056E1C5]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint */
-        puVar8 = st::pointer_boundary_cast<uint *>(st::fn_006B54F0(nullptr,10,10));
-        pSVar10->field_4EA7 = puVar8;
+        puVar8_mg1 = st::pointer_boundary_cast<uint *>(st::fn_006B54F0(nullptr,10,10));
+        pSVar10->field_4EA7 = puVar8_mg1;
       }
       if ((DArrayTy *)pSVar10->field_4EAB != nullptr) {
         st::fn_006B5570(reinterpret_cast<DArrayTy *>(pSVar10->field_4EAB));
@@ -2152,8 +2154,8 @@ void __thiscall st::fn_0056DB80(STAppC *this)
       pSVar10->field_4EAB = puVar8;
       if (puVar8 == nullptr) {
         /* ST_CALLSITE[0056E205]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint */
-        puVar8 = st::pointer_boundary_cast<uint *>(st::fn_006B54F0(nullptr,10,10));
-        pSVar10->field_4EAB = puVar8;
+        puVar8_mg3 = st::pointer_boundary_cast<uint *>(st::fn_006B54F0(nullptr,10,10));
+        pSVar10->field_4EAB = puVar8_mg3;
       }
       if ((pSVar10->field_117C == 0) &&
          ((SVar1 = pSVar10->field_1180, SVar1 == CASE_8 || (SVar1 == CASE_3)))) {
@@ -2216,9 +2218,9 @@ void __thiscall st::fn_0056DB80(STAppC *this)
     g_cMf32_00806754 = nullptr;
     if (g_cLoading_00802A58 != nullptr) {
       /* ST_CALLSITE[0056E4B8]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/cLoadingTy; signature=__stdcall;pointer:/cLoadingTy;/WinDef.h/UINT;/WinDef.h/HINSTANCE */
-      pcVar8_mg3 = reinterpret_cast<char *>(st::fn_006B0140(0x2680,g_hINSTANCE_00807618));
+      pcVar8_mg3 = st::pointer_boundary_cast<cLoadingTy *>(st::fn_006B0140(0x2680,g_hINSTANCE_00807618));
       /* ST_CALLSITE[0056E4C4]: CALL 0x00401230; direct=00401230 cLoadingTy::DrawLineCR */
-      st::fn_00401230(g_cLoading_00802A58,pcVar8_mg3);
+      st::fn_00401230(g_cLoading_00802A58,reinterpret_cast<char *>(pcVar8_mg3));
       if ((pSVar10->field_115E != '\0') && (pSVar10->field_1163 == '\x03')) {
         /* ST_CALLSITE[0056E4DF]: CALL dword ptr [0x0085bc6c] */
         st::external_00000050(2000);
@@ -2732,14 +2734,14 @@ switchD_0056fad2_caseD_6102:
       if (((bVar3 <= bVar4) && (pSVar11->field_6CE2 <= bVar4)) && (bVar4 != 0)) {
         bVar29 = false;
         local_34 = 0x6103;
-        local_30 = st::message_arg_u32(static_cast<uint32_t>(0x0));
+        local_30 = st::message_arg_i32(static_cast<int32_t>(0x0));
         pSVar11->field_6CE1 = 0;
       }
       if (bVar29) {
         bVar29 = true;
         if (((pSVar11->field_6CE1 < bVar3) && (pSVar11->field_6CE2 <= bVar3)) && (bVar3 != 0)) {
           local_34 = 0x6104;
-          local_30 = st::message_arg_u32(static_cast<uint32_t>(0x1));
+          local_30 = st::message_arg_i32(static_cast<int32_t>(0x1));
           pSVar11->field_6CE0 = 0;
           bVar29 = false;
         }
@@ -2752,7 +2754,7 @@ switchD_0056fad2_caseD_6102:
             }
             else if (bVar4 != 0) {
               local_34 = 0x7101;
-              local_30 = st::message_arg_u32(static_cast<uint32_t>(0x4));
+              local_30 = st::message_arg_i32(static_cast<int32_t>(0x4));
               pSVar11->field_6CE2 = 0;
               bVar29 = false;
             }
@@ -2787,7 +2789,7 @@ switchD_0056fad2_caseD_6102:
             iVar19 = st::fn_00404B4C(pSVar11,1);
             if (iVar19 != 0) {
               local_34 = 0x6104;
-              local_30 = st::message_arg_u32(static_cast<uint32_t>(0x0));
+              local_30 = st::message_arg_i32(static_cast<int32_t>(0x0));
             }
           }
         }
@@ -2804,7 +2806,7 @@ switchD_0056fad2_caseD_6102:
         }
         if (bVar29) {
           local_34 = 0x610a;
-          local_30 = st::message_arg_u32(static_cast<uint32_t>(0x6));
+          local_30 = st::message_arg_i32(static_cast<int32_t>(0x6));
         }
       }
       pSVar22 = pSVar11->vtable;

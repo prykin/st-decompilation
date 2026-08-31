@@ -574,7 +574,7 @@ LAB_0055fc71:
                 if ((iVar18 < 1) || (iVar21 = piVar16[4], iVar21 < 1)) {
                   iVar18 = 0;
                   do {
-                    if (iVar13 <= (int)(&DAT_007c9614)[iVar18]) break;
+                    if (iVar13 <= st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_007c9614)[iVar18]))) break;
                     iVar18 = iVar18 + 1;
                   } while (iVar18 < 9);
                   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -1626,7 +1626,7 @@ LAB_00563368:
       }
       iVar18 = 0;
       do {
-        if (*(int *)local_174[iVar13 + 1] <= (int)(&DAT_007c9614)[iVar18]) break;
+        if (*(int *)local_174[iVar13 + 1] <= st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_007c9614)[iVar18]))) break;
         iVar18 = iVar18 + 1;
       } while (iVar18 < 9);
       DAT_008032f0 = *(int *)(iVar18 * 8 + 0x7c9640);
@@ -1635,7 +1635,7 @@ LAB_00563368:
       if (-1 < iVar13) {
         iVar18 = 0;
         do {
-          if (*(int *)*local_174 <= (int)(&DAT_007c9614)[iVar18]) break;
+          if (*(int *)*local_174 <= st::storage_bit_cast<int>(static_cast<uint32_t>((&DAT_007c9614)[iVar18]))) break;
           iVar18 = iVar18 + 1;
         } while (iVar18 < 9);
         DAT_00803374 = *(int *)(iVar18 * 8 + 0x7c9640);

@@ -2384,6 +2384,27 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
             actual,
         )
 
+    def test_exact_piece_comparison_is_not_retyped_through_its_operand(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.type_emitter = TypeEmitter([], generator.issues)
+        body = (
+            "void fn() {\n"
+            "  byte local_c[4];\n"
+            "  if (STPiece<0,2>(local_c) != 0xffff) use();\n"
+            "  if (STLiteralPiece<0,2>(local_c) == 0) use();\n"
+            "  consume(STPiece<0,2>(local_c));\n"
+            "  STPiece<1,1>(local_c) = 3;\n"
+            "}\n"
+        )
+        actual = generator._repair_exact_storage_comparisons(
+            "00102030", {"parameters": []}, body
+        )
+        self.assertEqual(actual, body)
+        self.assertNotIn("STPiece<0,2>st::", actual)
+        self.assertNotIn("STLiteralPiece<0,2>st::", actual)
+
     def test_pointer_float_storage_reuse_uses_bit_view(self) -> None:
         generator = SourceTreeGenerator(
             Path("."), Path("."), Path("out"), Path("receipt")
@@ -2533,6 +2554,52 @@ class SourceTreeTypeEmitterTests(unittest.TestCase):
         )
         self.assertIn(
             "(*st::storage_bit_cast<code *>(DAT_00103040))(7)", actual
+        )
+
+    def test_pointer_published_to_global_gets_dereference_only_view(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.type_emitter = TypeEmitter([], generator.issues)
+        generator.global_display_types["DAT_00103040"] = "undefined4"
+        body = (
+            "void fn(uint **source) {\n"
+            "  DAT_00103040 = nullptr;\n"
+            "  DAT_00103040 = *(uint **)source;\n"
+            "  uint value = *DAT_00103040;\n"
+            "}\n"
+        )
+        actual = generator._repair_raw_global_pointer_uses(
+            "00102030", {"parameters": [
+                {"name": "source", "type": "uint **"},
+            ]}, body
+        )
+        self.assertIn(
+            "uint value = *st::storage_bit_cast<uint *>(DAT_00103040);",
+            actual,
+        )
+        self.assertIn("DAT_00103040 = *(uint **)source;", actual)
+
+    def test_casted_pointer_dereference_comparison_keeps_whole_operand(self) -> None:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.type_emitter = TypeEmitter([], generator.issues)
+        generator.global_display_types["DAT_00103040"] = "undefined4"
+        body = (
+            "void fn(int *words) {\n"
+            "  if (*(uint **)(words[1] + 0xc4) <= DAT_00103040) use();\n"
+            "}\n"
+        )
+        actual = generator._repair_exact_storage_comparisons(
+            "00102030", {"parameters": [
+                {"name": "words", "type": "int *"},
+            ]}, body
+        )
+        self.assertIn(
+            "st::machine_word_boundary_cast<undefined4>("
+            "*(uint **)(words[1] + 0xc4)) <= DAT_00103040",
+            actual,
         )
 
     def test_cancelled_unary_negation_does_not_become_decrement(self) -> None:

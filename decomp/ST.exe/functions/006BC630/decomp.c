@@ -11,7 +11,7 @@ void FUN_006bc630(void)
   DAT_00854eec = 0;
   if (0 < DAT_00854fa0) {
     do {
-      PTR_00854fd0 = *(uint **)(DAT_00854fc0 + DAT_00854eec * 4);
+      PTR_00854fd0 = (uint *)PTR_00854fc0[DAT_00854eec];
       if ((*PTR_00854fd0 & 0x4000) != 0) {
         if ((int)PTR_00854fd0[0xc] < 0) {
           PTR_00854fd0[10] = PTR_00854fd0[10] + PTR_00854fd0[0xc] + 1;

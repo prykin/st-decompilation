@@ -24,6 +24,7 @@ STAllPlayersC::UnRegisterMine(STAllPlayersC *this,uint param_1,uint param_2,STMi
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   this_00 = local_c;
   if (errorCode == 0) {
@@ -38,12 +39,14 @@ STAllPlayersC::UnRegisterMine(STAllPlayersC *this,uint param_1,uint param_2,STMi
     DelObjFromTmps(this_00,DAT_0080874d,param_3->field_0020,(char)param_3->field_0024,param_2);
     /* ST_CALLSITE[0044A1E4]: CALL 0x00403643; direct=00403643 STAllPlayersC::DelObjFromSaveTmps */
     DelObjFromSaveTmps(this_00,param_3->field_0020,(char)param_1,(ushort)param_2);
+
     Library::DKW::TBL::DArrayPut((DArrayTy *)g_array_007FA158,param_2 & 0xffff,&local_8);
     g_currentExceptionFrame = local_50.previous;
   }
   else {
     g_currentExceptionFrame = local_50.previous;
     if (errorCode != -0x5001fff7) {
+
       iVar3 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x2f26,0,errorCode,
                                  "%s","STAllPlayersC::UnRegisterMine");
       if (iVar3 != 0) {

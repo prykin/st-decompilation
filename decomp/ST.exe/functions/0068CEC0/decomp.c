@@ -26,9 +26,9 @@ FUN_0068cec0(LPCSTR lpFileName,RecoveredRecordView_00683C70_9F6EAF4E *param_2,in
   int local_EAX_114;
   int iVar3;
   int iVar4;
-  uint uVar7;
-  uint local_EAX_499;
-  uint local_EAX_547;
+  int uVar7;
+  int local_EAX_499;
+  int local_EAX_547;
   byte *pbVar5_mg0;
   DArrayTy *pDVar5;
   int iVar6;
@@ -136,19 +136,19 @@ FUN_0068cec0(LPCSTR lpFileName,RecoveredRecordView_00683C70_9F6EAF4E *param_2,in
       }
 
       uVar7 = thunk_FUN_0067f740("_env_var0",param_2->field_030C);
-      if ((int)uVar7 < 0) {
+      if (uVar7 < 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa59);
       }
 
       local_EAX_499 = thunk_FUN_0067f740("_env_var1",param_2->field_0310);
-      if ((int)local_EAX_499 < 0) {
+      if (local_EAX_499 < 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa5a);
       }
 
       local_EAX_547 = thunk_FUN_0067f740("_env_var2",param_2->field_0314);
-      if ((int)local_EAX_547 < 0) {
+      if (local_EAX_547 < 0) {
         RaiseInternalException
                   (-2,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_script.cpp",0xa5b);
       }

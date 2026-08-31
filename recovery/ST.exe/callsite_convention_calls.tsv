@@ -2396,17 +2396,11 @@ target_address	target_function	callable_entry	callable_function	via_thunk	call_a
 00449B60	STAllPlayersC::DestroyObjectMsg	0040387D	STAllPlayersC::DestroyObjectMsg	1	0064E209	0064E1F0	FUN_0064e1f0	CALL 0x0040387d	pointer_setup	0064E1FF: MOV ECX,dword ptr [0x007fa174]	5	0	0	caller_start
 00449B60	STAllPlayersC::DestroyObjectMsg	0040387D	STAllPlayersC::DestroyObjectMsg	1	00655AAC	00652810	AiEventClassTy::GetMessage	CALL 0x0040387d	pointer_setup	00655AA6: MOV ECX,dword ptr [0x007fa174]	4	0	0	control_flow_boundary
 00449B60	STAllPlayersC::DestroyObjectMsg	0040387D	STAllPlayersC::DestroyObjectMsg	1	00655BDB	00652810	AiEventClassTy::GetMessage	CALL 0x0040387d	pointer_setup	00655BD5: MOV ECX,dword ptr [0x007fa174]	4	0	0	control_flow_boundary
-00449CE0	STAllPlayersC::RegisterArtefact	0040440D	STAllPlayersC::RegisterArtefact	1	005EB061	005EAF10	STArtiafactC::GetMessage	CALL 0x0040440d	no_ecx_evidence		2	0	0	control_flow_boundary
-00449CE0	STAllPlayersC::RegisterArtefact	0040440D	STAllPlayersC::RegisterArtefact	1	005EB2E7	005EAF10	STArtiafactC::GetMessage	CALL 0x0040440d	no_ecx_evidence		2	0	0	control_flow_boundary
 00449FD0	STAllPlayersC::RegisterMine	004030B7	STAllPlayersC::RegisterMine	1	00621D64	00621B50	STMineSetC::GetMessage	CALL 0x004030b7	pointer_setup	00621D58: MOV ECX,dword ptr [0x007fa174]	2	0	0	previous_call
 00449FD0	STAllPlayersC::RegisterMine	004030B7	STAllPlayersC::RegisterMine	1	00621EB0	00621B50	STMineSetC::GetMessage	CALL 0x004030b7	pointer_setup	00621EA8: MOV ECX,dword ptr [0x007fa174]	2	0	0	previous_call
 0044A2C0	STAllPlayersC::RegisterDeposit	00403CD8	STAllPlayersC::RegisterDeposit	1	0057E379	0057E0A0	STDcResourcC::GetMessage	CALL 0x00403cd8	pointer_setup	0057E373: MOV ECX,dword ptr [0x007fa174]	2	0	0	previous_call
 0044A2C0	STAllPlayersC::RegisterDeposit	00403CD8	STAllPlayersC::RegisterDeposit	1	0057E5A1	0057E0A0	STDcResourcC::GetMessage	CALL 0x00403cd8	pointer_setup	0057E595: MOV ECX,dword ptr [0x007fa174]	2	0	0	previous_call
 0044A2C0	STAllPlayersC::RegisterDeposit	00403CD8	STAllPlayersC::RegisterDeposit	1	00580DFE	00580DC0	FUN_00580dc0	CALL 0x00403cd8	pointer_setup	00580DF2: MOV ECX,dword ptr [0x007fa174]	2	0	0	control_flow_boundary
-0044A5B0	STAllPlayersC::RegisterContainer	00401294	STAllPlayersC::RegisterContainer	1	005FB7DF	005FB640	STContainerC::GetMessage	CALL 0x00401294	no_ecx_evidence		2	0	0	control_flow_boundary
-0044A5B0	STAllPlayersC::RegisterContainer	00401294	STAllPlayersC::RegisterContainer	1	005FBA7B	005FB640	STContainerC::GetMessage	CALL 0x00401294	no_ecx_evidence		2	0	0	control_flow_boundary
-0044A8A0	STAllPlayersC::RegisterBlot	004015DC	STAllPlayersC::RegisterBlot	1	006020A9	00601F80	STDestC::GetMessage	CALL 0x004015dc	no_ecx_evidence		2	0	0	control_flow_boundary
-0044A8A0	STAllPlayersC::RegisterBlot	004015DC	STAllPlayersC::RegisterBlot	1	00602155	00601F80	STDestC::GetMessage	CALL 0x004015dc	no_ecx_evidence		2	0	0	control_flow_boundary
 0044B280	STAllPlayersC::CalibrateTmp	004020D6	STAllPlayersC::CalibrateTmp	1	004317AA	004314E0	STAllPlayersC::FramePick	CALL 0x004020d6	pointer_setup	004317A8: MOV ECX,ESI	7	0	0	control_flow_boundary
 0044B280	STAllPlayersC::CalibrateTmp	004020D6	STAllPlayersC::CalibrateTmp	1	0043184C	004314E0	STAllPlayersC::FramePick	CALL 0x004020d6	pointer_setup	0043184A: MOV ECX,ESI	6	0	0	control_flow_boundary
 0044B280	STAllPlayersC::CalibrateTmp	004020D6	STAllPlayersC::CalibrateTmp	1	0043238F	004314E0	STAllPlayersC::FramePick	CALL 0x004020d6	pointer_setup	0043238D: MOV ECX,ESI	6	0	0	control_flow_boundary
@@ -2462,15 +2456,12 @@ target_address	target_function	callable_entry	callable_function	via_thunk	call_a
 004908A0	FUN_004908a0	00405D5D	thunk_FUN_004908a0	1	0046FCDD	0046F5C0	STBoatC::ToDok	CALL 0x00405d5d	pointer_setup	0046FCDB: MOV ECX,ESI	2	0	0	control_flow_boundary
 004908A0	FUN_004908a0	00405D5D	thunk_FUN_004908a0	1	0047007B	0046F5C0	STBoatC::ToDok	CALL 0x00405d5d	pointer_setup	00470077: MOV ECX,ESI	2	0	0	control_flow_boundary
 00490A00	FUN_00490a00	00405669	thunk_FUN_00490a00	1	004A4000	004A3CD0	STGroupBoatC::DistributeDock	CALL 0x00405669	pointer_setup	004A3FFE: MOV ECX,EAX	3	0	0	previous_call
-004911B0	FUN_004911b0	004911B0	FUN_004911b0	0	004053A3	004053A3	thunk_FUN_004911b0	JMP 0x004911b0	no_ecx_evidence		0	0	0	caller_start
-00491200	FUN_00491200	00491200	FUN_00491200	0	00401DDE	00401DDE	thunk_FUN_00491200	JMP 0x00491200	no_ecx_evidence		0	0	0	caller_start
 00492510	FUN_00492510	00402A6D	thunk_FUN_00492510	1	0045A9F7	0044EE30	STBoatC::GetMessage	CALL 0x00402a6d	pointer_setup	0045A9F3: MOV ECX,dword ptr [EBP + -0xc]	1	0	0	control_flow_boundary
 00492510	FUN_00492510	00402A6D	thunk_FUN_00492510	1	005EB605	005EAF10	STArtiafactC::GetMessage	CALL 0x00402a6d	pointer_setup	005EB602: MOV ECX,EBX	1	0	0	control_flow_boundary
 00492510	FUN_00492510	00402A6D	thunk_FUN_00492510	1	005FBD60	005FB640	STContainerC::GetMessage	CALL 0x00402a6d	pointer_setup	005FBD5D: MOV ECX,EBX	1	0	0	control_flow_boundary
 00492550	FUN_00492550	0040406B	thunk_FUN_00492550	1	00475A1D	004758E0	STBoatC::UnLoadObj	CALL 0x0040406b	pointer_setup	00475A1B: MOV ECX,EBX	6	0	0	control_flow_boundary
 00492550	FUN_00492550	0040406B	thunk_FUN_00492550	1	0048775C	00486E20	FUN_00486e20	CALL 0x0040406b	pointer_setup	0048775A: MOV ECX,EBX	6	0	0	control_flow_boundary
 00492550	FUN_00492550	0040406B	thunk_FUN_00492550	1	00487DE5	00486E20	FUN_00486e20	CALL 0x0040406b	pointer_setup	00487DE3: MOV ECX,EBX	6	0	0	control_flow_boundary
-00493050	FUN_00493050	00493050	FUN_00493050	0	00401681	00401681	thunk_FUN_00493050	JMP 0x00493050	no_ecx_evidence		0	0	0	caller_start
 00493110	FUN_00493110	00493110	FUN_00493110	0	00402892	00402892	thunk_FUN_00493110	JMP 0x00493110	no_ecx_evidence		0	0	0	caller_start
 004934B0	FUN_004934b0	004037B5	thunk_FUN_004934b0	1	00478846	00478640	STBoatC::Recharge	CALL 0x004037b5	pointer_setup	00478844: MOV ECX,ESI	4	0	0	control_flow_boundary
 004934B0	FUN_004934b0	004037B5	thunk_FUN_004934b0	1	00478985	00478640	STBoatC::Recharge	CALL 0x004037b5	pointer_setup	00478983: MOV ECX,ESI	4	0	0	control_flow_boundary

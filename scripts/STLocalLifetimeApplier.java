@@ -218,6 +218,26 @@ public class STLocalLifetimeApplier extends GhidraScript {
                             }
                         }
                         if (symbol == null && unt(row.get("anchor_kind"))
+                                .equals("call_return") && unt(row.get(
+                                    "anchor_source")).equals(
+                                        "USE_SITE_OVERRIDE")) {
+                            Variable durable = uniquePersistentCallResultVariable(
+                                function, row);
+                            Object attached = durable == null ? null :
+                                attachedHighVariable(highFunction, durable,
+                                    durable.getDataType());
+                            if (attached != null) {
+                                high = attached;
+                                symbol = high.getClass().getMethod("getSymbol")
+                                    .invoke(high);
+                                Object representative = high.getClass()
+                                    .getMethod("getRepresentative").invoke(high);
+                                if (representative != null)
+                                    anchor = new Anchor(anchor.op,
+                                        representative, anchor.kind);
+                            }
+                        }
+                        if (symbol == null && unt(row.get("anchor_kind"))
                                 .startsWith("receiver_history_")) {
                             Object durable = receiverHistoryVarnode(
                                 highFunction, function, row);
@@ -1076,6 +1096,35 @@ public class STLocalLifetimeApplier extends GhidraScript {
         return result;
     }
 
+    /**
+     * Locate the durable script-owned local behind a symbol-less CALL output.
+     * The exact name, current type, and same-address lifetime marker identify
+     * storage only; anchoredType() has already independently revalidated the
+     * address-local return ABI before this method is consulted.
+     */
+    private Variable uniquePersistentCallResultVariable(Function function,
+            Map<String, String> row) {
+        if (function == null) return null;
+        String address = unt(row.get("anchor_address"));
+        Variable result = null;
+        for (Variable candidate : function.getLocalVariables()) {
+            if (!candidate.getName().equals(unt(row.get("original_name"))) ||
+                    candidate.getSource() == SourceType.USER_DEFINED ||
+                    candidate.getSource() == SourceType.IMPORTED ||
+                    !typeSpecification(candidate.getDataType()).equals(
+                        unt(row.get("expected_current_type")))) continue;
+            String comment = text(candidate.getComment());
+            boolean marker = java.util.Arrays.stream(comment.split("\\R"))
+                .anyMatch(line -> line.contains(MARKER) &&
+                    line.toUpperCase(Locale.ROOT).contains(
+                        (" at " + address + ";").toUpperCase(Locale.ROOT)));
+            if (!marker) continue;
+            if (result != null) return null;
+            result = candidate;
+        }
+        return result;
+    }
+
     /** Remove only the retired receiver marker after its wrongly attached
      * EAX lifetime has been restored.  All other provenance remains intact. */
     private void removeMisattachedReceiverMarker(Variable variable,
@@ -1168,7 +1217,9 @@ public class STLocalLifetimeApplier extends GhidraScript {
         String comment = text(currentProgram.getListing()
             .getComment(CommentType.EOL, call));
         if (!comment.contains(
-                "[STUtilityFunctionApplier] heterogeneous_payload_consumer_view"))
+                "[STUtilityFunctionApplier] heterogeneous_payload_consumer_view") &&
+                !comment.contains(
+                    "[STCallResultViewApplier] readability_validated"))
             return null;
         Namespace root = HighFunction.findOverrideSpace(caller);
         if (root != null) {
@@ -2066,8 +2117,17 @@ public class STLocalLifetimeApplier extends GhidraScript {
             unt(row.get("anchor_address")) + "; type=" +
             unt(row.get("proposed_type"));
         String old = text(variable.getComment());
-        if (!old.contains(marker))
-            variable.setComment(old.isBlank() ? marker : old + "\n" + marker);
+        String anchor = " at " + unt(row.get("anchor_address")) + "; type=";
+        StringBuilder retained = new StringBuilder();
+        for (String line : old.split("\\R", -1)) {
+            if (line.contains(MARKER) && line.contains(anchor)) continue;
+            if (line.isBlank()) continue;
+            if (retained.length() > 0) retained.append('\n');
+            retained.append(line);
+        }
+        if (retained.length() > 0) retained.append('\n');
+        retained.append(marker);
+        variable.setComment(retained.toString());
     }
 
     private SourceType symbolSource(Object highSymbol) {

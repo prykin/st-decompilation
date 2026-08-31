@@ -14,7 +14,7 @@ undefined4 __fastcall st::fn_004ECEA0(RecoveredRecordView_004D9C80_63C53606 *par
 {
   STT3DSprC *pSVar1;
   int iVar3;
-  int iVar2;
+  STT3DSprC *iVar2;
   int uVar3;
   uint uVar4;
 
@@ -83,10 +83,10 @@ undefined4 __fastcall st::fn_004ECEA0(RecoveredRecordView_004D9C80_63C53606 *par
     st::fn_00402A90((STT3DSprC *)param_1->field_05FF);
     uVar4 = 10;
     /* ST_CALLSITE[004ECFFC]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC */
-    iVar2 = (int)st::fn_004052CC(reinterpret_cast<STT3DSprC *>(&param_1->field_0x1d5));
+    iVar2 = st::pointer_boundary_cast<STT3DSprC *>(st::fn_004052CC(reinterpret_cast<STT3DSprC *>(&param_1->field_0x1d5)));
 
     uVar3 = st::fn_004052CC((STT3DSprC *)param_1->field_05FF);
-    st::fn_006EA340(param_1->field_0211,uVar3,iVar2,uVar4);
+    st::fn_006EA340(param_1->field_0211,uVar3,(int)iVar2,uVar4);
 
     st::fn_00401EBA((void *)param_1->field_05FF,0xe,0,0,'\0');
     /* ST_CALLSITE[004ED032]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */

@@ -98,7 +98,8 @@ STAllPlayersC::GetMessage::override::prt_430b98_53a56e69:
 00430BB7  6A 00                     PUSH 0x0
 00430BB9  68 D8 67 7A 00            PUSH 0x7a67d8
 00430BBE  50                        PUSH EAX
-00430BBF  E8 CC 21 2C 00            CALL 0x006f2d90
+STAllPlayersC::GetMessage::override::prt_430bbf_8e1779b8:
+00430BBF  E8 CC 21 2C 00            CALL 0x006f2d90  ; [STUtilityFunctionApplier] heterogeneous_payload_consumer_view; target=006F2D90; signature=__cdecl;pointer:/ushort;pointer:/cMf32;pointer:/char;/byte;/int
 00430BC4  83 C4 10                  ADD ESP,0x10
 00430BC7  89 45 F8                  MOV dword ptr [EBP + -0x8],EAX
 LAB_00430bca:
@@ -644,7 +645,8 @@ LAB_004311a5:
 004311C3  57                        PUSH EDI
 004311C4  68 D8 67 7A 00            PUSH 0x7a67d8
 004311C9  50                        PUSH EAX
-004311CA  E8 C1 1B 2C 00            CALL 0x006f2d90
+STAllPlayersC::GetMessage::override::prt_4311ca_8e1779b8:
+004311CA  E8 C1 1B 2C 00            CALL 0x006f2d90  ; [STUtilityFunctionApplier] heterogeneous_payload_consumer_view; target=006F2D90; signature=__cdecl;pointer:/ushort;pointer:/cMf32;pointer:/char;/byte;/int
 004311CF  83 C4 10                  ADD ESP,0x10
 004311D2  3B C7                     CMP EAX,EDI
 004311D4  89 45 F8                  MOV dword ptr [EBP + -0x8],EAX

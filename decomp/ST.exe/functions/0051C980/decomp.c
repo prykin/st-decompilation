@@ -19,14 +19,14 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
   char *pcVar7_mg2;
   char *pcVar7_mg1;
   uint *puVar7;
-  uint uVar15;
+  int uVar15;
   BITMAPINFO *pBVar9_mg1;
   char *pcVar7_mg5;
   char *pcVar7_mg4;
   int uVar14;
   char *pcVar7_mg7;
   char *pcVar7_mg8;
-  uint local_EAX_1393;
+  int local_EAX_1393;
   BITMAPINFO *pBVar9_mg3;
   char *pcVar7_mgA;
   char *pcVar7_mgB;

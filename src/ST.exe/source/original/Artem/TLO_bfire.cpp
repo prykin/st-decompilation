@@ -169,9 +169,9 @@ int __thiscall st::fn_004C3570(TLOBaseTy *this)
                             (g_playSystem_00802A38,
                              (RecoveredRecordView_005EFAE0_855D930D *)puVar8[2],reinterpret_cast<int *>((puVar8 + 3)));
                 }
-                puVar8[8] = (int)((AnonPointee_TLOBaseTy_0291 *)puVar8[3])->field_0041;
-                puVar8[9] = (int)((AnonPointee_TLOBaseTy_0291 *)puVar8[3])->field_0043;
-                puVar8[10] = (int)((AnonPointee_TLOBaseTy_0291 *)puVar8[3])->field_0045;
+                puVar8[8] = st::storage_bit_cast<int>(static_cast<uint32_t>(((AnonPointee_TLOBaseTy_0291 *)puVar8[3])->field_0041));
+                puVar8[9] = st::storage_bit_cast<int>(static_cast<uint32_t>(((AnonPointee_TLOBaseTy_0291 *)puVar8[3])->field_0043));
+                puVar8[10] = st::storage_bit_cast<int>(static_cast<uint32_t>(((AnonPointee_TLOBaseTy_0291 *)puVar8[3])->field_0045));
               }
               puVar8[6] = 0;
               if (*(int *)(&DAT_007915f0 + ((int)piVar7 + this_00->field_0235 * 2) * 4) == 0) {
@@ -378,7 +378,7 @@ int __thiscall st::fn_004C3C00(TLOBaseTy *this,int param_1,int param_2)
                         iVar15 = local_18;
                       }
                       if (((((TLOBaseTy *)local_8 != nullptr) &&
-                           (st::machine_word_boundary_cast<uint>((TLOBaseTy *)local_8) != st::machine_word_boundary_cast<uint>(this_00))) &&
+                           ((TLOBaseTy *)local_8 != this_00)) &&
                           /* ST_CALLSITE[004C3DF8]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/dword;pointer:/TLOBaseTy */
                           (dVar7 = (*((TLOBaseTy *)local_8)->vtable->vfunc_F8)((TLOBaseTy *)local_8)
                           , iVar15 = local_18, iVar17 = local_28, dVar7 != 0)) &&

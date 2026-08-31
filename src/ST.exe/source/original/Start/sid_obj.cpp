@@ -427,6 +427,8 @@ void __thiscall st::fn_005D8450(SIDTy *this)
   SIDTy *this_00;
   int iVar3;
   HANDLE pvVar3;
+  int uVar4_mg6;
+  int uVar4_mg7;
   int iVar6;
   uint uVar4;
   uint uVar5;
@@ -663,11 +665,11 @@ void __thiscall st::fn_005D8450(SIDTy *this)
   (*this_00->field_000C->vtable->CreateObject)
             (reinterpret_cast<SystemClassTy *>(this_00->field_000C),6,&this_00->field_1AF5,nullptr,st::machine_word_boundary_cast<undefined4>(local_db0),1);
   /* ST_CALLSITE[005D8831]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
-  uVar4 = st::fn_0040361B(reinterpret_cast<MMObjTy *>(this_00),1,1,0x1e8,0x228,0x55,0x12,0x6900,0x6980);
-  this_00->field_1AF9[0] = uVar4;
+  uVar4_mg6 = st::fn_0040361B(reinterpret_cast<MMObjTy *>(this_00),1,1,0x1e8,0x228,0x55,0x12,0x6900,0x6980);
+  this_00->field_1AF9[0] = uVar4_mg6;
   /* ST_CALLSITE[005D8858]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
-  uVar4 = st::fn_0040361B(reinterpret_cast<MMObjTy *>(this_00),1,1,0x1e8,0x23b,0x55,0x12,0x6901,0x6981);
-  this_00->field_1AF9[1] = uVar4;
+  uVar4_mg7 = st::fn_0040361B(reinterpret_cast<MMObjTy *>(this_00),1,1,0x1e8,0x23b,0x55,0x12,0x6901,0x6981);
+  this_00->field_1AF9[1] = uVar4_mg7;
   /* ST_CALLSITE[005D8865]: CALL 0x0040392c; direct=0040392C SIDTy::PrepFiles */
   st::fn_0040392C(this_00);
 

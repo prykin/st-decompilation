@@ -253,7 +253,7 @@ LAB_0058dc72:
             else if (this_00->field_0273 == 0) {
               this_00->field_027B = 0x10e;
             }
-            else if (local_1c == (undefined4 *)(g_worldGrid.sizeX + -1)) {
+            else if (st::machine_word_boundary_cast<uint>(local_1c) == st::machine_word_boundary_cast<uint>((undefined4 *)(g_worldGrid.sizeX + -1))) {
               this_00->field_027B = 0xb4;
             }
             else if (this_00->field_0273 == g_worldGrid.sizeY + -1) {

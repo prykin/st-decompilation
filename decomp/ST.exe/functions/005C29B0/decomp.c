@@ -281,10 +281,8 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
 
     uVar22 = FUN_006b4fe0((ushort *)this_01->field_005D);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    pRVar10 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-              FUN_006b50c0(0xf9,0x123,(uint)*(ushort *)(this_01->field_005D + 0xe),uVar22,
-                           (undefined4 *)puVar29,iVar32);
+    pRVar10 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(FUN_006b50c0(0xf9,0x123,(uint)*(ushort *)(this_01->field_005D + 0xe),uVar22,
+                           (undefined4 *)puVar29,iVar32));
     this_01->field_1C67 = (AnonPointee_SettMapMTy_1C67 *)pRVar10;
     uVar17 = *(uint *)&pRVar10[1].field_0x4;
     if (uVar17 == 0) {
@@ -561,10 +559,8 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
 
     local_EAX_2693 = FUN_006b4fe0((ushort *)this_01->field_005D);
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-    pRVar10 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-              FUN_006b50c0(0x1e5,0x14,(uint)*(ushort *)(this_01->field_005D + 0xe),local_EAX_2693,
-                           (undefined4 *)puVar29,iVar32);
+    pRVar10 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(FUN_006b50c0(0x1e5,0x14,(uint)*(ushort *)(this_01->field_005D + 0xe),local_EAX_2693,
+                           (undefined4 *)puVar29,iVar32));
     *ppuVar23 = (ushort *)pRVar10;
     local_14 = *(HANDLE *)&pRVar10[1].field_0x4;
     if (local_14 == (HANDLE)0x0) {
@@ -596,10 +592,8 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
 
   local_EAX_2876 = FUN_006b4fe0((ushort *)this_01->field_005D);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
-  pRVar10 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-            FUN_006b50c0(0x205,0x8c,(uint)*(ushort *)(this_01->field_005D + 0xe),local_EAX_2876,
-                         (undefined4 *)puVar29,iVar32);
+  pRVar10 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(FUN_006b50c0(0x205,0x8c,(uint)*(ushort *)(this_01->field_005D + 0xe),local_EAX_2876,
+                         (undefined4 *)puVar29,iVar32));
   this_01->field_1E1E = (AnonPointee_SettMapMTy_1E1E *)pRVar10;
   uVar17 = *(uint *)&pRVar10[1].field_0x4;
   if (uVar17 == 0) {
@@ -851,9 +845,8 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       cVar28 = '\x01';
       bVar27 = 0x10;
       iVar32 = 1;
-      pRVar14 = (RecoveredRecord_005AACB0_2533FD69 *)
-                /* ST_CALLSITE[005C3B62]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; source view only; no Ghidra override */
-                Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121);
+      pRVar14 = /* ST_CALLSITE[005C3B62]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; source view only; no Ghidra override */
+      STPointerBoundaryCast<RecoveredRecord_005AACB0_2533FD69 *>(Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x121));
       /* ST_CALLSITE[005C3B77]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       uVar20 = HoloTy::Init(this_01->field_21EC,CASE_4,10,0xb4,pRVar14,iVar32,bVar27,cVar28,uVar17);
       if (uVar20 != 0) {
@@ -917,9 +910,8 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       cVar28 = '\x01';
       bVar27 = 0x10;
       iVar32 = 1;
-      pRVar14 = (RecoveredRecord_005AACB0_2533FD69 *)
-                /* ST_CALLSITE[005C3D02]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; source view only; no Ghidra override */
-                Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x112,0x149,0x205,0x8c);
+      pRVar14 = /* ST_CALLSITE[005C3D02]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; source view only; no Ghidra override */
+      STPointerBoundaryCast<RecoveredRecord_005AACB0_2533FD69 *>(Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x112,0x149,0x205,0x8c));
       /* ST_CALLSITE[005C3D1A]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       local_EAX_4970 =
            HoloTy::Init(this_01->field_21F4,CASE_2,0x112,0x149,pRVar14,iVar32,bVar27,cVar28,uVar17);
@@ -990,9 +982,8 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       cVar28 = '\x01';
       bVar27 = 0x10;
       iVar32 = 1;
-      pRVar14 = (RecoveredRecord_005AACB0_2533FD69 *)
-                /* ST_CALLSITE[005C3E4F]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; source view only; no Ghidra override */
-                Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x112,0x38,0x205,0x104);
+      pRVar14 = /* ST_CALLSITE[005C3E4F]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; source view only; no Ghidra override */
+      STPointerBoundaryCast<RecoveredRecord_005AACB0_2533FD69 *>(Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,0x112,0x38,0x205,0x104));
       /* ST_CALLSITE[005C3E64]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       local_EAX_5300 =
            HoloTy::Init(this_01->field_21E8,CASE_2,0x112,0x38,pRVar14,iVar32,bVar27,cVar28,uVar17);
@@ -1060,9 +1051,8 @@ void __thiscall SettMapMTy::sub_005C29B0(SettMapMTy *this,char param_1)
       cVar28 = '\x01';
       bVar27 = 0x10;
       iVar32 = 1;
-      pRVar14 = (RecoveredRecord_005AACB0_2533FD69 *)
-                /* ST_CALLSITE[005C404E]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; source view only; no Ghidra override */
-                Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x123);
+      pRVar14 = /* ST_CALLSITE[005C404E]: CALL 0x006bf9f0; direct=006BF9F0 Library::DKW::DDX::FUN_006bf9f0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_005AACB0_2533FD69; source view only; no Ghidra override */
+      STPointerBoundaryCast<RecoveredRecord_005AACB0_2533FD69 *>(Library::DKW::DDX::FUN_006bf9f0((int *)g_ddxContext_008075A8,10,0xb4,0xf9,0x123));
       /* ST_CALLSITE[005C4063]: CALL 0x0040459d; direct=0040459D HoloTy::Init */
       local_EAX_5811 =
            HoloTy::Init(this_01->field_21F0,CASE_4,10,0xb4,pRVar14,iVar32,bVar27,cVar28,uVar17);

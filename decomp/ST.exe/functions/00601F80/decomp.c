@@ -88,7 +88,7 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
                 return 0;
               }
               /* ST_CALLSITE[006020A9]: CALL 0x004015dc; direct=004015DC STAllPlayersC::RegisterBlot */
-              iVar5 = STAllPlayersC::RegisterBlot(g_allPlayers_007FA174,0xffff,this_00);
+              iVar5 = STAllPlayersC::RegisterBlot(0xffff,this_00);
               if (iVar5 == 0) {
                 this_00->field_03A5 = 1;
                 g_currentExceptionFrame = local_54.previous;
@@ -113,14 +113,12 @@ int __thiscall STDestC::GetMessage(STDestC *this,STMessage *message)
               }
             }
             else if ((this_00->field_03A7 != 0) && (this_00->field_036E != CASE_0)) {
-              /* ST_CALLSITE[0060212E]: CALL 0x00402cf2; direct=00402CF2 STDestC::sub_00602BE0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
+              /* ST_CALLSITE[0060212E]: CALL 0x00402cf2; direct=00402CF2 STDestC::sub_00602BE0 */
               sub_00602BE0(this_00);
             }
             if (((g_allPlayers_007FA174 != nullptr) && (this_00->field_03A5 != '\0'))
                /* ST_CALLSITE[00602155]: CALL 0x004015dc; direct=004015DC STAllPlayersC::RegisterBlot */
-               && (iVar5 = STAllPlayersC::RegisterBlot
-                                     (g_allPlayers_007FA174,this_00->field_0032,this_00), iVar5 != 0
-                  )) {
+               && (iVar5 = STAllPlayersC::RegisterBlot(this_00->field_0032,this_00), iVar5 != 0)) {
               /* ST_CALLSITE[00602164]: CALL 0x00401bf4; direct=00401BF4 STDestC::sub_00602440 */
               sub_00602440(this_00);
               g_currentExceptionFrame = local_54.previous;

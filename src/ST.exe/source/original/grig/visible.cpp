@@ -577,7 +577,7 @@ int __thiscall st::fn_00558840(VisibleClassTy *this,STMessage *message)
   VisibleClassTy *local_14;
   byte *local_10;
   uint local_c;
-  ushort *local_8;
+  Visible *local_8;
 
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
@@ -641,17 +641,17 @@ int __thiscall st::fn_00558840(VisibleClassTy *this,STMessage *message)
       else if (SVar1 == MESS_ID_CREATE) {
         local_8 = nullptr;
         if (g_cMf32_00806754 != nullptr) {
-          /* ST_CALLSITE[005588FC]: CALL 0x006f2d90; direct=006F2D90 Library::Ourlib::MFAOBJ::mfAObjLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/Visible; source view only; no Ghidra override */
-          local_8 = st::fn_006F2D90
-                              (g_cMf32_00806754,PTR_s_VISIBILITY_0079aec4,0,0);
+          /* ST_CALLSITE[005588FC]: CALL 0x006f2d90; direct=006F2D90 Library::Ourlib::MFAOBJ::mfAObjLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/Visible; signature=__cdecl;pointer:/Visible;pointer:/cMf32;pointer:/char;/byte;/int */
+          local_8 = st::pointer_boundary_cast<Visible *>(st::fn_006F2D90
+                              (g_cMf32_00806754,PTR_s_VISIBILITY_0079aec4,0,0));
         }
-        if ((local_8 == nullptr) || (*(int *)(local_8 + 10) == 0)) {
+        if ((local_8 == nullptr) || (*(int *)&local_8->field_0x14 == 0)) {
           /* ST_CALLSITE[0055891E]: CALL 0x00404a5c; direct=00404A5C VisibleClassTy::InitData */
           st::fn_00404A5C(this_00);
         }
         else {
           /* ST_CALLSITE[00558915]: CALL 0x004051f0; direct=004051F0 Visible::PrepareAfterSave */
-          st::fn_004051F0(reinterpret_cast<Visible *>(this_00),local_8);
+          st::fn_004051F0(reinterpret_cast<Visible *>(this_00),reinterpret_cast<ushort *>(local_8));
         }
         /* ST_CALLSITE[00558925]: CALL 0x00405bff; direct=00405BFF VisibleClassTy::Init */
         st::fn_00405BFF(this_00);

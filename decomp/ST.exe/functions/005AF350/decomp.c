@@ -14,10 +14,11 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
   HoloTy *pHVar3;
   RecoveredRecord_005AACB0_2533FD69 *pRVar4;
   uint uVar10;
-  uint *puVar5;
+  uint *puVar5_mg1;
   uint local_EAX_970;
   uint local_EAX_1506;
   int iVar7;
+  uint *puVar5;
   int iVar6;
   byte bVar7;
   char cVar8;
@@ -156,8 +157,8 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
       FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
     }
     /* ST_CALLSITE[005AF65C]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint */
-    puVar5 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
-    g_startSystem_0081176C->field_0548 = puVar5;
+    puVar5_mg1 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
+    g_startSystem_0081176C->field_0548 = puVar5_mg1;
     if (this_00->field_20BC != nullptr) {
       /* ST_CALLSITE[005AF677]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(this_00->field_20BC);

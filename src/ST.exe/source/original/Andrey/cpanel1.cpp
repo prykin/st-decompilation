@@ -293,7 +293,7 @@ void __thiscall st::fn_004FE960(CPanelTy *this)
   CPanelTy *this_00;
   int iVar3;
   char *pcVar3;
-  uint uVar5;
+  int uVar5;
   BITMAPINFO *pBVar4;
   uint uVar6;
   int iVar8;
@@ -690,7 +690,7 @@ void __thiscall st::fn_004FF380(CPanelTy *this)
   char *pcVar6_mg2;
   int *piVar6;
   int *piVar7;
-  uint uVar7;
+  int uVar7;
   BITMAPINFO *pBVar8;
   uint uVar9;
   int iVar10;

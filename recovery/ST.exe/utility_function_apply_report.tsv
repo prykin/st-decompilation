@@ -14,6 +14,7 @@ function_address	semantic_id	status	detail
 006B0C70	darray_remove_at	unchanged	desired name and prototype already present; consumer_call_views=0
 006B1190	darray_get_next	unchanged	desired name and prototype already present; consumer_call_views=0
 006CEA60	copy_rows	unchanged	desired name and prototype already present; consumer_call_views=0
+006F2D90	heterogeneous_payload_loader	unchanged	desired name and prototype already present; consumer_call_views=0
 006AAC10	memory_allocate_zeroed	unchanged	desired name and prototype already present; consumer_call_views=0
 006AAC70	memory_allocate	unchanged	desired name and prototype already present; consumer_call_views=0
 006ACF50	memory_reallocate	unchanged	desired name and prototype already present; consumer_call_views=0

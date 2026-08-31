@@ -274,7 +274,7 @@ short st::fn_00435B90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3
         param_4_after_write = (int *)((int)param_4_after_write + 1);
       } while ((int)param_4_after_write < (int)dVar8);
     }
-    bVar1 = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)this)[9]));
+    bVar1 = ((byte *)this)[9];
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
     param_3 = STReplaceLowByte((uint32_t)(param_3), (uint8_t)(bVar1));
     if (DAT_00808a8f == '\0') {
@@ -663,7 +663,7 @@ switchD_00435c5c_caseD_1:
           /* ST_CALLSITE[00436421]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar4 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          if (st::machine_word_boundary_cast<uint>((STGameObjC *)this) == st::machine_word_boundary_cast<uint>(pSVar4)) {
+          if ((STGameObjC *)this == pSVar4) {
             return 0;
           }
           /* ST_CALLSITE[0043643D]: CALL dword ptr [EDX + 0x28] */
@@ -688,7 +688,7 @@ switchD_00435c5c_caseD_1:
           /* ST_CALLSITE[0043649A]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar4 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          if (st::machine_word_boundary_cast<uint>((STGameObjC *)this) == st::machine_word_boundary_cast<uint>(pSVar4)) {
+          if ((STGameObjC *)this == pSVar4) {
             return 0;
           }
           /* ST_CALLSITE[004364B6]: CALL dword ptr [EDX + 0x28] */
@@ -782,7 +782,7 @@ switchD_00435c5c_caseD_1:
           /* ST_CALLSITE[00436397]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar4 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          if (st::machine_word_boundary_cast<uint>((STGameObjC *)this) == st::machine_word_boundary_cast<uint>(pSVar4)) {
+          if ((STGameObjC *)this == pSVar4) {
             return 0;
           }
           /* ST_CALLSITE[004363B3]: CALL dword ptr [EDX + 0x28] */
@@ -807,7 +807,7 @@ switchD_00435c5c_caseD_1:
           /* ST_CALLSITE[00436517]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
           pSVar4 = st::fn_004028BA(in_ECX,objPtr,(ushort)param_1,CASE_1);
-          if (st::machine_word_boundary_cast<uint>((STGameObjC *)this) == st::machine_word_boundary_cast<uint>(pSVar4)) {
+          if ((STGameObjC *)this == pSVar4) {
             return 0;
           }
           /* ST_CALLSITE[00436533]: CALL dword ptr [EDX + 0x28] */
@@ -1000,6 +1000,8 @@ st::fn_0043E9A0(char param_1,Global_sub_0043E9A0_param_2Enum param_2,short param
             short param_5,short param_6,short param_7,short param_8,int param_9,char param_10)
 
 {
+  int param_3_after_write;
+
   int *piVar1;
   int iVar2;
   STWorldCell *pSVar3;
@@ -1021,7 +1023,7 @@ st::fn_0043E9A0(char param_1,Global_sub_0043E9A0_param_2Enum param_2,short param
   iVar2 = (int)param_5;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   auto _param_5 = param_8 + -1 + iVar2;
-  auto param_3_after_write = 0; /* compiler stack-slot lifetime split */
+  param_3_after_write = 0; /* compiler stack-slot lifetime split */
   if (local_8 < 0) {
     local_8 = 0;
   }
@@ -1065,7 +1067,7 @@ st::fn_0043E9A0(char param_1,Global_sub_0043E9A0_param_2Enum param_2,short param
               if ((((piVar1 != nullptr) && (piVar1[9] == (int)param_1)) && (piVar1 != nullptr)
                   /* ST_CALLSITE[0043EAC1]: CALL dword ptr [EDX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
                   ) && ((pSVar3 = (STWorldCell *)STStructuralVirtualCall<undefined4>(piVar1, 0x2C),
-                        st::machine_word_boundary_cast<uint>(pSVar3) == st::machine_word_boundary_cast<uint>((STWorldCell *)param_2) &&
+                        pSVar3 == (STWorldCell *)param_2 &&
                         /* ST_CALLSITE[0043EACD]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
                         (pSVar3 = (STWorldCell *)STStructuralVirtualCall<undefined4>(piVar1, 0xF8),
                         pSVar3 != nullptr)))) {
@@ -1288,6 +1290,8 @@ st::fn_0043F380(char param_1,byte *param_2,short param_3,short param_4,short par
             short param_7,short param_8)
 
 {
+  int param_6_after_write;
+
   byte bVar1;
   int *piVar2;
   int iVar3;
@@ -1313,7 +1317,7 @@ st::fn_0043F380(char param_1,byte *param_2,short param_3,short param_4,short par
   iVar3 = (int)param_5;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   auto _param_5 = param_8 + -1 + iVar3;
-  auto param_6_after_write = 0; /* compiler stack-slot lifetime split */
+  param_6_after_write = 0; /* compiler stack-slot lifetime split */
   if (local_8 < 0) {
     local_8 = 0;
   }
@@ -1582,7 +1586,7 @@ uint * st::fn_0043F7B0(byte param_1,int *param_2,uint *param_3,int param_4,int p
                  ((((iVar7 = piVar3[8], param_6 = piVar3, iVar7 == 0x14 || (iVar7 == 1000)) ||
                    (iVar7 == 0x3e9)) && (param_2 != piVar3)))) {
                 if (param_9 == 0) {
-                  bVar1 = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)piVar3)[9]));
+                  bVar1 = ((byte *)piVar3)[9];
                   if (DAT_00808a8f == '\0') {
                     if (bVar1 == bVar5) {
 LAB_0043f9bd:
@@ -1629,7 +1633,7 @@ LAB_0043f9fa:
               if (((piVar3 != nullptr) && (param_6 = piVar3, piVar3[8] == 0x1ae)) &&
                  (param_2 != piVar3)) {
                 if (param_9 == 0) {
-                  bVar1 = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)piVar3)[9]));
+                  bVar1 = ((byte *)piVar3)[9];
                   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
                   param_8 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(param_8)), (uint8_t)(bVar1));
                   if (DAT_00808a8f == '\0') {

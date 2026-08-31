@@ -53,6 +53,7 @@ undefined4 __thiscall st::fn_004C6210(TLOBldMark *this,int param_1,int *param_2)
   STT3DSprC *pSVar1;
   int iVar2;
   uint uVar3;
+  int uVar3_mg1;
 
   this->field_0018 = 0;
   this->field_001C = param_1;
@@ -102,9 +103,9 @@ undefined4 __thiscall st::fn_004C6210(TLOBldMark *this,int param_1,int *param_2)
   /* ST_CALLSITE[004C6357]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   st::fn_00401064(this->field_002C,'\0',*(uint *)(&DAT_00790f84 + this->field_001C * 4));
 
-  uVar3 = st::fn_006E51B0(this->field_0010);
+  uVar3_mg1 = st::fn_006E51B0(this->field_0010);
   /* ST_CALLSITE[004C636A]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
-  st::fn_00405240(this->field_002C,0,uVar3);
+  st::fn_00405240(this->field_002C,0,uVar3_mg1);
   /* ST_CALLSITE[004C6372]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
   st::fn_00403D0F(this->field_002C);
   this->field_0024 = 0;
@@ -134,10 +135,12 @@ st::fn_004C6440
   float fVar3;
   VisibleClassTy *pVVar4;
   int iVar5;
+  int uVar6_mg2;
+  int uVar6_mg1;
   uint uVar6;
-  uint uVar7;
-  int *piVar8;
-  int iVar9;
+  int *piVar7;
+  int iVar8;
+  uint uVar9;
   longlong lVar10;
   float fVar11;
   int local_34;
@@ -157,20 +160,20 @@ st::fn_004C6440
   local_c = 3;
   local_20 = g_centeredOffsets5 + 3;
   while( true ) {
-    piVar8 = local_20;
+    piVar7 = local_20;
 
     st::fn_006E1C20
               (g_sT3DSMAPContext_00807598,param_1,param_2,(float)local_c * _DAT_00790504,&local_14,
                &local_18);
     if (local_14 < _DAT_0079034c) {
       lVar10 = st::fn_0072E288();
-      iVar9 = (short)lVar10 + -1;
+      iVar8 = (short)lVar10 + -1;
     }
     else {
       lVar10 = st::fn_0072E288();
-      iVar9 = (short)lVar10;
+      iVar8 = (short)lVar10;
     }
-    local_10 = iVar9;
+    local_10 = iVar8;
     if (local_18 < _DAT_0079034c) {
       lVar10 = st::fn_0072E288();
       local_8 = (short)lVar10 + -1;
@@ -180,27 +183,27 @@ st::fn_004C6440
       local_8 = (short)lVar10;
     }
     pVVar4 = g_visibleClass_00802A88;
-    if (((((-1 < iVar9) && (iVar9 < g_worldGrid.sizeX)) && (-1 < local_8)) &&
+    if (((((-1 < iVar8) && (iVar8 < g_worldGrid.sizeX)) && (-1 < local_8)) &&
         (local_8 < g_worldGrid.sizeY)) &&
        ((((((g_visibleClass_00802A88 == nullptr || (DAT_0080874d == 0xff)) ||
            ((g_visibleClass_00802A88->field_00F8 == 0 ||
             /* ST_CALLSITE[004C6550]: CALL 0x00403f53; direct=00403F53 VisibleClassTy::sub_00558C00 */
             ((st::fn_00403F53
                         (g_visibleClass_00802A88,g_visibleClass_00802A88->field_010C,local_10,
-                         local_8,&local_30,&local_34), (int)piVar8 < 0x79aed0 ||
-             (0x79aee3 < (int)piVar8)))))) ||
+                         local_8,&local_30,&local_34), (int)piVar7 < 0x79aed0 ||
+             (0x79aee3 < (int)piVar7)))))) ||
           ((local_30 < 0 ||
            (((pVVar4->field_0030 <= local_30 ||
-             (iVar9 = *piVar8 + local_34, piVar8 = local_20, iVar9 < 0)) ||
-            (pVVar4->field_0034 <= iVar9)))))) ||
+             (iVar8 = *piVar7 + local_34, piVar7 = local_20, iVar8 < 0)) ||
+            (pVVar4->field_0034 <= iVar8)))))) ||
          ((pVVar4->field_004C == nullptr ||
-          (pVVar4->field_004C[local_30 + iVar9 * pVVar4->field_0030] != 0)))) &&
-        (iVar9 = local_10,
+          (pVVar4->field_004C[local_30 + iVar8 * pVVar4->field_0030] != 0)))) &&
+        (iVar8 = local_10,
 
         st::fn_00402829((short)local_10,local_8,local_c,this->field_001C,(uint)DAT_0080874d,
                            &local_2c,&local_24,&local_1c,0,this->field_0020), local_24 != 0))))
     break;
-    local_20 = piVar8 + -1;
+    local_20 = piVar7 + -1;
     local_c = local_c + -1;
     if ((int)local_20 < 0x79aed0) {
 cf_common_exit_004C6899:
@@ -216,49 +219,49 @@ cf_common_exit_004C6899:
   local_28 = 1;
   if (local_1c == 0) {
     if (this->field_0028 == 0) {
-      iVar9 = this->field_001C;
-      if ((((iVar9 != 0x39) && (iVar9 != 0x4f)) && ((iVar9 != 0x4d && (iVar9 != 0x5e)))) &&
-         (((((iVar9 < 0x54 || (0x5a < iVar9)) && (iVar9 != 0x61)) &&
-           ((iVar9 != 0x65 && (iVar9 != 0x43)))) && (iVar9 != 0x73)))) {
+      iVar8 = this->field_001C;
+      if ((((iVar8 != 0x39) && (iVar8 != 0x4f)) && ((iVar8 != 0x4d && (iVar8 != 0x5e)))) &&
+         (((((iVar8 < 0x54 || (0x5a < iVar8)) && (iVar8 != 0x61)) &&
+           ((iVar8 != 0x65 && (iVar8 != 0x43)))) && (iVar8 != 0x73)))) {
         local_28 = 0;
         goto cf_common_exit_004C6899;
       }
       /* ST_CALLSITE[004C66FA]: CALL 0x00404183; direct=00404183 STT3DSprC::LoadSequence */
-      iVar9 = st::fn_00404183
+      iVar8 = st::fn_00404183
                         (this->field_002C,0,PTR_0080678c,
                          (&PTR_s_tlo_bldmark_si_007ad25c)[(byte)this->field_0010->field_112E],
                          CASE_1D);
-      if (iVar9 != 0) {
+      if (iVar8 != 0) {
         st::fn_006A5E40
-                  (iVar9,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_BldMark.cpp"),
+                  (iVar8,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_BldMark.cpp"),
                    0x82);
       }
-      uVar6 = 0;
+      uVar9 = 0;
       cVar1 = this->field_0010->field_112E;
       if ((cVar1 == '\x01') || (cVar1 == '\x02')) {
-        iVar9 = this->field_001C;
-        if (iVar9 == 0x4f) {
-          uVar6 = 1;
+        iVar8 = this->field_001C;
+        if (iVar8 == 0x4f) {
+          uVar9 = 1;
         }
-        else if (iVar9 == 0x4d) {
-          uVar6 = 2;
+        else if (iVar8 == 0x4d) {
+          uVar9 = 2;
         }
-        else if (iVar9 == 0x43) {
-          uVar6 = 3;
+        else if (iVar8 == 0x43) {
+          uVar9 = 3;
         }
       }
       else {
-        uVar6 = *(uint *)(&DAT_00790f84 + this->field_001C * 4);
+        uVar9 = *(uint *)(&DAT_00790f84 + this->field_001C * 4);
       }
 
-      st::fn_00401EBA(this->field_002C,0,uVar6,uVar6,'\0');
+      st::fn_00401EBA(this->field_002C,0,uVar9,uVar9,'\0');
       /* ST_CALLSITE[004C676F]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
-      st::fn_00401064(this->field_002C,'\0',uVar6);
+      st::fn_00401064(this->field_002C,'\0',uVar9);
 
-      uVar6 = st::fn_006E51B0(this->field_0010);
+      uVar6_mg1 = st::fn_006E51B0(this->field_0010);
       /* ST_CALLSITE[004C6781]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
-      st::fn_00405240(this->field_002C,0,uVar6);
-      iVar9 = local_10;
+      st::fn_00405240(this->field_002C,0,uVar6_mg1);
+      iVar8 = local_10;
     }
   }
   else if (this->field_0024 == 0) {
@@ -277,9 +280,9 @@ cf_common_exit_004C6899:
     /* ST_CALLSITE[004C6678]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
     st::fn_00401064(this->field_002C,'\0',*(uint *)(&DAT_00790f84 + this->field_001C * 4));
 
-    uVar6 = st::fn_006E51B0(this->field_0010);
+    uVar6_mg2 = st::fn_006E51B0(this->field_0010);
     /* ST_CALLSITE[004C668A]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
-    st::fn_00405240(this->field_002C,0,uVar6);
+    st::fn_00405240(this->field_002C,0,uVar6_mg2);
   }
   st::fn_00402982(this->field_002C,0);
   if (*(int *)(&DAT_00791d68 + this->field_001C * 4) == 0) {
@@ -294,7 +297,7 @@ LAB_004c6848:
   else {
     if (*(int *)(&DAT_00791d68 + this->field_001C * 4) == 1) {
       fVar11 = (float)(local_8 + 1) * _DAT_007904f8;
-      fVar3 = (float)(iVar9 + 1) * _DAT_007904f8;
+      fVar3 = (float)(iVar8 + 1) * _DAT_007904f8;
       goto LAB_004c6848;
     }
 
@@ -304,9 +307,9 @@ LAB_004c6848:
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
   }
-  this->field_0030 = iVar9;
+  this->field_0030 = iVar8;
   if (param_3 != nullptr) {
-    *param_3 = iVar9;
+    *param_3 = iVar8;
   }
   this->field_0034 = local_8;
   if (param_3 != nullptr) {

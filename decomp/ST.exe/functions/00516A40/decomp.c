@@ -17,7 +17,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
   ushort uVar5;
   int local_EAX_70;
   UINT UVar6;
-  uint uVar12;
+  int uVar12;
   BITMAPINFO *pBVar7_mg0;
   char *pcVar8_mg0;
   int local_EAX_506;
@@ -42,10 +42,10 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
   char *pcVar8_mgF;
   char *pcVar8_mg10;
   uint *puVar7;
-  uint local_EAX_2640;
+  int local_EAX_2640;
   BITMAPINFO *pBVar7_mg3;
   char *pcVar8_mg12;
-  uint local_EAX_2991;
+  int local_EAX_2991;
   BITMAPINFO *pBVar7_mg5;
   int iVar15;
   uint uVar8;

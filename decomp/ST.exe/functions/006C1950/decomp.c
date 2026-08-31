@@ -8,7 +8,7 @@
 undefined4 FUN_006c1950(int param_1,byte param_2)
 
 {
-  if (DAT_008568b4 == 0) {
+  if (PTR_008568b4 == nullptr) {
     return 0xffffffcc;
   }
   /* ST_CALLSITE[006C196E]: CALL dword ptr [0x0085bb8c] */

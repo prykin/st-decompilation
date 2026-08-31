@@ -25,8 +25,10 @@ int FUN_00413050(int param_1,int param_2,int param_3,int param_4,int param_5)
     if (((byte)DAT_007f4d08 & 1) == 0) {
       param_1 = (int)PTR_007f4d50;
     }
+
     iVar2_mg1 = FUN_00413170(iVar1,param_2,param_3,param_4,&param_1,iVar2);
     if (iVar2_mg1 == 0) {
+
       FUN_0040eb90();
       return 0;
     }

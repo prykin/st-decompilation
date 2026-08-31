@@ -31,12 +31,14 @@ undefined4 __thiscall FUN_005fada0(void *this,int param_1,uint param_2,int param
     }
     uVar3 = 1;
     if (STField<char>(this,0x2b6) != '\0') {
+
       SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00416270::thunk_FUN_005faa10
                 (this,param_3);
       uVar1 = *(uint *)(STField<int>(this,0x2e6) + 4);
       if (-1 < (int)uVar1) {
         if (param_3 != 1) {
           param_2 = uVar1;
+
           uVar1 = thunk_FUN_004ad650((STT3DSprC *)((int)this + 0x1d5));
         }
         Library::Ourlib::ST3DSMAP::SprSetLevBefore(STField<void *>(this,0x211),uVar1,param_2);

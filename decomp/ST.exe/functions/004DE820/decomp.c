@@ -8,7 +8,7 @@ undefined4 __fastcall FUN_004de820(RecoveredRecordView_004DE820_F2971E79 *param_
   int iVar3;
   STGroupC *this;
   DArrayTy *array;
-  int iVar2;
+  STAllPlayersC *iVar2;
   STGameObjC *this_00;
   int local_EAX_212;
   int local_EAX_229;
@@ -30,8 +30,8 @@ undefined4 __fastcall FUN_004de820(RecoveredRecordView_004DE820_F2971E79 *param_
       (array = STGroupC::GetGroupContent(this), array != nullptr)) && (array->count != 0)) {
     array->iteratorIndex = 0;
     /* ST_CALLSITE[004DE8A2]: CALL 0x006b1190; direct=006B1190 DArrayGetNext; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STAllPlayersC; signature=__fastcall;pointer:/STAllPlayersC;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/byte */
-    iVar2 = (int)DArrayGetNext(array,(byte *)&local_8);
-    while (-1 < iVar2) {
+    iVar2 = DArrayGetNext(array,(byte *)&local_8);
+    while (-1 < (int)iVar2) {
       /* ST_CALLSITE[004DE8BF]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       this_00 = STAllPlayersC::GetObjPtr
                           (g_allPlayers_007FA174,param_1->field_0x24,(ushort)local_8,CASE_1);
@@ -58,7 +58,7 @@ undefined4 __fastcall FUN_004de820(RecoveredRecordView_004DE820_F2971E79 *param_
         bVar1 = true;
       }
 
-      iVar2 = DArrayGetNext(array,(byte *)&local_8);
+      iVar2 = STPointerBoundaryCast<STAllPlayersC *>(DArrayGetNext(array,(byte *)&local_8));
     }
     DArrayDestroy(array);
     if (bVar1) {

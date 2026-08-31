@@ -7,7 +7,7 @@ void FUN_006c1ba0(int param_1)
   int *piVar1;
   int *piVar2;
 
-  if (DAT_008568b4 != 0) {
+  if (PTR_008568b4 != nullptr) {
     /* ST_CALLSITE[006C1BB8]: CALL dword ptr [0x0085bb8c] */
     EnterCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);
     if ((-1 < param_1) && (param_1 < 0x20)) {
@@ -34,6 +34,7 @@ void FUN_006c1ba0(int param_1)
           while (piVar1 != nullptr) {
             if ((piVar1[0xe] < 0) || ((piVar1[0xd] <= param_1 && (param_1 <= piVar1[0xe])))) {
               piVar2 = (int *)*piVar1;
+
               FUN_006b98c0((int *)&DAT_00854ff4,piVar1);
               FUN_006a5e90((short *)piVar1);
               piVar1 = piVar2;

@@ -13,6 +13,7 @@ undefined4 __fastcall FUN_004dce00(RecoveredRecordView_004DCE00_6036DD04 *param_
   float fVar1;
   STT3DSprC *pSVar2;
   int iVar3;
+  STT3DSprC *pSVar2_mg2;
   int uVar4;
   uint uVar5;
   CHAR local_108 [256];
@@ -54,10 +55,10 @@ undefined4 __fastcall FUN_004dce00(RecoveredRecordView_004DCE00_6036DD04 *param_
     thunk_FUN_004ad5e0(param_1->field_05FF);
     uVar5 = 10;
     /* ST_CALLSITE[004DCEFB]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC */
-    pSVar2 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
+    pSVar2_mg2 = thunk_FUN_004ad650((STT3DSprC *)&param_1->field_0x1d5);
 
     uVar4 = thunk_FUN_004ad650(param_1->field_05FF);
-    FUN_006ea340(param_1->field_0211,uVar4,(int)pSVar2,uVar5);
+    FUN_006ea340(param_1->field_0211,uVar4,(int)pSVar2_mg2,uVar5);
     /* ST_CALLSITE[004DCF2D]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
     STT3DSprC::StartShow(param_1->field_05FF,0xe,g_playSystem_00802A38->field_00E4);
     *(undefined4 *)&param_1->field_0x4d4 = 0;

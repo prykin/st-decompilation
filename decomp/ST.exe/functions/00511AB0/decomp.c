@@ -45,10 +45,8 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,ushort pa
       puVar7 = local_c->field_01DC + 0x14;
 
       uVar5 = FUN_006b4fe0(local_c->field_01DC);
-      pAVar4 = (AnonPointee_HelpPanelTy_0218 *)
-
-               FUN_006b50c0(pAVar4->field_0004,pAVar4->field_0008 + 0x32,(uint)pHVar3->field_01DC[7]
-                            ,uVar5,(undefined4 *)puVar7,iVar9);
+      pAVar4 = STPointerBoundaryCast<AnonPointee_HelpPanelTy_0218 *>(FUN_006b50c0(pAVar4->field_0004,pAVar4->field_0008 + 0x32,(uint)pHVar3->field_01DC[7]
+                            ,uVar5,(undefined4 *)puVar7,iVar9));
       local_8 = pAVar4->field_0014;
       if (local_8 == 0) {
         local_8 = ((uint)(ushort)pAVar4->field_000E * pAVar4->field_0004 + 0x1f >> 3 & 0x1ffffffc) *

@@ -132,6 +132,7 @@ int __thiscall STBoatC::SetMine(STBoatC *this,int *param_1)
       }
       break;
     case -1:
+
       local_EAX_90 = ReportDebugMessage("E:\\__titans\\wlad\\To_boat.cpp",0x311d,0,0,
                                         "%s","STBoatC::SetMine, SETMINE_MOVE error");
       if (local_EAX_90 != 0) {

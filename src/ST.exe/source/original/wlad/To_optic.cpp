@@ -195,16 +195,15 @@ void __thiscall st::fn_004A8FC0(OpticClassC *this)
   byte *pbVar3;
   int iVar4;
   int iVar5;
-  ushort *puVar6;
-  ushort *puVar7;
+  byte *puVar6;
   float10 fVar8;
-  float10 fVar9;
-  longlong lVar10;
+  float10 fVar7;
+  longlong lVar8;
   InternalExceptionFrame local_5c;
   float local_18;
   float local_14;
   OpticClassC *local_10;
-  ushort *local_c;
+  byte *local_c;
   float local_8;
 
   local_5c.previous = g_currentExceptionFrame;
@@ -256,16 +255,16 @@ void __thiscall st::fn_004A8FC0(OpticClassC *this)
     _DAT_00807451 = 0;
     _DAT_00807455 = 0;
     _DAT_00807459 = 0;
-    fVar9 = ((float10)_DAT_00790580 / fVar8) * (float10)DAT_00807574;
-    DAT_00807424 = (float)fVar9;
-    _DAT_0080742c = (float)fVar9;
+    fVar7 = ((float10)_DAT_00790580 / fVar8) * (float10)DAT_00807574;
+    DAT_00807424 = (float)fVar7;
+    _DAT_0080742c = (float)fVar7;
     st::fn_0072E150(0xc0000000,0x403ccccc);
-    lVar10 = st::fn_0072E288();
+    lVar8 = st::fn_0072E288();
     st::fn_006DC050
               (g_sT3DSMAPContext_00807598,g_dDXContext_0080759C,DAT_00807568,DAT_0080756c,
                DAT_00807570,DAT_00807574,(double)(_DAT_00807428 * _DAT_00790780),
                (double)(_DAT_00807428 * _DAT_00790784),(double)(_DAT_0080742c * _DAT_00790780),
-               (double)(_DAT_0080742c * _DAT_00790784),10.0,9.965999793052674,(int)lVar10);
+               (double)(_DAT_0080742c * _DAT_00790784),10.0,9.965999793052674,(int)lVar8);
     st::fn_006DD530(g_sT3DSMAPContext_00807598,&local_18,&local_14,&local_8);
     st::fn_006DD790
               (g_sT3DSMAPContext_00807598,
@@ -290,22 +289,16 @@ void __thiscall st::fn_004A8FC0(OpticClassC *this)
     g_currentExceptionFrame = local_5c.previous;
     return;
   }
-  puVar6 = local_c;
-  puVar7 = reinterpret_cast<ushort *>(&DAT_008073d0);
-  for (iVar5 = 99; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(undefined4 *)puVar7 = *(undefined4 *)puVar6;
-    puVar6 = puVar6 + 2;
-    puVar7 = puVar7 + 2;
-  }
-  *puVar7 = *puVar6;
-  ((char *)puVar7)[1] = (char)puVar6[1];
+  pbVar3 = local_c;
+  puVar6 = reinterpret_cast<byte *>((&DAT_008073d0));
+  memmove(puVar6, pbVar3, 0x18f); /* compiler REP MOVS byte copy */
   st::fn_0072E150(0xc0000000,0x403ccccc);
-  lVar10 = st::fn_0072E288();
+  lVar8 = st::fn_0072E288();
   st::fn_006DC050
             (g_sT3DSMAPContext_00807598,g_dDXContext_0080759C,DAT_00807568,DAT_0080756c,DAT_00807570
              ,DAT_00807574,(double)(DAT_00807420 * _DAT_00790780),
              (double)(DAT_00807420 * _DAT_00790784),(double)(DAT_00807424 * _DAT_00790780),
-             (double)(DAT_00807424 * _DAT_00790784),10.0,9.965999793052674,(int)lVar10);
+             (double)(DAT_00807424 * _DAT_00790784),10.0,9.965999793052674,(int)lVar8);
   /* ST_CALLSITE[004A90EE]: CALL 0x00401b6d; direct=00401B6D OpticClassC::sub_004A9B60 */
   st::fn_00401B6D(local_10,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c);
   st::fn_00405547(1);

@@ -137,10 +137,8 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     this_02->field_1BA1 = 0;
 
     local_EAX_689 = FUN_006b4fe0(this_02->field_005D);
-    pRVar5 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-             FUN_006b50c0(0x208,0x143,(uint)this_02->field_005D[7],local_EAX_689,
-                          (undefined4 *)puVar16,iVar18);
+    pRVar5 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(FUN_006b50c0(0x208,0x143,(uint)this_02->field_005D[7],local_EAX_689,
+                          (undefined4 *)puVar16,iVar18));
     this_02->field_1C82 = (ushort *)pRVar5;
     uVar11 = *(uint *)&pRVar5[1].field_0x4;
     if (uVar11 == 0) {
@@ -172,10 +170,8 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     puVar16 = this_02->field_005D + 0x14;
 
     uVar5 = FUN_006b4fe0(this_02->field_005D);
-    pRVar5 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-             FUN_006b50c0(0x22e,0x2e,(uint)this_02->field_005D[7],uVar5,(undefined4 *)puVar16,iVar18
-                         );
+    pRVar5 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(FUN_006b50c0(0x22e,0x2e,(uint)this_02->field_005D[7],uVar5,(undefined4 *)puVar16,iVar18
+                         ));
     this_02->field_1C8E = (AnonPointee_PrividerTy_1C8E *)pRVar5;
     uVar11 = *(uint *)&pRVar5[1].field_0x4;
     if (uVar11 == 0) {

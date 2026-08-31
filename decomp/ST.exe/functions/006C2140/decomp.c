@@ -4,10 +4,10 @@
 void FUN_006c2140(undefined4 param_1)
 
 {
-  if (DAT_008568bc != nullptr) {
+  if (PTR_008568bc != nullptr) {
     /* ST_CALLSITE[006C2155]: CALL dword ptr [ECX + 0x2c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*DAT_008568bc + 0x2c))(DAT_008568bc,param_1,0);
+    (**(code **)(*PTR_008568bc + 0x2c))(PTR_008568bc,param_1,0);
   }
   return;
 }

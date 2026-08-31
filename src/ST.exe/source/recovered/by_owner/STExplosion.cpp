@@ -290,6 +290,8 @@ st::fn_00606050
           undefined4 param_6,int param_7,undefined4 param_8,undefined1 param_9)
 
 {
+  int param_7_after_write;
+
   byte bVar1;
   int local_EAX_29;
   int iVar2;
@@ -366,7 +368,7 @@ st::fn_00606050
   }
   iVar5 = 0;
   memset(local_90, 0, 0x18); /* compiler bulk-zero initialization */
-  auto param_7_after_write = 0; /* compiler stack-slot lifetime split */
+  param_7_after_write = 0; /* compiler stack-slot lifetime split */
   if (0 < local_28) {
     auto param_5_after_write = local_100; /* compiler stack-slot lifetime split */
     local_20 = local_28;

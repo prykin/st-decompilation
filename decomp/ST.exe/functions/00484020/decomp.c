@@ -8,7 +8,14 @@
    [STMethodOwnerApplier] Structural method owner recovered as STBoatC.
    Evidence: this_call_owners=[STBoatC]; agreed_this_calls=2; incoming_this_accesses=3;
    incoming_edx_uses=0; incoming_stack_parameter_uses=12; direct_non_thunk_callers=0;
-   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate */
+   incoming_ecx_receiver_callers=0; attributed_named_callers=2; owner_evidence_coverage=adequate
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:1: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/short
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 undefined4 __thiscall
 STBoatC::sub_00484020(STBoatC *this,short param_1,short *param_2,short *param_3,short *param_4)
@@ -115,6 +122,7 @@ STBoatC::sub_00484020(STBoatC *this,short param_1,short *param_2,short *param_3,
                 iVar10 = CONCAT22(sVar4 >> 0xf,sVar2) * 200 + 100;
                 local_40 = iVar13;
                 local_3c = iVar10;
+
                 iVar6 = FUN_006acf0d((short)iVar13,(short)local_c,(short)iVar10,
                                      (int)local_14[0],(int)local_18[0],(int)param_1);
                 if ((iVar6 <= this->field_0814) &&
@@ -132,6 +140,7 @@ STBoatC::sub_00484020(STBoatC *this,short param_1,short *param_2,short *param_3,
                   }
                   puVar12 = &this->field_0x2a8;
                   do {
+
                     piVar8 = thunk_FUN_0041dc40(local_48,(short)*(undefined4 *)(puVar12 + -2),
                                                 *(ushort *)(puVar12 + 2),(short)local_20);
                     sStack_56 = (short)((uint)*piVar8 >> 0x10);
@@ -139,6 +148,7 @@ STBoatC::sub_00484020(STBoatC *this,short param_1,short *param_2,short *param_3,
                     sVar3 = (short)local_c - sStack_56;
                     /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
                     local_24 = CONCAT22(uStack_52,(short)piVar8[1]) + local_3c;
+
                     puVar9 = thunk_FUN_0041dc40(local_50,0,0,(short)local_20);
                     sStack_56 = (short)((uint)*puVar9 >> 0x10);
                     sVar4 = local_14[0] + (short)*puVar9;

@@ -309,7 +309,7 @@ int __thiscall st::fn_00588BC0(STMBombC *this,STMessage *message)
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     this_00->field_0043 = *(short *)(local_48 + 0x1c);
     this_00->field_0045 = STField<short>(local_48,0x72);
-    this_00->field_0275 = (undefined1)(st::machine_word_boundary_cast<uint>(((undefined1 *)local_48)[0x1e]));
+    this_00->field_0275 = ((undefined1 *)local_48)[0x1e];
     this_00->field_0276 = STField<undefined1>(local_48,0x79);
     this_00->field_0277 = STField<undefined1>(local_48,0x7a);
     this_00->field_0278 = STField<undefined4>(local_48,0x7b);

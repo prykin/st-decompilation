@@ -75,6 +75,10 @@ DEGRADED_DUPLICATED_RECEIVER_CALL_RE = re.compile(
     r"(?P<receiver>[A-Za-z_][A-Za-z0-9_]*)->vtable"
     r"[^;\n]*?\)\s*\)\s*\(\s*(?P=receiver)\s*(?:,|\))"
 )
+BROKEN_PIECE_TEMPLATE_SPLICE_RE = re.compile(
+    r"\bST(?:Literal)?Piece\s*<[^>\r\n]+>\s*"
+    r"st::machine_word_boundary_cast\s*<"
+)
 RAW_DUPLICATED_VTABLE_CALL_RE = re.compile(
     r"\(\s*\*\s*(?P<receiver>[A-Za-z_][A-Za-z0-9_]*)->vtable"
     r"(?:(?:->|\.)[A-Za-z_][A-Za-z0-9_]*|\[[^\]\n]+\])*"
@@ -2596,10 +2600,10 @@ class TypeEmitter:
                 offset = max(offset, component_offset + component_length)
             index += 1
         length = int(record.get("length", 0))
-        if keyword == "struct" and length > offset:
-            lines.append(f"    byte _pad_{offset:04X}[{length - offset}];")
         if not record["detail"]["components"] and length > 0:
             lines.append(f"    byte _storage[{length}];")
+        elif keyword == "struct" and length > offset:
+            lines.append(f"    byte _pad_{offset:04X}[{length - offset}];")
         for wrapper in self.member_wrappers_by_record_path.get(record_path, ()):
             if wrapper.variadic:
                 lines.append("    template <typename... Args>")
@@ -3838,6 +3842,9 @@ class SourceTreeGenerator:
         transformed = self._materialize_raw_stack_arena(
             address, function, transformed
         )
+        transformed = self._repair_raw_global_pointer_uses(
+            address, function, transformed
+        )
         transformed = self._repair_exact_field_names(address, function, transformed)
         transformed = self._repair_missing_field_addresses(
             address, function, transformed
@@ -3857,6 +3864,9 @@ class SourceTreeGenerator:
         transformed = self._repair_message_arg_facets(
             address, function, transformed
         )
+        transformed = self._repair_message_arg_pointer_views(
+            address, function, transformed
+        )
         transformed = self._repair_pointer_float_storage_views(
             address, function, transformed
         )
@@ -3866,13 +3876,13 @@ class SourceTreeGenerator:
         transformed = self._repair_exact_storage_casts(
             address, function, transformed
         )
-        transformed = self._repair_raw_global_pointer_uses(
-            address, function, transformed
-        )
         transformed = self._materialize_opaque_decompiler_storage(
             address, function, transformed
         )
         transformed = self._repair_scalarized_word_arrays(
+            address, function, transformed
+        )
+        transformed = self._repair_scalarized_record_indices(
             address, function, transformed
         )
         transformed = self._repair_exact_pointer_boundaries(
@@ -3891,6 +3901,7 @@ class SourceTreeGenerator:
             address, function, transformed
         )
         self._reject_degraded_duplicated_receiver_calls(address, transformed)
+        self._reject_broken_piece_template_splice(address, transformed)
         if not definition_rewritten:
             self.issues.append(Issue(
                 "definition_not_rewritten",
@@ -4151,6 +4162,16 @@ class SourceTreeGenerator:
             f"{address}: exact indirect declaration degraded an unadjusted "
             f"duplicated receiver {match.group('receiver')!r}; generate a "
             "non-virtual member wrapper instead"
+        )
+
+    @staticmethod
+    def _reject_broken_piece_template_splice(address: str, body: str) -> None:
+        """Reject a comparison rewrite accidentally inserted into template syntax."""
+        if BROKEN_PIECE_TEMPLATE_SPLICE_RE.search(code_only(body)) is None:
+            return
+        raise GenerationError(
+            f"{address}: storage-boundary rewrite split an STPiece template "
+            "from its argument"
         )
 
     @staticmethod
@@ -4440,6 +4461,27 @@ class SourceTreeGenerator:
             # STField is emitted only from an exact width/address projection;
             # its template argument is already the complete C++ lvalue type.
             return re.sub(r"\s+", " ", st_field.group("type")).strip()
+        c_cast = re.match(
+            r"^\(\s*(?P<type>(?:const\s+)?[A-Za-z_]"
+            r"[A-Za-z0-9_:]*(?:\s*\*+)?)\s*\)",
+            text,
+        )
+        if c_cast is not None and text[c_cast.end():].strip():
+            # A C cast fixes the type of the complete following unary
+            # expression.  We need not infer the operand to walk a surrounding
+            # member chain such as ``((in_addr *)&storage)->S_un``; the cast is
+            # already an explicit, address-local view emitted by Ghidra.
+            operand = text[c_cast.end():].strip()
+            simple_unary = re.fullmatch(
+                r"[&*]*\s*[A-Za-z_][A-Za-z0-9_]*"
+                r"(?:(?:->|\.)[A-Za-z_][A-Za-z0-9_]*|"
+                r"\[[^\]\r\n]+\])*",
+                operand,
+            )
+            display = re.sub(r"\s+", " ", c_cast.group("type")).strip()
+            if (simple_unary is not None and
+                    self.type_emitter.display_type_expression(display) is not None):
+                return display
         if text.startswith("*"):
             operand = text[1:].strip()
             cast = re.match(
@@ -4480,6 +4522,14 @@ class SourceTreeGenerator:
         display = declared_types.get(name) or getattr(
             self, "global_display_types", {}
         ).get(name)
+        if not display and name.startswith("_DAT_"):
+            display = getattr(self, "global_display_types", {}).get(name[1:])
+        if not display and re.fullmatch(r"_DAT_[0-9A-Fa-f]{8}", name):
+            # Overlapping image aliases are declared by the source assembler
+            # as one neutral machine word even when they have no standalone
+            # globals.jsonl datum.  Retain exactly that emitted declaration at
+            # value boundaries; the alias conveys no pointer or record type.
+            display = "undefined4"
         if not display:
             return None
         return self._apply_display_postfix(
@@ -4528,8 +4578,28 @@ class SourceTreeGenerator:
             compact = compact[1:closing].strip()
         if compact == "nullptr":
             return BoundaryValue("nullptr", "null_pointer")
+        if re.fullmatch(r"-?(?:0x[0-9A-Fa-f]+|[0-9]+)", compact):
+            # An unsuffixed x86 integer literal participates in the ordinary
+            # promoted machine-word domain.  Recording that here lets the
+            # comparison pass expose a pointer/scalar lifetime boundary
+            # instead of leaving invalid C++ or inventing a pointer type.
+            return BoundaryValue("int", "generic_word")
         if re.fullmatch(r"st::fn_[0-9A-F]{8}", compact):
             return BoundaryValue("function address", "concrete_pointer", True)
+        piece = re.fullmatch(
+            r"ST(?:Literal)?Piece\s*<\s*\d+\s*,\s*(?P<width>\d+)\s*>"
+            r"\s*\(.+\)",
+            compact,
+            re.DOTALL,
+        )
+        if piece is not None:
+            width = int(piece.group("width"))
+            display = {
+                1: "undefined1", 2: "undefined2", 4: "undefined4",
+                8: "undefined8",
+            }.get(width)
+            if display is not None:
+                return self._boundary_value_for_display(display)
         if re.fullmatch(r'"(?:\\.|[^"\\])*"', compact, re.DOTALL):
             return BoundaryValue("const char *", "const_char_pointer", True)
         if re.fullmatch(
@@ -4952,6 +5022,29 @@ class SourceTreeGenerator:
         target_integer_width = self.type_emitter.display_integer_scalar_width(
             target_display
         )
+        source_record_length = self.type_emitter.display_record_length(
+            source.display_type
+        )
+        if (target_integer_width is not None and
+                source_record_length is not None and
+                source_record_length >= target_integer_width and
+                not source.kind.endswith("_pointer")):
+            # A call boundary can consume the low machine word of a wider
+            # packed record even though Ghidra's C printer spells the complete
+            # record value.  Preserve exactly those little-endian bytes; this
+            # is a per-use storage projection, not a semantic field claim.
+            piece = (
+                f"STPiece<0,{target_integer_width}>({expression})"
+            )
+            replacement = piece if re.fullmatch(
+                rf"(?:undefined{target_integer_width}|u?int"
+                rf"{target_integer_width * 8}_t)", normalized_target
+            ) else f"static_cast<{target_type}>({piece})"
+            return (
+                replacement,
+                f"low {target_integer_width}-byte storage of "
+                f"{source.display_type} -> {target_display}",
+            )
         if (target_integer_width in {1, 2} and
                 source.kind.endswith("_pointer")):
             word = f"st::machine_word_boundary_cast<uint>({expression})"
@@ -5058,17 +5151,23 @@ class SourceTreeGenerator:
         casted_operand = (
             r"\(\s*(?:const\s+)?[A-Za-z_][A-Za-z0-9_:]*"
             r"(?:[ \t]*\*+)?\s*\)[ \t]*\**[ \t]*"
-            rf"(?:{simple_operand}|-?(?:0x[0-9A-Fa-f]+|[0-9]+))"
+            rf"(?:\([^(),;\r\n]+\)|{simple_operand}|"
+            rf"-?(?:0x[0-9A-Fa-f]+|[0-9]+))"
         )
         arithmetic_operand = (
             rf"{simple_operand}[ \t]*[+-][ \t]*"
             rf"(?:{simple_operand}|-?(?:0x[0-9A-Fa-f]+|[0-9]+))"
         )
+        piece_operand = (
+            rf"ST(?:Literal)?Piece[ \t]*<[ \t]*\d+[ \t]*,[ \t]*\d+"
+            rf"[ \t]*>[ \t]*\([ \t]*{simple_operand}[ \t]*\)"
+        )
         dereferenced_casted_operand = rf"\*[ \t]*{casted_operand}"
         operand = (
-            rf"(?:{dereferenced_casted_operand}|{casted_operand}|"
+            rf"(?:{piece_operand}|{dereferenced_casted_operand}|{casted_operand}|"
             rf"{arithmetic_operand}|&[ \t]*{simple_operand}|"
-            rf"\([^(),;\r\n]+\)|{simple_operand})"
+            rf"\([^(),;\r\n]+\)|-?(?:0x[0-9A-Fa-f]+|[0-9]+)|"
+            rf"{simple_operand})"
         )
         comparison = re.compile(
             rf"(?<![A-Za-z0-9_>.)\]*&])(?P<left>{operand})"
@@ -5079,6 +5178,15 @@ class SourceTreeGenerator:
         edits: list[tuple[int, int, str, str]] = []
         masked = code_mask(body)
         for match in comparison.finditer(masked):
+            if (match.group("op") == ">" and re.search(
+                    r"\bST(?:Literal)?Piece\s*<\s*\d+\s*,\s*\d+\s*$",
+                    masked[max(0, match.start("op") - 96):match.start("op")],
+                )):
+                # The closing angle bracket in STPiece<offset,width>(value)
+                # is template syntax, not an x86 comparison.  Treating it as
+                # ``width > value`` used to splice a boundary cast between
+                # the helper name and its argument across hundreds of sites.
+                continue
             left_text = body[match.start("left"):match.end("left")]
             right_text = body[match.start("right"):match.end("right")]
             left = self._boundary_expression(left_text, declared)
@@ -6318,6 +6426,75 @@ class SourceTreeGenerator:
         self.stats["message_arg_exact_facets"] += count
         return rewritten
 
+    def _repair_message_arg_pointer_views(
+        self,
+        address: str,
+        function: Mapping[str, Any],
+        body: str,
+    ) -> str:
+        """Select the pointer facet when a message word is dereferenced.
+
+        ``STMessageArg`` deliberately remains an ID-dependent four-byte union.
+        Ghidra can copy it through the integer facet and later print
+        ``*arg.i32`` or ``*(T *)(arg.u32 + offset)``.  The dereference itself is
+        exact evidence that this one use consumes the pointer facet; it is not
+        evidence that every message with the same envelope carries a pointer.
+        """
+        assert self.type_emitter is not None
+        declared = self._declared_types(function, body)
+        expression = (
+            r"[A-Za-z_][A-Za-z0-9_]*"
+            r"(?:(?:->|\.)[A-Za-z_][A-Za-z0-9_]*|\[[^\]\r\n]+\])*"
+        )
+        edits: list[tuple[int, int, str, str]] = []
+        offset_view = re.compile(
+            rf"\*\s*\(\s*(?P<target>(?:const\s+)?[A-Za-z_]"
+            rf"[A-Za-z0-9_:]*(?:\s*\*+)?)\s*\)\s*\(\s*"
+            rf"(?P<arg>{expression})\.u32\s*\+\s*"
+            rf"(?P<offset>-?(?:0x[0-9A-Fa-f]+|[0-9]+))\s*\)"
+        )
+        for match in offset_view.finditer(code_mask(body)):
+            arg = body[match.start("arg"):match.end("arg")]
+            if self._simple_expression_display(arg, declared) != "STMessageArg":
+                continue
+            target_display = re.sub(
+                r"\s+", " ", match.group("target")
+            ).strip()
+            value_display = self.type_emitter.display_pointee_type(target_display)
+            target_type = self.type_emitter.display_type_expression(target_display)
+            if value_display is None or target_type is None:
+                continue
+            offset = match.group("offset")
+            edits.append((
+                match.start(), match.end(),
+                f"*reinterpret_cast<{target_type}>("
+                f"reinterpret_cast<byte *>({arg}.ptr) + {offset})",
+                f"{arg}.u32+{offset} dereferenced through STMessageArg.ptr",
+            ))
+
+        direct = re.compile(
+            rf"\*\s*(?P<arg>{expression})\.i32\b"
+        )
+        for match in direct.finditer(code_mask(body)):
+            if any(match.start() < old_end and match.end() > old_start
+                   for old_start, old_end, _, _ in edits):
+                continue
+            arg = body[match.start("arg"):match.end("arg")]
+            if self._simple_expression_display(arg, declared) != "STMessageArg":
+                continue
+            edits.append((
+                match.start(), match.end(),
+                f"*static_cast<int *>({arg}.ptr)",
+                f"{arg}.i32 dereferenced through STMessageArg.ptr",
+            ))
+        for start, end, replacement, detail in sorted(edits, reverse=True):
+            body = body[:start] + replacement + body[end:]
+            self.issues.append(Issue(
+                "message_arg_pointer_view", detail, address
+            ))
+        self.stats["message_arg_pointer_views"] += len(edits)
+        return body
+
     def _repair_exact_storage_casts(
         self,
         address: str,
@@ -6356,12 +6533,17 @@ class SourceTreeGenerator:
             if target_type is None:
                 continue
             if re.fullmatch(r"-?(?:0x[0-9A-Fa-f]+|[0-9]+)", value_text):
-                if self.type_emitter.display_record_length(target) == 4:
+                target_length = self.type_emitter.display_record_length(target)
+                literal_storage = {
+                    1: "uint8_t", 2: "uint16_t", 4: "uint32_t",
+                    8: "uint64_t",
+                }.get(target_length or 0)
+                if literal_storage is not None:
                     edits.append((
                         match.start(), match.end(),
                         f"st::storage_bit_cast<{target_type}>("
-                        f"static_cast<uint32_t>({value_text}))",
-                        f"four-byte literal storage -> {target}",
+                        f"static_cast<{literal_storage}>({value_text}))",
+                        f"{target_length}-byte literal storage -> {target}",
                     ))
                 continue
             source_display = self._simple_expression_display(
@@ -6406,13 +6588,19 @@ class SourceTreeGenerator:
             if closing is None:
                 continue
             # In ``(uint)(record).member`` the postfix member belongs to the
-            # complete cast operand.  Rewriting only the parenthesized record
-            # would produce ``storage_bit_cast<uint>(record).member`` and make
-            # the scalar helper result look like a structure.  The ordinary
-            # grouped-operand pass above owns such postfix expressions.
-            if re.match(r"[ \t]*(?:\.|->|\[)", masked[closing + 1:]):
-                continue
-            if any(match.start() < old_end and closing + 1 > old_start
+            # complete cast operand.  Consume that exact postfix chain so the
+            # storage helper wraps the member value, never the enclosing
+            # record.  This also covers nested Winsock aggregate facets which
+            # are too rich for the intentionally small first-pass regex.
+            value_end = closing + 1
+            postfix = re.match(
+                r"(?:[ \t]*(?:(?:\.|->)[ \t]*"
+                r"[A-Za-z_][A-Za-z0-9_]*|\[[^\]\r\n]+\]))*",
+                masked[value_end:],
+            )
+            if postfix is not None:
+                value_end += postfix.end()
+            if any(match.start() < old_end and value_end > old_start
                     for old_start, old_end, _, _ in edits):
                 continue
             target = match.group("target").strip()
@@ -6424,20 +6612,74 @@ class SourceTreeGenerator:
             if (target_type is None or
                     target_length != 4 and target_scalar_width != 4):
                 continue
-            value_text = body[opening + 1:closing].strip()
-            source = self._boundary_expression(value_text, declared)
-            if source is None or source.kind.endswith("_pointer"):
+            value_text = body[opening:value_end].strip()
+            render_value = value_text
+            while render_value.startswith("("):
+                render_closing = self._matching_delimiter(
+                    render_value, 0, "(", ")"
+                )
+                if render_closing != len(render_value) - 1:
+                    break
+                render_value = render_value[1:render_closing].strip()
+            source_display = self._simple_expression_display(
+                value_text, declared, allow_record_name_fallback=True
+            )
+            source = (
+                self._boundary_value_for_display(source_display)
+                if source_display is not None else
+                self._boundary_expression(value_text, declared)
+            )
+            if source is None:
+                # Ghidra's explicit cast to one exact four-byte record is
+                # sufficient to identify the destination representation even
+                # when a nested CONCAT/arithmetic expression is too rich for
+                # the deliberately small boundary parser.  Restrict this
+                # fallback to side-effect-free scalar syntax so a call,
+                # assignment, comma expression, or conditional is never
+                # hidden inside a storage helper.
+                safe_value = code_mask(value_text)
+                calls = re.findall(
+                    r"\b([A-Za-z_][A-Za-z0-9_]*)\s*\(", safe_value
+                )
+                safe_calls = all(
+                    re.fullmatch(r"CONCAT[1-8][1-8]", name)
+                    for name in calls
+                )
+                if (target_length == 4 and
+                        safe_calls and
+                        re.fullmatch(
+                            r"[\s,+\-*/%<>&|^~().\[\]0-9A-Za-z_]+",
+                            safe_value,
+                        ) and
+                        not re.search(r"(?<![=!<>])=(?!=)", safe_value)):
+                    edits.append((
+                        match.start(), value_end,
+                        f"st::storage_bit_cast<{target_type}>("
+                        f"static_cast<uint32_t>({render_value}))",
+                        f"four-byte arithmetic storage -> {target}",
+                    ))
+                continue
+            if source.kind.endswith("_pointer"):
                 continue
             if source.kind == "four_byte_record" and target_scalar_width == 4:
                 edits.append((
-                    match.start(), closing + 1,
-                    f"st::storage_bit_cast<{target_type}>({value_text})",
+                    match.start(), value_end,
+                    f"st::storage_bit_cast<{target_type}>({render_value})",
                     f"four-byte POD storage {source.display_type} -> {target}",
                 ))
                 continue
             source_record_length = self.type_emitter.display_record_length(
                 source.display_type
             )
+            if (target_length is not None and
+                    source_record_length == target_length and
+                    not source.kind.endswith("_pointer")):
+                edits.append((
+                    match.start(), value_end,
+                    f"st::storage_bit_cast<{target_type}>({render_value})",
+                    f"equal-width POD storage {source.display_type} -> {target}",
+                ))
+                continue
             if (target_scalar_width == 4 and
                     source_record_length is not None and
                     source_record_length > target_scalar_width):
@@ -6448,8 +6690,8 @@ class SourceTreeGenerator:
                 # Preserve the exact little-endian storage operation instead
                 # of guessing a semantic member or truncating the datatype.
                 edits.append((
-                    match.start(), closing + 1,
-                    f"static_cast<{target_type}>(STPiece<0,4>({value_text}))",
+                    match.start(), value_end,
+                    f"static_cast<{target_type}>(STPiece<0,4>({render_value}))",
                     f"low four-byte POD view {source.display_type} -> {target}",
                 ))
                 continue
@@ -6460,10 +6702,10 @@ class SourceTreeGenerator:
                 continue
             replacement = (
                 f"st::storage_bit_cast<{target_type}>("
-                f"static_cast<uint32_t>({value_text}))"
+                f"static_cast<uint32_t>({render_value}))"
             )
             edits.append((
-                match.start(), closing + 1, replacement,
+                match.start(), value_end, replacement,
                 f"four-byte arithmetic storage {source.display_type} -> {target}",
             ))
         for start, end, replacement, detail in sorted(edits, reverse=True):
@@ -6513,9 +6755,14 @@ class SourceTreeGenerator:
         """
         assert self.type_emitter is not None
         generic_globals = {
-            name for name, display in self.global_display_types.items()
+            name: display for name, display in self.global_display_types.items()
             if self.type_emitter.display_machine_word_scalar(display)
         }
+        # Ghidra prefixes one underscore when a label overlaps another image
+        # datum.  It is still the same exported machine-word storage identity.
+        for name, display in tuple(generic_globals.items()):
+            if name.startswith("DAT_"):
+                generic_globals.setdefault("_" + name, display)
         if not generic_globals:
             return body
         names = "|".join(sorted(map(re.escape, generic_globals), key=len,
@@ -6532,6 +6779,106 @@ class SourceTreeGenerator:
                 f"(*st::storage_bit_cast<code *>({name}))",
                 f"callback stored in unresolved global {name}",
             ))
+
+        # A neutral global word can have one exact consumer-local pointer view
+        # even while the corpus lacks enough producer/caller evidence to mutate
+        # the Program datum.  Recover that view only from an assignment into an
+        # already declared pointer local.  Every such assignment in this body
+        # must agree; the view remains use-site-only and therefore cannot merge
+        # records or assert a public global type.
+        declared = self._declared_types(function, body)
+        candidate_views: dict[str, set[str]] = defaultdict(set)
+        assignment = re.compile(
+            rf"(?m)^\s*(?P<local>[A-Za-z_][A-Za-z0-9_]*)\s*=\s*"
+            rf"(?P<global>{names})\b"
+            rf"(?P<tail>\s*[+-]\s*[^;\r\n]+)?\s*;"
+        )
+        for match in assignment.finditer(masked):
+            display = declared.get(match.group("local"))
+            if not display or self.type_emitter.display_pointer_kind(display) is None:
+                continue
+            if self.type_emitter.display_is_void_pointer(display):
+                continue
+            if self.type_emitter.display_type_expression(display) is None:
+                continue
+            candidate_views[match.group("global")].add(display)
+
+        global_assignment = re.compile(
+            rf"(?m)^\s*(?P<global>{names})\s*=\s*"
+            rf"(?P<rhs>[^;\r\n]+)\s*;"
+        )
+        for match in global_assignment.finditer(masked):
+            rhs = body[match.start("rhs"):match.end("rhs")].strip()
+            source = self._boundary_expression(rhs, declared)
+            if (source is None or source.kind == "null_pointer" or
+                    not source.kind.endswith("_pointer")):
+                continue
+            if self.type_emitter.display_is_void_pointer(source.display_type):
+                continue
+            if self.type_emitter.display_type_expression(
+                    source.display_type) is None:
+                continue
+            candidate_views[match.group("global")].add(source.display_type)
+
+        for name, displays in sorted(candidate_views.items()):
+            if len(displays) != 1:
+                continue
+            display = next(iter(displays))
+            type_expression = self.type_emitter.display_type_expression(display)
+            if type_expression is None:
+                continue
+            view = f"st::storage_bit_cast<{type_expression}>({name})"
+            claimed: list[tuple[int, int, str]] = []
+
+            field_projection = re.compile(
+                rf"\*\s*\(\s*(?P<cast>(?:const\s+)?[A-Za-z_]"
+                rf"[A-Za-z0-9_:]*(?:\s*\*+)?)\s*\)\s*&\s*"
+                rf"{re.escape(name)}\s*->\s*field_(?:0x)?"
+                rf"(?P<offset>[0-9A-Fa-f]+)"
+            )
+            for match in field_projection.finditer(masked):
+                value_display = self.type_emitter.display_pointee_type(
+                    re.sub(r"\s+", " ", match.group("cast")).strip()
+                )
+                value_type = None if value_display is None else \
+                    self.type_emitter.display_type_expression(value_display)
+                if value_type is None:
+                    continue
+                claimed.append((
+                    match.start(), match.end(),
+                    f"STField<{value_type}>({view},0x{int(match.group('offset'), 16):X})",
+                ))
+            use_patterns = (
+                re.compile(
+                    rf"\b{re.escape(name)}\b(?=\s*->\s*"
+                    rf"(?P<member>[A-Za-z_][A-Za-z0-9_]*))"
+                ),
+                re.compile(rf"(?P<star>\*)\s*{re.escape(name)}\b"),
+            )
+            for index, use_pattern in enumerate(use_patterns):
+                for match in use_pattern.finditer(masked):
+                    start, end = match.span()
+                    if any(start < old_end and end > old_start
+                           for old_start, old_end, _ in claimed):
+                        continue
+                    if index == 0:
+                        member = match.group("member")
+                        if self.type_emitter.display_member_type(
+                                display, member, True, False) is None:
+                            continue
+                        replacement = view
+                    else:
+                        # Preserve the unary dereference outside the inserted
+                        # pointer view.  Multiplication is excluded because the
+                        # token immediately following '*' is an exact global
+                        # identifier and this pass runs only after declarations.
+                        replacement = "*" + view
+                    claimed.append((start, end, replacement))
+            for start, end, replacement in claimed:
+                edits.append((
+                    start, end, replacement,
+                    f"unique consumer-local {display} view of {name}",
+                ))
         for start, end, replacement, detail in sorted(edits, reverse=True):
             body = body[:start] + replacement + body[end:]
             self.issues.append(Issue("global_pointer_storage_view", detail, address))
@@ -8109,8 +8456,9 @@ class SourceTreeGenerator:
         scalar_declaration = re.compile(
             r"(?m)^(?P<indent>[ \t]*)int[ \t]+"
             r"(?P<name>scalar_[A-Za-z_][A-Za-z0-9_]*)[ \t]*=[ \t]*"
-            r"(?P<rhs>[^;\r\n]+);[ \t]*"
-            r"/\* split integer lifetime from pointer-typed SSA storage \*/"
+            r"(?P<rhs>[^;\r\n]+);"
+            r"(?P<marker>[ \t]*/\* split integer lifetime from "
+            r"pointer-typed SSA storage \*/)?"
         )
         scalar_names: list[str] = []
 
@@ -8118,13 +8466,41 @@ class SourceTreeGenerator:
             name = match.group("name")
             if name not in scalar_names:
                 scalar_names.append(name)
+            marker = match.group("marker") or ""
             return (
-                f"{match.group('indent')}{name} = {match.group('rhs')}; "
-                "/* split integer lifetime from pointer-typed SSA storage */"
+                f"{match.group('indent')}{name} = {match.group('rhs')};"
+                f"{marker}"
             )
 
         body = scalar_declaration.sub(hoist_scalar, body)
         declarations.extend(f"  int {name};\n" for name in scalar_names)
+
+        # A later exact stack-slot lifetime may be introduced after an early
+        # switch/goto target.  C++ rejects a jump across the initialized
+        # ``auto`` even though the decompiler's C control flow is valid.  For
+        # an integer literal initializer the x86 promoted domain is exact, so
+        # hoist only the uninitialized storage and retain the assignment at its
+        # original dominance point.  Richer initializers remain untouched
+        # until their machine lifetime has an independently expressible type.
+        after_write = re.compile(
+            r"(?m)^(?P<indent>[ \t]*)auto[ \t]+"
+            r"(?P<name>[A-Za-z_][A-Za-z0-9_]*_after_write)[ \t]*=[ \t]*"
+            r"(?P<rhs>-?(?:0x[0-9A-Fa-f]+|[0-9]+));[ \t]*"
+            r"/\* compiler stack-slot lifetime split \*/"
+        )
+        after_write_names: list[str] = []
+
+        def hoist_after_write(match: re.Match[str]) -> str:
+            name = match.group("name")
+            if name not in after_write_names:
+                after_write_names.append(name)
+            return (
+                f"{match.group('indent')}{name} = {match.group('rhs')}; "
+                "/* compiler stack-slot lifetime split */"
+            )
+
+        body = after_write.sub(hoist_after_write, body)
+        declarations.extend(f"  int {name};\n" for name in after_write_names)
 
         masked = code_mask(body)
         declared = self._declared_types(function, body)
@@ -8181,6 +8557,7 @@ class SourceTreeGenerator:
         if opening < 0:
             return body
         self.stats["hoisted_scalar_lifetimes"] += len(scalar_names)
+        self.stats["hoisted_stack_slot_lifetimes"] += len(after_write_names)
         self.stats["synthetic_piece_storage_materializations"] += len(materialized)
         insertion = opening + 1
         return body[:insertion] + "\n" + "".join(declarations) + body[insertion:]
@@ -8327,6 +8704,80 @@ class SourceTreeGenerator:
                 address,
             ))
         self.stats["scalarized_word_arrays"] += len(repaired)
+        return body
+
+    def _repair_scalarized_record_indices(
+        self, address: str, function: Mapping[str, Any], body: str
+    ) -> str:
+        """Recover a retained scalar-pointer index after record retyping.
+
+        Ghidra can type a former ``int *`` DArray element local as the complete
+        recovered record without rebuilding an older ``local[1]`` p-code
+        expression.  It then prints the mechanically impossible
+        ``(char)local[1]``: C++ scales by the record extent, while the machine
+        operation still uses the width of the exact offset-zero scalar member.
+        Accept only that impossible aggregate-to-scalar cast, one unanimous
+        offset-zero scalar width, and an in-record unnamed destination span.
+        The result is an explicit little-endian storage piece, not a new field
+        name or an assertion that the record is a scalar array.
+        """
+        assert self.type_emitter is not None
+        declared = self._declared_types(function, body)
+        pattern = re.compile(
+            r"\(\s*(?P<target>(?:u?char|byte|undefined[1248]|"
+            r"u?short|u?int|u?int(?:8|16|32|64)_t))\s*\)\s*"
+            r"(?P<base>[A-Za-z_][A-Za-z0-9_]*)\s*"
+            r"\[\s*(?P<index>[1-9][0-9]*)\s*\]"
+        )
+        edits: list[tuple[int, int, str, str]] = []
+        for match in pattern.finditer(code_mask(body)):
+            base_display = declared.get(match.group("base"))
+            pointee = None if base_display is None else \
+                self.type_emitter.display_pointee_type(base_display)
+            extent = None if pointee is None else \
+                self.type_emitter.display_record_length(pointee)
+            if extent is None or extent <= 0:
+                continue
+            zero_name = self.type_emitter.display_member_name_at_offset(
+                base_display, 0, True
+            )
+            zero_display = None if zero_name is None else \
+                self.type_emitter.display_member_type(
+                    base_display, zero_name, True, False
+                )
+            stride = None if zero_display is None else \
+                self.type_emitter.display_integer_scalar_width(zero_display)
+            width = self.type_emitter.display_integer_scalar_width(
+                match.group("target")
+            )
+            if stride is None or width is None or stride <= 0 or width <= 0:
+                continue
+            offset = int(match.group("index")) * stride
+            if offset + width > extent:
+                continue
+            if self.type_emitter.display_member_name_at_offset(
+                    base_display, offset, True) is not None:
+                continue
+            target_type = self.type_emitter.display_type_expression(
+                match.group("target")
+            )
+            if target_type is None:
+                continue
+            piece = f"STPiece<{offset},{width}>(*{match.group('base')})"
+            replacement = piece if re.fullmatch(
+                rf"undefined{width}", re.sub(r"\s+", "", target_type)
+            ) else f"static_cast<{target_type}>({piece})"
+            edits.append((
+                match.start(), match.end(), replacement,
+                f"{match.group('base')} scalar stride {stride} -> "
+                f"record byte span +0x{offset:X}/{width}",
+            ))
+        for start, end, replacement, detail in sorted(edits, reverse=True):
+            body = body[:start] + replacement + body[end:]
+            self.issues.append(Issue(
+                "scalarized_record_index_view", detail, address
+            ))
+        self.stats["scalarized_record_index_views"] += len(edits)
         return body
 
     def _materialize_exact_output_lifetimes(

@@ -18,9 +18,10 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   cMf32 *pcVar4;
   ushort *puVar5;
   MTaskTy_field_0074DArray *pMVar6;
+  MTaskTy_field_0074DArray *pMVar6_mg1;
   char *pcVar8;
-  HDC pcVar7;
-  HDC pcVar7_mg1;
+  ccFntTy *pcVar7;
+  ccFntTy *pcVar7_mg1;
   DArrayTy *pDVar9;
   int iVar4;
   int iVar10;
@@ -147,12 +148,12 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   pMVar3->field_0074 = pMVar6;
   if (pMVar6 == nullptr) {
     /* ST_CALLSITE[005DFC23]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArraySpecializations/MTaskTy_field_0074DArray; signature=__stdcall;pointer:/SubmarineTitans/Recovered/DArraySpecializations/MTaskTy_field_0074DArray;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint;/uint */
-    pMVar6 = Library::DKW::TBL::DArrayCreate(nullptr,1,0x50,1);
+    pMVar6_mg1 = Library::DKW::TBL::DArrayCreate(nullptr,1,0x50,1);
     memset(local_a4, 0, 0x50); /* compiler bulk-zero initialization */
-    pMVar3->field_0074 = pMVar6;
+    pMVar3->field_0074 = pMVar6_mg1;
     STPiece<0,1>(local_a4[0]) = 8;
 
-    Library::DKW::TBL::DArrayAppend((DArrayTy *)pMVar6,local_a4);
+    Library::DKW::TBL::DArrayAppend((DArrayTy *)pMVar6_mg1,local_a4);
   }
 
   Library::DKW::TBL::FUN_006afe40((int *)&pMVar3->field_0078,&pMVar3->field_0074->flags);
@@ -185,14 +186,14 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   Library::Ourlib::PALETTE::FUN_00718780
             ((int)local_5a8,0,0x100,0x2e,0x10,(undefined4 *)&pMVar3->field_0x191);
   /* ST_CALLSITE[005DFD42]: CALL 0x004042a5; direct=004042A5 thunk_FUN_005defe0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/int;pointer:/undefined;/WinDef.h/BYTE */
-  pcVar7 = (HDC)thunk_FUN_005defe0((int)pMVar3->field_005D,nullptr,DAT_00807dd9);
-  pMVar3->field_0089 = (ccFntTy *)pcVar7;
-  pcVar7[0x16].unused = 1;
-  pcVar7[0x17].unused = 0;
+  pcVar7 = thunk_FUN_005defe0((int)pMVar3->field_005D,nullptr,DAT_00807dd9);
+  pMVar3->field_0089 = pcVar7;
+  pcVar7->field_0058 = 1;
+  pcVar7->field_005C = 0;
   /* ST_CALLSITE[005DFD62]: CALL 0x00402306; direct=00402306 thunk_FUN_005df290; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/int;pointer:/undefined;/WinDef.h/BYTE */
-  pcVar7_mg1 = (HDC)thunk_FUN_005df290((int)pMVar3->field_005D,nullptr,DAT_00807dd9);
+  pcVar7_mg1 = thunk_FUN_005df290((int)pMVar3->field_005D,nullptr,DAT_00807dd9);
   local_c = (ushort *)&pMVar3->field_0653;
-  pMVar3->field_008D = (ccFntTy *)pcVar7_mg1;
+  pMVar3->field_008D = pcVar7_mg1;
   puVar16 = pMVar3->field_02A5;
   local_8 = (char *)0x5;
   do {

@@ -93,7 +93,7 @@ public class STDecompExport extends GhidraScript {
     private static final int COVERAGE_MAX_RANGE = 0x10000;
     private static final int DECOMP_BODY_CACHE_SCHEMA = 2;
     private static final String FUNCTION_ANALYSIS_CACHE_SCHEMA = "3";
-    private static final int FUNCTION_ANALYSIS_SCHEMA = 57;
+    private static final int FUNCTION_ANALYSIS_SCHEMA = 59;
     // Bump only when normalize/catalogue semantics change. Hashing this entire source file
     // made an unrelated manifest or I/O edit rescan all 5,000+ bodies.
     private static final String FUNCTION_ANALYSIS_LOGIC_ID =
@@ -1419,8 +1419,15 @@ public class STDecompExport extends GhidraScript {
             normalizeExplicitByteOffsetFields(partialPieces.code);
         NormalizedCode castedFields =
             normalizeCastedGenericFieldValues(typedFields.code);
+        // The exact field pass can turn a raw receiver such as
+        // `*(int *)&this->field_X` into `STField<int *>(this, X)`.  Re-run the
+        // address-stable structural dispatcher once so a cached or freshly
+        // exposed receiver does not regress from STStructuralVirtualCall back
+        // to a code** expression merely because the field spelling improved.
+        NormalizedCode structuralVirtualCallsAfterFields =
+            normalizeStructuralVirtualCalls(function, castedFields.code);
         NormalizedCode indexedCodeFields =
-            normalizeIndexedCodeFieldCalls(castedFields.code);
+            normalizeIndexedCodeFieldCalls(structuralVirtualCallsAfterFields.code);
         NormalizedCode lowScalarViews =
             normalizeScalarLowSubpieceViews(indexedCodeFields.code);
         NormalizedCode narrowIntegerPromotions =
@@ -1460,6 +1467,7 @@ public class STDecompExport extends GhidraScript {
             lowPieces.replacements +
             partialPieces.replacements + typedFields.replacements +
             castedFields.replacements +
+            structuralVirtualCallsAfterFields.replacements +
             indexedCodeFields.replacements +
             lowScalarViews.replacements +
             narrowIntegerPromotions.replacements +
@@ -1926,20 +1934,21 @@ public class STDecompExport extends GhidraScript {
             currentBodySchema = meta.contains("\"decompiler_body_cache_schema\":" +
                 DECOMP_BODY_CACHE_SCHEMA);
         }
-        // This cast pattern is a one-time migration trigger.  The current
-        // exporter may legitimately reproduce the same typed boundary when the
-        // neutral machine-word return is still the strongest ABI fact.  Mark a
-        // freshly produced body with its cache schema so the migration reaches
-        // a fixed point instead of decompiling the same functions forever.
-        if (!currentBodySchema) {
-            Matcher boundary = POINTER_CASTED_DIRECT_CALL.matcher(code);
-            while (boundary.find()) {
-                Function direct = uniqueRenderedFunctions.get(boundary.group("callee"));
-                Function resolved = direct == null ? null : direct.getThunkedFunction(true);
-                if (resolved == null) resolved = direct;
-                if (direct != null && (neutralFullWordReturn(direct) ||
-                        neutralFullWordReturn(resolved))) return true;
-            }
+        // A raw pointer cast around a neutral direct-call result must migrate
+        // even when the cached body already has the current schema.  Exact CALL
+        // annotation is available only during a fresh decompile, and the
+        // pretty-printer may place that annotation between a line-wrapped cast
+        // and callee.  normalizePointerBoundaryCalls() now handles both marker
+        // positions, so every non-scalar occurrence below is a finite migration
+        // trigger rather than an address allow-list or an endless cache miss.
+        Matcher boundary = POINTER_CASTED_DIRECT_CALL.matcher(code);
+        while (boundary.find()) {
+            Function direct = uniqueRenderedFunctions.get(boundary.group("callee"));
+            Function resolved = direct == null ? null : direct.getThunkedFunction(true);
+            if (resolved == null) resolved = direct;
+            if (direct != null && (neutralFullWordReturn(direct) ||
+                    neutralFullWordReturn(resolved)) &&
+                    !textualScalarAssignmentTarget(code, boundary.start())) return true;
         }
         if (Pattern.compile("(?m)^\\s*otherwise retain buffer arithmetic \\*/\\s*$")
                 .matcher(code).find()) return true;
@@ -3601,7 +3610,8 @@ public class STDecompExport extends GhidraScript {
             ScalarDeclaration localDeclaration = scalarDeclaration(normalized, local);
             ScalarDeclaration lowDeclaration = scalarDeclaration(normalized, low);
             if (localDeclaration == null || lowDeclaration == null ||
-                    !"undefined4".equals(localDeclaration.type) ||
+                    !Set.of("int", "uint", "dword", "undefined4")
+                        .contains(localDeclaration.type) ||
                     !Set.of("short", "ushort").contains(lowDeclaration.type)) {
                 search = matcher.end();
                 continue;
@@ -3649,7 +3659,8 @@ public class STDecompExport extends GhidraScript {
 
     private ScalarDeclaration scalarDeclaration(String code, String name) {
         Pattern declaration = Pattern.compile(
-            "(?m)^(?<indent>[ \\t]*)(?<type>byte|char|short|ushort|undefined[1248])" +
+            "(?m)^(?<indent>[ \\t]*)(?<type>byte|char|short|ushort|int|uint|dword|" +
+            "undefined[1248])" +
             "[ \\t]+" + Pattern.quote(name) + "[ \\t]*;[ \\t]*$");
         Matcher matcher = declaration.matcher(code);
         if (!matcher.find()) return null;
@@ -7510,6 +7521,7 @@ public class STDecompExport extends GhidraScript {
             return new NormalizedCode(code, 0);
         Matcher marker = EXACT_DIRECT_CALL_MARKER.matcher(code);
         StringBuilder output = new StringBuilder(code.length());
+        Set<Address> durableCallsites = indirectCallsiteAddresses(function).keySet();
         int cursor = 0, replacements = 0;
         while (marker.find()) {
             if (marker.start() < cursor) continue;
@@ -7537,26 +7549,77 @@ public class STDecompExport extends GhidraScript {
             int regionEnd = nextMarker < 0 ? code.length() : nextMarker;
             Matcher cast = POINTER_CASTED_DIRECT_CALL.matcher(code);
             cast.region(marker.end(), regionEnd);
-            if (!cast.find()) continue;
-            String callee = cast.group("callee");
-            int qualifier = callee.lastIndexOf("::");
-            String calleeLeaf = qualifier < 0 ? callee : callee.substring(qualifier + 2);
-            if (!calleeLeaf.equals(direct.getName())) continue;
-            int open = cast.end() - 1;
+            int castStart;
+            int calleeStart;
+            int open;
+            String targetType;
+            boolean markerPrecedesCast;
+            if (cast.find()) {
+                String callee = cast.group("callee");
+                int qualifier = callee.lastIndexOf("::");
+                String calleeLeaf = qualifier < 0 ? callee :
+                    callee.substring(qualifier + 2);
+                if (!calleeLeaf.equals(direct.getName())) continue;
+                castStart = cast.start();
+                calleeStart = cast.start() + cast.group(0).indexOf(callee);
+                open = cast.end() - 1;
+                targetType = cast.group("type").replaceAll("\\s+", " ").trim();
+                markerPrecedesCast = true;
+            }
+            else {
+                // PrettyPrinter attaches a CALL token to the physical line
+                // containing the callee.  For a wrapped Ghidra expression the
+                // cast may be on the previous line, so the transient exact-call
+                // marker can legitimately land *inside* `(T *) call(...)`.
+                // Recover that second formatting without relying on a function
+                // address, name, or source-layout exception.
+                Pattern renderedCall = Pattern.compile(
+                    "(?<![A-Za-z0-9_$])(?<callee>(?:[A-Za-z_$][A-Za-z0-9_$]*::)*" +
+                    Pattern.quote(direct.getName()) + ")\\s*\\(");
+                Matcher afterMarker = renderedCall.matcher(code);
+                afterMarker.region(marker.end(), regionEnd);
+                if (!afterMarker.find()) continue;
+                open = afterMarker.end() - 1;
+                calleeStart = afterMarker.start("callee");
+
+                int statementStart = Math.max(cursor,
+                    Math.max(code.lastIndexOf(';', marker.start() - 1) + 1,
+                        code.lastIndexOf('{', marker.start() - 1) + 1));
+                Pattern trailingCast = Pattern.compile(
+                    "\\(\\s*(?<type>[A-Za-z_$][A-Za-z0-9_$: ]*\\s*\\*+)\\s*\\)\\s*$");
+                Matcher beforeMarker = trailingCast.matcher(code);
+                beforeMarker.region(statementStart, marker.start());
+                if (!beforeMarker.find()) continue;
+                castStart = beforeMarker.start();
+                targetType = beforeMarker.group("type")
+                    .replaceAll("\\s+", " ").trim();
+                markerPrecedesCast = false;
+            }
             int close = matchingParenthesis(code, open);
             if (close < 0 || close >= regionEnd) continue;
-            String targetType = cast.group("type").replaceAll("\\s+", " ").trim();
             if (!targetType.endsWith("*") || targetType.contains("code")) continue;
             // A pointer-shaped decompiler cast can still be one SSA view of a
             // scalar destination.  Do not make that accidental view durable:
             // the source-tree boundary pass can then preserve the scalar and
             // express the machine-word transport explicitly.
-            if (textualScalarAssignmentTarget(code, cast.start())) continue;
-            boolean durableMarker = indirectCallsiteAddresses(function).containsKey(call);
-            output.append(code, cursor, durableMarker ? cast.start() : marker.start());
-            if (!durableMarker) output.append(code, marker.end(), cast.start());
+            if (textualScalarAssignmentTarget(code, castStart)) continue;
+            boolean durableMarker = durableCallsites.contains(call);
+            output.append(code, cursor,
+                markerPrecedesCast && !durableMarker ? marker.start() : castStart);
+            if (markerPrecedesCast) {
+                if (!durableMarker) output.append(code, marker.end(), castStart);
+            }
+            else if (durableMarker) {
+                output.append(marker.group()).append(System.lineSeparator());
+                int lineStart = code.lastIndexOf('\n', Math.max(0, castStart - 1)) + 1;
+                for (int index = lineStart; index < castStart; index++) {
+                    char value = code.charAt(index);
+                    if (value != ' ' && value != '\t') break;
+                    output.append(value);
+                }
+            }
             output.append("STPointerBoundaryCast<").append(targetType).append(">(")
-                .append(code, cast.start() + cast.group(0).indexOf(callee), close + 1)
+                .append(code, calleeStart, close + 1)
                 .append(")");
             cursor = close + 1;
             replacements++;
@@ -9556,10 +9619,22 @@ public class STDecompExport extends GhidraScript {
         }
         List<String> output = new ArrayList<>();
         int coveredUntil = -1;
+        boolean inBlockComment = false;
         for (int index = 0; index < clean.size(); index++) {
             String line = clean.get(index);
             String stripped = line.stripLeading();
-            if (stripped.isBlank() || stripped.startsWith("/*") || stripped.startsWith("*") ||
+            if (inBlockComment) {
+                output.add(line);
+                if (line.contains("*/")) inBlockComment = false;
+                continue;
+            }
+            if (stripped.startsWith("/*")) {
+                output.add(line);
+                int open = line.indexOf("/*");
+                if (line.indexOf("*/", open + 2) < 0) inBlockComment = true;
+                continue;
+            }
+            if (stripped.isBlank() || stripped.startsWith("*") ||
                     stripped.startsWith("//") || stripped.startsWith("#")) {
                 output.add(line);
                 continue;

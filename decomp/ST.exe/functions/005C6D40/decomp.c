@@ -16,10 +16,11 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
   RecoveredRecord_005AACB0_2533FD69 *pRVar5;
   uint uVar11;
   uint local_EAX_848;
-  uint *puVar6;
+  uint *puVar6_mg3;
   uint local_EAX_1327;
   uint local_EAX_1858;
   int iVar8;
+  uint *puVar6;
   int iVar7;
   byte bVar8;
   char cVar9;
@@ -228,8 +229,8 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
       FUN_006b5570((DArrayTy *)g_startSystem_0081176C->field_0548);
     }
     /* ST_CALLSITE[005C71BB]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint */
-    puVar6 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
-    g_startSystem_0081176C->field_0548 = puVar6;
+    puVar6_mg3 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
+    g_startSystem_0081176C->field_0548 = puVar6_mg3;
     if (this_00->field_21EC != nullptr) {
       /* ST_CALLSITE[005C71D6]: CALL 0x0040128a; direct=0040128A HoloTy::Done */
       HoloTy::Done(this_00->field_21EC);

@@ -5,7 +5,14 @@
    /SubmarineTitans/Recovered/Enums/Global_sub_004AE0B0_param_4Enum. Cases:
    CASE_0=0;CASE_1=1;CASE_2=2;CASE_38=56;CASE_39=57;CASE_4F=79;CASE_5E=94;CASE_61=97
    [STAbiConsistencyApplier] stack_parameter_width: parameter=/short Evidence: entry-use
-   width=/short; unmasked_dword_reads=0; evidence=004AE619 MOVSX EAX,word ptr [EBP + 0x8] */
+   width=/short; unmasked_dword_reads=0; evidence=004AE619 MOVSX EAX,word ptr [EBP + 0x8]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:0: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:0: parameter=/short
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 undefined4 __cdecl
 FUN_004ae0b0(short param_1,int param_2,int param_3,Global_sub_004AE0B0_param_4Enum param_4,

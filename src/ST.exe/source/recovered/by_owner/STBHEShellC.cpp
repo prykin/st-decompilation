@@ -490,6 +490,8 @@ st::fn_005F4C50
           int param_6)
 
 {
+  int param_3_after_write;
+
   STBHEShellC_field_0169DArray *pSVar1;
   int iVar2;
   DArrayTy *pSVar2_mg0;
@@ -542,7 +544,7 @@ st::fn_005F4C50
   if ((pSVar2_mg0 != nullptr) && (param_4 = 0, 0 < this->field_010D)) {
     do {
       auto param_1_after_write = 0.0; /* compiler stack-slot lifetime split */
-      auto param_3_after_write = 0; /* compiler stack-slot lifetime split */
+      param_3_after_write = 0; /* compiler stack-slot lifetime split */
       iVar6 = this->field_0109 * param_4;
       if (0 < this->field_0109) {
         do {
@@ -632,7 +634,7 @@ int __thiscall st::fn_005F4FA0(STBHEShellC *this)
      (local_8 = 0, 0 < this->field_010D)) {
     do {
       uVar8 = local_8 * this->field_0109;
-      if (g_playSystem_00802A38->field_00E4 < (uint)(&this->field_0159)[local_8]) {
+      if (g_playSystem_00802A38->field_00E4 < st::storage_bit_cast<uint>(static_cast<uint32_t>((&this->field_0159)[local_8]))) {
         local_c = 1;
       }
       else {

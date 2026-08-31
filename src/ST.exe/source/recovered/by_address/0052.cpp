@@ -2830,7 +2830,7 @@ char * __cdecl st::fn_00526100(RecoveredRecord_00526100_020D84E3 *param_1,int pa
         }
         return "TV_ARTEFACTBO";
       case 0xfe:
-        cVar1 = static_cast<char>(st::machine_word_boundary_cast<uint>(((char *)param_1)[1]));
+        cVar1 = ((char *)param_1)[1];
         if (cVar1 == '\x01') {
           return "TV_CONTAINER1";
         }
@@ -2845,7 +2845,7 @@ char * __cdecl st::fn_00526100(RecoveredRecord_00526100_020D84E3 *param_1,int pa
     break;
   case 2:
     if (param_1->field_0x1 != '\0') {
-      cVar1 = static_cast<char>(st::machine_word_boundary_cast<uint>(((char *)param_1)[1]));
+      cVar1 = ((char *)param_1)[1];
       if (cVar1 == '\x01') {
         return "TV_GROUPWS";
       }

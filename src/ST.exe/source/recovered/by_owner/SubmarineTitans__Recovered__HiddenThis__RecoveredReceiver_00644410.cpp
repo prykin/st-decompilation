@@ -110,7 +110,7 @@ st::fn_00644410
                   iVar14 = local_34;
                   if ((-1 < iVar6) && (iVar7 = (int)g_worldGrid.sizeX, iVar6 <= iVar7 + -1)) {
                     if (local_34 < 0) {
-                      if (((st::machine_word_boundary_cast<uint>((undefined4 *)local_34) == st::machine_word_boundary_cast<uint>(local_30)) && (local_1c == local_28)) &&
+                      if ((((undefined4 *)local_34 == local_30) && (local_1c == local_28)) &&
                          (iVar6 == local_24)) {
                         *param_1 = 1;
                         local_10->field_0270 = 0;
@@ -155,7 +155,7 @@ st::fn_00644410
                         this_00 = nullptr;
                       }
                       iVar7 = local_20;
-                      if ((((st::machine_word_boundary_cast<uint>((undefined4 *)iVar14) == st::machine_word_boundary_cast<uint>(local_30)) && (local_1c == local_28)) &&
+                      if (((((undefined4 *)iVar14 == local_30) && (local_1c == local_28)) &&
                           (iVar6 == local_24)) &&
                          ((STGridAt3D(g_pathingGrid, iVar6, local_1c, iVar14) < 0 &&
                           (this_00 == nullptr)))) {

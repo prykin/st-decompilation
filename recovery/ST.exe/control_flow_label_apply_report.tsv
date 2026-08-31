@@ -3371,29 +3371,6 @@ function_address	label_address	proposed_name	status	detail
 00728DA0	0072926D	cf_join_0072926D	disabled	apply=0
 00728DA0	007292A6	cf_join_007292A6	disabled	apply=0
 00728DA0	007294F8	cf_join_007294F8	disabled	apply=0
-00746E65	00746EC5	cf_join_00746EC5	disabled	apply=0
-007479CD	00747A71	cf_break_loop_00747A71	disabled	apply=0
-00748ECA	00748FC9	cf_join_00748FC9	disabled	apply=0
-00749212	0074924D	cf_join_0074924D	disabled	apply=0
-007495BF	00749680	cf_join_00749680	disabled	apply=0
-00749708	0074982D	cf_break_loop_0074982D	disabled	apply=0
-00749EC2	00749F79	cf_join_00749F79	disabled	apply=0
-0074A646	0074A6C4	cf_join_0074A6C4	disabled	apply=0
-0074BBC6	0074BBEF	cf_join_0074BBEF	disabled	apply=0
-0074BBC6	0074BC42	cf_common_exit_0074BC42	unchanged	label is already primary
-0074C28A	0074C313	cf_join_0074C313	disabled	apply=0
-0074C96C	0074C9FE	cf_join_0074C9FE	disabled	apply=0
-0074CA21	0074CA90	cf_join_0074CA90	disabled	apply=0
-0074CB34	0074CBE0	cf_join_0074CBE0	disabled	apply=0
-0074D786	0074D8C2	cf_join_0074D8C2	disabled	apply=0
-0074D786	0074D8CC	cf_join_0074D8CC	disabled	apply=0
-0074D786	0074D94D	cf_join_0074D94D	disabled	apply=0
-0074E337	0074E3AB	cf_join_0074E3AB	disabled	apply=0
-0074F368	0074F393	cf_join_0074F393	disabled	apply=0
-0074F368	0074F3A5	cf_join_0074F3A5	disabled	apply=0
-0074F3C0	0074F489	cf_common_exit_0074F489	unchanged	label is already primary
-00750469	0075051F	cf_join_0075051F	disabled	apply=0
-00750469	0075052C	cf_join_0075052C	disabled	apply=0
 007519D0	00751AD0	cf_continue_loop_00751AD0	unchanged	label is already primary
 007521B0	007522A2	cf_join_007522A2	disabled	apply=0
 007521B0	007525E9	cf_continue_loop_007525E9	unchanged	label is already primary

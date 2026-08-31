@@ -24,6 +24,7 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this)
   int iVar5;
   int uVar2;
   int iVar6;
+  int uVar9_mg2;
   int iVar4;
   uint uVar7;
   TLOBaseTy_field_0245State TVar8;
@@ -242,9 +243,9 @@ int __thiscall TLOBaseTy::LoadImages(TLOBaseTy *this)
     STT3DSprC::SetCurFase
               ((STT3DSprC *)this_01,'\x10',*(uint *)(&DAT_0079104c + this_00->field_0235 * 4));
 
-    uVar9 = STAppC::sub_006E51B0(this_00->field_0010);
+    uVar9_mg2 = STAppC::sub_006E51B0(this_00->field_0010);
     /* ST_CALLSITE[004C9CDD]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
-    STT3DSprC::StartShow((STT3DSprC *)this_01,0x10,uVar9);
+    STT3DSprC::StartShow((STT3DSprC *)this_01,0x10,uVar9_mg2);
     /* ST_CALLSITE[004C9CE6]: CALL 0x00403afd; direct=00403AFD STT3DSprC::sub_004ACF50 */
     STT3DSprC::sub_004ACF50((STT3DSprC *)this_01,'\x10');
   }

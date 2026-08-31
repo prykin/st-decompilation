@@ -17,6 +17,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -79,11 +80,15 @@ public class STGlobalDataAnalyzer extends GhidraScript {
             // into one global remains valid storage-role evidence.  Collect that
             // deliberately narrow fact before applying the library boundary.
             collectPublishedPointerStores(function);
-            if (isLibrary(function)) continue;
+            if (isLibrary(function)) {
+                collectLibraryMachinePointerRoles(function);
+                continue;
+            }
             functionsSeen++;
             collectExactGlobalReturnAlias(function);
             collectCfgThisGlobalStores(function);
             callsSeen += analyze(function);
+            collectSehChainGlobals(function);
         }
         addPointerDereferenceEvidence();
         List<Proposal> proposals = makeProposals();
@@ -167,6 +172,45 @@ public class STGlobalDataAnalyzer extends GhidraScript {
                     "ESP".equals(cleanRegister(operands[1]))) pushes.clear();
         }
         return calls;
+    }
+
+    /**
+     * A linked-library classification is a semantic/export boundary, not a
+     * reason to discard exact storage-role evidence from its machine code.
+     * Scan those bodies only for uses of a loaded global word as an actual
+     * memory base (or x86 bit-string base).  Do not propagate prototypes,
+     * receiver owners, names, or library source context across this boundary.
+     *
+     * Keeping this deliberately separate from {@link #analyze(Function)} makes
+     * the boundary auditable: the only surviving state is address identity of
+     * the loaded global, and calls/control-flow kill that state exactly as in
+     * the ordinary forward tracker.
+     */
+    private void collectLibraryMachinePointerRoles(Function function) {
+        Map<String, GlobalValue> registers = new HashMap<>();
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString().toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(instruction.toString().toUpperCase(Locale.ROOT));
+            collectPointerDereferenceEvidence(function, instruction, mnemonic,
+                operands, registers);
+            collectAddressCrossObjectEvidence(function, instruction, mnemonic,
+                operands, registers);
+            collectBitStringEvidence(function, instruction, mnemonic,
+                operands, registers);
+            if (instruction.getFlowType().isCall()) {
+                registers.remove("EAX");
+                registers.remove("ECX");
+                registers.remove("EDX");
+                continue;
+            }
+            if (instruction.getFlowType().isJump() ||
+                    instruction.getFlowType().isTerminal())
+                registers.clear();
+            updateRegisters(instruction, mnemonic, operands, registers);
+        }
     }
 
     /**
@@ -279,6 +323,67 @@ public class STGlobalDataAnalyzer extends GhidraScript {
     }
 
     /**
+     * Recover the head of an x86 SEH registration chain as neutral word
+     * pointer storage.  ``FS:[0]`` is a machine ABI anchor, not a semantic
+     * Windows structure claim.  Require both the exact segment load/store and
+     * an independently observed later dereference of that same global in this
+     * function before contributing the two evidence votes needed by the normal
+     * global-data policy.
+     */
+    private void collectSehChainGlobals(Function function) {
+        Map<String, Address> segmentHeads = new HashMap<>();
+        Set<Address> published = new LinkedHashSet<>();
+        InstructionIterator instructions = currentProgram.getListing()
+            .getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            String mnemonic = instruction.getMnemonicString()
+                .toUpperCase(Locale.ROOT);
+            String[] operands = splitOperands(
+                instruction.toString().toUpperCase(Locale.ROOT));
+            if (instruction.getFlowType().isCall() ||
+                    instruction.getFlowType().isJump() ||
+                    instruction.getFlowType().isTerminal())
+                segmentHeads.clear();
+            if (!"MOV".equals(mnemonic) || operands.length < 2) continue;
+            String destination = cleanRegister(operands[0]);
+            if (destination != null && isFullRegister(operands[0])) {
+                if (operands[1].replaceAll("\\s+", "")
+                        .matches(".*FS:\\[(?:0X)?0+\\].*"))
+                    segmentHeads.put(destination, instruction.getAddress());
+                else segmentHeads.remove(destination);
+                continue;
+            }
+            GlobalValue global = referencedGlobal(
+                instruction, 0, operands[0], false);
+            String source = cleanRegister(operands[1]);
+            if (global != null && !global.addressOf && source != null &&
+                    segmentHeads.containsKey(source) &&
+                    (memoryOperandWidth(operands[0], mnemonic) ==
+                        currentProgram.getDefaultPointerSize() ||
+                     (isFullRegister(operands[1]) &&
+                        isPointerSizedDefinedGlobal(global.address))))
+                published.add(global.address);
+        }
+        String owner = addr(function.getEntryPoint());
+        for (Address address : published) {
+            Evidence ev = evidence.get(address);
+            if (ev == null || !ev.pointerDerefFunctions.contains(owner) ||
+                    ev.pointerDerefWidths.getOrDefault(4, 0) < 1) continue;
+            add(address, "pointer:/undefined4", "", true, false,
+                owner + " exact FS:[0] registration-chain publication");
+            add(address, "pointer:/undefined4", "", true, false,
+                owner + " published FS:[0] value later reused as a dword memory base");
+        }
+    }
+
+    private boolean isPointerSizedDefinedGlobal(Address address) {
+        Data data = currentProgram.getListing().getDefinedDataAt(address);
+        return data != null &&
+            data.getLength() == currentProgram.getDefaultPointerSize();
+    }
+
+    /**
      * Find incoming/local EBP slots whose loaded machine word is subsequently
      * used as the sole unscaled base of a real memory access.  This establishes
      * the pointer role of the slot without assigning a semantic pointee.  The
@@ -375,6 +480,14 @@ public class STGlobalDataAnalyzer extends GhidraScript {
         if (register != null && isFullRegister(operand)) return registers.get(register);
         Integer stackOffset = stackOffset(instruction, operandIndex);
         if (stackOffset != null) return stack.get(stackOffset);
+        // On 32-bit Windows, FS:[0] is the head pointer of the current thread's
+        // SEH registration chain.  The segment-relative load proves pointer
+        // role but not the private record layout, so retain a neutral origin.
+        // Require the complete exact operand; other TLS offsets carry arbitrary
+        // scalar runtime data and must not inherit this rule.
+        String compact = operand.replaceAll("\\s+", "").toUpperCase(Locale.ROOT);
+        if (compact.matches("(?:DWORDPTR)?FS:\\[(?:0|0X0+)\\]"))
+            return new PointerOrigin("", "x86 FS:[0] exception-chain head");
         for (Reference reference : instruction.getReferencesFrom()) {
             if (reference.getOperandIndex() != operandIndex ||
                     !reference.isMemoryReference()) continue;

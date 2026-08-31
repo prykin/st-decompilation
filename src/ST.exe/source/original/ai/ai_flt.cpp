@@ -841,7 +841,7 @@ int __thiscall st::fn_00662240(AiFltClassTy *this,uint *param_1)
   IMAGE_DOS_HEADER *pIVar11;
   int local_EAX_225;
   int local_EAX_1152;
-  uint local_EAX_1361;
+  int local_EAX_1361;
   int local_EAX_1968;
   int iVar13;
   int local_EAX_2335;
@@ -1283,7 +1283,7 @@ LAB_00663af0:
             }
 LAB_006625c2:
             local_10 = (DArrayTy *)((int)&pDVar17->flags + 1);
-            bVar25 = st::machine_word_boundary_cast<uint>(local_10) < st::machine_word_boundary_cast<uint>((DArrayTy *)local_8->count);
+            bVar25 = local_10 < (DArrayTy *)local_8->count;
           } while ((int)local_10 < (int)local_8->count);
         }
       }
@@ -1381,7 +1381,7 @@ LAB_0066263e:
       local_EAX_1361 =
            st::fn_00404A20
                      (reinterpret_cast<RecoveredReceiver_0065DA50 *>(this_00),iVar20,-1);
-      if ((int)local_EAX_1361 < 1) {
+      if (local_EAX_1361 < 1) {
         g_currentExceptionFrame = local_74.previous;
         return 0;
       }
@@ -1975,7 +1975,7 @@ LAB_00662f34:
           this_02 = STGridAt3D(g_worldGrid, sVar2, sVar1, sVar4).objects[0];
         }
         if ((this_02 != nullptr) &&
-           (st::machine_word_boundary_cast<uint>(this_02[1].vtable) == st::machine_word_boundary_cast<uint>((STWorldObjectVTable *)local_c->field_0024))) {
+           (this_02[1].vtable == (STWorldObjectVTable *)local_c->field_0024)) {
           /* ST_CALLSITE[0066329A]: CALL dword ptr [EAX + 0x2c] */
           iVar20 = this_02->GetObjectTypeId();
           if (iVar20 == *STField<int *>(param_1,9)) {
@@ -2376,7 +2376,7 @@ LAB_0066380d:
   return 0;
 cf_continue_loop_00662E52:
   local_24 = (TLOBaseTy *)((int)&local_24->vtable + 1);
-  bVar25 = st::machine_word_boundary_cast<uint>(local_24) < st::machine_word_boundary_cast<uint>((TLOBaseTy *)local_8->count);
+  bVar25 = local_24 < (TLOBaseTy *)local_8->count;
   if ((int)local_8->count <= (int)local_24) goto LAB_00662f34;
   goto LAB_00662dbb;
 }

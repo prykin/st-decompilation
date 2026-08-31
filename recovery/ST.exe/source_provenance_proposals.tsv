@@ -1,6 +1,6 @@
 source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_confidence	source_reason	proposed_name	name_confidence	name_reason	free_name_candidates
-1	0	0040AE40	FUN_0040ae40	E:\\__titans\\wlad\\Grpway3d.cpp	275	high	unique_embedded_source_path		none	no_strict_free_function_string	-
-1	0	0040BC90	FUN_0040bc90	E:\\__titans\\wlad\\Grpway3d.cpp	371	high	unique_embedded_source_path		none	no_strict_free_function_string	-
+1	0	0040AE40	STGroupBoatC::sub_0040AE40	E:\\__titans\\wlad\\Grpway3d.cpp	275	high	unique_embedded_source_path		none	no_strict_free_function_string	-
+1	0	0040BC90	STGroupBoatC::sub_0040BC90	E:\\__titans\\wlad\\Grpway3d.cpp	371	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 1	0	0040C080	FUN_0040c080	E:\\__titans\\wlad\\Grpway3d.cpp	563	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 1	0	0040E0F0	FUN_0040e0f0	E:\\__titans\\wlad\\Grpway3d.cpp	2357	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 1	0	0040FC40	FUN_0040fc40	E:\\__titans\\wlad\\Grpway3d.cpp	2635	high	unique_embedded_source_path		none	no_strict_free_function_string	-
@@ -44,7 +44,7 @@ source_apply	name_apply	address	old_name	source_file	diagnostic_lines	source_con
 0	0	0042BB30	STAllPlayersC::AddObjToTmp	E:\\__titans\\wlad\\to_allpl.cpp	504 | 521 | 528 | 533 | 534 | 537 | 541	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	0042BEA0	STAllPlayersC::AddObjToTmp2	E:\\__titans\\wlad\\to_allpl.cpp	571 | 572 | 575 | 585 | 586 | 593 | 594	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	0042C1C0	STAllPlayersC::AddObjsToTmp	E:\\__titans\\wlad\\to_allpl.cpp	614 | 622 | 623	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
-1	0	0042C300	FUN_0042c300	E:\\__titans\\wlad\\to_allpl.cpp	655	high	unique_embedded_source_path		none	no_strict_free_function_string	-
+1	0	0042C300	STAllPlayersC::sub_0042C300	E:\\__titans\\wlad\\to_allpl.cpp	655	high	unique_embedded_source_path		none	no_strict_free_function_string	-
 0	0	0042C4B0	STAllPlayersC::DelObjsFromTmp	E:\\__titans\\wlad\\to_allpl.cpp	692 | 700 | 701	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	0042C5F0	STAllPlayersC::DelObjFromTmps	E:\\__titans\\wlad\\to_allpl.cpp	850	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-
 0	0	0042CDE0	STAllPlayersC::PushTV	E:\\__titans\\wlad\\to_allpl.cpp	874	high	source_already_present_in_function_comment		none	no_strict_free_function_string	-

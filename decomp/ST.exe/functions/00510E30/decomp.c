@@ -37,10 +37,11 @@ void __thiscall HelpPanelTy::InitHelpPanel(HelpPanelTy *this)
   ushort *local_EAX_1169;
   ushort *local_EAX_1202;
   int uVar17;
-  int local_EAX_1285;
+  ushort *local_EAX_1285;
   int local_EAX_1308;
-  int pAVar8;
+  AnonPointee_HelpPanelTy_0218 *pAVar8;
   char *pcVar7_mg1;
+  int uVar11_mg7;
   int iVar26;
   byte *pbVar8;
   HelpPanelTy_field_01BBElement *element_01bb;
@@ -306,19 +307,19 @@ LAB_00510fa9:
   puVar24 = this_00->field_01DC + 0x14;
 
   uVar17 = FUN_006b4fe0(this_00->field_01DC);
+  /* ST_CALLSITE[00511335]: CALL 0x006b50c0; direct=006B50C0 FUN_006b50c0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ushort; signature=__stdcall;pointer:/ushort;/int;/int;/int;/uint;pointer:/undefined4;/int */
   local_EAX_1285 =
-       /* ST_CALLSITE[00511335]: CALL 0x006b50c0; direct=006B50C0 FUN_006b50c0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ushort; signature=__stdcall;pointer:/ushort;/int;/int;/int;/uint;pointer:/undefined4;/int */
-       (int)FUN_006b50c0(0x19c,iVar27 + 1,(uint)this_00->field_01DC[7],uVar17,(undefined4 *)puVar24,
-                         iVar23);
-  this_00->field_01EC = (ushort *)local_EAX_1285;
+       FUN_006b50c0(0x19c,iVar27 + 1,(uint)this_00->field_01DC[7],uVar17,(undefined4 *)puVar24,
+                    iVar23);
+  this_00->field_01EC = local_EAX_1285;
   iVar27 = 1;
   puVar24 = this_00->field_01DC + 0x14;
 
   local_EAX_1308 = FUN_006b4fe0(this_00->field_01DC);
   /* ST_CALLSITE[00511369]: CALL 0x006b50c0; direct=006B50C0 FUN_006b50c0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_0218; signature=__stdcall;pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_HelpPanelTy_0218;/int;/int;/int;/uint;pointer:/undefined4;/int */
-  pAVar8 = (int)FUN_006b50c0(0x19c,600,(uint)this_00->field_01DC[7],local_EAX_1308,
-                             (undefined4 *)puVar24,iVar27);
-  this_00->field_0218 = (AnonPointee_HelpPanelTy_0218 *)pAVar8;
+  pAVar8 = FUN_006b50c0(0x19c,600,(uint)this_00->field_01DC[7],local_EAX_1308,(undefined4 *)puVar24,
+                        iVar27);
+  this_00->field_0218 = pAVar8;
   pAVar1 = this_00->field_0068;
   uVar11 = pAVar1->field_0014;
   if (uVar11 == 0) {
@@ -382,11 +383,11 @@ LAB_00510fa9:
     sVar17 = 2;
     pCVar6 = thunk_FUN_00571240("BUT_HLPHOME",0);
     /* ST_CALLSITE[005114D9]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
-    uVar11 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,iVar23,0x151,1,pCVar6,iVar14,iVar16,sVar17,
-                                 uVar18,uVar13,pcVar21,uVar15,uVar20);
+    uVar11_mg7 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,iVar23,0x151,1,pCVar6,iVar14,iVar16,
+                                     sVar17,uVar18,uVar13,pcVar21,uVar15,uVar20);
     iVar27 = iVar27 + 1;
     iVar23 = iVar23 + 0x2c;
-    *local_c = uVar11;
+    *local_c = uVar11_mg7;
     local_c = local_c + 1;
     local_8 = local_8 + -1;
   } while (local_8 != 0);

@@ -24,7 +24,7 @@ st::fn_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *
   short *psVar1;
   int *piVar2;
   void *pvVar3;
-  uint *puVar4;
+  byte *puVar4;
   char *pcVar5;
   RecoveredRecord_00692BA0_C4D2C982 *pRVar6;
   AnonShape_006DBCA0_EF06575F *pAVar7;
@@ -40,7 +40,7 @@ st::fn_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *
   ushort *puVar9_mg6;
   ushort *puVar9_mg7;
   int iVar11;
-  ushort *puVar12;
+  byte *pbVar12;
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 *pRVar13;
   byte bVar14;
   uint uVar15;
@@ -49,9 +49,9 @@ st::fn_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *
   CHAR local_190 [260];
   RecursiveNode_ST3DSMAPContext_0140_DDDC9F89 local_8c;
   RecoveredRecordView_006B4B20_F20E56A6 *local_3c;
-  ushort *local_38;
+  byte *local_38;
   RecoveredRecordView_006B4B20_F20E56A6 *local_34;
-  ushort *local_30;
+  byte *local_30;
   RecoveredRecordView_006B4B20_F20E56A6 *local_2c;
   int *local_28;
   char *local_24;
@@ -66,24 +66,20 @@ st::fn_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *
   local_14 = this;
   local_38 = st::fn_006F2D90(param_1,st::mutable_c_string("2D_CLT"),0,0);
   if (local_38 != nullptr) {
-    puVar12 = local_38;
-    puVar4 = (undefined4 *)((int)this + 0x37ac);
-    for (iVar11 = 0xf; iVar11 != 0; iVar11 = iVar11 + -1) {
-      *puVar4 = *(undefined4 *)puVar12;
-      puVar12 = puVar12 + 2;
-      puVar4 = puVar4 + 1;
-    }
+    pbVar12 = local_38;
+    puVar4 = (byte *)((int)this + 0x37ac);
+    memmove(puVar4, pbVar12, 0x3c); /* compiler REP MOVS byte copy */
     st::fn_006F20E0(param_1,reinterpret_cast<uint *>(&local_38));
   }
   local_30 = st::fn_006F2D90(param_1,st::mutable_c_string("CLR_COVER"),0,0);
   if (local_30 != nullptr) {
-    puVar4 = &DAT_007d5934;
-    puVar12 = local_30;
+    puVar4 = reinterpret_cast<byte *>((&DAT_007d5934));
+    pbVar12 = local_30;
     do {
-      uVar15 = *(undefined4 *)puVar12;
-      puVar12 = puVar12 + 2;
+      uVar15 = *(undefined4 *)pbVar12;
+      pbVar12 = pbVar12 + 4;
       *puVar4 = uVar15;
-      puVar4 = puVar4 + 2;
+      puVar4 = reinterpret_cast<byte *>((puVar4 + 2));
     } while ((int)puVar4 < 0x7d595c);
     st::fn_006F20E0(param_1,reinterpret_cast<uint *>(&local_30));
   }
@@ -138,14 +134,14 @@ LAB_0069177d:
           puVar9_mg2 = st::fn_006F0CD0(st::machine_word_boundary_cast<undefined4>(param_1),pcVar5,0);
           if (puVar9_mg2 != nullptr) {
 
-            puVar4 = static_cast<uint *>(st::fn_006AAC70(0xa9));
+            puVar4 = reinterpret_cast<byte *>((st::fn_006AAC70(0xa9)));
             scalar_local_1c = local_c * 6; /* split integer lifetime from pointer-typed SSA storage */
             local_28 = (int *)((int)local_14 +
                               (scalar_local_1c + local_8 + iVar11 * 0x49) * 8 + 0x1954);
             *local_28 = (int)puVar4;
             for (iVar16 = 0x2a; iVar16 != 0; iVar16 = iVar16 + -1) {
               *puVar4 = 0;
-              puVar4 = puVar4 + 1;
+              puVar4 = reinterpret_cast<byte *>((puVar4 + 1));
             }
             *(undefined1 *)puVar4 = 0;
             *(undefined2 *)(*local_28 + 0x23) = 0;
@@ -176,7 +172,7 @@ LAB_0069177d:
                   if (local_c == 0) {
                     iVar16 = (int)local_10 * 0x10 + (local_18 + local_8 * 2) * 0xf0 + 0x2028;
 LAB_00691a65:
-                    puVar4 = (undefined4 *)(iVar16 + (int)local_14);
+                    puVar4 = (byte *)(iVar16 + (int)local_14);
                     *puVar4 = *(undefined4 *)(puVar9_mg3 + 2);
                     puVar4[1] = *(undefined4 *)(puVar9_mg3 + 4);
                     puVar4[2] = *(undefined4 *)(puVar9_mg3 + 6);
@@ -206,8 +202,8 @@ LAB_00691a65:
                   this_00->field_0140 = nullptr;
                   this_00->field_013C = 0;
                   if (param_3 != 0) {
-                    puVar4 = (undefined4 *)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
-                    local_3c = st::fn_004054BB(param_2,(undefined4 *)this_00->field_000C,puVar4,
+                    puVar4 = (byte *)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
+                    local_3c = st::fn_004054BB(param_2,(undefined4 *)this_00->field_000C,reinterpret_cast<undefined4 *>(puVar4),
                                                   puVar4,1);
                     piVar2 = local_28;
 
@@ -225,10 +221,10 @@ LAB_00691a65:
                      ((int)local_14 +
                      (int)local_10 * 4 + (local_18 + (scalar_local_1c + local_8) * 2) * 0x3c) =
                          puVar10;
-                    puVar4 = (undefined4 *)this_00->field_000C;
+                    puVar4 = (byte *)this_00->field_000C;
                     for (iVar16 = 400; iVar11 = local_20, iVar16 != 0; iVar16 = iVar16 + -1) {
                       *puVar10 = *puVar4;
-                      puVar4 = puVar4 + 1;
+                      puVar4 = reinterpret_cast<byte *>((puVar4 + 1));
                       puVar10 = puVar10 + 1;
                     }
                   }
@@ -247,13 +243,13 @@ LAB_00691a65:
           puVar9_mg4 = st::fn_006F0CD0(st::machine_word_boundary_cast<undefined4>(param_1),pcVar5,0);
           if (puVar9_mg4 != nullptr) {
 
-            puVar4 = static_cast<uint *>(st::fn_006AAC70(0x59));
+            puVar4 = reinterpret_cast<byte *>((st::fn_006AAC70(0x59)));
             local_18 = local_c * 6 + iVar11 * 0x92;
             piVar2 = (int *)((int)local_14 + (local_18 + local_8) * 4 + 0x1a74);
             *piVar2 = (int)puVar4;
             for (iVar16 = 0x16; iVar16 != 0; iVar16 = iVar16 + -1) {
               *puVar4 = 0;
-              puVar4 = puVar4 + 1;
+              puVar4 = reinterpret_cast<byte *>((puVar4 + 1));
             }
             *(undefined1 *)puVar4 = 0;
             local_10 = nullptr;
@@ -304,8 +300,8 @@ LAB_00691a65:
                 this_00->field_0140 = nullptr;
                 this_00->field_013C = 0;
                 if (param_3 != 0) {
-                  puVar4 = (undefined4 *)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
-                  local_2c = st::fn_004054BB(param_2,(undefined4 *)this_00->field_000C,puVar4,
+                  puVar4 = (byte *)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
+                  local_2c = st::fn_004054BB(param_2,(undefined4 *)this_00->field_000C,reinterpret_cast<undefined4 *>(puVar4),
                                                 puVar4,1);
                   iVar16 = local_18 + local_8;
 
@@ -321,10 +317,10 @@ LAB_00691a65:
                   *(undefined4 **)
                    ((int)local_14 + ((int)local_10 + (local_8 + (local_c * 3 + 0x36) * 2) * 10) * 4)
                        = puVar10;
-                  puVar4 = (undefined4 *)this_00->field_000C;
+                  puVar4 = (byte *)this_00->field_000C;
                   for (iVar16 = 400; iVar11 = local_20, iVar16 != 0; iVar16 = iVar16 + -1) {
                     *puVar10 = *puVar4;
-                    puVar4 = puVar4 + 1;
+                    puVar4 = reinterpret_cast<byte *>((puVar4 + 1));
                     puVar10 = puVar10 + 1;
                   }
                 }
@@ -340,13 +336,13 @@ LAB_00691a65:
           puVar9_mg6 = st::fn_006F0CD0(st::machine_word_boundary_cast<undefined4>(param_1),pcVar5,0);
           if (puVar9_mg6 != nullptr) {
 
-            puVar4 = static_cast<uint *>(st::fn_006AAC70(0x45));
+            puVar4 = reinterpret_cast<byte *>((st::fn_006AAC70(0x45)));
             local_18 = local_c * 6 + iVar11 * 0x92;
             local_1c = (int *)((int)local_14 + (local_18 + local_8) * 4 + 0x1b08);
             *local_1c = (int)puVar4;
             for (iVar16 = 0x11; iVar16 != 0; iVar16 = iVar16 + -1) {
               *puVar4 = 0;
-              puVar4 = puVar4 + 1;
+              puVar4 = reinterpret_cast<byte *>((puVar4 + 1));
             }
             *(undefined1 *)puVar4 = 0;
             local_10 = nullptr;
@@ -396,8 +392,8 @@ LAB_00691a65:
                 this_00->field_0140 = nullptr;
                 this_00->field_013C = 0;
                 if (param_3 != 0) {
-                  puVar4 = (undefined4 *)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
-                  local_34 = st::fn_004054BB(param_2,(undefined4 *)this_00->field_000C,puVar4,
+                  puVar4 = (byte *)(0x28 / (longlong)*(int *)(&DAT_007dfa90 + iVar11 * 4));
+                  local_34 = st::fn_004054BB(param_2,(undefined4 *)this_00->field_000C,reinterpret_cast<undefined4 *>(puVar4),
                                                 puVar4,1);
                   iVar16 = local_18 + local_8;
 
@@ -413,10 +409,10 @@ LAB_00691a65:
                   *(undefined4 **)
                    ((int)local_14 + ((int)local_10 + (local_8 + (local_c * 3 + 0x90) * 2) * 5) * 4)
                        = puVar10;
-                  puVar4 = (undefined4 *)this_00->field_000C;
+                  puVar4 = (byte *)this_00->field_000C;
                   for (iVar16 = 400; iVar11 = local_20, iVar16 != 0; iVar16 = iVar16 + -1) {
                     *puVar10 = *puVar4;
-                    puVar4 = puVar4 + 1;
+                    puVar4 = reinterpret_cast<byte *>((puVar4 + 1));
                     puVar10 = puVar10 + 1;
                   }
                 }

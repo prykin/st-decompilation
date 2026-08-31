@@ -4,7 +4,7 @@
 undefined4 FUN_006c1f00(int param_1,uint *param_2,uint *param_3)
 
 {
-  if (DAT_008568b4 == 0) {
+  if (PTR_008568b4 == nullptr) {
     return 0xffffffcc;
   }
   if ((-1 < param_1) && (param_1 < 0x20)) {

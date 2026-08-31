@@ -6,6 +6,8 @@
 int * st::fn_00561240(int param_1,int param_2,int param_3)
 
 {
+  int param_1_after_write;
+
   int iVar1;
   int iVar2;
   int iVar3;
@@ -28,7 +30,7 @@ int * st::fn_00561240(int param_1,int param_2,int param_3)
 
   iVar4 = param_1;
   local_c = 0;
-  auto param_1_after_write = 0x75300000; /* compiler stack-slot lifetime split */
+  param_1_after_write = 0x75300000; /* compiler stack-slot lifetime split */
   local_18 = 0x8ad00000;
   local_8 = -0x75300000;
   iVar7 = iVar4 / 2;
@@ -867,6 +869,7 @@ int st::fn_00564F30(int param_1,int param_2,int param_3,int *param_4,int param_5
 
 {
   int scalar_param_4;
+  int param_6_after_write;
 
   RuntimeRecord_008032F4_0014 *pRVar1;
   short sVar2;
@@ -1073,7 +1076,7 @@ int st::fn_00564F30(int param_1,int param_2,int param_3,int *param_4,int param_5
     iVar9 = 0;
   }
   iVar8 = 0;
-  auto param_6_after_write = 100; /* compiler stack-slot lifetime split */
+  param_6_after_write = 100; /* compiler stack-slot lifetime split */
   local_2c = DAT_00803398;
   iVar16 = DAT_00803398;
   if (0 < DAT_00803398) {
@@ -2577,9 +2580,8 @@ LAB_0056f325:
           puVar14 = PTR_0080679c + 0x14;
 
           uVar4 = st::fn_006B4FE0(PTR_0080679c);
-          local_c = (AnonShape_006B5050_99986F91 *)
-                    /* ST_CALLSITE[0056F521]: CALL 0x006b50c0; direct=006B50C0 FUN_006b50c0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy; source view only; no Ghidra override */
-                    st::fn_006B50C0(0x8b,0x8b,(uint)PTR_0080679c[7],uVar4,reinterpret_cast<undefined4 *>(puVar14),iVar15);
+          local_c = /* ST_CALLSITE[0056F521]: CALL 0x006b50c0; direct=006B50C0 FUN_006b50c0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy; source view only; no Ghidra override */
+          STPointerBoundaryCast<AnonShape_006B5050_99986F91 *>(st::fn_006B50C0(0x8b,0x8b,(uint)PTR_0080679c[7],uVar4,reinterpret_cast<undefined4 *>(puVar14),iVar15));
           if (local_c != nullptr) {
             st::fn_006B4170(reinterpret_cast<RecoveredSourceFamily_dibcopy *>(local_c),0,0,0,local_c->field_0004,
                          local_c->field_0008,0);

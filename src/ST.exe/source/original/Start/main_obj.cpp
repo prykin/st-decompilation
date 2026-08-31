@@ -422,6 +422,7 @@ void __thiscall st::fn_005B3430(MainMenuTy *this)
   int iVar4;
   uint uVar6;
   int *piVar7;
+  int uVar6_mg7;
   int iVar7;
   int iVar8;
   uint *puVar9;
@@ -581,11 +582,11 @@ void __thiscall st::fn_005B3430(MainMenuTy *this)
         do {
           if (*local_c == 0) {
             /* ST_CALLSITE[005B3861]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
-            uVar6 = st::fn_0040361B
-                              (reinterpret_cast<MMObjTy *>(this_00),1,(uint)(this_00->field_1EDF != 0),
-                               puVar10[0x17] + puVar10[-2],puVar10[0x18] + puVar10[-1],*puVar10,
-                               puVar10[1],iVar8,iVar8 + 0x80);
-            *local_c = uVar6;
+            uVar6_mg7 = st::fn_0040361B
+                                  (reinterpret_cast<MMObjTy *>(this_00),1,(uint)(this_00->field_1EDF != 0),
+                                   puVar10[0x17] + puVar10[-2],puVar10[0x18] + puVar10[-1],*puVar10,
+                                   puVar10[1],iVar8,iVar8 + 0x80);
+            *local_c = uVar6_mg7;
           }
           local_c = local_c + 1;
           iVar3 = iVar8 + -0x68fe;

@@ -2186,7 +2186,7 @@ function_address	function_name	call_address	slot_offset	stack_parameter_count	la
 0060AEF0	FUN_0060aef0	0060B389	44	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/STFishCVTable	/STFishC | /SubmarineTitans/Recovered/GlobalRecords/STWorldObject	/STFishC		/undefined4	physical_vtable
 0060AEF0	FUN_0060aef0	0060B49E	248	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/STFishCVTable	/STFishC | /SubmarineTitans/Recovered/GlobalRecords/STWorldObject	/STFishC		/undefined4	physical_vtable
 0060AEF0	FUN_0060aef0	0060B61B	44	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/STFishCVTable	/STFishC | /SubmarineTitans/Recovered/GlobalRecords/STWorldObject	/STFishC		/undefined4	physical_vtable
-0060AEF0	FUN_0060aef0	0060B6EA	44	0	EBX	EBX	1					/undefined4	unresolved_object_dispatch
+0060AEF0	FUN_0060aef0	0060B6EA	44	0	EBX	EBX	1	/SubmarineTitans/Recovered/VTables/STFishCVTable	/STFishC	/STFishC		/undefined4	physical_vtable
 0060AEF0	FUN_0060aef0	0060B7C1	44	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/STFishCVTable	/STFishC	/STFishC		/undefined4	physical_vtable
 0060AEF0	FUN_0060aef0	0060B934	44	0	ESI	ESI	1	/SubmarineTitans/Recovered/VTables/STFishCVTable	/STFishC	/STFishC		/undefined4	physical_vtable
 0060BCB0	FUN_0060bcb0	0060BCF9	0	1	ECX	ECX	1					/undefined4	unresolved_object_dispatch

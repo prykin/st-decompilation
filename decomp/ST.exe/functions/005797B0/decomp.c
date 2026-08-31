@@ -17,7 +17,7 @@
 int __thiscall FUN_005797b0(void *this,short *param_1,short *param_2,undefined2 *param_3)
 
 {
-  uint uVar1;
+  int uVar1;
   uint *puVar1;
   int iVar3;
   int iVar2;
@@ -236,7 +236,7 @@ switchD_0057988b_default:
 
           uVar1 = thunk_FUN_00496250(local_14,local_18,(int)STField<short>(this,0x45));
           sVar4 = (short)iVar2;
-          if ((int)uVar1 < 0) {
+          if (uVar1 < 0) {
             puVar1 = thunk_FUN_004d85e0((int)sVar4,(short)local_8,(int)local_10);
             if ((puVar1 == nullptr) &&
                (((((sVar4 < 0 || (g_worldGrid.sizeX <= sVar4)) || ((short)local_8 < 0)) ||

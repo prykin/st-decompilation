@@ -3507,6 +3507,8 @@ void st::fn_006D3D80(int param_1,int param_2,int param_3,byte *param_4,int param
                  int param_19,byte *param_20,byte *param_21)
 
 {
+  int param_7_after_write;
+
   uint uVar1;
   int iVar2;
   int iVar3;
@@ -3553,7 +3555,7 @@ void st::fn_006D3D80(int param_1,int param_2,int param_3,byte *param_4,int param
       local_10 = param_21;
       local_c = pbVar12 + (param_3 - (int)param_4);
       param_18 = (0x80 >> ((byte)param_6 & 7)) << 0x18;
-      auto param_7_after_write = 0; /* compiler stack-slot lifetime split */
+      param_7_after_write = 0; /* compiler stack-slot lifetime split */
       local_14 = pbVar12;
       if (0 < param_8) {
         do {
@@ -3841,7 +3843,7 @@ int st::fn_006D4930(AnonShape_006D4930_676532DD *param_1,LPDWORD lpNumberOfBytes
       }
       return -0xfd;
     }
-    if (st::machine_word_boundary_cast<uint>(lpNumberOfBytesRead) == st::machine_word_boundary_cast<uint>((LPDWORD)nNumberOfBytesToRead)) {
+    if (lpNumberOfBytesRead == (LPDWORD)nNumberOfBytesToRead) {
       return 0;
     }
   }
@@ -5376,7 +5378,7 @@ int __thiscall st::fn_006D6A10(void *this,int *param_1)
       local_8 = iVar10;
 
       st::fn_006BB370
-                (reinterpret_cast<DDXContext *>(((RecoveredReceiver_006CEC40 *)this)->field_0288->field_0028),0,0);
+                ((DDXContext *)((RecoveredReceiver_006CEC40 *)this)->field_0288->field_0028,0,0);
       g_currentExceptionFrame = local_98.previous;
     }
     else {
@@ -5565,14 +5567,14 @@ int __thiscall st::fn_006D6A10(void *this,int *param_1)
   }
   /* ST_CALLSITE[006D6F95]: CALL dword ptr [0x0085bedc] */
   DVar7 = st::external_000000DA();
-  pAVar6 = reinterpret_cast<AnonPointee_SubmarineTitans__Recovered__HiddenThis__RecoveredReceiver_006CEC40_0288 *>(((RecoveredReceiver_006CEC40 *)this)->field_0288);
+  pAVar6 = ((RecoveredReceiver_006CEC40 *)this)->field_0288;
   if (3 < (uint)pAVar6[5].field_000C) {
     uVar9 = DVar7 - pAVar6[5].field_0010;
     pAVar6[5].field_0020 = pAVar6[5].field_0020 + uVar9;
-    if (uVar9 < (uint)((RecoveredReceiver_006CEC40 *)this)->field_0288[5].field_0024) {
+    if (uVar9 < st::storage_bit_cast<uint>(static_cast<uint32_t>(((RecoveredReceiver_006CEC40 *)this)->field_0288[5].field_0024))) {
       ((RecoveredReceiver_006CEC40 *)this)->field_0288[5].field_0024 = uVar9;
     }
-    if ((uint)((RecoveredReceiver_006CEC40 *)this)->field_0288[5].field_0028 < uVar9) {
+    if (st::storage_bit_cast<uint>(static_cast<uint32_t>(((RecoveredReceiver_006CEC40 *)this)->field_0288[5].field_0028)) < uVar9) {
       ((RecoveredReceiver_006CEC40 *)this)->field_0288[5].field_0028 = uVar9;
     }
   }
@@ -6335,6 +6337,8 @@ void st::fn_006D7830(undefined1 *param_1,int param_2,undefined4 *param_3,int par
 void st::fn_006D7A30(int param_1,int param_2,uint param_3,uint param_4,int param_5,byte param_6)
 
 {
+  int param_3_after_write;
+
   int iVar1;
   byte bVar2;
   uint uVar3;
@@ -6369,7 +6373,7 @@ void st::fn_006D7A30(int param_1,int param_2,uint param_3,uint param_4,int param
     } while (local_18 != 0);
   }
   iVar1 = param_1 + param_5;
-  auto param_3_after_write = 0; /* compiler stack-slot lifetime split */
+  param_3_after_write = 0; /* compiler stack-slot lifetime split */
   iVar6 = param_5 * param_5;
   auto param_1_after_write = (param_4 - 1) * param_2 + param_1 + param_5; /* compiler stack-slot lifetime split */
   iVar7 = (1 - param_5) * iVar6 + (STSignedDiv4(iVar6));
@@ -7287,7 +7291,7 @@ LAB_006d8b04:
         iVar12 = iVar12 - uVar20;
       }
       else {
-        local_8 = (uint)((byte *)param_10)[1];
+        local_8 = st::storage_bit_cast<uint>(static_cast<uint32_t>(((byte *)param_10)[1]));
         param_10 = param_10 + 2;
         iVar12 = iVar12 - uVar20;
       }
@@ -7397,9 +7401,9 @@ LAB_006d8b50:
               }
               if ((char)uVar20 != '\x01') {
                 if ((char)uVar20 != '\x02') {
-                  STField<byte>(pAVar16,2) = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)param_10)[2]));
+                  STField<byte>(pAVar16,2) = ((byte *)param_10)[2];
                 }
-                STField<byte>(pAVar16,1) = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)param_10)[1]));
+                STField<byte>(pAVar16,1) = ((byte *)param_10)[1];
               }
               uVar16 = *(uint *)param_10;
               param_10 = param_10 + uVar20;
@@ -7591,9 +7595,9 @@ LAB_006d8d94:
                 }
                 if ((char)uVar20 != '\x01') {
                   if ((char)uVar20 != '\x02') {
-                    STField<byte>(param_1,2) = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)param_10)[2]));
+                    STField<byte>(param_1,2) = ((byte *)param_10)[2];
                   }
-                  STField<byte>(param_1,1) = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)param_10)[1]));
+                  STField<byte>(param_1,1) = ((byte *)param_10)[1];
                 }
                 uVar16 = *(uint *)param_10;
                 param_10 = param_10 + uVar20;
@@ -8137,7 +8141,7 @@ LAB_006d99e9:
                       bVar18 = param_8[*param_1];
                     }
                     *param_1 = bVar18;
-                    param_1 = st::pointer_boundary_cast<byte *>(&((AnonShape_006D8A60_D503343B *)param_1)->field_0001);
+                    param_1 = &((AnonShape_006D8A60_D503343B *)param_1)->field_0001;
                     uVar20 = uVar20 - 1;
                   } while (uVar20 != 0);
                 }
@@ -8441,9 +8445,9 @@ cf_common_join_006D8DA5:
     }
     if ((char)uVar15 != '\x01') {
       if ((char)uVar15 != '\x02') {
-        STField<byte>(pAVar16,2) = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)param_10)[2]));
+        STField<byte>(pAVar16,2) = ((byte *)param_10)[2];
       }
-      STField<byte>(pAVar16,1) = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)param_10)[1]));
+      STField<byte>(pAVar16,1) = ((byte *)param_10)[1];
     }
     *(byte *)pAVar16 = (byte)*(uint *)param_10;
     param_1 = (byte *)((int)pAVar16 + uVar15);
@@ -8568,9 +8572,9 @@ cf_common_join_006D958E:
     }
     if ((char)uVar15 != '\x01') {
       if ((char)uVar15 != '\x02') {
-        STField<byte>(param_1,2) = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)param_10)[2]));
+        STField<byte>(param_1,2) = ((byte *)param_10)[2];
       }
-      STField<byte>(param_1,1) = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)param_10)[1]));
+      STField<byte>(param_1,1) = ((byte *)param_10)[1];
     }
     *param_1 = (byte)*(uint *)param_10;
     param_1 = (byte *)((int)param_1 + uVar15);
@@ -8832,6 +8836,8 @@ void st::fn_006DA1A0(int param_1,int param_2,int param_3,int param_4,
                  byte *param_9,undefined1 *param_10)
 
 {
+  int param_7_after_write;
+
   short sVar1;
   int *piVar2;
   uint local_EAX_117;
@@ -8881,7 +8887,7 @@ void st::fn_006DA1A0(int param_1,int param_2,int param_3,int param_4,
     pbVar3 = param_9 + (1 - iVar11);
     puVar9 = (undefined1 *)(iVar10 * param_2 + iVar12 + param_1);
     auto param_10_after_write = (undefined1 *)(iVar10 * param_4 + iVar12 + param_3); /* compiler stack-slot lifetime split */
-    auto param_7_after_write = 0; /* compiler stack-slot lifetime split */
+    param_7_after_write = 0; /* compiler stack-slot lifetime split */
     if (iVar6 < 1) {
       /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
       param_9 = &param_5[1].field_0x2 + ((byte)param_5->field_0xd >> 1 & 0xe);

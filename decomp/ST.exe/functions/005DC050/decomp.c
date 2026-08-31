@@ -21,7 +21,7 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,cMf32 *param_1,ch
   int iVar3;
   ushort *puVar4;
   byte *puVar6;
-  DArrayTy *pDVar5_mg0;
+  uint *pDVar5_mg0;
   char *pcVar6_mg1;
   uint uVar7;
   char *pcVar6_mg2;
@@ -142,8 +142,8 @@ LAB_005dc22d:
         FUN_006b5570((DArrayTy *)this_01->field_0548);
       }
       /* ST_CALLSITE[005DC2B3]: CALL 0x006b54f0; direct=006B54F0 Library::DKW::TBL::SArrayCreate; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__stdcall;pointer:/uint;pointer:/SubmarineTitans/Recovered/DArrayTy;/uint;/uint */
-      pDVar5_mg0 = (DArrayTy *)Library::DKW::TBL::SArrayCreate(nullptr,10,10);
-      this_01->field_0548 = (uint *)pDVar5_mg0;
+      pDVar5_mg0 = Library::DKW::TBL::SArrayCreate(nullptr,10,10);
+      this_01->field_0548 = pDVar5_mg0;
       puVar5 = &this_01->field_003C;
       pcVar6_mg1 = LoadResourceString(0x2347,g_hINSTANCE_00807618);
       /* ST_CALLSITE[005DC2DF]: CALL EBX */

@@ -67,9 +67,8 @@ void __thiscall AiFltClassTy::sub_00660F70(AiFltClassTy *this,uint *param_1,unde
             }
           }
           else {
-            this_00 = (STAllPlayersC *)
-                      /* ST_CALLSITE[0066108E]: CALL 0x0040469c; direct=0040469C STAllPlayersC::sub_004E6C20 */
-                      STAllPlayersC::sub_004E6C20(this_00,(byte *)this->field_0024,SVar1);
+            this_00 = /* ST_CALLSITE[0066108E]: CALL 0x0040469c; direct=0040469C STAllPlayersC::sub_004E6C20 */
+            STPointerBoundaryCast<STAllPlayersC *>(STAllPlayersC::sub_004E6C20(this_00,(byte *)this->field_0024,SVar1));
             pSVar4 = g_allPlayers_007FA174;
           }
         }

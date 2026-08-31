@@ -7,7 +7,14 @@
    FUN_0042d770(STAllPlayersC * context, char param_2, int * param_3) previous_return_type=/uint
    Evidence: incoming ECX reaches only unadjusted __thiscall receivers of /STAllPlayersC;
    receiver_calls=1; exact RET purge=8 matches declared stack bytes=8; sites=0042D806 ->
-   STAllPlayersC::GetObjPtr receiver=/STAllPlayersC */
+   STAllPlayersC::GetObjPtr receiver=/STAllPlayersC
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:1: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/char
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 uint FUN_0042d770(STAllPlayersC *context,char param_2,int *param_3)
 

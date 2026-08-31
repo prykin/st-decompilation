@@ -16,6 +16,8 @@ st::fn_00636260
           int param_5,int param_6,int param_7)
 
 {
+  int param_1_after_write;
+
   int iVar1;
   DArrayTy *pDVar1;
   int iVar2;
@@ -58,7 +60,7 @@ LAB_006362c5:
     memset(local_50, 0, 0x32); /* compiler bulk-zero initialization */
 
     st::fn_006AE140(pDVar1,param_5 * param_6 - 1,local_50);
-    auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
+    param_1_after_write = 0; /* compiler stack-slot lifetime split */
     local_c = _DAT_0079c5a4 / (float)param_5;
     if (0 < param_5) {
       do {

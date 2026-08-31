@@ -18,11 +18,13 @@ st::fn_00727DA0
           int param_3)
 
 {
+  int param_2_after_write;
+
   AnonShape_00727DA0_C4265AA0 *pAVar1;
   bool bVar2;
   byte bVar3;
   int iVar5;
-  uint uVar14;
+  int uVar14;
   int iVar4;
   int local_EAX_936;
   uint uVar6;
@@ -80,7 +82,7 @@ st::fn_00727DA0
   }
   uVar6 = 0;
   pAVar11 = (AnonShape_00727DA0_C4265AA0 *)0x80000000;
-  auto param_2_after_write = 0; /* compiler stack-slot lifetime split */
+  param_2_after_write = 0; /* compiler stack-slot lifetime split */
   pAVar9 = (AnonShape_00727DA0_C4265AA0 *)0x7fff0000;
   AnonShape_00727DA0_C4265AA0 * param_1_after_write = (AnonShape_00727DA0_C4265AA0 *)0x80000000; /* compiler stack-slot lifetime split */
   piVar14 = reinterpret_cast<int *>(&DAT_008570ac);

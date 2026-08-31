@@ -1,0 +1,53 @@
+{
+  "automatic_frontier": {
+    "confirming_apply_mutations": {
+      "allocation_record_apply_report.tsv": 0,
+      "class_layout_apply_report.tsv": 0,
+      "darray_element_apply_report.tsv": 0,
+      "global_aggregate_apply_report.tsv": 0,
+      "global_record_apply_report.tsv": 0,
+      "pointer_shape_apply_report.tsv": 0,
+      "type_family_apply_report.tsv": 0
+    },
+    "enabled_safe_proposals": {
+      "pointer_shape_target_proposals.tsv": 0,
+      "pointer_shape_type_proposals.tsv": 0,
+      "type_family_proposals.tsv": 0
+    }
+  },
+  "compile": {
+    "errors": 0,
+    "failing_translation_units": 0,
+    "passing_translation_units": 328,
+    "regression_gate": "passed",
+    "translation_units": 328
+  },
+  "input_manifest_sha256": "37981da755a051f0da39ba7ef9c9da083f498265c27540a9bb8bc9dc64981c2b",
+  "policy": {
+    "geometry_only_merge": "forbidden",
+    "manual_or_imported_replacement": "forbidden",
+    "source_generator_type_invention": "forbidden"
+  },
+  "program_semantic_sha256": "0c968ea8b4bda3df00f8692b19201788db1b245d22c1256efa238b38287c927c",
+  "residuals": {
+    "anonymous_shape_merge_candidates": 0,
+    "anonymous_shapes": 1337,
+    "generic_identities": 123594,
+    "meaningful_unclaimed_bytes": 67361,
+    "meaningful_unclaimed_ranges": 1843,
+    "raw_pointer_offset_classifications": {
+      "array_or_pointer_walk": 334,
+      "dynamic_darray_or_runtime_stride": 21,
+      "insufficient_independent_evidence": 365,
+      "intentional_byte_cursor": 165,
+      "packed_unaligned_or_union_view": 218
+    },
+    "raw_pointer_offset_compile_or_abi_blockers": 0,
+    "raw_pointer_offset_functions": 448,
+    "raw_pointer_offset_occurrences": 1103
+  },
+  "schema": "st-q059-closure-audit",
+  "schema_version": 1,
+  "source_manifest_sha256": "66671e3355a0513cdfad1e9c38576169725de4cf6ada0b5756dfc3176862d039",
+  "status": "passed"
+}

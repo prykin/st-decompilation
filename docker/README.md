@@ -172,6 +172,7 @@ pipeline under `recovery/ST.exe` and its ignored run archive.
 ./docker/run.sh compile-audit
 ./docker/run.sh compile-audit-baseline
 ./docker/run.sh source-audit
+./docker/run.sh q059-audit
 ```
 
 `source-audit` regenerates `src/ST.exe` from a passed receipt and then compiles
@@ -182,6 +183,14 @@ ignored results live under `.st-local/source-compile-audit-docker/ST.exe`.
 to update when the regression gate fails. Do not compare these counts with a
 host compiler run: compiler identity, ILP32 flags, language mode, and diagnostic
 limit are part of the baseline contract.
+
+After a zero-error `source-audit`, `q059-audit` verifies that the accepted
+receipt, generated tree, compile result, and Program fingerprint describe the
+same state. It then materializes deterministic review queues for every residual
+raw pointer offset, anonymous shape, generic identity, and meaningful unclaimed
+executable range under `recovery/ST.exe/`. It fails when an automatically safe
+pointer/type-family proposal or a confirming aggregate mutation remains. The
+audit classifies debt; it never changes Ghidra or invents a source type.
 
 ## Importing from an original executable
 

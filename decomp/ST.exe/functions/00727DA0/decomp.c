@@ -20,7 +20,7 @@ SubmarineTitans::Recovered::HiddenThis::RecoveredReceiver_00727C80::FUN_00727da0
   bool bVar2;
   byte bVar3;
   int iVar5;
-  uint uVar14;
+  int uVar14;
   int iVar4;
   int local_EAX_936;
   uint uVar6;

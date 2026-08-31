@@ -1,8 +1,6 @@
 #include "../../pseudocode_runtime.h"
 
 
-/* WARNING: Unable to use type for symbol psVar9 */
-
 void __cdecl
 FUN_00575640(RecoveredRecord_00575640_E6D414E2 *param_1,undefined4 *param_2,short *param_3)
 

@@ -88,7 +88,7 @@ int __thiscall st::fn_00630430(STManRuinC *this,STMessage *message)
             element_003c->statusFlag = iVar8;
             if (iVar8 != 0) {
               /* ST_CALLSITE[00630604]: CALL 0x00405c9f; direct=00405C9F STManRuinC::sub_00630C50 */
-              puVar6 = st::fn_00405C9F(this_00,*element_003c,element_003c->variant,1,1,0);
+              puVar6 = st::fn_00405C9F(this_00,STPiece<0,4>(*element_003c),element_003c->variant,1,1,0);
               if (puVar6 == nullptr) {
                 element_003c->statusFlag = 0;
               }

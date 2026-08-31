@@ -592,8 +592,7 @@ LAB_0044f5ea:
 0044F609  50                        PUSH EAX
 0044F60A  51                        PUSH ECX
 0044F60B  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
-STBoatC::GetMessage::override::prt_44f611_922257b1:
-0044F611  E8 AC 5C FB FF            CALL 0x004052c2  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STAllPlayersC; signature=__thiscall;pointer:/STAllPlayersC;pointer:/STAllPlayersC;/char;/uint;/uint;pointer:/int;/int;/int
+0044F611  E8 AC 5C FB FF            CALL 0x004052c2  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 0044F616  C7 83 5D 04 00 00 13 00 00 00  MOV dword ptr [EBX + 0x45d],0x13
 0044F620  66 8B 57 1C               MOV DX,word ptr [EDI + 0x1c]
 0044F624  66 89 93 10 05 00 00      MOV word ptr [EBX + 0x510],DX
@@ -12476,8 +12475,7 @@ LAB_0045a2a7:
 0045A2B7  50                        PUSH EAX
 0045A2B8  51                        PUSH ECX
 0045A2B9  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
-STBoatC::GetMessage::override::prt_45a2bf_f6917a45:
-0045A2BF  E8 64 6D FA FF            CALL 0x00401028  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STAllPlayersC; signature=__thiscall;pointer:/STAllPlayersC;pointer:/STAllPlayersC;/char;/short;/int
+0045A2BF  E8 64 6D FA FF            CALL 0x00401028  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 0045A2C4  66 8B 53 32               MOV DX,word ptr [EBX + 0x32]
 0045A2C8  8A 43 24                  MOV AL,byte ptr [EBX + 0x24]
 0045A2CB  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
@@ -13102,8 +13100,7 @@ LAB_0045aab0:
 0045AAC0  50                        PUSH EAX
 0045AAC1  51                        PUSH ECX
 0045AAC2  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
-STBoatC::GetMessage::override::prt_45aac8_f6917a45:
-0045AAC8  E8 5B 65 FA FF            CALL 0x00401028  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STAllPlayersC; signature=__thiscall;pointer:/STAllPlayersC;pointer:/STAllPlayersC;/char;/short;/int
+0045AAC8  E8 5B 65 FA FF            CALL 0x00401028  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override
 0045AACD  66 8B 53 32               MOV DX,word ptr [EBX + 0x32]
 0045AAD1  8A 43 24                  MOV AL,byte ptr [EBX + 0x24]
 0045AAD4  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]

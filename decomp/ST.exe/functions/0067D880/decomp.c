@@ -27,7 +27,7 @@ undefined4 * __cdecl LoadPlrEdit(int param_1,char *param_2)
       RaiseInternalException
                 (-0x34,g_overwriteContext_007ED77C,"E:\\__titans\\ai\\ai_plr_d.cpp",0xee);
     }
-    /* ST_CALLSITE[0067D8E6]: CALL 0x006f2d90; direct=006F2D90 Library::Ourlib::MFAOBJ::mfAObjLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D1D0; signature=__cdecl;pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D1D0;pointer:/cMf32;pointer:/char;/byte;/int */
+    /* ST_CALLSITE[0067D8E6]: CALL 0x006f2d90; direct=006F2D90 Library::Ourlib::MFAOBJ::mfAObjLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D1D0; signature=__cdecl;pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D1D0;pointer:/cMf32;pointer:/char;/byte;/int [STUtilityFunctionApplier] heterogeneous_payload_consumer_view; target=006F2D90; signature=__cdecl;pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D1D0;pointer:/cMf32;pointer:/char;/byte;/int */
     local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad((cMf32 *)param_1,param_2,1,0);
     if (local_8 != nullptr) {
       local_c = thunk_FUN_0067d1d0(local_8);

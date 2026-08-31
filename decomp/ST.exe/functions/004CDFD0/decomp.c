@@ -6,9 +6,11 @@ undefined4 __thiscall FUN_004cdfd0(void *this,int param_1,int param_2,int param_
 {
   int iVar1;
 
+
   iVar1 = thunk_FUN_004ae0b0((short)param_2,param_3,param_4,param_1,STField<int>(this,0x24),
                              nullptr,nullptr,nullptr,0,STField<int *>(this,0x18));
   if (iVar1 != 0) {
+
     thunk_FUN_004b0f20(STField<int>(this,0x24),param_1,param_2,param_3,param_4,
                        (uint)STField<ushort>(this,0x30),STField<int>(this,0x5c0),nullptr,
                        STField<undefined4>(this,0x18),100);

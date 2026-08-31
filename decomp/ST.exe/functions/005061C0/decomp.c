@@ -40,18 +40,18 @@ void __thiscall CPanelTy::PaintCtrlObj(CPanelTy *this,int param_1)
   char *pcVar8_mg1;
   UINT UVar6;
   char *pcVar8_mg0;
-  uint local_EAX_1314;
+  int local_EAX_1314;
   BITMAPINFO *pBVar7;
   uint uVar8;
   UINT local_EAX_1601;
   char *pcVar8_mg2;
   uint *puVar9;
   char *pcVar8_mgC;
-  uint uVar5;
+  int uVar5;
   char *pcVar8_mgF;
   char *pcVar8_mg4;
   char *pcVar8_mg5;
-  uint local_EAX_3244;
+  int local_EAX_3244;
   UINT UVar7;
   char *pcVar8_mg10;
   char *pcVar8_mgD;
@@ -231,9 +231,8 @@ switchD_00506214_caseD_2:
         /* ST_CALLSITE[005063CA]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12 + 3,0x53,'\x01',
                (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar7);
-        pRVar5 = (RecoveredRecordView_006B84D0_87AF9D9B *)
-                 /* ST_CALLSITE[005063EB]: CALL 0x00710ba0; direct=00710BA0 ccFntTy::CreateSurf; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
-                 ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[5],0,0x49,7,0x67,0xc,0);
+        pRVar5 = /* ST_CALLSITE[005063EB]: CALL 0x00710ba0; direct=00710BA0 ccFntTy::CreateSurf; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+        STPointerBoundaryCast<RecoveredRecordView_006B84D0_87AF9D9B *>(ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[5],0,0x49,7,0x67,0xc,0));
         if (pRVar5 != nullptr) {
           if (this_00->field_0BF5 == 0xfe) {
 
@@ -257,10 +256,9 @@ switchD_00506214_caseD_2:
 
           ccFntTy::EraseSufr(this_00->field_01B8);
         }
-        local_1c = (RecoveredRecordView_006B84D0_87AF9D9B *)
-                   /* ST_CALLSITE[00506484]: CALL 0x00710ba0; direct=00710BA0 ccFntTy::CreateSurf; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
-                   ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09D9[5],0,100,0x14,0x3c,
-                                       0x14,0);
+        local_1c = /* ST_CALLSITE[00506484]: CALL 0x00710ba0; direct=00710BA0 ccFntTy::CreateSurf; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+        STPointerBoundaryCast<RecoveredRecordView_006B84D0_87AF9D9B *>(ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09D9[5],0,100,0x14,0x3c,
+                                       0x14,0));
         if (local_1c != nullptr) {
           uVar8 = 0;
           /* ST_CALLSITE[005064A7]: CALL dword ptr [0x0085bde8] */
@@ -310,10 +308,9 @@ switchD_00506214_caseD_2:
         /* ST_CALLSITE[005065A3]: CALL 0x00403229; direct=00403229 DibPut */
         DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0194,iVar12 + 4,0x42,'\x06',
                (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar7);
-        pRVar5 = (RecoveredRecordView_006B84D0_87AF9D9B *)
-                 /* ST_CALLSITE[005065C4]: CALL 0x00710ba0; direct=00710BA0 ccFntTy::CreateSurf; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
-                 ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[0xe],0,0x38,4,0x7b,0x19
-                                     ,0);
+        pRVar5 = /* ST_CALLSITE[005065C4]: CALL 0x00710ba0; direct=00710BA0 ccFntTy::CreateSurf; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+        STPointerBoundaryCast<RecoveredRecordView_006B84D0_87AF9D9B *>(ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[0xe],0,0x38,4,0x7b,0x19
+                                     ,0));
         if (pRVar5 != nullptr) {
           iVar21 = -1;
           iVar20 = -1;
@@ -333,10 +330,9 @@ switchD_00506214_caseD_2:
 
           ccFntTy::EraseSufr(this_00->field_01B8);
         }
-        pRVar5 = (RecoveredRecordView_006B84D0_87AF9D9B *)
-                 /* ST_CALLSITE[0050663F]: CALL 0x00710ba0; direct=00710BA0 ccFntTy::CreateSurf; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
-                 ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[0xe],0,2,0x1e,0xb2,0x22
-                                     ,0);
+        pRVar5 = /* ST_CALLSITE[0050663F]: CALL 0x00710ba0; direct=00710BA0 ccFntTy::CreateSurf; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+        STPointerBoundaryCast<RecoveredRecordView_006B84D0_87AF9D9B *>(ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09D9[0xe],0,2,0x1e,0xb2,0x22
+                                     ,0));
         if (pRVar5 != nullptr) {
 
           ccFntTy::WrTxt(this_00->field_01B8,(char *)this_00->field_0C16,-2,-1,1,-1,-1);

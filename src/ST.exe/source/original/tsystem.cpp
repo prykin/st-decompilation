@@ -557,11 +557,11 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
       local_c = &CHAR_00h_008016a0;
       local_10 = &CHAR_00h_008016a0;
       if (*piVar13 == 6) {
-        st::fn_00401212(&DAT_00807620,(byte)((uint)piVar13[1] >> 0x10),static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)piVar13)[1])),
+        st::fn_00401212(&DAT_00807620,(byte)((uint)piVar13[1] >> 0x10),((byte *)piVar13)[1],
                            (char)piVar13[2]);
       }
       else {
-        st::fn_004033A0(&DAT_00807620,(byte)((uint)piVar13[1] >> 0x10),static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)piVar13)[1])));
+        st::fn_004033A0(&DAT_00807620,(byte)((uint)piVar13[1] >> 0x10),((byte *)piVar13)[1]);
       }
       this_00 = g_playPanel_008016E4;
       if (g_playPanel_008016E4 != nullptr) {
@@ -659,7 +659,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
               pcVar15 = pcVar15 + 4;
               pcVar8 = pcVar8 + 4;
             }
-            bVar2 = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)piVar13)[2]));
+            bVar2 = ((byte *)piVar13)[2];
             for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
               *pcVar8 = *pcVar15;
               pcVar15 = pcVar15 + 1;
@@ -783,7 +783,7 @@ int __thiscall st::fn_005776D0(GameSystemC *this,STMessage *message)
                 local_20 = &local_10;
                 puVar7 = st::fn_006F1CE0(pcVar6,0x80,PTR_s_SAVE_DESC_0079b1a0,reinterpret_cast<int *>(&local_20),0);
                 if ((puVar7 != nullptr) &&
-                   ((st::machine_word_boundary_cast<uint>(local_1c) != st::machine_word_boundary_cast<uint>((cMf32 *)local_10) || (st::machine_word_boundary_cast<uint>((DArrayTy *)local_1d88) != st::machine_word_boundary_cast<uint>(local_18))))) {
+                   ((local_1c != (cMf32 *)local_10 || ((DArrayTy *)local_1d88 != local_18)))) {
                   local_8 = (int *)0x1;
                   st::fn_006F1170(pcVar6);
                   piVar13 = (int *)1;

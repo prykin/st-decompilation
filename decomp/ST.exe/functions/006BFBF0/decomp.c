@@ -77,7 +77,7 @@ int FUN_006bfbf0(RecoveredRecordView_006BFBF0_7F78587C *param_1)
   puVar1 = &param_1->field_0xc;
   /* ST_CALLSITE[006BFD34]: CALL dword ptr [ECX + 0xc] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar7 = (**(code **)(*DAT_008568b4 + 0xc))(DAT_008568b4,local_34,puVar1,0);
+  iVar7 = (**(code **)(*PTR_008568b4 + 0xc))(PTR_008568b4,local_34,puVar1,0);
   if (-1 < iVar7) {
     if ((local_34[1] & 2) != 0) {
       *(uint *)&pRVar4->field_0x4 = *(uint *)&pRVar4->field_0x4 | 0x4000;
@@ -137,7 +137,7 @@ int FUN_006bfbf0(RecoveredRecordView_006BFBF0_7F78587C *param_1)
           }
           /* ST_CALLSITE[006BFE1E]: CALL dword ptr [EDX + 0x44] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar7 = (**(code **)(*DAT_008568bc + 0x44))(DAT_008568bc);
+          iVar7 = (**(code **)(*PTR_008568bc + 0x44))(PTR_008568bc);
         }
         if (iVar7 == 0) {
           /* ST_CALLSITE[006BFE35]: CALL dword ptr [0x0085bedc] */

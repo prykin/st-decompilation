@@ -1435,7 +1435,7 @@ LAB_007014bc:
         param_6 = (byte *)(local_10 & 0x80);
         bVar7 = *param_13;
         uVar4 = (uint)bVar7;
-        if ((byte *)(bVar7 & 0x80) != param_6) break;
+        if (st::machine_word_boundary_cast<uint>((byte *)(bVar7 & 0x80)) != st::machine_word_boundary_cast<uint>(param_6)) break;
         local_20 = local_20 - local_1c;
         if ((bVar7 & 0x80) == 0) {
           local_1c = uVar4 & 0x7f;
@@ -1982,7 +1982,7 @@ LAB_00701caf:
         param_6 = (byte *)(local_10 & 0x80);
         bVar8 = *param_13;
         uVar5 = (uint)bVar8;
-        if ((byte *)(bVar8 & 0x80) != param_6) break;
+        if (st::machine_word_boundary_cast<uint>((byte *)(bVar8 & 0x80)) != st::machine_word_boundary_cast<uint>(param_6)) break;
         local_20 = local_20 - (int)local_1c;
         if ((bVar8 & 0x80) == 0) {
           local_1c = (byte *)(uVar5 & 0x7f);
@@ -10040,6 +10040,16 @@ st::fn_0070C9E0(RecoveredRecordView_0070C9E0_7D0EE2FF *param_1,char param_2,uint
 
    [STPrototypeRepairApplier] Propagated parameter 2.
    Evidence: incoming stack slot is read as a int before its address is passed as a distinct output
+   lifetime
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:2: parameter=/char
+   previous_type=/int Evidence: entry-use width=/char; unmasked_dword_reads=0; evidence=0070CAF3 MOV
+   ECX,dword ptr [EBP + 0x10]; first-use mask or exact narrow callee formal | 0070CAFF address-of
+   incoming slot passed to call; end entry lifetime
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:2: parameter=/int
+   Evidence: the physical incoming slot address escapes through a call; the later output lifetime
+   must not narrow the entry ABI or expose an upper-byte in_stack live-in; restoring /int; entry-use
+   width=/char; unmasked_dword_reads=0; evidence=0070CAF3 MOV ECX,dword ptr [EBP + 0x10]; first-use
+   mask or exact narrow callee formal | 0070CAFF address-of incoming slot passed to call; end entry
    lifetime */
 
 void __cdecl st::fn_0070CAF0(RecoveredRecordView_0070C9E0_7D0EE2FF *param_1,uint *param_2,int param_3)
@@ -10064,6 +10074,8 @@ st::fn_0070CB20(uint param_1,int param_2,RecoveredRecord_0070CB20_44158EDF *para
             int param_5,byte param_6,byte param_7,int param_8,HPALETTE h,uint param_10,int param_11)
 
 {
+  int param_10_after_write;
+
   byte bVar1;
   int iVar2;
   uint uVar2;
@@ -10093,7 +10105,7 @@ st::fn_0070CB20(uint param_1,int param_2,RecoveredRecord_0070CB20_44158EDF *para
     local_10 = 0x20;
   }
   local_14 = local_54;
-  auto param_10_after_write = 0; /* compiler stack-slot lifetime split */
+  param_10_after_write = 0; /* compiler stack-slot lifetime split */
   local_c = reinterpret_cast<int *>(&DAT_007f014c);
   do {
     iVar6 = local_c[-1] + param_1;

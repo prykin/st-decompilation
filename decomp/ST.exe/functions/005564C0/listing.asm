@@ -43,7 +43,8 @@ TraksClassTy::GetMessage:
 0055654A  50                        PUSH EAX
 0055654B  52                        PUSH EDX
 0055654C  51                        PUSH ECX
-0055654D  E8 3E C8 19 00            CALL 0x006f2d90  ; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/TraksClassTy; source view only; no Ghidra override
+TraksClassTy::GetMessage::override::prt_55654d_f190fab6:
+0055654D  E8 3E C8 19 00            CALL 0x006f2d90  ; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/TraksClassTy; signature=__cdecl;pointer:/TraksClassTy;pointer:/cMf32;pointer:/char;/byte;/int
 00556552  83 C4 10                  ADD ESP,0x10
 00556555  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
 LAB_00556558:

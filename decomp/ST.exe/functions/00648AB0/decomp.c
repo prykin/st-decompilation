@@ -20,6 +20,7 @@ ushort * __cdecl LoadStrategData(int param_1,char *param_2,int *param_3)
   local_c = nullptr;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
+
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   if (iVar2 == 0) {
     if ((param_1 == 0) || (param_2 == nullptr)) {
@@ -28,6 +29,7 @@ ushort * __cdecl LoadStrategData(int param_1,char *param_2,int *param_3)
     }
     local_c = Library::Ourlib::MFAOBJ::mfAObjLoad((cMf32 *)param_1,param_2,1,0);
     if ((local_c != nullptr) && (local_8 = local_c, param_3 != nullptr)) {
+
       iVar2 = Library::Ourlib::MFAOBJ::mfAObjLen(param_1,param_2,1);
       *param_3 = iVar2;
     }
@@ -35,6 +37,7 @@ ushort * __cdecl LoadStrategData(int param_1,char *param_2,int *param_3)
     return local_8;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar3 = ReportDebugMessage("E:\\__titans\\ai\\ai_creat.cpp",0x37,0,iVar2,"%s",
                              "LoadStrategData");
   if (iVar3 != 0) {

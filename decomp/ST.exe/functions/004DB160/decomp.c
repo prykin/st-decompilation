@@ -216,9 +216,7 @@ LAB_004db257:
 LAB_004db3e4:
               iVar12 = *param_4 + (int)param_5_after_write;
               if ((((-1 < iVar12) && (iVar12 < g_worldGrid.sizeY)) &&
-                  (this_00 = (STWorldObject *)
-
-                             thunk_FUN_004db980(sVar2,(short)iVar12,(short)local_8,0),
+                  (this_00 = STPointerBoundaryCast<STWorldObject *>(thunk_FUN_004db980(sVar2,(short)iVar12,(short)local_8,0)),
                   this_00 != nullptr)) &&
                  ((this_00[1].vtable != (STWorldObjectVTable *)param_1 &&
                   /* ST_CALLSITE[004DB42A]: CALL dword ptr [EAX + 0x2c] */
@@ -262,9 +260,7 @@ LAB_004db497:
               iVar11 = *param_3 - (int)param_5_after_write;
               if ((-1 < iVar11) &&
                  ((((iVar11 < g_worldGrid.sizeX &&
-                    (this_00 = (STWorldObject *)
-
-                               thunk_FUN_004db980((short)iVar11,(short)iVar12,(short)local_8,0),
+                    (this_00 = STPointerBoundaryCast<STWorldObject *>(thunk_FUN_004db980((short)iVar11,(short)iVar12,(short)local_8,0)),
                     this_00 != nullptr)) &&
                    (this_00[1].vtable != (STWorldObjectVTable *)param_1)) &&
                   /* ST_CALLSITE[004DB520]: CALL dword ptr [EDX + 0x2c] */
@@ -299,9 +295,7 @@ LAB_004db497:
 LAB_004db58d:
               iVar11 = *param_3 + (int)param_5_after_write;
               if ((((-1 < iVar11) && (iVar11 < g_worldGrid.sizeX)) &&
-                  ((this_00 = (STWorldObject *)
-
-                              thunk_FUN_004db980((short)iVar11,(short)iVar12,(short)local_8,0),
+                  ((this_00 = STPointerBoundaryCast<STWorldObject *>(thunk_FUN_004db980((short)iVar11,(short)iVar12,(short)local_8,0)),
                    this_00 != nullptr &&
                    (this_00[1].vtable != (STWorldObjectVTable *)param_1)))) &&
                  /* ST_CALLSITE[004DB5D3]: CALL dword ptr [EAX + 0x2c] */

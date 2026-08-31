@@ -18,8 +18,10 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
   ushort *local_EAX_275;
   ushort *local_EAX_317;
   int uVar11;
-  int puVar4_mg1;
+  ushort *puVar4_mg1;
   DArrayTy *pDVar4;
+  int uVar9_mg0;
+  int uVar9_mg1;
   int iVar17;
   uint uVar5;
   uint uVar6;
@@ -94,9 +96,9 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
 
     uVar11 = FUN_006b4fe0(this_00->field_0184);
     /* ST_CALLSITE[0052E752]: CALL 0x006b50c0; direct=006B50C0 FUN_006b50c0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ushort; signature=__stdcall;pointer:/ushort;/int;/int;/int;/uint;pointer:/undefined4;/int */
-    puVar4_mg1 = (int)FUN_006b50c0(0xde,0xb,(uint)this_00->field_0184[7],uVar11,
-                                   (undefined4 *)puVar16,iVar18);
-    this_00->field_01E5 = (ushort *)puVar4_mg1;
+    puVar4_mg1 = FUN_006b50c0(0xde,0xb,(uint)this_00->field_0184[7],uVar11,(undefined4 *)puVar16,
+                              iVar18);
+    this_00->field_01E5 = puVar4_mg1;
     pDVar4 = Library::DKW::TBL::SArrayCreate(nullptr,1,1);
     this_00->field_01F1 = pDVar4;
 
@@ -115,8 +117,8 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     uVar5 = 0xc001;
     pCVar3 = thunk_FUN_00571240("BUT_MEDIUM",0);
     /* ST_CALLSITE[0052E7B7]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
-    uVar9 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0xc9,0x9f,1,pCVar3,uVar5,uVar6,sVar7,uVar8,
-                                uVar12,pcVar13,uVar17,uVar20);
+    uVar9_mg0 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0xc9,0x9f,1,pCVar3,uVar5,uVar6,sVar7,
+                                    uVar8,uVar12,pcVar13,uVar17,uVar20);
     uVar20 = 0;
     uVar17 = 0;
     pcVar13 = nullptr;
@@ -125,13 +127,13 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     sVar7 = 0;
     uVar6 = 0xc004;
     uVar5 = 0xc003;
-    this_00->field_01AD[0] = uVar9;
+    this_00->field_01AD[0] = uVar9_mg0;
     pCVar3 = thunk_FUN_00571240("BUT_MEDIUM",0);
     /* ST_CALLSITE[0052E7F1]: CALL 0x0040398b; direct=0040398B UPanelTy::CreateBut */
-    uVar9 = UPanelTy::CreateBut((UPanelTy *)this_00,0,0,0x93,0x9f,1,pCVar3,uVar5,uVar6,sVar7,uVar8,
-                                uVar12,pcVar13,uVar17,uVar20);
+    uVar9_mg1 = UPanelTy::CreateBut((UPanelTy *)this_00,0,0,0x93,0x9f,1,pCVar3,uVar5,uVar6,sVar7,
+                                    uVar8,uVar12,pcVar13,uVar17,uVar20);
     iVar18 = this_00->field_0038;
-    this_00->field_01AD[1] = uVar9;
+    this_00->field_01AD[1] = uVar9_mg1;
     this_00->field_0301 = iVar18;
     g_currentExceptionFrame = local_4c.previous;
     return;

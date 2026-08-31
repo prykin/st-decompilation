@@ -16,6 +16,7 @@ void __thiscall STPlaySystemC::sub_005505D0(STPlaySystemC *this,int param_1,int 
   char *pcVar2;
   int iVar3;
   PopUpTy *text;
+  int uVar5_mg0;
   char *pcVar1;
   byte bVar4;
   uint uVar5;
@@ -36,8 +37,8 @@ void __thiscall STPlaySystemC::sub_005505D0(STPlaySystemC *this,int param_1,int 
       FUN_00715360(g_int_00811764,param_1,'1',pcVar2,local_8,1,*(undefined4 *)pcVar2);
       if (this->field_00BB < 5) {
 
-        uVar5 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
-        (&this->field_00A7)[this->field_00BB] = uVar5;
+        uVar5_mg0 = STAppC::sub_006E51B0((STAppC *)&DAT_00807620);
+        (&this->field_00A7)[this->field_00BB] = uVar5_mg0;
         this->field_00BB = this->field_00BB + 1;
       }
       else {

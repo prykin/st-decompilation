@@ -5,7 +5,7 @@ void __cdecl FUN_00728170(AnonShape_00728170_E57D1DF1 *param_1,AnonShape_0072817
 
 {
   byte uVar1;
-  uint uVar2;
+  int uVar2;
   uint uVar3;
   /* ST_PSEUDO[call_clobber_piece]: candidate volatile-register merge after CALL: split the partial-register lifetime */
   uint extraout_ECX;

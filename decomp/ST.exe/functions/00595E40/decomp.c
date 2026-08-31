@@ -139,10 +139,8 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   iVar14 = 1;
 
   local_EAX_679 = FUN_006b4fe0(this_01->field_005D);
-  pAVar8 = (AnonPointee_FSGSTy_1A97 *)
-
-           FUN_006b50c0(0x24d,0x59,(uint)this_01->field_005D[7],local_EAX_679,(undefined4 *)puVar10,
-                        iVar14);
+  pAVar8 = STPointerBoundaryCast<AnonPointee_FSGSTy_1A97 *>(FUN_006b50c0(0x24d,0x59,(uint)this_01->field_005D[7],local_EAX_679,(undefined4 *)puVar10,
+                        iVar14));
   this_01->field_1A97 = pAVar8;
   local_8 = pAVar8->field_0014;
   if (local_8 == 0) {
@@ -180,10 +178,9 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   puVar10 = this_01->field_005D + 0x14;
 
   uVar11 = FUN_006b4fe0(this_01->field_005D);
-  puVar10 = (ushort *)
-            /* ST_CALLSITE[005961EE]: CALL 0x006b50c0; direct=006B50C0 FUN_006b50c0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
-            FUN_006b50c0(0x1b8,0x106,(uint)this_01->field_005D[7],uVar11,(undefined4 *)puVar10,
-                         iVar14);
+  puVar10 = /* ST_CALLSITE[005961EE]: CALL 0x006b50c0; direct=006B50C0 FUN_006b50c0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ushort; source view only; no Ghidra override */
+  STPointerBoundaryCast<ushort *>(FUN_006b50c0(0x1b8,0x106,(uint)this_01->field_005D[7],uVar11,(undefined4 *)puVar10,
+                         iVar14));
   this_01->field_1AC0 = puVar10;
   this_01->field_1ABB = 0;
   puVar9 = &this_01->field_1ABC;

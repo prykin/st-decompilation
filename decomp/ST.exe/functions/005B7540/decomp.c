@@ -18,6 +18,7 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
   uint uVar6;
   char *pcVar11_mg1;
   short *psVar7;
+  int uVar6_mg3;
   int iVar9;
   int iVar8;
   int iVar10;
@@ -169,11 +170,11 @@ LAB_005b7ad9:
               uVar6 = 1;
             }
             /* ST_CALLSITE[005B7B78]: CALL 0x0040361b; direct=0040361B MMObjTy::CreateSprBut */
-            uVar6 = MMObjTy::CreateSprBut
-                              ((MMObjTy *)this_01,1,uVar6,puVar16[0x16] + puVar16[-3],
-                               puVar16[0x17] + puVar16[-2],puVar16[-1],*puVar16,iVar10,iVar10 + 0x80
-                              );
-            *(uint *)local_8 = uVar6;
+            uVar6_mg3 = MMObjTy::CreateSprBut
+                                  ((MMObjTy *)this_01,1,uVar6,puVar16[0x16] + puVar16[-3],
+                                   puVar16[0x17] + puVar16[-2],puVar16[-1],*puVar16,iVar10,
+                                   iVar10 + 0x80);
+            *(int *)local_8 = uVar6_mg3;
           }
           local_10 = local_10 + 1;
           local_8 = (MMsgTy_Record_00BC_01FB *)((int)local_8 + 4);

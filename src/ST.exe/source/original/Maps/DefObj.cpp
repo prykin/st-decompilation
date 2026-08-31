@@ -23,7 +23,7 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
 {
   char cVar1;
   int iVar3;
-  uint uVar3;
+  int uVar3;
   int iVar7;
   uint *puVar4;
   int iVar5;
@@ -63,7 +63,7 @@ st::fn_00692C10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *
         _DAT_00853cf0 = 0;
 
         uVar3 = st::fn_00401131(param_2);
-        if (DAT_00853d84 <= uVar3) {
+        if (DAT_00853d84 <= (uint)uVar3) {
 
           iVar7 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Maps\\DefObj.cpp"),0x1ba,0,uVar3,
                                      st::mutable_c_string("%s"),"Out of Range Entourage Group Index ");

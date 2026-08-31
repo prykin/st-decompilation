@@ -443,9 +443,8 @@ void __thiscall st::fn_00660F70(AiFltClassTy *this,uint *param_1,undefined2 para
             }
           }
           else {
-            this_00 = (STAllPlayersC *)
-                      /* ST_CALLSITE[0066108E]: CALL 0x0040469c; direct=0040469C STAllPlayersC::sub_004E6C20 */
-                      st::fn_0040469C(this_00,(byte *)this->field_0024,SVar1);
+            this_00 = /* ST_CALLSITE[0066108E]: CALL 0x0040469c; direct=0040469C STAllPlayersC::sub_004E6C20 */
+            STPointerBoundaryCast<STAllPlayersC *>(st::fn_0040469C(this_00,(byte *)this->field_0024,SVar1));
             pSVar4 = g_allPlayers_007FA174;
           }
         }
@@ -964,7 +963,7 @@ LAB_00661e5f:
         ppRVar15 = ppRVar15 + 1;
       }
       local_60 = param_1->field_0280;
-      local_5c = static_cast<byte>(st::machine_word_boundary_cast<uint>(((undefined1 *)param_3)[0x14]));
+      local_5c = ((undefined1 *)param_3)[0x14];
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_5b = (undefined1)*(undefined2 *)(param_3 + 0x16);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -984,7 +983,7 @@ LAB_00661e5f:
         ppRVar15 = ppRVar15 + 1;
       }
       local_60 = param_1->field_0280;
-      local_5c = static_cast<byte>(st::machine_word_boundary_cast<uint>(((undefined1 *)param_3)[0x14]));
+      local_5c = ((undefined1 *)param_3)[0x14];
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       local_5b = (undefined1)*(undefined2 *)(param_3 + 0x16);
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
@@ -1191,7 +1190,7 @@ void __fastcall st::fn_00664960(AiFltClassTy *param_1)
   undefined2 extraout_var_15;
   int local_EAX_9418;
   STGameObjC *this_00;
-  uint uVar13;
+  int uVar13;
   int uVar12;
   int local_EAX_9844;
   AiFltClassTy_field_009BState AVar18;
@@ -2108,7 +2107,7 @@ LAB_006668f9:
       goto cf_common_join_00667054;
     }
     if (0x4d < AVar18 - CASE_201) goto cf_common_exit_00667066;
-    bVar2 = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)AVar18)[0x667073]));
+    bVar2 = ((byte *)AVar18)[0x667073];
     switch(AVar18) {
     case CASE_201:
       param_1->field_00EB = 0x40;

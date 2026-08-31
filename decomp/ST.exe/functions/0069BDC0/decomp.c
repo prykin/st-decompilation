@@ -10,8 +10,9 @@
 
 int __thiscall
 CGenerate::sub_0069BDC0
-          (CGenerate *this,int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
-          RecoveredRecord_CGenerate_0069BDC0 *param_7)
+          (CGenerate *this,int param_1,int param_2,int param_3,int param_4,int param_5,
+          RecoveredRecordView_0069BDC0_C51A57AA *param_6,RecoveredRecord_CGenerate_0069BDC0 *param_7
+          )
 
 {
   byte *puVar1;
@@ -68,6 +69,7 @@ CGenerate::sub_0069BDC0
     uVar6 = ((this->field_5833 - param_2) / param_4 + 2) *
             ((this->field_5837 - param_3) / param_4 + 2);
     ExceptionList = &local_14;
+
     local_78 = Library::DKW::LIB::MemAlloc(uVar6 * 0x40);
     puVar10 = local_78;
     for (iVar5 = (uVar6 & 0x3ffffff) << 4; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -143,9 +145,11 @@ CGenerate::sub_0069BDC0
       }
       local_50 = 0;
       for (local_74 = local_3c * param_1 * 0x32; -1 < local_74; local_74 = local_74 + -1) {
+
         iVar4 = thunk_FUN_0069b910((int)local_78,local_3c,piVar8,param_1,local_48,local_28);
         if (iVar4 == param_1) {
           local_40 = 1;
+
           iVar3 = thunk_FUN_0069bc10(this,(int)local_78,piVar8,param_1,0x122,&local_6c,&local_20);
           iVar5 = param_1;
           piVar11 = local_58;
@@ -170,9 +174,11 @@ CGenerate::sub_0069BDC0
         iVar5 = param_1;
         if (0 < param_1) {
 LAB_0069c0f3:
+
           uVar5 = Library::MSVCRT::FUN_0072e6c0();
           iVar5 = (int)uVar5 % 3 + 1;
           local_30 = iVar5;
+
           local_EAX_838 = Library::MSVCRT::FUN_0072e6c0();
           piVar8 = local_58;
           uVar6 = local_EAX_838 & 0x80000007;
@@ -184,16 +190,17 @@ LAB_0069c0f3:
             while( true ) {
               if (iVar9 <= local_70) {
                 local_78[local_58[iVar9] * 0x10] = iVar5 << 0x10 | uVar6 & 0xffff;
+
                 Library::DKW::TBL::DArrayAppend
                           ((DArrayTy *)param_7->field_0018,local_78 + local_58[iVar9] * 0x10);
                 iVar5 = piVar8[iVar9];
-                *(short *)(param_6 + iVar9 * 4) =
-                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                param_6[iVar9].field_0000 =
                      (short)((int)(local_78[iVar5 * 0x10 + 0xe] - local_78[iVar5 * 0x10 + 0xc]) / 2)
                      + *(short *)(local_78 + iVar5 * 0x10 + 0xc);
                 iVar5 = piVar8[iVar9];
-                *(short *)(param_6 + 2 + iVar9 * 4) =
-                     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
+                param_6[iVar9].field_0002 =
                      (short)((int)(local_78[iVar5 * 0x10 + 0xf] - local_78[iVar5 * 0x10 + 0xd]) / 2)
                      + *(short *)(local_78 + iVar5 * 0x10 + 0xd);
                 iVar9 = iVar9 + 1;

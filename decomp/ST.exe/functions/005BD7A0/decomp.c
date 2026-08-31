@@ -19,10 +19,10 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   ushort *local_EAX_253;
   ushort *puVar5;
   ushort *local_EAX_368;
-  HDC pcVar6_mg0;
+  ccFntTy *pcVar6_mg0;
   ccFntTy *pcVar8;
   int local_EAX_485;
-  int pAVar7;
+  AnonPointee_MReportTy_0077 *pAVar7;
   int uVar8;
   void *pvVar9;
   int local_EAX_565;
@@ -118,10 +118,10 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   local_EAX_368 = FUN_0070aa50(g_cMf32_00806780,"RPT_IND",0,1);
   this_01->field_006F = local_EAX_368;
   /* ST_CALLSITE[005BD927]: CALL 0x004042a5; direct=004042A5 thunk_FUN_005defe0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__cdecl;pointer:/ccFntTy;/int;pointer:/undefined;/WinDef.h/BYTE */
-  pcVar6_mg0 = (HDC)thunk_FUN_005defe0((int)this_01->field_005D,nullptr,DAT_00807dd9);
-  this_01->field_0083 = (ccFntTy *)pcVar6_mg0;
-  pcVar6_mg0[0x16].unused = 1;
-  pcVar6_mg0[0x17].unused = 0;
+  pcVar6_mg0 = thunk_FUN_005defe0((int)this_01->field_005D,nullptr,DAT_00807dd9);
+  this_01->field_0083 = pcVar6_mg0;
+  pcVar6_mg0->field_0058 = 1;
+  pcVar6_mg0->field_005C = 0;
   pcVar8 = (ccFntTy *)thunk_FUN_005df290((int)this_01->field_005D,nullptr,DAT_00807dd9);
   this_01->field_0087 = pcVar8;
   g_startSystem_0081176C->field_0038 = (HDC__ *)pcVar8;
@@ -135,9 +135,9 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
 
   local_EAX_485 = FUN_006b4fe0(this_01->field_005D);
   /* ST_CALLSITE[005BD99C]: CALL 0x006b50c0; direct=006B50C0 FUN_006b50c0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_MReportTy_0077; signature=__stdcall;pointer:/SubmarineTitans/Recovered/ClassPointees/AnonPointee_MReportTy_0077;/int;/int;/int;/uint;pointer:/undefined4;/int */
-  pAVar7 = (int)FUN_006b50c0(0x91,0x28,(uint)this_01->field_005D[7],local_EAX_485,
-                             (undefined4 *)puVar24,iVar25);
-  this_01->field_0077 = (AnonPointee_MReportTy_0077 *)pAVar7;
+  pAVar7 = FUN_006b50c0(0x91,0x28,(uint)this_01->field_005D[7],local_EAX_485,(undefined4 *)puVar24,
+                        iVar25);
+  this_01->field_0077 = pAVar7;
   iVar25 = 1;
   puVar24 = this_01->field_005D + 0x14;
 

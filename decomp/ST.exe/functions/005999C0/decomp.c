@@ -16,10 +16,11 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
   FSGSTy *pFVar2;
   int iVar3;
   int uVar4;
-  ushort *puVar3;
+  ushort *puVar3_mg1;
   int iVar6;
-  uint uVar5;
-  int iVar7;
+  uint uVar3;
+  ushort *puVar4;
+  int iVar5;
   InternalExceptionFrame local_54;
   FSGSTy *local_10;
   int local_c;
@@ -44,27 +45,27 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
       local_8 = (-(uint)(param_1 != '\x01') & 0xfffffffb) + 0x17a;
       local_c = (-(uint)(param_1 != '\x01') & 0x129) + 0x1b8;
     }
-    iVar7 = 1;
-    puVar3 = pFVar2->field_005D + 0x14;
+    iVar5 = 1;
+    puVar4 = pFVar2->field_005D + 0x14;
 
     uVar4 = FUN_006b4fe0(pFVar2->field_005D);
     /* ST_CALLSITE[00599A76]: CALL 0x006b50c0; direct=006B50C0 FUN_006b50c0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ushort; signature=__stdcall;pointer:/ushort;/int;/int;/int;/uint;pointer:/undefined4;/int */
-    puVar3 = FUN_006b50c0(local_c,local_8,(uint)pFVar2->field_005D[7],uVar4,(undefined4 *)puVar3,
-                          iVar7);
-    uVar5 = pFVar2->field_1ABC;
-    *slotStorage = puVar3;
-    FUN_006b2410(g_ddxContext_008075A8,uVar5,(uint)puVar3);
+    puVar3_mg1 = FUN_006b50c0(local_c,local_8,(uint)pFVar2->field_005D[7],uVar4,(undefined4 *)puVar4
+                              ,iVar5);
+    uVar3 = pFVar2->field_1ABC;
+    *slotStorage = puVar3_mg1;
+    FUN_006b2410(g_ddxContext_008075A8,uVar3,(uint)puVar3_mg1);
     FUN_006b2800(g_ddxContext_008075A8,pFVar2->field_1ABC,*(uint *)(*slotStorage + 2),
                  *(uint *)(*slotStorage + 4));
     if (param_1 == '\0') {
-      uVar5 = 0xb4;
+      uVar3 = 0xb4;
     }
     else {
-      uVar5 = (-(uint)(param_1 != '\x01') & 0xffffff6e) + 0xb4;
+      uVar3 = (-(uint)(param_1 != '\x01') & 0xffffff6e) + 0xb4;
     }
 
     Library::DKW::DDX::FUN_006b3640
-              ((int *)g_ddxContext_008075A8,pFVar2->field_1ABC,0xffffffff,uVar5,
+              ((int *)g_ddxContext_008075A8,pFVar2->field_1ABC,0xffffffff,uVar3,
                (-(uint)(param_1 != '\0') & 0xffffffb4) + 0xaa);
     FUN_006b3af0((int *)g_ddxContext_008075A8,pFVar2->field_1ABC);
     pFVar2->field_1ABB = param_1;

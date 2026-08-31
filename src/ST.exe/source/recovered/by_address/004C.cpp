@@ -75,7 +75,7 @@ LAB_004c2616:
   }
   switch(param_1) {
   case CASE_0:
-    if (st::machine_word_boundary_cast<uint>((AnonShape_004C21A0_FDE833A6 *)param_2) != st::machine_word_boundary_cast<uint>(local_8)) {
+    if ((AnonShape_004C21A0_FDE833A6 *)param_2 != local_8) {
       if (param_2 == nullptr) {
         if (local_8->field_0245 == 4) {
           if ((((-1 < iVar4) && (iVar4 < g_worldGrid.sizeX)) && (-1 < param_4)) &&
@@ -125,7 +125,7 @@ LAB_004c2616:
   case CASE_19:
   case CASE_1A:
   case CASE_34:
-    if (st::machine_word_boundary_cast<uint>((AnonShape_004C21A0_FDE833A6 *)param_2) == st::machine_word_boundary_cast<uint>(local_8)) {
+    if ((AnonShape_004C21A0_FDE833A6 *)param_2 == local_8) {
       sVar3 = 0;
     }
     else if ((((-1 < iVar4) && (iVar4 < g_worldGrid.sizeX)) && (-1 < param_4)) &&
@@ -1568,9 +1568,7 @@ LAB_004ccd43:
     puVar3 = (undefined *)0x5;
   }
   else {
-    puVar3 = (undefined *)
-
-             st::fn_00405C45(STField<int>(this,0x24),STField<int>(this,0x235),0);
+    puVar3 = STPointerBoundaryCast<undefined *>(st::fn_00405C45(STField<int>(this,0x24),STField<int>(this,0x235),0));
   }
   /* ST_CALLSITE[004CCE75]: CALL 0x004023a1; direct=004023A1 TLOEmbryoTy::sub_0041C3F0 */
   st::fn_004023A1(static_cast<TLOEmbryoTy *>(this),puVar3);
@@ -2173,9 +2171,11 @@ undefined4 __thiscall st::fn_004CDFD0(void *this,int param_1,int param_2,int par
 {
   int iVar1;
 
+
   iVar1 = st::fn_00402829((short)param_2,param_3,param_4,param_1,STField<int>(this,0x24),
                              nullptr,nullptr,nullptr,0,STField<int *>(this,0x18));
   if (iVar1 != 0) {
+
     st::fn_004018A2(STField<int>(this,0x24),param_1,param_2,param_3,param_4,
                        (uint)STField<ushort>(this,0x30),STField<int>(this,0x5c0),nullptr,
                        STField<undefined4>(this,0x18),100);

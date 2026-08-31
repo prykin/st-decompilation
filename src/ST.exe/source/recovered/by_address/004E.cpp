@@ -200,7 +200,7 @@ undefined4 __fastcall st::fn_004E0830(TLOBaseTy *param_1)
   int uVar10;
   TLOBaseTyVTable *pTVar10;
   int iVar7;
-  uint uVar11;
+  int uVar11;
   uint uVar12;
   STResourceC *this;
   short sVar13;
@@ -503,7 +503,7 @@ switchD_004e0aad_default:
     iVar7 = st::fn_00405D80((int)param_1->field_0024);
 
     uVar11 = st::fn_004036A7((int)param_1->field_0024);
-    if (((int)uVar11 < iVar7) &&
+    if ((uVar11 < iVar7) &&
        (st::machine_word_boundary_cast<uint>(param_1->field_04E0[0x12] + param_1->field_04E0[0x11]) <= g_playSystem_00802A38->field_00E4))
     {
       param_1->field_04E0[0x11] = g_playSystem_00802A38->field_00E4;
@@ -2607,7 +2607,7 @@ LAB_004e5403:
       puVar9 = (uint *)*piVar6;
       piVar13 = piVar6;
       while (puVar9 != nullptr) {
-        if ((puVar9 == param_3) && ((uint)((byte *)piVar13)[1] == iVar7 + 1U)) {
+        if ((puVar9 == param_3) && (st::storage_bit_cast<uint>(static_cast<uint32_t>(((byte *)piVar13)[1])) == iVar7 + 1U)) {
           iVar7 = 0;
           if (*(int *)(iVar8 * 0x19 + 5 + (int)piVar6) == 0) goto LAB_004e54d9;
           piVar6 = (int *)(iVar8 * 0x19 + 5 + (int)piVar6);
@@ -3231,6 +3231,8 @@ LAB_004e680d:
 void st::fn_004E68A0(byte *param_1,undefined1 *param_2,uint param_3,undefined4 *param_4)
 
 {
+  int param_3_after_write;
+
   int *piVar1;
   undefined *puVar2;
   byte bVar3;
@@ -3266,7 +3268,7 @@ void st::fn_004E68A0(byte *param_1,undefined1 *param_2,uint param_3,undefined4 *
           return;
         }
       }
-      auto param_3_after_write = 0; /* compiler stack-slot lifetime split */
+      param_3_after_write = 0; /* compiler stack-slot lifetime split */
       if (*(int *)(iVar6 * 0x19 + 5 + (int)piVar1) != 0) {
         auto param_2_after_write = (undefined1 *)((int)param_4 + 5); /* compiler stack-slot lifetime split */
         iVar6 = iVar6 * 0x19 + 5;
@@ -3568,6 +3570,8 @@ int st::fn_004E6F00(int param_1)
 void st::fn_004E70F0(int param_1,int param_2,int param_3,uint *param_4)
 
 {
+  int param_1_after_write;
+
   int *piVar1;
   int iVar2;
   int iVar3;
@@ -3581,7 +3585,7 @@ void st::fn_004E70F0(int param_1,int param_2,int param_3,uint *param_4)
     *(undefined4 *)param_3 = 0xffffffff;
     /* ST_CALLSITE[004E7135]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar4 = st::fn_004049B7((char)param_1);
-    auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
+    param_1_after_write = 0; /* compiler stack-slot lifetime split */
     iVar2 = param_2 + (bVar4 - 1) * 3;
     if (0 < *(int *)(&DAT_007995bc + iVar2 * 0x195)) {
       puVar6 = reinterpret_cast<uint *>((&DAT_007995bc + iVar2 * 0x195));
@@ -3612,6 +3616,9 @@ void st::fn_004E70F0(int param_1,int param_2,int param_3,uint *param_4)
 void st::fn_004E7230(int param_1,int param_2,undefined4 *param_3,undefined4 *param_4)
 
 {
+  int param_1_after_write;
+  int param_2_after_write;
+
   int *piVar1;
   int iVar2;
   byte bVar3;
@@ -3629,8 +3636,8 @@ void st::fn_004E7230(int param_1,int param_2,undefined4 *param_3,undefined4 *par
   if ((((-1 < param_1) && (param_1 < 8)) && (-1 < param_2)) && (param_2 < 3)) {
     /* ST_CALLSITE[004E727F]: CALL 0x004049b7; direct=004049B7 LookupRecordByte */
     bVar3 = st::fn_004049B7((char)param_1);
-    auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
-    auto param_2_after_write = 0; /* compiler stack-slot lifetime split */
+    param_1_after_write = 0; /* compiler stack-slot lifetime split */
+    param_2_after_write = 0; /* compiler stack-slot lifetime split */
     iVar4 = iVar4 + (bVar3 - 1) * 3;
     if (0 < *(int *)(&DAT_007995bc + iVar4 * 0x195)) {
       puVar7 = reinterpret_cast<uint *>((&DAT_007995bc + iVar4 * 0x195));
@@ -3912,6 +3919,8 @@ LAB_004e789c:
 undefined4 st::fn_004E7980(uint *param_1,int param_2,byte param_3)
 
 {
+  int param_2_after_write;
+
   int *piVar1;
   byte bVar2;
   undefined *puVar3;
@@ -3966,7 +3975,7 @@ undefined4 st::fn_004E7980(uint *param_1,int param_2,byte param_3)
 LAB_004e7a7f:
         pbVar11 = pbVar11 + 3;
       } while ((int)pbVar11 < 0x7c0e4c);
-      auto param_2_after_write = 0x42; /* compiler stack-slot lifetime split */
+      param_2_after_write = 0x42; /* compiler stack-slot lifetime split */
       pbVar11 = (byte *)&DAT_007c0e4c + iVar6 * 0xc6;
       do {
         bVar2 = pbVar11[1];
@@ -4625,7 +4634,7 @@ LAB_004e9090:
     uVar3 = 0;
   }
   if (((int)param_1->field_04D0 < 100) &&
-     ((uint)(&DAT_0079a9fc)[uVar3] / 100 + param_1->field_04D4 <= g_playSystem_00802A38->field_00E4)
+     (st::storage_bit_cast<uint>(static_cast<uint32_t>((&DAT_0079a9fc)[uVar3])) / 100 + param_1->field_04D4 <= g_playSystem_00802A38->field_00E4)
      ) {
     TVar1 = param_1->field_04D0 + CASE_1;
     param_1->field_04D4 = g_playSystem_00802A38->field_00E4;

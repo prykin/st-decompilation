@@ -365,9 +365,8 @@ cf_common_join_004B92EE:
     else {
       iVar5 = iVar5 - pAVar3->field_0210;
     }
-    local_c = (RecoveredRecordView_0060D340_06E635D9 *)
-              /* ST_CALLSITE[004B9354]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
-              STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\x0e');
+    local_c = /* ST_CALLSITE[004B9354]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
+    STPointerBoundaryCast<RecoveredRecordView_0060D340_06E635D9 *>(STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\x0e'));
     /* ST_CALLSITE[004B9362]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
     iVar6 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\r');
     if (((int)local_c + (-1 - iVar6) <= iVar5) && ((param_1->field_01F1 & 0x2000U) == 0)) {

@@ -2051,22 +2051,46 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
             if (parameter.isAutoParameter() || !parameter.isStackVariable() ||
                     manual(parameter.getSource())) continue;
             String previousGeneratedType = previousGeneratedWidthType(function, parameter);
+            String stableGeneratedNarrow = validatedGeneratedNarrowType(function, parameter);
             boolean generic = genericDword(parameter.getFormalDataType());
             boolean generatedNarrow = !previousGeneratedType.isBlank() &&
                 parameter.getFormalDataType().getLength() > 0 &&
                 parameter.getFormalDataType().getLength() < pointerSize;
             if (!generic && !generatedNarrow) continue;
             WidthEvidence evidence = parameterWidth(function, parameter);
-            if (evidence == null || evidence.proposedType.isBlank() || evidence.conflict) {
-                if (generatedNarrow) {
-                    rows.add(Row.target(function, "stack_parameter_width_revert", true,
-                        "parameter", parameter.getOrdinal(), parameter,
-                        parameter.getName(), previousGeneratedType, "high",
-                        "previous automatic narrow-width proof no longer qualifies; " +
-                        "restoring generated baseline " + previousGeneratedType));
-                }
+            if (generic && !stableGeneratedNarrow.isBlank()) {
+                rows.add(Row.target(function, "stack_parameter_width", true,
+                    "parameter", parameter.getOrdinal(), parameter,
+                    parameter.getName(), stableGeneratedNarrow, "high",
+                    "restoring an automation-owned narrow ABI from its exact surviving " +
+                    "MOVSX/MOVZX machine anchor; downstream prototype churn is not " +
+                    "contradictory width evidence"));
                 continue;
             }
+            if (generatedNarrow && stableGeneratedNarrow.isBlank() &&
+                    evidence != null && evidence.addressEscaped) {
+                rows.add(Row.target(function, "stack_parameter_width_revert", true,
+                    "parameter", parameter.getOrdinal(), parameter,
+                    parameter.getName(), previousGeneratedType, "high",
+                    "the physical incoming slot address escapes through a call; " +
+                    "the later output lifetime must not narrow the entry ABI or expose " +
+                    "an upper-byte in_stack live-in; restoring " +
+                    previousGeneratedType + "; " + evidence.reason));
+                continue;
+            }
+            if (evidence == null || evidence.proposedType.isBlank() || evidence.conflict) {
+                // The Program's bytes cannot change underneath this analysis.  Loss
+                // of a downstream inferred formal may make an accepted dword-forward
+                // proof look ambiguous, but that is not new machine evidence against
+                // the earlier exact narrow anchor.  Keep the accepted width monotonic;
+                // a genuinely contradictory migration belongs in a separate review
+                // proposal with explicit machine sites, never an automatic rollback.
+                continue;
+            }
+            // Signedness competition at the same proven storage width is a view,
+            // not a reason to oscillate an already generated ABI parameter.
+            if (generatedNarrow && parameter.getFormalDataType().getLength() ==
+                    typeLength(evidence.proposedType)) continue;
             if (evidence.proposedType.equals(typeSpec(parameter.getFormalDataType()))) continue;
             rows.add(Row.target(function, "stack_parameter_width", true, "parameter",
                 parameter.getOrdinal(), parameter, parameter.getName(), evidence.proposedType,
@@ -2584,7 +2608,9 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
     }
 
     private WidthEvidence parameterWidth(Function function, Parameter parameter) {
-        long expectedOffset = (long)parameter.getStackOffset() + pointerSize;
+        Long abiOffset = abiFrameOffset(function, parameter);
+        long expectedOffset = abiOffset == null ?
+            (long)parameter.getStackOffset() + pointerSize : abiOffset;
         Set<String> candidates = new HashSet<>();
         List<String> sites = new ArrayList<>();
         Set<String> addressAliases = new HashSet<>();
@@ -2669,9 +2695,11 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
             }
         }
         if (candidates.isEmpty()) return null;
-        boolean conflict = candidates.size() != 1 || unmaskedDwordReads != 0;
+        boolean conflict = candidates.size() != 1 || unmaskedDwordReads != 0 ||
+            addressPassed;
         String proposed = candidates.size() == 1 ? candidates.iterator().next() : "";
-        return new WidthEvidence(proposed, conflict, "entry-use width=" + proposed +
+        return new WidthEvidence(proposed, conflict, addressPassed,
+            "entry-use width=" + proposed +
             "; unmasked_dword_reads=" + unmaskedDwordReads + "; evidence=" +
             String.join(" | ", sites));
     }
@@ -2790,6 +2818,59 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
             for (int operand = 0; operand < instruction.getNumOperands(); operand++)
                 if (Long.valueOf(expectedOffset).equals(
                         stackOffset(instruction, operand))) return "/undefined4";
+        }
+        return "";
+    }
+
+    /**
+     * Recover an accepted automation-owned narrow ABI after a downstream signature
+     * change temporarily made a forwarded dword consumer look generic.  The old
+     * marker is only provenance: the current Program must still contain the exact
+     * MOVSX/MOVZX at the recorded address, against this parameter's physical EBP
+     * slot, with matching width and signedness.  This is address-stable machine
+     * evidence and does not depend on another inferred prototype.
+     */
+    private String validatedGeneratedNarrowType(Function function,
+            Parameter parameter) {
+        String comment = function.getComment();
+        if (comment == null || comment.isBlank()) return "";
+        Long abiOffset = abiFrameOffset(function, parameter);
+        long expectedOffset = abiOffset == null ?
+            (long)parameter.getStackOffset() + pointerSize : abiOffset;
+        List<Pattern> markers = List.of(
+            Pattern.compile(
+                "\\[STAbiConsistencyApplier\\] stack_parameter_width " +
+                "target=parameter:" + parameter.getOrdinal() +
+                ":\\s+parameter=(/[^\\s;]+).*?Evidence:.*?" +
+                "([0-9A-Fa-f]{8})", Pattern.DOTALL),
+            Pattern.compile(
+                "\\[STAbiConsistencyApplier\\] stack_parameter_width: " +
+                "parameter=(/[^\\s;]+).*?evidence=([0-9A-Fa-f]{8})",
+                Pattern.DOTALL));
+        for (Pattern marker : markers) {
+            Matcher matcher = marker.matcher(comment);
+            while (matcher.find()) {
+                String proposed = matcher.group(1);
+                int width = typeLength(proposed);
+                if (width != 1 && width != 2) continue;
+                Address site = currentProgram.getAddressFactory().getAddress(
+                    matcher.group(2));
+                if (site == null || !function.getBody().contains(site)) continue;
+                Instruction instruction = listing.getInstructionAt(site);
+                if (instruction == null || instruction.getNumOperands() < 2) continue;
+                String mnemonic = instruction.getMnemonicString()
+                    .toUpperCase(Locale.ROOT);
+                boolean signed = "/char".equals(proposed) ||
+                    "/short".equals(proposed);
+                if (!(signed ? "MOVSX".equals(mnemonic) :
+                        "MOVZX".equals(mnemonic))) continue;
+                for (int operand = 0; operand < instruction.getNumOperands(); operand++) {
+                    if (!Long.valueOf(expectedOffset).equals(
+                            stackOffset(instruction, operand))) continue;
+                    if (memoryWidth(instruction.getDefaultOperandRepresentation(operand)) ==
+                            width) return proposed;
+                }
+            }
         }
         return "";
     }
@@ -3014,6 +3095,15 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
         return 0;
     }
 
+    private int typeLength(String path) {
+        return switch (path) {
+            case "/char", "/byte" -> 1;
+            case "/short", "/ushort" -> 2;
+            case "/int", "/uint", "/dword", "/undefined4" -> 4;
+            default -> -1;
+        };
+    }
+
     private boolean genericDword(DataType type) {
         DataType current = unwrap(type);
         if (current == null || current.getLength() != 4 || current instanceof Pointer) return false;
@@ -3232,7 +3322,8 @@ public class STAbiConsistencyAnalyzer extends GhidraScript {
         List<String> storages) { }
     private record ParameterHalf(long parameterOffset, int half) { }
     private record BaseMemory(String base, long offset) { }
-    private record WidthEvidence(String proposedType, boolean conflict, String reason) { }
+    private record WidthEvidence(String proposedType, boolean conflict,
+            boolean addressEscaped, String reason) { }
     private record ScalarAuditRow(String functionAddress, String function,
         int parameterOrdinal, String parameterName, String parameterType, String storage,
         long frameOffset, boolean qualifies, boolean selected, int score, int directReads,

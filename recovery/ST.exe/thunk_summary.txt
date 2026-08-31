@@ -1,4 +1,4 @@
 program=ST.exe
 thunks=3826
 apply=0
-note=Only one-instruction direct JMP thunks can mutate. A USER_DEFINED name is released only when it is exactly TargetName_thunk in the target namespace and its ABI is already equivalent to the target. Ghidra thunk signatures already delegate to the target and are never mutated by this pair.
+note=Only one-instruction direct JMP thunks can mutate. A USER_DEFINED name is released only when it is exactly TargetName_thunk in the target namespace and its ABI is already equivalent to the target. A weak non-equivalent thunk signature is copied from its exact final target; manual/imported thunk signatures remain protected.

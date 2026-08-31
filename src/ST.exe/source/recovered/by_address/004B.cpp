@@ -10,6 +10,7 @@ st::fn_004B0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,
 {
   int scalar_local_34;
   int scalar_local_1c;
+  int param_1_after_write;
 
   byte bVar1;
   char cVar2;
@@ -225,7 +226,7 @@ LAB_004b057d:
                      cVar2 != '\x01' && (cVar2 != '\x03')) && (cVar2 != '\x02')))))) {
               local_34 = (short *)(iVar9 * local_18 + (int)local_10);
               memset(local_88, 0, 0x20); /* compiler bulk-zero initialization */
-              auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
+              param_1_after_write = 0; /* compiler stack-slot lifetime split */
               if (0 < local_40) {
                 local_20 = local_14 + -1;
                 local_58 = (local_14 + 1) * (int)local_8;
@@ -588,6 +589,7 @@ st::fn_004B1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     piVar4 = *(int **)(param_6 + 0x18);
   }
+
   local_10 = st::fn_00402829((short)*param_3,*param_4,*param_5,param_2,param_1,nullptr,
                                 nullptr,nullptr,0,piVar4);
   if (local_10 == 0) {
@@ -599,6 +601,7 @@ st::fn_004B1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3
       param_6 = 0;
       if (g_array_007FA150 != nullptr) {
         g_array_007FA150->iteratorIndex = 0;
+
         local_EAX_136 = st::fn_006B1190(g_array_007FA150,reinterpret_cast<byte *>(&local_18));
         if (-1 < local_EAX_136) {
           do {
@@ -613,6 +616,7 @@ LAB_004b1226:
                   st::fn_004018C5(local_18,&local_6,&local_8,&local_a);
                   if (((STGridAt3D(g_worldGrid, local_6, local_8, local_a).objects[0] ==
                         nullptr) && (local_a < 4)) &&
+
                      ((iVar2 = st::fn_006ACED8((int)local_6,(int)local_8,*param_3,*param_4),
                       local_14 < 0 || (iVar2 < local_14)))) {
                     param_1 = (int)local_8;
@@ -640,6 +644,7 @@ LAB_004b1226:
                 if (dVar2 == 0xe0) goto LAB_004b1226;
               }
             }
+
             local_EAX_414 = st::fn_006B1190(g_array_007FA150,reinterpret_cast<byte *>(&local_18));
           } while (-1 < local_EAX_414);
           if (local_10 != 0) {
@@ -678,6 +683,7 @@ LAB_004b1226:
                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                         piVar4 = *(int **)(param_6 + 0x18);
                       }
+
                       iVar3 = st::fn_00402829((short)iVar7,iVar8,iVar6,param_2,param_1,
                                                  nullptr,nullptr,nullptr,0,piVar4);
                       iVar5 = local_14;
@@ -697,6 +703,7 @@ LAB_004b13a9:
                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                         piVar4 = *(int **)(param_6 + 0x18);
                       }
+
                       iVar3 = st::fn_00402829((short)iVar7,iVar8,iVar6,param_2,param_1,
                                                  nullptr,nullptr,nullptr,0,piVar4);
                       iVar5 = local_14;
@@ -720,6 +727,7 @@ LAB_004b13a9:
                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                         piVar4 = *(int **)(param_6 + 0x18);
                       }
+
                       iVar3 = st::fn_00402829((short)iVar7,iVar8,iVar6,param_2,param_1,
                                                  nullptr,nullptr,nullptr,0,piVar4);
                       iVar5 = local_14;
@@ -734,6 +742,7 @@ LAB_004b13a9:
                         /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                         piVar4 = *(int **)(param_6 + 0x18);
                       }
+
                       iVar3 = st::fn_00402829((short)iVar7,iVar8,iVar6,param_2,param_1,
                                                  nullptr,nullptr,nullptr,0,piVar4);
                       iVar5 = local_14;
@@ -1667,7 +1676,7 @@ undefined4 __cdecl st::fn_004B31C0(RecoveredRecord_004B31C0_F3AB8C37 *param_1,in
     iVar4 = param_2;
     while (-1 < iVar3) {
       if ((((local_c != nullptr) &&
-           (st::machine_word_boundary_cast<uint>((RecoveredRecord_004B31C0_F3AB8C37 *)local_c->field_0024) == st::machine_word_boundary_cast<uint>(pRVar1))) &&
+           ((RecoveredRecord_004B31C0_F3AB8C37 *)local_c->field_0024 == pRVar1)) &&
           ((iVar4 == 0 || (local_c->field_0018 != iVar4)))) &&
          ((((local_c->field_02EC == 3 || (local_c->field_02A0 != 0)) || (local_c->field_02E0 != 0))
           || (local_c->field_02DC != 0)))) {
@@ -2890,9 +2899,8 @@ cf_common_join_004B92EE:
     else {
       iVar5 = iVar5 - pAVar3->field_0210;
     }
-    local_c = (RecoveredRecordView_0060D340_06E635D9 *)
-              /* ST_CALLSITE[004B9354]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
-              st::fn_004022AC(reinterpret_cast<STT3DSprC *>(puVar1),'\x0e');
+    local_c = /* ST_CALLSITE[004B9354]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
+    STPointerBoundaryCast<RecoveredRecordView_0060D340_06E635D9 *>(st::fn_004022AC(reinterpret_cast<STT3DSprC *>(puVar1),'\x0e'));
     /* ST_CALLSITE[004B9362]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
     iVar6 = st::fn_004022AC(reinterpret_cast<STT3DSprC *>(puVar1),'\r');
     if (((int)local_c + (-1 - iVar6) <= iVar5) && ((param_1->field_01F1 & 0x2000U) == 0)) {

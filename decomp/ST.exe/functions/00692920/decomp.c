@@ -35,9 +35,8 @@ FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,void *param_
   pRVar2 = nullptr;
   if (param_2 != nullptr) {
     local_10 = cMf32::RecGet(param_1,1,"PAL_APP",nullptr,1);
-    pRVar2 = (RecoveredRecordView_006B4B20_F20E56A6 *)
-             /* ST_CALLSITE[00692963]: CALL 0x006b50c0; direct=006B50C0 FUN_006b50c0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006B4FA0_DAC3A217; source view only; no Ghidra override */
-             FUN_006b50c0((int)param_3,(int)param_4,8,0x100,(undefined4 *)(local_10 + 0x14),1);
+    pRVar2 = /* ST_CALLSITE[00692963]: CALL 0x006b50c0; direct=006B50C0 FUN_006b50c0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006B4FA0_DAC3A217; source view only; no Ghidra override */
+    STPointerBoundaryCast<RecoveredRecordView_006B4B20_F20E56A6 *>(FUN_006b50c0((int)param_3,(int)param_4,8,0x100,(undefined4 *)(local_10 + 0x14),1));
 
     local_8 = FUN_006b4fa0((RecoveredRecord_006B4FA0_DAC3A217 *)pRVar2);
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */

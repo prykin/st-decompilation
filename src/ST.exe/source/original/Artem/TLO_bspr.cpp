@@ -26,6 +26,7 @@ int __thiscall st::fn_004C9770(TLOBaseTy *this)
   int iVar5;
   int uVar2;
   int iVar6;
+  int uVar9_mg2;
   int iVar4;
   uint uVar7;
   TLOBaseTy_field_0245State TVar8;
@@ -244,9 +245,9 @@ int __thiscall st::fn_004C9770(TLOBaseTy *this)
     st::fn_00401064
               (reinterpret_cast<STT3DSprC *>(this_01),'\x10',*(uint *)(&DAT_0079104c + this_00->field_0235 * 4));
 
-    uVar9 = st::fn_006E51B0(this_00->field_0010);
+    uVar9_mg2 = st::fn_006E51B0(this_00->field_0010);
     /* ST_CALLSITE[004C9CDD]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
-    st::fn_00405240(reinterpret_cast<STT3DSprC *>(this_01),0x10,uVar9);
+    st::fn_00405240(reinterpret_cast<STT3DSprC *>(this_01),0x10,uVar9_mg2);
     /* ST_CALLSITE[004C9CE6]: CALL 0x00403afd; direct=00403AFD STT3DSprC::sub_004ACF50 */
     st::fn_00403AFD(reinterpret_cast<STT3DSprC *>(this_01),'\x10');
   }
@@ -936,7 +937,7 @@ undefined4 __fastcall st::fn_004CC370(RecoveredRecordView_004CC370_A3AEA85C *par
     return 0;
   }
   if (-1 < *(int *)&param_1->field_0x44c) {
-    pAVar1 = reinterpret_cast<AnonPointee_STT3DSprC_0020 *>(((STT3DSprC *)param_1->field_0603)->field_0020);
+    pAVar1 = ((STT3DSprC *)param_1->field_0603)->field_0020;
     if ((int)pAVar1->field_020C <= (int)pAVar1->field_0210) {
       /* ST_CALLSITE[004CC3BA]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       st::fn_00404264(reinterpret_cast<STT3DSprC *>(param_1->field_0603),0xe);

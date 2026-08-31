@@ -638,7 +638,7 @@ int __thiscall st::fn_0052DD20(PopUpTy *this,STMessage *message)
                    pRVar1->field_0004,(uint)(byte)this_00->field_009C * 0x13 + -0x13);
         st::fn_006B4170(reinterpret_cast<RecoveredSourceFamily_dibcopy *>(this_00->field_0090),0,0,
                      (uint)(byte)this_00->field_009C * 0x13 + -0x13,
-                     st::machine_word_boundary_cast<int>(((RecoveredSourceFamily_dibcopy *)this_00->field_0090)->field_0004),0x13,0x89);
+                     ((RecoveredSourceFamily_dibcopy *)this_00->field_0090)->field_0004,0x13,0x89);
         puVar11 = this_00->field_0098;
         if ((int)puVar11[2] <= (int)(uint)DAT_00807346) {
           this_00->field_009C = (char)puVar11[2];
@@ -707,10 +707,8 @@ LAB_0052e184:
     puVar12 = PTR_0080679c + 0x14;
 
     uVar12 = st::fn_006B4FE0(PTR_0080679c);
-    pRVar5 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-             st::fn_006B50C0((&DAT_00807570)[(_DAT_00807348 & 0xff) * 4],0x11d,(uint)PTR_0080679c[7],
-                          uVar12,reinterpret_cast<undefined4 *>(puVar12),iVar8);
+    pRVar5 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(st::fn_006B50C0((&DAT_00807570)[(_DAT_00807348 & 0xff) * 4],0x11d,(uint)PTR_0080679c[7],
+                          uVar12,reinterpret_cast<undefined4 *>(puVar12),iVar8));
     this_00->field_0090 = reinterpret_cast<ushort *>(pRVar5);
     uVar10 = *(uint *)&pRVar5[1].field_0x4;
     if (uVar10 == 0) {

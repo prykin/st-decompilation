@@ -696,9 +696,8 @@ st::fn_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,void *par
   pRVar2 = nullptr;
   if (param_2 != nullptr) {
     local_10 = st::fn_006F1CE0(param_1,1,st::mutable_c_string("PAL_APP"),nullptr,1);
-    pRVar2 = (RecoveredRecordView_006B4B20_F20E56A6 *)
-             /* ST_CALLSITE[00692963]: CALL 0x006b50c0; direct=006B50C0 FUN_006b50c0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006B4FA0_DAC3A217; source view only; no Ghidra override */
-             st::fn_006B50C0((int)param_3,(int)param_4,8,0x100,reinterpret_cast<undefined4 *>((local_10 + 0x14)),1);
+    pRVar2 = /* ST_CALLSITE[00692963]: CALL 0x006b50c0; direct=006B50C0 FUN_006b50c0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecord_006B4FA0_DAC3A217; source view only; no Ghidra override */
+    STPointerBoundaryCast<RecoveredRecordView_006B4B20_F20E56A6 *>(st::fn_006B50C0((int)param_3,(int)param_4,8,0x100,reinterpret_cast<undefined4 *>((local_10 + 0x14)),1));
 
     local_8 = st::fn_006B4FA0(reinterpret_cast<RecoveredRecord_006B4FA0_DAC3A217 *>(pRVar2));
     /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
@@ -1135,7 +1134,7 @@ st::fn_00693B20(void *param_1,int param_2,undefined1 param_3,undefined4 param_4,
   uint *puVar1;
   char cVar2;
   int iVar3;
-  uint uVar4;
+  int uVar4;
   uint uVar5;
   byte *puVar7;
   char *pcVar8;
@@ -1160,7 +1159,7 @@ st::fn_00693B20(void *param_1,int param_2,undefined1 param_3,undefined4 param_4,
   *(undefined4 *)((int)param_1 + param_2 * 0x51 + 0x39) = param_5;
   *(undefined4 *)((int)param_1 + param_2 * 0x51 + 0x3d) = param_6;
   *(undefined1 *)puVar1 = param_7;
-  if (-1 < (int)uVar4) {
+  if (-1 < uVar4) {
     *(char *)((int)param_1 + param_2 * 0x51 + 0x34) = (char)uVar4;
   }
   if (param_8 != nullptr) {
@@ -3715,33 +3714,33 @@ uint st::fn_0069C710(int param_1,int param_2,RecoveredRecord_0069C710_92A26D6D *
 /* [STPrototypeApplier] Propagated parameter 0.
    Evidence: 0069C8B0 -> 0069C790 @ 0069C9FA */
 
-int st::fn_0069C790(uint *param_1,int param_2,uint param_3,uint param_4)
+int st::fn_0069C790(DArrayTy *param_1,int param_2,uint param_3,uint param_4)
 
 {
   int *piVar1;
   uint uVar2;
   int iVar3;
   uint uVar4;
-  int iVar5;
+  void *pvVar5;
   int local_c;
   RecoveredRecord_0069C710_92A26D6D *local_8;
 
   local_c = 0;
-  if (param_3 < param_1[3]) {
-    local_8 = (RecoveredRecord_0069C710_92A26D6D *)(param_1[2] * param_3 + param_1[7]);
+  if (param_3 < param_1->count) {
+    local_8 = DArrayAt<RecoveredRecord_0069C710_92A26D6D>(param_1, param_3);
   }
   else {
     local_8 = nullptr;
   }
-  if (param_4 < param_1[3]) {
-    iVar5 = param_1[2] * param_4 + param_1[7];
+  if (param_4 < param_1->count) {
+    pvVar5 = DArrayAt<void>(param_1, param_4);
   }
   else {
-    iVar5 = 0;
+    pvVar5 = nullptr;
   }
   iVar3 = 0;
-  if ((local_8 != nullptr) && (iVar5 != 0)) {
-    iVar3 = STField<int>(iVar5,0xC);
+  if ((local_8 != nullptr) && (pvVar5 != nullptr)) {
+    iVar3 = STField<int>(pvVar5,0xc);
     uVar4 = 0;
     uVar2 = STField<uint>(iVar3,0xC);
     if (0 < (int)uVar2) {
@@ -3759,13 +3758,13 @@ int st::fn_0069C790(uint *param_1,int param_2,uint param_3,uint param_4)
           *(uint *)(param_2 + 10 + iVar3 * 0xe) = param_3;
           local_c = local_c + 1;
         }
-        iVar3 = STField<int>(iVar5,0xC);
+        iVar3 = STField<int>(pvVar5,0xc);
         uVar4 = uVar4 + 1;
         uVar2 = STField<uint>(iVar3,0xC);
       } while ((int)uVar4 < (int)uVar2);
     }
-    st::fn_006AE110(*(DArrayTy **)(iVar5 + 0xc));
-    st::fn_00403337(reinterpret_cast<DArrayTy *>(param_1),param_2,param_4);
+    st::fn_006AE110(STField<DArrayTy *>(pvVar5,0xc));
+    st::fn_00403337(param_1,param_2,param_4);
     iVar3 = local_c;
   }
   return iVar3;
@@ -3803,7 +3802,6 @@ uint * st::fn_0069C8B0(int param_1,int param_2,int param_3)
   void *local_8;
 
   iVar1 = param_1;
-  /* ST_CALLSITE[0069C8C5]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
   array = st::fn_006AE290(nullptr,10,0x10,10);
   if (((array != nullptr) && (param_1 != 0)) && (0 < param_3)) {
     local_18 = 0;
@@ -3870,7 +3868,7 @@ LAB_0069ca03:
                     uVar8 = uVar4;
                   }
 
-                  st::fn_00405BEB(&array->flags,iVar1,uVar7,uVar8);
+                  st::fn_00405BEB(array,iVar1,uVar7,uVar8);
                   break;
                 }
               }

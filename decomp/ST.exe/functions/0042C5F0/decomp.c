@@ -6,7 +6,14 @@
    STAllPlayersC::DelObjFromTmps
    [STAbiConsistencyApplier] stack_parameter_width: parameter=/char Evidence: entry-use width=/char;
    unmasked_dword_reads=0; evidence=0042C7D0 MOVSX EDX,byte ptr [EBP + 0x10] | 0042CB31 MOVSX
-   EDX,byte ptr [EBP + 0x10] */
+   EDX,byte ptr [EBP + 0x10]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:3: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:3: parameter=/char
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 undefined4 __thiscall
 STAllPlayersC::DelObjFromTmps

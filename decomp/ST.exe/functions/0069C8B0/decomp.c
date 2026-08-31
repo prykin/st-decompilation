@@ -31,7 +31,6 @@ uint * FUN_0069c8b0(int param_1,int param_2,int param_3)
   void *local_8;
 
   iVar1 = param_1;
-  /* ST_CALLSITE[0069C8C5]: CALL 0x006ae290; direct=006AE290 Library::DKW::TBL::DArrayCreate; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/uint; source view only; no Ghidra override */
   array = Library::DKW::TBL::DArrayCreate(nullptr,10,0x10,10);
   if (((array != nullptr) && (param_1 != 0)) && (0 < param_3)) {
     local_18 = 0;
@@ -98,7 +97,7 @@ LAB_0069ca03:
                     uVar8 = uVar4;
                   }
 
-                  thunk_FUN_0069c790(&array->flags,iVar1,uVar7,uVar8);
+                  thunk_FUN_0069c790(array,iVar1,uVar7,uVar8);
                   break;
                 }
               }

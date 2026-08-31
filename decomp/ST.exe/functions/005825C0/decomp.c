@@ -43,8 +43,9 @@ void __thiscall STJellyGunC::LifeGun(STJellyGunC *this)
   int iVar14;
   STJellyGunC_field_0235State SVar15;
   int iVar16;
-  uint uVar11;
+  int uVar11;
   int local_EAX_970;
+  int uVar12_mg2;
   /* ST_PSEUDO[return_width_artifact]: candidate call-output artifact: verify return width, clobbers, or x87 state */
   undefined2 extraout_var_00;
   ushort uVar17;
@@ -116,8 +117,7 @@ void __thiscall STJellyGunC::LifeGun(STJellyGunC *this)
         (((&DAT_007fb24c)[this->field_0024] != 0 &&
          (*(char *)(iVar16 * iVar14 + (&DAT_007fb24c)[this->field_0024] + iVar11) != '\0')))) ||
 
-       (uVar11 = thunk_FUN_00497030(iVar11,iVar14,this->field_0024,1,DAT_007e6760), (int)uVar11 < 0)
-       ) {
+       (uVar11 = thunk_FUN_00497030(iVar11,iVar14,this->field_0024,1,DAT_007e6760), uVar11 < 0)) {
       if (local_2c == nullptr) {
 LAB_005829e6:
         if ((g_playSystem_00802A38->field_00E4 & 0x3f) == 0) goto LAB_005829f4;
@@ -262,9 +262,9 @@ LAB_00582958:
     break;
   case CASE_2:
 
-    uVar12 = thunk_FUN_004ac910(puVar1,'\b');
-    local_1c = uVar12;
-    if (((uVar12 == 1) && (this->field_0241 != 0xff)) &&
+    uVar12_mg2 = thunk_FUN_004ac910(puVar1,'\b');
+    local_1c = uVar12_mg2;
+    if (((uVar12_mg2 == 1) && (this->field_0241 != 0xff)) &&
        /* ST_CALLSITE[00582D12]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
        (pSVar13 = STAllPlayersC::GetObjPtr
                             (g_allPlayers_007FA174,(char)this->field_0241,
@@ -287,22 +287,22 @@ LAB_00582958:
       local_4c.field_0014 = &DAT_008116c8;
       /* ST_CALLSITE[00582D95]: CALL dword ptr [EAX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/STGameObjC;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_0041AF40_F59F8577 */
       pSVar13->GetMessage(&local_4c);
-      uVar12 = local_1c;
+      uVar12_mg2 = local_1c;
     }
-    if ((this->field_0x24f != '\0') && (uVar12 == (byte)this->field_0x250)) {
+    if ((this->field_0x24f != '\0') && (uVar12_mg2 == (uint)(byte)this->field_0x250)) {
       /* ST_CALLSITE[00582DC0]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow((STT3DSprC *)puVar1,9,g_playSystem_00802A38->field_00E4);
       thunk_FUN_004ad0e0(puVar1,9);
     }
     /* ST_CALLSITE[00582DD2]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
     iVar11 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
-    if (uVar12 == iVar11 - 1U) {
+    if (uVar12_mg2 == iVar11 - 1U) {
       /* ST_CALLSITE[00582DE0]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)puVar1,8);
     }
     /* ST_CALLSITE[00582DE9]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
     iVar11 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\n');
-    if (uVar12 == iVar11 - 1U) {
+    if (uVar12_mg2 == iVar11 - 1U) {
       /* ST_CALLSITE[00582DF7]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
       STT3DSprC::StopShow((STT3DSprC *)puVar1,10);
     }
@@ -311,18 +311,18 @@ LAB_00582958:
       iVar11 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\t');
 
       iVar14 = thunk_FUN_004ac910(puVar1,'\t');
-      uVar12 = local_1c;
+      uVar12_mg2 = local_1c;
       if (iVar14 == iVar11 + -1) {
         /* ST_CALLSITE[00582E23]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
         STT3DSprC::StopShow((STT3DSprC *)puVar1,9);
         this->field_0x24f = 0;
-        uVar12 = local_1c;
+        uVar12_mg2 = local_1c;
       }
     }
     /* ST_CALLSITE[00582E36]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
     iVar11 = STT3DSprC::sub_004ACD30((STT3DSprC *)puVar1,'\b');
-    if ((uVar12 != iVar11 - 1U) || (this->field_0x24f != '\0')) {
-      if (((int)uVar12 < 10) &&
+    if ((uVar12_mg2 != iVar11 - 1U) || (this->field_0x24f != '\0')) {
+      if ((uVar12_mg2 < 10) &&
          ((0 < *(int *)&this->field_0x252 &&
           /* ST_CALLSITE[00582E7E]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           (pSVar13 = STAllPlayersC::GetObjPtr

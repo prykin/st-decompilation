@@ -17,6 +17,7 @@ undefined4 __thiscall TLOBldMark::sub_004C6210(TLOBldMark *this,int param_1,int 
   STT3DSprC *pSVar1;
   int iVar2;
   uint uVar3;
+  int uVar3_mg1;
 
   this->field_0018 = 0;
   this->field_001C = param_1;
@@ -66,9 +67,9 @@ undefined4 __thiscall TLOBldMark::sub_004C6210(TLOBldMark *this,int param_1,int 
   /* ST_CALLSITE[004C6357]: CALL 0x00401064; direct=00401064 STT3DSprC::SetCurFase */
   STT3DSprC::SetCurFase(this->field_002C,'\0',*(uint *)(&DAT_00790f84 + this->field_001C * 4));
 
-  uVar3 = STAppC::sub_006E51B0(this->field_0010);
+  uVar3_mg1 = STAppC::sub_006E51B0(this->field_0010);
   /* ST_CALLSITE[004C636A]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
-  STT3DSprC::StartShow(this->field_002C,0,uVar3);
+  STT3DSprC::StartShow(this->field_002C,0,uVar3_mg1);
   /* ST_CALLSITE[004C6372]: CALL 0x00403d0f; direct=00403D0F STT3DSprC::sub_004AD430 */
   STT3DSprC::sub_004AD430(this->field_002C);
   this->field_0024 = 0;

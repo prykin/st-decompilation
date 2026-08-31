@@ -22,14 +22,16 @@ ushort * __cdecl st::fn_00648AB0(int param_1,char *param_2,int *param_3)
   local_c = nullptr;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
+
   iVar2 = st::fn_0072D7F0(local_50.jumpBuffer,0);
   if (iVar2 == 0) {
     if ((param_1 == 0) || (param_2 == nullptr)) {
       st::fn_006A5E40
                 (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_creat.cpp"),0x29);
     }
-    local_c = st::fn_006F2D90((cMf32 *)param_1,param_2,1,0);
+    local_c = reinterpret_cast<ushort *>(st::fn_006F2D90((cMf32 *)param_1,param_2,1,0));
     if ((local_c != nullptr) && (local_8 = local_c, param_3 != nullptr)) {
+
       iVar2 = st::fn_006F2FB0(param_1,param_2,1);
       *param_3 = iVar2;
     }
@@ -37,6 +39,7 @@ ushort * __cdecl st::fn_00648AB0(int param_1,char *param_2,int *param_3)
     return local_8;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\ai\\ai_creat.cpp"),0x37,0,iVar2,st::mutable_c_string("%s"),
                              "LoadStrategData");
   if (iVar3 != 0) {
@@ -154,7 +157,7 @@ int __cdecl st::fn_00648E70(int param_1,char *param_2)
     if ((param_2 == nullptr) || (*param_2 == '\0')) {
       param_2 = PTR_s_AIBOSS_0079d664;
     }
-    local_8 = st::fn_006F2D90((cMf32 *)param_1,param_2,1,0);
+    local_8 = reinterpret_cast<ushort *>(st::fn_006F2D90((cMf32 *)param_1,param_2,1,0));
     if (local_8 == nullptr) {
       /* ST_CALLSITE[00648EF4]: CALL 0x004023dd; direct=004023DD CreateDefaultBossData; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
       local_8 = STPointerBoundaryCast<ushort *>(st::fn_004023DD());
@@ -256,7 +259,7 @@ void st::fn_00648FE0(void)
         }
       }
       else {
-        DAT_0080c52a = *DAT_0080ed12;
+        DAT_0080c52a = *st::storage_bit_cast<int *>(DAT_0080ed12);
         piVar7 = st::pointer_boundary_cast<int *>(DAT_0080ed12 + 0x101);
         piVar9 = reinterpret_cast<int *>(&g_packedRecords_A62x8[DAT_0080874d].field_0x2eb);
         memmove(piVar9, piVar7, 0x14); /* compiler REP MOVS byte copy */

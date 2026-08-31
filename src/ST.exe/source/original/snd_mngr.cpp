@@ -33,7 +33,7 @@ int st::fn_00566600(int param_1)
   cMf32 *local_14;
   SoundManagerTy *local_10;
   uint local_c;
-  ushort *local_8;
+  byte *local_8;
   char *pcVar9_mg1;
   char *pcVar9_mg2;
 
@@ -168,8 +168,8 @@ int st::fn_00566600(int param_1)
     }
   }
   local_10->field_002C = *(int *)local_8;
-  local_10->field_0030 = *(int *)(local_8 + 2);
-  local_10->field_0034 = *(int *)(local_8 + 4);
+  local_10->field_0030 = *(int *)(local_8 + 4);
+  local_10->field_0034 = *(int *)(local_8 + 8);
 LAB_0056681c:
   if (local_8 != nullptr) {
     st::fn_006F20E0(local_10->field_0018,reinterpret_cast<uint *>(&local_8));

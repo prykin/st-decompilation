@@ -2719,6 +2719,8 @@ void __thiscall st::fn_0065D940(void *this,DArrayTy *param_1,int param_2)
 int __fastcall st::fn_0065DC00(AiFltClassTy *param_1,undefined4 param_2,uint param_3,char param_4)
 
 {
+  int param_4_after_write;
+
   char cVar1;
   DArrayTy *array;
   dword dVar2;
@@ -2738,7 +2740,7 @@ int __fastcall st::fn_0065DC00(AiFltClassTy *param_1,undefined4 param_2,uint par
       cVar1 = (char)param_1->field_0024;
     }
     if ((param_4 != '\b') && ((param_4 < '\0' || (cVar1 = param_4, '\b' < param_4)))) {
-      auto param_4_after_write = -1; /* compiler stack-slot lifetime split */
+      param_4_after_write = -1; /* compiler stack-slot lifetime split */
       cVar1 = param_4_after_write;
     }
     char param_4_after_write_2 = cVar1; /* compiler stack-slot lifetime split */
@@ -2784,6 +2786,8 @@ st::fn_0065DD30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param
             short param_12)
 
 {
+  int param_5_after_write;
+
   byte bVar1;
   char cVar2;
   ushort *puVar3;
@@ -2815,7 +2819,7 @@ st::fn_0065DD30(AiFltClassTy *param_1,undefined4 param_2,uint param_3,uint param
       cVar2 = (char)param_1->field_0024;
     }
     if ((param_5 != '\b') && ((param_5 < '\0' || (cVar2 = param_5, '\b' < param_5)))) {
-      auto param_5_after_write = -1; /* compiler stack-slot lifetime split */
+      param_5_after_write = -1; /* compiler stack-slot lifetime split */
       cVar2 = param_5_after_write;
     }
     char param_5_after_write_2 = cVar2; /* compiler stack-slot lifetime split */
@@ -2943,6 +2947,8 @@ st::fn_0065E070(void *param_1,undefined4 param_2,uint param_3,uint param_4,uint 
             byte *param_7)
 
 {
+  int param_6_after_write;
+
   byte bVar1;
   ushort uVar2;
   char cVar3;
@@ -2978,7 +2984,7 @@ st::fn_0065E070(void *param_1,undefined4 param_2,uint param_3,uint param_4,uint 
     cVar3 = (char)STField<undefined4>(param_1,0x24);
   }
   if ((param_6 != '\b') && ((param_6 < '\0' || (cVar3 = param_6, '\b' < param_6)))) {
-    auto param_6_after_write = -1; /* compiler stack-slot lifetime split */
+    param_6_after_write = -1; /* compiler stack-slot lifetime split */
     cVar3 = param_6_after_write;
   }
   char param_6_after_write_2 = cVar3; /* compiler stack-slot lifetime split */
@@ -3158,6 +3164,8 @@ st::fn_0065E450(RecoveredRecordView_0065E360_071C1E69 *param_1,undefined4 param_
             Global_sub_0065E450_param_3Enum param_3,int param_4,int param_5)
 
 {
+  int param_3_after_write;
+
   byte bVar1;
   Global_sub_0065E450_param_3Enum GVar2;
   int iVar3;
@@ -3193,7 +3201,7 @@ st::fn_0065E450(RecoveredRecordView_0065E360_071C1E69 *param_1,undefined4 param_
     return 0;
   }
   GVar4 = array->count;
-  auto param_3_after_write = 0; /* compiler stack-slot lifetime split */
+  param_3_after_write = 0; /* compiler stack-slot lifetime split */
   if (0 < (int)GVar4) {
     do {
       if (param_3_after_write < GVar4) {

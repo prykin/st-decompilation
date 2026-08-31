@@ -28,7 +28,7 @@ undefined4 __fastcall st::fn_004EAA20(RecoveredRecordView_004D9C80_63C53606 *par
 {
   STT3DSprC *pSVar1;
   int iVar3;
-  int iVar2;
+  STT3DSprC *iVar2;
   int uVar3;
   uint uVar4;
   CHAR local_108 [256];
@@ -89,10 +89,10 @@ undefined4 __fastcall st::fn_004EAA20(RecoveredRecordView_004D9C80_63C53606 *par
   }
   uVar4 = 10;
   /* ST_CALLSITE[004EAB7B]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC */
-  iVar2 = (int)st::fn_004052CC(reinterpret_cast<STT3DSprC *>(&param_1->field_0x1d5));
+  iVar2 = st::pointer_boundary_cast<STT3DSprC *>(st::fn_004052CC(reinterpret_cast<STT3DSprC *>(&param_1->field_0x1d5)));
 
   uVar3 = st::fn_004052CC((STT3DSprC *)param_1->field_05FF);
-  st::fn_006EA340(param_1->field_0211,uVar3,iVar2,uVar4);
+  st::fn_006EA340(param_1->field_0211,uVar3,(int)iVar2,uVar4);
 
   st::fn_00401EBA((void *)param_1->field_05FF,0xe,0x28,
                      (-st::storage_bit_cast<uint>(static_cast<uint32_t>(*(int *)&param_1->field_0x4d0 != 3)) & 0xffffffed) + 0x3b,'\0');

@@ -336,7 +336,7 @@ st::fn_004C5350
     return local_c;
   }
   if (param_7 == 0) goto LAB_004c5515;
-  bVar1 = static_cast<byte>(st::machine_word_boundary_cast<uint>(((byte *)this_00)[9]));
+  bVar1 = ((byte *)this_00)[9];
   bVar2 = (byte)this->field_0024;
   param_7 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(param_7)), (uint8_t)(bVar1));
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

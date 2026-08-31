@@ -26,6 +26,7 @@ int __thiscall st::fn_0040AE40(STGroupBoatC *this,uint param_1,char param_2)
 
 {
   int scalar_psVar13;
+  int scalar_local_40;
 
   short sVar1;
   short sVar2;
@@ -417,7 +418,7 @@ LAB_0040b56a:
     pSVar5->field_009F = psVar7;
     if (psVar7 == nullptr) {
       scalar_psVar13 = (int)g_pathingGrid.sizeY * (int)g_pathingGrid.sizeX; /* split integer lifetime from pointer-typed SSA storage */
-      int scalar_local_40 = scalar_psVar13;
+      scalar_local_40 = scalar_psVar13;
 
       local_2c = static_cast<short *>(st::fn_006AAC70((int)g_pathingGrid.sizeZ * scalar_psVar13 * 2));
       iVar8 = (int)g_pathingGrid.sizeZ;
@@ -989,7 +990,7 @@ LAB_0040c4d0:
                 do {
                   local_50 = st::machine_word_boundary_cast<int>((&SHORT_007ed570)[local_a4 * 4] + local_7c);
                   if ((-1 < local_50) && (local_50 < local_2c)) {
-                    iVar9 = (int)(&SHORT_007ed572)[local_a4 * 4];
+                    iVar9 = st::storage_bit_cast<int>(static_cast<uint32_t>((&SHORT_007ed572)[local_a4 * 4]));
                     iVar11 = iVar9 + local_88;
                     if ((-1 < iVar11) && (iVar11 < local_70)) {
                       local_60 = st::machine_word_boundary_cast<int>((&SHORT_007ed574)[local_a4 * 4] + local_8c);
@@ -1019,7 +1020,7 @@ joined_r0x0040c8f3:
                           }
                         }
                         else {
-                          iVar7 = (int)(&SHORT_007ed570)[local_a4 * 4];
+                          iVar7 = st::storage_bit_cast<int>(static_cast<uint32_t>((&SHORT_007ed570)[local_a4 * 4]));
                           if (((psVar10[iVar7] & 0xc000U) != 0xc000) &&
                              (iVar9 = iVar9 * local_2c, (psVar10[iVar9] & 0xc000U) != 0xc000)) {
                             if ((uVar2 & 0x4000) == 0) {
@@ -1884,6 +1885,8 @@ cf_common_exit_0041098F:
 int st::fn_00410DC0(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
+  int param_4_after_write;
+
   int local_EAX_46;
   int iVar1;
   int iVar3;
@@ -1923,7 +1926,7 @@ int st::fn_00410DC0(int param_1,int param_2,int param_3,int param_4,int param_5)
     if (iVar2 != 0) {
       return iVar2;
     }
-    auto param_4_after_write = 1; /* compiler stack-slot lifetime split */
+    param_4_after_write = 1; /* compiler stack-slot lifetime split */
     iVar3 = st::storage_bit_cast<int>(static_cast<uint32_t>((uVar7 & 0xfffffffe) - ((int)uVar7 >> 0x1f))) >> 1;
     if (0 < iVar3) {
       local_14 = (uVar7 & 0xfffffffe) - 1;
@@ -2689,6 +2692,8 @@ int st::fn_00412960(int param_1,int param_2,int param_3,int param_4,int param_5,
                 RecoveredRecordView_00412960_AA54A22A *param_7,int param_8)
 
 {
+  int param_4_after_write;
+
   int iVar1;
   int iVar2;
   int iVar2_mg2;
@@ -2715,7 +2720,7 @@ int st::fn_00412960(int param_1,int param_2,int param_3,int param_4,int param_5,
       iVar3 = -30000;
       pRVar5 = param_7 + 1;
       iVar6 = 30000;
-      auto param_4_after_write = -30000; /* compiler stack-slot lifetime split */
+      param_4_after_write = -30000; /* compiler stack-slot lifetime split */
       iVar4 = DAT_007f4d20;
       if (0 < DAT_007f4d20) {
         do {
@@ -2801,8 +2806,10 @@ int st::fn_00413050(int param_1,int param_2,int param_3,int param_4,int param_5)
     if (((byte)DAT_007f4d08 & 1) == 0) {
       param_1 = (int)PTR_007f4d50;
     }
+
     iVar2_mg1 = st::fn_00413170(iVar1,param_2,param_3,param_4,reinterpret_cast<undefined4 *>(&param_1),iVar2);
     if (iVar2_mg1 == 0) {
+
       st::fn_0040EB90();
       return 0;
     }
@@ -2817,8 +2824,7 @@ int st::fn_00413050(int param_1,int param_2,int param_3,int param_4,int param_5)
 }
 
 // 00414980 FUN_00414980
-#line 1 "decomp/ST.exe/functions/00414980/decomp.c"
-
+#line 4 "decomp/ST.exe/functions/00414980/decomp.c"
 /* [STSourceProvenanceApplier begin]
    Recovered source file: E:\__titans\wlad\Grpway3d.cpp
    Diagnostic line evidence: 1373 | 1374 | 1382 | 1383 (metadata/report site, not the function
@@ -2830,9 +2836,10 @@ void st::fn_00414980(int param_1)
 {
   uint uVar1;
 
-  st::fn_0040450C(PTR_007f4d50,2);
+  st::fn_0040450C(reinterpret_cast<int *>(PTR_007f4d50),2);
   uVar1 = param_1 * 4 + 8;
-  PTR_007f4d50 = st::fn_00401104(uVar1,2,st::mutable_c_string("E:\\__titans\\wlad\\Grpway3d.cpp"),0x55d);
+  /* ST_CALLSITE[004149A9]: CALL 0x00401104; direct=00401104 thunk_FUN_006a3c10; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_007F4D50_A5847219; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_GLOBAL_007F4D50_A5847219;/uint;/uint;pointer:/char;/int */
+  PTR_007f4d50 = reinterpret_cast<RecoveredGlobalRecordView_007F4D50 *>(st::fn_00401104(uVar1,2,st::mutable_c_string("E:\\__titans\\wlad\\Grpway3d.cpp"),0x55d));
   if (PTR_007f4d50 == nullptr) {
     st::fn_006A5E40
               (-2,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\wlad\\Grpway3d.cpp"),0x55e);

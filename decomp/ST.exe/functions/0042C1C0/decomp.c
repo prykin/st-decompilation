@@ -22,6 +22,7 @@ STAllPlayersC::AddObjsToTmp
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_c = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0);
   if (errorCode == 0) {
     if (param_4 == nullptr) {
@@ -33,6 +34,7 @@ STAllPlayersC::AddObjsToTmp
     index = 0;
     if (0 < (int)local_10) {
       do {
+
         DArrayGetElement(param_4,index,&local_8);
         if ((short)local_8 != -1) {
           /* ST_CALLSITE[0042C245]: CALL 0x00404098; direct=00404098 STAllPlayersC::AddObjToTmp */
@@ -46,6 +48,7 @@ STAllPlayersC::AddObjsToTmp
   else {
     g_currentExceptionFrame = local_54.previous;
     if (errorCode != -0x5001fff7) {
+
       iVar2 = ReportDebugMessage("E:\\__titans\\wlad\\to_allpl.cpp",0x26e,0,errorCode,
                                  "%s","STAllPlayersC::AddObjsToTmp");
       if (iVar2 == 0) {

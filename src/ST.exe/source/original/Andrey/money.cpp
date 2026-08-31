@@ -32,7 +32,7 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
   int local_EAX_597;
   int local_EAX_719;
   int local_EAX_841;
-  uint uVar13;
+  int uVar13;
   int iVar7;
   int iVar9;
   int iVar8;
@@ -322,10 +322,8 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
       iVar8 = 1;
 
       uVar12 = st::fn_006B4FE0(PTR_0080679c);
-      pRVar7 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-               st::fn_006B50C0(this_00->field_0040,this_00->field_0044,(uint)PTR_0080679c[7],uVar12,
-                            reinterpret_cast<undefined4 *>(puVar13),iVar8);
+      pRVar7 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(st::fn_006B50C0(this_00->field_0040,this_00->field_0044,(uint)PTR_0080679c[7],uVar12,
+                            reinterpret_cast<undefined4 *>(puVar13),iVar8));
       this_00->field_0072 = reinterpret_cast<ushort *>(pRVar7);
       local_c = *(uint *)&pRVar7[1].field_0x4;
       if (local_c == 0) {
@@ -347,10 +345,8 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
       puVar13 = PTR_0080679c + 0x14;
 
       local_EAX_597 = st::fn_006B4FE0(PTR_0080679c);
-      pRVar7 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-               st::fn_006B50C0(this_00->field_0048,this_00->field_004C,(uint)PTR_0080679c[7],
-                            local_EAX_597,reinterpret_cast<undefined4 *>(puVar13),iVar8);
+      pRVar7 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(st::fn_006B50C0(this_00->field_0048,this_00->field_004C,(uint)PTR_0080679c[7],
+                            local_EAX_597,reinterpret_cast<undefined4 *>(puVar13),iVar8));
       this_00->field_0076 = reinterpret_cast<ushort *>(pRVar7);
       local_c = *(uint *)&pRVar7[1].field_0x4;
       if (local_c == 0) {
@@ -372,10 +368,8 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
       puVar13 = PTR_0080679c + 0x14;
 
       local_EAX_719 = st::fn_006B4FE0(PTR_0080679c);
-      pRVar7 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-               st::fn_006B50C0(this_00->field_0050,this_00->field_0054,(uint)PTR_0080679c[7],
-                            local_EAX_719,reinterpret_cast<undefined4 *>(puVar13),iVar8);
+      pRVar7 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(st::fn_006B50C0(this_00->field_0050,this_00->field_0054,(uint)PTR_0080679c[7],
+                            local_EAX_719,reinterpret_cast<undefined4 *>(puVar13),iVar8));
       this_00->field_007A = reinterpret_cast<ushort *>(pRVar7);
       local_c = *(uint *)&pRVar7[1].field_0x4;
       if (local_c == 0) {
@@ -397,10 +391,8 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
       puVar13 = PTR_0080679c + 0x14;
 
       local_EAX_841 = st::fn_006B4FE0(PTR_0080679c);
-      pRVar7 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-               st::fn_006B50C0(this_00->field_0060,this_00->field_0064,(uint)PTR_0080679c[7],
-                            local_EAX_841,reinterpret_cast<undefined4 *>(puVar13),iVar8);
+      pRVar7 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(st::fn_006B50C0(this_00->field_0060,this_00->field_0064,(uint)PTR_0080679c[7],
+                            local_EAX_841,reinterpret_cast<undefined4 *>(puVar13),iVar8));
       this_00->field_007E = reinterpret_cast<ushort *>(pRVar7);
       local_c = *(uint *)&pRVar7[1].field_0x4;
       if (local_c == 0) {

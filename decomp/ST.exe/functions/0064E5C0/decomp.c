@@ -5,7 +5,14 @@
    width=/short; unmasked_dword_reads=0; evidence=0064E618 MOVSX EAX,word ptr [EBP + 0xc]
 
    [STPrototypeApplier] Propagated parameter 4.
-   Evidence: 0064E5F0 CMP CX,DX classifies dword parameter loaded at 0064E5D5 */
+   Evidence: 0064E5F0 CMP CX,DX classifies dword parameter loaded at 0064E5D5
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:1: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/short
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 void __cdecl
 FUN_0064e5c0(undefined1 param_1,short param_2,short param_3,undefined4 param_4,int param_5)
@@ -35,6 +42,7 @@ FUN_0064e5c0(undefined1 param_1,short param_2,short param_3,undefined4 param_4,i
     _param_2 = CONCAT22(in_stack_0000000a,g_worldGrid.sizeY);
   }
   thunk_FUN_006756d0((short *)&local_c,(short *)&local_8,&param_3,&param_2);
+
   thunk_FUN_004d83d0(param_1,(short)local_c,(short)local_8,(int)param_3,(int)param_2);
   return;
 }

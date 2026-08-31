@@ -124,11 +124,9 @@ int __thiscall st::fn_0051FBA0(HelpStringTy *this,STMessage *message)
       iVar5 = 1;
 
       uVar4 = st::fn_006B4FE0(PTR_0080679c);
-      pRVar3 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-               st::fn_006B50C0((g_nWidth_00806730 -
+      pRVar3 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(st::fn_006B50C0((g_nWidth_00806730 -
                             ((-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e)) + -0x87,0x12,
-                            (uint)PTR_0080679c[7],uVar4,reinterpret_cast<undefined4 *>(puVar9),iVar5);
+                            (uint)PTR_0080679c[7],uVar4,reinterpret_cast<undefined4 *>(puVar9),iVar5));
       this_00->field_012A = reinterpret_cast<ushort *>(pRVar3);
       uVar7 = *(uint *)&pRVar3[1].field_0x4;
       if (uVar7 == 0) {

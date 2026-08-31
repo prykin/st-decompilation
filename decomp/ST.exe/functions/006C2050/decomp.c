@@ -7,7 +7,7 @@ void FUN_006c2050(void)
   int *piVar1;
   void **ppvVar2;
 
-  if (DAT_008568b4 != nullptr) {
+  if (PTR_008568b4 != nullptr) {
     /* ST_CALLSITE[006C206C]: CALL ESI */
     EnterCriticalSection((LPCRITICAL_SECTION)&DAT_00856880);
     /* ST_CALLSITE[006C2073]: CALL ESI */
@@ -45,19 +45,19 @@ void FUN_006c2050(void)
       }
       ppvVar2 = ppvVar2 + 0x31;
     } while ((int)ppvVar2 < 0x856888);
-    if (DAT_008568b8 != nullptr) {
+    if (PTR_008568b8 != nullptr) {
       /* ST_CALLSITE[006C20FA]: CALL dword ptr [EDX + 0x48] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(*DAT_008568b8 + 0x48))(DAT_008568b8);
+      (**(code **)(*PTR_008568b8 + 0x48))(PTR_008568b8);
       /* ST_CALLSITE[006C2105]: CALL dword ptr [ECX + 0x8] */
       /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-      (**(code **)(*DAT_008568b8 + 8))(DAT_008568b8);
-      DAT_008568b8 = nullptr;
+      (**(code **)(*PTR_008568b8 + 8))(PTR_008568b8);
+      PTR_008568b8 = nullptr;
     }
     /* ST_CALLSITE[006C2116]: CALL dword ptr [EDX + 0x8] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-    (**(code **)(*DAT_008568b4 + 8))(DAT_008568b4);
-    DAT_008568b4 = nullptr;
+    (**(code **)(*PTR_008568b4 + 8))(PTR_008568b4);
+    PTR_008568b4 = nullptr;
     DAT_00856878 = 0;
     FreeAndNull(&g_lpBuffer_008568B0);
   }

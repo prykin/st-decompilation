@@ -605,7 +605,7 @@ undefined4 __thiscall st::fn_005F0E20(void *this,undefined4 param_1,int *param_2
   if (st::machine_word_boundary_cast<uint>(param_2) == st::machine_word_boundary_cast<uint>(this)) {
     return 4;
   }
-  if ((param_2 != nullptr) && (this = (void *)(uint)DAT_0080874d, st::machine_word_boundary_cast<uint>((void *)param_2[9]) == st::machine_word_boundary_cast<uint>(this))) {
+  if ((param_2 != nullptr) && (this = (void *)(uint)DAT_0080874d, (void *)param_2[9] == this)) {
     this = (void *)param_2[8];
     if (st::machine_word_boundary_cast<uint>(this) == st::machine_word_boundary_cast<uint>((void *)0x14)) {
       /* ST_CALLSITE[005F0E55]: CALL dword ptr [EDX + 0xec]; [STIndirectCallsiteApplier] exact slot 0xEC; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void */
@@ -2476,7 +2476,14 @@ int __thiscall st::fn_005FA7F0(void *this,undefined4 param_1,undefined4 param_2,
 // 005FAC40 FUN_005fac40
 #line 4 "decomp/ST.exe/functions/005FAC40/decomp.c"
 /* [STAbiConsistencyApplier] stack_parameter_width: parameter=/short Evidence: entry-use
-   width=/short; unmasked_dword_reads=0; evidence=005FAC8D MOVSX EAX,word ptr [EBP + 0x8] */
+   width=/short; unmasked_dword_reads=0; evidence=005FAC8D MOVSX EAX,word ptr [EBP + 0x8]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:1: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:1: parameter=/short
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 void __thiscall
 st::fn_005FAC40(void *this,short param_1,int param_2,int param_3,short param_4,short param_5,
@@ -2572,12 +2579,14 @@ undefined4 __thiscall st::fn_005FADA0(void *this,int param_1,uint param_2,int pa
     }
     uVar3 = 1;
     if (STField<char>(this,0x2b6) != '\0') {
+
       st::fn_00401AAF
                 (static_cast<RecoveredReceiver_00416270 *>(this),param_3);
       uVar1 = *(uint *)(STField<int>(this,0x2e6) + 4);
       if (-1 < (int)uVar1) {
         if (param_3 != 1) {
           param_2 = uVar1;
+
           uVar1 = st::fn_004052CC((STT3DSprC *)((int)this + 0x1d5));
         }
         st::fn_006EA460(STField<void *>(this,0x211),uVar1,param_2);
@@ -3720,7 +3729,14 @@ int st::fn_005FE280(short *param_1,int param_2,int *param_3,int *param_4,int *pa
 // 005FE360 FUN_005fe360
 #line 4 "decomp/ST.exe/functions/005FE360/decomp.c"
 /* [STAbiConsistencyApplier] stack_parameter_width: parameter=/short Evidence: entry-use
-   width=/short; unmasked_dword_reads=0; evidence=005FE3A0 MOVSX EDI,word ptr [EBP + 0x1c] */
+   width=/short; unmasked_dword_reads=0; evidence=005FE3A0 MOVSX EDI,word ptr [EBP + 0x1c]
+   [STAbiConsistencyApplier] stack_parameter_width_revert target=parameter:5: parameter=/undefined4
+   Evidence: previous automatic narrow-width proof no longer qualifies; restoring generated baseline
+   /undefined4
+   [STAbiConsistencyApplier] stack_parameter_width target=parameter:5: parameter=/short
+   previous_type=/undefined4 Evidence: restoring an automation-owned narrow ABI from its exact
+   surviving MOVSX/MOVZX machine anchor; downstream prototype churn is not contradictory width
+   evidence */
 
 undefined4
 st::fn_005FE360(short *param_1,int param_2,int param_3,short param_4,int param_5,short param_6,
@@ -3745,6 +3761,7 @@ st::fn_005FE360(short *param_1,int param_2,int param_3,short param_4,int param_5
   *(int *)(param_1 + 0xc) = (short)param_5 - (short)param_2;
   param_1[6] = (short)param_5;
   *(int *)(param_1 + 0xe) = (int)param_6 - (short)param_3;
+
   iVar2 = st::fn_006ACED8(param_2,param_3,param_5,_param_6);
   *(int *)(param_1 + 0x10) = iVar2;
   param_1[0x12] = 0x11;
@@ -4143,7 +4160,7 @@ LAB_005fee45:
                   if (0 < iVar13) {
                     do {
                       if (((uint)*(ushort *)&this_00[1].field_0xe == auStack_69c[iVar8 * 6]) &&
-                         (st::machine_word_boundary_cast<uint>(this_00[1].vtable) == st::machine_word_boundary_cast<uint>((STWorldObjectVTable *)auStack_69c[iVar8 * 6 + 2])))
+                         (this_00[1].vtable == (STWorldObjectVTable *)auStack_69c[iVar8 * 6 + 2]))
                       goto LAB_005fef0e;
                       iVar8 = iVar8 + 1;
                     } while (iVar8 < iVar13);

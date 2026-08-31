@@ -288,9 +288,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
           }
           if ((g_allPlayers_007FA174 != nullptr) &&
              /* ST_CALLSITE[005EB2E7]: CALL 0x0040440d; direct=0040440D STAllPlayersC::RegisterArtefact */
-             (iVar13 = STAllPlayersC::RegisterArtefact
-                                 (g_allPlayers_007FA174,this_00->field_0032,this_00), iVar13 != 0))
-          {
+             (iVar13 = STAllPlayersC::RegisterArtefact(this_00->field_0032,this_00), iVar13 != 0)) {
             /* ST_CALLSITE[005EB2F2]: CALL 0x00404462; direct=00404462 STArtiafactC::sub_005EBCB0 */
             sub_005EBCB0(this_00);
           }
@@ -329,7 +327,7 @@ int __thiscall STArtiafactC::GetMessage(STArtiafactC *this,STMessage *message)
         thunk_FUN_005ec9f0(0);
         if (g_allPlayers_007FA174 != nullptr) {
           /* ST_CALLSITE[005EB061]: CALL 0x0040440d; direct=0040440D STAllPlayersC::RegisterArtefact */
-          iVar13 = STAllPlayersC::RegisterArtefact(g_allPlayers_007FA174,0xffff,this_00);
+          iVar13 = STAllPlayersC::RegisterArtefact(0xffff,this_00);
           if (iVar13 != 0) {
             /* ST_CALLSITE[005EB06C]: CALL 0x00404462; direct=00404462 STArtiafactC::sub_005EBCB0 */
             sub_005EBCB0(this_00);

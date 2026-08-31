@@ -11,7 +11,7 @@ int FUN_006a7d50(int param_1,int param_2,int param_3,int param_4,int param_5,int
   ushort uVar3;
   ushort uVar4;
   short sVar5;
-  uint uVar6;
+  int uVar6;
   uint uVar7;
   int iVar8;
   uint uVar9;

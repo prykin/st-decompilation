@@ -1017,6 +1017,8 @@ st::fn_006E83F0(RecoveredSourceFamily_dibcopy *param_1,int param_2,int param_3,i
 void __cdecl st::fn_006E8460(int param_1,int param_2,uint param_3,byte param_4)
 
 {
+  int param_2_after_write;
+
   int iVar1;
   uint uVar2;
   int iVar3;
@@ -1052,7 +1054,7 @@ void __cdecl st::fn_006E8460(int param_1,int param_2,uint param_3,byte param_4)
       param_1_after_write = (iVar1 - param_3) + iVar4;
     }
   }
-  auto param_2_after_write = 0; /* compiler stack-slot lifetime split */
+  param_2_after_write = 0; /* compiler stack-slot lifetime split */
   if (0 < (int)param_3) {
     do {
       pbVar5 = (byte *)((DAT_00856d88 - (param_2_after_write + iVar4) * DAT_00856d8c) + param_1_after_write);

@@ -31,7 +31,7 @@ int FUN_00566600(int param_1)
   cMf32 *local_14;
   SoundManagerTy *local_10;
   uint local_c;
-  ushort *local_8;
+  byte *local_8;
   char *pcVar9_mg1;
   char *pcVar9_mg2;
 
@@ -166,8 +166,8 @@ int FUN_00566600(int param_1)
     }
   }
   local_10->field_002C = *(int *)local_8;
-  local_10->field_0030 = *(int *)(local_8 + 2);
-  local_10->field_0034 = *(int *)(local_8 + 4);
+  local_10->field_0030 = *(int *)(local_8 + 4);
+  local_10->field_0034 = *(int *)(local_8 + 8);
 LAB_0056681c:
   if (local_8 != nullptr) {
     cMf32::RecMemFree(local_10->field_0018,(uint *)&local_8);

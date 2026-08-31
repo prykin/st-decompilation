@@ -23,14 +23,14 @@ void __fastcall FUN_00586af0(int *param_1)
   STGameObjC *pSVar10;
   STGameObjC *this_00;
   int iVar11;
-  uint local_EAX_2124;
-  uint local_EAX_2928;
+  int local_EAX_2124;
+  int local_EAX_2928;
   int local_EAX_3393;
   int iVar12;
-  uint uVar8;
-  uint local_EAX_6098;
+  int uVar8;
+  int local_EAX_6098;
   int iVar13;
-  uint local_EAX_6553;
+  int local_EAX_6553;
   short sVar14;
   short sVar15;
   short sVar16;
@@ -249,7 +249,7 @@ LAB_00587dde:
             local_20 = pSVar17, pSVar17 == nullptr)))) {
 
           uVar8 = thunk_FUN_00496250(iVar11,local_14,iVar8);
-          local_20 = (STWorldObject *)(uint)(-1 < (int)uVar8);
+          local_20 = (STWorldObject *)(uint)(-1 < uVar8);
           goto LAB_00587fb9;
         }
         if ((pSVar17->value_20 != 0xb4) &&
@@ -360,7 +360,7 @@ LAB_00588002:
              pSVar17 == nullptr)))))) {
 
           local_EAX_6098 = thunk_FUN_00496250(local_c,local_1c,local_18);
-          pSVar17 = (STWorldObject *)(uint)(-1 < (int)local_EAX_6098);
+          pSVar17 = (STWorldObject *)(uint)(-1 < local_EAX_6098);
         }
         else if ((pSVar17->value_20 == 0xb4) ||
                 /* ST_CALLSITE[00588174]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
@@ -554,7 +554,7 @@ LAB_00587161:
       local_EAX_2124 = thunk_FUN_00496250(local_10,local_14,local_18);
       local_38 = 0;
       iVar8 = local_18;
-      pSVar17 = (STWorldObject *)(uint)(-1 < (int)local_EAX_2124);
+      pSVar17 = (STWorldObject *)(uint)(-1 < local_EAX_2124);
     }
     else if ((pSVar17->value_20 == 0xb4) ||
             /* ST_CALLSITE[005871F2]: CALL dword ptr [EAX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
@@ -667,7 +667,7 @@ LAB_005873a4:
          local_20 = pSVar17, pSVar17 == nullptr)) {
 
         local_EAX_2928 = thunk_FUN_00496250(local_c,local_1c,iVar8);
-        local_20 = (STWorldObject *)(uint)(-1 < (int)local_EAX_2928);
+        local_20 = (STWorldObject *)(uint)(-1 < local_EAX_2928);
       }
       else if ((pSVar17->value_20 == 0xb4) ||
               /* ST_CALLSITE[0058750E]: CALL dword ptr [EDX + 0xf8]; [STIndirectCallsiteApplier] exact slot 0xF8; mode=machine-word; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/GlobalRecords/STWorldObject */
@@ -866,7 +866,7 @@ LAB_00588350:
           (*(char *)((&DAT_007fb24c)[param_1[9]] + iVar8 + iVar13) == '\0')) &&
 
          (local_EAX_6553 = thunk_FUN_00497030(iVar8,iVar11,param_1[9],1,DAT_007e660c),
-         -1 < (int)local_EAX_6553)) {
+         -1 < local_EAX_6553)) {
         thunk_FUN_00637ae0((int)STField<short>(param_1,0x41),(int)STField<short>(param_1,0x43)
                            ,(int)STField<short>(param_1,0x45));
         /* ST_CALLSITE[005884B3]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */

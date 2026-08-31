@@ -214,7 +214,7 @@ switchD_005f6301_caseD_110:
   }
   /* ST_CALLSITE[005F6333]: CALL 0x00401d8e; direct=00401D8E STColl3C::LoadImagSpr */
   st::fn_00401D8E(this_00,0);
-  this_00->field_0275 = (uint)((byte *)piVar3)[2];
+  this_00->field_0275 = st::storage_bit_cast<uint>(static_cast<uint32_t>(((byte *)piVar3)[2]));
   this_00->field_0279 = (uint)STField<ushort>(piVar3,0xe);
   /* ST_CALLSITE[005F6351]: CALL 0x00403c1a; direct=00403C1A STColl3C::sub_005FA070 */
   st::fn_00403C1A(this_00);

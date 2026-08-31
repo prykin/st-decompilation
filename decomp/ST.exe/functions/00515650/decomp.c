@@ -38,11 +38,10 @@ HelpPanelTy::DrawObj
   if (iVar3 == 0) {
     if (g_allPlayers_007FA174 != nullptr) {
       *param_1 = *param_1 + 2;
-      local_8 = (AnonShape_00515650_BBDC7053 *)
-                /* ST_CALLSITE[005156B3]: CALL 0x00404499; direct=00404499 STAllPlayersC::GetTOBJImage */
-                STAllPlayersC::GetTOBJImage
+      local_8 = /* ST_CALLSITE[005156B3]: CALL 0x00404499; direct=00404499 STAllPlayersC::GetTOBJImage */
+      STPointerBoundaryCast<AnonShape_00515650_BBDC7053 *>(STAllPlayersC::GetTOBJImage
                           (g_allPlayers_007FA174,(uint)param_3,
-                           (STAllPlayersC_GetTOBJImage_param_2Enum)param_2);
+                           (STAllPlayersC_GetTOBJImage_param_2Enum)param_2));
       if (local_8 != nullptr) {
         local_14 = local_8->field_0004;
         local_c = local_8->field_0008;

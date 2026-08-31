@@ -1930,7 +1930,7 @@ int st::fn_006B33F0(DDXContext_008075A8 *param_1,uint param_2)
 
   uVar1 = 0;
   if (param_2 < param_1->entryCount) {
-    uVar1 = (uint)((param_1->entries_01B0[param_2]->flags & 0x8020) == 0x8020);
+    uVar1 = (uint)(st::machine_word_boundary_cast<int>((param_1->entries_01B0[param_2]->flags & 0x8020)) == 0x8020);
   }
   return uVar1;
 }
@@ -5795,6 +5795,8 @@ st::fn_006BC440(AnonShape_006BC440_9548EA86 *param_1,int param_2,int param_3,int
             int param_6)
 
 {
+  int param_3_after_write;
+
   int iVar1;
   int iVar2;
   int iVar3;
@@ -5830,7 +5832,7 @@ st::fn_006BC440(AnonShape_006BC440_9548EA86 *param_1,int param_2,int param_3,int
     pcVar6 = (char *)(param_1->field_021C + iVar5 + iVar8 / iVar1);
     if (0 < iVar4) {
       do {
-        auto param_3_after_write = 0; /* compiler stack-slot lifetime split */
+        param_3_after_write = 0; /* compiler stack-slot lifetime split */
         if (0 < iVar3) {
           pcVar7 = pcVar6;
           do {
@@ -5906,7 +5908,7 @@ void st::fn_006BC630(void)
   DAT_00854eec = 0;
   if (0 < DAT_00854fa0) {
     do {
-      PTR_00854fd0 = *(uint **)(DAT_00854fc0 + DAT_00854eec * 4);
+      PTR_00854fd0 = (uint *)PTR_00854fc0[DAT_00854eec];
       if ((*PTR_00854fd0 & 0x4000) != 0) {
         if ((int)PTR_00854fd0[0xc] < 0) {
           PTR_00854fd0[10] = PTR_00854fd0[10] + PTR_00854fd0[0xc] + 1;
@@ -6367,6 +6369,8 @@ LAB_006bd0ad:
 undefined4 st::fn_006BD0C0(int *param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
+  int param_2_after_write;
+
   int iVar1;
   int iVar2;
   int iVar3;
@@ -6400,7 +6404,7 @@ undefined4 st::fn_006BD0C0(int *param_1,int param_2,int param_3,int param_4,int 
     iVar4 = param_1[0x84] + iVar4;
     if (0 < iVar3) {
       do {
-        auto param_2_after_write = 0; /* compiler stack-slot lifetime split */
+        param_2_after_write = 0; /* compiler stack-slot lifetime split */
         auto param_1_after_write = (int *)(iVar5 / iVar1); /* compiler stack-slot lifetime split */
         if (0 < iVar2) {
           do {
@@ -6704,7 +6708,7 @@ int st::fn_006BFB90(HANDLE hFile,LPDWORD lpNumberOfBytesRead,LPVOID lpBuffer,DWO
      /* ST_CALLSITE[006BFBD0]: CALL dword ptr [0x0085bc68] */
      (BVar2 = st::external_0000004F(hFile,lpBuffer,nNumberOfBytesToRead,(LPDWORD)&lpNumberOfBytesRead,
                        (LPOVERLAPPED)0x0), BVar2 != 0)) {
-    return -(uint)(st::machine_word_boundary_cast<uint>(lpNumberOfBytesRead) != st::machine_word_boundary_cast<uint>((LPDWORD)DVar2)) & 0xfffffff2;
+    return -(uint)(lpNumberOfBytesRead != (LPDWORD)DVar2) & 0xfffffff2;
   }
   /* ST_CALLSITE[006BFBAC]: CALL dword ptr [0x0085bbcc] */
   DVar1 = st::external_00000028();
@@ -6792,7 +6796,7 @@ int st::fn_006BFBF0(RecoveredRecordView_006BFBF0_7F78587C *param_1)
   puVar1 = &param_1->field_0xc;
   /* ST_CALLSITE[006BFD34]: CALL dword ptr [ECX + 0xc] */
   /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-  iVar7 = (**(code **)(*DAT_008568b4 + 0xc))(DAT_008568b4,local_34,puVar1,0);
+  iVar7 = (**(code **)(*PTR_008568b4 + 0xc))(PTR_008568b4,local_34,puVar1,0);
   if (-1 < iVar7) {
     if ((local_34[1] & 2) != 0) {
       *(uint *)&pRVar4->field_0x4 = *(uint *)&pRVar4->field_0x4 | 0x4000;
@@ -6852,7 +6856,7 @@ int st::fn_006BFBF0(RecoveredRecordView_006BFBF0_7F78587C *param_1)
           }
           /* ST_CALLSITE[006BFE1E]: CALL dword ptr [EDX + 0x44] */
           /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
-          iVar7 = (**(code **)(*DAT_008568bc + 0x44))(DAT_008568bc);
+          iVar7 = (**(code **)(*PTR_008568bc + 0x44))(PTR_008568bc);
         }
         if (iVar7 == 0) {
           /* ST_CALLSITE[006BFE35]: CALL dword ptr [0x0085bedc] */

@@ -11,6 +11,7 @@ void __fastcall FUN_00585020(RecoveredRecordView_00585020_EFC427BB *param_1)
   uint uVar5;
   int iVar3;
   int iVar5;
+  int uVar5_mg3;
   int local_EAX_906;
   int iVar7;
   int iVar6;
@@ -151,21 +152,21 @@ void __fastcall FUN_00585020(RecoveredRecordView_00585020_EFC427BB *param_1)
         return;
       }
 
-      uVar5 = thunk_FUN_004ac910(this,'\b');
-      if ((param_1->field_0255 != '\0') && (uVar5 == param_1->field_0256)) {
+      uVar5_mg3 = thunk_FUN_004ac910(this,'\b');
+      if ((param_1->field_0255 != '\0') && (uVar5_mg3 == (uint)param_1->field_0256)) {
         /* ST_CALLSITE[00585231]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
         STT3DSprC::StartShow((STT3DSprC *)this,9,g_playSystem_00802A38->field_00E4);
         thunk_FUN_004ad0e0(this,9);
       }
       /* ST_CALLSITE[00585243]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar4 = STT3DSprC::sub_004ACD30((STT3DSprC *)this,'\b');
-      if (uVar5 == iVar4 - 1U) {
+      if (uVar5_mg3 == iVar4 + -1) {
         /* ST_CALLSITE[00585251]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
         STT3DSprC::StopShow((STT3DSprC *)this,8);
       }
       /* ST_CALLSITE[0058525A]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar4 = STT3DSprC::sub_004ACD30((STT3DSprC *)this,'\n');
-      if (uVar5 == iVar4 - 1U) {
+      if (uVar5_mg3 == iVar4 + -1) {
         /* ST_CALLSITE[00585268]: CALL 0x00404264; direct=00404264 STT3DSprC::StopShow */
         STT3DSprC::StopShow((STT3DSprC *)this,10);
       }
@@ -182,7 +183,7 @@ void __fastcall FUN_00585020(RecoveredRecordView_00585020_EFC427BB *param_1)
       }
       /* ST_CALLSITE[005852A7]: CALL 0x004022ac; direct=004022AC STT3DSprC::sub_004ACD30 */
       iVar4 = STT3DSprC::sub_004ACD30((STT3DSprC *)this,'\b');
-      if ((uVar5 == iVar4 - 1U) && (param_1->field_0255 == '\0')) {
+      if ((uVar5_mg3 == iVar4 + -1) && (param_1->field_0255 == '\0')) {
 
         thunk_FUN_00584ad0((RecoveredRecord_00584AD0_6EDDB383 *)param_1);
         return;

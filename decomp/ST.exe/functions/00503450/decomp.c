@@ -16,6 +16,7 @@ void __thiscall CPanelTy::SetControlBoatSI(CPanelTy *this)
   char *pcVar5;
   LPSTR pCVar5;
   BITMAPINFO *pBVar6;
+  int uVar14_mg3;
   int iVar9;
   int iVar7;
   int iVar10;
@@ -299,11 +300,11 @@ switchD_0050389f_default:
         uVar14 = (uint)(byte)(&this_00->field_0BCF)[local_8];
       }
       /* ST_CALLSITE[00503980]: CALL 0x004017e9; direct=004017E9 CPanelTy::CreateBut */
-      uVar14 = CreateBut(this_00,3,0,uVar14,iVar10,iVar7,6,local_1c,local_8 + 0xb220,
-                         local_8 + 0xb230,2,0,
-                         (RecoveredRecord_004F3130_3F0D2FD9 *)
-                         (0x4e36 - (uint)((byte)local_c != '\0')),pCVar5,0,0,0);
-      *local_14 = uVar14;
+      uVar14_mg3 = CreateBut(this_00,3,0,uVar14,iVar10,iVar7,6,local_1c,local_8 + 0xb220,
+                             local_8 + 0xb230,2,0,
+                             (RecoveredRecord_004F3130_3F0D2FD9 *)
+                             (0x4e36 - (uint)((byte)local_c != '\0')),pCVar5,0,0,0);
+      *local_14 = uVar14_mg3;
       bVar4 = (byte)local_c + 1;
       local_8 = local_8 + 1;
       local_14 = local_14 + 1;

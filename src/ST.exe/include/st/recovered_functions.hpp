@@ -238,7 +238,7 @@ void __thiscall fn_0040128A(HoloTy * st_this);
 // 0040128F thunk_FUN_005822b0
 undefined __thiscall fn_0040128F(void * st_this, undefined4 param_1, ushort param_2);
 // 00401294 STAllPlayersC::RegisterContainer
-int __thiscall fn_00401294(STAllPlayersC * st_this, ushort param_1, void * param_2);
+int __stdcall fn_00401294(ushort param_1, void * param_2);
 // 0040129E thunk_FUN_0054cd90
 undefined4 __stdcall fn_0040129E(void);
 // 004012A3 VisibleClassTy::sub_0055A4C0
@@ -544,7 +544,7 @@ void __cdecl fn_004015D2(uint param_1);
 // 004015D7 thunk_FUN_004d3290
 undefined __fastcall fn_004015D7(RecoveredRecord_004D3290_0F1DF113 * param_1);
 // 004015DC STAllPlayersC::RegisterBlot
-int __thiscall fn_004015DC(STAllPlayersC * st_this, ushort param_1, void * param_2);
+int __stdcall fn_004015DC(ushort param_1, void * param_2);
 // 004015E1 thunk_FUN_0065c9e0
 AllocationRecord_0065CD10 * __cdecl fn_004015E1(char * source);
 // 004015E6 thunk_FUN_006513c0
@@ -4604,7 +4604,7 @@ undefined4 __cdecl fn_00403FE9(RecoveredRecord_0052A770_CB744C05 * param_1);
 // 00403FEE CPanelTy::sub_00501D00
 undefined __thiscall fn_00403FEE(CPanelTy * st_this, RecoveredRecordView_00501D00_08D99E75 * param_1, RecoveredRecord_CPanelTy_00501D00 * param_2);
 // 00403FF3 CGenerate::sub_006991C0
-int __thiscall fn_00403FF3(CGenerate * st_this, int param_1, int param_2, int param_3, int param_4, uint param_5, int param_6, int param_7, RecoveredRecordView_006991C0_C443ACC2 * param_8);
+int __thiscall fn_00403FF3(CGenerate * st_this, int param_1, int param_2, int param_3, int param_4, uint param_5, RecoveredRecordView_006991C0_C51A57AA * param_6, int param_7, RecoveredRecordView_006991C0_C443ACC2 * param_8);
 // 00403FF8 thunk_FUN_00681280
 undefined4 __stdcall fn_00403FF8(void);
 // 00403FFD thunk_FUN_005ed1c0
@@ -4998,7 +4998,7 @@ uint * __stdcall fn_00404403(LPCSTR lpFileName, RecoveredRecordView_00683C70_9F6
 // 00404408 thunk_FUN_004dfb00
 undefined4 __fastcall fn_00404408(RecoveredRecordView_004DFB00_7DEE7A43 * param_1);
 // 0040440D STAllPlayersC::RegisterArtefact
-int __thiscall fn_0040440D(STAllPlayersC * st_this, ushort param_1, void * param_2);
+int __stdcall fn_0040440D(ushort param_1, void * param_2);
 // 00404412 thunk_FUN_004d88f0
 int __stdcall fn_00404412(char param_1, int param_2);
 // 00404417 CGenerate::SaveMap
@@ -6456,7 +6456,7 @@ int __stdcall fn_0040532B(void);
 // 00405330 thunk_FUN_004e4140
 int __stdcall fn_00405330(int param_1);
 // 00405335 CGenerate::sub_0069BDC0
-int __thiscall fn_00405335(CGenerate * st_this, int param_1, int param_2, int param_3, int param_4, int param_5, int param_6, RecoveredRecord_CGenerate_0069BDC0 * param_7);
+int __thiscall fn_00405335(CGenerate * st_this, int param_1, int param_2, int param_3, int param_4, int param_5, RecoveredRecordView_0069BDC0_C51A57AA * param_6, RecoveredRecord_CGenerate_0069BDC0 * param_7);
 // 0040533A thunk_FUN_006773b0
 uint * __cdecl fn_0040533A(undefined4 param_1, uint param_2, char param_3, short param_4, short param_5, short param_6, short param_7, short param_8, short param_9, int param_10);
 // 0040533F thunk_FUN_0064ef90
@@ -7274,7 +7274,7 @@ int __stdcall fn_00405BE1(void);
 // 00405BE6 thunk_FUN_0041d7e0
 undefined4 fn_00405BE6(...);
 // 00405BEB thunk_FUN_0069c790
-int __stdcall fn_00405BEB(uint * param_1, int param_2, uint param_3, uint param_4);
+int __stdcall fn_00405BEB(DArrayTy * param_1, int param_2, uint param_3, uint param_4);
 // 00405BF0 ResearchPanelTy::ShiftControls
 undefined __thiscall fn_00405BF0(ResearchPanelTy * st_this, int param_1);
 // 00405BF5 thunk_FUN_004a9d60
@@ -8360,7 +8360,7 @@ fn_00449B60
           (STAllPlayersC *st_this,char param_1,uint param_2,
           STAllPlayersC_DestroyObjectMsg_param_3Enum param_3,undefined4 param_4);
 // 00449CE0 STAllPlayersC::RegisterArtefact
-int __thiscall fn_00449CE0(STAllPlayersC *st_this,ushort param_1,void *param_2);
+int fn_00449CE0(ushort param_1,void *param_2);
 // 00449E60 STAllPlayersC::UnRegisterArtefact
 undefined4 __thiscall
 fn_00449E60
@@ -8376,13 +8376,13 @@ int __thiscall fn_0044A2C0(STAllPlayersC *st_this,ushort param_1,void *param_2);
 undefined4 __thiscall
 fn_0044A440(STAllPlayersC *st_this,uint param_1,STResourceC *param_2);
 // 0044A5B0 STAllPlayersC::RegisterContainer
-int __thiscall fn_0044A5B0(STAllPlayersC *st_this,ushort param_1,void *param_2);
+int fn_0044A5B0(ushort param_1,void *param_2);
 // 0044A730 STAllPlayersC::UnRegisterContainer
 undefined4 __thiscall
 fn_0044A730
           (STAllPlayersC *st_this,uint param_1,RecoveredRecordView_0044A730_60F0F4F3 *param_2);
 // 0044A8A0 STAllPlayersC::RegisterBlot
-int __thiscall fn_0044A8A0(STAllPlayersC *st_this,ushort param_1,void *param_2);
+int fn_0044A8A0(ushort param_1,void *param_2);
 // 0044AA20 STAllPlayersC::UnRegisterBlot
 undefined4 __thiscall
 fn_0044AA20
@@ -15802,7 +15802,7 @@ int fn_006736F0(void);
 // 00673D20 FUN_00673d20
 int fn_00673D20(void);
 // 006747E0 FUN_006747e0
-void fn_006747E0(int param_1,int param_2);
+void fn_006747E0(AnonShape_006747E0_C06E010E *param_1,int param_2);
 // 006748D0 FUN_006748d0
 int fn_006748D0(void);
 // 00674AF0 FUN_00674af0
@@ -16758,8 +16758,9 @@ undefined4 fn_00698F90(int param_1,int param_2,int param_3,int param_4,int *para
 // 006991C0 CGenerate::sub_006991C0
 int __thiscall
 fn_006991C0
-          (CGenerate *st_this,int param_1,int param_2,int param_3,int param_4,uint param_5,int param_6,
-          int param_7,RecoveredRecordView_006991C0_C443ACC2 *param_8);
+          (CGenerate *st_this,int param_1,int param_2,int param_3,int param_4,uint param_5,
+          RecoveredRecordView_006991C0_C51A57AA *param_6,int param_7,
+          RecoveredRecordView_006991C0_C443ACC2 *param_8);
 // 0069AC20 FUN_0069ac20
 int fn_0069AC20(int param_1,int param_2,int param_3,DArrayTy *param_4);
 // 0069ACC0 FUN_0069acc0
@@ -16786,8 +16787,9 @@ fn_0069BC10(void *st_this,int param_1,int *param_2,int param_3,int param_4,int *
 // 0069BDC0 CGenerate::sub_0069BDC0
 int __thiscall
 fn_0069BDC0
-          (CGenerate *st_this,int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
-          RecoveredRecord_CGenerate_0069BDC0 *param_7);
+          (CGenerate *st_this,int param_1,int param_2,int param_3,int param_4,int param_5,
+          RecoveredRecordView_0069BDC0_C51A57AA *param_6,RecoveredRecord_CGenerate_0069BDC0 *param_7
+          );
 // 0069C360 FUN_0069c360
 undefined4 __thiscall fn_0069C360(void *st_this,int param_1,int *param_2,int param_3);
 // 0069C670 FUN_0069c670
@@ -16795,7 +16797,7 @@ void fn_0069C670(DArrayTy *param_1,int param_2,uint param_3);
 // 0069C710 FUN_0069c710
 uint fn_0069C710(int param_1,int param_2,RecoveredRecord_0069C710_92A26D6D *param_3);
 // 0069C790 FUN_0069c790
-int fn_0069C790(uint *param_1,int param_2,uint param_3,uint param_4);
+int fn_0069C790(DArrayTy *param_1,int param_2,uint param_3,uint param_4);
 // 0069C8B0 FUN_0069c8b0
 uint * fn_0069C8B0(int param_1,int param_2,int param_3);
 // 0069CB50 CGenerate::sub_0069CB50
@@ -19122,7 +19124,7 @@ int __cdecl fn_006F2CE0(byte *param_1,byte *param_2);
 // 006F2D10 FUN_006f2d10
 uint __cdecl fn_006F2D10(RecoveredRecord_006F2D10_2C6A4914 *param_1,byte *param_2);
 // 006F2D90 Library::Ourlib::MFAOBJ::mfAObjLoad [statically linked library; implementation excluded]
-ushort * __cdecl fn_006F2D90(cMf32 * param_1, char * text, byte param_3, int param_4);
+byte * __cdecl fn_006F2D90(cMf32 * param_1, char * text, byte param_3, int param_4);
 // 006F2E40 Library::Ourlib::MFAOBJ::mfAObjEnum [statically linked library; implementation excluded]
 int __cdecl fn_006F2E40(cMf32 * param_1, char * param_2, undefined * param_3, STPlaySystemC * param_4, byte param_5);
 // 006F2FB0 Library::Ourlib::MFAOBJ::mfAObjLen [statically linked library; implementation excluded]
@@ -23566,7 +23568,7 @@ inline int CGenerate::sub_00698CA0(int param_1, int param_2, int param_3, int *p
     return st::fn_00698CA0(this, param_1, param_2, param_3, param_4, param_5, param_6);
 }
 
-inline int CGenerate::sub_006991C0(int param_1, int param_2, int param_3, int param_4, uint param_5, int param_6, int param_7, RecoveredRecordView_006991C0_C443ACC2 *param_8) {
+inline int CGenerate::sub_006991C0(int param_1, int param_2, int param_3, int param_4, uint param_5, RecoveredRecordView_006991C0_C51A57AA *param_6, int param_7, RecoveredRecordView_006991C0_C443ACC2 *param_8) {
     return st::fn_006991C0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
 }
 
@@ -23582,7 +23584,7 @@ inline int CGenerate::sub_0069B400(int param_1, int param_2, int param_3, int pa
     return st::fn_0069B400(this, param_1, param_2, param_3, param_4, param_5);
 }
 
-inline int CGenerate::sub_0069BDC0(int param_1, int param_2, int param_3, int param_4, int param_5, int param_6, RecoveredRecord_CGenerate_0069BDC0 *param_7) {
+inline int CGenerate::sub_0069BDC0(int param_1, int param_2, int param_3, int param_4, int param_5, RecoveredRecordView_0069BDC0_C51A57AA *param_6, RecoveredRecord_CGenerate_0069BDC0 *param_7) {
     return st::fn_0069BDC0(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7);
 }
 
@@ -25448,18 +25450,6 @@ inline uint STAllPlayersC::PrepareToCmd(undefined4 *param_1, uint *param_2) {
 
 inline void STAllPlayersC::PutOnPlaceGuardBoats(uint param_1, uint param_2, int param_3, short param_4, uint param_5, int param_6, int param_7, DArrayTy *param_8) {
     st::fn_00448120(this, param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8);
-}
-
-inline int STAllPlayersC::RegisterArtefact(ushort param_1, void *param_2) {
-    return st::fn_00449CE0(this, param_1, param_2);
-}
-
-inline int STAllPlayersC::RegisterBlot(ushort param_1, void *param_2) {
-    return st::fn_0044A8A0(this, param_1, param_2);
-}
-
-inline int STAllPlayersC::RegisterContainer(ushort param_1, void *param_2) {
-    return st::fn_0044A5B0(this, param_1, param_2);
 }
 
 inline int STAllPlayersC::RegisterDeposit(ushort param_1, void *param_2) {

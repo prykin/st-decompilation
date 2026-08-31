@@ -18,16 +18,16 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,RecoveredRecord_TLOEmbryoTy
   int local_EAX_1470;
   STT3DSprC *pSVar5;
   uint uVar6;
-  int iVar4;
+  STT3DSprC *iVar4;
   int local_EAX_1989;
-  int local_EAX_2184;
+  STT3DSprC *local_EAX_2184;
   uint uVar7;
-  int local_EAX_2619;
+  STT3DSprC *local_EAX_2619;
   int uVar8;
   int uVar4;
-  int local_EAX_3446;
+  STT3DSprC *local_EAX_3446;
   int local_EAX_3458;
-  int local_EAX_4060;
+  STT3DSprC *local_EAX_4060;
   int local_EAX_4068;
   int iVar10;
   int iVar8;
@@ -334,10 +334,10 @@ cf_common_join_004D1763:
                  (&param_1->field_0x0 + param_1->field_0133));
       uVar6 = this_01->field_02F4;
       /* ST_CALLSITE[004D1989]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC */
-      iVar4 = (int)thunk_FUN_004ad650((STT3DSprC *)&this_01->vtable_at_1d5);
+      iVar4 = thunk_FUN_004ad650((STT3DSprC *)&this_01->vtable_at_1d5);
 
       local_EAX_1989 = thunk_FUN_004ad650(this_01->field_035C);
-      FUN_006ea340(this_01->field_0211,local_EAX_1989,iVar4,uVar6);
+      FUN_006ea340(this_01->field_0211,local_EAX_1989,(int)iVar4,uVar6);
       memset(local_28, 0, 0x44); /* compiler bulk-zero initialization */
       local_28[0xe] = PTR_0080678c;
       local_24 = 0;
@@ -368,10 +368,10 @@ cf_common_join_004D1763:
           }
           uVar18 = uVar6;
           /* ST_CALLSITE[004D1A58]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC */
-          local_EAX_2184 = (int)thunk_FUN_004ad650((STT3DSprC *)&this_01->vtable_at_1d5);
+          local_EAX_2184 = thunk_FUN_004ad650((STT3DSprC *)&this_01->vtable_at_1d5);
 
           uVar7 = thunk_FUN_004ad650(*ppSVar15);
-          FUN_006ea340(this_01->field_0211,uVar7,local_EAX_2184,uVar18);
+          FUN_006ea340(this_01->field_0211,uVar7,(int)local_EAX_2184,uVar18);
           /* ST_CALLSITE[004D1A82]: CALL 0x00404ca5; direct=00404CA5 STT3DSprC::RestoreSpr */
           STT3DSprC::RestoreSpr
                     (*ppSVar15,(int *)&local_28,
@@ -451,10 +451,10 @@ LAB_004d1bda:
   uVar6 = (-(uint)(this_01->field_0370 != 0) & 4) + 7;
   this_01->field_02F4 = uVar6;
   /* ST_CALLSITE[004D1C0B]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC */
-  local_EAX_2619 = (int)thunk_FUN_004ad650((STT3DSprC *)this_00);
+  local_EAX_2619 = thunk_FUN_004ad650((STT3DSprC *)this_00);
 
   uVar8 = thunk_FUN_004ad650(this_01->field_035C);
-  FUN_006ea340(this_01->field_0211,uVar8,local_EAX_2619,uVar6);
+  FUN_006ea340(this_01->field_0211,uVar8,(int)local_EAX_2619,uVar6);
   /* ST_CALLSITE[004D1C43]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
   STT3DSprC::sub_004AD3C0
             (this_01->field_035C,(float)this_01->field_01F9,(float)this_01->field_01FD,
@@ -543,10 +543,10 @@ LAB_004d204d:
       }
       pTVar19 = local_8;
       /* ST_CALLSITE[004D21AC]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC */
-      local_EAX_4060 = (int)thunk_FUN_004ad650((STT3DSprC *)this_00);
+      local_EAX_4060 = thunk_FUN_004ad650((STT3DSprC *)this_00);
 
       local_EAX_4068 = thunk_FUN_004ad650(*ppSVar15);
-      FUN_006ea340(this_01->field_0211,local_EAX_4068,local_EAX_4060,(uint)pTVar19);
+      FUN_006ea340(this_01->field_0211,local_EAX_4068,(int)local_EAX_4060,(uint)pTVar19);
       /* ST_CALLSITE[004D21DC]: CALL 0x004045d9; direct=004045D9 STT3DSprC::sub_004AD3C0 */
       STT3DSprC::sub_004AD3C0
                 (*ppSVar15,(float)this_01->field_01F9,(float)this_01->field_01FD,
@@ -595,10 +595,10 @@ LAB_004d1f0b:
       STT3DSprC::UnLoadSequence((STT3DSprC *)this_00,(byte)iVar8);
       uVar6 = this_01->field_02F4;
       /* ST_CALLSITE[004D1F46]: CALL 0x004052cc; direct=004052CC thunk_FUN_004ad650; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STT3DSprC; signature=__fastcall;pointer:/STT3DSprC;pointer:/STT3DSprC */
-      local_EAX_3446 = (int)thunk_FUN_004ad650((STT3DSprC *)this_00);
+      local_EAX_3446 = thunk_FUN_004ad650((STT3DSprC *)this_00);
 
       local_EAX_3458 = thunk_FUN_004ad650(this_01->field_035C);
-      FUN_006ea340(this_01->field_0211,local_EAX_3458,local_EAX_3446,uVar6);
+      FUN_006ea340(this_01->field_0211,local_EAX_3458,(int)local_EAX_3446,uVar6);
       /* ST_CALLSITE[004D1F79]: CALL 0x00405240; direct=00405240 STT3DSprC::StartShow */
       STT3DSprC::StartShow
                 ((STT3DSprC *)this_00,(byte)this_01->field_02F0,

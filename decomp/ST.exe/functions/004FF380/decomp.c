@@ -21,7 +21,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   char *pcVar6_mg2;
   int *piVar6;
   int *piVar7;
-  uint uVar7;
+  int uVar7;
   BITMAPINFO *pBVar8;
   uint uVar9;
   int iVar10;

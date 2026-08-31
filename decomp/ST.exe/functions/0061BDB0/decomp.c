@@ -34,7 +34,7 @@ STJumpMineC::sub_0061BDB0
   int iVar5;
   int iVar2;
   uint uVar4;
-  uint uVar3;
+  int uVar3;
   int iVar6;
   int iVar7;
   longlong lVar8;
@@ -192,7 +192,7 @@ LAB_0061c0e4:
 
           uVar3 = FUN_006c8334(uVar4);
         }
-        iVar2 = (int)(uVar3 + this->field_0113 * -1000) / iVar2;
+        iVar2 = (uVar3 + this->field_0113 * -1000) / iVar2;
         if (0 < iVar2) {
           this->field_0113 = this->field_0113 * 10000;
           param_2_after_write = iVar6;

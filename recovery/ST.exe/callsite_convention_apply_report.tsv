@@ -28,7 +28,6 @@ address	status	detail
 00401573	disabled	apply=0
 00401627	disabled	apply=0
 0040162C	disabled	apply=0
-00401681	disabled	apply=0
 0040169A	disabled	apply=0
 004016D1	disabled	apply=0
 004016F4	disabled	apply=0
@@ -68,7 +67,6 @@ address	status	detail
 00401DAC	disabled	apply=0
 00401DC0	disabled	apply=0
 00401DD9	disabled	apply=0
-00401DDE	disabled	apply=0
 00401E29	disabled	apply=0
 00401E2E	disabled	apply=0
 00401E3D	disabled	apply=0
@@ -426,7 +424,6 @@ address	status	detail
 0040536C	disabled	apply=0
 00405380	disabled	apply=0
 00405399	disabled	apply=0
-004053A3	disabled	apply=0
 004053B2	disabled	apply=0
 00405466	disabled	apply=0
 004054D4	disabled	apply=0
@@ -560,11 +557,8 @@ address	status	detail
 00446910	disabled	apply=0
 00446AA0	disabled	apply=0
 00449B60	disabled	apply=0
-00449CE0	disabled	apply=0
 00449FD0	disabled	apply=0
 0044A2C0	disabled	apply=0
-0044A5B0	disabled	apply=0
-0044A8A0	disabled	apply=0
 0044B280	disabled	apply=0
 0044C130	disabled	apply=0
 0044C720	disabled	apply=0
@@ -583,11 +577,8 @@ address	status	detail
 004908A0	disabled	apply=0
 00490A00	disabled	apply=0
 00490E00	disabled	apply=0
-004911B0	disabled	apply=0
-00491200	disabled	apply=0
 00492510	disabled	apply=0
 00492550	disabled	apply=0
-00493050	disabled	apply=0
 00493110	disabled	apply=0
 004934B0	disabled	apply=0
 00494160	disabled	apply=0

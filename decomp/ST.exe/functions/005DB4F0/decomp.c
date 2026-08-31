@@ -178,10 +178,8 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     puVar15 = pSVar4->field_02F0 + 0x14;
 
     local_EAX_1035 = FUN_006b4fe0(pSVar4->field_02F0);
-    pRVar7 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-             FUN_006b50c0(0xd5,0x119,(uint)pSVar4->field_02F0[7],local_EAX_1035,
-                          (undefined4 *)puVar15,iVar14);
+    pRVar7 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(FUN_006b50c0(0xd5,0x119,(uint)pSVar4->field_02F0[7],local_EAX_1035,
+                          (undefined4 *)puVar15,iVar14));
     pSVar4->field_0544 = (AnonPointee_StartSystemTy_0544 *)pRVar7;
     local_8 = *(uint *)&pRVar7[1].field_0x4;
     if (local_8 == 0) {
@@ -210,9 +208,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     puVar15 = pSVar4->field_02F0 + 0x14;
 
     uVar8 = FUN_006b4fe0(pSVar4->field_02F0);
-    pRVar7 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-             FUN_006b50c0(0x186,0x14,(uint)pSVar4->field_02F0[7],uVar8,(undefined4 *)puVar15,iVar14);
+    pRVar7 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(FUN_006b50c0(0x186,0x14,(uint)pSVar4->field_02F0[7],uVar8,(undefined4 *)puVar15,iVar14));
     pSVar4->field_0682 = (ushort *)pRVar7;
     local_8 = *(uint *)&pRVar7[1].field_0x4;
     if (local_8 == 0) {
@@ -265,10 +261,8 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     pSVar4->field_05F5 = 0;
 
     local_EAX_1618 = FUN_006b4fe0(pSVar4->field_02F0);
-    pRVar7 = (RecoveredRecord_006B4FA0_DAC3A217 *)
-
-             FUN_006b50c0(0x16d,0x49,(uint)pSVar4->field_02F0[7],local_EAX_1618,
-                          (undefined4 *)puVar15,iVar14);
+    pRVar7 = STPointerBoundaryCast<RecoveredRecord_006B4FA0_DAC3A217 *>(FUN_006b50c0(0x16d,0x49,(uint)pSVar4->field_02F0[7],local_EAX_1618,
+                          (undefined4 *)puVar15,iVar14));
     pSVar4->field_067E = (ushort *)pRVar7;
     uVar11 = *(uint *)&pRVar7[1].field_0x4;
     if (uVar11 == 0) {

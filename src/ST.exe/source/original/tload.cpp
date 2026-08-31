@@ -27,6 +27,10 @@ void __cdecl st::fn_00428E50(RecoveredRecord_00428E50_9DEE1150 *param_1)
   void *pvVar9;
   int iVar13;
   int iVar10;
+  int uVar13_mg6;
+  int uVar13_mg8;
+  int uVar13_mgA;
+  int uVar13_mgC;
   byte *pbVar11;
   uint uVar12;
   uint uVar13;
@@ -404,12 +408,13 @@ LAB_0042958f:
                 }
               }
 
-              uVar13 = st::fn_004028DD(st::storage_bit_cast<int>(static_cast<uint32_t>((int)local_20 +
-                                               local_a0 + ((local_9c - iVar10) * iVar14 - iVar18))),
-                                          STField<int>(pvVar9,0x14),local_4c,
-                                          STField<int>(pvVar16,0x14),local_98,local_94,
-                                          local_10->field_003C,local_50);
-              local_34 = local_34 | uVar13;
+              uVar13_mg6 = st::fn_004028DD(st::storage_bit_cast<int>(static_cast<uint32_t>((int)local_20 +
+                                                   local_a0 +
+                                                   ((local_9c - iVar10) * iVar14 - iVar18))),
+                                              STField<int>(pvVar9,0x14),local_4c,
+                                              STField<int>(pvVar16,0x14),local_98,local_94,
+                                              local_10->field_003C,local_50);
+              local_34 = local_34 | uVar13_mg6;
               goto cf_continue_loop_004296CF;
             }
             if (local_94 < 3) goto cf_continue_loop_004296CF;
@@ -487,13 +492,13 @@ LAB_00429715:
                       }
                     }
 
-                    uVar13 = st::fn_004028DD(st::storage_bit_cast<int>(static_cast<uint32_t>((int)local_20 +
-                                                     local_a0 +
-                                                     ((local_9c - iVar14) * iVar10 - iVar18))),
-                                                STField<int>(pvVar9,0x14),local_4c,
-                                                STField<int>(pvVar16,0x14),local_98,local_94,
-                                                local_10->field_003C,(byte)_local_50);
-                    local_34 = local_34 | uVar13;
+                    uVar13_mg8 = st::fn_004028DD(st::storage_bit_cast<int>(static_cast<uint32_t>((int)local_20 +
+                                                         local_a0 +
+                                                         ((local_9c - iVar14) * iVar10 - iVar18))),
+                                                    STField<int>(pvVar9,0x14),local_4c,
+                                                    STField<int>(pvVar16,0x14),local_98,local_94,
+                                                    local_10->field_003C,(byte)_local_50);
+                    local_34 = local_34 | uVar13_mg8;
                   }
                 }
                 local_8 = local_8 + -local_80;
@@ -569,13 +574,12 @@ LAB_00429715:
                           }
                         }
 
-                        uVar13 = st::fn_004028DD(st::storage_bit_cast<int>(static_cast<uint32_t>((int)local_20 +
-                                                         local_a0 +
-                                                         ((local_9c - iVar14) * iVar10 - iVar18))),
-                                                    STField<int>(pvVar9,0x14),local_4c,
-                                                    STField<int>(pvVar16,0x14),local_98,local_94,
-                                                    local_10->field_003C,local_50);
-                        local_34 = local_34 | uVar13;
+                        uVar13_mgA = st::fn_004028DD(st::storage_bit_cast<int>(static_cast<uint32_t>((int)local_20 +
+                                                             local_a0 +
+                                                             ((local_9c - iVar14) * iVar10 - iVar18))),STField<int>(pvVar9,0x14),local_4c
+                                                        ,STField<int>(pvVar16,0x14),local_98,
+                                                        local_94,local_10->field_003C,local_50);
+                        local_34 = local_34 | uVar13_mgA;
                       }
                     }
                   }
@@ -640,13 +644,13 @@ LAB_00429715:
                         }
                       }
 
-                      uVar13 = st::fn_004028DD(st::storage_bit_cast<int>(static_cast<uint32_t>((int)local_20 +
-                                                       local_a0 +
-                                                       ((local_9c - iVar14) * iVar10 - iVar18))),
-                                                  STField<int>(pvVar9,0x14),local_4c,
-                                                  STField<int>(pvVar16,0x14),local_98,local_94,
-                                                  local_10->field_003C,(byte)_local_50);
-                      local_34 = local_34 | uVar13;
+                      uVar13_mgC = st::fn_004028DD(st::storage_bit_cast<int>(static_cast<uint32_t>((int)local_20 +
+                                                           local_a0 +
+                                                           ((local_9c - iVar14) * iVar10 - iVar18))),
+                                                      STField<int>(pvVar9,0x14),local_4c,
+                                                      STField<int>(pvVar16,0x14),local_98,
+                                                      local_94,local_10->field_003C,(byte)_local_50);
+                      local_34 = local_34 | uVar13_mgC;
                     }
                   }
                   local_8 = local_8 + -local_80;

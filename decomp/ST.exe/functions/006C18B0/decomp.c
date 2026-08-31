@@ -9,7 +9,7 @@
 void FUN_006c18b0(uint param_1)
 
 {
-  if (DAT_008568bc != 0) {
+  if (PTR_008568bc != nullptr) {
     DAT_007ede10 = param_1;
   }
   return;

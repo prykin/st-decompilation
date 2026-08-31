@@ -418,12 +418,12 @@ int st::fn_00673210(int param_1)
       return 0;
     }
     if (param_1 == 0) {
-      uVar1 = *(uint *)((int)PTR_00811924 + pcVar7[iVar4] * 4);
+      uVar1 = PTR_00811924[pcVar7[iVar4]];
       while ((uVar1 & 0x401) != 0) {
         if (iVar5 <= iVar4) goto LAB_0067339a;
         iVar4 = iVar4 + 1;
         DAT_00811914 = iVar4;
-        uVar1 = *(uint *)((int)PTR_00811924 + pcVar7[iVar4] * 4);
+        uVar1 = PTR_00811924[pcVar7[iVar4]];
       }
     }
     if (iVar4 < iVar5) {
@@ -865,6 +865,7 @@ int st::fn_00673D20(void)
     DAT_007d2d20 = 0xffffffff;
     return iVar7;
   }
+
   iVar8 = st::fn_00673210(0);
   if (iVar8 < 0) {
     return iVar8;
@@ -881,7 +882,7 @@ LAB_00673e7d:
     DAT_00811914 = DAT_0081190c + 1;
     bVar3 = PTR_0085755c[DAT_0081190c];
     local_10 = (uint)bVar3;
-    uVar10 = *(uint *)((int)PTR_00811924 + (uint)bVar3 * 4);
+    uVar10 = PTR_00811924[bVar3];
     if ((DAT_007d2d24 & 8) != 0) {
 LAB_006741a7:
       if (DAT_007d2d18 != 0x84e) {
@@ -892,9 +893,8 @@ LAB_006741c0:
       DAT_00811914 = DAT_0081190c + 1;
       if ((uVar10 & 0x100) != 0) {
         bVar3 = PTR_0085755c[DAT_00811914];
-        uVar11 = *(uint *)((int)PTR_00811924 + (uint)bVar3 * 4);
-        if ((((uVar11 & 0x100) != 0) && (((uVar11 | uVar10) & 0x200) == 0)) &&
-           ((PTR_0081193c != nullptr || (PTR_00811938 != nullptr)))) {
+        if ((((PTR_00811924[bVar3] & 0x100) != 0) && (((PTR_00811924[bVar3] | uVar10) & 0x200) == 0)
+            ) && ((PTR_0081193c != nullptr || (PTR_00811938 != nullptr)))) {
           uVar10 = (uint)bVar3 << 8 | local_10;
           if ((PTR_0081193c != nullptr) &&
              ((*(byte *)((int)PTR_00811924 + PTR_0085755c[DAT_0081190c + 2] * 4 + 1) & 1) != 0)) {
@@ -934,36 +934,37 @@ LAB_006741c0:
             cVar8 = (char)*puVar1;
           }
         }
-        uVar10 = *(uint *)((int)PTR_00811924 + (char)bVar3 * 4);
+        uVar10 = PTR_00811924[(char)bVar3];
         while (((uVar10 & 0x100) != 0 && ((uVar10 & 0x200) == 0))) {
           DAT_00811914 = DAT_00811914 + 1;
-          uVar10 = *(uint *)((int)PTR_00811924 + PTR_0085755c[DAT_00811914] * 4);
+          uVar10 = PTR_00811924[PTR_0085755c[DAT_00811914]];
         }
       }
       goto LAB_00674334;
     }
-    if (((uVar10 & 0x12) != 0) || ((DAT_0081190c == 0 && (DAT_00811930 != 0)))) {
-      bVar4 = *(byte *)((int)PTR_00811924 + PTR_0085755c[DAT_00811914] * 4);
+    if (((uVar10 & 0x12) != 0) ||
+       ((DAT_0081190c == 0 && (PTR_00811930 != nullptr)))) {
+      bVar4 = *(byte *)(PTR_00811924 + PTR_0085755c[DAT_00811914]);
       while ((bVar4 & 4) != 0) {
         DAT_00811914 = DAT_00811914 + 1;
-        bVar4 = *(byte *)((int)PTR_00811924 + PTR_0085755c[DAT_00811914] * 4);
+        bVar4 = *(byte *)(PTR_00811924 + PTR_0085755c[DAT_00811914]);
       }
       if (((uVar10 & 0x10) != 0) && ((int)PTR_0085755c[DAT_00811914] == (uint)bVar3)) {
         DAT_00811914 = DAT_00811914 + 1;
         DAT_007d2d18 = 0x22;
       }
-      if ((DAT_0081190c == 0) && (DAT_00811930 != 0)) {
-        st::fn_006747E0(DAT_00811930,DAT_00811920);
+      if ((DAT_0081190c == 0) && (PTR_00811930 != nullptr)) {
+        st::fn_006747E0(PTR_00811930,DAT_00811920);
       }
       if (((DAT_007d2d18 == 0x84e) || (DAT_007d2d18 == 0x22)) && ((uVar10 & 0x12) != 0)) {
-        st::fn_006747E0(DAT_00811928,DAT_00811918);
+        st::fn_006747E0(PTR_00811928,DAT_00811918);
       }
     }
     if (DAT_007d2d18 != 0x84e) goto LAB_006741b3;
     if (((uVar10 & 2) != 0) &&
        (((uVar10 & 0x100) == 0 ||
         ((1 < DAT_00811914 - DAT_0081190c &&
-         ((*(uint *)((int)PTR_00811924 + PTR_0085755c[DAT_0081190c + 1] * 4) & 0x100) == 0)))))) {
+         ((PTR_00811924[PTR_0085755c[DAT_0081190c + 1]] & 0x100) == 0)))))) {
       DAT_007d2d18 = 0x22;
       goto cf_common_join_006743F6;
     }
@@ -1066,6 +1067,7 @@ LAB_00674068:
       }
       goto LAB_006741c0;
     }
+
     local_14 = st::fn_006748D0();
     goto LAB_0067447d;
   }
@@ -1163,6 +1165,7 @@ LAB_00674334:
 cf_common_join_006743F6:
   if ((DAT_007d2d24 & 8) != 0) {
 cf_continue_loop_006743FF:
+
     local_EAX_1761 = st::fn_00673210(0);
     if (local_EAX_1761 < 0) {
       return local_EAX_1761;
@@ -1221,7 +1224,7 @@ cf_common_exit_00674540:
    Evidence: all observed direct callers ignore the return register (ignored=2, used=0), and
    decompilation contains no value return */
 
-void st::fn_006747E0(int param_1,int param_2)
+void st::fn_006747E0(AnonShape_006747E0_C06E010E *param_1,int param_2)
 
 {
   char cVar1;
@@ -1243,10 +1246,10 @@ void st::fn_006747E0(int param_1,int param_2)
     /* ST_CALLSITE[00674822]: CALL dword ptr [0x007d2d1c] */
     /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
     iVar2 = (*(code *)PTR_thunk_FUN_00673160_007d2d1c)
-                      (PTR_0085755c + DAT_0081190c,*(undefined4 *)(param_1 + iVar4 * 8));
+                      (PTR_0085755c + DAT_0081190c,param_1[iVar4].field_0000);
     if (iVar2 < 1) {
       if (-1 < iVar2) {
-        DAT_007d2d18 = *(undefined4 *)(param_1 + 4 + iVar4 * 8);
+        DAT_007d2d18 = param_1[iVar4].field_0004;
         PTR_0085755c[DAT_00811914] = cVar1;
         return;
       }
@@ -1348,12 +1351,12 @@ char * st::fn_00674AF0(int param_1)
 
 {
   char *pcVar1;
-  int *piVar2;
+  AnonShape_006747E0_C06E010E *pAVar2;
   char cVar3;
   int iVar4;
   char *pcVar5;
   char *pcVar6;
-  int *piVar7;
+  AnonShape_006747E0_C06E010E *pAVar7;
 
   pcVar5 = &CHAR_00h_008016a0;
   if (PTR_00811934 != nullptr) {
@@ -1392,36 +1395,37 @@ char * st::fn_00674AF0(int param_1)
       cVar3 = *pcVar1;
     }
   }
-  if (DAT_00811928 != 0) {
-    iVar4 = *DAT_00811928;
-    piVar7 = st::pointer_boundary_cast<int *>(DAT_00811928);
+  if (PTR_00811928 != nullptr) {
+    iVar4 = PTR_00811928->field_0000;
+    pAVar7 = PTR_00811928;
     while (iVar4 != 0) {
-      if (piVar7[1] == param_1) goto cf_common_exit_00674BC4;
-      piVar2 = piVar7 + 2;
-      piVar7 = piVar7 + 2;
-      iVar4 = *piVar2;
+      if (pAVar7->field_0004 == param_1) goto cf_common_exit_00674BC4;
+      pAVar2 = pAVar7 + 1;
+      pAVar7 = pAVar7 + 1;
+      iVar4 = pAVar2->field_0000;
     }
   }
   if (DAT_0081192c != 0) {
-    iVar4 = *DAT_0081192c;
-    piVar7 = st::pointer_boundary_cast<int *>(DAT_0081192c);
+    iVar4 = st::storage_bit_cast<AnonShape_006747E0_C06E010E *>(DAT_0081192c)->field_0000;
+    pAVar7 = st::pointer_boundary_cast<AnonShape_006747E0_C06E010E *>(DAT_0081192c);
     while (iVar4 != 0) {
-      if (piVar7[1] == param_1) goto cf_common_exit_00674BC4;
-      piVar2 = piVar7 + 2;
-      piVar7 = piVar7 + 2;
-      iVar4 = *piVar2;
+      if (pAVar7->field_0004 == param_1) goto cf_common_exit_00674BC4;
+      pAVar2 = pAVar7 + 1;
+      pAVar7 = pAVar7 + 1;
+      iVar4 = pAVar2->field_0000;
     }
   }
-  if ((DAT_00811930 != 0) && (piVar7 = st::pointer_boundary_cast<int *>(DAT_00811930), *DAT_00811930 != 0)) {
-    while (piVar7[1] != param_1) {
-      piVar2 = piVar7 + 2;
-      piVar7 = piVar7 + 2;
-      if (*piVar2 == 0) {
+  if ((PTR_00811930 != nullptr) &&
+     (pAVar7 = PTR_00811930, PTR_00811930->field_0000 != 0)) {
+    while (pAVar7->field_0004 != param_1) {
+      pAVar2 = pAVar7 + 1;
+      pAVar7 = pAVar7 + 1;
+      if (pAVar2->field_0000 == 0) {
         return pcVar5;
       }
     }
 cf_common_exit_00674BC4:
-    pcVar5 = (char *)*piVar7;
+    pcVar5 = (char *)pAVar7->field_0000;
   }
   return pcVar5;
 }
@@ -2374,6 +2378,8 @@ int st::fn_006767D0(void)
 void __cdecl st::fn_00676930(uint param_1)
 
 {
+  int param_1_after_write;
+
   byte *puVar1;
   uint uVar2;
   int iVar3;
@@ -2418,7 +2424,7 @@ void __cdecl st::fn_00676930(uint param_1)
     iVar3 = 0;
     /* ST_CALLSITE[00676968]: CALL 0x00404048; direct=00404048 STAllPlayersC::sub_004DA390 */
     st::fn_00404048(g_allPlayers_007FA174,param_1,&DAT_0080c83e,0);
-    auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
+    param_1_after_write = 0; /* compiler stack-slot lifetime split */
     local_8 = &DAT_0080c947;
     puVar4 = &DAT_0080c8cd;
     do {

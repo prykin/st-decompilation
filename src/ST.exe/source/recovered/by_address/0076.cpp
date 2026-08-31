@@ -582,7 +582,7 @@ void st::fn_007611C0(int param_1,AnonShape_007611C0_0B5C7A2E *param_2,int *param
       local_18 = piVar2[-0x18];
       if (((((local_20 == 0 && local_18 == 0) && piVar2[-8] == 0) && piVar2[8] == 0) &&
           piVar2[-0x20] == 0) && *piVar2 == 0) {
-        AVar4 = (AnonShape_007611C0_979BF099)(piVar2[-0x30] * pAVar9->field_0000 * 4);
+        AVar4 = st::storage_bit_cast<AnonShape_007611C0_979BF099>(static_cast<uint32_t>(piVar2[-0x30] * pAVar9->field_0000 * 4));
         pAVar7[-8] = AVar4;
         *pAVar7 = AVar4;
         pAVar7[8] = AVar4;
@@ -657,6 +657,9 @@ void st::fn_00761550(RecoveredRecord_00761550_95FF8642 *param_1,int param_2,int 
                  int param_5)
 
 {
+  int param_2_after_write;
+  int param_3_after_write;
+
   byte uVar1;
   int iVar2;
   byte *puVar3;
@@ -672,7 +675,7 @@ void st::fn_00761550(RecoveredRecord_00761550_95FF8642 *param_1,int param_2,int 
   piVar4 = (int *)(param_3 + 0x60);
   /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
   piVar6 = (int *)(*(int *)(param_2 + 0x50) + 0x60);
-  auto param_2_after_write = 8; /* compiler stack-slot lifetime split */
+  param_2_after_write = 8; /* compiler stack-slot lifetime split */
   piVar7 = local_4c;
   do {
     if (((param_2_after_write != 6) && (param_2_after_write != 4)) && (param_2_after_write != 2)) {
@@ -699,7 +702,7 @@ void st::fn_00761550(RecoveredRecord_00761550_95FF8642 *param_1,int param_2,int 
   } while (0 < param_2_after_write);
   piVar4 = local_4c;
   auto param_1_after_write = reinterpret_cast<RecoveredRecord_00761550_95FF8642 *>(param_4); /* compiler stack-slot lifetime split */
-  auto param_3_after_write = 2; /* compiler stack-slot lifetime split */
+  param_3_after_write = 2; /* compiler stack-slot lifetime split */
   do {
     puVar3 = (undefined1 *)(param_5 + *(int *)param_1_after_write);
     if (((piVar4[1] == 0 && piVar4[3] == 0) && piVar4[5] == 0) && piVar4[7] == 0) {

@@ -1785,6 +1785,8 @@ int __thiscall st::fn_006E2D00(ST3DSMAPContext *this,int param_1,int param_2)
 float10 __thiscall st::fn_006E3210(ST3DSMAPContext *param_1,int param_2,int param_3)
 
 {
+  int param_3_after_write;
+
   int iVar1;
   int iVar2;
   int iVar3;
@@ -1800,7 +1802,7 @@ float10 __thiscall st::fn_006E3210(ST3DSMAPContext *param_1,int param_2,int para
       iVar4 = param_3 / iVar2;
       iVar6 = param_3 % iVar2;
       if ((-1 < iVar4) && (iVar4 < iVar1)) {
-        auto param_3_after_write = 5; /* compiler stack-slot lifetime split */
+        param_3_after_write = 5; /* compiler stack-slot lifetime split */
         piVar7 = reinterpret_cast<int *>((&param_1->field_0280[1].field_0xc +
                         (param_1->field_0288 * 5 + iVar3 + iVar1 * iVar4) * 4));
         do {
@@ -1858,7 +1860,7 @@ st::fn_006E3310
           if (((piVar4 != nullptr) &&
               (*(char *)(piVar4[0x10] + this->field_0380 * ((int)param_2 % iVar2) * 2 +
                         param_1 % iVar2) != '\0')) &&
-             (piVar4 = (int *)(iVar6 - (uint)((byte *)piVar4)[0x12]), (int)piVar4 <= param_3)) {
+             (piVar4 = (int *)(iVar6 - st::storage_bit_cast<uint>(static_cast<uint32_t>(((byte *)piVar4)[0x12]))), (int)piVar4 <= param_3)) {
             if (iVar6 < 1) {
               return piVar4;
             }
@@ -2991,7 +2993,7 @@ st::fn_006E8660
   }
   else {
     this->field_02E8 = *(int *)&pAVar5->field_0x8;
-    if (st::machine_word_boundary_cast<uint>(pAVar5) == st::machine_word_boundary_cast<uint>((AnonShape_006E8840_CF3FA5BA *)this->field_02EC)) {
+    if (pAVar5 == (AnonShape_006E8840_CF3FA5BA *)this->field_02EC) {
       this->field_02EC = 0;
       this->field_02E8 = 0;
     }
@@ -3256,7 +3258,7 @@ void __thiscall st::fn_006E9CB0(ST3DSMAPContext *this,uint *param_1,uint param_2
   uint *puVar1;
   byte *pbVar2;
 
-  if ((st::machine_word_boundary_cast<uint>(param_1) < st::machine_word_boundary_cast<uint>((uint *)this->field_0310)) &&
+  if ((param_1 < (uint *)this->field_0310) &&
      (puVar1 = reinterpret_cast<uint *>((this->field_031C + (int)param_1 * 0x114)), (*puVar1 & 0x8000) != 0)) {
     if (puVar1[0x28] != 0) {
       if (puVar1[0x25] <= param_2) {
@@ -3294,7 +3296,7 @@ void __thiscall st::fn_006E9D40(ST3DSMAPContext *this,uint *param_1,uint param_2
   uint *puVar1;
   ushort *puVar2;
 
-  if ((st::machine_word_boundary_cast<uint>(param_1) < st::machine_word_boundary_cast<uint>((uint *)this->field_0310)) &&
+  if ((param_1 < (uint *)this->field_0310) &&
      (puVar1 = reinterpret_cast<uint *>((this->field_031C + (int)param_1 * 0x114)), (*puVar1 & 0x8000) != 0)) {
     if (puVar1[0x28] != 0) {
       if (puVar1[0x25] <= param_2) {

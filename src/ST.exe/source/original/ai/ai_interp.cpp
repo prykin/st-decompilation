@@ -199,7 +199,7 @@ st::fn_0066ACC0
   char *local_EAX_19697;
   int local_EAX_19764;
   char *local_EAX_19783;
-  int pAVar17_mg1;
+  AiFltClassTy *pAVar17_mg1;
   char *local_EAX_19936;
   char *local_EAX_20049;
   int local_EAX_20116;
@@ -211,7 +211,7 @@ st::fn_0066ACC0
   char *local_EAX_20615;
   int local_EAX_20682;
   char *local_EAX_20701;
-  int pAVar17;
+  AiFltClassTy *pAVar17;
   char *local_EAX_20943;
   char *local_EAX_21031;
   char *local_EAX_21131;
@@ -1174,7 +1174,7 @@ joined_r0x0066b1d2:
       }
 
       local_14 = static_cast<uint *>(st::fn_006AAC10(4));
-      if ((pcVar21 < 8) &&
+      if ((st::machine_word_boundary_cast<int>(pcVar21) < 8) &&
          ((g_playSystem_00802A38 == nullptr ||
           (g_bulkInitializedRecords_008087C7[(int)pcVar21].field_0022 < 8)))) {
         *local_14 = 1;
@@ -3502,18 +3502,17 @@ cf_common_exit_0066DCED:
     /* ST_CALLSITE[0066FA4D]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
     uVar13 = this_00->slot_00(param_1 + 5);
     /* ST_CALLSITE[0066FA56]: CALL 0x00402496; direct=00402496 thunk_FUN_0066ac80; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__stdcall;pointer:/AiFltClassTy;/char;/ushort */
-    pAVar17_mg1 = (int)st::fn_00402496((char)local_50[0],(ushort)uVar13);
+    pAVar17_mg1 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00402496((char)local_50[0],(ushort)uVar13));
     pAVar7 = local_50[0];
     pcVar21 = local_c;
-    if (pAVar17_mg1 != 0) {
+    if (pAVar17_mg1 != nullptr) {
       /* ST_CALLSITE[0066FA6D]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
       uVar13 = this_00->slot_00(param_1 + 0xf);
       cVar3 = (char)uVar13;
       /* ST_CALLSITE[0066FA78]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/ulonglong;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
       uVar22 = this_00->slot_00(param_1 + 10);
 
-      pcVar21 = STPointerBoundaryCast<char *>(st::fn_004041BF((AiFltClassTy *)pAVar17_mg1,(int)(uVar22 >> 0x20),
-                                           (uint)uVar22,cVar3));
+      pcVar21 = STPointerBoundaryCast<char *>(st::fn_004041BF(pAVar17_mg1,(int)(uVar22 >> 0x20),(uint)uVar22,cVar3));
       pAVar7 = local_50[0];
       local_c = pcVar21;
     }
@@ -3631,10 +3630,10 @@ cf_common_exit_0066DCED:
     /* ST_CALLSITE[0066FDE3]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
     uVar13 = this_00->slot_00(param_1 + 5);
     /* ST_CALLSITE[0066FDEC]: CALL 0x00402496; direct=00402496 thunk_FUN_0066ac80; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/AiFltClassTy; signature=__stdcall;pointer:/AiFltClassTy;/char;/ushort */
-    pAVar17 = (int)st::fn_00402496((char)local_50[0],(ushort)uVar13);
+    pAVar17 = st::pointer_boundary_cast<AiFltClassTy *>(st::fn_00402496((char)local_50[0],(ushort)uVar13));
     pAVar7 = local_50[0];
     pcVar21 = local_c;
-    if (pAVar17 != 0) {
+    if (pAVar17 != nullptr) {
       /* ST_CALLSITE[0066FE03]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/undefined4;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
       uVar13 = this_00->slot_00(param_1 + 0x37);
       sVar29 = (short)uVar13;
@@ -3663,9 +3662,8 @@ cf_common_exit_0066DCED:
       /* ST_CALLSITE[0066FE67]: CALL dword ptr [EDX]; [STIndirectCallsiteApplier] exact slot 0x0; mode=dispatch; signature=__thiscall;/ulonglong;pointer:/SubmarineTitans/Recovered/HiddenThis/AnonReceiver_0064A970;/undefined4 */
       uVar22 = this_00->slot_00(param_1 + 10);
 
-      pcVar21 = STPointerBoundaryCast<char *>(st::fn_00401F0A((AiFltClassTy *)pAVar17,(int)(uVar22 >> 0x20),
-                                           (uint)uVar22,uVar5,cVar3,pbVar14,sVar24,sVar25,sVar26,
-                                           sVar27,sVar28,sVar29));
+      pcVar21 = STPointerBoundaryCast<char *>(st::fn_00401F0A(pAVar17,(int)(uVar22 >> 0x20),(uint)uVar22,uVar5,cVar3,
+                                           pbVar14,sVar24,sVar25,sVar26,sVar27,sVar28,sVar29));
       pAVar7 = local_50[0];
       local_c = pcVar21;
     }

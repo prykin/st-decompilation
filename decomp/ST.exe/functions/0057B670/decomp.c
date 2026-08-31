@@ -36,11 +36,11 @@ FUN_0057b670(RecoveredRecord_0057B670_1C4E1DA6 *param_1,uint *param_2,uint param
   byte local_34;
   uint local_33;
   ushort local_2f;
-  int local_8;
+  AnonShape_0057B670_357441D5 *local_8;
 
   this = param_1;
   uVar5 = 0;
-  local_8 = 0;
+  local_8 = nullptr;
   /* ST_PSEUDO[stack_slot_reuse]: compiler reused a dead incoming argument slot; split the post-write lifetime into a local variable */
   if (param_1 == nullptr) {
     return 1;
@@ -50,7 +50,7 @@ FUN_0057b670(RecoveredRecord_0057B670_1C4E1DA6 *param_1,uint *param_2,uint param
       return 1;
     }
 
-    thunk_FUN_0057b350((int *)param_1,param_3,&local_8);
+    thunk_FUN_0057b350((int *)param_1,param_3,(int *)&local_8);
     goto LAB_0057b6ff;
   }
   if (param_1->field_0259 == 0x99) {
@@ -67,10 +67,10 @@ LAB_0057b6da:
     param_1 = (RecoveredRecord_0057B670_1C4E1DA6 *)0x3f000000;
   }
 
-  thunk_FUN_0057a2c0((RecoveredRecordView_0057A2C0_3DDE89E7 *)this,param_3,&local_8,param_4,iVar4,
-                     param_1,param_5);
+  thunk_FUN_0057a2c0((RecoveredRecordView_0057A2C0_3DDE89E7 *)this,param_3,(int *)&local_8,param_4,
+                     iVar4,param_1,param_5);
 LAB_0057b6ff:
-  if (local_8 != 0) {
+  if (local_8 != nullptr) {
     thunk_FUN_00416270(this,(uint *)&param_2,(short *)&param_5,(short *)&param_4);
     if (this->field_0259 == 0x99) {
       param_1 = (RecoveredRecord_0057B670_1C4E1DA6 *)0xb4;
@@ -105,9 +105,9 @@ LAB_0057b6ff:
                                (int)*(short *)&this->field_0x3e,(int)*(short *)&this->field_0x34,
                                (int)*(short *)&this->field_0x36,(int)*(short *)&this->field_0x38);
           if (iVar3 == 0) {
-            local_40 = *(short *)(local_8 + -8 + uVar5 * 8);
-            local_3e = *(short *)(local_8 + -6 + uVar5 * 8);
-            local_3c = *(short *)(local_8 + -4 + uVar5 * 8);
+            local_40 = local_8[uVar5 - 1].field_0000;
+            local_3e = local_8[uVar5 - 1].field_0002;
+            local_3c = local_8[uVar5 - 1].field_0004;
           }
           else {
             local_40 = (short)((((int)*(short *)&this->field_0x3a - (int)*(short *)&this->field_0x34
@@ -119,18 +119,18 @@ LAB_0057b6ff:
           }
         }
         else {
-          local_40 = *(short *)(local_8 + uVar5 * 8);
-          local_3e = *(short *)(local_8 + 2 + uVar5 * 8);
-          local_3c = *(short *)(local_8 + 4 + uVar5 * 8);
+          local_40 = local_8[uVar5].field_0000;
+          local_3e = local_8[uVar5].field_0002;
+          local_3c = local_8[uVar5].field_0004;
         }
         local_38 = param_1;
-        local_3a = *(undefined2 *)(local_8 + 6 + uVar5 * 8);
+        local_3a = local_8[uVar5].field_0006;
         /* ST_CALLSITE[0057B8C0]: CALL dword ptr [EDX + 0x8] */
         g_playSystem_00802A38->vfunc_8(0x106,nullptr,nullptr,(short)local_60,0);
         uVar5 = uVar5 + 1;
       } while ((int)uVar5 < (int)(uVar2 + 1));
     }
-    if (local_8 != 0) {
+    if (local_8 != nullptr) {
       FreeAndNull(&local_8);
     }
   }

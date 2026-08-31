@@ -1915,7 +1915,7 @@ void __fastcall st::fn_0055C180(CFsgsConnection *param_1)
     st::fn_00405E0C(param_1,lastError);
     return;
   }
-  param_1[8] = (CFsgsConnection)0x1;
+  param_1[8] = st::storage_bit_cast<CFsgsConnection>(static_cast<uint8_t>(0x1));
   return;
 }
 
@@ -2945,7 +2945,7 @@ LAB_0055e048:
                      uVar6 = ((int)local_8 - (int)puVar15) * (DAT_00803308 - (int)pbVar17) -
                              ((int)local_18 - (int)pbVar17) * (DAT_00803304 - (int)puVar15),
                      uVar12 = (int)uVar6 >> 0x1f, iVar5 = (uVar6 ^ uVar12) - uVar12, iVar11 < iVar5
-                     || ((iVar11 == iVar5 && (st::machine_word_boundary_cast<uint>((ushort *)local_c) == st::machine_word_boundary_cast<uint>(local_3c))))))) {
+                     || ((iVar11 == iVar5 && ((ushort *)local_c == local_3c)))))) {
               local_24 = local_c;
               local_18 = pbVar14;
               local_8 = local_10;
@@ -2980,7 +2980,7 @@ LAB_0055e048:
                        uVar6 = ((int)local_8 - (int)puVar15) * (DAT_00803308 - (int)pbVar17) -
                                ((int)local_18 - (int)pbVar17) * (DAT_00803304 - (int)puVar15),
                        uVar12 = (int)uVar6 >> 0x1f, iVar11 = (uVar6 ^ uVar12) - uVar12,
-                       iVar16 < iVar11 || ((iVar16 == iVar11 && (st::machine_word_boundary_cast<uint>((ushort *)local_c) == st::machine_word_boundary_cast<uint>(local_3c)))))))
+                       iVar16 < iVar11 || ((iVar16 == iVar11 && ((ushort *)local_c == local_3c))))))
               {
                 local_24 = local_c;
                 local_18 = pbVar14;

@@ -433,8 +433,8 @@ undefined4 * __cdecl st::fn_0067D880(int param_1,char *param_2)
       st::fn_006A5E40
                 (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_plr_d.cpp"),0xee);
     }
-    /* ST_CALLSITE[0067D8E6]: CALL 0x006f2d90; direct=006F2D90 Library::Ourlib::MFAOBJ::mfAObjLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D1D0; signature=__cdecl;pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D1D0;pointer:/cMf32;pointer:/char;/byte;/int */
-    local_8 = st::pointer_boundary_cast<AllocationRecord_0067D1D0 *>(st::fn_006F2D90((cMf32 *)param_1,param_2,1,0));
+    /* ST_CALLSITE[0067D8E6]: CALL 0x006f2d90; direct=006F2D90 Library::Ourlib::MFAOBJ::mfAObjLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D1D0; signature=__cdecl;pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D1D0;pointer:/cMf32;pointer:/char;/byte;/int [STUtilityFunctionApplier] heterogeneous_payload_consumer_view; target=006F2D90; signature=__cdecl;pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_0067D1D0;pointer:/cMf32;pointer:/char;/byte;/int */
+    local_8 = reinterpret_cast<AllocationRecord_0067D1D0 *>(st::fn_006F2D90((cMf32 *)param_1,param_2,1,0));
     if (local_8 != nullptr) {
       local_c = st::fn_00401686(local_8);
       st::fn_00402E05(reinterpret_cast<int *>(&local_8));
@@ -1165,7 +1165,7 @@ uint * __cdecl st::fn_0067E7E0(cMf32 *param_1,int param_2)
       g_currentExceptionFrame = local_a0.previous;
       return &local_8->flags;
     }
-    local_c = st::fn_006F2D90(param_1,pcVar5,0,1);
+    local_c = reinterpret_cast<ushort *>(st::fn_006F2D90(param_1,pcVar5,0,1));
     if (local_c != nullptr) {
       _Source = local_c + 3;
       pcVar16 = local_138;

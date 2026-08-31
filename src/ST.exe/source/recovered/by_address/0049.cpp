@@ -1614,7 +1614,7 @@ void * __cdecl st::fn_00495720(void)
   puVar1 = st::fn_006B04D0(0x2c);
   if (puVar1 != nullptr) {
     _DAT_007fb224 = st::machine_word_boundary_cast<undefined4>(st::fn_00401AA0(puVar1));
-    return _DAT_007fb224;
+    return st::pointer_boundary_cast<void *>(_DAT_007fb224);
   }
   _DAT_007fb224 = 0;
   return nullptr;
@@ -2206,7 +2206,7 @@ uint st::fn_00496A90(int param_1,int param_2,uint *param_3,undefined4 param_4,in
       }
       if ((piVar3[4] == param_5) &&
          (((uVar2 = uVar4, *piVar3 != param_1 || (piVar3[1] != param_2)) ||
-          (st::machine_word_boundary_cast<uint>((uint *)piVar3[2]) != st::machine_word_boundary_cast<uint>(param_3))))) {
+          ((uint *)piVar3[2] != param_3)))) {
         *param_6 = 1;
         pDVar5 = g_array_007FB270;
       }
@@ -2553,13 +2553,14 @@ undefined4 st::fn_00497370(int param_1,int param_2,uint param_3,uint param_4,voi
   dword dVar2;
   RecoveredRecord_0060CA20_1F95243D *pRVar3;
   int iVar3;
-  uint uVar4;
-  int iVar5;
-  uint *puVar6;
+  int uVar4_mg3;
+  int iVar4;
+  uint *puVar5;
+  int iVar6;
   int iVar7;
-  int iVar8;
-  uint uVar9;
-  int iVar10;
+  uint uVar8;
+  int iVar9;
+  uint uVar10;
   int *piVar11;
   uint *puVar12;
   uint *puVar13;
@@ -2611,38 +2612,38 @@ undefined4 st::fn_00497370(int param_1,int param_2,uint param_3,uint param_4,voi
       else {
         puVar13 = nullptr;
       }
-      uVar4 = puVar13[2];
-      if (uVar4 != param_3) {
+      uVar10 = puVar13[2];
+      if (uVar10 != param_3) {
         /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
-        _local_5c = CONCAT31(uStack_5b,(char)uVar4);
+        _local_5c = CONCAT31(uStack_5b,(char)uVar10);
         if (DAT_00808a8f == '\0') {
-          if ((char)uVar4 == (char)param_3) {
+          if ((char)uVar10 == (char)param_3) {
 LAB_004974ca:
-            iVar10 = 0;
+            iVar9 = 0;
           }
           else {
-            uVar4 = uVar4 & 0xff;
-            uVar9 = param_3 & 0xff;
-            bVar1 = g_playerRelationMatrix[uVar4][uVar9];
-            if ((bVar1 == 0) && (g_playerRelationMatrix[uVar9][uVar4] == 0)) {
-              iVar10 = -2;
+            uVar10 = uVar10 & 0xff;
+            uVar8 = param_3 & 0xff;
+            bVar1 = g_playerRelationMatrix[uVar10][uVar8];
+            if ((bVar1 == 0) && (g_playerRelationMatrix[uVar8][uVar10] == 0)) {
+              iVar9 = -2;
             }
-            else if ((bVar1 == 1) && (g_playerRelationMatrix[uVar9][uVar4] == 0)) {
-              iVar10 = -1;
+            else if ((bVar1 == 1) && (g_playerRelationMatrix[uVar8][uVar10] == 0)) {
+              iVar9 = -1;
             }
-            else if ((bVar1 == 0) && (g_playerRelationMatrix[uVar9][uVar4] == 1)) {
-              iVar10 = 1;
+            else if ((bVar1 == 0) && (g_playerRelationMatrix[uVar8][uVar10] == 1)) {
+              iVar9 = 1;
             }
             else {
-              if ((bVar1 != 1) || (g_playerRelationMatrix[uVar9][uVar4] != 1)) goto LAB_004974ca;
-              iVar10 = 2;
+              if ((bVar1 != 1) || (g_playerRelationMatrix[uVar8][uVar10] != 1)) goto LAB_004974ca;
+              iVar9 = 2;
             }
           }
-          bVar16 = iVar10 < 0;
+          bVar16 = iVar9 < 0;
         }
         else {
           bVar16 = g_bulkInitializedRecords_008087C7[param_3 & 0xff].field_0023 !=
-                   g_bulkInitializedRecords_008087C7[uVar4 & 0xff].field_0023;
+                   g_bulkInitializedRecords_008087C7[uVar10 & 0xff].field_0023;
         }
         if (bVar16) {
           aiStack_84[dVar2 * -7 + 4] = param_2 * 0xc9 + 100;
@@ -2660,10 +2661,10 @@ LAB_004974ca:
             pRVar3 = (RecoveredRecord_0060CA20_1F95243D *)puVar12[1];
             aiStack_84[dVar2 * -7 + 4] = 0x497531;
 
-            uVar4 = st::fn_00402DC4(pRVar3);
-            uVar4 = ((int)uVar4 < 0) - 1 & uVar4;
-            *puVar12 = uVar4;
-            local_40 = local_40 + uVar4;
+            uVar4_mg3 = st::fn_00402DC4(pRVar3);
+            uVar10 = (uVar4_mg3 < 0) - 1 & uVar4_mg3;
+            *puVar12 = uVar10;
+            local_40 = local_40 + uVar10;
             local_30 = local_30 + 1;
             puVar12 = puVar12 + 6;
             pDVar15 = g_array_007FB270;
@@ -2676,19 +2677,19 @@ LAB_004974ca:
   if (local_30 != 0) {
     aiStack_84[dVar2 * -7 + 4] = 0x497571;
 
-    iVar5 = st::fn_00402DC4(static_cast<RecoveredRecord_0060CA20_1F95243D *>(param_5));
-    iVar8 = local_30;
+    iVar4 = st::fn_00402DC4(static_cast<RecoveredRecord_0060CA20_1F95243D *>(param_5));
+    iVar7 = local_30;
     local_20 = local_30;
-    iVar10 = iVar5 / local_30;
-    if (iVar5 < local_40) {
-      iVar7 = 0;
+    iVar9 = iVar4 / local_30;
+    if (iVar4 < local_40) {
+      iVar6 = 0;
       piVar11 = local_3c;
       if (0 < local_30) {
         do {
-          *piVar11 = iVar7;
-          iVar7 = iVar7 + 1;
+          *piVar11 = iVar6;
+          iVar6 = iVar6 + 1;
           piVar11 = piVar11 + 1;
-        } while (iVar7 < local_30);
+        } while (iVar6 < local_30);
       }
       aiStack_84[dVar2 * -7 + 4] = local_30;
       aiStack_84[dVar2 * -7 + 3] = (int)local_3c;
@@ -2696,64 +2697,64 @@ LAB_004974ca:
       aiStack_84[dVar2 * -7 + 1] = 0x4975cf;
       st::fn_00402B67(aiStack_84[dVar2 * -7 + 2],(int *)aiStack_84[dVar2 * -7 + 3],
                          aiStack_84[dVar2 * -7 + 4]);
-      while (0 < iVar5) {
-        iVar7 = local_30 - iVar8;
-        if (iVar7 < local_30) {
-          piVar11 = reinterpret_cast<int *>((local_38 + iVar7 * 0x18 + 0x10));
-          iVar7 = local_30 - iVar7;
+      while (0 < iVar4) {
+        iVar6 = local_30 - iVar7;
+        if (iVar6 < local_30) {
+          piVar11 = reinterpret_cast<int *>((local_38 + iVar6 * 0x18 + 0x10));
+          iVar6 = local_30 - iVar6;
           do {
-            iVar8 = *piVar11;
-            if (iVar8 < iVar10) {
+            iVar7 = *piVar11;
+            if (iVar7 < iVar9) {
               *piVar11 = 0;
               local_20 = local_20 + -1;
             }
             else {
-              *piVar11 = iVar8 - iVar10;
-              iVar8 = iVar10;
+              *piVar11 = iVar7 - iVar9;
+              iVar7 = iVar9;
             }
-            local_40 = local_40 - iVar8;
-            iVar5 = iVar5 - iVar8;
+            local_40 = local_40 - iVar7;
+            iVar4 = iVar4 - iVar7;
             piVar11 = piVar11 + 6;
-            iVar7 = iVar7 + -1;
-            iVar8 = local_20;
-          } while (iVar7 != 0);
+            iVar6 = iVar6 + -1;
+            iVar7 = local_20;
+          } while (iVar6 != 0);
         }
-        if (((iVar5 < 1) || (iVar8 < 1)) || (iVar10 = iVar5 / iVar8, iVar10 == 0)) {
-          iVar5 = 0;
+        if (((iVar4 < 1) || (iVar7 < 1)) || (iVar9 = iVar4 / iVar7, iVar9 == 0)) {
+          iVar4 = 0;
         }
       }
     }
     else {
-      iVar5 = iVar5 - local_40;
+      iVar4 = iVar4 - local_40;
       if (0 < local_30) {
-        puVar6 = reinterpret_cast<uint *>((local_38 + 0x10));
-        iVar10 = local_30;
+        puVar5 = reinterpret_cast<uint *>((local_38 + 0x10));
+        iVar9 = local_30;
         do {
-          *puVar6 = 0;
-          puVar6 = puVar6 + 6;
-          iVar10 = iVar10 + -1;
-        } while (iVar10 != 0);
+          *puVar5 = 0;
+          puVar5 = puVar5 + 6;
+          iVar9 = iVar9 + -1;
+        } while (iVar9 != 0);
       }
     }
-    iVar10 = local_30;
+    iVar9 = local_30;
     aiStack_84[dVar2 * -7 + 4] = 0x497638;
 
-    iVar8 = st::fn_00402DC4(static_cast<RecoveredRecord_0060CA20_1F95243D *>(param_5));
-    aiStack_84[dVar2 * -7 + 4] = iVar8 - iVar5;
+    iVar7 = st::fn_00402DC4(static_cast<RecoveredRecord_0060CA20_1F95243D *>(param_5));
+    aiStack_84[dVar2 * -7 + 4] = iVar7 - iVar4;
     aiStack_84[dVar2 * -7 + 3] = 0x497642;
     st::fn_00402ABD(param_5,aiStack_84[dVar2 * -7 + 4]);
-    if (0 < iVar10) {
+    if (0 < iVar9) {
       piVar11 = reinterpret_cast<int *>((local_38 + 0x10));
       do {
         pRVar3 = (RecoveredRecord_0060CA20_1F95243D *)piVar11[1];
         aiStack_84[dVar2 * -7 + 4] = 0x497656;
 
-        iVar5 = st::fn_00402DC4(pRVar3);
-        if (iVar5 != *piVar11) {
+        iVar4 = st::fn_00402DC4(pRVar3);
+        if (iVar4 != *piVar11) {
           aiStack_84[dVar2 * -7 + 4] = 0x497661;
 
-          iVar5 = st::fn_00402DC4(pRVar3);
-          aiStack_84[dVar2 * -7 + 4] = iVar5 - *piVar11;
+          iVar4 = st::fn_00402DC4(pRVar3);
+          aiStack_84[dVar2 * -7 + 4] = iVar4 - *piVar11;
           aiStack_84[dVar2 * -7 + 3] = 0x49766b;
           st::fn_00402ABD(pRVar3,aiStack_84[dVar2 * -7 + 4]);
           aiStack_84[dVar2 * -7 + 4] = (int)pRVar3;
@@ -2763,14 +2764,14 @@ LAB_004974ca:
                              (RecoveredRecordView_00497110_CEDB446E *)aiStack_84[dVar2 * -7 + 4]);
         }
         piVar11 = piVar11 + 6;
-        iVar10 = iVar10 + -1;
-      } while (iVar10 != 0);
+        iVar9 = iVar9 + -1;
+      } while (iVar9 != 0);
     }
   }
   aiStack_84[dVar2 * -7 + 4] = 0x497686;
 
-  iVar10 = st::fn_00402DC4(static_cast<RecoveredRecord_0060CA20_1F95243D *>(param_5));
-  if (0 < iVar10) {
+  iVar9 = st::fn_00402DC4(static_cast<RecoveredRecord_0060CA20_1F95243D *>(param_5));
+  if (0 < iVar9) {
     local_28 = 1;
   }
   ExceptionList = local_14;
@@ -2972,7 +2973,7 @@ int st::fn_00497920(RecoveredRecord_STBoatC_0040AE40 *param_1,int param_2,int pa
      (((sVar4 < g_worldGrid.sizeY && (sVar3 = (short)param_4, -1 < sVar3)) &&
       ((sVar3 < g_worldGrid.sizeZ &&
        (this = STGridAt3D(g_worldGrid, sVar5, sVar4, sVar3).objects[0], this != nullptr)))))) {
-    if (((st::machine_word_boundary_cast<uint>(this[1].vtable) != st::machine_word_boundary_cast<uint>((STWorldObjectVTable *)param_1->field_0024)) ||
+    if (((this[1].vtable != (STWorldObjectVTable *)param_1->field_0024) ||
         (*(short *)&this[1].field_0xc != param_1->field_0030)) ||
        (*(int *)((int)&this[7].vtable + 1) == 1)) {
       if (this[6].field_0xb == '\x01') {

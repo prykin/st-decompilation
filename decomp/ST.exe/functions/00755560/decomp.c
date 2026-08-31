@@ -111,19 +111,15 @@ int FUN_00755560(RecoveredRecordView_00753C80_637B4E8C *param_1,ushort *param_2,
 
     iVar9 = FUN_00753c80(pRVar7,(STField<short>(iVar17,0x8) >> 1) + 4);
     if (iVar8 == iVar9) {
-      param_1 = (RecoveredRecordView_00753C80_637B4E8C *)
-
-                FUN_00757530((AnonShape_00757530_EEED7D69 *)pRVar7,0,
-                             (undefined4 *)pRVar7[1].field_0008);
+      param_1 = STPointerBoundaryCast<RecoveredRecordView_00753C80_637B4E8C *>(FUN_00757530((AnonShape_00757530_EEED7D69 *)pRVar7,0,
+                             (undefined4 *)pRVar7[1].field_0008));
       if (param_1 == nullptr) {
         return -2;
       }
     }
     else {
-      param_1 = (RecoveredRecordView_00753C80_637B4E8C *)
-
-                FUN_00757530((AnonShape_00757530_EEED7D69 *)pRVar7,0,
-                             (undefined4 *)(iVar9 + 0x10 + iVar17));
+      param_1 = STPointerBoundaryCast<RecoveredRecordView_00753C80_637B4E8C *>(FUN_00757530((AnonShape_00757530_EEED7D69 *)pRVar7,0,
+                             (undefined4 *)(iVar9 + 0x10 + iVar17)));
       if (param_1 == nullptr) {
         return -2;
       }
@@ -170,10 +166,8 @@ int FUN_00755560(RecoveredRecordView_00753C80_637B4E8C *param_1,ushort *param_2,
       *(int *)(&pAVar4[1].field_0xe + (int)pAVar4->field_001C * 8) =
            *(int *)(&pAVar4[1].field_0xe + (int)pAVar4->field_001C * 8) - iVar9;
     }
-    param_1 = (RecoveredRecordView_00753C80_637B4E8C *)
-
-              FUN_00757530((AnonShape_00757530_EEED7D69 *)pRVar7,1,
-                           *(undefined4 **)&pRVar7[1].field_0x4);
+    param_1 = STPointerBoundaryCast<RecoveredRecordView_00753C80_637B4E8C *>(FUN_00757530((AnonShape_00757530_EEED7D69 *)pRVar7,1,
+                           *(undefined4 **)&pRVar7[1].field_0x4));
     if (param_1 == nullptr) {
       return -2;
     }

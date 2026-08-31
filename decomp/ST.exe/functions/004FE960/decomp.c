@@ -12,7 +12,7 @@ void __thiscall CPanelTy::PaintInfoBoat(CPanelTy *this)
   CPanelTy *this_00;
   int iVar3;
   char *pcVar3;
-  uint uVar5;
+  int uVar5;
   BITMAPINFO *pBVar4;
   uint uVar6;
   int iVar8;

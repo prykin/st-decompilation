@@ -2321,7 +2321,7 @@ undefined4 __fastcall st::fn_004D9820(int *param_1)
                        ((this = g_worldGrid.cells
                                 [(int)sVar6 * (int)sVar4 + (int)sVar1 * (int)g_worldGrid.planeStride
                                  + (int)sVar8].objects[0], this != nullptr &&
-                        (st::machine_word_boundary_cast<uint>(this) != st::machine_word_boundary_cast<uint>((STWorldObject *)param_1))))))) &&
+                        (this != (STWorldObject *)param_1)))))) &&
                      /* ST_CALLSITE[004D9925]: CALL dword ptr [EDX + 0x2c] */
                      (iVar3 = this->GetObjectTypeId(), iVar3 == 0x3a)))) &&
 
@@ -2662,7 +2662,7 @@ undefined4 __fastcall st::fn_004DA9C0(undefined4 param_1)
         else {
           iVar3 = 0;
         }
-        if (((st::machine_word_boundary_cast<uint>(local_8) != st::machine_word_boundary_cast<uint>((int *)uVar8)) && (bVar1 = *local_c, bVar1 != 0xff)) && (local_c[-1] != 0))
+        if (((local_8 != (int *)uVar8) && (bVar1 = *local_c, bVar1 != 0xff)) && (local_c[-1] != 0))
         {
           /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */
           _local_2c = CONCAT31(uStack_2b,bVar1);
@@ -2717,7 +2717,7 @@ LAB_004dabff:
     local_8 = piVar11 + 0xd;
     local_c = nullptr;
     do {
-      if (((st::machine_word_boundary_cast<uint>(local_c) != st::machine_word_boundary_cast<uint>((byte *)uVar8)) && (g_playSystem_00802A38->field_00E4 == local_8[-8])) &&
+      if (((local_c != (byte *)uVar8) && (g_playSystem_00802A38->field_00E4 == local_8[-8])) &&
          (*local_8 == 0)) {
         if (uVar8 == DAT_0080874d) {
           *local_8 = 1;
@@ -2756,7 +2756,7 @@ LAB_004dad15:
             local_20 = reinterpret_cast<uint *>((local_1c + 5));
             pbVar9 = &g_bulkInitializedRecords_008087C7[0].field_0022;
             do {
-              if (((st::machine_word_boundary_cast<uint>(local_c) != st::machine_word_boundary_cast<uint>((byte *)uVar8)) && (local_14 != uVar8)) &&
+              if (((local_c != (byte *)uVar8) && (local_14 != uVar8)) &&
                  (((int)pbVar9 < 0x808a71 &&
                   (((g_playSystem_00802A38 == nullptr || (*pbVar9 < 8)) &&
                    (g_playSystem_00802A38->field_00E4 <= *local_20)))))) {
@@ -3070,7 +3070,6 @@ st::fn_004DBCC0(void *this,RecoveredRecordView_004DBCC0_6E09EFD2 *param_1,int pa
 
 // 004DBE00 FUN_004dbe00
 #line 4 "decomp/ST.exe/functions/004DBE00/decomp.c"
-/* WARNING: Unable to use type for symbol piVar1 */
 /* [STPrototypeApplier] Propagated parameter 1.
    Evidence: 004DBE00 -> 006E62D0 @ 004DBE3B | 004DBE00 -> 006E62D0 @ 004DBEC1 */
 
@@ -3086,7 +3085,7 @@ undefined4 __thiscall st::fn_004DBE00(void *this,RecoveredRecord_004DBE00_6A369F
   iVar4 = 0;
   piVar2 = (int *)((int)this + 0x4d0);
   do {
-    if (st::machine_word_boundary_cast<uint>((RecoveredRecord_004DBE00_6A369FCE *)*piVar2) == st::machine_word_boundary_cast<uint>(param_1)) {
+    if ((RecoveredRecord_004DBE00_6A369FCE *)*piVar2 == param_1) {
 
       iVar3 = st::fn_006E62D0
                         (g_playSystem_00802A38,
@@ -3128,7 +3127,6 @@ undefined4 __thiscall st::fn_004DBE00(void *this,RecoveredRecord_004DBE00_6A369F
 
 // 004DBF30 FUN_004dbf30
 #line 4 "decomp/ST.exe/functions/004DBF30/decomp.c"
-/* WARNING: Unable to use type for symbol piVar1 */
 /* [STPrototypeRepairApplier] Propagated parameter 1.
    Evidence: incoming stack slot is read as a uint before its address is passed as a distinct output
    lifetime */
@@ -4623,6 +4621,8 @@ int st::fn_004DE410(void *param_1,int param_2,int param_3)
 int __thiscall st::fn_004DE4F0(void *this,int param_1)
 
 {
+  int param_1_after_write;
+
   STAllPlayersC_GetBoatWeaponInfo_param_1Enum SVar1;
   int iVar2;
   int iVar3;
@@ -4666,7 +4666,7 @@ int __thiscall st::fn_004DE4F0(void *this,int param_1)
 
         st::fn_006ACC70(reinterpret_cast<DArrayTy *>(array_00),uVar4,&local_8);
         if (local_8 != nullptr) {
-          auto param_1_after_write = 0; /* compiler stack-slot lifetime split */
+          param_1_after_write = 0; /* compiler stack-slot lifetime split */
           if (local_8[8] == 0x14) {
             puVar7 = &local_24;
             piVar5 = &local_c;
@@ -4778,7 +4778,7 @@ undefined4 __fastcall st::fn_004DE820(RecoveredRecordView_004DE820_F2971E79 *par
   int iVar3;
   STGroupC *this;
   DArrayTy *array;
-  int iVar2;
+  STAllPlayersC *iVar2;
   STGameObjC *this_00;
   int local_EAX_212;
   int local_EAX_229;
@@ -4800,8 +4800,8 @@ undefined4 __fastcall st::fn_004DE820(RecoveredRecordView_004DE820_F2971E79 *par
       (array = st::pointer_boundary_cast<DArrayTy *>(st::fn_00402DB5(this)), array != nullptr)) && (array->count != 0)) {
     array->iteratorIndex = 0;
     /* ST_CALLSITE[004DE8A2]: CALL 0x006b1190; direct=006B1190 DArrayGetNext; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/STAllPlayersC; signature=__fastcall;pointer:/STAllPlayersC;pointer:/SubmarineTitans/Recovered/DArrayTy;pointer:/byte */
-    iVar2 = (int)st::fn_006B1190(array,reinterpret_cast<byte *>(&local_8));
-    while (-1 < iVar2) {
+    iVar2 = st::pointer_boundary_cast<STAllPlayersC *>(st::fn_006B1190(array,reinterpret_cast<byte *>(&local_8)));
+    while (-1 < (int)iVar2) {
       /* ST_CALLSITE[004DE8BF]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
       this_00 = st::fn_004028BA
                           (g_allPlayers_007FA174,param_1->field_0x24,(ushort)local_8,CASE_1);
@@ -4828,7 +4828,7 @@ undefined4 __fastcall st::fn_004DE820(RecoveredRecordView_004DE820_F2971E79 *par
         bVar1 = true;
       }
 
-      iVar2 = st::fn_006B1190(array,reinterpret_cast<byte *>(&local_8));
+      iVar2 = STPointerBoundaryCast<STAllPlayersC *>(st::fn_006B1190(array,reinterpret_cast<byte *>(&local_8)));
     }
     st::fn_006AE110(array);
     if (bVar1) {
@@ -5547,11 +5547,12 @@ int __thiscall st::fn_004DFC70(void *this,int *param_1)
   int *piVar1;
   STAllPlayersC_GetBoatWeaponInfo_param_1Enum SVar2;
   int iVar3;
+  int local_8_mg1;
   DArrayOf_STGameObjCPtr *array;
   DArrayTy *array_00;
   uint uVar4;
   uint *puVar5;
-  uint *puVar6;
+  int *piVar6;
   uint *puVar7;
   int iVar8;
   uint local_20;
@@ -5560,7 +5561,7 @@ int __thiscall st::fn_004DFC70(void *this,int *param_1)
   void *local_14;
   int local_10;
   int local_c;
-  uint local_8;
+  int local_8;
 
   piVar1 = param_1;
   uVar4 = 0;
@@ -5577,17 +5578,17 @@ int __thiscall st::fn_004DFC70(void *this,int *param_1)
         if (param_1 != nullptr) {
           if (param_1[8] == 0x14) {
             puVar7 = &local_18;
-            puVar6 = &local_8;
+            piVar6 = &local_8;
             puVar5 = &local_20;
             /* ST_CALLSITE[004DFCE1]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4 */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             SVar2 = (**(code **)(*param_1 + 0x2c))();
             /* ST_CALLSITE[004DFCE8]: CALL 0x00403995; direct=00403995 STAllPlayersC::GetBoatWeaponInfo */
-            iVar3 = st::fn_00403995(SVar2,puVar5,puVar6,puVar7);
+            iVar3 = st::fn_00403995(SVar2,puVar5,reinterpret_cast<undefined4 *>(piVar6),puVar7);
             if (iVar3 == 2) {
 LAB_004dfd49:
               local_10 = 1;
-              local_c = local_c + (int)(0x5dc / (longlong)(int)local_8);
+              local_c = local_c + (int)(0x5dc / (longlong)local_8);
             }
           }
           else if (((param_1[8] == 1000) &&
@@ -5627,10 +5628,10 @@ LAB_004dfd49:
 
           st::fn_006ACC70(array_00,uVar4,&local_1c);
 
-          local_8 = st::fn_00402AB8(local_1c);
-          local_8 = local_8 / 500;
+          local_8_mg1 = st::fn_00402AB8(local_1c);
+          local_8 = (uint)local_8_mg1 / 500;
           if (local_8 != 0) {
-            iVar3 = iVar3 + (int)(0x5dc / (ulonglong)(longlong)(int)local_8);
+            iVar3 = iVar3 + (int)(0x5dc / (ulonglong)(longlong)local_8);
           }
           array_00 = g_packedRecords_A62x8[(int)piVar1].field1967_0x9d2;
           uVar4 = uVar4 + 1;

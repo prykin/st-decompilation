@@ -82,7 +82,7 @@ void __fastcall AiFltClassTy::sub_00664960(AiFltClassTy *param_1)
   undefined2 extraout_var_15;
   int local_EAX_9418;
   STGameObjC *this_00;
-  uint uVar13;
+  int uVar13;
   int uVar12;
   int local_EAX_9844;
   AiFltClassTy_field_009BState AVar18;

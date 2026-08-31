@@ -17,7 +17,7 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
   uint *puVar6;
   BITMAPINFO *pBVar7;
   int iVar5;
-  uint uVar6;
+  int uVar6;
   int local_EAX_828;
   int local_EAX_861;
   int iVar12;

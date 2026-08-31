@@ -290,7 +290,7 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
         }
         if (g_allPlayers_007FA174 != nullptr) {
           /* ST_CALLSITE[005FB7DF]: CALL 0x00401294; direct=00401294 STAllPlayersC::RegisterContainer */
-          iVar13 = STAllPlayersC::RegisterContainer(g_allPlayers_007FA174,0xffff,this_00);
+          iVar13 = STAllPlayersC::RegisterContainer(0xffff,this_00);
           if (iVar13 != 0) {
             /* ST_CALLSITE[005FB7EA]: CALL 0x0040477d; direct=0040477D STContainerC::sub_005FC3E0 */
             sub_005FC3E0(this_00);
@@ -389,14 +389,13 @@ int __thiscall STContainerC::GetMessage(STContainerC *this,STMessage *message)
         }
       }
       thunk_FUN_005ef5f0((RecoveredRecord_005EF5F0_8C51B92F *)this_00);
-      /* ST_CALLSITE[005FBA62]: CALL 0x00401b0e; direct=00401B0E thunk_FUN_005eeff0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/STAllPlayersC; source view only; no Ghidra override */
       thunk_FUN_005eeff0(this_00,0);
       if (g_allPlayers_007FA174 == nullptr) {
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }
       /* ST_CALLSITE[005FBA7B]: CALL 0x00401294; direct=00401294 STAllPlayersC::RegisterContainer */
-      iVar13 = STAllPlayersC::RegisterContainer(g_allPlayers_007FA174,this_00->field_0032,this_00);
+      iVar13 = STAllPlayersC::RegisterContainer(this_00->field_0032,this_00);
       if (iVar13 == 0) {
         g_currentExceptionFrame = local_60.previous;
         return 0;

@@ -158,12 +158,12 @@ bool __thiscall TLOBaseTy::sub_004BEA70(TLOBaseTy *this,int *param_1)
   int local_EAX_8404;
   uint uVar15;
   byte *puVar16;
-  uint local_EAX_9086;
+  int local_EAX_9086;
   int local_EAX_9104;
   uint *puVar17;
   AnonPointee_TLOBaseTy_061B *pAVar18;
   int local_EAX_9757;
-  uint uVar17;
+  int uVar17;
   int local_EAX_10456;
   short sVar19;
   int iVar21;
@@ -1650,7 +1650,7 @@ switchD_004bef7c_caseD_52:
   case CASE_62:
 
     local_EAX_9086 = thunk_FUN_004e41c0((int)this->field_0024);
-    STField<uint>(param_1,0x1d) = local_EAX_9086;
+    STField<int>(param_1,0x1d) = local_EAX_9086;
 
     local_EAX_9104 = thunk_FUN_004e4180((int)this->field_0024);
     STField<int>(param_1,0x21) = local_EAX_9104;

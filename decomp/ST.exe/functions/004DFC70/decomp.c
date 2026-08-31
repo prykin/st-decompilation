@@ -7,11 +7,12 @@ int __thiscall FUN_004dfc70(void *this,int *param_1)
   int *piVar1;
   STAllPlayersC_GetBoatWeaponInfo_param_1Enum SVar2;
   int iVar3;
+  int local_8_mg1;
   DArrayOf_STGameObjCPtr *array;
   DArrayTy *array_00;
   uint uVar4;
   uint *puVar5;
-  uint *puVar6;
+  int *piVar6;
   uint *puVar7;
   int iVar8;
   uint local_20;
@@ -20,7 +21,7 @@ int __thiscall FUN_004dfc70(void *this,int *param_1)
   void *local_14;
   int local_10;
   int local_c;
-  uint local_8;
+  int local_8;
 
   piVar1 = param_1;
   uVar4 = 0;
@@ -37,17 +38,17 @@ int __thiscall FUN_004dfc70(void *this,int *param_1)
         if (param_1 != nullptr) {
           if (param_1[8] == 0x14) {
             puVar7 = &local_18;
-            puVar6 = &local_8;
+            piVar6 = &local_8;
             puVar5 = &local_20;
             /* ST_CALLSITE[004DFCE1]: CALL dword ptr [EAX + 0x2c]; [STIndirectCallsiteApplier] exact slot 0x2C; mode=structural-presentation; signature=__thiscall;/undefined4;pointer:/void;/undefined4;/undefined4;/undefined4 */
             /* ST_PSEUDO[raw_indirect_call]: expected typed vtable or function-table callback call with the machine-proven calling convention */
             SVar2 = (**(code **)(*param_1 + 0x2c))();
             /* ST_CALLSITE[004DFCE8]: CALL 0x00403995; direct=00403995 STAllPlayersC::GetBoatWeaponInfo */
-            iVar3 = STAllPlayersC::GetBoatWeaponInfo(SVar2,puVar5,puVar6,puVar7);
+            iVar3 = STAllPlayersC::GetBoatWeaponInfo(SVar2,puVar5,piVar6,puVar7);
             if (iVar3 == 2) {
 LAB_004dfd49:
               local_10 = 1;
-              local_c = local_c + (int)(0x5dc / (longlong)(int)local_8);
+              local_c = local_c + (int)(0x5dc / (longlong)local_8);
             }
           }
           else if (((param_1[8] == 1000) &&
@@ -87,10 +88,10 @@ LAB_004dfd49:
 
           DArrayGetElement(array_00,uVar4,&local_1c);
 
-          local_8 = thunk_FUN_004df910(local_1c);
-          local_8 = local_8 / 500;
+          local_8_mg1 = thunk_FUN_004df910(local_1c);
+          local_8 = (uint)local_8_mg1 / 500;
           if (local_8 != 0) {
-            iVar3 = iVar3 + (int)(0x5dc / (ulonglong)(longlong)(int)local_8);
+            iVar3 = iVar3 + (int)(0x5dc / (ulonglong)(longlong)local_8);
           }
           array_00 = g_packedRecords_A62x8[(int)piVar1].field1967_0x9d2;
           uVar4 = uVar4 + 1;
