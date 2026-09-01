@@ -31,6 +31,7 @@ MReportTy::PaintObjScore(MReportTy *this,int param_1,uint param_2,int param_3,in
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0);
   pMVar3 = local_c;
   if (errorCode == 0) {
@@ -39,6 +40,7 @@ MReportTy::PaintObjScore(MReportTy *this,int param_1,uint param_2,int param_3,in
       local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(cVar1));
       /* ST_CALLSITE[005BFF5C]: CALL dword ptr [0x0085bde8] */
       wsprintfA((LPSTR)&DAT_0080f33a,"%6d",param_1);
+
       ccFntTy::SetSurf(pMVar3->field_008B,(int)pMVar3->field_0073,0,param_3 + 8,param_4 + 5,0x36,
                        0x14);
       if (cVar1 == -1) {
@@ -47,12 +49,14 @@ MReportTy::PaintObjScore(MReportTy *this,int param_1,uint param_2,int param_3,in
       else {
         uVar4 = local_8 & 0xff;
       }
+
       ccFntTy::WrStr(pMVar3->field_008B,(char *)&DAT_0080f33a,-1,-1,uVar4);
     }
     cVar1 = DAT_0080c846;
     local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(DAT_0080c846));
     /* ST_CALLSITE[005BFFC5]: CALL dword ptr [0x0085bde8] */
     wsprintfA((LPSTR)&DAT_0080f33a,"%6d",param_2);
+
     ccFntTy::SetSurf(pMVar3->field_008B,(int)pMVar3->field_0073,0,param_3 + 0x4c,param_4 + 5,0x36,
                      0x14);
     if (cVar1 == -1) {
@@ -61,11 +65,13 @@ MReportTy::PaintObjScore(MReportTy *this,int param_1,uint param_2,int param_3,in
     else {
       uVar4 = local_8 & 0xff;
     }
+
     ccFntTy::WrStr(pMVar3->field_008B,(char *)&DAT_0080f33a,-1,-1,uVar4);
     g_currentExceptionFrame = local_50.previous;
     return;
   }
   g_currentExceptionFrame = local_50.previous;
+
   iVar5 = ReportDebugMessage("E:\\__titans\\Start\\rpt_obj.cpp",0x21c,0,errorCode,
                              "%s","MReportTy::PaintObjScore");
   if (iVar5 != 0) {

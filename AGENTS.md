@@ -197,6 +197,17 @@ Original binaries are local under ignored `bin/` and must not be committed.
   recursive node and heterogeneous siblings otherwise poison its rendering. A
   fresh decompile must reattach the database local to that same anchor before
   `applied` is reported; inseparable `Node *`/`Node **` groups remain conflicts.
+- An exact CALL-operand domain which cannot reattach to a persistent HighSymbol
+  may receive a source-only per-use view only when the complete generated call
+  family matches the complete machine anchor set by function, p-code sequence
+  address/time, resolved target, and operand. The value must be one bare local
+  under whole-value casts, or the exact zero element which shares that local's
+  storage root; nonzero indexing, members, dereferences, and arithmetic remain
+  review-only. If the accepted source has already separated the value into a
+  local whose declared type is the proven consumed domain, record the exact
+  view without adding a redundant cast. Numeric conversion across pointer or
+  floating storage must become a bit-preserving storage view, never a semantic
+  retype of the whole local.
 - A persistent method-local pointer may recover the exact auto-`this` type only
   when the function is `__thiscall`, its value traces to that unadjusted receiver
   through same-size neutral `COPY`/`CAST`/`INDIRECT`/unanimous `MULTIEQUAL`

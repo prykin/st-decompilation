@@ -2944,6 +2944,7 @@ void __thiscall st::fn_005C87C0(SettMapTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
     if ((DAT_008087b6 != 0) && (g_startSystem_0081176C->field_02F4 != nullptr)) {
@@ -3001,6 +3002,7 @@ void __thiscall st::fn_005C87C0(SettMapTy *this)
         } while ((int)uVar7 < (int)pDVar4->count);
       }
       if (-1 < (int)g_startSystem_0081176C->field_02EC) {
+
         st::fn_006B35D0(reinterpret_cast<int *>(g_ddxContext_008075A8),g_startSystem_0081176C->field_02EC);
       }
     }
@@ -3008,6 +3010,7 @@ void __thiscall st::fn_005C87C0(SettMapTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar5 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Start\\sett_obj.cpp"),0x4ac,0,errorCode,
                              st::mutable_c_string("%s"),"SettMapTy::PaintSC");
   if (iVar5 == 0) {

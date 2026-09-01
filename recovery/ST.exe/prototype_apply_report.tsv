@@ -41,6 +41,7 @@ function_address	target	status	detail
 0052AB40	parameter:0	disabled	apply flags are 0
 00538DB0	parameter:1	disabled	apply flags are 0
 0053DAF0	parameter:1	disabled	apply flags are 0
+00540890	parameter:4	conflict	A Local Var symbol with name local_8 already exists in namespace WrTextDDX
 0054CC20	parameter:5	disabled	apply flags are 0
 0054CF00	parameter:1	disabled	apply flags are 0
 0054E950	parameter:1	disabled	apply flags are 0
@@ -91,6 +92,7 @@ function_address	target	status	detail
 00692C10	parameter:2	disabled	apply flags are 0
 00695C10	parameter:4	disabled	apply flags are 0
 0069ECE0	parameter:2	disabled	apply flags are 0
+006B5110	parameter:0	conflict	A Local Var symbol with name local_8 already exists in namespace FUN_006b5110
 006B8F10	parameter:0	disabled	apply flags are 0
 006B9940	parameter:2	disabled	apply flags are 0
 006BA9E0	parameter:5	disabled	apply flags are 0
@@ -101,6 +103,7 @@ function_address	target	status	detail
 006C3570	parameter:0	disabled	apply flags are 0
 006C5210	parameter:0	disabled	apply flags are 0
 006C52E0	parameter:0	disabled	apply flags are 0
+006C6470	parameter:1	disabled	apply flags are 0
 006CE770	parameter:0	disabled	apply flags are 0
 006CE770	parameter:1	disabled	apply flags are 0
 006D26D0	parameter:1	disabled	apply flags are 0

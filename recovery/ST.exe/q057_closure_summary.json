@@ -1,0 +1,38 @@
+{
+  "errors": [],
+  "input_manifest_sha256": "f4d5ba156d5fcaa65aa2a0428699870f67122d45ee39c1d5651dae51e8e6c512",
+  "program_semantic_sha256": "03c7a704cf53b541b1a04f45b46defa235c3ddcbf83e6ad40348b38c6383ce64",
+  "representatives": [
+    "00548C40",
+    "00605B60",
+    "0064A970",
+    "00652810"
+  ],
+  "schema": "st-q057-closure-audit",
+  "schema_version": 1,
+  "source_manifest_sha256": "61783544f94bb833e902b34ef2b5c96d347db93e1dc34903319993af01ab6bdb",
+  "source_neutralization_counts": {
+    "incoming_parameter_slot_lifetime": 28,
+    "output_buffer_post_call_lifetime": 9,
+    "pointer_float_lifetime": 14,
+    "pointer_scalar_switch_lifetime": 4,
+    "unattachable_call_argument_lifetime": 244,
+    "void_value_consumption": 1
+  },
+  "statistics": {
+    "automatic_lifetime_proposals": 107,
+    "automatic_return_proposals": 0,
+    "closure_rows": 2154,
+    "compiler_errors": 0,
+    "compiler_value_domain_families": {},
+    "conflict": 0,
+    "machine_rows": 1854,
+    "neutralized": 547,
+    "passing_translation_units": 328,
+    "pending_automatic_lifetimes": 0,
+    "resolved": 239,
+    "review": 1368,
+    "translation_units": 328
+  },
+  "status": "passed"
+}

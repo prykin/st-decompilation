@@ -129,7 +129,7 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
           }
           puVar13 = this_00->field_0072;
 
-          st::fn_00710A90(this_00->field_006A,(int)puVar13,0,0,0,*(int *)(puVar13 + 2),
+          st::fn_00710A90(this_00->field_006A,st::machine_word_boundary_cast<int>(puVar13),0,0,0,*(int *)(puVar13 + 2),
                            *(int *)(puVar13 + 4));
 
           st::fn_007119C0(this_00->field_006A,reinterpret_cast<char *>(local_18),-1,-1,
@@ -186,7 +186,7 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
           }
           puVar13 = this_00->field_0076;
 
-          st::fn_00710A90(this_00->field_006A,(int)puVar13,0,0,0,*(int *)(puVar13 + 2),
+          st::fn_00710A90(this_00->field_006A,st::machine_word_boundary_cast<int>(puVar13),0,0,0,*(int *)(puVar13 + 2),
                            *(int *)(puVar13 + 4));
 
           st::fn_007119C0(this_00->field_006A,reinterpret_cast<char *>(local_40),-1,-1,
@@ -243,7 +243,7 @@ int __thiscall st::fn_0052BF00(MoneyTy *this,STMessage *message)
           }
           puVar13 = this_00->field_007A;
 
-          st::fn_00710A90(this_00->field_006A,(int)puVar13,0,0,0,*(int *)(puVar13 + 2),
+          st::fn_00710A90(this_00->field_006A,st::machine_word_boundary_cast<int>(puVar13),0,0,0,*(int *)(puVar13 + 2),
                            *(int *)(puVar13 + 4));
 
           st::fn_007119C0(this_00->field_006A,reinterpret_cast<char *>(local_48),-1,-1,

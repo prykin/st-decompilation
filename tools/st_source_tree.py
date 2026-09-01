@@ -10,6 +10,7 @@ the recovered Ghidra names are retained as provenance.
 from __future__ import annotations
 
 import argparse
+import csv
 import functools
 import hashlib
 import json
@@ -2667,6 +2668,9 @@ class SourceTreeGenerator:
         self.exact_existing_pointer_view_casts: Counter[str] = Counter()
         self.promoted_slot_boundary_casts: Counter[str] = Counter()
         self.machine_callsite_slots: dict[str, dict[str, int]] = {}
+        self.local_lifetime_call_views: dict[str, list[dict[str, str]]] = (
+            defaultdict(list)
+        )
         self.previous_readability_by_address: dict[str, dict[str, int]] = {}
         self.readability_by_address: dict[str, dict[str, int]] = {}
         self.receipt: dict[str, Any] = {}
@@ -2682,6 +2686,7 @@ class SourceTreeGenerator:
             self.corpus / "pseudocode_runtime.h",
             self.corpus / "call_relations.jsonl",
             self.receipt_path,
+            self.receipt_path.parent / "local_lifetime_proposals.tsv",
         ]
         missing = [str(path) for path in required if not path.is_file()]
         if missing:
@@ -2703,6 +2708,85 @@ class SourceTreeGenerator:
             "pseudocode_runtime.h",
         ):
             self.input_hashes[name] = sha256_file(self.corpus / name)
+        lifetime_path = self.receipt_path.parent / "local_lifetime_proposals.tsv"
+        self.input_hashes["recovery/local_lifetime_proposals.tsv"] = sha256_file(
+            lifetime_path
+        )
+        with lifetime_path.open(encoding="utf-8", newline="") as stream:
+            for row in csv.DictReader(stream, delimiter="\t"):
+                if (
+                    str(row.get("apply") or "") != "0"
+                    or str(row.get("anchor_kind") or "") != "call_argument"
+                    or "exact call-boundary type is proven" not in str(
+                        row.get("reason") or ""
+                    )
+                    or "no same-width transparent p-code path" not in str(
+                        row.get("reason") or ""
+                    )
+                ):
+                    continue
+                current = str(row.get("expected_current_type") or "")
+                proposed = str(row.get("proposed_type") or "")
+                def domain(specification: str) -> str:
+                    if specification.startswith("pointer:"):
+                        return "pointer"
+                    if specification in {"/float", "/double", "/float10"}:
+                        return "floating"
+                    if specification == "/void":
+                        return "void"
+                    return "scalar"
+                current_domain = domain(current)
+                proposed_domain = domain(proposed)
+                if current_domain == proposed_domain or not (
+                    {current_domain, proposed_domain} &
+                    {"pointer", "floating", "void"}
+                ):
+                    continue
+                address = str(row.get("function_address") or "").upper()
+                if not (
+                    re.fullmatch(r"[0-9A-F]{8}", address)
+                    and IDENTIFIER_RE.fullmatch(
+                        str(row.get("original_name") or "")
+                    )
+                ):
+                    continue
+                raw_anchors = str(row.get("supporting_anchors") or "")
+                expanded: list[dict[str, str]] = []
+                for token in raw_anchors.split(","):
+                    parts = token.strip().split(":", 5)
+                    if len(parts) != 6:
+                        continue
+                    anchor, raw_time, kind, raw_operand, target, resolved = parts
+                    if not (
+                        re.fullmatch(r"[0-9A-Fa-f]{8}", anchor)
+                        and raw_time.startswith("t")
+                        and raw_time[1:].isdigit()
+                        and kind == "call_argument"
+                        and raw_operand.isdigit()
+                        and re.fullmatch(r"[0-9A-Fa-f]{8}", target)
+                    ):
+                        continue
+                    item = dict(row)
+                    item.update({
+                        "anchor_address": anchor.upper(),
+                        "anchor_time": raw_time[1:],
+                        "anchor_kind": kind,
+                        "anchor_operand": raw_operand,
+                        "direct_target_address": target.upper(),
+                        "resolved_target_address": resolved.upper(),
+                    })
+                    expanded.append(item)
+                if not expanded:
+                    anchor = str(row.get("anchor_address") or "").upper()
+                    target = str(row.get("direct_target_address") or "").upper()
+                    if not (
+                        re.fullmatch(r"[0-9A-F]{8}", anchor)
+                        and re.fullmatch(r"[0-9A-F]{8}", target)
+                        and str(row.get("anchor_operand") or "").isdigit()
+                    ):
+                        continue
+                    expanded.append(dict(row))
+                self.local_lifetime_call_views[address].extend(expanded)
         self.functions = read_json(self.corpus / "functions.json")
         self.function_by_address = {
             function["address"].upper(): function for function in self.functions
@@ -3883,6 +3967,9 @@ class SourceTreeGenerator:
             address, function, transformed
         )
         transformed = self._repair_scalarized_record_indices(
+            address, function, transformed
+        )
+        transformed = self._repair_exact_machine_lifetime_call_views(
             address, function, transformed
         )
         transformed = self._repair_exact_pointer_boundaries(
@@ -7184,6 +7271,213 @@ class SourceTreeGenerator:
             return body
         body = body[:opening + 1] + "\n" + "".join(declarations) + body[opening + 1:]
         self.stats["opaque_decompiler_storage_materializations"] += len(names)
+        return body
+
+    @staticmethod
+    def _boundary_local_view(expression: str) -> tuple[str, str] | None:
+        """Return the exact local root and value under whole-value casts.
+
+        The local-lifetime ledger proves a machine call operand, not arbitrary
+        source arithmetic.  Consequently this helper accepts only a bare local
+        optionally wrapped in redundant parentheses, an ordinary C-style cast,
+        or one of the generator's value-preserving boundary helpers.  The sole
+        indexed form is ``local[0]``: in C that is the exact same storage root,
+        and Ghidra commonly emits it after merging one machine word into a
+        temporary array.  Nonzero indexing, member access, dereference,
+        arithmetic, and calls are deliberately rejected because the proposal
+        carries no source-level byte offset for them.
+        """
+        current = expression.strip()
+        for _ in range(8):
+            if IDENTIFIER_RE.fullmatch(current):
+                return current, current
+            first_element = re.fullmatch(
+                r"([A-Za-z_][A-Za-z0-9_]*)\s*\[\s*0\s*\]", current
+            )
+            if first_element is not None:
+                return first_element.group(1), current
+            if current.startswith("("):
+                closing = SourceTreeGenerator._matching_delimiter(
+                    current, 0, "(", ")"
+                )
+                if closing == len(current) - 1:
+                    current = current[1:closing].strip()
+                    continue
+                cast = re.match(
+                    r"^\(\s*(?:const\s+|volatile\s+)*"
+                    r"[A-Za-z_][A-Za-z0-9_:]*(?:\s*\*+)?\s*\)\s*(.+)$",
+                    current,
+                    re.DOTALL,
+                )
+                if cast is not None:
+                    current = cast.group(1).strip()
+                    continue
+            helper = re.match(
+                r"^(?:st::(?:pointer_boundary_cast|machine_word_boundary_cast|"
+                r"storage_bit_cast)|reinterpret_cast|static_cast)\s*<[^<>]+>\s*\(",
+                current,
+            )
+            if helper is not None:
+                opening = current.find("(", helper.start())
+                parsed = call_argument_spans(
+                    code_mask(current), opening, current
+                )
+                if (parsed is not None and len(parsed[0]) == 1 and
+                        not current[parsed[1] + 1:].strip()):
+                    start, end = parsed[0][0]
+                    current = current[start:end].strip()
+                    continue
+            return None
+        return None
+
+    @staticmethod
+    def _bare_boundary_identifier(expression: str) -> str | None:
+        """Compatibility wrapper for callers interested only in the root."""
+        view = SourceTreeGenerator._boundary_local_view(expression)
+        return None if view is None else view[0]
+
+    def _proposal_display_type(self, path: str) -> str:
+        """Render one proposal datatype path without creating semantic facts."""
+        assert self.type_emitter is not None
+        pointers = 0
+        current = path
+        while current.startswith("pointer:"):
+            pointers += 1
+            current = current[len("pointer:"):]
+        display = self.type_emitter.type_name(current)
+        return display + " *" * pointers
+
+    def _repair_exact_machine_lifetime_call_views(
+        self,
+        address: str,
+        function: Mapping[str, Any],
+        body: str,
+    ) -> str:
+        """Expose exact unpersistable call-argument lifetimes per use.
+
+        ``STLocalLifetimeAnalyzer`` can prove the type consumed by one CALL
+        operand even when Ghidra cannot attach a distinct HighSymbol to that
+        SSA lifetime.  This source-only view is allowed only when the complete
+        address-stable proposal family and the complete generated call family
+        agree.  It never types a whole local and never infers a semantic class.
+        """
+        rows = self.local_lifetime_call_views.get(address, ())
+        if not rows:
+            return body
+
+        grouped: dict[tuple[str, int, str], list[dict[str, str]]] = defaultdict(list)
+        for row in rows:
+            grouped[(
+                str(row["direct_target_address"]).upper(),
+                int(row["anchor_operand"]),
+                str(row["proposed_type"]),
+            )].append(row)
+
+        masked = code_mask(body)
+        declared_types = self._declared_types(function, body)
+        edits: list[tuple[int, int, str, str]] = []
+        for (target, operand, proposed), family in sorted(grouped.items()):
+            anchors = {
+                f"{str(row['anchor_address']).upper()}:t{row['anchor_time']}"
+                for row in family
+            }
+            names = {str(row["original_name"]) for row in family}
+            current_types = {str(row["expected_current_type"]) for row in family}
+            current_displays = {
+                re.sub(r"\s+", "", self._proposal_display_type(value))
+                for value in current_types
+            }
+            exact_candidates: list[tuple[int, int, str, str, bool]] = []
+            typed_candidates: list[tuple[int, int, str, str, bool]] = []
+            proposed_candidates: list[tuple[int, int, str, str, bool]] = []
+            proposed_display = re.sub(
+                r"\s+", "", self._proposal_display_type(proposed)
+            )
+            call_pattern = re.compile(rf"\bst::fn_{re.escape(target)}\s*\(")
+            for match in call_pattern.finditer(masked):
+                opening = masked.find("(", match.start(), match.end())
+                parsed = call_argument_spans(masked, opening, body)
+                if parsed is None or operand >= len(parsed[0]):
+                    continue
+                start, end = parsed[0][operand]
+                view = self._boundary_local_view(body[start:end])
+                if view is None:
+                    continue
+                name, value = view
+                declared = re.sub(
+                    r"\s+", "", declared_types.get(name, "")
+                )
+                if name in names:
+                    exact_candidates.append(
+                        (start, end, name, value, declared == proposed_display)
+                    )
+                elif declared in current_displays:
+                    typed_candidates.append(
+                        (start, end, name, value, declared == proposed_display)
+                    )
+                elif declared == proposed_display:
+                    # The accepted decompile may already have separated the
+                    # post-definition lifetime into a correctly typed source
+                    # local even though the corresponding HighSymbol still
+                    # carries the entry domain.  A complete closed call family
+                    # is sufficient to record that exact source view; do not
+                    # add a redundant cast or mutate the persistent local.
+                    proposed_candidates.append(
+                        (start, end, name, value, True)
+                    )
+
+            candidates = (
+                exact_candidates or typed_candidates or proposed_candidates
+            )
+
+            # Source order is not machine identity.  Accept only a closed set:
+            # every unique p-code CALL anchor has exactly one corresponding
+            # generated call argument, and there are no extra candidates.
+            if len(candidates) != len(anchors) or not candidates:
+                continue
+            display = self._proposal_display_type(proposed)
+            proposed_pointer = proposed.startswith("pointer:")
+            floating_view = (
+                proposed in {"/float", "/double", "/float10"} or
+                any(value in {"/float", "/double", "/float10"}
+                    for value in current_types)
+            )
+            replacements: list[tuple[int, int, str]] = []
+            for start, end, name, value, already_proposed in candidates:
+                if already_proposed:
+                    replacement = body[start:end]
+                elif proposed_pointer:
+                    replacement = f"st::storage_bit_cast<{display}>({value})"
+                elif floating_view:
+                    replacement = f"st::storage_bit_cast<{display}>({value})"
+                else:
+                    replacement = (
+                        f"st::machine_word_boundary_cast<{display}>({value})"
+                    )
+                replacements.append((start, end, replacement))
+            detail = (
+                f"anchors={','.join(sorted(anchors))}; target={target}; "
+                f"operand={operand}; locals={','.join(sorted(names))}; "
+                f"transition={','.join(sorted(current_types))} -> {proposed}"
+            )
+            for start, end, replacement in replacements:
+                edits.append((start, end, replacement, detail))
+
+        claimed: list[tuple[int, int]] = []
+        for start, end, _replacement, _detail in sorted(edits):
+            if any(start < prior_end and prior_start < end
+                   for prior_start, prior_end in claimed):
+                raise GenerationError(
+                    f"{address}: overlapping exact machine-lifetime call views"
+                )
+            claimed.append((start, end))
+        for start, end, replacement, detail in sorted(edits, reverse=True):
+            if body[start:end] != replacement:
+                body = body[:start] + replacement + body[end:]
+            self.issues.append(Issue(
+                "exact_machine_lifetime_call_view", detail, address
+            ))
+        self.stats["exact_machine_lifetime_call_views"] += len(edits)
         return body
 
     def _repair_exact_pointer_boundaries(

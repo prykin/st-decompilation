@@ -1341,7 +1341,7 @@ void st::fn_006D1610(undefined8 *param_1,undefined8 *param_2,RecoveredSourceFami
   RecoveredRecord_006BFE70_3123BCE8 *destination;
 
   if (param_1 <= param_2) {
-    st::fn_006CEA60(reinterpret_cast<byte *>(param_1),(int)param_3,reinterpret_cast<byte *>(param_2),(int)param_3,param_4,param_5);
+    st::fn_006CEA60(reinterpret_cast<byte *>(param_1),st::machine_word_boundary_cast<int>(param_3),reinterpret_cast<byte *>(param_2),st::machine_word_boundary_cast<int>(param_3),param_4,param_5);
     return;
   }
   iVar1 = (param_5 + -1) * (int)param_3;
@@ -4275,14 +4275,14 @@ undefined4 __thiscall st::fn_006D5260(void *this,undefined4 *param_1)
   pAVar2 = (AnonShape_00749A79_05F12707 *)param_1[0x11];
   if (((uint)param_1[0x10] < 0x59) ||
 
-     (iVar5 = st::fn_00749A5E((int)pAVar2), iVar5 == 0)) {
+     (iVar5 = st::fn_00749A5E(st::machine_word_boundary_cast<int>(pAVar2)), iVar5 == 0)) {
     local_8 = nullptr;
   }
   else {
     local_8 = (undefined4 *)0x1;
     if ((pAVar1 != nullptr) &&
 
-       (iVar5 = st::fn_00749A5E((int)pAVar1), iVar5 != 0)) {
+       (iVar5 = st::fn_00749A5E(st::machine_word_boundary_cast<int>(pAVar1)), iVar5 != 0)) {
       iVar5 = *(int *)&pAVar1[1].field_0xc;
       if ((*(int *)&pAVar2[1].field_0xc == iVar5) ||
          ((*(int *)&pAVar2[1].field_0xc == 0 && (iVar5 == 1 << (pAVar2->field_0x3e & 0x1f))))) {
@@ -4578,7 +4578,7 @@ void st::fn_006D57D0(int param_1)
 undefined4 * __thiscall st::fn_006D57F0(void *this,byte param_1)
 
 {
-  st::fn_007485C5((int)this);
+  st::fn_007485C5(st::machine_word_boundary_cast<int>(this));
   if ((param_1 & 1) != 0) {
     st::fn_0072E2B0(static_cast<HoloTy *>(this));
   }
@@ -4601,7 +4601,7 @@ int st::fn_006D5820(AnonShape_006D5820_330472AB *param_1,undefined4 *param_2)
   st::external_00000018(lpCriticalSection);
   iVar1 = param_1->field_0048;
   if (STField<int>(iVar1,0x30C) == 0) {
-    iVar2 = st::fn_0074862E((int)param_1,param_2);
+    iVar2 = st::fn_0074862E(st::machine_word_boundary_cast<int>(param_1),param_2);
     /* ST_CALLSITE[006D584C]: CALL dword ptr [0x0085bb90] */
     st::external_00000019(lpCriticalSection);
     return iVar2;
@@ -4881,7 +4881,7 @@ void __fastcall st::fn_006D5DB0(undefined4 *param_1)
     (**(code **)(*piVar1 + 8))(piVar1);
     param_1[0x19] = 0;
   }
-  st::fn_00749091((int)param_1);
+  st::fn_00749091(st::machine_word_boundary_cast<int>(param_1));
   return;
 }
 
@@ -4943,7 +4943,7 @@ int st::fn_006D5E50(int param_1,undefined4 *param_2,undefined4 *param_3)
   if (-1 < iVar1) {
 
     iVar1 = st::fn_00749106
-                      ((AnonShape_00749106_79800343 *)param_1,(LPCRITICAL_SECTION)&local_14,param_3);
+                      (st::storage_bit_cast<AnonShape_00749106_79800343 *>(param_1),(LPCRITICAL_SECTION)&local_14,param_3);
   }
   /* ST_CALLSITE[006D5EB6]: CALL dword ptr [0x0085bb90] */
   st::external_00000019(lpCriticalSection);
@@ -5757,7 +5757,7 @@ undefined4 __thiscall st::fn_006D71D0(void *this,int param_1)
     }
     else {
 
-      st::fn_0074CDC5(this_00,0,(int)this,st::machine_word_boundary_cast<undefined4>(&local_8),st::pointer_boundary_cast<char *>("Input"));
+      st::fn_0074CDC5(this_00,0,st::machine_word_boundary_cast<int>(this),st::machine_word_boundary_cast<undefined4>(&local_8),st::pointer_boundary_cast<char *>("Input"));
       this_00->field_0000 = reinterpret_cast<VTable_007A1950 *>(&st_global_0079DED8);
       this_00->field_000C = st::machine_word_boundary_cast<undefined4>(&st_global_0079DE90);
       this_00->field_0010 = st::machine_word_boundary_cast<undefined4>(&st_global_0079DE7C);
@@ -5778,7 +5778,7 @@ undefined4 __thiscall st::fn_006D71D0(void *this,int param_1)
       }
       else {
         pRVar1 = st::fn_0074CFC0
-                           (pRVar1,0,(int)this,st::machine_word_boundary_cast<undefined4>(&local_8),st::pointer_boundary_cast<char *>("Output"));
+                           (pRVar1,0,st::machine_word_boundary_cast<int>(this),st::machine_word_boundary_cast<undefined4>(&local_8),st::pointer_boundary_cast<char *>("Output"));
       }
       STField<RecoveredClass_0074CFC0 *>(this,0x90) = pRVar1;
       if ((local_8 < 0) || (pRVar1 == nullptr)) {
@@ -5844,7 +5844,7 @@ int st::fn_006D7330(RecoveredRecordView_0074CEB2_37336361 *param_1,int *param_2)
 undefined4 * __thiscall st::fn_006D7350(void *this,byte param_1)
 
 {
-  st::fn_007485C5((int)this);
+  st::fn_007485C5(st::machine_word_boundary_cast<int>(this));
   if ((param_1 & 1) != 0) {
     st::fn_0072E2B0(static_cast<HoloTy *>(this));
   }

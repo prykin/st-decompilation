@@ -2207,9 +2207,9 @@ BOOL __cdecl st::fn_006A5620(int param_1)
   if (iVar1 == 0) {
     return 0;
   }
-  uVar2 = st::fn_00731AE0((int)lpMem);
+  uVar2 = st::fn_00731AE0(st::machine_word_boundary_cast<int>(lpMem));
   if (uVar2 != 0) {
-    BVar3 = st::fn_00731B40(uVar2,(int)lpMem);
+    BVar3 = st::fn_00731B40(uVar2,st::machine_word_boundary_cast<int>(lpMem));
     return BVar3;
   }
   if ((DAT_00857154 & 0x8000) != 0) {

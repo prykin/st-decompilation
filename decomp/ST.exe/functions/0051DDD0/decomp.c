@@ -300,7 +300,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
                      (RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_01DC,0,0x21,iVar9,0x19c
                      ,0x117 - (uint)(ushort)this_00->field_01AF);
           Library::DKW::WGR::FUN_006b5110
-                    ((int)this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,
+                    ((int *)this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,
                      (BITMAPINFO *)this_00->field_0218,0,0,
                      (uint)(ushort)this_00->field_01B1 * this_00->field_01C3,0x19c,
                      0x117 - (uint)(ushort)this_00->field_01AF,0xff);
@@ -379,7 +379,7 @@ int __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,STMessage *message)
           } while ((int)uVar18 < (int)(uVar20 + STField<int>(local_10,0x1e0)));
         }
         Library::DKW::WGR::FUN_006b5110
-                  ((int)this_00->field_0068,0,0x21,0x16,(BITMAPINFO *)this_00->field_0218,0,0,0,
+                  ((int *)this_00->field_0068,0,0x21,0x16,(BITMAPINFO *)this_00->field_0218,0,0,0,
                    0x19c,0x118,0xff);
         g_currentExceptionFrame = local_84.previous;
         return 0;

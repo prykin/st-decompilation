@@ -609,7 +609,7 @@ st::fn_004EE350
   if (iVar4 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40((int)errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\behpanel.cpp"),0xc5);
+  st::fn_006A5E40(st::machine_word_boundary_cast<int>(errorCode),0,st::mutable_c_string("E:\\__titans\\Andrey\\behpanel.cpp"),0xc5);
   return;
 }
 

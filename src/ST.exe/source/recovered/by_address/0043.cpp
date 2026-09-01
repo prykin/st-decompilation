@@ -211,7 +211,7 @@ short st::fn_00435B90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3
   int * param_4_after_write = nullptr; /* compiler stack-slot lifetime split */
   if (0 < (int)dVar8) {
     do {
-      st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+      st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
       if ((short)param_1 != -1) {
         local_10 = param_1;
         local_c = local_c + 1;
@@ -236,7 +236,7 @@ short st::fn_00435B90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3
         return 0;
       }
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[00436A3F]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -260,7 +260,7 @@ short st::fn_00435B90(uint param_1,DArrayTy *param_2,Global_sub_00435B90_param_3
         (dVar6 = ((STSprGameObjC *)this)->slot_2C(), dVar6 == 0x5f)) &&
        (param_4_after_write = nullptr, 0 < (int)dVar8)) {
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[004365CD]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -312,7 +312,7 @@ LAB_004366b0:
           dVar6 = ((STSprGameObjC *)this)->slot_2C();
           if ((dVar6 == 0x33) && (param_4_after_write = nullptr, 0 < (int)dVar8)) {
             do {
-              st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+              st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
               if ((ushort)param_1 != 0xffff) {
                 /* ST_CALLSITE[004367A3]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -333,7 +333,7 @@ LAB_004366b0:
               (dVar6 = ((STSprGameObjC *)this)->slot_2C(), dVar6 == 0x6c)) &&
              (param_4_after_write = nullptr, 0 < (int)dVar8)) {
             do {
-              st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+              st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
               if ((ushort)param_1 != 0xffff) {
                 /* ST_CALLSITE[00436816]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -358,7 +358,7 @@ LAB_004366b0:
                (dVar6 = ((STSprGameObjC *)this)->slot_2C(), dVar6 == 0x5e)))) &&
              (param_4_after_write = nullptr, 0 < (int)dVar8)) {
             do {
-              st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+              st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
               if ((ushort)param_1 != 0xffff) {
                 /* ST_CALLSITE[004368A1]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
                 /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -383,7 +383,7 @@ LAB_004366b0:
       param_4_after_write = nullptr;
       if (0 < (int)dVar8) {
         do {
-          st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+          st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
           if ((ushort)param_1 != 0xffff) {
             /* ST_CALLSITE[004366FC]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -410,7 +410,7 @@ LAB_004366b0:
     if (dVar6 == 0x6c) {
       if (0 < (int)dVar8) {
         do {
-          st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+          st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
           if ((ushort)param_1 != 0xffff) {
             /* ST_CALLSITE[004369B5]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
             /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -433,7 +433,7 @@ LAB_004366b0:
     }
     else if (0 < (int)dVar8) {
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[00436958]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -455,7 +455,7 @@ switchD_00435c5c_caseD_1:
     param_4_after_write = nullptr;
     if (0 < (int)dVar8) {
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[00435C93]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -479,7 +479,7 @@ switchD_00435c5c_caseD_1:
     param_4_after_write = nullptr;
     if (0 < (int)dVar8) {
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[00435D8A]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -504,7 +504,7 @@ switchD_00435c5c_caseD_1:
     param_4_after_write = nullptr;
     if (0 < (int)dVar8) {
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[00435E13]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -527,7 +527,7 @@ switchD_00435c5c_caseD_1:
     param_4_after_write = nullptr;
     if (0 < (int)dVar8) {
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[00435E90]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -547,7 +547,7 @@ switchD_00435c5c_caseD_1:
     param_4_after_write = nullptr;
     if (0 < (int)dVar8) {
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[00435D08]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -570,7 +570,7 @@ switchD_00435c5c_caseD_1:
     param_4_after_write = nullptr;
     if (0 < (int)dVar8) {
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[00436192]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -596,7 +596,7 @@ switchD_00435c5c_caseD_1:
     param_4_after_write = nullptr;
     if (0 < (int)dVar8) {
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[00436212]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -616,7 +616,7 @@ switchD_00435c5c_caseD_1:
     param_4_after_write = nullptr;
     if (0 < (int)dVar8) {
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[0043609B]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -639,7 +639,7 @@ switchD_00435c5c_caseD_1:
     param_4_after_write = nullptr;
     if (0 < (int)dVar8) {
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[00436026]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -658,7 +658,7 @@ switchD_00435c5c_caseD_1:
   case CASE_D:
     if ((this != nullptr) && (param_4_after_write = nullptr, 0 < (int)dVar8)) {
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[00436421]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -683,7 +683,7 @@ switchD_00435c5c_caseD_1:
     param_4_after_write = nullptr;
     if (0 < (int)dVar8) {
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[0043649A]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -708,7 +708,7 @@ switchD_00435c5c_caseD_1:
     param_4_after_write = nullptr;
     if (0 < (int)dVar8) {
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[00435FA0]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -731,7 +731,7 @@ switchD_00435c5c_caseD_1:
     param_4_after_write = nullptr;
     if (0 < (int)dVar8) {
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[00436298]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -754,7 +754,7 @@ switchD_00435c5c_caseD_1:
     param_4_after_write = nullptr;
     if (0 < (int)dVar8) {
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[00436315]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -777,7 +777,7 @@ switchD_00435c5c_caseD_1:
     param_4_after_write = nullptr;
     if (0 < (int)dVar8) {
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[00436397]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -802,7 +802,7 @@ switchD_00435c5c_caseD_1:
     param_4_after_write = nullptr;
     if (0 < (int)dVar8) {
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[00436517]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -827,7 +827,7 @@ switchD_00435c5c_caseD_1:
     param_4_after_write = nullptr;
     if (0 < (int)dVar8) {
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[00436110]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
@@ -850,7 +850,7 @@ switchD_00435c5c_caseD_1:
     param_4_after_write = nullptr;
     if (0 < (int)dVar8) {
       do {
-        st::fn_006ACC70(param_2,(uint)param_4_after_write,&param_1);
+        st::fn_006ACC70(param_2,st::machine_word_boundary_cast<uint>(param_4_after_write),&param_1);
         if ((ushort)param_1 != 0xffff) {
           /* ST_CALLSITE[00435F16]: CALL 0x004028ba; direct=004028BA STAllPlayersC::GetObjPtr */
           /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */

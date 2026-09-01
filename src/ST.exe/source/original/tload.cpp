@@ -776,7 +776,7 @@ short * __cdecl st::fn_0042A290(cMf32 *param_1,char *text)
   iVar3 = st::fn_0072D7F0(local_74.jumpBuffer,0);
   if (iVar3 == 0) {
     pRVar3 = reinterpret_cast<RecoveredRecordView_005751F0_4081B804 *>(st::fn_006EF640
-                       ((int)param_1,text,g_cMf32_00806760,g_cMf32_00806760,st::function_address_boundary_cast<undefined *>(st::fn_00428A10)));
+                       (st::machine_word_boundary_cast<int>(param_1),text,g_cMf32_00806760,g_cMf32_00806760,st::function_address_boundary_cast<undefined *>(st::fn_00428A10)));
     local_1c = pRVar3;
     if (g_cLoading_00802A58 != nullptr) {
       iVar6 = DAT_007f4e00;

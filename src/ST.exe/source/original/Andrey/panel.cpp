@@ -443,7 +443,7 @@ LAB_00538a14:
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40((int)errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\panel.cpp"),0xb2);
+    st::fn_006A5E40(st::machine_word_boundary_cast<int>(errorCode),0,st::mutable_c_string("E:\\__titans\\Andrey\\panel.cpp"),0xb2);
   }
   return;
 }
@@ -609,7 +609,7 @@ LAB_00538de2:
     iVar3 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\panel.cpp"),0xdf,0,(int)errorCode,
                                st::mutable_c_string("%s"),"PanelTy::PaintIBut");
     if (iVar3 == 0) {
-      st::fn_006A5E40((int)errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\panel.cpp"),0xdf);
+      st::fn_006A5E40(st::machine_word_boundary_cast<int>(errorCode),0,st::mutable_c_string("E:\\__titans\\Andrey\\panel.cpp"),0xdf);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -625,7 +625,7 @@ LAB_00538de2:
   text = st::pointer_boundary_cast<char *>(st::fn_006F2C00(param_2,1,iVar3));
   /* ST_CALLSITE[00538E70]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/int;/SubmarineTitans/Recovered/Enums/Global_mfRLoad_param_2Enum;pointer:/char;/uint;/byte;/int;/int;pointer:/undefined4 */
   pRVar4 = st::pointer_boundary_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(st::fn_00709AF0
-                     (PTR_00806794,CASE_1,text,uVar5,bVar6,iVar7,(int)puVar8,puVar9));
+                     (PTR_00806794,CASE_1,text,uVar5,bVar6,iVar7,st::machine_word_boundary_cast<int>(puVar8),puVar9));
   uVar5 = local_c;
   /* ST_CALLSITE[00538E84]: CALL 0x00403229; direct=00403229 DibPut */
   st::fn_00403229((RecoveredSourceFamily_dibcopy *)pPVar2->field_0068,local_8,local_c,'\x01',pRVar4);

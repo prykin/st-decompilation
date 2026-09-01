@@ -57,7 +57,7 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
   RecoveredRecordView_006B84D0_87AF9D9B *local_18;
   char local_11;
   uint local_10;
-  RecoveredRecord_MReportTy_005BD4B0 *local_c;
+  int local_c;
   UINT local_8;
   size_t sVar18;
 
@@ -224,9 +224,10 @@ LAB_005bf156:
     /* ST_CALLSITE[005BE716]: CALL 0x00403229; direct=00403229 DibPut */
     DibPut((RecoveredSourceFamily_dibcopy *)this_00->field_0073,0x2e,1,'\x06',
            (RecoveredRecordView_006B84D0_87AF9D9B *)pBVar7);
-    local_c = STPointerBoundaryCast<RecoveredRecord_MReportTy_005BD4B0 *>(ccFntTy::CreateSurf(this_00->field_0083,(int)this_00->field_0073,0,0x2f,2,0x2b7,0x1e,0
-                                 ));
-    if (local_c != nullptr) {
+
+    local_c = (int)ccFntTy::CreateSurf(this_00->field_0083,(int)this_00->field_0073,0,0x2f,2,0x2b7,
+                                       0x1e,0);
+    if ((undefined4 *)local_c != nullptr) {
       local_11 = '\x01';
       STPiece<0,1>(DAT_0080f33a) = 0;
       local_18 = (RecoveredRecordView_006B84D0_87AF9D9B *)((uint)local_18 & 0xffffff00);
@@ -566,11 +567,13 @@ LAB_005bef6c:
   puVar24 = this_00->field_005D + 0x14;
 
   uVar11 = FUN_006b4fe0(this_00->field_005D);
-  local_c = STPointerBoundaryCast<RecoveredRecord_MReportTy_005BD4B0 *>(FUN_006b50c0(400,0x32,(uint)this_00->field_005D[7],uVar11,(undefined4 *)puVar24,iVar6));
-  uVar12 = local_c->field_0014;
+
+  local_c = FUN_006b50c0(400,0x32,(uint)this_00->field_005D[7],uVar11,(undefined4 *)puVar24,iVar6);
+  uVar12 = *(uint *)&((RecoveredRecord_006B4FA0_DAC3A217 *)(local_c + 0x10))->field_0x4;
   if (uVar12 == 0) {
-    uVar12 = ((uint)local_c->field_000E * local_c->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-             local_c->field_0008;
+    uVar12 = ((uint)((RecoveredRecord_006B4FA0_DAC3A217 *)local_c)->field_000E *
+              *(int *)&((RecoveredRecord_006B4FA0_DAC3A217 *)local_c)->field_0x4 + 0x1f >> 3 &
+             0x1ffffffc) * *(int *)&((RecoveredRecord_006B4FA0_DAC3A217 *)local_c)->field_0x8;
   }
 
   puVar10 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0((RecoveredRecord_006B4FA0_DAC3A217 *)local_c));
@@ -582,11 +585,11 @@ LAB_005bef6c:
     *(undefined1 *)puVar10 = 0x4c;
     puVar10 = (undefined4 *)((int)puVar10 + 1);
   }
-  FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)local_c,0,2,2,local_c->field_0004 + -4,
-               local_c->field_0008 + -4,0x18,0xd);
+  FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)local_c,0,2,2,STField<int>(local_c,0x4) + -4,
+               STField<int>(local_c,0x8) + -4,0x18,0xd);
 
-  ccFntTy::SetSurf(this_00->field_0083,(int)local_c,0,5,5,local_c->field_0004 + -0x69,
-                   local_c->field_0008 + -10);
+  ccFntTy::SetSurf(this_00->field_0083,local_c,0,5,5,STField<int>(local_c,0x4) + -0x69,
+                   STField<int>(local_c,0x8) + -10);
   uVar12 = 0;
   iVar15 = -1;
   iVar6 = -1;
@@ -594,10 +597,10 @@ LAB_005bef6c:
   local_EAX_3266 = LoadResourceString(0x2444,g_hINSTANCE_00807618);
 
   ccFntTy::WrStr(this_00->field_0083,local_EAX_3266,iVar6,iVar15,uVar12);
-  FUN_006b4170((RecoveredSourceFamily_dibcopy *)local_c,0,local_c->field_0004 + -0x69,
-               (local_c->field_0008 + -0x1c) / 2,0x50,0x1c,0);
-  FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)local_c,0,local_c->field_0004 + -0x69,
-               (local_c->field_0008 + -0x1c) / 2,0x50,0x1c,0x18,0xd);
+  FUN_006b4170((RecoveredSourceFamily_dibcopy *)local_c,0,STField<int>(local_c,0x4) + -0x69,
+               (STField<int>(local_c,0x8) + -0x1c) / 2,0x50,0x1c,0);
+  FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)local_c,0,STField<int>(local_c,0x4) + -0x69,
+               (STField<int>(local_c,0x8) + -0x1c) / 2,0x50,0x1c,0x18,0xd);
   cVar17 = (char)(DAT_0080c83a / 0xe10);
   local_8 = STReplaceLowByte((uint32_t)(local_8), (uint8_t)(cVar17));
   if (cVar17 == '\0') {
@@ -615,14 +618,14 @@ LAB_005bef6c:
             (int)(((ulonglong)DAT_0080c83a % 0xe10) / 0x3c),
             (int)(((ulonglong)DAT_0080c83a % 0xe10) % 0x3c));
 
-  ccFntTy::SetSurf(this_00->field_008B,(int)local_c,0,local_c->field_0004 + -0x69,
-                   (local_c->field_0008 + -0x1c) / 2,0x50,0x1c);
+  ccFntTy::SetSurf(this_00->field_008B,local_c,0,STField<int>(local_c,0x4) + -0x69,
+                   (STField<int>(local_c,0x8) + -0x1c) / 2,0x50,0x1c);
 
   ccFntTy::WrStr(this_00->field_008B,(char *)&DAT_0080f33a,-1,-1,8);
 
   Library::DKW::DDX::FUN_006c5000
-            (g_dDXContext_0080759C,0x174,0x1a9,(int)local_c,0,0,0,local_c->field_0004,
-             local_c->field_0008,(int)&this_00->field_00A3,0x4c);
+            (g_dDXContext_0080759C,0x174,0x1a9,(int *)local_c,0,0,0,STField<uint>(local_c,0x4),
+             STField<int>(local_c,0x8),(int)&this_00->field_00A3,0x4c);
   FreeAndNull(&local_c);
 LAB_005bf406:
   pAVar2 = this_00->field_0073;

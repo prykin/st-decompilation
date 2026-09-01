@@ -1,12 +1,12 @@
 program=ST.exe
 functions_seen=5030
-functions_with_raw_access=344
-raw_accesses=2962
+functions_with_raw_access=346
+raw_accesses=2983
 nested_pointer_accesses=201
-pointer_field_aliases=267
-redirected_alias_accesses=1154
+pointer_field_aliases=264
+redirected_alias_accesses=1151
 owner_this_spill_repairs=0
-typed_field_consumer_hints=28
+typed_field_consumer_hints=24
 exact_reinterpret_accesses=1
 indexed_generated_tail_repairs=1
 machine_nested_member_accesses=168

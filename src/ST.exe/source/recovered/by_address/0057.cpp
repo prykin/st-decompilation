@@ -311,7 +311,7 @@ uint st::fn_00571C90(STSprGameObjC *context,int param_2)
   int iVar1;
 
   /* ST_CALLSITE[00571C98]: CALL 0x00404f07; direct=00404F07 STSprGameObjC::GetMessage */
-  iVar1 = st::fn_00404F07(context,(STMessage *)param_2);
+  iVar1 = st::fn_00404F07(context,st::storage_bit_cast<STMessage *>(param_2));
   if (iVar1 == 0xffff) {
     return 0xffff;
   }

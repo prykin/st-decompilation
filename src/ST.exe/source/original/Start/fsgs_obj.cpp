@@ -40,15 +40,15 @@ st::fn_00594B90(FSGSTy *this,RecoveredGlobalRecordView_00854EB8 *param_1,undefin
                 );
 
       st::fn_006C6470
-                ((int)param_1,param_4 + -0x15 + param_6,param_5 + 0x26,(undefined4 *)0x7,
+                (st::machine_word_boundary_cast<int>(param_1),param_4 + -0x15 + param_6,param_5 + 0x26,(undefined4 *)0x7,
                  param_7 + -0x62,3,*puVar2);
       local_c = param_5 + -0x16 + param_7;
 
       st::fn_006C53B0
-                ((int)param_1,param_4,local_c,param_4 + -1 + param_6,local_c,*puVar2);
+                (st::machine_word_boundary_cast<int>(param_1),param_4,local_c,param_4 + -1 + param_6,local_c,*puVar2);
 
       st::fn_006C53B0
-                ((int)param_1,param_4 + 0x168,local_c,param_4 + 0x168,param_5 + -1 + param_7,*puVar2
+                (st::machine_word_boundary_cast<int>(param_1),param_4 + 0x168,local_c,param_4 + 0x168,param_5 + -1 + param_7,*puVar2
                 );
       g_currentExceptionFrame = local_50.previous;
       return;
@@ -168,7 +168,7 @@ st::fn_00594EB0(FSGSTy *this,RecoveredGlobalRecordView_00854EB8 *param_1,MMMObjT
   ccFntTy *pcVar6;
   uint uVar7;
   InternalExceptionFrame local_4c;
-  StartServTy *local_8;
+  int local_8;
 
   if (param_8 != 0) {
     local_4c.previous = g_currentExceptionFrame;
@@ -180,13 +180,13 @@ st::fn_00594EB0(FSGSTy *this,RecoveredGlobalRecordView_00854EB8 *param_1,MMMObjT
       st::fn_00403099
                 (param_3,(int)param_1,param_2,param_3,(int)param_4,param_5,param_6,param_7 + -0x5f,
                  &g_startSystem_0081176C->field_0140);
-      local_8 = param_4 + param_6 + -0x15;
+      local_8 = (int)(param_4 + param_6 + -0x15);
 
       st::fn_006C6660
-                (reinterpret_cast<DDXContext *>(param_1),(int)local_8,param_5 + 0x26,7,param_7 - 0xab,3,0);
+                (reinterpret_cast<DDXContext *>(param_1),local_8,param_5 + 0x26,7,param_7 - 0xab,3,0);
 
       st::fn_006C6470
-                ((int)param_1,(int)local_8,param_5 + 0x26,(undefined4 *)0x7,param_7 + -0xab,3,
+                (st::machine_word_boundary_cast<int>(param_1),local_8,param_5 + 0x26,(undefined4 *)0x7,param_7 + -0xab,3,
                  g_startSystem_0081176C->field_0140);
       uVar7 = 2;
       pcVar6 = g_startSystem_0081176C->field_0034;
@@ -199,17 +199,17 @@ st::fn_00594EB0(FSGSTy *this,RecoveredGlobalRecordView_00854EB8 *param_1,MMMObjT
                  uVar7);
 
       st::fn_006C6470
-                ((int)param_1,(int)(param_4 + 10),param_5 + 0xf8,(undefined4 *)0xe6,0x19,4,
+                (st::machine_word_boundary_cast<int>(param_1),(int)(param_4 + 10),param_5 + 0xf8,(undefined4 *)0xe6,0x19,4,
                  g_startSystem_0081176C->field_0140);
 
       st::fn_006C6470
-                ((int)param_1,(int)(param_4 + 0xc),param_5 + 0xfa,(undefined4 *)0xe2,0x15,4,
+                (st::machine_word_boundary_cast<int>(param_1),(int)(param_4 + 0xc),param_5 + 0xfa,(undefined4 *)0xe2,0x15,4,
                  g_startSystem_0081176C->field_0140);
       /* ST_CALLSITE[0059501F]: CALL 0x00403099; direct=00403099 MMMObjTy::OutRGlProc */
       st::fn_00403099
                 (param_2,(int)param_1,param_2,param_3,(int)param_4,param_5 + -0x5c + param_7,param_6
                  ,0x5c,&g_startSystem_0081176C->field_0140);
-      local_8 = (StartServTy *)(param_6 + -0x14);
+      local_8 = param_6 + -0x14;
       uVar7 = 2;
       pcVar6 = g_startSystem_0081176C->field_0034;
       uVar5 = 0xffffffff;
@@ -218,9 +218,9 @@ st::fn_00594EB0(FSGSTy *this,RecoveredGlobalRecordView_00854EB8 *param_1,MMMObjT
       this_00 = (StartServTy *)(param_5 + -0x57 + param_7);
       /* ST_CALLSITE[00595062]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       st::fn_00404C2D
-                (this_00,0,(int)(param_4 + 10),(int)this_00,(int)local_8,0xf,pcVar2,uVar4,uVar5,
-                 pcVar6,uVar7);
-      st::fn_006C6850((int)param_1,(int)(param_4 + 10),param_5 + -0x46 + param_7,(int)local_8,0x16,
+                (this_00,0,(int)(param_4 + 10),(int)this_00,local_8,0xf,pcVar2,uVar4,uVar5,pcVar6,
+                 uVar7);
+      st::fn_006C6850((int)param_1,(int)(param_4 + 10),param_5 + -0x46 + param_7,local_8,0x16,
                    g_startSystem_0081176C->field_0140);
       uVar7 = 2;
       pcVar6 = g_startSystem_0081176C->field_0034;
@@ -229,8 +229,8 @@ st::fn_00594EB0(FSGSTy *this,RecoveredGlobalRecordView_00854EB8 *param_1,MMMObjT
       pcVar2 = st::fn_006B0140(0x2550,g_hINSTANCE_00807618);
       /* ST_CALLSITE[005950C4]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       st::fn_00404C2D
-                (param_4,0,(int)(param_4 + 10),param_5 + -0x2f + param_7,(int)local_8,0xf,pcVar2,
-                 uVar4,uVar5,pcVar6,uVar7);
+                (param_4,0,(int)(param_4 + 10),param_5 + -0x2f + param_7,local_8,0xf,pcVar2,uVar4,
+                 uVar5,pcVar6,uVar7);
       st::fn_006C6850((int)param_1,(int)(param_4 + 10),param_5 + -0x1e + param_7,100,0x16,
                    g_startSystem_0081176C->field_0140);
       uVar7 = 2;
@@ -244,11 +244,11 @@ st::fn_00594EB0(FSGSTy *this,RecoveredGlobalRecordView_00854EB8 *param_1,MMMObjT
                  ,uVar7);
 
       st::fn_006C6470
-                ((int)param_1,(int)(param_4 + 0x78),param_5 + 0x155,(undefined4 *)0xa0,0x19,4,
+                (st::machine_word_boundary_cast<int>(param_1),(int)(param_4 + 0x78),param_5 + 0x155,(undefined4 *)0xa0,0x19,4,
                  g_startSystem_0081176C->field_0140);
 
       st::fn_006C6470
-                ((int)param_1,(int)(param_4 + 0x7a),param_5 + 0x157,(undefined4 *)0x9c,0x15,4,
+                (st::machine_word_boundary_cast<int>(param_1),(int)(param_4 + 0x7a),param_5 + 0x157,(undefined4 *)0x9c,0x15,4,
                  g_startSystem_0081176C->field_0140);
       g_currentExceptionFrame = local_4c.previous;
       return;
@@ -356,28 +356,28 @@ st::fn_005952B0(FSGSTy *this,RecoveredGlobalRecordView_00854EB8 *param_1,MMMObjT
                  pcVar2,uVar5,uVar6,pcVar7,uVar8);
 
       st::fn_006C6470
-                ((int)param_1,(int)local_8 + param_4 + -0x14,param_5 + 0x11c,local_8 + 10,0x19,4,
+                (st::machine_word_boundary_cast<int>(param_1),(int)local_8 + param_4 + -0x14,param_5 + 0x11c,local_8 + 10,0x19,4,
                  g_startSystem_0081176C->field_0140);
 
       st::fn_006C6470
-                ((int)param_1,(int)local_8 + param_4 + -0x12,param_5 + 0x11e,local_8 + 9,0x15,4,
+                (st::machine_word_boundary_cast<int>(param_1),(int)local_8 + param_4 + -0x12,param_5 + 0x11e,local_8 + 9,0x15,4,
                  g_startSystem_0081176C->field_0140);
 
       st::fn_006C6470
-                ((int)param_1,iVar4,param_5 + 0x138,(undefined4 *)(param_6 + -0x14),0x19,4,
+                (st::machine_word_boundary_cast<int>(param_1),iVar4,param_5 + 0x138,(undefined4 *)(param_6 + -0x14),0x19,4,
                  g_startSystem_0081176C->field_0140);
 
       st::fn_006C6470
-                ((int)param_1,param_4 + 0xc,param_5 + 0x13a,(undefined4 *)(param_6 + -0x18),0x15,4,
+                (st::machine_word_boundary_cast<int>(param_1),param_4 + 0xc,param_5 + 0x13a,(undefined4 *)(param_6 + -0x18),0x15,4,
                  g_startSystem_0081176C->field_0140);
       iVar4 = param_4 + (STSignedDiv4(local_c));
 
       st::fn_006C6470
-                ((int)param_1,iVar4 + 0xf,param_5 + 0x157,local_8,0x19,4,
+                (st::machine_word_boundary_cast<int>(param_1),iVar4 + 0xf,param_5 + 0x157,local_8,0x19,4,
                  g_startSystem_0081176C->field_0140);
 
       st::fn_006C6470
-                ((int)param_1,iVar4 + 0x11,param_5 + 0x159,local_8 + -1,0x15,4,
+                (st::machine_word_boundary_cast<int>(param_1),iVar4 + 0x11,param_5 + 0x159,local_8 + -1,0x15,4,
                  g_startSystem_0081176C->field_0140);
       g_currentExceptionFrame = local_50.previous;
       return;
@@ -9965,7 +9965,7 @@ LAB_005a8c85:
               st::fn_00710A90(pcVar13,this_00->field_1E8E,0,0,
                                ((int)local_14 - (uint)(message->arg0).words.high) *
                                *(int *)&pcVar13->field_0x8a,*(int *)(this_00->field_1E8E + 4),
-                               (int)local_c);
+                               st::machine_word_boundary_cast<int>(local_c));
 
               st::fn_007119C0(pcVar13,reinterpret_cast<char *>(local_10),0,-1,2);
             }
@@ -10219,10 +10219,10 @@ LAB_005a7656:
         pcVar38_mg1F = reinterpret_cast<char *>(&DAT_0080f33a);
       }
       else {
-        pcVar38_mg1F = st::fn_006B0140((UINT)local_8,g_hINSTANCE_00807618);
+        pcVar38_mg1F = st::fn_006B0140(st::machine_word_boundary_cast<UINT>(local_8),g_hINSTANCE_00807618);
       }
 
-      st::fn_007119C0(this_00->array_00BC[0xc].field_01F3,pcVar38_mg1F,-1,-1,(uint)local_c);
+      st::fn_007119C0(this_00->array_00BC[0xc].field_01F3,pcVar38_mg1F,-1,-1,st::machine_word_boundary_cast<uint>(local_c));
       wVar4 = (message->arg0).words.low;
       if (wVar4 == 0) {
         bVar36 = 0xd;
@@ -10370,7 +10370,7 @@ LAB_005a7c26:
       }
 
       st::fn_00710A90(this_00->array_00BC[0xc].field_01F3,(int)this_00->field_1AC0,0,iVar48,
-                       local_3c,(int)local_38,local_34);
+                       local_3c,st::machine_word_boundary_cast<int>(local_38),local_34);
       wVar4 = (message->arg0).words.low;
       if (wVar4 == 1) {
         uVar37 = 2;
@@ -10381,7 +10381,7 @@ LAB_005a7c26:
       iVar48 = -1;
       iVar47 = -1;
       /* ST_CALLSITE[005A7C81]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
-      pcVar38_mg1A = st::fn_006B0140((UINT)local_8,g_hINSTANCE_00807618);
+      pcVar38_mg1A = st::fn_006B0140(st::machine_word_boundary_cast<UINT>(local_8),g_hINSTANCE_00807618);
 
       st::fn_007119C0(this_00->array_00BC[0xc].field_01F3,pcVar38_mg1A,iVar47,iVar48,uVar37);
 LAB_005a7c92:

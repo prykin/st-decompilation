@@ -832,7 +832,7 @@ st::fn_005DC730(StartSystemTy *this,int param_1,char *param_2,int param_3)
     g_dArray_0080C4C7 =
          (DArrayTy *)
          /* ST_CALLSITE[005DC788]: CALL 0x0071aa10; direct=0071AA10 Library::Ourlib::MFSARR::mfSarLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; source view only; no Ghidra override */
-         st::fn_0071AA10((cMf32 *)param_1,PTR_s_DESCRIPTION_0079c1d0,0);
+         st::fn_0071AA10(st::storage_bit_cast<cMf32 *>(param_1),PTR_s_DESCRIPTION_0079c1d0,0);
     if (g_dArray_0080C4C7 == nullptr) {
       g_dArray_0080C4C7 = st::fn_006B54F0(nullptr,10,10);
     }
@@ -841,7 +841,7 @@ st::fn_005DC730(StartSystemTy *this,int param_1,char *param_2,int param_3)
     }
     if (param_2 != nullptr) {
       /* ST_CALLSITE[005DC7C7]: CALL 0x0071aa10; direct=0071AA10 Library::Ourlib::MFSARR::mfSarLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayTy; source view only; no Ghidra override */
-      g_dArray_0080C4CB = reinterpret_cast<DArrayTy *>(st::fn_0071AA10((cMf32 *)param_1,param_2,0));
+      g_dArray_0080C4CB = reinterpret_cast<DArrayTy *>(st::fn_0071AA10(st::storage_bit_cast<cMf32 *>(param_1),param_2,0));
     }
     if (g_dArray_0080C4CB == nullptr) {
       g_dArray_0080C4CB = st::fn_006B54F0(nullptr,10,10);

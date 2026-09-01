@@ -4941,7 +4941,7 @@ switchD_00652b42_switchD:
                                   if (local_EAX_488 == 5) {
 
                                     st::fn_006B6020
-                                              (this_00->field_05B3,(uint)pDStack_164,
+                                              (this_00->field_05B3,st::machine_word_boundary_cast<uint>(pDStack_164),
                                                reinterpret_cast<char *>(local_160));
                                   }
                                 }
@@ -4991,7 +4991,7 @@ switchD_00652b42_switchD:
                               if (iVar39 == 0) goto cf_common_join_00652A99;
 
                               st::fn_006B6020
-                                        (this_00->field_05B3,(uint)pDStack_164,reinterpret_cast<char *>(local_160));
+                                        (this_00->field_05B3,st::machine_word_boundary_cast<uint>(pDStack_164),reinterpret_cast<char *>(local_160));
                               break;
                             case 0x528:
 

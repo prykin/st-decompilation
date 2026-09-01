@@ -819,9 +819,9 @@ Accepted source-only state:
 
 ### Q-057 Separate value-domain lifetimes and close return ABI contradictions
 
-Status: in progress as the next independent acceptance layer. Q-058 and Q-059
-are complete, but neither the successful Q-059 aggregate pass nor its zero-error
-C++ compile is by itself evidence that Q-057 is closed.
+Status: complete as an independent acceptance layer. Q-058 and Q-059 are also
+complete, but neither the successful Q-059 aggregate pass nor its zero-error
+C++ compile was used as evidence that Q-057 was closed.
 
 Use normalized compiler diagnostics only as an address-stable discovery queue.
 For every enabled repair, re-prove the machine/p-code anchor in Ghidra. Extend
@@ -888,6 +888,38 @@ Completion criteria:
   manifest compiles without Q-057 diagnostic families, and ABI, export,
   readability, and compiler gates pass without source casts masking a lifetime
   or return problem.
+
+Accepted Q-057 result:
+
+- `STValueDomainClosureAnalyzer` records 1,854 current machine-domain rows;
+  1,757 retain their exact p-code anchor, 1,176 retain an exact call boundary,
+  and none is a machine-evidence conflict;
+- the joined closure contains 2,154 address-stable rows: 239 `resolved`, 547
+  `neutralized`, 1,368 honest `review` rows, and zero `conflict`. Review rows
+  preserve machine-correct neutral storage or ambiguous same-domain semantics;
+  they are not unresolved machine-proven source contradictions;
+- all 107 automatically applicable local-lifetime proposals are already at
+  confirming `unchanged` state. The return-semantics pass has 97 review rows
+  and zero automatically applicable proposal;
+- source-only closure is limited to 244 complete exact CALL-operand families,
+  28 incoming-parameter-slot lifetimes, 14 pointer/float storage views, nine
+  output/post-call lifetimes, four pointer/switch views, and one phantom
+  `void` assignment. The source audit joins every CALL view by function,
+  p-code sequence anchor, resolved target, and operand; function-address
+  coincidence alone cannot close a row;
+- `00548C40` is neutralized by exact per-use boundaries, `00605B60` has the
+  persistent scalar lifetime, `0064A970` is neutralized by exact machine call
+  views, and `00652810` has six neutralized rows plus eleven explicit
+  machine-correct review rows with no false shared source lifetime;
+- the accepted Program semantic hash is
+  `03c7a704cf53b541b1a04f45b46defa235c3ddcbf83e6ad40348b38c6383ce64`,
+  the corpus manifest is
+  `f4d5ba156d5fcaa65aa2a0428699870f67122d45ee39c1d5651dae51e8e6c512`,
+  and the generated source manifest is
+  `61783544f94bb833e902b34ef2b5c96d347db93e1dc34903319993af01ab6bdb`;
+- all 328 translation units compile independently with zero errors and zero
+  warnings. ABI, export, per-address readability, compiler regression, Q-057,
+  revalidated Q-059, and deterministic snapshot round-trip gates pass.
 
 ### Q-058 Recover callable ownership and indirect-call families
 

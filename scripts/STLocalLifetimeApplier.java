@@ -199,6 +199,38 @@ public class STLocalLifetimeApplier extends GhidraScript {
                                     .getMethod("getSymbol").invoke(high);
                             }
                         }
+                        /*
+                         * A typed direct-call argument is frequently fed by one
+                         * decompiler-only CAST/COPY HighVariable.  The analyzer
+                         * deliberately follows that transparent chain when it
+                         * collects the exact callee-boundary evidence, but the
+                         * applier used to stop at the synthetic call input.  The
+                         * resulting proposal was therefore high-confidence yet
+                         * could never attach ("anchor has no HighSymbol") and
+                         * recurred on every confirming pass.
+                         *
+                         * Reuse the same conservative origin walk already used
+                         * for receiver-aware indirect calls.  It crosses only
+                         * same-width COPY/CAST/INDIRECT operations and requires
+                         * the durable variable to retain the proposal's exact
+                         * original name.  Arithmetic, pointer adjustment, loads,
+                         * PHIs, and ambiguous roots remain hard stops.
+                         */
+                        if (symbol == null && unt(row.get("anchor_kind"))
+                                .equals("call_argument")) {
+                            Object durable = transparentPersistentOrigin(
+                                anchor.varnode, row,
+                                java.util.Collections.newSetFromMap(
+                                    new java.util.IdentityHashMap<>()), 0);
+                            if (durable != null) {
+                                anchor = new Anchor(anchor.op, durable,
+                                    anchor.kind);
+                                high = durable.getClass().getMethod("getHigh")
+                                    .invoke(durable);
+                                symbol = high == null ? null : high.getClass()
+                                    .getMethod("getSymbol").invoke(high);
+                            }
+                        }
                         if (symbol == null && unt(row.get("anchor_kind"))
                                 .equals("misattached_receiver_call_return")) {
                             Variable durable = uniqueMisattachedReceiverVariable(

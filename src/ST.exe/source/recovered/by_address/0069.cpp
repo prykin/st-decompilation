@@ -4863,7 +4863,7 @@ LAB_0069fc43:
             local_24 = local_24 + 0x80;
             uVar5 = local_2c + 0x200;
 
-            psVar4 = static_cast<short *>(st::fn_006ACF50(local_18,(uint)local_38));
+            psVar4 = static_cast<short *>(st::fn_006ACF50(local_18,st::machine_word_boundary_cast<uint>(local_38)));
             if (psVar4 == nullptr) goto LAB_0069fc5a;
             local_1c = psVar4 + ((int)local_1c - (int)local_18 >> 2) * 2;
             local_10 = psVar4 + ((int)local_10 - (int)local_18 >> 2) * 2;

@@ -381,7 +381,7 @@ int __thiscall st::fn_004ABF00(STT3DSprC *this,char param_1,uint param_2)
         pcVar5 = st::function_address_boundary_cast<code *>(st::fn_004AD740);
       }
       st::fn_006E9520
-                (pSVar1->field_003C,uVar3,(uint)puVar4,(uint)pcVar5,(uint)pSVar1);
+                (pSVar1->field_003C,uVar3,st::machine_word_boundary_cast<uint>(puVar4),st::machine_word_boundary_cast<uint>(pcVar5),st::machine_word_boundary_cast<uint>(pSVar1));
     }
     g_currentExceptionFrame = local_4c.previous;
     return 0;
@@ -651,8 +651,8 @@ int __thiscall st::fn_004AC1A0(STT3DSprC *this,byte param_1,uint param_2)
       pcVar5 = st::function_address_boundary_cast<code *>(st::fn_004AD740);
     }
     st::fn_006E9520
-              (pSVar1->field_003C,pSVar1->field_0018,(uint)pSVar1->field_0034,(uint)pcVar5,
-               (uint)pSVar1);
+              (pSVar1->field_003C,pSVar1->field_0018,(uint)pSVar1->field_0034,st::machine_word_boundary_cast<uint>(pcVar5),
+               st::machine_word_boundary_cast<uint>(pSVar1));
   }
 cf_common_exit_004AC330:
   *(uint *)(&pSVar1->field_0020->field_0x1c + iVar3) = param_2;

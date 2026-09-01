@@ -1976,7 +1976,7 @@ LAB_005cef5d:
                 local_34 = uVar21;
                 if ((int)(pSVar13->count * pSVar13->elementSize) < (int)local_10) {
                   /* ST_CALLSITE[005CF1B3]: CALL 0x006acf50; direct=006ACF50 Library::DKW::LIB::MemRealloc; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/DArrayElements/SettMapMTy_field_1F84Element; source view only; no Ghidra override */
-                  pSVar12 = static_cast<SettMapMTy_field_1F84Element *>(st::fn_006ACF50(pSVar13->data,(uint)local_10));
+                  pSVar12 = static_cast<SettMapMTy_field_1F84Element *>(st::fn_006ACF50(pSVar13->data,st::machine_word_boundary_cast<uint>(local_10)));
                   this_00->field_1F84->data = pSVar12;
                   this_00->field_1F84->capacity = uVar21;
                 }
@@ -3790,7 +3790,7 @@ int __thiscall st::fn_005D1400(SettMapMTy *this,STMessage *message)
         local_10 = (char *)piVar12[5];
 
         st::fn_00710A90(g_startSystem_0081176C->field_0034,(int)this_00->field_2204,0,
-                         (iVar15 + -1) * (int)local_10,0,(int)local_10,
+                         (iVar15 + -1) * (int)local_10,0,st::machine_word_boundary_cast<int>(local_10),
                          this_00->field_2204->field_0008 -
                          ((-(uint)(piVar12[1] != 1) & 0xfffffffd) + 3));
         uVar30 = 2;

@@ -1665,7 +1665,7 @@ int st::fn_006B2330(DDXContext_008075A8 *param_1,uint *param_2,uint param_3,uint
   int iVar2;
 
   iVar2 = st::fn_006B1D50
-                    ((uint)param_1,param_2,param_3,0,nullptr,0,0xffffffff,0xffffffff,0,1);
+                    (st::machine_word_boundary_cast<uint>(param_1),param_2,param_3,0,nullptr,0,0xffffffff,0xffffffff,0,1);
   if (iVar2 == 0) {
     pDVar1 = param_1->entries_01B0[*param_2];
     pDVar1->field_0038 = param_5;
@@ -1906,7 +1906,7 @@ undefined4 st::fn_006B30D0(RecoveredRecord_006B30D0_CB79E1A3 *param_1,uint param
       (puVar1 = *(uint **)(param_1->field_01B0 + param_2 * 4), (*puVar1 & 0x4008000) == 0x4008000))
      && (uVar2 = *(uint *)(puVar1[0x34] + param_3 * 4), -1 < (int)uVar2)) {
 
-    uVar3 = st::fn_006B3040((int)param_1,uVar2);
+    uVar3 = st::fn_006B3040(st::machine_word_boundary_cast<int>(param_1),uVar2);
   }
   return uVar3;
 }
@@ -2916,19 +2916,22 @@ int st::fn_006B50C0(int param_1,int param_2,int param_3,uint param_4,undefined4 
 /* [STPrototypeRepairApplier] Propagated parameter 4.
    Evidence: 00515650 -> 006B5440 @ 00515737
 
-   [STPrototypeApplier] Propagated parameter 0.
-   Evidence: 005C87C0 -> 006B5440 @ 005C885D; /StartSystemTy+0x2f0
-
    [STReturnSemanticsApplier] ignored_eax_void.
    Evidence: all observed direct callers ignore the return register (ignored=24, used=0, unknown=0),
-   and decompilation contains no value return */
+   and decompilation contains no value return
 
-void st::fn_006B5440(ushort *param_1,int param_2,int param_3,int param_4,tagBITMAPINFO *tOBJImage,
+   [STPrototypeRepairApplier] Propagated parameter 0.
+   Evidence: 004FE6C0 -> 006B5440 @ 004FE759; address of CPanelTy::PaintEnergy stack local local_8
+   at 004FE746 | 004FE6C0 -> 006B5440 @ 004FE7F4; address of CPanelTy::PaintEnergy stack local
+   local_8 at 004FE7DC | 005C87C0 -> 006B5440 @ 005C885D; /StartSystemTy+0x2f0 | 006B5440 ->
+   006B5110 @ 006B546B */
+
+void st::fn_006B5440(ushort *local_8,int param_2,int param_3,int param_4,tagBITMAPINFO *tOBJImage,
                  int param_6,byte param_7)
 
 {
   st::fn_006B5110
-            ((int)param_1,param_2,param_3,param_4,reinterpret_cast<BITMAPINFO *>(tOBJImage),param_6,0,0,
+            (reinterpret_cast<int *>(local_8),param_2,param_3,param_4,reinterpret_cast<BITMAPINFO *>(tOBJImage),param_6,0,0,
              (tOBJImage->bmiHeader).biWidth,(tOBJImage->bmiHeader).biHeight,param_7);
   return;
 }
@@ -4811,7 +4814,7 @@ void st::fn_006B94E0(RecoveredRecordView_006B94E0_92E1E144 *param_1,undefined4 p
     do {
 
       iVar7 = st::fn_006C53B0
-                        ((int)param_1,param_4,param_8_after_write,iVar2 - iVar8,param_8_after_write,*puVar1);
+                        (st::machine_word_boundary_cast<int>(param_1),param_4,param_8_after_write,iVar2 - iVar8,param_8_after_write,*puVar1);
       if (iVar7 != 0) goto cf_common_exit_006B96BA;
       param_3 = param_3 + 1;
       param_8_after_write = param_8_after_write + 1;
@@ -4825,7 +4828,7 @@ void st::fn_006B94E0(RecoveredRecordView_006B94E0_92E1E144 *param_1,undefined4 p
     do {
 
       iVar7 = st::fn_006C53B0
-                        ((int)param_1,param_8_after_write_2,param_5,param_8_after_write_2,iVar3 - iVar8,*puVar1);
+                        (st::machine_word_boundary_cast<int>(param_1),param_8_after_write_2,param_5,param_8_after_write_2,iVar3 - iVar8,*puVar1);
       if (iVar7 != 0) goto cf_common_exit_006B96BA;
       param_3 = param_3 + 1;
       param_8_after_write_2 = param_8_after_write_2 + -1;
@@ -4840,7 +4843,7 @@ void st::fn_006B94E0(RecoveredRecordView_006B94E0_92E1E144 *param_1,undefined4 p
     do {
 
       iVar7 = st::fn_006C53B0
-                        ((int)param_1,iVar2,param_8,iVar8 + param_4,param_8,*puVar1);
+                        (st::machine_word_boundary_cast<int>(param_1),iVar2,param_8,iVar8 + param_4,param_8,*puVar1);
       if (iVar7 != 0) goto cf_common_exit_006B96BA;
       param_3 = param_3 + 1;
       param_8 = param_8 + -1;
@@ -4854,7 +4857,7 @@ void st::fn_006B94E0(RecoveredRecordView_006B94E0_92E1E144 *param_1,undefined4 p
     param_5 = param_4;
     do {
 
-      iVar7 = st::fn_006C53B0((int)param_1,param_5,iVar3,param_5,iVar2,*puVar1);
+      iVar7 = st::fn_006C53B0(st::machine_word_boundary_cast<int>(param_1),param_5,iVar3,param_5,iVar2,*puVar1);
       if (iVar7 != 0) break;
       param_3 = param_3 + 1;
       param_5 = param_5 + 1;
@@ -6972,7 +6975,7 @@ DWORD st::fn_006BFE70(RecoveredRecord_006BFE70_3123BCE8 *param_1,AnonShape_006BF
 
     /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
     local_c = st::fn_006BFB90(*(HANDLE *)(*(int *)(param_2->field_001C + 4) + 0xc),pDVar2,
-                           g_lpBuffer_008568B0,(DWORD)local_8);
+                           g_lpBuffer_008568B0,st::machine_word_boundary_cast<DWORD>(local_8));
     if (local_c != 0) {
       return local_c;
     }
@@ -7003,7 +7006,7 @@ DWORD st::fn_006BFE70(RecoveredRecord_006BFE70_3123BCE8 *param_1,AnonShape_006BF
 
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             DVar7 = st::fn_006BFB90(*(HANDLE *)(*(int *)(pAVar5->field_001C + 4) + 0xc),pDVar2,
-                                 g_lpBuffer_008568B0,(DWORD)param_1);
+                                 g_lpBuffer_008568B0,st::machine_word_boundary_cast<DWORD>(param_1));
             if (DVar7 != 0) {
               return DVar7;
             }
@@ -7063,7 +7066,7 @@ LAB_006c0125:
 
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_c = st::fn_006BFB90(*(HANDLE *)(*(int *)(pAVar5->field_001C + 4) + 0xc),pDVar2,
-                                     g_lpBuffer_008568B0,(DWORD)local_8);
+                                     g_lpBuffer_008568B0,st::machine_word_boundary_cast<DWORD>(local_8));
               pbVar15 = (byte *)pvVar4;
               if (local_c != 0) {
                 return local_c;
@@ -7153,7 +7156,7 @@ LAB_006c0125:
 
             /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
             local_c = st::fn_006BFB90(*(HANDLE *)(*(int *)(pAVar5->field_001C + 4) + 0xc),pDVar2,
-                                   g_lpBuffer_008568B0,(DWORD)local_8);
+                                   g_lpBuffer_008568B0,st::machine_word_boundary_cast<DWORD>(local_8));
             pbVar14 = (byte *)pvVar4;
             if (local_c != 0) {
               return local_c;
@@ -7195,7 +7198,7 @@ LAB_006c0455:
 
               /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
               local_c = st::fn_006BFB90(*(HANDLE *)(*(int *)(pAVar5->field_001C + 4) + 0xc),pDVar2,
-                                     g_lpBuffer_008568B0,(DWORD)local_8);
+                                     g_lpBuffer_008568B0,st::machine_word_boundary_cast<DWORD>(local_8));
               pbVar14 = (byte *)pvVar4;
               if (local_c != 0) {
                 return local_c;
@@ -7248,7 +7251,7 @@ LAB_006c0455:
 
                 /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
                 local_c = st::fn_006BFB90(*(HANDLE *)(*(int *)(pAVar5->field_001C + 4) + 0xc),pDVar2,
-                                       g_lpBuffer_008568B0,(DWORD)local_8);
+                                       g_lpBuffer_008568B0,st::machine_word_boundary_cast<DWORD>(local_8));
                 pbVar14 = (byte *)pvVar4;
                 if (local_c != 0) {
                   return local_c;

@@ -332,6 +332,164 @@ def component(
     }
 
 
+class SourceTreeExactMachineLifetimeTests(unittest.TestCase):
+    @staticmethod
+    def generator(rows: list[dict[str, str]]) -> SourceTreeGenerator:
+        generator = SourceTreeGenerator(
+            Path("."), Path("."), Path("out"), Path("receipt")
+        )
+        generator.type_emitter = TypeEmitter([
+            primitive("/int", "int", 4),
+            primitive("/uint", "uint", 4),
+        ], generator.issues)
+        generator.local_lifetime_call_views = {"00401000": rows}
+        return generator
+
+    @staticmethod
+    def row(
+        anchor: str,
+        name: str,
+        current: str,
+        proposed: str,
+        operand: str = "0",
+        target: str = "00500000",
+        time: str = "7",
+    ) -> dict[str, str]:
+        return {
+            "anchor_address": anchor,
+            "anchor_time": time,
+            "anchor_operand": operand,
+            "direct_target_address": target,
+            "original_name": name,
+            "expected_current_type": current,
+            "proposed_type": proposed,
+        }
+
+    def test_complete_pointer_to_scalar_family_uses_machine_word_view(self) -> None:
+        generator = self.generator([
+            self.row("00401010", "cursor", "pointer:/int", "/uint"),
+            self.row("00401020", "cursor", "pointer:/int", "/uint", time="9"),
+        ])
+        body = "st::fn_00500000((uint)cursor);\nst::fn_00500000(cursor);\n"
+        actual = generator._repair_exact_machine_lifetime_call_views(
+            "00401000", {}, body
+        )
+        self.assertEqual(
+            2, actual.count("st::machine_word_boundary_cast<uint>(cursor)")
+        )
+        self.assertEqual(
+            2,
+            sum(issue.kind == "exact_machine_lifetime_call_view"
+                for issue in generator.issues),
+        )
+
+    def test_complete_scalar_to_pointer_family_uses_storage_view(self) -> None:
+        generator = self.generator([
+            self.row("00401010", "word", "/int", "pointer:/int"),
+        ])
+        actual = generator._repair_exact_machine_lifetime_call_views(
+            "00401000", {}, "st::fn_00500000((int *)word);\n"
+        )
+        self.assertIn("st::storage_bit_cast<int *>(word)", actual)
+        self.assertEqual(0, generator._readability_metrics(actual).get(
+            "pointer_boundary_cast", 0
+        ))
+
+    def test_incomplete_call_family_is_not_rewritten(self) -> None:
+        generator = self.generator([
+            self.row("00401010", "cursor", "pointer:/int", "/uint"),
+            self.row("00401020", "cursor", "pointer:/int", "/uint", time="9"),
+        ])
+        body = "st::fn_00500000((uint)cursor);\n"
+        self.assertEqual(
+            body,
+            generator._repair_exact_machine_lifetime_call_views(
+                "00401000", {}, body
+            ),
+        )
+
+    def test_arithmetic_expression_is_not_a_machine_lifetime_view(self) -> None:
+        generator = self.generator([
+            self.row("00401010", "cursor", "pointer:/int", "/uint"),
+        ])
+        body = "st::fn_00500000((uint)(cursor + 1));\n"
+        self.assertEqual(
+            body,
+            generator._repair_exact_machine_lifetime_call_views(
+                "00401000", {}, body
+            ),
+        )
+
+    def test_duplicate_alias_rows_share_one_machine_anchor(self) -> None:
+        generator = self.generator([
+            self.row("00401010", "errorCode", "pointer:/int", "/int"),
+            self.row("00401010", "puVar8", "pointer:/int", "/int"),
+        ])
+        actual = generator._repair_exact_machine_lifetime_call_views(
+            "00401000", {}, "st::fn_00500000((int)puVar8);\n"
+        )
+        self.assertIn("st::machine_word_boundary_cast<int>(puVar8)", actual)
+
+    def test_exact_current_type_accepts_a_different_stable_local_spelling(self) -> None:
+        generator = self.generator([
+            self.row("00401010", "dynamicAlias", "pointer:/int", "/uint"),
+        ])
+        body = (
+            "void f() {\n"
+            "  int *stable;\n"
+            "  st::fn_00500000((uint)stable);\n"
+            "}\n"
+        )
+        actual = generator._repair_exact_machine_lifetime_call_views(
+            "00401000", {"parameters": []}, body
+        )
+        self.assertIn("st::machine_word_boundary_cast<uint>(stable)", actual)
+
+    def test_exact_zero_index_uses_the_same_local_storage_root(self) -> None:
+        generator = self.generator([
+            self.row("00401010", "words", "pointer:/int", "/uint"),
+        ])
+        body = "st::fn_00500000((uint)words[0]);\n"
+        actual = generator._repair_exact_machine_lifetime_call_views(
+            "00401000", {}, body
+        )
+        self.assertIn(
+            "st::machine_word_boundary_cast<uint>(words[0])", actual
+        )
+
+    def test_nonzero_index_is_not_assumed_to_be_the_named_root(self) -> None:
+        generator = self.generator([
+            self.row("00401010", "words", "pointer:/int", "/uint"),
+        ])
+        body = "st::fn_00500000((uint)words[1]);\n"
+        self.assertEqual(
+            body,
+            generator._repair_exact_machine_lifetime_call_views(
+                "00401000", {}, body
+            ),
+        )
+
+    def test_closed_proposed_typed_source_lifetime_needs_no_cast(self) -> None:
+        generator = self.generator([
+            self.row("00401010", "entryPointer", "pointer:/int", "/uint"),
+        ])
+        body = (
+            "void f() {\n"
+            "  uint separatedWord;\n"
+            "  st::fn_00500000(separatedWord);\n"
+            "}\n"
+        )
+        actual = generator._repair_exact_machine_lifetime_call_views(
+            "00401000", {"parameters": []}, body
+        )
+        self.assertEqual(body, actual)
+        self.assertEqual(
+            1,
+            sum(issue.kind == "exact_machine_lifetime_call_view"
+                for issue in generator.issues),
+        )
+
+
 class SourceTreeTypeEmitterTests(unittest.TestCase):
     def records(self) -> list[dict]:
         records = [

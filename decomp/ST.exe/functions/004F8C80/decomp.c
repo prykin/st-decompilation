@@ -105,7 +105,7 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
       uVar1 = (ulonglong)uVar7 % 0xe10;
       /* ST_CALLSITE[004F8F74]: CALL dword ptr [0x0085bde8] */
       wsprintfA(pcVar10,"%s%02d:%02d",pcVar10,(int)(uVar1 / 0x3c),(int)(uVar1 % 0x3c));
-      puVar5 = ccFntTy::WrTxt(pCVar3->field_01BC,pcVar10,0,0,(uint)(DAT_0080874e == '\x03'),-1,-1);
+      puVar5 = STPointerBoundaryCast<ushort *>(ccFntTy::WrTxt(pCVar3->field_01BC,pcVar10,0,0,(uint)(DAT_0080874e == '\x03'),-1,-1));
     }
     else {
       uVar7 = pCVar3->field_09A0 - *(int *)&g_bulkInitializedRecords_008087C7[uVar4].field_0x35;
@@ -146,21 +146,21 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
         pcVar11 = &pCVar3->field_01E1;
         memmove(pcVar11, pcVar10, uVar4); /* compiler REP MOVS byte copy */
       }
-      puVar5 = ccFntTy::WrTxt(pCVar3->field_01BC,&pCVar3->field_01E1,0,0,
-                              (DAT_0080874e == '\x03') + 2,-1,-1);
+      puVar5 = STPointerBoundaryCast<ushort *>(ccFntTy::WrTxt(pCVar3->field_01BC,&pCVar3->field_01E1,0,0,
+                              (DAT_0080874e == '\x03') + 2,-1,-1));
       if (DAT_0080c4d3 != 2) {
 
         ccFntTy::WrTxt(pCVar3->field_01CC,&pCVar3->field_01E1,0xd,10,0,-1,-1);
-        puVar5 = Library::DKW::DDX::FUN_006b3640
+        puVar5 = STPointerBoundaryCast<ushort *>(Library::DKW::DDX::FUN_006b3640
                            ((int *)g_ddxContext_008075A8,pCVar3->field_0174,0xffffffff,
-                            pCVar3->field_00EC,pCVar3->field_00F0);
+                            pCVar3->field_00EC,pCVar3->field_00F0));
       }
     }
   }
   if ((pCVar3->field_023F != CASE_2) && (puVar5 = pCVar3->field_0148[4], -1 < (int)puVar5)) {
-    puVar5 = Library::DKW::DDX::FUN_006b3640
+    puVar5 = STPointerBoundaryCast<ushort *>(Library::DKW::DDX::FUN_006b3640
                        ((int *)g_ddxContext_008075A8,puVar5,0xffffffff,pCVar3->field_004C,
-                        pCVar3->field_00A4);
+                        pCVar3->field_00A4));
   }
   g_currentExceptionFrame = local_50.previous;
   return puVar5;

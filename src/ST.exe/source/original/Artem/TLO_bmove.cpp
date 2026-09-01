@@ -156,7 +156,7 @@ LAB_004c6e4d:
   /* ST_PSEUDO[unresolved_register_input]: candidate live-in register: verify boundary, SEH/setjmp ABI, or convention */
   st::fn_006A5E40
             (-5,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\Artem\\TLO_bmove.cpp"),
-             (int)unaff_EDI);
+             st::machine_word_boundary_cast<int>(unaff_EDI));
 cf_common_exit_004C6F47:
   /* ST_CALLSITE[004C6F55]: CALL 0x00405f0b; direct=00405F0B STFishC::sub_004162F0 */
   st::fn_00405F0B(reinterpret_cast<STFishC *>(param_1),&local_6,&local_8,&local_a);

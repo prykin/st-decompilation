@@ -176,7 +176,7 @@ LAB_00618ce0:
   else if (SVar1 == MESS_STOCTOPUSC_0112) {
     if ((-1 < local_8->field_0097) && (local_8->field_0093 != CASE_5)) {
       st::fn_006E9520
-                (g_sT3DSMAPContext_00807598,local_8->field_0097,0,0,(uint)local_8);
+                (g_sT3DSMAPContext_00807598,local_8->field_0097,0,0,st::machine_word_boundary_cast<uint>(local_8));
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
@@ -252,7 +252,7 @@ int __thiscall st::fn_006195E0(STJumpMineC *this,int param_1)
       piVar5 = &local_8->field_0097;
       if (-1 < local_8->field_0097) {
         st::fn_006E9520
-                  (g_sT3DSMAPContext_00807598,local_8->field_0097,0,0,(uint)local_8);
+                  (g_sT3DSMAPContext_00807598,local_8->field_0097,0,0,st::machine_word_boundary_cast<uint>(local_8));
         st::fn_006E8BA0(g_sT3DSMAPContext_00807598,*piVar5);
       }
       /* ST_CALLSITE[00619716]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */

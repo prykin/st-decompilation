@@ -47,7 +47,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
   undefined3 uStack_1f;
   uint local_1c;
   Global_sub_00528060_param_1Enum *local_18;
-  AnonShape_00518C20_0B2995D2 *local_14;
+  tagBITMAPINFO *local_14;
   char local_d;
   UINT local_c;
   uint local_8;
@@ -220,7 +220,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
 
         Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_3c);
         local_8 = local_8 + 0x14;
-        local_14 = (AnonShape_00518C20_0B2995D2 *)0x1;
+        local_14 = (tagBITMAPINFO *)0x1;
       }
       local_c = *(UINT *)(&DAT_007e055c + param_1 * 4);
       if (local_c != 0) {
@@ -231,20 +231,19 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
 
         ccFntTy::WrStr(this_00->field_01E8,(char *)&DAT_0080f33a,1,-1,
                        (DAT_0080874e != '\x03') - 1 & 4);
-        local_14 = (AnonShape_00518C20_0B2995D2 *)
-                   /* ST_CALLSITE[00519162]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override */
-                   FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_0238,0);
-        FUN_006b5440((ushort *)this_00->field_0218,0,0xb4,local_8,(tagBITMAPINFO *)local_14,0,0x3a);
+        /* ST_CALLSITE[00519162]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override */
+        local_14 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_0238,0);
+        FUN_006b5440((ushort *)this_00->field_0218,0,0xb4,local_8,local_14,0,0x3a);
         local_3c = 0xb4;
-        local_34 = local_14->field_0004;
+        local_34 = (local_14->bmiHeader).biWidth;
         local_38 = local_8;
-        local_30 = local_14->field_0008;
+        local_30 = (local_14->bmiHeader).biHeight;
         local_2c = 1;
         local_2b = 0xdd;
         local_27 = local_1c;
 
         Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_3c);
-        local_14 = (AnonShape_00518C20_0B2995D2 *)0x1;
+        local_14 = (tagBITMAPINFO *)0x1;
         local_8 = local_8 + 0x14;
       }
       local_c = *(UINT *)(&DAT_00854428 + param_1 * 4);
@@ -256,27 +255,26 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
 
         ccFntTy::WrStr(this_00->field_01E8,(char *)&DAT_0080f33a,1,-1,
                        (-(uint)(DAT_0080874e != '\x03') & 0xfffffffb) + 6);
-        local_14 = (AnonShape_00518C20_0B2995D2 *)
-                   /* ST_CALLSITE[00519251]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override */
-                   FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_0238,2);
-        FUN_006b5440((ushort *)this_00->field_0218,0,0xb4,local_8,(tagBITMAPINFO *)local_14,0,0x3a);
+        /* ST_CALLSITE[00519251]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override */
+        local_14 = FUN_0070b3a0((RecoveredGlobalRecordView_0081175C *)this_00->field_0238,2);
+        FUN_006b5440((ushort *)this_00->field_0218,0,0xb4,local_8,local_14,0,0x3a);
         local_3c = 0xb4;
-        local_34 = local_14->field_0004;
+        local_34 = (local_14->bmiHeader).biWidth;
         local_38 = local_8;
-        local_30 = local_14->field_0008;
+        local_30 = (local_14->bmiHeader).biHeight;
         local_2c = 1;
         local_2b = 0xdd;
         local_27 = local_1c;
 
         Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_3c);
-        local_14 = (AnonShape_00518C20_0B2995D2 *)0x1;
+        local_14 = (tagBITMAPINFO *)0x1;
         local_8 = local_8 + 0x14;
       }
       if (local_14 == nullptr) {
         local_8 = local_8 + 0xf;
       }
       local_c = 1;
-      local_14 = (AnonShape_00518C20_0B2995D2 *)0x1;
+      local_14 = (tagBITMAPINFO *)0x1;
       local_44 = param_1 * 3;
       do {
         local_18 = &DAT_007c0dd1 + local_44 + ((uint)local_14 & 0xffff);
@@ -324,7 +322,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
 
         Library::DKW::TBL::DArrayAppend((DArrayTy *)this_00->field_01D7,&local_60);
         local_8 = local_8 + 5 + (pBVar8->bmiHeader).biHeight;
-        local_14 = (AnonShape_00518C20_0B2995D2 *)&local_14->field_0x1;
+        local_14 = (tagBITMAPINFO *)((int)&(local_14->bmiHeader).biSize + 1);
       } while ((ushort)local_14 < 3);
 
       ccFntTy::SetSurf(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x19c,0xf);

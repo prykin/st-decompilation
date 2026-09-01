@@ -532,6 +532,7 @@ st::fn_00520B50
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = st::fn_0072D7F0(local_4c.jumpBuffer,0);
   pIVar2 = local_8;
   if (errorCode == 0) {
@@ -551,12 +552,15 @@ st::fn_00520B50
     }
     st::fn_006B4170((RecoveredSourceFamily_dibcopy *)pIVar2->field_0068,0,param_3,param_4,0x2d,0xc,
                  bVar3);
+
     st::fn_00710A90(pIVar2->field_0189,pIVar2->field_0068,0,param_3,param_4,0x2d,0xc);
+
     st::fn_007119C0(pIVar2->field_0189,&pIVar2->field_018D,-1,-1,(DAT_0080874e != '\x03') - 1 & 5);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\infocen.cpp"),0xa9,0,errorCode,
                              st::mutable_c_string("%s"),"InfocPanelTy::PaintInfocObj");
   if (iVar4 != 0) {

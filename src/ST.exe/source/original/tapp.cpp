@@ -2977,11 +2977,11 @@ LAB_00570645:
       if (local_10 == 0) {
 
         st::fn_006C3B00
-                  (g_recoveredSourceFamily_dvideo_008075A0,(LPCSTR)&DAT_00803408,(uint)local_8);
+                  (g_recoveredSourceFamily_dvideo_008075A0,(LPCSTR)&DAT_00803408,st::machine_word_boundary_cast<uint>(local_8));
       }
       else {
 
-        st::fn_006C2AE0(g_int_008075A4,st::machine_word_boundary_cast<undefined4>(&DAT_00803408),(uint)local_8);
+        st::fn_006C2AE0(g_int_008075A4,st::machine_word_boundary_cast<undefined4>(&DAT_00803408),st::machine_word_boundary_cast<uint>(local_8));
       }
       if (STPiece<2,1>(DAT_0080350c) == '\x01') {
         iVar21 = 0;

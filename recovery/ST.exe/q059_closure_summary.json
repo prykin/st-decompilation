@@ -22,17 +22,17 @@
     "regression_gate": "passed",
     "translation_units": 328
   },
-  "input_manifest_sha256": "37981da755a051f0da39ba7ef9c9da083f498265c27540a9bb8bc9dc64981c2b",
+  "input_manifest_sha256": "f4d5ba156d5fcaa65aa2a0428699870f67122d45ee39c1d5651dae51e8e6c512",
   "policy": {
     "geometry_only_merge": "forbidden",
     "manual_or_imported_replacement": "forbidden",
     "source_generator_type_invention": "forbidden"
   },
-  "program_semantic_sha256": "0c968ea8b4bda3df00f8692b19201788db1b245d22c1256efa238b38287c927c",
+  "program_semantic_sha256": "03c7a704cf53b541b1a04f45b46defa235c3ddcbf83e6ad40348b38c6383ce64",
   "residuals": {
     "anonymous_shape_merge_candidates": 0,
     "anonymous_shapes": 1337,
-    "generic_identities": 123594,
+    "generic_identities": 123579,
     "meaningful_unclaimed_bytes": 67361,
     "meaningful_unclaimed_ranges": 1843,
     "raw_pointer_offset_classifications": {
@@ -48,6 +48,6 @@
   },
   "schema": "st-q059-closure-audit",
   "schema_version": 1,
-  "source_manifest_sha256": "66671e3355a0513cdfad1e9c38576169725de4cf6ada0b5756dfc3176862d039",
+  "source_manifest_sha256": "61783544f94bb833e902b34ef2b5c96d347db93e1dc34903319993af01ab6bdb",
   "status": "passed"
 }

@@ -27,6 +27,7 @@ InfocPanelTy::PaintInfocObj
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   pIVar2 = local_8;
   if (errorCode == 0) {
@@ -46,12 +47,15 @@ InfocPanelTy::PaintInfocObj
     }
     FUN_006b4170((RecoveredSourceFamily_dibcopy *)pIVar2->field_0068,0,param_3,param_4,0x2d,0xc,
                  bVar3);
+
     ccFntTy::SetSurf(pIVar2->field_0189,pIVar2->field_0068,0,param_3,param_4,0x2d,0xc);
+
     ccFntTy::WrStr(pIVar2->field_0189,&pIVar2->field_018D,-1,-1,(DAT_0080874e != '\x03') - 1 & 5);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar4 = ReportDebugMessage("E:\\__titans\\Andrey\\infocen.cpp",0xa9,0,errorCode,
                              "%s","InfocPanelTy::PaintInfocObj");
   if (iVar4 != 0) {

@@ -907,7 +907,7 @@ int __thiscall st::fn_0044EE30(STBoatC *this,STMessage *message)
       local_40 = STPointerBoundaryCast<byte *>(st::fn_00401915(this_00,reinterpret_cast<int *>(&local_34)));
       local_7c = (RecoveredRecordView_0060EA30_C6688588 *)(local_2c + local_34 + local_38);
 
-      local_20 = static_cast<AnonShape_0044EE30_F343D8F0 *>(st::fn_006AAC70((uint)local_7c));
+      local_20 = static_cast<AnonShape_0044EE30_F343D8F0 *>(st::fn_006AAC70(st::machine_word_boundary_cast<uint>(local_7c)));
       pbVar32 = local_40;
       pAVar37 = local_20;
       for (uVar17 = local_34 >> 2; uVar17 != 0; uVar17 = uVar17 - 1) {
@@ -24138,7 +24138,7 @@ st::fn_00482450
   lVar2 = local_EDXEAX_484 + CONCAT44(local_c,local_28) + local_20;
   local_28 = (uint)lVar2;
   local_c = (float)((ulonglong)lVar2 >> 0x20);
-  local_EDXEAX_525 = st::fn_0072E4F0(local_18,(int)local_14[0],local_18,(int)local_14[0]);
+  local_EDXEAX_525 = st::fn_0072E4F0(local_18,st::storage_bit_cast<int>(local_14[0]),local_18,st::storage_bit_cast<int>(local_14[0]));
   local_3c = (uint)local_EDXEAX_525;
   lVar12 = st::fn_0072E4F0(uVar7 - uVar5,iVar11,uVar7 - uVar5,iVar11);
   /* ST_PSEUDO[packed_or_unaligned_piece]: expected named packed member, bit extract/compose, or unaligned load */

@@ -191,30 +191,30 @@ void __thiscall st::fn_004FE6C0(CPanelTy *this,int param_1)
 {
   int iVar2;
   CPanelTy *pCVar3;
-  RecoveredSourceFamily_dibcopy *pRVar4;
+  int iVar5;
   int iVar4;
-  BITMAPINFO *pBVar5;
-  ushort *puVar6;
+  BITMAPINFO *pBVar6;
+  ushort *puVar7;
   int iVar8;
-  byte bVar7;
+  byte bVar8;
   int iVar9;
   uint uVar10;
   uint uVar11;
   InternalExceptionFrame local_54;
   CPanelTy *local_10;
   uint local_c;
-  RecoveredSourceFamily_dibcopy *local_8;
+  int local_8;
 
   if (param_1 == 0) {
-    local_8 = (RecoveredSourceFamily_dibcopy *)this->field_0194;
-    bVar7 = this->field_0C6D;
+    local_8 = this->field_0194;
+    bVar8 = this->field_0C6D;
   }
   else {
-    local_8 = this->field_018C;
-    bVar7 = this->field_0B7F;
+    local_8 = (int)this->field_018C;
+    bVar8 = this->field_0B7F;
   }
-  local_c = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_c)), (uint8_t)(bVar7));
-  if (bVar7 < 0x65) {
+  local_c = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_c)), (uint8_t)(bVar8));
+  if (bVar8 < 0x65) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_10 = this;
@@ -234,18 +234,18 @@ void __thiscall st::fn_004FE6C0(CPanelTy *this,int param_1)
     }
     if (param_1 == 0) {
       /* ST_CALLSITE[004FE7D7]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override */
-      pBVar5 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(local_10->field_02DA),2);
-      pRVar4 = local_8;
-      st::fn_006B5440(reinterpret_cast<ushort *>(local_8),0,199,6,reinterpret_cast<tagBITMAPINFO *>(pBVar5),0,0xff);
-      pBVar5 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(pCVar3->field_02DA),3);
-      iVar9 = (pBVar5->bmiHeader).biHeight;
+      pBVar6 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(local_10->field_02DA),2);
+      iVar5 = local_8;
+      st::fn_006B5440(st::storage_bit_cast<ushort *>(local_8),0,199,6,reinterpret_cast<tagBITMAPINFO *>(pBVar6),0,0xff);
+      pBVar6 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(pCVar3->field_02DA),3);
+      iVar9 = (pBVar6->bmiHeader).biHeight;
       iVar2 = st::storage_bit_cast<int>(static_cast<uint32_t>((local_c & 0xff) * iVar9)) / 100;
       iVar9 = iVar9 - iVar2;
       st::fn_006B5110
-                ((int)pRVar4,0,199,iVar9 + 6,pBVar5,0,0,iVar9,(pBVar5->bmiHeader).biWidth,iVar2,0xff
-                );
-      puVar6 = pCVar3->field_0148[5];
-      if ((int)puVar6 < 0) {
+                (st::storage_bit_cast<int *>(iVar5),0,199,iVar9 + 6,pBVar6,0,0,iVar9,(pBVar6->bmiHeader).biWidth,iVar2,
+                 0xff);
+      puVar7 = pCVar3->field_0148[5];
+      if ((int)puVar7 < 0) {
         g_currentExceptionFrame = local_54.previous;
         return;
       }
@@ -254,17 +254,17 @@ void __thiscall st::fn_004FE6C0(CPanelTy *this,int param_1)
     }
     else {
       /* ST_CALLSITE[004FE741]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override */
-      pBVar5 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(local_10->field_02DA),0);
-      pRVar4 = local_8;
-      st::fn_006B5440(reinterpret_cast<ushort *>(local_8),0,2,6,reinterpret_cast<tagBITMAPINFO *>(pBVar5),0,0xff);
-      pBVar5 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(pCVar3->field_02DA),1);
-      iVar9 = (pBVar5->bmiHeader).biHeight;
+      pBVar6 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(local_10->field_02DA),0);
+      iVar5 = local_8;
+      st::fn_006B5440(st::storage_bit_cast<ushort *>(local_8),0,2,6,reinterpret_cast<tagBITMAPINFO *>(pBVar6),0,0xff);
+      pBVar6 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(pCVar3->field_02DA),1);
+      iVar9 = (pBVar6->bmiHeader).biHeight;
       iVar2 = st::storage_bit_cast<int>(static_cast<uint32_t>((local_c & 0xff) * iVar9)) / 100;
       iVar9 = iVar9 - iVar2;
       st::fn_006B5110
-                ((int)pRVar4,0,2,iVar9 + 6,pBVar5,0,0,iVar9,(pBVar5->bmiHeader).biWidth,iVar2,0xff);
-      puVar6 = pCVar3->field_0148[3];
-      if ((int)puVar6 < 0) {
+                (st::storage_bit_cast<int *>(iVar5),0,2,iVar9 + 6,pBVar6,0,0,iVar9,(pBVar6->bmiHeader).biWidth,iVar2,0xff);
+      puVar7 = pCVar3->field_0148[3];
+      if ((int)puVar7 < 0) {
         g_currentExceptionFrame = local_54.previous;
         return;
       }
@@ -273,7 +273,7 @@ void __thiscall st::fn_004FE6C0(CPanelTy *this,int param_1)
     }
 
     st::fn_006B3640
-              (reinterpret_cast<int *>(g_ddxContext_008075A8),(uint)puVar6,0xffffffff,uVar10,uVar11);
+              (reinterpret_cast<int *>(g_ddxContext_008075A8),st::machine_word_boundary_cast<uint>(puVar7),0xffffffff,uVar10,uVar11);
     g_currentExceptionFrame = local_54.previous;
     return;
   }
@@ -1081,7 +1081,7 @@ LAB_004ff87a:
   if (-1 < (int)puVar2) {
 
     st::fn_006B3640
-              (reinterpret_cast<int *>(g_ddxContext_008075A8),(uint)puVar2,0xffffffff,this_00->field_0040,
+              (reinterpret_cast<int *>(g_ddxContext_008075A8),st::machine_word_boundary_cast<uint>(puVar2),0xffffffff,this_00->field_0040,
                this_00->field_0098);
   }
 cf_common_exit_004FFB91:
@@ -1833,7 +1833,7 @@ joined_r0x00500e7c:
             if (-1 < (int)puVar2) {
 
               st::fn_006B3640
-                        (reinterpret_cast<int *>(g_ddxContext_008075A8),(uint)puVar2,0xffffffff,
+                        (reinterpret_cast<int *>(g_ddxContext_008075A8),st::machine_word_boundary_cast<uint>(puVar2),0xffffffff,
                          (&pCVar4->field_003C)[uVar6],(&pCVar4->field_0094)[uVar6]);
             }
           }

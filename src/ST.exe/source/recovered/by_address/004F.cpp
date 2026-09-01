@@ -374,7 +374,7 @@ HDC __cdecl st::fn_004F4640(ushort *param_1,undefined *param_2,BYTE param_3)
   local_6c[0x3a] = 0x2a;
   /* ST_CALLSITE[004F4896]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   pHVar2 = st::fn_0070D1F0
-                     (0x19d,&local_a8,nullptr,local_6c,(int)param_1,local_30,6,7,1,0,0x20022c,
+                     (0x19d,&local_a8,nullptr,local_6c,st::machine_word_boundary_cast<int>(param_1),local_30,6,7,1,0,0x20022c,
                       param_2);
   return pHVar2;
 }
@@ -551,7 +551,7 @@ HDC __cdecl st::fn_004F4950(ushort *param_1,undefined *param_2,BYTE param_3)
   local_6c[0x56] = 0x7e;
   /* ST_CALLSITE[004F4BB4]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   pHVar2 = st::fn_0070D1F0
-                     (0x19d,&local_a8,nullptr,local_6c,(int)param_1,local_14,3,5,1,0,0x100081c,
+                     (0x19d,&local_a8,nullptr,local_6c,st::machine_word_boundary_cast<int>(param_1),local_14,3,5,1,0,0x100081c,
                       param_2);
   return pHVar2;
 }

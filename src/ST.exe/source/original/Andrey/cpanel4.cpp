@@ -1633,7 +1633,7 @@ LAB_005070be:
         st::fn_006B55F0
                   ((RecoveredSourceFamily_dibcopy *)this_00->field_0194,0,iVar18 + 0x37,
                    (iVar12 - uVar8) + 0x21,
-                   reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(this_00->field_028A),0,(int)local_1c,
+                   reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(this_00->field_028A),0,st::machine_word_boundary_cast<int>(local_1c),
                    *(int *)&((RecoveredRecordView_006B84D0_87AF9D9B *)this_00->field_028A)->
                             field_0x8 - uVar8,5,uVar8);
         /* ST_CALLSITE[00506B22]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
@@ -2754,7 +2754,7 @@ LAB_00509179:
 cf_common_exit_0050918D:
 
       st::fn_006B3640
-                (reinterpret_cast<int *>(g_ddxContext_008075A8),(uint)puVar12,0xffffffff,uVar27,uVar10);
+                (reinterpret_cast<int *>(g_ddxContext_008075A8),st::machine_word_boundary_cast<uint>(puVar12),0xffffffff,uVar27,uVar10);
     }
     goto cf_common_exit_00509192;
   case CASE_3A:

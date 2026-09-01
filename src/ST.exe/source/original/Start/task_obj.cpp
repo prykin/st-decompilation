@@ -85,7 +85,7 @@ LAB_005df673:
       if ((ushort *)local_8[0xb] != 0) {
         pAVar2 = (AnonPointee_MReportTy_0073 *)local_8[local_8[4] + 1];
         st::fn_006B48E0
-                  ((int)param_1,param_4,param_5,pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,
+                  (st::machine_word_boundary_cast<int>(param_1),param_4,param_5,pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,
                    (ushort *)local_8[0xb],0,0x10000ff);
         g_currentExceptionFrame = local_4c.previous;
         return;
@@ -149,7 +149,7 @@ LAB_005df7f3:
       if ((ushort *)local_8[0xb] != 0) {
         pAVar2 = (AnonPointee_MReportTy_0073 *)local_8[1];
         st::fn_006B48E0
-                  ((int)param_1,param_4,param_5,pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,
+                  (st::machine_word_boundary_cast<int>(param_1),param_4,param_5,pAVar2,0,0,0,pAVar2->field_0004,pAVar2->field_0008,
                    (ushort *)local_8[0xb],0,0x10000ff);
         g_currentExceptionFrame = local_4c.previous;
         return;
@@ -1974,7 +1974,7 @@ LAB_005e24c5:
                       }
                     }
 
-                    st::fn_00711F70(this_01->field_0089,(int)local_80,0,-1,
+                    st::fn_00711F70(this_01->field_0089,st::machine_word_boundary_cast<int>(local_80),0,-1,
                                     *(int *)&pAVar15[1].field_0xc,*(int *)&pAVar15[1].field_0x10,
                                     st::machine_word_boundary_cast<undefined4>(puVar16));
                     st::fn_006B5570(pDVar12);
@@ -2024,7 +2024,7 @@ LAB_005e24c5:
                   local_110 = &this_01->field_0x91 + (uint)(STPiece<1,1>(local_106) == '\x01') * 0x100;
                 }
 
-                st::fn_00710A90(this_01->field_0089,(int)local_138[0],0,0,0,0,0);
+                st::fn_00710A90(this_01->field_0089,st::machine_word_boundary_cast<int>(local_138[0]),0,0,0,0,0);
                 local_EAX_6198 = st::fn_006B54F0(nullptr,1,1);
 
                 st::fn_006B5AA0(local_EAX_6198,reinterpret_cast<char *>(local_8));
@@ -2037,7 +2037,7 @@ LAB_005e24c5:
                 pDVar12 = local_28;
                 if (local_28 != nullptr) {
                   /* ST_CALLSITE[005E2BBF]: CALL 0x00713080; direct=00713080 ccFntTy::_SarrToTxt; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/uint; signature=__thiscall;pointer:/uint;pointer:/ccFntTy;pointer:/char;/int */
-                  local_102 = st::pointer_boundary_cast<uint *>(st::fn_00713080(this_01->field_0089,nullptr,(int)local_28));
+                  local_102 = st::pointer_boundary_cast<uint *>(st::fn_00713080(this_01->field_0089,nullptr,st::machine_word_boundary_cast<int>(local_28)));
                   if (local_102 != nullptr) {
                     local_10b = (cTypingTy *)st::fn_0072E530(0xb4);
                     if (local_10b == nullptr) {
@@ -3193,7 +3193,7 @@ st::fn_005E3E80
     pcVar5 = st::pointer_boundary_cast<ccFntTy *>(st::fn_00710BA0(param_6,0,0,0,0,(short)local_8->field_0029,
                                  (int)local_8->field_002B,1));
 
-    st::fn_00710A90(param_6,(int)pcVar5,0,0,0,0,0);
+    st::fn_00710A90(param_6,st::machine_word_boundary_cast<int>(pcVar5),0,0,0,0,0);
 
     st::fn_00711B70(param_6,reinterpret_cast<char *>(param_1),local_10,uVar3,param_7,-1,-1);
 
@@ -3857,13 +3857,13 @@ LAB_005e496b:
           }
         }
 
-        st::fn_00710A90(this_00->field_008D,(int)pRVar3,0,0x1b,0,pRVar3->field_0004 + -0x1b,
-                         (int)local_8);
+        st::fn_00710A90(this_00->field_008D,st::machine_word_boundary_cast<int>(pRVar3),0,0x1b,0,pRVar3->field_0004 + -0x1b,
+                         st::machine_word_boundary_cast<int>(local_8));
         uVar16 = (uint)local_14 & 0xff;
         iVar21 = -1;
         iVar8 = 0;
         /* ST_CALLSITE[005E4DE3]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
-        pcVar12 = st::fn_006B0140((UINT)puVar10,g_hINSTANCE_00807618);
+        pcVar12 = st::fn_006B0140(st::machine_word_boundary_cast<UINT>(puVar10),g_hINSTANCE_00807618);
 
         st::fn_007119C0(this_00->field_008D,pcVar12,iVar8,iVar21,uVar16);
 
@@ -3940,7 +3940,7 @@ LAB_005e496b:
               }
               if (local_14 != nullptr) {
 
-                st::fn_00710A90(this_00->field_008D,(int)pAVar5,0,0xf,
+                st::fn_00710A90(this_00->field_008D,st::machine_word_boundary_cast<int>(pAVar5),0,0xf,
                                  (uVar16 - uVar13) * local_20 + 0xf,local_8->field_002C,local_20);
 
                 st::fn_007119C0(this_00->field_008D,local_14,0,-1,
@@ -4016,7 +4016,7 @@ LAB_005e496b:
           }
           if (local_14 != nullptr) {
 
-            st::fn_00710A90(this_00->field_0089,(int)pRVar3,0,0xf,
+            st::fn_00710A90(this_00->field_0089,st::machine_word_boundary_cast<int>(pRVar3),0,0xf,
                              (uVar16 - uVar13) * local_20 + 0xf,local_8->field_002C,local_20);
 
             st::fn_007119C0(this_00->field_0089,local_14,0,-1,

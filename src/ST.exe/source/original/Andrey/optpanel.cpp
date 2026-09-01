@@ -1564,7 +1564,7 @@ LAB_0052ff02:
         local_c = (int *)0xa;
         do {
           local_c = (int *)((int)local_c + 1);
-          st::fn_0072E340(local_880,local_30,(size_t)local_c);
+          st::fn_0072E340(local_880,local_30,st::machine_word_boundary_cast<size_t>(local_c));
           uVar32 = 0xffffffff;
           pcVar29 = &st_global_007C7278;
           do {

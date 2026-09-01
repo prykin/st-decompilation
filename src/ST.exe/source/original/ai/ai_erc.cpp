@@ -638,7 +638,7 @@ LAB_0064ae25:
       param_1 = (char *)0x15a;
       iVar6 = g_overwriteContext_007ED77C;
 cf_error_exit_0064B368:
-      st::fn_006A5E40(-0x6b,iVar6,pcVar8,(int)param_1);
+      st::fn_006A5E40(-0x6b,iVar6,pcVar8,st::machine_word_boundary_cast<int>(param_1));
       goto cf_common_exit_0064B36F;
     case 9:
       if (param_2 != 1) {
@@ -1256,7 +1256,7 @@ LAB_0064bd33:
           if ((int)pcVar8 <= local_2c) {
             local_28 = (char *)((int)pcVar8 + 0x200);
 
-            local_1c = (undefined4 *)st::fn_006ACF50(local_1c,(uint)local_28);
+            local_1c = (undefined4 *)st::fn_006ACF50(local_1c,st::machine_word_boundary_cast<uint>(local_28));
           }
           puVar1 = (undefined4 *)((int)local_14 + (int)local_1c);
           local_14 = (float)((int)local_14 + 4);
@@ -1281,7 +1281,7 @@ LAB_0064bd33:
             pcVar8 = (char *)((int)pcVar8 + 0x200);
             local_28 = pcVar8;
 
-            local_1c = (undefined4 *)st::fn_006ACF50(local_1c,(uint)pcVar8);
+            local_1c = (undefined4 *)st::fn_006ACF50(local_1c,st::machine_word_boundary_cast<uint>(pcVar8));
           }
           puVar1 = (undefined4 *)((int)local_14 + (int)local_1c);
           local_14 = (float)((int)local_14 + 4);
@@ -1297,7 +1297,7 @@ LAB_0064bd33:
             pcVar8 = (char *)((int)pcVar8 + 0x200);
             local_28 = pcVar8;
 
-            local_1c = (undefined4 *)st::fn_006ACF50(local_1c,(uint)pcVar8);
+            local_1c = (undefined4 *)st::fn_006ACF50(local_1c,st::machine_word_boundary_cast<uint>(pcVar8));
           }
           *(double *)((int)local_14 + (int)local_1c) = (double)local_34;
           local_14 = (float)((int)local_14 + 8);
@@ -1319,9 +1319,9 @@ LAB_0064bd33:
     }
     fVar11 = local_20;
     /* ST_CALLSITE[0064C054]: CALL 0x006aac10; direct=006AAC10 Library::DKW::LIB::MemAllocClear; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/undefined1; source view only; no Ghidra override */
-    local_8 = static_cast<float *>(st::fn_006AAC10((uint)local_20));
+    local_8 = static_cast<float *>(st::fn_006AAC10(st::storage_bit_cast<uint>(local_20)));
 
-    st::fn_007300E0(reinterpret_cast<undefined1 *>(local_8),(int)fVar11,local_18,local_1c);
+    st::fn_007300E0(reinterpret_cast<undefined1 *>(local_8),st::storage_bit_cast<int>(fVar11),local_18,local_1c);
     if (param_3 != nullptr) {
       *param_3 = 3;
     }

@@ -32,7 +32,7 @@ MReportTy::OutTGlProc
   int iVar10;
   InternalExceptionFrame local_50;
   int local_c;
-  RecoveredRecord_MReportTy_005BD4B0 *local_8;
+  int local_8;
 
   if (param_8 != 0) {
     local_c = param_8;
@@ -48,12 +48,14 @@ MReportTy::OutTGlProc
 
       /* ST_PSEUDO[raw_pointer_offset]: candidate structure field after proof; otherwise retain buffer arithmetic */
       uVar3 = FUN_006b4fe0(*(ushort **)(local_c + 0x5d));
-      local_8 = STPointerBoundaryCast<RecoveredRecord_MReportTy_005BD4B0 *>(FUN_006b50c0(param_6,param_7,(uint)*(ushort *)(STField<int>(iVar3,0x5D) + 0xe),uVar3,
-                             (undefined4 *)puVar9,iVar10));
-      uVar8 = local_8->field_0014;
+
+      local_8 = FUN_006b50c0(param_6,param_7,(uint)*(ushort *)(STField<int>(iVar3,0x5D) + 0xe),uVar3,
+                             (undefined4 *)puVar9,iVar10);
+      uVar8 = *(uint *)&((RecoveredRecord_006B4FA0_DAC3A217 *)(local_8 + 0x10))->field_0x4;
       if (uVar8 == 0) {
-        uVar8 = ((uint)local_8->field_000E * local_8->field_0004 + 0x1f >> 3 & 0x1ffffffc) *
-                local_8->field_0008;
+        uVar8 = ((uint)((RecoveredRecord_006B4FA0_DAC3A217 *)local_8)->field_000E *
+                 *(int *)&((RecoveredRecord_006B4FA0_DAC3A217 *)local_8)->field_0x4 + 0x1f >> 3 &
+                0x1ffffffc) * *(int *)&((RecoveredRecord_006B4FA0_DAC3A217 *)local_8)->field_0x8;
       }
 
       puVar4 = STPointerBoundaryCast<undefined4 *>(FUN_006b4fa0((RecoveredRecord_006B4FA0_DAC3A217 *)local_8));
@@ -65,10 +67,10 @@ MReportTy::OutTGlProc
         *(undefined1 *)puVar4 = 0x4c;
         puVar4 = (undefined4 *)((int)puVar4 + 1);
       }
-      FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)local_8,0,2,2,local_8->field_0004 + -4,
-                   local_8->field_0008 + -4,0x18,0xd);
+      FUN_006b5ee0((RecoveredSourceFamily_dibcopy *)local_8,0,2,2,STField<int>(local_8,0x4) + -4,
+                   STField<int>(local_8,0x8) + -4,0x18,0xd);
 
-      ccFntTy::SetSurf(*(ccFntTy **)(iVar3 + 0x83),(int)local_8,0,5,5,local_8->field_0004 + -10,0xf);
+      ccFntTy::SetSurf(*(ccFntTy **)(iVar3 + 0x83),local_8,0,5,5,STField<int>(local_8,0x4) + -10,0xf);
       if (STField<char>(iVar3,0x67) == '\0') {
         pcVar5 = LoadResourceString(0x2711,g_hINSTANCE_00807618);
       }
@@ -81,8 +83,7 @@ MReportTy::OutTGlProc
 
       ccFntTy::WrStr(*(ccFntTy **)(iVar3 + 0x83),(char *)&DAT_0080f33a,10,-1,0);
 
-      ccFntTy::SetSurf(*(ccFntTy **)(iVar3 + 0x83),(int)local_8,0,5,0x19,local_8->field_0004 + -10,
-                       0xf);
+      ccFntTy::SetSurf(*(ccFntTy **)(iVar3 + 0x83),local_8,0,5,0x19,STField<int>(local_8,0x4) + -10,0xf);
       if (STField<char>(iVar3,0x67) == '\0') {
         resourceId = 0x2711;
       }
@@ -97,8 +98,8 @@ MReportTy::OutTGlProc
       ccFntTy::WrStr(*(ccFntTy **)(iVar3 + 0x83),(char *)&DAT_0080f33a,10,-1,0);
 
       Library::DKW::DDX::FUN_006c5000
-                (param_1,param_4,param_5,(int)local_8,0,0,0,local_8->field_0004,local_8->field_0008,
-                 iVar3 + 0xa3,0x4c);
+                (param_1,param_4,param_5,(int *)local_8,0,0,0,STField<uint>(local_8,0x4),
+                 STField<int>(local_8,0x8),iVar3 + 0xa3,0x4c);
       FreeAndNull(&local_8);
       g_currentExceptionFrame = local_50.previous;
       return;

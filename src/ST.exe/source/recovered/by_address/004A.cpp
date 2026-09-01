@@ -1687,11 +1687,11 @@ void __fastcall st::fn_004AD550(RecoveredRecordView_004AD550_F37E00D1 *param_1)
       (iVar1 = *(int *)(param_1->field_0020 + param_1->field_0013 * 0x24), iVar1 != 0)) &&
      (STField<int>(iVar1,0x29) != 0)) {
     st::fn_006E9520
-              (param_1->field_003C,param_1->field_0018,param_1->field_0034,0x404999,(uint)param_1);
+              (param_1->field_003C,param_1->field_0018,param_1->field_0034,0x404999,st::machine_word_boundary_cast<uint>(param_1));
   }
   if ((param_1->field_0010 == '\x01') && (param_1->field_0038 != 0)) {
     st::fn_006E9520
-              (param_1->field_003C,param_1->field_0018,param_1->field_0034,0x405b64,(uint)param_1);
+              (param_1->field_003C,param_1->field_0018,param_1->field_0034,0x405b64,st::machine_word_boundary_cast<uint>(param_1));
   }
   return;
 }

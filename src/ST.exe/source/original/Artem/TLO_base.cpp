@@ -1675,7 +1675,7 @@ int __thiscall st::fn_004B9FA0(TLOBaseTy *this,STMessage *message)
       local_18 = (RecoveredRecordView_0060EA30_C6688588 *)
                  ((this_00->field_03D4 + 0x1a) * 0x27 + local_ce + local_d6 + local_de + local_e6);
 
-      local_10 = (byte *)st::fn_006AAC10((uint)local_18);
+      local_10 = (byte *)st::fn_006AAC10(st::machine_word_boundary_cast<uint>(local_18));
       ppbVar34 = local_4bc;
       pbVar35 = local_10;
       memmove(pbVar35, ppbVar34, 0x3f6); /* compiler REP MOVS byte copy */

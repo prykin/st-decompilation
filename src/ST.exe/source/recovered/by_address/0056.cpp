@@ -1233,8 +1233,8 @@ void __thiscall st::fn_00566E70(void *this,DWORD_PTR param_1)
     dwParam2 = (MCIDEVICEID *)((int)this + 0xf8f);
     if (STField<int>(this,0xf8f) != 0) {
 
-      st::fn_00719560((DWORD_PTR)dwParam2);
-      st::fn_00719C60((DWORD_PTR)dwParam2);
+      st::fn_00719560(st::machine_word_boundary_cast<DWORD_PTR>(dwParam2));
+      st::fn_00719C60(st::machine_word_boundary_cast<DWORD_PTR>(dwParam2));
     }
 
     MVar1 = st::fn_00719410(0,CASE_3,(int)this + 0x640);
@@ -1278,8 +1278,8 @@ void __thiscall st::fn_00566F30(void *this,HWND param_1)
     dwParam2 = (MCIDEVICEID *)((int)this + 0xf8f);
     if (STField<int>(this,0xf8f) != 0) {
 
-      st::fn_00719560((DWORD_PTR)dwParam2);
-      st::fn_00719C60((DWORD_PTR)dwParam2);
+      st::fn_00719560(st::machine_word_boundary_cast<DWORD_PTR>(dwParam2));
+      st::fn_00719C60(st::machine_word_boundary_cast<DWORD_PTR>(dwParam2));
     }
 
     MVar1 = st::fn_00719410(0,CASE_3,(int)this + 0x640);
@@ -1536,7 +1536,7 @@ void __fastcall st::fn_00567330(RecoveredRecord_00567330_5C558B02 *param_1)
 
       puVar4 = st::fn_006F0EC0(0x345,local_150,0,0,0);
       pRVar3->field_0DEF = (int)puVar4;
-      piVar5 = st::fn_0071A5E0((int)puVar4,st::mutable_c_string("SOUNDLIST"),0);
+      piVar5 = st::fn_0071A5E0(st::machine_word_boundary_cast<int>(puVar4),st::mutable_c_string("SOUNDLIST"),0);
       pRVar3->field_0DF3 = (int)piVar5;
       g_currentExceptionFrame = local_4c.previous;
       return;
@@ -2067,7 +2067,7 @@ st::fn_0056A2A0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *
             }
             else {
 
-              iVar3 = st::fn_006C2530(uVar1,(DWORD)puVar4,0,0x48,DAT_0080730a,0,0,1);
+              iVar3 = st::fn_006C2530(uVar1,st::machine_word_boundary_cast<DWORD>(puVar4),0,0x48,DAT_0080730a,0,0,1);
               pAVar2->field_0E07 = iVar3;
             }
           }
@@ -2077,7 +2077,7 @@ st::fn_0056A2A0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *
           }
           else {
 
-            st::fn_006C2530(uVar1,(DWORD)puVar4,0,0x48,DAT_0080730a,0,iVar3,iVar3);
+            st::fn_006C2530(uVar1,st::machine_word_boundary_cast<DWORD>(puVar4),0,0x48,DAT_0080730a,0,iVar3,iVar3);
           }
         }
         else {
@@ -2090,7 +2090,7 @@ st::fn_0056A2A0(void *this,cMf32 *param_1,char *param_2,int param_3,undefined4 *
           else {
 
             iVar3 = st::fn_006C2530
-                              (param_1->field_0000,(DWORD)puVar4,0,0,DAT_0080730a,0,0,1);
+                              (param_1->field_0000,st::machine_word_boundary_cast<DWORD>(puVar4),0,0,DAT_0080730a,0,0,1);
           }
           pAVar2->field_0E07 = iVar3;
           /* ST_CALLSITE[0056A38C]: CALL dword ptr [0x0085bedc] */
@@ -2540,11 +2540,11 @@ LAB_0056f325:
       pcVar7 = local_14;
       if ((param_1 == '\0') || (param_1 == '\x03')) {
 
-        st::fn_006EFDB0(PTR_00806750,(int)local_14,st::mutable_c_string("3D_MAP"),'\x01');
+        st::fn_006EFDB0(PTR_00806750,st::machine_word_boundary_cast<int>(local_14),st::mutable_c_string("3D_MAP"),'\x01');
         pvVar2 = local_10;
 
         st::fn_0071ADB0
-                  (STField<byte *>(local_10,0x7d12),STField<uint>(local_10,0x7d16),(int)pcVar7,
+                  (STField<byte *>(local_10,0x7d12),STField<uint>(local_10,0x7d16),st::machine_word_boundary_cast<int>(pcVar7),
                    PTR_s_TEXTURE_0079b07c,'\x01');
         /* ST_CALLSITE[0056F40F]: CALL 0x00405849; direct=00405849 STPlaySystemC::Save */
         st::fn_00405849(g_playSystem_00802A38,pcVar7);
@@ -2566,14 +2566,14 @@ LAB_0056f325:
         if ((iVar3 == 0) && (STField<uint *>(local_10,0x4ea7) != nullptr)) {
 
           st::fn_0071AB30
-                    (STField<uint *>(local_10,0x4ea7),(int)local_14,PTR_s_DESCRIPTION_0079b074,
+                    (STField<uint *>(local_10,0x4ea7),st::machine_word_boundary_cast<int>(local_14),PTR_s_DESCRIPTION_0079b074,
                      '\x01');
         }
         g_currentExceptionFrame = local_60.previous;
         if (STField<uint *>(pvVar2,0x4eab) != nullptr) {
 
           st::fn_0071AB30
-                    (STField<uint *>(pvVar2,0x4eab),(int)pcVar7,PTR_s_OBJECTIVES_0079b078,'\x01');
+                    (STField<uint *>(pvVar2,0x4eab),st::machine_word_boundary_cast<int>(pcVar7),PTR_s_OBJECTIVES_0079b078,'\x01');
         }
         if (g_sT3DSMAPContext_00807598 != nullptr) {
           iVar15 = 1;

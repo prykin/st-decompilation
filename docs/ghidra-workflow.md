@@ -111,6 +111,7 @@ Only one mode is selected; no file or directory dialogs follow:
 | `full` | Run `core` and then `deep`; does not start the expensive corpus export. |
 | `export` | Stabilize script-owned parameter storage, repair stale return rollbacks, stabilize the final indirect/vtable ABI layer, record and verify the current Program plus recovery artifacts, snapshot the last accepted corpus, transactionally export into `<repo>/decomp`, and run the regression gate. |
 | `full-export` | Run the complete recovery pipeline, perform the same final ABI synchronization/evidence checkpoint, transactionally export, and run the regression gate. |
+| `q057-audit` | Recompute the live Program fingerprint, local-lifetime and return frontiers, and the machine/p-code value-domain ledger, then join them to the accepted source tree and pinned compile audit without mutating Ghidra. |
 | `q059-audit` | After source generation and a zero-error compile audit, verify the accepted corpus/source/Program identity and regenerate complete address-stable Q-059 residual review queues without mutating Ghidra. |
 
 `full` and `full-export` maintain a semantic analyzer cache for expensive
@@ -2076,6 +2077,18 @@ requires an empty safe pointer/type-family frontier and a no-mutation aggregate
 confirmation, and writes `q059_*_review.tsv` plus
 `q059_closure_summary.json`. Residual classifications are evidence-preserving
 review outcomes, not permission to weaken layout, ABI, or manual-data policy.
+
+`STValueDomainClosureAnalyzer` and `tools/st_q057_closure.py` form the separate
+Q-057 acceptance layer. The Ghidra script revalidates instruction, p-code,
+storage, return, and exact CALL-operand evidence in the live Program. The
+offline join then binds that ledger to the passed export, generated source,
+current local-lifetime/return proposal frontiers, ABI gate, and exact source
+manifest used by the compile audit. An unpersistable call lifetime is
+neutralized only by the same function, p-code sequence anchor, resolved target,
+and operand in an exporter audit row. A correctly separated generated local is
+accepted without a redundant cast; a false numeric cast of the exact first
+machine word of a temporary array is replaced by a bit-preserving per-use view.
+Neither form changes the Program ABI or assigns a semantic type.
 
 ## Git and Ghidra database hygiene
 

@@ -69,7 +69,7 @@ st::fn_0053D7A0(UPanelTy *this,AnonShape_0053D7A0_044B6141 *param_1,byte param_2
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40((int)errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x24);
+    st::fn_006A5E40(st::machine_word_boundary_cast<int>(errorCode),0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x24);
   }
   return;
 }
@@ -214,7 +214,7 @@ st::fn_0053DAF0(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *param_
     text = st::pointer_boundary_cast<char *>(st::fn_006F2C00(param_2,1,iVar3));
     /* ST_CALLSITE[0053DB83]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; signature=__cdecl;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;pointer:/int;/SubmarineTitans/Recovered/Enums/Global_mfRLoad_param_2Enum;pointer:/char;/uint;/byte;/int;/int;pointer:/undefined4 */
     pRVar4 = st::pointer_boundary_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(st::fn_00709AF0
-                       (PTR_00806794,CASE_1,text,uVar5,bVar6,iVar7,(int)puVar8,puVar9));
+                       (PTR_00806794,CASE_1,text,uVar5,bVar6,iVar7,st::machine_word_boundary_cast<int>(puVar8),puVar9));
     uVar5 = local_8;
     /* ST_CALLSITE[0053DB97]: CALL 0x00403229; direct=00403229 DibPut */
     st::fn_00403229((RecoveredSourceFamily_dibcopy *)pUVar2->field_0068,local_c,local_8,'\x01',pRVar4);
@@ -244,7 +244,7 @@ st::fn_0053DAF0(UPanelTy *this,AnonShape_0053DAF0_3BDC2979 *param_1,char *param_
   if (iVar3 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40((int)errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x51);
+  st::fn_006A5E40(st::machine_word_boundary_cast<int>(errorCode),0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x51);
   return;
 }
 
@@ -1773,7 +1773,7 @@ st::fn_0053FCD0(ProdPanelTy *this,AnonShape_0053FCD0_D10A885A *param_1,code *par
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40((int)piVar4,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x255);
+    st::fn_006A5E40(st::machine_word_boundary_cast<int>(piVar4),0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x255);
   }
   return;
 }
@@ -1857,7 +1857,7 @@ st::fn_0053FEE0(ProdPanelTy *this,AnonShape_0053FEE0_A49592EB *param_1,code *par
     if (iVar7 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40((int)piVar4,0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x270);
+    st::fn_006A5E40(st::machine_word_boundary_cast<int>(piVar4),0,st::mutable_c_string("E:\\__titans\\Andrey\\specpan.cpp"),0x270);
   }
   return;
 }

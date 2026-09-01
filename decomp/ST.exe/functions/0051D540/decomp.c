@@ -174,7 +174,7 @@ LAB_0051d689:
   /* ST_CALLSITE[0051D8AE]: CALL 0x00402eeb; direct=00402EEB HelpPanelTy::CreateSlider */
   CreateSlider(this_00,iVar6);
   Library::DKW::WGR::FUN_006b5110
-            ((int)this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,
+            ((int *)this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,
              (BITMAPINFO *)this_00->field_0218,0,0,0,0x19c,0x117 - (uint)(ushort)this_00->field_01AF
              ,0xff);
 

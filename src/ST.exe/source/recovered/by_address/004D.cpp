@@ -502,7 +502,7 @@ undefined4 __fastcall st::fn_004D2FD0(int param_1)
   puVar6 = reinterpret_cast<byte *>((local_10d));
   memmove(puVar6, puVar1, 0xb0); /* compiler REP MOVS byte copy */
   /* ST_CALLSITE[004D3032]: CALL 0x0040119a; direct=0040119A STAllPlayersC::SaveGObjData */
-  local_2c[3] = STPointerBoundaryCast<byte *>(st::fn_0040119A((STAllPlayersC *)param_1,reinterpret_cast<int *>(&local_5d)));
+  local_2c[3] = STPointerBoundaryCast<byte *>(st::fn_0040119A(st::storage_bit_cast<STAllPlayersC *>(param_1),reinterpret_cast<int *>(&local_5d)));
   local_59 = 0x14f;
   /* ST_CALLSITE[004D304B]: CALL 0x004018d4; direct=004018D4 STT3DSprC::SaveSpr */
   local_10 = STPointerBoundaryCast<byte *>(st::fn_004018D4((STT3DSprC *)(param_1 + 0x1d5),&local_55));
@@ -532,7 +532,7 @@ undefined4 __fastcall st::fn_004D2FD0(int param_1)
   local_c = (RecoveredRecordView_0060EA30_C6688588 *)
             (local_18 + local_4d + local_55 + 0x14f + local_5d);
 
-  local_8 = (byte *)st::fn_006AAC70((uint)local_c);
+  local_8 = (byte *)st::fn_006AAC70(st::machine_word_boundary_cast<uint>(local_c));
   puVar1 = reinterpret_cast<byte *>((&local_17c));
   pbVar5 = local_8;
   memmove(pbVar5, puVar1, 0x14f); /* compiler REP MOVS byte copy */

@@ -3310,7 +3310,7 @@ LAB_005160da:
   /* ST_CALLSITE[00516141]: CALL 0x00402eeb; direct=00402EEB HelpPanelTy::CreateSlider */
   st::fn_00402EEB(this_00,iVar10);
   st::fn_006B5110
-            ((int)this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,
+            (reinterpret_cast<int *>(this_00->field_0068),0,0x21,(ushort)this_00->field_01AF + 0x16,
              reinterpret_cast<BITMAPINFO *>(this_00->field_0218),0,0,0,0x19c,0x117 - (uint)(ushort)this_00->field_01AF
              ,0xff);
 
@@ -3639,7 +3639,7 @@ LAB_00516776:
   /* ST_CALLSITE[0051685C]: CALL 0x00402eeb; direct=00402EEB HelpPanelTy::CreateSlider */
   st::fn_00402EEB(this_00,iVar11);
   st::fn_006B5110
-            ((int)this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,
+            (reinterpret_cast<int *>(this_00->field_0068),0,0x21,(ushort)this_00->field_01AF + 0x16,
              reinterpret_cast<BITMAPINFO *>(this_00->field_0218),0,0,0,0x19c,0x117 - (uint)(ushort)this_00->field_01AF
              ,0xff);
 
@@ -4543,7 +4543,7 @@ void __thiscall st::fn_00517A50(HelpPanelTy *this,int param_1,uint param_2,char 
           /* ST_CALLSITE[00518229]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
           pcVar5_mgD = st::fn_006B0140(0x562c,g_hINSTANCE_00807618);
 
-          st::fn_007119C0(this_00->field_01E0,pcVar5_mgD,iVar15,iVar17,(uint)pIVar21);
+          st::fn_007119C0(this_00->field_01E0,pcVar5_mgD,iVar15,iVar17,st::machine_word_boundary_cast<uint>(pIVar21));
 
           st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0xcd,local_8,0xcf,0xf);
           pIVar21_mg0 = (InternalExceptionFrame *)((DAT_0080874e != '\x03') - 1 & 5);
@@ -4553,7 +4553,7 @@ void __thiscall st::fn_00517A50(HelpPanelTy *this,int param_1,uint param_2,char 
           pcVar5_mgE = st::fn_006B0140((-(uint)(*local_18 != '\0') & 0xffffffef) + 0x5641,
                                           g_hINSTANCE_00807618);
 
-          st::fn_007119C0(this_00->field_01E0,pcVar5_mgE,iVar15,iVar17,(uint)pIVar21_mg0);
+          st::fn_007119C0(this_00->field_01E0,pcVar5_mgE,iVar15,iVar17,st::machine_word_boundary_cast<uint>(pIVar21_mg0));
           local_8 = local_8 + 0xf;
           pAVar10 = local_c;
         }
@@ -4821,7 +4821,7 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
   undefined3 uStack_1f;
   uint local_1c;
   Global_sub_00528060_param_1Enum *local_18;
-  AnonShape_00518C20_0B2995D2 *local_14;
+  tagBITMAPINFO *local_14;
   char local_d;
   UINT local_c;
   uint local_8;
@@ -4994,7 +4994,7 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
 
         st::fn_006AE1C0(reinterpret_cast<DArrayTy *>(this_00->field_01D7),&local_3c);
         local_8 = local_8 + 0x14;
-        local_14 = (AnonShape_00518C20_0B2995D2 *)0x1;
+        local_14 = (tagBITMAPINFO *)0x1;
       }
       local_c = *(UINT *)(&DAT_007e055c + param_1 * 4);
       if (local_c != 0) {
@@ -5005,20 +5005,19 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
 
         st::fn_007119C0(this_00->field_01E8,reinterpret_cast<char *>(&DAT_0080f33a),1,-1,
                        (DAT_0080874e != '\x03') - 1 & 4);
-        local_14 = (AnonShape_00518C20_0B2995D2 *)
-                   /* ST_CALLSITE[00519162]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override */
-                   st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(this_00->field_0238),0);
-        st::fn_006B5440(reinterpret_cast<ushort *>(this_00->field_0218),0,0xb4,local_8,reinterpret_cast<tagBITMAPINFO *>(local_14),0,0x3a);
+        /* ST_CALLSITE[00519162]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override */
+        local_14 = st::pointer_boundary_cast<tagBITMAPINFO *>(st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(this_00->field_0238),0));
+        st::fn_006B5440(reinterpret_cast<ushort *>(this_00->field_0218),0,0xb4,local_8,local_14,0,0x3a);
         local_3c = 0xb4;
-        local_34 = local_14->field_0004;
+        local_34 = (local_14->bmiHeader).biWidth;
         local_38 = local_8;
-        local_30 = local_14->field_0008;
+        local_30 = (local_14->bmiHeader).biHeight;
         local_2c = 1;
         local_2b = 0xdd;
         local_27 = local_1c;
 
         st::fn_006AE1C0(reinterpret_cast<DArrayTy *>(this_00->field_01D7),&local_3c);
-        local_14 = (AnonShape_00518C20_0B2995D2 *)0x1;
+        local_14 = (tagBITMAPINFO *)0x1;
         local_8 = local_8 + 0x14;
       }
       local_c = *(UINT *)(&DAT_00854428 + param_1 * 4);
@@ -5030,27 +5029,26 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
 
         st::fn_007119C0(this_00->field_01E8,reinterpret_cast<char *>(&DAT_0080f33a),1,-1,
                        (-(uint)(DAT_0080874e != '\x03') & 0xfffffffb) + 6);
-        local_14 = (AnonShape_00518C20_0B2995D2 *)
-                   /* ST_CALLSITE[00519251]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override */
-                   st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(this_00->field_0238),2);
-        st::fn_006B5440(reinterpret_cast<ushort *>(this_00->field_0218),0,0xb4,local_8,reinterpret_cast<tagBITMAPINFO *>(local_14),0,0x3a);
+        /* ST_CALLSITE[00519251]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/wingdi.h/tagBITMAPINFO; source view only; no Ghidra override */
+        local_14 = st::pointer_boundary_cast<tagBITMAPINFO *>(st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(this_00->field_0238),2));
+        st::fn_006B5440(reinterpret_cast<ushort *>(this_00->field_0218),0,0xb4,local_8,local_14,0,0x3a);
         local_3c = 0xb4;
-        local_34 = local_14->field_0004;
+        local_34 = (local_14->bmiHeader).biWidth;
         local_38 = local_8;
-        local_30 = local_14->field_0008;
+        local_30 = (local_14->bmiHeader).biHeight;
         local_2c = 1;
         local_2b = 0xdd;
         local_27 = local_1c;
 
         st::fn_006AE1C0(reinterpret_cast<DArrayTy *>(this_00->field_01D7),&local_3c);
-        local_14 = (AnonShape_00518C20_0B2995D2 *)0x1;
+        local_14 = (tagBITMAPINFO *)0x1;
         local_8 = local_8 + 0x14;
       }
       if (local_14 == nullptr) {
         local_8 = local_8 + 0xf;
       }
       local_c = 1;
-      local_14 = (AnonShape_00518C20_0B2995D2 *)0x1;
+      local_14 = (tagBITMAPINFO *)0x1;
       local_44 = param_1 * 3;
       do {
         local_18 = reinterpret_cast<Global_sub_00528060_param_1Enum *>(&DAT_007c0dd1 + local_44 + ((uint)local_14 & 0xffff));
@@ -5098,7 +5096,7 @@ void __thiscall st::fn_00518C20(HelpPanelTy *this,int param_1,char param_2)
 
         st::fn_006AE1C0(reinterpret_cast<DArrayTy *>(this_00->field_01D7),&local_60);
         local_8 = local_8 + 5 + (pBVar8->bmiHeader).biHeight;
-        local_14 = reinterpret_cast<AnonShape_00518C20_0B2995D2 *>(reinterpret_cast<byte *>(local_14) + 0x1);
+        local_14 = (tagBITMAPINFO *)((int)&(local_14->bmiHeader).biSize + 1);
       } while ((ushort)local_14 < 3);
 
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x19c,0xf);
@@ -6956,7 +6954,7 @@ void __thiscall st::fn_0051C980(HelpPanelTy *this,int param_1,int param_2,char p
       /* ST_CALLSITE[0051CFB0]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
       pcVar7_mgA = st::fn_006B0140(0x5662,g_hINSTANCE_00807618);
 
-      st::fn_007119C0(this_00->field_01E0,pcVar7_mgA,iVar11,iVar13,(uint)pIVar18);
+      st::fn_007119C0(this_00->field_01E0,pcVar7_mgA,iVar11,iVar13,st::machine_word_boundary_cast<uint>(pIVar18));
 
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
       pIVar18 = (InternalExceptionFrame *)((DAT_0080874e != '\x03') - 1 & 5);
@@ -6966,7 +6964,7 @@ void __thiscall st::fn_0051C980(HelpPanelTy *this,int param_1,int param_2,char p
       pcVar7_mgB = st::fn_006B0140((-(uint)(param_1 != 0xfd) & 0xffffffcd) + 0x5663,
                                       g_hINSTANCE_00807618);
 
-      st::fn_007119C0(this_00->field_01E0,pcVar7_mgB,iVar11,iVar13,(uint)pIVar18);
+      st::fn_007119C0(this_00->field_01E0,pcVar7_mgB,iVar11,iVar13,st::machine_word_boundary_cast<uint>(pIVar18));
       local_8 = local_8 + 0xf;
 
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0,local_8,0x91,0xf);
@@ -6976,7 +6974,7 @@ void __thiscall st::fn_0051C980(HelpPanelTy *this,int param_1,int param_2,char p
       /* ST_CALLSITE[0051D062]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
       pcVar7_mgC = st::fn_006B0140(0x5625,g_hINSTANCE_00807618);
 
-      st::fn_007119C0(this_00->field_01E0,pcVar7_mgC,iVar11,iVar13,(uint)pIVar18);
+      st::fn_007119C0(this_00->field_01E0,pcVar7_mgC,iVar11,iVar13,st::machine_word_boundary_cast<uint>(pIVar18));
 
       st::fn_00710A90(this_00->field_01E0,(int)this_00->field_0218,0,0x96,local_8,0x106,0xf);
       pIVar18 = (InternalExceptionFrame *)((DAT_0080874e != '\x03') - 1 & 5);
@@ -6985,7 +6983,7 @@ void __thiscall st::fn_0051C980(HelpPanelTy *this,int param_1,int param_2,char p
       /* ST_CALLSITE[0051D0BA]: CALL 0x006b0140; direct=006B0140 LoadResourceString; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/ccFntTy; source view only; no Ghidra override */
       pcVar7_mgD = st::fn_006B0140(0x5d5a,g_hINSTANCE_00807618);
 
-      st::fn_007119C0(this_00->field_01E0,pcVar7_mgD,iVar11,iVar13,(uint)pIVar18);
+      st::fn_007119C0(this_00->field_01E0,pcVar7_mgD,iVar11,iVar13,st::machine_word_boundary_cast<uint>(pIVar18));
       local_8 = local_8 + 0xf;
       /* ST_CALLSITE[0051D0D8]: CALL 0x00403684; direct=00403684 thunk_FUN_00523410; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
       UVar6 = st::fn_00403684(param_1,bVar12,2);
@@ -7265,7 +7263,7 @@ LAB_0051d689:
   /* ST_CALLSITE[0051D8AE]: CALL 0x00402eeb; direct=00402EEB HelpPanelTy::CreateSlider */
   st::fn_00402EEB(this_00,iVar6);
   st::fn_006B5110
-            ((int)this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,
+            (reinterpret_cast<int *>(this_00->field_0068),0,0x21,(ushort)this_00->field_01AF + 0x16,
              reinterpret_cast<BITMAPINFO *>(this_00->field_0218),0,0,0,0x19c,0x117 - (uint)(ushort)this_00->field_01AF
              ,0xff);
 
@@ -7577,7 +7575,7 @@ int __thiscall st::fn_0051DDD0(HelpPanelTy *this,STMessage *message)
                      reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(this_00->field_01DC),0,0x21,iVar9,0x19c
                      ,0x117 - (uint)(ushort)this_00->field_01AF);
           st::fn_006B5110
-                    ((int)this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,
+                    (reinterpret_cast<int *>(this_00->field_0068),0,0x21,(ushort)this_00->field_01AF + 0x16,
                      reinterpret_cast<BITMAPINFO *>(this_00->field_0218),0,0,
                      (uint)(ushort)this_00->field_01B1 * this_00->field_01C3,0x19c,
                      0x117 - (uint)(ushort)this_00->field_01AF,0xff);
@@ -7656,7 +7654,7 @@ int __thiscall st::fn_0051DDD0(HelpPanelTy *this,STMessage *message)
           } while ((int)uVar18 < st::storage_bit_cast<int>(static_cast<uint32_t>(uVar20 + STField<int>(local_10,0x1e0))));
         }
         st::fn_006B5110
-                  ((int)this_00->field_0068,0,0x21,0x16,reinterpret_cast<BITMAPINFO *>(this_00->field_0218),0,0,0,
+                  (reinterpret_cast<int *>(this_00->field_0068),0,0x21,0x16,reinterpret_cast<BITMAPINFO *>(this_00->field_0218),0,0,0,
                    0x19c,0x118,0xff);
         g_currentExceptionFrame = local_84.previous;
         return 0;

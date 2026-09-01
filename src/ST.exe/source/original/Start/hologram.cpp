@@ -69,7 +69,7 @@ void __thiscall st::fn_005AA6A0(HoloTy *this,uint param_1)
             }
 
             st::fn_006B42D0
-                      ((DDXContext *)param_1,iVar4,iVar3,pBVar7,nullptr,iVar8,iVar5,DVar9,DVar10
+                      (st::storage_bit_cast<DDXContext *>(param_1),iVar4,iVar3,pBVar7,nullptr,iVar8,iVar5,DVar9,DVar10
                       );
           }
 switchD_005aa738_default:

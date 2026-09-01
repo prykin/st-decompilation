@@ -669,7 +669,7 @@ st::fn_005B67A0
     if (errorCode == 0) {
 
       st::fn_006C68F0
-                ((RecoveredGlobalRecordView_00854EB8 *)param_1,param_4,param_5,param_6,param_7,
+                (st::storage_bit_cast<RecoveredGlobalRecordView_00854EB8 *>(param_1),param_4,param_5,param_6,param_7,
                  (int)(local_8 + 1));
       st::fn_006C6850(param_1,param_4,param_5,param_6,param_7,*puVar2);
       g_currentExceptionFrame = local_4c.previous;
@@ -737,7 +737,7 @@ st::fn_005B68B0
       st::fn_006C6660(param_1,local_c,param_5 + 0x26,7,param_7 - 0x4cU,3,0);
 
       st::fn_006C6470
-                ((int)param_1,local_c,param_5 + 0x26,(undefined4 *)0x7,param_7 - 0x4cU,3,*local_8);
+                (st::machine_word_boundary_cast<int>(param_1),local_c,param_5 + 0x26,(undefined4 *)0x7,param_7 - 0x4cU,3,*local_8);
       g_currentExceptionFrame = local_50.previous;
       return;
     }
@@ -793,7 +793,7 @@ st::fn_005B69F0
       iVar3 = param_5 + -0x16 + param_7;
 
       st::fn_006C53B0
-                ((int)param_1,param_4,iVar3,param_4 + -1 + param_6,iVar3,*puVar2);
+                (st::machine_word_boundary_cast<int>(param_1),param_4,iVar3,param_4 + -1 + param_6,iVar3,*puVar2);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

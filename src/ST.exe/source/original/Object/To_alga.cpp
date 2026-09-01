@@ -415,7 +415,7 @@ LAB_00576308:
           (iVar14 = pSVar18->field_003C + pSVar18->field_0044, 0 < iVar14)) {
     local_20 = (RecoveredRecordView_0060EA30_C6688588 *)(iVar14 * 0x92 + 0x18);
 
-    local_1c = (byte *)st::fn_006AAC10((uint)local_20);
+    local_1c = (byte *)st::fn_006AAC10(st::machine_word_boundary_cast<uint>(local_20));
     puVar19 = reinterpret_cast<byte *>(&pSVar18->field_0x1c);
     pbVar9 = local_1c;
     memmove(pbVar9, puVar19, 0x14); /* compiler REP MOVS byte copy */

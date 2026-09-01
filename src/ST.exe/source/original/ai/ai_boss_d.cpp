@@ -181,7 +181,7 @@ undefined4 * __cdecl st::fn_00648780(int param_1,char *param_2)
                 (-0x34,g_overwriteContext_007ED77C,st::mutable_c_string("E:\\__titans\\ai\\ai_boss_d.cpp"),0x7f);
     }
     /* ST_CALLSITE[006487E3]: CALL 0x006f2d90; direct=006F2D90 Library::Ourlib::MFAOBJ::mfAObjLoad; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_00648530; signature=__cdecl;pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_00648530;pointer:/cMf32;pointer:/char;/byte;/int [STUtilityFunctionApplier] heterogeneous_payload_consumer_view; target=006F2D90; signature=__cdecl;pointer:/SubmarineTitans/Recovered/AllocationRecords/AllocationRecord_00648530;pointer:/cMf32;pointer:/char;/byte;/int */
-    local_8 = reinterpret_cast<AllocationRecord_00648530 *>(st::fn_006F2D90((cMf32 *)param_1,param_2,1,0));
+    local_8 = reinterpret_cast<AllocationRecord_00648530 *>(st::fn_006F2D90(st::storage_bit_cast<cMf32 *>(param_1),param_2,1,0));
     if (local_8 != nullptr) {
       local_c = st::fn_00404C28(local_8);
       st::fn_004020A4(reinterpret_cast<int *>(&local_8));

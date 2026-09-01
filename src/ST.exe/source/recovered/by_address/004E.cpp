@@ -1460,7 +1460,7 @@ uint __fastcall st::fn_004E2AB0(int param_1)
 
 {
   /* ST_CALLSITE[004E2AB0]: CALL 0x00403481; direct=00403481 TLOBaseTy::sub_004E3120 */
-  st::fn_00403481((TLOBaseTy *)param_1);
+  st::fn_00403481(st::storage_bit_cast<TLOBaseTy *>(param_1));
   return 0;
 }
 
@@ -5209,7 +5209,7 @@ uint __fastcall st::fn_004EA6C0(int param_1)
 
 {
   /* ST_CALLSITE[004EA6C0]: CALL 0x00404e9e; direct=00404E9E TLOBaseTy::sub_004EA620 */
-  st::fn_00404E9E((TLOBaseTy *)param_1);
+  st::fn_00404E9E(st::storage_bit_cast<TLOBaseTy *>(param_1));
   return 0;
 }
 

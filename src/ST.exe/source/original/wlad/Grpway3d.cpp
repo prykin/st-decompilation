@@ -467,7 +467,7 @@ LAB_0040b56a:
       }
       local_EAX_2797 =
            st::fn_006A8270
-                     ((int)local_2c,(int)g_pathingGrid.sizeX,(int)g_pathingGrid.sizeY,
+                     (st::machine_word_boundary_cast<int>(local_2c),(int)g_pathingGrid.sizeX,(int)g_pathingGrid.sizeY,
                       (undefined4 *)(int)g_pathingGrid.sizeZ,(short *)(int)pSVar5->field_0047,
                       (short *)(int)pSVar5->field_0049,(short *)(int)pSVar5->field_004B,
                       (short *)pSVar5->field_00BB,(short *)pSVar5->field_00BF,
@@ -614,7 +614,7 @@ st::fn_0040BC90
       uVar4 = 4;
     }
     psVar3 = st::fn_006A9190
-                       ((int)local_8,(int)g_pathingGrid.sizeX,(int)g_pathingGrid.sizeY,
+                       (st::machine_word_boundary_cast<int>(local_8),(int)g_pathingGrid.sizeX,(int)g_pathingGrid.sizeY,
                         (int)g_pathingGrid.sizeZ,(short *)(int)pSVar1->field_0047,
                         (short *)(int)pSVar1->field_0049,(short *)(int)pSVar1->field_004B,param_2,
                         param_3,param_4,0,&local_2c,nullptr,nullptr,uVar4);

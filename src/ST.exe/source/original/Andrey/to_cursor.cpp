@@ -1166,7 +1166,7 @@ LAB_00544e8f:
         if ((local_c != 0.0) || ((int)local_8 < 0)) {
 
           st::fn_006B3640
-                    (reinterpret_cast<int *>(g_ddxContext_008075A8),this_00->field_010B,(uint)local_8,
+                    (reinterpret_cast<int *>(g_ddxContext_008075A8),this_00->field_010B,st::machine_word_boundary_cast<uint>(local_8),
                      this_00->field_00DF,this_00->field_00E3);
         }
         break;
@@ -3592,7 +3592,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
         if (local_4c != nullptr) {
           local_18 = (uint *)(local_9c + 1);
 
-          local_94 = static_cast<uint *>(st::fn_006AAC10((uint)local_18));
+          local_94 = static_cast<uint *>(st::fn_006AAC10(st::machine_word_boundary_cast<uint>(local_18)));
           if (local_94 != nullptr) {
             *(char *)local_94 = (this_00->field_04A2 == CASE_A) + '\x01';
             puVar9 = local_4c;
@@ -3629,7 +3629,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
         if (local_1c != nullptr) {
           local_24 = (uint *)(local_a8 + 1);
 
-          local_18 = static_cast<uint *>(st::fn_006AAC10((uint)local_24));
+          local_18 = static_cast<uint *>(st::fn_006AAC10(st::machine_word_boundary_cast<uint>(local_24)));
           if (local_18 != nullptr) {
             *(undefined1 *)local_18 = 3;
             puVar10 = local_1c;
@@ -3708,7 +3708,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
         if (local_54 != nullptr) {
           local_18 = (uint *)(local_a4 + 1);
 
-          local_24 = static_cast<uint *>(st::fn_006AAC10((uint)local_18));
+          local_24 = static_cast<uint *>(st::fn_006AAC10(st::machine_word_boundary_cast<uint>(local_18)));
           if (local_24 != nullptr) {
             *(undefined1 *)local_24 = 4;
             puVar14 = reinterpret_cast<byte *>((local_54));
@@ -3762,7 +3762,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
       if (local_3c != nullptr) {
         local_18 = (uint *)(local_98 + 1);
 
-        local_20 = static_cast<uint *>(st::fn_006AAC10((uint)local_18));
+        local_20 = static_cast<uint *>(st::fn_006AAC10(st::machine_word_boundary_cast<uint>(local_18)));
         if (local_20 != nullptr) {
           *(char *)local_20 = (this_00->field_0494 == CASE_C) + '\x01';
           puVar9 = local_3c;
@@ -3931,7 +3931,7 @@ void __thiscall st::fn_00548C40(CursorClassTy *this,int param_1)
         if (local_44 != nullptr) {
           local_18 = (uint *)(local_a0 + 1);
 
-          local_14 = static_cast<uint *>(st::fn_006AAC10((uint)local_18));
+          local_14 = static_cast<uint *>(st::fn_006AAC10(st::machine_word_boundary_cast<uint>(local_18)));
           if (local_14 != nullptr) {
             *(undefined1 *)local_14 = 3;
             puVar9 = local_44;

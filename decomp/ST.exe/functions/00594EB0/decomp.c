@@ -34,7 +34,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,RecoveredGlobalRecordView_00854EB8 *param_1,MMM
   ccFntTy *pcVar6;
   uint uVar7;
   InternalExceptionFrame local_4c;
-  StartServTy *local_8;
+  int local_8;
 
   if (param_8 != 0) {
     local_4c.previous = g_currentExceptionFrame;
@@ -46,13 +46,13 @@ FSGSTy::OutTRGlProc(FSGSTy *this,RecoveredGlobalRecordView_00854EB8 *param_1,MMM
       MMMObjTy::OutRGlProc
                 (param_3,(int)param_1,param_2,param_3,(int)param_4,param_5,param_6,param_7 + -0x5f,
                  &g_startSystem_0081176C->field_0140);
-      local_8 = param_4 + param_6 + -0x15;
+      local_8 = (int)(param_4 + param_6 + -0x15);
 
       Library::DKW::DDX::FUN_006c6660
-                ((DDXContext *)param_1,(int)local_8,param_5 + 0x26,7,param_7 - 0xab,3,0);
+                ((DDXContext *)param_1,local_8,param_5 + 0x26,7,param_7 - 0xab,3,0);
 
       Library::DKW::DDX::FUN_006c6470
-                ((int)param_1,(int)local_8,param_5 + 0x26,(undefined4 *)0x7,param_7 + -0xab,3,
+                ((int)param_1,local_8,param_5 + 0x26,(undefined4 *)0x7,param_7 + -0xab,3,
                  g_startSystem_0081176C->field_0140);
       uVar7 = 2;
       pcVar6 = g_startSystem_0081176C->field_0034;
@@ -75,7 +75,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,RecoveredGlobalRecordView_00854EB8 *param_1,MMM
       MMMObjTy::OutRGlProc
                 (param_2,(int)param_1,param_2,param_3,(int)param_4,param_5 + -0x5c + param_7,param_6
                  ,0x5c,&g_startSystem_0081176C->field_0140);
-      local_8 = (StartServTy *)(param_6 + -0x14);
+      local_8 = param_6 + -0x14;
       uVar7 = 2;
       pcVar6 = g_startSystem_0081176C->field_0034;
       uVar5 = 0xffffffff;
@@ -84,9 +84,9 @@ FSGSTy::OutTRGlProc(FSGSTy *this,RecoveredGlobalRecordView_00854EB8 *param_1,MMM
       this_00 = (StartServTy *)(param_5 + -0x57 + param_7);
       /* ST_CALLSITE[00595062]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       StartServTy::WrTextDDX
-                (this_00,0,(int)(param_4 + 10),(int)this_00,(int)local_8,0xf,pcVar2,uVar4,uVar5,
-                 pcVar6,uVar7);
-      FUN_006c6850((int)param_1,(int)(param_4 + 10),param_5 + -0x46 + param_7,(int)local_8,0x16,
+                (this_00,0,(int)(param_4 + 10),(int)this_00,local_8,0xf,pcVar2,uVar4,uVar5,pcVar6,
+                 uVar7);
+      FUN_006c6850((int)param_1,(int)(param_4 + 10),param_5 + -0x46 + param_7,local_8,0x16,
                    g_startSystem_0081176C->field_0140);
       uVar7 = 2;
       pcVar6 = g_startSystem_0081176C->field_0034;
@@ -95,8 +95,8 @@ FSGSTy::OutTRGlProc(FSGSTy *this,RecoveredGlobalRecordView_00854EB8 *param_1,MMM
       pcVar2 = LoadResourceString(0x2550,g_hINSTANCE_00807618);
       /* ST_CALLSITE[005950C4]: CALL 0x00404c2d; direct=00404C2D StartServTy::WrTextDDX */
       StartServTy::WrTextDDX
-                (param_4,0,(int)(param_4 + 10),param_5 + -0x2f + param_7,(int)local_8,0xf,pcVar2,
-                 uVar4,uVar5,pcVar6,uVar7);
+                (param_4,0,(int)(param_4 + 10),param_5 + -0x2f + param_7,local_8,0xf,pcVar2,uVar4,
+                 uVar5,pcVar6,uVar7);
       FUN_006c6850((int)param_1,(int)(param_4 + 10),param_5 + -0x1e + param_7,100,0x16,
                    g_startSystem_0081176C->field_0140);
       uVar7 = 2;

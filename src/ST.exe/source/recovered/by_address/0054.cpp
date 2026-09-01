@@ -383,7 +383,7 @@ HDC __cdecl st::fn_005412B0(ushort *param_1,undefined *param_2,BYTE param_3)
   local_90[0x56] = 0x7e;
   /* ST_CALLSITE[005415B7]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   pHVar2 = st::fn_0070D1F0
-                     (0x19d,&local_cc,nullptr,local_90,(int)param_1,local_38,7,7,1,0,0x20021c,
+                     (0x19d,&local_cc,nullptr,local_90,st::machine_word_boundary_cast<int>(param_1),local_38,7,7,1,0,0x20021c,
                       param_2);
   return pHVar2;
 }
@@ -883,7 +883,7 @@ HDC __cdecl st::fn_00541CF0(ushort *param_1,undefined *param_2,BYTE param_3)
   local_54[0x3a] = 0x2a;
   /* ST_CALLSITE[00541EC9]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   pHVar2 = st::fn_0070D1F0
-                     (0x19d,&local_90,nullptr,local_54,(int)param_1,local_18,3,6,1,0,0x10021c,
+                     (0x19d,&local_90,nullptr,local_54,st::machine_word_boundary_cast<int>(param_1),local_18,3,6,1,0,0x10021c,
                       param_2);
   return pHVar2;
 }
@@ -1035,7 +1035,7 @@ HDC __cdecl st::fn_00541F60(ushort *param_1,undefined *param_2,BYTE param_3)
   local_54[0x3a] = 0x2a;
   /* ST_CALLSITE[00542138]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   pHVar2 = st::fn_0070D1F0
-                     (0x19d,&local_90,nullptr,local_54,(int)param_1,local_18,3,6,1,0,0x10021c,
+                     (0x19d,&local_90,nullptr,local_54,st::machine_word_boundary_cast<int>(param_1),local_18,3,6,1,0,0x10021c,
                       param_2);
   return pHVar2;
 }
@@ -1187,7 +1187,7 @@ HDC __cdecl st::fn_005421D0(ushort *param_1,undefined *param_2,BYTE param_3)
   local_54[0x3a] = 0x2a;
   /* ST_CALLSITE[005423AA]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   pHVar2 = st::fn_0070D1F0
-                     (0x19d,&local_90,nullptr,local_54,(int)param_1,local_18,3,6,1,0,0x10021c,
+                     (0x19d,&local_90,nullptr,local_54,st::machine_word_boundary_cast<int>(param_1),local_18,3,6,1,0,0x10021c,
                       param_2);
   return pHVar2;
 }

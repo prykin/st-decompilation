@@ -5742,7 +5742,7 @@ HDC __cdecl st::fn_0052CCE0(ushort *param_1,undefined *param_2,BYTE param_3)
   local_74[0x56] = 0x7e;
   /* ST_CALLSITE[0052CF57]: CALL 0x0070d1f0; direct=0070D1F0 ccFntTy::operator_new */
   pHVar2 = st::fn_0070D1F0
-                     (0x19d,&local_b0,nullptr,local_74,(int)param_1,local_1c,10,2,2,1,0x10001c,
+                     (0x19d,&local_b0,nullptr,local_74,st::machine_word_boundary_cast<int>(param_1),local_1c,10,2,2,1,0x10001c,
                       param_2);
   return pHVar2;
 }

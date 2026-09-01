@@ -470,7 +470,7 @@ void __thiscall st::fn_004F2560(CPanelTy *this,int param_1)
   int local_2c;
   int local_28;
   byte *local_24;
-  RecoveredSourceFamily_dibcopy *local_20;
+  int local_20;
   uint local_1c;
   AnonShape_004F2560_DB98CB49 *local_18;
   int local_14;
@@ -480,13 +480,13 @@ void __thiscall st::fn_004F2560(CPanelTy *this,int param_1)
 
   local_18 = reinterpret_cast<AnonShape_004F2560_DB98CB49 *>(&this->field_0B63);
   if (param_1 == 0) {
-    local_20 = (RecoveredSourceFamily_dibcopy *)this->field_019C;
+    local_20 = this->field_019C;
     local_18 = reinterpret_cast<AnonShape_004F2560_DB98CB49 *>(&this->field_0C51);
     local_28 = this->field_0058;
     local_2c = this->field_00B0;
   }
   else {
-    local_20 = (RecoveredSourceFamily_dibcopy *)this->field_0184;
+    local_20 = this->field_0184;
     local_28 = this->field_0040;
     local_2c = this->field_0098;
   }
@@ -530,13 +530,14 @@ void __thiscall st::fn_004F2560(CPanelTy *this,int param_1)
     local_1c = -(uint)(pAVar13->field_0x7 != '\x03') & 5;
     local_34 = local_1c + local_14;
     /* ST_CALLSITE[004F2673]: CALL 0x00403229; direct=00403229 DibPut */
-    st::fn_00403229(local_20,local_30,local_34,'\x06',reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(local_10));
+    st::fn_00403229((RecoveredSourceFamily_dibcopy *)local_20,local_30,local_34,'\x06',
+           reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(local_10));
     uVar2 = *(ushort *)(pAVar13 + 1);
     if (uVar2 != 0xffff) {
       /* ST_CALLSITE[004F269B]: CALL dword ptr [0x0085bde8] */
       st::external_00000080(reinterpret_cast<LPSTR>(&pCVar5->field_01E1),st::mutable_c_string("%d"),(uint)uVar2);
 
-      st::fn_00710A90(pCVar5->field_01B8,(int)local_20,0,iVar8 + 0x2f,
+      st::fn_00710A90(pCVar5->field_01B8,local_20,0,iVar8 + 0x2f,
                        (local_10->field_0008 + -0xc) / 2 + local_1c + local_14,0x11,0xc);
 
       st::fn_00711B70(pCVar5->field_01B8,&pCVar5->field_01E1,-3,-1,0,-1,-1);
@@ -603,10 +604,11 @@ LAB_004f27ff:
     iVar7 = iVar8;
   }
   /* ST_CALLSITE[004F2870]: CALL 0x00403229; direct=00403229 DibPut */
-  st::fn_00403229(local_20,iVar7,iVar10,'\x06',reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(local_10));
+  st::fn_00403229((RecoveredSourceFamily_dibcopy *)local_20,iVar7,iVar10,'\x06',
+         reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(local_10));
   if (pAVar13->field_001E == 0xff) {
 
-    st::fn_00710A90(pCVar5->field_01B8,(int)local_20,0,iVar8 + 1,local_14 + 2,local_10->field_0004,
+    st::fn_00710A90(pCVar5->field_01B8,local_20,0,iVar8 + 1,local_14 + 2,local_10->field_0004,
                      local_10->field_0008);
     iVar19 = -1;
     iVar18 = -1;
@@ -665,7 +667,7 @@ LAB_004f27ff:
       local_34 = 4;
     }
 
-    st::fn_00710A90(pCVar5->field_01B8,(int)local_20,0,iVar8 + 0x2f,
+    st::fn_00710A90(pCVar5->field_01B8,local_20,0,iVar8 + 0x2f,
                      (local_10->field_0008 + -0xc) / 2 + local_34 + local_1c + local_14,0x11,0xc);
 
     st::fn_00711B70(pCVar5->field_01B8,&pCVar5->field_01E1,-3,-1,0,-1,-1);
@@ -1102,7 +1104,7 @@ st::fn_004F3540(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,char
     iVar6 = st::fn_006AD4D0(st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x1cd,0,(int)errorCode,
                                st::mutable_c_string("%s"),"CPanelTy::PaintBut");
     if (iVar6 == 0) {
-      st::fn_006A5E40((int)errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x1cd);
+      st::fn_006A5E40(st::machine_word_boundary_cast<int>(errorCode),0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x1cd);
       return;
     }
     STDebugBreak(); /* noreturn in standalone pseudocode */
@@ -1209,7 +1211,7 @@ st::fn_004F37C0(CPanelTy *this,byte param_1,STMessage *param_2,byte param_3,char
     if (iVar5 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40((int)errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x1de);
+    st::fn_006A5E40(st::machine_word_boundary_cast<int>(errorCode),0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x1de);
     return;
   }
   iVar6 = 1;
@@ -1511,7 +1513,7 @@ cf_common_join_004F3D83:
     if (iVar8 != 0) {
       STDebugBreak(); /* noreturn in standalone pseudocode */
     }
-    st::fn_006A5E40((int)errorCode,0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x212);
+    st::fn_006A5E40(st::machine_word_boundary_cast<int>(errorCode),0,st::mutable_c_string("E:\\__titans\\Andrey\\cp_sup.cpp"),0x212);
   }
   return;
 }

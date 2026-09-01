@@ -199,19 +199,149 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
         @SuppressWarnings("unchecked")
         Iterator<Object> symbols = (Iterator<Object>)localMap.getClass()
             .getMethod("getSymbols").invoke(localMap);
+        Map<Object, String> namedLocalHighs = new IdentityHashMap<>();
         Set<Object> seenHighVariables =
             java.util.Collections.newSetFromMap(new java.util.IdentityHashMap<>());
         while (symbols.hasNext()) {
             monitor.checkCancelled();
             Object symbol = symbols.next();
-            if ((boolean)symbol.getClass().getMethod("isParameter").invoke(symbol) ||
-                    (boolean)symbol.getClass().getMethod("isGlobal").invoke(symbol))
-                continue;
+            boolean parameter = (boolean)symbol.getClass()
+                .getMethod("isParameter").invoke(symbol);
+            boolean global = (boolean)symbol.getClass()
+                .getMethod("isGlobal").invoke(symbol);
             Object high = symbol.getClass()
                 .getMethod("getHighVariable").invoke(symbol);
+            if (high != null && !global)
+                namedLocalHighs.put(high, text((String)symbol.getClass()
+                    .getMethod("getName").invoke(symbol)));
+            if (parameter || global) continue;
             if (high == null || !seenHighVariables.add(high)) continue;
             analyzeHighVariable(function, symbol, high);
         }
+        collectUnrepresentedCallDomainBoundaries(function, highFunction,
+            namedLocalHighs);
+    }
+
+    /**
+     * Inventory exact CALL operands whose machine value domain disagrees with
+     * a trusted callee parameter even when the owning HighVariable was not an
+     * ordinary split candidate.  This is audit/source-view evidence only: a
+     * mixed or nominal whole local is never retyped from one consumer.
+     */
+    private void collectUnrepresentedCallDomainBoundaries(Function function,
+            Object highFunction, Map<Object, String> namedLocalHighs) {
+        try {
+            @SuppressWarnings("unchecked")
+            Iterator<Object> operations = (Iterator<Object>)highFunction.getClass()
+                .getMethod("getPcodeOps").invoke(highFunction);
+            while (operations.hasNext()) {
+                Object op = operations.next();
+                if (!mnemonic(op).equals("CALL")) continue;
+                CallTarget target = callTarget(op);
+                if (target == null) continue;
+                int inputs = ((Number)op.getClass()
+                    .getMethod("getNumInputs").invoke(op)).intValue();
+                SignatureParameters signature = signatureParameters(
+                    target, inputs - 1);
+                if (signature == null) continue;
+                for (int slot = 1; slot < inputs; slot++) {
+                    Parameter parameter = signature.parameters[slot - 1];
+                    if (!trustedParameter(signature.function, parameter)) continue;
+                    Object input = op.getClass().getMethod("getInput", int.class)
+                        .invoke(op, slot);
+                    BoundaryOrigin origin = contradictoryBoundaryOrigin(input,
+                        parameter.getDataType(),
+                        java.util.Collections.newSetFromMap(
+                            new IdentityHashMap<>()), namedLocalHighs, 0);
+                    if (origin == null) continue;
+                    Evidence anchor = anchor(op, "call_argument", slot - 1,
+                        target, parameter.getSource().toString());
+                    String proposed = typeSpecification(parameter.getDataType());
+                    boolean duplicate = rows.stream().anyMatch(row ->
+                        row.functionAddress.equals(addr(function.getEntryPoint())) &&
+                        row.proposedType.equals(proposed) &&
+                        row.anchors.stream().anyMatch(existing ->
+                            existing.key().equals(anchor.key())));
+                    if (duplicate) continue;
+                    rows.add(new Row(false, function, origin.name, 0, 1,
+                        typeSpecification(origin.type), origin.source,
+                        proposed, anchor, List.of(anchor), 1, "review",
+                        "exact call-boundary type is proven, but no same-width " +
+                        "transparent p-code path reattaches that argument to one " +
+                        "persistent HighSymbol; complete CALL-operand scan records " +
+                        "an address-local source view only"));
+                }
+            }
+        }
+        catch (Exception exception) {
+            failures.add(new Failure(function,
+                "call-domain inventory failed: " + text(exception.getMessage())));
+        }
+    }
+
+    private BoundaryOrigin contradictoryBoundaryOrigin(Object varnode,
+            DataType required, Set<Object> seen,
+            Map<Object, String> namedLocalHighs, int depth) throws Exception {
+        if (varnode == null || depth > 8 || !seen.add(varnode)) return null;
+        int size = ((Number)varnode.getClass().getMethod("getSize")
+            .invoke(varnode)).intValue();
+        if (!usableType(required, size)) return null;
+        Object high = varnode.getClass().getMethod("getHigh").invoke(varnode);
+        DataType current = high == null ? null : (DataType)high.getClass()
+            .getMethod("getDataType").invoke(high);
+        if (current != null && current.getLength() == size &&
+                contradictoryDomains(current, required) &&
+                namedLocalHighs.containsKey(high)) {
+            Object symbol = high.getClass().getMethod("getSymbol").invoke(high);
+            String name = namedLocalHighs.get(high);
+            SourceType source = symbol instanceof Symbol value ?
+                value.getSource() : SourceType.DEFAULT;
+            return new BoundaryOrigin(name,
+                current, source.toString());
+        }
+        Object definition = varnode.getClass().getMethod("getDef").invoke(varnode);
+        if (definition == null || !Set.of("COPY", "CAST", "INDIRECT")
+                .contains(mnemonic(definition))) return null;
+        int count = ((Number)definition.getClass().getMethod("getNumInputs")
+            .invoke(definition)).intValue();
+        BoundaryOrigin result = null;
+        for (int index = 0; index < count; index++) {
+            Object input = definition.getClass().getMethod("getInput", int.class)
+                .invoke(definition, index);
+            if (input == null || (boolean)input.getClass()
+                    .getMethod("isConstant").invoke(input)) continue;
+            int inputSize = ((Number)input.getClass().getMethod("getSize")
+                .invoke(input)).intValue();
+            if (inputSize != size) continue;
+            BoundaryOrigin candidate = contradictoryBoundaryOrigin(input,
+                required, seen, namedLocalHighs, depth + 1);
+            if (candidate == null) continue;
+            if (result != null && (!result.name.equals(candidate.name) ||
+                    !equivalentLifetimeType(result.type, candidate.type)))
+                return null;
+            result = candidate;
+        }
+        return result;
+    }
+
+    private boolean contradictoryDomains(DataType current, DataType required) {
+        if (equivalentLifetimeType(current, required)) return false;
+        String left = valueDomain(current), right = valueDomain(required);
+        if (left.equals(right) || left.equals("neutral") || right.equals("neutral"))
+            return false;
+        return Set.of(left, right).stream().anyMatch(value ->
+            Set.of("pointer", "floating", "void").contains(value));
+    }
+
+    private String valueDomain(DataType type) {
+        DataType base = untypedef(type);
+        if (base == null || Undefined.isUndefined(base)) return "neutral";
+        if (base instanceof Pointer) return "pointer";
+        String path = base.getPathName();
+        if (Set.of("/float", "/double", "/float10").contains(path))
+            return "floating";
+        if (path.equals("/void")) return "void";
+        return "scalar";
     }
 
     private void analyzeHighVariable(Function function, Object highSymbol,
@@ -310,14 +440,21 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                 if (anchor == null) continue;
                 rows.add(new Row(false, function, originalName, entry.getKey(),
                     groups.size(), currentSpecification, symbolSource.toString(),
-                    "", anchor, decision.evidence.size(), "conflict",
+                    "", anchor, List.of(anchor), decision.evidence.size(), "conflict",
                     "incompatible exact lifetime types=" +
                         decision.evidence.keySet()));
                 continue;
             }
             TypeEvidence selected = decision.selected;
+            boolean callArgumentOnly = selected.sources.size() == 1 &&
+                selected.sources.contains("call_argument");
+            boolean stableCallArgumentAnchor = !callArgumentOnly ||
+                selected.anchors.stream().anyMatch(Evidence::persistent);
             Evidence anchor = selected.anchors.stream()
-                .sorted(Evidence.ORDER).findFirst().orElse(null);
+                .sorted(Comparator.comparing((Evidence value) ->
+                        stableCallArgumentAnchor && value.persistent ? 0 : 1)
+                    .thenComparing(Evidence.ORDER))
+                .findFirst().orElse(null);
             if (anchor == null) continue;
             boolean different = !equivalentLifetimeSpecifications(
                 selected.specification, currentSpecification);
@@ -356,7 +493,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             boolean apply = (different || isolate || persistenceRepair) && !manual &&
                 selected.score >= automaticThreshold(selected) &&
                 closedNeutralPointerUse && representableIsolation &&
-                !semanticDowngrade && !downstreamPointeeGuess;
+                !semanticDowngrade && !downstreamPointeeGuess &&
+                stableCallArgumentAnchor;
             if (!merged) singleGroupProposals++;
             String confidence = apply ? "high" :
                 manual ? "manual" : different ? "review" : "existing";
@@ -388,12 +526,16 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                 (downstreamPointeeGuess ?
                     "; downstream call consumers do not prove signedness or semantics of an already width-known pointee" :
                     "") +
+                (!stableCallArgumentAnchor ?
+                    "; exact call-boundary type is proven, but no same-width transparent p-code path reattaches that argument to one persistent HighSymbol" :
+                    "") +
                 (persistenceRepair ?
                     "; database local type differs from the exact current High lifetime" :
                     "");
             rows.add(new Row(apply, function, originalName, entry.getKey(),
                 groups.size(), currentSpecification, symbolSource.toString(),
-                selected.specification, anchor, selected.anchors.size(),
+                selected.specification, anchor, selected.anchors,
+                selected.anchors.size(),
                 confidence, reason));
         }
     }
@@ -1135,7 +1277,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                         proposed);
                     rows.add(new Row(true, function, variable.getName(), 0, 1,
                         typeSpecification(variable.getDataType()),
-                        variable.getSource().toString(), proposed, anchor, 1,
+                        variable.getSource().toString(), proposed, anchor,
+                        List.of(anchor), 1,
                         "high", "retired receiver anchor was attached to a full-EAX " +
                             "call-result lifetime; exact trusted callee return ABI and " +
                             "same-address prior marker agree"));
@@ -1208,6 +1351,7 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                         (short)group, 1,
                         typeSpecification(variable.getDataType()),
                         variable.getSource().toString(), specification, anchor,
+                        List.of(anchor),
                         1, "high", "automation-owned persistent call-result " +
                             "lifetime conflicts with the exact current " +
                             "address-local return override; prior marker=" +
@@ -2464,7 +2608,70 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             .getMethod("getTime").invoke(sequence)).intValue();
         return new Evidence(addr(address), time, kind, operand,
             target == null ? "" : addr(target.direct.getEntryPoint()),
-            target == null ? "" : addr(target.resolved.getEntryPoint()), source);
+            target == null ? "" : addr(target.resolved.getEntryPoint()), source,
+            persistentAnchor(op, kind, operand));
+    }
+
+    /**
+     * Check that the evidence operand reaches one durable Listing local through
+     * same-width transparent p-code.  Without this preflight a synthetic CAST
+     * at a typed call boundary looks high-confidence to the analyzer but cannot
+     * be written back by the applier, so the same proposal recurs forever.
+     */
+    private boolean persistentAnchor(Object op, String kind, int operand) {
+        try {
+            Object varnode;
+            if (kind.equals("call_argument"))
+                varnode = op.getClass().getMethod("getInput", int.class)
+                    .invoke(op, operand + 1);
+            else if (kind.equals("indirect_receiver"))
+                varnode = op.getClass().getMethod("getInput", int.class)
+                    .invoke(op, 1);
+            else if (operand < 0)
+                varnode = op.getClass().getMethod("getOutput").invoke(op);
+            else
+                varnode = op.getClass().getMethod("getInput", int.class)
+                    .invoke(op, operand);
+            return persistentTransparentOrigin(varnode,
+                java.util.Collections.newSetFromMap(new IdentityHashMap<>()), 0);
+        }
+        catch (Exception ignored) {
+            return false;
+        }
+    }
+
+    private boolean persistentTransparentOrigin(Object varnode,
+            Set<Object> seen, int depth) throws Exception {
+        if (varnode == null || depth > 6 || !seen.add(varnode)) return false;
+        Object high = varnode.getClass().getMethod("getHigh").invoke(varnode);
+        Object highSymbol = high == null ? null : high.getClass()
+            .getMethod("getSymbol").invoke(high);
+        if (highSymbol != null) {
+            Symbol symbol = (Symbol)highSymbol;
+            Object object = symbol.getObject();
+            if (object instanceof Variable variable &&
+                    !(variable instanceof Parameter))
+                return true;
+        }
+        Object definition = varnode.getClass().getMethod("getDef").invoke(varnode);
+        if (definition == null || !Set.of("COPY", "CAST", "INDIRECT")
+                .contains(mnemonic(definition))) return false;
+        int size = ((Number)varnode.getClass().getMethod("getSize")
+            .invoke(varnode)).intValue();
+        int inputs = ((Number)definition.getClass()
+            .getMethod("getNumInputs").invoke(definition)).intValue();
+        int persistent = 0;
+        for (int index = 0; index < inputs; index++) {
+            Object input = definition.getClass()
+                .getMethod("getInput", int.class).invoke(definition, index);
+            if (input == null || (boolean)input.getClass()
+                    .getMethod("isConstant").invoke(input)) continue;
+            int inputSize = ((Number)input.getClass().getMethod("getSize")
+                .invoke(input)).intValue();
+            if (inputSize != size) continue;
+            if (persistentTransparentOrigin(input, seen, depth + 1)) persistent++;
+        }
+        return persistent == 1;
     }
 
     private CallTarget callTarget(Object op) throws Exception {
@@ -2811,7 +3018,8 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                 "expected_symbol_source\tproposed_type\tanchor_kind\t" +
                 "anchor_address\tanchor_time\tanchor_operand\t" +
                 "direct_target_address\tresolved_target_address\t" +
-                "anchor_source\tevidence_count\tconfidence\treason\n");
+                "anchor_source\tsupporting_anchors\tevidence_count\t" +
+                "confidence\treason\n");
             for (Row row : rows) {
                 Evidence anchor = row.anchor;
                 out.write(bit(row.apply) + "\t" + row.functionAddress + "\t" +
@@ -2822,6 +3030,7 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
                     anchor.address + "\t" + anchor.time + "\t" +
                     anchor.operand + "\t" + anchor.directTarget + "\t" +
                     anchor.resolvedTarget + "\t" + anchor.source + "\t" +
+                    tsv(supportingAnchors(row.anchors)) + "\t" +
                     row.evidenceCount + "\t" + row.confidence + "\t" +
                     tsv(row.reason) + "\n");
             }
@@ -2881,6 +3090,14 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             .replace("\r", "\\r").replace("\n", "\\n");
     }
 
+    private static String supportingAnchors(List<Evidence> anchors) {
+        return anchors.stream().sorted(Evidence.ORDER).map(anchor ->
+            anchor.address + ":t" + anchor.time + ":" + anchor.kind + ":" +
+            anchor.operand + ":" + anchor.directTarget + ":" +
+            anchor.resolvedTarget).distinct()
+            .collect(java.util.stream.Collectors.joining(","));
+    }
+
     private static class TypeEvidence {
         final String specification;
         final List<Evidence> anchors = new ArrayList<>();
@@ -2900,8 +3117,15 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
     private record ScalarRole(String kind, int operand, int weight,
         String source) {}
     private record TypedField(DataType type, String identity) {}
+    private record BoundaryOrigin(String name, DataType type, String source) {}
     private record Evidence(String address, int time, String kind, int operand,
-        String directTarget, String resolvedTarget, String source) {
+        String directTarget, String resolvedTarget, String source,
+        boolean persistent) {
+        Evidence(String address, int time, String kind, int operand,
+                String directTarget, String resolvedTarget, String source) {
+            this(address, time, kind, operand, directTarget, resolvedTarget,
+                source, false);
+        }
         static final Comparator<Evidence> ORDER =
             Comparator.comparing(Evidence::address)
                 .thenComparingInt(Evidence::time)
@@ -2919,10 +3143,12 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             confidence, reason;
         final int mergeGroup, mergeGroupCount, evidenceCount;
         final Evidence anchor;
+        final List<Evidence> anchors;
         Row(boolean apply, Function function, String originalName,
                 int mergeGroup, int mergeGroupCount,
                 String expectedCurrentType, String expectedSymbolSource,
-                String proposedType, Evidence anchor, int evidenceCount,
+                String proposedType, Evidence anchor, List<Evidence> anchors,
+                int evidenceCount,
                 String confidence, String reason) {
             this.apply = apply;
             this.functionAddress = addr(function.getEntryPoint());
@@ -2934,6 +3160,7 @@ public class STLocalLifetimeAnalyzer extends GhidraScript {
             this.expectedSymbolSource = expectedSymbolSource;
             this.proposedType = proposedType;
             this.anchor = anchor;
+            this.anchors = List.copyOf(anchors);
             this.evidenceCount = evidenceCount;
             this.confidence = confidence;
             this.reason = reason;

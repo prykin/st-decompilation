@@ -119,7 +119,7 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
     /* ST_CALLSITE[00550ECF]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
     pCVar4 = st::fn_0040577C(st::mutable_c_string("TRADE_RATE"),0);
     puVar6 = st::fn_00709AF0
-                       (PTR_00806794,CASE_B,reinterpret_cast<char *>(pCVar4),uVar17,(byte)puVar3,iVar9,(int)puVar20,puVar23);
+                       (PTR_00806794,CASE_B,reinterpret_cast<char *>(pCVar4),uVar17,(byte)puVar3,iVar9,st::machine_word_boundary_cast<int>(puVar20),puVar23);
     local_5 = this_00->field_01D0;
     this_00->field_01D9 = puVar6;
     local_1c = this_00->field_005C;
@@ -230,7 +230,7 @@ void __thiscall st::fn_00550DB0(TradePanelTy *this)
   if (iVar8 != 0) {
     STDebugBreak(); /* noreturn in standalone pseudocode */
   }
-  st::fn_006A5E40((int)puVar3,0,st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0x53);
+  st::fn_006A5E40(st::machine_word_boundary_cast<int>(puVar3),0,st::mutable_c_string("E:\\__titans\\Andrey\\tradecen.cpp"),0x53);
   return;
 }
 

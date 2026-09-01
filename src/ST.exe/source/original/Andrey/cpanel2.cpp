@@ -500,7 +500,7 @@ cf_common_exit_00502155:
   if (-1 < (int)puVar2) {
 
     st::fn_006B3640
-              (reinterpret_cast<int *>(g_ddxContext_008075A8),(uint)puVar2,0xffffffff,this_00->field_0048,
+              (reinterpret_cast<int *>(g_ddxContext_008075A8),st::machine_word_boundary_cast<uint>(puVar2),0xffffffff,this_00->field_0048,
                this_00->field_00A0);
   }
 switchD_0050207d_default:

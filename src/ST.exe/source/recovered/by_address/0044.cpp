@@ -399,7 +399,7 @@ void __thiscall st::fn_00444E70(void *this,ushort *param_1)
 
           st::fn_006AE140
                     (*(DArrayTy **)((int)&g_packedRecords_A62x8[0].field1976_0x9f6 + iVar4),
-                     (uint)local_10,&local_20);
+                     st::machine_word_boundary_cast<uint>(local_10),&local_20);
           piVar6 = piVar6 + 6;
           local_10 = reinterpret_cast<AnonShape_00444E70_523E22DE *>(reinterpret_cast<byte *>(local_10) + 0x1);
         } while ((int)local_10 < (int)uVar7);

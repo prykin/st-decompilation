@@ -164,7 +164,7 @@ st::fn_005B99F0(MMMObjTy *this,RecoveredGlobalRecordView_00854EB8 *param_1,undef
       st::fn_006C6850((int)param_1,param_4,param_5,param_6,param_7,*puVar2);
 
       st::fn_006C53B0
-                ((int)param_1,param_4,param_5 + 0x16,param_4 + -1 + param_6,param_5 + 0x16,*puVar2);
+                (st::machine_word_boundary_cast<int>(param_1),param_4,param_5 + 0x16,param_4 + -1 + param_6,param_5 + 0x16,*puVar2);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

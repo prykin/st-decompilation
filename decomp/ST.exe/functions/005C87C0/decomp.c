@@ -27,6 +27,7 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
+
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0);
   if (errorCode == 0) {
     if ((DAT_008087b6 != 0) && (g_startSystem_0081176C->field_02F4 != nullptr)) {
@@ -84,6 +85,7 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
         } while ((int)uVar7 < (int)pDVar4->count);
       }
       if (-1 < (int)g_startSystem_0081176C->field_02EC) {
+
         FUN_006b35d0((int *)g_ddxContext_008075A8,g_startSystem_0081176C->field_02EC);
       }
     }
@@ -91,6 +93,7 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
+
   iVar5 = ReportDebugMessage("E:\\__titans\\Start\\sett_obj.cpp",0x4ac,0,errorCode,
                              "%s","SettMapTy::PaintSC");
   if (iVar5 == 0) {

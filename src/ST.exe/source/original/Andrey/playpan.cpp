@@ -892,7 +892,7 @@ int __thiscall st::fn_0053AFB0(PlayPanelTy *this,STMessage *message)
   uint local_18;
   PlayPanelTy *local_14;
   uint local_10;
-  RecoveredRecordView_006B84D0_87AF9D9B *local_c;
+  int local_c;
   uint local_8;
 
   local_64.previous = g_currentExceptionFrame;
@@ -942,12 +942,11 @@ int __thiscall st::fn_0053AFB0(PlayPanelTy *this,STMessage *message)
       /* ST_CALLSITE[0053B57C]: CALL 0x0040577c; direct=0040577C thunk_FUN_00571240; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/char; source view only; no Ghidra override */
       pCVar10 = st::fn_0040577C(st::mutable_c_string("BUT_SWITCH"),0);
       pCVar10 = st::fn_006F2C00(reinterpret_cast<char *>(pCVar10),iVar16,uVar11);
-      local_c = (RecoveredRecordView_006B84D0_87AF9D9B *)
-                /* ST_CALLSITE[0053B596]: CALL 0x006f1ce0; direct=006F1CE0 cMf32::RecGet; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
-                st::fn_006F1CE0(g_cMf32_00806790,1,reinterpret_cast<char *>(pCVar10),piVar17,iVar19);
+      /* ST_CALLSITE[0053B596]: CALL 0x006f1ce0; direct=006F1CE0 cMf32::RecGet; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
+      local_c = (int)st::fn_006F1CE0(g_cMf32_00806790,1,reinterpret_cast<char *>(pCVar10),piVar17,iVar19);
       /* ST_CALLSITE[0053B5AA]: CALL 0x00403229; direct=00403229 DibPut */
       st::fn_00403229(reinterpret_cast<RecoveredSourceFamily_dibcopy *>(this_00->field_0068),local_10,iVar8 + iVar13,'\x01',
-             local_c);
+             (RecoveredRecordView_006B84D0_87AF9D9B *)local_c);
       st::fn_006F20E0(g_cMf32_00806790,reinterpret_cast<uint *>(&local_c));
       g_currentExceptionFrame = local_64.previous;
       return 0;
@@ -995,7 +994,7 @@ int __thiscall st::fn_0053AFB0(PlayPanelTy *this,STMessage *message)
                 do {
                   iVar8 = (local_8 & 0xff) * 0x9c;
                   bVar3 = (&DAT_00808af4)[iVar8];
-                  local_c = (RecoveredRecordView_006B84D0_87AF9D9B *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar3));
+                  local_c = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_c)), (uint8_t)(bVar3));
                   if (DAT_00808a8f == '\0') {
                     if (bVar3 == DAT_0080874d) {
 LAB_0053b42f:
@@ -1055,7 +1054,7 @@ LAB_0053b42f:
               do {
                 iVar8 = (local_8 & 0xff) * 0x9c;
                 bVar3 = (&DAT_00808af4)[iVar8];
-                local_c = (RecoveredRecordView_006B84D0_87AF9D9B *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar3));
+                local_c = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_c)), (uint8_t)(bVar3));
                 if (DAT_00808a8f == '\0') {
                   if (bVar3 == DAT_0080874d) {
 LAB_0053b2ea:
@@ -1207,7 +1206,7 @@ LAB_0053b2ea:
       }
       else {
         bVar14 = (char)message->id - 0x2f;
-        local_c = (RecoveredRecordView_006B84D0_87AF9D9B *)STReplaceLowByte((uint32_t)(local_c), (uint8_t)(bVar14));
+        local_c = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_c)), (uint8_t)(bVar14));
         uVar9 = (uint)((&DAT_00808af7)[(this_00->field_01C9 + (uint)bVar14) * 0x9c] == '\0');
       }
       /* ST_CALLSITE[0053BB52]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
@@ -1309,7 +1308,7 @@ LAB_0053b2ea:
     case 0xb516:
       piVar17 = static_cast<int *>((message->arg1).ptr);
       local_10 = STReplaceLowByte(st::storage_bit_cast<uint32_t>(static_cast<uint32_t>(local_10)), (uint8_t)((char)message->id - 0xf));
-      local_c = (RecoveredRecordView_006B84D0_87AF9D9B *)(*piVar17 - this_00->field_003C);
+      local_c = *piVar17 - this_00->field_003C;
       if (this_00->field_005C == 0) {
         iVar8 = this_00->field_0048;
       }
@@ -1323,8 +1322,8 @@ LAB_0053b2ea:
       else {
         bVar14 = (-(DAT_0080874e != '\x01') & 0x89U) + 0x3a;
       }
-      st::fn_006B4170(reinterpret_cast<RecoveredSourceFamily_dibcopy *>(this_00->field_0068),0,(int)local_c,local_8,
-                   piVar17[2],piVar17[3],bVar14);
+      st::fn_006B4170(reinterpret_cast<RecoveredSourceFamily_dibcopy *>(this_00->field_0068),0,local_c,local_8,piVar17[2]
+                   ,piVar17[3],bVar14);
       if ((message->arg0).words.low != 0) {
         iVar8 = (this_00->field_01C9 + (local_10 & 0xff)) * 0x9c;
         bVar14 = (&DAT_00808af4)[iVar8];
@@ -1365,7 +1364,7 @@ LAB_0053b2ea:
             /* ST_CALLSITE[0053B9CE]: CALL 0x0070b3a0; direct=0070B3A0 FUN_0070b3a0; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B; source view only; no Ghidra override */
             pBVar12 = st::fn_0070B3A0(reinterpret_cast<RecoveredGlobalRecordView_0081175C *>(this_00->field_01D5),iVar13);
             /* ST_CALLSITE[0053B9E2]: CALL 0x00403229; direct=00403229 DibPut */
-            st::fn_00403229(reinterpret_cast<RecoveredSourceFamily_dibcopy *>(this_00->field_0068),(int)local_c,local_8,'\x06',
+            st::fn_00403229(reinterpret_cast<RecoveredSourceFamily_dibcopy *>(this_00->field_0068),local_c,local_8,'\x06',
                    reinterpret_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(pBVar12));
           }
         }
@@ -1383,8 +1382,8 @@ LAB_0053b2ea:
         st::external_00000080((LPSTR)&DAT_0080f33a,st::mutable_c_string("%c"),
                   g_bulkInitializedRecords_008087C7[(byte)(&DAT_00808af4)[iVar8]].field_0023 + 0x41);
 
-        st::fn_00710A90(this_00->field_01DD,(int)this_00->field_0068,0,(int)local_c,local_8,
-                         piVar17[2],piVar17[3]);
+        st::fn_00710A90(this_00->field_01DD,(int)this_00->field_0068,0,local_c,local_8,piVar17[2],
+                         piVar17[3]);
 
         st::fn_007119C0(this_00->field_01DD,reinterpret_cast<char *>(&DAT_0080f33a),-1,-1,
                        (DAT_0080874e != '\x03') - 1 & 5);

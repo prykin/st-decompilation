@@ -1,10 +1,9 @@
 # Post-Q-059 build, runtime, and SDL3 roadmap
 
-Status: planning reference. This document deliberately does not modify or
-extend the active recovery queue. It records the expected boundary after
-Q-058 and Q-059 so that later build and porting work can be planned without
-editing `recovery-task-queue.md`, `compile-readiness.md`, or `porting-sdl3.md`
-while those files are being updated by the active recovery process.
+Status: accepted planning reference for the post-recovery build stage. Q-057,
+Q-058, and Q-059 now satisfy their independent acceptance gates. This document
+does not retroactively extend those completed queue items; it defines the next
+link/runtime boundary.
 
 This is a forecast, not an accepted-corpus receipt. Any counts in this document
 are reference points from the accepted snapshots available when it was written.
@@ -13,8 +12,7 @@ compiler audit remain authoritative for an actual implementation pass.
 
 ## Hypothesis and headline outcome
 
-Assume that Q-058 and Q-059 both finish completely and satisfy their stated
-gates without weakening the evidence policy.
+Q-057, Q-058, and Q-059 finished without weakening the evidence policy.
 
 The expected result is the end of the **binary-to-compilable-object-corpus**
 stage:
@@ -24,8 +22,10 @@ stage:
 - remaining unresolved indirect calls have address-stable rejection reasons;
 - exact aggregate identities, pointer families, arrays, unions, globals, and
   newly proven function boundaries have been consolidated;
-- raw pointer offsets are below 500 and anonymous-shape occurrences are below
-  1,000, using the scope and counting rules of the accepted export;
+- every residual raw pointer offset and anonymous shape is classified in an
+  address-stable review queue, with no remaining safe automatic merge or
+  compile/ABI blocker. The historical `<500`/`<1000` counts were progress
+  indicators, not acceptance thresholds;
 - every remaining generic name, ambiguous shape, and meaningful unclaimed
   executable range has an address-stable review row and rejection reason;
 - the freshly regenerated source tree compiles every translation unit
@@ -117,14 +117,11 @@ A green C++ compiler proves only that these operations are expressible. It does
 not prove that every original semantic type, owner, name, control-flow construct,
 or return contract has been recovered.
 
-## Q-057 remains an independent runtime prerequisite
+## Q-057 is an independently closed runtime prerequisite
 
-Completing Q-058 and Q-059 does not logically imply that every Q-057 criterion
-has been satisfied. Compiler-clean source may still contain a mechanically
-representable but behaviorally unsafe merged lifetime or return boundary.
-
-If Q-057 is not also closed by the time Q-059 finishes, complete it before
-serious runtime bring-up. In particular, require closure of:
+Completing Q-058 and Q-059 did not logically imply Q-057 completion. It was
+therefore closed and audited separately before runtime work. The accepted
+Q-057 layer covers:
 
 - pointer-to-float and float-to-pointer lifetime conflicts;
 - pointer values used as scalar switch domains;
@@ -134,8 +131,8 @@ serious runtime bring-up. In particular, require closure of:
 - return-width and x87 result contradictions which can compile through a cast
   but corrupt downstream state.
 
-The first behavior-facing gate should include the Q-057 ABI fixtures, the broad
-export gate, and a confirming no-change recovery pass.
+Every behavior-facing gate must continue to include the Q-057 closure audit,
+ABI fixtures, broad export gate, and a confirming no-change recovery pass.
 
 ## Next milestone: a real link-clean 32-bit executable
 

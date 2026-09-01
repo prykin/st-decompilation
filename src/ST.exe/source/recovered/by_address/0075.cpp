@@ -1620,7 +1620,7 @@ void st::fn_007532A0(undefined4 *param_1)
 
 {
   if (param_1 != nullptr) {
-    st::fn_00754EC0((int)param_1);
+    st::fn_00754EC0(st::machine_word_boundary_cast<int>(param_1));
     if (param_1[2] != 0) {
       st::fn_006B9890((int *)(param_1[2] + 0x4c));
     }
@@ -1826,7 +1826,7 @@ int st::fn_00753B40(RecoveredRecordView_00753C80_637B4E8C *param_1)
   }
   else {
 
-    iVar4 = st::fn_006D4A40((int)pAVar1,iVar2,reinterpret_cast<undefined4 *>(&param_1));
+    iVar4 = st::fn_006D4A40(st::machine_word_boundary_cast<int>(pAVar1),iVar2,reinterpret_cast<undefined4 *>(&param_1));
     if (iVar4 == 0) {
       pRVar3->field_0008->field_001C = st::machine_word_boundary_cast<undefined4>(param_1);
       return iVar2;
@@ -2740,7 +2740,7 @@ void st::fn_00754B80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int pa
     }
     if (param_1->field_0084 < param_1->field_006C) {
       while (param_6 != 0) {
-        st::fn_007568D0((int)param_1,st::machine_word_boundary_cast<undefined4>(param_4),1);
+        st::fn_007568D0(st::machine_word_boundary_cast<int>(param_1),st::machine_word_boundary_cast<undefined4>(param_4),1);
         iVar13 = 0;
         puVar10_mg2 = param_2;
         if (0 < param_1->field_0068) {
@@ -2770,7 +2770,7 @@ void st::fn_00754B80(AnonShape_00754B80_75BFDB7A *param_1,ushort *param_2,int pa
         if (param_6 == 0) {
           return;
         }
-        st::fn_007568D0((int)pAVar6,st::machine_word_boundary_cast<undefined4>(param_4),1);
+        st::fn_007568D0(st::machine_word_boundary_cast<int>(pAVar6),st::machine_word_boundary_cast<undefined4>(param_4),1);
         piVar11 = (int *)*param_4;
         AnonShape_00754B80_75BFDB7A * param_1_after_write = nullptr; /* compiler stack-slot lifetime split */
         if (0 < pAVar6->field_0068) {

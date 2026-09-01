@@ -707,7 +707,7 @@ LAB_00629242:
              STField<uint>(puVar9,0xd),local_10,local_c,0);
   if (DAT_00807326 != '\0') {
     st::fn_006E9520
-              (g_sT3DSMAPContext_00807598,*piVar1,0,0x4049f8,(uint)pSVar8);
+              (g_sT3DSMAPContext_00807598,*piVar1,0,0x4049f8,st::machine_word_boundary_cast<uint>(pSVar8));
   }
 
   st::fn_006E98E0

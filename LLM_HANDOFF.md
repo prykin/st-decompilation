@@ -52,9 +52,9 @@ have been checked.
 ## Current authoritative state
 
 The current headless export receipt is `passed` with Program semantic hash
-`a7939e1e5340f76bc779b9617a409135d5be18cfcac6d040fa320fc1bf495d99`
+`03c7a704cf53b541b1a04f45b46defa235c3ddcbf83e6ad40348b38c6383ce64`
 and corpus manifest hash
-`c6e099a7a23a3f36508cd7463210d095031021f1d8ac92822f6fb772ca1598db`.
+`f4d5ba156d5fcaa65aa2a0428699870f67122d45ee39c1d5651dae51e8e6c512`.
 The manifest binds portable `program.json` metadata as
 `3bb8a76833b385eab3616325d3bd622ddaea5741bd8c60a99eb35c483ad7d761`.
 The manifest binds `pseudocode_runtime.h` as
@@ -67,8 +67,8 @@ bodies, 1,546 excluded library functions, 3,826 thunks, and 3,192 typed
 physical-vtable slots. Export and ABI gates pass with zero errors or warnings.
 
 The canonical Git/LFS Program checkpoint is the deterministic normalized
-`ghidra/ST.exe.gzf`: 29,326,263 bytes with packed SHA-256
-`c17e4e8e18a14bae2820b5218d1edda3bb9392847b64ff250659e273314cc971`.
+`ghidra/ST.exe.gzf`: 29,424,163 bytes with packed SHA-256
+`2d6aa66b08646c9fb581b721efcda59ca6588aa01e4ced057559be965272f1d3`.
 Its normalization is
 `zip-dos-time-1980-01-01+private-metadata-v5`: ZIP time, database revision
 times, database owners, and absolute workstation paths are removed before the
@@ -85,9 +85,9 @@ paths, database owner identities, database revision times, and wall-clock data
 in log-like artifacts are forbidden. Commit author dates remain intentional
 Git metadata and committer identity/date must exactly match the author.
 
-The current quality inventory contains 1,042 anonymous-shape occurrences,
-14,598 undefined types, 5,613 casts over generic fields, 1,105 raw pointer
-offsets, 459 raw indirect calls, 311 canonical casted call results, 261
+The current quality inventory contains 1,049 anonymous-shape occurrences,
+14,577 undefined types, 5,644 casts over generic fields, 1,103 raw pointer
+offsets, 459 raw indirect calls, 239 canonical casted call results, 261
 return-width artifacts, 462 residual stack-slot-reuse occurrences, and 362
 unresolved register inputs. The counts overlap and are occurrences across all
 exported `functions/**/decomp.c`, not independent recovery facts. In total,
@@ -98,14 +98,14 @@ with 1,044 bodies under proven original paths and address-stable
 `st::fn_ADDRESS` implementations. It generates 1,147 physical-vtable member
 wrappers, 1,396 source-member wrappers, 37 exact indirect member wrappers, and
 2,321 exact unnamed field views. The strict generated-source readability
-profile contains 2,355 generic undefined declarations, 1,418 pointer-boundary
+profile contains 2,354 generic undefined declarations, 1,383 pointer-boundary
 casts, 459 raw code calls, and 529 `unaff`/`extraout` occurrences.
 
 The current fixed Docker Clang audit uses C++17, MS extensions, an ILP32 target,
-and a limit of 64 errors per translation unit. It passes 312 of 328 units and
-retains 35 errors, all mapped to stable function addresses. The tracked
+and a limit of 64 errors per translation unit. It passes all 328 units with zero
+errors and zero warnings. The tracked
 deterministic source manifest is
-`6ac11f8aeb73c2be3702dbd8b92dc779b4d03d25dce4e7b55d01deef2da58eb2`.
+`61783544f94bb833e902b34ef2b5c96d347db93e1dc34903319993af01ab6bdb`.
 `config/source-compile-regression-baseline.json` binds this accepted compiler
 state and has SHA-256
 `e7b51b2c90ac1bbab01adcc5fc3667bab832361f3f94b6f995ab17ff42dcc539`.
@@ -149,25 +149,22 @@ compiler-regression, and packed-snapshot round-trip gates all pass; the fixed
 compiler audit is 312/328 translation units with 35 addressed errors and zero
 regressions.
 
+Q-057, Q-058, and Q-059 are complete. The dedicated Q-057 closure contains
+2,154 rows: 239 resolved, 547 neutralized, 1,368 honest review rows, and zero
+machine-proven conflicts. All 107 automatic lifetime proposals are at
+confirming `unchanged`, and the return frontier has no automatic proposal.
+Q-059 is revalidated against the same Program/source state with 1,103 fully
+classified raw offsets, 1,337 anonymous-shape review occurrences, no safe merge
+frontier, and no compile/ABI blocker.
+
 ## Ordered next work
 
-The current work is inside `Q-059`; `Q-058` is complete and `Q-057` has
-materially reduced compiler debt but its strict zero-family completion criteria
-are not yet met. Continue
-with the items below; their full definitions and completion criteria are in
-`docs/recovery-task-queue.md`.
-
-1. `Q-057` — separate pointer, scalar, floating, DArray, stack-output, and
-   post-call SSA lifetimes; close return ABI/value-domain contradictions from
-   machine and call-boundary evidence. Never solve these with whole-local casts.
-2. `Q-059` — consolidate pointer layouts, anonymous records, arrays, global
-   aggregates, unclaimed executable ranges, and only then semantic names and CFG
-   presentation. Generic names are review debt, not permission to invent names.
-
-The intended dependency order is source-boundary correctness -> lifetime/ABI ->
-callable ownership -> aggregate/semantic consolidation. Run analyzer-only
-review, one apply pass, one confirming pass, ABI/export gates, source generation,
-and the fixed compiler audit for every queue item.
+Begin the link-clean 32-bit reference executable milestone described in
+`docs/post-q059-build-runtime-port-roadmap.md`. First generate an address-stable
+linker inventory which separates recovered game definitions, thunks, excluded
+static-library bodies, imports, image-backed data, resources, and genuine dead
+code. Do not satisfy missing definitions with zero-filled globals or no-op
+functions. Preserve the Q-057/Q-059 closure audits as behavior-facing gates.
 
 ## Historical pre-compiler checkpoints
 

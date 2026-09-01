@@ -223,7 +223,7 @@ int __thiscall st::fn_006A0740(CGenerate *this)
   /* ST_CALLSITE[006A087E]: CALL 0x006b5050; direct=006B5050 FUN_006b5050; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/byte; signature=__stdcall;pointer:/byte;pointer:/SubmarineTitans/Recovered/PointerShapes/AnonShape_006B5050_99986F91 */
   pbVar4 = st::pointer_boundary_cast<byte *>(st::fn_006B5050(local_c));
 
-  st::fn_006F13F0(this_00->field_0018,0xc,PTR_s_SMALL_MAP_0079d840,reinterpret_cast<byte *>(local_c),(uint)pbVar4,puVar9
+  st::fn_006F13F0(this_00->field_0018,0xc,PTR_s_SMALL_MAP_0079d840,reinterpret_cast<byte *>(local_c),st::machine_word_boundary_cast<uint>(pbVar4),puVar9
                 ,cVar10,puVar11);
   if (local_c != nullptr) {
     st::fn_006AB060(&local_c);

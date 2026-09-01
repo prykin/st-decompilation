@@ -87,29 +87,29 @@ undefined4 __thiscall st::fn_005F35F0(STBHEShellC *this,int param_1)
 
 {
   uint *puVar1;
-  AnonShape_005F35F0_EF2A6FDB *pAVar2;
+  uint uVar2;
   int iVar3;
   ushort *puVar4;
   InternalExceptionFrame local_54;
   uint local_10;
   char **local_c;
-  AnonShape_005F35F0_EF2A6FDB *local_8;
+  uint local_8;
 
   local_10 = 0;
   local_c = &PTR_s_adcbo_007ce5a0;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  local_8 = reinterpret_cast<AnonShape_005F35F0_EF2A6FDB *>(this);
+  local_8 = (uint)this;
 
   iVar3 = st::fn_0072D7F0(local_54.jumpBuffer,0);
-  pAVar2 = local_8;
+  uVar2 = local_8;
   if (iVar3 == 0) {
     if (param_1 == 1) {
       /* ST_CALLSITE[005F365D]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
       puVar4 = st::fn_00709AF0
-                         (PTR_00806774,CASE_1D,local_c[local_8->field_0087],0xffffffff,0,1,0,
+                         (PTR_00806774,CASE_1D,local_c[STField<int>(local_8,0x87)],0xffffffff,0,1,0,
                           nullptr);
-      puVar1 = &pAVar2->field_008F;
+      puVar1 = (uint *)(uVar2 + 0x8f);
 
       st::fn_006E8660
                 (g_sT3DSMAPContext_00807598,reinterpret_cast<int *>(puVar1),1,0,STField<uint>(puVar4,9),
@@ -117,18 +117,17 @@ undefined4 __thiscall st::fn_005F35F0(STBHEShellC *this,int param_1)
 
       st::fn_006E98E0
                 (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar4,STField<int>(puVar4,0x21),1);
-      st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,pAVar2->field_00AB);
-      pAVar2->field_0171 = puVar4;
+      st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,STField<uint>(uVar2,0xAB));
+      *(ushort **)(uVar2 + 0x171) = puVar4;
       if (DAT_00807326 != '\0') {
-        st::fn_006E9520
-                  (g_sT3DSMAPContext_00807598,*puVar1,0,0x403170,(uint)pAVar2);
+        st::fn_006E9520(g_sT3DSMAPContext_00807598,*puVar1,0,0x403170,uVar2);
       }
     }
     else {
-      puVar1 = &local_8->field_008F;
-      if (-1 < (int)local_8->field_008F) {
+      puVar1 = (uint *)(local_8 + 0x8f);
+      if (-1 < (int)STField<uint>(local_8,0x8F)) {
         st::fn_006E9520
-                  (g_sT3DSMAPContext_00807598,local_8->field_008F,0,0,(uint)local_8);
+                  (g_sT3DSMAPContext_00807598,STField<uint>(local_8,0x8F),0,0,local_8);
         st::fn_006E8BA0(g_sT3DSMAPContext_00807598,*puVar1);
       }
       /* ST_CALLSITE[005F3733]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
@@ -142,7 +141,7 @@ undefined4 __thiscall st::fn_005F35F0(STBHEShellC *this,int param_1)
 
       st::fn_006E98E0
                 (g_sT3DSMAPContext_00807598,*puVar1,0,*(int *)puVar4,STField<int>(puVar4,0x21),1);
-      st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,pAVar2->field_00AB);
+      st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar1,0,STField<uint>(uVar2,0xAB));
       /* ST_CALLSITE[005F37A2]: CALL 0x00709af0; direct=00709AF0 Library::Ourlib::MFRLOAD::mfRLoad; [STCallResultViewApplier] presentation_only; exact direct-call result=pointer:/int; source view only; no Ghidra override */
       puVar4 = st::fn_00709AF0
                          (PTR_00806764,CASE_1D,st::mutable_c_string("expl_s0"),0xffffffff,0,1,0,nullptr
@@ -150,17 +149,17 @@ undefined4 __thiscall st::fn_005F35F0(STBHEShellC *this,int param_1)
 
       st::fn_006E98E0
                 (g_sT3DSMAPContext_00807598,*puVar1,2,*(int *)puVar4,STField<int>(puVar4,0x21),1);
-      st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar1,2,pAVar2->field_00C0);
+      st::fn_006EA270(g_sT3DSMAPContext_00807598,*puVar1,2,STField<uint>(uVar2,0xC0));
       st::fn_006E9D40(g_sT3DSMAPContext_00807598,(uint *)*puVar1,2);
     }
     st::fn_006EA960
-              (g_sT3DSMAPContext_00807598,pAVar2->field_008F,
-               (float)pAVar2->field_0093 * _DAT_007904f8 * _DAT_007904f0,
-               (float)pAVar2->field_0097 * _DAT_007904f8 * _DAT_007904f0,
-               (float)pAVar2->field_009B * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+              (g_sT3DSMAPContext_00807598,STField<uint>(uVar2,0x8F),
+               (float)STField<int>(uVar2,0x93) * _DAT_007904f8 * _DAT_007904f0,
+               (float)STField<int>(uVar2,0x97) * _DAT_007904f8 * _DAT_007904f0,
+               (float)STField<int>(uVar2,0x9B) * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
 
-    st::fn_006EAAA0(g_sT3DSMAPContext_00807598,pAVar2->field_008F,0);
-    pAVar2->field_00C4 = 1;
+    st::fn_006EAAA0(g_sT3DSMAPContext_00807598,STField<uint>(uVar2,0x8F),0);
+    STField<undefined1>(uVar2,0xC4) = 1;
     g_currentExceptionFrame = local_54.previous;
     return 1;
   }

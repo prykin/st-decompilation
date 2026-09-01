@@ -2593,7 +2593,7 @@ undefined4 __cdecl st::fn_00719960(MCIDEVICEID *param_1)
   }
   DAT_00857038 = local_10;
   if (local_10 == 0) {
-    st::fn_00719C60((DWORD_PTR)param_1);
+    st::fn_00719C60(st::machine_word_boundary_cast<DWORD_PTR>(param_1));
     return 1;
   }
   return 0;
@@ -2743,8 +2743,8 @@ int __cdecl st::fn_00719BB0(MCIDEVICEID *param_1)
       local_10 = 0;
     }
     if (MVar1 != 0) {
-      st::fn_00719560((DWORD_PTR)param_1);
-      st::fn_00719C60((DWORD_PTR)param_1);
+      st::fn_00719560(st::machine_word_boundary_cast<DWORD_PTR>(param_1));
+      st::fn_00719C60(st::machine_word_boundary_cast<DWORD_PTR>(param_1));
     }
   }
   return 0;
@@ -2789,7 +2789,7 @@ void __cdecl st::fn_00719C90(MCIERROR mcierr,MCIDEVICEID *param_2)
   CHAR local_104 [256];
 
   if (*param_2 != 0) {
-    st::fn_00719C60((DWORD_PTR)param_2);
+    st::fn_00719C60(st::machine_word_boundary_cast<DWORD_PTR>(param_2));
   }
   *param_2 = 0;
   if (DAT_007f07c4 != 0) {

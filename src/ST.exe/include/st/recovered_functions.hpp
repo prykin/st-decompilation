@@ -17426,9 +17426,9 @@ int fn_006B5090(int param_1,int param_2,int param_3,int param_4);
 // 006B50C0 FUN_006b50c0
 int fn_006B50C0(int param_1,int param_2,int param_3,uint param_4,undefined4 *param_5,int param_6);
 // 006B5110 Library::DKW::WGR::FUN_006b5110 [statically linked library; implementation excluded]
-undefined4 __stdcall fn_006B5110(int param_1, int param_2, int param_3, int param_4, BITMAPINFO * param_5, int param_6, int param_7, int param_8, int param_9, int param_10, byte param_11);
+undefined4 __stdcall fn_006B5110(int * param_1, int param_2, int param_3, int param_4, BITMAPINFO * param_5, int param_6, int param_7, int param_8, int param_9, int param_10, byte param_11);
 // 006B5440 FUN_006b5440
-void fn_006B5440(ushort *param_1,int param_2,int param_3,int param_4,tagBITMAPINFO *tOBJImage,
+void fn_006B5440(ushort *local_8,int param_2,int param_3,int param_4,tagBITMAPINFO *tOBJImage,
                  int param_6,byte param_7);
 // 006B5480 FUN_006b5480
 int fn_006B5480(AnonShape_006B5480_2C1D4FBF *param_1);
@@ -17847,7 +17847,7 @@ void fn_006C4AA0(AnonShape_006C4AA0_6E9A3AA4 *param_1);
 // 006C4AC0 Library::DKW::FLC::FUN_006c4ac0 [statically linked library; implementation excluded]
 int __stdcall fn_006C4AC0(int * param_1);
 // 006C5000 Library::DKW::DDX::FUN_006c5000 [statically linked library; implementation excluded]
-int __stdcall fn_006C5000(DDXContext * param_1, int param_2, int param_3, int param_4, int param_5, int param_6, int param_7, uint param_8, int param_9, int param_10, byte param_11);
+int __stdcall fn_006C5000(DDXContext * param_1, int param_2, int param_3, int * param_4, int param_5, int param_6, int param_7, uint param_8, int param_9, int param_10, byte param_11);
 // 006C5210 FUN_006c5210
 int fn_006C5210(AnonShape_006C5210_E9B30C00 *param_1,undefined4 param_2,int param_3,int param_4,
                 undefined4 param_5);
@@ -17901,7 +17901,7 @@ int __stdcall fn_006C6470(int param_1, int param_2, int param_3, undefined4 * pa
 // 006C6660 Library::DKW::DDX::FUN_006c6660 [statically linked library; implementation excluded]
 int __stdcall fn_006C6660(DDXContext * param_1, int param_2, int param_3, uint param_4, uint param_5, int param_6, undefined4 param_7);
 // 006C6850 FUN_006c6850
-void fn_006C6850(int param_1,int param_2,int param_3,int param_4,int param_5,undefined4 param_6);
+void fn_006C6850(int param_1,int param_2,int param_3,int local_8,int param_5,undefined4 param_6);
 // 006C68F0 Library::DKW::DDX::FUN_006c68f0 [statically linked library; implementation excluded]
 int __stdcall fn_006C68F0(RecoveredGlobalRecordView_00854EB8 * param_1, int param_2, int param_3, int param_4, int param_5, int param_6);
 // 006C6A60 FUN_006c6a60
@@ -19537,7 +19537,7 @@ undefined4 * __thiscall fn_007108B0(ccFntTy * st_this, undefined4 * param_1);
 // 007109F0 FUN_007109f0
 void __thiscall fn_007109F0(void *st_this,AnonShape_007109F0_BD33A2FF *param_1);
 // 00710A90 ccFntTy::SetSurf [statically linked library; implementation excluded]
-int __thiscall fn_00710A90(ccFntTy * st_this, int param_1, int param_2, int param_3, uint param_4, int param_5, int local_14);
+int __thiscall fn_00710A90(ccFntTy * st_this, int param_1, int param_2, int local_c, uint param_4, int param_5, int local_14);
 // 00710BA0 ccFntTy::CreateSurf [statically linked library; implementation excluded]
 undefined4 * __thiscall fn_00710BA0(ccFntTy * st_this, int param_1, uint param_2, int param_3, int param_4, int param_5, int param_6, int param_7);
 // 00710D80 ccFntTy::GetSurfAsSpr [statically linked library; implementation excluded]
@@ -28628,8 +28628,8 @@ inline uint * ccFntTy::SepColorStrInSarr(uint * param_1, uint * param_2) {
     return st::fn_007129D0(this, param_1, param_2);
 }
 
-inline int ccFntTy::SetSurf(int param_1, int param_2, int param_3, uint param_4, int param_5, int local_14) {
-    return st::fn_00710A90(this, param_1, param_2, param_3, param_4, param_5, local_14);
+inline int ccFntTy::SetSurf(int param_1, int param_2, int local_c, uint param_4, int param_5, int local_14) {
+    return st::fn_00710A90(this, param_1, param_2, local_c, param_4, param_5, local_14);
 }
 
 inline int ccFntTy::VisLineSarr(int param_1, int param_2) {

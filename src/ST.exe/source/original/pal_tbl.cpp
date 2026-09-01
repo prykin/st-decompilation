@@ -73,13 +73,13 @@ int __cdecl st::fn_0055DA40(cMf32 *param_1,byte param_2)
   iVar2 = st::fn_0072D7F0(local_48.jumpBuffer,0);
   if (iVar2 == 0) {
     PTR_008032a4 = st::fn_00717FC0
-                             ((int)param_1,PTR_s_PLT_MMGLASS_0079af6c,param_2,1);
+                             (st::machine_word_boundary_cast<int>(param_1),PTR_s_PLT_MMGLASS_0079af6c,param_2,1);
     PTR_008032a8 = st::fn_00717FC0
-                             ((int)param_1,PTR_s_PLT_MMSHAD_0079af88,param_2,1);
+                             (st::machine_word_boundary_cast<int>(param_1),PTR_s_PLT_MMSHAD_0079af88,param_2,1);
     PTR_008032ac = st::fn_00717FC0
-                             ((int)param_1,PTR_s_PLT_FSGSGLASS_0079af98,param_2,1);
+                             (st::machine_word_boundary_cast<int>(param_1),PTR_s_PLT_FSGSGLASS_0079af98,param_2,1);
     PTR_008032b0 = st::fn_00717FC0
-                             ((int)param_1,PTR_s_PLT_FSGSSHAD_0079af9c,param_2,1);
+                             (st::machine_word_boundary_cast<int>(param_1),PTR_s_PLT_FSGSSHAD_0079af9c,param_2,1);
     g_currentExceptionFrame = local_48.previous;
     return 0;
   }

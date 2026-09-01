@@ -2952,9 +2952,6 @@
     "0053AC00": {
       "raw_pointer_field_projection": 2
     },
-    "0053AFB0": {
-      "pointer_boundary_cast": 4
-    },
     "0053C120": {
       "generic_undefined_declaration": 1,
       "raw_machine_field_projection": 2
@@ -4194,7 +4191,6 @@
     },
     "005939E0": {
       "generic_undefined_declaration": 4,
-      "raw_machine_field_projection": 4,
       "raw_pointer_field_projection": 5
     },
     "00593B50": {
@@ -4514,7 +4510,7 @@
     },
     "005BD4B0": {
       "generic_undefined_declaration": 2,
-      "raw_machine_field_projection": 3,
+      "raw_machine_field_projection": 9,
       "raw_pointer_field_projection": 3
     },
     "005BD7A0": {
@@ -4525,7 +4521,8 @@
     "005BE5B0": {
       "generic_undefined_declaration": 1,
       "pointer_boundary_cast": 1,
-      "raw_pointer_field_projection": 19
+      "raw_machine_field_projection": 12,
+      "raw_pointer_field_projection": 21
     },
     "005BF860": {
       "raw_pointer_field_projection": 2
@@ -5061,7 +5058,7 @@
       "generic_undefined_declaration": 1
     },
     "005F35F0": {
-      "raw_machine_field_projection": 7,
+      "raw_machine_field_projection": 19,
       "raw_pointer_field_projection": 3
     },
     "005F3BF0": {
@@ -10297,10 +10294,10 @@
   "schema_version": 3,
   "totals": {
     "generic_undefined_declaration": 2354,
-    "pointer_boundary_cast": 1387,
+    "pointer_boundary_cast": 1383,
     "raw_code_indirect_call": 459,
-    "raw_machine_field_projection": 11725,
-    "raw_pointer_field_projection": 8844,
+    "raw_machine_field_projection": 11751,
+    "raw_pointer_field_projection": 8846,
     "unaff_or_extraout": 529
   }
 }

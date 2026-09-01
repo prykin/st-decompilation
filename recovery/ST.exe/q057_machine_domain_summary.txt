@@ -1,0 +1,11 @@
+program=ST.exe
+executable_sha256=86fad7845393f34671993fb767d345bb471a764548a2618da835637a926284de
+program_modification=3
+rows=1854
+resolved=239
+neutralized=0
+review=1615
+conflict=0
+pcode_anchor_verified=1757
+call_boundary_verified=1176
+policy=Compiler diagnostics are discovery only. Program changes require fresh instruction, p-code, storage, and call-boundary evidence; unattachable or ambiguous High lifetimes remain neutral/review-only.

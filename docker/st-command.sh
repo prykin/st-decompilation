@@ -624,6 +624,24 @@ audit_q059() {
         --compile-summary "$repo/.st-local/source-compile-audit-docker/ST.exe/summary.json"
 }
 
+audit_q057() {
+    require_project
+    # Bind every report to the live Program first, then regenerate the two
+    # machine evidence frontiers which the closure analyzer validates.  These
+    # scripts are read-only even though the common headless launcher opens the
+    # project normally.
+    run_script STEvidenceLedger.java fingerprint "$repo/recovery"
+    run_script STLocalLifetimeAnalyzer.java "$repo/recovery"
+    run_script STReturnSemanticsAnalyzer.java "$repo/recovery"
+    run_script STValueDomainClosureAnalyzer.java "$repo/recovery"
+    python3 "$repo/tools/st_q057_closure.py" \
+        --repo "$repo" \
+        --corpus "$repo/decomp/ST.exe" \
+        --recovery "$repo/recovery/ST.exe" \
+        --source-tree "$repo/src/ST.exe" \
+        --compile-summary "$repo/.st-local/source-compile-audit-docker/ST.exe/summary.json"
+}
+
 doctor() {
     require_project
     echo "repository=$repo"
@@ -708,6 +726,10 @@ case "$command" in
         run_logged source-tree generate_source
         run_logged compile-audit compile_source
         ;;
+    q057-audit)
+        (( $# == 0 )) || fail "q057-audit accepts no additional arguments"
+        with_project_lock run_logged q057-audit audit_q057
+        ;;
     q059-audit)
         (( $# == 0 )) || fail "q059-audit accepts no additional arguments"
         run_logged q059-audit audit_q059
@@ -761,7 +783,7 @@ case "$command" in
     *)
         fail "unknown command '$command'; expected core, deep, abi-refresh, callable-refresh, "\
 "call-result-refresh, corpus-export, full, export, full-export, build-scripts, run-script, "\
-"source-tree, compile-audit, compile-audit-baseline, source-audit, q059-audit, import, doctor, "\
+"source-tree, compile-audit, compile-audit-baseline, source-audit, q057-audit, q059-audit, import, doctor, "\
 "headless-smoke, indirect-callsite-audit, snapshot, snapshot-verify, snapshot-publish, "\
 "project-hydrate, or shell"
         ;;

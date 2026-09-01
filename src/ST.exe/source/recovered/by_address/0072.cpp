@@ -3999,7 +3999,7 @@ void st::fn_0072B0B0(void)
     }
     else {
       local_8 = 0;
-      st::fn_006CEA60((byte *)(PTR_00857118[2] * (int)local_20 + PTR_00857118[1] + local_24),(int)local_20,
+      st::fn_006CEA60((byte *)(PTR_00857118[2] * (int)local_20 + PTR_00857118[1] + local_24),st::machine_word_boundary_cast<int>(local_20),
                (byte *)PTR_00857118[0x30],PTR_00857118[3],PTR_00857118[3],PTR_00857118[4]);
       local_8 = 0xffffffff;
       local_5c = PTR_00857118[1];
@@ -4028,7 +4028,7 @@ void st::fn_0072B0B0(void)
         local_8 = 1;
         source = (byte *)(local_34 * (int)local_20 + local_38 + local_24);
         local_60 = source;
-        st::fn_006CEA60((byte *)PTR_00857118[0x30],local_30,source,(int)local_20,local_30,local_2c);
+        st::fn_006CEA60((byte *)PTR_00857118[0x30],local_30,source,st::machine_word_boundary_cast<int>(local_20),local_30,local_2c);
         local_88 = local_38 - PTR_00857118[10];
         st::fn_006D2820(source,local_20,
                      *(RecoveredRecord_006D2820_5C2BCC8C **)
@@ -4080,7 +4080,7 @@ void st::fn_0072B0B0(void)
           if (local_3c == 0) {
             local_8 = 2;
             st::fn_006CEA60((byte *)(local_44[0] * local_54.y + local_28 + local_54.x),local_44[0],
-                     (byte *)(local_94 * (int)local_20 + local_98 + local_24),(int)local_20,local_30
+                     (byte *)(local_94 * (int)local_20 + local_98 + local_24),st::machine_word_boundary_cast<int>(local_20),local_30
                      ,local_2c);
             iVar4 = local_84;
             local_8 = 0xffffffff;
@@ -4140,7 +4140,7 @@ void st::fn_0072B0B0(void)
         if (uVar6 == 0) {
           local_8 = 3;
           st::fn_006CEA60((byte *)(local_44[0] * local_54.y + local_28 + local_54.x),local_44[0],
-                   (byte *)(local_94 * (int)local_20 + local_98 + local_24),(int)local_20,
+                   (byte *)(local_94 * (int)local_20 + local_98 + local_24),st::machine_word_boundary_cast<int>(local_20),
                    local_68 - local_5c,iVar4 - local_80);
           local_8 = 0xffffffff;
           /* ST_CALLSITE[0072B68A]: CALL dword ptr [EDX + 0x80] */

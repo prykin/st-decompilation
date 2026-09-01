@@ -123,7 +123,7 @@ st::fn_00540620(int param_1,int param_2,int param_3,int param_4,uint param_5,byt
       if (param_7 == '\x01') {
         st::fn_006B42D0
                   (g_dDXContext_0080759C,param_1,param_2,param_8,nullptr,param_3,param_4,param_5
-                   ,(DWORD)param_6);
+                   ,st::machine_word_boundary_cast<DWORD>(param_6));
       }
       else if (param_7 == '\x06') {
         st::fn_006B82E0
@@ -265,10 +265,10 @@ st::fn_00540890
       /* ST_CALLSITE[00540929]: CALL 0x006b55f0; direct=006B55F0 Library::DKW::WGR::FUN_006b55f0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__stdcall;pointer:/ccFntTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy;/int;/int;/int;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;/int;/int;/int;/int;/int */
       local_c = st::pointer_boundary_cast<ccFntTy *>(st::fn_006B55F0
                           (nullptr,0,0,0,
-                           (RecoveredRecordView_006B84D0_87AF9D9B *)param_1,0,param_2,param_3,
+                           st::storage_bit_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(param_1),0,param_2,param_3,
                            local_8,param_5));
 
-      st::fn_00710A90(param_9,(int)local_c,0,0,0,0,0);
+      st::fn_00710A90(param_9,st::machine_word_boundary_cast<int>(local_c),0,0,0,0,0);
     }
 
     st::fn_00711B70(param_9,resourceString,param_7,param_8,param_10,-1,-1);
@@ -336,10 +336,10 @@ st::fn_00540A60
       /* ST_CALLSITE[00540B01]: CALL 0x006b55f0; direct=006B55F0 Library::DKW::WGR::FUN_006b55f0; [STCallResultViewApplier] readability_validated; exact direct-call result=pointer:/ccFntTy; signature=__stdcall;pointer:/ccFntTy;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredSourceFamily_dibcopy;/int;/int;/int;pointer:/SubmarineTitans/Recovered/PointerShapes/RecoveredRecordView_006B84D0_87AF9D9B;/int;/int;/int;/int;/int */
       local_c = st::pointer_boundary_cast<ccFntTy *>(st::fn_006B55F0
                           (nullptr,0,0,0,
-                           (RecoveredRecordView_006B84D0_87AF9D9B *)param_1,0,param_2,param_3,
+                           st::storage_bit_cast<RecoveredRecordView_006B84D0_87AF9D9B *>(param_1),0,param_2,param_3,
                            local_8,param_5));
 
-      st::fn_00710A90(param_9,(int)local_c,0,0,0,0,0);
+      st::fn_00710A90(param_9,st::machine_word_boundary_cast<int>(local_c),0,0,0,0,0);
     }
 
     st::fn_00711F70(param_9,param_6,0,-1,param_7,param_8,param_10);

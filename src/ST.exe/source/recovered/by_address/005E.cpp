@@ -1307,8 +1307,8 @@ st::fn_005EE3F0(void *this,float param_1,short *param_2,short *param_3,short *pa
     uVar10 = (uint)*param_4;
     iVar12 = (((int)uVar10 >> 0x1f) - ((int)uVar8 >> 0x1f)) - st::storage_bit_cast<uint>(static_cast<uint32_t>(uVar10 < uVar8));
     lVar15 = st::fn_0072E4F0(uVar10 - uVar8,iVar12,uVar10 - uVar8,iVar12);
-    lVar16 = st::fn_0072E4F0(uVar14,(int)local_8,uVar14,(int)local_8);
-    lVar14 = st::fn_0072E4F0(uVar9 - uVar6,(int)local_10,uVar9 - uVar6,(int)local_10);
+    lVar16 = st::fn_0072E4F0(uVar14,st::storage_bit_cast<int>(local_8),uVar14,st::storage_bit_cast<int>(local_8));
+    lVar14 = st::fn_0072E4F0(uVar9 - uVar6,st::storage_bit_cast<int>(local_10),uVar9 - uVar6,st::storage_bit_cast<int>(local_10));
     lVar4 = lVar14 + lVar16 + lVar15;
     param_2 = (short *)lVar4;
     lVar17 = st::fn_0072E4F0(uVar3 - uVar6,iVar11,uVar3 - uVar6,iVar11);
